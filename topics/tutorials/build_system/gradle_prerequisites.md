@@ -127,8 +127,8 @@ tasks {
   * The [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md).
 * The <control>Group</control> from the [New Project](#create-ide-plugin) wizard is the `project.group` value.
 * The `sourceCompatibility` line is injected to enforce using Java 11 JDK to compile Java sources.
-* The values of the [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) and [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type) properties specify the version and type of the IntelliJ Platform to be used to build the plugin.
-* The empty placeholder list for [plugin dependencies](tools_gradle_intellij_plugin.md#intellij-extension-plugins).
+* The values of the [`intellij.version`](tools_gradle_intellij_plugin.md#configuration-intellij-extension-version) and [`intellij.type`](tools_gradle_intellij_plugin.md#configuration-intellij-extension-type) properties specify the version and type of the IntelliJ Platform to be used to build the plugin.
+* The empty placeholder list for [plugin dependencies](tools_gradle_intellij_plugin.md#configuration-intellij-extension-plugins).
 * The values of the [`patchPluginXml.sinceBuild`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml-sincebuild) and [`patchPluginXml.untilBuild`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml-untilbuild) properties specifying the minimum and maximum versions of the IDE build the plugin is compatible with.
 * The initial [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) and [`publishPlugin`](tools_gradle_intellij_plugin.md#tasks-publishplugin) tasks configuration.
   See the [](deployment.md) section for more information.

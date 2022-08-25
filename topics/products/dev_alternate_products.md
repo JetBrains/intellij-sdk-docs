@@ -27,11 +27,11 @@ The <path>plugin.xml</path> file is modified to declare the plugin's dependency 
 
 ## Configuring Gradle Build Script to Target Products Other Than IntelliJ IDEA
 
-The best practice is to use the [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type) property to specify the target product.
+The best practice is to use the [`intellij.type`](tools_gradle_intellij_plugin.md#configuration-intellij-extension-type) property to specify the target product.
 For example, `PY` for PyCharm Professional.
-Configuration using an [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type) property is explained in the [Product-Specific Attribute](#configuring-plugin-projects-using-a-product-specific-attribute) section below.
+Configuration using an [`intellij.type`](tools_gradle_intellij_plugin.md#configuration-intellij-extension-type) property is explained in the [Product-Specific Attribute](#configuring-plugin-projects-using-a-product-specific-attribute) section below.
 
-NOTE: Not all products have an [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type) property defined by the [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md), for example, [Android Studio](android_studio.md) and [PhpStorm](phpstorm.md).
+NOTE: Not all products have an [`intellij.type`](tools_gradle_intellij_plugin.md#configuration-intellij-extension-type) property defined by the [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md), for example, [Android Studio](android_studio.md) and [PhpStorm](phpstorm.md).
 The best approach then is to configure the project using the [IntelliJ IDEA Attribute](#configuring-gradle-build-script-using-the-intellij-idea-product-attribute).
 
 > To target multiple products (e.g., IntelliJ IDEA and PyCharm) with the same plugin, see [](plugin_compatibility.md) page.
@@ -40,8 +40,8 @@ The best approach then is to configure the project using the [IntelliJ IDEA Attr
 
 ### Configuring Plugin Projects Using a Product-Specific Attribute
 
-If the [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) supports a target product directly, there will be an [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type) property defined.
-Specifying the target as a product-specific [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type) property has two advantages:
+If the [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) supports a target product directly, there will be an [`intellij.type`](tools_gradle_intellij_plugin.md#configuration-intellij-extension-type) property defined.
+Specifying the target as a product-specific [`intellij.type`](tools_gradle_intellij_plugin.md#configuration-intellij-extension-type) property has two advantages:
 * The APIs available to the plugin will be limited to only what is defined in the target product.
   (Unless additional plugin dependencies are specified.)
 * The default [Development Instance](ide_development_instance.md) for running the plugin will be the target product.
@@ -116,14 +116,14 @@ This information is used to configure the plugin project's Gradle build script a
 #### Configuring Gradle Build Script Using the IntelliJ IDEA Product Attribute
 
 Configuring a Gradle plugin project for using _baseIntelliJPlatformVersion_ requires changing some default settings in the Gradle build script.
-Changes need to be made in two places: [`intellij`](tools_gradle_intellij_plugin.md#intellij-extension) extension and [`runIde`](tools_gradle_intellij_plugin.md#tasks-runide) task.
+Changes need to be made in two places: [`intellij`](tools_gradle_intellij_plugin.md#configuration-intellij-extension) extension and [`runIde`](tools_gradle_intellij_plugin.md#tasks-runide) task.
 
 The Gradle plugin attributes describing the configuration of the [IntelliJ Platform used to build the plugin project](gradle_guide.md#configuring-the-gradle-intellij-plugin-for-building-intellij-platform-plugin-projects) must be explicitly set in the `intellij` task.
-The [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type) is `IU` because although the IntelliJ IDEA Community Edition defines the IntelliJ Platform, the PHP plugin is only compatible with IntelliJ IDEA Ultimate.
-The [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) is _baseIntelliJPlatformVersion_.
+The [`intellij.type`](tools_gradle_intellij_plugin.md#configuration-intellij-extension-type) is `IU` because although the IntelliJ IDEA Community Edition defines the IntelliJ Platform, the PHP plugin is only compatible with IntelliJ IDEA Ultimate.
+The [`intellij.version`](tools_gradle_intellij_plugin.md#configuration-intellij-extension-version) is _baseIntelliJPlatformVersion_.
 
-Any [dependencies](gradle_guide.md#plugin-dependencies) on _targetIDE_-specific plugins or modules must be declared in the [`intellij`](tools_gradle_intellij_plugin.md#intellij-extension) extension.
-Use the Gradle plugin attribute [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) to declare a dependency.
+Any [dependencies](gradle_guide.md#plugin-dependencies) on _targetIDE_-specific plugins or modules must be declared in the [`intellij`](tools_gradle_intellij_plugin.md#configuration-intellij-extension) extension.
+Use the Gradle plugin attribute [`intellij.plugins`](tools_gradle_intellij_plugin.md#configuration-intellij-extension-plugins) to declare a dependency.
 See the specific product pages in _Part VIII — Product Specific_ for the _targetIDE_ plugin or module name.
 
 The best practice is to modify the [`runIde`](tools_gradle_intellij_plugin.md#tasks-runide) task to use a local installation of _targetIDE_ as the [](ide_development_instance.md).

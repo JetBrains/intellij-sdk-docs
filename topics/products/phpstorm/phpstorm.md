@@ -30,11 +30,11 @@ To see how these attributes appear in the Gradle build script for PhpStorm, see 
 
 | `gradle-intellij-plugin` Attribute                                               | Attribute Value                                                                |
 |----------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
-| [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type)       | `PS` for PhpStorm.                                                             |
-| [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) | Set to the targeted `PS` version.                                              |
+| [`intellij.type`](tools_gradle_intellij_plugin.md#configuration-intellij-extension-type)       | `PS` for PhpStorm.                                                             |
+| [`intellij.version`](tools_gradle_intellij_plugin.md#configuration-intellij-extension-version) | Set to the targeted `PS` version.                                              |
 | [`runIde.ideDir`](tools_gradle_intellij_plugin.md#tasks-runide-idedir)            | Not needed; the Development Instance will automatically match `intellij.type`. |
 
 The PHP plugin version is explicitly declared because it isn't bundled with IntelliJ IDEA Ultimate Edition.
-Select a [version](https://plugins.jetbrains.com/plugin/6610-php/versions) of the PHP plugin compatible with the [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version).
+Select a [version](https://plugins.jetbrains.com/plugin/6610-php/versions) of the PHP plugin compatible with the [`intellij.version`](tools_gradle_intellij_plugin.md#configuration-intellij-extension-version).
 
 The dependency on the PHP plugin APIs must be declared in the <path>plugin.xml</path> file, as shown in the tutorial [Configuring plugin.xml](dev_alternate_products.md#configuring-pluginxml) section.

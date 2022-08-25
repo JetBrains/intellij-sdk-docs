@@ -118,10 +118,15 @@ pluginManagement {
 </tabs>
 
 
-## IntelliJ Extension
+## Configuration
+
+
+### IntelliJ Extension
+{id="configuration-intellij-extension"}
+
 After the Gradle IntelliJ Plugin is applied, the `intellij` extension can be used to configure the plugin and common settings of the provided tasks.
 
-It is mandatory to specify at least the [`intellij.version`](#intellij-extension-version) property.
+It is mandatory to specify at least the [`intellij.version`](#configuration-intellij-extension-version) property.
 
 **Example:**
 
@@ -152,7 +157,7 @@ intellij {
 </tabs>
 
 
-### version
+#### version
 {id="intellij-extension-version"}
 
 All available JetBrains IDEs versions can be found at [IntelliJ Artifacts](intellij_artifacts.md) page.
@@ -179,11 +184,11 @@ Acceptable values
 {type="tip"}
 
 
-### type
+#### type
 {id="intellij-extension-type"}
 
 The type of the IntelliJ-based IDE distribution.
-The type may also be specified as a prefix of the value for the [`intellij.version`](#intellij-extension-version) property instead.
+The type may also be specified as a prefix of the value for the [`intellij.version`](#configuration-intellij-extension-version) property instead.
 
 {style="narrow"}
 Type
@@ -207,7 +212,7 @@ Acceptable values
 
 To build against IDEs not supported directly by `type`, please see their corresponding page in _Part VIII — Product Specific_.
 
-### pluginName
+#### pluginName
 {id="intellij-extension-pluginname"}
 
 The plugin name part used in the generated ZIP distribution: <path>build/distributions/PluginName-1.0.0.zip</path> and name of the plugin directory in the sandbox directory.
@@ -220,7 +225,7 @@ Default value
 : `${project.name}`
 
 
-### localPath
+#### localPath
 {id="intellij-extension-localpath"}
 
 The path to the locally installed IDE distribution that should be used to build the plugin.
@@ -244,11 +249,11 @@ Samples
 {type="warning"}
 
 
-### localSourcesPath
+#### localSourcesPath
 {id="intellij-extension-localsourcespath"}
 
 The path to local archive with IDE sources.
-Used for resolving source files of the locally installed IDE distribution when [`intellij.localPath`](#intellij-extension-localpath) is specified.
+Used for resolving source files of the locally installed IDE distribution when [`intellij.localPath`](#configuration-intellij-extension-localpath) is specified.
 
 {style="narrow"}
 Type
@@ -258,10 +263,10 @@ Default value
 : `null`
 
 
-### plugins
+#### plugins
 {id="intellij-extension-plugins"}
 
-The list of bundled IDE plugins and plugins from [JetBrains Marketplace](https://plugins.jetbrains.com) or configured [`intellij.pluginsRepositories`](#intellij-extension-pluginsrepositories).
+The list of bundled IDE plugins and plugins from [JetBrains Marketplace](https://plugins.jetbrains.com) or configured [`intellij.pluginsRepositories`](#configuration-intellij-extension-pluginsrepositories).
 
 Please see [](plugin_dependencies.md) for more details.
 
@@ -290,7 +295,7 @@ Acceptable values
     - `project(":plugin-subproject")`
 
 
-### updateSinceUntilBuild
+#### updateSinceUntilBuild
 {id="intellij-extension-updatesinceuntilbuild"}
 
 Enables patching <path>[plugin.xml](plugin_configuration_file.md)</path> with the values of [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) and [`patchPluginXml.untilBuild`](#tasks-patchpluginxml-untilbuild) properties.
@@ -303,14 +308,14 @@ Default value
 : `true`
 
 
-### sameSinceUntilBuild
+#### sameSinceUntilBuild
 {id="intellij-extension-samesinceuntilbuild"}
 
 Enables patching <path>[plugin.xml](plugin_configuration_file.md)</path> with the [`patchPluginXml.untilBuild`](#tasks-patchpluginxml-untilbuild) using value of [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) with `*` wildcard, like `sinceBuild.*`, e.g., `221.*`.
 
 Notes:
 - Useful for building plugins against EAP builds.
-- If [`patchPluginXml.untilBuild`](#tasks-patchpluginxml-untilbuild) has a value set, then [`intellij.sameSinceUntilBuild`](#intellij-extension-samesinceuntilbuild) is ignored.
+- If [`patchPluginXml.untilBuild`](#tasks-patchpluginxml-untilbuild) has a value set, then [`intellij.sameSinceUntilBuild`](#configuration-intellij-extension-samesinceuntilbuild) is ignored.
 
 {style="narrow"}
 Type
@@ -320,7 +325,7 @@ Default value
 : `false`
 
 
-### instrumentCode
+#### instrumentCode
 {id="intellij-extension-instrumentcode"}
 
 Enables the instrumentation of Java classes with [nullability](https://www.jetbrains.com/help/idea/nullable-and-notnull-annotations.html) assertions and compilation of forms created by [IntelliJ GUI Designer](https://www.jetbrains.com/help/idea/gui-designer-basics.html).
@@ -333,7 +338,7 @@ Default value
 : `true`
 
 
-### sandboxDir
+#### sandboxDir
 {id="intellij-extension-sandboxdir"}
 
 The path of [sandbox directory](ide_development_instance.md#the-development-instance-sandbox-directory) that is used for running IDE with developed plugin.
@@ -346,7 +351,7 @@ Default value
 : `${project.buildDir}/idea-sandbox`
 
 
-### intellijRepository
+#### intellijRepository
 {id="intellij-extension-intellijrepository"}
 
 The IntelliJ-based IDE distributions repository URL.
@@ -359,7 +364,7 @@ Default value
 : `https://cache-redirector.jetbrains.com/www.jetbrains.com/intellij-repository`
 
 
-### pluginsRepositories
+#### pluginsRepositories
 {id="intellij-extension-pluginsrepositories"}
 
 Configures repositories for downloading plugin dependencies.
@@ -379,7 +384,7 @@ Acceptable values
 - `custom(pluginsXmlUrl)` - use [](custom_plugin_repository.md)
 
 
-### jreRepository
+#### jreRepository
 {id="intellij-extension-jrerepository"}
 
 URL of repository for downloading [JetBrains Runtime](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance).
@@ -392,7 +397,7 @@ Default value
 : `null`
 
 
-### ideaDependencyCachePath
+#### ideaDependencyCachePath
 {id="intellij-extension-ideadependencycachepath"}
 
 Path to the directory where IDE dependency cache is stored.
@@ -406,7 +411,7 @@ Default value
 : `null`
 
 
-### downloadSources
+#### downloadSources
 {id="intellij-extension-downloadsources"}
 
 Enables downloading the IntelliJ Platform sources.
@@ -420,7 +425,7 @@ Default value
 : `!System.getenv().containsKey("CI")`
 
 
-### configureDefaultDependencies
+#### configureDefaultDependencies
 {id="intellij-extension-configuredefaultdependencies"}
 
 Enables configuration of the default IntelliJ Platform dependencies in the current project.
@@ -434,7 +439,7 @@ Default value
 : `true`
 
 
-### extraDependencies
+#### extraDependencies
 {id="intellij-extension-extradependencies"}
 
 Configures extra dependency artifacts from the IntelliJ repository.
@@ -591,7 +596,7 @@ Type
 : `String`
 
 Default value
-: [`intellij.pluginName`](#intellij-extension-pluginname)
+: [`intellij.pluginName`](#configuration-intellij-extension-pluginname)
 
 
 #### sandboxDir
@@ -645,7 +650,7 @@ Type
 : `String`
 
 Default value
-: [`intellij.type`](#intellij-extension-type)
+: [`intellij.type`](#configuration-intellij-extension-type)
 
 
 #### sinceVersion
@@ -659,7 +664,7 @@ Type
 : `String`
 
 Default value
-: [`intellij.version`](#intellij-extension-version)
+: [`intellij.version`](#configuration-intellij-extension-version)
 
 
 #### untilVersion
@@ -686,7 +691,7 @@ Type
 : `String`
 
 Default value
-: [`intellij.version`](#intellij-extension-version)
+: [`intellij.version`](#configuration-intellij-extension-version)
 
 
 #### untilBuild
@@ -800,7 +805,7 @@ Type
 : `String`
 
 Default value
-: [`intellij.version`](#intellij-extension-version) in `Branch.Build.Fix` format
+: [`intellij.version`](#configuration-intellij-extension-version) in `Branch.Build.Fix` format
 
 
 #### untilBuild
@@ -813,7 +818,7 @@ Type
 : `String`
 
 Default value
-: [`intellij.version`](#intellij-extension-version) in `Branch.Build.*` format
+: [`intellij.version`](#configuration-intellij-extension-version) in `Branch.Build.*` format
 
 
 #### version
@@ -871,7 +876,7 @@ Type
 : `String`
 
 Default value
-: [`intellij.pluginName`](#intellij-extension-pluginname)
+: [`intellij.pluginName`](#configuration-intellij-extension-pluginname)
 
 
 #### configDir
@@ -1197,7 +1202,7 @@ Plugin Verifier DSL `runPluginVerifier { ... }` allows to define the list of IDE
 #### ideVersions
 {id="runpluginverifier-task-ideversions"}
 
-IDEs to check, in [`intellij.version`](#intellij-extension-version) format, i.e.: `["IC-2019.3.5", "PS-2019.3.2"]`.
+IDEs to check, in [`intellij.version`](#configuration-intellij-extension-version) format, i.e.: `["IC-2019.3.5", "PS-2019.3.2"]`.
 Check the available build versions on [IntelliJ Platform Builds list](https://jb.gg/intellij-platform-builds-list).
 
 {style="narrow"}

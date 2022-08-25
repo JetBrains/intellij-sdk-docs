@@ -495,20 +495,27 @@ Required
 Attributes
 : - `defaultExtensionNs` _(optional)_<br/>
   Default extensions namespace.
-  It allows skipping the common prefix in fully qualified extension point names.<br/>
-  Example: if `defaultExtensionNs` is `com.example.vcs` and extension point FQN is `com.example.vcs.myExtension`, it can be defined as simple `<myExtension>` element instead of `<com.example.vcs.myExtension>`.
+  It allows skipping the common prefix in fully qualified extension point names.
 
 Children
 : The children elements are registrations of the extension points defined by [`<extensionPoint>`](#idea-plugin__extensionPoints__extensionPoint) elements. Extension elements names follow the EPs names defined by `name` or `qualifiedName` attributes.
 
 Example
 :
-  ```xml
-  <extensions defaultExtensionNs="com.example.vcs">
-    <myExtension
-      implementation="com.example.impl.MyExtension"/>
-  </extensions>
-  ```
+- Extension declaration using the fully qualified extension name:
+    ```xml
+    <extensions>
+      <com.example.vcs.myExtension
+        implementation="com.example.MyExtension"/>
+    </extensions>
+    ```
+- Extension declaration with the default namespace:
+    ```xml
+    <extensions defaultExtensionNs="com.example.vcs">
+      <myExtension
+        implementation="com.example.MyExtension"/>
+    </extensions>
+    ```
 
 ### `extensionPoints`
 {id="idea-plugin__extensionPoints"}

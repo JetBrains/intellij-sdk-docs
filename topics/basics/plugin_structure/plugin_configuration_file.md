@@ -300,7 +300,7 @@ Example
 {id="idea-plugin__change-notes"}
 
 A short summary of new features, bugfixes, and changes provided with the latest plugin version.
-Change notes are displayed on the Marketplace plugin page and in the IDE Plugin Manager.
+Change notes are displayed on the JetBrains Marketplace plugin page and in the IDE Plugin Manager.
 
 Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed and must be wrapped into `<![CDATA[` ... `]]>` section.
 

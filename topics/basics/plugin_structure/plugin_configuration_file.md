@@ -175,12 +175,12 @@ Required
 
 Attributes
 :
-- `code` _(required)_<br/>
+- `code` _(**required**)_<br/>
   The plugin product code used in the JetBrains Sales System.
   The code must be agreed with JetBrains in advance and follow [the requirements](https://plugins.jetbrains.com/docs/marketplace/obtain-a-product-code-from-jetbrains.html).
-- `release-date` _(required)_<br/>
+- `release-date` _(**required**)_<br/>
   Date of the major version release in the `YYYYMMDD` format.
-- `release-version` _(required)_<br/>
+- `release-version` _(**required**)_<br/>
   A major version in a special number format.
 - `optional` _(optional)_<br/>
   The boolean value determining whether the plugin is a [Freemium](https://plugins.jetbrains.com/docs/marketplace/freemium.html) plugin.<br/>
@@ -209,7 +209,7 @@ The element can be skipped in the source <path>plugin.xml</path> file if the Gra
 
 Attributes
 :
-- `since-build` _(required)_<br/>
+- `since-build` _(**required**)_<br/>
   The lowest IDE version compatible with the plugin.<br/>
   Examples: `213`, `213.56`, `IU-213.94.11`
 - `until-build` _(optional)_<br/>
@@ -431,9 +431,9 @@ Required
 
 Attributes
 :
-- `topic` _(required)_<br/>
+- `topic` _(**required**)_<br/>
   The fully qualified name of the listener interface corresponding to the type of received events.
-- `class` _(required)_<br/>
+- `class` _(**required**)_<br/>
   The fully qualified name of the class implementing the listener interface that receives and handles the events.
 - `os` _(optional; supported since 2020.1)_<br/>
   Restricts listener instantiation to a specific operating system.
@@ -522,20 +522,20 @@ Required
 
 Attributes
 :
-- `name` _(`name` or `qualifiedName` is required)_<br/>
+- `name` _(`name` or `qualifiedName` is **required**)_<br/>
   The extension point name that should be unique in the scope of the plugin, e.g., `myExtension`.
   The fully qualified name of the extension point is built at runtime by prepending the value of the `name` attribute with the plugin [`<id>`](#idea-plugin__id) + `.` prefix.
   Only one of the `name` and `qualifiedName` attributes can be specified.<br/>
   Example: when the `name` is  `myExtension` and plugin ID is `com.example.myplugin`, the fully qualified name of the EP will be `com.example.myplugin.myExtension`.
-- `qualifiedName` _(`name` or `qualifiedName` is required)_<br/>
+- `qualifiedName` _(`name` or `qualifiedName` is **required**)_<br/>
   The fully qualified name of the extension point.
   It should be unique between different plugins, and it is recommended to include a plugin ID to guarantee uniqueness, e.g., `com.example.myplugin.myExtension`.
   Only one of the `name` and `qualifiedName` attributes can be specified.
-- `interface` _(`interface` or `beanClass` is required)_<br/>
+- `interface` _(`interface` or `beanClass` is **required**)_<br/>
   The fully qualified name of the interface to be implemented for extending plugin's functionality.
   Only one of the `interface` and `beanClass` attributes can be specified.
   See [](plugin_extension_points.md) for more information.
-- `beanClass` _(`interface` or `beanClass` is required)_<br/>
+- `beanClass` _(`interface` or `beanClass` is **required**)_<br/>
   The fully qualified name of the extension point bean class providing additional information to the plugin.
   Only one of the `interface` and `beanClass` attributes can be specified.
   See [](plugin_extension_points.md) for more information.
@@ -560,24 +560,19 @@ Children
 Specifies the required parent type for class names provided in extension point tags or attributes.
 A single [`<extensionPoint>`](#idea-plugin__extensionPoints__extensionPoint) element can contain multiple `<with>` elements.
 
-[//]: # (TODO: additional table entry proposal)
-[//]: # (Path)
-[//]: # (:)
-[//]: # ([`idea-plugin`]&#40;#idea-plugin&#41; / [`extensionPoints`]&#40;#idea-plugin__extensionPoints&#41; / [`extensionPoint`]&#40;#idea-plugin__extensionPoints__extensionPoint&#41; / `with`)
-
 {style="narrow"}
 Required
 : no
 
 Attributes
 :
-- `tag` _(`tag` or `attribute` is required)_<br/>
+- `tag` _(`tag` or `attribute` is **required**)_<br/>
   The name of the tag holding the fully qualified name of the class which parent type will be limited by the type provided in the `implements` attribute.
   Only one of the `tag` and `attribute` attributes can be specified.
-- `attribute` _(`tag` or `attribute` is required)_<br/>
+- `attribute` _(`tag` or `attribute` is **required**)_<br/>
   The name of the attribute holding the fully qualified name of the class which parent type will be limited by the type provided in the `implements` attribute.
   Only one of the `tag` and `attribute` attributes can be specified.
-- `implements` _(required)_<br/>
+- `implements` _(**required**)_<br/>
   The fully qualified name of the parent type limiting the type provided in the place specified by `tag` or `attribute`.
 
 Example
@@ -731,9 +726,9 @@ Required
 
 Attributes
 :
-- `name` _(required)_<br/>
+- `name` _(**required**)_<br/>
   Option name.
-- `value` _(required)_<br/>
+- `value` _(**required**)_<br/>
   Option value.
 
 ##### `loadForDefaultProject`

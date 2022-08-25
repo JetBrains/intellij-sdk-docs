@@ -1710,7 +1710,7 @@ Default value
 : `${prepareSandboxTask.destinationDir}/${prepareSandboxTask.pluginName}`
 
 
-## verifyPluginConfiguration Task
+### verifyPluginConfiguration
 
 > Available since the upcoming release
 >
@@ -1718,12 +1718,12 @@ Default value
 
 Validates the plugin project configuration:
 
-- The [`patchPluginXml.sinceBuild`](#patchpluginxml-task-sincebuild) property can't be lower than the major version of the currently used IntelliJ SDK set with the [`intellij.version`](#intellij-extension-version).
-- The `sourceCompatibility` property of the Java configuration can't be lower than the Java version used for assembling the IntelliJ SDK specified by the [`intellij.version`](#intellij-extension-version).
-- The `targetCompatibility` property of the Java configuration can't be higher than the Java version required for running IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#patchpluginxml-task-sincebuild) properties.
-- The `jvmTarget` property of the Kotlin configuration (if used) can't be higher than the Java version required for running IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#patchpluginxml-task-sincebuild) properties.
-- The `languageVersion` property of the Kotlin configuration (if used) can't be lower than the Kotlin bundled with IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#patchpluginxml-task-sincebuild) properties.
-- The `apiVersion` property of the Kotlin configuration (if used) can't be higher than the Kotlin bundled with IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#patchpluginxml-task-sincebuild) properties.
+- The [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) property can't be lower than the major version of the currently used IntelliJ SDK set with the [`intellij.version`](#configuration-intellij-extension-version).
+- The `sourceCompatibility` property of the Java configuration can't be lower than the Java version used for assembling the IntelliJ SDK specified by the [`intellij.version`](#configuration-intellij-extension-version).
+- The `targetCompatibility` property of the Java configuration can't be higher than the Java version required for running IDE in the version specified by the [`intellij.version`](#configuration-intellij-extension-version) or [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) properties.
+- The `jvmTarget` property of the Kotlin configuration (if used) can't be higher than the Java version required for running IDE in the version specified by the [`intellij.version`](#configuration-intellij-extension-version) or [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) properties.
+- The `languageVersion` property of the Kotlin configuration (if used) can't be lower than the Kotlin bundled with IDE in the version specified by the [`intellij.version`](#configuration-intellij-extension-version) or [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) properties.
+- The `apiVersion` property of the Kotlin configuration (if used) can't be higher than the Kotlin bundled with IDE in the version specified by the [`intellij.version`](#configuration-intellij-extension-version) or [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) properties.
 
 > For more details regarding the Java version used in the specific IntelliJ SDK, see [](build_number_ranges.md).
 

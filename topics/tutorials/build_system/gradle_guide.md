@@ -59,13 +59,13 @@ Using the corresponding JetBrains Runtime is also the default, so for this use-c
 #### Running Against Alternate Versions and Types of IntelliJ Platform-Based IDEs
 
 The IntelliJ Platform IDE used for the Development Instance can be different from that used to build the plugin project.
-Setting the [`runIde.ideDir`](tools_gradle_intellij_plugin.md#runide-task-idedir) property will define an IDE to be used for the Development Instance.
+Setting the [`runIde.ideDir`](tools_gradle_intellij_plugin.md#tasks-runide-idedir) property will define an IDE to be used for the Development Instance.
 This attribute is commonly used when running or debugging a plugin in an [alternate IntelliJ Platform-based IDE](intellij_platform.md#ides-based-on-the-intellij-platform).
 
 #### Running Against Alternate Versions of the JetBrains Runtime
 
 Every version of the IntelliJ Platform has a corresponding version of the [JetBrains Runtime](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance).
-A different version of the runtime can be used by specifying the [`runIde.jbrVersion`](tools_gradle_intellij_plugin.md#runide-task-jbrversion) attribute, describing a version of the JetBrains Runtime that should be used by the IDE Development Instance.
+A different version of the runtime can be used by specifying the [`runIde.jbrVersion`](tools_gradle_intellij_plugin.md#tasks-runide-jbrversion) attribute, describing a version of the JetBrains Runtime that should be used by the IDE Development Instance.
 The Gradle plugin will fetch the specified JetBrains Runtime as needed.
 
 ### Managing Directories Used by the Gradle Plugin
@@ -74,7 +74,7 @@ There are several attributes to control where the Gradle plugin places directori
 
 The location of the [sandbox home](ide_development_instance.md#the-development-instance-sandbox-directory) directory and its subdirectories can be controlled with Gradle plugin attributes.
 The [`intellij.sandboxDirectory`](tools_gradle_intellij_plugin.md#intellij-extension-sandboxdir) attribute is used to set the path for the sandbox directory to be used while running the plugin in an IDE Development Instance.
-Locations of the sandbox [subdirectories](ide_development_instance.md#development-instance-settings-caches-logs-and-plugins) can be controlled using the [`runIde.configDirectory`](tools_gradle_intellij_plugin.md#runide-task), [`runIde.pluginsDirectory`](tools_gradle_intellij_plugin.md#runide-task), and [`runIde.systemDirectory`](tools_gradle_intellij_plugin.md#runide-task) attributes.
+Locations of the sandbox [subdirectories](ide_development_instance.md#development-instance-settings-caches-logs-and-plugins) can be controlled using the [`runIde.configDirectory`](tools_gradle_intellij_plugin.md#tasks-runide), [`runIde.pluginsDirectory`](tools_gradle_intellij_plugin.md#tasks-runide), and [`runIde.systemDirectory`](tools_gradle_intellij_plugin.md#tasks-runide) attributes.
 If the [`intellij.sandboxDirectory`](tools_gradle_intellij_plugin.md#intellij-extension-sandboxdir) path is explicitly set, the subdirectory attributes default to the new sandbox directory.
 
 The storage location of downloaded IDE versions and components defaults to the Gradle cache directory.
@@ -91,21 +91,21 @@ The version of Gradle is defined in <path>$PROJECT_ROOT$/gradle/wrapper/gradle-w
 
 ### Patching the Plugin Configuration File
 
-A plugin project's <path>plugin.xml</path> file has element values that are "patched" at build time from the attributes of the [`patchPluginXml`](tools_gradle_intellij_plugin.md#patchpluginxml-task) task.
+A plugin project's <path>plugin.xml</path> file has element values that are "patched" at build time from the attributes of the [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) task.
 As many as possible of the attributes in the Patching DSL will be substituted into the corresponding element values in a plugin project's <path>plugin.xml</path> file:
-* If a [`patchPluginXml`](tools_gradle_intellij_plugin.md#patchpluginxml-task) attribute default value is defined, the attribute value will be patched in <path>plugin.xml</path> _regardless of whether the [`patchPluginXml`](tools_gradle_intellij_plugin.md#patchpluginxml-task) task appears in the Gradle build script_.
-  * For example, the default values for the attributes [`patchPluginXml.sinceBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-sincebuild) and [`patchPluginXml.untilBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-untilbuild) are defined based on the declared (or default) value of [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version).
-    So by default [`patchPluginXml.sinceBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-sincebuild) and [`patchPluginXml.untilBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-untilbuild) are substituted into the `<idea-version>` element's `since-build` and `until-build` attributes in the <path>plugin.xml</path> file.
-* If a [`patchPluginXml`](tools_gradle_intellij_plugin.md#patchpluginxml-task) attribute value is explicitly defined, the attribute value will be substituted in <path>plugin.xml</path>.
-  * If both [`patchPluginXml.sinceBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-sincebuild) and [`patchPluginXml.untilBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-untilbuild) attributes are explicitly set, both are substituted in <path>plugin.xml</path>.
-  * If one attribute is explicitly set (e.g. [`patchPluginXml.sinceBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-sincebuild)) and one is not (e.g. [`patchPluginXml.untilBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-untilbuild) has a default value,) both attributes are patched at their respective (explicit and default) values.
+* If a [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) attribute default value is defined, the attribute value will be patched in <path>plugin.xml</path> _regardless of whether the [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) task appears in the Gradle build script_.
+  * For example, the default values for the attributes [`patchPluginXml.sinceBuild`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml-sincebuild) and [`patchPluginXml.untilBuild`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml-untilbuild) are defined based on the declared (or default) value of [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version).
+    So by default [`patchPluginXml.sinceBuild`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml-sincebuild) and [`patchPluginXml.untilBuild`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml-untilbuild) are substituted into the `<idea-version>` element's `since-build` and `until-build` attributes in the <path>plugin.xml</path> file.
+* If a [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) attribute value is explicitly defined, the attribute value will be substituted in <path>plugin.xml</path>.
+  * If both [`patchPluginXml.sinceBuild`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml-sincebuild) and [`patchPluginXml.untilBuild`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml-untilbuild) attributes are explicitly set, both are substituted in <path>plugin.xml</path>.
+  * If one attribute is explicitly set (e.g. [`patchPluginXml.sinceBuild`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml-sincebuild)) and one is not (e.g. [`patchPluginXml.untilBuild`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml-untilbuild) has a default value,) both attributes are patched at their respective (explicit and default) values.
 * For **no substitution** of the `<idea-version>` element's `since-build` and `until-build` attributes, one of the following must appear in the Gradle build script:
   * Either set [`intellij.updateSinceUntilBuild`](tools_gradle_intellij_plugin.md#intellij-extension-updatesinceuntilbuild) to `false`, which will disable substituting both `since-build` and `until-build` attributes,
 
 The best practice to avoid confusion is to replace the elements in <path>plugin.xml</path> that will be patched by the Gradle plugin with a comment.
 That way, the values for these parameters do not appear in two places in the source code.
 The Gradle plugin will add the necessary elements as part of the patching process.
-For those [`patchPluginXml`](tools_gradle_intellij_plugin.md#patchpluginxml-task) attributes that contain descriptions such as [`patchPluginXml.changeNotes`](tools_gradle_intellij_plugin.md#patchpluginxml-task-changenotes) and [`patchPluginXml.pluginDescription`](tools_gradle_intellij_plugin.md#patchpluginxml-task-plugindescription), a `CDATA` block is not necessary when using HTML elements.
+For those [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) attributes that contain descriptions such as [`patchPluginXml.changeNotes`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml-changenotes) and [`patchPluginXml.pluginDescription`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml-plugindescription), a `CDATA` block is not necessary when using HTML elements.
 
 > To maintain and generate an up-to-date changelog, try using [Gradle Changelog Plugin](https://github.com/JetBrains/gradle-changelog-plugin).
 >
@@ -121,15 +121,15 @@ This practice keeps all version declarations synchronized.
 ### Verifying Plugin
 
 The Gradle plugin provides two tasks that allow for running integrity and compatibility tests:
-* [`verifyPlugin`](tools_gradle_intellij_plugin.md#verifyplugin-task) task - validates completeness and contents of <path>plugin.xml</path> descriptors as well as plugin's archive structure,
-* [`runPluginVerifier`](tools_gradle_intellij_plugin.md#runpluginverifier-task) task - runs the [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) tool to check the binary compatibility with specified IntelliJ IDE builds.
+* [`verifyPlugin`](tools_gradle_intellij_plugin.md#tasks-verifyplugin) task - validates completeness and contents of <path>plugin.xml</path> descriptors as well as plugin's archive structure,
+* [`runPluginVerifier`](tools_gradle_intellij_plugin.md#tasks-runpluginverifier) task - runs the [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) tool to check the binary compatibility with specified IntelliJ IDE builds.
 
 Plugin Verifier integration task allows for configuring the exact IDE versions that your plugin will be checked against.
 See [](verifying_plugin_compatibility.md#plugin-verifier) for more information.
 
 ### Publishing with the Gradle Plugin
 
-Please review the [](deployment.md) page before using the [`publishPlugin`](tools_gradle_intellij_plugin.md#publishplugin-task) task.
+Please review the [](deployment.md) page before using the [`publishPlugin`](tools_gradle_intellij_plugin.md#tasks-publishplugin) task.
 That documentation explains different ways to use Gradle for plugin uploads without exposing account credentials.
 
 ## Common Gradle Plugin Configurations for Development

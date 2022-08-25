@@ -26,7 +26,7 @@ Click on an entry in the table's *Attribute* column to go to the documentation a
 | [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version)                 | Set to the targeted CLion version, e.g. `2019.3.1`.                            |
 | [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins)                 | No specific declaration is needed.                                             |
 | [`intellij.downloadSources`](tools_gradle_intellij_plugin.md#intellij-extension-downloadsources) | `false` is required because no public source code is available.                |
-| [`runIde.ideDir`](tools_gradle_intellij_plugin.md#runide-task-idedir)                            | Not needed; the Development Instance will automatically match `intellij.type`. |
+| [`runIde.ideDir`](tools_gradle_intellij_plugin.md#tasks-runide-idedir)                            | Not needed; the Development Instance will automatically match `intellij.type`. |
 
 The dependency on the CLion APIs must be declared in the <path>plugin.xml</path> file.
 As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` tags must declare `com.intellij.modules.clion` module dependency, or `com.intellij.clion` plugin dependency for plugins targeting only versions 2020.3+.

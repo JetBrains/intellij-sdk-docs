@@ -6,9 +6,9 @@
 
 ### How to modify JVM arguments of runIde task
 
-[`runIde`](tools_gradle_intellij_plugin.md#runide-task) task is a [Java Exec](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html) task and can be modified according to the documentation.
+[`runIde`](tools_gradle_intellij_plugin.md#tasks-runide) task is a [Java Exec](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html) task and can be modified according to the documentation.
 
-To add some JVM arguments while launching the IDE, configure [`runIde`](tools_gradle_intellij_plugin.md#runide-task) task as follows:
+To add some JVM arguments while launching the IDE, configure [`runIde`](tools_gradle_intellij_plugin.md#tasks-runide) task as follows:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -35,7 +35,7 @@ runIde {
 
 ### How to modify system properties of runIde task
 
-Using the [very same task documentation](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html), configure [`runIde`](tools_gradle_intellij_plugin.md#runide-task) task:
+Using the [very same task documentation](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html), configure [`runIde`](tools_gradle_intellij_plugin.md#tasks-runide) task:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -64,7 +64,7 @@ runIde {
 
 See [](ide_development_instance.md#enabling-auto-reload) for important caveats.
 
-Configure [`runIde`](tools_gradle_intellij_plugin.md#runide-task) task as follows:
+Configure [`runIde`](tools_gradle_intellij_plugin.md#tasks-runide) task as follows:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -124,7 +124,7 @@ In the Gradle `runIde` run configuration, add the log file path according to [sa
 
 ### How do I add my a custom file inside plugin distribution
 
-[`prepareSandbox`](tools_gradle_intellij_plugin.md#preparesandbox-task) task is a [`Sync`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Sync.html) task and can be modified accordingly.
+[`prepareSandbox`](tools_gradle_intellij_plugin.md#tasks-preparesandbox) task is a [`Sync`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Sync.html) task and can be modified accordingly.
 Something like following should work:
 
 <tabs group="languages">
@@ -156,10 +156,10 @@ prepareSandbox {
 
 ### Task 'setupDependencies' not found in root project
 
-The [`setupDependencies`](tools_gradle_intellij_plugin.md#setupdependencies-task) task is designed to fetch the target IDE dependency from the IntelliJ Repository in the after-sync Gradle phase, but only when working inside IntelliJ IDEA – to make the IntelliJ SDK classes resolved and code completion available.
-To achieve that, the [`gradle-idea-ext-plugin`](https://github.com/JetBrains/gradle-idea-ext-plugin) is used, which alters the IDEA project's <path>.idea/workspace.xml</path> file making the [`setupDependencies`](tools_gradle_intellij_plugin.md#setupdependencies-task) task activated on `after_sync` event.
+The [`setupDependencies`](tools_gradle_intellij_plugin.md#tasks-setupdependencies) task is designed to fetch the target IDE dependency from the IntelliJ Repository in the after-sync Gradle phase, but only when working inside IntelliJ IDEA – to make the IntelliJ SDK classes resolved and code completion available.
+To achieve that, the [`gradle-idea-ext-plugin`](https://github.com/JetBrains/gradle-idea-ext-plugin) is used, which alters the IDEA project's <path>.idea/workspace.xml</path> file making the [`setupDependencies`](tools_gradle_intellij_plugin.md#tasks-setupdependencies) task activated on `after_sync` event.
 
-Unfortunately, this entry remains even after disabling the `org.jetbrains.intellij` plugin in a project – the [`setupDependencies`](tools_gradle_intellij_plugin.md#setupdependencies-task) task won't be resolved appropriately, which produces the following exception:
+Unfortunately, this entry remains even after disabling the `org.jetbrains.intellij` plugin in a project – the [`setupDependencies`](tools_gradle_intellij_plugin.md#tasks-setupdependencies) task won't be resolved appropriately, which produces the following exception:
 
 ```
 Task 'setupDependencies' not found in root project 'projectName'.

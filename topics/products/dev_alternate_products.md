@@ -116,7 +116,7 @@ This information is used to configure the plugin project's Gradle build script a
 #### Configuring Gradle Build Script Using the IntelliJ IDEA Product Attribute
 
 Configuring a Gradle plugin project for using _baseIntelliJPlatformVersion_ requires changing some default settings in the Gradle build script.
-Changes need to be made in two places: [`intellij`](tools_gradle_intellij_plugin.md#intellij-extension) extension and [`runIde`](tools_gradle_intellij_plugin.md#runide-task) task.
+Changes need to be made in two places: [`intellij`](tools_gradle_intellij_plugin.md#intellij-extension) extension and [`runIde`](tools_gradle_intellij_plugin.md#tasks-runide) task.
 
 The Gradle plugin attributes describing the configuration of the [IntelliJ Platform used to build the plugin project](gradle_guide.md#configuring-the-gradle-intellij-plugin-for-building-intellij-platform-plugin-projects) must be explicitly set in the `intellij` task.
 The [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type) is `IU` because although the IntelliJ IDEA Community Edition defines the IntelliJ Platform, the PHP plugin is only compatible with IntelliJ IDEA Ultimate.
@@ -126,8 +126,8 @@ Any [dependencies](gradle_guide.md#plugin-dependencies) on _targetIDE_-specific 
 Use the Gradle plugin attribute [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) to declare a dependency.
 See the specific product pages in _Part VIII — Product Specific_ for the _targetIDE_ plugin or module name.
 
-The best practice is to modify the [`runIde`](tools_gradle_intellij_plugin.md#runide-task) task to use a local installation of _targetIDE_ as the [](ide_development_instance.md).
-Set the [`runIde.ideDir`](tools_gradle_intellij_plugin.md#runide-task-idedir) attribute to the (user-specific) absolute path of the _targetIDE_ application.
+The best practice is to modify the [`runIde`](tools_gradle_intellij_plugin.md#tasks-runide) task to use a local installation of _targetIDE_ as the [](ide_development_instance.md).
+Set the [`runIde.ideDir`](tools_gradle_intellij_plugin.md#tasks-runide-idedir) attribute to the (user-specific) absolute path of the _targetIDE_ application.
 The exact path format varies by operating system.
 
 This snippet is an example for configuring the Setup and Running DSLs in a Gradle build script specific to developing a plugin for _targetIDE_.

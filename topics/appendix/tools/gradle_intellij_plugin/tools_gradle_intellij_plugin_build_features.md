@@ -20,7 +20,7 @@ org.jetbrains.intellij.buildFeature.selfUpdateCheck=false
 
 ## noSearchableOptionsWarning
 
-When the [`buildSearchableOptions`](tools_gradle_intellij_plugin.md#buildsearchableoptions-task) doesn't produce any results, e.g., when the plugin doesn't implement any [Settings](settings.md), a warning is shown to suggest [disabling the task](tools_gradle_intellij_plugin_faq.md#how-to-disable-building-searchable-options) for better performance.
+When the [`buildSearchableOptions`](tools_gradle_intellij_plugin.md#tasks-buildsearchableoptions) doesn't produce any results, e.g., when the plugin doesn't implement any [Settings](settings.md), a warning is shown to suggest [disabling the task](tools_gradle_intellij_plugin_faq.md#how-to-disable-building-searchable-options) for better performance.
 
 {style="narrow"}
 Default value

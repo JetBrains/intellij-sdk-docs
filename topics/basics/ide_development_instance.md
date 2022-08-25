@@ -54,7 +54,7 @@ Available JBR variants are:
 <tab title="Gradle" group-key="gradle">
 
 By default, the Gradle plugin will fetch and use the version of the JetBrains Runtime for the Development Instance corresponding to the version of the IntelliJ Platform used for building the plugin project.
-If required, an alternative version can be specified using [`runIde.jbrVersion`](tools_gradle_intellij_plugin.md#runide-task-jbrversion) task property.
+If required, an alternative version can be specified using [`runIde.jbrVersion`](tools_gradle_intellij_plugin.md#tasks-runide-jbrversion) task property.
 
 </tab>
 
@@ -87,9 +87,9 @@ Enabled by default for target platform 2020.2 or later.
 
 Set property `intellij.autoReloadPlugins` in [`runIde`](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task to `true` for enabling it in earlier platform versions or `false` to disable it explicitly, see [](tools_gradle_intellij_plugin_faq.md#how-to-disable-automatic-reload-of-dynamic-plugins).
 
-After starting the sandbox IDE instance, run [`buildPlugin`](tools_gradle_intellij_plugin.md#buildplugin-task) task after modifications in the plugin project and switch focus back to sandbox instance to trigger reload.
+After starting the sandbox IDE instance, run [`buildPlugin`](tools_gradle_intellij_plugin.md#tasks-buildplugin) task after modifications in the plugin project and switch focus back to sandbox instance to trigger reload.
 
-> [`buildSearchableOptions`](tools_gradle_intellij_plugin.md#buildsearchableoptions-task) task must currently be [disabled explicitly](tools_gradle_intellij_plugin_faq.md#how-to-disable-building-searchable-options) to workaround _Only one instance of IDEA can be run at a time_ problem.
+> [`buildSearchableOptions`](tools_gradle_intellij_plugin.md#tasks-buildsearchableoptions) task must currently be [disabled explicitly](tools_gradle_intellij_plugin_faq.md#how-to-disable-building-searchable-options) to workaround _Only one instance of IDEA can be run at a time_ problem.
 >
 {type="warning"}
 

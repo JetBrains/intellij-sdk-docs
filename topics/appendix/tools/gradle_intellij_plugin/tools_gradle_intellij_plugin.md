@@ -1627,6 +1627,23 @@ Default value
 : `true`
 
 
+### ignoreUnacceptableWarnings
+{id="verifyplugin-task-ignoreunacceptablewarnings"}
+
+> Available since the upcoming release
+>
+{type="warning"}
+
+Specifies whether the build should fail when the verifications performed by this task emit unacceptable warnings.
+
+{style="narrow"}
+Type
+: `Boolean`
+
+Default value
+: `false`
+
+
 ### pluginDir
 {id="verifyplugin-task-plugindir"}
 

@@ -133,7 +133,7 @@ Example
 ### `name`
 {id="idea-plugin__name"}
 
-The public plugin name using Title Cases.
+The user-visible plugin display name (Title Case).
 
 **Reference:** [JetBrains Marketplace: Plugin Name](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name)
 

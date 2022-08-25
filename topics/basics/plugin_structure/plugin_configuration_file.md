@@ -113,6 +113,7 @@ Children
 
 A unique identifier of the plugin.
 It should be a fully qualified name similar to Java packages and must not collide with the ID of existing plugins.
+The ID is a technical value used to identify the plugin in the IDE and JetBrains Marketplace.
 
 **The identifier value cannot be changed between the plugin versions.**
 

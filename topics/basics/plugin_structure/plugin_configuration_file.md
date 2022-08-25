@@ -135,7 +135,7 @@ Example
 
 The public plugin name using Title Cases.
 
-See the [naming guidelines](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name) in the JetBrains Marketplace documentation.
+**Reference:** [JetBrains Marketplace: Plugin Name](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name)
 
 {style="narrow"}
 Required
@@ -151,7 +151,9 @@ Example
 {id="idea-plugin__version"}
 
 The plugin version displayed in the <control>Plugins</control> settings dialog and in the JetBrains Marketplace plugin page.
-Plugins uploaded to the JetBrains Marketplace must follow [semantic versioning](https://plugins.jetbrains.com/docs/marketplace/semver.html).
+Plugins uploaded to the JetBrains Marketplace must follow semantic versioning.
+
+**Reference:** [JetBrains Marketplace: Semantic Versioning](https://plugins.jetbrains.com/docs/marketplace/semver.html)
 
 {style="narrow"}
 Required
@@ -168,7 +170,7 @@ Example
 
 [Paid](https://plugins.jetbrains.com/build-and-market) or [Freemium](https://plugins.jetbrains.com/docs/marketplace/freemium.html) plugin descriptor.
 
-**Reference:** [How to add required parameters for paid plugins](https://plugins.jetbrains.com/docs/marketplace/add-required-parameters.html)
+**Reference:** [JetBrains Marketplace: How to add required parameters for paid plugins](https://plugins.jetbrains.com/docs/marketplace/add-required-parameters.html)
 
 {style="narrow"}
 Required
@@ -202,7 +204,7 @@ Required
 
 The plugin's range of compatible IntelliJ-based IDE versions.
 
-See how to correctly specify [version ranges](build_number_ranges.md).
+**Reference:** [](build_number_ranges.md)
 
 {style="narrow"}
 Required
@@ -236,6 +238,9 @@ Examples
 
 The vendor name or organization ID (if created) in the <control>Plugins</control> settings dialog and in the JetBrains Marketplace plugin page.
 
+**Reference:** [JetBrains Marketplace: Contacts and Resources
+](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#contacts-and-resources)
+
 {style="narrow"}
 Required
 : **yes**; ignored in [additional config file](#additional-plugin-configuration-files)
@@ -262,9 +267,6 @@ Examples
     </vendor>
     ```
 
-See also: [Contacts and resources
-](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#contacts-and-resources) in the JetBrains Marketplace documentation.
-
 ### `description`
 {id="idea-plugin__description"}
 
@@ -272,7 +274,7 @@ The plugin description displayed on the JetBrains Marketplace plugin page and in
 
 Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed and must be wrapped into `<![CDATA[` ... `]]>` section.
 
-See the [description guidelines](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description) in the JetBrains Marketplace documentation.
+**Reference:** [JetBrains Marketplace: Plugin Description](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description)
 
 {style="narrow"}
 Required
@@ -302,9 +304,7 @@ Change notes are displayed on the Marketplace plugin page and in the IDE Plugin 
 
 Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed and must be wrapped into `<![CDATA[` ... `]]>` section.
 
-See also: [Change notes](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#change-notes) in the JetBrains Marketplace documentation.
-
-TODO: how gradle plugin helps
+**Reference:** [JetBrains Marketplace: Change Notes](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#change-notes)
 
 {style="narrow"}
 Required
@@ -331,9 +331,12 @@ Example
 ### `depends`
 {id="idea-plugin__depends"}
 
-Specifies a [dependency](plugin_dependencies.md) on another plugin or a module of
-an [IntelliJ Platform-based product](plugin_compatibility.md#modules-specific-to-functionality).
+Specifies a dependency on another plugin or a module of an IntelliJ Platform-based product.
 A single [`<idea-plugin>`](#idea-plugin) element can contain multiple `<depends>` elements.
+
+**References:**
+- [](plugin_dependencies.md)
+- [](plugin_compatibility.md#modules-specific-to-functionality)
 
 {style="narrow"}
 Required
@@ -400,7 +403,9 @@ Example
 ### `applicationListeners`
 {id="idea-plugin__applicationListeners"}
 
-Defines the [application-level listeners](plugin_listeners.md#defining-application-level-listeners).
+Defines the application-level listeners.
+
+**Reference:** [](plugin_listeners.md#defining-application-level-listeners)
 
 {style="narrow"}
 Required
@@ -412,7 +417,9 @@ Children
 ### `projectListeners`
 {id="idea-plugin__projectListeners"}
 
-Defines the [project-level listeners](plugin_listeners.md#defining-project-level-listeners).
+Defines the project-level listeners.
+
+**Reference:** [](plugin_listeners.md#defining-project-level-listeners)
 
 {style="narrow"}
 Required
@@ -426,6 +433,8 @@ Children
 
 Defines a single application or project-level listener.
 A single [`<applicationListeners>`](#idea-plugin__applicationListeners) or [`<projectListeners>`](#idea-plugin__projectListeners) can contain multiple `<listener>` elements.
+
+**Reference:** [](plugin_listeners.md)
 
 {style="narrow"}
 Required
@@ -465,18 +474,22 @@ Example
 ### `actions`
 {id="idea-plugin__actions"}
 
-Plugin actions. _TODO: document the rest of elements and attributes._
+Defines the plugin actions.
 
-Additional information about configuring `<actions>` is available in the [Actions](basic_action_system.md#registering-actions) section.
+**Reference:** [](basic_action_system.md)
 
 {style="narrow"}
 Required
 : no
 
+**_TODO: document the rest of elements and attributes._**
+
 ### `extensions`
 {id="idea-plugin__extensions"}
 
-[Plugin extensions](plugin_extensions.md).
+Defines the plugin extensions.
+
+**Reference:** [](plugin_extensions.md)
 
 {style="narrow"}
 Required
@@ -503,7 +516,9 @@ Example
 ### `extensionPoints`
 {id="idea-plugin__extensionPoints"}
 
-[Extension points](plugin_extension_points.md) defined by the plugin.
+Extension points defined by the plugin.
+
+**Reference:** [](plugin_extension_points.md)
 
 {style="narrow"}
 Required
@@ -517,6 +532,8 @@ Children
 
 A single extension point entry of the [`<extensionPoints>`](#idea-plugin__extensionPoints) defined by the plugin.
 A single [`<extensionPoints>`](#idea-plugin__extensionPoints) element can contain multiple `<extensionPoint>` elements.
+
+**Reference:** [](plugin_extension_points.md#declaring-extension-points)
 
 {style="narrow"}
 Required
@@ -750,4 +767,3 @@ Required
 
 - add information about what can be patched by Gradle IntelliJ Plugin (+ links to its docs)
 - resolve content duplication, e.g., extensions point attributes are described in the [](plugin_extension_points.md#declaring-extension-points) section
-- when we backlink to related topic(s) maybe we could use same format as we have in custom language tutorial "Reference: [link]" always in same position for element and separated from textual description)

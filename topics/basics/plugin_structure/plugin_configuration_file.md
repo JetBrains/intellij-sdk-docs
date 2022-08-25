@@ -5,6 +5,8 @@
 The <path>plugin.xml</path> configuration file contains all the information about the plugin and all registered extensions, actions, listeners, etc.
 Sections below describe all the elements in detail.
 
+The example <path>plugin.xml</path> files can be found in the [IntelliJ SDK Docs Code Samples](https://github.com/JetBrains/intellij-sdk-code-samples) repository.
+
 ## Additional Plugin Configuration Files
 
 A plugin can contain additional configuration files beside the main <path>plugin.xml</path>.
@@ -747,6 +749,5 @@ Required
 ## TODO:
 
 - add information about what can be patched by Gradle IntelliJ Plugin (+ links to its docs)
-- links to code sample plugin.xml files?
 - resolve content duplication, e.g., extensions point attributes are described in the [](plugin_extension_points.md#declaring-extension-points) section
 - when we backlink to related topic(s) maybe we could use same format as we have in custom language tutorial "Reference: [link]" always in same position for element and separated from textual description)

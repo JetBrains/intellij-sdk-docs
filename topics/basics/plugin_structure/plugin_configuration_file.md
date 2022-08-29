@@ -576,26 +576,6 @@ Examples
         icon="AllIcons.Actions.GC"/>
     ```
 
-##### `abbreviation`
-{id="idea-plugin__actions__action__abbreviation"}
-
-Defines an alias for the action name which the user can use in <control>Navigate | Search Everywhere</control> popup.
-A single action can have multiple abbreviations.
-
-{style="narrow"}
-Required
-: no
-
-Attributes
-: - `value` _(**required**)_<br/>
-  The abbreviation value.
-
-Example
-:
-```xml
-<abbreviation value="abc"/>
-```
-
 ##### `add-to-group`
 {id="idea-plugin__actions__action__add-to-group"}
 
@@ -763,6 +743,26 @@ Examples
         place="EditorPopup"
         use-text-of-place="MainMenu"/>
     ```
+
+##### `abbreviation`
+{id="idea-plugin__actions__action__abbreviation"}
+
+Defines an alias for the action name which the user can use in <control>Navigate | Search Everywhere</control> popup.
+A single action can have multiple abbreviations.
+
+{style="narrow"}
+Required
+: no
+
+Attributes
+: - `value` _(**required**)_<br/>
+The abbreviation value.
+
+Example
+:
+```xml
+<abbreviation value="abc"/>
+```
 
 ##### `synonym`
 {id="idea-plugin__actions__action__synonym"}

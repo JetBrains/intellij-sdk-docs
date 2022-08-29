@@ -747,7 +747,7 @@ Examples
 ##### `abbreviation`
 {id="idea-plugin__actions__action__abbreviation"}
 
-Defines an alias for the action name which the user can use in <control>Navigate | Search Everywhere</control> popup.
+Defines an alias for the action name which the user can use in <menupath>Help | Find Action...</menupath> or <menupath>Navigate | Search Everywhere</menupath> popups.
 A single action can have multiple abbreviations.
 
 {style="narrow"}

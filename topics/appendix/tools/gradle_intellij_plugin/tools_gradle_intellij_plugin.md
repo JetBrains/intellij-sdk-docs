@@ -763,7 +763,7 @@ Default value
 ### pluginDescription
 {id="patchpluginxml-task-plugindescription"}
 
-The description of the plugin used in the `<description>` tag.
+The description of the plugin used in the [`<description>`](plugin_configuration_file.md#idea-plugin__description) tag.
 
 {style="narrow"}
 Type
@@ -776,7 +776,7 @@ Default value
 ### sinceBuild
 {id="patchpluginxml-task-sincebuild"}
 
-The lower bound of the version range to be patched used in the `since-build` attribute of the `<idea-version>` tag.
+The lower bound of the version range to be patched used in the `since-build` attribute of the [`<idea-version>`](plugin_configuration_file.md#idea-plugin__idea-version) tag.
 
 {style="narrow"}
 Type
@@ -789,7 +789,7 @@ Default value
 ### untilBuild
 {id="patchpluginxml-task-untilbuild"}
 
-The upper bound of the version range to be patched used in the `until-build` attribute of the `<idea-version>` tag.
+The upper bound of the version range to be patched used in the `until-build` attribute of the [`<idea-version>`](plugin_configuration_file.md#idea-plugin__idea-version) tag.
 
 {style="narrow"}
 Type
@@ -802,7 +802,7 @@ Default value
 ### version
 {id="patchpluginxml-task-version"}
 
-The version of the plugin used in the `<version>` tag.
+The version of the plugin used in the [`<version>`](plugin_configuration_file.md#idea-plugin__version) tag.
 
 {style="narrow"}
 Type
@@ -815,7 +815,7 @@ Default value
 ### changeNotes
 {id="patchpluginxml-task-changenotes"}
 
-The change notes of the plugin used in the `<change-notes>` tag.
+The change notes of the plugin used in the [`<change-notes>`](plugin_configuration_file.md#idea-plugin__change-notes) tag.
 
 {style="narrow"}
 Type
@@ -828,7 +828,7 @@ Default value
 ### pluginId
 {id="patchpluginxml-task-pluginid"}
 
-The ID of the plugin used in the `<id>` tag.
+The ID of the plugin used in the [`<id>`](plugin_configuration_file.md#idea-plugin__id) tag.
 
 {style="narrow"}
 Type

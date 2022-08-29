@@ -37,6 +37,24 @@ See also [](marketing.md) about widgets and badges.
   - [`<depends>`](#idea-plugin__depends)
   - [`<incompatible-with>`](#idea-plugin__incompatible-with)
   - [`<actions>`](#idea-plugin__actions)
+    - [`<action>`](#idea-plugin__actions__action)
+      - [`<add-to-group>`](#idea-plugin__actions__action__add-to-group)
+      - [`<keyboard-shortcut>`](#idea-plugin__actions__action__keyboard-shortcut)
+      - [`<mouse-shortcut>`](#idea-plugin__actions__action__mouse-shortcut)
+      - [`<override-text>`](#idea-plugin__actions__action__override-text)
+      - [`<abbreviation>`](#idea-plugin__actions__action__abbreviation)
+      - [`<synonym>`](#idea-plugin__actions__action__synonym)
+    - [`<group>`](#idea-plugin__actions__group)
+      - [`<action>`](#idea-plugin__actions__action)
+        - [`<add-to-group>`](#idea-plugin__actions__action__add-to-group)
+        - [`<keyboard-shortcut>`](#idea-plugin__actions__action__keyboard-shortcut)
+        - [`<mouse-shortcut>`](#idea-plugin__actions__action__mouse-shortcut)
+        - [`<override-text>`](#idea-plugin__actions__action__override-text)
+        - [`<abbreviation>`](#idea-plugin__actions__action__abbreviation)
+        - [`<synonym>`](#idea-plugin__actions__action__synonym)
+      - [`<add-to-group>`](#idea-plugin__actions__action__add-to-group)
+      - [`<reference>`](#idea-plugin__actions__group__reference)
+      - [`<separator>`](#idea-plugin__actions__group__separator)
   - [`<extensionPoints>`](#idea-plugin__extensionPoints)
     - [`<extensionPoint>`](#idea-plugin__extensionPoints__extensionPoint)
       - [`<with>`](#idea-plugin__extensionPoints__extensionPoint__with)
@@ -482,7 +500,322 @@ Defines the plugin actions.
 Required
 : no
 
-**_TODO: document the rest of elements and attributes._**
+Attributes
+: - `resource-bundle` _(optional; available in 2020.1+)_<br/>
+  Defines the dedicated actions resource bundle. See [](basic_action_system.md#localizing-actions-and-groups) for more details.
+
+Example
+:
+  ```xml
+  <actions resource-bundle="messages.ActionsBundle">
+    <!--
+    Actions/Groups defined here will use keys
+    from the ActionsBundle.properties bundle.
+    -->
+  </actions>
+  ```
+
+#### `action`
+{id="idea-plugin__actions__action"}
+
+A single action entry of the [`<actions>`](#idea-plugin__actions) implemented by the plugin.
+A single [`<actions>`](#idea-plugin__actions) element can contain multiple `<action>` elements.
+
+**Reference:** [](basic_action_system.md#registering-actions-in-pluginxml)
+
+{style="narrow"}
+Required
+: no
+
+Attributes
+:
+- `id` _(**required**)_<br/>
+  A unique action identifier.
+  The action identifier must be unique between different plugins. Thus it is recommended to prepend it with the value of the plugin [`<id>`](#idea-plugin__id).
+- `class` _(**required**)_<br/>
+  The fully qualified name of the action implementation class.
+- `text` _(**required** if action is not [localized](basic_action_system.md#localizing-actions-and-groups))_<br/>
+  The default long-version text to be displayed for the action (tooltip for toolbar button or text for menu item).
+- `use-shortcut-of` _(optional)_<br/>
+  The ID of the action whose keyboard shortcut this action will use.
+- `description` _(optional)_<br/>
+  The text which is displayed in the status bar when the action is focused.
+- `icon` _(optional)_<br/>
+  The path of the icon which is displayed on the toolbar button or next to the menu item.
+- `internal` _(optional)_<br/>
+  Boolean flag defining whether the action is available only in the [Internal Mode](enabling_internal.md).<br/>
+  Default value: `false`.
+
+Children
+:
+- [`<abbreviation>`](#idea-plugin__actions__action__abbreviation)
+- [`<add-to-group>`](#idea-plugin__actions__action__add-to-group)
+- [`<keyboard-shortcut>`](#idea-plugin__actions__action__keyboard-shortcut)
+- [`<mouse-shortcut>`](#idea-plugin__actions__action__mouse-shortcut)
+- [`<override-text>`](#idea-plugin__actions__action__override-text)
+- [`<synonym>`](#idea-plugin__actions__action__synonym)
+
+Examples
+:
+- Action declaring explicit `text`:
+    ```xml
+    <action
+        id="VssIntegration.GarbageCollection"
+        class="com.example.impl.CollectGarbage"
+        text="Garbage Collector: Collect _Garbage"
+        description="Run garbage collector"
+        icon="AllIcons.Actions.GC">
+      <!-- action children elements -->
+    </action>
+    ```
+- Action without the `text` attribute must use the texts from the resource bundle declared with the [`<resource-bundle>`](#idea-plugin__resource-bundle) element, or the `resource-bundle` attribute of the [`<actions>`](#idea-plugin__actions) element:
+    ```xml
+    <action
+        id="VssIntegration.GarbageCollection"
+        class="com.example.impl.CollectGarbage"
+        icon="AllIcons.Actions.GC"/>
+    ```
+
+##### `abbreviation`
+{id="idea-plugin__actions__action__abbreviation"}
+
+Defines an alias for the action name which the user can use in <control>Navigate | Search Everywhere</control> popup.
+A single action can have multiple abbreviations.
+
+{style="narrow"}
+Required
+: no
+
+Attributes
+: - `value` _(**required**)_<br/>
+  The abbreviation value.
+
+Example
+:
+```xml
+<abbreviation value="abc"/>
+```
+
+##### `add-to-group`
+{id="idea-plugin__actions__action__add-to-group"}
+
+Specifies that the action should be added to an existing group.
+A single action can be added to multiple groups.
+
+{style="narrow"}
+Required
+: no
+
+Attributes
+:
+- `group-id` _(**required**)_<br/>
+  Specifies the ID of the group to which the action is added.
+  The group must be an implementation of the [`DefaultActionGroup`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java) class.
+- `anchor` _(**required**)_<br/>
+  Specifies the position of the action in the relative to other actions.
+  Allowed values:
+    - `first` - the action is placed as the first in the group
+    - `last` - the action is placed as the last in the group
+    - `before` - the action is placed before the action specified by the `relative-to-action` attribute
+    - `after` - the action is placed before the action specified by the `relative-to-action` attribute
+- `relative-to-action` _(**required** if `anchor` is `before`/`after`)_<br/>
+  The action before or after which the current action is inserted.
+
+Example
+:
+  ```xml
+  <add-to-group
+      group-id="ToolsMenu"
+      anchor="after"
+      relative-to-action="GenerateJavadoc"/>
+  ```
+
+##### `keyboard-shortcut`
+{id="idea-plugin__actions__action__keyboard-shortcut"}
+
+Specifies the keyboard shortcut for the action.
+A single action can have several keyboard shortcuts.
+
+{style="narrow"}
+Required
+: no
+
+Attributes
+:
+- `keymap` _(**required**)_<br/>
+  Specifies the keymap for which the action shortcut is active.
+  IDs of the standard keymaps are defined as constants in the [KeymapManager](%gh-ic%/platform/platform-api/src/com/intellij/openapi/keymap/KeymapManager.java) class.
+- `first-keystroke` _(**required**)_<br/>
+  Specifies the first keystroke of the action shortcut.
+  The keystrokes are specified according to the regular Swing rules.
+- `second-keystroke` _(optional)_<br/>
+  Specifies the second keystroke of the action shortcut.
+- `remove` _(optional)_<br/>
+  Removes a shortcut from the specified action.
+- `replace-all` _(optional)_<br/>
+  Removes all keyboard and mouse shortcuts from the specified action before adding the specified shortcut.
+
+Examples
+:
+- Add the first and second keystrokes to all keymaps:
+    ```xml
+    <keyboard-shortcut
+        keymap="$default"
+        first-keystroke="control alt G"
+        second-keystroke="C"/>
+    ```
+- Remove the given shortcut from the _Mac OS X_ keymap:
+    ```xml
+    <keyboard-shortcut
+        keymap="Mac OS X"
+        first-keystroke="control alt G"
+        second-keystroke="C"
+        remove="true"/>
+    ```
+- Remove all existing keyboard and mouse shortcuts and register one for the _Mac OS X 10.5+_ keymap only:
+    ```xml
+    <keyboard-shortcut
+        keymap="Mac OS X 10.5+"
+        first-keystroke="control alt G"
+        second-keystroke="C"
+        replace-all="true"/>
+    ```
+
+##### `mouse-shortcut`
+{id="idea-plugin__actions__action__mouse-shortcut"}
+
+Specifies the mouse shortcut for the action.
+A single action can have several mouse shortcuts.
+
+{style="narrow"}
+Required
+: no
+
+Attributes
+:
+- `keymap` _(**required**)_<br/>
+  Specifies the keymap for which the action shortcut is active.
+  IDs of the standard keymaps are defined as constants in the [KeymapManager](%gh-ic%/platform/platform-api/src/com/intellij/openapi/keymap/KeymapManager.java) class.
+- `keystroke` _(**required**)_<br/>
+  Specifies the clicks and modifiers for the action.
+  It is defined as a sequence of words separated by spaces:
+    - modifier keys: `shift`, `control`, `meta`, `alt`, `altGraph`
+    - mouse buttons: `button1`, `button2`, `button3`
+    - button double-click: `doubleClick`
+- `remove` _(optional)_<br/>
+  Removes a shortcut from the specified action.
+- `replace-all` _(optional)_<br/>
+  Removes all keyboard and mouse shortcuts from the specified action before adding the specified shortcut.
+
+Examples
+:
+- Add the shortcut to all keymaps:
+    ```xml
+    <mouse-shortcut
+        keymap="$default"
+        keystroke="control button3 doubleClick"/>
+    ```
+- Remove the given shortcut from the _Mac OS X_ keymap:
+    ```xml
+    <mouse-shortcut
+        keymap="Mac OS X"
+        keystroke="control button3 doubleClick"
+        remove="true"/>
+    ```
+- Remove all existing keyboard and mouse shortcuts and register one for the _Mac OS X 10.5+_ keymap only:
+    ```xml
+    <mouse-shortcut
+        keymap="Mac OS X 10.5+"
+        keystroke="control button3 doubleClick"
+        replace-all="true"/>
+    ```
+
+##### `override-text`
+{id="idea-plugin__actions__action__override-text"}
+
+Defines an alternate version of the text for the menu action.
+
+{style="narrow"}
+Required
+: no
+
+Attributes
+:
+- `place` _(**required**)_<br/>
+  Declares where the alternate text should be used.
+  In this example, any time the action is displayed in the IDE main menu (and submenus), the override-text version should be used.
+- `text` _(`text` or `use-text-of-place` is **required**)_<br/>
+  Defines the text to be displayed for the action.
+- `use-text-of-place` _(`text` or `use-text-of-place` is **required**)_<br/>
+  Defines a location whose text should be displayed for this action.
+
+Examples
+:
+- Explicitly overridden text:
+    ```xml
+    <override-text
+        place="MainMenu"
+        text="Collect _Garbage"/>
+    ```
+- Overridden text reused from the `MainMenu` place:
+    ```xml
+    <override-text
+        place="EditorPopup"
+        use-text-of-place="MainMenu"/>
+    ```
+
+##### `synonym`
+{id="idea-plugin__actions__action__synonym"}
+
+Defines an alternative name for searching the action by name.
+A single action can have multiple synonyms.
+
+{style="narrow"}
+Required
+: no
+
+Attributes
+: - `text` _(**required**)_<br/>
+  The synonym text.
+
+Example
+:
+```xml
+<synonym text="GC"/>
+```
+
+#### `group`
+{id="idea-plugin__actions__group"}
+
+Defines an action group.
+The `<action>`, `<group>` and `<separator>` elements defined within it are automatically included in the group.
+
+**Reference:** [](plugin_extensions.md)
+
+{style="narrow"}
+Required
+: no
+
+TODO: group children
+
+##### `reference`
+{id="idea-plugin__actions__group__reference"}
+
+TODO
+
+{style="narrow"}
+Required
+: no
+
+
+##### `separator`
+{id="idea-plugin__actions__group__separator"}
+
+TODO
+
+{style="narrow"}
+Required
+: no
 
 ### `extensions`
 {id="idea-plugin__extensions"}
@@ -772,4 +1105,5 @@ Required
 
 
 - TODO: resolve content duplication, e.g., extensions point attributes are described in the [](plugin_extension_points.md#declaring-extension-points) section
-- TODO: link back from the Gradle IntelliJ Plugin doc (add links to elements under patching task sections)
+- TODO(actions): review and specify versions for elements and attributes based on http://localhost:63342/intellij-sdk-docs/preview/basic_action_system.html
+- TODO(actions): check for missing attributes in the parsing code

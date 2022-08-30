@@ -928,7 +928,7 @@ Attributes
 :
 - `text` _(optional)_<br/>
   Text displayed on the separator.
-  <br/>_**TODO**_: it is displayed only in specific contexts, like grouping files popup in the commit window.
+  Separator text is displayed only in specific contexts such as popup menus, toolbars, etc.
 - `key` _(optional)_<br/>
   The message key for the separator text.
   The message bundle for use should be registered via the `resource-bundle` attribute of the [`<actions>`](#idea-plugin__actions) element.

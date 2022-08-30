@@ -52,9 +52,15 @@ See also [](marketing.md) about widgets and badges.
         - [`<override-text>`](#idea-plugin__actions__action__override-text)
         - [`<abbreviation>`](#idea-plugin__actions__action__abbreviation)
         - [`<synonym>`](#idea-plugin__actions__action__synonym)
+      - [`<group>`](#idea-plugin__actions__group) - groups definitions can be nested
       - [`<add-to-group>`](#idea-plugin__actions__action__add-to-group)
-      - [`<reference>`](#idea-plugin__actions__group__reference)
-      - [`<separator>`](#idea-plugin__actions__group__separator)
+      - [`<override-text>`](#idea-plugin__actions__action__override-text)
+      - [`<reference>`](#idea-plugin__actions__reference)
+      - [`<separator>`](#idea-plugin__actions__separator)
+    - [`<reference>`](#idea-plugin__actions__reference)
+      - [`<add-to-group>`](#idea-plugin__actions__action__add-to-group)
+    - [`<separator>`](#idea-plugin__actions__separator)
+      - [`<add-to-group>`](#idea-plugin__actions__action__add-to-group)
   - [`<extensionPoints>`](#idea-plugin__extensionPoints)
     - [`<extensionPoint>`](#idea-plugin__extensionPoints__extensionPoint)
       - [`<with>`](#idea-plugin__extensionPoints__extensionPoint__with)
@@ -502,7 +508,15 @@ Required
 
 Attributes
 : - `resource-bundle` _(optional; available in 2020.1+)_<br/>
-  Defines the dedicated actions resource bundle. See [](basic_action_system.md#localizing-actions-and-groups) for more details.
+  Defines the dedicated actions resource bundle.
+  See [](basic_action_system.md#localizing-actions-and-groups) for more details.
+
+Children
+:
+- [`<action>`](#idea-plugin__actions__action)
+- [`<group>`](#idea-plugin__actions__group)
+- [`<reference>`](#idea-plugin__actions__reference)
+- [`<separator>`](#idea-plugin__actions__separator)
 
 Example
 :
@@ -531,17 +545,19 @@ Attributes
 :
 - `id` _(**required**)_<br/>
   A unique action identifier.
-  The action identifier must be unique between different plugins. Thus it is recommended to prepend it with the value of the plugin [`<id>`](#idea-plugin__id).
+  The action identifier must be unique between different plugins.
+  Thus, it is recommended to prepend it with the value of the plugin [`<id>`](#idea-plugin__id).
 - `class` _(**required**)_<br/>
   The fully qualified name of the action implementation class.
-- `text` _(**required** if action is not [localized](basic_action_system.md#localizing-actions-and-groups))_<br/>
+- `text` _(**required** if the action is not [localized](basic_action_system.md#localizing-actions-and-groups))_<br/>
   The default long-version text to be displayed for the action (tooltip for toolbar button or text for menu item).
-- `use-shortcut-of` _(optional)_<br/>
-  The ID of the action whose keyboard shortcut this action will use.
 - `description` _(optional)_<br/>
   The text which is displayed in the status bar when the action is focused.
 - `icon` _(optional)_<br/>
-  The path of the icon which is displayed on the toolbar button or next to the menu item.
+  The icon that is displayed on the toolbar button or next to the action menu item.
+  See [](work_with_icons_and_images.md) for more information about defining and using icons.
+- `use-shortcut-of` _(optional)_<br/>
+  The ID of the action whose keyboard shortcut this action will use.
 - `internal` _(optional)_<br/>
   Boolean flag defining whether the action is available only in the [Internal Mode](enabling_internal.md).<br/>
   Default value: `false`.
@@ -560,10 +576,10 @@ Examples
 - Action declaring explicit `text`:
     ```xml
     <action
-        id="VssIntegration.GarbageCollection"
-        class="com.example.impl.CollectGarbage"
-        text="Garbage Collector: Collect _Garbage"
-        description="Run garbage collector"
+        id="com.example.myframeworksupport.MyAction"
+        class="com.example.impl.MyAction"
+        text="Do Action"
+        description="Do something with the code"
         icon="AllIcons.Actions.GC">
       <!-- action children elements -->
     </action>
@@ -571,8 +587,8 @@ Examples
 - Action without the `text` attribute must use the texts from the resource bundle declared with the [`<resource-bundle>`](#idea-plugin__resource-bundle) element, or the `resource-bundle` attribute of the [`<actions>`](#idea-plugin__actions) element:
     ```xml
     <action
-        id="VssIntegration.GarbageCollection"
-        class="com.example.impl.CollectGarbage"
+        id="com.example.myframeworksupport.MyAction"
+        class="com.example.impl.MyAction"
         icon="AllIcons.Actions.GC"/>
     ```
 
@@ -591,11 +607,11 @@ Attributes
 - `group-id` _(**required**)_<br/>
   Specifies the ID of the group to which the action is added.
   The group must be an implementation of the [`DefaultActionGroup`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java) class.
-- `anchor` _(**required**)_<br/>
+- `anchor` _(optional)_<br/>
   Specifies the position of the action in the relative to other actions.
   Allowed values:
     - `first` - the action is placed as the first in the group
-    - `last` - the action is placed as the last in the group
+    - `last` _(default)_ - the action is placed as the last in the group
     - `before` - the action is placed before the action specified by the `relative-to-action` attribute
     - `after` - the action is placed before the action specified by the `relative-to-action` attribute
 - `relative-to-action` _(**required** if `anchor` is `before`/`after`)_<br/>
@@ -713,7 +729,7 @@ Examples
 ##### `override-text`
 {id="idea-plugin__actions__action__override-text"}
 
-Defines an alternate version of the text for the menu action.
+Defines an alternate version of the text for the menu action or group.
 
 {style="narrow"}
 Required
@@ -723,7 +739,6 @@ Attributes
 :
 - `place` _(**required**)_<br/>
   Declares where the alternate text should be used.
-  In this example, any time the action is displayed in the IDE main menu (and submenus), the override-text version should be used.
 - `text` _(`text` or `use-text-of-place` is **required**)_<br/>
   Defines the text to be displayed for the action.
 - `use-text-of-place` _(`text` or `use-text-of-place` is **required**)_<br/>
@@ -788,34 +803,168 @@ Example
 {id="idea-plugin__actions__group"}
 
 Defines an action group.
-The `<action>`, `<group>` and `<separator>` elements defined within it are automatically included in the group.
+The `<action>`, `<group>` and `<separator>` elements defined inside the group are automatically included in it.
 
-**Reference:** [](plugin_extensions.md)
-
-{style="narrow"}
-Required
-: no
-
-TODO: group children
-
-##### `reference`
-{id="idea-plugin__actions__group__reference"}
-
-TODO
+**Reference:** [](basic_action_system.md#grouping-actions)
 
 {style="narrow"}
 Required
 : no
 
+Attributes
+:
+- `id` _(**required**)_<br/>
+  A unique group identifier.
+  The group identifier must be unique between different plugins.
+  Thus, it is recommended to prepend it with the value of the plugin [`<id>`](#idea-plugin__id).
+- `class` _(optional)_<br/>
+  The fully qualified name of the group implementation class.
+  If not specified, [`DefaultActionGroup`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java) is used.
+- `text` _(**required** if the `popup` is `true` and group is not [localized](basic_action_system.md#localizing-actions-and-groups))_<br/>
+  The default long-version text to be displayed for the group (text for the menu item showing the submenu).
+- `description` _(optional)_<br/>
+  The text which is displayed in the status bar when the group is focused.
+- `icon` _(optional)_<br/>
+  The icon that is displayed next to the group menu item.
+  See [](work_with_icons_and_images.md) for more information about defining and using icons.
+- `popup` _(optional)_<br/>
+  Boolean flag defining whether the group items are presented in the submenu popup.
+    - `true` - group actions are placed in a submenu
+    - `false` _(default)_ - actions are displayed as a section of the same menu delimited by separators
+- `compact` _(optional)_<br/>
+  Boolean flag defining whether disabled actions within this group are hidden.
+  If the value is:
+    - `true` - disabled actions are hidden
+    - `false` _(default)_ - disabled actions are visible
+- `use-shortcut-of` _(optional)_<br/>
+  The ID of the action whose keyboard shortcut this group will use.
+- `searchable` _(optional)_<br/>
+  Boolean flag defining whether the group is displayed in <menupath>Help&nbsp;|&nbsp;Find Action...</menupath> or <menupath>Navigate | Search Everywhere</menupath> popups.<br/>
+  Default value: `true`.
+- `internal` _(optional)_<br/>
+  Boolean flag defining whether the group is available only in the [Internal Mode](enabling_internal.md).<br/>
+  Default value: `false`.
 
-##### `separator`
-{id="idea-plugin__actions__group__separator"}
+Children
+:
+- [`<action>`](#idea-plugin__actions__action)
+- [`<add-to-group>`](#idea-plugin__actions__action__add-to-group)
+- [`<group>`](#idea-plugin__actions__group)
+- [`<override-text>`](#idea-plugin__actions__action__override-text)
+- [`<reference>`](#idea-plugin__actions__reference)
+- [`<separator>`](#idea-plugin__actions__separator)
 
-TODO
+Examples
+:
+- Group declaring explicit `text`:
+    ```xml
+    <group
+        id="com.example.myframeworksupport.MyGroup"
+        popup="true"
+        text="My Tools">
+      <!-- group children elements -->
+    </group>
+    ```
+- A popup group without the `text` attribute must use the texts from the resource bundle declared with the [`<resource-bundle>`](#idea-plugin__resource-bundle) element, or the `resource-bundle` attribute of the [`<actions>`](#idea-plugin__actions) element:
+    ```xml
+    <group
+        id="com.example.myframeworksupport.MyGroup"
+        popup="true"/>
+    ```
+- A group with custom implementation and icon:
+    ```xml
+    <group
+        id="com.example.myframeworksupport.MyGroup"
+        class="com.example.impl.MyGroup"
+        icon="AllIcons.Actions.GC"/>
+    ```
+
+#### `reference`
+{id="idea-plugin__actions__reference"}
+
+Allows adding an existing action to the group.
+The element can be used directly under the [`<actions>`](#idea-plugin__actions) element, or in the [`<group>`](#idea-plugin__actions__group) element.
 
 {style="narrow"}
 Required
 : no
+
+Attributes
+:
+- `ref` _(**required**)_<br/>
+  The ID of the action to add to a group.
+
+Children
+: - [`<add-to-group>`](#idea-plugin__actions__action__add-to-group)
+
+Examples
+:
+- An action reference in a group:
+    ```xml
+    <group ...>
+      <reference ref="EditorCopy"/>
+    </group>
+    ```
+- An action reference registered directly in the [`<actions>`](#idea-plugin__actions) element:
+    ```xml
+    <actions>
+      <reference ref="com.example.MyAction">
+        <add-to-group group-id="ToolsMenu"/>
+      </reference>
+    </group>
+    ```
+
+#### `separator`
+{id="idea-plugin__actions__separator"}
+
+Defines a separator between actions in a group.
+The element can be used directly under the [`<actions>`](#idea-plugin__actions) element with the child [`<add-to-group>`](#idea-plugin__actions__action__add-to-group) element defining the target group, or in the [`<group>`](#idea-plugin__actions__group) element.
+
+{style="narrow"}
+Required
+: no
+
+Attributes
+:
+- `text` _(optional)_<br/>
+  Text displayed on the separator.
+  <br/>_**TODO**_: it is displayed only in specific contexts, like grouping files popup in the commit window.
+- `key` _(optional)_<br/>
+  The message key for the separator text.
+  The message bundle for use should be registered via the `resource-bundle` attribute of the [`<actions>`](#idea-plugin__actions) element.
+  The attribute is ignored if the `text` attribute is specified.
+
+Children
+: - [`<add-to-group>`](#idea-plugin__actions__action__add-to-group)
+
+Examples
+:
+- A separator dividing two actions in a group:
+    ```xml
+    <group ...>
+      <action .../>
+      <separator/>
+      <action .../>
+    </group>
+    ```
+- A separator registered directly in the [`<actions>`](#idea-plugin__actions) element:
+    ```xml
+    <actions>
+      <separator>
+        <add-to-group
+          group-id="com.example.MyGroup"
+          anchor="first"/>
+      </separator>
+    </group>
+    ```
+- A separator with a defined text:
+    ```xml
+    <separator text="Group By"/>
+    ```
+- A separator with a text defined by message key:
+    ```xml
+    <separator key="message.key"/>
+    ```
 
 ### `extensions`
 {id="idea-plugin__extensions"}
@@ -1104,6 +1253,6 @@ Required
 : no
 
 
-- TODO: resolve content duplication, e.g., extensions point attributes are described in the [](plugin_extension_points.md#declaring-extension-points) section
-- TODO(actions): review and specify versions for elements and attributes based on http://localhost:63342/intellij-sdk-docs/preview/basic_action_system.html
-- TODO(actions): check for missing attributes in the parsing code
+- _**TODO**_: resolve content duplication, e.g., extensions point attributes are described in the [](plugin_extension_points.md#declaring-extension-points) section
+- _**TODO**_(actions): review and specify versions for elements and attributes based on http://localhost:63342/intellij-sdk-docs/preview/basic_action_system.html
+- _**TODO**_: add information about including files? e.g. for organization or it should be included in multiple specific additional configuration files

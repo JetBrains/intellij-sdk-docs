@@ -5,7 +5,6 @@
     <variables>
         <web-root>https://plugins.jetbrains.com/docs</web-root>
         <product-web-url>https://plugins.jetbrains.com/docs/intellij/</product-web-url>
-        <web-community-path>Developer Community:https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979</web-community-path>
         <search-scope/>
         <fallback-url/>
         <download-page>https://jb.gg/ipe</download-page>
@@ -13,10 +12,7 @@
         <config-showDownloadButton>true</config-showDownloadButton>
         <generate-sitemap-url-prefix>https://plugins.jetbrains.com/docs/intellij/</generate-sitemap-url-prefix>
         <config-feedbackRequireEmail>false</config-feedbackRequireEmail>
-        <config-showDownloadButton>true</config-showDownloadButton>
-        <config-disqus-show>false</config-disqus-show>
         <config-feedback-url>https://forms-service.jetbrains.com/feedback</config-feedback-url>
-        <config-feedback-enabled>true</config-feedback-enabled>
         <config-feedback-widget>true</config-feedback-widget>
         <config-webmaster>https://plugins.jetbrains.com/docs/intellij/getting-help.html</config-webmaster>
         <config-feedback-support>https://www.jetbrains.com/support/</config-feedback-support>

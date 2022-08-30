@@ -507,7 +507,7 @@ Required
 : no
 
 Attributes
-: - `resource-bundle` _(optional; available in 2020.1+)_<br/>
+: - `resource-bundle` _(optional; supported in 2020.1+)_<br/>
   Defines the dedicated actions resource bundle.
   See [](basic_action_system.md#localizing-actions-and-groups) for more details.
 
@@ -732,6 +732,11 @@ Examples
 Defines an alternate version of the text for the menu action or group.
 
 {style="narrow"}
+Supported
+:
+2020.1+ for actions<br/>
+2020.3+ for groups
+
 Required
 : no
 
@@ -786,6 +791,9 @@ Defines an alternative name for searching the action by name.
 A single action can have multiple synonyms.
 
 {style="narrow"}
+Supported
+: 2020.3+
+
 Required
 : no
 
@@ -838,7 +846,7 @@ Attributes
     - `false` _(default)_ - disabled actions are visible
 - `use-shortcut-of` _(optional)_<br/>
   The ID of the action whose keyboard shortcut this group will use.
-- `searchable` _(optional)_<br/>
+- `searchable` _(optional; supported in 2020.3+)_<br/>
   Boolean flag defining whether the group is displayed in <menupath>Help&nbsp;|&nbsp;Find Action...</menupath> or <menupath>Navigate | Search Everywhere</menupath> popups.<br/>
   Default value: `true`.
 - `internal` _(optional)_<br/>
@@ -1254,5 +1262,3 @@ Required
 
 
 - _**TODO**_: resolve content duplication, e.g., extensions point attributes are described in the [](plugin_extension_points.md#declaring-extension-points) section
-- _**TODO**_(actions): review and specify versions for elements and attributes based on http://localhost:63342/intellij-sdk-docs/preview/basic_action_system.html
-- _**TODO**_: add information about including files? e.g. for organization or it should be included in multiple specific additional configuration files

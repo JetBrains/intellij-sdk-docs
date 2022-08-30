@@ -1259,6 +1259,3 @@ If present, the component is instantiated also for the default project. It takes
 {style="narrow"}
 Required
 : no
-
-
-- _**TODO**_: resolve content duplication, e.g., extensions point attributes are described in the [](plugin_extension_points.md#declaring-extension-points) section

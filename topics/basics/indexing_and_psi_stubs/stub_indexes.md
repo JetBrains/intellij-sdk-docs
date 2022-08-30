@@ -25,7 +25,9 @@ You usually don't need to have stubs for things like statements or local variabl
 The following steps need to be performed only once for each language that supports stubs:
 
 * Change the file element type for your language (the element type that you return from `ParserDefinition.getFileNodeType()`) to a class that extends [`IStubFileElementType`](%gh-ic%/platform/core-impl/src/com/intellij/psi/tree/IStubFileElementType.java).
-* In your <path>plugin.xml</path>, define the `com.intellij.stubElementTypeHolder` extension and specify the interface which contains the `IElementType` constants used by your language's parser as well as `externalIdPrefix` if possible ([example](%gh-ic%/plugins/properties/src/META-INF/plugin.xml)).
+* In your <path>plugin.xml</path>, define the `com.intellij.stubElementTypeHolder` extension and specify the interface which contains the `IElementType` constants used by your language's parser and common `externalIdPrefix` (see Javadoc for requirements).
+
+**Example**: [`JavaStubElementTypes`](%gh-ic%/java/java-psi-impl/src/com/intellij/psi/impl/java/stubs/JavaStubElementTypes.java) registered in [`JavaPsiPlugin.xml`](%gh-ic%/java/java-psi-impl/src/META-INF/JavaPsiPlugin.xml)
 
 For each element type that you want to store in the stub tree, you need to perform the following steps:
 

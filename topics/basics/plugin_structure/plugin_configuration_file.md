@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-The <path>plugin.xml</path> configuration file contains all the information about the plugin and all registered extensions, actions, listeners, etc.
+The <path>plugin.xml</path> configuration file contains all the information about the plugin, which is displayed in the [plugins settings dialog](https://www.jetbrains.com/help/idea/managing-plugins.html), and all registered extensions, actions, listeners, etc.
 Sections below describe all the elements in detail.
 
 The example <path>plugin.xml</path> files can be found in the [IntelliJ SDK Docs Code Samples](https://github.com/JetBrains/intellij-sdk-code-samples) repository.
@@ -10,7 +10,7 @@ The example <path>plugin.xml</path> files can be found in the [IntelliJ SDK Docs
 ## Additional Plugin Configuration Files
 
 A plugin can contain additional configuration files beside the main <path>plugin.xml</path>.
-They have the same format, and they are included with the `config-file` attribute of [`<depends>`](#idea-plugin__depends) elements.
+They have the same format, and they are included with the `config-file` attribute of [`<depends>`](#idea-plugin__depends) elements specifying [plugin dependencies](plugin_dependencies.md).
 However, some elements and attributes required in <path>plugin.xml</path> are ignored in additional configuration files.
 If the requirements differ, the documentation below will state it explicitly.
 One use case for additional configuration files is when a plugin provides optional features that are only available in some IDEs and require [certain modules](plugin_compatibility.md#modules-specific-to-functionality).
@@ -52,7 +52,7 @@ See also [](marketing.md) about widgets and badges.
         - [`<override-text>`](#idea-plugin__actions__action__override-text)
         - [`<abbreviation>`](#idea-plugin__actions__action__abbreviation)
         - [`<synonym>`](#idea-plugin__actions__action__synonym)
-      - [`<group>`](#idea-plugin__actions__group) - groups definitions can be nested
+      - [`<group>`](#idea-plugin__actions__group)
       - [`<add-to-group>`](#idea-plugin__actions__action__add-to-group)
       - [`<override-text>`](#idea-plugin__actions__action__override-text)
       - [`<reference>`](#idea-plugin__actions__reference)
@@ -75,7 +75,8 @@ See also [](marketing.md) about widgets and badges.
 
 Deprecated elements are omitted in the list above.
 
-> If an element or an attribute is not documented on this page, please consider them as configuration items intended to be used only by JetBrains teams internally. They should never be used by 3rd-party plugins.
+> If an element or an attribute is not documented on this page, please consider them as configuration items intended to be used by JetBrains only.
+> They should never be used by 3rd-party plugins.
 >
 {type="note"}
 
@@ -221,17 +222,15 @@ Attributes
 :
 - `since-build` _(**required**)_<br/>
   The lowest IDE version compatible with the plugin.<br/>
-  Examples: `213`, `213.56`, `IU-213.94.11`
 - `until-build` _(optional)_<br/>
   The highest IDE version compatible with the plugin.
   Undefined value declares compatibility with all the IDEs since the version specified by the `since-build` (also with the future builds what may cause incompatibility errors).<br/>
-  Examples: `221.*`, `221.56.*`, `IU-221.*`
 
 Examples
 :
-- Compatibility with a specific build number (2021.3.3) and higher versions:
+- Compatibility with a specific build number (2021.3.3) and higher versions of IntelliJ IDEA Ultimate:
     ```xml
-    <idea-version since-build="213.7172.25"/>
+    <idea-version since-build="IU-213.7172.25"/>
     ```
 - Compatibility with versions from any of `213` branches to any of `221` branches:
     ```xml
@@ -276,7 +275,7 @@ Examples
 ### `description`
 {id="idea-plugin__description"}
 
-The plugin description displayed on the JetBrains Marketplace plugin page and in the IDE Plugin Manager.
+The plugin description displayed on the JetBrains Marketplace plugin page and in the <control>Plugins</control> settings dialog.
 
 Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed and must be wrapped into `<![CDATA[` ... `]]>` section.
 
@@ -306,7 +305,7 @@ Example
 {id="idea-plugin__change-notes"}
 
 A short summary of new features, bugfixes, and changes provided with the latest plugin version.
-Change notes are displayed on the JetBrains Marketplace plugin page and in the IDE Plugin Manager.
+Change notes are displayed on the JetBrains Marketplace plugin page and in the <control>Plugins</control> settings dialog.
 
 Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed and must be wrapped into `<![CDATA[` ... `]]>` section.
 
@@ -560,9 +559,6 @@ Attributes
   See [](work_with_icons_and_images.md) for more information about defining and using icons.
 - `use-shortcut-of` _(optional)_<br/>
   The ID of the action whose keyboard shortcut this action will use.
-- `internal` _(optional)_<br/>
-  Boolean flag defining whether the action is available only in the [Internal Mode](enabling_internal.md).<br/>
-  Default value: `false`.
 
 Children
 :
@@ -814,6 +810,7 @@ Example
 
 Defines an action group.
 The `<action>`, `<group>` and `<separator>` elements defined inside the group are automatically included in it.
+The `<group>` elements can be nested.
 
 **Reference:** [](basic_action_system.md#grouping-actions)
 
@@ -851,9 +848,6 @@ Attributes
 - `searchable` _(optional; supported in 2020.3+)_<br/>
   Boolean flag defining whether the group is displayed in <menupath>Help&nbsp;|&nbsp;Find Action...</menupath> or <menupath>Navigate | Search Everywhere</menupath> popups.<br/>
   Default value: `true`.
-- `internal` _(optional)_<br/>
-  Boolean flag defining whether the group is available only in the [Internal Mode](enabling_internal.md).<br/>
-  Default value: `false`.
 
 Children
 :
@@ -991,23 +985,24 @@ Attributes
 : - `defaultExtensionNs` _(optional)_<br/>
   Default extensions namespace.
   It allows skipping the common prefix in fully qualified extension point names.
+  Usually, the `com.intellij` namespace is used when the plugin implements IntelliJ Platform extensions.
 
 Children
 : The children elements are registrations of the extension points defined by [`<extensionPoint>`](#idea-plugin__extensionPoints__extensionPoint) elements. Extension elements names follow the EPs names defined by `name` or `qualifiedName` attributes.
 
 Example
 :
+- Extensions declaration with the default namespace:
+    ```xml
+    <extensions defaultExtensionNs="com.intellij">
+      <applicationService
+        serviceImplementation="com.example.Service"/>
+    </extensions>
+    ```
 - Extensions declaration using the fully qualified extension name:
     ```xml
     <extensions>
       <com.example.vcs.myExtension
-        implementation="com.example.MyExtension"/>
-    </extensions>
-    ```
-- Extensions declaration with the default namespace:
-    ```xml
-    <extensions defaultExtensionNs="com.example.vcs">
-      <myExtension
         implementation="com.example.MyExtension"/>
     </extensions>
     ```
@@ -1065,7 +1060,7 @@ Attributes
   Allowed values:
     - `IDEA_APPLICATION` _(default)_
     - `IDEA_PROJECT`
-    - `IDEA_MODULE`
+    - `IDEA_MODULE` (**deprecated**)
 
     It is not recommended to use non-default values.
 

@@ -1,5 +1,7 @@
 [//]: # (title: Plugin Configuration File)
 
+<toc-settings depth="4" mode="tree" structure-elements="chapter"/>
+
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 The <path>plugin.xml</path> configuration file contains all the information about the plugin, which is displayed in the [plugins settings dialog](https://www.jetbrains.com/help/idea/managing-plugins.html), and all registered extensions, actions, listeners, etc.

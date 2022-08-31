@@ -228,9 +228,9 @@ Attributes
 
 Examples
 :
-- Compatibility with a specific build number (2021.3.3) and higher versions of IntelliJ IDEA Ultimate:
+- Compatibility with a specific build number (2021.3.3) and higher versions:
     ```xml
-    <idea-version since-build="IU-213.7172.25"/>
+    <idea-version since-build="213.7172.25"/>
     ```
 - Compatibility with versions from any of `213` branches to any of `221` branches:
     ```xml

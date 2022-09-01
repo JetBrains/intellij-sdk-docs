@@ -15,7 +15,7 @@ Whether online or in the product UI, a Plugin Logo helps users to identify a plu
 
 ![Example Product Plugin Preferences Dialog](plugin_prefs.png){width="800"}
 
-> When browsing [custom plugin repositories](update_plugins_format.md), there is no support for showing logos for plugins hosted there but not yet installed.
+> When browsing [custom plugin repositories](custom_plugin_repository.md), there is no support for showing logos for plugins hosted there but not yet installed.
 >
 {type="note"}
 

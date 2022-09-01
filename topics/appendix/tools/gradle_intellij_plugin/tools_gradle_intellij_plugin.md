@@ -376,7 +376,7 @@ Acceptable values
 - `marketplace()` - use Maven repository with plugins listed in [JetBrains Marketplace](https://plugins.jetbrains.com)
 - `maven(repositoryUrl)` - use custom Maven repository with plugins
 - `maven { repositoryUrl }` - use custom Maven repository with plugins where you can configure additional parameters (credentials, authentication and etc.)
-- `custom(pluginsXmlUrl)` - use [custom plugin repository](update_plugins_format.md)
+- `custom(pluginsXmlUrl)` - use [](custom_plugin_repository.md)
 
 
 ### jreRepository

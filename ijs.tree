@@ -43,7 +43,6 @@
       <toc-element id="publishing_plugin.md"/>
     </toc-element>
     <toc-element id="ide_development_instance.md" accepts-web-file-names="settings_caches_logs.html"/>
-    <toc-element id="update_plugins_format.md" toc-title="Custom Plugin Repositories"/>
     <toc-element id="plugin_structure.md">
       <toc-element id="plugin_content.md"/>
       <toc-element id="bundling_plugin_openapi_sources.md" toc-title="Plugin API Sources"/>
@@ -353,6 +352,7 @@
     <toc-element id="learning_resources.md"/>
     <toc-element id="marketing.md"/>
     <toc-element id="consulting.md"/>
+    <toc-element id="custom_plugin_repository.md" accepts-web-file-names="update-plugins-format.html"/>
     <toc-element id="plugin_repository_obsolete.md"
                  accepts-web-file-names="api_reference.html,feature_extractor.html,plugin_details.html,custom_channels.html,plugins_list.html,maven_interface.html,plugin_upload.html,plugin_developers.html"/>
   </toc-element>

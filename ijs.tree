@@ -62,15 +62,6 @@
     <toc-element id="intellij_artifacts.md"/>
     <toc-element id="kotlin.md"/>
     <toc-element id="plugin_signing.md"/>
-    <toc-element id="internal_actions_intro.md" accepts-web-file-names="interal_actions_menu.html">
-      <toc-element id="enabling_internal.md"/>
-      <toc-element id="internal_ui_sub.md" toc-title="UI Tools">
-        <toc-element id="internal_ui_inspector.md" accepts-web-file-names="internal_uii.html"
-                     toc-title="UI Inspector"/>
-        <toc-element id="internal_ui_laf_defaults.md" accepts-web-file-names="internal_ui_lafd.html"
-                     toc-title="LaF Defaults"/>
-      </toc-element>
-    </toc-element>
     <toc-element id="faq.md"/>
   </toc-element>
   <toc-element toc-title="Part II — Base Platform">
@@ -375,7 +366,7 @@
       <toc-element id="api_changes_list_2019.md" toc-title="2019.*"/>
     </toc-element>
     <toc-element id="api_notable.md" toc-title="Notable API Changes"
-    accepts-web-file-names="api-notable-list-2018.html">
+                 accepts-web-file-names="api-notable-list-2018.html">
       <toc-element id="api_notable_list_2022.md" toc-title="2022.*"/>
       <toc-element id="api_notable_list_2021.md" toc-title="2021.*"/>
       <toc-element id="api_notable_list_2020.md" toc-title="2020.*"/>
@@ -391,5 +382,16 @@
       <toc-element toc-title="Migration Guide from 0.x to 1.x" href="https://lp.jetbrains.com/gradle-intellij-plugin/"/>
     </toc-element>
     <toc-element id="tools_gradle_grammar_kit_plugin.md"/>
+    <toc-element toc-title="IDE Tooling">
+      <toc-element id="internal_actions_intro.md" accepts-web-file-names="interal_actions_menu.html">
+        <toc-element id="enabling_internal.md"/>
+        <toc-element id="internal_ui_sub.md" toc-title="UI Tools">
+          <toc-element id="internal_ui_inspector.md" accepts-web-file-names="internal_uii.html"
+                       toc-title="UI Inspector"/>
+          <toc-element id="internal_ui_laf_defaults.md" accepts-web-file-names="internal_ui_lafd.html"
+                       toc-title="LaF Defaults"/>
+        </toc-element>
+      </toc-element>
+    </toc-element>
   </toc-element>
 </product-profile>

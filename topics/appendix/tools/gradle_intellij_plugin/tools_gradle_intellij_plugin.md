@@ -216,6 +216,7 @@ Acceptable values
 - `PS` - [PhpStorm](phpstorm.md)
 - `RD` - [Rider](rider.md)
 - `GO` - [GoLand](goland.md)
+- `AI` - [Android Studio](android_studio.md)
 - `JPS` - JPS-only
 - `GW` - Gateway
 

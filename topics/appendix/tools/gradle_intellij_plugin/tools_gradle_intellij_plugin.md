@@ -121,13 +121,13 @@ pluginManagement {
 ## Configuration
 
 
-### Build
+[//]: # (### Build)
 
 
-### Test
+[//]: # (### Test)
 
 
-### Publish
+[//]: # (### Publish)
 
 
 ### IntelliJ Extension

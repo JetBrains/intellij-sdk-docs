@@ -1683,10 +1683,6 @@ Default value
 #### ignoreUnacceptableWarnings
 {id="verifyplugin-task-ignoreunacceptablewarnings"}
 
-> Available since the upcoming release
->
-{type="warning"}
-
 Specifies whether the build should fail when the verifications performed by this task emit unacceptable warnings.
 
 {style="narrow"}
@@ -1711,10 +1707,6 @@ Default value
 
 
 ### verifyPluginConfiguration
-
-> Available since the upcoming release
->
-{type="warning"}
 
 Validates the plugin project configuration:
 

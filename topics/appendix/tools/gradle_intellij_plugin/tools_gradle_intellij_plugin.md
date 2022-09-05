@@ -793,7 +793,7 @@ Default value
 
 
 #### pluginDescription
-{id="patchpluginxml-task-sincebuild"}
+{id="patchpluginxml-task-plugindescription"}
 
 The description of the plugin used in the [`<description>`](plugin_configuration_file.md#idea-plugin__description) tag.
 
@@ -1457,7 +1457,7 @@ Signs the ZIP archive with the provided key using [marketplace-zip-signer](https
 
 To sign the plugin before publishing to [JetBrains Marketplace](https://plugins.jetbrains.com) with the [`signPlugin`](#tasks-signplugin) task, it is required to provide a certificate chain and a private key with its password using `signPlugin { ... }` Plugin Signing DSL.
 
-As soon as [`signPlugin.privateKey`](#signplugin-task-privatekey) (or [`signPlugin.privateKeyFile`](#tasks-signplugin-privatekeyfile)) and [`signPlugin.certificateChain`](#signplugin-task-certificatechain) (or [`signPlugin.certificateChainFile`](#signplugin-task-certificatechainfile)) properties are specified, the task will be executed automatically right before the [`publishPlugin`](#tasks-publishplugin) task.
+As soon as [`signPlugin.privateKey`](#signplugin-task-privatekey) (or [`signPlugin.privateKeyFile`](#signplugin-task-privatekeyfile)) and [`signPlugin.certificateChain`](#signplugin-task-certificatechain) (or [`signPlugin.certificateChainFile`](#signplugin-task-certificatechainfile)) properties are specified, the task will be executed automatically right before the [`publishPlugin`](#tasks-publishplugin) task.
 
 For more details, see [Plugin Signing](plugin_signing.md) article.
 

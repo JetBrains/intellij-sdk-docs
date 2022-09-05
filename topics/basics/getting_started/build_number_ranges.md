@@ -7,7 +7,7 @@ Setting the actual values in <path>plugin.xml</path> is managed by [`patchPlugin
 Please note the following regarding values:
 
 - Values must represent the actual build numbers, any made-up numbers must not be used (e.g., using `999.*` for `until-build`).
-- An empty value for `until-build` means it will include _all_ future builds (including unreleased IDE versions, which might impact compatibility later).
+- Not specifying `until-build` means it will include _all_ future builds (including unreleased IDE versions, which might impact compatibility later).
 - Dot star suffix (`.* `) can be used in `until-build` to support all releases for the specific branch (i.e., `222.*` for all 2022.2.x releases).
 
 > Compatibility with the specified version range (and compatible products) must always be verified using [](verifying_plugin_compatibility.md#plugin-verifier) to ensure binary compatibility.

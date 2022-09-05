@@ -136,7 +136,7 @@ The ID is a technical value used to identify the plugin in the IDE and JetBrains
 Required
 : no; ignored in [additional config file](#additional-plugin-configuration-files)<br/>
 **It is highly recommended to set in <path>plugin.xml</path> file.**<br/>
-The element can be skipped in the source <path>plugin.xml</path> file if the Gradle [`patchPluginXml`](tools_gradle_intellij_plugin.md#patchpluginxml-task) task is enabled and configured.
+The element can be skipped in the source <path>plugin.xml</path> file if the Gradle [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) task is enabled and configured.
 
 Default value
 : Value of the [`<name>`](#idea-plugin__name) element.<br/>
@@ -175,7 +175,7 @@ Plugins uploaded to the JetBrains Marketplace must follow semantic versioning.
 {style="narrow"}
 Required
 : **yes**; ignored in [additional config file](#additional-plugin-configuration-files)<br/>
-The element can be skipped in the source <path>plugin.xml</path> file if the Gradle [`patchPluginXml`](tools_gradle_intellij_plugin.md#patchpluginxml-task) task is enabled and configured.
+The element can be skipped in the source <path>plugin.xml</path> file if the Gradle [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) task is enabled and configured.
 
 Example
 :
@@ -218,7 +218,7 @@ The plugin's range of compatible IntelliJ-based IDE versions.
 {style="narrow"}
 Required
 : **yes**; ignored in [additional config file](#additional-plugin-configuration-files)<br/>
-The element can be skipped in the source <path>plugin.xml</path> file if the Gradle [`patchPluginXml`](tools_gradle_intellij_plugin.md#patchpluginxml-task) task is enabled and configured.
+The element can be skipped in the source <path>plugin.xml</path> file if the Gradle [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) task is enabled and configured.
 
 Attributes
 :
@@ -286,7 +286,7 @@ Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed
 {style="narrow"}
 Required
 : **yes**; ignored in [additional config file](#additional-plugin-configuration-files)<br/>
-The element can be skipped in the source <path>plugin.xml</path> file if the Gradle [`patchPluginXml`](tools_gradle_intellij_plugin.md#patchpluginxml-task) task is enabled and configured.
+The element can be skipped in the source <path>plugin.xml</path> file if the Gradle [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) task is enabled and configured.
 
 Example
 :
@@ -316,7 +316,7 @@ Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed
 {style="narrow"}
 Required
 : no; ignored in [additional config file](#additional-plugin-configuration-files)<br/>
-The element can be skipped in the source <path>plugin.xml</path> file if the Gradle [`patchPluginXml`](tools_gradle_intellij_plugin.md#patchpluginxml-task) task is enabled and configured.
+The element can be skipped in the source <path>plugin.xml</path> file if the Gradle [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) task is enabled and configured.
 
 Example
 :

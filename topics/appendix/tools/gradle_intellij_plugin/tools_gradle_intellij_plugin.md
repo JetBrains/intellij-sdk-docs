@@ -135,7 +135,7 @@ pluginManagement {
 
 After the Gradle IntelliJ Plugin is applied, the `intellij` extension can be used to configure the plugin and common settings of the provided tasks.
 
-It is mandatory to specify at least the [`intellij.version`](#configuration-intellij-extension-version) property.
+It is mandatory to specify at least the [`intellij.version`](#intellij-extension-version) property.
 
 **Example:**
 
@@ -197,7 +197,7 @@ Acceptable values
 {id="intellij-extension-type"}
 
 The type of the IntelliJ-based IDE distribution.
-The type may also be specified as a prefix of the value for the [`intellij.version`](#configuration-intellij-extension-version) property instead.
+The type may also be specified as a prefix of the value for the [`intellij.version`](#intellij-extension-version) property instead.
 
 {style="narrow"}
 Type
@@ -263,7 +263,7 @@ Samples
 {id="intellij-extension-localsourcespath"}
 
 The path to local archive with IDE sources.
-Used for resolving source files of the locally installed IDE distribution when [`intellij.localPath`](#configuration-intellij-extension-localpath) is specified.
+Used for resolving source files of the locally installed IDE distribution when [`intellij.localPath`](#intellij-extension-localpath) is specified.
 
 {style="narrow"}
 Type
@@ -276,7 +276,7 @@ Default value
 #### plugins
 {id="intellij-extension-plugins"}
 
-The list of bundled IDE plugins and plugins from [JetBrains Marketplace](https://plugins.jetbrains.com) or configured [`intellij.pluginsRepositories`](#configuration-intellij-extension-pluginsrepositories).
+The list of bundled IDE plugins and plugins from [JetBrains Marketplace](https://plugins.jetbrains.com) or configured [`intellij.pluginsRepositories`](#intellij-extension-pluginsrepositories).
 
 Please see [](plugin_dependencies.md) for more details.
 
@@ -308,7 +308,7 @@ Acceptable values
 #### updateSinceUntilBuild
 {id="intellij-extension-updatesinceuntilbuild"}
 
-Enables patching <path>[plugin.xml](plugin_configuration_file.md)</path> with the values of [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) and [`patchPluginXml.untilBuild`](#tasks-patchpluginxml-untilbuild) properties.
+Enables patching <path>[plugin.xml](plugin_configuration_file.md)</path> with the values of [`patchPluginXml.sinceBuild`](#patchpluginxml-task-sincebuild) and [`patchPluginXml.untilBuild`](#patchpluginxml-task-untilbuild) properties.
 
 {style="narrow"}
 Type
@@ -321,11 +321,11 @@ Default value
 #### sameSinceUntilBuild
 {id="intellij-extension-samesinceuntilbuild"}
 
-Enables patching <path>[plugin.xml](plugin_configuration_file.md)</path> with the [`patchPluginXml.untilBuild`](#tasks-patchpluginxml-untilbuild) using value of [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) with `*` wildcard, like `sinceBuild.*`, e.g., `221.*`.
+Enables patching <path>[plugin.xml](plugin_configuration_file.md)</path> with the [`patchPluginXml.untilBuild`](#patchpluginxml-task-untilbuild) using value of [`patchPluginXml.sinceBuild`](#patchpluginxml-task-sincebuild) with `*` wildcard, like `sinceBuild.*`, e.g., `221.*`.
 
 Notes:
 - Useful for building plugins against EAP builds.
-- If [`patchPluginXml.untilBuild`](#tasks-patchpluginxml-untilbuild) has a value set, then [`intellij.sameSinceUntilBuild`](#configuration-intellij-extension-samesinceuntilbuild) is ignored.
+- If [`patchPluginXml.untilBuild`](#patchpluginxml-task-untilbuild) has a value set, then [`intellij.sameSinceUntilBuild`](#intellij-extension-samesinceuntilbuild) is ignored.
 
 {style="narrow"}
 Type
@@ -606,7 +606,7 @@ Type
 : `String`
 
 Default value
-: [`intellij.pluginName`](#configuration-intellij-extension-pluginname)
+: [`intellij.pluginName`](#intellij-extension-pluginname)
 
 
 #### sandboxDir
@@ -632,9 +632,9 @@ Plugin Verifier requires a list of the IDEs that will be used for verifying your
 The availability of the releases may change in time, i.e., due to security issues in one version – which will be later removed and replaced with an updated IDE release.
 
 With the [`listProductsReleases`](#tasks-listproductsreleases) task, it is possible to list the currently available IDEs matching given conditions, like platform types, since/until release versions.
-Such a list is fetched from the remote updates file: `https://www.jetbrains.com/updates/updates.xml`, parsed and filtered considering the specified [`listProductsReleases.types`](#tasks-listproductsreleases-types), [`listProductsReleases.sinceVersion`](#tasks-listproductsreleases-sinceversion), [`listProductsReleases.untilVersion`](#tasks-listproductsreleases-untilversion) (or [`listProductsReleases.sinceBuild`](#tasks-listproductsreleases-sincebuild), [`listProductsReleases.untilBuild`](#tasks-listproductsreleases-untilbuild)) properties.
+Such a list is fetched from the remote updates file: `https://www.jetbrains.com/updates/updates.xml`, parsed and filtered considering the specified [`listProductsReleases.types`](#listproductsreleases-task-types), [`listProductsReleases.sinceVersion`](#listproductsreleases-task-sinceversion), [`listProductsReleases.untilVersion`](#listproductsreleases-task-untilversion) (or [`listProductsReleases.sinceBuild`](#listproductsreleases-task-sincebuild), [`listProductsReleases.untilBuild`](#listproductsreleases-task-untilbuild)) properties.
 
-The result list is stored within the [`listProductsReleases.outputFile`](#tasks-listproductsreleases-outputfile), which is used as a source for the Plugin Verifier if the [`runPluginVerifier`](#tasks-runpluginverifier) task has no [`runPluginVerifier.ideVersions`](#tasks-runpluginverifier-ideversions) property specified, the output of the [`listProductsReleases`](#tasks-listproductsreleases) task is used.
+The result list is stored within the [`listProductsReleases.outputFile`](#listproductsreleases-task-outputfile), which is used as a source for the Plugin Verifier if the [`runPluginVerifier`](#tasks-runpluginverifier) task has no [`runPluginVerifier.ideVersions`](#runpluginverifier-task-ideversions) property specified, the output of the [`listProductsReleases`](#tasks-listproductsreleases) task is used.
 
 
 #### updatesFile
@@ -660,28 +660,28 @@ Type
 : `String`
 
 Default value
-: [`intellij.type`](#configuration-intellij-extension-type)
+: [`intellij.type`](#intellij-extension-type)
 
 
 #### sinceVersion
 {id="listproductsreleases-task-sinceversion"}
 
 Lower boundary of the listed results in product marketing version format, e.g., `2020.2.1`.
-It takes precedence over [`listProductsReleases.sinceBuild`](#tasks-listproductsreleases-sincebuild) property.
+It takes precedence over [`listProductsReleases.sinceBuild`](#listproductsreleases-task-sincebuild) property.
 
 {style="narrow"}
 Type
 : `String`
 
 Default value
-: [`intellij.version`](#configuration-intellij-extension-version)
+: [`intellij.version`](#intellij-extension-version)
 
 
 #### untilVersion
 {id="listproductsreleases-task-untilversion"}
 
 Upper boundary of the listed results in product marketing version format, e.g., `2020.2.1`.
-It takes precedence over [`listProductsReleases.untilBuild`](#tasks-listproductsreleases-untilbuild) property.
+It takes precedence over [`listProductsReleases.untilBuild`](#listproductsreleases-task-untilbuild) property.
 
 {style="narrow"}
 Type
@@ -701,7 +701,7 @@ Type
 : `String`
 
 Default value
-: [`intellij.version`](#configuration-intellij-extension-version)
+: [`intellij.version`](#intellij-extension-version)
 
 
 #### untilBuild
@@ -793,7 +793,7 @@ Default value
 
 
 #### pluginDescription
-{id="patchpluginxml-task-plugindescription"}
+{id="patchpluginxml-task-sincebuild"}
 
 The description of the plugin used in the [`<description>`](plugin_configuration_file.md#idea-plugin__description) tag.
 
@@ -815,7 +815,7 @@ Type
 : `String`
 
 Default value
-: [`intellij.version`](#configuration-intellij-extension-version) in `Branch.Build.Fix` format
+: [`intellij.version`](#intellij-extension-version) in `Branch.Build.Fix` format
 
 
 #### untilBuild
@@ -828,7 +828,7 @@ Type
 : `String`
 
 Default value
-: [`intellij.version`](#configuration-intellij-extension-version) in `Branch.Build.*` format
+: [`intellij.version`](#intellij-extension-version) in `Branch.Build.*` format
 
 
 #### version
@@ -886,7 +886,7 @@ Type
 : `String`
 
 Default value
-: [`intellij.pluginName`](#configuration-intellij-extension-pluginname)
+: [`intellij.pluginName`](#intellij-extension-pluginname)
 
 
 #### configDir
@@ -919,7 +919,7 @@ Default value
 {id="preparesandbox-task-librariestoignore"}
 
 Libraries that will be ignored when preparing the sandbox.
-By default, excludes all libraries that are a part of the [`setupDependenciesTask.idea`](#tasks-setupdependencies-idea) dependency.
+By default, excludes all libraries that are a part of the [`setupDependenciesTask.idea`](#setupdependencies-task-idea) dependency.
 
 {style="narrow"}
 Type
@@ -1051,14 +1051,14 @@ Runs the IDE instance with the developed plugin installed.
 {id="runide-task-idedir"}
 
 The IDE dependency sources path.
-Configured automatically with the [`setupDependencies.idea`](#tasks-setupdependencies-idea) dependency.
+Configured automatically with the [`setupDependencies.idea`](#setupdependencies-task-idea) dependency.
 
 {style="narrow"}
 Type
 : `File`
 
 Default value
-: [`setupDependencies.idea`](#tasks-setupdependencies-idea)
+: [`setupDependencies.idea`](#setupdependencies-task-idea)
 
 
 #### jbrVersion
@@ -1212,7 +1212,7 @@ Plugin Verifier DSL `runPluginVerifier { ... }` allows to define the list of IDE
 #### ideVersions
 {id="runpluginverifier-task-ideversions"}
 
-IDEs to check, in [`intellij.version`](#configuration-intellij-extension-version) format, i.e.: `["IC-2019.3.5", "PS-2019.3.2"]`.
+IDEs to check, in [`intellij.version`](#intellij-extension-version) format, i.e.: `["IC-2019.3.5", "PS-2019.3.2"]`.
 Check the available build versions on [IntelliJ Platform Builds list](https://jb.gg/intellij-platform-builds-list).
 
 {style="narrow"}
@@ -1241,20 +1241,20 @@ Default value
 {id="runpluginverifier-task-verifierpath"}
 
 Local path to the pre-downloaded IntelliJ Plugin Verifier JAR file.
-If set, [`runPluginVerifier.verifierVersion`](#tasks-runpluginverifier-verifierversion) is ignored.
+If set, [`runPluginVerifier.verifierVersion`](#runpluginverifier-task-verifierversion) is ignored.
 
 {style="narrow"}
 Type
 : `String`
 
 Default value
-: path to the JAR file resolved using the [`runPluginVerifier.verifierVersion`](#tasks-runpluginverifier-verifierversion) property
+: path to the JAR file resolved using the [`runPluginVerifier.verifierVersion`](#runpluginverifier-task-verifierversion) property
 
 
 #### localPaths
 {id="runpluginverifier-task-localpaths"}
 
-A list of the paths to locally installed IDE distributions that should be used for verification in addition to those specified in [`runPluginVerifier.ideVersions`](#tasks-runpluginverifier-ideversions).
+A list of the paths to locally installed IDE distributions that should be used for verification in addition to those specified in [`runPluginVerifier.ideVersions`](#runpluginverifier-task-ideversions).
 
 {style="narrow"}
 Type
@@ -1374,7 +1374,7 @@ Default value
 #### runtimeDir
 {id="runpluginverifier-task-runtimedir"}
 
-The path to directory containing JVM runtime, overrides [`runPluginVerifier.jbrVersion`](#tasks-runpluginverifier-jbrversion).
+The path to directory containing JVM runtime, overrides [`runPluginVerifier.jbrVersion`](#runpluginverifier-task-jbrversion).
 
 {style="narrow"}
 Type
@@ -1457,7 +1457,7 @@ Signs the ZIP archive with the provided key using [marketplace-zip-signer](https
 
 To sign the plugin before publishing to [JetBrains Marketplace](https://plugins.jetbrains.com) with the [`signPlugin`](#tasks-signplugin) task, it is required to provide a certificate chain and a private key with its password using `signPlugin { ... }` Plugin Signing DSL.
 
-As soon as [`signPlugin.privateKey`](#tasks-signplugin-privatekey) (or [`signPlugin.privateKeyFile`](#tasks-signplugin-privatekeyfile)) and [`signPlugin.certificateChain`](#tasks-signplugin-certificatechain) (or [`signPlugin.certificateChainFile`](#tasks-signplugin-certificatechainfile)) properties are specified, the task will be executed automatically right before the [`publishPlugin`](#tasks-publishplugin) task.
+As soon as [`signPlugin.privateKey`](#signplugin-task-privatekey) (or [`signPlugin.privateKeyFile`](#tasks-signplugin-privatekeyfile)) and [`signPlugin.certificateChain`](#signplugin-task-certificatechain) (or [`signPlugin.certificateChainFile`](#signplugin-task-certificatechainfile)) properties are specified, the task will be executed automatically right before the [`publishPlugin`](#tasks-publishplugin) task.
 
 For more details, see [Plugin Signing](plugin_signing.md) article.
 
@@ -1550,7 +1550,7 @@ Default value
 {id="signplugin-task-clipath"}
 
 Path to [JetBrains Marketplace ZIP Signer CLI](https://github.com/JetBrains/marketplace-zip-signer) file.
-Takes precedence over [`signPlugin.cliVersion`](#tasks-signplugin-cliversion).
+Takes precedence over [`signPlugin.cliVersion`](#signplugin-task-cliversion).
 
 {style="narrow"}
 Type
@@ -1708,15 +1708,16 @@ Default value
 
 
 ### verifyPluginConfiguration
+{id="tasks-verifypluginconfiguration"}
 
 Validates the plugin project configuration:
 
-- The [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) property can't be lower than the major version of the currently used IntelliJ SDK set with the [`intellij.version`](#configuration-intellij-extension-version).
-- The `sourceCompatibility` property of the Java configuration can't be lower than the Java version used for assembling the IntelliJ SDK specified by the [`intellij.version`](#configuration-intellij-extension-version).
-- The `targetCompatibility` property of the Java configuration can't be higher than the Java version required for running IDE in the version specified by the [`intellij.version`](#configuration-intellij-extension-version) or [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) properties.
-- The `jvmTarget` property of the Kotlin configuration (if used) can't be higher than the Java version required for running IDE in the version specified by the [`intellij.version`](#configuration-intellij-extension-version) or [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) properties.
-- The `languageVersion` property of the Kotlin configuration (if used) can't be lower than the Kotlin bundled with IDE in the version specified by the [`intellij.version`](#configuration-intellij-extension-version) or [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) properties.
-- The `apiVersion` property of the Kotlin configuration (if used) can't be higher than the Kotlin bundled with IDE in the version specified by the [`intellij.version`](#configuration-intellij-extension-version) or [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) properties.
+- The [`patchPluginXml.sinceBuild`](#patchpluginxml-task-sincebuild) property can't be lower than the major version of the currently used IntelliJ SDK set with the [`intellij.version`](#intellij-extension-version).
+- The `sourceCompatibility` property of the Java configuration can't be lower than the Java version used for assembling the IntelliJ SDK specified by the [`intellij.version`](#intellij-extension-version).
+- The `targetCompatibility` property of the Java configuration can't be higher than the Java version required for running IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#patchpluginxml-task-sincebuild) properties.
+- The `jvmTarget` property of the Kotlin configuration (if used) can't be higher than the Java version required for running IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#patchpluginxml-task-sincebuild) properties.
+- The `languageVersion` property of the Kotlin configuration (if used) can't be lower than the Kotlin bundled with IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#patchpluginxml-task-sincebuild) properties.
+- The `apiVersion` property of the Kotlin configuration (if used) can't be higher than the Kotlin bundled with IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#patchpluginxml-task-sincebuild) properties.
 
 > For more details regarding the Java version used in the specific IntelliJ SDK, see [](build_number_ranges.md).
 

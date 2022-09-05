@@ -54,7 +54,7 @@ Available JBR variants are:
 <tab title="Gradle" group-key="gradle">
 
 By default, the Gradle plugin will fetch and use the version of the JetBrains Runtime for the Development Instance corresponding to the version of the IntelliJ Platform used for building the plugin project.
-If required, an alternative version can be specified using [`runIde.jbrVersion`](tools_gradle_intellij_plugin.md#tasks-runide-jbrversion) task property.
+If required, an alternative version can be specified using [`runIde.jbrVersion`](tools_gradle_intellij_plugin.md#runide-task-jbrversion) task property.
 
 </tab>
 

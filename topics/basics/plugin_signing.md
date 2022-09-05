@@ -55,8 +55,8 @@ openssl genpkey\
   -pkeyopt rsa_keygen_bits:4096
 ```
 
-At this point, the generated <path>private.pem</path> content should be provided to the [`signPlugin.privateKey`](tools_gradle_intellij_plugin.md#tasks-signplugin-privatekey) property.
-Provided password should be specified as the [`signPlugin.password`](tools_gradle_intellij_plugin.md#tasks-signplugin-password) property in the [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) configuration.
+At this point, the generated <path>private.pem</path> content should be provided to the [`signPlugin.privateKey`](tools_gradle_intellij_plugin.md#signplugin-task-privatekey) property.
+Provided password should be specified as the [`signPlugin.password`](tools_gradle_intellij_plugin.md#signplugin-task-password) property in the [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) configuration.
 
 As a next step, we'll generate a <path>chain.crt</path> certificate chain with:
 
@@ -69,11 +69,11 @@ openssl req\
   -out chain.crt
 ```
 
-The content of the <path>chain.crt</path> file will be used for the [`signPlugin.certificateChain`](tools_gradle_intellij_plugin.md#tasks-signplugin-certificatechain) property.
+The content of the <path>chain.crt</path> file will be used for the [`signPlugin.certificateChain`](tools_gradle_intellij_plugin.md#signplugin-task-certificatechain) property.
 
 ### Gradle IntelliJ Plugin
 
-In version `1.x`, the Gradle IntelliJ Plugin provides the [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) task, which will be executed automatically right before the [`publishPlugin`](tools_gradle_intellij_plugin.md#tasks-publishplugin) task when [`signPlugin.certificateChain`](tools_gradle_intellij_plugin.md#tasks-signplugin-certificatechain) and [`signPlugin.privateKey`](tools_gradle_intellij_plugin.md#tasks-signplugin-privatekey) signing properties are specified.
+In version `1.x`, the Gradle IntelliJ Plugin provides the [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) task, which will be executed automatically right before the [`publishPlugin`](tools_gradle_intellij_plugin.md#tasks-publishplugin) task when [`signPlugin.certificateChain`](tools_gradle_intellij_plugin.md#signplugin-task-certificatechain) and [`signPlugin.privateKey`](tools_gradle_intellij_plugin.md#signplugin-task-privatekey) signing properties are specified.
 Otherwise, it'll be skipped.
 
 An example [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) task configuration may look like:

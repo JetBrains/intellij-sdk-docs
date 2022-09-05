@@ -6,9 +6,9 @@ The _Find Usages_ action is a multi-step process, and each step of the process r
 
 The language plugin participates in the Find Usages process by registering an implementation of [`FindUsagesProvider`](%gh-ic%/platform/indexing-api/src/com/intellij/lang/findUsages/FindUsagesProvider.java) in the `com.intellij.lang.findUsagesProvider` extension point, and through the PSI implementation using [`PsiNamedElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiNamedElement.java) and [`PsiReference`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReference.java) interfaces.
 
-**Examples**:
-- Implementation of [`FindUsagesProvider`](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/findUsages/PropertiesFindUsagesProvider.java) in [Properties language plugin](%gh-ic%/plugins/properties)
-- [Custom Language Support Tutorial: Find Usages](find_usages_provider.md)
+> In cases like function parameters and local variables, consider overriding  [`PsiElement.getUseScope()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) to return a narrower scope.
+> For instance, returning the scope of the nearest function definition can significantly reduce the number of files that need to be parsed and references that need to be resolved when renaming such elements.
+{type="tip"}
 
 The steps of the _Find Usages_ action are the following:
 * Before the _Find Usages_ action can be invoked, the IDE builds an index of words present in every file in the custom language.
@@ -30,12 +30,14 @@ The steps of the _Find Usages_ action are the following:
   The text shown for each found element is taken from the [`FindUsagesProvider.getNodeText()`](%gh-ic%/platform/indexing-api/src/com/intellij/lang/findUsages/FindUsagesProvider.java) method.
   To group results by type, implement [`UsageTypeProvider`](%gh-ic%/platform/usageView-impl/src/com/intellij/usages/impl/rules/UsageTypeProvider.java) and register in `com.intellij.usageTypeProvider` extension point to provide custom or predefined [`UsageType`](%gh-ic%/platform/usageView/src/com/intellij/usages/impl/rules/UsageType.java).
 
+**Examples**:
+- Implementation of [`FindUsagesProvider`](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/findUsages/PropertiesFindUsagesProvider.java) in [Properties language plugin](%gh-ic%/plugins/properties)
+- [Custom Language Support Tutorial: Find Usages](find_usages_provider.md)
+
+### Grouping Results
+
 To have the title of the found element be correctly displayed in the title of the Find Usages tool window, you need to provide an implementation of the [`ElementDescriptionProvider`](%gh-ic%/platform/core-api/src/com/intellij/psi/ElementDescriptionProvider.java) interface.
 The [`ElementDescriptionLocation`](%gh-ic%/platform/core-api/src/com/intellij/psi/ElementDescriptionLocation.java) passed to the provider in this case will be an instance of [`UsageViewLongNameLocation`](%gh-ic%/platform/usageView/src/com/intellij/usageView/UsageViewLongNameLocation.java).
 
 **Example:**
 [`ElementDescriptionProvider`](%gh-ic%/plugins/properties/src/com/intellij/lang/properties/PropertiesDescriptionProvider.java) for [Properties language plugin](%gh-ic%/plugins/properties)
-
-> In cases like function parameters and local variables, consider overriding  [`PsiElement.getUseScope()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) to return a narrower scope.
-> For instance, you might return just the scope of the nearest function definition.
-> This optimization can significantly reduce the number of files that need to be parsed--and references that need to be resolved--when renaming a function parameter or local variable.

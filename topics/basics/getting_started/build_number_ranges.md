@@ -17,6 +17,8 @@ Please note the following regarding values:
 >
 {type="warning"}
 
+### Build Number Format
+
 To denote a release, a multipart build number is used.
 It consists of the following parts:
 

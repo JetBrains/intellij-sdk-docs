@@ -7,8 +7,10 @@ import com.intellij.openapi.fileTypes.FileTypeFactory;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Note: This class is only used with the fileTypeFactory extension point
+ * TODO: This class is only used with the {@code com.intellij.fileTypeFactory} extension point
  * for versions of the IntelliJ Platform prior to v2019.2.
+ *
+ * @see <a href="https://plugins.jetbrains.com/docs/intellij/language-and-filetype.html#register-the-filetype">Custom Language Tutorial</a>
  */
 @SuppressWarnings("deprecation")
 public class SimpleFileTypeFactory extends FileTypeFactory {

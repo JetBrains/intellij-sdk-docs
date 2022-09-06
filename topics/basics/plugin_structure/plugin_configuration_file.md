@@ -394,6 +394,7 @@ Examples
 
 ### `incompatible-with`
 {id="idea-plugin__incompatible-with"}
+_Supported since 2020.2_
 
 Declares incompatibility with a provided module.
 

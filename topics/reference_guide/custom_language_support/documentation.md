@@ -25,7 +25,7 @@ Custom language developers usually extend from
 [`AbstractDocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/AbstractDocumentationProvider.java)
 instead of implementing the
 [`DocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java) interface.
-This implementation needs to be registered as `com.intellij.lang.documentationProvider` in the <path>plugin.xml</path>.
+This implementation needs to be registered in `com.intellij.lang.documentationProvider` extension point.
 
 The main work is done in `generateDoc()`, which has two PSI element arguments:
 the target element for which the documentation is requested and the original element under the cursor.

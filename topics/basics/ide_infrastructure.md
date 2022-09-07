@@ -111,6 +111,11 @@ See also [](plugin_components.md#application-startup) and [](plugin_components.m
 
 Register [`ApplicationActivationListener`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/application/ApplicationActivationListener.java) [listener](plugin_listeners.md) to be notified of "application focused/unfocused" events.
 
+## Power Save Mode
+
+<menupath>File | Power Save Mode</menupath> can be enabled to limit power-consuming features on laptops.
+Use [`PowerSaveMode`](%gh-ic%/platform/core-api/src/com/intellij/ide/PowerSaveMode.java) service and `PowerSaveMode.Listener` topic to disable such features in your plugin accordingly.
+
 ## Plugin Management
 
 Currently, installed plugins can be checked via [`PluginManagerCore.isPluginInstalled()`](%gh-ic%/platform/core-impl/src/com/intellij/ide/plugins/PluginManagerCore.java).

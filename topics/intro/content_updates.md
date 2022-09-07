@@ -13,6 +13,12 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2022
 
+### September-22
+
+Minor Changes and Additions
+:
+- Add section about [](ide_infrastructure.md#power-save-mode).
+
 ### August-22
 
 Plugin Configuration Page

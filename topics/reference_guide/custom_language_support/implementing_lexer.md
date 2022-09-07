@@ -67,10 +67,14 @@ Custom language plugins should reuse these token types wherever applicable.
 For all other token types, the plugin needs to create new [`IElementType`](%gh-ic%/platform/core-api/src/com/intellij/psi/tree/IElementType.java) instances and associate with the language in which the token type is used.
 The same [`IElementType`](%gh-ic%/platform/core-api/src/com/intellij/psi/tree/IElementType.java) instance should be returned every time a particular token type is encountered by the lexer.
 
-Groups of related types (e.g., keywords) can be defined using [`TokenSet`](%gh-ic%/platform/core-api/src/com/intellij/psi/tree/TokenSet.java).
-
 **Example:**
 [Token types](%gh-ic%/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/parsing/PropertiesTokenTypes.java) for [Properties language plugin](%gh-ic%/plugins/properties)
+
+Groups of related types (e.g., keywords) can be defined using [`TokenSet`](%gh-ic%/platform/core-api/src/com/intellij/psi/tree/TokenSet.java).
+All `TokenSet` for a language should be grouped in a dedicated `$Language$TokenSets` class for re-use.
+
+**Example:**
+[`GroovyTokenSets`](%gh-ic%/plugins/groovy/groovy-psi/src/org/jetbrains/plugins/groovy/lang/psi/GroovyTokenSets.java)
 
 ### Embedded Language
 

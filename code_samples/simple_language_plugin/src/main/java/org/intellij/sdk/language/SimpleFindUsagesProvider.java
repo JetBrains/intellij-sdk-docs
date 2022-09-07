@@ -40,9 +40,8 @@ public class SimpleFindUsagesProvider implements FindUsagesProvider {
   public String getType(@NotNull PsiElement element) {
     if (element instanceof SimpleProperty) {
       return "simple property";
-    } else {
-      return "";
     }
+    return "";
   }
 
   @NotNull
@@ -50,19 +49,19 @@ public class SimpleFindUsagesProvider implements FindUsagesProvider {
   public String getDescriptiveName(@NotNull PsiElement element) {
     if (element instanceof SimpleProperty) {
       return ((SimpleProperty) element).getKey();
-    } else {
-      return "";
     }
+    return "";
   }
 
   @NotNull
   @Override
   public String getNodeText(@NotNull PsiElement element, boolean useFullName) {
     if (element instanceof SimpleProperty) {
-      return ((SimpleProperty) element).getKey() + SimpleAnnotator.SIMPLE_SEPARATOR_STR + ((SimpleProperty) element).getValue();
-    } else {
-      return "";
+      return ((SimpleProperty) element).getKey() +
+              SimpleAnnotator.SIMPLE_SEPARATOR_STR +
+              ((SimpleProperty) element).getValue();
     }
+    return "";
   }
 
 }

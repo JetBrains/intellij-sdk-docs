@@ -9,7 +9,7 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiNamedElement;
 import com.intellij.psi.tree.TokenSet;
 import org.intellij.sdk.language.psi.SimpleProperty;
-import org.intellij.sdk.language.psi.SimpleTypes;
+import org.intellij.sdk.language.psi.SimpleTokenSets;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -19,8 +19,8 @@ public class SimpleFindUsagesProvider implements FindUsagesProvider {
   @Override
   public WordsScanner getWordsScanner() {
     return new DefaultWordsScanner(new SimpleLexerAdapter(),
-            TokenSet.create(SimpleTypes.KEY),
-            TokenSet.create(SimpleTypes.COMMENT),
+            SimpleTokenSets.IDENTIFIERS,
+            SimpleTokenSets.COMMENTS,
             TokenSet.EMPTY);
   }
 

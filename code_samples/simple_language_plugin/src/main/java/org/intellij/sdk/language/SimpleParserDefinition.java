@@ -14,12 +14,11 @@ import com.intellij.psi.tree.IFileElementType;
 import com.intellij.psi.tree.TokenSet;
 import org.intellij.sdk.language.parser.SimpleParser;
 import org.intellij.sdk.language.psi.SimpleFile;
+import org.intellij.sdk.language.psi.SimpleTokenSets;
 import org.intellij.sdk.language.psi.SimpleTypes;
 import org.jetbrains.annotations.NotNull;
 
 public class SimpleParserDefinition implements ParserDefinition {
-
-  public static final TokenSet COMMENTS = TokenSet.create(SimpleTypes.COMMENT);
 
   public static final IFileElementType FILE = new IFileElementType(SimpleLanguage.INSTANCE);
 
@@ -32,7 +31,7 @@ public class SimpleParserDefinition implements ParserDefinition {
   @NotNull
   @Override
   public TokenSet getCommentTokens() {
-    return COMMENTS;
+    return SimpleTokenSets.COMMENTS;
   }
 
   @NotNull

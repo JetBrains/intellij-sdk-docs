@@ -48,9 +48,19 @@ The `SimpleFile` implementation is the top-level node of the [tree of `PsiElemen
 ```
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleFile.java"}
 
+## Define SimpleTokenSets
+
+Define all sets of related token types from `SimpleTypes` in `SimpleTokenSets`.
+
+```java
+
+```
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleTokenSets.java"}
+
 ## Define a Parser
 
 The Simple Language parser is defined by subclassing [`ParserDefinition`](%gh-ic%/platform/core-api/src/com/intellij/lang/ParserDefinition.java).
+To avoid unnecessary classloading when initializing the extension point implementation, all `TokenSet` return values should use constants from dedicated `$Language$TokenSets` class.
 
 ```java
 ```

@@ -85,7 +85,7 @@ The value of the `author` key is by default empty.
 The `editorScheme` section will be addressed in [Adding a Custom Editor Scheme](themes_extras.md#adding-a-custom-editor-scheme)
 The `ui` section will be addressed in [Customizing UI Control Colors](themes_customize.md#customizing-ui-controls).
 
-The Wizard also creates a `themeProvider` declaration in the `<extensions>` section of the plugin's <path>plugin.xml</path> file.
+The Wizard also creates a `themeProvider` declaration in the [`<extensions>`](plugin_configuration_file.md#idea-plugin__extensions) section of the plugin's <path>plugin.xml</path> file.
 This declaration binds the Theme description file to a theme provider extension using a generated unique `id`.
 
 ```xml

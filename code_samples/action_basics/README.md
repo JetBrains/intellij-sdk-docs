@@ -12,8 +12,8 @@ This Plugin registers the [`PopupDialogAction`][file:PopupDialogAction] action, 
 - by adding an action to a new group in the `EditorPopupMenu`, which is the Editor's context menu.
 
 Additional features of the plugin:
-- [Using the `<override-text>`][docs:action-override] element in an `<action>` element is demonstrated in the `plugin.xml` declaration to add the `PopupDialogAction` action directly to the `ToolsMenu`.
-- [Localization of action and group][docs:action-locale] `text` and `description` attributes using a `<resource-bundle>` is demonstrated in the declaration to add a new group to the `EditorPopupMenu`.
+- [Using the `<override-text>`][docs:action-override] element in an [`<action>`][docs:plugin-configuration-file:actions:action] element is demonstrated in the `plugin.xml` declaration to add the `PopupDialogAction` action directly to the `ToolsMenu`.
+- [Localization of action and group][docs:action-locale] `text` and `description` attributes using a [`<resource-bundle>`][docs:plugin-configuration-file:resource-bundle] is demonstrated in the declaration to add a new group to the `EditorPopupMenu`.
 
 ### Actions
 
@@ -32,6 +32,8 @@ Additional features of the plugin:
 [docs:actions]: https://plugins.jetbrains.com/docs/intellij/basic-action-system.html
 [docs:action-override]: https://plugins.jetbrains.com/docs/intellij/basic-action-system.html#setting-the-override-text-element
 [docs:action-locale]: https://plugins.jetbrains.com/docs/intellij/basic-action-system.html#localizing-actions-and-groups
+[docs:plugin-configuration-file:actions:action]: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html#idea-plugin__actions__action
+[docs:plugin-configuration-file:resource-bundle]: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html#idea-plugin__resource-bundle
 
 [file:PopupDialogAction]: ./src/main/java/org/intellij/sdk/action/PopupDialogAction.java
 [file:CustomDefaultActionGroup]: ./src/main/java/org/intellij/sdk/action/CustomDefaultActionGroup.java

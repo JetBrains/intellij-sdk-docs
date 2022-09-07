@@ -66,7 +66,7 @@ you can use
 to find all the files that meet the following criteria:
 
 - The file type is XML
-- It contains the tag `<idea-plugin>`
+- It contains the tag [`<idea-plugin>`](plugin_configuration_file.md#idea-plugin)
 - The file is in the scope <control>Project and Libraries</control>
 
 ![Search Structurally for plugin.xml](search_structurally_for_plugin_xml.png)

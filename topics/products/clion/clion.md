@@ -29,7 +29,7 @@ Click on an entry in the table's *Attribute* column to go to the documentation a
 | [`runIde.ideDir`](tools_gradle_intellij_plugin.md#runide-task-idedir)                            | Not needed; the Development Instance will automatically match `intellij.type`. |
 
 The dependency on the CLion APIs must be declared in the <path>plugin.xml</path> file.
-As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` tags must declare `com.intellij.modules.clion` module dependency, or `com.intellij.clion` plugin dependency for plugins targeting only versions 2020.3+.
+As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) tags must declare `com.intellij.modules.clion` module dependency, or `com.intellij.clion` plugin dependency for plugins targeting only versions 2020.3+.
 
 ## Available CLion APIs
 

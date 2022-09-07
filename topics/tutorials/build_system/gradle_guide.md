@@ -95,7 +95,7 @@ A plugin project's <path>plugin.xml</path> file has element values that are "pat
 As many as possible of the attributes in the Patching DSL will be substituted into the corresponding element values in a plugin project's <path>plugin.xml</path> file:
 * If a [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) attribute default value is defined, the attribute value will be patched in <path>plugin.xml</path> _regardless of whether the [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) task appears in the Gradle build script_.
   * For example, the default values for the attributes [`patchPluginXml.sinceBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-sincebuild) and [`patchPluginXml.untilBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-untilbuild) are defined based on the declared (or default) value of [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version).
-    So by default [`patchPluginXml.sinceBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-sincebuild) and [`patchPluginXml.untilBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-untilbuild) are substituted into the `<idea-version>` element's `since-build` and `until-build` attributes in the <path>plugin.xml</path> file.
+    So by default [`patchPluginXml.sinceBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-sincebuild) and [`patchPluginXml.untilBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-untilbuild) are substituted into the [`<idea-version>`](plugin_configuration_file.md#idea-plugin__idea-version) element's `since-build` and `until-build` attributes in the <path>plugin.xml</path> file.
 * If a [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) attribute value is explicitly defined, the attribute value will be substituted in <path>plugin.xml</path>.
   * If both [`patchPluginXml.sinceBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-sincebuild) and [`patchPluginXml.untilBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-untilbuild) attributes are explicitly set, both are substituted in <path>plugin.xml</path>.
   * If one attribute is explicitly set (e.g. [`patchPluginXml.sinceBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-sincebuild)) and one is not (e.g. [`patchPluginXml.untilBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-untilbuild) has a default value,) both attributes are patched at their respective (explicit and default) values.
@@ -112,10 +112,10 @@ For those [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxm
 {type="tip"}
 
 As discussed in [Components of a Wizard-Generated Gradle IntelliJ Platform Plugin](gradle_prerequisites.md#components-of-a-wizard-generated-gradle-intellij-platform-plugin), the Gradle properties `project.version`, `project.group`, and `rootProject.name` are all generated based on the input to the Wizard.
-However, the [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) does not combine and substitute those Gradle properties for the default `<id>` and `<name>` elements in the <path>plugin.xml</path> file.
+However, the [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) does not combine and substitute those Gradle properties for the default [`<id>`](plugin_configuration_file.md#idea-plugin__id) and [`<name>`](plugin_configuration_file.md#idea-plugin__name) elements in the <path>plugin.xml</path> file.
 
 The best practice is to keep `project.version` current.
-By default, if you modify `project.version` in Gradle build script, the Gradle plugin will automatically update the `<version>` value in the <path>plugin.xml</path> file.
+By default, if you modify `project.version` in Gradle build script, the Gradle plugin will automatically update the [`<version>`](plugin_configuration_file.md#idea-plugin__version) value in the <path>plugin.xml</path> file.
 This practice keeps all version declarations synchronized.
 
 ### Verifying Plugin

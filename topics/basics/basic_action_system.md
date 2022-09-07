@@ -111,7 +111,7 @@ An example of inspecting PSI elements is demonstrated in the SDK code sample `ac
 ### Action IDs
 
 Every action and action group has a unique identifier.
-Basing the identifier for a custom action on the fully qualified name of the implementation is the best practice, assuming the package incorporates the `<id>` of the plugin.
+Basing the identifier for a custom action on the fully qualified name of the implementation is the best practice, assuming the package incorporates the [`<id>`](plugin_configuration_file.md#idea-plugin__id) of the plugin.
 Including the plugin identifier in the action identifier should prevent it from clashing with other plugins' actions.
 An action must have a unique identifier for each place.
 It is used in the IDE UI, even though the FQN of the implementation is the same.
@@ -154,27 +154,27 @@ See the [Grouping Actions](grouping_action.md) tutorial for examples of creating
 
 ## Registering Actions
 
-There are two main ways to register an action: either by listing it in the `<actions>` section of a plugin's <path>plugin.xml</path> file or through code.
+There are two main ways to register an action: either by listing it in the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of a plugin's <path>plugin.xml</path> file or through code.
 
 ### Registering Actions in plugin.xml
 
-Registering actions in <path>plugin.xml</path> is demonstrated in the following reference examples, which document all elements and attributes used in the `<actions>` section and describe each element's meaning.
+Registering actions in <path>plugin.xml</path> is demonstrated in the following reference examples, which document all elements and attributes used in the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section and describe each element's meaning.
 
 #### Setting the Override-Text Element
 
 Beginning in 2020.1, an alternate version of an action's menu text can be declared for use depending on where an action appears.
-Using the `<override-text>` element, the menu text for an action can be different depending on context: menu location, toolbar, etc.
+Using the [`<override-text>`](plugin_configuration_file.md#idea-plugin__actions__action__override-text) element, the menu text for an action can be different depending on context: menu location, toolbar, etc.
 This is also available for groups in 2020.3 and later.
 
-In the `action` element reference example (below) with `id` attribute `VssIntegration.GarbageCollection`, the default is to use the menu text "Garbage Collector: Collect _Garbage."
-The `add-to-group` element declares the action is added to the <menupath>Tools</menupath> menu.
+In the `<action>` element reference example (below) with `id` attribute `VssIntegration.GarbageCollection`, the default is to use the menu text "Garbage Collector: Collect _Garbage."
+The `<add-to-group>` element declares the action is added to the <menupath>Tools</menupath> menu.
 
-However, the `override-text` element declares that text for `VssIntegration.GarbageCollection` displayed anywhere in the main menu system should be the alternate text "Collect _Garbage."
+However, the `<override-text>` element declares that text for `VssIntegration.GarbageCollection` displayed anywhere in the main menu system should be the alternate text "Collect _Garbage."
 The <menupath>Tools</menupath> menu is part of the main menu, so the displayed menu text is "Collect _Garbage."
 A different context, such as searching for the action using <menupath>Help | Find Action</menupath>, displays the default text "Garbage Collector: Collect _Garbage" to give the user additional information about the action.
 
-A second `override-text` element uses `place` and `use-text-of-place` attributes to declare the same version of the text used in the main menu is also used in the editor popup menu.
-Additional `override-text` elements could be used to specify other places where the main menu text should be used.
+A second `<override-text>` element uses `place` and `use-text-of-place` attributes to declare the same version of the text used in the main menu is also used in the editor popup menu.
+Additional `<override-text>` elements could be used to specify other places where the main menu text should be used.
 
 An example of using `<override-text>` is demonstrated in the [Creating Actions](working_with_custom_actions.md#using-override-text-for-an-action) tutorial.
 
@@ -183,7 +183,7 @@ An example of using `<override-text>` is demonstrated in the [Creating Actions](
 _2020.3_
 Users can locate actions via their name by invoking <menupath>Help | Find Action</menupath>.
 
-To allow using alternative names in search, add one or more `<synonym>` elements inside `<action>` or `<reference>`:
+To allow using alternative names in search, add one or more [`<synonym>`](plugin_configuration_file.md#idea-plugin__actions__action__synonym) elements inside [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) or [`<reference>`](plugin_configuration_file.md#idea-plugin__actions__reference):
 
 ```xml
 <action id="MyAction" text="My Action Name" ...>
@@ -214,7 +214,7 @@ In the case of `action_basics`, only a default localization resource bundle (<pa
 ```
 
 _2020.1_
-If necessary, a dedicated resource bundle to use for actions and groups can be defined on `<actions>`:
+If necessary, a dedicated resource bundle to use for actions and groups can be defined on [`<actions>`](plugin_configuration_file.md#idea-plugin__actions):
 
 ```xml
 <actions resource-bundle="messages.MyActionsBundle">
@@ -234,7 +234,7 @@ For Actions, the key in property files incorporates the action `id` in this spec
 * `action.<action-id>.description=Translated Action Description`
 
 _2020.1_
-If `<override-text>` is used for an action `id`, the key includes the `<place>` attribute:
+If `<override-text>` is used for an action `id`, the key includes the `place` attribute:
 * `action.<action-id>.<place>.text=Place-dependent Translated Action Text`
 
 </tab>
@@ -401,6 +401,6 @@ Use [`BackAction`](%gh-ic%/platform/platform-api/src/com/intellij/ui/navigation/
 
 ### Runtime Placeholder Action
 
-For actions registered at runtime (e.g., in a tool window toolbar), add an `<action>` entry with
+For actions registered at runtime (e.g., in a tool window toolbar), add an [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) entry with
 [`EmptyAction`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/EmptyAction.java)
 to "reserve" Action ID so they become visible in <menupath>Settings/Preferences | Keymap</menupath>.

@@ -30,7 +30,7 @@ The Ruby plugin isn't bundled with `IU`, so the Ruby plugin version must be expl
 The correct Ruby plugin version is also determined from the Ruby plugin version page.
 
 The dependency on the Ruby plugin APIs must be declared in the <path>plugin.xml</path> file.
-As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` elements must contain `com.intellij.modules.ruby`.
+As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) elements must contain `com.intellij.modules.ruby`.
 The dependency declaration is illustrated in the <path>plugin.xml</path> snippet below:
 
 ```xml

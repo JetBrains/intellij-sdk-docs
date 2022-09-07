@@ -77,7 +77,7 @@ A plugin with a longer directory name, such as <path>conditional_operator_intent
 
 ## Plugin ID Conventions
 
-The plugin ID appears between `<id>` elements in the <path>plugin.xml</path> file.
+The plugin ID appears between [`<id>`](plugin_configuration_file.md#idea-plugin__id) elements in the <path>plugin.xml</path> file.
 
 In general, the plugin ID is the `Group ID` concatenated with the `Artifact ID`.
 For example, a plugin like <path>facet_basics</path> has the plugin ID `org.intellij.sdk.facet`.
@@ -153,20 +153,20 @@ A consistent structure for the <path>plugin.xml</path> [configuration file](plug
 Comment profusely about unique elements and configurations, and comment sparingly for the rest.
 
 The sequence of elements in an SDK code sample <path>plugin.xml</path> file is:
-* `<id>` Use the fully qualified [Plugin ID](#plugin-id-conventions).
-* `<name>` The name value does not have to match the [Plugin Directory Name](#directory-naming-conventions-for-sdk-plugins).
+* [`<id>`](plugin_configuration_file.md#idea-plugin__id) Use the fully qualified [Plugin ID](#plugin-id-conventions).
+* [`<name>`](plugin_configuration_file.md#idea-plugin__name) The name value does not have to match the [Plugin Directory Name](#directory-naming-conventions-for-sdk-plugins).
   The name is used for display purposes and should reflect the functionality of the plugin.
   The name must start with "SDK: ".
-* `<version>` The code sample's version in MAJOR.MINOR.FIX format.
+* [`<version>`](plugin_configuration_file.md#idea-plugin__version) The code sample's version in MAJOR.MINOR.FIX format.
   * MAJOR corresponds to a significant upgrade in functionality.
   * MINOR corresponds to minor refactoring and small improvements in functionality.
   * FIX corresponds to changes that fix problems without significant refactoring.
-* `<depends>` Include at least one dependency with the module `com.intellij.modules.platform` to indicate basic plugin compatibility with IntelliJ Platform-based products.
+* [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) Include at least one dependency with the module `com.intellij.modules.platform` to indicate basic plugin compatibility with IntelliJ Platform-based products.
   Add `<depends>` elements containing module FQNs as needed to describe more specialized [Compatibility with Multiple Products](plugin_compatibility.md), and any other [Plugin Dependencies](plugin_dependencies.md).
-* `<description>` is a concise explanation of what is being demonstrated and how a user would access the functionality.
+* [`<description>`](plugin_configuration_file.md#idea-plugin__description) is a concise explanation of what is being demonstrated and how a user would access the functionality.
   If the plugin by default overrides IDE behavior (such as <path>tree_structure_provider</path>) it must be noted in the description.
-* `<change-notes>` is an ordered list by version numbers with a brief description of changes for each version.
-* `<vendor>` Set the value to `IntelliJ Platform SDK`.
+* [`<change-notes>`](plugin_configuration_file.md#idea-plugin__change-notes) is an ordered list by version numbers with a brief description of changes for each version.
+* [`<vendor>`](plugin_configuration_file.md#idea-plugin__vendor) Set the value to `IntelliJ Platform SDK`.
   Set the attributes:
   * `email` omit this attribute.
   * `url` to the JetBrains Marketplace `"https://plugins.jetbrains.com"`

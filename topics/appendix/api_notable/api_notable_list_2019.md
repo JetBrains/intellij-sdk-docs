@@ -10,7 +10,7 @@
 : Now reflects its "heavy test" characteristics (see [Light and Heavy Tests](light_and_heavy_tests.md)).
 
 Support for transitive optional plugin dependencies
-: Optional <path>plugin.xml</path> configuration files can now specify `<depends>`. [Issue](https://youtrack.jetbrains.com/issue/IDEA-209769)
+: Optional <path>plugin.xml</path> configuration files can now specify [`<depends>`](plugin_configuration_file.md#idea-plugin__depends). [Issue](https://youtrack.jetbrains.com/issue/IDEA-209769)
 
 Theme/Keymap plugins do not require restart
 : (Un)Installing or enabling/disabling [Theme](themes_intro.md) or [Keymap](https://plugins.jetbrains.com/search?tags=Keymap) plugins doesn't require an IDE restart anymore.

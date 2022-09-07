@@ -34,7 +34,7 @@ configurations.all {
 ## Classes from Plugin Dependencies
 
 By default, the main IDE class loader loads classes that are not found in the plugin class loader.
-However, in the <path>plugin.xml</path> file, you may use the `<depends>` element to specify that a [plugin depends](plugin_dependencies.md) on one or more other plugins.
+However, in the <path>plugin.xml</path> file, you may use the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) element to specify that a [plugin depends](plugin_dependencies.md) on one or more other plugins.
 In this case, the class loaders of those plugins will be used for classes not found in the current plugin.
 This allows a plugin to reference classes from other plugins.
 

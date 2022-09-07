@@ -15,7 +15,7 @@ The group is based on a default IntelliJ Platform implementation.
 
 ### Creating Simple Groups
 
-Grouping can be registered by adding a `<group>` element to the `<actions>` section of a plugin's <path>plugin.xml</path> file.
+Grouping can be registered by adding a [`<group>`](plugin_configuration_file.md#idea-plugin__actions__group) element to the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of a plugin's <path>plugin.xml</path> file.
 This example has no `class` attribute in the `<group>` element because the IntelliJ Platform framework will supply a default implementation class for the group.
 This default implementation is used if a set of actions belonging to the group is static, i.e., does not change at runtime, which is the majority of cases.
 The `id` attribute must be unique, so incorporating the plugin ID or package name is the best practice.
@@ -35,7 +35,7 @@ See [](basic_action_system.md#registering-actions-in-pluginxml) for more informa
 
 ### Binding Action Groups to UI Components
 
-The following sample shows how to use an `<add-to-group>` element to place a custom action group relative to an entry in the <menupath>Tools</menupath> menu.
+The following sample shows how to use an [`<add-to-group>`](plugin_configuration_file.md#idea-plugin__actions__action__add-to-group) element to place a custom action group relative to an entry in the <menupath>Tools</menupath> menu.
 The attribute `relative-to-action` references the action `id` for `PopupDialogAction`, not a native IntelliJ menu entry.
 Rather `PopupDialogAction` is defined in the same [`plugin.xml`](%gh-sdk-samples%/action_basics/src/main/resources/META-INF/plugin.xml) file.
 This group is placed after the single entry for the action `PopupDialogAction`, as defined in the tutorial [Creating Actions](working_with_custom_actions.md#registering-an-action-with-the-new-action-form).
@@ -57,7 +57,7 @@ This group is placed after the single entry for the action `PopupDialogAction`, 
 
 The `PopupDialogAction` implementation will be reused and registered in the newly created static group.
 The `id` attribute for the reused `PopupDialogAction` implementation is set to a unique value, `org.intellij.sdk.action.GroupPopDialogAction`.
-This value differentiates this new `<action>` entry from the `id` previously used to register this action implementation in the [Creating Actions](working_with_custom_actions.md#registering-an-action-with-the-new-action-form) tutorial.
+This value differentiates this new [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) entry from the `id` previously used to register this action implementation in the [Creating Actions](working_with_custom_actions.md#registering-an-action-with-the-new-action-form) tutorial.
 A unique `id` supports reuse of action classes in more than one menu or group.
 The action in this group will be displayed in the menu as "A Group Action".
 
@@ -116,7 +116,7 @@ public class CustomDefaultActionGroup extends DefaultActionGroup {
 
 ### Registering the Custom Action Group
 
-As in the case with the static action group, the action `<group>` should be declared in the `<actions>` section of the <path>plugin.xml</path> file, for example, the [action_basics](%gh-sdk-samples%/action_basics/src/main/resources/META-INF/plugin.xml) plugin.
+As in the case with the static action group, the action [`<group>`](plugin_configuration_file.md#idea-plugin__actions__group) should be declared in the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of the <path>plugin.xml</path> file, for example, the [action_basics](%gh-sdk-samples%/action_basics/src/main/resources/META-INF/plugin.xml) plugin.
 For demonstration purposes, this implementation will use localization.
 
 The `<group>` element declaration below shows:
@@ -125,7 +125,7 @@ The `<group>` element declaration below shows:
 * Setting the group's `popup` attribute to allow submenus.
 * The `text` and `description` attributes are omitted in the `<group>` declaration in favor of using the localization resource bundle to define them.
 * There is no `icon` attribute for the group; the `CustomDefaultActionGroup` implementation will [add an icon for the group](#providing-specific-behavior-for-the-custom-group).
-* The `<add-to-group>` element specifies adding the group in the first position of the existing `EditorPopupMenu`.
+* The [`<add-to-group>`](plugin_configuration_file.md#idea-plugin__actions__action__add-to-group) element specifies adding the group in the first position of the existing `EditorPopupMenu`.
 
 ```xml
 <resource-bundle>messages.BasicActionsBundle</resource-bundle>
@@ -142,7 +142,7 @@ The `<group>` element declaration below shows:
 
 ### Adding Actions to the Custom Group
 
-As in [Static Grouped Actions](#adding-a-new-action-to-the-static-grouped-actions), the `PopupDialogAction` action is added as an `<action>` element in the `<group>` element.
+As in [Static Grouped Actions](#adding-a-new-action-to-the-static-grouped-actions), the `PopupDialogAction` action is added as an [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) element in the [`<group>`](plugin_configuration_file.md#idea-plugin__actions__group) element.
 In the `<action>` element declaration below:
 * The `class` attribute in the `<action>` element has the same FQN to reuse this action implementation.
 * The `id` attribute is unique to distinguish it from other uses of the implementation in the Action System.
@@ -165,7 +165,7 @@ In the `<action>` element declaration below:
 
 Now the translations for the `text` and `description` attributes must be provided in the resource bundle [`BasicActionsBundle.properties`](%gh-sdk-samples%/action_basics/src/main/resources/messages/BasicActionsBundle.properties) file according to [Localizing Actions and Groups](basic_action_system.md#localizing-actions-and-groups).
 Note there are two sets of `text` and `description` translations, one for the action and one for the group.
-Conceivably, there could be another set of translations for the action if it used the `<override-text>` attribute.
+Conceivably, there could be another set of translations for the action if it used the [`<override-text>`](plugin_configuration_file.md#idea-plugin__actions__action__override-text) attribute.
 
 ```properties
 action.org.intellij.sdk.action.CustomGroupedAction.text=A Popup Action[en]
@@ -214,7 +214,7 @@ public class DynamicActionGroup extends ActionGroup {
 
 ### Registering a Variable Action Group
 
-To register the dynamic menu group, a `<group>` attribute needs to be placed in the `<actions>` section of [`plugin`.xml](%gh-sdk-samples%/action_basics/src/main/resources/META-INF/plugin.xml).
+To register the dynamic menu group, a [`<group>`](plugin_configuration_file.md#idea-plugin__actions__group) attribute needs to be placed in the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of [`plugin`.xml](%gh-sdk-samples%/action_basics/src/main/resources/META-INF/plugin.xml).
 When enabled, this group appears just below the [Static Grouped Actions](#binding-action-groups-to-ui-components) in the <menupath>Tools</menupath> menu:
 
 ```xml

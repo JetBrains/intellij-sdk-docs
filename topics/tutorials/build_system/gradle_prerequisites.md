@@ -139,7 +139,7 @@ tasks {
 
 #### Plugin Gradle Properties and Plugin Configuration File Elements
 
-The Gradle properties `rootProject.name` and `project.group` will not, in general, match the respective [plugin configuration file](plugin_configuration_file.md) <path>plugin.xml</path> elements `<name>` and `<id>`.
+The Gradle properties `rootProject.name` and `project.group` will not, in general, match the respective [plugin configuration file](plugin_configuration_file.md) <path>plugin.xml</path> elements [`<name>`](plugin_configuration_file.md#idea-plugin__name) and [`<id>`](plugin_configuration_file.md#idea-plugin__id).
 There is no IntelliJ Platform-related reason they should as they serve different functions.
 
 The `<name>` element (used as the plugin's display name) is often the same as `rootProject.name`, but it can be more explanatory.

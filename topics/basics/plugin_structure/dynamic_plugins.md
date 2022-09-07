@@ -9,7 +9,7 @@ To test whether dynamic installation works correctly, verify installing [local b
 
 Please note that any unloading problems in a production environment will simply ask the user to restart the IDE.
 
-> If a plugin _requires_ restart (e.g., due to using native libraries) specify `require-restart="true"` for `<idea-plugin>` root tag in <path>plugin.xml</path>.
+> If a plugin _requires_ restart (e.g., due to using native libraries) specify `require-restart="true"` for [`<idea-plugin>`](plugin_configuration_file.md#idea-plugin) root tag in <path>plugin.xml</path>.
 >
 {type="note"}
 
@@ -27,7 +27,7 @@ No Components must be used; existing ones [must be migrated](plugin_components.m
 
 ### Action Group Requires ID
 
-All `<group>`s must declare a unique `id`.
+All [`<group>`](plugin_configuration_file.md#idea-plugin__actions__group) elements must declare a unique `id`.
 
 ### Use Only Dynamic Extensions
 

@@ -23,7 +23,7 @@ The advantage is because listener instances get created lazily — the first tim
 
 ## Defining Application-Level Listeners
 
-To define an application-level listener, add the following section to your <path>plugin.xml</path>:
+To define an application-level listener, add the [`<applicationListeners>`](plugin_configuration_file.md#idea-plugin__applicationListeners) section to your <path>plugin.xml</path>:
 
 ```xml
 <idea-plugin>
@@ -78,7 +78,7 @@ public class MyVfsListener implements BulkFileListener {
 
 ## Defining Project-Level Listeners
 
-[Project](project.md)-level listeners are registered in the same way, except that the top-level tag is `<projectListeners>`.
+[Project](project.md)-level listeners are registered in the same way, except that the top-level tag is [`<projectListeners>`](plugin_configuration_file.md#idea-plugin__projectListeners).
 They can be used to listen to project-level events, for example, [tool window](tool_windows.md) operations:
 
 ```xml

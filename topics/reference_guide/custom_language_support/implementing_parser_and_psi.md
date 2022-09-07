@@ -20,6 +20,9 @@ The top-level node of the PSI tree for a file needs to implement the [`PsiFile`]
 **Example**:
 [`ParserDefinition`](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertiesParserDefinition.java) for [Properties language plugin](%gh-ic%/plugins/properties)
 
+> To avoid unnecessary classloading when initializing the `ParserDefinition` extension point implementation, all `TokenSet` return values should use constants from dedicated `$Language$TokenSets` class.
+{type="note"}
+
 The PSI's lifecycle is described in more detail in [Fundamentals](fundamentals.md).
 
 The base classes for the PSI implementation, including [`PsiFileBase`](%gh-ic%/platform/core-impl/src/com/intellij/extapi/psi/PsiFileBase.java), the base implementation of [`PsiFile`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiFile.java), and [`ASTWrapperPsiElement`](%gh-ic%/platform/core-impl/src/com/intellij/extapi/psi/ASTWrapperPsiElement.java), the base implementation of [`PsiElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java), are provided by IntelliJ Platform.

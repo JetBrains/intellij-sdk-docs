@@ -62,7 +62,7 @@ Please see the following steps for setup, depending on the target platform versi
 
 <tab title="2020.3 and later">
 
-`NotificationGroup` is registered in <path>plugin.xml</path> using `com.intellij.notificationGroup` extension point.
+`NotificationGroup` is registered in <path>[plugin.xml](plugin_configuration_file.md)</path> using `com.intellij.notificationGroup` extension point.
 Use `key` to provide a localized group display name.
 
 ```xml

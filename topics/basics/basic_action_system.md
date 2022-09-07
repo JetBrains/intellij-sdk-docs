@@ -154,7 +154,7 @@ See the [Grouping Actions](grouping_action.md) tutorial for examples of creating
 
 ## Registering Actions
 
-There are two main ways to register an action: either by listing it in the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of a plugin's <path>plugin.xml</path> file or through code.
+There are two main ways to register an action: either by listing it in the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of a plugin's <path>[plugin.xml](plugin_configuration_file.md)</path> file or through code.
 
 ### Registering Actions in plugin.xml
 

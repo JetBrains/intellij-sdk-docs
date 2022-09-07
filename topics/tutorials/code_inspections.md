@@ -35,7 +35,7 @@ The overall approach works for inspections aimed at other languages as well.
   For example, the Java/Probable Bugs inspection <control>Object comparison using '==', instead of 'equals()'</control> is very similar to `comparing_references_inspection`.
 * Use the display name text as the [target for a search](https://www.jetbrains.com/help/idea/finding-and-replacing-text-in-project.html) within the _intellij_community_ project.
   This will identify a bundle file if the display name is localized.
-  If it is not localized, the search finds either the plugin configuration (<path>plugin.xml</path>) file where it is an attribute in the inspection description, or the implementation where it is provided by an overridden method.
+  If it is not localized, the search finds either the <path>[plugin.xml](plugin_configuration_file.md)</path> file where it is an attribute in the inspection description, or the implementation where it is provided by an overridden method.
 * In the case of localization, copy the key from the bundle file identified by the search.
   * Use the key text as the target for a search within the _intellij_community_ project.
     This search locates the plugin configuration file that describes the inspection.

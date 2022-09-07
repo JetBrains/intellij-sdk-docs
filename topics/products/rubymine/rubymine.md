@@ -29,7 +29,7 @@ Product compatibility is determined from the Ruby plugin [version page](https://
 The Ruby plugin isn't bundled with `IU`, so the Ruby plugin version must be explicitly declared to support the target RubyMine (and `IU`) BRANCH.BUILD version.
 The correct Ruby plugin version is also determined from the Ruby plugin version page.
 
-The dependency on the Ruby plugin APIs must be declared in the <path>plugin.xml</path> file.
+The dependency on the Ruby plugin APIs must be declared in the <path>[plugin.xml](plugin_configuration_file.md)</path> file.
 As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) elements must contain `com.intellij.modules.ruby`.
 The dependency declaration is illustrated in the <path>plugin.xml</path> snippet below:
 

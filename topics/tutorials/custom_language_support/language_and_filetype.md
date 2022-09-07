@@ -48,7 +48,7 @@ The Simple Language file type is defined by subclassing [`LanguageFileType`](%gh
 
 <tab title="2019.2 and later">
 
-The Simple Language file type is registered via the `com.intellij.fileType` extension point in <path>plugin.xml</path> and registered with <path>*.simple</path> extension:
+The Simple Language file type is registered via the `com.intellij.fileType` extension point in <path>[plugin.xml](plugin_configuration_file.md)</path> and registered with <path>*.simple</path> extension:
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

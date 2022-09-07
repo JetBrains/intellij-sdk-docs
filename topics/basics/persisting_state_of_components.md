@@ -197,5 +197,5 @@ Implementations can manually store the state in attributes and sub-elements or u
 Components save their state in the following files:
 
 * Project-level: project (<path>.ipr</path>) file.
-  However, if the workspace option in the <path>plugin.xml</path> file is set to `true`, then the workspace (<path>.iws</path>) file is used instead.
+  However, if the workspace option in the <path>[plugin.xml](plugin_configuration_file.md)</path> file is set to `true`, then the workspace (<path>.iws</path>) file is used instead.
 * Module-level: module (<path>.iml</path>) file.

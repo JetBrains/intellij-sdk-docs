@@ -51,7 +51,7 @@ Before fleshing out those methods, to complete this minimal implementation, `Pop
 
 ## Registering a Custom Action
 
-Actions are registered by declaring them in code or by declaring them in the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of a plugin configuration (<path>plugin.xml</path>) file.
+Actions are registered by declaring them in code or by declaring them in the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of a [plugin configuration file](plugin_configuration_file.md).
 This section describes using IDE tooling - the <control>New Action</control> form - to add a declaration to the <path>plugin.xml</path> file, and then tuning registration attributes manually.
 A more comprehensive explanation of action registration is available in the [](basic_action_system.md#registering-actions) section of this guide.
 

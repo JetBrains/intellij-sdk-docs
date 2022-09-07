@@ -88,7 +88,7 @@ available at this repository.
 During plugin installation, the IDE reads the plugin JAR/ZIP file and thereafter displays more information about the plugin.
 In some cases, additional information included in <path>updatePlugins.xml</path> might help a user select a plugin when [browsing the custom plugin repository](https://www.jetbrains.com/help/idea/managing-plugins.html#repos) before installation.
 The decision on what elements should be included in the file depends on the plugins and repository consumers.
-It is recommended to avoid adding unnecessary elements as they will have to be synchronized with each plugin's <path>plugin.xml</path> file.
+It is recommended to avoid adding unnecessary elements as they will have to be synchronized with each plugin's <path>[plugin.xml](plugin_configuration_file.md)</path> file.
 
 The additional candidate elements:
 

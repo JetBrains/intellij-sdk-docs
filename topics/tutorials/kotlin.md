@@ -127,7 +127,7 @@ Depending on exact functionality, a plugin can also target [UAST (Unified Abstra
 
 Plugins *may* use [Kotlin classes](https://kotlinlang.org/docs/classes.html) to implement declarations in the [plugin configuration file](plugin_configuration_file.md).
 When registering an extension, the platform uses a dependency injection framework to instantiate these classes.
-For this reason, plugins *must not* use [Kotlin objects](https://kotlinlang.org/docs/object-declarations.html) to implement any <path>plugin.xml</path> declarations.
+For this reason, plugins *must not* use [Kotlin objects](https://kotlinlang.org/docs/object-declarations.html) to implement any <path>[plugin.xml](plugin_configuration_file.md)</path> declarations.
 
 ## Examples
 

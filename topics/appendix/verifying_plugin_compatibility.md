@@ -25,5 +25,5 @@ Consider using the following [IDE inspections](https://www.jetbrains.com/help/id
 - <control>JVM languages | Unstable API Usage</control>
 - <control>JVM languages | Unstable type is used in signature</control>
 
-Usage of [Extension Points](plugin_extensions.md) which are deprecated or annotated with [`org.jetbrains.annotations.ApiStatus`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java) `@Experimental`/`@Internal` is highlighted in <path>plugin.xml</path> files.
+Usage of [Extension Points](plugin_extensions.md) which are deprecated or annotated with [`org.jetbrains.annotations.ApiStatus`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java) `@Experimental`/`@Internal` is highlighted in <path>[plugin.xml](plugin_configuration_file.md)</path> files.
 

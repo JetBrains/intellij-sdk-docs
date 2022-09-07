@@ -12,7 +12,7 @@ Implementations of `DocumentationProvider` can be registered either at the `com.
 `com.intellij.lang.documentationProvider` extension point (EP).
 It is recommended to use the latter one when creating documentation that targets a specific language because providers registered
 as `com.intellij.lang.documentationProvider` will only be called for elements from that language.
-This is the reason they require the `language` attribute when registering the EP in the <path>plugin.xml</path>.
+This is the reason they require the `language` attribute when registering the EP in the <path>[plugin.xml](plugin_configuration_file.md)</path>.
 The bigger picture here is that documentation providers co-exist and if there is more than one provider for the same element,
 the first one that returns a value different from `null` wins.
 

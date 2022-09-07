@@ -85,7 +85,7 @@ interface Bar extends com.intellij.util.xml.DomElement {
 ```
 
 Next, you should create a [`DomFileDescription`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/DomFileDescription.java) class, pass to its constructor the root tag name and root element interface.
-Register it in <path>plugin.xml</path> using `com.intellij.dom.fileMetaData` extension point and specify `rootTagName` and `domVersion`/`stubVersion` attributes.
+Register it in <path>[plugin.xml](plugin_configuration_file.md)</path> using `com.intellij.dom.fileMetaData` extension point and specify `rootTagName` and `domVersion`/`stubVersion` attributes.
 
 > When targeting 2019.1 or earlier, use `com.intellij.dom.fileDescription` extension point instead.
 >

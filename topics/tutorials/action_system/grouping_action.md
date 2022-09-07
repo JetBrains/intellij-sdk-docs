@@ -15,7 +15,7 @@ The group is based on a default IntelliJ Platform implementation.
 
 ### Creating Simple Groups
 
-Grouping can be registered by adding a [`<group>`](plugin_configuration_file.md#idea-plugin__actions__group) element to the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of a plugin's <path>plugin.xml</path> file.
+Grouping can be registered by adding a [`<group>`](plugin_configuration_file.md#idea-plugin__actions__group) element to the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of a plugin's <path>[plugin.xml](plugin_configuration_file.md)</path> file.
 This example has no `class` attribute in the `<group>` element because the IntelliJ Platform framework will supply a default implementation class for the group.
 This default implementation is used if a set of actions belonging to the group is static, i.e., does not change at runtime, which is the majority of cases.
 The `id` attribute must be unique, so incorporating the plugin ID or package name is the best practice.

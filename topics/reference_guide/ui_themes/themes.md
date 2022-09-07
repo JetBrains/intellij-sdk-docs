@@ -18,7 +18,7 @@ This approach provides the best user experience because it avoids an IDE restart
 
 UI Themes have several components:
 * A required Theme description (JSON) file in the plugin project's <path>resources</path> folder.
-* A required `themeProvider` declaration in the plugin's <path>plugin.xml</path> file, located in the plugin project's <path>META-INF</path> folder.
+* A required `themeProvider` declaration in the plugin's <path>[plugin.xml](plugin_configuration_file.md)</path> file, located in the plugin project's <path>META-INF</path> folder.
 * An optional Editor Scheme description (XML) file derived from an exported IDE editor scheme.
   This file is located in the plugin project's <path>resources</path> folder.
 * An optional background image file, located in the plugin project's <path>resources</path> folder.

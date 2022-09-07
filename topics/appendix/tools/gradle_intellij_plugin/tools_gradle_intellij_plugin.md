@@ -284,7 +284,7 @@ Notes:
 - For plugins from [JetBrains Marketplace](https://plugins.jetbrains.com), use format `pluginId:version`.
 - For bundled plugins, version must be omitted: e.g. `org.intellij.groovy`.
 - For subprojects, use project reference `project(':subproject')`.
-- If you need to refer plugin's classes from your project, you also have to define a dependency in your <path>plugin.xml</path> file, see [](plugin_dependencies.md).
+- If you need to refer plugin's classes from your project, you also have to define a dependency in your <path>[plugin.xml](plugin_configuration_file.md)</path> file, see [](plugin_dependencies.md).
 
 {style="narrow"}
 Type

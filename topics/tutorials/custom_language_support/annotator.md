@@ -38,7 +38,7 @@ intellij {
 </tab>
 </tabs>
 
-Then, declare the dependency in <path>plugin.xml</path> (use code insight)
+Then, declare the dependency in <path>[plugin.xml](plugin_configuration_file.md)</path> (use code insight)
 
 ```xml
 <depends>com.intellij.java</depends>

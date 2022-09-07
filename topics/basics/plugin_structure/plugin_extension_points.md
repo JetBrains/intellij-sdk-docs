@@ -17,7 +17,7 @@ There are two types of extension points:
 
 ## Declaring Extension Points
 
-You can declare extensions and extension points in the plugin configuration file <path>plugin.xml</path>, within the [`<extensions>`](plugin_configuration_file.md#idea-plugin__extensions) and [`<extensionPoints>`](plugin_configuration_file.md#idea-plugin__extensionPoints) sections.
+You can declare extensions and extension points in the plugin configuration file <path>[plugin.xml](plugin_configuration_file.md)</path>, within the [`<extensions>`](plugin_configuration_file.md#idea-plugin__extensions) and [`<extensionPoints>`](plugin_configuration_file.md#idea-plugin__extensionPoints) sections.
 
 To declare extension points in your plugin, add an `<extensionPoints>` section to your <path>plugin.xml</path>.
 Then insert a child element [`<extensionPoint>`](plugin_configuration_file.md#idea-plugin__extensionPoints__extensionPoint) that defines the extension point name and the name of a bean class or an interface that is allowed to extend the plugin functionality in the `name`, `beanClass` and `interface` attributes, respectively.

@@ -22,7 +22,7 @@ Click on an entry in the table's *Attribute* column to go to the documentation a
 | [`intellij.downloadSources`](tools_gradle_intellij_plugin.md#intellij-extension-downloadsources) | `false` is required because no public source code is available.                |
 | [`runIde.ideDir`](tools_gradle_intellij_plugin.md#runide-task-idedir)                            | Not needed; the Development Instance will automatically match `intellij.type`. |
 
-The dependency on the PyCharm APIs must be declared in the <path>plugin.xml</path> file.
+The dependency on the PyCharm APIs must be declared in the <path>[plugin.xml](plugin_configuration_file.md)</path> file.
 As described in [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml), the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) tags must declare `com.intellij.modules.python`.
 
 See the SDK code sample [`pycharm_basics`](%gh-sdk-samples%/product_specific/pycharm_basics/) for an example configuration.

@@ -30,7 +30,7 @@ Additionally, dedicated Extension Point Lists specific to IDEs are available und
 ### 1.2 Use Autocompletion Information
 
 Another way to discover EPs is by using autocompletion or navigating through EP XML files.
-When you open a new tag in your <path>plugin.xml</path> file (inside the `extensions` block with `defaultExtensionNs="com.intellij"`),
+When you open a new tag in your <path>[plugin.xml](plugin_configuration_file.md)</path> file (inside the [`<extensions>`](plugin_configuration_file.md#idea-plugin__extensions) block with `defaultExtensionNs="com.intellij"`),
 the IDE will automatically suggest possible EPs.
 
 ![Using Completion Suggestions](plugin_xml_completion_suggestion.png){width="706"}{animated="true"}{border-effect="rounded"}

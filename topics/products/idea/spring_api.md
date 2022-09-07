@@ -21,7 +21,7 @@ Please use only Spring-related functionality exposed in <path>spring-api.jar</pa
 Using any other "internal" (implementation) classes from Spring plugin itself (<path>spring.jar</path>) is _not_ supported.
 
 ### plugin.xml
-Add `<depends>com.intellij.spring</depends>` to your <path>plugin.xml</path> to require "Spring Support" plugin to be activated.
+Add `<depends>com.intellij.spring</depends>` to your <path>[plugin.xml](plugin_configuration_file.md)</path> to require "Spring Support" plugin to be activated.
 All available extension points are provided under `com.intellij.spring` prefix.
 Note that the "Spring Support" plugin itself has dependencies on a few other plugins which need to be enabled in your sandbox (see notifications on startup).
 
@@ -176,7 +176,7 @@ Spring Boot API allows extending/accessing Spring Boot specific support in the I
 Sources for Spring Boot API are available in <path>$IDEA_HOME$/lib/src/src_spring-boot-openapi.zip</path>.
 
 ### Update plugin.xml
-Add `<depends>com.intellij.spring.boot</depends>` to your <path>plugin.xml</path> to require "Spring Boot" plugin to be activated.
+Add `<depends>com.intellij.spring.boot</depends>` to your <path>[plugin.xml](plugin_configuration_file.md)</path> to require "Spring Boot" plugin to be activated.
 All available extension points are provided under `com.intellij.spring.boot` prefix.
 
 ### Spring Boot Library

@@ -67,7 +67,7 @@ Select a [version](https://plugins.jetbrains.com/plugin/9568-go/versions) of the
 
 </tabs>
 
-The dependency on the Go plugin APIs must be declared in the <path>plugin.xml</path> file.
+The dependency on the Go plugin APIs must be declared in the <path>[plugin.xml](plugin_configuration_file.md)</path> file.
 As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) tags must declare `com.intellij.modules.goland`.
 The <path>plugin.xml</path> file must also declare a dependency on `com.intellij.modules.platform` as explained in [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml).
 The dependency declaration is illustrated in the <path>plugin.xml</path> snippet below:

@@ -88,7 +88,7 @@ To disable red exclamation notification icon in status bar, invoke <menupath>Hel
 ## Runtime Information
 
 [`ApplicationInfo`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ApplicationInfo.java) provides information on the IDE version and vendor.
-NOTE: to restrict compatibility, declare [IDEs](plugin_compatibility.md) and [versions](build_number_ranges.md) via <path>plugin.xml</path>.
+NOTE: to restrict compatibility, declare [IDEs](plugin_compatibility.md) and [versions](build_number_ranges.md) via <path>[plugin.xml](plugin_configuration_file.md)</path>.
 
 To obtain information about OS and Java VM, use [`SystemInfo`](%gh-ic%/platform/util/src/com/intellij/openapi/util/SystemInfo.java).
 

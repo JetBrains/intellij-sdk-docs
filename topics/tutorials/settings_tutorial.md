@@ -33,7 +33,7 @@ It is based on the [IntelliJ Platform Persistence Model](persisting_state_of_com
 
 ### Declaring AppSettingsState
 
-Given a [Light Service](plugin_services.md#light-services) is not used, the persistent data class must be declared as a [Service](plugin_services.md#declaring-a-service) EP in the <path>plugin.xml</path> file.
+Given a [Light Service](plugin_services.md#light-services) is not used, the persistent data class must be declared as a [Service](plugin_services.md#declaring-a-service) EP in the <path>[plugin.xml](plugin_configuration_file.md)</path> file.
 If these were Project Settings, the `com.intellij.projectService` EP would be used.
 However, because these are Application Settings, the `com.intellij.applicationService` EP is used with the fully qualified name (FQN) of the implementation class:
 

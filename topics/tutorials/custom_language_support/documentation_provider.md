@@ -15,7 +15,7 @@ the file where it is defined, and any related documentation comment.
 
 In the first step, we create an empty class that extends
 [`AbstractDocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/AbstractDocumentationProvider.java)
-and registers it in the <path>plugin.xml</path>.
+and register it in the <path>[plugin.xml](plugin_configuration_file.md)</path>.
 
 ```java
 public class SimpleDocumentationProvider extends AbstractDocumentationProvider { }

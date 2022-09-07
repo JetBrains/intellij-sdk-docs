@@ -12,7 +12,7 @@ See [Creating a Plugin Project](gradle_build_system.md) to know how to do it.
 ## Register Module Builder
 
 Project configuration settings depend on the project's module type.
-Register a new `com.intellij.moduleBuilder` extension point in the <path>plugin.xml</path> configuration file.
+Register a new `com.intellij.moduleBuilder` extension point in the <path>[plugin.xml](plugin_configuration_file.md)</path> configuration file.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

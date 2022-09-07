@@ -23,7 +23,7 @@ Declaring a dependency on a module also expresses a plugin's compatibility with 
 [Part I](plugin_dependencies.md) of this document describes the syntax for declaring plugin dependencies and optional plugin dependencies.
 Part II of this document (below) describes the IntelliJ Platform modules' functionality to aid in determining the dependencies of a plugin.
 
-The way dependency declarations are handled by the Intellij Platform is determined by the contents of the <path>plugin.xml</path> file:
+The way dependency declarations are handled by the Intellij Platform is determined by the contents of the <path>[plugin.xml](plugin_configuration_file.md)</path> file:
 * If a plugin does not declare any dependencies in its <path>plugin.xml</path> file, or if it declares dependencies only on other plugins but not modules, it's assumed to be a legacy plugin and is loaded only in IntelliJ IDEA.
   This configuration of the dependency declaration is deprecated; do not use it for new plugin projects.
 * If a plugin declares at least _one_ module dependency in its <path>plugin.xml</path> file, the plugin is loaded if an IntelliJ Platform-based product contains _all the modules and plugins_ on which the plugin has declared a dependency.

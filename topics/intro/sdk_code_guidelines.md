@@ -77,7 +77,7 @@ A plugin with a longer directory name, such as <path>conditional_operator_intent
 
 ## Plugin ID Conventions
 
-The plugin ID appears between [`<id>`](plugin_configuration_file.md#idea-plugin__id) elements in the <path>plugin.xml</path> file.
+The plugin ID appears between [`<id>`](plugin_configuration_file.md#idea-plugin__id) elements in the <path>[plugin.xml](plugin_configuration_file.md)</path> file.
 
 In general, the plugin ID is the `Group ID` concatenated with the `Artifact ID`.
 For example, a plugin like <path>facet_basics</path> has the plugin ID `org.intellij.sdk.facet`.

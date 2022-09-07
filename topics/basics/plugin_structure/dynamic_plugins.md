@@ -9,7 +9,7 @@ To test whether dynamic installation works correctly, verify installing [local b
 
 Please note that any unloading problems in a production environment will simply ask the user to restart the IDE.
 
-> If a plugin _requires_ restart (e.g., due to using native libraries) specify `require-restart="true"` for [`<idea-plugin>`](plugin_configuration_file.md#idea-plugin) root tag in <path>plugin.xml</path>.
+> If a plugin _requires_ restart (e.g., due to using native libraries) specify `require-restart="true"` for [`<idea-plugin>`](plugin_configuration_file.md#idea-plugin) root tag in <path>[plugin.xml](plugin_configuration_file.md)</path>.
 >
 {type="note"}
 

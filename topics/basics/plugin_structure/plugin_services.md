@@ -35,7 +35,7 @@ To improve startup performance, avoid any heavy initializations in the construct
 >
 {type="note"}
 
-A service not going to be overridden does not need to be registered in <path>plugin.xml</path> (see [Declaring a Service](#declaring-a-service)).
+A service not going to be overridden does not need to be registered in <path>[plugin.xml](plugin_configuration_file.md)</path> (see [Declaring a Service](#declaring-a-service)).
 Instead, annotate service class with [`@Service`](%gh-ic%/platform/core-api/src/com/intellij/openapi/components/Service.java).
 The service instance will be created in scope according to the caller (see [Retrieving a Service](#retrieving-a-service)).
 

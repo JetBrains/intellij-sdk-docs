@@ -23,7 +23,7 @@ The advantage is because listener instances get created lazily — the first tim
 
 ## Defining Application-Level Listeners
 
-To define an application-level listener, add the [`<applicationListeners>`](plugin_configuration_file.md#idea-plugin__applicationListeners) section to your <path>plugin.xml</path>:
+To define an application-level listener, add the [`<applicationListeners>`](plugin_configuration_file.md#idea-plugin__applicationListeners) section to your <path>[plugin.xml](plugin_configuration_file.md)</path>:
 
 ```xml
 <idea-plugin>

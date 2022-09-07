@@ -251,7 +251,7 @@ could be different, not only in the number of elements, but also in their order.
 
 ## Using UAST in Plugins
 
-To register extensions applicable to UAST, specify `language="UAST"` in <path>plugin.xml</path>.
+To register extensions applicable to UAST, specify `language="UAST"` in <path>[plugin.xml](plugin_configuration_file.md)</path>.
 
 ### Inspecting UAST Tree
 

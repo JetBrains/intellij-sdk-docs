@@ -16,7 +16,7 @@ To express a dependency on classes from other plugins or modules, perform the fo
 
 1. Locate Plugin ID
 2. Project Setup
-3. Declaration in <path>plugin.xml</path>
+3. Declaration in <path>[plugin.xml](plugin_configuration_file.md)</path>
 
 If `java.lang.NoClassDefFoundError` occurs at runtime, it means that either Step 3 was omitted or loading the plugin dependency failed (please check log files from [Development Instance](ide_development_instance.md#development-instance-settings-caches-logs-and-plugins)).
 
@@ -143,7 +143,7 @@ Continuing with the example from [Project Setup](#2-project-setup) above, the de
 A plugin can also specify an optional plugin dependency.
 In this case, the plugin will load even if the plugin it depends on is not installed or enabled, but part of the plugin's functionality will not be available.
 
-Declare additional `optional="true"` and `config-file` attribute pointing to optional plugin descriptor file:
+Declare additional `optional="true"` and `config-file` attribute pointing to [optional plugin descriptor file](plugin_configuration_file.md#additional-plugin-configuration-files):
 
 ```xml
 <depends

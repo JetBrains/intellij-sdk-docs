@@ -21,7 +21,7 @@ All the Gradle configuration attributes described here are discussed in-depth on
 To create a new Gradle plugin project, follow the tutorial on the [](gradle_prerequisites.md) page.
 The tutorial produces a skeleton Gradle project suitable to use as a starting point.
 
-Modifications are needed to the skeleton project's Gradle build script and <path>plugin.xml</path> files, as described below, and on the individual product pages in _Part VIII — Product Specific_.
+Modifications are needed to the skeleton project's Gradle build script and <path>[plugin.xml](plugin_configuration_file.md)</path> files, as described below, and on the individual product pages in _Part VIII — Product Specific_.
 The Gradle build script is modified to specify the target product, determining the APIs available during development.
 The <path>plugin.xml</path> file is modified to declare the plugin's dependency on modules or libraries.
 

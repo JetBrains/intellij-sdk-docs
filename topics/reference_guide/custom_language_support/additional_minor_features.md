@@ -6,7 +6,7 @@
 
 A number of minor features are listed in the following format:
 
-_EP: `fully.qualified.extensionPointName`_ - Extension Point Name (must be specified in <path>plugin.xml</path>)
+_EP: `fully.qualified.extensionPointName`_ - Extension Point Name (must be specified in <path>[plugin.xml](plugin_configuration_file.md)</path>)
 
 _`com.extensionPoint.class`_ _description text_ - Extension Point class/interface to provide functionality
 

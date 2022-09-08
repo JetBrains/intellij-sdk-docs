@@ -6,6 +6,8 @@
 
 **Reference**: [](references_and_resolve.md), [](psi_references.md)
 
+**Testing**: [](completion_test.md), [](rename_test.md), [](reference_test.md),
+
 </microformat>
 
 <include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>

@@ -6,6 +6,8 @@
 
 **Reference**: [](documentation.md)
 
+**Testing**: [](documentation_test.md)
+
 </microformat>
 
 <include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>

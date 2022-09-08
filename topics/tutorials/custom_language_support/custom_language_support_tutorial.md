@@ -33,6 +33,7 @@ This a step-by-step tutorial, and it requires completing each step, in order:
 * [](folding_builder.md)
 * [](go_to_symbol_contributor.md)
 * [](structure_view_factory.md)
+* [](structure_aware_navbar.md)
 * [](formatter.md)
 * [](code_style_settings.md)
 * [](commenter.md)

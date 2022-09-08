@@ -12,7 +12,6 @@
 
 The first level of syntax highlighting is based on the lexer output, and is provided by `SyntaxHighlighter`.
 A plugin can also define color settings based on `ColorSettingPage` so the user can configure highlight colors.
-The `SimpleSyntaxHighlighter`, `SimpleSyntaxHighlighterFactory`, and `SimpleColorSettingsPage` discussed on this page are demonstrated in the `simple_language_plugin` code sample.
 
 ## Define a Syntax Highlighter
 

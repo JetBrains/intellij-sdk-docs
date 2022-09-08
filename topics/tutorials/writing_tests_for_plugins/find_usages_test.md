@@ -2,9 +2,13 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<include src="tests_prerequisites.md" include-id="custom_language_testing_tutorial_header"></include>
+<microformat>
 
-This test ensures the find usages provider, implemented in the [Find Usages Provider](find_usages_provider.md) section of the Custom Language Support Tutorial, works correctly.
+**Tested Functionality**: [](find_usages_provider.md)
+
+</microformat>
+
+<include src="tests_prerequisites.md" include-id="custom_language_testing_tutorial_header"></include>
 
 ## Define the Test Data
 Create the <path>FindUsagesTestData.simple</path> file in the <path>testData</path> directory.

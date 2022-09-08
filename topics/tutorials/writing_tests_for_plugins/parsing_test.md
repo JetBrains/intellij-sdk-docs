@@ -2,9 +2,13 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<include src="tests_prerequisites.md" include-id="custom_language_testing_tutorial_header"></include>
+<microformat>
 
-The first test checks if the Simple Language parser, implemented in the [Lexer and Parser Definition](lexer_and_parser_definition.md) section of the Custom Language Support Tutorial, works as expected.
+**Tested Functionality**: [](lexer_and_parser_definition.md)
+
+</microformat>
+
+<include src="tests_prerequisites.md" include-id="custom_language_testing_tutorial_header"></include>
 
 For more complex Lexers (e.g., having additional logic), it is advisable to add separate tests inheriting from [`LexerTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/LexerTestCase.java).
 

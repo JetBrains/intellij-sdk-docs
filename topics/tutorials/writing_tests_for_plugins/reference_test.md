@@ -2,9 +2,13 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<include src="tests_prerequisites.md" include-id="custom_language_testing_tutorial_header"></include>
+<microformat>
 
-This test checks if references functionality, implemented in the [Reference Contributor](reference_contributor.md) section of the Custom Language Support Tutorial, works as expected.
+**Tested Functionality**: [](reference_contributor.md)
+
+</microformat>
+
+<include src="tests_prerequisites.md" include-id="custom_language_testing_tutorial_header"></include>
 
 ## Define Test Data
 This test reuses the Simple Language file <path>DefaultTestData.simple</path>.

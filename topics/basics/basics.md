@@ -5,9 +5,9 @@
 This section covers the basics of working with the IntelliJ Platform.
 It will familiarize you with the working environment, project structure, and frequently used API components.
 
+* [](plugin_alternatives.md)
 * [](plugin_required_experience.md)
 * [](types_of_plugins.md)
-* [](plugin_alternatives.md)
 * [](getting_started.md)
 * [](plugin_structure.md)
 * [](kotlin.md)

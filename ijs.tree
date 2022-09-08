@@ -23,10 +23,10 @@
   </toc-element>
   <toc-element toc-title="Part I — Plugins">
     <toc-element id="basics.md">
+      <toc-element id="plugin_alternatives.md" toc-title="Plugin Alternatives"/>
       <toc-element id="plugin_required_experience.md"/>
       <toc-element id="types_of_plugins.md"/>
     </toc-element>
-    <toc-element id="plugin_alternatives.md"/>
     <toc-element id="getting_started.md">
       <toc-element id="github_template.md" toc-title="Using GitHub Template"/>
       <toc-element id="gradle_build_system.md" accepts-web-file-names="build_system.html"

@@ -2,12 +2,16 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Reference**: [](implementing_lexer.md)
+
+</microformat>
+
 <include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
 
 The lexical analyzer defines how the contents of a file are broken into tokens, which is the basis for supporting custom language features.
 The easiest way to create a lexer is to use [JFlex](https://jflex.de/).
-
-**Reference**: [](implementing_lexer.md)
 
 ## Define a Lexer
 

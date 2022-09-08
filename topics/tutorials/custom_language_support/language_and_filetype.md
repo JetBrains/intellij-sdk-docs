@@ -2,6 +2,12 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Reference**: [](registering_file_type.md)
+
+</microformat>
+
 <chunk id="custom_language_tutorial_header">
 
 > This page is part of multi step [](custom_language_support_tutorial.md).
@@ -13,8 +19,6 @@
 The IntelliJ Platform determines file type by examining the name of a file.
 Each language has [Language](%gh-ic%/platform/core-api/src/com/intellij/lang/Language.java) and [LanguageFileType](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java) objects defining the language.
 Register the `LanguageFileType` with the IntelliJ Platform in the plugin configuration file.
-
-**Reference**: [](registering_file_type.md)
 
 ## Define the Language
 

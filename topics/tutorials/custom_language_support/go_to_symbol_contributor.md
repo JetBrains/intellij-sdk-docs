@@ -2,11 +2,14 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Reference**: [](go_to_class_and_go_to_symbol.md)
+
+</microformat>
 <include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
 
 A _Go to Symbol Contributor_ helps the user to navigate to any PSI element by its name.
-
-**Reference**: [](go_to_class_and_go_to_symbol.md)
 
 ## Define a Helper Method for Generated PSI Elements
 

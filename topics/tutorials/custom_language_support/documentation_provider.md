@@ -2,14 +2,18 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Reference**: [](documentation.md)
+
+</microformat>
+
 <include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
 
 A [`DocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java)
 helps users by showing documentation for symbols like method calls inside the editor.
 For the custom language tutorial, we're implementing a version of this extension point (EP) for the Simple Language that shows the key/value,
 the file where it is defined, and any related documentation comment.
-
-**Reference:** [](documentation.md)
 
 ## Implement DocumentationProvider and Register the EP
 

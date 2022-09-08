@@ -6,6 +6,9 @@
 
 **Reference**: [](code_formatting.md)
 
+**Code**: [`SimpleBlock`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleBlock.java),
+[`SimpleFormattingModelBuilder`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFormattingModelBuilder.java)
+
 **Testing**: [](formatter_test.md)
 
 </microformat>
@@ -21,7 +24,7 @@ The formatter controls spaces, indents, wrap, and alignment.
 The formatting model represents the formatting structure of a file as a tree of [`Block`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/Block.java) objects, with associated indent, wrap, alignment and spacing settings.
 The goal is to cover each PSI element with such a block.
 Since each block builds its children's blocks, it can generate extra blocks or skip any PSI elements.
-Define `SimpleBlock` based on [`AbstractBlock`](%gh-ic%/platform/code-style-impl/src/com/intellij/psi/formatter/common/AbstractBlock.java).
+Define [`SimpleBlock`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleBlock.java) based on [`AbstractBlock`](%gh-ic%/platform/code-style-impl/src/com/intellij/psi/formatter/common/AbstractBlock.java).
 
 ```java
 ```
@@ -42,7 +45,7 @@ foo = bar
 ```
 </compare>
 
-Create `SimpleFormattingModelBuilder` by implementing [`FormattingModelBuilder`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/FormattingModelBuilder.java).
+Create [`SimpleFormattingModelBuilder`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFormattingModelBuilder.java) by implementing [`FormattingModelBuilder`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/FormattingModelBuilder.java).
 
 ```java
 ```

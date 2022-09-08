@@ -4,6 +4,8 @@
 
 <microformat>
 
+**Code**: [`SimpleCommenter`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCommenter.java)
+
 **Testing**: [](commenter_test.md)
 
 </microformat>
@@ -15,7 +17,7 @@ The [`Commenter`](%gh-ic%/platform/core-api/src/com/intellij/lang/Commenter.java
 
 ## Define a Commenter
 
-The commenter for Simple Language defines the line comment prefix as `#`.
+The [`SimpleCommenter`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCommenter.java) for Simple Language defines the line comment prefix as `#`.
 
 ```java
 ```

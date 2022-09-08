@@ -6,6 +6,9 @@
 
 **Reference**: [](documentation.md)
 
+**Code**: [`SimpleDocumentationProvider`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleDocumentationProvider.java),
+[`SimpleUtil`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleUtil.java)
+
 **Testing**: [](documentation_test.md)
 
 </microformat>

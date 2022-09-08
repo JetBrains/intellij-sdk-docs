@@ -6,6 +6,10 @@
 
 **Reference**: [](registering_file_type.md)
 
+**Code**: [`SimpleLanguage`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLanguage.java),
+[`SimpleIcons`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleIcons.java),
+[`SimpleFileType`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFileType.java)
+
 </microformat>
 
 <chunk id="custom_language_tutorial_header">
@@ -23,7 +27,7 @@ Register the `LanguageFileType` with the IntelliJ Platform in the plugin configu
 ## Define the Language
 
 The language implemented in this tutorial is named "Simple" - note the case of the name.
-The `SimpleLanguage` class is defined in the `org.intellij.sdk.language` package of the `simple_language_plugin` code sample:
+The [`SimpleLanguage`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLanguage.java) class is defined in the `org.intellij.sdk.language` package of the `simple_language_plugin` code sample:
 
 ```java
 ```
@@ -31,7 +35,8 @@ The `SimpleLanguage` class is defined in the `org.intellij.sdk.language` package
 
 ## Define an Icon
 
-The [icon](%gh-sdk-samples%/simple_language_plugin/src/main/resources/icons/jar-gray.png) for the Simple Language is defined by the `SimpleIcons` class.
+The [icon](%gh-sdk-samples%/simple_language_plugin/src/main/resources/icons/jar-gray.png) for the Simple Language is defined by the
+[`SimpleIcons`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleIcons.java) class.
 Please see [](work_with_icons_and_images.md) for details on how to define and use icons.
 
 ```java
@@ -40,7 +45,7 @@ Please see [](work_with_icons_and_images.md) for details on how to define and us
 
 ## Define a FileType
 
-The Simple Language file type is defined by subclassing [`LanguageFileType`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java):
+The [`SimpleFileType`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFileType.java) is defined by subclassing [`LanguageFileType`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java):
 
 ```java
 ```
@@ -75,7 +80,8 @@ The Simple Language file type is registered via the `com.intellij.fileType` exte
 
 ### Define a FileType Factory
 
-First, define `SimpleFileTypeFactory` as a subclass of [`FileTypeFactory`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/fileTypes/FileTypeFactory.java).
+First, define [`SimpleFileTypeFactory`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFileTypeFactory.java)
+as a subclass of [`FileTypeFactory`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/fileTypes/FileTypeFactory.java).
 
 ```java
 ```
@@ -101,6 +107,6 @@ The `SimpleFileTypeFactory` is registered using the `com.intellij.fileTypeFactor
 Run the plugin by using the Gradle [`runIde`](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task.
 
 Create an empty file with the extension <path>.simple</path>, and IntelliJ IDEA automatically associates it with our language.
-Note the appearance of the Simple Language file icon next to the <path>test.simple</path> file in the **Project Tool Window**, and the editor tab for the file.
+Note the appearance of the Simple Language file icon next to the <path>test.simple</path> file in the <control>Project</control> Tool Window, and the editor tab for the file.
 
 ![File Type Factory](file_type_factory.png){width="800"}

@@ -4,6 +4,8 @@
 
 <microformat>
 
+**Code**: [`SimpleFoldingBuilder`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFoldingBuilder.java)
+
 **Testing**: [](folding_test.md)
 
 </microformat>
@@ -16,7 +18,7 @@ Rather than the usual practice of using a folding builder to collapse a class, m
 
 ## Define a Folding Builder
 
-The `SimpleFoldingBuilder` replaces usages of properties with their values by default.
+The [`SimpleFoldingBuilder`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFoldingBuilder.java) replaces usages of properties with their values by default.
 Start by subclassing [`FoldingBuilderEx`](%gh-ic%/platform/core-api/src/com/intellij/lang/folding/FoldingBuilderEx.java)
 
 Note that `SimpleFoldingBuilder` also implements [`DumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbAware.java), which means the class is allowed to run in dumb mode, when indices are in background update.

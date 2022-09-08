@@ -6,6 +6,8 @@
 
 **Reference**: [](implementing_lexer.md), [](implementing_parser_and_psi.md)
 
+**Code**: [`SimpleTokenType`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleTokenType.java),
+[`SimpleElementType`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleElementType.java)
 </microformat>
 
 <include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
@@ -15,7 +17,8 @@ The Simple Language grammar must also be defined to generate a parser.
 
 ## Define a Token Type
 
-Create `SimpleTokenType` in the `org.intellij.sdk.language.psi` package (see the `simple_language_plugin` code sample) by subclassing `IElementType`.
+Create [`SimpleTokenType`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleTokenType.java)
+in the `org.intellij.sdk.language.psi` package by subclassing `IElementType`.
 
 ```java
 ```
@@ -23,7 +26,7 @@ Create `SimpleTokenType` in the `org.intellij.sdk.language.psi` package (see the
 
 ## Define an Element Type
 
-Create the `SimpleElementType` in the `org.intellij.sdk.language.psi` package by subclassing `IElementType`.
+Create the [`SimpleElementType`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleElementType.java) in the `org.intellij.sdk.language.psi` package by subclassing `IElementType`.
 
 ```java
 ```
@@ -31,7 +34,7 @@ Create the `SimpleElementType` in the `org.intellij.sdk.language.psi` package by
 
 ## Define the Grammar
 
-Define a grammar for the Simple Language in the <path>com/intellij/sdk/language/Simple.bnf</path> file.
+Define a grammar for the Simple Language in the <path>org/intellij/sdk/language/Simple.bnf</path> file.
 
 ```bnf
 {

@@ -27,7 +27,6 @@ For example, if a plugin is developed against the Java 8 SE Development Kit 8 fo
 * Open the [Releases](https://github.com/JetBrains/JetBrainsRuntime/releases) page to access all releases.
 * Select the package name corresponding to the platform and SDK version.
   In this case, the package name is `jbrsdk8-osx-x64` for **J**et**B**rains **R**untime _SDK_ version 8, macOS x64 hardware.
-* On the macOS package page of the JetBrains Bintray site, select the **Files** menu.
 * In the list of files, find the name that satisfies:
   * The version and build number match the JDK used to build the plugin project.
     For example, `jbrx-8u252-osx-x64` matches the Java 8 JDK, build 252: `jdk-8u252-macosx-x64`.

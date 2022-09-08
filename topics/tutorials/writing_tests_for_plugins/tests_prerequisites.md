@@ -13,7 +13,7 @@ This page discusses the steps to configure a plugin project for creating tests.
 
 ## Create a Folder for Tests
 Open the plugin project and create a separate folder named <path>test</path> under the <path>src</path> directory.
-Under <path>test</path>, create the <path>java</path> folder for test source code, and the folder <path>testData</path> for test data files and reimport the Gradle project.
+Under <path>test</path>, create the <path>java</path> folder for test source code, and the folder <path>testData</path> for [test data files](test_project_and_testdata_directories.md) and reimport the Gradle project.
 
 ```text
 └── src

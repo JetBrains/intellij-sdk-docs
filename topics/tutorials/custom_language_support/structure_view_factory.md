@@ -11,7 +11,7 @@
 <include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
 
 The structure view can be customized for a specific file type.
-Creating a structure view factory allows showing the structure of any file in a _Structure_ Tool Window for easy navigation between items in the current editor.
+Creating a structure view factory allows showing the structure of any file in the <control>Structure</control> Tool Window for easy navigation between items in the current editor.
 
 ## Define a Structure View Factory
 

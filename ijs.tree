@@ -23,6 +23,7 @@
   </toc-element>
   <toc-element toc-title="Part I — Plugins">
     <toc-element id="basics.md">
+      <toc-element id="plugin_required_experience.md"/>
       <toc-element id="types_of_plugins.md"/>
     </toc-element>
     <toc-element id="plugin_alternatives.md"/>

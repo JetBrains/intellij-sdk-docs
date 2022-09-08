@@ -33,10 +33,6 @@ Plugins can extend the platform in many ways, from adding a simple menu item to 
 Many of the existing IntelliJ Platform features are implemented as plugins that can be included or excluded depending on the needs of the end product.
 See the [](basics.md) for more details.
 
-The IntelliJ Platform is a JVM application, implemented mostly in Java and [Kotlin](https://kotlinlang.org).
-Developing plugins for products based on the IntelliJ Platform requires experience with at least one of these languages, its standard and third party libraries, and associated tooling.
-At this time, it's not possible to extend the IntelliJ Platform in non-JVM languages.
-
 > In some cases, implementing an actual IntelliJ Platform plugin might not be necessary, as [alternative solutions](plugin_alternatives.md) exist.
 >
 {type="tip"}

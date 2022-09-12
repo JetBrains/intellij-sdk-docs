@@ -2,6 +2,9 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+> [Toolbox Enterprise](https://www.jetbrains.com/toolbox-enterprise/) (currently in Early Access) comes with a local built-in IntelliJ plugin repository that allows you to choose specific plugins to be approved within your organization. It also lets you upload and distribute your own plugins inside your company, as well as any publicly available plugin from the internet.
+{type="tip"}
+
 If you intend to use a plugin repository _other than_ the [JetBrains Marketplace](https://plugins.jetbrains.com), you will need to:
 
 <procedure>
@@ -13,6 +16,7 @@ If you intend to use a plugin repository _other than_ the [JetBrains Marketplace
 3. Add the URL for the custom repository to the JetBrains IDE [Repository Settings/Preferences](https://www.jetbrains.com/help/idea/managing-plugins.html#repos).
 
 \* The <path>updatePlugin.xml</path> file name is not fixed and can be different.
+
 </procedure>
 
 > Gradle plugin [IntelliJ plugin uploader](https://github.com/brian-mcnamara/plugin_uploader) can be used to automate deployment.

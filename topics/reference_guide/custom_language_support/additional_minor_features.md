@@ -143,7 +143,7 @@ as implementation example.
 
 ### Plain Text Completion
 
-EP: `completion.plainTextSymbol`
+EP: `com.intelllij.completion.plainTextSymbol`
 
 [`PlainTextSymbolCompletionContributor`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/completion/PlainTextSymbolCompletionContributor.java)
 provides a simple way to extract lookup elements from a file so that users have completion available
@@ -177,7 +177,7 @@ for an implementation example.
 
 ### Reader Mode
 
-EP: `readerModeMatcher`
+EP: `com.intellij.readerModeMatcher`
 
 [`ReaderModeMatcher`](%gh-ic%/platform/editor-ui-api/src/com/intellij/codeInsight/actions/ReaderModeMatcher.kt)
 provides a way to decide if files are shown in the correct mode: reader mode vs. normal editor mode.

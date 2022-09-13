@@ -4,9 +4,10 @@
 
 [PhpStorm](https://www.jetbrains.com/phpstorm/) is an IntelliJ Platform-based product.
 This page describes configuring plugin projects targeting PhpStorm.
+
 See also:
-* [PhpStorm Plugin Alternative](plugin_alternatives.md#phpstorm-advanced-metadata)
-* [Working with the PHP Open API](php_open_api.md)
+* [](plugin_alternatives.md#phpstorm-advanced-metadata)
+* [](php_open_api.md)
 * [](existing_plugins.md)
 
 > Please join the dedicated [intellij-php](https://jetbrains-platform.slack.com/archives/C5P9YB0LT/p1653913208725609) Slack channel to discuss PHP related plugin development.

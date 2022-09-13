@@ -378,10 +378,11 @@ Default value
 {id="intellij-extension-pluginsrepositories"}
 
 Configures repositories for downloading plugin dependencies.
+See [Maven Interface](https://plugins.jetbrains.com/docs/marketplace/maven-interface.html) for details on Maven repository format.
 
 {style="narrow"}
 Type
-: `PluginsRespositoryConfiguration`
+: `PluginsRepositoryConfiguration`
 
 Default value
 : `pluginsRepositories { marketplace() }`
@@ -390,7 +391,7 @@ Acceptable values
 :
 - `marketplace()` - use Maven repository with plugins listed in [JetBrains Marketplace](https://plugins.jetbrains.com)
 - `maven(repositoryUrl)` - use custom Maven repository with plugins
-- `maven { repositoryUrl }` - use custom Maven repository with plugins where you can configure additional parameters (credentials, authentication and etc.)
+- `maven { repositoryUrl }` - use custom Maven repository with plugins where you can configure additional parameters (credentials, authentication, etc.)
 - `custom(pluginsXmlUrl)` - use [](custom_plugin_repository.md)
 
 

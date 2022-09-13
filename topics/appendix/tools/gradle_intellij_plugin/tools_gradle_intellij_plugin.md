@@ -120,16 +120,6 @@ pluginManagement {
 
 ## Configuration
 
-
-[//]: # (### Build)
-
-
-[//]: # (### Test)
-
-
-[//]: # (### Publish)
-
-
 ### IntelliJ Extension
 {id="configuration-intellij-extension"}
 

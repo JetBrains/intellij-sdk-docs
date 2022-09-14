@@ -3,8 +3,8 @@
         SYSTEM "https://resources.jetbrains.com/stardust/vars.dtd">
 
 <vars>
-  <var name="ijPlatform" value="2022.2.2"/>
-  <var name="ijPlatformBuild" value="222.4167.29"/>
+  <var name="ijPlatform" value="2022.2.1"/>
+  <var name="ijPlatformBuild" value="222.3739.54"/>
 
   <var name="gh-sdk-samples" value="https://github.com/JetBrains/intellij-sdk-code-samples/tree/main"/>
 

@@ -72,7 +72,7 @@ Please see [](verifying_plugin_compatibility.md) on how to use Plugin Verifier a
 
 > Java 11 is required ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)) when targeting 2020.3 and later only.
 >
-> Please make sure to always upgrade [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) to the latest version [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square)](https://github.com/jetbrains/gradle-intellij-plugin/releases)
+> Please make sure to always upgrade [](tools_gradle_intellij_plugin.md) to the latest version [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square)](https://github.com/jetbrains/gradle-intellij-plugin/releases)
 >
 {type="note"}
 

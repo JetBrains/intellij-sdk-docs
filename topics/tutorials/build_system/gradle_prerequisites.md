@@ -124,7 +124,7 @@ tasks {
 
 * Two Gradle plugins are explicitly declared:
   * The [Gradle Java](https://docs.gradle.org/current/userguide/java_plugin.html) plugin.
-  * The [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md).
+  * The [](tools_gradle_intellij_plugin.md).
 * The <control>Group</control> from the [New Project](#create-ide-plugin) wizard is the `project.group` value.
 * The `sourceCompatibility` line is injected to enforce using Java 11 JDK to compile Java sources.
 * The values of the [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) and [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type) properties specify the version and type of the IntelliJ Platform to be used to build the plugin.

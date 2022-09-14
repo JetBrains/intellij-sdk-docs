@@ -38,7 +38,7 @@ JetBrains Marketplace uses AWS KMS as a signature provider to sign plugin files.
 ## Signing Methods
 
 To provide a suitable method for plugin signing, we have introduced the [Marketplace ZIP Signer](https://github.com/JetBrains/marketplace-zip-signer) library.
-It can be executed using the [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) task provided by the [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) if your project is Gradle-based.
+It can be executed using the [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) task provided by the [](tools_gradle_intellij_plugin.md) if your project is Gradle-based.
 Alternatively, it can be used standalone [CLI Tool](#cli-tool).
 
 Both methods require a private certificate key to be already present.

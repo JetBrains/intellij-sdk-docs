@@ -88,7 +88,7 @@ Many developers keep the
 [IntelliJ Community source code](https://github.com/JetBrains/intellij-community)
 open in a separate window while working on their plugin.
 Others simply search the source code of the IntelliJ Platform that is attached by default when using a
-[Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md)-based project.
+[](tools_gradle_intellij_plugin.md)-based project.
 While both methods work, it should be noted that developing plugins without inspecting the IntelliJ Platform code is nearly impossible,
 and all of the tips below assume that you have the source code available.
 

@@ -14,7 +14,7 @@ It may be useful to review the IntelliJ Platform page, particularly the descript
 
 ## Overview of the Gradle IntelliJ Plugin
 
-The Gradle plugin is built from the open-source project [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md).
+The Gradle plugin is built from the open-source project [](tools_gradle_intellij_plugin.md).
 This plugin adds Gradle tasks that enable developing IntelliJ Platform plugins.
 
 ## Guide to Configuring Gradle IntelliJ Plugin Functionality
@@ -85,7 +85,7 @@ However, it can be controlled by setting the [`intellij.ideaDependencyCachePath`
 As mentioned in the section about [configuring the IntelliJ Platform](#configuring-the-gradle-intellij-plugin-for-building-intellij-platform-plugin-projects) used for building plugin projects, the Gradle plugin will fetch the version of the IntelliJ Platform specified by the default or by the `intellij` attributes.
 Standardizing the versions of the Gradle plugin and Gradle system across projects will minimize the time spent downloading versions.
 
-There are controls for managing the [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) version, and the version of Gradle itself.
+There are controls for managing the [](tools_gradle_intellij_plugin.md) version, and the version of Gradle itself.
 The plugin version is defined in the `plugins {...}` section of a project's Gradle build script.
 The version of Gradle is defined in <path>$PROJECT_ROOT$/gradle/wrapper/gradle-wrapper.properties</path>.
 
@@ -112,7 +112,7 @@ For those [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxm
 {type="tip"}
 
 As discussed in [Components of a Wizard-Generated Gradle IntelliJ Platform Plugin](gradle_prerequisites.md#components-of-a-wizard-generated-gradle-intellij-platform-plugin), the Gradle properties `project.version`, `project.group`, and `rootProject.name` are all generated based on the input to the Wizard.
-However, the [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) does not combine and substitute those Gradle properties for the default [`<id>`](plugin_configuration_file.md#idea-plugin__id) and [`<name>`](plugin_configuration_file.md#idea-plugin__name) elements in the <path>plugin.xml</path> file.
+However, the [](tools_gradle_intellij_plugin.md) does not combine and substitute those Gradle properties for the default [`<id>`](plugin_configuration_file.md#idea-plugin__id) and [`<name>`](plugin_configuration_file.md#idea-plugin__name) elements in the <path>plugin.xml</path> file.
 
 The best practice is to keep `project.version` current.
 By default, if you modify `project.version` in Gradle build script, the Gradle plugin will automatically update the [`<version>`](plugin_configuration_file.md#idea-plugin__version) value in the <path>plugin.xml</path> file.

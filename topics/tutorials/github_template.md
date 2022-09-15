@@ -1,6 +1,6 @@
 [//]: # (title: IntelliJ Platform Plugin Template)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 [IntelliJ Platform Plugin Template][gh:ippt] is a repository that provides a pure boilerplate template to make it easier to create a new plugin project using the recommended [Gradle setup](gradle_build_system.md).
 
@@ -14,8 +14,7 @@ Once this is complete, the project is ready to be cloned to your local environme
 
 For more details, please refer to the [IntelliJ Platform Plugin Template][gh:ippt] project documentation.
 
-The webinar **Busy plugin developers series. Episode 1** also offers a thorough walk-through.
-<video href="vAlor5-hC0Q" title="Busy plugin developers series. Episode 1"/>
+The recording of the _Busy Plugin Developer. Episode 0_ webinar describes and shows [how to use the IntelliJ Platform Plugin Template](https://youtu.be/-6D5-xEaYig?t=230) in detail.
 
 [gh:ippt]: https://github.com/JetBrains/intellij-platform-plugin-template
 [jb:download-ij]: https://www.jetbrains.com/idea/download

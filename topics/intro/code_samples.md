@@ -1,6 +1,6 @@
 [//]: # (title: Code Samples)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 This guide comes with a number of sample plugins available from dedicated [intellij-sdk-code-samples](https://github.com/JetBrains/intellij-sdk-code-samples) GitHub repository.
 
@@ -13,9 +13,7 @@ Links to the corresponding tutorial or reference page in this tutorial, as well 
 
 All sample plugins are based on Gradle, see [Building Plugins with Gradle](gradle_build_system.md) to get started.
 
-Additionally, the screencast *Working with Gradle in IntelliJ IDEA* offers a thorough introduction to Gradle functionality inside IntelliJ IDEA.
-
-<video href="6V6G3RyxEMk" title="Working with Gradle in IntelliJ IDEA" width="300"/>
+Additionally, the [Working with Gradle in IntelliJ IDEA](https://youtu.be/6V6G3RyxEMk) screencast offers a thorough introduction to Gradle functionality inside IntelliJ IDEA.
 
 ## Setting up Code Samples
 

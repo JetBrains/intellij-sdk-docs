@@ -1,11 +1,12 @@
 [//]: # (title: Marketing)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 > Please make sure to follow the guidelines from [Plugin Overview page](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html) for an optimal presentation of your plugin on JetBrains Marketplace.
 >
-> This webinar also discusses _5 tips for optimizing JetBrains Marketplace plugin page_
-> <video href="oB1GA9JeeiY" title="Busy plugin developers series. Episode 2" width="300"/>
+> The _Busy Plugin Developers. Episode 2_ discusses [5 tips for optimizing JetBrains Marketplace plugin page](https://youtu.be/oB1GA9JeeiY?t=52) in more detail.
+>
+> See also [](marketing.md) about widgets and badges.
 >
 {type="tip"}
 

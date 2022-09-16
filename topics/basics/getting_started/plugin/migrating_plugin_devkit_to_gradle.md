@@ -6,15 +6,14 @@
 >
 {type="tip"}
 
-Converting a [DevKit-based](creating_devkit_theme_project.md) plugin project to a Gradle-based plugin project can be done using the New Project Wizard to create a Gradle-based project around the existing DevKit-based project:
+Converting a plugin created with the old DevKit approach (which can be used for [creating UI Themes](creating_devkit_theme_project.md)) to a Gradle-based plugin project can be done using the <control>New Project</control> wizard to create a Gradle-based project around the existing DevKit-based project:
 * Ensure the directory containing the DevKit-based IntelliJ Platform plugin project can be fully recovered if necessary.
 * Delete all the artifacts of the DevKit-based project:
     * <path>.idea</path> directory
     * <path>[modulename].iml</path> file
     * <path>out</path> directory
 * Arrange the existing source files within the project directory in the Gradle [source set](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) format.
-* Use the New Project Wizard as though creating a [new Gradle project](gradle_prerequisites.md) from scratch.
-* On the [New Project](gradle_prerequisites.md#create-ide-plugin) choose the <control>IDE Plugin</control> generator and set the values of:
+* Use the <control>[New Project](gradle_prerequisites.md#create-ide-plugin)</control> wizard as though creating a new Gradle-based plugin project from scratch. On the <control>New Project</control> page choose the <control>IDE Plugin</control> generator and set the values of:
     * <control>Group</control> to the existing package in the initial source set.
     * <control>Artifact</control> to the name of the existing plugin.
     * <control>Name</control> to the name of the directory where the existing plugin is located, e.g. if the plugin project base directory is <path>/Users/john/Projects/old_plugin</path>, it should be the <path>old_plugin</path>.

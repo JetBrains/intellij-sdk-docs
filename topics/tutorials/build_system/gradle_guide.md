@@ -1,6 +1,6 @@
-[//]: # (title: Configuring Gradle Projects)
+[//]: # (title: Configuring the Gradle IntelliJ Plugin)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 This page serves as a guide to Gradle-based plugin configuration for IntelliJ Platform projects.
 The IntelliJ IDEA Ultimate and Community editions bundle the _Gradle_ and _Plugin DevKit_ plugins to support Gradle-based development.

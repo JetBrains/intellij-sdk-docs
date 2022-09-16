@@ -1,16 +1,21 @@
-[//]: # (title: Getting Started with Gradle)
+[//]: # (title: Creating a Plugin Gradle Project)
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-Gradle is the preferred solution for creating IntelliJ Platform plugins.
+Gradle is the recommended solution for creating IntelliJ Platform plugins.
 The IntelliJ IDEA Ultimate and Community editions bundle the necessary plugins to support Gradle-based development.
 These IntelliJ IDEA plugins are _Gradle_ and _Plugin DevKit_, which are enabled by default.
 To verify these plugins are installed and enabled, see the help section about [Managing Plugins](https://www.jetbrains.com/help/idea/managing-plugins.html).
 
-## Creating a Gradle-Based IntelliJ Platform Plugin with New Project Wizard
+A new Gradle-based IntelliJ Platform plugin project can be created in two ways:
+- dedicated generator available in the [New Project Wizard](https://www.jetbrains.com/help/idea/new-project-wizard.html) - it creates a minimal plugin project with all the required files
+- [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template) available on GitHub - in addition to the required project files, it includes configuration of the GitHub Actions CI pipelines
 
-Creating new Gradle-based IntelliJ Platform plugin projects is performed using the dedicated generator available in the [New Project Wizard](https://www.jetbrains.com/help/idea/new-project-wizard.html).
-The generator creates all the necessary project files based on a few template inputs.
+This documentation page describes plugin structure generated with the New Project Wizard, but the project generated with IntelliJ Platform Plugin Template covers all the described files and directories.
+
+See the [](github_template.md) section for more information about the advantages of this approach and instructions on how to use it.
+
+## Creating a Plugin with New Project Wizard
 
 <procedure title="Create IDE Plugin" id="create-ide-plugin">
 
@@ -19,15 +24,15 @@ Launch the <control>New Project</control> wizard via the <menupath>File | New | 
 2. Specify the project <control>Name</control> and <control>Location</control>.
 3. Choose the <control>Plugin</control> option in the project <control>Type</control>.
 4. Choose the <control>Language</control> the plugin will use for implementation.
-  For this example select the <control>Java</control> option.
-  See [Kotlin for Plugin Developers](kotlin.md) for more information.
+   For this example select the <control>Java</control> option.
+   See [Kotlin for Plugin Developers](kotlin.md) for more information.
 5. Provide the <control>Group</control> which is typically an inverted company domain (e.g. `com.example.mycompany`).
-  It is used for the Gradle property `project.group` value in the project's Gradle build script.
+   It is used for the Gradle property `project.group` value in the project's Gradle build script.
 6. Provide the <control>Artifact</control> which is the default name of the build project artifact (without a version).
-  It is also used for the Gradle property `rootProject.name` value in the project's <path>settings.gradle.kts</path> file.
-  For this example, enter `my_plugin`.
+   It is also used for the Gradle property `rootProject.name` value in the project's <path>settings.gradle.kts</path> file.
+   For this example, enter `my_plugin`.
 7. Select <control>JDK</control> 11.
-  This JDK will be the default JRE used to run Gradle, and the JDK version used to compile the plugin Java sources.
+   This JDK will be the default JRE used to run Gradle, and the JDK version used to compile the plugin Java sources.
 
 > When targeting 2020.3 and later only, using Java 11 is now required. See the [IntelliJ project migrates to Java 11](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/) blog post for details.
 >
@@ -79,7 +84,7 @@ The generated `my_plugin` project <path>build.gradle.kts</path> file:
 ```kotlin
 plugins {
   id("java")
-  id("org.jetbrains.intellij") version "1.7.0"
+  id("org.jetbrains.intellij") version "1.9.0"
 }
 
 group = "com.example"

@@ -8,7 +8,7 @@ It will familiarize you with the working environment, project structure, and fre
 * [](plugin_alternatives.md)
 * [](plugin_required_experience.md)
 * [](types_of_plugins.md)
-* [](getting_started.md)
+* [](plugins_getting_started.md)
 * [](plugin_structure.md)
 * [](kotlin.md)
 * [](plugin_signing.md)

@@ -1,6 +1,6 @@
 [//]: # (title: IntelliJ Platform SDK)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 [![official JetBrains project](https://jb.gg/badges/official-flat-square.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub) [![Twitter Follow](https://img.shields.io/twitter/follow/JBPlatform?style=flat-square&logo=twitter)](https://twitter.com/JBPlatform/) [![Slack](https://img.shields.io/badge/Slack-%23intellij--platform-blue?style=flat-square&logo=slack)](https://plugins.jetbrains.com/slack)
 
@@ -23,7 +23,7 @@ Webinar
 * [](intellij_platform.md)
 * [](about.md)
 * [](plugin_alternatives.md)
-* [](getting_started.md)
+* [](plugins_getting_started.md)
 * [](explore_api.md)
 * [](useful_links.md)
 * [](learning_resources.md)

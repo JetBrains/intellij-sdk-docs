@@ -2,9 +2,6 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-The [](gradle_prerequisites.md) page provides a tutorial for creating Gradle-based IntelliJ Platform plugins.
-It may be useful to review the IntelliJ Platform page, particularly the description of versioning in the [](intellij_platform.md#open-source) section.
-
 ## Overview of the Gradle IntelliJ Plugin
 
 The Gradle plugin is built from the open-source project [](tools_gradle_intellij_plugin.md).

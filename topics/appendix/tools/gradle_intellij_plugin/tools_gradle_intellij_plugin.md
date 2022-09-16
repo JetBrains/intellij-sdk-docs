@@ -799,7 +799,7 @@ Default value
 #### sinceBuild
 {id="patchpluginxml-task-sincebuild"}
 
-The lower bound of the version range to be patched used in the `since-build` attribute of the [`<idea-version>`](plugin_configuration_file.md#idea-plugin__idea-version) tag.
+The lower bound of the [version range](build_number_ranges.md) to be patched used in the `since-build` attribute of the [`<idea-version>`](plugin_configuration_file.md#idea-plugin__idea-version) tag.
 
 {style="narrow"}
 Type
@@ -812,7 +812,7 @@ Default value
 #### untilBuild
 {id="patchpluginxml-task-untilbuild"}
 
-The upper bound of the version range to be patched used in the `until-build` attribute of the [`<idea-version>`](plugin_configuration_file.md#idea-plugin__idea-version) tag.
+The upper bound of the [version range](build_number_ranges.md) to be patched used in the `until-build` attribute of the [`<idea-version>`](plugin_configuration_file.md#idea-plugin__idea-version) tag.
 
 {style="narrow"}
 Type

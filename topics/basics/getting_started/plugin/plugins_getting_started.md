@@ -6,17 +6,31 @@
 >
 {type="tip"}
 
-This documentation section will help you get started with developing plugins for the IntelliJ Platform.
-You can use either [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/) or [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/) as your IDE (it is highly recommended to use the latest available version).
+IntelliJ Platform plugins can be developed by using either [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/) or [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/) as your IDE (it is highly recommended to use the latest available version).
 Both include the complete set of plugin development tools.
 To become more familiar with IntelliJ IDEA, please refer to the [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/).
 
+## Gradle IntelliJ Plugin
+
 The recommended solution for building IntelliJ Platform plugins is [](tools_gradle_intellij_plugin.md).
-The plugin takes care of the dependencies of your plugin project - both the base IDE and other [plugin dependencies](plugin_dependencies.md).
+The IntelliJ IDEA Ultimate and Community editions bundle the necessary plugins to support Gradle-based plugin development: _Gradle_ and _Plugin DevKit_.
+To verify these plugins are installed and enabled, see the help section about [Managing Plugins](https://www.jetbrains.com/help/idea/managing-plugins.html).
+
+Gradle IntelliJ Plugin manages the dependencies of a plugin project - both the base IDE and other [plugin dependencies](plugin_dependencies.md).
 It provides tasks to run the IDE with your plugin and to package and [publish](deployment.md) your plugin to the [JetBrains Marketplace](https://plugins.jetbrains.com).
 To make sure that a plugin is not affected by [API changes](api_changes_list.md), which may happen between major releases of the platform, you can quickly verify your plugin against other IDEs and releases.
 
-The old Plugin DevKit workflow still supports existing projects and is recommended for [creating UI Theme plugins](themes_getting_started.md).
+There are two main ways of creating a new Gradle-based IntelliJ Platform plugin project:
+- dedicated generator available in the [New Project Wizard](https://www.jetbrains.com/help/idea/new-project-wizard.html) - it creates a minimal plugin project with all the required files
+- [](github_template.md) available on GitHub - in addition to the required project files, it includes configuration of the GitHub Actions CI workflows
+
+This documentation section describes plugin structure generated with the <control>New Project</control> wizard, but the project generated with _IntelliJ Platform Plugin Template_ covers all the described files and directories.
+See the [](github_template.md) section for more information about the advantages of this approach and instructions on how to use it.
+
+> The old Plugin DevKit workflow still supports existing projects and is recommended for [creating UI Theme plugins](themes_getting_started.md).
+See how to [migrate a DevKit plugin to Gradle-based](migrating_plugin_devkit_to_gradle.md).
+>
+{type="tip"}
 
 > A dedicated [SBT plugin](https://github.com/JetBrains/sbt-idea-plugin) is available for plugins implemented in Scala.
 >
@@ -24,10 +38,8 @@ The old Plugin DevKit workflow still supports existing projects and is recommend
 
 ## Plugin Development Workflow
 
-* [](gradle_prerequisites.md)
-  * [](github_template.md) (optional)
-  * [](migrating_plugin_devkit_to_gradle.md) (optional)
-* [](gradle_guide.md)
-* [](kotlin.md) (optional)
+* [Creating a Gradle-based Plugin Project](gradle_prerequisites.md)
+* [Configuring the Gradle IntelliJ Plugin](gradle_guide.md)
+* [Adding Kotlin Support](kotlin.md) (optional)
 * [Configuring Plugin Signing](plugin_signing.md)
 * [Publishing a Plugin](deployment.md)

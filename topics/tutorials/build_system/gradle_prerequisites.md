@@ -2,18 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-Gradle is the recommended solution for creating IntelliJ Platform plugins.
-The IntelliJ IDEA Ultimate and Community editions bundle the necessary plugins to support Gradle-based development.
-These IntelliJ IDEA plugins are _Gradle_ and _Plugin DevKit_, which are enabled by default.
-To verify these plugins are installed and enabled, see the help section about [Managing Plugins](https://www.jetbrains.com/help/idea/managing-plugins.html).
-
-A new Gradle-based IntelliJ Platform plugin project can be created in two ways:
-- dedicated generator available in the [New Project Wizard](https://www.jetbrains.com/help/idea/new-project-wizard.html) - it creates a minimal plugin project with all the required files
-- [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template) available on GitHub - in addition to the required project files, it includes configuration of the GitHub Actions CI workflows
-
-This documentation page describes plugin structure generated with the New Project Wizard, but the project generated with IntelliJ Platform Plugin Template covers all the described files and directories.
-
-See the [](github_template.md) section for more information about the advantages of this approach and instructions on how to use it.
+This documentation page describes a Gradle-based plugin project generated with the [New Project Wizard](https://www.jetbrains.com/help/idea/new-project-wizard.html), but the project generated with [](github_template.md) covers all the described files and directories.
 
 ## Creating a Plugin with New Project Wizard
 
@@ -129,8 +118,8 @@ tasks {
 ```
 
 * Two Gradle plugins are explicitly declared:
-  * The [Gradle Java](https://docs.gradle.org/current/userguide/java_plugin.html) plugin.
-  * The [](tools_gradle_intellij_plugin.md).
+  * The [Gradle Java](https://docs.gradle.org/current/userguide/java_plugin.html) plugin (`java`).
+  * The [](tools_gradle_intellij_plugin.md) (`org.jetbrains.intellij`).
 * The <control>Group</control> from the [New Project](#create-ide-plugin) wizard is the `project.group` value.
 * The `sourceCompatibility` line is injected to enforce using Java 11 JDK to compile Java sources.
 * The values of the [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) and [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type) properties specify the version and type of the IntelliJ Platform to be used to build the plugin.
@@ -175,7 +164,7 @@ Converting a [DevKit-based](using_dev_kit.md) plugin project to a Gradle-based p
 * Click <control>Finish</control> to create the new Gradle-based plugin.
 * [Add more modules](https://www.jetbrains.com/help/idea/gradle.html#gradle_add_module) using Gradle [source sets](https://www.jetbrains.com/help/idea/gradle.html#gradle_source_sets) as needed.
 
-## Running a Simple Gradle-Based IntelliJ Platform Plugin
+## Running a Plugin With the `runIde` Gradle task
 
 Gradle projects are run from the IDE's Gradle Tool window.
 
@@ -192,10 +181,8 @@ To execute the Gradle `runIde` task directly, open the <control>Gradle</control>
 If it's not on the list, hit the re-import button in the [toolbar](https://www.jetbrains.com/help/idea/jetgradle-tool-window.html#1eeec055) at the top of the Gradle tool window.
 When the <control>runIde</control> task is visible, double-click it to execute.
 
-> See the IntelliJ IDEA help for more information about [Gradle tasks](https://www.jetbrains.com/help/idea/work-with-gradle-tasks.html).
-
 To debug your plugin in a _standalone_ IDE instance, please see [How to Debug Your Own IntelliJ IDEA Instance](https://medium.com/agorapulse-stories/how-to-debug-your-own-intellij-idea-instance-7d7df185a48d) blog post.
 
-> See the [Working with Gradle in IntelliJ IDEA](https://www.youtube.com/watch?v=6V6G3RyxEMk) screencast for more information about how to work with Gradle-based projects.
+> For more information about how to work with Gradle-based projects see the [Working with Gradle in IntelliJ IDEA](https://www.youtube.com/watch?v=6V6G3RyxEMk) screencast and working with [Gradle tasks](https://www.jetbrains.com/help/idea/work-with-gradle-tasks.html) in the IntelliJ IDEA help.
 >
 {type="tip"}

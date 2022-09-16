@@ -4,7 +4,7 @@
 
 <excerpt>IntelliJ Platform Plugin Template is a GitHub template containing a minimal preconfigured plugin project and GitHub Actions CI workflows that cover building, testing and deploying the plugin.</excerpt>
 
-[IntelliJ Platform Plugin Template][gh:ippt] is a repository that provides a pure boilerplate template to make it easier to create a new plugin project using the recommended [Gradle setup](gradle_build_system.md).
+[IntelliJ Platform Plugin Template][gh:ippt] is a GitHub repository that provides a pure boilerplate template to make it easier to create a new Gradle-based plugin project.
 
 The main goal of this template is to speed up the setup phase of plugin development for both new and experienced developers by preconfiguring the project scaffold and CI, linking to the proper documentation pages, and keeping everything organized.
 
@@ -12,7 +12,7 @@ GitHub Template allows you to create a new repository from the scaffold without 
 All you have to do is click the <shortcut>Use this template</shortcut> button on the GitHub project page (you must be logged in with your GitHub account).
 After that, the GitHub Actions workflow will be triggered to override or remove any template-specific configurations, such as the plugin name, current changelog, etc.
 
-Once this is complete, the project is ready to be cloned to your local environment and opened with [IntelliJ IDEA][jb:download-ij].
+Once this is complete, the project is ready to be cloned to your local environment and opened with [IntelliJ IDEA](https://www.jetbrains.com/idea/download).
 
 For more details, please refer to the [IntelliJ Platform Plugin Template][gh:ippt] project documentation.
 
@@ -21,4 +21,3 @@ For more details, please refer to the [IntelliJ Platform Plugin Template][gh:ipp
 {type="note"}
 
 [gh:ippt]: https://github.com/JetBrains/intellij-platform-plugin-template
-[jb:download-ij]: https://www.jetbrains.com/idea/download

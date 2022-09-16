@@ -11,7 +11,8 @@ See [Code Samples](code_samples.md) on how to set up and run the plugin.
 
 ## Pre-Requirements
 
-Create an empty plugin project as described in [Creating a Plugin Project](gradle_build_system.md).
+Create an empty plugin project.
+See the [](gradle_prerequisites.md) section for details.
 
 ## Register a New ConfigurationType
 

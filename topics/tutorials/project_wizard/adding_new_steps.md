@@ -7,7 +7,7 @@ This tutorial shows how to add an extra step to the Project Wizard to provide ad
 ## Pre-Requirements
 
 Create an empty plugin project.
-See [Creating a Plugin Project](gradle_build_system.md) to know how to do it.
+See the [](gradle_prerequisites.md) section for details.
 
 ## Register Module Builder
 

@@ -2,14 +2,14 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+> In some cases, implementing an actual IntelliJ Platform plugin might not be necessary, as [alternative solutions](plugin_alternatives.md) exist.
+>
+{type="tip"}
+
 This documentation section will help you get started with developing plugins for the IntelliJ Platform.
 You can use either [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/) or [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/) as your IDE (it is highly recommended to use the latest available version).
 Both include the complete set of plugin development tools.
 To become more familiar with IntelliJ IDEA, please refer to the [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/).
-
-> In some cases, implementing an actual IntelliJ Platform plugin might not be necessary, as [alternative solutions](plugin_alternatives.md) exist.
->
-{type="tip"}
 
 The recommended solution for building IntelliJ Platform plugins is [](tools_gradle_intellij_plugin.md).
 The plugin takes care of the dependencies of your plugin project - both the base IDE and other [plugin dependencies](plugin_dependencies.md).

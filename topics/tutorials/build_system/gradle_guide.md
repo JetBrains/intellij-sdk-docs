@@ -73,15 +73,6 @@ If the [`intellij.sandboxDirectory`](tools_gradle_intellij_plugin.md#intellij-ex
 The storage location of downloaded IDE versions and components defaults to the Gradle cache directory.
 However, it can be controlled by setting the [`intellij.ideaDependencyCachePath`](tools_gradle_intellij_plugin.md#intellij-extension-ideadependencycachepath) attribute.
 
-## Controlling Downloads by the Gradle Plugin
-
-As mentioned in the section about [configuring the IntelliJ Platform](#target-platform-and-dependencies) used for building plugin projects, the Gradle plugin will fetch the version of the IntelliJ Platform specified by the default or by the `intellij` attributes.
-Standardizing the versions of the Gradle plugin and Gradle system across projects will minimize the time spent downloading versions.
-
-There are controls for managing the [](tools_gradle_intellij_plugin.md) version, and the version of Gradle itself.
-The plugin version is defined in the `plugins {...}` section of a project's Gradle build script.
-The version of Gradle is defined in <path>$PROJECT_ROOT$/gradle/wrapper/gradle-wrapper.properties</path>.
-
 ## Patching the Plugin Configuration File
 
 A plugin project's <path>plugin.xml</path> file has element values that are "patched" at build time from the attributes of the [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) task.

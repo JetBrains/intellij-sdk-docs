@@ -9,7 +9,7 @@ To verify these plugins are installed and enabled, see the help section about [M
 
 A new Gradle-based IntelliJ Platform plugin project can be created in two ways:
 - dedicated generator available in the [New Project Wizard](https://www.jetbrains.com/help/idea/new-project-wizard.html) - it creates a minimal plugin project with all the required files
-- [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template) available on GitHub - in addition to the required project files, it includes configuration of the GitHub Actions CI pipelines
+- [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template) available on GitHub - in addition to the required project files, it includes configuration of the GitHub Actions CI workflows
 
 This documentation page describes plugin structure generated with the New Project Wizard, but the project generated with IntelliJ Platform Plugin Template covers all the described files and directories.
 
@@ -34,7 +34,8 @@ Launch the <control>New Project</control> wizard via the <menupath>File | New | 
 7. Select <control>JDK</control> 11.
    This JDK will be the default JRE used to run Gradle, and the JDK version used to compile the plugin Java sources.
 
-> When targeting 2020.3 and later only, using Java 11 is now required. See the [IntelliJ project migrates to Java 11](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/) blog post for details.
+> When targeting 2020.3 and later only, using Java 11 is required.
+> See the [IntelliJ project migrates to Java 11](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/) blog post for details.
 >
 > When targeting 2022.2 and later only, using Java 17 is required.
 >
@@ -46,7 +47,7 @@ Launch the <control>New Project</control> wizard via the <menupath>File | New | 
 
 ### Components of a Wizard-Generated Gradle IntelliJ Platform Plugin
 
-For the [example](#creating-a-gradle-based-intellij-platform-plugin-with-new-project-wizard) `my_plugin`, the _IDE Plugin_ generator creates the following directory content:
+For the example `my_plugin` created with the steps describes above, the _IDE Plugin_ generator creates the following directory content:
 
 ```text
 my_plugin
@@ -165,7 +166,7 @@ Converting a [DevKit-based](using_dev_kit.md) plugin project to a Gradle-based p
   * <path>[modulename].iml</path> file
   * <path>out</path> directory
 * Arrange the existing source files within the project directory in the Gradle [source set](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) format.
-* Use the New Project Wizard as though creating a [new Gradle project](#creating-a-gradle-based-intellij-platform-plugin-with-new-project-wizard) from scratch.
+* Use the New Project Wizard as though creating a [new Gradle project](#creating-a-plugin-with-new-project-wizard) from scratch.
 * On the [New Project](#create-ide-plugin) choose the <control>IDE Plugin</control> generator and set the values of:
   * <control>Group</control> to the existing package in the initial source set.
   * <control>Artifact</control> to the name of the existing plugin.

@@ -5,6 +5,15 @@
 This section presents a guided tour of Gradle plugin attributes to achieve the commonly desired functionality.
 For more advanced options, see the full [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) reference.
 
+## Keep Up To Date
+
+Gradle IntelliJ Plugin and [Gradle](https://gradle.org/install/) build system are constantly developed, and every new release brings important bug fixes, new features, and improvements that makes the development more efficient.
+It is highly recommended to keep updating both Gradle and Gradle IntelliJ Plugin to the latest versions.
+
+> Current Gradle IntelliJ Plugin version is ![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square)
+>
+{type="note"}
+
 ## Target Platform and Dependencies
 
 By default, the Gradle plugin will build a plugin project against the IntelliJ Platform defined by the latest EAP snapshot of the IntelliJ IDEA Community Edition.

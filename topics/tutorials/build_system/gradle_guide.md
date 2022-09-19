@@ -102,7 +102,7 @@ The Gradle plugin provides two tasks that allow for running integrity and compat
 Plugin Verifier integration task allows for configuring the exact IDE versions that your plugin will be checked against.
 See [](verifying_plugin_compatibility.md#plugin-verifier) for more information.
 
-## Publishing with the Gradle Plugin
+## Publishing Plugin
 
-Please review the [](deployment.md) page before using the [`publishPlugin`](tools_gradle_intellij_plugin.md#tasks-publishplugin) task.
+Please review the [](publishing_plugin.md) page before using the [`publishPlugin`](tools_gradle_intellij_plugin.md#tasks-publishplugin) task.
 That documentation explains different ways to use Gradle for plugin uploads without exposing account credentials.

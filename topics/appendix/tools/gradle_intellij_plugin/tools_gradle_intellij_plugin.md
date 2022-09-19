@@ -460,7 +460,7 @@ Default value
 ### buildPlugin
 {id="tasks-buildplugin"}
 
-Assembles a plugin and prepares ZIP archive for [deployment](deployment.md).
+Assembles a plugin and prepares ZIP archive for [deployment](publishing_plugin.md).
 
 #### archiveBaseName
 {id="buildplugin-task-archivebasename"}
@@ -955,11 +955,11 @@ See [`prepareSandbox` Task](#tasks-preparesandbox).
 Publishes plugin to the remote [JetBrains Marketplace](https://plugins.jetbrains.com) repository.
 
 The following attributes are a part of the Publishing DSL `publishPlugin { ... }` in which allows Gradle to upload plugin to [JetBrains Marketplace](https://plugins.jetbrains.com).
-Note that you need to [upload the plugin](publishing_plugin.md) to the repository at least once manually (to specify options like the license, repository URL etc.) before uploads through Gradle can be used.
+Note that you need to [upload the plugin](publishing_plugin.md#uploading-a-plugin-to-jetbrains-marketplace) to the repository at least once manually (to specify options like the license, repository URL etc.) before uploads through Gradle can be used.
 
 See the instruction on [how to generate authentication token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html).
 
-See [](deployment.md) tutorial for step-by-step instructions.
+See [](publishing_plugin.md#publishing-plugin-with-gradle) tutorial for step-by-step instructions.
 
 
 #### token

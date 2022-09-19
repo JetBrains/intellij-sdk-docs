@@ -36,8 +36,6 @@
       <toc-element id="gradle_guide.md">
         <toc-element id="kotlin.md"/>
       </toc-element>
-      <toc-element id="deployment.md"/>
-      <toc-element id="publishing_plugin.md"/>
       <toc-element id="creating_devkit_theme_project.md">
         <toc-element id="setting_up_environment.md"/>
         <toc-element id="creating_plugin_project.md" accepts-web-file-names="creating_an_action.html"/>
@@ -63,6 +61,7 @@
     <toc-element id="dynamic_plugins.md"/>
     <toc-element id="intellij_artifacts.md"/>
     <toc-element id="plugin_signing.md"/>
+    <toc-element id="publishing_plugin.md" accepts-web-file-names="deployment.html"/>
     <toc-element id="faq.md"/>
   </toc-element>
   <toc-element toc-title="Part II — Base Platform">

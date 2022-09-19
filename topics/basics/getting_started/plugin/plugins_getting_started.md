@@ -17,7 +17,7 @@ The IntelliJ IDEA Ultimate and Community editions bundle the necessary plugins t
 To verify these plugins are installed and enabled, see the help section about [Managing Plugins](https://www.jetbrains.com/help/idea/managing-plugins.html).
 
 Gradle IntelliJ Plugin manages the dependencies of a plugin project - both the base IDE and other [plugin dependencies](plugin_dependencies.md).
-It provides tasks to run the IDE with your plugin and to package and [publish](deployment.md) your plugin to the [JetBrains Marketplace](https://plugins.jetbrains.com).
+It provides tasks to run the IDE with your plugin and to package and [publish](publishing_plugin.md#publishing-plugin-with-gradle) your plugin to the [JetBrains Marketplace](https://plugins.jetbrains.com).
 To make sure that a plugin is not affected by [API changes](api_changes_list.md), which may happen between major releases of the platform, you can quickly verify your plugin against other IDEs and releases.
 
 There are two main ways of creating a new Gradle-based IntelliJ Platform plugin project:
@@ -40,5 +40,5 @@ See how to [migrate a DevKit plugin to Gradle-based](migrating_plugin_devkit_to_
 
 * [Creating a Gradle-based Plugin Project](gradle_prerequisites.md)
 * [Configuring the Gradle IntelliJ Plugin](gradle_guide.md)
-* [Adding Kotlin Support](kotlin.md) (optional)
-* [Publishing a Plugin](deployment.md)
+  * [Adding Kotlin Support](kotlin.md) (optional)
+* [Publishing a Plugin](publishing_plugin.md)

@@ -29,6 +29,10 @@ IntelliJ IDEA then indexes the build and any associated source code and JetBrain
 
 Explicitly setting the [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) and [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type) properties tells the Gradle plugin to use that configuration of the IntelliJ Platform to create the plugin project.
 
+> See the [Developing for Multiple Products](dev_alternate_products.md) page for information about how to develop a plugin that is compatible with multiple IntelliJ-based IDEs.
+>
+{type="tip"}
+
 All available platform versions can be browsed in the [](intellij_artifacts.md).
 
 If the chosen platform version is not available in the repositories, or a local installation of the target IDE is the desired type and version of the IntelliJ Platform, use [`intellij.localPath`](tools_gradle_intellij_plugin.md#intellij-extension-localpath) to point to that installation.
@@ -92,8 +96,8 @@ This practice keeps all version declarations synchronized.
 ## Verifying Plugin
 
 The Gradle plugin provides two tasks that allow for running integrity and compatibility tests:
-* [`verifyPlugin`](tools_gradle_intellij_plugin.md#tasks-verifyplugin) task - validates completeness and contents of <path>plugin.xml</path> descriptors as well as plugin's archive structure,
-* [`runPluginVerifier`](tools_gradle_intellij_plugin.md#tasks-runpluginverifier) task - runs the [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) tool to check the binary compatibility with specified IntelliJ IDE builds.
+* [`verifyPlugin`](tools_gradle_intellij_plugin.md#tasks-verifyplugin) - validates completeness and contents of <path>plugin.xml</path> descriptors as well as plugin's archive structure,
+* [`runPluginVerifier`](tools_gradle_intellij_plugin.md#tasks-runpluginverifier) - runs the [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) tool to check the binary compatibility with specified IntelliJ IDE builds.
 
 Plugin Verifier integration task allows for configuring the exact IDE versions that your plugin will be checked against.
 See [](verifying_plugin_compatibility.md#plugin-verifier) for more information.
@@ -102,26 +106,3 @@ See [](verifying_plugin_compatibility.md#plugin-verifier) for more information.
 
 Please review the [](deployment.md) page before using the [`publishPlugin`](tools_gradle_intellij_plugin.md#tasks-publishplugin) task.
 That documentation explains different ways to use Gradle for plugin uploads without exposing account credentials.
-
-# Common Gradle Plugin Configurations for Development
-
-Different combinations of Gradle plugin attributes are needed to create the desired build or IDE Development Instance environment.
-This section reviews some of the more common configurations.
-
-## Plugins Targeting IntelliJ IDEA
-
-IntelliJ Platform plugins targeting IntelliJ IDEA have the most straightforward Gradle plugin configuration.
-* Determine the version of [IntelliJ IDEA to use for building the plugin project](#target-platform-and-dependencies); this is the desired version of the IntelliJ Platform.
-  This can be EAP (default) or determined from the [build number ranges](build_number_ranges.md).
-  * If a production version of IntelliJ IDEA is the desired target, set the [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) property accordingly.
-  * Set the necessary [plugin dependencies](#plugin-dependencies), if any.
-* If the plugin project should be run or debugged in an IDE Development Instance based on the same IntelliJ IDEA version, no further attributes need to be set for the IDE Development Instance.
-  This is the default behavior and is the most common use case.
-  * If the plugin project should be run or debugged in an IDE Development Instance based on an alternate version of the IntelliJ Platform, set the [Running](#running-against-alternate-versions-and-types-of-intellij-platform-based-ides) DSL attribute accordingly.
-  * If the plugin project should be run using a JetBrains Runtime other than the default for the IDE Development Instance, specify the [JetBrains Runtime version](#running-against-alternate-versions-of-the-jetbrains-runtime).
-* Set the appropriate attributes for [patching the <path>plugin.xml</path> file](#patching-the-plugin-configuration-file).
-
-## Plugins Targeting Alternate IntelliJ Platform-Based IDEs
-
-Gradle also supports developing plugins to run in IDEs that are based on the IntelliJ Platform.
-For more information, see the [Developing for Multiple Products](dev_alternate_products.md) page of this guide.

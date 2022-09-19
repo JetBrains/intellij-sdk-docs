@@ -15,7 +15,7 @@ For example, it is common practice to [guard logging statements](https://www.slf
 
 ```java
 if (logger.isDebugEnabled()) {
-  logger.debug("...");
+  logger.debug("..." + expensiveComputation());
 }
 ```
 
@@ -29,7 +29,12 @@ inline fun Logger.debug(lazyMessage: () -> String) {
 }
 ```
 
-Now we can directly write `logger.debug { "..." }` to receive all the benefits of lightweight logging, with none of the verbosity.
+Now we can directly write:
+```kotlin
+logger.debug { "..." + expensiveComputation() }
+```
+to receive all the benefits of lightweight logging while reducing the code verbosity.
+
 With practice, you will be able to recognize many idioms in the IntelliJ Platform that can be simplified with Kotlin.
 To learn more about building IntelliJ Platform plugins with Kotlin, this tutorial will help you get started.
 

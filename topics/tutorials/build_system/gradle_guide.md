@@ -32,7 +32,7 @@ Explicitly setting the [`intellij.version`](tools_gradle_intellij_plugin.md#inte
 All available platform versions can be browsed in the [](intellij_artifacts.md).
 
 If the chosen platform version is not available in the repositories, or a local installation of the target IDE is the desired type and version of the IntelliJ Platform, use [`intellij.localPath`](tools_gradle_intellij_plugin.md#intellij-extension-localpath) to point to that installation.
-If the [`intellij.localPath`](tools_gradle_intellij_plugin.md#intellij-extension-localpath) attribute is set, do not set the [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) and [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type) attributes as this could result in undefined behavior.
+If the `intellij.localPath` attribute is set, do not set the `intellij.version` and `intellij.type` attributes as this could result in undefined behavior.
 
 ### Plugin Dependencies
 
@@ -68,7 +68,7 @@ There are several attributes to control where the Gradle plugin places directori
 The location of the [sandbox home](ide_development_instance.md#the-development-instance-sandbox-directory) directory and its subdirectories can be controlled with Gradle plugin attributes.
 The [`intellij.sandboxDirectory`](tools_gradle_intellij_plugin.md#intellij-extension-sandboxdir) attribute is used to set the path for the sandbox directory to be used while running the plugin in an IDE Development Instance.
 Locations of the sandbox [subdirectories](ide_development_instance.md#development-instance-settings-caches-logs-and-plugins) can be controlled using the [`runIde.configDirectory`](tools_gradle_intellij_plugin.md#tasks-runide), [`runIde.pluginsDirectory`](tools_gradle_intellij_plugin.md#tasks-runide), and [`runIde.systemDirectory`](tools_gradle_intellij_plugin.md#tasks-runide) attributes.
-If the [`intellij.sandboxDirectory`](tools_gradle_intellij_plugin.md#intellij-extension-sandboxdir) path is explicitly set, the subdirectory attributes default to the new sandbox directory.
+If the `intellij.sandboxDirectory` path is explicitly set, the subdirectory attributes default to the new sandbox directory.
 
 The storage location of downloaded IDE versions and components defaults to the Gradle cache directory.
 However, it can be controlled by setting the [`intellij.ideaDependencyCachePath`](tools_gradle_intellij_plugin.md#intellij-extension-ideadependencycachepath) attribute.
@@ -77,12 +77,12 @@ However, it can be controlled by setting the [`intellij.ideaDependencyCachePath`
 
 A plugin project's <path>plugin.xml</path> file has element values that are "patched" at build time from the attributes of the [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) task.
 As many as possible of the attributes in the Patching DSL will be substituted into the corresponding element values in a plugin project's <path>plugin.xml</path> file:
-* If a [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) attribute default value is defined, the attribute value will be patched in <path>plugin.xml</path> _regardless of whether the [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) task appears in the Gradle build script_.
+* If a `patchPluginXml` attribute default value is defined, the attribute value will be patched in <path>plugin.xml</path> _regardless of whether the `patchPluginXml` task appears in the Gradle build script_.
   * For example, the default values for the attributes [`patchPluginXml.sinceBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-sincebuild) and [`patchPluginXml.untilBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-untilbuild) are defined based on the declared (or default) value of [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version).
-    So by default [`patchPluginXml.sinceBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-sincebuild) and [`patchPluginXml.untilBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-untilbuild) are substituted into the [`<idea-version>`](plugin_configuration_file.md#idea-plugin__idea-version) element's `since-build` and `until-build` attributes in the <path>plugin.xml</path> file.
+    So by default `patchPluginXml.sinceBuild` and `patchPluginXml.untilBuild` are substituted into the [`<idea-version>`](plugin_configuration_file.md#idea-plugin__idea-version) element's `since-build` and `until-build` attributes in the <path>plugin.xml</path> file.
 * If a [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) attribute value is explicitly defined, the attribute value will be substituted in <path>plugin.xml</path>.
-  * If both [`patchPluginXml.sinceBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-sincebuild) and [`patchPluginXml.untilBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-untilbuild) attributes are explicitly set, both are substituted in <path>plugin.xml</path>.
-  * If one attribute is explicitly set (e.g. [`patchPluginXml.sinceBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-sincebuild)) and one is not (e.g. [`patchPluginXml.untilBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-untilbuild) has a default value,) both attributes are patched at their respective (explicit and default) values.
+  * If both `patchPluginXml.sinceBuild` and `patchPluginXml.untilBuild` attributes are explicitly set, both are substituted in <path>plugin.xml</path>.
+  * If one attribute is explicitly set (e.g. `patchPluginXml.sinceBuild`) and one is not (e.g. `patchPluginXml.untilBuild` has a default value), both attributes are patched at their respective (explicit and default) values.
 * For **no substitution** of the `<idea-version>` element's `since-build` and `until-build` attributes, one of the following must appear in the Gradle build script:
   * Either set [`intellij.updateSinceUntilBuild`](tools_gradle_intellij_plugin.md#intellij-extension-updatesinceuntilbuild) to `false`, which will disable substituting both `since-build` and `until-build` attributes,
 

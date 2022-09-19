@@ -11,6 +11,7 @@ This page describes how to control some of the settings for the Development Inst
 {type="tip"}
 
 ## Using a JetBrains Runtime for the Development Instance
+
 An everyday use case is to develop (build) a plugin project against a JDK, e.g., Java 8, and then run or debug the plugin in a Development Instance of the IDE.
 In such a situation, Development Instance must use a JetBrains Runtime (JBR) rather than the JDK used to build the plugin project.
 
@@ -20,6 +21,7 @@ A version of the JetBrains Runtime is bundled with all IntelliJ Platform-based I
 To produce accurate results while running or debugging a plugin project in a Development Instance, follow the procedures below to ensure the Development Instance uses a JetBrains Runtime.
 
 ### Determining a JetBrains Runtime Version
+
 The JetBrains Runtime is determined from the JDK version used to build the plugin project, regardless of whether it is built on macOS, Windows, or Linux.
 For example, if a plugin is developed against the Java 8 SE Development Kit 8 for macOS (<path>jdk-8u212-macosx-x64.dmg</path>) to acquire the compatible JetBrains Runtime:
 
@@ -34,6 +36,7 @@ For example, if a plugin is developed against the Java 8 SE Development Kit 8 fo
     For example, the file is <path>jbrx-8u252-osx-x64-b1649.2.tar.gz</path>, meaning build 1649.2 for this JetBrains Runtime matching Java 8 JDK build 252.
 
 ### JetBrains Runtime Variants
+
 The JetBrains Runtime is delivered in various variants used for different purposes, like debugging, running for development purposes or bundling with the IDE.
 
 Available JBR variants are:
@@ -105,18 +108,18 @@ To disable auto-reload, set `idea.auto.reload.plugins` to `false` explicitly (20
 </tabs>
 
 ## The Development Instance Sandbox Directory
+
 The _Sandbox Home_ directory contains the [settings, caches, logs, and plugins](#development-instance-settings-caches-logs-and-plugins) for a Development Instance of the IDE.
 This information is stored in a different location than for the [installed IDE itself](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs).
 
 <tabs group="project-type">
 <tab title="Gradle" group-key="gradle">
 
-For Gradle-based plugins, the default Sandbox Home location is defined by the [](tools_gradle_intellij_plugin.md).
-See [Configuring a Gradle Plugin Project](gradle_prerequisites.md) for more information about specifying a Sandbox Home location.
-
-The default Sandbox Home location is:
-* Windows: <path>$PROJECT_DIRECTORY$\build\idea-sandbox</path>
+The default Sandbox Home location in a plugin Gradle project is:
+* Windows: <path>$PROJECT_DIRECTORY$\\build\\idea-sandbox</path>
 * Linux/macOS: <path>$PROJECT_DIRECTORY$/build/idea-sandbox</path>
+
+The Sandbox Home location can be configured with the [`intellij.sandboxDir`](tools_gradle_intellij_plugin.md#intellij-extension-sandboxdir) property.
 
 </tab>
 
@@ -134,6 +137,7 @@ The default Sandbox Home directory location is:
 </tabs>
 
 ### Development Instance Settings, Caches, Logs, and Plugins
+
 Within the Sandbox Home directory are subdirectories of the Development Instance:
 * <path>config</path> contains settings for the IDE instance.
 * <path>plugins</path> contains folders for each plugin being run in the IDE instance.

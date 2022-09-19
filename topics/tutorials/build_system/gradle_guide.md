@@ -61,18 +61,6 @@ Every version of the IntelliJ Platform has a corresponding version of the [JetBr
 A different version of the runtime can be used by specifying the [`runIde.jbrVersion`](tools_gradle_intellij_plugin.md#runide-task-jbrversion) attribute, describing a version of the JetBrains Runtime that should be used by the IDE Development Instance.
 The Gradle plugin will fetch the specified JetBrains Runtime as needed.
 
-## Managing Directories Used by the Gradle Plugin
-
-There are several attributes to control where the Gradle plugin places directories for downloads and use by the IDE Development Instance.
-
-The location of the [sandbox home](ide_development_instance.md#the-development-instance-sandbox-directory) directory and its subdirectories can be controlled with Gradle plugin attributes.
-The [`intellij.sandboxDirectory`](tools_gradle_intellij_plugin.md#intellij-extension-sandboxdir) attribute is used to set the path for the sandbox directory to be used while running the plugin in an IDE Development Instance.
-Locations of the sandbox [subdirectories](ide_development_instance.md#development-instance-settings-caches-logs-and-plugins) can be controlled using the [`runIde.configDirectory`](tools_gradle_intellij_plugin.md#tasks-runide), [`runIde.pluginsDirectory`](tools_gradle_intellij_plugin.md#tasks-runide), and [`runIde.systemDirectory`](tools_gradle_intellij_plugin.md#tasks-runide) attributes.
-If the `intellij.sandboxDirectory` path is explicitly set, the subdirectory attributes default to the new sandbox directory.
-
-The storage location of downloaded IDE versions and components defaults to the Gradle cache directory.
-However, it can be controlled by setting the [`intellij.ideaDependencyCachePath`](tools_gradle_intellij_plugin.md#intellij-extension-ideadependencycachepath) attribute.
-
 ## Patching the Plugin Configuration File
 
 A plugin project's <path>plugin.xml</path> file has element values that are "patched" at build time from the attributes of the [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) task.

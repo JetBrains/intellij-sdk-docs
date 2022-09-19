@@ -114,27 +114,16 @@ See the <path>build.gradle.kts</path> from [kotlin_demo](%gh-sdk-samples%/kotlin
 ```
 {src="kotlin_demo/build.gradle.kts" lines="2-"}
 
-### Use Kotlin for Gradle Build Scripts
-
-Gradle also supports using Kotlin in build scripts: <path>build.gradle.kts</path>.
-
-There are many good resources for learning how to write build scripts for an IntelliJ Platform plugin with Kotlin script, like
-[intellij-rust](https://github.com/intellij-rust/intellij-rust/blob/master/build.gradle.kts),
-[julia-intellij](https://github.com/JuliaEditorSupport/julia-intellij/blob/master/build.gradle.kts),
-[covscript-intellij](https://github.com/covscript/covscript-intellij/blob/master/build.gradle.kts) or
-[zig-intellij](https://github.com/ice1000/intellij-zig/blob/master/build.gradle.kts).
-
 ## Caution
 
 Plugins *may* use [Kotlin classes](https://kotlinlang.org/docs/classes.html) to implement declarations in the [plugin configuration file](plugin_configuration_file.md).
 When registering an extension, the platform uses a dependency injection framework to instantiate these classes.
 For this reason, plugins *must not* use [Kotlin objects](https://kotlinlang.org/docs/object-declarations.html) to implement any <path>[plugin.xml](plugin_configuration_file.md)</path> declarations.
 
-## Examples
+## Example Plugins Implemented in Kotlin
 
 There are many [open-source Kotlin plugins](https://jb.gg/ipe?language=kotlin) built on the IntelliJ Platform.
-For a readily available source of up to date examples and applications of the Kotlin language for building developer tools with the IntelliJ Platform, developers may look to these projects for inspiration:
-
+For a readily available source of up-to-date examples of plugins implemented in Kotlin, developers may look to these projects for inspiration:
 * [Presentation Assistant](https://github.com/chashnikov/IntelliJ-presentation-assistant)
 * [Rust](https://github.com/intellij-rust/intellij-rust)
 * [TeXiFy IDEA](https://github.com/Hannah-Sten/TeXiFy-IDEA)

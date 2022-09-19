@@ -108,7 +108,7 @@ intellij {
 >
 {type="note"}
 
-If the project uses [DevKit](using_dev_kit.md), add the JARs of the plugin on which the project depends to the <control>Classpath</control> of the *IntelliJ Platform SDK*.
+If the project uses [DevKit](creating_devkit_theme_project.md), add the JARs of the plugin on which the project depends to the <control>Classpath</control> of the *IntelliJ Platform SDK*.
 
 > Do not add the plugin JARs as a library: this will fail at runtime because the IntelliJ Platform will load two separate copies of the dependency plugin classes.
 >

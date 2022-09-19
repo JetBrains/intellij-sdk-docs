@@ -1,8 +1,8 @@
 [//]: # (title: Using DevKit)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-> For new projects, it is highly recommended to use [Gradle-based setup](getting_started.md).
+> For new projects, it is highly recommended to use [Gradle-based setup](plugins_getting_started.md).
 >
 {type="note"}
 

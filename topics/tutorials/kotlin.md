@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-## Why Kotlin?
+## Advantages of Developing a Plugin in Kotlin
 
 Using [Kotlin](https://kotlinlang.org) to write plugins for the IntelliJ Platform is very similar to writing plugins in Java.
 Existing plugin developers can get started by converting boilerplate Java classes to their Kotlin equivalents by using the [J2K compiler](https://kotlinlang.org/docs/mixing-java-kotlin-intellij.html#converting-an-existing-java-file-to-kotlin-with-j2k) bundled with the IntelliJ Platform (versions 143.+), and developers can easily mix and match Kotlin classes with their existing Java code.
@@ -37,6 +37,14 @@ to receive all the benefits of lightweight logging while reducing the code verbo
 
 With practice, you will be able to recognize many idioms in the IntelliJ Platform that can be simplified with Kotlin.
 To learn more about building IntelliJ Platform plugins with Kotlin, this tutorial will help you get started.
+
+### UI Forms in Kotlin
+
+The IntelliJ Platform provides the [type safe DSL](kotlin_ui_dsl_version_2.md) allowing to UI forms in declarative way.
+
+> Using a GUI designer with Kotlin is currently [not supported](https://youtrack.jetbrains.com/issue/KTIJ-791).
+>
+{type="tip"}
 
 ## Adding Kotlin Support
 
@@ -111,11 +119,6 @@ There are many good resources for learning how to write build scripts for an Int
 [zig-intellij](https://github.com/ice1000/intellij-zig/blob/master/build.gradle.kts).
 
 Additionally, explore IntelliJ Platform Explorer's [list of open-source plugins](https://jb.gg/ipe?buildSystem=gradle_kts) using Gradle KTS.
-
-## UI in Kotlin
-
-The recommended way to create UI forms with Kotlin is to use a [type safe DSL](kotlin_ui_dsl_version_2.md).
-Using a GUI designer with Kotlin is currently [not supported](https://youtrack.jetbrains.com/issue/KTIJ-791).
 
 ## Handling Kotlin Code
 

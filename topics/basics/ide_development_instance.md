@@ -126,9 +126,9 @@ For DevKit-based plugins, the default Sandbox Home location is defined in the In
 See specifying the [Sandbox Home for DevKit Projects](setting_up_environment.md) for more information.
 
 The default Sandbox Home directory location is:
-* Windows: `<User home>\.<product_system_name><product_version>\system\plugins-sandbox\`
-* Linux: `~/.<product_system_name><product_version>/system/plugins-sandbox/`
-* macOS: `~/Library/Caches/<product_system_name><product_version>/plugins-sandbox/`
+* Windows: <path>$USER_HOME$\\.$PRODUCT_SYSTEM_NAME$$PRODUCT_VERSION$\\system\\plugins-sandbox\\</path>
+* Linux: <path>~/.$PRODUCT_SYSTEM_NAME$$PRODUCT_VERSION$/system/plugins-sandbox/</path>
+* macOS: <path>~/Library/Caches/$PRODUCT_SYSTEM_NAME$$PRODUCT_VERSION$/plugins-sandbox/</path>
 
 </tab>
 </tabs>

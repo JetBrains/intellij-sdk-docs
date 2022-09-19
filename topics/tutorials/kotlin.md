@@ -127,10 +127,6 @@ Please refer to [Plugin Dependencies](plugin_dependencies.md) for more informati
 
 Depending on exact functionality, a plugin can also target [UAST (Unified Abstract Syntax Tree)](uast.md) to support multiple JVM languages, including Java and Kotlin.
 
-### Kotlin Code FAQ
-
-[How to shorten references](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360010025120-Add-new-parameter-into-kotlin-data-class-from-IDEA-plugin?page=1#community_comment_360002950760)
-
 ## Caution
 
 Plugins *may* use [Kotlin classes](https://kotlinlang.org/docs/classes.html) to implement declarations in the [plugin configuration file](plugin_configuration_file.md).

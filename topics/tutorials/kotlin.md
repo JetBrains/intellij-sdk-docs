@@ -2,6 +2,12 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+
+This page describes developing a plugin code in Kotlin programming language.
+
+> To implement a plugin operating on Kotlin code, configure Kotlin [plugin dependency](plugin_dependencies.md) (`org.jetbrains.kotlin`).
+> See also [UAST](uast.md) page for information about how to support multiple JVM-languages, including Kotlin.
+
 ## Advantages of Developing a Plugin in Kotlin
 
 Using [Kotlin](https://kotlinlang.org) to write plugins for the IntelliJ Platform is very similar to writing plugins in Java.
@@ -119,13 +125,6 @@ There are many good resources for learning how to write build scripts for an Int
 [zig-intellij](https://github.com/ice1000/intellij-zig/blob/master/build.gradle.kts).
 
 Additionally, explore IntelliJ Platform Explorer's [list of open-source plugins](https://jb.gg/ipe?buildSystem=gradle_kts) using Gradle KTS.
-
-## Handling Kotlin Code
-
-If a plugin processes Kotlin code (e.g., providing inspections), it needs to add a dependency on the Kotlin plugin (Plugin ID `org.jetbrains.kotlin`) itself.
-Please refer to [Plugin Dependencies](plugin_dependencies.md) for more information.
-
-Depending on exact functionality, a plugin can also target [UAST (Unified Abstract Syntax Tree)](uast.md) to support multiple JVM languages, including Java and Kotlin.
 
 ## Caution
 

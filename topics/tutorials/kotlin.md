@@ -56,12 +56,20 @@ The IntelliJ Platform provides the [type safe DSL](kotlin_ui_dsl_version_2.md) a
 
 > The [IntelliJ Platform Plugin Template](github_template.md) provides a preconfigured project using Kotlin.
 >
-> See also [kotlin_demo](%gh-sdk-samples%/kotlin_demo) for a minimal sample plugin.
->
 {type="tip"}
 
 IntelliJ IDEA bundles the necessary Kotlin plugin, requiring no further configuration.
 For detailed instructions, please refer to the [Kotlin documentation](https://kotlinlang.org/docs/getting-started.html).
+
+### Kotlin Gradle Plugin
+
+Adding Kotlin source files compilation support to the Gradle-based project requires adding and configuring the [Kotlin JVM Gradle plugin](https://kotlinlang.org/docs/gradle.html#targeting-the-jvm).
+
+See the <path>build.gradle.kts</path> from [kotlin_demo](%gh-sdk-samples%/kotlin_demo) sample plugin:
+
+```kotlin
+```
+{src="kotlin_demo/build.gradle.kts" lines="2-"}
 
 ### Kotlin Standard Library
 
@@ -103,16 +111,6 @@ See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html
 ### Other Bundled Kotlin Libraries
 
 Please see [Third-Party Software and Licenses](https://www.jetbrains.com/legal/third-party-software/).
-
-## Kotlin Gradle Plugin
-
-Plugins using the [Gradle Build System](gradle_build_system.md) use the [Kotlin JVM Gradle plugin](https://kotlinlang.org/docs/gradle.html#targeting-the-jvm).
-
-See the <path>build.gradle.kts</path> from [kotlin_demo](%gh-sdk-samples%/kotlin_demo) sample plugin:
-
-```kotlin
-```
-{src="kotlin_demo/build.gradle.kts" lines="2-"}
 
 ## Caution
 

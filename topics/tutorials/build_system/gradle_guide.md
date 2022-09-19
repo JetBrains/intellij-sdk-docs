@@ -68,11 +68,10 @@ As many as possible of the attributes in the Patching DSL will be substituted in
 * If a `patchPluginXml` attribute default value is defined, the attribute value will be patched in <path>plugin.xml</path> _regardless of whether the `patchPluginXml` task appears in the Gradle build script_.
   * For example, the default values for the attributes [`patchPluginXml.sinceBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-sincebuild) and [`patchPluginXml.untilBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-untilbuild) are defined based on the declared (or default) value of [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version).
     So by default `patchPluginXml.sinceBuild` and `patchPluginXml.untilBuild` are substituted into the [`<idea-version>`](plugin_configuration_file.md#idea-plugin__idea-version) element's `since-build` and `until-build` attributes in the <path>plugin.xml</path> file.
-* If a [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) attribute value is explicitly defined, the attribute value will be substituted in <path>plugin.xml</path>.
+* If a [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) task's attribute value is explicitly defined, the attribute value will be substituted in <path>plugin.xml</path>.
   * If both `patchPluginXml.sinceBuild` and `patchPluginXml.untilBuild` attributes are explicitly set, both are substituted in <path>plugin.xml</path>.
   * If one attribute is explicitly set (e.g. `patchPluginXml.sinceBuild`) and one is not (e.g. `patchPluginXml.untilBuild` has a default value), both attributes are patched at their respective (explicit and default) values.
-* For **no substitution** of the `<idea-version>` element's `since-build` and `until-build` attributes, one of the following must appear in the Gradle build script:
-  * Either set [`intellij.updateSinceUntilBuild`](tools_gradle_intellij_plugin.md#intellij-extension-updatesinceuntilbuild) to `false`, which will disable substituting both `since-build` and `until-build` attributes,
+* For **no substitution** of the `<idea-version>` element's `since-build` and `until-build` attributes, set [`intellij.updateSinceUntilBuild`](tools_gradle_intellij_plugin.md#intellij-extension-updatesinceuntilbuild) to `false`, and do not provide `patchPluginXml.sinceBuild` and `patchPluginXml.untilBuild` values.
 
 The best practice to avoid confusion is to replace the elements in <path>plugin.xml</path> that will be patched by the Gradle plugin with a comment.
 That way, the values for these parameters do not appear in two places in the source code.

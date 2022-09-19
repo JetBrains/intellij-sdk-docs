@@ -41,5 +41,4 @@ See how to [migrate a DevKit plugin to Gradle-based](migrating_plugin_devkit_to_
 * [Creating a Gradle-based Plugin Project](gradle_prerequisites.md)
 * [Configuring the Gradle IntelliJ Plugin](gradle_guide.md)
 * [Adding Kotlin Support](kotlin.md) (optional)
-* [Configuring Plugin Signing](plugin_signing.md)
 * [Publishing a Plugin](deployment.md)

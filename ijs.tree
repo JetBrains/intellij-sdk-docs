@@ -339,12 +339,11 @@
     <toc-element toc-title="Licensing"/>
   </toc-element>
   <toc-element toc-title="Part X — UI Themes">
-    <toc-element id="themes_getting_started.md">
-      <toc-element id="creating_ui_theme_project.md"/>
-    </toc-element>
-    <toc-element id="creating_devkit_theme_project.md">
+    <toc-element id="ui_themes_getting_started.md"/>
+    <toc-element id="creating_ui_themes.md">
       <toc-element id="setting_up_environment.md"/>
       <toc-element id="creating_plugin_project.md" accepts-web-file-names="creating_an_action.html"/>
+      <toc-element id="creating_ui_theme_project.md"/>
       <toc-element id="running_and_debugging_a_plugin.md"/>
       <toc-element id="deploying_plugin.md"/>
     </toc-element>

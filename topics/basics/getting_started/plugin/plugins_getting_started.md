@@ -27,7 +27,7 @@ There are two main ways of creating a new Gradle-based IntelliJ Platform plugin 
 This documentation section describes plugin structure generated with the <control>New Project</control> wizard, but the project generated with _IntelliJ Platform Plugin Template_ covers all the described files and directories.
 See the [](github_template.md) section for more information about the advantages of this approach and instructions on how to use it.
 
-> The old Plugin DevKit workflow still supports existing projects and is recommended for [creating UI Theme plugins](themes_getting_started.md).
+> The old Plugin DevKit workflow still supports existing projects and is recommended for [creating UI Theme plugins](creating_ui_themes.md).
 See how to [migrate a DevKit plugin to Gradle-based](migrating_plugin_devkit_to_gradle.md).
 >
 {type="tip"}

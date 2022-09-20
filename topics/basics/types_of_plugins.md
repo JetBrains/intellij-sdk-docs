@@ -72,3 +72,5 @@ Custom UI Themes can:
 * add background images.
 
 The [UI Themes available for download](https://plugins.jetbrains.com/search?headline=164-theme&tags=Theme) illustrate the creative possibilities.
+
+While UI Theme plugins have the same structure and distribution format as other IntelliJ Platform plugins, there is a dedicated documentation section for developing [UI Themes](ui_themes_getting_started.md) plugins.

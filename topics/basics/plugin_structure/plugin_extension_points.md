@@ -42,7 +42,7 @@ Then insert a child element [`<extensionPoint>`](plugin_configuration_file.md#id
 ```
 
 The `name` attribute assigns a unique name for this extension point.
-Its fully qualified name required in [Using Extension Points](#using-extension-points) is built by prefixing [`<id>`](plugin_configuration_file.md#idea-plugin__id) + `.`: `my.plugin.myExtensionPoint1` and `my.plugin.myExtensionPoint2`.
+Its fully qualified name required in [Using Extension Points](#using-extension-points) is built by prefixing the plugin [`<id>`](plugin_configuration_file.md#idea-plugin__id) as "namespace" followed by `.` separator: `my.plugin.myExtensionPoint1` and `my.plugin.myExtensionPoint2`.
 
 The `beanClass` attribute sets a bean class that specifies one or several properties annotated with the [`@Attribute`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotation.
 Note that bean classes do not follow the JavaBean standard.

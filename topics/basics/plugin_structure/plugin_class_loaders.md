@@ -5,6 +5,10 @@
 A separate class loader is used to load the classes of each plugin.
 This allows each plugin to use a different library version, even if the same library is used by the IDE itself or by another plugin.
 
+## Bundled Libraries
+
+[Third-Party Software and Licenses](https://www.jetbrains.com/legal/third-party-software/) lists all bundled libraries and their versions for each product.
+
 ## Overriding IDE Dependencies
 
 Gradle 7 introduced `implementation` scope, replacing `compile` scope.

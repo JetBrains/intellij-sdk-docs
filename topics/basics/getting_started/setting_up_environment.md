@@ -4,14 +4,10 @@
 
 ### Preliminary Steps
 
-Use the following checklist to ensure that you are ready to develop your custom plugins.
-- **Plugin DevKit** plugin must be [enabled in IntelliJ IDEA](https://www.jetbrains.com/help/idea/managing-plugins.html).
-- **IntelliJ Platform SDK** must be configured for your IDEA project.
-  For more information, see below.
-- (_Optional_) **Get IntelliJ IDEA CE source code** on your local computer.
-  Getting IntelliJ IDEA CE source code is not a requirement for plugin development, but having it makes debugging your plugins much more straightforward.
-  For detailed instructions, refer to the _Getting IntelliJ IDEA Community Edition Source Code_ section of [Check Out And Build Community Edition](%gh-ic%/README.md).
-  Note that building IntelliJ IDEA CE from source code is not required for plugin development.
+Use the following checklist to ensure that you are ready to develop your custom UI theme.
+* **Plugin DevKit** plugin must be [enabled in IntelliJ IDEA](https://www.jetbrains.com/help/idea/managing-plugins.html).
+* **IntelliJ Platform SDK** must be [configured for your IDEA project](#configuring-intellij-platform-sdk).
+* _(Optional)_ **[Get IntelliJ IDEA CE source code](#get-intellij-idea-ce-source-code)** on your local computer for debugging purposes.
 
 ### Configuring IntelliJ Platform SDK
 
@@ -57,3 +53,11 @@ To set up your plugin development environment:
   See the [IDE Development Instances](ide_development_instance.md) page for more information about the default <control>Sandbox Home</control> directory locations and contents.
 
   ![Specify Sandbox Path](plugins-sandbox.png)
+
+### Get IntelliJ IDEA CE Source Code
+
+Getting the IntelliJ IDEA CE source code is not a requirement for UI theme development as debugging the platform code while developing a UI theme is a rare situation.
+In case you are developing a plugin extending IDE behavior, or you need to understand how some components work internally, having sources makes debugging much more straightforward.
+
+For detailed instructions on how to check out the code efficiently, refer to the _Getting IntelliJ IDEA Community Edition Source Code_ section of [IntelliJ IDEA Community Edition README file](%gh-ic%/README.md).
+Note that building the checked-out sources is not required in this case.

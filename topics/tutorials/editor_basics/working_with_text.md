@@ -5,8 +5,6 @@
 This tutorial shows how to use actions to access a caret placed in a document open in an editor.
 Using information about the caret, replace selected text in a document with a string.
 
-## Introduction
-
 The approach in this tutorial relies heavily on creating and registering actions.
 To review the fundamentals of creating and registering actions, refer to the [Actions Tutorial](action_system.md).
 

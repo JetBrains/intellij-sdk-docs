@@ -4,7 +4,6 @@
 
 <!-- TODO content: DOM <=> PSI, Go To Symbol, editor gutter icon->DOM -->
 
-## Abstract
 
 This article is intended for plugin writers who create custom web server integrations, or some UI for easy XML editing.
 It describes the *Document Object Model* (DOM) in IntelliJ Platform - an easy way to work with DTD or Schema-based XML models.
@@ -12,7 +11,7 @@ The following topics will be covered: working with DOM itself (reading/writing t
 
 It's assumed that the reader is familiar with Java, Swing, IntelliJ Platform XML PSI (classes [`XmlTag`](%gh-ic%/xml/xml-psi-api/src/com/intellij/psi/xml/XmlTag.java), [`XmlFile`](%gh-ic%/xml/xml-psi-api/src/com/intellij/psi/xml/XmlFile.java), [`XmlTagValue`](%gh-ic%/xml/xml-psi-api/src/com/intellij/psi/xml/XmlTagValue.java), etc.), IntelliJ Platform plugin development basics (application and project components, file editors).
 
-## Introduction
+## XML PSI vs DOM
 
 So, how to operate with XML from an IntelliJ Platform plugin?
 Usually, one has to take `XmlFile`, get its root tag, and then find a required sub-tag by path.

@@ -83,7 +83,7 @@ Links are handled as standard Markdown links and can be anchored to external sit
 To link to a page within the site using its `title:` as link text, use shortcut notation `[](page.md)`{disable-links}.
 
 When a Markdown header is converted to an HTML header, it is assigned an ID so that it can be linked.
-For example, `## Introduction` gets the ID of `introduction`, and can be linked either in the same page or cross-page as described below.
+For example, `## Basics` gets the ID of `basics`, and can be linked either in the same page or cross-page as described below.
 
 In some cases (e.g., the same heading text appears multiple times on the same page) it is necessary to specify a distinct ID manually:
 

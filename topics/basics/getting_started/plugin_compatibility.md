@@ -2,8 +2,6 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-## Introduction
-
 All products based on the IntelliJ Platform are built on the same underlying API.
 Some of these products share features built on top of the platform, such as Java support in IntelliJ IDEA and Android Studio.
 Underlying those shared features are shared components.

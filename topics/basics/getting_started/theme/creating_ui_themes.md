@@ -4,6 +4,7 @@
 
 This documentation section will help you get started with developing [UI themes](types_of_plugins.md#ui-themes) for the IntelliJ Platform-based IDEs.
 
+[//]: # (TODO: expand it with the missing sections)
 The DevKit-based UI theme development workflow includes:
 
 * [Setting Up a Development Environment](setting_up_environment.md)

@@ -62,15 +62,4 @@ The [Random Background](https://plugins.jetbrains.com/plugin/9692-random-backgro
 
 ## UI Themes
 
-[UI Themes](themes_intro.md) give designers the ability to customize the appearance of built-in IDE UI elements.
-Custom UI Themes can:
-
-* substitute icons,
-* change the colors of icons and UI controls,
-* alter the borders and insets of UI controls,
-* provide custom editor schemes,
-* add background images.
-
-The [UI Themes available for download](https://plugins.jetbrains.com/search?headline=164-theme&tags=Theme) illustrate the creative possibilities.
-
-While UI Theme plugins have the same structure and distribution format as other IntelliJ Platform plugins, there is a dedicated documentation section for developing [UI Themes](ui_themes_getting_started.md) plugins.
+[UI Themes](ui_themes_getting_started.md) give designers the ability to customize the appearance of built-in IDE UI elements.

@@ -4,6 +4,8 @@
 
 A UI Theme is customized by adding information to the UI Theme description file that overrides the base (_Light_ or _Darcula_) UI Theme.
 
+For plugin developers, [Exposing Theme Metadata](themes_metadata.md) discusses the format of customization keys and information how to provide it to Theme authors.
+
 > [Color Highlighter Plugin](https://plugins.jetbrains.com/plugin/13309-color-highlighter) adds additional color preview inside the editor.
 >
 {type="tip"}

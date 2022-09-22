@@ -2,9 +2,14 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Product Help Topics:** [Project Security](https://www.jetbrains.com/help/idea/project-security.html)
+
+</microformat>
+
 > This API is available in platform releases 2021.2.4/2021.3.1 and later.
 >
-> Please see related [Project Security](https://www.jetbrains.com/help/idea/project-security.html) topic from product documentation.
 
 When a project is opened in the IDE for the first time, the user will be asked whether they trust the project or not.
 If the user chooses to preview the project in the safe mode, no potentially dangerous feature can be executed automatically or unexpectedly.

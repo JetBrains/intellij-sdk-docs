@@ -2,6 +2,12 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<microformat>
+
+**Product Help Topics:** [Language injections](https://www.jetbrains.com/help/idea/language-injections-settings.html)
+
+</microformat>
+
 Language injection is the way the IntelliJ Platform handles different languages within the same source file.
 Well-known examples are:
 

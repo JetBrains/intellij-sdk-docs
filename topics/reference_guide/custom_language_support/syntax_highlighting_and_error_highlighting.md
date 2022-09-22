@@ -2,6 +2,12 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Product Help Topics:** [Colors and fonts](https://www.jetbrains.com/help/idea/configuring-colors-and-fonts.html)
+
+</microformat>
+
 The class used to specify how a particular range of text should be highlighted is called [`TextAttributesKey`](%gh-ic%/platform/core-api/src/com/intellij/openapi/editor/colors/TextAttributesKey.java).
 An instance of this class is created for every distinct type of item that should be highlighted (keyword, number, string, etc.).
 The `TextAttributesKey` defines the default attributes applied to items of the corresponding type (for example, keywords are bold, numbers are blue, strings are bold and green).
@@ -47,7 +53,7 @@ For highlighting lexer errors, the standard `TextAttributesKey` for bad characte
 
 ### Semantic Highlighting
 
-[Semantic highlighting](https://www.jetbrains.com/help/idea/configuring-colors-and-fonts.html#semantic-highlighting) provides an additional coloring layer to improve the visual distinction of several related items (e.g., method parameters, local variables).
+[Semantic highlighting](https://www.jetbrains.com/help/idea/confhttps://www.jetbrains.com/help/idea/configuring-colors-and-fonts.htmliguring-colors-and-fonts.html#semantic-highlighting) provides an additional coloring layer to improve the visual distinction of several related items (e.g., method parameters, local variables).
 
 Register [`RainbowVisitor`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/daemon/RainbowVisitor.java) in `com.intellij.highlightVisitor` extension point.
 [](#color-settings) must implement [`RainbowColorSettingsPage`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/colors/RainbowColorSettingsPage.java) in addition.

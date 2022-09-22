@@ -2,6 +2,12 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Product Help Topics:** [Intention Actions](https://www.jetbrains.com/help/idea/intention-actions.html)
+
+</microformat>
+
 This topic describes the [conditional_operator_intention](%gh-sdk-samples%/conditional_operator_intention), a sample plugin that adds a new [intention action](https://www.jetbrains.com/help/idea/intention-actions.html) to the IDE Intentions list.
 In addition, the sample plugin contains a JUnit-based test.
 
@@ -9,7 +15,6 @@ In addition, the sample plugin contains a JUnit-based test.
 
 The IntelliJ Platform analyzes your code and helps handle situations that may result in errors.
 When a possible problem is suspected, the IDE suggests an appropriate intention action, denoted with special icons.
-For more information, refer to [Intention Actions](https://www.jetbrains.com/help/idea/intention-actions.html) in the IntelliJ IDEA Web Help.
 
 See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in the IntelliJ Platform UI Guidelines on naming, writing description, and message texts for inspections/intentions.
 
@@ -66,5 +71,3 @@ if ((n>=0)) {
 
 The sample plugin contains the `ConditionalOperatorConverterTest` Java class and the test data in the <path>test/testData/</path> directory.
 To perform the plugin test, run the `ConditionalOperatorConverterTest.testIntention()` method.
-
-For detailed information about testing and all related procedures, refer to [Testing](https://www.jetbrains.com/help/idea/performing-tests.html) in the IntelliJ IDEA Web Help.

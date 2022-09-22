@@ -2,6 +2,12 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Product Help Topics:** [Find Usages](https://www.jetbrains.com/help/idea/find-highlight-usages.html)
+
+</microformat>
+
 The _Find Usages_ action is a multi-step process, and each step of the process requires involvement from the custom language plugin.
 
 The language plugin participates in the Find Usages process by registering an implementation of [`FindUsagesProvider`](%gh-ic%/platform/indexing-api/src/com/intellij/lang/findUsages/FindUsagesProvider.java) in the `com.intellij.lang.findUsagesProvider` extension point, and through the PSI implementation using [`PsiNamedElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiNamedElement.java) and [`PsiReference`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReference.java) interfaces.

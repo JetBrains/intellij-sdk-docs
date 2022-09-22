@@ -2,10 +2,16 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Product Help Topics:** [Quick Documentation](https://www.jetbrains.com/help/idea/viewing-reference-information.html#inline-quick-documentation)
+
+</microformat>
+
 Custom languages can use the `com.intellij.lang.documentationProvider` extension point (EP) to show documentation for functions,
 methods, classes, or other constructs right inside the IDE.
 Accessing the documentation is done by calling
-<menupath>[View | Quick Documentation](https://www.jetbrains.com/help/idea/viewing-reference-information.html#inline-quick-documentation)</menupath>
+<menupath>View | Quick Documentation</menupath>
 or hovering over a symbol, which will open a popup to show type information, parameters, usage descriptions, or examples.
 The source of the documentation contents can vary.
 Often it is extracted from comments (e.g. JavaDoc comments) in the source code,

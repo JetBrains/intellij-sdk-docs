@@ -1,6 +1,11 @@
 [//]: # (title: Module)
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<microformat>
+
+**Product Help Topics:** [Modules](https://www.jetbrains.com/help/idea/modules.html)
+
+</microformat>
 
 A _module_ is a discrete unit of functionality that can be run, tested, and debugged independently.
 Modules include such things as source code, build scripts, unit tests, deployment descriptors, etc.
@@ -43,7 +48,7 @@ Use the `ModuleManager.getModules()` method.
 ### How do I get dependencies and classpath of a module?
 
 _Order entries_ include SDK, libraries and other modules the module uses.
-With the IntelliJ IDEA UI, you can view order entries for a module on the [Dependencies](https://www.jetbrains.com/help/idea/dependencies-tab.html) tab of the <control>Project Structure</control> dialog box.
+With the IntelliJ IDEA UI, you can view order entries for a module on the <control>Dependencies</control> tab of the <control>Project Structure</control> dialog box.
 
 To explore the module dependencies, use the [`OrderEnumerator`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/OrderEnumerator.java) class.
 

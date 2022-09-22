@@ -62,7 +62,7 @@ public @Nullable String generateDoc(PsiElement element,
 
 Now, we set a breakpoint in our dummy implementation, debug the plugin, and call <menupath>View | Quick Documentation</menupath>
 for the Simple property both in the Java file and the Simple file.
-We do this by placing the cursor over the key and [pressing the shortcut](https://www.jetbrains.com/help/idea/viewing-reference-information.html#view-quick-docs)
+We do this by placing the cursor over the key and invoking <menupath>View | Quick Documentation</menupath>
 for showing the documentation.
 
 In both cases, we find that the element provided is `SimplePropertyImpl`, which is exactly what we hoped for.

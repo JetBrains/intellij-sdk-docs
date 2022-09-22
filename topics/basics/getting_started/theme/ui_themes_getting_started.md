@@ -6,7 +6,8 @@
 Both include the complete set of development tools required to develop theme plugins.
 To become more familiar with IntelliJ IDEA, please refer to the [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/).
 
-A UI theme plugin project can be implemented by using one of the supported approaches: _DevKit_ or _Gradle_.
+A UI theme is one of the [plugin types](types_of_plugins.md).
+Its structure doesn't significantly differ from plugins extending IDE behavior, and can be implemented by using one of the supported approaches: _DevKit_ or _Gradle_.
 The choice of the development approach depends on the project requirements and developer experience.
 See the below sections for details.
 

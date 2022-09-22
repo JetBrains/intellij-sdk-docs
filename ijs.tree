@@ -74,6 +74,7 @@
       <toc-element id="dialog_wrapper.md"/>
       <toc-element id="kotlin_ui_dsl_version_2.md">
         <toc-element id="kotlin_ui_dsl.md"/>
+        <toc-element id="themes_metadata.md"/>
       </toc-element>
       <toc-element id="popups.md"/>
       <toc-element id="notifications.md"/>
@@ -86,12 +87,6 @@
       <toc-element id="color_scheme_management.md"/>
     </toc-element>
     <toc-element id="jcef.md" toc-title="JCEF"/>
-    <toc-element id="themes_intro.md">
-      <toc-element id="themes.md"/>
-      <toc-element id="themes_customize.md" toc-title="Customizing UI Theme"/>
-      <toc-element id="themes_extras.md" toc-title="Adding Schemes and Images"/>
-      <toc-element id="themes_metadata.md"/>
-    </toc-element>
     <toc-element id="basic_action_system.md" accepts-web-file-names="action_system.html">
       <toc-element id="action_system.md">
         <toc-element id="working_with_custom_actions.md"/>
@@ -346,6 +341,11 @@
       <toc-element id="creating_ui_theme_project.md"/>
       <toc-element id="running_and_debugging_a_plugin.md"/>
       <toc-element id="deploying_plugin.md"/>
+    </toc-element>
+    <toc-element id="themes_intro.md">
+      <toc-element id="themes.md"/>
+      <toc-element id="themes_customize.md" toc-title="Customizing UI Theme"/>
+      <toc-element id="themes_extras.md" toc-title="Adding Schemes and Images"/>
     </toc-element>
   </toc-element>
   <toc-element toc-title="Appendix I — Resources">

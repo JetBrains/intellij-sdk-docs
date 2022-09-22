@@ -6,11 +6,12 @@
 
 Use the following checklist to ensure that you are ready to develop your custom UI theme:
 
-- **Plugin DevKit** plugin must be [enabled in IntelliJ IDEA](https://www.jetbrains.com/help/idea/managing-plugins.html).
-- **Get IntelliJ IDEA CE source code** on your local computer.<br/>
-  This step is optional and is needed only when you plan to debug the IntelliJ Platform code.
+- **[IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/)** or **[IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/)** is installed.
+- **Plugin DevKit** plugin is [enabled in IntelliJ IDEA](https://www.jetbrains.com/help/idea/managing-plugins.html).
+- **IntelliJ IDEA CE source code** is checked-out. _(Optional)_<br/>
+  This step is needed only when you plan to debug the IntelliJ Platform code.
   See [](#get-intellij-idea-ce-source-code) for more details.
-- **IntelliJ Platform SDK** must be [configured for your IDEA project](#configuring-intellij-platform-plugin-sdk).
+- **IntelliJ Platform SDK** is [configured](#configuring-intellij-platform-plugin-sdk).
 
 ## Get IntelliJ IDEA CE Source Code
 
@@ -27,21 +28,21 @@ Note that building the checked-out sources is not required in this case.
 ### Download IntelliJ-based IDE
 
 To see the effects of the developed plugin in real IDE, it is required to run the plugin in an [](ide_development_instance.md).
-In most cases, it is enough to download and use [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) Community Edition.
-If it is required to style components used only in a specific IDE like IntelliJ IDEA Ultimate Edition or WebStorm, they can also be used as SDK, but debugging the core code will only work with the *IntelliJ IDEA Community Edition*.
+In most cases, it is enough to download and use _[IntelliJ IDEA](https://www.jetbrains.com/idea/download/) Community Edition_.
+If it is required to style components used only in a specific IDE like _IntelliJ IDEA Ultimate_ or _WebStorm_, they can also be used as SDK, but debugging the core code will only work with the _IntelliJ IDEA Community Edition_.
 
 ### Add JDK and IntelliJ Platform Plugin SDK
 
 The first step of configuring a UI theme plugin SDK is adding the JDK.
 
-<procedure title="Add JDK" id="add-jdk">
-
-[//]: # (TODO: Add information about what JDK to choose: Set up a required Java SDK. See the IntelliJ Build Configuration section of Check Out And Build Community Edition for instructions about creating 1.8 &#40;11 when targeting 2020.3 or later&#41; Java SDK.)
-
-[//]: # (TODO: what does the below message mean?)
-> Do not use a more recent Java version than the one specified.
+> When targeting 2020.3 and later only, using Java 11 is required.
+> See the [IntelliJ project migrates to Java 11](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/) blog post for details.
 >
-{type="warning"}
+> When targeting 2022.2 and later only, using Java 17 is required.
+>
+{type="note"}
+
+<procedure title="Add JDK" id="add-jdk">
 
 1. Go to <menupath>File | Project Structure | Platform Settings | SDKs</menupath>.
 2. Click the <control>Add</control> button (<control>+</control>).

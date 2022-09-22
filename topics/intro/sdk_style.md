@@ -43,6 +43,12 @@ Every page **should** provide a short excerpt (usually one sentence) using dedic
 <excerpt>Listeners allow subscription to application and project events.</excerpt>
 ```
 
+A page can highlight related topics and other important links before the actual content using `<microformat>` tag.
+Links must be grouped using "**Bold Category Name**: link1, link2, \[...]" ([Example](language_and_filetype.md)).
+Use _Reference_ to link to other topics, _Code_ to link to code/files, and _Product Help Topic_ for links to [IntelliJ IDEA Help](https://www.jetbrains.com/help/idea).
+
+Do **not** use headings like _Introduction_, _Overview_, etc. for any introductory text.
+
 ## Content Style
 
 ### Terminology
@@ -119,6 +125,7 @@ General Markdown links have the default Markdown link style:
 #### Links to IntelliJ Platform Source
 
 Links to files in the IntelliJ Platform (`intellij-community`) repository use `%\gh-ic%` prefix instead of the full URL to the repository.
+Links to files in source code packages in other GitHub repositories follow much the same rules, except the links use a different custom `gh-...` prefix defined in <path>v.list</path>.
 
 * `[README.md](%\gh-ic%/README.md)`{disable-links} links to general, non-code information files. ([README.md](%gh-ic%/README.md))
   Examples of this file type include _LICENSE.txt_ and _README.md_.
@@ -131,7 +138,6 @@ Links to files in the IntelliJ Platform (`intellij-community`) repository use `%
   * No file extension (*.java, *.kt, *.py, etc.) is used by convention.
   * Be judicious when using such links.
     Generally, only one link is needed for a given file on a documentation page.
-* Links to files in source code packages in other GitHub repositories follow much the same rules, except the links use a different custom `gh-...` prefix defined in <path>v.list</path>.
 
 ### Guidelines for Highlighting Syntax
 

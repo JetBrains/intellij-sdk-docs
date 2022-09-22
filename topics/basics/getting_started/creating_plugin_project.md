@@ -1,42 +1,43 @@
-[//]: # (title: Creating a Plugin Project)
+[//]: # (title: Creating a Theme Project)
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-> For new projects, it is highly recommended to use [Gradle-based setup](plugins_getting_started.md).
->
-{type="note"}
+This documentation page describes a DevKit-based theme project generated with the [New Project Wizard](https://www.jetbrains.com/help/idea/new-project-wizard.html).
 
-This section explains how you can create a new plugin project from scratch using the <menupath>New Project</menupath> wizard.
-Optionally, you can import an existing project or import a project from external models.
-You can also add a new plugin module to the current IntelliJ Platform project.
-For more information, refer to the [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/new-project-wizard.html).
+## Creating a Theme with New Project Wizard
 
-### Creating an IntelliJ Platform Plugin Project
+Before creating a theme project, make sure that [development environment is set up](setting_up_environment.md).
 
-> Make sure to [](setting_up_environment.md) before proceeding.
->
-{type="note"}
+<procedure title="Create IDE Theme" id="create-ide-theme">
 
-* On the main menu, choose <menupath>File | New | Project</menupath>.
-  The <control>New Project</control> wizard starts.
-  ![New Project Wizard](new_project_wizard.png)
-* Select <control>IntelliJ Platform Plugin</control> project type.
-* Click <control>Next</control> button.
-* Set the desired project name.
-* Click <control>Finish</control> to generate project structure files.
-* Go to <menupath>File | Project Structure</menupath> to customize project settings if required.
+Launch the <control>New Project</control> wizard via the <menupath>File | New | Project...</menupath> action and provide the following information:
+1. Select the <control>IDE Plugin</control> generator type from the list on the left.
+2. Specify the project <control>Name</control> and <control>Location</control>.
+3. Choose the <control>Theme</control> option in the project <control>Type</control>.
+4. As the <control>JDK</control> select the [configured SDK](setting_up_environment.md).
+   This JDK will be the default JRE used to run Gradle, and the JDK version used to compile the plugin Java sources.
+5. Click the <control>Create</control> button to generate the project.
 
-### Creating an IntelliJ Platform Plugin Module
+</procedure>
 
-* Select <menupath>File | New | Module</menupath> and choose the <control>IntelliJ Platform Plugin</control> module type.
-  ![IntelliJ Platform Plugin Module](intellij_platform_plugin_module.png)
-  <br/>
-  <br/>
-* Enter your desired plugin name.
-* Go to <menupath>File | Project Structure</menupath> and select the newly created *IntelliJ Platform SDK* as the default SDK for the plugin module:
-  ![Set Plugin Module SDK](set_plugin_module_sdk.png)
+### Components of a Wizard-Generated Gradle IntelliJ Platform Theme
 
-### Adding Code to the Project
+For the example `my_theme` created with the steps describes above, the _IDE Plugin_ generator creates the following directory content:
 
-Before running the new project, add some code to provide simple functionality.
-See the [](working_with_custom_actions.md) tutorial for step-by-step instructions for adding a menu action.
+```text
+my_theme
+├── resources
+│   ├── META-INF
+│   │   └── plugin.xml
+│   │   └── pluginIcon.svg
+│   └── theme
+│       └── my_theme.theme.json
+└── my_theme.iml
+```
+
+- <path>META-INF</path> directory with:
+  - <path>[plugin.xml](plugin_configuration_file.md)</path> configuration file
+  - <path>pluginIcon.svg</path> file that is a [plugin logo](plugin_icon_file.md).<br/>
+    It is recommended to replace it with a custom icon.
+- <path>my_theme.theme.json</path> - a minimal [theme configuration file](themes_customize.md#introduction-to-ui-theme-description-file-syntax)
+- <path>my_theme.iml</path> - [IntelliJ IDEA Module](https://www.jetbrains.com/help/idea/creating-and-managing-modules.html) configuration file

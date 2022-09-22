@@ -4,10 +4,9 @@
 
 [Spell Checking](https://www.jetbrains.com/help/idea/spellchecking.html)
 is used to check the correctness of natural languages within code.
-
-The starting point for the spell checking is
+Language plugins can implement customized spell checking by implementing
 [`SpellcheckingStrategy`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/tokenizer/SpellcheckingStrategy.java)
-class, which is registered in the `com.intellij.spellchecker.support` extension point.
+and registering it in the `com.intellij.spellchecker.support` extension point.
 
 **Examples:**
 - [`JavaSpellcheckingStrategy`](%gh-ic%/java/java-impl/src/com/intellij/spellchecker/JavaSpellcheckingStrategy.java)
@@ -15,46 +14,58 @@ class, which is registered in the `com.intellij.spellchecker.support` extension 
 
 ## SpellcheckingStrategy
 
-`SpellcheckingStrategy` implements a strategy for tokenizing the text of PSI elements, which will then be checked for spelling.
+`SpellcheckingStrategy` adjusts the spell checking behavior for PSI elements of a custom language
+by providing methods to define:
 
-The class already implements strategy for spell checking of basic parts such as comments, identifiers and plain text, so if you don't need anything else, you can just inherit from this class and register it.
+1. Which PSI elements should be checked by this strategy.
+2. How to extract the text from PSI elements.
+3. How the text is broken into single words.
+
+The class already contains a default strategy for spell checking of basic parts such as comments,
+identifiers and plain text.
+If you don't need anything else, you can just inherit from this class and register it.
 
 If you need to check spelling for some specific elements in your language, then override `getTokenizer()`.
-
-This method returns an instance of the
+and use `isMyContext()` to determine if a PSI element should be checked by your strategy.
+The `getTokenizer()` method returns an instance of
 [Tokenizer](%gh-ic%/spellchecker/src/com/intellij/spellchecker/tokenizer/Tokenizer.java)
-class.
+and is explained below.
 
 ### Tokenizer
 
-The `Tokenizer` is responsible for splitting the element into words for spell checking.
+The `tokenize()` method of `Tokenizer` defines which portions of a PSI element
+need to be spell-checked by feeding them into the
+[`TokenConsumer`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/tokenizer/TokenConsumer.java).
+In the simplest case, the whole PSI element is consumed and its entire text is split into words and
+checked for spelling.
+For these simple cases, `SpellcheckingStrategy` already contains predefined tokenizers:
 
-The `SpellcheckingStrategy` class already contains two predefined tokenizers.
+- `SpellcheckingStrategy.TEXT_TOKENIZER` for simple text elements.
+- `SpellcheckingStrategy.EMPTY_TOKENIZER` for elements that don't require checking.
+- `myCommentTokenizer` field for comments.
+- `myXmlAttributeTokenizer` field for XML attributes.
 
-Through the field `myCommentTokenizer` you can get a tokenizer for comments, and through `myXmlAttributeTokenizer` for XML attributes.
-
-You can also get a tokenizer for text through the `SpellcheckingStrategy.TEXT_TOKENIZER` static field.
-
-If some element doesn't need spell checking then return `SpellcheckingStrategy.EMPTY_TOKENIZER`
-
-If your language requires special handling, then you can define your tokenizer by deriving from the `Tokenizer` class.
-In it, override the `tokenize()` in which describe the logic for obtaining tokens from the passed element.
+However, there are situations where only fragments of the PSI element are textual content.
+In these cases, `tokenize()` can take care of extracting the correct text-ranges and feed them
+sequentially into the `TokenConsumer`.
+If elements in your language require such special handling, then define a tokenizer by deriving from `Tokenizer`
+and implement `tokenize()` which describes the logic you need.
 
 **Example:**
 [`MethodNameTokenizerJava`](%gh-ic%/java/java-impl/src/com/intellij/spellchecker/MethodNameTokenizerJava.java)
 
-In `Tokenizer.tokenize()` the `consumeToken()` method can take [`Splitter`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/inspections/Splitter.java) as the second argument.
-
 #### Splitter
 
-Splitter allow define the logic for splitting text into words.
-
-For example,
+In `Tokenizer.tokenize()` the `consumeToken()` method can take an instance of
+[`Splitter`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/inspections/Splitter.java) as the second argument.
+The `Splitter` defines how exactly the text is broken into words which is important for, e.g. identifiers or
+variables that follow camel-case or snake-case naming.
+As an example, please see how
 [`IdentifierSplitter`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/inspections/IdentifierSplitter.java),
-splits text into separate identifiers.
+splits identifiers into separate words.
 
-If your language requires special handling, then you can define your splitter by deriving from the `Splitter` class.
-In it, override the `split()` in which describe the logic for obtaining words from the passed text.
+A custom language can define special splitting rules for elements by deriving from `Splitter`,
+implementing the `split()` method and describing the logic for obtaining words from the passed text.
 
 ## SuppressibleSpellcheckingStrategy
 

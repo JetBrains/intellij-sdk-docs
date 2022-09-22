@@ -2,6 +2,12 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Product Help Topics:** [Menus and toolbars](https://www.jetbrains.com/help/idea/customize-actions-menus-and-toolbars.html)
+
+</microformat>
+
 The actions system allows plugins to add their items to IntelliJ Platform-based IDE menus and toolbars.
 For example, one of the action classes is responsible for the <menupath>File | Open File...</menupath> menu item and the <control>Open...</control> toolbar button.
 

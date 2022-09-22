@@ -2,6 +2,12 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Product Help Topics:** [Multiple cursors and selection ranges](https://www.jetbrains.com/help/idea/multicursor.html)
+
+</microformat>
+
 Most editor actions (keyboard navigation, text insertion and deletion, etc.) will be applied to each caret independently.
 Each caret has its own associated selection, which is a continuous range of document characters (can be empty).
 When after some action two or more carets end up in the same visual position, they are merged into a single caret with their associated selections merged into a single one.

@@ -2,7 +2,13 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-The _Safe Delete_ refactoring also builds on the same [Find Usages](find_usages.md) framework as [Rename Refactoring](rename_refactoring.md).
+<microformat>
+
+**Product Help Topics:** [Safe delete](https://www.jetbrains.com/help/idea/safe-delete.html)
+
+</microformat>
+
+The _Safe Delete_ refactoring also builds on the same [](find_usages.md) framework as [](rename_refactoring.md).
 
 In addition to that, to support _Safe Delete_, a plugin needs to implement two things:
 

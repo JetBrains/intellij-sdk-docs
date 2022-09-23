@@ -18,34 +18,10 @@ UI Themes have several components:
 
 ![UI Theme Components](theme_components.png)
 
-## Creating Custom UI Themes
+[//]: # (FIXME)
 
-A UI Theme is added to an IntelliJ Platform plugin using the DevKit UI Theme Wizard.
+### Theme Description File Content
 
-### Creating a UI Theme with the DevKit Theme Wizard
-
-The DevKit Wizard is part of the DevKit plugin, which is bundled with IntelliJ IDEA.
-This Wizard can be used for both DevKit-based and Gradle-based plugins.
-
-While a plugin project is open in IntelliJ IDEA, select the <path>resources</path> folder in the _Project_ tool window.
-From the main menu, select the <menupath>New | Plugin DevKit | Theme</menupath> action.
-
-![DevKit Wizard Action](devkit_wiz_action.png)
-
-<br/>
-
-The Wizard then prompts for the name of the new Theme, and the basis for the Theme:
-
-![DevKit Dialog](devkit_wiz_dialog.png)
-
-The best practice is to name the new Theme the same as the name of the plugin.
-The checkbox indicates the basis for the Theme.
-Checking <control>Dark theme</control> means basing the custom Theme on _Darcula_.
-Leaving the box unchecked means basing the custom Theme on the default IntelliJ IDEA _Light_ Theme.
-For the SDK code sample `theme_basics` the box is _unchecked_.
-
-Clicking the <control>OK</control> button creates a default Theme description file named <path>$THEME_NAME$.theme.json</path> in the plugin project's <path>resources</path> folder.
-In this example, the file is named <path>theme_basics.theme.json</path>.
 The content of the default file is a short set of key–value pairs:
 
 ```json

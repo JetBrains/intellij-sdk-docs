@@ -29,7 +29,7 @@ To run and debug a plugin directly from a theme plugin project, a _Plugin_ run c
 See the [](ide_development_instance.md) section for information about advanced run configuration settings.
 If additional settings, like system property, are needed, see [Run/Debug Configuration: Plugin](https://www.jetbrains.com/idea/help/run-debug-configuration-plugin.html) explaining how to configure them.
 
-## Run Theme Plugin
+## Run/Debug Theme Plugin
 
 To run the theme in the IDE development instance, choose <menupath>Run | Run...</menupath> and select the created run configuration.
 Debugging a theme is similar, but instead of <control>Run...</control>, select the <control>Debug...</control> action.

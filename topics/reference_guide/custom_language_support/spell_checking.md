@@ -25,7 +25,7 @@ The class already contains a default strategy for spell checking of basic parts 
 identifiers and plain text.
 If you don't need anything else, you can just inherit from this class and register it.
 
-If you need to check spelling for some specific elements in your language, then override `getTokenizer()`.
+If you need to check spelling for some specific elements in your language, then override `getTokenizer()`
 and use `isMyContext()` to determine if a PSI element should be checked by your strategy.
 The `getTokenizer()` method returns an instance of
 [Tokenizer](%gh-ic%/spellchecker/src/com/intellij/spellchecker/tokenizer/Tokenizer.java)
@@ -42,14 +42,14 @@ For these simple cases, `SpellcheckingStrategy` already contains predefined toke
 
 - `SpellcheckingStrategy.TEXT_TOKENIZER` for simple text elements.
 - `SpellcheckingStrategy.EMPTY_TOKENIZER` for elements that don't require checking.
-- `myCommentTokenizer` field for comments.
-- `myXmlAttributeTokenizer` field for XML attributes.
+- `myCommentTokenizer` for comments.
+- `myXmlAttributeTokenizer` for XML attributes.
 
 However, there are situations where only fragments of the PSI element are textual content.
 In these cases, `tokenize()` can take care of extracting the correct text-ranges and feed them
 sequentially into the `TokenConsumer`.
 If elements in your language require such special handling, then define a tokenizer by deriving from `Tokenizer`
-and implement `tokenize()` which describes the logic you need.
+and implement `tokenize()` with the logic you need.
 
 **Example:**
 [`MethodNameTokenizerJava`](%gh-ic%/java/java-impl/src/com/intellij/spellchecker/MethodNameTokenizerJava.java)
@@ -58,30 +58,35 @@ and implement `tokenize()` which describes the logic you need.
 
 In `Tokenizer.tokenize()` the `consumeToken()` method can take an instance of
 [`Splitter`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/inspections/Splitter.java) as the second argument.
-The `Splitter` defines how exactly the text is broken into words which is important for, e.g. identifiers or
-variables that follow camel-case or snake-case naming.
+The `Splitter` defines how the text is broken into words which is not always as simple as splitting
+at white space.
+Consider, for instance, identifiers or variables that follow camel-case or snake-case naming and that
+need to be separated differently to spell check single parts.
 As an example, please see how
 [`IdentifierSplitter`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/inspections/IdentifierSplitter.java),
 splits identifiers into separate words.
 
-A custom language can define special splitting rules for elements by deriving from `Splitter`,
-implementing the `split()` method and describing the logic for obtaining words from the passed text.
+A custom language can define special splitting rules for elements by deriving from `Splitter` and
+implementing the logic for obtaining words from the passed text in the `split()` method.
 
 ## SuppressibleSpellcheckingStrategy
 
-If your language supports suppression annotations, then you can derive from the
+Custom languages that support the suppression of inspection annotations can derive from
 [`SuppressibleSpellcheckingStrategy`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/tokenizer/SuppressibleSpellcheckingStrategy.java)
-class, which allows check if the spelling warning is suppressed.
-
-Override `isSuppressedFor()` to check if the warning is suppressed for the passed element and `getSuppressActions()` to add a quick fix for element to suppress warning.
+to make spell checking suppressible.
+The implementation overrides `isSuppressedFor()` to check if a spell check warning is suppressed for the passed element and
+overriding `getSuppressActions()` to add quick fix actions that suppress warnings.
 
 **Example:**
 [`XmlSpellcheckingStrategy`](%gh-ic%/xml/impl/src/com/intellij/spellchecker/xml/XmlSpellcheckingStrategy.java)
 
 ## BundledDictionaryProvider
 
-If the custom language contains words that are not known, then inherit from
+Some custom languages may have a distinct set of words or key identifiers.
+Custom languages can provide these words in additional dictionaries by inheriting from
 [BundledDictionaryProvider](%gh-ic%/spellchecker/src/com/intellij/spellchecker/BundledDictionaryProvider.java).
-Implement `getBundledDictionaries()` where return path to the word dictionary.
+Implement `getBundledDictionaries()` to return paths to the word dictionaries and
+register it with the `com.intellij.spellchecker.bundledDictionaryProvider` extension point.
 
-Register it with the `com.intellij.spellchecker.bundledDictionaryProvider` extension point.
+**Example:**
+[`PythonBundledDictionaryProvider`](%gh-ic%/python/src/com/jetbrains/python/spellchecker/PythonBundledDictionaryProvider.java)

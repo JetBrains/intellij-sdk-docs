@@ -35,8 +35,8 @@ my_theme
 ```
 
 - <path>META-INF</path> directory with:
-  - <path>[plugin.xml](plugin_configuration_file.md)</path> configuration file
-  - <path>pluginIcon.svg</path> file that is a [plugin logo](plugin_icon_file.md).<br/>
+  - <path>[plugin.xml](plugin_configuration_file.md)</path> configuration file containing preconfigured theme provider
+  - <path>pluginIcon.svg</path> file that is a [plugin logo](plugin_icon_file.md)<br/>
     It is recommended to replace it with a custom icon.
-- <path>my_theme.theme.json</path> - a minimal [theme configuration file](themes_customize.md#introduction-to-ui-theme-description-file-syntax)
+- <path>my_theme.theme.json</path> - a minimal [theme description file](themes_customize.md#introduction-to-ui-theme-description-file-syntax)
 - <path>my_theme.iml</path> - [IntelliJ IDEA Module](https://www.jetbrains.com/help/idea/creating-and-managing-modules.html) configuration file

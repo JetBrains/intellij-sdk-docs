@@ -1,26 +1,19 @@
-[//]: # (title: Deploying a Plugin)
+[//]: # (title: Deploying a Theme)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-Before your custom plugin can be used, it must be deployed: built, installed, and then enabled using Plugin Manager.
+Before your custom theme plugin can be used, and [uploaded to JetBrains Marketplace](publishing_plugin.md#uploading-a-plugin-to-jetbrains-marketplace), it should be verified in the actual IDE.
 
-To deploy a plugin:
+The deployment process prepares the plugin artifact that can be installed in IDE.
 
-* Make your project by invoking <menupath>Build | Build Project</menupath> or <menupath>Build | Build Module $MODULE_NAME$</menupath>.
-* Prepare your plugin for deployment.
-  In the main menu, select <menupath>Build | Prepare Plugin Module $MODULE_NAME$ for Deployment</menupath>.
+<procedure title="Deploying Theme Plugin">
 
-  ![Prepare Plugin for Deployment](prepare_plugin_for_deployment.png)
+1. Build the theme by invoking <menupath>Build | Build Project</menupath> or <menupath>Build | Build Module $MODULE_NAME$</menupath>.
+2. Create the deployment artifact by invoking <menupath>Build | Prepare Plugin Module $MODULE_NAME$ for Deployment</menupath>.<br/>
+   The resulting theme JAR file will be created in the project or module directory.<br/>
+   In the case of developing a regular plugin, and it specifies additional dependencies, a&nbsp;ZIP archive is created, including all the plugin libraries.
+3. [Install](https://www.jetbrains.com/help/idea/managing-plugins.html#installing-plugins-from-disk) the newly created JAR or ZIP file from disk.
+4. Click the <control>Apply</control> button.
+5. Select your theme in <menupath>Preferences | Appearance & Behavior | Appearance</menupath> and apply the changes.
 
-* If the plugin module does not depend on any libraries, a JAR archive will be created.
-  Otherwise, a ZIP archive will be created, including all the plugin libraries specified in the project settings.
-
-  ![Jar Saved Notification](jar_saved_notification.png)
-
-* [Install](https://www.jetbrains.com/help/idea/managing-plugins.html#installing-plugins-from-disk)
-  the newly created archive/jar file from disk.
-  The `editor_basics` code sample builds the plugin archive/jar into the `editor_basics` project folder:
-
-  ![Jar File Location](jar_location.png)
-
-* Restart your IDE so the changes will take effect.
+</procedure>

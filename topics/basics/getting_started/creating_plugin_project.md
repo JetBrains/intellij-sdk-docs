@@ -14,8 +14,7 @@ Launch the <control>New Project</control> wizard via the <menupath>File | New | 
 1. Select the <control>IDE Plugin</control> generator type from the list on the left.
 2. Specify the project <control>Name</control> and <control>Location</control>.
 3. Choose the <control>Theme</control> option in the project <control>Type</control>.
-4. As the <control>JDK</control> select the [configured SDK](setting_up_environment.md).
-   This JDK will be the default JRE used to run Gradle, and the JDK version used to compile the plugin Java sources.
+4. As the <control>JDK</control> select the [configured SDK](setting_up_environment.md#configuring-intellij-platform-plugin-sdk).
 5. Click the <control>Create</control> button to generate the project.
 
 </procedure>

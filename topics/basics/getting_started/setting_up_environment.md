@@ -46,10 +46,11 @@ The first step of configuring a UI theme plugin SDK is adding the JDK.
 
 1. Go to <menupath>File | Project Structure | Platform Settings | SDKs</menupath>.
 2. Click the <control>Add</control> button (<control>+</control>).
-3. If you have the required JDK installation on your machine, and it is detected, please select it from the <control>Detected SDKs</control> list.
+3. If you have the required JDK installation on your machine, and it is detected, select it from the <control>Detected SDKs</control> list.
   If your JDK is not detected, select the <control>Add JDK...</control> option and choose the installation folder.<br/>
   If the required JDK is not installed on your machine, the simplest option is using <control>Download JDK...</control> and choosing the distribution options.
 4. Click the <control>Apply</control> button.
+
 </procedure>
 
 The second step is adding IntelliJ Platform Plugin SDK that will use the JDK configured in the first step.

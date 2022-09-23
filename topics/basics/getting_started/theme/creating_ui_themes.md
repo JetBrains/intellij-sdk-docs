@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-This documentation section will help you get started with developing [UI themes](types_of_plugins.md#ui-themes) for the IntelliJ Platform-based IDEs.
+This documentation section will help you get started with developing UI theme plugins for the IntelliJ Platform-based IDEs.
 
 [//]: # (TODO: expand it with the missing sections)
 The DevKit-based UI theme development workflow includes:

@@ -1,21 +1,31 @@
-[//]: # (title: Running and Debugging a Plugin)
+[//]: # (title: Running and Debugging a Theme)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-It's possible to run and debug a plugin directly from the IntelliJ IDEA.
-You need a configured special profile (a *Plugin* Run/Debug configuration) that specifies the plugin module, VM parameters, and other specific options.
-When you run such a profile, it launches the IDE with your plugin installed.
+## Create Plugin Run Configuration
 
-See [](ide_development_instance.md) for more information about configuration and advanced settings.
+To run and debug a plugin directly from a theme plugin project, a _Plugin_ run configuration must be added.
 
-For information on how to change the Run/Debug configuration profile, refer to [Run/Debug Configuration](https://www.jetbrains.com/help/idea/run-debug-configuration.html) and [Run/Debug Configuration: Plugin](https://www.jetbrains.com/idea/help/run-debug-configuration-plugin.html) in IntelliJ IDEA Web Help.
+> For more information about creating Run Configurations, refer to the [Run/Debug Configuration](https://www.jetbrains.com/help/idea/run-debug-configuration.html) section in IntelliJ IDEA Web Help.
+>
+{type="tip"}
 
-Using IntelliJ IDEA's debugger, you can find out the origin of the run-time errors and exceptions.
+<procedure title="Add Plugin Run Configuration">
 
-**To debug a plugin**
+1. Go to <menupath>Run | Edit Configurations...</menupath>.
+2. Click the <control>Add New Configuration...</control> button (<control>+</control>) and select the <control>Plugin</control> type.
+3. Provide the configuration <control>Name</control>, e.g., _Run Theme_.
+4. Ensure that <control>Use classpath of module</control> specifies the current theme plugin module.
+5. Click the <control>Apply</control> button.
 
-*  Select <menupath>Run | Debug...</menupath> in the main menu, or press <shortcut>Shift+F9</shortcut>.
+{type="tip"}
 
-**To run a plugin**
+</procedure>
 
-* Select <menupath>Run | Run...</menupath> in the main menu, or press <shortcut>Shift+F10</shortcut>.
+See the [](ide_development_instance.md) section for information about advanced run configuration settings.
+If additional settings, like system property, are needed, see [Run/Debug Configuration: Plugin](https://www.jetbrains.com/idea/help/run-debug-configuration-plugin.html) explaining how to configure them.
+
+## Run Theme Plugin
+
+To run the theme in the IDE development instance, choose <menupath>Run | Run...</menupath> and select the created run configuration.
+Debugging a theme is similar, but instead of <control>Run...</control>, select the <control>Debug...</control> action.

@@ -8,7 +8,7 @@ This documentation section will help you get started with developing UI theme pl
 The DevKit-based UI theme development workflow includes:
 
 * [Setting Up a Development Environment](setting_up_environment.md)
-* [Creating a Plugin Project](creating_plugin_project.md)
-* [Running and Debugging a Plugin](running_and_debugging_a_plugin.md)
-* [Deploying a Plugin](deploying_plugin.md)
-* [Uploading a Plugin to JetBrains Marketplace](publishing_plugin.md#uploading-a-plugin-to-jetbrains-marketplace)
+* [Creating a Theme Project](creating_plugin_project.md)
+* [Running and Debugging a Theme](running_and_debugging_a_plugin.md)
+* [Deploying a Theme](deploying_plugin.md)
+* [Uploading a Theme to JetBrains Marketplace](publishing_plugin.md#uploading-a-plugin-to-jetbrains-marketplace)

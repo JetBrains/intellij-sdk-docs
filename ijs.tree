@@ -341,9 +341,10 @@
       <toc-element id="running_and_debugging_a_plugin.md"/>
       <toc-element id="deploying_plugin.md"/>
     </toc-element>
-    <toc-element id="themes.md"/>
-    <toc-element id="themes_customize.md" toc-title="Customizing UI Theme"/>
-    <toc-element id="themes_extras.md" toc-title="Adding Schemes and Images"/>
+    <toc-element id="themes.md">
+      <toc-element id="themes_customize.md" toc-title="Customizing UI Theme"/>
+      <toc-element id="themes_extras.md" toc-title="Adding Schemes and Images"/>
+    </toc-element>
     </toc-element>
   <toc-element toc-title="Appendix I — Resources">
     <toc-element id="glossary.md"/>

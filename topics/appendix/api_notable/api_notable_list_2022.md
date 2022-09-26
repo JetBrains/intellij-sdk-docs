@@ -14,6 +14,9 @@ Specify language for Intention
 "Heavy" Brace Matching
 : Alternative extension point to implement [](additional_minor_features.md#brace-matching) in background thread.
 
+Injection Text Formatting
+: Delegation of formatting can be controlled using dedicated [extension point](language_injection.md#formatting).
+
 ## 2022.2
 
 ### IntelliJ Platform 2022.2

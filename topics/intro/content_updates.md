@@ -19,6 +19,7 @@ Minor Changes and Additions
 :
 - Add section about [](ide_infrastructure.md#power-save-mode).
 - Highlight references automatically via [](references_and_resolve.md#additional-highlighting)
+- Language injections: controlling [](language_injection.md#formatting)
 
 ### August-22
 

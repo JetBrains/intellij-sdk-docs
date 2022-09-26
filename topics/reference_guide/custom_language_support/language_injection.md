@@ -295,3 +295,7 @@ public class MyBizarreDSLInjector implements MultiHostInjector {
 ```
 
 Now, inside the editor the injected portion will work as expected where foo is the method name and `System.out.println(42);` will look and feel like a method body with highlighting, completion, and goto definition working.
+
+## Formatting
+
+To control delegation of formatting to containing file, implement [`InjectedFormattingOptionsProvider`](%gh-ic-master%/platform/code-style-api/src/com/intellij/formatting/InjectedFormattingOptionsProvider.java) and register in `com.intellij.formatting.injectedOptions` extension point (_2022.3_).

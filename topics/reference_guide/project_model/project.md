@@ -4,7 +4,7 @@
 
 <microformat>
 
-**Product Help Topics:** [Configure projects](https://www.jetbrains.com/help/idea/working-with-projects.html)
+**Product Help:** [Configure projects](https://www.jetbrains.com/help/idea/working-with-projects.html)
 
 </microformat>
 

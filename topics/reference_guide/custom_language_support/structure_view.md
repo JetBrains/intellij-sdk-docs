@@ -4,7 +4,7 @@
 
 <microformat>
 
-**Product Help Topics:** [Source file structure](https://www.jetbrains.com/help/idea/viewing-structure-of-a-source-file.html)
+**Product Help:** [Source file structure](https://www.jetbrains.com/help/idea/viewing-structure-of-a-source-file.html)
 
 </microformat>
 

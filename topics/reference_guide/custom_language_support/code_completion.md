@@ -4,7 +4,7 @@
 
 <microformat>
 
-**Product Help Topics:** [Code completion](https://www.jetbrains.com/help/idea/auto-completing-code.html)
+**Product Help:** [Code completion](https://www.jetbrains.com/help/idea/auto-completing-code.html)
 
 </microformat>
 

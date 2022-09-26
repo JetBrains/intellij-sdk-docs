@@ -4,7 +4,7 @@
 
 <microformat>
 
-**Product Help Topics:** [Quick Documentation](https://www.jetbrains.com/help/idea/viewing-reference-information.html#inline-quick-documentation)
+**Product Help:** [Quick Documentation](https://www.jetbrains.com/help/idea/viewing-reference-information.html#inline-quick-documentation)
 
 </microformat>
 

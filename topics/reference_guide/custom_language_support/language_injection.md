@@ -4,7 +4,7 @@
 
 <microformat>
 
-**Product Help Topics:** [Language injections](https://www.jetbrains.com/help/idea/language-injections-settings.html)
+**Product Help:** [Language injections](https://www.jetbrains.com/help/idea/language-injections-settings.html)
 
 </microformat>
 

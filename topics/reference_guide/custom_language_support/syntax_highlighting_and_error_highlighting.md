@@ -4,7 +4,7 @@
 
 <microformat>
 
-**Product Help Topics:** [Colors and fonts](https://www.jetbrains.com/help/idea/configuring-colors-and-fonts.html)
+**Product Help:** [Colors and fonts](https://www.jetbrains.com/help/idea/configuring-colors-and-fonts.html)
 
 </microformat>
 

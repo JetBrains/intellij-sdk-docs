@@ -4,7 +4,7 @@
 
 <microformat>
 
-**Product Help Topics:** [Libraries](https://www.jetbrains.com/help/idea/library.html)
+**Product Help:** [Libraries](https://www.jetbrains.com/help/idea/library.html)
 
 </microformat>
 

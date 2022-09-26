@@ -4,7 +4,7 @@
 
 <microformat>
 
-**Product Help Topics:** [Intention Actions](https://www.jetbrains.com/help/idea/intention-actions.html)
+**Product Help:** [Intention Actions](https://www.jetbrains.com/help/idea/intention-actions.html)
 
 </microformat>
 

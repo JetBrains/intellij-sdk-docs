@@ -4,7 +4,7 @@
 
 <microformat>
 
-**Product Help Topics:** [Searching Everywhere](https://www.jetbrains.com/help/idea/searching-everywhere.html)
+**Product Help:** [Searching Everywhere](https://www.jetbrains.com/help/idea/searching-everywhere.html)
 
 </microformat>
 

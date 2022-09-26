@@ -4,7 +4,7 @@
 
 <microformat>
 
-**Product Help Topics:** [SDKs](https://www.jetbrains.com/help/idea/working-with-sdks.html)
+**Product Help:** [SDKs](https://www.jetbrains.com/help/idea/working-with-sdks.html)
 
 </microformat>
 

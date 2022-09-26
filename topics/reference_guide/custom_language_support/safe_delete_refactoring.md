@@ -4,7 +4,7 @@
 
 <microformat>
 
-**Product Help Topics:** [Safe delete](https://www.jetbrains.com/help/idea/safe-delete.html)
+**Product Help:** [Safe delete](https://www.jetbrains.com/help/idea/safe-delete.html)
 
 </microformat>
 

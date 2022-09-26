@@ -4,7 +4,7 @@
 
 <microformat>
 
-**Product Help Topics:** [Multiple cursors and selection ranges](https://www.jetbrains.com/help/idea/multicursor.html)
+**Product Help:** [Multiple cursors and selection ranges](https://www.jetbrains.com/help/idea/multicursor.html)
 
 </microformat>
 

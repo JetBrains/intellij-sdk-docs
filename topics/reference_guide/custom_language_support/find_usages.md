@@ -4,7 +4,7 @@
 
 <microformat>
 
-**Product Help Topics:** [Find Usages](https://www.jetbrains.com/help/idea/find-highlight-usages.html)
+**Product Help:** [Find Usages](https://www.jetbrains.com/help/idea/find-highlight-usages.html)
 
 </microformat>
 

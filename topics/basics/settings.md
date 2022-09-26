@@ -4,7 +4,7 @@
 
 <microformat>
 
-**Product Help Topics:** [Settings/Preferences](https://www.jetbrains.com/help/idea/settings-preferences-dialog.html), [Configuring the IDE](https://www.jetbrains.com/help/idea/configuring-project-and-ide-settings.html)
+**Product Help:** [Settings/Preferences](https://www.jetbrains.com/help/idea/settings-preferences-dialog.html), [Configuring the IDE](https://www.jetbrains.com/help/idea/configuring-project-and-ide-settings.html)
 
 </microformat>
 

@@ -4,7 +4,7 @@
 
 <microformat>
 
-**Product Help Topics:** [Project Security](https://www.jetbrains.com/help/idea/project-security.html)
+**Product Help:** [Project Security](https://www.jetbrains.com/help/idea/project-security.html)
 
 </microformat>
 

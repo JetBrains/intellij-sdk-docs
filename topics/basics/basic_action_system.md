@@ -4,7 +4,7 @@
 
 <microformat>
 
-**Product Help Topics:** [Menus and toolbars](https://www.jetbrains.com/help/idea/customize-actions-menus-and-toolbars.html)
+**Product Help:** [Menus and toolbars](https://www.jetbrains.com/help/idea/customize-actions-menus-and-toolbars.html)
 
 </microformat>
 

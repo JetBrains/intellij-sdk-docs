@@ -4,7 +4,7 @@
 
 <microformat>
 
-**Product Help Topics:** [Facets](https://www.jetbrains.com/help/idea/facet-page.html), [Adding frameworks (facet)](https://www.jetbrains.com/help/idea/adding-support-for-frameworks-and-technologies.html)
+**Product Help:** [Facets](https://www.jetbrains.com/help/idea/facet-page.html), [Adding frameworks (facet)](https://www.jetbrains.com/help/idea/adding-support-for-frameworks-and-technologies.html)
 
 </microformat>
 

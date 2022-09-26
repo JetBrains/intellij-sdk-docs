@@ -6,7 +6,7 @@
 
 <microformat>
 
-**Product Help Topics:** [Postfix Completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#postfix_completion)
+**Product Help:** [Postfix Completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#postfix_completion)
 
 </microformat>
 

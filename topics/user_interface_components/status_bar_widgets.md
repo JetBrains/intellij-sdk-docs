@@ -4,7 +4,7 @@
 
 <microformat>
 
-**Product Help Topics:** [Status bar](https://www.jetbrains.com/help/idea/guided-tour-around-the-user-interface.html#status-bar)
+**Product Help:** [Status bar](https://www.jetbrains.com/help/idea/guided-tour-around-the-user-interface.html#status-bar)
 
 </microformat>
 

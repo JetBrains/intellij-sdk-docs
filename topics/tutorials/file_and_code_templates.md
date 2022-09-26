@@ -6,7 +6,7 @@
 
 <microformat>
 
-**Product Help Topics:** [File and Code Templates](https://www.jetbrains.com/help/idea/settings-file-and-code-templates.html), [File templates](https://www.jetbrains.com/help/idea/using-file-and-code-templates.html), [Templates with multiple files](https://www.jetbrains.com/help/idea/templates-with-multiple-files.html)
+**Product Help:** [File and Code Templates](https://www.jetbrains.com/help/idea/settings-file-and-code-templates.html), [File templates](https://www.jetbrains.com/help/idea/using-file-and-code-templates.html), [Templates with multiple files](https://www.jetbrains.com/help/idea/templates-with-multiple-files.html)
 
 </microformat>
 

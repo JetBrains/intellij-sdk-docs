@@ -4,7 +4,7 @@
 
 <microformat>
 
-**Product Help Topics:** [Project tool window](https://www.jetbrains.com/help/idea/project-tool-window.html)
+**Product Help:** [Project tool window](https://www.jetbrains.com/help/idea/project-tool-window.html)
 
 </microformat>
 

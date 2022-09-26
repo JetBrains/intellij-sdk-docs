@@ -4,7 +4,7 @@
 
 <microformat>
 
-**Product Help Topics:** [Run/Debug Configuration](https://www.jetbrains.com/idea/help/run-debug-configuration.html)
+**Product Help:** [Run/Debug Configuration](https://www.jetbrains.com/idea/help/run-debug-configuration.html)
 
 </microformat>
 

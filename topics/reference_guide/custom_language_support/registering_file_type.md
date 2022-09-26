@@ -4,7 +4,7 @@
 
 <microformat>
 
-**Product Help Topics:** [File type associations](https://www.jetbrains.com/help/idea/creating-and-registering-file-types.html)
+**Product Help:** [File type associations](https://www.jetbrains.com/help/idea/creating-and-registering-file-types.html)
 
 </microformat>
 

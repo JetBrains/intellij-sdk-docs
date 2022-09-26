@@ -40,7 +40,7 @@ See the [](developing_themes.md) section for the development instructions.
 Developing theme plugins with Gradle requires experience with the Gradle or a similar build tool.
 It offers the possibility of automating some parts of the development process, like patching <path>[plugin.xml](plugin_configuration_file.md)</path> file with the theme plugin version and other data, as well as building the plugin distribution on CI servers and publishing it to [JetBrains Marketplace](https://plugins.jetbrains.com).
 
-If your project requires any of the mentioned capabilities, see [Creating a Plugin using Gradle](developing_plugins.md) for more details.
+If your project requires any of the mentioned capabilities, see [Developing a Plugin using Gradle](developing_plugins.md) for more details.
 
 > The recording of _Busy Plugin Developer. Episode 3_ shows how to [create a new theme](https://youtu.be/9J0j-90dC60?t=582) using the Gradle approach.
 >

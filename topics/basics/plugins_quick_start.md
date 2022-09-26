@@ -10,7 +10,7 @@ It will familiarize you with the working environment, project structure, and fre
 * [](plugin_types.md)
 * [](developing_plugins.md)
 * [](plugin_structure.md)
-* [](using_kotlin.md)
+* [Implementing Plugin in Kotlin](using_kotlin.md)
 * [](plugin_signing.md)
 * [](ide_development_instance.md)
 * [](faq.md)

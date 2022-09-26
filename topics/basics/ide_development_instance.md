@@ -125,8 +125,8 @@ The Sandbox Home location can be configured with the [`intellij.sandboxDir`](too
 
 <tab title="DevKit" group-key="devkit">
 
-For DevKit-based plugins, the default Sandbox Home location is defined in the IntelliJ Platform Plugin SDK.
-See specifying the [Sandbox Home for DevKit Projects](setting_up_theme_environment.md) for more information.
+For DevKit-based plugins, the default <control>Sandbox Home</control> location is defined in the IntelliJ Platform Plugin SDK.
+See the [Setting Up a Theme Development Environment](setting_up_theme_environment.md#add-intellij-platform-plugin-sdk) for information about how to set up Sandbox Home in IntelliJ Platform SDK.
 
 The default Sandbox Home directory location is:
 * Windows: <path>$USER_HOME$\\.$PRODUCT_SYSTEM_NAME$$PRODUCT_VERSION$\\system\\plugins-sandbox\\</path>

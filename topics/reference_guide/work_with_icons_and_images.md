@@ -177,3 +177,7 @@ Each frame represents an icon, and a delay until the next frame.
 
 If you want to show somewhere that there is a long process, you can use the predefined `AnimatedIcon.Default` loader icon.
 This icon has a larger `AnimatedIcon.Big` version.
+
+## Icon Tooltips
+
+Register resource bundle via `com.intellij.iconDescriptionBundle` extension point to provide tooltips automatically for all [`SimpleColoredComponent`](%gh-ic%/platform/platform-api/src/com/intellij/ui/SimpleColoredComponent.java) renderers.

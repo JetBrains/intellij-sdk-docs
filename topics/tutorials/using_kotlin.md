@@ -54,7 +54,7 @@ The IntelliJ Platform provides the [type safe DSL](kotlin_ui_dsl_version_2.md) a
 
 ## Adding Kotlin Support
 
-> The [IntelliJ Platform Plugin Template](github_template.md) provides a preconfigured project using Kotlin.
+> The [IntelliJ Platform Plugin Template](plugin_github_template.md) provides a preconfigured project using Kotlin.
 >
 {type="tip"}
 

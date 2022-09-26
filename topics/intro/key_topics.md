@@ -7,7 +7,7 @@ This page is intended to list the key topics that a plugin author would be inter
 
 ## Essential Concepts
 
-- [](plugins_getting_started.md).
+- [](developing_plugins.md).
 - [](testing_plugins.md).
 - Component model - the IntelliJ Platform is a component-based application and is responsible for creating components and injecting dependencies.
   Understanding this is necessary for building plugins.

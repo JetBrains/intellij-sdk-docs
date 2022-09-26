@@ -13,7 +13,7 @@ Converting a plugin created with the old DevKit approach (which can be used for 
     * <path>[modulename].iml</path> file
     * <path>out</path> directory
 * Arrange the existing source files within the project directory in the Gradle [source set](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) format.
-* Use the <control>[New Project](gradle_prerequisites.md#create-ide-plugin)</control> wizard as though creating a new Gradle-based plugin project from scratch. On the <control>New Project</control> page choose the <control>IDE Plugin</control> generator and set the values of:
+* Use the <control>[New Project](creating_plugin_project.md#create-ide-plugin)</control> wizard as though creating a new Gradle-based plugin project from scratch. On the <control>New Project</control> page choose the <control>IDE Plugin</control> generator and set the values of:
     * <control>Group</control> to the existing package in the initial source set.
     * <control>Artifact</control> to the name of the existing plugin.
     * <control>Name</control> to the name of the directory where the existing plugin is located, e.g. if the plugin project base directory is <path>/Users/john/Projects/old_plugin</path>, it should be the <path>old_plugin</path>.

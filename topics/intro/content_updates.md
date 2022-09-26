@@ -183,7 +183,7 @@ Dynamic Plugins update
 : Added new sections _Code_ and _Troubleshooting_ to [Dynamic Plugins](dynamic_plugins.md).
 
 GitHub IntelliJ Platform Plugin Template
-: Create new plugins with a preconfigured project scaffold and CI in [one click](github_template.md).
+: Create new plugins with a preconfigured project scaffold and CI in [one click](plugin_github_template.md).
 
 Disposer & Disposable
 : Added [reference](disposers.md) discussing resource cleanup/management.

@@ -4,7 +4,7 @@
 
 <excerpt>IntelliJ Platform Plugin Template is a GitHub template containing a minimal preconfigured plugin project and GitHub Actions CI workflows that cover building, testing and deploying the plugin.</excerpt>
 
-The IntelliJ Platform Plugin Template is the alternative solution for creating a new Gradle-based IntelliJ Platform plugin with the [New Project Wizard](gradle_prerequisites.md).
+The IntelliJ Platform Plugin Template is the alternative solution for creating a new Gradle-based IntelliJ Platform plugin with the [New Project Wizard](creating_plugin_project.md).
 
 [IntelliJ Platform Plugin Template][gh:ippt] is a GitHub repository that provides a pure boilerplate template to make it easier to create a new Gradle-based plugin project.
 

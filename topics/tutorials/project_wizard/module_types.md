@@ -11,7 +11,7 @@ The source code for the [`module`](%gh-sdk-samples%/module) and [`project_wizard
 ## Pre-Requirements
 
 Create an empty plugin project.
-See the [](gradle_prerequisites.md) section for details.
+See the [](creating_plugin_project.md) section for details.
 
 > The UI for selecting module types and the creation of modules through project wizard is IntelliJ IDEA-specific.
 >

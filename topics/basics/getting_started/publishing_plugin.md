@@ -43,7 +43,7 @@ New versions can be uploaded manually on the plugin's detail page, see [Marketpl
 
 ## Publishing Plugin With Gradle
 
-Once you have [configured Gradle support](gradle_guide.md), and [uploaded the plugin](#uploading-a-plugin-to-jetbrains-marketplace) to the plugin repository at least once, you can automatically build and deploy your plugin to the [JetBrains Marketplace](https://plugins.jetbrains.com).
+Once you have [configured Gradle support](configuring_plugin_project.md), and [uploaded the plugin](#uploading-a-plugin-to-jetbrains-marketplace) to the plugin repository at least once, you can automatically build and deploy your plugin to the [JetBrains Marketplace](https://plugins.jetbrains.com).
 
 ### Building Distribution
 

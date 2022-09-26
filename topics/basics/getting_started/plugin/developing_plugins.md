@@ -22,10 +22,10 @@ To make sure that a plugin is not affected by [API changes](api_changes_list.md)
 
 There are two main ways of creating a new Gradle-based IntelliJ Platform plugin project:
 - dedicated generator available in the [New Project Wizard](https://www.jetbrains.com/help/idea/new-project-wizard.html) - it creates a minimal plugin project with all the required files
-- [](github_template.md) available on GitHub - in addition to the required project files, it includes configuration of the GitHub Actions CI workflows
+- [](plugin_github_template.md) available on GitHub - in addition to the required project files, it includes configuration of the GitHub Actions CI workflows
 
 This documentation section describes plugin structure generated with the <control>New Project</control> wizard, but the project generated with _IntelliJ Platform Plugin Template_ covers all the described files and directories.
-See the [](github_template.md) section for more information about the advantages of this approach and instructions on how to use it.
+See the [](plugin_github_template.md) section for more information about the advantages of this approach and instructions on how to use it.
 
 > The old Plugin DevKit workflow still supports existing projects and is recommended for [creating theme plugins](developing_themes.md).
 See how to [migrate a DevKit plugin to Gradle-based](migrating_plugin_devkit_to_gradle.md).
@@ -38,7 +38,7 @@ See how to [migrate a DevKit plugin to Gradle-based](migrating_plugin_devkit_to_
 
 ## Plugin Development Workflow
 
-* [Creating a Gradle-based Plugin Project](gradle_prerequisites.md)
-* [Configuring the Gradle IntelliJ Plugin](gradle_guide.md)
-  * [Adding Kotlin Support](kotlin.md) (optional)
+* [Creating a Gradle-based Plugin Project](creating_plugin_project.md)
+* [Configuring the Gradle IntelliJ Plugin](configuring_plugin_project.md)
+  * [Adding Kotlin Support](using_kotlin.md) (optional)
 * [Publishing a Plugin](publishing_plugin.md)

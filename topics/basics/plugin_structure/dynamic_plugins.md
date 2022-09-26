@@ -86,7 +86,7 @@ If a plugin fails to reload, the log will contain a cause as to why.
 
 <procedure title="Finding leaks preventing unload">
 
-1. Verify that the IDE is running with the VM parameter `-XX:+UnlockDiagnosticVMOptions`. When using [Gradle](gradle_guide.md), specify `runIde.jvmArgs += "-XX:+UnlockDiagnosticVMOptions"` otherwise [Configure JVM Options](https://www.jetbrains.com/help/idea/tuning-the-ide.html#procedure-jvm-options).
+1. Verify that the IDE is running with the VM parameter `-XX:+UnlockDiagnosticVMOptions`. When using [Gradle](configuring_plugin_project.md), specify `runIde.jvmArgs += "-XX:+UnlockDiagnosticVMOptions"` otherwise [Configure JVM Options](https://www.jetbrains.com/help/idea/tuning-the-ide.html#procedure-jvm-options).
 2. Set Registry key `ide.plugins.snapshot.on.unload.fail` to `true` (Go to <menupath>Navigate | Search Everywhere</menupath> and type `Registry`).
 3. Trigger the plugin reload.
 4. Open the <path>.hprof</path> memory snapshot generated on plugin unload, look for the plugin ID string. [IntelliJ Ultimate](https://www.jetbrains.com/help/idea/analyze-hprof-memory-snapshots.html) can open memory snapshots directly.

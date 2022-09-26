@@ -31,7 +31,7 @@ It is also possible to distribute plugins using a [](custom_plugin_repository.md
 
 Plugins can extend the platform in many ways, from adding a simple menu item to adding support for a complete language, build system, and debugger.
 Many of the existing IntelliJ Platform features are implemented as plugins that can be included or excluded depending on the needs of the end product.
-See the [](basics.md) for more details.
+See the [](plugins_quick_start.md) for more details.
 
 > In some cases, implementing an actual IntelliJ Platform plugin might not be necessary, as [alternative solutions](plugin_alternatives.md) exist.
 >

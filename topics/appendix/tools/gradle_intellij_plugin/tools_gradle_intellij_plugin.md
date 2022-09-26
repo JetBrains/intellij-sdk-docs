@@ -1714,4 +1714,4 @@ Validates the plugin project configuration:
 
 - The dependency on the Kotlin Standard Library (stdlib) is automatically added when using the Gradle Kotlin plugin and may conflict with the version provided with the IntelliJ Platform.
 
-> Read more about controlling this behavior on [](kotlin.md#kotlin-standard-library).
+> Read more about controlling this behavior on [](using_kotlin.md#kotlin-standard-library).

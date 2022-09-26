@@ -40,7 +40,7 @@ configuration file using the `com.intellij.navbar` extension point.
 ## Run the Project
 
 Run the project by using the Gradle
-[runIde task](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin).
+[runIde task](creating_plugin_project.md#running-a-simple-gradle-based-intellij-platform-plugin).
 
 Open the <path>test.simple</path> file and position the caret on any property.
 The navigation bar displays the name and icon of this property.

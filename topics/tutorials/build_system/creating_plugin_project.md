@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-This documentation page describes a Gradle-based plugin project generated with the [New Project Wizard](https://www.jetbrains.com/help/idea/new-project-wizard.html), but the project generated with [](github_template.md) covers all the described files and directories.
+This documentation page describes a Gradle-based plugin project generated with the [New Project Wizard](https://www.jetbrains.com/help/idea/new-project-wizard.html), but the project generated with [](plugin_github_template.md) covers all the described files and directories.
 
 ## Creating a Plugin with New Project Wizard
 
@@ -14,7 +14,7 @@ Launch the <control>New Project</control> wizard via the <menupath>File | New | 
 3. Choose the <control>Plugin</control> option in the project <control>Type</control>.
 4. Choose the <control>Language</control> the plugin will use for implementation.
    For this example select the <control>Java</control> option.
-   See [Kotlin for Plugin Developers](kotlin.md) for more information.
+   See [Kotlin for Plugin Developers](using_kotlin.md) for more information.
 5. Provide the <control>Group</control> which is typically an inverted company domain (e.g. `com.example.mycompany`).
    It is used for the Gradle property `project.group` value in the project's Gradle build script.
 6. Provide the <control>Artifact</control> which is the default name of the build project artifact (without a version).

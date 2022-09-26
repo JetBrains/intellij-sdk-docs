@@ -23,7 +23,7 @@ Webinar
 * [](intellij_platform.md)
 * [](about.md)
 * [](plugin_alternatives.md)
-* [](plugins_getting_started.md)
+* [](developing_plugins.md)
 * [](explore_api.md)
 * [](useful_links.md)
 * [](learning_resources.md)

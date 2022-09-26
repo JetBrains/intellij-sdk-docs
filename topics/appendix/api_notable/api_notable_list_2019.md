@@ -13,7 +13,7 @@ Support for transitive optional plugin dependencies
 : [Optional <path>plugin.xml</path> configuration files](plugin_configuration_file.md#additional-plugin-configuration-files) can now specify [`<depends>`](plugin_configuration_file.md#idea-plugin__depends). [Issue](https://youtrack.jetbrains.com/issue/IDEA-209769)
 
 Theme/Keymap plugins do not require restart
-: (Un)Installing or enabling/disabling [Theme](themes_intro.md) or [Keymap](https://plugins.jetbrains.com/search?tags=Keymap) plugins doesn't require an IDE restart anymore.
+: (Un)Installing or enabling/disabling [Theme](themes_getting_started.md) or [Keymap](https://plugins.jetbrains.com/search?tags=Keymap) plugins doesn't require an IDE restart anymore.
 
 Run task once (per project)
 : Use `com.intellij.ide.util.RunOnceUtil` to run a task exactly once for application or per project.

@@ -60,7 +60,7 @@ The `SimpleChooseByNameContributor` implementation is registered with the Intell
 
 ## Run the Project
 
-Run the plugin by using the Gradle [`runIde`](creating_plugin_project.md#running-a-simple-gradle-based-intellij-platform-plugin) task.
+Run the plugin by using the Gradle [`runIde`](creating_plugin_project.md#running-a-plugin-with-the-runide-gradle-task) task.
 
 The IDE now supports navigating to a property definition by name pattern via <menupath>Navigate | Symbol</menupath> action.
 

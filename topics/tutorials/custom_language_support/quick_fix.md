@@ -45,7 +45,7 @@ This method call registers the `SimpleCreatePropertyQuickFix` as the Intention A
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleAnnotator.java"}
 
 ## Run the Project
-Run the project by using the Gradle [`runIde`](creating_plugin_project.md#running-a-simple-gradle-based-intellij-platform-plugin) task.
+Run the project by using the Gradle [`runIde`](creating_plugin_project.md#running-a-plugin-with-the-runide-gradle-task) task.
 Open the test [Java file](annotator.md#run-the-project).
 
 To test `SimpleCreatePropertyQuickFix`, change `simple:website` to `simple:website.url`.

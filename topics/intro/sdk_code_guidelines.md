@@ -128,11 +128,11 @@ code_samples/
 
 ## Gradle Build Script Conventions
 
-SDK code samples must be developed [using Gradle](gradle_build_system.md).
+SDK code samples must be developed [using Gradle](creating_plugin_project.md).
 As of this writing, the use of Gradle in SDK code samples still relies heavily on the <path>plugin.xml</path> for specifying the plugin configuration.
 At a later, second phase, the SDK code samples will transition to rely more on the Gradle configuration.
 
-The default contents of a Gradle build script file are produced by the [New Project Wizard](creating_plugin_project.md#creating-a-gradle-based-intellij-platform-plugin-with-new-project-wizard).
+The default contents of a Gradle build script file are produced by the [New Project Wizard](creating_plugin_project.md#create-ide-plugin).
 A consistent structure for an SDK code sample's Gradle build script file is essential for clarity and is based on the default produced by the project wizard.
 Comments in SDK code sample Gradle build scripts should only draw attention to the parts of the Gradle configuration that are unique for a plugin.
 

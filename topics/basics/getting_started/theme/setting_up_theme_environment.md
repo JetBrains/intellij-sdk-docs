@@ -55,7 +55,7 @@ The first step of configuring a theme plugin SDK is adding the JDK.
 
 The second step is adding IntelliJ Platform Plugin SDK that will use the JDK configured in the first step.
 
-<procedure title="Add IntelliJ Platform Plugin SDK" id="create-ide-plugin">
+<procedure title="Add IntelliJ Platform Plugin SDK" id="add-intellij-platform-plugin-sdk">
 
 1. Go to <menupath>File | Project Structure | Platform Settings | SDKs</menupath>.
 2. Click the <control>Add</control> button (<control>+</control>).

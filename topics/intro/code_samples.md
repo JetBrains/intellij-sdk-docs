@@ -11,7 +11,7 @@ Links to the corresponding tutorial or reference page in this tutorial, as well 
 
 ## Using Gradle
 
-All sample plugins are based on Gradle, see [Building Plugins with Gradle](gradle_build_system.md) to get started.
+All sample plugins are based on Gradle, see [](creating_plugin_project.md) to get started.
 
 Additionally, the [Working with Gradle in IntelliJ IDEA](https://youtu.be/6V6G3RyxEMk) screencast offers a thorough introduction to Gradle functionality inside IntelliJ IDEA.
 

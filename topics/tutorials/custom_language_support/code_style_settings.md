@@ -70,7 +70,7 @@ The `SimpleLanguageCodeStyleSettingsProvider` implementation is registered with 
 
 ## Run the Project
 
-Run the plugin by using the Gradle [`runIde`](creating_plugin_project.md#running-a-simple-gradle-based-intellij-platform-plugin) task.
+Run the plugin by using the Gradle [`runIde`](creating_plugin_project.md#running-a-plugin-with-the-runide-gradle-task) task.
 
 In the IDE Development Instance, open the Simple Language code formatting page: <menupath>Settings/Preferences | Editor | Code Style | Simple</menupath>.
 

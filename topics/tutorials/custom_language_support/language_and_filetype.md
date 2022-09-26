@@ -104,7 +104,7 @@ The `SimpleFileTypeFactory` is registered using the `com.intellij.fileTypeFactor
 
 ## Run the Project
 
-Run the plugin by using the Gradle [`runIde`](creating_plugin_project.md#running-a-simple-gradle-based-intellij-platform-plugin) task.
+Run the plugin by using the Gradle [`runIde`](creating_plugin_project.md#running-a-plugin-with-the-runide-gradle-task) task.
 
 Create an empty file with the extension <path>.simple</path>, and IntelliJ IDEA automatically associates it with our language.
 Note the appearance of the Simple Language file icon next to the <path>test.simple</path> file in the <control>Project</control> Tool Window, and the editor tab for the file.

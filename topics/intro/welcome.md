@@ -24,6 +24,7 @@ Webinar
 * [](about.md)
 * [](plugin_alternatives.md)
 * [](developing_plugins.md)
+* [Developing a Theme](themes_getting_started.md)
 * [](explore_api.md)
 * [](useful_links.md)
 * [](learning_resources.md)

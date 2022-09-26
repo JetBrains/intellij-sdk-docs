@@ -38,4 +38,4 @@ The <control>Choose Color</control> window is displayed.
 Color changes can be specified as RGB, HSB, hexadecimal, or using the graphical color picker.
 Pressing the <control>Choose</control> button changes the UI Control color immediately.
 
-UI Control colors can be reset using the <control>Choose Color</control> window, or by resetting the [UI Theme](https://www.jetbrains.com/help/idea/settings-appearance.html).
+UI Control colors can be reset using the <control>Choose Color</control> window, or by resetting the [theme](https://www.jetbrains.com/help/idea/settings-appearance.html).

@@ -1,8 +1,8 @@
-[//]: # (title: UI Themes - Editor Schemes and Background Images)
+[//]: # (title: Themes - Editor Schemes and Background Images)
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-UI Themes can also provide custom color and font settings, as well as custom images for display in the IDE application window.
+Themes can also provide custom color and font settings, as well as custom images for display in the IDE application window.
 
 ## Adding a Custom Editor Scheme
 
@@ -14,7 +14,7 @@ These custom color and font settings are called _Editor Color Schemes_.
 Custom editor color schemes can be specified and exported using the IDE _Settings/Preferences_ dialog.
 Note that editor [Colors and Fonts](https://www.jetbrains.com/help/idea/configuring-colors-and-fonts.html), and [Colors for Version Control File Status](https://www.jetbrains.com/help/idea/file-status-highlights.html) are customized in different sections of _Settings/Preferences_.
 
-Use the following procedure to customize an editor color scheme for a UI Theme:
+Use the following procedure to customize an editor color scheme for a theme:
 * Create the desired custom editor color scheme using the IDE preferences.
 * Export the custom editor color scheme to the desired file name.
   In this example, the file is exported to <path>Lightning.icls</path>.
@@ -22,16 +22,16 @@ Use the following procedure to customize an editor color scheme for a UI Theme:
   In this example, the result is <path>Lightning.xml</path>.
 * See [Customizing Editor Scroll Bar Colors](#customizing-editor-scroll-bar-colors) to change the colors of editor scroll bars.
 
-### Incorporating the Editor Color Scheme in the Custom UI Theme
+### Incorporating the Editor Color Scheme in the Custom Theme
 
-The next step is to add the color scheme to the UI Theme plugin project:
+The next step is to add the color scheme to the theme plugin project:
 * Replace the default generated custom editor color scheme XML file (in this example, <path>theme_basics.xml</path>) in the project's <path>resources</path> folder with the exported custom editor color scheme.
   In this case, the action is to _replace_ <path>theme_basics.xml</path> with <path>Lightning.xml</path>.
-* In the UI Theme file (in this example <path>theme_basics.theme.json</path>), replace the name of the generated editor scheme file (<path>theme_basics.xml</path>) with the new (<path>Lightning.xml</path>) file name.
+* In the theme file (in this example <path>theme_basics.theme.json</path>), replace the name of the generated editor scheme file (<path>theme_basics.xml</path>) with the new (<path>Lightning.xml</path>) file name.
   The `key` is always "editorScheme".
   The `value` is the name of the editor color scheme file.
 
-The example below adds an editor scheme named "Lightning" to the _Theme Basics_ custom UI Theme:
+The example below adds an editor scheme named "Lightning" to the _Theme Basics_ custom theme:
 
 ```json
 {
@@ -79,7 +79,7 @@ For additional examples of `FILESTATUS` color `name` attributes, see the editor 
 ### Customizing Editor Scroll Bar Colors
 
 Editor scroll bar colors should be coordinated with, and switch together with an editor color scheme.
-Please note that Custom UI Theme (<path>*.theme.json</path>) files also contain `ScrollBar.*` name attributes, but these are for scroll bars outside the context of the editor.
+Please note that custom theme (<path>*.theme.json</path>) files also contain `ScrollBar.*` name attributes, but these are for scroll bars outside the context of the editor.
 
 > The Editor Scroll Bar colors are the only editor scheme settings that cannot be customized and exported through IDE preferences.
 >
@@ -146,9 +146,9 @@ The wildcard portion of these patterns corresponds to the `usage` definitions ab
 The IDE supports setting an image as a background in the application window.
 Users can do this manually in [Preferences](https://www.jetbrains.com/help/idea/setting-background-image.html).
 
-UI Themes support specifying a background image as a key-value pair in the `"background": {}` (for editor and tools) and `"emptyFrameBackground": {}` (for empty frame) sections of a Theme description file:
+Themes support specifying a background image as a key-value pair in the `"background": {}` (for editor and tools) and `"emptyFrameBackground": {}` (for empty frame) sections of a Theme description file:
 * The `image` key uses the file name of the image as the value.
-The background image is placed in the UI Theme plugin project's <path>resources</path> folder.
+The background image is placed in the theme plugin project's <path>resources</path> folder.
 * The `transparency` key uses a `value` of 1-100.
 A `value` of 100 is opaque.
 * The `fill` key uses a value of `scale`, meaning to expand the image to fill the space as the window gets resized.

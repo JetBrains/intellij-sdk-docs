@@ -1,8 +1,8 @@
-[//]: # (title: Customizing UI Themes - Icons and UI Controls)
+[//]: # (title: Customizing Themes - Icons and UI Controls)
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-A UI Theme is customized by adding information to the UI Theme description file that overrides the base (_Light_ or _Darcula_) UI Theme.
+A theme is customized by adding information to the theme description file that overrides the base (_Light_ or _Darcula_) theme.
 
 For plugin developers, [Exposing Theme Metadata](themes_metadata.md) discusses the format of customization keys and information about how to provide it to Theme authors.
 
@@ -10,20 +10,20 @@ For plugin developers, [Exposing Theme Metadata](themes_metadata.md) discusses t
 >
 {type="tip"}
 
-## Introduction to UI Theme Description File Syntax
+## Introduction to Theme Description File Syntax
 
 The syntax of a Theme description file follows the JSON open-standard file format of key-value pairs.
-The minimum valid default file is the output of the [DevKit Theme Wizard](themes.md#creating-a-ui-theme-with-the-devkit-theme-wizard).
+The minimum valid default file is the output of the [DevKit Theme Wizard](themes.md#creating-a-theme-with-the-devkit-theme-wizard).
 Adding key-value pairs customizes a Theme.
 
-UI Theme key-value pairs often use color as the `value`.
+Theme key-value pairs often use color as the `value`.
 Colors are defined by six-digit RGB or eight-digit RGBA hexadecimal notation.
 
-### UI Theme Reference Implementations
+### Theme Reference Implementations
 
 When learning new syntax, it is often useful to have some existing implementations for reference.
 For example, refer to the [Theme description file](%gh-ic%/platform/platform-resources/src/themes/HighContrast.theme.json) for the IntelliJ IDEA _High Contrast_ Theme.
-It may also help to review some of the [UI Themes available](https://plugins.jetbrains.com/search?headline=164-theme&tags=Theme) at the JetBrains Marketplace.
+It may also help to review [themes available](https://plugins.jetbrains.com/search?headline=164-theme&tags=Theme) at the JetBrains Marketplace.
 
 ## Defining Named Colors
 
@@ -52,7 +52,7 @@ For example, defining the Named Color `basicBackground` and then using it to set
 
 ## Customizing Icons
 
-UI themes can customize the color of default IntelliJ Platform UI icons or substitute custom icons for the default ones.
+Themes can customize the color of default IntelliJ Platform UI icons or substitute custom icons for the default ones.
 Customization is done by adding an `"icons": {}` section to the Theme description file.
 
 ### Overriding the Global Color of Icons
@@ -76,7 +76,7 @@ This color substitution is applied throughout the IDE UI.
 
 ### Custom Icon Palette Colors
 
-Icon Palettes are predefined UI Theme color keys that describe a single color in an `Actions` or `Objects` context.
+Icon Palettes are predefined theme color keys that describe a single color in an `Actions` or `Objects` context.
 
 #### Icon Colors in "Actions" and "Objects" Contexts
 
@@ -123,7 +123,7 @@ This path is derived from the `AllIcons.[Group].[IconName]` path in icon section
 
 For example, the _Build_ (hammer) icon in the toolbar has the path `Allcons.Actions.Compile` as reported by the UI Inspector.
 Therefore the `key` for the _Build_ icon is `/actions/compile.svg`.
-The `value` is the replacement icon's file name, located in the `resources` folder of the UI Theme plugin project:
+The `value` is the replacement icon's file name, located in the `resources` folder of the theme plugin project:
 
 ```json
 {
@@ -141,7 +141,7 @@ The color of a replaced icon takes precedence over any `ColorPalette` overrides.
 
 ## Customizing UI Controls
 
-UI Themes can change the appearance of more general controls in the IntelliJ Platform UI.
+Themes can change the appearance of more general controls in the IntelliJ Platform UI.
 Examples of these controls are labels, buttons, checkboxes, trees, lists, and menus.
 
 See also [Platform theme colors — UI components](https://jetbrains.design/intellij/principles/platform_theme_colors/#UI-components) in IntelliJ Platform UI Guidelines.
@@ -282,7 +282,7 @@ In this example, the customized border supersedes the default definition and any
 ## Finding Attribute Keys for UI Controls
 
 There are hundreds of UI control `element.property` keys defined in the IntelliJ Platform UI.
-Some keys and strategies for applying them can be gleaned from the [UI Theme reference implementations](#ui-theme-reference-implementations).
+Some keys and strategies for applying them can be gleaned from the [theme reference implementations](#theme-reference-implementations).
 For a general search, here some suggested methods for locating UI control keys.
 
 ### Finding a UI Control Key Using Code Completion in the Editor

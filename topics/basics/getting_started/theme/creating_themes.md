@@ -1,10 +1,10 @@
-[//]: # (title: Developing a UI Theme)
+[//]: # (title: Developing a Theme)
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-This documentation section will help you get started with developing UI theme plugins for the IntelliJ Platform-based IDEs.
+This documentation section will help you get started with developing theme plugins for the IntelliJ Platform-based IDEs.
 
-The DevKit-based UI theme development workflow includes:
+The DevKit-based theme development workflow includes:
 
 * [Setting Up a Development Environment](setting_up_environment.md)
 * [Creating a Theme Project](creating_plugin_project.md)

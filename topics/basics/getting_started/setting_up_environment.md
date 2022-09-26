@@ -4,7 +4,7 @@
 
 ## Preliminary Steps
 
-Use the following checklist to ensure that you are ready to develop your custom UI theme:
+Use the following checklist to ensure that you are ready to develop your custom theme:
 
 - **[IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/)** or **[IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/)** is installed.
 - **Plugin DevKit** plugin is [enabled in IntelliJ IDEA](https://www.jetbrains.com/help/idea/managing-plugins.html).
@@ -15,7 +15,7 @@ Use the following checklist to ensure that you are ready to develop your custom 
 
 ## Get IntelliJ IDEA CE Source Code
 
-Getting the IntelliJ IDEA CE source code is not a requirement for UI theme development as debugging the platform code while developing a UI theme is a rare situation.
+Getting the IntelliJ IDEA CE source code is not a requirement for theme development as debugging the platform code while developing a theme is a rare situation.
 In case you are developing a plugin extending IDE behavior, or you need to understand how some components work internally, having sources makes debugging much more straightforward.
 
 For detailed instructions on how to check out the code efficiently, refer to the _Getting IntelliJ IDEA Community Edition Source Code_ section of [IntelliJ IDEA Community Edition README file](%gh-ic%/README.md).
@@ -33,7 +33,7 @@ If it is required to style components used only in a specific IDE like _IntelliJ
 
 ### Add JDK and IntelliJ Platform Plugin SDK
 
-The first step of configuring a UI theme plugin SDK is adding the JDK.
+The first step of configuring a theme plugin SDK is adding the JDK.
 
 > When targeting 2020.3 and later only, using Java 11 is required.
 > See the [IntelliJ project migrates to Java 11](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/) blog post for details.

@@ -11,7 +11,7 @@ The most common types of plugins include:
 * Framework integration
 * Tool integration
 * User interface add-ons
-* UI Themes
+* Themes
 
 > In some cases, implementing an actual IntelliJ Platform plugin might not be necessary, as [alternative solutions](plugin_alternatives.md) exist.
 >
@@ -60,6 +60,6 @@ Plugins in this category apply various changes to the standard user interface of
 Some newly added components are interactive and provide new functionality, while others are limited to visual modifications only.
 The [Random Background](https://plugins.jetbrains.com/plugin/9692-random-background) plugin may serve as an example.
 
-## UI Themes
+## Themes
 
-[UI Themes](ui_themes_getting_started.md) give designers the ability to customize the appearance of built-in IDE UI elements.
+[Themes](themes_getting_started.md) give designers the ability to customize the appearance of built-in IDE UI elements.

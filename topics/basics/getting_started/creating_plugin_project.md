@@ -38,12 +38,12 @@ my_theme
   - <path>[plugin.xml](plugin_configuration_file.md)</path> configuration file containing preconfigured theme provider
   - <path>pluginIcon.svg</path> file that is a [plugin logo](plugin_icon_file.md)<br/>
     It is recommended to replace it with a custom icon.
-- <path>my_theme.theme.json</path> - a minimal [theme description file](themes_customize.md#introduction-to-ui-theme-description-file-syntax)
+- <path>my_theme.theme.json</path> - a minimal [theme description file](themes_customize.md#introduction-to-theme-description-file-syntax)
 - <path>my_theme.iml</path> - [IntelliJ IDEA Module](https://www.jetbrains.com/help/idea/creating-and-managing-modules.html) configuration file
 
 ## Additional Plugin Themes
 
-UI Theme plugin project [created with the new project wizard](#create-theme) contains a single theme description file by default.
+Theme plugin project [created with the new project wizard](#create-theme) contains a single theme description file by default.
 In case a plugin needs to provide multiple themes (e.g., dark and light variants), it is possible to add them with the dedicated action.
 
 Additional plugin themes can be added using the DevKit Theme Wizard, which is a part of the Plugin DevKit bundled in IntelliJ IDEA.
@@ -56,6 +56,6 @@ The wizard can be used for both DevKit-based and Gradle-based plugins.
    It is a good practice to include the name of the plugin in the created theme name.
 3. Check the <control>Dark theme</control> checkbox if the created theme should be based on IntelliJ IDEA _Darcula_ theme.
    Otherwise, the _Light_ theme will be used as the base.
-4. Click <control>OK</control> button to generate the [theme description file](themes_customize.md#introduction-to-ui-theme-description-file-syntax) with <path>$THEME_NAME$.theme.json</path> name. The generated theme will be automatically configured in the <path>plugin.xml</path> file.
+4. Click <control>OK</control> button to generate the [theme description file](themes_customize.md#introduction-to-theme-description-file-syntax) with <path>$THEME_NAME$.theme.json</path> name. The generated theme will be automatically configured in the <path>plugin.xml</path> file.
 
 </procedure>

@@ -11,6 +11,9 @@ K
 Specify language for intention
 : Specify `<language>` in `com.intellij.intentionAction` EP registration to avoid instantiating language-specific intentions in non-relevant places.
 
+"Heavy" Brace Matching
+: Alternative extension point to implement [](additional_minor_features.md#brace-matching) in background thread.
+
 ## 2022.2
 
 ### IntelliJ Platform 2022.2

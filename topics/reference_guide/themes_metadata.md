@@ -1,6 +1,6 @@
 [//]: # (title: Exposing Theme Metadata)
 
-All available UI Customization Keys that can be used in [Custom Themes](themes_customize.md) must be defined in a dedicated <path>*.themeMetadata.json</path> file which is registered via `com.intellij.themeMetadataProvider` extension point.
+All available UI Customization Keys that can be used in [Custom Themes](../basics/getting_started/theme/themes_customize.md) must be defined in a dedicated <path>*.themeMetadata.json</path> file which is registered via `com.intellij.themeMetadataProvider` extension point.
 
 The following minimal sample demonstrates all details required when exposing UI customization keys of your plugin's UI.
 

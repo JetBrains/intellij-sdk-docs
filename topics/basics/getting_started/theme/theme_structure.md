@@ -22,7 +22,7 @@ Themes have several components:
 ## Theme Description File
 
 The most important file in every theme project is the theme description file.
-The content of the default file generated with the [Theme wizard](creating_plugin_project.md) is a short set of key–value pairs:
+The content of the default file generated with the [Theme wizard](creating_theme_project.md) is a short set of key–value pairs:
 
 ```json
 {

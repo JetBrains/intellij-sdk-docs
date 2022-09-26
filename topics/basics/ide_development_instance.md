@@ -3,7 +3,7 @@
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 A JetBrains feature for developing plugins is running or debugging a plugin project from within an IntelliJ Platform-based IDE such as IntelliJ IDEA.
-Selecting the [`runIde`](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task for a Gradle-based project (or [Run](running_and_debugging_a_plugin.md) menu for a DevKit-based project) will launch a _Development Instance_ of the IDE with the plugin enabled.
+Selecting the [`runIde`](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task for a Gradle-based project (or [Run](running_and_debugging_a_theme.md) menu for a DevKit-based project) will launch a _Development Instance_ of the IDE with the plugin enabled.
 This page describes how to control some of the settings for the Development Instance.
 
 > Please see also [Advanced Configuration](https://www.jetbrains.com/help/idea/tuning-the-ide.html) for general VM options and properties.
@@ -99,7 +99,7 @@ After starting the sandbox IDE instance, run [`buildPlugin`](tools_gradle_intell
 
 <tab title="DevKit" group-key="devkit">
 
-Add system property `idea.auto.reload.plugins` in the Plugin DevKit [run configuration](running_and_debugging_a_plugin.md).
+Add system property `idea.auto.reload.plugins` in the Plugin DevKit [run configuration](running_and_debugging_a_theme.md).
 
 To disable auto-reload, set `idea.auto.reload.plugins` to `false` explicitly (2020.1.2+).
 
@@ -126,7 +126,7 @@ The Sandbox Home location can be configured with the [`intellij.sandboxDir`](too
 <tab title="DevKit" group-key="devkit">
 
 For DevKit-based plugins, the default Sandbox Home location is defined in the IntelliJ Platform Plugin SDK.
-See specifying the [Sandbox Home for DevKit Projects](setting_up_environment.md) for more information.
+See specifying the [Sandbox Home for DevKit Projects](setting_up_theme_environment.md) for more information.
 
 The default Sandbox Home directory location is:
 * Windows: <path>$USER_HOME$\\.$PRODUCT_SYSTEM_NAME$$PRODUCT_VERSION$\\system\\plugins-sandbox\\</path>

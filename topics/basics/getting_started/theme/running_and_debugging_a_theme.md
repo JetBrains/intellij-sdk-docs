@@ -4,7 +4,7 @@
 
 In most cases, the results of theme plugin can be previewed by running the <control>Preview Theme</control> action in the [theme description file](themes_customize.md) editor.
 Sometimes, when more advanced styling options are implemented, the previewing theme may not be enough to see all the changes.
-This page explains how to run or debug the theme plugin in the IDE configured as a part of [project SDK](setting_up_environment.md).
+This page explains how to run or debug the theme plugin in the IDE configured as a part of [project SDK](setting_up_theme_environment.md).
 
 ## Create Plugin Run Configuration
 

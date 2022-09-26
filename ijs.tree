@@ -335,17 +335,17 @@
   </toc-element>
   <toc-element toc-title="Part X — Themes">
     <toc-element id="themes_getting_started.md"/>
-    <toc-element id="creating_themes.md">
-      <toc-element id="setting_up_environment.md"/>
-      <toc-element id="creating_plugin_project.md" accepts-web-file-names="creating_an_action.html"/>
-      <toc-element id="running_and_debugging_a_plugin.md"/>
-      <toc-element id="deploying_plugin.md"/>
+    <toc-element id="developing_themes.md">
+      <toc-element id="setting_up_theme_environment.md"/>
+      <toc-element id="creating_theme_project.md" accepts-web-file-names="creating_an_action.html"/>
+      <toc-element id="running_and_debugging_a_theme.md"/>
+      <toc-element id="deploying_theme.md"/>
     </toc-element>
-    <toc-element id="themes.md">
+    <toc-element id="theme_structure.md">
       <toc-element id="themes_customize.md" toc-title="Customizing a Theme"/>
       <toc-element id="themes_extras.md" toc-title="Adding Schemes and Images"/>
     </toc-element>
-    </toc-element>
+  </toc-element>
   <toc-element toc-title="Appendix I — Resources">
     <toc-element id="glossary.md"/>
     <toc-element id="explore_api.md" toc-title="Explore the API"/>

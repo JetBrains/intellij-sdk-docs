@@ -6,7 +6,7 @@ This documentation page describes a DevKit-based theme project generated with th
 
 ## Creating a Theme with New Project Wizard
 
-Before creating a theme project, make sure that [development environment is set up](setting_up_environment.md).
+Before creating a theme project, make sure that [development environment is set up](setting_up_theme_environment.md).
 
 <procedure title="Create Theme Plugin" id="create-theme">
 
@@ -14,7 +14,7 @@ Launch the <control>New Project</control> wizard via the <menupath>File | New | 
 1. Select the <control>IDE Plugin</control> generator type from the list on the left.
 2. Specify the project <control>Name</control> and <control>Location</control>.
 3. Choose the <control>Theme</control> option in the project <control>Type</control>.
-4. As the <control>JDK</control> select the [configured SDK](setting_up_environment.md#configuring-intellij-platform-plugin-sdk).
+4. As the <control>JDK</control> select the [configured SDK](setting_up_theme_environment.md#configuring-intellij-platform-plugin-sdk).
 5. Click the <control>Create</control> button to generate the project.
 
 </procedure>

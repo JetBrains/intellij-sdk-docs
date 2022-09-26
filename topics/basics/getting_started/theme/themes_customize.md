@@ -13,7 +13,7 @@ For plugin developers, [Exposing Theme Metadata](themes_metadata.md) discusses t
 ## Introduction to Theme Description File Syntax
 
 The syntax of a Theme description file follows the JSON open-standard file format of key-value pairs.
-The minimum valid default file is the output of the [DevKit Theme Wizard](themes.md#creating-a-theme-with-the-devkit-theme-wizard).
+The minimum valid default file is the output of the [DevKit Theme Wizard](theme_structure.md#creating-a-theme-with-the-devkit-theme-wizard).
 Adding key-value pairs customizes a Theme.
 
 Theme key-value pairs often use color as the `value`.

@@ -1,10 +1,10 @@
 [//]: # (title: Customizing UI Themes - Icons and UI Controls)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 A UI Theme is customized by adding information to the UI Theme description file that overrides the base (_Light_ or _Darcula_) UI Theme.
 
-For plugin developers, [Exposing Theme Metadata](themes_metadata.md) discusses the format of customization keys and information how to provide it to Theme authors.
+For plugin developers, [Exposing Theme Metadata](themes_metadata.md) discusses the format of customization keys and information about how to provide it to Theme authors.
 
 > [Color Highlighter Plugin](https://plugins.jetbrains.com/plugin/13309-color-highlighter) adds additional color preview inside the editor.
 >
@@ -60,7 +60,7 @@ Customization is done by adding an `"icons": {}` section to the Theme descriptio
 Default global icon colors are customized by adding key-value pairs to a `"ColorPalette": {}` section.
 The `ColorPalette` must be inserted in the `icons` section.
 
-In the following example, the `key` - the default red color (#DB5860) used for `Action` icons in the _Light_ Theme - is overridden to the `value` of a different color (#D61A26):
+In the following example, the `key` - the default red color (`#DB5860`) used for `Action` icons in the _Light_ Theme - is overridden to the `value` of a different color (`#D61A26`):
 
 ```json
 {
@@ -168,7 +168,7 @@ This customization is done using the wildcard `"*": {}` section in the Theme des
 A key-value pair is inserted in this section, but only the `property` portion of the key is specified.
 The `value` is the custom color.
 
-The following example would change the default background color to #AED7E3 for all UI controls:
+The following example would change the default background color to `#AED7E3` for all UI controls:
 
 ```json
 {
@@ -187,7 +187,7 @@ Note that the wildcard `"*": {}` section must be within the `"ui": {}` section.
 The color of a specific UI control type is changed by adding a key-value pair to the `"ui": {}` section of a Theme description file.
 The `key` is the full `element.property` format, and the `value` is the custom color.
 
-The following example sets the background color for all labels to the color #F6E9C9
+The following example sets the background color for all labels to the color `#F6E9C9`.
 
 ```json
 {

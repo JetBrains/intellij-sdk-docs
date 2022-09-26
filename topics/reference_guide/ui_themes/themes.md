@@ -55,3 +55,11 @@ This declaration binds the theme description file to a theme provider extension 
 > Do not modify or re-use an existing value of the generated `id` attribute.
 >
 {type="warning"}
+
+## Theme Customization
+
+The following sections describe the theme customization possibilities in detail:
+* [](themes_customize.md#customizing-icons)
+* [](themes_customize.md#customizing-ui-controls)
+* [](themes_extras.md#adding-a-custom-editor-scheme)
+* [](themes_extras.md#adding-a-custom-background-image)

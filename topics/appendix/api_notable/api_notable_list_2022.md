@@ -3,12 +3,12 @@
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 _Early Access Program_ (EAP) releases of upcoming versions are available [here](https://eap.jetbrains.com).
-K
+
 ## 2022.3
 
 ### IntelliJ Platform 2022.3
 
-Specify language for intention
+Specify language for Intention
 : Specify `<language>` in `com.intellij.intentionAction` EP registration to avoid instantiating language-specific intentions in non-relevant places.
 
 "Heavy" Brace Matching
@@ -17,6 +17,9 @@ Specify language for intention
 ## 2022.2
 
 ### IntelliJ Platform 2022.2
+
+Highlighting References
+: Highlight references automatically via [](references_and_resolve.md#additional-highlighting).
 
 ## 2022.1
 

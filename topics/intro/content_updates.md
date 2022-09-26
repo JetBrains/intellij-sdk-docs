@@ -18,6 +18,7 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 Minor Changes and Additions
 :
 - Add section about [](ide_infrastructure.md#power-save-mode).
+- Highlight references automatically via [](references_and_resolve.md#additional-highlighting)
 
 ### August-22
 

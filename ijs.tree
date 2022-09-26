@@ -25,7 +25,7 @@
     <toc-element id="plugins_quick_start.md" accepts-web-file-names="basics.html">
       <toc-element id="plugin_alternatives.md" toc-title="Plugin Alternatives"/>
       <toc-element id="plugin_required_experience.md"/>
-      <toc-element id="plugin_types.md" accepts-web-file-names="plugin-types.html"/>
+      <toc-element id="plugin_types.md" accepts-web-file-names="types-of-plugins.html"/>
     </toc-element>
     <toc-element id="developing_plugins.md"
                  accepts-web-file-names="getting-started.html,gradle-build-system.html,build_system.html">
@@ -338,16 +338,13 @@
     <toc-element id="themes_getting_started.md" accepts-web-file-names="themes-intro.html"/>
     <toc-element id="developing_themes.md" accepts-web-file-names="using-dev-kit.html">
       <toc-element id="setting_up_theme_environment.md" accepts-web-file-names="setting-up-environment.html"/>
-      <toc-element id="creating_theme_project.md"
-                   accepts-web-file-names="creating-plugin-project.html,creating_an_action.html"/>
+      <toc-element id="creating_theme_project.md" accepts-web-file-names="creating_an_action.html"/>
       <toc-element id="running_and_debugging_a_theme.md" accepts-web-file-names="running-and-debugging-a-plugin.html"/>
       <toc-element id="deploying_theme.md" accepts-web-file-names="deploying-plugin.html"/>
     </toc-element>
     <toc-element id="theme_structure.md" accepts-web-file-names="themes.html">
-      <toc-element id="themes_customize.md" toc-title="Customizing a Theme"
-                   accepts-web-file-names="themes-customize.html"/>
-      <toc-element id="themes_extras.md" toc-title="Adding Schemes and Images"
-                   accepts-web-file-names="themes-extras.html"/>
+      <toc-element id="themes_customize.md" toc-title="Customizing a Theme"/>
+      <toc-element id="themes_extras.md" toc-title="Adding Schemes and Images"/>
     </toc-element>
   </toc-element>
   <toc-element toc-title="Appendix I — Resources">

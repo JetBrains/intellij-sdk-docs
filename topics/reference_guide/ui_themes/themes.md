@@ -51,10 +51,6 @@ This declaration binds the theme description file to a theme provider extension 
 >
 {type="warning"}
 
-At this point, the UI Theme `theme_basics` is a valid UI Theme.
-Its plugin can be built and tested in IntelliJ Platform-based IDEs, giving the user the opportunity to select _theme_basics_ in the [Theme](https://www.jetbrains.com/help/idea/settings-appearance.html) _Preferences_ dropdown.
-The custom Theme looks exactly like the IDE default `Light` Theme, but it is a valid custom Theme.
-
 ### Completing the Default UI Theme Description File
 
 The default UI Theme definition can be directly edited to add or change some of the values for the default keys, if desired:

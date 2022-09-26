@@ -2,8 +2,13 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-[Spell Checking](https://www.jetbrains.com/help/idea/spellchecking.html)
-is used to check the correctness of natural languages within code.
+<microformat>
+
+**Product Help Topics:** [Spell Checking](https://www.jetbrains.com/help/idea/spellchecking.html)
+
+</microformat>
+
+Spell Checking is used to check the correctness of natural languages within code.
 Language plugins can implement customized spell checking by implementing
 [`SpellcheckingStrategy`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/tokenizer/SpellcheckingStrategy.java)
 and registering it in the `com.intellij.spellchecker.support` extension point.

@@ -51,12 +51,11 @@ The wizard can be used for both DevKit-based and Gradle-based plugins.
 
 <procedure title="Add Theme" id="create-ui-theme">
 
-Launch the <control>New Project</control> wizard via the <menupath>File | New | Project...</menupath> action and provide the following information:
 1. In the <control>Project</control> tool window, select the <path>resources</path> directory and invoke the context menu with the right click.
 2. Select the <menupath>New | Plugin DevKit | Theme</menupath> action.<br/>
    It is a good practice to include the name of the plugin in the created theme name.
 3. Check the <control>Dark theme</control> checkbox if the created theme should be based on IntelliJ IDEA _Darcula_ theme.
-   Otherwise, the _Light_ theme will be used.
+   Otherwise, the _Light_ theme will be used as the base.
 4. Click <control>OK</control> button to generate the [theme description file](themes_customize.md#introduction-to-ui-theme-description-file-syntax) with <path>$THEME_NAME$.theme.json</path> name. The generated theme will be automatically configured in the <path>plugin.xml</path> file.
 
 </procedure>

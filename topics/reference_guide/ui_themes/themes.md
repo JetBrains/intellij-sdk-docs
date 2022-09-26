@@ -5,6 +5,10 @@
 UI Themes are components within [IntelliJ Platform plugins](plugin_structure.md).
 The theme plugins should be stand-alone and not combined with other plugin functionality.
 
+> To see a full example theme project, see the [Theme Basics](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/theme_basics) in IntelliJ SDK Code Samples.
+>
+{type="note"}
+
 UI Themes have several components:
 * A required Theme description (JSON) file in the plugin project's <path>resources</path> folder.
 * A required `themeProvider` declaration in the plugin's <path>[plugin.xml](plugin_configuration_file.md)</path> file, located in the plugin project's <path>META-INF</path> folder.

@@ -41,6 +41,8 @@ my_theme
 - <path>my_theme.theme.json</path> - a minimal [theme description file](themes_customize.md#introduction-to-theme-description-file-syntax)
 - <path>my_theme.iml</path> - [IntelliJ IDEA Module](https://www.jetbrains.com/help/idea/creating-and-managing-modules.html) configuration file
 
+See [](theme_structure.md) for more details.
+
 ## Additional Plugin Themes
 
 Theme plugin project [created with the new project wizard](#create-theme) contains a single theme description file by default.

@@ -8,7 +8,7 @@ This documentation page describes a DevKit-based theme project generated with th
 
 Before creating a theme project, make sure that [development environment is set up](setting_up_environment.md).
 
-<procedure title="Create Theme Plugin" id="create-ui-theme">
+<procedure title="Create Theme Plugin" id="create-theme">
 
 Launch the <control>New Project</control> wizard via the <menupath>File | New | Project...</menupath> action and provide the following information:
 1. Select the <control>IDE Plugin</control> generator type from the list on the left.
@@ -43,13 +43,13 @@ my_theme
 
 ## Additional Plugin Themes
 
-UI Theme plugin project [created with the new project wizard](#create-ui-theme) contains a single theme description file by default.
+UI Theme plugin project [created with the new project wizard](#create-theme) contains a single theme description file by default.
 In case a plugin needs to provide multiple themes (e.g., dark and light variants), it is possible to add them with the dedicated action.
 
 Additional plugin themes can be added using the DevKit Theme Wizard, which is a part of the Plugin DevKit bundled in IntelliJ IDEA.
 The wizard can be used for both DevKit-based and Gradle-based plugins.
 
-<procedure title="Add Theme" id="create-ui-theme">
+<procedure title="Add Theme" id="add-theme">
 
 1. In the <control>Project</control> tool window, select the <path>resources</path> directory and invoke the context menu with the right click.
 2. Select the <menupath>New | Plugin DevKit | Theme</menupath> action.<br/>

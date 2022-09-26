@@ -50,12 +50,3 @@ This declaration binds the theme description file to a theme provider extension 
 > Do not modify or re-use an existing value of the generated `id` attribute.
 >
 {type="warning"}
-
-### Completing the Default UI Theme Description File
-
-The default UI Theme definition can be directly edited to add or change some of the values for the default keys, if desired:
-The following values can be changed directly in the Theme (<path>*.theme.json</path>) description file:
-* The value of the `dark` key can be changed to `true`, which would switch the basis of the Theme to _Darcula_ instead of _Light_.
-* The value of the `author` key, which defaults to an empty string, can be set to a `String` literal.
-
-In the case of the `theme_basics` code sample, it is set to "IntelliJ Platform SDK".

@@ -2,9 +2,14 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Product Help:** [Run/Debug Configuration](https://www.jetbrains.com/idea/help/run-debug-configuration.html)
+
+</microformat>
+
 These series of steps show how to register and implement a simple Run Configuration.
 Run Configurations are used to run internal and external processes from within IntelliJ Platform based products.
-To get familiar with the concept of a Run Configuration refer [Run/Debug Configuration](https://www.jetbrains.com/idea/help/run-debug-configuration.html) section of [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/intellij-idea.html)
 
 Consider the **runConfiguration** sample plugin available in the [code samples](%gh-sdk-samples%/run_configuration).
 See [Code Samples](code_samples.md) on how to set up and run the plugin.

@@ -2,6 +2,12 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Product Help:** [Code style and formatting](https://www.jetbrains.com/help/idea/code-style.html)
+
+</microformat>
+
 The IntelliJ Platform includes a powerful framework for implementing custom language formatters.
 In this framework, the plugin specifies the *constraints* on the whitespaces between different syntax elements.
 The formatting engine, provided by the IDE, calculates the smallest number of whitespace modifications that need to be performed on the file to make it match the constraints.

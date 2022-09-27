@@ -1,13 +1,18 @@
 [//]: # (title: Parameter Info)
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<microformat>
+
+**Product Help:** [Parameter info](https://www.jetbrains.com/help/idea/viewing-reference-information.html#view-parameter-info)
+
+</microformat>
 
 Custom languages can use
 [`ParameterInfoHandler`](%gh-ic%/platform/lang-api/src/com/intellij/lang/parameterInfo/ParameterInfoHandler.java)
 registered in `com.intellij.codeInsight.parameterInfo` extension point (EP) to show information about parameters in method and function calls.
 This is a convenient way to display type signatures directly as a popup in the editor without having to consult the documentation.
 If it is available, the IDE can show this popup automatically after a short delay, or it can be invoked explicitly via
-<menupath>[View | Parameter Info](https://www.jetbrains.com/help/idea/viewing-reference-information.html#view-parameter-info)</menupath>.
+<menupath>View | Parameter Info</menupath>.
 
 Parameter info is dynamic and can update the displayed information when the caret is moved or additional code is typed.
 This allows for highlighting entries or marking the current parameter at the caret position.

@@ -4,7 +4,6 @@
 
 <!-- TODO content: DOM <=> PSI, Go To Symbol, editor gutter icon->DOM -->
 
-## Abstract
 
 This article is intended for plugin writers who create custom web server integrations, or some UI for easy XML editing.
 It describes the *Document Object Model* (DOM) in IntelliJ Platform - an easy way to work with DTD or Schema-based XML models.
@@ -12,7 +11,7 @@ The following topics will be covered: working with DOM itself (reading/writing t
 
 It's assumed that the reader is familiar with Java, Swing, IntelliJ Platform XML PSI (classes [`XmlTag`](%gh-ic%/xml/xml-psi-api/src/com/intellij/psi/xml/XmlTag.java), [`XmlFile`](%gh-ic%/xml/xml-psi-api/src/com/intellij/psi/xml/XmlFile.java), [`XmlTagValue`](%gh-ic%/xml/xml-psi-api/src/com/intellij/psi/xml/XmlTagValue.java), etc.), IntelliJ Platform plugin development basics (application and project components, file editors).
 
-## Introduction
+## XML PSI vs DOM
 
 So, how to operate with XML from an IntelliJ Platform plugin?
 Usually, one has to take `XmlFile`, get its root tag, and then find a required sub-tag by path.
@@ -847,13 +846,7 @@ To easily create an editor with a caption at the top, like in our EJB and JSF, y
 `DomFileEditor` automatically listens to all changes in the document corresponding to the given DOM element, and therefore refreshes your component on undo.
 If you want to listen to changes in additional documents, use the methods `addWatchedDocument()`, `removeWatchedDocument()`, `addWatchedElement()`, `removeWatchedElement()` in `DomFileEditor`.
 
-## Conclusion
-
-Thank you for your time and attention.
-We hope you've found this article really useful.
-You are welcome to post your questions and comments to our [Open API and Plugin Development Forum](https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development).
-
-### Further Material
+## Sample Plugins
 
 The following bundled open-source plugins make (heavy) use of DOM:
 
@@ -862,4 +855,5 @@ The following bundled open-source plugins make (heavy) use of DOM:
 - [Plugin DevKit](%gh-ic%/plugins/devkit/devkit-core)
 - [Maven](%gh-ic%/plugins/maven)
 - [Struts 2](https://github.com/JetBrains/intellij-plugins/tree/master/struts2) (Ultimate Edition)
-- [IntelliJ Platform Explorer - OSS plugins using DOM](https://jb.gg/ipe?extensions=com.intellij.dom.fileMetaData)
+
+Explore 3rd party plugins using DOM on [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.dom.fileMetaData).

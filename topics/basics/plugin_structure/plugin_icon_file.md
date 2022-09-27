@@ -8,7 +8,7 @@ A _Plugin Logo_ is intended to be a unique representation of a plugin's function
 **Note:** icons and images used within a plugin have different requirements.
 See [Working with Icons and Images](work_with_icons_and_images.md) for more information.
 
-## Introduction
+## Plugin Logo Usages
 Plugin Logos are shown in the [JetBrains Marketplace](https://plugins.jetbrains.com).
 They also appear in the Settings/Preferences [Plugin Manager](https://www.jetbrains.com/help/idea/managing-plugins.html) UI in IntelliJ Platform-based IDEs.
 Whether online or in the product UI, a Plugin Logo helps users to identify a plugin more quickly in a list, as shown below:

@@ -8,7 +8,7 @@ The examples replaced selected text in a document by using information about the
 Every caret has a set of properties describing its position in one of several coordinate systems.
 This tutorial describes how to access information about the caret(s) in an editor.
 
-## Introduction
+## Editor Basics Code Sample
 
 In this tutorial, the [editor_basics](%gh-sdk-samples%/editor_basics) code sample is used to explore caret positions.
 In particular, the **Caret Position** action added by `editor_basics` to the editor context menu is used to retrieve information about the current caret position.

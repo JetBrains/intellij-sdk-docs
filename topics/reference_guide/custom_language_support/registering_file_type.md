@@ -2,6 +2,12 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Product Help:** [File type associations](https://www.jetbrains.com/help/idea/creating-and-registering-file-types.html)
+
+</microformat>
+
 The first step in developing a custom language plugin is registering a file type associated with the language.
 
 The IDE typically determines the type of a file by looking at its filename or extension.

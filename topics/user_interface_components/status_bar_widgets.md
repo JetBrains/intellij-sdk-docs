@@ -2,7 +2,13 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-The IntelliJ Platform allows plugins to extend the IDE [status bar](https://www.jetbrains.com/help/idea/guided-tour-around-the-user-interface.html#status-bar) with additional custom widgets.
+<microformat>
+
+**Product Help:** [Status bar](https://www.jetbrains.com/help/idea/guided-tour-around-the-user-interface.html#status-bar)
+
+</microformat>
+
+The IntelliJ Platform allows plugins to extend the IDE status bar with additional custom widgets.
 
 Status bar widgets are small UI elements that allow providing users with useful information and settings for the current file, project, IDE, etc.
 For example, the status bar contains the widget showing the encoding of the current file, or the current VCS branch of the project.

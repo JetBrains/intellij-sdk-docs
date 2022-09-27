@@ -20,9 +20,14 @@ Add Part X - Themes
 All the content related to themes and creating a project using the DevKit approach has been moved to a new _Themes_ part.
 Content has been refreshed to match the current state of the project and SDK wizards.
 
+Spell Checking
+: Add [](spell_checking.md) section with an [accompanying tutorial](spell_checking_strategy.md) showing how to implement a spell checking for a custom language.
+
 Minor Changes and Additions
 :
 - Add section about [](ide_infrastructure.md#power-save-mode).
+- Highlight references automatically via [](references_and_resolve.md#additional-highlighting)
+- Language injections: controlling [](language_injection.md#formatting)
 
 ### August-22
 

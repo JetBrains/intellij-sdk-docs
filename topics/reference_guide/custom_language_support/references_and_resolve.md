@@ -65,3 +65,8 @@ An extension of the [`PsiReference`](%gh-ic%/platform/core-api/src/com/intellij/
 The targets to which the reference resolves are returned from the `multiResolve()` method.
 The <menupath>Navigate | Declaration or Usages</menupath> action for such references allows the user to choose a navigation target in a popup.
 The implementation of `multiResolve()` can be also based on [`PsiScopeProcessor`](%gh-ic%/platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java), and can collect all valid targets for the reference instead of stopping when the first valid target is found.
+
+## Additional Highlighting
+
+Implement [`HighlightedReference`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/highlighting/HighlightedReference.java) to add additional highlighting for non-obvious places (e.g., String literal).
+Such references will automatically be highlighted using <control>String | Highlighted reference</control> text attributes from <menupath>Settings/Preferences | Editor | Color Scheme | Language Defaults</menupath> (_2022.2_).

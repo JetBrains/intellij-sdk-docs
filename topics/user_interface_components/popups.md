@@ -2,8 +2,6 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-## Introduction
-
 The IntelliJ Platform user interface makes extensive use of popups \- semi-modal windows that have no chrome (explicit closing buttons) and disappear automatically on focus loss.
 Making use of these controls in your plugin ensures a consistent user experience between your plugin and the rest of the IDE.
 

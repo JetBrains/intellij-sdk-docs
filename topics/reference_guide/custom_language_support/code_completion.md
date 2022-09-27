@@ -2,6 +2,12 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Product Help:** [Code completion](https://www.jetbrains.com/help/idea/auto-completing-code.html)
+
+</microformat>
+
 Two main types of code completion can be provided by custom language plugins: reference completion and contributor-based completion.
 
 Reference completion is easier to implement, but supports only the basic completion action.

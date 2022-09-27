@@ -43,6 +43,7 @@ This a step-by-step tutorial, and it requires completing each step, in order:
 * [](commenter.md)
 * [](quick_fix.md)
 * [](documentation_provider.md)
+* [](spell_checking_strategy.md)
 
 > If a topic you are interested in is not covered in the above sections, let us know via the "**Was this page helpful?**" feedback form below or [other channels](getting_help.md#problems-with-the-guide).
 >

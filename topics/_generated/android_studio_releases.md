@@ -6,6 +6,8 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Flamingo (2022.2.1) Canary 1 | ![canary][canary] | September 20, 2022 | **2022.2.1.1** <br/> AI-222.3739.54.2221.9043926 | **2022.2.1** <br/> 222.3739.54 |
+| Electric Eel (2022.1.1) Beta 1 | ![beta][beta] | September 20, 2022 | **2022.1.1.11** <br/> AI-221.6008.13.2211.9039819 | **2022.1.4** <br/> 221.6008.13 |
 | Electric Eel (2022.1.1) Canary 10 | ![canary][canary] | August 26, 2022 | **2022.1.1.10** <br/> AI-221.6008.13.2211.8963757 | **2022.1.4** <br/> 221.6008.13 |
 | Electric Eel (2022.1.1) Canary 9 | ![canary][canary] | August 3, 2022 | **2022.1.1.9** <br/> AI-221.5921.22.2211.8881706 | **2022.1.3** <br/> 221.5921.22 |
 | Electric Eel (2022.1.1) Canary 8 | ![canary][canary] | July 6, 2022 | **2022.1.1.8** <br/> AI-221.5921.22.2211.8786657 | **2022.1.3** <br/> 221.5921.22 |
@@ -23,6 +25,7 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Dolphin (2021.3.1) | ![release][release] | September 15, 2022 | **2021.3.1.16** <br/> AI-213.7172.25.2113.9014738 | **2021.3.3** <br/> 213.7172.25 |
 | Dolphin (2021.3.1) RC 1 | ![rc][rc] | August 16, 2022 | **2021.3.1.15** <br/> AI-213.7172.25.2113.8913347 | **2021.3.3** <br/> 213.7172.25 |
 | Dolphin (2021.3.1) Beta 5 | ![beta][beta] | July 7, 2022 | **2021.3.1.14** <br/> AI-213.7172.25.2113.8774922 | **2021.3.3** <br/> 213.7172.25 |
 | Dolphin (2021.3.1) Beta 4 | ![beta][beta] | June 22, 2022 | **2021.3.1.13** <br/> AI-213.7172.25.2113.8718688 | **2021.3.3** <br/> 213.7172.25 |
@@ -378,11 +381,11 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Flamingo (2022.2.1) Canary 1 | ![canary][canary] | September 20, 2022 | **2022.2.1.1** <br/> AI-222.3739.54.2221.9043926 | **2022.2.1** <br/> 222.3739.54 |
+| Electric Eel (2022.1.1) Beta 1 | ![beta][beta] | September 20, 2022 | **2022.1.1.11** <br/> AI-221.6008.13.2211.9039819 | **2022.1.4** <br/> 221.6008.13 |
 | Electric Eel (2022.1.1) Canary 10 | ![canary][canary] | August 26, 2022 | **2022.1.1.10** <br/> AI-221.6008.13.2211.8963757 | **2022.1.4** <br/> 221.6008.13 |
-| Electric Eel (2022.1.1) Canary 9 | ![canary][canary] | August 3, 2022 | **2022.1.1.9** <br/> AI-221.5921.22.2211.8881706 | **2022.1.3** <br/> 221.5921.22 |
+| Dolphin (2021.3.1) | ![release][release] | September 15, 2022 | **2021.3.1.16** <br/> AI-213.7172.25.2113.9014738 | **2021.3.3** <br/> 213.7172.25 |
 | Dolphin (2021.3.1) RC 1 | ![rc][rc] | August 16, 2022 | **2021.3.1.15** <br/> AI-213.7172.25.2113.8913347 | **2021.3.3** <br/> 213.7172.25 |
-| Dolphin (2021.3.1) Beta 5 | ![beta][beta] | July 7, 2022 | **2021.3.1.14** <br/> AI-213.7172.25.2113.8774922 | **2021.3.3** <br/> 213.7172.25 |
-| Chipmunk (2021.2.1) Patch 2 | ![patch][patch] | August 3, 2022 | **2021.2.1.16** <br/> AI-212.5712.43.2112.8815526 | **2021.2.4** <br/> 212.5712.43 |
 
 [release]: https://img.shields.io/badge/-release-blue?style=flat-square
 [patch]: https://img.shields.io/badge/-patch-orange?style=flat-square

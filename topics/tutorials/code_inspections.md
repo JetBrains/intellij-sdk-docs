@@ -2,13 +2,16 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Product Help:** [Code Inspection](https://www.jetbrains.com/idea/webhelp/code-inspection.html), [Creating Custom Inspections](https://www.jetbrains.com/idea/help/creating-custom-inspections.html)
+
+</microformat>
+
 The IntelliJ Platform provides tools designed for static code analysis called _code inspections_, which help the user maintain and clean up code without actually executing it.
 Custom code inspections can be implemented as IntelliJ Platform plugins.
 Examples of the plugin approach are the IntelliJ Platform SDK code samples [inspection_basics](%gh-sdk-samples%/inspection_basics) and [comparing_references_inspection](%gh-sdk-samples%/comparing_references_inspection).
 In addition, the comparing_references_inspection code sample demonstrates implementing a unit test.
-
-You can also create custom inspections through the IntelliJ IDEA user interface.
-See [Code Inspection](https://www.jetbrains.com/idea/webhelp/code-inspection.html) and [Creating Custom Inspections](https://www.jetbrains.com/idea/help/creating-custom-inspections.html) for more information.
 
 See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in the IntelliJ Platform UI Guidelines on naming, writing description, and message texts for inspections.
 

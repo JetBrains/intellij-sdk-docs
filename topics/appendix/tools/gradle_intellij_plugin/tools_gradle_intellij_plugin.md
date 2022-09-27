@@ -118,6 +118,24 @@ pluginManagement {
 </tabs>
 
 
+### Configuration Cache
+The Gradle build system brings the [Configuration Cache](https://docs.gradle.org/current/userguide/configuration_cache.html) feature that helps improve the build performance by caching the configuration phase.
+
+The Gradle IntelliJ Plugin is fully compatible with this mechanism and can be utilized by manual enabling of the Configuration Cache feature with the `--configuration-cache` flag, like:
+
+```shell
+gradle buildPlugin --configuration-cache
+```
+
+or with enabling it in the <path>gradle.properties</path> file:
+
+```properties
+org.gradle.unsafe.configuration-cache = true
+```
+
+See [Using the configuration cache](https://docs.gradle.org/current/userguide/configuration_cache.html#config_cache:usage) in the Gradle documentation for more details.
+
+
 ## Configuration
 
 ### IntelliJ Extension

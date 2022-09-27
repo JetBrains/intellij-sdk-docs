@@ -81,7 +81,7 @@ After making changes to the grammar, regenerate the parser and PSI classes.
 
 ## Define a Utility to Search Properties
 Create [`SimpleUtil`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleUtil.java) utility class to search PSI elements for defined properties over the project.
-This utility will be used later when implementing [code completion](https://www.jetbrains.com/help/idea/auto-completing-code.html).
+This utility will be used later when implementing [code completion](completion_contributor.md).
 
 ```java
 ```

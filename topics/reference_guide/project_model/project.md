@@ -2,6 +2,12 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<microformat>
+
+**Product Help:** [Configure projects](https://www.jetbrains.com/help/idea/working-with-projects.html)
+
+</microformat>
+
 ## Working with Projects
 
 The IntelliJ Platform stores the project configuration data in XML files.

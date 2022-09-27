@@ -7,10 +7,14 @@ It will familiarize you with the working environment, project structure, and fre
 
 * [](plugin_alternatives.md)
 * [](plugin_required_experience.md)
-* [](types_of_plugins.md)
-* [](getting_started.md)
+* [](plugin_types.md)
+* [](developing_plugins.md)
 * [](plugin_structure.md)
-* [](kotlin.md)
+* [Implementing Plugin in Kotlin](using_kotlin.md)
 * [](plugin_signing.md)
 * [](ide_development_instance.md)
 * [](faq.md)
+
+> If you are interested in the UI theme development, please see [Part X - Themes](themes_getting_started.md).
+>
+{type="note"}

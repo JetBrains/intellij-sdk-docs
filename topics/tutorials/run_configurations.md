@@ -16,7 +16,8 @@ See [Code Samples](code_samples.md) on how to set up and run the plugin.
 
 ## Pre-Requirements
 
-Create an empty plugin project as described in [Creating a Plugin Project](gradle_build_system.md).
+Create an empty plugin project.
+See the [](creating_plugin_project.md) section for details.
 
 ## Register a New ConfigurationType
 
@@ -82,7 +83,7 @@ The UI Form should be bound with a Java class responsible for handling UI compon
 
 ## Compile and Run the Plugin
 
-Refer to [Running and Debugging a Plugin](gradle_prerequisites.md#executing-the-plugin).
+Refer to [Running and Debugging a Plugin](creating_plugin_project.md#executing-the-plugin).
 
 After going through the steps described above you can create a custom Run Configuration from your plugin.
 

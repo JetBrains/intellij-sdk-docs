@@ -1,9 +1,9 @@
 [//]: # (title: Android Studio Plugin Development)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 Android Studio plugins extend or add functionality to the [Android Studio IDE](https://developer.android.com/studio).
-Plugins can be written in [Kotlin](kotlin.md) or Java, or a mix of both, and are created using IntelliJ IDEA and the [IntelliJ Platform](intellij_platform.md).
+Plugins can be written in [Kotlin](using_kotlin.md) or Java, or a mix of both, and are created using IntelliJ IDEA and the [IntelliJ Platform](intellij_platform.md).
 It's also helpful to be familiar with [Java Swing](https://docs.oracle.com/javase/8/javase-clienttechnologies.htm).
 Once completed, plugins can be packaged and distributed at [JetBrains Marketplace](https://plugins.jetbrains.com).
 
@@ -11,9 +11,9 @@ Android Studio plugins are not Android modules or apps to run in the Android ope
 
 ## Configuring IntelliJ Platform Projects for Android Studio Plugin Development
 
-To create a new Android Studio plugin project, follow the tutorial on the [Getting Started with Gradle](gradle_prerequisites.md) page.
+To create a new Android Studio plugin project, follow the tutorial on the [Getting Started with Gradle](creating_plugin_project.md) page.
 The tutorial produces a skeleton project suitable to use as a starting point for an Android Studio plugin.
-On the [New Project Screen](gradle_prerequisites.md#create-ide-plugin), choose <control>IDE Plugin</control> from the project generators list as described in the tutorial, **not** <control>Android</control>.
+On the [New Project Screen](creating_plugin_project.md#create-ide-plugin), choose <control>IDE Plugin</control> from the project generators list as described in the tutorial, **not** <control>Android</control>.
 Some minor modifications to the skeleton project are needed, as discussed below.
 
 ### Matching Versions of the IntelliJ Platform with the Android Studio Version
@@ -45,11 +45,11 @@ For the full list of Android Studio releases with more details, visit the [Andro
 
 ### Configuring the Plugin Gradle Build Script
 
-The use-case of developing for a non-IntelliJ IDEA IDE is reviewed in the [Plugins Targeting Alternate IntelliJ Platform-Based IDEs](gradle_guide.md#plugins-targeting-alternate-intellij-platform-based-ides) section of the [Configuring Gradle for IntelliJ Platform Plugins](gradle_guide.md) page.
+The use-case of developing for a non-IntelliJ IDEA IDE is reviewed in the [Plugins Targeting Alternate IntelliJ Platform-Based IDEs](dev_alternate_products.md#configuring-gradle-build-script-to-target-products-other-than-intellij-idea) section.
 The particular example in that section discusses configuring a plugin project for PhpStorm, so the details for an Android Studio plugin project are reviewed here.
 
 Here are the steps to configure the Gradle build script for developing a plugin to target Android Studio:
-* The Gradle plugin attributes describing the configuration of the [IntelliJ Platform used to build the plugin project](gradle_guide.md#configuring-the-gradle-intellij-plugin-for-building-intellij-platform-plugin-projects) must be explicitly set.
+* The Gradle plugin attributes describing the configuration of the [IntelliJ Platform used to build the plugin project](configuring_plugin_project.md#intellij-platform-configuration) must be explicitly set.
   Continuing with the example [above](#matching-versions-of-the-intellij-platform-with-the-android-studio-version), set the [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) value to `191.8026.42`.
   Alternatively, specify [`intellij.localPath`](tools_gradle_intellij_plugin.md#intellij-extension-localpath) to refer to a local installation of Android Studio.
 * Android Studio plugin projects that use APIs from the `android` plugin must declare a dependency on that plugin.

@@ -10,7 +10,7 @@
 
 Kotlin UI DSL Version 2 allows creating UI forms with input components bound to state objects.
 The forms are built by using a declarative Kotlin syntax and follow the official IntelliJ Platform UI conventions described in the [IntelliJ Platform UI Guidelines](https://jetbrains.design/intellij/).
-The library is written in [Kotlin](kotlin.md) and makes it easy to develop user interfaces like dialogs and settings pages.
+The library is written in [Kotlin](using_kotlin.md) and makes it easy to develop user interfaces like dialogs and settings pages.
 
 The Kotlin UI DSL is not intended to build general UIs, like tool windows controls that trigger some actions and do not contain any input components bound to state objects.
 For this purpose, use [custom Swing components](user_interface_components.md) from the IntelliJ Platform or the standard ones.

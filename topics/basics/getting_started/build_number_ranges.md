@@ -1,8 +1,9 @@
 [//]: # (title: Build Number Ranges)
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 Use this reference of build number ranges to specify the correct `since-build` and `until-build` values in your plugin descriptor.
-Setting the actual values in <path>[plugin.xml](plugin_configuration_file.md)</path> is managed by [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) Gradle task, see [](gradle_guide.md#patching-the-plugin-configuration-file).
+Setting the actual values in <path>[plugin.xml](plugin_configuration_file.md)</path> is managed by [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) Gradle task, see [](configuring_plugin_project.md#patching-the-plugin-configuration-file).
 
 Please note the following regarding values:
 

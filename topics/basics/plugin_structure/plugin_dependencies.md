@@ -53,7 +53,7 @@ See also [](extension_point_list.md#intellij-community-plugins) and [](plugin_co
 | IntelliLang               | `org.intellij.intelliLang`                   |
 | Java                      | `com.intellij.java`                          |
 | JavaScript and TypeScript | `JavaScript`                                 |
-| Kotlin                    | `org.jetbrains.kotlin` [](kotlin.md)         |
+| Kotlin                    | `org.jetbrains.kotlin`                       |
 | Markdown                  | `org.intellij.plugins.markdown`              |
 | Maven                     | `org.jetbrains.idea.maven`                   |
 | Spring                    | `com.intellij.spring` [](spring_api.md)      |
@@ -74,7 +74,7 @@ Depending on the chosen development workflow (Gradle or DevKit), one of the two 
 >
 {type="note"}
 
-If the project uses [Gradle](gradle_build_system.md), add the dependency to the [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) parameter in your build script:
+Add the dependency to the [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) parameter in your build script:
 
 <tabs>
 <tab title="Kotlin">
@@ -104,11 +104,11 @@ intellij {
 
 <tab title="DevKit">
 
-> Existing DevKit-based projects can be converted to use [Gradle setup](gradle_prerequisites.md#adding-gradle-support-to-an-existing-devkit-based-intellij-platform-plugin) where dependency management is fully automated.
+> Existing DevKit-based projects can be [converted to use Gradle setup](migrating_plugin_devkit_to_gradle.md) where dependency management is fully automated.
 >
-{type="tip"}
+{type="note"}
 
-If the project uses [DevKit](using_dev_kit.md), add the JARs of the plugin on which the project depends to the <control>Classpath</control> of the *IntelliJ Platform SDK*.
+Add the JARs of the plugin on which the project depends to the <control>Classpath</control> of the [*IntelliJ Platform SDK*](setting_up_theme_environment.md#add-intellij-platform-plugin-sdk).
 
 > Do not add the plugin JARs as a library: this will fail at runtime because the IntelliJ Platform will load two separate copies of the dependency plugin classes.
 >

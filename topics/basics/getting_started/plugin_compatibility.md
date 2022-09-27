@@ -48,7 +48,7 @@ The following table lists modules that are currently available in all products.
 
 | Module for [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) Element<br/>Declaration in <path>plugin.xml</path> File | <br/>Functionality                                                                                            |
 |-------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
-| **`com.intellij.modules.platform`**                                                                                                 | Messaging, UI Themes, UI Components, Files, Documents, Actions, Components, Services, Extensions, Editors     |
+| **`com.intellij.modules.platform`**                                                                                                 | Messaging, Themes, UI Components, Files, Documents, Actions, Components, Services, Extensions, Editors        |
 | `com.intellij.modules.lang`                                                                                                         | File Type, Lexer, Parser, Highlighting, References, Code Completion, Find, Rename, Formatter, Code Navigation |
 | `com.intellij.modules.xml`                                                                                                          | XML, XML DOM, XSD/DTD, DOM Model                                                                              |
 | `com.intellij.modules.vcs`                                                                                                          | VCS Revision Numbers, File Status, Change Lists, File History, Annotations                                    |
@@ -273,9 +273,9 @@ Continuing the example, search the PHP plugin's <path>plugin.xml</path> file for
 
 Before marking a plugin project as _dependent only on modules in a target product_ in addition to `com.intellij.modules.platform`, verify the plugin isn't implicitly dependent on any APIs that are specific to IntelliJ IDEA.
 
-For [Gradle-based](gradle_build_system.md) projects, [](verifying_plugin_compatibility.md#plugin-verifier) can be used to ensure compatibility with all specified target IDEs.
+For [Gradle-based](developing_plugins.md) projects, [](verifying_plugin_compatibility.md#plugin-verifier) can be used to ensure compatibility with all specified target IDEs.
 
-For [DevKit-based](using_dev_kit.md) projects, create an SDK pointing to an installation of the intended target IntelliJ Platform-based product, e.g., PhpStorm, rather than IntelliJ IDEA.
+For DevKit-based projects, [create an SDK](setting_up_theme_environment.md#add-intellij-platform-plugin-sdk) pointing to an installation of the intended target IntelliJ Platform-based product, e.g., PhpStorm, rather than IntelliJ IDEA.
 Use the same development version of the IntelliJ platform as the targeted product.
 
 Based on the tables above, the [JetBrains Marketplace](https://plugins.jetbrains.com/) automatically detects the JetBrains products with which a plugin is compatible, and makes the compatibility information available to plugin authors.

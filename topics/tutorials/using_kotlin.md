@@ -1,11 +1,17 @@
-[//]: # (title: Kotlin for Plugin Developers)
+[//]: # (title: Configuring Kotlin Support)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-## Why Kotlin?
+
+This page describes developing a plugin code in Kotlin programming language.
+
+> To implement a plugin operating on Kotlin code, configure Kotlin [plugin dependency](plugin_dependencies.md) (`org.jetbrains.kotlin`).
+> See also [UAST](uast.md) page for information about how to support multiple JVM-languages, including Kotlin.
+
+## Advantages of Developing a Plugin in Kotlin
 
 Using [Kotlin](https://kotlinlang.org) to write plugins for the IntelliJ Platform is very similar to writing plugins in Java.
-Existing plugin developers can get started by converting boilerplate Java classes to their Kotlin equivalents by using the [J2K compiler](https://kotlinlang.org/docs/mixing-java-kotlin-intellij.html#converting-an-existing-java-file-to-kotlin-with-j2k) bundled with the IntelliJ Platform (versions 143.+), and developers can easily mix and match Kotlin classes with their existing Java code.
+Existing plugin developers can get started by converting boilerplate Java classes to their Kotlin equivalents by using the [J2K converter](https://kotlinlang.org/docs/mixing-java-kotlin-intellij.html#converting-an-existing-java-file-to-kotlin-with-j2k) (part of Kotlin plugin), and developers can easily mix and match Kotlin classes with their existing Java code.
 
 In addition to [null safety](https://kotlinlang.org/docs/null-safety.html) and [type-safe builders](https://kotlinlang.org/docs/type-safe-builders.html), the Kotlin language offers many convenient features for plugin development, which make plugins easier to read and simpler to maintain.
 Much like [Kotlin for Android](https://kotlinlang.org/docs/android-overview.html), the IntelliJ Platform makes extensive use of callbacks, which are easy to express as [lambdas](https://kotlinlang.org/docs/lambdas.html) in Kotlin.
@@ -15,7 +21,7 @@ For example, it is common practice to [guard logging statements](https://www.slf
 
 ```java
 if (logger.isDebugEnabled()) {
-  logger.debug("...");
+  logger.debug("..." + expensiveComputation());
 }
 ```
 
@@ -29,20 +35,41 @@ inline fun Logger.debug(lazyMessage: () -> String) {
 }
 ```
 
-Now we can directly write `logger.debug { "..." }` to receive all the benefits of lightweight logging, with none of the verbosity.
+Now we can directly write:
+```kotlin
+logger.debug { "..." + expensiveComputation() }
+```
+to receive all the benefits of lightweight logging while reducing the code verbosity.
+
 With practice, you will be able to recognize many idioms in the IntelliJ Platform that can be simplified with Kotlin.
 To learn more about building IntelliJ Platform plugins with Kotlin, this tutorial will help you get started.
 
+### UI Forms in Kotlin
+
+The IntelliJ Platform provides the [type safe DSL](kotlin_ui_dsl_version_2.md) allowing to UI forms in declarative way.
+
+> Using a GUI designer with Kotlin is currently [not supported](https://youtrack.jetbrains.com/issue/KTIJ-791).
+>
+{type="tip"}
+
 ## Adding Kotlin Support
 
-> The [IntelliJ Platform Plugin Template](github_template.md) provides a preconfigured project using Kotlin.
->
-> See also [kotlin_demo](%gh-sdk-samples%/kotlin_demo) for a minimal sample plugin.
+> The [IntelliJ Platform Plugin Template](plugin_github_template.md) provides a preconfigured project using Kotlin.
 >
 {type="tip"}
 
 IntelliJ IDEA bundles the necessary Kotlin plugin, requiring no further configuration.
 For detailed instructions, please refer to the [Kotlin documentation](https://kotlinlang.org/docs/getting-started.html).
+
+### Kotlin Gradle Plugin
+
+Adding Kotlin source files compilation support to the Gradle-based project requires adding and configuring the [Kotlin JVM Gradle plugin](https://kotlinlang.org/docs/gradle.html#targeting-the-jvm).
+
+See the <path>build.gradle.kts</path> from [kotlin_demo](%gh-sdk-samples%/kotlin_demo) sample plugin:
+
+```kotlin
+```
+{src="kotlin_demo/build.gradle.kts" lines="2-"}
 
 ### Kotlin Standard Library
 
@@ -85,55 +112,20 @@ See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html
 
 Please see [Third-Party Software and Licenses](https://www.jetbrains.com/legal/third-party-software/).
 
-## Kotlin Gradle Plugin
-
-Plugins using the [Gradle Build System](gradle_build_system.md) use the [Kotlin JVM Gradle plugin](https://kotlinlang.org/docs/gradle.html#targeting-the-jvm).
-
-See the <path>build.gradle.kts</path> from [kotlin_demo](%gh-sdk-samples%/kotlin_demo) sample plugin:
-
-```kotlin
-```
-{src="kotlin_demo/build.gradle.kts" lines="2-"}
-
-### Use Kotlin for Gradle Build Scripts
-
-Gradle also supports using Kotlin in build scripts: <path>build.gradle.kts</path>.
-
-There are many good resources for learning how to write build scripts for an IntelliJ Platform plugin with Kotlin script, like
-[intellij-rust](https://github.com/intellij-rust/intellij-rust/blob/master/build.gradle.kts),
-[julia-intellij](https://github.com/JuliaEditorSupport/julia-intellij/blob/master/build.gradle.kts),
-[covscript-intellij](https://github.com/covscript/covscript-intellij/blob/master/build.gradle.kts) or
-[zig-intellij](https://github.com/ice1000/intellij-zig/blob/master/build.gradle.kts).
-
-Additionally, explore IntelliJ Platform Explorer's [list of open-source plugins](https://jb.gg/ipe?buildSystem=gradle_kts) using Gradle KTS.
-
-## UI in Kotlin
-
-The recommended way to create UI forms with Kotlin is to use a [type safe DSL](kotlin_ui_dsl_version_2.md).
-Using a GUI designer with Kotlin is currently [not supported](https://youtrack.jetbrains.com/issue/KTIJ-791).
-
-## Handling Kotlin Code
-
-If a plugin processes Kotlin code (e.g., providing inspections), it needs to add a dependency on the Kotlin plugin (Plugin ID `org.jetbrains.kotlin`) itself.
-Please refer to [Plugin Dependencies](plugin_dependencies.md) for more information.
-
-Depending on exact functionality, a plugin can also target [UAST (Unified Abstract Syntax Tree)](uast.md) to support multiple JVM languages, including Java and Kotlin.
-
-### Kotlin Code FAQ
-
-[How to shorten references](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360010025120-Add-new-parameter-into-kotlin-data-class-from-IDEA-plugin?page=1#community_comment_360002950760)
-
 ## Caution
 
 Plugins *may* use [Kotlin classes](https://kotlinlang.org/docs/classes.html) to implement declarations in the [plugin configuration file](plugin_configuration_file.md).
 When registering an extension, the platform uses a dependency injection framework to instantiate these classes.
 For this reason, plugins *must not* use [Kotlin objects](https://kotlinlang.org/docs/object-declarations.html) to implement any <path>[plugin.xml](plugin_configuration_file.md)</path> declarations.
 
-## Examples
+## Kotlin Code FAQ
+
+[How to shorten references](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360010025120-Add-new-parameter-into-kotlin-data-class-from-IDEA-plugin?page=1#community_comment_360002950760)
+
+## Example Plugins Implemented in Kotlin
 
 There are many [open-source Kotlin plugins](https://jb.gg/ipe?language=kotlin) built on the IntelliJ Platform.
-For a readily available source of up to date examples and applications of the Kotlin language for building developer tools with the IntelliJ Platform, developers may look to these projects for inspiration:
-
+For a readily available source of up-to-date examples of plugins implemented in Kotlin, developers may look to these projects for inspiration:
 * [Presentation Assistant](https://github.com/chashnikov/IntelliJ-presentation-assistant)
 * [Rust](https://github.com/intellij-rust/intellij-rust)
 * [TeXiFy IDEA](https://github.com/Hannah-Sten/TeXiFy-IDEA)

@@ -478,7 +478,7 @@ Default value
 ### buildPlugin
 {id="tasks-buildplugin"}
 
-Assembles a plugin and prepares ZIP archive for [deployment](deployment.md).
+Assembles a plugin and prepares ZIP archive for [deployment](publishing_plugin.md).
 
 #### archiveBaseName
 {id="buildplugin-task-archivebasename"}
@@ -817,7 +817,7 @@ Default value
 #### sinceBuild
 {id="patchpluginxml-task-sincebuild"}
 
-The lower bound of the version range to be patched used in the `since-build` attribute of the [`<idea-version>`](plugin_configuration_file.md#idea-plugin__idea-version) tag.
+The lower bound of the [version range](build_number_ranges.md) to be patched used in the `since-build` attribute of the [`<idea-version>`](plugin_configuration_file.md#idea-plugin__idea-version) tag.
 
 {style="narrow"}
 Type
@@ -830,7 +830,7 @@ Default value
 #### untilBuild
 {id="patchpluginxml-task-untilbuild"}
 
-The upper bound of the version range to be patched used in the `until-build` attribute of the [`<idea-version>`](plugin_configuration_file.md#idea-plugin__idea-version) tag.
+The upper bound of the [version range](build_number_ranges.md) to be patched used in the `until-build` attribute of the [`<idea-version>`](plugin_configuration_file.md#idea-plugin__idea-version) tag.
 
 {style="narrow"}
 Type
@@ -973,11 +973,11 @@ See [`prepareSandbox` Task](#tasks-preparesandbox).
 Publishes plugin to the remote [JetBrains Marketplace](https://plugins.jetbrains.com) repository.
 
 The following attributes are a part of the Publishing DSL `publishPlugin { ... }` in which allows Gradle to upload plugin to [JetBrains Marketplace](https://plugins.jetbrains.com).
-Note that you need to [upload the plugin](publishing_plugin.md) to the repository at least once manually (to specify options like the license, repository URL etc.) before uploads through Gradle can be used.
+Note that you need to [upload the plugin](publishing_plugin.md#uploading-a-plugin-to-jetbrains-marketplace) to the repository at least once manually (to specify options like the license, repository URL etc.) before uploads through Gradle can be used.
 
 See the instruction on [how to generate authentication token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html).
 
-See [](deployment.md) tutorial for step-by-step instructions.
+See [](publishing_plugin.md#publishing-plugin-with-gradle) tutorial for step-by-step instructions.
 
 
 #### token
@@ -1732,4 +1732,4 @@ Validates the plugin project configuration:
 
 - The dependency on the Kotlin Standard Library (stdlib) is automatically added when using the Gradle Kotlin plugin and may conflict with the version provided with the IntelliJ Platform.
 
-> Read more about controlling this behavior on [](kotlin.md#kotlin-standard-library).
+> Read more about controlling this behavior on [](using_kotlin.md#kotlin-standard-library).

@@ -67,6 +67,11 @@ This section describes product-specific features, such as specific project model
 
 Documents how to use the IntelliJ Platform to create a new, custom IDE, rather than plugins to an existing product, e.g., WebStorm, or Android Studio.
 
+#### Part X — Themes
+
+Describes how to create a theme for IntelliJ Platform-based IDEs.
+Includes details on how to set up the theme project, customize, build, and publish it on JetBrains Marketplace.
+
 #### Appendix I — Resources
 
 Links to [useful resources](useful_links.md), a [](glossary.md), [](extension_point_list.md), tips on how to [](explore_api.md) and [](learning_resources.md).

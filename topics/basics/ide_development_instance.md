@@ -1,9 +1,9 @@
 [//]: # (title: IDE Development Instance)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 A JetBrains feature for developing plugins is running or debugging a plugin project from within an IntelliJ Platform-based IDE such as IntelliJ IDEA.
-Selecting the [`runIde`](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task for a Gradle-based project (or [Run](running_and_debugging_a_plugin.md) menu for a DevKit-based project) will launch a _Development Instance_ of the IDE with the plugin enabled.
+Selecting the [`runIde`](creating_plugin_project.md#running-a-plugin-with-the-runide-gradle-task) task for a Gradle-based project (or [Run](running_and_debugging_a_theme.md) menu for a DevKit-based project) will launch a _Development Instance_ of the IDE with the plugin enabled.
 This page describes how to control some of the settings for the Development Instance.
 
 > Please see also [Advanced Configuration](https://www.jetbrains.com/help/idea/tuning-the-ide.html) for general VM options and properties.
@@ -11,6 +11,7 @@ This page describes how to control some of the settings for the Development Inst
 {type="tip"}
 
 ## Using a JetBrains Runtime for the Development Instance
+
 An everyday use case is to develop (build) a plugin project against a JDK, e.g., Java 8, and then run or debug the plugin in a Development Instance of the IDE.
 In such a situation, Development Instance must use a JetBrains Runtime (JBR) rather than the JDK used to build the plugin project.
 
@@ -20,6 +21,7 @@ A version of the JetBrains Runtime is bundled with all IntelliJ Platform-based I
 To produce accurate results while running or debugging a plugin project in a Development Instance, follow the procedures below to ensure the Development Instance uses a JetBrains Runtime.
 
 ### Determining a JetBrains Runtime Version
+
 The JetBrains Runtime is determined from the JDK version used to build the plugin project, regardless of whether it is built on macOS, Windows, or Linux.
 For example, if a plugin is developed against the Java 8 SE Development Kit 8 for macOS (<path>jdk-8u212-macosx-x64.dmg</path>) to acquire the compatible JetBrains Runtime:
 
@@ -34,6 +36,7 @@ For example, if a plugin is developed against the Java 8 SE Development Kit 8 fo
     For example, the file is <path>jbrx-8u252-osx-x64-b1649.2.tar.gz</path>, meaning build 1649.2 for this JetBrains Runtime matching Java 8 JDK build 252.
 
 ### JetBrains Runtime Variants
+
 The JetBrains Runtime is delivered in various variants used for different purposes, like debugging, running for development purposes or bundling with the IDE.
 
 Available JBR variants are:
@@ -84,7 +87,7 @@ Please note that any unloading problems in a production environment will ask the
 
 Enabled by default for target platform 2020.2 or later.
 
-Set property `intellij.autoReloadPlugins` in [`runIde`](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task to `true` for enabling it in earlier platform versions or `false` to disable it explicitly, see [](tools_gradle_intellij_plugin_faq.md#how-to-disable-automatic-reload-of-dynamic-plugins).
+Set property [`runIde.autoReloadPlugins`](tools_gradle_intellij_plugin.md#runide-task-autoreloadplugins) to `true` for enabling it in earlier platform versions or `false` to disable it explicitly, see [](tools_gradle_intellij_plugin_faq.md#how-to-disable-automatic-reload-of-dynamic-plugins).
 
 After starting the sandbox IDE instance, run [`buildPlugin`](tools_gradle_intellij_plugin.md#tasks-buildplugin) task after modifications in the plugin project and switch focus back to sandbox instance to trigger reload.
 
@@ -96,7 +99,7 @@ After starting the sandbox IDE instance, run [`buildPlugin`](tools_gradle_intell
 
 <tab title="DevKit" group-key="devkit">
 
-Add system property `idea.auto.reload.plugins` in the Plugin DevKit [run configuration](running_and_debugging_a_plugin.md).
+Add system property `idea.auto.reload.plugins` in the Plugin DevKit [run configuration](running_and_debugging_a_theme.md).
 
 To disable auto-reload, set `idea.auto.reload.plugins` to `false` explicitly (2020.1.2+).
 
@@ -105,35 +108,36 @@ To disable auto-reload, set `idea.auto.reload.plugins` to `false` explicitly (20
 </tabs>
 
 ## The Development Instance Sandbox Directory
+
 The _Sandbox Home_ directory contains the [settings, caches, logs, and plugins](#development-instance-settings-caches-logs-and-plugins) for a Development Instance of the IDE.
 This information is stored in a different location than for the [installed IDE itself](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs).
 
 <tabs group="project-type">
 <tab title="Gradle" group-key="gradle">
 
-For Gradle-based plugins, the default Sandbox Home location is defined by the [](tools_gradle_intellij_plugin.md).
-See [Configuring a Gradle Plugin Project](gradle_prerequisites.md) for more information about specifying a Sandbox Home location.
-
-The default Sandbox Home location is:
-* Windows: <path>$PROJECT_DIRECTORY$\build\idea-sandbox</path>
+The default Sandbox Home location in a plugin Gradle project is:
+* Windows: <path>$PROJECT_DIRECTORY$\\build\\idea-sandbox</path>
 * Linux/macOS: <path>$PROJECT_DIRECTORY$/build/idea-sandbox</path>
+
+The Sandbox Home location can be configured with the [`intellij.sandboxDir`](tools_gradle_intellij_plugin.md#intellij-extension-sandboxdir) property.
 
 </tab>
 
 <tab title="DevKit" group-key="devkit">
 
-For DevKit-based plugins, the default Sandbox Home location is defined in the IntelliJ Platform Plugin SDK.
-See specifying the [Sandbox Home for DevKit Projects](setting_up_environment.md) for more information.
+For DevKit-based plugins, the default <control>Sandbox Home</control> location is defined in the IntelliJ Platform Plugin SDK.
+See the [Setting Up a Theme Development Environment](setting_up_theme_environment.md#add-intellij-platform-plugin-sdk) for information about how to set up Sandbox Home in IntelliJ Platform SDK.
 
 The default Sandbox Home directory location is:
-* Windows: `<User home>\.<product_system_name><product_version>\system\plugins-sandbox\`
-* Linux: `~/.<product_system_name><product_version>/system/plugins-sandbox/`
-* macOS: `~/Library/Caches/<product_system_name><product_version>/plugins-sandbox/`
+* Windows: <path>$USER_HOME$\\.$PRODUCT_SYSTEM_NAME$$PRODUCT_VERSION$\\system\\plugins-sandbox\\</path>
+* Linux: <path>~/.$PRODUCT_SYSTEM_NAME$$PRODUCT_VERSION$/system/plugins-sandbox/</path>
+* macOS: <path>~/Library/Caches/$PRODUCT_SYSTEM_NAME$$PRODUCT_VERSION$/plugins-sandbox/</path>
 
 </tab>
 </tabs>
 
 ### Development Instance Settings, Caches, Logs, and Plugins
+
 Within the Sandbox Home directory are subdirectories of the Development Instance:
 * <path>config</path> contains settings for the IDE instance.
 * <path>plugins</path> contains folders for each plugin being run in the IDE instance.

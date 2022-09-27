@@ -15,6 +15,11 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ### September-22
 
+Add Part X - Themes
+:
+All the content related to themes and creating a project using the DevKit approach has been moved to a new _Themes_ part.
+Content has been refreshed to match the current state of the project and SDK wizards.
+
 Spell Checking
 : Add [](spell_checking.md) section with an [accompanying tutorial](spell_checking_strategy.md) showing how to implement a spell checking for a custom language.
 
@@ -188,7 +193,7 @@ Dynamic Plugins update
 : Added new sections _Code_ and _Troubleshooting_ to [Dynamic Plugins](dynamic_plugins.md).
 
 GitHub IntelliJ Platform Plugin Template
-: Create new plugins with a preconfigured project scaffold and CI in [one click](github_template.md).
+: Create new plugins with a preconfigured project scaffold and CI in [one click](plugin_github_template.md).
 
 Disposer & Disposable
 : Added [reference](disposers.md) discussing resource cleanup/management.
@@ -209,7 +214,7 @@ JCEF Support
 ### February-20
 
 All Code Samples converted to Gradle
-: [All samples](https://github.com/JetBrains/intellij-sdk-docs/tree/main/code_samples) now use the [recommended solution](gradle_build_system.md) of setting up plugin projects.
+: [All samples](https://github.com/JetBrains/intellij-sdk-docs/tree/main/code_samples) now use the [recommended solution](creating_plugin_project.md) of setting up plugin projects.
 
 ### January-20
 

@@ -14,6 +14,7 @@ Language plugins can implement customized spell checking by implementing
 and registering it in the `com.intellij.spellchecker.support` extension point.
 
 **Examples:**
+- [Custom Language Support Tutorial: Spell Checking](spell_checking_strategy.md)
 - [`JavaSpellcheckingStrategy`](%gh-ic%/java/java-impl/src/com/intellij/spellchecker/JavaSpellcheckingStrategy.java)
 - [`HtmlSpellcheckingStrategy`](%gh-ic%/xml/impl/src/com/intellij/spellchecker/xml/HtmlSpellcheckingStrategy.java)
 

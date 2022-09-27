@@ -18,7 +18,6 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 Spell Checking
 : Add [](spell_checking.md) section with an [accompanying tutorial](spell_checking_strategy.md) showing how to implement a spell checking for a custom language.
 
-
 Minor Changes and Additions
 :
 - Add section about [](ide_infrastructure.md#power-save-mode).

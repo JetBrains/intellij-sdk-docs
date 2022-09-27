@@ -15,9 +15,9 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ### September-22
 
-Add Part X - Themes
+Extract Part X - Themes
 :
-All the content related to themes and creating a project using the DevKit approach has been moved to a new _Themes_ part.
+All the content related to [themes customization](theme_structure.md) and creating a project using the [DevKit approach](developing_themes.md) has been moved to a new [_Themes_](themes_getting_started.md) part.
 Content has been refreshed to match the current state of the project and SDK wizards.
 
 Spell Checking

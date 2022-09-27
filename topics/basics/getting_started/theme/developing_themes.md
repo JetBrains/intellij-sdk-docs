@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<excerpt>Develop an IntelliJ Platform-based IDE theme using Plugin DevKit.</excerpt>
+
 This documentation section will help you get started with developing theme plugins for the IntelliJ Platform-based IDEs.
 
 The DevKit-based theme development workflow includes:

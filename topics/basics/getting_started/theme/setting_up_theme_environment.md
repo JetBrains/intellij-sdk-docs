@@ -2,16 +2,18 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-## Preliminary Steps
+<procedure title="Preliminary Steps">
 
 Use the following checklist to ensure that you are ready to develop your custom theme:
 
-- **[IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/)** or **[IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/)** is installed.
-- **Plugin DevKit** plugin is [enabled in IntelliJ IDEA](https://www.jetbrains.com/help/idea/managing-plugins.html).
-- **IntelliJ IDEA CE source code** is checked-out. _(Optional)_<br/>
+1. **[IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/)** or **[IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/)** is installed.
+2. **Plugin DevKit** plugin is [enabled in IntelliJ IDEA](https://www.jetbrains.com/help/idea/managing-plugins.html).
+3.  **IntelliJ IDEA CE source code** is checked-out. _(Optional)_<br/>
   This step is needed only when you plan to debug the IntelliJ Platform code.
   See [](#get-intellij-idea-ce-source-code) for more details.
-- **IntelliJ Platform SDK** is [configured](#configuring-intellij-platform-plugin-sdk).
+4. **IntelliJ Platform SDK** is [configured](#configuring-intellij-platform-plugin-sdk).
+
+</procedure>
 
 ## Get IntelliJ IDEA CE Source Code
 

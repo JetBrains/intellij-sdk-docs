@@ -95,7 +95,8 @@ This practice keeps all version declarations synchronized.
 
 ## Verifying Plugin
 
-The Gradle plugin provides two tasks that allow for running integrity and compatibility tests:
+The Gradle plugin provides tasks that allow for running integrity and compatibility tests:
+* [`verifyPluginConfiguration`](tools_gradle_intellij_plugin.md#tasks-verifypluginconfiguration) - validates the versions of SDK, target platform, APIs, etc., configured in a plugin project,
 * [`verifyPlugin`](tools_gradle_intellij_plugin.md#tasks-verifyplugin) - validates completeness and contents of <path>plugin.xml</path> descriptors as well as plugin's archive structure,
 * [`runPluginVerifier`](tools_gradle_intellij_plugin.md#tasks-runpluginverifier) - runs the [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) tool to check the binary compatibility with specified IntelliJ IDE builds.
 

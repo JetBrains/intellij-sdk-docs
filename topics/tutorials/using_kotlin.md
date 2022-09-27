@@ -11,7 +11,7 @@ This page describes developing a plugin code in Kotlin programming language.
 ## Advantages of Developing a Plugin in Kotlin
 
 Using [Kotlin](https://kotlinlang.org) to write plugins for the IntelliJ Platform is very similar to writing plugins in Java.
-Existing plugin developers can get started by converting boilerplate Java classes to their Kotlin equivalents by using the [J2K compiler](https://kotlinlang.org/docs/mixing-java-kotlin-intellij.html#converting-an-existing-java-file-to-kotlin-with-j2k) bundled with the IntelliJ Platform (versions 143.+), and developers can easily mix and match Kotlin classes with their existing Java code.
+Existing plugin developers can get started by converting boilerplate Java classes to their Kotlin equivalents by using the [J2K converter](https://kotlinlang.org/docs/mixing-java-kotlin-intellij.html#converting-an-existing-java-file-to-kotlin-with-j2k) (part of Kotlin plugin), and developers can easily mix and match Kotlin classes with their existing Java code.
 
 In addition to [null safety](https://kotlinlang.org/docs/null-safety.html) and [type-safe builders](https://kotlinlang.org/docs/type-safe-builders.html), the Kotlin language offers many convenient features for plugin development, which make plugins easier to read and simpler to maintain.
 Much like [Kotlin for Android](https://kotlinlang.org/docs/android-overview.html), the IntelliJ Platform makes extensive use of callbacks, which are easy to express as [lambdas](https://kotlinlang.org/docs/lambdas.html) in Kotlin.
@@ -117,6 +117,10 @@ Please see [Third-Party Software and Licenses](https://www.jetbrains.com/legal/t
 Plugins *may* use [Kotlin classes](https://kotlinlang.org/docs/classes.html) to implement declarations in the [plugin configuration file](plugin_configuration_file.md).
 When registering an extension, the platform uses a dependency injection framework to instantiate these classes.
 For this reason, plugins *must not* use [Kotlin objects](https://kotlinlang.org/docs/object-declarations.html) to implement any <path>[plugin.xml](plugin_configuration_file.md)</path> declarations.
+
+## Kotlin Code FAQ
+
+[How to shorten references](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360010025120-Add-new-parameter-into-kotlin-data-class-from-IDEA-plugin?page=1#community_comment_360002950760)
 
 ## Example Plugins Implemented in Kotlin
 

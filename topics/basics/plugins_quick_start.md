@@ -14,3 +14,7 @@ It will familiarize you with the working environment, project structure, and fre
 * [](plugin_signing.md)
 * [](ide_development_instance.md)
 * [](faq.md)
+
+> If you are interested in the UI theme development, please see [Part X - Themes](themes_getting_started.md).
+>
+{type="note"}

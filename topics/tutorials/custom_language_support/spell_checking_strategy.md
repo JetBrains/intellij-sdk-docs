@@ -4,13 +4,19 @@
 
 <include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
 
-Spell checking allows users to see spelling errors while editing code.
+<microformat>
 
 **Reference**: [](spell_checking.md)
 
+**Code**: [`SimpleSpellcheckingStrategy`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleSpellcheckingStrategy.java)
+
+</microformat>
+
+Spell checking allows users to see spelling errors while editing code.
+
 ## Define a SimpleSpellcheckingStrategy
 
-The simple spell checking strategy extends
+The [`SimpleSpellcheckingStrategy`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleSpellcheckingStrategy.java) extends
 [`SpellcheckingStrategy`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/tokenizer/SpellcheckingStrategy.java)
 
 ```java
@@ -19,7 +25,7 @@ The simple spell checking strategy extends
 
 ## Register the SimpleSpellcheckingStrategy
 
-The `SimpleSpellcheckingStrategy` implementation is registered with the IntelliJ Platform in the plugin
+The implementation is registered with the IntelliJ Platform in the plugin
 configuration file using the `com.intellij.spellchecker.support` extension point.
 
 ```xml

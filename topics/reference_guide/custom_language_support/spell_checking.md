@@ -4,7 +4,7 @@
 
 <microformat>
 
-**Product Help Topics:** [Spell Checking](https://www.jetbrains.com/help/idea/spellchecking.html)
+**Product Help:** [Spell Checking](https://www.jetbrains.com/help/idea/spellchecking.html)
 
 </microformat>
 

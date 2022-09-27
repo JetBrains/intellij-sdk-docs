@@ -71,6 +71,7 @@
     <langCodeStyleSettingsProvider implementation="org.intellij.sdk.language.SimpleLanguageCodeStyleSettingsProvider"/>
     <lang.commenter language="Simple" implementationClass="org.intellij.sdk.language.SimpleCommenter"/>
     <lang.documentationProvider language="Simple" implementationClass="org.intellij.sdk.language.SimpleDocumentationProvider"/>
+    <spellchecker.support language="Simple" implementationClass="org.intellij.sdk.language.SimpleSpellcheckingStrategy"/>
   </extensions>
 
 </idea-plugin>

@@ -251,6 +251,8 @@ could be different, not only in the number of elements, but also in their order.
 
 ## Using UAST in Plugins
 
+To use UAST in your plugin, add a [dependency](plugin_dependencies.md) on bundled Java plugin (`com.intellij.java`).
+
 ### Language Extensions
 
 To register [extensions](plugin_extensions.md) applicable to UAST, specify `language="UAST"` in their registration in <path>[plugin.xml](plugin_configuration_file.md)</path>.

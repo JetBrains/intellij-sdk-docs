@@ -5,7 +5,7 @@
 Themes are components within [IntelliJ Platform plugins](plugin_structure.md).
 The theme plugins should be stand-alone and not combined with other plugin functionality.
 
-> To see a full example theme project, see the [Theme Basics](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/theme_basics) in IntelliJ SDK Code Samples.
+> To see a full example theme project, see the [Theme Basics](%gh-sdk-samples%/theme_basics) in IntelliJ SDK Code Samples.
 >
 {type="note"}
 

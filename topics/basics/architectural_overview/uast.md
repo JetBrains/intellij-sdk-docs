@@ -2,14 +2,11 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-UAST (Unified Abstract Syntax Tree) is an abstraction layer on the [PSI](psi_elements.md) of different JVM languages.
+UAST (Unified Abstract Syntax Tree) is an abstraction layer on the [PSI](psi_elements.md) of different programming languages targeting the JVM (Java Virtual Machine).
 It provides a unified API for working with common language elements like classes and method declarations, literal values, and control flow operators.
-
-## Motivation
 
 Different JVM languages have their own [PSI](psi_elements.md), but many IDE features like inspections, gutter markers, reference injection, and many others
 work the same way for all these languages.
-
 Using UAST allows providing features that will work across all [supported JVM languages](#which-languages-are-supported) using a single implementation.
 
 Presentation [Writing IntelliJ Plugins for Kotlin](https://www.youtube.com/watch?v=j2tvi4GbOr4) offers a thorough overview of using UAST in real-world scenarios.

@@ -221,7 +221,7 @@ As it is hard to guess what will be returned, it is also deprecated.
 
 Thus `sourcePsi` and `javaPsi` should be the only ways to obtain `PsiElement` from `UElement`. See the [corresponding section](#uast-to-psi-conversion).
 
-### Should I use `UMethod` or `PsiMethod`, `UClass` or `PsiClass` ?
+### Using UAST or PSI
 
 UAST provides a unified way to represent JVM compatible declarations via `UMethod`, `UField`, `UClass`, and so on.
 But at the same time, all JVM language plugins implement `PsiMethod`, `PsiClass`, and so on to be compatible with Java.
@@ -251,7 +251,9 @@ could be different, not only in the number of elements, but also in their order.
 
 ## Using UAST in Plugins
 
-To register extensions applicable to UAST, specify `language="UAST"` in <path>[plugin.xml](plugin_configuration_file.md)</path>.
+### Language Extensions
+
+To register [extensions](plugin_extensions.md) applicable to UAST, specify `language="UAST"` in their registration in <path>[plugin.xml](plugin_configuration_file.md)</path>.
 
 ### Inspecting UAST Tree
 

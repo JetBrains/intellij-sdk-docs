@@ -2,6 +2,14 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Reference**: [](navbar.md)
+
+**Code**: [`SimpleStructureAwareNavbar`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleStructureAwareNavbar.java)
+
+</microformat>
+
 <include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
 
 Structure aware navbar allows displaying specific file elements in the
@@ -9,11 +17,9 @@ Structure aware navbar allows displaying specific file elements in the
 depending on the location of the caret in it.
 For example, in Java this is used to display the class and method in which the caret is currently located.
 
-**Reference**: [](navbar.md)
-
 ## Define a SimpleStructureAwareNavbar
 
-The simple structure aware navbar implements
+The [`SimpleStructureAwareNavbar`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleStructureAwareNavbar.java) implements
 [`StructureAwareNavBarModelExtension`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/navigationToolbar/StructureAwareNavBarModelExtension.kt).
 
 ```java

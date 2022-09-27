@@ -30,7 +30,7 @@ Additionally, dedicated Extension Point Lists specific to IDEs are available und
 ### 1.2 Use Autocompletion Information
 
 Another way to discover EPs is by using autocompletion or navigating through EP XML files.
-When you open a new tag in your <path>plugin.xml</path> file (inside the `extensions` block with `defaultExtensionNs="com.intellij"`),
+When you open a new tag in your <path>[plugin.xml](plugin_configuration_file.md)</path> file (inside the [`<extensions>`](plugin_configuration_file.md#idea-plugin__extensions) block with `defaultExtensionNs="com.intellij"`),
 the IDE will automatically suggest possible EPs.
 
 ![Using Completion Suggestions](plugin_xml_completion_suggestion.png){width="706"}{animated="true"}{border-effect="rounded"}
@@ -66,7 +66,7 @@ you can use
 to find all the files that meet the following criteria:
 
 - The file type is XML
-- It contains the tag `<idea-plugin>`
+- It contains the tag [`<idea-plugin>`](plugin_configuration_file.md#idea-plugin)
 - The file is in the scope <control>Project and Libraries</control>
 
 ![Search Structurally for plugin.xml](search_structurally_for_plugin_xml.png)
@@ -88,7 +88,7 @@ Many developers keep the
 [IntelliJ Community source code](https://github.com/JetBrains/intellij-community)
 open in a separate window while working on their plugin.
 Others simply search the source code of the IntelliJ Platform that is attached by default when using a
-[Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md)-based project.
+[](tools_gradle_intellij_plugin.md)-based project.
 While both methods work, it should be noted that developing plugins without inspecting the IntelliJ Platform code is nearly impossible,
 and all of the tips below assume that you have the source code available.
 

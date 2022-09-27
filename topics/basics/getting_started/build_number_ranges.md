@@ -2,12 +2,12 @@
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Use this reference of build number ranges to specify the correct `since-build` and `until-build` values in your plugin descriptor.
-Setting the actual values in <path>plugin.xml</path> is managed by [`patchPluginXml`](tools_gradle_intellij_plugin.md#patchpluginxml-task) Gradle task, see [](gradle_guide.md#patching-the-plugin-configuration-file).
+Setting the actual values in <path>[plugin.xml](plugin_configuration_file.md)</path> is managed by [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) Gradle task, see [](gradle_guide.md#patching-the-plugin-configuration-file).
 
 Please note the following regarding values:
 
 - Values must represent the actual build numbers, any made-up numbers must not be used (e.g., using `999.*` for `until-build`).
-- An empty value for `until-build` means it will include _all_ future builds (including unreleased IDE versions, which might impact compatibility later).
+- Not specifying `until-build` means it will include _all_ future builds (including unreleased IDE versions, which might impact compatibility later).
 - Dot star suffix (`.* `) can be used in `until-build` to support all releases for the specific branch (i.e., `222.*` for all 2022.2.x releases).
 
 > Compatibility with the specified version range (and compatible products) must always be verified using [](verifying_plugin_compatibility.md#plugin-verifier) to ensure binary compatibility.
@@ -16,6 +16,8 @@ Please note the following regarding values:
 > According to [Approval Guidelines](https://plugins.jetbrains.com/legal/approval-guidelines), incompatible plugin versions will be restricted by JetBrains if necessary.
 >
 {type="warning"}
+
+### Build Number Format
 
 To denote a release, a multipart build number is used.
 It consists of the following parts:

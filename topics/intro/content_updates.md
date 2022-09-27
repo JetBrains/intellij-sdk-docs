@@ -13,10 +13,22 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2022
 
-### August-22
+### September-22
 
 Spell Checking
 : Add [](spell_checking.md) section with an [accompanying tutorial](spell_checking_strategy.md) showing how to implement a spell checking for a custom language.
+
+
+Minor Changes and Additions
+:
+- Add section about [](ide_infrastructure.md#power-save-mode).
+- Highlight references automatically via [](references_and_resolve.md#additional-highlighting)
+- Language injections: controlling [](language_injection.md#formatting)
+
+### August-22
+
+Plugin Configuration Page
+: Update the [](plugin_configuration_file.md) page to describe all the elements in detail.
 
 Source links migrated from Upsource to GitHub
 : All source links now point to GitHub instead of Upsource (which is going to be [sunset](https://blog.jetbrains.com/upsource/2022/01/31/upsource-end-of-sales-announcement/)).
@@ -39,7 +51,7 @@ Postfix Completion
 : Add [](postfix_completion.md) section explaining how to implement generating or wrapping the existing code into additional constructs without navigating the caret back.
 
 Gradle IntelliJ Plugin
-: Add [](tools_gradle_intellij_plugin.md) documentation to _Appendix III — Tools_.
+: Add [](tools_gradle_intellij_plugin.md) documentation to _Appendix III — Tooling_.
 
 Bundling Plugin API Sources
 : Add the [](bundling_plugin_openapi_sources.md) section explaining how to expose plugin API sources to dependent plugin developers.
@@ -49,7 +61,7 @@ Minor Changes and Additions
 - Add a small section to [](php_open_api.md#utility-classes) describing `PhpFilePathUtils` utility class.
 - Add mention of the way to programmatically open an autocomplete popup to [](code_completion.md).
 - Add a small section to [](work_with_icons_and_images.md#animated-icons) describing animated icons.
-- Moved [](tools_gradle_grammar_kit_plugin.md) documentation to _Appendix III — Tools_
+- Moved [](tools_gradle_grammar_kit_plugin.md) documentation to _Appendix III — Tooling_
 
 ### May-22
 
@@ -122,7 +134,7 @@ Extension Point Lists: Listeners, Deprecation status
 ### July-21
 
 Plugin Signing
-: [](plugin_signing.md) describes the plugin signing process, explains how to generate a certificate, configure the Gradle [`signPlugin`](tools_gradle_intellij_plugin.md#signplugin-task) task, and introduces a standalone CLI tool.
+: [](plugin_signing.md) describes the plugin signing process, explains how to generate a certificate, configure the Gradle [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) task, and introduces a standalone CLI tool.
 
 ### June-21
 

@@ -2,12 +2,16 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Tested Functionality**: [](folding_builder.md)
+
+</microformat>
+
 <include src="tests_prerequisites.md" include-id="custom_language_testing_tutorial_header"></include>
 
-This test verifies the Simple Language folding builder, implemented in the [Folding Builder](folding_builder.md) section of the Custom Language Support Tutorial, works as expected.
-
 > A folding builder must implement [`DumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbAware.java) to pass tests.
-> See [Define a Folding Builder](folding_builder.md#define-a-folding-builder) for more information.
+> See [](folding_builder.md#define-a-folding-builder) for more information.
 >
 {type="note"}
 

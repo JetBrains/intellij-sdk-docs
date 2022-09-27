@@ -6,6 +6,10 @@
 
 Welcome to the IntelliJ Platform SDK – the primary source of documentation for extending the IntelliJ Platform by creating plugins, custom language support, or building a custom IDE.
 
+> We're looking for a [Software Developer](https://www.jetbrains.com/careers/jobs/software-developer-intellij-sdk-advocacy-680/) to work on [Plugin Verifier](verifying_plugin_compatibility.md) tooling.
+>
+{type="note"}
+
 ## Getting Started
 
 <table>

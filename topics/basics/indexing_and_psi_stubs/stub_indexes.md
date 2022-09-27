@@ -25,7 +25,10 @@ You usually don't need to have stubs for things like statements or local variabl
 The following steps need to be performed only once for each language that supports stubs:
 
 * Change the file element type for your language (the element type that you return from `ParserDefinition.getFileNodeType()`) to a class that extends [`IStubFileElementType`](%gh-ic%/platform/core-impl/src/com/intellij/psi/tree/IStubFileElementType.java).
-* In your <path>plugin.xml</path>, define the `com.intellij.stubElementTypeHolder` extension and specify the interface which contains the `IElementType` constants used by your language's parser as well as `externalIdPrefix` if possible ([example](%gh-ic%/plugins/properties/src/META-INF/plugin.xml)).
+* In your <path>[plugin.xml](plugin_configuration_file.md)</path>, define the `com.intellij.stubElementTypeHolder` extension and specify the interface which contains the `IElementType` constants used by your language's parser.
+  Define common `externalIdPrefix` to be used for all stub element types (see [`StubElementTypeHolderEP`](%gh-ic%/platform/core-api/src/com/intellij/psi/stubs/StubElementTypeHolderEP.java) docs for important requirements).
+
+**Example**: [`JavaStubElementTypes`](%gh-ic%/java/java-psi-impl/src/com/intellij/psi/impl/java/stubs/JavaStubElementTypes.java) registered in [`JavaPsiPlugin.xml`](%gh-ic%/java/java-psi-impl/src/META-INF/JavaPsiPlugin.xml)
 
 For each element type that you want to store in the stub tree, you need to perform the following steps:
 
@@ -57,12 +60,12 @@ This reduces the size of the serialized stub tree data.
 See also [`DataInputOutputUtil`](%gh-ic%/platform/util/src/com/intellij/util/io/DataInputOutputUtil.java).
 
 If you need to change the stored binary format for the stubs (for example, if you want to store some additional data or some new elements), make sure you advance the stub version returned from `IStubFileElementType.getStubVersion()` for your language.
-This will cause the stubs and [stub indices](#stub-indexes) to be rebuilt, and will avoid mismatches between the stored data format, and the code trying to load it.
+This will cause the stubs and [](#stub-indexes) to be rebuilt, and will avoid mismatches between the stored data format and the code trying to load it.
 
 It's essential to ensure that all information stored in the stub tree depends only on the contents of the file for which stubs are being built, and does not depend on any external files.
 Otherwise, the stub tree will not be rebuilt when external dependency changes, and you will have stale and incorrect data in the stub tree.
 
-> Please see also [Improving indexing performance](indexing_and_psi_stubs.md#improving-indexing-performance).
+> Please see also [](indexing_and_psi_stubs.md#improving-indexing-performance).
 >
 {type="tip"}
 

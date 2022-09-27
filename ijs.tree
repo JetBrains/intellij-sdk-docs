@@ -23,9 +23,10 @@
   </toc-element>
   <toc-element toc-title="Part I — Plugins">
     <toc-element id="basics.md">
+      <toc-element id="plugin_alternatives.md" toc-title="Plugin Alternatives"/>
+      <toc-element id="plugin_required_experience.md"/>
       <toc-element id="types_of_plugins.md"/>
     </toc-element>
-    <toc-element id="plugin_alternatives.md"/>
     <toc-element id="getting_started.md">
       <toc-element id="github_template.md" toc-title="Using GitHub Template"/>
       <toc-element id="gradle_build_system.md" accepts-web-file-names="build_system.html"
@@ -43,7 +44,6 @@
       <toc-element id="publishing_plugin.md"/>
     </toc-element>
     <toc-element id="ide_development_instance.md" accepts-web-file-names="settings_caches_logs.html"/>
-    <toc-element id="update_plugins_format.md" toc-title="Custom Plugin Repositories"/>
     <toc-element id="plugin_structure.md">
       <toc-element id="plugin_content.md"/>
       <toc-element id="bundling_plugin_openapi_sources.md" toc-title="Plugin API Sources"/>
@@ -62,15 +62,6 @@
     <toc-element id="intellij_artifacts.md"/>
     <toc-element id="kotlin.md"/>
     <toc-element id="plugin_signing.md"/>
-    <toc-element id="internal_actions_intro.md" accepts-web-file-names="interal_actions_menu.html">
-      <toc-element id="enabling_internal.md"/>
-      <toc-element id="internal_ui_sub.md" toc-title="UI Tools">
-        <toc-element id="internal_ui_inspector.md" accepts-web-file-names="internal_uii.html"
-                     toc-title="UI Inspector"/>
-        <toc-element id="internal_ui_laf_defaults.md" accepts-web-file-names="internal_ui_lafd.html"
-                     toc-title="LaF Defaults"/>
-      </toc-element>
-    </toc-element>
     <toc-element id="faq.md"/>
   </toc-element>
   <toc-element toc-title="Part II — Base Platform">
@@ -303,7 +294,6 @@
     <toc-element toc-title="Debugger"/>
   </toc-element>
   <toc-element toc-title="Part VIII — Product Specific">
-    <toc-element id="build_number_ranges.md"/>
     <toc-element id="dev_alternate_products.md" toc-title="Developing for Multiple Products"/>
     <toc-element id="plugin_compatibility.md" toc-title="Compatibility with Multiple Products"/>
     <toc-element id="android_studio.md" toc-title="Android Studio">
@@ -359,15 +349,17 @@
   <toc-element toc-title="Appendix I — Resources">
     <toc-element id="glossary.md"/>
     <toc-element id="explore_api.md" toc-title="Explore the API"/>
+    <toc-element id="build_number_ranges.md"/>
     <toc-element id="extension_point_list.md"/>
     <toc-element id="useful_links.md" accepts-web-file-names="resources.html"/>
     <toc-element id="learning_resources.md"/>
     <toc-element id="marketing.md"/>
     <toc-element id="consulting.md"/>
+    <toc-element id="custom_plugin_repository.md" accepts-web-file-names="update-plugins-format.html"/>
     <toc-element id="plugin_repository_obsolete.md"
                  accepts-web-file-names="api_reference.html,feature_extractor.html,plugin_details.html,custom_channels.html,plugins_list.html,maven_interface.html,plugin_upload.html,plugin_developers.html"/>
   </toc-element>
-  <toc-element toc-title="Appendix II — API Changes">
+  <toc-element toc-title="Appendix II — API and Compatibility">
     <toc-element id="verifying_plugin_compatibility.md"/>
     <toc-element id="api_changes_list.md" toc-title="Incompatible API Changes"
                  accepts-web-file-names="api-changes-list-2016.html,api-changes-list-2017.html,api-changes-list-2018.html">
@@ -377,7 +369,7 @@
       <toc-element id="api_changes_list_2019.md" toc-title="2019.*"/>
     </toc-element>
     <toc-element id="api_notable.md" toc-title="Notable API Changes"
-    accepts-web-file-names="api-notable-list-2018.html">
+                 accepts-web-file-names="api-notable-list-2018.html">
       <toc-element id="api_notable_list_2022.md" toc-title="2022.*"/>
       <toc-element id="api_notable_list_2021.md" toc-title="2021.*"/>
       <toc-element id="api_notable_list_2020.md" toc-title="2020.*"/>
@@ -385,7 +377,7 @@
     </toc-element>
     <toc-element id="api_internal.md"/>
   </toc-element>
-  <toc-element toc-title="Appendix III — Tools">
+  <toc-element toc-title="Appendix III — Tooling">
     <toc-element id="tools_gradle_intellij_plugin.md">
       <toc-element toc-title="Usage Examples" id="tools_gradle_intellij_plugin_examples.md"/>
       <toc-element toc-title="Build Features" id="tools_gradle_intellij_plugin_build_features.md"/>
@@ -393,5 +385,16 @@
       <toc-element toc-title="Migration Guide from 0.x to 1.x" href="https://lp.jetbrains.com/gradle-intellij-plugin/"/>
     </toc-element>
     <toc-element id="tools_gradle_grammar_kit_plugin.md"/>
+    <toc-element toc-title="IDE Tooling">
+      <toc-element id="internal_actions_intro.md" accepts-web-file-names="interal_actions_menu.html">
+        <toc-element id="enabling_internal.md"/>
+        <toc-element id="internal_ui_sub.md" toc-title="UI Tools">
+          <toc-element id="internal_ui_inspector.md" accepts-web-file-names="internal_uii.html"
+                       toc-title="UI Inspector"/>
+          <toc-element id="internal_ui_laf_defaults.md" accepts-web-file-names="internal_ui_lafd.html"
+                       toc-title="LaF Defaults"/>
+        </toc-element>
+      </toc-element>
+    </toc-element>
   </toc-element>
 </product-profile>

@@ -6,7 +6,7 @@
 
 A number of minor features are listed in the following format:
 
-_EP: `fully.qualified.extensionPointName`_ - Extension Point Name (must be specified in <path>plugin.xml</path>)
+_EP: `fully.qualified.extensionPointName`_ - Extension Point Name (must be specified in <path>[plugin.xml](plugin_configuration_file.md)</path>)
 
 _`com.extensionPoint.class`_ _description text_ - Extension Point class/interface to provide functionality
 
@@ -29,6 +29,8 @@ Certain types of braces can be marked as structural.
 Structural braces have higher priority than regular braces: they are matched with each other even if there are unmatched braces of different types between them.
 An opening non-structural brace is not matched with a closing one if one of them is inside a pair of matched structural braces and another is outside.
 See also [](#recognizing-complex-multi-block-expressions).
+
+*2022.3* If the brace matching is "too heavy" and should not be executed in EDT, implement [`HeavyBraceHighlighter`](%gh-ic-master%/platform/lang-impl/src/com/intellij/codeInsight/highlighting/HeavyBraceHighlighter.java) and register in `com.intellij.heavyBracesHighlighter` EP.
 
 ### Quote Handling
 
@@ -143,7 +145,7 @@ as implementation example.
 
 ### Plain Text Completion
 
-EP: `completion.plainTextSymbol`
+EP: `com.intelllij.completion.plainTextSymbol`
 
 [`PlainTextSymbolCompletionContributor`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/completion/PlainTextSymbolCompletionContributor.java)
 provides a simple way to extract lookup elements from a file so that users have completion available
@@ -177,7 +179,7 @@ for an implementation example.
 
 ### Reader Mode
 
-EP: `readerModeMatcher`
+EP: `com.intellij.readerModeMatcher`
 
 [`ReaderModeMatcher`](%gh-ic%/platform/editor-ui-api/src/com/intellij/codeInsight/actions/ReaderModeMatcher.kt)
 provides a way to decide if files are shown in the correct mode: reader mode vs. normal editor mode.

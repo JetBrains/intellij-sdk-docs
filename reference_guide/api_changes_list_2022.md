@@ -82,6 +82,44 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ### IntelliJ Platform 2022.3
 
+### TextMate Plugin 2022.3
+
+`org.jetbrains.plugins.textmate.language.preferences.PreferencesRegistry` class now interface
+: Construct and mutate the `org.jetbrains.plugins.textmate.language.preferences.PreferencesRegistryImpl` instead.
+
+`org.jetbrains.plugins.textmate.language.preferences.PreferencesRegistry.fillFromPList(CharSequence, Plist)` method removed
+: Use `org.jetbrains.plugins.textmate.language.preferences.PreferencesRegistryImpl.fillFromPList(CharSequence, Plist)` instead.
+
+`org.jetbrains.plugins.textmate.language.preferences.PreferencesRegistry.clear()` method removed
+: Use `org.jetbrains.plugins.textmate.language.preferences.PreferencesRegistryImpl.clear()` instead.
+
+`org.jetbrains.plugins.textmate.language.preferences.PreferencesRegistry()` constructor removed
+: Instantiate `org.jetbrains.plugins.textmate.language.preferences.PreferencesRegistryImpl` instead.
+
+`org.jetbrains.plugins.textmate.language.preferences.ShellVariablesRegistry` class now interface
+: Construct and mutate the `org.jetbrains.plugins.textmate.language.preferences.ShellVariablesRegistryImpl` instead.
+
+`org.jetbrains.plugins.textmate.language.preferences.ShellVariablesRegistry.fillVariablesFromPlist(CharSequence, Plist)` method removed
+: Use `org.jetbrains.plugins.textmate.language.preferences.ShellVariablesRegistryImpl.fillVariablesFromPlist(CharSequence, Plist)` instead.
+
+`org.jetbrains.plugins.textmate.language.preferences.ShellVariablesRegistry.clear()` method removed
+: Use `org.jetbrains.plugins.textmate.language.preferences.ShellVariablesRegistryImpl.clear()` instead.
+
+`org.jetbrains.plugins.textmate.language.preferences.ShellVariablesRegistry()` constructor removed
+: Instantiate `org.jetbrains.plugins.textmate.language.preferences.ShellVariablesRegistryImpl` instead.
+
+`org.jetbrains.plugins.textmate.language.preferences.SnippetsRegistry` class now interface
+: Construct and mutate the `org.jetbrains.plugins.textmate.language.preferences.SnippetsRegistryImpl` instead.
+
+`org.jetbrains.plugins.textmate.language.preferences.SnippetsRegistry.register(TextMateSnippet)` method removed
+: Use `org.jetbrains.plugins.textmate.language.preferences.SnippetsRegistryImpl.register(TextMateSnippet)` instead.
+
+`org.jetbrains.plugins.textmate.language.preferences.SnippetsRegistry.clear()` method removed
+: Use `org.jetbrains.plugins.textmate.language.preferences.SnippetsRegistryImpl.clear()` instead.
+
+`org.jetbrains.plugins.textmate.language.preferences.SnippetsRegistry()` constructor removed
+: Instantiate `org.jetbrains.plugins.textmate.language.preferences.SnippetsRegistryImpl()` instead.
+
 ## 2022.2
 
 ### IntelliJ Platform 2022.2
@@ -160,6 +198,20 @@ Method `com.intellij.grazie.GrazieBundle.message(key, parameters)` marked static
 
 `com.intellij.docker.registry.DockerRegistry` class renamed to `com.intellij.docker.registry.DockerRegistryConfiguration`
 : Please update usages.
+
+### JavaScript Plugin 2022.2
+
+`com.intellij.lang.javascript.buildTools.webpack.WebPackConfigManager.setConfig(WebPackConfig)` method moved to the superclass
+: Should be used only in tests (marked with `@TestOnly`).
+
+`com.intellij.lang.javascript.buildTools.webpack.WebPackConfig` class renamed to `com.intellij.lang.javascript.buildTools.bundler.WebBundlerConfig`
+: Use `com.intellij.lang.javascript.buildTools.bundler.WebBundlerConfig` instead.
+
+`com.intellij.lang.javascript.buildTools.webpack.WebPackResolve` class renamed to `com.intellij.lang.javascript.buildTools.bundler.WebBundlerResolve`
+: Use `com.intellij.lang.javascript.buildTools.bundler.WebBundlerResolve` instead.
+
+`com.intellij.lang.javascript.buildTools.webpack.WebPackConfigPath` class removed
+: A regular String class is used instead.
 
 ## 2022.1
 

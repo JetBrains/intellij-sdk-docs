@@ -10,7 +10,9 @@ This tutorial demonstrates how to write and run automated tests for a custom lan
 
 As an example, the plugin implemented in the [Custom Language Support Tutorial](custom_language_support_tutorial.md) is used to demonstrate functional test development.
 
-The plugin and test code can be found in the [simple_language_plugin](%gh-sdk-samples%/simple_language_plugin) code sample.
+> Corresponding parts are linked under **Tested Functionality** on top of each page in this tutorial.
+>
+{type="tip"}
 
 *  [](tests_prerequisites.md)
 *  [](parsing_test.md)

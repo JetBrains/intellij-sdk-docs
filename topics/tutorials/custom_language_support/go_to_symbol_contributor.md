@@ -2,17 +2,23 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Reference**: [](go_to_class_and_go_to_symbol.md)
+
+**Code**: [`SimplePsiImplUtil`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/impl/SimplePsiImplUtil.java),
+[`SimpleChooseByNameContributor`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleChooseByNameContributor.java)
+
+</microformat>
 <include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
 
 A _Go to Symbol Contributor_ helps the user to navigate to any PSI element by its name.
-
-**Reference**: [](go_to_class_and_go_to_symbol.md)
 
 ## Define a Helper Method for Generated PSI Elements
 
 To specify how a PSI element looks like in the <menupath>Navigate | Symbol</menupath> popup window, <control>Structure</control> tool window, or other components, it should implement `getPresentation()`.
 This method gets defined in the utility class `SimplePsiImplUtil`, and the parser and PSI classes must be regenerated.
-Add the following method to `SimplePsiImplUtil`:
+Add the following method to [`SimplePsiImplUtil`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/impl/SimplePsiImplUtil.java):
 
 ```java
 ```
@@ -34,7 +40,8 @@ property ::= (KEY? SEPARATOR VALUE?) | KEY {
 
 ## Define a Go To Symbol Contributor
 
-To contribute items to <menupath>Navigate | Symbol</menupath> results, subclass [`ChooseByNameContributor`](%gh-ic%/platform/lang-api/src/com/intellij/navigation/ChooseByNameContributor.java) to create `SimpleChooseByNameContributor`:
+To contribute items to <menupath>Navigate | Symbol</menupath> results, subclass [`ChooseByNameContributor`](%gh-ic%/platform/lang-api/src/com/intellij/navigation/ChooseByNameContributor.java)
+to create [`SimpleChooseByNameContributor`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleChooseByNameContributor.java):
 
 ```java
 ```

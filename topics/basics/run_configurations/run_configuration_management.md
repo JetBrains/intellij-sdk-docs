@@ -2,6 +2,12 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Product Help:** [Run/Debug Configuration](https://www.jetbrains.com/idea/help/run-debug-configuration.html)
+
+</microformat>
+
 This document describes the primary classes to work with run configurations and everyday use cases.
 
 ## Configuration Type
@@ -89,7 +95,7 @@ If it is, you return a [`RefactoringElementListener`](%gh-ic%/platform/analysis-
 ## Creating Configurations from Context
 
 Many plugins support automatic creation of run configurations from context so that the user can click, for example, on an application or test class and automatically run it using the correct run configuration type.
-To support that, you need to provide an implementation of the [`RunConfigurationProducer`](%gh-ic%/platform/lang-api/src/com/intellij/execution/actions/RunConfigurationProducer.java) interface and to register it as `<runConfigurationProducer>` in your <path>plugin.xml</path>.
+To support that, you need to provide an implementation of the [`RunConfigurationProducer`](%gh-ic%/platform/lang-api/src/com/intellij/execution/actions/RunConfigurationProducer.java) interface and to register it as `<runConfigurationProducer>` in your <path>[plugin.xml](plugin_configuration_file.md)</path>.
 This API was redesigned in IntelliJ IDEA 13; the previous [`RuntimeConfigurationProducer`](%gh-ic%/platform/lang-api/src/com/intellij/execution/junit/RuntimeConfigurationProducer.java) is a much more confusing version of the same API.
 
 The two main methods that you need to implement are:

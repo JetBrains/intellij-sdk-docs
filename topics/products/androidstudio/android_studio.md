@@ -119,7 +119,7 @@ When using APIs from the `android` plugin, declare a dependency:
   <depends>org.jetbrains.android</depends>
 ```
 
-As discussed in the [Plugin Dependencies](plugin_compatibility.md#declaring-plugin-dependencies) section of this guide, a plugin's dependency on [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) must be declared in <path>plugin.xml</path>.
+As discussed in the [Plugin Dependencies](plugin_compatibility.md#declaring-plugin-dependencies) section of this guide, a plugin's dependency on [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) must be declared in <path>[plugin.xml](plugin_configuration_file.md)</path>.
 When using Android Studio-specific features (APIs), a dependency on `com.intellij.modules.androidstudio` must be declared as shown in the code snippet below.
 Otherwise, if only general IntelliJ Platform features (APIs) are used, then a dependency on `com.intellij.modules.platform` must be declared as discussed in [Plugin Compatibility with IntelliJ Platform Products](plugin_compatibility.md).
 

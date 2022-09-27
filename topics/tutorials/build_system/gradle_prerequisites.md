@@ -124,13 +124,13 @@ tasks {
 
 * Two Gradle plugins are explicitly declared:
   * The [Gradle Java](https://docs.gradle.org/current/userguide/java_plugin.html) plugin.
-  * The [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md).
+  * The [](tools_gradle_intellij_plugin.md).
 * The <control>Group</control> from the [New Project](#create-ide-plugin) wizard is the `project.group` value.
 * The `sourceCompatibility` line is injected to enforce using Java 11 JDK to compile Java sources.
 * The values of the [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) and [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type) properties specify the version and type of the IntelliJ Platform to be used to build the plugin.
 * The empty placeholder list for [plugin dependencies](tools_gradle_intellij_plugin.md#intellij-extension-plugins).
 * The values of the [`patchPluginXml.sinceBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-sincebuild) and [`patchPluginXml.untilBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-untilbuild) properties specifying the minimum and maximum versions of the IDE build the plugin is compatible with.
-* The initial [`signPlugin`](tools_gradle_intellij_plugin.md#signplugin-task) and [`publishPlugin`](tools_gradle_intellij_plugin.md#publishplugin-task) tasks configuration.
+* The initial [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) and [`publishPlugin`](tools_gradle_intellij_plugin.md#tasks-publishplugin) tasks configuration.
   See the [](deployment.md) section for more information.
 
 > Consider using the [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template) which uses the Gradle setup and provides CI setup covered with GitHub Actions.
@@ -139,7 +139,7 @@ tasks {
 
 #### Plugin Gradle Properties and Plugin Configuration File Elements
 
-The Gradle properties `rootProject.name` and `project.group` will not, in general, match the respective [plugin configuration file](plugin_configuration_file.md) <path>plugin.xml</path> elements `<name>` and `<id>`.
+The Gradle properties `rootProject.name` and `project.group` will not, in general, match the respective [plugin configuration file](plugin_configuration_file.md) <path>plugin.xml</path> elements [`<name>`](plugin_configuration_file.md#idea-plugin__name) and [`<id>`](plugin_configuration_file.md#idea-plugin__id).
 There is no IntelliJ Platform-related reason they should as they serve different functions.
 
 The `<name>` element (used as the plugin's display name) is often the same as `rootProject.name`, but it can be more explanatory.

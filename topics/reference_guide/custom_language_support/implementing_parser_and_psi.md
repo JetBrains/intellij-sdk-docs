@@ -20,6 +20,9 @@ The top-level node of the PSI tree for a file needs to implement the [`PsiFile`]
 **Example**:
 [`ParserDefinition`](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertiesParserDefinition.java) for [Properties language plugin](%gh-ic%/plugins/properties)
 
+> To avoid unnecessary classloading when initializing the `ParserDefinition` extension point implementation, all `TokenSet` return values should use constants from dedicated `$Language$TokenSets` class.
+{type="note"}
+
 The PSI's lifecycle is described in more detail in [Fundamentals](fundamentals.md).
 
 The base classes for the PSI implementation, including [`PsiFileBase`](%gh-ic%/platform/core-impl/src/com/intellij/extapi/psi/PsiFileBase.java), the base implementation of [`PsiFile`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiFile.java), and [`ASTWrapperPsiElement`](%gh-ic%/platform/core-impl/src/com/intellij/extapi/psi/ASTWrapperPsiElement.java), the base implementation of [`PsiElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java), are provided by IntelliJ Platform.
@@ -60,6 +63,7 @@ An essential feature of `PsiBuilder` is its handling of whitespace and comments.
 The types of tokens which are treated as whitespace or comments are defined by `getWhitespaceTokens()` and `getCommentTokens()` in [`ParserDefinition`](%gh-ic%/platform/core-api/src/com/intellij/lang/ParserDefinition.java).
 `PsiBuilder` automatically omits whitespace and comment tokens from the stream of tokens it passes to `PsiParser` and adjusts the token ranges of AST nodes so that leading and trailing whitespace tokens are not included in the node.
 
+Most languages will not need to override `getWhitespaceTokens()` which returns the language-agnostic [`TokenSet.WHITE_SPACE`](%gh-ic%/platform/core-api/src/com/intellij/psi/tree/TokenSet.java) by default.
 The token set returned from [`ParserDefinition.getCommentTokens()`](%gh-ic%/platform/core-api/src/com/intellij/lang/ParserDefinition.java) is also used to search for [TODO items](https://www.jetbrains.com/help/idea/using-todo.html).
 
 To better understand the process of building a PSI tree for a simple expression, you can refer to the following diagram:

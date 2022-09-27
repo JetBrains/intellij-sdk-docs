@@ -42,6 +42,8 @@
     <!--
       Only required for versions of the IntelliJ Platform prior to v2019.2.
       Use 'com.intellij.fileTypeFactory' extension point INSTEAD of above 'com.intellij.fileType'.
+      See https://plugins.jetbrains.com/docs/intellij/language-and-filetype.html#register-the-filetype for details.
+
       <fileTypeFactory implementation="org.intellij.sdk.language.SimpleFileTypeFactory"/>
     -->
     <lang.parserDefinition language="Simple" implementationClass="org.intellij.sdk.language.SimpleParserDefinition"/>

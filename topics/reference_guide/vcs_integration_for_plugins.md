@@ -85,7 +85,7 @@ This section describes the different components which comprise a VCS integration
 ### AbstractVcs
 
 This is the main entry point for a VCS plugin, which is used by the IntelliJ Platform to retrieve all other services provided by the plugin.
-Register `AbstractVcs` implementation in `com.intellij.vcs` extension point in <path>plugin.xml</path>, as shown in the following example:
+Register `AbstractVcs` implementation in `com.intellij.vcs` extension point in <path>[plugin.xml](plugin_configuration_file.md)</path>, as shown in the following example:
 
 ```xml
 <idea-plugin>

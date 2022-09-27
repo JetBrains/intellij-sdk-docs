@@ -2,6 +2,14 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Code**: [`SimpleFoldingBuilder`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFoldingBuilder.java)
+
+**Testing**: [](folding_test.md)
+
+</microformat>
+
 <include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
 
 A folding builder identifies the folding regions in the code.
@@ -10,7 +18,7 @@ Rather than the usual practice of using a folding builder to collapse a class, m
 
 ## Define a Folding Builder
 
-The `SimpleFoldingBuilder` replaces usages of properties with their values by default.
+The [`SimpleFoldingBuilder`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFoldingBuilder.java) replaces usages of properties with their values by default.
 Start by subclassing [`FoldingBuilderEx`](%gh-ic%/platform/core-api/src/com/intellij/lang/folding/FoldingBuilderEx.java)
 
 Note that `SimpleFoldingBuilder` also implements [`DumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbAware.java), which means the class is allowed to run in dumb mode, when indices are in background update.

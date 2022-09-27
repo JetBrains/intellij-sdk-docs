@@ -38,7 +38,7 @@ JetBrains Marketplace uses AWS KMS as a signature provider to sign plugin files.
 ## Signing Methods
 
 To provide a suitable method for plugin signing, we have introduced the [Marketplace ZIP Signer](https://github.com/JetBrains/marketplace-zip-signer) library.
-It can be executed using the [`signPlugin`](tools_gradle_intellij_plugin.md#signplugin-task) task provided by the [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) if your project is Gradle-based.
+It can be executed using the [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) task provided by the [](tools_gradle_intellij_plugin.md) if your project is Gradle-based.
 Alternatively, it can be used standalone [CLI Tool](#cli-tool).
 
 Both methods require a private certificate key to be already present.
@@ -56,7 +56,7 @@ openssl genpkey\
 ```
 
 At this point, the generated <path>private.pem</path> content should be provided to the [`signPlugin.privateKey`](tools_gradle_intellij_plugin.md#signplugin-task-privatekey) property.
-Provided password should be specified as the [`signPlugin.password`](tools_gradle_intellij_plugin.md#signplugin-task-password) property in the [`signPlugin`](tools_gradle_intellij_plugin.md#signplugin-task) configuration.
+Provided password should be specified as the [`signPlugin.password`](tools_gradle_intellij_plugin.md#signplugin-task-password) property in the [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) configuration.
 
 As a next step, we'll generate a <path>chain.crt</path> certificate chain with:
 
@@ -73,10 +73,10 @@ The content of the <path>chain.crt</path> file will be used for the [`signPlugin
 
 ### Gradle IntelliJ Plugin
 
-In version `1.x`, the Gradle IntelliJ Plugin provides the [`signPlugin`](tools_gradle_intellij_plugin.md#signplugin-task) task, which will be executed automatically right before the [`publishPlugin`](tools_gradle_intellij_plugin.md#publishplugin-task) task when [`signPlugin.certificateChain`](tools_gradle_intellij_plugin.md#signplugin-task-certificatechain) and [`signPlugin.privateKey`](tools_gradle_intellij_plugin.md#signplugin-task-privatekey) signing properties are specified.
+In version `1.x`, the Gradle IntelliJ Plugin provides the [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) task, which will be executed automatically right before the [`publishPlugin`](tools_gradle_intellij_plugin.md#tasks-publishplugin) task when [`signPlugin.certificateChain`](tools_gradle_intellij_plugin.md#signplugin-task-certificatechain) and [`signPlugin.privateKey`](tools_gradle_intellij_plugin.md#signplugin-task-privatekey) signing properties are specified.
 Otherwise, it'll be skipped.
 
-An example [`signPlugin`](tools_gradle_intellij_plugin.md#signplugin-task) task configuration may look like:
+An example [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) task configuration may look like:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -150,7 +150,7 @@ publishPlugin {
 
 To avoid storing hard-coded values in the project configuration, the most suitable method for local development would be using environment variables provided within the _Run/Debug Configuration_.
 
-To specify secrets like `PUBLISH_TOKEN` and values required for the [`signPlugin`](tools_gradle_intellij_plugin.md#signplugin-task) task, modify your Gradle configuration as follows:
+To specify secrets like `PUBLISH_TOKEN` and values required for the [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) task, modify your Gradle configuration as follows:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -185,7 +185,7 @@ publishPlugin {
 </tab>
 </tabs>
 
-In the <control>Run/Debug Configuration</control> for [`publishPlugin`](tools_gradle_intellij_plugin.md#publishplugin-task) Gradle task, provide <control>Environment Variables</control> using relevant environment variable names:
+In the <control>Run/Debug Configuration</control> for [`publishPlugin`](tools_gradle_intellij_plugin.md#tasks-publishplugin) Gradle task, provide <control>Environment Variables</control> using relevant environment variable names:
 
 ![Run/Debug Configuration Environment Variables](plugin_singing_env_variables.png)
 

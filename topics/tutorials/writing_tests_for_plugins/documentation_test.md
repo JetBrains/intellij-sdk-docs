@@ -2,9 +2,13 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<include src="tests_prerequisites.md" include-id="custom_language_testing_tutorial_header"></include>
+<microformat>
 
-This test will check if the documentation provider, implemented in the [Documentation](documentation_provider.md) section of the Custom Language Support Tutorial, works as expected.
+**Tested Functionality**: [](documentation_provider.md)
+
+</microformat>
+
+<include src="tests_prerequisites.md" include-id="custom_language_testing_tutorial_header"></include>
 
 ## Define a Test Method
 Add the `testDocumentation()` method to the `SimpleCodeInsightTest` class [previously defined](completion_test.md#define-a-test).

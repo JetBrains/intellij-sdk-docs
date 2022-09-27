@@ -20,7 +20,7 @@ org.jetbrains.intellij.buildFeature.selfUpdateCheck=false
 
 ## noSearchableOptionsWarning
 
-When the [`buildSearchableOptions`](tools_gradle_intellij_plugin.md#buildsearchableoptions-task) doesn't produce any results, e.g., when the plugin doesn't implement any [Settings](settings.md), a warning is shown to suggest [disabling the task](tools_gradle_intellij_plugin_faq.md#how-to-disable-building-searchable-options) for better performance.
+When the [`buildSearchableOptions`](tools_gradle_intellij_plugin.md#tasks-buildsearchableoptions) doesn't produce any results, e.g., when the plugin doesn't implement any [Settings](settings.md), a warning is shown to suggest [disabling the task](tools_gradle_intellij_plugin_faq.md#how-to-disable-building-searchable-options) for better performance.
 
 {style="narrow"}
 Default value
@@ -52,11 +52,15 @@ org.jetbrains.intellij.buildFeature.paidPluginSearchableOptionsWarning=false
 
 ## selfUpdateCheck
 
-With this feature, it is possible to check if the currently used Gradle IntelliJ Plugin is outdated and if there's a new release available.
-The plugin performs an update check on every run asking the GitHub Releases page for the redirection URL to the latest version with `HEAD` HTTP request: `https://github.com/jetbrains/gradle-intellij-plugin/releases/latest`
-If the current version is outdated, the plugin will emit a warning presenting the current and the latest versions.
+Checks whether the currently used Gradle IntelliJ Plugin is outdated and if a new release is available.
+The plugin performs an update check on every run asking the GitHub Releases page for the redirection URL
+to the latest version with `HEAD` HTTP request: `https://github.com/jetbrains/gradle-intellij-plugin/releases/latest`.
+
+If the current version is outdated, the plugin will emit a warning with its current and the latest version.
 
 Feature respects the Gradle [`--offline`](https://docs.gradle.org/current/userguide/command_line_interface.html#sec:command_line_execution_options) mode.
+
+> It is strongly suggested to always use the latest available version. Older plugin versions may also not fully support the latest IDE releases.
 
 {style="narrow"}
 Default value

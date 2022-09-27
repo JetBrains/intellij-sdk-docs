@@ -9,13 +9,13 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 ### IntelliJ Platform 2021.3
 
 External code formatter tools API
-: Allows integration of standalone tools like `shfmt`: [External Code Formatter](code_formatting.md#external-code-formatter).
+: Allows integration of standalone tools like `shfmt`: [](code_formatting.md#external-code-formatter).
 
 Simplified API for `CustomComponentAction`
-: Use new method `updateCustomComponent(Component, Presentation)` to synchronize given Presentation and component state.
+: Use new method [`CustomComponentAction.updateCustomComponent(Component, Presentation)`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ex/CustomComponentAction.java) to synchronize given Presentation and component state.
 
 Highlighting API exposes priority range
-: Use `getPriorityRange()` in `AnnotationSession`/`LocalInspectionToolSession` to optimize highlighting for coarse-grained files (e.g., `PsiPlainTextFile` files with single node).
+: Use `getPriorityRange()` in [`AnnotationSession`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/AnnotationSession.java)/[`LocalInspectionToolSession`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionToolSession.java) to optimize highlighting for coarse-grained files (e.g., `PsiPlainTextFile` files with single node).
 
 ## 2021.2
 
@@ -28,7 +28,7 @@ Constructor Injection disabled for Extensions
 : Please obtain necessary components only when needed (logged as ERROR now).
 
 Language Injection
-: Use [`LanguageInjectionContributor`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionContributor.java) (`com.intellij.languageInjectionContributor` EP) and [`LanguageInjectionPerformer`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionPerformer.java) (`com.intellij.languageInjectionPerformer` EP) to customize language injection.
+: Use [`LanguageInjectionContributor`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionContributor.java) (`com.intellij.languageInjectionContributor` EP) and [`LanguageInjectionPerformer`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionPerformer.java) (`com.intellij.languageInjectionPerformer` EP) to customize [language injection](language_injection.md#languageinjectioncontributor-and-languageinjectionperformer).
 
 ### IntelliJ IDEA 2021.2
 
@@ -51,4 +51,4 @@ Ability to override encoding per `VirtualFile`
 ### Java Plugin 2021.1
 
 Testframework: JUnit4 variant for `LightJavaCodeInsightFixtureTestCase`
-: Use `com.intellij.testFramework.fixtures.LightJavaCodeInsightFixtureTestCase4`.
+: Use [`LightJavaCodeInsightFixtureTestCase4`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase4.kt).

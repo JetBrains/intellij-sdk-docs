@@ -1,6 +1,6 @@
 [//]: # (title: Custom UI Themes)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 Beginning with the 2019.1 release, custom UI Themes are supported.
 Custom UI Themes give designers control of the appearance of built-in UI elements.
@@ -8,10 +8,9 @@ The [UI Themes available for download](https://plugins.jetbrains.com/search?head
 
 [Creating a new UI element](user_interface_components.md) for a plugin is distinctly different than Custom UI Themes.
 
-> See this introductory [blog post](https://blog.jetbrains.com/platform/2021/10/themes-in-intellij-based-ides/) for an overview (available in multiple languages).
+> See the [Themes in IntelliJ-based IDEs](https://blog.jetbrains.com/platform/2021/10/themes-in-intellij-based-ides/) blog post for an overview (available in multiple languages).
 >
-> Creating a new UI Theme from scratch is also shown in this webinar:
-> <video href="9J0j-90dC60" title="Busy plugin developers series. Episode 3" width="300"/>
+> The recording of _Busy Plugin Developer. Episode 3_ shows how to [create a new UI Theme from scratch](https://youtu.be/9J0j-90dC60?t=582).
 >
 {type="note"}
 

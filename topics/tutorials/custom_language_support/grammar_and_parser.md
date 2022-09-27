@@ -2,18 +2,23 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Reference**: [](implementing_lexer.md), [](implementing_parser_and_psi.md)
+
+**Code**: [`SimpleTokenType`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleTokenType.java),
+[`SimpleElementType`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleElementType.java)
+</microformat>
+
 <include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
 
 In order for the IntelliJ Platform to parse a Simple Language file, tokens and elements must be defined based on [`IElementType`](%gh-ic%/platform/core-api/src/com/intellij/psi/tree/IElementType.java).
 The Simple Language grammar must also be defined to generate a parser.
 
-**Reference**:
-- [](implementing_lexer.md)
-- [](implementing_parser_and_psi.md)
-
 ## Define a Token Type
 
-Create `SimpleTokenType` in the `org.intellij.sdk.language.psi` package (see the `simple_language_plugin` code sample) by subclassing `IElementType`.
+Create [`SimpleTokenType`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleTokenType.java)
+in the `org.intellij.sdk.language.psi` package by subclassing `IElementType`.
 
 ```java
 ```
@@ -21,7 +26,7 @@ Create `SimpleTokenType` in the `org.intellij.sdk.language.psi` package (see the
 
 ## Define an Element Type
 
-Create the `SimpleElementType` in the `org.intellij.sdk.language.psi` package by subclassing `IElementType`.
+Create the [`SimpleElementType`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleElementType.java) in the `org.intellij.sdk.language.psi` package by subclassing `IElementType`.
 
 ```java
 ```
@@ -29,7 +34,7 @@ Create the `SimpleElementType` in the `org.intellij.sdk.language.psi` package by
 
 ## Define the Grammar
 
-Define a grammar for the Simple Language in the <path>com/intellij/sdk/language/Simple.bnf</path> file.
+Define a grammar for the Simple Language in the <path>org/intellij/sdk/language/Simple.bnf</path> file.
 
 ```bnf
 {
@@ -67,7 +72,7 @@ Note that the `SimpleTypes` class in the `elementTypeHolderClass` attribute abov
 Now that the grammar is defined, generate a parser with PSI classes via <control>Generate Parser Code</control> from the context menu on the <path>Simple.bnf</path> file.
 This step generates a parser and PSI elements in the <path>/src/main/gen</path> folder of the project.
 
-> [Gradle Grammar-Kit Plugin](tools_gradle_grammar_kit_plugin.md) can be used alternatively.
+> [](tools_gradle_grammar_kit_plugin.md) can be used alternatively.
 >
 {type="tip"}
 

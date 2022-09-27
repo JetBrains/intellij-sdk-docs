@@ -3,7 +3,7 @@
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 [GoLand](https://www.jetbrains.com/go/) is an IntelliJ Platform-based product.
-Plugin projects for GoLand can be developed using IntelliJ IDEA with the [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md).
+Plugin projects for GoLand can be developed using IntelliJ IDEA with the [](tools_gradle_intellij_plugin.md).
 
 > Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
 >
@@ -49,7 +49,7 @@ intellij {
 
 The configuration of GoLand plugin projects follows the methods described in [Configuring Plugin Projects using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-plugin-projects-using-the-intellij-idea-product-attribute), and [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml).
 
-The table below summarizes the [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) attributes to set in the plugin project's Gradle build script.
+The table below summarizes the [](tools_gradle_intellij_plugin.md) attributes to set in the plugin project's Gradle build script.
 Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
 To see how these attributes appear in a similar Gradle build script for PhpStorm, see [](dev_alternate_products.md#configuring-gradle-build-script-using-the-intellij-idea-product-attribute).
 
@@ -67,8 +67,8 @@ Select a [version](https://plugins.jetbrains.com/plugin/9568-go/versions) of the
 
 </tabs>
 
-The dependency on the Go plugin APIs must be declared in the <path>plugin.xml</path> file.
-As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` tags must declare `com.intellij.modules.goland`.
+The dependency on the Go plugin APIs must be declared in the <path>[plugin.xml](plugin_configuration_file.md)</path> file.
+As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) tags must declare `com.intellij.modules.goland`.
 The <path>plugin.xml</path> file must also declare a dependency on `com.intellij.modules.platform` as explained in [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml).
 The dependency declaration is illustrated in the <path>plugin.xml</path> snippet below:
 

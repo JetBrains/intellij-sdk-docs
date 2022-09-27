@@ -15,7 +15,7 @@ This document describes adding custom Settings at the Project and Application (o
 
 ## Extension Points for Settings
 
-Custom Settings implementations are declared in a plugin's configuration (<path>plugin.xml</path>) file using one of two extension points (EP), depending on the level of the Settings.
+Custom Settings implementations are declared in the <path>[plugin.xml](plugin_configuration_file.md)</path> file using one of two extension points (EP), depending on the level of the Settings.
 Many [attributes](#settings-declaration-attributes) are shared between the EP declarations.
 
 Application and Project Settings typically provide an implementation based on the [`Configurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/Configurable.java) interface because they do not have runtime dependencies.

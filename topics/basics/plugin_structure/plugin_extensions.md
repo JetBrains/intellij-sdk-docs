@@ -20,7 +20,7 @@ There are more than 1000 extension points available in the platform and the bund
 Additionally, dedicated Extension Point and Listener Lists specific to IDEs are available under _Part VIII — Product Specific_.
 Browse usages inside existing implementations of open-source IntelliJ Platform plugins via [IntelliJ Platform Explorer](https://jb.gg/ipe).
 
-Alternatively (or when using 3rd party extension points), all available extension points for the specified namespace (`defaultExtensionNs`) can be listed using auto-completion inside the `<extensions>` block in <path>plugin.xml</path>.
+Alternatively (or when using 3rd party extension points), all available extension points for the specified namespace (`defaultExtensionNs`) can be listed using auto-completion inside the [`<extensions>`](plugin_configuration_file.md#idea-plugin__extensions) block in <path>[plugin.xml](plugin_configuration_file.md)</path>.
 Use <menupath>View | Quick Documentation</menupath> in the lookup list to access more information about the extension point and implementation (if applicable).
 See [](explore_api.md) for more information and strategies.
 
@@ -30,17 +30,19 @@ See [](explore_api.md) for more information and strategies.
 >
 {type="tip"}
 
-1. Add an `<extensions>` element to your <path>plugin.xml</path> if it's not yet present there.
+1. Add an [`<extensions>`](plugin_configuration_file.md#idea-plugin__extensions) element to your <path>plugin.xml</path> if it's not yet present there.
    Set the `defaultExtensionNs` attribute to one of the following values:
    * `com.intellij`, if your plugin extends the IntelliJ Platform core functionality.
    * `{ID of a plugin}`, if your plugin extends the functionality of another plugin (must configure [Plugin Dependencies](plugin_dependencies.md)).
 2. Add a new child element to the `<extensions>` element.
    The child element's name must match the name of the extension point you want the extension to access.
 3. Depending on the type of the extension point, do one of the following:
-   * If the extension point was declared using the `interface` attribute, for newly added child element, set the `implementation` attribute to the name of the class that implements the specified interface.
-   * If the extension point was declared using the `beanClass` attribute, for newly added child element, set all attributes annotated with the [`@Attribute`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotations in the specified bean class.
+   * If the extension point was declared using the `interface` attribute, set the `implementation` attribute to the name of the class that implements the specified interface.
+   * If the extension point was declared using the `beanClass` attribute, set all properties annotated with the [`@Attribute`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) and [`Tag`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Tag.java) annotations in the specified bean class.
 
    See the [](plugin_extension_points.md#declaring-extension-points) section for details.
+
+   **NB:** When using Kotlin, use `class` and never `object` for all implementations ([more details](kotlin.md#caution)).
 
 To clarify this procedure, consider the following sample section of the <path>plugin.xml</path> file that defines two extensions designed to access the `com.intellij.appStarter` and `com.intellij.projectTemplatesFactory` extension points in the IntelliJ Platform,
 and one extension to access the `another.plugin.myExtensionPoint` extension point in another plugin `another.plugin`:
@@ -92,7 +94,7 @@ Property names matching the following list will resolve to fully qualified class
 - `serviceInterface` / `serviceImplementation`
 - ending with `Class` (case-sensitive)
 
-A required parent type can be specified in the extension point declaration via nested `<with>`:
+A required parent type can be specified in the extension point declaration via nested [`<with>`](plugin_configuration_file.md#idea-plugin__extensionPoints__extensionPoint__with):
 
 ```xml
 <extensionPoint name="myExtension" beanClass="MyExtensionBean">
@@ -104,7 +106,7 @@ A required parent type can be specified in the extension point declaration via n
 
 Property name `language` (or ending in `*Language`, 2020.2+) resolves to all present `Language` IDs.
 
-Similarly, `action` resolves to all registered `<action>` IDs.
+Similarly, `action` resolves to all registered [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) IDs.
 
 Specifying `@org.jetbrains.annotations.Nls` validates a UI `String` capitalization according to the text property `Capitalization` enum value (2019.2 and later).
 

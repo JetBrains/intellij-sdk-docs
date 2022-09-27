@@ -2,16 +2,24 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Reference**: [](find_usages.md)
+
+**Code**: [`SimpleFindUsagesProvider`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFindUsagesProvider.java)
+
+**Testing**: [](find_usages_test.md)
+
+</microformat>
+
 <include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
 
 A `FindUsagesProvider` uses a word scanner to build an index of words in every file.
 A scanner breaks the text into words and defines the context for each word.
 
-**Reference**: [](find_usages.md)
-
 ## Define a Find Usages Provider
 
-The `SimpleFindUsagesProvider` implements [`FindUsagesProvider`](%gh-ic%/platform/indexing-api/src/com/intellij/lang/findUsages/FindUsagesProvider.java).
+The [`SimpleFindUsagesProvider`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFindUsagesProvider.java) implements [`FindUsagesProvider`](%gh-ic%/platform/indexing-api/src/com/intellij/lang/findUsages/FindUsagesProvider.java).
 Using the [`DefaultWordsScanner`](%gh-ic%/platform/indexing-api/src/com/intellij/lang/cacheBuilder/DefaultWordsScanner.java) ensures the scanner implementation is thread-safe.
 See the comments in `FindUsagesProvider` for more information.
 

@@ -2,7 +2,11 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-## Introduction
+<microformat>
+
+**Product Help:** [Menus and toolbars](https://www.jetbrains.com/help/idea/customize-actions-menus-and-toolbars.html)
+
+</microformat>
 
 The actions system allows plugins to add their items to IntelliJ Platform-based IDE menus and toolbars.
 For example, one of the action classes is responsible for the <menupath>File | Open File...</menupath> menu item and the <control>Open...</control> toolbar button.
@@ -111,7 +115,7 @@ An example of inspecting PSI elements is demonstrated in the SDK code sample `ac
 ### Action IDs
 
 Every action and action group has a unique identifier.
-Basing the identifier for a custom action on the fully qualified name of the implementation is the best practice, assuming the package incorporates the `<id>` of the plugin.
+Basing the identifier for a custom action on the fully qualified name of the implementation is the best practice, assuming the package incorporates the [`<id>`](plugin_configuration_file.md#idea-plugin__id) of the plugin.
 Including the plugin identifier in the action identifier should prevent it from clashing with other plugins' actions.
 An action must have a unique identifier for each place.
 It is used in the IDE UI, even though the FQN of the implementation is the same.
@@ -154,27 +158,27 @@ See the [Grouping Actions](grouping_action.md) tutorial for examples of creating
 
 ## Registering Actions
 
-There are two main ways to register an action: either by listing it in the `<actions>` section of a plugin's <path>plugin.xml</path> file or through code.
+There are two main ways to register an action: either by listing it in the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of a plugin's <path>[plugin.xml](plugin_configuration_file.md)</path> file or through code.
 
 ### Registering Actions in plugin.xml
 
-Registering actions in <path>plugin.xml</path> is demonstrated in the following reference examples, which document all elements and attributes used in the `<actions>` section and describe each element's meaning.
+Registering actions in <path>plugin.xml</path> is demonstrated in the following reference examples, which document all elements and attributes used in the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section and describe each element's meaning.
 
 #### Setting the Override-Text Element
 
 Beginning in 2020.1, an alternate version of an action's menu text can be declared for use depending on where an action appears.
-Using the `<override-text>` element, the menu text for an action can be different depending on context: menu location, toolbar, etc.
+Using the [`<override-text>`](plugin_configuration_file.md#idea-plugin__actions__action__override-text) element, the menu text for an action can be different depending on context: menu location, toolbar, etc.
 This is also available for groups in 2020.3 and later.
 
-In the `action` element reference example (below) with `id` attribute `VssIntegration.GarbageCollection`, the default is to use the menu text "Garbage Collector: Collect _Garbage."
-The `add-to-group` element declares the action is added to the <menupath>Tools</menupath> menu.
+In the `<action>` element reference example (below) with `id` attribute `VssIntegration.GarbageCollection`, the default is to use the menu text "Garbage Collector: Collect _Garbage."
+The `<add-to-group>` element declares the action is added to the <menupath>Tools</menupath> menu.
 
-However, the `override-text` element declares that text for `VssIntegration.GarbageCollection` displayed anywhere in the main menu system should be the alternate text "Collect _Garbage."
+However, the `<override-text>` element declares that text for `VssIntegration.GarbageCollection` displayed anywhere in the main menu system should be the alternate text "Collect _Garbage."
 The <menupath>Tools</menupath> menu is part of the main menu, so the displayed menu text is "Collect _Garbage."
 A different context, such as searching for the action using <menupath>Help | Find Action</menupath>, displays the default text "Garbage Collector: Collect _Garbage" to give the user additional information about the action.
 
-A second `override-text` element uses `place` and `use-text-of-place` attributes to declare the same version of the text used in the main menu is also used in the editor popup menu.
-Additional `override-text` elements could be used to specify other places where the main menu text should be used.
+A second `<override-text>` element uses `place` and `use-text-of-place` attributes to declare the same version of the text used in the main menu is also used in the editor popup menu.
+Additional `<override-text>` elements could be used to specify other places where the main menu text should be used.
 
 An example of using `<override-text>` is demonstrated in the [Creating Actions](working_with_custom_actions.md#using-override-text-for-an-action) tutorial.
 
@@ -183,7 +187,7 @@ An example of using `<override-text>` is demonstrated in the [Creating Actions](
 _2020.3_
 Users can locate actions via their name by invoking <menupath>Help | Find Action</menupath>.
 
-To allow using alternative names in search, add one or more `<synonym>` elements inside `<action>` or `<reference>`:
+To allow using alternative names in search, add one or more [`<synonym>`](plugin_configuration_file.md#idea-plugin__actions__action__synonym) elements inside [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) or [`<reference>`](plugin_configuration_file.md#idea-plugin__actions__reference):
 
 ```xml
 <action id="MyAction" text="My Action Name" ...>
@@ -214,7 +218,7 @@ In the case of `action_basics`, only a default localization resource bundle (<pa
 ```
 
 _2020.1_
-If necessary, a dedicated resource bundle to use for actions and groups can be defined on `<actions>`:
+If necessary, a dedicated resource bundle to use for actions and groups can be defined on [`<actions>`](plugin_configuration_file.md#idea-plugin__actions):
 
 ```xml
 <actions resource-bundle="messages.MyActionsBundle">
@@ -234,7 +238,7 @@ For Actions, the key in property files incorporates the action `id` in this spec
 * `action.<action-id>.description=Translated Action Description`
 
 _2020.1_
-If `<override-text>` is used for an action `id`, the key includes the `<place>` attribute:
+If `<override-text>` is used for an action `id`, the key includes the `place` attribute:
 * `action.<action-id>.<place>.text=Place-dependent Translated Action Text`
 
 </tab>
@@ -265,24 +269,13 @@ This, and additional information can also be found by using the [Code Completion
 >
 {type="tip"}
 
+> See the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) element and its children documentation for details.
+>
+{type="note"}
+
 ```xml
 <actions>
 
-  <!--
-  The <action> element defines an action to register. Attributes:
-   - "id" (required) - specifies a unique identifier for the action
-   - "class" (required) - specifies the FQN of the class implementing
-     the action
-   - "text" (required) - specifies the default long-version text to be
-     displayed for the action (tooltip for toolbar button or text for
-     menu item)
-   - "use-shortcut-of" (optional) - specifies the ID of the action
-     whose keyboard shortcut this action will use
-   - "description" (optional) - specifies the text which is displayed
-     in the status bar when the action is focused
-   - "icon" (optional) - specifies the icon which is displayed on
-     the toolbar button or next to the menu item
-  -->
   <action
       id="VssIntegration.GarbageCollection"
       class="com.example.impl.CollectGarbage"
@@ -291,17 +284,10 @@ This, and additional information can also be found by using the [Code Completion
       icon="icons/garbage.png">
 
     <!--
-    The <override-text> element defines an alternate version of the text
-    for the menu action. Attributes:
-     - "text" (required) - defines the text to be displayed for the action
-     - "place" (required) - declares where the alternate text should
-        be used. In this example, any time the action is displayed in
-        the IDE main menu (and submenus), the override-text version should
-        be used.
     The second <override-text> element uses the alternate attribute
-    "use-text-of-place" to define a location (EditorPopup) to use the same
-    text as is used in MainMenu. It is a way to specify the use of
-    an alternate menu text in multiple discrete menu groups.
+    "use-text-of-place" to define a location (EditorPopup) to use the
+    same text as is used in MainMenu. It is a way to specify the use
+    of an alternate menu text in multiple discrete menu groups.
     -->
     <override-text place="MainMenu" text="Collect _Garbage"/>
     <override-text place="EditorPopup" use-text-of-place="MainMenu"/>
@@ -309,41 +295,10 @@ This, and additional information can also be found by using the [Code Completion
     <!-- Provide alternative names for searching action by name -->
     <synonym text="GC"/>
 
-    <!--
-    The <add-to-group> node specifies that the action should be added to an
-    existing group. An action can be added to several groups. Attributes:
-     - "group-id" (required) - specifies the ID of the group to which the
-       action is added. The group must be an implementation of the
-       DefaultActionGroup class.
-     - "anchor" (required) - specifies the position of the action in
-       the relative to other actions. Allowed values: "first", "last",
-       "before", and "after".
-     - "relative-to-action" (mandatory if "anchor" is "before" or "after") -
-       specifies the action before or after which the current action is
-       inserted.
-    -->
     <add-to-group
         group-id="ToolsMenu"
         relative-to-action="GenerateJavadoc"
         anchor="after"/>
-
-    <!--
-    The <keyboard-shortcut> node specifies the keyboard shortcut for
-    the action. An action can have several keyboard shortcuts. Attributes:
-     - "first-keystroke" (required) - specifies the first keystroke of
-       the action. The keystrokes are specified according to the regular
-       Swing rules.
-     - "second-keystroke" (optional) - specifies the second keystroke of
-       the action.
-     - "keymap" (required) - specifies the keymap for which the action
-       is active. IDs of the standard keymaps are defined as constants
-       in the com.intellij.openapi.keymap.KeymapManager class.
-     - "remove" (optional) - shortcut should be removed from the specified
-       action. See the second <keyboard-shortcut> example element below.
-     - "replace-all" (optional) - removes all keyboard and mouse shortcuts
-       from the specified action before adding the specified shortcut.
-       See the third <keyboard-shortcut> example element below.
-    -->
 
     <!-- Add the first and second keystrokes to all keymaps... -->
     <keyboard-shortcut
@@ -358,66 +313,30 @@ This, and additional information can also be found by using the [Code Completion
         second-keystroke="C"
         remove="true"/>
 
-    <!-- The "Mac OS X 10.5+" keymap and its children will have only this
-    keyboard shortcut for this action. -->
+    <!-- The "Mac OS X 10.5+" keymap and its children will have only
+    this keyboard shortcut for this action. -->
     <keyboard-shortcut
         keymap="Mac OS X 10.5+"
         first-keystroke="control alt G"
         second-keystroke="C"
         replace-all="true"/>
 
-    <!--
-    The <mouse-shortcut> node specifies the mouse shortcut for the action.
-    An action can have several mouse shortcuts. Attributes:
-    - "keystroke" (required) - specifies the clicks and modifiers for
-      the action. It is defined as a sequence of words separated by spaces:
-       * mouse buttons: "button1", "button2", "button3"
-       * modifier keys: "shift", "control", "meta", "alt", "altGraph"
-       * button double-click: "doubleClick"
-    - "keymap" (required) - specifies the keymap for which the action is
-      active. IDs of the standard keymaps are defined as constants in
-      the com.intellij.openapi.keymap.KeymapManager class.
-    The <mouse-shortcut> element can also specify "remove" and "replace-all"
-    attributes. See <keyboard-shortcut> description above for details.
-    -->
     <mouse-shortcut
         keymap="$default"
         keystroke="control button3 doubleClick"/>
   </action>
 
   <!--
-  This action declares neither a text nor a description attribute. If it
-  has a resource bundle declared, the text and descriptions will be
-  retrieved based on the action-id incorporated in the key for a translated
-  string.
+  This action declares neither a text nor a description attribute.
+  If it has a resource bundle declared, the text and descriptions
+  will be retrieved based on the action-id incorporated in the key
+  for a translated string.
   -->
   <action
       id="sdk.action.PopupDialogAction"
       class="sdk.action.PopupDialogAction"
       icon="SdkIcons.Sdk_default_icon"/>
 
-  <!--
-  The <group> element defines an action group. The <action>, <group>
-  and <separator> elements defined within it are automatically included
-  in the group. Attributes:
-   - "id" (required) - specifies a unique identifier for the group.
-   - "class" (optional) - specifies the FQN of the class implementing
-     the group. If not specified,
-     com.intellij.openapi.actionSystem.DefaultActionGroup is used.
-   - "text" (optional) - specifies the text of the group (text for the menu
-     item showing the submenu).
-   - "description" (optional) specifies the text which is displayed in the
-     status bar when the group has focus.
-   - "icon" (optional) - specifies the icon which is displayed on
-     the toolbar button or next to the menu group.
-   - "popup" (optional) - specifies how the group is presented in the menu.
-      * "true" - group actions are placed in a submenu
-      * "false" - actions are displayed as a section of the same menu
-        delimited by separators.
-   - "compact" (optional) - specifies whether an action within that group
-     is visible when disabled. Setting compact="true" specifies an action
-     in the group isn't visible unless the action is enabled.
-  -->
   <group
       class="com.example.impl.MyActionGroup"
       id="TestActionGroup"
@@ -486,6 +405,6 @@ Use [`BackAction`](%gh-ic%/platform/platform-api/src/com/intellij/ui/navigation/
 
 ### Runtime Placeholder Action
 
-For actions registered at runtime (e.g., in a tool window toolbar), add an `<action>` entry with
+For actions registered at runtime (e.g., in a tool window toolbar), add an [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) entry with
 [`EmptyAction`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/EmptyAction.java)
 to "reserve" Action ID so they become visible in <menupath>Settings/Preferences | Keymap</menupath>.

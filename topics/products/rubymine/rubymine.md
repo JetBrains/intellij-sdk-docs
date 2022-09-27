@@ -3,7 +3,7 @@
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 [RubyMine](https://www.jetbrains.com/ruby/) is an IntelliJ Platform-based product.
-Plugin projects for RubyMine can be developed using IntelliJ IDEA with the [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md).
+Plugin projects for RubyMine can be developed using IntelliJ IDEA with the [](tools_gradle_intellij_plugin.md).
 
 > Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
 >
@@ -13,7 +13,7 @@ Plugin projects for RubyMine can be developed using IntelliJ IDEA with the [Grad
 
 The configuration of RubyMine plugin projects follows the methods described in [Configuring Plugin Projects using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-plugin-projects-using-the-intellij-idea-product-attribute), and [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml).
 
-The table below summarizes the [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) attributes to set in the Gradle build script for a RubyMine plugin project.
+The table below summarizes the [](tools_gradle_intellij_plugin.md) attributes to set in the Gradle build script for a RubyMine plugin project.
 Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
 To see how these attributes appear in a similar Gradle build script for PhpStorm, see [](dev_alternate_products.md#configuring-gradle-build-script-using-the-intellij-idea-product-attribute).
 
@@ -29,8 +29,8 @@ Product compatibility is determined from the Ruby plugin [version page](https://
 The Ruby plugin isn't bundled with `IU`, so the Ruby plugin version must be explicitly declared to support the target RubyMine (and `IU`) BRANCH.BUILD version.
 The correct Ruby plugin version is also determined from the Ruby plugin version page.
 
-The dependency on the Ruby plugin APIs must be declared in the <path>plugin.xml</path> file.
-As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` elements must contain `com.intellij.modules.ruby`.
+The dependency on the Ruby plugin APIs must be declared in the <path>[plugin.xml](plugin_configuration_file.md)</path> file.
+As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) elements must contain `com.intellij.modules.ruby`.
 The dependency declaration is illustrated in the <path>plugin.xml</path> snippet below:
 
 ```xml

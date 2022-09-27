@@ -2,13 +2,16 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Product Help:** [Code Inspection](https://www.jetbrains.com/idea/webhelp/code-inspection.html), [Creating Custom Inspections](https://www.jetbrains.com/idea/help/creating-custom-inspections.html)
+
+</microformat>
+
 The IntelliJ Platform provides tools designed for static code analysis called _code inspections_, which help the user maintain and clean up code without actually executing it.
 Custom code inspections can be implemented as IntelliJ Platform plugins.
 Examples of the plugin approach are the IntelliJ Platform SDK code samples [inspection_basics](%gh-sdk-samples%/inspection_basics) and [comparing_references_inspection](%gh-sdk-samples%/comparing_references_inspection).
 In addition, the comparing_references_inspection code sample demonstrates implementing a unit test.
-
-You can also create custom inspections through the IntelliJ IDEA user interface.
-See [Code Inspection](https://www.jetbrains.com/idea/webhelp/code-inspection.html) and [Creating Custom Inspections](https://www.jetbrains.com/idea/help/creating-custom-inspections.html) for more information.
 
 See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in the IntelliJ Platform UI Guidelines on naming, writing description, and message texts for inspections.
 
@@ -35,7 +38,7 @@ The overall approach works for inspections aimed at other languages as well.
   For example, the Java/Probable Bugs inspection <control>Object comparison using '==', instead of 'equals()'</control> is very similar to `comparing_references_inspection`.
 * Use the display name text as the [target for a search](https://www.jetbrains.com/help/idea/finding-and-replacing-text-in-project.html) within the _intellij_community_ project.
   This will identify a bundle file if the display name is localized.
-  If it is not localized, the search finds either the plugin configuration (<path>plugin.xml</path>) file where it is an attribute in the inspection description, or the implementation where it is provided by an overridden method.
+  If it is not localized, the search finds either the <path>[plugin.xml](plugin_configuration_file.md)</path> file where it is an attribute in the inspection description, or the implementation where it is provided by an overridden method.
 * In the case of localization, copy the key from the bundle file identified by the search.
   * Use the key text as the target for a search within the _intellij_community_ project.
     This search locates the plugin configuration file that describes the inspection.

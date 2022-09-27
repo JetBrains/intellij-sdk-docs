@@ -9,6 +9,10 @@ In this tutorial we will add support for a [.properties](https://en.wikipedia.or
 > IntelliJ Platform support for custom languages is discussed in more depth in the [Custom Language Support](custom_language_support.md) section.
 > Corresponding parts are linked under **Reference** on top of each page in this tutorial.
 >
+> All relevant code added or changed on a page is linked in **Code**.
+>
+> The accompanying [](writing_tests_for_plugins.md) tutorial covers testing the functionality; corresponding parts are linked under **Testing**.
+>
 {type="tip"}
 
 
@@ -33,6 +37,7 @@ This a step-by-step tutorial, and it requires completing each step, in order:
 * [](folding_builder.md)
 * [](go_to_symbol_contributor.md)
 * [](structure_view_factory.md)
+* [](structure_aware_navbar.md)
 * [](formatter.md)
 * [](code_style_settings.md)
 * [](commenter.md)

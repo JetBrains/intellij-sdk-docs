@@ -2,16 +2,25 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
-
-The structure view can be customized for a specific file type.
-Creating a structure view factory allows showing the structure of any file in a _Structure_ Tool Window for easy navigation between items in the current editor.
+<microformat>
 
 **Reference**: [](structure_view.md)
 
+**Code**: [`SimpleStructureViewFactory`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleStructureViewFactory.java),
+[`SimpleStructureViewModel`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleStructureViewModel.java),
+[`SimpleStructureViewElement`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleStructureViewElement.java)
+
+</microformat>
+
+<include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
+
+The structure view can be customized for a specific file type.
+Creating a structure view factory allows showing the structure of any file in the <control>Structure</control> Tool Window for easy navigation between items in the current editor.
+
 ## Define a Structure View Factory
 
-The structure view factory implements [`PsiStructureViewFactory`](%gh-ic%/platform/editor-ui-api/src/com/intellij/lang/PsiStructureViewFactory.java).
+The [`SimpleStructureViewFactory`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleStructureViewFactory.java)
+implements [`PsiStructureViewFactory`](%gh-ic%/platform/editor-ui-api/src/com/intellij/lang/PsiStructureViewFactory.java).
 The `getStructureViewBuilder()` implementation reuses the IntelliJ Platform class [`TreeBasedStructureViewBuilder`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/structureView/TreeBasedStructureViewBuilder.java).
 At this point the project will not compile until `SimpleStructureViewModel` is [implemented below](#define-a-structure-view-model).
 
@@ -21,7 +30,7 @@ At this point the project will not compile until `SimpleStructureViewModel` is [
 
 ## Define a Structure View Model
 
-The `SimpleStructureViewModel` is created by implementing [`StructureViewModel`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/structureView/StructureViewModel.java), which defines the model for data displayed in the standard structure view.
+The [`SimpleStructureViewModel`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleStructureViewModel.java) is created by implementing [`StructureViewModel`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/structureView/StructureViewModel.java), which defines the model for data displayed in the standard structure view.
 It also extends [`StructureViewModelBase`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/structureView/StructureViewModelBase.java), an implementation that links the model to a text editor.
 
 ```java
@@ -30,7 +39,8 @@ It also extends [`StructureViewModelBase`](%gh-ic%/platform/editor-ui-api/src/co
 
 ## Define a Structure View Element
 
-The `SimpleStructureViewElement` implements [`StructureViewTreeElement`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/structureView/StructureViewTreeElement.java) and [`SortableTreeElement`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/util/treeView/smartTree/SortableTreeElement.java).
+The [`SimpleStructureViewElement`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleStructureViewElement.java)
+implements [`StructureViewTreeElement`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/structureView/StructureViewTreeElement.java) and [`SortableTreeElement`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/util/treeView/smartTree/SortableTreeElement.java).
 The `StructureViewTreeElement` represents an element in the Structure View tree model.
 The `SortableTreeElement` represents an item in a smart tree that allows using text other than the presentable text as a key for alphabetic sorting.
 

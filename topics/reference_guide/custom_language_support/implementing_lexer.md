@@ -70,6 +70,12 @@ The same [`IElementType`](%gh-ic%/platform/core-api/src/com/intellij/psi/tree/IE
 **Example:**
 [Token types](%gh-ic%/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/parsing/PropertiesTokenTypes.java) for [Properties language plugin](%gh-ic%/plugins/properties)
 
+Groups of related types (e.g., keywords) can be defined using [`TokenSet`](%gh-ic%/platform/core-api/src/com/intellij/psi/tree/TokenSet.java).
+All `TokenSet` for a language should be grouped in a dedicated `$Language$TokenSets` class for re-use.
+
+**Example:**
+[`GroovyTokenSets`](%gh-ic%/plugins/groovy/groovy-psi/src/org/jetbrains/plugins/groovy/lang/psi/GroovyTokenSets.java)
+
 ### Embedded Language
 
 An important feature that can be implemented at the lexer level is mixing languages within a file, such as embedding fragments of Java code in some template language.

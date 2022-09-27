@@ -2,6 +2,20 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Reference**: [](references_and_resolve.md), [](psi_references.md)
+
+**Code**: [`SimpleNamedElement`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleNamedElement.java),
+[`SimpleNamedElementImpl`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/impl/SimpleNamedElementImpl.java),
+[`SimpleReference.java`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleReference.java),
+[`SimpleReferenceContributor`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleReferenceContributor.java),
+[`SimpleRefactoringSupportProvider`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleRefactoringSupportProvider.java)
+
+**Testing**: [](completion_test.md), [](rename_test.md), [](reference_test.md),
+
+</microformat>
+
 <include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
 
 The references functionality is one of the most important parts in the implementation of custom language support.
@@ -11,19 +25,17 @@ Resolving references means the ability to go from the usage of an element to its
 >
 {type="note"}
 
-**Reference**: [](references_and_resolve.md), [](psi_references.md)
-
 ## Define a Named Element Class
 
 The classes below show how the Simple Language fulfills the need to implement `PsiNamedElement`.
 
-The `SimpleNamedElement` interface is subclassed from [`PsiNameIdentifierOwner`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiNameIdentifierOwner.java).
+The [`SimpleNamedElement`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleNamedElement.java) interface is subclassed from [`PsiNameIdentifierOwner`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiNameIdentifierOwner.java).
 
 ```java
 ```
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleNamedElement.java"}
 
-The `SimpleNamedElementImpl` class implements the `SimpleNamedElement` interface and extends [`ASTWrapperPsiElement`](%gh-ic%/platform/core-impl/src/com/intellij/extapi/psi/ASTWrapperPsiElement.java).
+The [`SimpleNamedElementImpl`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/impl/SimpleNamedElementImpl.java) class implements the `SimpleNamedElement` interface and extends [`ASTWrapperPsiElement`](%gh-ic%/platform/core-impl/src/com/intellij/extapi/psi/ASTWrapperPsiElement.java).
 
 ```java
 ```
@@ -106,7 +118,7 @@ property ::= (KEY? SEPARATOR VALUE?) | KEY {
 
 ## Define a Reference
 
-Now define a reference class to resolve a property from its usage.
+Now define a reference class [`SimpleReference.java`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleReference.java) to resolve a property from its usage.
 This requires extending [`PsiReferenceBase`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReferenceBase.java) and implementing [`PsiPolyVariantReference`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiPolyVariantReference.java).
 The latter enables the reference to resolve to more than one element or to resolve result(s) for a superset of valid resolve cases.
 
@@ -117,7 +129,7 @@ The latter enables the reference to resolve to more than one element or to resol
 ## Define a Reference Contributor
 
 A reference contributor allows the `simple_language_plugin` to provide references to Simple Language from elements in other languages such as Java.
-Create `SimpleReferenceContributor` by subclassing [`PsiReferenceContributor`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReferenceContributor.java).
+Create [`SimpleReferenceContributor`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleReferenceContributor.java) by subclassing [`PsiReferenceContributor`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReferenceContributor.java).
 Contribute a reference to each usage of a property:
 
 ```java
@@ -150,7 +162,7 @@ The [Rename refactoring](https://www.jetbrains.com/help/idea/rename-refactorings
 ## Define a Refactoring Support Provider
 
 Support for in-place refactoring is specified explicitly in a refactoring support provider.
-Create `SimpleRefactoringSupportProvider` by subclassing [`RefactoringSupportProvider`](%gh-ic%/platform/refactoring/src/com/intellij/lang/refactoring/RefactoringSupportProvider.java)
+Create [`SimpleRefactoringSupportProvider`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleRefactoringSupportProvider.java) by subclassing [`RefactoringSupportProvider`](%gh-ic%/platform/refactoring/src/com/intellij/lang/refactoring/RefactoringSupportProvider.java)
 As long as an element is a `SimpleProperty` it is allowed to be refactored:
 
 ```java

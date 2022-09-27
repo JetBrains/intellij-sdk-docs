@@ -2,6 +2,17 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Reference**: [](documentation.md)
+
+**Code**: [`SimpleDocumentationProvider`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleDocumentationProvider.java),
+[`SimpleUtil`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleUtil.java)
+
+**Testing**: [](documentation_test.md)
+
+</microformat>
+
 <include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
 
 A [`DocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java)
@@ -9,13 +20,11 @@ helps users by showing documentation for symbols like method calls inside the ed
 For the custom language tutorial, we're implementing a version of this extension point (EP) for the Simple Language that shows the key/value,
 the file where it is defined, and any related documentation comment.
 
-**Reference:** [](documentation.md)
-
 ## Implement DocumentationProvider and Register the EP
 
 In the first step, we create an empty class that extends
 [`AbstractDocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/AbstractDocumentationProvider.java)
-and registers it in the <path>plugin.xml</path>.
+and register it in the <path>[plugin.xml](plugin_configuration_file.md)</path>.
 
 ```java
 public class SimpleDocumentationProvider extends AbstractDocumentationProvider { }
@@ -53,7 +62,7 @@ public @Nullable String generateDoc(PsiElement element,
 
 Now, we set a breakpoint in our dummy implementation, debug the plugin, and call <menupath>View | Quick Documentation</menupath>
 for the Simple property both in the Java file and the Simple file.
-We do this by placing the cursor over the key and [pressing the shortcut](https://www.jetbrains.com/help/idea/viewing-reference-information.html#view-quick-docs)
+We do this by placing the cursor over the key and invoking <menupath>View | Quick Documentation</menupath>
 for showing the documentation.
 
 In both cases, we find that the element provided is `SimplePropertyImpl`, which is exactly what we hoped for.

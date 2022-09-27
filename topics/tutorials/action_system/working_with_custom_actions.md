@@ -2,8 +2,6 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-## Introduction
-
 Plugins can add actions to existing IDE menus and toolbars, as well as add new menus and toolbars.
 The IntelliJ Platform calls the actions of plugins in response to user interactions with the IDE.
 However, the actions of a plugin must first be defined and registered with the IntelliJ Platform.
@@ -51,7 +49,7 @@ Before fleshing out those methods, to complete this minimal implementation, `Pop
 
 ## Registering a Custom Action
 
-Actions are registered by declaring them in code or by declaring them in the `<actions>` section of a plugin configuration (<path>plugin.xml</path>) file.
+Actions are registered by declaring them in code or by declaring them in the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of a [plugin configuration file](plugin_configuration_file.md).
 This section describes using IDE tooling - the <control>New Action</control> form - to add a declaration to the <path>plugin.xml</path> file, and then tuning registration attributes manually.
 A more comprehensive explanation of action registration is available in the [](basic_action_system.md#registering-actions) section of this guide.
 
@@ -83,7 +81,7 @@ The fields of the form are:
 
 In this case, `PopupDialogAction` would be available in the <menupath>Tools</menupath> menu, it would be placed at the top, and would have no shortcuts.
 
-After finishing the <control>New Action</control> form and applying the changes, the `<actions>` section of the plugin's <path>plugins.xml</path> file would contain:
+After finishing the <control>New Action</control> form and applying the changes, the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of the plugin's <path>plugins.xml</path> file would contain:
 
 ```xml
 <actions>
@@ -97,8 +95,8 @@ After finishing the <control>New Action</control> form and applying the changes,
 </actions>
 ```
 
-The `<action>` element declares the <control>Action ID</control> (`id`), <control>Class Name</control> (`class`), <control>Name</control> (`text`), and <control>Description</control> from the <control>New Action</control> form.
-The `<add-to-group>` element declares where the action will appear and mirrors the names of entries from the form.
+The [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) element declares the <control>Action ID</control> (`id`), <control>Class Name</control> (`class`), <control>Name</control> (`text`), and <control>Description</control> from the <control>New Action</control> form.
+The [`<add-to-group>`](plugin_configuration_file.md#idea-plugin__actions__action__add-to-group) element declares where the action will appear and mirrors the names of entries from the form.
 
 This declaration is adequate, but adding more attributes is discussed in the next section.
 
@@ -108,7 +106,7 @@ An action declaration can be added manually to the <path>plugin.xml</path> file.
 An exhaustive list of declaration elements and attributes is presented in [](basic_action_system.md#registering-actions-in-pluginxml).
 Attributes are added by selecting them from the <control>New Action</control> form, or by editing the registration declaration directly in the <path>plugin.xml</path> file.
 
-The `<action>` declaration for `PopupDialogAction` in the `action_basics` [plugin.xml](%gh-sdk-samples%/action_basics/src/main/resources/META-INF/plugin.xml) file.
+The [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) declaration for `PopupDialogAction` in the `action_basics` [plugin.xml](%gh-sdk-samples%/action_basics/src/main/resources/META-INF/plugin.xml) file.
 It also contains an attribute for an [`Icon`](work_with_icons_and_images.md) and encloses elements declaring text overrides, keyboard and mouse shortcuts, and to which menu group the action should be added.
 
 The full declaration is:

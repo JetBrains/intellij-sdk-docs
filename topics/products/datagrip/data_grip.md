@@ -3,7 +3,7 @@
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 [DataGrip](https://www.jetbrains.com/datagrip/) is an IntelliJ Platform-based product.
-Plugin projects targeting DataGrip can be developed using IntelliJ IDEA with the [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md).
+Plugin projects targeting DataGrip can be developed using IntelliJ IDEA with the [](tools_gradle_intellij_plugin.md).
 
 > Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
 >
@@ -12,7 +12,7 @@ Plugin projects targeting DataGrip can be developed using IntelliJ IDEA with the
 ## Configuring Plugin Projects Targeting DataGrip
 The configuration of DataGrip plugin projects follows the methods described in [Configuring Plugin Projects using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-plugin-projects-using-the-intellij-idea-product-attribute), and [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml).
 
-The table below summarizes the [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) attributes to set in the plugin project's Gradle build script.
+The table below summarizes the [](tools_gradle_intellij_plugin.md) attributes to set in the plugin project's Gradle build script.
 Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
 To see how these attributes appear in a similar Gradle build script for PhpStorm, see [](dev_alternate_products.md#configuring-gradle-build-script-using-the-intellij-idea-product-attribute).
 
@@ -23,8 +23,8 @@ To see how these attributes appear in a similar Gradle build script for PhpStorm
 | [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) | `DatabaseTools` Dependency on the bundled `DatabaseTools` plugin.                                                                                                                                                     |
 | [`runIde.ideDir`](tools_gradle_intellij_plugin.md#runide-task-idedir)            | Path to locally installed target version of DataGrip. For example, for macOS:<br/><path>/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/datagrip/ch-0/193.5233.139/DataGrip.app/Contents</path>. |
 
-The dependency on the DataGrip APIs must be declared in the <path>plugin.xml</path> file.
-As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` tags must declare `com.intellij.database`.
+The dependency on the DataGrip APIs must be declared in the <path>[plugin.xml](plugin_configuration_file.md)</path> file.
+As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) tags must declare `com.intellij.database`.
 **Note** that DataGrip plugins must also declare a dependency on `com.intellij.modules.platform` because `com.intellij.database` is not recognized as a module.
 Consequently, without the `com.intellij.modules.platform` declaration the plugin is assumed to be a [legacy plugin](plugin_compatibility.md#declaring-plugin-dependencies) and will not load in DataGrip.
 

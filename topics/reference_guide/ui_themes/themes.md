@@ -18,7 +18,7 @@ This approach provides the best user experience because it avoids an IDE restart
 
 UI Themes have several components:
 * A required Theme description (JSON) file in the plugin project's <path>resources</path> folder.
-* A required `themeProvider` declaration in the plugin's <path>plugin.xml</path> file, located in the plugin project's <path>META-INF</path> folder.
+* A required `themeProvider` declaration in the plugin's <path>[plugin.xml](plugin_configuration_file.md)</path> file, located in the plugin project's <path>META-INF</path> folder.
 * An optional Editor Scheme description (XML) file derived from an exported IDE editor scheme.
   This file is located in the plugin project's <path>resources</path> folder.
 * An optional background image file, located in the plugin project's <path>resources</path> folder.
@@ -85,7 +85,7 @@ The value of the `author` key is by default empty.
 The `editorScheme` section will be addressed in [Adding a Custom Editor Scheme](themes_extras.md#adding-a-custom-editor-scheme)
 The `ui` section will be addressed in [Customizing UI Control Colors](themes_customize.md#customizing-ui-controls).
 
-The Wizard also creates a `themeProvider` declaration in the `<extensions>` section of the plugin's <path>plugin.xml</path> file.
+The Wizard also creates a `themeProvider` declaration in the [`<extensions>`](plugin_configuration_file.md#idea-plugin__extensions) section of the plugin's <path>plugin.xml</path> file.
 This declaration binds the Theme description file to a theme provider extension using a generated unique `id`.
 
 ```xml

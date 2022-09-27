@@ -1,6 +1,6 @@
 [//]: # (title: Custom Language Support)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <excerpt>Supporting custom languages overview.</excerpt>
 
@@ -22,7 +22,7 @@ Corresponding steps from the tutorial are linked under the "**Example**" section
 
 The webinar [How We Built Comma, the Raku IDE, on the IntelliJ Platform](https://blog.jetbrains.com/platform/2020/01/webinar-recording-how-we-built-comma-the-raku-ide-on-the-intellij-platform/) offers an excellent introduction as well.
 
-<video href="zDP9uUMYrvs" title="How We Built Comma, the Raku IDE, on the IntelliJ Platform" width="300"/>
+<video href="zDP9uUMYrvs" title="How We Built Comma, the Raku IDE, on the IntelliJ Platform"/>
 
 ## Topics
 

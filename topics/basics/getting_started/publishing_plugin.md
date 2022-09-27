@@ -1,14 +1,13 @@
 [//]: # (title: Publishing a Plugin)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 When your plugin is ready, you can publish it to a plugin repository so that other users can install it.
-You can choose to publish it on the [JetBrains Marketplace](https://plugins.jetbrains.com) or a [custom plugin repository](update_plugins_format.md).
+You can choose to publish it on the [JetBrains Marketplace](https://plugins.jetbrains.com) or a [](custom_plugin_repository.md).
 
 > Please make sure to follow the guidelines from [Plugin Overview page](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html) for an optimal presentation of your plugin on JetBrains Marketplace.
 >
-> This webinar also discusses _5 tips for optimizing JetBrains Marketplace plugin page_
-> <video href="oB1GA9JeeiY" title="Busy plugin developers series. Episode 2" width="300"/>
+> The _Busy Plugin Developers. Episode 2_ discusses [5 tips for optimizing JetBrains Marketplace plugin page](https://youtu.be/oB1GA9JeeiY?t=52) in more detail.
 >
 > See also [](marketing.md) about widgets and badges.
 >
@@ -48,4 +47,4 @@ New versions can be uploaded manually on the plugin's detail page, see [Marketpl
 
 ## Publishing a Plugin to a Custom Plugin Repository
 
-If you plan to publish your plugin to a repository _other than_ the [JetBrains Marketplace](https://plugins.jetbrains.com), please refer to the [Publishing to Custom Plugin Repositories](update_plugins_format.md) documentation.
+If you plan to publish your plugin to a repository _other than_ the [JetBrains Marketplace](https://plugins.jetbrains.com), please refer to the [](custom_plugin_repository.md) documentation.

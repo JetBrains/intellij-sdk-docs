@@ -19,7 +19,7 @@ Project-level topic [`ToolWindowManagerListener`](%gh-ic%/platform/platform-impl
 
 ### Declarative Setup
 
-The tool window is registered in <path>plugin.xml</path> using the `com.intellij.toolWindow` extension point.
+The tool window is registered in <path>[plugin.xml](plugin_configuration_file.md)</path> using the `com.intellij.toolWindow` extension point.
 The extension point attributes specify all the data which is necessary to display the tool window button:
 
 *  The `id` of the tool window - corresponds to the text displayed on the tool window button.

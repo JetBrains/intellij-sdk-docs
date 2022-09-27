@@ -72,7 +72,7 @@ object MyIcons {
 {type="note"}
 
 
-Use these constants inside <path>plugin.xml</path> when specifying `icon` attribute for `<action>` or extension point, as well in [`@Presentation`](%gh-ic%/platform/analysis-api/src/com/intellij/ide/presentation/Presentation.java) `icon` attribute.
+Use these constants inside <path>[plugin.xml](plugin_configuration_file.md)</path> when specifying `icon` attribute for [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) or extension point, as well in [`@Presentation`](%gh-ic%/platform/analysis-api/src/com/intellij/ide/presentation/Presentation.java) `icon` attribute.
 Note that the package name `icons` will be automatically prefixed and must not be specified.
 
 ```xml
@@ -177,3 +177,7 @@ Each frame represents an icon, and a delay until the next frame.
 
 If you want to show somewhere that there is a long process, you can use the predefined `AnimatedIcon.Default` loader icon.
 This icon has a larger `AnimatedIcon.Big` version.
+
+## Icon Tooltips
+
+Register resource bundle via `com.intellij.iconDescriptionBundle` extension point to provide tooltips automatically for all [`SimpleColoredComponent`](%gh-ic%/platform/platform-api/src/com/intellij/ui/SimpleColoredComponent.java) renderers.

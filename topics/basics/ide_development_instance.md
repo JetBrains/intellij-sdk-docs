@@ -1,4 +1,4 @@
-[//]: # (title: IDE Development Instances)
+[//]: # (title: IDE Development Instance)
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
@@ -27,7 +27,6 @@ For example, if a plugin is developed against the Java 8 SE Development Kit 8 fo
 * Open the [Releases](https://github.com/JetBrains/JetBrainsRuntime/releases) page to access all releases.
 * Select the package name corresponding to the platform and SDK version.
   In this case, the package name is `jbrsdk8-osx-x64` for **J**et**B**rains **R**untime _SDK_ version 8, macOS x64 hardware.
-* On the macOS package page of the JetBrains Bintray site, select the **Files** menu.
 * In the list of files, find the name that satisfies:
   * The version and build number match the JDK used to build the plugin project.
     For example, `jbrx-8u252-osx-x64` matches the Java 8 JDK, build 252: `jdk-8u252-macosx-x64`.
@@ -87,9 +86,9 @@ Enabled by default for target platform 2020.2 or later.
 
 Set property `intellij.autoReloadPlugins` in [`runIde`](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task to `true` for enabling it in earlier platform versions or `false` to disable it explicitly, see [](tools_gradle_intellij_plugin_faq.md#how-to-disable-automatic-reload-of-dynamic-plugins).
 
-After starting the sandbox IDE instance, run [`buildPlugin`](tools_gradle_intellij_plugin.md#buildplugin-task) task after modifications in the plugin project and switch focus back to sandbox instance to trigger reload.
+After starting the sandbox IDE instance, run [`buildPlugin`](tools_gradle_intellij_plugin.md#tasks-buildplugin) task after modifications in the plugin project and switch focus back to sandbox instance to trigger reload.
 
-> [`buildSearchableOptions`](tools_gradle_intellij_plugin.md#buildsearchableoptions-task) task must currently be [disabled explicitly](tools_gradle_intellij_plugin_faq.md#how-to-disable-building-searchable-options) to workaround _Only one instance of IDEA can be run at a time_ problem.
+> [`buildSearchableOptions`](tools_gradle_intellij_plugin.md#tasks-buildsearchableoptions) task must currently be [disabled explicitly](tools_gradle_intellij_plugin_faq.md#how-to-disable-building-searchable-options) to workaround _Only one instance of IDEA can be run at a time_ problem.
 >
 {type="warning"}
 
@@ -112,7 +111,7 @@ This information is stored in a different location than for the [installed IDE i
 <tabs group="project-type">
 <tab title="Gradle" group-key="gradle">
 
-For Gradle-based plugins, the default Sandbox Home location is defined by the [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md).
+For Gradle-based plugins, the default Sandbox Home location is defined by the [](tools_gradle_intellij_plugin.md).
 See [Configuring a Gradle Plugin Project](gradle_prerequisites.md) for more information about specifying a Sandbox Home location.
 
 The default Sandbox Home location is:

@@ -2,20 +2,29 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Reference**: [](code_formatting.md)
+
+**Code**: [`SimpleBlock`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleBlock.java),
+[`SimpleFormattingModelBuilder`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFormattingModelBuilder.java)
+
+**Testing**: [](formatter_test.md)
+
+</microformat>
+
 <include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
 
 The IntelliJ Platform includes a powerful framework for implementing formatting for custom languages.
 A formatter enables reformatting code automatically based on code style settings.
 The formatter controls spaces, indents, wrap, and alignment.
 
-**Reference**: [](code_formatting.md)
-
 ## Define a Block
 
 The formatting model represents the formatting structure of a file as a tree of [`Block`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/Block.java) objects, with associated indent, wrap, alignment and spacing settings.
 The goal is to cover each PSI element with such a block.
 Since each block builds its children's blocks, it can generate extra blocks or skip any PSI elements.
-Define `SimpleBlock` based on [`AbstractBlock`](%gh-ic%/platform/code-style-impl/src/com/intellij/psi/formatter/common/AbstractBlock.java).
+Define [`SimpleBlock`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleBlock.java) based on [`AbstractBlock`](%gh-ic%/platform/code-style-impl/src/com/intellij/psi/formatter/common/AbstractBlock.java).
 
 ```java
 ```
@@ -36,7 +45,7 @@ foo = bar
 ```
 </compare>
 
-Create `SimpleFormattingModelBuilder` by implementing [`FormattingModelBuilder`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/FormattingModelBuilder.java).
+Create [`SimpleFormattingModelBuilder`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFormattingModelBuilder.java) by implementing [`FormattingModelBuilder`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/FormattingModelBuilder.java).
 
 ```java
 ```

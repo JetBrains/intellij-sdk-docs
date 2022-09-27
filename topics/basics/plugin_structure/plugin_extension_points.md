@@ -17,10 +17,10 @@ There are two types of extension points:
 
 ## Declaring Extension Points
 
-You can declare extensions and extension points in the plugin configuration file <path>plugin.xml</path>, within the `<extensions>` and `<extensionPoints>` sections.
+You can declare extensions and extension points in the plugin configuration file <path>[plugin.xml](plugin_configuration_file.md)</path>, within the [`<extensions>`](plugin_configuration_file.md#idea-plugin__extensions) and [`<extensionPoints>`](plugin_configuration_file.md#idea-plugin__extensionPoints) sections.
 
 To declare extension points in your plugin, add an `<extensionPoints>` section to your <path>plugin.xml</path>.
-Then insert a child element `<extensionPoint>` that defines the extension point name and the name of a bean class or an interface that is allowed to extend the plugin functionality in the `name`, `beanClass` and `interface` attributes, respectively.
+Then insert a child element [`<extensionPoint>`](plugin_configuration_file.md#idea-plugin__extensionPoints__extensionPoint) that defines the extension point name and the name of a bean class or an interface that is allowed to extend the plugin functionality in the `name`, `beanClass` and `interface` attributes, respectively.
 
 <path>myPlugin/META-INF/plugin.xml</path>
 
@@ -42,7 +42,7 @@ Then insert a child element `<extensionPoint>` that defines the extension point 
 ```
 
 The `name` attribute assigns a unique name for this extension point.
-Its fully qualified name required in [Using Extension Points](#using-extension-points) is built by prefixing `<id>` + `.`: `my.plugin.myExtensionPoint1` and `my.plugin.myExtensionPoint2`.
+Its fully qualified name required in [Using Extension Points](#using-extension-points) is built by prefixing the plugin [`<id>`](plugin_configuration_file.md#idea-plugin__id) as "namespace" followed by `.` separator: `my.plugin.myExtensionPoint1` and `my.plugin.myExtensionPoint2`.
 
 The `beanClass` attribute sets a bean class that specifies one or several properties annotated with the [`@Attribute`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotation.
 Note that bean classes do not follow the JavaBean standard.
@@ -133,7 +133,7 @@ public class MyExtensionUsingService {
 }
 ```
 
-A gutter icon for the `ExtensionPointName` declaration allows navigating to the corresponding `<extensionPoint>` declaration in <path>plugin.xml</path>.
+A gutter icon for the `ExtensionPointName` declaration allows navigating to the corresponding [`<extensionPoint>`](plugin_configuration_file.md#idea-plugin__extensionPoints__extensionPoint) declaration in <path>plugin.xml</path>.
 
 ## Dynamic Extension Points
 To support [Dynamic Plugins](dynamic_plugins.md) (2020.1 and later), an extension point must adhere to specific usage rules:

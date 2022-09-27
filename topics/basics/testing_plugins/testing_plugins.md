@@ -26,7 +26,7 @@ See also [](testing_faq.md#how-to-replace-componentservice-in-tests) and [](test
 ### UI Tests
 
 Please see the dedicated [intellij-ui-test-robot](https://github.com/JetBrains/intellij-ui-test-robot) library.
-It is fully integrated with Gradle-based setup via [`runIdeForUiTests`](tools_gradle_intellij_plugin.md#runideforuitests-task) task.
+It is fully integrated with Gradle-based setup via [`runIdeForUiTests`](tools_gradle_intellij_plugin.md#tasks-runideforuitests) task.
 
 Please do not use <path>platform/testGuiFramework</path> it is reserved for internal use.
 

@@ -1,6 +1,6 @@
 [//]: # (title: Gradle IntelliJ Plugin)
 
-<toc-settings depth="1" mode="tree" structure-elements="chapter"/>
+<toc-settings depth="2" mode="tree" structure-elements="chapter"/>
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
@@ -118,7 +118,29 @@ pluginManagement {
 </tabs>
 
 
-## IntelliJ Extension
+### Configuration Cache
+The Gradle build system brings the [Configuration Cache](https://docs.gradle.org/current/userguide/configuration_cache.html) feature that helps improve the build performance by caching the configuration phase.
+
+The Gradle IntelliJ Plugin is fully compatible with this mechanism and can be utilized by manual enabling of the Configuration Cache feature with the `--configuration-cache` flag, like:
+
+```shell
+gradle buildPlugin --configuration-cache
+```
+
+or with enabling it in the <path>gradle.properties</path> file:
+
+```properties
+org.gradle.unsafe.configuration-cache = true
+```
+
+See [Using the configuration cache](https://docs.gradle.org/current/userguide/configuration_cache.html#config_cache:usage) in the Gradle documentation for more details.
+
+
+## Configuration
+
+### IntelliJ Extension
+{id="configuration-intellij-extension"}
+
 After the Gradle IntelliJ Plugin is applied, the `intellij` extension can be used to configure the plugin and common settings of the provided tasks.
 
 It is mandatory to specify at least the [`intellij.version`](#intellij-extension-version) property.
@@ -152,7 +174,7 @@ intellij {
 </tabs>
 
 
-### version
+#### version
 {id="intellij-extension-version"}
 
 All available JetBrains IDEs versions can be found at [IntelliJ Artifacts](intellij_artifacts.md) page.
@@ -179,7 +201,7 @@ Acceptable values
 {type="tip"}
 
 
-### type
+#### type
 {id="intellij-extension-type"}
 
 The type of the IntelliJ-based IDE distribution.
@@ -202,12 +224,13 @@ Acceptable values
 - `PS` - [PhpStorm](phpstorm.md)
 - `RD` - [Rider](rider.md)
 - `GO` - [GoLand](goland.md)
+- `AI` - [Android Studio](android_studio.md)
 - `JPS` - JPS-only
 - `GW` - Gateway
 
 To build against IDEs not supported directly by `type`, please see their corresponding page in _Part VIII — Product Specific_.
 
-### pluginName
+#### pluginName
 {id="intellij-extension-pluginname"}
 
 The plugin name part used in the generated ZIP distribution: <path>build/distributions/PluginName-1.0.0.zip</path> and name of the plugin directory in the sandbox directory.
@@ -220,7 +243,7 @@ Default value
 : `${project.name}`
 
 
-### localPath
+#### localPath
 {id="intellij-extension-localpath"}
 
 The path to the locally installed IDE distribution that should be used to build the plugin.
@@ -244,7 +267,7 @@ Samples
 {type="warning"}
 
 
-### localSourcesPath
+#### localSourcesPath
 {id="intellij-extension-localsourcespath"}
 
 The path to local archive with IDE sources.
@@ -258,7 +281,7 @@ Default value
 : `null`
 
 
-### plugins
+#### plugins
 {id="intellij-extension-plugins"}
 
 The list of bundled IDE plugins and plugins from [JetBrains Marketplace](https://plugins.jetbrains.com) or configured [`intellij.pluginsRepositories`](#intellij-extension-pluginsrepositories).
@@ -269,7 +292,7 @@ Notes:
 - For plugins from [JetBrains Marketplace](https://plugins.jetbrains.com), use format `pluginId:version`.
 - For bundled plugins, version must be omitted: e.g. `org.intellij.groovy`.
 - For subprojects, use project reference `project(':subproject')`.
-- If you need to refer plugin's classes from your project, you also have to define a dependency in your <path>plugin.xml</path> file, see [](plugin_dependencies.md).
+- If you need to refer plugin's classes from your project, you also have to define a dependency in your <path>[plugin.xml](plugin_configuration_file.md)</path> file, see [](plugin_dependencies.md).
 
 {style="narrow"}
 Type
@@ -290,7 +313,7 @@ Acceptable values
     - `project(":plugin-subproject")`
 
 
-### updateSinceUntilBuild
+#### updateSinceUntilBuild
 {id="intellij-extension-updatesinceuntilbuild"}
 
 Enables patching <path>[plugin.xml](plugin_configuration_file.md)</path> with the values of [`patchPluginXml.sinceBuild`](#patchpluginxml-task-sincebuild) and [`patchPluginXml.untilBuild`](#patchpluginxml-task-untilbuild) properties.
@@ -303,7 +326,7 @@ Default value
 : `true`
 
 
-### sameSinceUntilBuild
+#### sameSinceUntilBuild
 {id="intellij-extension-samesinceuntilbuild"}
 
 Enables patching <path>[plugin.xml](plugin_configuration_file.md)</path> with the [`patchPluginXml.untilBuild`](#patchpluginxml-task-untilbuild) using value of [`patchPluginXml.sinceBuild`](#patchpluginxml-task-sincebuild) with `*` wildcard, like `sinceBuild.*`, e.g., `221.*`.
@@ -320,7 +343,7 @@ Default value
 : `false`
 
 
-### instrumentCode
+#### instrumentCode
 {id="intellij-extension-instrumentcode"}
 
 Enables the instrumentation of Java classes with [nullability](https://www.jetbrains.com/help/idea/nullable-and-notnull-annotations.html) assertions and compilation of forms created by [IntelliJ GUI Designer](https://www.jetbrains.com/help/idea/gui-designer-basics.html).
@@ -333,7 +356,7 @@ Default value
 : `true`
 
 
-### sandboxDir
+#### sandboxDir
 {id="intellij-extension-sandboxdir"}
 
 The path of [sandbox directory](ide_development_instance.md#the-development-instance-sandbox-directory) that is used for running IDE with developed plugin.
@@ -346,7 +369,7 @@ Default value
 : `${project.buildDir}/idea-sandbox`
 
 
-### intellijRepository
+#### intellijRepository
 {id="intellij-extension-intellijrepository"}
 
 The IntelliJ-based IDE distributions repository URL.
@@ -359,14 +382,15 @@ Default value
 : `https://cache-redirector.jetbrains.com/www.jetbrains.com/intellij-repository`
 
 
-### pluginsRepositories
+#### pluginsRepositories
 {id="intellij-extension-pluginsrepositories"}
 
 Configures repositories for downloading plugin dependencies.
+See [Maven Interface](https://plugins.jetbrains.com/docs/marketplace/maven-interface.html) for details on Maven repository format.
 
 {style="narrow"}
 Type
-: `PluginsRespositoryConfiguration`
+: `PluginsRepositoryConfiguration`
 
 Default value
 : `pluginsRepositories { marketplace() }`
@@ -375,11 +399,11 @@ Acceptable values
 :
 - `marketplace()` - use Maven repository with plugins listed in [JetBrains Marketplace](https://plugins.jetbrains.com)
 - `maven(repositoryUrl)` - use custom Maven repository with plugins
-- `maven { repositoryUrl }` - use custom Maven repository with plugins where you can configure additional parameters (credentials, authentication and etc.)
-- `custom(pluginsXmlUrl)` - use [custom plugin repository](update_plugins_format.md)
+- `maven { repositoryUrl }` - use custom Maven repository with plugins where you can configure additional parameters (credentials, authentication, etc.)
+- `custom(pluginsXmlUrl)` - use [](custom_plugin_repository.md)
 
 
-### jreRepository
+#### jreRepository
 {id="intellij-extension-jrerepository"}
 
 URL of repository for downloading [JetBrains Runtime](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance).
@@ -392,7 +416,7 @@ Default value
 : `null`
 
 
-### ideaDependencyCachePath
+#### ideaDependencyCachePath
 {id="intellij-extension-ideadependencycachepath"}
 
 Path to the directory where IDE dependency cache is stored.
@@ -406,7 +430,7 @@ Default value
 : `null`
 
 
-### downloadSources
+#### downloadSources
 {id="intellij-extension-downloadsources"}
 
 Enables downloading the IntelliJ Platform sources.
@@ -420,7 +444,7 @@ Default value
 : `!System.getenv().containsKey("CI")`
 
 
-### configureDefaultDependencies
+#### configureDefaultDependencies
 {id="intellij-extension-configuredefaultdependencies"}
 
 Enables configuration of the default IntelliJ Platform dependencies in the current project.
@@ -434,7 +458,7 @@ Default value
 : `true`
 
 
-### extraDependencies
+#### extraDependencies
 {id="intellij-extension-extradependencies"}
 
 Configures extra dependency artifacts from the IntelliJ repository.
@@ -448,15 +472,20 @@ Default value
 : `[]`
 
 
-## buildPlugin Task
+## Tasks
+
+
+### buildPlugin
+{id="tasks-buildplugin"}
+
 Assembles a plugin and prepares ZIP archive for [deployment](deployment.md).
 
-### archiveBaseName
+#### archiveBaseName
 {id="buildplugin-task-archivebasename"}
 
 The base name of the ZIP archive.
 
-This task is preconfigured automatically and takes the output artifacts of [`prepareSandbox`](#preparesandbox-task) and [`jarSearchableOptions`](#jarsearchableoptions-task) tasks as an input.
+This task is preconfigured automatically and takes the output artifacts of [`prepareSandbox`](#tasks-preparesandbox) and [`jarSearchableOptions`](#tasks-jarsearchableoptions) tasks as an input.
 
 {style="narrow"}
 Type
@@ -466,11 +495,13 @@ Default value
 : `${prepareSandboxTask.pluginName}`
 
 
-## buildSearchableOptions Task
+### buildSearchableOptions
+{id="tasks-buildsearchableoptions"}
+
 Builds an index of UI components (searchable options) for the plugin.
 This task runs a headless IDE instance to collect all the available options provided by the plugin's [](settings.md).
 
-Note, that this is a [`runIde`](#runide-task)-based task with predefined arguments and all properties of the [`runIde`](#runide-task) task are also applied to [`buildSearchableOptions`](#buildsearchableoptions-task) tasks.
+Note, that this is a [`runIde`](#tasks-runide)-based task with predefined arguments and all properties of the [`runIde`](#tasks-runide) task are also applied to [`buildSearchableOptions`](#tasks-buildsearchableoptions) tasks.
 
 > If your plugin doesn't implement custom settings, it is recommended to [disable it](tools_gradle_intellij_plugin_faq.md#how-to-disable-building-searchable-options).
 > See also [`noSearchableOptionsWarning`](tools_gradle_intellij_plugin_build_features.md#nosearchableoptionswarning) build feature.
@@ -478,7 +509,7 @@ Note, that this is a [`runIde`](#runide-task)-based task with predefined argumen
 {type="tip"}
 
 
-### outputDir
+#### outputDir
 {id="buildsearchableoptions-task-outputdir"}
 
 {style="narrow"}
@@ -489,12 +520,14 @@ Default value
 : `build/searchableOptions`
 
 
-## downloadRobotServerPlugin Task
+### downloadRobotServerPlugin
+{id="tasks-downloadrobotserverplugin"}
+
 Downloads `robot-server` plugin.
-The `robot-server` plugin is required for running the UI tests using the [`runIdeForUiTests`](#runideforuitests-task) task.
+The `robot-server` plugin is required for running the UI tests using the [`runIdeForUiTests`](#tasks-runideforuitests) task.
 
 
-### version
+#### version
 {id="downloadrobotserverplugin-task-version"}
 
 The version of the Robot Server Plugin to download.
@@ -507,7 +540,7 @@ Default value
 : `LATEST`
 
 
-### pluginArchive
+#### pluginArchive
 {id="downloadrobotserverplugin-task-pluginarchive"}
 
 The Robot Server Plugin archive, downloaded by default to the [Gradle cache](https://docs.gradle.org/current/userguide/directory_layout.html#dir:gradle_user_home).
@@ -520,7 +553,7 @@ Default value
 : [Gradle cache](https://docs.gradle.org/current/userguide/directory_layout.html#dir:gradle_user_home)
 
 
-### outputDir
+#### outputDir
 {id="downloadrobotserverplugin-task-outputdir"}
 
 Location of the extracted archive.
@@ -533,11 +566,13 @@ Default value
 : `build/robotServerPlugin`
 
 
-## instrumentCode Task
+### instrumentCode
+{id="tasks-instrumentcode"}
+
 The following attributes help you to tune instrumenting behaviour in `instrumentCode { ... }` block.
 
 
-### compilerVersion
+#### compilerVersion
 {id="instrumentcode-task-compilerversion"}
 
 A version of instrumenting compiler.
@@ -551,11 +586,13 @@ Default value
 : Build number of the IDE dependency
 
 
-## jarSearchableOptions Task
+### jarSearchableOptions
+{id="tasks-jarsearchableoptions"}
+
 Creates a JAR file with searchable options to be distributed with the plugin.
 
 
-### outputDir
+#### outputDir
 {id="jarsearchableoptions-task-outputdir"}
 
 The output directory where the JAR file will be created.
@@ -568,7 +605,7 @@ Default value
 : `build/searchableOptions`
 
 
-### pluginName
+#### pluginName
 {id="jarsearchableoptions-task-pluginname"}
 
 The name of the plugin.
@@ -581,7 +618,7 @@ Default value
 : [`intellij.pluginName`](#intellij-extension-pluginname)
 
 
-### sandboxDir
+#### sandboxDir
 {id="jarsearchableoptions-task-sandboxdir"}
 
 The sandbox output directory.
@@ -591,23 +628,25 @@ Type
 : `String`
 
 Default value
-: [`prepareSandbox.outputDir`](#preparesandbox-task)
+: [`prepareSandbox.outputDir`](#tasks-preparesandbox)
 
 
-## listProductsReleases Task
+### listProductsReleases
+{id="tasks-listproductsreleases"}
+
 List all available IntelliJ-based IDE releases with their updates.
-The result list is used for testing the plugin with Plugin Verifier using the [`runPluginVerifier`](#runpluginverifier-task) task.
+The result list is used for testing the plugin with Plugin Verifier using the [`runPluginVerifier`](#tasks-runpluginverifier) task.
 
 Plugin Verifier requires a list of the IDEs that will be used for verifying your plugin build against.
 The availability of the releases may change in time, i.e., due to security issues in one version – which will be later removed and replaced with an updated IDE release.
 
-With the [`listProductsReleases`](#listproductsreleases-task) task, it is possible to list the currently available IDEs matching given conditions, like platform types, since/until release versions.
+With the [`listProductsReleases`](#tasks-listproductsreleases) task, it is possible to list the currently available IDEs matching given conditions, like platform types, since/until release versions.
 Such a list is fetched from the remote updates file: `https://www.jetbrains.com/updates/updates.xml`, parsed and filtered considering the specified [`listProductsReleases.types`](#listproductsreleases-task-types), [`listProductsReleases.sinceVersion`](#listproductsreleases-task-sinceversion), [`listProductsReleases.untilVersion`](#listproductsreleases-task-untilversion) (or [`listProductsReleases.sinceBuild`](#listproductsreleases-task-sincebuild), [`listProductsReleases.untilBuild`](#listproductsreleases-task-untilbuild)) properties.
 
-The result list is stored within the [`listProductsReleases.outputFile`](#listproductsreleases-task-outputfile), which is used as a source for the Plugin Verifier if the [`runPluginVerifier`](#runpluginverifier-task) task has no [`runPluginVerifier.ideVersions`](#runpluginverifier-task-ideversions) property specified, the output of the [`listProductsReleases`](#listproductsreleases-task) task is used.
+The result list is stored within the [`listProductsReleases.outputFile`](#listproductsreleases-task-outputfile), which is used as a source for the Plugin Verifier if the [`runPluginVerifier`](#tasks-runpluginverifier) task has no [`runPluginVerifier.ideVersions`](#runpluginverifier-task-ideversions) property specified, the output of the [`listProductsReleases`](#tasks-listproductsreleases) task is used.
 
 
-### updatesFile
+#### updatesFile
 {id="listproductsreleases-task-updatesfile"}
 
 Path to the products releases update file.
@@ -620,7 +659,7 @@ Default value
 : [Gradle cache](https://docs.gradle.org/current/userguide/directory_layout.html#dir:gradle_user_home)
 
 
-### types
+#### types
 {id="listproductsreleases-task-types"}
 
 List of types of IDEs that will be listed in results.
@@ -633,7 +672,7 @@ Default value
 : [`intellij.type`](#intellij-extension-type)
 
 
-### sinceVersion
+#### sinceVersion
 {id="listproductsreleases-task-sinceversion"}
 
 Lower boundary of the listed results in product marketing version format, e.g., `2020.2.1`.
@@ -647,7 +686,7 @@ Default value
 : [`intellij.version`](#intellij-extension-version)
 
 
-### untilVersion
+#### untilVersion
 {id="listproductsreleases-task-untilversion"}
 
 Upper boundary of the listed results in product marketing version format, e.g., `2020.2.1`.
@@ -661,7 +700,7 @@ Default value
 : `null`
 
 
-### sinceBuild
+#### sinceBuild
 {id="listproductsreleases-task-sincebuild"}
 
 Lower boundary of the listed results in build number format, like `192`.
@@ -674,7 +713,7 @@ Default value
 : [`intellij.version`](#intellij-extension-version)
 
 
-### untilBuild
+#### untilBuild
 {id="listproductsreleases-task-untilbuild"}
 
 Upper boundary of the listed results in build number format, like `192`.
@@ -687,7 +726,7 @@ Default value
 : `null`
 
 
-### releaseChannels
+#### releaseChannels
 {id="listproductsreleases-task-releasechannels"}
 
 Release channels that product updates will be filtered with.
@@ -700,7 +739,7 @@ Default value
 : `EnumSet.allOf(ListProductsReleasesTask.Channel)`
 
 
-### outputFile
+#### outputFile
 {id="listproductsreleases-task-outputfile"}
 
 Path to the file, where the output list will be stored.
@@ -713,7 +752,7 @@ Default value
 : `File("${project.buildDir}/listProductsReleases.txt")`
 
 
-### androidStudioUpdatePath
+#### androidStudioUpdatePath
 {id="listproductsreleases-task-androidstudioupdatepath"}
 
 For [Android Studio releases](android_studio_releases_list.md), a separated storage for the updates is used.
@@ -726,7 +765,9 @@ Default value
 : `https://raw.githubusercontent.com/JetBrains/intellij-sdk-docs/main/topics/_generated/android_studio_releases.xml`
 
 
-## patchPluginXml Task
+### patchPluginXml
+{id="tasks-patchpluginxml"}
+
 Patches <path>[plugin.xml](plugin_configuration_file.md)</path> files with values provided to the task.
 
 > To maintain and generate an up-to-date changelog, try using [Gradle Changelog Plugin](https://github.com/JetBrains/gradle-changelog-plugin).
@@ -734,7 +775,7 @@ Patches <path>[plugin.xml](plugin_configuration_file.md)</path> files with value
 {type="tip"}
 
 
-### destinationDir
+#### destinationDir
 {id="patchpluginxml-task-destinationdir"}
 
 The directory where the patched <path>[plugin.xml](plugin_configuration_file.md)</path> will be written.
@@ -747,7 +788,7 @@ Default value
 : `${project.buildDir}/patchedPluginXmlFiles`
 
 
-### pluginXmlFiles
+#### pluginXmlFiles
 {id="patchpluginxml-task-pluginxmlfiles"}
 
 The list of <path>[plugin.xml](plugin_configuration_file.md)</path> files to patch.
@@ -760,10 +801,10 @@ Default value
 : auto-discovered from the project
 
 
-### pluginDescription
+#### pluginDescription
 {id="patchpluginxml-task-plugindescription"}
 
-The description of the plugin used in the `<description>` tag.
+The description of the plugin used in the [`<description>`](plugin_configuration_file.md#idea-plugin__description) tag.
 
 {style="narrow"}
 Type
@@ -773,10 +814,10 @@ Default value
 : `null`
 
 
-### sinceBuild
+#### sinceBuild
 {id="patchpluginxml-task-sincebuild"}
 
-The lower bound of the version range to be patched used in the `since-build` attribute of the `<idea-version>` tag.
+The lower bound of the version range to be patched used in the `since-build` attribute of the [`<idea-version>`](plugin_configuration_file.md#idea-plugin__idea-version) tag.
 
 {style="narrow"}
 Type
@@ -786,10 +827,10 @@ Default value
 : [`intellij.version`](#intellij-extension-version) in `Branch.Build.Fix` format
 
 
-### untilBuild
+#### untilBuild
 {id="patchpluginxml-task-untilbuild"}
 
-The upper bound of the version range to be patched used in the `until-build` attribute of the `<idea-version>` tag.
+The upper bound of the version range to be patched used in the `until-build` attribute of the [`<idea-version>`](plugin_configuration_file.md#idea-plugin__idea-version) tag.
 
 {style="narrow"}
 Type
@@ -799,10 +840,10 @@ Default value
 : [`intellij.version`](#intellij-extension-version) in `Branch.Build.*` format
 
 
-### version
+#### version
 {id="patchpluginxml-task-version"}
 
-The version of the plugin used in the `<version>` tag.
+The version of the plugin used in the [`<version>`](plugin_configuration_file.md#idea-plugin__version) tag.
 
 {style="narrow"}
 Type
@@ -812,10 +853,10 @@ Default value
 : `${project.version}`
 
 
-### changeNotes
+#### changeNotes
 {id="patchpluginxml-task-changenotes"}
 
-The change notes of the plugin used in the `<change-notes>` tag.
+The change notes of the plugin used in the [`<change-notes>`](plugin_configuration_file.md#idea-plugin__change-notes) tag.
 
 {style="narrow"}
 Type
@@ -825,10 +866,10 @@ Default value
 : `null`
 
 
-### pluginId
+#### pluginId
 {id="patchpluginxml-task-pluginid"}
 
-The ID of the plugin used in the `<id>` tag.
+The ID of the plugin used in the [`<id>`](plugin_configuration_file.md#idea-plugin__id) tag.
 
 {style="narrow"}
 Type
@@ -838,11 +879,13 @@ Default value
 : `null`
 
 
-## prepareSandbox Task
+### prepareSandbox
+{id="tasks-preparesandbox"}
+
 Prepares sandbox directory with installed plugin and its dependencies.
 
 
-### pluginName
+#### pluginName
 {id="preparesandbox-task-pluginname"}
 
 The name of the plugin.
@@ -855,7 +898,7 @@ Default value
 : [`intellij.pluginName`](#intellij-extension-pluginname)
 
 
-### configDir
+#### configDir
 {id="preparesandbox-task-configdir"}
 
 The directory with the plugin configuration.
@@ -868,7 +911,7 @@ Default value
 : `${intellij.pluginName}/config`
 
 
-### pluginJar
+#### pluginJar
 {id="preparesandbox-task-pluginjar"}
 
 The input plugin JAR file used to prepare the sandbox.
@@ -881,7 +924,7 @@ Default value
 : output of the `jar` task
 
 
-### librariesToIgnore
+#### librariesToIgnore
 {id="preparesandbox-task-librariestoignore"}
 
 Libraries that will be ignored when preparing the sandbox.
@@ -895,7 +938,7 @@ Default value
 : `org.jetbrains.intellij.tasks.SetupDependenciesTask.idea.get().jarFiles`
 
 
-### pluginDependencies
+#### pluginDependencies
 {id="preparesandbox-task-plugindependencies"}
 
 List of dependencies of the current plugin.
@@ -908,19 +951,25 @@ Default value
 : `org.jetbrains.intellij.IntelliJPluginExtension.getPluginDependenciesList`
 
 
-## prepareTestingSandbox Task
+### prepareTestingSandbox
+{id="tasks-preparetestingsandbox"}
+
 Prepares sandbox directory with installed plugin and its dependencies for testing purposes.
 
-See [`prepareSandbox` Task](#preparesandbox-task).
+See [`prepareSandbox` Task](#tasks-preparesandbox).
 
 
-## prepareUiTestingSandbox Task
+### prepareUiTestingSandbox
+{id="tasks-prepareuitestingsandbox"}
+
 Prepares sandbox directory with installed plugin and its dependencies for UI testing purposes.
 
-See [`prepareSandbox` Task](#preparesandbox-task).
+See [`prepareSandbox` Task](#tasks-preparesandbox).
 
 
-## publishPlugin Task
+### publishPlugin
+{id="tasks-publishplugin"}
+
 Publishes plugin to the remote [JetBrains Marketplace](https://plugins.jetbrains.com) repository.
 
 The following attributes are a part of the Publishing DSL `publishPlugin { ... }` in which allows Gradle to upload plugin to [JetBrains Marketplace](https://plugins.jetbrains.com).
@@ -931,7 +980,7 @@ See the instruction on [how to generate authentication token](https://plugins.je
 See [](deployment.md) tutorial for step-by-step instructions.
 
 
-### token
+#### token
 {id="publishplugin-task-token"}
 
 Authentication token.
@@ -946,7 +995,7 @@ Default value
 : `null`
 
 
-### channels
+#### channels
 {id="publishplugin-task-channels"}
 
 List of channel names to upload plugin to.
@@ -959,7 +1008,7 @@ Default value
 : `["default"]`
 
 
-### host
+#### host
 {id="publishplugin-task-host"}
 
 URL host of a plugin repository.
@@ -972,7 +1021,7 @@ Default value
 : [JetBrains Marketplace](https://plugins.jetbrains.com)
 
 
-### distributionFile
+#### distributionFile
 {id="publishplugin-task-distributionfile"}
 
 ZIP file of plugin to upload.
@@ -982,10 +1031,10 @@ Type
 : `File`
 
 Default value
-: output of the [`buildPlugin`](#buildplugin-task) task
+: output of the [`buildPlugin`](#tasks-buildplugin) task
 
 
-### toolboxEnterprise
+#### toolboxEnterprise
 {id="publishplugin-task-toolboxenterprise"}
 
 Specifies if the Toolbox Enterprise plugin repository service should be used.
@@ -999,13 +1048,15 @@ Default value
 : `false`
 
 
-## runIde Task
+### runIde
+{id="tasks-runide"}
+
 Runs the IDE instance with the developed plugin installed.
 
 `runIde` tasks extend the [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html) Gradle task – all properties available in the `JavaExec` as well as the following ones can be used to configure the `runIde` task.
 
 
-### ideDir
+#### ideDir
 {id="runide-task-idedir"}
 
 The IDE dependency sources path.
@@ -1019,7 +1070,7 @@ Default value
 : [`setupDependencies.idea`](#setupdependencies-task-idea)
 
 
-### jbrVersion
+#### jbrVersion
 {id="runide-task-jbrversion"}
 
 Custom JetBrains Runtime (JBR) version to use for running the IDE.
@@ -1041,7 +1092,7 @@ Accepted values
 >
 {type="note"}
 
-### jbrVariant
+#### jbrVariant
 {id="runide-task-jbrvariant"}
 
 JetBrains Runtime (JBR) variant to use when running the IDE with the plugin.
@@ -1054,10 +1105,10 @@ Default value
 : `null`
 
 
-### pluginsDir
+#### pluginsDir
 {id="runide-task-pluginsdir"}
 
-Path to the `plugins` directory within the sandbox prepared with the [`prepareSandbox`](#preparesandbox-task) task.
+Path to the `plugins` directory within the sandbox prepared with the [`prepareSandbox`](#tasks-preparesandbox) task.
 Provided to the `idea.plugins.path` system property.
 
 {style="narrow"}
@@ -1065,10 +1116,10 @@ Type
 : `Directory`
 
 Default value
-: [`prepareSandbox.destinationDir`](#preparesandbox-task)
+: [`prepareSandbox.destinationDir`](#tasks-preparesandbox)
 
 
-### autoReloadPlugins
+#### autoReloadPlugins
 {id="runide-task-autoreloadplugins"}
 
 Enables auto-reload of dynamic plugins.
@@ -1086,23 +1137,27 @@ Default value
 : `true`
 
 
-## runIdeForUiTests Task
+### runIdeForUiTests
+{id="tasks-runideforuitests"}
+
 Runs the IDE instance with the developed plugin and robot-server installed and ready for UI testing.
 
 See [intellij-ui-test-robot](https://github.com/JetBrains/intellij-ui-test-robot) project.
 
-See [`runIde`](#runide-task) task for more details.
+See [`runIde`](#tasks-runide) task for more details.
 
 
-## runIdePerformanceTest Task
+### runIdePerformanceTest
+{id="tasks-runideperformancetest"}
+
 Runs performance tests on the IDE with the developed plugin installed.
 
-The `runIdePerformanceTest` task extends the `RunIdeBase` task, so all configuration attributes of `JavaExec` and [`runIde`](#runide-task) tasks can be used in the `runIdePerformanceTest` as well.
-See [`runIde`](#runide-task) task for more details.
+The `runIdePerformanceTest` task extends the `RunIdeBase` task, so all configuration attributes of `JavaExec` and [`runIde`](#tasks-runide) tasks can be used in the `runIdePerformanceTest` as well.
+See [`runIde`](#tasks-runide) task for more details.
 
 Currently, the task is under adaptation; more documentation will be added in the future.
 
-### testDataDir
+#### testDataDir
 {id="runideperformancetest-task-testdatadir"}
 
 Path to directory with test projects and <path>.ijperf</path> files.
@@ -1115,7 +1170,7 @@ Default value
 : `null`
 
 
-### artifactsDir
+#### artifactsDir
 {id="runideperformancetest-task-artifactsdir"}
 
 Path to directory where performance test artifacts (IDE logs, snapshots, screenshots, etc.) will be stored.
@@ -1129,7 +1184,7 @@ Default value
 : `null`
 
 
-### profilerName
+#### profilerName
 {id="runideperformancetest-task-profilername"}
 
 Name of the profiler which will be used during execution.
@@ -1147,7 +1202,9 @@ Acceptable values
 - `ProfilerName.YOURKIT`
 
 
-## runPluginVerifier Task
+### runPluginVerifier
+{id="tasks-runpluginverifier"}
+
 Runs the [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) tool to check the binary compatibility with specified IDE builds (see also [](verifying_plugin_compatibility.md)).
 
 Plugin Verifier DSL `runPluginVerifier { ... }` allows to define the list of IDEs used for the verification, as well as explicit tool version and any of the available [options](https://github.com/JetBrains/intellij-plugin-verifier#common-options) by proxifying them to the Verifier CLI.
@@ -1161,7 +1218,7 @@ Plugin Verifier DSL `runPluginVerifier { ... }` allows to define the list of IDE
 {type="tip"}
 
 
-### ideVersions
+#### ideVersions
 {id="runpluginverifier-task-ideversions"}
 
 IDEs to check, in [`intellij.version`](#intellij-extension-version) format, i.e.: `["IC-2019.3.5", "PS-2019.3.2"]`.
@@ -1172,10 +1229,10 @@ Type
 : `List<String>`
 
 Default value
-: output of the [`listProductsReleases`](#listproductsreleases-task) task
+: output of the [`listProductsReleases`](#tasks-listproductsreleases) task
 
 
-### verifierVersion
+#### verifierVersion
 {id="runpluginverifier-task-verifierversion"}
 
 IntelliJ Plugin Verifier version.
@@ -1189,7 +1246,7 @@ Default value
 : `LATEST`
 
 
-### verifierPath
+#### verifierPath
 {id="runpluginverifier-task-verifierpath"}
 
 Local path to the pre-downloaded IntelliJ Plugin Verifier JAR file.
@@ -1203,7 +1260,7 @@ Default value
 : path to the JAR file resolved using the [`runPluginVerifier.verifierVersion`](#runpluginverifier-task-verifierversion) property
 
 
-### localPaths
+#### localPaths
 {id="runpluginverifier-task-localpaths"}
 
 A list of the paths to locally installed IDE distributions that should be used for verification in addition to those specified in [`runPluginVerifier.ideVersions`](#runpluginverifier-task-ideversions).
@@ -1216,7 +1273,7 @@ Default value
 : `[]`
 
 
-### distributionFile
+#### distributionFile
 {id="runpluginverifier-task-distributionfile"}
 
 ZIP file of the plugin to verify.
@@ -1230,7 +1287,7 @@ Default value
 : output of the `buildPlugin` task
 
 
-### failureLevel
+#### failureLevel
 {id="runpluginverifier-task-failurelevel"}
 
 Defines the verification level at which the task should fail if any reported issue matches.
@@ -1261,7 +1318,7 @@ Accepted values
 - `FailureLevel.NONE` - None of above
 
 
-### verificationReportsDir
+#### verificationReportsDir
 {id="runpluginverifier-task-verificationreportsdir"}
 
 The path to directory where verification reports will be saved.
@@ -1274,7 +1331,7 @@ Default value
 : `${project.buildDir}/reports/pluginVerifier`
 
 
-### downloadDir
+#### downloadDir
 {id="runpluginverifier-task-downloaddir"}
 
 The path to directory where IDEs used for the verification will be downloaded.
@@ -1287,7 +1344,7 @@ Default value
 : `System.getProperty("plugin.verifier.home.dir")/ides` or `System.getProperty("user.home")/.pluginVerifier/ides` or system temporary directory.
 
 
-### jbrVersion
+#### jbrVersion
 {id="runpluginverifier-task-jbrversion"}
 
 Custom JetBrains Runtime (JBR) version to use for running the verification.
@@ -1310,7 +1367,7 @@ Acceptable values
 {type="note"}
 
 
-### jbrVariant
+#### jbrVariant
 {id="runpluginverifier-task-jbrvariant"}
 
 JetBrains Runtime (JBR) variant to use when running the verification.
@@ -1323,7 +1380,7 @@ Default value
 : `null`
 
 
-### runtimeDir
+#### runtimeDir
 {id="runpluginverifier-task-runtimedir"}
 
 The path to directory containing JVM runtime, overrides [`runPluginVerifier.jbrVersion`](#runpluginverifier-task-jbrversion).
@@ -1336,7 +1393,7 @@ Default value
 : `null`
 
 
-### externalPrefixes
+#### externalPrefixes
 {id="runpluginverifier-task-externalprefixes"}
 
 The list of classes prefixes from the external libraries.
@@ -1350,7 +1407,7 @@ Default value
 : `[]`
 
 
-### teamCityOutputFormat
+#### teamCityOutputFormat
 {id="runpluginverifier-task-teamcityoutputformat"}
 
 A flag that controls the output format - if set to `true`, the [TeamCity Tests Format](https://www.jetbrains.com/help/teamcity/service-messages.html) – the TeamCity compatible output will be returned to stdout.
@@ -1363,7 +1420,7 @@ Default value
 : `false`
 
 
-### subsystemsToCheck
+#### subsystemsToCheck
 {id="runpluginverifier-task-subsystemstocheck"}
 
 Specifies which subsystems of IDE should be checked.
@@ -1382,7 +1439,9 @@ Acceptable values
 - `without-android`
 
 
-## setupDependencies Task
+### setupDependencies
+{id="tasks-setupdependencies"}
+
 Setups required dependencies for building and running project.
 This task is automatically added to the ["After Sync" Gradle trigger](https://www.jetbrains.com/help/idea/work-with-gradle-tasks.html#config_triggers_gradle) to make the IntelliJ SDK dependency available for IntelliJ IDEA right after the Gradle synchronization.
 
@@ -1392,7 +1451,7 @@ This task is automatically added to the ["After Sync" Gradle trigger](https://ww
 {type="warning"}
 
 
-### idea
+#### idea
 {id="setupdependencies-task-idea"}
 
 This task exposes the `setupDependencies.idea` property which contains a reference to the resolved IDE dependency used for building the plugin.
@@ -1400,16 +1459,18 @@ This task exposes the `setupDependencies.idea` property which contains a referen
 This property can be referred in Gradle configuration to access IDE dependency classpath.
 
 
-## signPlugin Task
+### signPlugin
+{id="tasks-signplugin"}
+
 Signs the ZIP archive with the provided key using [marketplace-zip-signer](https://github.com/JetBrains/marketplace-zip-signer) library.
 
-To sign the plugin before publishing to [JetBrains Marketplace](https://plugins.jetbrains.com) with the [`signPlugin`](#signplugin-task) task, it is required to provide a certificate chain and a private key with its password using `signPlugin { ... }` Plugin Signing DSL.
+To sign the plugin before publishing to [JetBrains Marketplace](https://plugins.jetbrains.com) with the [`signPlugin`](#tasks-signplugin) task, it is required to provide a certificate chain and a private key with its password using `signPlugin { ... }` Plugin Signing DSL.
 
-As soon as [`signPlugin.privateKey`](#signplugin-task-privatekey) (or [`signPlugin.privateKeyFile`](#signplugin-task-privatekeyfile)) and [`signPlugin.certificateChain`](#signplugin-task-certificatechain) (or [`signPlugin.certificateChainFile`](#signplugin-task-certificatechainfile)) properties are specified, the task will be executed automatically right before the [`publishPlugin`](#publishplugin-task) task.
+As soon as [`signPlugin.privateKey`](#signplugin-task-privatekey) (or [`signPlugin.privateKeyFile`](#signplugin-task-privatekeyfile)) and [`signPlugin.certificateChain`](#signplugin-task-certificatechain) (or [`signPlugin.certificateChainFile`](#signplugin-task-certificatechainfile)) properties are specified, the task will be executed automatically right before the [`publishPlugin`](#tasks-publishplugin) task.
 
 For more details, see [Plugin Signing](plugin_signing.md) article.
 
-### certificateChain
+#### certificateChain
 {id="signplugin-task-certificatechain"}
 
 A string containing X509 certificates.
@@ -1424,7 +1485,7 @@ Default value
 : `null`
 
 
-### certificateChainFile
+#### certificateChainFile
 {id="signplugin-task-certificatechainfile"}
 
 A file containing X509 certificates.
@@ -1439,7 +1500,7 @@ Default value
 : `null`
 
 
-### privateKey
+#### privateKey
 {id="signplugin-task-privatekey"}
 
 Encoded private key in PEM format.
@@ -1453,7 +1514,7 @@ Default value
 : `null`
 
 
-### privateKeyFile
+#### privateKeyFile
 {id="signplugin-task-privatekeyfile"}
 
 A file with encoded private key in PEM format.
@@ -1467,7 +1528,7 @@ Default value
 : `null`
 
 
-### password
+#### password
 {id="signplugin-task-password"}
 
 Password required to decrypt the private key.
@@ -1481,7 +1542,7 @@ Default value
 : `null`
 
 
-### cliVersion
+#### cliVersion
 {id="signplugin-task-cliversion"}
 
 Returns the version of [JetBrains Marketplace ZIP Signer CLI](https://github.com/JetBrains/marketplace-zip-signer) that will be used.
@@ -1494,7 +1555,7 @@ Default value
 : `LATEST`
 
 
-### cliPath
+#### cliPath
 {id="signplugin-task-clipath"}
 
 Path to [JetBrains Marketplace ZIP Signer CLI](https://github.com/JetBrains/marketplace-zip-signer) file.
@@ -1508,7 +1569,7 @@ Default value
 : `null`
 
 
-### keyStore
+#### keyStore
 {id="signplugin-task-keystore"}
 
 KeyStore file path.
@@ -1522,7 +1583,7 @@ Default value
 : `null`
 
 
-### keyStorePassword
+#### keyStorePassword
 {id="signplugin-task-keystorepassword"}
 
 KeyStore password.
@@ -1535,7 +1596,7 @@ Default value
 : `null`
 
 
-### keyStoreKeyAlias
+#### keyStoreKeyAlias
 {id="signplugin-task-keystorekeyalias"}
 
 KeyStore key alias.
@@ -1549,7 +1610,7 @@ Default value
 : `null`
 
 
-### keyStoreType
+#### keyStoreType
 {id="signplugin-task-keystoretype"}
 
 KeyStore type.
@@ -1562,7 +1623,7 @@ Default value
 : `null`
 
 
-### keyStoreProviderName
+#### keyStoreProviderName
 {id="signplugin-task-keystoreprovidername"}
 
 JCA KeyStore Provider name.
@@ -1576,15 +1637,15 @@ Default value
 : `null`
 
 
-### inputArchiveFile
+#### inputArchiveFile
 {id="signplugin-task-inputarchivefile"}
 
 Input, unsigned ZIP archive file.
 Refers to `in` CLI option.
 
-Provided by the [`buildPlugin`](#buildplugin-task) task.
+Provided by the [`buildPlugin`](#tasks-buildplugin) task.
 
-### outputArchiveFile
+#### outputArchiveFile
 {id="signplugin-task-outputarchivefile"}
 
 Output, signed ZIP archive file.
@@ -1597,11 +1658,13 @@ Type
 : `File`
 
 
-## verifyPlugin Task
+### verifyPlugin
+{id="tasks-verifyplugin"}
+
 Validates completeness and contents of <path>[plugin.xml](plugin_configuration_file.md)</path> descriptors as well as plugin archive structure.
 
 
-### ignoreFailures
+#### ignoreFailures
 {id="verifyplugin-task-ignorefailures"}
 
 Specifies whether the build should fail when the verifications performed by this task fail.
@@ -1614,7 +1677,7 @@ Default value
 : `false`
 
 
-### ignoreWarnings
+#### ignoreWarnings
 {id="verifyplugin-task-ignorewarnings"}
 
 Specifies whether the build should fail when the verifications performed by this task emit warnings.
@@ -1627,7 +1690,20 @@ Default value
 : `true`
 
 
-### pluginDir
+#### ignoreUnacceptableWarnings
+{id="verifyplugin-task-ignoreunacceptablewarnings"}
+
+Specifies whether the build should fail when the verifications performed by this task emit unacceptable warnings.
+
+{style="narrow"}
+Type
+: `Boolean`
+
+Default value
+: `false`
+
+
+#### pluginDir
 {id="verifyplugin-task-plugindir"}
 
 The location of the built plugin file which will be used for verification.
@@ -1638,3 +1714,22 @@ Type
 
 Default value
 : `${prepareSandboxTask.destinationDir}/${prepareSandboxTask.pluginName}`
+
+
+### verifyPluginConfiguration
+{id="tasks-verifypluginconfiguration"}
+
+Validates the plugin project configuration:
+
+- The [`patchPluginXml.sinceBuild`](#patchpluginxml-task-sincebuild) property can't be lower than the major version of the currently used IntelliJ SDK set with the [`intellij.version`](#intellij-extension-version).
+- The `sourceCompatibility` property of the Java configuration can't be lower than the Java version used for assembling the IntelliJ SDK specified by the [`intellij.version`](#intellij-extension-version).
+- The `targetCompatibility` property of the Java configuration can't be higher than the Java version required for running IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#patchpluginxml-task-sincebuild) properties.
+- The `jvmTarget` property of the Kotlin configuration (if used) can't be higher than the Java version required for running IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#patchpluginxml-task-sincebuild) properties.
+- The `languageVersion` property of the Kotlin configuration (if used) can't be lower than the Kotlin bundled with IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#patchpluginxml-task-sincebuild) properties.
+- The `apiVersion` property of the Kotlin configuration (if used) can't be higher than the Kotlin bundled with IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#patchpluginxml-task-sincebuild) properties.
+
+> For more details regarding the Java version used in the specific IntelliJ SDK, see [](build_number_ranges.md).
+
+- The dependency on the Kotlin Standard Library (stdlib) is automatically added when using the Gradle Kotlin plugin and may conflict with the version provided with the IntelliJ Platform.
+
+> Read more about controlling this behavior on [](kotlin.md#kotlin-standard-library).

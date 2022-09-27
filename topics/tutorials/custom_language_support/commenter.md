@@ -2,6 +2,14 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Code**: [`SimpleCommenter`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCommenter.java)
+
+**Testing**: [](commenter_test.md)
+
+</microformat>
+
 <include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
 
 A commenter enables the user to comment-out a line of code at the cursor or selected code automatically.
@@ -9,7 +17,7 @@ The [`Commenter`](%gh-ic%/platform/core-api/src/com/intellij/lang/Commenter.java
 
 ## Define a Commenter
 
-The commenter for Simple Language defines the line comment prefix as `#`.
+The [`SimpleCommenter`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCommenter.java) for Simple Language defines the line comment prefix as `#`.
 
 ```java
 ```

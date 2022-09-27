@@ -2,12 +2,19 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Reference**: [](syntax_highlighting_and_error_highlighting.md#annotator)
+
+**Code**: [`SimpleAnnotator`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleAnnotator.java)
+
+**Testing**: [](annotator_test.md)
+</microformat>
+
 <include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
 
 An `Annotator` helps highlight and annotate any code based on specific rules.
 This section adds annotation functionality to support the Simple Language in the context of Java code.
-
-**Reference**: [Annotator](syntax_highlighting_and_error_highlighting.md#annotator)
 
 ## Required Project Configuration Changes
 
@@ -38,7 +45,7 @@ intellij {
 </tab>
 </tabs>
 
-Then, declare the dependency in <path>plugin.xml</path> (use code insight)
+Then, declare the dependency in <path>[plugin.xml](plugin_configuration_file.md)</path> (use code insight)
 
 ```xml
 <depends>com.intellij.java</depends>
@@ -46,7 +53,7 @@ Then, declare the dependency in <path>plugin.xml</path> (use code insight)
 
 ## Define an Annotator
 
-The `SimpleAnnotator` subclasses [`Annotator`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/Annotator.java).
+The [`SimpleAnnotator`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleAnnotator.java) subclasses [`Annotator`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/Annotator.java).
 Consider a literal string that starts with "simple:" as a prefix of a Simple Language key.
 It isn't part of the Simple Language, but it is a useful convention for detecting Simple Language keys embedded as string literals in other languages, like Java.
 Annotate the `simple:key` literal expression, and differentiate between a well-formed vs. an unresolved property.

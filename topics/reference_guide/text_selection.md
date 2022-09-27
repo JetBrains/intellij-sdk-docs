@@ -4,14 +4,14 @@
 
 ## Extending/Shrinking Text Selection
 
-Implementing [`ExtendWordSelectionHandler`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/ExtendWordSelectionHandler.java) and registering it as `com.intellij.extendWordSelectionHandler` EP in your <path>plugin.xml</path> allows you to provide additional text ranges to be used when extending or shrinking a selection.
+Implementing [`ExtendWordSelectionHandler`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/ExtendWordSelectionHandler.java) and registering it as `com.intellij.extendWordSelectionHandler` EP in your <path>[plugin.xml](plugin_configuration_file.md)</path> allows you to provide additional text ranges to be used when extending or shrinking a selection.
 Return `true` from `canSelect(PsiElement)` for the PSI elements that you want to provide additional text-ranges for.
 The IntelliJ Platform will call `select(PsiElement, CharSequence, int, Editor)` for these elements where you can compute additional text ranges and return them as `List<TextRange>`.
 
 See also:
 
-- [Surround With](surround_with.md)
-- [List of minor features](additional_minor_features.md)
+- [](surround_with.md)
+- [](additional_minor_features.md)
 
 ### Overview
 
@@ -45,7 +45,7 @@ This can be achieved by implementing this EP in the following way:
 Looking at other implementations can be an effective way to get a better understanding of how this EP works.
 To get further insight into this EP, you may want to take a look at [`DocTagSelectioner`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/editorActions/wordSelection/DocTagSelectioner.java).
 It provides the ability to select tag names like `@param` in JavaDoc comments.
-Additionally, the [IntelliJ Platform Explorer](https://plugins.jetbrains.com/intellij-platform-explorer/?extensions=com.intellij.extendWordSelectionHandler) provides a list of open-source plugins with implementations of the `extendWordSelectionHandler` EP.
+Additionally, the [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.extendWordSelectionHandler) provides a list of open-source plugins with implementations of the `com.intellij.extendWordSelectionHandler` EP.
 
 There are also some important places in the IntelliJ Platform to add breakpoints during debugging.
 When _Extend Selection_ is called by the user, it is handled by [`SelectWordHandler`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/editorActions/SelectWordHandler.java).

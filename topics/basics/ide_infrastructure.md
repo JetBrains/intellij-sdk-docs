@@ -88,7 +88,7 @@ To disable red exclamation notification icon in status bar, invoke <menupath>Hel
 ## Runtime Information
 
 [`ApplicationInfo`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ApplicationInfo.java) provides information on the IDE version and vendor.
-NOTE: to restrict compatibility, declare [IDEs](plugin_compatibility.md) and [versions](build_number_ranges.md) via <path>plugin.xml</path>.
+NOTE: to restrict compatibility, declare [IDEs](plugin_compatibility.md) and [versions](build_number_ranges.md) via <path>[plugin.xml](plugin_configuration_file.md)</path>.
 
 To obtain information about OS and Java VM, use [`SystemInfo`](%gh-ic%/platform/util/src/com/intellij/openapi/util/SystemInfo.java).
 
@@ -110,6 +110,11 @@ Application lifecycle events can be tracked via [`AppLifecycleListener`](%gh-ic%
 See also [](plugin_components.md#application-startup) and [](plugin_components.md#project-and-application-close).
 
 Register [`ApplicationActivationListener`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/application/ApplicationActivationListener.java) [listener](plugin_listeners.md) to be notified of "application focused/unfocused" events.
+
+## Power Save Mode
+
+<menupath>File | Power Save Mode</menupath> can be enabled to limit power-consuming features on laptops.
+Use [`PowerSaveMode`](%gh-ic%/platform/core-api/src/com/intellij/ide/PowerSaveMode.java) service and `PowerSaveMode.Listener` topic to disable such features in your plugin accordingly.
 
 ## Plugin Management
 

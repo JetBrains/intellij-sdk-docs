@@ -18,7 +18,7 @@ Create an empty plugin project, see [Creating a Plugin Project](gradle_build_sys
 
 ## Register a New Module Type
 
-Add a new `com.intellij.moduleType` implementation with the IntelliJ Platform in the <path>plugin.xml</path> configuration file.
+Add a new `com.intellij.moduleType` implementation with the IntelliJ Platform in the <path>[plugin.xml](plugin_configuration_file.md)</path> configuration file.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

@@ -2,12 +2,17 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Product Help:** [SDKs](https://www.jetbrains.com/help/idea/working-with-sdks.html)
+
+</microformat>
+
 Every project uses a Software Development Kit (SDK).
 For Java projects, the SDK is referred to as the JDK (Java Development Kit).
 The SDK determines which API library is used to build the project.
 If a project is multi-module, the project SDK by default is common for all modules within the project.
 Optionally, individual SDKs for each module can be configured.
-For more information about SDKs, see [SDK](https://www.jetbrains.com/help/idea/working-with-sdks.html) in the IntelliJ IDEA Web Help.
 
 ## Getting Project SDK Information
 The information about the project SDK is accessed via [`ProjectRootManager`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java) like the following example shows

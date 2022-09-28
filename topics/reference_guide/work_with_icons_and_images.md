@@ -2,8 +2,16 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Code**: [`AllIcons`](%gh-ic%/platform/util/src/com/intellij/icons/AllIcons.java)
+
+**Platform UI Guidelines:** [Icons list](https://jetbrains.design/intellij/resources/icons_list/), [Icons](https://jetbrains.design/intellij/principles/icons/)
+
+</microformat>
+
 Icons and images are used widely by IntelliJ Platform plugins.
-Plugins need icons mostly for [actions](basic_action_system.md), custom components renderers, [tool windows](tool_windows.md), and so on.
+Plugins need icons mostly for [](basic_action_system.md), custom components renderers, [](tool_windows.md), and so on.
 
 > Plugin _Logos_, which represent a plugin itself, have different requirements than icons and images used within a plugin.
 > For more information see the [](plugin_icon_file.md).

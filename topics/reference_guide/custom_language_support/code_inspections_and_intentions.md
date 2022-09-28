@@ -6,6 +6,8 @@
 
 **Product Help:** [Code inspections](https://www.jetbrains.com/help/idea/code-inspection.html), [Intention actions](https://www.jetbrains.com/help/idea/intention-actions.html)
 
+**Platform UI Guidelines:** [Inspections](https://jetbrains.design/intellij/text/inspections/)
+
 </microformat>
 
 ### Inspections

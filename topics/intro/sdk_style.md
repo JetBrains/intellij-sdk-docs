@@ -37,15 +37,22 @@ It **must** be followed by a copyright notice, formatted using HTML comment nota
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 ```
 
+#### Excerpt
+
 Every page **should** provide a short excerpt (usually one sentence) using dedicated `<excerpt>` tag before the main page contents:
 
 ```html
 <excerpt>Listeners allow subscription to application and project events.</excerpt>
 ```
 
+#### Highlighted Links
+
 A page can highlight related topics and other important links before the actual content using `<microformat>` tag.
 Links must be grouped using "**Bold Category Name**: link1, link2, \[...]" ([Example](language_and_filetype.md)).
-Use _Reference_ to link to other topics, _Code_ to link to code/files, and _Product Help_ for links to [IntelliJ IDEA Help](https://www.jetbrains.com/help/idea).
+
+Use _Reference_ to link to other topics, _Code_ to link to code/files, _Platform UI Guidelines_ for links to [IntelliJ Platform UI Guidelines](https://jetbrains.design/intellij/), and _Product Help_ for links to [IntelliJ IDEA Help](https://www.jetbrains.com/help/idea).
+
+#### Introductory Text
 
 Do **not** use headings like _Introduction_, _Overview_, etc. for any introductory text.
 

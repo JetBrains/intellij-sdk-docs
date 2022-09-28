@@ -55,7 +55,7 @@ When upgrading to `1.x` version, please make sure to follow the [migration guide
 >
 {type="tip"}
 
-> This project requires Gradle 6.8 or newer. However, it is highly recommended to always use the latest available Gradle version.
+> This project requires Gradle 6.7.1 or newer. However, it is highly recommended to always use the latest available Gradle version.
 > Update it with:
 > ```Bash
 > ./gradlew wrapper --gradle-version=VERSION
@@ -1733,3 +1733,5 @@ Validates the plugin project configuration:
 - The dependency on the Kotlin Standard Library (stdlib) is automatically added when using the Gradle Kotlin plugin and may conflict with the version provided with the IntelliJ Platform.
 
 > Read more about controlling this behavior on [](using_kotlin.md#kotlin-standard-library).
+
+- An old default [`runPluginVerifier.downloadDir`][#runpluginverifier-task-downloaddir] path contains downloaded IDEs but another default is in use. Links to the [FAQ section][]

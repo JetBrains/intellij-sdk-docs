@@ -1,6 +1,6 @@
 # IntelliJ Platform SDK Code Samples
 
-[![official JetBrains project](https://jb.gg/badges/official-flat-square.svg)][jb:confluence-on-gh]
+[![official JetBrains project](https://jb.gg/badges/official-flat-square.svg)][jb:github]
 [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg?style=flat-square)][jb:docs]
 [![Twitter Follow](https://img.shields.io/twitter/follow/JBPlatform?style=flat-square&logo=twitter)][jb:twitter]
 [![Build](https://img.shields.io/github/workflow/status/JetBrains/intellij-sdk-docs/Code%20Samples?style=flat-square)][gh:workflow-code-samples]
@@ -62,7 +62,7 @@ In the following table, you may find all available samples provided in the separ
 [gh:workflow-code-samples]: https://github.com/JetBrains/intellij-sdk-docs/actions?query=workflow%3ACode%20Samples
 [gh:template]: https://github.com/JetBrains/intellij-platform-plugin-template
 
-[jb:confluence-on-gh]: https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub
+[jb:github]: https://github.com/JetBrains/.github/blob/main/profile/README.md
 [jb:docs]: https://plugins.jetbrains.com/docs/intellij/
 [jb:products]: https://www.jetbrains.com/products.html
 [jb:slack]: https://plugins.jetbrains.com/slack

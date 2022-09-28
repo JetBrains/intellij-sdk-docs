@@ -127,7 +127,7 @@ Use the Gradle plugin attribute [`intellij.plugins`](tools_gradle_intellij_plugi
 See the specific product pages in _Part VIII — Product Specific_ for the _targetIDE_ plugin or module name.
 
 The best practice is to modify the [`runIde`](tools_gradle_intellij_plugin.md#tasks-runide) task to use a local installation of _targetIDE_ as the [](ide_development_instance.md).
-Set the [`runIde.ideDir`](tools_gradle_intellij_plugin.md#runide-task-idedir) attribute to the (user-specific) absolute path of the _targetIDE_ application.
+Set the [`runIde.ideDir`](tools_gradle_intellij_plugin.md#tasks-runide-idedir) attribute to the (user-specific) absolute path of the _targetIDE_ application.
 The exact path format varies by operating system.
 
 This snippet is an example for configuring the Setup and Running DSLs in a Gradle build script specific to developing a plugin for _targetIDE_.

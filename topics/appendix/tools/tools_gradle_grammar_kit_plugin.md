@@ -136,7 +136,7 @@ The task is configured using common [`grammarKit`](#grammar-kit-extension) exten
 
 
 ### source
-{id="generatelexer-task-source"}
+{id="tasks-generatelexer-source"}
 
 The source Flex file to generate the lexer from.
 
@@ -149,7 +149,7 @@ Type
 
 
 ### targetDir
-{id="generatelexer-task-targetdir"}
+{id="tasks-generatelexer-targetdir"}
 
 The path to the target directory for the generated lexer.
 
@@ -162,7 +162,7 @@ Type
 
 
 ### targetClass
-{id="generatelexer-task-targetclass"}
+{id="tasks-generatelexer-targetclass"}
 
 The Java file name where the generated lexer will be written.
 
@@ -175,7 +175,7 @@ Type
 
 
 ### skeleton
-{id="generatelexer-task-skeleton"}
+{id="tasks-generatelexer-skeleton"}
 
 An optional path to the skeleton file to use for the generated lexer.
 The path will be provided as `--skel` option.
@@ -190,7 +190,7 @@ Default
 
 
 ### purgeOldFiles
-{id="generatelexer-task-purgeoldfiles"}
+{id="tasks-generatelexer-purgeoldfiles"}
 
 Purge old files from the target directory before generating the lexer.
 
@@ -210,7 +210,7 @@ The task is configured using common [`grammarKit`](#grammar-kit-extension) exten
 
 
 ### source
-{id="generateparser-task-source"}
+{id="tasks-generateparser-source"}
 
 The source BNF file to generate the parser from.
 
@@ -223,7 +223,7 @@ Type
 
 
 ### targetRoot
-{id="generateparser-task-targetroot"}
+{id="tasks-generateparser-targetroot"}
 
 The path to the target directory for the generated parser.
 
@@ -236,9 +236,9 @@ Default
 
 
 ### pathToParser
-{id="generateparser-task-pathtoparser"}
+{id="tasks-generateparser-pathtoparser"}
 
-The location of the generated parser class, relative to the [`targetRoot`](#generateparser-task-targetroot).
+The location of the generated parser class, relative to the [`targetRoot`](#tasks-generateparser-targetroot).
 
 {style="narrow"}
 Required
@@ -249,9 +249,9 @@ Type
 
 
 ### pathToPsiRoot
-{id="generateparser-task-pathtopsiroot"}
+{id="tasks-generateparser-pathtopsiroot"}
 
-The location of the generated PSI files, relative to the [`targetRoot`](#generateparser-task-targetroot).
+The location of the generated PSI files, relative to the [`targetRoot`](#tasks-generateparser-targetroot).
 
 {style="narrow"}
 Required
@@ -262,7 +262,7 @@ Type
 
 
 ### purgeOldFiles
-{id="generateparser-task-purgeoldfiles"}
+{id="tasks-generateparser-purgeoldfiles"}
 
 Purge old files from the target directory before generating the parser.
 

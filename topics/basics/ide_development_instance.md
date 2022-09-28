@@ -56,7 +56,7 @@ Available JBR variants are:
 <tab title="Gradle" group-key="gradle">
 
 By default, the Gradle plugin will fetch and use the version of the JetBrains Runtime for the Development Instance corresponding to the version of the IntelliJ Platform used for building the plugin project.
-If required, an alternative version can be specified using [`runIde.jbrVersion`](tools_gradle_intellij_plugin.md#runide-task-jbrversion) task property.
+If required, an alternative version can be specified using [`runIde.jbrVersion`](tools_gradle_intellij_plugin.md#tasks-runide-jbrversion) task property.
 
 </tab>
 
@@ -87,7 +87,7 @@ Please note that any unloading problems in a production environment will ask the
 
 Enabled by default for target platform 2020.2 or later.
 
-Set property [`runIde.autoReloadPlugins`](tools_gradle_intellij_plugin.md#runide-task-autoreloadplugins) to `true` for enabling it in earlier platform versions or `false` to disable it explicitly, see [](tools_gradle_intellij_plugin_faq.md#how-to-disable-automatic-reload-of-dynamic-plugins).
+Set property [`runIde.autoReloadPlugins`](tools_gradle_intellij_plugin.md#tasks-runide-autoreloadplugins) to `true` for enabling it in earlier platform versions or `false` to disable it explicitly, see [](tools_gradle_intellij_plugin_faq.md#how-to-disable-automatic-reload-of-dynamic-plugins).
 
 After starting the sandbox IDE instance, run [`buildPlugin`](tools_gradle_intellij_plugin.md#tasks-buildplugin) task after modifications in the plugin project and switch focus back to sandbox instance to trigger reload.
 

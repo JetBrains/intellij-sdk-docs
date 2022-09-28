@@ -56,13 +56,13 @@ Using the corresponding JetBrains Runtime is also the default, so for this use-c
 ### Running Against Alternate Versions and Types of IntelliJ Platform-Based IDEs
 
 The IntelliJ Platform IDE used for the [Development Instance](ide_development_instance.md) can be different from that used to build the plugin project.
-Setting the [`runIde.ideDir`](tools_gradle_intellij_plugin.md#runide-task-idedir) property will define an IDE to be used for the Development Instance.
+Setting the [`runIde.ideDir`](tools_gradle_intellij_plugin.md#tasks-runide-idedir) property will define an IDE to be used for the Development Instance.
 This attribute is commonly used when running or debugging a plugin in an [alternate IntelliJ Platform-based IDE](intellij_platform.md#ides-based-on-the-intellij-platform).
 
 ### Running Against Alternate Versions of the JetBrains Runtime
 
 Every version of the IntelliJ Platform has a corresponding version of the [JetBrains Runtime](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance).
-A different version of the runtime can be used by specifying the [`runIde.jbrVersion`](tools_gradle_intellij_plugin.md#runide-task-jbrversion) attribute, describing a version of the JetBrains Runtime that should be used by the IDE Development Instance.
+A different version of the runtime can be used by specifying the [`runIde.jbrVersion`](tools_gradle_intellij_plugin.md#tasks-runide-jbrversion) attribute, describing a version of the JetBrains Runtime that should be used by the IDE Development Instance.
 The Gradle plugin will fetch the specified JetBrains Runtime as needed.
 
 ## Patching the Plugin Configuration File
@@ -70,7 +70,7 @@ The Gradle plugin will fetch the specified JetBrains Runtime as needed.
 A plugin project's <path>plugin.xml</path> file has element values that are "patched" at build time from the attributes of the [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) task.
 As many as possible of the attributes in the Patching DSL will be substituted into the corresponding element values in a plugin project's <path>plugin.xml</path> file:
 * If a `patchPluginXml` attribute default value is defined, the attribute value will be patched in <path>plugin.xml</path> _regardless of whether the `patchPluginXml` task appears in the Gradle build script_.
-  * For example, the default values for the attributes [`patchPluginXml.sinceBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-sincebuild) and [`patchPluginXml.untilBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-untilbuild) are defined based on the declared (or default) value of [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version).
+  * For example, the default values for the attributes [`patchPluginXml.sinceBuild`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml-sincebuild) and [`patchPluginXml.untilBuild`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml-untilbuild) are defined based on the declared (or default) value of [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version).
     So by default `patchPluginXml.sinceBuild` and `patchPluginXml.untilBuild` are substituted into the [`<idea-version>`](plugin_configuration_file.md#idea-plugin__idea-version) element's `since-build` and `until-build` attributes in the <path>plugin.xml</path> file.
 * If a [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) task's attribute value is explicitly defined, the attribute value will be substituted in <path>plugin.xml</path>.
   * If both `patchPluginXml.sinceBuild` and `patchPluginXml.untilBuild` attributes are explicitly set, both are substituted in <path>plugin.xml</path>.
@@ -80,7 +80,7 @@ As many as possible of the attributes in the Patching DSL will be substituted in
 The best practice to avoid confusion is to replace the elements in <path>plugin.xml</path> that will be patched by the Gradle plugin with a comment.
 That way, the values for these parameters do not appear in two places in the source code.
 The Gradle plugin will add the necessary elements as part of the patching process.
-For those [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) attributes that contain descriptions such as [`patchPluginXml.changeNotes`](tools_gradle_intellij_plugin.md#patchpluginxml-task-changenotes) and [`patchPluginXml.pluginDescription`](tools_gradle_intellij_plugin.md#patchpluginxml-task-plugindescription), a `CDATA` block is not necessary when using HTML elements.
+For those [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) attributes that contain descriptions such as [`patchPluginXml.changeNotes`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml-changenotes) and [`patchPluginXml.pluginDescription`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml-plugindescription), a `CDATA` block is not necessary when using HTML elements.
 
 > To maintain and generate an up-to-date changelog, try using [Gradle Changelog Plugin](https://github.com/JetBrains/gradle-changelog-plugin).
 >

@@ -142,7 +142,7 @@ If successfully deployed, any users who currently have your plugin installed on 
 
 ### Specifying a Release Channel
 
-You may also deploy plugins to a release channel of your choosing, by configuring the [`publishPlugin.channels`](tools_gradle_intellij_plugin.md#publishplugin-task-channels) property.
+You may also deploy plugins to a release channel of your choosing, by configuring the [`publishPlugin.channels`](tools_gradle_intellij_plugin.md#tasks-publishplugin-channels) property.
 For example:
 
 <tabs group="languages">

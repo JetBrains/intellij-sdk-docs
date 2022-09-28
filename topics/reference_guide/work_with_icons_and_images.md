@@ -189,3 +189,6 @@ This icon has a larger `AnimatedIcon.Big` version.
 ## Icon Tooltips
 
 Register resource bundle via `com.intellij.iconDescriptionBundle` extension point to provide tooltips automatically for all [`SimpleColoredComponent`](%gh-ic%/platform/platform-api/src/com/intellij/ui/SimpleColoredComponent.java) renderers.
+
+Create `icon.<icon-path>.tooltip` key in given resource bundle, where `<icon-path>` is the icon path with leading slash and `.svg` removed and slashes replaced with dots
+(e.g., `/nodes/class.svg` &rarr; `icon.nodes.class.tooltip`).

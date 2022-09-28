@@ -2,9 +2,16 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Product Help:** [Tool windows](https://www.jetbrains.com/help/idea/tool-windows.html)
+
+**Platform UI Guidelines:** [Tool window](https://jetbrains.design/intellij/components/tool_window/)
+
+</microformat>
+
 _Tool windows_ are child windows of the IDE used to display information.
 These windows generally have their own toolbars (referred to as _tool window bars_) along the outer edges of the main window containing one or more _tool window buttons_, which activate panels displayed on the left, bottom and right sides of the main IDE window.
-For detailed information about tool windows, please see [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/tool-windows.html) and [Tool window](https://jetbrains.design/intellij/components/tool_window/) topic in IntelliJ Platform UI Guidelines.
 
 Each side contains two tool window groups, the primary and the secondary one, and only one tool window from each group can be active at a time.
 

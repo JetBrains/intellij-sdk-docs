@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<excerpt>Setting up a development environment required for developing a theme.</excerpt>
+
 <procedure title="Preliminary Steps">
 
 Use the following checklist to ensure that you are ready to develop your custom theme:

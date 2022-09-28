@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<excerpt>Creating a theme plugin project with Plugin DevKit wizard and generated project overview.</excerpt>
+
 This documentation page describes a DevKit-based theme project generated with the [New Project Wizard](https://www.jetbrains.com/help/idea/new-project-wizard.html).
 
 ## Creating a Theme with New Project Wizard

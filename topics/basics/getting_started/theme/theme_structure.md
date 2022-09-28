@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<excerpt>Overview of a theme plugin project structure and the most important elements.</excerpt>
+
 Themes are components within [IntelliJ Platform plugins](plugin_structure.md).
 The theme plugins should be stand-alone and not combined with other plugin functionality.
 

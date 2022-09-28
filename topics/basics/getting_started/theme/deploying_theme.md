@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<excerpt>Building and deploying a theme in IDE.</excerpt>
+
 Before your custom theme plugin can be [uploaded to JetBrains Marketplace](publishing_plugin.md#uploading-a-plugin-to-jetbrains-marketplace) and used by users, it should be packaged and verified in the actual IDE.
 
 The deployment process prepares the plugin artifact that can be installed in IDE.

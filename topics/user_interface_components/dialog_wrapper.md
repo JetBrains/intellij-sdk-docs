@@ -2,6 +2,12 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Platform UI Guidelines:** [Layout](https://jetbrains.design/intellij/principles/layout), [Validation errors](https://jetbrains.design/intellij/principles/validation_errors/)
+
+</microformat>
+
 ## DialogWrapper
 
 The [`DialogWrapper`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) is the base class which is supposed to be used for all modal dialogs (and some non-modal dialogs) shown in IntelliJ Platform.

@@ -6,6 +6,8 @@
 
 **Product Help:** [Colors and fonts](https://www.jetbrains.com/help/idea/configuring-colors-and-fonts.html)
 
+**Platform UI Guidelines:** [Inspections](https://jetbrains.design/intellij/text/inspections/)
+
 </microformat>
 
 The class used to specify how a particular range of text should be highlighted is called [`TextAttributesKey`](%gh-ic%/platform/core-api/src/com/intellij/openapi/editor/colors/TextAttributesKey.java).

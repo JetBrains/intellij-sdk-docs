@@ -2,6 +2,12 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Platform UI Guidelines:** [Layout](https://jetbrains.design/intellij/principles/layout)
+
+</microformat>
+
 > This page describes API available in IntelliJ Platform releases **2021.3 and later** only.
 >
 > See [](kotlin_ui_dsl.md) for targeting earlier releases.

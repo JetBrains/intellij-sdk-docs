@@ -6,6 +6,8 @@
 
 **Product Help:** [Menus and toolbars](https://www.jetbrains.com/help/idea/customize-actions-menus-and-toolbars.html)
 
+**Platform UI Guidelines:** [Toolbar](https://jetbrains.design/intellij/controls/toolbar/)
+
 </microformat>
 
 The actions system allows plugins to add their items to IntelliJ Platform-based IDE menus and toolbars.

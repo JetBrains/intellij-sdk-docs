@@ -2,10 +2,14 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Platform UI Guidelines:** [Notifications](https://jetbrains.design/intellij/controls/notifications/), [Banner](https://jetbrains.design/intellij/controls/banner/), [Got It tooltip](https://jetbrains.design/intellij/controls/got_it_tooltip/), [Balloon](https://jetbrains.design/intellij/controls/balloon/)
+
+</microformat>
+
 One of the leading design principles is avoiding the use of modal message boxes for notifying the user about errors and other situations that may warrant the user's attention.
 As a replacement, the IntelliJ Platform provides multiple non-modal notification UI options.
-
-For an overview, refer to [Notifications](https://jetbrains.design/intellij/controls/notifications/) in IntelliJ Platform UI Guidelines.
 
 ### Dialogs
 

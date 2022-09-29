@@ -2,6 +2,12 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<microformat>
+
+**Platform UI Guidelines:** [Icons](https://jetbrains.design/intellij/principles/icons/), [Platform theme colors](https://jetbrains.design/intellij/principles/platform_theme_colors/#UI-components)
+
+</microformat>
+
 <excerpt>Customizing UI controls and icons in a theme plugin.</excerpt>
 
 A theme is customized by adding information to the theme description file that overrides the base (_Light_ or _Darcula_) theme.

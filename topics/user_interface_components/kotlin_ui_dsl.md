@@ -2,6 +2,12 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<microformat>
+
+**Platform UI Guidelines:** [Layout](https://jetbrains.design/intellij/principles/layout)
+
+</microformat>
+
 Kotlin UI DSL allows creating UI forms with input components bound to state objects.
 The forms are built by using a declarative Kotlin syntax.
 It shares similarities with [Jetpack Compose](https://developer.android.com/jetpack/compose) for Android and is intended to build UI forms or part of forms for, e.g. dialogs and settings pages.

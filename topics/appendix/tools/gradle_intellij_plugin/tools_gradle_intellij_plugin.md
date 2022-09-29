@@ -1335,6 +1335,7 @@ Default value
 {id="tasks-runpluginverifier-downloaddir"}
 
 The path to directory where IDEs used for the verification will be downloaded.
+By default, it relies on the `plugin.verifier.home.dir` system property and falls back to `XDG_CACHE_HOME` environment variable – see [XDG Base Directory](https://wiki.archlinux.org/title/XDG_Base_Directory) for more details.
 
 {style="narrow"}
 Type

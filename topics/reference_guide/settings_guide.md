@@ -157,6 +157,7 @@ The following nested interfaces are markers, which convey information about the 
   So `NoScroll` interface should be used to remove the outer `JScrollPane`.
 * `Configurable.NoMargin` - Notifies the Settings dialog not to add an empty border to the form.
   By default, an empty border is added for a plugin's Settings component.
+* `Configurable.Beta` _(2022.3)_ - Adds <control>Beta</control> label next to settings page title in <control>Settings/Preferences</control> tree.
 
 #### Additional Interfaces Based on Configurable
 

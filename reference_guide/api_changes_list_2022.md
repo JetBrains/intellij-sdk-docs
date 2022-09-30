@@ -82,6 +82,12 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ### IntelliJ Platform 2022.3
 
+`com.intellij.database.dataSource.url.TypesRegistry.ParamEditor` class removed
+: Use `com.intellij.database.dataSource.url.TypeDescriptor.ParamEditor` instead
+
+`com.intellij.database.dataSource.url.TypesRegistry.BaseTypeDescriptor.createFieldImpl(String caption, String configuration, DataInterchange interchange)` abstract method added
+: Should be implemented
+
 ### TextMate Plugin 2022.3
 
 `org.jetbrains.plugins.textmate.language.preferences.PreferencesRegistry` class now interface

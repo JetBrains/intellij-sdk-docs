@@ -204,6 +204,61 @@ Please see, e.g.,
 [`GradleEditorTabTitleProvider`](%gh-ic%/plugins/gradle/src/org/jetbrains/plugins/gradle/util/GradleEditorTabTitleProvider.kt)
 which shows how the project name is added to the editor tab for Gradle files.
 
+### Prevent Error Highlighting of Files
+
+EP: `com.intellij.problemHighlightFilter`, `com.intellij.problemFileHighlightFilter`
+
+[`ProblemHighlightFilter`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/daemon/ProblemHighlightFilter.java) and
+the `com.intellij.problemFileHighlightFilter` EP (which implements
+[`Condition<VirtualFile>`](%gh-ic%/platform/util-rt/src/com/intellij/openapi/util/Condition.java))
+are used to filter out files that should not be error-highlighted because they are, e.g., outside
+the current project scope.
+Note that these filters should be permissive and only prevent highlighting for files that are absolutely
+known to be outside the scope.
+
+Examples:
+[`JavaProblemHighlightFilter`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/daemon/JavaProblemHighlightFilter.java),
+[`PyProblemFileHighlightFilter`](%gh-ic%/python/src/com/jetbrains/python/codeInsight/PyProblemFileHighlightFilter.java)
+
+### Provide Fully Qualified Names (FQN) for Elements
+
+EP: `com.intellij.ide.actions.QualifiedNameProvider`
+
+[`QualifiedNameProvider`](%gh-ic%/platform/refactoring/src/com/intellij/ide/actions/QualifiedNameProvider.java)
+provides features like copying and pasting references of FQN for, e.g., classes, functions, or methods.
+Therefore, the `QualifiedNameProvider` implementation needs to provide logic to convert from and to
+FQN.
+
+Example:
+[`PyQualifiedNameProvider`](%gh-ic%/python/src/com/jetbrains/python/actions/PyQualifiedNameProvider.java)
+
+### Label Files as Test Files
+
+EP: `com.intellij.openapi.roots.TestSourcesFilter`
+
+[`TestSourcesFilter`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/TestSourcesFilter.java)
+allows for telling the IDE that a file is a test file, even it's not located in a directory marked as
+test root.
+This can be used in situations where test files are located next to source files.
+If these files can be distinguished either by filename or content from source files, implementing this
+EP will mark them as test files for the IDE.
+
+### Move Statements Up and Down in the Editor
+
+EP: `com.intellij.statementUpDownMover`
+
+[`StatementUpDownMover`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/moveUpDown/StatementUpDownMover.java)
+allows for customizing the behavior of moving statements up and down.
+This can be used to keep code syntactically correct when moving code in the editor, e.g. when moving
+a variable declaration.
+
+Example:
+[`DeclarationMover`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/editorActions/moveUpDown/DeclarationMover.java)
+
+
+
+
+
 > If a topic you are interested in is not covered in the above sections, let us know via the "**Was this page helpful?**" feedback form below or [other channels](getting_help.md#problems-with-the-guide).
 >
 > Please be specific about the topics and reasons for adding them, and leave your email in case we need more details.

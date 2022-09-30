@@ -25,6 +25,7 @@ Spell Checking
 
 Minor Changes and Additions
 :
+- Add descriptions for the following EPs to [](additional_minor_features.md): [](additional_minor_features.md#prevent-error-highlighting-of-files), [](additional_minor_features.md#provide-fully-qualified-names-fqn-for-elements), [](additional_minor_features.md#label-files-as-test-files), [](additional_minor_features.md#move-statements-up-and-down-in-the-editor).
 - Add section about [](ide_infrastructure.md#power-save-mode).
 - Highlight references automatically via [](references_and_resolve.md#additional-highlighting)
 - Language injections: controlling [](language_injection.md#formatting)

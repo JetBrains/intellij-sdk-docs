@@ -323,6 +323,8 @@ Sample usages in IntelliJ Platform IDEs:
 | <menupath>Settings/Preferences &#124; Tools &#124; Diff & Merge</menupath>                                                    | [`DiffSettingsConfigurable`](%gh-ic%/platform/diff-impl/src/com/intellij/diff/settings/DiffSettingsConfigurable.kt)              |
 | <menupath>Settings/Preferences &#124; Editor &#124; General &#124; Editor Tabs</menupath>                                     | [`EditorTabsConfigurable`](%gh-ic%/platform/platform-impl/src/com/intellij/application/options/editor/EditorTabsConfigurable.kt) |
 
+<include src="kotlin_ui_dsl_version_2.md" include-id="ui_inspector_added_at"></include>
+
 ## FAQ
 
 ### One Cell Is Minimum, Second One Is Maximum

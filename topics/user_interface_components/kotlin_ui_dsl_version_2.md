@@ -35,6 +35,15 @@ It describes some UI DSL basics and contains explanations, tips, a list of all a
 >
 {type="tip"}
 
+<chunk id="ui_inspector_added_at">
+
+> To understand how a component visible in the IDE is created in code, see the component's [`added-at` property in the UI Inspector](internal_ui_inspector.md#added-at-property).
+> Note that it is not limited only to components created with Kotlin UI DSL, but helps to understand creation of any visible Swing component.
+>
+{type="tip"}
+
+</chunk>
+
 ## UI DSL Basics
 
 **UI DSL Showcase Tab**: Basics (Sources: [`DemoBasics`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoBasics.kt))

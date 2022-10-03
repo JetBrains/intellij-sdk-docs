@@ -18,11 +18,20 @@ While enabled, centering the cursor on a UI element and pressing <shortcut>Ctrl/
 
 For example, to get information about the _Build Project_ button's icon (hammer) on the toolbar (highlighted in green), put the mouse cursor on the icon and press <shortcut>Ctrl/Cmd+Alt</shortcut> while clicking the mouse.
 
-The _UI Inspector_ displays that the icon has the internal path `AllIcons.Actions.Compile`:
+The _UI Inspector_ displays the icon details:
 
-![Internal Icon Info](internal_uii_icon_info.png)
+![Internal Icon Info](internal_ui_inspector_icon_info.png)
 
 ## Additional Properties
+
+### added-at Property
+
+Sometimes, inspecting complex component's properties is not enough to understand how the component was created and configured.
+_UI Inspector_ gives the possibility of finding the code where the selected component was added, which makes it much easier to understand which APIs can be used to build custom components with similar complexity.
+To find the place were component was added, select the `added-at` property to show the stacktrace:
+![added-at Stacktrace](internal_ui_inspector_added_at.png)
+
+### Specific Component Properties
 
 Various components used in the IntelliJ Platform expose additional properties.
 These can be useful to locate the underlying implementation, related Action, etc.

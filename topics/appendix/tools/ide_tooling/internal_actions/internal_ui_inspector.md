@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<excerpt>UI Inspector allows checking properties of a component selected in the frame of running IDE instance.</excerpt>
+
 The _UI Inspector_ is a tool to interrogate elements of the IntelliJ IDEA UI to get an internal description of each element.
 UI elements can be inspected interactively by clicking on the element while the _UI Inspector_ is enabled.
 

@@ -6,6 +6,7 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Flamingo (2022.2.1) Canary 3 | ![canary][canary] | October 6, 2022 | **2022.2.1.3** <br/> AI-222.4167.29.2221.9133400 | **2022.2.2** <br/> 222.4167.29 |
 | Flamingo (2022.2.1) Canary 2 | ![canary][canary] | September 27, 2022 | **2022.2.1.2** <br/> AI-222.4167.29.2221.9093980 | **2022.2.2** <br/> 222.4167.29 |
 | Flamingo (2022.2.1) Canary 1 | ![canary][canary] | September 20, 2022 | **2022.2.1.1** <br/> AI-222.3739.54.2221.9043926 | **2022.2.1** <br/> 222.3739.54 |
 | Electric Eel (2022.1.1) Beta 2 | ![beta][beta] | October 3, 2022 | **2022.1.1.12** <br/> AI-221.6008.13.2211.9113387 | **2022.1.4** <br/> 221.6008.13 |
@@ -383,11 +384,11 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Flamingo (2022.2.1) Canary 3 | ![canary][canary] | October 6, 2022 | **2022.2.1.3** <br/> AI-222.4167.29.2221.9133400 | **2022.2.2** <br/> 222.4167.29 |
 | Flamingo (2022.2.1) Canary 2 | ![canary][canary] | September 27, 2022 | **2022.2.1.2** <br/> AI-222.4167.29.2221.9093980 | **2022.2.2** <br/> 222.4167.29 |
 | Flamingo (2022.2.1) Canary 1 | ![canary][canary] | September 20, 2022 | **2022.2.1.1** <br/> AI-222.3739.54.2221.9043926 | **2022.2.1** <br/> 222.3739.54 |
 | Electric Eel (2022.1.1) Beta 2 | ![beta][beta] | October 3, 2022 | **2022.1.1.12** <br/> AI-221.6008.13.2211.9113387 | **2022.1.4** <br/> 221.6008.13 |
 | Electric Eel (2022.1.1) Beta 1 | ![beta][beta] | September 20, 2022 | **2022.1.1.11** <br/> AI-221.6008.13.2211.9039819 | **2022.1.4** <br/> 221.6008.13 |
-| Dolphin (2021.3.1) | ![release][release] | September 15, 2022 | **2021.3.1.16** <br/> AI-213.7172.25.2113.9014738 | **2021.3.3** <br/> 213.7172.25 |
 
 [release]: https://img.shields.io/badge/-release-blue?style=flat-square
 [patch]: https://img.shields.io/badge/-patch-orange?style=flat-square

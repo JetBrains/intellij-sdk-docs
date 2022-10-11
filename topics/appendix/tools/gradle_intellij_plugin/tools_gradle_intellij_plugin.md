@@ -631,6 +631,43 @@ Default value
 : [`prepareSandbox.outputDir`](#tasks-preparesandbox)
 
 
+### listBundledPlugins
+{id="tasks-listbundledplugins"}
+
+> Available since the upcoming release
+>
+{type="warning"}
+
+Lists all IDs of plugins bundled within the currently targeted IDE.
+
+
+#### ideDir
+{id="tasks-listbundledplugins-idedir"}
+
+The IDE dependency sources path.
+Configured automatically with the [`setupDependencies.idea`](#tasks-setupdependencies-idea) dependency.
+
+{style="narrow"}
+Type
+: `File`
+
+Default value
+: [`setupDependencies.idea`](#tasks-setupdependencies-idea)
+
+
+#### outputFile
+{id="tasks-listbundledplugins-outputfile"}
+
+Path to the file, where the output list will be stored.
+
+{style="narrow"}
+Type
+: `File`
+
+Default value
+: `File("${project.buildDir}/listBundledPlugins.txt")`
+
+
 ### listProductsReleases
 {id="tasks-listproductsreleases"}
 

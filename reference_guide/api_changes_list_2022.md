@@ -81,6 +81,8 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 ## 2022.3
 
 ### IntelliJ Platform 2022.3
+`com.intellij.openapi.editor.EditorCopyPasteHelper.getSelectionTransferable(Editor editor, EditorCopyPasteHelper.CopyPasteOptions options)` abstract method added
+: Must be implemented instead of and preferred over `com.intellij.openapi.editor.EditorCopyPasteHelper.copySelectionToClipboard(Editor)` which now delegates to the new method.
 
 ### Database Plugin 2022.3
 

@@ -93,10 +93,10 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 : Must be implemented.
 
 `com.intellij.database.psi.DbDataSourceImpl.getDelegate()` method return type changed from DatabaseSystem to RawDataSource
-: Prefer `com.intellij.database.psi.DbDataSource.getDelegateDataSource()`
+: Prefer `com.intellij.database.psi.DbDataSource.getDelegateDataSource()`.
 
 `com.intellij.database.psi.DbPsiFacadeImpl.createDataSourceWrapperElement(DasDataSource, DataSourceManager)` method parameter type changed from DasDataSource to RawDataSource
-: Avoid manually wrapping data sources
+: Avoid manually wrapping data sources.
 
 ### TextMate Plugin 2022.3
 

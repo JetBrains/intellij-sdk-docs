@@ -92,6 +92,12 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 `com.intellij.database.dataSource.url.TypesRegistry.BaseTypeDescriptor.createFieldImpl(String caption, String configuration, DataInterchange interchange)` abstract method added
 : Must be implemented.
 
+`com.intellij.database.psi.DbDataSourceImpl.getDelegate()` method return type changed from DatabaseSystem to RawDataSource
+: Prefer `com.intellij.database.psi.DbDataSource.getDelegateDataSource()`
+
+`com.intellij.database.psi.DbPsiFacadeImpl.createDataSourceWrapperElement(DasDataSource, DataSourceManager)` method parameter type changed from DasDataSource to RawDataSource
+: Avoid manually wrapping data sources
+
 ### TextMate Plugin 2022.3
 
 `org.jetbrains.plugins.textmate.language.preferences.PreferencesRegistry` class now interface

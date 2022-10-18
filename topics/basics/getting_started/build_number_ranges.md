@@ -38,13 +38,18 @@ Plugins may specify compatibility versions more precisely (e.g., requiring a spe
 Multipart build numbers can also be used in the `since-build` and `until-build` attributes of `idea-version`.
 Usually you should omit the product ID and use only the branch number and build number, for example:
 
-```xml
-<!-- any 213-branch version: 2021.3, 2021.3.1, 2021.3.2, ... -->
-<idea-version since-build="213" until-build="213.*"/>
+<compare style="top-bottom" title-before="Any 213 branch version" title-after="Specific build number">
 
-<!-- specific build number (2021.3.3 or higher) -->
+```xml
+<!-- 2021.3, 2021.3.1, 2021.3.2, ... -->
+<idea-version since-build="213" until-build="213.*"/>
+```
+
+```xml
+<!-- 2021.3.3 or higher -->
 <idea-version since-build="213.7172.25"/>
 ```
+</compare>
 
 > Specific build numbers and their corresponding release version are available via _Previous Releases_ on the corresponding product's download page, e.g. [Previous IntelliJ IDEA Releases](https://www.jetbrains.com/idea/download/previous.html).
 > See also [What versions of IntelliJ-based IDEs are supported?](https://intellij-support.jetbrains.com/hc/en-us/articles/360019574859-What-versions-of-IntelliJ-based-IDEs-are-supported-) for JetBrains IDE support policy.

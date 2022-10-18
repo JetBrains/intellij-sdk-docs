@@ -136,6 +136,10 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 `org.jetbrains.plugins.textmate.language.preferences.SnippetsRegistry()` constructor removed
 : Instantiate `org.jetbrains.plugins.textmate.language.preferences.SnippetsRegistryImpl()` instead.
 
+### HTTP Client Plugin 2022.3
+`com.intellij.httpClient.http.request.HttpRequestVariableSubstitutor` class now interface
+: Use `com.intellij.httpClient.http.request.HttpRequestVariableSubstitutorImpl.create(Project, HttpRequestEnvironment)` for constructing instances. 
+
 ## 2022.2
 
 ### IntelliJ Platform 2022.2

@@ -34,7 +34,7 @@ A commonly used UI implementation is [`EditorNotificationPanel`](%gh-ic%/platfor
 
 ### "Got It" Notification
 
-Use to highlight important new/changed features via [`GotItMessage`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/GotItMessage.java).
+Use to highlight important new/changed features via [`GotItTooltip`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/GotItTooltip.kt).
 See [Got It tooltip](https://jetbrains.design/intellij/controls/got_it_tooltip/) in IntelliJ Platform UI Guidelines for an overview.
 
 ### Top-Level Notifications (Balloons)

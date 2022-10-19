@@ -5,18 +5,20 @@
 Plugin distribution will be built using [Gradle](tools_gradle_intellij_plugin.md#tasks-buildplugin) or [Plugin DevKit](deploying_theme.md).
 
 The plugin <path>jar</path> file must contain:
+
 - the configuration file (<path>META-INF/plugin.xml</path>) ([Plugin Configuration File](plugin_configuration_file.md))
 - the classes that implement the plugin functionality
 - recommended: plugin logo file(s) (<path>META-INF/pluginIcon*.svg</path>) ([Plugin Logo](plugin_icon_file.md))
 
 ### Plugin Without Dependencies
+
 A plugin consisting of a single <path>.jar</path> file is placed in the <path>/plugins</path> directory.
 
 ```text
 .IntelliJIDEAx0/
 └── plugins
     └── sample.jar
-        ├── com/foo/...
+        ├── com/company/sample/SamplePluginService.class
         │   ...
         │   ...
         └── META-INF
@@ -26,6 +28,7 @@ A plugin consisting of a single <path>.jar</path> file is placed in the <path>/p
 ```
 
 ### Plugin With Dependencies
+
 The plugin <path>.jar</path> file is placed in the <path>/lib</path> folder under the plugin's "root" folder, together with all required bundled libraries.
 
 All jars from the <path>/lib</path> folder are automatically added to the classpath (see also [Plugin Class Loaders](plugin_class_loaders.md)).
@@ -45,7 +48,7 @@ All jars from the <path>/lib</path> folder are automatically added to the classp
                │   ...
                │   ...
                └── sample.jar
-                   ├── com/foo/...
+                   ├── com/company/sample/SamplePluginService.class
                    │   ...
                    │   ...
                    └── META-INF

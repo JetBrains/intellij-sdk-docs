@@ -10,7 +10,7 @@ For more advanced options, see the full [Gradle IntelliJ Plugin](tools_gradle_in
 Gradle IntelliJ Plugin and [Gradle](https://gradle.org/install/) build system are constantly developed, and every new release brings important bug fixes, new features, and improvements that makes the development more efficient.
 It is highly recommended to keep updating both Gradle and Gradle IntelliJ Plugin to the latest versions.
 
-> Current Gradle IntelliJ Plugin version is ![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square)
+> Current Gradle IntelliJ Plugin version is [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square){type="joined"}](https://github.com/jetbrains/gradle-intellij-plugin/releases)
 >
 {type="note"}
 

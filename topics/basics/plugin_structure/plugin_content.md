@@ -4,7 +4,7 @@
 
 Plugin distribution will be built using [Gradle](tools_gradle_intellij_plugin.md#tasks-buildplugin) or [Plugin DevKit](deploying_theme.md).
 
-The plugin <path>jar</path> file must contain:
+The plugin <path>.jar</path> file must contain:
 
 - the configuration file (<path>META-INF/plugin.xml</path>) ([Plugin Configuration File](plugin_configuration_file.md))
 - the classes that implement the plugin functionality

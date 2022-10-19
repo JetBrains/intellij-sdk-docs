@@ -11,6 +11,11 @@ See also [](marketing.md) about widgets and badges.
 
 > If you plan to publish your plugin to a repository _other than_ the [JetBrains Marketplace](https://plugins.jetbrains.com), please refer to the [](custom_plugin_repository.md) documentation.
 
+> If your plugin ships with [additional libraries](plugin_content.md#plugin-with-dependencies), do not repackage them into the main plugin archive.
+> Otherwise, [Plugin Verifier](verifying_plugin_compatibility.md) will yield false positives for unresolved classes and methods.
+>
+{type="warning"}
+
 ## Uploading a Plugin to JetBrains Marketplace
 
 Before publishing your plugin, make sure it is signed.

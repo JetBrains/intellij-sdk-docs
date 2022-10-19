@@ -30,6 +30,11 @@ The plugin <path>.jar</path> file is placed in the <path>/lib</path> folder unde
 
 All jars from the <path>/lib</path> folder are automatically added to the classpath (see also [Plugin Class Loaders](plugin_class_loaders.md)).
 
+> Do not repackage libraries into the main plugin archive (<path>sample.jar</path> in the sample below).
+> Otherwise, [Plugin Verifier](verifying_plugin_compatibility.md) will yield false positives for unresolved classes and methods.
+>
+{type="warning"}
+
 ```text
    .IntelliJIDEAx0/
    └── plugins

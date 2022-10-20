@@ -25,6 +25,15 @@ The plugin provides the functionalities like:
 {type="tip"}
 
 ## Usage
+
+<chunk id="gradle_plugin_223_problem">
+
+> When targeting 2022.3 IDE releases, using [Gradle IntelliJ Plugin Snapshot Release](tools_gradle_intellij_plugin.md#snapshot-release) is currently required, as 1.9.0 does not support this platform version yet.
+>
+{type="warning"}
+
+</chunk>
+
 To enable this plugin in your Gradle-based project, register the plugin in the Gradle build script's `plugins` section:
 
 <tabs group="languages">

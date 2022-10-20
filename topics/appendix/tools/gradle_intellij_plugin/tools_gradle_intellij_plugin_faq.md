@@ -4,6 +4,10 @@
 
 ## Frequently Asked Questions
 
+### How to target 2022.3 platform
+
+<include src="tools_gradle_intellij_plugin.md" include-id="gradle_plugin_223_problem"></include>
+
 ### How to modify JVM arguments of runIde task
 
 [`runIde`](tools_gradle_intellij_plugin.md#tasks-runide) task is a [Java Exec](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html) task and can be modified according to the documentation.

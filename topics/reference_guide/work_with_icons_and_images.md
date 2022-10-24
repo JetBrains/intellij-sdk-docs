@@ -11,10 +11,10 @@
 </microformat>
 
 Icons and images are used widely by IntelliJ Platform plugins.
-Plugins need icons mostly for [](basic_action_system.md), custom components renderers, [](tool_windows.md), and so on.
+Plugins need icons mostly for [](basic_action_system.md), custom component renderers, [](tool_windows.md), and so on.
 
 > Plugin _Logos_, which represent a plugin itself, have different requirements than icons and images used within a plugin.
-> For more information see the [](plugin_icon_file.md).
+> For more information, see the [](plugin_icon_file.md).
 >
 {type="tip"}
 
@@ -29,7 +29,7 @@ If custom icons are required, please refer to detailed [design guide](https://je
 
 ## How to organize and how to use icons?
 
-> See [Action Basics](%gh-sdk-samples%/action_basics) sample plugin as reference.
+> See [Action Basics](%gh-sdk-samples%/action_basics) sample plugin as a reference.
 >
 {type="tip"}
 

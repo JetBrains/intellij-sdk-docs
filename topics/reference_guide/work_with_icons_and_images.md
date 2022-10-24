@@ -33,7 +33,8 @@ If custom icons are required, please refer to detailed [design guide](https://je
 >
 {type="tip"}
 
-The best way to deal with icons and other image resources is to put them to a dedicated source root marked as <control>Resources Root</control>, say <path>icons</path> or <path>resources</path>.
+In the case of a Gradle-based project, icons should be placed in the <path>resources</path> folder.
+If the project is DevKit-based, the recommended approach is to put icons to a dedicated [source root](https://www.jetbrains.com/help/idea/content-roots.html) marked as <control>Resources Root</control>, say <path>icons</path> or <path>resources</path>.
 
 The `getIcon()` method of [`IconLoader`](%gh-ic%/platform/util/ui/src/com/intellij/openapi/util/IconLoader.java) can be used to access the icons.
 The path to the icon passed in as argument to `IconLoader.getIcon()` **must** start with leading `/`.

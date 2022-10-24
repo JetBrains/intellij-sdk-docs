@@ -13,6 +13,7 @@ A service needing a shutdown hook/cleanup routine can implement [`Disposable`](%
 Services are used to encapsulate logic operating on a set of related classes or to provide some reusable functionality that can be used across the plugin project, and conceptually don't differ from the service classes in other languages or frameworks.
 
 #### Types
+
 The IntelliJ Platform offers three types of services: _application-level_ services (global singleton), _project-level_ services, and _module-level_ services.
 For the latter two, a separate instance of the service is created for each instance of its corresponding scope, see [Project Model Introduction](project_structure.md).
 
@@ -21,10 +22,11 @@ For the latter two, a separate instance of the service is created for each insta
 {type="note"}
 
 #### Constructor
+
 Project/Module-level service constructors can have a `Project`/`Module` argument.
 To improve startup performance, avoid any heavy initializations in the constructor.
 
-> Please note that using constructor injection is deprecated (and not supported in [Light Services](#light-services)) for performance reasons.
+> Please note that using constructor injection of dependency services is deprecated (and not supported in [Light Services](#light-services)) for performance reasons.
 > Other dependencies should be [acquired only when needed](#retrieving-a-service) in all corresponding methods (see `someServiceMethod()` in [Project Service Sample](#project-service-sample)).
 >
 {type="note"}
@@ -42,7 +44,7 @@ The service instance will be created in scope according to the caller (see [Retr
 Restrictions:
 
 * Service class must be `final`.
-* Constructor injection is not supported (since it is deprecated).
+* Constructor injection of dependency services is not supported (since it is deprecated).
 * If service is a [PersistentStateComponent](persisting_state_of_components.md), roaming must be disabled (`roamingType = RoamingType.DISABLED`).
 
 See [Project-Level Service](#project-service-sample) below for a sample.

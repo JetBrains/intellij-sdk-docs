@@ -13,6 +13,12 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2022
 
+### October-22
+
+Minor Changes and Additions
+:
+- Add information about [sharing settings](persisting_state_of_components.md#sharing-settings-between-ides-installations) between different IDEs installations.
+
 ### September-22
 
 Extract Part X - Themes

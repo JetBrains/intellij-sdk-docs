@@ -182,7 +182,8 @@ If the component state is OS-dependent, then `@Storage` annotation's `roamingTyp
 
 #### Settings Repository Plugin and Export Settings Feature
 
-Persistent components can be shared via the _Settings Repository_ plugin and _Export Settings_ feature, depending on the `@Storage` annotation's `roamingType`. See the [](#defining-the-storage-location) for the details.
+Persistent components can be shared via the _Settings Repository_ plugin and _Export Settings_ feature, depending on the `roamingType` of the `@Storage` annotation.
+See the [](#defining-the-storage-location) for more details.
 
 ### Customizing the XML Format of Persisted Values
 

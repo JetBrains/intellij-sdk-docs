@@ -178,7 +178,7 @@ If a component contains both shareable and non-shareable data, it should be spli
 
 To include a plugin's component state in the _Settings Sync_ plugin synchronization, the settings category must be specified via the `@State` annotation's `category` attribute. The default `SettingsCategory.OTHER` value disables synchronization of a component's state.
 
-If the component state is OS-dependent, then `@Storage` annotation's `roamingType` must be set to `RoamingType.PER_OS`.
+If the component state is OS-dependent, the `roamingType` of the `@Storage` annotation must be set to `RoamingType.PER_OS`.
 
 #### Settings Repository Plugin and Export Settings Feature
 

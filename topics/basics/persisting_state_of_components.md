@@ -158,7 +158,8 @@ The `roamingType` parameter of the `@Storage` annotation specifies the roaming t
 
 ### Sharing Settings Between IDEs Installations
 
-It is possible to share the persistent state of components between different IDEs installations, so users don't have to struggle with setting up the IDE on every machine they use for development, or can share their settings within a team.
+It is possible to share the persistent state of components between different IDE installations.
+This allows users to have the same settings on every development machine or to share their settings within a team.
 
 Settings can be shared via the following functionalities:
 - _[Settings Sync](https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html#IDE_settings_sync)_ plugin that allows synchronizing settings on JetBrains servers. Users can choose the settings categories that are synchronized.

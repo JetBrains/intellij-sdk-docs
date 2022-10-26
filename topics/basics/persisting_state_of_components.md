@@ -166,7 +166,7 @@ Settings can be shared via the following functionalities:
 - _[Settings Repository](https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html#settings-repository)_ plugin that allows synchronizing settings in a Git repository created and configured by a user.
 - _[Export Settings](https://www.jetbrains.com/help/idea/2019.3/sharing-your-ide-settings.html#import-export-settings)_ feature that allows for the manual import and export of settings.
 
-> Synchronization via the _Settings Sync_ or _Settings Repository_ plugins is done only when they are installed and enabled.
+> Synchronization via the _Settings Sync_ or _Settings Repository_ plugins only works when these plugins are installed and enabled.
 >
 {type="tip"}
 

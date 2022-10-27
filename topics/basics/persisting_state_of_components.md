@@ -146,7 +146,49 @@ See [`StoragePathMacros`](%gh-ic%/platform/projectModel-api/src/com/intellij/ope
 >
 {type="note"}
 
-The `roamingType` parameter of the `@Storage` annotation specifies the roaming type when the Settings Repository plugin is used.
+The `roamingType` parameter of the `@Storage` annotation specifies the roaming type when the [settings are shared](#sharing-settings-between-ides-installations):
+
+- `RoamingType.DEFAULT` - settings are shared
+- `RoamingType.PER_OS` - settings are shared per operating system
+- `RoamingType.DISABLED` - settings sharing is disabled
+
+> If there are multiple components that store state in the same file, they must have the same `romaingType` attribute value.
+>
+{type="warning"}
+
+### Sharing Settings Between IDE Installations
+
+It is possible to share the persistent state of components between different IDE installations.
+This allows users to have the same settings on every development machine or to share their settings within a team.
+
+Settings can be shared via the following functionalities:
+- _[Settings Sync](https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html#IDE_settings_sync)_ plugin that allows synchronizing settings on JetBrains servers. Users can choose the category of settings that are synchronized.
+- _[Settings Repository](https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html#settings-repository)_ plugin that allows synchronizing settings in a Git repository created and configured by a user.
+- _[Export Settings](https://www.jetbrains.com/help/idea/2019.3/sharing-your-ide-settings.html#import-export-settings)_ feature that allows for the manual import and export of settings.
+
+> Synchronization via the _Settings Sync_ or _Settings Repository_ plugins only works when these plugins are installed and enabled.
+>
+{type="tip"}
+
+The decision about making a specific component's state shareable should be made carefully.
+Only the settings that are not specific to a given machine should be shared, e.g. paths to user-specific directories shouldn't be shared.
+If a component contains both shareable and non-shareable data, it should be split into two separate components.
+
+#### Settings Sync Plugin
+
+> The _Settings Sync_ plugin is available starting with the version 2022.3.
+>
+{type="note"}
+
+To include a plugin's component state in the _Settings Sync_ plugin synchronization, the settings category must be specified via the `category` attribute of the `@State` annotation.
+The default `SettingsCategory.OTHER` value disables synchronization of a component's state.
+
+If the component state is OS-dependent, the `roamingType` of the `@Storage` annotation must be set to `RoamingType.PER_OS`.
+
+#### Settings Repository Plugin and Export Settings Feature
+
+Persistent components can be shared via the _Settings Repository_ plugin and _Export Settings_ feature, depending on the `roamingType` of the `@Storage` annotation.
+See the [](#defining-the-storage-location) for more details.
 
 ### Customizing the XML Format of Persisted Values
 

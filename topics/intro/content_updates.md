@@ -17,7 +17,7 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 Minor Changes and Additions
 :
-- Add information about [sharing settings](persisting_state_of_components.md#sharing-settings-between-ides-installations) between different IDEs installations.
+- Add information about [sharing settings](persisting_state_of_components.md#sharing-settings-between-ide-installations) between different IDEs installations.
 
 ### September-22
 

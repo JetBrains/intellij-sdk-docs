@@ -146,7 +146,7 @@ See [`StoragePathMacros`](%gh-ic%/platform/projectModel-api/src/com/intellij/ope
 >
 {type="note"}
 
-The `roamingType` parameter of the `@Storage` annotation specifies the roaming type when the [settings are shared](#sharing-settings-between-ides-installations):
+The `roamingType` parameter of the `@Storage` annotation specifies the roaming type when the [settings are shared](#sharing-settings-between-ide-installations):
 
 - `RoamingType.DEFAULT` - settings are shared
 - `RoamingType.PER_OS` - settings are shared per operating system

@@ -143,6 +143,14 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 `com.intellij.httpClient.http.request.HttpRequestVariableSubstitutor` class now interface
 : Use `com.intellij.httpClient.http.request.HttpRequestVariableSubstitutorImpl.create(Project, HttpRequestEnvironment)` for constructing instances.
 
+### JavaScript Plugin 2022.3
+
+`com.intellij.lang.javascript.buildTools.webpack.WebPackConfigManager` class moved to package `com.intellij.webpack`
+: Use `com.intellij.webpack.WebpackConfigManager` instead.
+  
+`com.intellij.lang.javascript.buildTools.webpack.WebPackConfigManager.Companion` class moved to package `com.intellij.webpack`
+: Use `com.intellij.webpack.WebpackConfigManager.Companion` instead.
+
 ## 2022.2
 
 ### IntelliJ Platform 2022.2

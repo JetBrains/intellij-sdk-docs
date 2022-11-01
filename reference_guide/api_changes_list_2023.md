@@ -1,13 +1,11 @@
-[//]: # (title: Incompatible Changes in IntelliJ Platform and Plugins API)
+[//]: # (title: Incompatible Changes in IntelliJ Platform and Plugins API 2023.*)
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <!--
-=============== DO NOT RENAME OR MOVE THIS FILE ===============
+Before documenting a breaking API change, please make sure that the change cannot be avoided in an alternative way.
 
-Before documenting a breaking API change, please, make sure that the change cannot be avoided in an alternative way.
-
-APIs marked with @ApiStatus.Experimental, @ApiStatus.Internal, or @ApiStatus.ScheduledForRemoval don't need to be documented.
+APIs marked with @Deprecated(forRemoval=true), @ApiStatus.Experimental, @ApiStatus.Internal, or @ApiStatus.ScheduledForRemoval don't need to be documented.
 
 To document a new incompatible change, add a new line with the problem pattern followed by a 2nd line with ": "-prefixed human-readable description and recommended fix/action.
 
@@ -59,30 +57,29 @@ An example of a ticket is https://youtrack.jetbrains.com/issue/MP-1218. Until su
 
 NOTE: You are allowed to prettify the pattern using links: [`org.example.Foo`](https://github.com/JetBrains/intellij-community/tree/master/)
 
-NOTE: Entries not starting with code quotes (`name`) can be added to document non-code changes  and will be skipped in API verification.
+NOTE: Entries not starting with code quotes (`name`) can be added to document non-code changes and will be skipped in API verification.
 -->
-
-<excerpt>List of known Breaking API Changes by version</excerpt>
-
-IntelliJ API may be occasionally changed between releases, leading to existing plugins' incompatibilities with newer IDE builds.
 
 Please see [](verifying_plugin_compatibility.md) on how to use Plugin Verifier and IDE inspections to check such problems.
 
-## Known Breaking Changes
-
-> [Subscribe to Marketplace Developer News](https://jb.gg/mp-updates) to receive news and announcements.
-> Also follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/).
+> Changes from API marked with `@Deprecated(forRemoval=true)` or any of [`org.jetbrains.annotations.ApiStatus`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java) `@Experimental`, `@ScheduledForRemoval`, or `@Internal` are not listed here, as incompatible changes are to be expected.
 >
-{type="tip"}
+> For API annotated with `ApiStatus.@Internal`, see [](api_internal.md) for more details and replacements.
+>
+{type="note"}
 
-The following pages list the breaking changes in IDE and plugin releases with required/recommended steps to take by plugin authors.
+> Java 17 is required when targeting 2022.2 or later only.
+>
+> Java 11 is required ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)) when targeting 2020.3 and later only.
+>
+> Please make sure to always upgrade `gradle-intellij-plugin` to the latest version [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square){type="joined"}](https://github.com/jetbrains/gradle-intellij-plugin/releases)
+>
+{type="note"}
 
-* [Changes in 2023.*](api_changes_list_2023.md)
-* [Changes in 2022.*](api_changes_list_2022.md)
-* [Changes in 2021.*](api_changes_list_2021.md)
-* [Changes in 2020.*](api_changes_list_2020.md)
-* [Changes in 2019.*](api_changes_list_2019.md)
+_Early Access Program_ (EAP) releases of upcoming versions are available [here](https://eap.jetbrains.com).
 
-## Library Updates
+## 2023.1
 
-Information about bundled Third-Party Software/Libraries and their respective versions is available [here](https://www.jetbrains.com/legal/third-party-software/).
+<include src="tools_gradle_intellij_plugin.md" include-id="gradle_plugin_223_problem"></include>
+
+### IntelliJ Platform 2023.1

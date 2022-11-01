@@ -13,6 +13,7 @@ Plugin authors are encouraged to verify their compatible releases take advantage
 >
 {type="tip"}
 
+* [Changes in 2023.*](api_notable_list_2023.md)
 * [Changes in 2022.*](api_notable_list_2022.md)
 * [Changes in 2021.*](api_notable_list_2021.md)
 * [Changes in 2020.*](api_notable_list_2020.md)

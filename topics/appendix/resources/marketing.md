@@ -6,8 +6,6 @@
 >
 > The _Busy Plugin Developers. Episode 2_ discusses [5 tips for optimizing JetBrains Marketplace plugin page](https://youtu.be/oB1GA9JeeiY?t=52) in more detail.
 >
-> See also [](marketing.md) about widgets and badges.
->
 {type="tip"}
 
 <excerpt>Widgets and badges for marketing material</excerpt>

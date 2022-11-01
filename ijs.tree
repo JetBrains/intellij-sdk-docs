@@ -366,6 +366,7 @@
     <toc-element id="verifying_plugin_compatibility.md"/>
     <toc-element id="api_changes_list.md" toc-title="Incompatible API Changes"
                  accepts-web-file-names="api-changes-list-2016.html,api-changes-list-2017.html,api-changes-list-2018.html">
+      <toc-element id="api_changes_list_2023.md" toc-title="2023.*"/>
       <toc-element id="api_changes_list_2022.md" toc-title="2022.*"/>
       <toc-element id="api_changes_list_2021.md" toc-title="2021.*"/>
       <toc-element id="api_changes_list_2020.md" toc-title="2020.*"/>
@@ -373,6 +374,7 @@
     </toc-element>
     <toc-element id="api_notable.md" toc-title="Notable API Changes"
                  accepts-web-file-names="api-notable-list-2018.html">
+      <toc-element id="api_notable_list_2023.md" toc-title="2023.*"/>
       <toc-element id="api_notable_list_2022.md" toc-title="2022.*"/>
       <toc-element id="api_notable_list_2021.md" toc-title="2021.*"/>
       <toc-element id="api_notable_list_2020.md" toc-title="2020.*"/>

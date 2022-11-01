@@ -85,8 +85,13 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 ### IntelliJ Platform 2022.3
 
 `com.intellij.openapi.externalSystem.dependency.analyzer.DependencyAnalyzerExtension.isApplicable(ProjectSystemId)` method added
+: Must be implemented.
+
 `com.intellij.openapi.externalSystem.dependency.analyzer.DependencyAnalyzerExtension.createContributor(Project, Disposable)` method parameter `ProjectSystemId` removed
-`com.intellij.openapi.externalSystem.dependency.analyzer.DependencyAnalyzerExtension.createContributor(Project, Disposable)` method return type changed from `DependencyAnalyzerContributor?` to `DependencyAnalyzerContributor`: Implement `isApplicable` instead.
+: Adjust your code.
+
+`com.intellij.openapi.externalSystem.dependency.analyzer.DependencyAnalyzerExtension.createContributor(Project, Disposable)` method return type changed from `DependencyAnalyzerContributor?` to `DependencyAnalyzerContributor`
+: Implement `isApplicable()` instead.
 
 `com.intellij.openapi.editor.EditorCopyPasteHelper.getSelectionTransferable(Editor editor, EditorCopyPasteHelper.CopyPasteOptions options)` abstract method added
 : Must be implemented instead of and preferred over `com.intellij.openapi.editor.EditorCopyPasteHelper.copySelectionToClipboard(Editor)` which now delegates to the new method.
@@ -152,7 +157,7 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 `com.intellij.lang.javascript.buildTools.webpack.WebPackConfigManager` class moved to package `com.intellij.webpack`
 : Use `com.intellij.webpack.WebpackConfigManager` instead.
-  
+
 `com.intellij.lang.javascript.buildTools.webpack.WebPackConfigManager.Companion` class moved to package `com.intellij.webpack`
 : Use `com.intellij.webpack.WebpackConfigManager.Companion` instead.
 

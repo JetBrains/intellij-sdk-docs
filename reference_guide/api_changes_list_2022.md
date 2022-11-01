@@ -84,6 +84,9 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ### IntelliJ Platform 2022.3
 
+`com.intellij.openapi.externalSystem.dependency.analyzer.DependencyAnalyzerExtension.isApplicable(ProjectSystemId)` abstract method added
+: Must be implemented.
+
 `com.intellij.openapi.externalSystem.dependency.analyzer.DependencyAnalyzerExtension.createContributor(Project, Disposable)` method parameter `ProjectSystemId` removed
 : Adjust your code.
 

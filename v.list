@@ -3,13 +3,15 @@
         SYSTEM "https://resources.jetbrains.com/stardust/vars.dtd">
 
 <vars>
-  <var name="ijPlatform" value="2022.2.1"/>
-  <var name="ijPlatformBuild" value="222.3739.54"/>
+  <var name="ijPlatform" value="2022.2.3"/>
+  <var name="ijPlatformBuild" value="222.4345.14"/>
 
   <var name="gh-sdk-samples" value="https://github.com/JetBrains/intellij-sdk-code-samples/tree/main"/>
 
   <var name="gh-ic" value="https://github.com/JetBrains/intellij-community/tree/idea/%ijPlatformBuild%"/>
   <var name="gh-ic-master" value="https://github.com/JetBrains/intellij-community/tree/master"/>
 
-  <var name="gh-ij-android" value="https://github.com/JetBrains/android/tree/idea/%ijPlatformBuild%"/>
+<!--  TODO restore when tags on GH are back again -->
+<!-- <var name="gh-ij-android" value="https://github.com/JetBrains/android/tree/idea/%ijPlatformBuild%"/>-->
+  <var name="gh-ij-android" value="https://github.com/JetBrains/android/tree/idea/222.3739.54"/>
 </vars>

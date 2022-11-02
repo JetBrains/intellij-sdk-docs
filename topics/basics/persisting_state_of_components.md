@@ -187,6 +187,10 @@ If the component state is OS-dependent, the `roamingType` of the `@Storage` anno
 
 #### Settings Repository Plugin and Export Settings Feature
 
+> The _Settings Repository_ plugin is unbundled starting with the version 2022.3 and will be no longer maintained.
+>
+{type="warning"}
+
 Persistent components can be shared via the _Settings Repository_ plugin and _Export Settings_ feature, depending on the `roamingType` of the `@Storage` annotation.
 See the [](#defining-the-storage-location) for more details.
 

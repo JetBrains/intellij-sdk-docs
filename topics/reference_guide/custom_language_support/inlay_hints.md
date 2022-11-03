@@ -80,8 +80,8 @@ Examples can be found in the following IntelliJ Platform plugins:
    [`InlayHintsProviderTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/utils/inlays/InlayHintsProviderTestCase.kt)
    and [`InlayParameterHintsTest`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/utils/inlays/InlayParameterHintsTest.kt).
 5. If you need to force inlay hints to update when using
-   [`DaemonCodeAnalyzer#restart()`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/daemon/DaemonCodeAnalyzer.java),
+   [`DaemonCodeAnalyzer.restart()`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/daemon/DaemonCodeAnalyzer.java),
    please use
-   [`ParameterHintsPassFactory#forceHintsUpdateOnNextPass()`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/hints/ParameterHintsPassFactory.java)
+   [`ParameterHintsPassFactory.forceHintsUpdateOnNextPass()`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/hints/ParameterHintsPassFactory.java)
    before you call `restart()`.
-   If you want to force an update on a specific editor, note that the method also has an overload that takes an editor instance.
+   If you want to force an update on a specific editor, note that the method also has an overload that takes an `Editor` instance.

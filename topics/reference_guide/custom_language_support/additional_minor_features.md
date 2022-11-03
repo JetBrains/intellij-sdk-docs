@@ -101,9 +101,7 @@ EP: `com.intellij.declarationRangeHandler`
 
 ### Spellchecking
 
-EP: `com.intellij.spellchecker.support`
-
-[`SpellcheckingStrategy`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/tokenizer/SpellcheckingStrategy.java) provides [`Tokenizer`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/tokenizer/Tokenizer.java) to use for given `PsiElement` (return `EMPTY_TOKENIZER` for no spellchecking).
+Moved to [](spell_checking.md).
 
 ### Reference Injection
 

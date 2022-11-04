@@ -166,6 +166,11 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 `com.intellij.microservices.url.inlay.UrlPathInlayAction.isAvailable(file: PsiFile, urlPathContext: UrlPathContext)` method parameter type changed from `com.intellij.microservices.url.references.UrlPathContext` to `com.intellij.microservices.url.inlay.UrlPathInlayHint`
 : Use `com.intellij.microservices.url.inlay.UrlPathInlayHint.getContext` to obtain corresponding `UrlPathContext` instance.
 
+### YAML Plugin 2022.3
+
+org.jetbrains.yaml.YAMLParserDefinition no longer implements `org.jetbrains.yaml.YAMLElementTypes`.
+: Use `org.jetbrains.yaml.YAMLElementTypes` fields directly.
+
 ## 2022.2
 
 ### IntelliJ Platform 2022.2

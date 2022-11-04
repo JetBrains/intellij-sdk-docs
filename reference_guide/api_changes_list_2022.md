@@ -161,6 +161,12 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 `com.intellij.lang.javascript.buildTools.webpack.WebPackConfigManager.Companion` class moved to package `com.intellij.webpack`
 : Use `com.intellij.webpack.WebpackConfigManager.Companion` instead.
 
+### Microservices Plugin 2022.3
+
+`com.intellij.microservices.url.inlay.UrlPathInlayAction.isAvailable(file: PsiFile, urlPathContext: UrlPathContext)` method parameter type changed from `com.intellij.microservices.url.references.UrlPathContext`
+to `com.intellij.microservices.url.inlay.UrlPathInlayHint`.
+: Use `com.intellij.microservices.url.inlay.UrlPathInlayHint.getContext` to obtain corresponding `UrlPathContext` instance.
+
 ## 2022.2
 
 ### IntelliJ Platform 2022.2

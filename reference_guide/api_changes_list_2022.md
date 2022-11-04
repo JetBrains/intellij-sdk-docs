@@ -96,6 +96,9 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 `com.intellij.openapi.editor.EditorCopyPasteHelper.getSelectionTransferable(Editor editor, EditorCopyPasteHelper.CopyPasteOptions options)` abstract method added
 : Must be implemented instead of and preferred over `com.intellij.openapi.editor.EditorCopyPasteHelper.copySelectionToClipboard(Editor)` which now delegates to the new method.
 
+`com.intellij.codeInsight.template.TemplateContextType.EP_NAME` field removed
+: Use `com.intellij.codeInsight.template.impl.TemplateContextTypes` to get `TemplateContextType` extensions.
+
 ### Database Plugin 2022.3
 
 `com.intellij.database.dataSource.url.TypesRegistry.ParamEditor` class removed

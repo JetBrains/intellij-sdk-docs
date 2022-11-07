@@ -174,6 +174,10 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 org.jetbrains.yaml.YAMLParserDefinition no longer implements `org.jetbrains.yaml.YAMLElementTypes`.
 : Use `org.jetbrains.yaml.YAMLElementTypes` fields directly.
 
+### Terraform Plugin 2022.3
+
+Top level packages of Terraform `org.intellij.plugins.hcl` and `org.intellij.plugins.hil` moved to single `org.intellij.terraform`.
+
 ## 2022.2
 
 ### IntelliJ Platform 2022.2

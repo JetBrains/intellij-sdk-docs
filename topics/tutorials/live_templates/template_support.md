@@ -94,10 +94,29 @@ Consider reusing one of the many existing template context types that inherit fr
 Depending on the version of the IntelliJ Platform, different steps are used to complete the implementation of the feature.
 
 <tabs>
-<tab title="2020.1 and later">
+
+<tab title="2022.3 and later">
 
 Using the `com.intellij.defaultLiveTemplates` and `com.intellij.liveTemplateContext` extension points, register the implementations with the IntelliJ Platform.
-The `file` attribute in the `defaultLiveTemplates` element specifies `path/filename` under the <path>src/main/resources</path> folder.
+The `file` attribute in `com.intellij.defaultLiveTemplates` EP specifies `path/filename` under the <path>src/main/resources</path> folder.
+
+Specify required `contextId` attribute in `com.intellij.liveTemplateContext` EP instead of [`TemplateContextType`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/template/TemplateContextType.java) constructor (existing declarations will continue working).
+
+```xml
+<extensions defaultExtensionNs="com.intellij">
+  <defaultLiveTemplates file="/liveTemplates/Markdown.xml"/>
+  <liveTemplateContext
+          contextId="MARKDOWN"
+          implementation="org.intellij.sdk.liveTemplates.MarkdownContext"/>
+</extensions>
+```
+
+</tab>
+
+<tab title="Versions since 2020.1 till 2022.3">
+
+Using the `com.intellij.defaultLiveTemplates` and `com.intellij.liveTemplateContext` extension points, register the implementations with the IntelliJ Platform.
+The `file` attribute in the `com.intellij.defaultLiveTemplates` EP specifies `path/filename` under the <path>src/main/resources</path> folder.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

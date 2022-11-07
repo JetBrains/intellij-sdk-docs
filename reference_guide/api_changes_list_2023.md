@@ -83,9 +83,3 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 <include src="tools_gradle_intellij_plugin.md" include-id="gradle_plugin_223_problem"></include>
 
 ### IntelliJ Platform 2023.1
-
-### Microservices Plugin 2023.1
-
-`com.intellij.microservices.url.inlay.UrlPathInlayAction.isAvailable(file: PsiFile, urlPathContext: UrlPathContext)` method parameter type changed from `com.intellij.microservices.url.references.UrlPathContext`
-to `com.intellij.microservices.url.inlay.UrlPathInlayHint`.
-: Use `com.intellij.microservices.url.inlay.UrlPathInlayHint.getContext` to obtain corresponding `UrlPathContext` instance.

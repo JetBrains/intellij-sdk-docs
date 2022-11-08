@@ -17,18 +17,18 @@ Annotator
 ## D
 
 Document Object Model _(DOM)_
-: [DOM API](xml_dom_api.md) abstracts working with XML files based on a custom semantic model.
+: [](xml_dom_api.md) abstracts working with XML files based on a custom semantic model.
 
 ## E
 
 Event Dispatch Thread _(EDT)_
-: The [Event Dispatch Thread](https://docs.oracle.com/javase/tutorial/uiswing/concurrency/dispatch.html) handles all Swing events. See also [General Threading Rules](general_threading_rules.md).
+: The [Event Dispatch Thread](https://docs.oracle.com/javase/tutorial/uiswing/concurrency/dispatch.html) handles all Swing events. See also [](general_threading_rules.md).
 
 Extension Point _(EP)_
 : Most functionality is provided by [Using Extension Points](plugin_extensions.md) provided by the platform or plugins. Plugins can also [define their own](plugin_extension_points.md) to allow extensibility.
 
 External System _(ES)_
-: [External System](external_system_integration.md) allows integrating external project management systems.
+: [](external_system_integration.md) allows integrating external project management systems.
 
 ## F
 
@@ -67,7 +67,7 @@ Program Structure Interface _(PSI)_
 
 ## R
 
-Read Action
+Read Action _(RA)_
 : Allows accessing code-related data structures for reading purposes. See also [General Threading Rules](general_threading_rules.md).
 &rarr; _Write Action_
 
@@ -103,8 +103,8 @@ Virtual File System _(VFS)_
 
 ## W
 
-Write Action
-: Allows accessing code-related data structures for writing purposes. See also [General Threading Rules](general_threading_rules.md).
+Write Action _(WA)_
+: Allows accessing code-related data structures for writing purposes. See also [](general_threading_rules.md).
 &rarr; _Read Action_
 
 > Missing entries? Please let us know via the "**Was this page helpful?**" feedback form below or [other channels](getting_help.md#problems-with-the-guide).

@@ -79,6 +79,8 @@ For switching to the snapshot release, point Gradle to the dedicated snapshot re
 
 > The current Gradle IntelliJ Plugin Snapshot version is ![GitHub Snapshot Release](https://img.shields.io/nexus/s/org.jetbrains.intellij/org.jetbrains.intellij.gradle.plugin?server=https://oss.sonatype.org)
 >
+> To make sure you obtain the latest snapshot version, invoke Gradle using `--refresh-dependencies` option (see [Gradle Documentation](https://docs.gradle.org/current/userguide/dependency_management.html#sec:refreshing-dependencies)).
+>
 {type="note"}
 
 <tabs group="languages">

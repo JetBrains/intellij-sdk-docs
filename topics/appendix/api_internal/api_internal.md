@@ -75,7 +75,7 @@ Therefore, any reported violations can be disregarded.
 | [`IdFilter`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/IdFilter.java)                                                           | Reverted in 2021.2/3                            |
 | [`RunAnythingCommandLineProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/runAnything/activity/RunAnythingCommandLineProvider.kt) | Made public in 2021.3                           |
 | `PhpExpectedFunctionArgument`                                                                                                                      | Made public in 2022.1                           |
-| `org.jetbrains.yaml.meta.*`                                                                                                                        | YAML Metadata API will be made public in 2022.2 |
+| `org.jetbrains.yaml.meta.*`                                                                                                                        | YAML Metadata API will be made public in 2023.1 |
 
 > Missing entries? Please let us know via the "**Was this page helpful?**" feedback form below or [other channels](getting_help.md#problems-with-the-guide).
 >

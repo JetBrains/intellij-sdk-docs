@@ -21,7 +21,7 @@ Minor Changes and Additions
 
 ### September-22
 
-Extract Part X - Themes
+Extract Part X — Themes
 :
 All the content related to [themes customization](theme_structure.md) and creating a project using the [DevKit approach](developing_themes.md) has been moved to a new [_Themes_](themes_getting_started.md) part.
 Content has been refreshed to match the current state of the project and SDK wizards.
@@ -56,7 +56,7 @@ Minor Changes and Additions
 ### June-22
 
 PHP Type Providers
-: Add section [](php_open_api_php_type_providers.md) about type providers describing type inference in PhpStorm and how to implement your own type provider for PHP.
+: Add section [](php_open_api_php_type_providers.md) about type providers describing type inference in PhpStorm and how to implement your own type provider.
 
 Postfix Completion
 : Add [](postfix_completion.md) section explaining how to implement generating or wrapping the existing code into additional constructs without navigating the caret back.
@@ -77,10 +77,10 @@ Minor Changes and Additions
 ### May-22
 
 Navigation Bar
-: Add [](navbar.md) section with an [accompanying tutorial](structure_aware_navbar.md) showing how to implement a custom navigation bar for a custom language.
+: Add [](navbar.md) section with an [accompanying tutorial](structure_aware_navbar.md) showing how to implement a navigation bar for a custom language.
 
 Inlay Hints
-: Add section [](inlay_hints.md) describing special markers that appear in the editor and provide additional information code, like the names of the parameters that a called method expects.
+: Add section [](inlay_hints.md) describing special markers that appear in the editor and provide additional information, like the names of the parameters that a called method expects.
 
 Minor Changes and Additions
 :

@@ -84,14 +84,16 @@ For switching to the snapshot release, point Gradle to the dedicated snapshot re
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
 
-`build.gradle.kts`
+<path>build.gradle.kts</path>
+
 ```kotlin
 plugins {
     id("org.jetbrains.intellij") version "..."
 }
 ```
 
-`settings.gradle.kts`
+<path>settings.gradle.kts</path>
+
 ```kotlin
 pluginManagement {
     repositories {
@@ -103,14 +105,16 @@ pluginManagement {
 </tab>
 <tab title="Groovy" group-key="groovy">
 
-`build.gradle`
+<path>build.gradle</path>
+
 ```groovy
 plugins {
     id "org.jetbrains.intellij" version "..."
 }
 ```
 
-`settings.gradle`
+<path>settings.gradle</path>
+
 ```groovy
 pluginManagement {
     repositories {

@@ -6,6 +6,7 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Flamingo (2022.2.1) Canary 8 | ![canary][canary] | November 7, 2022 | **2022.2.1.8** <br/> AI-222.4345.14.2221.9252092 | **2022.2.3** <br/> 222.4345.14 |
 | Flamingo (2022.2.1) Canary 7 | ![canary][canary] | November 2, 2022 | **2022.2.1.7** <br/> AI-222.4345.14.2221.9228443 | **2022.2.3** <br/> 222.4345.14 |
 | Flamingo (2022.2.1) Canary 6 | ![canary][canary] | October 24, 2022 | **2022.2.1.6** <br/> AI-222.4345.14.2221.9189903 | **2022.2.3** <br/> 222.4345.14 |
 | Flamingo (2022.2.1) Canary 5 | ![canary][canary] | October 18, 2022 | **2022.2.1.5** <br/> AI-222.4345.14.2221.9178080 | **2022.2.3** <br/> 222.4345.14 |
@@ -13,6 +14,7 @@
 | Flamingo (2022.2.1) Canary 3 | ![canary][canary] | October 6, 2022 | **2022.2.1.3** <br/> AI-222.4167.29.2221.9133400 | **2022.2.2** <br/> 222.4167.29 |
 | Flamingo (2022.2.1) Canary 2 | ![canary][canary] | September 27, 2022 | **2022.2.1.2** <br/> AI-222.4167.29.2221.9093980 | **2022.2.2** <br/> 222.4167.29 |
 | Flamingo (2022.2.1) Canary 1 | ![canary][canary] | September 20, 2022 | **2022.2.1.1** <br/> AI-222.3739.54.2221.9043926 | **2022.2.1** <br/> 222.3739.54 |
+| Electric Eel (2022.1.1) Beta 5 | ![beta][beta] | November 7, 2022 | **2022.1.1.15** <br/> AI-221.6008.13.2211.9237616 | **2022.1.4** <br/> 221.6008.13 |
 | Electric Eel (2022.1.1) Beta 4 | ![beta][beta] | October 28, 2022 | **2022.1.1.14** <br/> AI-221.6008.13.2211.9208527 | **2022.1.4** <br/> 221.6008.13 |
 | Electric Eel (2022.1.1) Beta 3 | ![beta][beta] | October 24, 2022 | **2022.1.1.13** <br/> AI-221.6008.13.2211.9173235 | **2022.1.4** <br/> 221.6008.13 |
 | Electric Eel (2022.1.1) Beta 2 | ![beta][beta] | October 3, 2022 | **2022.1.1.12** <br/> AI-221.6008.13.2211.9113387 | **2022.1.4** <br/> 221.6008.13 |
@@ -391,11 +393,11 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Flamingo (2022.2.1) Canary 8 | ![canary][canary] | November 7, 2022 | **2022.2.1.8** <br/> AI-222.4345.14.2221.9252092 | **2022.2.3** <br/> 222.4345.14 |
 | Flamingo (2022.2.1) Canary 7 | ![canary][canary] | November 2, 2022 | **2022.2.1.7** <br/> AI-222.4345.14.2221.9228443 | **2022.2.3** <br/> 222.4345.14 |
 | Flamingo (2022.2.1) Canary 6 | ![canary][canary] | October 24, 2022 | **2022.2.1.6** <br/> AI-222.4345.14.2221.9189903 | **2022.2.3** <br/> 222.4345.14 |
-| Flamingo (2022.2.1) Canary 5 | ![canary][canary] | October 18, 2022 | **2022.2.1.5** <br/> AI-222.4345.14.2221.9178080 | **2022.2.3** <br/> 222.4345.14 |
+| Electric Eel (2022.1.1) Beta 5 | ![beta][beta] | November 7, 2022 | **2022.1.1.15** <br/> AI-221.6008.13.2211.9237616 | **2022.1.4** <br/> 221.6008.13 |
 | Electric Eel (2022.1.1) Beta 4 | ![beta][beta] | October 28, 2022 | **2022.1.1.14** <br/> AI-221.6008.13.2211.9208527 | **2022.1.4** <br/> 221.6008.13 |
-| Electric Eel (2022.1.1) Beta 3 | ![beta][beta] | October 24, 2022 | **2022.1.1.13** <br/> AI-221.6008.13.2211.9173235 | **2022.1.4** <br/> 221.6008.13 |
 
 [release]: https://img.shields.io/badge/-release-blue?style=flat-square
 [patch]: https://img.shields.io/badge/-patch-orange?style=flat-square

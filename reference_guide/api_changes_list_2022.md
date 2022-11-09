@@ -68,7 +68,7 @@ Please see [](verifying_plugin_compatibility.md) on how to use Plugin Verifier a
 >
 {type="note"}
 
-> Java 17 is required when targeting 2022.2 or later only.
+> Java 17 is required ([blog post](https://blog.jetbrains.com/platform/2022/08/intellij-project-migrates-to-java-17/) when targeting 2022.2 or later only.
 >
 > Java 11 is required ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)) when targeting 2020.3 and later only.
 >

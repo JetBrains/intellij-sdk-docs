@@ -11,19 +11,28 @@
 In general, code-related data structures in the IntelliJ Platform are covered by a single reader/writer lock.
 
 You must not access the model outside a read or write action for the following subsystems:
+
 - [Program Structure Interface](psi.md) (PSI)
 - [Virtual File System](virtual_file_system.md) (VFS)
 - [Project root model](project_structure.md).
 
-**Reading** data is allowed from any thread.
+### Read Access
+
+Reading data is allowed from any thread.
 Reading data from the UI thread does not require any special effort.
-However, read operations performed from any other thread need to be wrapped in a read action by using `ApplicationManager.getApplication().runReadAction()` or, shorter, [`ReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) `run()`/`compute()`.
+However, read operations performed from any other thread need to be wrapped in a read action (RA).
 The corresponding objects are not guaranteed to survive between several consecutive read actions.
 As a rule of thumb, whenever starting a read action, check if the PSI/VFS/project/module is still valid.
 
-**Writing** data is only allowed from the UI thread, and write operations always need to be wrapped in a write action with `ApplicationManager.getApplication().runWriteAction()` or, shorter, [`WriteAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/WriteAction.java) `run()`/`compute()`.
-Modifying the model is only allowed from write-safe contexts, including user actions and `invokeLater()` calls from them (see the next section).
+**API**: `ApplicationManager.getApplication().runReadAction()` or [`ReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) `run()`/`compute()`
+
+### Write Access
+
+Writing data is only allowed from the UI thread, and write operations always need to be wrapped in a write action (WA).
+Modifying the model is only allowed from write-safe contexts, including user actions and `SwingUtilities.invokeLater()` calls from them (see the next section).
 You may not modify PSI, VFS, or project model from inside UI renderers or `SwingUtilities.invokeLater()` calls.
+
+**API**: `ApplicationManager.getApplication().runWriteAction()` or [`WriteAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/WriteAction.java) `run()`/`compute()`
 
 ## Modality and `invokeLater()`
 
@@ -31,18 +40,22 @@ To pass control from a background thread to the [Event Dispatch Thread](https://
 The latter API allows specifying the _modality state_ ([`ModalityState`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ModalityState.java)) for the call, i.e., the stack of modal dialogs under which the call is allowed to execute:
 
 #### `ModalityState.NON_MODAL`
+
 The operation will be executed after all modal dialogs are closed.
 If any of the open (unrelated) projects displays a per-project modal dialog, the action will be performed after the dialog is closed.
 
 #### `ModalityState.stateForComponent()`
+
 The operation can be executed when the topmost shown dialog is the one that contains the specified component or is one of its parent dialogs.
 
 #### None Specified
+
 `ModalityState.defaultModalityState()` will be used.
 This is the optimal choice in most cases that uses the current modality state when invoked from UI thread.
 It has special handling for background processes started with `ProgressManager`: `invokeLater()` from such a process may run in the same dialog that the process started.
 
 #### `ModalityState.any()`
+
 The operation will be executed as soon as possible regardless of modal dialogs.
 Please note that modifying PSI, VFS, or project model is prohibited from such runnables.
 
@@ -51,7 +64,7 @@ That way, it is run after all possible indexing processes have been completed.
 
 ## Background Processes and `ProcessCanceledException`
 
-Background progresses are managed by [`ProgressManager`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java) class,  which has plenty of methods to execute the given code with a modal (dialog), non-modal (visible in the status bar), or invisible progress.
+Background progresses are managed by [`ProgressManager`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java) class, which has plenty of methods to execute the given code with a modal (dialog), non-modal (visible in the status bar), or invisible progress.
 In all cases, the code is executed on a background thread, which is associated with a [`ProgressIndicator`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressIndicator.java) object.
 The current thread's indicator can be retrieved any time via `ProgressIndicatorProvider.getGlobalProgressIndicator()`.
 
@@ -88,10 +101,10 @@ The next time the background thread calls `checkCanceled()`, a `ProcessCanceledE
 
 There are two recommended ways of doing this:
 
-* If on UI thread, call `ReadAction.nonBlocking()` which returns [`NonBlockingReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/NonBlockingReadAction.java)
+* If on UI thread, call `ReadAction.nonBlocking()` which returns [`NonBlockingReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/NonBlockingReadAction.java) (NBRA)
 * If already in a background thread, use `ProgressManager.getInstance().runInReadActionWithWriteActionPriority()` in a loop, until it passes or the whole activity becomes obsolete.
 
-In both approaches, always check at the start of each read action, if the objects are still valid, and if the whole operation still makes sense (i.e., not canceled by the user, the project isn't closed, etc.).
+In both approaches, always check at the start of each read action if the objects are still valid, and if the whole operation still makes sense (i.e., not canceled by the user, the project isn't closed, etc.).
 With `ReadAction.nonBlocking()`, use `expireWith()` or `expireWhen()` for that.
 
 If the activity has to access [file-based index](indexing_and_psi_stubs.md) (e.g., it's doing any project-wide PSI analysis, resolves references, etc.), use `ReadAction.nonBlocking(...).inSmartMode()`.

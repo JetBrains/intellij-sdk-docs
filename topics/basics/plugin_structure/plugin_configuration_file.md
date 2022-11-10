@@ -1118,7 +1118,7 @@ An extension point which restricts the type provided in a `myClass` attribute to
   - `com.example.MyComparable` must be a subtype of `java.lang.Comparable`
 
 ## Deprecated Elements
-{initial-collapse-state="collapsed"}
+{collapsible="true" initial-collapse-state="collapsed"}
 
 ### `application-components`
 {id="idea-plugin__application-components"}

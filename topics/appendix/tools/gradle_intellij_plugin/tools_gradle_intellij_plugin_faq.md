@@ -204,3 +204,44 @@ runPluginVerifier {
 
 </tab>
 </tabs>
+
+
+### JaCoCo reports 0% coverage
+
+The Gradle IntelliJ Plugin, when targeting the IntelliJ SDK `2022.1+`, uses the `PathClassLoader` class loader by the following system property:
+
+```
+-Djava.system.class.loader=com.intellij.util.lang.PathClassLoader
+```
+
+Because of that, JaCoCo – and other external tools that rely on classes available in the bootstrap class loader – fail to discover plugin classes.
+You have to apply the following changes to your Gradle configuration file:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+tasks {
+  withType<Test> {
+    configure<JacocoTaskExtension> {
+      isIncludeNoLocationClasses = true
+      excludes = listOf("jdk.internal.*")
+    }
+  }
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+test {
+  jacoco {
+    includeNoLocationClasses = true
+    excludes = ["jdk.internal.*"]
+  }
+}
+```
+
+</tab>
+</tabs>

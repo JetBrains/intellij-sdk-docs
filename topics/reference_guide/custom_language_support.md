@@ -22,7 +22,7 @@ Corresponding steps from the tutorial are linked under the "**Example**" section
 
 The webinar [How We Built Comma, the Raku IDE, on the IntelliJ Platform](https://blog.jetbrains.com/platform/2020/01/webinar-recording-how-we-built-comma-the-raku-ide-on-the-intellij-platform/) offers an excellent introduction as well.
 
-<video href="zDP9uUMYrvs" title="How We Built Comma, the Raku IDE, on the IntelliJ Platform"/>
+<video src="https://youtu.be/zDP9uUMYrvs" title="How We Built Comma, the Raku IDE, on the IntelliJ Platform"/>
 
 ## Topics
 

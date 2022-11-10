@@ -41,7 +41,7 @@ Watch [Busy Plugin Developers #0](https://www.youtube.com/watch?v=-6D5-xEaYig) t
 <br/>
 <br/>
 
-<video href="-6D5-xEaYig" title="Busy Plugin Developers #0" width="300"/>
+<video src="https://youtu.be/-6D5-xEaYig" title="Busy Plugin Developers #0" width="300"/>
 
 </td>
 </tr>

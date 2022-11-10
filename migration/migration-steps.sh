@@ -136,3 +136,7 @@ find ./topics/ ./reference_guide/ -type f -exec sed -i '' -e \
 # replace {type="warning"} with {style="warning"}
 find ./topics/ ./reference_guide/ -type f -exec sed -i '' -e \
     's~{type="warning"}~{style="warning"}~g' {} \;
+
+# 13 - Fix YouTube videos (it works only for <video href="<video-id>" ... format):
+find ./topics/ ./reference_guide/ -type f -exec sed -i '' -e \
+    's~<video href="~<video src="https://youtu.be/~g' {} \;

@@ -38,7 +38,7 @@ Plugins may specify compatibility versions more precisely (e.g., requiring a spe
 Multipart build numbers can also be used in the `since-build` and `until-build` attributes of `idea-version`.
 Usually you should omit the product ID and use only the branch number and build number, for example:
 
-<compare style="top-bottom" title-before="Any 213 branch version" title-after="Specific build number">
+<compare style="top-bottom" first-title="Any 213 branch version" second-title="Specific build number">
 
 ```xml
 <!-- 2021.3, 2021.3.1, 2021.3.2, ... -->

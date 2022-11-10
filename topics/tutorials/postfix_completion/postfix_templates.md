@@ -61,7 +61,7 @@ Marked parts will be highlighted in the <ui-path>Settings/Preferences | Editor |
 
 Template example files can also use the `$key` placeholder which is replaced with the actual template key in the preview UI, e.g., consider a template with the `var` key:
 
-<compare title-before="Content" title-after="Rendition">
+<compare first-title="Content" second-title="Rendition">
 
 ```java
 cart.getProducts()$key

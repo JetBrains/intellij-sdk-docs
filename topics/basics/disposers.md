@@ -56,7 +56,7 @@ Use the following guidelines to choose the correct parent:
 >
 > Inspection <control>Plugin DevKit | Code | Incorrect parentDisposable parameter</control> will highlight such problems.
 >
-{type="warning"}
+{style="warning"}
 
 The `Disposer` API's flexibility means that if the parent instance is chosen unwisely, the child may consume resources for longer than required.
 Continuing to use resources when they are no longer needed can be a severe source of contention due to leaving some zombie objects behind due to each invocation.
@@ -96,7 +96,7 @@ In such a case, the best strategy is usually to do nothing and return early.
 > Non-disposed objects shouldn't hold onto references to disposed objects, as this constitutes a memory leak.
 > Once a `Disposable` is released, it should be completely inactive, and there's no reason to refer to it anymore.
 >
-{type="warning"}
+{style="warning"}
 
 ### Ending a Disposable Lifecycle
 A plugin can manually end a `Disposable` lifecycle by calling `Disposer.dispose(Disposable)`.
@@ -137,7 +137,7 @@ Regardless, it illustrates the basic pattern, which is:
 > Never call `Disposable.dispose()` directly because it bypasses the parent-child relationships established in `Disposer`.
 > Always call `Disposer.dispose(Disposable)` instead.
 >
-{type="warning"}
+{style="warning"}
 
 ## Diagnosing Disposer Leaks
 

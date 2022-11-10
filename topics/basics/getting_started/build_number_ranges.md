@@ -16,7 +16,7 @@ Please note the following regarding values:
 > Plugins hosted on [JetBrains Marketplace](https://plugins.jetbrains.com) are checked automatically.
 > According to [Approval Guidelines](https://plugins.jetbrains.com/legal/approval-guidelines), incompatible plugin versions will be restricted by JetBrains if necessary.
 >
-{type="warning"}
+{style="warning"}
 
 ### Build Number Format
 

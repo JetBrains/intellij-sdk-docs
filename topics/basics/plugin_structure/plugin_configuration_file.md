@@ -1126,7 +1126,7 @@ An extension point which restricts the type provided in a `myClass` attribute to
 
 > Element is deprecated. Do not use it in new plugins.
 >
-{type="warning"}
+{style="warning"}
 
 Defines a list of application [components](plugin_components.md).
 
@@ -1142,7 +1142,7 @@ Children
 
 > Element is deprecated. Do not use it in new plugins.
 >
-{type="warning"}
+{style="warning"}
 
 Defines a list of project [components](plugin_components.md).
 
@@ -1158,7 +1158,7 @@ Children
 
 > Element is deprecated. Do not use it in new plugins.
 >
-{type="warning"}
+{style="warning"}
 
 Defines a list of module [components](plugin_components.md).
 
@@ -1174,7 +1174,7 @@ Children
 
 > Element is deprecated. Do not use it in new plugins.
 >
-{type="warning"}
+{style="warning"}
 
 Defines a single application, project, or module [component](plugin_components.md).
 A single [`<application-components>`](#idea-plugin__application-components), [`<project-components>`](#idea-plugin__project-components), or [`<module-components>`](#idea-plugin__module-components) element can contain multiple `<component>` elements.
@@ -1196,7 +1196,7 @@ Children
 
 > Element is deprecated. Do not use it in new plugins.
 >
-{type="warning"}
+{style="warning"}
 
 The fully qualified name of the component implementation class.
 
@@ -1209,7 +1209,7 @@ Required
 
 > Element is deprecated. Do not use it in new plugins.
 >
-{type="warning"}
+{style="warning"}
 
 The fully qualified name of the component interface class. If not specified, the interface will be the same as defined by [`<implementation-class>`](#idea-plugin__components__component__interface-class) element.
 
@@ -1222,7 +1222,7 @@ Required
 
 > Element is deprecated. Do not use it in new plugins.
 >
-{type="warning"}
+{style="warning"}
 
 The fully qualified name of the component implementation class to be used when the IDE runs in headless mode.
 
@@ -1235,7 +1235,7 @@ Required
 
 > Element is deprecated. Do not use it in new plugins.
 >
-{type="warning"}
+{style="warning"}
 
 Allows to provide additional component options.
 A single [`<component>`](#idea-plugin__components__component) element can contain multiple `<option>` elements.
@@ -1256,7 +1256,7 @@ Attributes
 
 > Element is deprecated. Do not use it in new plugins.
 >
-{type="warning"}
+{style="warning"}
 
 If present, the component is instantiated also for the default project. It takes effect only when used inside of [`<project-components>`](#idea-plugin__project-components) element.
 

@@ -14,7 +14,7 @@ See also [](marketing.md) about widgets and badges.
 > If your plugin ships with [additional libraries](plugin_content.md#plugin-with-dependencies), do not repackage them into the main plugin archive.
 > Otherwise, [Plugin Verifier](verifying_plugin_compatibility.md) will yield false positives for unresolved classes and methods.
 >
-{type="warning"}
+{style="warning"}
 
 ## Uploading a Plugin to JetBrains Marketplace
 

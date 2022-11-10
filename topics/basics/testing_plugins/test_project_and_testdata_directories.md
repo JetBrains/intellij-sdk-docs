@@ -11,7 +11,7 @@ The test project files exist either in a temporary directory or in an in-memory 
 > If your tests use the in-memory implementation, and you abort the execution of your tests, the persisted filesystem caches may get out of sync with the in-memory structures, and you may get spurious errors in your tests.
 > If you get an unexpected error after a series of successful runs, **try rerunning the test**, and if that doesn't help, **delete the "system" subdirectory** in your [sandbox directory](ide_development_instance.md#the-development-instance-sandbox-directory).
 >
-{type="warning"}
+{style="warning"}
 
 ## Testdata Files
 

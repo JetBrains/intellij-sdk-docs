@@ -90,7 +90,7 @@ See [How do I get notified when VFS changes?](virtual_file.md#how-do-i-get-notif
 > VFS listeners are application level and will receive events for changes happening in *all* the projects opened by the user.
 > You may need to filter out events that aren't relevant to your task (e.g., via [`ProjectFileIndex.isInContent()`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java)).
 >
-{type="warning"}
+{style="warning"}
 
 VFS events are sent both before and after each change, and you can access the old contents of the file in the before event.
 Note that events caused by a refresh are sent after the changes have already occurred on disk.

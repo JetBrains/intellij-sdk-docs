@@ -131,7 +131,7 @@ For a `Configurable` implementation correctly declared using an EP, the implemen
 
 > The IntelliJ Platform may instantiate a `Configurable` implementation on a background thread, so creating Swing components in a constructor can degrade UI responsiveness.
 >
-{type="warning"}
+{style="warning"}
 
 #### IntelliJ Platform Interactions with Configurable
 

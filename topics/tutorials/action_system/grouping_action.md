@@ -235,7 +235,7 @@ When enabled, this group appears just below the [Static Grouped Actions](#bindin
 > If a`<group>` element's `class` attribute names a class derived from `ActionGroup`, then any static `<action>` declarations in that group throw an exception.
 > For a statically defined group, use `DefaultActionGroup`.
 >
-{type="warning"}
+{style="warning"}
 
 ### Adding Child Actions to the Dynamic Group
 

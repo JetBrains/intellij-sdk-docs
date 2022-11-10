@@ -84,7 +84,7 @@ This vector image format is required because the Plugin Logo file must be small 
 
 > Using automatic conversion of bitmap graphics to SVG is highly discouraged, as the resulting files have excessive size (100kB or more).
 >
-{type="warning"}
+{style="warning"}
 
 ### Plugin Logo File Naming Convention
 Name the Plugin Logo files according to the following conventions:

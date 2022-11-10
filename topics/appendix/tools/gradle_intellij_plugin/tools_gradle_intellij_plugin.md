@@ -29,7 +29,7 @@ The plugin provides the functionalities like:
 
 > When targeting 2022.3+ IDE releases, using [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) version 1.10.0 or higher is required.
 >
-{type="warning"}
+{style="warning"}
 
 </snippet>
 
@@ -275,7 +275,7 @@ Samples
 
 > `intellij.version` and `intellij.localPath` must not be specified at the same time.
 >
-{type="warning"}
+{style="warning"}
 
 
 #### localSourcesPath
@@ -646,7 +646,7 @@ Default value
 
 > Available since the upcoming release
 >
-{type="warning"}
+{style="warning"}
 
 Lists all IDs of plugins bundled within the currently targeted IDE.
 This can be used to determine Plugin ID for setting up [](plugin_dependencies.md).
@@ -1494,7 +1494,7 @@ This task is automatically added to the ["After Sync" Gradle trigger](https://ww
 > After removing the Gradle IntelliJ Plugin from your project, the `Task 'setupDependencies' not found in root project` exception may occur.
 > See [Frequently Asked Questions](tools_gradle_intellij_plugin_faq.md#task-setupdependencies-not-found-in-root-project) for more details.
 >
-{type="warning"}
+{style="warning"}
 
 
 #### idea

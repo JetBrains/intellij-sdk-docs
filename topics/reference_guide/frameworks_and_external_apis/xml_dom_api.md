@@ -640,7 +640,7 @@ Set and increase `stubVersion` of `com.intellij.dom.fileMetaData` extension when
 
 > This API is unmaintained and will likely be removed in future versions.
 >
-{type="warning"}
+{style="warning"}
 
 ### Forms
 

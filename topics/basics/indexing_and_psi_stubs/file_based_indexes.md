@@ -56,7 +56,7 @@ Please see also [Improving indexing performance](indexing_and_psi_stubs.md#impro
 >
 > Please set system property `intellij.idea.indices.debug`/`intellij.idea.indices.debug.extra.sanity` to `true` to enable additional debugging assertions during development to assert correct index implementation.
 >
-{type="warning"}
+{style="warning"}
 
 ## Accessing a File-Based Index
 
@@ -96,7 +96,7 @@ Nested index access is now possible.
 > Nested index access is forbidden as it might lead to a deadlock.
 > Collect all necessary data from index _A_ first, then process results while accessing index _B_.
 >
-{type="warning"}
+{style="warning"}
 
 </tab>
 </tabs>

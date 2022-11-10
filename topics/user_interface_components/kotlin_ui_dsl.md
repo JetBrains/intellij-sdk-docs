@@ -21,7 +21,7 @@ For this purpose, use [custom Swing components](user_interface_components.md) fr
 >
 > Please note [breaking changes](api_changes_list.md) can occur for this API between major releases.
 >
-{type="warning"}
+{style="warning"}
 
 > This document covers the Kotlin UI DSL in IntelliJ Platform 2019.2.
 > A lot of the features described in this document are not available for plugins targeting earlier versions.

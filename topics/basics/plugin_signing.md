@@ -152,7 +152,7 @@ publishPlugin {
 > token.set(System.getenv("PUBLISH_TOKEN"))
 > ```
 >
-{type="warning"}
+{style="warning"}
 
 ### Provide Secrets to IDE
 

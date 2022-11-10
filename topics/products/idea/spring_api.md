@@ -169,7 +169,7 @@ Spring Boot API allows extending/accessing Spring Boot specific support in the I
 
 > While we try to maintain compatibility, please be prepared for a less strict policy.
 >
-{type="warning"}
+{style="warning"}
 
 ### Setting up
 [Add dependency](plugin_dependencies.md) to bundled Spring Boot plugin with ID `com.intellij.spring.boot`.

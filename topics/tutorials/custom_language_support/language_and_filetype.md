@@ -75,7 +75,7 @@ The Simple Language file type is registered via the `com.intellij.fileType` exte
 
 > The FileType Factory approach is deprecated. Use it only when the plugin requires support for platform versions older than 2019.2.
 >
-{type="warning"}
+{style="warning"}
 
 ### Define a FileType Factory
 

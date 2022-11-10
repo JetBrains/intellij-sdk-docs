@@ -25,7 +25,7 @@ The most common way to implement `getVariants()` is to use the same function for
 
 > This API is available starting from 2020.3 and currently in development and thus in experimental state.
 >
-{type="warning"}
+{style="warning"}
 
 To provide completion variants by a `PsiSymbolReference` implement
 [`PsiCompletableReference`](%gh-ic%/platform/analysis-api/src/com/intellij/model/psi/PsiCompletableReference.java).

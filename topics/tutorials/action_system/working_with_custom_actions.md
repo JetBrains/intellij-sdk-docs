@@ -42,7 +42,7 @@ public class PopupDialogAction extends AnAction {
 > This restriction prevents memory leaks.
 > For more information about why, see [](basic_action_system.md#action-implementation).
 >
-{type="warning"}
+{style="warning"}
 
 At this stage, `update()` implicitly defaults always to enable this action.
 The implementation of `actionPerformed()` does nothing.
@@ -204,7 +204,7 @@ The action's state and(or) presentation can be dynamically changed depending on 
 > This method needs to _execute very quickly_.
 > For more information about this constraint, see the warning in [](basic_action_system.md#overriding-the-anactionupdate-method).
 >
-{type="warning"}
+{style="warning"}
 
 In this example, the `update()` method relies on a `Project` object being available.
 This requirement means the user must have at least one project open in the IDE for the `PopupDialogAction` to be available.

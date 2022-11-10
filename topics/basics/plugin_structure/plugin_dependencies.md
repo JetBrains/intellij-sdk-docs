@@ -114,7 +114,7 @@ Add the JARs of the plugin on which the project depends to the <control>Classpat
 
 > Do not add the plugin JARs as a library: this will fail at runtime because the IntelliJ Platform will load two separate copies of the dependency plugin classes.
 >
-{type="warning"}
+{style="warning"}
 
 To do that, open the <control>Project Structure</control> dialog, select the SDK used in the project, press the <shortcut>+</shortcut> button in the <control>Classpath</control> tab, and select the plugin JAR file(s):
 * For bundled plugins, the plugin JAR files are located in <path>plugins/$PLUGIN_NAME$</path> or <path>plugins/$PLUGIN_NAME$/lib</path> under the main installation directory.

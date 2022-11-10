@@ -7,7 +7,7 @@ You can use either a simple API to persist a few values or persist the state of 
 
 > If you need to persist sensitive data like passwords, please see [Persisting Sensitive Data](persisting_sensitive_data.md).
 >
-{type="warning"}
+{style="warning"}
 
 ## Using PersistentStateComponent
 
@@ -154,7 +154,7 @@ The `roamingType` parameter of the `@Storage` annotation specifies the roaming t
 
 > If there are multiple components that store state in the same file, they must have the same `romaingType` attribute value.
 >
-{type="warning"}
+{style="warning"}
 
 ### Sharing Settings Between IDE Installations
 
@@ -188,7 +188,7 @@ If the component state is OS-dependent, the `roamingType` of the `@Storage` anno
 
 > The _Settings Repository_ plugin is unbundled starting with the version 2022.3 and will be no longer maintained.
 >
-{type="warning"}
+{style="warning"}
 
 Persistent components can be shared via the _Settings Repository_ plugin and _Export Settings_ feature, depending on the `roamingType` of the `@Storage` annotation.
 See the [](#defining-the-storage-location) for more details.

@@ -56,7 +56,7 @@ This declaration binds the theme description file to a theme provider extension 
 
 > Do not modify or re-use an existing value of the generated `id` attribute.
 >
-{type="warning"}
+{style="warning"}
 
 ## Theme Customization
 

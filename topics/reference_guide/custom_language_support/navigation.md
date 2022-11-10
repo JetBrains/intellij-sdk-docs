@@ -4,7 +4,7 @@
 
 > This API is available starting from 2020.3 and currently in development and thus in experimental state.
 >
-{type="warning"}
+{style="warning"}
 
 The <ui-path>Navigate | Declaration or Usages</ui-path> action is performed in several steps.
 

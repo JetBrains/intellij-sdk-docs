@@ -11,7 +11,7 @@ Plugin projects targeting [AppCode](https://www.jetbrains.com/objc/) can be deve
 
 > When targeting 2020.3, please see this [migration guide](https://blog.jetbrains.com/clion/2020/12/migration-guide-for-plugins-2020-3/).
 >
-{type="warning"}
+{style="warning"}
 
 The Gradle configuration of AppCode plugin projects uses neither Product-Specific nor IntelliJ IDEA Attributes.
 Instead, configure AppCode plugin projects to use the [`intellij.localPath`](tools_gradle_intellij_plugin.md#intellij-extension-localpath) attribute.

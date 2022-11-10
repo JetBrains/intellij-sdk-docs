@@ -37,7 +37,7 @@ To associate the file type in the IDE, specify one or more associations as liste
 
 > The `FileTypeFactory` approach is deprecated. Use it only when the plugin supports platform versions older than 2019.2.
 >
-{type="warning"}
+{style="warning"}
 
 To register a file type, the plugin developer provides a subclass of [`FileTypeFactory`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/fileTypes/FileTypeFactory.java), which is registered via the `com.intellij.fileTypeFactory` extension point.
 

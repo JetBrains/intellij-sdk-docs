@@ -77,7 +77,7 @@ The Simple Language file type is registered via the `com.intellij.fileType` exte
 >
 {style="warning"}
 
-### Define a FileType Factory
+**Define a FileType Factory**
 
 First, define [`SimpleFileTypeFactory`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFileTypeFactory.java)
 as a subclass of [`FileTypeFactory`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/fileTypes/FileTypeFactory.java).
@@ -86,7 +86,7 @@ as a subclass of [`FileTypeFactory`](%gh-ic%/platform/ide-core/src/com/intellij/
 ```
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFileTypeFactory.java"}
 
-### Register the FileType Factory
+**Register the FileType Factory**
 
 The `SimpleFileTypeFactory` is registered using the `com.intellij.fileTypeFactory` extension point in <path>plugin.xml</path>.
 

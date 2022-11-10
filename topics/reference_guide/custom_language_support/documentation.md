@@ -25,7 +25,7 @@ Custom actions can also be added to documentation inlays and documentation popup
 `com.intellij.documentationActionProvider` extension point.
 
 
-# Implementation
+## Implementation
 
 Custom language developers usually extend from
 [`AbstractDocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/AbstractDocumentationProvider.java)
@@ -56,7 +56,7 @@ Once these steps are completed, the following additional features can be impleme
 * Implement `getUrlFor()` and [`ExternalDocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/ExternalDocumentationProvider.java) to fetch documentation for elements from online resources.
 
 
-# Examples
+## Examples
 
 The [custom language tutorial](documentation_provider.md) contains a step-by-step guide for the `DocumentationProvider` of the Simple language.
 In addition, several implementations of other languages exist in the IntelliJ Platform code, for instance:

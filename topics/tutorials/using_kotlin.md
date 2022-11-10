@@ -67,7 +67,7 @@ See the <path>build.gradle.kts</path> from [kotlin_demo](%gh-sdk-samples%/kotlin
 
 ```kotlin
 ```
-{src="kotlin_demo/build.gradle.kts" lines="2-"}
+{src="kotlin_demo/build.gradle.kts" include-lines="2-"}
 
 ### Kotlin Standard Library
 

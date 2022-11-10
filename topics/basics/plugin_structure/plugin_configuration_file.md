@@ -1061,12 +1061,11 @@ Attributes
   Default value: `false`.
 - `area` _(optional)_<br/>
   The scope in which the [extension](plugin_extensions.md) is instantiated.
+  It is not recommended to use non-default values.
   Allowed values:
     - `IDEA_APPLICATION` _(default)_
     - `IDEA_PROJECT`
     - `IDEA_MODULE` (**deprecated**)
-
-    It is not recommended to use non-default values.
 
 Children
 : [`<with>`](#idea-plugin__extensionPoints__extensionPoint__with)

@@ -41,7 +41,7 @@ public void testMethod() {
 
 > See the [](surround_with.md) section for the information on how to implement more advanced code surrounding.
 >
-{type="note"}
+{style="note"}
 
 For more information about creating Custom Live Templates, refer to the [corresponding documentation](https://www.jetbrains.com/idea/help/creating-and-editing-live-templates.html).
 

@@ -18,7 +18,7 @@ In this tutorial we will add support for a [.properties](https://en.wikipedia.or
 > The complete and fully working example plugin used in this tutorial is the [`simple_language_plugin`](%gh-sdk-samples%/simple_language_plugin) code sample.
 > See [](code_samples.md) on how to build and run it.
 >
-{type="note"}
+{style="note"}
 
 This a step-by-step tutorial, and it requires completing each step, in order:
 
@@ -48,4 +48,4 @@ This a step-by-step tutorial, and it requires completing each step, in order:
 >
 > Please be specific about the topics and reasons for adding them, and leave your email in case we need more details.
 >
-{type="note"}
+{style="note"}

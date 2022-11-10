@@ -44,6 +44,6 @@ You can let the IntelliJ Platform automatically choose the position based on the
 
 > The `show()` methods return immediately and do not wait for the popup to be closed.
 >
-{type="note"}
+{style="note"}
 
 If you need to perform some action when the popup is closed, you can either attach a listener to it using the `addListener()` method, override a method of the popup contents such as [`PopupStep.onChosen()`](%gh-ic%/platform/core-ui/src/openapi/ui/popup/PopupStep.java), or attach an event handler to your own component within the popup.

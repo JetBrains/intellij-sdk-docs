@@ -35,7 +35,7 @@ Unlike [Developing Custom Language Plugins](custom_language_support.md), it is a
 > If your plugin depends on Java functionality and targets 2019.2 or later, please make sure to follow the steps from this [blog post](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/).
 > Also consider using [UAST](uast.md) if your plugin supports other JVM languages.
 >
-{type="note"}
+{style="note"}
 
 ### How do I find all inheritors of a class?
 

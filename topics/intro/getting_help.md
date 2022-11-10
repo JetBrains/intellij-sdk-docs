@@ -14,7 +14,7 @@ If you just want to share feedback on the guide, again, [raise an issue](https:/
 
 > Please don't use the **IJSDK** YouTrack project for plugin or [product support](#problems-with-products) requests - it's intended for the SDK and the documentation, and you'll get a better response using one of the methods below.
 >
-{type="note"}
+{style="note"}
 
 ## Problems with Code - Support Issues
 

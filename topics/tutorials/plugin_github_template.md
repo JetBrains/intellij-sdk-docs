@@ -20,6 +20,6 @@ For more details, please refer to the [IntelliJ Platform Plugin Template][gh:ipp
 
 > The recording of the _Busy Plugin Developer. Episode 0_ webinar describes and shows [how to use the IntelliJ Platform Plugin Template](https://youtu.be/-6D5-xEaYig?t=230) in detail.
 >
-{type="note"}
+{style="note"}
 
 [gh:ippt]: https://github.com/JetBrains/intellij-platform-plugin-template

@@ -36,7 +36,7 @@ The rule is the same: if text attributes can not be found by the `MY_PREDEFINED_
 
 > A use of fixed default attributes is _strongly discouraged_.
 >
-{type="note"}
+{style="note"}
 
 If you are unsure which base key to use, it's better to pick the most generic one, for example, `DefaultLanguageHighlighterColors.IDENTIFIER`.
 Remember that using fixed default attributes *will force* a scheme designer to explicitly set up a color for this element.

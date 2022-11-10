@@ -85,7 +85,7 @@ Please note that custom theme (<path>*.theme.json</path>) files also contain `Sc
 
 > The Editor Scroll Bar colors are the only editor scheme settings that cannot be customized and exported through IDE preferences.
 >
-{type="note"}
+{style="note"}
 
 Customizing the editor scroll bar colors requires manually changing an editor color scheme XML file.
 At this time there isn't code completion functionality for changing custom color editor scheme XML files, so the `name` attributes are described below.
@@ -182,4 +182,4 @@ The following example adds an image of the Austrian countryside to the _Theme Ba
 
 > The `emptyFrameBackground` property is available starting with the 2020.2 release.
 >
-{type="note"}
+{style="note"}

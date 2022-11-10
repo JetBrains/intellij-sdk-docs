@@ -54,7 +54,7 @@ Usually you should omit the product ID and use only the branch number and build 
 > Specific build numbers and their corresponding release version are available via _Previous Releases_ on the corresponding product's download page, e.g. [Previous IntelliJ IDEA Releases](https://www.jetbrains.com/idea/download/previous.html).
 > See also [What versions of IntelliJ-based IDEs are supported?](https://intellij-support.jetbrains.com/hc/en-us/articles/360019574859-What-versions-of-IntelliJ-based-IDEs-are-supported-) for JetBrains IDE support policy.
 >
-{type="note"}
+{style="note"}
 
 ### IntelliJ Platform Based Products of Recent IDE Versions
 

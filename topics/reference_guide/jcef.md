@@ -23,7 +23,7 @@ Embedding of the browser component inside the IDE allows amongst others:
 
 > JCEF is available and enabled by default since 2020.2
 >
-{type="note"}
+{style="note"}
 
 </tab>
 <tab title="Earlier versions">

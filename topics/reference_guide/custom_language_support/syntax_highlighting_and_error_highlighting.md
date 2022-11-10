@@ -34,7 +34,7 @@ Thus, it will work automatically for custom languages that provide a syntax high
 
 > New functionality about Language Defaults and support for additional color schemes are detailed in [Color Scheme Management](color_scheme_management.md).
 >
-{type="note"}
+{style="note"}
 
 The syntax and error highlighting are performed on multiple levels: Lexer, Parser, and (External) Annotator(s).
 
@@ -77,7 +77,7 @@ When the file is changed, the annotator is called incrementally to process only 
 
 > See also [Code Inspections](code_inspections_and_intentions.md) which offer a more fine-grained control and some additional features.
 >
-{type="note"}
+{style="note"}
 
 ### Errors/Warning
 See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in IntelliJ Platform UI Guidelines on how to write message texts for highlighting/quick fixes.

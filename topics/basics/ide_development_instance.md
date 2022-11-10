@@ -48,7 +48,7 @@ Available JBR variants are:
 > For `JBR 17`, `dcevm` is bundled by default.
 > As a consequence, separated `dcevm` and `nomod` variants are no longer available.
 >
-{type="note"}
+{style="note"}
 
 <tabs group="project-type">
 

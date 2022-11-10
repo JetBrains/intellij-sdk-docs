@@ -80,4 +80,4 @@ Therefore, any reported violations can be disregarded.
 >
 > Please leave your email in case we need more details.
 >
-{type="note"}
+{style="note"}

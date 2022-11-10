@@ -64,7 +64,7 @@ Access to file-based indexes is performed through the [`FileBasedIndex`](%gh-ic%
 
 > Please note index access is restricted during [Dumb Mode](indexing_and_psi_stubs.md#dumb-mode).
 >
-{type="note"}
+{style="note"}
 
 The following primary operations are supported:
 
@@ -73,7 +73,7 @@ The following primary operations are supported:
 
 > The returned data is guaranteed to contain all keys found in up-to-date project content, but may also include additional keys not currently found in the project.
 >
-{type="note"}
+{style="note"}
 
 * `getValues()` allows to get all values associated with a specific key but not the files in which they were found.
 * `getContainingFiles()` allows collecting all files in which a particular key was encountered.

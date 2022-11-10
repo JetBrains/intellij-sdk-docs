@@ -12,7 +12,7 @@ It is highly recommended to keep updating both Gradle and Gradle IntelliJ Plugin
 
 > Current Gradle IntelliJ Plugin version is [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square){type="joined"}](https://github.com/jetbrains/gradle-intellij-plugin/releases)
 >
-{type="note"}
+{style="note"}
 
 ## Target Platform and Dependencies
 
@@ -20,7 +20,7 @@ By default, the Gradle plugin will build a plugin project against the IntelliJ P
 
 > Using EAP versions of the IntelliJ Platform requires adding the _Snapshots repository_ to the Gradle build script (see [IntelliJ Platform Artifacts Repositories](intellij_artifacts.md)).
 >
-{type="note"}
+{style="note"}
 
 If a matching version of the specified IntelliJ Platform is not available on the local machine, the Gradle plugin downloads the correct version and type.
 IntelliJ IDEA then indexes the build and any associated source code and JetBrains Java Runtime.

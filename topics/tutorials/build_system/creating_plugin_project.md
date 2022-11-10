@@ -28,7 +28,7 @@ Launch the <control>New Project</control> wizard via the <ui-path>File | New | P
 >
 > When targeting 2022.2 and later only, using Java 17 is required.
 >
-{type="note"}
+{style="note"}
 
 8. After providing all the information, click the <control>Create</control> button to generate the project.
 

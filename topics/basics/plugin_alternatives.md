@@ -25,7 +25,7 @@ To verify if a given language supports SSR, invoke the <ui-path>Edit | Find | Se
 
 > See the [I(J)nspector](https://ijnspector.wordpress.com/) blog for practical SSR templates examples.
 >
-{type="note"}
+{style="note"}
 
 ## IDE Scripting Console
 
@@ -55,7 +55,7 @@ Additionally, if they are stored in a project's <path>.live-plugins</path> direc
 
 > See the LivePlugin [description](https://dmitrykandalov.com/liveplugin), [presentation](https://www.youtube.com/watch?v=GcYa4lMRta0), and [extensions examples](https://github.com/dkandalov/live-plugin#more-examples) for more information.
 >
-{type="note"}
+{style="note"}
 
 ## PhpStorm Advanced Metadata
 

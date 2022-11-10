@@ -24,7 +24,7 @@ The structure of the implementation is the same for Project Settings, but there 
 > [`MarkdownSettingsConfigurable`](%gh-ic%/plugins/markdown/core/src/org/intellij/plugins/markdown/settings/MarkdownSettingsConfigurable.kt)
 > classes for the settings example implemented in Kotlin with usage of [Kotlin UI DSL](kotlin_ui_dsl_version_2.md).
 >
-{type="note"}
+{style="note"}
 
 ## The AppSettingsState Class
 

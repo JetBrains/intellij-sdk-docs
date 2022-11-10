@@ -74,7 +74,7 @@ public interface ChangeActionNotifier {
 
 > If targeting 2019.3 or later, use [declarative registration](plugin_listeners.md) if possible.
 >
-{type="note"}
+{style="note"}
 
 ```java
 public void init(MessageBus bus) {

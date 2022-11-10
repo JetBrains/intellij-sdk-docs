@@ -149,7 +149,7 @@ Implicit in using [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/
 
 > Please note that running the test requires setting system property `idea.home.path` in the `test` task configuration of the Gradle build script.
 >
-{type="note"}
+{style="note"}
 
 The `comparing_references_inspection` code sample provides a unit test for the inspection.
 See the [](testing_plugins.md) section for general information about plugin testing.

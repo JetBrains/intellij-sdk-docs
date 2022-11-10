@@ -5,7 +5,7 @@
 > Adding JPS support to your plugin requires Java plugin to be present for it to work.
 > Please see [Plugin Dependencies](plugin_dependencies.md) on how to set up your plugin with required dependency.
 >
-{type="note"}
+{style="note"}
 
 ### External Build Process Workflow
 

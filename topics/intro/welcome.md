@@ -8,7 +8,7 @@ Welcome to the IntelliJ Platform SDK – the primary source of documentation for
 
 > We're looking for a [Software Developer](https://www.jetbrains.com/careers/jobs/software-developer-intellij-sdk-advocacy-680/) to work on [Plugin Verifier](verifying_plugin_compatibility.md) tooling.
 >
-{type="note"}
+{style="note"}
 
 ## Getting Started
 
@@ -55,7 +55,7 @@ Please see [Getting Help](getting_help.md) if you encounter bugs in this guide o
 >
 > [What's New & Upgrade Instructions](https://lp.jetbrains.com/gradle-intellij-plugin)
 >
-{type="note"}
+{style="note"}
 
 See [Content Updates](content_updates.md) for the latest changes.
 

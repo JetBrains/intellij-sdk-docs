@@ -66,7 +66,7 @@ Use one of the existing predefined widget appearance options:
 
 > Note that they can't be combined to get, for example, an icon and a text.
 >
-{type="note"}
+{style="note"}
 
 To use the selected appearance, return a class that implements one of the above interfaces from `getPresentation()`.
 

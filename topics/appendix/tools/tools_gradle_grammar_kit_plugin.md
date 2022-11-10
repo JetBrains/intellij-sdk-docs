@@ -8,7 +8,7 @@ The [Gradle Grammar-Kit Plugin](https://github.com/JetBrains/gradle-grammar-kit-
 
 > Current Gradle Grammar-Kit Plugin version is ![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-grammar-kit-plugin.svg?style=flat-square)
 >
-{type="note"}
+{style="note"}
 
 > The plugin does not support two-pass generation. Therefore, it does not support method mixins.
 >

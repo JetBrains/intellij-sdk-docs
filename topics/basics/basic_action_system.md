@@ -110,7 +110,7 @@ See [Grouping Actions](#grouping-actions) for more information about the `compac
 > If an action is added to a toolbar, its `update()` can be called if there was any user activity or focus transfer.
 > If the action's availability changes in the absence of these events, then call [`ActivityTracker.getInstance().inc()`](%gh-ic%/platform/platform-api/src/com/intellij/ide/ActivityTracker.java) to notify the action subsystem to update all toolbar actions.
 >
-{type="note"}
+{style="note"}
 
 An example of enabling a menu action based on whether a project is open is demonstrated in [`PopupDialogAction.update()`](%gh-sdk-samples%/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java) method.
 
@@ -284,7 +284,7 @@ This, and additional information can also be found by using the [Code Completion
 
 > See the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) element and its children documentation for details.
 >
-{type="note"}
+{style="note"}
 
 ```xml
 <actions>

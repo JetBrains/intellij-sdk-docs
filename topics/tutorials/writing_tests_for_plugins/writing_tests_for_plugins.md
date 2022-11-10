@@ -4,7 +4,7 @@
 
 > Please see [](testing_plugins.md) for a general introduction.
 >
-{type="note"}
+{style="note"}
 
 This tutorial demonstrates how to write and run automated tests for a custom language plugin.
 

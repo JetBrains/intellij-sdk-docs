@@ -18,7 +18,7 @@ Instead, configure AppCode plugin projects to use the [`intellij.localPath`](too
 
 > AppCode plugin development requires installing AppCode locally.
 >
-{type="note"}
+{style="note"}
 
 The table below summarizes the [](tools_gradle_intellij_plugin.md) attributes to set in the plugin project's Gradle build script.
 Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
@@ -35,7 +35,7 @@ As described in [Modules Specific to Functionality](plugin_compatibility.md#modu
 
 > See [](appcode_extension_point_list.md) for the complete list.
 >
-{type="note"}
+{style="note"}
 
 Use the [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the libraries in AppCode.
 Test your plugin with any version of AppCode you wish to support.

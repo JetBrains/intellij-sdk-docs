@@ -44,7 +44,7 @@ Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code i
 > The copyright statement must appear at the top of every source file.
 > Use the [IntelliJ Platform SDK](https://github.com/JetBrains/intellij-sdk-docs/tree/main/.idea/copyright) copyright profile.
 >
-{type="note"}
+{style="note"}
 
 ## Directory Naming Conventions for SDK Plugins
 

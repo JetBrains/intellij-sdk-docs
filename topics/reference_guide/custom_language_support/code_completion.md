@@ -37,7 +37,7 @@ Register in `com.intellij.completion.contributor` extension point and specify `l
 
 > Note that the JavaDoc of that class contains a detailed FAQ for implementing code completion.
 >
-{type="note"}
+{style="note"}
 
 The core scenario of using [`CompletionContributor`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java) consists of calling the `extend()` method and passing in the [Element Pattern](element_patterns.md) specifying the context in which this completion variant is applicable, as well as a *completion provider* which generates the items to show in the completion list.
 

@@ -15,7 +15,7 @@ See the [](creating_plugin_project.md) section for details.
 
 > The UI for selecting module types and the creation of modules through project wizard is IntelliJ IDEA-specific.
 >
-{type="note"}
+{style="note"}
 
 ## Register a New Module Type
 

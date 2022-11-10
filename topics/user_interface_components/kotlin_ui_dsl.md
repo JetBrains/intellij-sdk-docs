@@ -26,7 +26,7 @@ For this purpose, use [custom Swing components](user_interface_components.md) fr
 > This document covers the Kotlin UI DSL in IntelliJ Platform 2019.2.
 > A lot of the features described in this document are not available for plugins targeting earlier versions.
 >
-{type="note"}
+{style="note"}
 
 The _Kotlin UI DSL Version 1_ functions are located in the [`com.intellij.ui.layout`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/layout) package.
 

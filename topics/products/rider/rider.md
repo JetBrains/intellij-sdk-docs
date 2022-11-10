@@ -16,7 +16,7 @@ The documentation describes the [configuration](https://www.jetbrains.com/help/r
 
 > See [](rider_extension_point_list.md) for the complete list.
 >
-{type="note"}
+{style="note"}
 
 ## Developing Rider Plugins with the IDEA and ReSharper SDKs
 

@@ -156,7 +156,7 @@ Examples of Swing keys:
 
 > This section is relevant for IntelliJ Platform developers only.
 >
-{type="note"}
+{style="note"}
 
 Metadata is split up as follows:
 * [`IntelliJPlatform.themeMetadata.json`](%gh-ic%/platform/platform-resources/src/themes/metadata/IntelliJPlatform.themeMetadata.json) - all keys from IntelliJ Platform and custom UI components

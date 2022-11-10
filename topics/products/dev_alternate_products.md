@@ -35,7 +35,7 @@ The best approach then is to configure the project using the [IntelliJ IDEA Attr
 
 > To target multiple products (e.g., IntelliJ IDEA and PyCharm) with the same plugin, see [](plugin_compatibility.md) page.
 >
-{type="note"}
+{style="note"}
 
 ### Configuring Plugin Projects Using a Product-Specific Attribute
 
@@ -191,7 +191,7 @@ Otherwise, if only general IntelliJ Platform features (APIs) are used, then a de
 > In the particular case of a plugin project declaring dependencies only on other plugins, it must also declare a dependency on `com.intellij.modules.platform`.
 > Otherwise, the plugin project is considered to be legacy and will only load in IntelliJ IDEA.
 >
-{type="note"}
+{style="note"}
 
 Continuing with the example of developing a plugin for PhpStorm:
 

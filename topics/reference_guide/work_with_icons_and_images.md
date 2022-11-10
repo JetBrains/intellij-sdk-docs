@@ -76,7 +76,7 @@ object MyIcons {
 
 > Starting with 2021.2, `*Icons` class is not required to be located in `icons` package but can use plugin's package: `icons.MyIcons` &rarr; `my.plugin.MyIcons`.
 >
-{type="note"}
+{style="note"}
 
 
 Use these constants inside <path>[plugin.xml](plugin_configuration_file.md)</path> when specifying `icon` attribute for [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) or extension point, as well in [`@Presentation`](%gh-ic%/platform/analysis-api/src/com/intellij/ide/presentation/Presentation.java) `icon` attribute.
@@ -116,7 +116,7 @@ Required icon sizes depend on the usage as listed in the following table:
 
 > SVG ([Scalable Vector Graphics](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics)) icons are supported since 2018.2.
 >
-{type="note"}
+{style="note"}
 
 As SVG icons can be scaled arbitrarily, they provide better results in HiDPI environments or when used in combination with bigger screen fonts (e.g., in presentation mode).
 
@@ -143,7 +143,7 @@ If the icon graphics are simple enough so that it renders perfectly in every sca
 ### PNG Format
 > Please consider using [SVG icons](#svg-format) for optimal results if your plugin targets 2018.2+.
 >
-{type="note"}
+{style="note"}
 
 All icon files must be placed in the same directory following this naming pattern (replace <path>.png</path> with <path>.svg</path> for SVG icons):
 

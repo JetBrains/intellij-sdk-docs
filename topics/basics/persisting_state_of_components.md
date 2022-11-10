@@ -144,7 +144,7 @@ See [`StoragePathMacros`](%gh-ic%/platform/projectModel-api/src/com/intellij/ope
 
 > For application-level storage, it is strongly recommended to use a custom file, using of <path>other.xml</path> is deprecated.
 >
-{type="note"}
+{style="note"}
 
 The `roamingType` parameter of the `@Storage` annotation specifies the roaming type when the [settings are shared](#sharing-settings-between-ide-installations):
 
@@ -177,7 +177,7 @@ If a component contains both shareable and non-shareable data, it should be spli
 
 > The _Settings Sync_ plugin is available starting with the version 2022.3.
 >
-{type="note"}
+{style="note"}
 
 To include a plugin's component state in the _Settings Sync_ plugin synchronization, the settings category must be specified via the `category` attribute of the `@State` annotation.
 The default `SettingsCategory.OTHER` value disables synchronization of a component's state.
@@ -198,7 +198,7 @@ See the [](#defining-the-storage-location) for more details.
 > Please consider using annotation parameters only to achieve backward compatibility.
 > Otherwise, please feel free to file issues about specific serialization cosmetics.
 >
-{type="note"}
+{style="note"}
 
 If you want to use the default bean serialization but need to customize the storage format in XML (for example, for compatibility with previous versions of your plugin or externally defined XML formats), you can use the `@Tag`, `@Attribute`, `@Property`, `@MapAnnotation`, `@XCollection` annotations.
 

@@ -7,7 +7,7 @@ Plugin projects for WebStorm can be developed using IntelliJ IDEA with the [](to
 
 > Follow [Building a Plugin for WebStorm – Tutorial for JavaScript Developers](learning_resources.md#articles) blog post series to get started.
 >
-{type="note"}
+{style="note"}
 
 > Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
 >
@@ -35,7 +35,7 @@ Consequently, without the `com.intellij.modules.platform` declaration the plugin
 
 > See [](webstorm_extension_point_list.md) for the complete list.
 >
-{type="note"}
+{style="note"}
 
 Use the [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the libraries <path>JavaScriptLanguage.jar</path>, and <path>javascript-openapi.jar</path>.
 Test your plugin with any version of WebStorm you wish to support.

@@ -47,4 +47,4 @@
 
 > See [](php_extension_point_list.md) for the complete list.
 >
-{type="note"}
+{style="note"}

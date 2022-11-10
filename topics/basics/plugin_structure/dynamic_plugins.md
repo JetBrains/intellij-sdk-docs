@@ -11,7 +11,7 @@ Please note that any unloading problems in a production environment will simply 
 
 > If a plugin _requires_ restart (e.g., due to using native libraries) specify `require-restart="true"` for [`<idea-plugin>`](plugin_configuration_file.md#idea-plugin) root tag in <path>[plugin.xml](plugin_configuration_file.md)</path>.
 >
-{type="note"}
+{style="note"}
 
 ## Restrictions
 
@@ -51,7 +51,7 @@ Application, project, and module [services](plugin_services.md) declared with `o
 
 > Loading and unloading plugins happens in EDT and under write action.
 >
-{type="note"}
+{style="note"}
 
 ### CachedValue
 

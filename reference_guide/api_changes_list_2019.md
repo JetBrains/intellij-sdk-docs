@@ -65,7 +65,7 @@ Please see [](verifying_plugin_compatibility.md) on how to use Plugin Verifier a
 >
 > For API annotated with `ApiStatus.@Internal`, see [](api_internal.md) for more details and replacements.
 >
-{type="note"}
+{style="note"}
 
 ## 2019.3
 

@@ -8,7 +8,7 @@ For more information about dependencies on the IntelliJ Platform modules, see Pa
 
 > For adding dependencies on 3rd party libraries, use regular [Gradle dependency management](https://docs.gradle.org/current/userguide/core_dependency_management.html).
 >
-{type="note"}
+{style="note"}
 
 <procedure title="Required Steps">
 
@@ -74,7 +74,7 @@ Depending on the chosen development workflow (Gradle or DevKit), one of the two 
 
 > Please see the [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) property for acceptable values.
 >
-{type="note"}
+{style="note"}
 
 Add the dependency to the [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) parameter in your build script:
 
@@ -101,14 +101,14 @@ intellij {
 
 > Transitive dependencies required for tests must currently be [specified explicitly](https://github.com/JetBrains/gradle-intellij-plugin/issues/38).
 >
-{type="note"}
+{style="note"}
 </tab>
 
 <tab title="DevKit">
 
 > Existing DevKit-based projects can be [converted to use Gradle setup](migrating_plugin_devkit_to_gradle.md) where dependency management is fully automated.
 >
-{type="note"}
+{style="note"}
 
 Add the JARs of the plugin on which the project depends to the <control>Classpath</control> of the [*IntelliJ Platform SDK*](setting_up_theme_environment.md#add-intellij-platform-plugin-sdk).
 
@@ -155,7 +155,7 @@ Declare additional `optional="true"` and `config-file` attribute pointing to [op
 
 > Additional plugin descriptor files must follow the naming pattern <path>myPluginId-$NAME$.xml</path> resulting in unique filenames to prevent problems with classloaders in tests ([Details](https://youtrack.jetbrains.com/issue/IDEA-205964)).
 >
-{type="note"}
+{style="note"}
 
 For example, if a plugin adds additional highlighting for Java and Kotlin files, use the following setup.
 The main <path>plugin.xml</path> will define an annotator for Java and specify an optional dependency on the Kotlin plugin (plugin ID `org.jetbrains.kotlin`):

@@ -130,7 +130,7 @@ To convert `PsiElement` to the specific `UElement`, use one of the following app
 > * Because of performance: `toUElement()` with type is fail-fast
 > * Because of possibly getting different results in some cases: conversion with type is more predictable
 >
-{type="note"}
+{style="note"}
 
 ### UAST to PSI Conversion
 

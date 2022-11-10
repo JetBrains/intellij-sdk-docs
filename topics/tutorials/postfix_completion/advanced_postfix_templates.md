@@ -43,7 +43,7 @@ than implementing the expansion behavior programmatically.
 
 > See the [](live_templates.md) section in SDK Docs for information on implementing the live templates feature in a plugin.
 >
-{type="note"}
+{style="note"}
 
 ## Editable Postfix Templates
 

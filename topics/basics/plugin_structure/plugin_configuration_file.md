@@ -81,7 +81,7 @@ Deprecated elements are omitted in the list above.
 > If an element or an attribute is not documented on this page, please consider them as configuration items intended to be used by JetBrains only.
 > They should never be used by 3rd-party plugins.
 >
-{type="note"}
+{style="note"}
 
 ## `idea-plugin`
 {id="idea-plugin"}

@@ -23,7 +23,7 @@ Note that [live templates](live_templates.md) expressions should be surrounded w
 
 > Please note that adding templates with child/multiple files in custom plugins is currently not supported.
 >
-{type="note"}
+{style="note"}
 
 ### File Templates Categories
 

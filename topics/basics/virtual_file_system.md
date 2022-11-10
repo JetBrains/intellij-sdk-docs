@@ -25,7 +25,7 @@ Otherwise, only file metadata like name, length, timestamp, attributes are store
 > This means that the state of the file system and the file contents displayed in the IntelliJ Platform UI comes from the snapshot, which may not always match the disk's actual contents.
 > For example, in some cases, deleted files can still be visible in the UI for some time before the deletion is picked up by the IntelliJ Platform.
 >
-{type="note"}
+{style="note"}
 
 The snapshot is updated from disk during _refresh operations_, which generally happen asynchronously.
 All write operations made through the VFS are synchronous - i.e., the contents are saved to disk immediately.

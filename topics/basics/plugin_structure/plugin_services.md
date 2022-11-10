@@ -19,7 +19,7 @@ For the latter two, a separate instance of the service is created for each insta
 
 > Please consider not using module-level services because it can increase memory usage for projects with many modules.
 >
-{type="note"}
+{style="note"}
 
 #### Constructor
 
@@ -29,13 +29,13 @@ To improve startup performance, avoid any heavy initializations in the construct
 > Please note that using constructor injection of dependency services is deprecated (and not supported in [Light Services](#light-services)) for performance reasons.
 > Other dependencies should be [acquired only when needed](#retrieving-a-service) in all corresponding methods (see `someServiceMethod()` in [Project Service Sample](#project-service-sample)).
 >
-{type="note"}
+{style="note"}
 
 ## Light Services
 
 > Light Services are available since IntelliJ Platform 2019.3.
 >
-{type="note"}
+{style="note"}
 
 A service not going to be overridden does not need to be registered in <path>[plugin.xml](plugin_configuration_file.md)</path> (see [Declaring a Service](#declaring-a-service)).
 Instead, annotate service class with [`@Service`](%gh-ic%/platform/core-api/src/com/intellij/openapi/components/Service.java).
@@ -79,7 +79,7 @@ To provide custom implementation for test/headless environment, specify `testSer
 
 > If declared services are intended to be used by other plugins depending on your plugin, consider [bundling their sources](bundling_plugin_openapi_sources.md) in the plugin distribution.
 >
-{type="note"}
+{style="note"}
 
 ## Retrieving a Service
 

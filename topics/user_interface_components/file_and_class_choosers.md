@@ -45,4 +45,4 @@ For choosing a Java package, you can use the [`PackageChooserDialog`](%gh-ic%/ja
 > To use Java-specific components in plugins targeting versions 2019.2+, explicit dependency on the Java plugin is required.
 > See the [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) page for details.
 >
-{type="note"}
+{style="note"}

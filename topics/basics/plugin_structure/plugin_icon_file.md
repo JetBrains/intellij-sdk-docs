@@ -17,13 +17,13 @@ Whether online or in the product UI, a Plugin Logo helps users to identify a plu
 
 > When browsing [custom plugin repositories](custom_plugin_repository.md), there is no support for showing logos for plugins hosted there but not yet installed.
 >
-{type="note"}
+{style="note"}
 
 ## Plugin Logo Requirements
 
 > Please see also these [important requirements](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-logo) for JetBrains Marketplace.
 >
-{type="note"}
+{style="note"}
 
 For a Plugin Logo to be displayed correctly within an IntelliJ Platform-based IDE, it must:
 * Follow the best practices design guidelines,

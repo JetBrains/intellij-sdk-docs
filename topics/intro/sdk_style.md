@@ -178,7 +178,7 @@ Supported languages include `xml`, `java`, `kotlin`, `groovy`, `bash`, `md`, `ph
 
 > Source code blocks must have one blank line before and after them, and must have a language specification for highlighting (use `text` as fallback).
 >
-{type="note"}
+{style="note"}
 
 Whole files can be imported on a page using `src` attribute after code fences specifying the full path relative to <path>code_samples</path> root folder.
 
@@ -214,11 +214,11 @@ The example below will be displayed as a callout, styled as a "note":
 ```md
 > This is a note
 >
-{type="note"}
+{style="note"}
 ```
 > This is a note
 >
-{type="note"}
+{style="note"}
 
 The styles available for callouts are:
 * `tip` - Information that makes the reader more productive.

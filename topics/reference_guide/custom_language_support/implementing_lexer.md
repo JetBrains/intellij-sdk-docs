@@ -53,7 +53,7 @@ It provides syntax highlighting and other useful features for editing JFlex file
 > Lexers, and in particular JFlex-based lexers, need to be created so that they always match the entire contents of the file, without any gaps between tokens, and generate special tokens for characters which are not valid at their location.
 > Lexers must never abort prematurely because of an invalid character.
 >
-{type="note"}
+{style="note"}
 
 **Examples**:
 - [JFlex](%gh-ic%/plugins/properties/src/com/intellij/lang/properties/parsing/Properties.flex) definition file for [Properties language plugin](%gh-ic%/plugins/properties)

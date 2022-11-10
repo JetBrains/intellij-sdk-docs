@@ -44,4 +44,4 @@ or from a [declaration](declarations_and_references.md#declarations).
 
 > Existing implementations of the mentioned extension points can be found on the [IntelliJ Platform Explorer](explore_api.md#32-search-the-intellij-platform-explorer).
 >
-{type="note"}
+{style="note"}

@@ -60,7 +60,7 @@ Annotate the `simple:key` literal expression, and differentiate between a well-f
 
 > The use of new `AnnotationHolder` syntax starting 2020.2, which uses the builder format.
 >
-{type="note"}
+{style="note"}
 
 ```java
 ```

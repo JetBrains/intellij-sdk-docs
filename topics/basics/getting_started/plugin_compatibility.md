@@ -43,7 +43,7 @@ The following table lists modules that are currently available in all products.
 
 > All plugins should declare a dependency on **`com.intellij.modules.platform`** to indicate dependence on shared functionality.
 >
-{type="note"}
+{style="note"}
 
 | Module for [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) Element | Functionality                                                                                                 |
 |-------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|

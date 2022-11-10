@@ -68,7 +68,7 @@ Refer to [SmallTalk module type](https://github.com/bulenkov/RedlineSmalltalk/bl
 > Starting with the 2022.1 release, IntelliJ-based IDEs use the refreshed project wizard and some module builder base classes return `false` from `isAvailable()` when the new wizard is enabled.
 > If your module builder is not visible in 2022.1, make sure that your `ModuleBuilder.isAvailable()` returns `true`.
 >
-{type="note"}
+{style="note"}
 
 ### Implementing Module Builder Listener
 

@@ -45,4 +45,4 @@ If your project requires any of the mentioned capabilities, see [Developing a Pl
 
 > The recording of _Busy Plugin Developer. Episode 3_ shows how to [create a new theme](https://youtu.be/9J0j-90dC60?t=582) using the Gradle approach.
 >
-{type="note"}
+{style="note"}

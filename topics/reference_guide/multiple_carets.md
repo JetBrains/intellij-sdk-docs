@@ -68,7 +68,7 @@ Examples of its usage:
 > [`TypedHandlerDelegate`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/TypedHandlerDelegate.java) implementations are invoked automatically for each caret.
 > If one wants to implement custom multicaret behaviour on typing, [`TypedActionHandler`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java) needs to be provided instead.
 >
-{type="note"}
+{style="note"}
 
 ## Code Insight Actions
 

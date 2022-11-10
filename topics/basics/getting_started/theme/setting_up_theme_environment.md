@@ -44,7 +44,7 @@ The first step of configuring a theme plugin SDK is adding the JDK.
 >
 > When targeting 2022.2 and later only, using Java 17 is required.
 >
-{type="note"}
+{style="note"}
 
 <procedure title="Add JDK" id="add-jdk">
 

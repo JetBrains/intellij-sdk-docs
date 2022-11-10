@@ -12,7 +12,7 @@ Download and install either IntelliJ IDEA Ultimate or IntelliJ IDEA Community Ed
 
 > While not required, having the full sources of the platform and all bundled plugins available for browsing allows finding related implementations.
 >
-{type="note"}
+{style="note"}
 
 Download the IntelliJ IDEA Community Edition source files as described in the IntelliJ IDEA Community Edition [README](%gh-ic%/README.md) file.
 

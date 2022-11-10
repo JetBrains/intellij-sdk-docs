@@ -38,7 +38,7 @@ the name of the class at the current caret position.
 Inherit from it if you want to add navigation bar support to your language with support for specific file elements.
 
 > Don't forget to implement [](structure_view.md), this is necessary to build a file structure model based on which the navigation bar displays a specific element.
-{type="note"}
+{style="note"}
 
 In this case, you will also need to override the `getLanguage()` in addition to the two methods described earlier, this method returns the language instance for which this extension will work.
 

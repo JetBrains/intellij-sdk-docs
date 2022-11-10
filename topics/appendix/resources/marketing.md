@@ -32,7 +32,7 @@ Below are listed a few related to the IntelliJ SDK and plugins development provi
 >
 > `:packageName` for ReSharper accepts only string ID.
 >
-{type="note"}
+{style="note"}
 
 ### Downloads
 

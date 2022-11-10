@@ -72,7 +72,7 @@ Ultimately, a file's extension determines the applicable Markdown context.
 
 > Once the `MarkdownContext` is defined, be sure to add the new context type to the previously created Live Template settings file.
 >
-{type="note"}
+{style="note"}
 
 Within the `<template>...</template>` elements in the <path>Markdown.xml</path> [Live Template definition file](#export-the-live-template), add the following context elements:
 

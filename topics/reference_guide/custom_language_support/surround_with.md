@@ -21,4 +21,4 @@ Once the user selects a specific surrounder from the popup menu, the [`Surrounde
 
 > See the [](live_templates.md) and [](advanced_postfix_templates.md#surround-postfix-templates) sections for information on how to support code surrounding with other IDE features.
 >
-{type="note"}
+{style="note"}

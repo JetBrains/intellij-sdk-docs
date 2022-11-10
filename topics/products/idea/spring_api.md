@@ -39,21 +39,21 @@ As an API-user, you will usually prefer working with `SpringModel`, which is bui
 ## API Updates
 > 2017.3: `LocalXmlModel#setActiveProfiles` & `LocalAnnotationModel#setActiveProfiles` have been deprecated and will be removed in 2018.1.
 >
-{type="note"}
+{style="note"}
 
 > Starting with 2016.2, the internal representation of bean _type_ has been changed from `PsiClass` to `PsiType`, please note deprecations.
 >
-{type="note"}
+{style="note"}
 
 > Some core classes have been changed in 14(.1); please see "_Version 14(.1)_" notes for info on how to replace existing API-calls.
 >
-{type="note"}
+{style="note"}
 
 ## How Do I...
 
 > See [](spring_extension_point_list.md) for the complete list.
 >
-{type="note"}
+{style="note"}
 
 ### Spring Setup
 To check availability of Spring/Spring Facet etc. see `com.intellij.spring.model.utils.SpringCommonUtils`.

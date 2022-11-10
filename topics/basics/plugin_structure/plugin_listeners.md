@@ -18,7 +18,7 @@ The advantage is because listener instances get created lazily — the first tim
 
 > Defining listeners in <path>plugin.xml</path> is supported starting with version 2019.3 of the platform.
 >
-{type="note"}
+{style="note"}
 
 ## Defining Application-Level Listeners
 
@@ -121,4 +121,4 @@ Registration of listeners can be restricted using the following attributes:
 
 > If declared listeners are intended to be used by other plugins depending on your plugin, consider [bundling their sources](bundling_plugin_openapi_sources.md) in the plugin distribution.
 >
-{type="note"}
+{style="note"}

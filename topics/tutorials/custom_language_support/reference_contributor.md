@@ -23,7 +23,7 @@ Resolving references means the ability to go from the usage of an element to its
 
 > Every PSI element that can be renamed or referenced needs to implement [`PsiNamedElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiNamedElement.java) interface.
 >
-{type="note"}
+{style="note"}
 
 ## Define a Named Element Class
 

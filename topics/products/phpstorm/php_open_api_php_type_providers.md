@@ -201,7 +201,7 @@ To implement `PhpTypeProvider4`, you need to override 4 methods:
    > When choosing a provider key, keep in mind that other plugins may already be using it.
    > In this case, there will be an error stating that the key is duplicated, which will lead to incorrect work of both plugins.
    >
-   {type="note"}
+   {style="note"}
 
 2. `getType()` returns the type of the expression for the given element.
    It's called at the indexing stage, and therefore its implementation **can't access** any information from the index and **must** rely only on local information.

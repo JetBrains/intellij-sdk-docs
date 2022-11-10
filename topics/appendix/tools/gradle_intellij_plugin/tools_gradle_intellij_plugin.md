@@ -7,7 +7,7 @@
 The Gradle IntelliJ Plugin is a plugin for the Gradle build system to help configuring your environment for building, testing, verifying, and publishing plugins for IntelliJ-based IDEs.
 
 > Current Gradle IntelliJ Plugin version is [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square){type="joined"}](https://github.com/jetbrains/gradle-intellij-plugin/releases)
-{type="note"}
+{style="note"}
 
 This plugin allows you to build plugins for IntelliJ Platform using specified IntelliJ SDK and bundled or third-party plugins.
 
@@ -79,7 +79,7 @@ For switching to the snapshot release, point Gradle to the dedicated snapshot re
 >
 > To make sure you obtain the latest snapshot version, invoke Gradle using `--refresh-dependencies` option.
 >
-{type="note"}
+{style="note"}
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -1136,7 +1136,7 @@ Accepted values
 
 > For more information about JBR versions and variants, see [](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance).
 >
-{type="note"}
+{style="note"}
 
 
 #### jbrVariant
@@ -1410,7 +1410,7 @@ Acceptable values
 
 > For more information about JBR versions and variants, see [](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance).
 >
-{type="note"}
+{style="note"}
 
 
 #### jbrVariant

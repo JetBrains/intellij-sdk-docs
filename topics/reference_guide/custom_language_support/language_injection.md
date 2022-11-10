@@ -212,7 +212,7 @@ The method `performInjection()` does the actual injection into the context PSI e
 
 > To use Language Injection API in your project, [add dependency](plugin_dependencies.md#2-project-setup) on the `org.intellij.intelliLang` plugin.
 >
-{type="note"}
+{style="note"}
 
 ## MultiHostInjector
 

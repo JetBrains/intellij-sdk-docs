@@ -24,7 +24,7 @@ See [Implementations for Settings Extension Points](#implementations-for-setting
 > For performance reasons, it is recommended to declare as much information as possible about a 'Settings' implementation using attributes in the EP element in the <path>plugin.xml</path> descriptor.
 > If it is not declared, the component must be loaded to retrieve it from the implementation, degrading UI responsiveness.
 >
-{type="note"}
+{style="note"}
 
 ### Declaring Application Settings
 

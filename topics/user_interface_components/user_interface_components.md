@@ -18,7 +18,7 @@ Using those components in your plugins will ensure that your plugin looks and wo
 >
 > Using GUI designer with Kotlin is currently not supported ([Issue](https://youtrack.jetbrains.com/issue/KTIJ-791)).
 >
-{type="note"}
+{style="note"}
 
 Please refer to [Writing short and clear](https://jetbrains.design/intellij/text/writing_short/) in IntelliJ Platform UI Guidelines on writing UI-related texts.
 
@@ -48,4 +48,4 @@ The following components are particularly noteworthy:
 >
 > Please be specific about the topics and reasons for adding them, and leave your email in case we need more details.
 >
-{type="note"}
+{style="note"}

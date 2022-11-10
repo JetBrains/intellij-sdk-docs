@@ -34,7 +34,7 @@ class and implementing the key methods:
 
 > See the [](advanced_postfix_templates.md) section for information on how to implement postfix templates with more advanced features and editing possibilities.
 >
-{type="note"}
+{style="note"}
 
 ## Postfix Template Description
 

@@ -25,7 +25,7 @@ In order to enable more advanced functionality, prefer implementing [`PsiNameIde
 > While the referencing element and the referenced element both may have a name, only the element which **introduces** the name (e.g., the definition `int x = 42`) needs to implement `PsiNamedElement`.
 > The referencing element at the point of usage (e.g., the `x` in the expression `x + 1`) should not implement `PsiNamedElement` since it does not _have_ a name.
 >
-{type="note"}
+{style="note"}
 
 A counterpart to the `resolve()` method is `isReferenceTo()`, which checks if the reference resolves to the specified element.
 The latter method can be implemented by calling `resolve()` and comparing the result with the passed PSI element.

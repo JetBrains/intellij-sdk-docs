@@ -9,7 +9,7 @@ The theme plugins should be stand-alone and not combined with other plugin funct
 
 > To see a full example theme project, see the [Theme Basics](%gh-sdk-samples%/theme_basics) in IntelliJ SDK Code Samples.
 >
-{type="note"}
+{style="note"}
 
 Themes have several components:
 * A required Theme description (JSON) file in the plugin project's <path>resources</path> folder.

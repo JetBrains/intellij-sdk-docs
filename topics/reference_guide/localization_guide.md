@@ -31,7 +31,7 @@ Property values mostly follow MessageFormat rules.
 > Moreover one can encounter `&&` (double ampersand) in some places, which denote alternative mnemonic to be used under macOS (mnemonics mapped to `U`, `I`, `O`, `N` chars won't work there).
 > Generally, use the same mnemonic denotation used in the original property value and everything will be OK.
 >
-{type="note"}
+{style="note"}
 
 ## Components Location
 

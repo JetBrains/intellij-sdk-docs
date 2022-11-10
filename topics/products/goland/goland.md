@@ -109,7 +109,7 @@ To make the plugin compatible with GoLand and other IDEs supporting the Go langu
 
 > See [](goland_extension_point_list.md) for the complete list.
 >
-{type="note"}
+{style="note"}
 
 Use the [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the library <path>intellij-go-$version$.jar</path>, where `$version$` corresponds to the version of the Go plugin.
 Test your plugin with any version of GoLand you intend to support.

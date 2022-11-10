@@ -26,11 +26,11 @@ The default implementation assumes running as part of the IntelliJ Platform sour
 > This allows us to reuse most of the code between different test methods that test various aspects of the same feature, and this approach is also recommended for third-party plugin tests.
 > The name of the test method can be retrieved using `UsefulTestCase.getTestName()`.
 >
-{type="note"}
+{style="note"}
 
 > If your plugin builds on top of Java support, please see [](testing_faq.md#how-to-test-a-jvm-language) to set up your test environment to obtain the required _Mock JDK_ automatically.
 >
-{type="note"}
+{style="note"}
 
 To copy files or directories from your <path>testdata</path> directory to the test project directory, you can use the `copyFileToProject()` and `copyDirectoryToProject()` methods from [`CodeInsightTestFixture`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/CodeInsightTestFixture.java).
 

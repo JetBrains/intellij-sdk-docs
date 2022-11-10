@@ -17,7 +17,7 @@ All source links and reference lists target IntelliJ Platform %ijPlatform%.
 > The guide is also [Open Source on GitHub](https://github.com/JetBrains/intellij-sdk-docs), and Pull Requests for new content, corrections or updates are always gratefully received.
 > Please see the [Contributing](intellij-sdk-docs-original_CONTRIBUTING.md) page for details.
 >
-{type="note"}
+{style="note"}
 
 > See also [](glossary.md) for a handy reference of common terms.
 >

@@ -61,9 +61,11 @@ When upgrading to `1.x` version, please make sure to follow the [migration guide
 
 > <control>Gradle JVM</control> must be set to Java 11 in <path>Settings/Preferences | Build, Execution, Deployment | Build Tools | Gradle</path>.
 >
+> If targeting 2022.3+, Java 17 is required instead.
+>
 {type="tip"}
 
-> This project requires Gradle 6.7.1 or newer. However, it is highly recommended to always use the latest available Gradle version.
+> This project requires Gradle 6.8 or newer. However, it is highly recommended to always use the latest available Gradle version.
 > Update it with:
 > ```Bash
 > ./gradlew wrapper --gradle-version=VERSION
@@ -1143,6 +1145,7 @@ Accepted values
 >
 {type="note"}
 
+
 #### jbrVariant
 {id="tasks-runide-jbrvariant"}
 
@@ -1786,4 +1789,4 @@ Validates the plugin project configuration:
 
 > Read more about controlling this behavior on [](using_kotlin.md#kotlin-standard-library).
 
-- An old default [`runPluginVerifier.downloadDir`][#tasks-runpluginverifier-downloaddir] path contains downloaded IDEs but another default is in use. Links to the [FAQ section][]
+- An old default [`runPluginVerifier.downloadDir`][#tasks-runpluginverifier-downloaddir] path contains downloaded IDEs but another default is in use. Links to the [FAQ section](tools_gradle_intellij_plugin_faq.md#the-plugin-verifier-download-directory-is-set-to-but-downloaded-ides-were-also-found-in)

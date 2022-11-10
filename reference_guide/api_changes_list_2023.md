@@ -78,7 +78,7 @@ Please see [](verifying_plugin_compatibility.md) on how to use Plugin Verifier a
 
 _Early Access Program_ (EAP) releases of upcoming versions are available [here](https://eap.jetbrains.com).
 
-<include src="tools_gradle_intellij_plugin.md" include-id="gradle_plugin_223_problem"></include>
+<include from="tools_gradle_intellij_plugin.md" element-id="gradle_plugin_223_problem"></include>
 
 ## 2023.1
 

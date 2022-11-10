@@ -62,7 +62,7 @@ NOTE: You are allowed to prettify the pattern using links: [`org.example.Foo`](h
 NOTE: Entries not starting with code quotes (`name`) can be added to document non-code changes  and will be skipped in API verification.
 -->
 
-<excerpt>List of known Breaking API Changes by version</excerpt>
+<link-summary>List of known Breaking API Changes by version</link-summary>
 
 IntelliJ API may be occasionally changed between releases, leading to existing plugins' incompatibilities with newer IDE builds.
 

@@ -121,3 +121,18 @@ replaceXmlAttributeName code-block lines include-lines
 replaceXmlAttributeName code-block initial-collapse-state default-state
 replaceXmlAttributeName chapter initial-collapse-state default-state
 replaceXmlAttributeName procedure initial-collapse-state default-state
+
+# 12 - Fix callouts
+
+# delete {type="tip"}
+# we can't delete empty line before as not every callout has it
+find ./topics/ ./reference_guide/ -type f -exec sed -i '' -e \
+    '/{type=\"tip\"}/d' {} \;
+
+# replace {type="note"} with {style="note"}
+find ./topics/ ./reference_guide/ -type f -exec sed -i '' -e \
+    's~{type="note"}~{style="note"}~g' {} \;
+
+# replace {type="warning"} with {style="warning"}
+find ./topics/ ./reference_guide/ -type f -exec sed -i '' -e \
+    's~{type="warning"}~{style="warning"}~g' {} \;

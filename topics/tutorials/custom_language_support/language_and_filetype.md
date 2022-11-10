@@ -16,7 +16,6 @@
 
 > This page is part of multi step [](custom_language_support_tutorial.md).
 >
-{type="tip"}
 
 </snippet>
 

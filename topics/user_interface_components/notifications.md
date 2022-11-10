@@ -82,7 +82,6 @@ Registered instances can then be obtained via their `id`.
 
 > Code insight is available for parameters expecting notification group `id`.
 >
-{type="tip"}
 
 ```java
 public class MyNotifier {

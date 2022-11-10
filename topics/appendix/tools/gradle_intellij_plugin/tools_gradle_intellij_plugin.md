@@ -22,7 +22,6 @@ The plugin provides the functionalities like:
 > Before visiting the [Issue Tracker](https://github.com/JetBrains/gradle-intellij-plugin/issues), update both plugin and Gradle to the latest versions.
 > Please see [CONTRIBUTING](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/CONTRIBUTING.md) on how to submit feedback and contribute to this project.
 >
-{type="tip"}
 
 ## Usage
 
@@ -62,8 +61,6 @@ When upgrading to `1.x` version, please make sure to follow the [migration guide
 > <control>Gradle JVM</control> must be set to Java 11 in <path>Settings/Preferences | Build, Execution, Deployment | Build Tools | Gradle</path>.
 >
 > If targeting 2022.3+, Java 17 is required instead.
->
-{type="tip"}
 
 > This project requires Gradle 6.8 or newer. However, it is highly recommended to always use the latest available Gradle version.
 > Update it with:
@@ -72,7 +69,6 @@ When upgrading to `1.x` version, please make sure to follow the [migration guide
 > ```
 >
 > See also: [Gradle Installation](https://gradle.org/install/) guide.
-{type="tip"}
 
 ### Snapshot Release
 The Snapshot release is a pre-release version built nightly from the latest main branch – as it is built every day using the same version number, it's not recommended to use it for production builds.
@@ -214,7 +210,6 @@ Acceptable values
 > The _version number_ format is the most common option for specifying the version of the IntelliJ Platform.
 > Other formats should be used only when your plugin relies on specific parts of the targeted IDE or early-adopting EAP releases.
 >
-{type="tip"}
 
 
 #### type
@@ -522,7 +517,6 @@ Note, that this is a [`runIde`](#tasks-runide)-based task with predefined argume
 > If your plugin doesn't implement custom settings, it is recommended to [disable it](tools_gradle_intellij_plugin_faq.md#how-to-disable-building-searchable-options).
 > See also [`noSearchableOptionsWarning`](tools_gradle_intellij_plugin_build_features.md#nosearchableoptionswarning) build feature.
 >
-{type="tip"}
 
 
 #### outputDir
@@ -825,7 +819,6 @@ Patches <path>[plugin.xml](plugin_configuration_file.md)</path> files with value
 
 > To maintain and generate an up-to-date changelog, try using [Gradle Changelog Plugin](https://github.com/JetBrains/gradle-changelog-plugin).
 >
-{type="tip"}
 
 
 #### destinationDir
@@ -1265,11 +1258,9 @@ Plugin Verifier DSL `runPluginVerifier { ... }` allows to define the list of IDE
 
 > For more details, examples or issues reporting, go to the [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) repository.
 >
-{type="tip"}
 
 > To run Plugin Verifier in [`-offline`](https://github.com/JetBrains/intellij-plugin-verifier/pull/58) mode, set the Gradle [`offline` start parameter](https://docs.gradle.org/current/javadoc/org/gradle/StartParameter.html#setOffline-boolean-).
 >
-{type="tip"}
 
 
 #### ideVersions

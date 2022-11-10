@@ -22,7 +22,6 @@ Therefore, custom language plugin developers typically use stub indexes in their
 
 > [Index Viewer](https://plugins.jetbrains.com/plugin/13029-index-viewer/) plugin can be used to inspect indexes' contents and properties.
 >
-{type="tip"}
 
 ## Dumb Mode
 

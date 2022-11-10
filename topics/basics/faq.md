@@ -6,7 +6,6 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 
 > See also [Explore the IntelliJ Platform API](explore_api.md) for more information and strategies.
 >
-{type="tip"}
 
 ## Unresolved Classes after Upgrading to 2019.2 or later
 *  [Java functionality extracted as a plugin](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/)

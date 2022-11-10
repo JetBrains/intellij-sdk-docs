@@ -14,7 +14,6 @@ _- Sample 1_ - Sample implementation
 
 > See also [](extension_point_list.md#langextensionpointsxml) to discover more Language-related Extension Points. See also [](explore_api.md).
 >
-{type="tip"}
 
 ### Brace Matching
 

@@ -230,7 +230,6 @@ The styles available for callouts are:
 > There are always exceptions, but the best practice is to resolve all TODOs before the final review.
 > If immediate resolution isn't possible, write a YouTrack [SDK Issue](https://youtrack.jetbrains.com/issues/IJSDK) that captures the TODO and remove the comment from the document.
 >
-{type="tip"}
 
 ### Images
 

@@ -50,13 +50,11 @@ The IntelliJ Platform provides the [type safe DSL](kotlin_ui_dsl_version_2.md) a
 
 > Using a GUI designer with Kotlin is currently [not supported](https://youtrack.jetbrains.com/issue/KTIJ-791).
 >
-{type="tip"}
 
 ## Adding Kotlin Support
 
 > The [IntelliJ Platform Plugin Template](plugin_github_template.md) provides a preconfigured project using Kotlin.
 >
-{type="tip"}
 
 IntelliJ IDEA bundles the necessary Kotlin plugin, requiring no further configuration.
 For detailed instructions, please refer to the [Kotlin documentation](https://kotlinlang.org/docs/getting-started.html).
@@ -107,7 +105,6 @@ See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html
 
 > If you need to add Kotlin Standard Library to your **test project** dependencies, see the [](testing_faq.md#how-to-test-a-jvm-language) section.
 >
-{type="tip"}
 
 ### Other Bundled Kotlin Libraries
 

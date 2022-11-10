@@ -176,7 +176,6 @@ The following snippet represents the sort of "memory leak detected" error encoun
 > The first part of the callstack is unrelated to diagnosing the memory leak.
 > Instead, pay attention to the second part of the call stack, after `Caused by: java.lang.Throwable`.
 >
-{type="tip"}
 
 In this specific case, the IntelliJ Platform ([`CoreProgressManager`](%gh-ic%/platform/core-impl/src/com/intellij/openapi/progress/impl/CoreProgressManager.java)) started a task that contained the `DynamicWizard` code.
 In turn, that code allocated a `Project` that was never disposed by the time the application exited.

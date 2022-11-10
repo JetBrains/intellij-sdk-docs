@@ -33,7 +33,6 @@ To clarify corresponding message bus, `Topic` field declaration can be annotated
 
 > All available listeners/topics are listed on [](extension_point_list.md) under _Listeners_ sections.
 >
-{type="tip"}
 
 ### Message Bus
 

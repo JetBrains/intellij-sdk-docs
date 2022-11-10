@@ -11,7 +11,6 @@ Unlike [Developing Custom Language Plugins](custom_language_support.md), it is a
 
 > Please see also [](psi_performance.md).
 >
-{type="tip"}
 
 ## General
 

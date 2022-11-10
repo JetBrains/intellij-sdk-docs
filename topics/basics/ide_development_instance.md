@@ -8,7 +8,6 @@ This page describes how to control some of the settings for the Development Inst
 
 > Please see also [Advanced Configuration](https://www.jetbrains.com/help/idea/tuning-the-ide.html) for general VM options and properties.
 >
-{type="tip"}
 
 ## Using a JetBrains Runtime for the Development Instance
 

@@ -97,7 +97,6 @@ For the child of a parent, the `id` attribute becomes compound:
 > All children share the parent's `id` as the basis of their own `id`.
 > All children have an `id` suffix that is unique among their siblings.
 >
-{type="tip"}
 
 ## Implementations for Parent-Child Settings
 

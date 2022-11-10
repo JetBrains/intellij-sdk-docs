@@ -20,7 +20,6 @@ Existing highlighting can be suppressed programmatically in certain contexts, se
 > To force re-highlighting (e.g., after changing plugin specific settings), use
 > [`DaemonCodeAnalyzer.restart()`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/daemon/DaemonCodeAnalyzer.java).
 >
-{type="tip"}
 
 ## Color Settings
 The mapping of the `TextAttributesKey` to specific attributes used in an editor is defined by the [`EditorColorsScheme`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/colors/EditorColorsScheme.java) class.
@@ -51,7 +50,6 @@ For highlighting lexer errors, the standard `TextAttributesKey` for bad characte
 
 > Use [`HtmlSyntaxInfoUtil`](%gh-ic%/platform/lang-impl/src/com/intellij/openapi/editor/richcopy/HtmlSyntaxInfoUtil.java) to create Lexer-based highlighted code samples, e.g. for usage in documentation.
 >
-{type="tip"}
 
 ### Semantic Highlighting
 

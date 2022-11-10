@@ -144,7 +144,6 @@ Implicit in using [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/
 >
 > `See <em>Includes</em> tab in <a href="settings://fileTemplates">Settings/Preferences | Editor | File and Code Templates</a> to configure.`
 >
-{type="tip"}
 
 ### Inspection Unit Test
 

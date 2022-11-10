@@ -27,7 +27,6 @@ There are many [predefined functions](https://www.jetbrains.com/help/idea/templa
 
 > Consider iteratively testing the Live Template using the current editor and a markdown file to minimize debugging later.
 >
-{type="tip"}
 
 ## Export the Live Template
 

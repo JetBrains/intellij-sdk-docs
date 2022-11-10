@@ -7,7 +7,6 @@ Plugin projects for CLion can be developed using IntelliJ IDEA with the [](tools
 
 > Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
 >
-{type="tip"}
 
 ## Configuring Plugin Projects Targeting CLion
 

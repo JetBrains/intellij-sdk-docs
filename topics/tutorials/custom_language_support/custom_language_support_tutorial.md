@@ -13,7 +13,6 @@ In this tutorial we will add support for a [.properties](https://en.wikipedia.or
 >
 > The accompanying [](writing_tests_for_plugins.md) tutorial covers testing the functionality; corresponding parts are linked under **Testing**.
 >
-{type="tip"}
 
 
 > The complete and fully working example plugin used in this tutorial is the [`simple_language_plugin`](%gh-sdk-samples%/simple_language_plugin) code sample.

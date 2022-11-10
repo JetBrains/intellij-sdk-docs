@@ -16,7 +16,6 @@ Plugins need icons mostly for [](basic_action_system.md), custom component rende
 > Plugin _Logos_, which represent a plugin itself, have different requirements than icons and images used within a plugin.
 > For more information, see the [](plugin_icon_file.md).
 >
-{type="tip"}
 
 ## Platform vs. Custom Icons
 
@@ -31,7 +30,6 @@ If custom icons are required, please refer to detailed [design guide](https://je
 
 > See [Action Basics](%gh-sdk-samples%/action_basics) sample plugin as a reference.
 >
-{type="tip"}
 
 In the case of a Gradle-based project, icons should be placed in the <path>resources</path> folder.
 If the project is DevKit-based, the recommended approach is to put icons to a dedicated [source root](https://www.jetbrains.com/help/idea/content-roots.html) marked as <control>Resources Root</control>, say <path>icons</path> or <path>resources</path>.
@@ -141,7 +139,6 @@ If the icon graphics are simple enough so that it renders perfectly in every sca
 
 > For generating the SVG icons suited for the IntelliJ-based IDEs, you may also use the third-party web tool [IntelliJ Icon Generator](https://bjansen.github.io/intellij-icon-generator/).
 >
-{type="tip"}
 
 ### PNG Format
 > Please consider using [SVG icons](#svg-format) for optimal results if your plugin targets 2018.2+.

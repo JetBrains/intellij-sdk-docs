@@ -67,7 +67,6 @@ Otherwise, the stub tree will not be rebuilt when external dependency changes, a
 
 > Please see also [](indexing_and_psi_stubs.md#improving-indexing-performance).
 >
-{type="tip"}
 
 ## Stub Indexes
 

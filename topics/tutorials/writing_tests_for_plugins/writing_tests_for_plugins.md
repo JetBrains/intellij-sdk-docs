@@ -12,7 +12,6 @@ As an example, the plugin implemented in the [Custom Language Support Tutorial](
 
 > Corresponding parts are linked under **Tested Functionality** on top of each page in this tutorial.
 >
-{type="tip"}
 
 *  [](tests_prerequisites.md)
 *  [](parsing_test.md)

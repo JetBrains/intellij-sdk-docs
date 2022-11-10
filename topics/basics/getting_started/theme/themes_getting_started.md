@@ -18,7 +18,6 @@ The [themes available for download](https://plugins.jetbrains.com/search?headlin
 
 > See the [Themes in IntelliJ-based IDEs](https://blog.jetbrains.com/platform/2021/10/themes-in-intellij-based-ides/) blog post for an overview (available in multiple languages).
 >
-{type="tip"}
 
 ## Theme Plugin Development
 

@@ -19,4 +19,3 @@ It's highly recommended to get familiar with the [](explore_api.md) section befo
 
 > In some cases, implementing an actual IntelliJ Platform plugin might not be necessary, as [alternative solutions](plugin_alternatives.md) exist.
 >
-{type="tip"}

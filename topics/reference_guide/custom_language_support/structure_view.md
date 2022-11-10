@@ -14,7 +14,6 @@ However, for most languages, this is not necessary, and the standard `StructureV
 
 > To modify an existing Structure View (e.g., add/filter nodes of builtin language support), use [`StructureViewExtension`](%gh-ic%/platform/structure-view-impl/src/com/intellij/ide/structureView/StructureViewExtension.java) registered in `com.intellij.lang.structureViewExtension` extension point.
 >
-{type="tip"}
 
 The starting point for the structure view is the [`PsiStructureViewFactory`](%gh-ic%/platform/editor-ui-api/src/com/intellij/lang/PsiStructureViewFactory.java) interface, which is registered in the `com.intellij.lang.psiStructureViewFactory` extension point.
 

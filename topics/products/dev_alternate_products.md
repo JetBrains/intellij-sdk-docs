@@ -14,7 +14,6 @@ All the Gradle configuration attributes described here are discussed in-depth on
 
 > Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
 >
-{type="tip"}
 
 ## Getting Started
 

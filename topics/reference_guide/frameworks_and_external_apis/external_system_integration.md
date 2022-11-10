@@ -71,7 +71,6 @@ It's possible to configure external system integration to automatically refresh 
 
 > From 2020.1, auto-import cannot be disabled by a user.
 >
-{type="tip"}
 
 ### Auto-Import for ExternalSystemManager Implementation
 

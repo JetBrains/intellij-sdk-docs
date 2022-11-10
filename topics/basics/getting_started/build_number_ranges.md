@@ -60,7 +60,6 @@ Usually you should omit the product ID and use only the branch number and build 
 
 > Which versions should your plugin support? We've collected some insights based on download statistics in [Statistics: Product Versions in Use](https://plugins.jetbrains.com/docs/marketplace/product-versions-in-use-statistics.html).
 >
-{type="tip"}
 
 Please see also corresponding entries in [Incompatible API Changes](api_changes_list.md) and [Notable API Changes](api_notable.md).
 

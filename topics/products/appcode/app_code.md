@@ -6,7 +6,6 @@ Plugin projects targeting [AppCode](https://www.jetbrains.com/objc/) can be deve
 
 > Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
 >
-{type="tip"}
 
 ## Configuring Plugin Projects Targeting AppCode
 

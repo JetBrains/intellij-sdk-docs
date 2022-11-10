@@ -8,7 +8,6 @@ The <ui-path>Tools | Internal Actions</ui-path> menu provides plugin developers 
 
 > If the menu item <ui-path>Tools | Internal Actions</ui-path> is not available in IntelliJ IDEA, then the first step is [Enabling Internal Mode](enabling_internal.md).
 >
-{type="tip"}
 
 </snippet>
 

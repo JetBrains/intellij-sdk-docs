@@ -130,7 +130,6 @@ tasks {
 
 > Consider using the [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template) which uses the Gradle setup and provides CI setup covered with GitHub Actions.
 >
-{type="tip"}
 
 #### Plugin Gradle Properties and Plugin Configuration File Elements
 
@@ -163,4 +162,3 @@ To debug your plugin in a _standalone_ IDE instance, please see [How to Debug Yo
 
 > For more information about how to work with Gradle-based projects see the [Working with Gradle in IntelliJ IDEA](https://www.youtube.com/watch?v=6V6G3RyxEMk) screencast and working with [Gradle tasks](https://www.jetbrains.com/help/idea/work-with-gradle-tasks.html) in the IntelliJ IDEA help.
 >
-{type="tip"}

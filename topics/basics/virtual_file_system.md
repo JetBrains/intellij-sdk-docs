@@ -44,7 +44,6 @@ If no file watcher is present, a refresh operation walks through all directories
 
 > Invoke [internal action](internal_actions_intro.md) <ui-path>Tools | Internal Actions | VFS | Show Watched VFS Roots</ui-path> to see all registered roots for current project.
 >
-{type="tip"}
 
 Refresh operations are based on file timestamps.
 If a file's contents were changed, but its timestamp remained the same, the IntelliJ Platform will not pick up the updated contents.

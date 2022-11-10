@@ -34,7 +34,6 @@ The _Kotlin UI DSL Version 1_ functions are located in the [`com.intellij.ui.lay
 
 > See [Layout](https://jetbrains.design/intellij/principles/layout) topic in IntelliJ Platform UI Guidelines for recommendations on arranging UI controls in dialogs.
 >
-{type="tip"}
 
 Use [`panel`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/layout/layout.kt) to create UI:
 
@@ -97,7 +96,6 @@ row {
 
 > To visually debug layout, enable <control>UI DSL Debug Mode</control> from [Internal Actions - UI Submenu](internal_ui_sub.md).
 >
-{type="tip"}
 
 ## Adding Components
 

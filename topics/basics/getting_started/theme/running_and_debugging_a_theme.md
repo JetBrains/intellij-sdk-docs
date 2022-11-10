@@ -14,7 +14,6 @@ To run and debug a plugin directly from a theme plugin project, a _Plugin_ run c
 
 > For more information about creating Run Configurations, refer to the [Run/Debug Configuration](https://www.jetbrains.com/help/idea/run-debug-configuration.html) section in IntelliJ IDEA Web Help.
 >
-{type="tip"}
 
 <procedure title="Add Plugin Run Configuration">
 
@@ -24,7 +23,6 @@ To run and debug a plugin directly from a theme plugin project, a _Plugin_ run c
 4. Ensure that <control>Use classpath of module</control> specifies the current theme plugin module.
 5. Click the <control>Apply</control> button.
 
-{type="tip"}
 
 </procedure>
 

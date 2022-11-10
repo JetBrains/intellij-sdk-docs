@@ -28,7 +28,6 @@ See [](explore_api.md) for more information and strategies.
 
 > Auto-completion, Quick Documentation, and other code insight features are available on extension point tags and attributes.
 >
-{type="tip"}
 
 1. Add an [`<extensions>`](plugin_configuration_file.md#idea-plugin__extensions) element to your <path>plugin.xml</path> if it's not yet present there.
    Set the `defaultExtensionNs` attribute to one of the following values:

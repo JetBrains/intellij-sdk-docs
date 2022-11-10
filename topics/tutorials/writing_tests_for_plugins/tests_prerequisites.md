@@ -5,7 +5,6 @@
 <snippet id="custom_language_testing_tutorial_header">
 
 > This page is part of multi step [](writing_tests_for_plugins.md) tutorial.
-{type="tip"}
 
 </snippet>
 

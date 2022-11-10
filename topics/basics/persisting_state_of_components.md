@@ -168,7 +168,6 @@ Settings can be shared via the following functionalities:
 
 > Synchronization via the _Settings Sync_ or _Settings Repository_ plugins only works when these plugins are installed and enabled.
 >
-{type="tip"}
 
 The decision about making a specific component's state shareable should be made carefully.
 Only the settings that are not specific to a given machine should be shared, e.g. paths to user-specific directories shouldn't be shared.

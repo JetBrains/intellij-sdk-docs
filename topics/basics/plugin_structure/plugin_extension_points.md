@@ -86,7 +86,6 @@ public class MyBeanClass extends AbstractExtensionPointBean {
 
 > See [Extension properties code insight](plugin_extensions.md#extension-properties-code-insight) on how to provide smart completion/validation.
 >
-{type="tip"}
 
 For above extension points usage in _anotherPlugin_ would look like this (see also [Declaring Extensions](plugin_extensions.md#declaring-extensions)):
 

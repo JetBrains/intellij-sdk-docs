@@ -14,7 +14,6 @@
 >
 > See also [](explore_api.md) for more information and strategies.
 >
-{type="tip"}
 
 <snippet id="ep_list_legend">
 
@@ -22,7 +21,6 @@
 >
 > See [](plugin_listeners.md) on how to register listeners.
 >
-{type="tip"}
 
 ## Legend
 

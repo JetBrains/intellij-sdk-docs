@@ -16,7 +16,6 @@ For plugin developers, [Exposing Theme Metadata](themes_metadata.md) discusses t
 
 > [Color Highlighter Plugin](https://plugins.jetbrains.com/plugin/13309-color-highlighter) adds additional color preview inside the editor.
 >
-{type="tip"}
 
 ## Introduction to Theme Description File Syntax
 
@@ -145,7 +144,6 @@ The color of a replaced icon takes precedence over any `ColorPalette` overrides.
 
 > For generating the SVG icons suited for the IntelliJ-based IDEs, you may also use the third-party web tool: [IntelliJ Icon Generator](https://bjansen.github.io/intellij-icon-generator/).
 >
-{type="tip"}
 
 ## Customizing UI Controls
 

@@ -44,7 +44,6 @@ These methods copy the specified files from the <path>testdata</path> directory 
 
 > The IDE supports smart navigation between test code and related test data file(s); see this [blog post](https://blog.jetbrains.com/platform/2017/10/improvements-in-testing-intellij-platform-plugins/) for more details.
 >
-{type="tip"}
 
 ### Special Markup
 When a file is opened in the in-memory editor, special markup in the file content can specify the caret position or selection.

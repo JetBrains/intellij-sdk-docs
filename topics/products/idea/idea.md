@@ -11,7 +11,6 @@ Depending on exact functionality, a plugin can also target [UAST (Unified Abstra
 
 > Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
 >
-{type="tip"}
 
 * [Tomcat Integration](tomcat_integration.md)
 * [Spring API](spring_api.md)

@@ -20,7 +20,6 @@ If you just want to share feedback on the guide, again, [raise an issue](https:/
 
 > Please see [Plugin Development FAQ](faq.md) and [Explore the IntelliJ Platform API](explore_api.md) for tips & tricks.
 >
-{type="tip"}
 
 For questions and problems related to plugin development itself (rather than the content of this guide), you have several options:
 

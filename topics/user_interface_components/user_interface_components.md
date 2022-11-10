@@ -13,7 +13,6 @@ Using those components in your plugins will ensure that your plugin looks and wo
 
 > Use [UI Inspector](internal_ui_inspector.md) to locate the underlying Swing component implementation or to inspect an existing UI at runtime.
 >
-{type="tip"}
 
 > It is recommended to build UI forms like dialogs or settings pages by using the [Kotlin UI DSL](kotlin_ui_dsl_version_2.md) (IntelliJ Platform 2021.3+).
 >
@@ -25,7 +24,6 @@ Please refer to [Writing short and clear](https://jetbrains.design/intellij/text
 
 > See [UI Kit](https://jetbrains.design/intellij/resources/UI_kit/) when using [Figma](https://www.figma.com) to design UI.
 >
-{type="tip"}
 
 
 The following components are particularly noteworthy:

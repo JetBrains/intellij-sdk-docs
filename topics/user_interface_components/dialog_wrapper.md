@@ -47,7 +47,6 @@ When using Kotlin, use [Kotlin UI DSL](kotlin_ui_dsl_version_2.md) to provide th
 >
 > Existing dialogs can be inspected at runtime using [UI Inspector](internal_ui_inspector.md), e.g., to locate the underlying implementation of UI components.
 >
-{type="tip"}
 
 To display the dialog, call the `show()` method and then use the `getExitCode()` method to check how the dialog was closed (see `DialogWrapper#OK_EXIT_CODE|CANCEL_EXIT_CODE|CLOSE_EXIT_CODE`).
 The `showAndGet()` method can be used to combine these two calls.

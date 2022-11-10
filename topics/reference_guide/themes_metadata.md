@@ -49,11 +49,9 @@ The following minimal sample demonstrates all details required when exposing UI 
 
 > It is highly recommended to always provide a `description` entry, so Theme authors can understand usages.
 >
-{type="tip"}
 
 > Do not remove existing keys, but deprecate them instead to help Theme authors upgrade their existing themes.
 >
-{type="tip"}
 
 Color keys can be used via `JBColor.namedColor()` providing defaults for Light and Dark theme:
 

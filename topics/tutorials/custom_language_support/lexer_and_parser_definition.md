@@ -41,7 +41,6 @@ After that, the IDE generates the lexer under the <path>gen</path> directory, fo
 
 > [](tools_gradle_grammar_kit_plugin.md) can be used alternatively.
 >
-{type="tip"}
 
 ## Define a Lexer Adapter
 

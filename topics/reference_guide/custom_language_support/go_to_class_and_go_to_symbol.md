@@ -14,7 +14,6 @@ Provide implementations of [`ChooseByNameContributor`](%gh-ic%/platform/lang-api
 
 > Please consider implementing [`ChooseByNameContributorEx`](%gh-ic%/platform/lang-impl/src/com/intellij/navigation/ChooseByNameContributorEx.java) for better performance.
 >
-{type="tip"}
 
 Each contributor must return a complete list of names to show in the list for a specified project, which the IDE will then filter according to the text typed by the user in the dialog.
 Using [File-based or Stub indices](indexing_and_psi_stubs.md) to obtain matching candidates is highly recommended to improve performance.

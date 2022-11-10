@@ -76,7 +76,6 @@ Implementors must ensure that changing presentation and availability status hand
 
 > If the new state of an action cannot be determined quickly, then evaluation should be performed in the `AnAction.actionPerformed()` method, and [notify](notifications.md) the user that the action cannot be executed if the context isn't suitable.
 >
-{type="tip"}
 
 #### Determining the Action Context
 
@@ -282,7 +281,6 @@ This, and additional information can also be found by using the [Code Completion
 
 > To lookup existing Action ID (e.g. for use in `relative-to-action`), [UI Inspector](internal_ui_inspector.md) can be used.
 >
-{type="tip"}
 
 > See the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) element and its children documentation for details.
 >

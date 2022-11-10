@@ -74,7 +74,6 @@ This step generates a parser and PSI elements in the <path>/src/main/gen</path> 
 
 > [](tools_gradle_grammar_kit_plugin.md) can be used alternatively.
 >
-{type="tip"}
 
 ![Parser](generated_parser.png){width="800"}
 

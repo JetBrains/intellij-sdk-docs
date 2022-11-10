@@ -10,4 +10,3 @@ The Program Structure Interface, commonly referred to as just PSI, is the layer 
 
 > See [useful tools](explore_api.md#31-use-internal-mode-and-psiviewer) on how to inspect the PSI structure and its properties.
 >
-{type="tip"}

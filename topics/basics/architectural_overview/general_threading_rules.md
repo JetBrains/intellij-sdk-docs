@@ -6,7 +6,6 @@
 
 > [Thread Access Info](https://plugins.jetbrains.com/plugin/16815-thread-access-info) plugin visualizes Read/Write Access and Thread information in debugger.
 >
-{type="tip"}
 
 In general, code-related data structures in the IntelliJ Platform are covered by a single reader/writer lock.
 
@@ -85,7 +84,6 @@ If a process does lengthy non-PSI activity, insert explicit `checkCanceled()` ca
 > Throwing `ProcessCanceledException` from `checkCanceled()` can be disabled for development (e.g. while debugging the code) with the <ui-path>Tools | Internal Actions | Disable ProcessCanceledException</ui-path> action.
 > The action is available only if [Internal Mode is enabled](enabling_internal.md).
 >
-{type="tip"}
 
 ## Read Action Cancellability
 

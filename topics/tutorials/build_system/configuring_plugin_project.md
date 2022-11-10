@@ -31,7 +31,6 @@ Explicitly setting the [`intellij.version`](tools_gradle_intellij_plugin.md#inte
 
 > See the [Developing for Multiple Products](dev_alternate_products.md) page for information about how to develop a plugin that is compatible with multiple IntelliJ-based IDEs.
 >
-{type="tip"}
 
 All available platform versions can be browsed in the [](intellij_artifacts.md).
 
@@ -84,7 +83,6 @@ For those [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxm
 
 > To maintain and generate an up-to-date changelog, try using [Gradle Changelog Plugin](https://github.com/JetBrains/gradle-changelog-plugin).
 >
-{type="tip"}
 
 As discussed in [](creating_plugin_project.md#components-of-a-wizard-generated-gradle-intellij-platform-plugin), the Gradle properties `project.version`, `project.group`, and `rootProject.name` are all generated based on the input to the Wizard.
 However, the [](tools_gradle_intellij_plugin.md) does not combine and substitute those Gradle properties for the default [`<id>`](plugin_configuration_file.md#idea-plugin__id) and [`<name>`](plugin_configuration_file.md#idea-plugin__name) elements in the <path>plugin.xml</path> file.

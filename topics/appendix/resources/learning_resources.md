@@ -7,7 +7,6 @@
 > [Subscribe to Marketplace Developer News](https://jb.gg/mp-updates) to receive news and announcements.
 > Also follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/).
 >
-{type="tip"}
 
 ## Articles
 

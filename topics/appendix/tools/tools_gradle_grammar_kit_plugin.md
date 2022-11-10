@@ -12,7 +12,6 @@ The [Gradle Grammar-Kit Plugin](https://github.com/JetBrains/gradle-grammar-kit-
 
 > The plugin does not support two-pass generation. Therefore, it does not support method mixins.
 >
-{type="tip"}
 
 ## Usage
 To enable this plugin in your Gradle-based project, register the plugin in the Gradle build script's `plugins` section:
@@ -46,13 +45,11 @@ plugins {
 >
 > See also: [Gradle Installation](https://gradle.org/install/) guide.
 >
-{type="tip"}
 
 > Please see [CONTRIBUTING](https://github.com/JetBrains/gradle-grammar-kit-plugin/blob/master/CONTRIBUTING.md) on how to submit feedback and contribute to this project.
 >
 > Before visiting the [Issue Tracker](https://github.com/JetBrains/gradle-grammar-kit-plugin/issues), update both plugin and Gradle to the latest versions.
 >
-{type="tip"}
 
 ## Configuration
 

@@ -24,7 +24,6 @@ Each entry is mapped to its corresponding _Replacement_, pointing to recommended
 >
 > Please use the feedback form at the bottom of this page if you encounter missing or unclear information.
 >
-{type="tip"}
 
 ## IntelliJ Platform
 

@@ -80,6 +80,5 @@ Several functions which can be used for implementing and using the PSI can be fo
 
 > Use [builtin tools and PsiViewer plugin](explore_api.md#31-use-internal-mode-and-psiviewer) to explore and inspect PSI.
 >
-{type="tip"}
 
 Please see [Indexing and PSI Stubs](indexing_and_psi_stubs.md) for advanced topics.

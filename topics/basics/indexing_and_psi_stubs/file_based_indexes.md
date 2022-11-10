@@ -21,13 +21,11 @@ When accessing an index, specify the key you're interested in and get back the l
 
 > In some cases, using [Gists](indexing_and_psi_stubs.md#gists) can be considered as an alternative.
 >
-{type="tip"}
 
 ## Implementing a File-Based Index
 
 > A relatively simple file-based index implementation is the [UI Designer bound forms index](%gh-ic%/plugins/ui-designer/src/com/intellij/uiDesigner/binding/FormClassIndex.java), storing FQN of bound implementation class for [GUI Designer](https://www.jetbrains.com/help/idea/gui-designer-basics.html) <path>.form</path> files.
 >
-{type="tip"}
 
 Each specific index implementation is a class extending [`FileBasedIndexExtension`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndexExtension.java) registered via `com.intellij.fileBasedIndex` extension point.
 

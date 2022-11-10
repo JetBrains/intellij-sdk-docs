@@ -35,7 +35,6 @@ See the [](plugins_quick_start.md) for more details.
 
 > In some cases, implementing an actual IntelliJ Platform plugin might not be necessary, as [alternative solutions](plugin_alternatives.md) exist.
 >
-{type="tip"}
 
 ## Open Source
 
@@ -61,7 +60,6 @@ This allows plugins to target multiple products, as each product will include ba
 
 > Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
 >
-{type="tip"}
 
 The following IDEs are based on the IntelliJ Platform:
 * JetBrains IDEs:

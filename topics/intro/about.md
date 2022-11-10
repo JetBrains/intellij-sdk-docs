@@ -21,7 +21,6 @@ All source links and reference lists target IntelliJ Platform %ijPlatform%.
 
 > See also [](glossary.md) for a handy reference of common terms.
 >
-{type="tip"}
 
 #### Part I — Plugins
 

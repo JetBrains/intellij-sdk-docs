@@ -6,7 +6,7 @@
 >
 {type="warning"}
 
-<excerpt rel="excerpt"/>
+<link-summary rel="excerpt"/>
 <p id="excerpt">
 A symbol is a semantic element in some model, e.g., language or framework model.
 </p>

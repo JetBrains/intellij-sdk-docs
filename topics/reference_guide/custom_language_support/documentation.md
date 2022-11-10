@@ -2,16 +2,16 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Product Help:** [Quick Documentation](https://www.jetbrains.com/help/idea/viewing-reference-information.html#inline-quick-documentation)
 
-</microformat>
+</tldr>
 
 Custom languages can use the `com.intellij.lang.documentationProvider` extension point (EP) to show documentation for functions,
 methods, classes, or other constructs right inside the IDE.
 Accessing the documentation is done by calling
-<menupath>View | Quick Documentation</menupath>
+<ui-path>View | Quick Documentation</ui-path>
 or hovering over a symbol, which will open a popup to show type information, parameters, usage descriptions, or examples.
 The source of the documentation contents can vary.
 Often it is extracted from comments (e.g. JavaDoc comments) in the source code,
@@ -53,7 +53,7 @@ Once these steps are completed, the following additional features can be impleme
 * Implement `getQuickNavigateInfo()` to provide the text that should be displayed when an element is hovered over with <shortcut>Ctrl</shortcut>/<shortcut>Cmd</shortcut> pressed.
 * Implement `generateHoverDoc()` to show different contents on mouse hover.
 * Implement `getDocumentationElementForLookupItem()` to return a suitable PSI element for the given lookup element when
-  <menupath>View | Quick Documentation</menupath> is called on an element of the autocompletion popup.
+  <ui-path>View | Quick Documentation</ui-path> is called on an element of the autocompletion popup.
 * Implement `getUrlFor()` and [`ExternalDocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/ExternalDocumentationProvider.java) to fetch documentation for elements from online resources.
 
 

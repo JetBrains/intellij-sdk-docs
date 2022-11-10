@@ -2,13 +2,13 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<excerpt>Postfix completion allows generating or wrapping existing code into additional constructs without navigating the caret back.</excerpt>
+<link-summary>Postfix completion allows generating or wrapping existing code into additional constructs without navigating the caret back.</link-summary>
 
-<microformat>
+<tldr>
 
 **Product Help:** [Postfix Completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#postfix_completion)
 
-</microformat>
+</tldr>
 
 The Postfix Completion functionality allows developers to wrap a code fragment with a predefined template by typing a template abbreviation just after an expression meant to be wrapped, expanded, or modified.
 It relieves developers from typing repetitive or non-trivial code or helps to create the code faster, e.g., often it is convenient to write a code part and surround it with the required block without navigating the caret backward.

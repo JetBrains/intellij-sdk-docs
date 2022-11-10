@@ -2,11 +2,11 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Product Help:** [Status bar](https://www.jetbrains.com/help/idea/guided-tour-around-the-user-interface.html#status-bar)
 
-</microformat>
+</tldr>
 
 The IntelliJ Platform allows plugins to extend the IDE status bar with additional custom widgets.
 

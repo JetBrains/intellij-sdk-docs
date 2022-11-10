@@ -29,7 +29,7 @@ Embedding of the browser component inside the IDE allows amongst others:
 <tab title="Earlier versions">
 
 Using JCEF requires using a dedicated JetBrains Runtime, please follow these [installation instructions](https://youtrack.jetbrains.com/issue/IDEA-231833#focus=streamItem-27-3993099.0-0) on how to obtain and activate it in your IDE.
-Enable `ide.browser.jcef.enabled` in <control>Registry</control> dialog (invoke <menupath>Help | Find Action</menupath> and type "Registry") and restart the IDE for changes to take effect.
+Enable `ide.browser.jcef.enabled` in <control>Registry</control> dialog (invoke <ui-path>Help | Find Action</ui-path> and type "Registry") and restart the IDE for changes to take effect.
 
 </tab>
 </tabs>
@@ -47,7 +47,7 @@ ide.browser.jcef.debug.port=9222
 JavaScript debugger in IntelliJ IDEA Ultimate can thus be used to debug JavaScript code running in the IDE via the Chrome DevTools.
 Use the <control>Attach to Node.js/Chrome</control> configurations with a proper port number.
 
-Also, JCEF provides a default Chrome DevTools front-end (similar to the one in the Chrome browser) that can be opened from the JCEF's browser component context menu via <menupath>Open DevTools</menupath>.
+Also, JCEF provides a default Chrome DevTools front-end (similar to the one in the Chrome browser) that can be opened from the JCEF's browser component context menu via <ui-path>Open DevTools</ui-path>.
 The menu item is available in [internal mode](enabling_internal.md) only, starting with 2021.3 platform registry key `ide.browser.jcef.contextMenu.devTools.enabled` must be set to `true` explicitly.
 
 To access the Chrome DevTools in plugin code, use the following API:

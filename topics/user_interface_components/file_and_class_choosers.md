@@ -31,7 +31,7 @@ An alternative UI for selecting files, which works best when the most common way
 The dialog shown by this API has two tabs:
 
 *  One shows the project structure
-*  Another shows a list of files similar to the one used by the <menupath>Navigate | File</menupath> popup.
+*  Another shows a list of files similar to the one used by the <ui-path>Navigate | File</ui-path> popup.
 
 To show the dialog, call `showDialog()` on the chooser returned from `createFileChooser()`, and then call `getSelectedFile()` to retrieve the user's selection.
 

@@ -2,11 +2,11 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Product Help:** [Settings/Preferences](https://www.jetbrains.com/help/idea/settings-preferences-dialog.html), [Configuring the IDE](https://www.jetbrains.com/help/idea/configuring-project-and-ide-settings.html)
 
-</microformat>
+</tldr>
 
 Settings are but one application of the IntelliJ Platform [Persistence Model](persistence.md).
 For more information, see:

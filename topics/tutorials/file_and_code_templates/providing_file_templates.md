@@ -13,7 +13,7 @@ There are multiple ways of creating file templates:
 * [Copy an existing file template](https://www.jetbrains.com/help/idea/using-file-and-code-templates.html#copy-existing-template)
 
 Once the file templates are created and saved, they should be copied to the plugin project's <path>resources</path> directory.
-The created template can be found in the [IDE configuration directory](https://www.jetbrains.com/help/idea/directories-used-by-the-ide-to-store-settings-caches-plugins-and-logs.html#config-directory) in the <path>fileTemplates</path> directory, or they can be exported via <menupath>File | Manage IDE Settings | Export Settings</menupath> by selecting the <control>File Templates (schemes)</control> checkbox.
+The created template can be found in the [IDE configuration directory](https://www.jetbrains.com/help/idea/directories-used-by-the-ide-to-store-settings-caches-plugins-and-logs.html#config-directory) in the <path>fileTemplates</path> directory, or they can be exported via <ui-path>File | Manage IDE Settings | Export Settings</ui-path> by selecting the <control>File Templates (schemes)</control> checkbox.
 The exported ZIP file will contain the <path>fileTemplates</path> directory with the created templates.
 The <path>fileTemplates</path> directory should be moved to the plugin project's <path>resources</path> folder, and the <path>.ft</path> extension must be added to the template files, e.g., <path>My Class.java</path> must be renamed to <path>My Class.java.ft</path>.
 
@@ -57,7 +57,7 @@ The <control>Other</control> category contains other templates organized in grou
 It includes templates located in the <path>fileTemplates/j2ee</path> directory and registered via the `com.intellij.fileTemplateGroup` extension point (EP).
 Note that the <path>j2ee</path> directory name is historical and unrelated to the J2EE technology.
 This category is intended for templates that are not used for creating core language entities or are used less frequently by users, e.g., a specific XML configuration file, a framework-specific class in Java language, etc.
-To include file templates in the <control>Other</control> section of the <menupath>Settings/Preferences | Editor | File and Code Templates</menupath> settings page, provide an implementation of the
+To include file templates in the <control>Other</control> section of the <ui-path>Settings/Preferences | Editor | File and Code Templates</ui-path> settings page, provide an implementation of the
 [`FileTemplateGroupDescriptorFactory`](%gh-ic%/platform/lang-api/src/com/intellij/ide/fileTemplates/FileTemplateGroupDescriptorFactory.java)
 and register it via the `com.intellij.fileTemplateGroup` EP.
 

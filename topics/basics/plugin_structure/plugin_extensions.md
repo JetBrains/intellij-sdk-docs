@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<excerpt>Extensions are the most common way of customizing functionality in the IDE.</excerpt>
+<link-summary>Extensions are the most common way of customizing functionality in the IDE.</link-summary>
 
 _Extensions_ are the most common way for a plugin to extend the IntelliJ Platform's functionality in a way that is not as straightforward as adding an action to a menu or toolbar.
 
@@ -21,7 +21,7 @@ Additionally, dedicated Extension Point and Listener Lists specific to IDEs are 
 Browse usages inside existing implementations of open-source IntelliJ Platform plugins via [IntelliJ Platform Explorer](https://jb.gg/ipe).
 
 Alternatively (or when using 3rd party extension points), all available extension points for the specified namespace (`defaultExtensionNs`) can be listed using auto-completion inside the [`<extensions>`](plugin_configuration_file.md#idea-plugin__extensions) block in <path>[plugin.xml](plugin_configuration_file.md)</path>.
-Use <menupath>View | Quick Documentation</menupath> in the lookup list to access more information about the extension point and implementation (if applicable).
+Use <ui-path>View | Quick Documentation</ui-path> in the lookup list to access more information about the extension point and implementation (if applicable).
 See [](explore_api.md) for more information and strategies.
 
 ## Declaring Extensions

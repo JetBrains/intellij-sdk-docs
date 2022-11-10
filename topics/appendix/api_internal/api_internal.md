@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<excerpt>Lists private API annotated with ApiStatus.Internal/IntellijInternalApi and corresponding replacement.</excerpt>
+<link-summary>Lists private API annotated with ApiStatus.Internal/IntellijInternalApi and corresponding replacement.</link-summary>
 
 This page lists commonly used API annotated with [`org.jetbrains.annotations.ApiStatus.Internal`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java)
 or [`IntellijInternalApi`](%gh-ic%/platform/util/src/com/intellij/openapi/util/IntellijInternalApi.kt)

@@ -2,11 +2,11 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Platform UI Guidelines:** [Overview](https://jetbrains.design/intellij/)
 
-</microformat>
+</tldr>
 
 The IntelliJ Platform includes a large number of custom Swing components.
 Using those components in your plugins will ensure that your plugin looks and works consistently with the UI of the rest of the IDE, and can often reduce the code size compared to using the default Swing components.

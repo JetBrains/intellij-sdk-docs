@@ -8,7 +8,7 @@
 >
 {type="tip"}
 
-<excerpt>Widgets and badges for marketing material</excerpt>
+<link-summary>Widgets and badges for marketing material</link-summary>
 
 ## Embeddable Widgets
 

@@ -19,7 +19,7 @@ for (int i = [|]; i < []; i++) {
 As the user completes each section of the `for` loop and presses `Tab`, the cursor advances to the next position in the editor.
 
 Another use-case for live templates is surrounding the selected code with additional constructs.
-When a user selects a code fragment and invokes the <menupath>Code | Surround With...</menupath> action and chooses the template from the list, the code is wrapped with the content defined in the template.
+When a user selects a code fragment and invokes the <ui-path>Code | Surround With...</ui-path> action and chooses the template from the list, the code is wrapped with the content defined in the template.
 
 Consider the following Java method with the selected fragment:
 
@@ -29,7 +29,7 @@ public void testMethod() {
 }
 ```
 
-Invoking the <menupath>Code | Surround With...</menupath> action and selecting the <control>Iterate Iterable or array</control> template would transform the code to:
+Invoking the <ui-path>Code | Surround With...</ui-path> action and selecting the <control>Iterate Iterable or array</control> template would transform the code to:
 
 ```java
 public void testMethod() {

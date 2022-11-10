@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<excerpt>Links to articles and webinars about plugin development.</excerpt>
+<link-summary>Links to articles and webinars about plugin development.</link-summary>
 
 > [Subscribe to Marketplace Developer News](https://jb.gg/mp-updates) to receive news and announcements.
 > Also follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/).

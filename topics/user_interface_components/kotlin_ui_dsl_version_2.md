@@ -2,11 +2,11 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Platform UI Guidelines:** [Layout](https://jetbrains.design/intellij/principles/layout)
 
-</microformat>
+</tldr>
 
 > This page describes API available in IntelliJ Platform releases **2021.3 and later** only.
 >
@@ -25,7 +25,7 @@ The _Kotlin UI DSL Version 2_ functions are located in the [`com.intellij.ui.dsl
 
 ## UI DSL Examples
 
-It is highly recommended taking a look at the UI DSL demo available via <menupath>Tools | Internal Actions | UI | UI DSL Showcase</menupath> (see [Internal Actions](internal_actions_intro.md) if not available in your IDE instance).
+It is highly recommended taking a look at the UI DSL demo available via <ui-path>Tools | Internal Actions | UI | UI DSL Showcase</ui-path> (see [Internal Actions](internal_actions_intro.md) if not available in your IDE instance).
 
 It describes some UI DSL basics and contains explanations, tips, a list of all available components, and many examples with links to the source code.
 
@@ -35,14 +35,14 @@ It describes some UI DSL basics and contains explanations, tips, a list of all a
 >
 {type="tip"}
 
-<chunk id="ui_inspector_added_at">
+<snippet id="ui_inspector_added_at">
 
 > To understand how a component visible in the IDE is created in code, see the component's [`added-at` property in the UI Inspector](internal_ui_inspector.md#added-at-property).
 > Note that it is not limited only to components created with Kotlin UI DSL, but helps to understand creation of any visible Swing component.
 >
 {type="tip"}
 
-</chunk>
+</snippet>
 
 ## UI DSL Basics
 

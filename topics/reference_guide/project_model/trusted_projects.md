@@ -2,11 +2,11 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Product Help:** [Project Security](https://www.jetbrains.com/help/idea/project-security.html)
 
-</microformat>
+</tldr>
 
 > This API is available in platform releases 2021.2.4/2021.3.1 and later.
 >

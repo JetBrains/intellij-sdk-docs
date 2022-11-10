@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<excerpt>Tutorial for creating a .properties-like custom language.</excerpt>
+<link-summary>Tutorial for creating a .properties-like custom language.</link-summary>
 
 In this tutorial we will add support for a [.properties](https://en.wikipedia.org/wiki/.properties) language and its usages within Java code.
 

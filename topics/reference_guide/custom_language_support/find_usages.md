@@ -2,11 +2,11 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Product Help:** [Find Usages](https://www.jetbrains.com/help/idea/find-highlight-usages.html)
 
-</microformat>
+</tldr>
 
 The _Find Usages_ action is a multi-step process, and each step of the process requires involvement from the custom language plugin.
 

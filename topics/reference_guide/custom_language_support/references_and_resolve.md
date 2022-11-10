@@ -5,14 +5,14 @@
 One of the most important and tricky parts in implementing a custom language PSI is resolving references.
 Resolving references gives users the ability to navigate from a PSI element usage (accessing a variable, calling a method, etc.) to the declaration of that element (the variable's definition, a method declaration, and so on).
 
-This feature is needed in order to support the <menupath>Navigate | Declaration or Usages</menupath> action invoked by <shortcut>Ctrl/Cmd+B</shortcut> or clicking the mouse button while holding <shortcut>Ctrl/Cmd</shortcut> key, and it is a prerequisite for implementing the [Find Usages](find_usages.md) action, the [Rename Refactoring](rename_refactoring.md) and [Code Completion](code_completion.md).
+This feature is needed in order to support the <ui-path>Navigate | Declaration or Usages</ui-path> action invoked by <shortcut>Ctrl/Cmd+B</shortcut> or clicking the mouse button while holding <shortcut>Ctrl/Cmd</shortcut> key, and it is a prerequisite for implementing the [Find Usages](find_usages.md) action, the [Rename Refactoring](rename_refactoring.md) and [Code Completion](code_completion.md).
 
-The <menupath>View | Quick Definition</menupath> action is based on the same mechanism, so it becomes automatically available for all references that can be resolved by the language plugin.
+The <ui-path>View | Quick Definition</ui-path> action is based on the same mechanism, so it becomes automatically available for all references that can be resolved by the language plugin.
 To customize the exact document range to show in the popup (e.g., include "surrounding" code or comments), provide [`ImplementationTextSelectioner`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hint/ImplementationTextSelectioner.java) registered in `com.intellij.lang.implementationTextSelectioner` extension point.
 
 ## PsiReference
 
-All PSI elements which work as references (for which the <menupath>Navigate | Declaration or Usages</menupath> action applies) need to implement the
+All PSI elements which work as references (for which the <ui-path>Navigate | Declaration or Usages</ui-path> action applies) need to implement the
 [`PsiElement.getReference()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) method and to return a [`PsiReference`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReference.java) implementation from that method.
 The `PsiReference` can be implemented by the same class as `PsiElement`, or by a different class.
 An element can also contain multiple references (for example, a string literal can contain multiple substrings which are valid fully-qualified class names), in which case it can implement `PsiElement.getReferences()` and return the references as an array.
@@ -63,10 +63,10 @@ The implementation of resolve based on the standard helper classes contains the 
 
 An extension of the [`PsiReference`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReference.java) interface, which allows a reference to resolve to multiple targets, is the [`PsiPolyVariantReference`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiPolyVariantReference.java) interface.
 The targets to which the reference resolves are returned from the `multiResolve()` method.
-The <menupath>Navigate | Declaration or Usages</menupath> action for such references allows the user to choose a navigation target in a popup.
+The <ui-path>Navigate | Declaration or Usages</ui-path> action for such references allows the user to choose a navigation target in a popup.
 The implementation of `multiResolve()` can be also based on [`PsiScopeProcessor`](%gh-ic%/platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java), and can collect all valid targets for the reference instead of stopping when the first valid target is found.
 
 ## Additional Highlighting
 
 Implement [`HighlightedReference`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/highlighting/HighlightedReference.java) to add additional highlighting for non-obvious places (e.g., String literal).
-Such references will automatically be highlighted using <control>String | Highlighted reference</control> text attributes from <menupath>Settings/Preferences | Editor | Color Scheme | Language Defaults</menupath> (_2022.2_).
+Such references will automatically be highlighted using <control>String | Highlighted reference</control> text attributes from <ui-path>Settings/Preferences | Editor | Color Scheme | Language Defaults</ui-path> (_2022.2_).

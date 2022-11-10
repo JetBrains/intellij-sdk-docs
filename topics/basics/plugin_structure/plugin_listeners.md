@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<excerpt>Listeners allow subscription to application and project events.</excerpt>
+<link-summary>Listeners allow subscription to application and project events.</link-summary>
 
 _Listeners_ allow plugins to declaratively subscribe to events delivered through the message bus (see [Messaging infrastructure](messaging_infrastructure.md) for details).
 Listener implementations must be stateless and may not implement life-cycle (e.g., `Disposable`).

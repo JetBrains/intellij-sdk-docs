@@ -4,7 +4,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<excerpt>Plugin configuration file contains all the information about the plugin, as well as all registered extensions, actions, listeners, etc.</excerpt>
+<link-summary>Plugin configuration file contains all the information about the plugin, as well as all registered extensions, actions, listeners, etc.</link-summary>
 
 The <path>plugin.xml</path> configuration file contains all the information about the plugin, which is displayed in the [plugins settings dialog](https://www.jetbrains.com/help/idea/managing-plugins.html), and all registered extensions, actions, listeners, etc.
 Sections below describe all the elements in detail.
@@ -769,7 +769,7 @@ Examples
 ##### `abbreviation`
 {id="idea-plugin__actions__action__abbreviation"}
 
-Defines an alias for the action name which the user can use in <menupath>Help | Find Action...</menupath> or <menupath>Navigate | Search Everywhere</menupath> popups.
+Defines an alias for the action name which the user can use in <ui-path>Help | Find Action...</ui-path> or <ui-path>Navigate | Search Everywhere</ui-path> popups.
 A single action can have multiple abbreviations.
 
 {style="narrow"}
@@ -850,7 +850,7 @@ Attributes
 - `use-shortcut-of` _(optional)_<br/>
   The ID of the action whose keyboard shortcut this group will use.
 - `searchable` _(optional; supported in 2020.3+)_<br/>
-  Boolean flag defining whether the group is displayed in <menupath>Help&nbsp;|&nbsp;Find Action...</menupath> or <menupath>Navigate | Search Everywhere</menupath> popups.<br/>
+  Boolean flag defining whether the group is displayed in <ui-path>Help&nbsp;|&nbsp;Find Action...</ui-path> or <ui-path>Navigate | Search Everywhere</ui-path> popups.<br/>
   Default value: `true`.
 
 Children

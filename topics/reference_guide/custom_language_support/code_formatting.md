@@ -2,11 +2,11 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Product Help:** [Code style and formatting](https://www.jetbrains.com/help/idea/code-style.html)
 
-</microformat>
+</tldr>
 
 The IntelliJ Platform includes a powerful framework for implementing custom language formatters.
 In this framework, the plugin specifies the *constraints* on the whitespaces between different syntax elements.
@@ -34,7 +34,7 @@ The formatter modifies only the characters between blocks, and the tree of block
 Otherwise, the formatter may delete the characters between blocks.
 
 To better understand how to build the block structure, use [PsiViewer](explore_api.md#31-use-internal-mode-and-psiviewer) and inspect formatting blocks built for an existing language.
-To invoke PsiViewer with the possibility of inspecting <control>Block Structure</control>, use <menupath>Tools | View PSI Structure...</menupath> or <menupath>Tools | View PSI Structure of Current File...</menupath>:
+To invoke PsiViewer with the possibility of inspecting <control>Block Structure</control>, use <ui-path>Tools | View PSI Structure...</ui-path> or <ui-path>Tools | View PSI Structure of Current File...</ui-path>:
 
 ![Formatting Blocks Structure](psi_viewer_formatting_blocks.png){width="720"}
 

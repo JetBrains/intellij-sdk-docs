@@ -256,7 +256,7 @@ To register [extensions](plugin_extensions.md) applicable to UAST, specify `lang
 
 ### Inspecting UAST Tree
 
-To inspect UAST Tree, invoke [internal action](enabling_internal.md) <menupath>Tools | Internal Actions | UAST | Dump UAST Tree (By Each PsiElement)</menupath>.
+To inspect UAST Tree, invoke [internal action](enabling_internal.md) <ui-path>Tools | Internal Actions | UAST | Dump UAST Tree (By Each PsiElement)</ui-path>.
 
 ### Inspections
 

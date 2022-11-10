@@ -4,7 +4,7 @@
 
 The Internal Actions UI submenu provides IntelliJ Platform plugin developers with a suite of tools to help develop, debug, and test their IntelliJ Platform project UI.
 
-<include src="internal_actions_intro.md" include-id="enable_internal_mode_tip"></include>
+<include from="internal_actions_intro.md" element-id="enable_internal_mode_tip"></include>
 
 ## The Tools Available on the UI Submenu
 Here are some tools available on the UI submenu of the Internal Actions menu:

@@ -2,16 +2,16 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Reference**: [](syntax_highlighting_and_error_highlighting.md#annotator)
 
 **Code**: [`SimpleAnnotator`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleAnnotator.java)
 
 **Testing**: [](annotator_test.md)
-</microformat>
+</tldr>
 
-<include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
+<include from="language_and_filetype.md" element-id="custom_language_tutorial_header"></include>
 
 An `Annotator` helps highlight and annotate any code based on specific rules.
 This section adds annotation functionality to support the Simple Language in the context of Java code.

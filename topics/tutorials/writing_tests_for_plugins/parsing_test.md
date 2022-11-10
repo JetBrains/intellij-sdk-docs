@@ -2,13 +2,13 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Tested Functionality**: [](lexer_and_parser_definition.md)
 
-</microformat>
+</tldr>
 
-<include src="tests_prerequisites.md" include-id="custom_language_testing_tutorial_header"></include>
+<include from="tests_prerequisites.md" element-id="custom_language_testing_tutorial_header"></include>
 
 For more complex Lexers (e.g., having additional logic), it is advisable to add separate tests inheriting from [`LexerTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/LexerTestCase.java).
 
@@ -41,7 +41,7 @@ Note the last few lines define a purposely incorrect key.
 
 ## Copy the Expected PSI Tree
 The easiest way to get the expected PSI structure for any file is to use the PSI Viewer.
-Run the project and use <menupath>Tools | View PSI Structure</menupath>.
+Run the project and use <ui-path>Tools | View PSI Structure</ui-path>.
 
 ![PSI Tree Copy](plugin_copy_psi.png)
 

@@ -26,13 +26,13 @@ The plugin provides the functionalities like:
 
 ## Usage
 
-<chunk id="gradle_plugin_223_problem">
+<snippet id="gradle_plugin_223_problem">
 
 > When targeting 2022.3+ IDE releases, using [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) version 1.10.0 or higher is required.
 >
 {type="warning"}
 
-</chunk>
+</snippet>
 
 To enable this plugin in your Gradle-based project, register the plugin in the Gradle build script's `plugins` section:
 

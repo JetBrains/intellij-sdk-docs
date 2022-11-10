@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<excerpt>Supporting custom languages overview.</excerpt>
+<link-summary>Supporting custom languages overview.</link-summary>
 
 IntelliJ Platform is a powerful platform for building development tools targeting *any* language.
 Most of the IDE features consist of language-independent (provided by the platform) and language-specific parts.

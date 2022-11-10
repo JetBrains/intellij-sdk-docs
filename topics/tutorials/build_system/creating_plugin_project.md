@@ -8,7 +8,7 @@ This documentation page describes a Gradle-based plugin project generated with t
 
 <procedure title="Create IDE Plugin" id="create-ide-plugin">
 
-Launch the <control>New Project</control> wizard via the <menupath>File | New | Project...</menupath> action and provide the following information:
+Launch the <control>New Project</control> wizard via the <ui-path>File | New | Project...</ui-path> action and provide the following information:
 1. Select the <control>IDE Plugin</control> generator type from the list on the left.
 2. Specify the project <control>Name</control> and <control>Location</control>.
 3. Choose the <control>Plugin</control> option in the project <control>Type</control>.
@@ -153,7 +153,7 @@ See the [Creating Actions](working_with_custom_actions.md) tutorial for step-by-
 
 ### Executing the Plugin
 
-The _IDE Plugin_ generator automatically creates the _Run Plugin_ run configuration that can be executed via the <menupath>Run | Run...</menupath> action or can be found in the <control>Gradle</control> tool window under the <control>Run Configurations</control> node.
+The _IDE Plugin_ generator automatically creates the _Run Plugin_ run configuration that can be executed via the <ui-path>Run | Run...</ui-path> action or can be found in the <control>Gradle</control> tool window under the <control>Run Configurations</control> node.
 
 To execute the Gradle `runIde` task directly, open the <control>Gradle</control> tool window and search for the <control>runIde</control> task under the <control>Tasks</control> node.
 If it's not on the list, hit the re-import button in the [toolbar](https://www.jetbrains.com/help/idea/jetgradle-tool-window.html#1eeec055) at the top of the Gradle tool window.

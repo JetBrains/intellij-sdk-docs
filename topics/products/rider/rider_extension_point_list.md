@@ -6,7 +6,7 @@
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
-<include src="extension_point_list.md" include-id="ep_list_legend"></include>
+<include from="extension_point_list.md" element-id="ep_list_legend"></include>
 
 ## Rider
 

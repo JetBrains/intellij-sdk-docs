@@ -2,11 +2,11 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Product Help:** [Code Inspection](https://www.jetbrains.com/idea/webhelp/code-inspection.html), [Creating Custom Inspections](https://www.jetbrains.com/idea/help/creating-custom-inspections.html)
 
-</microformat>
+</tldr>
 
 The IntelliJ Platform provides tools designed for static code analysis called _code inspections_, which help the user maintain and clean up code without actually executing it.
 Custom code inspections can be implemented as IntelliJ Platform plugins.
@@ -33,7 +33,7 @@ It illustrates the components for a custom inspection plugin:
 Although the IntelliJ Platform SDK code samples illustrate implementations of these components, it is often useful to see examples of inspections implemented in the _intellij_community_ code base.
 This process can help find inspection descriptions and implementations based on what is visible in the IDE UI.
 The overall approach works for inspections aimed at other languages as well.
-* Find an existing inspection that is similar to the one you want to implement in the <menupath>Settings/Preferences | Editor | Inspections</menupath> panel.
+* Find an existing inspection that is similar to the one you want to implement in the <ui-path>Settings/Preferences | Editor | Inspections</ui-path> panel.
   Note the display name of the inspection.
   For example, the Java/Probable Bugs inspection <control>Object comparison using '==', instead of 'equals()'</control> is very similar to `comparing_references_inspection`.
 * Use the display name text as the [target for a search](https://www.jetbrains.com/help/idea/finding-and-replacing-text-in-project.html) within the _intellij_community_ project.
@@ -176,7 +176,7 @@ See [](code_samples.md) on how to set up and run the plugin.
 Once the plugin is launched, you can set the plugin options.
 You can specify the Java classes to participate in the code inspection and the severity level of the found probable bugs.
 
-On the main menu, open the <menupath>Settings/Preferences | Editor | Inspections</menupath> dialog.
+On the main menu, open the <ui-path>Settings/Preferences | Editor | Inspections</ui-path> dialog.
 In the list of the IntelliJ IDEA <control>Java</control> inspections, expand the <control>Probable bugs</control> node, and then click <control>SDK: '==' or '!=' instead of 'equals()'</control>.
 
 ![Comparing References inspection options](comparingReferences_options.png)

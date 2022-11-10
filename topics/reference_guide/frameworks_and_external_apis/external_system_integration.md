@@ -112,8 +112,8 @@ A particular external system settings UI contains the following items:
 It's recommended to extend from [`AbstractExternalProjectSettingsControl`](%gh-ic%/platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/settings/AbstractExternalProjectSettingsControl.java) for implementing project-level settings control as it already handles some of them.
 
 **Examples**:
-* [`GradleSystemSettingsControl`](%gh-ic%/plugins/gradle/src/org/jetbrains/plugins/gradle/service/settings/GradleSystemSettingsControl.java) handling the <control>General settings</control> in <menupath>Settings/Preferences | Build, Execution, Deployment | Build Tools | Gradle</menupath>
-* [`GradleProjectSettingsControl`](%gh-ic%/plugins/gradle/src/org/jetbrains/plugins/gradle/service/settings/GradleProjectSettingsControl.java) handling the selected Gradle project settings in <menupath>Settings/Preferences | Build, Execution, Deployment | Build Tools | Gradle</menupath>
+* [`GradleSystemSettingsControl`](%gh-ic%/plugins/gradle/src/org/jetbrains/plugins/gradle/service/settings/GradleSystemSettingsControl.java) handling the <control>General settings</control> in <ui-path>Settings/Preferences | Build, Execution, Deployment | Build Tools | Gradle</ui-path>
+* [`GradleProjectSettingsControl`](%gh-ic%/plugins/gradle/src/org/jetbrains/plugins/gradle/service/settings/GradleProjectSettingsControl.java) handling the selected Gradle project settings in <ui-path>Settings/Preferences | Build, Execution, Deployment | Build Tools | Gradle</ui-path>
 
 A similar approach is used for providing settings in importing external project UI.
 Implementation is expected to extend [`AbstractImportFromExternalSystemControl`](%gh-ic%/java/idea-ui/src/com/intellij/openapi/externalSystem/service/settings/AbstractImportFromExternalSystemControl.java) and instead of linked external projects list it contains target external project path control.

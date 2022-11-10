@@ -57,4 +57,4 @@ The default storage format depends on the OS.
 [linux]: https://specifications.freedesktop.org/secret-service/latest/
 [linux2]: https://wiki.gnome.org/Projects/Libsecret
 
-Users can override the default behavior in <menupath>Settings/Preferences | Appearance & Behavior | System Settings | Passwords</menupath>.
+Users can override the default behavior in <ui-path>Settings/Preferences | Appearance & Behavior | System Settings | Passwords</ui-path>.

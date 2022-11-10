@@ -7,11 +7,11 @@ It also allows interactive prototyping of UI Control color changes.
 
 _LaF_ stands for _Look and Feel_, see [Swing Tutorial](https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/index.html) for more details.
 
-<include src="internal_actions_intro.md" include-id="enable_internal_mode_tip"></include>
+<include from="internal_actions_intro.md" element-id="enable_internal_mode_tip"></include>
 
 ## Opening LaF Defaults
 
-The <control>LaF Defaults</control> window is opened by selecting the menu item <menupath>Tools | Internal Actions | UI | LaF Defaults</menupath>.
+The <control>LaF Defaults</control> window is opened by selecting the menu item <ui-path>Tools | Internal Actions | UI | LaF Defaults</ui-path>.
 
 It has two columns representing key-value pairs for UI Controls:
 

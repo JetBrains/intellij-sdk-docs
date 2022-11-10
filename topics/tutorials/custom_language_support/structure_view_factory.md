@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Reference**: [](structure_view.md)
 
@@ -10,9 +10,9 @@
 [`SimpleStructureViewModel`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleStructureViewModel.java),
 [`SimpleStructureViewElement`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleStructureViewElement.java)
 
-</microformat>
+</tldr>
 
-<include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
+<include from="language_and_filetype.md" element-id="custom_language_tutorial_header"></include>
 
 The structure view can be customized for a specific file type.
 Creating a structure view factory allows showing the structure of any file in the <control>Structure</control> Tool Window for easy navigation between items in the current editor.
@@ -64,7 +64,7 @@ The `SimpleStructureViewFactory` implementation is registered with the IntelliJ 
 
 Run the project by using the Gradle [`runIde`](creating_plugin_project.md#running-a-plugin-with-the-runide-gradle-task) task.
 
-Open the <path>test.simple</path> file and choose <menupath>View | Tool Windows | Structure</menupath>.
+Open the <path>test.simple</path> file and choose <ui-path>View | Tool Windows | Structure</ui-path>.
 The IDE now supports a structure view of the Simple Language:
 
 ![Structure View](structure_view.png)

@@ -16,7 +16,7 @@ Please note that any unloading problems in a production environment will simply 
 ## Restrictions
 
 For a plugin to support this, all restrictions listed below must be met.
-To verify a plugin locally, invoke <menupath>Code | Analyze Code | Run Inspection by Name...</menupath> and run <control>Plugin DevKit | Plugin descriptor | Plugin.xml dynamic plugin verification inspection</control> inspection on all plugin descriptor files.
+To verify a plugin locally, invoke <ui-path>Code | Analyze Code | Run Inspection by Name...</ui-path> and run <control>Plugin DevKit | Plugin descriptor | Plugin.xml dynamic plugin verification inspection</control> inspection on all plugin descriptor files.
 
 For plugins hosted on the [JetBrains Marketplace](https://plugins.jetbrains.com) the built-in [Plugin Verifier](https://blog.jetbrains.com/platform/2018/07/plugins-repository-now-integrates-with-the-plugin-verification-tool/) will run these checks automatically.
 See [](verifying_plugin_compatibility.md#plugin-verifier) for more information on how to run it locally or on CI.
@@ -87,7 +87,7 @@ If a plugin fails to reload, the log will contain a cause as to why.
 <procedure title="Finding leaks preventing unload">
 
 1. Verify that the IDE is running with the VM parameter `-XX:+UnlockDiagnosticVMOptions`. When using [Gradle](configuring_plugin_project.md), specify `runIde.jvmArgs += "-XX:+UnlockDiagnosticVMOptions"` otherwise [Configure JVM Options](https://www.jetbrains.com/help/idea/tuning-the-ide.html#procedure-jvm-options).
-2. Set Registry key `ide.plugins.snapshot.on.unload.fail` to `true` (Go to <menupath>Navigate | Search Everywhere</menupath> and type `Registry`).
+2. Set Registry key `ide.plugins.snapshot.on.unload.fail` to `true` (Go to <ui-path>Navigate | Search Everywhere</ui-path> and type `Registry`).
 3. Trigger the plugin reload.
 4. Open the <path>.hprof</path> memory snapshot generated on plugin unload, look for the plugin ID string. [IntelliJ Ultimate](https://www.jetbrains.com/help/idea/analyze-hprof-memory-snapshots.html) can open memory snapshots directly.
 5. Find the `PluginClassLoader` referencing the plugin ID string

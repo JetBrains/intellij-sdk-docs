@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<excerpt>Creating a theme plugin project with Plugin DevKit wizard and generated project overview.</excerpt>
+<link-summary>Creating a theme plugin project with Plugin DevKit wizard and generated project overview.</link-summary>
 
 This documentation page describes a DevKit-based theme project generated with the [New Project Wizard](https://www.jetbrains.com/help/idea/new-project-wizard.html).
 
@@ -12,7 +12,7 @@ Before creating a theme project, make sure that [development environment is set 
 
 <procedure title="Create Theme Plugin" id="create-theme">
 
-Launch the <control>New Project</control> wizard via the <menupath>File | New | Project...</menupath> action and provide the following information:
+Launch the <control>New Project</control> wizard via the <ui-path>File | New | Project...</ui-path> action and provide the following information:
 1. Select the <control>IDE Plugin</control> generator type from the list on the left.
 2. Specify the project <control>Name</control> and <control>Location</control>.
 3. Choose the <control>Theme</control> option in the project <control>Type</control>.
@@ -56,7 +56,7 @@ The wizard can be used for both DevKit-based and Gradle-based plugins.
 <procedure title="Add Theme" id="add-theme">
 
 1. In the <control>Project</control> tool window, select the <path>resources</path> directory and invoke the context menu with the right click.
-2. Select the <menupath>New | Plugin DevKit | Theme</menupath> action.<br/>
+2. Select the <ui-path>New | Plugin DevKit | Theme</ui-path> action.<br/>
    It is a good practice to include the name of the plugin in the created theme name.
 3. Check the <control>Dark theme</control> checkbox if the created theme should be based on IntelliJ IDEA _Darcula_ theme.
    Otherwise, the _Light_ theme will be used as the base.

@@ -59,7 +59,7 @@ Create a generic `DemoModuleWizardStep` based on [`ModuleWizardStep`](%gh-ic%/pl
 ## Creating a Module of New Type
 
 After compiling and running the plugin in a development instance, create a new project.
-Select <menupath>File | New | Module...</menupath>.
+Select <ui-path>File | New | Module...</ui-path>.
 A new module type and its settings panel are available in the Project Wizard.
 
 ![New Module Type](new_module_type.png){width="800"}

@@ -2,13 +2,13 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Product Help:** [Searching Everywhere](https://www.jetbrains.com/help/idea/searching-everywhere.html)
 
-</microformat>
+</tldr>
 
-A custom language plugin can provide its items to be included in the lists shown when the user chooses the <menupath>Navigate | Class</menupath> or <menupath>Navigate | Symbol</menupath> action.
+A custom language plugin can provide its items to be included in the lists shown when the user chooses the <ui-path>Navigate | Class</ui-path> or <ui-path>Navigate | Symbol</ui-path> action.
 
 Provide implementations of [`ChooseByNameContributor`](%gh-ic%/platform/lang-api/src/com/intellij/navigation/ChooseByNameContributor.java) interface (separate implementations need to be provided for <control>Class</control> and <control>Symbol</control>, respectively), and register them in the `com.intellij.gotoClassContributor` and `com.intellij.gotoSymbolContributor` extension points.
 

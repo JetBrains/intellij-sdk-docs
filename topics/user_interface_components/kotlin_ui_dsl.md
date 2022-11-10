@@ -2,11 +2,11 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Platform UI Guidelines:** [Layout](https://jetbrains.design/intellij/principles/layout)
 
-</microformat>
+</tldr>
 
 Kotlin UI DSL allows creating UI forms with input components bound to state objects.
 The forms are built by using a declarative Kotlin syntax.
@@ -318,12 +318,12 @@ Sample usages in IntelliJ Platform IDEs:
 
 | User Interface                                                                                                                | Implementation                                                                                                                       |
 |-------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
-| <menupath>Settings/Preferences &#124; Editor &#124; Reader Mode</menupath>                                                    | [`ReaderModeConfigurable`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/actions/ReaderModeConfigurable.kt)            |
+| <ui-path>Settings/Preferences &#124; Editor &#124; Reader Mode</ui-path>                                                    | [`ReaderModeConfigurable`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/actions/ReaderModeConfigurable.kt)            |
 | <control>New Branch</control> dialog in Git ([Manage Git branches](https://www.jetbrains.com/help/idea/manage-branches.html)) | [`GitNewBranchDialog`](%gh-ic%/plugins/git4idea/src/git4idea/branch/GitNewBranchDialog.kt)                                       |
-| <menupath>Settings/Preferences &#124; Tools &#124; Diff & Merge</menupath>                                                    | [`DiffSettingsConfigurable`](%gh-ic%/platform/diff-impl/src/com/intellij/diff/settings/DiffSettingsConfigurable.kt)              |
-| <menupath>Settings/Preferences &#124; Editor &#124; General &#124; Editor Tabs</menupath>                                     | [`EditorTabsConfigurable`](%gh-ic%/platform/platform-impl/src/com/intellij/application/options/editor/EditorTabsConfigurable.kt) |
+| <ui-path>Settings/Preferences &#124; Tools &#124; Diff & Merge</ui-path>                                                    | [`DiffSettingsConfigurable`](%gh-ic%/platform/diff-impl/src/com/intellij/diff/settings/DiffSettingsConfigurable.kt)              |
+| <ui-path>Settings/Preferences &#124; Editor &#124; General &#124; Editor Tabs</ui-path>                                     | [`EditorTabsConfigurable`](%gh-ic%/platform/platform-impl/src/com/intellij/application/options/editor/EditorTabsConfigurable.kt) |
 
-<include src="kotlin_ui_dsl_version_2.md" include-id="ui_inspector_added_at"></include>
+<include from="kotlin_ui_dsl_version_2.md" element-id="ui_inspector_added_at"></include>
 
 ## FAQ
 

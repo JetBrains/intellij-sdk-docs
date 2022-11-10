@@ -119,7 +119,7 @@ val projectService = project.service<MyProjectService>()
 
 </tabs>
 
-<procedure title="Getting Service Flow" initial-collapse-state="collapsed">
+<procedure title="Getting Service Flow" default-state="collapsed">
 
 ![Getting Service](getting_service.svg){thumbnail="true" thumbnail-same-file="true"}
 

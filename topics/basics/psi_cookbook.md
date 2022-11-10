@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<excerpt rel="excerpt"/>
+<link-summary rel="excerpt"/>
 <p id="excerpt">
 This page gives recipes for the most common operations for working with the PSI (Program Structure Interface).
 </p>

@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<excerpt>Writing and notation styleguide for SDK Docs.</excerpt>
+<link-summary>Writing and notation styleguide for SDK Docs.</link-summary>
 
 This document describes the writing style used in authoring open-source IntelliJ Platform SDK documentation.
 Before you begin, please read this page thoroughly, as well as the [Code of Conduct](intellij-sdk-docs-original_CODE_OF_CONDUCT.md) and [License](https://github.com/JetBrains/intellij-sdk-docs/blob/main/LICENSE.txt) documents.
@@ -39,15 +39,15 @@ It **must** be followed by a copyright notice, formatted using HTML comment nota
 
 #### Excerpt
 
-Every page **should** provide a short excerpt (usually one sentence) using dedicated `<excerpt>` tag before the main page contents:
+Every page **should** provide a short excerpt (usually one sentence) using dedicated `<link-summary>` tag before the main page contents:
 
 ```html
-<excerpt>Listeners allow subscription to application and project events.</excerpt>
+<link-summary>Listeners allow subscription to application and project events.</link-summary>
 ```
 
 #### Highlighted Links
 
-A page can highlight related topics and other important links before the actual content using `<microformat>` tag.
+A page can highlight related topics and other important links before the actual content using `<tldr>` tag.
 Links must be grouped using "**Bold Category Name**: link1, link2, \[...]" ([Example](language_and_filetype.md)).
 
 Use _Reference_ to link to other topics, _Code_ to link to code/files, _Platform UI Guidelines_ for links to [IntelliJ Platform UI Guidelines](https://jetbrains.design/intellij/), and _Product Help_ for links to [IntelliJ IDEA Help](https://www.jetbrains.com/help/idea).
@@ -75,7 +75,7 @@ For very long sentences, add additional line breaks after `,`, `:` or other sens
 Very long [links](#links) should also be on a separate line.
 
 Consistent text styles are used to standardize references and keywords:
-* Menu paths are wrapped using `<menupath>` with pipe characters separating each level: `<menupath>Settings/Preferences | Editor</menupath>`: <menupath>Settings/Preferences | Editor</menupath>
+* Menu paths are wrapped using `<ui-path>` with pipe characters separating each level: `<ui-path>Settings/Preferences | Editor</ui-path>`: <ui-path>Settings/Preferences | Editor</ui-path>
   Menu paths to settings always start with "Settings/Preferences" to cover all platforms.
   Inside tables, use `&#124;` instead of `|` to prevent escaping problems.
 * User interface element names like labels, buttons, checkboxes, etc. are wrapped using `<control>`: `Press <control>Continue</continue>`: Press <control>Continue</control>
@@ -202,7 +202,7 @@ The syntax is to use the pipe (`|`) and minus symbols:
     | Blah     | Blah     | Blah     |
 ```
 
-Use `&#124;` instead of `|` to prevent escaping problems for `<menupath>` elements.
+Use `&#124;` instead of `|` to prevent escaping problems for `<ui-path>` elements.
 
 ### Notes and Callouts
 

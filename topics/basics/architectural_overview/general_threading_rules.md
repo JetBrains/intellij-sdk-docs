@@ -82,7 +82,7 @@ The `checkCanceled()` should be called often enough to guarantee the process's s
 PSI internals have a lot of `checkCanceled()` calls inside.
 If a process does lengthy non-PSI activity, insert explicit `checkCanceled()` calls so that it happens frequently, e.g., on each _Nth_ loop iteration.
 
-> Throwing `ProcessCanceledException` from `checkCanceled()` can be disabled for development (e.g. while debugging the code) with the <menupath>Tools | Internal Actions | Disable ProcessCanceledException</menupath> action.
+> Throwing `ProcessCanceledException` from `checkCanceled()` can be disabled for development (e.g. while debugging the code) with the <ui-path>Tools | Internal Actions | Disable ProcessCanceledException</ui-path> action.
 > The action is available only if [Internal Mode is enabled](enabling_internal.md).
 >
 {type="tip"}

@@ -25,7 +25,7 @@ String renderedText = template.getText(properties);
 ## Creating New Files from Template
 
 The common use case for file templates is creating new files with the initial content specific to a language or framework supported by the plugin.
-File templates assigned to the <control>[Files](providing_file_templates.md#files)</control> category are automatically available in the <menupath>File | New</menupath> action group.
+File templates assigned to the <control>[Files](providing_file_templates.md#files)</control> category are automatically available in the <ui-path>File | New</ui-path> action group.
 Sometimes, creating a file from a given template in a specific project place doesn't make sense, or a template requires some additional properties for its content.
 It is possible to control a file template's visibility and its available properties using
 [`CreateFromTemplateHandler`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/fileTemplates/CreateFromTemplateHandler.java)
@@ -82,8 +82,8 @@ The new action should be registered under the `NewGroup` group, e.g:
 In some cases, the default mechanism for creating files from templates is insufficient.
 Consider a language that defines multiple types of core entities, e.g., in the Java language, the following entities can be created: Class, Interface, Record, Enum, and Annotation.
 
-Having all of those items in the <menupath>File | New</menupath> action group may overwhelm users with the number of options to choose.
-It is more user-friendly to provide a single <menupath>File | New | Java Class</menupath> action and let users choose a specific entity type in the creation dialog:
+Having all of those items in the <ui-path>File | New</ui-path> action group may overwhelm users with the number of options to choose.
+It is more user-friendly to provide a single <ui-path>File | New | Java Class</ui-path> action and let users choose a specific entity type in the creation dialog:
 
 ![Create Java class](new_java_class_popup.png){width="296" border-effect="line"}
 
@@ -104,7 +104,7 @@ protected void buildDialog(Project project, PsiDirectory directory,
 }
 ```
 
-As file templates are placed in the <path>fileTemplates/internal</path> directory, they are not listed in the <menupath>Settings/Preferences | Editor | File and Code Templates</menupath> settings page, and users can't adjust them to their needs.
+As file templates are placed in the <path>fileTemplates/internal</path> directory, they are not listed in the <ui-path>Settings/Preferences | Editor | File and Code Templates</ui-path> settings page, and users can't adjust them to their needs.
 Internal templates can be exposed in the <control>Files</control> category by additionally registering them via the `com.intellij.internalFileTemplate` EP, e.g.:
 
 ```xml
@@ -116,7 +116,7 @@ Internal templates can be exposed in the <control>Files</control> category by ad
 
 ## Improving "Save File as Template…" Action
 
-Some languages or frameworks may require creating many custom file templates directly in the IDE with <menupath>File | Save File as Template…</menupath> action, including plugin developers creating templates, e.g., for Java language to support a specific framework.
+Some languages or frameworks may require creating many custom file templates directly in the IDE with <ui-path>File | Save File as Template…</ui-path> action, including plugin developers creating templates, e.g., for Java language to support a specific framework.
 Adjusting created templates manually by replacing dynamic parts with properties can be tedious.
 It is possible to speed up this process by replacing known elements like package or class names with template properties placeholder.
 It can be achieved by implementing the

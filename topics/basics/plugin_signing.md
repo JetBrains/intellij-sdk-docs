@@ -222,7 +222,7 @@ Instead, a trusted private CA or self-signed certificate can be used to sign and
 ### Verification
 
 Before looking at how we can sign a plugin, let's first review how verification works when a non-JetBrains certificate is used.
-As of 2021.2, during verification, IntelliJ-based IDEs check if the plugin was signed by the JetBrains CA certificate or any public key provided by the user via <menupath>Settings/Preferences | Plugins | Manage Plugin Certificates</menupath>. In 2021.2.1, a system property has been added: `intellij.plugins.truststore`, pointing to a trusted JKS TrustStore.
+As of 2021.2, during verification, IntelliJ-based IDEs check if the plugin was signed by the JetBrains CA certificate or any public key provided by the user via <ui-path>Settings/Preferences | Plugins | Manage Plugin Certificates</ui-path>. In 2021.2.1, a system property has been added: `intellij.plugins.truststore`, pointing to a trusted JKS TrustStore.
 During verification, the plugin's public key is extracted from the signature.
 The last certificate entry in the chain matched against the certificates stored in one of the storages from above.
 
@@ -235,7 +235,7 @@ With this approach, existing internal TrustStores may exist and could be used.
 Be sure when choosing a TrustStore that the CAs are limited to the internal CAs you trust.
 Using a TrustStore with public CAs can expose the users to an attack vector.
 
-If adding a TrustStore to a users environment is not possible, the user may also add the root CAs public key to <menupath>Settings/Preferences | Plugins | Manage Plugin Certificates</menupath>.
+If adding a TrustStore to a users environment is not possible, the user may also add the root CAs public key to <ui-path>Settings/Preferences | Plugins | Manage Plugin Certificates</ui-path>.
 
 ### Using Self-Signed Certificates
 
@@ -249,4 +249,4 @@ keytool -import -alias IdeaPlugin -file chain.crt -keystore pluginKeystore.jks -
 ```
 (note: the TrustStore password must remain `changeit`)
 
-Otherwise, users may add the public key manually to <menupath>Settings/Preferences | Plugins | Manage Plugin Certificates</menupath>.
+Otherwise, users may add the public key manually to <ui-path>Settings/Preferences | Plugins | Manage Plugin Certificates</ui-path>.

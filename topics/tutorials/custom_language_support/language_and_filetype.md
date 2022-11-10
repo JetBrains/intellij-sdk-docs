@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Reference**: [](registering_file_type.md)
 
@@ -10,15 +10,15 @@
 [`SimpleIcons`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleIcons.java),
 [`SimpleFileType`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFileType.java)
 
-</microformat>
+</tldr>
 
-<chunk id="custom_language_tutorial_header">
+<snippet id="custom_language_tutorial_header">
 
 > This page is part of multi step [](custom_language_support_tutorial.md).
 >
 {type="tip"}
 
-</chunk>
+</snippet>
 
 The IntelliJ Platform determines file type by examining the name of a file.
 Each language has [Language](%gh-ic%/platform/core-api/src/com/intellij/lang/Language.java) and [LanguageFileType](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java) objects defining the language.

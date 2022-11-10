@@ -2,15 +2,15 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Code**: [`SimpleFoldingBuilder`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFoldingBuilder.java)
 
 **Testing**: [](folding_test.md)
 
-</microformat>
+</tldr>
 
-<include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
+<include from="language_and_filetype.md" element-id="custom_language_tutorial_header"></include>
 
 A folding builder identifies the folding regions in the code.
 In this step of the tutorial, the folding builder is used to identify folding regions and replace the regions with specific text.
@@ -55,6 +55,6 @@ Run the plugin by using the Gradle [`runIde`](creating_plugin_project.md#running
 
 Now when a Java file is opened in the editor, it shows the property's value instead of the key.
 This is because `SimpleFoldingBuilder.isCollapsedByDefault()` always returns `true`.
-Try using <menupath>Code | Folding | Expand All</menupath> to show the key rather than the value.
+Try using <ui-path>Code | Folding | Expand All</ui-path> to show the key rather than the value.
 
 ![Folding](folding.png)

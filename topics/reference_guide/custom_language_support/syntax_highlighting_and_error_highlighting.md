@@ -2,13 +2,13 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Product Help:** [Colors and fonts](https://www.jetbrains.com/help/idea/configuring-colors-and-fonts.html)
 
 **Platform UI Guidelines:** [Inspections](https://jetbrains.design/intellij/text/inspections/)
 
-</microformat>
+</tldr>
 
 The class used to specify how a particular range of text should be highlighted is called [`TextAttributesKey`](%gh-ic%/platform/core-api/src/com/intellij/openapi/editor/colors/TextAttributesKey.java).
 An instance of this class is created for every distinct type of item that should be highlighted (keyword, number, string, etc.).
@@ -26,7 +26,7 @@ Existing highlighting can be suppressed programmatically in certain contexts, se
 The mapping of the `TextAttributesKey` to specific attributes used in an editor is defined by the [`EditorColorsScheme`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/colors/EditorColorsScheme.java) class.
 It can be configured by the user by providing an implementation of [`ColorSettingPage`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/colors/ColorSettingsPage.java) registered in `com.intellij.colorSettingsPage` extension point.
 
-The <menupath>File | Export | Files or Selection to HTML</menupath> feature uses the same syntax highlighting mechanism as the editor.
+The <ui-path>File | Export | Files or Selection to HTML</ui-path> feature uses the same syntax highlighting mechanism as the editor.
 Thus, it will work automatically for custom languages that provide a syntax highlighter.
 
 **Examples**:

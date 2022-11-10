@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<excerpt>Overview of Extension Points and Listeners for IntelliJ Platform</excerpt>
+<link-summary>Overview of Extension Points and Listeners for IntelliJ Platform</link-summary>
 
 1424 Extension Points and 211 Listeners for IntelliJ Platform %ijPlatform%
 
@@ -16,7 +16,7 @@
 >
 {type="tip"}
 
-<chunk id="ep_list_legend">
+<snippet id="ep_list_legend">
 
 > See [](plugin_extensions.md) on how to declare extensions in your plugin.
 >
@@ -53,7 +53,7 @@
 [project-level]: https://img.shields.io/badge/-Project--Level-blue?style=flat-square
 [non-dynamic]: https://img.shields.io/badge/-Non--Dynamic-orange?style=flat-square
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square
-</chunk>
+</snippet>
 
 ## IntelliJ Platform
 

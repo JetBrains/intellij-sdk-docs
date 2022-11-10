@@ -4,7 +4,7 @@
 
 49 Extension Points and 5 Listeners for Spring API
 
-<include src="extension_point_list.md" include-id="ep_list_legend"></include>
+<include from="extension_point_list.md" element-id="ep_list_legend"></include>
 
 ## Spring
 

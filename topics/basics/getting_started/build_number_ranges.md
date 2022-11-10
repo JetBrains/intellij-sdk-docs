@@ -64,7 +64,7 @@ Usually you should omit the product ID and use only the branch number and build 
 
 Please see also corresponding entries in [Incompatible API Changes](api_changes_list.md) and [Notable API Changes](api_notable.md).
 
-<include src="tools_gradle_intellij_plugin.md" include-id="gradle_plugin_223_problem"></include>
+<include from="tools_gradle_intellij_plugin.md" element-id="gradle_plugin_223_problem"></include>
 
 | Branch number                                                   | IntelliJ Platform version                                                                                                                |
 |-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|

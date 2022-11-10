@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<excerpt>Advanced postfix templates provide additional features like editing possibilities, expression selector, etc.</excerpt>
+<link-summary>Advanced postfix templates provide additional features like editing possibilities, expression selector, etc.</link-summary>
 
 While [simple templates](postfix_templates.md) can be handled by extending
 [`PostfixTemplate`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/template/postfix/templates/PostfixTemplate.java)
@@ -86,7 +86,7 @@ Implementing template, editor, and serialization methods from scratch is a tedio
 
 Existing
 [`Surrounder`](%gh-ic%/platform/lang-api/src/com/intellij/lang/surroundWith/Surrounder.java)
-implementations of the [](surround_with.md) feature required to invoke the <menupath>Code | Surround With...</menupath> action can be reused for postfix completion by extending the
+implementations of the [](surround_with.md) feature required to invoke the <ui-path>Code | Surround With...</ui-path> action can be reused for postfix completion by extending the
 [`SurroundPostfixTemplateBase`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/template/postfix/templates/SurroundPostfixTemplateBase.java)
 class and returning the surrounder object from the `getSurrounder()` method.
 

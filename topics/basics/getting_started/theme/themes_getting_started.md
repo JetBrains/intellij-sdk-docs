@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<excerpt>Customizing IDE UI by developing a custom theme.</excerpt>
+<link-summary>Customizing IDE UI by developing a custom theme.</link-summary>
 
 Beginning with the 2019.1 release, custom themes are supported.
 Custom themes give designers control of the appearance of built-in UI elements.

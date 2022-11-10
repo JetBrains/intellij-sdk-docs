@@ -6,7 +6,7 @@
 >
 {type="warning"}
 
-The <menupath>Navigate | Declaration or Usages</menupath> action is performed in several steps.
+The <ui-path>Navigate | Declaration or Usages</ui-path> action is performed in several steps.
 
 ## Direct Navigation
 

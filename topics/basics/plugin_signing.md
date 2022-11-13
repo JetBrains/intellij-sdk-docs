@@ -51,9 +51,17 @@ To generate an RSA <path>private.pem</path> private key, run the `openssl genpke
 openssl genpkey\
   -aes-256-cbc\
   -algorithm RSA\
-  -out private.pem\
+  -out private_encrypted.pem\
   -pkeyopt rsa_keygen_bits:4096
 ```
+
+After that, it's required to convert it into RSA form with:
+
+```bash
+openssl rsa\
+  -in private_encrypted.pem\
+  -out private.pem
+````
 
 At this point, the generated <path>private.pem</path> content should be provided to the [`signPlugin.privateKey`](tools_gradle_intellij_plugin.md#tasks-signplugin-privatekey) property.
 Provided password should be specified as the [`signPlugin.password`](tools_gradle_intellij_plugin.md#tasks-signplugin-password) property in the [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) configuration.

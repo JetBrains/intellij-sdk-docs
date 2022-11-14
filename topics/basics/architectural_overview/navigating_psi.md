@@ -14,7 +14,7 @@ The most common way to perform top-down navigation is to use a [Visitor](https:/
 To use a visitor, you create a class (usually an anonymous inner class) that extends the base visitor class, overrides the methods that handle the elements you're interested in, and passes the visitor instance to `PsiElement.accept()`.
 
 The base classes for visitors are language-specific.
-For example, if you need to process elements in a Java file, you extend `JavaRecursiveElementVisitor` and override the methods corresponding to the Java element types you're interested in.
+For example, if you need to process elements in a Java file, you extend [`JavaRecursiveElementVisitor`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/JavaRecursiveElementVisitor.java) and override the methods corresponding to the Java element types you're interested in.
 
 The following snippet shows the use of a visitor to find all Java local variable declarations:
 
@@ -23,7 +23,8 @@ file.accept(new JavaRecursiveElementVisitor() {
   @Override
   public void visitLocalVariable(PsiLocalVariable variable) {
     super.visitLocalVariable(variable);
-    System.out.println("Found a variable at offset " + variable.getTextRange().getStartOffset());
+    System.out.println("Found a variable at offset " +
+         variable.getTextRange().getStartOffset());
   }
 });
 ```

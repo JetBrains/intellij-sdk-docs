@@ -169,6 +169,12 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 `com.intellij.microservices.url.inlay.UrlPathInlayAction.isAvailable(file: PsiFile, urlPathContext: UrlPathContext)` method parameter type changed from `com.intellij.microservices.url.references.UrlPathContext` to `com.intellij.microservices.url.inlay.UrlPathInlayHint`
 : Use `com.intellij.microservices.url.inlay.UrlPathInlayHint.getContext` to obtain corresponding `UrlPathContext` instance.
 
+### Remote Development Gateway Plugin 2022.3
+
+`com.jetbrains.gateway.ssh.SshMultistagePanelContext.getSshConfig()` method removed: use `com.jetbrains.gateway.ssh.SshMultistagePanelContext.getConfig()` instead.
+
+`com.jetbrains.gateway.ssh.SshMultistagePanelContext.setSshConfig(SshConfig)` method removed: use `com.jetbrains.gateway.ssh.SshMultistagePanelContext.setConfig(SshConfig)` instead.
+
 ### YAML Plugin 2022.3
 
 org.jetbrains.yaml.YAMLParserDefinition no longer implements `org.jetbrains.yaml.YAMLElementTypes`.

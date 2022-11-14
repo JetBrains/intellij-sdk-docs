@@ -341,7 +341,8 @@
     <toc-element topic="developing_themes.md" accepts-web-file-names="using-dev-kit.html">
       <toc-element topic="setting_up_theme_environment.md" accepts-web-file-names="setting-up-environment.html"/>
       <toc-element topic="creating_theme_project.md" accepts-web-file-names="creating_an_action.html"/>
-      <toc-element topic="running_and_debugging_a_theme.md" accepts-web-file-names="running-and-debugging-a-plugin.html"/>
+      <toc-element topic="running_and_debugging_a_theme.md"
+                   accepts-web-file-names="running-and-debugging-a-plugin.html"/>
       <toc-element topic="deploying_theme.md" accepts-web-file-names="deploying-plugin.html"/>
     </toc-element>
     <toc-element topic="theme_structure.md" accepts-web-file-names="themes.html">
@@ -387,8 +388,9 @@
       <toc-element topic="tools_gradle_intellij_plugin_examples.md" toc-title="Usage Examples"/>
       <toc-element topic="tools_gradle_intellij_plugin_build_features.md" toc-title="Build Features"/>
       <toc-element topic="tools_gradle_intellij_plugin_faq.md" toc-title="Frequently Asked Questions"/>
-      <toc-element toc-title="Migration Guide from 0.x to 1.x" href="https://lp.jetbrains.com/gradle-intellij-plugin/"/>
-    </toc-element>
+      <toc-element toc-title="Migration Guide from 0.x to 1.x"
+                   target-for-accept-web-file-names="https://lp.jetbrains.com/gradle-intellij-plugin/"/>
+      </toc-element>
     <toc-element topic="tools_gradle_grammar_kit_plugin.md"/>
     <toc-element toc-title="IDE Tooling">
       <toc-element topic="internal_actions_intro.md" accepts-web-file-names="interal_actions_menu.html">

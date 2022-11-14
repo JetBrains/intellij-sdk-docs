@@ -12,7 +12,7 @@ There are useful tools, such as the <control>Internal Actions</control> menu, th
   If it does not exist, IntelliJ IDEA will prompt to create one.
 3. Add the line shown below to the <path>idea.properties</path> file:
 
-```properties
+```
 idea.is.internal=true
 ```
 4. Save the <path>idea.properties</path> file and restart IntelliJ IDEA.

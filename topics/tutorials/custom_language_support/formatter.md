@@ -36,11 +36,11 @@ Define a formatter that removes extra spaces except for the single spaces around
 
 <compare style="top-bottom">
 
-```properties
+```
 foo  =    bar
 ```
 
-```properties
+```
 foo = bar
 ```
 </compare>

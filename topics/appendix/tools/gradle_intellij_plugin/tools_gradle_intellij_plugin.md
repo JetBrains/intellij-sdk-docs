@@ -141,7 +141,7 @@ gradle buildPlugin --configuration-cache
 
 or with enabling it in the <path>gradle.properties</path> file:
 
-```properties
+```
 org.gradle.unsafe.configuration-cache = true
 ```
 

@@ -100,7 +100,7 @@ For example, `## Basics` gets the ID of `basics`, and can be linked either in th
 
 In some cases (e.g., the same heading text appears multiple times on the same page) it is necessary to specify a distinct ID manually:
 
-```md
+```
 ## Task 1
 ### Properties
 {id="task1-properties"}
@@ -169,7 +169,7 @@ Source code is represented by using code fences, which are three backticks.
 
 Syntax highlighting is applied by specifying the language after the first set of ticks:
 
-```md
+```
     ```xml
         <tagName attribute="value">XML Text</tagName>
     ```
@@ -196,7 +196,7 @@ In any case, please keep code samples concise and avoid any unnecessary "surroun
 
 The syntax is to use the pipe (`|`) and minus symbols:
 
-```md
+```
     | Column 1 | Column 2 | Column 3 |
     | -------- | -------- | -------- |
     | Blah     | Blah     | Blah     |
@@ -211,7 +211,7 @@ The converter looks at the `type` attribute specified after the text block.
 If so, it applies a callout style.
 The example below will be displayed as a callout, styled as a "note":
 
-```md
+```
 > This is a note
 >
 {style="note"}
@@ -247,13 +247,13 @@ Optimize the image files using a tool such as the [PNG optimizer](https://plugin
 
 Images are embedded in a document by adding a Markdown link to the image like so:
 
-```md
+```
     ![Alt text](image.png)
 ```
 
 If the width of an image needs to be adjusted, it can be specified as follows:
 
-```md
+```
     ![Alt text](image.png){width="42"}
 ```
 
@@ -266,7 +266,7 @@ Images too big to fit into main content can have <control>+</control> overlay co
 
 For **PNG** images, provide an additional zoomed variant <path>image.zoomed.png</path> with this notation:
 
-```md
+```
     ![Alt text](image.png){thumbnail="true"}
 ```
 
@@ -276,7 +276,7 @@ For **PNG** images, provide an additional zoomed variant <path>image.zoomed.png<
 
 For **SVG** images, use this notation:
 
-```md
+```
     ![Alt text](image.svg){thumbnail-same-file="true"}
 ```
 

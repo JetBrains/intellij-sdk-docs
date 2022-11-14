@@ -76,7 +76,7 @@ In most cases, it is not necessary to include it in the plugin distribution as t
 
 To opt out, add this line in <path>gradle.properties</path>:
 
-```properties
+```
 kotlin.stdlib.default.dependency = false
 ```
 

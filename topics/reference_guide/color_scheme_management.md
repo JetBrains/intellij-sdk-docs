@@ -2,10 +2,8 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-## Preface
-
 Color scheme management in IntelliJ IDEA 12.1 was changed to ease scheme designers' work and make schemes look equally well for different programming languages even if not designed specifically for these languages.
-Previously language plug-ins were using fixed default colors incompatible, for example, with dark schemes.
+Previously, language plug-ins were using fixed default colors incompatible, for example, with dark schemes.
 
 The new implementation allows specifying a dependency on a set of standard text attributes linked to a scheme but not to any specific language.
 Language-specific attributes still can be set by a scheme designer if needed, but it's optional.
@@ -27,7 +25,7 @@ The color scheme manager will search first for text attributes specified by the 
 If those are not defined explicitly or if all the attributes are empty (undefined), it will search them using the `DEFAULT_KEYWORD` key.
 If neither is defined, it will further fall back to a default scheme.
 
-Text attribute keys can be chained, for example you can define another key as:
+Text attribute keys can be chained, for example, you can define another key as:
 
 ```java
 static final TextAttributesKey MY_PREDEFINED_SYMBOL =
@@ -62,7 +60,7 @@ This can be done in <path>[plugin.xml](plugin_configuration_file.md)</path> by a
 
 It tells the IDE that the file <path>MyLangDefault.xml</path> must be searched in resources under <path>colorSchemes</path>.
 Note that the path should *not* start with a backslash and its fully qualified name (in our case <path>colorSchemes/MyLangDefault.xml</path>) *MUST BE UNIQUE* to avoid naming collisions between different providers.
-Thus adding a language prefix, for example, "MyLang", is highly recommended.
+Thus, adding a language prefix, for example, "MyLang", is highly recommended.
 
 The file itself is an extract from a color scheme with required attributes, for example:
 
@@ -109,4 +107,4 @@ Anyway, try to stick with a simple key dependency if possible (note that it work
 For many language text attributes that do not have any values, there will be a line indicating that the attributes are inherited from a specific section/attributes, such as "Keyword (Language Defaults)".
 If an element has *any* attributes set, only these attributes are used.
 All attributes from the base element are ignored.
-To *restore* the inheritance, unchecks all the boxes, and click *Apply*.
+To *restore* the inheritance, uncheck all the boxes, and click *Apply*.

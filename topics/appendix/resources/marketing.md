@@ -59,7 +59,7 @@ Below are listed a few related to the IntelliJ SDK and plugins development provi
 ![Rating](https://img.shields.io/jetbrains/plugin/r/rating/:pluginId)
 ```
 
-[//]: # (FIXME: uncomment when Writerside issue fixed)
+[//]: # (FIXME: uncomment when Writerside issue is fixed)
 [//]: # (**IntelliJ Plugin Stars Rating**)
 [//]: # ()
 [//]: # (![Rating]&#40;https://img.shields.io/badge/rating-%E2%98%85%E2%98%85%E2%98%85%E2%98%85%C2%BD-brightgreen&#41;{interpolate-variables="false"})

@@ -31,6 +31,7 @@ The _UI Inspector_ displays the icon details:
 Sometimes, inspecting complex component's properties is not enough to understand how the component was created and configured.
 _UI Inspector_ gives the possibility of finding the code where the selected component was added, which makes it much easier to understand which APIs can be used to build custom components with similar complexity.
 To find the place were component was added, select the `added-at` property to show the stacktrace:
+
 ![added-at Stacktrace](internal_ui_inspector_added_at.png)
 
 ### Specific Component Properties

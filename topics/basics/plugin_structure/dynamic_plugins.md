@@ -41,7 +41,7 @@ If a plugin defines its own custom extension points, they must adhere to specifi
 
 ### Configurables Depending on Extension Points
 
-Any `Configurable` which depends on dynamic extension points must implement `Configurable.WithEpDependencies`.
+Any [`Configurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/Configurable.java) which depends on dynamic extension points must implement `Configurable.WithEpDependencies`.
 
 ### No Use of Service Overrides
 
@@ -55,11 +55,11 @@ Application, project, and module [services](plugin_services.md) declared with `o
 
 ### CachedValue
 
-Loading/Unloading a plugin clears all cached values created using `CachedValuesManager`.
+Loading/Unloading a plugin clears all cached values created using [`CachedValuesManager`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/CachedValuesManager.java).
 
 ### Do not Store PSI
 
-Do not store references to PSI elements in objects which can survive plugin loading or unloading; use `SmartPsiElementPointer` instead.
+Do not store references to PSI elements in objects which can survive plugin loading or unloading; use [`SmartPsiElementPointer`](%gh-ic%/platform/core-api/src/com/intellij/psi/SmartPsiElementPointer.java) instead.
 
 ### Do not Use FileType/Language as Map Key
 

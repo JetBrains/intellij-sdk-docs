@@ -59,12 +59,13 @@ Below are listed a few related to the IntelliJ SDK and plugins development provi
 ![Rating](https://img.shields.io/jetbrains/plugin/r/rating/:pluginId)
 ```
 
-**IntelliJ Plugin Stars Rating**
-
-![Rating](https://img.shields.io/badge/rating-%E2%98%85%E2%98%85%E2%98%85%E2%98%85%C2%BD-brightgreen){interpolate-variables="false"}
-```
-![Rating](https://img.shields.io/jetbrains/plugin/r/stars/:pluginId)
-```
+[//]: # (FIXME: uncomment when Writerside issue fixed)
+[//]: # (**IntelliJ Plugin Stars Rating**)
+[//]: # ()
+[//]: # (![Rating]&#40;https://img.shields.io/badge/rating-%E2%98%85%E2%98%85%E2%98%85%E2%98%85%C2%BD-brightgreen&#41;{interpolate-variables="false"})
+[//]: # (```)
+[//]: # (![Rating]&#40;https://img.shields.io/jetbrains/plugin/r/stars/:pluginId&#41;)
+[//]: # (```)
 
 ### Version
 

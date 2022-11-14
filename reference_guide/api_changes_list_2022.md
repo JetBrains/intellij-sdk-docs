@@ -171,9 +171,11 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ### Remote Development Gateway Plugin 2022.3
 
-`com.jetbrains.gateway.ssh.SshMultistagePanelContext.getSshConfig()` method removed: use `com.jetbrains.gateway.ssh.SshMultistagePanelContext.getConfig()` instead.
+`com.jetbrains.gateway.ssh.SshMultistagePanelContext.getSshConfig()` method removed
+: Use `com.jetbrains.gateway.ssh.SshMultistagePanelContext.getConfig()` instead.
 
-`com.jetbrains.gateway.ssh.SshMultistagePanelContext.setSshConfig(SshConfig)` method removed: use `com.jetbrains.gateway.ssh.SshMultistagePanelContext.setConfig(SshConfig)` instead.
+`com.jetbrains.gateway.ssh.SshMultistagePanelContext.setSshConfig(SshConfig)` method removed
+: Use `com.jetbrains.gateway.ssh.SshMultistagePanelContext.setConfig(SshConfig)` instead.
 
 ### YAML Plugin 2022.3
 

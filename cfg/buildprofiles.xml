@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<buildprofiles xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-               xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/stardust/build-profiles.xsd">
-
+<buildprofiles xsi:noNamespaceSchemaLocation="https://helpserver.labs.jb.gg/help/schemas/mvp/build-profiles.xsd"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <variables>
         <web-root>https://plugins.jetbrains.com/docs</web-root>
         <product-web-url>https://plugins.jetbrains.com/docs/intellij/</product-web-url>
@@ -28,7 +27,7 @@
         <noindex-content-in-release>false</noindex-content-in-release>
     </variables>
 
-    <build-profile product="ijs"/>
+    <build-profile instance="ijs"/>
 
     <footer>
         <social type="twitter" href="https://twitter.com/JBPlatform/"/>

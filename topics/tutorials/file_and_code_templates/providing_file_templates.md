@@ -67,7 +67,7 @@ and register it via the `com.intellij.fileTemplateGroup` EP.
 Note that
 [`FileTemplateGroupDescriptor`](%gh-ic%/platform/lang-api/src/com/intellij/ide/fileTemplates/FileTemplateGroupDescriptor.java)
 is a subclass of
-[`FileTemplateDescriptor`](%gh-ic%/platform/core-api/src/com/intellij/ide/fileTemplates/FileTemplateDescriptor.java)`,
+[`FileTemplateDescriptor`](%gh-ic%/platform/core-api/src/com/intellij/ide/fileTemplates/FileTemplateDescriptor.java),
 which allows creating nested groups.
 
 ## Creating File Template Description

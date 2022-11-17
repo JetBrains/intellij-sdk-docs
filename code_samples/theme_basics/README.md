@@ -30,9 +30,9 @@ It describes definitions of the actions, extensions, or listeners provided by th
 
 
 [docs]: https://plugins.jetbrains.com/docs/intellij/
-[docs:themes]: https://plugins.jetbrains.com/docs/intellij/themes.html
+[docs:themes]: https://plugins.jetbrains.com/docs/intellij/themes-getting-started.html
 [docs:ep]: https://plugins.jetbrains.com/docs/intellij/plugin-extensions.html
-[docs:devkit]: https://plugins.jetbrains.com/docs/intellij/using-dev-kit.html
+[docs:devkit]: https://plugins.jetbrains.com/docs/intellij/developing-themes.html
 [docs:plugin.xml]: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html
 
 [file:plugin.xml]: ./resources/META-INF/plugin.xml

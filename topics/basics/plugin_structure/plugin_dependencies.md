@@ -37,7 +37,9 @@ For plugins published on [JetBrains Marketplace](https://plugins.jetbrains.com):
 
 ### Bundled and Other Plugins
 
-For bundled and non-public plugins, locate the plugin's main JAR file containing <path>META-INF/plugin.xml</path> descriptor with [`<id>`](plugin_configuration_file.md#idea-plugin__id) tag (or [`<name>`](plugin_configuration_file.md#idea-plugin__name) if not specified).
+When using [Gradle IntelliJ Plugin](developing_plugins.md), all bundled plugins can be listed using [`listBundledPlugins`](tools_gradle_intellij_plugin.md#tasks-listbundledplugins) task.
+
+When using [DevKit](developing_themes.md) and for non-public plugins, locate the plugin's main JAR file containing <path>META-INF/plugin.xml</path> descriptor with [`<id>`](plugin_configuration_file.md#idea-plugin__id) tag (or [`<name>`](plugin_configuration_file.md#idea-plugin__name) if not specified).
 Bundled plugins are located in <path>$PRODUCT_ROOT$/plugins/$PLUGIN_NAME$/lib/$PLUGIN_NAME$.jar</path>.
 
 #### IDs of Bundled Plugins

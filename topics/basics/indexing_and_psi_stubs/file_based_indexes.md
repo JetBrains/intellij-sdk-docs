@@ -81,10 +81,27 @@ The following primary operations are supported:
 * `getContainingFiles()` allows collecting all files in which a particular key was encountered.
 * `processValues()` allows iterating through all files in which a specific key was encountered and accessing the associated values simultaneously.
 
+### Nested Index Access
+
+When accessing index data in nested calls (usually from multiple indexes), limitations might apply.
+
+<tabs>
+
+<tab title="2023.1 and later">
+
+Nested index access is now possible.
+
+</tab>
+
+<tab title="2022.3 and earlier">
+
 > Nested index access is forbidden as it might lead to a deadlock.
 > Collect all necessary data from index _A_ first, then process results while accessing index _B_.
 >
 {type="warning"}
+
+</tab>
+</tabs>
 
 ## Standard Indexes
 

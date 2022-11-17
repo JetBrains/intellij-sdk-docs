@@ -9,3 +9,6 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 <include src="tools_gradle_intellij_plugin.md" include-id="gradle_plugin_223_problem"></include>
 
 ### IntelliJ Platform 2023.1
+
+Nested Index Access
+: Accessing index data in [nested calls](file_based_indexes.md#nested-index-access) is now possible.

@@ -41,7 +41,7 @@
       <toc-element topic="plugin_signing.md"/>
       <toc-element topic="publishing_plugin.md" accepts-web-file-names="deployment.html"/>
     </toc-element>
-    <toc-element topic="plugin_structure.md">
+    <toc-element topic="plugin_structure.topic">
       <toc-element topic="plugin_content.md"/>
       <toc-element topic="bundling_plugin_openapi_sources.md" toc-title="Plugin API Sources"/>
       <toc-element topic="plugin_class_loaders.md"/>

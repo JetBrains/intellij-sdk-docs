@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!DOCTYPE topic SYSTEM "https://helpserver.labs.jb.gg/help/schemas/mvp/html-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://helpserver.labs.jb.gg/help/schemas/mvp/topic.v2.xsd"
+       id="plugin_structure" title="Plugin Structure" help-id="plugin_structure">
+
+    <section-starting-page>
+
+        <title>Plugin Structure</title>
+        <description>
+            Learn about the plugin system structure and plugin components lifecycle.
+        </description>
+
+        <spotlight>
+            <a href="plugin_configuration_file.md" type="file"
+               summary="A detailed description of the plugin.xml configuration file elements"/>
+            <a href="plugin_dependencies.md" type="folder"
+               summary="Declare required or optional dependencies on other IntelliJ Platform plugins">
+                Plugin Dependencies</a>
+        </spotlight>
+
+        <primary>
+            <title>Plugin content and building blocks</title>
+            <a href="plugin_content.md" summary="Plugin distribution package types and their contents"/>
+            <a href="plugin_actions.md" summary="Introduction to plugin action system"/>
+            <a href="plugin_extensions.md" summary="Extend IDE functionality by implementing extensions"/>
+            <a href="plugin_services.md" summary="Service types, registration and lifecycle"/>
+            <a href="plugin_listeners.md" summary="Subscribe to events emitted by IDE and other plugins"/>
+            <a href="plugin_extension_points.md" summary="Allow other plugins extending your plugin functionality"/>
+            <a href="plugin_components.md" summary="Migrate legacy components to the current solutions">
+                Components (deprecated)</a>
+            <a href="plugin_icon_file.md" summary="Plugin icon displayed in IDE and JetBrains Marketplace"/>
+        </primary>
+
+        <secondary>
+            <title>Advanced topics</title>
+            <a href="plugin_class_loaders.md" summary="Learn how plugin and dependency classes are loaded in IDE">
+                Plugin Class Loaders</a>
+            <a href="bundling_plugin_openapi_sources.md"
+               summary="Expose your plugin API sources for other plugins"/>
+        </secondary>
+
+    </section-starting-page>
+
+</topic>

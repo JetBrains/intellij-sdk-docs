@@ -19,6 +19,9 @@ Specify language for Intention
 Injection Text Formatting
 : Delegation of formatting can be controlled using dedicated [extension point](language_injection.md#formatting).
 
+Specifying Threading for Actions
+: Implementations of `AnAction` need to override `getActionUpdateThread()` as detailed in [](basic_action_system.md#principal-implementation-overrides)
+
 ### IntelliJ IDEA 2022.3
 
 Unbundled plugins

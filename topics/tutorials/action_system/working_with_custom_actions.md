@@ -14,6 +14,7 @@ Custom actions extend the abstract class [`AnAction`](%gh-ic%/platform/editor-ui
 Classes that extend it should override `AnAction.update()`, and must override `AnAction.actionPerformed()`.
 * The `update()` method implements the code that enables or disables an action.
 * The `actionPerformed()` method implements the code that executes when an action is invoked by the user.
+* When targeting IntelliJ Platform 2022.3 or later, `AnAction.getActionUpdateThread()` must be implemented
 
 As an example, [`PopupDialogAction`](%gh-sdk-samples%/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java) overrides `AnAction` for the `action_basics` code sample.
 
@@ -31,6 +32,8 @@ public class PopupDialogAction extends AnAction {
     // Using the event, implement an action.
     // For example, create and show a dialog.
   }
+
+  // Override getActionUpdateThread() when you target 2022.3 or later!
 
 }
 ```

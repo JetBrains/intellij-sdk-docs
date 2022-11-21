@@ -8,6 +8,8 @@ While the PSI tree for the code is being built, a [parser](implementing_parser_a
 When it encounters a syntax error, like an unexpected token, a [`PsiErrorElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiErrorElement.java) is created and added to the PSI tree with an appropriate error description.
 In the code analysis daemon, the IDE visits every PSI element in the tree, and when a `PsiErrorElement` is encountered, information about it is collected and used while highlighting the code in the editor.
 
+> Additional highlighting can also be added using [Annotators](syntax_highlighting_and_error_highlighting.md#syntax) or Inspections, see [Controlling Highlighting](controlling_highlighting.md) on how to suppress.
+
 ## Controlling Syntax Errors Highlighting
 
 In some cases highlighting syntax errors is insufficient or even unnecessary:

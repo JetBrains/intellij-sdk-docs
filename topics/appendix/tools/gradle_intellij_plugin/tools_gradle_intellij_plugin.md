@@ -28,7 +28,7 @@ The plugin provides the functionalities like:
 
 <chunk id="gradle_plugin_223_problem">
 
-> When targeting 2022.3 IDE releases, using [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) version 1.10.0 or higher is required.
+> When targeting 2022.3+ IDE releases, using [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) version 1.10.0 or higher is required.
 >
 {type="warning"}
 

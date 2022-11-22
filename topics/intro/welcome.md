@@ -39,7 +39,7 @@ Webinar
 
 Watch [Busy Plugin Developers #0](https://www.youtube.com/watch?v=-6D5-xEaYig) to get started with developing plugins and publishing on [JetBrains Marketplace](https://plugins.jetbrains.com).
 
-<video src="https://youtu.be/-6D5-xEaYig" title="Busy Plugin Developers #0" width="300"/>
+<video src="https://www.youtube.com/watch?v=-6D5-xEaYig" title="Busy Plugin Developers #0" width="300"/>
 
 </td>
 </tr>

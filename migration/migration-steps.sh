@@ -139,4 +139,4 @@ find ./topics/ ./reference_guide/ -type f -exec sed -i '' -e \
 
 # 13 - Fix YouTube videos (it works only for <video href="<video-id>" ... format):
 find ./topics/ ./reference_guide/ -type f -exec sed -i '' -e \
-    's~<video href="~<video src="https://youtu.be/~g' {} \;
+    's~<video href="~<video src="https://www.youtube.com/watch?v=~g' {} \;

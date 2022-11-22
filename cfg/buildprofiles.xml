@@ -25,6 +25,7 @@
         <noindex-content-in-deprecated>false</noindex-content-in-deprecated>
         <noindex-content-in-eap>false</noindex-content-in-eap>
         <noindex-content-in-release>false</noindex-content-in-release>
+        <automaticLinkSummaries>false</automaticLinkSummaries>
     </variables>
 
     <build-profile instance="ijs"/>

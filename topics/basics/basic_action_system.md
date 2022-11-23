@@ -41,7 +41,7 @@ Every IntelliJ Platform action should override `AnAction.update()` and must over
   An object of the [`AnActionEvent`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java) type is passed to this method and contains information about the current context for the action.
   Actions are made available by changing state in the [`Presentation`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/Presentation.java) object associated with the event context.
   As explained in [Overriding the `AnAction.update()`  Method](#overriding-the-anactionupdate-method), it is vital `update()` methods _execute quickly_ and return execution to platform.
-* `AnAction.getActionUpdateThread()` return an [`ActionUpdateThread`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionUpdateThread.java),
+* `AnAction.getActionUpdateThread()` (2022.3+) return an [`ActionUpdateThread`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionUpdateThread.java),
   which specifies if the `update()` method is called on a [background thread (BGT) or the event-dispatching thread (EDT)](general_threading_rules.md).
   The preferred method is to run the update on the BGT, which has the advantage of guaranteeing application-wide read access to
   [PSI](psi.md), [the virtual file system](virtual_file_system.md) (VFS), or [project models](project_structure.md).

@@ -116,7 +116,9 @@ If the activity has to access [file-based index](indexing_and_psi_stubs.md) (e.g
 In particular, don't traverse [](virtual_file_system.md), parse [PSI](psi.md), resolve [references](psi_references.md) or query [indexes/stubs](indexing_and_psi_stubs.md).
 
 There are still some cases when the platform itself invokes such expensive code (e.g., resolve in `AnAction.update()`), but these are being worked on.
-Meanwhile, please try to speed up what you can in your plugin, it'll be beneficial anyway, as it'll also improve background highlighting performance.
+Meanwhile, please try to speed up what you can in your plugin as it will be generally beneficial and also improve background highlighting performance.
+For implementations of [`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java), plugin authors should specifically
+review the documentation of `AnAction.getActionUpdateThread()` in the [](basic_action_system.md) section as it describes how threading works for actions.
 
 `WriteAction`s currently have to happen on UI thread, so to speed them up, you can try moving as much as possible out of write action into a preparation step which can be then invoked in background (e.g., using `ReadAction.nonBlocking()`, see above).
 

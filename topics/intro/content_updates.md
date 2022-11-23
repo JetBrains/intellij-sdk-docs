@@ -13,6 +13,13 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2022
 
+### November-22
+
+Minor Changes and Additions
+:
+- Add information about threading in actions in [](basic_action_system.md#principal-implementation-overrides).
+
+
 ### October-22
 
 Minor Changes and Additions

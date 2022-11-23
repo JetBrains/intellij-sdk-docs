@@ -18,7 +18,7 @@ Create the <path>DefaultTestData.simple</path> file in the <path>testData</path>
 {src="simple_language_plugin/src/test/testData/DefaultTestData.simple"}
 
 Create a test input Java file <path>CompleteTestData.java</path> in the <path>testData</path> directory.
-This file contains a Simple Language reference within the Java code at `<caret>`.
+This file contains a Simple Language reference within the Java code at `<caret>` [special marker](test_project_and_testdata_directories.md#special-markup), which denotes the caret position to use in the test.
 
 ```java
 ```
@@ -45,7 +45,7 @@ This method:
 {src="simple_language_plugin/src/test/java/org/intellij/sdk/language/SimpleCodeInsightTest.java" include-symbol="testCompletion"}
 
 
-A number of related methods exist in `CodeInsightTestFixture` for testing completion and lookup elements, e.g., when testing completion variants and requiring only one testdata file `CodeInsightTestFixture.testCompletionVariants()`.
+A number of related methods exist in [`CodeInsightTestFixture`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/CodeInsightTestFixture.java) for testing completion and lookup elements, e.g., when testing completion variants and requiring only one testdata file `CodeInsightTestFixture.testCompletionVariants()`.
 
 ## Run the Test
 [Run](parsing_test.md#run-the-test) the test and make sure it's green.

@@ -52,7 +52,9 @@ Every IntelliJ Platform action should override `AnAction.update()` and must over
   from `AnActionEvent` and use its `compute()` method, which runs a function in a specific `ActionUpdateThread`.
   An example of switching to the EDT can be found in [`VcsSelectionUtil`](%gh-ic%/platform/vcs-impl/src/com/intellij/vcsUtil/VcsSelectionUtil.java) where a
   [`Utils`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/actionSystem/impl/Utils.java) function is used to ensure the `UpdateSession` is valid.
-  Starting from IntelliJ Platform version 2022.3, the Plugin DevKit will have an inspection to ensure `AnAction.getActionUpdateThread()` is implemented by plugin authors.
+  Starting from IntelliJ Platform version 2022.3, the Plugin DevKit will have an inspection in
+  <menupath>Plugin DevKit | Code | ActionUpdateThread is missing</menupath> to notify plugin authors about a missing implementation of
+  `AnAction.getActionUpdateThread()`.
 * An action's method `AnAction.actionPerformed()` is called by the IntelliJ Platform if available and selected by the user.
   This method does the heavy lifting for the action: it contains the code executed when the action gets invoked.
   The `actionPerformed()` method also receives `AnActionEvent` as a parameter, which is used to access any context data like projects, files, selection, etc.

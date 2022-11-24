@@ -25,6 +25,13 @@
         <noindex-content-in-deprecated>false</noindex-content-in-deprecated>
         <noindex-content-in-eap>false</noindex-content-in-eap>
         <noindex-content-in-release>false</noindex-content-in-release>
+
+        <config-algolia-api-key>8c2683cac2d71d547b55183297abb506</config-algolia-api-key>
+        <config-algolia-id>OHIV241QET</config-algolia-id>
+        <config-algolia-index>prod_JETBRAINSCOM_HELP</config-algolia-index>
+        <config-algolia-product-id>intellij</config-algolia-product-id>
+        <config-algloia-product-version></config-algloia-product-version>
+
         <automaticLinkSummaries>false</automaticLinkSummaries>
     </variables>
 

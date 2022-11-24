@@ -66,7 +66,7 @@ Please see [](verifying_plugin_compatibility.md) on how to use Plugin Verifier a
 >
 > For API annotated with `ApiStatus.@Internal`, see [](api_internal.md) for more details and replacements.
 >
-{type="note"}
+{style="note"}
 
 ## 2020.3
 
@@ -74,7 +74,7 @@ Please see [](verifying_plugin_compatibility.md) on how to use Plugin Verifier a
 >
 > Please make sure to always upgrade [](tools_gradle_intellij_plugin.md) to the latest version [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square){type="joined"}](https://github.com/jetbrains/gradle-intellij-plugin/releases)
 >
-{type="note"}
+{style="note"}
 
 ### IntelliJ Platform 2020.3
 

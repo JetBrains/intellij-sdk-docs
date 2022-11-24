@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<excerpt rel="excerpt"/>
+<link-summary rel="excerpt"/>
 <p id="excerpt">
 This page gives recipes for the most common operations for working with the PSI (Program Structure Interface).
 </p>
@@ -11,7 +11,6 @@ Unlike [Developing Custom Language Plugins](custom_language_support.md), it is a
 
 > Please see also [](psi_performance.md).
 >
-{type="tip"}
 
 ## General
 
@@ -36,7 +35,7 @@ Unlike [Developing Custom Language Plugins](custom_language_support.md), it is a
 > If your plugin depends on Java functionality and targets 2019.2 or later, please make sure to follow the steps from this [blog post](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/).
 > Also consider using [UAST](uast.md) if your plugin supports other JVM languages.
 >
-{type="note"}
+{style="note"}
 
 ### How do I find all inheritors of a class?
 

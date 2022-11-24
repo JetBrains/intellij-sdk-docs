@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<excerpt>Customizing editor schemes and editor or application background images in a theme plugin.</excerpt>
+<link-summary>Customizing editor schemes and editor or application background images in a theme plugin.</link-summary>
 
 Themes can also provide custom color and font settings, as well as custom images for display in the IDE application window.
 
@@ -85,7 +85,7 @@ Please note that custom theme (<path>*.theme.json</path>) files also contain `Sc
 
 > The Editor Scroll Bar colors are the only editor scheme settings that cannot be customized and exported through IDE preferences.
 >
-{type="note"}
+{style="note"}
 
 Customizing the editor scroll bar colors requires manually changing an editor color scheme XML file.
 At this time there isn't code completion functionality for changing custom color editor scheme XML files, so the `name` attributes are described below.
@@ -182,4 +182,4 @@ The following example adds an image of the Austrian countryside to the _Theme Ba
 
 > The `emptyFrameBackground` property is available starting with the 2020.2 release.
 >
-{type="note"}
+{style="note"}

@@ -2,13 +2,13 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Code**: [`SimpleLineMarkerProvider`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLineMarkerProvider.java)
 
-</microformat>
+</tldr>
 
-<include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
+<include from="language_and_filetype.md" element-id="custom_language_tutorial_header"></include>
 
 Line markers help annotate code with icons on the gutter.
 These markers can provide navigation targets to related code.
@@ -25,7 +25,7 @@ For this example, override the `collectNavigationMarkers()` method to collect us
 ```
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLineMarkerProvider.java"}
 
-Extending from [`GutterIconDescriptor`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/daemon/GutterIconDescriptor.java) allows configuring gutter icons to be shown via <menupath>Settings/Preferences | Editor | General | Gutter Icons</menupath>.
+Extending from [`GutterIconDescriptor`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/daemon/GutterIconDescriptor.java) allows configuring gutter icons to be shown via <ui-path>Settings/Preferences | Editor | General | Gutter Icons</ui-path>.
 
 ## Best Practices for Implementing Line Marker Providers
 

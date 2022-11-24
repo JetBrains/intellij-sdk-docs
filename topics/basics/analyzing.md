@@ -15,4 +15,4 @@
 >
 > Please be specific about the topics and reasons for adding them, and leave your email in case we need more details.
 >
-{type="note"}
+{style="note"}

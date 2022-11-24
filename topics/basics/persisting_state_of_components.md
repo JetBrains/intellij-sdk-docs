@@ -7,7 +7,7 @@ You can use either a simple API to persist a few values or persist the state of 
 
 > If you need to persist sensitive data like passwords, please see [Persisting Sensitive Data](persisting_sensitive_data.md).
 >
-{type="warning"}
+{style="warning"}
 
 ## Using PersistentStateComponent
 
@@ -144,7 +144,7 @@ See [`StoragePathMacros`](%gh-ic%/platform/projectModel-api/src/com/intellij/ope
 
 > For application-level storage, it is strongly recommended to use a custom file, using of <path>other.xml</path> is deprecated.
 >
-{type="note"}
+{style="note"}
 
 The `roamingType` parameter of the `@Storage` annotation specifies the roaming type when the [settings are shared](#sharing-settings-between-ide-installations):
 
@@ -154,7 +154,7 @@ The `roamingType` parameter of the `@Storage` annotation specifies the roaming t
 
 > If there are multiple components that store state in the same file, they must have the same `romaingType` attribute value.
 >
-{type="warning"}
+{style="warning"}
 
 ### Sharing Settings Between IDE Installations
 
@@ -168,7 +168,6 @@ Settings can be shared via the following functionalities:
 
 > Synchronization via the _Settings Sync_ or _Settings Repository_ plugins only works when these plugins are installed and enabled.
 >
-{type="tip"}
 
 The decision about making a specific component's state shareable should be made carefully.
 Only the settings that are not specific to a given machine should be shared, e.g. paths to user-specific directories shouldn't be shared.
@@ -178,7 +177,7 @@ If a component contains both shareable and non-shareable data, it should be spli
 
 > The _Settings Sync_ plugin is available starting with the version 2022.3.
 >
-{type="note"}
+{style="note"}
 
 To include a plugin's component state in the _Settings Sync_ plugin synchronization, the settings category must be specified via the `category` attribute of the `@State` annotation.
 The default `SettingsCategory.OTHER` value disables synchronization of a component's state.
@@ -189,7 +188,7 @@ If the component state is OS-dependent, the `roamingType` of the `@Storage` anno
 
 > The _Settings Repository_ plugin is unbundled starting with the version 2022.3 and will be no longer maintained.
 >
-{type="warning"}
+{style="warning"}
 
 Persistent components can be shared via the _Settings Repository_ plugin and _Export Settings_ feature, depending on the `roamingType` of the `@Storage` annotation.
 See the [](#defining-the-storage-location) for more details.
@@ -199,7 +198,7 @@ See the [](#defining-the-storage-location) for more details.
 > Please consider using annotation parameters only to achieve backward compatibility.
 > Otherwise, please feel free to file issues about specific serialization cosmetics.
 >
-{type="note"}
+{style="note"}
 
 If you want to use the default bean serialization but need to customize the storage format in XML (for example, for compatibility with previous versions of your plugin or externally defined XML formats), you can use the `@Tag`, `@Attribute`, `@Property`, `@MapAnnotation`, `@XCollection` annotations.
 

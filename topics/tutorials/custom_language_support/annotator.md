@@ -2,16 +2,16 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Reference**: [](syntax_highlighting_and_error_highlighting.md#annotator)
 
 **Code**: [`SimpleAnnotator`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleAnnotator.java)
 
 **Testing**: [](annotator_test.md)
-</microformat>
+</tldr>
 
-<include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
+<include from="language_and_filetype.md" element-id="custom_language_tutorial_header"></include>
 
 An `Annotator` helps highlight and annotate any code based on specific rules.
 This section adds annotation functionality to support the Simple Language in the context of Java code.
@@ -60,7 +60,7 @@ Annotate the `simple:key` literal expression, and differentiate between a well-f
 
 > The use of new `AnnotationHolder` syntax starting 2020.2, which uses the builder format.
 >
-{type="note"}
+{style="note"}
 
 ```java
 ```
@@ -68,7 +68,6 @@ Annotate the `simple:key` literal expression, and differentiate between a well-f
 
 > If the above code is copied at this stage of the tutorial, then remove the line below the comment "** Tutorial step 18.3 …" The quick fix class in that line is not defined until later in the tutorial.
 >
-{type="tip"}
 
 ## Register the Annotator
 

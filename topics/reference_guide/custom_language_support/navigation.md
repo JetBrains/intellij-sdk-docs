@@ -4,9 +4,9 @@
 
 > This API is available starting from 2020.3 and currently in development and thus in experimental state.
 >
-{type="warning"}
+{style="warning"}
 
-The <menupath>Navigate | Declaration or Usages</menupath> action is performed in several steps.
+The <ui-path>Navigate | Declaration or Usages</ui-path> action is performed in several steps.
 
 ## Direct Navigation
 
@@ -44,4 +44,4 @@ or from a [declaration](declarations_and_references.md#declarations).
 
 > Existing implementations of the mentioned extension points can be found on the [IntelliJ Platform Explorer](explore_api.md#32-search-the-intellij-platform-explorer).
 >
-{type="note"}
+{style="note"}

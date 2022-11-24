@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2 -->
 
-<excerpt>Strategies and tools for exploring the API.</excerpt>
+<link-summary>Strategies and tools for exploring the API.</link-summary>
 
 Sometimes it can be challenging to implement plugin features for the IntelliJ Platform,
 especially when you've hit a roadblock and you're unsure how to move forward.
@@ -33,7 +33,7 @@ Another way to discover EPs is by using autocompletion or navigating through EP 
 When you open a new tag in your <path>[plugin.xml](plugin_configuration_file.md)</path> file (inside the [`<extensions>`](plugin_configuration_file.md#idea-plugin__extensions) block with `defaultExtensionNs="com.intellij"`),
 the IDE will automatically suggest possible EPs.
 
-![Using Completion Suggestions](plugin_xml_completion_suggestion.png){width="706"}{animated="true"}{border-effect="rounded"}
+<img src="plugin_xml_completion_suggestion.gif" alt="Using Completion Suggestions" width="706" border-effect="rounded"/>
 
 This is the first step in discovering new features that haven't been explicitly mentioned in the IntelliJ Platform Docs.
 Note that in the completion popup, you can call
@@ -142,10 +142,10 @@ This provides access to a suite of tools to help you develop, debug, and test In
 
 One of its most helpful features is the [UI Inspector](internal_ui_inspector.md),
 which lets you investigate all parts of the UI of every IntelliJ-based IDE by simply clicking on them.
-Equally important is the <menupath>Tools | Internal Actions | UI Debugger</menupath> tool.
+Equally important is the <ui-path>Tools | Internal Actions | UI Debugger</ui-path> tool.
 It will display all actions that are run by the IDE when you interact with UI elements, for example, by clicking a button.
 
-Finally, internal mode provides the <menupath>Tools | View PSI Structure…</menupath> and <menupath>Tools | View PSI Structure of Current File…</menupath> actions,
+Finally, internal mode provides the <ui-path>Tools | View PSI Structure…</ui-path> and <ui-path>Tools | View PSI Structure of Current File…</ui-path> actions,
 which allow you to analyze the [PSI tree](psi.md), please see [documentation](https://www.jetbrains.com/help/idea/psi-viewer.html).
 The [PsiViewer plugin](https://plugins.jetbrains.com/plugin/227-psiviewer) is a separate plugin with similar capabilities for inspecting PSI trees,
 and it comes with a dedicated tool window that displays information on the fly.

@@ -6,20 +6,19 @@ Plugin projects targeting [AppCode](https://www.jetbrains.com/objc/) can be deve
 
 > Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
 >
-{type="tip"}
 
 ## Configuring Plugin Projects Targeting AppCode
 
 > When targeting 2020.3, please see this [migration guide](https://blog.jetbrains.com/clion/2020/12/migration-guide-for-plugins-2020-3/).
 >
-{type="warning"}
+{style="warning"}
 
 The Gradle configuration of AppCode plugin projects uses neither Product-Specific nor IntelliJ IDEA Attributes.
 Instead, configure AppCode plugin projects to use the [`intellij.localPath`](tools_gradle_intellij_plugin.md#intellij-extension-localpath) attribute.
 
 > AppCode plugin development requires installing AppCode locally.
 >
-{type="note"}
+{style="note"}
 
 The table below summarizes the [](tools_gradle_intellij_plugin.md) attributes to set in the plugin project's Gradle build script.
 Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
@@ -36,7 +35,7 @@ As described in [Modules Specific to Functionality](plugin_compatibility.md#modu
 
 > See [](appcode_extension_point_list.md) for the complete list.
 >
-{type="note"}
+{style="note"}
 
 Use the [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the libraries in AppCode.
 Test your plugin with any version of AppCode you wish to support.

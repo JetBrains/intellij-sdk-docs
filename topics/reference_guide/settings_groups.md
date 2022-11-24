@@ -17,7 +17,7 @@ This section describes the syntax for declaring more complex parent-child relati
 
 > An application configurable can be a parent of a project configurable.
 >
-{type="note"}
+{style="note"}
 
 There are two ways of declaring parent-child relationships using the `com.intellij.projectConfigurable` EP or `com.intellij.applicationConfigurable` EP.
 The first is to use separate EP declarations that are tied together by the value of one attribute.
@@ -97,7 +97,6 @@ For the child of a parent, the `id` attribute becomes compound:
 > All children share the parent's `id` as the basis of their own `id`.
 > All children have an `id` suffix that is unique among their siblings.
 >
-{type="tip"}
 
 ## Implementations for Parent-Child Settings
 

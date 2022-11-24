@@ -2,15 +2,15 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Reference**: [](implementing_lexer.md), [](implementing_parser_and_psi.md)
 
 **Code**: [`SimpleTokenType`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleTokenType.java),
 [`SimpleElementType`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleElementType.java)
-</microformat>
+</tldr>
 
-<include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
+<include from="language_and_filetype.md" element-id="custom_language_tutorial_header"></include>
 
 In order for the IntelliJ Platform to parse a Simple Language file, tokens and elements must be defined based on [`IElementType`](%gh-ic%/platform/core-api/src/com/intellij/psi/tree/IElementType.java).
 The Simple Language grammar must also be defined to generate a parser.
@@ -74,7 +74,6 @@ This step generates a parser and PSI elements in the <path>/src/main/gen</path> 
 
 > [](tools_gradle_grammar_kit_plugin.md) can be used alternatively.
 >
-{type="tip"}
 
 ![Parser](generated_parser.png){width="800"}
 

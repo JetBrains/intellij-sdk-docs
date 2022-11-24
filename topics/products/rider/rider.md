@@ -8,7 +8,6 @@ Rider uses the IntelliJ Platform to provide the user interface for a C# and .NET
 
 > Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
 >
-{type="tip"}
 
 ## IntelliJ IDEA Configuration for Rider Plugin Development
 
@@ -17,7 +16,7 @@ The documentation describes the [configuration](https://www.jetbrains.com/help/r
 
 > See [](rider_extension_point_list.md) for the complete list.
 >
-{type="note"}
+{style="note"}
 
 ## Developing Rider Plugins with the IDEA and ReSharper SDKs
 

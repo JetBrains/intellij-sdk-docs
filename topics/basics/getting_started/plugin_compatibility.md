@@ -10,7 +10,6 @@ Otherwise, it may not be possible to load or run the plugin in a product because
 
 > Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
 >
-{type="tip"}
 
 ## Declaring Plugin Dependencies
 
@@ -44,7 +43,7 @@ The following table lists modules that are currently available in all products.
 
 > All plugins should declare a dependency on **`com.intellij.modules.platform`** to indicate dependence on shared functionality.
 >
-{type="note"}
+{style="note"}
 
 | Module for [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) Element | Functionality                                                                                                 |
 |-------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
@@ -68,7 +67,6 @@ A plugin project is compatible with PHP functionality if it declares a dependenc
 
 > A high-level feature comparison tool for JetBrains IDEs is available [here](https://www.jetbrains.com/products/compare/).
 >
-{type="tip"}
 
 
 The following table lists **(1)** modules or built-in plugins that provide specific functionality, and the products currently shipping with them.
@@ -252,7 +250,6 @@ If a project is dependent on a plugin or module, in some cases, the project can 
 > See [Explore the IntelliJ Platform API](explore_api.md) for more information and strategies.
 > Dedicated Extension Point Lists specific to IDEs are available under _Part VIII — Product Specific_.
 >
-{type="tip"}
 
 To browse the opportunities for an extension, start by placing the cursor on the contents of the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) elements in the project's <path>plugin.xml</path> file.
 Use the [Go to Declaration](https://www.jetbrains.com/help/idea/navigating-through-the-source-code.html#go_to_declaration) IDE feature to navigate to the <path>plugin.xml</path> file for the plugin on which the project depends.
@@ -266,7 +263,6 @@ Continuing the example, search the PHP plugin's <path>plugin.xml</path> file for
 
 > If a dependency plugin [bundles its API sources](bundling_plugin_openapi_sources.md) in the distribution file, the Gradle IntelliJ Plugin (1.7.0+) will attach them to the plugin dependency in IDE, making sources available when navigating to the plugin API classes.
 >
-{type="tip"}
 
 
 ## Verifying Dependency

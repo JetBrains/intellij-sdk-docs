@@ -71,7 +71,6 @@ It's possible to configure external system integration to automatically refresh 
 
 > From 2020.1, auto-import cannot be disabled by a user.
 >
-{type="tip"}
 
 ### Auto-Import for ExternalSystemManager Implementation
 
@@ -80,7 +79,7 @@ Describe project's settings files to track by having external system [`ExternalS
 > The `ExternalSystemAutoImportAware.getAffectedExternalProjectPath()` method is called quite often, that's why it's expected to return control as soon as possible.
 > Helper `CachingExternalSystemAutoImportAware` class might be used for caching, i.e. `ExternalSystemManager` which implements `ExternalSystemAutoImportAware` can have a field like `new CachingExternalSystemAutoImportAware(new MyExternalSystemAutoImportAware())` and delegate `ExternalSystemAutoImportAware.getAffectedExternalProjectPath()` calls to it.
 >
-{type="note"}
+{style="note"}
 
 ### Auto-Import for Standalone External Systems
 
@@ -91,7 +90,7 @@ Then register the instance with `ExternalSystemProjectTracker` to start tracking
 > Multiple `ExternalSystemProjectAware` instances can correspond to a single external system.
 > It allows performing project reload differently depending on the set of settings files (project aware per settings file, per module, per external project, etc.).
 >
-{type="note"}
+{style="note"}
 
 ### Icon for Reload Notification
 
@@ -112,8 +111,8 @@ A particular external system settings UI contains the following items:
 It's recommended to extend from [`AbstractExternalProjectSettingsControl`](%gh-ic%/platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/settings/AbstractExternalProjectSettingsControl.java) for implementing project-level settings control as it already handles some of them.
 
 **Examples**:
-* [`GradleSystemSettingsControl`](%gh-ic%/plugins/gradle/src/org/jetbrains/plugins/gradle/service/settings/GradleSystemSettingsControl.java) handling the <control>General settings</control> in <menupath>Settings/Preferences | Build, Execution, Deployment | Build Tools | Gradle</menupath>
-* [`GradleProjectSettingsControl`](%gh-ic%/plugins/gradle/src/org/jetbrains/plugins/gradle/service/settings/GradleProjectSettingsControl.java) handling the selected Gradle project settings in <menupath>Settings/Preferences | Build, Execution, Deployment | Build Tools | Gradle</menupath>
+* [`GradleSystemSettingsControl`](%gh-ic%/plugins/gradle/src/org/jetbrains/plugins/gradle/service/settings/GradleSystemSettingsControl.java) handling the <control>General settings</control> in <ui-path>Settings/Preferences | Build, Execution, Deployment | Build Tools | Gradle</ui-path>
+* [`GradleProjectSettingsControl`](%gh-ic%/plugins/gradle/src/org/jetbrains/plugins/gradle/service/settings/GradleProjectSettingsControl.java) handling the selected Gradle project settings in <ui-path>Settings/Preferences | Build, Execution, Deployment | Build Tools | Gradle</ui-path>
 
 A similar approach is used for providing settings in importing external project UI.
 Implementation is expected to extend [`AbstractImportFromExternalSystemControl`](%gh-ic%/java/idea-ui/src/com/intellij/openapi/externalSystem/service/settings/AbstractImportFromExternalSystemControl.java) and instead of linked external projects list it contains target external project path control.

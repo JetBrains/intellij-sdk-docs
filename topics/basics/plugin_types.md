@@ -15,7 +15,6 @@ The most common types of plugins include:
 
 > In some cases, implementing an actual IntelliJ Platform plugin might not be necessary, as [alternative solutions](plugin_alternatives.md) exist.
 >
-{type="tip"}
 
 ## Custom Language Support
 

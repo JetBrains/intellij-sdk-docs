@@ -2,21 +2,21 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Reference**: [](go_to_class_and_go_to_symbol.md)
 
 **Code**: [`SimplePsiImplUtil`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/impl/SimplePsiImplUtil.java),
 [`SimpleChooseByNameContributor`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleChooseByNameContributor.java)
 
-</microformat>
-<include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
+</tldr>
+<include from="language_and_filetype.md" element-id="custom_language_tutorial_header"></include>
 
 A _Go to Symbol Contributor_ helps the user to navigate to any PSI element by its name.
 
 ## Define a Helper Method for Generated PSI Elements
 
-To specify how a PSI element looks like in the <menupath>Navigate | Symbol</menupath> popup window, <control>Structure</control> tool window, or other components, it should implement `getPresentation()`.
+To specify how a PSI element looks like in the <ui-path>Navigate | Symbol</ui-path> popup window, <control>Structure</control> tool window, or other components, it should implement `getPresentation()`.
 This method gets defined in the utility class `SimplePsiImplUtil`, and the parser and PSI classes must be regenerated.
 Add the following method to [`SimplePsiImplUtil`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/impl/SimplePsiImplUtil.java):
 
@@ -40,7 +40,7 @@ property ::= (KEY? SEPARATOR VALUE?) | KEY {
 
 ## Define a Go To Symbol Contributor
 
-To contribute items to <menupath>Navigate | Symbol</menupath> results, subclass [`ChooseByNameContributor`](%gh-ic%/platform/lang-api/src/com/intellij/navigation/ChooseByNameContributor.java)
+To contribute items to <ui-path>Navigate | Symbol</ui-path> results, subclass [`ChooseByNameContributor`](%gh-ic%/platform/lang-api/src/com/intellij/navigation/ChooseByNameContributor.java)
 to create [`SimpleChooseByNameContributor`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleChooseByNameContributor.java):
 
 ```java
@@ -62,6 +62,6 @@ The `SimpleChooseByNameContributor` implementation is registered with the Intell
 
 Run the plugin by using the Gradle [`runIde`](creating_plugin_project.md#running-a-plugin-with-the-runide-gradle-task) task.
 
-The IDE now supports navigating to a property definition by name pattern via <menupath>Navigate | Symbol</menupath> action.
+The IDE now supports navigating to a property definition by name pattern via <ui-path>Navigate | Symbol</ui-path> action.
 
 ![Go To Symbol](go_to_symbol.png){width="800"}

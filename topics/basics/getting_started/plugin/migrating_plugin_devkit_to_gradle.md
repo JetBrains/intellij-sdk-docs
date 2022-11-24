@@ -4,7 +4,6 @@
 
 > See [Revamping Plugins #3 – Migrating from DevKit to the Gradle build system](https://blog.jetbrains.com/platform/2021/12/migrating-from-devkit-to-the-gradle-build-system/) blog post for a step-by-step walk-through.
 >
-{type="tip"}
 
 Converting a plugin created with the old DevKit approach (which can be used for [creating themes](creating_theme_project.md)) to a Gradle-based plugin project can be done using the <control>New Project</control> wizard to create a Gradle-based project around the existing DevKit-based project:
 * Ensure the directory containing the DevKit-based IntelliJ Platform plugin project can be fully recovered if necessary.

@@ -2,13 +2,13 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Product Help:** [Colors and fonts](https://www.jetbrains.com/help/idea/configuring-colors-and-fonts.html)
 
 **Platform UI Guidelines:** [Inspections](https://jetbrains.design/intellij/text/inspections/)
 
-</microformat>
+</tldr>
 
 The class used to specify how a particular range of text should be highlighted is called [`TextAttributesKey`](%gh-ic%/platform/core-api/src/com/intellij/openapi/editor/colors/TextAttributesKey.java).
 An instance of this class is created for every distinct type of item that should be highlighted (keyword, number, string, etc.).
@@ -20,13 +20,12 @@ Existing highlighting can be suppressed programmatically in certain contexts, se
 > To force re-highlighting (e.g., after changing plugin specific settings), use
 > [`DaemonCodeAnalyzer.restart()`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/daemon/DaemonCodeAnalyzer.java).
 >
-{type="tip"}
 
 ## Color Settings
 The mapping of the `TextAttributesKey` to specific attributes used in an editor is defined by the [`EditorColorsScheme`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/colors/EditorColorsScheme.java) class.
 It can be configured by the user by providing an implementation of [`ColorSettingPage`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/colors/ColorSettingsPage.java) registered in `com.intellij.colorSettingsPage` extension point.
 
-The <menupath>File | Export | Files or Selection to HTML</menupath> feature uses the same syntax highlighting mechanism as the editor.
+The <ui-path>File | Export | Files or Selection to HTML</ui-path> feature uses the same syntax highlighting mechanism as the editor.
 Thus, it will work automatically for custom languages that provide a syntax highlighter.
 
 **Examples**:
@@ -35,7 +34,7 @@ Thus, it will work automatically for custom languages that provide a syntax high
 
 > New functionality about Language Defaults and support for additional color schemes are detailed in [Color Scheme Management](color_scheme_management.md).
 >
-{type="note"}
+{style="note"}
 
 The syntax and error highlighting are performed on multiple levels: Lexer, Parser, and (External) Annotator(s).
 
@@ -51,7 +50,6 @@ For highlighting lexer errors, the standard `TextAttributesKey` for bad characte
 
 > Use [`HtmlSyntaxInfoUtil`](%gh-ic%/platform/lang-impl/src/com/intellij/openapi/editor/richcopy/HtmlSyntaxInfoUtil.java) to create Lexer-based highlighted code samples, e.g. for usage in documentation.
 >
-{type="tip"}
 
 ### Semantic Highlighting
 
@@ -79,7 +77,7 @@ When the file is changed, the annotator is called incrementally to process only 
 
 > See also [Code Inspections](code_inspections_and_intentions.md) which offer a more fine-grained control and some additional features.
 >
-{type="note"}
+{style="note"}
 
 ### Errors/Warning
 See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in IntelliJ Platform UI Guidelines on how to write message texts for highlighting/quick fixes.

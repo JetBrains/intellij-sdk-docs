@@ -38,7 +38,7 @@ All jars from the <path>/lib</path> folder are automatically added to the classp
 > Do not repackage libraries into the main plugin archive (<path>sample.jar</path> in the sample below).
 > Otherwise, [Plugin Verifier](verifying_plugin_compatibility.md) will yield false positives for unresolved classes and methods.
 >
-{type="warning"}
+{style="warning"}
 
 ```text
    .IntelliJIDEAx0/

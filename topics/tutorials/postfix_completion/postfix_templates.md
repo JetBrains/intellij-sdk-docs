@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<excerpt>Postfix templates implement possibility to modify or wrap the existing code in additional constructs without navigating the caret back.</excerpt>
+<link-summary>Postfix templates implement possibility to modify or wrap the existing code in additional constructs without navigating the caret back.</link-summary>
 
 The IntelliJ Platform allows plugins to provide custom postfix templates specific to the supported languages, frameworks, or libraries.
 
@@ -34,7 +34,7 @@ class and implementing the key methods:
 
 > See the [](advanced_postfix_templates.md) section for information on how to implement postfix templates with more advanced features and editing possibilities.
 >
-{type="note"}
+{style="note"}
 
 ## Postfix Template Description
 
@@ -48,7 +48,7 @@ Providing the code snippets showing the template in "before" and "after" expandi
 The _$EXTENSION$_ placeholder should be replaced with the extension of the template language, e.g., <path>before.kt.template</path> for a Kotlin template.
 
 The code snippets included in the example files can use the `<spot>` marker, which should surround the most important code parts, e.g., expression to expand and position of the caret after expanding.
-Marked parts will be highlighted in the <menupath>Settings/Preferences | Editor | General | Postfix Completion</menupath> settings page, making it easier for users to understand how a template is expanded, e.g.:
+Marked parts will be highlighted in the <ui-path>Settings/Preferences | Editor | General | Postfix Completion</ui-path> settings page, making it easier for users to understand how a template is expanded, e.g.:
 - <path>before.java.template</path>:
   ```java
   <spot>cart.getProducts()</spot>.var
@@ -61,7 +61,7 @@ Marked parts will be highlighted in the <menupath>Settings/Preferences | Editor 
 
 Template example files can also use the `$key` placeholder which is replaced with the actual template key in the preview UI, e.g., consider a template with the `var` key:
 
-<compare title-before="Content" title-after="Rendition">
+<compare first-title="Content" second-title="Rendition">
 
 ```java
 cart.getProducts()$key

@@ -1,10 +1,10 @@
 [//]: # (title: Plugin Configuration File)
 
-<toc-settings depth="4" mode="tree" structure-elements="chapter"/>
+<show-structure for="chapter" depth="4"/>
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<excerpt>Plugin configuration file contains all the information about the plugin, as well as all registered extensions, actions, listeners, etc.</excerpt>
+<link-summary>Plugin configuration file contains all the information about the plugin, as well as all registered extensions, actions, listeners, etc.</link-summary>
 
 The <path>plugin.xml</path> configuration file contains all the information about the plugin, which is displayed in the [plugins settings dialog](https://www.jetbrains.com/help/idea/managing-plugins.html), and all registered extensions, actions, listeners, etc.
 Sections below describe all the elements in detail.
@@ -81,7 +81,7 @@ Deprecated elements are omitted in the list above.
 > If an element or an attribute is not documented on this page, please consider them as configuration items intended to be used by JetBrains only.
 > They should never be used by 3rd-party plugins.
 >
-{type="note"}
+{style="note"}
 
 ## `idea-plugin`
 {id="idea-plugin"}
@@ -769,7 +769,7 @@ Examples
 ##### `abbreviation`
 {id="idea-plugin__actions__action__abbreviation"}
 
-Defines an alias for the action name which the user can use in <menupath>Help | Find Action...</menupath> or <menupath>Navigate | Search Everywhere</menupath> popups.
+Defines an alias for the action name which the user can use in <ui-path>Help | Find Action...</ui-path> or <ui-path>Navigate | Search Everywhere</ui-path> popups.
 A single action can have multiple abbreviations.
 
 {style="narrow"}
@@ -850,7 +850,7 @@ Attributes
 - `use-shortcut-of` _(optional)_<br/>
   The ID of the action whose keyboard shortcut this group will use.
 - `searchable` _(optional; supported in 2020.3+)_<br/>
-  Boolean flag defining whether the group is displayed in <menupath>Help&nbsp;|&nbsp;Find Action...</menupath> or <menupath>Navigate | Search Everywhere</menupath> popups.<br/>
+  Boolean flag defining whether the group is displayed in <ui-path>Help&nbsp;|&nbsp;Find Action...</ui-path> or <ui-path>Navigate | Search Everywhere</ui-path> popups.<br/>
   Default value: `true`.
 
 Children
@@ -1061,12 +1061,11 @@ Attributes
   Default value: `false`.
 - `area` _(optional)_<br/>
   The scope in which the [extension](plugin_extensions.md) is instantiated.
+  It is not recommended to use non-default values.
   Allowed values:
     - `IDEA_APPLICATION` _(default)_
     - `IDEA_PROJECT`
     - `IDEA_MODULE` (**deprecated**)
-
-    It is not recommended to use non-default values.
 
 Children
 : [`<with>`](#idea-plugin__extensionPoints__extensionPoint__with)
@@ -1119,14 +1118,14 @@ An extension point which restricts the type provided in a `myClass` attribute to
   - `com.example.MyComparable` must be a subtype of `java.lang.Comparable`
 
 ## Deprecated Elements
-{initial-collapse-state="collapsed"}
+{collapsible="true" initial-collapse-state="collapsed"}
 
 ### `application-components`
 {id="idea-plugin__application-components"}
 
 > Element is deprecated. Do not use it in new plugins.
 >
-{type="warning"}
+{style="warning"}
 
 Defines a list of application [components](plugin_components.md).
 
@@ -1142,7 +1141,7 @@ Children
 
 > Element is deprecated. Do not use it in new plugins.
 >
-{type="warning"}
+{style="warning"}
 
 Defines a list of project [components](plugin_components.md).
 
@@ -1158,7 +1157,7 @@ Children
 
 > Element is deprecated. Do not use it in new plugins.
 >
-{type="warning"}
+{style="warning"}
 
 Defines a list of module [components](plugin_components.md).
 
@@ -1174,7 +1173,7 @@ Children
 
 > Element is deprecated. Do not use it in new plugins.
 >
-{type="warning"}
+{style="warning"}
 
 Defines a single application, project, or module [component](plugin_components.md).
 A single [`<application-components>`](#idea-plugin__application-components), [`<project-components>`](#idea-plugin__project-components), or [`<module-components>`](#idea-plugin__module-components) element can contain multiple `<component>` elements.
@@ -1196,7 +1195,7 @@ Children
 
 > Element is deprecated. Do not use it in new plugins.
 >
-{type="warning"}
+{style="warning"}
 
 The fully qualified name of the component implementation class.
 
@@ -1209,7 +1208,7 @@ Required
 
 > Element is deprecated. Do not use it in new plugins.
 >
-{type="warning"}
+{style="warning"}
 
 The fully qualified name of the component interface class. If not specified, the interface will be the same as defined by [`<implementation-class>`](#idea-plugin__components__component__interface-class) element.
 
@@ -1222,7 +1221,7 @@ Required
 
 > Element is deprecated. Do not use it in new plugins.
 >
-{type="warning"}
+{style="warning"}
 
 The fully qualified name of the component implementation class to be used when the IDE runs in headless mode.
 
@@ -1235,7 +1234,7 @@ Required
 
 > Element is deprecated. Do not use it in new plugins.
 >
-{type="warning"}
+{style="warning"}
 
 Allows to provide additional component options.
 A single [`<component>`](#idea-plugin__components__component) element can contain multiple `<option>` elements.
@@ -1256,7 +1255,7 @@ Attributes
 
 > Element is deprecated. Do not use it in new plugins.
 >
-{type="warning"}
+{style="warning"}
 
 If present, the component is instantiated also for the default project. It takes effect only when used inside of [`<project-components>`](#idea-plugin__project-components) element.
 

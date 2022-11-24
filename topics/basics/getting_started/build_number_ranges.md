@@ -16,7 +16,7 @@ Please note the following regarding values:
 > Plugins hosted on [JetBrains Marketplace](https://plugins.jetbrains.com) are checked automatically.
 > According to [Approval Guidelines](https://plugins.jetbrains.com/legal/approval-guidelines), incompatible plugin versions will be restricted by JetBrains if necessary.
 >
-{type="warning"}
+{style="warning"}
 
 ### Build Number Format
 
@@ -38,7 +38,7 @@ Plugins may specify compatibility versions more precisely (e.g., requiring a spe
 Multipart build numbers can also be used in the `since-build` and `until-build` attributes of `idea-version`.
 Usually you should omit the product ID and use only the branch number and build number, for example:
 
-<compare style="top-bottom" title-before="Any 213 branch version" title-after="Specific build number">
+<compare style="top-bottom" first-title="Any 213 branch version" second-title="Specific build number">
 
 ```xml
 <!-- 2021.3, 2021.3.1, 2021.3.2, ... -->
@@ -54,17 +54,16 @@ Usually you should omit the product ID and use only the branch number and build 
 > Specific build numbers and their corresponding release version are available via _Previous Releases_ on the corresponding product's download page, e.g. [Previous IntelliJ IDEA Releases](https://www.jetbrains.com/idea/download/previous.html).
 > See also [What versions of IntelliJ-based IDEs are supported?](https://intellij-support.jetbrains.com/hc/en-us/articles/360019574859-What-versions-of-IntelliJ-based-IDEs-are-supported-) for JetBrains IDE support policy.
 >
-{type="note"}
+{style="note"}
 
 ### IntelliJ Platform Based Products of Recent IDE Versions
 
 > Which versions should your plugin support? We've collected some insights based on download statistics in [Statistics: Product Versions in Use](https://plugins.jetbrains.com/docs/marketplace/product-versions-in-use-statistics.html).
 >
-{type="tip"}
 
 Please see also corresponding entries in [Incompatible API Changes](api_changes_list.md) and [Notable API Changes](api_notable.md).
 
-<include src="tools_gradle_intellij_plugin.md" include-id="gradle_plugin_223_problem"></include>
+<include from="tools_gradle_intellij_plugin.md" element-id="gradle_plugin_223_problem"></include>
 
 | Branch number                                                   | IntelliJ Platform version                                                                                                                |
 |-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|

@@ -2,13 +2,13 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<microformat>
+<tldr>
 
 **Platform UI Guidelines:** [Icons](https://jetbrains.design/intellij/principles/icons/), [Platform theme colors](https://jetbrains.design/intellij/principles/platform_theme_colors/#UI-components)
 
-</microformat>
+</tldr>
 
-<excerpt>Customizing UI controls and icons in a theme plugin.</excerpt>
+<link-summary>Customizing UI controls and icons in a theme plugin.</link-summary>
 
 A theme is customized by adding information to the theme description file that overrides the base (_Light_ or _Darcula_) theme.
 
@@ -16,7 +16,6 @@ For plugin developers, [Exposing Theme Metadata](themes_metadata.md) discusses t
 
 > [Color Highlighter Plugin](https://plugins.jetbrains.com/plugin/13309-color-highlighter) adds additional color preview inside the editor.
 >
-{type="tip"}
 
 ## Introduction to Theme Description File Syntax
 
@@ -145,7 +144,6 @@ The color of a replaced icon takes precedence over any `ColorPalette` overrides.
 
 > For generating the SVG icons suited for the IntelliJ-based IDEs, you may also use the third-party web tool: [IntelliJ Icon Generator](https://bjansen.github.io/intellij-icon-generator/).
 >
-{type="tip"}
 
 ## Customizing UI Controls
 

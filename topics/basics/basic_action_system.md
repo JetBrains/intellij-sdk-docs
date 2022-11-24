@@ -2,16 +2,16 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Product Help:** [Menus and toolbars](https://www.jetbrains.com/help/idea/customize-actions-menus-and-toolbars.html)
 
 **Platform UI Guidelines:** [Toolbar](https://jetbrains.design/intellij/controls/toolbar/)
 
-</microformat>
+</tldr>
 
 The actions system allows plugins to add their items to IntelliJ Platform-based IDE menus and toolbars.
-For example, one of the action classes is responsible for the <menupath>File | Open File...</menupath> menu item and the <control>Open...</control> toolbar button.
+For example, one of the action classes is responsible for the <ui-path>File | Open File...</ui-path> menu item and the <control>Open...</control> toolbar button.
 
 Actions in the IntelliJ Platform require a [code implementation](#action-implementation) and must be [registered](#registering-actions).
 The action implementation determines the contexts in which an action is available, and its functionality when selected in the UI.
@@ -31,7 +31,7 @@ The IntelliJ Platform calls methods of actions when a user interacts with a menu
 > If the `AnAction` class uses a field to store data that has a shorter lifetime and doesn't clear this data promptly, the data leaks.
 > For example, any `AnAction` data that exists only within the context of a `Project` causes the `Project` to be kept in memory after the user has closed it.
 >
-{type="warning"}
+{style="warning"}
 
 ### Principal Implementation Overrides
 
@@ -72,11 +72,10 @@ Implementors must ensure that changing presentation and availability status hand
 > It must _execute very quickly_; no real work must be performed.
 > For example, checking selection in a tree or a list is considered valid, but working with the file system is not.
 >
-{type="warning"}
+{style="warning"}
 
 > If the new state of an action cannot be determined quickly, then evaluation should be performed in the `AnAction.actionPerformed()` method, and [notify](notifications.md) the user that the action cannot be executed if the context isn't suitable.
 >
-{type="tip"}
 
 #### Determining the Action Context
 
@@ -111,7 +110,7 @@ See [Grouping Actions](#grouping-actions) for more information about the `compac
 > If an action is added to a toolbar, its `update()` can be called if there was any user activity or focus transfer.
 > If the action's availability changes in the absence of these events, then call [`ActivityTracker.getInstance().inc()`](%gh-ic%/platform/platform-api/src/com/intellij/ide/ActivityTracker.java) to notify the action subsystem to update all toolbar actions.
 >
-{type="note"}
+{style="note"}
 
 An example of enabling a menu action based on whether a project is open is demonstrated in [`PopupDialogAction.update()`](%gh-sdk-samples%/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java) method.
 
@@ -158,7 +157,7 @@ A group's `compact` attribute specifies whether an action within that group is v
 See [Registering Actions in plugin.xml](#registering-actions-in-pluginxml) for an explanation of how the `compact` attribute is set for a group.
 If the `compact` attribute is `true` for a menu group, an action in the menu only appears if its state is both enabled and visible.
 In contrast, if the `compact` attribute is `false`, an action in the menu appears if its state is disabled but visible.
-Some menus like <menupath>Tools</menupath> have the `compact` attribute set, so there isn't a way to show an action on the <menupath>Tools</menupath> menu if it is not enabled.
+Some menus like <ui-path>Tools</ui-path> have the `compact` attribute set, so there isn't a way to show an action on the <ui-path>Tools</ui-path> menu if it is not enabled.
 
 | Host Menu<br/>`compact` Setting | Action Enabled | Visibility Enabled | Menu Item Visible? | Menu Item Appears Gray? |
 |:-------------------------------:|:--------------:|:------------------:|:------------------:|:-----------------------:|
@@ -186,11 +185,11 @@ Using the [`<override-text>`](plugin_configuration_file.md#idea-plugin__actions_
 This is also available for groups in 2020.3 and later.
 
 In the `<action>` element reference example (below) with `id` attribute `VssIntegration.GarbageCollection`, the default is to use the menu text "Garbage Collector: Collect _Garbage."
-The `<add-to-group>` element declares the action is added to the <menupath>Tools</menupath> menu.
+The `<add-to-group>` element declares the action is added to the <ui-path>Tools</ui-path> menu.
 
 However, the `<override-text>` element declares that text for `VssIntegration.GarbageCollection` displayed anywhere in the main menu system should be the alternate text "Collect _Garbage."
-The <menupath>Tools</menupath> menu is part of the main menu, so the displayed menu text is "Collect _Garbage."
-A different context, such as searching for the action using <menupath>Help | Find Action</menupath>, displays the default text "Garbage Collector: Collect _Garbage" to give the user additional information about the action.
+The <ui-path>Tools</ui-path> menu is part of the main menu, so the displayed menu text is "Collect _Garbage."
+A different context, such as searching for the action using <ui-path>Help | Find Action</ui-path>, displays the default text "Garbage Collector: Collect _Garbage" to give the user additional information about the action.
 
 A second `<override-text>` element uses `place` and `use-text-of-place` attributes to declare the same version of the text used in the main menu is also used in the editor popup menu.
 Additional `<override-text>` elements could be used to specify other places where the main menu text should be used.
@@ -200,7 +199,7 @@ An example of using `<override-text>` is demonstrated in the [Creating Actions](
 #### Setting the Synonym Element
 
 _2020.3_
-Users can locate actions via their name by invoking <menupath>Help | Find Action</menupath>.
+Users can locate actions via their name by invoking <ui-path>Help | Find Action</ui-path>.
 
 To allow using alternative names in search, add one or more [`<synonym>`](plugin_configuration_file.md#idea-plugin__actions__action__synonym) elements inside [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) or [`<reference>`](plugin_configuration_file.md#idea-plugin__actions__reference):
 
@@ -215,7 +214,7 @@ To provide a localized synonym, specify `key` instead of `text` attribute.
 #### Disabling Search for Group
 
 _2020.3_
-To exclude a group from appearing in <menupath>Help | Find Action</menupath> results (e.g., <control>New...</control> popup), specify `searchable="false"`.
+To exclude a group from appearing in <ui-path>Help | Find Action</ui-path> results (e.g., <control>New...</control> popup), specify `searchable="false"`.
 
 #### Localizing Actions and Groups
 
@@ -282,11 +281,10 @@ This, and additional information can also be found by using the [Code Completion
 
 > To lookup existing Action ID (e.g. for use in `relative-to-action`), [UI Inspector](internal_ui_inspector.md) can be used.
 >
-{type="tip"}
 
 > See the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) element and its children documentation for details.
 >
-{type="note"}
+{style="note"}
 
 ```xml
 <actions>
@@ -422,4 +420,4 @@ Use [`BackAction`](%gh-ic%/platform/platform-api/src/com/intellij/ui/navigation/
 
 For actions registered at runtime (e.g., in a tool window toolbar), add an [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) entry with
 [`EmptyAction`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/EmptyAction.java)
-to "reserve" Action ID so they become visible in <menupath>Settings/Preferences | Keymap</menupath>.
+to "reserve" Action ID so they become visible in <ui-path>Settings/Preferences | Keymap</ui-path>.

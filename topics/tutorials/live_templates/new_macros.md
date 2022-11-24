@@ -67,6 +67,6 @@ Using the `com.intellij.liveTemplateMacro` extension point, register the impleme
 Now verify the plugin is working correctly.
 * Run the plugin in a Development Instance.
 * Create a new file `testing.md` and enter several words in lower case.
-* Highlight the text and enter invoke <menupath>Code | Surround With...</menupath> to open the <control>Surround With</control> popup.
+* Highlight the text and enter invoke <ui-path>Code | Surround With...</ui-path> to open the <control>Surround With</control> popup.
   Confirm that the <control>SDK: Convert to title case</control> is available in the popup, and select it.
 * The selected text will change to have each word capitalized.

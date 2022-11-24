@@ -66,7 +66,7 @@ Please see [](verifying_plugin_compatibility.md) on how to use Plugin Verifier a
 >
 > For API annotated with `ApiStatus.@Internal`/`@IntellijInternalApi`, see [](api_internal.md) for more details and replacements.
 >
-{type="note"}
+{style="note"}
 
 > Java 17 is required ([blog post](https://blog.jetbrains.com/platform/2022/08/intellij-project-migrates-to-java-17/) when targeting 2022.2 or later only.
 >
@@ -74,11 +74,11 @@ Please see [](verifying_plugin_compatibility.md) on how to use Plugin Verifier a
 >
 > Please make sure to always upgrade `gradle-intellij-plugin` to the latest version [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square){type="joined"}](https://github.com/jetbrains/gradle-intellij-plugin/releases)
 >
-{type="note"}
+{style="note"}
 
 _Early Access Program_ (EAP) releases of upcoming versions are available [here](https://eap.jetbrains.com).
 
-<include src="tools_gradle_intellij_plugin.md" include-id="gradle_plugin_223_problem"></include>
+<include from="tools_gradle_intellij_plugin.md" element-id="gradle_plugin_223_problem"></include>
 
 ## 2023.1
 

@@ -6,7 +6,7 @@
 
 > If your plugin uses **log4j** library directly: it is removed from IntelliJ Platform in 2022.1; please see this [blog post](https://blog.jetbrains.com/platform/2022/02/removing-log4j-from-the-intellij-platform/) for migration instructions.
 >
-{type="note"}
+{style="note"}
 
 The IntelliJ platform uses [`Logger`](%gh-ic%/platform/util/src/com/intellij/openapi/diagnostic/Logger.java) abstraction class to shield from underlying logging implementation and configuration.
 
@@ -59,10 +59,10 @@ catch (e: Throwable) {
 </tabs>
 
 By default, all messages with level `INFO` and higher are written to log output file <path>idea.log</path>.
-To enable `DEBUG`/`TRACE` logging for specific categories, use <menupath>Help | Diagnostic Tools | Debug Log Settings</menupath>.
+To enable `DEBUG`/`TRACE` logging for specific categories, use <ui-path>Help | Diagnostic Tools | Debug Log Settings</ui-path>.
 
-To locate the log file, choose the <menupath>Help | Show Log in Finder/Explorer</menupath> action.
-When [internal mode](enabling_internal.md) is enabled, the currently running IDE log file can be opened using <menupath>Help | Open Log in Editor</menupath>.
+To locate the log file, choose the <ui-path>Help | Show Log in Finder/Explorer</ui-path> action.
+When [internal mode](enabling_internal.md) is enabled, the currently running IDE log file can be opened using <ui-path>Help | Open Log in Editor</ui-path>.
 
 To locate it for a specific installation, see this [Knowledge Base article](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519).
 See [Development Instance Sandbox Directory](ide_development_instance.md#the-development-instance-sandbox-directory) on how to find it for development instances.
@@ -83,7 +83,7 @@ To let users report such errors to the vendor, plugins can implement custom [`Er
 See [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.errorHandler) for existing implementations — ranging from pre-filling web-based issue tracker forms to fully automated submission to log monitoring systems.
 This [tutorial](https://www.plugin-dev.com/intellij/general/error-reporting/) also offers a working solution for using _Sentry_.
 
-To disable red exclamation notification icon in status bar, invoke <menupath>Help | Edit Custom Properties...</menupath> and add `idea.fatal.error.notification=disabled` in opened <path>idea.properties</path>.
+To disable red exclamation notification icon in status bar, invoke <ui-path>Help | Edit Custom Properties...</ui-path> and add `idea.fatal.error.notification=disabled` in opened <path>idea.properties</path>.
 
 ## Runtime Information
 
@@ -113,7 +113,7 @@ Register [`ApplicationActivationListener`](%gh-ic%/platform/ide-core/src/com/int
 
 ## Power Save Mode
 
-<menupath>File | Power Save Mode</menupath> can be enabled to limit power-consuming features on laptops.
+<ui-path>File | Power Save Mode</ui-path> can be enabled to limit power-consuming features on laptops.
 Use [`PowerSaveMode`](%gh-ic%/platform/core-api/src/com/intellij/ide/PowerSaveMode.java) service and `PowerSaveMode.Listener` topic to disable such features in your plugin accordingly.
 
 ## Plugin Management

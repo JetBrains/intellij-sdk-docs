@@ -5,7 +5,7 @@
 > Adding JPS support to your plugin requires Java plugin to be present for it to work.
 > Please see [Plugin Dependencies](plugin_dependencies.md) on how to set up your plugin with required dependency.
 >
-{type="note"}
+{style="note"}
 
 ### External Build Process Workflow
 
@@ -53,7 +53,7 @@ These files don't have extensions, so you need to map corresponding patterns to 
 
 Sources of a plugin for External Builder should be put in a separate module.
 By convention, such a module has a name '...-jps-plugin', and its sources are placed under the <path>jps-plugin</path> directory in the main plugin directory.
-Use `com.intellij.compileServer.plugin` extension point to add the plugin to the classpath of the external build process, the plugin JAR should be named <path>$JPS_module_name$.jar</path>. <menupath>Build | Prepare Plugin Module for Deployment</menupath> action will automatically pack the 'jps-plugin' part to a separate JAR accordingly.
+Use `com.intellij.compileServer.plugin` extension point to add the plugin to the classpath of the external build process, the plugin JAR should be named <path>$JPS_module_name$.jar</path>. <ui-path>Build | Prepare Plugin Module for Deployment</ui-path> action will automatically pack the 'jps-plugin' part to a separate JAR accordingly.
 
 See [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.compileServer.plugin) for samples.
 
@@ -88,7 +88,7 @@ The build process has built-in self-cpu-profiling capabilities.
 To enable them do the following:
 
 1. Copy <path>$IDE_HOME$/lib/yjp-controller-api-redist.jar</path> and <path>$IDE_HOME$/bin/yjpagent.*</path> files to <path>$IDE_SYSTEM_DIR$/compile-server</path>
-2. In <menupath>Settings/Preferences | Build, Execution, Deployment | Compiler | Java Compiler</menupath> add `-Dprofiling.mode=true` in <control>Additional command line parameters</control>
+2. In <ui-path>Settings/Preferences | Build, Execution, Deployment | Compiler | Java Compiler</ui-path> add `-Dprofiling.mode=true` in <control>Additional command line parameters</control>
 3. Make sure the automatic make is turned off
 
 After this, every build process run should result in a CPU snapshot stored in <path>$USER_HOME$/Snapshots</path> directory.

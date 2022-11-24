@@ -62,7 +62,7 @@ NOTE: You are allowed to prettify the pattern using links: [`org.example.Foo`](h
 NOTE: Entries not starting with code quotes (`name`) can be added to document non-code changes  and will be skipped in API verification.
 -->
 
-<excerpt>List of known Breaking API Changes by version</excerpt>
+<link-summary>List of known Breaking API Changes by version</link-summary>
 
 IntelliJ API may be occasionally changed between releases, leading to existing plugins' incompatibilities with newer IDE builds.
 
@@ -73,7 +73,6 @@ Please see [](verifying_plugin_compatibility.md) on how to use Plugin Verifier a
 > [Subscribe to Marketplace Developer News](https://jb.gg/mp-updates) to receive news and announcements.
 > Also follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/).
 >
-{type="tip"}
 
 The following pages list the breaking changes in IDE and plugin releases with required/recommended steps to take by plugin authors.
 

@@ -2,11 +2,11 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Product Help:** [Find Usages](https://www.jetbrains.com/help/idea/find-highlight-usages.html)
 
-</microformat>
+</tldr>
 
 The _Find Usages_ action is a multi-step process, and each step of the process requires involvement from the custom language plugin.
 
@@ -14,7 +14,6 @@ The language plugin participates in the Find Usages process by registering an im
 
 > In cases like function parameters and local variables, consider overriding  [`PsiElement.getUseScope()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) to return a narrower scope.
 > For instance, returning the scope of the nearest function definition can significantly reduce the number of files that need to be parsed and references that need to be resolved when renaming such elements.
-{type="tip"}
 
 The steps of the _Find Usages_ action are the following:
 * Before the _Find Usages_ action can be invoked, the IDE builds an index of words present in every file in the custom language.

@@ -2,11 +2,11 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Product Help:** [Spell Checking](https://www.jetbrains.com/help/idea/spellchecking.html)
 
-</microformat>
+</tldr>
 
 Spell Checking is used to check the correctness of natural languages within code.
 Language plugins can implement customized spell checking by implementing

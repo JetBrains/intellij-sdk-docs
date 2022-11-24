@@ -14,7 +14,7 @@ See also [](marketing.md) about widgets and badges.
 > If your plugin ships with [additional libraries](plugin_content.md#plugin-with-dependencies), do not repackage them into the main plugin archive.
 > Otherwise, [Plugin Verifier](verifying_plugin_compatibility.md) will yield false positives for unresolved classes and methods.
 >
-{type="warning"}
+{style="warning"}
 
 ## Uploading a Plugin to JetBrains Marketplace
 
@@ -66,7 +66,7 @@ A new token will be created and displayed right below.
 > Copy it before you close this page and keep it in a secure location.
 > This is the only time the token is visible.
 >
-{type="note"}
+{style="note"}
 
 This section describes two options to supply your _Personal Access Token_ via Gradle using:
 * Environment variables,
@@ -83,7 +83,7 @@ export ORG_GRADLE_PROJECT_intellijPublishToken='YOUR_TOKEN'
 > On macOS systems, environment variables set in <path>.bash_profile</path> are only visible to processes you run from bash.
 > Environment variables visible to all processes need to be defined in [Environment.plist](https://developer.apple.com/library/archive/qa/qa1067/_index.html).
 >
-{type="note"}
+{style="note"}
 
 Now provide the environment variable in the run configuration with which you run the [`publishPlugin`](tools_gradle_intellij_plugin.md#tasks-publishplugin) task locally.
 To do so, create a Gradle run configuration (if not already done), choose your Gradle project, specify the [`publishPlugin`](tools_gradle_intellij_plugin.md#tasks-publishplugin) task, and then add the environment variable.

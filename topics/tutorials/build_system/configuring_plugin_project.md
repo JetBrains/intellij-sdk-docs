@@ -12,7 +12,7 @@ It is highly recommended to keep updating both Gradle and Gradle IntelliJ Plugin
 
 > Current Gradle IntelliJ Plugin version is [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square){type="joined"}](https://github.com/jetbrains/gradle-intellij-plugin/releases)
 >
-{type="note"}
+{style="note"}
 
 ## Target Platform and Dependencies
 
@@ -20,7 +20,7 @@ By default, the Gradle plugin will build a plugin project against the IntelliJ P
 
 > Using EAP versions of the IntelliJ Platform requires adding the _Snapshots repository_ to the Gradle build script (see [IntelliJ Platform Artifacts Repositories](intellij_artifacts.md)).
 >
-{type="note"}
+{style="note"}
 
 If a matching version of the specified IntelliJ Platform is not available on the local machine, the Gradle plugin downloads the correct version and type.
 IntelliJ IDEA then indexes the build and any associated source code and JetBrains Java Runtime.
@@ -31,7 +31,6 @@ Explicitly setting the [`intellij.version`](tools_gradle_intellij_plugin.md#inte
 
 > See the [Developing for Multiple Products](dev_alternate_products.md) page for information about how to develop a plugin that is compatible with multiple IntelliJ-based IDEs.
 >
-{type="tip"}
 
 All available platform versions can be browsed in the [](intellij_artifacts.md).
 
@@ -84,7 +83,6 @@ For those [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxm
 
 > To maintain and generate an up-to-date changelog, try using [Gradle Changelog Plugin](https://github.com/JetBrains/gradle-changelog-plugin).
 >
-{type="tip"}
 
 As discussed in [](creating_plugin_project.md#components-of-a-wizard-generated-gradle-intellij-platform-plugin), the Gradle properties `project.version`, `project.group`, and `rootProject.name` are all generated based on the input to the Wizard.
 However, the [](tools_gradle_intellij_plugin.md) does not combine and substitute those Gradle properties for the default [`<id>`](plugin_configuration_file.md#idea-plugin__id) and [`<name>`](plugin_configuration_file.md#idea-plugin__name) elements in the <path>plugin.xml</path> file.

@@ -1,5 +1,7 @@
 [//]: # (title: Content Updates)
 
+<show-structure for="chapter" depth="2"/>
+
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 This page lists notable additions and updates to the SDK documentation and [](code_samples.md).
@@ -9,7 +11,6 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 > [Subscribe to Marketplace Developer News](https://jb.gg/mp-updates) to receive news and announcements.
 > Also follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/).
 >
-{type="tip"}
 
 ## 2022
 

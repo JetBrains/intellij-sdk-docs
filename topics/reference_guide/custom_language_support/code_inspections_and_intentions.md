@@ -2,13 +2,13 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Product Help:** [Code inspections](https://www.jetbrains.com/help/idea/code-inspection.html), [Intention actions](https://www.jetbrains.com/help/idea/intention-actions.html)
 
 **Platform UI Guidelines:** [Inspections](https://jetbrains.design/intellij/text/inspections/)
 
-</microformat>
+</tldr>
 
 ### Inspections
 
@@ -17,7 +17,7 @@ The code inspections for custom languages use the same API as all other code ins
 The functionality of [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java) partially duplicates that of [Annotator](syntax_highlighting_and_error_highlighting.md#annotator).
 
 The main differences are:
-- supports batch analysis of code (through the <menupath>Code | Inspect Code...</menupath> action)
+- supports batch analysis of code (through the <ui-path>Code | Inspect Code...</ui-path> action)
 - the possibility to turn off the inspection (globally or by suppressing them on various levels)
 - ability to configure the inspection options.
 

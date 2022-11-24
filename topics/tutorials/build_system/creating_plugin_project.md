@@ -8,7 +8,7 @@ This documentation page describes a Gradle-based plugin project generated with t
 
 <procedure title="Create IDE Plugin" id="create-ide-plugin">
 
-Launch the <control>New Project</control> wizard via the <menupath>File | New | Project...</menupath> action and provide the following information:
+Launch the <control>New Project</control> wizard via the <ui-path>File | New | Project...</ui-path> action and provide the following information:
 1. Select the <control>IDE Plugin</control> generator type from the list on the left.
 2. Specify the project <control>Name</control> and <control>Location</control>.
 3. Choose the <control>Plugin</control> option in the project <control>Type</control>.
@@ -28,7 +28,7 @@ Launch the <control>New Project</control> wizard via the <menupath>File | New | 
 >
 > When targeting 2022.2 and later only, using Java 17 is required.
 >
-{type="note"}
+{style="note"}
 
 8. After providing all the information, click the <control>Create</control> button to generate the project.
 
@@ -130,7 +130,6 @@ tasks {
 
 > Consider using the [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template) which uses the Gradle setup and provides CI setup covered with GitHub Actions.
 >
-{type="tip"}
 
 #### Plugin Gradle Properties and Plugin Configuration File Elements
 
@@ -153,7 +152,7 @@ See the [Creating Actions](working_with_custom_actions.md) tutorial for step-by-
 
 ### Executing the Plugin
 
-The _IDE Plugin_ generator automatically creates the _Run Plugin_ run configuration that can be executed via the <menupath>Run | Run...</menupath> action or can be found in the <control>Gradle</control> tool window under the <control>Run Configurations</control> node.
+The _IDE Plugin_ generator automatically creates the _Run Plugin_ run configuration that can be executed via the <ui-path>Run | Run...</ui-path> action or can be found in the <control>Gradle</control> tool window under the <control>Run Configurations</control> node.
 
 To execute the Gradle `runIde` task directly, open the <control>Gradle</control> tool window and search for the <control>runIde</control> task under the <control>Tasks</control> node.
 If it's not on the list, hit the re-import button in the [toolbar](https://www.jetbrains.com/help/idea/jetgradle-tool-window.html#1eeec055) at the top of the Gradle tool window.
@@ -163,4 +162,3 @@ To debug your plugin in a _standalone_ IDE instance, please see [How to Debug Yo
 
 > For more information about how to work with Gradle-based projects see the [Working with Gradle in IntelliJ IDEA](https://www.youtube.com/watch?v=6V6G3RyxEMk) screencast and working with [Gradle tasks](https://www.jetbrains.com/help/idea/work-with-gradle-tasks.html) in the IntelliJ IDEA help.
 >
-{type="tip"}

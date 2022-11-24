@@ -11,4 +11,4 @@ This data is updated daily and also available in [JSON](https://jb.gg/android-st
 
 To get an insight on how to develop a plugin for Android Studio, visit the [Android Studio Plugin Development](android_studio.md) section.
 
-<include src="android_studio_releases.md" include-id="releases_table"></include>
+<include from="android_studio_releases.md" element-id="releases_table"></include>

@@ -7,16 +7,16 @@ There are useful tools, such as the <control>Internal Actions</control> menu, th
 <procedure title="Configuring Internal Mode">
 
 1. Start IntelliJ IDEA.
-2. From the main menu, select <menupath>Help | Edit Custom Properties...</menupath>.
+2. From the main menu, select <ui-path>Help | Edit Custom Properties...</ui-path>.
   This selection opens IntelliJ IDEA's <path>idea.properties</path> file.
   If it does not exist, IntelliJ IDEA will prompt to create one.
 3. Add the line shown below to the <path>idea.properties</path> file:
 
-```properties
+```
 idea.is.internal=true
 ```
 4. Save the <path>idea.properties</path> file and restart IntelliJ IDEA.
 
-5. The Internal Actions menu is now available in <menupath>Tools | Internal Actions</menupath>.
+5. The Internal Actions menu is now available in <ui-path>Tools | Internal Actions</ui-path>.
 
 </procedure>

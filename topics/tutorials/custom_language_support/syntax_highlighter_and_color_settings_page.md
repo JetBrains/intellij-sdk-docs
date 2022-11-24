@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Reference**: [](syntax_highlighting_and_error_highlighting.md)
 
@@ -10,9 +10,9 @@
 [`SimpleSyntaxHighlighterFactory`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleSyntaxHighlighterFactory.java),
 [`SimpleColorSettingsPage`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleColorSettingsPage.java)
 
-</microformat>
+</tldr>
 
-<include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
+<include from="language_and_filetype.md" element-id="custom_language_tutorial_header"></include>
 
 The first level of syntax highlighting is based on the lexer output, and is provided by `SyntaxHighlighter`.
 A plugin can also define color settings based on `ColorSettingPage` so the user can configure highlight colors.
@@ -93,7 +93,7 @@ Register the Simple Language color settings page with the IntelliJ Platform in t
 
 Run the project by using the Gradle [`runIde`](creating_plugin_project.md#running-a-plugin-with-the-runide-gradle-task) task.
 
-In the IDE Development Instance, open the Simple Language highlight settings page: <menupath>Settings/Preferences | Editor | Color Scheme | Simple</menupath>.
+In the IDE Development Instance, open the Simple Language highlight settings page: <ui-path>Settings/Preferences | Editor | Color Scheme | Simple</ui-path>.
 Each color initially inherits from a <control>Language Defaults</control> value.
 
 ![Color Settings Page](color_settings_page.png)

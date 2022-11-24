@@ -26,4 +26,4 @@ Before creating or altering content, please consult these guides:
 
 > Currently, building the site locally is not possible.
 >
-{type="note"}
+{style="note"}

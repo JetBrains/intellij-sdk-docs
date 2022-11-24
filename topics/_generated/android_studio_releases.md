@@ -1,6 +1,6 @@
 
 
-<chunk id="releases_table">
+<snippet id="releases_table">
 
 ## 2022.*
 
@@ -387,9 +387,9 @@
 [canary]: https://img.shields.io/badge/-canary-lightgrey?style=flat-square
 [preview]: https://img.shields.io/badge/-preview-darktgrey?style=flat-square
 
-</chunk>
+</snippet>
 
-<chunk id="releases_table_short">
+<snippet id="releases_table_short">
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
@@ -406,5 +406,5 @@
 [canary]: https://img.shields.io/badge/-canary-lightgrey?style=flat-square
 [preview]: https://img.shields.io/badge/-preview-darktgrey?style=flat-square
 
-</chunk>
+</snippet>
 

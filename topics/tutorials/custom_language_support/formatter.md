@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Reference**: [](code_formatting.md)
 
@@ -11,9 +11,9 @@
 
 **Testing**: [](formatter_test.md)
 
-</microformat>
+</tldr>
 
-<include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
+<include from="language_and_filetype.md" element-id="custom_language_tutorial_header"></include>
 
 The IntelliJ Platform includes a powerful framework for implementing formatting for custom languages.
 A formatter enables reformatting code automatically based on code style settings.
@@ -36,11 +36,11 @@ Define a formatter that removes extra spaces except for the single spaces around
 
 <compare style="top-bottom">
 
-```properties
+```
 foo  =    bar
 ```
 
-```properties
+```
 foo = bar
 ```
 </compare>
@@ -69,6 +69,6 @@ Run the plugin by using the Gradle [`runIde`](creating_plugin_project.md#running
 
 Open the example Simple Language [properties file ](lexer_and_parser_definition.md#run-the-project) in the IDE Development Instance.
 Add some extra spaces around the `=` separator between `language` and `English`.
-Reformat the code by invoking <menupath>Code | Reformat File...</menupath> dialog and choose <control>Run</control>.
+Reformat the code by invoking <ui-path>Code | Reformat File...</ui-path> dialog and choose <control>Run</control>.
 
 ![Formatter](formatter.png)

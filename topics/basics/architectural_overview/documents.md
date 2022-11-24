@@ -31,7 +31,7 @@ Thus, an unmodified `Document` instance can be garbage-collected if no one refer
 
 > Storing `Document` references in long-term data structures of a plugin will cause memory leaks.
 >
-{type="warning"}
+{style="warning"}
 
 ## How do I create a Document?
 

@@ -2,11 +2,11 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Product Help:** [SDKs](https://www.jetbrains.com/help/idea/working-with-sdks.html)
 
-</microformat>
+</tldr>
 
 Every project uses a Software Development Kit (SDK).
 For Java projects, the SDK is referred to as the JDK (Java Development Kit).
@@ -117,4 +117,4 @@ Within `DemoProjectSdkSetupValidator`:
 > `ProjectSdkSetupValidator` will not work in IntelliJ Platform-based IDEs such as PyCharm.
 > In such cases, you should register an implementation of [`EditorNotifications.Provider`](%gh-ic%/platform/platform-api/src/com/intellij/ui/EditorNotifications.java) at the `com.intellij.editorNotificationProvider` extension point and override the `createNotificationPanel()` method with the conditionality and panel setup you want.
 >
-{type="warning"}
+{style="warning"}

@@ -1,10 +1,12 @@
 [//]: # (title: Extension Points)
 
+<show-structure for="chapter" depth="2"/>
+
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 > See [Plugin Extensions](plugin_extensions.md) for _using_ extension points in your plugin.
 >
-{type="note"}
+{style="note"}
 
 By defining _extension points_ in your plugin, you can allow other plugins to extend your plugin's functionality.
 There are two types of extension points:
@@ -57,7 +59,7 @@ The plugin that contributes to the extension point will read those properties fr
 
 > See [](bundling_plugin_openapi_sources.md) section explaining how to expose extension points sources to other plugins.
 >
-{type="note"}
+{style="note"}
 
 ### Sample
 
@@ -86,7 +88,6 @@ public class MyBeanClass extends AbstractExtensionPointBean {
 
 > See [Extension properties code insight](plugin_extensions.md#extension-properties-code-insight) on how to provide smart completion/validation.
 >
-{type="tip"}
 
 For above extension points usage in _anotherPlugin_ would look like this (see also [Declaring Extensions](plugin_extensions.md#declaring-extensions)):
 

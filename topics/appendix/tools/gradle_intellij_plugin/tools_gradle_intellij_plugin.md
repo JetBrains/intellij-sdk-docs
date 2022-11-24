@@ -1,13 +1,13 @@
 [//]: # (title: Gradle IntelliJ Plugin)
 
-<toc-settings depth="2" mode="tree" structure-elements="chapter"/>
+<show-structure for="chapter" depth="2"/>
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The Gradle IntelliJ Plugin is a plugin for the Gradle build system to help configuring your environment for building, testing, verifying, and publishing plugins for IntelliJ-based IDEs.
 
 > Current Gradle IntelliJ Plugin version is [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square){type="joined"}](https://github.com/jetbrains/gradle-intellij-plugin/releases)
-{type="note"}
+{style="note"}
 
 This plugin allows you to build plugins for IntelliJ Platform using specified IntelliJ SDK and bundled or third-party plugins.
 
@@ -22,17 +22,16 @@ The plugin provides the functionalities like:
 > Before visiting the [Issue Tracker](https://github.com/JetBrains/gradle-intellij-plugin/issues), update both plugin and Gradle to the latest versions.
 > Please see [CONTRIBUTING](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/CONTRIBUTING.md) on how to submit feedback and contribute to this project.
 >
-{type="tip"}
 
 ## Usage
 
-<chunk id="gradle_plugin_223_problem">
+<snippet id="gradle_plugin_223_problem">
 
 > When targeting 2022.3+ IDE releases, using [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) version 1.10.0 or higher is required.
 >
-{type="warning"}
+{style="warning"}
 
-</chunk>
+</snippet>
 
 To enable this plugin in your Gradle-based project, register the plugin in the Gradle build script's `plugins` section:
 
@@ -62,8 +61,6 @@ When upgrading to `1.x` version, please make sure to follow the [migration guide
 > <control>Gradle JVM</control> must be set to Java 11 in <path>Settings/Preferences | Build, Execution, Deployment | Build Tools | Gradle</path>.
 >
 > If targeting 2022.3+, Java 17 is required instead.
->
-{type="tip"}
 
 > This project requires Gradle 6.8 or newer. However, it is highly recommended to always use the latest available Gradle version.
 > Update it with:
@@ -72,7 +69,6 @@ When upgrading to `1.x` version, please make sure to follow the [migration guide
 > ```
 >
 > See also: [Gradle Installation](https://gradle.org/install/) guide.
-{type="tip"}
 
 ### Snapshot Release
 The Snapshot release is a pre-release version built nightly from the latest main branch – as it is built every day using the same version number, it's not recommended to use it for production builds.
@@ -83,7 +79,7 @@ For switching to the snapshot release, point Gradle to the dedicated snapshot re
 >
 > To make sure you obtain the latest snapshot version, invoke Gradle using `--refresh-dependencies` option.
 >
-{type="note"}
+{style="note"}
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -145,7 +141,7 @@ gradle buildPlugin --configuration-cache
 
 or with enabling it in the <path>gradle.properties</path> file:
 
-```properties
+```
 org.gradle.unsafe.configuration-cache = true
 ```
 
@@ -214,7 +210,6 @@ Acceptable values
 > The _version number_ format is the most common option for specifying the version of the IntelliJ Platform.
 > Other formats should be used only when your plugin relies on specific parts of the targeted IDE or early-adopting EAP releases.
 >
-{type="tip"}
 
 
 #### type
@@ -280,7 +275,7 @@ Samples
 
 > `intellij.version` and `intellij.localPath` must not be specified at the same time.
 >
-{type="warning"}
+{style="warning"}
 
 
 #### localSourcesPath
@@ -522,7 +517,6 @@ Note, that this is a [`runIde`](#tasks-runide)-based task with predefined argume
 > If your plugin doesn't implement custom settings, it is recommended to [disable it](tools_gradle_intellij_plugin_faq.md#how-to-disable-building-searchable-options).
 > See also [`noSearchableOptionsWarning`](tools_gradle_intellij_plugin_build_features.md#nosearchableoptionswarning) build feature.
 >
-{type="tip"}
 
 
 #### outputDir
@@ -652,7 +646,7 @@ Default value
 
 > Available since the upcoming release
 >
-{type="warning"}
+{style="warning"}
 
 Lists all IDs of plugins bundled within the currently targeted IDE.
 This can be used to determine Plugin ID for setting up [](plugin_dependencies.md).
@@ -825,7 +819,6 @@ Patches <path>[plugin.xml](plugin_configuration_file.md)</path> files with value
 
 > To maintain and generate an up-to-date changelog, try using [Gradle Changelog Plugin](https://github.com/JetBrains/gradle-changelog-plugin).
 >
-{type="tip"}
 
 
 #### destinationDir
@@ -1143,7 +1136,7 @@ Accepted values
 
 > For more information about JBR versions and variants, see [](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance).
 >
-{type="note"}
+{style="note"}
 
 
 #### jbrVariant
@@ -1265,11 +1258,9 @@ Plugin Verifier DSL `runPluginVerifier { ... }` allows to define the list of IDE
 
 > For more details, examples or issues reporting, go to the [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) repository.
 >
-{type="tip"}
 
 > To run Plugin Verifier in [`-offline`](https://github.com/JetBrains/intellij-plugin-verifier/pull/58) mode, set the Gradle [`offline` start parameter](https://docs.gradle.org/current/javadoc/org/gradle/StartParameter.html#setOffline-boolean-).
 >
-{type="tip"}
 
 
 #### ideVersions
@@ -1419,7 +1410,7 @@ Acceptable values
 
 > For more information about JBR versions and variants, see [](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance).
 >
-{type="note"}
+{style="note"}
 
 
 #### jbrVariant
@@ -1503,7 +1494,7 @@ This task is automatically added to the ["After Sync" Gradle trigger](https://ww
 > After removing the Gradle IntelliJ Plugin from your project, the `Task 'setupDependencies' not found in root project` exception may occur.
 > See [Frequently Asked Questions](tools_gradle_intellij_plugin_faq.md#task-setupdependencies-not-found-in-root-project) for more details.
 >
-{type="warning"}
+{style="warning"}
 
 
 #### idea

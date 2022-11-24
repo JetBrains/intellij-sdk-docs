@@ -14,7 +14,7 @@ Light and heavy tests use different base classes or fixture classes, as describe
 
 > Because of the performance difference, we recommend plugin developers to write *light* tests whenever possible.
 >
-{type="note"}
+{style="note"}
 
 ## Light Tests
 
@@ -36,11 +36,11 @@ Before executing each test, the project instance will be reused if the test case
 
 > If you need to set up a multi-module project for your tests, you **must** write a heavy test.
 >
-{type="note"}
+{style="note"}
 
 > In 2019.3, `PlatformTestCase` has been renamed to [`HeavyPlatformTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/HeavyPlatformTestCase.java) reflecting its "heavy test" characteristics.
 >
-{type="note"}
+{style="note"}
 
 The setup code for a multi-module Java project looks something like that:
 

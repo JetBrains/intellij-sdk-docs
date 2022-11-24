@@ -42,7 +42,7 @@ public class PopupDialogAction extends AnAction {
 > This restriction prevents memory leaks.
 > For more information about why, see [](basic_action_system.md#action-implementation).
 >
-{type="warning"}
+{style="warning"}
 
 At this stage, `update()` implicitly defaults always to enable this action.
 The implementation of `actionPerformed()` does nothing.
@@ -59,7 +59,7 @@ A more comprehensive explanation of action registration is available in the [](b
 ### Registering an Action with the New Action Form
 
 IntelliJ IDEA has an embedded inspection that spots unregistered actions.
-Verify the inspection is enabled at <menupath>Settings/Preferences | Editor | Inspections | Plugin DevKit | Code | Component/Action not registered</menupath>.
+Verify the inspection is enabled at <ui-path>Settings/Preferences | Editor | Inspections | Plugin DevKit | Code | Component/Action not registered</ui-path>.
 Here is an example for this stage of the `PopupDialogAction` class:
 
 !["Action never used" inspection](action_never_used.png){width="600"}
@@ -80,9 +80,9 @@ The fields of the form are:
 * <control>Description</control> - Hint text to be displayed.
 * <control>Add to Group</control> - The action group - menu or toolbar - to which the action is added.
   Clicking on the list of groups and typing invokes a search, such as "ToolsMenu".
-* <control>Anchor</control> - Where the menu action should be placed in the <menupath>Tools</menupath> menu relative to the other actions in that menu.
+* <control>Anchor</control> - Where the menu action should be placed in the <ui-path>Tools</ui-path> menu relative to the other actions in that menu.
 
-In this case, `PopupDialogAction` would be available in the <menupath>Tools</menupath> menu, it would be placed at the top, and would have no shortcuts.
+In this case, `PopupDialogAction` would be available in the <ui-path>Tools</ui-path> menu, it would be placed at the top, and would have no shortcuts.
 
 After finishing the <control>New Action</control> form and applying the changes, the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of the plugin's <path>plugins.xml</path> file would contain:
 
@@ -142,21 +142,21 @@ For more information, see [](basic_action_system.md#setting-the-override-text-el
 
 ## Testing the Minimal Custom Action Implementation
 
-After performing the steps described above, [compile and run](creating_plugin_project.md#executing-the-plugin) the plugin to see the newly created action available as a <menupath>Tools</menupath> menu item, which is within the context of the main menu:
+After performing the steps described above, [compile and run](creating_plugin_project.md#executing-the-plugin) the plugin to see the newly created action available as a <ui-path>Tools</ui-path> menu item, which is within the context of the main menu:
 
 ![Register action](tools_menu_item_action.png){width="350"}
 
-To see the alternate, more verbose text declared by the `override-text` element, use <menupath>Help | Find Action...</menupath> and search for "Pop Dialog Action".
+To see the alternate, more verbose text declared by the `override-text` element, use <ui-path>Help | Find Action...</ui-path> and search for "Pop Dialog Action".
 The search shows the verbose menu text in a context outside the main menu:
 
 ![Override Text Display](find_action.png){width="500"}
 
 Selecting the action from the menu, keyboard/mouse shortcuts, or <control>Find Action</control> won't do anything at this point because the implementations are empty.
-However, it confirms the new entry appears at <menupath>Tools | Pop Dialog Action</menupath> and <menupath>Help | Find Action...</menupath>.
+However, it confirms the new entry appears at <ui-path>Tools | Pop Dialog Action</ui-path> and <ui-path>Help | Find Action...</ui-path>.
 
 ## Developing the `AnAction` Methods
 
-At this point, the new action `PopupDialogAction` is registered with the IntelliJ Platform and functions in the sense that  `update()` and `actionPerformed()` are called in response to user interaction with the IDE <menupath>Tools</menupath> menu.
+At this point, the new action `PopupDialogAction` is registered with the IntelliJ Platform and functions in the sense that  `update()` and `actionPerformed()` are called in response to user interaction with the IDE <ui-path>Tools</ui-path> menu.
 However, neither method implements any code to perform useful work.
 
 This section describes adding useful code to these methods.
@@ -204,7 +204,7 @@ The action's state and(or) presentation can be dynamically changed depending on 
 > This method needs to _execute very quickly_.
 > For more information about this constraint, see the warning in [](basic_action_system.md#overriding-the-anactionupdate-method).
 >
-{type="warning"}
+{style="warning"}
 
 In this example, the `update()` method relies on a `Project` object being available.
 This requirement means the user must have at least one project open in the IDE for the `PopupDialogAction` to be available.

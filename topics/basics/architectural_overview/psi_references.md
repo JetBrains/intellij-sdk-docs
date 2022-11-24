@@ -36,7 +36,6 @@ If the code currently open in the IDE does not compile, or in other situations, 
 
 > Please see also [](psi_performance.md#cache-results-of-heavy-computations).
 >
-{type="tip"}
 
 ## Contributed References
 

@@ -2,13 +2,13 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Code**: [`AllIcons`](%gh-ic%/platform/util/src/com/intellij/icons/AllIcons.java)
 
 **Platform UI Guidelines:** [Icons list](https://jetbrains.design/intellij/resources/icons_list/), [Icons](https://jetbrains.design/intellij/principles/icons/)
 
-</microformat>
+</tldr>
 
 Icons and images are used widely by IntelliJ Platform plugins.
 Plugins need icons mostly for [](basic_action_system.md), custom component renderers, [](tool_windows.md), and so on.
@@ -16,7 +16,6 @@ Plugins need icons mostly for [](basic_action_system.md), custom component rende
 > Plugin _Logos_, which represent a plugin itself, have different requirements than icons and images used within a plugin.
 > For more information, see the [](plugin_icon_file.md).
 >
-{type="tip"}
 
 ## Platform vs. Custom Icons
 
@@ -31,7 +30,6 @@ If custom icons are required, please refer to detailed [design guide](https://je
 
 > See [Action Basics](%gh-sdk-samples%/action_basics) sample plugin as a reference.
 >
-{type="tip"}
 
 In the case of a Gradle-based project, icons should be placed in the <path>resources</path> folder.
 If the project is DevKit-based, the recommended approach is to put icons to a dedicated [source root](https://www.jetbrains.com/help/idea/content-roots.html) marked as <control>Resources Root</control>, say <path>icons</path> or <path>resources</path>.
@@ -78,7 +76,7 @@ object MyIcons {
 
 > Starting with 2021.2, `*Icons` class is not required to be located in `icons` package but can use plugin's package: `icons.MyIcons` &rarr; `my.plugin.MyIcons`.
 >
-{type="note"}
+{style="note"}
 
 
 Use these constants inside <path>[plugin.xml](plugin_configuration_file.md)</path> when specifying `icon` attribute for [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) or extension point, as well in [`@Presentation`](%gh-ic%/platform/analysis-api/src/com/intellij/ide/presentation/Presentation.java) `icon` attribute.
@@ -118,7 +116,7 @@ Required icon sizes depend on the usage as listed in the following table:
 
 > SVG ([Scalable Vector Graphics](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics)) icons are supported since 2018.2.
 >
-{type="note"}
+{style="note"}
 
 As SVG icons can be scaled arbitrarily, they provide better results in HiDPI environments or when used in combination with bigger screen fonts (e.g., in presentation mode).
 
@@ -141,12 +139,11 @@ If the icon graphics are simple enough so that it renders perfectly in every sca
 
 > For generating the SVG icons suited for the IntelliJ-based IDEs, you may also use the third-party web tool [IntelliJ Icon Generator](https://bjansen.github.io/intellij-icon-generator/).
 >
-{type="tip"}
 
 ### PNG Format
 > Please consider using [SVG icons](#svg-format) for optimal results if your plugin targets 2018.2+.
 >
-{type="note"}
+{style="note"}
 
 All icon files must be placed in the same directory following this naming pattern (replace <path>.png</path> with <path>.svg</path> for SVG icons):
 

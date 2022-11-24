@@ -49,11 +49,9 @@ The following minimal sample demonstrates all details required when exposing UI 
 
 > It is highly recommended to always provide a `description` entry, so Theme authors can understand usages.
 >
-{type="tip"}
 
 > Do not remove existing keys, but deprecate them instead to help Theme authors upgrade their existing themes.
 >
-{type="tip"}
 
 Color keys can be used via `JBColor.namedColor()` providing defaults for Light and Dark theme:
 
@@ -158,7 +156,7 @@ Examples of Swing keys:
 
 > This section is relevant for IntelliJ Platform developers only.
 >
-{type="note"}
+{style="note"}
 
 Metadata is split up as follows:
 * [`IntelliJPlatform.themeMetadata.json`](%gh-ic%/platform/platform-resources/src/themes/metadata/IntelliJPlatform.themeMetadata.json) - all keys from IntelliJ Platform and custom UI components

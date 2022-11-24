@@ -5,7 +5,7 @@
 ## Introduction
 
 As discussed in the [](settings_guide.md), plugins can add Settings to IntelliJ Platform-based IDEs.
-The IDE displays the Settings in response to a user choosing <menupath>Settings/Preferences</menupath>.
+The IDE displays the Settings in response to a user choosing <ui-path>Settings/Preferences</ui-path>.
 Custom Settings are displayed and function just like those native to the IDE.
 
 ## Overview of Custom Settings Implementation
@@ -24,7 +24,7 @@ The structure of the implementation is the same for Project Settings, but there 
 > [`MarkdownSettingsConfigurable`](%gh-ic%/plugins/markdown/core/src/org/intellij/plugins/markdown/settings/MarkdownSettingsConfigurable.kt)
 > classes for the settings example implemented in Kotlin with usage of [Kotlin UI DSL](kotlin_ui_dsl_version_2.md).
 >
-{type="note"}
+{style="note"}
 
 ## The AppSettingsState Class
 
@@ -131,7 +131,7 @@ Also review notes about [IntelliJ Platform Interactions](settings_guide.md#intel
 ## Testing the Custom Settings Plugin
 
 After performing the steps described above, compile and run the plugin in a Development Instance to see the custom Settings available in the Settings Dialog.
-Open the IDE Settings by selecting <menupath>Settings/Preferences | Tools | SDK: Application Settings Example</menupath>.
+Open the IDE Settings by selecting <ui-path>Settings/Preferences | Tools | SDK: Application Settings Example</ui-path>.
 The settings are preloaded with the default values:
 
 !["Settings Defaults"](settings_defaults.png){width="600"}

@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<excerpt>Writing and notation styleguide for SDK Docs.</excerpt>
+<link-summary>Writing and notation styleguide for SDK Docs.</link-summary>
 
 This document describes the writing style used in authoring open-source IntelliJ Platform SDK documentation.
 Before you begin, please read this page thoroughly, as well as the [Code of Conduct](intellij-sdk-docs-original_CODE_OF_CONDUCT.md) and [License](https://github.com/JetBrains/intellij-sdk-docs/blob/main/LICENSE.txt) documents.
@@ -39,15 +39,15 @@ It **must** be followed by a copyright notice, formatted using HTML comment nota
 
 #### Excerpt
 
-Every page **should** provide a short excerpt (usually one sentence) using dedicated `<excerpt>` tag before the main page contents:
+Every page **should** provide a short excerpt (usually one sentence) using dedicated `<link-summary>` tag before the main page contents:
 
 ```html
-<excerpt>Listeners allow subscription to application and project events.</excerpt>
+<link-summary>Listeners allow subscription to application and project events.</link-summary>
 ```
 
 #### Highlighted Links
 
-A page can highlight related topics and other important links before the actual content using `<microformat>` tag.
+A page can highlight related topics and other important links before the actual content using `<tldr>` tag.
 Links must be grouped using "**Bold Category Name**: link1, link2, \[...]" ([Example](language_and_filetype.md)).
 
 Use _Reference_ to link to other topics, _Code_ to link to code/files, _Platform UI Guidelines_ for links to [IntelliJ Platform UI Guidelines](https://jetbrains.design/intellij/), and _Product Help_ for links to [IntelliJ IDEA Help](https://www.jetbrains.com/help/idea).
@@ -75,7 +75,7 @@ For very long sentences, add additional line breaks after `,`, `:` or other sens
 Very long [links](#links) should also be on a separate line.
 
 Consistent text styles are used to standardize references and keywords:
-* Menu paths are wrapped using `<menupath>` with pipe characters separating each level: `<menupath>Settings/Preferences | Editor</menupath>`: <menupath>Settings/Preferences | Editor</menupath>
+* Menu paths are wrapped using `<ui-path>` with pipe characters separating each level: `<ui-path>Settings/Preferences | Editor</ui-path>`: <ui-path>Settings/Preferences | Editor</ui-path>
   Menu paths to settings always start with "Settings/Preferences" to cover all platforms.
   Inside tables, use `&#124;` instead of `|` to prevent escaping problems.
 * User interface element names like labels, buttons, checkboxes, etc. are wrapped using `<control>`: `Press <control>Continue</continue>`: Press <control>Continue</control>
@@ -100,7 +100,7 @@ For example, `## Basics` gets the ID of `basics`, and can be linked either in th
 
 In some cases (e.g., the same heading text appears multiple times on the same page) it is necessary to specify a distinct ID manually:
 
-```md
+```
 ## Task 1
 ### Properties
 {id="task1-properties"}
@@ -169,7 +169,7 @@ Source code is represented by using code fences, which are three backticks.
 
 Syntax highlighting is applied by specifying the language after the first set of ticks:
 
-```md
+```
     ```xml
         <tagName attribute="value">XML Text</tagName>
     ```
@@ -178,7 +178,7 @@ Supported languages include `xml`, `java`, `kotlin`, `groovy`, `bash`, `md`, `ph
 
 > Source code blocks must have one blank line before and after them, and must have a language specification for highlighting (use `text` as fallback).
 >
-{type="note"}
+{style="note"}
 
 Whole files can be imported on a page using `src` attribute after code fences specifying the full path relative to <path>code_samples</path> root folder.
 
@@ -196,13 +196,13 @@ In any case, please keep code samples concise and avoid any unnecessary "surroun
 
 The syntax is to use the pipe (`|`) and minus symbols:
 
-```md
+```
     | Column 1 | Column 2 | Column 3 |
     | -------- | -------- | -------- |
     | Blah     | Blah     | Blah     |
 ```
 
-Use `&#124;` instead of `|` to prevent escaping problems for `<menupath>` elements.
+Use `&#124;` instead of `|` to prevent escaping problems for `<ui-path>` elements.
 
 ### Notes and Callouts
 
@@ -211,14 +211,14 @@ The converter looks at the `type` attribute specified after the text block.
 If so, it applies a callout style.
 The example below will be displayed as a callout, styled as a "note":
 
-```md
-> This is a note
->
-{type="note"}
 ```
 > This is a note
 >
-{type="note"}
+{style="note"}
+```
+> This is a note
+>
+{style="note"}
 
 The styles available for callouts are:
 * `tip` - Information that makes the reader more productive.
@@ -230,7 +230,6 @@ The styles available for callouts are:
 > There are always exceptions, but the best practice is to resolve all TODOs before the final review.
 > If immediate resolution isn't possible, write a YouTrack [SDK Issue](https://youtrack.jetbrains.com/issues/IJSDK) that captures the TODO and remove the comment from the document.
 >
-{type="tip"}
 
 ### Images
 
@@ -248,13 +247,13 @@ Optimize the image files using a tool such as the [PNG optimizer](https://plugin
 
 Images are embedded in a document by adding a Markdown link to the image like so:
 
-```md
+```
     ![Alt text](image.png)
 ```
 
 If the width of an image needs to be adjusted, it can be specified as follows:
 
-```md
+```
     ![Alt text](image.png){width="42"}
 ```
 
@@ -267,7 +266,7 @@ Images too big to fit into main content can have <control>+</control> overlay co
 
 For **PNG** images, provide an additional zoomed variant <path>image.zoomed.png</path> with this notation:
 
-```md
+```
     ![Alt text](image.png){thumbnail="true"}
 ```
 
@@ -277,7 +276,7 @@ For **PNG** images, provide an additional zoomed variant <path>image.zoomed.png<
 
 For **SVG** images, use this notation:
 
-```md
+```
     ![Alt text](image.svg){thumbnail-same-file="true"}
 ```
 

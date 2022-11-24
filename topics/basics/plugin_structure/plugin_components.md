@@ -5,7 +5,7 @@
 > When writing new plugins, creating Components should be avoided.
 > Any existing Components should be migrated to services, extensions, or listeners (see below).
 >
-{type="warning"}
+{style="warning"}
 
 Plugin Components are a legacy feature supported for compatibility with plugins created for older versions of the IntelliJ Platform.
 Plugins using Components do not support [dynamic loading](dynamic_plugins.md) (the ability to install, update, and uninstall plugins without restarting the IDE).
@@ -33,7 +33,7 @@ To subscribe to events, use a [listener](plugin_listeners.md) or create an [exte
 
 > Executing code on application startup should be avoided whenever possible because it slows down startup.
 >
-{type="warning"}
+{style="warning"}
 
 Plugin code should only be executed when projects are opened (see [Project Open](#project-open)) or when the user invokes an action of a plugin.
 If this cannot be avoided, add a [listener](plugin_listeners.md) subscribing to the [`AppLifecycleListener`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/AppLifecycleListener.java) topic.

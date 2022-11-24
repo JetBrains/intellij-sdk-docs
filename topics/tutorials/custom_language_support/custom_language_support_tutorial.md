@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<excerpt>Tutorial for creating a .properties-like custom language.</excerpt>
+<link-summary>Tutorial for creating a .properties-like custom language.</link-summary>
 
 In this tutorial we will add support for a [.properties](https://en.wikipedia.org/wiki/.properties) language and its usages within Java code.
 
@@ -13,13 +13,12 @@ In this tutorial we will add support for a [.properties](https://en.wikipedia.or
 >
 > The accompanying [](writing_tests_for_plugins.md) tutorial covers testing the functionality; corresponding parts are linked under **Testing**.
 >
-{type="tip"}
 
 
 > The complete and fully working example plugin used in this tutorial is the [`simple_language_plugin`](%gh-sdk-samples%/simple_language_plugin) code sample.
 > See [](code_samples.md) on how to build and run it.
 >
-{type="note"}
+{style="note"}
 
 This a step-by-step tutorial, and it requires completing each step, in order:
 
@@ -49,4 +48,4 @@ This a step-by-step tutorial, and it requires completing each step, in order:
 >
 > Please be specific about the topics and reasons for adding them, and leave your email in case we need more details.
 >
-{type="note"}
+{style="note"}

@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<excerpt>Customizing IDE UI by developing a custom theme.</excerpt>
+<link-summary>Customizing IDE UI by developing a custom theme.</link-summary>
 
 Beginning with the 2019.1 release, custom themes are supported.
 Custom themes give designers control of the appearance of built-in UI elements.
@@ -18,7 +18,6 @@ The [themes available for download](https://plugins.jetbrains.com/search?headlin
 
 > See the [Themes in IntelliJ-based IDEs](https://blog.jetbrains.com/platform/2021/10/themes-in-intellij-based-ides/) blog post for an overview (available in multiple languages).
 >
-{type="tip"}
 
 ## Theme Plugin Development
 
@@ -46,4 +45,4 @@ If your project requires any of the mentioned capabilities, see [Developing a Pl
 
 > The recording of _Busy Plugin Developer. Episode 3_ shows how to [create a new theme](https://youtu.be/9J0j-90dC60?t=582) using the Gradle approach.
 >
-{type="note"}
+{style="note"}

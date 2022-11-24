@@ -35,7 +35,7 @@ See [](basic_action_system.md#registering-actions-in-pluginxml) for more informa
 
 ### Binding Action Groups to UI Components
 
-The following sample shows how to use an [`<add-to-group>`](plugin_configuration_file.md#idea-plugin__actions__action__add-to-group) element to place a custom action group relative to an entry in the <menupath>Tools</menupath> menu.
+The following sample shows how to use an [`<add-to-group>`](plugin_configuration_file.md#idea-plugin__actions__action__add-to-group) element to place a custom action group relative to an entry in the <ui-path>Tools</ui-path> menu.
 The attribute `relative-to-action` references the action `id` for `PopupDialogAction`, not a native IntelliJ menu entry.
 Rather `PopupDialogAction` is defined in the same [`plugin.xml`](%gh-sdk-samples%/action_basics/src/main/resources/META-INF/plugin.xml) file.
 This group is placed after the single entry for the action `PopupDialogAction`, as defined in the tutorial [Creating Actions](working_with_custom_actions.md#registering-an-action-with-the-new-action-form).
@@ -81,10 +81,10 @@ The action in this group will be displayed in the menu as "A Group Action".
 </group>
 ```
 
-After performing the steps described above, the action group and its content will be available in the <menupath>Tools</menupath> menu.
-The underlying `PopupDialogAction` implementation is reused for two entries in the <menupath>Tools</menupath> menu:
-* Once for the top menu entry <menupath>Tools | Pop Dialog Action</menupath> with the action `id` equal to `org.intellij.sdk.action.PopupDialogAction` as set in the [Creating Actions](working_with_custom_actions.md#registering-an-action-with-the-new-action-form) tutorial.
-* A second time for the menu entry <menupath>Tools | Static Grouped Actions | A Group Action</menupath> with the action `id` equal to `org.intellij.sdk.action.GroupPopDialogAction`.
+After performing the steps described above, the action group and its content will be available in the <ui-path>Tools</ui-path> menu.
+The underlying `PopupDialogAction` implementation is reused for two entries in the <ui-path>Tools</ui-path> menu:
+* Once for the top menu entry <ui-path>Tools | Pop Dialog Action</ui-path> with the action `id` equal to `org.intellij.sdk.action.PopupDialogAction` as set in the [Creating Actions](working_with_custom_actions.md#registering-an-action-with-the-new-action-form) tutorial.
+* A second time for the menu entry <ui-path>Tools | Static Grouped Actions | A Group Action</ui-path> with the action `id` equal to `org.intellij.sdk.action.GroupPopDialogAction`.
 
 ![Simple Action Group](grouped_action.png){width="550"}
 
@@ -167,7 +167,7 @@ Now the translations for the `text` and `description` attributes must be provide
 Note there are two sets of `text` and `description` translations, one for the action and one for the group.
 Conceivably, there could be another set of translations for the action if it used the [`<override-text>`](plugin_configuration_file.md#idea-plugin__actions__action__override-text) attribute.
 
-```properties
+```
 action.org.intellij.sdk.action.CustomGroupedAction.text=A Popup Action[en]
 action.org.intellij.sdk.action.CustomGroupedAction.description=SDK popup grouped action example[en]
 group.org.intellij.sdk.action.CustomDefaultActionGroup.text=Popup Grouped Actions[en]
@@ -215,7 +215,7 @@ public class DynamicActionGroup extends ActionGroup {
 ### Registering a Variable Action Group
 
 To register the dynamic menu group, a [`<group>`](plugin_configuration_file.md#idea-plugin__actions__group) attribute needs to be placed in the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of [`plugin`.xml](%gh-sdk-samples%/action_basics/src/main/resources/META-INF/plugin.xml).
-When enabled, this group appears just below the [Static Grouped Actions](#binding-action-groups-to-ui-components) in the <menupath>Tools</menupath> menu:
+When enabled, this group appears just below the [Static Grouped Actions](#binding-action-groups-to-ui-components) in the <ui-path>Tools</ui-path> menu:
 
 ```xml
 <group
@@ -235,7 +235,7 @@ When enabled, this group appears just below the [Static Grouped Actions](#bindin
 > If a`<group>` element's `class` attribute names a class derived from `ActionGroup`, then any static `<action>` declarations in that group throw an exception.
 > For a statically defined group, use `DefaultActionGroup`.
 >
-{type="warning"}
+{style="warning"}
 
 ### Adding Child Actions to the Dynamic Group
 
@@ -258,6 +258,6 @@ public class DynamicActionGroup extends ActionGroup {
 }
 ```
 
-After providing the implementation of `DynamicActionGroup` and making it return a non-empty array of actions, the third position in the <menupath>Tools</menupath> menu will contain a new group of actions:
+After providing the implementation of `DynamicActionGroup` and making it return a non-empty array of actions, the third position in the <ui-path>Tools</ui-path> menu will contain a new group of actions:
 
 ![Dynamic Action Group](dynamic_action_group.png){width="600"}

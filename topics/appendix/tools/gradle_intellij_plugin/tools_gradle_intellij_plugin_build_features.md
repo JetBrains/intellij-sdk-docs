@@ -7,13 +7,13 @@ Build Features are an implementation of the feature flags concept and let you co
 
 To enable or disable a particular feature, add a Project property to the <path>gradle.properties</path> file with the following pattern:
 
-```properties
+```
 org.jetbrains.intellij.buildFeature.<buildFeatureName>=<true|false>
 ```
 
 E.g., to disable the [`selfUpdateCheck`](#selfupdatecheck) feature, add this line:
 
-```properties
+```
 org.jetbrains.intellij.buildFeature.selfUpdateCheck=false
 ```
 
@@ -28,7 +28,7 @@ Default value
 
 Example
 :
-```properties
+```
 org.jetbrains.intellij.buildFeature.buildSearchableOptions=false
 ```
 
@@ -45,7 +45,7 @@ Default value
 
 Example
 :
-```properties
+```
 org.jetbrains.intellij.buildFeature.paidPluginSearchableOptionsWarning=false
 ```
 
@@ -68,6 +68,6 @@ Default value
 
 Example
 :
-```properties
+```
 org.jetbrains.intellij.buildFeature.selfUpdateCheck=false
 ```

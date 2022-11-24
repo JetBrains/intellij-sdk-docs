@@ -44,7 +44,7 @@ Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code i
 > The copyright statement must appear at the top of every source file.
 > Use the [IntelliJ Platform SDK](https://github.com/JetBrains/intellij-sdk-docs/tree/main/.idea/copyright) copyright profile.
 >
-{type="note"}
+{style="note"}
 
 ## Directory Naming Conventions for SDK Plugins
 
@@ -194,7 +194,7 @@ Code samples should build cleanly, with no warnings or errors, and new code samp
 Testers should complete the following checklist.
 Here the term "IDE" means the IntelliJ Platform-based IDE in which the plugin is designed to run:
 * The plugin should load in the IDE.
-* The correct information about the plugin should display in the <menupath>Settings/Preferences | Plugins</menupath> panel.
+* The correct information about the plugin should display in the <ui-path>Settings/Preferences | Plugins</ui-path> panel.
 * If applicable, the plugin UI, such as tool windows, menu additions, etc. should display correctly.
 * The functionality of the plugin should be tested with a sample file.
 * If applicable, the plugin should pass unit tests.

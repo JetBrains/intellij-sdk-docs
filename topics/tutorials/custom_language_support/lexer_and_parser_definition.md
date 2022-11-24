@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Reference**: [](implementing_lexer.md)
 
@@ -14,9 +14,9 @@
 
 **Testing**: [](parsing_test.md)
 
-</microformat>
+</tldr>
 
-<include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
+<include from="language_and_filetype.md" element-id="custom_language_tutorial_header"></include>
 
 The lexical analyzer defines how the contents of a file are broken into tokens, which is the basis for supporting custom language features.
 The easiest way to create a lexer is to use [JFlex](https://jflex.de/).
@@ -31,7 +31,7 @@ Define a [`Simple.flex`](%gh-sdk-samples%/simple_language_plugin/src/main/java/o
 
 ## Generate a Lexer Class
 
-Now generate a lexer class via <menupath>Run JFlex Generator</menupath> from the context menu on <path>Simple.flex</path> file.
+Now generate a lexer class via <ui-path>Run JFlex Generator</ui-path> from the context menu on <path>Simple.flex</path> file.
 
 The Grammar-Kit plugin uses the JFlex lexer generation.
 When running for the first time, JFlex prompts for a destination folder to download the JFlex library and skeleton.
@@ -41,7 +41,6 @@ After that, the IDE generates the lexer under the <path>gen</path> directory, fo
 
 > [](tools_gradle_grammar_kit_plugin.md) can be used alternatively.
 >
-{type="tip"}
 
 ## Define a Lexer Adapter
 

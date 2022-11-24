@@ -11,7 +11,7 @@ The test project files exist either in a temporary directory or in an in-memory 
 > If your tests use the in-memory implementation, and you abort the execution of your tests, the persisted filesystem caches may get out of sync with the in-memory structures, and you may get spurious errors in your tests.
 > If you get an unexpected error after a series of successful runs, **try rerunning the test**, and if that doesn't help, **delete the "system" subdirectory** in your [sandbox directory](ide_development_instance.md#the-development-instance-sandbox-directory).
 >
-{type="warning"}
+{style="warning"}
 
 ## Testdata Files
 
@@ -26,11 +26,11 @@ The default implementation assumes running as part of the IntelliJ Platform sour
 > This allows us to reuse most of the code between different test methods that test various aspects of the same feature, and this approach is also recommended for third-party plugin tests.
 > The name of the test method can be retrieved using `UsefulTestCase.getTestName()`.
 >
-{type="note"}
+{style="note"}
 
 > If your plugin builds on top of Java support, please see [](testing_faq.md#how-to-test-a-jvm-language) to set up your test environment to obtain the required _Mock JDK_ automatically.
 >
-{type="note"}
+{style="note"}
 
 To copy files or directories from your <path>testdata</path> directory to the test project directory, you can use the `copyFileToProject()` and `copyDirectoryToProject()` methods from [`CodeInsightTestFixture`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/CodeInsightTestFixture.java).
 
@@ -44,7 +44,6 @@ These methods copy the specified files from the <path>testdata</path> directory 
 
 > The IDE supports smart navigation between test code and related test data file(s); see this [blog post](https://blog.jetbrains.com/platform/2017/10/improvements-in-testing-intellij-platform-plugins/) for more details.
 >
-{type="tip"}
 
 ### Special Markup
 When a file is opened in the in-memory editor, special markup in the file content can specify the caret position or selection.

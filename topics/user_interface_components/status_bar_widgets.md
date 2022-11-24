@@ -2,11 +2,11 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Product Help:** [Status bar](https://www.jetbrains.com/help/idea/guided-tour-around-the-user-interface.html#status-bar)
 
-</microformat>
+</tldr>
 
 The IntelliJ Platform allows plugins to extend the IDE status bar with additional custom widgets.
 
@@ -66,7 +66,7 @@ Use one of the existing predefined widget appearance options:
 
 > Note that they can't be combined to get, for example, an icon and a text.
 >
-{type="note"}
+{style="note"}
 
 To use the selected appearance, return a class that implements one of the above interfaces from `getPresentation()`.
 

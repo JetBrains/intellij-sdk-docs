@@ -17,7 +17,6 @@ This page is intended to list the key topics that a plugin author would be inter
 
 > See also [](glossary.md) for a handy reference of common terms.
 >
-{type="tip"}
 
 ## Code Model
 

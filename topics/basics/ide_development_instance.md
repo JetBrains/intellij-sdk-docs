@@ -8,7 +8,6 @@ This page describes how to control some of the settings for the Development Inst
 
 > Please see also [Advanced Configuration](https://www.jetbrains.com/help/idea/tuning-the-ide.html) for general VM options and properties.
 >
-{type="tip"}
 
 ## Using a JetBrains Runtime for the Development Instance
 
@@ -49,7 +48,7 @@ Available JBR variants are:
 > For `JBR 17`, `dcevm` is bundled by default.
 > As a consequence, separated `dcevm` and `nomod` variants are no longer available.
 >
-{type="note"}
+{style="note"}
 
 <tabs group="project-type">
 
@@ -79,7 +78,7 @@ Please note that any unloading problems in a production environment will ask the
 
 > Auto-Reload does not work when the sandbox IDE instance is running under a debugger.
 >
-{type="warning"}
+{style="warning"}
 
 <tabs group="project-type">
 
@@ -93,7 +92,7 @@ After starting the sandbox IDE instance, run [`buildPlugin`](tools_gradle_intell
 
 > [`buildSearchableOptions`](tools_gradle_intellij_plugin.md#tasks-buildsearchableoptions) task must currently be [disabled explicitly](tools_gradle_intellij_plugin_faq.md#how-to-disable-building-searchable-options) to workaround _Only one instance of IDEA can be run at a time_ problem.
 >
-{type="warning"}
+{style="warning"}
 
 </tab>
 

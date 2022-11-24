@@ -2,11 +2,11 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Product Help:** [Source file structure](https://www.jetbrains.com/help/idea/viewing-structure-of-a-source-file.html)
 
-</microformat>
+</tldr>
 
 The Structure View implementation used for a specific file type can be customized on many levels.
 If a custom language plugin provides an implementation of the [`StructureView`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/structureView/StructureView.java) interface, it can completely replace the standard structure view implementation with a custom user interface component.
@@ -14,7 +14,6 @@ However, for most languages, this is not necessary, and the standard `StructureV
 
 > To modify an existing Structure View (e.g., add/filter nodes of builtin language support), use [`StructureViewExtension`](%gh-ic%/platform/structure-view-impl/src/com/intellij/ide/structureView/StructureViewExtension.java) registered in `com.intellij.lang.structureViewExtension` extension point.
 >
-{type="tip"}
 
 The starting point for the structure view is the [`PsiStructureViewFactory`](%gh-ic%/platform/editor-ui-api/src/com/intellij/lang/PsiStructureViewFactory.java) interface, which is registered in the `com.intellij.lang.psiStructureViewFactory` extension point.
 

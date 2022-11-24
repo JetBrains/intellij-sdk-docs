@@ -4,7 +4,7 @@
 
 > When using additional repositories, make sure to use HTTPS always.
 >
-{type="warning"}
+{style="warning"}
 
 JetBrains maintains public repositories that host artifacts related to the IntelliJ Platform, such as binaries and source code.
 These repositories make artifacts more accessible for plugin developers.
@@ -29,7 +29,7 @@ A link to this repository should be added to Maven POM or Gradle build script wh
 
 > Usages of deprecated URL `https://jetbrains.bintray.com/intellij-third-party-dependencies` must be replaced with `https://cache-redirector.jetbrains.com/intellij-dependencies` in build scripts.
 >
-{type="warning"}
+{style="warning"}
 
 ## Using IntelliJ Platform Module Artifacts
 

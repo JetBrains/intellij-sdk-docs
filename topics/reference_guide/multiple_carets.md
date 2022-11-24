@@ -2,11 +2,11 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Product Help:** [Multiple cursors and selection ranges](https://www.jetbrains.com/help/idea/multicursor.html)
 
-</microformat>
+</tldr>
 
 Most editor actions (keyboard navigation, text insertion and deletion, etc.) will be applied to each caret independently.
 Each caret has its own associated selection, which is a continuous range of document characters (can be empty).
@@ -68,7 +68,7 @@ Examples of its usage:
 > [`TypedHandlerDelegate`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/TypedHandlerDelegate.java) implementations are invoked automatically for each caret.
 > If one wants to implement custom multicaret behaviour on typing, [`TypedActionHandler`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java) needs to be provided instead.
 >
-{type="note"}
+{style="note"}
 
 ## Code Insight Actions
 

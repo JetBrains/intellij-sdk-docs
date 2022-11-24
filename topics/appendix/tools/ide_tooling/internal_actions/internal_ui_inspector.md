@@ -2,16 +2,16 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<excerpt>UI Inspector allows checking properties of a component selected in the frame of running IDE instance.</excerpt>
+<link-summary>UI Inspector allows checking properties of a component selected in the frame of running IDE instance.</link-summary>
 
 The _UI Inspector_ is a tool to interrogate elements of the IntelliJ IDEA UI to get an internal description of each element.
 UI elements can be inspected interactively by clicking on the element while the _UI Inspector_ is enabled.
 
-<include src="internal_actions_intro.md" include-id="enable_internal_mode_tip"></include>
+<include from="internal_actions_intro.md" element-id="enable_internal_mode_tip"></include>
 
 ## Enabling the UI Inspector
 
-Before using the _UI Inspector_, it must be enabled by selecting the menu item <menupath>Tools | Internal Actions | UI | UI Inspector</menupath>.
+Before using the _UI Inspector_, it must be enabled by selecting the menu item <ui-path>Tools | Internal Actions | UI | UI Inspector</ui-path>.
 The enabled state of the _UI Inspector_ is modal; it remains enabled until it is disabled by selecting the _UI Inspector_ menu item again.
 
 ## Using the UI Inspector
@@ -31,6 +31,7 @@ The _UI Inspector_ displays the icon details:
 Sometimes, inspecting complex component's properties is not enough to understand how the component was created and configured.
 _UI Inspector_ gives the possibility of finding the code where the selected component was added, which makes it much easier to understand which APIs can be used to build custom components with similar complexity.
 To find the place were component was added, select the `added-at` property to show the stacktrace:
+
 ![added-at Stacktrace](internal_ui_inspector_added_at.png)
 
 ### Specific Component Properties

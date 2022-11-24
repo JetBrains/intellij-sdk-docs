@@ -2,9 +2,9 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
+<include from="language_and_filetype.md" element-id="custom_language_tutorial_header"></include>
 
-<microformat>
+<tldr>
 
 **Reference**: [](code_inspections_and_intentions.md)
 
@@ -12,7 +12,7 @@
 [`SimpleCreatePropertyQuickFix`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCreatePropertyQuickFix.java),
 [`SimpleAnnotator`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleAnnotator.java)
 
-</microformat>
+</tldr>
 
 A quick fix for a custom language supports the IntelliJ Platform-based IDE feature [Intention Actions](https://www.jetbrains.com/help/idea/intention-actions.html#apply-intention-actions).
 For the Simple Language, this tutorial adds a quick fix that helps to define an unresolved property from its usage.

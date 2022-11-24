@@ -21,13 +21,11 @@ When accessing an index, specify the key you're interested in and get back the l
 
 > In some cases, using [Gists](indexing_and_psi_stubs.md#gists) can be considered as an alternative.
 >
-{type="tip"}
 
 ## Implementing a File-Based Index
 
 > A relatively simple file-based index implementation is the [UI Designer bound forms index](%gh-ic%/plugins/ui-designer/src/com/intellij/uiDesigner/binding/FormClassIndex.java), storing FQN of bound implementation class for [GUI Designer](https://www.jetbrains.com/help/idea/gui-designer-basics.html) <path>.form</path> files.
 >
-{type="tip"}
 
 Each specific index implementation is a class extending [`FileBasedIndexExtension`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndexExtension.java) registered via `com.intellij.fileBasedIndex` extension point.
 
@@ -58,7 +56,7 @@ Please see also [Improving indexing performance](indexing_and_psi_stubs.md#impro
 >
 > Please set system property `intellij.idea.indices.debug`/`intellij.idea.indices.debug.extra.sanity` to `true` to enable additional debugging assertions during development to assert correct index implementation.
 >
-{type="warning"}
+{style="warning"}
 
 ## Accessing a File-Based Index
 
@@ -66,7 +64,7 @@ Access to file-based indexes is performed through the [`FileBasedIndex`](%gh-ic%
 
 > Please note index access is restricted during [Dumb Mode](indexing_and_psi_stubs.md#dumb-mode).
 >
-{type="note"}
+{style="note"}
 
 The following primary operations are supported:
 
@@ -75,7 +73,7 @@ The following primary operations are supported:
 
 > The returned data is guaranteed to contain all keys found in up-to-date project content, but may also include additional keys not currently found in the project.
 >
-{type="note"}
+{style="note"}
 
 * `getValues()` allows to get all values associated with a specific key but not the files in which they were found.
 * `getContainingFiles()` allows collecting all files in which a particular key was encountered.
@@ -98,7 +96,7 @@ Nested index access is now possible.
 > Nested index access is forbidden as it might lead to a deadlock.
 > Collect all necessary data from index _A_ first, then process results while accessing index _B_.
 >
-{type="warning"}
+{style="warning"}
 
 </tab>
 </tabs>

@@ -88,7 +88,7 @@ Register it in <path>[plugin.xml](plugin_configuration_file.md)</path> using `co
 
 > When targeting 2019.1 or earlier, use `com.intellij.dom.fileDescription` extension point instead.
 >
-{type="note"}
+{style="note"}
 
 You can now get the file element from [`DomManager`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/DomManager.java).
 To get the "239" value, you only have to write the following code:
@@ -630,7 +630,7 @@ Example can be found in Struts 2 plugin (package `com.intellij.struts2.dom.strut
 
 > Please use it sparingly and only for heavily accessed parts in your DOM model, as it increases disk space usage/indexing run time.
 >
-{type="note"}
+{style="note"}
 
 DOM elements can be stubbed, so (costly) access to XML/PSI is not necessary (see [Indexing and PSI Stubs](indexing_and_psi_stubs.md) for similar feature for custom languages).
 Performance relevant elements, tag or attribute getters can simply be annotated with `@com.intellij.util.xml.Stubbed`.
@@ -640,7 +640,7 @@ Set and increase `stubVersion` of `com.intellij.dom.fileMetaData` extension when
 
 > This API is unmaintained and will likely be removed in future versions.
 >
-{type="warning"}
+{style="warning"}
 
 ### Forms
 

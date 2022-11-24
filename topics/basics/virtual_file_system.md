@@ -25,7 +25,7 @@ Otherwise, only file metadata like name, length, timestamp, attributes are store
 > This means that the state of the file system and the file contents displayed in the IntelliJ Platform UI comes from the snapshot, which may not always match the disk's actual contents.
 > For example, in some cases, deleted files can still be visible in the UI for some time before the deletion is picked up by the IntelliJ Platform.
 >
-{type="note"}
+{style="note"}
 
 The snapshot is updated from disk during _refresh operations_, which generally happen asynchronously.
 All write operations made through the VFS are synchronous - i.e., the contents are saved to disk immediately.
@@ -36,15 +36,14 @@ The VFS will be updated during the next refresh operation, which includes the fi
 
 IntelliJ Platform refreshes the entire project contents asynchronously on startup.
 By default, it performs a refresh operation when the user switches to it from another app.
-Still, users can turn this off via <menupath>Settings/Preferences | Appearance & Behavior | System Settings | Synchronize external changes\[...]</menupath>.
+Still, users can turn this off via <ui-path>Settings/Preferences | Appearance & Behavior | System Settings | Synchronize external changes\[...]</ui-path>.
 
 On Windows, Mac, and Linux, a native file watcher process is started that receives file change notifications from the file system and reports them to the IntelliJ Platform.
 If a file watcher is available, a refresh operation looks only at the files that have been reported as changed by the file watcher.
 If no file watcher is present, a refresh operation walks through all directories and files in the refresh scope.
 
-> Invoke [internal action](internal_actions_intro.md) <menupath>Tools | Internal Actions | VFS | Show Watched VFS Roots</menupath> to see all registered roots for current project.
+> Invoke [internal action](internal_actions_intro.md) <ui-path>Tools | Internal Actions | VFS | Show Watched VFS Roots</ui-path> to see all registered roots for current project.
 >
-{type="tip"}
 
 Refresh operations are based on file timestamps.
 If a file's contents were changed, but its timestamp remained the same, the IntelliJ Platform will not pick up the updated contents.
@@ -52,7 +51,7 @@ If a file's contents were changed, but its timestamp remained the same, the Inte
 There is currently no facility for removing files from the snapshot.
 If a file was loaded there once, it remains there forever unless it was deleted from the disk, and a refresh operation was called on one of its parent directories.
 
-The VFS itself does not honor ignored files listed in <menupath>Settings/Preferences | Editor | File Types</menupath> and folders to ignore and excluded folders listed in <menupath>Project Structure | Modules | Sources | Excluded</menupath>.
+The VFS itself does not honor ignored files listed in <ui-path>Settings/Preferences | Editor | File Types</ui-path> and folders to ignore and excluded folders listed in <ui-path>Project Structure | Modules | Sources | Excluded</ui-path>.
 If the application code accesses them, the VFS will load and return their contents.
 In most cases, the ignored files and excluded folders must be skipped from processing by higher-level code.
 
@@ -91,7 +90,7 @@ See [How do I get notified when VFS changes?](virtual_file.md#how-do-i-get-notif
 > VFS listeners are application level and will receive events for changes happening in *all* the projects opened by the user.
 > You may need to filter out events that aren't relevant to your task (e.g., via [`ProjectFileIndex.isInContent()`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java)).
 >
-{type="warning"}
+{style="warning"}
 
 VFS events are sent both before and after each change, and you can access the old contents of the file in the before event.
 Note that events caused by a refresh are sent after the changes have already occurred on disk.

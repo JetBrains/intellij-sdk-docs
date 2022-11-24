@@ -22,7 +22,7 @@ Symbol completion in plain text editor (VCS Commit Message)
 : Contribute symbol names (classes, methods, ..) via `com.intellij.completion.plainTextSymbol` extension point (`com.intellij.codeInsight.completion.PlainTextSymbolCompletionContributor`).
 
 User-customizable date/time formatting
-: Use `com.intellij.util.text.JBDateFormat#getFormatter()` to use configured format from <menupath>Settings/Preferences | Appearance & Behavior | System Settings | Date Formats</menupath>.
+: Use `com.intellij.util.text.JBDateFormat#getFormatter()` to use configured format from <ui-path>Settings/Preferences | Appearance & Behavior | System Settings | Date Formats</ui-path>.
 
 ### IntelliJ IDEA 2019.3
 
@@ -40,11 +40,11 @@ Quickfixes for file-level notifications
 Create HTML representation of code
 : Use `com.intellij.openapi.editor.richcopy.HtmlSyntaxInfoUtil` to create Lexer-based highlighted code samples, e.g. for usage in documentation.
 
-<menupath>View | Appearance | Details in Tree Views</menupath>
+<ui-path>View | Appearance | Details in Tree Views</ui-path>
 : Toggles showing additional details in UI (e.g. modification timestamp in Project View) see `UISettings.getShowInplaceComments()`.
 
 New API for Editor Inlay Hints
-: Allows a variety of presentations (incl. custom painting), mouse event handling, and exposing settings in <menupath>Settings/Preferences | Editor | Inlay Hints</menupath>. See `com.intellij.codeInsight.hints.InlayHintsProvider`.
+: Allows a variety of presentations (incl. custom painting), mouse event handling, and exposing settings in <ui-path>Settings/Preferences | Editor | Inlay Hints</ui-path>. See `com.intellij.codeInsight.hints.InlayHintsProvider`.
 
 `com.intellij.openapi.vfs.AsyncFileListener`
 : A non-blocking variant for `com.intellij.openapi.vfs.newvfs.BulkFileListener`.

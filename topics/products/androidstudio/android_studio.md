@@ -39,7 +39,7 @@ The [Gradle build script configuration steps](#configuring-the-plugin-gradle-bui
 
 Below, you may find a list of recent Android Studio releases mapped to the relevant IntelliJ IDEA versions:
 
-<include src="android_studio_releases.md" include-id="releases_table_short"></include>
+<include from="android_studio_releases.md" element-id="releases_table_short"></include>
 
 For the full list of Android Studio releases with more details, visit the [Android Studio Releases List](android_studio_releases_list.md) page.
 

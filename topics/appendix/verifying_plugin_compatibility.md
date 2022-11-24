@@ -1,6 +1,6 @@
 [//]: # (title: Verifying Plugin Compatibility)
 
-<excerpt>Tooling for ensuring compatibility</excerpt>
+<link-summary>Tooling for ensuring compatibility</link-summary>
 
 Please see [](api_changes_list.md) for known breaking changes.
 For API annotated with `ApiStatus.@Internal`, see [](api_internal.md) for more details and replacements.

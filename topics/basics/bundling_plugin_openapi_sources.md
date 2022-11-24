@@ -9,7 +9,7 @@ Being able to see API sources drastically improves the development experience, a
 
 > Attaching bundled plugin sources in IDE is available starting with Gradle IntelliJ Plugin 1.7.0.
 >
-{type="note"}
+{style="note"}
 
 ## API sources location
 

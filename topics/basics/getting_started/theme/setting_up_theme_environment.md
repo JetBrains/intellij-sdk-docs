@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<excerpt>Setting up a development environment required for developing a theme.</excerpt>
+<link-summary>Setting up a development environment required for developing a theme.</link-summary>
 
 <procedure title="Preliminary Steps">
 
@@ -44,11 +44,11 @@ The first step of configuring a theme plugin SDK is adding the JDK.
 >
 > When targeting 2022.2 and later only, using Java 17 is required.
 >
-{type="note"}
+{style="note"}
 
 <procedure title="Add JDK" id="add-jdk">
 
-1. Go to <menupath>File | Project Structure | Platform Settings | SDKs</menupath>.
+1. Go to <ui-path>File | Project Structure | Platform Settings | SDKs</ui-path>.
 2. Click the <control>Add</control> button (<control>+</control>).
 3. If you have the required JDK installation on your machine, and it is detected, select it from the <control>Detected SDKs</control> list.
   If your JDK is not detected, select the <control>Add JDK...</control> option and choose the installation folder.<br/>
@@ -61,7 +61,7 @@ The second step is adding IntelliJ Platform Plugin SDK that will use the JDK con
 
 <procedure title="Add IntelliJ Platform Plugin SDK" id="add-intellij-platform-plugin-sdk">
 
-1. Go to <menupath>File | Project Structure | Platform Settings | SDKs</menupath>.
+1. Go to <ui-path>File | Project Structure | Platform Settings | SDKs</ui-path>.
 2. Click the <control>Add</control> button (<control>+</control>).
 3. Select the <control>Add IntelliJ Platform Plugin SDK...</control> option.
 4. Choose the installation folder of the IDE [downloaded previously](#download-intellij-based-ide) (on macOS, select application icon in <path>/Applications/</path>).

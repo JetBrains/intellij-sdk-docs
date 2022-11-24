@@ -61,7 +61,7 @@ Alternatively, register [`PsiTreeChangeListener`](%gh-ic%/platform/core-api/src/
 
 > Please see [`PsiTreeChangeEvent`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiTreeChangeEvent.java) Javadoc for common problems when dealing with PSI events.
 >
-{type="note"}
+{style="note"}
 
 ## How do I extend PSI?
 

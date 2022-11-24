@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE ihp
-        SYSTEM "https://resources.jetbrains.com/stardust/ihp.dtd">
+        SYSTEM "https://helpserver.labs.jb.gg/help/schemas/mvp/ihp.dtd">
 <ihp version="2.0">
     <settings>
         <id-generator-method>LOWER_CASE_DASHES_DOT_REMOVE</id-generator-method>
@@ -12,5 +12,5 @@
     <images dir="images" web-path="/img/idea-sdk/"/>
     <vars src="v.list" />
     <snippets src="code_samples"/>
-    <product src="ijs.tree" keymaps-mode="none" id="intellij" web-path="/intellij/"/>
+    <instance src="ijs.tree" keymaps-mode="none" id="intellij" web-path="/intellij/"/>
 </ihp>

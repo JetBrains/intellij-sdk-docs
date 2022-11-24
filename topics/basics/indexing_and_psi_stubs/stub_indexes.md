@@ -45,7 +45,7 @@ For each element type that you want to store in the stub tree, you need to perfo
 
 > If you use [Grammar-Kit](https://github.com/JetBrains/Grammar-Kit) to generate your language PSI, see the [Stub indices support](https://github.com/JetBrains/Grammar-Kit/blob/master/HOWTO.md#35-stub-indices-support) section for instructions on integrating your grammar with stubs.
 >
-{type="note"}
+{style="note"}
 
 By default, if a PSI element extends `StubBasedPsiElement`, all elements of that type will be stored in the stub tree.
 If you need more precise control over which elements are stored, override `IStubElementType.shouldCreateStub()` and return `false` for elements that should not be included in the stub tree.
@@ -67,7 +67,6 @@ Otherwise, the stub tree will not be rebuilt when external dependency changes, a
 
 > Please see also [](indexing_and_psi_stubs.md#improving-indexing-performance).
 >
-{type="tip"}
 
 ## Stub Indexes
 

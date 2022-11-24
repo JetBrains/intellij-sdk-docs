@@ -2,11 +2,11 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<microformat>
+<tldr>
 
 **Product Help:** [Inlay Hints](https://www.jetbrains.com/help/idea/viewing-reference-information.html#inlay-hints)
 
-</microformat>
+</tldr>
 
 Inlay hints render small pieces of information directly into the editor and give developers additional code insight without disturbing the workflow.
 A well-known example is parameter hints that usually display the name of the function parameters as given in its declaration.

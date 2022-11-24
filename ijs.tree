@@ -1,335 +1,335 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE product-profile
-        SYSTEM "https://resources.jetbrains.com/stardust/product-profile.dtd">
-<product-profile id="ijs" name="IntelliJ Platform Plugin SDK" start-page="welcome.md" status="release">
-  <toc-element id="welcome.md" toc-title="Home"/>
+<!DOCTYPE instance-profile
+        SYSTEM "https://helpserver.labs.jb.gg/help/schemas/mvp/product-profile.dtd">
+<instance-profile id="ijs" name="IntelliJ Platform Plugin SDK" start-page="welcome.md" status="release">
+  <toc-element topic="welcome.md" toc-title="Home"/>
   <toc-element toc-title="Introduction">
-    <toc-element id="intellij_platform.md">
-      <toc-element id="platform_contributions.md"/>
-      <toc-element id="intellij_coding_guidelines.md"/>
+    <toc-element topic="intellij_platform.md">
+      <toc-element topic="platform_contributions.md"/>
+      <toc-element topic="intellij_coding_guidelines.md"/>
     </toc-element>
-    <toc-element id="about.md" toc-title="The IntelliJ Platform SDK">
-      <toc-element id="key_topics.md"/>
-      <toc-element id="intellij-sdk-docs-original_CONTRIBUTING.md" toc-title="Contributing to the SDK"
+    <toc-element topic="about.md" toc-title="The IntelliJ Platform SDK">
+      <toc-element topic="key_topics.md"/>
+      <toc-element topic="intellij-sdk-docs-original_CONTRIBUTING.md" toc-title="Contributing to the SDK"
                    accepts-web-file-names="intellij-sdk-docs-original-CONTRIBUTING.html">
-        <toc-element id="sdk_style.md" accepts-web-file-names="CONTRIBUTING.html"/>
-        <toc-element id="sdk_code_guidelines.md"/>
+        <toc-element topic="sdk_style.md" accepts-web-file-names="CONTRIBUTING.html"/>
+        <toc-element topic="sdk_code_guidelines.md"/>
       </toc-element>
-      <toc-element id="intellij-sdk-docs-original_CODE_OF_CONDUCT.md"/>
+      <toc-element topic="intellij-sdk-docs-original_CODE_OF_CONDUCT.md"/>
     </toc-element>
-    <toc-element id="code_samples.md"/>
-    <toc-element id="getting_help.md"/>
-    <toc-element id="content_updates.md" accepts-web-file-names="recently_updated.html"/>
+    <toc-element topic="code_samples.md"/>
+    <toc-element topic="getting_help.md"/>
+    <toc-element topic="content_updates.md" accepts-web-file-names="recently_updated.html"/>
   </toc-element>
   <toc-element toc-title="Part I — Plugins">
-    <toc-element id="plugins_quick_start.md" accepts-web-file-names="basics.html">
-      <toc-element id="plugin_alternatives.md" toc-title="Plugin Alternatives"/>
-      <toc-element id="plugin_required_experience.md"/>
-      <toc-element id="plugin_types.md" accepts-web-file-names="types-of-plugins.html"/>
+    <toc-element topic="plugins_quick_start.md" accepts-web-file-names="basics.html">
+      <toc-element topic="plugin_alternatives.md" toc-title="Plugin Alternatives"/>
+      <toc-element topic="plugin_required_experience.md"/>
+      <toc-element topic="plugin_types.md" accepts-web-file-names="types-of-plugins.html"/>
     </toc-element>
-    <toc-element id="developing_plugins.md"
+    <toc-element topic="developing_plugins.md"
                  accepts-web-file-names="getting-started.html,gradle-build-system.html,build_system.html">
-      <toc-element id="creating_plugin_project.md" accepts-web-file-names="gradle-prerequisites.html">
-        <toc-element id="plugin_github_template.md" toc-title="Plugin GitHub Template"
+      <toc-element topic="creating_plugin_project.md" accepts-web-file-names="gradle-prerequisites.html">
+        <toc-element topic="plugin_github_template.md" toc-title="Plugin GitHub Template"
                      accepts-web-file-names="github-template.html"/>
-        <toc-element id="migrating_plugin_devkit_to_gradle.md"/>
+        <toc-element topic="migrating_plugin_devkit_to_gradle.md"/>
       </toc-element>
-      <toc-element id="configuring_plugin_project.md" accepts-web-file-names="gradle-guide.html">
-        <toc-element id="using_kotlin.md" accepts-web-file-names="kotlin.html"/>
+      <toc-element topic="configuring_plugin_project.md" accepts-web-file-names="gradle-guide.html">
+        <toc-element topic="using_kotlin.md" accepts-web-file-names="kotlin.html"/>
       </toc-element>
-      <toc-element id="ide_development_instance.md" accepts-web-file-names="settings_caches_logs.html"/>
-      <toc-element id="plugin_signing.md"/>
-      <toc-element id="publishing_plugin.md" accepts-web-file-names="deployment.html"/>
+      <toc-element topic="ide_development_instance.md" accepts-web-file-names="settings_caches_logs.html"/>
+      <toc-element topic="plugin_signing.md"/>
+      <toc-element topic="publishing_plugin.md" accepts-web-file-names="deployment.html"/>
     </toc-element>
-    <toc-element id="plugin_structure.md">
-      <toc-element id="plugin_content.md"/>
-      <toc-element id="bundling_plugin_openapi_sources.md" toc-title="Plugin API Sources"/>
-      <toc-element id="plugin_class_loaders.md"/>
-      <toc-element id="plugin_actions.md"/>
-      <toc-element id="plugin_extensions.md" accepts-web-file-names="plugin_extensions_and_extension_points.html"/>
-      <toc-element id="plugin_services.md"/>
-      <toc-element id="plugin_listeners.md"/>
-      <toc-element id="plugin_extension_points.md"/>
-      <toc-element id="plugin_components.md"/>
-      <toc-element id="plugin_configuration_file.md"/>
-      <toc-element id="plugin_icon_file.md"/>
-      <toc-element id="plugin_dependencies.md"/>
+    <toc-element topic="plugin_structure.topic">
+      <toc-element topic="plugin_content.md"/>
+      <toc-element topic="bundling_plugin_openapi_sources.md" toc-title="Plugin API Sources"/>
+      <toc-element topic="plugin_class_loaders.md"/>
+      <toc-element topic="plugin_actions.md"/>
+      <toc-element topic="plugin_extensions.md" accepts-web-file-names="plugin_extensions_and_extension_points.html"/>
+      <toc-element topic="plugin_services.md"/>
+      <toc-element topic="plugin_listeners.md"/>
+      <toc-element topic="plugin_extension_points.md"/>
+      <toc-element topic="plugin_components.md"/>
+      <toc-element topic="plugin_configuration_file.md"/>
+      <toc-element topic="plugin_icon_file.md"/>
+      <toc-element topic="plugin_dependencies.md"/>
     </toc-element>
-    <toc-element id="dynamic_plugins.md"/>
-    <toc-element id="intellij_artifacts.md"/>
-    <toc-element id="faq.md"/>
+    <toc-element topic="dynamic_plugins.md"/>
+    <toc-element topic="intellij_artifacts.md"/>
+    <toc-element topic="faq.md"/>
   </toc-element>
   <toc-element toc-title="Part II — Base Platform">
-    <toc-element id="fundamentals.md" accepts-web-file-names="reference_guide.html,architectural_overview.html">
+    <toc-element topic="fundamentals.md" accepts-web-file-names="reference_guide.html,architectural_overview.html">
       <toc-element toc-title="Component Model"/>
-      <toc-element id="disposers.md"/>
-      <toc-element id="general_threading_rules.md" toc-title="Threading">
+      <toc-element topic="disposers.md"/>
+      <toc-element topic="general_threading_rules.md" toc-title="Threading">
         <toc-element toc-title="Background Tasks"/>
       </toc-element>
-      <toc-element id="messaging_infrastructure.md"/>
+      <toc-element topic="messaging_infrastructure.md"/>
       <toc-element toc-title="Queries and Query Executors"/>
     </toc-element>
-    <toc-element id="ide_infrastructure.md"/>
-    <toc-element id="user_interface_components.md">
-      <toc-element id="tool_windows.md"/>
-      <toc-element id="dialog_wrapper.md"/>
-      <toc-element id="kotlin_ui_dsl_version_2.md">
-        <toc-element id="kotlin_ui_dsl.md"/>
+    <toc-element topic="ide_infrastructure.md"/>
+    <toc-element topic="user_interface_components.md">
+      <toc-element topic="tool_windows.md"/>
+      <toc-element topic="dialog_wrapper.md"/>
+      <toc-element topic="kotlin_ui_dsl_version_2.md">
+        <toc-element topic="kotlin_ui_dsl.md"/>
       </toc-element>
-      <toc-element id="popups.md"/>
-      <toc-element id="notifications.md"/>
-      <toc-element id="file_and_class_choosers.md"/>
-      <toc-element id="editor_components.md"/>
-      <toc-element id="lists_and_trees.md"/>
-      <toc-element id="status_bar_widgets.md"/>
-      <toc-element id="misc_swing_components.md"/>
-      <toc-element id="work_with_icons_and_images.md" toc-title="Icons and Images"/>
-      <toc-element id="color_scheme_management.md"/>
-      <toc-element id="themes_metadata.md"/>
+      <toc-element topic="popups.md"/>
+      <toc-element topic="notifications.md"/>
+      <toc-element topic="file_and_class_choosers.md"/>
+      <toc-element topic="editor_components.md"/>
+      <toc-element topic="lists_and_trees.md"/>
+      <toc-element topic="status_bar_widgets.md"/>
+      <toc-element topic="misc_swing_components.md"/>
+      <toc-element topic="work_with_icons_and_images.md" toc-title="Icons and Images"/>
+      <toc-element topic="color_scheme_management.md"/>
+      <toc-element topic="themes_metadata.md"/>
     </toc-element>
-    <toc-element id="jcef.md" toc-title="JCEF"/>
-    <toc-element id="basic_action_system.md" accepts-web-file-names="action_system.html">
-      <toc-element id="action_system.md">
-        <toc-element id="working_with_custom_actions.md"/>
-        <toc-element id="grouping_action.md"/>
+    <toc-element topic="jcef.md" toc-title="JCEF"/>
+    <toc-element topic="basic_action_system.md" accepts-web-file-names="action_system.html">
+      <toc-element topic="action_system.md">
+        <toc-element topic="working_with_custom_actions.md"/>
+        <toc-element topic="grouping_action.md"/>
       </toc-element>
     </toc-element>
-    <toc-element id="persistence.md" toc-title="Persistence">
-      <toc-element id="persisting_state_of_components.md"/>
-      <toc-element id="persisting_sensitive_data.md"/>
+    <toc-element topic="persistence.md" toc-title="Persistence">
+      <toc-element topic="persisting_state_of_components.md"/>
+      <toc-element topic="persisting_sensitive_data.md"/>
     </toc-element>
-    <toc-element id="settings.md">
-      <toc-element id="settings_guide.md"/>
-      <toc-element id="settings_groups.md"/>
-      <toc-element id="settings_tutorial.md"/>
+    <toc-element topic="settings.md">
+      <toc-element topic="settings_guide.md"/>
+      <toc-element topic="settings_groups.md"/>
+      <toc-element topic="settings_tutorial.md"/>
     </toc-element>
-    <toc-element id="files.md">
-      <toc-element id="virtual_file_system.md"/>
-      <toc-element id="virtual_file.md"/>
+    <toc-element topic="files.md">
+      <toc-element topic="virtual_file_system.md"/>
+      <toc-element topic="virtual_file.md"/>
     </toc-element>
-    <toc-element id="documents.md"/>
-    <toc-element id="editors.md">
-      <toc-element id="editor_basics.md" toc-title="Editor Basics">
-        <toc-element id="working_with_text.md"/>
-        <toc-element id="coordinates_system.md"/>
-        <toc-element id="editor_events.md"/>
+    <toc-element topic="documents.md"/>
+    <toc-element topic="editors.md">
+      <toc-element topic="editor_basics.md" toc-title="Editor Basics">
+        <toc-element topic="working_with_text.md"/>
+        <toc-element topic="coordinates_system.md"/>
+        <toc-element topic="editor_events.md"/>
       </toc-element>
-      <toc-element id="text_selection.md"/>
-      <toc-element id="multiple_carets.md"/>
+      <toc-element topic="text_selection.md"/>
+      <toc-element topic="multiple_carets.md"/>
     </toc-element>
-    <toc-element id="basic_run_configurations.md" accepts-web-file-names="run_configurations.html">
-      <toc-element id="run_configuration_management.md"/>
-      <toc-element id="run_configuration_execution.md"/>
-      <toc-element id="run_configurations.md"/>
+    <toc-element topic="basic_run_configurations.md" accepts-web-file-names="run_configurations.html">
+      <toc-element topic="run_configuration_management.md"/>
+      <toc-element topic="run_configuration_execution.md"/>
+      <toc-element topic="run_configurations.md"/>
     </toc-element>
-    <toc-element id="vcs_integration_for_plugins.md">
+    <toc-element topic="vcs_integration_for_plugins.md">
       <toc-element toc-title="Diff"/>
       <toc-element toc-title="Local History"/>
     </toc-element>
     <toc-element toc-title="Tasks and Contexts"/>
-    <toc-element id="localization_guide.md"/>
+    <toc-element topic="localization_guide.md"/>
     <toc-element toc-title="Diagrams"/>
   </toc-element>
   <toc-element toc-title="Part III — Project Model">
-    <toc-element id="project_structure.md"/>
-    <toc-element id="project.md">
-      <toc-element id="trusted_projects.md"/>
-      <toc-element id="project_wizard.md" toc-title="Project Wizard"/>
-      <toc-element id="intro_project_wizard.md" accepts-web-file-names="project_wizard.html">
-        <toc-element id="adding_new_steps.md"/>
-        <toc-element id="module_types.md"/>
+    <toc-element topic="project_structure.md"/>
+    <toc-element topic="project.md">
+      <toc-element topic="trusted_projects.md"/>
+      <toc-element topic="project_wizard.md" toc-title="Project Wizard"/>
+      <toc-element topic="intro_project_wizard.md" accepts-web-file-names="project_wizard.html">
+        <toc-element topic="adding_new_steps.md"/>
+        <toc-element topic="module_types.md"/>
       </toc-element>
-      <toc-element id="framework.md"/>
+      <toc-element topic="framework.md"/>
     </toc-element>
-    <toc-element id="module.md"/>
-    <toc-element id="sdk.md"/>
-    <toc-element id="library.md"/>
-    <toc-element id="facet.md"/>
-    <toc-element id="external_system_integration.md"/>
+    <toc-element topic="module.md"/>
+    <toc-element topic="sdk.md"/>
+    <toc-element topic="library.md"/>
+    <toc-element topic="facet.md"/>
+    <toc-element topic="external_system_integration.md"/>
   </toc-element>
   <toc-element toc-title="Part IV — PSI">
-    <toc-element id="psi.md" toc-title="What Is the PSI?"/>
-    <toc-element id="psi_files.md"/>
-    <toc-element id="file_view_providers.md"/>
-    <toc-element id="psi_elements.md"/>
-    <toc-element id="navigating_psi.md"/>
-    <toc-element id="psi_references.md"/>
-    <toc-element id="modifying_psi.md"/>
-    <toc-element id="psi_cookbook.md"/>
-    <toc-element id="psi_performance.md" accepts-web-file-names="performance.html"/>
-    <toc-element id="indexing_and_psi_stubs.md">
-      <toc-element id="file_based_indexes.md"/>
-      <toc-element id="stub_indexes.md"/>
+    <toc-element topic="psi.md" toc-title="What Is the PSI?"/>
+    <toc-element topic="psi_files.md"/>
+    <toc-element topic="file_view_providers.md"/>
+    <toc-element topic="psi_elements.md"/>
+    <toc-element topic="navigating_psi.md"/>
+    <toc-element topic="psi_references.md"/>
+    <toc-element topic="modifying_psi.md"/>
+    <toc-element topic="psi_cookbook.md"/>
+    <toc-element topic="psi_performance.md" accepts-web-file-names="performance.html"/>
+    <toc-element topic="indexing_and_psi_stubs.md">
+      <toc-element topic="file_based_indexes.md"/>
+      <toc-element topic="stub_indexes.md"/>
     </toc-element>
-    <toc-element id="element_patterns.md"/>
-    <toc-element id="uast.md" toc-title="Unified AST"/>
-    <toc-element id="xml_dom_api.md"/>
+    <toc-element topic="element_patterns.md"/>
+    <toc-element topic="uast.md" toc-title="Unified AST"/>
+    <toc-element topic="xml_dom_api.md"/>
   </toc-element>
   <toc-element toc-title="Part V — Features">
     <toc-element toc-title="Navigation"/>
-    <toc-element id="editing.md">
+    <toc-element topic="editing.md">
       <toc-element toc-title="Code Completion"/>
-      <toc-element id="postfix_completion.md">
-        <toc-element id="postfix_templates.md"/>
-        <toc-element id="advanced_postfix_templates.md"/>
+      <toc-element topic="postfix_completion.md">
+        <toc-element topic="postfix_templates.md"/>
+        <toc-element topic="advanced_postfix_templates.md"/>
       </toc-element>
-      <toc-element id="templates.md">
-        <toc-element id="live_templates.md">
-          <toc-element id="template_support.md"/>
-          <toc-element id="new_macros.md"/>
+      <toc-element topic="templates.md">
+        <toc-element topic="live_templates.md">
+          <toc-element topic="template_support.md"/>
+          <toc-element topic="new_macros.md"/>
         </toc-element>
-        <toc-element id="file_and_code_templates.md">
-          <toc-element id="providing_file_templates.md"/>
-          <toc-element id="using_file_templates.md"/>
+        <toc-element topic="file_and_code_templates.md">
+          <toc-element topic="providing_file_templates.md"/>
+          <toc-element topic="using_file_templates.md"/>
         </toc-element>
       </toc-element>
-      <toc-element id="code_documentation.md"/>
-      <toc-element id="code_intentions.md"/>
+      <toc-element topic="code_documentation.md"/>
+      <toc-element topic="code_intentions.md"/>
     </toc-element>
-    <toc-element id="analyzing.md" toc-title="Analysing">
-      <toc-element id="syntax_errors.md"/>
+    <toc-element topic="analyzing.md" toc-title="Analysing">
+      <toc-element topic="syntax_errors.md"/>
       <toc-element toc-title="Annotators"/>
-      <toc-element id="code_inspections.md" toc-title="Inspections">
+      <toc-element topic="code_inspections.md" toc-title="Inspections">
         <toc-element toc-title="Profiles"/>
         <toc-element toc-title="Scopes"/>
         <toc-element toc-title="Suppressing Highlights"/>
         <toc-element toc-title="Structural Search"/>
       </toc-element>
-      <toc-element id="controlling_highlighting.md"/>
+      <toc-element topic="controlling_highlighting.md"/>
     </toc-element>
     <toc-element toc-title="Refactoring"/>
-    <toc-element id="project_view.md">
-      <toc-element id="tree_structure_view.md"/>
+    <toc-element topic="project_view.md">
+      <toc-element topic="tree_structure_view.md"/>
     </toc-element>
     <toc-element toc-title="Unit Testing"/>
-    <toc-element id="build_system.md">
-      <toc-element id="external_builder_api.md"/>
+    <toc-element topic="build_system.md">
+      <toc-element topic="external_builder_api.md"/>
     </toc-element>
   </toc-element>
   <toc-element toc-title="Part VI — Testing">
-    <toc-element id="testing_plugins.md" accepts-web-file-names="testing_plugins.html"/>
-    <toc-element id="tests_and_fixtures.md"/>
-    <toc-element id="light_and_heavy_tests.md"/>
-    <toc-element id="test_project_and_testdata_directories.md"/>
-    <toc-element id="writing_tests.md"/>
-    <toc-element id="testing_highlighting.md"/>
-    <toc-element id="testing_faq.md"/>
+    <toc-element topic="testing_plugins.md" accepts-web-file-names="testing_plugins.html"/>
+    <toc-element topic="tests_and_fixtures.md"/>
+    <toc-element topic="light_and_heavy_tests.md"/>
+    <toc-element topic="test_project_and_testdata_directories.md"/>
+    <toc-element topic="writing_tests.md"/>
+    <toc-element topic="testing_highlighting.md"/>
+    <toc-element topic="testing_faq.md"/>
   </toc-element>
   <toc-element toc-title="Part VII — Custom Languages">
-    <toc-element id="custom_language_support.md">
-      <toc-element id="registering_file_type.md"/>
-      <toc-element id="implementing_lexer.md"/>
-      <toc-element id="implementing_parser_and_psi.md"/>
-      <toc-element id="syntax_highlighting_and_error_highlighting.md"/>
-      <toc-element id="references_and_resolve.md"/>
-      <toc-element id="symbols.md"/>
-      <toc-element id="declarations_and_references.md"/>
-      <toc-element id="navigation.md"/>
-      <toc-element id="code_completion.md"/>
-      <toc-element id="find_usages.md"/>
-      <toc-element id="rename_refactoring.md"/>
-      <toc-element id="safe_delete_refactoring.md"/>
-      <toc-element id="code_formatting.md"/>
-      <toc-element id="code_inspections_and_intentions.md"/>
-      <toc-element id="structure_view.md"/>
-      <toc-element id="navbar.md"/>
+    <toc-element topic="custom_language_support.md">
+      <toc-element topic="registering_file_type.md"/>
+      <toc-element topic="implementing_lexer.md"/>
+      <toc-element topic="implementing_parser_and_psi.md"/>
+      <toc-element topic="syntax_highlighting_and_error_highlighting.md"/>
+      <toc-element topic="references_and_resolve.md"/>
+      <toc-element topic="symbols.md"/>
+      <toc-element topic="declarations_and_references.md"/>
+      <toc-element topic="navigation.md"/>
+      <toc-element topic="code_completion.md"/>
+      <toc-element topic="find_usages.md"/>
+      <toc-element topic="rename_refactoring.md"/>
+      <toc-element topic="safe_delete_refactoring.md"/>
+      <toc-element topic="code_formatting.md"/>
+      <toc-element topic="code_inspections_and_intentions.md"/>
+      <toc-element topic="structure_view.md"/>
+      <toc-element topic="navbar.md"/>
       <toc-element toc-title="Code Hierarchy"/>
-      <toc-element id="surround_with.md"/>
-      <toc-element id="go_to_class_and_go_to_symbol.md"/>
-      <toc-element id="documentation.md"/>
-      <toc-element id="parameter_info.md"/>
-      <toc-element id="inlay_hints.md"/>
-      <toc-element id="spell_checking.md"/>
-      <toc-element id="additional_minor_features.md"/>
+      <toc-element topic="surround_with.md"/>
+      <toc-element topic="go_to_class_and_go_to_symbol.md"/>
+      <toc-element topic="documentation.md"/>
+      <toc-element topic="parameter_info.md"/>
+      <toc-element topic="inlay_hints.md"/>
+      <toc-element topic="spell_checking.md"/>
+      <toc-element topic="additional_minor_features.md"/>
     </toc-element>
-    <toc-element id="custom_language_support_tutorial.md">
-      <toc-element id="prerequisites.md"/>
-      <toc-element id="language_and_filetype.md"/>
-      <toc-element id="grammar_and_parser.md"/>
-      <toc-element id="lexer_and_parser_definition.md"/>
-      <toc-element id="syntax_highlighter_and_color_settings_page.md"/>
-      <toc-element id="psi_helper_and_utilities.md"/>
-      <toc-element id="annotator.md"/>
-      <toc-element id="line_marker_provider.md"/>
-      <toc-element id="completion_contributor.md"/>
-      <toc-element id="reference_contributor.md"/>
-      <toc-element id="find_usages_provider.md"/>
-      <toc-element id="folding_builder.md"/>
-      <toc-element id="go_to_symbol_contributor.md"/>
-      <toc-element id="structure_view_factory.md"/>
-      <toc-element id="structure_aware_navbar.md"/>
-      <toc-element id="formatter.md"/>
-      <toc-element id="code_style_settings.md"/>
-      <toc-element id="commenter.md"/>
-      <toc-element id="quick_fix.md"/>
-      <toc-element id="documentation_provider.md"/>
-      <toc-element id="spell_checking_strategy.md"/>
+    <toc-element topic="custom_language_support_tutorial.md">
+      <toc-element topic="prerequisites.md"/>
+      <toc-element topic="language_and_filetype.md"/>
+      <toc-element topic="grammar_and_parser.md"/>
+      <toc-element topic="lexer_and_parser_definition.md"/>
+      <toc-element topic="syntax_highlighter_and_color_settings_page.md"/>
+      <toc-element topic="psi_helper_and_utilities.md"/>
+      <toc-element topic="annotator.md"/>
+      <toc-element topic="line_marker_provider.md"/>
+      <toc-element topic="completion_contributor.md"/>
+      <toc-element topic="reference_contributor.md"/>
+      <toc-element topic="find_usages_provider.md"/>
+      <toc-element topic="folding_builder.md"/>
+      <toc-element topic="go_to_symbol_contributor.md"/>
+      <toc-element topic="structure_view_factory.md"/>
+      <toc-element topic="structure_aware_navbar.md"/>
+      <toc-element topic="formatter.md"/>
+      <toc-element topic="code_style_settings.md"/>
+      <toc-element topic="commenter.md"/>
+      <toc-element topic="quick_fix.md"/>
+      <toc-element topic="documentation_provider.md"/>
+      <toc-element topic="spell_checking_strategy.md"/>
     </toc-element>
-    <toc-element id="writing_tests_for_plugins.md">
-      <toc-element id="tests_prerequisites.md"/>
-      <toc-element id="parsing_test.md"/>
-      <toc-element id="completion_test.md"/>
-      <toc-element id="annotator_test.md"/>
-      <toc-element id="formatter_test.md"/>
-      <toc-element id="rename_test.md"/>
-      <toc-element id="folding_test.md"/>
-      <toc-element id="find_usages_test.md"/>
-      <toc-element id="commenter_test.md"/>
-      <toc-element id="reference_test.md"/>
-      <toc-element id="documentation_test.md"/>
+    <toc-element topic="writing_tests_for_plugins.md">
+      <toc-element topic="tests_prerequisites.md"/>
+      <toc-element topic="parsing_test.md"/>
+      <toc-element topic="completion_test.md"/>
+      <toc-element topic="annotator_test.md"/>
+      <toc-element topic="formatter_test.md"/>
+      <toc-element topic="rename_test.md"/>
+      <toc-element topic="folding_test.md"/>
+      <toc-element topic="find_usages_test.md"/>
+      <toc-element topic="commenter_test.md"/>
+      <toc-element topic="reference_test.md"/>
+      <toc-element topic="documentation_test.md"/>
     </toc-element>
-    <toc-element id="language_injection.md"/>
+    <toc-element topic="language_injection.md"/>
     <toc-element toc-title="Build System"/>
     <toc-element toc-title="Compiler"/>
     <toc-element toc-title="Debugger"/>
   </toc-element>
   <toc-element toc-title="Part VIII — Product Specific">
-    <toc-element id="dev_alternate_products.md" toc-title="Developing for Multiple Products"/>
-    <toc-element id="plugin_compatibility.md" toc-title="Compatibility with Multiple Products"/>
-    <toc-element id="android_studio.md" toc-title="Android Studio">
-      <toc-element id="android_studio_releases_list.md"/>
+    <toc-element topic="dev_alternate_products.md" toc-title="Developing for Multiple Products"/>
+    <toc-element topic="plugin_compatibility.md" toc-title="Compatibility with Multiple Products"/>
+    <toc-element topic="android_studio.md" toc-title="Android Studio">
+      <toc-element topic="android_studio_releases_list.md"/>
     </toc-element>
-    <toc-element id="app_code.md" toc-title="AppCode">
-      <toc-element id="appcode_extension_point_list.md"/>
+    <toc-element topic="app_code.md" toc-title="AppCode">
+      <toc-element topic="appcode_extension_point_list.md"/>
     </toc-element>
-    <toc-element id="clion.md" toc-title="CLion">
-      <toc-element id="clion_extension_point_list.md"/>
+    <toc-element topic="clion.md" toc-title="CLion">
+      <toc-element topic="clion_extension_point_list.md"/>
     </toc-element>
-    <toc-element id="data_grip.md" toc-title="DataGrip">
-      <toc-element id="data_grip_extension_point_list.md"/>
+    <toc-element topic="data_grip.md" toc-title="DataGrip">
+      <toc-element topic="data_grip_extension_point_list.md"/>
     </toc-element>
-    <toc-element id="goland.md" toc-title="GoLand">
-      <toc-element id="goland_extension_point_list.md"/>
+    <toc-element topic="goland.md" toc-title="GoLand">
+      <toc-element topic="goland_extension_point_list.md"/>
     </toc-element>
-    <toc-element id="idea.md" toc-title="IntelliJ IDEA">
-      <toc-element id="tomcat_integration.md"/>
-      <toc-element id="spring_api.md">
-        <toc-element id="spring_extension_point_list.md"/>
+    <toc-element topic="idea.md" toc-title="IntelliJ IDEA">
+      <toc-element topic="tomcat_integration.md"/>
+      <toc-element topic="spring_api.md">
+        <toc-element topic="spring_extension_point_list.md"/>
       </toc-element>
     </toc-element>
-    <toc-element id="phpstorm.md"
+    <toc-element topic="phpstorm.md"
                  toc-title="PhpStorm">
-      <toc-element id="php_open_api.md" accepts-web-file-names="php_open_api.html"
+      <toc-element topic="php_open_api.md" accepts-web-file-names="php_open_api.html"
                    toc-title="Working with the PHP Open API">
-        <toc-element id="php_open_api_php_type_providers.md"/>
-        <toc-element id="php_open_api_breaking_changes.md" toc-title="Breaking Changes">
-          <toc-element id="php_open_api_breaking_changes_203.md" toc-title="2020.3"/>
-          <toc-element id="php_open_api_breaking_changes_202.md" toc-title="2020.2"/>
+        <toc-element topic="php_open_api_php_type_providers.md"/>
+        <toc-element topic="php_open_api_breaking_changes.md" toc-title="Breaking Changes">
+          <toc-element topic="php_open_api_breaking_changes_203.md" toc-title="2020.3"/>
+          <toc-element topic="php_open_api_breaking_changes_202.md" toc-title="2020.2"/>
         </toc-element>
       </toc-element>
-      <toc-element id="php_extension_point_list.md"/>
-      <toc-element id="existing_plugins.md" accepts-web-file-names="existing_plugins.html"
+      <toc-element topic="php_extension_point_list.md"/>
+      <toc-element topic="existing_plugins.md" accepts-web-file-names="existing_plugins.html"
                    toc-title="Existing Third Party Plugins"/>
     </toc-element>
-    <toc-element id="pycharm.md" toc-title="PyCharm"/>
-    <toc-element id="rider.md" toc-title="Rider">
-      <toc-element id="rider_extension_point_list.md"/>
+    <toc-element topic="pycharm.md" toc-title="PyCharm"/>
+    <toc-element topic="rider.md" toc-title="Rider">
+      <toc-element topic="rider_extension_point_list.md"/>
     </toc-element>
-    <toc-element id="rubymine.md" toc-title="RubyMine">
-      <toc-element id="rubymine_extension_point_list.md"/>
+    <toc-element topic="rubymine.md" toc-title="RubyMine">
+      <toc-element topic="rubymine_extension_point_list.md"/>
     </toc-element>
-    <toc-element id="webstorm.md" toc-title="WebStorm">
-      <toc-element id="webstorm_extension_point_list.md"/>
+    <toc-element topic="webstorm.md" toc-title="WebStorm">
+      <toc-element topic="webstorm_extension_point_list.md"/>
     </toc-element>
   </toc-element>
   <toc-element toc-title="Part IX — Custom IDEs">
@@ -337,69 +337,71 @@
     <toc-element toc-title="Licensing"/>
   </toc-element>
   <toc-element toc-title="Part X — Themes">
-    <toc-element id="themes_getting_started.md" accepts-web-file-names="themes-intro.html"/>
-    <toc-element id="developing_themes.md" accepts-web-file-names="using-dev-kit.html">
-      <toc-element id="setting_up_theme_environment.md" accepts-web-file-names="setting-up-environment.html"/>
-      <toc-element id="creating_theme_project.md" accepts-web-file-names="creating_an_action.html"/>
-      <toc-element id="running_and_debugging_a_theme.md" accepts-web-file-names="running-and-debugging-a-plugin.html"/>
-      <toc-element id="deploying_theme.md" accepts-web-file-names="deploying-plugin.html"/>
+    <toc-element topic="themes_getting_started.md" accepts-web-file-names="themes-intro.html"/>
+    <toc-element topic="developing_themes.md" accepts-web-file-names="using-dev-kit.html">
+      <toc-element topic="setting_up_theme_environment.md" accepts-web-file-names="setting-up-environment.html"/>
+      <toc-element topic="creating_theme_project.md" accepts-web-file-names="creating_an_action.html"/>
+      <toc-element topic="running_and_debugging_a_theme.md"
+                   accepts-web-file-names="running-and-debugging-a-plugin.html"/>
+      <toc-element topic="deploying_theme.md" accepts-web-file-names="deploying-plugin.html"/>
     </toc-element>
-    <toc-element id="theme_structure.md" accepts-web-file-names="themes.html">
-      <toc-element id="themes_customize.md" toc-title="Customizing a Theme"/>
-      <toc-element id="themes_extras.md" toc-title="Adding Schemes and Images"/>
+    <toc-element topic="theme_structure.md" accepts-web-file-names="themes.html">
+      <toc-element topic="themes_customize.md" toc-title="Customizing a Theme"/>
+      <toc-element topic="themes_extras.md" toc-title="Adding Schemes and Images"/>
     </toc-element>
   </toc-element>
   <toc-element toc-title="Appendix I — Resources">
-    <toc-element id="glossary.md"/>
-    <toc-element id="explore_api.md" toc-title="Explore the API"/>
-    <toc-element id="build_number_ranges.md"/>
-    <toc-element id="extension_point_list.md"/>
-    <toc-element id="useful_links.md" accepts-web-file-names="resources.html"/>
-    <toc-element id="learning_resources.md"/>
-    <toc-element id="marketing.md"/>
-    <toc-element id="consulting.md"/>
-    <toc-element id="custom_plugin_repository.md" accepts-web-file-names="update-plugins-format.html"/>
-    <toc-element id="plugin_repository_obsolete.md"
+    <toc-element topic="glossary.md"/>
+    <toc-element topic="explore_api.md" toc-title="Explore the API"/>
+    <toc-element topic="build_number_ranges.md"/>
+    <toc-element topic="extension_point_list.md"/>
+    <toc-element topic="useful_links.md" accepts-web-file-names="resources.html"/>
+    <toc-element topic="learning_resources.md"/>
+    <toc-element topic="marketing.md"/>
+    <toc-element topic="consulting.md"/>
+    <toc-element topic="custom_plugin_repository.md" accepts-web-file-names="update-plugins-format.html"/>
+    <toc-element topic="plugin_repository_obsolete.md"
                  accepts-web-file-names="api_reference.html,feature_extractor.html,plugin_details.html,custom_channels.html,plugins_list.html,maven_interface.html,plugin_upload.html,plugin_developers.html"/>
   </toc-element>
   <toc-element toc-title="Appendix II — API and Compatibility">
-    <toc-element id="verifying_plugin_compatibility.md"/>
-    <toc-element id="api_changes_list.md" toc-title="Incompatible API Changes"
+    <toc-element topic="verifying_plugin_compatibility.md"/>
+    <toc-element topic="api_changes_list.md" toc-title="Incompatible API Changes"
                  accepts-web-file-names="api-changes-list-2016.html,api-changes-list-2017.html,api-changes-list-2018.html">
-      <toc-element id="api_changes_list_2023.md" toc-title="2023.*"/>
-      <toc-element id="api_changes_list_2022.md" toc-title="2022.*"/>
-      <toc-element id="api_changes_list_2021.md" toc-title="2021.*"/>
-      <toc-element id="api_changes_list_2020.md" toc-title="2020.*"/>
-      <toc-element id="api_changes_list_2019.md" toc-title="2019.*"/>
+      <toc-element topic="api_changes_list_2023.md" toc-title="2023.*"/>
+      <toc-element topic="api_changes_list_2022.md" toc-title="2022.*"/>
+      <toc-element topic="api_changes_list_2021.md" toc-title="2021.*"/>
+      <toc-element topic="api_changes_list_2020.md" toc-title="2020.*"/>
+      <toc-element topic="api_changes_list_2019.md" toc-title="2019.*"/>
     </toc-element>
-    <toc-element id="api_notable.md" toc-title="Notable API Changes"
+    <toc-element topic="api_notable.md" toc-title="Notable API Changes"
                  accepts-web-file-names="api-notable-list-2018.html">
-      <toc-element id="api_notable_list_2023.md" toc-title="2023.*"/>
-      <toc-element id="api_notable_list_2022.md" toc-title="2022.*"/>
-      <toc-element id="api_notable_list_2021.md" toc-title="2021.*"/>
-      <toc-element id="api_notable_list_2020.md" toc-title="2020.*"/>
-      <toc-element id="api_notable_list_2019.md" toc-title="2019.*"/>
+      <toc-element topic="api_notable_list_2023.md" toc-title="2023.*"/>
+      <toc-element topic="api_notable_list_2022.md" toc-title="2022.*"/>
+      <toc-element topic="api_notable_list_2021.md" toc-title="2021.*"/>
+      <toc-element topic="api_notable_list_2020.md" toc-title="2020.*"/>
+      <toc-element topic="api_notable_list_2019.md" toc-title="2019.*"/>
     </toc-element>
-    <toc-element id="api_internal.md"/>
+    <toc-element topic="api_internal.md"/>
   </toc-element>
   <toc-element toc-title="Appendix III — Tooling">
-    <toc-element id="tools_gradle_intellij_plugin.md">
-      <toc-element toc-title="Usage Examples" id="tools_gradle_intellij_plugin_examples.md"/>
-      <toc-element toc-title="Build Features" id="tools_gradle_intellij_plugin_build_features.md"/>
-      <toc-element toc-title="Frequently Asked Questions" id="tools_gradle_intellij_plugin_faq.md"/>
-      <toc-element toc-title="Migration Guide from 0.x to 1.x" href="https://lp.jetbrains.com/gradle-intellij-plugin/"/>
-    </toc-element>
-    <toc-element id="tools_gradle_grammar_kit_plugin.md"/>
+    <toc-element topic="tools_gradle_intellij_plugin.md">
+      <toc-element topic="tools_gradle_intellij_plugin_examples.md" toc-title="Usage Examples"/>
+      <toc-element topic="tools_gradle_intellij_plugin_build_features.md" toc-title="Build Features"/>
+      <toc-element topic="tools_gradle_intellij_plugin_faq.md" toc-title="Frequently Asked Questions"/>
+      <toc-element toc-title="Migration Guide from 0.x to 1.x"
+                   target-for-accept-web-file-names="https://lp.jetbrains.com/gradle-intellij-plugin/"/>
+      </toc-element>
+    <toc-element topic="tools_gradle_grammar_kit_plugin.md"/>
     <toc-element toc-title="IDE Tooling">
-      <toc-element id="internal_actions_intro.md" accepts-web-file-names="interal_actions_menu.html">
-        <toc-element id="enabling_internal.md"/>
-        <toc-element id="internal_ui_sub.md" toc-title="UI Tools">
-          <toc-element id="internal_ui_inspector.md" accepts-web-file-names="internal_uii.html"
+      <toc-element topic="internal_actions_intro.md" accepts-web-file-names="interal_actions_menu.html">
+        <toc-element topic="enabling_internal.md"/>
+        <toc-element topic="internal_ui_sub.md" toc-title="UI Tools">
+          <toc-element topic="internal_ui_inspector.md" accepts-web-file-names="internal_uii.html"
                        toc-title="UI Inspector"/>
-          <toc-element id="internal_ui_laf_defaults.md" accepts-web-file-names="internal_ui_lafd.html"
+          <toc-element topic="internal_ui_laf_defaults.md" accepts-web-file-names="internal_ui_lafd.html"
                        toc-title="LaF Defaults"/>
         </toc-element>
       </toc-element>
     </toc-element>
   </toc-element>
-</product-profile>
+</instance-profile>

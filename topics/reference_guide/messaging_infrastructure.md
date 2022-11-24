@@ -9,7 +9,7 @@ It is intended to answer why, when and how to use it.
 
 ## Rationale
 
-So, what is messaging in the IntelliJ Platform and why do we need it? Basically, its implementation of [Publisher Subscriber Pattern](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern){interpolate-variables="false"} that provides additional features like _broadcasting on hierarchy_ and special _nested events_ processing (_nested event_ here is a situation when new event is fired (directly or indirectly) from the callback of another event).
+So, what is messaging in the IntelliJ Platform and why do we need it? Basically, its implementation of [Publisher Subscriber Pattern](https://w.wiki/5xaV) that provides additional features like _broadcasting on hierarchy_ and special _nested events_ processing (_nested event_ here is a situation when new event is fired (directly or indirectly) from the callback of another event).
 
 ## Design
 
@@ -33,7 +33,6 @@ To clarify corresponding message bus, `Topic` field declaration can be annotated
 
 > All available listeners/topics are listed on [](extension_point_list.md) under _Listeners_ sections.
 >
-{type="tip"}
 
 ### Message Bus
 
@@ -75,7 +74,7 @@ public interface ChangeActionNotifier {
 
 > If targeting 2019.3 or later, use [declarative registration](plugin_listeners.md) if possible.
 >
-{type="note"}
+{style="note"}
 
 ```java
 public void init(MessageBus bus) {
@@ -176,7 +175,8 @@ Let's see what happens if someone sends a message to the target topic:
 
 ### Relief Listeners Management
 
-Messaging infrastructure is very light-weight, so, it's possible to reuse it at local sub-systems in order to relieve [Subscribers](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern){interpolate-variables="false"} construction.
+[//]: # (TODO: revert link to https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)
+Messaging infrastructure is very light-weight, so, it's possible to reuse it at local sub-systems in order to relieve [Subscribers](https://w.wiki/5xaV) construction.
 Let's see what is necessary to do then:
 
 1. Define business interface to work with;

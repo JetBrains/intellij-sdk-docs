@@ -2,11 +2,11 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Product Help:** [Code completion](https://www.jetbrains.com/help/idea/auto-completing-code.html)
 
-</microformat>
+</tldr>
 
 Two main types of code completion can be provided by custom language plugins: reference completion and contributor-based completion.
 
@@ -25,7 +25,7 @@ The most common way to implement `getVariants()` is to use the same function for
 
 > This API is available starting from 2020.3 and currently in development and thus in experimental state.
 >
-{type="warning"}
+{style="warning"}
 
 To provide completion variants by a `PsiSymbolReference` implement
 [`PsiCompletableReference`](%gh-ic%/platform/analysis-api/src/com/intellij/model/psi/PsiCompletableReference.java).
@@ -37,7 +37,7 @@ Register in `com.intellij.completion.contributor` extension point and specify `l
 
 > Note that the JavaDoc of that class contains a detailed FAQ for implementing code completion.
 >
-{type="note"}
+{style="note"}
 
 The core scenario of using [`CompletionContributor`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java) consists of calling the `extend()` method and passing in the [Element Pattern](element_patterns.md) specifying the context in which this completion variant is applicable, as well as a *completion provider* which generates the items to show in the completion list.
 

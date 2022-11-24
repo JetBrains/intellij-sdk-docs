@@ -6,7 +6,7 @@ The IntelliJ Platform provides the concept of _actions_.
 An action is a class derived from [`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java), whose `actionPerformed()` method is called when its menu item or toolbar button is selected.
 
 Actions are the most common way for a user to invoke the functionality of your plugin.
-An action can be invoked from a menu or a toolbar, using a keyboard shortcut or the <menupath>Help | Find Action...</menupath> lookup.
+An action can be invoked from a menu or a toolbar, using a keyboard shortcut or the <ui-path>Help | Find Action...</ui-path> lookup.
 
 Actions are organized into groups, which, in turn, can contain other groups.
 A group of actions can form a toolbar or a menu.

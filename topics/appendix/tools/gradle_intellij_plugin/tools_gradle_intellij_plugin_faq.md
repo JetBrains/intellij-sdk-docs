@@ -6,7 +6,7 @@
 
 ### How to target 2022.3 platform
 
-<include src="tools_gradle_intellij_plugin.md" include-id="gradle_plugin_223_problem"></include>
+<include from="tools_gradle_intellij_plugin.md" element-id="gradle_plugin_223_problem"></include>
 
 ### How to modify JVM arguments of runIde task
 
@@ -118,7 +118,7 @@ buildSearchableOptions.enabled = false
 </tab>
 </tabs>
 
-As a result of disabling building searchable options, the [Settings](settings.md) that your plugin provides won't be searchable in the <menupath>Settings/Preferences</menupath> dialog.
+As a result of disabling building searchable options, the [Settings](settings.md) that your plugin provides won't be searchable in the <ui-path>Settings/Preferences</ui-path> dialog.
 Disabling of the task is suggested for plugins that are not intended to provide custom settings.
 
 ### How to show log file of sandbox instance
@@ -169,7 +169,7 @@ Unfortunately, this entry remains even after disabling the `org.jetbrains.intell
 Task 'setupDependencies' not found in root project 'projectName'.
 ```
 
-To fix that, manually edit the <path>.idea/workspace.xml</path> file removing mentioned entry, go to the <control>Gradle</control> tool window, select the <menupath>Tasks Activation</menupath> action from the context menu of the root project item, and remove it.
+To fix that, manually edit the <path>.idea/workspace.xml</path> file removing mentioned entry, go to the <control>Gradle</control> tool window, select the <ui-path>Tasks Activation</ui-path> action from the context menu of the root project item, and remove it.
 
 ### How do I expose my plugin API sources to dependent plugins?
 

@@ -2,11 +2,11 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Platform UI Guidelines:** [Layout](https://jetbrains.design/intellij/principles/layout), [Validation errors](https://jetbrains.design/intellij/principles/validation_errors/)
 
-</microformat>
+</tldr>
 
 ## DialogWrapper
 
@@ -47,7 +47,6 @@ When using Kotlin, use [Kotlin UI DSL](kotlin_ui_dsl_version_2.md) to provide th
 >
 > Existing dialogs can be inspected at runtime using [UI Inspector](internal_ui_inspector.md), e.g., to locate the underlying implementation of UI components.
 >
-{type="tip"}
 
 To display the dialog, call the `show()` method and then use the `getExitCode()` method to check how the dialog was closed (see `DialogWrapper#OK_EXIT_CODE|CANCEL_EXIT_CODE|CLOSE_EXIT_CODE`).
 The `showAndGet()` method can be used to combine these two calls.

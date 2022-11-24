@@ -2,14 +2,14 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<excerpt>Overview of a theme plugin project structure and the most important elements.</excerpt>
+<link-summary>Overview of a theme plugin project structure and the most important elements.</link-summary>
 
-Themes are components within [IntelliJ Platform plugins](plugin_structure.md).
+Themes are components within [IntelliJ Platform plugins](plugin_structure.topic).
 The theme plugins should be stand-alone and not combined with other plugin functionality.
 
 > To see a full example theme project, see the [Theme Basics](%gh-sdk-samples%/theme_basics) in IntelliJ SDK Code Samples.
 >
-{type="note"}
+{style="note"}
 
 Themes have several components:
 * A required Theme description (JSON) file in the plugin project's <path>resources</path> folder.
@@ -56,7 +56,7 @@ This declaration binds the theme description file to a theme provider extension 
 
 > Do not modify or re-use an existing value of the generated `id` attribute.
 >
-{type="warning"}
+{style="warning"}
 
 ## Theme Customization
 

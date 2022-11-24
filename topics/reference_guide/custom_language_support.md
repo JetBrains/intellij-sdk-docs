@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<excerpt>Supporting custom languages overview.</excerpt>
+<link-summary>Supporting custom languages overview.</link-summary>
 
 IntelliJ Platform is a powerful platform for building development tools targeting *any* language.
 Most of the IDE features consist of language-independent (provided by the platform) and language-specific parts.
@@ -22,7 +22,7 @@ Corresponding steps from the tutorial are linked under the "**Example**" section
 
 The webinar [How We Built Comma, the Raku IDE, on the IntelliJ Platform](https://blog.jetbrains.com/platform/2020/01/webinar-recording-how-we-built-comma-the-raku-ide-on-the-intellij-platform/) offers an excellent introduction as well.
 
-<video href="zDP9uUMYrvs" title="How We Built Comma, the Raku IDE, on the IntelliJ Platform"/>
+<video src="https://www.youtube.com/watch?v=zDP9uUMYrvs" title="How We Built Comma, the Raku IDE, on the IntelliJ Platform"/>
 
 ## Topics
 
@@ -66,4 +66,4 @@ The webinar [How We Built Comma, the Raku IDE, on the IntelliJ Platform](https:/
 >
 > Please be specific about the topics and reasons for adding them, and leave your email in case we need more details.
 >
-{type="note"}
+{style="note"}

@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<excerpt>Additional minor features for custom languages.</excerpt>
+<link-summary>Additional minor features for custom languages.</link-summary>
 
 A number of minor features are listed in the following format:
 
@@ -14,7 +14,6 @@ _- Sample 1_ - Sample implementation
 
 > See also [](extension_point_list.md#langextensionpointsxml) to discover more Language-related Extension Points. See also [](explore_api.md).
 >
-{type="tip"}
 
 ### Brace Matching
 
@@ -60,19 +59,19 @@ EP: `com.intellij.lang.foldingBuilder`
 
 EP: `com.intellij.joinLinesHandler`
 
-[`JoinLinesHandlerDelegate`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/JoinLinesHandlerDelegate.java) allows extending support smart/semantic <menupath>Edit | Join Lines</menupath> (e.g., String literal split on multiple lines).
+[`JoinLinesHandlerDelegate`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/JoinLinesHandlerDelegate.java) allows extending support smart/semantic <ui-path>Edit | Join Lines</ui-path> (e.g., String literal split on multiple lines).
 
 ### Smart Enter
 
 EP: `com.intellij.lang.smartEnterProcessor`
 
-[`SmartEnterProcessor`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/smartEnter/SmartEnterProcessor.java) handles <menupath>Edit | Complete Statement</menupath> (e.g., autocomplete missing semicolon/parentheses).
+[`SmartEnterProcessor`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/smartEnter/SmartEnterProcessor.java) handles <ui-path>Edit | Complete Statement</ui-path> (e.g., autocomplete missing semicolon/parentheses).
 
 ### Move Element Left/Right
 
 EP: `com.intellij.moveLeftRightHandler`
 
-Return children of given element from [`MoveElementLeftRightHandler`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/moveLeftRight/MoveElementLeftRightHandler.java) for <menupath>Code | Move Element Left|Right</menupath>, e.g., method call parameters.
+Return children of given element from [`MoveElementLeftRightHandler`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/moveLeftRight/MoveElementLeftRightHandler.java) for <ui-path>Code | Move Element Left|Right</ui-path>, e.g., method call parameters.
 Alternatively, implement [`PsiListLikeElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiListLikeElement.java) in PSI element.
 
 ### Naming Suggestions
@@ -97,7 +96,7 @@ EP: n/a
 
 EP: `com.intellij.declarationRangeHandler`
 
-[`DeclarationRangeHandler`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hint/DeclarationRangeHandler.java) provides <menupath>View | Context Info</menupath> for custom languages with structure view implementation based on a [`TreeBasedStructureViewBuilder`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/structureView/TreeBasedStructureViewBuilder.java).
+[`DeclarationRangeHandler`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hint/DeclarationRangeHandler.java) provides <ui-path>View | Context Info</ui-path> for custom languages with structure view implementation based on a [`TreeBasedStructureViewBuilder`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/structureView/TreeBasedStructureViewBuilder.java).
 
 ### Spellchecking
 
@@ -261,4 +260,4 @@ Example:
 >
 > Please be specific about the topics and reasons for adding them, and leave your email in case we need more details.
 >
-{type="note"}
+{style="note"}

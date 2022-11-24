@@ -1,6 +1,6 @@
 [//]: # (title: Gradle Grammar-Kit Plugin)
 
-<toc-settings depth="2" mode="tree" structure-elements="chapter"/>
+<show-structure for="chapter" depth="2"/>
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
@@ -8,11 +8,10 @@ The [Gradle Grammar-Kit Plugin](https://github.com/JetBrains/gradle-grammar-kit-
 
 > Current Gradle Grammar-Kit Plugin version is ![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-grammar-kit-plugin.svg?style=flat-square)
 >
-{type="note"}
+{style="note"}
 
 > The plugin does not support two-pass generation. Therefore, it does not support method mixins.
 >
-{type="tip"}
 
 ## Usage
 To enable this plugin in your Gradle-based project, register the plugin in the Gradle build script's `plugins` section:
@@ -46,13 +45,11 @@ plugins {
 >
 > See also: [Gradle Installation](https://gradle.org/install/) guide.
 >
-{type="tip"}
 
 > Please see [CONTRIBUTING](https://github.com/JetBrains/gradle-grammar-kit-plugin/blob/master/CONTRIBUTING.md) on how to submit feedback and contribute to this project.
 >
 > Before visiting the [Issue Tracker](https://github.com/JetBrains/gradle-grammar-kit-plugin/issues), update both plugin and Gradle to the latest versions.
 >
-{type="tip"}
 
 ## Configuration
 

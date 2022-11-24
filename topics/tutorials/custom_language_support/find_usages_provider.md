@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Reference**: [](find_usages.md)
 
@@ -10,9 +10,9 @@
 
 **Testing**: [](find_usages_test.md)
 
-</microformat>
+</tldr>
 
-<include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
+<include from="language_and_filetype.md" element-id="custom_language_tutorial_header"></include>
 
 A `FindUsagesProvider` uses a word scanner to build an index of words in every file.
 A scanner breaks the text into words and defines the context for each word.

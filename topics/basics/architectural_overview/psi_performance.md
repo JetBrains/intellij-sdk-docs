@@ -6,7 +6,6 @@ See also [](general_threading_rules.md#avoiding-ui-freezes) and [](indexing_and_
 
 > [IDE Perf](https://plugins.jetbrains.com/plugin/15104-ide-perf) plugin provides on-the-fly performance diagnostic tools, including a dedicated view for [`CachedValue`](#cache-results-of-heavy-computations) metrics.
 >
-{type="tip"}
 
 ## Avoid Expensive Methods of `PsiElement`
 

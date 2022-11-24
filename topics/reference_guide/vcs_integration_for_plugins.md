@@ -76,7 +76,7 @@ There are two main kinds of changelists:
 
 > The <control>Unversioned Files</control>, <control>Locally Deleted Files</control>, etc., nodes in the <control>Changes</control> view are not actually change lists, and files under those nodes are not represented by `ChangeList` objects.
 >
-{type="note"}
+{style="note"}
 
 ## Plugin Components
 

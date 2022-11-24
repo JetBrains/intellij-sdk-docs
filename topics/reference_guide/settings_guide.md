@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<excerpt>Adding entries in Settings/Preferences.</excerpt>
+<link-summary>Adding entries in Settings/Preferences.</link-summary>
 
 _Settings_ persistently store states that control the behavior and appearance of IntelliJ Platform-based IDEs.
 On this page, the term "Settings" means the same as "Preferences" on some platforms.
@@ -24,7 +24,7 @@ See [Implementations for Settings Extension Points](#implementations-for-setting
 > For performance reasons, it is recommended to declare as much information as possible about a 'Settings' implementation using attributes in the EP element in the <path>plugin.xml</path> descriptor.
 > If it is not declared, the component must be loaded to retrieve it from the implementation, degrading UI responsiveness.
 >
-{type="note"}
+{style="note"}
 
 ### Declaring Application Settings
 
@@ -131,7 +131,7 @@ For a `Configurable` implementation correctly declared using an EP, the implemen
 
 > The IntelliJ Platform may instantiate a `Configurable` implementation on a background thread, so creating Swing components in a constructor can degrade UI responsiveness.
 >
-{type="warning"}
+{style="warning"}
 
 #### IntelliJ Platform Interactions with Configurable
 
@@ -163,7 +163,7 @@ The following nested interfaces are markers, which convey information about the 
 
 There are classes in the IntelliJ Platform specialized in particular types of Settings.
 These subtypes are based on `com.intellij.openapi.options.ConfigurableEP`.
-For example, <menupath>Settings/Preferences | Editor | General | Appearance</menupath> allows adding Settings via [`EditorSmartKeysConfigurableEP`](%gh-ic%/platform/lang-impl/src/com/intellij/application/options/editor/EditorSmartKeysConfigurableEP.java) and `com.intellij.editorSmartKeysConfigurable` EP.
+For example, <ui-path>Settings/Preferences | Editor | General | Appearance</ui-path> allows adding Settings via [`EditorSmartKeysConfigurableEP`](%gh-ic%/platform/lang-impl/src/com/intellij/application/options/editor/EditorSmartKeysConfigurableEP.java) and `com.intellij.editorSmartKeysConfigurable` EP.
 
 #### Examples
 

@@ -15,7 +15,7 @@ The most commonly used methods are:
 | `createComponentPopupBuilder()` | Generic, allows showing any [Swing](https://docs.oracle.com/javase/tutorial/uiswing/start/index.html) component.<br/><br/>**Example**: [`IntentionPreviewPopupUpdateProcessor`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/intention/impl/preview/IntentionPreviewPopupUpdateProcessor.kt) creating a popup rendering the intention preview.            |
 | `createPopupChooserBuilder()`   | For choosing one or more items from a plain `java.util.List`.<br/><br/>**Example**: [`ShowMessageHistoryAction`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/actions/ShowMessageHistoryAction.kt) creating a popup with recent commit messages history in the commit message text area.                                                                   |
 | `createConfirmation()`          | For choosing between two options, and performing different actions depending on which option is selected.<br/><br/>**Example**: [`VariableInplaceRenamer`](%gh-ic%/platform/lang-impl/src/com/intellij/refactoring/rename/inplace/VariableInplaceRenamer.java) creating confirmation popup after invalid variable name is provided in the inplace rename action.     |
-| `createActionGroupPopup()`      | Show actions from an [Action Group](grouping_action.md) and executes the action selected by the user.<br/><br/>**Example**: [`ShowRecentFindUsagesGroup`](%gh-ic%/platform/lang-impl/src/com/intellij/find/impl/ShowRecentFindUsagesGroup.java) invoked via <menupath>Edit / Find Usages / Recent Find Usages</menupath> and showing recent find usages group popup. |
+| `createActionGroupPopup()`      | Show actions from an [Action Group](grouping_action.md) and executes the action selected by the user.<br/><br/>**Example**: [`ShowRecentFindUsagesGroup`](%gh-ic%/platform/lang-impl/src/com/intellij/find/impl/ShowRecentFindUsagesGroup.java) invoked via <ui-path>Edit / Find Usages / Recent Find Usages</ui-path> and showing recent find usages group popup. |
 
 ### Action Groups
 
@@ -44,6 +44,6 @@ You can let the IntelliJ Platform automatically choose the position based on the
 
 > The `show()` methods return immediately and do not wait for the popup to be closed.
 >
-{type="note"}
+{style="note"}
 
 If you need to perform some action when the popup is closed, you can either attach a listener to it using the `addListener()` method, override a method of the popup contents such as [`PopupStep.onChosen()`](%gh-ic%/platform/core-ui/src/openapi/ui/popup/PopupStep.java), or attach an event handler to your own component within the popup.

@@ -8,7 +8,7 @@ Welcome to the IntelliJ Platform SDK – the primary source of documentation for
 
 > We're looking for a [Software Developer](https://www.jetbrains.com/careers/jobs/software-developer-intellij-sdk-advocacy-680/) to work on [Plugin Verifier](verifying_plugin_compatibility.md) tooling.
 >
-{type="note"}
+{style="note"}
 
 ## Getting Started
 
@@ -38,10 +38,8 @@ Webinar
 <td width="50%">
 
 Watch [Busy Plugin Developers #0](https://www.youtube.com/watch?v=-6D5-xEaYig) to get started with developing plugins and publishing on [JetBrains Marketplace](https://plugins.jetbrains.com).
-<br/>
-<br/>
 
-<video href="-6D5-xEaYig" title="Busy Plugin Developers #0" width="300"/>
+<video src="https://www.youtube.com/watch?v=-6D5-xEaYig" title="Busy Plugin Developers #0" width="300"/>
 
 </td>
 </tr>
@@ -55,7 +53,7 @@ Please see [Getting Help](getting_help.md) if you encounter bugs in this guide o
 >
 > [What's New & Upgrade Instructions](https://lp.jetbrains.com/gradle-intellij-plugin)
 >
-{type="note"}
+{style="note"}
 
 See [Content Updates](content_updates.md) for the latest changes.
 

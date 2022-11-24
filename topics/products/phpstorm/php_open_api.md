@@ -4,7 +4,6 @@
 
 > Please join the dedicated [intellij-php](https://jetbrains-platform.slack.com/archives/C5P9YB0LT/p1653913208725609) Slack channel to discuss PHP related plugin development.
 >
-{type="tip"}
 
 ## Dependency in `plugin.xml`
 
@@ -48,4 +47,4 @@
 
 > See [](php_extension_point_list.md) for the complete list.
 >
-{type="note"}
+{style="note"}

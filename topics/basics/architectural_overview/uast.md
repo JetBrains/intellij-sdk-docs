@@ -130,7 +130,7 @@ To convert `PsiElement` to the specific `UElement`, use one of the following app
 > * Because of performance: `toUElement()` with type is fail-fast
 > * Because of possibly getting different results in some cases: conversion with type is more predictable
 >
-{type="note"}
+{style="note"}
 
 ### UAST to PSI Conversion
 
@@ -256,7 +256,7 @@ To register [extensions](plugin_extensions.md) applicable to UAST, specify `lang
 
 ### Inspecting UAST Tree
 
-To inspect UAST Tree, invoke [internal action](enabling_internal.md) <menupath>Tools | Internal Actions | UAST | Dump UAST Tree (By Each PsiElement)</menupath>.
+To inspect UAST Tree, invoke [internal action](enabling_internal.md) <ui-path>Tools | Internal Actions | UAST | Dump UAST Tree (By Each PsiElement)</ui-path>.
 
 ### Inspections
 

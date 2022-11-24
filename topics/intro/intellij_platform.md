@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<excerpt>Introduction to the IntelliJ Platform, plugins, and IDEs based on it.</excerpt>
+<link-summary>Introduction to the IntelliJ Platform, plugins, and IDEs based on it.</link-summary>
 
 The IntelliJ Platform is not a product in and of itself but provides a platform for building IDEs.
 It is used to power JetBrains products such as [IntelliJ IDEA](https://www.jetbrains.com/idea/).
@@ -35,7 +35,6 @@ See the [](plugins_quick_start.md) for more details.
 
 > In some cases, implementing an actual IntelliJ Platform plugin might not be necessary, as [alternative solutions](plugin_alternatives.md) exist.
 >
-{type="tip"}
 
 ## Open Source
 
@@ -61,7 +60,6 @@ This allows plugins to target multiple products, as each product will include ba
 
 > Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
 >
-{type="tip"}
 
 The following IDEs are based on the IntelliJ Platform:
 * JetBrains IDEs:

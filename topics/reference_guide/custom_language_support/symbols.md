@@ -4,9 +4,9 @@
 
 > This API is available starting from 2020.3 and is currently in development and thus in an experimental state.
 >
-{type="warning"}
+{style="warning"}
 
-<excerpt rel="excerpt"/>
+<link-summary rel="excerpt"/>
 <p id="excerpt">
 A symbol is a semantic element in some model, e.g., language or framework model.
 </p>

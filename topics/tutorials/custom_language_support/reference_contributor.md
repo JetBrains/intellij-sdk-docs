@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<microformat>
+<tldr>
 
 **Reference**: [](references_and_resolve.md), [](psi_references.md)
 
@@ -14,16 +14,16 @@
 
 **Testing**: [](completion_test.md), [](rename_test.md), [](reference_test.md),
 
-</microformat>
+</tldr>
 
-<include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
+<include from="language_and_filetype.md" element-id="custom_language_tutorial_header"></include>
 
 The references functionality is one of the most important parts in the implementation of custom language support.
 Resolving references means the ability to go from the usage of an element to its declaration, completion, rename refactoring, find usages, etc.
 
 > Every PSI element that can be renamed or referenced needs to implement [`PsiNamedElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiNamedElement.java) interface.
 >
-{type="note"}
+{style="note"}
 
 ## Define a Named Element Class
 

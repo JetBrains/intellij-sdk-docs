@@ -4,8 +4,7 @@
 
 * Code Completion
 * [](postfix_completion.md)
-* [](templates.md)
-  * [](live_templates.md)
-  * [](file_and_code_templates.md)
+* [](live_templates.md)
+* [](file_and_code_templates.md)
 * [](code_documentation.md)
 * [](code_intentions.md)

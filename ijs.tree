@@ -173,15 +173,13 @@
         <toc-element topic="postfix_templates.md"/>
         <toc-element topic="advanced_postfix_templates.md"/>
       </toc-element>
-      <toc-element topic="templates.md">
-        <toc-element topic="live_templates.md">
-          <toc-element topic="template_support.md"/>
-          <toc-element topic="new_macros.md"/>
-        </toc-element>
-        <toc-element topic="file_and_code_templates.md">
-          <toc-element topic="providing_file_templates.md"/>
-          <toc-element topic="using_file_templates.md"/>
-        </toc-element>
+      <toc-element topic="live_templates.md">
+        <toc-element topic="template_support.md"/>
+        <toc-element topic="new_macros.md"/>
+      </toc-element>
+      <toc-element topic="file_and_code_templates.md">
+        <toc-element topic="providing_file_templates.md"/>
+        <toc-element topic="using_file_templates.md"/>
       </toc-element>
       <toc-element topic="code_documentation.md"/>
       <toc-element topic="code_intentions.md"/>

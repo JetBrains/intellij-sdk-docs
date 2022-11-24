@@ -1,4 +1,4 @@
-[//]: # (title: Creating a Plugin Gradle Project)
+# Creating a Plugin Gradle Project
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
@@ -23,10 +23,9 @@ Launch the <control>New Project</control> wizard via the <ui-path>File | New | P
 7. Select <control>JDK</control> 11.
    This JDK will be the default JRE used to run Gradle, and the JDK version used to compile the plugin Java sources.
 
-> When targeting 2020.3 and later only, using Java 11 is required.
-> See the [IntelliJ project migrates to Java 11](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/) blog post for details.
+> Java 17 is required ([blog post](https://blog.jetbrains.com/platform/2022/08/intellij-project-migrates-to-java-17/) when targeting 2022.2 or later only.
 >
-> When targeting 2022.2 and later only, using Java 17 is required.
+> Java 11 is required ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)) when targeting 2020.3 and later only.
 >
 {style="note"}
 

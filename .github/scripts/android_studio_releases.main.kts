@@ -34,7 +34,7 @@ val content = URL(RELEASES_LIST).readText()
 
 val xml = """
 
-<chunk id="releases_table">
+<snippet id="releases_table">
 ${
   content.items.groupBy { it.version.toLooseVersion().major }.entries.joinToString("\n\n") {
     """
@@ -44,12 +44,12 @@ ${
   }
 }
 $CHANNEL_BADGES_LIST
-</chunk>
+</snippet>
 
-<chunk id="releases_table_short">
+<snippet id="releases_table_short">
 ${content.items.distinctBy(Item::version).take(5).renderTable()}
 $CHANNEL_BADGES_LIST
-</chunk>
+</snippet>
 
 """.split("\n").joinToString("\n", transform = String::trim).let(file(RELEASES_FILE_PATH_MD)::writeText)
 

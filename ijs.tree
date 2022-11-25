@@ -177,7 +177,7 @@
         <toc-element topic="template_support.md"/>
         <toc-element topic="new_macros.md"/>
       </toc-element>
-      <toc-element topic="file_and_code_templates.md">
+      <toc-element topic="file_and_code_templates.md" accepts-web-file-names="templates.html">
         <toc-element topic="providing_file_templates.md"/>
         <toc-element topic="using_file_templates.md"/>
       </toc-element>

@@ -21,7 +21,7 @@ Launch the <control>New Project</control> wizard via the <ui-path>File | New | P
    It is also used for the Gradle property `rootProject.name` value in the project's <path>settings.gradle.kts</path> file.
    For this example, enter `my_plugin`.
 7. Select <control>JDK</control> 11.
-   This JDK will be the default JRE used to run Gradle, and the JDK version used to compile the plugin Java sources.
+   This JDK will be the default JRE used to run Gradle, and the JDK version used to compile the plugin sources.
 
 > Java 17 is required ([blog post](https://blog.jetbrains.com/platform/2022/08/intellij-project-migrates-to-java-17/) when targeting 2022.2 or later only.
 >

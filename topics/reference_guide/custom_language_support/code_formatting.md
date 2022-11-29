@@ -125,4 +125,4 @@ _2021.3_
 Register [`AsyncDocumentFormattingService`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/service/AsyncDocumentFormattingService.java) implementation in extension point [`com.intellij.formattingService`](https://jb.gg/ipe?extensions=com.intellij.formattingService) to invoke external formatter instead of IDE's builtin formatter.
 
 **Example**:
-[`ShExternalFormatter`](%gh-ic%/plugins/sh/src/com/intellij/sh/formatter/ShExternalFormatter.java) from _Shell Script_ plugin
+[`ShExternalFormatter`](%gh-ic%/plugins/sh/core/src/com/intellij/sh/formatter/ShExternalFormatter.java) from _Shell Script_ plugin

@@ -57,9 +57,6 @@
 
 ## IntelliJ Platform
 
-## IntelliJ Platform
-
-
 ### IntelliJ Platform - Listeners
 
 | Topic | Listener |

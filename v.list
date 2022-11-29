@@ -11,7 +11,8 @@
   <var name="gh-ic" value="https://github.com/JetBrains/intellij-community/tree/idea/%ijPlatformBuild%"/>
   <var name="gh-ic-master" value="https://github.com/JetBrains/intellij-community/tree/master"/>
 
-<!--  TODO restore when tags on GH are back again -->
-<!-- <var name="gh-ij-android" value="https://github.com/JetBrains/android/tree/idea/%ijPlatformBuild%"/>-->
-  <var name="gh-ij-android" value="https://github.com/JetBrains/android/tree/idea/222.3739.54"/>
+<!--  TODO restore when tags on GH are back again, re-add leading `/` after prefix in EP list -->
+  <var name="gh-ij-android" value="https://git.jetbrains.org/?p=idea/android.git;hb=refs/tags/idea/%ijPlatformBuild%;a=blob;f="/>
+  <!-- <var name="gh-ij-android" value="https://github.com/JetBrains/android/tree/idea/%ijPlatformBuild%"/>-->
+
 </vars>

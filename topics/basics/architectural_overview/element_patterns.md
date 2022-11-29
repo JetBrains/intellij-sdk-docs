@@ -39,12 +39,12 @@ They are used in the [completion](completion_contributor.md#define-a-completion-
 However, the IntelliJ Platform source code provides many more examples of element patterns for built-in languages like JSON, XML, Groovy, Markdown, and so on.
 Checking the references in the table above or searching for usages of the high-level pattern classes will provide a comprehensive list that shows how element patterns are used in production code.
 
-For instance, an example can be found in [`MarkdownReferenceProvider`](%gh-ic%/plugins/markdown/core/src/org/intellij/plugins/markdown/lang/references/MarkdownReferenceProvider.java) that tests if a PSI element is an instance of the `MarkdownLinkDestinationImpl` class and appears in a Markdown file.
+For instance, an example can be found in JavaFX plugin [`FxmlReferencesContributor`](%gh-ic%/plugins/javaFX/src/org/jetbrains/plugins/javaFX/fxml/refs/FxmlReferencesContributor.java) that tests if the given PSI element is a XML attribute value inside a <path>*.fxml</path> file.
 
 ```java
-PsiElementPattern.Capture<MarkdownLinkDestinationImpl> linkDestinationCapture =
-  psiElement(MarkdownLinkDestinationImpl.class).
-  inFile(psiFile(MarkdownFile.class));
+XmlAttributeValuePattern attributeValueInFxml =
+        XmlPatterns.xmlAttributeValue().inVirtualFile(
+          virtualFile().withExtension(JavaFxFileTypeFactory.FXML_EXTENSION));
 ```
 
 As shown in the code above, element patterns can be stacked and combined to create more complex conditions.

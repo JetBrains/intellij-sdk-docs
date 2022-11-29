@@ -4,7 +4,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-55 Extension Points and 9 Listeners for PHP
+58 Extension Points and 9 Listeners for PHP
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
@@ -53,6 +53,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.php.debug.templateLanguage](https://jb.gg/ipe?extensions=com.intellij.php.debug.templateLanguage) ![Internal API][internal] | `PhpTemplateLanguagePathMapper` |
 | [com.intellij.php.typeProvider2](https://jb.gg/ipe?extensions=com.intellij.php.typeProvider2) ![Deprecated][deprecated] | `PhpTypeProvider2` |
 | [com.intellij.phpDeadCode](https://jb.gg/ipe?extensions=com.intellij.phpDeadCode) | [`EntryPoint`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/reference/EntryPoint.java) |
+| [com.intellij.phpRunConfigurationExtension](https://jb.gg/ipe?extensions=com.intellij.phpRunConfigurationExtension) | `PhpRunConfigurationExtension` |
 | [com.jetbrains.php.arrayShapesProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.arrayShapesProvider) | `PhpArrayShapesProvider` |
 | [com.jetbrains.php.classAliasProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.classAliasProvider) | `PhpClassAliasProvider` |
 | [com.jetbrains.php.composer.execProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.composer.execProvider) | `ComposerExecutionProvider` |
@@ -84,8 +85,10 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [com.jetbrains.php.phpunit.phpUnitSettingsLoader](https://jb.gg/ipe?extensions=com.jetbrains.php.phpunit.phpUnitSettingsLoader) ![Internal API][internal] | `PhpUnitSettingsLoader` |
 | [com.jetbrains.php.predefinedVariableProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.predefinedVariableProvider) | `PhpPredefinedVariableProvider` |
 | [com.jetbrains.php.referenceResolver2](https://jb.gg/ipe?extensions=com.jetbrains.php.referenceResolver2) | `PhpMultipleDeclarationFilter` |
+| [com.jetbrains.php.referenceScopeExtension](https://jb.gg/ipe?extensions=com.jetbrains.php.referenceScopeExtension) ![Internal API][internal] | `PhpReferenceScopeExtension` |
 | [com.jetbrains.php.relatedToPhpFilesContributor](https://jb.gg/ipe?extensions=com.jetbrains.php.relatedToPhpFilesContributor) | `RelatedToPhpFilesContributor` |
 | [com.jetbrains.php.remote.remoteInterpreterManager](https://jb.gg/ipe?extensions=com.jetbrains.php.remote.remoteInterpreterManager) | `PhpRemoteInterpreterManager` |
+| [com.jetbrains.php.templateLanguageHighlightingExtension](https://jb.gg/ipe?extensions=com.jetbrains.php.templateLanguageHighlightingExtension) ![Internal API][internal] | `TemplateLanguageBackgroundColorProvider` |
 | [com.jetbrains.php.testFramework.phpTestOldConfigHolder](https://jb.gg/ipe?extensions=com.jetbrains.php.testFramework.phpTestOldConfigHolder) ![Deprecated][deprecated] ![Internal API][internal] | `PhpTestFrameworkOldConfigHolder` |
 | [com.jetbrains.php.testFrameworkType](https://jb.gg/ipe?extensions=com.jetbrains.php.testFrameworkType) | `PhpTestFrameworkType` |
 | [com.jetbrains.php.tools.projectConfigurableForm](https://jb.gg/ipe?extensions=com.jetbrains.php.tools.projectConfigurableForm) ![Internal API][internal] ![Project-Level][project-level] | `QualityToolProjectConfigurableForm` |

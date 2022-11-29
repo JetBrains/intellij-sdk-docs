@@ -4,7 +4,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-31 Extension Points and 4 Listeners for AppCode
+34 Extension Points and 6 Listeners for AppCode
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
@@ -14,29 +14,18 @@ See [](extension_point_list.md) for IntelliJ Platform.
 
 ### AppCode - Listeners
 
+
 | Topic | Listener |
 |-------|----------|
 | [CocoaPodsUtils#GEM_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cocoapods.CocoaPodsUtils.GemListener)  | `GemListener` |
 | [CocoaPodsUtils#PODS_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cocoapods.CocoaPodsUtils.PodsListener)  | `PodsListener` |
 | [AMDeviceManager#DEVICE_LISTENER_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.execution.deviceSupport.AMDeviceListener)  | `AMDeviceListener` |
 | [XcodeProjectTestListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.xcode.model.XcodeProjectTestListener)  | `XcodeProjectTestListener` |
+| [Companion#XCODE_IS_BROKEN_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.xcode.refresh.XcodeIsBrokenListener)  | `XcodeIsBrokenListener` |
+| [Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.swift.swiftpm.SwiftPackageManagerSettingsListener)  | `SwiftPackageManagerSettingsListener` |
 
 
-### CocoaCommonPlugin.xml
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| [appcode.breakpointHandlersProvider](https://jb.gg/ipe?extensions=appcode.breakpointHandlersProvider) ![Non-Dynamic][non-dynamic] | `IPhoneBreakpointHandlersProvider` |
-| [cidr.cocoa.xcodeProjectFileProvider](https://jb.gg/ipe?extensions=cidr.cocoa.xcodeProjectFileProvider) | `XcodeProjectFileProvider` |
-
-### CocoaPlugin.xml
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| [cidr.cocoa.documentation.search.candidates.helper](https://jb.gg/ipe?extensions=cidr.cocoa.documentation.search.candidates.helper) | `XcodeDocumentationCandidateBasedSearchHelper` |
-| [cidr.cocoa.documentation.search.usr.provider](https://jb.gg/ipe?extensions=cidr.cocoa.documentation.search.usr.provider) | `XcodeDocumentationUsrProvider` |
-
-### com.intellij.appcode
+### AppCodeCorePlugin.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -50,10 +39,26 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [appcode.xcodeTemplatePathsProvider](https://jb.gg/ipe?extensions=appcode.xcodeTemplatePathsProvider) ![Non-Dynamic][non-dynamic] | `XcodeTemplatePathsProvider` |
 | [appcode.xcodeTemplatesProvider](https://jb.gg/ipe?extensions=appcode.xcodeTemplatesProvider) | `XcodeTemplatesProvider` |
 
+### CocoaCommonPlugin.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [appcode.breakpointHandlersProvider](https://jb.gg/ipe?extensions=appcode.breakpointHandlersProvider) ![Non-Dynamic][non-dynamic] | `IPhoneBreakpointHandlersProvider` |
+| [appcode.lldbInitializerProvider](https://jb.gg/ipe?extensions=appcode.lldbInitializerProvider) ![Non-Dynamic][non-dynamic] | `LLDBInitializerProvider` |
+| [cidr.cocoa.xcodeProjectFileProvider](https://jb.gg/ipe?extensions=cidr.cocoa.xcodeProjectFileProvider) | `XcodeProjectFileProvider` |
+
+### CocoaPlugin.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [cidr.cocoa.documentation.search.candidates.helper](https://jb.gg/ipe?extensions=cidr.cocoa.documentation.search.candidates.helper) | `XcodeDocumentationCandidateBasedSearchHelper` |
+| [cidr.cocoa.documentation.search.usr.provider](https://jb.gg/ipe?extensions=cidr.cocoa.documentation.search.usr.provider) | `XcodeDocumentationUsrProvider` |
+
 ### SwiftLanguageInternalPlugin.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| [cidr.lang.swiftTypeInheritorsSearch](https://jb.gg/ipe?extensions=cidr.lang.swiftTypeInheritorsSearch) ![Non-Dynamic][non-dynamic] | [`QueryExecutor`](%gh-ic%/platform/core-api/src/com/intellij/util/QueryExecutor.java) |
 | [swift.lang.libraryModuleImportRestriction](https://jb.gg/ipe?extensions=swift.lang.libraryModuleImportRestriction) | `SwiftLibraryModuleImportRestriction` |
 | [swift.sdkInfo.extractor](https://jb.gg/ipe?extensions=swift.sdkInfo.extractor) | `OCResolveConfigurationSdkInfoExtractor` |
 | [swift.sourcekit.blacklistedModulesProvider](https://jb.gg/ipe?extensions=swift.sourcekit.blacklistedModulesProvider) ![Non-Dynamic][non-dynamic] | `SourceKitBlacklistedModulesProvider` |
@@ -65,7 +70,6 @@ See [](extension_point_list.md) for IntelliJ Platform.
 |-----------------|----------------|
 | [cidr.lang.swiftCustomIncludePathProvider](https://jb.gg/ipe?extensions=cidr.lang.swiftCustomIncludePathProvider) ![Non-Dynamic][non-dynamic] | `SwiftCustomIncludePathProvider` |
 | [cidr.lang.swiftSourceModuleProvider](https://jb.gg/ipe?extensions=cidr.lang.swiftSourceModuleProvider) ![Non-Dynamic][non-dynamic] | `SwiftSourceModuleProvider` |
-| [cidr.lang.swiftTypeInheritorsSearch](https://jb.gg/ipe?extensions=cidr.lang.swiftTypeInheritorsSearch) ![Non-Dynamic][non-dynamic] | [`QueryExecutor`](%gh-ic%/platform/core-api/src/com/intellij/util/QueryExecutor.java) |
 | [swift.kotlinNative](https://jb.gg/ipe?extensions=swift.kotlinNative) ![Non-Dynamic][non-dynamic] | `KotlinNativeExtensionPoint` |
 | [swift.lang.sourceKit.compileArgumentsCollector](https://jb.gg/ipe?extensions=swift.lang.sourceKit.compileArgumentsCollector) | `SwiftSourceKitCompileArgumentsCollector` |
 | [swift.lang.sourceKit.dataGenerator](https://jb.gg/ipe?extensions=swift.lang.sourceKit.dataGenerator) ![Project-Level][project-level] | `SourceKitDataGenerator` |
@@ -79,8 +83,15 @@ See [](extension_point_list.md) for IntelliJ Platform.
 |-----------------|----------------|
 | [swift.packageManager.appleSdk.filter](https://jb.gg/ipe?extensions=swift.packageManager.appleSdk.filter) | `SwiftPackageLoadedAppleSdkFilter` |
 | [swift.packageManager.environmentConfigurator](https://jb.gg/ipe?extensions=swift.packageManager.environmentConfigurator) | `SwiftPackageManagerEnvironmentConfigurator` |
+| [swift.packageManager.launcher](https://jb.gg/ipe?extensions=swift.packageManager.launcher) | `SwiftPackageManagerConfigurationLauncher` |
 | [swift.packageManager.modulemapsCollector](https://jb.gg/ipe?extensions=swift.packageManager.modulemapsCollector) | `SwiftPackageModuleMapsCollector` |
 | [swift.packageManager.systemModuleResolver](https://jb.gg/ipe?extensions=swift.packageManager.systemModuleResolver) | `SwiftPackageManagerSystemModuleResolver` |
+
+### SwiftTestsExtension.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [test.cidr.OCCodeInsightDelegate](https://jb.gg/ipe?extensions=test.cidr.OCCodeInsightDelegate) ![Non-Dynamic][non-dynamic] | `OCCodeInsightDelegate` |
 
 ### XcodeModelCorePlugin.xml
 

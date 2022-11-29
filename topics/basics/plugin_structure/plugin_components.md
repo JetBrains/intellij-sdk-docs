@@ -39,8 +39,6 @@ Plugin code should only be executed when projects are opened (see [Project Open]
 If this cannot be avoided, add a [listener](plugin_listeners.md) subscribing to the [`AppLifecycleListener`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/AppLifecycleListener.java) topic.
 See also [Running Tasks Once](ide_infrastructure.md#running-tasks-once).
 
-To execute an activity in background on IDE startup (e.g., to warm up caches), use [`PreloadingActivity`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/application/PreloadingActivity.java).
-
 ### Project Open
 
 To execute code when a project is being opened, use one of these two [extensions](plugin_extensions.md):

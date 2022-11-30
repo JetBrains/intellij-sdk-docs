@@ -32,14 +32,16 @@ Define Level 1 heading:
 ```
 # Contributing to the IntelliJ Platform SDK
 ```
+
 </tab>
 
 <tab title="Legacy Format">
 Legacy notation, should be converted to New Format when editing a page:
 
 ```yaml
-[//]: # (title: Contributing to the IntelliJ Platform SDK)
+[ // ]: # (title: Contributing to the IntelliJ Platform SDK)
 ```
+
 </tab>
 
 </tabs>
@@ -76,6 +78,7 @@ Do **not** use headings like _Introduction_, _Overview_, etc. for any introducto
 ### Terminology
 
 Consistent terminology helps the reader grasp new concepts more quickly:
+
 * The open-source code in the GitHub repository `intellij-community` is known as the IntelliJ Platform.
   Use the full phrase in the SDK documentation.
 * IDEs based on the IntelliJ Platform are described as _IntelliJ Platform-based IDEs_.
@@ -90,25 +93,24 @@ For very long sentences, add additional line breaks after `,`, `:` or other sens
 Very long [links](#links) should also be on a separate line.
 
 Consistent text styles are used to standardize references and keywords:
+
 * Menu paths are wrapped using `<ui-path>` with pipe characters separating each level: `<ui-path>Settings/Preferences | Editor</ui-path>`: <ui-path>Settings/Preferences | Editor</ui-path>
   Menu paths to settings always start with "Settings/Preferences" to cover all platforms.
   Inside tables, use `&#124;` instead of `|` to prevent escaping problems.
 * User interface element names like labels, buttons, checkboxes, etc. are wrapped using `<control>`: `Press <control>Continue</continue>`: Press <control>Continue</control>
-* Non-code keywords and quotations, or the names of non-code files, are formatted as italic style: \Theme\_ (_Theme_), \_README.md\_ (_README.md_.)
+* Non-code keywords and quotations, or the names of non-code files, are formatted as italic style: \_Theme\_ (_Theme_), \_README.md\_ (_README.md_.)
   Examples of this file type include _LICENSE.txt_ and _README.md_.
 * Code keywords and classnames are formatted as code style: \`interface\`: `interface`, \`AnAction\`: `AnAction`, \`name\` attribute: `name` attribute.
 * File names are wrapped using `<path>`: `<path>build.gradle.kts</path>` <path>build.gradle.kts</path>.
 * File formats are shown as all capital letters: PNG and XML.
-* Filename extensions are not capitalized when part of a full filename, path, or URL: <path>filename.ext</path>.
+* Filename extensions are not capitalized when part of a full filename, path, or URL: <path>plugin.xml</path>.
 * Keyboard shortcuts are wrapped using `<shortcut>`: `press <shortcut>Alt+Insert</shortcut>` becomes "press <shortcut>Alt+Insert</shortcut>".
 * See [Guidelines for Highlighting Syntax](#guidelines-for-highlighting-syntax) for more best practices for representing code fragments.
 * See [Links to IntelliJ Platform Source](#links-to-intellij-platform-source) for more details about representing names of source files in links.
 
 ### Links
 
-Links are handled as standard Markdown links and can be anchored to external sites, pages within the sites, or headings in the sites.
-
-To link to a page within the site using its `title:` as link text, use shortcut notation `[](page.md)`{disable-links}.
+Links are handled as standard Markdown links and can be anchored to external sites, pages within the site, or headings in the pages.
 
 When a Markdown header is converted to an HTML header, it is assigned an ID so that it can be linked.
 For example, `## Basics` gets the ID of `basics`, and can be linked either in the same page or cross-page as described below.
@@ -129,20 +131,20 @@ In some cases (e.g., the same heading text appears multiple times on the same pa
 #### General Links
 
 General Markdown links have the default Markdown link style:
+
 * `[Gradle](https://gradle.org)`{disable-links} ([Gradle](https://gradle.org)) links to an external site, such as companies, articles, etc.
   If URL contains `%` character, append `{interpolate-variables="false"}`.
 * Linking to pages and page sections within the SDK documentation:
-  * `[Page Title](page.md)`{disable-links} links to an SDK doc page (all located under <path>/topics</path>).
-    Note that the extension is <path>.md</path>, _NOT_ <path>.html</path>.
-  * Specific _sections_ on pages in the SDK documentation are linked by using section anchors.
-    The anchor name will be all lower case, and spaces are replaced with `-`, e.g. `## Page setup` becomes `#page-setup`.
-    Once the anchor (`#`) character of the link is entered, the IDE code completion feature shows the available sections.
-    * `[Link to a section on the current page](#another-section)`{disable-links} links to a heading on the current page.
-    * `[Link to the section on another page](other_page.md#another-section)`{disable-links} links to a heading on another page.
+    * `[Page Title](page.md)`{disable-links} or `[](page.md)` (use page title as link text) links to an SDK doc page (all located under <path>/topics</path>).
+      Note that the extension is <path>.md</path>, _NOT_ <path>.html</path>.
+    * Specific _sections_ on pages in the SDK documentation are linked by using section anchors.
+      The anchor name will be all lower case, and spaces are replaced with `-`, e.g. `## Page setup` becomes `#page-setup`.
+      Once the anchor (`#`) character of the link is entered, the IDE code completion feature shows the available sections.
+        * `[Link to a section on the current page](#another-section)`{disable-links} links to a heading on the current page.
+        * `[Link to the section on another page](other_page.md#another-section)`{disable-links} links to a heading on another page.
 
   If the desired link label is the same as an SDK doc page or section title, leave the label part empty, e.g., `[](test-page.md)`{disable-links} or `[](test-page.md#section-1)`{disable-links}.
   The empty link label will be automatically filled with the actual page or section title.
-
 
 #### Links to IntelliJ Platform Source
 
@@ -154,16 +156,17 @@ Links to files in source code packages in other GitHub repositories follow much 
 * `[`IdeaPlugin.xml`](%\gh-ic%/community-resources/src/META-INF/IdeaPlugin.xml)`{disable-links} links to declarative source code files, use `code` style. ([`IdeaPlugin.xml`](%gh-ic%/community-resources/src/META-INF/IdeaPlugin.xml))
   Examples of this file type include: `settings.gradle`, `plugin.xml` or `theme_basics.theme.json`.
 * `[`\`AnAction\``](%\gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)`{disable-links} links to source files for code objects like interfaces and classes, use `code` style but without the file extension. ([`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java))
-  Examples of this file type include Java and Kotlin.
-  * Note the use of \`\` characters surrounding the class name in the link.
-  * When linking to an API in this manner, the FQN isn't necessary in the link.
-  * No file extension (*.java, *.kt, *.py, etc.) is used by convention.
-  * Be judicious when using such links.
-    Generally, only one link is needed for a given file on a documentation page.
+  Examples of this file type include Java and Kotlin sources.
+    * Note the use of \`\` characters surrounding the class name in the link.
+    * When linking to an API in this manner, the FQN isn't necessary in the link.
+    * No file extension (*.java, *.kt, *.py, etc.) is used by convention.
+    * Be judicious when using such links.
+      Generally, only one link is needed for a given file on a documentation page.
 
 ### Guidelines for Highlighting Syntax
 
 In-paragraph code fragments and IntelliJ Platform APIs are formatted according to these rules:
+
 * Avoid using qualifiers like "`Foo` interface" or "`Foo` abstract class".
   Just refer to `Foo`.
 * The FQN is used for the first reference to an interface, class, or package on a page.
@@ -189,6 +192,7 @@ Syntax highlighting is applied by specifying the language after the first set of
         <tagName attribute="value">XML Text</tagName>
     ```
 ```
+
 Supported languages include `xml`, `java`, `kotlin`, `groovy`, `bash`, `md`, `php`, and `text` for plaintext.
 
 > Source code blocks must have one blank line before and after them, and must have a language specification for highlighting (use `text` as fallback).
@@ -197,8 +201,7 @@ Supported languages include `xml`, `java`, `kotlin`, `groovy`, `bash`, `md`, `ph
 
 Whole files can be imported on a page using `src` attribute after code fences specifying the full path relative to <path>code_samples</path> root folder.
 
-  `{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFoldingBuilder.java"}`
-
+`{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFoldingBuilder.java"}`
 
 The advantage is the code can come from the `code_samples` directory, so it will be live code that isn't silently stale.
 
@@ -231,11 +234,13 @@ The example below will be displayed as a callout, styled as a "note":
 >
 {style="note"}
 ```
+
 > This is a note
 >
 {style="note"}
 
 The styles available for callouts are:
+
 * `tip` - Information that makes the reader more productive.
 * `note` - Information that is important for the reader to understand.
   This callout is reserved for essential points and concepts.
@@ -320,7 +325,8 @@ All existing links in other topics must be updated.
 Specify the previous path(s) including <path>.html</path> extension in `accepts-web-file-names` attribute:
 
 ```xml
+
 <toc-element
-    id="fundamentals.md"
-    accepts-web-file-names="reference_guide.html,architectural_overview.html"/>
+        id="fundamentals.md"
+        accepts-web-file-names="reference_guide.html,architectural_overview.html"/>
 ```

@@ -17,12 +17,11 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 ### November-22
 
 Plugin User Experience
-:
-- Add a new section about how to improve [plugin UX](plugin_user_experience.md) and overall plugin quality.
+: Add a new section about how to improve [plugin UX](plugin_user_experience.md) and overall plugin quality.
 
 Minor Changes and Additions
 :
-- Add information about threading in actions in [](basic_action_system.md#principal-implementation-overrides).
+- Add information about threading in Actions in [](basic_action_system.md#principal-implementation-overrides).
 
 
 ### October-22

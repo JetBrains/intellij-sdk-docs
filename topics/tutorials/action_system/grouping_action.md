@@ -168,10 +168,10 @@ Note there are two sets of `text` and `description` translations, one for the ac
 Conceivably, there could be another set of translations for the action if it used the [`<override-text>`](plugin_configuration_file.md#idea-plugin__actions__action__override-text) attribute.
 
 ```
-action.org.intellij.sdk.action.CustomGroupedAction.text=A Popup Action[en]
-action.org.intellij.sdk.action.CustomGroupedAction.description=SDK popup grouped action example[en]
-group.org.intellij.sdk.action.CustomDefaultActionGroup.text=Popup Grouped Actions[en]
-group.org.intellij.sdk.action.CustomDefaultActionGroup.description=Custom defaultActionGroup demo[en]
+action.org.intellij.sdk.action.CustomGroupedAction.text=A Popup Action [EN]
+action.org.intellij.sdk.action.CustomGroupedAction.description=SDK popup grouped action example [EN]
+group.org.intellij.sdk.action.CustomDefaultActionGroup.text=Popup Grouped Actions [EN]
+group.org.intellij.sdk.action.CustomDefaultActionGroup.description=Custom defaultActionGroup demo [EN]
 ```
 
 ### Providing Specific Behavior for the Custom Group
@@ -192,7 +192,7 @@ public class CustomDefaultActionGroup extends DefaultActionGroup {
 ```
 
 After compiling and running the code sample above and opening a file in the editor and right-clicking, the Editor context menu will pop up containing a new group of actions in the first position.
-Note that the group and actions come from the resource file as all contain the suffix "[en]".
+Note that the group and actions come from the resource file as all contain the suffix " [EN]".
 The new group will also have an icon:
 
 ![Custom Action Group](editor_popup_menu.png)

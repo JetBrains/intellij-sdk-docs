@@ -1,4 +1,4 @@
-[//]: # (title: SDK Docs Style Guide)
+# SDK Docs Style Guide
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
@@ -25,9 +25,24 @@ The documentation files themselves are [Markdown](https://github.github.com/gfm/
 
 Each Markdown file **must** start with a header defining its title using the following notation:
 
+<tabs>
+<tab title="New Format">
+Define Level 1 heading:
+
+```
+# Contributing to the IntelliJ Platform SDK
+```
+</tab>
+
+<tab title="Legacy Format">
+Legacy notation, should be converted to New Format when editing a page:
+
 ```yaml
 [//]: # (title: Contributing to the IntelliJ Platform SDK)
 ```
+</tab>
+
+</tabs>
 
 The page title should be as concise as possible, so it can be reused in the [](#table-of-contents) as is.
 

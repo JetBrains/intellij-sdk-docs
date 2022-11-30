@@ -52,7 +52,7 @@ Every IntelliJ Platform action should override `AnAction.update()` and must over
   access the [`UpdateSession`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/UpdateSession.java) and
   then call `UpdateSession.compute()` to run a function on the EDT.
   Starting from IntelliJ Platform version 2022.3, the Plugin DevKit will have an inspection in
-  <menupath>Plugin DevKit | Code | ActionUpdateThread is missing</menupath> to notify plugin authors about a missing implementation of
+  <ui-path>Plugin DevKit | Code | ActionUpdateThread is missing</ui-path> to notify plugin authors about a missing implementation of
   `AnAction.getActionUpdateThread()`.
 * An action's method `AnAction.actionPerformed()` is called by the IntelliJ Platform if available and selected by the user.
   This method does the heavy lifting for the action: it contains the code executed when the action gets invoked.

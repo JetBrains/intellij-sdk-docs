@@ -4,7 +4,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-70 Extension Points (EP) and 4 Listeners for WebStorm
+64 Extension Points (EP) and 4 Listeners for WebStorm
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
@@ -14,12 +14,14 @@ See [](extension_point_list.md) for IntelliJ Platform.
 
 ### WebStorm - Listeners
 
-| Topic                                                                                                                                                                                           | Listener                         |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------|
-| [JestConsoleProperties#COVERAGE_CONFIG_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.javascript.jest.JestCoverageConfigListener)  ![Project-Level][project-level]                      | `JestCoverageConfigListener`     |
-| [PackageJsonFileManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.javascript.nodejs.packageJson.PackageJsonFileManager.PackageJsonChangeListener)  ![Project-Level][project-level] | `PackageJsonChangeListener`      |
-| [JSLibraryManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.lang.javascript.library.JSLibraryManager.JSLibraryManagerChangeListener)  ![Project-Level][project-level]              | `JSLibraryManagerChangeListener` |
-| [JSRemoteModulesRegistry#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.lang.javascript.modules.remote.JSRemoteModulesChangeListener)                                                   | `JSRemoteModulesChangeListener`  |
+| Topic                                                                                                                                                                                                                     | Listener                         |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------|
+| [JestConsoleProperties#COVERAGE_CONFIG_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.javascript.jest.JestCoverageConfigListener)  ![Project-Level][project-level]                                                | `JestCoverageConfigListener`     |
+| [PackageJsonFileManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.javascript.nodejs.packageJson.PackageJsonFileManager.PackageJsonChangeListener)  ![Deprecated][deprecated] ![Project-Level][project-level] | `PackageJsonChangeListener`      |
+| [PackageJsonFileManager#CHANGES_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.javascript.nodejs.packageJson.PackageJsonFileManager.PackageJsonChangesListener)  ![Project-Level][project-level]                  | `PackageJsonChangesListener`     |
+| [VitestConsoleProperties#COVERAGE_CONFIG_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.javascript.testing.vitest.coverage.VitestCoverageConfigListener)  ![Project-Level][project-level]                         | `VitestCoverageConfigListener`   |
+| [JSLibraryManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.lang.javascript.library.JSLibraryManager.JSLibraryManagerChangeListener)  ![Project-Level][project-level]                                        | `JSLibraryManagerChangeListener` |
+| [JSRemoteModulesRegistry#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.lang.javascript.modules.remote.JSRemoteModulesChangeListener)                                                                             | `JSRemoteModulesChangeListener`  |
 
 ### com.intellij.css
 
@@ -35,7 +37,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.css.structureViewChildrenProvider](https://jb.gg/ipe?extensions=com.intellij.css.structureViewChildrenProvider) | `CssStructureViewElementsProvider` |
 | [com.intellij.css.supportedFileTypesProvider](https://jb.gg/ipe?extensions=com.intellij.css.supportedFileTypesProvider)       | `CssSupportedFileTypesProvider`    |
 
-### intellij.javascript.impl.diagrams.xml
+## intellij.javascript.impl.diagrams.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -45,16 +47,8 @@ See [](extension_point_list.md) for IntelliJ Platform.
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.intellij.javascript.web.additionalContextProvider](https://jb.gg/ipe?extensions=com.intellij.javascript.web.additionalContextProvider) ![Experimental API][experimental] | `WebSymbolsAdditionalContextProvider` |
-| [com.intellij.javascript.web.codeCompletionItemCustomizer](https://jb.gg/ipe?extensions=com.intellij.javascript.web.codeCompletionItemCustomizer) ![Experimental API][experimental] | `WebSymbolCodeCompletionItemCustomizer` |
-| [com.intellij.javascript.web.context](https://jb.gg/ipe?extensions=com.intellij.javascript.web.context) ![Experimental API][experimental] | `WebFrameworkContext` |
-| [com.intellij.javascript.web.declarationProvider](https://jb.gg/ipe?extensions=com.intellij.javascript.web.declarationProvider) | `WebSymbolDeclarationProvider` |
-| [com.intellij.javascript.web.documentationCustomizer](https://jb.gg/ipe?extensions=com.intellij.javascript.web.documentationCustomizer) ![Experimental API][experimental] | `WebSymbolDocumentationCustomizer` |
-| [com.intellij.javascript.web.filter](https://jb.gg/ipe?extensions=com.intellij.javascript.web.filter) ![Experimental API][experimental] | `WebSymbolsFilter` |
-| [com.intellij.javascript.web.framework](https://jb.gg/ipe?extensions=com.intellij.javascript.web.framework) | `WebFramework` |
-| [com.intellij.javascript.web.psiSourcedSymbolProvider](https://jb.gg/ipe?extensions=com.intellij.javascript.web.psiSourcedSymbolProvider) | `PsiSourcedWebSymbolProvider` |
-| [com.intellij.javascript.web.scopeProvider](https://jb.gg/ipe?extensions=com.intellij.javascript.web.scopeProvider) | `WebSymbolsScopeProvider` |
-| [com.intellij.javascript.webTypes](https://jb.gg/ipe?extensions=com.intellij.javascript.webTypes) ![Experimental API][experimental] | `n/a` |
+| [com.intellij.javascript.web.context](https://jb.gg/ipe?extensions=com.intellij.javascript.web.context) ![Deprecated][deprecated] | `WebFrameworkContext` |
+| [com.intellij.javascript.webTypes](https://jb.gg/ipe?extensions=com.intellij.javascript.webTypes) | `n/a` |
 
 ### JavaScript
 
@@ -66,6 +60,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [JavaScript.analysisHandlersFactory](https://jb.gg/ipe?extensions=JavaScript.analysisHandlersFactory) | `JSAnalysisHandlersFactory` |
 | [JavaScript.classInheritorsProvider](https://jb.gg/ipe?extensions=JavaScript.classInheritorsProvider) | `JSClassInheritorsProvider` |
 | [JavaScript.completionHelper](https://jb.gg/ipe?extensions=JavaScript.completionHelper) | `JSCompletionHelper` |
+| [JavaScript.completionPlaceFilter](https://jb.gg/ipe?extensions=JavaScript.completionPlaceFilter) ![Project-Level][project-level] | `JSCompletionPlaceFilterProvider` |
 | [JavaScript.conditionalCompilationDefinitionsProvider](https://jb.gg/ipe?extensions=JavaScript.conditionalCompilationDefinitionsProvider) | `JSConditionalCompilationDefinitionsProvider` |
 | [JavaScript.dialectSpecificHandlersFactory](https://jb.gg/ipe?extensions=JavaScript.dialectSpecificHandlersFactory) | `JSDialectSpecificHandlersFactory` |
 | [JavaScript.elementScopeProvider](https://jb.gg/ipe?extensions=JavaScript.elementScopeProvider) | `JSElementResolveScopeProvider` |
@@ -74,7 +69,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [JavaScript.handlersFactory](https://jb.gg/ipe?extensions=JavaScript.handlersFactory) | `JSHandlersFactory` |
 | [JavaScript.iconProvider](https://jb.gg/ipe?extensions=JavaScript.iconProvider) | `JSIconProvider` |
 | [JavaScript.importCandidatesFactory](https://jb.gg/ipe?extensions=JavaScript.importCandidatesFactory) | `CandidatesFactory` |
-| [JavaScript.importModulePathStrategy](https://jb.gg/ipe?extensions=JavaScript.importModulePathStrategy) | `JSImportModulePathStrategy` |
+| [JavaScript.importModulePathStrategy](https://jb.gg/ipe?extensions=JavaScript.importModulePathStrategy) ![Experimental API][experimental] | `JSImportModulePathStrategy` |
 | [JavaScript.indexedFileTypeProvider](https://jb.gg/ipe?extensions=JavaScript.indexedFileTypeProvider) | `IndexedFileTypeProvider` |
 | [JavaScript.indexedFilesFilter](https://jb.gg/ipe?extensions=JavaScript.indexedFilesFilter) ![Deprecated][deprecated] | `JSIndexedFilesFilterProvider` |
 | [JavaScript.inheritedLanguagesConfigurableProvider](https://jb.gg/ipe?extensions=JavaScript.inheritedLanguagesConfigurableProvider) | `JSInheritedLanguagesConfigurableProvider` |
@@ -91,10 +86,11 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [JavaScript.runConfigurationBuilder](https://jb.gg/ipe?extensions=JavaScript.runConfigurationBuilder) ![Project-Level][project-level] | `JSRunConfigurationBuilder` |
 | [JavaScript.smartCompletionContributor](https://jb.gg/ipe?extensions=JavaScript.smartCompletionContributor) | `JSSmartCompletionContributor` |
 | [JavaScript.spellcheckerProvider](https://jb.gg/ipe?extensions=JavaScript.spellcheckerProvider) | `JSSpellcheckerProvider` |
-| [JavaScript.textAttributesKeyProvider](https://jb.gg/ipe?extensions=JavaScript.textAttributesKeyProvider) | `JSTextAttributeKeysProvider` |
+| [JavaScript.tsConfigCustomizer](https://jb.gg/ipe?extensions=JavaScript.tsConfigCustomizer) ![Experimental API][experimental] | `TypeScriptConfigCustomizer` |
 | [JavaScript.tsImportResolver](https://jb.gg/ipe?extensions=JavaScript.tsImportResolver) | `TypeScriptImportsResolverProvider` |
 | [JavaScript.unresolvedReferenceErrorUpdater](https://jb.gg/ipe?extensions=JavaScript.unresolvedReferenceErrorUpdater) ![Experimental API][experimental] | `JSUnresolvedReferenceErrorUpdater` |
-| [JavaScript.webpackLocator](https://jb.gg/ipe?extensions=JavaScript.webpackLocator) | `WebPackConfigLocator` |
+| [JavaScript.webBundlerCssReferenceContributor](https://jb.gg/ipe?extensions=JavaScript.webBundlerCssReferenceContributor) | `JSModuleReferenceContributor` |
+| [JavaScript.webBundlerDefinition](https://jb.gg/ipe?extensions=JavaScript.webBundlerDefinition) | `WebBundlerDefinition` |
 | [JavaScript.xmlBackedClassProvider](https://jb.gg/ipe?extensions=JavaScript.xmlBackedClassProvider) | `XmlBackedJSClassProvider` |
 | [NodeJS.runConfigurationLocationFilter](https://jb.gg/ipe?extensions=NodeJS.runConfigurationLocationFilter) | `NodeRunConfigurationLocationFilter` |
 | [com.intellij.JavaScript.linter.descriptor](https://jb.gg/ipe?extensions=com.intellij.JavaScript.linter.descriptor) | `JSLinterDescriptor` |
@@ -111,8 +107,8 @@ See [](extension_point_list.md) for IntelliJ Platform.
 
 ### org.jetbrains.plugins.node-remote-interpreter
 
-| Extension Point                                                                                                                                                                                                         | Implementation                                  |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
+| Extension Point | Implementation |
+|-----------------|----------------|
 | [org.jetbrains.plugins.node-remote-interpreter.nodeRemoteInterpreterTargetEnvironmentFactory](https://jb.gg/ipe?extensions=org.jetbrains.plugins.node-remote-interpreter.nodeRemoteInterpreterTargetEnvironmentFactory) | `NodeRemoteInterpreterTargetEnvironmentFactory` |
 
 ### org.jetbrains.plugins.sass

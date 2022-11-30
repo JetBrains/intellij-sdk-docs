@@ -4,7 +4,7 @@
 
 <tldr>
 
-**Code**: [`AllIcons`](%gh-ic%/platform/util/src/com/intellij/icons/AllIcons.java)
+**Code**: [`AllIcons`](%gh-ic%/platform/util/ui/src/com/intellij/icons/AllIcons.java)
 
 **Platform UI Guidelines:** [Icons list](https://jetbrains.design/intellij/resources/icons_list/), [Icons](https://jetbrains.design/intellij/principles/icons/)
 
@@ -21,8 +21,8 @@ Plugins need icons mostly for [](basic_action_system.md), custom component rende
 
 Plugins should reuse existing platform icons whenever possible.
 Use [Icons list](https://jetbrains.design/intellij/resources/icons_list/) to browse existing icons.
-Platform icons are located in [`AllIcons`](%gh-ic%/platform/util/src/com/intellij/icons/AllIcons.java).
-Icons from plugins are located in corresponding `<PLUGIN_NAME>Icons` class (e.g., [`GithubIcons`](%gh-ic%/plugins/github/src/org/jetbrains/plugins/github/GithubIcons.java)).
+Platform icons are located in [`AllIcons`](%gh-ic%/platform/util/ui/src/com/intellij/icons/AllIcons.java).
+Icons from plugins are located in corresponding `<PLUGIN_NAME>Icons` class (e.g., [`GithubIcons`](%gh-ic%/plugins/github/gen/org/jetbrains/plugins/github/GithubIcons.java)).
 
 If custom icons are required, please refer to detailed [design guide](https://jetbrains.design/intellij/principles/icons/).
 

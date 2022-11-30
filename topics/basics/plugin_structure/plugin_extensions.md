@@ -84,7 +84,7 @@ If an extension instance needs to "opt out" in certain scenarios, it can throw [
 
 Several tooling features are available to help configure bean class extension points in <path>plugin.xml</path>.
 
-Properties annotated with [`@RequiredElement`](%gh-ic%/platform/extensions/src/com/intellij/openapi/extensions/RequiredElement.java) are inserted automatically and validated (2019.3 and later).
+Properties annotated with [`RequiredElement`](%gh-ic%/platform/core-api/src/com/intellij/openapi/extensions/RequiredElement.java) are inserted automatically and validated (2019.3 and later).
 If the given property is allowed to have an explicit empty value, set `allowEmpty` to `true` (2020.3 and later).
 
 Property names matching the following list will resolve to fully qualified class name:

@@ -25,7 +25,7 @@ Specifying Threading for Actions
 ### IntelliJ IDEA 2022.3
 
 Unbundled plugins
-: Several plugins (Haml, Jakarta EE: WebSockets, Spring WebSocket, Stylus, Tapestry, Vaadin, ZKM-Unscramble) have been unbundled. The IDE will suggest installation if the project contains related framework dependency. If your plugin depends on them, users will need to install them from the [JetBrains Marketplace](https://plugins.jetbrains.com).
+: Several plugins (Haml, Jakarta EE: WebSockets, JBoss Seam, Spring WebSocket, Stylus, Tapestry, Vaadin, ZKM-Unscramble) have been unbundled. The IDE will suggest installation if the project contains related framework dependency. If your plugin depends on them, users will need to install them from the [JetBrains Marketplace](https://plugins.jetbrains.com).
 
 ## 2022.2
 

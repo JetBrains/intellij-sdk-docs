@@ -32,7 +32,7 @@ The IntelliJ Platform provides a number of classes and interfaces you can use to
 
 * [`Module`](%gh-ic%/platform/core-api/src/com/intellij/openapi/module/Module.java)
 * [`ModuleUtil`](%gh-ic%/platform/lang-api/src/com/intellij/openapi/module/ModuleUtil.java)
-* [`ModuleManager`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/module/ModuleManager.java)
+* [`ModuleManager`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/module/ModuleManager.kt)
 * [`ModuleRootManager`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootManager.java)
 * [`ModuleRootModel`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootModel.java)
 * [`ModifiableModuleModel`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/module/ModifiableModuleModel.java)

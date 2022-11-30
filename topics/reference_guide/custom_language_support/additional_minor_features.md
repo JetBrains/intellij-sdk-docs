@@ -29,7 +29,7 @@ Structural braces have higher priority than regular braces: they are matched wit
 An opening non-structural brace is not matched with a closing one if one of them is inside a pair of matched structural braces and another is outside.
 See also [](#recognizing-complex-multi-block-expressions).
 
-*2022.3* If the brace matching is "too heavy" and should not be executed in EDT, implement [`HeavyBraceHighlighter`](%gh-ic-master%/platform/lang-impl/src/com/intellij/codeInsight/highlighting/HeavyBraceHighlighter.java) and register in `com.intellij.heavyBracesHighlighter` EP.
+*2022.3* If the brace matching is "too heavy" and should not be executed in EDT, implement [`HeavyBraceHighlighter`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/highlighting/HeavyBraceHighlighter.java) and register in `com.intellij.heavyBracesHighlighter` EP.
 
 ### Quote Handling
 

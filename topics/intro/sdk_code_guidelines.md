@@ -143,8 +143,8 @@ For SDK code samples, a few alterations are needed to the default <path>build.gr
   ```kotlin
   // Patches <version> value in plugin.xml
   version.set(project.version)
-  sinceBuild.set("213")
-  untilBuild.set("222.*")
+  sinceBuild.set("221")
+  untilBuild.set("223.*")
   ```
 
 ## plugin.xml Conventions

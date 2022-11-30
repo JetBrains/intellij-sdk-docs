@@ -8,9 +8,7 @@ The following pages list notable changes and new features in IDE releases.
 
 Plugin authors are encouraged to verify their compatible releases take advantage of the latest API additions.
 
-> [Subscribe to Marketplace Developer News](https://jb.gg/mp-updates) to receive news and announcements.
-> Also follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/).
->
+<include from="snippets.md" element-id="subscribeNews"/>
 
 * [Changes in 2023.*](api_notable_list_2023.md)
 * [Changes in 2022.*](api_notable_list_2022.md)

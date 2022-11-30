@@ -49,16 +49,9 @@ Please see [Getting Help](getting_help.md) if you encounter bugs in this guide o
 
 ## Updates
 
-> Gradle IntelliJ Plugin 1.x is now available, please update your Gradle build script [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square){type="joined"}](https://github.com/jetbrains/gradle-intellij-plugin/releases)
->
-> [What's New & Upgrade Instructions](https://lp.jetbrains.com/gradle-intellij-plugin)
->
-{style="note"}
-
 See [Content Updates](content_updates.md) for the latest changes.
 
-[Subscribe to Marketplace Developer News](https://jb.gg/mp-updates) to receive news and announcements.
-Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/).
+<include from="snippets.md" element-id="subscribeNews"/>
 
 Upgrading your plugin to the latest platform release?
 Follow [](verifying_plugin_compatibility.md) and check [Incompatible Changes](api_changes_list.md) as well as [Notable Changes and Features](api_notable.md).

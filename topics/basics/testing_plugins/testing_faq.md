@@ -164,8 +164,4 @@ PsiTestUtil.addLibrary(model,
     "internal-library", getTestDataPath(), "internal-library-2.0.jar");
 ```
 
-> If a topic you are interested in is not covered in the above sections, let us know via the "**Was this page helpful?**" feedback form below or [other channels](getting_help.md#problems-with-the-guide).
->
-> Please be specific about the topics and reasons for adding them, and leave your email in case we need more details.
->
-{style="note"}
+<include from="snippets.md" element-id="missingContent"/>

@@ -69,3 +69,12 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 ## 2023.1
 
 ### IntelliJ Platform 2023.1
+
+`com.intellij.openapi.externalSystem.view.ExternalSystemNode.setNameAndTooltip(String, String)` method removed
+: The new `setNameAndTooltip(PresentationData, String, String)` overload should be used instead.
+
+`com.intellij.openapi.externalSystem.view.ExternalSystemNode.setNameAndTooltip(String, String, String)` method removed
+: The new `setNameAndTooltip(PresentationData, String, String, String)` overload should be used instead.
+
+`com.intellij.openapi.externalSystem.view.ExternalSystemNode.setNameAndTooltip(String, String, SimpleTextAttributes)` method removed
+: The new `setNameAndTooltip(PresentationData, String, String, SimpleTextAttributes)` overload should be used instead.

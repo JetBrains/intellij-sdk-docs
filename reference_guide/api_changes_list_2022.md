@@ -117,10 +117,10 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 : That method was an internal method.
 
 `com.intellij.database.util.TreePatternNode.Group(ObjectKind, TreePatternNode[], TreePatternNode)` constructor removed
-: Do not manipulate TreePatternNodes. Use TreePatternUtils to manipulate TreePatterns
+: Do not manipulate TreePatternNodes. Use TreePatternUtils to manipulate TreePatterns.
 
 `com.intellij.database.util.TreePatternNode.NegativeNaming(ObjectName[])` constructor removed
-: Do not manipulate TreePatternNodes. Use TreePatternUtils to manipulate TreePatterns
+: Do not manipulate TreePatternNodes. Use TreePatternUtils to manipulate TreePatterns.
 
 ### TextMate Plugin 2022.3
 

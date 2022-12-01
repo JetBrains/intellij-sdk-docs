@@ -113,6 +113,15 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 `com.intellij.database.psi.DbPsiFacadeImpl.createDataSourceWrapperElement(DasDataSource, DataSourceManager)` method parameter type changed from `DasDataSource` to `RawDataSource`
 : Avoid manually wrapping data sources.
 
+`com.intellij.database.vfs.DatabaseElementVirtualFileImpl.setBusy(boolean)` method removed
+: That method was an internal method.
+
+`com.intellij.database.util.TreePatternNode.Group(ObjectKind, TreePatternNode[], TreePatternNode)` constructor removed
+: Do not manipulate TreePatternNodes. Use TreePatternUtils to manipulate TreePatterns
+
+`com.intellij.database.util.TreePatternNode.NegativeNaming(ObjectName[])` constructor removed
+: Do not manipulate TreePatternNodes. Use TreePatternUtils to manipulate TreePatterns
+
 ### TextMate Plugin 2022.3
 
 `org.jetbrains.plugins.textmate.language.preferences.PreferencesRegistry` class now interface

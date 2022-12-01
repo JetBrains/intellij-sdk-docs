@@ -70,6 +70,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ### IntelliJ Platform 2023.1
 
+`com.intellij.ui.treeStructure.SimpleNode.doUpdate()` method removed
+: It was replaced by `doUpdate(PresentationData)` which should now only modify the state of its parameter.
+
 `com.intellij.openapi.externalSystem.view.ExternalSystemNode.setNameAndTooltip(String, String)` method removed
 : The new `setNameAndTooltip(PresentationData, String, String)` overload should be used instead.
 

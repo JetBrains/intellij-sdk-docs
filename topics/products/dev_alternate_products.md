@@ -12,8 +12,7 @@ Details particular to an IntelliJ Platform-based product are described on the in
 
 All the Gradle configuration attributes described here are discussed in-depth on the [](configuring_plugin_project.md) and the [](tools_gradle_intellij_plugin.md).
 
-> Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
->
+<include from="snippets.md" element-id="jetbrainsProductOpenSourceLicense"/>
 
 ## Getting Started
 

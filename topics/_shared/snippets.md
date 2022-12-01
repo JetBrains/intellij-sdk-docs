@@ -19,3 +19,9 @@
 > Also follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/).
 
 </snippet>
+
+<snippet id="jetbrainsProductOpenSourceLicense">
+
+> Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
+
+</snippet>

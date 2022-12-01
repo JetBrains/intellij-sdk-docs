@@ -8,8 +8,7 @@ Underlying those shared features are shared components.
 When authoring a plugin for the IntelliJ Platform, it is important to understand and declare dependencies on these components.
 Otherwise, it may not be possible to load or run the plugin in a product because the components on which it depends aren't available.
 
-> Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
->
+<include from="snippets.md" element-id="jetbrainsProductOpenSourceLicense"/>
 
 ## Declaring Plugin Dependencies
 

@@ -5,8 +5,7 @@
 [GoLand](https://www.jetbrains.com/go/) is an IntelliJ Platform-based product.
 Plugin projects for GoLand can be developed using IntelliJ IDEA with the [](tools_gradle_intellij_plugin.md).
 
-> Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
->
+<include from="snippets.md" element-id="jetbrainsProductOpenSourceLicense"/>
 
 ## Configuring Plugin Projects Targeting GoLand
 

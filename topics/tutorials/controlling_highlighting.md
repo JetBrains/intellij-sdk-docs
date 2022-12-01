@@ -1,6 +1,8 @@
-[//]: # (title: Controlling Highlighting)
+# Controlling Highlighting
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+<link-summary>Suppressing highlighting in the editor programmatically.</link-summary>
 
 The results of analyzing code by several mechanisms provided by the IntelliJ Platform ([Syntax errors](syntax_errors.md), Annotators, [Inspections](code_inspections.md)) are converted to highlighting information used to highlight the code in the editor.
 However, in some contexts, the provided highlighting information is invalid or unnecessary.

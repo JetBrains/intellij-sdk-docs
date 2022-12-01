@@ -1,4 +1,4 @@
-[//]: # (title: Code Inspections)
+# Code Inspections
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
@@ -7,6 +7,8 @@
 **Product Help:** [Code Inspection](https://www.jetbrains.com/idea/webhelp/code-inspection.html), [Creating Custom Inspections](https://www.jetbrains.com/idea/help/creating-custom-inspections.html)
 
 </tldr>
+
+<link-summary>Tutorial: implementing Inspections to highlight code in the editor.</link-summary>
 
 The IntelliJ Platform provides tools designed for static code analysis called _code inspections_, which help the user maintain and clean up code without actually executing it.
 Custom code inspections can be implemented as IntelliJ Platform plugins.

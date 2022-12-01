@@ -1,6 +1,8 @@
-[//]: # (title: Syntax Errors)
+# Syntax Errors
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+<link-summary>Suppressing syntax errors in the editor programmatically.</link-summary>
 
 The IntelliJ Platform provides a mechanism for analyzing the PSI tree and highlighting syntax errors out of the box.
 

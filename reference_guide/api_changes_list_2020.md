@@ -1,4 +1,4 @@
-[//]: # (title: Incompatible Changes in IntelliJ Platform and Plugins API 2020.*)
+# Incompatible Changes in IntelliJ Platform and Plugins API 2020.*
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
@@ -60,13 +60,7 @@ NOTE: You are allowed to prettify the pattern using links: [`org.example.Foo`](h
 NOTE: Entries not starting with code quotes (`name`) can be added to document non-code changes  and will be skipped in API verification.
 -->
 
-Please see [](verifying_plugin_compatibility.md) on how to use Plugin Verifier and IDE inspections to check such problems.
-
-> Changes from API marked with `@Deprecated(forRemoval=true)` or any of [`org.jetbrains.annotations.ApiStatus`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java) `@Experimental`, `@ScheduledForRemoval`, or `@Internal` are not listed here, as incompatible changes are to be expected.
->
-> For API annotated with `ApiStatus.@Internal`, see [](api_internal.md) for more details and replacements.
->
-{style="note"}
+<include from="snippets.md" element-id="apiChangesHeader"/>
 
 ## 2020.3
 

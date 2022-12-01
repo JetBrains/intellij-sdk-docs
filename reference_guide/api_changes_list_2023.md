@@ -1,4 +1,4 @@
-[//]: # (title: Incompatible Changes in IntelliJ Platform and Plugins API 2023.*)
+# Incompatible Changes in IntelliJ Platform and Plugins API 2023.*
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
@@ -60,13 +60,7 @@ NOTE: You are allowed to prettify the pattern using links: [`org.example.Foo`](h
 NOTE: Entries not starting with code quotes (`name`) can be added to document non-code changes and will be skipped in API verification.
 -->
 
-Please see [](verifying_plugin_compatibility.md) on how to use Plugin Verifier and IDE inspections to check such problems.
-
-> Changes from API marked with `@Deprecated(forRemoval=true)` or any of [`org.jetbrains.annotations.ApiStatus`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java) `@Experimental`, `@ScheduledForRemoval`, or `@Internal` are not listed here, as incompatible changes are to be expected.
->
-> For API annotated with `ApiStatus.@Internal`/`@IntellijInternalApi`, see [](api_internal.md) for more details and replacements.
->
-{style="note"}
+<include from="snippets.md" element-id="apiChangesHeader"/>
 
 > Java 17 is required ([blog post](https://blog.jetbrains.com/platform/2022/08/intellij-project-migrates-to-java-17/) when targeting 2022.2 or later only.
 >
@@ -75,8 +69,6 @@ Please see [](verifying_plugin_compatibility.md) on how to use Plugin Verifier a
 > Please make sure to always upgrade `gradle-intellij-plugin` to the latest version [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square){type="joined"}](https://github.com/jetbrains/gradle-intellij-plugin/releases)
 >
 {style="note"}
-
-_Early Access Program_ (EAP) releases of upcoming versions are available [here](https://eap.jetbrains.com).
 
 <include from="tools_gradle_intellij_plugin.md" element-id="gradle_plugin_223_problem"></include>
 

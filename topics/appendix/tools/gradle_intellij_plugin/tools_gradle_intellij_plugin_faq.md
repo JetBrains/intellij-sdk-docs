@@ -1,4 +1,4 @@
-[//]: # (title: Gradle IntelliJ Plugin – FAQ)
+# Gradle IntelliJ Plugin – FAQ
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
@@ -6,7 +6,7 @@
 
 ### How to target 2022.3 platform
 
-<include from="tools_gradle_intellij_plugin.md" element-id="gradle_plugin_223_problem"></include>
+<include from="tools_gradle_intellij_plugin.md" element-id="gradle_plugin_223_problem"/>
 
 ### How to modify JVM arguments of runIde task
 

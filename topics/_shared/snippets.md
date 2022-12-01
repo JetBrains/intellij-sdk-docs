@@ -51,3 +51,41 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 {style="note"}
 
 </snippet>
+
+<snippet id="ep_list_legend">
+
+> See [](plugin_extensions.md) on how to declare extensions in your plugin.
+>
+> See [](plugin_listeners.md) on how to register listeners.
+>
+
+## Legend
+
+### Listeners
+
+**Topic** searches for usages inside existing implementations of open-source IntelliJ Platform plugins via [IntelliJ Platform Explorer](https://jb.gg/ipe).
+
+**Listener** links corresponding listener to implement.
+
+### Extension Points
+
+**Extension Point** searches for usages inside existing implementations of open-source IntelliJ Platform plugins via [IntelliJ Platform Explorer](https://jb.gg/ipe).
+
+**Implementation** is related Extension Point class.
+
+### Tags
+
+| Icon                              | Description                         | Details                                                                                                                                                                                                                                                                                             |
+|-----------------------------------|-------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ![Deprecated][deprecated]         | Deprecated API                      | Please see code documentation for replacement                                                                                                                                                                                                                                                       |
+| ![Experimental API][experimental] | Experimental API                    | Annotated with [`@ApiStatus.Experimental`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java), API might be altered or removed without prior notice                                                                           |
+| ![Internal API][internal]         | Internal API                        | Annotated with [`@ApiStatus.Internal`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java), should not be used by 3rd party, see [](api_internal.md)                                                                           |
+| ![Project-Level][project-level]   | Project-Level Extension Point/Topic | Can have [`Project`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/Project.java) as constructor parameter<br/><br/>Extension Point: Declared with `area="IDEA_PROJECT"`<br/>Listener: registered in [`<projectListeners>`](plugin_configuration_file.md#idea-plugin__projectListeners) |
+| ![Non-Dynamic][non-dynamic]       | Non-Dynamic Extension Point         | Installation/update of plugin requires IDE restart ([Dynamic Plugins](dynamic_plugins.md))                                                                                                                                                                                                          |
+
+[experimental]: https://img.shields.io/badge/-Experimental_API-red?style=flat-square
+[internal]: https://img.shields.io/badge/-Internal_API-darkred?style=flat-square
+[project-level]: https://img.shields.io/badge/-Project--Level-blue?style=flat-square
+[non-dynamic]: https://img.shields.io/badge/-Non--Dynamic-orange?style=flat-square
+[deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square
+</snippet>

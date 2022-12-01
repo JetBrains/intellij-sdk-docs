@@ -66,7 +66,7 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ## 2022.3
 
-<include from="tools_gradle_intellij_plugin.md" element-id="gradle_plugin_223_problem"></include>
+<include from="tools_gradle_intellij_plugin.md" element-id="gradle_plugin_223_problem"/>
 
 ### IntelliJ Platform 2022.3
 

@@ -1,4 +1,4 @@
-[//]: # (title: Build Number Ranges)
+# Build Number Ranges
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
@@ -63,7 +63,7 @@ Usually you should omit the product ID and use only the branch number and build 
 
 Please see also corresponding entries in [Incompatible API Changes](api_changes_list.md) and [Notable API Changes](api_notable.md).
 
-<include from="tools_gradle_intellij_plugin.md" element-id="gradle_plugin_223_problem"></include>
+<include from="tools_gradle_intellij_plugin.md" element-id="gradle_plugin_223_problem"/>
 
 | Branch number                                                   | IntelliJ Platform version                                                                                                                |
 |-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|

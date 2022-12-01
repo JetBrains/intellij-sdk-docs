@@ -1,4 +1,4 @@
-[//]: # (title: GoLand Extension Point and Listener List)
+# GoLand Extension Point and Listener List
 
 <show-structure for="chapter" depth="2"/>
 
@@ -8,7 +8,7 @@
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
-<include from="extension_point_list.md" element-id="ep_list_legend"></include>
+<include from="snippets.md" element-id="ep_list_legend"/>
 
 ## GoLand
 

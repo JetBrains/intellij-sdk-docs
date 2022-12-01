@@ -1,4 +1,4 @@
-[//]: # (title: Spring API Extension Point and Listener List)
+# Spring API Extension Point and Listener List
 
 <show-structure for="chapter" depth="2"/>
 
@@ -6,7 +6,7 @@
 
 50 Extension Points and 5 Listeners for Spring API
 
-<include from="extension_point_list.md" element-id="ep_list_legend"></include>
+<include from="snippets.md" element-id="ep_list_legend"/>
 
 ## Spring
 

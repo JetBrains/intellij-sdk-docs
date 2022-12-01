@@ -16,6 +16,7 @@ Plugin projects for GoLand can be developed using IntelliJ IDEA with the [](tool
 The configuration of targeting GoLand IDE follows the methods described in [Configuring Plugin Projects Using a Product-Specific Attribute](dev_alternate_products.md#configuring-plugin-projects-using-a-product-specific-attribute).
 
 Starting with 2020.2, it's possible to configure `GO` for `intellij.type` in the Gradle build script.
+If you need to use Go language APIs, specifying the `GO` platform type is not enough - it is required to add a dependency to the `org.jetbrains.plugins.go` plugin.
 
 <tabs>
 <tab title="Kotlin">
@@ -24,6 +25,9 @@ Starting with 2020.2, it's possible to configure `GO` for `intellij.type` in the
 intellij {
   version.set("2020.3")
   type.set("GO")
+
+  // required if Go language API is needed:
+  plugins.set(listOf("org.jetbrains.plugins.go"))
 }
 ```
 
@@ -34,12 +38,14 @@ intellij {
 intellij {
   version = '2020.3'
   type = 'GO'
+
+  // required if Go language API is needed:
+  plugins = ['org.jetbrains.plugins.go']
 }
 ```
 
 </tab>
 </tabs>
-
 
 </tab>
 
@@ -65,34 +71,12 @@ Select a [version](https://plugins.jetbrains.com/plugin/9568-go/versions) of the
 
 </tabs>
 
-The dependency on the Go plugin APIs must be declared in the <path>[plugin.xml](plugin_configuration_file.md)</path> file.
-As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) tags must declare `com.intellij.modules.goland`.
-The <path>plugin.xml</path> file must also declare a dependency on `com.intellij.modules.platform` as explained in [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml).
-The dependency declaration is illustrated in the <path>plugin.xml</path> snippet below:
+### Plugin and Module Dependencies
 
-
-<tabs>
-<tab title="2020.2 and later">
-
-```xml
-<!-- Requires the GoLand module -->
-<depends>com.intellij.modules.goland</depends>
-<!-- Requires the platform module to distinguish it from a legacy plugin -->
-<depends>com.intellij.modules.platform</depends>
-```
-
-</tab>
-<tab title="Pre-2020.2">
-
-```xml
-<!-- Requires the Go module -->
-<depends>com.intellij.modules.go</depends>
-<!-- Requires the platform module to distinguish it from a legacy plugin -->
-<depends>com.intellij.modules.platform</depends>
-```
-
-</tab>
-</tabs>
+Depending on plugin's requirements, the following [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) entries are needed in the <path>plugin.xml</path> file:
+* `com.intellij.modules.platform` - Always required. See [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml) for details.
+* `org.jetbrains.plugins.go` - Required if the Go plugin APIs are used in the plugin.
+* `com.intellij.modules.goland` (2020.2+) or `com.intellij.modules.go` (pre-2020.2) - Required if the plugin targets GoLand IDE only. The plugin will not be loaded in other IDEs, even if the Go plugin is present.
 
 ### Targeting IDEs Other Than GoLand
 
@@ -102,7 +86,6 @@ To make the plugin compatible with GoLand and other IDEs supporting the Go langu
 * `org.jetbrains.plugins.go` - The plugin will be loaded only when the Go plugin is actually installed in the running IDE.
 * `com.intellij.modules.go-capable` - The plugin will be loaded in IDEs that are capable of installing the Go plugin.
   Note that the Go plugin doesn't have to be actually installed when this module is present.
-
 
 ## Available GoLand APIs
 

@@ -112,9 +112,10 @@ Please see [Third-Party Software and Licenses](https://www.jetbrains.com/legal/t
 
 ## Caution
 
-Plugins *may* use [Kotlin classes](https://kotlinlang.org/docs/classes.html) to implement declarations in the [plugin configuration file](plugin_configuration_file.md).
-When registering an extension, the platform uses a dependency injection framework to instantiate these classes.
-For this reason, plugins *must not* use [Kotlin objects](https://kotlinlang.org/docs/object-declarations.html) to implement any <path>[plugin.xml](plugin_configuration_file.md)</path> declarations.
+Plugins *may* use [Kotlin classes](https://kotlinlang.org/docs/classes.html) (`class` keyword) to implement declarations in the [plugin configuration file](plugin_configuration_file.md).
+When registering an extension, the platform uses a dependency injection framework to instantiate these classes at runtime.
+For this reason, plugins *must not* use [Kotlin objects](https://kotlinlang.org/docs/object-declarations.html#object-declarations-overview) (`object` keyword) to implement any <path>[plugin.xml](plugin_configuration_file.md)</path> declarations.
+Managing the lifecycle of extensions is the platform responsibility and instantiating these classes as Kotlin singletons may cause issues.
 
 ## Kotlin Code FAQ
 

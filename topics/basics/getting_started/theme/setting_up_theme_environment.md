@@ -39,12 +39,7 @@ If it is required to style components used only in a specific IDE like _IntelliJ
 
 The first step of configuring a theme plugin SDK is adding the JDK.
 
-> When targeting 2020.3 and later only, using Java 11 is required.
-> See the [IntelliJ project migrates to Java 11](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/) blog post for details.
->
-> When targeting 2022.2 and later only, using Java 17 is required.
->
-{style="note"}
+<include from="snippets.md" element-id="apiChangesJavaVersion"/>
 
 <procedure title="Add JDK" id="add-jdk">
 

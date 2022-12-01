@@ -23,11 +23,7 @@ Launch the <control>New Project</control> wizard via the <ui-path>File | New | P
 7. Select <control>JDK</control> 11.
    This JDK will be the default JRE used to run Gradle, and the JDK version used to compile the plugin sources.
 
-> Java 17 is required ([blog post](https://blog.jetbrains.com/platform/2022/08/intellij-project-migrates-to-java-17/) when targeting 2022.2 or later only.
->
-> Java 11 is required ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)) when targeting 2020.3 and later only.
->
-{style="note"}
+<include from="snippets.md" element-id="apiChangesJavaVersion"/>
 
 8. After providing all the information, click the <control>Create</control> button to generate the project.
 

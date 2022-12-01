@@ -62,13 +62,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 <include from="snippets.md" element-id="apiChangesHeader"/>
 
-## 2020.3
+<include from="snippets.md" element-id="apiChangesJavaVersion"/>
 
-> Java 11 is required ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)) when targeting 2020.3 and later only.
->
-> Please make sure to always upgrade [](tools_gradle_intellij_plugin.md) to the latest version [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square){type="joined"}](https://github.com/jetbrains/gradle-intellij-plugin/releases)
->
-{style="note"}
+## 2020.3
 
 ### IntelliJ Platform 2020.3
 

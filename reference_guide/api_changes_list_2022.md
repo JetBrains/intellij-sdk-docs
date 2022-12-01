@@ -62,13 +62,7 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 <include from="snippets.md" element-id="apiChangesHeader"/>
 
-> Java 17 is required ([blog post](https://blog.jetbrains.com/platform/2022/08/intellij-project-migrates-to-java-17/) when targeting 2022.2 or later only.
->
-> Java 11 is required ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)) when targeting 2020.3 and later only.
->
-> Please make sure to always upgrade `gradle-intellij-plugin` to the latest version [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square){type="joined"}](https://github.com/jetbrains/gradle-intellij-plugin/releases)
->
-{style="note"}
+<include from="snippets.md" element-id="apiChangesJavaVersion"/>
 
 ## 2022.3
 

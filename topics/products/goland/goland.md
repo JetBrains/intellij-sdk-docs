@@ -1,6 +1,6 @@
-[//]: # (title: GoLand Plugin Development)
+# GoLand Plugin Development
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 [GoLand](https://www.jetbrains.com/go/) is an IntelliJ Platform-based product.
 Plugin projects for GoLand can be developed using IntelliJ IDEA with the [](tools_gradle_intellij_plugin.md).
@@ -54,12 +54,12 @@ To see how these attributes appear in a similar Gradle build script for PhpStorm
 The Go plugin version is explicitly declared because it isn't bundled with IntelliJ IDEA Ultimate Edition.
 Select a [version](https://plugins.jetbrains.com/plugin/9568-go/versions) of the Go plugin compatible with the IntelliJ Idea Ultimate version.
 
-| `gradle-intellij-plugin` Attribute                                               | Attribute Value                                                                                                                                                                                                |
+| Gradle IntelliJ Plugin Attribute                                                 | Attribute Value                                                                                                                                                                                                |
 |----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type)       | `IU` for IntelliJ IDEA Ultimate. The Go plugin isn't compatible with IntelliJ IDEA Community Edition.                                                                                                          |
 | [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) | Set to the same `IU` BRANCH.BUILD as the GoLand target version, e.g. `193.5233.102`.                                                                                                                           |
 | [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) | `org.jetbrains.plugins.go:193.5233.102.83` for the Go plugin.<br/>See below for Go plugin version information.                                                                                                 |
-| [`runIde.ideDir`](tools_gradle_intellij_plugin.md#tasks-runide-idedir)            | Path to locally installed target version of GoLand. For example, on macOS:<br/><path>/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/Goland/ch-0/193.5233.112/GoLand.app/Contents</path>. |
+| [`runIde.ideDir`](tools_gradle_intellij_plugin.md#tasks-runide-idedir)           | Path to locally installed target version of GoLand. For example, on macOS:<br/><path>/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/Goland/ch-0/193.5233.112/GoLand.app/Contents</path>. |
 
 </tab>
 

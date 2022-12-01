@@ -216,11 +216,11 @@ The syntax is to use the pipe (`|`) and minus symbols:
 
 ```
     | Column 1 | Column 2 | Column 3 |
-    | -------- | -------- | -------- |
+    |----------|----------|----------|
     | Blah     | Blah     | Blah     |
 ```
 
-Use `&#124;` instead of `|` to prevent escaping problems for `<ui-path>` elements.
+Use `& #124;` (remove space before `#`!) instead of `|` to prevent escaping problems for `<ui-path>` elements inside cells.
 
 ### Notes and Callouts
 

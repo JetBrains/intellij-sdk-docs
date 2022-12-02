@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<link-summary>Creating and running a Gradle-based IntelliJ Platform plugin projects.</link-summary>
+
 This documentation page describes a Gradle-based plugin project generated with the [New Project Wizard](https://www.jetbrains.com/help/idea/new-project-wizard.html), but the project generated with [](plugin_github_template.md) covers all the described files and directories.
 
 ## Creating a Plugin with New Project Wizard

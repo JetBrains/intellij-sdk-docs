@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<link-summary>Declaring dependencies on other IntelliJ Platform-based plugins.</link-summary>
+
 A plugin may depend on classes from other plugins, either bundled, third-party, or by the same author.
 This document describes the syntax for declaring plugin dependencies and optional plugin dependencies.
 For more information about dependencies on the IntelliJ Platform modules, see Part II of this document: [](plugin_compatibility.md).

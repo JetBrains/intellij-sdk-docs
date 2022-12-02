@@ -38,6 +38,6 @@ If you still need documents, then at least ensure you load them one by one and d
 
 Method calls such as `PsiElement.getReference()` (and `getReferences()`), `PsiReference.resolve()` (and `multiResolve()` and other equivalents) or computation of expression types, type inference results, control flow graphs, etc. can be expensive.
 To avoid paying this cost several times, the result of such computation can be cached and reused.
-Usually, [`CachedValue`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/CachedValue.java) works well for this purpose.
+Usually, [`CachedValue`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/CachedValue.java) created with [`CachedValueManager`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/CachedValuesManager.java) works well for this purpose.
 
 If the information you cache depends only on a subtree of the current PSI element (and nothing else: no resolve results or other files), you can cache it in a field in your `PsiElement` implementation and drop the cache in an override of `ASTDelegatePsiElement.subtreeChanged()`.

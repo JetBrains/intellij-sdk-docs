@@ -1,11 +1,10 @@
-[//]: # (title: PSI Performance)
+# PSI Performance
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 See also [](general_threading_rules.md#avoiding-ui-freezes) and [](indexing_and_psi_stubs.md#improving-indexing-performance).
 
 > [IDE Perf](https://plugins.jetbrains.com/plugin/15104-ide-perf) plugin provides on-the-fly performance diagnostic tools, including a dedicated view for [`CachedValue`](#cache-results-of-heavy-computations) metrics.
->
 
 ## Avoid Expensive Methods of `PsiElement`
 
@@ -37,7 +36,7 @@ If you still need documents, then at least ensure you load them one by one and d
 
 ## Cache Results of Heavy Computations
 
-Method calls such as `PsiElement.getReference(s)`, `PsiReference.resolve()` (and `multiResolve()` and other equivalents) or computation of expression types, type inference results, control flow graphs, etc. can be expensive.
+Method calls such as `PsiElement.getReference()` (and `getReferences()`), `PsiReference.resolve()` (and `multiResolve()` and other equivalents) or computation of expression types, type inference results, control flow graphs, etc. can be expensive.
 To avoid paying this cost several times, the result of such computation can be cached and reused.
 Usually, [`CachedValue`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/CachedValue.java) works well for this purpose.
 

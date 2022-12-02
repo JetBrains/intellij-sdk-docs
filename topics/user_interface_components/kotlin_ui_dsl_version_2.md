@@ -1,4 +1,4 @@
-[//]: # (title: Kotlin UI DSL Version 2)
+# Kotlin UI DSL Version 2
 
 <show-structure for="chapter" depth="2"/>
 
@@ -278,6 +278,9 @@ Standard components should not be created directly but with factory methods from
 `JComponent` that occupies the cell.
 
 ### Cell.horizontalAlign/verticalAlign
+{id="cell-horizontalVerticalAlign"}
+
+> Deprecated in 2022.3, use [](#cell-align) instead.
 
 Sets horizontal/vertical alignment of content inside the cell.
 
@@ -287,6 +290,26 @@ row("Row:") {
     .horizontalAlign(HorizontalAlign.FILL)
 }
 ```
+
+### Cell.align
+{id="cell-align"}
+
+_2022.3_
+
+Updates horizontal and/or vertical alignment of the component inside the cell.
+Default alignment is `AlignX.LEFT` and `AlignY.CENTER`.
+
+To stretch the content on whole cell, use `AlignX.FILL`/`AlignY.FILL`/`Align.FILL`.
+For setting both horizontal and vertical alignment, use `Align` constants or overloaded plug operator
+like `align(AlignX.LEFT + AlignY.TOP)`.
+
+```kotlin
+row("Row:") {
+  textField()
+    .align(AlignX.FILL)
+}
+```
+
 ### Cell.resizableColumn
 
 **UI DSL Showcase Tab**: Tips (Sources: [`DemoTips`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoTips.kt))
@@ -294,7 +317,7 @@ row("Row:") {
 Marks column of the cell as resizable: the column occupies all extra horizontal space in panel and changes size together with the panel.
 It's possible to have several resizable columns, which means extra space is shared between them.
 There is no need to set resizable for cells in different rows but in the same column: it has no additional effect.
-Note that the size and placement of components in columns are managed by `horizontalAlign`.
+Note that the size and placement of components in columns are managed by [](#cell-align) ([](#cell-horizontalVerticalAlign) for pre-2022.3).
 
 ```kotlin
 row("Row") {

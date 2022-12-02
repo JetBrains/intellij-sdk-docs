@@ -12,6 +12,12 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2022
 
+### December-22
+
+Minor Changes and Additions
+:
+- Add information for new [](kotlin_ui_dsl_version_2.md#cell-align) methods in Kotlin UI DSL Version 2.
+
 ### November-22
 
 Plugin User Experience
@@ -20,7 +26,6 @@ Plugin User Experience
 Minor Changes and Additions
 :
 - Add information about threading in Actions in [](basic_action_system.md#principal-implementation-overrides).
-
 
 ### October-22
 

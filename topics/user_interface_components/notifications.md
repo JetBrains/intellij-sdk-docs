@@ -1,6 +1,6 @@
-[//]: # (title: Notifications)
+# Notifications
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <tldr>
 
@@ -13,7 +13,9 @@ As a replacement, the IntelliJ Platform provides multiple non-modal notification
 
 ### Dialogs
 
-When working in dialog, instead of checking the validity of the input when the _OK_ button is pressed and notifying the user about invalid data with a modal dialog, the recommended approach is to use [`DialogWrapper.doValidate()`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java), which was described previously.
+When working in a dialog, instead of checking the validity of the input when the <control>OK</control> button is pressed and notifying the user about invalid data with a modal dialog, the recommended approach is to use
+[`DialogWrapper.doValidate()`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java),
+described in the [Dialogs](dialog_wrapper.md#input-validation) section.
 
 ### Editor Hints
 

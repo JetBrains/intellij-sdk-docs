@@ -1,6 +1,8 @@
-[//]: # (title: Testing FAQ)
+# Testing FAQ
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+<link-summary>Common questions and issues for testing plugins.</link-summary>
 
 This page lists a number of common questions/issues and techniques useful for testing plugins.
 

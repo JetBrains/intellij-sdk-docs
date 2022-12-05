@@ -1,6 +1,8 @@
-[//]: # (title: Code Samples)
+# Code Samples
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+<link-summary>Accessing SDK Docs code samples.</link-summary>
 
 This guide comes with a number of sample plugins available from dedicated [intellij-sdk-code-samples](https://github.com/JetBrains/intellij-sdk-code-samples) GitHub repository.
 

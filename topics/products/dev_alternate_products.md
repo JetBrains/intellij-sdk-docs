@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<link-summary>Configuring plugin projects for targeting IntelliJ Platform-based IDEs other than IntelliJ IDEA.</link-summary>
+
 Plugin projects can target IDEs other than IntelliJ IDEA, as long as the products are based on the [IntelliJ Platform](intellij_platform.md).
 Such plugins are developed much like plugin projects that target IntelliJ IDEA.
 They can be written in Kotlin or Java, or a mix of both.

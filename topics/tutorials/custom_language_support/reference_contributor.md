@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<link-summary>Sample implementation of reference contributor adding Simple language references in Java strings.</link-summary>
+
 <tldr>
 
 **Reference**: [](references_and_resolve.md), [](psi_references.md)

@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<link-summary>The indexing framework allows to access information about files content without loading them to memory and parsing.</link-summary>
+
 ## Indexes
 
 The indexing framework provides a quick way to locate specific elements, e.g., files containing a certain word or methods with a particular name, in large codebases.

@@ -12,3 +12,6 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 Nested Index Access
 : Accessing index data in [nested calls](file_based_indexes.md#nested-index-access) is now possible.
+
+File Type Index Topic
+: [`FileTypeIndex.IndexChangeListener`](%gh-ic-master%/platform/indexing-api/src/com/intellij/psi/search/FileTypeIndex.java) allows monitoring addition/removal of files by `FileType`.

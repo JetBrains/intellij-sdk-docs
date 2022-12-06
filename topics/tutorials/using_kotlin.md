@@ -1,16 +1,25 @@
-[//]: # (title: Configuring Kotlin Support)
+# Configuring Kotlin Support
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<tldr>
 
-This page describes developing a plugin code in Kotlin programming language.
+**Homepage**: [Kotlin](https://kotlinlang.org)
+
+**Project Template**: [](plugin_github_template.md)
+
+</tldr>
+
+<link-summary>Developing plugins using or targeting the Kotlin programming language.</link-summary>
+
+This page describes developing plugins using the [Kotlin](https://kotlinlang.org) programming language.
 
 > To implement a plugin operating on Kotlin code, configure Kotlin [plugin dependency](plugin_dependencies.md) (`org.jetbrains.kotlin`).
 > See also [UAST](uast.md) page for information about how to support multiple JVM-languages, including Kotlin.
 
 ## Advantages of Developing a Plugin in Kotlin
 
-Using [Kotlin](https://kotlinlang.org) to write plugins for the IntelliJ Platform is very similar to writing plugins in Java.
+Using Kotlin to write plugins for the IntelliJ Platform is very similar to writing plugins in Java.
 Existing plugin developers can get started by converting boilerplate Java classes to their Kotlin equivalents by using the [J2K converter](https://kotlinlang.org/docs/mixing-java-kotlin-intellij.html#converting-an-existing-java-file-to-kotlin-with-j2k) (part of Kotlin plugin), and developers can easily mix and match Kotlin classes with their existing Java code.
 
 In addition to [null safety](https://kotlinlang.org/docs/null-safety.html) and [type-safe builders](https://kotlinlang.org/docs/type-safe-builders.html), the Kotlin language offers many convenient features for plugin development, which make plugins easier to read and simpler to maintain.
@@ -21,7 +30,7 @@ For example, it is common practice to [guard logging statements](https://www.slf
 
 ```java
 if (logger.isDebugEnabled()) {
-  logger.debug("..." + expensiveComputation());
+  logger.debug("..."+expensiveComputation());
 }
 ```
 
@@ -36,9 +45,11 @@ inline fun Logger.debug(lazyMessage: () -> String) {
 ```
 
 Now we can directly write:
+
 ```kotlin
 logger.debug { "..." + expensiveComputation() }
 ```
+
 to receive all the benefits of lightweight logging while reducing the code verbosity.
 
 With practice, you will be able to recognize many idioms in the IntelliJ Platform that can be simplified with Kotlin.
@@ -53,8 +64,7 @@ The IntelliJ Platform provides the [type safe DSL](kotlin_ui_dsl_version_2.md) a
 
 ## Adding Kotlin Support
 
-> The [IntelliJ Platform Plugin Template](plugin_github_template.md) provides a preconfigured project using Kotlin.
->
+> The [](plugin_github_template.md) provides a preconfigured project using Kotlin.
 
 IntelliJ IDEA bundles the necessary Kotlin plugin, requiring no further configuration.
 For detailed instructions, please refer to the [Kotlin documentation](https://kotlinlang.org/docs/getting-started.html).
@@ -67,6 +77,7 @@ See the <path>build.gradle.kts</path> from [kotlin_demo](%gh-sdk-samples%/kotlin
 
 ```kotlin
 ```
+
 {src="kotlin_demo/build.gradle.kts" include-lines="2-"}
 
 ### Kotlin Standard Library
@@ -125,6 +136,7 @@ Managing the lifecycle of extensions is the platform responsibility and instanti
 
 There are many [open-source Kotlin plugins](https://jb.gg/ipe?language=kotlin) built on the IntelliJ Platform.
 For a readily available source of up-to-date examples of plugins implemented in Kotlin, developers may look to these projects for inspiration:
+
 * [Presentation Assistant](https://github.com/chashnikov/IntelliJ-presentation-assistant)
 * [Rust](https://github.com/intellij-rust/intellij-rust)
 * [TeXiFy IDEA](https://github.com/Hannah-Sten/TeXiFy-IDEA)

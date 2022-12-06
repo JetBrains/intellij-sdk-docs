@@ -1,6 +1,6 @@
-[//]: # (title: Indexing and PSI Stubs)
+# Indexing and PSI Stubs
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 ## Indexes
 
@@ -21,7 +21,6 @@ Querying a stub index gets you the set of matching PSI elements.
 Therefore, custom language plugin developers typically use stub indexes in their plugin implementations.
 
 > [Index Viewer](https://plugins.jetbrains.com/plugin/13029-index-viewer/) plugin can be used to inspect indexes' contents and properties.
->
 
 ## Dumb Mode
 

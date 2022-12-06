@@ -8,6 +8,8 @@
 
 </tldr>
 
+<link-summary>Providing reference and generic code completion.</link-summary>
+
 Two main types of code completion can be provided by custom language plugins: reference completion and contributor-based completion.
 
 Reference completion is easier to implement, but supports only the basic completion action.

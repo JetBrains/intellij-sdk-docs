@@ -1,4 +1,4 @@
-[//]: # (title: Code Completion)
+# Code Completion
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
@@ -61,6 +61,12 @@ For every lookup element, you can specify the following attributes:
 * **Text attributes** Bold, Strikeout, etc.
 * **Insert handler** The insert handler is a callback which is called when the item is selected and can be used to perform additional modifications of the text (for example, to put in the parentheses for a method call)
 
-### How to show a completion popup programmatically
+### Code Completion FAQ
+
+#### Showing Completion Popup Programmatically
 
 Use [`AutoPopupController.scheduleAutoPopup()`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/AutoPopupController.java).
+
+#### Completion Popup Events
+
+Use [`LookupListener`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/lookup/LookupListener.java) to receive notifications about completion popup lifecycle events.

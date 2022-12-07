@@ -1,4 +1,4 @@
-[//]: # (title: Explore the IntelliJ Platform API)
+# Explore the IntelliJ Platform API
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2 -->
 
@@ -15,6 +15,9 @@ This usually happens in two situations:
 
 This guide provides a list of proven strategies that can help you overcome these challenges and gather enough information to continue your work.
 Furthermore, the tips below will help build your confidence as you explore the IntelliJ Platform.
+
+> In some cases, implementing an actual IntelliJ Platform plugin might not be necessary, as [alternative solutions](plugin_alternatives.md) exist.
+> See also [](plugin_required_experience.md) about necessary technology knowledge.
 
 ## 1 Extension Points (EPs)
 

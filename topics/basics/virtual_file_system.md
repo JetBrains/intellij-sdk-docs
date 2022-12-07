@@ -1,6 +1,8 @@
-[//]: # (title: Virtual File System)
+# Virtual File System
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+<link-summary>Virtual File System is an abstraction that allows to work with local or remote file storages and implement custom.</link-summary>
 
 The Virtual File System (VFS) is a component of the IntelliJ Platform that encapsulates most of its activity for working with files represented as [Virtual File](virtual_file.md).
 

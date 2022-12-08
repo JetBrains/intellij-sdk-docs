@@ -1,6 +1,8 @@
-[//]: # (title: PSI References)
+# PSI References
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+<link-summary>PSI Reference represents a link from a usage of a particular element in the code to the corresponding declaration.</link-summary>
 
 A *reference* in a PSI tree is an object that represents a link from a *usage* of a particular element in the code to the corresponding *declaration*. *Resolving* a reference means locating the declaration to which a specific usage refers.
 

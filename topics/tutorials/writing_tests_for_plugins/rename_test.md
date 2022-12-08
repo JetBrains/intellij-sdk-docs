@@ -1,6 +1,6 @@
-[//]: # (title: 6. Rename Test)
+# 6. Rename Test
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <tldr>
 
@@ -45,4 +45,5 @@ Add the `testRename()` method to the `SimpleCodeInsightTest` class [previously d
 
 
 ## Run the Test
-[Run](parsing_test.md#run-the-test) the test and make sure it's green.
+
+<include from="custom_language_testing_snippets.md" element-id="runTests"/>

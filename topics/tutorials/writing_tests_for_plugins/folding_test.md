@@ -1,6 +1,6 @@
-[//]: # (title: 7. Folding Test)
+# 7. Folding Test
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <tldr>
 
@@ -33,4 +33,5 @@ This test method reuses the <path>DefaultTestData.simple</path> Simple file.
 
 
 ## Run the Test
-[Run](parsing_test.md#run-the-test) the test and make sure it's green.
+
+<include from="custom_language_testing_snippets.md" element-id="runTests"/>

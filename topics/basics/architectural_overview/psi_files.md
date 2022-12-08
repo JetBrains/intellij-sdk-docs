@@ -1,6 +1,8 @@
-[//]: # (title: PSI Files)
+# PSI Files
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+<link-summary>PSI File represents file content as a hierarchy of elements in a particular programming language.</link-summary>
 
 A PSI (Program Structure Interface) file is the root of a structure representing a file's contents as a hierarchy of elements in a particular programming language.
 
@@ -10,8 +12,8 @@ Unlike `VirtualFile` and `Document`, which have application scope (even if multi
 
 ## How do I get a PSI file?
 
-| Context                          | API                                                                                                                                                                      |
-|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Context                          | API                                                                                                                                                                  |
+|----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Action](basic_action_system.md) | [`AnActionEvent.getData(CommonDataKeys.PSI_FILE)`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)                          |
 | [Document](documents.md)         | [`PsiDocumentManager.getInstance(project).getPsiFile()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiDocumentManager.java)                                     |
 | [PSI Element](psi_elements.md)   | [`PsiElement.getContainingFile()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) (may return `null` if the PSI element is not contained in a file) |

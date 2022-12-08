@@ -1,8 +1,10 @@
-[//]: # (title: Kotlin UI DSL Version 1)
+# Kotlin UI DSL Version 1
 
 <show-structure for="chapter" depth="2"/>
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+<link-summary>Kotlin DSL for creating UI forms with input components bound to state object.</link-summary>
 
 <tldr>
 

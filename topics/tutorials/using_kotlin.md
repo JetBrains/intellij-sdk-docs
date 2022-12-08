@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<link-summary>Advantages and configuration required for developing a plugin in Kotlin.</link-summary>
+
 <tldr>
 
 **Homepage**: [Kotlin](https://kotlinlang.org)

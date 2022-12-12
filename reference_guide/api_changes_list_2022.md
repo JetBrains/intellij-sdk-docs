@@ -103,13 +103,13 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 : That method was an internal method.
 
 `com.intellij.database.util.TreePatternNode.Group(ObjectKind, TreePatternNode[], TreePatternNode)` constructor removed
-: Do not manipulate TreePatternNodes. Use TreePatternUtils to manipulate TreePatterns.
+: Do not manipulate TreePatternNodes. Use `TreePatternUtils` to manipulate `TreePatterns`.
 
 `com.intellij.database.util.TreePatternNode.NegativeNaming(ObjectName[])` constructor removed
-: Do not manipulate TreePatternNodes. Use TreePatternUtils to manipulate TreePatterns.
+: Do not manipulate TreePatternNodes. Use `TreePatternUtils` to manipulate `TreePatterns`.
 
-`com.intellij.database.dataSource.DataSourceConfigurable.getDataSource()` method return type changed from DasDataSource to RawDataSource
-: Stricter generic bound
+`com.intellij.database.dataSource.DataSourceConfigurable.getDataSource()` method return type changed from `DasDataSource` to `RawDataSource`
+: Stricter generic bound.
 
 ### TextMate Plugin 2022.3
 

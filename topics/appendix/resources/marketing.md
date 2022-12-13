@@ -1,11 +1,11 @@
-[//]: # (title: Marketing)
+# Marketing
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 > Please make sure to follow the guidelines from [Plugin Overview page](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html) for an optimal presentation of your plugin on JetBrains Marketplace.
->
 > The _Busy Plugin Developers. Episode 2_ discusses [5 tips for optimizing JetBrains Marketplace plugin page](https://youtu.be/oB1GA9JeeiY?t=52) in more detail.
 >
+> Plugin vendors can also submit a blog post for the JetBrains Platform blog, please see [Contributing to the Blog](https://plugins.jetbrains.com/docs/marketplace/contributing-to-the-blog.html) for details.
 
 <link-summary>Widgets and badges for marketing material</link-summary>
 
@@ -20,9 +20,9 @@ For more details, please follow the [Embeddable Content](https://plugins.jetbrai
 
 ## Readme Badges
 
-Adding badges to the README files in open-source projects is common for providing additional information for users.
+Adding badges to the <path>README</path> files in open-source projects is common for providing additional information for users.
 
-Below are listed a few related to the IntelliJ SDK and plugins development provided by [shields.io](https://shields.io):
+Below are listed a few badges related to the IntelliJ SDK and plugins development provided by [shields.io](https://shields.io):
 
 > The following code snippets contain `:pluginId` and `:packageName` placeholders.
 >

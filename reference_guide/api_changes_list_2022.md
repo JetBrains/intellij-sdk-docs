@@ -85,6 +85,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.intellij.codeInsight.template.TemplateContextType.EP_NAME` field removed
 : Use `com.intellij.codeInsight.template.impl.TemplateContextTypes` to get `TemplateContextType` extensions.
 
+`com.intellij.ide.actions.searcheverywhere.FoundItemDescriptor(I, int, int)` constructor removed
+: Use `FoundItemDescriptor(I, int)` instead.
+
 ### Database Plugin 2022.3
 
 `com.intellij.database.dataSource.url.TypesRegistry.ParamEditor` class removed

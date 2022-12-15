@@ -4,9 +4,11 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-34 Extension Points and 6 Listeners for AppCode
+34 Extension Points and 6 Listeners for AppCode 2022.3
 
 See [](extension_point_list.md) for IntelliJ Platform.
+
+<include from="app_code.md" element-id="appCodeSunset"/>
 
 <include from="snippets.md" element-id="ep_list_legend"/>
 

@@ -1,8 +1,17 @@
-[//]: # (title: AppCode Plugin Development)
+# AppCode Plugin Development
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Plugin projects targeting [AppCode](https://www.jetbrains.com/objc/) can be developed using IntelliJ IDEA with the [](tools_gradle_intellij_plugin.md).
+
+<snippet id="appCodeSunset">
+
+> With the release of AppCode 2022.3, we're sunsetting the product.
+> Please see this [blog post](https://blog.jetbrains.com/appcode/2022/12/appcode-2022-3-release-and-end-of-sales-and-support/) for details.
+>
+{style="warning"}
+
+</snippet>
 
 <include from="snippets.md" element-id="jetbrainsProductOpenSourceLicense"/>
 
@@ -25,7 +34,7 @@ Click on an entry in the table's *Attribute* column to go to the documentation a
 | `gradle-intellij-plugin` Attribute                                                   | Attribute Value                                                                                                                                                                                                   |
 |--------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [`intellij.localPath`](tools_gradle_intellij_plugin.md#intellij-extension-localpath) | Path to locally installed target version of AppCode. For example, for macOS:<br/><path>/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/AppCode/ch-0/193.5662.55/AppCode.app/Contents</path>. |
-| [`runIde.ideDir`](tools_gradle_intellij_plugin.md#tasks-runide-idedir)                | Path to locally installed target version of AppCode. For example, for macOS:<br/><path>/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/AppCode/ch-0/193.5662.55/AppCode.app/Contents</path>. |
+| [`runIde.ideDir`](tools_gradle_intellij_plugin.md#tasks-runide-idedir)               | Path to locally installed target version of AppCode. For example, for macOS:<br/><path>/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/AppCode/ch-0/193.5662.55/AppCode.app/Contents</path>. |
 
 The dependency on the AppCode APIs must be declared in the <path>[plugin.xml](plugin_configuration_file.md)</path> file.
 As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) tags must declare `com.intellij.modules.appcode` module dependency, or `com.intellij.appcode` plugin dependency for plugins targeting only versions 2020.3+.

@@ -1025,6 +1025,18 @@ Prints the output produced by the [`listProductsReleases`](#tasks-listproductsre
 Output file provided by the [`listProductsReleases`](#tasks-listproductsreleases) task.
 
 
+### printBundledPlugins
+{id="tasks-printBundledPlugins"}
+
+Prints the output produced by the [`listBundledPlugins`](#tasks-listbundledplugins) task.
+
+
+#### inputFile
+{id="tasks-printBundledPlugins-inputfile"}
+
+Output file provided by the [`listBundledPlugins`](#tasks-listbundledplugins) task.
+
+
 ### publishPlugin
 {id="tasks-publishplugin"}
 

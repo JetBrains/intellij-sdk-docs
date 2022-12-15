@@ -73,8 +73,3 @@ For [stub index](stub_indexes.md), implement [`LightStubBuilder`](%gh-ic%/platfo
 If a custom language contains lazy-parseable elements that never or rarely contain any stubs, consider implementing [`StubBuilder.skipChildProcessingWhenBuildingStubs()`](%gh-ic%/platform/core-api/src/com/intellij/psi/StubBuilder.java) (preferably using Lexer/node text).
 
 For indexing XML, also consider using [`NanoXmlUtil`](%gh-ic%/platform/indexing-impl/src/com/intellij/util/xml/NanoXmlUtil.java).
-
-### Consider Prebuilt Stubs
-
-If your language has a massive standard library, which is mostly the same for all users, you can avoid stub-indexing it in each installation by providing prebuilt stubs with your distribution.
-See [`PrebuiltStubsProvider`](%gh-ic%/platform/indexing-impl/src/com/intellij/psi/stubs/PrebuiltStubs.kt) extension.

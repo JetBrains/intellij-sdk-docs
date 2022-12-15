@@ -62,7 +62,7 @@ When upgrading to `1.x` version, please make sure to follow the [migration guide
 >
 > If targeting 2022.3+, Java 17 is required instead.
 
-> This project requires Gradle 6.8 or newer. However, it is highly recommended to always use the latest available Gradle version.
+> This project requires Gradle 7.3 or newer. However, it is highly recommended to always use the latest available Gradle version.
 > Update it with:
 > ```Bash
 > ./gradlew wrapper --gradle-version=VERSION

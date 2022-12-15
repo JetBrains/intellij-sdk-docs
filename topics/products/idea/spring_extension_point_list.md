@@ -1,7 +1,5 @@
 # Spring API Extension Point and Listener List
 
-<show-structure for="chapter" depth="2"/>
-
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 50 Extension Points and 5 Listeners for Spring API

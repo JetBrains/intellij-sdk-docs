@@ -1,7 +1,5 @@
 # Gradle IntelliJ Plugin
 
-<show-structure for="chapter" depth="2"/>
-
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Gradle IntelliJ Plugin configures Gradle-based plugin projects for building, testing, verifying, and publishing the plugin.</link-summary>

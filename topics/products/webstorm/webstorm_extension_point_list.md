@@ -1,7 +1,5 @@
 # WebStorm Extension Point and Listener List
 
-<show-structure for="chapter" depth="2"/>
-
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 64 Extension Points (EP) and 4 Listeners for WebStorm

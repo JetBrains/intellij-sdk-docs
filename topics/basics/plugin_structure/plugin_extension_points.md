@@ -1,6 +1,4 @@
-[//]: # (title: Extension Points)
-
-<show-structure for="chapter" depth="2"/>
+# Extension Points
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 

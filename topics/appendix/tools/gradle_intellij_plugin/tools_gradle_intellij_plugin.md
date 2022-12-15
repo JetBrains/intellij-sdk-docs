@@ -713,7 +713,7 @@ List of types of IDEs that will be listed in results.
 
 {style="narrow"}
 Type
-: `String`
+: `List<String>`
 
 Default value
 : [`intellij.type`](#intellij-extension-type)
@@ -1011,6 +1011,18 @@ See [`prepareSandbox` Task](#tasks-preparesandbox).
 Prepares sandbox directory with installed plugin and its dependencies for UI testing purposes.
 
 See [`prepareSandbox` Task](#tasks-preparesandbox).
+
+
+### printProductsReleases
+{id="tasks-printproductsreleases"}
+
+Prints the output produced by the [`listProductsReleases`](#tasks-listproductsreleases) task.
+
+
+#### inputFile
+{id="tasks-printproductsreleases-inputfile"}
+
+Output file provided by the [`listProductsReleases`](#tasks-listproductsreleases) task.
 
 
 ### publishPlugin

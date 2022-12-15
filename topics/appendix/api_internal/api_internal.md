@@ -18,12 +18,17 @@ Such violations are reported from [Plugin Verifier](verifying_plugin_compatibili
 
 Each entry is mapped to its corresponding _Replacement_, pointing to recommended API.
 
-> The list is not complete and will be updated continuously. Please check corresponding code documentation when encountering any API not listed below.
+<snippet id="notComplete">
+
+> The lists are not complete and will be updated continuously. Please check corresponding code documentation when encountering any API not listed on this page.
 >
 > In some cases, such documentation might not be available inside the IDE for the current target platform version. Please use <control>Go to file</control> to browse the latest version in the [intellij-community](https://github.com/jetbrains/intellij-community) GitHub repository instead.
 >
 > Please use the feedback form at the bottom of this page if you encounter missing or unclear information.
 >
+{style="note"}
+
+</snippet>
 
 ## IntelliJ Platform
 
@@ -77,8 +82,4 @@ Therefore, any reported violations can be disregarded.
 | `PhpExpectedFunctionArgument`                                                                                                                      | Made public in 2022.1                           |
 | `org.jetbrains.yaml.meta.*`                                                                                                                        | YAML Metadata API will be made public in 2023.1 |
 
-> Missing entries? Please let us know via the "**Was this page helpful?**" feedback form below or [other channels](getting_help.md#problems-with-the-guide).
->
-> Please leave your email in case we need more details.
->
-{style="note"}
+<include from="api_internal.md" element-id="notComplete"/>

@@ -1176,6 +1176,20 @@ Default value
 : `null`
 
 
+#### jbrArch
+{id="tasks-runide-jbrarch"}
+
+JetBrains Runtime architecture.
+By default, it's resolved based on the current OS and JRE architecture.
+
+{style="narrow"}
+Type
+: `String`
+
+Default value
+: `null`
+
+
 #### pluginsDir
 {id="tasks-runide-pluginsdir"}
 
@@ -1441,6 +1455,20 @@ Acceptable values
 {id="tasks-runpluginverifier-jbrvariant"}
 
 JetBrains Runtime (JBR) variant to use when running the verification.
+
+{style="narrow"}
+Type
+: `String`
+
+Default value
+: `null`
+
+
+#### jbrArch
+{id="tasks-runpluginverifier-jbrarch"}
+
+JetBrains Runtime architecture.
+By default, it's resolved based on the current OS and JRE architecture.
 
 {style="narrow"}
 Type

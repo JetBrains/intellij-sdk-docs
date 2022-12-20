@@ -55,7 +55,7 @@ For highlighting lexer errors, the standard `TextAttributesKey` for bad characte
 
 ### Semantic Highlighting
 
-[Semantic highlighting](https://www.jetbrains.com/help/idea/confhttps://www.jetbrains.com/help/idea/configuring-colors-and-fonts.htmliguring-colors-and-fonts.html#semantic-highlighting) provides an additional coloring layer to improve the visual distinction of several related items (e.g., method parameters, local variables).
+[Semantic highlighting](https://www.jetbrains.com/help/idea/configuring-colors-and-fonts.html#semantic-highlighting) provides an additional coloring layer to improve the visual distinction of several related items (e.g., method parameters, local variables).
 
 Register [`RainbowVisitor`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/daemon/RainbowVisitor.java) in `com.intellij.highlightVisitor` extension point.
 [](#color-settings) must implement [`RainbowColorSettingsPage`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/colors/RainbowColorSettingsPage.java) in addition.

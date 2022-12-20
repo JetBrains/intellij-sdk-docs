@@ -175,7 +175,7 @@ If the above does not show a preview, there could be further problems of the fol
 - Non-trivial operations with the editor are used that are currently not implemented for the mock editor.
   We mock many operations but not all. E.g., `getFoldingModel()` is not currently supported.
   Avoid using these operations for non-physical files or for `IntentionPreviewEditor`.
-- Your action produces a side effect outside the current file. Examples include actions trying to change other PSI elements, changing the project or IDE settings, or it launching an external process.
+- Your action produces a side effect outside the current file. Examples include actions trying to change other PSI elements, changing the project or IDE settings, or launching an external process.
   In this case, `startsInWriteAction()` returning `true` and/or `getElementToMakeWritable()` returning its argument is incorrect.
   Override these methods properly and [create a custom preview](#custom-diff-preview).
 - Your action uses non-physical elements for some purpose and branches on `isPhysical()` already, so in preview mode, this branch is wrongly taken.

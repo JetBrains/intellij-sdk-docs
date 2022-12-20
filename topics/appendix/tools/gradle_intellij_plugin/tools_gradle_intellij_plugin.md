@@ -7,6 +7,7 @@
 The Gradle IntelliJ Plugin is a plugin for the Gradle build system to help configuring your environment for building, testing, verifying, and publishing plugins for IntelliJ-based IDEs.
 
 > Current Gradle IntelliJ Plugin version is [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square){type="joined"}](https://github.com/jetbrains/gradle-intellij-plugin/releases)
+>
 {style="note"}
 
 This plugin allows you to build plugins for IntelliJ Platform using specified IntelliJ SDK and bundled or third-party plugins.
@@ -1575,6 +1576,10 @@ A string containing X509 certificates.
 The first certificate from the chain will be used as a certificate authority (CA).
 Refers to `cert` CLI option.
 
+> This property accepts value provided as a plain text or base64-encoded string.
+>
+{style="note"}
+
 {style="narrow"}
 Type
 : `String`
@@ -1603,6 +1608,10 @@ Default value
 
 Encoded private key in PEM format.
 Refers to `key` CLI option.
+
+> This property accepts value provided as a plain text or base64-encoded string.
+>
+{style="note"}
 
 {style="narrow"}
 Type

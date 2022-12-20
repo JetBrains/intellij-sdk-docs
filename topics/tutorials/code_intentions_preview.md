@@ -2,51 +2,60 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-> Please note that this page discusses the preview for `IntentionAction`. However, the `generatePreview()`
-> method exists also for `LocalQuickFix` and although we concentrate on intentions here,
-> the documentation and all discussed points are valid for both use cases.
->
-{style="note"}
+> Intention previews are supposed to work out-of-the-box in most cases.
+> This page gives guidance to plugin authors in situations where this is not the case and to
+> encourage thorough testing of intension actions.
 
-Since version 2022.3, the IntelliJ Platform can show a preview for IntentionAction and LocalQuickFix.
-That means when the user shows available context actions,
-a small popup highlights the differences between the current code and the code after executing the intention.
 
-Under the hood, the preview is created using a copy of the current file inside a separate,
+Since version 2022.3, the IntelliJ Platform can show a preview for
+[`IntentionAction`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/intention/IntentionAction.java)
+and
+[`LocalQuickFix`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalQuickFix.java).
+That means when the user shows [available context actions](https://www.jetbrains.com/help/idea/intention-actions.html#apply-intention-actions),
+an additional small popup highlights the differences between the current code and the code after executing the intention.
+
+Under the hood, this preview is created using a copy of the current file inside a separate,
 headless editor where the intention is applied to get the result.
 The difference between this result and the original code is used to build the preview where changes that are about to happen are highlighted.
 
 The IntelliJ Platform has a default implementation for the preview,
-which might work out of the box when existing intentions fulfill specific requirements,
+which works out of the box when existing intentions fulfill specific requirements,
 make only localized changes to the code, and require no further user input.
 
-However, in many cases, plugin authors will need to adapt their intentions to prepare them for the correct display of the preview.
+However, in specific cases, plugin authors will need to adapt their intentions to prepare them for the correct display of the preview.
 In the following, plugin authors can learn the requirements for intention previews in detail and the alternative options for previews the IntelliJ Platform provides.
 
 ## Implementation
+
+> While this page focuses on the preview for `IntentionAction`, the `generatePreview()`
+> method exists also for `LocalQuickFix` and the documentation and all discussed points are valid for both use cases.
+>
+{style="note"}
 
 The entry point for previews is `generatePreview()` available in
 [`IntentionAction`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/intention/IntentionAction.java)
 and
 [`LocalQuickFix`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalQuickFix.java).
-The default implementation will try to load the intention or quick fix and call its `invoke()` or `applyFix()` method on a copy of the original file.
+The default implementation will load the intention or quick fix and call its `invoke()` or `applyFix()` method on a copy of the original file.
 It returns an instance of [`IntentionPreviewInfo`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/intention/preview/IntentionPreviewInfo.java).
-When the diff could be computed successfully it returns `IntentionPreviewInfo#DIFF` and when it was unsuccessful it returns
-`IntentionPreviewInfo#EMPTY`.
+When the diff could be computed successfully it returns `IntentionPreviewInfo.DIFF` and when it was unsuccessful it returns
+`IntentionPreviewInfo.EMPTY`.
 
-The preferred way for plugin authors is to adapt their intentions or quick fixes to work with the default implementation of `generatePreview()`.
+The preferred way for plugin authors is to keep using their intentions or quick fixes as is and only adapt
+the code if the default implementation of `generatePreview()` does not succeed.
 Further down, we will give detailed information about necessary code changes and requirements.
-However, if it is not viable to create the diff for the preview automatically,
-plugin authors have several options to override `generatePreview()` and return a different `IntentionPreviewInfo`.
-The following options are available:
+However, sometimes it might not be viable to create the diff for the preview automatically.
+In such cases, plugin authors have several options to override `generatePreview()` and return a different `IntentionPreviewInfo`.
+The following options are available and described in the paragraphs below:
 
-- Return `IntentionPreviewInfo#EMPTY` if no preview should be shown.
 - Return an instance of `IntentionPreviewInfo.Html` to show a customized message that is dynamically generated from the available information.
-- Return an instance of `IntentionPreviewInfo.CustomDiff` to compute and display a customized diff.
+- Return an instance of `IntentionPreviewInfo.CustomDiff` to provide an original and changed text that is used to show the diff.
+- Return `IntentionPreviewInfo.EMPTY` in cases where it is not possible to show any preview.
 
 ### HTML Preview
 
-To show an HTML description as a preview, create it via `IntentionPreviewInfo.Html` and return it from `generatePreview()`.
+To show a dynamically generated HTML description as a preview, return an instance of
+`IntentionPreviewInfo.Html` from `generatePreview()`.
 Some important tips are:
 
 - You may use the
@@ -55,9 +64,10 @@ Some important tips are:
   Consider using `HtmlChunk.template` if necessary.
 - Note that the description pane has a fixed width of 300px for the default font, and you should try to make the description as concise as possible.
 - Any user interaction with the description pane is hardly possible and should not be relied upon.
-  The reason is that moving the mouse will likely show the preview for another item, and more importantly,
-  previews are usually displayed as a reaction to <shortcut>Alt+Enter</shortcut>.
-  Therefore, adding clickable links or buttons there is not recommended.
+  The first reason for that is that previews are usually displayed as a reaction to <shortcut>Alt+Enter</shortcut>
+  by users who avoid using the mouse. Secondly, even with the mouse, it happens to hover over a different intention
+  accidentally, which would close the current preview and make an interaction hard.
+  Therefore, adding clickable links or buttons in previews is highly discouraged.
 - When possible, use generic preview methods available in `IntentionPreviewInfo` (e.g., `rename()`, `navigate()`, `movePsi()`).
   They provide a uniform preview for common cases.
 
@@ -65,18 +75,31 @@ Some important tips are:
 
 For situations where the changes of an intention are not bound to the current file,
 a custom diff-like preview can be generated by returning `IntentionPreviewInfo.CustomDiff` from `generatePreview()`.
+The diff is then generated by comparing `originalText` with `modifiedText`.
 In many cases, `originalText` can be an empty string and then only the `modifiedText` will be displayed in the preview.
 However, crafting some `originalText` might be helpful if you want to have some diff highlighting in the preview or split the preview into several parts.
 When returning the custom diff, plugin authors should specify a file name if possible.
 
 ## Testing
 
-Implement
+If you use [`CodeInsightTestFixture`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/CodeInsightTestFixture.java),
+please note the following useful methods:
+
+- `checkPreviewAndLaunchAction()` is a replacement for `launchAction()`.
+  If you call `launchAction()` directly and your action should generate diff-preview which equals to original file content,
+  use `checkPreviewAndLaunchAction()` with this call, and preview will be checked as well.
+- `checkIntentionPreviewHtml()` asserts that HTML preview is generated and that it equals to the supplied text.
+- `getIntentionPreviewText()` returns the preview text for a given action.
+
+If you are unsatisfied with these methods, or you have a custom framework and want to support preview testing,
+please look through the implementations of the aforementioned methods.
+
+If you use
 [`LightQuickFixTestCase`](%gh-ic%/java/testFramework/src/com/intellij/codeInsight/daemon/quickFix/LightQuickFixTestCase.java)
 or
 [`LightQuickFixParameterizedTestCase`](%gh-ic%/java/testFramework/src/com/intellij/codeInsight/daemon/quickFix/LightQuickFixParameterizedTestCase.java)
-with the usual setup of having your test-input as `beforeXyz` and `afterXyz`.
-Now, a special suffix `-preview` should be added to the comment line in the test-data to test preview.
+with the usual setup of having your test-input as `beforeXyz` and `afterXyz`, you can test previews as well.
+A special suffix `-preview` should be added to the comment line in the test-data to test preview.
 For example, when the first line looked like this:
 
 ```java
@@ -89,35 +112,26 @@ It should now look like this:
 // "Replace Arrays.asList().stream() with Stream.of()" "true-preview"
 ```
 
-This explicitly allows for preview testing and checks that the text generated by preview on a non-physical file is the same as the text generated by actual action.
+This explicitly allows for preview testing and checks that the text generated by preview on a non-physical
+file is the same as the text generated by actual action.
 
 If you have a customized preview text or HTML, you may create a `previewXyz` file (preserve the original extension) near `beforeXyz` and `afterXyz`.
 Now, the preview (no matter if it is a diff or HTML) will be compared to the content of that file.
 
-If you use [`CodeInsightTestFixture`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/CodeInsightTestFixture.java), please note the following useful methods:
-
-- `checkPreviewAndLaunchAction()` is a replacement for `launchAction()`.
-  If you call `launchAction()` directly and your action should generate diff-preview which equals to original file content,
-  use `checkPreviewAndLaunchAction()` with this call, and preview will be checked as well.
-- `checkIntentionPreviewHtml()` asserts that HTML preview is generated and that it equals to the supplied text.
-- `getIntentionPreviewText()` returns the preview text for a given action.
-
-If you are unsatisfied with these methods, or you have a custom framework and want to support preview testing,
-please look through the implementations of the aforementioned methods.
-The provided helper functions in
+Finally,
 [`IntentionPreviewPopupUpdateProcessor`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/intention/impl/preview/IntentionPreviewPopupUpdateProcessor.kt)
-may also be useful.
+provides useful helper functions.
 
 ## Preparation for the Default Diff Preview
 
 To prepare existing intentions for the normal diff preview, plugin authors must understand the underlying framework and how it works to a certain degree.
 This section will provide these details and guide developers through possible scenarios.
 
-Normally, a non-physical copy of the file arrives in the `generatePreview()` method.
-When overriding `generatePreview()`, you can apply any changes to that file and return `IntentionPreviewInfo.DIFF`
-and the diff between the original file content and the changed file content will be shown in the preview.
+Normally, a non-physical copy of the file is provided to the `generatePreview()` method.
+When overriding `generatePreview()`, you can apply any changes to that file and return `IntentionPreviewInfo.DIFF`.
+The diff between the original file content and the changed file content will be shown in the preview.
 
-The default implementation of `generatePreview()` does further checks to ensure your action is safe.
+The default implementation of `generatePreview()` employs further checks to ensure your action is safe.
 These checks consist of the following:
 
 - Verify that `startsInWriteAction()` returns `true`.
@@ -132,50 +146,51 @@ These checks consist of the following:
 If the above does not show a preview, there could be further problems of the following kind:
 
 - There are fields that are safe but have not been marked with `@SafeFieldForPreview`.
-  Safe fields are ones which do not hold references to real Psi elements, and if they do, these references are used for reading only.
+  Safe fields are ones which do [not hold references to real Psi elements](dynamic_plugins.md#do-not-store-psi),
+  and if they do, these references are used for reading only.
 - There are fields that actually hold references to a physical `PsiElement` and they are modified by the action/fix.
-  You can try to get rid of them by extracting the necessary PSI from the `ProblemDescriptor` or using `PsiFile.getElementAt()` and Editor caret position.
-  Another option is to override `getFileModifierForPreview(target)`. In this method, remap all the Psi elements to the target file (which is the copy of the source file),
+  You can try to get rid of them by extracting the necessary PSI from the `ProblemDescriptor` or using `PsiFile.getElementAt()` with the editor caret position.
+  Another option is to override `getFileModifierForPreview(target)`. In this method, remap all the Psi elements to the target file (which is the copy of the source file)
   using `PsiTreeUtil.findSameElementInCopy()` and create a new instance of your action/fix.
-  Example: [`DeleteMultiCatchFix#getFileModifierForPreview#getFileModifierForPreview`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/daemon/impl/quickfix/DeleteMultiCatchFix.java)
+  Example: [`DeleteMultiCatchFix.getFileModifierForPreview.getFileModifierForPreview`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/daemon/impl/quickfix/DeleteMultiCatchFix.java)
   Be careful, as there could be subclasses. Better play safe and declare your action/fix class as final.
 - `invoke()`/`applyFix()` starts a write action. If `startsInWriteAction()` returns `true`, then this is unnecessary, and you can remove the write action.
-- `invoke()`/`applyFix()` asserts (directly or indirectly) that you are in a dispatch thread or inside a write action.
-  The preview is applied in a background thread and not in a write action as it works on non-physical elements.
+- `invoke()`/`applyFix()` asserts (directly or indirectly) that it is invoked in the dispatch thread or inside a write action.
+  The preview is applied in a background thread without a write action as it works on non-physical elements.
   You may consider removing the assert or keeping it only if the supplied file/element is physical (check `file.isPhysical()`)
 - `PsiDocumentManager.getInstance(project).getDocument(psiFile)` is used which isn't supported for a non-physical `psiFile`.
   Instead, use `psiFile.getViewProvider().getDocument()`.
-- `commitAllDocuments()` is used. It’s unlikely that this call is required and it probably slows down your action.
+- `PsiDocumentManager.commitAllDocuments()` is used. It’s unlikely that this call is required and it probably slows down your action.
   You can commit the current document via `commitDocument()`.
-- `FileEditorManager#openTextEditor()` or `FileEditorManager#getSelectedEditor()` is used to access the current editor (e.g., to start a template, position caret, add highlighting).
+- `FileEditorManager.openTextEditor()` or `FileEditorManager.getSelectedEditor()` is used to access the current editor (e.g., to start a template, position caret, add highlighting).
   Instead, use `FileEditorManager.getSelectedTextEditor()`, which should work in the preview and will point to a fake editor (where templates work).
-  Also, you can branch on `IntentionPreviewUtils#isIntentionPreviewActive` and avoid all editor-related operations because they won’t affect the preview anyway.
-- `invokeLater()` is used. Currently, it’s prohibited in the preview, and it will fail with an exception.
-  Whatever you are doing there, it’s a bad idea in the preview.
-  You may branch on `IntentionPreviewUtils#isIntentionPreviewActive` and avoid doing this for preview, or you generate a custom preview as explained above.
+  Also, you can branch on `IntentionPreviewUtils.isIntentionPreviewActive()` and avoid all editor-related operations because they won’t affect the preview anyway.
+- `invokeLater()` is used. Currently, it’s prohibited in the preview and will fail with an exception.
+  You may branch on `IntentionPreviewUtils.isIntentionPreviewActive()` and avoid doing this for preview, or you generate a custom preview as explained above.
+  Also, note the tips in the paragraph below this list.
 - Non-trivial operations with the editor are used that are currently not implemented for the mock editor.
   We mock many operations but not all. E.g., `getFoldingModel()` is not currently supported.
-  Either avoid using these operations for non-physical files (or for `IntentionPreviewEditor`), or ask to implement more mocks.
-- You are starting a template inside the action. We tried hard to support preview with templates, and it should show the initial template state.
+  Avoid using these operations for non-physical files or for `IntentionPreviewEditor`.
+- You are starting [a template](live_templates.md) inside the action. We tried hard to support preview with templates, and it should show the initial template state.
   If this fails or shows something wrong, please report the error.
-- Your action produces a side effect outside the current file. Examples are when your action tries to change other PSI elements, change the project or IDE settings, or it launches an external process.
-  In this case, either `startsInWriteAction()` returning `true` is wrong, or `getElementToMakeWritable()` returning its argument is wrong.
-  Override these methods correctly and create a custom preview.
+- Your action produces a side effect outside the current file. Examples include actions trying to change other PSI elements, changing the project or IDE settings, or it launching an external process.
+  In this case, `startsInWriteAction()` returning `true` and/or `getElementToMakeWritable()` returning its argument is incorrect.
+  Override these methods properly and [create a custom preview](#custom-diff-preview).
 - Your action uses non-physical elements for some purpose and branches on `isPhysical()` already, so in preview mode, this branch is wrongly taken.
-  You can check `IntentionPreviewUtils#isPreviewElement()` instead.
+  Instead, use `IntentionPreviewUtils.isPreviewElement()`.
 - Your action modifies the results of `ReferencesSearch.search(declaration)`, which always belongs to the original file, no matter if the passed declaration is a copy or an original.
   If you expect all the results to update belonging to the current file, you may traverse the file (`PsiTreeUtil.processElements()`, `SyntaxTraverser.psiTraverser()`, etc.) instead.
   Alternatively, you may find the results of the search in the copy using `PsiTreeUtil.findSameElementInCopy()`.
-  If you need to update something outside the current file, a single file preview won’t work anyway. Either you should avoid updating the elements for the preview or create a custom preview.
+  If you need to update something outside the current file, a single file preview won’t work anyway. Either avoid updating the elements for the preview or create a custom preview.
 
 If your action returns `false` from `startsInWriteAction()`, you should override `generatePreview()` and provide a custom diff or HTML preview.
 However, sometimes the default implementation of `generatePreview()` can still work.
-Here are two common situations:
+Here are two common scenarios:
 
 - Your action displays an additional popup or dialog but makes only changes to the current file after that.
   A solution here could be to display the preview assuming that the user selected default options in your UI and delegate to a method that is called after the UI is displayed, providing the default options.
 - Your action modifies a declaration in the current file and then updates all the call sites/overrides/references (probably involving slow search operation).
-  Often, it is OK to show only the modified declaration in the preview, ignoring all updated call sites or restricting them to the current file.
-  Use `IntentionPreviewUtils#isIntentionPreviewActive()` to restrict the search scope when in preview.
+  One solution is to show only the modified declaration in the preview, ignoring all updated call sites or restricting them to the current file.
+  Use `IntentionPreviewUtils.isIntentionPreviewActive()` to restrict the search scope when in preview.
 
 

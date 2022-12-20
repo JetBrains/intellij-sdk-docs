@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-## Introduction
+<link-summary>Implementing custom settings tutorial.</link-summary>
 
 As discussed in the [](settings_guide.md), plugins can add Settings to IntelliJ Platform-based IDEs.
 The IDE displays the Settings in response to a user choosing <ui-path>Settings/Preferences</ui-path>.

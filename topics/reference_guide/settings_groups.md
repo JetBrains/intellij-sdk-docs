@@ -1,8 +1,10 @@
-[//]: # (title: Custom Settings Groups)
+# Custom Settings Groups
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-As described in [Extension Points for Settings](settings_guide.md#extension-points-for-settings), custom _Settings_ can be declared as children of existing parent groups such as `tools`.
+<link-summary>Defining groups of related settings.</link-summary>
+
+As described in [](settings_guide.md#extension-points-for-settings), custom Settings can be declared as children of existing parent groups such as <ui-path>Tools</ui-path>.
 These parent groups are the existing categories of Settings in the IntelliJ Platform-based IDE.
 
 However, suppose the custom Settings are rich enough to require multiple levels?
@@ -60,7 +62,7 @@ This approach nests the child's Settings declaration within the `com.intellij.pr
 
 When using `configurable` there isn't a `parentId` for the child because the nesting implies it.
 As with using separate EP declarations, formatting restrictions are placed on the child's `id` attribute - the suffix (`servers`) gets added.
-See the [Attributes for Parent-Child Settings EPs](#attributes-for-parent-child-settings-eps) section.
+See the [](#attributes-for-parent-child-settings-eps) section.
 
 The example below demonstrates a nested `configurable` declaration:
 
@@ -86,7 +88,7 @@ Within the parent `<projectConfigurable>` EP declaration above, more `<configura
 ### Attributes for Parent-Child Settings EPs
 
 There is only one unique attribute when declaring a child Settings EP.
-The other attributes are the same as discussed in [Settings EP Attributes](settings_guide.md#settings-declaration-attributes).
+The other attributes are the same as discussed in [](settings_guide.md#settings-declaration-attributes).
 
 For the child of a parent, the `id` attribute becomes compound:
 
@@ -96,12 +98,11 @@ For the child of a parent, the `id` attribute becomes compound:
 
 > All children share the parent's `id` as the basis of their own `id`.
 > All children have an `id` suffix that is unique among their siblings.
->
 
 ## Implementations for Parent-Child Settings
 
 Implementations can be based on [`Configurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/Configurable.java), [`ConfigurableProvider`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/ConfigurableProvider.java) or one of their subtypes.
-For more information about creating Settings implementations, see [Implementations for Settings Extension Points](settings_guide.md#implementations-for-settings-extension-points).
+For more information about creating Settings implementations, see [](settings_guide.md#implementations-for-settings-extension-points).
 
 ### Configurable Marker Interfaces
 

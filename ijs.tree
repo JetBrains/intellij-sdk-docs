@@ -183,7 +183,9 @@
         <toc-element topic="using_file_templates.md"/>
       </toc-element>
       <toc-element topic="code_documentation.md"/>
-      <toc-element topic="code_intentions.md"/>
+      <toc-element topic="code_intentions.md">
+        <toc-element topic="code_intentions_preview.md"/>
+      </toc-element>
     </toc-element>
     <toc-element topic="analyzing.md" toc-title="Analysing">
       <toc-element topic="syntax_errors.md"/>

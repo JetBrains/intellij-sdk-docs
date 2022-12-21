@@ -10,6 +10,9 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ### IntelliJ Platform 2022.3
 
+Display of previews for Intentions and Quick Fixes
+: Intentions and Quick Fix actions now display a preview for the code changes. Read [this article](code_intentions_preview.md) to learn more about this feature.
+
 Specify language for Intention
 : Specify `<language>` in `com.intellij.intentionAction` EP registration to avoid instantiating language-specific intentions in non-relevant places.
 

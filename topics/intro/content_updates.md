@@ -12,6 +12,9 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ### December-22
 
+Intention Preview
+: Add information about how to prepare intentions to show [](code_intentions_preview.md).
+
 Minor Changes and Additions
 :
 - Add information for new [](kotlin_ui_dsl_version_2.md#cell-align) methods in Kotlin UI DSL Version 2.

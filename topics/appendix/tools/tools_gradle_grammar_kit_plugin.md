@@ -2,13 +2,17 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<tldr>
+
+**Current Release**: ![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-grammar-kit-plugin.svg?style=flat-square)
+
+**GitHub**: [Releases & Changelog](https://github.com/JetBrains/gradle-grammar-kit-plugin/releases), [Issue Tracker](https://github.com/JetBrains/gradle-grammar-kit-plugin/issues)
+
+</tldr>
+
 <show-structure for="chapter" depth="2"/>
 
 The [Gradle Grammar-Kit Plugin](https://github.com/JetBrains/gradle-grammar-kit-plugin) automates generating lexers and parsers to support building [custom language](custom_language_support.md) plugins for IntelliJ-based IDEs when using [Grammar-Kit](https://github.com/JetBrains/Grammar-Kit).
-
-> Current Gradle Grammar-Kit Plugin version is ![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-grammar-kit-plugin.svg?style=flat-square)
->
-{style="note"}
 
 > The plugin does not support two-pass generation. Therefore, it does not support method mixins.
 >

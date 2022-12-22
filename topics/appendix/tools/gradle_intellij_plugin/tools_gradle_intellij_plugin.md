@@ -2,15 +2,19 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<tldr>
+
+**Current Release**: [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square){type="joined"}](https://github.com/jetbrains/gradle-intellij-plugin/releases)
+
+**GitHub**: [Releases & Changelog](https://github.com/JetBrains/gradle-intellij-plugin/releases), [Issue Tracker](https://github.com/JetBrains/gradle-intellij-plugin/issues)
+
+</tldr>
+
 <show-structure for="chapter" depth="2"/>
 
 <link-summary>Gradle IntelliJ Plugin configures Gradle-based plugin projects for building, testing, verifying, and publishing the plugin.</link-summary>
 
 The Gradle IntelliJ Plugin is a plugin for the Gradle build system to help configuring your environment for building, testing, verifying, and publishing plugins for IntelliJ-based IDEs.
-
-> Current Gradle IntelliJ Plugin version is [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square){type="joined"}](https://github.com/jetbrains/gradle-intellij-plugin/releases)
->
-{style="note"}
 
 This plugin allows you to build plugins for IntelliJ Platform using specified IntelliJ SDK and bundled or third-party plugins.
 

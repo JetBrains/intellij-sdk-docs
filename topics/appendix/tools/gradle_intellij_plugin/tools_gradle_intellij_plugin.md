@@ -651,10 +651,6 @@ Default value
 ### listBundledPlugins
 {id="tasks-listbundledplugins"}
 
-> Available since the upcoming release
->
-{style="warning"}
-
 Lists all IDs of plugins bundled within the currently targeted IDE.
 This can be used to determine Plugin ID for setting up [](plugin_dependencies.md).
 

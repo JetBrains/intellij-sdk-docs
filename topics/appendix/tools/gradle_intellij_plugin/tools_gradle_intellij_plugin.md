@@ -654,6 +654,8 @@ Default value
 Lists all IDs of plugins bundled within the currently targeted IDE.
 This can be used to determine Plugin ID for setting up [](plugin_dependencies.md).
 
+See also [](#tasks-printBundledPlugins).
+
 #### ideDir
 {id="tasks-listbundledplugins-idedir"}
 
@@ -695,6 +697,7 @@ Such a list is fetched from the remote updates file: `https://www.jetbrains.com/
 
 The result list is stored within the [`listProductsReleases.outputFile`](#tasks-listproductsreleases-outputfile), which is used as a source for the Plugin Verifier if the [`runPluginVerifier`](#tasks-runpluginverifier) task has no [`runPluginVerifier.ideVersions`](#tasks-runpluginverifier-ideversions) property specified, the output of the [`listProductsReleases`](#tasks-listproductsreleases) task is used.
 
+See also [](#tasks-printproductsreleases).
 
 #### updatesFile
 {id="tasks-listproductsreleases-updatesfile"}

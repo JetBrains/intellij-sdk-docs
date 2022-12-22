@@ -1,6 +1,8 @@
-[//]: # (title: Glossary)
+# Glossary
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+<link-summary>Glossary of IntelliJ Platform specific terms.</link-summary>
 
 See also [Oracle's Java Technology Glossary](https://www.oracle.com/java/technologies/glossary.html).
 
@@ -107,8 +109,4 @@ Write Action _(WA)_
 : Allows accessing code-related data structures for writing purposes. See also [](general_threading_rules.md).
 &rarr; _Read Action_
 
-> Missing entries? Please let us know via the "**Was this page helpful?**" feedback form below or [other channels](getting_help.md#problems-with-the-guide).
->
-> Please leave your email in case we need more details.
->
-{style="note"}
+<include from="snippets.md" element-id="missingContent"/>

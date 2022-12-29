@@ -4,8 +4,6 @@
 
 <link-summary>Kotlin DSL for creating UI forms with input components bound to state object.</link-summary>
 
-<show-structure for="chapter" depth="2"/>
-
 <tldr>
 
 **Platform UI Guidelines:** [Layout](https://jetbrains.design/intellij/principles/layout)

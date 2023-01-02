@@ -1,6 +1,6 @@
 [//]: # (title: Modifying the PSI)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 The PSI is a read/write representation of the source code as a tree of elements corresponding to a source file's structure.
 You can modify the PSI by *adding*, *replacing*, and *deleting* PSI elements.
@@ -17,7 +17,9 @@ In the most general case, you use the `createFileFromText()` method of [`PsiFile
 See also [](psi_files.md#how-do-i-create-a-psi-file).
 
 Most languages provide factory methods that let you create specific code constructs more easily.
-For example, the [`PsiJavaParserFacade`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/PsiJavaParserFacade.java) class contains methods such as `createMethodFromText()`, which creates a Java method from the given text.
+Examples:
+* [`PsiJavaParserFacade`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/PsiJavaParserFacade.java) class contains methods such as `createMethodFromText()`, which creates a Java method from the given text
+* [`SimpleElementFactory.createProperty()`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleElementFactory.java) creating a Simple language property
 
 When you're implementing refactorings, [intentions](code_intentions.md), or inspection [quickfixes](code_inspections_and_intentions.md) that work with existing code, the text that you pass to the various `createFromText()` methods will combine hard-coded fragments and fragments of code taken from the existing file.
 For small code fragments (individual identifiers), you can simply append the text from the existing code to the text of the code fragment you are building.

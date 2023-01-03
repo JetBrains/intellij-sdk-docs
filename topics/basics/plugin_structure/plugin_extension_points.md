@@ -1,6 +1,8 @@
 # Extension Points
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+<link-summary>Allowing to extend plugin's functionality by other plugins.</link-summary>
 
 > See [Plugin Extensions](plugin_extensions.md) for _using_ extension points in your plugin.
 >

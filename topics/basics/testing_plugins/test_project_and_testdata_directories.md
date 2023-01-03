@@ -1,6 +1,8 @@
 [//]: # (title: Test Project and Testdata Directories)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+<link-summary>Adding test data to test projects used during tests execution.</link-summary>
 
 The test fixture creates a *test project* environment.
 Unless you customize the project creation, the test project will have one module with one source root called <path>src</path>.

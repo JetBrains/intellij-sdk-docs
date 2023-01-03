@@ -1,6 +1,8 @@
 [//]: # (title: Components)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+<link-summary>Migrating deprecated plugin components to the current solutions.</link-summary>
 
 > When writing new plugins, creating Components should be avoided.
 > Any existing Components should be migrated to services, extensions, or listeners (see below).

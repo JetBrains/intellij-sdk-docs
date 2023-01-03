@@ -1,6 +1,8 @@
 [//]: # (title: References and Resolve)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+<link-summary>PSI references allow for resolving from a symbol usage to its declaration.</link-summary>
 
 One of the most important and tricky parts in implementing a custom language PSI is resolving references.
 Resolving references gives users the ability to navigate from a PSI element usage (accessing a variable, calling a method, etc.) to the declaration of that element (the variable's definition, a method declaration, and so on).

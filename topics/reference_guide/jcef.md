@@ -1,6 +1,8 @@
 [//]: # (title: JCEF - Java Chromium Embedded Framework)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+<link-summary>Embedding Chromium-based browser in IDE.</link-summary>
 
 > JCEF is available since 2020.1 as an **experimental feature**.
 > We plan to deprecate using JavaFX in 3rd party plugins and switch to JCEF in 2020.2.

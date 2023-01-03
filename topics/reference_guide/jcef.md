@@ -57,15 +57,17 @@ To access the Chrome DevTools in plugin code, use the following API:
 ```java
 JBCefBrowser myBrowser = new JBCefBrowser(myUrl);
 CefBrowser myDevTools = myBrowser.getCefBrowser().getDevTools();
-JBCefBrowser myDevToolsBrowser = new JBCefBrowser(myDevTools,
-        myBrowser.getJBCefClient());
+JBCefBrowser myDevToolsBrowser = JBCefBrowser.createBuilder()
+    .setCefBrowser(myDevTools)
+    .setClient(myBrowser.getJBCefClient())
+    .build();
 ```
 
 Or in order to just open it in a separate window:
 
 ```java
 JBCefBrowser myBrowser = new JBCefBrowser(myUrl);
-myBrowser.openDevTools();
+myBrowser.openDevtools();
 ```
 
 ## API
@@ -123,7 +125,7 @@ void loadHTML(String);
 For executing JS code and callbacks (see below), use the wrapped `CefBrowser` instance directly:
 
 ```java
-getCefBrowser().executeJavaScript(String code, String url, int line);
+getCefBrowser().executeJavaScript(myCode, myUrl, myLine);
 ```
 
 By default, `JBCefBrowser` is created with implicit `JBCefClient` (disposed automatically).
@@ -160,7 +162,7 @@ JBCefBrowser myJBCefBrowser = ...
 CefBrowser myCefBrowser = ...
 
 // Create a JS query instance
-JBCefJSQuery myJSQueryOpenInBrowser = JBCefJSQuery.create(myJBCefBrowser);
+JBCefJSQuery myJSQueryOpenInBrowser = JBCefJSQuery.create((JBCefBrowserBase)myJBCefBrowser);
 
 // Add a query handler
 myJSQueryOpenInBrowser.addHandler((link) -> {

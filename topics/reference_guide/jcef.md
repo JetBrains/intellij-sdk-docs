@@ -85,7 +85,6 @@ if (!JBCefApp.isSupported()) {
   // Fallback to an alternative browser-less solution
   return;
 }
-
 // Use JCEF
 ```
 
@@ -141,7 +140,7 @@ The simplest way to add a browser component to your UI:
 
 ```java
 JPanel myPanel = ...;
-myPanel.add(new JBCefBrowser("https://www.jetbrains.com").getComponent());
+myPanel.add(new JBCefBrowser("https://example.com").getComponent());
 ```
 
 ### JBCefJSQuery
@@ -157,12 +156,12 @@ It's simpler to illustrate it by an example.
 Say we want to open a link in an external browser and handle it:
 
 ```java
-
-JBCefBrowser myJBCefBrowser = ...
-CefBrowser myCefBrowser = ...
+JBCefBrowser myJBCefBrowser = ...;
+CefBrowser myCefBrowser = ...;
 
 // Create a JS query instance
-JBCefJSQuery myJSQueryOpenInBrowser = JBCefJSQuery.create((JBCefBrowserBase)myJBCefBrowser);
+JBCefJSQuery myJSQueryOpenInBrowser =
+    JBCefJSQuery.create((JBCefBrowserBase)myJBCefBrowser);
 
 // Add a query handler
 myJSQueryOpenInBrowser.addHandler((link) -> {

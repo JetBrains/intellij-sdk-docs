@@ -1,6 +1,6 @@
 # Virtual Files
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Virtual Files represent local or remote files provided by the Virtual File System.</link-summary>
 
@@ -40,7 +40,7 @@ Invoking a VFS refresh might be necessary for accessing a file that has just bee
 A particular file on disk is represented by equal `VirtualFile` instances for the IDE process's entire lifetime.
 There may be several instances corresponding to the same file, and they can be garbage-collected.
 The file is a `UserDataHolder`, and the user data is shared between those equal instances.
-If a file is deleted, its corresponding VirtualFile instance becomes invalid (`isValid()` returns `false`), and operations cause exceptions.
+If a file is deleted, its corresponding `VirtualFile` instance becomes invalid (`isValid()` returns `false`), and operations cause exceptions.
 
 ## How do I create a virtual file?
 

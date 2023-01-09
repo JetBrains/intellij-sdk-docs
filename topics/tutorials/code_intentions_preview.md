@@ -1,6 +1,6 @@
 # Intention Action Preview
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Guide for the preview of Intention and Quick Fix actions.</link-summary>
 
@@ -156,7 +156,7 @@ If the above does not show a preview, there could be further problems of the fol
 2. There are fields that actually hold references to a physical `PsiElement` and they are modified by the action/fix.
    You can try to get rid of them by extracting the necessary PSI from the [`ProblemDescriptor`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/ProblemDescriptor.java)
    or using `PsiFile.getElementAt()` with the editor caret position.
-   Another option is to override `getFileModifierForPreview(target)`. In this method, remap all the Psi elements to the target file (which is the copy of the source file)
+   Another option is to override `getFileModifierForPreview(target)`. In this method, remap all the PSI elements to the target file (which is the copy of the source file)
    using `PsiTreeUtil.findSameElementInCopy()` and create a new instance of your action/fix.
    Example: [`DeleteMultiCatchFix.getFileModifierForPreview()`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/daemon/impl/quickfix/DeleteMultiCatchFix.java)
    Be careful, as there could be subclasses. Better play safe and declare your action/fix class as final.
@@ -166,7 +166,7 @@ If the above does not show a preview, there could be further problems of the fol
    You may consider removing these assertions or keeping them only if the preview is not active (use `IntentionPreviewUtils.isIntentionPreviewActive()`).
 5. `PsiDocumentManager.getDocument(psiFile)` is used which isn't supported for a non-physical `psiFile`.
    Instead, use `psiFile.getViewProvider().getDocument()`.
-6. `PsiDocumentManager.commitAllDocuments()` is used. It’s unlikely that this call is required and it probably slows down your action.
+6. `PsiDocumentManager.commitAllDocuments()` is used. It’s unlikely that this call is required, and it probably slows down your action.
    You can commit the current document via `PsiDocumentManager.commitDocument()`.
 7. `FileEditorManager.openTextEditor()` or `FileEditorManager.getSelectedEditor()` is used to access the current editor (e.g., to start a template, position caret, add highlighting).
    Instead, use `FileEditorManager.getSelectedTextEditor()`, which should work in the preview and will point to a fake editor (where templates work).
@@ -177,7 +177,7 @@ If the above does not show a preview, there could be further problems of the fol
 9. Non-trivial operations with the editor are used that are currently not implemented for the mock editor.
    We mock many operations but not all. E.g., `getFoldingModel()` is not currently supported.
    Avoid using these operations for non-physical files or for `IntentionPreviewEditor`.
-10. Your action produces a side effect outside of the current file. Examples include actions trying to change other PSI elements, changing the project or IDE settings, or launching an external process.
+10. Your action produces a side effect outside the current file. Examples include actions trying to change other PSI elements, changing the project or IDE settings, or launching an external process.
     In this case, `startsInWriteAction()` returning `true` and/or `getElementToMakeWritable()` returning its argument is incorrect.
     Override these methods properly and [create a custom preview](#custom-diff-preview).
 11. Your action uses non-physical elements for some purpose and branches on `PsiElement.isPhysical()` already, so in preview mode, this branch is wrongly taken.

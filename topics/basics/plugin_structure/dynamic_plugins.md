@@ -1,6 +1,6 @@
 # Dynamic Plugins
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Making a plugin dynamic allows installing, updating, and uninstalling it without IDE restart, as well as hot reloading plugin changes during the development.</link-summary>
 
@@ -71,6 +71,10 @@ Replace with `String` from `Language.getID()`/`FileType.getName()` (use inspecti
 Register [`DynamicPluginListener`](%gh-ic%/platform/core-api/src/com/intellij/ide/plugins/DynamicPluginListener.kt) [application listener](plugin_listeners.md) to receive updates on plugin load/unload events.
 
 This can be used to e.g., cancel long-running activities or disallow unload due to ongoing processes.
+
+### Resource Cleanup
+
+Use [](plugin_services.md) implementing [`Disposable`](%gh-ic%/platform/util/src/com/intellij/openapi/Disposable.java) and perform cleanup in `Disposable.dispose()`.
 
 ## Troubleshooting
 

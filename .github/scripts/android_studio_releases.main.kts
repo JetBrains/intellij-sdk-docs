@@ -20,12 +20,12 @@ import java.net.URL
 val RELEASES_LIST = "https://jb.gg/android-studio-releases-list.xml"
 val RELEASES_FILE_PATH_MD = "topics/_generated/android_studio_releases.md"
 val CHANNEL_BADGES_LIST = """
-  [release]: https://img.shields.io/badge/-release-blue?style=flat-square
-  [patch]: https://img.shields.io/badge/-patch-orange?style=flat-square
-  [rc]: https://img.shields.io/badge/-rc-red?style=flat-square
-  [beta]: https://img.shields.io/badge/-beta-darkred?style=flat-square
-  [canary]: https://img.shields.io/badge/-canary-lightgrey?style=flat-square
-  [preview]: https://img.shields.io/badge/-preview-darktgrey?style=flat-square
+  [release]: https://img.shields.io/badge/-Release-blue?style=flat-square
+  [patch]: https://img.shields.io/badge/-Patch-orange?style=flat-square
+  [rc]: https://img.shields.io/badge/-RC-red?style=flat-square
+  [beta]: https://img.shields.io/badge/-Beta-darkred?style=flat-square
+  [canary]: https://img.shields.io/badge/-Canary-lightgrey?style=flat-square
+  [preview]: https://img.shields.io/badge/-Preview-darkgrey?style=flat-square
 """
 
 val content = URL(RELEASES_LIST).readText()
@@ -58,7 +58,7 @@ fun List<Item>.renderTable() = """
   |--------------|:-------:|--------------|---------|-----------------------|
 """ + sortedByDescending { it.version.toLooseVersion() }.joinToString("\n") {
   val name = it.name.removePrefix("Android Studio").trim().replace("|", "\\|")
-  val channel = it.channel.lowercase().run { "![$this][$this]" }
+  val channel = it.channel.run { "![$this][${this.lowercase()}]" }
   val date = it.date
   val version = "**${it.version}** <br/> ${it.build}"
   val platform = "**${it.platformVersion}** <br/> ${it.platformBuild}"

@@ -113,7 +113,7 @@ data class Download(
         var link: String = "",
 
         @field:Element
-        var size: Int = 0,
+        var size: String = "",
 
         @field:Element
         var checksum: String = "",

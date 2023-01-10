@@ -1,12 +1,20 @@
 # Content Updates
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 This page lists notable additions and updates to the SDK documentation and [](code_samples.md).
 
 See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/main) ([RSS](https://github.com/JetBrains/intellij-sdk-docs/commits/main.atom)) for a detailed changelog.
 
 <include from="snippets.md" element-id="subscribeNews"/>
+
+## 2023
+
+### January-23
+
+Minor Changes and Additions
+:
+- Update _IDE Support_ section in [](verifying_plugin_compatibility.md).
 
 ## 2022
 

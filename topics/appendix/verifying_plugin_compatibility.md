@@ -63,4 +63,6 @@ Inspection: <control>Plugin DevKit | Plugin descriptor | Plugin.xml validity</co
 A plugin might specify a [compatibility range](build_number_ranges.md) including releases where some API is not available.
 Under the hood, it uses an artifact containing generated data via `ApiStatus.@AvailableSince`, which is automatically attached to the project.
 
+NOTE: If values are not specified directly in [<path>plugin.xml</path>](plugin_configuration_file.md) (e.g., when providing values via [](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) Gradle task), they must be set explicitly in the inspection's settings.
+
 Inspection: <control>Plugin DevKit | Code | Usage of IntelliJ API not available in older IDEs</control>

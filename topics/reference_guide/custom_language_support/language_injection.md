@@ -1,6 +1,6 @@
-[//]: # (title: Language Injection)
+# Language Injection
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <tldr>
 
@@ -55,7 +55,7 @@ In the following sections, we'll discuss these three options in more detail.
 ## IntelliLang
 
 First, please read the available [documentation](https://www.jetbrains.com/help/idea/language-injections-settings.html) on IntelliLang.
-A good point to start with is to inspect available language injections that you can find in the IntelliLang settings under <ui-path>Settings/Preferences | Editor | Language Injections</ui-path>.
+A good point to start with is to inspect available language injections that you can find in the IntelliLang settings under <ui-path>Settings | Editor | Language Injections</ui-path>.
 The injections shown are configured through XML files and loaded automatically.
 
 ### Example

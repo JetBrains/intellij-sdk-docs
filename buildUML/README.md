@@ -14,7 +14,7 @@ Use [https://kroki.io/](https://kroki.io/).
 * Get and install the [PlantUML Integration plugin](https://plugins.jetbrains.com/plugin/7017-plantuml-integration) for IntelliJ IDEA:
     * Set the `GRAPHVIZ_DOT` system or environment property to point to the directory containing the Graphviz executable on your machine.
       For example, `export GRAPHVIZ_DOT="/usr/local/Cellar/graphviz/2.42.3/bin/dot"`
-    * In the PlantUML plugin Settings (**Settings/Preferences \| Other Settings \| PlantUML**) set:
+    * In the PlantUML plugin Settings (**Settings \| Other Settings \| PlantUML**) set:
         * The "Additional 'plantuml.include.path'" to be the absolute path to the directory containing the `jb-plantuml-theme.puml` file on your machine.
           For example, `/<path to sdk root>/buildUML` or, if you have the IntelliJ-Community source code, `/<path to intellij-community root>/platform/docs/`.
         * The "PlantUML config" to `!include jb-plantuml-theme.puml`

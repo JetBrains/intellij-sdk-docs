@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 
 <idea-plugin>
@@ -16,7 +16,7 @@
   <!-- Text to display as description on Preferences/Settings | Plugin page -->
   <description>
     <![CDATA[
-      Demonstrates implementing a custom settings panel.<br>Adds a settings panel to the <b>Settings/Preferences</b>
+      Demonstrates implementing a custom settings panel.<br>Adds a settings panel to the <b>Settings</b>
       panel under <b>Tools</b>.
     ]]>
   </description>

@@ -1,6 +1,6 @@
-[//]: # (title: Postfix Templates)
+# Postfix Templates
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Postfix templates implement possibility to modify or wrap the existing code in additional constructs without navigating the caret back.</link-summary>
 
@@ -48,7 +48,7 @@ Providing the code snippets showing the template in "before" and "after" expandi
 The _$EXTENSION$_ placeholder should be replaced with the extension of the template language, e.g., <path>before.kt.template</path> for a Kotlin template.
 
 The code snippets included in the example files can use the `<spot>` marker, which should surround the most important code parts, e.g., expression to expand and position of the caret after expanding.
-Marked parts will be highlighted in the <ui-path>Settings/Preferences | Editor | General | Postfix Completion</ui-path> settings page, making it easier for users to understand how a template is expanded, e.g.:
+Marked parts will be highlighted in the <ui-path>Settings | Editor | General | Postfix Completion</ui-path> settings page, making it easier for users to understand how a template is expanded, e.g.:
 - <path>before.java.template</path>:
   ```java
   <spot>cart.getProducts()</spot>.var

@@ -1,6 +1,6 @@
-[//]: # (title: Themes - Editor Schemes and Background Images)
+# Themes - Editor Schemes and Background Images
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Customizing editor schemes and editor or application background images in a theme plugin.</link-summary>
 
@@ -11,10 +11,10 @@ Themes can also provide custom color and font settings, as well as custom images
 Users of IntelliJ Platform-based IDEs, such as Intellij IDEA, can set preferences to configure the colors and fonts used in the Editor.
 These custom color and font settings are called _Editor Color Schemes_.
 
-### Creating a Custom Editor Scheme Using Settings/Preferences
+### Creating a Custom Editor Scheme Using Settings
 
-Custom editor color schemes can be specified and exported using the IDE _Settings/Preferences_ dialog.
-Note that editor [Colors and Fonts](https://www.jetbrains.com/help/idea/configuring-colors-and-fonts.html), and [Colors for Version Control File Status](https://www.jetbrains.com/help/idea/file-status-highlights.html) are customized in different sections of _Settings/Preferences_.
+Custom editor color schemes can be specified and exported using the IDE <ui-path>Settings</ui-path> dialog.
+Note that editor [Colors and Fonts](https://www.jetbrains.com/help/idea/configuring-colors-and-fonts.html), and [Colors for Version Control File Status](https://www.jetbrains.com/help/idea/file-status-highlights.html) are customized in different sections of <ui-path>Settings</ui-path>.
 
 Use the following procedure to customize an editor color scheme for a theme:
 * Create the desired custom editor color scheme using the IDE preferences.
@@ -62,7 +62,7 @@ For additional examples of `name` and `value` attributes, review the editor colo
 
 ### Customizing Version Control File Status Colors
 
-As [described above](#creating-a-custom-editor-scheme-using-settingspreferences), colors corresponding to the VCS status of files can be customized and exported via the [Settings/Preferences](https://www.jetbrains.com/help/idea/file-status-highlights.html).
+As [described above](#creating-a-custom-editor-scheme-using-settingspreferences), colors corresponding to the VCS status of files can be customized and exported via the [Settings](https://www.jetbrains.com/help/idea/file-status-highlights.html).
 No other procedure is necessary to customize these colors.
 In the exported color scheme file the `name` is the VCS file status, and the `value` is the new color corresponding to that status.
 For example, customized VCS colors for a subset of file statuses will appear in the editor scheme file as:

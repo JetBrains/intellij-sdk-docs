@@ -1,6 +1,6 @@
-[//]: # (title: Using File Templates Programmatically)
+# Using File Templates Programmatically
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 File templates provided by a plugin can be used during new file creation, in code intention actions, or other plugin features.
 They can be accessed with the
@@ -104,7 +104,7 @@ protected void buildDialog(Project project, PsiDirectory directory,
 }
 ```
 
-As file templates are placed in the <path>fileTemplates/internal</path> directory, they are not listed in the <ui-path>Settings/Preferences | Editor | File and Code Templates</ui-path> settings page, and users can't adjust them to their needs.
+As file templates are placed in the <path>fileTemplates/internal</path> directory, they are not listed in the <ui-path>Settings | Editor | File and Code Templates</ui-path> settings page, and users can't adjust them to their needs.
 Internal templates can be exposed in the <control>Files</control> category by additionally registering them via the `com.intellij.internalFileTemplate` EP, e.g.:
 
 ```xml

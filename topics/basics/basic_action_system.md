@@ -1,6 +1,6 @@
 # Actions
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Adding custom actions to IntelliJ Platform-based IDEs menus and toolbar.</link-summary>
 
@@ -422,4 +422,4 @@ Use [`BackAction`](%gh-ic%/platform/platform-api/src/com/intellij/ui/navigation/
 
 For actions registered at runtime (e.g., in a tool window toolbar), add an [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) entry with
 [`EmptyAction`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/EmptyAction.java)
-to "reserve" Action ID so they become visible in <ui-path>Settings/Preferences | Keymap</ui-path>.
+to "reserve" Action ID so they become visible in <ui-path>Settings | Keymap</ui-path>.

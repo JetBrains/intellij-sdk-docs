@@ -1,8 +1,8 @@
-[//]: # (title: Settings Guide)
+# Settings Guide
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<link-summary>Adding entries in Settings/Preferences.</link-summary>
+<link-summary>Adding entries in Settings.</link-summary>
 
 _Settings_ persistently store states that control the behavior and appearance of IntelliJ Platform-based IDEs.
 On this page, the term "Settings" means the same as "Preferences" on some platforms.
@@ -157,13 +157,13 @@ The following nested interfaces are markers, which convey information about the 
   So `NoScroll` interface should be used to remove the outer `JScrollPane`.
 * `Configurable.NoMargin` - Notifies the Settings dialog not to add an empty border to the form.
   By default, an empty border is added for a plugin's Settings component.
-* `Configurable.Beta` _(2022.3)_ - Adds <control>Beta</control> label next to settings page title in <control>Settings/Preferences</control> tree.
+* `Configurable.Beta` _(2022.3)_ - Adds <control>Beta</control> label next to settings page title in <control>Settings</control> tree.
 
 #### Additional Interfaces Based on Configurable
 
 There are classes in the IntelliJ Platform specialized in particular types of Settings.
 These subtypes are based on `com.intellij.openapi.options.ConfigurableEP`.
-For example, <ui-path>Settings/Preferences | Editor | General | Appearance</ui-path> allows adding Settings via [`EditorSmartKeysConfigurableEP`](%gh-ic%/platform/lang-impl/src/com/intellij/application/options/editor/EditorSmartKeysConfigurableEP.java) and `com.intellij.editorSmartKeysConfigurable` EP.
+For example, <ui-path>Settings | Editor | General | Appearance</ui-path> allows adding Settings via [`EditorSmartKeysConfigurableEP`](%gh-ic%/platform/lang-impl/src/com/intellij/application/options/editor/EditorSmartKeysConfigurableEP.java) and `com.intellij.editorSmartKeysConfigurable` EP.
 
 #### Examples
 

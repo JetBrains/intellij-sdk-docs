@@ -1,6 +1,6 @@
 # SDK Docs Style Guide
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <link-summary>Writing and notation styleguide for SDK Docs.</link-summary>
 
@@ -94,8 +94,7 @@ Very long [links](#links) should also be on a separate line.
 
 Consistent text styles are used to standardize references and keywords:
 
-* Menu paths are wrapped using `<ui-path>` with pipe characters separating each level: `<ui-path>Settings/Preferences | Editor</ui-path>`: <ui-path>Settings/Preferences | Editor</ui-path>
-  Menu paths to settings always start with "Settings/Preferences" to cover all platforms.
+* Menu paths are wrapped using `<ui-path>` with pipe characters separating each level: `<ui-path>Settings | Editor</ui-path>`: <ui-path>Settings | Editor</ui-path>
   Inside tables, use `&#124;` instead of `|` to prevent escaping problems.
 * User interface element names like labels, buttons, checkboxes, etc. are wrapped using `<control>`: `Press <control>Continue</continue>`: Press <control>Continue</control>
 * Non-code keywords and quotations, or the names of non-code files, are formatted as italic style: \_Theme\_ (_Theme_), \_README.md\_ (_README.md_.)

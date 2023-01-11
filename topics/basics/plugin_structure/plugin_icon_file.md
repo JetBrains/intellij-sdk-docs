@@ -1,6 +1,6 @@
-[//]: # (title: Plugin Logo)
+# Plugin Logo
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Beginning in version 2019.1, the IntelliJ Platform supports representing a plugin with a logo.
 A _Plugin Logo_ is intended to be a unique representation of a plugin's functionality, technology, or company.
@@ -10,7 +10,7 @@ See [Working with Icons and Images](work_with_icons_and_images.md) for more info
 
 ## Plugin Logo Usages
 Plugin Logos are shown in the [JetBrains Marketplace](https://plugins.jetbrains.com).
-They also appear in the Settings/Preferences [Plugin Manager](https://www.jetbrains.com/help/idea/managing-plugins.html) UI in IntelliJ Platform-based IDEs.
+They also appear in the Settings [Plugin Manager](https://www.jetbrains.com/help/idea/managing-plugins.html) UI in IntelliJ Platform-based IDEs.
 Whether online or in the product UI, a Plugin Logo helps users to identify a plugin more quickly in a list, as shown below:
 
 ![Example Product Plugin Preferences Dialog](plugin_prefs.png){width="800"}

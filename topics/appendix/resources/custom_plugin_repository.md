@@ -1,6 +1,6 @@
-[//]: # (title: Custom Plugin Repository)
+# Custom Plugin Repository
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 > [Toolbox Enterprise](https://www.jetbrains.com/toolbox-enterprise/) (currently in Early Access) comes with a local built-in IntelliJ plugin repository that allows you to choose specific plugins to be approved within your organization. It also lets you upload and distribute your own plugins inside your company, as well as any publicly available plugin from the internet.
 
@@ -12,7 +12,7 @@ If you intend to use a plugin repository _other than_ the [JetBrains Marketplace
    This file describes all the plugins available in your custom repository and each plugin's download URL.
 2. Upload your plugin JAR/ZIP file to an HTTPS web server.
    This can be the same web server you are using for the custom repository or a different HTTPS web server.
-3. Add the URL for the custom repository to the JetBrains IDE [Repository Settings/Preferences](https://www.jetbrains.com/help/idea/managing-plugins.html#repos).
+3. Add the URL for the custom repository to the JetBrains IDE [Repository Settings](https://www.jetbrains.com/help/idea/managing-plugins.html#repos).
 
 \* The <path>updatePlugin.xml</path> file name is not fixed and can be different.
 
@@ -35,7 +35,7 @@ The description also tells the JetBrains IDE where to download the plugin itself
 A custom plugin repository's <path>updatePlugins.xml</path> file is constructed and maintained by the repository administrator.
 More than one <path>updatePlugins.xml</path> file may be required if the custom repository consumers are using more than one version of a JetBrains IDE.
 For example, <path>updatePlugins-182.xml</path>, <path>updatePlugins-183.xml</path> for IntelliJ IDEA 2018.2 and 2018.3, respectively.
-Each <path>updatePlugins-*.xml</path> file will have a unique URL that is added to the JetBrains IDE [Repository Settings/Preferences](https://www.jetbrains.com/help/idea/managing-plugins.html#repos).
+Each <path>updatePlugins-*.xml</path> file will have a unique URL that is added to the JetBrains IDE [Repository Settings](https://www.jetbrains.com/help/idea/managing-plugins.html#repos).
 
 ### Format of updatePlugins.xml File
 

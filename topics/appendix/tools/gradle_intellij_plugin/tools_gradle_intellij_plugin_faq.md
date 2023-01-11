@@ -1,6 +1,6 @@
 # Gradle IntelliJ Plugin – FAQ
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <link-summary>FAQ for using Gradle IntelliJ Plugin</link-summary>
 
@@ -118,7 +118,7 @@ buildSearchableOptions.enabled = false
 </tab>
 </tabs>
 
-As a result of disabling building searchable options, the [Settings](settings.md) that your plugin provides won't be searchable in the <ui-path>Settings/Preferences</ui-path> dialog.
+As a result of disabling building searchable options, the [Settings](settings.md) that your plugin provides won't be searchable in the <ui-path>Settings</ui-path> dialog.
 Disabling of the task is suggested for plugins that are not intended to provide custom settings.
 
 ### How to show log file of sandbox instance

@@ -1,6 +1,6 @@
-[//]: # (title: Creating Actions)
+# Creating Actions
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Plugins can add actions to existing IDE menus and toolbars, as well as add new menus and toolbars.
 The IntelliJ Platform calls the actions of plugins in response to user interactions with the IDE.
@@ -59,7 +59,7 @@ A more comprehensive explanation of action registration is available in the [](b
 ### Registering an Action with the New Action Form
 
 IntelliJ IDEA has an embedded inspection that spots unregistered actions.
-Verify the inspection is enabled at <ui-path>Settings/Preferences | Editor | Inspections | Plugin DevKit | Code | Component/Action not registered</ui-path>.
+Verify the inspection is enabled at <ui-path>Settings | Editor | Inspections | Plugin DevKit | Code | Component/Action not registered</ui-path>.
 Here is an example for this stage of the `PopupDialogAction` class:
 
 !["Action never used" inspection](action_never_used.png){width="600"}

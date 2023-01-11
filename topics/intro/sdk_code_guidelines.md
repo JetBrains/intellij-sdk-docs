@@ -1,6 +1,6 @@
-[//]: # (title: SDK Code Sample Guidelines)
+# SDK Code Sample Guidelines
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This document describes the coding guidelines used for authoring open-source IntelliJ Platform SDK code samples.
 Before you begin, please read this page thoroughly, as well as the [Code of Conduct](intellij-sdk-docs-original_CODE_OF_CONDUCT.md) and [License](https://github.com/JetBrains/intellij-sdk-docs/blob/main/LICENSE.txt) documents.
@@ -194,7 +194,7 @@ Code samples should build cleanly, with no warnings or errors, and new code samp
 Testers should complete the following checklist.
 Here the term "IDE" means the IntelliJ Platform-based IDE in which the plugin is designed to run:
 * The plugin should load in the IDE.
-* The correct information about the plugin should display in the <ui-path>Settings/Preferences | Plugins</ui-path> panel.
+* The correct information about the plugin should display in the <ui-path>Settings | Plugins</ui-path> panel.
 * If applicable, the plugin UI, such as tool windows, menu additions, etc. should display correctly.
 * The functionality of the plugin should be tested with a sample file.
 * If applicable, the plugin should pass unit tests.

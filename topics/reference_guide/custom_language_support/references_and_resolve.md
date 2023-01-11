@@ -1,4 +1,4 @@
-[//]: # (title: References and Resolve)
+# References and Resolve
 
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
@@ -71,4 +71,4 @@ The implementation of `multiResolve()` can be also based on [`PsiScopeProcessor`
 ## Additional Highlighting
 
 Implement [`HighlightedReference`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/highlighting/HighlightedReference.java) to add additional highlighting for non-obvious places (e.g., String literal).
-Such references will automatically be highlighted using <control>String | Highlighted reference</control> text attributes from <ui-path>Settings/Preferences | Editor | Color Scheme | Language Defaults</ui-path> (_2022.2_).
+Such references will automatically be highlighted using <control>String | Highlighted reference</control> text attributes from <ui-path>Settings | Editor | Color Scheme | Language Defaults</ui-path> (_2022.2_).

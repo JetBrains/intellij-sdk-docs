@@ -1,6 +1,6 @@
-[//]: # (title: Extensions)
+# Extensions
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <link-summary>Extensions are the most common way of customizing functionality in the IDE.</link-summary>
 
@@ -9,7 +9,7 @@ _Extensions_ are the most common way for a plugin to extend the IntelliJ Platfor
 The following are some of the most common tasks accomplished using extensions:
 
 * The `com.intellij.toolWindow` extension point allows plugins to add [tool windows](tool_windows.md) (panels displayed at the sides of the IDE user interface);
-* The `com.intellij.applicationConfigurable` and `com.intellij.projectConfigurable` extension points allow plugins to add pages to the [Settings/Preferences dialog](settings.md);
+* The `com.intellij.applicationConfigurable` and `com.intellij.projectConfigurable` extension points allow plugins to add pages to the [Settings dialog](settings.md);
 * [Custom language plugins](custom_language_support.md) use many extension points to extend various language support features in the IDE.
 
 There are more than 1000 extension points available in the platform and the bundled plugins, allowing customizing different parts of the IDE behavior.

@@ -1,6 +1,6 @@
-[//]: # (title: Persisting Sensitive Data)
+# Persisting Sensitive Data
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The Credentials Store API allows you to store sensitive user data securely, like passwords, server URLs, etc.
 
@@ -57,4 +57,4 @@ The default storage format depends on the OS.
 [linux]: https://specifications.freedesktop.org/secret-service/latest/
 [linux2]: https://wiki.gnome.org/Projects/Libsecret
 
-Users can override the default behavior in <ui-path>Settings/Preferences | Appearance & Behavior | System Settings | Passwords</ui-path>.
+Users can override the default behavior in <ui-path>Settings | Appearance & Behavior | System Settings | Passwords</ui-path>.

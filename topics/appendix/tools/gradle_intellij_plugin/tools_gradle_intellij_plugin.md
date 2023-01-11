@@ -1,6 +1,6 @@
 # Gradle IntelliJ Plugin
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <tldr>
 
@@ -63,7 +63,7 @@ plugins {
 
 When upgrading to `1.x` version, please make sure to follow the [migration guide](https://lp.jetbrains.com/gradle-intellij-plugin) to adjust your existing build script.
 
-> <control>Gradle JVM</control> must be set to Java 11 in <path>Settings/Preferences | Build, Execution, Deployment | Build Tools | Gradle</path>.
+> <control>Gradle JVM</control> must be set to Java 11 in <ui-path>Settings | Build, Execution, Deployment | Build Tools | Gradle</ui-path>.
 >
 > If targeting 2022.3+, Java 17 is required instead.
 

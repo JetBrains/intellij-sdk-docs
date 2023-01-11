@@ -1,6 +1,6 @@
 # Virtual File System
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Virtual File System is an abstraction that allows to work with local or remote file storages and implement custom.</link-summary>
 
@@ -38,7 +38,7 @@ The VFS will be updated during the next refresh operation, which includes the fi
 
 IntelliJ Platform refreshes the entire project contents asynchronously on startup.
 By default, it performs a refresh operation when the user switches to it from another app.
-Still, users can turn this off via <ui-path>Settings/Preferences | Appearance & Behavior | System Settings | Synchronize external changes\[...]</ui-path>.
+Still, users can turn this off via <ui-path>Settings | Appearance & Behavior | System Settings | Synchronize external changes\[...]</ui-path>.
 
 On Windows, Mac, and Linux, a native file watcher process is started that receives file change notifications from the file system and reports them to the IntelliJ Platform.
 If a file watcher is available, a refresh operation looks only at the files that have been reported as changed by the file watcher.
@@ -53,7 +53,7 @@ If a file's contents were changed, but its timestamp remained the same, the Inte
 There is currently no facility for removing files from the snapshot.
 If a file was loaded there once, it remains there forever unless it was deleted from the disk, and a refresh operation was called on one of its parent directories.
 
-The VFS itself does not honor ignored files listed in <ui-path>Settings/Preferences | Editor | File Types</ui-path> and folders to ignore and excluded folders listed in <ui-path>Project Structure | Modules | Sources | Excluded</ui-path>.
+The VFS itself does not honor ignored files listed in <ui-path>Settings | Editor | File Types</ui-path> and folders to ignore and excluded folders listed in <ui-path>Project Structure | Modules | Sources | Excluded</ui-path>.
 If the application code accesses them, the VFS will load and return their contents.
 In most cases, the ignored files and excluded folders must be skipped from processing by higher-level code.
 

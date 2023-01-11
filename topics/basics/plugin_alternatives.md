@@ -1,6 +1,6 @@
-[//]: # (title: Alternatives to Implementing a Plugin)
+# Alternatives to Implementing a Plugin
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <link-summary>Alternative strategies and tools to avoid building a "full" plugin.</link-summary>
 
@@ -41,7 +41,7 @@ Flora extensions have access to all available IntelliJ Platform APIs, just like 
 
 Every extension is represented by a single file and stored directly in a project's <path>.plugins</path> directory.
 Extensions can be easily shared with other team members by adding the <path>.plugins</path> directory to VCS.
-Also, adding the Flora plugin in the <ui-path>Settings/Preferences | Build, Execution, Deployment | Required Plugins</ui-path> and sharing this configuration as part of a project makes it effortless to deliver additional IDE functionalities to your team without any manual setup.
+Also, adding the Flora plugin in the <ui-path>Settings | Build, Execution, Deployment | Required Plugins</ui-path> and sharing this configuration as part of a project makes it effortless to deliver additional IDE functionalities to your team without any manual setup.
 
 ## LivePlugin
 

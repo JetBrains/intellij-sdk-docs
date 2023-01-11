@@ -1,4 +1,4 @@
-[//]: # (title: Intentions)
+# Intentions
 
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
@@ -20,7 +20,7 @@ When a possible problem is suspected, the IDE suggests an appropriate intention 
 
 See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in the IntelliJ Platform UI Guidelines on naming, writing description, and message texts for inspections/intentions.
 
-You can view a list of all available intention actions as well as enable/disable them using the [Intentions List](https://www.jetbrains.com/help/idea/intention-actions.html#intention-settings) in <ui-path>Settings/Preferences | Editor | Intentions</ui-path>.
+You can view a list of all available intention actions as well as enable/disable them using the [Intentions List](https://www.jetbrains.com/help/idea/intention-actions.html#intention-settings) in <ui-path>Settings | Editor | Intentions</ui-path>.
 
 ## Techniques Used
 

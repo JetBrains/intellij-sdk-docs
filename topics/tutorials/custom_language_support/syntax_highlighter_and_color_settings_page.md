@@ -1,6 +1,6 @@
-[//]: # (title: 5. Syntax Highlighter and Color Settings Page)
+# 5. Syntax Highlighter and Color Settings Page
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <tldr>
 
@@ -93,7 +93,7 @@ Register the Simple Language color settings page with the IntelliJ Platform in t
 
 Run the project by using the Gradle [`runIde`](creating_plugin_project.md#running-a-plugin-with-the-runide-gradle-task) task.
 
-In the IDE Development Instance, open the Simple Language highlight settings page: <ui-path>Settings/Preferences | Editor | Color Scheme | Simple</ui-path>.
+In the IDE Development Instance, open the Simple Language highlight settings page: <ui-path>Settings | Editor | Color Scheme | Simple</ui-path>.
 Each color initially inherits from a <control>Language Defaults</control> value.
 
 ![Color Settings Page](color_settings_page.png)

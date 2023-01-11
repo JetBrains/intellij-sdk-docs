@@ -1,6 +1,6 @@
-[//]: # (title: Notable Changes in IntelliJ Platform and Plugins API 2019.*)
+# Notable Changes in IntelliJ Platform and Plugins API 2019.*
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ## 2019.3
 
@@ -22,7 +22,7 @@ Symbol completion in plain text editor (VCS Commit Message)
 : Contribute symbol names (classes, methods, ..) via `com.intellij.completion.plainTextSymbol` extension point (`com.intellij.codeInsight.completion.PlainTextSymbolCompletionContributor`).
 
 User-customizable date/time formatting
-: Use `com.intellij.util.text.JBDateFormat#getFormatter()` to use configured format from <ui-path>Settings/Preferences | Appearance & Behavior | System Settings | Date Formats</ui-path>.
+: Use `com.intellij.util.text.JBDateFormat#getFormatter()` to use configured format from <ui-path>Settings | Appearance & Behavior | System Settings | Date Formats</ui-path>.
 
 ### IntelliJ IDEA 2019.3
 
@@ -44,7 +44,7 @@ Create HTML representation of code
 : Toggles showing additional details in UI (e.g. modification timestamp in Project View) see `UISettings.getShowInplaceComments()`.
 
 New API for Editor Inlay Hints
-: Allows a variety of presentations (incl. custom painting), mouse event handling, and exposing settings in <ui-path>Settings/Preferences | Editor | Inlay Hints</ui-path>. See `com.intellij.codeInsight.hints.InlayHintsProvider`.
+: Allows a variety of presentations (incl. custom painting), mouse event handling, and exposing settings in <ui-path>Settings | Editor | Inlay Hints</ui-path>. See `com.intellij.codeInsight.hints.InlayHintsProvider`.
 
 `com.intellij.openapi.vfs.AsyncFileListener`
 : A non-blocking variant for `com.intellij.openapi.vfs.newvfs.BulkFileListener`.

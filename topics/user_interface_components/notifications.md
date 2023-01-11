@@ -1,6 +1,6 @@
 # Notifications
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <tldr>
 
@@ -45,7 +45,7 @@ The most general way to display non-modal notifications is to use the [`Notifica
 
 It has two main advantages:
 
-* The user can control the way each notification type is displayed under <ui-path>Settings/Preferences | Appearance & Behavior | Notifications</ui-path>
+* The user can control the way each notification type is displayed under <ui-path>Settings | Appearance & Behavior | Notifications</ui-path>
 * All displayed notifications are gathered in the <control>Event Log</control> tool window and can be reviewed later
 
 For UI reference, see [Balloon](https://jetbrains.design/intellij/controls/balloon/) in the IntelliJ Platform UI Guidelines.
@@ -58,7 +58,7 @@ The text of the notification can include HTML tags.
 Use `Notification.addAction(AnAction)` to add links below the content, use [`NotificationAction`](%gh-ic%/platform/ide-core/src/com/intellij/notification/NotificationAction.java) for convenience.
 
 The `groupId` parameter of the [`Notification`](%gh-ic%/platform/ide-core/src/com/intellij/notification/Notification.java) constructor specifies a notification type.
-The user can choose the display type corresponding to each notification type under <ui-path>Settings/Preferences | Appearance & Behavior | Notifications</ui-path>.
+The user can choose the display type corresponding to each notification type under <ui-path>Settings | Appearance & Behavior | Notifications</ui-path>.
 
 To specify the preferred display type, you need to use [`NotificationGroup`](%gh-ic%/platform/ide-core/src/com/intellij/notification/NotificationGroup.kt) to create notifications.
 

@@ -1,12 +1,12 @@
 # Settings
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Settings mechanism allows users to configure and persist application- or project-level plugin preferences.</link-summary>
 
 <tldr>
 
-**Product Help:** [Settings/Preferences](https://www.jetbrains.com/help/idea/settings-preferences-dialog.html), [Configuring the IDE](https://www.jetbrains.com/help/idea/configuring-project-and-ide-settings.html)
+**Product Help:** [Settings](https://www.jetbrains.com/help/idea/settings-preferences-dialog.html), [Configuring the IDE](https://www.jetbrains.com/help/idea/configuring-project-and-ide-settings.html)
 
 </tldr>
 

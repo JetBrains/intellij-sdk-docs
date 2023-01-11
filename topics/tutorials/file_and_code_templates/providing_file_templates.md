@@ -1,6 +1,6 @@
-[//]: # (title: Providing File and Code Templates)
+# Providing File and Code Templates
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The IntelliJ Platform allows plugins to provide custom file templates specific to the plugin's functionalities.
 In order to include custom templates in the plugin, a template file has to be created and placed in the specific place of plugin resources, depending on the template's purpose.
@@ -57,7 +57,7 @@ The <control>Other</control> category contains other templates organized in grou
 It includes templates located in the <path>fileTemplates/j2ee</path> directory and registered via the `com.intellij.fileTemplateGroup` extension point (EP).
 Note that the <path>j2ee</path> directory name is historical and unrelated to the J2EE technology.
 This category is intended for templates that are not used for creating core language entities or are used less frequently by users, e.g., a specific XML configuration file, a framework-specific class in Java language, etc.
-To include file templates in the <control>Other</control> section of the <ui-path>Settings/Preferences | Editor | File and Code Templates</ui-path> settings page, provide an implementation of the
+To include file templates in the <control>Other</control> section of the <ui-path>Settings | Editor | File and Code Templates</ui-path> settings page, provide an implementation of the
 [`FileTemplateGroupDescriptorFactory`](%gh-ic%/platform/lang-api/src/com/intellij/ide/fileTemplates/FileTemplateGroupDescriptorFactory.java)
 and register it via the `com.intellij.fileTemplateGroup` EP.
 

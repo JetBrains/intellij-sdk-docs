@@ -1,6 +1,6 @@
 # Plugin User Experience (UX)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 _User Experience (UX)_ is a term describing the experience users feel when using a product.
 It covers not only aspects like visual presentation, performance, stability, or ease of use, but anything that affects the user's satisfaction.
@@ -28,7 +28,7 @@ Ideally, all the features should work out of the box after the installation, wit
 Default settings should reflect the typical plugin usage in a standard project.
 
 All the settings and actions should be easy to find and be placed in the proper [settings](settings.md) or [action group](grouping_action.md), e.g.:
-* framework plugin settings should be placed under the <ui-path>Settings/Preferences | Languages & Frameworks</ui-path>
+* framework plugin settings should be placed under the <ui-path>Settings | Languages & Frameworks</ui-path>
 * action marking a directory as a plugin-specific root should be added to <ui-path>Mark Directory as...</ui-path> group
 
 Plugins that are hard to configure with features that are hard to find may be quickly abandoned out of frustration.

@@ -1,6 +1,6 @@
-[//]: # (title: Providing Live Templates)
+# Providing Live Templates
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This tutorial illustrates how to add default Custom Live Templates to an IntelliJ Platform plugin, and assign valid contexts for these templates based on the surrounding code and file type.
 In addition, the tutorial discusses how to export existing Live Templates, and bundle them within a plugin.
@@ -169,6 +169,6 @@ Using the `com.intellij.defaultLiveTemplatesProvider` and `com.intellij.liveTemp
 ## Check Plugin
 
 Now verify the plugin is working correctly.
-Run the plugin in a Development Instance and verify there is a new entry under <ui-path>Settings/Preferences | Live Templates | Markdown | \{ (SDK: New link reference)</ui-path>.
+Run the plugin in a Development Instance and verify there is a new entry under <ui-path>Settings | Live Templates | Markdown | \{ (SDK: New link reference)</ui-path>.
 
 Finally, create a new file <path>test.md</path> and confirm that the Live Template works by entering a <shortcut>{</shortcut> character and then pressing <shortcut>Tab</shortcut>.

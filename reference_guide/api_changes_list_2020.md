@@ -1,6 +1,6 @@
 # Incompatible Changes in IntelliJ Platform and Plugins API 2020.*
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <!--
 Before documenting a breaking API change, please, make sure that the change cannot be avoided in an alternative way.
@@ -59,6 +59,8 @@ NOTE: You are allowed to prettify the pattern using links: [`org.example.Foo`](h
 
 NOTE: Entries not starting with code quotes (`name`) can be added to document non-code changes  and will be skipped in API verification.
 -->
+
+<link-summary>List of known Breaking API Changes in 2020.*</link-summary>
 
 <include from="snippets.md" element-id="apiChangesHeader"/>
 

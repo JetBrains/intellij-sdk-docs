@@ -1,6 +1,8 @@
-[//]: # (title: Notable Changes in IntelliJ Platform and Plugins API 2020.*)
+# Notable Changes in IntelliJ Platform and Plugins API 2020.*
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+<link-summary>List of known Notable API Changes in 2020.*</link-summary>
 
 We've published our roadmap for the IntelliJ Platform for 2020: [Part I](https://blog.jetbrains.com/idea/2019/12/intellij-platform-roadmap-for-2020/) [Part II](https://blog.jetbrains.com/idea/2020/01/intellij-based-ide-features-roadmap-for-2020/)
 

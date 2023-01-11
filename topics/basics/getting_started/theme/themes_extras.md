@@ -62,7 +62,7 @@ For additional examples of `name` and `value` attributes, review the editor colo
 
 ### Customizing Version Control File Status Colors
 
-As [described above](#creating-a-custom-editor-scheme-using-settingspreferences), colors corresponding to the VCS status of files can be customized and exported via the [Settings](https://www.jetbrains.com/help/idea/file-status-highlights.html).
+As [described above](#creating-a-custom-editor-scheme-using-settings), colors corresponding to the VCS status of files can be customized and exported via the [Settings](https://www.jetbrains.com/help/idea/file-status-highlights.html).
 No other procedure is necessary to customize these colors.
 In the exported color scheme file the `name` is the VCS file status, and the `value` is the new color corresponding to that status.
 For example, customized VCS colors for a subset of file statuses will appear in the editor scheme file as:

@@ -15,4 +15,7 @@
   <var name="gh-ij-android" value="https://git.jetbrains.org/?p=idea/android.git;hb=refs/tags/idea/%ijPlatformBuild%;a=blob;f="/>
   <!-- <var name="gh-ij-android" value="https://github.com/JetBrains/android/tree/idea/%ijPlatformBuild%"/>-->
 
+  <var name="gh-ij-plugins" value="https://github.com/JetBrains/intellij-plugins/tree/idea/%ijPlatformBuild%"/>
+  <var name="gh-ij-plugins-master" value="https://github.com/JetBrains/intellij-plugins/tree/master"/>
+
 </vars>

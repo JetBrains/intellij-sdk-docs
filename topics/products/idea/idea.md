@@ -20,6 +20,8 @@ The configuration of IntelliJ IDEA plugin projects follows the methods described
 
 See [](extension_point_list.md#intellij-community-plugins) for API from bundled plugins.
 
+[](idea_ultimate.md) provides information specific to this edition.
+
 ## Java
 
 See "Java" entry in table [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) on how to use Java specific functionality.
@@ -34,15 +36,3 @@ Relevant Extension Points:
 - [](extension_point_list.md#javaindexingpluginxml)
 - [](extension_point_list.md#javapluginxml)
 - [](extension_point_list.md#javapsipluginxml)
-
-## IntelliJ IDEA Ultimate
-
-IntelliJ IDEA Ultimate comes with a number of additional features and bundled plugins.
-<include from="idea.md" element-id="idea_editions"/>
-
-<include from="snippets.md" element-id="jetbrainsProductOpenSourceLicense"/>
-
-The following pages describe targeting API available only in IntelliJ IDEA Ultimate:
-
-* [Tomcat Integration](tomcat_integration.md)
-* [Spring API](spring_api.md)

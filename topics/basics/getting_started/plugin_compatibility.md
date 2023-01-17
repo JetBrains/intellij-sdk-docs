@@ -1,6 +1,6 @@
 # Plugin Compatibility with IntelliJ Platform Products
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Declaring and verifying compatibility of plugins developed for multiple IntelliJ Platform-based IDEs.</link-summary>
 
@@ -18,8 +18,8 @@ For the purposes of dependencies, a _module_ can be thought of as a built-in plu
 A working definition of a dependency is that a plugin project cannot be run without the module present in an IntelliJ Platform-based product.
 Declaring a dependency on a module also expresses a plugin's compatibility with a product in that the IntelliJ Platform determines whether a product contains the correct modules to support a plugin before loading it.
 
-[Part I](plugin_dependencies.md) of this document describes the syntax for declaring plugin dependencies and optional plugin dependencies.
-Part II of this document (below) describes the IntelliJ Platform modules' functionality to aid in determining the dependencies of a plugin.
+[](plugin_dependencies.md) describes the syntax for declaring plugin dependencies and optional plugin dependencies.
+This document describes the IntelliJ Platform modules' functionality to aid in determining the dependencies of a plugin.
 
 The way dependency declarations are handled by the Intellij Platform is determined by the contents of the <path>[plugin.xml](plugin_configuration_file.md)</path> file:
 * If a plugin does not declare any dependencies in its <path>plugin.xml</path> file, or if it declares dependencies only on other plugins but not modules, it's assumed to be a legacy plugin and is loaded only in IntelliJ IDEA.
@@ -69,17 +69,17 @@ A plugin project is compatible with PHP functionality if it declares a dependenc
 > A high-level feature comparison tool for JetBrains IDEs is available [here](https://www.jetbrains.com/products/compare/).
 >
 
-
-The following table lists **(1)** modules or built-in plugins that provide specific functionality, and the products currently shipping with them.
+The following table lists modules or built-in plugins that provide specific functionality, and the products currently shipping with them.
+This table is not exhaustive, to see a list of all modules, invoke code completion inside `<depends>` element in the <path>plugin.xml</path> file.
 
 | Module or Plugin for [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) Element | Functionality                                                                                                                                       | Product Compatibility                                                                                                                                                      |
 |-----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `com.intellij.modules.java` or `com.intellij.java`<br/>See **(2)** below.                     | **Java** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework                                                       | IntelliJ IDEA, Android Studio                                                                                                                                              |
+| `com.intellij.modules.java` or `com.intellij.java`<br/>See [](#java) below.                   | **Java** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework                                                       | IntelliJ IDEA, Android Studio                                                                                                                                              |
 | `com.intellij.modules.androidstudio`                                                          | Android SDK Platform, Build Tools, Platform Tools, SDK Tools                                                                                        | Android Studio                                                                                                                                                             |
 | `com.intellij.modules.cidr.lang`                                                              | **C, C++, Objective-C/C++** language PSI Model, Swift/Objective-C Interaction, Inspections, Intentions, Completion, Refactoring, Test Framework     | AppCode, CLion                                                                                                                                                             |
 | `com.intellij.modules.cidr.debugger`                                                          | Debugger Watches, Evaluations, Breakpoints, Inline Debugging                                                                                        | AppCode, CLion, RubyMine                                                                                                                                                   |
-| `com.intellij.modules.appcode` or `com.intellij.appcode`<br/>See **(3)** below.               | Xcode Project Model, CocoaPods, Core Data Objects, Device & Simulator Support                                                                       | AppCode                                                                                                                                                                    |
-| `com.intellij.modules.clion` or `com.intellij.clion`<br/>See **(3)** below.                   | CMake, Profiler, Embedded Development, Remote Development, Remote Debug, Disassembly                                                                | CLion                                                                                                                                                                      |
+| `com.intellij.modules.appcode` or `com.intellij.appcode`<br/>See [](#appcodeclion) below.     | Xcode Project Model, CocoaPods, Core Data Objects, Device & Simulator Support                                                                       | AppCode                                                                                                                                                                    |
+| `com.intellij.modules.clion` or `com.intellij.clion`<br/>See [](#appcodeclion) below.         | CMake, Profiler, Embedded Development, Remote Development, Remote Debug, Disassembly                                                                | CLion                                                                                                                                                                      |
 | `com.intellij.cidr.base`                                                                      | Native Debugger Integration, Utility Classes, C/C++ Project Model/Workspace Support (OCWorkspace, CidrWorkspace, etc.), C/C++ Build and Run Support | AppCode, CLion                                                                                                                                                             |
 | `com.intellij.database`                                                                       | **Database Tools and SQL** language PSI Model, Inspections, Completion, Refactoring, Queries                                                        | DataGrip, IntelliJ IDEA Ultimate, AppCode, PhpStorm, PyCharm Professional, RubyMine, CLion, GoLand, Rider, and WebStorm if the Database Tools and SQL plugin is installed. |
 | `org.jetbrains.plugins.go`                                                                    | **Go** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework                                                         | GoLand                                                                                                                                                                     |
@@ -91,50 +91,15 @@ The following table lists **(1)** modules or built-in plugins that provide speci
 | `com.jetbrains.php`                                                                           | **PHP** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework                                                        | PhpStorm, and other products if the PHP plugin is installed.                                                                                                               |
 | `JavaScript`                                                                                  | **JavaScript** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework                                                 | WebStorm, and other products if the JavaScript plugin is installed.                                                                                                        |
 
-**Notes about Module and Plugin Dependency:**
+#### Java
 
-**(1)** This table is not exhaustive; other modules are currently available in IntelliJ Platform-based IDEs.
-To see a list of modules, invoke the [code completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#4eac28ba) feature for the `<depends>` element contents while editing the <path>plugin.xml</path> file.
-
-**(2)** The [Java language functionality](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/) was extracted as a plugin in version 2019.2 of the IntelliJ Platform.
+The [Java language functionality](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/) was extracted as a plugin in version 2019.2 of the IntelliJ Platform.
 This refactoring separated the Java implementation from the other, non-language portions of the platform.
-Consequently, [dependencies](plugin_dependencies.md) on Java functionality are expressed differently in <path>plugin.xml</path> depending on the version of the IntelliJ Platform being targeted:
+A dependency on the Java plugin (Plugin ID `com.intellij.java`) must be setup using [](plugin_dependencies.md).
 
-* Syntax for 2019.2 and later releases:
-  * <path>plugin.xml</path> (_allowable alternative_):
-     ```xml
-     <depends>com.intellij.java</depends>
-     ```
-  * Gradle build script (_required_):
+#### AppCode/CLion
 
-    <tabs group="languages">
-    <tab title="Kotlin" group-key="kotlin">
-
-    ```kotlin
-    intellij {
-      plugins.set(listOf("com.intellij.java"))
-    }
-    ```
-
-    </tab>
-    <tab title="Groovy" group-key="groovy">
-
-    ```groovy
-    intellij {
-      plugins = ['com.intellij.java']
-    }
-    ```
-
-    </tab>
-    </tabs>
-
-* Syntax _required_ for releases prior to 2019.2, _allowable_ in all releases:
-  * <path>plugin.xml</path>:
-     ```xml
-     <depends>com.intellij.modules.java</depends>
-     ```
-
-**(3)** The [AppCode and CLion code was restructured](https://blog.jetbrains.com/clion/2020/12/migration-guide-for-plugins-2020-3/) in version 2020.3.
+The [AppCode and CLion code was restructured](https://blog.jetbrains.com/clion/2020/12/migration-guide-for-plugins-2020-3/) in version 2020.3.
 This refactoring extracted some functionalities into specific modules for easier maintainability and reuse between AppCode/CLion and other JetBrains IDEs.
 Consequently, [dependencies](plugin_dependencies.md) on AppCode and CLion functionalities are expressed differently in <path>plugin.xml</path> depending on the version of the AppCode/CLion Platform being targeted:
 

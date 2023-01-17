@@ -1,6 +1,8 @@
-[//]: # (title: IntelliJ IDEA Plugin Development)
+# IntelliJ IDEA Plugin Development
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+## Java
 
 Please see "Java" entry in table [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) on how to use Java specific functionality.
 

@@ -1,10 +1,11 @@
-# Dependencies
+# Plugin Dependencies
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Declaring dependencies on other IntelliJ Platform-based plugins.</link-summary>
 
 A plugin may depend on classes from other plugins, either bundled, third-party, or by the same author.
+
 This document describes the syntax for declaring plugin dependencies and optional plugin dependencies.
 For more information about dependencies on the IntelliJ Platform modules, see Part II of this document: [](plugin_compatibility.md).
 
@@ -39,7 +40,7 @@ For plugins published on [JetBrains Marketplace](https://plugins.jetbrains.com):
 
 ### Bundled and Other Plugins
 
-When using [Gradle IntelliJ Plugin](developing_plugins.md), all bundled plugins can be listed using [`listBundledPlugins`](tools_gradle_intellij_plugin.md#tasks-listbundledplugins) task.
+When using [Gradle IntelliJ Plugin](developing_plugins.md), all bundled plugins can be gathered using [`listBundledPlugins`](tools_gradle_intellij_plugin.md#tasks-listbundledplugins) task.
 
 When using [DevKit](developing_themes.md) and for non-public plugins, locate the plugin's main JAR file containing <path>META-INF/plugin.xml</path> descriptor with [`<id>`](plugin_configuration_file.md#idea-plugin__id) tag (or [`<name>`](plugin_configuration_file.md#idea-plugin__name) if not specified).
 Bundled plugins are located in <path>$PRODUCT_ROOT$/plugins/$PLUGIN_NAME$/lib/$PLUGIN_NAME$.jar</path>.
@@ -55,9 +56,9 @@ See also [](extension_point_list.md#intellij-community-plugins) and [](plugin_co
 | CSS                       | `com.intellij.css`                           |
 | Database Tools and SQL    | `com.intellij.database` [](data_grip.md)     |
 | IntelliLang               | `org.intellij.intelliLang`                   |
-| Java                      | `com.intellij.java`                          |
+| Java                      | `com.intellij.java` [](idea.md#java)         |
 | JavaScript and TypeScript | `JavaScript`                                 |
-| Kotlin                    | `org.jetbrains.kotlin`                       |
+| Kotlin                    | `org.jetbrains.kotlin` [](using_kotlin.md)   |
 | Markdown                  | `org.intellij.plugins.markdown`              |
 | Maven                     | `org.jetbrains.idea.maven`                   |
 | Spring                    | `com.intellij.spring` [](spring_api.md)      |

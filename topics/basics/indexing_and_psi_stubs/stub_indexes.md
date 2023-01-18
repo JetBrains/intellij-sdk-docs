@@ -83,13 +83,15 @@ Stub index implementation classes are registered in the `com.intellij.stubIndex`
 To put data into an index, you implement the method `IStubElementType.indexStub()` ([example: `JavaClassElementType.indexStub()`](%gh-ic%/java/java-psi-impl/src/com/intellij/psi/impl/java/stubs/JavaClassElementType.java)).
 This method accepts an `IndexSink` as a parameter and puts in the index ID and the key for each index in which the element should be stored.
 
-To access the data from an index, the following instance methods are used:
+To access the data from an index, the following instance methods are used on the singleton instance managed by the implementation:
 
 * `AbstractStubIndex.getAllKeys()/processAllKeys()` returns the list of all keys (processes all keys) in the index for the specified project (for example, the list of all class names found in the project).
 
 > NOTE: These may return stale/out-of-date data. Use `get()` to obtain/verify actual existing element(s) for given key (e.g., when iterating all keys to collect completion variants).
 
 * `AbstractStubIndex.get()` returns the collection of PSI elements corresponding to a certain key (for example, classes with the specified short name) in the specified scope.
+
+**Example**: [`JavaAnnotationIndex`](%gh-ic%/java/java-indexing-impl/src/com/intellij/psi/impl/java/stubs/index/JavaAnnotationIndex.java)
 
 ## Related Forum Discussions
 

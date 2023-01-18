@@ -43,6 +43,6 @@ Its different methods allow you to specify the scope from which the classes are 
 For choosing a Java package, you can use the [`PackageChooserDialog`](%gh-ic%/java/java-impl/src/com/intellij/ide/util/PackageChooserDialog.java) class.
 
 > To use Java-specific components, an explicit dependency on the Java plugin is required.
-> See [Details](plugin_compatibility.md#java) for details.
+> See [](plugin_compatibility.md#java) for details.
 >
 {style="note"}

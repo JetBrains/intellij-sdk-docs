@@ -1,6 +1,8 @@
-[//]: # (title: Android Studio Plugin Development)
+# Android Studio Plugin Development
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+<link-summary>Building plugins for Android Studio IDE.</link-summary>
 
 Android Studio plugins extend or add functionality to the [Android Studio IDE](https://developer.android.com/studio).
 Plugins can be written in [Kotlin](using_kotlin.md) or Java, or a mix of both, and are created using IntelliJ IDEA and the [IntelliJ Platform](intellij_platform.md).
@@ -131,7 +133,7 @@ Otherwise, if only general IntelliJ Platform features (APIs) are used, then a de
 
 ### Android Specific Extension Points
 
-See _Android Plugin_ section in [](extension_point_list.md).
+See [](extension_point_list.md#android-plugin).
 
 ## Additional Articles and Resources
 
@@ -151,7 +153,7 @@ When learning new development configurations, it is helpful to have some represe
 
 ### How To Sync Gradle Project
 
-Use `com.android.tools.idea.gradle.project.sync.GradleSyncInvoker.requestProjectSync()` for programmatic synchronization.
+Use [`GradleSyncInvoker.requestProjectSync()`](%gh-ij-android%project-system-gradle/src/com/android/tools/idea/gradle/project/sync/GradleSyncInvoker.kt) for programmatic synchronization.
 
 ## See Also
 

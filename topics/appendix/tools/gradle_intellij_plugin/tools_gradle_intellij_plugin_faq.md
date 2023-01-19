@@ -246,4 +246,16 @@ test {
 </tab>
 </tabs>
 
+
+### Exception javax.net.ssl.SSLPeerUnverifiedException: peer not authenticated
+
+When using Java `11.0.2` for building plugins, resolving dependencies (or making any other network requests) in Gradle IntelliJ Plugin fails due to the [JDK-8220723](https://bugs.openjdk.org/browse/JDK-8220723) issue with the following exception:
+
+```
+Exception in thread "main" javax.net.ssl.SSLPeerUnverifiedException: peer not authenticated
+```
+
+To fix that issue, upgrade the Java version to the latest patch available of the major version of your choice.
+
+
 <include from="snippets.md" element-id="missingContent"/>

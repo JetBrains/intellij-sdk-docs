@@ -83,3 +83,6 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 `com.intellij.openapi.externalSystem.view.ExternalSystemNode.setNameAndTooltip(String, String, SimpleTextAttributes)` method removed
 : The new `setNameAndTooltip(PresentationData, String, String, SimpleTextAttributes)` overload should be used instead.
+
+`com.intellij.ide.ui.laf.darcula.ui.DarculaProgressBarUI#getFinishedColor` method removed
+: The new `getFinishedColor(JComponent c)` overload should be used instead.

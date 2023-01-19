@@ -75,6 +75,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.intellij.ui.treeStructure.SimpleNode.doUpdate()` method removed
 : It was replaced by `doUpdate(PresentationData)` which should now only modify the state of its parameter.
 
+`com.intellij.ide.ui.laf.darcula.ui.DarculaProgressBarUI.getFinishedColor()` method removed
+: The new `getFinishedColor(JComponent c)` overload should be used instead.
+
 `com.intellij.openapi.externalSystem.view.ExternalSystemNode.setNameAndTooltip(String, String)` method removed
 : The new `setNameAndTooltip(PresentationData, String, String)` overload should be used instead.
 
@@ -84,5 +87,3 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.intellij.openapi.externalSystem.view.ExternalSystemNode.setNameAndTooltip(String, String, SimpleTextAttributes)` method removed
 : The new `setNameAndTooltip(PresentationData, String, String, SimpleTextAttributes)` overload should be used instead.
 
-`com.intellij.ide.ui.laf.darcula.ui.DarculaProgressBarUI#getFinishedColor` method removed
-: The new `getFinishedColor(JComponent c)` overload should be used instead.

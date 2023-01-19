@@ -1,6 +1,10 @@
-[//]: # (title: DataGrip Plugin Development)
+# DataGrip Plugin Development
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+<var name="productID" value="datagrip"/>
+<var name="marketplaceProductID" value="dbe"/>
+<include from="snippets.md" element-id="jetbrainsIDE_TLDR"/>
 
 [DataGrip](https://www.jetbrains.com/datagrip/) is an IntelliJ Platform-based product.
 Plugin projects targeting DataGrip can be developed using IntelliJ IDEA with the [](tools_gradle_intellij_plugin.md).

@@ -26,6 +26,18 @@
 
 </snippet>
 
+<snippet id="jetbrainsIDE_TLDR">
+
+<tldr>
+
+**IDE**: [Homepage](https://www.jetbrains.com/%productID%), [Versions](https://www.jetbrains.com/%productID%/download/other.html)
+
+**Plugins**: [JetBrains Marketplace](https://plugins.jetbrains.com/%marketplaceProductID%)
+
+</tldr>
+
+</snippet>
+
 <snippet id="apiChangesHeader">
 
 Please see [](verifying_plugin_compatibility.md) on how to use Plugin Verifier and IDE inspections to check such problems.

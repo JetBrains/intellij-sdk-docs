@@ -2,6 +2,10 @@
 
 <!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<var name="productID" value="idea"/>
+<var name="marketplaceProductID" value="idea_ce"/>
+<include from="snippets.md" element-id="jetbrainsIDE_TLDR"/>
+
 [IntelliJ IDEA](https://www.jetbrains.com/idea/) is available in two editions: IntelliJ Community Edition and IntelliJ IDEA Ultimate.
 <snippet id="idea_editions">
 See [Choose your edition](https://www.jetbrains.com/idea/features/#choose-your-edition) and [Feature Comparison](https://www.jetbrains.com/products/compare/?product=idea&product=idea-ce) for a detailed comparison.

@@ -1,6 +1,10 @@
 # GoLand Plugin Development
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+<var name="productID" value="go"/>
+<var name="marketplaceProductID" value="go"/>
+<include from="snippets.md" element-id="jetbrainsIDE_TLDR"/>
 
 [GoLand](https://www.jetbrains.com/go/) is an IntelliJ Platform-based product.
 Plugin projects for GoLand can be developed using IntelliJ IDEA with the [](tools_gradle_intellij_plugin.md).

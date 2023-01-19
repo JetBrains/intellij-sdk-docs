@@ -1,6 +1,10 @@
-[//]: # (title: PyCharm Plugin Development)
+# PyCharm Plugin Development
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+<var name="productID" value="pycharm"/>
+<var name="marketplaceProductID" value="pycharm_ce"/>
+<include from="snippets.md" element-id="jetbrainsIDE_TLDR"/>
 
 [PyCharm](https://www.jetbrains.com/pycharm/) is an IntelliJ Platform-based product.
 Plugin projects for PyCharm can be developed using IntelliJ IDEA with the [](tools_gradle_intellij_plugin.md).

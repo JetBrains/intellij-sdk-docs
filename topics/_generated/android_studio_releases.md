@@ -6,6 +6,8 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Giraffe \| 2022.3.1 Canary 1 | ![Canary][canary] | January 17, 2023 | **2022.3.1.1** <br/> AI-223.4884.69.2231.9486165 | **2022.3** <br/> 223.4884.69 |
+| Flamingo \| 2022.2.1 Beta 1 | ![Beta][beta] | January 17, 2023 | **2022.2.1.12** <br/> AI-222.4459.24.2221.9471578 | **2022.2.4** <br/> 222.4459.24 |
 | Flamingo \| 2022.2.1 Canary 11 | ![Canary][canary] | January 4, 2023 | **2022.2.1.11** <br/> AI-222.4459.24.2221.9445173 | **2022.2.4** <br/> 222.4459.24 |
 | Flamingo \| 2022.2.1 Canary 10 | ![Canary][canary] | December 21, 2022 | **2022.2.1.10** <br/> AI-222.4459.24.2221.9409768 | **2022.2.4** <br/> 222.4459.24 |
 | Flamingo \| 2022.2.1 Canary 9 | ![Canary][canary] | November 30, 2022 | **2022.2.1.9** <br/> AI-222.4345.14.2221.9321504 | **2022.2.3** <br/> 222.4345.14 |
@@ -400,11 +402,11 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Giraffe \| 2022.3.1 Canary 1 | ![Canary][canary] | January 17, 2023 | **2022.3.1.1** <br/> AI-223.4884.69.2231.9486165 | **2022.3** <br/> 223.4884.69 |
+| Flamingo \| 2022.2.1 Beta 1 | ![Beta][beta] | January 17, 2023 | **2022.2.1.12** <br/> AI-222.4459.24.2221.9471578 | **2022.2.4** <br/> 222.4459.24 |
 | Flamingo \| 2022.2.1 Canary 11 | ![Canary][canary] | January 4, 2023 | **2022.2.1.11** <br/> AI-222.4459.24.2221.9445173 | **2022.2.4** <br/> 222.4459.24 |
-| Flamingo \| 2022.2.1 Canary 10 | ![Canary][canary] | December 21, 2022 | **2022.2.1.10** <br/> AI-222.4459.24.2221.9409768 | **2022.2.4** <br/> 222.4459.24 |
 | Electric Eel \| 2022.1.1 | ![Release][release] | January 12, 2023 | **2022.1.1.19** <br/> AI-221.6008.13.2211.9477386 | **2022.1.4** <br/> 221.6008.13 |
 | Electric Eel \| 2022.1.1 RC 3 | ![RC][rc] | December 27, 2022 | **2022.1.1.18** <br/> AI-221.6008.13.2211.9424903 | **2022.1.4** <br/> 221.6008.13 |
-| Electric Eel \| 2022.1.1 RC 2 | ![RC][rc] | December 21, 2022 | **2022.1.1.17** <br/> AI-221.6008.13.2211.9392097 | **2022.1.4** <br/> 221.6008.13 |
 
 [release]: https://img.shields.io/badge/-Release-blue?style=flat-square
 [patch]: https://img.shields.io/badge/-Patch-orange?style=flat-square

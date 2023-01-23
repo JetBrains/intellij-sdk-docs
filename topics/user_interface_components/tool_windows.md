@@ -1,4 +1,4 @@
-[//]: # (title: Tool Windows)
+# Tool Windows
 
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
@@ -32,7 +32,7 @@ The tool window is registered in <path>[plugin.xml](plugin_configuration_file.md
 The extension point attributes specify all the data which is necessary to display the tool window button:
 
 *  The `id` of the tool window - corresponds to the text displayed on the tool window button.
-To provide a localized text, specify matching `toolwindow.stripe.[id]` message key (escape spaces with `_`) in your [message bundle](localization_guide.md) (code insight supported in 2020.3 and later).
+To provide a localized text, specify matching `toolwindow.stripe.[id]` message key (escape spaces with `_`) in the [resource bundle](plugin_configuration_file.md#idea-plugin__resource-bundle) (code insight supported in 2020.3 and later).
 
 *  The `icon` to display on the tool window button (13x13 pixels, grey and monochromatic; see [Tool window](https://jetbrains.design/intellij/components/tool_window/#07) in IntelliJ Platform UI Guidelines and [Working with Icons and Images](work_with_icons_and_images.md))
 

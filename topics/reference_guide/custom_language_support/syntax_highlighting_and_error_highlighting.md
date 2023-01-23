@@ -1,6 +1,6 @@
 # Syntax and Error Highlighting
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Highlighting syntax and semantic code errors on multiple levels.</link-summary>
 
@@ -12,33 +12,35 @@
 
 </tldr>
 
+The syntax and error highlighting are performed on multiple levels: [](#lexer), [](#parser), and [](#annotator)/[](#external-tool).
+
+## TextAttributesKey
+
 The class used to specify how a particular range of text should be highlighted is called [`TextAttributesKey`](%gh-ic%/platform/core-api/src/com/intellij/openapi/editor/colors/TextAttributesKey.java).
 An instance of this class is created for every distinct type of item that should be highlighted (keyword, number, string, etc.).
+
 The `TextAttributesKey` defines the default attributes applied to items of the corresponding type (for example, keywords are bold, numbers are blue, strings are bold and green).
-Highlighting from multiple `TextAttributesKey` items can be layered - for example, one key may define an item's boldness and another color.
+Highlighting from multiple `TextAttributesKey` items can be layered — for example, one key may define an item's boldness and another color.
 
-Existing highlighting can be suppressed programmatically in certain contexts, see [](controlling_highlighting.md).
-
-> To force re-highlighting (e.g., after changing plugin specific settings), use
-> [`DaemonCodeAnalyzer.restart()`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/daemon/DaemonCodeAnalyzer.java).
+> To inspect applied `TextAttributesKey`(s) for the element at the caret, use <ui-path>Jump to Colors and Fonts</ui-path> action.
 >
 
 ## Color Settings
+
 The mapping of the `TextAttributesKey` to specific attributes used in an editor is defined by the [`EditorColorsScheme`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/colors/EditorColorsScheme.java) class.
-It can be configured by the user by providing an implementation of [`ColorSettingPage`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/colors/ColorSettingsPage.java) registered in `com.intellij.colorSettingsPage` extension point.
+It can be configured by the user via <ui-path>Preferences | Editor | Color Scheme</ui-path> by providing an implementation of [`ColorSettingPage`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/colors/ColorSettingsPage.java) registered in `com.intellij.colorSettingsPage` extension point.
 
 The <ui-path>File | Export | Files or Selection to HTML</ui-path> feature uses the same syntax highlighting mechanism as the editor.
 Thus, it will work automatically for custom languages that provide a syntax highlighter.
 
 **Examples**:
+
 - [`ColorSettingsPage`](%gh-ic%/plugins/properties/src/com/intellij/lang/properties/PropertiesColorsPage.java) for [Properties language plugin](%gh-ic%/plugins/properties)
 - [Custom Language Support Tutorial: Color Settings Page](syntax_highlighter_and_color_settings_page.md)
 
-> New functionality about Language Defaults and support for additional color schemes are detailed in [Color Scheme Management](color_scheme_management.md).
+> See note about Language Defaults and support for additional color schemes in [](color_scheme_management.md).
 >
 {style="note"}
-
-The syntax and error highlighting are performed on multiple levels: Lexer, Parser, and (External) Annotator(s).
 
 ## Lexer
 
@@ -47,6 +49,7 @@ The syntax highlighter returns the `TextAttributesKey` instances for each token 
 For highlighting lexer errors, the standard `TextAttributesKey` for bad characters [`HighlighterColors.BAD_CHARACTER`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/HighlighterColors.java) can be used.
 
 **Examples:**
+
 - [`SyntaxHighlighter`](%gh-ic%/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/PropertiesHighlighter.java) implementation for [Properties language plugin](%gh-ic%/plugins/properties)
 - [Custom Language Support Tutorial: Syntax Highlighter](syntax_highlighter_and_color_settings_page.md)
 
@@ -82,6 +85,7 @@ When the file is changed, the annotator is called incrementally to process only 
 {style="note"}
 
 ### Errors/Warning
+
 See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in IntelliJ Platform UI Guidelines on how to write message texts for highlighting/quick fixes.
 
 To highlight a region of text as a warning or error:
@@ -91,7 +95,7 @@ To highlight a region of text as a warning or error:
 <tab title="2020.1 and later" group-key="2020.1">
 
 ```java
-    holder.newAnnotation(HighlightSeverity.WARNING, "Invalid code") // or HighlightSeverity.ERROR
+    holder.newAnnotation(HighlightSeverity.WARNING,"Invalid code") // or HighlightSeverity.ERROR
         .withFix(new MyFix(psiElement))
         .create();
 ```
@@ -107,6 +111,7 @@ Call `createWarningAnnotation()`/`createErrorAnnotation()` on the [`AnnotationHo
 </tabs>
 
 ### Syntax
+
 To apply additional syntax highlighting (2020.1 and later):
 
 <tabs group="platform-version">
@@ -115,9 +120,9 @@ To apply additional syntax highlighting (2020.1 and later):
 
 ```java
     holder.newSilentAnnotation(HighlightSeverity.INFORMATION)
-            .range(rangeToHighlight)
-            .textAttributes(MyHighlighter.EXTRA_HIGHLIGHT_ATTRIBUTE)
-            .create();
+        .range(rangeToHighlight)
+        .textAttributes(MyHighlighter.EXTRA_HIGHLIGHT_ATTRIBUTE)
+        .create();
 ```
 
 </tab>
@@ -131,14 +136,22 @@ Call `AnnotationHolder.createInfoAnnotation()` with an empty message and then [`
 </tabs>
 
 **Examples:**
+
 - [`Annotator`](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/PropertiesAnnotator.java) for [Properties language plugin](%gh-ic%/plugins/properties)
 - [Custom Language Support Tutorial: Annotator](annotator.md)
 
 ## External Tool
 
-Finally, if the custom language employs external tools for validating files in the language (for example, uses the Xerces library for XML schema validation), it can provide an implementation of the [`ExternalAnnotator`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/ExternalAnnotator.java) interface and register it in `com.intellij.externalAnnotator` extension point (`language` attribute must be specified).
+If the custom language employs external tools for validating files in the language (for example, uses the Xerces library for XML schema validation), it can provide an implementation of the [`ExternalAnnotator`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/ExternalAnnotator.java) interface and register it in `com.intellij.externalAnnotator` extension point (`language` attribute must be specified).
 
 The [`ExternalAnnotator`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/ExternalAnnotator.java) highlighting has the lowest priority and is invoked only after all other background processing has completed.
 It uses the same [`AnnotationHolder`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/AnnotationHolder.java) interface for converting the output of the external tool into editor highlighting.
 
 To skip running specific `ExternalAnnotator` for given file, register [`ExternalAnnotatorsFilter`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/ExternalAnnotatorsFilter.java) extension in `com.intellij.daemon.externalAnnotatorsFilter` extension point.
+
+## Controlling Highlighting
+
+Existing highlighting can be suppressed programmatically in certain contexts, see [](controlling_highlighting.md).
+
+To force re-highlighting (e.g., after changing plugin specific settings), use
+[`DaemonCodeAnalyzer.restart()`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/daemon/DaemonCodeAnalyzer.java).

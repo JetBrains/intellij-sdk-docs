@@ -1,4 +1,4 @@
-[//]: # (title: Internal Actions - UI Inspector)
+# Internal Actions - UI Inspector
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
@@ -10,6 +10,8 @@ UI elements can be inspected interactively by clicking on the element while the 
 <include from="internal_actions_intro.md" element-id="enable_internal_mode_tip"></include>
 
 ## Enabling the UI Inspector
+
+> This step isn't required when using 2021.1 release or later.
 
 Before using the _UI Inspector_, it must be enabled by selecting the menu item <ui-path>Tools | Internal Actions | UI | UI Inspector</ui-path>.
 The enabled state of the _UI Inspector_ is modal; it remains enabled until it is disabled by selecting the _UI Inspector_ menu item again.
@@ -49,3 +51,14 @@ These can be useful to locate the underlying implementation, related Action, etc
 | [`Tree`](lists_and_trees.md)                                                                       | Tree                        | `treeModelClass` - `javax.swing.tree.TreeModel` implementation                                                                                                                                                                                             |
 
 Custom Swing components can also provide additional properties via [`UiInspectorContextProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/inspector/UiInspectorContextProvider.java) (2020.1 and later).
+
+## Settings
+
+Some additional properties are available when inspecting Settings dialog (2023.1+).
+
+| Settings page                                 | Properties                                                                                                                                                                                                                                                                | Reference                                                           |
+|-----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------|
+| _All settings_                                | <control>Configurable class</control> - [`Configurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/Configurable.java) class<br/><control>Configurable ID</control> - `id` attribute<br/><control>Configurable weight</control> - `groupWeight` attribute | [](settings_guide.md)                                               |
+| <ui-path>Plugins</ui-path>                    | <control>Plugin ID</control> - Plugin `<id>`<br/><control>Plugin Dependencies</control> - IDs of dependent plugins                                                                                                                                                        | [](plugin_configuration_file.md)                                    |
+| <ui-path>Editor &#124; Color Scheme</ui-path> | <control>Text Attributes Key</control> - [`TextAttributesKey`](%gh-ic%/platform/core-api/src/com/intellij/openapi/editor/colors/TextAttributesKey.java) external name                                                                                                     | [](syntax_highlighting_and_error_highlighting.md#textattributeskey) |
+| <ui-path>Editor &#124; Inspections</ui-path>  | <control>Inspection key</control> - Inspection `id`<br/><control>Inspection tool class</control> - Inspection implementation                                                                                                                                              | [](code_inspections.md)                                             |

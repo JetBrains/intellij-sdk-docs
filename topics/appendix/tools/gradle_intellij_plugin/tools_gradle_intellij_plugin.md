@@ -16,7 +16,7 @@ The Gradle IntelliJ Plugin is a plugin for the Gradle build system to help confi
 
 This plugin allows you to build plugins for IntelliJ Platform using specified IntelliJ SDK and bundled or third-party plugins.
 
-The plugin provides the functionalities like:
+The plugin provides functionalities like:
 - adding extra IntelliJ-specific dependencies
 - patching `processResources` tasks to fill some tags (name, version) in <path>[plugin.xml](plugin_configuration_file.md)</path> with appropriate values
 - patching compile tasks to instrument code with nullability assertions and form classes made with IntelliJ GUI Designer
@@ -495,6 +495,8 @@ Default value
 {id="tasks-buildplugin"}
 
 Assembles a plugin and prepares ZIP archive for [deployment](publishing_plugin.md).
+
+`buildPlugin` task extends the [`Zip`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Zip.html) Gradle task.
 
 #### archiveBaseName
 {id="tasks-buildplugin-archivebasename"}
@@ -1127,8 +1129,7 @@ Default value
 
 Runs the IDE instance with the developed plugin installed.
 
-`runIde` tasks extend the [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html) Gradle task – all properties available in the `JavaExec` as well as the following ones can be used to configure the `runIde` task.
-
+`runIde` task extends the [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html) Gradle task – all properties available in the `JavaExec` as well as the following ones can be used to configure the `runIde` task.
 
 #### ideDir
 {id="tasks-runide-idedir"}
@@ -1262,7 +1263,7 @@ Default value
 #### artifactsDir
 {id="tasks-runideperformancetest-artifactsdir"}
 
-Path to directory where performance test artifacts (IDE logs, snapshots, screenshots, etc.) will be stored.
+Path to the directory where performance test artifacts (IDE logs, snapshots, screenshots, etc.) will be stored.
 If the directory doesn't exist, it will be created.
 
 {style="narrow"}

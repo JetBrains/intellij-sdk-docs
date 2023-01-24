@@ -1,6 +1,6 @@
 # Configuring Kotlin Support
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Advantages and configuration required for developing a plugin in Kotlin.</link-summary>
 
@@ -16,8 +16,8 @@
 
 This page describes developing plugins using the [Kotlin](https://kotlinlang.org) programming language.
 
-> To implement a plugin operating on Kotlin code, configure Kotlin [plugin dependency](plugin_dependencies.md) (`org.jetbrains.kotlin`).
-> See also [UAST](uast.md) page for information about how to support multiple JVM-languages, including Kotlin.
+> To implement a plugin _operating_ on Kotlin code in the IDE, configure Kotlin [plugin dependency](plugin_dependencies.md) (`org.jetbrains.kotlin`).
+> See also [UAST](uast.md) page for information about how to support multiple JVM languages, including Kotlin.
 
 ## Advantages of Developing a Plugin in Kotlin
 
@@ -27,7 +27,7 @@ Existing plugin developers can get started by converting boilerplate Java classe
 In addition to [null safety](https://kotlinlang.org/docs/null-safety.html) and [type-safe builders](https://kotlinlang.org/docs/type-safe-builders.html), the Kotlin language offers many convenient features for plugin development, which make plugins easier to read and simpler to maintain.
 Much like [Kotlin for Android](https://kotlinlang.org/docs/android-overview.html), the IntelliJ Platform makes extensive use of callbacks, which are easy to express as [lambdas](https://kotlinlang.org/docs/lambdas.html) in Kotlin.
 
-Likewise, it is easy to customize the behavior of internal classes in IntelliJ IDEA, with [extensions](https://kotlinlang.org/docs/extensions.html).
+Likewise, it is easy to customize the behavior of internal classes in the IntelliJ Platform using [extensions](https://kotlinlang.org/docs/extensions.html).
 For example, it is common practice to [guard logging statements](https://www.slf4j.org/faq.html#logging_performance) to avoid the cost of parameter construction, leading to the following ceremony when using the log:
 
 ```java
@@ -55,13 +55,12 @@ logger.debug { "..." + expensiveComputation() }
 to receive all the benefits of lightweight logging while reducing the code verbosity.
 
 With practice, you will be able to recognize many idioms in the IntelliJ Platform that can be simplified with Kotlin.
-To learn more about building IntelliJ Platform plugins with Kotlin, this tutorial will help you get started.
 
 ### UI Forms in Kotlin
 
-The IntelliJ Platform provides the [type safe DSL](kotlin_ui_dsl_version_2.md) allowing to UI forms in declarative way.
+The IntelliJ Platform provides the [type safe DSL](kotlin_ui_dsl_version_2.md) allowing to build UI forms in a declarative way.
 
-> Using a GUI designer with Kotlin is currently [not supported](https://youtrack.jetbrains.com/issue/KTIJ-791).
+> Using _UI Designer_ plugin with Kotlin is [not supported](https://youtrack.jetbrains.com/issue/KTIJ-791).
 >
 
 ## Adding Kotlin Support

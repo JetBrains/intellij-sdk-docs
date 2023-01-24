@@ -15,6 +15,7 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 Minor Changes and Additions
 :
 - Update _IDE Support_ section in [](verifying_plugin_compatibility.md).
+- UI Inspector: update [](internal_ui_inspector.md#specific-component-properties) and add section [](internal_ui_inspector.md#inspecting-settings).
 
 ## 2022
 

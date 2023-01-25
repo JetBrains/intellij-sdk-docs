@@ -13,6 +13,8 @@ The User Interface (UI) for these custom Settings can be added to the [IDE Setti
 Settings can [affect different levels](https://www.jetbrains.com/help/idea/configuring-project-and-ide-settings.html) of scope.
 This document describes adding custom Settings at the Project and Application (or Global, IDE) levels.
 
+> To inspect existing Settings in the IDE, use [UI Inspector](internal_ui_inspector.md).
+
 ## Extension Points for Settings
 
 Custom Settings implementations are declared in the <path>[plugin.xml](plugin_configuration_file.md)</path> file using one of two extension points (EP), depending on the level of the Settings.

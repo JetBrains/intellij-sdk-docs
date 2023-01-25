@@ -32,6 +32,7 @@ The main difference between both EPs is that the first one only lets you place s
 while the second one allows for the placement of inline and block inlays with customizable representation.
 
 > To inspect existing Inlays in the IDE, use [UI Inspector](internal_ui_inspector.md#editor).
+> Corresponding entries from <ui-path>Settings | Editor | Inlay Hints</ui-path> are also available from [](internal_ui_inspector.md#inspecting-settings).
 
 ## Implementation
 

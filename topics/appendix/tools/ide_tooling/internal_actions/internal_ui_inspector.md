@@ -25,9 +25,7 @@ The _UI Inspector_ displays the icon details:
 
 ![Internal Icon Info](internal_ui_inspector_icon_info.png)
 
-## Additional Properties
-
-### added-at Property
+## added-at Property
 
 Sometimes, inspecting complex component's properties is not enough to understand how the component was created and configured.
 _UI Inspector_ gives the possibility of finding the code where the selected component was added, which makes it much easier to understand which APIs can be used to build custom components with similar complexity.
@@ -36,14 +34,14 @@ To find the place were component was added, select the <control>added-at</contro
 
 ![added-at Stacktrace](internal_ui_inspector_added_at.png)
 
-### Specific Component Properties
+## Specific Component Properties
 
 Various components used in the IntelliJ Platform expose additional properties.
 These can be useful to locate the underlying implementation, related Action, etc.
 
 Custom Swing components can also provide additional properties via [`UiInspectorContextProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/inspector/UiInspectorContextProvider.java) or its dedicated subclasses (2020.1 and later).
 
-#### Editor
+### Editor
 
 | Type                                                                                                                                    | Properties                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 |-----------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -53,14 +51,14 @@ Custom Swing components can also provide additional properties via [`UiInspector
 | [`Inlay`](inlay_hints.md)<br/>(2023.1+)                                                                                                 | <control>Inlay Renderer (Class)</control> - `Inlay.getRenderer()` instance/class<br/><control>Inlay Gutter Renderer</control> - `Inlay.getGutterIconRenderer()`<br/><control>Inlay Properties</control> - `Inlay.getProperties()`                                                                                                                                                                                                                |
 | [`IntentionAction`/`QuickFix`](code_inspections_and_intentions.md)                                                                      | <control>intention action</control>/<control>quick fix</control> - [`IntentionAction`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/intention/IntentionAction.java) / [`QuickFix`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/QuickFix.java) implementation                                                                                                                                                     |
 
-#### Action
+### Action
 
 | Type                                      | Properties                                                                                                                                                                                                                                                |
 |-------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [`AnAction`](basic_action_system.md)      | <control>Action</control> - [`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java) implementation<br/><control>Action ID</control> - Action `id`<br/><control>Action Plugin ID</control> - contributing plugin  |
 | [`ActionToolbar`](basic_action_system.md) | <control>Toolbar Group</control> - Action Group ID<br/><control>All Toolbar Groups</control> - contained Action Group IDs<br/><control>Target component</control> - `ActionToolbar.setTargetComponent()`                                                  |
 
-#### IDE and UI Components
+### IDE and UI Components
 
 | Type                                 | Properties                                                                                                                                                                                                                                     |
 |--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

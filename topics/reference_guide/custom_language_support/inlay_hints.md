@@ -1,6 +1,6 @@
-[//]: # (title: Inlay Hints)
+# Inlay Hints
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <tldr>
 
@@ -30,6 +30,8 @@ The IntelliJ Platform offers two extension points (EP) that plugin developers ca
 
 The main difference between both EPs is that the first one only lets you place string inlays
 while the second one allows for the placement of inline and block inlays with customizable representation.
+
+> To inspect existing Inlays in the IDE, use [UI Inspector](internal_ui_inspector.md#editor).
 
 ## Implementation
 

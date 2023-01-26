@@ -13,7 +13,7 @@
 </tldr>
 
 _Tool windows_ are child windows of the IDE used to display information.
-These windows generally have their own toolbars (referred to as _tool window bars_) along the outer edges of the main window containing one or more _tool window buttons_, which activate panels displayed on the left, bottom and right sides of the main IDE window.
+These windows generally have their own toolbars (referred to as _tool window bars_) along the outer edges of the main window containing one or more _tool window buttons_, which activate panels displayed on the left, bottom, and right sides of the main IDE window.
 
 Each side contains two tool window groups, the primary and the secondary one, and only one tool window from each group can be active at a time.
 
@@ -44,13 +44,13 @@ In addition to that, specify the `factoryClass` attribute - the name of a class 
 When the user clicks on the tool window button, the `createToolWindowContent()` method of the factory class is called, and initializes the UI of the tool window.
 This procedure ensures that unused tool windows don't cause any overhead in startup time or memory usage: if a user does not interact with the tool window, no plugin code will be loaded or executed.
 
-If the tool window of a plugin doesn't need to be displayed for all projects:
+If the tool window of a plugin should not be displayed for all projects:
 
 <tabs>
 
 <tab title="2021.1 and later">
 
-Implement the `isApplicable(Project)` method.
+Implement the `ToolwindowFactory.isApplicable(Project)` method.
 
 </tab>
 
@@ -81,6 +81,8 @@ As mentioned previously, tool windows can contain multiple contents (tabs).
 To manage the contents of a tool window, call [`ToolWindow.getContentManager()`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/wm/ToolWindow.java).
 To add a content (tab), first create it by calling [`ContentManager.getFactory().createContent()`](%gh-ic%/platform/ide-core/src/com/intellij/ui/content/ContentManager.java), and then to add it to the tool window using [`ContentManager.addContent()`](%gh-ic%/platform/ide-core/src/com/intellij/ui/content/ContentManager.java).
 Use `Content.setDisposer()` to register associated `Disposable` (see [](disposers.md)).
+
+See [`SimpleToolWindowPanel`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/SimpleToolWindowPanel.java) as a convenient base class, supporting [Toolbars](basic_action_system.md#building-ui-from-actions) and both vertical/horizontal layout.
 
 ### Closing Tabs
 

@@ -68,6 +68,7 @@ Do not store references to PSI elements in objects which can survive plugin load
 Replace with `String` from `Language.getID()`/`FileType.getName()` (use inspection <control>Plugin DevKit | Code | Map key may leak</control>).
 
 ### Plugin Load/Unload Events
+
 Register [`DynamicPluginListener`](%gh-ic%/platform/core-api/src/com/intellij/ide/plugins/DynamicPluginListener.kt) [application listener](plugin_listeners.md) to receive updates on plugin load/unload events.
 
 This can be used to e.g., cancel long-running activities or disallow unload due to ongoing processes.
@@ -95,7 +96,7 @@ If a plugin fails to reload, the log will contain a cause as to why.
 1. Verify that the IDE is running with the VM parameter `-XX:+UnlockDiagnosticVMOptions`. When using [Gradle](configuring_plugin_project.md), specify `runIde.jvmArgs += "-XX:+UnlockDiagnosticVMOptions"` otherwise [Configure JVM Options](https://www.jetbrains.com/help/idea/tuning-the-ide.html#procedure-jvm-options).
 2. Set Registry key `ide.plugins.snapshot.on.unload.fail` to `true` (Go to <ui-path>Navigate | Search Everywhere</ui-path> and type `Registry`).
 3. Trigger the plugin reload.
-4. Open the <path>.hprof</path> memory snapshot generated on plugin unload, look for the plugin ID string. [IntelliJ Ultimate](https://www.jetbrains.com/help/idea/analyze-hprof-memory-snapshots.html) can open memory snapshots directly.
+4. Open the <path>.hprof</path> memory snapshot generated in user home directory on plugin unload, look for the plugin ID string. [IntelliJ Ultimate](https://www.jetbrains.com/help/idea/analyze-hprof-memory-snapshots.html) can open memory snapshots directly.
 5. Find the `PluginClassLoader` referencing the plugin ID string
 6. Look at references to the `PluginClassLoader` instance.
 7. Every one of them is a memory leak (or part of a memory leak) that needs to be resolved.
@@ -118,7 +119,6 @@ is keeping the class loader in memory.
   com.example.ActionExample.<loader>
 * com.intellij.ide.plugins.cl.PluginClassLoader
 ```
-
 
 #### Other Tips
 

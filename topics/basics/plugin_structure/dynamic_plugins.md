@@ -81,8 +81,12 @@ Use [](plugin_services.md) implementing [`Disposable`](%gh-ic%/platform/util/src
 
 When a plugin is being uninstalled or updated, the IDE waits synchronously for plugin unload and asks for restart if the unload failed.
 
-Use the latest available version of the target IDE for verification.
-See also this [list of known platform issues](https://youtrack.jetbrains.com/issues/IDEA?q=%23dynamic-plugins%20) related to handling dynamic plugins.
+If it fails:
+
+1. Try a newer version of the IDE (eventually latest available from [Early Access Program](https://eap.jetbrains.com)), in some cases platform bugs might be an issue.
+   See this [list of known platform issues](https://youtrack.jetbrains.com/issues/IDEA?q=%23dynamic-plugins%20) related to handling dynamic plugins.
+
+2. Try in a fresh and new configuration (e.g., clean the [sandbox](ide_development_instance.md#the-development-instance-sandbox-directory) or use a different configuration directory).
 
 ### Logging
 
@@ -119,8 +123,3 @@ is keeping the class loader in memory.
   com.example.ActionExample.<loader>
 * com.intellij.ide.plugins.cl.PluginClassLoader
 ```
-
-#### Other Tips
-
-1. Try a newer version of the IDE, in some cases platform bugs might be an issue.
-2. Try in a fresh and new configuration (e.g., clean the [sandbox](ide_development_instance.md#the-development-instance-sandbox-directory) or use a different configuration directory).

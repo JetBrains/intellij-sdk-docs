@@ -17,3 +17,6 @@ Nested Index Access
 
 File Type Index Topic
 : [`FileTypeIndex.IndexChangeListener`](%gh-ic-master%/platform/indexing-api/src/com/intellij/psi/search/FileTypeIndex.java) allows monitoring addition/removal of files by `FileType`.
+
+Run Annotator During Indexing
+: [Annotators](syntax_highlighting_and_error_highlighting.md#annotator) can implement `DumbAware` to run during indexing (e.g., providing additional syntax highlighting).

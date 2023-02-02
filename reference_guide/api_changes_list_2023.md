@@ -87,3 +87,13 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.intellij.openapi.externalSystem.view.ExternalSystemNode.setNameAndTooltip(String, String, SimpleTextAttributes)` method removed
 : The new `setNameAndTooltip(PresentationData, String, String, SimpleTextAttributes)` overload should be used instead.
 
+### Database Plugin 2023.1
+
+`com.intellij.database.dataSource.url.TypeDescriptor.ParamEditor` class moved to package `com.intellij.database.dataSource.url`
+: The inner interface was moved to upper level.
+
+`com.intellij.database.dataSource.url.TypesRegistry.BaseTypeDescriptor` class moved to package `com.intellij.database.dataSource.url.ui`
+: UI is extracted from `TypesRegistry` to `TypesRegistryUi`. Use `com.intellij.database.urlParamEditorProvider` to register parameter descriptor, use `com.intellij.database.urlParamEditorUiProvider` to register parameter editor descriptor.
+
+`com.intellij.ssh.config.unified.SshConfigManager.register(boolean, String, String, String, String, AuthType, String, String, boolean, boolean, String, String)` method parameter `String` removed
+: Local port is the part of the tunnel configuration, not ssh settings.

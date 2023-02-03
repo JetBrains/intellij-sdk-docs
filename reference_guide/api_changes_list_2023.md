@@ -72,6 +72,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ### IntelliJ Platform 2023.1
 
+`com.intellij.grazie.text.RuleGroup.Companion.getLITERALS() method removed`
+: it was replaced by a constant field `LITERALS`
+
 `com.intellij.ui.treeStructure.SimpleNode.doUpdate()` method removed
 : It was replaced by `doUpdate(PresentationData)` which should now only modify the state of its parameter.
 

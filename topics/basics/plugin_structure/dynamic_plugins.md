@@ -79,7 +79,7 @@ Use [](plugin_services.md) implementing [`Disposable`](%gh-ic%/platform/util/src
 
 ## Troubleshooting
 
-When a plugin is being uninstalled or updated, the IDE waits synchronously for plugin unload and asks for restart if the unload failed.
+When a plugin is being uninstalled or updated, the IDE waits synchronously for plugin unload and asks for restart if the unloading failed.
 
 If it fails:
 

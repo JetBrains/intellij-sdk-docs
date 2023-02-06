@@ -52,10 +52,6 @@ The [`SimpleFileType`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org
 
 ## Register the FileType
 
-<tabs>
-
-<tab title="2019.2 and later">
-
 The Simple Language file type is registered via the `com.intellij.fileType` extension point in <path>[plugin.xml](plugin_configuration_file.md)</path> and registered with <path>*.simple</path> extension:
 
 ```xml
@@ -68,38 +64,6 @@ The Simple Language file type is registered via the `com.intellij.fileType` exte
       extensions="simple"/>
 </extensions>
 ```
-
-</tab>
-
-<tab title="Pre-2019.2">
-
-> The FileType Factory approach is deprecated. Use it only when the plugin requires support for platform versions older than 2019.2.
->
-{style="warning"}
-
-**Define a FileType Factory**
-
-First, define [`SimpleFileTypeFactory`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFileTypeFactory.java)
-as a subclass of [`FileTypeFactory`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/fileTypes/FileTypeFactory.java).
-
-```java
-```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFileTypeFactory.java"}
-
-**Register the FileType Factory**
-
-The `SimpleFileTypeFactory` is registered using the `com.intellij.fileTypeFactory` extension point in <path>plugin.xml</path>.
-
-```xml
-<extensions defaultExtensionNs="com.intellij">
-  <fileTypeFactory
-      implementation="org.intellij.sdk.language.SimpleFileTypeFactory"/>
-</extensions>
-```
-
-</tab>
-
-</tabs>
 
 ## Run the Project
 

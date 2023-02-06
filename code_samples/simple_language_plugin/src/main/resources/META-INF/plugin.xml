@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 
 <idea-plugin>
@@ -39,13 +39,6 @@
   <extensions defaultExtensionNs="com.intellij">
     <fileType name="Simple File" implementationClass="org.intellij.sdk.language.SimpleFileType" fieldName="INSTANCE"
               language="Simple" extensions="simple"/>
-    <!--
-      Only required for versions of the IntelliJ Platform prior to v2019.2.
-      Use 'com.intellij.fileTypeFactory' extension point INSTEAD of above 'com.intellij.fileType'.
-      See https://plugins.jetbrains.com/docs/intellij/language-and-filetype.html#register-the-filetype for details.
-
-      <fileTypeFactory implementation="org.intellij.sdk.language.SimpleFileTypeFactory"/>
-    -->
     <lang.parserDefinition language="Simple" implementationClass="org.intellij.sdk.language.SimpleParserDefinition"/>
     <lang.syntaxHighlighterFactory language="Simple"
                                    implementationClass="org.intellij.sdk.language.SimpleSyntaxHighlighterFactory"/>

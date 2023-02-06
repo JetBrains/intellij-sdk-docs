@@ -73,22 +73,22 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 ### IntelliJ Platform 2023.1
 
 `com.intellij.grazie.text.RuleGroup.Companion.getLITERALS() method removed`
-: it was replaced by a constant field `LITERALS`
+: Replaced by constant field `LITERALS`.
 
 `com.intellij.ui.treeStructure.SimpleNode.doUpdate()` method removed
 : It was replaced by `doUpdate(PresentationData)` which should now only modify the state of its parameter.
 
 `com.intellij.ide.ui.laf.darcula.ui.DarculaProgressBarUI.getFinishedColor()` method removed
-: The new `getFinishedColor(JComponent c)` overload should be used instead.
+: Use `getFinishedColor(JComponent c)` overload instead.
 
 `com.intellij.openapi.externalSystem.view.ExternalSystemNode.setNameAndTooltip(String, String)` method removed
-: The new `setNameAndTooltip(PresentationData, String, String)` overload should be used instead.
+: Use `setNameAndTooltip(PresentationData, String, String)` overload instead.
 
 `com.intellij.openapi.externalSystem.view.ExternalSystemNode.setNameAndTooltip(String, String, String)` method removed
-: The new `setNameAndTooltip(PresentationData, String, String, String)` overload should be used instead.
+: Use `setNameAndTooltip(PresentationData, String, String, String)` overload instead.
 
 `com.intellij.openapi.externalSystem.view.ExternalSystemNode.setNameAndTooltip(String, String, SimpleTextAttributes)` method removed
-: The new `setNameAndTooltip(PresentationData, String, String, SimpleTextAttributes)` overload should be used instead.
+: Use `setNameAndTooltip(PresentationData, String, String, SimpleTextAttributes)` overload instead.
 
 `com.intellij.ssh.config.unified.SshConfigManager.register(boolean, String, String, String, String, AuthType, String, String, boolean, boolean, String, String)` method parameter `String` removed
 : Local port is the part of the tunnel configuration, not SSH settings.

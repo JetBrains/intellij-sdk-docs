@@ -6,7 +6,7 @@
 
 Please see [](api_changes_list.md) for known breaking changes.
 
-For API annotated with `ApiStatus.Internal`, see [](api_internal.md) for more details and replacements.
+For API annotated with `ApiStatus.@Internal`, see [](api_internal.md) for more details and replacements.
 
 ## Plugin Verifier
 
@@ -29,7 +29,7 @@ Use highlighting available via dedicated [IDE inspections](https://www.jetbrains
 ### Unstable API
 
 - `ApiStatus.@Experimental` is considered unstable and may break or be removed.
-- `ApiStatus.@Internal` should not be used by plugins, see [](api_internal.md) for more details and replacements.
+- `ApiStatus.@Internal` must not be used by plugins, see [](api_internal.md) for more details and replacements.
 - `ApiStatus.@ScheduledForRemoval` denotes API that will be removed in a future version.
 
 Inspection: <control>JVM languages | Unstable API Usage</control> and <control>JVM languages | Unstable type is used in signature</control>

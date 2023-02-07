@@ -160,13 +160,18 @@ Declare additional `optional="true"` and `config-file` attribute pointing to [op
 >
 {style="note"}
 
-For example, if a plugin adds additional highlighting for Java and Kotlin files, use the following setup.
-The main <path>plugin.xml</path> will define an annotator for Java and specify an optional dependency on the Kotlin plugin (plugin ID `org.jetbrains.kotlin`):
+### Sample
+
+The plugin adds additional highlighting for Java and Kotlin files.
+The main <path>plugin.xml</path> defines a required dependency on the Java plugin (plugin ID `com.intellij.java`) and registers the corresponding `com.intellij.annotator` extension.
+Additionally, it specifies an optional dependency on the Kotlin plugin (plugin ID `org.jetbrains.kotlin`):
 
 <path>plugin.xml</path>
 ```xml
 <idea-plugin>
    ...
+   <depends>com.intellij.java</depends>
+
    <depends
        optional="true"
        config-file="myPluginId-withKotlin.xml">org.jetbrains.kotlin</depends>
@@ -179,8 +184,8 @@ The main <path>plugin.xml</path> will define an annotator for Java and specify a
 </idea-plugin>
 ```
 
-Then create a file called <path>myPluginId-withKotlin.xml</path>, in the same directory as the main <path>plugin.xml</path> file.
-In that file, define an annotator for Kotlin:
+The configuration file <path>myPluginId-withKotlin.xml</path> is located in the same directory as the main <path>plugin.xml</path> file.
+In that file, the annotator extension for Kotlin is defined:
 
 <path>myPluginId-withKotlin.xml</path>
 

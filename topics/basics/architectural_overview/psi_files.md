@@ -8,7 +8,7 @@ A PSI (Program Structure Interface) file is the root of a structure representing
 
 The [`PsiFile`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiFile.java) class is the common base class for all PSI files, while files in a specific language are usually represented by its subclasses.  For example, the [`PsiJavaFile`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/PsiJavaFile.java) class represents a Java file, and the [`XmlFile`](%gh-ic%/xml/xml-psi-api/src/com/intellij/psi/xml/XmlFile.java) class represents an XML file.
 
-Unlike `VirtualFile` and `Document`, which have application scope (even if multiple projects are open, each file is represented by the same `VirtualFile` instance), PSI has project scope: the same file is represented by multiple `PsiFile` instances if the file belongs to multiple projects open at the same time.
+Unlike [](virtual_file.md) and [](documents.md), which have application scope (even if multiple projects are open, each file is represented by the same `VirtualFile` instance), PSI has project scope: the same file is represented by multiple `PsiFile` instances if the file belongs to multiple projects open at the same time.
 
 ## How do I get a PSI file?
 
@@ -32,7 +32,7 @@ psiFile.accept(new PsiRecursiveElementWalkingVisitor() {
 });
 ```
 
-See also [Navigating the PSI](navigating_psi.md).
+See also [](navigating_psi.md).
 
 ## Where does a PSI file come from?
 
@@ -52,13 +52,13 @@ Like documents, PSI files are weakly referenced from the corresponding `VirtualF
 
 ## How do I create a PSI file?
 
-The [`PsiFileFactory`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiFileFactory.java) `createFileFromText()` method creates an in-memory PSI file with the specified contents.
+[`PsiFileFactory.createFileFromText()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiFileFactory.java) creates an in-memory PSI file with the specified contents.
 
-To save the PSI file to disk, use the [`PsiDirectory`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiDirectory.java) `add()` method.
+To save the PSI file to disk, use [`PsiDirectory.add()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiDirectory.java).
 
 ## How do I get notified when PSI files change?
 
-`PsiManager.getInstance(project).addPsiTreeChangeListener()` allows you to receive notifications about all changes to the PSI tree of a project.
+`PsiManager.addPsiTreeChangeListener()` allows you to receive notifications about all changes to the PSI tree of a project.
 Alternatively, register [`PsiTreeChangeListener`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiTreeChangeListener.java) in `com.intellij.psi.treeChangeListener` extension point.
 
 > Please see [`PsiTreeChangeEvent`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiTreeChangeEvent.java) Javadoc for common problems when dealing with PSI events.
@@ -68,7 +68,7 @@ Alternatively, register [`PsiTreeChangeListener`](%gh-ic%/platform/core-api/src/
 ## How do I extend PSI?
 
 PSI can be extended to support additional languages through custom language plugins.
-For more details on developing custom language plugins, see the [Custom Language Support](custom_language_support.md) reference guide.
+For more details on developing custom language plugins, see the [](custom_language_support.md) reference guide.
 
 ## What are the rules for working with PSI?
 

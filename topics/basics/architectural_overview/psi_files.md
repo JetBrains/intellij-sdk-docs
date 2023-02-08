@@ -1,6 +1,6 @@
 # PSI Files
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>PSI File represents file content as a hierarchy of elements in a particular programming language.</link-summary>
 
@@ -12,13 +12,13 @@ Unlike `VirtualFile` and `Document`, which have application scope (even if multi
 
 ## How do I get a PSI file?
 
-| Context                          | API                                                                                                                                                                  |
-|----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Action](basic_action_system.md) | [`AnActionEvent.getData(CommonDataKeys.PSI_FILE)`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)                          |
-| [Document](documents.md)         | [`PsiDocumentManager.getInstance(project).getPsiFile()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiDocumentManager.java)                                     |
-| [PSI Element](psi_elements.md)   | [`PsiElement.getContainingFile()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) (may return `null` if the PSI element is not contained in a file) |
-| [Virtual File](virtual_file.md)  | [`PsiManager.getInstance(project).findFile()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiManager.java)                                                       |
-| File Name                        | [`FilenameIndex.getFilesByName(project, name, scope)`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/FilenameIndex.java)                                 |
+| Context                          | API                                                                                                                                                                                                                                 |
+|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Action](basic_action_system.md) | [`AnActionEvent.getData(CommonDataKeys.PSI_FILE)`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)                                                                                         |
+| [Document](documents.md)         | [`PsiDocumentManager.getPsiFile()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiDocumentManager.java)                                                                                                                         |
+| [PSI Element](psi_elements.md)   | [`PsiElement.getContainingFile()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) (may return `null` if the PSI element is not contained in a file)                                                                |
+| [Virtual File](virtual_file.md)  | [`PsiManager.findFile()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiManager.java)                                                                                                                                           |
+| File Name                        | [`FilenameIndex.getVirtualFilesByName()`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/FilenameIndex.java) &rarr; [`PsiManager.findFile()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiManager.java) |
 
 ## What can I do with a PSI file?
 

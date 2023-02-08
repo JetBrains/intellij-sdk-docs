@@ -1,6 +1,6 @@
-[//]: # (title: Internal API Migration)
+# Internal API Migration
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <link-summary>Lists private API annotated with ApiStatus.Internal/IntellijInternalApi and corresponding replacement.</link-summary>
 
@@ -77,7 +77,8 @@ Therefore, any reported violations can be disregarded.
 |----------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
 | [`AnimatedIcon.ANIMATION_IN_RENDERER_ALLOWED`](%gh-ic%/platform/ide-core/src/com/intellij/ui/AnimatedIcon.java)                                    | Made public in 2021.3                           |
 | [`BundleBase`](%gh-ic%/platform/util/src/com/intellij/BundleBase.java)                                                                             | Made public in 2022.1                           |
-| [`IdFilter`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/IdFilter.java)                                                           | Reverted in 2021.2/3                            |
+| [`IdFilter`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/IdFilter.java)                                                           | Made public in 2021.2/3                         |
+| [`HashingStrategy`](%gh-ic%/platform/util/base/src/com/intellij/util/containers/HashingStrategy.java)                                              | Made public in 2023.1                           |
 | [`RunAnythingCommandLineProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/runAnything/activity/RunAnythingCommandLineProvider.kt) | Made public in 2021.3                           |
 | `PhpExpectedFunctionArgument`                                                                                                                      | Made public in 2022.1                           |
 | `org.jetbrains.yaml.meta.*`                                                                                                                        | YAML Metadata API will be made public in 2023.1 |

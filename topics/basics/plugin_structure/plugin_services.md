@@ -1,25 +1,24 @@
 # Services
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Registering and using on-demand services to encapsulate plugin functionality.</link-summary>
 
 A _service_ is a plugin component loaded on demand when your plugin calls the `getService()` method of corresponding [`ComponentManager`](%gh-ic%/platform/extensions/src/com/intellij/openapi/components/ComponentManager.java) instance (see [Types](#types)).
 The IntelliJ Platform ensures that only one instance of a service is loaded even though it is called several times.
+Services are used to encapsulate logic operating on a set of related classes or to provide some reusable functionality that can be used across the plugin project, and conceptually don't differ from the service classes in other languages or frameworks.
 
 A service must have an implementation class that is used for service instantiation.
 A service may also have an interface class used to obtain the service instance and provide the service's API.
 
 A service needing a shutdown hook/cleanup routine can implement [`Disposable`](%gh-ic%/platform/util/src/com/intellij/openapi/Disposable.java) and perform necessary work in `dispose()` (see [Automatically Disposed Objects](disposers.md#automatically-disposed-objects)).
 
-Services are used to encapsulate logic operating on a set of related classes or to provide some reusable functionality that can be used across the plugin project, and conceptually don't differ from the service classes in other languages or frameworks.
-
 #### Types
 
 The IntelliJ Platform offers three types of services: _application-level_ services (global singleton), _project-level_ services, and _module-level_ services.
 For the latter two, a separate instance of the service is created for each instance of its corresponding scope, see [Project Model Introduction](project_structure.md).
 
-> Please consider not using module-level services because it can increase memory usage for projects with many modules.
+> Avoid using module-level services because it can increase memory usage for projects with many modules.
 >
 {style="note"}
 
@@ -28,19 +27,17 @@ For the latter two, a separate instance of the service is created for each insta
 Project/Module-level service constructors can have a `Project`/`Module` argument.
 To improve startup performance, avoid any heavy initializations in the constructor.
 
-> Please note that using constructor injection of dependency services is deprecated (and not supported in [Light Services](#light-services)) for performance reasons.
+> Please note that using constructor injection of dependency services is deprecated (and not supported in [](#light-services)) for performance reasons.
+>
 > Other dependencies should be [acquired only when needed](#retrieving-a-service) in all corresponding methods (see `someServiceMethod()` in [Project Service Sample](#project-service-sample)).
 >
 {style="note"}
 
 ## Light Services
 
-> Light Services are available since IntelliJ Platform 2019.3.
->
-{style="note"}
-
 A service not going to be overridden does not need to be registered in <path>[plugin.xml](plugin_configuration_file.md)</path> (see [Declaring a Service](#declaring-a-service)).
 Instead, annotate service class with [`@Service`](%gh-ic%/platform/core-api/src/com/intellij/openapi/components/Service.java).
+Project-level services should specify `@Service(Service.Level.PROJECT)`.
 The service instance will be created in scope according to the caller (see [Retrieving a Service](#retrieving-a-service)).
 
 Restrictions:
@@ -85,10 +82,12 @@ To provide custom implementation for test/headless environment, specify `testSer
 
 ## Retrieving a Service
 
-Do not acquire service instances eagerly or store them in fields, but obtain them in the place(s) where they will be used.
+> Do not acquire service instances eagerly or store them in fields, but obtain them in the place(s) where they will be used.
+>
+{style="warning"}
 
 Getting service doesn't need a read action and can be performed from any thread.
-If a service is requested from several threads, it will be initialized in the first thread, and other threads will be blocked until the service is fully initialized.
+If a service is requested from several threads, it will be initialized in the first thread, and other threads will be blocked until it is fully initialized.
 
 <tabs>
 <tab title="Java">
@@ -134,7 +133,7 @@ This minimal sample shows [Light Service](#light-services) `ProjectService` inte
 <path>ProjectService.java</path>
 
 ```java
-@Service
+@Service(Service.Level.PROJECT)
 public final class ProjectService {
 
   private final Project myProject;

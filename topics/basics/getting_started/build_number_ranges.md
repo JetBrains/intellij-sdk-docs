@@ -1,6 +1,6 @@
 # Build Number Ranges
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Defining product compatibility by specifying plugin since-build and until-build ranges.</link-summary>
 
@@ -9,7 +9,7 @@ Setting the actual values in <path>[plugin.xml](plugin_configuration_file.md)</p
 
 Please note the following regarding values:
 
-- Values must represent the actual build numbers, any made-up numbers must not be used (e.g., using `999.*` for `until-build`).
+- Values must represent the actual build numbers, any made-up numbers must not be used (e.g., `999.*`, `2023.4`, or `2023.9999` for `until-build`).
 - Not specifying `until-build` means it will include _all_ future builds (including unreleased IDE versions, which might impact compatibility later).
 - Dot star suffix (`.* `) can be used in `until-build` to support all releases for the specific branch (i.e., `222.*` for all 2022.2.x releases).
 

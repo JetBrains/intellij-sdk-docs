@@ -93,6 +93,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.intellij.ssh.config.unified.SshConfigManager.register(boolean, String, String, String, String, AuthType, String, String, boolean, boolean, String, String)` method parameter `String` removed
 : Local port is the part of the tunnel configuration, not SSH settings.
 
+`com.intellij.openapi.fileEditor.impl.HTMLEditorProvider.Companion.getAFFINITY_KEY()` method removed
+: It was an accidentally exposed internal API. Please use `HTMLEditorProvider.openEditor()` methods, or implement your own file editor provider.
+
 ### Database Plugin 2023.1
 
 `com.intellij.database.dataSource.url.TypeDescriptor.ParamEditor` class moved to package `com.intellij.database.dataSource.url`

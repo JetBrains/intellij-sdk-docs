@@ -107,7 +107,7 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 ### JavaScript Debugger Plugin 2023.1
 
 `org.jetbrains.wip.WipVm.initDomains()` method return type changed from `void` to `org.jetbrains.concurrency.Promise<*>`
-: `initDomains()` is now awaitable to make WIP/CDP domains-dependent initialization logic possible
+: `initDomains()` is now awaitable to make WIP/CDP domains-dependent initialization logic possible.
 
 `org.jetbrains.wip.WipVm.ready()` method return type changed from `void` to `org.jetbrains.concurrency.Promise<*>`
-: `ready()` is now awaitable to make WIP/CDP connection-dependent initialization logic possible
+: `ready()` is now awaitable to make WIP/CDP connection-dependent initialization logic possible.

@@ -103,3 +103,11 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 `com.intellij.database.dataSource.url.TypesRegistry.BaseTypeDescriptor` class moved to package `com.intellij.database.dataSource.url.ui`
 : UI extracted from `TypesRegistry` to `TypesRegistryUi`. Use `com.intellij.database.urlParamEditorProvider` extension point to register parameter descriptor, use `com.intellij.database.urlParamEditorUiProvider` extension point to register parameter editor descriptor.
+
+### JavaScript Debugger Plugin 2023.1
+
+`org.jetbrains.wip.WipVm.initDomains()` method return type changed from `void` to `org.jetbrains.concurrency.Promise<*>`
+: `initDomains()` is now awaitable to make WIP/CDP domains-dependent initialization logic possible
+
+`org.jetbrains.wip.WipVm.ready()` method return type changed from `void` to `org.jetbrains.concurrency.Promise<*>`
+: `ready()` is now awaitable to make WIP/CDP connection-dependent initialization logic possible

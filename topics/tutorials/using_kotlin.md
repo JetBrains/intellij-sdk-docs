@@ -100,6 +100,7 @@ If a plugin supports [multiple platform versions](build_number_ranges.md), it mu
 
 | IntelliJ Platform version | Bundled `stdlib` version |
 |---------------------------|--------------------------|
+| 2023.1 (EAP)              | 1.8.0                    |
 | 2022.3                    | 1.7.0                    |
 | 2022.2                    | 1.6.21                   |
 | 2022.1                    | 1.6.20                   |

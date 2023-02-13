@@ -1,6 +1,6 @@
 [//]: # (title: Testing Overview)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 Most of the tests in the IntelliJ Platform codebase are *model-level functional tests*.
 What this means is the following:
@@ -19,7 +19,7 @@ In a product with 20+ years of a lifetime that has gone through many internal re
 
 Another consequence of our testing approach is that we do not provide a recommended approach to mocking.
 We have a few tests in our codebase that use JMock.
-Still, in general, we find it difficult to mock all of the interactions with IntelliJ Platform components that your plugin class will need to have.
+Still, in general, we find it difficult to mock all the interactions with IntelliJ Platform components that your plugin class will need to have.
 We recommend working with real components instead.
 See also [](testing_faq.md#how-to-replace-componentservice-in-tests) and [](testing_faq.md#how-to-replace-extension-points-in-tests).
 
@@ -28,7 +28,7 @@ See also [](testing_faq.md#how-to-replace-componentservice-in-tests) and [](test
 Please see the dedicated [intellij-ui-test-robot](https://github.com/JetBrains/intellij-ui-test-robot) library.
 It is fully integrated with Gradle-based setup via [`runIdeForUiTests`](tools_gradle_intellij_plugin.md#tasks-runideforuitests) task.
 
-Please do not use <path>platform/testGuiFramework</path> it is reserved for internal use.
+Please do not use <path>platform/testGuiFramework</path>, as it is reserved for internal use.
 
 ## Topics
 

@@ -16,7 +16,7 @@ Developing a plugin for the IntelliJ Platform requires knowledge and experience 
 - experience with IntelliJ Platform-based IDE (e.g., [IntelliJ IDEA](https://www.jetbrains.com/idea/))
 
 Please keep in mind that the IntelliJ Platform is a large project, and while we are doing our best to cover as many topics as possible, it is not possible to include every feature and use-case in the documentation.
-Developing a plugin will sometimes require digging into the [Platform code](https://github.com/JetBrains/intellij-community) and analyzing the [example implementations in other plugins](https://jb.gg/ipe).
+Developing a plugin will sometimes require digging into the [IntelliJ Platform code](https://github.com/JetBrains/intellij-community) and analyzing the [example implementations in other plugins](https://jb.gg/ipe).
 
 It's highly recommended to get familiar with the [](explore_api.md) section before you start the plugin implementation.
 

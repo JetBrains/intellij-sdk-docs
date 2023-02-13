@@ -1,16 +1,16 @@
 # Explore the IntelliJ Platform API
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2 -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Strategies and tools for exploring the API.</link-summary>
 
 Sometimes it can be challenging to implement plugin features for the IntelliJ Platform,
-especially when you've hit a roadblock and you're unsure how to move forward.
+especially when you've hit a roadblock, and you're unsure how to move forward.
 This usually happens in two situations:
 
-- You're trying to implement a feature that you've already seen in the IDE and now you need to find the appropriate extension point or
+- You're trying to implement a feature that you've already seen in the IDE, and now you need to find the appropriate extension point or
   class that allows you to hook into the relevant mechanisms.
-- You have already started working on a feature but you're unsure how the different parts of the IntelliJ Platform interact with each other.
+- You have already started working on a feature, but you're unsure how the different parts of the IntelliJ Platform interact with each other.
   In such situations, it is helpful to be able to navigate the IntelliJ Platform code confidently and to find relevant examples in other plugins.
 
 This guide provides a list of proven strategies that can help you overcome these challenges and gather enough information to continue your work.
@@ -25,7 +25,7 @@ Furthermore, the tips below will help build your confidence as you explore the I
 
 The most important resource for discovering new EPs is the extensive list provided directly in the
 [IntelliJ Platform SDK Documentation](extension_point_list.md).
-On this page, you will find all of the EPs, and each entry includes a link to the online source code and a link to the
+On this page, you will find all the EPs, and each entry includes a link to the online source code and a link to the
 [IntelliJ Platform Explorer](https://jb.gg/ipe),
 which helps you find examples of this EP in other plugins.
 Additionally, dedicated Extension Point Lists specific to IDEs are available under _Part VIII — Product Specific_.
@@ -93,7 +93,7 @@ open in a separate window while working on their plugin.
 Others simply search the source code of the IntelliJ Platform that is attached by default when using a
 [](tools_gradle_intellij_plugin.md)-based project.
 While both methods work, it should be noted that developing plugins without inspecting the IntelliJ Platform code is nearly impossible,
-and all of the tips below assume that you have the source code available.
+and all the tips below assume that you have the source code available.
 
 ### 2.1 Find Example Implementations
 

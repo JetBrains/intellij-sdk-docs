@@ -72,6 +72,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ### IntelliJ Platform 2023.1
 
+Apache Batik library unbundled
+: Please bundle and use [echosvg](https://github.com/css4j/echosvg) library instead.
+
 `com.intellij.grazie.text.RuleGroup.Companion.getLITERALS() method removed`
 : Replaced by constant field `LITERALS`.
 

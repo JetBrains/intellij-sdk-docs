@@ -123,4 +123,4 @@ Apache Batik library unbundled
 ### PHP Plugin 2023.1
 
 `com.jetbrains.php.config.library.PhpIncludePathManager.getRoots()` method removed
-: this class no more handles all paths configured in non-runtime `com.jetbrains.php.config.library.PhpLibraryRootProvider`. Paths configured in Include Path Settings are available with `com.jetbrains.php.config.library.PhpIncludePathManager#getIncludePaths()`. All additional paths to use as roots for resolving are available via `com.jetbrains.php.config.library.PhpIncludePathManager#getAllIncludedRoots()`.
+: This class no longer handles all paths configured in non-runtime `com.jetbrains.php.config.library.PhpLibraryRootProvider`. Paths configured in <control>Include Path Settings</control> are available with `PhpIncludePathManager.getIncludePaths()`. All additional paths to use as roots for resolving via `PhpIncludePathManager.getAllIncludedRoots()`.

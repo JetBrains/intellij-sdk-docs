@@ -1,8 +1,10 @@
-[//]: # (title: 18. Commenter)
+# 18. Commenter
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <tldr>
+
+**Reference**: [](additional_minor_features.md#comment-code)
 
 **Code**: [`SimpleCommenter`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCommenter.java)
 

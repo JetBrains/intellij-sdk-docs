@@ -114,5 +114,5 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ### JetBrains Gateway Plugin 2023.1
 
-`com.jetbrains.gateway.ssh.HighLevelHostAccessor.isPathPresentOnRemote(string, FileSystemItem)` method parameter type changed from `string` to `com.jetbrains.gateway.ssh.deploy.RemotePath`
+`com.jetbrains.gateway.ssh.HighLevelHostAccessor.isPathPresentOnRemote(string, FileSystemItem)` method parameter type changed from `String` to `com.jetbrains.gateway.ssh.deploy.RemotePath`
 : Using strings instead of paths breaks a lot of things when doing cross-platform development, and is generally not a good idea. Use `com.jetbrains.gateway.ssh.HighLevelHostAccessor.makeRemotePath` to prepare a path to pass into any of the methods requiring it.

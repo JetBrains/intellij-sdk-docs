@@ -1,6 +1,6 @@
 # Stub Indexes
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 ## Stub Trees
 
@@ -30,7 +30,7 @@ The following steps need to be performed only once for each language that suppor
 
 **Examples**:
 - [`JavaStubElementTypes`](%gh-ic%/java/java-psi-impl/src/com/intellij/psi/impl/java/stubs/JavaStubElementTypes.java) registered in [`JavaPsiPlugin.xml`](%gh-ic%/java/java-psi-impl/src/META-INF/JavaPsiPlugin.xml)
-- see [`Angular2HtmlStubElementTypes`](%gh-ij-plugins-master%/AngularJS/src/org/angular2/lang/html/stub/Angular2HtmlStubElementTypes.kt) for Kotlin sample
+- see [`Angular2MetadataElementTypes`](%gh-ij-plugins-master%/AngularJS/src/org/angular2/entities/metadata/Angular2MetadataElementTypes.kt) for Kotlin sample
 
 For each element type that you want to store in the stub tree, you need to perform the following steps:
 

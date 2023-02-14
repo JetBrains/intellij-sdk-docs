@@ -1,6 +1,6 @@
-[//]: # (title: Additional Minor Features)
+# Additional Minor Features
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <link-summary>Additional minor features for custom languages.</link-summary>
 
@@ -43,6 +43,7 @@ In most cases, [`SimpleTokenSetQuoteHandler`](%gh-ic%/platform/lang-impl/src/com
 EP: `com.intellij.lang.commenter`
 
 [`Commenter`](%gh-ic%/platform/core-api/src/com/intellij/lang/Commenter.java) returns the prefix for the line comment, and the prefix and suffix for the block comment if supported by the language.
+For more complex logic, use [`SelfManagingCommenter`](%gh-ic%/platform/core-api/src/com/intellij/codeInsight/generation/SelfManagingCommenter.java).
 
 - [`Commenter`](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/PropertiesCommenter.java) for [Properties language plugin](%gh-ic%/plugins/properties)
 - [Custom Language Support Tutorial: Commenter](commenter.md)

@@ -82,14 +82,6 @@ Please see also corresponding entries in [Incompatible API Changes](api_changes_
 | [193](https://github.com/JetBrains/intellij-community/tree/193) | 2019.3                                                                                                                                   |
 | [192](https://github.com/JetBrains/intellij-community/tree/192) | 2019.2                                                                                                                                   |
 | [191](https://github.com/JetBrains/intellij-community/tree/191) | 2019.1                                                                                                                                   |
-| [183](https://github.com/JetBrains/intellij-community/tree/183) | 2018.3                                                                                                                                   |
-| [182](https://github.com/JetBrains/intellij-community/tree/182) | 2018.2                                                                                                                                   |
-| [181](https://github.com/JetBrains/intellij-community/tree/181) | 2018.1                                                                                                                                   |
-| [173](https://github.com/JetBrains/intellij-community/tree/173) | 2017.3                                                                                                                                   |
-| [172](https://github.com/JetBrains/intellij-community/tree/172) | 2017.2                                                                                                                                   |
-| [171](https://github.com/JetBrains/intellij-community/tree/171) | 2017.1                                                                                                                                   |
-| [163](https://github.com/JetBrains/intellij-community/tree/163) | 2016.3                                                                                                                                   |
-| [162](https://github.com/JetBrains/intellij-community/tree/162) | 2016.2                                                                                                                                   |
 
 Note that there is no `220`.
 In the `YYYY.R` versioning scheme, the `R` part starts at 1.

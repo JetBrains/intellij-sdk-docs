@@ -1,4 +1,4 @@
-[//]: # (title: JCEF - Java Chromium Embedded Framework)
+# JCEF — Java Chromium Embedded Framework
 
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
@@ -17,6 +17,8 @@ Embedding of the browser component inside the IDE allows amongst others:
 
 - rendering HTML content
 - previewing generated HTML (e.g., from Markdown)
+
+> Please see also [Creating IntelliJ plugin with WebView](https://medium.com/virtuslab/creating-intellij-plugin-with-webview-3b27c3f87aea) tutorial.
 
 ## Enabling JCEF
 

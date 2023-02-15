@@ -111,6 +111,40 @@ Apache Batik library unbundled
 `com.intellij.database.dataSource.url.TypesRegistry.BaseTypeDescriptor` class moved to package `com.intellij.database.dataSource.url.ui`
 : UI extracted from `TypesRegistry` to `TypesRegistryUi`. Use `com.intellij.database.urlParamEditorProvider` extension point to register parameter descriptor, use `com.intellij.database.urlParamEditorUiProvider` extension point to register parameter editor descriptor.
 
+`com.intellij.database.datagrid.DataGrid.setAnonymousColumnName(String)` method removed
+: Only recompilation needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
+
+`com.intellij.database.datagrid.DataGrid.setResultViewAdditionalRowsCount(int)` method removed
+: Only recompilation needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
+
+`com.intellij.database.datagrid.DataGrid.setResultViewAllowMultilineColumnLabels(boolean)` method removed
+: Only recompilation needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
+
+`com.intellij.database.datagrid.DataGrid.setResultViewPaintHorizontalLines(boolean)` method removed
+: Only recompilation needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
+
+`com.intellij.database.datagrid.DataGrid.setResultViewShowRowNumbers(boolean)` method removed
+: Only recompilation needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
+
+`com.intellij.database.datagrid.DataGrid.setResultViewTransparentHeaderBackground(boolean)` method removed
+: Only recompilation needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
+
+`com.intellij.database.datagrid.DataGrid.setResultViewVisibleRowCount(int)` method removed
+: Only recompilation needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
+
+`com.intellij.database.datagrid.DataGrid.countSortedColumns()` abstract method added
+: Only recompilation needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
+
+`com.intellij.database.datagrid.DataGrid.getAppearance()` abstract method added
+: Only recompilation needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
+
+`com.intellij.database.datagrid.DataGrid.getHoveredRowBackground()` abstract method added
+: Only recompilation needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
+
+`com.intellij.database.datagrid.DataGrid.getStripeRowBackground()` abstract method added
+: Only recompilation needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
+
+
 ### JavaScript Debugger Plugin 2023.1
 
 `org.jetbrains.wip.WipVm.initDomains()` method return type changed from `void` to `org.jetbrains.concurrency.Promise<*>`

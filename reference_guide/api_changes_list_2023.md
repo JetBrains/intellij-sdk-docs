@@ -68,6 +68,10 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 <include from="tools_gradle_intellij_plugin.md" element-id="gradle_plugin_223_problem"/>
 
+## 2023.2
+
+### IntelliJ Platform 2023.2
+
 ## 2023.1
 
 ### IntelliJ Platform 2023.1

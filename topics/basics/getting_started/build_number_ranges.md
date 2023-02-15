@@ -69,6 +69,7 @@ Please see also corresponding entries in [Incompatible API Changes](api_changes_
 
 | Branch number                                                   | IntelliJ Platform version                                                                                                                |
 |-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| [231](https://github.com/JetBrains/intellij-community/tree/231) | 2023.1                                                                                                                                   |
 | [223](https://github.com/JetBrains/intellij-community/tree/223) | 2022.3                                                                                                                                   |
 | [222](https://github.com/JetBrains/intellij-community/tree/222) | 2022.2 **NOTE** Java 17 is now required ([blog post](https://blog.jetbrains.com/platform/2022/08/intellij-project-migrates-to-java-17/)) |
 | [221](https://github.com/JetBrains/intellij-community/tree/221) | 2022.1                                                                                                                                   |
@@ -90,5 +91,5 @@ Please see also corresponding entries in [Incompatible API Changes](api_changes_
 | [163](https://github.com/JetBrains/intellij-community/tree/163) | 2016.3                                                                                                                                   |
 | [162](https://github.com/JetBrains/intellij-community/tree/162) | 2016.2                                                                                                                                   |
 
-Note that there is no `170`.
+Note that there is no `220`.
 In the `YYYY.R` versioning scheme, the `R` part starts at 1.

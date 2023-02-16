@@ -1,13 +1,14 @@
 # Publishing a Plugin
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Publishing a plugin to JetBrains Marketplace manually or with Gradle IntelliJ Plugin.</link-summary>
 
 When your plugin is ready, you can publish it to a [JetBrains Marketplace](https://plugins.jetbrains.com) plugin repository so that other users can install it in IDE.
 The first plugin publication, even when a project uses the Gradle setup, must be [uploaded manually](#uploading-a-plugin-to-jetbrains-marketplace).
 
-Before publishing a plugin, please make sure to follow the guidelines from [Plugin Overview page](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html) for an optimal presentation of your plugin on JetBrains Marketplace.
+Before publishing a plugin, ensure it follows all recommendations from [](plugin_user_experience.md).
+For an optimal presentation, see the guidelines from [Plugin Overview page](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html).
 The _Busy Plugin Developers. Episode 2_ discusses [5 tips for optimizing JetBrains Marketplace plugin page](https://youtu.be/oB1GA9JeeiY?t=52) in more detail.
 See also [](marketing.md) about widgets and badges.
 

@@ -10,6 +10,8 @@ It is highly recommended to always use the latest available version, as the plug
 
 To become more familiar with IntelliJ IDEA, please refer to the [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/).
 
+Before starting with the actual development, make sure to understand all requirements to achieve best [](plugin_user_experience.md).
+
 > In some cases, implementing an actual IntelliJ Platform plugin might not be necessary, as [alternative solutions](plugin_alternatives.md) exist.
 >
 

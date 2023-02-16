@@ -1,6 +1,8 @@
-[//]: # (title: Plugin Content)
+# Plugin Content
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+<link-summary>Layout and contents of a plugin distribution file.</link-summary>
 
 Plugin distribution will be built using [Gradle](tools_gradle_intellij_plugin.md#tasks-buildplugin) or [Plugin DevKit](deploying_theme.md).
 
@@ -10,7 +12,9 @@ The plugin <path>.jar</path> file must contain:
 - the classes that implement the plugin functionality
 - recommended: plugin logo file(s) (<path>META-INF/pluginIcon*.svg</path>) ([Plugin Logo](plugin_icon_file.md))
 
-> Targeting a plugin distribution to a specific OS is not possible ([issue](https://youtrack.jetbrains.com/issue/MP-1896)).
+See [](plugin_user_experience.md#distribution-size) for important steps to optimize the plugin distribution file.
+
+Targeting a plugin distribution to a specific OS is not possible ([issue](https://youtrack.jetbrains.com/issue/MP-1896)).
 
 ### Plugin Without Dependencies
 

@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<link-summary>Ensuring a good user experience for your plugin.</link-summary>
+
 _User Experience (UX)_ is a term describing the experience users feel when using a product.
 It covers not only aspects like visual presentation, performance, stability, or ease of use, but anything that affects the user's satisfaction.
 It's an overall impression of using a product that strongly indicates whether a user likes it or not.
@@ -19,7 +21,7 @@ When planning your work, talk and try to understand what your users need the mos
 If you are unsure about an implemented solution, consider sharing the work in progress with a limited group of users (e.g., your colleagues or active community members) and gathering the feedback that will help you improve the final result.
 See the [Custom Release Channels](publishing_plugin.md#specifying-a-release-channel) section for information on how to automate sharing the pre-release plugin versions.
 
-Gathering feedback for the existing features can help identify what works well and what should be improved, which also increases the overall plugin quality.
+Gathering feedback on the existing features can help identify what works well and what should be improved, which also increases the overall plugin quality.
 
 ## Ease of Use
 
@@ -28,6 +30,7 @@ Ideally, all the features should work out of the box after the installation, wit
 Default settings should reflect the typical plugin usage in a standard project.
 
 All the settings and actions should be easy to find and be placed in the proper [settings](settings.md) or [action group](grouping_action.md), e.g.:
+
 * framework plugin settings should be placed under the <ui-path>Settings | Languages & Frameworks</ui-path>
 * action marking a directory as a plugin-specific root should be added to <ui-path>Mark Directory as...</ui-path> group
 
@@ -48,6 +51,7 @@ In addition, it's worth implementing a custom [error report submitter](ide_infra
 Even if a plugin works correctly and looks pleasing, poor performance will impact user satisfaction.
 Slow highlighting, code completion, code generation, and other features may break the user's workflow and cause frustration leading to plugin uninstallation.
 Always try to follow the performance tips described on the topic pages, e.g.:
+
 * [](psi_performance.md)
 * [](general_threading_rules.md#avoiding-ui-freezes)
 * [](indexing_and_psi_stubs.md#improving-indexing-performance)
@@ -57,9 +61,10 @@ Always try to follow the performance tips described on the topic pages, e.g.:
 In addition to the plugin execution performance, it is recommended to optimize the size of the plugin distribution that is downloaded by users from JetBrains Marketplace.
 Users with a poor internet connection may cancel the download when they realize that it will take too long to wait for a plugin they are not sure will meet their expectations.
 Consider the following techniques for optimizing the plugin distribution size:
+
 * Decrease the number of dependencies. Check if the target platform includes utilities or libraries you need and reuse them by declaring runtime dependency if needed.
 * Optimize assets like images, videos, etc.
-* If large resources (e.g., SDKs) will be needed only in specific setups, consider downloading them by the plugin on-demand instead of bundling them in the plugin distribution.
+* If large resources (e.g., SDKs) are needed only in specific setups, consider downloading them by the plugin on-demand instead of bundling them in the plugin distribution.
 
 ## Consistent Behavior
 
@@ -84,6 +89,6 @@ It is recommended to proofread the texts or use one of the [spellcheck plugins](
 
 ## Plugin Description and Presentation
 
-Description on the plugin page is the place where users have the first contact with the plugin, and its content helps them to decide if it is what they are looking for.
+The description on the plugin page is the place where users have the first contact with the plugin, and its content helps them to decide if it is what they are looking for.
 The description should be clear, polished, and follow the rules described in the JetBrains Marketplace [documentation](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description).
-See also the "[5 tips for optimizing the JetBrains Marketplace plugin page](https://youtu.be/oB1GA9JeeiY?t=52)".
+See also this webinar about [5 tips for optimizing the JetBrains Marketplace plugin page](https://youtu.be/oB1GA9JeeiY?t=52).

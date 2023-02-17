@@ -1,6 +1,8 @@
-[//]: # (title: Documentation)
+# Documentation
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+<link-summary>Providing code documentation displayed in the popup invoked by hovering over a symbol or invoking the "View | Quick Documentation" action.</link-summary>
 
 <tldr>
 

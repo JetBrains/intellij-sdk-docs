@@ -1,6 +1,8 @@
-[//]: # (title: Code Formatter)
+# Code Formatter
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+<link-summary>Implementing a code formatter that aligns whitespaces according to the defined set of rules, and performs non-whitespace formatting modifications.</link-summary>
 
 <tldr>
 
@@ -64,7 +66,7 @@ For every block, the plugin specifies the following properties:
    The plugin can specify that a particular block is never wrapped, always wrapped, or wrapped only if it exceeds the right margin.
 
 * The _alignment_ ([`Alignment`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/Alignment.java)) specifies which blocks should be aligned with each other.
-   If two blocks with the alignment property set to the same object instance are placed in different lines, and if the second block is the first non-whitespace block in its line, the formatter inserts white spaces before the second block, so that it starts from the same column as the first one.
+   If two blocks with the alignment property set to the same object instance are placed in different lines, and if the second block is the first non-whitespace block in its line, the formatter inserts whitespaces before the second block, so that it starts from the same column as the first one.
 
 For each of these properties, several particular use settings exist, described in the JavaDoc comments for the respective classes.
 See also [`SpacingBuilder`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/SpacingBuilder.java), which aids in building rule-based configuration.
@@ -80,7 +82,7 @@ Code formatting can be suppressed per region via [special comments](https://yout
 
 ## Non-Whitespace Modifications
 
-Sometimes a plugin requires performing non-whitespace characters modifications like reordering methods, changing letter cases, or adding missing braces.
+Sometimes a plugin requires performing non-whitespace character modifications like reordering methods, changing letter cases, or adding missing braces.
 The formatting framework provides extension points allowing to achieve these goals.
 
 ### Pre-Processor
@@ -96,7 +98,7 @@ To register a formatting pre-processor, a plugin has to provide an implementatio
 
 ### Post-Processor
 
-It's similar to the pre-processor but is run after the actual formatting is performed.
+It is similar to the pre-processor but is run after the actual formatting is performed.
 It can be used for adding, removing, or converting elements like braces, semicolons, quotes, changing letter-cases, etc.
 
 To register a formatting post-processor, a plugin has to provide an implementation of [`PostFormatProcessor`](%gh-ic%/platform/code-style-api/src/com/intellij/psi/impl/source/codeStyle/PostFormatProcessor.java) and register it in the `com.intellij.postFormatProcessor` extension point.
@@ -122,7 +124,7 @@ The return value of `createIndentOptions()` determines the default indent size.
 
 _2021.3_
 
-Register [`AsyncDocumentFormattingService`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/service/AsyncDocumentFormattingService.java) implementation in extension point [`com.intellij.formattingService`](https://jb.gg/ipe?extensions=com.intellij.formattingService) to invoke external formatter instead of IDE's builtin formatter.
+Register [`AsyncDocumentFormattingService`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/service/AsyncDocumentFormattingService.java) implementation in the [`com.intellij.formattingService`](https://jb.gg/ipe?extensions=com.intellij.formattingService) extension point to invoke external formatter instead of IDE's builtin formatter.
 
 **Example**:
 [`ShExternalFormatter`](%gh-ic%/plugins/sh/core/src/com/intellij/sh/formatter/ShExternalFormatter.java) from _Shell Script_ plugin

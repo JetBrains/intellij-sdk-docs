@@ -1,6 +1,8 @@
-[//]: # (title: Implementing Parser and PSI)
+# Implementing Parser and PSI
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+<link-summary>Introduction to parsing custom language files code and representing it with AST and PSI trees.</link-summary>
 
 Parsing files in IntelliJ Platform is a two-step process.
 
@@ -74,7 +76,7 @@ To better understand the process of building a PSI tree for a simple expression,
 
 In general, there is no single right way to implement a PSI for a custom language, and the plugin author can choose the PSI structure and set of methods that are the most convenient for the code which uses the PSI (error analysis, refactorings, and so on).
 However, one base interface needs to be used by a custom language PSI implementation to support features like [](rename_refactoring.md) and [](find_usages.md).
-Every element which can be renamed or referenced (a class definition, a method definition and so on) needs to implement the [`PsiNamedElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiNamedElement.java) interface, with methods `getName()` and `setName()`.
+Every element which can be renamed or referenced (a class definition, a method definition, and so on) needs to implement the [`PsiNamedElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiNamedElement.java) interface, with methods `getName()` and `setName()`.
 
 Several functions which can be used for implementing and using the PSI can be found in the `com.intellij.psi.util` package, and in particular in the [`PsiUtilCore`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/PsiUtilCore.java) and [`PsiTreeUtil`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/PsiTreeUtil.java) classes.
 

@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<link-summary>Sample implementation of spellchecking strategy allowing to analyze spell correctness in Simple language elements.</link-summary>
+
 <include from="language_and_filetype.md" element-id="custom_language_tutorial_header"></include>
 
 <tldr>

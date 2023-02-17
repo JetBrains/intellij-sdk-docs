@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<link-summary>Sample implementation of code completion in Simple language files.</link-summary>
+
 <tldr>
 
 **Reference**: [](code_completion.md)

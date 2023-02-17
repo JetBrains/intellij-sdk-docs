@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<link-summary>Sample implementation a quick fix adding a missing Simple language property referenced in a Java file.</link-summary>
+
 <include from="language_and_filetype.md" element-id="custom_language_tutorial_header"></include>
 
 <tldr>
@@ -15,7 +17,7 @@
 </tldr>
 
 A quick fix for a custom language supports the IntelliJ Platform-based IDE feature [Intention Actions](https://www.jetbrains.com/help/idea/intention-actions.html#apply-intention-actions).
-For the Simple Language, this tutorial adds a quick fix that helps to define an unresolved property from its usage.
+For the Simple language, this tutorial adds a quick fix that helps to define an unresolved property from its usage.
 
 ## Update the Element Factory
 The [`SimpleElementFactory`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleElementFactory.java) is updated to include two new methods to support the user choice of creating a new property for the Simple Language quick fix.

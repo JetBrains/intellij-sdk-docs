@@ -1,6 +1,8 @@
 # 17. Code Style Settings
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+<link-summary>Sample implementation of code style settings allowing to configure the Simple language formatter.</link-summary>
 
 <tldr>
 

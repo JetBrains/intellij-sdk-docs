@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<link-summary>Extending the Simple language PSI classes with the utility and helper methods.</link-summary>
+
 <tldr>
 
 **Code**: [`SimpleUtil`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleUtil.java)

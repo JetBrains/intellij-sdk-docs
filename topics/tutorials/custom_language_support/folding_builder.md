@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<link-summary>Sample implementation folding builder allowing to see the values of Simple language properties referenced in Java files.</link-summary>
+
 <tldr>
 
 **Code**: [`SimpleFoldingBuilder`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFoldingBuilder.java)

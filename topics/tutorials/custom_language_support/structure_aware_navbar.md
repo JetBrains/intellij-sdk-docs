@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<link-summary>Sample implementation of structure aware navigation bar displaying the breadcrumbs including the current file location and Simple language element.</link-summary>
+
 <tldr>
 
 **Reference**: [](navbar.md)

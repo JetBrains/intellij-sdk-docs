@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<link-summary>Sample implementation of a syntax highlighter and color settings page allowing to edit Simple language syntax element colors.</link-summary>
+
 <tldr>
 
 **Reference**: [](syntax_highlighting_and_error_highlighting.md)

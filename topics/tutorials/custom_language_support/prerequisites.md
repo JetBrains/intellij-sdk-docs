@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<link-summary>Steps required before starting implementation of a sample custom language support.</link-summary>
+
 <include from="language_and_filetype.md" element-id="custom_language_tutorial_header"></include>
 
 ## Download and Install IntelliJ IDEA

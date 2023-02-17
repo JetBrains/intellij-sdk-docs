@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<link-summary>Sample implementation of grammar and parser for Simple language.</link-summary>
+
 <tldr>
 
 **Reference**: [](implementing_lexer.md), [](implementing_parser_and_psi.md)

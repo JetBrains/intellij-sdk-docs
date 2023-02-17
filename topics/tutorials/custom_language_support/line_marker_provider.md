@@ -1,6 +1,8 @@
 # 8. Line Marker Provider
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+<link-summary>Sample implementation of line marker provider adding gutter icons for Simple language property occurrences in Java files, and allowing to navigate to a property definition.</link-summary>
 
 <tldr>
 

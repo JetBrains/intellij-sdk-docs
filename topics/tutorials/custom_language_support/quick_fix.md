@@ -1,6 +1,6 @@
-[//]: # (title: 19. Quick Fix)
+# 19. Quick Fix
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <include from="language_and_filetype.md" element-id="custom_language_tutorial_header"></include>
 

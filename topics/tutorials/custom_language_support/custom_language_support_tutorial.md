@@ -1,10 +1,10 @@
-[//]: # (title: Custom Language Support Tutorial)
+# Custom Language Support Tutorial
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Tutorial for creating a .properties-like custom language.</link-summary>
 
-In this tutorial we will add support for a [.properties](https://en.wikipedia.org/wiki/.properties) language and its usages within Java code.
+In this tutorial, we will add support for a [.properties](https://en.wikipedia.org/wiki/.properties) language and its usages within Java code.
 
 > IntelliJ Platform support for custom languages is discussed in more depth in the [Custom Language Support](custom_language_support.md) section.
 > Corresponding parts are linked under **Reference** on top of each page in this tutorial.

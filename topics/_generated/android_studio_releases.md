@@ -6,10 +6,12 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Giraffe \| 2022.3.1 Canary 5 | ![Canary][canary] | February 16, 2023 | **2022.3.1.5** <br/> AI-223.8214.52.2231.9601041 | **2022.3.1** <br/> 223.8214.52 |
 | Giraffe \| 2022.3.1 Canary 4 | ![Canary][canary] | February 9, 2023 | **2022.3.1.4** <br/> AI-223.7571.182.2231.9569140 | **2022.3** <br/> 223.7571.182 |
 | Giraffe \| 2022.3.1 Canary 3 | ![Canary][canary] | February 7, 2023 | **2022.3.1.3** <br/> AI-223.7571.182.2231.9532861 | **2022.3** <br/> 223.7571.182 |
 | Giraffe \| 2022.3.1 Canary 2 | ![Canary][canary] | January 26, 2023 | **2022.3.1.2** <br/> AI-223.7571.182.2231.9523943 | **2022.3** <br/> 223.7571.182 |
 | Giraffe \| 2022.3.1 Canary 1 | ![Canary][canary] | January 17, 2023 | **2022.3.1.1** <br/> AI-223.4884.69.2231.9486165 | **2022.3** <br/> 223.4884.69 |
+| Flamingo \| 2022.2.1 Beta 3 | ![Beta][beta] | February 16, 2023 | **2022.2.1.14** <br/> AI-222.4459.24.2221.9601061 | **2022.2.4** <br/> 222.4459.24 |
 | Flamingo \| 2022.2.1 Beta 2 | ![Beta][beta] | February 7, 2023 | **2022.2.1.13** <br/> AI-222.4459.24.2221.9526055 | **2022.2.4** <br/> 222.4459.24 |
 | Flamingo \| 2022.2.1 Beta 1 | ![Beta][beta] | January 17, 2023 | **2022.2.1.12** <br/> AI-222.4459.24.2221.9471578 | **2022.2.4** <br/> 222.4459.24 |
 | Flamingo \| 2022.2.1 Canary 11 | ![Canary][canary] | January 4, 2023 | **2022.2.1.11** <br/> AI-222.4459.24.2221.9445173 | **2022.2.4** <br/> 222.4459.24 |
@@ -407,11 +409,11 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Giraffe \| 2022.3.1 Canary 5 | ![Canary][canary] | February 16, 2023 | **2022.3.1.5** <br/> AI-223.8214.52.2231.9601041 | **2022.3.1** <br/> 223.8214.52 |
 | Giraffe \| 2022.3.1 Canary 4 | ![Canary][canary] | February 9, 2023 | **2022.3.1.4** <br/> AI-223.7571.182.2231.9569140 | **2022.3** <br/> 223.7571.182 |
 | Giraffe \| 2022.3.1 Canary 3 | ![Canary][canary] | February 7, 2023 | **2022.3.1.3** <br/> AI-223.7571.182.2231.9532861 | **2022.3** <br/> 223.7571.182 |
-| Giraffe \| 2022.3.1 Canary 2 | ![Canary][canary] | January 26, 2023 | **2022.3.1.2** <br/> AI-223.7571.182.2231.9523943 | **2022.3** <br/> 223.7571.182 |
+| Flamingo \| 2022.2.1 Beta 3 | ![Beta][beta] | February 16, 2023 | **2022.2.1.14** <br/> AI-222.4459.24.2221.9601061 | **2022.2.4** <br/> 222.4459.24 |
 | Flamingo \| 2022.2.1 Beta 2 | ![Beta][beta] | February 7, 2023 | **2022.2.1.13** <br/> AI-222.4459.24.2221.9526055 | **2022.2.4** <br/> 222.4459.24 |
-| Electric Eel \| 2022.1.1 Patch 1 | ![Patch][patch] | January 31, 2023 | **2022.1.1.20** <br/> AI-221.6008.13.2211.9514443 | **2022.1.4** <br/> 221.6008.13 |
 
 [release]: https://img.shields.io/badge/-Release-blue?style=flat-square
 [patch]: https://img.shields.io/badge/-Patch-orange?style=flat-square

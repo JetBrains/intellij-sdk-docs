@@ -615,7 +615,7 @@ Attributes
     - `first` - the action is placed as the first in the group
     - `last` _(default)_ - the action is placed as the last in the group
     - `before` - the action is placed before the action specified by the `relative-to-action` attribute
-    - `after` - the action is placed before the action specified by the `relative-to-action` attribute
+    - `after` - the action is placed after the action specified by the `relative-to-action` attribute
 - `relative-to-action` _(**required** if `anchor` is `before`/`after`)_<br/>
   The action before or after which the current action is inserted.
 

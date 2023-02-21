@@ -12,10 +12,9 @@
 
 The IntelliJ Platform provides tools designed for static code analysis called _code inspections_, which help the user maintain and clean up code without actually executing it.
 Custom code inspections can be implemented as IntelliJ Platform plugins.
-Examples of the plugin approach are the IntelliJ Platform SDK code samples [inspection_basics](%gh-sdk-samples%/inspection_basics) and [comparing_references_inspection](%gh-sdk-samples%/comparing_references_inspection).
-In addition, the comparing_references_inspection code sample demonstrates implementing a unit test.
+An example of the plugin approach is the [comparing_references_inspection](%gh-sdk-samples%/comparing_references_inspection) code sample.
 
-See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in the IntelliJ Platform UI Guidelines on naming, writing description, and message texts for inspections.
+See the [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in the IntelliJ Platform UI Guidelines on naming, writing description, and message texts for inspections.
 
 ## Creating an Inspection Plugin
 

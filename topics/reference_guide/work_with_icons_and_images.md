@@ -1,6 +1,6 @@
 # Working with Icons and Images
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Adding, organizing, and working with IntelliJ Platform and custom icons and images.</link-summary>
 
@@ -27,6 +27,7 @@ Platform icons are located in [`AllIcons`](%gh-ic%/platform/util/ui/src/com/inte
 Icons from plugins are located in corresponding `<PLUGIN_NAME>Icons` class (e.g., [`GithubIcons`](%gh-ic%/plugins/github/gen/org/jetbrains/plugins/github/GithubIcons.java)).
 
 If custom icons are required, please refer to detailed [design guide](https://jetbrains.design/intellij/principles/icons/).
+To generate SVG icons suited for the IntelliJ-based IDEs, also consider third-party web tool [IntelliJ Icon Generator](https://bjansen.github.io/intellij-icon-generator/).
 
 ## How to organize and how to use icons?
 
@@ -48,9 +49,11 @@ Then define a class/interface in a top-level package called `icons` holding icon
 package icons;
 
 public interface MyIcons {
+
   Icon Action = IconLoader.getIcon("/icons/myAction.png", MyIcons.class);
   Icon Structure = IconLoader.getIcon("/icons/myStructure.png", MyIcons.class);
   Icon FileType = IconLoader.getIcon("/icons/myFileType.png", MyIcons.class);
+
 }
 ```
 
@@ -66,8 +69,10 @@ package icons
 object MyIcons {
   @JvmField
   val Action = IconLoader.getIcon("/icons/myAction.png", javaClass)
+
   @JvmField
   val Structure = IconLoader.getIcon("/icons/myStructure.png", javaClass)
+
   @JvmField
   val FileType = IconLoader.getIcon("/icons/myFileType.png", javaClass)
 }
@@ -80,23 +85,23 @@ object MyIcons {
 >
 {style="note"}
 
-
 Use these constants inside <path>[plugin.xml](plugin_configuration_file.md)</path> when specifying `icon` attribute for [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) or extension point, as well in [`@Presentation`](%gh-ic%/platform/analysis-api/src/com/intellij/ide/presentation/Presentation.java) `icon` attribute.
 Note that the package name `icons` will be automatically prefixed and must not be specified.
 
 ```xml
+
 <actions>
   <action
-      id="DemoPlugin.DemoAction"
-      icon="MyIcons.Action"
-      ... />
+          id="DemoPlugin.DemoAction"
+          icon="MyIcons.Action"
+  ... />
 </actions>
 
 <extensions defaultExtensionNs="com.intellij">
-  <toolWindow
-      id="CustomStructure"
-      icon="MyIcons.Structure"
-      ... />
+<toolWindow
+        id="CustomStructure"
+        icon="MyIcons.Structure"
+... />
 </extensions>
 ```
 
@@ -129,6 +134,7 @@ If unspecified, it defaults to 16x16 pixels.
 A minimal SVG icon file:
 
 ```xml
+
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
   <rect width="100%" height="100%" fill="green"/>
 </svg>
@@ -139,20 +145,20 @@ However, the `@2x` version of an SVG icon should still provide the same base siz
 The icon graphics of such an icon can be expressed in more details via double precision.
 If the icon graphics are simple enough so that it renders perfectly in every scale, then the `@2x` version can be omitted.
 
-> For generating the SVG icons suited for the IntelliJ-based IDEs, you may also use the third-party web tool [IntelliJ Icon Generator](https://bjansen.github.io/intellij-icon-generator/).
->
-
 ### PNG Format
-> Please consider using [SVG icons](#svg-format) for optimal results if your plugin targets 2018.2+.
+
+> Use [SVG icons](#svg-format) for optimal results if your plugin targets 2018.2+.
 >
 {style="note"}
 
 All icon files must be placed in the same directory following this naming pattern (replace <path>.png</path> with <path>.svg</path> for SVG icons):
 
-* <path>iconName.png</path> W x H pixels (Will be used on non-Retina devices with default theme)
-* <path>iconName@2x.png</path> 2\*W x 2\*H pixels (Will be used on Retina devices with default theme)
-* <path>iconName_dark.png</path> W x H pixels (Will be used on non-Retina devices with Darcula theme)
-* <path>iconName@2x_dark.png</path> 2\*W x 2\*H pixels (Will be used on Retina devices with Darcula theme)
+| Theme/Resolution | File name pattern                 | Size        |
+|------------------|-----------------------------------|-------------|
+| Default          | <path>iconName.png</path>         | W x H       |
+| Darcula          | <path>iconName_dark.png</path>    | W x H       |
+| Default + Retina | <path>iconName@2x.png</path>      | 2\*W x 2\*H |
+| Darcula + Retina | <path>iconName@2x_dark.png</path> | 2\*W x 2\*H |
 
 The `IconLoader` class will load the icon that matches the best depending on the current environment.
 
@@ -177,7 +183,7 @@ To create a new animated icon, use the
 If you want to create an icon where frames follow each other with the same delay, use a constructor that accepts a delay and icons:
 
 ```java
-AnimatedIcon icon = new AnimatedIcon(500, AllIcons.Ide.Macro.Recording_1, AllIcons.Ide.Macro.Recording_2);
+AnimatedIcon icon=new AnimatedIcon(500,AllIcons.Ide.Macro.Recording_1,AllIcons.Ide.Macro.Recording_2);
 ```
 
 To create an icon from frames with different delays, use `AnimatedIcon.Frame`.

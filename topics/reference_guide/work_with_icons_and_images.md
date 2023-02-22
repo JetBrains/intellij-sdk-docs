@@ -198,3 +198,58 @@ Register resource bundle via `com.intellij.iconDescriptionBundle` extension poin
 
 Create `icon.<icon-path>.tooltip` key in given resource bundle, where `<icon-path>` is the icon path with leading slash and `.svg` removed and slashes replaced with dots
 (e.g., `/nodes/class.svg` &rarr; `icon.nodes.class.tooltip`).
+
+## Mapping New UI Icons
+
+> This feature is available since 2022.3.
+
+To fully support [New UI](https://www.jetbrains.com/help/idea/new-ui.html), the plugin must provide additional dedicated icons and mapping information.
+This allows supporting both UI variants at the same time — whichever the user chooses to use.
+
+<procedure title="Setup">
+
+1. Create new <path>expUi</path> folder in your icon root folder ([Reference](#how-to-organize-and-how-to-use-icons)).
+2. Copy all icons for _New UI_ in this folder.
+3. Create empty <path>$PluginName$IconMappings.json</path> mapping file in the resources root folder.
+4. Register <path>$PluginName$IconMappings.json</path> file in <path>plugin.xml</path> via `com.intellij.iconMapper` extension point.
+
+</procedure>
+
+> Sample setup from Maven plugin:
+>
+> - Icon resources root folder: [`images`](%gh-ic-master%/plugins/maven/src/main/resources/images)
+> - Mapping file: [`MavenIconMappings.json`](%gh-ic-master%/plugins/maven/src/main/resources/MavenIconMappings.json)
+> - Extension point registration (`<iconMapper mappingFile="MavenIconMappings.json"/>`): [`plugin.xml`](%gh-ic-master%/plugins/maven/src/main/resources/META-INF/plugin.xml)
+
+### Mapping Entries
+
+All _New UI_ icons must be mapped in the <path>$PluginName$IconMappings.json</path> mapping file.
+
+For each _New UI_ icon, add a mapping entry inside `expui` block.
+Each folder starts a new block containing all its entries (see linked `MavenIconMappins.json` sample from above).
+
+In this sample, the icon root folder is named <path>icons</path>:
+```json
+{
+  "icons": {
+    "expui": {
+      "folderName": {
+        "expUiIcon1.svg": "icons/icon1.svg",
+        "expUiIcon2.svg": "icons/icon2.svg",
+      },
+      "anotherFolder": {
+        "expUiAnotherIcon.svg": "images/anotherIcon.svg"
+      }
+    }
+  }
+}
+```
+
+If one new icon replaces several old icons, use JSON list format. Example from [`PlatformIconMappings.json`](%gh-ic-master%/platform/icons/src/PlatformIconMappings.json):
+
+```json
+    "vcs.svg": [
+      "toolwindows/toolWindowChanges.svg",
+      "vcs/branch.svg"
+    ]
+```

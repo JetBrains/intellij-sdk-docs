@@ -32,12 +32,12 @@ Then insert a child element [`<extensionPoint>`](plugin_configuration_file.md#id
 
   <extensionPoints>
     <extensionPoint
-        name="myExtensionPoint1"
-        beanClass="com.example.MyBeanClass"/>
+            name="myExtensionPoint1"
+            beanClass="com.example.MyBeanClass"/>
 
     <extensionPoint
-        name="myExtensionPoint2"
-        interface="com.example.MyInterface"/>
+            name="myExtensionPoint2"
+            interface="com.example.MyInterface"/>
   </extensionPoints>
 
 </idea-plugin>
@@ -83,6 +83,7 @@ public class MyBeanClass extends AbstractExtensionPointBean {
   public String getClass() {
     return implementationClass;
   }
+
 }
 ```
 
@@ -103,17 +104,18 @@ For above extension points usage in _anotherPlugin_ would look like this (see al
   <!-- Use "my.plugin" namespace: -->
   <extensions defaultExtensionNs="my.plugin">
     <myExtensionPoint1
-        key="someKey"
-        implementationClass="another.some.implementation.class"/>
+            key="someKey"
+            implementationClass="another.some.implementation.class"/>
 
     <myExtensionPoint2
-        implementation="another.MyInterfaceImpl"/>
+            implementation="another.MyInterfaceImpl"/>
   </extension>
 
 </idea-plugin>
 ```
 
 ## Using Extension Points
+
 To refer to all registered extension instances at runtime, declare an [`ExtensionPointName`](%gh-ic%/platform/extensions/src/com/intellij/openapi/extensions/ExtensionPointName.java) passing in the fully-qualified name matching its [declaration in plugin.xml](#declaring-extension-points).
 
 <path>myPlugin/src/com/myplugin/MyExtensionUsingService.java</path>
@@ -122,7 +124,7 @@ To refer to all registered extension instances at runtime, declare an [`Extensio
 public class MyExtensionUsingService {
 
   private static final ExtensionPointName<MyBeanClass> EP_NAME =
-    ExtensionPointName.create("my.plugin.myExtensionPoint1");
+          ExtensionPointName.create("my.plugin.myExtensionPoint1");
 
   public void useExtensions() {
     for (MyBeanClass extension : EP_NAME.getExtensionList()) {
@@ -131,12 +133,15 @@ public class MyExtensionUsingService {
       // ...
     }
   }
+
 }
 ```
 
 A gutter icon for the `ExtensionPointName` declaration allows navigating to the corresponding [`<extensionPoint>`](plugin_configuration_file.md#idea-plugin__extensionPoints__extensionPoint) declaration in <path>plugin.xml</path>.
+Code insight is available for the extension point name String literal (2023.3).
 
 ## Dynamic Extension Points
+
 To support [Dynamic Plugins](dynamic_plugins.md) (2020.1 and later), an extension point must adhere to specific usage rules:
 
 - extensions are enumerated on every use and extensions instances are not stored anywhere
@@ -147,9 +152,9 @@ Extension points matching these conditions can then be marked as _dynamic_ by ad
 ```xml
 <extensionPoints>
   <extensionPoint
-      name="myDynamicExtensionPoint"
-      beanClass="com.example.MyBeanClass"
-      dynamic="true"/>
+          name="myDynamicExtensionPoint"
+          beanClass="com.example.MyBeanClass"
+          dynamic="true"/>
 </extensionPoints>
 ```
 

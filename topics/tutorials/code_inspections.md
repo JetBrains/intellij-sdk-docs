@@ -31,22 +31,9 @@ It illustrates the components for a custom inspection plugin:
 * Writing an HTML [description](#inspection-description) of the inspection for display in the inspection preferences panel.
 * Optionally, create a [unit test](#inspection-unit-test) for the plugin.
 
-Although the IntelliJ Platform SDK code samples illustrate implementations of these components, it is often useful to see examples of inspections implemented in the [IntelliJ Community](https://github.com/JetBrains/intellij-community) code base.
-This process can help find inspection descriptions and implementations based on what is visible in the IDE UI.
-The overall approach works for inspections aimed at other languages as well.
-* Find an existing inspection that is similar to the one you want to implement in the <ui-path>Settings | Editor | Inspections</ui-path> panel.
-  Note the display name of the inspection.
-  For example, the Java/Probable Bugs inspection <control>Object comparison using '==', instead of 'equals()'</control> is very similar to `comparing_references_inspection`.
-* Use the display name text as the [target for a search](https://www.jetbrains.com/help/idea/finding-and-replacing-text-in-project.html) within the IntelliJ Community project.
-  This will identify a bundle file if the display name is localized.
-  If it is not localized, the search finds either the <path>[plugin.xml](plugin_configuration_file.md)</path> file where it is an attribute in the inspection description, or the implementation where it is provided by an overridden method.
-* In the case of localization, copy the key from the bundle file identified by the search.
-  * Use the key text as the target for a search within the IntelliJ Community project.
-    This search locates the plugin configuration file that describes the inspection.
-  * From the inspection description entry, find the `implementationClass` attribute value.
-* Use the `implementationClass` text as the [target of a class search](https://www.jetbrains.com/help/idea/searching-everywhere.html#Searching_Everywhere.xml) in the IntelliJ Community codebase to find the implementation.
-
-See also [](explore_api.md) for more information and strategies.
+Although the code sample illustrates implementations of these components, it is often useful to see examples of inspections implemented in the [IntelliJ Community](https://github.com/JetBrains/intellij-community) code base.
+To identify a given inspection's implementation classes, try to find an inspection [by name](explore_api.md#24-search-for-symbol-names) or [by UI texts](explore_api.md#25-search-by-ui-text).
+Consider also searching for existing implementations in [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.localInspection).
 
 ## Creating an Inspection
 

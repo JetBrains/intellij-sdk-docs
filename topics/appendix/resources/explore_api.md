@@ -126,7 +126,23 @@ You can either use
 [Search Everything or Go to Symbol](https://www.jetbrains.com/help/idea/reference-keymap-win-default.html#find_everything).
 Note that you need to change the search scope to <control>All Places</control> in the search window to find all occurrences of symbols.
 
-### 2.5 Refrain from Using Internal Classes
+### 2.5 Search by UI Text
+
+If you want to implement a functionality that is similar to an existing IDE feature, but you can't guess the name of the extension point or implementation class, the underlying implementation can be found by the texts displayed in the UI.
+
+* Use the displayed text or its part as the [target for a search](https://www.jetbrains.com/help/idea/finding-and-replacing-text-in-project.html) within the IntelliJ Community project.
+  * If the text is localized, this will identify a bundle file there the text is defined. Copy the key from the bundle file identified by the search.
+  * Use the key text as the target for a search within the IntelliJ Community project.
+    This search locates the implementation or related class, or [plugin configuration file](plugin_configuration_file.md) that uses the text key in an [extension](plugin_extensions.md) declaration.
+  * If the key is found in the extension declaration in <path>plugin.xml</path> file, find the implementing class attribute value (in most cases it is `implementationClass`) and
+    [navigate to a declaration](https://www.jetbrains.com/help/rider/Navigation_and_Search__Go_to_Declaration.html#74fa64b7),
+    or use attribute value as the
+    [target of a class search](https://www.jetbrains.com/help/idea/searching-everywhere.html#Searching_Everywhere.xml)
+    in the IntelliJ Community codebase to find the implementation.
+* If the text is not localized, the search will most probably find the desired implementation or related class.
+  In this case, search for the found method/class usages, and repeat this until the actual implementation class is found.
+
+### 2.6 Refrain from Using Internal Classes
 
 As a general remark, the use of internal classes is strongly discouraged (i.e. classes ending with `Impl` in their name,
 located under `impl` package, or included in <path>*-impl.jar</path>).

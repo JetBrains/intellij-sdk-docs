@@ -10,6 +10,12 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2023
 
+### February-23
+
+Minor Changes and Additions
+:
+- Add section on [](work_with_icons_and_images.md#mapping-new-ui-icons).
+
 ### January-23
 
 Minor Changes and Additions

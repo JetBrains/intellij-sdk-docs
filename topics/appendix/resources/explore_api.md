@@ -1,6 +1,6 @@
-# Explore the IntelliJ Platform API
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Explore the IntelliJ Platform API
 
 <link-summary>Strategies and tools for exploring the API.</link-summary>
 
@@ -10,7 +10,7 @@ This usually happens in two situations:
 
 - You're trying to implement a feature that you've already seen in the IDE, and now you need to find the appropriate extension point or
   class that allows you to hook into the relevant mechanisms.
-- You have already started working on a feature, but you're unsure how the different parts of the IntelliJ Platform interact with each other.
+- You've already started working on a feature, but you're unsure how the different parts of the IntelliJ Platform interact with each other.
   In such situations, it is helpful to be able to navigate the IntelliJ Platform code confidently and to find relevant examples in other plugins.
 
 This guide provides a list of proven strategies that can help you overcome these challenges and gather enough information to continue your work.
@@ -90,8 +90,7 @@ source code, as well as other basic features of IntelliJ IDEA.
 Many developers keep the
 [IntelliJ Community source code](https://github.com/JetBrains/intellij-community)
 open in a separate window while working on their plugin.
-Others simply search the source code of the IntelliJ Platform that is attached by default when using a
-[](tools_gradle_intellij_plugin.md)-based project.
+Others simply search the source code of the IntelliJ Platform that is attached by default when using a [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md)-based project.
 While both methods work, it should be noted that developing plugins without inspecting the IntelliJ Platform code is nearly impossible,
 and all the tips below assume that you have the source code available.
 
@@ -112,7 +111,7 @@ Access to many features is provided through the `Manager` and `Service` classes,
 Therefore, it can be helpful to search for classes that match the pattern `com.intellij.*Manager` and look through the list of results.
 Note that not all of these classes have the `com.intellij` prefix, and also that you can
 [define custom scopes](https://www.jetbrains.com/help/idea/configuring-scopes-and-file-colors.html)
-to limit your searches, for example to only <path>idea-xxx.jar</path> files.
+to limit your searches, for example, to only <path>idea-xxx.jar</path> files.
 
 ### 2.3 Inspect the Contents of Packages
 
@@ -122,7 +121,7 @@ Inspecting the contents of this package shows many related classes that will be 
 
 ### 2.4 Search for Symbol Names
 
-As a last resort, it is sometimes helpful to search directly for a method, class, and class member if you can guess a part of its name.
+It is sometimes helpful to search directly for a method, class, and class member if you can guess a part of its name.
 You can either use
 [Search Everything or Go to Symbol](https://www.jetbrains.com/help/idea/reference-keymap-win-default.html#find_everything).
 Note that you need to change the search scope to <control>All Places</control> in the search window to find all occurrences of symbols.
@@ -140,7 +139,7 @@ should not be used, see [](api_internal.md) for more details and replacements.
 
 ### 3.1 Use Internal Mode and PsiViewer
 
-As a plugin developer, you should enable [internal mode](enabling_internal.md) in IntelliJ IDEA.
+As a plugin developer, you should enable the [internal mode](enabling_internal.md) in IntelliJ IDEA.
 This provides access to a suite of tools to help you develop, debug, and test IntelliJ Platform plugins.
 
 One of its most helpful features is the [UI Inspector](internal_ui_inspector.md),
@@ -148,7 +147,7 @@ which lets you investigate all parts of the UI of every IntelliJ-based IDE by si
 Equally important is the <ui-path>Tools | Internal Actions | UI Debugger</ui-path> tool.
 It will display all actions that are run by the IDE when you interact with UI elements, for example, by clicking a button.
 
-Finally, internal mode provides the <ui-path>Tools | View PSI Structure…</ui-path> and <ui-path>Tools | View PSI Structure of Current File…</ui-path> actions,
+Finally, the internal mode provides the <ui-path>Tools | View PSI Structure…</ui-path> and <ui-path>Tools | View PSI Structure of Current File…</ui-path> actions,
 which allow you to analyze the [PSI tree](psi.md), please see [documentation](https://www.jetbrains.com/help/idea/psi-viewer.html).
 The [PsiViewer plugin](https://plugins.jetbrains.com/plugin/227-psiviewer) is a separate plugin with similar capabilities for inspecting PSI trees,
 and it comes with a dedicated tool window that displays information on the fly.

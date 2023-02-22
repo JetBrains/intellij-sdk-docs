@@ -54,7 +54,7 @@ There you'll find more EPs, and browsing through this list helps you discover fe
 or
 [Go to file](https://www.jetbrains.com/help/idea/discover-intellij-idea.html#navigation-and-search)
 helps you search for all files containing extension points.
-Just use <path>*ExtensionPoints.xml</path> as the search pattern and enable the <control>include non-project items</control> checkbox.
+Just use <path>*ExtensionPoints.xml</path> as the search pattern and select the <control>All Places</control> scope.
 
 However, if a bundled or third-party plugin exposes EPs for others to implement, these EPs are defined in the <path>plugin.xml</path> files
 of the plugins and not in the <path>*ExtensionPoints.xml</path> files of the IntelliJ Platform.

@@ -1,6 +1,6 @@
-# Gradle IntelliJ Plugin
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Gradle IntelliJ Plugin
 
 <tldr>
 
@@ -32,7 +32,7 @@ The plugin provides functionalities like:
 
 <snippet id="gradle_plugin_223_problem">
 
-> When targeting 2022.3+ IDE releases, using [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) version 1.10.1 or higher is required.
+> When targeting 2022.3+ IDE releases, [Gradle IntelliJ Plugin](https://github.com/JetBrains/gradle-intellij-plugin) version **1.10.1** or higher is required.
 >
 {style="warning"}
 

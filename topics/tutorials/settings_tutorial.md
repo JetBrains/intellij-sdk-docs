@@ -87,7 +87,7 @@ The `AppSettingsComponent` defines a `JPanel` containing a [`JBTextField`](%gh-i
 
 ```java
 ```
-{src="settings/src/main/java/org/intellij/sdk/settings/AppSettingsComponent.java"}
+{src="settings/src/main/java/org/intellij/sdk/settings/AppSettingsComponent.java" include-symbol="AppSettingsComponent"}
 
 #### AppSettingsComponent Methods
 

@@ -194,7 +194,7 @@ intellij {
 #### version
 {id="intellij-extension-version"}
 
-All available JetBrains IDEs versions can be found at [IntelliJ Artifacts](intellij_artifacts.md) page.
+All available JetBrains IDEs versions can be found in the repositories described on the [](intellij_artifacts.md) page.
 
 The version of the IntelliJ Platform IDE that will be used to build the plugin.
 Please see [](plugin_compatibility.md) for more details.

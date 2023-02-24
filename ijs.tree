@@ -191,6 +191,7 @@
       <toc-element topic="syntax_errors.md"/>
       <toc-element toc-title="Annotators"/>
       <toc-element topic="code_inspections.md" toc-title="Inspections">
+        <toc-element topic="inspection_options.md"/>
         <toc-element toc-title="Profiles"/>
         <toc-element toc-title="Scopes"/>
         <toc-element toc-title="Suppressing Highlights"/>

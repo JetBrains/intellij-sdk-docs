@@ -12,7 +12,7 @@
 
 <link-summary>Gradle IntelliJ Plugin configures Gradle-based plugin projects for building, testing, verifying, and publishing the plugin.</link-summary>
 
-The Gradle IntelliJ Plugin is a plugin for the Gradle build system to help configuring your environment for building, testing, verifying, and publishing plugins for IntelliJ-based IDEs.
+The Gradle IntelliJ Plugin is a plugin for the Gradle build system to help configure your environment for building, testing, verifying, and publishing plugins for IntelliJ-based IDEs.
 
 This plugin allows you to build plugins for IntelliJ Platform using specified IntelliJ SDK and bundled or third-party plugins.
 
@@ -78,7 +78,7 @@ When upgrading to `1.x` version, please make sure to follow the [migration guide
 ### Snapshot Release
 The Snapshot release is a pre-release version built nightly from the latest main branch – as it is built every day using the same version number, it's not recommended to use it for production builds.
 
-For switching to the snapshot release, point Gradle to the dedicated snapshot repository by adding an entry to the Gradle settings file.
+To switch to the snapshot release, point Gradle to the dedicated snapshot repository by adding an entry to the Gradle settings file.
 
 > The current Gradle IntelliJ Plugin Snapshot version is ![GitHub Snapshot Release](https://img.shields.io/nexus/s/org.jetbrains.intellij/org.jetbrains.intellij.gradle.plugin?server=https://oss.sonatype.org)
 >
@@ -1409,7 +1409,7 @@ Accepted values
 #### verificationReportsDir
 {id="tasks-runpluginverifier-verificationreportsdir"}
 
-The path to directory where verification reports will be saved.
+The path to the directory where verification reports will be saved.
 
 {style="narrow"}
 Type
@@ -1422,7 +1422,7 @@ Default value
 #### downloadDir
 {id="tasks-runpluginverifier-downloaddir"}
 
-The path to directory where IDEs used for the verification will be downloaded.
+The path to the directory where IDEs used for the verification will be downloaded.
 By default, it relies on the `plugin.verifier.home.dir` system property and falls back to `XDG_CACHE_HOME` environment variable – see [XDG Base Directory](https://wiki.archlinux.org/title/XDG_Base_Directory) for more details.
 
 {style="narrow"}

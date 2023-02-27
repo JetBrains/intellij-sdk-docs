@@ -147,6 +147,12 @@ Note that since version 2023.1, this method is ignored if `InspectionProfileEntr
 [`SizeReplaceableByIsEmptyInspection`](%gh-ic-223%/plugins/InspectionGadgets/src/com/siyeh/ig/style/SizeReplaceableByIsEmptyInspection.java)
 in version 2022.3, implemented using the UI-approach
 
+For simple customization requirements, see also:
+* [`SingleCheckboxOptionsPanel`](%gh-ic%/platform/lang-api/src/com/intellij/codeInspection/ui/SingleCheckboxOptionsPanel.java) for single checkbox
+* [`MultipleCheckboxOptionsPanel`](%gh-ic%/platform/lang-api/src/com/intellij/codeInspection/ui/MultipleCheckboxOptionsPanel.java) for multiple checkboxes
+* [`SingleIntegerFieldOptionsPanel`](%gh-ic%/platform/lang-api/src/com/intellij/codeInspection/ui/SingleIntegerFieldOptionsPanel.java) for single Integer (text field)
+* [`ConventionOptionsPanel`](%gh-ic%/platform/lang-api/src/com/intellij/codeInspection/ui/ConventionOptionsPanel.java) for validation using regular expression
+
 > Be careful when you have a hierarchy of inspection classes.
 > For example, if inspection superclass is converted to the declarative approach, any `createOptionsPanel()` methods in subclasses will be ignored.
 > If you can't convert all of them at once, you may temporarily add `getOptionsPane()` returning `OptPane.EMPTY` to subclasses, where `createOptionsPanel()` is still used.

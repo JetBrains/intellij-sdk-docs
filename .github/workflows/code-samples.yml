@@ -64,8 +64,8 @@ jobs:
         id: properties
         shell: bash
         run: |
-          echo "::set-output name=ideVersions::${PLUGIN_VERIFIER_IDE_VERSIONS// /-}"
-          echo "::set-output name=pluginVerifierHomeDir::~/.pluginVerifier"
+          echo "ideVersions=${PLUGIN_VERIFIER_IDE_VERSIONS// /-}" >> $GITHUB_OUTPUT
+          echo "pluginVerifierHomeDir=~/.pluginVerifier" >> $GITHUB_OUTPUT
 
       - name: Run Plugin Verifier
         run: |

@@ -36,4 +36,10 @@ tasks {
     sinceBuild.set("221")
     untilBuild.set("223.*")
   }
+
+  test {
+    // Set idea.home.path to the absolute path to the intellij-community source
+    // on your local machine.
+    systemProperty("idea.home.path", "/Users/jhake/Documents/source/comm")
+  }
 }

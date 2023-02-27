@@ -1,12 +1,20 @@
-[//]: # (title: Live Templates)
+# Live Templates
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+<link-summary>Live templates support overview.</link-summary>
+
+<tldr>
+
+**Product Help:** [Live templates](https://www.jetbrains.com/help/idea/using-live-templates.html)
+
+</tldr>
 
 *Live Templates* are customizable rules that allow developers to abbreviate repetitive text patterns or surround code fragments with repetitive constructs in the editor.
 
-When a user types the designated abbreviation followed by a configurable *expansion key* (usually `Tab`), the IDE transforms the preceding input sequence to its full-length output, and update the cursor position.
+When a user types the designated abbreviation followed by a configurable *expansion key* (usually <shortcut>Tab</shortcut>), the IDE transforms the preceding input sequence to its full-length output, and update the cursor position.
 
-For example, consider a `for` loop.
+For example, consider a Java `for` loop.
 Typically, the end user would need to type `for (int i = 0; i < 10; i++) {<Enter><Tab><Enter><Enter>}<Up>`.
 This pattern may be shortened to `fori<Tab>` and the remaining contents will be expanded, leaving the following structure:
 
@@ -21,7 +29,7 @@ As the user completes each section of the `for` loop and presses `Tab`, the curs
 Another use-case for live templates is surrounding the selected code with additional constructs.
 When a user selects a code fragment and invokes the <ui-path>Code | Surround With...</ui-path> action and chooses the template from the list, the code is wrapped with the content defined in the template.
 
-Consider the following Java method with the selected fragment:
+Consider the following Java method with the selected fragment inside `<selection>`:
 
 ```java
 public void testMethod() {

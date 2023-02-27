@@ -13,8 +13,7 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 ### February-23
 
 Inspection Options
-:
-- Add a section on [](inspection_options.md), which allows extending inspection behavior based on the input provided by user at runtime.
+: Add a section on [](inspection_options.md), which allows extending inspection behavior based on the input provided by user at runtime.
 
 Minor Changes and Additions
 :

@@ -13,7 +13,10 @@ Currently, there are two ways of providing the inspection options:
 
 ## Declarative Inspection Options
 
-Declarative inspection options API is available since version 2023.1.
+> Declarative inspection options API is available since version 2023.1.
+>
+{style="note"}
+
 Declarative API allows to:
 * delegate component rendering to the platform and make all the inspection options UI consistent and compliant with the [IntelliJ Platform UI Guideline](https://jetbrains.design/intellij/)
 * optimize checking whether the inspection contains any options
@@ -30,8 +33,9 @@ Note that `InspectionProfileEntry` is a parent of inspection base classes like
 and
 [`GlobalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/GlobalInspectionTool.java).
 
-Building inspection options is achieved by using a DSL-like facade, which contains methods for creating option controls and binding them to the fields declared in an inspection class.
-Example:
+Building the inspection options is achieved by using a DSL-like facade, which contains methods for creating option controls and binding them to the fields declared in an inspection class.
+
+Building the options for <ui-path>Java | Code style issues | 'size() == 0' can be replaced with 'isEmpty()'</ui-path> is implemented as follows:
 
 ```java
 public OrderedSet<String> ignoredTypes = new OrderedSet<>();
@@ -52,7 +56,7 @@ public @NotNull OptPane getOptionsPane() {
 ```
 
 The above example builds a form with two options (see
-[`SizeReplaceableByIsEmptyInspection`](%gh-ic%/plugins/InspectionGadgets/src/com/siyeh/ig/style/SizeReplaceableByIsEmptyInspection.java)
+[`SizeReplaceableByIsEmptyInspection`](%gh-ic-master%/plugins/InspectionGadgets/src/com/siyeh/ig/style/SizeReplaceableByIsEmptyInspection.java)
 for the full implementation context):
 * List of strings, which are validated for being Java classes. The provided list is bound to the `ignoredTypes` field in the inspection class.
 * Checkbox, which value is bound to the boolean `ignoreNegations` field in the inspection class.
@@ -69,11 +73,11 @@ It is possible to customize the way of binding options by providing a custom
 [`OptionController`](%gh-ic-master%/platform/analysis-api/src/com/intellij/codeInspection/options/OptionController.java)
 from `InspectionProfileEntry.getOptionController()` method.
 
-Consider the <ui-path>Properties files | Inconsistent resource bundle</ui-path> global inspection that reports several types of inconsistencies in <path>.properties</path> files.
+Consider the <ui-path>Properties files | Inconsistent resource bundle</ui-path> global inspection, from bundled **Properties** plugin in IntelliJ IDEA, which reports several types of inconsistencies in <path>.properties</path> files.
 The inspection allows enabling or disabling reporting specific issue types, which are reported by providers implementing a dedicated interface.
 Information about enabled providers is stored in a map where the key is a provider ID.
 The options panel and value binding are implemented in the following way (see
-[`InconsistentResourceBundleInspection`](%gh-ic%/plugins/java-i18n/src/com/intellij/codeInspection/i18n/inconsistentResourceBundle/InconsistentResourceBundleInspection.java)
+[`InconsistentResourceBundleInspection`](%gh-ic-master%/plugins/java-i18n/src/com/intellij/codeInspection/i18n/inconsistentResourceBundle/InconsistentResourceBundleInspection.java)
 for the full implementation context):
 
 ```java
@@ -112,7 +116,7 @@ It may be useful when some inspections have common configuration options and sto
 See
 [`OptComponent.prefix()`](%gh-ic-master%/platform/analysis-api/src/com/intellij/codeInspection/options/OptComponent.java)
 and `OptionController.onPrefix()` methods for more details and example implementation:
-[`MissingJavadocInspection`](%gh-ic%/java/java-impl/src/com/intellij/codeInspection/javaDoc/MissingJavadocInspection.java).
+[`MissingJavadocInspection`](%gh-ic-master%/java/java-impl/src/com/intellij/codeInspection/javaDoc/MissingJavadocInspection.java).
 
 ### Non-Profile Inspection Options
 

@@ -5,7 +5,7 @@
 rootProject.name = "SDK Code Samples"
 
 includeBuild("../action_basics")
-includeBuild("../comparing_references_inspection")
+includeBuild("../comparing_string_references_inspection")
 includeBuild("../conditional_operator_intention")
 includeBuild("../editor_basics")
 includeBuild("../facet_basics")

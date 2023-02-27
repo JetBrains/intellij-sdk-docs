@@ -1,6 +1,6 @@
-[//]: # (title: Modifying the PSI)
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Modifying the PSI
 
 The PSI is a read/write representation of the source code as a tree of elements corresponding to a source file's structure.
 You can modify the PSI by *adding*, *replacing*, and *deleting* PSI elements.
@@ -35,7 +35,7 @@ For larger code fragments, it's best to perform the modification in several step
 This ensures that the user code's formatting is preserved and that the modification does not introduce any unwanted whitespace changes.
 Just as everywhere else in the IntelliJ Platform API, the text passed to `createFileFromText()` and other `createFromText()` methods must use only `\n` as line separators.
 
-As an example of this approach, see the quickfix in the `ComparingReferencesInspection` [example](code_inspections.md):
+As an example of this approach, see the quickfix in the `ComparingStringReferencesInspection` [example](code_inspections.md):
 
 ```java
 // binaryExpression holds a PSI expression of the form "x == y", which needs to be replaced with "x.equals(y)"

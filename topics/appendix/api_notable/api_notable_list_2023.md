@@ -1,6 +1,7 @@
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
 # Notable Changes in IntelliJ Platform and Plugins API 2023.*
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <link-summary>List of known Notable API Changes in 2023.*</link-summary>
 
@@ -16,6 +17,9 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 ## 2023.1
 
 ### IntelliJ Platform 2023.1
+
+Declarative Inspection Options
+: [Code inspections](code_inspections.md) can provide additional options in a [declarative](inspection_options.md#declarative-inspection-options) way which has several benefits over the [UI-based](inspection_options.md#ui-based-inspection-options) approach.
 
 Nested Index Access
 : Accessing index data in [nested calls](file_based_indexes.md#nested-index-access) is now possible.

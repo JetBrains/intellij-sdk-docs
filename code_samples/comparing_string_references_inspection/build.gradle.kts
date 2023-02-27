@@ -1,4 +1,4 @@
-// Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
+// Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 
 plugins {
   id("java")
@@ -35,11 +35,5 @@ tasks {
     version.set("${project.version}")
     sinceBuild.set("221")
     untilBuild.set("223.*")
-  }
-
-  test {
-    // Set idea.home.path to the absolute path to the intellij-community source
-    // on your local machine.
-    systemProperty("idea.home.path", "/Users/jhake/Documents/source/comm")
   }
 }

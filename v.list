@@ -10,6 +10,7 @@
 
   <var name="gh-ic" value="https://github.com/JetBrains/intellij-community/tree/idea/%ijPlatformBuild%"/>
   <var name="gh-ic-master" value="https://github.com/JetBrains/intellij-community/tree/master"/>
+  <var name="gh-ic-223" value="https://github.com/JetBrains/intellij-community/blob/223"/>
 
   <var name="gh-ij-android" value="https://github.com/JetBrains/android/tree/idea/%ijPlatformBuild%"/>
 

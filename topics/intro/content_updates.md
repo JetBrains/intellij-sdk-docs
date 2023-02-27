@@ -1,6 +1,6 @@
-# Content Updates
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Content Updates
 
 This page lists notable additions and updates to the SDK documentation and [](code_samples.md).
 
@@ -11,6 +11,9 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 ## 2023
 
 ### February-23
+
+Inspection Options
+: Add a section on [](inspection_options.md), which allows extending inspection behavior based on the input provided by user at runtime.
 
 Minor Changes and Additions
 :

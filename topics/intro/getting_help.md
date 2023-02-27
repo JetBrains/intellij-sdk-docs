@@ -1,8 +1,13 @@
 # Getting Help
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <link-summary>How to submit issues about this guide and get support for plugin development.</link-summary>
+
+Missing some documentation? Or got stuck developing your plugin?
+See all the ways of obtaining support below for each case.
+
+Please use English in all communication.
 
 ## Problems with the Guide
 

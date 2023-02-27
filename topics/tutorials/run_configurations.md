@@ -1,6 +1,8 @@
-[//]: # (title: Run Configurations Tutorial)
+# Run Configurations Tutorial
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+<link-summary>Adding custom run configuration tutorial.</link-summary>
 
 <tldr>
 
@@ -36,7 +38,7 @@ Implement [`ConfigurationType`](%gh-ic%/platform/execution/src/com/intellij/exec
 
 ```java
 ```
-{src="run_configuration/src/main/java/org/jetbrains/sdk/runConfiguration/DemoRunConfigurationType.java"}
+{src="run_configuration/src/main/java/org/jetbrains/sdk/runConfiguration/DemoRunConfigurationType.java" include-symbol="DemoRunConfigurationType"}
 
 ## Implement a ConfigurationFactory
 
@@ -44,13 +46,13 @@ Implement a new [`ConfigurationFactory`](%gh-ic%/platform/execution/src/com/inte
 
 ```java
 ```
-{src="run_configuration/src/main/java/org/jetbrains/sdk/runConfiguration/DemoConfigurationFactory.java"}
+{src="run_configuration/src/main/java/org/jetbrains/sdk/runConfiguration/DemoConfigurationFactory.java" include-symbol="DemoConfigurationFactory"}
 
 Implement corresponding configuration options class extending [`RunConfigurationOptions`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RunConfigurationOptions.kt) to store settings.
 
 ```java
 ```
-{src="run_configuration/src/main/java/org/jetbrains/sdk/runConfiguration/DemoRunConfigurationOptions.java"}
+{src="run_configuration/src/main/java/org/jetbrains/sdk/runConfiguration/DemoRunConfigurationOptions.java" include-symbol="DemoRunConfigurationOptions"}
 
 ## Implement a Run Configuration
 
@@ -61,7 +63,7 @@ If you need to implement specific settings externalization rules and I/O behavio
 
 ```java
 ```
-{src="run_configuration/src/main/java/org/jetbrains/sdk/runConfiguration/DemoRunConfiguration.java"}
+{src="run_configuration/src/main/java/org/jetbrains/sdk/runConfiguration/DemoRunConfiguration.java" include-symbol="DemoRunConfiguration"}
 
 ## Create and Implement Run Configuration UI Form
 
@@ -79,7 +81,7 @@ The UI Form should be bound with a Java class responsible for handling UI compon
 
 ```java
 ```
-{src="run_configuration/src/main/java/org/jetbrains/sdk/runConfiguration/DemoSettingsEditor.java"}
+{src="run_configuration/src/main/java/org/jetbrains/sdk/runConfiguration/DemoSettingsEditor.java" include-symbol="DemoSettingsEditor"}
 
 ## Compile and Run the Plugin
 

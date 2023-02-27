@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<link-summary>Adding custom Live Templates.</link-summary>
+
 This tutorial illustrates how to add default Custom Live Templates to an IntelliJ Platform plugin, and assign valid contexts for these templates based on the surrounding code and file type.
 In addition, the tutorial discusses how to export existing Live Templates, and bundle them within a plugin.
 Any Live Template that can be created and exported can be added to a plugin by following the Template Creation, Export, and Extension Point Registration processes.
@@ -68,7 +70,7 @@ Ultimately, a file's extension determines the applicable Markdown context.
 
 ```java
 ```
-{src="live_templates/src/main/java/org/intellij/sdk/liveTemplates/MarkdownContext.java"}
+{src="live_templates/src/main/java/org/intellij/sdk/liveTemplates/MarkdownContext.java" include-symbol="MarkdownContext"}
 
 > Once the `MarkdownContext` is defined, be sure to add the new context type to the previously created Live Template settings file.
 >

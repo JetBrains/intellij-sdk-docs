@@ -1,6 +1,8 @@
-[//]: # (title: Supporting Module Types)
+# Supporting Module Types
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+<link-summary>Adding custom module types.</link-summary>
 
 IntelliJ Platform provides a set of standard module types.
 However, an application might need a module of a type that isn't supported yet.
@@ -37,7 +39,7 @@ Create the `DemoModuleType` implementation based on [`ModuleType`](%gh-ic%/platf
 
 ```java
 ```
-{src="module/src/main/java/org/intellij/sdk/module/DemoModuleType.java"}
+{src="module/src/main/java/org/intellij/sdk/module/DemoModuleType.java" include-symbol="DemoModuleType"}
 
 ## Implement Custom Module Builder
 
@@ -45,7 +47,7 @@ Create `DemoModuleBuilder` based on [`ModuleBuilder`](%gh-ic%/platform/lang-core
 
 ```java
 ```
-{src="module/src/main/java/org/intellij/sdk/module/DemoModuleBuilder.java"}
+{src="module/src/main/java/org/intellij/sdk/module/DemoModuleBuilder.java" include-symbol="DemoModuleBuilder"}
 
 ## Provide Custom Wizard Steps
 
@@ -54,7 +56,7 @@ Create a generic `DemoModuleWizardStep` based on [`ModuleWizardStep`](%gh-ic%/pl
 
 ```java
 ```
-{src="module/src/main/java/org/intellij/sdk/module/DemoModuleWizardStep.java"}
+{src="module/src/main/java/org/intellij/sdk/module/DemoModuleWizardStep.java" include-symbol="DemoModuleWizardStep"}
 
 ## Creating a Module of New Type
 

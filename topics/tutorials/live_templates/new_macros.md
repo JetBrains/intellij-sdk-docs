@@ -1,6 +1,8 @@
-[//]: # (title: Creating New Functions for Live Templates)
+# Creating New Functions for Live Templates
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+<link-summary>Adding new functions for use in Live Templates.</link-summary>
 
 The [Predefined Functions](https://www.jetbrains.com/help/idea/template-variables.html#predefined_functions) are the building blocks for creating [Parameterized Templates and Surround Templates](https://www.jetbrains.com/help/idea/using-live-templates.html#live_templates_types).
 However, sometimes the Predefined Functions are not enough.
@@ -22,7 +24,7 @@ Three `TitleCaseMacro` methods are of particular interest:
 
 ```java
 ```
-{src="live_templates/src/main/java/org/intellij/sdk/liveTemplates/TitleCaseMacro.java"}
+{src="live_templates/src/main/java/org/intellij/sdk/liveTemplates/TitleCaseMacro.java" include-symbol="TitleCaseMacro"}
 
 ## Adding a Live Template
 

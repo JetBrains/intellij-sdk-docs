@@ -1,6 +1,8 @@
-[//]: # (title: Modifying Project View Structure)
+# Modifying Project View Structure
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+<link-summary>Modifying Project View Tutorial.</link-summary>
 
 This tutorial is meant to illustrate how the project tree structure view appearance can be modified programmatically.
 
@@ -29,7 +31,7 @@ The example below shows how to filter out all the Project View nodes except thos
 
 ```java
 ```
-{src="tree_structure_provider/src/main/java/org/intellij/sdk/treeStructureProvider/TextOnlyTreeStructureProvider.java"}
+{src="tree_structure_provider/src/main/java/org/intellij/sdk/treeStructureProvider/TextOnlyTreeStructureProvider.java" include-symbol="TextOnlyTreeStructureProvider"}
 
 ## Compile and Run the Plugin
 

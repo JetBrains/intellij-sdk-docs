@@ -12,7 +12,7 @@ updates:
     schedule:
       interval: "daily"
   - package-ecosystem: "gradle"
-    directory: "/code_samples/comparing_references_inspection/"
+    directory: "/code_samples/comparing_string_references_inspection/"
     schedule:
       interval: "daily"
   - package-ecosystem: "gradle"

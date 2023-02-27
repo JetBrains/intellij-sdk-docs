@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 
 <idea-plugin>
@@ -35,37 +35,37 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <!--
-      Extend the IntelliJ Platform local inspection type, and connect it to the implementation class in this plugin.
+      Extend the IntelliJ Platform local inspection type and connect it to the implementation class in this plugin.
       <localInspection> type element is applied within the scope of a file under edit.
       It is preferred over <inspectionToolProvider>
         @see intellij.platform.resources.LangExtensionPoints
         @see com.intellij.codeInspection.InspectionProfileEntry
 
       Attributes:
-        language= Language ID
-        shortName= Not specified, will be computed by the underlying implementation classes.
-        displayName= The string to be shown in the Preferences | Editor | Inspections panel
-            The displayName gets registered to identify this inspection.
-            Can be localized using key= and bundle= attributes instead.
-        groupPath= Defines the outermost grouping for this inspection in
+        - language - inspection language ID
+        - shortName - not specified, will be computed by the underlying implementation classes
+        - bundle - name of the message bundle for the "key" attribute
+        - key - the key of the message to be shown in the Preferences | Editor | Inspections panel
+        - groupPath - defines the outermost grouping for this inspection in
             the Preferences | Editor | Inspections panel. Not localized.
-        groupBundle= Name of *.bundle file to translate groupKey.
-            In this case reuse an IntelliJ Platform bundle file from intellij.platform.resources.en
-        groupKey= Key to use for translation subgroup name using groupBundle file.
-            In this case reuse the IntelliJ Platform subcategory "Probable bugs"
-        enabledByDefault= Inspection state when Inspections panel is created.
-        level= The default level of error found by this inspection, e.g. INFO, ERROR, etc.
+        - groupBundle - the name of a message bundle file to translate groupKey
+            In this case, reuse an IntelliJ Platform bundle file from intellij.platform.resources.en
+        - groupKey - the key to use for translation subgroup name using groupBundle file.
+            In this case, reuse the IntelliJ Platform subcategory "Probable bugs"
+        - enabledByDefault - inspection state when the Inspections panel is created.
+        - level - the default level of error found by this inspection, e.g. INFO, ERROR, etc.
             @see com.intellij.codeHighlighting.HighlightDisplayLevel
-        implementationClass= FQN of inspection implementation
+        - implementationClass= the fully-qualified name of the inspection implementation class
     -->
     <localInspection language="JAVA"
-                     displayName="SDK: '==' or '!=' used instead of 'equals()'"
+                     bundle="messages.InspectionBundle"
+                     key="inspection.comparing.string.references.display.name"
                      groupPath="Java"
                      groupBundle="messages.InspectionsBundle"
                      groupKey="group.names.probable.bugs"
                      enabledByDefault="true"
                      level="WARNING"
-                     implementationClass="org.intellij.sdk.codeInspection.ComparingReferencesInspection"/>
+                     implementationClass="org.intellij.sdk.codeInspection.ComparingStringReferencesInspection"/>
   </extensions>
 
 </idea-plugin>

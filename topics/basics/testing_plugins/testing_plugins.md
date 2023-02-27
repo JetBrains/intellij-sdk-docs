@@ -34,7 +34,7 @@ Please do not use <path>platform/testGuiFramework</path>, as it is reserved for 
 
 > Check out [this step-by-step tutorial](writing_tests_for_plugins.md) teaching how to write and run automated tests for your custom language plugin.
 > Also, code samples
-> [comparing_references_inspection](https://github.com/JetBrains/intellij-sdk-docs/tree/main/code_samples/comparing_references_inspection)
+> [comparing_string_references_inspection](https://github.com/JetBrains/intellij-sdk-docs/tree/main/code_samples/comparing_string_references_inspection)
 > and [conditional_operator_intention](https://github.com/JetBrains/intellij-sdk-docs/tree/main/code_samples/conditional_operator_intention) demonstrate using tests.
 >
 {style="note"}

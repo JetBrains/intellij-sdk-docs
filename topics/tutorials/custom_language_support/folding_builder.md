@@ -37,7 +37,7 @@ The IntelliJ Platform uses the value to substitute for the key when the code get
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFoldingBuilder.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFoldingBuilder.java" include-symbol="SimpleFoldingBuilder"}
 
 ## Register the Folding Builder
 

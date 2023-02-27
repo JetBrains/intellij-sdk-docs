@@ -25,7 +25,7 @@ For this example, override the `collectNavigationMarkers()` method to collect us
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLineMarkerProvider.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLineMarkerProvider.java" include-symbol="SimpleLineMarkerProvider"}
 
 Extending from [`GutterIconDescriptor`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/daemon/GutterIconDescriptor.java) allows configuring gutter icons to be shown via <ui-path>Settings | Editor | General | Gutter Icons</ui-path>.
 

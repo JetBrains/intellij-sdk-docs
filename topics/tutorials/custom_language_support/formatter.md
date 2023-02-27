@@ -30,7 +30,7 @@ Define [`SimpleBlock`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleBlock.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleBlock.java" include-symbol="SimpleBlock"}
 
 ## Define a Formatting Model Builder
 
@@ -51,7 +51,7 @@ Create [`SimpleFormattingModelBuilder`](%gh-sdk-samples%/simple_language_plugin/
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFormattingModelBuilder.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFormattingModelBuilder.java" include-symbol="SimpleFormattingModelBuilder"}
 
 ## Register the Formatter
 

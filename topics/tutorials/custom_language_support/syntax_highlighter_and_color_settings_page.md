@@ -27,7 +27,7 @@ For the Simple Language, define only one scheme.
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleSyntaxHighlighter.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleSyntaxHighlighter.java" include-symbol="SimpleSyntaxHighlighter"}
 
 ### Define a Syntax Highlighter Factory
 
@@ -37,7 +37,7 @@ subclasses [`SyntaxHighlighterFactory`](%gh-ic%/platform/editor-ui-api/src/com/i
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleSyntaxHighlighterFactory.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleSyntaxHighlighterFactory.java" include-symbol="SimpleSyntaxHighlighterFactory"}
 
 ### Register the Syntax Highlighter Factory
 
@@ -66,7 +66,7 @@ implements [`ColorSettingsPage`](%gh-ic%/platform/platform-api/src/com/intellij/
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleColorSettingsPage.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleColorSettingsPage.java" include-symbol="SimpleColorSettingsPage"}
 
 It is supported to group related attributes like operators or braces by separating the nodes with `//`, e.g.:
 

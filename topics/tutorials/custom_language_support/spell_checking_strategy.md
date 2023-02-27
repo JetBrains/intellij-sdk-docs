@@ -23,7 +23,7 @@ The [`SimpleSpellcheckingStrategy`](%gh-sdk-samples%/simple_language_plugin/src/
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleSpellcheckingStrategy.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleSpellcheckingStrategy.java" include-symbol="SimpleSpellcheckingStrategy"}
 
 ## Register the SimpleSpellcheckingStrategy
 

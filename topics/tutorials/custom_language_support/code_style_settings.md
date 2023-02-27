@@ -27,7 +27,7 @@ for Simple Language by subclassing [`CustomCodeStyleSettings`](%gh-ic%/platform/
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCodeStyleSettings.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCodeStyleSettings.java" include-symbol="SimpleCodeStyleSettings"}
 
 ## Define Code Style Settings Provider
 
@@ -38,7 +38,7 @@ for Simple Language by subclassing [`CodeStyleSettingsProvider`](%gh-ic%/platfor
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCodeStyleSettingsProvider.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCodeStyleSettingsProvider.java" include-symbol="SimpleCodeStyleSettingsProvider"}
 
 ## Register the Code Style Settings Provider
 
@@ -57,7 +57,7 @@ Define [`SimpleLanguageCodeStyleSettingsProvider`](%gh-sdk-samples%/simple_langu
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLanguageCodeStyleSettingsProvider.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLanguageCodeStyleSettingsProvider.java" include-symbol="SimpleLanguageCodeStyleSettingsProvider"}
 
 ## Register the Language Code Style Settings Provider
 

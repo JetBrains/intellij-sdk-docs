@@ -47,7 +47,7 @@ to create [`SimpleChooseByNameContributor`](%gh-sdk-samples%/simple_language_plu
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleChooseByNameContributor.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleChooseByNameContributor.java" include-symbol="SimpleChooseByNameContributor"}
 
 ## Register the Go To Symbol Contributor
 

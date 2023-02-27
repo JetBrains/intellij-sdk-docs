@@ -26,7 +26,7 @@ A new overload of `createProperty()` creates a new `key`-`value` pair for Simple
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleElementFactory.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleElementFactory.java" include-symbol="SimpleElementFactory"}
 
 ## Define an Intention Action
 The [`SimpleCreatePropertyQuickFix`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCreatePropertyQuickFix.java) creates a property in the file chosen by the user - in this case, a Java file containing a `prefix:key` - and navigate to this property after creation.
@@ -35,7 +35,7 @@ For a more in-depth example of an Intention Action, see [`conditional_operator_i
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCreatePropertyQuickFix.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCreatePropertyQuickFix.java" include-symbol="SimpleCreatePropertyQuickFix"}
 
 ## Update the Annotator
 When a `badProperty` annotation is created, the `badProperty.registerFix()` method in
@@ -44,7 +44,7 @@ This method call registers the `SimpleCreatePropertyQuickFix` as the Intention A
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleAnnotator.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleAnnotator.java" include-symbol="SimpleAnnotator"}
 
 ## Run the Project
 Run the project by using the Gradle [`runIde`](creating_plugin_project.md#running-a-plugin-with-the-runide-gradle-task) task.

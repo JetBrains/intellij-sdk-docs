@@ -205,6 +205,7 @@ Whole files can be imported on a page using `src` attribute after code fences sp
 The advantage is the code can come from the `code_samples` directory, so it will be live code that isn't silently stale.
 
 The disadvantage is the file may contain a large class, too large for the documentation page to be useful.
+If possible, use `include-symbol="ClassName"` to show only the class body without any headers and imports.
 To include only a specific method, specify `include-symbol="methodName"` additionally.
 
 In any case, please keep code samples concise and avoid any unnecessary "surrounding" code or import statements.

@@ -51,7 +51,7 @@ Implement [`SimpleLexerAdapter`](%gh-sdk-samples%/simple_language_plugin/src/mai
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLexerAdapter.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLexerAdapter.java" include-symbol="SimpleLexerAdapter"}
 
 ## Define a Root File
 
@@ -59,7 +59,7 @@ The [`SimpleFile`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/int
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleFile.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleFile.java" include-symbol="SimpleFile"}
 
 ## Define SimpleTokenSets
 
@@ -68,7 +68,7 @@ Define all sets of related token types from `SimpleTypes` in [`SimpleTokenSets`]
 ```java
 
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleTokenSets.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleTokenSets.java" include-symbol="SimpleTokenSets"}
 
 ## Define a Parser
 
@@ -77,7 +77,7 @@ To avoid unnecessary classloading when initializing the extension point implemen
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleParserDefinition.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleParserDefinition.java" include-symbol="SimpleParserDefinition"}
 
 ## Register the Parser Definition
 

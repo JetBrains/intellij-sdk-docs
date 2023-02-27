@@ -26,7 +26,7 @@ The [`SimpleStructureAwareNavbar`](%gh-sdk-samples%/simple_language_plugin/src/m
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleStructureAwareNavbar.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleStructureAwareNavbar.java" include-symbol="SimpleStructureAwareNavbar"}
 
 ## Register the SimpleStructureAwareNavbar
 

@@ -35,13 +35,13 @@ The [`SimpleNamedElement`](%gh-sdk-samples%/simple_language_plugin/src/main/java
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleNamedElement.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleNamedElement.java" include-symbol="SimpleNamedElement"}
 
 The [`SimpleNamedElementImpl`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/impl/SimpleNamedElementImpl.java) class implements the `SimpleNamedElement` interface and extends [`ASTWrapperPsiElement`](%gh-ic%/platform/core-impl/src/com/intellij/extapi/psi/ASTWrapperPsiElement.java).
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/impl/SimpleNamedElementImpl.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/impl/SimpleNamedElementImpl.java" include-symbol="SimpleNamedElementImpl"}
 
 ## Define Helper Methods for Generated PSI Elements
 
@@ -126,7 +126,7 @@ The latter enables the reference to resolve to more than one element or to resol
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleReference.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleReference.java" include-symbol="SimpleReference"}
 
 ## Define a Reference Contributor
 
@@ -136,7 +136,7 @@ Contribute a reference to each usage of a property:
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleReferenceContributor.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleReferenceContributor.java" include-symbol="SimpleReferenceContributor"}
 
 ## Register the Reference Contributor
 
@@ -169,7 +169,7 @@ As long as an element is a `SimpleProperty` it is allowed to be refactored:
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleRefactoringSupportProvider.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleRefactoringSupportProvider.java" include-symbol="SimpleRefactoringSupportProvider"}
 
 ## Register the Refactoring Support Provider
 

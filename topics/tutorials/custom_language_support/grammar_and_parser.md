@@ -24,7 +24,7 @@ in the `org.intellij.sdk.language.psi` package by subclassing `IElementType`.
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleTokenType.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleTokenType.java" include-symbol="SimpleTokenType"}
 
 ## Define an Element Type
 
@@ -32,7 +32,7 @@ Create the [`SimpleElementType`](%gh-sdk-samples%/simple_language_plugin/src/mai
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleElementType.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleElementType.java" include-symbol="SimpleElementType"}
 
 ## Define the Grammar
 

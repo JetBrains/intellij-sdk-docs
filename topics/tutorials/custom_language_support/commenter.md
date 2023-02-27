@@ -25,7 +25,7 @@ The [`SimpleCommenter`](%gh-sdk-samples%/simple_language_plugin/src/main/java/or
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCommenter.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCommenter.java" include-symbol="SimpleCommenter"}
 
 ## Register the Commenter
 

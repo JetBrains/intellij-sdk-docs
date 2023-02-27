@@ -66,7 +66,7 @@ Annotate the `simple:key` literal expression, and differentiate between a well-f
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleAnnotator.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleAnnotator.java" include-symbol="SimpleAnnotator"}
 
 > If the above code is copied at this stage of the tutorial, then remove the line below the comment "** Tutorial step 18.3 …" The quick fix class in that line is not defined until later in the tutorial.
 >

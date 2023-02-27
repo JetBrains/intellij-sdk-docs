@@ -25,7 +25,7 @@ This rudimentary completion contributor always adds "Hello" to the completion va
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCompletionContributor.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCompletionContributor.java" include-symbol="SimpleCompletionContributor"}
 
 ## Register the Completion Contributor
 

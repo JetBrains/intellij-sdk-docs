@@ -28,7 +28,7 @@ At this point the project will not compile until `SimpleStructureViewModel` is [
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleStructureViewFactory.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleStructureViewFactory.java" include-symbol="SimpleStructureViewFactory"}
 
 ## Define a Structure View Model
 
@@ -37,7 +37,7 @@ It also extends [`StructureViewModelBase`](%gh-ic%/platform/editor-ui-api/src/co
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleStructureViewModel.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleStructureViewModel.java" include-symbol="SimpleStructureViewModel"}
 
 ## Define a Structure View Element
 
@@ -48,7 +48,7 @@ The `SortableTreeElement` represents an item in a smart tree that allows using t
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleStructureViewElement.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleStructureViewElement.java" include-symbol="SimpleStructureViewElement"}
 
 ## Register the Structure View Factory
 

@@ -32,7 +32,7 @@ The [`SimpleLanguage`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLanguage.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLanguage.java" include-symbol="SimpleLanguage"}
 
 ## Define an Icon
 
@@ -42,7 +42,7 @@ Please see [](work_with_icons_and_images.md) for details on how to define and us
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleIcons.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleIcons.java" include-symbol="SimpleIcons"}
 
 ## Define a FileType
 
@@ -50,7 +50,7 @@ The [`SimpleFileType`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFileType.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFileType.java" include-symbol="SimpleFileType"}
 
 ## Register the FileType
 

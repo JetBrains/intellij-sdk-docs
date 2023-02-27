@@ -27,7 +27,7 @@ See the comments in `FindUsagesProvider` for more information.
 
 ```java
 ```
-{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFindUsagesProvider.java"}
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFindUsagesProvider.java" include-symbol="SimpleFindUsagesProvider"}
 
 ## Register the Find Usages Provider
 

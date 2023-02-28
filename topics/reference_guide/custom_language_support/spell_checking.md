@@ -1,6 +1,8 @@
-[//]: # (title: Spell Checking)
+# Spell Checking
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+<link-summary>Providing spellchecking for custom language.</link-summary>
 
 <tldr>
 
@@ -14,6 +16,7 @@ Language plugins can implement customized spell checking by implementing
 and registering it in the `com.intellij.spellchecker.support` extension point.
 
 **Examples:**
+
 - [Custom Language Support Tutorial: Spell Checking](spell_checking_strategy.md)
 - [`JavaSpellcheckingStrategy`](%gh-ic%/java/java-impl/src/com/intellij/spellchecker/JavaSpellcheckingStrategy.java)
 - [`HtmlSpellcheckingStrategy`](%gh-ic%/xml/impl/src/com/intellij/spellchecker/xml/HtmlSpellcheckingStrategy.java)
@@ -75,7 +78,7 @@ splits identifiers into separate words.
 A custom language can define special splitting rules for elements by deriving from `Splitter` and
 implementing the logic for obtaining words from the passed text in the `split()` method.
 
-## SuppressibleSpellcheckingStrategy
+## Suppressing Spellchecking
 
 Custom languages that support the suppression of inspection annotations can derive from
 [`SuppressibleSpellcheckingStrategy`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/tokenizer/SuppressibleSpellcheckingStrategy.java)
@@ -86,13 +89,23 @@ overriding `getSuppressActions()` to add quick fix actions that suppress warning
 **Example:**
 [`XmlSpellcheckingStrategy`](%gh-ic%/xml/impl/src/com/intellij/spellchecker/xml/XmlSpellcheckingStrategy.java)
 
-## BundledDictionaryProvider
+## Providing Dictionaries
 
-Some custom languages may have a distinct set of words or key identifiers.
-Custom languages can provide these words in additional dictionaries by inheriting from
+### BundledDictionaryProvider
+
+Some custom languages may have a distinct fixed set of words or key identifiers.
+These words can be provided in additional dictionaries from
 [BundledDictionaryProvider](%gh-ic%/spellchecker/src/com/intellij/spellchecker/BundledDictionaryProvider.java).
-Implement `getBundledDictionaries()` to return paths to the word dictionaries and
+Implement `getBundledDictionaries()` to return paths to the word dictionaries (<path>*.dic</path> files) and
 register it with the `com.intellij.spellchecker.bundledDictionaryProvider` extension point.
 
 **Example:**
 [`PythonBundledDictionaryProvider`](%gh-ic%/python/src/com/jetbrains/python/spellchecker/PythonBundledDictionaryProvider.java)
+
+### RuntimeDictionaryProvider
+
+[`RuntimeDictionaryProvider`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/dictionary/RuntimeDictionaryProvider.java)
+allows providing (dynamic) dictionaries generated at runtime, e.g., downloaded from a server, created from project sources on-the-fly, etc.
+
+**Example**
+[`PyPackagesDictionary`](%gh-ic%/python/src/com/jetbrains/python/packaging/PyPackagesDictionary.kt)

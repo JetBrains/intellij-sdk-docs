@@ -18,6 +18,7 @@ Inspection Options
 Minor Changes and Additions
 :
 - Add section on [](work_with_icons_and_images.md#mapping-new-ui-icons).
+- Document [](spell_checking.md#runtimedictionaryprovider) EP for spellchecking.
 
 ### January-23
 

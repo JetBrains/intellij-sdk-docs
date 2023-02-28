@@ -45,12 +45,4 @@ tasks {
     sinceBuild.set("221")
     untilBuild.set("223.*")
   }
-
-  test {
-    // This path value is a machine-specific placeholder text.
-    // Set idea.home.path to the absolute path to the intellij-community source
-    // on your local machine. For real world projects, use variants described in:
-    // https://docs.gradle.org/current/userguide/build_environment.html
-    systemProperty("idea.home.path", "/Users/jhake/Documents/source/comm")
-  }
 }

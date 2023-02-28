@@ -1,4 +1,4 @@
-// Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 
 package org.intellij.sdk.language.psi.impl;
 
@@ -6,7 +6,6 @@ import com.intellij.lang.ASTNode;
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
-import org.intellij.sdk.language.SimpleIcons;
 import org.intellij.sdk.language.psi.SimpleElementFactory;
 import org.intellij.sdk.language.psi.SimpleProperty;
 import org.intellij.sdk.language.psi.SimpleTypes;
@@ -75,7 +74,7 @@ public class SimplePsiImplUtil {
 
       @Override
       public Icon getIcon(boolean unused) {
-        return SimpleIcons.FILE;
+        return element.getIcon(0);
       }
     };
   }

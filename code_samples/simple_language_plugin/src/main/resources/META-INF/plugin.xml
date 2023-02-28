@@ -42,6 +42,7 @@
     <lang.parserDefinition language="Simple" implementationClass="org.intellij.sdk.language.SimpleParserDefinition"/>
     <lang.syntaxHighlighterFactory language="Simple"
                                    implementationClass="org.intellij.sdk.language.SimpleSyntaxHighlighterFactory"/>
+    <iconProvider implementation="org.intellij.sdk.language.SimplePropertyIconProvider"/>
     <colorSettingsPage implementation="org.intellij.sdk.language.SimpleColorSettingsPage"/>
     <annotator language="JAVA" implementationClass="org.intellij.sdk.language.SimpleAnnotator"/>
     <codeInsight.lineMarkerProvider language="JAVA"

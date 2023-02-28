@@ -1,6 +1,8 @@
-[//]: # (title: Actions Tutorial)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<link-summary>Tutorial on creating and grouping actions.</link-summary>
+
+# Actions Tutorial
 
 This tutorial leads you through a series of steps which show how to create, register, and customize custom actions and action groups.
 By registering actions, you can add your own menu items, toolbar buttons and keyboard shortcuts to the IDE user interface.

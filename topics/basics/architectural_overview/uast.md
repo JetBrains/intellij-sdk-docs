@@ -1,6 +1,8 @@
-[//]: # (title: UAST - Unified Abstract Syntax Tree)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<link-summary>Handle different JVM languages syntax trees with a single implementation.</link-summary>
+
+# UAST - Unified Abstract Syntax Tree
 
 UAST (Unified Abstract Syntax Tree) is an abstraction layer on the [PSI](psi_elements.md) of different programming languages targeting the JVM (Java Virtual Machine).
 It provides a unified API for working with common language elements like classes and method declarations, literal values, and control flow operators.

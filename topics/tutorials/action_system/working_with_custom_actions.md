@@ -1,6 +1,8 @@
-# Creating Actions
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<link-summary>Implementing and registering custom actions.</link-summary>
+
+# Creating Actions
 
 Plugins can add actions to existing IDE menus and toolbars, as well as add new menus and toolbars.
 The IntelliJ Platform calls the actions of plugins in response to user interactions with the IDE.

@@ -106,6 +106,7 @@ register it with the `com.intellij.spellchecker.bundledDictionaryProvider` exten
 
 [`RuntimeDictionaryProvider`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/dictionary/RuntimeDictionaryProvider.java)
 allows providing (dynamic) dictionaries generated at runtime, e.g., downloaded from a server, created from project sources on-the-fly, etc.
+Register in `com.intellij.spellchecker.dictionary.runtimeDictionaryProvider` extension point.
 
 **Example**
 [`PyPackagesDictionary`](%gh-ic%/python/src/com/jetbrains/python/packaging/PyPackagesDictionary.kt)

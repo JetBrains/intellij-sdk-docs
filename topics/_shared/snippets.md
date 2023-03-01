@@ -87,6 +87,8 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ### Tags
 
+See [](verifying_plugin_compatibility.md) for overview of API status.
+
 | Icon                              | Description                         | Details                                                                                                                                                                                                                                                                                             |
 |-----------------------------------|-------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ![Deprecated][deprecated]         | Deprecated API                      | Please see code documentation for replacement                                                                                                                                                                                                                                                       |

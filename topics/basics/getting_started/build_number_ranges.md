@@ -64,6 +64,7 @@ Usually you should omit the product ID and use only the branch number and build 
 >
 
 When supporting multiple major versions, it is strongly recommended to build against the _lowest_ supported version to guarantee backwards-compatibility.
+In the case of supporting a range of platform versions with different underlying Java level it is _required_.
 
 See [](verifying_plugin_compatibility.md) for tooling support to ensure compatibility with chosen version range and IDEs.
 Consult [Incompatible API Changes](api_changes_list.md) and [Notable API Changes](api_notable.md) for an overview of known breaking and relevant changes.

@@ -18,32 +18,32 @@ A service needing a shutdown hook/cleanup routine can implement [`Disposable`](%
 The IntelliJ Platform offers three types of services: _application-level_ services (global singleton), _project-level_ services, and _module-level_ services.
 For the latter two, a separate instance of the service is created for each instance of its corresponding scope, see [Project Model Introduction](project_structure.md).
 
-> Avoid using module-level services because it can increase memory usage for projects with many modules.
+> Avoid using module-level services as it can increase memory usage for projects with many modules.
 >
 {style="note"}
 
 #### Constructor
 
-Project/Module-level service constructors can have a `Project`/`Module` argument.
+Project/Module-level service constructors can have a [`Project`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/Project.java)/[`Module`](%gh-ic%/platform/core-api/src/com/intellij/openapi/module/Module.java) argument.
 To improve startup performance, avoid any heavy initializations in the constructor.
 
-> Please note that using constructor injection of dependency services is deprecated (and not supported in [](#light-services)) for performance reasons.
+> Using constructor injection of dependency services is deprecated (and not supported in [](#light-services)) for performance reasons.
 >
-> Other dependencies should be [acquired only when needed](#retrieving-a-service) in all corresponding methods (see `someServiceMethod()` in [Project Service Sample](#project-service-sample)).
+> Other dependencies must be [acquired only when needed](#retrieving-a-service) in all corresponding methods (see `someServiceMethod()` in [Project Service Sample](#project-service-sample)).
 >
-{style="note"}
+{style="warning"}
 
 ## Light Services
 
 A service not going to be overridden does not need to be registered in <path>[plugin.xml](plugin_configuration_file.md)</path> (see [Declaring a Service](#declaring-a-service)).
 Instead, annotate service class with [`@Service`](%gh-ic%/platform/core-api/src/com/intellij/openapi/components/Service.java).
-Project-level services should specify `@Service(Service.Level.PROJECT)`.
+Project-level services must specify `@Service(Service.Level.PROJECT)`.
 The service instance will be created in scope according to the caller (see [Retrieving a Service](#retrieving-a-service)).
 
 Restrictions:
 
 * Service class must be `final`.
-* Constructor injection of dependency services is not supported (since it is deprecated).
+* Constructor injection of dependency services is not supported.
 * If service is a [PersistentStateComponent](persisting_state_of_components.md), roaming must be disabled (`roamingType = RoamingType.DISABLED`).
 
 See [Project-Level Service](#project-service-sample) below for a sample.

@@ -35,8 +35,8 @@ It is not possible to specify the minimum/maximum version for the dependent plug
 For plugins published on [JetBrains Marketplace](https://plugins.jetbrains.com):
 
 1. Open plugin's detail page
-2. Select <control>Versions</control> tab
-3. Open detail page for the desired version, displaying the <control>Compatibility Range</control> and <control>Plugin ID</control>
+2. Scroll down to the bottom section <control>Additional Information</control>
+3. Copy <control>Plugin ID</control>
 
 ### Bundled and Other Plugins
 

@@ -24,7 +24,8 @@ public class SimpleChooseByNameContributor implements ChooseByNameContributorEx 
                            @NotNull GlobalSearchScope scope,
                            @Nullable IdFilter filter) {
     Project project = Objects.requireNonNull(scope.getProject());
-    List<String> propertyKeys = ContainerUtil.map(SimpleUtil.findProperties(project), SimpleProperty::getKey);
+    List<String> propertyKeys = ContainerUtil.map(
+            SimpleUtil.findProperties(project), SimpleProperty::getKey);
     ContainerUtil.process(propertyKeys, processor);
   }
 
@@ -33,7 +34,8 @@ public class SimpleChooseByNameContributor implements ChooseByNameContributorEx 
                                       @NotNull Processor<? super NavigationItem> processor,
                                       @NotNull FindSymbolParameters parameters) {
     List<NavigationItem> properties = ContainerUtil.map(
-            SimpleUtil.findProperties(parameters.getProject(), name), property -> (NavigationItem) property);
+            SimpleUtil.findProperties(parameters.getProject(), name),
+            property -> (NavigationItem) property);
     ContainerUtil.process(properties, processor);
   }
 

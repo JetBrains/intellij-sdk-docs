@@ -1,6 +1,8 @@
-[//]: # (title: IDE Infrastructure)
+# IDE Infrastructure
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+<link-summary>General IDE-level functionality (logging, error reporting, environment/installation info).</link-summary>
 
 ### Logging
 
@@ -118,7 +120,7 @@ Use [`PowerSaveMode`](%gh-ic%/platform/core-api/src/com/intellij/ide/PowerSaveMo
 
 ## Plugin Management
 
-Currently, installed plugins can be checked via [`PluginManagerCore.isPluginInstalled()`](%gh-ic%/platform/core-impl/src/com/intellij/ide/plugins/PluginManagerCore.java).
+Installed plugins can be checked via [`PluginManagerCore.isPluginInstalled()`](%gh-ic%/platform/core-impl/src/com/intellij/ide/plugins/PluginManagerCore.java).
 
 ### Plugin Suggestions
 

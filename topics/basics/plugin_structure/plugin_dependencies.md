@@ -28,7 +28,7 @@ If `java.lang.NoClassDefFoundError` occurs at runtime, it means that either Step
 ## 1. Locating Plugin ID and Preparing Sandbox
 
 A compatible version must be chosen carefully according to the plugin's [compatibility](build_number_ranges.md).
-It is not possible to specify the minimum/maximum version for the dependent plugin. ([Issue](https://youtrack.jetbrains.com/issue/IDEABKL-7906))
+For non-bundled plugins, it is not possible to specify the minimum/maximum version for the dependent plugin. ([Issue](https://youtrack.jetbrains.com/issue/IDEABKL-7906))
 
 ### JetBrains Marketplace
 

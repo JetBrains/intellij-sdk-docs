@@ -183,7 +183,9 @@ To create a new animated icon, use the
 If you want to create an icon where frames follow each other with the same delay, use a constructor that accepts a delay and icons:
 
 ```java
-AnimatedIcon icon=new AnimatedIcon(500,AllIcons.Ide.Macro.Recording_1,AllIcons.Ide.Macro.Recording_2);
+AnimatedIcon icon = new AnimatedIcon(500,
+          AllIcons.Ide.Macro.Recording_1,
+          AllIcons.Ide.Macro.Recording_2);
 ```
 
 To create an icon from frames with different delays, use `AnimatedIcon.Frame`.

@@ -1,14 +1,10 @@
-[//]: # (title: IntelliJ Platform SDK)
+# IntelliJ Platform SDK
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 [![official JetBrains project](https://jb.gg/badges/official-flat-square.svg){type="joined"}](https://github.com/JetBrains/.github/blob/main/profile/README.md) [![Twitter Follow](https://img.shields.io/twitter/follow/JBPlatform?style=flat-square&logo=twitter){type="joined"}](https://twitter.com/JBPlatform/) [![Slack](https://img.shields.io/badge/Slack-%23intellij--platform-blue?style=flat-square&logo=slack){type="joined"}](https://plugins.jetbrains.com/slack)
 
-Welcome to the IntelliJ Platform SDK – the primary source of documentation for extending the IntelliJ Platform by creating plugins, custom language support, or building a custom IDE.
-
-> We're looking for a [Software Developer](https://www.jetbrains.com/careers/jobs/software-developer-intellij-sdk-advocacy-680/) to work on [Plugin Verifier](verifying_plugin_compatibility.md) tooling.
->
-{style="note"}
+Welcome to the IntelliJ Platform SDK – the primary source of documentation for extending the IntelliJ Platform by creating plugins, custom language support, or UI themes.
 
 ## Getting Started
 

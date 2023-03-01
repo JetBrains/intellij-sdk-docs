@@ -197,7 +197,7 @@ intellij {
 All available JetBrains IDEs versions can be found in the repositories described on the [](intellij_artifacts.md) page.
 
 The version of the IntelliJ Platform IDE that will be used to build the plugin.
-Please see [](plugin_compatibility.md) for more details.
+Please see [](plugin_compatibility.md) and [](build_number_ranges.md) for more details.
 
 {style="narrow"}
 Required

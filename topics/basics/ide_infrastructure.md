@@ -36,6 +36,8 @@ public class MyPluginClass {
 <tab title="Kotlin">
 
 ```kotlin
+import com.intellij.openapi.diagnostic.logger
+
 private val LOG = logger<MyPluginClass>()
 
 class MyPluginClass {

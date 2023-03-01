@@ -138,7 +138,7 @@ public class MyExtensionUsingService {
 ```
 
 A gutter icon for the `ExtensionPointName` declaration allows navigating to the corresponding [`<extensionPoint>`](plugin_configuration_file.md#idea-plugin__extensionPoints__extensionPoint) declaration in <path>plugin.xml</path>.
-Code insight is available for the extension point name String literal (2023.3).
+Code insight is available for the extension point name String literal (2022.3).
 
 ## Dynamic Extension Points
 

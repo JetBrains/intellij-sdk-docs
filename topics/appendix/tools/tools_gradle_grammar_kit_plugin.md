@@ -1,6 +1,6 @@
 # Gradle Grammar-Kit Plugin
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <tldr>
 
@@ -39,7 +39,7 @@ plugins {
 </tab>
 </tabs>
 
-> This project requires `Gradle 7.0` or newer, however it is recommended to use the latest Gradle available.
+> This project requires `Gradle 7.4` or newer, however it is recommended to use the latest Gradle available.
 > Update it with:
 > ```Bash
 > ./gradlew wrapper --gradle-version=VERSION
@@ -97,7 +97,7 @@ Type
 : `String`
 
 Default value
-: `2021.1.2`
+: `2022.3.1`
 
 
 #### jflexRelease
@@ -137,10 +137,10 @@ The `generateLexer` task generates a lexer for the given grammar.
 The task is configured using common [`grammarKit`](#grammar-kit-extension) extension.
 
 
-#### source
+#### sourceFile
 {id="tasks-generatelexer-source"}
 
-The source Flex file to generate the lexer from.
+The source <path>.*flex</path> file to generate the lexer from.
 
 {style="narrow"}
 Required
@@ -211,10 +211,10 @@ The `generateParser` task generates a parser for the given grammar.
 The task is configured using common [`grammarKit`](#grammar-kit-extension) extension.
 
 
-#### source
+#### sourceFile
 {id="tasks-generateparser-source"}
 
-The source BNF file to generate the parser from.
+The source <path>.bnf</path> file to generate the parser from.
 
 {style="narrow"}
 Required

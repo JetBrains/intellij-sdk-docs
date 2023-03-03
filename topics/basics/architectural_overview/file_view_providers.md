@@ -1,6 +1,8 @@
-[//]: # (title: File View Providers)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# File View Providers
+
+<link-summary>Handling multiple languages PSI trees in a single file.</link-summary>
 
 A file view provider ([`FileViewProvider`](%gh-ic%/platform/core-api/src/com/intellij/psi/FileViewProvider.java)) manages access to multiple PSI trees within a single file.
 
@@ -12,8 +14,8 @@ A `FileViewProvider` instance corresponds to a single `VirtualFile`, a single `D
 
 ## How do I get a FileViewProvider?
 
-| Context                         | API                                                                                                                        |
-|---------------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| Context                         | API                                                                                                                    |
+|---------------------------------|------------------------------------------------------------------------------------------------------------------------|
 | [PSI File](psi_files.md)        | [`PsiFile.getViewProvider()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiFile.java)                             |
 | [Virtual File](virtual_file.md) | [`PsiManager.getInstance(project).findViewProvider()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiManager.java) |
 

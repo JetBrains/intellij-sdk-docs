@@ -1,6 +1,8 @@
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
 # Custom Plugin Repository
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<link-summary>Creating custom plugin repositories other than JetBrains Marketplace.</link-summary>
 
 > [Toolbox Enterprise](https://www.jetbrains.com/toolbox-enterprise/) (currently in Early Access) comes with a local built-in IntelliJ plugin repository that allows you to choose specific plugins to be approved within your organization. It also lets you upload and distribute your own plugins inside your company, as well as any publicly available plugin from the internet.
 

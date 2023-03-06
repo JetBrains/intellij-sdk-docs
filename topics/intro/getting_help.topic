@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://helpserver.labs.jb.gg/help/schemas/mvp/html-entities.dtd">
+
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://helpserver.labs.jb.gg/help/schemas/mvp/topic.v2.xsd"
+       id="getting_help" title="Getting Help" switcher-label="Language">
+
+    <!-- TODO temporary workaround as right TOC doesn't switch fully   -->
+    <show-structure depth="0"/>
+
+    <link-summary>How to submit issues about this guide and get support for plugin development.</link-summary>
+
+    <note switcher-key="English">
+        <p>This page is also available in Chinese, please switch Language on right top</p>
+        <p>本页面也提供简体中文版本，请在页面右上方切换 Language 为简体中文</p>
+    </note>
+
+    <chapter title="Getting Help" switcher-key="English" id="getting-help">
+
+        <p>Missing some documentation? Or got stuck developing your plugin?
+            See all the ways of obtaining support below for each case.</p>
+        <p>Please use English in all communication.</p>
+
+    </chapter>
+
+    <chapter title="获取帮助" id="getting-help-CN" switcher-key="Chinese">
+        <p>
+            文档不全？或者开发插件的时候被问题卡住了？请阅读下面各种情况下获得支持的所有方式。
+        </p>
+        <p>
+            请在所有的交流中使用英语。
+        </p>
+    </chapter>
+
+
+    <chapter title="Problems with the Guide" id="problems-with-the-guide" switcher-key="English">
+        <p>If you're having problems with the guide itself, such as missing, incorrect, or confusing content, please <a
+                href="https://youtrack.jetbrains.com/newIssue?project=IJSDK&amp;clearDraft=true&amp;c=">raise an issue
+            on YouTrack</a>.
+            If the problem is easily solved, you can also submit a <a href="intellij-sdk-docs-original_CONTRIBUTING.md">Pull
+                Request</a>.</p>
+        <p>If you want to report (smaller) issues for a
+            <emphasis>specific</emphasis>
+            page, you can also use
+            <control>Was this page helpful</control>
+            feedback form on the bottom of each page by providing more details after clicking the
+            <control>No</control>
+            button.
+            Please try to be as specific as possible and provide your e-mail address for further questions and getting
+            notified of updates.
+        </p>
+        <p>If you just want to share feedback on the guide, again, <a
+                href="https://youtrack.jetbrains.com/newIssue?project=IJSDK&amp;clearDraft=true&amp;c=">raise an
+            issue</a>, even if it's for a discussion, ideas on improvements or suggestions.</p>
+        <note>
+            <p>Please don't use the
+                <control>IJSDK</control>
+                YouTrack project for plugin or <a anchor="problems-with-products">product support</a> requests - it's
+                intended for the SDK and the documentation, and you'll get a better response using one of the methods
+                below.
+            </p>
+        </note>
+    </chapter>
+
+    <chapter title="本指南的问题" id="problems-with-the-guide-CN" switcher-key="Chinese">
+        <p>如果你在使用本指南的时候遇到问题，例如内容缺失，错误或者内容混乱，请在 <a
+                href="https://youtrack.jetbrains.com/newIssue?project=IJSDK&amp;clearDraft=true&amp;c=">YouTrack上提交问题</a>。如果问题很容易得到解决，你也可以提交
+            <a href="intellij-sdk-docs-original_CONTRIBUTING.md">拉取请求</a>。
+        </p>
+
+        <p>
+            如果你想报告特定页面的（小）问题，你还可以使用每个页面底部的 Was this page helpful
+            反馈表，方法是点击No按钮后提供更多详细信息。请尽量具体的描述您的问题并提供您的电子邮件地址，以便于后续问题沟通并在更新时获取通知。
+        </p>
+
+        <p>
+            如果你只是想对本指南提供反馈，同样也是通过<a
+                href="https://youtrack.jetbrains.com/newIssue?project=IJSDK&amp;clearDraft=true&amp;c=">提交问题</a>来进行，即便只是为了讨论，提出改进的想法或建议。
+        </p>
+        <note>
+            请不要使用 IJSDK YouTrack 项目来发起插件开发或者<a anchor="problems-with-products-CN">产品支持</a>请求
+            — 这个项目的本意是关于SDK和文档的。如果使用下列方式之一，你会更好的得到响应。
+        </note>
+    </chapter>
+
+
+    <chapter title="Problems with Code - Support Issues" id="problems-with-code-support-issues" switcher-key="English">
+        <tip>
+            <p>Please see <a href="faq.md">Plugin Development FAQ</a> and <a href="explore_api.md">Explore the IntelliJ
+                Platform API</a> for tips &amp; tricks.</p>
+        </tip>
+        <p>For questions and problems related to plugin development itself (rather than the content of this guide), you
+            have several options:</p>
+        <list>
+            <li><a href="https://plugins.jetbrains.com/slack/">#intellij-platform on JetBrains Platform Slack</a> - this
+                chat room is a great place to ask questions about extending JetBrains products, with answers coming from
+                both JetBrains team members and members of the community
+            </li>
+            <li>
+                <a href="https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development">Plugin
+                    Development Forum</a> - post a message to the support forum.
+                It is regularly updated with answers by JetBrains team members.
+            </li>
+        </list>
+        <p>Of course, all raised questions will be used to try and improve this guide.</p>
+    </chapter>
+
+    <chapter title="代码方面的问题-支持问题" id="problems-with-code-support-issues-CN" switcher-key="Chinese">
+
+        <p>
+            请参考 <a href="faq.md">插件开发常见问题问答</a> 和 <a href="explore_api.md">探索 IntelliJ Platform API</a>
+            来获取相关技巧和窍门。
+            对于与插件开发本身有关的问题和难题（和本指南内容无关），你有几个选择：
+            JetBrains Platform Slack上的#intellij-platform — 这个聊天室是讨论有关扩展JetBrains产品问题的好地方，解答来自JetBrains团队成员和社区成员。
+        </p>
+        <p>
+            <a href="https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development">插件开发论坛</a>
+            - 在支持论坛上发布消息。JetBrains团队成员会定期更新并解答问题。
+            当然，所有收到的问题都将用于尝试和改进本指南。</p>
+
+    </chapter>
+
+    <chapter title="Problems with Products" id="problems-with-products" switcher-key="English">
+        <p>If you have a problem with an IntelliJ Platform-based product, such as IntelliJ IDEA, WebStorm, Rider, etc.,
+            please use any of the regular <a href="https://www.jetbrains.com/support/">Product Support</a> channels.</p>
+    </chapter>
+
+    <chapter title="产品问题" id="problems-with-products-CN" switcher-key="Chinese">
+        <p>
+            如果在使用基于 IntelliJ 平台的产品（例如 IntelliJ IDEA、WebStorm、Rider 等）时遇到问题，请使用任何常规<a
+                href="https://www.jetbrains.com/support/">产品支持</a>渠道。
+        </p>
+
+    </chapter>
+</topic>

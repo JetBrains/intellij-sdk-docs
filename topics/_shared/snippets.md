@@ -1,7 +1,7 @@
 # Snippets
 {is-library="true"}
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <snippet id="missingContent">
 
@@ -9,7 +9,7 @@
 >
 > Please be specific about the topics and reasons for adding them, and leave your email in case we need more details.
 >
-{style="note"}
+{title="Something missing?" style="note"}
 
 </snippet>
 
@@ -17,6 +17,8 @@
 
 > [Subscribe to Marketplace Developer News](https://jb.gg/mp-updates) to receive news and announcements.
 > Also follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/).
+>
+{title="Staying up to date"}
 
 </snippet>
 
@@ -48,7 +50,7 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 >
 > For API annotated with `ApiStatus.@Internal`/`@IntellijInternalApi`, see [](api_internal.md) for more details and replacements.
 >
-{style="note"}
+{title="Non-listed changes" style="note"}
 
 </snippet>
 

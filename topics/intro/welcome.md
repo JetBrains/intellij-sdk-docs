@@ -41,7 +41,7 @@ Watch [Busy Plugin Developers #0](https://www.youtube.com/watch?v=-6D5-xEaYig) t
 </tr>
 </table>
 
-Please see [Getting Help](getting_help.md) if you encounter bugs in this guide or require help with missing content.
+Please see [Getting Help](getting_help.topic) if you encounter bugs in this guide or require help with missing content.
 
 ## Updates
 

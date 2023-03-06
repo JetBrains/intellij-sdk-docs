@@ -1,6 +1,6 @@
-[//]: # (title: Consulting)
+# Consulting
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The following independent companies and individuals provide paid plugin consulting and development services.
 
@@ -42,4 +42,4 @@ Also, consider posting requests in _#jobs_ channel on [JetBrains Platform Slack]
 [bn2]: https://plugins.jetbrains.com/organizations/BeanSoft
 [rnc]: https://plugins.jetbrains.com/plugin/9564-react-native-console
 
-Please [submit a PR or file a YouTrack issue](getting_help.md) for changes or additions to this list.
+Please [submit a PR or file a YouTrack issue](getting_help.topic) for changes or additions to this list.

@@ -1,6 +1,6 @@
-[//]: # (title: About This Guide)
+# About This Guide
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <link-summary>Introduction and summary overview of contents.</link-summary>
 
@@ -12,7 +12,7 @@ All source links and reference lists target IntelliJ Platform %ijPlatform%.
 
 > While browsing this guide, you will notice that there are topics that are greyed out.
 > Unfortunately, the guide is not complete and contains placeholders for specific topics.
-> We are working on increasing the coverage, but if you get stuck due to missing content, please see the [](getting_help.md) section for details on how to get moving again.
+> We are working on increasing the coverage, but if you get stuck due to missing content, please see the [](getting_help.topic) section for details on how to get moving again.
 >
 > The guide is also [Open Source on GitHub](https://github.com/JetBrains/intellij-sdk-docs), and Pull Requests for new content, corrections or updates are always gratefully received.
 > Please see the [Contributing](intellij-sdk-docs-original_CONTRIBUTING.md) page for details.

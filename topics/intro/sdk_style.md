@@ -39,7 +39,7 @@ Define Level 1 heading:
 Legacy notation, should be converted to New Format when editing a page:
 
 ```yaml
-[ // ]: # (title: Contributing to the IntelliJ Platform SDK)
+[//]: # (title: Contributing to the IntelliJ Platform SDK)
 ```
 
 </tab>
@@ -51,7 +51,7 @@ The page title should be as concise as possible, so it can be reused in the [](#
 It **must** be followed by a copyright notice, formatted using HTML comment notation:
 
 ```html
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 ```
 
 #### Excerpt
@@ -85,6 +85,12 @@ Consistent terminology helps the reader grasp new concepts more quickly:
   Once that term is used on a page, authors may use _IDEs_.
 * When referring to JetBrains products always use the full name such as _IntelliJ IDEA Ultimate Edition_.
   However, only use product names when extensibility or functionality is particular to a product.
+
+> TODO/todo comments are discouraged in the main branch of `intellij-sdk-docs`.
+> There are always exceptions, but the best practice is to resolve all TODOs before the final review.
+> If immediate resolution isn't possible, write a YouTrack [SDK Issue](https://youtrack.jetbrains.com/issues/IJSDK) that captures the TODO and remove the comment from the document.
+>
+{title="Do not use TODOs"}
 
 ### Text Format Conventions
 
@@ -230,26 +236,38 @@ If so, it applies a callout style.
 The example below will be displayed as a callout, styled as a "note":
 
 ```
-> This is a note
+> This is a simple note.
 >
 {style="note"}
 ```
 
-> This is a note
+> This is a simple note.
 >
 {style="note"}
 
 The styles available for callouts are:
 
-* `tip` - Information that makes the reader more productive.
+* `tip` - Information that makes the reader more productive (Default).
 * `note` - Information that is important for the reader to understand.
   This callout is reserved for essential points and concepts.
 * `warning` - Information that is critical for the user to understand to prevent failures or errors.
 
-> TODO/todo comments are discouraged in the main branch of `intellij-sdk-docs`.
-> There are always exceptions, but the best practice is to resolve all TODOs before the final review.
-> If immediate resolution isn't possible, write a YouTrack [SDK Issue](https://youtrack.jetbrains.com/issues/IJSDK) that captures the TODO and remove the comment from the document.
+Complex callouts can also specify `title` attribute:
+
+```
+> This is a note.
+> We have a lot of text.
+> Don't make everyone read it fully by adding a good title.
 >
+{title="A useful title"}
+```
+
+> This is a note.
+> We have a lot of text.
+> Don't make everyone read it fully by
+> adding a good title.
+>
+{title="A useful title"}
 
 ### Images
 

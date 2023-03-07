@@ -13,17 +13,14 @@
     <link-summary>How to submit issues about this guide and get support for plugin development.</link-summary>
 
     <note switcher-key="English">
-        <p>This page is also available in Chinese, please switch Language on right top</p>
-        <p>本页面也提供简体中文版本，请在页面右上方切换 Language 为简体中文</p>
+        <p>This page is also available in Chinese (switch Language in the top bar).</p>
+        <p>本页面也提供简体中文版本，请在页面右上方切换 Language 为简体中文。</p>
     </note>
 
-    <chapter title="Getting Help" switcher-key="English" id="getting-help">
 
-        <p>Missing some documentation? Or got stuck developing your plugin?
-            See all the ways of obtaining support below for each case.</p>
-        <p>Please use English in all communication.</p>
-
-    </chapter>
+    <p switcher-key="English">Missing some documentation? Or got stuck developing your plugin?
+        See all the ways of obtaining support below for each case.</p>
+    <p switcher-key="English">Please use English in all communication.</p>
 
     <chapter title="获取帮助" id="getting-help-CN" switcher-key="Chinese">
         <p>

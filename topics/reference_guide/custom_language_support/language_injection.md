@@ -1,6 +1,6 @@
-# Language Injection
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# Language Injection
 
 <tldr>
 
@@ -43,7 +43,7 @@ Multiple parts are then considered belonging together.
 
 As a plugin author, you can provide language injection in different ways:
 
-* For simple cases, the bundled [IntelliLang plugin](https://plugins.jetbrains.com/plugin/1105-intellilang) can handle injections,
+* For simple cases, the bundled [IntelliLang plugin](https://plugins.jetbrains.com/plugin/13374-intellilang) can handle injections,
   and plugin authors need to provide a configuration with patterns that specify the context where languages should be injected.
   IntelliLang can also be extended to support unknown custom languages.
 * Implementing the `com.intellij.languageInjectionContributor` extension point (EP) provides a high-level API for the injection of other languages.

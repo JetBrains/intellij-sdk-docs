@@ -7,30 +7,30 @@
         <search-scope/>
         <fallback-url/>
         <download-page>https://jb.gg/ipe</download-page>
-        <config-download-title>IntelliJ Platform Explorer</config-download-title>
-        <config-showDownloadButton>true</config-showDownloadButton>
+        <download-title>IntelliJ Platform Explorer</download-title>
+        <showDownloadButton>true</showDownloadButton>
         <generate-sitemap-url-prefix>https://plugins.jetbrains.com/docs/intellij/</generate-sitemap-url-prefix>
-        <config-feedbackRequireEmail>false</config-feedbackRequireEmail>
-        <config-feedback-url>https://forms-service.jetbrains.com/feedback</config-feedback-url>
-        <config-feedback-widget>true</config-feedback-widget>
-        <config-webmaster>https://plugins.jetbrains.com/docs/intellij/getting-help.html</config-webmaster>
-        <config-feedback-support>https://www.jetbrains.com/support/</config-feedback-support>
-        <config-sideblocks>true</config-sideblocks>
-        <config-search-scopes-provider>https://data.services.jetbrains.com/search/</config-search-scopes-provider>
+        <feedbackRequireEmail>false</feedbackRequireEmail>
+        <feedback-url>https://forms-service.jetbrains.com/feedback</feedback-url>
+        <feedback-widget>true</feedback-widget>
+        <webmaster>https://plugins.jetbrains.com/docs/intellij/getting-help.html</webmaster>
+        <feedback-support>https://www.jetbrains.com/support/</feedback-support>
+        <sideblocks>true</sideblocks>
+        <search-scopes-provider>https://data.services.jetbrains.com/search/</search-scopes-provider>
         <og-twitter>@JBPlatform</og-twitter>
         <og-image>https://resources.jetbrains.com/storage/products/jetbrains/img/meta/preview.png</og-image>
         <enable-browser-edits>true</enable-browser-edits>
         <browser-edits-url>https://github.com/JetBrains/intellij-sdk-docs/edit/main/</browser-edits-url>
         <images-prefix-override>images/</images-prefix-override>
-        <noindex-content-in-deprecated>false</noindex-content-in-deprecated>
-        <noindex-content-in-eap>false</noindex-content-in-eap>
-        <noindex-content-in-release>false</noindex-content-in-release>
+        <noindex-content status="deprecated">false</noindex-content>
+        <noindex-content status="eap">false</noindex-content>
+        <noindex-content status="release">false</noindex-content>
 
-        <config-algolia-api-key>8c2683cac2d71d547b55183297abb506</config-algolia-api-key>
-        <config-algolia-id>OHIV241QET</config-algolia-id>
-        <config-algolia-index>prod_JETBRAINSCOM_HELP</config-algolia-index>
-        <config-algolia-product-id>intellij</config-algolia-product-id>
-        <config-algloia-product-version></config-algloia-product-version>
+        <algolia-api-key>8c2683cac2d71d547b55183297abb506</algolia-api-key>
+        <algolia-id>OHIV241QET</algolia-id>
+        <algolia-index>prod_JETBRAINSCOM_HELP</algolia-index>
+        <algolia-product-id>intellij</algolia-product-id>
+        <algolia-product-version></algolia-product-version>
 
         <analytics-head-script-file>google-analytics-code.html</analytics-head-script-file>
         <analytics-body-html-file>google-analytics-noscript.html</analytics-body-html-file>

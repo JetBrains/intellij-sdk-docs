@@ -16,7 +16,7 @@
         <webmaster>https://plugins.jetbrains.com/docs/intellij/getting-help.html</webmaster>
         <feedback-support>https://www.jetbrains.com/support/</feedback-support>
         <sideblocks>true</sideblocks>
-        <search-scopes-provider>https://data.services.jetbrains.com/search/</search-scopes-provider>
+        <config-search-scopes-provider>https://data.services.jetbrains.com/search/</config-search-scopes-provider>
         <og-twitter>@JBPlatform</og-twitter>
         <og-image>https://resources.jetbrains.com/storage/products/jetbrains/img/meta/preview.png</og-image>
         <enable-browser-edits>true</enable-browser-edits>

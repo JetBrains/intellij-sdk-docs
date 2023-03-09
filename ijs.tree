@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE instance-profile
         SYSTEM "https://helpserver.labs.jb.gg/help/schemas/mvp/product-profile.dtd">
-<instance-profile id="ijs" name="IntelliJ Platform Plugin SDK" start-page="welcome.md" status="release">
-  <toc-element topic="welcome.md" toc-title="Home"/>
+<instance-profile id="ijs" name="IntelliJ Platform Plugin SDK" start-page="welcome.topic">
+  <toc-element topic="welcome.topic" toc-title="Home"/>
   <toc-element toc-title="Introduction">
     <toc-element topic="intellij_platform.md">
       <toc-element topic="platform_contributions.md"/>

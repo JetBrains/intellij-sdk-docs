@@ -31,6 +31,8 @@ To improve startup performance, avoid any heavy initializations in the construct
 >
 > Other dependencies must be [acquired only when needed](#retrieving-a-service) in all corresponding methods (see `someServiceMethod()` in [Project Service Sample](#project-service-sample)).
 >
+> Use inspection <control>Plugin DevKit | Code | Non-default constructors for service and extension class</control> to verify code.
+>
 {style="warning"}
 
 ## Light Services

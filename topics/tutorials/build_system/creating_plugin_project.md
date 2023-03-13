@@ -71,7 +71,7 @@ The generated `my_plugin` project <path>build.gradle.kts</path> file:
 ```kotlin
 plugins {
   id("java")
-  id("org.jetbrains.intellij") version "1.13.1"
+  id("org.jetbrains.intellij") version "1.13.2"
 }
 
 group = "com.example"

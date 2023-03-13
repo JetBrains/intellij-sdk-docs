@@ -10,7 +10,7 @@
 
 </tldr>
 
-> Plugins targeting 2023.1 and later only should use [`DocumentationTarget`](%gh-ic-master%/platform/lang-impl/src/com/intellij/platform/documentation/DocumentationTarget.kt)
+> Plugins targeting 2023.1 and later only should use [`DocumentationTarget`](%gh-ic-master%/platform/lang-impl/src/com/intellij/platform/backend/documentation/DocumentationTarget.kt)
 > API provided via `com.intellij.platform.documentation.targetProvider` extension point instead.
 > This page will be updated shortly with more information.
 

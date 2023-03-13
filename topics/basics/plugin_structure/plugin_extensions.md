@@ -26,13 +26,14 @@ See [](explore_api.md) for more information and strategies.
 
 ## Declaring Extensions
 
-> Auto-completion, Quick Documentation, and other code insight features are available on extension point tags and attributes.
->
+> Auto-completion, Quick Documentation, and other code insight features are available on extension point tags and attributes in <path>plugin.xml</path>.
+
+<procedure title="Declaring Extension">
 
 1. Add an [`<extensions>`](plugin_configuration_file.md#idea-plugin__extensions) element to your <path>plugin.xml</path> if it's not yet present there.
    Set the `defaultExtensionNs` attribute to one of the following values:
-   * `com.intellij`, if your plugin extends the IntelliJ Platform core functionality.
-   * `{ID of a plugin}`, if your plugin extends the functionality of another plugin (must configure [Plugin Dependencies](plugin_dependencies.md)).
+   * `com.intellij` if your plugin extends the IntelliJ Platform core functionality.
+   * `{ID of a plugin}` if your plugin extends the functionality of another plugin (must configure [Plugin Dependencies](plugin_dependencies.md)).
 2. Add a new child element to the `<extensions>` element.
    The child element's name must match the name of the extension point you want the extension to access.
 3. Depending on the type of the extension point, do one of the following:
@@ -40,8 +41,10 @@ See [](explore_api.md) for more information and strategies.
    * If the extension point was declared using the `beanClass` attribute, set all properties annotated with the [`@Attribute`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) and [`Tag`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Tag.java) annotations in the specified bean class.
 
    See the [](plugin_extension_points.md#declaring-extension-points) section for details.
-
+4. Implement the extension API as required.
    **NB:** When using Kotlin, use `class` and never `object` for all implementations ([more details](using_kotlin.md#caution)).
+
+</procedure>
 
 To clarify this procedure, consider the following sample section of the <path>plugin.xml</path> file that defines two extensions designed to access the `com.intellij.appStarter` and `com.intellij.projectTemplatesFactory` extension points in the IntelliJ Platform,
 and one extension to access the `another.plugin.myExtensionPoint` extension point in another plugin `another.plugin`:

@@ -1,12 +1,14 @@
-[//]: # (title: Module)
+# Module
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <tldr>
 
 **Product Help:** [Modules](https://www.jetbrains.com/help/idea/modules.html)
 
 </tldr>
+
+<link-summary>Modules represent a unit of a project.</link-summary>
 
 A _module_ is a discrete unit of functionality that can be run, tested, and debugged independently.
 Modules include such things as source code, build scripts, unit tests, deployment descriptors, etc.
@@ -31,7 +33,7 @@ Plugins can store additional data associated with a module by creating facets or
 The IntelliJ Platform provides a number of classes and interfaces you can use to work with modules:
 
 * [`Module`](%gh-ic%/platform/core-api/src/com/intellij/openapi/module/Module.java)
-* [`ModuleUtil`](%gh-ic%/platform/lang-api/src/com/intellij/openapi/module/ModuleUtil.java)
+* [`ModuleUtil`](%gh-ic%/platform/lang-api/src/com/intellij/openapi/module/ModuleUtil.java) and [`ModuleUtilCore`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/module/ModuleUtilCore.java)
 * [`ModuleManager`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/module/ModuleManager.kt)
 * [`ModuleRootManager`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootManager.java)
 * [`ModuleRootModel`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootModel.java)

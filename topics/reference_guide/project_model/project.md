@@ -1,6 +1,8 @@
-[//]: # (title: Project)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# Project
+
+<link-summary>Introduction to projects and their structure. Retrieving and modifying project setup.</link-summary>
 
 <tldr>
 

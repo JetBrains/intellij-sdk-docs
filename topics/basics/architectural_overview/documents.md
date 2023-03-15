@@ -1,6 +1,8 @@
-[//]: # (title: Documents)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# Documents
+
+<link-summary>Introduction to documents - an editable sequence of Unicode characters, typically storing the content of a virtual file.</link-summary>
 
 A [`Document`](%gh-ic%/platform/core-api/src/com/intellij/openapi/editor/Document.java) is an editable sequence of Unicode characters, typically corresponding to the text contents of a [virtual file](virtual_file.md).
 

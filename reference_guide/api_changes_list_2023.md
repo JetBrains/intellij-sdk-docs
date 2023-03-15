@@ -72,6 +72,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ### IntelliJ Platform 2023.2
 
+`com.intellij.openapi.actionSystem.AnActionEvent.getInputEvent()` method return type changed from `InputEvent` to `@Nullable InputEvent`
+: This may break source-compatibility with inheritors written in Kotlin.
+
 ## 2023.1
 
 ### IntelliJ Platform 2023.1

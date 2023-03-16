@@ -61,8 +61,33 @@ In such cases, simply delete <path>test-system/caches</path> in your [sandbox di
 
 ### How to enable DEBUG/TRACE logging?
 
-Provide JVM system properties (Gradle: via `systemProperty` for `test` task) `idea.log.debug.categories` or `idea.log.trace.categories`, respectively.
+Provide JVM system properties `idea.log.debug.categories` or `idea.log.trace.categories` to specify logger category name, respectively.
 Multiple categories can be set using a comma separated value list.
+
+**Sample** Set DEBUG level for categories `com.my.plugin.ui` and `com.my.plugin.backend`:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+tasks {
+  test {
+    systemProperty("idea.log.debug.categories", "com.my.plugin.ui,com.my.plugin.backend")
+  }
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+test {
+  systemProperty("idea.log.debug.categories", "com.my.plugin.ui,com.my.plugin.backend")
+}
+```
+
+</tab>
+</tabs>
 
 ### How to get separate logs for failing tests?
 

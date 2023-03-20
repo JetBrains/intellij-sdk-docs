@@ -125,11 +125,11 @@ In some cases (e.g., the same heading text appears multiple times on the same pa
 ```
 ## Task 1
 ### Properties
-{id="task1-properties"}
+{#task1-properties}
 [...]
 ## Task 2
 ### Properties
-{id="task2-properties"}
+{#task2-properties}
 [...]
 ```
 

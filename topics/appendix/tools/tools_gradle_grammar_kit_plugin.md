@@ -90,7 +90,7 @@ grammarKit {
 
 
 #### grammarKitRelease
-{id="grammar-kit-extension-grammarkitrelease"}
+{#grammar-kit-extension-grammarkitrelease}
 
 The release version of the [Grammar-Kit](https://github.com/JetBrains/Grammar-Kit) to use.
 
@@ -103,7 +103,7 @@ Default value
 
 
 #### jflexRelease
-{id="grammar-kit-extension-jflexrelease"}
+{#grammar-kit-extension-jflexrelease}
 
 The version of the IntelliJ-patched JFlex, a [fork of JFlex](https://github.com/JetBrains/intellij-deps-jflex) lexer generator for IntelliJ Platform API.
 
@@ -116,7 +116,7 @@ Default value
 
 
 #### intellijRelease
-{id="grammar-kit-extension-intellijrelease"}
+{#grammar-kit-extension-intellijrelease}
 
 An optional IntelliJ version to build the classpath for [`GenerateParser`](#generateparser-task) and [`GenerateLexer`](#generatelexer-task) tasks.
 
@@ -133,14 +133,14 @@ Default value
 ## Tasks
 
 ### generateLexer
-{id="generatelexer-task"}
+{#generatelexer-task}
 
 The `generateLexer` task generates a lexer for the given grammar.
 The task is configured using common [`grammarKit`](#grammar-kit-extension) extension.
 
 
 #### sourceFile
-{id="tasks-generatelexer-source"}
+{#tasks-generatelexer-source}
 
 The source <path>.*flex</path> file to generate the lexer from.
 
@@ -153,7 +153,7 @@ Type
 
 
 #### targetDir
-{id="tasks-generatelexer-targetdir"}
+{#tasks-generatelexer-targetdir}
 
 The path to the target directory for the generated lexer.
 
@@ -166,7 +166,7 @@ Type
 
 
 #### targetClass
-{id="tasks-generatelexer-targetclass"}
+{#tasks-generatelexer-targetclass}
 
 The Java file name where the generated lexer will be written.
 
@@ -179,7 +179,7 @@ Type
 
 
 #### skeleton
-{id="tasks-generatelexer-skeleton"}
+{#tasks-generatelexer-skeleton}
 
 An optional path to the skeleton file to use for the generated lexer.
 The path will be provided as `--skel` option.
@@ -194,7 +194,7 @@ Default
 
 
 #### purgeOldFiles
-{id="tasks-generatelexer-purgeoldfiles"}
+{#tasks-generatelexer-purgeoldfiles}
 
 Purge old files from the target directory before generating the lexer.
 
@@ -207,14 +207,14 @@ Default
 
 
 ### generateParser
-{id="generateparser-task"}
+{#generateparser-task}
 
 The `generateParser` task generates a parser for the given grammar.
 The task is configured using common [`grammarKit`](#grammar-kit-extension) extension.
 
 
 #### sourceFile
-{id="tasks-generateparser-source"}
+{#tasks-generateparser-source}
 
 The source <path>.bnf</path> file to generate the parser from.
 
@@ -227,7 +227,7 @@ Type
 
 
 #### targetRoot
-{id="tasks-generateparser-targetroot"}
+{#tasks-generateparser-targetroot}
 
 The path to the target directory for the generated parser.
 
@@ -240,7 +240,7 @@ Default
 
 
 #### pathToParser
-{id="tasks-generateparser-pathtoparser"}
+{#tasks-generateparser-pathtoparser}
 
 The location of the generated parser class, relative to the [`targetRoot`](#tasks-generateparser-targetroot).
 
@@ -253,7 +253,7 @@ Type
 
 
 #### pathToPsiRoot
-{id="tasks-generateparser-pathtopsiroot"}
+{#tasks-generateparser-pathtopsiroot}
 
 The location of the generated PSI files, relative to the [`targetRoot`](#tasks-generateparser-targetroot).
 
@@ -266,7 +266,7 @@ Type
 
 
 #### purgeOldFiles
-{id="tasks-generateparser-purgeoldfiles"}
+{#tasks-generateparser-purgeoldfiles}
 
 Purge old files from the target directory before generating the parser.
 

@@ -13,7 +13,7 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 ## 2023
 
 ### February
-{id="february-23"}
+{#february-23}
 
 Inspection Options
 : Add a section on [](inspection_options.md), which allows extending inspection behavior based on the input provided by user at runtime.
@@ -24,7 +24,7 @@ Minor Changes and Additions
 - Document [](spell_checking.md#runtimedictionaryprovider) EP for spellchecking.
 
 ### January
-{id="january-23"}
+{#january-23}
 
 Minor Changes and Additions
 :
@@ -34,7 +34,7 @@ Minor Changes and Additions
 ## 2022
 
 ### December
-{id="december-22"}
+{#december-22}
 
 Intention Preview
 : Add information about how to prepare intentions to show [](code_intentions_preview.md).
@@ -44,7 +44,7 @@ Minor Changes and Additions
 - Add information for new [](kotlin_ui_dsl_version_2.md#cell-align) methods in Kotlin UI DSL Version 2.
 
 ### November
-{id="november-22"}
+{#november-22}
 
 Plugin User Experience
 : Add a new section about how to improve [plugin UX](plugin_user_experience.md) and overall plugin quality.
@@ -54,14 +54,14 @@ Minor Changes and Additions
 - Add information about threading in Actions in [](basic_action_system.md#principal-implementation-overrides).
 
 ### October
-{id="october-22"}
+{#october-22}
 
 Minor Changes and Additions
 :
 - Add information about [sharing settings](persisting_state_of_components.md#sharing-settings-between-ide-installations) between different IDEs installations.
 
 ### September
-{id="september-22"}
+{#september-22}
 
 Extract Part X — Themes
 :
@@ -79,7 +79,7 @@ Minor Changes and Additions
 - Language injections: controlling [](language_injection.md#formatting)
 
 ### August
-{id="august-22"}
+{#august-22}
 
 Plugin Configuration Page
 : Update the [](plugin_configuration_file.md) page to describe all the elements in detail.
@@ -88,7 +88,7 @@ Source links migrated from Upsource to GitHub
 : All source links now point to GitHub instead of Upsource (which is going to be [sunset](https://blog.jetbrains.com/upsource/2022/01/31/upsource-end-of-sales-announcement/)).
 
 ### July
-{id="july-22"}
+{#july-22}
 
 Status Bar Widgets
 : Add section [](status_bar_widgets.md) describing how to implement your own status bar widgets.
@@ -98,7 +98,7 @@ Minor Changes and Additions
 - Add overview of [](basic_action_system.md#useful-action-base-classes).
 
 ### June
-{id="june-22"}
+{#june-22}
 
 PHP Type Providers
 : Add section [](php_open_api_php_type_providers.md) about type providers describing type inference in PhpStorm and how to implement your own type provider.
@@ -120,7 +120,7 @@ Minor Changes and Additions
 - Moved [](tools_gradle_grammar_kit_plugin.md) documentation to _Appendix III — Tooling_
 
 ### May
-{id="may-22"}
+{#may-22}
 
 Navigation Bar
 : Add [](navbar.md) section with an [accompanying tutorial](structure_aware_navbar.md) showing how to implement a navigation bar for a custom language.
@@ -136,13 +136,13 @@ Minor Changes and Additions
 - Add [](rename_refactoring.md) paragraphs mentioning `RenameInputValidator(Ex)`.
 
 ### April
-{id="april-22"}
+{#april-22}
 
 Internal API Migration
 : As API annotated with `ApiStatus.@Internal` should not be used in plugins, refer to [](api_internal.md) for a list corresponding API replacements and additional information.
 
 ### March
-{id="march-22"}
+{#march-22}
 
 Code Samples Build Scripts Migrated to Kotlin
 : All [](code_samples.md) now use Kotlin DSL in their Gradle build scripts.
@@ -154,7 +154,7 @@ Alternatives to Implementing a Plugin
 : Add [](plugin_alternatives.md) section describing alternative approaches to extending IDE functionality without actual plugin development.
 
 ### February
-{id="february-22"}
+{#february-22}
 
 Parameter Info
 : Add [](parameter_info.md) section explaining how information about function parameters can be shown in the editor.
@@ -163,7 +163,7 @@ File and Code Templates
 : Add [](file_and_code_templates.md) section explaining how to implement functionality that allows generating files and code fragments containing repetitive text and patterns.
 
 ### January
-{id="january-22"}
+{#january-22}
 
 Highlighting
 : Add [](syntax_errors.md) and [](controlling_highlighting.md) sections explaining syntax highlighting basics and filtering highlighting information.
@@ -174,20 +174,20 @@ IDE Infrastructure
 ## 2021
 
 ### December
-{id="december-21"}
+{#december-21}
 
 Trusted Project
 : Potentially unsafe features must be guarded using [Trusted Project API](trusted_projects.md).
 
 ### November
-{id="november-21"}
+{#november-21}
 
 Language Injection
 : Add [](language_injection.md) section that shows how the IntelliJ Platform handles different languages within the same source file.
 
 
 ### September
-{id="september-21"}
+{#september-21}
 
 IDE Infrastructure
 : [](ide_infrastructure.md) handles Logging, Error Reporting, Runtime Information, and how to provide Context Help.
@@ -196,13 +196,13 @@ Extension Point Lists: Listeners, Deprecation status
 : [](extension_point_list.md) now contains sections listing all provided [Listener](plugin_listeners.md) Topics. See also corresponding Extension Point Lists under _Part VIII — Product Specific_. Also, all deprecated API now has a dedicated tag.
 
 ### July
-{id="july-21"}
+{#july-21}
 
 Plugin Signing
 : [](plugin_signing.md) describes the plugin signing process, explains how to generate a certificate, configure the Gradle [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) task, and introduces a standalone CLI tool.
 
 ### June
-{id="june-21"}
+{#june-21}
 
 Testing FAQ
 : [](testing_faq.md) page lists common issues, useful classes, and techniques for writing and maintaining tests.
@@ -211,7 +211,7 @@ Documentation Provider
 : Add [](documentation.md) section with an [accompanying tutorial](documentation_provider.md) that show how to implement a `DocumentationProvider` for custom languages.
 
 ### May
-{id="may-21"}
+{#may-21}
 
 IDE specific Extension Point Lists
 : See _Part VIII — Product Specific_.
@@ -220,7 +220,7 @@ New Guide - Explore the IntelliJ Platform API
 : Add a new section [](explore_api.md) that describes how plugin authors work with the IntelliJ Platform API and what tools they use.
 
 ### March
-{id="march-21"}
+{#march-21}
 
 Element Patterns
 : Add a new section about [Element Patterns](element_patterns.md) that are used when implementing [Completion Contributors](completion_contributor.md) or [PSI Reference Contributors](psi_references.md#contributed-references).
@@ -237,25 +237,25 @@ Unified AST
 ## 2020
 
 ### December
-{id="december-20"}
+{#december-20}
 
 IntelliJ Platform Explorer
 : Explore usages of [Extension Points](extension_point_list.md) in open-source plugins using [IntelliJ Platform Explorer](https://jb.gg/ipe).
 
 ### November
-{id="november-20"}
+{#november-20}
 
 Extension Point List
 : All EPs [available in IJ Platform and Android](extension_point_list.md) can now be browsed conveniently.
 
 ### August
-{id="august-20"}
+{#august-20}
 
 README added to Code Samples
 : All code samples used in this guide now come with <path>README</path>, making it easier to browse them. They can be conveniently accessed via a [separate GitHub repository](https://github.com/JetBrains/intellij-sdk-code-samples).
 
 ### June-20
-{id="june-20"}
+{#june-20}
 
 Dynamic Plugins update
 : Added new sections _Code_ and _Troubleshooting_ to [Dynamic Plugins](dynamic_plugins.md).
@@ -267,7 +267,7 @@ Disposer & Disposable
 : Added [reference](disposers.md) discussing resource cleanup/management.
 
 ### May
-{id="may-20"}
+{#may-20}
 
 Settings (Preferences)
 : Added [guide](settings_guide.md) and [tutorial](settings_tutorial.md) on integrating with IDE Settings dialog.
@@ -276,19 +276,19 @@ UI Inspector
 : Inspect Swing components and associated data (like `AnAction` for menu item) using [UI Inspector](internal_ui_inspector.md).
 
 ### March
-{id="march-20"}
+{#march-20}
 
 JCEF Support
 : Allows [embedding](jcef.md) Chromium-based browser in the IDE.
 
 ### February
-{id="february-20"}
+{#february-20}
 
 All Code Samples converted to Gradle
 : [All samples](https://github.com/JetBrains/intellij-sdk-docs/tree/main/code_samples) now use the [recommended solution](creating_plugin_project.md) of setting up plugin projects.
 
 ### January
-{id="january-20"}
+{#january-20}
 
 Custom Language Support Tutorial converted to Gradle
 : The [corresponding tutorial](custom_language_support_tutorial.md) and [Testing a Custom Language Plugin](writing_tests_for_plugins.md) have been updated and enhanced as well.
@@ -299,7 +299,7 @@ Targeting specific IDEs
 ## 2019
 
 ### December
-{id="december-19"}
+{#december-19}
 
 Dynamic Plugins support
 : Added starting point [Dynamic Plugins](dynamic_plugins.md) for migrating plugins (IntelliJ Platform 2020.1 and later).
@@ -308,19 +308,19 @@ Plugin Components migration
 : Components being a legacy feature, the [updated page](plugin_components.md) describes migrating them to modern replacement API.
 
 ### October
-{id="october-19"}
+{#october-19}
 
 Part X — Plugin Repository moved
 : All contents have been moved to [JetBrains Marketplace Documentation](https://plugins.jetbrains.com/docs/marketplace/).
 
 ### July
-{id="july-19"}
+{#july-19}
 
 New page: Optimizing Performance
 : Optimizing performance when [working with PSI](psi_performance.md), [during indexing](indexing_and_psi_stubs.md#improving-indexing-performance), and [](general_threading_rules.md#avoiding-ui-freezes).
 
 ### May
-{id="may-19"}
+{#may-19}
 
 New Page: Kotlin UI DSL
 : [Describes preferred way](kotlin_ui_dsl.md) of building UI/dialogs for IntelliJ Platform 2019.2 and later.

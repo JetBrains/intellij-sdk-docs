@@ -84,7 +84,7 @@ Deprecated elements are omitted in the list above.
 {style="note"}
 
 ## `idea-plugin`
-{id="idea-plugin"}
+{#idea-plugin}
 
 The <path>plugin.xml</path> file root element.
 
@@ -125,7 +125,7 @@ Children
   - [`<project-components>`](#idea-plugin__project-components)
 
 ### `id`
-{id="idea-plugin__id"}
+{#idea-plugin__id}
 
 A unique identifier of the plugin.
 It should be a fully qualified name similar to Java packages and must not collide with the ID of existing plugins.
@@ -149,7 +149,7 @@ Example
 ```
 
 ### `name`
-{id="idea-plugin__name"}
+{#idea-plugin__name}
 
 The user-visible plugin display name (Title Case).
 
@@ -166,7 +166,7 @@ Example
 ```
 
 ### `version`
-{id="idea-plugin__version"}
+{#idea-plugin__version}
 
 The plugin version displayed in the <control>Plugins</control> settings dialog and in the JetBrains Marketplace plugin page.
 Plugins uploaded to the JetBrains Marketplace must follow semantic versioning.
@@ -185,7 +185,7 @@ Example
 ```
 
 ### `product-descriptor`
-{id="idea-plugin__product-descriptor"}
+{#idea-plugin__product-descriptor}
 
 [Paid](https://plugins.jetbrains.com/build-and-market) or [Freemium](https://plugins.jetbrains.com/docs/marketplace/freemium.html) plugin descriptor.
 
@@ -210,7 +210,7 @@ Attributes
   Default value: `false`.
 
 ### `idea-version`
-{id="idea-plugin__idea-version"}
+{#idea-plugin__idea-version}
 
 The plugin's range of compatible IntelliJ-based IDE versions.
 
@@ -242,7 +242,7 @@ Examples
     ```
 
 ### `vendor`
-{id="idea-plugin__vendor"}
+{#idea-plugin__vendor}
 
 The vendor name or organization ID (if created) in the <control>Plugins</control> settings dialog and in the JetBrains Marketplace plugin page.
 
@@ -276,7 +276,7 @@ Examples
     ```
 
 ### `description`
-{id="idea-plugin__description"}
+{#idea-plugin__description}
 
 The plugin description displayed on the JetBrains Marketplace plugin page and in the <control>Plugins</control> settings dialog.
 
@@ -305,7 +305,7 @@ Example
   ```
 
 ### `change-notes`
-{id="idea-plugin__change-notes"}
+{#idea-plugin__change-notes}
 
 A short summary of new features, bugfixes, and changes provided with the latest plugin version.
 Change notes are displayed on the JetBrains Marketplace plugin page and in the <control>Plugins</control> settings dialog.
@@ -338,7 +338,7 @@ Example
 
 
 ### `depends`
-{id="idea-plugin__depends"}
+{#idea-plugin__depends}
 
 Specifies a dependency on another plugin or a module of an IntelliJ Platform-based product.
 A single [`<idea-plugin>`](#idea-plugin) element can contain multiple `<depends>` elements.
@@ -394,7 +394,7 @@ Examples
     ```
 
 ### `incompatible-with`
-{id="idea-plugin__incompatible-with"}
+{#idea-plugin__incompatible-with}
 _Supported since 2020.2_
 
 Declares incompatibility with a provided module.
@@ -414,7 +414,7 @@ Example
 ```
 
 ### `resource-bundle`
-{id="idea-plugin__resource-bundle"}
+{#idea-plugin__resource-bundle}
 
 A resource bundle to be used with message key attributes in extension declarations and for [action and group localization](basic_action_system.md#localizing-actions-and-groups).
 A single [`<idea-plugin>`](#idea-plugin) element can contain multiple `<resource-bundle>` elements.
@@ -430,7 +430,7 @@ Example
 ```
 
 ### `applicationListeners`
-{id="idea-plugin__applicationListeners"}
+{#idea-plugin__applicationListeners}
 
 Defines the application-level listeners.
 
@@ -444,7 +444,7 @@ Children
 : [`<listener>`](#idea-plugin__listeners__listener)
 
 ### `projectListeners`
-{id="idea-plugin__projectListeners"}
+{#idea-plugin__projectListeners}
 
 Defines the project-level listeners.
 
@@ -458,7 +458,7 @@ Children
 : [`<listener>`](#idea-plugin__listeners__listener)
 
 #### `listener`
-{id="idea-plugin__listeners__listener"}
+{#idea-plugin__listeners__listener}
 
 Defines a single application or project-level listener.
 A single [`<applicationListeners>`](#idea-plugin__applicationListeners) or [`<projectListeners>`](#idea-plugin__projectListeners) can contain multiple `<listener>` elements.
@@ -501,7 +501,7 @@ Example
   ```
 
 ### `actions`
-{id="idea-plugin__actions"}
+{#idea-plugin__actions}
 
 Defines the plugin actions.
 
@@ -535,7 +535,7 @@ Example
   ```
 
 #### `action`
-{id="idea-plugin__actions__action"}
+{#idea-plugin__actions__action}
 
 A single action entry of the [`<actions>`](#idea-plugin__actions) implemented by the plugin.
 A single [`<actions>`](#idea-plugin__actions) element can contain multiple `<action>` elements.
@@ -595,7 +595,7 @@ Examples
     ```
 
 ##### `add-to-group`
-{id="idea-plugin__actions__action__add-to-group"}
+{#idea-plugin__actions__action__add-to-group}
 
 Specifies that the action should be added to an existing group.
 A single action can be added to multiple groups.
@@ -629,7 +629,7 @@ Example
   ```
 
 ##### `keyboard-shortcut`
-{id="idea-plugin__actions__action__keyboard-shortcut"}
+{#idea-plugin__actions__action__keyboard-shortcut}
 
 Specifies the keyboard shortcut for the action.
 A single action can have several keyboard shortcuts.
@@ -680,7 +680,7 @@ Examples
     ```
 
 ##### `mouse-shortcut`
-{id="idea-plugin__actions__action__mouse-shortcut"}
+{#idea-plugin__actions__action__mouse-shortcut}
 
 Specifies the mouse shortcut for the action.
 A single action can have several mouse shortcuts.
@@ -729,7 +729,7 @@ Examples
     ```
 
 ##### `override-text`
-{id="idea-plugin__actions__action__override-text"}
+{#idea-plugin__actions__action__override-text}
 
 Defines an alternate version of the text for the menu action or group.
 
@@ -767,7 +767,7 @@ Examples
     ```
 
 ##### `abbreviation`
-{id="idea-plugin__actions__action__abbreviation"}
+{#idea-plugin__actions__action__abbreviation}
 
 Defines an alias for the action name which the user can use in <ui-path>Help | Find Action...</ui-path> or <ui-path>Navigate | Search Everywhere</ui-path> popups.
 A single action can have multiple abbreviations.
@@ -787,7 +787,7 @@ Example
 ```
 
 ##### `synonym`
-{id="idea-plugin__actions__action__synonym"}
+{#idea-plugin__actions__action__synonym}
 
 Defines an alternative name for searching the action by name.
 A single action can have multiple synonyms.
@@ -810,7 +810,7 @@ Example
 ```
 
 #### `group`
-{id="idea-plugin__actions__group"}
+{#idea-plugin__actions__group}
 
 Defines an action group.
 The `<action>`, `<group>` and `<separator>` elements defined inside the group are automatically included in it.
@@ -888,7 +888,7 @@ Examples
     ```
 
 #### `reference`
-{id="idea-plugin__actions__reference"}
+{#idea-plugin__actions__reference}
 
 Allows adding an existing action to the group.
 The element can be used directly under the [`<actions>`](#idea-plugin__actions) element, or in the [`<group>`](#idea-plugin__actions__group) element.
@@ -923,7 +923,7 @@ Examples
     ```
 
 #### `separator`
-{id="idea-plugin__actions__separator"}
+{#idea-plugin__actions__separator}
 
 Defines a separator between actions in a group.
 The element can be used directly under the [`<actions>`](#idea-plugin__actions) element with the child [`<add-to-group>`](#idea-plugin__actions__action__add-to-group) element defining the target group, or in the [`<group>`](#idea-plugin__actions__group) element.
@@ -975,7 +975,7 @@ Examples
     ```
 
 ### `extensions`
-{id="idea-plugin__extensions"}
+{#idea-plugin__extensions}
 
 Defines the plugin extensions.
 
@@ -1012,7 +1012,7 @@ Example
     ```
 
 ### `extensionPoints`
-{id="idea-plugin__extensionPoints"}
+{#idea-plugin__extensionPoints}
 
 Extension points defined by the plugin.
 
@@ -1026,7 +1026,7 @@ Children
 : [`<extensionPoint>`](#idea-plugin__extensionPoints__extensionPoint)
 
 #### `extensionPoint`
-{id="idea-plugin__extensionPoints__extensionPoint"}
+{#idea-plugin__extensionPoints__extensionPoint}
 
 A single extension point entry of the [`<extensionPoints>`](#idea-plugin__extensionPoints) defined by the plugin.
 A single [`<extensionPoints>`](#idea-plugin__extensionPoints) element can contain multiple `<extensionPoint>` elements.
@@ -1071,7 +1071,7 @@ Children
 : [`<with>`](#idea-plugin__extensionPoints__extensionPoint__with)
 
 ##### `with`
-{id="idea-plugin__extensionPoints__extensionPoint__with"}
+{#idea-plugin__extensionPoints__extensionPoint__with}
 
 Specifies the required parent type for class names provided in extension point tags or attributes.
 A single [`<extensionPoint>`](#idea-plugin__extensionPoints__extensionPoint) element can contain multiple `<with>` elements.
@@ -1121,7 +1121,7 @@ An extension point which restricts the type provided in a `myClass` attribute to
 {collapsible="true" initial-collapse-state="collapsed"}
 
 ### `application-components`
-{id="idea-plugin__application-components"}
+{#idea-plugin__application-components}
 
 > Element is deprecated. Do not use it in new plugins.
 >
@@ -1137,7 +1137,7 @@ Children
 : [`<component>`](#idea-plugin__components__component)
 
 ### `project-components`
-{id="idea-plugin__project-components"}
+{#idea-plugin__project-components}
 
 > Element is deprecated. Do not use it in new plugins.
 >
@@ -1153,7 +1153,7 @@ Children
 : [`<component>`](#idea-plugin__components__component)
 
 ### `module-components`
-{id="idea-plugin__module-components"}
+{#idea-plugin__module-components}
 
 > Element is deprecated. Do not use it in new plugins.
 >
@@ -1169,7 +1169,7 @@ Children
 : [`<component>`](#idea-plugin__components__component)
 
 #### `component`
-{id="idea-plugin__components__component"}
+{#idea-plugin__components__component}
 
 > Element is deprecated. Do not use it in new plugins.
 >
@@ -1191,7 +1191,7 @@ Children
 - [`<option>`](#idea-plugin__components__component__option)
 
 ##### `implementation-class`
-{id="idea-plugin__components__component__implementation-class"}
+{#idea-plugin__components__component__implementation-class}
 
 > Element is deprecated. Do not use it in new plugins.
 >
@@ -1204,7 +1204,7 @@ Required
 : **yes**
 
 ##### `interface-class`
-{id="idea-plugin__components__component__interface-class"}
+{#idea-plugin__components__component__interface-class}
 
 > Element is deprecated. Do not use it in new plugins.
 >
@@ -1217,7 +1217,7 @@ Required
 : no
 
 ##### `headless-implementation-class`
-{id="idea-plugin__components__component__headless-implementation-class"}
+{#idea-plugin__components__component__headless-implementation-class}
 
 > Element is deprecated. Do not use it in new plugins.
 >
@@ -1230,7 +1230,7 @@ Required
 : no
 
 ##### `option`
-{id="idea-plugin__components__component__option"}
+{#idea-plugin__components__component__option}
 
 > Element is deprecated. Do not use it in new plugins.
 >
@@ -1251,7 +1251,7 @@ Attributes
   Option value.
 
 ##### `loadForDefaultProject`
-{id="idea-plugin__components__component__loadForDefaultProject"}
+{#idea-plugin__components__component__loadForDefaultProject}
 
 > Element is deprecated. Do not use it in new plugins.
 >

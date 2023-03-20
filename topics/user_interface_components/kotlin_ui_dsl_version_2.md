@@ -278,7 +278,7 @@ Standard components should not be created directly but with factory methods from
 `JComponent` that occupies the cell.
 
 ### Cell.horizontalAlign/verticalAlign
-{id="cell-horizontalVerticalAlign"}
+{#cell-horizontalVerticalAlign}
 
 > Deprecated in 2022.3, use [](#cell-align) instead.
 
@@ -292,7 +292,7 @@ row("Row:") {
 ```
 
 ### Cell.align
-{id="cell-align"}
+{#cell-align}
 
 _2022.3_
 

@@ -26,6 +26,10 @@ The way dependency declarations are handled by the Intellij Platform is determin
   This configuration of the dependency declaration is deprecated; do not use it for new plugin projects.
 * If a plugin declares at least _one_ module dependency in its <path>plugin.xml</path> file, the plugin is loaded if an IntelliJ Platform-based product contains _all the modules and plugins_ on which the plugin has declared a dependency.
 
+> Always verify declared dependencies work as expected, see [](#verifying-dependency).
+>
+{style="warning"}
+
 ## Modules
 
 A _module_ represents a built-in plugin that is a non-removable part of a product.
@@ -38,7 +42,7 @@ Starting in 2020.2, a plugin can declare incompatibility with an arbitrary modul
 
 ### Modules Available in All Products
 
-A core set of modules is available in all products based on the IntelliJ Platform.
+A core set of modules is available in all standalone IDE products based on the IntelliJ Platform.
 These modules provide a set of shared functionalities.
 The following table lists modules that are currently available in all products.
 

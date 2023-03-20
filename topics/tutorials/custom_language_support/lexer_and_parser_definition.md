@@ -35,6 +35,8 @@ Define a [`Simple.flex`](%gh-sdk-samples%/simple_language_plugin/src/main/java/o
 
 Now generate a lexer class via <ui-path>Run JFlex Generator</ui-path> from the context menu on <path>Simple.flex</path> file.
 
+> Users from China, please see [important configuration](https://github.com/JetBrains/Grammar-Kit/issues/300#issuecomment-1476498645).
+
 The Grammar-Kit plugin uses the JFlex lexer generation.
 When running for the first time, JFlex prompts for a destination folder to download the JFlex library and skeleton.
 Choose the project root directory, for example <path>code_samples/simple_language_plugin</path>.

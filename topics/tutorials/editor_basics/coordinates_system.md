@@ -1,6 +1,8 @@
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
 # 2. Editor Coordinates System. Positions and Offsets
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<link-summary>Tutorial demonstrating how to access editor coordinate system.</link-summary>
 
 The previous tutorial [Working with Text](working_with_text.md) demonstrated how to use actions to access a caret placed in a document open in an editor.
 The examples replaced selected text in a document by using information about the caret.
@@ -144,8 +146,6 @@ In the Logical Position the caret leans forward, meaning it is associated with t
 For the Visual Position the caret leans right, indicating its association with the succeeding character in the Visual line.
 
 ![Caret Column Position - Block Caret](caret_col_pos_block.png){width="800"}
-
-<br/>
 
 Consider the Java snippet below, and use the `editor_basics` **Caret Position** action to report caret information at each step.
 Be sure to use the keyboard shortcut to invoke the action so that the caret position is not disturbed.

@@ -1,6 +1,8 @@
-[//]: # (title: Testing a Custom Language Plugin)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Testing a Custom Language Plugin
+
+<link-summary>Tutorial demonstrating how to develop tests for custom language plugin features.</link-summary>
 
 > Please see [](testing_plugins.md) for a general introduction.
 >
@@ -24,4 +26,3 @@ As an example, the plugin implemented in the [Custom Language Support Tutorial](
 *  [](commenter_test.md)
 *  [](reference_test.md)
 *  [](documentation_test.md)
-

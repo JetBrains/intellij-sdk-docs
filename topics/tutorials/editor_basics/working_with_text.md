@@ -1,6 +1,8 @@
-[//]: # (title: 1. Working with Text)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# 1. Working with Text
+
+<link-summary>Tutorial demonstrating how to retrieve and replace text in the editor.</link-summary>
 
 This tutorial shows how to use actions to access a caret placed in a document open in an editor.
 Using information about the caret, replace selected text in a document with a string.

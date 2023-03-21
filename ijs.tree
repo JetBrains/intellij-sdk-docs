@@ -56,7 +56,6 @@
       <toc-element topic="plugin_dependencies.md"/>
     </toc-element>
     <toc-element topic="dynamic_plugins.md"/>
-    <toc-element topic="intellij_artifacts.md"/>
     <toc-element topic="plugin_user_experience.md"/>
     <toc-element topic="faq.md"/>
   </toc-element>
@@ -358,6 +357,7 @@
     <toc-element topic="glossary.md"/>
     <toc-element topic="explore_api.md" toc-title="Explore the API"/>
     <toc-element topic="build_number_ranges.md"/>
+    <toc-element topic="intellij_artifacts.md"/>
     <toc-element topic="extension_point_list.md"/>
     <toc-element topic="useful_links.md" accepts-web-file-names="resources.html"/>
     <toc-element topic="learning_resources.md"/>

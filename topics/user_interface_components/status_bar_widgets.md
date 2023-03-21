@@ -22,20 +22,20 @@ The starting point for extending the status bar with new widgets is the
 interface, which is registered in the `com.intellij.statusBarWidgetFactory` extension point.
 
 In case a widget provides information or functionality related to the editor files, consider extending the
-[`StatusBarEditorBasedWidgetFactory`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/widget/StatusBarEditorBasedWidgetFactory.java)
+[`StatusBarEditorBasedWidgetFactory`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/widget/StatusBarEditorBasedWidgetFactory.kt)
 class.
 
 Each widget factory returns a new widget from `createWidget()`.
 To control the disposing of a widget, implement the `disposeWidget()`, if you just want to dispose it, use `Disposer.dispose(widget)`.
 
 Any widget must implement the
-[`StatusBarWidget`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/wm/StatusBarWidget.java)
+[`StatusBarWidget`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/wm/StatusBarWidget.kt)
 interface.
 
 To reuse the IntelliJ Platform implementation, you can extend one of two classes:
 
-- [`EditorBasedWidget`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/EditorBasedWidget.java)
-- [`EditorBasedStatusBarPopup`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/EditorBasedStatusBarPopup.java)
+- [`EditorBasedWidget`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/EditorBasedWidget.kt)
+- [`EditorBasedStatusBarPopup`]([`EditorBasedStatusBarPopup`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/EditorBasedStatusBarPopup.kt))
 
 ## EditorBasedWidget
 
@@ -57,7 +57,7 @@ Use one of the existing predefined widget appearance options:
   Widget with only a text.
 
   Example:
-  [PositionPanel](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/PositionPanel.java)
+  [PositionPanel](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/PositionPanel.kt)
 
 - `com.intellij.openapi.wm.StatusBarWidget.MultipleTextValuesPresentation`
 
@@ -114,11 +114,11 @@ If you want to change visibility programmatically use
 
 The first argument to the method is the factory that created the widget.
 To get it, use
-[`StatusBarWidgetsManager.findWidgetFactory()`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/widget/StatusBarWidgetsManager.java)
+[`StatusBarWidgetsManager.findWidgetFactory()`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/widget/StatusBarWidgetsManager.kt)
 and pass the widget ID and a boolean value that describes whether the widget will be visible or not.
 
 Also, you need to update the widget for the changes to take effect with
-[`StatusBarWidgetsManager.updateWidget()`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/widget/StatusBarWidgetsManager.java).
+[`StatusBarWidgetsManager.updateWidget()`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/widget/StatusBarWidgetsManager.kt).
 
 ## Showing Widget in LightEdit Mode
 

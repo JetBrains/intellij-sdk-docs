@@ -1,8 +1,8 @@
 # RubyMine Extension Point and Listener List
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-70 Extension Points and 11 Listeners for RubyMine
+71 Extension Points and 11 Listeners for RubyMine
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
@@ -49,6 +49,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [org.jetbrains.plugins.ruby.implicitRequireProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.implicitRequireProvider) | `ImplicitRequireProvider` |
 | [org.jetbrains.plugins.ruby.includeExtendReceiverFqnProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.includeExtendReceiverFqnProvider) | `RubyIncludeExtendReceiverFqnProvider` |
 | [org.jetbrains.plugins.ruby.methodMissingProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.methodMissingProvider) | `MethodMissingProvider` |
+| [org.jetbrains.plugins.ruby.model.psiSymbolDeclarationsSearch](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.model.psiSymbolDeclarationsSearch) | [`QueryExecutor`](%gh-ic%/platform/core-api/src/com/intellij/util/QueryExecutor.java) |
 | [org.jetbrains.plugins.ruby.moduleGemDependencyProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.moduleGemDependencyProvider) | `ModuleGemDependencyProvider` |
 | [org.jetbrains.plugins.ruby.moduleGemProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.moduleGemProvider) | `ModuleGemProvider` |
 | [org.jetbrains.plugins.ruby.overriddenMethodGenerator](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.overriddenMethodGenerator) | `OverriddenMethodGenerator` |
@@ -117,8 +118,10 @@ See [](extension_point_list.md) for IntelliJ Platform.
 |-----------------|----------------|
 | [com.intellij.lang.ruby.rbs.containerHierarchyMapper](https://jb.gg/ipe?extensions=com.intellij.lang.ruby.rbs.containerHierarchyMapper) | `RbsContainerHierarchyMapper` |
 
-[experimental]: https://img.shields.io/badge/-Experimental_API-red?style=flat-square
-[internal]: https://img.shields.io/badge/-Internal_API-darkred?style=flat-square
+[deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square
+[removal]: https://img.shields.io/badge/-Removal-red?style=flat-square
+[obsolete]: https://img.shields.io/badge/-Obsolete-grey?style=flat-square
+[experimental]: https://img.shields.io/badge/-Experimental-violet?style=flat-square
+[internal]: https://img.shields.io/badge/-Internal-darkred?style=flat-square
 [project-level]: https://img.shields.io/badge/-Project--Level-blue?style=flat-square
 [non-dynamic]: https://img.shields.io/badge/-Non--Dynamic-orange?style=flat-square
-[deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square

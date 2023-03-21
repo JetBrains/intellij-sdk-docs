@@ -94,14 +94,18 @@ See [](verifying_plugin_compatibility.md) for overview of API status.
 | Icon                              | Description                         | Details                                                                                                                                                                                                                                                                                             |
 |-----------------------------------|-------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ![Deprecated][deprecated]         | Deprecated API                      | Please see code documentation for replacement                                                                                                                                                                                                                                                       |
+| ![Removal][removal]               | Scheduled for Removal API           | Please see code documentation for replacement                                                                                                                                                                                                                                                       |
+| ![Obsolete][obsolete]             | Obsolete API                        | Do not use in new code, please see code documentation for replacement ([](verifying_plugin_compatibility.md#obsolete-api))                                                                                                                                                                          |
 | ![Experimental API][experimental] | Experimental API                    | Annotated with [`@ApiStatus.Experimental`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java), API might be altered or removed without prior notice                                                                           |
 | ![Internal API][internal]         | Internal API                        | Annotated with [`@ApiStatus.Internal`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java), must not be used by 3rd party, see [](api_internal.md)                                                                             |
 | ![Project-Level][project-level]   | Project-Level Extension Point/Topic | Can have [`Project`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/Project.java) as constructor parameter<br/><br/>Extension Point: Declared with `area="IDEA_PROJECT"`<br/>Listener: registered in [`<projectListeners>`](plugin_configuration_file.md#idea-plugin__projectListeners) |
 | ![Non-Dynamic][non-dynamic]       | Non-Dynamic Extension Point         | Installation/update of plugin requires IDE restart ([Dynamic Plugins](dynamic_plugins.md))                                                                                                                                                                                                          |
 
-[experimental]: https://img.shields.io/badge/-Experimental_API-red?style=flat-square
-[internal]: https://img.shields.io/badge/-Internal_API-darkred?style=flat-square
+[deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square
+[removal]: https://img.shields.io/badge/-Removal-red?style=flat-square
+[obsolete]: https://img.shields.io/badge/-Obsolete-grey?style=flat-square
+[experimental]: https://img.shields.io/badge/-Experimental-violet?style=flat-square
+[internal]: https://img.shields.io/badge/-Internal-darkred?style=flat-square
 [project-level]: https://img.shields.io/badge/-Project--Level-blue?style=flat-square
 [non-dynamic]: https://img.shields.io/badge/-Non--Dynamic-orange?style=flat-square
-[deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square
 </snippet>

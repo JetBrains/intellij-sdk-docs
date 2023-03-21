@@ -144,12 +144,12 @@ If you want to implement a functionality that is similar to an existing IDE feat
 
 ### 2.6 Refrain from Using Internal Classes
 
-As a general remark, the use of internal classes is strongly discouraged (i.e. classes ending with `Impl` in their name,
+As a general remark, the use of implementation classes is strongly discouraged (i.e. classes ending with `Impl` in their name,
 located under `impl` package, or included in <path>*-impl.jar</path>).
 
 Also, API annotated with
 [`org.jetbrains.annotations.ApiStatus.Internal`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java)
-should not be used, see [](api_internal.md) for more details and replacements.
+must not be used, see [](api_internal.md) for more details and replacements.
 
 ## 3 Tools and References
 

@@ -17,12 +17,12 @@ dependencies {
 }
 
 java {
-  sourceCompatibility = JavaVersion.VERSION_11
+  sourceCompatibility = JavaVersion.VERSION_17
 }
 
-// See https://github.com/JetBrains/gradle-intellij-plugin/
+// See https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
-  version.set("2022.1.4")
+  version.set("2022.2.5")
   plugins.set(listOf("com.intellij.java"))
 }
 
@@ -33,7 +33,7 @@ tasks {
 
   patchPluginXml {
     version.set("${project.version}")
-    sinceBuild.set("221")
-    untilBuild.set("223.*")
+    sinceBuild.set("222")
+    untilBuild.set("231.*")
   }
 }

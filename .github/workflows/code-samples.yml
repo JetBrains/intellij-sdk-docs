@@ -7,7 +7,7 @@ on:
     paths: [ 'code_samples/**','.github/workflows/code-samples.yml' ]
 
 env:
-  PLUGIN_VERIFIER_IDE_VERSIONS: '2022.1.4 2022.2.5 2022.3.3'
+  PLUGIN_VERIFIER_IDE_VERSIONS: '2022.2.5 2022.3.3'
 
 jobs:
 
@@ -53,7 +53,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: zulu
-          java-version: 11
+          java-version: 17
 
       - name: Verify Plugin
         run: (cd code_samples/${{ matrix.plugin }}; ./gradlew verifyPlugin)

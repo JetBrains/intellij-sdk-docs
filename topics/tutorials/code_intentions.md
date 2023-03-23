@@ -8,6 +8,8 @@
 
 **Product Help:** [Intention Actions](https://www.jetbrains.com/help/idea/intention-actions.html)
 
+**Platform UI Guidelines:** [Inspections](https://jetbrains.design/intellij/text/inspections/)
+
 </tldr>
 
 This topic describes the [conditional_operator_intention](%gh-sdk-samples%/conditional_operator_intention), a sample plugin that adds a new [intention action](https://www.jetbrains.com/help/idea/intention-actions.html) to the IDE Intentions list.

@@ -295,7 +295,7 @@ To verify the signature of a plugin, you can use the [`verifyPluginSignature`](t
 
 By default, this task will use the same certificate chain as provided to the [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) task in the previous section.
 
-To verify the signature using [CLI tool](cli-tool), execute the `verify` command as below:
+To verify the signature using [CLI tool](#cli-tool), execute the `verify` command as below:
 
 ```bash
 java -jar marketplace-zip-signer-cli.jar verify\

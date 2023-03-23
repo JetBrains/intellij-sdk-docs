@@ -733,7 +733,7 @@ Type
 : `IdeaDependency`
 
 Default value
-: [`intellij.ideaDependency`](#intellij-extension-ideadependency)
+: [`intellij.ideaDependency`](#tasks-setupdependencies-idea)
 
 
 #### javac2

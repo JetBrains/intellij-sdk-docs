@@ -223,7 +223,9 @@
       <toc-element topic="implementing_parser_and_psi.md"/>
       <toc-element topic="syntax_highlighting_and_error_highlighting.md"/>
       <toc-element topic="references_and_resolve.md"/>
-      <toc-element topic="symbols.md"/>
+      <toc-element topic="symbols.md">
+        <toc-element topic="websymbols.md"/>
+      </toc-element>
       <toc-element topic="declarations_and_references.md"/>
       <toc-element topic="navigation.md"/>
       <toc-element topic="code_completion.md"/>

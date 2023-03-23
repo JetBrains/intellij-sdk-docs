@@ -537,6 +537,19 @@ Default value
 : `[]`
 
 
+#### pluginDependencies
+{#tasks-preparesandbox-plugindependencies}
+
+List of dependencies on external plugins.
+
+{style="narrow"}
+Type
+: `List<PluginDependency>`
+
+Default value
+: `[]`
+
+
 ## Tasks
 
 
@@ -586,6 +599,27 @@ Default value
 : `build/searchableOptions`
 
 
+### classpathIndexCleanup
+{#tasks-classpathindexcleanup}
+
+Remove `classpath.index` files that are created by the `PathClassLoader`.
+This loader, due to the implementation bug, ignores the `idea.classpath.index.enabled=false` flag and as a workaround, files have to be removed manually.
+
+Task is enabled if [`intellij.version`](#intellij-extension-version) is set to `2022.1` or higher.
+
+#### classpathIndexFiles
+{#tasks-classpathindexcleanup-classpathindexfiles}
+
+The list of `classpath.index` files to be removed.
+
+{style="narrow"}
+Type
+: `ConfigurableFileCollection`
+
+Default value:
+: List of `classpath.index` files resolved with `sourceSets` configuration
+
+
 ### downloadRobotServerPlugin
 {#tasks-downloadrobotserverplugin}
 
@@ -632,10 +666,87 @@ Default value
 : `build/robotServerPlugin`
 
 
+### downloadZipSignerTask
+{#tasks-downloadzipsignertask}
+
+Resolves and downloads Marketplace ZIP Signer CLI tool used by the [`signPlugin`](#tasks-signplugin) task.
+
+
+#### version
+{#tasks-downloadzipsignertask-version}
+
+Version of the ZIP Signer CLI tool to download.
+
+{style="narrow"}
+Type
+: `String`
+
+Default value
+: `LATEST`
+
+
+### cliPath
+{#tasks-downloadzipsignertask-clipath}
+
+Path to the ZIP Signer CLI tool.
+
+{style="narrow"}
+Type
+: `File`
+
+Default value
+: [Gradle cache](https://docs.gradle.org/current/userguide/directory_layout.html#dir:gradle_user_home)
+
+
+### cli
+{#tasks-downloadzipsignertask-cli}
+
+The output of the ZIP Signer CLI tool.
+
+{style="narrow"}
+Type
+: `File`
+
+Default value
+: [`cliPath`](#tasks-downloadzipsignertask-clipath)
+
+
+## initializeIntelliJPlugin
+{#tasks-initializeintellijplugin}
+
+Initializes the Gradle IntelliJ Plugin and performs various checks, like if the plugin is up to date.
+
+
 ### instrumentCode
 {#tasks-instrumentcode}
 
 The following attributes help you to tune instrumenting behaviour in `instrumentCode { ... }` block.
+
+
+#### ideaDependency
+{#tasks-instrumentcode-ideadependency}
+
+The dependency on IntelliJ IDEA.
+
+{style="narrow"}
+Type
+: `IdeaDependency`
+
+Default value
+: [`intellij.ideaDependency`](#intellij-extension-ideadependency)
+
+
+#### javac2
+{#tasks-instrumentcode-javac2}
+
+Path to the `javac2.jar` file of the IntelliJ IDEA.
+
+{style="narrow"}
+Type
+: `File`
+
+Default value
+: `lib/javac2.jar` resolved in [`instrumentCode.ideaDependency`](#tasks-instrumentcode-ideadependency)
 
 
 #### compilerVersion
@@ -650,6 +761,61 @@ Type
 
 Default value
 : Build number of the IDE dependency
+
+
+#### classesDirs
+{#tasks-instrumentcode-classesdirs}
+
+The list of directories with compiled classes.
+
+{style="narrow"}
+Type
+: `FileCollection`
+
+Default value
+: `sourceSets.[].output.classesDirs`
+
+
+### formDirs
+{#tasks-instrumentcode-formdirs}
+
+The list of directories with GUI Designer form files.
+
+{style="narrow"}
+Type
+: `FileCollection`
+
+Default value
+: `.form` files of the project's source sets.
+
+
+#### outputDir
+{#tasks-instrumentcode-outputdir}
+
+The output directory for instrumented classes.
+
+{style="narrow"}
+Type
+: `File`
+
+Default value
+: [`setupInstrumentCode.instrumentedDir`](#tasks-setupinstrumentcode-instrumenteddir)
+
+
+#### compilerClassPathFromMaven
+{#tasks-instrumentcode-compilerclasspathfrommaven}
+
+The classpath for Java instrumentation compiler.
+
+{style="narrow"}
+Type
+: `FileCollection`
+
+
+### instrumentedJar
+{#tasks-instrumentedjar}
+
+Creates a JAR file with instrumented classes.
 
 
 ### jarSearchableOptions
@@ -705,6 +871,7 @@ This can be used to determine Plugin ID for setting up [](plugin_dependencies.md
 
 See also [](#tasks-printBundledPlugins).
 
+
 #### ideDir
 {#tasks-listbundledplugins-idedir}
 
@@ -748,14 +915,15 @@ The result list is stored within the [`listProductsReleases.outputFile`](#tasks-
 
 See also [](#tasks-printproductsreleases).
 
-#### updatesFile
-{#tasks-listproductsreleases-updatesfile}
 
-Path to the products releases update file.
+#### productsReleasesUpdateFiles
+{#tasks-listproductsreleases-productsreleasesupdatefiles}
+
+Path to the products releases update files. By default, one is downloaded from `IntelliJPluginConstants.IDEA_PRODUCTS_RELEASES_URL`.
 
 {style="narrow"}
 Type
-: `List<String>`
+: `FileCollection`
 
 Default value
 : [Gradle cache](https://docs.gradle.org/current/userguide/directory_layout.html#dir:gradle_user_home)
@@ -1042,7 +1210,7 @@ Default value
 #### pluginDependencies
 {#tasks-preparesandbox-plugindependencies}
 
-List of dependencies of the current plugin.
+List of dependencies on external plugins.
 
 {style="narrow"}
 Type
@@ -1609,6 +1777,38 @@ This task is automatically added to the ["After Sync" Gradle trigger](https://ww
 This task exposes the `setupDependencies.idea` property which contains a reference to the resolved IDE dependency used for building the plugin.
 
 This property can be referred in Gradle configuration to access IDE dependency classpath.
+
+
+### setupInstrumentCode
+
+Prepares code instrumentation tasks.
+
+
+#### instrumentationEnabled
+{#tasks-setupinstrumentcode-instrumentationenabled}
+
+A flag that controls whether code instrumentation is enabled.
+
+{style="narrow"}
+Type
+: `Boolean`
+
+Default value
+: [`intellij.instrumentCode`](#intellij-extension-instrumentcode)
+
+
+#### instrumentedDir
+{#tasks-setupinstrumentcode-instrumenteddir}
+
+The path to the directory where instrumented classes will be saved.
+
+{style="narrow"}
+Type
+: `Directory`
+
+Default value
+: `${project.buildDir}/instrumented`
+
 
 
 ### signPlugin

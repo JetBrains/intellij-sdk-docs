@@ -41,8 +41,7 @@ See [](explore_api.md) for more information and strategies.
    * If the extension point was declared using the `beanClass` attribute, set all properties annotated with the [`@Attribute`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) and [`Tag`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Tag.java) annotations in the specified bean class.
 
    See the [](plugin_extension_points.md#declaring-extension-points) section for details.
-4. Implement the extension API as required.
-   **NB:** When using Kotlin, use `class` and never `object` for all implementations ([more details](using_kotlin.md#caution)).
+4. Implement the extension API as required (see [](#implementing-extension)).
 
 </procedure>
 
@@ -72,6 +71,17 @@ and one extension to access the `another.plugin.myExtensionPoint` extension poin
       implementationClass="com.example.MyExtensionPointImpl"/>
 </extensions>
 ```
+
+<procedure id="implementing-extension" title="Implementing Extension">
+
+Please note the following important points:
+
+- Avoid any initialization in constructor, see also notes for [Services](plugin_services.md#constructor).
+- Kotlin: Do not use `object` but `class` for implementation ([more details](using_kotlin.md#caution)).
+- Kotlin: Do not use `companion object` to avoid excessive classloading/initialization when the extension class is loaded.
+Use top-level declarations or objects instead.
+
+</procedure>
 
 ### Extension Default Properties
 

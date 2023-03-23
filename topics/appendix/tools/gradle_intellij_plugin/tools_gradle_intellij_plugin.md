@@ -1846,3 +1846,56 @@ Validates the plugin project configuration:
 > Read more about controlling this behavior on [](using_kotlin.md#kotlin-standard-library).
 
 - An old default [`runPluginVerifier.downloadDir`][#tasks-runpluginverifier-downloaddir] path contains downloaded IDEs but another default is in use. Links to the [FAQ section](tools_gradle_intellij_plugin_faq.md#the-plugin-verifier-download-directory-is-set-to-but-downloaded-ides-were-also-found-in)
+
+
+### verifyPluginSignature
+{#tasks-verifypluginsignature}
+
+> Available since the upcoming release
+>
+{type="warning"}
+
+Validates the signature of the plugin archive file using [marketplace-zip-signer](https://github.com/JetBrains/marketplace-zip-signer) library.
+
+For more details, see [Plugin Signing](plugin_signing.md) article.
+
+#### certificateChain
+{#tasks-verifypluginsignature-certificatechain}
+
+> Currently unavailable — please use [`verifyPluginSignature.certificateChainFile`](#tasks-verifypluginsignature-certificatechainfile) instead.
+>
+{style="note"}
+
+{style="narrow"}
+Type
+: `String`
+
+Default value
+: `null`
+
+
+#### certificateChainFile
+{#tasks-verifypluginsignature-certificatechainfile}
+
+A file containing X509 certificates.
+The first certificate from the chain will be used as a certificate authority (CA).
+Refers to `cert` CLI option.
+
+By default, the certificate chain file is set to the value of the [`signPlugin.certificateChainFile`](#tasks-signplugin-certificatechainfile) property.
+If absent, the [`signPlugin.certificateChain`](#tasks-signplugin-certificatechain) property is used instead, but due to the CLI tool limitations, a temporary file is created and the certificate chain is written to it.
+
+{style="narrow"}
+Type
+: `File`
+
+Default value
+: [`signPlugin.certificateChainFile`](#tasks-signplugin-certificatechainfile)
+
+
+#### inputArchiveFile
+{#tasks-verifypluginsignature-inputarchivefile}
+
+Input, signed ZIP archive file.
+Refers to `in` CLI option.
+
+Provided by the [`signPlugin`](#tasks-signplugin) task.

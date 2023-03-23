@@ -685,7 +685,7 @@ Default value
 : `LATEST`
 
 
-### cliPath
+#### cliPath
 {#tasks-downloadzipsignertask-clipath}
 
 Path to the ZIP Signer CLI tool.
@@ -698,7 +698,7 @@ Default value
 : [Gradle cache](https://docs.gradle.org/current/userguide/directory_layout.html#dir:gradle_user_home)
 
 
-### cli
+#### cli
 {#tasks-downloadzipsignertask-cli}
 
 The output of the ZIP Signer CLI tool.
@@ -711,7 +711,7 @@ Default value
 : [`cliPath`](#tasks-downloadzipsignertask-clipath)
 
 
-## initializeIntelliJPlugin
+### initializeIntelliJPlugin
 {#tasks-initializeintellijplugin}
 
 Initializes the Gradle IntelliJ Plugin and performs various checks, like if the plugin is up to date.
@@ -776,7 +776,7 @@ Default value
 : `sourceSets.[].output.classesDirs`
 
 
-### formDirs
+#### formDirs
 {#tasks-instrumentcode-formdirs}
 
 The list of directories with GUI Designer form files.
@@ -1042,7 +1042,7 @@ Patches <path>[plugin.xml](plugin_configuration_file.md)</path> files with value
 
 > To maintain and generate an up-to-date changelog, try using [Gradle Changelog Plugin](https://github.com/JetBrains/gradle-changelog-plugin).
 >
-
+{style="note"}
 
 #### destinationDir
 {#tasks-patchpluginxml-destinationdir}
@@ -2084,9 +2084,9 @@ Validates the plugin project configuration:
 - The [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) property can't be lower than the major version of the currently used IntelliJ SDK set with the [`intellij.version`](#intellij-extension-version).
 - The `sourceCompatibility` property of the Java configuration can't be lower than the Java version used for assembling the IntelliJ SDK specified by the [`intellij.version`](#intellij-extension-version).
 - The `targetCompatibility` property of the Java configuration can't be higher than the Java version required for running IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) properties.
-- The `jvmTarget` property of the Kotlin configuration (if used) can't be higher than the Java version required for running IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) properties.
-- The `languageVersion` property of the Kotlin configuration (if used) can't be lower than the Kotlin bundled with IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) properties.
-- The `apiVersion` property of the Kotlin configuration (if used) can't be higher than the Kotlin bundled with IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) properties.
+- The `kotlinJvmTarget` property of the Kotlin configuration (if used) can't be higher than the Java version required for running IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) properties.
+- The `kotlinLanguageVersion` property of the Kotlin configuration (if used) can't be lower than the Kotlin bundled with IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) properties.
+- The `kotlinApiVersion` property of the Kotlin configuration (if used) can't be higher than the Kotlin bundled with IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) properties.
 
 > For more details regarding the Java version used in the specific IntelliJ SDK, see [](build_number_ranges.md).
 

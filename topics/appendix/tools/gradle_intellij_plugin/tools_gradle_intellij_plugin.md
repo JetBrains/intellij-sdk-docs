@@ -538,7 +538,7 @@ Default value
 
 
 #### pluginDependencies
-{#tasks-preparesandbox-plugindependencies}
+{#intellij-extension-plugindependencies}
 
 List of dependencies on external plugins.
 

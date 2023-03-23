@@ -289,3 +289,16 @@ keytool -import -alias IdeaPlugin -file chain.crt -keystore pluginKeystore.jks -
 (note: the TrustStore password must remain `changeit`)
 
 Otherwise, users may add the public key manually to <ui-path>Settings | Plugins | Manage Plugin Certificates</ui-path>.
+
+## Plugin Signature Verification
+To verify the signature of a plugin, you can use the [`verifyPluginSignature`](tools_gradle_intellij_plugin.md#tasks-verifypluginsignature) task.
+
+By default, this task will use the same certificate chain as provided to the [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) task in the previous section.
+
+To verify the signature using [CLI tool](cli-tool), execute the `verify` command as below:
+
+```bash
+java -jar marketplace-zip-signer-cli.jar verify\
+  -in "signed.zip"\
+  -cert "/path/to/chain.crt"
+```

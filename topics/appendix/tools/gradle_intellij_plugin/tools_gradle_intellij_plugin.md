@@ -153,6 +153,56 @@ org.gradle.unsafe.configuration-cache = true
 See [Using the configuration cache](https://docs.gradle.org/current/userguide/configuration_cache.html#config_cache:usage) in the Gradle documentation for more details.
 
 
+### Multi-module Project
+Sometimes, you may want to split your plugin into multiple modules — i.e., to separate the core plugin code from the code related to other third-party plugin dependencies.
+The most common way to do this is to use the [Gradle Multi-Project Build](https://docs.gradle.org/current/userguide/multi_project_builds.html) feature.
+
+This approach allows you to declare dependencies between subprojects, like:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+dependencies {
+    implementation(project(":shared"))
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+dependencies {
+    implementation project(':shared')
+}
+```
+
+</tab>
+</tabs>
+
+Because the Gradle IntelliJ Plugin introduces the code instrumentation, and the default `implementation` configuration is not compatible with it, you need to specify the `instrumentedJar` configuration explicitly to refer to the instrumented JAR file produced by the plugin instead of the default JAR file:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+dependencies {
+    implementation(project(":shared", "instrumentedJar"))
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+dependencies {
+    implementation project(':shared', 'instrumentedJar')
+}
+```
+
+</tab>
+</tabs>
+
 ## Configuration
 
 ### IntelliJ Extension
@@ -214,7 +264,6 @@ Acceptable values
 
 > The _version number_ format is the most common option for specifying the version of the IntelliJ Platform.
 > Other formats should be used only when your plugin relies on specific parts of the targeted IDE or early-adopting EAP releases.
->
 
 
 #### type

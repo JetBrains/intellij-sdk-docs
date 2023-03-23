@@ -57,7 +57,7 @@ openssl genpkey\
   -pkeyopt rsa_keygen_bits:4096
 ```
 
-After that, it's required to convert it into RSA form with:
+After that, it's required to convert it into the RSA form with:
 
 ```bash
 openssl rsa\
@@ -68,7 +68,7 @@ openssl rsa\
 At this point, the generated <path>private.pem</path> content should be provided to the [`signPlugin.privateKey`](tools_gradle_intellij_plugin.md#tasks-signplugin-privatekey) property.
 Provided password should be specified as the [`signPlugin.password`](tools_gradle_intellij_plugin.md#tasks-signplugin-password) property in the [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) configuration.
 
-As a next step, we'll generate a <path>chain.crt</path> certificate chain with:
+As a next step, we will generate a <path>chain.crt</path> certificate chain with:
 
 ```bash
 openssl req\
@@ -151,10 +151,47 @@ publishPlugin {
 
 > Do not commit your credentials to the Version Control System! To avoid that, you may use environment variables, like:
 > ```
-> token.set(System.getenv("PUBLISH_TOKEN"))
+> token.set(providers.environmentVariable("PUBLISH_TOKEN"))
+> password.set(providers.environmentVariable("PRIVATE_KEY_PASSWORD"))
 > ```
 >
 {style="warning"}
+
+Instead of using the [`signPlugin.privateKey`](tools_gradle_intellij_plugin.md#tasks-signplugin-privatekey) and [`signPlugin.certificateChain`](tools_gradle_intellij_plugin.md#tasks-signplugin-certificatechain) properties which expect providing the key and certificate chain content directly, it's also possible to specify the paths to the files containing the key and certificate chain content.
+To do that, use the [`signPlugin.privateKeyFile`](tools_gradle_intellij_plugin.md#tasks-signplugin-privatekeyfile) and [`signPlugin.certificateChainFile`](tools_gradle_intellij_plugin.md#tasks-signplugin-certificatechainfile) properties instead.
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+signPlugin {
+  certificateChainFile.set(file("certificate/chain.crt"))
+  privateKeyFile.set(file("certificate/private.pem"))
+  password.set("8awS22%#3(4wVDDBMlTREX")
+}
+
+publishPlugin {
+  token.set("perm:a961riC....l17oW8t+Qw==")
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+signPlugin {
+  certificateChainFile = file("certificate/chain.crt")
+  privateKeyFile = file("certificate/private.pem")
+  password = "8awS22%#3(4wVDDBMlTREX"
+}
+
+publishPlugin {
+  token = "perm:a961riC....l17oW8t+Qw=="
+}
+```
+
+</tab>
+</tabs>
 
 ### Provide Secrets to IDE
 
@@ -167,13 +204,13 @@ To specify secrets like `PUBLISH_TOKEN` and values required for the [`signPlugin
 
 ```kotlin
 signPlugin {
-  certificateChain.set(System.getenv("CERTIFICATE_CHAIN"))
-  privateKey.set(System.getenv("PRIVATE_KEY"))
-  password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
+  certificateChain.set(providers.environmentVariable("CERTIFICATE_CHAIN"))
+  privateKey.set(providers.environmentVariable("PRIVATE_KEY"))
+  password.set(providers.environmentVariable("PRIVATE_KEY_PASSWORD"))
 }
 
 publishPlugin {
-  token.set(System.getenv("PUBLISH_TOKEN"))
+  token.set(providers.environmentVariable("PUBLISH_TOKEN"))
 }
 ```
 
@@ -182,13 +219,13 @@ publishPlugin {
 
 ```groovy
 signPlugin {
-  certificateChain = System.getenv("CERTIFICATE_CHAIN")
-  privateKey = System.getenv("PRIVATE_KEY")
-  password = System.getenv("PRIVATE_KEY_PASSWORD")
+  certificateChain = providers.environmentVariable("CERTIFICATE_CHAIN")
+  privateKey = providers.environmentVariable("PRIVATE_KEY")
+  password = providers.environmentVariable("PRIVATE_KEY_PASSWORD")
 }
 
 publishPlugin {
-  token = System.getenv("PUBLISH_TOKEN")
+  token = providers.environmentVariable("PUBLISH_TOKEN")
 }
 ```
 

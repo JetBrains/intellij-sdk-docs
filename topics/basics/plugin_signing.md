@@ -236,6 +236,13 @@ In the <control>Run/Debug Configuration</control> for [`publishPlugin`](tools_gr
 
 ![Run/Debug Configuration Environment Variables](plugin_singing_env_variables.png)
 
+> Note that both the private key and certificate chain are multi-line values.
+> It is necessary to transform them first using Base64 encoding before providing to the single-line field in <control>Environment Variables</control> panel.
+>
+> [`signPlugin.privateKey`](tools_gradle_intellij_plugin.md#tasks-signplugin-privatekey) and [`signPlugin.certificateChain`](tools_gradle_intellij_plugin.md#tasks-signplugin-certificatechain) properties will automatically detect and decode the Base64-encoded values.
+>
+> {style="warning"}
+
 ### CLI Tool
 
 CLI tool is required if you don't rely on the Gradle IntelliJ Plugin – i.e. when working with Themes.

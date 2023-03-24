@@ -1,9 +1,10 @@
-[//]: # (title: XML DOM API)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# XML DOM API
 
-<!-- TODO content: DOM <=> PSI, Go To Symbol, editor gutter icon->DOM -->
+<link-summary>Implementing APIs for accessing XML models.</link-summary>
 
+[//]: # (TODO content: DOM <=> PSI, Go To Symbol, editor gutter icon->DOM)
 
 This article is intended for plugin writers who create custom web server integrations, or some UI for easy XML editing.
 It describes the *Document Object Model* (DOM) in IntelliJ Platform - an easy way to work with DTD or Schema-based XML models.

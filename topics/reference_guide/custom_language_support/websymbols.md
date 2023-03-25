@@ -266,7 +266,7 @@ It is a special HTML attribute processed by Vue framework in runtime or during c
 which results in additional code being attached to the DOM element.
 It’s structure looks as follows:
 
-![JavaScript Example Image]()
+![JavaScript Example Image](websymbols_web_types.svg){ width="706"}
 
 An example of how Vue directive might be declared in Web Types is here.
 Once a match query is run on `v-on:click.once.alt`, we will get a `WebSymbolMatch` with following segments:

@@ -2,9 +2,7 @@
 # Web Symbols
 
 <link-summary>
-Web Symbols is a framework that simplifies building support for web technologies, with efficient JSON format,
-symbol pattern evaluation for easy reference resolution, find usages, documentation and rename refactoring,
-and easy contribution of new symbols from various sources.
+Web Symbols framework simplifies web technology development by utilizing Symbol API and supporting custom syntaxes.
 </link-summary>
 
 ## Web Symbol
@@ -50,81 +48,139 @@ Each symbol is treated by the framework the same, regardless of their origin.
 
 WebSymbol has a number of properties, which are used across IDE features:
 
-- `namespace`: describes which language or concept the symbol belongs to.
-- `kind`: describes which group of symbols within the particular language or concept (namespace) the symbol belongs to.
-    The kind should be plural in form, e.g. "attributes".
-- `name`: the name of the symbol. If the symbol does not have a pattern, the name will be used as-is for matching.
-- `origin`: specifies where this symbol comes from. Besides descriptive information like framework, library, version or default icon,
-    it also provides an interface to load symbol types and icons.
-- `icon`: an optional icon associated with the symbol, which is going to be used across the IDE.
-    If none is specified, a default icon of the `origin` will be used and if that’s not available, a default icon for symbol `namespace` and `kind`.
-- `priority`: symbols with higher priority will have precedence over those with lower priority, when matching is performed.
-    Symbols with higher priority will also show higher on the completion list.
-- `proximity`: provides additional way to sort symbols in code completion list within a particular priority.
-    The value must be a non-negative integer and the higher proximity, the higher the symbol would be on the list.
-- `deprecated`: documents, whether the symbol is deprecated. Deprecated symbols are appropriately highlighted in the code editor,
-    code completion and quick documentation.
-- `experimental`: documents, whether the symbol is considered an experimental feature and should be used with caution and might be
-    removed or its API altered in the future.
-- `required`: whether this symbol is required. What "is required" means, depends on the symbol.
-    For instance, for an HTML attribute it would mean that the attribute is required to be present for the particular HTML element.
-- `defaultValue`: if the symbol represents some property, variable or anything that can hold a value, this property documents what is the default value.
-- `attributeValue`: a special property to support symbols representing HTML attributes.
-    It can specify the kind (plain, expression, no-value), type (boolean, number, string, enum, complex, of-match),
-    whether an attribute value is required, a default value and the result type of value expression in the appropriate language.
-    If `COMPLEX` type is set, the value of `langType` will be used and if `OF_MATCH`, the type of the `symbol` will be used.
-    When merging information from several segments in the WebSymbolMatch, first non-null property values take precedence.
-    By default - when properties are `null` - attribute value is of plain type and is required.
-- `type`: the type of the symbol. The type can be interpreted only within the context of symbol origin and with regards to its namespace and kind.
-    The type may be a language type, coming from e.g. Java or TypeScript, or it may be any arbitrary value.
-    Usually a type would be associated with symbols, which can hold a value, or represent some language symbol, like class, method, etc.
-- `psiContext`: a PsiElement, which is a file or an element, which can be used to roughly locate the source of the symbol within a project to provide
-    a context for loading additional information, like types. If the symbol is `PsiSourcedWebSymbol`, then `psiContext` is equal to `source`.
-- `properties`: various symbol properties. There should be no assumption on the type of properties.
-    Properties can be used by plugins to provide additional information on the symbol.
-    See Web Types/Properties section for reference on the custom properties supported by IDEs.
-- `presentation`: returns `TargetPresentation` used by `SearchTarget` and `RenameTarget`.
-    Default implementations of `WebSymbolRenameTarget` and `WebSymbolSearchTarget` use the `presentation` property.
+{style="full"}
+namespace
+: describes which language or concept the symbol belongs to.
+
+kind
+: describes which group of symbols within the particular language or concept (namespace) the symbol belongs to.
+The kind should be plural in form, e.g. "attributes".
+
+name
+: the name of the symbol. If the symbol does not have a pattern, the name will be used as-is for matching.
+
+origin
+: specifies where this symbol comes from. Besides descriptive information like framework, library, version or default icon,
+it also provides an interface to load symbol types and icons.
+
+icon
+: an optional icon associated with the symbol, which is going to be used across the IDE.
+If none is specified, a default icon of the `origin` will be used and if that’s not available, a default icon for symbol `namespace` and `kind`.
+
+priority
+: symbols with higher priority will have precedence over those with lower priority, when matching is performed.
+Symbols with higher priority will also show higher on the completion list.
+
+proximity
+: provides additional way to sort symbols in code completion list within a particular priority.
+The value must be a non-negative integer and the higher proximity, the higher the symbol would be on the list.
+
+deprecated
+: documents, whether the symbol is deprecated. Deprecated symbols are appropriately highlighted in the code editor,
+code completion and quick documentation.
+
+experimental
+: documents, whether the symbol is considered an experimental feature and should be used with caution and might be
+removed or its API altered in the future.
+
+required
+: whether this symbol is required. What "is required" means, depends on the symbol.
+For instance, for an HTML attribute it would mean that the attribute is required to be present for the particular HTML element.
+
+defaultValue
+: if the symbol represents some property, variable or anything that can hold a value, this property documents what is the default value.
+
+attributeValue
+: a special property to support symbols representing HTML attributes.
+It can specify the kind (plain, expression, no-value), type (boolean, number, string, enum, complex, of-match),
+whether an attribute value is required, a default value and the result type of value expression in the appropriate language.
+If `COMPLEX` type is set, the value of `langType` will be used and if `OF_MATCH`, the type of the `symbol` will be used.
+When merging information from several segments in the WebSymbolMatch, first non-null property values take precedence.
+By default - when properties are `null` - attribute value is of plain type and is required.
+
+type
+: the type of the symbol. The type can be interpreted only within the context of symbol origin and with regards to its namespace and kind.
+The type may be a language type, coming from e.g. Java or TypeScript, or it may be any arbitrary value.
+Usually a type would be associated with symbols, which can hold a value, or represent some language symbol, like class, method, etc.
+
+psiContext
+: a PsiElement, which is a file or an element, which can be used to roughly locate the source of the symbol within a project to provide
+a context for loading additional information, like types. If the symbol is `PsiSourcedWebSymbol`, then `psiContext` is equal to `source`.
+
+properties
+: various symbol properties. There should be no assumption on the type of properties.
+Properties can be used by plugins to provide additional information on the symbol.
+See Web Types/Properties section for reference on the custom properties supported by IDEs.
+
+presentation
+: returns `TargetPresentation` used by `SearchTarget` and `RenameTarget`.
+Default implementations of `WebSymbolRenameTarget` and `WebSymbolSearchTarget` use the `presentation` property.
 
 ### Documentation Properties
 
 Following properties handle generation of Quick Doc in the IDE:
 
-- `description`: an optional text, which describes the symbol purpose and usage. It is rendered in the documentation popup or view.
-- `descriptionSections`: additional sections, to be rendered in the symbols’ documentation. Each section should have a name, but the contents are optional.
-- `docUrl`: an optional URL to a website with detailed symbol's documentation
-- `documentation`: an interface holding information required to render documentation for the symbol. To customize symbols documentation,
-    one can override the method, or implement `WebSymbolDocumentationCustomizer`.
-    `WebSymbolDocumentation` interface provides builder methods for customizing the documentation.
-    `with*` methods return a copy of the documentation with customized fields.
+{style="full"}
+description
+: an optional text, which describes the symbol purpose and usage. It is rendered in the documentation popup or view.
+
+descriptionSections
+: additional sections, to be rendered in the symbols’ documentation. Each section should have a name, but the contents are optional.
+
+docUrl
+: an optional URL to a website with detailed symbol's documentation
+
+documentation
+: an interface holding information required to render documentation for the symbol. To customize symbols documentation,
+one can override the method, or implement `WebSymbolDocumentationCustomizer`.
+`WebSymbolDocumentation` interface provides builder methods for customizing the documentation.
+`with*` methods return a copy of the documentation with customized fields.
 
 ### Query Related Properties
 
 Following properties are related to name matching and code completion queries:
 
-- `pattern`: the pattern to match names against. As a result of pattern matching a `WebSymbolMatch` will be created.
-    A pattern may specify that a reference to other Web Symbols is expected in some part of it.
-    For such places, appropriate segments with referenced Web Symbols will be created and navigation,
-    validation and refactoring support is available out-of-the-box.
-- `queryScope`: when pattern is being evaluated, matched symbols can provide additional scope for further resolution in the pattern.
-    By default the `queryScope` returns the symbol itself
-- `virtual`: some symbols represent only a framework syntax, which does not translate to a particular symbol in the runtime.
-    For instance a Vue directive, which needs to be prefixed with `v-` will result in some special code generated,
-    but as such is not a real HTML attribute. This distinction allows us to ignore such symbols when looking for references.
-- `abstract`: some symbols may have a lot in common with each other and one can use abstract symbols as their super symbol,
-    currently only Web Types symbols can inherit from others.
-- `extension`: specifies whether the symbol is an extension. When matched along with a non-extension symbol it can provide or
-    override some of the properties of the symbol, or it can extend its scope contents.
+{style="full"}
+pattern
+: the pattern to match names against. As a result of pattern matching a `WebSymbolMatch` will be created.
+A pattern may specify that a reference to other Web Symbols is expected in some part of it.
+For such places, appropriate segments with referenced Web Symbols will be created and navigation,
+validation and refactoring support is available out-of-the-box.
+
+queryScope
+: when pattern is being evaluated, matched symbols can provide additional scope for further resolution in the pattern.
+By default the `queryScope` returns the symbol itself
+
+virtual
+: some symbols represent only a framework syntax, which does not translate to a particular symbol in the runtime.
+For instance a Vue directive, which needs to be prefixed with `v-` will result in some special code generated,
+but as such is not a real HTML attribute. This distinction allows us to ignore such symbols when looking for references.
+
+abstract
+: some symbols may have a lot in common with each other and one can use abstract symbols as their super symbol,
+currently only Web Types symbols can inherit from others.
+
+extension
+: specifies whether the symbol is an extension. When matched along with a non-extension symbol it can provide or
+override some of the properties of the symbol, or it can extend its scope contents.
 
 ### Methods
+{#query-methods}
 
-- `createPointer()`: returns the pointer to the symbol, which can survive between read actions. The dereferenced symbol should be valid,
-    i.e. any PSI based properties should return valid PsiElements.
-- `getModificationCount()`: symbols can be used in CachedValues as dependencies. If a symbol instance can mutate over the time,
-    it should properly implement this method.
-- `isEquivalentTo()`: returns true if two symbols are the same or equivalent for resolve purposes.
-- `adjustNameForRefactoring()`: Web Symbols can have various naming conventions.
-    This method is used by the framework to determine a new name for a symbol based on its occurrence.
+{style="full" sorted="asc"}
+createPointer()
+: returns the pointer to the symbol, which can survive between read actions. The dereferenced symbol should be valid,
+  i.e. any PSI based properties should return valid PsiElements.
+
+getModificationCount()
+: symbols can be used in CachedValues as dependencies. If a symbol instance can mutate over the time,
+  it should properly implement this method.
+
+isEquivalentTo()
+: returns true if two symbols are the same or equivalent for resolve purposes.
+
+adjustNameForRefactoring(): Web Symbols can have various naming conventions.
+  This method is used by the framework to determine a new name for a symbol based on its occurrence.
 
 ## PsiSourcedWebSymbol
 
@@ -134,18 +190,24 @@ If your symbol is part of a string, or spans multiple PsiElements, or does not r
 instead of implementing this interface you should contribute dedicated declaration and reference providers.
 
 ### Properties
+{#psisourcedwebsymbol-properties}
 
-- `source`: the PsiElement, which is the symbol declaration
+{style="full"}
+source
+: the PsiElement, which is the symbol declaration
 
 ## CompositeWebSymbol
 
 WebSymbolMatch and some special symbols can have a name, which consists of other Web Symbols.
 
 ### Properties
+{#compositewebsymbol-properties}
 
-- `nameSegments`: list of `WebSymbolNameSegment`. Each segment describes a range in the symbol name.
-    Segments can be built of other Web Symbols and/or have related matching problems - missing required part,
-    unknown symbol name or be a duplicate of another segment. See Model Queries/Example section for an example.
+{style="full"}
+nameSegments
+: list of `WebSymbolNameSegment`. Each segment describes a range in the symbol name.
+Segments can be built of other Web Symbols and/or have related matching problems - missing required part,
+unknown symbol name or be a duplicate of another segment. See Model Queries/Example section for an example.
 
 ## Web Symbols Scope
 Web Symbols are contained within a loose model built from Web Symbols scopes, each time anew for a particular context.
@@ -154,14 +216,25 @@ For instance an HTML element symbol would contain some HTML attributes symbols, 
 When configuring queries, Web Symbols scope are added to the list to create an initial scope for symbols resolve.
 
 ### Methods
+{#websymbolsscope-methods}
 
-- `getSymbols()`: returns symbols within the scope. If provided `name` is `null`, no pattern evaluation will happen and all symbols of a particular
-    kind and from particular namespace will be returned.
-- `getCodeCompletions()`: returns code completions for symbols within the scope.
-- `isExclusiveFor()`: when scope is exclusive for a particular namespace and kind, resolve will not continue down the stack during pattern matching.
-- `createPointer()`: returns the pointer to the symbol scope, which can survive between read actions. The dereferenced symbol scope should be valid.
-- `getModificationCount()`: symbol scopes are used in CachedValues as dependencies for query executors.
-    If a symbol scope instance can mutate over the time, it should properly implement this method.
+{style="full"}
+getSymbols()
+: returns symbols within the scope. If provided `name` is `null`, no pattern evaluation will happen and all symbols of a particular
+kind and from particular namespace will be returned.
+
+getCodeCompletions()
+: returns code completions for symbols within the scope.
+
+isExclusiveFor()
+: when scope is exclusive for a particular namespace and kind, resolve will not continue down the stack during pattern matching.
+
+createPointer()
+: returns the pointer to the symbol scope, which can survive between read actions. The dereferenced symbol scope should be valid.
+
+getModificationCount()
+: symbol scopes are used in CachedValues as dependencies for query executors.
+If a symbol scope instance can mutate over the time, it should properly implement this method.
 
 When implementing a scope, which contains many elements you should extend `WebSymbolsScopeWithCache`,
 which cache the list of symbols and uses efficient cache to speed up queries.
@@ -198,13 +271,13 @@ It’s structure looks as follows:
 An example of how Vue directive might be declared in Web Types is here.
 Once a match query is run on `v-on:click.once.alt`, we will get a `WebSymbolMatch` with following segments:
 
-- `v-`: Vue directive pattern symbol
-- `on`: Vue `on` directive
-- `:`
-- `click`: DOM `click` event symbol
-- `.`
-- `once`: Vue `on` directive `once` modifier
-- `alt`: Vue `on` directive `alt` modifier
+1. `v-`: Vue directive pattern symbol
+2. `on`: Vue `on` directive
+3. `:`
+4. `click`: DOM `click` event symbol
+5. `.`
+6. `once`: Vue `on` directive `once` modifier
+7. `alt`: Vue `on` directive `alt` modifier
 
 ### Patterns
 
@@ -226,12 +299,14 @@ There are 6 types of patterns:
    The matched symbol might be a WebSymbolMatch itself, which allows for nesting patterns.
 4. Pattern sequence: a sequence of patterns. If some of the patterns are not matched, an empty segment with `MISSING_REQUIRED_PART` will be created.
 5. Complex pattern: this pattern is called complex, because it makes several things:
-   1. The provided patterns are treated as alternatives.
-   2. It can have symbols resolver, which is used by nested symbol reference placeholder patterns.
-   3. It allows to add an additional scope to resolve stack
-   4. A complex pattern might be optional, in which case its absence is not reported as an error in enclosing sequence or complex pattern
-   5. The match can be repeated, and any duplicate segments might have `DUPLICATED` problem set
-   6. It can override proximity and priority, which by default is based on priority and proximity of matched symbols.
+    - The provided patterns are treated as alternatives.
+    - It can have symbols resolver, which is used by nested symbol reference placeholder patterns.
+    - It allows to add an additional scope to resolve stack
+    - A complex pattern might be optional, in which case its absence is not reported as an error in enclosing sequence or complex pattern
+    - The match can be repeated, and any duplicate segments might have `DUPLICATED` problem set
+    - It can override proximity and priority, which by default is based on priority and proximity of matched symbols.
+
+    {style="alpha-lower"}
 6. Completion auto popup: a special pattern, which works only in code completion queries.
    It delimits the place, where when creating code completion items, pattern evaluation should be stopped and `...` added.
    Selecting such items will result in adding the prefix part and then another code completion popup will open.
@@ -274,52 +349,54 @@ or a `WebSymbolRenameTarget` needs to be provided for it through a `SymbolRename
 ## Web Types
 
 Web Types is a JSON metadata format, which provides an easy way to contribute statically defined Web Symbols.
-A detailed schema for Web Types JSON is here. The format is open source and IDE-agnostic by itself,
-however currently it is being actively used mostly by JetBrains IDEs.
+The JSON Web Types detailed schema can be accessed by
+[following this link](https://github.com/JetBrains/web-types/blob/master/schema/web-types.json).
+The format is open source and IDE-agnostic by itself, however currently it is being actively used mostly by JetBrains IDEs.
 
-It was originally created to facilitate the contribution of statically defined symbols for the Vue framework
-and therefore you might notice some deprecated properties in the schema.
+It was originally created to facilitate the contribution of statically defined symbols for the
+[Vue](https://vuejs.org/) framework and therefore you might notice some deprecated properties in the schema.
 
-A simple Web Types file looks as follows:
+A simple Web Types file looks as follows, where this file defines an `my-element` HTML element with a `foo` attribute.:
 
-```JSON
+```
 {
   "$schema": "https://raw.githubusercontent.com/JetBrains/web-types/master/schema/web-types.json",
   "name": "example",
   "version": "0.0.1",
   "description-markup": "markdown",
   "contributions": {
-      "html": {
-          "elements": [
-              {
-                  "name": "my-element",
-                  "description": "A custom HTML element",
-                  "doc-url": "https://my-lib/docs/my-element",
-                  "attributes": [
-                      {
-                          "name": "foo",
-                          "description": "A custom attribute of `my-element`"
-                      }
-                  ]
-              }
+    "html": {
+      "elements": [
+        {
+          "name": "my-element",
+          "description": "A custom HTML element",
+          "doc-url": "https://my-lib/docs/my-element",
+          "attributes": [
+            {
+              "name": "foo",
+              "description": "A custom attribute of `my-element`"
+            }
           ]
-      }
+        }
+      ]
+    }
   }
 }
 ```
-
-This file defines an `my-element` HTML element with a `foo` attribute.
+{lang="JSON" collapsible="true" default-state="collapsed" collapsed-title-line-number="2"}
 
 ### File Structure
 
 The Web Types file should, at minimum, contain `name`, `version` and `contributions` properties.
-It is should also include `$schema` property -
-it can be either `https://raw.githubusercontent.com/JetBrains/web-types/master/schema/web-types.json`
-or `http://json.schemastore.org/web-types`.
-Schema contains detailed documentation for all of the JSON entities.
+It is should also include `$schema` property which can be either
+`https://raw.githubusercontent.com/JetBrains/web-types/master/schema/web-types.json`
+or
+`http://json.schemastore.org/web-types`.
+The schema contains detailed documentation for all of the JSON entities.
 
 Directly under `contributions` property are listed namespaces with their contributions.
-Currently only `html`, `css` or `js` namespaces are allowed, however in the future this limitation will be lifted to support Web Types for other technologies.
+Currently only `html`, `css` or `js` namespaces are allowed, however in the future this limitation
+will be lifted to support Web Types for other technologies.
 
 The `namespace` object contains symbol kind names listed as properties.
 Some symbol kinds are predefined and directly supported by IDE (see Symbol Kinds/Supported for reference).
@@ -337,7 +414,7 @@ If a contribution’s JSON property’s value is an object value or an array of 
 Such contributions will be assigned to the same namespace as the parent contributions.
 To use a different namespace for sub-contributions, nest symbol kind JSON property name under a `js`, `css` or `html` property. E.g:
 
-```JSON
+```
 "contributions": {
  "html": {
    "elements": [
@@ -363,25 +440,27 @@ To use a different namespace for sub-contributions, nest symbol kind JSON proper
  }
 }
 ```
+{lang="JSON" collapsible="true" default-state="collapsed"}
 
 In the example below, Web Types contributes information that the `my-element` HTML element supports a custom CSS property `--bg-color`.
 The `attributes` are implicitly under the `html` namespace.
 To contribute `foo` attribute one could also write it in longer form:
 
-```JSON
+```
 {
- "name": "my-element",
- "description": "A custom HTML element",
- "html": {
-   "attributes": [
-     {
-       "name": "foo",
-       "description": "A custom attribute of `my-element`"
-     }
-   ]
- }
+  "name": "my-element",
+  "description": "A custom HTML element",
+  "html": {
+    "attributes": [
+      {
+        "name": "foo",
+        "description": "A custom attribute of `my-element`"
+      }
+    ]
+  }
 }
 ```
+{lang="JSON" collapsible="true" default-state="collapsed" collapsed-title-line-number="2"}
 
 Each Web Types contribution is represented in the Web Symbols framework by a `PsiSourcedWebSymbol` object.
 All of the Web Types contributions are mapped 1-1 and custom properties are accessible through `properties` property.
@@ -390,27 +469,34 @@ All of the Web Types contributions are mapped 1-1 and custom properties are acce
 
 Web Types can currently be discovered by the IDE in following ways:
 
-#### NPM
 
-The IDE will automatically discover any Web Types shipped with the NPM library and specified in the
+{style="full"}
+NPM
+: The IDE will automatically discover any Web Types shipped with the NPM library and specified in the
 `web-types` property of `package.json`.
 The property accepts a string or an array of strings with relative paths to Web Types files shipped with the package.
 
-#### Local Project
-In your JavaScript projects in `package.json` files you can specify `web-types` property similarly to the NPM package.
+Local Project
+: In your JavaScript projects in `package.json` files you can specify `web-types` property similarly to the NPM package.
 The property accepts a string or an array of strings with relative paths to Web Types files within the project.
 
-#### IDE Plugin
-You can ship Web Types JSON with your IDE plugin.
+IDE Plugin
+: You can ship Web Types JSON with your IDE plugin.
 To point an IDE to its location use `com.intellij.webSymbols.webTypes` extension point and pass the file location in `source` attribute value.
 With `enableByDefault` attribute you can choose whether the Web Types file should be contributed to Web Symbols scope by default,
 or only if an NPM package with the same name is present in the project.
 
-### Special properties
+### Special Properties
 
-- `inject-language`: supported by `html/elements` and `html/attributes`, allows to inject the specified language into HTML element text or HTML attribute value.
-- `doc-hide-pattern`: if a symbol uses a RegEx pattern, usually it will be displayed in a documentation popup section "pattern". Setting this property to `true` hides that section.
-- `hide-from-completion`: by default all symbols show up in code completion. Setting this property to `true` prevents a symbol from showing up in the code completion.
+{style="full"}
+inject-language
+: supported by `html/elements` and `html/attributes`, allows to inject the specified language into HTML element text or HTML attribute value.
+
+doc-hide-pattern
+: if a symbol uses a RegEx pattern, usually it will be displayed in a documentation popup section "pattern". Setting this property to `true` hides that section.
+
+hide-from-completion
+: by default all symbols show up in code completion. Setting this property to `true` prevents a symbol from showing up in the code completion.
 
 ### Symbol Kinds
 
@@ -437,7 +523,7 @@ for reference.
 Any Web Types file targeting only Angular support should have `framework` property set to `angular`.
 Highlights: `js/ng-custom-events` contribute symbols with patterns for any custom events supported by Angular `EventManager`s, e.g.:
 
-```JSON
+```
 "ng-custom-events": [
  {
    "name": "Custom modifiers for declarative events handling",
@@ -476,6 +562,7 @@ Highlights: `js/ng-custom-events` contribute symbols with patterns for any custo
  }
 ]
 ```
+{lang="JSON" collapsible="true" default-state="collapsed"}
 
 #### Vue
 
@@ -483,11 +570,30 @@ Vue plugin Web Types are available here for reference.
 Any Web Types file targeting only Vue support should have `framework` property set to `vue`.
 Highlights:
 
-`/html/vue-components` - contribute Vue components. A Vue component contribution supports:
+{style="full"}
+/html/vue-components
+: Use `/html/vue-components` to contribute Vue components.
 
-`/html/props` - contribute Vue component props, e.g:
+/html/vue-directives
+: Use `/html/vue-directives` to contribute Vue directives.
+Use `attribute-value` property to specify the type of value expression. E.g.:
+```
+"attribute-value": {
+  "type": "boolean",
+  "required": true
+}
+```
+{lang="JSON" collapsible="true" default-state="collapsed"}
 
-```JSON
+/html/vue-file-top-elements
+: Use `/html/vue-file-top-elements` to contribute any custom top-level elements available in Vue Single Component File
+
+A Vue `/html/vue-components` contribution supports:
+
+{style="full"}
+/html/props
+: Use `/html/props` to contribute Vue component props, e.g:
+```
 "props": [
  {
   "name": "appear",
@@ -497,10 +603,13 @@ Highlights:
  }
 ]
 ```
+{lang="JSON" collapsible="true" default-state="collapsed"}
 
-`/html/slots` - contribute Vue component slots, e.g.:
-
-```JSON
+/html/slots
+: Use `/html/slots` to contribute Vue component slots.
+For scoped slots use `vue-properties` to provide list of scoped slot properties.
+Example:
+```
 "slots": [
  {
    "name": "img",
@@ -515,11 +624,11 @@ Highlights:
  }
 ]
 ```
+{lang="JSON" collapsible="true" default-state="collapsed"}
 
-For scoped slots use `vue-properties` to provide list of scoped slot properties.
-`/js/events` - contribute Vue component events, e.g.:
-
-```JSON
+/js/events
+: Use `/js/events` to contribute Vue component events, e.g.:
+```
 "js": {
  "events": [
    {
@@ -529,29 +638,25 @@ For scoped slots use `vue-properties` to provide list of scoped slot properties.
  ]
 }
 ```
+{lang="JSON" collapsible="true" default-state="collapsed"}
 
-`html/vue-model` - contribute settings for Vue model directive. E.g.:
-
-```JSON
+html/vue-model
+: Use `html/vue-model` to contribute settings for Vue model directive. E.g.:
+```
 "vue-model": {
- "prop": "show",
- "event": "input"
+  "prop": "show",
+  "event": "input"
 }
 ```
+{lang="JSON" collapsible="true" default-state="collapsed"}
 
-`/html/vue-directives` - contribute Vue directives. Use `attribute-value` property to specify the type of value expression. E.g.:
 
-```JSON
-"attribute-value": {
- "type": "boolean",
- "required": true
-}
+A Vue `/html/vue-directives` contribution supports:
+
+{style="full"}
+/html/argument
+: Use `/html/argument` as a Vue directive argument. E.g.:
 ```
-
-A Vue directive contribution supports:
-`/html/argument` - a Vue directive argument. E.g.:
-
-```JSON
 "argument": {
  "name": "attribute or property name",
  "description": "Optional attribute or property name",
@@ -565,10 +670,12 @@ A Vue directive contribution supports:
  }
 }
 ```
+{lang="JSON" collapsible="true" default-state="collapsed"}
 
-`/html/modifiers` - a Vue directive modifier. E.g.:
 
-```JSON
+/html/modifiers
+: Use `/html/modifiers` as a Vue directive modifier. E.g.:
+```
 "modifiers": [
  {
    "name": "body",
@@ -581,8 +688,8 @@ A Vue directive contribution supports:
  }
 ]
 ```
+{lang="JSON" collapsible="true" default-state="collapsed"}
 
-`/html/vue-file-top-elements` - contribute any custom top-level elements available in Vue Single Component File
 
 #### Web Components
 
@@ -596,62 +703,63 @@ Web Components should use:
 
 Example Web Component:
 
-```JSON
+```
 {
- "$schema": "https://raw.githubusercontent.com/JetBrains/web-types/master/schema/web-types.json",
- "name": "Cool library",
- "version": "1.0.0",
- "js-types-syntax": "typescript",
- "description-markup": "markdown",
- "contributions": {
-   "html": {
-     "elements": [
-       {
-         "name": "cool-component",
-         "description": "Use the cool component to make your website more attractive.",
-         "doc-url": "https://www.cool-lib.com/docs/cool-component",
-         "attributes": [
-           {
-             "name": "color",
-             "description": "Choose color for coolness",
-             "default": "blue",
-             "required": false,
-             "doc-url": "https://www.cool-lib.com/docs/cool-component#attrs"
-             "value": {
-               "type": "string"
-             }
-           }
-         ],
-         "slots": [
-           {
-             "name": "container"
-           }
-         ],
-         "events": [
-           {
-             "name": "color:changed",
-             "description": "Emitted when color changes"
-           }
-         ],
-         "js": {
-           "properties": [
-             {
-               "name": "color",
-               "type": "string",
-               "default": "blue"
-             }
-           ]
-         },
-         "css": {
-           "properties": [
-             {
-               "name": "--cool-degree"
-             }
-           ]
-         }
-       }
-     ]
-   }
- }
+  "$schema": "https://raw.githubusercontent.com/JetBrains/web-types/master/schema/web-types.json",
+  "name": "Cool library",
+  "version": "1.0.0",
+  "js-types-syntax": "typescript",
+  "description-markup": "markdown",
+  "contributions": {
+    "html": {
+      "elements": [
+        {
+          "name": "cool-component",
+          "description": "Use the cool component to make your website more attractive.",
+          "doc-url": "https://www.cool-lib.com/docs/cool-component",
+          "attributes": [
+            {
+              "name": "color",
+              "description": "Choose color for coolness",
+              "default": "blue",
+              "required": false,
+              "doc-url": "https://www.cool-lib.com/docs/cool-component#attrs",
+              "value": {
+                "type": "string"
+              }
+            }
+          ],
+          "slots": [
+            {
+              "name": "container"
+            }
+          ],
+          "events": [
+            {
+              "name": "color:changed",
+              "description": "Emitted when color changes"
+            }
+          ],
+          "js": {
+            "properties": [
+              {
+                "name": "color",
+                "type": "string",
+                "default": "blue"
+              }
+            ]
+          },
+          "css": {
+            "properties": [
+              {
+                "name": "--cool-degree"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
 }
 ```
+{lang="JSON" collapsible="true" default-state="collapsed" collapsed-title-line-number="3"}

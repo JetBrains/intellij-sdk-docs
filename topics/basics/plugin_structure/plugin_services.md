@@ -46,7 +46,7 @@ Restrictions:
 
 * Service class must be `final`.
 * Constructor injection of dependency services is not supported.
-* If service is a [PersistentStateComponent](persisting_state_of_components.md), roaming must be disabled (`roamingType = RoamingType.DISABLED`).
+* If application-level service is a [PersistentStateComponent](persisting_state_of_components.md), roaming must be disabled (`roamingType = RoamingType.DISABLED`).
 
 See [Project-Level Service](#project-service-sample) below for a sample.
 

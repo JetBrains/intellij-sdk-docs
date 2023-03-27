@@ -146,7 +146,7 @@ The wildcard portion of these patterns corresponds to the `usage` definitions ab
 ## Adding a Custom Background Image
 
 The IDE supports setting an image as a background in the application window.
-Users can do this manually in [Preferences](https://www.jetbrains.com/help/idea/setting-background-image.html).
+Users can do this manually in [Settings](https://www.jetbrains.com/help/idea/setting-background-image.html).
 
 Themes support specifying a background image as a key-value pair in the `"background": {}` (for editor and tools) and `"emptyFrameBackground": {}` (for empty frame) sections of a Theme description file:
 * The `image` key uses the file name of the image as the value.

@@ -1,6 +1,6 @@
 # Code Samples
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Accessing SDK Docs code samples.</link-summary>
 
@@ -29,7 +29,7 @@ Select the code sample(s) to import via the [Gradle tool window](https://www.jet
 Alternatively, import _all_ code samples available by choosing <path>_gradleCompositeBuild</path>, which links all Gradle projects in a Composite Build.
 
 After successful import, the project appears in the <control>Gradle</control> tool window tree as a new node.
-Assign a Java 11 SDK in <ui-path>Preferences | Build, Execution, Deployment | Build Tools | Gradle</ui-path> for <control>Gradle JVM</control>.
+Assign a Java 11 SDK in <ui-path>Settings | Build, Execution, Deployment | Build Tools | Gradle</ui-path> for <control>Gradle JVM</control>.
 Invoke <control>Reload All Gradle Projects</control> from the Gradle tool window toolbar if necessary.
 
 ## Running Code Samples

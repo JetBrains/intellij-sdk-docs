@@ -236,10 +236,10 @@ Highlights:
 Use `attribute-value` property to specify the type of value expression. E.g.:
 ```JSON
 {
-  "attribute-value": {
-    "type": "boolean",
-    "required": true
-  }
+    "attribute-value": {
+      "type": "boolean",
+      "required": true
+    }
 }
 ```
 
@@ -253,14 +253,12 @@ A Vue `/html/vue-components` contribution supports:
 : Use `/html/props` to contribute Vue component props, e.g:
 ```JSON
 {
-  "props": [
-    {
+    "props": [{
       "name": "appear",
       "description": "Whether to apply transition on initial render.",
       "type": "boolean",
       "default": "false"
-    }
-  ]
+    }]
 }
 ```
 
@@ -270,8 +268,7 @@ For scoped slots use `vue-properties` to provide list of scoped slot properties.
 Example:
 ```JSON
 {
-  "slots": [
-    {
+    "slots": [{
       "name": "img",
       "description": "Expects the [v-img](/components/images) component.",
       "doc-url": "https://www.vuetifyjs.com/api/v-app-bar#slots",
@@ -281,8 +278,7 @@ Example:
           "type": "{ height: string, src: string | srcObject }"
         }
       ]
-    }
-  ]
+    }]
 }
 ```
 
@@ -290,14 +286,14 @@ Example:
 : Use `/js/events` to contribute Vue component events, e.g.:
 ```JSON
 {
-  "js": {
-    "events": [
-      {
-        "name": "input",
-        "description": "The updated bound model"
-      }
-    ]
-  }
+    "js": {
+      "events": [
+        {
+          "name": "input",
+          "description": "The updated bound model"
+        }
+      ]
+    }
 }
 ```
 
@@ -305,10 +301,10 @@ html/vue-model
 : Use `html/vue-model` to contribute settings for Vue model directive. E.g.:
 ```JSON
 {
-   "vue-model": {
+    "vue-model": {
       "prop": "show",
       "event": "input"
-   }
+    }
 }
 ```
 
@@ -320,18 +316,18 @@ A Vue `/html/vue-directives` contribution supports:
 : Use `/html/argument` as a Vue directive argument. E.g.:
 ```JSON
 {
-  "argument": {
-    "name": "attribute or property name",
-    "description": "Optional attribute or property name",
-    "pattern": {
-      "items": [
-        {
-          "path": "/html/attributes",
-          "includeVirtual": false
-        }
-      ]
+    "argument": {
+      "name": "attribute or property name",
+      "description": "Optional attribute or property name",
+      "pattern": {
+        "items": [
+          {
+            "path": "/html/attributes",
+            "includeVirtual": false
+          }
+        ]
+      }
     }
-  }
 }
 ```
 
@@ -340,17 +336,17 @@ A Vue `/html/vue-directives` contribution supports:
 : Use `/html/modifiers` as a Vue directive modifier. E.g.:
 ```JSON
 {
-  "modifiers": [
-    {
-      "name": "body",
-      "description": "Make the mask append to the body element",
-      "type": "boolean"
-    },
-    {
-      "name": "fullscreen",
-      "type": "boolean"
-    }
-  ]
+    "modifiers": [
+      {
+        "name": "body",
+        "description": "Make the mask append to the body element",
+        "type": "boolean"
+      },
+      {
+        "name": "fullscreen",
+        "type": "boolean"
+      }
+    ]
 }
 ```
 

@@ -29,7 +29,7 @@ Each symbol is treated by the framework the same, regardless of their origin.
 
 WebSymbol has a number of properties, which are used across IDE features:
 
-{style="narrow"}
+{style="full"}
 namespace
 : Describes which language or concept the symbol belongs to.
 
@@ -115,7 +115,7 @@ Following properties handle generation of
 [Quick Doc](https://www.jetbrains.com/help/idea/viewing-reference-information.html#inline-quick-documentation)
 in the IDE:
 
-{style="narrow"}
+{style="full"}
 description
 : An optional text, which describes the symbol purpose and usage. It is rendered in the documentation popup or view.
 
@@ -137,7 +137,7 @@ interface provides builder methods for customizing the documentation.
 
 Following properties are related to name matching and code completion queries:
 
-{style="narrow"}
+{style="full"}
 pattern
 : The pattern to match names against. As a result of pattern matching a
 [`WebSymbolMatch`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/query/WebSymbolMatch.kt)
@@ -166,7 +166,7 @@ override some of the properties of the symbol, or it can extend its scope conten
 ## Methods
 {#query-methods}
 
-{style="narrow"}
+{style="full"}
 createPointer()
 : Returns the pointer to the symbol, which can survive between read actions. The dereferenced symbol should be valid,
   i.e. any PSI based properties should return valid PsiElements.
@@ -179,7 +179,8 @@ as dependencies. If a symbol instance can mutate over the time, it should proper
 isEquivalentTo()
 : Returns true if two symbols are the same or equivalent for resolve purposes.
 
-adjustNameForRefactoring(): Web Symbols can have various naming conventions.
+adjustNameForRefactoring()
+: Web Symbols can have various naming conventions.
   This method is used by the framework to determine a new name for a symbol based on its occurrence.
 
 ## PsiSourcedWebSymbol
@@ -194,7 +195,7 @@ instead of implementing this interface you should contribute dedicated declarati
 ### Properties
 {#psisourcedwebsymbol-properties}
 
-{style="narrow"}
+{style="full"}
 source
 : The `PsiElement`, which is the symbol declaration.
 
@@ -206,7 +207,7 @@ and some special symbols can have a name, which consists of other Web Symbols.
 ### Properties
 {#compositewebsymbol-properties}
 
-{style="narrow"}
+{style="full"}
 nameSegments
 : List of
 [`WebSymbolNameSegment`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/WebSymbolNameSegment.kt).
@@ -225,7 +226,7 @@ When configuring queries, Web Symbols scope are added to the list to create an i
 ### Methods
 {#websymbolsscope-methods}
 
-{style="narrow"}
+{style="full"}
 getSymbols()
 : Returns symbols within the scope. If provided `name` is `null`, no pattern evaluation will happen and all symbols of a particular
 kind and from particular namespace will be returned.

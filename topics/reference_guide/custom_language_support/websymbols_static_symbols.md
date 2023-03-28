@@ -128,7 +128,7 @@ All of the Web Types contributions are mapped 1-1 and custom properties are acce
 
 Web Types can currently be discovered by the IDE in following ways:
 
-{style="narrow"}
+{style="full"}
 NPM
 : The IDE will automatically discover any Web Types shipped with the NPM library and specified in the
 `web-types` property of `package.json`.
@@ -146,7 +146,7 @@ or only if an NPM package with the same name is present in the project.
 
 ## Special Properties
 
-{style="narrow"}
+{style="full"}
 inject-language
 : Supported by `html/elements` and `html/attributes`, allows to inject the specified language into HTML element text or HTML attribute value.
 
@@ -228,7 +228,7 @@ Vue plugin Web Types are available here for reference.
 Any Web Types file targeting only Vue support should have `framework` property set to `vue`.
 Highlights:
 
-{style="narrow"}
+{style="full"}
 /html/vue-components
 : Use `/html/vue-components` to contribute Vue components.
 
@@ -249,7 +249,7 @@ Use `attribute-value` property to specify the type of value expression. E.g.:
 
 A Vue `/html/vue-components` contribution supports:
 
-{style="narrow"}
+{style="full"}
 /html/props
 : Use `/html/props` to contribute Vue component props, e.g:
 ```JSON
@@ -312,7 +312,7 @@ html/vue-model
 
 A Vue `/html/vue-directives` contribution supports:
 
-{style="narrow"}
+{style="full"}
 /html/argument
 : Use `/html/argument` as a Vue directive argument. E.g.:
 ```JSON

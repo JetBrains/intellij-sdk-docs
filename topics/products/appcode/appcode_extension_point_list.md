@@ -1,6 +1,6 @@
 # AppCode Extension Point and Listener List
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 34 Extension Points and 6 Listeners for AppCode 2022.3
 
@@ -21,8 +21,8 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [CocoaPodsUtils#PODS_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cocoapods.CocoaPodsUtils.PodsListener)  | `PodsListener` |
 | [AMDeviceManager#DEVICE_LISTENER_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.execution.deviceSupport.AMDeviceListener)  | `AMDeviceListener` |
 | [XcodeProjectTestListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.xcode.model.XcodeProjectTestListener)  | `XcodeProjectTestListener` |
-| [Companion#XCODE_IS_BROKEN_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.xcode.refresh.XcodeIsBrokenListener)  | `XcodeIsBrokenListener` |
-| [Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.swift.swiftpm.SwiftPackageManagerSettingsListener)  | `SwiftPackageManagerSettingsListener` |
+| [XcodeIsBrokenListener.Companion#XCODE_IS_BROKEN_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.xcode.refresh.XcodeIsBrokenListener)  | `XcodeIsBrokenListener` |
+| [SwiftPackageManagerSettingsListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.swift.swiftpm.SwiftPackageManagerSettingsListener)  | `SwiftPackageManagerSettingsListener` |
 
 
 ### AppCodeCorePlugin.xml

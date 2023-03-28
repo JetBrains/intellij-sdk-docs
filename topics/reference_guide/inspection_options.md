@@ -26,7 +26,7 @@ Declarative API allows to:
 Providing the inspection options is achieved by implementing
 [`InspectionProfileEntry.getOptionsPane()`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/InspectionProfileEntry.java),
 which returns an
-[`OptPane`](%gh-ic-master%/platform/analysis-api/src/com/intellij/codeInspection/options/OptPane.java)
+[`OptPane`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/options/OptPane.java)
 object describing available configuration possibilities.
 Note that `InspectionProfileEntry` is a parent of inspection base classes like
 [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java)
@@ -56,7 +56,7 @@ public @NotNull OptPane getOptionsPane() {
 ```
 
 The above example builds a form with two options (see
-[`SizeReplaceableByIsEmptyInspection`](%gh-ic-master%/plugins/InspectionGadgets/src/com/siyeh/ig/style/SizeReplaceableByIsEmptyInspection.java)
+[`SizeReplaceableByIsEmptyInspection`](%gh-ic%/plugins/InspectionGadgets/src/com/siyeh/ig/style/SizeReplaceableByIsEmptyInspection.java)
 for the full implementation context):
 * List of strings, which are validated for being Java classes. The provided list is bound to the `ignoredTypes` field in the inspection class.
 * Checkbox, which value is bound to the boolean `ignoreNegations` field in the inspection class.
@@ -70,14 +70,14 @@ It enables resolving and other resolve-related features available, making it eas
 
 The default way of binding option form values to fields may be insufficient in more advanced cases.
 It is possible to customize the way of binding options by providing a custom
-[`OptionController`](%gh-ic-master%/platform/analysis-api/src/com/intellij/codeInspection/options/OptionController.java)
+[`OptionController`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/options/OptionController.java)
 from `InspectionProfileEntry.getOptionController()` method.
 
 Consider the <ui-path>Properties files | Inconsistent resource bundle</ui-path> global inspection, from bundled **Properties** plugin in IntelliJ IDEA, which reports several types of inconsistencies in <path>.properties</path> files.
 The inspection allows enabling or disabling reporting specific issue types, which are reported by providers implementing a dedicated interface.
 Information about enabled providers is stored in a map where the key is a provider ID.
 The options panel and value binding are implemented in the following way (see
-[`InconsistentResourceBundleInspection`](%gh-ic-master%/plugins/java-i18n/src/com/intellij/codeInspection/i18n/inconsistentResourceBundle/InconsistentResourceBundleInspection.java)
+[`InconsistentResourceBundleInspection`](%gh-ic%/plugins/java-i18n/src/com/intellij/codeInspection/i18n/inconsistentResourceBundle/InconsistentResourceBundleInspection.java)
 for the full implementation context):
 
 ```java
@@ -114,9 +114,9 @@ Reading and writing options in the map is achieved by registering a custom contr
 It's possible to compose several option controllers into the hierarchy based on the `bindId` prefix.
 It may be useful when some inspections have common configuration options and store the configuration in dedicated objects.
 See
-[`OptComponent.prefix()`](%gh-ic-master%/platform/analysis-api/src/com/intellij/codeInspection/options/OptComponent.java)
+[`OptComponent.prefix()`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/options/OptComponent.java)
 and `OptionController.onPrefix()` methods for more details and example implementation:
-[`MissingJavadocInspection`](%gh-ic-master%/java/java-impl/src/com/intellij/codeInspection/javaDoc/MissingJavadocInspection.java).
+[`MissingJavadocInspection`](%gh-ic%/java/java-impl/src/com/intellij/codeInspection/javaDoc/MissingJavadocInspection.java).
 
 ### Non-Profile Inspection Options
 
@@ -127,12 +127,12 @@ It is still convenient to be able to configure these options from the inspection
 An example of such a case is the <ui-path>Java | Probable bugs | Nullability problems | @NotNull/@Nullable problems</ui-path> inspection, which contains the <control>Configure Annotations…</control> button that opens the <control>Nullable/NotNull Configuration</control> dialog.
 
 Custom Swing controls can be provided by implementing
-[`CustomComponentExtensionWithSwingRenderer`](%gh-ic-master%/platform/lang-api/src/com/intellij/codeInspection/ui/CustomComponentExtensionWithSwingRenderer.java)
+[`CustomComponentExtensionWithSwingRenderer`](%gh-ic%/platform/lang-api/src/com/intellij/codeInspection/ui/CustomComponentExtensionWithSwingRenderer.java)
 and registering the implementation in the `com.intellij.inspectionCustomComponent` extension point.
 Please note that this API is still in experimental state and may be changed without preserving backward compatibility.
 
 **Example**:
-[`JavaInspectionButtons`](%gh-ic-master%/java/java-impl/src/com/intellij/codeInsight/options/JavaInspectionButtons.java)
+[`JavaInspectionButtons`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/options/JavaInspectionButtons.java)
 providing buttons for configuring options in custom dialogs
 
 ## UI-Based Inspection Options
@@ -151,7 +151,6 @@ For simple customization requirements, see also:
 * [`SingleCheckboxOptionsPanel`](%gh-ic%/platform/lang-api/src/com/intellij/codeInspection/ui/SingleCheckboxOptionsPanel.java) for single checkbox
 * [`MultipleCheckboxOptionsPanel`](%gh-ic%/platform/lang-api/src/com/intellij/codeInspection/ui/MultipleCheckboxOptionsPanel.java) for multiple checkboxes
 * [`SingleIntegerFieldOptionsPanel`](%gh-ic%/platform/lang-api/src/com/intellij/codeInspection/ui/SingleIntegerFieldOptionsPanel.java) for single Integer (text field)
-* [`ConventionOptionsPanel`](%gh-ic%/platform/lang-api/src/com/intellij/codeInspection/ui/ConventionOptionsPanel.java) for validation using regular expression
 
 > Be careful when you have a hierarchy of inspection classes.
 > For example, if inspection superclass is converted to the declarative approach, any `createOptionsPanel()` methods in subclasses will be ignored.

@@ -1,8 +1,8 @@
 # Spring API Extension Point and Listener List
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-50 Extension Points and 5 Listeners for Spring API
+52 Extension Points and 5 Listeners for Spring API
 
 <include from="snippets.md" element-id="ep_list_legend"/>
 
@@ -23,7 +23,10 @@
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| [com.intellij.spring.autodetected.filesets](https://jb.gg/ipe?extensions=com.intellij.spring.autodetected.filesets) | `SpringAutodetectedFilesetsSearcher` |
+| [com.intellij.spring.autodetected.models](https://jb.gg/ipe?extensions=com.intellij.spring.autodetected.models) | `SpringAutodetectedModelsSearcher` |
 | [com.intellij.spring.beanPointerPanelContent](https://jb.gg/ipe?extensions=com.intellij.spring.beanPointerPanelContent) | `SpringBeanPointerPanelContent` |
+| [com.intellij.spring.beans.stereotype](https://jb.gg/ipe?extensions=com.intellij.spring.beans.stereotype) | `SpringBeanStereotype` |
 | [com.intellij.spring.componentScanExtender](https://jb.gg/ipe?extensions=com.intellij.spring.componentScanExtender) | `ComponentScanExtender` |
 | [com.intellij.spring.conditionalEvaluatorProvider](https://jb.gg/ipe?extensions=com.intellij.spring.conditionalEvaluatorProvider) | `ConditionalEvaluatorProvider` |
 | [com.intellij.spring.configSearcherScopeModifier](https://jb.gg/ipe?extensions=com.intellij.spring.configSearcherScopeModifier) | `ConfigSearcherScopeModifier` |
@@ -41,7 +44,6 @@
 | [com.intellij.spring.jam.customMetaImplementation](https://jb.gg/ipe?extensions=com.intellij.spring.jam.customMetaImplementation) | `n/a` |
 | [com.intellij.spring.localAnnotationModelDependentModelsProvider](https://jb.gg/ipe?extensions=com.intellij.spring.localAnnotationModelDependentModelsProvider) | `LocalAnnotationModelDependentModelsProvider` |
 | [com.intellij.spring.localModelProducer](https://jb.gg/ipe?extensions=com.intellij.spring.localModelProducer) | `SpringLocalModelProducer` |
-| [com.intellij.spring.modelProvider](https://jb.gg/ipe?extensions=com.intellij.spring.modelProvider) | `SpringModelProvider` |
 | [com.intellij.spring.placeholderReferenceResolver](https://jb.gg/ipe?extensions=com.intellij.spring.placeholderReferenceResolver) | `SpringPlaceholderReferenceResolver` |
 | [com.intellij.spring.resourceTypeProvider](https://jb.gg/ipe?extensions=com.intellij.spring.resourceTypeProvider) | `SpringResourceTypeProvider` |
 | [com.intellij.spring.scriptBeanPsiClassDiscoverer](https://jb.gg/ipe?extensions=com.intellij.spring.scriptBeanPsiClassDiscoverer) | `ScriptBeanPsiClassDiscoverer` |
@@ -101,10 +103,10 @@
 |-----------------|----------------|
 | [com.intellij.spring.boot.run.applicationUpdatePolicy](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.applicationUpdatePolicy) | `SpringBootApplicationUpdatePolicy` |
 | [com.intellij.spring.boot.run.applicationUrlPathProviderFactory](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.applicationUrlPathProviderFactory) | `SpringBootApplicationUrlPathProviderFactory` |
-| [com.intellij.spring.boot.run.endpoint](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.endpoint) ![Experimental API][experimental] | `Endpoint` |
+| [com.intellij.spring.boot.run.endpoint](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.endpoint) ![Experimental][experimental] | `Endpoint` |
 | [com.intellij.spring.boot.run.endpointTabConfigurable](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.endpointTabConfigurable) ![Project-Level][project-level] | `EndpointTabConfigurable` |
 | [com.intellij.spring.boot.run.liveBeansPanelContent](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.liveBeansPanelContent) | `LiveBeansPanelContent` |
-| [com.intellij.spring.boot.run.starterManager](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.starterManager) ![Internal API][internal] | `SpringBootStarterManager` |
+| [com.intellij.spring.boot.run.starterManager](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.starterManager) ![Internal][internal] | `SpringBootStarterManager` |
 
 ### intellij.spring.el.xml
 
@@ -119,8 +121,10 @@
 |-----------------|----------------|
 | [com.intellij.spring.gutterDiagramActionProvider](https://jb.gg/ipe?extensions=com.intellij.spring.gutterDiagramActionProvider) | `SpringGutterDiagramActionProvider` |
 
-[experimental]: https://img.shields.io/badge/-Experimental_API-red?style=flat-square
-[internal]: https://img.shields.io/badge/-Internal_API-darkred?style=flat-square
+[deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square
+[removal]: https://img.shields.io/badge/-Removal-red?style=flat-square
+[obsolete]: https://img.shields.io/badge/-Obsolete-grey?style=flat-square
+[experimental]: https://img.shields.io/badge/-Experimental-violet?style=flat-square
+[internal]: https://img.shields.io/badge/-Internal-darkred?style=flat-square
 [project-level]: https://img.shields.io/badge/-Project--Level-blue?style=flat-square
 [non-dynamic]: https://img.shields.io/badge/-Non--Dynamic-orange?style=flat-square
-[deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square

@@ -71,6 +71,7 @@ The generated `my_plugin` project <path>build.gradle.kts</path> file:
 ```kotlin
 plugins {
   id("java")
+  id("org.jetbrains.kotlin.jvm") version "1.7.20"
   id("org.jetbrains.intellij") version "1.13.2"
 }
 
@@ -84,7 +85,7 @@ repositories {
 // Configure Gradle IntelliJ Plugin
 // Read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
-  version.set("2021.3")
+  version.set("2022.2.4")
   type.set("IC") // Target IDE Platform
 
   plugins.set(listOf(/* Plugin Dependencies */))
@@ -96,10 +97,13 @@ tasks {
     sourceCompatibility = "11"
     targetCompatibility = "11"
   }
+  withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    kotlinOptions.jvmTarget = "11"
+  }
 
   patchPluginXml {
-    sinceBuild.set("213")
-    untilBuild.set("223.*")
+    sinceBuild.set("222")
+    untilBuild.set("232.*")
   }
 
   signPlugin {
@@ -112,6 +116,7 @@ tasks {
     token.set(System.getenv("PUBLISH_TOKEN"))
   }
 }
+
 ```
 
 * Two Gradle plugins are explicitly declared:

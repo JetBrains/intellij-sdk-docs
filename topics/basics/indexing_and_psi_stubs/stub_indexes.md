@@ -32,7 +32,7 @@ The following steps need to be performed only once for each language that suppor
 
 **Examples**:
 - [`JavaStubElementTypes`](%gh-ic%/java/java-psi-impl/src/com/intellij/psi/impl/java/stubs/JavaStubElementTypes.java) registered in [`JavaPsiPlugin.xml`](%gh-ic%/java/java-psi-impl/src/META-INF/JavaPsiPlugin.xml)
-- see [`Angular2MetadataElementTypes`](%gh-ij-plugins-master%/AngularJS/src/org/angular2/entities/metadata/Angular2MetadataElementTypes.kt) for Kotlin sample
+- see [`Angular2MetadataElementTypes`](%gh-ij-plugins%/AngularJS/src/org/angular2/entities/metadata/Angular2MetadataElementTypes.kt) for Kotlin sample
 
 For each element type that you want to store in the stub tree, you need to perform the following steps:
 

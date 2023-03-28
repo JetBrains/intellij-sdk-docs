@@ -10,8 +10,8 @@
 
 </tldr>
 
-> Plugins targeting 2023.1 and later only should use [`DocumentationTarget`](%gh-ic-master%/platform/lang-impl/src/com/intellij/platform/backend/documentation/DocumentationTarget.kt)
-> API provided via `com.intellij.platform.documentation.targetProvider` extension point instead.
+> Plugins targeting 2023.1 and later only should use [`DocumentationTarget`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/DocumentationTarget.kt)
+> API provided via `com.intellij.platform.backend.documentation.targetProvider` extension point instead.
 > This page will be updated shortly with more information.
 
 Custom languages can use the `com.intellij.lang.documentationProvider` extension point (EP) to show documentation for functions,

@@ -37,7 +37,7 @@ To generate SVG icons suited for the IntelliJ-based IDEs, also consider third-pa
 In the case of a Gradle-based project, icons should be placed in the <path>resources</path> folder.
 If the project is DevKit-based, the recommended approach is to put icons to a dedicated [source root](https://www.jetbrains.com/help/idea/content-roots.html) marked as <control>Resources Root</control>, say <path>icons</path> or <path>resources</path>.
 
-The `getIcon()` method of [`IconLoader`](%gh-ic%/platform/util/ui/src/com/intellij/openapi/util/IconLoader.java) can be used to access the icons.
+The `getIcon()` method of [`IconLoader`](%gh-ic%/platform/util/ui/src/com/intellij/openapi/util/IconLoader.kt) can be used to access the icons.
 The path to the icon passed in as argument to `IconLoader.getIcon()` **must** start with leading `/`.
 
 Then define a class/interface in a top-level package called `icons` holding icon constants as static fields:
@@ -219,9 +219,9 @@ This allows supporting both UI variants at the same time — whichever the user 
 
 > Sample setup from Maven plugin:
 >
-> - Icon resources root folder: [`images`](%gh-ic-master%/plugins/maven/src/main/resources/images)
-> - Mapping file: [`MavenIconMappings.json`](%gh-ic-master%/plugins/maven/src/main/resources/MavenIconMappings.json)
-> - Extension point registration (`<iconMapper mappingFile="MavenIconMappings.json"/>`): [`plugin.xml`](%gh-ic-master%/plugins/maven/src/main/resources/META-INF/plugin.xml)
+> - Icon resources root folder: [`images`](%gh-ic%/plugins/maven/src/main/resources/images)
+> - Mapping file: [`MavenIconMappings.json`](%gh-ic%/plugins/maven/src/main/resources/MavenIconMappings.json)
+> - Extension point registration (`<iconMapper mappingFile="MavenIconMappings.json"/>`): [`plugin.xml`](%gh-ic%/plugins/maven/src/main/resources/META-INF/plugin.xml)
 
 ### Mapping Entries
 
@@ -247,7 +247,7 @@ In this sample, the icon root folder is named <path>icons</path>:
 }
 ```
 
-If one new icon replaces several old icons, use JSON list format. Example from [`PlatformIconMappings.json`](%gh-ic-master%/platform/icons/src/PlatformIconMappings.json):
+If one new icon replaces several old icons, use JSON list format. Example from [`PlatformIconMappings.json`](%gh-ic%/platform/icons/src/PlatformIconMappings.json):
 
 ```json
     "vcs.svg": [

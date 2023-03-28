@@ -1,8 +1,8 @@
 # Rider Extension Point and Listener List
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-87 Extension Points and 3 Listeners for Rider
+97 Extension Points and 5 Listeners for Rider
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
@@ -15,9 +15,10 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | Topic | Listener |
 |-------|----------|
 | [RiderStyleCopConfigurable#STYLE_COP_CONFIGURABLE_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.application.options.editor.EditorOptionsListener)  | [`EditorOptionsListener`](%gh-ic%/platform/platform-impl/src/com/intellij/application/options/editor/EditorOptionsListener.java) |
-| [Companion#SSH_CREDENTIALS_IN_CLIPBOARD_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.debugger.attach.remoting.SSHCredentialsInClipboardNotifier)  | `SSHCredentialsInClipboardNotifier` |
-| [Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.run.environment.MSBuildEvaluationListener)  | `MSBuildEvaluationListener` |
-
+| [SSHCredentialsInClipboardNotifier.Companion#SSH_CREDENTIALS_IN_CLIPBOARD_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.debugger.attach.remoting.SSHCredentialsInClipboardNotifier)  | `SSHCredentialsInClipboardNotifier` |
+| [FrontendTypedHandlerManager#BEFORE_TYPING_SENT](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.editorActions.IFrontendTypingListener)  | `IFrontendTypingListener` |
+| [MSBuildEvaluationListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.run.environment.MSBuildEvaluationListener)  | `MSBuildEvaluationListener` |
+| [RiderGlobalBackendProgressListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.services.RiderGlobalProgressHost.RiderGlobalBackendProgressListener)  | `RiderGlobalBackendProgressListener` |
 
 ### com.jetbrains.dotTrace.dotMemory
 
@@ -39,18 +40,23 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.backend.auto.import.support](https://jb.gg/ipe?extensions=com.intellij.backend.auto.import.support) ![Non-Dynamic][non-dynamic] | `RiderAutoImportSupportPolicy` |
 | [com.intellij.backend.autoPopup.support](https://jb.gg/ipe?extensions=com.intellij.backend.autoPopup.support) ![Non-Dynamic][non-dynamic] | `RiderAutoPopupSupportPolicy` |
 | [com.intellij.backend.markup.adapterFactory](https://jb.gg/ipe?extensions=com.intellij.backend.markup.adapterFactory) ![Non-Dynamic][non-dynamic] | `FrontendMarkupAdapterFactory` |
+| [com.intellij.backend.typedHandler](https://jb.gg/ipe?extensions=com.intellij.backend.typedHandler) ![Non-Dynamic][non-dynamic] | `FrontendTypedHandler` |
 | [com.intellij.code.cleanup.support](https://jb.gg/ipe?extensions=com.intellij.code.cleanup.support) ![Non-Dynamic][non-dynamic] | `RiderCodeCleanupSupportPolicy` |
+| [com.intellij.completion.completionSessionStrategy](https://jb.gg/ipe?extensions=com.intellij.completion.completionSessionStrategy) ![Non-Dynamic][non-dynamic] | `CompletionSessionStrategy` |
+| [com.intellij.frontend.completion.helper](https://jb.gg/ipe?extensions=com.intellij.frontend.completion.helper) ![Non-Dynamic][non-dynamic] | `ICompletionHelper` |
 | [com.intellij.lang.altEnter](https://jb.gg/ipe?extensions=com.intellij.lang.altEnter) ![Non-Dynamic][non-dynamic] | `BulbMenuModelFactory` |
 | [com.intellij.lang.altEnter.popupModelDelegate](https://jb.gg/ipe?extensions=com.intellij.lang.altEnter.popupModelDelegate) ![Non-Dynamic][non-dynamic] | `PopupModelDelegate` |
 | [com.intellij.projectModelViewUpdater](https://jb.gg/ipe?extensions=com.intellij.projectModelViewUpdater) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `ProjectModelViewUpdater` |
+| [com.intellij.rdclient.preemptiveCompletionSuppressor](https://jb.gg/ipe?extensions=com.intellij.rdclient.preemptiveCompletionSuppressor) ![Non-Dynamic][non-dynamic] | `PreemptiveCompletionSuppressor` |
+| [com.intellij.rdclient.typingPolicy](https://jb.gg/ipe?extensions=com.intellij.rdclient.typingPolicy) ![Non-Dynamic][non-dynamic] | `CustomTypingSessionPolicy` |
 | [com.intellij.rider.action.fallback.strategy](https://jb.gg/ipe?extensions=com.intellij.rider.action.fallback.strategy) ![Non-Dynamic][non-dynamic] | `RiderAsyncBackendDelegatingActionFallbackStrategy` |
 | [com.intellij.rider.altEnter.layouter](https://jb.gg/ipe?extensions=com.intellij.rider.altEnter.layouter) ![Non-Dynamic][non-dynamic] | `RiderAltEnterLayouter` |
 | [com.intellij.rider.codeStyleContentConverter](https://jb.gg/ipe?extensions=com.intellij.rider.codeStyleContentConverter) ![Non-Dynamic][non-dynamic] | `RiderCodeStyleContentPageConverter` |
 | [com.intellij.rider.credentials.provider](https://jb.gg/ipe?extensions=com.intellij.rider.credentials.provider) ![Non-Dynamic][non-dynamic] | `ICredentialsProvider` |
-| [com.intellij.rider.defaultVcsRootPolicyExtension](https://jb.gg/ipe?extensions=com.intellij.rider.defaultVcsRootPolicyExtension) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `DefaultVcsRootPolicyExtension` |
 | [com.intellij.rider.diagnostics.specialPathsProvider](https://jb.gg/ipe?extensions=com.intellij.rider.diagnostics.specialPathsProvider) ![Non-Dynamic][non-dynamic] | `SpecialPathsProvider` |
 | [com.intellij.rider.extraSettingsSync](https://jb.gg/ipe?extensions=com.intellij.rider.extraSettingsSync) ![Non-Dynamic][non-dynamic] | `ExtraSettingsSync` |
 | [com.intellij.rider.fileBreadcrumbExtensions](https://jb.gg/ipe?extensions=com.intellij.rider.fileBreadcrumbExtensions) | `CustomFileBreadcrumbExtensions` |
+| [com.intellij.rider.markup.cacheFilter](https://jb.gg/ipe?extensions=com.intellij.rider.markup.cacheFilter) | `RiderMarkupFSCacheFilter` |
 | [com.intellij.rider.namingPageProvider](https://jb.gg/ipe?extensions=com.intellij.rider.namingPageProvider) ![Non-Dynamic][non-dynamic] | `NamingPageProvider` |
 | [com.intellij.rider.protocol.hostFlagsProvider](https://jb.gg/ipe?extensions=com.intellij.rider.protocol.hostFlagsProvider) ![Non-Dynamic][non-dynamic] | `RiderBackendFlagsProvider` |
 | [com.intellij.rider.wrappedMergeableIconProvider](https://jb.gg/ipe?extensions=com.intellij.rider.wrappedMergeableIconProvider) ![Non-Dynamic][non-dynamic] | `RiderWrappedMergeableIconProvider` |
@@ -82,11 +88,18 @@ See [](extension_point_list.md) for IntelliJ Platform.
 |-----------------|----------------|
 | [com.intellij.rider.settings.machineDependentBackendSetting](https://jb.gg/ipe?extensions=com.intellij.rider.settings.machineDependentBackendSetting) ![Non-Dynamic][non-dynamic] | `n/a` |
 
+### rider-plugins-appender.database.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.intellij.rider.database.schemaCompareDataModelCreatedListener](https://jb.gg/ipe?extensions=com.intellij.rider.database.schemaCompareDataModelCreatedListener) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `SchemaCompareDataModelCreatedListener` |
+
 ### rider-plugins-appender.docker.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.intellij.rider.dockerDebugProvider](https://jb.gg/ipe?extensions=com.intellij.rider.dockerDebugProvider) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `IRiderDockerDebugProvider` |
+| [com.intellij.rider.dockerDeploymentTransformer](https://jb.gg/ipe?extensions=com.intellij.rider.dockerDeploymentTransformer) ![Non-Dynamic][non-dynamic] ![Internal][internal] ![Project-Level][project-level] | `RiderDockerDeploymentTransformer` |
 
 ### rider-plugins-appender.javascript.xml
 
@@ -122,13 +135,14 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.rider.breakpoint.customPopupActionsProvider](https://jb.gg/ipe?extensions=com.intellij.rider.breakpoint.customPopupActionsProvider) ![Non-Dynamic][non-dynamic] | `IDotNetLineBreakpointPopupActionsProvider` |
 | [com.intellij.rider.cleanupAction](https://jb.gg/ipe?extensions=com.intellij.rider.cleanupAction) ![Non-Dynamic][non-dynamic] | `CleanupAction` |
 | [com.intellij.rider.codeLens.vcsDeclarationRangesProvider](https://jb.gg/ipe?extensions=com.intellij.rider.codeLens.vcsDeclarationRangesProvider) ![Non-Dynamic][non-dynamic] | `VcsDeclarationRangesProvider` |
-| [com.intellij.rider.codeLensProvider](https://jb.gg/ipe?extensions=com.intellij.rider.codeLensProvider) ![Deprecated][deprecated] ![Non-Dynamic][non-dynamic] | `CodeLensProvider` |
 | [com.intellij.rider.completion.preselectionStrategy](https://jb.gg/ipe?extensions=com.intellij.rider.completion.preselectionStrategy) ![Non-Dynamic][non-dynamic] | `RiderFrontendLanguagesPreselectionStrategy` |
 | [com.intellij.rider.configurationExecutorExtension](https://jb.gg/ipe?extensions=com.intellij.rider.configurationExecutorExtension) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `RiderConfigurationExecutorExtension` |
 | [com.intellij.rider.configurationLaunchSettingsExtension](https://jb.gg/ipe?extensions=com.intellij.rider.configurationLaunchSettingsExtension) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `RiderConfigurationLaunchSettingsExtension` |
 | [com.intellij.rider.debug.breakpoint.handler.factory](https://jb.gg/ipe?extensions=com.intellij.rider.debug.breakpoint.handler.factory) ![Non-Dynamic][non-dynamic] | `IDotNetSupportedBreakpointHandlerFactory` |
 | [com.intellij.rider.debuggerSupportPolicy](https://jb.gg/ipe?extensions=com.intellij.rider.debuggerSupportPolicy) ![Non-Dynamic][non-dynamic] | `RiderDebuggerSupportPolicy` |
 | [com.intellij.rider.editSourceSuppressor](https://jb.gg/ipe?extensions=com.intellij.rider.editSourceSuppressor) ![Non-Dynamic][non-dynamic] | `RiderEditSourceSuppressor` |
+| [com.intellij.rider.extendedCodeStructure](https://jb.gg/ipe?extensions=com.intellij.rider.extendedCodeStructure) ![Non-Dynamic][non-dynamic] | `RiderExtendedFileStructure` |
+| [com.intellij.rider.externalDirectoryProvider](https://jb.gg/ipe?extensions=com.intellij.rider.externalDirectoryProvider) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `ExternalDirectoryProvider` |
 | [com.intellij.rider.fileTemplating.postCreateAction](https://jb.gg/ipe?extensions=com.intellij.rider.fileTemplating.postCreateAction) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `RiderNewFileFromTemplateExtension` |
 | [com.intellij.rider.guidPresenter](https://jb.gg/ipe?extensions=com.intellij.rider.guidPresenter) ![Project-Level][project-level] | `GuidGeneratorPresenter` |
 | [com.intellij.rider.newRunConfigurationTreeGroupingProvider](https://jb.gg/ipe?extensions=com.intellij.rider.newRunConfigurationTreeGroupingProvider) ![Non-Dynamic][non-dynamic] | `RiderNewRunConfigurationTreeGroupingProvider` |
@@ -154,6 +168,8 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.rider.solutionConfigurationToolbarCustomizer](https://jb.gg/ipe?extensions=com.intellij.rider.solutionConfigurationToolbarCustomizer) | `SolutionConfigurationToolbarCustomizer` |
 | [com.intellij.rider.unitTesting.actionsProvider](https://jb.gg/ipe?extensions=com.intellij.rider.unitTesting.actionsProvider) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `RiderUnitTestActionsProvider` |
 | [com.intellij.rider.unitTesting.sessionHandler](https://jb.gg/ipe?extensions=com.intellij.rider.unitTesting.sessionHandler) ![Non-Dynamic][non-dynamic] | `IRiderUnitTestDebuggerSessionsHandler` |
+| [com.intellij.rider.web.extensions.companionDebugStarter](https://jb.gg/ipe?extensions=com.intellij.rider.web.extensions.companionDebugStarter) ![Non-Dynamic][non-dynamic] | `DotNetCompanionDebugStarter` |
+| [com.intellij.rider.web.extensions.webBrowserDebugSupport](https://jb.gg/ipe?extensions=com.intellij.rider.web.extensions.webBrowserDebugSupport) ![Non-Dynamic][non-dynamic] | `WebBrowserDebugSupport` |
 | [com.intellij.rider.writingAccessProvider](https://jb.gg/ipe?extensions=com.intellij.rider.writingAccessProvider) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `RiderDebugWritingAccessProvider` |
 | [com.intellij.rider.xaml.preview.editor](https://jb.gg/ipe?extensions=com.intellij.rider.xaml.preview.editor) ![Non-Dynamic][non-dynamic] | `XamlPreviewEditorExtension` |
 | [com.intellij.solutionExplorerCustomization](https://jb.gg/ipe?extensions=com.intellij.solutionExplorerCustomization) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `SolutionExplorerCustomization` |
@@ -161,8 +177,10 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.solutionManagerExtensions](https://jb.gg/ipe?extensions=com.intellij.solutionManagerExtensions) ![Non-Dynamic][non-dynamic] | `SolutionManagerExtensions` |
 | [com.intellij.solutionViewPsiNodeNavigator](https://jb.gg/ipe?extensions=com.intellij.solutionViewPsiNodeNavigator) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `SolutionViewPsiNodeNavigator` |
 
-[experimental]: https://img.shields.io/badge/-Experimental_API-red?style=flat-square
-[internal]: https://img.shields.io/badge/-Internal_API-darkred?style=flat-square
+[deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square
+[removal]: https://img.shields.io/badge/-Removal-red?style=flat-square
+[obsolete]: https://img.shields.io/badge/-Obsolete-grey?style=flat-square
+[experimental]: https://img.shields.io/badge/-Experimental-violet?style=flat-square
+[internal]: https://img.shields.io/badge/-Internal-darkred?style=flat-square
 [project-level]: https://img.shields.io/badge/-Project--Level-blue?style=flat-square
 [non-dynamic]: https://img.shields.io/badge/-Non--Dynamic-orange?style=flat-square
-[deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square

@@ -11,8 +11,6 @@ import com.intellij.psi.*;
 import com.intellij.psi.tree.IElementType;
 import org.jetbrains.annotations.NotNull;
 
-import static com.siyeh.ig.psiutils.ExpressionUtils.isNullLiteral;
-
 /**
  * Implements an inspection to detect when String references are compared using 'a==b' or 'a!=b'.
  * The quick fix converts these comparisons to 'a.equals(b) or '!a.equals(b)' respectively.
@@ -77,6 +75,10 @@ public class ComparingStringReferencesInspection extends AbstractBaseJavaLocalIn
         return "java.lang.String".equals(resolvedType.getQualifiedName());
       }
 
+      private static boolean isNullLiteral(PsiExpression expression) {
+        return expression instanceof PsiLiteralExpression &&
+                ((PsiLiteralExpression) expression).getValue() == null;
+      }
     };
   }
 

@@ -3,8 +3,8 @@
         SYSTEM "https://helpserver.labs.jb.gg/help/schemas/mvp/vars.dtd">
 
 <vars>
-  <var name="ijPlatform" value="2023.1 RC1"/>
-  <var name="ijPlatformBuild" value="231.8109.90"/>
+  <var name="ijPlatform" value="2023.1"/>
+  <var name="ijPlatformBuild" value="231.8109.175"/>
 
   <var name="gh-sdk-samples" value="https://github.com/JetBrains/intellij-sdk-code-samples/tree/main"/>
 

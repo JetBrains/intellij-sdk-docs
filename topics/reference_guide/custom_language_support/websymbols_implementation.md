@@ -1,4 +1,5 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
 # Implementing Web Symbols
 
 <link-summary>
@@ -12,14 +13,14 @@ It is described through `namespace`, `kind` and `name` properties. Its lifecycle
 If you need it to survive between read actions, use `WebSymbol.createPointer()` to create a symbol pointer.
 If the symbol is still valid, dereferencing the pointer will return a new instance of the symbol.
 
-The property `namespace` describes which language or concept the symbol belongs to,
+The property `namespace` describes which language or concept (not tied to a particular language) the symbol belongs to,
 and `kind` describes which group of symbols within that particular language or concept it belongs to.
-E.g. a CSS property would have: `namespace == "CSS"` and `kind == "properties"`, a Java class would have:
-`namespace == "Java"` and `kind == "classes"`.
-The namespace can also represent a concept, which is not tied to a particular language.
-For instance a plugin extension could be represented with `namespace == "ij-plugin"` and `kind == "extensions"`.
+Examples:
+- a CSS property: `namespace: CSS`, `kind: properties`
+- a Java class: `namespace: Java`, `kind: classes`
+- a plugin extension: `namespace: ij-plugin`, `kind: extensions`
 
-A Web Symbol can originate from source code analysis or it can be a symbol statically defined
+A Web Symbol can originate from source code analysis, or it can be a symbol statically defined
 through Web Types (JSON) or some other, custom format (see [](websymbols_static_symbols.md)).
 In both cases such a symbol can have some `source` defined.
 Each symbol is treated by the framework the same, regardless of their origin.
@@ -147,7 +148,7 @@ validation and refactoring support is available out-of-the-box.
 
 queryScope
 : When pattern is being evaluated, matched symbols can provide additional scope for further resolution in the pattern.
-By default the `queryScope` returns the symbol itself
+By default, the `queryScope` returns the symbol itself
 
 virtual
 : Some symbols represent only a framework syntax, which does not translate to a particular symbol in the runtime.
@@ -183,7 +184,7 @@ adjustNameForRefactoring(): Web Symbols can have various naming conventions.
 
 ## PsiSourcedWebSymbol
 
-Your symbol should implement
+A symbol should implement
 [`PsiSourcedWebSymbol`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/PsiSourcedWebSymbol.kt)
 if its declaration is a regular `PsiElement`, e.g. a variable or a declared type.
 Once a symbol implements this interface it can be searched and refactored together with the PSI element declaration.

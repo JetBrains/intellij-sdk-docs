@@ -66,6 +66,8 @@ Consider the following techniques for optimizing the plugin distribution size:
 * Optimize assets like images, videos, etc.
 * If large resources (e.g., SDKs) are needed only in specific setups, consider downloading them by the plugin on-demand instead of bundling them in the plugin distribution.
 
+[Obfuscation](https://plugins.jetbrains.com/docs/marketplace/obfuscate-the-plugin.html) may also help reduce the distribution file size.
+
 ## Consistent Behavior
 
 When designing and implementing features, review existing functionalities of the IDE and plugins and design your features in a similar and consistent way.

@@ -8,6 +8,8 @@
 
 **Product Help:** [Code Inspection](https://www.jetbrains.com/idea/webhelp/code-inspection.html), [Creating Custom Inspections](https://www.jetbrains.com/idea/help/creating-custom-inspections.html)
 
+**Platform UI Guidelines:** [Inspections](https://jetbrains.design/intellij/text/inspections/)
+
 </tldr>
 
 The IntelliJ Platform provides tools designed for static code analysis called _code inspections_, which help the user maintain and clean up code without actually executing it.

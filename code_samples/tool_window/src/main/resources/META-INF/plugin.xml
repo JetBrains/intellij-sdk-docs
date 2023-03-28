@@ -6,13 +6,13 @@
   <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
   <id>org.intellij.sdk.toolWindow</id>
 
-  <!-- Text to display as name on Preferences/Settings | Plugin page -->
+  <!-- Text to display as name on Settings | Plugin page -->
   <name>SDK: Tool Window Sample</name>
 
   <!-- Indicate this plugin can be loaded in all IntelliJ Platform-based products. -->
   <depends>com.intellij.modules.platform</depends>
 
-  <!-- Text to display as description on Preferences/Settings | Plugin page -->
+  <!-- Text to display as description on Settings | Plugin page -->
   <description>
     <![CDATA[
       This sample plugin illustrates how to create your custom tool window.<br>
@@ -30,7 +30,7 @@
     ]]>
   </change-notes>
 
-  <!-- Text to display as company information on Preferences/Settings | Plugin page -->
+  <!-- Text to display as company information on Settings | Plugin page -->
   <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <extensions defaultExtensionNs="com.intellij">

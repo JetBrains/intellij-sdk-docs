@@ -1,6 +1,8 @@
-[//]: # (title: Declarations and References)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Declarations and References
+
+<link-summary>Overview of symbol declarations and references.</link-summary>
 
 > This API is available starting from 2020.3 and is currently in development and thus in an experimental state.
 >

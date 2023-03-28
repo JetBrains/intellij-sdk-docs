@@ -1,6 +1,8 @@
-[//]: # (title: Light and Heavy Tests)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Light and Heavy Tests
+
+<link-summary>Introduction to light tests reusing a single project for multiple tests, and heavy tests creating a new project for each test.</link-summary>
 
 Plugin tests run in a real, rather than mocked, IntelliJ Platform environment and use real implementations for most application and project [services](plugin_services.md).
 

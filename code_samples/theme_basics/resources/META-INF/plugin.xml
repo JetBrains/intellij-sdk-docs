@@ -6,7 +6,7 @@
   <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
   <id>org.intellij.sdk.themeBasics</id>
 
-  <!-- Text to display as name on Preferences/Settings | Plugin page -->
+  <!-- Text to display as name on Settings | Plugin page -->
   <name>SDK: Theme Basics</name>
 
   <!-- The version of this plugin -->
@@ -31,7 +31,7 @@
     ]]>
   </change-notes>
 
-  <!-- Text to display as company information on Preferences/Settings | Plugin page -->
+  <!-- Text to display as company information on Settings | Plugin page -->
   <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <extensions defaultExtensionNs="com.intellij">

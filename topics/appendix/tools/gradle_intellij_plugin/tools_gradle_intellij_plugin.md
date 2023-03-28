@@ -153,6 +153,56 @@ org.gradle.unsafe.configuration-cache = true
 See [Using the configuration cache](https://docs.gradle.org/current/userguide/configuration_cache.html#config_cache:usage) in the Gradle documentation for more details.
 
 
+### Multi-module Project
+Sometimes, you may want to split your plugin into multiple modules — i.e., to separate the core plugin code from the code related to other third-party plugin dependencies.
+The most common way to do this is to use the [Gradle Multi-Project Build](https://docs.gradle.org/current/userguide/multi_project_builds.html) feature.
+
+This approach allows you to declare dependencies between subprojects, like:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+dependencies {
+    implementation(project(":shared"))
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+dependencies {
+    implementation project(':shared')
+}
+```
+
+</tab>
+</tabs>
+
+Because the Gradle IntelliJ Plugin introduces the code instrumentation, and the default `implementation` configuration is not compatible with it, you need to specify the `instrumentedJar` configuration explicitly to refer to the instrumented JAR file produced by the plugin instead of the default JAR file:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+dependencies {
+    implementation(project(":shared", "instrumentedJar"))
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+dependencies {
+    implementation project(':shared', 'instrumentedJar')
+}
+```
+
+</tab>
+</tabs>
+
 ## Configuration
 
 ### IntelliJ Extension
@@ -214,7 +264,6 @@ Acceptable values
 
 > The _version number_ format is the most common option for specifying the version of the IntelliJ Platform.
 > Other formats should be used only when your plugin relies on specific parts of the targeted IDE or early-adopting EAP releases.
->
 
 
 #### type
@@ -488,6 +537,19 @@ Default value
 : `[]`
 
 
+#### pluginDependencies
+{#intellij-extension-plugindependencies}
+
+List of dependencies on external plugins.
+
+{style="narrow"}
+Type
+: `List<PluginDependency>`
+
+Default value
+: `[]`
+
+
 ## Tasks
 
 
@@ -537,6 +599,27 @@ Default value
 : `build/searchableOptions`
 
 
+### classpathIndexCleanup
+{#tasks-classpathindexcleanup}
+
+Remove `classpath.index` files that are created by the `PathClassLoader`.
+This loader, due to the implementation bug, ignores the `idea.classpath.index.enabled=false` flag and as a workaround, files have to be removed manually.
+
+Task is enabled if [`intellij.version`](#intellij-extension-version) is set to `2022.1` or higher.
+
+#### classpathIndexFiles
+{#tasks-classpathindexcleanup-classpathindexfiles}
+
+The list of `classpath.index` files to be removed.
+
+{style="narrow"}
+Type
+: `ConfigurableFileCollection`
+
+Default value:
+: List of `classpath.index` files resolved with `sourceSets` configuration
+
+
 ### downloadRobotServerPlugin
 {#tasks-downloadrobotserverplugin}
 
@@ -583,10 +666,87 @@ Default value
 : `build/robotServerPlugin`
 
 
+### downloadZipSignerTask
+{#tasks-downloadzipsignertask}
+
+Resolves and downloads Marketplace ZIP Signer CLI tool used by the [`signPlugin`](#tasks-signplugin) task.
+
+
+#### version
+{#tasks-downloadzipsignertask-version}
+
+Version of the ZIP Signer CLI tool to download.
+
+{style="narrow"}
+Type
+: `String`
+
+Default value
+: `LATEST`
+
+
+#### cliPath
+{#tasks-downloadzipsignertask-clipath}
+
+Path to the ZIP Signer CLI tool.
+
+{style="narrow"}
+Type
+: `File`
+
+Default value
+: [Gradle cache](https://docs.gradle.org/current/userguide/directory_layout.html#dir:gradle_user_home)
+
+
+#### cli
+{#tasks-downloadzipsignertask-cli}
+
+The output of the ZIP Signer CLI tool.
+
+{style="narrow"}
+Type
+: `File`
+
+Default value
+: [`cliPath`](#tasks-downloadzipsignertask-clipath)
+
+
+### initializeIntelliJPlugin
+{#tasks-initializeintellijplugin}
+
+Initializes the Gradle IntelliJ Plugin and performs various checks, like if the plugin is up to date.
+
+
 ### instrumentCode
 {#tasks-instrumentcode}
 
 The following attributes help you to tune instrumenting behaviour in `instrumentCode { ... }` block.
+
+
+#### ideaDependency
+{#tasks-instrumentcode-ideadependency}
+
+The dependency on IntelliJ IDEA.
+
+{style="narrow"}
+Type
+: `IdeaDependency`
+
+Default value
+: [`intellij.ideaDependency`](#tasks-setupdependencies-idea)
+
+
+#### javac2
+{#tasks-instrumentcode-javac2}
+
+Path to the `javac2.jar` file of the IntelliJ IDEA.
+
+{style="narrow"}
+Type
+: `File`
+
+Default value
+: `lib/javac2.jar` resolved in [`instrumentCode.ideaDependency`](#tasks-instrumentcode-ideadependency)
 
 
 #### compilerVersion
@@ -601,6 +761,61 @@ Type
 
 Default value
 : Build number of the IDE dependency
+
+
+#### classesDirs
+{#tasks-instrumentcode-classesdirs}
+
+The list of directories with compiled classes.
+
+{style="narrow"}
+Type
+: `FileCollection`
+
+Default value
+: `sourceSets.[].output.classesDirs`
+
+
+#### formDirs
+{#tasks-instrumentcode-formdirs}
+
+The list of directories with GUI Designer form files.
+
+{style="narrow"}
+Type
+: `FileCollection`
+
+Default value
+: `.form` files of the project's source sets.
+
+
+#### outputDir
+{#tasks-instrumentcode-outputdir}
+
+The output directory for instrumented classes.
+
+{style="narrow"}
+Type
+: `File`
+
+Default value
+: [`setupInstrumentCode.instrumentedDir`](#tasks-setupinstrumentcode-instrumenteddir)
+
+
+#### compilerClassPathFromMaven
+{#tasks-instrumentcode-compilerclasspathfrommaven}
+
+The classpath for Java instrumentation compiler.
+
+{style="narrow"}
+Type
+: `FileCollection`
+
+
+### instrumentedJar
+{#tasks-instrumentedjar}
+
+Creates a JAR file with instrumented classes.
 
 
 ### jarSearchableOptions
@@ -656,6 +871,7 @@ This can be used to determine Plugin ID for setting up [](plugin_dependencies.md
 
 See also [](#tasks-printBundledPlugins).
 
+
 #### ideDir
 {#tasks-listbundledplugins-idedir}
 
@@ -699,14 +915,15 @@ The result list is stored within the [`listProductsReleases.outputFile`](#tasks-
 
 See also [](#tasks-printproductsreleases).
 
-#### updatesFile
-{#tasks-listproductsreleases-updatesfile}
 
-Path to the products releases update file.
+#### productsReleasesUpdateFiles
+{#tasks-listproductsreleases-productsreleasesupdatefiles}
+
+Path to the products releases update files. By default, one is downloaded from `IntelliJPluginConstants.IDEA_PRODUCTS_RELEASES_URL`.
 
 {style="narrow"}
 Type
-: `List<String>`
+: `FileCollection`
 
 Default value
 : [Gradle cache](https://docs.gradle.org/current/userguide/directory_layout.html#dir:gradle_user_home)
@@ -825,7 +1042,7 @@ Patches <path>[plugin.xml](plugin_configuration_file.md)</path> files with value
 
 > To maintain and generate an up-to-date changelog, try using [Gradle Changelog Plugin](https://github.com/JetBrains/gradle-changelog-plugin).
 >
-
+{style="note"}
 
 #### destinationDir
 {#tasks-patchpluginxml-destinationdir}
@@ -993,7 +1210,7 @@ Default value
 #### pluginDependencies
 {#tasks-preparesandbox-plugindependencies}
 
-List of dependencies of the current plugin.
+List of dependencies on external plugins.
 
 {style="narrow"}
 Type
@@ -1562,6 +1779,38 @@ This task exposes the `setupDependencies.idea` property which contains a referen
 This property can be referred in Gradle configuration to access IDE dependency classpath.
 
 
+### setupInstrumentCode
+
+Prepares code instrumentation tasks.
+
+
+#### instrumentationEnabled
+{#tasks-setupinstrumentcode-instrumentationenabled}
+
+A flag that controls whether code instrumentation is enabled.
+
+{style="narrow"}
+Type
+: `Boolean`
+
+Default value
+: [`intellij.instrumentCode`](#intellij-extension-instrumentcode)
+
+
+#### instrumentedDir
+{#tasks-setupinstrumentcode-instrumenteddir}
+
+The path to the directory where instrumented classes will be saved.
+
+{style="narrow"}
+Type
+: `Directory`
+
+Default value
+: `${project.buildDir}/instrumented`
+
+
+
 ### signPlugin
 {#tasks-signplugin}
 
@@ -1835,9 +2084,9 @@ Validates the plugin project configuration:
 - The [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) property can't be lower than the major version of the currently used IntelliJ SDK set with the [`intellij.version`](#intellij-extension-version).
 - The `sourceCompatibility` property of the Java configuration can't be lower than the Java version used for assembling the IntelliJ SDK specified by the [`intellij.version`](#intellij-extension-version).
 - The `targetCompatibility` property of the Java configuration can't be higher than the Java version required for running IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) properties.
-- The `jvmTarget` property of the Kotlin configuration (if used) can't be higher than the Java version required for running IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) properties.
-- The `languageVersion` property of the Kotlin configuration (if used) can't be lower than the Kotlin bundled with IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) properties.
-- The `apiVersion` property of the Kotlin configuration (if used) can't be higher than the Kotlin bundled with IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) properties.
+- The `kotlinJvmTarget` property of the Kotlin configuration (if used) can't be higher than the Java version required for running IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) properties.
+- The `kotlinLanguageVersion` property of the Kotlin configuration (if used) can't be lower than the Kotlin bundled with IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) properties.
+- The `kotlinApiVersion` property of the Kotlin configuration (if used) can't be higher than the Kotlin bundled with IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#tasks-patchpluginxml-sincebuild) properties.
 
 > For more details regarding the Java version used in the specific IntelliJ SDK, see [](build_number_ranges.md).
 

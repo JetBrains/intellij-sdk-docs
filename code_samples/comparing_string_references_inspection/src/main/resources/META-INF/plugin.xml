@@ -6,18 +6,18 @@
   <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
   <id>org.intellij.sdk.codeInspection</id>
 
-  <!-- Text to display as name on Preferences/Settings | Plugin page -->
+  <!-- Text to display as name on Settings | Plugin page -->
   <name>SDK: Comparing References Inspection Sample</name>
 
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.platform</depends>
   <depends>com.intellij.java</depends>
 
-  <!-- Text to display as description on Preferences/Settings | Plugin page -->
+  <!-- Text to display as description on Settings | Plugin page -->
   <description>
     <![CDATA[
       Demonstrates implementing a Local Inspection Tool.<br> Adds entries to
-      <b>Preferences | Editor | Inspections | Java | Probable Bugs</b>.
+      <b>Settings | Editor | Inspections | Java | Probable Bugs</b>.
     ]]>
   </description>
   <change-notes>
@@ -30,7 +30,7 @@
     ]]>
   </change-notes>
 
-  <!-- Text to display as company information on Preferences/Settings | Plugin page -->
+  <!-- Text to display as company information on Settings | Plugin page -->
   <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <extensions defaultExtensionNs="com.intellij">
@@ -45,9 +45,9 @@
         - language - inspection language ID
         - shortName - not specified, will be computed by the underlying implementation classes
         - bundle - name of the message bundle for the "key" attribute
-        - key - the key of the message to be shown in the Preferences | Editor | Inspections panel
+        - key - the key of the message to be shown in the Settings | Editor | Inspections panel
         - groupPath - defines the outermost grouping for this inspection in
-            the Preferences | Editor | Inspections panel. Not localized.
+            the Settings | Editor | Inspections panel. Not localized.
         - groupBundle - the name of a message bundle file to translate groupKey
             In this case, reuse an IntelliJ Platform bundle file from intellij.platform.resources.en
         - groupKey - the key to use for translation subgroup name using groupBundle file.

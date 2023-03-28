@@ -28,7 +28,7 @@ Highlighting from multiple `TextAttributesKey` items can be layered — for exam
 ## Color Settings
 
 The mapping of the `TextAttributesKey` to specific attributes used in an editor is defined by the [`EditorColorsScheme`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/colors/EditorColorsScheme.java) class.
-It can be configured by the user via <ui-path>Preferences | Editor | Color Scheme</ui-path> by providing an implementation of [`ColorSettingPage`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/colors/ColorSettingsPage.java) registered in `com.intellij.colorSettingsPage` extension point.
+It can be configured by the user via <ui-path>Settings | Editor | Color Scheme</ui-path> by providing an implementation of [`ColorSettingPage`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/colors/ColorSettingsPage.java) registered in `com.intellij.colorSettingsPage` extension point.
 To lookup external name for a setting in the IDE, use [UI Inspector](internal_ui_inspector.md#inspecting-settings).
 
 The <ui-path>File | Export | Files or Selection to HTML</ui-path> feature uses the same syntax highlighting mechanism as the editor.

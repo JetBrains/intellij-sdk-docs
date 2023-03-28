@@ -6,14 +6,14 @@
   <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
   <id>org.intellij.sdk.language</id>
 
-  <!-- Text to display as name on Preferences/Settings | Plugin page -->
+  <!-- Text to display as name on Settings | Plugin page -->
   <name>SDK: Simple Language Sample</name>
 
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.platform</depends>
   <depends>com.intellij.java</depends>
 
-  <!-- Text to display as description on Preferences/Settings | Plugin page -->
+  <!-- Text to display as description on Settings | Plugin page -->
   <description>
     <![CDATA[
       Demonstrates how to add custom language support to an IntelliJ Platform-based IDE. <br>Defines a new language,
@@ -33,7 +33,7 @@
     ]]>
   </change-notes>
 
-  <!-- Text to display as company information on Preferences/Settings | Plugin page -->
+  <!-- Text to display as company information on Settings | Plugin page -->
   <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <extensions defaultExtensionNs="com.intellij">

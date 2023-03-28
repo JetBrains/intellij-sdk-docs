@@ -1,6 +1,6 @@
-[//]: # (title: Deploying a Theme)
+# Deploying a Theme
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Building and deploying a theme in IDE.</link-summary>
 
@@ -16,6 +16,6 @@ The deployment process prepares the plugin artifact that can be installed in IDE
    In the case of developing a regular plugin, and it specifies additional dependencies, a&nbsp;ZIP archive is created, including all the plugin libraries.
 3. [Install](https://www.jetbrains.com/help/idea/managing-plugins.html#installing-plugins-from-disk) the newly created JAR or ZIP file from disk.
 4. Click the <control>Apply</control> button.
-5. Select your theme in <ui-path>Preferences | Appearance & Behavior | Appearance</ui-path> and apply the changes.
+5. Select your theme in <ui-path>Settings | Appearance & Behavior | Appearance</ui-path> and apply the changes.
 
 </procedure>

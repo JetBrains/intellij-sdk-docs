@@ -13,7 +13,7 @@ Plugin Logos are shown in the [JetBrains Marketplace](https://plugins.jetbrains.
 They also appear in the Settings [Plugin Manager](https://www.jetbrains.com/help/idea/managing-plugins.html) UI in IntelliJ Platform-based IDEs.
 Whether online or in the product UI, a Plugin Logo helps users to identify a plugin more quickly in a list, as shown below:
 
-![Example Product Plugin Preferences Dialog](plugin_prefs.png){width="800"}
+![Example Product Plugin Settings Dialog](plugin_prefs.png){width="800"}
 
 > When browsing [custom plugin repositories](custom_plugin_repository.md), there is no support for showing logos for plugins hosted there but not yet installed.
 >

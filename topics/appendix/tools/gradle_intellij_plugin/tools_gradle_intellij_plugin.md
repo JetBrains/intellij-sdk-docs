@@ -359,7 +359,7 @@ Notes:
 - For bundled plugins, use the plugin ID with the version part omitted, like: `org.intellij.groovy`.
 - For subprojects, use project reference `project(':subproject', 'instrumentedJar')`.
 - For plugin built locally, pass the path to the <path>lib/</path> directory of the extracted plugin archive, like: `file("/path/to/plugin/lib/")` or `file("/projects/plugin-name/build/idea-sandbox/plugins/plugin-name/lib/")`.
-  See (tools_gradle_intellij_plugin_faq.md#how-to-add-a-dependency-on-a-plugin-available-in-the-file-system).
+  See [](tools_gradle_intellij_plugin_faq.md#how-to-add-a-dependency-on-a-plugin-available-in-the-file-system).
 - If you need to refer plugin's classes from your project, you also have to define a dependency in your <path>[plugin.xml](plugin_configuration_file.md)</path> file, see [](plugin_dependencies.md).
 
 {style="narrow"}

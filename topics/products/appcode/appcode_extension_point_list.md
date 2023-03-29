@@ -1,6 +1,8 @@
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
 # AppCode Extension Point and Listener List
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<link-summary>Overview of Extension Points and Listeners for AppCode.</link-summary>
 
 34 Extension Points and 6 Listeners for AppCode 2022.3
 

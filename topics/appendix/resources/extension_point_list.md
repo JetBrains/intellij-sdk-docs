@@ -1,8 +1,8 @@
-# Extension Point and Listener List
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<link-summary>Overview of Extension Points and Listeners for IntelliJ Platform</link-summary>
+# Extension Point and Listener List
+
+<link-summary>Overview of Extension Points and Listeners for IntelliJ Platform.</link-summary>
 
 1518 Extension Points and 253 Listeners for IntelliJ Platform %ijPlatform%
 

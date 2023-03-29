@@ -1,6 +1,8 @@
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
 # CLion Extension Point and Listener List
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<link-summary>Overview of Extension Points and Listeners for CLion.</link-summary>
 
 121 Extension Points and 32 Listeners for CLion
 

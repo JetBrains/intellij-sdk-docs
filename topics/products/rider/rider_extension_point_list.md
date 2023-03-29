@@ -1,6 +1,8 @@
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
 # Rider Extension Point and Listener List
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<link-summary>Overview of Extension Points and Listeners for Rider.</link-summary>
 
 97 Extension Points and 5 Listeners for Rider
 

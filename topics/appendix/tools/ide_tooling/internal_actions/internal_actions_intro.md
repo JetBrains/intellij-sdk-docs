@@ -1,6 +1,8 @@
-[//]: # (title: Internal Actions Menu)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# Internal Actions Menu
+
+<link-summary>Introduction to Internal Actions helping to develop, debug and test plugins.</link-summary>
 
 The <ui-path>Tools | Internal Actions</ui-path> menu provides plugin developers with a suite of tools to help develop, debug, and test their IntelliJ Platform plugins.
 
@@ -13,4 +15,4 @@ The <ui-path>Tools | Internal Actions</ui-path> menu provides plugin developers 
 
 Click on the following topics to learn more about the _Internal Actions_ menu.
 * [Enabling Internal Mode](enabling_internal.md) provides instructions for enabling the Internal Actions menu in IntelliJ IDEA.
-* [UI Tools](internal_ui_sub.md) has information about some of the Internal Actions menu tools for inspecting and testing plugin UI.
+* [UI Tools](internal_ui_sub.md) has information about some Internal Actions menu tools for inspecting and testing plugin UI.

@@ -1,8 +1,10 @@
-[//]: # (title: Project Structure)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Project Structure
 
-<!--TODO split into parts accordingly to the table of contents-->
+<link-summary>Introduction to project structure and components.</link-summary>
+
+[//]: # (TODO: split into parts accordingly to the table of contents)
 
 This topic considers the concept of projects based on the IntelliJ Platform and related subjects, such as _modules_, _facets_, _libraries_, and _SDK_.
 The project structure and Java classes available to manage projects and modules are discussed.

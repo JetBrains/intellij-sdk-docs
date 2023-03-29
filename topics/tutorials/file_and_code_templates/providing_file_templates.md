@@ -1,6 +1,8 @@
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
 # Providing File and Code Templates
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<link-summary>Creating file templates and assigning them to categories.</link-summary>
 
 The IntelliJ Platform allows plugins to provide custom file templates specific to the plugin's functionalities.
 In order to include custom templates in the plugin, a template file has to be created and placed in the specific place of plugin resources, depending on the template's purpose.

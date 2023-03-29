@@ -1,6 +1,8 @@
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
 # Using File Templates Programmatically
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<link-summary>Using file templates programmatically from actions and other IDE features.</link-summary>
 
 File templates provided by a plugin can be used during new file creation, in code intention actions, or other plugin features.
 They can be accessed with the

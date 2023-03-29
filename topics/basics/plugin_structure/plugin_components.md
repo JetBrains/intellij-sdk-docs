@@ -43,19 +43,33 @@ See also [Running Tasks Once](ide_infrastructure.md#running-tasks-once).
 
 ### Project Open
 
+<tabs>
+
+<tab title="2023.1 and later">
+
+Using [Kotlin](using_kotlin.md), implement [`ProjectActivity`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) and register in `com.intellij.postStartupActivity` extension point.
+
+</tab>
+
+<tab title="Pre-2023.1">
+
 To execute code when a project is being opened, use one of these two [extensions](plugin_extensions.md):
 
-#### `com.intellij.postStartupActivity`
-[`StartupActivity`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) for immediate execution on EDT.
+`com.intellij.postStartupActivity`
+: [`StartupActivity`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) for immediate execution on EDT.
 Implement `DumbAware` to indicate activity can run in background thread (in parallel with other such tasks).
 
-#### `com.intellij.backgroundPostStartupActivity`
-[`StartupActivity.Background`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) for execution with 5 seconds delay in background thread (2019.3 or later).
+`com.intellij.backgroundPostStartupActivity`
+: [`StartupActivity.Background`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) for execution with 5 seconds delay in background thread (2019.3 or later).
 
 Any long-running or CPU intensive tasks should be made visible to users by using `ProgressManager.run(Task.Backgroundable)`.
 Access to indices must be wrapped with `DumbService`, see also [General Threading Rules](general_threading_rules.md).
 
 See also [](ide_infrastructure.md#running-tasks-once).
+
+</tab>
+
+</tabs>
 
 ### Project and Application Close
 

@@ -80,7 +80,7 @@ When merging information from several segments in the WebSymbolMatch, first non-
 By default - when properties are `null` - attribute value is of plain type and is required.
 
 type
-: The type of the symbol. The type can be interpreted only within the context of symbol origin and with regards to its namespace and kind.
+: The type of the symbol. The type can be interpreted only within the context of symbol origin and in regard to its namespace and kind.
 The type may be a language type, coming from e.g. Java or TypeScript, or it may be any arbitrary value.
 Usually a type would be associated with symbols, which can hold a value, or represent some language symbol, like class, method, etc.
 
@@ -161,7 +161,7 @@ currently only Web Types symbols can inherit from others.
 
 extension
 : Specifies whether the symbol is an extension. When matched along with a non-extension symbol it can provide or
-override some of the properties of the symbol, or it can extend its scope contents.
+override some properties of the symbol, or it can extend its scope contents.
 
 ## Methods
 {#query-methods}
@@ -259,7 +259,7 @@ To perform a query create a
 [`WebSymbolsQueryExecutor`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/query/WebSymbolsQueryExecutor.kt)
 using
 [`WebSymbolsQueryExecutorFactory`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/query/WebSymbolsQueryExecutorFactory.kt).
-The query executor will be configured by all of the registered
+The query executor will be configured by all the registered
 [`WebSymbolsQueryConfigurator`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/query/WebSymbolsQueryConfigurator.kt)'s
 based on the provided PSI context.
 Configurators will provide initial Web Symbol scopes, rules for calculating Web Symbols context and rules for symbol names conversion.
@@ -311,13 +311,13 @@ A regular pattern static prefix is also considered a static text.
 
 There are 6 types of patterns:
 
-1. String match: try to match an exact text, the match is case sensitive
-2. Regular expression match: try match a regular expression, the match can be case insensitive
+1. String match: try to match an exact text, the match is case-sensitive
+2. Regular expression match: try match a regular expression, the match can be case-insensitive
 3. Symbol reference placeholder: a symbol reference resolve will be attempted when this pattern is reached.
    A resolve will be made by the symbols provider from an enclosing complex pattern.
    If none of the symbols match the segment, the segment will have `UNKNOWN_SYMBOL` problem reported.
    The matched symbol might be a WebSymbolMatch itself, which allows for nesting patterns.
-4. Pattern sequence: a sequence of patterns. If some of the patterns are not matched, an empty segment with `MISSING_REQUIRED_PART` will be created.
+4. Pattern sequence: a sequence of patterns. If some patterns are not matched, an empty segment with `MISSING_REQUIRED_PART` will be created.
 5. Complex pattern: this pattern is called complex, because it makes several things:
     - The provided patterns are treated as alternatives.
     - It can have symbols resolver, which is used by nested symbol reference placeholder patterns.
@@ -340,7 +340,7 @@ For instance, if we have an Angular project, none of the Vue components should b
 is created using rules provided by WebSymbolsQueryConfigurators with addition of custom
 [`WebSymbolsContextProvider`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/context/WebSymbolsContextProvider.kt).
 As a result, for each kind of context there is at most a single name assigned.
-`WebSymbolsContext` can also be used outside of the
+`WebSymbolsContext` can also be used outside the
 [`WebSymbolsQueryExecutor`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/query/WebSymbolsQueryExecutor.kt)
 as an efficient way to determine whether to enable or disable particular functionality in the IDE based on PSI or VFS context.
 

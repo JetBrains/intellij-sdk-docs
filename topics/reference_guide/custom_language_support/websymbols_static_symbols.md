@@ -12,7 +12,7 @@ The JSON Web Types detailed schema can be accessed by
 The format is open source and IDE-agnostic by itself, however currently it is being actively used mostly by JetBrains IDEs.
 
 It was originally created to facilitate the contribution of statically defined symbols for the
-[Vue](https://vuejs.org/) framework and therefore you might notice some deprecated properties in the schema.
+[Vue](https://vuejs.org/) framework, and therefore you might notice some deprecated properties in the schema.
 
 A simple Web Types file looks as follows, where this file defines an `my-element` HTML element with a `foo` attribute.:
 
@@ -45,11 +45,11 @@ A simple Web Types file looks as follows, where this file defines an `my-element
 ## File Structure
 
 The Web Types file should, at minimum, contain `name`, `version` and `contributions` properties.
-It is should also include `$schema` property which can be either
+It should also include `$schema` property which can be either
 `https://raw.githubusercontent.com/JetBrains/web-types/master/schema/web-types.json`
 or
 `http://json.schemastore.org/web-types`.
-The schema contains detailed documentation for all of the JSON entities.
+The schema contains detailed documentation for all the JSON entities.
 
 Directly under `contributions` property are listed namespaces with their contributions.
 Currently only `html`, `css` or `js` namespaces are allowed, however in the future this limitation
@@ -57,7 +57,7 @@ will be lifted to support Web Types for other technologies.
 
 The `namespace` object contains symbol kind names listed as properties.
 Some symbol kinds are predefined and directly supported by IDE (see Symbol Kinds/Supported for reference).
-The kind of a symbol should relate to its role.
+The kind of symbol should relate to its role.
 For instance a Vue directive should be of the kind `vue-directives`.
 Each framework should define a set of custom symbol kinds if needed.
 Reference for the most important symbol kinds defined by frameworks supported by IDEs is below.
@@ -122,7 +122,7 @@ To contribute `foo` attribute one could also write it in longer form:
 Each Web Types contribution is represented in the Web Symbols framework by a
 [`PsiSourcedWebSymbol`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/PsiSourcedWebSymbol.kt)
 object.
-All of the Web Types contributions are mapped 1-1 and custom properties are accessible through `properties` property.
+All the Web Types contributions are mapped 1-1 and custom properties are accessible through `properties` property.
 
 ## Including Web Types
 

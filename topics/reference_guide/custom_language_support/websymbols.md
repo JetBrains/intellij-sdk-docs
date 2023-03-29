@@ -21,7 +21,7 @@ Web Symbols core advantage, however, is the ability to evaluate symbol patterns.
 Web frameworks tend to have custom syntaxes to enable various things,
 e.g. through HTML attribute name (see [Model Queries example](websymbols_implementation.md#example) to see Vue directive syntax).
 The pattern evaluator is able to recognize symbols in different sections of the element name and provide reference resolution,
-documentation, usage occurence, etc.
+documentation, usage occurrence, etc.
 It also supports rename refactoring for symbols originating from source code.
 Another advantage is the flexibility of Web Symbols query.
 It is very easy to contribute new symbols from various sources, which works perfectly for multi-sourced

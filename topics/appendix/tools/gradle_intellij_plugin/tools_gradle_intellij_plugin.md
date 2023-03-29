@@ -354,9 +354,11 @@ The list of bundled IDE plugins and plugins from [JetBrains Marketplace](https:/
 Please see [](plugin_dependencies.md) for more details.
 
 Notes:
-- For plugins from [JetBrains Marketplace](https://plugins.jetbrains.com), use format `pluginId:version`.
-- For bundled plugins, version must be omitted: e.g. `org.intellij.groovy`.
-- For subprojects, use project reference `project(':subproject')`.
+- For plugins from [JetBrains Marketplace](https://plugins.jetbrains.com), use the `pluginId:version` format, like `org.intellij.plugins.markdown:231.8109.126`.
+  The version of your choice must be compatible with the version of the IDE you're building against.
+- For bundled plugins, use the plugin ID with the version part omitted, like: `org.intellij.groovy`.
+- For subprojects, use project reference `project(':subproject', 'instrumentedJar')`.
+- For plugin built locally, pass the path to the <path>lib/</path> directory of the extracted plugin archive, like: `file("/path/to/plugin/lib/")` or `file("/projects/plugin-name/build/idea-sandbox/plugins/plugin-name/lib/")`.
 - If you need to refer plugin's classes from your project, you also have to define a dependency in your <path>[plugin.xml](plugin_configuration_file.md)</path> file, see [](plugin_dependencies.md).
 
 {style="narrow"}
@@ -374,8 +376,11 @@ Acceptable values
   - `bundledPluginId` format, `String` type:
     - `org.intellij.groovy`
   - `project(...)` format, `Project` type:
-    - `project(":projectName")`
-    - `project(":plugin-subproject")`
+    - `project(":projectName", "instrumentedJar")`
+    - `project(":plugin-subproject", "instrumentedJar")`
+  - `file(...)` format, `File` type:
+    - `file("/path/to/plugin/lib/")`
+    - `file("/projects/plugin-name/build/idea-sandbox/plugins/plugin-name/lib/")`
 
 
 #### updateSinceUntilBuild

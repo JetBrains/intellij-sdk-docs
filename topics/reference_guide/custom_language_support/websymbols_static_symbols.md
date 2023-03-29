@@ -28,7 +28,7 @@ A simple Web Types file looks as follows, where this file defines an `my-element
         {
           "name": "my-element",
           "description": "A custom HTML element",
-          "doc-url": "https://my-lib/docs/my-element",
+          "doc-url": "https://example.com/docs/my-element",
           "attributes": [
             {
               "name": "foo",
@@ -272,7 +272,7 @@ Example:
     "slots": [{
       "name": "img",
       "description": "Expects the [v-img](/components/images) component.",
-      "doc-url": "https://www.vuetifyjs.com/api/v-app-bar#slots",
+      "doc-url": "https://vuetifyjs.com/en/api/v-app-bar/#slots",
       "vue-properties": [
         {
           "name": "props",
@@ -377,14 +377,14 @@ Example Web Component:
         {
           "name": "cool-component",
           "description": "Use the cool component to make your website more attractive.",
-          "doc-url": "https://www.cool-lib.com/docs/cool-component",
+          "doc-url": "https://example.com/docs/cool-component",
           "attributes": [
             {
               "name": "color",
               "description": "Choose color for coolness",
               "default": "blue",
               "required": false,
-              "doc-url": "https://www.cool-lib.com/docs/cool-component#attrs",
+              "doc-url": "https://example.com/docs/cool-component#attrs",
               "value": {
                 "type": "string"
               }

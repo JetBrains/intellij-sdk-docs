@@ -1,6 +1,8 @@
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
 # DataGrip Plugin Development
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<link-summary>Introduction to developing plugins for DataGrip.</link-summary>
 
 <var name="productID" value="datagrip"/>
 <var name="marketplaceProductID" value="dbe"/>

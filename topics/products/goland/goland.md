@@ -1,6 +1,8 @@
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
 # GoLand Plugin Development
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<link-summary>Introduction to developing plugins for GoLand.</link-summary>
 
 <var name="productID" value="go"/>
 <var name="marketplaceProductID" value="go"/>

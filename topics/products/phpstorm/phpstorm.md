@@ -1,6 +1,8 @@
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
 # PhpStorm Plugin Development
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<link-summary>Introduction to developing plugins for PhpStorm.</link-summary>
 
 <var name="productID" value="phpstorm"/>
 <var name="marketplaceProductID" value="phpstorm"/>

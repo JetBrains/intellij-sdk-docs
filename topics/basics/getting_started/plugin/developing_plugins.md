@@ -1,6 +1,6 @@
-# Developing a Plugin
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Developing a Plugin
 
 <link-summary>Develop an IntelliJ Platform plugin using Gradle and Gradle IntelliJ Plugin.</link-summary>
 
@@ -32,8 +32,8 @@ There are two main ways of creating a new Gradle-based IntelliJ Platform plugin 
 This documentation section describes plugin structure generated with the <control>New Project</control> wizard, but the project generated with _IntelliJ Platform Plugin Template_ covers all the described files and directories.
 See the [](plugin_github_template.md) section for more information about the advantages of this approach and instructions on how to use it.
 
-> The old Plugin DevKit workflow still supports existing projects and is recommended for [creating theme plugins](developing_themes.md).
-See how to [migrate a DevKit plugin to Gradle-based](migrating_plugin_devkit_to_gradle.md).
+> The old DevKit project model and workflow are still supported in existing projects and are recommended for [creating theme plugins](developing_themes.md).
+> See how to [migrate a DevKit plugin to Gradle](migrating_plugin_devkit_to_gradle.md).
 >
 
 > A dedicated [SBT plugin](https://github.com/JetBrains/sbt-idea-plugin) is available for plugins implemented in Scala.

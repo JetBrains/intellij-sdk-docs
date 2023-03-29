@@ -2106,10 +2106,6 @@ Validates the plugin project configuration:
 ### verifyPluginSignature
 {#tasks-verifypluginsignature}
 
-> Available since the upcoming release
->
-{type="warning"}
-
 Validates the signature of the plugin archive file using [marketplace-zip-signer](https://github.com/JetBrains/marketplace-zip-signer) library.
 
 For more details, see [Plugin Signing](plugin_signing.md) article.

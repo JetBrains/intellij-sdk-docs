@@ -309,6 +309,7 @@
     </toc-element>
     <toc-element topic="idea.md" toc-title="IntelliJ IDEA">
       <toc-element topic="idea_ultimate.md">
+        <toc-element topic="oss_plugins_extension_point_list.md"/>
         <toc-element topic="tomcat_integration.md"/>
         <toc-element topic="spring_api.md">
           <toc-element topic="spring_extension_point_list.md"/>

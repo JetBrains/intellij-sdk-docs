@@ -19,6 +19,9 @@ Web Symbols
 : Add [](websymbols.md) documentation, which is a framework that simplifies web technology development
 by utilizing the [](symbols.md) API and supporting custom syntaxes.
 
+Open Source Plugins Extension Points
+: Added [](oss_plugins_extension_point_list.md) for plugins bundled with [](idea_ultimate.md) and other IDEs.
+
 ### February
 {#february-23}
 

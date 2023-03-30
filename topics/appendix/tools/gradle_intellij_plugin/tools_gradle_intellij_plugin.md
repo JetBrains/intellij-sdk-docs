@@ -93,7 +93,7 @@ To switch to the snapshot release, point Gradle to the dedicated snapshot reposi
 
 ```kotlin
 plugins {
-    id("org.jetbrains.intellij") version "..."
+  id("org.jetbrains.intellij") version "..."
 }
 ```
 
@@ -101,10 +101,10 @@ plugins {
 
 ```kotlin
 pluginManagement {
-    repositories {
-        maven("https://oss.sonatype.org/content/repositories/snapshots/")
-        gradlePluginPortal()
-    }
+  repositories {
+    maven("https://oss.sonatype.org/content/repositories/snapshots/")
+    gradlePluginPortal()
+  }
 }
 ```
 </tab>
@@ -114,7 +114,7 @@ pluginManagement {
 
 ```groovy
 plugins {
-    id "org.jetbrains.intellij" version "..."
+  id "org.jetbrains.intellij" version "..."
 }
 ```
 
@@ -122,12 +122,12 @@ plugins {
 
 ```groovy
 pluginManagement {
-    repositories {
-        maven {
-            url 'https://oss.sonatype.org/content/repositories/snapshots/'
-        }
-        gradlePluginPortal()
+  repositories {
+    maven {
+      url 'https://oss.sonatype.org/content/repositories/snapshots/'
     }
+    gradlePluginPortal()
+  }
 }
 ```
 
@@ -164,7 +164,7 @@ This approach allows you to declare dependencies between subprojects, like:
 
 ```kotlin
 dependencies {
-    implementation(project(":shared"))
+  implementation(project(":shared"))
 }
 ```
 
@@ -173,7 +173,7 @@ dependencies {
 
 ```groovy
 dependencies {
-    implementation project(':shared')
+  implementation project(':shared')
 }
 ```
 
@@ -187,7 +187,7 @@ Because the Gradle IntelliJ Plugin introduces the code instrumentation, and the 
 
 ```kotlin
 dependencies {
-    implementation(project(":shared", "instrumentedJar"))
+  implementation(project(":shared", "instrumentedJar"))
 }
 ```
 
@@ -196,7 +196,7 @@ dependencies {
 
 ```groovy
 dependencies {
-    implementation project(':shared', 'instrumentedJar')
+  implementation project(':shared', 'instrumentedJar')
 }
 ```
 
@@ -220,9 +220,9 @@ It is mandatory to specify at least the [`intellij.version`](#intellij-extension
 
 ```kotlin
 intellij {
-    version.set("2022.1.1")
-    type.set("IU")
-    plugins.set(listOf("com.jetbrains.php:221.5787.21"))
+  version.set("2022.1.1")
+  type.set("IU")
+  plugins.set(listOf("com.jetbrains.php:221.5787.21"))
 }
 ```
 
@@ -231,9 +231,9 @@ intellij {
 
 ```groovy
 intellij {
-    version = "2022.1.1"
-    type = "IU"
-    plugins = ["com.jetbrains.php:221.5787.21"]
+  version = "2022.1.1"
+  type = "IU"
+  plugins = ["com.jetbrains.php:221.5787.21"]
 }
 ```
 

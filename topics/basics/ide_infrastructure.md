@@ -115,6 +115,8 @@ See also [](plugin_components.md#application-startup) and [](plugin_components.m
 
 Register [`ApplicationActivationListener`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/application/ApplicationActivationListener.java) [listener](plugin_listeners.md) to be notified of "application focused/unfocused" events.
 
+To request restart of the IDE, use [`Application.restart()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java)
+
 ## Power Save Mode
 
 <ui-path>File | Power Save Mode</ui-path> can be enabled to limit power-consuming features on laptops.

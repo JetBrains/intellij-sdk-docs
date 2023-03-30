@@ -12,6 +12,13 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2023
 
+### March
+{#march-23}
+
+Web Symbols
+: Add [](websymbols.md) documentation, which is a framework that simplifies web technology development
+by utilizing the [](symbols.md) API and supporting custom syntaxes.
+
 ### February
 {#february-23}
 

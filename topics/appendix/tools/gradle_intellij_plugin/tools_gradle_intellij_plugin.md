@@ -196,7 +196,7 @@ dependencies {
 
 ```groovy
 dependencies {
-  implementation project(':shared', 'instrumentedJar')
+  implementation project(path: ':shared', configuration: 'instrumentedJar')
 }
 ```
 

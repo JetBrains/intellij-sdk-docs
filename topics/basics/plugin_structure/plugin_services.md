@@ -44,6 +44,7 @@ The service instance will be created in scope according to the caller (see [Retr
 
 Restrictions:
 
+* None of these attributes is required: `os`, `client`, `overrides`, `id`, `preload`.
 * Service class must be `final`.
 * Constructor injection of dependency services is not supported.
 * If application-level service is a [PersistentStateComponent](persisting_state_of_components.md), roaming must be disabled (`roamingType = RoamingType.DISABLED`).

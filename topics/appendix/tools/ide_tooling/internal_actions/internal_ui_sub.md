@@ -1,6 +1,8 @@
-[//]: # (title: Internal Actions - UI Submenu)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Internal Actions - UI Submenu
+
+<link-summary>Introduction to "Internal Actions | UI" submenu.</link-summary>
 
 The Internal Actions UI submenu provides IntelliJ Platform plugin developers with a suite of tools to help develop, debug, and test their IntelliJ Platform project UI.
 

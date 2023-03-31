@@ -1,6 +1,8 @@
-[//]: # (title: Plugin Types)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# Plugin Types
+
+<link-summary>Overview and examples of different kinds of plugins.</link-summary>
 
 Products based on the IntelliJ Platform can be modified and adjusted for custom purposes by adding plugins.
 All downloadable plugins are available from the [JetBrains Marketplace](https://plugins.jetbrains.com/).

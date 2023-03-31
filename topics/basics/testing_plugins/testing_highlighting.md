@@ -1,6 +1,8 @@
-[//]: # (title: Testing Highlighting)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Testing Highlighting
+
+<link-summary>Testing highlighting the code highlighted with various APIs.</link-summary>
 
 When writing plugin tests, a common task is testing various kinds of highlighting (inspections, annotators, parser error highlighting, etc.).
 The IntelliJ Platform provides a dedicated utility and markup format for this task.

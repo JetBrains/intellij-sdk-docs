@@ -1,6 +1,8 @@
-[//]: # (title: Incompatible PHP OpenAPI changes in PhpStorm 2020.2)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Incompatible PHP OpenAPI changes in PhpStorm 2020.2
+
+<link-summary>List of known breaking PHP Open API changes in 2020.2.</link-summary>
 
 ## Union Types Support
 PhpStorm 2020.2 introduced support for [PHP union types](https://wiki.php.net/rfc/union_types_v2), which resulted in some PSI-breaking changes.

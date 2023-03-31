@@ -1,6 +1,8 @@
-[//]: # (title: Popups)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# Popups
+
+<link-summary>Creating different kinds of popups.</link-summary>
 
 The IntelliJ Platform user interface makes extensive use of popups \- semi-modal windows that have no chrome (explicit closing buttons) and disappear automatically on focus loss.
 Making use of these controls in your plugin ensures a consistent user experience between your plugin and the rest of the IDE.
@@ -10,11 +12,11 @@ Popups can optionally display a title, are optionally movable and resizable (and
 The [`JBPopupFactory`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/popup/JBPopupFactory.java) interface allows you to create popups that display different kinds of components, depending on your specific needs.
 The most commonly used methods are:
 
-| Method                          | Description                                                                                                                                                                                                                                                                                                                                                              |
-|---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `createComponentPopupBuilder()` | Generic, allows showing any [Swing](https://docs.oracle.com/javase/tutorial/uiswing/start/index.html) component.<br/><br/>**Example**: [`IntentionPreviewPopupUpdateProcessor`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/intention/impl/preview/IntentionPreviewPopupUpdateProcessor.kt) creating a popup rendering the intention preview.            |
-| `createPopupChooserBuilder()`   | For choosing one or more items from a plain `java.util.List`.<br/><br/>**Example**: [`ShowMessageHistoryAction`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/actions/ShowMessageHistoryAction.kt) creating a popup with recent commit messages history in the commit message text area.                                                                   |
-| `createConfirmation()`          | For choosing between two options, and performing different actions depending on which option is selected.<br/><br/>**Example**: [`VariableInplaceRenamer`](%gh-ic%/platform/lang-impl/src/com/intellij/refactoring/rename/inplace/VariableInplaceRenamer.java) creating confirmation popup after invalid variable name is provided in the inplace rename action.     |
+| Method                          | Description                                                                                                                                                                                                                                                                                                                                                        |
+|---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `createComponentPopupBuilder()` | Generic, allows showing any [Swing](https://docs.oracle.com/javase/tutorial/uiswing/start/index.html) component.<br/><br/>**Example**: [`IntentionPreviewPopupUpdateProcessor`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/intention/impl/preview/IntentionPreviewPopupUpdateProcessor.kt) creating a popup rendering the intention preview.          |
+| `createPopupChooserBuilder()`   | For choosing one or more items from a plain `java.util.List`.<br/><br/>**Example**: [`ShowMessageHistoryAction`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/actions/ShowMessageHistoryAction.kt) creating a popup with recent commit messages history in the commit message text area.                                                                 |
+| `createConfirmation()`          | For choosing between two options, and performing different actions depending on which option is selected.<br/><br/>**Example**: [`VariableInplaceRenamer`](%gh-ic%/platform/lang-impl/src/com/intellij/refactoring/rename/inplace/VariableInplaceRenamer.java) creating confirmation popup after invalid variable name is provided in the inplace rename action.   |
 | `createActionGroupPopup()`      | Show actions from an [Action Group](grouping_action.md) and executes the action selected by the user.<br/><br/>**Example**: [`ShowRecentFindUsagesGroup`](%gh-ic%/platform/lang-impl/src/com/intellij/find/impl/ShowRecentFindUsagesGroup.java) invoked via <ui-path>Edit / Find Usages / Recent Find Usages</ui-path> and showing recent find usages group popup. |
 
 ### Action Groups

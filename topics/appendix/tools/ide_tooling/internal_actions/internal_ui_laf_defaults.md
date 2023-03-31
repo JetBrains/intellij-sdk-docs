@@ -1,6 +1,8 @@
-[//]: # (title: Internal Actions - LaF Defaults)
-
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+# Internal Actions - LaF Defaults
+
+<link-summary>Using LaF Defaults window to view and prototype UI control colors in a running IDE.</link-summary>
 
 The <control>LaF Defaults</control> window provides a key-value pair lookup for UI Controls.
 It also allows interactive prototyping of UI Control color changes.

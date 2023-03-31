@@ -1,6 +1,8 @@
-[//]: # (title: Plugin Development FAQ)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-202 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Plugin Development FAQ
+
+<link-summary>List of plugin development forum topics with frequently asked question.</link-summary>
 
 This FAQ is a topical index of questions that have been asked (and answered) on our [IntelliJ IDEA Open API and Plugin Development forum](https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development).
 

@@ -1,6 +1,8 @@
-[//]: # (title: Tests and Fixtures)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Tests and Fixtures
+
+<link-summary>Main approaches for implementing tests.</link-summary>
 
 The IntelliJ Platform testing infrastructure is not tied to any specific test framework.
 In fact, the IntelliJ IDEA Team uses [JUnit](https://junit.org), [TestNG](https://testng.org), and [Cucumber](https://cucumber.io/) for testing different parts of the project.

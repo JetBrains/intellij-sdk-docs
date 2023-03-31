@@ -1,12 +1,14 @@
-[//]: # (title: Localization Guide)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Localization Guide
+
+<link-summary>Providing translations for IDE texts used in UI, inspections, file templates, etc.</link-summary>
 
 The purpose of the document is to describe steps necessary to create localized versions of IDEA.
 
 ## Application Bundle Layout
 
-In regards to localization purpose all the resources (in English) that need to be translated are located in jar files called
+In regard to localization purpose all the resources (in English) that need to be translated are located in jar files called
 <path>resources_en.jar</path>.
 There's one such jar file for IDEA core functionality located at
 <path>INSTALL_HOME\lib\resources_en.jar</path>
@@ -14,7 +16,7 @@ and one jar for each of bundled plugins at
 <path>INSTALL_HOME\plugins\$Plugin$\lib\resources_en.jar</path>.
 
 Translated resources should be jarred and placed exactly in the same folder original jar comes from.
-So localization pack should have exactly the same number of jar files and they have to be laid out in exactly the same way original jars are laid out.
+So localization pack should have exactly the same number of jar files, and they have to be laid out in exactly the same way original jars are laid out.
 In order to enable multiple localizations per installation without localization packs overriding each other we suggest to include the name of the locale in the jar name (for example, ***resources_ja.jar***).
 
 ## Content and Layout of resources_en.jar
@@ -22,7 +24,7 @@ In order to enable multiple localizations per installation without localization 
 Property files usually contain messages, menu items, dialog labels texts etc.
 For every such file localized jar should contain translated version that is placed to exactly the same path relative to the jar root and has exactly the same name as original file plus locale identifier.
 For example ***messages/ActionsBundle.properties*** file from ***resources_en.jar*** should have its translated version ***messages/ActionsBundle_ja.properties*** file in ***resources_ja.jar***.
-All property files should be ASCII encoded with *\uXXXX* sequences used for characters that have no their representation in ASCII range.
+All property files should be ASCII encoded with *\uXXXX* sequences used for characters that have no representation in ASCII range.
 See [native2ascii](https://docs.oracle.com/javase/7/docs/technotes/tools/solaris/native2ascii.html) tool for more details.
 
 Property values mostly follow MessageFormat rules.

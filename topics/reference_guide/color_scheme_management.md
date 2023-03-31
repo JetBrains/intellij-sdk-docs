@@ -1,6 +1,8 @@
-[//]: # (title: Color Scheme Management)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Color Scheme Management
+
+<link-summary>Developing new color schemes for existing and custom languages.</link-summary>
 
 Color scheme management in IntelliJ IDEA 12.1 was changed to ease scheme designers' work and make schemes look equally well for different programming languages even if not designed specifically for these languages.
 Previously, language plug-ins were using fixed default colors incompatible, for example, with dark schemes.

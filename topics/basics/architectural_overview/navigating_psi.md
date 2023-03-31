@@ -1,6 +1,8 @@
-[//]: # (title: Navigating the PSI)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Navigating the PSI
+
+<link-summary>Navigating the PSI tree elements to find required information about parents or children.</link-summary>
 
 There are three main ways to navigate the PSI: *top-down*, *bottom-up*, and *references*.
 In the first scenario,  you have a PSI file or another higher-level element (for example, a method). You need to find all elements that match a specified condition (for example, all variable declarations).

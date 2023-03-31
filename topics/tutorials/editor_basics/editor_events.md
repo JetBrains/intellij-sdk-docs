@@ -1,6 +1,8 @@
-[//]: # (title: 3. Handling Editor Events)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# 3. Handling Editor Events
+
+<link-summary>Introduction to Editor Action system handling actions activated by keystroke events.</link-summary>
 
 The previous tutorial [Editor Coordinate Systems](coordinates_system.md) described working with caret coordinate systems in an editor window.
 Caret position was discussed in terms of Logical Position, Visual Position, and Offset.

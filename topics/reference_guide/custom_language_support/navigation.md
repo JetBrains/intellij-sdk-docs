@@ -1,6 +1,8 @@
-[//]: # (title: Navigation)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Navigation
+
+<link-summary>Implementing navigation to resolved symbols or other PSI elements.</link-summary>
 
 > This API is available starting from 2020.3 and currently in development and thus in experimental state.
 >

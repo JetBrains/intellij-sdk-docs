@@ -1,6 +1,8 @@
-[//]: # (title: Class Loaders)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Class Loaders
+
+<link-summary>Introduction and tips for using plugin class loaders.</link-summary>
 
 A separate class loader is used to load the classes of each plugin.
 This allows each plugin to use a different library version, even if the same library is used by the IDE itself or by another plugin.

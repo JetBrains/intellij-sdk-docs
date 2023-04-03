@@ -1,6 +1,8 @@
-[//]: # (title: Quick Start Guide)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# Quick Start Guide
+
+<link-summary>Introduction to IntelliJ Platform plugin development.</link-summary>
 
 This section covers the basics of working with the IntelliJ Platform.
 It will familiarize you with the working environment, project structure, and frequently used API components.

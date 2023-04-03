@@ -1,6 +1,8 @@
-[//]: # (title: Execution)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Execution
+
+<link-summary>Run configuration execution lifecycle and description of APIs used to execute processes.</link-summary>
 
 The standard execution of a run action goes through the following steps:
 

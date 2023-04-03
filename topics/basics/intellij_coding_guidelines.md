@@ -1,6 +1,8 @@
-[//]: # (title: IntelliJ Platform Coding Guidelines)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# IntelliJ Platform Coding Guidelines
+
+<link-summary>Coding guidelines for the code contributed to the IntelliJ Platform.</link-summary>
 
 If you are writing code that you would like to contribute to the IntelliJ Platform, following these guidelines will make it easier for the JetBrains development team to review and accept your changes.
 

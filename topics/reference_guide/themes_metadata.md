@@ -1,4 +1,8 @@
-[//]: # (title: Exposing Theme Metadata)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Exposing Theme Metadata
+
+<link-summary>Exposing plugin's UI components' customization keys allowing theme developers to change your components look.</link-summary>
 
 All available UI Customization Keys that can be used in [Custom Themes](themes_customize.md) must be defined in a dedicated <path>*.themeMetadata.json</path> file which is registered via `com.intellij.themeMetadataProvider` extension point.
 

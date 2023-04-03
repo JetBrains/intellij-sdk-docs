@@ -1,6 +1,8 @@
-[//]: # (title: Gradle IntelliJ Plugin – Build Features)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Gradle IntelliJ Plugin – Build Features
+
+<link-summary>Overview of Gradle IntelliJ Plugin feature flags.</link-summary>
 
 With ongoing Gradle IntelliJ Plugin releases, new features are introduced that require additional research, collecting more feedback from developers, or should be enabled or disabled under particular conditions.
 Build Features are an implementation of the feature flags concept and let you control some behaviors of the Gradle IntelliJ Plugin.

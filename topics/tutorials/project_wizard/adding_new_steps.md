@@ -1,6 +1,8 @@
-[//]: # (title: Adding New Steps to Project Wizard)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Adding New Steps to Project Wizard
+
+<link-summary>Tutorial on adding a new step to a custom project wizard.</link-summary>
 
 This tutorial shows how to add an extra step to the Project Wizard to provide additional project configuration settings.
 

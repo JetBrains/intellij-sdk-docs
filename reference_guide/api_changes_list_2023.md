@@ -147,6 +147,10 @@ Apache Batik library unbundled
 `com.intellij.database.datagrid.DataGrid.getStripeRowBackground()` abstract method added
 : Only recompilation needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
 
+### JavaScript Plugin 2023.1
+
+`ccom.intellij.lang.javascript.JavascriptParserDefinition.createFile(FileViewProvider)` method return type changed from `com.intellij.lang.javascript.psi.JSFile` to `com.intellij.psi.PsiFile`
+: this change was required to support Astro file format
 
 ### JavaScript Debugger Plugin 2023.1
 

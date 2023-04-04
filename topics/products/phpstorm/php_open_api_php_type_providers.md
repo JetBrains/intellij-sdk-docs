@@ -1,6 +1,8 @@
-[//]: # (title: PHP Type Providers)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# PHP Type Providers
+
+<link-summary>Providing element type information for PHP type inference mechanism.</link-summary>
 
 Type inference in PhpStorm is built on top of type providers, each of which is responsible for inferring the types of
 specific PSI elements.
@@ -13,7 +15,7 @@ All providers inherit from `com.jetbrains.php.lang.psi.resolve.types.PhpTypeProv
 
 The first phase of type inference takes place at the indexing stage.
 At this phase, PhpStorm calls `PhpTypeProvider4.getType()` on each type provider.
-PhpStorm only has access to local information from the current file and can't use information from other files as well as indexes because it does't yet build them.
+PhpStorm only has access to local information from the current file and can't use information from other files as well as indexes because it doesn't yet build them.
 Sometimes, it can deduce the exact type from this information, but in other cases this is impossible because PhpStorm requires information from other files.
 
 Because of this, there are two kinds of types in PhpStorm:
@@ -21,7 +23,7 @@ Because of this, there are two kinds of types in PhpStorm:
 - Complete types
 - Incomplete types
 
-### Complete types
+### Complete Types
 
 Complete types are types that are known exactly based on **only** the local information of the current file.
 
@@ -43,7 +45,7 @@ function foo(string $a): string {
 
 Here, since the `$a` parameter has a `string` type hint, PhpStorm can infer the Complete type `string`.
 
-### Incomplete types
+### Incomplete Types
 
 Incomplete types are types that need additional information from other project files besides the containing file.
 

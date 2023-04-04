@@ -2,6 +2,8 @@
 
 # Modifying the PSI
 
+<link-summary>Creating, deleting, and modifying PSI elements.</link-summary>
+
 The PSI is a read/write representation of the source code as a tree of elements corresponding to a source file's structure.
 You can modify the PSI by *adding*, *replacing*, and *deleting* PSI elements.
 

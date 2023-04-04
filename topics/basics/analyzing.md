@@ -2,6 +2,8 @@
 
 # Analyzing
 
+<link-summary>The Analyzing section overview.</link-summary>
+
 * [](syntax_errors.md)
 * Annotator
 * [Inspections](code_inspections.md)

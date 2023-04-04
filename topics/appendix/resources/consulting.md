@@ -1,6 +1,8 @@
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
 # Consulting
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<link-summary>List of independent companies and individuals providing paid plugin consulting and development services.</link-summary>
 
 The following independent companies and individuals provide paid plugin consulting and development services.
 
@@ -8,17 +10,17 @@ Also, consider posting requests in _#jobs_ channel on [JetBrains Platform Slack]
 
 > JetBrains is not responsible for nor guarantees the performance of these independent third-party companies.
 
-| Name               | Contact                                                 | Notes                                       |
-|--------------------|---------------------------------------------------------|---------------------------------------------|
-| Joachim Ansorg     | [www.plugin-dev.com][ja]                                | -/-                                         |
-| Daniel Espendiller | [daniel@espendiller.net][de]                            | -/-                                         |
-| Robert Ekendahl    | [www.edaphic.studio][re]                                | Custom Language support                     |
-| Alexey Stukalov    | [info@jpa-buddy.com][ast], [www.haulmont.com][ast2]     | Plugins: [CUBA][ast3], [JPA Buddy][ast4], [React Buddy][ast5], [Jmix][ast6].|
-| Edument            | [jonathan@edument.cz][ed], [edument.se][ed2]            | Developers of [Comma IDE][ed3]              |
-| Mikhail Bolotov    | [mikhail.bolotov@gmail.com][mb]                         | Plugins: [Cypress Support Pro][cspro], [k6] |
-| Ilscipio GmbH      | [Paul Piper][il], [www.ilscipio.com][il2]               | Custom Plugin Development                   |
-| Tamás Balog        | [www.picimako.com][pm]                                  | Custom Plugin Development                   |
-| Jacky Liu          | [beansoft@126.com][bn], [Marketplace of BeanSoft][bn2]  | Custom Plugin Development, Plugins: [React Native Console][rnc]    |
+| Name               | Contact                                                 | Notes                                                                        |
+|--------------------|---------------------------------------------------------|------------------------------------------------------------------------------|
+| Joachim Ansorg     | [www.plugin-dev.com][ja]                                | -/-                                                                          |
+| Daniel Espendiller | [daniel@espendiller.net][de]                            | -/-                                                                          |
+| Robert Ekendahl    | [www.edaphic.studio][re]                                | Custom Language support                                                      |
+| Alexey Stukalov    | [info@jpa-buddy.com][ast], [www.haulmont.com][ast2]     | Plugins: [CUBA][ast3], [JPA Buddy][ast4], [React Buddy][ast5], [Jmix][ast6]. |
+| Edument            | [jonathan@edument.cz][ed], [edument.se][ed2]            | Developers of [Comma IDE][ed3]                                               |
+| Mikhail Bolotov    | [mikhail.bolotov@gmail.com][mb]                         | Plugins: [Cypress Support Pro][cspro], [k6]                                  |
+| Ilscipio GmbH      | [Paul Piper][il], [www.ilscipio.com][il2]               | Custom Plugin Development                                                    |
+| Tamás Balog        | [www.picimako.com][pm]                                  | Custom Plugin Development                                                    |
+| Jacky Liu          | [beansoft@126.com][bn], [Marketplace of BeanSoft][bn2]  | Custom Plugin Development, Plugins: [React Native Console][rnc]              |
 
 [ja]: https://www.plugin-dev.com
 [de]: mailto:daniel@espendiller.net

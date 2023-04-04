@@ -1,6 +1,8 @@
-[//]: # (title: Actions)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Actions
+
+<link-summary>Introduction to actions allowing to invoke plugin functionalities.</link-summary>
 
 The IntelliJ Platform provides the concept of _actions_.
 An action is a class derived from [`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java), whose `actionPerformed()` method is called when its menu item or toolbar button is selected.

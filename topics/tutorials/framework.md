@@ -1,6 +1,8 @@
-[//]: # (title: Frameworks)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Frameworks
+
+<link-summary>Tutorial on implementing custom framework types.</link-summary>
 
 The following tutorial shows how to support a custom framework type for a project and make this framework type embedded in a project wizard as a UI component.
 The examples in this tutorial rely heavily on the [framework_basics](%gh-sdk-samples%/framework_basics) code sample.

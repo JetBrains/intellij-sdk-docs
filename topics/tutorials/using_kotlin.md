@@ -164,4 +164,4 @@ For a readily available source of up-to-date examples of plugins implemented in 
 * [Presentation Assistant](https://github.com/chashnikov/IntelliJ-presentation-assistant)
 * [Rust](https://github.com/intellij-rust/intellij-rust)
 * [TeXiFy IDEA](https://github.com/Hannah-Sten/TeXiFy-IDEA)
-* [Deno](https://github.com/JetBrains/intellij-plugins/tree/master/Deno)
+* [Deno](%gh-ij-plugins%/Deno)

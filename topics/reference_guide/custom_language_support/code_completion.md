@@ -1,6 +1,6 @@
 # Code Completion
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Implementing context-aware code completion in custom languages.</link-summary>
 
@@ -49,7 +49,7 @@ Keep in mind that the pattern is checked against the leaf PSI element.
 If you want to match a composite element, use `withParent()` or `withSuperParent()` methods.
 
 **Examples**:
-- [`CompletionContributor`](https://github.com/JetBrains/intellij-plugins/blob/master/osmorc/src/org/osmorc/manifest/completion/OsgiManifestCompletionContributor.java) for completing keywords in MANIFEST.MF files.
+- [`CompletionContributor`](%gh-ij-plugins%/osmorc/src/org/osmorc/manifest/completion/OsgiManifestCompletionContributor.java) for completing keywords in MANIFEST.MF files.
 - [Custom Language Support Tutorial: Completion Contributor](completion_contributor.md)
 
 ### Lookup Items

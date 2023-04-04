@@ -149,8 +149,8 @@ Apache Batik library unbundled
 
 ### JavaScript Plugin 2023.1
 
-`ccom.intellij.lang.javascript.JavascriptParserDefinition.createFile(FileViewProvider)` method return type changed from `com.intellij.lang.javascript.psi.JSFile` to `com.intellij.psi.PsiFile`
-: this change was required to support Astro file format
+`com.intellij.lang.javascript.JavascriptParserDefinition.createFile(FileViewProvider)` method return type changed from `com.intellij.lang.javascript.psi.JSFile` to `com.intellij.psi.PsiFile`
+: Required to support Astro file format.
 
 ### JavaScript Debugger Plugin 2023.1
 

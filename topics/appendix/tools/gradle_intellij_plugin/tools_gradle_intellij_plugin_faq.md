@@ -294,7 +294,7 @@ Since Kotlin `1.8.20`, the Kotlin compiler has a [new incremental compilation ap
 
 As a workaround, you can disable it by adding the following line to the <path>gradle.properties</path> file:
 
-```properties
+```
 kotlin.incremental.useClasspathSnapshot=false
 ```
 

@@ -135,7 +135,7 @@ Execution failed for task ':compileKotlin'.
 
 To avoid this exception, add the following line to the <path>gradle.properties</path>:
 
-```properties
+```
 kotlin.incremental.useClasspathSnapshot=false
 ```
 

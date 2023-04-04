@@ -23,4 +23,4 @@ The [`PsiElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.jav
 
 ## What can I do with PSI elements?
 
-See [](psi_cookbook.md).
+See [](psi_cookbook.md) and [](modifying_psi.md).

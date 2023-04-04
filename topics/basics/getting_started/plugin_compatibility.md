@@ -1,6 +1,6 @@
-# Plugin Compatibility with IntelliJ Platform Products
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Plugin Compatibility with IntelliJ Platform Products
 
 <link-summary>Declaring and verifying compatibility of plugins developed for multiple IntelliJ Platform-based IDEs.</link-summary>
 
@@ -146,6 +146,8 @@ Consequently, [dependencies](plugin_dependencies.md) on AppCode and CLion functi
     <depends>com.intellij.modules.appcode</depends>
     ```
 
+See also: [](app_code.md).
+
 </tab>
 <tab title="CLion">
 
@@ -183,6 +185,8 @@ Consequently, [dependencies](plugin_dependencies.md) on AppCode and CLion functi
     ```xml
     <depends>com.intellij.modules.clion</depends>
     ```
+
+See also: [](clion.md).
 
 </tab>
 </tabs>

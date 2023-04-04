@@ -1,6 +1,6 @@
-[//]: # (title: The IntelliJ Platform)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# The IntelliJ Platform
 
 <link-summary>Introduction to the IntelliJ Platform, plugins, and IDEs based on it.</link-summary>
 
@@ -11,7 +11,7 @@ It is also Open Source and can be used by third parties to build IDEs, such as [
 The IntelliJ Platform provides all the infrastructure that these IDEs need to provide rich language tooling support.
 It is a component-driven, cross-platform JVM based application host with a high-level user interface toolkit for creating tool windows, tree views, and lists (supporting fast search) as well as popup menus and dialogs.
 
-The IntelliJ Platform has a full-text editor with abstract implementations of syntax highlighting, code folding, code completion, and other rich text editing features.
+The IntelliJ Platform has a full-text editor with abstract implementations of [syntax highlighting](analyzing.md), code folding, code completion, and other rich text [editing features](editing.md).
 An image editor is also included.
 
 Furthermore, it includes open APIs to build standard IDE functionality, such as a project model and a build system.

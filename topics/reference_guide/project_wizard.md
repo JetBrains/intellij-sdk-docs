@@ -6,7 +6,7 @@
 
 ## Project Wizard
 
-Working with the project wizard can be illustrated with the [RedLine SmallTalk plugin](https://github.com/bulenkov/RedlineSmalltalk)
+Working with the project wizard can be illustrated with the [RedLine SmallTalk plugin](https://github.com/bulenkov/RedlineSmalltalk). See also [](intro_project_wizard.md).
 
 ## Implementing a New Module Type
 

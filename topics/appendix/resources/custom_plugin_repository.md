@@ -6,7 +6,7 @@
 
 > [Toolbox Enterprise](https://www.jetbrains.com/toolbox-enterprise/) (currently in Early Access) comes with a local built-in IntelliJ plugin repository that allows you to choose specific plugins to be approved within your organization. It also lets you upload and distribute your own plugins inside your company, as well as any publicly available plugin from the internet.
 
-If you intend to use a plugin repository _other than_ the [JetBrains Marketplace](https://plugins.jetbrains.com), you will need to:
+If you intend to use a plugin repository _other than_ the [JetBrains Marketplace](plugin_repository_obsolete.md), you will need to:
 
 <procedure>
 

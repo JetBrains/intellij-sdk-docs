@@ -288,4 +288,17 @@ intellij {
 It is also possible to refer to the sandbox directory of another Gradle project — to do that, point to the <path>/projects/plugin-name/build/idea-sandbox/plugins/plugin-name/lib/</path> directory.
 
 
+### Kotlin compiler throws `Out of memory. Java heap space` error
+
+Since the Kotlin `1.8.20`, the Kotlin compiler has a [new incremental compilation approach](https://kotlinlang.org/docs/gradle-compilation-and-caches.html#a-new-approach-to-incremental-compilation) enabled by default that fails when reading IntelliJ SDK Jar files.
+
+As a workaround, you can disable it by adding the following line to the <path>gradle.properties</path> file:
+
+```properties
+kotlin.incremental.useClasspathSnapshot=false
+```
+
+See the [](using_kotlin.md#incremental-compilation) section for more details.
+```
+
 <include from="snippets.md" element-id="missingContent"/>

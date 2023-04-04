@@ -56,7 +56,7 @@ Currently only `html`, `css` or `js` namespaces are allowed, however in the futu
 will be lifted to support Web Types for other technologies.
 
 The `namespace` object contains symbol kind names listed as properties.
-Some symbol kinds are predefined and directly supported by IDE (see Symbol Kinds/Supported for reference).
+Some symbol kinds are predefined and directly supported by IDE (see [](#direct-support) for reference).
 The kind of symbol should relate to its role.
 For instance a Vue directive should be of the kind `vue-directives`.
 Each framework should define a set of custom symbol kinds if needed.
@@ -176,7 +176,7 @@ In version 2022.3 IDEs with JavaScript plugin installed provide direct support f
 ### Angular
 
 Angular plugin Web Types are available
-[here](https://github.com/JetBrains/intellij-plugins/tree/master/AngularJS/resources/web-types)
+[here](%gh-ij-plugins%/AngularJS/resources/web-types)
 for reference.
 Any Web Types file targeting only Angular support should have `framework` property set to `angular`.
 Highlights: `js/ng-custom-events` contribute symbols with patterns for any custom events supported by Angular `EventManager`s, e.g.:
@@ -224,7 +224,9 @@ Highlights: `js/ng-custom-events` contribute symbols with patterns for any custo
 
 ### Vue
 
-Vue plugin Web Types are available here for reference.
+Vue plugin Web Types are available
+[here](%gh-ij-plugins%/vuejs/resources/web-types)
+for reference.
 Any Web Types file targeting only Vue support should have `framework` property set to `vue`.
 Highlights:
 
@@ -355,7 +357,10 @@ A Vue `/html/vue-directives` contribution supports:
 ### Web Components
 
 For Lit support, install into your Node project as a devDependency `@web-types/lit`.
-Web Types are available here for reference.
+Web Types are available
+[here](https://github.com/JetBrains/web-types/blob/master/packages/lit/lit%402.0.0/lit.web-types.json)
+for reference.
+
 Web Components should use:
 
 - `/html/attributes`: for attributes available in HTML

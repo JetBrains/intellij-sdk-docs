@@ -119,6 +119,28 @@ See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html
 > If you need to add Kotlin Standard Library to your **test project** dependencies, see the [](testing_faq.md#how-to-test-a-jvm-language) section.
 >
 
+### Incremental compilation
+
+The Kotlin Gradle plugin supports [incremental compilation](https://kotlinlang.org/docs/gradle-compilation-and-caches.html#incremental-compilation), which allows tracking changes in the source files so the compiler handles only updated code.
+
+The Kotlin `1.8.20` release has a [new incremental compilation approach](https://kotlinlang.org/docs/gradle-compilation-and-caches.html#a-new-approach-to-incremental-compilation) enabled by default.
+Unfortunately, it is not compatible with the IntelliJ Platform — when reading large JAR files (like `app.js` or `3rd-party-rt.jar`), leading to the `Out of Memory` exception:
+
+```
+Execution failed for task ':compileKotlin'.
+> Failed to transform app.jar to match attributes {artifactType=classpath-entry-snapshot, org.gradle.libraryelements=jar, org.gradle.usage=java-runtime}.
+   > Execution failed for ClasspathEntrySnapshotTransform: .../lib/app.jar.
+      > Java heap space
+```
+
+To avoid this exception, add the following line to the <path>gradle.properties</path>:
+
+```properties
+kotlin.incremental.useClasspathSnapshot=false
+```
+
+You can find the current state of the issue in [KT-57757 Reduce classpath snapshotter memory consumption](https://youtrack.jetbrains.com/issue/KT-57757/Reduce-classpath-snapshotter-memory-consumption).
+
 ### Other Bundled Kotlin Libraries
 
 Please see [Third-Party Software and Licenses](https://www.jetbrains.com/legal/third-party-software/).

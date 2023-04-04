@@ -290,7 +290,7 @@ It is also possible to refer to the sandbox directory of another Gradle project 
 
 ### Kotlin compiler throws `Out of memory. Java heap space` error
 
-Since the Kotlin `1.8.20`, the Kotlin compiler has a [new incremental compilation approach](https://kotlinlang.org/docs/gradle-compilation-and-caches.html#a-new-approach-to-incremental-compilation) enabled by default that fails when reading IntelliJ SDK Jar files.
+Since Kotlin `1.8.20`, the Kotlin compiler has a [new incremental compilation approach](https://kotlinlang.org/docs/gradle-compilation-and-caches.html#a-new-approach-to-incremental-compilation) enabled by default that fails when reading IntelliJ SDK JAR files.
 
 As a workaround, you can disable it by adding the following line to the <path>gradle.properties</path> file:
 

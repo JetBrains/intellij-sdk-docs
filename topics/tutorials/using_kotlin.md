@@ -128,8 +128,8 @@ Unfortunately, it is not compatible with the IntelliJ Platform — when reading 
 
 ```
 Execution failed for task ':compileKotlin'.
-> Failed to transform 3rd-party-rt.jar to match attributes {artifactType=classpath-entry-snapshot, org.gradle.libraryelements=jar, org.gradle.usage=java-runtime}.
-   > Execution failed for ClasspathEntrySnapshotTransform: .../lib/3rd-party-rt.jar.
+> Failed to transform app.jar to match attributes {artifactType=classpath-entry-snapshot, org.gradle.libraryelements=jar, org.gradle.usage=java-runtime}.
+   > Execution failed for ClasspathEntrySnapshotTransform: .../lib/app.jar.
       > Java heap space
 ```
 

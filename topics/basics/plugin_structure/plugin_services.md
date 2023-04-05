@@ -1,6 +1,6 @@
-# Services
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Services
 
 <link-summary>Registering and using on-demand services to encapsulate plugin functionality.</link-summary>
 
@@ -29,7 +29,7 @@ To improve startup performance, avoid any heavy initializations in the construct
 
 > Using constructor injection of dependency services is deprecated (and not supported in [](#light-services)) for performance reasons.
 >
-> Other dependencies must be [acquired only when needed](#retrieving-a-service) in all corresponding methods (see `someServiceMethod()` in [Project Service Sample](#project-service-sample)).
+> Other dependencies must be [acquired only when needed](#retrieving-a-service) in all corresponding methods (see `doSomething()` in [Light Service Examples](#light-service-examples)).
 >
 > Use inspection <control>Plugin DevKit | Code | Non-default constructors for service and extension class</control> to verify code.
 >
@@ -49,7 +49,78 @@ Restrictions:
 * Constructor injection of dependency services is not supported.
 * If application-level service is a [PersistentStateComponent](persisting_state_of_components.md), roaming must be disabled (`roamingType = RoamingType.DISABLED`).
 
-See [Project-Level Service](#project-service-sample) below for a sample.
+### Examples
+{#light-service-examples}
+
+Application-level light service:
+
+<tabs group="languages">
+
+<tab title="Java" group-key="java">
+
+```java
+@Service
+public final class MyAppService {
+  public void doSomething(String param) {
+    // ...
+  }
+}
+```
+
+</tab>
+
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+@Service
+class MyAppService {
+  fun doSomething(param: String) {
+    // ...
+  }
+}
+```
+</tab>
+
+</tabs>
+
+Project-level light service example:
+
+<tabs group="languages">
+
+<tab title="Java" group-key="java">
+
+```java
+@Service(Service.Level.PROJECT)
+public final class MyProjectService {
+  private final Project myProject;
+
+  public MyProjectService(Project project) {
+    myProject = project;
+  }
+
+  public void doSomething(String param) {
+    String projectName = myProject.getName();
+    // ...
+  }
+}
+```
+
+</tab>
+
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+@Service(Service.Level.PROJECT)
+class MyProjectService(private val project: Project) {
+  fun doSomething(param: String) {
+    val projectName = project.name
+    // ...
+  }
+}
+```
+</tab>
+
+</tabs>
 
 ## Declaring a Service
 
@@ -64,18 +135,122 @@ If `serviceInterface` isn't specified, it's supposed to have the same value as `
 
 To provide custom implementation for test/headless environment, specify `testServiceImplementation`/`headlessImplementation` additionally.
 
-<path>plugin.xml</path>
+### Example
+
+
+<tabs group="languages">
+
+<tab title="Java" group-key="java">
+
+Application-level service:
+
+- Interface:
+
+  ```java
+  public interface MyAppService {
+    void doSomething(String param);
+  }
+  ```
+
+- Implementation:
+
+  ```java
+  public class MyAppServiceImpl implements MyAppService {
+    @Override
+    public void doSomething(String param) {
+      // ...
+    }
+  }
+  ```
+
+Project-level service:
+
+- Interface:
+
+  ```java
+  public interface MyProjectService {
+    void doSomething(String param);
+  }
+  ```
+
+- Implementation:
+
+  ```java
+  public class MyProjectServiceImpl {
+    private final Project myProject;
+
+    public MyProjectServiceImpl(Project project) {
+      myProject = project;
+    }
+
+    public void doSomething(String param) {
+      String projectName = myProject.getName();
+      // ...
+    }
+  }
+  ```
+</tab>
+
+<tab title="Kotlin" group-key="kotlin">
+
+Application-level service:
+
+- Interface:
+
+  ```kotlin
+  interface MyAppService {
+    fun doSomething(param: String)
+  }
+  ```
+
+- Implementation:
+
+  ```kotlin
+  class MyAppServiceImpl : MyAppService {
+    override fun doSomething(param: String) {
+      // ...
+    }
+  }
+  ```
+
+Project-level service:
+
+- Interface:
+
+  ```kotlin
+  interface MyProjectService {
+    fun doSomething(param: String)
+  }
+  ```
+
+- Implementation:
+
+  ```kotlin
+  class MyProjectServiceImpl(private val project: Project)
+      : MyProjectService {
+
+    fun doSomething(param: String) {
+      val projectName = project.name
+      // ...
+    }
+  }
+  ```
+</tab>
+
+</tabs>
+
+Registration in <path>plugin.xml</path>:
 ```xml
 <extensions defaultExtensionNs="com.intellij">
   <!-- Declare the application-level service -->
   <applicationService
-      serviceInterface="mypackage.MyApplicationService"
-      serviceImplementation="mypackage.MyApplicationServiceImpl"/>
+      serviceInterface="com.example.MyAppService"
+      serviceImplementation="com.example.MyAppServiceImpl"/>
 
   <!-- Declare the project-level service -->
   <projectService
-      serviceInterface="mypackage.MyProjectService"
-      serviceImplementation="mypackage.MyProjectServiceImpl"/>
+      serviceInterface="com.example.MyProjectService"
+      serviceImplementation="com.example.MyProjectServiceImpl"/>
 </extensions>
 ```
 
@@ -92,30 +267,31 @@ To provide custom implementation for test/headless environment, specify `testSer
 Getting service doesn't need a read action and can be performed from any thread.
 If a service is requested from several threads, it will be initialized in the first thread, and other threads will be blocked until it is fully initialized.
 
-<tabs>
-<tab title="Java">
+<tabs group="languages">
+<tab title="Java" group-key="java">
 
 ```java
-MyApplicationService applicationService = ApplicationManager.getApplication()
-  .getService(MyApplicationService.class);
+MyAppService applicationService =
+    ApplicationManager.getApplication().getService(MyAppService.class);
 
-MyProjectService projectService = project.getService(MyProjectService.class);
+MyProjectService projectService =
+    project.getService(MyProjectService.class);
 ```
 
 Service implementations can wrap these calls with convenient static `getInstance()` or `getInstance(Project)` method:
 
 ```java
-MyApplicationService applicationService = MyApplicationService.getInstance();
+MyAppService applicationService = MyAppService.getInstance();
 
 MyProjectService projectService = MyProjectService.getInstance(project);
 ```
 
 </tab>
 
-<tab title="Kotlin">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
-val applicationService = service<MyApplicationService>()
+val applicationService = service<MyAppService>()
 
 val projectService = project.service<MyProjectService>()
 ```
@@ -128,30 +304,6 @@ val projectService = project.service<MyProjectService>()
 ![Getting Service](getting_service.svg){thumbnail="true" thumbnail-same-file="true"}
 
 </procedure>
-
-## Project Service Sample
-
-This minimal sample shows [Light Service](#light-services) `ProjectService` interacting with another project-level service `AnotherService` (not shown here).
-
-<path>ProjectService.java</path>
-
-```java
-@Service(Service.Level.PROJECT)
-public final class ProjectService {
-
-  private final Project myProject;
-
-  public ProjectService(Project project) {
-    myProject = project;
-  }
-
-  public void someServiceMethod(String parameter) {
-    AnotherService anotherService = myProject.getService(AnotherService.class);
-    String result = anotherService.anotherServiceMethod(parameter, false);
-    // do some more stuff
-  }
-}
-```
 
 ## Sample Plugin
 

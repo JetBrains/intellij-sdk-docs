@@ -29,7 +29,8 @@ To improve startup performance, avoid any heavy initializations in the construct
 
 > Using constructor injection of dependency services is deprecated (and not supported in [](#light-services)) for performance reasons.
 >
-> Other dependencies must be [acquired only when needed](#retrieving-a-service) in all corresponding methods (see `doSomething()` in [Light Service Examples](#light-service-examples)).
+> Other service dependencies must be [acquired only when needed](#retrieving-a-service) in all corresponding methods, e.g., if you need a service to get some data or execute a task, retrieve the service before calling its methods.
+> Do not retrieve services in constructors to store them in class fields.
 >
 > Use inspection <control>Plugin DevKit | Code | Non-default constructors for service and extension class</control> to verify code.
 >
@@ -50,7 +51,6 @@ Restrictions:
 * If application-level service is a [PersistentStateComponent](persisting_state_of_components.md), roaming must be disabled (`roamingType = RoamingType.DISABLED`).
 
 ### Examples
-{#light-service-examples}
 
 Application-level light service:
 

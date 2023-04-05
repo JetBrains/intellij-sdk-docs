@@ -13,7 +13,13 @@ IntelliJ IDEA Ultimate comes with a number of additional features and bundled pl
 
 <include from="snippets.md" element-id="jetbrainsProductOpenSourceLicense"/>
 
-The following pages describe targeting API available only in IntelliJ IDEA Ultimate:
+## Bundled Open Source Plugins API
+
+See [](oss_plugins_extension_point_list.md) on how to extend bundled plugins.
+
+## IntelliJ IDEA Ultimate API
+
+The following pages describe targeting APIs which are available only in IntelliJ IDEA Ultimate:
 
 * [Tomcat Integration](tomcat_integration.md)
 * [Spring API](spring_api.md)

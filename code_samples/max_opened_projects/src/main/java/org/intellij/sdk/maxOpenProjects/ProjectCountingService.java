@@ -1,45 +1,31 @@
-// Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 
 package org.intellij.sdk.maxOpenProjects;
+
+import com.intellij.openapi.components.Service;
 
 /**
  * Application service implementation to keep a running count of how many projects are open at a given time.
  */
-public class ProjectCountingService {
+@Service
+public final class ProjectCountingService {
 
-  /**
-   * Sets the maximum allowed number of opened projects.
-   */
-  private final static int MAX_OPEN_PRJ_LIMIT = 3;
+  private final static int MAX_OPEN_PROJECTS_LIMIT = 3;
 
-  /**
-   * The count of open projects must always be >= 0.
-   */
   private int myOpenProjectCount = 0;
 
   public void incrProjectCount() {
-    validateProjectCount();
     myOpenProjectCount++;
   }
 
   public void decrProjectCount() {
-    myOpenProjectCount--;
-    validateProjectCount();
+    if (myOpenProjectCount > 0) {
+      myOpenProjectCount--;
+    }
   }
 
   public boolean projectLimitExceeded() {
-    return myOpenProjectCount > MAX_OPEN_PRJ_LIMIT;
-  }
-
-  public int getProjectCount() {
-    return myOpenProjectCount;
-  }
-
-  /**
-   * Anti-bugging to ensure the count of open projects never goes below zero.
-   */
-  private void validateProjectCount() {
-    myOpenProjectCount = Math.max(myOpenProjectCount, 0);
+    return myOpenProjectCount > MAX_OPEN_PROJECTS_LIMIT;
   }
 
 }

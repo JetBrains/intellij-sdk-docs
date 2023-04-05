@@ -1,6 +1,6 @@
 # Custom Settings Groups
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <link-summary>Defining groups of related settings.</link-summary>
 
@@ -10,6 +10,8 @@ These parent groups are the existing categories of Settings in the IntelliJ Plat
 However, suppose the custom Settings are rich enough to require multiple levels?
 For example, a custom Setting implementation has multiple sub-Settings implementations.
 Extension Point declarations can create this kind of multilayer Settings hierarchy.
+
+<include from="settings_guide.md" element-id="settings_ui_inspector"/>
 
 ## Extension Points for Parent-Child Settings Relationships
 

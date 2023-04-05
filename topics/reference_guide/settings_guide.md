@@ -13,7 +13,13 @@ The User Interface (UI) for these custom Settings can be added to the [IDE Setti
 Settings can [affect different levels](https://www.jetbrains.com/help/idea/configuring-project-and-ide-settings.html) of scope.
 This document describes adding custom Settings at the Project and Application (or Global, IDE) levels.
 
-> To inspect existing Settings in the IDE, use [UI Inspector](internal_ui_inspector.md).
+<snippet id="settings_ui_inspector">
+
+> See [](internal_ui_inspector.md#inspecting-settings) on how to gather information in the IDE instance for <control>Settings</control> dialog.
+>
+{style="tip"}
+
+</snippet>
 
 ## Extension Points for Settings
 
@@ -96,6 +102,8 @@ The attributes supported by `com.intellij.applicationConfigurable` EP and `com.i
 
 The table below shows the allowed values for the `parentId` attribute.
 See the [previous section](#table-of-attributes) for all supported attributes.
+
+<include from="settings_guide.md" element-id="settings_ui_inspector"/>
 
 | `parentId` Value | Group                        | Details                                                                                                                                                                                                                                                                                                  |
 |:-----------------|:-----------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

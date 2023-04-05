@@ -68,6 +68,8 @@ Custom Swing components can also provide additional properties via [`UiInspector
 
 ## Inspecting Settings
 
+Enable <ui-path>View | Appearance | Details in Tree View</ui-path> in [Internal Mode](enabling_internal.md) to show Settings page `id` in the tree.
+
 Some additional properties are available when inspecting <control>Settings</control> dialog (2023.1+).
 
 > _UI Inspector_ must be invoked only after opening the <control>Settings</control> dialog.

@@ -17,8 +17,7 @@ They are closely related to [](parameter_info.md) which shows parameter types fo
 Inlay hints are flexible and have a wide range of applications in the IntelliJ Platform.
 For instance, the following are well-known examples where inlay hints are used:
 
-- Java uses inlays to display type annotations in
-  [Java chained calls](https://www.jetbrains.com/help/idea/inlay-hints-java.html#method_chains).
+- Java uses inlays to display type annotations in Java chained method calls.
 - In version-controlled projects, the author of the code is shown using inlay hints.
 - Kotlin uses inlays in range expressions to show, e.g. less-than, or less-than-or-equal signs to let
   developers know if intervals are inclusive or exclusive.

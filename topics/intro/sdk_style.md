@@ -29,28 +29,11 @@ Each Markdown file **must** start with a copyright notice, formatted using HTML 
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 ```
 
-It **must** be followed by a header defining its title using the following notation:
-
-<tabs>
-<tab title="New Format">
-Define Level 1 heading:
+It **must** be followed by a header defining its title using the level 1 heading:
 
 ```
 # Contributing to the IntelliJ Platform SDK
 ```
-
-</tab>
-
-<tab title="Legacy Format">
-Legacy notation, should be converted to New Format when editing a page:
-
-```yaml
-[//]: # (title: Contributing to the IntelliJ Platform SDK)
-```
-
-</tab>
-
-</tabs>
 
 The page title should be as concise as possible, so it can be reused in the [](#table-of-contents) as is.
 

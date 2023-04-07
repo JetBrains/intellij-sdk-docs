@@ -26,7 +26,7 @@ The documentation files themselves are [Markdown](https://github.github.com/gfm/
 Each Markdown file **must** start with a copyright notice, formatted using HTML comment notation:
 
 ```html
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 ```
 
 It **must** be followed by a header defining its title using the following notation:

@@ -23,7 +23,13 @@ The documentation files themselves are [Markdown](https://github.github.com/gfm/
 
 ### Page Format
 
-Each Markdown file **must** start with a header defining its title using the following notation:
+Each Markdown file **must** start with a copyright notice, formatted using HTML comment notation:
+
+```html
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+```
+
+It **must** be followed by a header defining its title using the following notation:
 
 <tabs>
 <tab title="New Format">
@@ -47,12 +53,6 @@ Legacy notation, should be converted to New Format when editing a page:
 </tabs>
 
 The page title should be as concise as possible, so it can be reused in the [](#table-of-contents) as is.
-
-It **must** be followed by a copyright notice, formatted using HTML comment notation:
-
-```html
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
-```
 
 #### Excerpt
 

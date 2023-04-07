@@ -1,14 +1,14 @@
-[//]: # (title: Customizing Themes - Icons and UI Controls)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# Customizing Themes - Icons and UI Controls
+
+<link-summary>Customizing UI controls and icons in a theme plugin.</link-summary>
 
 <tldr>
 
 **Platform UI Guidelines:** [Icons](https://jetbrains.design/intellij/principles/icons/), [Platform theme colors](https://jetbrains.design/intellij/principles/platform_theme_colors/#UI-components)
 
 </tldr>
-
-<link-summary>Customizing UI controls and icons in a theme plugin.</link-summary>
 
 A theme is customized by adding information to the theme description file that overrides the base (_Light_ or _Darcula_) theme.
 
@@ -123,13 +123,13 @@ The file format for icons is SVG.
 The [JetBrains Platform UI Guideline for Icons](https://jetbrains.design/intellij/principles/icons/) has detailed specifications for icons.
 
 An icon replacement is described within the `icon {}` section of a Theme description file.
-Note that icon replacement key-value pairs appear outside of the `ColorPalette` section.
+Note that icon replacement key-value pairs appear outside the `ColorPalette` section.
 
 For icon substitutions, the `key` is the path to the default icon image.
 This path is derived from the `AllIcons.[Group].[IconName]` path in icon section reported by the [UI Inspector](internal_ui_inspector.md).
 
 For example, the _Build_ (hammer) icon in the toolbar has the path `Allcons.Actions.Compile` as reported by the UI Inspector.
-Therefore the `key` for the _Build_ icon is `/actions/compile.svg`.
+Therefore, the `key` for the _Build_ icon is `/actions/compile.svg`.
 The `value` is the replacement icon's file name, located in the `resources` folder of the theme plugin project:
 
 ```json

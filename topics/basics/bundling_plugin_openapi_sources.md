@@ -1,6 +1,6 @@
-[//]: # (title: Bundling Plugin API Sources)
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Bundling Plugin API Sources
 
 <link-summary>Exposing plugin's API sources for other plugins.</link-summary>
 
@@ -13,7 +13,7 @@ Being able to see API sources drastically improves the development experience, a
 >
 {style="note"}
 
-## API sources location
+## API Sources Location
 
 The API source JARs must be located in the <path>example-plugin.zip!/plugin/lib/src</path> directory in the plugin ZIP distribution, e.g.:
 

@@ -1,6 +1,6 @@
-[//]: # (title: Messaging Infrastructure)
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Messaging Infrastructure
 
 <link-summary>Subscribing and publishing messages via message bus.</link-summary>
 
@@ -54,7 +54,7 @@ Manages all subscriptions for particular client within particular bus.
 * it's possible to specify *default handler* and subscribe to the target topic without explicitly provided callback.
   Connection will use that *default handler* when storing *(topic-handler)* mapping;
 * it's possible to explicitly release acquired resources (*disconnect()* method).
-  Also it can be plugged to standard semi-automatic disposing ([`Disposable`](%gh-ic%/platform/util/src/com/intellij/openapi/Disposable.java));
+  Also, it can be plugged to standard semi-automatic disposing ([`Disposable`](%gh-ic%/platform/util/src/com/intellij/openapi/Disposable.java));
 
 ### Putting Altogether
 
@@ -63,10 +63,11 @@ Manages all subscriptions for particular client within particular bus.
 ```java
 public interface ChangeActionNotifier {
 
-    Topic<ChangeActionNotifier> CHANGE_ACTION_TOPIC = Topic.create("custom name", ChangeActionNotifier.class);
+  Topic<ChangeActionNotifier> CHANGE_ACTION_TOPIC =
+      Topic.create("custom name", ChangeActionNotifier.class);
 
-    void beforeAction(Context context);
-    void afterAction(Context context);
+  void beforeAction(Context context);
+  void afterAction(Context context);
 }
 ```
 
@@ -80,16 +81,17 @@ public interface ChangeActionNotifier {
 
 ```java
 public void init(MessageBus bus) {
-    bus.connect().subscribe(ActionTopics.CHANGE_ACTION_TOPIC, new ChangeActionNotifier() {
-        @Override
-        public void beforeAction(Context context) {
+  bus.connect().subscribe(ActionTopics.CHANGE_ACTION_TOPIC,
+      new ChangeActionNotifier() {
+          @Override
+          public void beforeAction(Context context) {
             // Process 'before action' event.
-        }
-        @Override
-        public void afterAction(Context context) {
+          }
+          @Override
+          public void afterAction(Context context) {
             // Process 'after action' event.
-        }
-    });
+          }
+  });
 }
 ```
 
@@ -99,14 +101,14 @@ public void init(MessageBus bus) {
 
 ```java
 public void doChange(Context context) {
-    ChangeActionNotifier publisher = myBus.syncPublisher(ActionTopics.CHANGE_ACTION_TOPIC);
-    publisher.beforeAction(context);
-    try {
-        // Do action
-        // ...
-    } finally {
-        publisher.afterAction(context)
-    }
+  ChangeActionNotifier publisher =
+      myBus.syncPublisher(ActionTopics.CHANGE_ACTION_TOPIC);
+  publisher.beforeAction(context);
+  try {
+    // do action
+  } finally {
+    publisher.afterAction(context);
+  }
 }
 ```
 
@@ -173,7 +175,7 @@ Let's see what happens if someone sends a message to the target topic:
 * _handler2_ receives _message2_;
 * _handler1_ receives _message2_;
 
-## Tips'n'tricks
+## Tips and Tricks
 
 ### Relief Listeners Management
 
@@ -213,6 +215,6 @@ We had the following then:
 7. _message2_ is sent by one of the standard document listeners to another topic within the same message bus during _before change_ processing;
 8. the bus tries to deliver all pending messages before queuing _message2_;
 9. _subscriber2_ receives _message1_ and also modifies a document;
-10. the call stack is unwinded and _actual change_ phase of document modification operation requested by _subscriber1_ begins;
+10. the call stack is unwound and _actual change_ phase of document modification operation requested by _subscriber1_ begins;
 
 **The problem** is that document range used by _subscriber1_ for initial modification request is invalid if _subscriber2_ has changed document's range before it.

@@ -1,10 +1,8 @@
-[//]: # (title: Implementing Lexer)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Implementing Lexer
 
-<link-summary>
-A Lexer defines how a file's contents are broken into tokens.
-</link-summary>
+<link-summary>A Lexer defines how a file's contents are broken into tokens.</link-summary>
 
 The lexer, or [lexical analyzer](https://en.wikipedia.org/wiki/Lexical_analysis), defines how a file's contents are broken into tokens.
 The lexer serves as a foundation for nearly all features of custom language plugins, from basic syntax highlighting to advanced code analysis features.

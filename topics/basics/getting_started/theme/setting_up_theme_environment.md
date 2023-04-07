@@ -1,6 +1,6 @@
-[//]: # (title: Setting Up a Development Environment)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# Setting Up a Development Environment
 
 <link-summary>Setting up a development environment required for developing a theme.</link-summary>
 
@@ -29,7 +29,7 @@ Note that building the checked-out sources is not required in this case.
 
 > For more information about SDKs, see [SDKs section](https://www.jetbrains.com/help/idea/working-with-sdks.html) in the IntelliJ IDEA Web Help.
 
-### Download IntelliJ-based IDE
+### Download IntelliJ-Based IDE
 
 To see the effects of the developed plugin in real IDE, it is required to run the plugin in an [](ide_development_instance.md).
 In most cases, it is enough to download and use _[IntelliJ IDEA](https://www.jetbrains.com/idea/download/) Community Edition_.

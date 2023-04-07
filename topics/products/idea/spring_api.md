@@ -1,6 +1,6 @@
-[//]: # (title: Spring API)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Spring API
 
 <link-summary rel="excerpt"/>
 <p id="excerpt">
@@ -103,7 +103,7 @@ _Version 14_: `com.intellij.spring.model.utils.SpringModelSearchers#findBeans`
 
 _Version 16_: note deprecation of `SpringModelSearchParameters.BeanClass#withInheritors(GlobalSearchScope)`
 
-#### Find out if Bean with Given Name/Type Exists
+#### Check If a Bean with Given Name/Type Exists
 _Version 14_: `com.intellij.spring.model.utils.SpringModelSearchers#doesBeanExist` (please note deprecated methods)
 
 #### Mark Bean as Infrastructure Bean
@@ -171,7 +171,7 @@ Spring Boot API allows extending/accessing Spring Boot specific support in the I
 >
 {style="warning"}
 
-### Setting up
+### Setting Up
 [Add dependency](plugin_dependencies.md) to bundled Spring Boot plugin with ID `com.intellij.spring.boot`.
 Sources for Spring Boot API are available in <path>$IDEA_HOME$/lib/src/src_spring-boot-openapi.zip</path>.
 

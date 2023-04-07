@@ -1,6 +1,6 @@
-[//]: # (title: Test Project and Testdata Directories)
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Test Project and Testdata Directories
 
 <link-summary>Adding test data to test projects used during tests execution.</link-summary>
 
@@ -48,6 +48,7 @@ These methods copy the specified files from the <path>testdata</path> directory 
 >
 
 ### Special Markup
+
 When a file is opened in the in-memory editor, special markup in the file content can specify the caret position or selection.
 
 You can use one of the following markers:

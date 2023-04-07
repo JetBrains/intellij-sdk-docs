@@ -1,6 +1,6 @@
-[//]: # (title: PSI Cookbook)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# PSI Cookbook
 
 <link-summary rel="excerpt"/>
 <p id="excerpt">
@@ -9,7 +9,7 @@ This page gives recipes for the most common operations for working with the PSI 
 
 Unlike [Developing Custom Language Plugins](custom_language_support.md), it is about working with the PSI of existing languages (such as Java).
 
-> Please see also [](psi_performance.md).
+> See also the [](psi_performance.md) section.
 >
 
 ## General
@@ -58,7 +58,7 @@ Unlike [Developing Custom Language Plugins](custom_language_support.md), it is a
 ```java
 PsiJavaFile javaFile = (PsiJavaFile) psiClass.getContainingFile();
 PsiPackage psiPackage = JavaPsiFacade.getInstance(project)
-        .findPackage(javaFile.getPackageName());
+    .findPackage(javaFile.getPackageName());
 ```
 
 or

@@ -1,6 +1,6 @@
-[//]: # (title: IntelliJ Platform Artifacts Repositories)
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# IntelliJ Platform Artifacts Repositories
 
 <link-summary>Overview of the repositories hosting artifacts related to the IntelliJ Platform.</link-summary>
 
@@ -75,7 +75,7 @@ The table below shows some example module names and their corresponding groupId 
 | intellij.xml.impl               | com.jetbrains.intellij.xml      | xml-impl                |
 
 The artifact _version_ can be specified in one of several ways because each artifact [at the Repository URLs](#specify-the-repository-url) has multiple versions available:
-* Specify release build versions as _MAJOR[.MINOR][.FIX]_. For example `14`, or `14.1`, or `14.1.1`
+* Specify release build versions as _MAJOR\[.MINOR]\[.FIX]_. For example `14`, or `14.1`, or `14.1.1`
 * Snapshot versions are specified as:
   * The snapshot of the most recent branch build is specified as _BRANCH-EAP-SNAPSHOT_. For example, `193-EAP-SNAPSHOT`.
     There is only one of this type of build for each branch of each product.

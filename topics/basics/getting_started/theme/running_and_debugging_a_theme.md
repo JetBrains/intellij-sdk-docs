@@ -1,6 +1,6 @@
-[//]: # (title: Running and Debugging a Theme)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# Running and Debugging a Theme
 
 <link-summary>Running and debugging a theme in the actual IDE instance.</link-summary>
 

@@ -1,6 +1,6 @@
-[//]: # (title: Disposer and Disposable)
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Disposer and Disposable
 
 <link-summary>Cleaning up resources on plugin components' lifetime expiration.</link-summary>
 
@@ -21,7 +21,7 @@ The `Disposer` supports chaining `Disposables` in parent-child relationships.
 Many objects are disposed automatically by the platform if they implement the `Disposable` interface.
 The most important type of such objects is [services](plugin_services.md).
 Application-level services are automatically disposed by the platform when the IDE is closed or the plugin providing the service is unloaded.
-Project-level services are disposed when the project is closed, or the plugin is unloaded.
+Project-level services are disposed on project close or plugin unload events.
 
 Note that extensions registered in <path>[plugin.xml](plugin_configuration_file.md)</path> are *not* automatically disposed.
 If an extension requires executing some code to dispose it, you need to define a service and to put the code in its `dispose()` method or use it as a parent disposable.
@@ -37,7 +37,7 @@ See [The Disposable Interface](#implementing-the-disposable-interface) for more 
 Registering a disposable is performed by calling `Disposer.register()`:
 
 ```java
-  Disposer.register(parentDisposable, childDisposable);
+Disposer.register(parentDisposable, childDisposable);
 ```
 
 ### Choosing a Disposable Parent
@@ -113,20 +113,26 @@ In many cases, when the object implements `Disposable` only to be used as a pare
 An example of a non-trivial `dispose` implementation is shown below:
 
 ```java
-  public class Foo<T> extends JBFoo implements Disposable {
-      public Foo(@NotNull Project project, @NotNull String name, @Nullable FileEditor fileEditor, @NotNull Disposable parentDisposable) {
-        this(project, name, fileEditor, InitParams.createParams(project), DetachedToolWindowManager.getInstance(project));
-        Disposer.register(parentDisposable, this);
-      }
+public class Foo<T> extends JBFoo implements Disposable {
 
-     @Override
-     public void dispose() {
-       myFooManager.unregister(this);
-       myDetachedToolWindowManager.unregister(myFileEditor);
-       KeyboardFocusManager.getCurrentKeyboardFocusManager().removePropertyChangeListener("focusOwner", myMyPropertyChangeListener);
-       setToolContext(null);
-     }
+  public Foo(@NotNull Project project,
+             @NotNull String name,
+             @Nullable FileEditor fileEditor,
+             @NotNull Disposable parentDisposable) {
+    this(project, name, fileEditor, InitParams.createParams(project),
+        DetachedToolWindowManager.getInstance(project));
+    Disposer.register(parentDisposable, this);
   }
+
+  @Override
+  public void dispose() {
+    myFooManager.unregister(this);
+    myDetachedToolWindowManager.unregister(myFileEditor);
+    KeyboardFocusManager.getCurrentKeyboardFocusManager()
+        .removePropertyChangeListener("focusOwner", myMyPropertyChangeListener);
+    setToolContext(null);
+  }
+}
 ```
 
 A lot of code setting-up all the conditions requiring release in `dispose()` has been omitted for simplicity.

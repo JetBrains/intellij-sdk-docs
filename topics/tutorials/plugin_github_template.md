@@ -1,12 +1,12 @@
-[//]: # (title: IntelliJ Platform Plugin Template)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# IntelliJ Platform Plugin Template
 
 <link-summary>IntelliJ Platform Plugin Template is a GitHub template containing a minimal preconfigured plugin project and GitHub Actions CI workflows that cover building, testing and deploying the plugin.</link-summary>
 
 The IntelliJ Platform Plugin Template is the alternative solution for creating a new Gradle-based IntelliJ Platform plugin with the [New Project Wizard](creating_plugin_project.md).
 
-[IntelliJ Platform Plugin Template][gh:ippt] is a GitHub repository that provides a pure boilerplate template to make it easier to create a new Gradle-based plugin project.
+[IntelliJ Platform Plugin Template][gh:plugin-template] is a GitHub repository that provides a pure boilerplate template to make it easier to create a new Gradle-based plugin project.
 
 The main goal of this template is to speed up the setup phase of plugin development for both new and experienced developers by preconfiguring the project scaffold and CI, linking to the proper documentation pages, and keeping everything organized.
 
@@ -16,10 +16,10 @@ After that, the GitHub Actions workflow will be triggered to override or remove 
 
 Once this is complete, the project is ready to be cloned to your local environment and opened with [IntelliJ IDEA](https://www.jetbrains.com/idea/download).
 
-For more details, please refer to the [IntelliJ Platform Plugin Template][gh:ippt] project documentation.
+For more details, please refer to the [IntelliJ Platform Plugin Template][gh:plugin-template] project documentation.
 
 > The recording of the _Busy Plugin Developer. Episode 0_ webinar describes and shows [how to use the IntelliJ Platform Plugin Template](https://youtu.be/-6D5-xEaYig?t=230) in detail.
 >
 {style="note"}
 
-[gh:ippt]: https://github.com/JetBrains/intellij-platform-plugin-template
+[gh:plugin-template]: https://github.com/JetBrains/intellij-platform-plugin-template

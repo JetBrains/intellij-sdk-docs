@@ -1,8 +1,8 @@
-[//]: # (title: Plugin Configuration File)
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Plugin Configuration File
 
 <show-structure for="chapter" depth="4"/>
-
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Plugin configuration file contains all the information about the plugin, as well as all registered extensions, actions, listeners, etc.</link-summary>
 

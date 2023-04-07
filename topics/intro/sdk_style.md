@@ -1,6 +1,6 @@
-# SDK Docs Style Guide
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# SDK Docs Style Guide
 
 <link-summary>Writing and notation styleguide for SDK Docs.</link-summary>
 
@@ -59,7 +59,7 @@ The page title should be as concise as possible, so it can be reused in the [](#
 Every page **should** provide a short excerpt (usually one sentence) using dedicated `<link-summary>` tag before the main page contents:
 
 ```html
-<link-summary>Listeners allow subscription to application and project events.</link-summary>
+<link-summary>Defining groups of related settings.</link-summary>
 ```
 
 #### Highlighted Links
@@ -110,7 +110,7 @@ Consistent text styles are used to standardize references and keywords:
 * File formats are shown as all capital letters: PNG and XML.
 * Filename extensions are not capitalized when part of a full filename, path, or URL: <path>plugin.xml</path>.
 * Keyboard shortcuts are wrapped using `<shortcut>`: `press <shortcut>Alt+Insert</shortcut>` becomes "press <shortcut>Alt+Insert</shortcut>".
-* See [Guidelines for Highlighting Syntax](#guidelines-for-highlighting-syntax) for more best practices for representing code fragments.
+* See [Guidelines for Highlighting Syntax](#guidelines-for-highlighting-syntax) for best practices for representing code fragments.
 * See [Links to IntelliJ Platform Source](#links-to-intellij-platform-source) for more details about representing names of source files in links.
 
 ### Links
@@ -127,6 +127,7 @@ In some cases (e.g., the same heading text appears multiple times on the same pa
 ### Properties
 {#task1-properties}
 [...]
+
 ## Task 2
 ### Properties
 {#task2-properties}
@@ -194,7 +195,7 @@ Syntax highlighting is applied by specifying the language after the first set of
 
 ```
     ```xml
-        <tagName attribute="value">XML Text</tagName>
+    <tagName attribute="value">XML Text</tagName>
     ```
 ```
 
@@ -345,6 +346,6 @@ Specify the previous path(s) including <path>.html</path> extension in `accepts-
 ```xml
 
 <toc-element
-        id="fundamentals.md"
-        accepts-web-file-names="reference_guide.html,architectural_overview.html"/>
+    id="themes_getting_started.md"
+    accepts-web-file-names="themes.html,themes-intro.html"/>
 ```

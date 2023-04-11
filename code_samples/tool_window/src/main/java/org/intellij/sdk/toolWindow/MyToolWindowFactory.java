@@ -1,5 +1,4 @@
-// Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
-
+// Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 package org.intellij.sdk.toolWindow;
 
 import com.intellij.openapi.project.Project;
@@ -19,8 +18,7 @@ public class MyToolWindowFactory implements ToolWindowFactory {
    */
   public void createToolWindowContent(@NotNull Project project, @NotNull ToolWindow toolWindow) {
     MyToolWindow myToolWindow = new MyToolWindow(toolWindow);
-    ContentFactory contentFactory = ContentFactory.SERVICE.getInstance();
-    Content content = contentFactory.createContent(myToolWindow.getContent(), "", false);
+    Content content = ContentFactory.getInstance().createContent(myToolWindow.getContent(), "", false);
     toolWindow.getContentManager().addContent(content);
   }
 

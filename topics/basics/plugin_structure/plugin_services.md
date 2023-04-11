@@ -52,11 +52,13 @@ Restrictions:
 
 ### Examples
 
-Application-level light service:
 
 <tabs group="languages">
 
+
 <tab title="Java" group-key="java">
+
+Application-level light service:
 
 ```java
 @Service
@@ -67,27 +69,7 @@ public final class MyAppService {
 }
 ```
 
-</tab>
-
-<tab title="Kotlin" group-key="kotlin">
-
-```kotlin
-@Service
-class MyAppService {
-  fun doSomething(param: String) {
-    // ...
-  }
-}
-```
-</tab>
-
-</tabs>
-
 Project-level light service example:
-
-<tabs group="languages">
-
-<tab title="Java" group-key="java">
 
 ```java
 @Service(Service.Level.PROJECT)
@@ -109,6 +91,19 @@ public final class MyProjectService {
 
 <tab title="Kotlin" group-key="kotlin">
 
+Application-level light service:
+
+```kotlin
+@Service
+class MyAppService {
+  fun doSomething(param: String) {
+    // ...
+  }
+}
+```
+
+Project-level light service example:
+
 ```kotlin
 @Service(Service.Level.PROJECT)
 class MyProjectService(private val project: Project) {
@@ -118,6 +113,7 @@ class MyProjectService(private val project: Project) {
   }
 }
 ```
+
 </tab>
 
 </tabs>

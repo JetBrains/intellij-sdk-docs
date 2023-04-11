@@ -1,6 +1,6 @@
-# Tool Windows
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Tool Windows
 
 <link-summary>Displaying additional information and controls in child windows of the IDE.</link-summary>
 
@@ -100,4 +100,4 @@ See [Code Samples](code_samples.md) on how to set up and run the plugin.
 This plugin creates the <control>Sample Calendar</control> tool window that displays the system date, time and time zone.
 When opened, this tool window is similar to the following screen:
 
-![Sample Calendar](sample_calendar.png)
+![Sample Calendar](sample_calendar.png){width="403"}

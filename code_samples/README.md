@@ -2,7 +2,7 @@
 
 [![official JetBrains project](https://jb.gg/badges/official-flat-square.svg)][jb:github]
 [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg?style=flat-square)][jb:docs]
-[![Twitter Follow](https://img.shields.io/twitter/follow/JBPlatform?style=flat-square&logo=twitter)][jb:twitter]
+[![Twitter Follow](https://img.shields.io/badge/follow-%40JBPlatform-1DA1F2?logo=twitter)][jb:twitter]
 [![Build](https://img.shields.io/github/actions/workflow/status/JetBrains/intellij-sdk-docs/code-samples.yml?branch=main&style=flat-square)][gh:workflow-code-samples]
 [![Slack](https://img.shields.io/badge/Slack-%23intellij--platform-blue?style=flat-square&logo=Slack)][jb:slack]
 

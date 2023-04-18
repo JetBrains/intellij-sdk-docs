@@ -8,7 +8,7 @@ A JetBrains feature for developing plugins is running or debugging a plugin proj
 Selecting the [`runIde`](creating_plugin_project.md#running-a-plugin-with-the-runide-gradle-task) task for a Gradle-based project (or [Run](running_and_debugging_a_theme.md) menu for a DevKit-based project) will launch a _Development Instance_ of the IDE with the plugin enabled.
 This page describes how to control some settings for the Development Instance.
 
-> Please see also [Advanced Configuration](https://www.jetbrains.com/help/idea/tuning-the-ide.html) for general VM options and properties.
+> See also [`runIde` task](tools_gradle_intellij_plugin.md#tasks-runide) properties and [Advanced Configuration](https://www.jetbrains.com/help/idea/tuning-the-ide.html) for general VM options and properties.
 >
 
 ## Using a JetBrains Runtime for the Development Instance

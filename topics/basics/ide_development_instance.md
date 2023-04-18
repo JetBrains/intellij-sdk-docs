@@ -24,17 +24,21 @@ To produce accurate results while running or debugging a plugin project in a Dev
 ### Determining a JetBrains Runtime Version
 
 The JetBrains Runtime is determined by the JDK version used to build the plugin project, regardless of whether it is built on macOS, Windows, or Linux.
-For example, if a plugin is developed against the Java 8 SE Development Kit 8 for macOS (<path>jdk-8u212-macosx-x64.dmg</path>) to acquire the compatible JetBrains Runtime:
 
-* Go to the [GitHub JetBrains Runtime Releases](https://github.com/JetBrains/JetBrainsRuntime) for general information and the latest build.
-* Open the [Releases](https://github.com/JetBrains/JetBrainsRuntime/releases) page to access all releases.
-* Select the package name corresponding to the platform and SDK version.
-  In this case, the package name is `jbrsdk8-osx-x64` for **J**et**B**rains **R**untime _SDK_ version 8, macOS x64 hardware.
-* In the list of files, find the name that satisfies:
-  * The version and build number match the JDK used to build the plugin project.
-    For example, `jbrx-8u252-osx-x64` matches the Java 8 JDK, build 252: `jdk-8u252-macosx-x64`.
-  * Pick the highest JetBrains Runtime build number available.
-    For example, the file is <path>jbrx-8u252-osx-x64-b1649.2.tar.gz</path>, meaning build 1649.2 for this JetBrains Runtime matching Java 8 JDK build 252.
+<procedure title="Determine an Example JetBrains Runtime Version">
+
+If a plugin is developed against the Java 8 SE Development Kit 8 for macOS (<path>jdk-8u212-macosx-x64.dmg</path>) to acquire the compatible JetBrains Runtime:
+
+1. Go to the [GitHub JetBrains Runtime Releases](https://github.com/JetBrains/JetBrainsRuntime) for general information and the latest build.
+2. Open the [Releases](https://github.com/JetBrains/JetBrainsRuntime/releases) page to access all releases.
+3. Select the package name corresponding to the platform and SDK version.
+   In this case, the package name is `jbrsdk8-osx-x64` for **J**et**B**rains **R**untime _SDK_ version 8, macOS x64 hardware.
+4. In the list of files, find the name that satisfies:
+   * The version and build number match the JDK used to build the plugin project.
+     For example, `jbrx-8u252-osx-x64` matches the Java 8 JDK, build 252: `jdk-8u252-macosx-x64`.
+   * Pick the highest JetBrains Runtime build number available.
+     For example, the file is <path>jbrx-8u252-osx-x64-b1649.2.tar.gz</path>, meaning build 1649.2 for this JetBrains Runtime matching Java 8 JDK build 252.
+</procedure>
 
 ### JetBrains Runtime Variants
 

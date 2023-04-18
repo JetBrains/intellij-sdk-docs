@@ -1,19 +1,19 @@
-# IDE Development Instance
-
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# IDE Development Instance
 
 <link-summary>Overview of IDE instance used for running and debugging a plugin during development.</link-summary>
 
 A JetBrains feature for developing plugins is running or debugging a plugin project from within an IntelliJ Platform-based IDE such as IntelliJ IDEA.
 Selecting the [`runIde`](creating_plugin_project.md#running-a-plugin-with-the-runide-gradle-task) task for a Gradle-based project (or [Run](running_and_debugging_a_theme.md) menu for a DevKit-based project) will launch a _Development Instance_ of the IDE with the plugin enabled.
-This page describes how to control some of the settings for the Development Instance.
+This page describes how to control some settings for the Development Instance.
 
 > Please see also [Advanced Configuration](https://www.jetbrains.com/help/idea/tuning-the-ide.html) for general VM options and properties.
 >
 
 ## Using a JetBrains Runtime for the Development Instance
 
-An everyday use case is to develop (build) a plugin project against a JDK, e.g., Java 8, and then run or debug the plugin in a Development Instance of the IDE.
+An everyday use case is to develop (build) a plugin project against a JDK, e.g. Java 8, and then run or debug the plugin in a Development Instance of the IDE.
 In such a situation, Development Instance must use a JetBrains Runtime (JBR) rather than the JDK used to build the plugin project.
 
 The JetBrains Runtime is an environment for running IntelliJ Platform-based IDEs on Windows, macOS, and Linux.
@@ -23,7 +23,7 @@ To produce accurate results while running or debugging a plugin project in a Dev
 
 ### Determining a JetBrains Runtime Version
 
-The JetBrains Runtime is determined from the JDK version used to build the plugin project, regardless of whether it is built on macOS, Windows, or Linux.
+The JetBrains Runtime is determined by the JDK version used to build the plugin project, regardless of whether it is built on macOS, Windows, or Linux.
 For example, if a plugin is developed against the Java 8 SE Development Kit 8 for macOS (<path>jdk-8u212-macosx-x64.dmg</path>) to acquire the compatible JetBrains Runtime:
 
 * Go to the [GitHub JetBrains Runtime Releases](https://github.com/JetBrains/JetBrainsRuntime) for general information and the latest build.
@@ -38,7 +38,7 @@ For example, if a plugin is developed against the Java 8 SE Development Kit 8 fo
 
 ### JetBrains Runtime Variants
 
-The JetBrains Runtime is delivered in various variants used for different purposes, like debugging, running for development purposes or bundling with the IDE.
+The JetBrains Runtime is delivered in various variants used for different purposes, like debugging, running for development purposes, or bundling with the IDE.
 
 Available JBR variants are:
 - `jcef` - the release bundles with the [JCEF](jcef.md) browser engine

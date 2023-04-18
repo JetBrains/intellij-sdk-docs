@@ -126,7 +126,7 @@ Disabling of the task is suggested for plugins that are not intended to provide 
 The most convenient way to see the logs of running IDE is to add a tab to the <control>Run</control> tool window displaying the contents of <path>idea.log</path> file.
 In the Gradle `runIde` run configuration, add the log file path according to [sandbox location](ide_development_instance.md#the-development-instance-sandbox-directory) as described in [View logs](https://www.jetbrains.com/help/idea/setting-log-options.html).
 
-### How do I add my a custom file inside plugin distribution
+### How to add a custom file inside plugin distribution
 
 [`prepareSandbox`](tools_gradle_intellij_plugin.md#tasks-preparesandbox) task is a [`Sync`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Sync.html) task and can be modified accordingly.
 Something like following should work:
@@ -171,7 +171,7 @@ Task 'setupDependencies' not found in root project 'projectName'.
 
 To fix that, manually edit the <path>.idea/workspace.xml</path> file removing mentioned entry, go to the <control>Gradle</control> tool window, select the <ui-path>Tasks Activation</ui-path> action from the context menu of the root project item, and remove it.
 
-### How do I expose my plugin API sources to dependent plugins?
+### How to expose my plugin API sources to dependent plugins
 
 See the [](bundling_plugin_openapi_sources.md) section for details.
 
@@ -258,7 +258,7 @@ Exception in thread "main" javax.net.ssl.SSLPeerUnverifiedException: peer not au
 To fix that issue, upgrade the Java version to the latest patch available of the major version of your choice.
 
 
-### How to add a dependency on a plugin available in the file system?
+### How to add a dependency on a plugin available in the file system
 
 It is possible to add a dependency on a plugin available in the file system — like a plugin update downloaded manually from JetBrains Marketplace or built separately in another project.
 

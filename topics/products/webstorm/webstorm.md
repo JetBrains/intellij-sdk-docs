@@ -26,14 +26,15 @@ To see how these attributes appear in a similar Gradle build script for PhpStorm
 
 | `gradle-intellij-plugin` Attribute                                               | Attribute Value                                                                                                                                                                                                      |
 |----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type)       | `IU` for IntelliJ IDEA Ultimate.<br/>(`IC` is incompatible with the required `JavaScriptLanguage` plugin)                                                                                                            |
+| [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type)       | `IU` for [](idea_ultimate.md).                                                                                                                                |
 | [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) | `192.7142.36` Set to the same BRANCH.BUILD as the WebStorm target version.                                                                                                                                           |
-| [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) | Dependency on the `JavaScriptLanguage` plugin.                                                                                                                                                                       |
+| [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) | Dependency on the `JavaScript` plugin.                                                                                                                                                                               |
 | [`runIde.ideDir`](tools_gradle_intellij_plugin.md#tasks-runide-idedir)           | Path to locally installed target version of WebStorm. For example, for macOS:<br/><path>/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/WebStorm/ch-0/192.7142.35/WebStorm.app/Contents</path>. |
 
 The dependency on the WebStorm APIs must be declared in the <path>[plugin.xml](plugin_configuration_file.md)</path> file.
-As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) tags must declare `JavaScriptLanguage`.
-**Note** that for WebStorm, the <path>plugin.xml</path> file must also declare a dependency on `com.intellij.modules.platform` because `JavaScriptLanguage` is not recognized as a module.
+As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) tags must declare `JavaScript`.
+
+**Note** that for WebStorm, the <path>plugin.xml</path> file must also declare a dependency on `com.intellij.modules.platform` because `JavaScript` is not recognized as a module.
 Consequently, without the `com.intellij.modules.platform` declaration the plugin is assumed to be a [legacy plugin](plugin_compatibility.md#declaring-plugin-dependencies) and will not load in WebStorm.
 
 ## Available WebStorm APIs
@@ -42,7 +43,7 @@ Consequently, without the `com.intellij.modules.platform` declaration the plugin
 >
 {style="note"}
 
-Use the [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the libraries <path>JavaScriptLanguage.jar</path>, and <path>javascript-openapi.jar</path>.
+See [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-consumer).
 Test your plugin with any version of WebStorm you wish to support.
 
 ### Javascript Testframework

@@ -1,6 +1,6 @@
-# Gradle IntelliJ Plugin – FAQ
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+# Gradle IntelliJ Plugin – FAQ
 
 <link-summary>FAQ for using Gradle IntelliJ Plugin</link-summary>
 
@@ -262,7 +262,7 @@ To fix that issue, upgrade the Java version to the latest patch available of the
 
 It is possible to add a dependency on a plugin available in the file system — like a plugin update downloaded manually from JetBrains Marketplace or built separately in another project.
 
-To configure the dependency, add the `File` instance to the [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) property and point it to the `lib` directory inside the extracted plugin's directory or any other parent that contains plugin's `.jar` files.
+To configure the dependency, add the `File` instance to the [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) property and point it to the `lib` directory inside the extracted plugin's directory or any other parent that contains plugin's <path.jar</path> files.
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">

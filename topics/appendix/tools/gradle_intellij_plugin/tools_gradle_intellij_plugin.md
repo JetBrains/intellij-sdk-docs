@@ -745,14 +745,14 @@ Default value
 #### javac2
 {#tasks-instrumentcode-javac2}
 
-Path to the `javac2.jar` file of the IntelliJ IDEA.
+Path to the <path>javac2.jar</path> file of the IntelliJ IDEA.
 
 {style="narrow"}
 Type
 : `File`
 
 Default value
-: `lib/javac2.jar` resolved in [`instrumentCode.ideaDependency`](#tasks-instrumentcode-ideadependency)
+: <path>lib/javac2.jar</path> resolved in [`instrumentCode.ideaDependency`](#tasks-instrumentcode-ideadependency)
 
 
 #### compilerVersion

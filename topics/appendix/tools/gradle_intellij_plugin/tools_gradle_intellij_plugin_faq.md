@@ -262,7 +262,7 @@ To fix that issue, upgrade the Java version to the latest patch available of the
 
 It is possible to add a dependency on a plugin available in the file system — like a plugin update downloaded manually from JetBrains Marketplace or built separately in another project.
 
-To configure the dependency, add the `File` instance to the [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) property and point it to the `lib` directory inside the extracted plugin's directory or any other parent that contains plugin's <path.jar</path> files.
+To configure the dependency, add the `File` instance to the [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) property and point it to the `lib` directory inside the extracted plugin's directory or any other parent that contains plugin's <path>.jar</path> files.
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">

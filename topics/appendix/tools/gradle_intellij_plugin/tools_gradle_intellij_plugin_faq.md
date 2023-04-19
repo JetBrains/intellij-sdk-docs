@@ -299,6 +299,5 @@ kotlin.incremental.useClasspathSnapshot=false
 ```
 
 See the [](using_kotlin.md#incremental-compilation) section for more details.
-```
 
 <include from="snippets.md" element-id="missingContent"/>

@@ -1,6 +1,6 @@
-# Build Number Ranges
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Build Number Ranges
 
 <link-summary>Defining product compatibility by specifying plugin since-build and until-build ranges.</link-summary>
 
@@ -87,5 +87,5 @@ Consult [Incompatible API Changes](api_changes_list.md) and [Notable API Changes
 | [192](https://github.com/JetBrains/intellij-community/tree/192) | 2019.2                                                                                                                                   |
 | [191](https://github.com/JetBrains/intellij-community/tree/191) | 2019.1                                                                                                                                   |
 
-Note that there is no `220`.
+Note that there is no `YY0`.
 In the `YYYY.R` versioning scheme, the `R` part starts at 1.

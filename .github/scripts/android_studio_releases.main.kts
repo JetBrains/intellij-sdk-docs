@@ -5,7 +5,7 @@
  * At first, it fetches the list of Android Studio updates from an XML file generated on TeamCity.
  * Parsed list is used to generate the Markdown table.
  */
-@file:DependsOn("net.swiftzer.semver:semver:1.1.2")
+@file:DependsOn("net.swiftzer.semver:semver:1.2.0")
 @file:DependsOn("org.simpleframework:simple-xml:2.7.1")
 
 import net.swiftzer.semver.SemVer

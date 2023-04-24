@@ -10,21 +10,19 @@
 
 </tldr>
 
-> Plugins targeting 2023.1 and later only should use [`DocumentationTarget`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/DocumentationTarget.kt)
-> API provided via `com.intellij.platform.backend.documentation.targetProvider` extension point instead.
-> This page will be updated shortly with more information.
+Custom languages can show documentation for functions, methods, classes, or other constructs right inside the IDE
+by implementing one of three EPs depending on their use-case.
+The different EPs can build documentation from
+[offsets in the current editor](coordinates_system.md#editor-coordinate-systems),
+for [Psi elements](psi_elements.md) or for
+[Symbols](symbols.md) and we provide all required details in the [](#implementation) section.
 
-Custom languages can use the `com.intellij.lang.documentationProvider` extension point (EP) to show documentation for functions,
-methods, classes, or other constructs right inside the IDE.
 Accessing the documentation is done by calling
 <ui-path>View | Quick Documentation</ui-path>
 or hovering over a symbol, which will open a popup to show type information, parameters, usage descriptions, or examples.
 The source of the documentation contents can vary.
 Often it is extracted from comments (e.g. JavaDoc comments) in the source code,
 but it's also possible to access external resources like web pages.
-
-In addition to showing the documentation, the `getQuickNavigateInfo()` method returns the text to be displayed
-when the user hovers over an element with <shortcut>Ctrl</shortcut>/<shortcut>Cmd</shortcut> pressed.
 
 Custom actions can also be added to documentation inlays and documentation popups via
 [`DocumentationActionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/documentation/DocumentationActionProvider.java) registered in the
@@ -33,16 +31,62 @@ Custom actions can also be added to documentation inlays and documentation popup
 
 ## Implementation
 
-Custom language developers usually extend from
-[`AbstractDocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/AbstractDocumentationProvider.java)
-instead of implementing the
-[`DocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java) interface.
-This implementation needs to be registered in `com.intellij.lang.documentationProvider` extension point.
+Custom language developers can choose from three different EPs to provide documentation.
+The general approach is the following
 
-The main work is done in `generateDoc()`, which has two PSI element arguments:
-the target element for which the documentation is requested and the original element under the cursor.
-If IntelliJ Platform's choice of the target element isn't suitable for your language, you can override `getCustomDocumentationElement()`
-and provide the correct element.
+1. Implement one of the EPs below which should extract the necessary entity (e.g. a Psi element) for
+   which the documentation is requested. It returns instances of [](#documentationtarget).
+2. The implementation of `DocumentationTarget` provides the functionality to compute the rendered documentation,
+   its presentation in the [documentation tool window](https://www.jetbrains.com/help/idea/documentation-tool-window.html),
+   or separate hints that are displayed when hovering over code.
+3. The rendered documentation is an instance of
+   [`DocumentationResult`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/DocumentationResult.kt)
+   which wraps the documentation in HTML format, but is also able to include images or external URLs.
+   `DocumentationResult` can be used asynchronously when building the documentation would take too long
+   and block the IDE.
+
+### `DocumentationTargetProvider`
+
+Implement [`DocumentationTargetProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/DocumentationTargetProvider.java)
+and register it as `com.intellij.platform.backend.documentation.targetProvider` to build documentation
+for a certain offset in a `PsiFile` by overriding `DocumentationTargetProvider.documentationTargets()`.
+
+For an example, please refer to
+[`KotlinPsiDocumentationTargetProvider`](%gh-ic%/plugins/kotlin/fir/src/org/jetbrains/kotlin/idea/quickDoc/KotlinPsiDocumentationTargetProvider.kt).
+
+### `PsiDocumentationTargetProvider`
+
+Implement [`PsiDocumentationTargetProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/PsiDocumentationTargetProvider.java)
+and register it as `com.intellij.platform.backend.documentation.psiTargetProvider` to build documentation
+for Psi elements by overriding `PsiDocumentationTargetProvider.documentationTarget()`.
+
+For an example, please refer to
+[`KotlinPsiDocumentationTargetProvider`](%gh-ic%/plugins/kotlin/fir/src/org/jetbrains/kotlin/idea/quickDoc/KotlinPsiDocumentationTargetProvider.kt).
+
+### `SymbolDocumentationTargetProvider`
+
+Implement [`SymbolDocumentationTargetProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/SymbolDocumentationTargetProvider.java)
+and register it as `com.intellij.platform.backend.documentation.symbolTargetProvider` to build documentation
+for [](symbols.md) by overriding `SymbolDocumentationTargetProvider.documentationTarget()`.
+
+## `DocumentationTarget`
+
+Each of the implementations above returns instances of
+[`DocumentationTarget`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/DocumentationTarget.kt).
+The main work is done in `computeDocumentation()` where the documentation is built from the available
+information.
+If plugin developers worked with the now deprecated
+[`DocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java)
+before, then `computeDocumentation()` should do the work that was formerly done in
+`DocumentationProvider.generateDoc()`.
+
+In addition to showing the documentation, the `computeDocumentationHint()` method returns the text to be displayed
+when the user hovers over an element with <shortcut>Ctrl</shortcut>/<shortcut>Cmd</shortcut> pressed.
+In the old framework, this method was called `DocumentationProvider.getQuickNavigateInfo()`.
+
+Todo: Further explanation on `createPointer()`
+
+## Further tips
 
 How the documentation for the target element is created is up to the custom language developer.
 A common choice is to extract and format documentation comments.
@@ -53,19 +97,6 @@ to achieve a consistent output.
 > Use [`HtmlSyntaxInfoUtil`](%gh-ic%/platform/lang-impl/src/com/intellij/openapi/editor/richcopy/HtmlSyntaxInfoUtil.java) to create Lexer-based highlighted code samples.
 >
 
-Once these steps are completed, the following additional features can be implemented:
-
-* Implement `getQuickNavigateInfo()` to provide the text that should be displayed when an element is hovered over with <shortcut>Ctrl</shortcut>/<shortcut>Cmd</shortcut> pressed.
-* Implement `generateHoverDoc()` to show different contents on mouse hover.
-* Implement `getDocumentationElementForLookupItem()` to return a suitable PSI element for the given lookup element when
-  <ui-path>View | Quick Documentation</ui-path> is called on an element of the autocompletion popup.
-* Implement `getUrlFor()` and [`ExternalDocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/ExternalDocumentationProvider.java) to fetch documentation for elements from online resources.
-
-
 ## Examples
 
-The [custom language tutorial](documentation_provider.md) contains a step-by-step guide for the `DocumentationProvider` of the Simple language.
-In addition, several implementations of other languages exist in the IntelliJ Platform code, for instance:
-
-* The [Properties Language plugin](%gh-ic%/plugins/properties) has a small and easy-to-understand [`DocumentationProvider`](%gh-ic%/plugins/properties/src/com/intellij/lang/properties/PropertiesDocumentationProvider.java) similar to the one shown in the custom language tutorial.
-* Usage examples for `DocumentationMarkup` can be found in [`ThemeJsonDocumentationProvider`](%gh-ic%/plugins/devkit/intellij.devkit.themes/src/ThemeJsonDocumentationProvider.java).
+Todo

@@ -10,23 +10,22 @@
 
 </tldr>
 
-Custom languages can show documentation for functions, methods, classes, or other constructs right inside the IDE
-by implementing one of three EPs depending on their use-case.
-The different EPs can build documentation from
+Custom languages can display documentation for various constructs, such as functions, methods, classes, or others, directly within the IDE.
+This is achieved by implementing one of three extension points (EPs) based on the specific use-case.
+These EPs enable building documentation from
 [offsets in the current editor](coordinates_system.md#editor-coordinate-systems),
-for [Psi elements](psi_elements.md) or for
-[Symbols](symbols.md) and we provide all required details in the [](#implementation) section.
+[Psi elements](psi_elements.md), or [Symbols](symbols.md).
+Detailed information on implementing these EPs can be found in the [](#implementation) section.
 
-Accessing the documentation is done by calling
-<ui-path>View | Quick Documentation</ui-path>
-or hovering over a symbol, which will open a popup to show type information, parameters, usage descriptions, or examples.
-The source of the documentation contents can vary.
-Often it is extracted from comments (e.g. JavaDoc comments) in the source code,
-but it's also possible to access external resources like web pages.
+To access the documentation, users can either select <ui-path>View | Quick Documentation</ui-path> or hover over a symbol.
+This will open a popup that displays type information, parameters, usage descriptions, or examples.
+The source of the documentation content can vary.
+While it is often extracted from comments in the source code (e.g., JavaDoc comments),
+external resources, such as web pages, can also be accessed.
 
-Custom actions can also be added to documentation inlays and documentation popups via
-[`DocumentationActionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/documentation/DocumentationActionProvider.java) registered in the
-`com.intellij.documentationActionProvider` extension point.
+Additionally, custom actions can be incorporated into documentation inlays and popups using the
+[`DocumentationActionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/documentation/DocumentationActionProvider.java).
+This provider should be registered with the `com.intellij.documentationActionProvider` extension point.
 
 
 ## Implementation

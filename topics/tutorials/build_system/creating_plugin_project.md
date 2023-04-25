@@ -1,6 +1,6 @@
-# Creating a Plugin Gradle Project
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# Creating a Plugin Gradle Project
 
 <link-summary>Creating and running a Gradle-based IntelliJ Platform plugin projects.</link-summary>
 
@@ -71,8 +71,8 @@ The generated `my_plugin` project <path>build.gradle.kts</path> file:
 ```kotlin
 plugins {
   id("java")
-  id("org.jetbrains.kotlin.jvm") version "1.7.20"
-  id("org.jetbrains.intellij") version "medium"
+  id("org.jetbrains.kotlin.jvm") version "1.8.21"
+  id("org.jetbrains.intellij") version "1.13.3"
 }
 
 group = "com.example"

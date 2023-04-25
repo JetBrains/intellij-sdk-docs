@@ -56,9 +56,9 @@ Unlike [Developing Custom Language Plugins](custom_language_support.md), it is a
 ### How do I get a reference to the containing package of a Java class?
 
 ```java
-PsiJavaFile javaFile = (PsiJavaFile) psiClass.getContainingFile();
-PsiPackage psiPackage = JavaPsiFacade.getInstance(project)
-    .findPackage(javaFile.getPackageName());
+  PsiJavaFile javaFile = (PsiJavaFile)psiClass.getContainingFile();
+  PsiPackage psiPackage = JavaPsiFacade.getInstance(project)
+        .findPackage(javaFile.getPackageName());
 ```
 
 or
@@ -68,3 +68,12 @@ or
 ### How do I find the methods overriding a specific method?
 
 [`OverridingMethodsSearch.search()`](%gh-ic%/java/java-indexing-api/src/com/intellij/psi/search/searches/OverridingMethodsSearch.java)
+
+### How do I check the presence of a JVM library?
+
+_2023.2_
+
+Use dedicated (and heavily cached) methods from [`JavaLibraryUtil`](%gh-ic-master%/java/openapi/src/com/intellij/java/library/JavaLibraryUtil.java):
+
+- `hasLibraryClass()` to check presence via known library class FQN
+- `hasLibraryJar()` using Maven coordinates (for example, `io.micronaut:micronaut-core`).

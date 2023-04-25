@@ -2,7 +2,6 @@
 
 # Notable Changes in IntelliJ Platform and Plugins API 2023.*
 
-
 <link-summary>List of known Notable API Changes in 2023.*</link-summary>
 
 _Early Access Program_ (EAP) releases of upcoming versions are available [here](https://eap.jetbrains.com).
@@ -13,6 +12,9 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 ## 2023.2
 
 ### IntelliJ Platform 2023.2
+
+Check presence of JVM library
+: Use [dedicated API](psi_cookbook.md#how-do-i-check-the-presence-of-a-jvm-library) to check presence via class FQN or Maven coordinates.
 
 ## 2023.1
 

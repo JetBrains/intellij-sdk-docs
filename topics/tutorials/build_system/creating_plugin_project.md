@@ -14,9 +14,18 @@ Launch the <control>New Project</control> wizard via the <ui-path>File | New | P
 1. Select the <control>IDE Plugin</control> generator type from the list on the left.
 2. Specify the project <control>Name</control> and <control>Location</control>.
 3. Choose the <control>Plugin</control> option in the project <control>Type</control>.
-4. Choose the <control>Language</control> the plugin will use for implementation.
-   For this example select the <control>Java</control> option.
-   See [Kotlin for Plugin Developers](using_kotlin.md) for more information.
+4. _Only in IntelliJ IDEA older than 2023.1:_
+
+   Choose the <control>Language</control> the plugin will use for implementation.
+   For this example select the <control>Kotlin</control> option.
+   See also [Kotlin for Plugin Developers](using_kotlin.md) for more information.
+
+   > Projects generated with IntelliJ IDEA 2023.1 or newer, support both Kotlin and Java sources out of the box.
+   > Project generator automatically creates <path>$PLUGIN_DIR$/src/main/kotlin</path> sources directory.
+   > To add Java sources, create <path>$PLUGIN_DIR$/src/main/java</path> directory.
+   >
+   {style="note"}
+
 5. Provide the <control>Group</control> which is typically an inverted company domain (e.g. `com.example.mycompany`).
    It is used for the Gradle property `project.group` value in the project's Gradle build script.
 6. Provide the <control>Artifact</control> which is the default name of the build project artifact (without a version).
@@ -44,26 +53,26 @@ my_plugin
 │       ├── gradle-wrapper.jar
 │       └── gradle-wrapper.properties
 ├── src
-│   ├── main
-│   │   ├── java
-│   │   └── resources
-│   │       └── META-INF
-│   │           └── plugin.xml
-│   └── test
-│       ├── java
+│   └── main
+│       ├── kotlin
 │       └── resources
+│           └── META-INF
+│               ├── plugin.xml
+│               └── pluginIcon.svg
 ├── .gitignore
 ├── build.gradle.kts
+├── gradle.properties
 ├── gradlew
 ├── gradlew.bat
 └── settings.gradle.kts
 ```
 
 * The default IntelliJ Platform <path>build.gradle.kts</path> file (see next paragraph).
-* The <path>settings.gradle.kts</path> file, containing a definition of the `rootProject.name`.
+* The <path>gradle.properties</path> file, containing properties used by Gradle build script.
+* The <path>settings.gradle.kts</path> file, containing a definition of the `rootProject.name` and required repositories.
 * The Gradle Wrapper files, and in particular the <path>gradle-wrapper.properties</path> file, which specifies the version of Gradle to be used to build the plugin.
   If needed, the IntelliJ IDEA Gradle plugin downloads the version of Gradle specified in this file.
-* The <path>META-INF</path> directory under the default `main` [source set](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) contains the plugin [configuration file](plugin_configuration_file.md).
+* The <path>META-INF</path> directory under the default `main` [source set](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) contains the plugin [configuration file](plugin_configuration_file.md) and [plugin icon](plugin_icon_file.md).
 * The _Run Plugin_ [run configuration](https://www.jetbrains.com/help/idea/run-debug-configuration.html).
 
 The generated `my_plugin` project <path>build.gradle.kts</path> file:
@@ -71,7 +80,7 @@ The generated `my_plugin` project <path>build.gradle.kts</path> file:
 ```kotlin
 plugins {
   id("java")
-  id("org.jetbrains.kotlin.jvm") version "1.8.21"
+  id("org.jetbrains.kotlin.jvm") version "1.8.20"
   id("org.jetbrains.intellij") version "1.13.3"
 }
 
@@ -85,7 +94,7 @@ repositories {
 // Configure Gradle IntelliJ Plugin
 // Read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
-  version.set("2022.2.4")
+  version.set("2022.2.5")
   type.set("IC") // Target IDE Platform
 
   plugins.set(listOf(/* Plugin Dependencies */))
@@ -94,11 +103,11 @@ intellij {
 tasks {
   // Set the JVM compatibility versions
   withType<JavaCompile> {
-    sourceCompatibility = "11"
-    targetCompatibility = "11"
+    sourceCompatibility = "17"
+    targetCompatibility = "17"
   }
   withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    kotlinOptions.jvmTarget = "11"
+    kotlinOptions.jvmTarget = "17"
   }
 
   patchPluginXml {
@@ -116,11 +125,11 @@ tasks {
     token.set(System.getenv("PUBLISH_TOKEN"))
   }
 }
-
 ```
 
-* Two Gradle plugins are explicitly declared:
+* Three Gradle plugins are explicitly declared:
   * The [Gradle Java](https://docs.gradle.org/current/userguide/java_plugin.html) plugin (`java`).
+  * The [Kotlin Gradle](https://kotlinlang.org/docs/gradle-configure-project.html#apply-the-plugin) plugin (`org.jetbrains.kotlin.jvm`).
   * The [](tools_gradle_intellij_plugin.md) (`org.jetbrains.intellij`).
 * The <control>Group</control> from the [New Project](#create-ide-plugin) wizard is the `project.group` value.
 * The `sourceCompatibility` line is injected to enforce using Java 11 JDK to compile Java sources.
@@ -130,8 +139,7 @@ tasks {
 * The initial [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) and [`publishPlugin`](tools_gradle_intellij_plugin.md#tasks-publishplugin) tasks configuration.
   See the [](publishing_plugin.md#publishing-plugin-with-gradle) section for more information.
 
-> Consider using the [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template) which uses the Gradle setup and provides CI setup covered with GitHub Actions.
->
+> Consider using the [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template) which additionally provides CI setup covered with GitHub Actions.
 
 #### Plugin Gradle Properties and Plugin Configuration File Elements
 
@@ -157,7 +165,7 @@ See the [Creating Actions](working_with_custom_actions.md) tutorial for step-by-
 The _IDE Plugin_ generator automatically creates the _Run Plugin_ run configuration that can be executed via the <ui-path>Run | Run...</ui-path> action or can be found in the <control>Gradle</control> tool window under the <control>Run Configurations</control> node.
 
 To execute the Gradle `runIde` task directly, open the <control>Gradle</control> tool window and search for the <control>runIde</control> task under the <control>Tasks</control> node.
-If it's not on the list, hit the re-import button in the [toolbar](https://www.jetbrains.com/help/idea/jetgradle-tool-window.html#1eeec055) at the top of the Gradle tool window.
+If it's not on the list, hit the re-import button in the [toolbar](https://www.jetbrains.com/help/idea/jetgradle-tool-window.html#gradle_toolbar) at the top of the Gradle tool window.
 When the <control>runIde</control> task is visible, double-click it to execute.
 
 To debug your plugin in a _standalone_ IDE instance, please see [How to Debug Your Own IntelliJ IDEA Instance](https://medium.com/agorapulse-stories/how-to-debug-your-own-intellij-idea-instance-7d7df185a48d) blog post.

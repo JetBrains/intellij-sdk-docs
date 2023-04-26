@@ -57,7 +57,8 @@ The wizard can be used for both DevKit-based and Gradle-based plugins.
 <procedure title="Add Theme" id="add-theme">
 
 1. In the <control>Project</control> tool window, select the <path>resources</path> directory and invoke the context menu with the right click.
-2. Select the <ui-path>New | Plugin DevKit | Theme</ui-path> action.<br/>
+2. Select the <ui-path>New | Plugin DevKit | Theme</ui-path> action.
+
    It is a good practice to include the name of the plugin in the created theme name.
 3. Check the <control>Dark theme</control> checkbox if the created theme should be based on IntelliJ IDEA _Darcula_ theme.
    Otherwise, the _Light_ theme will be used as the base.

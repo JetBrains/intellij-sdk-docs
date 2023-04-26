@@ -10,9 +10,10 @@ Use the following checklist to ensure that you are ready to develop your custom 
 
 1. **[IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/)** or **[IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/)** is installed.
 2. **Plugin DevKit** plugin is [enabled in IntelliJ IDEA](https://www.jetbrains.com/help/idea/managing-plugins.html).
-3.  **IntelliJ IDEA CE source code** is checked-out. _(Optional)_<br/>
-  This step is needed only when you plan to debug the IntelliJ Platform code.
-  See [](#get-intellij-idea-ce-source-code) for more details.
+3. **IntelliJ IDEA CE source code** is checked-out. _(Optional)_
+
+   This step is needed only when you plan to debug the IntelliJ Platform code.
+   See [](#get-intellij-idea-ce-source-code) for more details.
 4. **IntelliJ Platform SDK** is [configured](#configuring-intellij-platform-plugin-sdk).
 
 </procedure>
@@ -46,8 +47,9 @@ The first step of configuring a theme plugin SDK is adding the JDK.
 1. Go to <ui-path>File | Project Structure | Platform Settings | SDKs</ui-path>.
 2. Click the <control>Add</control> button (<control>+</control>).
 3. If you have the required JDK installation on your machine, and it is detected, select it from the <control>Detected SDKs</control> list.
-  If your JDK is not detected, select the <control>Add JDK...</control> option and choose the installation folder.<br/>
-  If the required JDK is not installed on your machine, the simplest option is using <control>Download JDK...</control> and choosing the distribution options.
+   If your JDK is not detected, select the <control>Add JDK...</control> option and choose the installation folder.
+
+   If the required JDK is not installed on your machine, the simplest option is using <control>Download JDK...</control> and choosing the distribution options.
 4. Click the <control>Apply</control> button.
 
 </procedure>
@@ -61,7 +63,8 @@ The second step is adding IntelliJ Platform Plugin SDK that will use the JDK con
 3. Select the <control>Add IntelliJ Platform Plugin SDK...</control> option.
 4. Choose the installation folder of the IDE [downloaded previously](#download-intellij-based-ide) (on macOS, select application icon in <path>/Applications/</path>).
 5. In the <control>Select Internal Java Platform</control> dialog, select the JDK configured in the [previous step](#add-jdk) and click <control>OK</control> button.
-6. In the added SDK, specify the <control>Sandbox Home</control> directory.<br/>
+6. In the added SDK, specify the <control>Sandbox Home</control> directory.
+
    See [](ide_development_instance.md#the-development-instance-sandbox-directory) for details.
 7. If debugging is required, select the <control>Sourcepath</control> tab, click the <control>Add</control> button (<control>+</control>) and select the root folder of [the checked-out sources](#get-intellij-idea-ce-source-code).
 8. Click the <control>Apply</control> button.

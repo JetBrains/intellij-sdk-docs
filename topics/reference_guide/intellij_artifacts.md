@@ -45,9 +45,15 @@ To set up dependencies on a module, there are two types of information needed:
 ### Specify the Repository URL
 
 The URL for the desired artifact needs to be added to a Maven or Gradle script:
-* For release versions, use:<br/>`https://www.jetbrains.com/intellij-repository/releases`
-* For EAP snapshots, use:<br/>`https://www.jetbrains.com/intellij-repository/snapshots`
-* For dependencies on individual modules from the IntelliJ Platform, also use:<br/>`https://cache-redirector.jetbrains.com/intellij-dependencies`
+* For release versions, use:
+
+  `https://www.jetbrains.com/intellij-repository/releases`
+* For EAP snapshots, use:
+
+  `https://www.jetbrains.com/intellij-repository/snapshots`
+* For dependencies on individual modules from the IntelliJ Platform, also use:
+
+  `https://cache-redirector.jetbrains.com/intellij-dependencies`
 
 ### Specify the Maven Coordinates for the Artifact
 

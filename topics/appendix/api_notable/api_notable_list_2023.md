@@ -16,6 +16,11 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ## 2023.1
 
+API for quick documentation
+: [](documentation.md) for custom languages is provided through the
+[`DocumentationTarget`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/DocumentationTarget.kt)
+API for versions 2023.1 or later.
+
 ### IntelliJ Platform 2023.1
 
 Declarative Inspection Options

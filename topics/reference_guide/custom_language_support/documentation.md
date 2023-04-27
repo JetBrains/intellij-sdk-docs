@@ -24,8 +24,8 @@ These EPs enable building documentation from
 [PSI elements](psi_elements.md), or [Symbols](symbols.md).
 Detailed information on implementing these EPs can be found in the [](#documentationtarget-api) section.
 
-> Plugins targeting versions earlier than 2023.1 must use the [`DocumentationProvider` API](#documentationprovider-api)
-> documented in the second half of this page. Note that as long as the transition to the new API is
+> Plugins targeting versions earlier than 2023.1 must use the [`DocumentationProvider` API](#documentationprovider-api).
+> Note that as long as the transition to the new API is
 > not complete, the [custom language tutorial](documentation_provider.md) will use the `DocumentationProvider`.
 >
 {style="note"}

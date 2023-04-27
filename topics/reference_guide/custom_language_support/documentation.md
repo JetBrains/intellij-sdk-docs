@@ -14,7 +14,7 @@ Custom languages can display documentation for various constructs, such as funct
 To access the documentation, users can either select <ui-path>View | Quick Documentation</ui-path> or hover over a symbol.
 This will open a popup that displays type information, parameters, usage descriptions, or examples.
 The source of the documentation content can vary.
-While it is often extracted from comments in the source code (e.g., JavaDoc comments),
+While it is often extracted from comments in the source code (e.g., Javadoc comments),
 external resources, such as web pages, can also be accessed.
 
 From IntelliJ Platform version 2023.1 onwards, plugin developers can choose to implement

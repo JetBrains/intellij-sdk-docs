@@ -46,8 +46,8 @@ outlining the primary components and their interactions.
    its presentation in the [documentation tool window](https://www.jetbrains.com/help/idea/documentation-tool-window.html),
    or separate hints that are displayed when hovering over code.
 3. The rendered documentation is an instance of
-   [`DocumentationResult`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/DocumentationResult.kt)
-   which wraps the documentation in HTML format, but is also able to include images or external URLs.
+   [`DocumentationResult`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/DocumentationResult.kt),
+   which wraps the documentation in HTML format but can also include images or external URLs.
    `DocumentationResult` can be used asynchronously when building the documentation would take too long
    and block the IDE.
 

@@ -18,7 +18,7 @@
 <include from="language_and_filetype.md" element-id="custom_language_tutorial_header"></include>
 
 > For plugins targeting IntelliJ Platform version 2023.1 or later, it is recommended to utilize the
-> `DocumentationTarget` API, as detailed in [](documentation.md).
+> Documentation Target API, as detailed in [](documentation.md#documentation-target-api).
 >
 {style="note"}
 

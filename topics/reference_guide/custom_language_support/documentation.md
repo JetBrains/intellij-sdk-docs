@@ -18,19 +18,19 @@ While it is often extracted from comments in the source code (e.g., Javadoc comm
 external resources, such as web pages, can also be accessed.
 
 From IntelliJ Platform version 2023.1 onwards, plugin developers can choose to implement
-one of three extension points (EPs) from the new `DocumentationTarget` API based on the specific use-case.
+one of three extension points (EPs) from the new Documentation Target API based on the specific use-case.
 These EPs enable building documentation from
 [offsets in the current editor](coordinates_system.md#editor-coordinate-systems),
 [PSI elements](psi_elements.md), or [Symbols](symbols.md).
-Detailed information on implementing these EPs can be found in the [](#documentationtarget-api) section.
+Detailed information on implementing these EPs can be found in the [](#documentation-target-api) section.
 
-> Plugins targeting versions earlier than 2023.1 must use the [`DocumentationProvider` API](#documentationprovider-api).
+> Plugins targeting versions earlier than 2023.1 must use the [Documentation Provider API](#documentation-provider-api).
 > Note that as long as the transition to the new API is
-> not complete, the [custom language tutorial](documentation_provider.md) will use the `DocumentationProvider`.
+> not complete, the [custom language tutorial](documentation_provider.md) will use `DocumentationProvider`.
 >
 {style="note"}
 
-## DocumentationTarget API
+## Documentation Target API
 
 Custom language developers have the flexibility to select from three distinct EPs for providing documentation to their users.
 To ensure clarity and avoid confusion, we provide a high-level summary of the overall approach,
@@ -58,19 +58,19 @@ DocumentationTargetProvider
 : Implement
 [`DocumentationTargetProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/DocumentationTargetProvider.java)
 and register it as `com.intellij.platform.backend.documentation.targetProvider` extension point to build documentation
-for a certain offset in a `PsiFile` by overriding `DocumentationTargetProvider.documentationTargets()`.
+for a certain offset in a `PsiFile` by overriding `documentationTargets()`.
 
 PsiDocumentationTargetProvider
 : Implement
 [`PsiDocumentationTargetProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/PsiDocumentationTargetProvider.java)
 and register it as `com.intellij.platform.backend.documentation.psiTargetProvider` extension point to build documentation
-for PSI elements by overriding `PsiDocumentationTargetProvider.documentationTarget()`.
+for PSI elements by overriding `documentationTarget()`.
 
 SymbolDocumentationTargetProvider
 : Implement
 [`SymbolDocumentationTargetProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/SymbolDocumentationTargetProvider.java)
 and register it as `com.intellij.platform.backend.documentation.symbolTargetProvider` extension point to build documentation
-for [](symbols.md) by overriding `SymbolDocumentationTargetProvider.documentationTarget()`.
+for [](symbols.md) by overriding `documentationTarget()`.
 
 ### `DocumentationTarget`
 
@@ -103,10 +103,10 @@ as a reference.
 - [`KotlinDocumentationTarget`](%gh-ic%/plugins/kotlin/fir/src/org/jetbrains/kotlin/idea/quickDoc/KotlinDocumentationTarget.kt)
 - [`PsiElementDocumentationTarget`](%gh-ic%/platform/lang-impl/src/com/intellij/lang/documentation/psi/PsiElementDocumentationTarget.kt)
 
-## DocumentationProvider API
+## Documentation Provider API
 
-> As of IntelliJ Platform version 2023.1 the `DocumentationProvider` API is deprecated and plugin
-> authors should use the [](#documentationtarget-api).
+> As of IntelliJ Platform version 2023.1 the Documentation Provider API is deprecated and plugin
+> authors should use the [](#documentation-target-api).
 >
 {style="note"}
 

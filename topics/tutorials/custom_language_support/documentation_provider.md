@@ -1,6 +1,6 @@
-# 20. Documentation
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# 20. Documentation
 
 <link-summary>Sample implementation of documentation provider showing definitions of the Simple language properties.</link-summary>
 
@@ -16,6 +16,11 @@
 </tldr>
 
 <include from="language_and_filetype.md" element-id="custom_language_tutorial_header"></include>
+
+> For plugins targeting IntelliJ Platform version 2023.1 or later, it is recommended to utilize the
+> Documentation Target API, as detailed in [](documentation.md#documentation-target-api).
+>
+{style="note"}
 
 A [`DocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java)
 helps users by showing documentation for symbols like method calls inside the editor.

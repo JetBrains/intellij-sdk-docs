@@ -12,6 +12,12 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2023
 
+### April
+{#april-23}
+
+Documentation
+: Rework [](documentation.md) page and adapt it to the new `DocumentationTargetProvider` framework.
+
 ### March
 {#march-23}
 

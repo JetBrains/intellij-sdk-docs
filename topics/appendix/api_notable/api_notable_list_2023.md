@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Notable Changes in IntelliJ Platform and Plugins API 2023.*
 
@@ -17,6 +17,11 @@ Check presence of JVM library
 : Use [dedicated API](psi_cookbook.md#how-do-i-check-the-presence-of-a-jvm-library) to check presence via class FQN or Maven coordinates.
 
 ## 2023.1
+
+API for quick documentation
+: [](documentation.md) for custom languages is provided through the
+[`DocumentationTarget`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/DocumentationTarget.kt)
+API for versions 2023.1 or later.
 
 ### IntelliJ Platform 2023.1
 

@@ -92,7 +92,7 @@ The `createPointer()` method manages instance restoration and ensures access to 
 When implementing the `createPointer()` method, it is essential to handle invalidated PSI elements.
 Unlike PSI elements, the `DocumentationTarget` API does not include an `isValid()` method and the returned pointer is expected
 to be `null` if the instance (and all contained objects) cannot be restored.
-Plugin authors can use
+See
 [`KotlinDocumentationTarget.createPointer()`](%gh-ic%/plugins/kotlin/fir/src/org/jetbrains/kotlin/idea/quickDoc/KotlinDocumentationTarget.kt)
 as a reference.
 

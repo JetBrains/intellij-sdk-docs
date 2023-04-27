@@ -26,7 +26,9 @@ Detailed information on implementing these EPs can be found in the [](#documenta
 
 > Plugins targeting versions earlier than 2023.1 must use the [`DocumentationProvider` API](#documentationprovider-api)
 > documented in the second half of this page. Note that as long as the transition to the new API is
-> not complete, [custom language tutorial](documentation_provider.md) will use `DocumentationProvider`.
+> not complete, the [custom language tutorial](documentation_provider.md) will use the `DocumentationProvider`.
+>
+{style="note"}
 
 ## DocumentationTarget API
 
@@ -102,6 +104,11 @@ as a reference.
 - [`PsiElementDocumentationTarget`](%gh-ic%/platform/lang-impl/src/com/intellij/lang/documentation/psi/PsiElementDocumentationTarget.kt)
 
 ## DocumentationProvider API
+
+> As of IntelliJ Platform version 2023.1 the `DocumentationProvider` API is deprecated and plugin
+> authors should use the [](#documentationtarget-api).
+>
+{style="note"}
 
 Custom language developers usually extend from
 [`AbstractDocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/AbstractDocumentationProvider.java)

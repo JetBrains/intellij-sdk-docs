@@ -10,6 +10,10 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
+/**
+ * Please note, it is recommended to utilize the new DocumentationTarget API for
+ * plugins targeting IntelliJ Platform version 2023.1 or later.
+ */
 public class SimpleDocumentationProvider extends AbstractDocumentationProvider {
 
   /**

@@ -78,7 +78,7 @@ Each of the implementations above returns instances of
 [`DocumentationTarget`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/DocumentationTarget.kt).
 The main work is done in `computeDocumentation()` where the documentation is built from the available
 information.
-If plugin developers worked with the now deprecated
+If a plugin implemented the now deprecated
 [`DocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java)
 before, then `computeDocumentation()` should do the work that was formerly done in
 `DocumentationProvider.generateDoc()`.

@@ -94,9 +94,9 @@ The other attributes are the same as discussed in [](settings_guide.md#settings-
 
 For the child of a parent, the `id` attribute becomes compound:
 
-| Attribute | Required | Value                                                                                                                                                                                                                         |
-|:----------|:--------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `id`      |    Y     | Compound FQN of implementation based on `com.intellij.openapi.options.Configurable` in the form: `XX.YY` where:<br/>`XX` is the parent Settings component FQN-based id.<br/>`YY` is unique to the child among other siblings. |
+| Attribute | Required | Value                                                                                                                                                                                                                                             |
+|:----------|:--------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `id`      |    Y     | <p>Compound FQN of implementation based on `com.intellij.openapi.options.Configurable` in the form: `XX.YY` where:</p><ul><li>`XX` - the parent Settings component FQN-based ID</li><li>`YY` - unique to the child among other siblings</li></ul> |
 
 > All children share the parent's `id` as the basis of their own `id`.
 > All children have an `id` suffix that is unique among their siblings.

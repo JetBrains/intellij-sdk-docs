@@ -26,12 +26,12 @@ Also, `name` and `language` must be declared matching `FileType.getName()` and I
 
 To associate the file type in the IDE, specify one or more associations as listed in the following table.
 
-| Association type        | Attribute                                   | Attribute value                                                 |
-|-------------------------|---------------------------------------------|-----------------------------------------------------------------|
-| Filename extension(s)   | `extensions`                                | Semicolon-separated list of extensions, without `.` prefix      |
-| Hard coded file name(s) | `fileNames`/<br/>`fileNamesCaseInsensitive` | Semicolon-separated list of exact (case-insensitive) file names |
-| Filename pattern(s)     | `patterns`                                  | Semicolon-separated list of patterns (`*` and `?`)              |
-| Hashbang _(2020.2+)_    | `hashBangs`                                 | Semicolon-separated list of hash bang patterns                  |
+| Association type        | Attribute                                          | Attribute value                                                 |
+|-------------------------|----------------------------------------------------|-----------------------------------------------------------------|
+| Filename extension(s)   | `extensions`                                       | Semicolon-separated list of extensions, without `.` prefix      |
+| Hard coded file name(s) | <p>`fileNames`/<br/>`fileNamesCaseInsensitive`</p> | Semicolon-separated list of exact (case-insensitive) file names |
+| Filename pattern(s)     | `patterns`                                         | Semicolon-separated list of patterns (`*` and `?`)              |
+| Hashbang _(2020.2+)_    | `hashBangs`                                        | Semicolon-separated list of hash bang patterns                  |
 
 </tab>
 

@@ -96,9 +96,70 @@ It is recommended to avoid adding unnecessary elements as they will have to be s
 
 The additional candidate elements:
 
-| Element                                                       | Effects & Requirements                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-|:--------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `<name>`<br/>My Plugin Name<br/>`</name>`                     | By default the name of the plugin JAR/ZIP file is displayed before installation. <br/>Using the `<name>` element displays the name of the plugin. <br/>Contents should match the [`<name>`](plugin_configuration_file.md#idea-plugin__name) element contents in the plugin's <path>plugin.xml</path> file to avoid confusion.                                                                                                                                                                                                      |
-| `<description>`<br/>My plugin is awesome<br/>`</description>` | By default no description for the plugin is displayed before installation. <br/>Using the `<description>` element will cause a description to be displayed before installation. <br/>Contents should match the [`<description>`](plugin_configuration_file.md#idea-plugin__description) element contents in the plugin's <path>plugin.xml</path> file to avoid confusion. <br/>Optionally, an enclosing `<![CDATA[ ]]>` element can be used if the description needs to contain HTML tags.                                         |
-| `<change-notes>`<br/>Added cool feature<br/>`</change-notes>` | By default no change notes for the plugin are displayed before installation. <br/>Using the `<change-notes>` element will cause a description of changes to be displayed before installation. <br/>Contents should match the [`<change-notes>`](plugin_configuration_file.md#idea-plugin__change-notes) element contents in the plugin's <path>plugin.xml</path> file to avoid confusion. <br/>Optionally, an enclosing `<![CDATA[ ]]>` element can be used if the change notes need to contain HTML tags.                         |
-| `<depends>`<br/>dependency.plugin.id<br/>`</depends>`         | Adding a plugin dependency in the `<depends>` element will cause asking a user about enabling the dependency plugin, if it is installed and disabled in the IDE. A plugin can specify multiple `<depends>` elements. <br/>A plugin entry should include only the dependencies on other plugins that are defined by the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) elements in the plugin's <path>plugin.xml</path> file. The `optional` and `config-file` attributes are ignored and shouldn't be specified. |
+<table>
+    <tr>
+        <td>
+            Element
+        </td>
+        <td>
+            Effects &amp; Requirements
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <code-block lang="XML">
+                &lt;name>
+                  My Plugin Name
+                &lt;/name>
+            </code-block>
+        </td>
+        <td>
+            <p>By default, the name of the plugin JAR/ZIP file is displayed before installation.</p>
+            <p>Using the <code>&lt;name></code> element displays the name of the plugin.</p>
+            <p>Contents should match the <a href="plugin_configuration_file.md#idea-plugin__name"><code>&lt;name></code></a> element contents in the plugin's <path>plugin.xml</path> file to avoid confusion.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <code-block lang="XML">
+                &lt;description>
+                  My plugin is awesome
+                &lt;/description>
+            </code-block>
+        </td>
+        <td>
+            <p>By default, no description for the plugin is displayed before installation.</p>
+            <p>Using the <code>&lt;description></code> element will cause a description to be displayed before installation.</p>
+            <p>Contents should match the <a href="plugin_configuration_file.md#idea-plugin__description"><code>&lt;description></code></a> element contents in the plugin's <path>plugin.xml</path> file to avoid confusion.</p>
+            <p>Optionally, an enclosing <code>&lt;![CDATA[ ]]></code> element can be used if the description needs to contain HTML tags.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <code-block lang="XML">
+                &lt;change-notes>
+                  Added cool feature
+                &lt;/change-notes>
+            </code-block>
+        </td>
+        <td>
+            <p>By default, no change notes for the plugin are displayed before installation.</p>
+            <p>Using the <code>&lt;change-notes></code> element will cause a description of changes to be displayed before installation.</p>
+            <p>Contents should match the <a href="plugin_configuration_file.md#idea-plugin__change-notes"><code>&lt;change-notes></code></a> element contents in the plugin's <path>plugin.xml</path> file to avoid confusion.</p>
+            <p>Optionally, an enclosing <code>&lt;![CDATA[ ]]></code> element can be used if the change notes need to contain HTML tags.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <code-block lang="XML">
+                &lt;depends>
+                  dependency.plugin.id
+                &lt;/depends>
+            </code-block>
+        </td>
+        <td>
+            <p>Adding a plugin dependency in the <code>&lt;depends></code> element will cause asking a user about enabling the dependency plugin, if it is installed and disabled in the IDE. A plugin can specify multiple <code>&lt;depends></code> elements.</p>
+            <p>A plugin entry should include only the dependencies on other plugins that are defined by the <a href="plugin_configuration_file.md#idea-plugin__depends"><code>&lt;depends></code></a> elements in the plugin's <path>plugin.xml</path> file. The <code>optional</code> and <code>config-file</code> attributes are ignored and shouldn't be specified.</p>
+        </td>
+    </tr>
+</table>

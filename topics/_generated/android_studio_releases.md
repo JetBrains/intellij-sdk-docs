@@ -2,14 +2,6 @@
 
 <snippet id="releases_table">
 
-## 2023.*
-
-| Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
-|--------------|:-------:|--------------|---------|-----------------------|
-| Hedgehog \| 2023.1.1 Canary 1 | ![Canary][canary] | April 25, 2023 | **2023.1.1.1**<p>AI-223.8836.35.2311.9976484</p> | **2022.3.3**<p>223.8836.35</p> |
-
-
-
 ## 2022.*
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
@@ -26,6 +18,7 @@
 | Giraffe \| 2022.3.1 Canary 3 | ![Canary][canary] | February 7, 2023 | **2022.3.1.3**<p>AI-223.7571.182.2231.9532861</p> | **2022.3**<p>223.7571.182</p> |
 | Giraffe \| 2022.3.1 Canary 2 | ![Canary][canary] | January 26, 2023 | **2022.3.1.2**<p>AI-223.7571.182.2231.9523943</p> | **2022.3**<p>223.7571.182</p> |
 | Giraffe \| 2022.3.1 Canary 1 | ![Canary][canary] | January 17, 2023 | **2022.3.1.1**<p>AI-223.4884.69.2231.9486165</p> | **2022.3**<p>223.4884.69</p> |
+| Flamingo \| 2022.2.1 Patch 1 | ![Patch][patch] | May 1, 2023 | **2022.2.1.19**<p>AI-222.4459.24.2221.9971841</p> | **2022.2.4**<p>222.4459.24</p> |
 | Flamingo \| 2022.2.1 | ![Release][release] | April 13, 2023 | **2022.2.1.18**<p>AI-222.4459.24.2221.9862592</p> | **2022.2.4**<p>222.4459.24</p> |
 | Flamingo \| 2022.2.1 RC 1 | ![RC][rc] | March 27, 2023 | **2022.2.1.17**<p>AI-222.4459.24.2221.9787799</p> | **2022.2.4**<p>222.4459.24</p> |
 | Flamingo \| 2022.2.1 Beta 5 | ![Beta][beta] | March 9, 2023 | **2022.2.1.16**<p>AI-222.4459.24.2221.9682058</p> | **2022.2.4**<p>222.4459.24</p> |
@@ -65,6 +58,14 @@
 | Electric Eel \| 2022.1.1 Canary 3 | ![Canary][canary] | June 3, 2022 | **2022.1.1.3**<p>AI-213.7172.25.2211.8624637</p> | **2021.3.3**<p>213.7172.25</p> |
 | Electric Eel \| 2022.1.1 Canary 2 | ![Canary][canary] | May 13, 2022 | **2022.1.1.2**<p>AI-213.7172.25.2211.8571212</p> | **2021.3.3**<p>213.7172.25</p> |
 | Electric Eel \| 2022.1.1 Canary 1 | ![Canary][canary] | May 11, 2022 | **2022.1.1.1**<p>AI-213.7172.25.2211.8563311</p> | **2021.3.3**<p>213.7172.25</p> |
+
+
+
+## 2023.*
+
+| Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
+|--------------|:-------:|--------------|---------|-----------------------|
+| Hedgehog \| 2023.1.1 Canary 1 | ![Canary][canary] | April 25, 2023 | **2023.1.1.1**<p>AI-223.8836.35.2311.9976484</p> | **2022.3.3**<p>223.8836.35</p> |
 
 
 
@@ -432,8 +433,8 @@
 | Hedgehog \| 2023.1.1 Canary 1 | ![Canary][canary] | April 25, 2023 | **2023.1.1.1**<p>AI-223.8836.35.2311.9976484</p> | **2022.3.3**<p>223.8836.35</p> |
 | Giraffe \| 2022.3.1 Beta 1 | ![Beta][beta] | April 20, 2023 | **2022.3.1.12**<p>AI-223.8836.35.2231.9923731</p> | **2022.3.3**<p>223.8836.35</p> |
 | Giraffe \| 2022.3.1 Canary 11 | ![Canary][canary] | March 30, 2023 | **2022.3.1.11**<p>AI-223.8836.35.2231.9848316</p> | **2022.3.3**<p>223.8836.35</p> |
+| Flamingo \| 2022.2.1 Patch 1 | ![Patch][patch] | May 1, 2023 | **2022.2.1.19**<p>AI-222.4459.24.2221.9971841</p> | **2022.2.4**<p>222.4459.24</p> |
 | Flamingo \| 2022.2.1 | ![Release][release] | April 13, 2023 | **2022.2.1.18**<p>AI-222.4459.24.2221.9862592</p> | **2022.2.4**<p>222.4459.24</p> |
-| Flamingo \| 2022.2.1 RC 1 | ![RC][rc] | March 27, 2023 | **2022.2.1.17**<p>AI-222.4459.24.2221.9787799</p> | **2022.2.4**<p>222.4459.24</p> |
 
 [release]: https://img.shields.io/badge/-Release-blue?style=flat-square
 [patch]: https://img.shields.io/badge/-Patch-orange?style=flat-square

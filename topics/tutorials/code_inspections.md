@@ -24,6 +24,7 @@ The [comparing_string_references_inspection](%gh-sdk-samples%/comparing_string_r
 The inspection reports when the `==` or `!=` operator is used between String expressions.
 
 It illustrates the components for a custom inspection plugin:
+
 * Describing an [inspection](#plugin-configuration-file) in the plugin configuration file.
 * Implementing a [local inspection class](#inspection-implementation-java-class) to inspect Java code in the editor.
 * Creating a [visitor](#visitor-implementation-class) to traverse the PSI tree of the Java file being edited, inspecting for problematic syntax.
@@ -48,6 +49,7 @@ The details of the `comparing_string_references_inspection` implementation illus
 The `comparing_string_references_inspection` is described as a `com.intellij.localInspection` extension point in the `comparing_string_references_inspection` plugin configuration ([`plugin.xml`](%gh-sdk-samples%/comparing_string_references_inspection/src/main/resources/META-INF/plugin.xml)) file.
 
 There exist two types of inspection extensions:
+
 * The `com.intellij.localInspection` extension point is used for inspections that operate on one file at a time, and also operate "on-the-fly" as the user edits the file.
 * The `com.intellij.globalInspection` extension point is used for inspections that operate across multiple files, and the associated fix might, for example, refactor code between files.
 
@@ -67,6 +69,7 @@ Examining the class hierarchy for `LocalInspectionTool` shows that the IntelliJ 
 One of these classes is a good basis for a new inspection implementation, but a bespoke implementation can also be based directly on `LocalInspectionTool`.
 
 The primary responsibilities of the inspection implementation class are to provide:
+
 * A `PsiElementVisitor` object to traverse the PSI tree of the file being inspected.
 * A `LocalQuickFix` class to fix an identified problem (optional).
 * An options panel to be displayed in the <control>Inspections</control> settings dialog (optional). See [](inspection_options.md) for more details.
@@ -89,6 +92,7 @@ The `ReplaceWithEqualsQuickFix` class allows the user to change the use of `a ==
 
 The heavy lifting is done in `ReplaceWithEqualsQuickFix.applyFix()`, which manipulates the PSI tree to convert the expressions.
 The change to the PSI tree is accomplished by the usual approach to modification:
+
 * Getting a `PsiElementFactory`.
 * Creating a new `PsiMethodCallExpression`.
 * Substituting the original left and right operands into the new `PsiMethodCallExpression`.
@@ -99,16 +103,40 @@ The change to the PSI tree is accomplished by the usual approach to modification
 The inspection description is an HTML file.
 The description is displayed in the upper right panel of the <control>Inspections</control> settings dialog when an inspection is selected from the list.
 
+See the [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in the IntelliJ Platform UI Guidelines on important guidelines for writing the description.
+
 Implicit in using [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java) in the class hierarchy of the inspection implementation means following some conventions.
+
 * The inspection description file is expected to be located under <path>$RESOURCES_ROOT_DIRECTORY$/inspectionDescriptions/</path>.
   If the inspection description file is to be located elsewhere, override `getDescriptionUrl()` in the inspection implementation class.
 * The name of the description file is expected to be the inspection <path>$SHORT_NAME$.html</path> as provided by the inspection description, or the inspection implementation class.
   If a short name is not provided, the IntelliJ Platform computes one by removing `Inspection` suffix from the implementation class name.
 
-> To open related [settings](settings.md) directly from the inspection description, add a link with `settings://$CONFIGURABLE_ID$`, optionally followed by `?$SEARCH_STRING$` to pre-select UI element:
->
-> `See <em>Includes</em> tab in <a href="settings://fileTemplates">Settings | Editor | File and Code Templates</a> to configure.`
->
+#### Code Snippets
+
+(2023.2)
+
+Using the following HTML structure, the description can embed code snippets that will be displayed with syntax highlighting:
+
+```html
+The following code will be shown with syntax highlighting:
+<pre>
+  <code>
+    // code snippet
+  </code>
+</pre>
+```
+
+The language will be set according to the [inspection's registration](#plugin-configuration-file) `language` attribute.
+If required (e.g., when targeting [UAST](uast.md)), it can be specified explicitly via `<code lang="LanguageID">...</code>`.
+
+#### Settings Link
+
+To open related [settings](settings.md) directly from the inspection description, add a link with `settings://$CONFIGURABLE_ID$`, optionally followed by `?$SEARCH_STRING$` to pre-select UI element:
+
+```html
+See <em>Includes</em> tab in <a href="settings://fileTemplates">Settings | Editor | File and Code Templates</a> to configure.
+```
 
 ### Inspection Test
 
@@ -152,4 +180,5 @@ return (str1 == str2);
 ```java
 return (str1.equals(str2));
 ```
+
 </compare>

@@ -16,6 +16,9 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 Check presence of JVM library
 : Use [dedicated API](psi_cookbook.md#how-do-i-check-the-presence-of-a-jvm-library) to check presence via class FQN or Maven coordinates.
 
+Inspection description: code snippets highlighting
+: Embedded code is shown with [syntax highlighting](code_inspections.md#code-snippets).
+
 ## 2023.1
 
 API for quick documentation

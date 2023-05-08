@@ -19,6 +19,11 @@ Check presence of JVM library
 Inspection description: code snippets highlighting
 : Embedded code is shown with [syntax highlighting](code_inspections.md#code-snippets).
 
+### IntelliJ IDEA 2023.2
+
+Unbundled plugins
+: Several plugins (Play 1, Resin, Struts 2, tcServer) have been unbundled. The IDE will suggest installation if the project contains related framework dependency. If your plugin depends on them, users will need to install them from the [JetBrains Marketplace](https://plugins.jetbrains.com).
+
 ## 2023.1
 
 API for quick documentation

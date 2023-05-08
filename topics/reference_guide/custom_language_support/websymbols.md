@@ -27,8 +27,16 @@ Another advantage is the flexibility of Web Symbols query.
 It is very easy to contribute new symbols from various sources, which works perfectly for multi-sourced
 (e.g. source code, library code, Web Types) applications.
 
+Web Symbols API is not designed to create a support for new languages, but to rather work on meta
+level, to support frameworks or libraries, which are giving additional meaning to the existing language features.
+Currently, IDEs provide built-in integration for following language features (see [](websymbols_integration.md)):
+- HTML: elements, attributes and attribute values
+- CSS: properties, custom properties, functions, classes, pseudo-elements, pseudo-classes and parts
+- JavaScript: string-literals, object properties, object literals and symbols (in JavaScript)
+
+You can also write integration for other languages.
+
 In the following sub-pages you learn about implementing Web Symbols for your plugin and how you can
 contribute Web Symbols by statically defining them through JSON schemas:
-
 - [](websymbols_implementation.md)
-- [](websymbols_static_symbols.md)
+- [](websymbols_web_types.md)

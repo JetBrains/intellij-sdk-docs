@@ -1,9 +1,9 @@
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# Statically Defined Web Symbols
+# Web Types
 
 <link-summary>
-Contributing statically defined Web Symbols through JSON schemas.
+Web Types - contributing statically defined Web Symbols through JSONs.
 </link-summary>
 
 Web Types is a JSON metadata format, which provides an easy way to contribute statically defined Web Symbols.
@@ -14,7 +14,7 @@ The format is open source and IDE-agnostic by itself, however currently it is be
 It was originally created to facilitate the contribution of statically defined symbols for the
 [Vue](https://vuejs.org/) framework, and therefore you might notice some deprecated properties in the schema.
 
-A simple Web Types file looks as follows, where this file defines an `my-element` HTML element with a `foo` attribute.:
+A simple Web Types file looks as follows, where this file defines a `my-element` HTML element with a `foo` attribute:
 
 ```JSON
 {
@@ -163,8 +163,7 @@ Following is the reference for symbol kinds used by framework support.
 
 ### Direct Support
 
-In version 2022.3 IDEs with JavaScript plugin installed provide direct support for following symbol kinds:
-
+IDEs provide direct support for following symbol kinds:
 - `html/elements`
 - `html/attributes`
 - `css/properties`
@@ -172,6 +171,9 @@ In version 2022.3 IDEs with JavaScript plugin installed provide direct support f
 - `css/pseudo-elements`
 - `css/functions`
 - `css/classes`
+- `css/parts` (*since 2023.2*)
+
+Prior to 2023.1 IDEs were required to have JavaScript plugin installed for the support to work.
 
 ### Angular
 

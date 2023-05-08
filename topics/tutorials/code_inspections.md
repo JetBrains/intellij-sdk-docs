@@ -119,7 +119,9 @@ Implicit in using [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/
 Using the following HTML structure, the description can embed code snippets that will be displayed with syntax highlighting:
 
 ```html
-The following code will be shown with syntax highlighting:
+<p>
+  The following code will be shown with syntax highlighting:
+</p>
 <pre>
   <code>
     // code snippet

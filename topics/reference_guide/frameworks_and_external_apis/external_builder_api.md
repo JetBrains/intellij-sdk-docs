@@ -86,12 +86,16 @@ Specifying port "-1" will disable debugging mode.
 
 ### Profiling External Build Process
 
-The build process has built-in self-cpu-profiling capabilities.
-To enable them do the following:
+The build process has built-in self-CPU-profiling capabilities.
 
-1. Copy <path>$IDE_HOME$/lib/yjp-controller-api-redist.jar</path> and <path>$IDE_HOME$/bin/yjpagent.*</path> files to <path>$IDE_SYSTEM_DIR$/compile-server</path>
-2. In <ui-path>Settings | Build, Execution, Deployment | Compiler | Java Compiler</ui-path> add `-Dprofiling.mode=true` in <control>Additional command line parameters</control>
-3. Make sure the automatic make is turned off
+<procedure title="Enabling CPU profiling for build process">
+
+1. _2023.2+_ Install [YourKit Profiler for IDE Performance Testing](https://plugins.jetbrains.com/plugin/20892-yourkit-profiler-for-ide-performance-testing) plugin
+2. Copy <path>$IDE_HOME$/lib/yjp-controller-api-redist.jar</path> and <path>$IDE_HOME$/bin/yjpagent.*</path> files to <path>$IDE_SYSTEM_DIR$/compile-server</path>
+3. In <ui-path>Settings | Build, Execution, Deployment | Compiler | Java Compiler</ui-path> add `-Dprofiling.mode=true` in <control>Additional command line parameters</control>
+4. Make sure <control>Build project automatically</control> in <ui-path>Settings | Build, Execution, Deployment | Compiler</ui-path> is disabled
+
+</procedure>
 
 After this, every build process run should result in a CPU snapshot stored in <path>$USER_HOME$/Snapshots</path> directory.
 Snapshots are named like <path>ExternalBuild\-\$DATE$.snapshot</path>.

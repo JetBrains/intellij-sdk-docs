@@ -99,7 +99,7 @@ The XML file with the injection configurations is loaded through the `org.intell
 It is important to make a distinction between plugin authors who want to provide injections into existing languages and plugin authors who want to provide support for IntelliLang injections in their custom language.
 Both define their injections by providing XML configurations and loading them through the <path>[plugin.xml](plugin_configuration_file.md)</path>.
 However, custom language authors need to implement the `org.intellij.intelliLang.languageSupport` EP to make their language and PSI element patterns known to IntelliLang.
-Therefore, plugin authors who want to provide injections for known languages can skip the first step.
+Therefore, plugin authors who want to provide injections for existing languages can skip the first step.
 
 #### Implement org.intellij.intelliLang.languageSupport EP
 

@@ -42,7 +42,7 @@ Sometimes it also includes language support elements for a custom syntax or DSL.
 * Specific code insight
 * Direct access to framework-specific functionality
 
-Refer to the [Struts 2 plugin](%gh-ij-plugins%/struts2) as an example of framework integration.
+Refer to the [IntelliJ-HCL](%gh-ij-plugins%/terraform) as an example of framework integration.
 More reference plugins can be found on [JetBrains Marketplace](https://plugins.jetbrains.com/search?orderBy=update%20date&shouldHaveSource=true&tags=Framework).
 
 ## Tool Integration

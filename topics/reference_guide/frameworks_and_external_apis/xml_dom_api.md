@@ -625,7 +625,6 @@ Depending on implementation/plugin, providing filesets implicitly (using existin
 
 Extend [`DomModelFactory`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/model/impl/DomModelFactory.java) (or [`BaseDomModelFactory`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/model/impl/BaseDomModelFactory.java) for non-`Module` scope) and provide implementation of your `DomModel`.
 Usually you will want to add searcher/utility methods to work with your `DomModel` implementation.
-Example can be found in Struts 2 plugin (package `com.intellij.struts2.dom.struts.model`).
 
 ### DOM Stubs
 
@@ -855,6 +854,5 @@ The following bundled open-source plugins make (heavy) use of DOM:
 - [Ant](%gh-ic%/plugins/ant)
 - [Plugin DevKit](%gh-ic%/plugins/devkit/devkit-core)
 - [Maven](%gh-ic%/plugins/maven)
-- [Struts 2](%gh-ij-plugins%/struts2) (Ultimate Edition)
 
 Explore 3rd party plugins using DOM on [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.dom.fileMetaData).

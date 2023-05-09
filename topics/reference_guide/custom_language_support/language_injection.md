@@ -234,7 +234,9 @@ public class MyRegExpToJavaInjector implements MultiHostInjector {
     if (context instanceof PsiLiteralExpression && shouldInject(context)) {
       registrar
         .startInjecting(RegExpLanguage.INSTANCE)
-        .addPlace(null, null, context, innerRangeStrippingQuotes(context))
+        .addPlace(null, null,
+                  (PsiLanguageInjectionHost)context,
+                  innerRangeStrippingQuotes(context))
         .doneInjecting();
     }
   }
@@ -279,19 +281,25 @@ public class MyBizarreDSLInjector implements MultiHostInjector {
   @Override
   public void getLanguagesToInject(@NotNull MultiHostRegistrar registrar,
                                    @NotNull PsiElement context) {
-    if (isMethodTag(context)) {
+    if (context instanceof XmlText && isMethodTag(context)) {
       registrar.startInjecting(JavaLanguage.INSTANCE);
 
       // construct class header, method header,
       // inject method name, append code block start
       registrar.addPlace("class MyDsl { void ", "() {",
-          context, rangeForMethodName(context));
+                         (PsiLanguageInjectionHost)context,
+                         rangeForMethodName(context));
 
       // inject method body, append closing braces
       // to form a valid Java class structure
       registrar.addPlace(null, "}}", context, rangeForBody(context));
       registrar.doneInjecting();
     }
+  }
+
+  @Override
+  public @NotNull List<? extends Class<? extends PsiElement>> elementsToInjectIn() {
+    return List.of(XmlText.class);
   }
 }
 ```

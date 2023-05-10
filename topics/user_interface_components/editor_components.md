@@ -46,6 +46,10 @@ Refer to the [](code_completion.md) to learn more about completion.
 
 ### Java
 
+> If your plugin depends on Java functionality and targets 2019.2 or later, please make sure to follow the steps from this [blog post](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/).
+>
+{style="note"}
+
 A common use case for `EditorTextField` is entering the name of a Java class or package.
 This can be accomplished with the following steps:
 
@@ -68,10 +72,6 @@ Document document =
 EditorTextField myInput =
         new EditorTextField(document, project, JavaFileType.INSTANCE);
 ```
-
-> If your plugin depends on Java functionality and targets 2019.2 or later, please make sure to follow the steps from this [blog post](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/).
->
-{style="note"}
 
 **TIPS**:
 

@@ -2,6 +2,16 @@
 
 <snippet id="releases_table">
 
+## 2023.*
+
+| Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
+|--------------|:-------:|--------------|---------|-----------------------|
+| Hedgehog \| 2023.1.1 Canary 3 | ![Canary][canary] | May 10, 2023 | **2023.1.1.3**<p>AI-231.7864.76.2311.10101468</p> | **2023.1**<p>231.7864.76</p> |
+| Hedgehog \| 2023.1.1 Canary 2 | ![Canary][canary] | May 2, 2023 | **2023.1.1.2**<p>AI-231.6890.12.2311.10027519</p> | **2023.1**<p>231.6890.12</p> |
+| Hedgehog \| 2023.1.1 Canary 1 | ![Canary][canary] | April 25, 2023 | **2023.1.1.1**<p>AI-223.8836.35.2311.9976484</p> | **2022.3.3**<p>223.8836.35</p> |
+
+
+
 ## 2022.*
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
@@ -59,15 +69,6 @@
 | Electric Eel \| 2022.1.1 Canary 3 | ![Canary][canary] | June 3, 2022 | **2022.1.1.3**<p>AI-213.7172.25.2211.8624637</p> | **2021.3.3**<p>213.7172.25</p> |
 | Electric Eel \| 2022.1.1 Canary 2 | ![Canary][canary] | May 13, 2022 | **2022.1.1.2**<p>AI-213.7172.25.2211.8571212</p> | **2021.3.3**<p>213.7172.25</p> |
 | Electric Eel \| 2022.1.1 Canary 1 | ![Canary][canary] | May 11, 2022 | **2022.1.1.1**<p>AI-213.7172.25.2211.8563311</p> | **2021.3.3**<p>213.7172.25</p> |
-
-
-
-## 2023.*
-
-| Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
-|--------------|:-------:|--------------|---------|-----------------------|
-| Hedgehog \| 2023.1.1 Canary 2 | ![Canary][canary] | May 2, 2023 | **2023.1.1.2**<p>AI-231.6890.12.2311.10027519</p> | **2023.1**<p>231.6890.12</p> |
-| Hedgehog \| 2023.1.1 Canary 1 | ![Canary][canary] | April 25, 2023 | **2023.1.1.1**<p>AI-223.8836.35.2311.9976484</p> | **2022.3.3**<p>223.8836.35</p> |
 
 
 
@@ -432,10 +433,10 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Hedgehog \| 2023.1.1 Canary 3 | ![Canary][canary] | May 10, 2023 | **2023.1.1.3**<p>AI-231.7864.76.2311.10101468</p> | **2023.1**<p>231.7864.76</p> |
 | Hedgehog \| 2023.1.1 Canary 2 | ![Canary][canary] | May 2, 2023 | **2023.1.1.2**<p>AI-231.6890.12.2311.10027519</p> | **2023.1**<p>231.6890.12</p> |
 | Hedgehog \| 2023.1.1 Canary 1 | ![Canary][canary] | April 25, 2023 | **2023.1.1.1**<p>AI-223.8836.35.2311.9976484</p> | **2022.3.3**<p>223.8836.35</p> |
 | Giraffe \| 2022.3.1 Beta 2 | ![Beta][beta] | May 8, 2023 | **2022.3.1.13**<p>AI-223.8836.35.2231.10023527</p> | **2022.3.3**<p>223.8836.35</p> |
-| Giraffe \| 2022.3.1 Beta 1 | ![Beta][beta] | April 20, 2023 | **2022.3.1.12**<p>AI-223.8836.35.2231.9923731</p> | **2022.3.3**<p>223.8836.35</p> |
 | Flamingo \| 2022.2.1 Patch 1 | ![Patch][patch] | May 1, 2023 | **2022.2.1.19**<p>AI-222.4459.24.2221.9971841</p> | **2022.2.4**<p>222.4459.24</p> |
 
 [release]: https://img.shields.io/badge/-Release-blue?style=flat-square

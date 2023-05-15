@@ -1,6 +1,6 @@
-# Incompatible Changes in IntelliJ Platform and Plugins API 2023.*
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+# Incompatible Changes in IntelliJ Platform and Plugins API 2023.*
 
 <!--
 Before documenting a breaking API change, please make sure that the change cannot be avoided in an alternative way.
@@ -78,13 +78,13 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 ### Database Plugin 2023.2
 
 `com.intellij.database.dataSource.DataSourceStorageCore` class removed
-: Use `com.intellij.database.dataSource.DataSourceStorage` instead
+: Use `com.intellij.database.dataSource.DataSourceStorage` instead.
 
 `com.intellij.database.dataSource.DataSourceStorageUtil` class removed
-: Use `com.intellij.database.dataSource.DataSourceStorage` instead
+: Use `com.intellij.database.dataSource.DataSourceStorage` instead.
 
 `com.intellij.database.dataSource.DataSourceStorageCore$Listener` class renamed to `com.intellij.database.dataSource.DataSourceStorage$Listener`
-: Class Core class removed from hierarchy
+: `Core` class removed from hierarchy.
 
 ## 2023.1
 

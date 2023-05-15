@@ -117,6 +117,12 @@ Apache Batik library unbundled
 `com.intellij.openapi.fileEditor.impl.HTMLEditorProvider.Companion.getAFFINITY_KEY()` method removed
 : It was an accidentally exposed internal API. Please use `HTMLEditorProvider.openEditor()` methods, or implement your own file editor provider.
 
+`com.intellij.execution.RunnerAndConfigurationSettings.setFocusToolWindowBeforeRun(boolean)` abstract method added
+: The interface is not intended to be implemented in external plugins
+
+`com.intellij.execution.RunnerAndConfigurationSettings.getFocusToolWindowBeforeRun()` abstract method added
+: The interface is not intended to be implemented in external plugins
+
 ### Database Plugin 2023.1
 
 `com.intellij.database.dataSource.url.TypeDescriptor.ParamEditor` class moved to package `com.intellij.database.dataSource.url`

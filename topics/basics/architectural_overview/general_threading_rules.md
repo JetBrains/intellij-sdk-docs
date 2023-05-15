@@ -1,6 +1,6 @@
-# General Threading Rules
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# General Threading Rules
 
 <link-summary>Threading rules for reading and writing to IntelliJ Platform data models, running and canceling background processes, and avoiding UI freezes.</link-summary>
 
@@ -82,8 +82,12 @@ The `checkCanceled()` should be called often enough to guarantee the process's s
 PSI internals have a lot of `checkCanceled()` calls inside.
 If a process does lengthy non-PSI activity, insert explicit `checkCanceled()` calls so that it happens frequently, e.g., on each _Nth_ loop iteration.
 
-> Throwing `ProcessCanceledException` from `checkCanceled()` can be disabled for development (e.g. while debugging the code) with the <ui-path>Tools | Internal Actions | Disable ProcessCanceledException</ui-path> action.
-> The action is available only if [Internal Mode is enabled](enabling_internal.md).
+> Throwing `ProcessCanceledException` from `checkCanceled()` can be disabled for development (e.g. while debugging the code) by invoking:
+>
+> - _2023.2+_ <ui-path>Tools | Internal Actions | Skip Window Deactivation Events</ui-path>
+> - _earlier versions_ <ui-path>Tools | Internal Actions | Disable ProcessCanceledException</ui-path>
+>
+> These actions are available only if [Internal Mode is enabled](enabling_internal.md).
 
 ## Read Action Cancellability
 

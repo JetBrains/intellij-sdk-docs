@@ -129,9 +129,10 @@ Children
 
 A unique identifier of the plugin.
 It should be a fully qualified name similar to Java packages and must not collide with the ID of existing plugins.
-The ID is a technical value used to identify the plugin in the IDE and JetBrains Marketplace.
+The ID is a technical value used to identify the plugin in the IDE and [JetBrains Marketplace](https://plugins.jetbrains.com).
+Please use characters, numbers, and `'.'`/`'-'`/`'_'` symbols only and keep it reasonably short.
 
-**The identifier value cannot be changed between the plugin versions.**
+**Make sure to pick a stable ID, as the value cannot be changed between the plugin versions.**
 
 {style="narrow"}
 Required
@@ -145,7 +146,7 @@ Default value
 Example
 :
 ```xml
-<id>com.example.myframeworksupport</id>
+<id>com.company.framework</id>
 ```
 
 ### `name`

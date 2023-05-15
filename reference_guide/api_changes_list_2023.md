@@ -75,6 +75,17 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.intellij.openapi.actionSystem.AnActionEvent.getInputEvent()` method return type changed from `InputEvent` to `@Nullable InputEvent`
 : This may break source-compatibility with inheritors written in Kotlin.
 
+### Database Plugin 2023.2
+
+`com.intellij.database.dataSource.DataSourceStorageCore` class removed
+: Use `com.intellij.database.dataSource.DataSourceStorage` instead
+
+`com.intellij.database.dataSource.DataSourceStorageUtil` class removed
+: Use `com.intellij.database.dataSource.DataSourceStorage` instead
+
+`com.intellij.database.dataSource.DataSourceStorageCore$Listener` class renamed to `com.intellij.database.dataSource.DataSourceStorage$Listener`
+: Class Core class removed from hierarchy
+
 ## 2023.1
 
 ### IntelliJ Platform 2023.1
@@ -146,6 +157,9 @@ Apache Batik library unbundled
 
 `com.intellij.database.datagrid.DataGrid.getStripeRowBackground()` abstract method added
 : Only recompilation needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
+
+`com.intellij.database.plan.ExplainPlanProvider.createRawExplainTask(LocalDataSource dataSource, boolean analyze)` abstract method added
+: Should implement this method
 
 ### JavaScript Plugin 2023.1
 

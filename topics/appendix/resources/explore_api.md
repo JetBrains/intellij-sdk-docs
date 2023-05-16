@@ -185,3 +185,10 @@ Here is a condensed list you can use for further reference:
 - [](extension_point_list.md)
 - Section on [exploring module and plugin APIs](plugin_compatibility.md#exploring-module-and-plugin-apis).
 - List of [notable](api_notable.md) and [incompatible](api_changes_list.md) API changes.
+
+### 3.4 Use Polaris plugin
+
+Polaris is a code search engine embedded into your IDE.
+It is designed to help find relevant code snippets, and learn from examples implemented by others within the IntelliJ Platform and open-source plugins.
+
+Please see [Polaris overview](http://jetbrains.com/polaris-preview) and the [plugin page](https://plugins.jetbrains.com/plugin/18568-polaris).

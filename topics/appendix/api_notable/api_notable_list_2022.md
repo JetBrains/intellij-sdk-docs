@@ -64,3 +64,8 @@ Unbundled plugins
 
 Published Maven Test Framework
 : Available as `com.jetbrains.intellij.maven:maven-test-framework` from [](intellij_artifacts.md).
+
+### Java Plugin 2022.1
+
+Testframework: JUnit5 variant for `LightJavaCodeInsightFixtureTestCase`
+: Use [`LightJavaCodeInsightFixtureTestCase5`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase5.kt).

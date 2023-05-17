@@ -26,6 +26,8 @@ The standard way of writing a light test is to extend the following classes:
   For plugins using pre-2019.2 versions use [`LightPlatformCodeInsightFixtureTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/LightPlatformCodeInsightFixtureTestCase.java).
 * [`LightJavaCodeInsightFixtureTestCase`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) (2019.2 and later) for tests that require the Java PSI or any related functionality.
   For plugins using pre-2019.2 versions use [`LightCodeInsightFixtureTestCase`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightCodeInsightFixtureTestCase.java).
+* [`LightJavaCodeInsightFixtureTestCase4`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase4.java) (2021.1 and later) as the JUnit4 variant for `LightJavaCodeInsightFixtureTestCase`.
+* [`LightJavaCodeInsightFixtureTestCase5`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase5.java) (2022.1 and later) as the JUnit5 variant for `LightJavaCodeInsightFixtureTestCase`.
 
 When writing a light test, you can specify the project's requirements that you need to have in your test, such as the module type, the configured [SDK](sdk.md), [facets](facet.md), [libraries](library.md), etc.
 You do so by extending the [`LightProjectDescriptor`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/LightProjectDescriptor.java) class and returning your project descriptor (usually stored in `static final` field) from `getProjectDescriptor()`.

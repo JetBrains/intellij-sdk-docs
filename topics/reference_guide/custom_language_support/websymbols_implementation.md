@@ -61,7 +61,7 @@ The value must be a non-negative integer and the higher proximity, the higher th
 
 apiStatus
 : *Since 2023.2 - replaces `deprecated` and `experimental` properties*
-: Documents API status of the symbol. It is one of the sub-interfaces of [`WebSymbolApiStatus`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/WebSymbolApiStatus.kt):
+: Documents API status of the symbol. It is one of the sub-interfaces of [`WebSymbolApiStatus`](%gh-ic-master%/platform/webSymbols/src/com/intellij/webSymbols/WebSymbolApiStatus.kt):
    `Stable`, `Experimental` or `Deprecated`. Deprecated symbols are appropriately highlighted in the code editor, code completion and quick documentation.
 
 deprecated
@@ -162,16 +162,15 @@ but as such is not a real HTML attribute. This distinction allows us to ignore s
 
 abstract
 : Some symbols may have a lot in common with each other and one can use abstract symbols as their super symbol.
-For performance reasons, only statically defined symbols ([](websymbols_web_types.md), Custom Element Manifest)
-can inherit from other statically defined symbols. For dynamically defined symbols you should use regular class inheritance.
+For performance reasons, only statically defined symbols ([](websymbols_web_types.md),
+[Custom Elements Manifest](https://github.com/webcomponents/custom-elements-manifest))
+can inherit from other statically defined symbols. For dynamically defined symbols regular class inheritance should be used.
 
 extension
 : Specifies whether the symbol is an extension. When matched along with a non-extension symbol it can provide or
 override some properties of the symbol, or it can extend its scope contents.
 
 ## HTML support
-
-{#attributeValue}
 
 attributeValue
 : A special property to support symbols representing HTML attributes.
@@ -203,14 +202,14 @@ This method is used by the framework to determine a new name for a symbol based 
 
 getDocumentationTarget()
 : *Since 2023.1.1*
-: Used by Web Symbols framework to get a `DocumentationTarget`, which handles documentation
+: Used by Web Symbols framework to get a [`DocumentationTarget`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/DocumentationTarget.kt), which handles documentation
 rendering for the symbol. Default implementation will use `createDocumentation()` to render the documentation.
 
 createDocumentation()
 : *Since 2023.1.1 - replaces `documentation` property*
 : Returns [`WebSymbolDocumentation`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/documentation/WebSymbolDocumentation.kt) -
 an interface holding information required to render documentation for the symbol.
-By default, it's contents are build from the available Web Symbol information. To customize symbols documentation, one can override the method, or implement
+By default, its contents are built from the available Web Symbol information. To customize symbols documentation, one can override the method, or implement
 [`WebSymbolDocumentationCustomizer`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/documentation/WebSymbolDocumentationCustomizer.kt).
 :
 [`WebSymbolDocumentation`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/documentation/WebSymbolDocumentation.kt)
@@ -367,7 +366,7 @@ There are 7 types of patterns:
    It delimits the place, where when creating code completion items, pattern evaluation should be stopped and `...` added.
    Selecting such items will result in adding the prefix part and then another code completion popup will open.
    The pattern can be sticky, which means that the prefix will be shown in the nested code completion list.
-7. Single symbol reference(*since 2023.2*): try to match text against the symbol name, but puts a reference to another element.
+7. Single symbol reference (*since 2023.2*): try to match text against the symbol name, but puts a reference to another element.
 
 ### Query Context
 

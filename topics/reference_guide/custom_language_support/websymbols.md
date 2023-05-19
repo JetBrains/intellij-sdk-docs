@@ -34,7 +34,7 @@ Currently, IDEs provide built-in integration for following language features (se
 - CSS: properties, custom properties, functions, classes, pseudo-elements, pseudo-classes and parts
 - JavaScript: string-literals, object properties, object literals and symbols (in JavaScript)
 
-You can also write integration for other languages.
+There's also the option to write integration for other languages.
 
 In the following sub-pages you learn about implementing Web Symbols for your plugin and how you can
 contribute Web Symbols by statically defining them through JSON schemas:

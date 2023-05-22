@@ -36,7 +36,7 @@ Currently, IDEs provide built-in integration for following language features (se
 
 There's also the option to write integration for other languages.
 
-In the following sub-pages you learn about implementing Web Symbols for your plugin and how you can
-contribute Web Symbols by statically defining them through JSON schemas:
+The following sub-pages provide information on how to implement Web Symbols for plugins and how to
+define them statically through JSON schemas:
 - [](websymbols_implementation.md)
 - [](websymbols_web_types.md)

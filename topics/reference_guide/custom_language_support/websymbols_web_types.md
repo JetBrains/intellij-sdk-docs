@@ -11,8 +11,8 @@ The JSON Web Types detailed schema can be accessed by
 [following this link](https://github.com/JetBrains/web-types/blob/master/schema/web-types.json).
 The format is open source and IDE-agnostic by itself, however currently it is being actively used mostly by JetBrains IDEs.
 
-It was originally created to facilitate the contribution of statically defined symbols for the
-[Vue](https://vuejs.org/) framework, and therefore you might notice some deprecated properties in the schema.
+Originally, it was created to facilitate the contribution of statically defined symbols for the
+[Vue](https://vuejs.org/) framework, which may explain the presence of some deprecated properties in the schema.
 
 A simple Web Types file looks as follows, where this file defines a `my-element` HTML element with a `foo` attribute:
 

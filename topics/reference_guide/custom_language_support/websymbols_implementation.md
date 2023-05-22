@@ -8,12 +8,13 @@ Implementation details for the Web Symbols API.
 
 The core element of the framework is a
 [`WebSymbol`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/WebSymbol.kt),
-which represents an entity in the Web Symbols model.
-It is described through `namespace`, `kind` and `name` properties. Its lifecycle is a single read action.
-If you need it to survive between read actions, use `WebSymbol.createPointer()` to create a symbol pointer.
-If the symbol is still valid, dereferencing the pointer will return a new instance of the symbol.
-During write action, the symbol might not survive PSI tree commit, so you should create a pointer
-before the commit and dereference it afterward.
+representing an entity in the Web Symbols model.
+This symbol is characterized by `namespace`, `kind` and `name` properties, with its lifecycle encapsulated
+within a single read action.
+To ensure its survival between read actions, use `WebSymbol.createPointer()` to create a symbol pointer.
+Provided the symbol remains valid, dereferencing the pointer will return a new instance of the symbol.
+It should be noted that during a write action, the symbol might not survive a PSI tree commit.
+Therefore, creating a pointer prior to the commit and dereferencing it post-commit is advised.
 
 The property `namespace` describes which language or concept (not tied to a particular language) the symbol belongs to,
 and `kind` describes which group of symbols within that particular language or concept it belongs to.
@@ -223,8 +224,9 @@ A symbol should implement
 [`PsiSourcedWebSymbol`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/PsiSourcedWebSymbol.kt)
 if its declaration is a regular `PsiElement`, e.g. a variable or a declared type.
 Once a symbol implements this interface it can be searched and refactored together with the PSI element declaration.
-If your symbol is part of a `PsiElement` (e.g. part of a string literal), or spans multiple PSI elements, or does not relate 1-1 with a PSI element,
-instead of implementing this interface you should contribute dedicated declaration provider.
+In case a symbol is part of a `PsiElement` (for instance, being part of a string literal),
+spans multiple PSI elements, or does not correlate one-to-one with a PSI element,
+contribution of a dedicated declaration provider instead of implementing this interface is recommended.
 
 ### Properties
 {#psisourcedwebsymbol-properties}
@@ -279,10 +281,11 @@ getModificationCount()
 : Symbol scopes are used in CachedValues as dependencies for query executors.
 If a symbol scope instance can mutate over the time, it should properly implement this method.
 
-When implementing a scope, which contains many elements you should extend
-[`WebSymbolsScopeWithCache`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/WebSymbolsScopeWithCache.kt),
-which cache the list of symbols and uses efficient cache to speed up queries.
-When extending the class, you only need to override the `initialize` method and provide parameters to the super constructor to specify how results should be cached.
+When implementing a scope containing many elements, extension of
+[`WebSymbolsScopeWithCache`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/WebSymbolsScopeWithCache.kt) is advised.
+This structure caches the list of symbols and employs an efficient cache mechanism to speed up queries.
+On extension of this class, it's only necessary to override `initialize()` and provide parameters to
+the super constructor to specify the caching strategy for the results.
 
 ## Model Queries
 

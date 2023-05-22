@@ -1,0 +1,35 @@
+@startuml
+
+hide empty members
+hide circle
+
+
+package Execution <<Rectangle>> {
+  abstract class Executor
+  interface ProgramRunner
+  class ExecutionEnvironment
+  abstract class ExecutionResult
+  interface ExecutionConsole
+  abstract class ProcessHandler
+}
+
+package Configuration <<Rectangle>> {
+  interface RunProfile
+  interface RunConfiguration
+  interface RunProfileState
+}
+
+
+RunProfile <|.. RunConfiguration
+RunProfile --> RunProfileState: creates
+
+RunProfileState --> ExecutionResult: prepares
+
+ExecutionResult *-- "1" ExecutionConsole
+ExecutionResult *-- "1" ProcessHandler
+
+ProgramRunner --> RunProfile
+ProgramRunner --> Executor
+ProgramRunner --> ExecutionEnvironment
+
+@enduml

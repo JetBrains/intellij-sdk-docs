@@ -1,0 +1,18 @@
+@startuml
+
+hide empty members
+hide circle
+
+interface RunProfile
+interface ConfigurationType
+abstract class ConfigurationFactory
+interface RunConfiguration
+abstract class SettingsEditor
+
+
+ConfigurationType o-- "*" ConfigurationFactory
+ConfigurationFactory ..> RunConfiguration: creates
+RunConfiguration *-- "0..*" SettingsEditor
+RunConfiguration -|> RunProfile
+
+@enduml

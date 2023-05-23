@@ -77,3 +77,4 @@ For indexing XML, also consider using [`NanoXmlUtil`](%gh-ic%/platform/indexing-
 ###  Shared Indexes
 
 For bigger projects, building and providing pre-built shared project indexes can be beneficial, see [Shared project indexes](https://www.jetbrains.com/help/idea/shared-indexes.html#project-shared-indexes).
+See also [IntelliJ Shared Indexes Tool Example](https://github.com/JetBrains/intellij-shared-indexes-tool-example).

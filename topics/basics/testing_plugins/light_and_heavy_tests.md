@@ -20,17 +20,35 @@ Light and heavy tests use different base classes or fixture classes, as describe
 
 ## Light Tests
 
-The standard way of writing a light test is to extend the following classes:
+The standard way of writing a light test is to extend one of the following classes:
 
-* [`BasePlatformTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/BasePlatformTestCase.java) (2019.2 and later) for tests that don't have any Java dependencies.
-  For plugins using pre-2019.2 versions use [`LightPlatformCodeInsightFixtureTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/LightPlatformCodeInsightFixtureTestCase.java).
-* [`LightJavaCodeInsightFixtureTestCase`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) (2019.2 and later) for tests that require the Java PSI or any related functionality.
-  For plugins using pre-2019.2 versions use [`LightCodeInsightFixtureTestCase`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightCodeInsightFixtureTestCase.java).
+<tabs>
+<tab title="Default">
+
+[`BasePlatformTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/BasePlatformTestCase.java) for tests that don't have any dependency on Java functionality.
+
+For 2019.2 and earlier, use [`LightPlatformCodeInsightFixtureTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/LightPlatformCodeInsightFixtureTestCase.java).
+
+</tab>
+
+<tab title="Plugins using Java PSI">
+
+For tests that require the [Java PSI](idea.md#java) or related functionality:
+- [`LightJavaCodeInsightFixtureTestCase`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) for JUnit3
+- [`LightJavaCodeInsightFixtureTestCase4`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase4.kt) for JUnit4 (2021.1 and later)
+- [`LightJavaCodeInsightFixtureTestCase5`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase5.kt) for JUnit5 (2021.1 and later)
+
+For 2019.2 and earlier, use [`LightCodeInsightFixtureTestCase`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightCodeInsightFixtureTestCase.java).
+
+> See [](testing_faq.md#how-to-test-a-jvm-language) on how to set up your test environment to obtain the required _Mock JDK_ automatically.
+
+</tab>
+</tabs>
+
+### LightProjectDescriptor
 
 When writing a light test, you can specify the project's requirements that you need to have in your test, such as the module type, the configured [SDK](sdk.md), [facets](facet.md), [libraries](library.md), etc.
 You do so by extending the [`LightProjectDescriptor`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/LightProjectDescriptor.java) class and returning your project descriptor (usually stored in `static final` field) from `getProjectDescriptor()`.
-
-If your plugin builds on top of Java support, please see [](testing_faq.md#how-to-test-a-jvm-language) to set up your test environment to obtain the required _Mock JDK_ automatically.
 
 Before executing each test, the project instance will be reused if the test case returns the same project descriptor as the previous one or recreated if the descriptor is different (`equals() = false`).
 

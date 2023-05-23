@@ -1,6 +1,6 @@
-# Indexing and PSI Stubs
-
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Indexing and PSI Stubs
 
 <link-summary>The indexing framework allows to access information about files content without loading them to memory and parsing.</link-summary>
 
@@ -73,3 +73,7 @@ For [stub index](stub_indexes.md), implement [`LightStubBuilder`](%gh-ic%/platfo
 If a custom language contains lazy-parseable elements that never or rarely contain any stubs, consider implementing [`StubBuilder.skipChildProcessingWhenBuildingStubs()`](%gh-ic%/platform/core-api/src/com/intellij/psi/StubBuilder.java) (preferably using Lexer/node text).
 
 For indexing XML, also consider using [`NanoXmlUtil`](%gh-ic%/platform/indexing-impl/src/com/intellij/util/xml/NanoXmlUtil.java).
+
+###  Shared Indexes
+
+For bigger projects, building and providing pre-built shared project indexes can be beneficial, see [Shared project indexes](https://www.jetbrains.com/help/idea/shared-indexes.html#project-shared-indexes).

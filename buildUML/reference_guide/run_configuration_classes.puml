@@ -11,7 +11,7 @@ abstract class SettingsEditor
 
 
 ConfigurationType o-- "*" ConfigurationFactory
-ConfigurationFactory ..> RunConfiguration: creates
+ConfigurationFactory --> RunConfiguration: creates
 RunConfiguration *-- "0..*" SettingsEditor
 RunConfiguration -|> RunProfile
 

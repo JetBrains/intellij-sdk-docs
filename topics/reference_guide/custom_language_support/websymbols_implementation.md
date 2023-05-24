@@ -103,7 +103,7 @@ for reference on the custom properties supported by IDEs.
 
 presentation
 : Returns
-[`TargetPresentation`](%gh-ic%/platform/core-api/src/com/intellij/navigation/TargetPresentation.kt)
+[`TargetPresentation`](%gh-ic%/platform/core-api/src/com/intellij/platform/backend/presentation/TargetPresentation.kt)
 used by
 [`SearchTarget`](%gh-ic%/platform/lang-impl/src/com/intellij/find/usages/api/SearchTarget.kt)
 and

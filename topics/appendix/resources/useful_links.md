@@ -2,11 +2,15 @@
 
 # Useful Links
 
-<link-summary>Useful tooling, plugins and repositories.</link-summary>
+<link-summary>Useful tooling, plugins, and repositories.</link-summary>
 
 The following links represent useful resources for working with the IntelliJ Platform and creating plugins.
 
 ### Tooling
+
+> Use [Writerside](https://blog.jetbrains.com/platform/2023/03/publish-documentation-for-your-plugin-with-writerside/) to create and publish documentation for your plugin.
+>
+{style="note"}
 
 * [IDE Settings, Caches, Logs, and Plugins](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs)
 * [](internal_actions_intro.md)

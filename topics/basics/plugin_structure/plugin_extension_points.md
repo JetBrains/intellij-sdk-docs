@@ -48,6 +48,7 @@ Its fully qualified name required in [Using Extension Points](#using-extension-p
 
 The `beanClass` attribute sets a bean class that specifies one or several properties annotated with the [`@Attribute`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotation.
 Note that bean classes do not follow the JavaBean standard.
+Implement [`PluginAware`](%gh-ic%/platform/extensions/src/com/intellij/openapi/extensions/PluginAware.java) to obtain information about the plugin providing the actual extension.
 
 The `interface` attribute sets an interface the plugin that contributes to the extension point must implement.
 

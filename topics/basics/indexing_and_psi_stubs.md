@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Indexing and PSI Stubs
 
@@ -46,6 +46,8 @@ Sometimes, the following conditions hold:
 
 A [file-based index](file_based_indexes.md) can be used in such cases, but file gists provide a way to perform data calculation lazily, caching on disk, and a more lightweight API.
 Please see [`VirtualFileGist`](%gh-ic%/platform/indexing-api/src/com/intellij/util/gist/VirtualFileGist.java) and [`PsiFileGist`](%gh-ic%/platform/indexing-api/src/com/intellij/util/gist/PsiFileGist.java) documentation.
+
+> Note performance implications noted in [`VirtualFileGist`](%gh-ic%/platform/indexing-api/src/com/intellij/util/gist/VirtualFileGist.java) Javadoc.
 
 **Example:**
 

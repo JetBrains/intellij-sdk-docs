@@ -122,6 +122,6 @@ Similarly, `action` resolves to all registered [`<action>`](plugin_configuration
 
 Specifying `@org.jetbrains.annotations.Nls` validates a UI `String` capitalization according to the text property `Capitalization` enum value (2019.2 and later).
 
-Properties annotated with any of [`ApiStatus`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java) will be highlighted accordingly.
+Properties marked as `@Deprecated` or annotated with any of [`ApiStatus`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java) `@Internal`, `@Experimental`, `@ScheduledForRemoval`, or `@Obsolete` will be highlighted accordingly.
 
 Attributes with `Enum` type support code insight with _lowerCamelCased_ notation (2020.1 and later).

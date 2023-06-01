@@ -262,14 +262,14 @@ To fix that issue, upgrade the Java version to the latest patch available of the
 
 It is possible to add a dependency on a plugin available in the file system — like a plugin update downloaded manually from JetBrains Marketplace or built separately in another project.
 
-To configure the dependency, add the `File` instance to the [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) property and point it to the `lib` directory inside the extracted plugin's directory or any other parent that contains plugin's <path>.jar</path> files.
+To configure the dependency, add the `File` instance to the [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) property and point it to the extracted plugin's directory which contains the <path>lib</path> directory.
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 intellij {
-    plugins.set(listOf(file("/path/to/plugin/lib/")))
+    plugins.set(listOf(file("/path/to/plugin/")))
 }
 ```
 
@@ -278,14 +278,14 @@ intellij {
 
 ```groovy
 intellij {
-    plugins = [file("/path/to/plugin/lib/")]
+    plugins = [file("/path/to/plugin/")]
 }
 ```
 
 </tab>
 </tabs>
 
-It is also possible to refer to the sandbox directory of another Gradle project — to do that, point to the <path>/projects/plugin-name/build/idea-sandbox/plugins/plugin-name/lib/</path> directory.
+It is also possible to refer to the sandbox directory of another Gradle project — to do that, point to the <path>/projects/plugin-name/build/idea-sandbox/plugins/plugin-name/</path> directory.
 
 
 ### Kotlin compiler throws `Out of memory. Java heap space` error

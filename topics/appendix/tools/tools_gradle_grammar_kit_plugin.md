@@ -286,6 +286,6 @@ Default
 
 ### Usage Examples
 
-* [Perl5 plugin](https://github.com/Camelcade/Perl5-IDEA/blob/master/build.gradle)
+* [Perl5 plugin](https://github.com/Camelcade/Perl5-IDEA/blob/master/build.gradle.kts)
 * [Rust plugin](https://github.com/intellij-rust/intellij-rust/blob/master/build.gradle.kts)
 * [Bamboo Soy plugin](https://github.com/google/bamboo-soy/blob/master/build.gradle)

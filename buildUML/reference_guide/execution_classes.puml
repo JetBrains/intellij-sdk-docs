@@ -24,8 +24,8 @@ RunProfile --> RunProfileState: creates
 
 RunProfileState --> ExecutionResult: prepares
 
-ExecutionResult *-- "1" ExecutionConsole
-ExecutionResult *-- "1" ProcessHandler
+ExecutionResult o-- "1" ExecutionConsole
+ExecutionResult o-- "1" ProcessHandler
 
 ProgramRunner --> RunProfile: executes
 ProgramRunner --> Executor

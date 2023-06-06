@@ -10,9 +10,9 @@ interface RunConfiguration
 abstract class SettingsEditor
 
 
-ConfigurationType o-- "*" ConfigurationFactory
+ConfigurationType *-- "*" ConfigurationFactory
 ConfigurationFactory --> RunConfiguration: creates
-RunConfiguration *-- "0..*" SettingsEditor
-RunConfiguration -|> RunProfile
+RunConfiguration o-- "0..*" SettingsEditor
+RunConfiguration -l|> RunProfile
 
 @enduml

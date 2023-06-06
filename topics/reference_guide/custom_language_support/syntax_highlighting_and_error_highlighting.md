@@ -98,7 +98,7 @@ To highlight a region of text as a warning or error:
 <tab title="2020.1 and later" group-key="2020.1">
 
 ```java
-    holder.newAnnotation(HighlightSeverity.WARNING,"Invalid code") // or HighlightSeverity.ERROR
+    holder.newAnnotation(HighlightSeverity.WARNING, "Invalid code") // or HighlightSeverity.ERROR
         .withFix(new MyFix(psiElement))
         .create();
 ```

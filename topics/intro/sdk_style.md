@@ -43,6 +43,7 @@ The page title should be as concise as possible, so it can be reused in the [](#
 Every page **should** provide a short excerpt (usually one sentence) using dedicated `<link-summary>` tag before the main page contents:
 
 ```html
+
 <link-summary>Defining groups of related settings.</link-summary>
 ```
 
@@ -87,10 +88,10 @@ Consistent text styles are used to standardize references and keywords:
 * Menu paths are wrapped using `<ui-path>` with pipe characters separating each level: `<ui-path>Settings | Editor</ui-path>`: <ui-path>Settings | Editor</ui-path>
   Inside tables, use `&#124;` instead of `|` to prevent escaping problems.
 * User interface element names like labels, buttons, checkboxes, etc. are wrapped using `<control>`: `Press <control>Continue</continue>`: Press <control>Continue</control>
-* Non-code keywords and quotations, or the names of non-code files, are formatted as italic style: \_Theme\_ (_Theme_), \_README.md\_ (_README.md_.)
+* Non-code keywords and quotations, or the names of non-code files are formatted as italic style: \_Theme\_ (_Theme_), \_README.md\_ (_README.md_.)
   Examples of this file type include _LICENSE.txt_ and _README.md_.
 * Code keywords and classnames are formatted as code style: \`interface\`: `interface`, \`AnAction\`: `AnAction`, \`name\` attribute: `name` attribute.
-* File names are wrapped using `<path>`: `<path>build.gradle.kts</path>` <path>build.gradle.kts</path>.
+* Filenames are wrapped using `<path>`: `<path>build.gradle.kts</path>` <path>build.gradle.kts</path>.
 * File formats are shown as all capital letters: PNG and XML.
 * Filename extensions are not capitalized when part of a full filename, path, or URL: <path>plugin.xml</path>.
 * Keyboard shortcuts are wrapped using `<shortcut>`: `press <shortcut>Alt+Insert</shortcut>` becomes "press <shortcut>Alt+Insert</shortcut>".
@@ -102,9 +103,9 @@ Consistent text styles are used to standardize references and keywords:
 Links are handled as standard Markdown links and can be anchored to external sites, pages within the site, or headings in the pages.
 
 When a Markdown header is converted to an HTML header, it is assigned an ID so that it can be linked.
-For example, `## Basics` gets the ID of `basics`, and can be linked either in the same page or cross-page as described below.
+For example, `## Basics` gets the ID of `basics`, and can be linked either on the same page or cross-page as described below.
 
-In some cases (e.g., the same heading text appears multiple times on the same page) it is necessary to specify a distinct ID manually:
+In some cases (e.g., the same heading text appears multiple times on the same page), it is necessary to specify a distinct ID manually:
 
 ```
 ## Task 1
@@ -155,21 +156,31 @@ Links to files in source code packages in other GitHub repositories follow much 
 
 ### Guidelines for Highlighting Syntax
 
-In-paragraph code fragments and IntelliJ Platform APIs are formatted according to these rules:
+In-paragraph code fragments and IntelliJ Platform APIs are formatted according to the following rules.
+
+#### Code
 
 * Avoid using qualifiers like "`Foo` interface" or "`Foo` abstract class".
-  Just refer to `Foo`.
+  Instead, refer to `Foo`.
 * The FQN is used for the first reference to an interface, class, or package on a page.
   Rather than `AnAction`, introduce it as `com.intellij.openapi.actionSystem.AnAction`.
   Subsequent references on the page can be `AnAction`.
-  Exception: the FQN is not used with an GitHub [link](#links).
+  Exception: the FQN is not used with a GitHub [link](#links).
+* Method names always use empty parentheses: "call `bar()` to apply."
+  Method names are prefixed with the class/interface name when needed for clarity: `Foo.bar()`.
+
+#### Extension Points
+
+* Extension point name must be followed by "extension point (EP)" for the first occurrence on a page.
+  All following can use "EP" suffix.
 * Use the FQN when first introducing an [extension point](plugin_extension_points.md) (EP) on a page.
   Rather than `stubIndex`, introduce `com.intellij.stubIndex`.
   Subsequent mentions on the page can be `stubIndex`.
+
+#### XML
+
 * For XML elements, use the tag notation with syntax highlighting: `<idea-version>`.
   Attributes are shown with syntax highlighting, and attribute values are shown in quotes: `since-build="191"`
-* Method names always use empty parentheses: "call `bar()` to apply."
-  Method names are prefixed with the class/interface name when needed for clarity: `Foo.bar()`.
 
 ### Source Code
 
@@ -232,10 +243,10 @@ The example below will be displayed as a callout, styled as a "note":
 
 The styles available for callouts are:
 
-* `tip` - Information that makes the reader more productive (Default).
-* `note` - Information that is important for the reader to understand.
+* `tip`—Information that makes the reader more productive (Default).
+* `note`—Information that is important for the reader to understand.
   This callout is reserved for essential points and concepts.
-* `warning` - Information that is critical for the user to understand to prevent failures or errors.
+* `warning`—Information that is critical for the user to understand to prevent failures or errors.
 
 Complex callouts can also specify `title` attribute:
 
@@ -309,7 +320,7 @@ For **SVG** images, use this notation:
 
 ## Table of Contents
 
-The table of contents for the site is displayed in the tree view on the left-hand side of the site, and it is generated from the <path>ijs.tree</path> file.
+The table of contents for the site is displayed in the tree view on the left side of the site, and it is generated from the <path>ijs.tree</path> file.
 The list can have nested items, which are displayed as child items in the table of contents.
 
 If absolutely required, overriding the page title text to show in table of contents is possible via `toc-title` attribute.
@@ -330,6 +341,6 @@ Specify the previous path(s) including <path>.html</path> extension in `accepts-
 ```xml
 
 <toc-element
-    id="themes_getting_started.md"
-    accepts-web-file-names="themes.html,themes-intro.html"/>
+        id="themes_getting_started.md"
+        accepts-web-file-names="themes.html,themes-intro.html"/>
 ```

@@ -80,6 +80,7 @@ Therefore, any reported violations can be disregarded.
 | [`BundleBase`](%gh-ic%/platform/util/src/com/intellij/BundleBase.java)                                                                             | Made public in 2022.1                           |
 | [`IdFilter`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/IdFilter.java)                                                           | Made public in 2021.2/3                         |
 | [`HashingStrategy`](%gh-ic%/platform/util/base/src/com/intellij/util/containers/HashingStrategy.java)                                              | Made public in 2023.1                           |
+| [`JsonCustomStructureViewFactory`](%gh-ic%/json/src/com/intellij/json/structureView/JsonCustomStructureViewFactory.java)                           | Made public in 2023.2                           |
 | [`RunAnythingCommandLineProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/runAnything/activity/RunAnythingCommandLineProvider.kt) | Made public in 2021.3                           |
 | `PhpExpectedFunctionArgument`                                                                                                                      | Made public in 2022.1                           |
 | `org.jetbrains.yaml.meta.*`                                                                                                                        | YAML Metadata API will be made public in 2023.1 |

@@ -29,7 +29,7 @@ The existence of `RunProfileState` allows extensions and other components to pat
 See [standard run profile state classes](#run-profile-state).
 
 [`RunConfiguration`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RunConfiguration.java) is a specific type of run profile, which can be managed and persisted by users from UI.
-See the [Run Configurations](run_configuration_management.md) section for more details.
+See the [Run Configurations](run_configurations.md) section for more details.
 
 ### Execution Classes
 

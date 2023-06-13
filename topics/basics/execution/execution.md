@@ -115,9 +115,13 @@ Alternatively, it can be handled with the following steps:
 
 If the running process uses [ANSI escape codes to color its output](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors), use the [`ColoredProcessHandler`](%gh-ic%/platform/platform-util-io/src/com/intellij/execution/process/ColoredProcessHandler.java) class to display the colors in the IDE console.
 
+#### Console Filters
+
 Console [`Filter`](%gh-ic%/platform/execution/src/com/intellij/execution/filters/Filter.java) allows converting certain strings found in the process output to clickable hyperlinks.
 To attach a filter to the console, use `CommandLineState.addConsoleFilters()` or [`TextConsoleBuilder.addFilter()`](%gh-ic%/platform/execution/src/com/intellij/execution/filters/TextConsoleBuilder.java) if the console is created manually.
 Two standard filter implementations are [`RegexpFilter`](%gh-ic%/platform/lang-api/src/com/intellij/execution/filters/RegexpFilter.java) and [`UrlFilter`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/filters/UrlFilter.java).
+
+Console filters can be also provided by implementing [`ConsoleFilterProvider`](%gh-ic%/platform/lang-api/src/com/intellij/execution/filters/ConsoleFilterProvider.java) and registering it in `com.intellij.consoleFilterProvider` EP.
 
 ## Listening for Execution Events
 

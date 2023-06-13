@@ -16,7 +16,9 @@ import org.jetbrains.annotations.Nullable;
 
 public class DemoRunConfiguration extends RunConfigurationBase<DemoRunConfigurationOptions> {
 
-  protected DemoRunConfiguration(Project project, ConfigurationFactory factory, String name) {
+  protected DemoRunConfiguration(Project project,
+                                 ConfigurationFactory factory,
+                                 String name) {
     super(project, factory, name);
   }
 
@@ -42,13 +44,16 @@ public class DemoRunConfiguration extends RunConfigurationBase<DemoRunConfigurat
 
   @Nullable
   @Override
-  public RunProfileState getState(@NotNull Executor executor, @NotNull ExecutionEnvironment executionEnvironment) {
-    return new CommandLineState(executionEnvironment) {
+  public RunProfileState getState(@NotNull Executor executor,
+                                  @NotNull ExecutionEnvironment environment) {
+    return new CommandLineState(environment) {
       @NotNull
       @Override
       protected ProcessHandler startProcess() throws ExecutionException {
-        GeneralCommandLine commandLine = new GeneralCommandLine(getOptions().getScriptName());
-        OSProcessHandler processHandler = ProcessHandlerFactory.getInstance().createColoredProcessHandler(commandLine);
+        GeneralCommandLine commandLine =
+                new GeneralCommandLine(getOptions().getScriptName());
+        OSProcessHandler processHandler = ProcessHandlerFactory.getInstance()
+                .createColoredProcessHandler(commandLine);
         ProcessTerminatedListener.attach(processHandler);
         return processHandler;
       }

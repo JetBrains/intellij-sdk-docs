@@ -10,7 +10,8 @@ public class DemoRunConfigurationType extends ConfigurationTypeBase {
   static final String ID = "DemoRunConfiguration";
 
   protected DemoRunConfigurationType() {
-    super(ID, "Demo", "Demo run configuration type", NotNullLazyValue.createValue(() -> AllIcons.Nodes.Console));
+    super(ID, "Demo", "Demo run configuration type",
+            NotNullLazyValue.createValue(() -> AllIcons.Nodes.Console));
     addFactory(new DemoConfigurationFactory(this));
   }
 

@@ -1,8 +1,8 @@
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
 # Run Configurations Tutorial
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
-
-<link-summary>Adding custom run configuration tutorial.</link-summary>
+<link-summary>Implementing a custom run configuration tutorial.</link-summary>
 
 <tldr>
 
@@ -10,20 +10,27 @@
 
 </tldr>
 
-These series of steps show how to register and implement a simple Run Configuration.
-Run Configurations are used to run internal and external processes from within IntelliJ Platform based products.
+These series of steps show how to register and implement a simple [run configuration](run_configuration_management.md).
+Run configurations are used to run internal and external processes from within IntelliJ Platform based products.
 
-Consider the **runConfiguration** sample plugin available in the [code samples](%gh-sdk-samples%/run_configuration).
-See [Code Samples](code_samples.md) on how to set up and run the plugin.
+Full implementation is available in the [code samples](%gh-sdk-samples%/run_configuration).
 
 ## Pre-Requirements
 
 Create an empty plugin project.
 See the [](creating_plugin_project.md) section for details.
 
-## Register a New ConfigurationType
+## Implement a ConfigurationType
 
-Add new `com.intellij.configurationType` extension to the [plugin.xml](%gh-sdk-samples%/run_configuration/src/main/resources/META-INF/plugin.xml)
+Implement [`ConfigurationType`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/ConfigurationType.java):
+
+```java
+```
+{src="run_configuration/src/main/java/org/jetbrains/sdk/runConfiguration/DemoRunConfigurationType.java" include-symbol="DemoRunConfigurationType"}
+
+## Register the ConfigurationType
+
+Register implemented configuration type in `com.intellij.configurationType` extension point in the [plugin.xml](%gh-sdk-samples%/run_configuration/src/main/resources/META-INF/plugin.xml):
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
@@ -31,14 +38,6 @@ Add new `com.intellij.configurationType` extension to the [plugin.xml](%gh-sdk-s
       implementation="org.jetbrains.sdk.runConfiguration.DemoRunConfigurationType"/>
 </extensions>
 ```
-
-## Implement ConfigurationType
-
-Implement [`ConfigurationType`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/ConfigurationType.java)  interface registered in the Step 1.
-
-```java
-```
-{src="run_configuration/src/main/java/org/jetbrains/sdk/runConfiguration/DemoRunConfigurationType.java" include-symbol="DemoRunConfigurationType"}
 
 ## Implement a ConfigurationFactory
 
@@ -56,28 +55,16 @@ Implement corresponding configuration options class extending [`RunConfiguration
 
 ## Implement a Run Configuration
 
-To make your changes visible from the UI, implement a new Run Configuration.
+To make your changes visible from the UI, implement a new run configuration.
 
-**Note:** In most of the cases you can derive a custom Run Configuration class from the [`RunConfigurationBase`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RunConfigurationBase.java).
-If you need to implement specific settings externalization rules and I/O behaviour, use [`RunConfiguration`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RunConfiguration.java) interface.
+**Note:** In most of the cases it is sufficient derive a custom run configuration class from the [`RunConfigurationBase`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RunConfigurationBase.java).
+If implementing specific settings externalization rules and I/O behaviour is required, use [`RunConfiguration`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RunConfiguration.java) interface.
 
 ```java
 ```
 {src="run_configuration/src/main/java/org/jetbrains/sdk/runConfiguration/DemoRunConfiguration.java" include-symbol="DemoRunConfiguration"}
 
-## Create and Implement Run Configuration UI Form
-
-Make sure _UI Designer_ plugin is [enabled](https://www.jetbrains.com/help/idea/managing-plugins.html).
-
-Create a new [UI form](https://www.jetbrains.com/help/idea/designing-gui-major-steps.html) that defines, how an inner part of the new Run Configuration should look like.
-
-Default Run Configuration will be looking like this:
-
-![Default Run Configuration Look](ui_form.png)
-
-## Bind the UI Form
-
-The UI Form should be bound with a Java class responsible for handling UI components logic.
+## Implement Setting Editor
 
 ```java
 ```
@@ -85,8 +72,14 @@ The UI Form should be bound with a Java class responsible for handling UI compon
 
 ## Compile and Run the Plugin
 
-Refer to [Running and Debugging a Plugin](creating_plugin_project.md#executing-the-plugin).
+<procedure>
 
-After going through the steps described above you can create a custom Run Configuration from your plugin.
+1. [Execute](creating_plugin_project.md#executing-the-plugin) the plugin.
+2. Go to <ui-path>Run \| Edit Configurations...</ui-path>, click to <control>Add</control> button (<control>+</control> icon), and select <control>Demo</control>.
+3. In the <control>Script file</control> field provide the path to an example script (e.g. displaying "Hello world" message).
+4. Click the <control>Apply</control> button and close the dialog.
+5. In the run toolbar select created configuration and click the run button.
 
-![New Run Configuration Type](new_run_configuration.png)
+The script should be executed and its result should be displayed in the console.
+
+</procedure>

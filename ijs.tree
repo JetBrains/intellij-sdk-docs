@@ -117,9 +117,10 @@
       <toc-element topic="text_selection.md"/>
       <toc-element topic="multiple_carets.md"/>
     </toc-element>
-    <toc-element topic="basic_run_configurations.md" accepts-web-file-names="run_configurations.html">
+    <!-- TODO: run_configurations -> run_configurations_tutorial -->
+    <!-- TODO: run_configuration_management -> run_configurations -->
+    <toc-element topic="execution.md" accepts-web-file-names="run_configuration_execution.html,basic_run-configurations.html,run-configuration-execution.html">
       <toc-element topic="run_configuration_management.md"/>
-      <toc-element topic="run_configuration_execution.md"/>
       <toc-element topic="run_configurations.md"/>
     </toc-element>
     <toc-element topic="vcs_integration_for_plugins.md">

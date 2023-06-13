@@ -5,7 +5,7 @@
 <link-summary>Introduction to the IntelliJ Platform Persistence Model.</link-summary>
 
 The IntelliJ Platform Persistence Model is used to store a variety of information.
-For example, [Run Configurations](basic_run_configurations.md) and [Settings](settings.md) are stored using the Persistence Model.
+For example, [Run Configurations](run_configuration_management.md) and [Settings](settings.md) are stored using the Persistence Model.
 
 There are two distinct approaches, depending on the type of data being persisted:
 * [Persisting State of Components](persisting_state_of_components.md)

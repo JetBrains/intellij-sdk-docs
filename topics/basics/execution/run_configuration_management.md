@@ -4,7 +4,13 @@
 
 <link-summary>Implementing run configurations management support.</link-summary>
 
-[Run Configuration](https://www.jetbrains.com/help/idea/run-debug-configuration.html) is a specific type of run profile.
+<tldr>
+
+**Product Help:** [Run/Debug Configuration](https://www.jetbrains.com/idea/help/run-debug-configuration.html)
+
+</tldr>
+
+Run Configuration is a specific type of run profile.
 Run configurations can be managed from UI and persisted between IDE restarts.
 They allow users to specify execution options like a working directory, environment variables, program arguments, and other parameters required to run a process.
 Run configurations can be started from the <control>Run</control> toolbar, the editor, and executed programmatically from actions or other components.

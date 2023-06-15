@@ -143,7 +143,7 @@ Plugins can modify existing run configurations before they are run, e.g., by add
 However, there is no single platform-wide extension point, and different IDEs provide different configuration base classes and extension points, allowing for their modifications.
 To see what is possible in your case, check the [`RunConfigurationExtensionBase`](%gh-ic%/platform/execution/src/com/intellij/execution/configuration/RunConfigurationExtensionBase.java) inheritors.
 Examples:
-* [`RunConfigurationExtension`](%gh-ic%/java/execution/impl/src/com/intellij/execution/RunConfigurationExtension.java) implementations registered in `com.intellij.runConfigurationExtension` EP allow for modifying Java run configurations extending [`RunConfigurationBase`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RunConfigurationBase.java)
+* [`RunConfigurationExtension`](%gh-ic%/java/execution/impl/src/com/intellij/execution/RunConfigurationExtension.java) implementations registered in `com.intellij.runConfigurationExtension` EP allow for modifying Java run configurations extending [`RunConfigurationBase`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RunConfigurationBase.java).
 * [`PythonRunConfigurationExtension`](%gh-ic%/python/src/com/jetbrains/python/run/PythonRunConfigurationExtension.java) implementations registered in `Pythonid.runConfigurationExtension` EP allow for modifying configuration extending [`AbstractPythonRunConfiguration`](%gh-ic%/python/src/com/jetbrains/python/run/AbstractPythonRunConfiguration.java)
 etc.
 

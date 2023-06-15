@@ -110,6 +110,8 @@ The extension requires implementing the following methods:
 * `isConfigurationFromContext()` - checks if a configuration was created from the specified context.
   This method allows reusing an existing run configuration, which applies to the current context, instead of creating a new one and possibly ignoring the user's customizations in the existing one.
 
+If the run configuration requires additional data before it is executed for the first time, override [`RunConfigurationProducer.onFirstRun()`](%gh-ic%/platform/lang-api/src/com/intellij/execution/actions/RunConfigurationProducer.java) to provide it or display UI to get the data from the user.
+
 To support the automatic naming of configurations created from context, the configuration should extend [`LocatableConfigurationBase`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/LocatableConfigurationBase.java).
 It supports generating a name for a configuration from its settings and tracking whether the user changed the name.
 

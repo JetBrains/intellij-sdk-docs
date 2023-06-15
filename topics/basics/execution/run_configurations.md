@@ -26,7 +26,7 @@ Run Configuration API (except `SettingsEditor` class, which is a class shared by
 ### ConfigurationType
 
 The entry point of a run configuration implementation is [`ConfigurationType`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/ConfigurationType.java).
-It is responsible for the run configuration type and instances presentation and contains configuration factories.
+It is responsible for the run configuration type and instances presentation and contains [configuration factories](#configurationfactory).
 A single configuration type can have multiple configuration factories, e.g., the Docker configuration type can create run configurations for:
 * Dockerfile
 * Docker Image

@@ -10,7 +10,7 @@
 
 </tldr>
 
-These series of steps show how to register and implement a simple [run configuration](run_configurations.md).
+This step-by-step guide shows how to register and implement a simple [run configuration](run_configurations.md).
 Run configurations are used to run internal and external processes from within IntelliJ Platform based products.
 
 Full implementation is available in the [code samples](%gh-sdk-samples%/run_configuration).

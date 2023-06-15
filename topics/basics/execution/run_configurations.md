@@ -147,7 +147,7 @@ Examples:
 * [`PythonRunConfigurationExtension`](%gh-ic%/python/src/com/jetbrains/python/run/PythonRunConfigurationExtension.java) implementations registered in `Pythonid.runConfigurationExtension` EP allow for modifying configuration extending [`AbstractPythonRunConfiguration`](%gh-ic%/python/src/com/jetbrains/python/run/AbstractPythonRunConfiguration.java)
 etc.
 
-## Referencing Environment Variables in Run Configuration
+## Referencing Environment Variables in Run Configurations
 
 Run configurations can define user environment variables specific to a given run configuration and include system environment variables.
 Sometimes, it is convenient to reference existing variables in newly created variables, e.g., if a user creates an `EXTENDED_PATH` variable and builds it from a custom entry and the system `PATH` variable, they should reference it in the value by surrounding it with the `$` character: `/additional/entry:$PATH$`.

@@ -10,7 +10,8 @@
 
 </tldr>
 
-Run Configuration is a specific type of run profile.
+A run configuration is a specific type of run profile.
+It is a set of predefined settings that specify how a particular project or application should be executed or debugged.
 Run configurations can be managed from the UI and persisted between IDE restarts.
 They allow users to specify execution options like a working directory, environment variables, program arguments, and other parameters required to run a process.
 Run configurations can be started from the <control>Run</control> toolbar, the editor, and executed programmatically from actions or other components.
@@ -58,7 +59,7 @@ If customization is needed, override the presentation methods in the factory cla
 When implementing a run configuration class, consider using one of the standard base classes:
 * [`RunConfigurationBase`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RunConfigurationBase.java) - a general-purpose base class that contains the most basic implementation of a run configuration.
 * [`LocatableConfigurationBase`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/LocatableConfigurationBase.java) - a base class for [configurations that can be created from context](#creating-a-run-configuration-from-context).
-* [`ModuleBasedConfiguration`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/ModuleBasedConfiguration.java) - a base class for a configuration that is associated with a specific module (e.g., Java run configurations use the selected module to determine the run classpath).
+* [`ModuleBasedConfiguration`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/ModuleBasedConfiguration.java) - a base class for a configuration that is associated with a specific [module](module.md) (e.g., Java run configurations use the selected module to determine the run classpath).
 
 ### SettingsEditor
 
@@ -67,7 +68,7 @@ If it is required, a `RunConfiguration` implementation should return a [`Setting
 * `getConfigurationEditor()` for editing run configuration settings
 * `getRunnerSettingsEditor()` for editing settings for a specific program runner
 
-A `SettingsEditor` implementation should provide the following methods:
+A `SettingsEditor` implementation must provide the following methods:
 * `getComponent()` - creates a UI component for displaying settings controls
 * `applyEditorTo()` - copies the current editor UI state into the target settings object
 * `resetEditorFrom()` - resets the current editor UI state to the initial settings state
@@ -76,7 +77,7 @@ In the case of run configuration settings, the settings object is `RunConfigurat
 Settings specific to a program runner must implement [`ConfigurationPerRunnerSettings`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/ConfigurationPerRunnerSettings.java).
 
 If a settings editor is complex, consider splitting it into multiple editors.
-These editors should be added to the [`SettingsEditorGroup`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/SettingsEditorGroup.java) object, which is a `SettingsEditor`'s implementation itself and should be returned from `getConfigurationEditor()`/`getRunnerSettingsEditor()`.
+These editors should be added to the [`SettingsEditorGroup`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/SettingsEditorGroup.java) object, which is a `SettingsEditor`'s implementation itself and must be returned from `getConfigurationEditor()` or `getRunnerSettingsEditor()`.
 Each editor added to the group is displayed in a separate tab.
 See [`ApplicationConfiguration.getConfigurationEditor()`](%gh-ic%/java/execution/impl/src/com/intellij/execution/application/ApplicationConfiguration.java) as a reference.
 
@@ -134,7 +135,7 @@ The executor can be retrieved with a static method if a required executor expose
 Some run configurations contain references to classes, files, or directories in their settings, and these settings usually need to be updated when the corresponding element is renamed or moved.
 To support that, a run configuration needs to implement the [`RefactoringListenerProvider`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RefactoringListenerProvider.java) interface.
 
-The `RefactoringListenerProvider.getRefactoringElementListener()` method's implementation should check whether the refactored element is referred from the run configuration.
+The `RefactoringListenerProvider.getRefactoringElementListener()`'s implementation should check whether the refactored element is referred from the run configuration.
 If it is, return a [`RefactoringElementListener`](%gh-ic%/platform/analysis-api/src/com/intellij/refactoring/listeners/RefactoringElementListener.java) that updates the run configuration according to the new name and location of the element.
 
 ## Modifying Existing Run Configurations

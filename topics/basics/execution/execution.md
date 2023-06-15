@@ -5,7 +5,7 @@
 <link-summary>Run profile execution lifecycle and description of APIs used to execute processes.</link-summary>
 
 The IntelliJ Platform Execution API allows [running external processes](https://www.jetbrains.com/help/idea/running-applications.html) from within the IDE, e.g., applications, tests, servers, scripts, etc.
-These processes can be run from the editor, project view, run toolbar, or custom actions.
+These processes can be run from the [editor](editors.md), project view, run toolbar, or custom [actions](action_system.md).
 Executed processes can be stopped, restarted, and their output and logs can be viewed in the run console.
 It is possible to manage and persist [Run Configurations](https://www.jetbrains.com/help/idea/run-debug-configuration.html) from the UI.
 
@@ -64,7 +64,7 @@ See [standard process handler class](#process-handler).
 A standard execution of a process consists of the following steps:
 
 1. Depending on the execution context:
-    1. For execution initiated by a user from UI: a `RunConfiguration` is selected by a user (e.g., by choosing one from the run configurations combo box) and an `Executor` (e.g., by pressing a toolbar button).
+    1. For execution initiated by a user from UI: the user selects a `RunConfiguration` (e.g., by choosing one from the run configurations combo box) and an `Executor` (e.g., by pressing the <control>Run</control> toolbar button).
     2. For programmatic execution: a `RunProfile` instance is created, and an `Executor` is provided.
        Specific run executors can be accessed with `ExecutorRegistry.getInstance().getExecutorById()`.
 
@@ -83,8 +83,8 @@ A standard implementation of `ProgramRunner.execute()` goes through the followin
    It starts the process, attaches a `ProcessHandler` to its input and output streams, creates a console to display the process output, and returns an `ExecutionResult` object aggregating the `ExecutionConsole` and the `ProcessHandler`.
 3. The `RunContentBuilder` object is created and invoked to display the execution console in a <control>Run</control> or <control>Debug</control> tool window tab.
 
-Example:
-* [`RunAnythingCommandProvider.runCommand()`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/runAnything/activity/RunAnythingCommandProvider.java), which programmatically executes a command typed by a user in the <control>Run Anything</control> popup
+**Example**:
+[`RunAnythingCommandProvider.runCommand()`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/runAnything/activity/RunAnythingCommandProvider.java), which programmatically executes a command typed by a user in the <control>Run Anything</control> popup
 
 ## Standard Base Classes
 
@@ -96,7 +96,7 @@ For starting the process, it's recommended to use the [`GeneralCommandLine`](%gh
 
 Alternatively, if the process is a JVM-based one, use the [`JavaCommandLineState`](%gh-ic%/java/execution/impl/src/com/intellij/execution/configurations/JavaCommandLineState.java) base class.
 It handles the JVM command line parameters and can take care of details like calculating the classpath for the JVM.
-Note that using this class requires [dependency](plugin_dependencies.md) on the Java plugin.
+Note that using this class requires [dependency](plugin_dependencies.md) on [the Java plugin](idea.md#java).
 
 ### Process Handler
 

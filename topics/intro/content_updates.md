@@ -12,6 +12,12 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2023
 
+### June
+{#june-23}
+
+Execution
+: Rework [](execution.md), [](run_configurations.md), and [](run_configurations_tutorial.md) pages.
+
 ### April
 {#april-23}
 

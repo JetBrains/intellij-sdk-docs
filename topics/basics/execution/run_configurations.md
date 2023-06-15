@@ -62,7 +62,7 @@ When implementing a run configuration class, consider using one of the standard 
 
 ### SettingsEditor
 
-Run configuration may allow editing its general settings and settings specific to a [program runner](execution.md#execution-classes).
+A run configuration may allow editing its general settings and settings specific to a [program runner](execution.md#execution-classes).
 If it is required, a `RunConfiguration` implementation should return a [`SettingsEditor`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/SettingsEditor.java) instance from:
 * `getConfigurationEditor()` for editing run configuration settings
 * `getRunnerSettingsEditor()` for editing settings for a specific program runner

@@ -102,7 +102,7 @@ Run configurations can be created and run from context, e.g., by right-clicking 
 This is achieved by implementing [`LazyRunConfigurationProducer`](%gh-ic%/platform/lang-api/src/com/intellij/execution/actions/LazyRunConfigurationProducer.kt) and registering it in `com.intellij.runConfigurationProducer` EP.
 
 The extension requires implementing the following methods:
-* `getConfigurationFactory()` - returns the factory creating run configurations of the type specified in the extension class implementation
+* `getConfigurationFactory()` - returns the factory creating run configurations of the type specified in the extension class implementation.
 * `setupConfigurationFromContext()` - receives a blank configuration of the specified type and a [`ConfigurationContext`](%gh-ic%/platform/lang-api/src/com/intellij/execution/actions/ConfigurationContext.java) containing information about a source code location (accessible by calling `getLocation()` or `getPsiLocation()`).
   The implementation needs to check whether the location is applicable to the configuration type (e.g. if it's in a file of the supported language).
   If it is, put the correct context-specific settings into the run configuration and return true.

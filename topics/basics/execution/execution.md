@@ -5,7 +5,7 @@
 <link-summary>Run profile execution lifecycle and description of APIs used to execute processes.</link-summary>
 
 The IntelliJ Platform Execution API allows [running external processes](https://www.jetbrains.com/help/idea/running-applications.html) from within the IDE, e.g., applications, tests, servers, scripts, etc.
-These processes can be run from the [editor](editors.md), project view, run toolbar, or custom [actions](action_system.md).
+These processes can be run from the [editor](editors.md), [project view](project_view.md), run toolbar, or custom [actions](action_system.md).
 Executed processes can be stopped, restarted, and their output and logs can be viewed in the run console.
 It is possible to manage and persist [Run Configurations](https://www.jetbrains.com/help/idea/run-debug-configuration.html) from the UI.
 

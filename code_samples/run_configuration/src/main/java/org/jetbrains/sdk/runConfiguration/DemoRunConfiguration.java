@@ -1,5 +1,4 @@
-// Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
-
+// Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 package org.jetbrains.sdk.runConfiguration;
 
 import com.intellij.execution.ExecutionException;
@@ -17,7 +16,9 @@ import org.jetbrains.annotations.Nullable;
 
 public class DemoRunConfiguration extends RunConfigurationBase<DemoRunConfigurationOptions> {
 
-  protected DemoRunConfiguration(Project project, ConfigurationFactory factory, String name) {
+  protected DemoRunConfiguration(Project project,
+                                 ConfigurationFactory factory,
+                                 String name) {
     super(project, factory, name);
   }
 
@@ -41,19 +42,18 @@ public class DemoRunConfiguration extends RunConfigurationBase<DemoRunConfigurat
     return new DemoSettingsEditor();
   }
 
-  @Override
-  public void checkConfiguration() {
-  }
-
   @Nullable
   @Override
-  public RunProfileState getState(@NotNull Executor executor, @NotNull ExecutionEnvironment executionEnvironment) {
-    return new CommandLineState(executionEnvironment) {
+  public RunProfileState getState(@NotNull Executor executor,
+                                  @NotNull ExecutionEnvironment environment) {
+    return new CommandLineState(environment) {
       @NotNull
       @Override
       protected ProcessHandler startProcess() throws ExecutionException {
-        GeneralCommandLine commandLine = new GeneralCommandLine(getOptions().getScriptName());
-        OSProcessHandler processHandler = ProcessHandlerFactory.getInstance().createColoredProcessHandler(commandLine);
+        GeneralCommandLine commandLine =
+                new GeneralCommandLine(getOptions().getScriptName());
+        OSProcessHandler processHandler = ProcessHandlerFactory.getInstance()
+                .createColoredProcessHandler(commandLine);
         ProcessTerminatedListener.attach(processHandler);
         return processHandler;
       }

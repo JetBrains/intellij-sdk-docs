@@ -82,6 +82,8 @@ See [`ApplicationConfiguration.getConfigurationEditor()`](%gh-ic%/java/execution
 
 If the settings editor requires validation, implement [`CheckableRunConfigurationEditor`](%gh-ic%/platform/lang-api/src/com/intellij/execution/impl/CheckableRunConfigurationEditor.java).
 
+**Example**: [DemoSettingsEditor](%gh-sdk-samples%/run_configuration/src/main/java/org/jetbrains/sdk/runConfiguration/DemoSettingsEditor.java) from the `run_configuration` code sample.
+
 ## Persistence
 
 Run configuration settings are persistent.

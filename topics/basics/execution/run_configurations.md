@@ -45,7 +45,7 @@ Standard base classes for configuration type implementations are:
 ### ConfigurationFactory
 
 [`ConfigurationFactory`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/ConfigurationFactory.java) classes are responsible for creating [run configuration](#runconfiguration) instances.
-The only method that is required to implement is `createTemplateConfiguration()`, which is called once for each project to create the run configuration template.
+The only method required to be implemented is `createTemplateConfiguration()`, which is called once for each project to create the run configuration template.
 The actual run configurations are created in the `createConfiguration()` method by cloning the template.
 
 Configuration factory presentation is inherited from the containing configuration type.

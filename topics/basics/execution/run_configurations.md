@@ -11,7 +11,7 @@
 </tldr>
 
 Run Configuration is a specific type of run profile.
-Run configurations can be managed from UI and persisted between IDE restarts.
+Run configurations can be managed from the UI and persisted between IDE restarts.
 They allow users to specify execution options like a working directory, environment variables, program arguments, and other parameters required to run a process.
 Run configurations can be started from the <control>Run</control> toolbar, the editor, and executed programmatically from actions or other components.
 

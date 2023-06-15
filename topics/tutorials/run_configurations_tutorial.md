@@ -64,7 +64,7 @@ If implementing specific settings externalization rules and I/O behaviour is req
 ```
 {src="run_configuration/src/main/java/org/jetbrains/sdk/runConfiguration/DemoRunConfiguration.java" include-symbol="DemoRunConfiguration"}
 
-## Implement Setting Editor
+## Implement the Settings Editor
 
 ```java
 ```

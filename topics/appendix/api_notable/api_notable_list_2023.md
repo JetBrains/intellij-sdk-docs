@@ -19,6 +19,9 @@ Check presence of JVM library
 Inspection description: code snippets highlighting
 : Embedded code is shown with [syntax highlighting](code_inspections.md#code-snippets).
 
+Intentions that can not show meaningful before/after preview
+: Intentions not modifying code can specify `<skipBeforeAfter>true</skipBeforeAfter>` in their registration.
+
 JCEF-based SVG viewer
 : SVG pictures are now shown using [JCEF](jcef.md) instead of rendering via Apache Batik library ([Details](https://youtrack.jetbrains.com/issue/IDEA-230850)).
 

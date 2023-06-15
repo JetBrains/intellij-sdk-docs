@@ -139,7 +139,7 @@ If it is, return a [`RefactoringElementListener`](%gh-ic%/platform/analysis-api/
 
 ## Modifying Existing Run Configurations
 
-Plugins can modify the existing run configurations before they are run, e.g., by adding additional process parameters.
+Plugins can modify existing run configurations before they are run, e.g., by adding additional process parameters.
 However, there is no single platform-wide extension point, and different IDEs provide different configuration base classes and extension points, allowing for their modifications.
 To see what is possible in your case, check the [`RunConfigurationExtensionBase`](%gh-ic%/platform/execution/src/com/intellij/execution/configuration/RunConfigurationExtensionBase.java) inheritors.
 Examples:

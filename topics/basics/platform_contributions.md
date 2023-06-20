@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<tldr>How to participate and contribute in IntelliJ Platform development.</tldr>
+<link-summary>How to participate and contribute in IntelliJ Platform development.</link-summary>
 
 Please make sure to read the [Code of Conduct](intellij-sdk-docs-original_CODE_OF_CONDUCT.md).
 

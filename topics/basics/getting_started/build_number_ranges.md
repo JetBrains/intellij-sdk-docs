@@ -73,6 +73,7 @@ Consult [Incompatible API Changes](api_changes_list.md) and [Notable API Changes
 
 | Branch number                                                   | IntelliJ Platform version                                                                                                                |
 |-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| [232](https://github.com/JetBrains/intellij-community/tree/232) | 2023.2                                                                                                                                   |
 | [231](https://github.com/JetBrains/intellij-community/tree/231) | 2023.1                                                                                                                                   |
 | [223](https://github.com/JetBrains/intellij-community/tree/223) | 2022.3                                                                                                                                   |
 | [222](https://github.com/JetBrains/intellij-community/tree/222) | 2022.2 **NOTE** Java 17 is now required ([blog post](https://blog.jetbrains.com/platform/2022/08/intellij-project-migrates-to-java-17/)) |

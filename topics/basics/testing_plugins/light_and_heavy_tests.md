@@ -29,16 +29,26 @@ The standard way of writing a light test is to extend one of the following class
 
 For 2019.2 and earlier, use [`LightPlatformCodeInsightFixtureTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/LightPlatformCodeInsightFixtureTestCase.java).
 
+**Examples**:
+- [`JavaCopyrightTest`](%gh-ic%/java/java-tests/testSrc/com/intellij/copyright/JavaCopyrightTest.kt)
+- [`HtmlDocumentationTest`](%gh-ic%/xml/tests/src/com/intellij/html/HtmlDocumentationTest.java)
+- [`AcceptWordAsCorrectTest`](%gh-ic%/spellchecker/testSrc/com/intellij/spellchecker/inspector/AcceptWordAsCorrectTest.java)
+
 </tab>
 
 <tab title="Plugins using Java PSI">
 
 For tests that require the [Java PSI](idea.md#java) or related functionality:
-- [`LightJavaCodeInsightFixtureTestCase`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) for JUnit3
-- [`LightJavaCodeInsightFixtureTestCase4`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase4.kt) for JUnit4 (2021.1 and later)
-- [`LightJavaCodeInsightFixtureTestCase5`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase5.kt) for JUnit5 (2021.1 and later)
+- [`LightJavaCodeInsightFixtureTestCase`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) for JUnit 3
+- [`LightJavaCodeInsightFixtureTestCase4`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase4.kt) for JUnit 4 (2021.1 and later)
+- [`LightJavaCodeInsightFixtureTestCase5`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase5.kt) for JUnit 5 (2021.1 and later)
 
 For 2019.2 and earlier, use [`LightCodeInsightFixtureTestCase`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightCodeInsightFixtureTestCase.java).
+
+**Examples**:
+- [`PatternValidatorTest`](%gh-ic%/plugins/IntelliLang/IntelliLang-tests/test/org/intellij/plugins/intelliLang/pattern/PatternValidatorTest.java) (JUnit 3)
+- [`JavaCtrlMouseTest`](%gh-ic%/java/java-tests/testSrc/com/intellij/java/codeInsight/javadoc/JavaCtrlMouseTest.kt) (JUnit 4)
+- [`MissingJavadocHighlightingTest`](%gh-ic%/java/java-tests/testSrc/com/intellij/java/codeInsight/daemon/MissingJavadocHighlightingTest.java) (JUnit 5)
 
 > See [](testing_faq.md#how-to-test-a-jvm-language) on how to set up your test environment to obtain the required _Mock JDK_ automatically.
 
@@ -54,14 +64,20 @@ Before executing each test, the project instance will be reused if the test case
 
 ## Heavy Tests
 
-> If a test requires a multi-module project, using a heavy test is **required**.
->
-{style="note"}
+The standard way of writing a heavy test is to extend [`HeavyPlatformTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/HeavyPlatformTestCase.java).
 
 > In 2019.3, `PlatformTestCase` has been renamed to [`HeavyPlatformTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/HeavyPlatformTestCase.java) reflecting its "heavy test" characteristics.
 >
 {style="note"}
 
+**Examples**:
+- [`ModuleDeleteProviderTest`](%gh-ic%/java/java-tests/testSrc/com/intellij/openapi/roots/ui/configuration/actions/ModuleDeleteProviderTest.java)
+- [`FacetTypeUnloadingTest`](%gh-ic%/java/idea-ui/testSrc/com/intellij/facet/FacetTypeUnloadingTest.kt)
+- [`SourceFolderManagerTest`](%gh-ic%/platform/external-system-impl/testSrc/com/intellij/openapi/externalSystem/service/project/manage/SourceFolderManagerTest.kt)
+
+### Setting Up a Multi-Module Project
+
+If a test requires a multi-module project, using a heavy test is **required**.
 The following code snippet presents a multi-module Java project setup:
 
 ```java

@@ -1,6 +1,6 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
-
 # User Interface Components
+
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Introduction to UI Components provided by IntelliJ Platform.</link-summary>
 
@@ -16,7 +16,7 @@ Using those components in your plugins will ensure that your plugin looks and wo
 > Use [UI Inspector](internal_ui_inspector.md) to locate the underlying Swing component implementation or to inspect an existing UI at runtime.
 >
 
-> It is recommended to build UI forms like [dialogs](dialog_wrapper.md) or [settings pages](settings.md) by using the [Kotlin UI DSL](kotlin_ui_dsl_version_2.md) (IntelliJ Platform 2021.3+).
+> UI forms like [dialogs](dialog_wrapper.md) or [settings pages](settings.md) should use [Kotlin UI DSL](kotlin_ui_dsl_version_2.md) (IntelliJ Platform 2021.3+).
 >
 > Using _UI Designer_ plugin with Kotlin is [not supported](https://youtrack.jetbrains.com/issue/KTIJ-791).
 >

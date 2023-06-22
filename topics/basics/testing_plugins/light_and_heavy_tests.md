@@ -6,7 +6,7 @@
 
 Plugin tests run in a real, rather than mocked, IntelliJ Platform environment and use real implementations for most application and project [services](plugin_services.md).
 
-Loading and initializing all the project components and services for a project to run tests is a relatively expensive operation, and we want to avoid doing it for each test.
+Loading and initializing all the project components and services for a project to run tests is a relatively expensive operation, and it is desired to avoid doing it for each test.
 Dependently on the loading and execution time, we make a difference between *light* tests and *heavy* tests available in the IntelliJ Platform test framework:
 
 * *Light* tests reuse a project from the previous test run when possible.
@@ -47,14 +47,14 @@ For 2019.2 and earlier, use [`LightCodeInsightFixtureTestCase`](%gh-ic%/java/tes
 
 ### LightProjectDescriptor
 
-When writing a light test, you can specify the project's requirements that you need to have in your test, such as the module type, the configured [SDK](sdk.md), [facets](facet.md), [libraries](library.md), etc.
-You do so by extending the [`LightProjectDescriptor`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/LightProjectDescriptor.java) class and returning your project descriptor (usually stored in `static final` field) from `getProjectDescriptor()`.
+When writing a light test, it is possible to specify the requirements of the project used in test, such as the module type, the configured [SDK](sdk.md), [facets](facet.md), [libraries](library.md), etc.
+It is done by extending the [`LightProjectDescriptor`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/LightProjectDescriptor.java) class and returning the project descriptor (usually stored in `static final` field) from `getProjectDescriptor()`.
 
 Before executing each test, the project instance will be reused if the test case returns the same project descriptor as the previous one or recreated if the descriptor is different (`equals() = false`).
 
 ## Heavy Tests
 
-> If you need to set up a multi-module project for your tests, you **must** write a heavy test.
+> If a test requires a multi-module project, using a heavy test is **required**.
 >
 {style="note"}
 
@@ -62,7 +62,7 @@ Before executing each test, the project instance will be reused if the test case
 >
 {style="note"}
 
-The setup code for a multi-module Java project looks something like that:
+The following code snippet presents a multi-module Java project setup:
 
 ```java
 TestFixtureBuilder<IdeaProjectTestFixture> projectBuilder =

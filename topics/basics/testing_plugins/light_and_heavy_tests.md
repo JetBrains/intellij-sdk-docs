@@ -66,12 +66,20 @@ The following code snippet presents a multi-module Java project setup:
 
 ```java
 TestFixtureBuilder<IdeaProjectTestFixture> projectBuilder =
-        IdeaTestFixtureFactory.getFixtureFactory().createFixtureBuilder(getName());
+    IdeaTestFixtureFactory.getFixtureFactory().createFixtureBuilder(getName());
 
-// Repeat the following line for each module
-JavaModuleFixtureBuilder moduleFixtureBuilder =
-        projectBuilder.addModule(JavaModuleFixtureBuilder.class);
-
+// fixture must be created before adding modules:
 myFixture = JavaTestFixtureFactory.getFixtureFactory()
-        .createCodeInsightFixture(projectBuilder.getFixture());
+    .createCodeInsightFixture(projectBuilder.getFixture());
+
+// add and configure modules:
+JavaModuleFixtureBuilder builder1 =
+    projectBuilder.addModule(JavaModuleFixtureBuilder.class);
+// optionally, configure the module, e.g.:
+// builder1.setLanguageLevel(...);
+// builder1.addJdk(...);
+
+JavaModuleFixtureBuilder builder2 =
+    projectBuilder.addModule(JavaModuleFixtureBuilder.class);
+// configure another module...
 ```

@@ -186,6 +186,11 @@ The default `SettingsCategory.OTHER` value disables synchronization of a compone
 
 If the component state is OS-dependent, the `roamingType` of the `@Storage` annotation must be set to `RoamingType.PER_OS`.
 
+> Note that <path>other.xml</path> file is non-roamable and declaring it in the `@Storage` annotation will disable roaming of the component state.
+> It is recommended to use a separate XML file for the component or use another existing storage file.
+>
+{style="warning"}
+
 #### Settings Repository Plugin and Export Settings Feature
 
 > The _Settings Repository_ plugin is unbundled starting with the version 2022.3 and will be no longer maintained.

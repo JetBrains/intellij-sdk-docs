@@ -25,6 +25,22 @@ This is done by calling `CodeInsightTestFixture.enableInspections()` in the setu
 
 To test syntax highlighting provided by [Lexer](implementing_lexer.md), use [`EditorTestUtil.testFileSyntaxHighlighting()`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/EditorTestUtil.java).
 
+This method takes the tested file and the answer file describing expected highlighting information for each token.
+The answer file format is as follows:
+```
+token_value
+    EXPECTED_TEXT_ATTRIBUTE_KEY => FALLBACK_KEY
+string␣value
+    MY_TEXT_ATTRIBUTE_KEY => MY_FALLBACK_KEY => DEFAULT_STRING
+```
+
+It starts with token value, which is the actual token value from the tested file (space characters in token value are replaced with `␣`).
+It is followed by indented list of text attribute keys, starting with the key defined for the given token, followed by fallback keys separated by ` => `.
+
+Creating an answer file from scratch would be cumbersome process, so it is recommended to provide only the tested file and executing the test.
+Test will fail and the expected answer file will be generated.
+Review the generated file carefully, and provide fixes to the syntax highlighter and the answer file if needed.
+
 ## Expected Highlighting Results
 
 The expected results of the highlighting are specified directly in the source file.

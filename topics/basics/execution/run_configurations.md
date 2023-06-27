@@ -133,6 +133,19 @@ The easiest way to run an existing run configuration is using [`ProgramRunnerUti
 `RunnerAndConfigurationSettings` can be retrieved with, e.g., `RunManager.getConfigurationSettings(ConfigurationType)`.
 The executor can be retrieved with a static method if a required executor exposes one or with [`ExecutorRegistry.getExecutorById()`](%gh-ic%/platform/execution/src/com/intellij/execution/ExecutorRegistry.java).
 
+## Validating a Run Configuration
+
+To check, whether a run configuration is configured correctly and can be executed, implement the `RunConfiguration.checkConfiguration()`.
+In case the run configuration settings are incomplete, the method should throw one of the following exceptions:
+- [`RuntimeConfigurationWarning`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RuntimeConfigurationWarning.java) - in case of a problem, which doesn't affect execution
+- [`RuntimeConfigurationException`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RuntimeConfigurationException.java) - in case of non-fatal error, which allows executing the configuration
+- [`RuntimeConfigurationError`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RuntimeConfigurationError.java) - in case of fatal error that makes it impossible to execute the run configuration
+
+If the configuration contains any warnings or errors, its icon will be patched with the error indicator and the message will be displayed in the configuration settings page. In case of `RuntimeConfigurationError`, if a user tries to execute the configuration, the run configuration settings dialog will be presented, so that the user can fix the issues before the execution.
+
+All the mentioned exceptions allow providing a quick fix for the reported issue.
+If the quick fix implementation is provided, the quick fix button will be displayed next to the error message.
+
 ## Refactoring Support
 
 Some run configurations contain references to classes, files, or directories in their settings, and these settings usually need to be updated when the corresponding element is renamed or moved.

@@ -18,7 +18,7 @@ See also:
 ### Overview
 
 The two actions [Extend Selection and Shrink Selection](https://www.jetbrains.com/help/idea/working-with-source-code.html#editor_code_selection) in IntelliJ Platform IDEs let you adjust selected text based on the structure of the source code.
-This makes it easy to select not only expressions, blocks, and function definitions, but also code like whole lines or tags in JavaDoc comments.
+This makes it easy to select not only expressions, blocks, and function definitions, but also code like whole lines or tags in Javadoc comments.
 
 When implementing a custom language, the IntelliJ Platform provides basic implementations of this EP, allowing you to select code based on your PSI structure and to select whole lines.
 In many cases this is sufficient to provide a good user experience.
@@ -46,7 +46,7 @@ This can be achieved by implementing this EP in the following way:
 
 Looking at other implementations can be an effective way to get a better understanding of how this EP works.
 To get further insight into this EP, you may want to take a look at [`DocTagSelectioner`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/editorActions/wordSelection/DocTagSelectioner.java).
-It provides the ability to select tag names like `@param` in JavaDoc comments.
+It provides the ability to select tag names like `@param` in Javadoc comments.
 Additionally, the [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.extendWordSelectionHandler) provides a list of open-source plugins with implementations of the `com.intellij.extendWordSelectionHandler` EP.
 
 There are also some important places in the IntelliJ Platform to add breakpoints during debugging.

@@ -1,6 +1,6 @@
-# Code Formatter
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Code Formatter
 
 <link-summary>Implementing a code formatter that aligns whitespaces according to the defined set of rules, and performs non-whitespace formatting modifications.</link-summary>
 
@@ -68,7 +68,7 @@ For every block, the plugin specifies the following properties:
 * The _alignment_ ([`Alignment`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/Alignment.java)) specifies which blocks should be aligned with each other.
    If two blocks with the alignment property set to the same object instance are placed in different lines, and if the second block is the first non-whitespace block in its line, the formatter inserts whitespaces before the second block, so that it starts from the same column as the first one.
 
-For each of these properties, several particular use settings exist, described in the JavaDoc comments for the respective classes.
+For each of these properties, several particular use settings exist, described in the Javadoc comments for the respective classes.
 See also [`SpacingBuilder`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/SpacingBuilder.java), which aids in building rule-based configuration.
 
 An important special case in using the formatter is the smart indent performed when the user presses the `Enter` key in a source code file.
@@ -110,7 +110,7 @@ To register a formatting post-processor, a plugin has to provide an implementati
 
 Allows custom languages to provide user-configurable arrangement/grouping rules for element types supported by language plugin.
 Rules can be refined via modifiers and name; ordering can be applied additionally.
-Please see [`Rearranger`](%gh-ic%/platform/code-style-api/src/com/intellij/psi/codeStyle/arrangement/Rearranger.java) and related for JavaDoc.
+Please see [`Rearranger`](%gh-ic%/platform/code-style-api/src/com/intellij/psi/codeStyle/arrangement/Rearranger.java) and related for Javadoc.
 
 ## Code Style Settings
 

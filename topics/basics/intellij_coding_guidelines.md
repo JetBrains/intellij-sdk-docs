@@ -36,10 +36,10 @@ The easiest way to follow our code formatting guidelines is to reformat your cod
 The IntelliJ IDEA Community Edition project includes a shared inspection profile.
 We strongly recommend making sure that the code you submit does not contain any warnings highlighted by the inspections configured in that inspection profile.
 
-## JavaDoc Comments
+## Javadoc Comments
 
-If your code adds new OpenAPI interfaces, classes, methods, or extension points, you must provide JavaDoc comments describing the parameters and intended usage of the APIs.
-Providing JavaDoc or other comments for other parts of the code is a good idea but isn't required.
+If your code adds new OpenAPI interfaces, classes, methods, or extension points, you must provide Javadoc comments describing the parameters and intended usage of the APIs.
+Providing Javadoc or other comments for other parts of the code is a good idea but isn't required.
 
 ## Commits
 

@@ -116,7 +116,7 @@ All support for XML-based Spring configuration files is provided via [DOM-API](x
 See `com.intellij.spring.customNamespaces` EP, registered namespace-key must match the one registered with your DOM elements via `@Namespace`.
 Register available elements via standard `DomExtender<Beans>` EP or `com.intellij.spring.dom.SpringCustomNamespaces#registerExtensions` (Version 14).
 
-Please pay attention to `getModelVersion` and `getStubVersion` (see javadoc).
+Please pay attention to `getModelVersion` and `getStubVersion` (see Javadoc).
 
 #### Add Reference to Spring Bean in DomElement
 Use the following template:

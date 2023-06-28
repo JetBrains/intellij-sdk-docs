@@ -1,6 +1,6 @@
-# Testing FAQ
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Testing FAQ
 
 <link-summary>Common questions and issues for testing plugins.</link-summary>
 
@@ -101,7 +101,7 @@ Annotate with [`org.jetbrains.annotations.TestOnly`](https://github.com/JetBrain
 
 ### How to run tests for all files in a directory?
 
-Use [`FileBasedTestCaseHelper`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/FileBasedTestCaseHelper.java), please see its javadoc for instructions.
+Use [`FileBasedTestCaseHelper`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/FileBasedTestCaseHelper.java), please see its Javadoc for instructions.
 
 ### How to modify setup on a per-test basis?
 

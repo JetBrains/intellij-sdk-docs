@@ -1,6 +1,6 @@
-# Code Completion
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Code Completion
 
 <link-summary>Implementing context-aware code completion in custom languages.</link-summary>
 
@@ -39,7 +39,7 @@ To provide completion variants by a `PsiSymbolReference` implement
 Implementing the [`CompletionContributor`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java) interface gives you the greatest control over the operation of code completion for your language.
 Register in `com.intellij.completion.contributor` extension point and specify `language` attribute (unless it works on any supported language).
 
-> Note that the JavaDoc of that class contains a detailed FAQ for implementing code completion.
+> Note that the Javadoc of that class contains a detailed FAQ for implementing code completion.
 >
 {style="note"}
 

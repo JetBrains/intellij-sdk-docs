@@ -71,7 +71,7 @@ Access to file-based indexes is performed through the [`FileBasedIndex`](%gh-ic%
 The following primary operations are supported:
 
 * `getAllKeys()` and `processAllKeys()` allow obtaining the list of all keys found in files, which are a part of the specified project.
-  To optimize performance, consider returning `true` from `FileBasedIndexExtension.traceKeyHashToVirtualFileMapping()` (see javadoc for details).
+  To optimize performance, consider returning `true` from `FileBasedIndexExtension.traceKeyHashToVirtualFileMapping()` (see its Javadoc for details).
 
 > The returned data is guaranteed to contain all keys found in up-to-date project content, but may also include additional keys not currently found in the project.
 >

@@ -1,6 +1,6 @@
-# Verifying Plugin Compatibility
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Verifying Plugin Compatibility
 
 <link-summary>Tooling for ensuring compatibility.</link-summary>
 
@@ -23,7 +23,7 @@ In other cases, [intellij-plugin-verifier](https://github.com/JetBrains/intellij
 
 ## IDE Support
 
-The status of an API is marked using various annotations defined in [`ApiStatus`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java), please see their javadoc for more details.
+The status of an API is marked using various annotations defined in [`ApiStatus`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java), please see their Javadoc for more details.
 Use highlighting available via dedicated [IDE inspections](https://www.jetbrains.com/help/idea/code-inspection.html) as noted below to prevent problems as early as possible.
 
 ### Unstable API

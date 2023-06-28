@@ -21,7 +21,7 @@ Keep the following considerations in mind while authoring an SDK code sample:
       Use error checking where it is necessary to make a point about an implementation pitfall.
     * Keep implementations as simple as possible, but use the full features of the IntelliJ Platform, programming language, and libraries.
     * Use meaningful names for interfaces, classes, fields, methods, and extension points.
-    * Write instructional JavaDoc comments.
+    * Write instructional Javadoc comments.
   * Code samples replace lots of documentation.
 * Aim for two levels of SDK samples:
   * A _basic_ sample is focused on a particular subject by demonstrating a limited area of the IntelliJ Platform.

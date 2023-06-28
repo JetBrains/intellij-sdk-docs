@@ -1,6 +1,6 @@
-# Working with Icons and Images
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Working with Icons and Images
 
 <link-summary>Adding, organizing, and working with IntelliJ Platform and custom icons and images.</link-summary>
 
@@ -13,7 +13,7 @@
 </tldr>
 
 Icons and images are used widely by IntelliJ Platform plugins.
-Plugins need icons mostly for [](basic_action_system.md), custom component renderers, [](tool_windows.md), and so on.
+Plugins need icons mostly for [](basic_action_system.md), custom component renderers, [](tool_windows.md), etc.
 
 > Plugin _Logos_, which represent a plugin itself, have different requirements than icons and images used within a plugin.
 > For more information, see the [](plugin_icon_file.md).
@@ -35,7 +35,7 @@ To generate SVG icons suited for the IntelliJ-based IDEs, also consider third-pa
 >
 
 In the case of a Gradle-based project, icons should be placed in the <path>resources</path> folder.
-If the project is DevKit-based, the recommended approach is to put icons to a dedicated [source root](https://www.jetbrains.com/help/idea/content-roots.html) marked as <control>Resources Root</control>, say <path>icons</path> or <path>resources</path>.
+If the project is DevKit-based, the recommended approach is to put icons to a dedicated [source root](https://www.jetbrains.com/help/idea/content-roots.html) marked as <control>Resources Root</control>, e.g., <path>icons</path> or <path>resources</path>.
 
 The `getIcon()` method of [`IconLoader`](%gh-ic%/platform/util/ui/src/com/intellij/openapi/util/IconLoader.kt) can be used to access the icons.
 The path to the icon passed in as argument to `IconLoader.getIcon()` **must** start with leading `/`.
@@ -49,11 +49,9 @@ Then define a class/interface in a top-level package called `icons` holding icon
 package icons;
 
 public interface MyIcons {
-
   Icon Action = IconLoader.getIcon("/icons/myAction.png", MyIcons.class);
   Icon Structure = IconLoader.getIcon("/icons/myStructure.png", MyIcons.class);
   Icon FileType = IconLoader.getIcon("/icons/myFileType.png", MyIcons.class);
-
 }
 ```
 
@@ -92,16 +90,14 @@ Note that the package name `icons` will be automatically prefixed and must not b
 
 <actions>
   <action
-          id="DemoPlugin.DemoAction"
-          icon="MyIcons.Action"
-  ... />
+      icon="MyIcons.Action"
+      ... />
 </actions>
 
 <extensions defaultExtensionNs="com.intellij">
-<toolWindow
-        id="CustomStructure"
-        icon="MyIcons.Structure"
-... />
+  <toolWindow
+      icon="MyIcons.Structure"
+      ... />
 </extensions>
 ```
 
@@ -237,7 +233,7 @@ In this sample, the icon root folder is named <path>icons</path>:
     "expui": {
       "folderName": {
         "expUiIcon1.svg": "icons/icon1.svg",
-        "expUiIcon2.svg": "icons/icon2.svg",
+        "expUiIcon2.svg": "icons/icon2.svg"
       },
       "anotherFolder": {
         "expUiAnotherIcon.svg": "images/anotherIcon.svg"
@@ -250,8 +246,8 @@ In this sample, the icon root folder is named <path>icons</path>:
 If one new icon replaces several old icons, use JSON list format. Example from [`PlatformIconMappings.json`](%gh-ic%/platform/icons/src/PlatformIconMappings.json):
 
 ```json
-    "vcs.svg": [
-      "toolwindows/toolWindowChanges.svg",
-      "vcs/branch.svg"
-    ]
+"vcs.svg": [
+  "toolwindows/toolWindowChanges.svg",
+  "vcs/branch.svg"
+]
 ```

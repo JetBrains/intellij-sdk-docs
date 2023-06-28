@@ -29,7 +29,7 @@ Icons from plugins are located in corresponding `<PLUGIN_NAME>Icons` class (e.g.
 If custom icons are required, please refer to detailed [design guide](https://jetbrains.design/intellij/principles/icons/).
 To generate SVG icons suited for the IntelliJ-based IDEs, also consider third-party web tool [IntelliJ Icon Generator](https://bjansen.github.io/intellij-icon-generator/).
 
-## How to organize and how to use icons?
+## Organizing Icons
 
 > See [Action Basics](%gh-sdk-samples%/action_basics) sample plugin as a reference.
 >
@@ -37,10 +37,12 @@ To generate SVG icons suited for the IntelliJ-based IDEs, also consider third-pa
 In the case of a Gradle-based project, icons should be placed in the <path>resources</path> folder.
 If the project is DevKit-based, the recommended approach is to put icons to a dedicated [source root](https://www.jetbrains.com/help/idea/content-roots.html) marked as <control>Resources Root</control>, e.g., <path>icons</path> or <path>resources</path>.
 
-The `getIcon()` method of [`IconLoader`](%gh-ic%/platform/util/ui/src/com/intellij/openapi/util/IconLoader.kt) can be used to access the icons.
-The path to the icon passed in as argument to `IconLoader.getIcon()` **must** start with leading `/`.
+If the icons are referenced only in <path>[plugin.xml](plugin_configuration_file.md)</path> attributes or elements, or in the [`@Presentation`](%gh-ic%/platform/analysis-api/src/com/intellij/ide/presentation/Presentation.java) `icon` attribute, then they can be [referenced](#using-icons) by paths.
+In case the icons are referenced from the code and/or XML many times, it's convenient to organize them in an [icons holder class](#icons-class).
 
-Then define a class/interface in a top-level package called `icons` holding icon constants as static fields:
+### Icons Class
+
+Define a class/interface in a top-level package called `icons` holding icon constants as static fields:
 
 <tabs>
 <tab title="Java">
@@ -49,9 +51,8 @@ Then define a class/interface in a top-level package called `icons` holding icon
 package icons;
 
 public interface MyIcons {
-  Icon Action = IconLoader.getIcon("/icons/myAction.png", MyIcons.class);
-  Icon Structure = IconLoader.getIcon("/icons/myStructure.png", MyIcons.class);
-  Icon FileType = IconLoader.getIcon("/icons/myFileType.png", MyIcons.class);
+  Icon MyAction = IconLoader.getIcon("/icons/myAction.png", MyIcons.class);
+  Icon MyToolWindow = IconLoader.getIcon("/icons/myToolWindow.png", MyIcons.class);
 }
 ```
 
@@ -66,38 +67,53 @@ package icons
 
 object MyIcons {
   @JvmField
-  val Action = IconLoader.getIcon("/icons/myAction.png", javaClass)
-
+  val MyAction = IconLoader.getIcon("/icons/myAction.png", javaClass)
   @JvmField
-  val Structure = IconLoader.getIcon("/icons/myStructure.png", javaClass)
-
-  @JvmField
-  val FileType = IconLoader.getIcon("/icons/myFileType.png", javaClass)
+  val MyToolWindow = IconLoader.getIcon("/icons/myToolWindow.png", javaClass)
 }
 ```
 
 </tab>
 </tabs>
 
-> Starting with 2021.2, `*Icons` class is not required to be located in `icons` package but can use plugin's package: `icons.MyIcons` &rarr; `my.plugin.MyIcons`.
+The `getIcon()` method of [`IconLoader`](%gh-ic%/platform/util/ui/src/com/intellij/openapi/util/IconLoader.kt) can be used to access the icons.
+The path to the icon passed in as argument to `IconLoader.getIcon()` **must** start with leading `/`.
+
+> Starting with 2021.2, `*Icons` class is not required to be located in `icons` package but can use plugin's package: `icons.MyIcons` &rarr; `com.example.plugin.MyIcons`.
 >
 {style="note"}
 
-Use these constants inside <path>[plugin.xml](plugin_configuration_file.md)</path> when specifying `icon` attribute for [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) or extension point, as well in [`@Presentation`](%gh-ic%/platform/analysis-api/src/com/intellij/ide/presentation/Presentation.java) `icon` attribute.
-Note that the package name `icons` will be automatically prefixed and must not be specified.
+## Using Icons
+
+Icons defined inside <path>plugin.xml</path> with `icon` attribute for [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) or extension point, as well in `@Presentation`'s `icon` attribute, can be referenced in two ways:
+- by icon file path
+- by icon constant in the icons holder class
+
+To reference an icon by path, provide the path relative to the resources directory, e.g., for icons located in <path>my-plugin/src/main/resources/icons</path> directory:
 
 ```xml
-
 <actions>
-  <action
-      icon="MyIcons.Action"
-      ... />
+  <action icon="/icons/myAction.svg" ... />
 </actions>
 
 <extensions defaultExtensionNs="com.intellij">
-  <toolWindow
-      icon="MyIcons.Structure"
-      ... />
+  <toolWindow icon="/icons/myToolWindow.svg" ... />
+</extensions>
+```
+
+In case of icons holder class, reference the icon constants.
+Note that if the class is located in the top-level `icons` package, name `icons` will be automatically prefixed and must not be specified.
+In case of placing the class in a custom package, the full package name must be provided, e.g.:
+
+```xml
+<actions>
+  <!-- referencing icons from class in top-level 'icons' package -->
+  <action icon="MyIcons.MyAction" ... />
+</actions>
+
+<extensions defaultExtensionNs="com.intellij">
+  <!-- referencing icons from custom package -->
+  <toolWindow icon="com.example.plugin.MyIcons.MyToolWindow" ... />
 </extensions>
 ```
 
@@ -179,9 +195,10 @@ To create a new animated icon, use the
 If you want to create an icon where frames follow each other with the same delay, use a constructor that accepts a delay and icons:
 
 ```java
-AnimatedIcon icon = new AnimatedIcon(500,
-          AllIcons.Ide.Macro.Recording_1,
-          AllIcons.Ide.Macro.Recording_2);
+AnimatedIcon icon = new AnimatedIcon(
+    500,
+    AllIcons.Ide.Macro.Recording_1,
+    AllIcons.Ide.Macro.Recording_2);
 ```
 
 To create an icon from frames with different delays, use `AnimatedIcon.Frame`.
@@ -206,7 +223,7 @@ This allows supporting both UI variants at the same time — whichever the user 
 
 <procedure title="Setup">
 
-1. Create new <path>expUi</path> folder in your icon root folder ([Reference](#how-to-organize-and-how-to-use-icons)).
+1. Create new <path>expUi</path> folder in your icon root folder ([Reference](#organizing-icons)).
 2. Copy all icons for _New UI_ in this folder.
 3. Create empty <path>$PluginName$IconMappings.json</path> mapping file in the resources root folder.
 4. Register <path>$PluginName$IconMappings.json</path> file in <path>plugin.xml</path> via `com.intellij.iconMapper` extension point.

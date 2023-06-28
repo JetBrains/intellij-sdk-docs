@@ -51,6 +51,9 @@ The actual run configurations are created in the `createConfiguration()` method 
 Configuration factory presentation is inherited from the containing configuration type.
 If customization is needed, override the presentation methods in the factory class.
 
+By default, configurations created by a given factory are not editable in [Dumb Mode](indexing_and_psi_stubs.md#dumb-mode).
+To enable editing them in Dumb Mode, return true from `ConfigurationFactory.isEditableInDumbMode()`.
+
 ### RunConfiguration
 
 [`RunConfiguration`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RunConfiguration.java) extends [`RunProfile`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RunProfile.java) and represents a named profile that can be run by the [Execution API](execution.md).

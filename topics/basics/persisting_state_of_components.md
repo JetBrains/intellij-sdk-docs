@@ -1,6 +1,6 @@
-# Persisting State of Components
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# Persisting State of Components
 
 <link-summary>Persisting data that is available after IDE restarts and can be shared between different IDE installations.</link-summary>
 
@@ -181,8 +181,10 @@ If a component contains both shareable and non-shareable data, it should be spli
 >
 {style="note"}
 
-To include a plugin's component state in the _Settings Sync_ plugin synchronization, the settings category must be specified via the `category` attribute of the `@State` annotation.
-The default `SettingsCategory.OTHER` value disables synchronization of a component's state.
+To include a plugin's component state in the _Settings Sync_ plugin synchronization, the following requirements must be met:
+- The `RoamingType` is defined via the `roamingType` attribute of the `@Storage` annotation and is not equal to `DISABLED`.
+- The `SettingsCategory` is defined via the `category` attribute of the `@State` annotation and is not equal to `OTHER`.
+- There is no other `PersistentStateComponent` which is stored to the same XML file and has different `RoamingType`.
 
 If the component state is OS-dependent, the `roamingType` of the `@Storage` annotation must be set to `RoamingType.PER_OS`.
 

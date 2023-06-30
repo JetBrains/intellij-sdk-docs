@@ -59,7 +59,7 @@ Refer to the [Gerrit integration](https://plugins.jetbrains.com/plugin/7272) plu
 
 Plugins in this category apply various changes to the standard user interface of the IDE.
 Some newly added components are interactive and provide new functionality, while others are limited to visual modifications only.
-The [Random Background](https://plugins.jetbrains.com/plugin/9692-random-background) plugin may serve as an example.
+The [Foldable ProjectView](https://plugins.jetbrains.com/plugin/17288-foldable-projectview) plugin may serve as an example.
 
 ## Themes
 

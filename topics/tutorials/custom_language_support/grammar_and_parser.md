@@ -1,6 +1,6 @@
-# 3. Grammar and Parser
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# 3. Grammar and Parser
 
 <link-summary>Sample implementation of grammar and parser for Simple language.</link-summary>
 
@@ -99,5 +99,7 @@ sourceSets.main.java.srcDirs 'src/main/gen'
 
 </tab>
 </tabs>
+
+See <path>[gradle.build.kts](%gh-sdk-samples%/simple_language_plugin/build.gradle.kts)</path> for the reference.
 
 Reload the Gradle project for changes to take effect and build the project.

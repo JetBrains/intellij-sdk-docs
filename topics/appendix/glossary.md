@@ -1,6 +1,6 @@
-# Glossary
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# Glossary
 
 <link-summary>Glossary of IntelliJ Platform specific terms.</link-summary>
 
@@ -36,6 +36,10 @@ External System _(ES)_
 
 File Based Index _(FBI)_
 : [File Based Index](file_based_indexes.md) allows storing key-value information based on the project's files.
+
+## G
+Gradle Build Script
+: A configuration file written in Kotlin (<path>build.gradle.kts</path>) or Groovy (<path>build.gradle</path>) that describes the build process and dependencies of a plugin.
 
 ## I
 

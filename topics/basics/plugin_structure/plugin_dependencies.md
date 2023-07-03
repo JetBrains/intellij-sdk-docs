@@ -119,10 +119,18 @@ Add the JARs of the plugin on which the project depends to the <control>Classpat
 >
 {style="warning"}
 
-To do that, open the <control>Project Structure</control> dialog, select the SDK used in the project, press the <shortcut>+</shortcut> button in the <control>Classpath</control> tab, and select the plugin JAR file(s):
-* For bundled plugins, the plugin JAR files are located in <path>plugins/$PLUGIN_NAME$</path> or <path>plugins/$PLUGIN_NAME$/lib</path> under the main installation directory.
-  If you're not sure which JAR to add, you can add all of them.
-* For non-bundled plugins, the plugin JAR files are located in <path>config/plugins/$PLUGIN_NAME$</path> or <path>config/plugins/$PLUGIN_NAME$/lib</path> under the directory specified as <control>Sandbox Home</control> in the IntelliJ Platform Plugin SDK settings.
+<procedure title="Adding a plugin dependency in DevKit-based plugin">
+
+1. Open the <control>Project Structure</control> dialog and go to <ui-path>Platform Settings | SDKs</ui-path> section.
+2. Select the SDK used in the project.
+3. Click the <control>+</control> button in the <control>Classpath</control> tab.
+4. Select the plugin JAR depending on whether it is bundled or non-bundled plugin:
+   - For bundled plugins, the plugin JAR files are located in <path>plugins/$PLUGIN_NAME$</path> or <path>plugins/$PLUGIN_NAME$/lib</path> under the main installation directory.
+   - For non-bundled plugins, depending on the platform version, the plugin JAR files are located in:
+     - [plugins directory for versions 2020.1+](https://www.jetbrains.com/help/idea/directories-used-by-the-ide-to-store-settings-caches-plugins-and-logs.html#plugins-directory)
+     - [plugins directory for versions pre-2020.1](https://www.jetbrains.com/help/idea/2019.3/tuning-the-ide.html#plugins-directory)
+
+</procedure>
 
 </tab>
 

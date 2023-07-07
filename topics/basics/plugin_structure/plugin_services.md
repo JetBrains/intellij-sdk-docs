@@ -172,7 +172,7 @@ Project-level service:
 - Implementation:
 
   ```java
-  public class MyProjectServiceImpl {
+  public class MyProjectServiceImpl implements MyProjectService {
     private final Project myProject;
 
     public MyProjectServiceImpl(Project project) {

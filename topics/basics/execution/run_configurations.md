@@ -158,7 +158,7 @@ Fragmented Settings allow for the creation of a cleaner run configuration settin
 The fragmented editor is built of reusable fragments, which can be shared between different run configuration editors.
 
 When a user creates a new run configuration from a template, only essential fragments are displayed at first.
-More advanced options are hidden and must be explicitly enabled by the user from the Modify options dropdown.
+More advanced options are hidden and must be explicitly enabled by the user from the <control>Modify options</control> dropdown.
 It makes the editor smaller, freeing it from the clutter of unused settings fields.
 
 To implement a fragmented settings editor in a run configuration, extend [`RunConfigurationFragmentedEditor`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/ui/RunConfigurationFragmentedEditor.java) and implement `createRunFragments()`.

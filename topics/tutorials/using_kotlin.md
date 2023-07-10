@@ -123,6 +123,18 @@ See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html
 
 The Kotlin Gradle plugin supports [incremental compilation](https://kotlinlang.org/docs/gradle-compilation-and-caches.html#incremental-compilation), which allows tracking changes in the source files so the compiler handles only updated code.
 
+<tabs>
+
+<tab title="Kotlin 1.9.0">
+
+Remove additional `kotlin.incremental.useClasspathSnapshot=false` property in <path>gradle.properties</path> if present.
+
+</tab>
+
+<tab title="Kotlin 1.8.20">
+
+> Please consider using Kotlin 1.9.0 where this issue has been resolved.
+
 The Kotlin `1.8.20` release has a [new incremental compilation approach](https://kotlinlang.org/docs/gradle-compilation-and-caches.html#a-new-approach-to-incremental-compilation) enabled by default.
 Unfortunately, it is not compatible with the IntelliJ Platform — when reading large JAR files (like <path>app.jar</path> or <path>3rd-party-rt.jar</path>), leading to the `Out of Memory` exception:
 
@@ -140,6 +152,9 @@ kotlin.incremental.useClasspathSnapshot=false
 ```
 
 You can find the current state of the issue in [KT-57757](https://youtrack.jetbrains.com/issue/KT-57757/Reduce-classpath-snapshotter-memory-consumption).
+
+</tab>
+</tabs>
 
 ### Other Bundled Kotlin Libraries
 

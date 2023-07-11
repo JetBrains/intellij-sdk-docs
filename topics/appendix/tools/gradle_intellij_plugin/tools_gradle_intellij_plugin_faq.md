@@ -215,7 +215,10 @@ The Gradle IntelliJ Plugin, when targeting the IntelliJ SDK `2022.1+`, uses the 
 ```
 
 Because of that, JaCoCo – and other external tools that rely on classes available in the bootstrap class loader – fail to discover plugin classes.
-You have to apply the following changes to your Gradle configuration file:
+
+In addition, if the code instrumentation is enabled (see [`intellij.instrumentCode`](tools_gradle_intellij_plugin.md#intellij-extension-instrumentcode)), it's required to switch to the compiled and instrumented output instead of a default compiled classes.
+
+The following changes to your Gradle configuration file:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -227,6 +230,14 @@ tasks {
       isIncludeNoLocationClasses = true
       excludes = listOf("jdk.internal.*")
     }
+  }
+
+  jacocoTestReport {
+    classDirectories.setFrom(instrumentCode)
+  }
+
+  jacocoTestCoverageVerification {
+    classDirectories.setFrom(instrumentCode)
   }
 }
 ```
@@ -240,6 +251,14 @@ test {
     includeNoLocationClasses = true
     excludes = ["jdk.internal.*"]
   }
+}
+
+jacocoTestReport {
+  classDirectories.setFrom(instrumentCode)
+}
+
+jacocoTestCoverageVerification {
+  classDirectories.setFrom(instrumentCode)
 }
 ```
 

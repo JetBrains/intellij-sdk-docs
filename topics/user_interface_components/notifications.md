@@ -90,12 +90,11 @@ Registered instances can then be obtained via their `id`.
 ```java
 public class MyNotifier {
 
-  public static void notifyError(@Nullable Project project,
-                                 String content) {
+  public static void notifyError(Project project, String content) {
     NotificationGroupManager.getInstance()
-            .getNotificationGroup("Custom Notification Group")
-            .createNotification(content, NotificationType.ERROR)
-            .notify(project);
+        .getNotificationGroup("Custom Notification Group")
+        .createNotification(content, NotificationType.ERROR)
+        .notify(project);
   }
 
 }
@@ -111,11 +110,12 @@ public class MyNotifier {
 public class MyNotifier {
 
   private static final NotificationGroup NOTIFICATION_GROUP =
-          new NotificationGroup("Custom Notification Group", NotificationDisplayType.BALLOON, true);
+      new NotificationGroup("Custom Notification Group",
+              NotificationDisplayType.BALLOON, true);
 
-  public static void notifyError(@Nullable Project project, String content) {
+  public static void notifyError(Project project, String content) {
     NOTIFICATION_GROUP.createNotification(content, NotificationType.ERROR)
-            .notify(project);
+        .notify(project);
   }
 
 }

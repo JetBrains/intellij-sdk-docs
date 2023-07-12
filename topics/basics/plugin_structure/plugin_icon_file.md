@@ -60,7 +60,7 @@ Note the different areas of transparent padding used for each shape:
 |                         _Square logo 32px by 32px_                          |                    _Circular logo 36px in diameter_                     |
 | ![Horizontal rectangle 36px by 26px](rectangle_horizontal.png){width="225"} | ![Vertical rectangle 26px by 36px](rectangle_vertical.png){width="225"} |
 |                 _Horizontal rectangular logo 36px by 26px_                  |                _Vertical rectangular logo 26px by 36px_                 |
-
+{style="none"}
 
 ### Plugin Logo Colors
 If the plugin's technology already has a logo, use its colors.
@@ -70,6 +70,7 @@ If there is no existing logo, or its use is prohibited, create a custom logo bas
 | ![The YouTrack Plugin Logo uses the YouTrack product logo ](yt_logo.png){height="200" width="200"} | ![The Keymap Plugin Logo uses a color from the Action Colors Palette](keymap_logo.png){:height="200" width="200"} |
 |:--------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------:|
 |                   _The YouTrack Plugin Logo uses<br/>the YouTrack product logo_                    |                     _The Keymap Plugin Logo uses a color<br/>from the Action Colors Palette_                      |
+{style="none"}
 
 Ensure a Plugin Logo is visible on both light and dark backgrounds.
 If one Plugin Logo design does not work on both light and dark backgrounds, create separate light and dark versions of the Plugin Logo.
@@ -79,6 +80,7 @@ Consequently, a separate Plugin Logo for dark backgrounds is needed.
 | ![Plugin Logo on Light Theme](light_version.png){width="225"} |     ![Light Plugin Logo on Dark Theme](dark_bad.png){width="225"}     |     ![Plugin Logo for Dark Theme](dark_good.png){width="225"}     |
 |:-------------------------------------------------------------:|:---------------------------------------------------------------------:|:------------------------------------------------------------------:|
 | _The light Plugin Logo design<br/>works well on light theme_  | _The light Plugin Logo design does<br/>not work well on a dark theme_ | _A separate, dark Plugin Logo design<br/>works well on dark theme_ |
+{style="none"}
 
 ### Plugin Logo File Format
 All Plugin Logo images must be in SVG format.

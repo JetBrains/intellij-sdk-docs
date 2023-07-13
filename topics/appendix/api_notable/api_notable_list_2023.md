@@ -9,6 +9,10 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 <include from="tools_gradle_intellij_plugin.md" element-id="gradle_plugin_223_problem"/>
 
+## 2023.3
+
+### IntelliJ Platform 2023.3
+
 ## 2023.2
 
 ### IntelliJ Platform 2023.2

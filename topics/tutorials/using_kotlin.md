@@ -168,6 +168,10 @@ When registering an extension, the platform uses a dependency injection framewor
 For this reason, plugins *must not* use [Kotlin objects](https://kotlinlang.org/docs/object-declarations.html#object-declarations-overview) (`object` keyword) to implement any <path>[plugin.xml](plugin_configuration_file.md)</path> declarations.
 Managing the lifecycle of extensions is the platform responsibility and instantiating these classes as Kotlin singletons may cause issues.
 
+Problems are highlighted via these inspections (2023.2):
+- <control>Plugin DevKit | Code | Kotlin object registered as extension</control> for Kotlin code
+- <control>Plugin DevKit | Plugin descriptor | Extension class is a Kotlin object</control> for <path>plugin.xml</path>
+
 ## Kotlin Code FAQ
 
 [How to shorten references](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360010025120-Add-new-parameter-into-kotlin-data-class-from-IDEA-plugin?page=1#community_comment_360002950760)

@@ -93,13 +93,12 @@ Below are listed a few badges related to the IntelliJ SDK and plugins developmen
 
 ### Other Badges
 
-[//]: # (FIXME: there is no such file in SDK Docs repo)
-[//]: # (**GitHub Actions Workflow**)
-[//]: # ()
-[//]: # (![Build]&#40;https://github.com/JetBrains/intellij-sdk-docs/workflows/Build/badge.svg&#41;)
-[//]: # (```)
-[//]: # (![Build]&#40;https://github.com/USERNAME/REPOSITORY_NAME/workflows/WORKFLOW_NAME/badge.svg&#41;)
-[//]: # (```)
+**GitHub Actions Workflow**
+
+![Build](https://github.com/JetBrains/intellij-sdk-docs/actions/workflows/code-samples.yml/badge.svg)
+```
+![Build](https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/<WORKFLOW_FILE>/badge.svg)
+```
 
 **JetBrains IntelliJ Platform SDK Docs**
 

@@ -1,6 +1,6 @@
-# Marketing
-
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Marketing
 
 > Please make sure to follow the guidelines from [Plugin Overview page](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html) for an optimal presentation of your plugin on JetBrains Marketplace.
 > The _Busy Plugin Developers. Episode 2_ discusses [5 tips for optimizing JetBrains Marketplace plugin page](https://youtu.be/oB1GA9JeeiY?t=52) in more detail.
@@ -54,7 +54,7 @@ Below are listed a few badges related to the IntelliJ SDK and plugins developmen
 
 **IntelliJ Plugin Numeric Rating**
 
-![Rating](https://img.shields.io/badge/rating-4.5%2F5-brightgreen)
+![Rating](https://img.shields.io/badge/rating-4.5/5-brightgreen)
 ```
 ![Rating](https://img.shields.io/jetbrains/plugin/r/rating/:pluginId)
 ```
@@ -71,7 +71,7 @@ Below are listed a few badges related to the IntelliJ SDK and plugins developmen
 
 **IntelliJ Plugins**
 
-![Version](https://img.shields.io/badge/jetbrains%20plugin-v1.7-blue)
+![Version](https://img.shields.io/jetbrains/plugin/v/IdeaVim)
 ```
 ![Version](https://img.shields.io/jetbrains/plugin/v/:pluginId)
 ```
@@ -93,12 +93,13 @@ Below are listed a few badges related to the IntelliJ SDK and plugins developmen
 
 ### Other Badges
 
-**GitHub Actions Workflow**
-
-![Build](https://github.com/JetBrains/intellij-sdk-docs/workflows/Build/badge.svg)
-```
-![Build](https://github.com/USERNAME/REPOSITORY_NAME/workflows/WORKFLOW_NAME/badge.svg)
-```
+[//]: # (FIXME: there is no such file in SDK Docs repo)
+[//]: # (**GitHub Actions Workflow**)
+[//]: # ()
+[//]: # (![Build]&#40;https://github.com/JetBrains/intellij-sdk-docs/workflows/Build/badge.svg&#41;)
+[//]: # (```)
+[//]: # (![Build]&#40;https://github.com/USERNAME/REPOSITORY_NAME/workflows/WORKFLOW_NAME/badge.svg&#41;)
+[//]: # (```)
 
 **JetBrains IntelliJ Platform SDK Docs**
 
@@ -109,14 +110,14 @@ Below are listed a few badges related to the IntelliJ SDK and plugins developmen
 
 **JetBrains Platform Slack**
 
-[![Slack](https://img.shields.io/badge/Slack-%23intellij--platform-blue?style=flat-square&logo=Slack)](https://plugins.jetbrains.com/slack)
+[![Slack](https://img.shields.io/badge/Slack-#intellij--platform-blue?style=flat-square&logo=Slack)](https://plugins.jetbrains.com/slack)
 ```
-[![Slack](https://img.shields.io/badge/Slack-%23intellij--platform-blue?style=flat-square&logo=Slack)](https://plugins.jetbrains.com/slack)
+[![Slack](https://img.shields.io/badge/Slack-#intellij--platform-blue?style=flat-square&logo=Slack)](https://plugins.jetbrains.com/slack)
 ```
 
 **@JBPlatform Twitter**
 
-[![Twitter Follow](https://img.shields.io/badge/follow-%40JBPlatform-1DA1F2?logo=twitter)](https://twitter.com/JBPlatform)
+[![Twitter Follow](https://img.shields.io/badge/follow-@JBPlatform-1DA1F2?logo=twitter)](https://twitter.com/JBPlatform)
 ```
-[![Twitter Follow](https://img.shields.io/badge/follow-%40JBPlatform-1DA1F2?logo=twitter)](https://twitter.com/JBPlatform)
+[![Twitter Follow](https://img.shields.io/badge/follow-@JBPlatform-1DA1F2?logo=twitter)](https://twitter.com/JBPlatform)
 ```

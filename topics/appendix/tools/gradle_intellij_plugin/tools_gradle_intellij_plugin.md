@@ -4,7 +4,7 @@
 
 <tldr>
 
-**Current Release**: [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square){type="joined"}](https://github.com/jetbrains/gradle-intellij-plugin/releases)
+**Current Release**: [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square&label=){type="joined"}](https://github.com/jetbrains/gradle-intellij-plugin/releases)
 
 **GitHub**: [Releases & Changelog](https://github.com/JetBrains/gradle-intellij-plugin/releases), [Issue Tracker](https://github.com/JetBrains/gradle-intellij-plugin/issues)
 
@@ -61,7 +61,7 @@ plugins {
 </tab>
 </tabs>
 
-Replace `...` placeholder with desired plugin version. Current release: [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square){type="joined"}](https://github.com/jetbrains/gradle-intellij-plugin/releases)
+Replace `...` placeholder with desired plugin version. Current release: [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square&label=){type="joined"}](https://github.com/jetbrains/gradle-intellij-plugin/releases)
 
 When upgrading to `1.x` version, please make sure to follow the [migration guide](https://lp.jetbrains.com/gradle-intellij-plugin) to adjust your existing build script.
 
@@ -82,7 +82,7 @@ The Snapshot release is a pre-release version built nightly from the latest main
 
 To switch to the snapshot release, point Gradle to the dedicated snapshot repository by adding an entry to the Gradle settings file.
 
-> The current Gradle IntelliJ Plugin Snapshot version is ![GitHub Snapshot Release](https://img.shields.io/nexus/s/org.jetbrains.intellij/org.jetbrains.intellij.gradle.plugin?server=https://oss.sonatype.org)
+> The current Gradle IntelliJ Plugin Snapshot version is ![GitHub Snapshot Release](https://img.shields.io/nexus/s/org.jetbrains.intellij/org.jetbrains.intellij.gradle.plugin?server=https://oss.sonatype.org&label=)
 >
 > To make sure you obtain the latest snapshot version, invoke Gradle using `--refresh-dependencies` option.
 >

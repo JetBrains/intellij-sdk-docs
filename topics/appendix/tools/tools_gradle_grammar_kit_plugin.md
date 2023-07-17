@@ -6,7 +6,7 @@
 
 <tldr>
 
-**Current Release**: ![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-grammar-kit-plugin.svg?style=flat-square)
+**Current Release**: ![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-grammar-kit-plugin.svg?style=flat-square&label=){interpolate-variables=false}
 
 **GitHub**: [Releases & Changelog](https://github.com/JetBrains/gradle-grammar-kit-plugin/releases), [Issue Tracker](https://github.com/JetBrains/gradle-grammar-kit-plugin/issues)
 
@@ -41,7 +41,7 @@ plugins {
 </tab>
 </tabs>
 
-Replace `...` placeholder with desired plugin version. Current release: ![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-grammar-kit-plugin.svg?style=flat-square)
+Replace `...` placeholder with desired plugin version. Current release: ![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-grammar-kit-plugin.svg?style=flat-square&label=)
 
 
 > This project requires `Gradle 7.4` or newer, however it is recommended to use the latest Gradle available.

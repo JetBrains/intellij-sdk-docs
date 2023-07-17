@@ -13,7 +13,7 @@ Gradle IntelliJ Plugin and [Gradle](https://gradle.org/install/) build system ar
 It is strongly recommended to keep updating both Gradle and Gradle IntelliJ Plugin to the latest versions.
 Newer IDE releases might not be supported fully in older releases of Gradle IntelliJ Plugin.
 
-> Current Gradle IntelliJ Plugin version is [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square){type="joined"}](https://github.com/jetbrains/gradle-intellij-plugin/releases)
+> Current Gradle IntelliJ Plugin version is [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square&label=){type="joined"}](https://github.com/jetbrains/gradle-intellij-plugin/releases)
 >
 {style="note"}
 

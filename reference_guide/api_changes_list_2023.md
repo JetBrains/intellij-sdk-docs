@@ -90,6 +90,14 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.intellij.database.dataSource.DataSourceStorageCore$Listener` class renamed to `com.intellij.database.dataSource.DataSourceStorage$Listener`
 : `Core` class removed from hierarchy.
 
+### Maven Plugin 2023.2
+
+`org.jetbrains.idea.maven.server.MavenEmbedderWrapper.customizeForResolve(MavenConsole, MavenProgressIndicator)` method removed
+: Use `resolveProject(Collection, MavenExplicitProfiles, ProgressIndicator, MavenSyncConsole, MavenConsole, MavenWorkspaceMap, boolean)` instead.
+
+`org.jetbrains.idea.maven.server.MavenEmbedderWrapper.execute(VirtualFile, Collection, Collection, List)` method removed
+: Use `executeGoal(Collection, String, MavenProgressIndicator, MavenConsole)` instead.
+
 ## 2023.1
 
 ### IntelliJ Platform 2023.1

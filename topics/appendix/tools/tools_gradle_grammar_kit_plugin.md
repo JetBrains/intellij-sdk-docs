@@ -41,6 +41,9 @@ plugins {
 </tab>
 </tabs>
 
+Replace `...` placeholder with desired plugin version. Current release: ![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-grammar-kit-plugin.svg?style=flat-square)
+
+
 > This project requires `Gradle 7.4` or newer, however it is recommended to use the latest Gradle available.
 > Update it with:
 > ```Bash

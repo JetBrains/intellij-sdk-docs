@@ -61,6 +61,8 @@ plugins {
 </tab>
 </tabs>
 
+Replace `...` placeholder with desired plugin version. Current release: [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square){type="joined"}](https://github.com/jetbrains/gradle-intellij-plugin/releases)
+
 When upgrading to `1.x` version, please make sure to follow the [migration guide](https://lp.jetbrains.com/gradle-intellij-plugin) to adjust your existing build script.
 
 > <control>Gradle JVM</control> must be set to Java 11 in <ui-path>Settings | Build, Execution, Deployment | Build Tools | Gradle</ui-path>.

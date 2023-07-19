@@ -6,7 +6,7 @@
 
 ## Extending/Shrinking Text Selection
 
-Implementing [`ExtendWordSelectionHandler`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/ExtendWordSelectionHandler.java) and registering it as `com.intellij.extendWordSelectionHandler` EP in your <path>[plugin.xml](plugin_configuration_file.md)</path> allows you to provide additional text ranges to be used when extending or shrinking a selection.
+Implementing [`ExtendWordSelectionHandler`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/ExtendWordSelectionHandler.java) and registering it in `com.intellij.extendWordSelectionHandler` EP in your <path>[plugin.xml](plugin_configuration_file.md)</path> allows you to provide additional text ranges to be used when extending or shrinking a selection.
 Return `true` from `canSelect(PsiElement)` for the PSI elements that you want to provide additional text-ranges for.
 The IntelliJ Platform will call `select(PsiElement, CharSequence, int, Editor)` for these elements where you can compute additional text ranges and return them as `List<TextRange>`.
 
@@ -37,7 +37,7 @@ If the cursor is located at argument `a`, extending the selection would first se
 However, you might want to select the list of all arguments as an intermediate step.
 This can be achieved by implementing this EP in the following way:
 
-1. Create a class that implements the `ExtendWordSelectionHandler` interface and register it as a `com.intellij.extendWordSelectionHandler` EP in your <path>plugin.xml</path>.
+1. Create a class that implements the `ExtendWordSelectionHandler` interface and register it in a `com.intellij.extendWordSelectionHandler` EP in your <path>plugin.xml</path>.
 2. The `canSelect(PsiElement)` method should return `true` for the function call node.
    That indicates that `select(PsiElement, CharSequence, int, Editor)` will be called for the function-call node.
 3. When the `select()` method is called, you can use the function call PSI element or the editor text to extract the text range that spans the arguments `a` and `b` and return it as `List<TextRange>` with one element.

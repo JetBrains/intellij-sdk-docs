@@ -6,7 +6,7 @@
 
 <tldr>
 
-**Current Release**: ![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-grammar-kit-plugin.svg?style=flat-square&label=){interpolate-variables=false}
+**Current Release**: %gradle-grammar-kit-plugin-version%
 
 **GitHub**: [Releases & Changelog](https://github.com/JetBrains/gradle-grammar-kit-plugin/releases), [Issue Tracker](https://github.com/JetBrains/gradle-grammar-kit-plugin/issues)
 
@@ -25,7 +25,7 @@ To enable this plugin in your Gradle-based project, register the plugin in the G
 
 ```kotlin
 plugins {
-  id("org.jetbrains.grammarkit") version "..."
+  id("org.jetbrains.grammarkit") version "%gradle-grammar-kit-plugin-version%"
 }
 ```
 
@@ -34,15 +34,12 @@ plugins {
 
 ```groovy
 plugins {
-  id "org.jetbrains.grammarkit" version "..."
+  id "org.jetbrains.grammarkit" version "%gradle-grammar-kit-plugin-version%"
 }
 ```
 
 </tab>
 </tabs>
-
-Replace `...` placeholder with desired plugin version. Current release: ![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-grammar-kit-plugin.svg?style=flat-square&label=)
-
 
 > This project requires `Gradle 7.4` or newer, however it is recommended to use the latest Gradle available.
 > Update it with:

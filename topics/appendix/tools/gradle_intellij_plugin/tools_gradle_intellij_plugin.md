@@ -4,7 +4,7 @@
 
 <tldr>
 
-**Current Release**: [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square&label=){type="joined"}](https://github.com/jetbrains/gradle-intellij-plugin/releases)
+**Current Release**: %gradle-intellij-plugin-version%
 
 **GitHub**: [Releases & Changelog](https://github.com/JetBrains/gradle-intellij-plugin/releases), [Issue Tracker](https://github.com/JetBrains/gradle-intellij-plugin/issues)
 
@@ -45,7 +45,7 @@ To enable this plugin in your Gradle-based project, register the plugin in the G
 
 ```kotlin
 plugins {
-  id("org.jetbrains.intellij") version "..."
+  id("org.jetbrains.intellij") version "%gradle-intellij-plugin-version%"
 }
 ```
 
@@ -54,14 +54,12 @@ plugins {
 
 ```groovy
 plugins {
-  id "org.jetbrains.intellij" version "..."
+  id "org.jetbrains.intellij" version "%gradle-intellij-plugin-version%"
 }
 ```
 
 </tab>
 </tabs>
-
-Replace `...` placeholder with desired plugin version. Current release: [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square&label=){type="joined"}](https://github.com/jetbrains/gradle-intellij-plugin/releases)
 
 When upgrading to `1.x` version, please make sure to follow the [migration guide](https://lp.jetbrains.com/gradle-intellij-plugin) to adjust your existing build script.
 

@@ -60,7 +60,7 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 >
 > Java 11 is required ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)) when targeting 2020.3 and later only.
 >
-> Please make sure to always upgrade `gradle-intellij-plugin` to the latest version [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square&label=){type="joined"}](https://github.com/jetbrains/gradle-intellij-plugin/releases)
+> Please make sure to always upgrade `gradle-intellij-plugin` to the latest version [%gradle-intellij-plugin-version%](https://github.com/jetbrains/gradle-intellij-plugin/releases)
 >
 {style="note"}
 

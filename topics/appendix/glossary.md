@@ -66,6 +66,11 @@ JetBrains Project System _(JPS)_
 JetBrains Runtime _(JBR)_
 : The [JetBrains Runtime](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance) is the default bundled runtime for all IntelliJ Platform-based IDEs by JetBrains.
 
+## N
+
+Non-Blocking Read Action (NBRA)
+: A &rarr; _Read Action_ that is canceled by &rarr; _Write Action_. See also [](general_threading_rules.md#read-action-cancellability).
+
 ## P
 
 Program Structure Interface _(PSI)_
@@ -74,8 +79,8 @@ Program Structure Interface _(PSI)_
 ## R
 
 Read Action _(RA)_
-: Allows accessing code-related data structures for reading purposes. See also [General Threading Rules](general_threading_rules.md).
-&rarr; _Write Action_
+: Allows accessing code-related data structures for reading purposes. See also [](general_threading_rules.md).
+&rarr; _Non-Blocking Read Action_ &rarr; _Write Action_
 
 Run Configuration _(RC)_
 : A [Run Configuration](run_configurations.md) allows running external processes from within the IDE.

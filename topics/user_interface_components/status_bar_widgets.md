@@ -105,21 +105,6 @@ Custom listeners to be notified of widget updates can be registered using `regis
 
 To update a widget, use `update()`.
 
-## Controlling Widgets Programmatically
-
-By default, when adding a widget to the status bar, it can be displayed/hidden through the context menu of the status bar or widget.
-
-If you want to change visibility programmatically use
-[`StatusBarWidgetSettings.setEnabled()`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/widget/StatusBarWidgetSettings.kt).
-
-The first argument to the method is the factory that created the widget.
-To get it, use
-[`StatusBarWidgetsManager.findWidgetFactory()`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/widget/StatusBarWidgetsManager.kt)
-and pass the widget ID and a boolean value that describes whether the widget will be visible or not.
-
-Also, you need to update the widget for the changes to take effect with
-[`StatusBarWidgetsManager.updateWidget()`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/widget/StatusBarWidgetsManager.kt).
-
 ## Showing Widget in LightEdit Mode
 
 By default, widgets aren't shown in [LightEdit](https://www.jetbrains.com/help/idea/lightedit-mode.html) mode.

@@ -1,0 +1,19 @@
+name: Generate Libraries releases variable file
+
+on:
+  schedule:
+    - cron: "1 1 * * *"
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Generate
+        run: "${GITHUB_WORKSPACE}/.github/scripts/libraries_releases.main.kts"
+      - name: Commit changes
+        uses: Endbug/add-and-commit@v9
+        with:
+          message: 'Generate Libraries releases variable file'
+          add: 'v-releases.list'

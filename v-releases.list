@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE vars
+        SYSTEM "https://helpserver.labs.jb.gg/help/schemas/mvp/vars.dtd">
+
+<vars>
+  <var name="gradle-intellij-plugin-version" value="1.15.0"/>
+  <var name="gradle-grammar-kit-plugin-version" value="2022.3.1"/>
+</vars>

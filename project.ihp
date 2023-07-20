@@ -11,6 +11,7 @@
     <topics dir="reference_guide"/>
     <images dir="images" web-path="/img/idea-sdk/"/>
     <vars src="v.list" />
+    <vars src="v-releases.list" />
     <snippets dir="code_samples"/>
     <instance src="ijs.tree" keymaps-mode="none" id="intellij" web-path="/intellij/"/>
 </ihp>

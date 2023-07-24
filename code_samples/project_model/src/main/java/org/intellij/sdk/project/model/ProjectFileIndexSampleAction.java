@@ -1,4 +1,4 @@
-// Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
 package org.intellij.sdk.project.model;
 
@@ -43,7 +43,7 @@ public class ProjectFileIndexSampleAction extends AnAction {
       moduleName = module != null ? module.getName() : "No module defined for file";
 
       VirtualFile moduleContentRoot = projectFileIndex.getContentRootForFile(virtualFile);
-      boolean isLibraryFile = projectFileIndex.isLibraryClassFile(virtualFile);
+      boolean isLibraryFile = projectFileIndex.isInLibrary(virtualFile);
       boolean isInLibraryClasses = projectFileIndex.isInLibraryClasses(virtualFile);
       boolean isInLibrarySource = projectFileIndex.isInLibrarySource(virtualFile);
       Messages.showInfoMessage("Module: " + moduleName + "\n" +

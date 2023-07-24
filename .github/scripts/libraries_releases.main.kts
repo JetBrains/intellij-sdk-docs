@@ -43,7 +43,7 @@ val vars = releasesList.mapValues { (key, releaseInfo) ->
 """
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE vars
-        SYSTEM "https://helpserver.labs.jb.gg/help/schemas/mvp/vars.dtd">
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/vars.dtd">
 
 <vars>
   ${vars.joinToString("\n  ")}

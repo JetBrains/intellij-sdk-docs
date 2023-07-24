@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<buildprofiles xsi:noNamespaceSchemaLocation="https://helpserver.labs.jb.gg/help/schemas/mvp/build-profiles.xsd"
+<buildprofiles xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/build-profiles.xsd"
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <variables>
         <web-root>https://plugins.jetbrains.com/docs</web-root>

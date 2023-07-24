@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE ihp
-        SYSTEM "https://helpserver.labs.jb.gg/help/schemas/mvp/ihp.dtd">
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/ihp.dtd">
 <ihp version="2.0">
     <settings>
         <id-generator-method>LOWER_CASE_DASHES_DOT_REMOVE</id-generator-method>

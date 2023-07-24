@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE instance-profile
-        SYSTEM "https://helpserver.labs.jb.gg/help/schemas/mvp/product-profile.dtd">
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 <instance-profile id="ijs" name="IntelliJ Platform Plugin SDK" start-page="welcome.topic">
   <toc-element topic="welcome.topic" toc-title="Home"/>
   <toc-element toc-title="Introduction">

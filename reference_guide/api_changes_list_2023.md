@@ -79,6 +79,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.intellij.openapi.actionSystem.AnActionEvent.getInputEvent()` method return type changed from `InputEvent` to `@Nullable InputEvent`
 : This may break source-compatibility with inheritors written in Kotlin.
 
+Specify `displayName`/`key` for `Configurable`
+: To improve performance, provide either attribute for `com.intellij.applicationConfigurable` or `com.intellij.projectConfigurable` extension point (see [](settings_guide.md)).
+
 ### Database Plugin 2023.2
 
 `com.intellij.database.dataSource.DataSourceStorageCore` class removed

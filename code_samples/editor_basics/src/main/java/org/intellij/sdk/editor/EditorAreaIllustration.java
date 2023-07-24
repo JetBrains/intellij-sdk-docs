@@ -1,4 +1,4 @@
-// Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
 package org.intellij.sdk.editor;
 
@@ -34,7 +34,7 @@ public class EditorAreaIllustration extends AnAction {
     VisualPosition visualPos = primaryCaret.getVisualPosition();
     int caretOffset = primaryCaret.getOffset();
     // Build and display the caret report.
-    String report = logicalPos.toString() + "\n" + visualPos.toString() + "\n" +
+    String report = logicalPos + "\n" + visualPos + "\n" +
             "Offset: " + caretOffset;
     Messages.showInfoMessage(report, "Caret Parameters Inside The Editor");
   }

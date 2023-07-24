@@ -39,7 +39,7 @@ Each entry is mapped to its corresponding _Replacement_, pointing to the recomme
 | `BuildNumber.currentVersion()`           | Use `ApplicationInfo.getBuild()`                                                                                                                                            |
 | `CompactVirtualFileSet`                  | Use `VfsUtilCore.createCompactVirtualFileSet()`                                                                                                                             |
 | `DefaultPicoContainer`                   | Use [extension points](plugin_extensions.md) and [services](plugin_services.md)                                                                                             |
-| `EdtDataContext`                         | [See Doc](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/actionSystem/impl/EdtDataContext.java)                                                                    |
+| `EdtDataContext`                         | [See Doc](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/actionSystem/impl/EdtDataContext.kt)                                                                       |
 | `ExperimentalUI.isNewUI()`               | Use [`NewUI.isEnabled()`](%gh-ic%/platform/platform-api/src/com/intellij/ui/NewUI.java)                                                                                     |
 | `FileTypeIndex.NAME`                     | Use static methods in `FileTypeIndex` directly                                                                                                                              |
 | `IElementType.getDebugName()`            | Override/use `IElementType.toString()`                                                                                                                                      |
@@ -77,7 +77,7 @@ Therefore, any reported violations can be disregarded.
 |----------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
 | [`AnimatedIcon.ANIMATION_IN_RENDERER_ALLOWED`](%gh-ic%/platform/ide-core/src/com/intellij/ui/AnimatedIcon.java)                                    | Made public in 2021.3                           |
 | [`BaseExpirableExecutor.expireWith()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/BaseExpirableExecutor.java)                  | Made public in 2023.2                           |
-| [`BundleBase`](%gh-ic%/platform/util/src/com/intellij/BundleBase.java)                                                                             | Made public in 2022.1                           |
+| [`BundleBase`](%gh-ic%/platform/util/src/com/intellij/BundleBase.kt)                                                                                | Made public in 2022.1                           |
 | [`IdFilter`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/IdFilter.java)                                                           | Made public in 2021.2/3                         |
 | [`HashingStrategy`](%gh-ic%/platform/util/base/src/com/intellij/util/containers/HashingStrategy.java)                                              | Made public in 2023.1                           |
 | [`JsonCustomStructureViewFactory`](%gh-ic%/json/src/com/intellij/json/structureView/JsonCustomStructureViewFactory.java)                           | Made public in 2023.2                           |

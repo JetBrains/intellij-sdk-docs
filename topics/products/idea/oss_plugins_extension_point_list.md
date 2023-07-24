@@ -14,7 +14,7 @@ Overview of Extension Points and Listeners for OSS plugins bundled with [](idea_
 
 <include from="snippets.md" element-id="ep_list_legend"/>
 
-26 Extension Points and 5 Listeners
+20 Extension Points and 8 Listeners
 
 ## IntelliJ Open Source Plugins
 
@@ -24,8 +24,11 @@ Overview of Extension Points and Listeners for OSS plugins bundled with [](idea_
 |-------|----------|
 | [FlexBuildConfigurationChangeListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.lang.javascript.flex.projectStructure.model.impl.FlexBuildConfigurationChangeListener)  | [`FlexBuildConfigurationChangeListener`](%gh-ij-plugins%/flex/src/com/intellij/lang/javascript/flex/projectStructure/model/impl/FlexBuildConfigurationChangeListener.java) |
 | [SerialSettingsChangeListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.plugins.serialmonitor.service.SerialSettingsChangeListener)  | [`SerialSettingsChangeListener`](%gh-ij-plugins%/serial-monitor/src/main/java/com/intellij/plugins/serialmonitor/service/SerialSettingsChangeListener.java) |
+| [PlatformioServiceKt#PLATFORMIO_UPDATES_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.embedded.platformio.PlatformioUpdatesNotifier)  ![Project-Level][project-level] | [`PlatformioUpdatesNotifier`](%gh-ij-plugins%/platformio/src/com/jetbrains/cidr/cpp/embedded/platformio/PlatformioService.kt) |
+| [PlatformioSettingsListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.embedded.platformio.project.PlatformioSettingsListener)  | [`PlatformioSettingsListener`](%gh-ij-plugins%/platformio/src/com/jetbrains/cidr/cpp/embedded/platformio/project/PlatformioSettings.kt) |
 | [DartAnalysisServerMessages#DART_ANALYSIS_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.lang.dart.analyzer.DartAnalysisServerMessages.DartAnalysisNotifier)  | [`DartAnalysisNotifier`](%gh-ij-plugins%/Dart/src/com/jetbrains/lang/dart/analyzer/DartAnalysisServerMessages.java) |
 | [PerforceSettings#OFFLINE_MODE_EXITED](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
+| [P4EnvHelper#P4_ENV_CHANGED](https://jb.gg/ipe/listeners?topics=org.jetbrains.idea.perforce.perforce.connections.P4EnvHelper.P4EnvListener)  ![Project-Level][project-level] | [`P4EnvListener`](%gh-ij-plugins%/PerforceIntegration/src/org/jetbrains/idea/perforce/perforce/connections/P4EnvHelper.java) |
 | [FrameworkDefinitionListener#TOPIC](https://jb.gg/ipe/listeners?topics=org.osmorc.settings.FrameworkDefinitionListener)  | [`FrameworkDefinitionListener`](%gh-ij-plugins%/osmorc/src/org/osmorc/settings/FrameworkDefinitionListener.java) |
 
 
@@ -46,24 +49,12 @@ Overview of Extension Points and Listeners for OSS plugins bundled with [](idea_
 |-----------------|----------------|
 | [com.intellij.flex.breakpoint.type.provider](https://jb.gg/ipe?extensions=com.intellij.flex.breakpoint.type.provider) ![Non-Dynamic][non-dynamic] | [`BreakpointTypeProvider`](%gh-ij-plugins%/flex/src/com/intellij/lang/javascript/flex/debug/FlexBreakpointsHandler.java) |
 
-### com.intellij.struts2
-
-[`com.intellij.struts2`](%gh-ij-plugins%/struts2/plugin/resources/META-INF/plugin.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| [com.intellij.struts2.classContributor](https://jb.gg/ipe?extensions=com.intellij.struts2.classContributor) | [`ExtendableClassConverterContributor`](%gh-ij-plugins%/struts2/dom/src/com/intellij/struts2/dom/ExtendableClassConverter.java) |
-| [com.intellij.struts2.constantContributor](https://jb.gg/ipe?extensions=com.intellij.struts2.constantContributor) | [`StrutsConstantContributor`](%gh-ij-plugins%/struts2/plugin/src/com/intellij/struts2/model/constant/StrutsConstantContributor.java) |
-| [com.intellij.struts2.constantValueClassContributor](https://jb.gg/ipe?extensions=com.intellij.struts2.constantValueClassContributor) | [`ConstantValueConverterClassContributor`](%gh-ij-plugins%/struts2/plugin/src/com/intellij/struts2/model/constant/ConstantValueConverterClassContributor.java) |
-| [com.intellij.struts2.paramNameCustomConverter](https://jb.gg/ipe?extensions=com.intellij.struts2.paramNameCustomConverter) | [`ParamNameCustomConverter`](%gh-ij-plugins%/struts2/dom/src/com/intellij/struts2/dom/params/ParamNameConverter.java) |
-| [com.intellij.struts2.resultContributor](https://jb.gg/ipe?extensions=com.intellij.struts2.resultContributor) | [`StrutsResultContributor`](%gh-ij-plugins%/struts2/plugin/src/com/intellij/struts2/dom/struts/impl/path/StrutsResultContributor.java) |
-
 ### com.thoughtworks.gauge
 
 [`com.thoughtworks.gauge`](%gh-ij-plugins%/gauge/resources/META-INF/plugin.xml)
 
-| Extension Point | Implementation                                                                                            |
-|-----------------|-----------------------------------------------------------------------------------------------------------|
+| Extension Point | Implementation |
+|-----------------|----------------|
 | [com.thoughtworks.gauge.moduleImporter](https://jb.gg/ipe?extensions=com.thoughtworks.gauge.moduleImporter) | [`GaugeModuleImporter`](%gh-ij-plugins%/gauge/src/com/thoughtworks/gauge/wizard/GaugeModuleImporter.java) |
 
 ### Dart
@@ -112,14 +103,6 @@ Overview of Extension Points and Listeners for OSS plugins bundled with [](idea_
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.intellij.makefile.toolWindowStripeController](https://jb.gg/ipe?extensions=com.intellij.makefile.toolWindowStripeController) | [`MakefileToolWindowStripeController`](%gh-ij-plugins%/makefile/src/com/jetbrains/lang/makefile/toolWindow/MakefileToolWindowStripeController.kt) |
-
-### ognl.xml
-
-[`ognl.xml`](%gh-ij-plugins%/struts2/plugin/resources/META-INF/ognl.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| [com.intellij.ognl.variableReferencesContributor](https://jb.gg/ipe?extensions=com.intellij.ognl.variableReferencesContributor) | [`OgnlVariableReferencesContributor`](%gh-ij-plugins%/struts2/ognl/src/com/intellij/lang/ognl/psi/resolve/variable/OgnlVariableReferencesContributor.java) |
 
 ### org.jetbrains.plugins.vue
 

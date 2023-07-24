@@ -4,7 +4,7 @@
 
 <link-summary>Overview of Extension Points and Listeners for Rider.</link-summary>
 
-97 Extension Points and 5 Listeners for Rider
+110 Extension Points and 5 Listeners for Rider
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
@@ -20,7 +20,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [SSHCredentialsInClipboardNotifier.Companion#SSH_CREDENTIALS_IN_CLIPBOARD_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.debugger.attach.remoting.SSHCredentialsInClipboardNotifier)  | `SSHCredentialsInClipboardNotifier` |
 | [FrontendTypedHandlerManager#BEFORE_TYPING_SENT](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.editorActions.IFrontendTypingListener)  | `IFrontendTypingListener` |
 | [MSBuildEvaluationListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.run.environment.MSBuildEvaluationListener)  | `MSBuildEvaluationListener` |
-| [RiderGlobalBackendProgressListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.services.RiderGlobalProgressHost.RiderGlobalBackendProgressListener)  | `RiderGlobalBackendProgressListener` |
+| [RiderGlobalBackendProgressListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.services.RiderGlobalProgressHost.RiderGlobalBackendProgressListener)  | `RiderGlobalBackendProgressListener` |i
 
 ### com.jetbrains.dotTrace.dotMemory
 
@@ -33,6 +33,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.jetbrains.rider-cpp.run.configurations.cpp](https://jb.gg/ipe?extensions=com.jetbrains.rider-cpp.run.configurations.cpp) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `CppConfigurationParametersExtension` |
+| [com.jetbrains.rider-cpp.run.configurations.cpp.launch.profile](https://jb.gg/ipe?extensions=com.jetbrains.rider-cpp.run.configurations.cpp.launch.profile) ![Non-Dynamic][non-dynamic] | `CppProjectLaunchProfile` |
 
 ### DotNetPlugin.xml
 
@@ -68,9 +69,8 @@ See [](extension_point_list.md) for IntelliJ Platform.
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.intellij.rider.fileModuleProvider](https://jb.gg/ipe?extensions=com.intellij.rider.fileModuleProvider) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `IRiderFileModuleProvider` |
+| [com.intellij.rider.projectModelIconProvider](https://jb.gg/ipe?extensions=com.intellij.rider.projectModelIconProvider) | `ProjectModelIconProvider` |
 | [com.intellij.rider.workspaceCountableProjectsPolicy](https://jb.gg/ipe?extensions=com.intellij.rider.workspaceCountableProjectsPolicy) | `CountableProjectsPolicy` |
-| [com.intellij.rider.workspaceExtension](https://jb.gg/ipe?extensions=com.intellij.rider.workspaceExtension) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `RiderWorkspaceExtension` |
 
 ### intellij.rider.cpp.debugger
 
@@ -84,16 +84,22 @@ See [](extension_point_list.md) for IntelliJ Platform.
 |-----------------|----------------|
 | [com.intellij.rider.refactoringPageProvider](https://jb.gg/ipe?extensions=com.intellij.rider.refactoringPageProvider) ![Non-Dynamic][non-dynamic] | `RefactoringPageProvider` |
 
-### rider-plugins-appender.cloudconfig.xml
+### plugin.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.intellij.rider.settings.machineDependentBackendSetting](https://jb.gg/ipe?extensions=com.intellij.rider.settings.machineDependentBackendSetting) ![Non-Dynamic][non-dynamic] | `n/a` |
+| [com.intellij.rider.client.typedHandler](https://jb.gg/ipe?extensions=com.intellij.rider.client.typedHandler) | `RiderClientLookupTypedHandler` |
 
 ### rider-plugins-appender.database.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| [com.intellij.rider.database.connectionStringRetriever](https://jb.gg/ipe?extensions=com.intellij.rider.database.connectionStringRetriever) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `DatabaseConnectionUrlRetriever` |
+| [com.intellij.rider.database.connectionStringToJdbcUrlMapper](https://jb.gg/ipe?extensions=com.intellij.rider.database.connectionStringToJdbcUrlMapper) ![Project-Level][project-level] | `ConnectionStringToJdbcUrlConverter` |
+| [com.intellij.rider.database.connectionStringsFactory](https://jb.gg/ipe?extensions=com.intellij.rider.database.connectionStringsFactory) ![Project-Level][project-level] | `ConnectionStringsFactory` |
+| [com.intellij.rider.database.connectionStringsFinder](https://jb.gg/ipe?extensions=com.intellij.rider.database.connectionStringsFinder) ![Project-Level][project-level] | `ConnectionStringsFinder` |
+| [com.intellij.rider.database.dotnetDataProvider](https://jb.gg/ipe?extensions=com.intellij.rider.database.dotnetDataProvider) ![Project-Level][project-level] | `DotnetDataProvider` |
+| [com.intellij.rider.database.jdbcUrlToConnectionStringConverter](https://jb.gg/ipe?extensions=com.intellij.rider.database.jdbcUrlToConnectionStringConverter) ![Project-Level][project-level] | `JdbcUrlToConnectionStringConverter` |
 | [com.intellij.rider.database.schemaCompareDataModelCreatedListener](https://jb.gg/ipe?extensions=com.intellij.rider.database.schemaCompareDataModelCreatedListener) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `SchemaCompareDataModelCreatedListener` |
 
 ### rider-plugins-appender.docker.xml
@@ -108,6 +114,12 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [JavaScript.packageJson.configuration.handler](https://jb.gg/ipe?extensions=JavaScript.packageJson.configuration.handler) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `RiderPackageJsonConfiguratorHandler` |
+
+### rider-plugins-appender.lang.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.intellij.backendLanguageInjectionBridge](https://jb.gg/ipe?extensions=com.intellij.backendLanguageInjectionBridge) | `BackendLanguageInjectionBridge` |
 
 ### RiderCppCore.xml
 
@@ -135,17 +147,20 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.rider.backendCrashAnalyser](https://jb.gg/ipe?extensions=com.intellij.rider.backendCrashAnalyser) ![Non-Dynamic][non-dynamic] | `BackendCrashAnalyzer` |
 | [com.intellij.rider.breakpoint.customPanelProvider](https://jb.gg/ipe?extensions=com.intellij.rider.breakpoint.customPanelProvider) ![Non-Dynamic][non-dynamic] | `IDotNetLineBreakpointCustomPanelsProvider` |
 | [com.intellij.rider.breakpoint.customPopupActionsProvider](https://jb.gg/ipe?extensions=com.intellij.rider.breakpoint.customPopupActionsProvider) ![Non-Dynamic][non-dynamic] | `IDotNetLineBreakpointPopupActionsProvider` |
+| [com.intellij.rider.buildButtonModeProvider](https://jb.gg/ipe?extensions=com.intellij.rider.buildButtonModeProvider) | `BuildButtonModeProvider` |
 | [com.intellij.rider.cleanupAction](https://jb.gg/ipe?extensions=com.intellij.rider.cleanupAction) ![Non-Dynamic][non-dynamic] | `CleanupAction` |
 | [com.intellij.rider.codeLens.vcsDeclarationRangesProvider](https://jb.gg/ipe?extensions=com.intellij.rider.codeLens.vcsDeclarationRangesProvider) ![Non-Dynamic][non-dynamic] | `VcsDeclarationRangesProvider` |
 | [com.intellij.rider.completion.preselectionStrategy](https://jb.gg/ipe?extensions=com.intellij.rider.completion.preselectionStrategy) ![Non-Dynamic][non-dynamic] | `RiderFrontendLanguagesPreselectionStrategy` |
 | [com.intellij.rider.configurationExecutorExtension](https://jb.gg/ipe?extensions=com.intellij.rider.configurationExecutorExtension) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `RiderConfigurationExecutorExtension` |
 | [com.intellij.rider.configurationLaunchSettingsExtension](https://jb.gg/ipe?extensions=com.intellij.rider.configurationLaunchSettingsExtension) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `RiderConfigurationLaunchSettingsExtension` |
 | [com.intellij.rider.debug.breakpoint.handler.factory](https://jb.gg/ipe?extensions=com.intellij.rider.debug.breakpoint.handler.factory) ![Non-Dynamic][non-dynamic] | `IDotNetSupportedBreakpointHandlerFactory` |
+| [com.intellij.rider.debugger.value.presenter](https://jb.gg/ipe?extensions=com.intellij.rider.debugger.value.presenter) ![Non-Dynamic][non-dynamic] | `RiderDebuggerValuePresenter` |
 | [com.intellij.rider.debuggerSupportPolicy](https://jb.gg/ipe?extensions=com.intellij.rider.debuggerSupportPolicy) ![Non-Dynamic][non-dynamic] | `RiderDebuggerSupportPolicy` |
 | [com.intellij.rider.editSourceSuppressor](https://jb.gg/ipe?extensions=com.intellij.rider.editSourceSuppressor) ![Non-Dynamic][non-dynamic] | `RiderEditSourceSuppressor` |
 | [com.intellij.rider.extendedCodeStructure](https://jb.gg/ipe?extensions=com.intellij.rider.extendedCodeStructure) ![Non-Dynamic][non-dynamic] | `RiderExtendedFileStructure` |
 | [com.intellij.rider.externalDirectoryProvider](https://jb.gg/ipe?extensions=com.intellij.rider.externalDirectoryProvider) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `ExternalDirectoryProvider` |
 | [com.intellij.rider.fileTemplating.postCreateAction](https://jb.gg/ipe?extensions=com.intellij.rider.fileTemplating.postCreateAction) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `RiderNewFileFromTemplateExtension` |
+| [com.intellij.rider.findPopupProjectScopeProvider](https://jb.gg/ipe?extensions=com.intellij.rider.findPopupProjectScopeProvider) | `FindPopupProjectScopeProvider` |
 | [com.intellij.rider.guidPresenter](https://jb.gg/ipe?extensions=com.intellij.rider.guidPresenter) ![Project-Level][project-level] | `GuidGeneratorPresenter` |
 | [com.intellij.rider.newRunConfigurationTreeGroupingProvider](https://jb.gg/ipe?extensions=com.intellij.rider.newRunConfigurationTreeGroupingProvider) ![Non-Dynamic][non-dynamic] | `RiderNewRunConfigurationTreeGroupingProvider` |
 | [com.intellij.rider.patchCommandLine](https://jb.gg/ipe?extensions=com.intellij.rider.patchCommandLine) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `PatchCommandLineExtension` |
@@ -153,6 +168,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.rider.pencils.inspectionToolGroup](https://jb.gg/ipe?extensions=com.intellij.rider.pencils.inspectionToolGroup) ![Non-Dynamic][non-dynamic] | `n/a` |
 | [com.intellij.rider.pencils.pencilsFilterGroup](https://jb.gg/ipe?extensions=com.intellij.rider.pencils.pencilsFilterGroup) ![Non-Dynamic][non-dynamic] | `n/a` |
 | [com.intellij.rider.problemsView.actionsHandler](https://jb.gg/ipe?extensions=com.intellij.rider.problemsView.actionsHandler) ![Non-Dynamic][non-dynamic] | `RiderProblemsViewActionsHandler` |
+| [com.intellij.rider.problemsView.problems.processor](https://jb.gg/ipe?extensions=com.intellij.rider.problemsView.problems.processor) ![Non-Dynamic][non-dynamic] | `RiderProblemsDiffProcessor` |
 | [com.intellij.rider.projectView.actions.projectTemplating.backend.reSharperProjectTemplateCustomizer](https://jb.gg/ipe?extensions=com.intellij.rider.projectView.actions.projectTemplating.backend.reSharperProjectTemplateCustomizer) ![Non-Dynamic][non-dynamic] | `ReSharperProjectTemplateCustomizer` |
 | [com.intellij.rider.publishConfigurationProvider](https://jb.gg/ipe?extensions=com.intellij.rider.publishConfigurationProvider) ![Non-Dynamic][non-dynamic] | `RiderContextPublishProvider` |
 | [com.intellij.rider.refactoringPageProvider](https://jb.gg/ipe?extensions=com.intellij.rider.refactoringPageProvider) ![Non-Dynamic][non-dynamic] | `RefactoringPageProvider` |
@@ -170,6 +186,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.rider.solutionConfigurationToolbarCustomizer](https://jb.gg/ipe?extensions=com.intellij.rider.solutionConfigurationToolbarCustomizer) | `SolutionConfigurationToolbarCustomizer` |
 | [com.intellij.rider.unitTesting.actionsProvider](https://jb.gg/ipe?extensions=com.intellij.rider.unitTesting.actionsProvider) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `RiderUnitTestActionsProvider` |
 | [com.intellij.rider.unitTesting.sessionHandler](https://jb.gg/ipe?extensions=com.intellij.rider.unitTesting.sessionHandler) ![Non-Dynamic][non-dynamic] | `IRiderUnitTestDebuggerSessionsHandler` |
+| [com.intellij.rider.unityDetector](https://jb.gg/ipe?extensions=com.intellij.rider.unityDetector) ![Project-Level][project-level] | `UnityDetector` |
 | [com.intellij.rider.web.extensions.companionDebugStarter](https://jb.gg/ipe?extensions=com.intellij.rider.web.extensions.companionDebugStarter) ![Non-Dynamic][non-dynamic] | `DotNetCompanionDebugStarter` |
 | [com.intellij.rider.web.extensions.webBrowserDebugSupport](https://jb.gg/ipe?extensions=com.intellij.rider.web.extensions.webBrowserDebugSupport) ![Non-Dynamic][non-dynamic] | `WebBrowserDebugSupport` |
 | [com.intellij.rider.writingAccessProvider](https://jb.gg/ipe?extensions=com.intellij.rider.writingAccessProvider) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `RiderDebugWritingAccessProvider` |
@@ -178,6 +195,12 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.solutionExplorerRootProvider](https://jb.gg/ipe?extensions=com.intellij.solutionExplorerRootProvider) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `SolutionExplorerRootProvider` |
 | [com.intellij.solutionManagerExtensions](https://jb.gg/ipe?extensions=com.intellij.solutionManagerExtensions) ![Non-Dynamic][non-dynamic] | `SolutionManagerExtensions` |
 | [com.intellij.solutionViewPsiNodeNavigator](https://jb.gg/ipe?extensions=com.intellij.solutionViewPsiNodeNavigator) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `SolutionViewPsiNodeNavigator` |
+
+### RiderSettingsSync.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.intellij.rider.settings.machineDependentBackendSetting](https://jb.gg/ipe?extensions=com.intellij.rider.settings.machineDependentBackendSetting) ![Non-Dynamic][non-dynamic] | `n/a` |
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square
 [removal]: https://img.shields.io/badge/-Removal-red?style=flat-square

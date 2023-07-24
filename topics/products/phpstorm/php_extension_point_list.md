@@ -4,7 +4,7 @@
 
 <link-summary>Overview of Extension Points and Listeners for PHP.</link-summary>
 
-59 Extension Points and 10 Listeners for PHP
+62 Extension Points and 10 Listeners for PHP
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
@@ -26,6 +26,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [StateChangedListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.debug.listener.PhpDebugExternalConnectionsAccepter.StateChangedListener)  | `StateChangedListener` |
 | [RectorChangesListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.rector.RectorChangesListener)  | `RectorChangesListener` |
 | [PhpRemoteInterpreterChangedListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.remote.interpreter.ui.PhpRemoteInterpreterConfigurationForm.PhpRemoteInterpreterChangedListener)  | `PhpRemoteInterpreterChangedListener` |
+
 
 ### com.intellij.phing
 
@@ -56,6 +57,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.phpDeadCode](https://jb.gg/ipe?extensions=com.intellij.phpDeadCode) | [`EntryPoint`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/reference/EntryPoint.java) |
 | [com.intellij.phpRunConfigurationExtension](https://jb.gg/ipe?extensions=com.intellij.phpRunConfigurationExtension) | `PhpRunConfigurationExtension` |
 | [com.jetbrains.php.arrayShapesProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.arrayShapesProvider) | `PhpArrayShapesProvider` |
+| [com.jetbrains.php.baseLexerProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.baseLexerProvider) ![Internal][internal] | `PhpBaseLexerProvider` |
 | [com.jetbrains.php.classAliasProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.classAliasProvider) | `PhpClassAliasProvider` |
 | [com.jetbrains.php.composer.execProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.composer.execProvider) | `ComposerExecutionProvider` |
 | [com.jetbrains.php.composerConfigClient](https://jb.gg/ipe?extensions=com.jetbrains.php.composerConfigClient) ![Internal][internal] | `ComposerConfigClient` |
@@ -68,6 +70,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [com.jetbrains.php.debug.mapping.localPathFixer](https://jb.gg/ipe?extensions=com.jetbrains.php.debug.mapping.localPathFixer) | `PhpLocalPathFixer` |
 | [com.jetbrains.php.deprecationFixesProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.deprecationFixesProvider) | `PhpDeprecationQuickFixesProvider` |
 | [com.jetbrains.php.deprecationProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.deprecationProvider) | `PhpDeprecationProvider` |
+| [com.jetbrains.php.dfaStateFromAssertionProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.dfaStateFromAssertionProvider) ![Internal][internal] | `PhpDfaStateFromAssertionProvider` |
 | [com.jetbrains.php.docPrefixProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.docPrefixProvider) ![Internal][internal] | `PhpDocPrefixProvider` |
 | [com.jetbrains.php.docTagParserExtension](https://jb.gg/ipe?extensions=com.jetbrains.php.docTagParserExtension) ![Internal][internal] | `PhpDocTagParser` |
 | [com.jetbrains.php.docTagValuesStubProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.docTagValuesStubProvider) | `PhpCustomDocTagValuesStubProvider` |
@@ -94,6 +97,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [com.jetbrains.php.testFramework.phpTestOldConfigHolder](https://jb.gg/ipe?extensions=com.jetbrains.php.testFramework.phpTestOldConfigHolder) ![Deprecated][deprecated] ![Internal][internal] | `PhpTestFrameworkOldConfigHolder` |
 | [com.jetbrains.php.testFrameworkType](https://jb.gg/ipe?extensions=com.jetbrains.php.testFrameworkType) | `PhpTestFrameworkType` |
 | [com.jetbrains.php.tools.projectConfigurableForm](https://jb.gg/ipe?extensions=com.jetbrains.php.tools.projectConfigurableForm) ![Internal][internal] ![Project-Level][project-level] | `QualityToolProjectConfigurableForm` |
+| [com.jetbrains.php.tools.quality.laravelPint.laravelPintConfigurationProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.tools.quality.laravelPint.laravelPintConfigurationProvider) | `LaravelPintConfigurationProvider` |
 | [com.jetbrains.php.tools.quality.messDetector.messDetectorConfigurationProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.tools.quality.messDetector.messDetectorConfigurationProvider) | `MessDetectorConfigurationProvider` |
 | [com.jetbrains.php.tools.quality.phpCSFixer.phpCSFixerConfigurationProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.tools.quality.phpCSFixer.phpCSFixerConfigurationProvider) | `PhpCSFixerConfigurationProvider` |
 | [com.jetbrains.php.tools.quality.phpcs.phpCSConfigurationProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.tools.quality.phpcs.phpCSConfigurationProvider) | `PhpCSConfigurationProvider` |

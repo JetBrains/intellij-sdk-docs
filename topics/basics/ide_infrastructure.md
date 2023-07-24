@@ -106,7 +106,7 @@ To show custom context web-based help for your plugin's functionality (e.g., for
 
 ## Running Tasks Once
 
-Use [`RunOnceUtil`](%gh-ic%/platform/ide-core/src/com/intellij/ide/util/RunOnceUtil.java) to run a task exactly once per project/application.
+Use [`RunOnceUtil`](%gh-ic%/platform/ide-core/src/com/intellij/ide/util/RunOnceUtil.kt) to run a task exactly once per project/application.
 
 ## Application Events
 

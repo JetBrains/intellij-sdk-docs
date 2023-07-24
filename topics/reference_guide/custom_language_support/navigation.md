@@ -26,7 +26,7 @@ which it obtains by resolving a [reference](declarations_and_references.md#refer
 If there are several target symbols or several navigation targets defined for a symbol,
 then the IDE shows the navigation popup to ask the user to choose where to go.
 
-The [`NavigationTarget`](%gh-ic%/platform/core-api/src/com/intellij/navigation/NavigationTarget.java)
+The [`NavigationTarget`](%gh-ic%/platform/core-api/src/com/intellij/platform/backend/navigation/NavigationTarget.java)
 is essentially a pair of a `Navigatable` and
 a [`TargetPresentation`](%gh-ic%/platform/core-api/src/com/intellij/platform/backend/presentation/TargetPresentation.kt)
 instances (where to go and what to show in the popup).

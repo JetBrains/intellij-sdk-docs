@@ -79,7 +79,7 @@ For a non-blocking alternative, starting with version 2019.2 of the platform, se
 
 For storing a large set of Virtual Files, use dedicated `VfsUtilCore.createCompactVirtualFileSet()`.
 
-Use [`ProjectLocator`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/project/ProjectLocator.java) to find the projects that contain a given virtual file.
+Use [`ProjectLocator`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/ProjectLocator.kt) to find the projects that contain a given virtual file.
 
 ## How do I extend VFS?
 

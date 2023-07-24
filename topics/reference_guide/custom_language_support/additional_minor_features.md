@@ -208,7 +208,7 @@ EP: `com.intellij.problemHighlightFilter`, `com.intellij.problemFileHighlightFil
 
 [`ProblemHighlightFilter`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/daemon/ProblemHighlightFilter.java) and
 the `com.intellij.problemFileHighlightFilter` EP (which implements
-[`Condition<VirtualFile>`](%gh-ic%/platform/util-rt/src/com/intellij/openapi/util/Condition.java))
+[`Condition<VirtualFile>`](%gh-ic%/platform/util/src/com/intellij/openapi/util/Condition.java))
 are used to filter out files that should not be error-highlighted because they are, e.g., outside
 the current project scope.
 Note that these filters should be permissive and only prevent highlighting for files that are absolutely

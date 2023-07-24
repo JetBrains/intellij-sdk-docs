@@ -28,7 +28,7 @@ Therefore, custom language plugin developers typically use stub indexes in their
 
 Indexing is a potentially lengthy process.
 It's performed in the background, and during this time, IDE features are restricted to the ones that don't require index: basic text editing, version control, etc.
-This restriction is managed by [`DumbService`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbService.java).
+This restriction is managed by [`DumbService`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbService.kt).
 Violations are reported via [`IndexNotReadyException`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/IndexNotReadyException.java) - see its Javadoc for the information on how to adapt callers.
 
 `DumbService` provides API to query whether the IDE is currently in "dumb" mode (where index access is not allowed) or "smart" mode (with all index built and ready to use).

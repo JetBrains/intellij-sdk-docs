@@ -13,7 +13,7 @@
   <version>0.1</version>
 
   <!-- Compatible with the following versions of IntelliJ Platform: version 2022.1 and newer. -->
-  <idea-version since-build="2022.1"/>
+  <idea-version since-build="221"/>
 
   <!-- Indicate this plugin can be loaded in all IntelliJ Platform-based products. -->
   <depends>com.intellij.modules.platform</depends>

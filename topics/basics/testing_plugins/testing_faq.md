@@ -99,6 +99,8 @@ Set system property `idea.split.test.logs` to `true` to generate separate test l
 
 Annotate with [`org.jetbrains.annotations.TestOnly`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/TestOnly.java), usages will be highlighted via inspection <control>JVM languages | Test-only usage in production code</control>.
 
+To mark members whose visibility is higher than necessary to be used from tests, use [`org.jetbrains.annotations.VisibleForTesting`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/VisibleForTesting.java)
+
 ### How to run tests for all files in a directory?
 
 Use [`FileBasedTestCaseHelper`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/FileBasedTestCaseHelper.java), please see its Javadoc for instructions.

@@ -2,6 +2,7 @@
 
 package org.intellij.sdk.project.model;
 
+import com.intellij.openapi.actionSystem.ActionUpdateThread;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -19,6 +20,11 @@ import org.jetbrains.annotations.NotNull;
 public class ProjectFileIndexSampleAction extends AnAction {
 
   @Override
+  public @NotNull ActionUpdateThread getActionUpdateThread() {
+    return ActionUpdateThread.BGT;
+  }
+
+  @Override
   public void update(@NotNull final AnActionEvent event) {
     Project project = event.getProject();
     final Editor editor = event.getData(CommonDataKeys.EDITOR);
@@ -33,6 +39,7 @@ public class ProjectFileIndexSampleAction extends AnAction {
     if (project == null || editor == null) {
       return;
     }
+
     Document document = editor.getDocument();
     FileDocumentManager fileDocumentManager = FileDocumentManager.getInstance();
     VirtualFile virtualFile = fileDocumentManager.getFile(document);

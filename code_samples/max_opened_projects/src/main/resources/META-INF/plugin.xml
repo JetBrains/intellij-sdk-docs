@@ -36,8 +36,11 @@
   <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <applicationListeners>
-    <listener class="org.intellij.sdk.maxOpenProjects.ProjectOpenCloseListener"
+    <listener class="org.intellij.sdk.maxOpenProjects.ProjectCloseListener"
               topic="com.intellij.openapi.project.ProjectManagerListener"/>
   </applicationListeners>
 
+  <extensions defaultExtensionNs="com.intellij">
+    <postStartupActivity implementation="org.intellij.sdk.maxOpenProjects.ProjectOpenStartupActivity"/>
+  </extensions>
 </idea-plugin>

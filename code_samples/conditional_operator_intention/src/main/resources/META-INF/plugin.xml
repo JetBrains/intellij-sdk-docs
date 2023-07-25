@@ -35,7 +35,7 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <intentionAction>
-      <!-- add "<language>JAVA</language>" when targeting 2022.3 and later only -->
+      <language>JAVA</language> <!-- available in 2022.3 and later -->
       <className>org.intellij.sdk.intention.ConditionalOperatorConverter</className>
       <category>SDK intentions</category>
     </intentionAction>

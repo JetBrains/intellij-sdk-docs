@@ -2,6 +2,7 @@
 
 package org.intellij.sdk.editor;
 
+import com.intellij.openapi.actionSystem.ActionUpdateThread;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -16,6 +17,11 @@ import org.jetbrains.annotations.NotNull;
  * @see AnAction
  */
 public class EditorAreaIllustration extends AnAction {
+
+  @Override
+  public @NotNull ActionUpdateThread getActionUpdateThread() {
+    return ActionUpdateThread.BGT;
+  }
 
   /**
    * Displays a message with information about the current caret.
@@ -53,7 +59,7 @@ public class EditorAreaIllustration extends AnAction {
     // Get required data keys
     final Project project = e.getProject();
     final Editor editor = e.getData(CommonDataKeys.EDITOR);
-    //Set visibility only in case of existing project and editor
+    // Set visibility only in case of existing project and editor
     e.getPresentation().setEnabledAndVisible(project != null && editor != null);
   }
 

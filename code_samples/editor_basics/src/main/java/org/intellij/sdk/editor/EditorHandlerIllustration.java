@@ -1,11 +1,8 @@
-// Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
 package org.intellij.sdk.editor;
 
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
-import com.intellij.openapi.actionSystem.IdeActions;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.actionSystem.EditorActionHandler;
 import com.intellij.openapi.editor.actionSystem.EditorActionManager;
@@ -18,6 +15,11 @@ import org.jetbrains.annotations.NotNull;
  * @see AnAction
  */
 public class EditorHandlerIllustration extends AnAction {
+
+  @Override
+  public @NotNull ActionUpdateThread getActionUpdateThread() {
+    return ActionUpdateThread.BGT;
+  }
 
   /**
    * Clones a new caret at a higher Logical Position line number.

@@ -82,6 +82,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 Specify `displayName`/`key` for `Configurable`
 : To improve performance, provide either attribute for `com.intellij.applicationConfigurable` or `com.intellij.projectConfigurable` extension point (see [](settings_guide.md)).
 
+`com.intellij.remote.RemoteProcess.setWindowSize(int, int)` abstract method added
+: Should implement this method.
+
 ### Database Plugin 2023.2
 
 `com.intellij.database.dataSource.DataSourceStorageCore` class removed

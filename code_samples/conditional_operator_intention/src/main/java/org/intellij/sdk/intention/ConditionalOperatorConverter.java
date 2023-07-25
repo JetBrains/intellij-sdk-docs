@@ -1,4 +1,4 @@
-// Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
 package org.intellij.sdk.intention;
 
@@ -60,14 +60,12 @@ public class ConditionalOperatorConverter extends PsiElementBaseIntentionAction 
     }
 
     // Is this a token of type representing a "?" character?
-    if (element instanceof PsiJavaToken) {
-      final PsiJavaToken token = (PsiJavaToken) element;
+    if (element instanceof PsiJavaToken token) {
       if (token.getTokenType() != JavaTokenType.QUEST) {
         return false;
       }
       // Is this token part of a fully formed conditional, i.e. a ternary?
-      if (token.getParent() instanceof PsiConditionalExpression) {
-        final PsiConditionalExpression conditionalExpression = (PsiConditionalExpression) token.getParent();
+      if (token.getParent() instanceof PsiConditionalExpression conditionalExpression) {
         // Satisfies all criteria; call back invoke method
         return conditionalExpression.getThenExpression() != null && conditionalExpression.getElseExpression() != null;
       }
@@ -116,8 +114,7 @@ public class ConditionalOperatorConverter extends PsiElementBaseIntentionAction 
 
     // If the original statement is a declaration based on a ternary operator,
     // split the declaration and assignment
-    if (originalStatement instanceof PsiDeclarationStatement) {
-      final PsiDeclarationStatement declaration = (PsiDeclarationStatement) originalStatement;
+    if (originalStatement instanceof PsiDeclarationStatement declaration) {
 
       // Find the local variable within the declaration statement
       final PsiElement[] declaredElements = declaration.getDeclaredElements();

@@ -183,7 +183,7 @@ Apache Batik library unbundled
 : Only recompilation needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
 
 `com.intellij.database.plan.ExplainPlanProvider.createRawExplainTask(LocalDataSource dataSource, boolean analyze)` abstract method added
-: Should implement this method
+: Should implement this method.
 
 ### JavaScript Plugin 2023.1
 

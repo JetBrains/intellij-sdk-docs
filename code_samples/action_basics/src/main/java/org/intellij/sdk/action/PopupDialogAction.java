@@ -1,7 +1,8 @@
-// Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
 package org.intellij.sdk.action;
 
+import com.intellij.openapi.actionSystem.ActionUpdateThread;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -20,6 +21,11 @@ import javax.swing.*;
  * in the plugin.xml file. But when added at runtime this class is instantiated by an action group.
  */
 public class PopupDialogAction extends AnAction {
+
+  @Override
+  public @NotNull ActionUpdateThread getActionUpdateThread() {
+    return ActionUpdateThread.BGT;
+  }
 
   /**
    * This default constructor is used by the IntelliJ Platform framework to instantiate this class based on plugin.xml
@@ -56,13 +62,13 @@ public class PopupDialogAction extends AnAction {
     // Using the event, create and show a dialog
     Project currentProject = event.getProject();
     StringBuilder dlgMsg = new StringBuilder(event.getPresentation().getText() + " Selected!");
-    String dlgTitle = event.getPresentation().getDescription();
+    String dialogTitle = event.getPresentation().getDescription();
     // If an element is selected in the editor, add info about it.
-    Navigatable nav = event.getData(CommonDataKeys.NAVIGATABLE);
-    if (nav != null) {
-      dlgMsg.append(String.format("\nSelected Element: %s", nav.toString()));
+    Navigatable navigatable = event.getData(CommonDataKeys.NAVIGATABLE);
+    if (navigatable != null) {
+      dlgMsg.append(String.format("\nSelected Element: %s", navigatable));
     }
-    Messages.showMessageDialog(currentProject, dlgMsg.toString(), dlgTitle, Messages.getInformationIcon());
+    Messages.showMessageDialog(currentProject, dlgMsg.toString(), dialogTitle, Messages.getInformationIcon());
   }
 
   /**

@@ -4,7 +4,7 @@
 
 <link-summary>Overview of Extension Points and Listeners for WebStorm.</link-summary>
 
-66 Extension Points and 4 Listeners for WebStorm
+69 Extension Points and 6 Listeners for WebStorm
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
@@ -71,13 +71,15 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [JavaScript.importCandidatesFactory](https://jb.gg/ipe?extensions=JavaScript.importCandidatesFactory) | `CandidatesFactory` |
 | [JavaScript.importModulePathStrategy](https://jb.gg/ipe?extensions=JavaScript.importModulePathStrategy) ![Experimental][experimental] | `JSImportModulePathStrategy` |
 | [JavaScript.indexedFileTypeProvider](https://jb.gg/ipe?extensions=JavaScript.indexedFileTypeProvider) | `IndexedFileTypeProvider` |
-| [JavaScript.indexedFilesFilter](https://jb.gg/ipe?extensions=JavaScript.indexedFilesFilter) ![Deprecated][deprecated] ![Removal][removal] | `JSIndexedFilesFilterProvider` |
 | [JavaScript.inheritedLanguagesConfigurableProvider](https://jb.gg/ipe?extensions=JavaScript.inheritedLanguagesConfigurableProvider) | `JSInheritedLanguagesConfigurableProvider` |
 | [JavaScript.intentionAndInspectionFilter](https://jb.gg/ipe?extensions=JavaScript.intentionAndInspectionFilter) | `IntentionAndInspectionFilter` |
 | [JavaScript.jestPackageProvider](https://jb.gg/ipe?extensions=JavaScript.jestPackageProvider) | `JestPackageProvider` |
+| [JavaScript.jsDocCustomTagsHandler](https://jb.gg/ipe?extensions=JavaScript.jsDocCustomTagsHandler) ![Experimental][experimental] | `JSDocCustomTagsHandler` |
+| [JavaScript.jsxImplementation](https://jb.gg/ipe?extensions=JavaScript.jsxImplementation) | `JSXImplementation` |
 | [JavaScript.lang.templates](https://jb.gg/ipe?extensions=JavaScript.lang.templates) ![Project-Level][project-level] | [`Configurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/Configurable.java) |
 | [JavaScript.languageServiceProvider](https://jb.gg/ipe?extensions=JavaScript.languageServiceProvider) ![Project-Level][project-level] | `JSLanguageServiceProvider` |
 | [JavaScript.languageServiceRemoteHelperFactory](https://jb.gg/ipe?extensions=JavaScript.languageServiceRemoteHelperFactory) | `Factory` |
+| [JavaScript.moduleExportsProvider](https://jb.gg/ipe?extensions=JavaScript.moduleExportsProvider) | `JSModuleExportsProvider` |
 | [JavaScript.moduleReferenceContributor](https://jb.gg/ipe?extensions=JavaScript.moduleReferenceContributor) | `JSModuleReferenceContributor` |
 | [JavaScript.nodeModulesIndexableFileNamesProvider](https://jb.gg/ipe?extensions=JavaScript.nodeModulesIndexableFileNamesProvider) | `NodeModulesIndexableFileNamesProvider` |
 | [JavaScript.nodeRunConfigurationExtension](https://jb.gg/ipe?extensions=JavaScript.nodeRunConfigurationExtension) | `AbstractNodeRunConfigurationExtension` |
@@ -87,8 +89,10 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [JavaScript.scanningFileListenerContributor](https://jb.gg/ipe?extensions=JavaScript.scanningFileListenerContributor) | `ScanningFileListenerContributor` |
 | [JavaScript.smartCompletionContributor](https://jb.gg/ipe?extensions=JavaScript.smartCompletionContributor) | `JSSmartCompletionContributor` |
 | [JavaScript.spellcheckerProvider](https://jb.gg/ipe?extensions=JavaScript.spellcheckerProvider) | `JSSpellcheckerProvider` |
+| [JavaScript.testWatchProvider](https://jb.gg/ipe?extensions=JavaScript.testWatchProvider) | `JsTestWatchProvider` |
 | [JavaScript.tsConfigCustomizer](https://jb.gg/ipe?extensions=JavaScript.tsConfigCustomizer) ![Experimental][experimental] | `TypeScriptConfigCustomizer` |
 | [JavaScript.tsImportResolver](https://jb.gg/ipe?extensions=JavaScript.tsImportResolver) | `TypeScriptImportsResolverProvider` |
+| [JavaScript.tsServiceExtension](https://jb.gg/ipe?extensions=JavaScript.tsServiceExtension) | `TypeScriptServiceExtension` |
 | [JavaScript.unresolvedReferenceErrorUpdater](https://jb.gg/ipe?extensions=JavaScript.unresolvedReferenceErrorUpdater) ![Experimental][experimental] | `JSUnresolvedReferenceErrorUpdater` |
 | [JavaScript.webBundlerCssReferenceContributor](https://jb.gg/ipe?extensions=JavaScript.webBundlerCssReferenceContributor) | `JSModuleReferenceContributor` |
 | [JavaScript.webBundlerDefinition](https://jb.gg/ipe?extensions=JavaScript.webBundlerDefinition) | `WebBundlerDefinition` |
@@ -105,7 +109,6 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.javascript.rename.extension](https://jb.gg/ipe?extensions=com.intellij.javascript.rename.extension) | `JSRenameExtension` |
 | [com.intellij.jsbtFileManagerProvider](https://jb.gg/ipe?extensions=com.intellij.jsbtFileManagerProvider) | `JsbtFileManagerProvider` |
 | [com.intellij.jsbtService](https://jb.gg/ipe?extensions=com.intellij.jsbtService) | `JsbtApplicationService` |
-| [com.intellij.lang.typescript.languageService.extension](https://jb.gg/ipe?extensions=com.intellij.lang.typescript.languageService.extension) | `TypeScriptServiceExtension` |
 
 ### org.jetbrains.plugins.node-remote-interpreter
 

@@ -49,8 +49,8 @@ A Project instance is available in multiple contexts:
 
 It is also possible to retrieve projects in generic contexts:
 * Project from [`VirtualFile`](virtual_file.md):
-  * [`ProjectLocator.guessProjectForFile(VirtualFile)`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/project/ProjectLocator.java) - returns any project containing a given file.
-  * [`ProjectLocator.getProjectsForFile(VirtualFile)`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/project/ProjectLocator.java) - returns the list of projects that a given file is a part of.
+  * [`ProjectLocator.guessProjectForFile(VirtualFile)`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/ProjectLocator.kt) - returns any project containing a given file.
+  * [`ProjectLocator.getProjectsForFile(VirtualFile)`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/ProjectLocator.kt) - returns the list of projects that a given file is a part of.
 * List of currently opened projects: [`ProjectManager.getOpenProjects()`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/project/ProjectManager.java)
 
 ### Getting a List of Source Roots for All Modules in a Project

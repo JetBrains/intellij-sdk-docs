@@ -4,7 +4,7 @@
 
 <link-summary>Overview of Extension Points and Listeners for RubyMine.</link-summary>
 
-71 Extension Points and 11 Listeners for RubyMine
+73 Extension Points and 11 Listeners for RubyMine
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
@@ -102,6 +102,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [org.jetbrains.plugins.ruby.rails.railsViewFileTypesProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rails.railsViewFileTypesProvider) | `RailsViewFileTypesProvider` |
 | [org.jetbrains.plugins.ruby.rails.sprocketsDirectiveContextProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rails.sprocketsDirectiveContextProvider) | `SprocketsDirectiveContextProvider` |
 | [org.jetbrains.plugins.ruby.railsFacetEditorTab](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.railsFacetEditorTab) | `FacetEditorTabFactory` |
+| [org.jetbrains.plugins.ruby.railsModelFieldsProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.railsModelFieldsProvider) | `RailsModelFieldsProvider` |
 | [org.jetbrains.plugins.ruby.railsNavigateFrom](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.railsNavigateFrom) | `RailsNavigateFromProvider` |
 | [org.jetbrains.plugins.ruby.railsSchemaParser](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.railsSchemaParser) | `RailsSchemaParser` |
 | [org.jetbrains.plugins.ruby.rake.rakeRunCommandLineModifierProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rake.rakeRunCommandLineModifierProvider) | `RakeRunCommandLineModifierProvider` |
@@ -109,6 +110,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [org.jetbrains.plugins.ruby.rerunFailedTestsActionProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rerunFailedTestsActionProvider) | `RubyRerunFailedTestsProvider` |
 | [org.jetbrains.plugins.ruby.ruby.associatedDeclarationProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.associatedDeclarationProvider) | `RubyAssociatedDeclarationProvider` |
 | [org.jetbrains.plugins.ruby.ruby.run.configuration.debugger.rubyDebugHelperFactory](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.run.configuration.debugger.rubyDebugHelperFactory) | `RubyDebugHelperFactory` |
+| [org.jetbrains.plugins.ruby.ruby.topLevelSymbolProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.topLevelSymbolProvider) | `RubyTopLevelSymbolProvider` |
 | [org.jetbrains.plugins.ruby.ruby.typeSignatureProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.typeSignatureProvider) | `RubyTypeSignatureProvider` |
 | [org.jetbrains.plugins.ruby.rubyFileStructureProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rubyFileStructureProvider) | `RubyFileStructureViewProvider` |
 | [org.jetbrains.plugins.ruby.runConfigurationExtension](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.runConfigurationExtension) | `RubyRunConfigurationExtension` |

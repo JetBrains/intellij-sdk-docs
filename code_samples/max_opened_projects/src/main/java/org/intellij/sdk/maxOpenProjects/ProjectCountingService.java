@@ -14,17 +14,17 @@ public final class ProjectCountingService {
 
   private int myOpenProjectCount = 0;
 
-  public void incrProjectCount() {
+  public void increaseOpenProjectCount() {
     myOpenProjectCount++;
   }
 
-  public void decrProjectCount() {
+  public void decreaseOpenProjectCount() {
     if (myOpenProjectCount > 0) {
       myOpenProjectCount--;
     }
   }
 
-  public boolean projectLimitExceeded() {
+  public boolean isOpenProjectsLimitExceeded() {
     return myOpenProjectCount > MAX_OPEN_PROJECTS_LIMIT;
   }
 

@@ -4,7 +4,7 @@
 
 <link-summary>Overview of Extension Points and Listeners for Spring API.</link-summary>
 
-52 Extension Points and 5 Listeners for Spring API
+53 Extension Points and 5 Listeners for Spring API
 
 <include from="snippets.md" element-id="ep_list_legend"/>
 
@@ -85,6 +85,7 @@
 | [com.intellij.spring.mvc.applicationPathProvider](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.applicationPathProvider) | `SpringApplicationPathProvider` |
 | [com.intellij.spring.mvc.applicationPortProvider](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.applicationPortProvider) | `SpringApplicationPortProvider` |
 | [com.intellij.spring.mvc.mergingMvcRequestMappingLineMarkerProvider](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.mergingMvcRequestMappingLineMarkerProvider) | `SpringMergingMvcRequestMappingLineMarkerProvider` |
+| [com.intellij.spring.mvc.springEndpointsIconProvider](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.springEndpointsIconProvider) | `SpringEndpointsIconProvider` |
 | [com.intellij.spring.mvc.viewResolverFactory](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.viewResolverFactory) | `ViewResolverFactory` |
 
 ### com.intellij.spring.security

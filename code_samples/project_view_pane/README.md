@@ -8,9 +8,9 @@ The current demo describes an implementation of the `com.intellij.projectViewPan
 
 ### Extension Points
 
-| Name                           | Implementation                                      | Extension Point Class        |
-|--------------------------------|-----------------------------------------------------|------------------------------|
-| `com.intellij.projectViewPane` | [ImagesProjectViewPane][file:ImagesProjectViewPane] | `AbstractProjectViewPSIPane` |
+| Name                           | Implementation                                      | Extension Point Class     |
+|--------------------------------|-----------------------------------------------------|---------------------------|
+| `com.intellij.projectViewPane` | [ImagesProjectViewPane][file:ImagesProjectViewPane] | `AbstractProjectViewPane` |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 

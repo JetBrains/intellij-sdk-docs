@@ -4,7 +4,7 @@
 
 <link-summary>Overview of Extension Points and Listeners for GoLand.</link-summary>
 
-17 Extension Points and 6 Listeners for GoLand
+17 Extension Points and 5 Listeners for GoLand
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
@@ -19,7 +19,6 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [GoLibrariesService#LIBRARIES_TOPIC](https://jb.gg/ipe/listeners?topics=com.goide.project.GoLibrariesService.LibrariesListener)  | `LibrariesListener` |
 | [GoModuleSettings#BUILD_TARGET_TOPIC](https://jb.gg/ipe/listeners?topics=com.goide.project.GoModuleSettings.BuildTargetListener)  ![Project-Level][project-level] | `BuildTargetListener` |
 | [GoModuleSettings#GO_SUPPORT_TOPIC](https://jb.gg/ipe/listeners?topics=com.goide.project.GoModuleSettings.GoSupportListener)  ![Project-Level][project-level] | `GoSupportListener` |
-| [GoModuleSettings#VENDORING_TOPIC](https://jb.gg/ipe/listeners?topics=com.goide.project.GoModuleSettings.VendoringListener)  ![Project-Level][project-level] | `VendoringListener` |
 | [GoProjectLifecycleListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.goide.project.GoProjectLifecycleListener)  | `GoProjectLifecycleListener` |
 | [VgoProjectSettings#VGO_INTEGRATION_TOPIC](https://jb.gg/ipe/listeners?topics=com.goide.vgo.configuration.VgoProjectSettings.IntegrationListener)  | `IntegrationListener` |
 

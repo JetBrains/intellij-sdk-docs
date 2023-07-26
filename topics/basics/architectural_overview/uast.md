@@ -265,7 +265,7 @@ To inspect UAST Tree, invoke [internal action](enabling_internal.md) <ui-path>To
 Use [`AbstractBaseUastLocalInspectionTool`](%gh-ic%/java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseUastLocalInspectionTool.java) as base class and specify `language="UAST"` in registration.
 If inspection targets only a subset of default types (`UFile`, `UClass`, `UField`, and `UMethod`), specify `UElement`s as hints in overloaded constructor to improve performance.
 
-Use [`ProblemsHolder.registerUProblem()`](%gh-ic-master%/java/java-analysis-api/src/com/intellij/codeInspection/problemHolderUtil.kt) extension functions for registering problems (2023.2).
+Use [`ProblemsHolder.registerUProblem()`](%gh-ic%/java/java-analysis-api/src/com/intellij/codeInspection/problemHolderUtil.kt) extension functions for registering problems (2023.2).
 
 ### Line Marker
 

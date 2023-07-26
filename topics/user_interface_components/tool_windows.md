@@ -56,7 +56,7 @@ Implement the `ToolwindowFactory.isApplicable(Project)` method.
 
 <tab title="2019.3 and earlier">
 
-Specify the `conditionClass` attribute in <path>plugin.xml</path> with a class implementing [`Condition<Project>`](%gh-ic%/platform/util-rt/src/com/intellij/openapi/util/Condition.java) (can be the same class as the `ToolWindowFactory` implementation).
+Specify the `conditionClass` attribute in <path>plugin.xml</path> with a class implementing [`Condition<Project>`](%gh-ic%/platform/util/src/com/intellij/openapi/util/Condition.java) (can be the same class as the `ToolWindowFactory` implementation).
 
 </tab>
 

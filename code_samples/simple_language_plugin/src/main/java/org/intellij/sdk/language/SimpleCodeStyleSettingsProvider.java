@@ -1,4 +1,4 @@
-// Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
 package org.intellij.sdk.language;
 
@@ -15,7 +15,7 @@ import org.jetbrains.annotations.Nullable;
 public class SimpleCodeStyleSettingsProvider extends CodeStyleSettingsProvider {
 
   @Override
-  public CustomCodeStyleSettings createCustomSettings(CodeStyleSettings settings) {
+  public CustomCodeStyleSettings createCustomSettings(@NotNull CodeStyleSettings settings) {
     return new SimpleCodeStyleSettings(settings);
   }
 
@@ -26,10 +26,11 @@ public class SimpleCodeStyleSettingsProvider extends CodeStyleSettingsProvider {
   }
 
   @NotNull
-  public CodeStyleConfigurable createConfigurable(@NotNull CodeStyleSettings settings, @NotNull CodeStyleSettings modelSettings) {
+  public CodeStyleConfigurable createConfigurable(@NotNull CodeStyleSettings settings,
+                                                  @NotNull CodeStyleSettings modelSettings) {
     return new CodeStyleAbstractConfigurable(settings, modelSettings, this.getConfigurableDisplayName()) {
       @Override
-      protected CodeStyleAbstractPanel createPanel(CodeStyleSettings settings) {
+      protected @NotNull CodeStyleAbstractPanel createPanel(@NotNull CodeStyleSettings settings) {
         return new SimpleCodeStyleMainPanel(getCurrentSettings(), settings);
       }
     };

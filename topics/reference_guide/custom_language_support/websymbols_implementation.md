@@ -62,7 +62,7 @@ The value must be a non-negative integer and the higher proximity, the higher th
 
 apiStatus
 : *Since 2023.2 - replaces `deprecated` and `experimental` properties*
-: Documents API status of the symbol. It is one of the sub-interfaces of [`WebSymbolApiStatus`](%gh-ic-master%/platform/webSymbols/src/com/intellij/webSymbols/WebSymbolApiStatus.kt):
+: Documents API status of the symbol. It is one of the sub-interfaces of [`WebSymbolApiStatus`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/WebSymbolApiStatus.kt):
    `Stable`, `Experimental` or `Deprecated`. Deprecated symbols are appropriately highlighted in the code editor, code completion and quick documentation.
 
 deprecated

@@ -9,6 +9,7 @@ import com.intellij.codeInspection.ProblemsHolder;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
 import com.intellij.psi.tree.IElementType;
+import com.intellij.psi.util.PsiTypesUtil;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -35,7 +36,7 @@ public class ComparingStringReferencesInspection extends AbstractBaseJavaLocalIn
     return new JavaElementVisitor() {
 
       /**
-       * Evaluate binary psi expressions to see if they contain relational operators '==' and '!=',
+       * Evaluate binary PSI expressions to see if they contain relational operators '==' and '!=',
        * AND they are of String type.
        * The evaluation ignores expressions comparing an object to null.
        * IF these criteria are met, register the problem in the ProblemsHolder.
@@ -43,7 +44,7 @@ public class ComparingStringReferencesInspection extends AbstractBaseJavaLocalIn
        * @param expression The binary expression to be evaluated.
        */
       @Override
-      public void visitBinaryExpression(PsiBinaryExpression expression) {
+      public void visitBinaryExpression(@NotNull PsiBinaryExpression expression) {
         super.visitBinaryExpression(expression);
         IElementType opSign = expression.getOperationTokenType();
         if (opSign == JavaTokenType.EQEQ || opSign == JavaTokenType.NE) {
@@ -64,15 +65,12 @@ public class ComparingStringReferencesInspection extends AbstractBaseJavaLocalIn
       }
 
       private boolean isStringType(PsiExpression operand) {
-        PsiType type = operand.getType();
-        if (!(type instanceof PsiClassType)) {
+        PsiClass psiClass = PsiTypesUtil.getPsiClass(operand.getType());
+        if (psiClass == null) {
           return false;
         }
-        PsiClass resolvedType = ((PsiClassType) type).resolve();
-        if (resolvedType == null) {
-          return false;
-        }
-        return "java.lang.String".equals(resolvedType.getQualifiedName());
+
+        return "java.lang.String".equals(psiClass.getQualifiedName());
       }
 
       private static boolean isNullLiteral(PsiExpression expression) {
@@ -119,14 +117,18 @@ public class ComparingStringReferencesInspection extends AbstractBaseJavaLocalIn
       PsiMethodCallExpression equalsCall =
               (PsiMethodCallExpression) factory.createExpressionFromText("a.equals(b)", null);
 
-      equalsCall.getMethodExpression().getQualifierExpression().replace(lExpr);
+      PsiExpression qualifierExpression = equalsCall.getMethodExpression().getQualifierExpression();
+      assert qualifierExpression != null;
+      qualifierExpression.replace(lExpr);
       equalsCall.getArgumentList().getExpressions()[0].replace(rExpr);
 
       PsiExpression result = (PsiExpression) binaryExpression.replace(equalsCall);
 
       if (opSign == JavaTokenType.NE) {
         PsiPrefixExpression negation = (PsiPrefixExpression) factory.createExpressionFromText("!a", null);
-        negation.getOperand().replace(result);
+        PsiExpression operand = negation.getOperand();
+        assert operand != null;
+        operand.replace(result);
         result.replace(negation);
       }
     }

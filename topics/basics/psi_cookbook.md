@@ -73,7 +73,7 @@ or
 
 _2023.2_
 
-Use dedicated (and heavily cached) methods from [`JavaLibraryUtil`](%gh-ic-master%/java/openapi/src/com/intellij/java/library/JavaLibraryUtil.java):
+Use dedicated (and heavily cached) methods from [`JavaLibraryUtil`](%gh-ic%/java/openapi/src/com/intellij/java/library/JavaLibraryUtil.java):
 
 - `hasLibraryClass()` to check presence via known library class FQN
 - `hasLibraryJar()` using Maven coordinates (for example, `io.micronaut:micronaut-core`).

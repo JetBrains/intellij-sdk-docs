@@ -71,6 +71,8 @@ The second method involves simply calling [`ToolWindowManager.registerToolWindow
 The method has multiple overloads that can be used depending on the task.
 When using an overload that takes a component, the component becomes the first content (tab) displayed in the tool window.
 
+Always use [`ToolWindowManager.invokeLater()`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowManager.kt) instead of "plain" `Application.invokeLater()` when scheduling EDT tasks related to tool windows (see [](general_threading_rules.md)).
+
 ## Contents (Tabs)
 
 Displaying the contents of many tool windows requires access to [indexes](indexing_and_psi_stubs.md).

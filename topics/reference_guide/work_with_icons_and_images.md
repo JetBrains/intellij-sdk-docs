@@ -275,7 +275,7 @@ Example from [`PlatformIconMappings.json`](%gh-ic%/platform/icons/src/PlatformIc
 The New UI uses _outlined_ icons for tool windows that have a size of 20x20 pixels and 16x16 pixels in
 [compact mode](https://www.jetbrains.com/help/idea/new-ui.html#compact-mode).
 Plugin developers who want to provide all necessary variants of their tool window icons
-use the following suffix scheme for their icon file name, here referred to as `iconToolWindow`:
+use the following suffix scheme for their icon filename, here referred to as `iconToolWindow`:
 
 - `iconToolWindow.svg`: a 16x16 pixels _compact mode_ variant of the icon for the light theme.
 - `iconToolWindow_dark.svg`: a 16x16 pixels _compact mode_ variant of the icon for the dark theme.
@@ -288,7 +288,7 @@ To work as expected, the New UI requires specific colors for icon content.
 This is necessary for situations where tool window buttons are active, during which the background is highlighted.
 To enhance contrast, the IntelliJ Platform dynamically alters the icon's content color to white.
 
-Hence, for the creation of light and dark mode variants, plugin authors must use to the following
+Hence, for the creation of light and dark mode variants, plugin authors must use the following
 prescribed colors within their icons:
 
 | Theme | Color Code                                  |

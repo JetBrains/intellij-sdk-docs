@@ -20,6 +20,7 @@ Due to the prominent presentation and limited space, they should be used only fo
 The starting point for extending the status bar with new widgets is the
 [`StatusBarWidgetFactory`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/StatusBarWidgetFactory.java)
 interface, which is registered in the `com.intellij.statusBarWidgetFactory` extension point.
+Note: `id` attribute must be provided in <path>plugin.xml</path> registration and match value from `StatusBarWidgetFactory.getId()`.
 
 In case a widget provides information or functionality related to the editor files, consider extending the
 [`StatusBarEditorBasedWidgetFactory`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/widget/StatusBarEditorBasedWidgetFactory.kt)

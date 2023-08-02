@@ -23,4 +23,4 @@ To modify project view node representations, implement
 and register it as `com.intellij.projectViewNodeDecorator` extension.
 From the interface only the `decorate()` method that modifies `ProjectViewNode`s needs to be implemented.
 If you need to update your node representation on certain events, please use
-[`ProjectView.update()`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/projectView/ProjectView.java).
+[`ProjectView.refresh()`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/projectView/ProjectView.java).

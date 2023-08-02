@@ -100,9 +100,10 @@ public class ImagesProjectNode extends ProjectViewNode<VirtualFile> {
               getImagesFiles(project).clear();
               scanImages(project);
               ApplicationManager.getApplication().invokeLater(() ->
-                  ProjectView.getInstance(myProject)
+                  ProjectView.getInstance(project)
                       .getProjectViewPaneById(ImagesProjectViewPane.ID)
-                      .updateFromRoot(true)
+                      .updateFromRoot(true),
+                  project.getDisposed()
               );
             }
           }

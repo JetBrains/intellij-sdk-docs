@@ -9,8 +9,8 @@ Setting the actual values in <path>[plugin.xml](plugin_configuration_file.md)</p
 
 Please note the following regarding values:
 
-- Values must represent the actual build numbers, any made-up numbers must not be used (e.g., `999.*`, `2023.4`, or `2023.9999` for `until-build`).
-- Not specifying `until-build` means it will include _all_ future builds (including unreleased IDE versions, which might impact compatibility later).
+- Values must represent the actual build numbers, any made-up numbers must not be used (e.g., `999.*`, `2023.4`, or `2023.9999` are invalid for `until-build`).
+- Not specifying `until-build` means it will include _all_ future builds (including future, yet unreleased IDE versions, which might impact compatibility later).
 - Dot star suffix (`.* `) can be used in `until-build` to support all releases for the specific branch (i.e., `222.*` for all 2022.2.x releases).
 
 > Compatibility with the specified version range (and compatible products) must always be verified using [](verifying_plugin_compatibility.md#plugin-verifier) to ensure binary compatibility.
@@ -40,7 +40,7 @@ Plugins may specify compatibility versions more precisely (e.g., requiring a spe
 Multipart build numbers can also be used in the `since-build` and `until-build` attributes of `idea-version`.
 Usually you should omit the product ID and use only the branch number and build number, for example:
 
-<compare style="top-bottom" first-title="Any 213 branch version" second-title="Specific build number">
+<compare type="top-bottom" first-title="Any 213 branch version" second-title="Specific build number">
 
 ```xml
 <!-- 2021.3, 2021.3.1, 2021.3.2, ... -->
@@ -54,6 +54,8 @@ Usually you should omit the product ID and use only the branch number and build 
 </compare>
 
 > Specific build numbers and their corresponding release version are available via _Previous Releases_ on the corresponding product's download page, e.g. [Previous IntelliJ IDEA Releases](https://www.jetbrains.com/idea/download/previous.html).
+> For upcoming versions, see [Early Access Program](https://eap.jetbrains.com).
+>
 > See also [What versions of IntelliJ-based IDEs are supported?](https://intellij-support.jetbrains.com/hc/en-us/articles/360019574859-What-versions-of-IntelliJ-based-IDEs-are-supported-) for JetBrains IDE support policy.
 >
 {style="note"}

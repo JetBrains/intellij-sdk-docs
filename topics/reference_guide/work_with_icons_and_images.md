@@ -223,10 +223,10 @@ This allows supporting both UI variants at the same time, depending on what the 
 
 <procedure title="Setup">
 
-1. Create new <path>expUi</path> folder in your icon root folder ([Reference](#organizing-icons)).
-2. Copy all icons for New UI in this folder.
-3. Create empty <path>$PluginName$IconMappings.json</path> mapping file in the resources root folder.
-4. Register <path>$PluginName$IconMappings.json</path> file in <path>plugin.xml</path> via `com.intellij.iconMapper` extension point.
+1. Create a new <path>expUi</path> folder in your icon root folder ([Reference](#organizing-icons)).
+2. Copy all icons for the New UI into this folder.
+3. Create an empty <path>$PluginName$IconMappings.json</path> mapping file in the resources root folder.
+4. Register <path>$PluginName$IconMappings.json</path> in <path>plugin.xml</path> via the `com.intellij.iconMapper` extension point.
 
 </procedure>
 

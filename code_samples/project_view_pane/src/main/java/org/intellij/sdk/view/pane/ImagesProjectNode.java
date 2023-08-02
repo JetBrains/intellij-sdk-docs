@@ -14,6 +14,8 @@ import com.intellij.openapi.application.ReadAction;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectUtil;
+import com.intellij.openapi.roots.FileIndex;
+import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.util.Key;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
@@ -85,9 +87,10 @@ public class ImagesProjectNode extends ProjectViewNode<VirtualFile> {
           @Override
           public void after(@NotNull List<? extends @NotNull VFileEvent> events) {
             boolean hasAnyImageUpdate = false;
+            FileIndex fileIndex = ProjectRootManager.getInstance(project).getFileIndex();
             for (VFileEvent event : events) {
               VirtualFile file = event.getFile();
-              if (file == null) {
+              if (file == null || !fileIndex.isInContent(file)) {
                 continue;
               }
               String extension = file.getExtension();

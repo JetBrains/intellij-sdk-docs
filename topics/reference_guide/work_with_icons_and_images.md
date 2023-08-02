@@ -274,15 +274,13 @@ Example from [`PlatformIconMappings.json`](%gh-ic%/platform/icons/src/PlatformIc
 
 The New UI uses _outlined_ icons for tool windows that have a size of 20x20 pixels and 16x16 pixels in
 [compact mode](https://www.jetbrains.com/help/idea/new-ui.html#compact-mode).
-Plugin developers who want to provide all necessary variants of their tool window icons use the following
-naming scheme, where the first two files are icons with a size of 16x16 pixels.
+Plugin developers who want to provide all necessary variants of their tool window icons
+use the following suffix scheme for their icon file name, here referred to as `iconToolWindow`:
 
-```shell
-iconToolWindow.svg
-iconToolWindow_dark.svg
-iconToolWindow@20x20.svg
-iconToolWindow@20x20_dark.svg
-```
+- `iconToolWindow.svg`: a 16x16 pixels _compact mode_ variant of the icon for the light theme.
+- `iconToolWindow_dark.svg`: a 16x16 pixels _compact mode_ variant of the icon for the dark theme.
+- `iconToolWindow@20x20.svg`: a 20x20 pixels variant of the icon for the light theme.
+- `iconToolWindow@20x20_dark.svg`: a 20x20 pixels variant of the icon for the dark theme.
 
 ### New UI Icon Colors
 

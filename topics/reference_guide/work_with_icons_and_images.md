@@ -214,19 +214,19 @@ Register resource bundle via `com.intellij.iconDescriptionBundle` extension poin
 Create `icon.<icon-path>.tooltip` key in given resource bundle, where `<icon-path>` is the icon path with leading slash and `.svg` removed and slashes replaced with dots
 (e.g., `/nodes/class.svg` &rarr; `icon.nodes.class.tooltip`).
 
-## Mapping New UI Icons
+## New UI Icons
 
 > This feature is available since 2022.3.
 
-To fully support [New UI](https://www.jetbrains.com/help/idea/new-ui.html), the plugin must provide additional dedicated icons and mapping information.
-This allows supporting both UI variants at the same time — whichever the user chooses to use.
+To fully support the [New UI](https://www.jetbrains.com/help/idea/new-ui.html), the plugin must provide additional dedicated icons and mapping information.
+This allows supporting both UI variants at the same time, depending on what the user has selected.
 
 <procedure title="Setup">
 
-1. Create new <path>expUi</path> folder in your icon root folder ([Reference](#organizing-icons)).
-2. Copy all icons for _New UI_ in this folder.
-3. Create empty <path>$PluginName$IconMappings.json</path> mapping file in the resources root folder.
-4. Register <path>$PluginName$IconMappings.json</path> file in <path>plugin.xml</path> via `com.intellij.iconMapper` extension point.
+1. Create a new <path>expUi</path> folder in your icon root folder ([Reference](#organizing-icons)).
+2. Copy all icons for the New UI into this folder.
+3. Create an empty <path>$PluginName$IconMappings.json</path> mapping file in the resources root folder.
+4. Register <path>$PluginName$IconMappings.json</path> in <path>plugin.xml</path> via the `com.intellij.iconMapper` extension point.
 
 </procedure>
 
@@ -238,12 +238,12 @@ This allows supporting both UI variants at the same time — whichever the user 
 
 ### Mapping Entries
 
-All _New UI_ icons must be mapped in the <path>$PluginName$IconMappings.json</path> mapping file.
+All New UI icons must be mapped in the <path>$PluginName$IconMappings.json</path> mapping file.
 
-For each _New UI_ icon, add a mapping entry inside `expui` block.
+For each New UI icon, add a mapping entry inside `expui` block.
 Each folder starts a new block containing all its entries (see linked `MavenIconMappins.json` sample from above).
 
-In this sample, the icon root folder is named <path>icons</path>:
+In this example, the icon root folder is named <path>icons</path>:
 ```json
 {
   "icons": {
@@ -260,7 +260,8 @@ In this sample, the icon root folder is named <path>icons</path>:
 }
 ```
 
-If one new icon replaces several old icons, use JSON list format. Example from [`PlatformIconMappings.json`](%gh-ic%/platform/icons/src/PlatformIconMappings.json):
+If one new icon replaces several old icons, use a JSON list.
+Example from [`PlatformIconMappings.json`](%gh-ic%/platform/icons/src/PlatformIconMappings.json):
 
 ```json
 "vcs.svg": [
@@ -268,3 +269,36 @@ If one new icon replaces several old icons, use JSON list format. Example from [
   "vcs/branch.svg"
 ]
 ```
+
+### New UI Tool Window Icons
+
+The New UI uses _outlined_ icons for tool windows that have a size of 20x20 pixels and 16x16 pixels in
+[compact mode](https://www.jetbrains.com/help/idea/new-ui.html#compact-mode).
+Plugin developers who want to provide all necessary variants of their tool window icons
+use the following suffix scheme for their icon file name, here referred to as `iconToolWindow`:
+
+- `iconToolWindow.svg`: a 16x16 pixels _compact mode_ variant of the icon for the light theme.
+- `iconToolWindow_dark.svg`: a 16x16 pixels _compact mode_ variant of the icon for the dark theme.
+- `iconToolWindow@20x20.svg`: a 20x20 pixels variant of the icon for the light theme.
+- `iconToolWindow@20x20_dark.svg`: a 20x20 pixels variant of the icon for the dark theme.
+
+### New UI Icon Colors
+
+To work as expected, the New UI requires specific colors for icon content.
+This is necessary for situations where tool window buttons are active, during which the background is highlighted.
+To enhance contrast, the IntelliJ Platform dynamically alters the icon's content color to white.
+
+Hence, for the creation of light and dark mode variants, plugin authors must use to the following
+prescribed colors within their icons:
+
+| Theme | Color Code                                  |
+|-------|---------------------------------------------|
+| Light | `#6C707E` <format color="6C707E">▆</format> |
+| Dark  | `#CED0D6` <format color="CED0D6">▆</format> |
+
+> Various online resources, like the IntelliJ Platform UI Guidelines
+> [here](https://jetbrains.design/intellij/components/tool_window/#07) and
+> [here](https://jetbrains.design/intellij/principles/icons/#grid-and-size),
+> will be updated soon and currently don't include information about the New UI.
+>
+{style="note"}

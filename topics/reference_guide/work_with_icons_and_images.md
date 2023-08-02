@@ -270,7 +270,7 @@ Example from [`PlatformIconMappings.json`](%gh-ic%/platform/icons/src/PlatformIc
 ]
 ```
 
-### New UI Toolwindow Icons
+### New UI Tool Window Icons
 
 The New UI uses _outlined_ icons for tool windows that have a size of 20x20 pixel and 16x16 pixel in
 [compact mode](https://www.jetbrains.com/help/idea/new-ui.html#compact-mode).

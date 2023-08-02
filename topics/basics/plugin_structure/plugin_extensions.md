@@ -76,6 +76,7 @@ and one extension to access the `another.plugin.myExtensionPoint` extension poin
 
 Please note the following important points:
 
+- Extension implementations should be stateless. Use explicit [](plugin_services.md) for managing (runtime) data.
 - Avoid any initialization in constructor, see also notes for [Services](plugin_services.md#constructor).
 - Kotlin: Do not use `object` but `class` for implementation ([more details](using_kotlin.md#caution)).
 - Kotlin: Do not use `companion object` to avoid excessive classloading/initialization when the extension class is loaded.

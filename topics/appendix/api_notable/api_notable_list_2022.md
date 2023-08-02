@@ -31,7 +31,7 @@ Threading assertions in tests
 : All rules for [threading](general_threading_rules.md) are now checked in tests as well.
 
 Mapping New UI icons
-: See [](work_with_icons_and_images.md#mapping-new-ui-icons) on how to provide additional icons.
+: See [](work_with_icons_and_images.md#new-ui-icons) on how to provide additional icons.
 
 ### IntelliJ IDEA 2022.3
 

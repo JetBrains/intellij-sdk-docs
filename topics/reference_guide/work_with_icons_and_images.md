@@ -275,7 +275,7 @@ Example from [`PlatformIconMappings.json`](%gh-ic%/platform/icons/src/PlatformIc
 The New UI uses _outlined_ icons for tool windows that have a size of 20x20 pixels and 16x16 pixels in
 [compact mode](https://www.jetbrains.com/help/idea/new-ui.html#compact-mode).
 Plugin developers who want to provide all necessary variants of their tool window icons use the following
-naming scheme, where the first two files are icons with a size of 16x16 pixel.
+naming scheme, where the first two files are icons with a size of 16x16 pixels.
 
 ```shell
 iconToolWindow.svg

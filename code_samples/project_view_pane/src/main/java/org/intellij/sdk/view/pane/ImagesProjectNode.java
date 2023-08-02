@@ -23,6 +23,8 @@ import com.intellij.openapi.vfs.newvfs.BulkFileListener;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import com.intellij.psi.search.FilenameIndex;
 import com.intellij.util.containers.ContainerUtil;
+import com.intellij.util.ui.update.MergingUpdateQueue;
+import com.intellij.util.ui.update.Update;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -32,6 +34,8 @@ public class ImagesProjectNode extends ProjectViewNode<VirtualFile> {
   private static final Key<Set<VirtualFile>> IMAGES_PROJECT_DIRS = Key.create("images.files.or.directories");
 
   private static final List<String> SUPPORTED_IMAGE_EXTENSIONS = List.of("jpg", "jpeg", "png", "svg");
+
+  private final MergingUpdateQueue updateQueue;
 
   /**
    * Creates root node.
@@ -43,13 +47,18 @@ public class ImagesProjectNode extends ProjectViewNode<VirtualFile> {
     super(project, rootDir, settings);
     scanImages(project);
     setupImageFilesRefresher(project, parentDisposable); // subscribe to changes only in the root node
+    updateQueue = new MergingUpdateQueue(ImagesProjectNode.class.getName(), 200, true, null, parentDisposable, null);
   }
 
   /**
    * Creates child node.
    */
-  public ImagesProjectNode(@NotNull Project project, @NotNull ViewSettings settings, @NotNull VirtualFile file) {
+  private ImagesProjectNode(@NotNull Project project,
+                            @NotNull ViewSettings settings,
+                            @NotNull VirtualFile file,
+                            @NotNull MergingUpdateQueue updateQueue) {
     super(project, file, settings);
+    this.updateQueue = updateQueue;
   }
 
   private void scanImages(@NotNull Project project) {
@@ -58,7 +67,6 @@ public class ImagesProjectNode extends ProjectViewNode<VirtualFile> {
     }
   }
 
-  // Creates a collection of image files asynchronously
   private void addAllByExt(@NotNull Project project, @NotNull String extension) {
     Set<VirtualFile> imagesFiles = getImagesFiles(project);
     VirtualFile projectDir = ProjectUtil.guessProjectDir(project);
@@ -100,14 +108,18 @@ public class ImagesProjectNode extends ProjectViewNode<VirtualFile> {
               }
             }
             if (hasAnyImageUpdate) {
-              getImagesFiles(project).clear();
-              scanImages(project);
-              ApplicationManager.getApplication().invokeLater(() ->
-                  ProjectView.getInstance(project)
-                      .getProjectViewPaneById(ImagesProjectViewPane.ID)
-                      .updateFromRoot(true),
-                  project.getDisposed()
-              );
+              updateQueue.queue(new Update("UpdateImages") {
+                public void run() {
+                  getImagesFiles(project).clear();
+                  scanImages(project);
+                  ApplicationManager.getApplication().invokeLater(() ->
+                        ProjectView.getInstance(project)
+                            .getProjectViewPaneById(ImagesProjectViewPane.ID)
+                            .updateFromRoot(true),
+                      project.getDisposed()
+                  );
+                }
+              });
             }
           }
         });
@@ -138,7 +150,7 @@ public class ImagesProjectNode extends ProjectViewNode<VirtualFile> {
     }
     ViewSettings settings = getSettings();
     return ContainerUtil.sorted(
-        ContainerUtil.map(files, (file) -> new ImagesProjectNode(myProject, settings, file)),
+        ContainerUtil.map(files, (file) -> new ImagesProjectNode(myProject, settings, file, updateQueue)),
         new GroupByTypeComparator(myProject, ImagesProjectViewPane.ID));
   }
 

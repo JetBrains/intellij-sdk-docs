@@ -7,11 +7,13 @@ import com.intellij.ide.impl.ProjectViewSelectInTarget;
 import com.intellij.ide.projectView.ViewSettings;
 import com.intellij.ide.projectView.impl.*;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectUtil;
+import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.tree.DefaultTreeModel;
 
-public class ImagesProjectViewPane extends AbstractProjectViewPaneWithAsyncSupport {
+public class ImagesProjectViewPane extends ProjectViewPane {
 
   public static final String ID = "IMAGES";
 
@@ -70,7 +72,16 @@ public class ImagesProjectViewPane extends AbstractProjectViewPaneWithAsyncSuppo
     return new ProjectTreeStructure(myProject, ID) {
       @Override
       protected ImagesProjectNode createRoot(@NotNull Project project, @NotNull ViewSettings settings) {
-        return new ImagesProjectNode(project);
+        return new ImagesProjectNode(project, settings, getProjectDir(project), ImagesProjectViewPane.this);
+      }
+
+      @NotNull
+      private static VirtualFile getProjectDir(Project project) {
+        VirtualFile guessedProjectDir = ProjectUtil.guessProjectDir(project);
+        if (guessedProjectDir == null) {
+          throw new IllegalStateException("Could not get project directory");
+        }
+        return guessedProjectDir;
       }
 
       // Children will be searched in async mode

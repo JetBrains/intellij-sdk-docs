@@ -36,7 +36,7 @@ Define [`SimpleBlock`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org
 
 Define a formatter that removes extra spaces except for the single spaces around the property separator:
 
-<compare style="top-bottom">
+<compare type="top-bottom">
 
 ```
 foo  =    bar

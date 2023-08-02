@@ -108,7 +108,7 @@ with the usual setup of having your test-input as `beforeXyz` and `afterXyz`, yo
 A special suffix `-preview` should be added to the comment line in the test-data to test preview.
 For example:
 
-<compare style="top-bottom" first-title="First line before" second-title="First line after">
+<compare type="top-bottom" first-title="First line before" second-title="First line after">
 <code-block>
 // "Replace Arrays.asList().stream() with Stream.of()" "true"
 </code-block>

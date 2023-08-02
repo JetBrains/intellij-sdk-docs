@@ -214,7 +214,7 @@ Register resource bundle via `com.intellij.iconDescriptionBundle` extension poin
 Create `icon.<icon-path>.tooltip` key in given resource bundle, where `<icon-path>` is the icon path with leading slash and `.svg` removed and slashes replaced with dots
 (e.g., `/nodes/class.svg` &rarr; `icon.nodes.class.tooltip`).
 
-## Mapping New UI Icons
+## New UI Icons
 
 > This feature is available since 2022.3.
 
@@ -268,3 +268,38 @@ If one new icon replaces several old icons, use JSON list format. Example from [
   "vcs/branch.svg"
 ]
 ```
+
+### New UI Toolwindow Icons
+
+The New UI uses _outlined_ icons for toolwindows that have a size of 20x20 pixel and 16x16 pixel in
+[compact mode](https://www.jetbrains.com/help/idea/new-ui.html#compact-mode).
+Plugin developers who want to provide all necessary variants of their toolwindow icons use the following
+naming scheme, where the first two files are icons with a size of 16x16 pixel.
+
+```shell
+iconToolWindow.svg
+iconToolWindow_dark.svg
+iconToolWindow@20x20.svg
+iconToolWindow@20x20_dark.svg
+```
+
+### New UI Icon Colors
+
+To work as expected, the New UI requires to use specific colors for icon content.
+This is required for situations where toolwindow buttons are active, during which the background is highlighted.
+To enhance contrast, the IntelliJ Platform dynamically alters the icon's content color to white.
+
+Hence, for the creation of light and dark mode variants, plugin authors must use to the following
+prescribed color parameters within their icons:
+
+| Theme | Color Code                                  |
+|-------|---------------------------------------------|
+| Light | `#6C707E` <format color="6C707E">▆</format> |
+| Dark  | `#CED0D6` <format color="CED0D6">▆</format> |
+
+> Various online resources, like the IntelliJ Platform UI Guidelines
+> [here](https://jetbrains.design/intellij/components/tool_window/#07) and
+> [here](https://jetbrains.design/intellij/principles/icons/#grid-and-size)
+> will be updated and currently don't include information about the New UI.
+>
+{style="note"}

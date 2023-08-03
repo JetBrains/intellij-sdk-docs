@@ -1,6 +1,6 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
-
 # Learning Resources
+
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Links to articles and webinars about plugin development.</link-summary>
 
@@ -8,6 +8,7 @@
 
 ## Articles
 
+- [WebStorm Under the Hood: How We Added Astro Support to Our IDE](https://blog.jetbrains.com/webstorm/2023/08/webstorm-under-the-hood-how-we-added-astro-support-to-our-ide/) 07/2023
 - [The Plugin Obfuscation Experience](https://blog.jetbrains.com/platform/2022/05/the-plugin-obfuscation-experience/) 05/2022
 - [Themes in IntelliJ-based IDEs](https://blog.jetbrains.com/platform/2021/10/themes-in-intellij-based-ides/) 10/2021
 

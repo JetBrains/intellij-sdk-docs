@@ -1,6 +1,6 @@
-# Dynamic Plugins
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Dynamic Plugins
 
 <link-summary>Making a plugin dynamic allows installing, updating, and uninstalling it without IDE restart, as well as hot reloading plugin changes during the development.</link-summary>
 
@@ -14,6 +14,10 @@ Please note that any unloading problems in a production environment will simply 
 > If a plugin _requires_ restart (e.g., due to using native libraries) specify `require-restart="true"` for [`<idea-plugin>`](plugin_configuration_file.md#idea-plugin) root tag in <path>[plugin.xml](plugin_configuration_file.md)</path>.
 >
 {style="note"}
+
+> 3rd-party **paid** plugins cannot be installed, updated or uninstalled without restarting the IDE.
+>
+{style="warning"}
 
 ## Restrictions
 

@@ -163,14 +163,16 @@ To open Settings dialog or show specific `Configurable`, see [`ShowSettingsUtil`
 
 Implementations based on `Configurable` can implement marker interfaces, which provide additional flexibility in the implementation.
 
-The following nested interfaces are markers, which convey information about the form to the IntelliJ Platform:
-* `Configurable.NoScroll` - Notifies the Settings dialog not to add scroll bars to the form.
-  By default, a plugin's Settings component is put into a scrollable pane.
+`Configurable.NoScroll`
+: Do not to add scroll bars to the form. By default, a plugin's Settings component is put into a scrollable pane.
   However, a Settings panel can have a `JTree`, which requires its own `JScrollPane`.
   So `NoScroll` interface should be used to remove the outer `JScrollPane`.
-* `Configurable.NoMargin` - Notifies the Settings dialog not to add an empty border to the form.
-  By default, an empty border is added for a plugin's Settings component.
-* `Configurable.Beta` _(2022.3)_ - Adds <control>Beta</control> label next to settings page title in <control>Settings</control> tree.
+
+`Configurable.NoMargin`
+: Do not add an empty border to the form. By default, an empty border is added for a plugin's Settings component.
+
+`Configurable.Beta`
+: _(2022.3)_ Adds <control>Beta</control> label next to settings page title in <control>Settings</control> tree.
 
 #### Additional Interfaces Based on Configurable
 

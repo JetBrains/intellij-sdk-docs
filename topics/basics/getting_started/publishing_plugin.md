@@ -58,7 +58,7 @@ Once you have [configured Gradle support](configuring_plugin_project.md), and [u
 For initial upload, manual distribution or local installation, invoke the [`buildPlugin`](tools_gradle_intellij_plugin.md#tasks-buildplugin) Gradle task to create the plugin distribution.
 If you configured you project to rely on [](plugin_signing.md), use the [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) task instead.
 
-The resulting ZIP file is located in <path>build/distributions</path> and can then be installed via drag & drop (or using [plugin manager](https://www.jetbrains.com/help/idea/managing-plugins.html#installing-plugins-from-disk))
+The resulting ZIP file is located in <path>build/distributions</path> and can then be installed via [<ui-path>Install Plugin from Disk...</ui-path>](https://www.jetbrains.com/help/idea/managing-plugins.html#install_plugin_from_disk) action
 or uploaded to a [](custom_plugin_repository.md).
 
 ### Providing Your Personal Access Token to Gradle

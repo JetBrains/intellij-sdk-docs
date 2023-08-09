@@ -99,6 +99,7 @@ To obtain information about OS and Java VM, use [`SystemInfo`](%gh-ic%/platform/
 To access relevant configuration directories, see [`PathManager`](%gh-ic%/platform/util/src/com/intellij/openapi/application/PathManager.java).
 
 To obtain unique installation UUID, use [`PermanentInstallationID`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/application/PermanentInstallationID.java).
+For paid plugins, see also [Marketplace docs](https://plugins.jetbrains.com/docs/marketplace/identify-user-of-paid-plugin.html).
 
 ## Context Help
 

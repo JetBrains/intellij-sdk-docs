@@ -1,4 +1,4 @@
-// Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
 package org.intellij.sdk.language;
 
@@ -10,15 +10,18 @@ import com.intellij.openapi.editor.FoldingGroup;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.TextRange;
+import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiLiteralExpression;
 import com.intellij.psi.util.PsiTreeUtil;
+import com.intellij.util.containers.ContainerUtil;
 import org.intellij.sdk.language.psi.SimpleProperty;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class SimpleFoldingBuilder extends FoldingBuilderEx implements DumbAware {
@@ -40,18 +43,18 @@ public class SimpleFoldingBuilder extends FoldingBuilderEx implements DumbAware 
         String key = value.substring(
                 SimpleAnnotator.SIMPLE_PREFIX_STR.length() + SimpleAnnotator.SIMPLE_SEPARATOR_STR.length()
         );
-        // Get a list of all properties for a given key in the project
-        final List<SimpleProperty> properties = SimpleUtil.findProperties(project, key);
-        if (properties.size() == 1) {
+        // find SimpleProperty for the given key in the project
+        SimpleProperty simpleProperty = ContainerUtil.getOnlyItem(SimpleUtil.findProperties(project, key));
+        if (simpleProperty != null) {
           // Add a folding descriptor for the literal expression at this node.
           descriptors.add(new FoldingDescriptor(literalExpression.getNode(),
                   new TextRange(literalExpression.getTextRange().getStartOffset() + 1,
                           literalExpression.getTextRange().getEndOffset() - 1),
-                  group));
+                  group, Collections.singleton(simpleProperty)));
         }
       }
     }
-    return descriptors.toArray(new FoldingDescriptor[descriptors.size()]);
+    return descriptors.toArray(FoldingDescriptor.EMPTY);
   }
 
   /**
@@ -64,20 +67,22 @@ public class SimpleFoldingBuilder extends FoldingBuilderEx implements DumbAware 
   @Nullable
   @Override
   public String getPlaceholderText(@NotNull ASTNode node) {
-    String retTxt = "...";
-    if (node.getPsi() instanceof PsiLiteralExpression) {
-      PsiLiteralExpression nodeElement = (PsiLiteralExpression) node.getPsi();
-      String key = ((String) nodeElement.getValue()).substring(
-              SimpleAnnotator.SIMPLE_PREFIX_STR.length() + SimpleAnnotator.SIMPLE_SEPARATOR_STR.length()
-      );
-      final List<SimpleProperty> properties = SimpleUtil.findProperties(nodeElement.getProject(), key);
-      String place = properties.get(0).getValue();
-      // IMPORTANT: keys can come with no values, so a test for null is needed
-      // IMPORTANT: Convert embedded \n to backslash n, so that the string will look
-      // like it has LF embedded in it and embedded " to escaped "
-      return place == null ? retTxt : place.replaceAll("\n", "\\n").replaceAll("\"", "\\\\\"");
+    if (!(node.getPsi() instanceof PsiLiteralExpression nodeElement)) {
+      return null ;
     }
-    return retTxt;
+
+    String key = ((String) nodeElement.getValue()).substring(
+            SimpleAnnotator.SIMPLE_PREFIX_STR.length() + SimpleAnnotator.SIMPLE_SEPARATOR_STR.length()
+    );
+
+    SimpleProperty simpleProperty = ContainerUtil.getOnlyItem(SimpleUtil.findProperties(nodeElement.getProject(), key));
+    if (simpleProperty == null) return StringUtil.THREE_DOTS;
+
+    String propertyValue = simpleProperty.getValue();
+    // IMPORTANT: keys can come with no values, so a test for null is needed
+    // IMPORTANT: Convert embedded \n to backslash n, so that the string will look
+    // like it has LF embedded in it and embedded " to escaped "
+    return propertyValue == null ? StringUtil.THREE_DOTS : propertyValue.replaceAll("\n", "\\n").replaceAll("\"", "\\\\\"");
   }
 
   @Override

@@ -6,14 +6,14 @@ left to right direction
 
 ' Define the objects in the diagram
 class "com.intellij.util.messages.Topic" as Topic {
-  +displayName()
-  +broadcastDirection()
-  }
+  +getDisplayName()
+  +getBroadcastDirection()
+}
 class ListenerClass {
   +method1()
   {method} ...
   +methodN()
-  }
+}
 
 ' Define the class relationships
 Topic o--> "1 " ListenerClass

@@ -72,6 +72,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ### IntelliJ Platform 2023.3
 
+JsonPath library unbundled
+: Bundle it [explicitly](https://youtrack.jetbrains.com/issue/IDEA-328219) with your plugin.
+
 ### Java Plugin 2023.3
 
 `com.siyeh.ipp.base.Intention` class removed

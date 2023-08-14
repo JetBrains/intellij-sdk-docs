@@ -24,10 +24,16 @@ Usually there is no need to have stubs for things like statements or local varia
 
 ### Implementation
 
+> When using [Grammar-Kit](https://github.com/JetBrains/Grammar-Kit) to generate the language PSI, see the [Stub indices support](https://github.com/JetBrains/Grammar-Kit/blob/master/HOWTO.md#35-stub-indices-support) section for instructions on integrating the grammar with stubs.
+>
+{style="note"}
+
+<procedure title="Stubs Setup">
+
 The following steps need to be performed only once for each language that supports stubs:
 
-* Change the file element type for the language (the element type returned from `ParserDefinition.getFileNodeType()`) to a class that extends [`IStubFileElementType`](%gh-ic%/platform/core-impl/src/com/intellij/psi/tree/IStubFileElementType.java) and override its `getExternalId()` method (see also following item).
-* In the <path>[plugin.xml](plugin_configuration_file.md)</path>, define the `com.intellj.stubElementTypeHolder` extension and specify the interface which contains the `IElementType` constants used by the language's parser.
+1. Change the file element type for the language (the element type returned from `ParserDefinition.getFileNodeType()`) to a class that extends [`IStubFileElementType`](%gh-ic%/platform/core-impl/src/com/intellij/psi/tree/IStubFileElementType.java) and override its `getExternalId()` method (see also following item).
+2. In the <path>[plugin.xml](plugin_configuration_file.md)</path>, define the `com.intellj.stubElementTypeHolder` extension and specify the interface which contains the `IElementType` constants used by the language's parser.
   Define the common `externalIdPrefix` to be used for all stub element types (see below).
   See [`StubElementTypeHolderEP`](%gh-ic%/platform/core-api/src/com/intellij/psi/stubs/StubElementTypeHolderEP.java) docs for important requirements.
 
@@ -35,23 +41,25 @@ The following steps need to be performed only once for each language that suppor
 - [`JavaStubElementTypes`](%gh-ic%/java/java-psi-impl/src/com/intellij/psi/impl/java/stubs/JavaStubElementTypes.java) registered in [`JavaPsiPlugin.xml`](%gh-ic%/java/java-psi-impl/src/META-INF/JavaPsiPlugin.xml)
 - see [`Angular2MetadataElementTypes`](%gh-ij-plugins%/AngularJS/src/org/angular2/entities/metadata/Angular2MetadataElementTypes.kt) for Kotlin sample
 
+</procedure>
+
+<procedure title="Adding Stub Elements">
+
 For each element type that needs to be stored in the stub tree, perform the following steps:
 
-* Define an interface for the stub, derived from the [`StubElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/stubs/StubElement.java) interface ([example](%gh-ic%/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/psi/PropertyStub.java)).
-* Provide an implementation for the interface ([example](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyStubImpl.java)).
-* Make sure the interface for the PSI element extends [`StubBasedPsiElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/StubBasedPsiElement.java) parameterized by the type of the stub interface ([example](%gh-ic%/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/psi/Property.java)).
-* Make sure the implementation class for the PSI element extends [`StubBasedPsiElementBase`](%gh-ic%/platform/core-impl/src/com/intellij/extapi/psi/StubBasedPsiElementBase.java) parameterized by the type of the stub interface ([example](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java)).
+1. Define an interface for the stub, derived from the [`StubElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/stubs/StubElement.java) interface ([example](%gh-ic%/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/psi/PropertyStub.java)).
+2. Provide an implementation for the interface ([example](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyStubImpl.java)).
+3. Make sure the interface for the PSI element extends [`StubBasedPsiElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/StubBasedPsiElement.java) parameterized by the type of the stub interface ([example](%gh-ic%/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/psi/Property.java)).
+4. Make sure the implementation class for the PSI element extends [`StubBasedPsiElementBase`](%gh-ic%/platform/core-impl/src/com/intellij/extapi/psi/StubBasedPsiElementBase.java) parameterized by the type of the stub interface ([example](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java)).
   Provide both a constructor that accepts an `ASTNode` and a constructor that accepts a stub.
-* Create a class that implements [`IStubElementType`](%gh-ic%/platform/core-api/src/com/intellij/psi/stubs/IStubElementType.java) and is parameterized with the stub interface and the actual PSI element interface ([example](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertyStubElementType.java)).
+5. Create a class that implements [`IStubElementType`](%gh-ic%/platform/core-api/src/com/intellij/psi/stubs/IStubElementType.java) and is parameterized with the stub interface and the actual PSI element interface ([example](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertyStubElementType.java)).
   Implement the `createPsi()` and `createStub()` methods for creating PSI from a stub and vice versa.
   Implement the `serialize()` and `deserialize()` methods for storing the data in a binary stream.
   Override `getExternalId()` according to common used `externalIdPrefix` for the language.
-* Use the class implementing `IStubElementType` as the element type constant when parsing ([example](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertiesElementTypes.java)).
-* Make sure all methods in the PSI element interface access the stub data rather than the PSI tree when appropriate ([example: `Property.getKey()` implementation](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java)).
+6. Use the class implementing `IStubElementType` as the element type constant when parsing ([example](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertiesElementTypes.java)).
+7. Make sure all methods in the PSI element interface access the stub data rather than the PSI tree when appropriate ([example: `Property.getKey()` implementation](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java)).
 
-> When using [Grammar-Kit](https://github.com/JetBrains/Grammar-Kit) to generate the language PSI, see the [Stub indices support](https://github.com/JetBrains/Grammar-Kit/blob/master/HOWTO.md#35-stub-indices-support) section for instructions on integrating the grammar with stubs.
->
-{style="note"}
+</procedure>
 
 By default, if a PSI element extends `StubBasedPsiElement`, all elements of that type will be stored in the stub tree.
 To have more precise control over which elements are stored, override `IStubElementType.shouldCreateStub()` and return `false` for elements that should not be included in the stub tree.
@@ -68,7 +76,7 @@ See also [`DataInputOutputUtil`](%gh-ic%/platform/util/src/com/intellij/util/io/
 To change the stored binary format for the stubs (for example, to store some additional data or some new elements), make sure to advance the stub version returned from `IStubFileElementType.getStubVersion()` for the language.
 This will cause the stubs and [](#stub-indexes) to be rebuilt, and will avoid mismatches between the stored data format and the code trying to load it.
 
-It's essential to ensure that all information stored in the stub tree depends only on the contents of the file for which stubs are being built, and does not depend on any external files or any other data.
+It is critical to ensure that all information stored in the stub tree depends only on the contents of the file for which stubs are being built, and does not depend on any external files or any other data.
 Otherwise, the stub tree will not be rebuilt when external dependencies change, leading to stale and incorrect data in the stub tree.
 
 > Please see also [](indexing_and_psi_stubs.md#improving-indexing-performance).
@@ -91,11 +99,15 @@ This method accepts an [`IndexSink`](%gh-ic%/platform/core-api/src/com/intellij/
 
 To access the data from an index, the following instance methods are used on the singleton instance managed by the implementation:
 
-* `AbstractStubIndex.getAllKeys()/processAllKeys()` returns the list of all keys (processes all keys) in the index for the specified project (for example, the list of all class names found in the project).
+#### Keys
 
-> NOTE: These may return stale/out-of-date data. Use `StubIndex.getElements()` to obtain/verify actual existing elements for the given key (e.g., when iterating all keys to collect completion variants).
+`AbstractStubIndex.getAllKeys()/processAllKeys()` returns the list of all keys (processes all keys) in the index for the specified project (for example, the list of all class names found in the project).
 
-* [`StubIndex.getElements()`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/stubs/StubIndex.java) returns the collection of PSI elements corresponding to a certain key (for example, classes with the specified short name) in the specified scope.
+> NOTE: These may return stale/out-of-date data. See [](#elements) to obtain/verify actual existing elements for the given key (e.g., when iterating all keys to collect completion variants).
+
+#### Elements
+
+[`StubIndex.getElements()`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/stubs/StubIndex.java) returns the collection of PSI elements corresponding to a certain key (for example, classes with the specified short name) in the specified scope.
 
 **Example**: [`JavaAnnotationIndex`](%gh-ic%/java/java-indexing-impl/src/com/intellij/psi/impl/java/stubs/index/JavaAnnotationIndex.java)
 

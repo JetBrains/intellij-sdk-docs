@@ -1,6 +1,6 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
-
 # Version Control Systems
+
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Overview of the Version Control Integration API allowing to implement a custom Version Control System support.</link-summary>
 
@@ -17,7 +17,6 @@ Unlike a [virtual file](virtual_file.md), a `FilePath` can represent a path to a
 The main difference between a `FilePath` and a [`java.io.File`](https://docs.oracle.com/javase/8/docs/api/java/io/File.html) is that a `FilePath` caches the `VirtualFile` corresponding to the path, so it can be retrieved without doing a VFS search.
 
 To create instances of `FilePath`, the [`VcsContextFactory`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/actions/VcsContextFactory.java) API is used.
-It can be accessed as `PeerFactory.getVcsContextFactory()`.
 
 `FilePath` representing paths in a VCS repository, rather than local paths, are created using `VcsContextFactory.createFilePathOnNonLocal()`.
 The `FilePath.isNonLocal()` method returns `true` for such files.

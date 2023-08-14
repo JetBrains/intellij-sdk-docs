@@ -99,6 +99,9 @@ Specify `displayName`/`key` for `Configurable`
 `com.intellij.database.dataSource.DataSourceStorageCore$Listener` class renamed to `com.intellij.database.dataSource.DataSourceStorage$Listener`
 : `Core` class removed from hierarchy.
 
+`com.intellij.database.datagrid.CoreGrid(ModelIndex<Row>, ModelIndex<Column>)` method parameter type changed from `ModelIndex<Row>` to `int`
+: `ModelIndex` class is used to reference data in table model. Row indexes in table model start with 0 even when table is scrolled to page N > 1. Parameter type was changed to int to indicate that it is an absolute index in db table.
+
 ### Maven Plugin 2023.2
 
 `org.jetbrains.idea.maven.server.MavenEmbedderWrapper.customizeForResolve(MavenConsole, MavenProgressIndicator)` method removed

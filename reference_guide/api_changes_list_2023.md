@@ -72,6 +72,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ### IntelliJ Platform 2023.3
 
+`com.siyeh.ipp.base.Intention` class removed
+: As a part of migration to new experimental ModCommand API, the class was removed completely. It's a part of implementation module and was never intended to be inherited by external plugins. Consider implementing `com.intellij.codeInspection.LocalInspectionTool` directly.
+
 ## 2023.2
 
 ### IntelliJ Platform 2023.2

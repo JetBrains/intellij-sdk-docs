@@ -73,7 +73,7 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 ### IntelliJ Platform 2023.3
 
 `com.siyeh.ipp.base.Intention` class removed
-: As a part of migration to new experimental ModCommand API, the class was removed completely. It's a part of implementation module and was never intended to be inherited by external plugins. Consider implementing `com.intellij.codeInspection.LocalInspectionTool` directly.
+: As a part of migration to new experimental [`ModCommand`](%gh-ic%/platform/analysis-api/src/com/intellij/modcommand/ModCommand.java) API, the class was removed completely. It's a part of implementation module and was never intended to be inherited by external plugins. Consider implementing [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java) directly.
 
 ## 2023.2
 
@@ -100,7 +100,7 @@ Specify `displayName`/`key` for `Configurable`
 : `Core` class removed from hierarchy.
 
 `com.intellij.database.datagrid.CoreGrid(ModelIndex<Row>, ModelIndex<Column>)` method parameter type changed from `ModelIndex<Row>` to `int`
-: `ModelIndex` class is used to reference data in table model. Row indexes in table model start with 0 even when table is scrolled to page N > 1. Parameter type was changed to int to indicate that it is an absolute index in db table.
+: `ModelIndex` class is used to reference data in the table model. Row indexes in the table model start with 0, even when the table is scrolled to page _N>1_. Parameter type was changed to `int` to indicate that it is an absolute index in the DB table.
 
 ### Maven Plugin 2023.2
 

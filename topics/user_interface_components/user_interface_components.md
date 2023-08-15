@@ -16,7 +16,7 @@ Using those components in your plugins will ensure that your plugin looks and wo
 > Use [UI Inspector](internal_ui_inspector.md) to locate the underlying Swing component implementation or to inspect an existing UI at runtime.
 >
 
-> UI forms like [dialogs](dialog_wrapper.md) or [settings pages](settings.md) should use [Kotlin UI DSL](kotlin_ui_dsl_version_2.md) (IntelliJ Platform 2021.3+).
+> UI forms like [](dialog_wrapper.md) or [](settings.md) should use [Kotlin UI DSL](kotlin_ui_dsl_version_2.md) (IntelliJ Platform 2021.3+).
 >
 > Using _UI Designer_ plugin with Kotlin is [not supported](https://youtrack.jetbrains.com/issue/KTIJ-791).
 >
@@ -24,26 +24,21 @@ Using those components in your plugins will ensure that your plugin looks and wo
 
 Please refer to [Writing short and clear](https://jetbrains.design/intellij/text/writing_short/) in IntelliJ Platform UI Guidelines on writing UI-related texts.
 
-> See [UI Kit](https://jetbrains.design/intellij/resources/UI_kit/) when using [Figma](https://www.figma.com) to design UI.
->
-
+See [UI Kit](https://jetbrains.design/intellij/resources/UI_kit/) when using [Figma](https://www.figma.com) to design UI.
 
 The following components are particularly noteworthy:
 
-*  Menus and toolbars are built using [](basic_action_system.md)
-*  [](tool_windows.md)
-*  [](dialog_wrapper.md)
-*  [](popups.md)
-*  [](notifications.md)
-*  [](file_and_class_choosers.md)
-*  [](editor_components.md)
-*  [](lists_and_trees.md)
-*  [](status_bar_widgets.md)
-*  Tables (TableView) (TBD)
-*  Drag & Drop Helpers (TBD)
-*  [](misc_swing_components.md)
-    *  Messages
-    *  JBSplitter
-    *  JBTabs
+* Menus and toolbars are built using [](basic_action_system.md)
+* [](tool_windows.md)
+* [](dialog_wrapper.md)
+* [](popups.md)
+* [](notifications.md)
+* [](file_and_class_choosers.md)
+* [](editor_components.md)
+* [](lists_and_trees.md)
+* [](status_bar_widgets.md)
+* Tables (TableView) (TBD)
+* Drag & Drop Helpers (TBD)
+* [](misc_swing_components.md)
 
 <include from="snippets.md" element-id="missingContent"/>

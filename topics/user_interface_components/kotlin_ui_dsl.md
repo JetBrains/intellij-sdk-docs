@@ -10,13 +10,6 @@
 
 </tldr>
 
-Kotlin UI DSL allows creating UI forms with input components bound to state objects.
-The forms are built by using a declarative Kotlin syntax.
-It shares similarities with [Jetpack Compose](https://developer.android.com/jetpack/compose) for Android and is intended to build UI forms or part of forms for, e.g. dialogs and settings pages.
-
-The Kotlin UI DSL is not intended to build general UIs, like tool windows controls that trigger some actions and do not contain any input components bound to state objects.
-For this purpose, use [custom Swing components](user_interface_components.md) from the IntelliJ Platform or the standard ones.
-
 > If you're targeting IntelliJ Platform 2021.3 and later only, please use [](kotlin_ui_dsl_version_2.md).
 >
 > **The version documented on this page is deprecated and will be removed in future platform releases.**
@@ -25,10 +18,15 @@ For this purpose, use [custom Swing components](user_interface_components.md) fr
 >
 {style="warning"}
 
-> This document covers the Kotlin UI DSL in IntelliJ Platform 2019.2.
-> A lot of the features described in this document are not available for plugins targeting earlier versions.
->
-{style="note"}
+Kotlin UI DSL allows creating UI forms with input components bound to state objects.
+The forms are built by using a declarative Kotlin syntax.
+It shares similarities with [Jetpack Compose](https://developer.android.com/jetpack/compose) for Android and is intended to build UI forms or part of forms for, e.g. dialogs and settings pages.
+
+The Kotlin UI DSL is not intended to build general UIs, like tool windows controls that trigger some actions and do not contain any input components bound to state objects.
+For this purpose, use [custom Swing components](user_interface_components.md) from the IntelliJ Platform or the standard ones.
+
+This document covers the Kotlin UI DSL in IntelliJ Platform 2019.2.
+ A lot of the features described in this document are not available for plugins targeting earlier versions.
 
 The _Kotlin UI DSL Version 1_ functions are located in the [`com.intellij.ui.layout`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/layout) package.
 

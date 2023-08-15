@@ -1,6 +1,6 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
-
 # Tool Windows
+
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Displaying additional information and controls in child windows of the IDE.</link-summary>
 
@@ -18,11 +18,11 @@ These windows generally have their own toolbars (referred to as _tool window bar
 Each side contains two tool window groups, the primary and the secondary one, and only one tool window from each group can be active at a time.
 
 Each tool window can show multiple tabs (or "contents", as they are called in the API).
-For example, the Run tool window displays a tab for each active run configuration, and the Changes/Version Control tool window displays a fixed set of tabs depending on the version control system used in the project.
+For example, the <control>Run</control> tool window displays a tab for each active run configuration, and the Version Control related tool windows display a fixed set of tabs depending on the version control system used in the project.
 
 There are two main scenarios for the use of tool windows in a plugin.
 Using [declarative setup](#declarative-setup), a tool window button is always visible, and the user can activate it and interact with the plugin functionality at any time.
-Alternatively, using [programmatic setup](#programmatic-setup), the tool window is created to show the results of a specific operation, and can be closed by the user after the operation is completed.
+Alternatively, using [programmatic setup](#programmatic-setup), the tool window is created to show the results of a specific operation, and can then be closed after the operation is completed.
 
 Project-level topic [`ToolWindowManagerListener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/ex/ToolWindowManagerListener.java) allows listening to tool window (un-)registering/show events (see [](plugin_listeners.md)).
 
@@ -31,18 +31,21 @@ Project-level topic [`ToolWindowManagerListener`](%gh-ic%/platform/platform-impl
 The tool window is registered in <path>[plugin.xml](plugin_configuration_file.md)</path> using the `com.intellij.toolWindow` extension point.
 The extension point attributes specify all the data which is necessary to display the tool window button:
 
-*  The `id` of the tool window - corresponds to the text displayed on the tool window button.
+* The `id` of the tool window which corresponds to the text displayed on the tool window button.
 To provide a localized text, specify matching `toolwindow.stripe.[id]` message key (escape spaces with `_`) in the [resource bundle](plugin_configuration_file.md#idea-plugin__resource-bundle) (code insight supported in 2020.3 and later).
 
-*  The `icon` to display on the tool window button (13x13 pixels, grey and monochromatic; see [Tool window](https://jetbrains.design/intellij/components/tool_window/#07) in IntelliJ Platform UI Guidelines and [Working with Icons and Images](work_with_icons_and_images.md))
+* The `icon` to display on the tool window button (13x13 pixels, grey and monochromatic; see [Tool window](https://jetbrains.design/intellij/components/tool_window/#07) in IntelliJ Platform UI Guidelines and [Working with Icons and Images](work_with_icons_and_images.md))
 
-*  The `anchor`, meaning the side of the screen on which the tool window is displayed ("left" (default), "right" or "bottom")
+* The `anchor`, meaning the side of the screen on which the tool window is displayed ("left" (default), "right" or "bottom")
 
-*  The `secondary` attribute, specifying whether the tool window is displayed in the primary or the secondary group
+* The `secondary` attribute, specifying whether the tool window is displayed in the primary or the secondary group
 
-In addition to that, specify the `factoryClass` attribute - the name of a class implementing the [`ToolWindowFactory`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java) interface.
+* The `factoryClass` attribute, a class implementing [`ToolWindowFactory`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java).
+
 When the user clicks on the tool window button, the `createToolWindowContent()` method of the factory class is called, and initializes the UI of the tool window.
 This procedure ensures that unused tool windows don't cause any overhead in startup time or memory usage: if a user does not interact with the tool window, no plugin code will be loaded or executed.
+
+#### Conditional Display
 
 If the tool window of a plugin should not be displayed for all projects:
 
@@ -67,9 +70,7 @@ To show and hide a tool window dynamically while the user is working with the pr
 
 ### Programmatic Setup
 
-The second method involves simply calling [`ToolWindowManager.registerToolWindow()`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowManager.kt) from the plugin code.
-The method has multiple overloads that can be used depending on the task.
-When using an overload that takes a component, the component becomes the first content (tab) displayed in the tool window.
+For toolwindows shown only after invoking specific actions, use [`ToolWindowManager.registerToolWindow(String,RegisterToolWindowTaskBuilder)`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowManager.kt).
 
 Always use [`ToolWindowManager.invokeLater()`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowManager.kt) instead of "plain" `Application.invokeLater()` when scheduling EDT tasks related to tool windows (see [](general_threading_rules.md)).
 
@@ -77,7 +78,6 @@ Always use [`ToolWindowManager.invokeLater()`](%gh-ic%/platform/platform-api/src
 
 Displaying the contents of many tool windows requires access to [indexes](indexing_and_psi_stubs.md).
 Because of that, tool windows are normally disabled while building indexes unless the `ToolWindowFactory` implements [`DumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbAware.java).
-For programmatic setup, parameter `canWorkInDumbMode` must be set to `true` in calls to `registerToolWindow()`.
 
 As mentioned previously, tool windows can contain multiple contents (tabs).
 To manage the contents of a tool window, call [`ToolWindow.getContentManager()`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/wm/ToolWindow.java).
@@ -91,6 +91,7 @@ See [`SimpleToolWindowPanel`](%gh-ic%/platform/platform-api/src/com/intellij/ope
 A plugin can control whether the user is allowed to close tabs either globally or on a per-content basis.
 The former is done by passing the `canCloseContents` parameter to the `registerToolWindow()` function, or by specifying `canCloseContents="true"` in <path>plugin.xml</path>.
 The default value is `false`; calling `setClosable(true)` on `ContentManager` content will be ignored unless `canCloseContents` is explicitly set.
+
 If closing tabs is enabled in general, a plugin can disable closing of specific tabs by calling [`Content.setCloseable(false)`](%gh-ic%/platform/ide-core/src/com/intellij/ui/content/Content.java).
 
 ## Sample Plugin

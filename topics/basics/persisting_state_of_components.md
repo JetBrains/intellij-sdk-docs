@@ -154,7 +154,7 @@ The `roamingType` parameter of the `@Storage` annotation specifies the roaming t
 - `RoamingType.PER_OS` - settings are shared per operating system
 - `RoamingType.DISABLED` - settings sharing is disabled
 
-> If there are multiple components that store state in the same file, they must have the same `romaingType` attribute value.
+> If there are multiple components that store state in the same file, they must have the same `roamingType` attribute value.
 >
 {style="warning"}
 

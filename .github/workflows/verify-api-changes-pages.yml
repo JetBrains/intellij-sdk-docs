@@ -29,4 +29,4 @@ jobs:
           PR_REPOSITORY=$(jq -re ".pull_request.head.repo.full_name // empty" $GITHUB_EVENT_PATH) || true
           REPOSITORY=${PR_REPOSITORY:-$GITHUB_REPOSITORY}
           REF=${GITHUB_HEAD_REF:-${GITHUB_REF#*/*/}}
-          java -cp ~/verifier-all.jar com.jetbrains.pluginverifier.filtering.documented.DocumentedProblemsPageVerifierMain $REPOSITORY REF
+          java -cp ~/verifier-all.jar com.jetbrains.pluginverifier.filtering.documented.DocumentedProblemsPageVerifierMain $REPOSITORY $REF

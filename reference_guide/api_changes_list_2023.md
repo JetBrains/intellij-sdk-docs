@@ -80,6 +80,29 @@ JsonPath library unbundled
 `com.siyeh.ipp.base.Intention` class removed
 : As a part of migration to new experimental [`ModCommand`](%gh-ic%/platform/analysis-api/src/com/intellij/modcommand/ModCommand.java) API, the class was removed completely. It's a part of implementation module and was never intended to be inherited by external plugins. Consider implementing [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java) directly.
 
+### External System Run Configuration 2023.3
+
+Property `com.intellij.openapi.externalSystem.service.ui.command.line.CompletionTableInfo.completionInfo` replaced by suspend function `CompletionTableInfo.collectCompletionInfo`
+: Implement the new function to support async completion collecting.
+
+Property `com.intellij.openapi.externalSystem.service.ui.command.line.CompletionTableInfo.tableCompletionInfo` replaced by suspend function `CompletionTableInfo.collectTableCompletionInfo`
+: Implement the new function to support async completion collecting.
+
+Function `com.intellij.openapi.externalSystem.service.ui.completion.TextCompletionField.getCompletionVariants` replaced by property `TextCompletionField.completionCollector`
+: Implement the new function to support async completion collecting.
+
+`com.intellij.openapi.externalSystem.service.execution.configuration.SettingsFragmentsContainer` class renamed to `com.intellij.openapi.externalSystem.service.execution.configuration.fragments.SettingsEditorFragmentContainer`
+: Use new run configuration fragment builders.
+
+`com.intellij.openapi.externalSystem.service.execution.configuration.SettingsEditorLabeledComponent` class moved to package `com.intellij.openapi.externalSystem.service.execution.configuration.fragments`
+: Use the new run configuration fragment builders.
+
+Parameter type of fragment builder functions from `ExternalSystemRunConfigurationUtil` file changed from `C` to `(Disposable) -> C`
+: Use the new run configuration fragment builders.
+
+Fragment builder functions from `ExternalSystemRunConfigurationUtil` file moved to `SettingsEditorFragmentBuilders` and `ExternalSystemRunConfigurationFragmentBuilders` files
+: Use the new run configuration fragment builders.
+
 ## 2023.2
 
 ### IntelliJ Platform 2023.2

@@ -82,25 +82,25 @@ JsonPath library unbundled
 
 ### External System Run Configuration 2023.3
 
-`CompletionTableInfo.completionInfo` property replaced by async function `CompletionTableInfo.collectCompletionInfo`
+Property `CompletionTableInfo.completionInfo` was replaced by suspend function `CompletionTableInfo.collectCompletionInfo`
 : Implement new function to support async completion collecting.
 
-`CompletionTableInfo.tableCompletionInfo` property replaced by async function `CompletionTableInfo.collectTableCompletionInfo`
+Property `CompletionTableInfo.tableCompletionInfo` was replaced by suspend function `CompletionTableInfo.collectTableCompletionInfo`
 : Implement new function to support async completion collecting.
 
-`TextCompletionField.getCompletionVariants` function replaced by async property `TextCompletionField.completionCollector`
+Function `TextCompletionField.getCompletionVariants` was replaced by property `TextCompletionField.completionCollector`
 : Implement new function to support async completion collecting.
 
-`SettingsFragmentsContainer` class moved and renamed to `com.intellij.openapi.externalSystem.service.execution.configuration.fragments.SettingsEditorFragmentContainer`
+Class `SettingsFragmentsContainer` was renamed to `SettingsEditorFragmentContainer` and moved to package `com.intellij.openapi.externalSystem.service.execution.configuration.fragments`
 : Use new run configuration fragment builders.
 
-`SettingsEditorLabeledComponent` class moved to package `com.intellij.openapi.externalSystem.service.execution.configuration.fragments`
+Class `SettingsEditorLabeledComponent` was moved to package `com.intellij.openapi.externalSystem.service.execution.configuration.fragments`
 : Use new run configuration fragment builders.
 
-`ExternalSystemRunConfigurationUtil.add.*Fragment(component: C, ...)` function parameter type changed from `C` to `(Disposable) -> C`
+Parameter type of fragment builder functions from `ExternalSystemRunConfigurationUtil` file was changed from `C` to `(Disposable) -> C`
 : Use new run configuration fragment builders.
 
-`ExternalSystemRunConfigurationUtil.add.*Fragment` functions moved to `SettingsEditorFragmentBuilders` and `ExternalSystemRunConfigurationFragmentBuilders`
+Fragment builder functions from `ExternalSystemRunConfigurationUtil` file were moved to `SettingsEditorFragmentBuilders` and `ExternalSystemRunConfigurationFragmentBuilders` files
 : Use new run configuration fragment builders.
 
 ## 2023.2

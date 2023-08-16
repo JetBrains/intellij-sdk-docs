@@ -80,6 +80,29 @@ JsonPath library unbundled
 `com.siyeh.ipp.base.Intention` class removed
 : As a part of migration to new experimental [`ModCommand`](%gh-ic%/platform/analysis-api/src/com/intellij/modcommand/ModCommand.java) API, the class was removed completely. It's a part of implementation module and was never intended to be inherited by external plugins. Consider implementing [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java) directly.
 
+### External System Run Configuration 2023.3
+
+`CompletionTableInfo.completionInfo` property replaced by async function `CompletionTableInfo.collectCompletionInfo`
+: Implement new function to support async completion collecting.
+
+`CompletionTableInfo.tableCompletionInfo` property replaced by async function `CompletionTableInfo.collectTableCompletionInfo`
+: Implement new function to support async completion collecting.
+
+`TextCompletionField.getCompletionVariants` function replaced by async property `TextCompletionField.completionCollector`
+: Implement new function to support async completion collecting.
+
+`SettingsFragmentsContainer` class moved and renamed to `com.intellij.openapi.externalSystem.service.execution.configuration.fragments.SettingsEditorFragmentContainer`
+: Use new run configuration fragment builders.
+
+`SettingsEditorLabeledComponent` class moved to package `com.intellij.openapi.externalSystem.service.execution.configuration.fragments`
+: Use new run configuration fragment builders.
+
+`ExternalSystemRunConfigurationUtil.add.*Fragment(component: C, ...)` function parameter type changed from `C` to `(Disposable) -> C`
+: Use new run configuration fragment builders.
+
+`ExternalSystemRunConfigurationUtil.add.*Fragment` functions moved to `SettingsEditorFragmentBuilders` and `ExternalSystemRunConfigurationFragmentBuilders`
+: Use new run configuration fragment builders.
+
 ## 2023.2
 
 ### IntelliJ Platform 2023.2

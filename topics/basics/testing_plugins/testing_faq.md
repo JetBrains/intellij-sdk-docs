@@ -1,10 +1,12 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
-
 # Testing FAQ
+
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Common questions and issues for testing plugins.</link-summary>
 
 This page lists a number of common questions/issues and techniques useful for testing plugins.
+
+<include from="testing_plugins.md" element-id="testSamples"/>
 
 ## Useful Classes
 

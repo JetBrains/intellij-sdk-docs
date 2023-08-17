@@ -34,12 +34,16 @@ Please do not use <path>platform/testGuiFramework</path>, as it is reserved for 
 
 ## Topics
 
+<snippet id="testSamples">
+
 > Check out [this step-by-step tutorial](writing_tests_for_plugins.md) teaching how to write and run automated tests for your custom language plugin.
 > Also, code samples
 > [comparing_string_references_inspection](%gh-sdk-samples%/comparing_string_references_inspection)
 > and [conditional_operator_intention](%gh-sdk-samples%/conditional_operator_intention) demonstrate using tests.
 >
 {style="note"}
+
+</snippet>
 
 * [](tests_and_fixtures.md)
 * [](light_and_heavy_tests.md)

@@ -1,8 +1,8 @@
+# Creating Actions
+
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Implementing and registering custom actions.</link-summary>
-
-# Creating Actions
 
 Plugins can add actions to existing IDE menus and toolbars, as well as add new menus and toolbars.
 The IntelliJ Platform calls the actions of plugins in response to user interactions with the IDE.
@@ -67,7 +67,7 @@ Here is an example for this stage of the `PopupDialogAction` class:
 !["Action never used" inspection](action_never_used.png){width="600"}
 
 To register `PopupDialogAction` and set up its basic attributes press <shortcut>Alt+Shift+Enter</shortcut>.
-Fill out the on <control>New Action</control> form to set up the parameters for `PopupDialogAction`:
+Fill out the <control>New Action</control> form to set up the parameters for `PopupDialogAction`:
 
 ![New Action](new_action.png){width="800"}
 

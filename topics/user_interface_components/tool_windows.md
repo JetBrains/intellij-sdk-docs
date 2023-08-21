@@ -24,8 +24,6 @@ There are two main scenarios for the use of tool windows in a plugin.
 Using [declarative setup](#declarative-setup), a tool window button is always visible, and the user can activate it and interact with the plugin functionality at any time.
 Alternatively, using [programmatic setup](#programmatic-setup), the tool window is created to show the results of a specific operation, and can then be closed after the operation is completed.
 
-Project-level topic [`ToolWindowManagerListener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/ex/ToolWindowManagerListener.java) allows listening to tool window (un-)registering/show events (see [](plugin_listeners.md)).
-
 ### Declarative Setup
 
 The tool window is registered in <path>[plugin.xml](plugin_configuration_file.md)</path> using the `com.intellij.toolWindow` extension point.
@@ -94,11 +92,25 @@ The default value is `false`; calling `setClosable(true)` on `ContentManager` co
 
 If closing tabs is enabled in general, a plugin can disable closing of specific tabs by calling [`Content.setCloseable(false)`](%gh-ic%/platform/ide-core/src/com/intellij/ui/content/Content.java).
 
+## Tool Window FAQ
+
+### Accessing Tool Window
+
+Use [`ToolWindowManager.getToolWindow()`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowManager.kt) specifying the `id` used for [registration](#declarative-setup).
+
+### Tool Window Notification
+
+[`ToolWindowManager.notifyByBalloon()`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowManager.kt) allows showing a notification for the given tool window.
+
+### Events
+
+Project-level topic [`ToolWindowManagerListener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/ex/ToolWindowManagerListener.java) allows listening to tool window registration/show events (see [](plugin_listeners.md)).
+
 ## Sample Plugin
 
 To clarify how to develop plugins that create tool windows, consider the **toolWindow** sample plugin available in the [code samples](%gh-sdk-samples%/tool_window).
 
-See [Code Samples](code_samples.md) on how to set up and run the plugin.
+See [](code_samples.md) on how to set up and run the plugin.
 
 This plugin creates the <control>Sample Calendar</control> tool window that displays the system date, time and time zone.
 When opened, this tool window is similar to the following screen:

@@ -1,6 +1,6 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
-
 # Notifications
+
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Notifying users about errors, action statuses or other events without interrupting their workflow by showing modal message boxes requiring confirmation.</link-summary>
 
@@ -51,6 +51,8 @@ It has two main advantages:
 * All displayed notifications are gathered in the <control>Event Log</control> tool window and can be reviewed later
 
 For UI reference, see [Balloon](https://jetbrains.design/intellij/controls/balloon/) in the IntelliJ Platform UI Guidelines.
+
+> See [](tool_windows.md#tool-window-notification) for showing balloons on specific tool window.
 
 The specific method used to display a notification is [`Notifications.Bus.notify()`](%gh-ic%/platform/ide-core/src/com/intellij/notification/Notifications.java).
 If the current Project is known, please use overload with `Project` parameter, so the notification is shown in its associated frame.

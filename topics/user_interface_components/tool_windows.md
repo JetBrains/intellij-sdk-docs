@@ -29,7 +29,7 @@ Alternatively, using [programmatic setup](#programmatic-setup), the tool window 
 The tool window is registered in <path>[plugin.xml](plugin_configuration_file.md)</path> using the `com.intellij.toolWindow` extension point.
 The extension point attributes specify all the data which is necessary to display the tool window button:
 
-* The `id` of the tool window which corresponds to the text displayed on the tool window button.
+* The `id` attribute (required) of the tool window which corresponds to the text displayed on the tool window button.
 To provide a localized text, specify matching `toolwindow.stripe.[id]` message key (escape spaces with `_`) in the [resource bundle](plugin_configuration_file.md#idea-plugin__resource-bundle) (code insight supported in 2020.3 and later).
 
 * The `icon` to display on the tool window button (13x13 pixels, grey and monochromatic; see [Tool window](https://jetbrains.design/intellij/components/tool_window/#07) in IntelliJ Platform UI Guidelines and [Working with Icons and Images](work_with_icons_and_images.md))
@@ -38,7 +38,7 @@ To provide a localized text, specify matching `toolwindow.stripe.[id]` message k
 
 * The `secondary` attribute, specifying whether the tool window is displayed in the primary or the secondary group
 
-* The `factoryClass` attribute, a class implementing [`ToolWindowFactory`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java).
+* The `factoryClass` attribute (required), a class implementing [`ToolWindowFactory`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java).
 
 When the user clicks on the tool window button, the `createToolWindowContent()` method of the factory class is called, and initializes the UI of the tool window.
 This procedure ensures that unused tool windows don't cause any overhead in startup time or memory usage: if a user does not interact with the tool window, no plugin code will be loaded or executed.

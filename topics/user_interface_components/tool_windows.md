@@ -49,9 +49,15 @@ If the tool window of a plugin should not be displayed for all projects:
 
 <tabs>
 
+<tab title="2023.3 and later">
+
+Implement `ToolwindowFactory.isApplicableAsync(Project)`.
+
+</tab>
+
 <tab title="2021.1 and later">
 
-Implement the `ToolwindowFactory.isApplicable(Project)` method.
+Implement `ToolwindowFactory.isApplicable(Project)`.
 
 </tab>
 

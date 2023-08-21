@@ -13,6 +13,10 @@ The User Interface (UI) for these custom Settings can be added to the [IDE Setti
 Settings can [affect different levels](https://www.jetbrains.com/help/idea/configuring-project-and-ide-settings.html) of scope.
 This document describes adding custom Settings at the Project and Application (or Global, IDE) levels.
 
+> See [Settings Tutorial](settings_tutorial.md) for step-by-step instructions for creating a simple set of custom Settings.
+>
+{style="note"}
+
 <snippet id="settings_ui_inspector">
 
 > See [](internal_ui_inspector.md#inspecting-settings) on how to gather information in the IDE instance for <control>Settings</control> dialog.

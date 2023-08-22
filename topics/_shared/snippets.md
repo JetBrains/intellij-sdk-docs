@@ -56,7 +56,7 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 <snippet id="apiChangesJavaVersion">
 
-> Java 17 is required ([blog post](https://blog.jetbrains.com/platform/2022/08/intellij-project-migrates-to-java-17/)) when targeting 2022.2 or later only.
+> Java 17 is required ([blog post](https://blog.jetbrains.com/platform/2022/08/intellij-project-migrates-to-java-17/)) when targeting 2022.2 and later only.
 >
 > Java 11 is required ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)) when targeting 2020.3 and later only.
 >
@@ -68,11 +68,6 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 <snippet id="ep_list_legend">
 
-> See [](plugin_extensions.md) on how to declare extensions in your plugin.
->
-> See [](plugin_listeners.md) on how to register listeners.
->
-
 ## Legend
 
 ### Listeners
@@ -81,11 +76,15 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 **Listener** links corresponding listener to implement.
 
+See [](plugin_listeners.md) on how to register listeners.
+
 ### Extension Points
 
 **Extension Point** searches for usages inside existing implementations of open-source IntelliJ Platform plugins via [IntelliJ Platform Explorer](https://jb.gg/ipe).
 
 **Implementation** is related Extension Point class.
+
+See [](plugin_extensions.md) on how to declare extensions in your plugin.
 
 ### Tags
 
@@ -108,4 +107,5 @@ See [](verifying_plugin_compatibility.md) for overview of API status.
 [internal]: https://img.shields.io/badge/-Internal-darkred?style=flat-square
 [project-level]: https://img.shields.io/badge/-Project--Level-blue?style=flat-square
 [non-dynamic]: https://img.shields.io/badge/-Non--Dynamic-orange?style=flat-square
+
 </snippet>

@@ -75,6 +75,12 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 JsonPath library unbundled
 : Bundle it [explicitly](https://youtrack.jetbrains.com/issue/IDEA-328219) with your plugin.
 
+`com.intellij.codeInsight.intention.BaseElementAtCaretIntentionAction.isAvailable(Project, Editor, PsiElement)` method `Editor` parameter marked `@NotNull`
+: This may break source-compatibility with inheritors written in Kotlin if they declare it as nullable.
+
+`com.intellij.codeInsight.intention.BaseElementAtCaretIntentionAction.invoke(Project, Editor, PsiElement)` method `Editor` parameter marked `@NotNull`
+: This may break source-compatibility with inheritors written in Kotlin if they declare it as nullable.
+
 ### Java Plugin 2023.3
 
 `com.siyeh.ipp.base.Intention` class removed

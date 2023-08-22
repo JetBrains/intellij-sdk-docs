@@ -70,6 +70,8 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ## Legend
 
+> See also [](explore_api.md) for more information and strategies.
+
 ### Listeners
 
 **Topic** searches for usages inside existing implementations of open-source IntelliJ Platform plugins via [IntelliJ Platform Explorer](https://jb.gg/ipe).

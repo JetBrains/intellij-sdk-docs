@@ -1,10 +1,10 @@
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
-
 # IDE Development Instance
+
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Overview of IDE instance used for running and debugging a plugin during development.</link-summary>
 
-A JetBrains feature for developing plugins is running or debugging a plugin project from within an IntelliJ Platform-based IDE such as IntelliJ IDEA.
+A JetBrains feature for developing plugins is running or debugging a plugin project from within IntelliJ IDEA.
 Selecting the [`runIde`](creating_plugin_project.md#running-a-plugin-with-the-runide-gradle-task) task for a Gradle-based project (or [Run](running_and_debugging_a_theme.md) menu for a DevKit-based project) will launch a _Development Instance_ of the IDE with the plugin enabled.
 This page describes how to control some settings for the Development Instance.
 
@@ -13,13 +13,34 @@ This page describes how to control some settings for the Development Instance.
 
 ## Using a JetBrains Runtime for the Development Instance
 
-An everyday use case is to develop (build) a plugin project against a JDK, e.g. Java 8, and then run or debug the plugin in a Development Instance of the IDE.
-In such a situation, Development Instance must use a JetBrains Runtime (JBR) rather than the JDK used to build the plugin project.
+An everyday use case is to develop (build) a plugin project against a JDK, e.g., Java 17, and then run or debug the plugin in a Development Instance of the IDE.
+In such a situation, Development Instance must use a [JetBrains Runtime (JBR)](https://www.jetbrains.com/jetbrains-runtime) rather than the JDK used to build the plugin project.
 
 The JetBrains Runtime is an environment for running IntelliJ Platform-based IDEs on Windows, macOS, and Linux.
 It has some modifications by JetBrains, such as fixes for native crashes not present in official JDK builds.
 A version of the JetBrains Runtime is bundled with all IntelliJ Platform-based IDEs.
 To produce accurate results while running or debugging a plugin project in a Development Instance, follow the procedures below to ensure the Development Instance uses a JetBrains Runtime.
+
+### Using JetBrains Runtime in Gradle and DevKit
+
+<tabs group="project-type">
+
+<tab title="Gradle" group-key="gradle">
+
+By default, the Gradle plugin will fetch and use the version of the JetBrains Runtime for the Development Instance corresponding to the version of the IntelliJ Platform used for building the plugin project.
+If required, an alternative version can be specified using [`runIde.jbrVersion`](tools_gradle_intellij_plugin.md#tasks-runide-jbrversion) task property.
+
+</tab>
+
+<tab title="DevKit" group-key="devkit">
+
+The [Run Configuration](https://www.jetbrains.com/help/idea/run-debug-configuration.html) for a DevKit-based plugin project controls the JDK used to run and debug a plugin project in a Development Instance.
+The default Run Configuration uses the same JDK for building the plugin project and running the plugin in a Development Instance.
+
+To change the runtime for the Development Instance, set the _JRE_ field in the Run Configuration edit dialog to download a JetBrains Runtime.
+
+</tab>
+</tabs>
 
 ### Determining a JetBrains Runtime Version
 
@@ -55,25 +76,6 @@ Available JBR variants are:
 > As a consequence, separated `dcevm` and `nomod` variants are no longer available.
 >
 {style="note"}
-
-<tabs group="project-type">
-
-<tab title="Gradle" group-key="gradle">
-
-By default, the Gradle plugin will fetch and use the version of the JetBrains Runtime for the Development Instance corresponding to the version of the IntelliJ Platform used for building the plugin project.
-If required, an alternative version can be specified using [`runIde.jbrVersion`](tools_gradle_intellij_plugin.md#tasks-runide-jbrversion) task property.
-
-</tab>
-
-<tab title="DevKit" group-key="devkit">
-
-The [Run Configuration](https://www.jetbrains.com/help/idea/run-debug-configuration.html) for a DevKit-based plugin project controls the JDK used to run and debug a plugin project in a Development Instance.
-The default Run Configuration uses the same JDK for building the plugin project and running the plugin in a Development Instance.
-
-To change the runtime for the Development Instance, set the _JRE_ field in the Run Configuration edit dialog to download a JetBrains Runtime.
-
-</tab>
-</tabs>
 
 ## Enabling Auto-Reload
 

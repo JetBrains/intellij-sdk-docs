@@ -217,6 +217,8 @@ Create `icon.<icon-path>.tooltip` key in given resource bundle, where `<icon-pat
 ## New UI Icons
 
 > This feature is available since 2022.3.
+>
+> See [New UI Icons Guide](https://www.figma.com/community/file/1227729570033544559) for guidelines and overview.
 
 To fully support the [New UI](https://www.jetbrains.com/help/idea/new-ui.html), the plugin must provide additional dedicated icons and mapping information.
 This allows supporting both UI variants at the same time, depending on what the user has selected.
@@ -275,12 +277,12 @@ Example from [`PlatformIconMappings.json`](%gh-ic%/platform/icons/src/PlatformIc
 The New UI uses _outlined_ icons for tool windows that have a size of 20x20 pixels and 16x16 pixels in
 [compact mode](https://www.jetbrains.com/help/idea/new-ui.html#compact-mode).
 Plugin developers who want to provide all necessary variants of their tool window icons
-use the following suffix scheme for their icon filename, here referred to as `iconToolWindow`:
+use the following suffix scheme for their icon filename, here referred to as <path>iconToolWindow</path>:
 
-- `iconToolWindow.svg`: a 16x16 pixels _compact mode_ variant of the icon for the light theme.
-- `iconToolWindow_dark.svg`: a 16x16 pixels _compact mode_ variant of the icon for the dark theme.
-- `iconToolWindow@20x20.svg`: a 20x20 pixels variant of the icon for the light theme.
-- `iconToolWindow@20x20_dark.svg`: a 20x20 pixels variant of the icon for the dark theme.
+- <path>iconToolWindow.svg</path>: a 16x16 pixels _compact mode_ variant of the icon for the light theme.
+- <path>iconToolWindow_dark.svg</path>: a 16x16 pixels _compact mode_ variant of the icon for the dark theme.
+- <path>iconToolWindow@20x20.svg</path>: a 20x20 pixels variant of the icon for the light theme.
+- <path>iconToolWindow@20x20_dark.svg</path>: a 20x20 pixels variant of the icon for the dark theme.
 
 ### New UI Icon Colors
 

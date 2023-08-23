@@ -144,6 +144,11 @@ Specify `displayName`/`key` for `Configurable`
 `org.jetbrains.idea.maven.server.MavenEmbedderWrapper.execute(VirtualFile, Collection, Collection, List)` method removed
 : Use `executeGoal(Collection, String, MavenProgressIndicator, MavenConsole)` instead.
 
+### JSON Path Plugin 2023.2
+
+`com.intellij.jsonpath` package moved
+: It is now part of separate JSON Path plugin, add `com.intellij.jsonpath` to plugin dependencies to use its API.
+
 ## 2023.1
 
 ### IntelliJ Platform 2023.1

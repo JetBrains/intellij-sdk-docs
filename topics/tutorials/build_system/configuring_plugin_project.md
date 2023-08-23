@@ -18,10 +18,19 @@ Newer IDE releases might not be supported fully in older releases of Gradle Inte
 
 ## Target Platform and Dependencies
 
+<snippet id="whichPlatformVersion">
+
+> Which versions should your plugin support? We've collected some insights based on download statistics in [Statistics: Product Versions in Use](https://plugins.jetbrains.com/docs/marketplace/product-versions-in-use-statistics.html).
+>
+
+</snippet>
+
 By default, the Gradle plugin will build a plugin project against the IntelliJ Platform defined by the latest EAP snapshot of the IntelliJ IDEA Community Edition.
 
 If a matching version of the specified IntelliJ Platform is not available on the local machine, the Gradle plugin downloads the correct version and type.
 IntelliJ IDEA then indexes the build and any associated source code and JetBrains Java Runtime.
+
+To build a plugin for more than one target platform version, see [](build_number_ranges.md#multipleIDEVersions) for important notes.
 
 ### IntelliJ Platform Configuration
 

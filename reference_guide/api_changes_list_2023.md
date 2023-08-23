@@ -109,6 +109,11 @@ Parameter type of fragment builder functions from `ExternalSystemRunConfiguratio
 Fragment builder functions from `ExternalSystemRunConfigurationUtil` file moved to `SettingsEditorFragmentBuilders` and `ExternalSystemRunConfigurationFragmentBuilders` files
 : Use the new run configuration fragment builders.
 
+### Kotlin Plugin 2023.3
+
+`org.jetbrains.kotlin.idea.actions.JavaToKotlinAction.Companion` class renamed to `org.jetbrains.kotlin.idea.actions.JavaToKotlinAction.Handler`
+: In order to not load additional code eagerly on action instantiation.
+
 ## 2023.2
 
 ### IntelliJ Platform 2023.2

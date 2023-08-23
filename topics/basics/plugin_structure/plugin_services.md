@@ -256,11 +256,13 @@ Registration in <path>plugin.xml</path>:
 
 ## Retrieving a Service
 
-> Do not acquire service instances eagerly or store them in fields, but obtain them in the place(s) where they will be used.
+> **Never** acquire service instances prematurely or store them in fields for later use.
+> Instead, **always** obtain these service instances directly and **only** at the location where they're needed.
+> Failing to do so can lead to unexpected exceptions and severe consequences for your plugin's functionality.
 >
 {style="warning"}
 
-Getting service doesn't need a read action and can be performed from any thread.
+Getting a service doesn't need a read action and can be performed from any thread.
 If a service is requested from several threads, it will be initialized in the first thread, and other threads will be blocked until it is fully initialized.
 
 <tabs group="languages">

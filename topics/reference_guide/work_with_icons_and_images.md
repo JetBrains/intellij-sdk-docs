@@ -153,15 +153,16 @@ A minimal SVG icon file:
 ```
 
 The naming notation used for PNG icons (see below) is still relevant.
+
 However, the `@2x` version of an SVG icon should still provide the same base size.
 The icon graphics of such an icon can be expressed in more details via double precision.
 If the icon graphics are simple enough so that it renders perfectly in every scale, then the `@2x` version can be omitted.
 
-### PNG Format
+### PNG Format (Deprecated)
 
-> Use [SVG icons](#svg-format) for optimal results if your plugin targets 2018.2+.
+> Use [SVG icons](#svg-format) for if your plugin targets 2018.2+.
 >
-{style="note"}
+{style="warning"}
 
 All icon files must be placed in the same directory following this naming pattern (replace <path>.png</path> with <path>.svg</path> for SVG icons):
 

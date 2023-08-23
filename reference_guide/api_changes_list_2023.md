@@ -86,11 +86,6 @@ JsonPath library unbundled
 `com.siyeh.ipp.base.Intention` class removed
 : As a part of migration to new experimental [`ModCommand`](%gh-ic%/platform/analysis-api/src/com/intellij/modcommand/ModCommand.java) API, the class was removed completely. It's a part of implementation module and was never intended to be inherited by external plugins. Consider implementing [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java) directly.
 
-### JSON Path Plugin 2023.2
-
-Moved package `com.intellij.jsonpath`
-: It is now part of separate _JSONPath_ plugin. [Add dependency](plugin_dependencies.md) on `com.intellij.jsonpath` to use its API.
-
 ### External System Run Configuration 2023.3
 
 Property `com.intellij.openapi.externalSystem.service.ui.command.line.CompletionTableInfo.completionInfo` replaced by suspend function `CompletionTableInfo.collectCompletionInfo`
@@ -149,10 +144,17 @@ Specify `displayName`/`key` for `Configurable`
 `org.jetbrains.idea.maven.server.MavenEmbedderWrapper.execute(VirtualFile, Collection, Collection, List)` method removed
 : Use `executeGoal(Collection, String, MavenProgressIndicator, MavenConsole)` instead.
 
+
 ### Apache Velocity Plugin 2023.2
 
 `com.intellij.velocity.psi.VtlVariable.getPsiType()` method return type changed from `com.intellij.psi.PsiType` to `com.intellij.velocity.psi.VtlVariableType`
 : Use `com.intellij.velocity.java.reference.VtlPsiType` to wrap Java types to return result from implementations.
+
+### JSON Path Plugin 2023.2
+
+Moved package `com.intellij.jsonpath`
+: It is now part of separate _JSONPath_ plugin. [Add dependency](plugin_dependencies.md) on `com.intellij.jsonpath` to use its API.
+
 
 ## 2023.1
 

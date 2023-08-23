@@ -1,6 +1,6 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
-
 # Build Number Ranges
+
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Defining product compatibility by specifying plugin since-build and until-build ranges.</link-summary>
 
@@ -60,16 +60,20 @@ Usually you should omit the product ID and use only the branch number and build 
 >
 {style="note"}
 
-### IntelliJ Platform Based Products of Recent IDE Versions
+### Targeting Multiple IDE Versions
+{id="multipleIDEVersions"}
 
-> Which versions should your plugin support? We've collected some insights based on download statistics in [Statistics: Product Versions in Use](https://plugins.jetbrains.com/docs/marketplace/product-versions-in-use-statistics.html).
->
+<include from="configuring_plugin_project.md" element-id="whichPlatformVersion"/>
 
 When supporting multiple major versions, it is strongly recommended to build against the _lowest_ supported version to guarantee backwards-compatibility.
-In the case of supporting a range of platform versions with different underlying Java level it is _required_.
+In the case of supporting a range of platform versions with different underlying Java level ([see below](#platformVersions)), it is _required_.
 
-See [](verifying_plugin_compatibility.md) for tooling support to ensure compatibility with chosen version range and IDEs.
-Consult [Incompatible API Changes](api_changes_list.md) and [Notable API Changes](api_notable.md) for an overview of known breaking and relevant changes.
+[](verifying_plugin_compatibility.md) discusses tooling support to ensure compatibility with the chosen version range and IDEs.
+
+Consult [Incompatible API Changes](api_changes_list.md) and [Notable API Changes](api_notable.md) for an overview of known breaking and relevant changes across IDE versions.
+
+### IntelliJ Platform Based Products of Recent IDE Versions
+{id="platformVersions"}
 
 <include from="tools_gradle_intellij_plugin.md" element-id="gradle_plugin_223_problem"/>
 

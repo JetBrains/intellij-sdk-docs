@@ -149,6 +149,11 @@ Specify `displayName`/`key` for `Configurable`
 `org.jetbrains.idea.maven.server.MavenEmbedderWrapper.execute(VirtualFile, Collection, Collection, List)` method removed
 : Use `executeGoal(Collection, String, MavenProgressIndicator, MavenConsole)` instead.
 
+### Apache Velocity Plugin 2023.2
+
+`com.intellij.velocity.psi.VtlVariable.getPsiType()` method return type changed from `com.intellij.psi.PsiType` to `com.intellij.velocity.psi.VtlVariableType`
+: Use `com.intellij.velocity.java.reference.VtlPsiType` to wrap Java types to return result from implementations.
+
 ## 2023.1
 
 ### IntelliJ Platform 2023.1

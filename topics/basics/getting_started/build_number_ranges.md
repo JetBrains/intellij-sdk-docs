@@ -9,16 +9,16 @@ Setting the actual values in <path>[plugin.xml](plugin_configuration_file.md)</p
 
 Please note the following regarding values:
 
-- Values must represent the actual build numbers, any made-up numbers must not be used (e.g., `999.*`, `2023.4`, or `2023.9999` are invalid for `until-build`).
-- Not specifying `until-build` means it will include _all_ future builds (including future, yet unreleased IDE versions, which might impact compatibility later).
-- Dot star suffix (`.* `) can be used in `until-build` to support all releases for the specific branch (i.e., `222.*` for all 2022.2.x releases).
+- Values must represent the [actual build numbers](#build-number-format), any made-up numbers must not be used (for example, `999.*`, `234.*`, or `223.9999` are invalid for `until-build`).
+- Not specifying `until-build` means it will include _all_ future builds. This includes future, yet unreleased versions and possibly new IDEs, which might impact compatibility later.
+- Use dot-star suffix (`.* `) in `until-build` to support all releases for the specific branch (for example, `232.*` for all 2023.2.x releases).
 
-> Compatibility with the specified version range (and compatible products) must always be verified using [](verifying_plugin_compatibility.md#plugin-verifier) to ensure binary compatibility.
+> Before publishing, the plugin must be checked using [](verifying_plugin_compatibility.md#plugin-verifier) against the specified version range (and specified compatible products) to ensure binary compatibility.
 >
 > Plugins hosted on [JetBrains Marketplace](https://plugins.jetbrains.com) are checked automatically.
 > According to [Approval Guidelines](https://plugins.jetbrains.com/legal/approval-guidelines), incompatible plugin versions will be restricted by JetBrains if necessary.
 >
-{style="warning"}
+{title="Compatibility Enforcement" style="warning"}
 
 ### Build Number Format
 
@@ -26,16 +26,16 @@ To denote a release, a multipart build number is used.
 It consists of the following parts:
 
 * Product ID (`IC` for IDEA Community, `IU` for IDEA Ultimate, `RM` for RubyMine, `PY` for PyCharm, `PS` for PhpStorm, etc.)
-* Branch number (`162`)
-* Build number in the branch (`94`)
+* Branch number (`223`)
+* Build number in the branch (`9559`)
 
 Branch numbers are based on the `YYYY.R` [IDE release version numbers](https://blog.jetbrains.com/blog/2016/03/09/jetbrains-toolbox-release-and-versioning-changes/).
 The branch number takes the last two digits of the year and the `R` release number.
-For example, `162` for 20*16.2*, `163` for 20*16.3*, etc.
+For example, `231` for 20*23.1*, `232` for 20*23.2*, and `233` for 20*23.3*
 
 The build number may have multiple components: `IU-162.94.11`, `IU-162.94.11.256.42`.
 This gives more flexibility for third-party plugins and IDE developers.
-Plugins may specify compatibility versions more precisely (e.g., requiring a specific bugfix release); IDE vendors may have build numbers based on a specific IntelliJ Platform version and specify additional internal version (e.g. `256.42` in `XX-162.94.11.256.42`) to allow plugin developers for their IDE to specify compatibility.
+Plugins may specify compatibility versions more precisely (for example, requiring a specific bugfix release); IDE vendors may have build numbers based on a specific IntelliJ Platform version and specify additional internal version (for example `256.42` in `XX-162.94.11.256.42`) to allow plugin developers for their IDE to specify compatibility.
 
 Multipart build numbers can also be used in the `since-build` and `until-build` attributes of `idea-version`.
 Usually you should omit the product ID and use only the branch number and build number, for example:
@@ -48,12 +48,12 @@ Usually you should omit the product ID and use only the branch number and build 
 ```
 
 ```xml
-<!-- 2021.3.3 or higher -->
+<!-- 2021.3.3 or later -->
 <idea-version since-build="213.7172.25"/>
 ```
 </compare>
 
-> Specific build numbers and their corresponding release version are available via _Previous Releases_ on the corresponding product's download page, e.g. [Previous IntelliJ IDEA Releases](https://www.jetbrains.com/idea/download/previous.html).
+> Specific build numbers and their corresponding release version are available via _Previous Releases_ on the corresponding product's download page, for example [Previous IntelliJ IDEA Releases](https://www.jetbrains.com/idea/download/previous.html).
 > For upcoming versions, see [Early Access Program](https://eap.jetbrains.com).
 >
 > See also [What versions of IntelliJ-based IDEs are supported?](https://intellij-support.jetbrains.com/hc/en-us/articles/360019574859-What-versions-of-IntelliJ-based-IDEs-are-supported-) for JetBrains IDE support policy.

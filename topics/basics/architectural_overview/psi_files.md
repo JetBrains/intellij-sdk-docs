@@ -8,7 +8,9 @@ A PSI (Program Structure Interface) file is the root of a structure representing
 
 The [`PsiFile`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiFile.java) class is the common base class for all PSI files, while files in a specific language are usually represented by its subclasses.  For example, the [`PsiJavaFile`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/PsiJavaFile.java) class represents a Java file, and the [`XmlFile`](%gh-ic%/xml/xml-psi-api/src/com/intellij/psi/xml/XmlFile.java) class represents an XML file.
 
-Unlike [](virtual_file.md) and [](documents.md), which have application scope (even if multiple projects are open, each file is represented by the same `VirtualFile` instance), PSI has project scope: the same file is represented by multiple `PsiFile` instances if the file belongs to multiple projects open at the same time.
+Unlike [](virtual_file.md) and [](documents.md), which have application scope (even if multiple projects are open, each file is represented by the same
+[`VirtualFile`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java) instance), PSI has [](project.md) scope:
+the same file is represented by multiple `PsiFile` instances if the file belongs to multiple projects open at the same time.
 
 ## How do I get a PSI file?
 
@@ -44,17 +46,17 @@ LanguageParserDefinitions.INSTANCE
     .createFile(fileViewProvider);
 ```
 
-Like documents, PSI files are created on-demand when the PSI is accessed for a particular file.
+Like [](documents.md), PSI files are created on-demand when the PSI is accessed for a particular file.
 
 ## How long do PSI files persist?
 
-Like documents, PSI files are weakly referenced from the corresponding `VirtualFile` instances and can be garbage-collected if not referenced by anyone.
+Like [](documents.md), PSI files are weakly referenced from the corresponding `VirtualFile` instances and can be garbage-collected if not referenced by anyone.
 
 ## How do I create a PSI file?
 
 [`PsiFileFactory.createFileFromText()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiFileFactory.java) creates an in-memory PSI file with the specified contents.
 
-To save the PSI file to disk, use [`PsiDirectory.add()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiDirectory.java).
+To save the PSI file to disk, use its parent directory's [`PsiDirectory.add()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiDirectory.java).
 
 ## How do I get notified when PSI files change?
 

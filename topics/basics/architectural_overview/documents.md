@@ -1,6 +1,6 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
-
 # Documents
+
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Introduction to documents - an editable sequence of Unicode characters, typically storing the content of a virtual file.</link-summary>
 
@@ -24,7 +24,7 @@ You may perform any operations that access or modify the file contents on the "p
 ## Where does a Document come from?
 
 Document instances are created when some operation needs to access the text contents of a file (in particular, this is necessary to build the PSI for a file).
-Also, document instances not linked to any virtual files can be created temporarily, for example, representing the contents of a text editor field in a dialog.
+Also, document instances not linked to any [](virtual_file.md) can be created temporarily, for example, representing the contents of a text editor field in a dialog.
 
 ## How long does a Document persist?
 

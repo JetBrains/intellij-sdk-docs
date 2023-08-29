@@ -12,7 +12,7 @@ Switching between the two is transparent.
 
 The stub tree contains only a subset of the nodes.
 Typically, it contains only the nodes needed to resolve the declarations contained in this file from external files.
-Trying to access any node that is not part of the stub tree or perform any operation that cannot be satisfied by the stub tree, e.g., accessing the text of a PSI element, causes file parsing to switch from the PSI to AST backing.
+Trying to access any node that is not part of the stub tree or perform any operation that cannot be satisfied by the stub tree, e.g., accessing the text of a PSI element, causes file parsing to switch from the stub to AST backing.
 
 Each stub in the stub tree is simply a bean class with no behavior.
 A stub stores a subset of the corresponding PSI element's state, like the element's name, modifier flags like public or final, etc.

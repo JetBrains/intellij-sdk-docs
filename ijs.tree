@@ -103,8 +103,7 @@
       <toc-element topic="settings_groups.md"/>
       <toc-element topic="settings_tutorial.md"/>
     </toc-element>
-    <toc-element topic="files.md">
-      <toc-element topic="virtual_file_system.md"/>
+    <toc-element topic="virtual_file_system.md" accepts-web-file-names="files.html">
       <toc-element topic="virtual_file.md"/>
     </toc-element>
     <toc-element topic="documents.md"/>
@@ -117,7 +116,8 @@
       <toc-element topic="text_selection.md"/>
       <toc-element topic="multiple_carets.md"/>
     </toc-element>
-    <toc-element topic="execution.md" accepts-web-file-names="run_configuration_execution.html,basic_run-configurations.html,run-configuration-execution.html">
+    <toc-element topic="execution.md"
+                 accepts-web-file-names="run_configuration_execution.html,basic_run-configurations.html,run-configuration-execution.html">
       <toc-element topic="run_configurations.md" accepts-web-file-names="run-configuration-management.html"/>
       <toc-element topic="run_configurations_tutorial.md"/>
     </toc-element>

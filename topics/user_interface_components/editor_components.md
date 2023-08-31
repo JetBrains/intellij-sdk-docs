@@ -1,6 +1,6 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
-
 # Editor Components
+
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Creating, customizing and using editor components in different contexts.</link-summary>
 
@@ -28,6 +28,8 @@ If you want to use an editor as an input field in a dialog box, then consider us
 [`LanguageTextField`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/LanguageTextField.java),
 it provides a more accessible API.
 
+### Providing Completion
+
 If you want to add autocompletion to the editor, then use
 [`TextFieldWithCompletion`](%gh-ic%/platform/platform-impl/src/com/intellij/util/textCompletion/TextFieldWithCompletion.java).
 The constructor takes as an argument a class that implements
@@ -42,7 +44,7 @@ See also
 [`TextFieldCompletionProviderDumbAware`](%gh-ic%/platform/lang-impl/src/com/intellij/util/TextFieldCompletionProviderDumbAware.java)
 for completion even at the indexing stage.
 
-Refer to the [](code_completion.md) to learn more about completion.
+Refer to [](code_completion.md) to learn more about completion.
 
 ### Java
 

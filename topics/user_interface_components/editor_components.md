@@ -2,11 +2,11 @@
 
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<link-summary>Creating, customizing and using editor components in different contexts.</link-summary>
+<link-summary>Creating, customizing, and using editor components in different contexts.</link-summary>
 
 ## EditorTextField
 
-Compared to [Swing `JTextArea`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextArea.html), the IntelliJ Platform's editor component has a ton of advantages: syntax highlighting support, code completion, code folding and much more.
+Compared to [Swing `JTextArea`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextArea.html), the IntelliJ Platform's editor component has a ton of advantages: syntax highlighting support, code completion, code folding, and much more.
 [Editors](editors.md) are normally displayed in editor tabs, but they can be embedded in dialogs or tool windows, too.
 This is enabled by the [`EditorTextField`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/EditorTextField.java) component.
 
@@ -20,13 +20,13 @@ Further customizations are possible by subclassing and overriding `createEditor(
 Several commonly needed customization implementations exist, including:
 - [`SpellCheckingEditorCustomization`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/ui/SpellCheckingEditorCustomization.java) disables spellchecking
 - [`HorizontalScrollBarEditorCustomization`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/HorizontalScrollBarEditorCustomization.java) to turn on/off horizontal scrollbar
-- [`ErrorStripeEditorCustomization`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/ErrorStripeEditorCustomization.java) to turn on/off error stripes on right
+- [`ErrorStripeEditorCustomization`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/ErrorStripeEditorCustomization.java) to turn on/off error stripes on the right
 
 `EditorTextField` has a number of subclasses that can be used as needed for additional features.
 
-If you want to use an editor as an input field in a dialog box, then consider using
-[`LanguageTextField`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/LanguageTextField.java),
-it provides a more accessible API.
+If you want to use an editor as an input field in a dialog, then consider using
+[`LanguageTextField`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/LanguageTextField.java)
+as it provides a more accessible API.
 
 ### Providing Completion
 
@@ -44,11 +44,11 @@ See also
 [`TextFieldCompletionProviderDumbAware`](%gh-ic%/platform/lang-impl/src/com/intellij/util/TextFieldCompletionProviderDumbAware.java)
 for completion even at the indexing stage.
 
-Refer to [](code_completion.md) to learn more about completion.
+See [](code_completion.md) to learn more about completion.
 
 ### Java
 
-> If your plugin depends on Java functionality and targets 2019.2 or later, please make sure to follow the steps from this [blog post](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/).
+> If your plugin depends on Java functionality and targets 2019.2 or later, see [](plugin_compatibility.md#java).
 >
 {style="note"}
 
@@ -62,7 +62,8 @@ This can be accomplished with the following steps:
 ```java
 PsiFile psiFile = PsiDocumentManager.getInstance(project)
         .getPsiFile(editor.getDocument());
-PsiElement element = psiFile.findElementAt(editor.getCaretModel().getOffset());
+PsiElement element =
+        psiFile.findElementAt(editor.getCaretModel().getOffset());
 
 PsiExpressionCodeFragment code =
         JavaCodeFragmentFactory.getInstance(project)
@@ -71,7 +72,7 @@ PsiExpressionCodeFragment code =
 Document document =
         PsiDocumentManager.getInstance(project).getDocument(code);
 
-EditorTextField myInput =
+EditorTextField editorTextField =
         new EditorTextField(document, project, JavaFileType.INSTANCE);
 ```
 

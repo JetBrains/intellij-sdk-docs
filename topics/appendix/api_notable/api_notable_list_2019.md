@@ -78,7 +78,7 @@ New API for Editor Inlay Hints
 ### IntelliJ IDEA 2019.2
 
 Java functionality extracted as a plugin
-: If your plugin depends on Java, it must be specified now; please see [blog post](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/) for details.
+: If your plugin depends on Java, it must be specified now; see [](plugin_compatibility.md#java) for details.
 
 Unbundled plugins
 : Several plugins (J2ME, JsTestDriver, Struts 1.x) for no longer actively maintained technology have been moved to a [separate repository](https://github.com/JetBrains/intellij-obsolete-plugins/). If your plugin depends on them, users will need to install them from the [JetBrains Marketplace](https://plugins.jetbrains.com).

@@ -39,6 +39,9 @@ Please see [notes](api_changes_list_2021.md#20213).
 
 Always call `super.tearDown()` inside `finally {..}` block of your test class to avoid leaks and side effects from previously run (failed) tests:
 
+<tabs>
+<tab title="Java" group-key="java">
+
 ```java
 protected void tearDown() throws Exception {
   try {
@@ -52,6 +55,25 @@ protected void tearDown() throws Exception {
   }
 }
 ```
+</tab>
+
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+override fun tearDown() {
+  try {
+    // test specific tear down calls
+  }
+  catch (e: Throwable) {
+    addSuppressedException(e)
+  }
+  finally {
+    super.tearDown()
+  }
+}
+```
+</tab>
+</tabs>
 
 Avoid OS-specific assumptions (e.g., filesystem case-sensitivity, hardcoded separator instead of `java.io.File.separator`, default encoding, line endings).
 
@@ -156,7 +178,7 @@ It's done by setting the `idea.home.path` system property to the absolute path o
 
 
 <tabs>
-<tab title="Kotlin">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 test {
@@ -165,7 +187,7 @@ test {
 ```
 
 </tab>
-<tab title="Groovy">
+<tab title="Groovy" group-key="groovy">
 
 ```groovy
 test {

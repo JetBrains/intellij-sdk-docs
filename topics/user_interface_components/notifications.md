@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<link-summary>Notifying users about errors, action statuses or other events without interrupting their workflow by showing modal message boxes requiring confirmation.</link-summary>
+<link-summary>Notifying users about errors, action statuses, or other events without interrupting their workflow by showing modal message boxes requiring confirmation.</link-summary>
 
 <tldr>
 
@@ -21,7 +21,7 @@ described in the [Dialogs](dialog_wrapper.md#input-validation) section.
 
 ### Editor Hints
 
-For actions invoked from the editor (such as refactorings, navigation actions and different code insight features), the best way to notify the user about the inability to perform an action is to use the [`HintManager`](%gh-ic%/platform/platform-api/src/com/intellij/codeInsight/hint/HintManager.java) class.
+For actions invoked from the editor (such as refactorings, navigation actions, and different code insight features), the best way to notify the user about the inability to perform an action is to use the [`HintManager`](%gh-ic%/platform/platform-api/src/com/intellij/codeInsight/hint/HintManager.java) class.
 Its method `showErrorHint()` displays a floating popup above the editor which is automatically hidden when the user starts performing another action in the editor.
 Other [`HintManager`](%gh-ic%/platform/platform-api/src/com/intellij/codeInsight/hint/HintManager.java) methods can be used for displaying other kinds of non-modal notification hints over an editor.
 
@@ -52,7 +52,7 @@ It has two main advantages:
 
 For UI reference, see [Balloon](https://jetbrains.design/intellij/controls/balloon/) in the IntelliJ Platform UI Guidelines.
 
-> See [](tool_windows.md#tool-window-notification) for showing balloons on specific tool window.
+> See [](tool_windows.md#tool-window-notification) for showing balloons for a specific tool window.
 
 The specific method used to display a notification is [`Notifications.Bus.notify()`](%gh-ic%/platform/ide-core/src/com/intellij/notification/Notifications.java).
 If the current Project is known, please use overload with `Project` parameter, so the notification is shown in its associated frame.
@@ -85,8 +85,10 @@ Use `key` to provide a localized group display name.
 
 Registered instances can then be obtained via their `id`.
 
-> Code insight is available for parameters expecting notification group `id`.
+> Code insight is available for parameters expecting a notification group `id`.
 >
+
+<br/>
 
 ```java
 public class MyNotifier {

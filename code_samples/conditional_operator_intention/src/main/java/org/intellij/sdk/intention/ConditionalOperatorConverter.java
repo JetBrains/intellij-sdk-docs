@@ -1,5 +1,4 @@
-// Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
-
+// Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 package org.intellij.sdk.intention;
 
 import com.intellij.codeInsight.intention.IntentionAction;
@@ -25,7 +24,7 @@ public class ConditionalOperatorConverter extends PsiElementBaseIntentionAction 
    */
   @NotNull
   public String getText() {
-    return "SDK Convert ternary operator to if statement";
+    return getFamilyName();
   }
 
   /**
@@ -37,7 +36,7 @@ public class ConditionalOperatorConverter extends PsiElementBaseIntentionAction 
    */
   @NotNull
   public String getFamilyName() {
-    return "ConditionalOperatorIntention";
+    return "SDK: Convert ternary operator to if statement";
   }
 
   /**

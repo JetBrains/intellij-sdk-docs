@@ -20,26 +20,6 @@ import org.jetbrains.annotations.Nullable;
 public class ConditionalOperatorConverter extends PsiElementBaseIntentionAction implements IntentionAction {
 
   /**
-   * If this action is applicable, returns the text to be shown in the list of intention actions available.
-   */
-  @NotNull
-  public String getText() {
-    return getFamilyName();
-  }
-
-  /**
-   * Returns text for name of this family of intentions.
-   * It is used to externalize "auto-show" state of intentions.
-   * It is also the directory name for the descriptions.
-   *
-   * @return the intention family name.
-   */
-  @NotNull
-  public String getFamilyName() {
-    return "SDK: Convert ternary operator to if statement";
-  }
-
-  /**
    * Checks whether this intention is available at the caret offset in file - the caret must sit just before a "?"
    * character in a ternary statement. If this condition is met, this intention's entry is shown in the available
    * intentions list.
@@ -210,13 +190,23 @@ public class ConditionalOperatorConverter extends PsiElementBaseIntentionAction 
   }
 
   /**
-   * Indicates this intention action expects the Psi framework to provide the write action context for any changes.
-   *
-   * @return {@code true} if the intention requires a write action context to be provided or {@code false} if this
-   * intention action will start a write action
+   * If this action is applicable, returns the text to be shown in the list of intention actions available.
    */
-  public boolean startInWriteAction() {
-    return true;
+  @NotNull
+  public String getText() {
+    return getFamilyName();
+  }
+
+  /**
+   * Returns text for name of this family of intentions.
+   * It is used to externalize "auto-show" state of intentions.
+   * It is also the directory name for the descriptions.
+   *
+   * @return the intention family name.
+   */
+  @NotNull
+  public String getFamilyName() {
+    return "SDK: Convert ternary operator to if statement";
   }
 
 }

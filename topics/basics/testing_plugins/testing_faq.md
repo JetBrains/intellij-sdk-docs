@@ -17,13 +17,17 @@ This page lists a number of common questions/issues and techniques useful for te
 - [`PsiTestUtil`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/PsiTestUtil.java)
 - [`VfsTestUtil`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/VfsTestUtil.java)
 - [`IoTestUtil`](%gh-ic%/platform/testFramework/src/com/intellij/openapi/util/io/IoTestUtil.java)
+- [`LeakHunter`](%gh-ic%/platform/testFramework/common/src/LeakHunter.java)
 
 ### UI
+
+See [](testing_plugins.md#ui-tests) for UI integration tests.
 
 - [`ProjectViewTestUtil`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/ProjectViewTestUtil.java)
 - [`TestLookupElementPresentation`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/TestLookupElementPresentation.java)
 - [`IconTestUtil`](%gh-ic%/platform/testFramework/src/com/intellij/ui/IconTestUtil.java)
 - [`TreeTestUtil`](%gh-ic%/platform/testFramework/src/com/intellij/ui/tree/TreeTestUtil.java)
+- [`EdtTestUtil`](%gh-ic%/platform/testFramework/common/src/EdtTestUtil.java)
 
 ## Issues
 
@@ -36,7 +40,7 @@ Please see [notes](https://plugins.jetbrains.com/docs/intellij/api-changes-list-
 Always call `super.tearDown()` inside `finally {..}` block of your test class to avoid leaks and side effects from previously run (failed) tests:
 
 ```java
-void tearDown() {
+protected void tearDown() throws Exception {
   try {
     // test specific tear down calls
   }

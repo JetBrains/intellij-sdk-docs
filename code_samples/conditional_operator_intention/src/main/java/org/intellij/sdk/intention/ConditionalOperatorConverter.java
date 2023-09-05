@@ -86,19 +86,21 @@ public class ConditionalOperatorConverter extends PsiElementBaseIntentionAction 
    * @see ConditionalOperatorConverter#startInWriteAction()
    */
   public void invoke(@NotNull Project project, Editor editor, @NotNull PsiElement element)
-          throws IncorrectOperationException {
+      throws IncorrectOperationException {
     // Get the factory for making new PsiElements, and the code style manager to format new statements
     final PsiElementFactory factory = JavaPsiFacade.getInstance(project).getElementFactory();
     final CodeStyleManager codeStylist = CodeStyleManager.getInstance(project);
 
     // Get the parent of the "?" element in the ternary statement to find the conditional expression that contains it
     PsiConditionalExpression conditionalExpression =
-            PsiTreeUtil.getParentOfType(element, PsiConditionalExpression.class, false);
-    // Verify the conditional expression exists and has two outcomes in the ternary statement.
+        PsiTreeUtil.getParentOfType(element, PsiConditionalExpression.class, false);
     if (conditionalExpression == null) {
       return;
     }
-    if (conditionalExpression.getThenExpression() == null || conditionalExpression.getElseExpression() == null) {
+    // Verify the conditional expression exists and has two outcomes in the ternary statement.
+    PsiExpression thenExpression = conditionalExpression.getThenExpression();
+    PsiExpression elseExpression = conditionalExpression.getElseExpression();
+    if (thenExpression == null || elseExpression == null) {
       return;
     }
 
@@ -120,7 +122,7 @@ public class ConditionalOperatorConverter extends PsiElementBaseIntentionAction 
       PsiLocalVariable variable = null;
       for (PsiElement declaredElement : declaredElements) {
         if (declaredElement instanceof PsiLocalVariable &&
-                PsiTreeUtil.isAncestor(declaredElement, conditionalExpression, true)) {
+            PsiTreeUtil.isAncestor(declaredElement, conditionalExpression, true)) {
           variable = (PsiLocalVariable) declaredElement;
           break;
         }
@@ -136,20 +138,28 @@ public class ConditionalOperatorConverter extends PsiElementBaseIntentionAction 
 
       // Create a new expression to declare the local variable
       PsiExpressionStatement statement =
-              (PsiExpressionStatement) factory.createStatementFromText(variable.getName() + " = 0;", null);
+          (PsiExpressionStatement) factory.createStatementFromText(variable.getName() + " = 0;", null);
       statement = (PsiExpressionStatement) codeStylist.reformat(statement);
 
       // Replace initializer with the ternary expression, making an assignment statement using the ternary
-      ((PsiAssignmentExpression) statement.getExpression()).getRExpression().replace(variable.getInitializer());
+      PsiExpression rExpression = ((PsiAssignmentExpression) statement.getExpression()).getRExpression();
+      PsiExpression variableInitializer = variable.getInitializer();
+      if (rExpression == null || variableInitializer == null) {
+        return;
+      }
+      rExpression.replace(variableInitializer);
 
       // Remove the initializer portion of the local variable statement,
       // making it a declaration statement with no initializer
-      variable.getInitializer().delete();
+      variableInitializer.delete();
 
       // Get the grandparent of the local var declaration, and add the new declaration just beneath it
       final PsiElement variableParent = variable.getParent();
       originalStatement = variableParent.getParent().addAfter(statement, variableParent);
       conditionalExpression = (PsiConditionalExpression) PsiTreeUtil.releaseMark(originalStatement, marker);
+    }
+    if (conditionalExpression == null) {
+      return;
     }
 
     // Create an IF statement from a string with placeholder elements.
@@ -159,30 +169,45 @@ public class ConditionalOperatorConverter extends PsiElementBaseIntentionAction 
 
     // Replace the conditional expression with the one from the original ternary expression
     final PsiReferenceExpression condition = (PsiReferenceExpression) conditionalExpression.getCondition().copy();
-    newIfStmt.getCondition().replace(condition);
+    PsiExpression newIfStmtCondition = newIfStmt.getCondition();
+    if (newIfStmtCondition == null) {
+      return;
+    }
+    newIfStmtCondition.replace(condition);
 
     // Begin building the assignment string for the THEN and ELSE clauses using the
     // parent of the ternary conditional expression
     PsiAssignmentExpression assignmentExpression =
-            PsiTreeUtil.getParentOfType(conditionalExpression, PsiAssignmentExpression.class, false);
+        PsiTreeUtil.getParentOfType(conditionalExpression, PsiAssignmentExpression.class, false);
+    if (assignmentExpression == null) {
+      return;
+    }
     // Get the contents of the assignment expression up to the start of the ternary expression
     String exprFrag = assignmentExpression.getLExpression().getText()
-            + assignmentExpression.getOperationSign().getText();
+        + assignmentExpression.getOperationSign().getText();
 
     // Build the THEN statement string for the new IF statement,
     // make a PsiExpressionStatement from the string, and switch the placeholder
-    String thenStr = exprFrag + conditionalExpression.getThenExpression().getText() + ";";
+    String thenStr = exprFrag + thenExpression.getText() + ";";
     PsiExpressionStatement thenStmt = (PsiExpressionStatement) factory.createStatementFromText(thenStr, null);
-    ((PsiBlockStatement) newIfStmt.getThenBranch()).getCodeBlock().getStatements()[0].replace(thenStmt);
+    PsiBlockStatement thenBranch = (PsiBlockStatement) newIfStmt.getThenBranch();
+    if (thenBranch == null) {
+      return;
+    }
+    thenBranch.getCodeBlock().getStatements()[0].replace(thenStmt);
 
     // Build the ELSE statement string for the new IF statement,
     // make a PsiExpressionStatement from the string, and switch the placeholder
-    String elseStr = exprFrag + conditionalExpression.getElseExpression().getText() + ";";
+    String elseStr = exprFrag + elseExpression.getText() + ";";
     PsiExpressionStatement elseStmt = (PsiExpressionStatement) factory.createStatementFromText(elseStr, null);
-    ((PsiBlockStatement) newIfStmt.getElseBranch()).getCodeBlock().getStatements()[0].replace(elseStmt);
+    PsiBlockStatement elseBranch = (PsiBlockStatement) newIfStmt.getElseBranch();
+    if (elseBranch == null) {
+      return;
+    }
+    elseBranch.getCodeBlock().getStatements()[0].replace(elseStmt);
 
     // Replace the entire original statement with the new IF
-    newIfStmt = (PsiIfStatement) originalStatement.replace(newIfStmt);
+    originalStatement.replace(newIfStmt);
   }
 
   /**

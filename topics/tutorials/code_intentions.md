@@ -44,9 +44,7 @@ The [conditional_operator_intention](%gh-sdk-samples%/conditional_operator_inten
 
 ## Sample Plugin
 
-When launched, this plugin adds the <control>Convert ternary operator if statement</control> item to the <control>Conditional Operator</control> node in the Intentions List:
-
-![Intention settings dialog](IntentionsList.png)
+When launched, the sample plugin adds the <control>SDK: Convert ternary operator if statement</control> item to the <control>SDK intentions</control> group in the <ui-path>Settings | Editor | Intentions</ui-path>.
 
 #### Running the Plugin
 

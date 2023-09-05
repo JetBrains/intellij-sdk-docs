@@ -12,6 +12,12 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2023
 
+### September
+{#september-23}
+
+Inlay Hints
+: Update [](inlay_hints.md) page with the information about new APIs.
+
 ### June
 {#june-23}
 

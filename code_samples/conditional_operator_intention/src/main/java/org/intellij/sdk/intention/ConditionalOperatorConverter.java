@@ -88,8 +88,8 @@ public class ConditionalOperatorConverter extends PsiElementBaseIntentionAction 
   public void invoke(@NotNull Project project, Editor editor, @NotNull PsiElement element)
       throws IncorrectOperationException {
     // Get the factory for making new PsiElements, and the code style manager to format new statements
-    final PsiElementFactory factory = JavaPsiFacade.getInstance(project).getElementFactory();
-    final CodeStyleManager codeStylist = CodeStyleManager.getInstance(project);
+    PsiElementFactory factory = JavaPsiFacade.getInstance(project).getElementFactory();
+    CodeStyleManager codeStylist = CodeStyleManager.getInstance(project);
 
     // Get the parent of the "?" element in the ternary statement to find the conditional expression that contains it
     PsiConditionalExpression conditionalExpression =
@@ -116,9 +116,8 @@ public class ConditionalOperatorConverter extends PsiElementBaseIntentionAction 
     // If the original statement is a declaration based on a ternary operator,
     // split the declaration and assignment
     if (originalStatement instanceof PsiDeclarationStatement declaration) {
-
       // Find the local variable within the declaration statement
-      final PsiElement[] declaredElements = declaration.getDeclaredElements();
+      PsiElement[] declaredElements = declaration.getDeclaredElements();
       PsiLocalVariable variable = null;
       for (PsiElement declaredElement : declaredElements) {
         if (declaredElement instanceof PsiLocalVariable &&
@@ -133,7 +132,7 @@ public class ConditionalOperatorConverter extends PsiElementBaseIntentionAction 
 
       // Ensure that the variable declaration is not combined with other declarations, and add a mark
       variable.normalizeDeclaration();
-      final Object marker = new Object();
+      Object marker = new Object();
       PsiTreeUtil.mark(conditionalExpression, marker);
 
       // Create a new expression to declare the local variable
@@ -154,7 +153,7 @@ public class ConditionalOperatorConverter extends PsiElementBaseIntentionAction 
       variableInitializer.delete();
 
       // Get the grandparent of the local var declaration, and add the new declaration just beneath it
-      final PsiElement variableParent = variable.getParent();
+      PsiElement variableParent = variable.getParent();
       originalStatement = variableParent.getParent().addAfter(statement, variableParent);
       conditionalExpression = (PsiConditionalExpression) PsiTreeUtil.releaseMark(originalStatement, marker);
     }
@@ -168,7 +167,7 @@ public class ConditionalOperatorConverter extends PsiElementBaseIntentionAction 
     newIfStmt = (PsiIfStatement) codeStylist.reformat(newIfStmt);
 
     // Replace the conditional expression with the one from the original ternary expression
-    final PsiReferenceExpression condition = (PsiReferenceExpression) conditionalExpression.getCondition().copy();
+    PsiReferenceExpression condition = (PsiReferenceExpression) conditionalExpression.getCondition().copy();
     PsiExpression newIfStmtCondition = newIfStmt.getCondition();
     if (newIfStmtCondition == null) {
       return;

@@ -44,7 +44,7 @@ The [conditional_operator_intention](%gh-sdk-samples%/conditional_operator_inten
 
 ## Sample Plugin
 
-When launched, the sample plugin adds the <control>SDK: Convert ternary operator if statement</control> item to the <control>SDK intentions</control> group in the <ui-path>Settings | Editor | Intentions</ui-path>.
+When launched, the sample plugin adds the <control>SDK: Convert ternary operator to if statement</control> item to the <control>SDK intentions</control> group in the <ui-path>Settings | Editor | Intentions</ui-path>.
 
 #### Running the Plugin
 
@@ -55,24 +55,10 @@ See [Code Samples](code_samples.md) on how to set up and run the plugin.
 The plugin analyzes symbols under the cursor in your code opened in the editor.
 If the cursor is positioned on the `?` conditional operator, IntelliJ IDEA proposes to replace this conditional (ternary) operator with the "if-then-else" statement:
 
-![Convert ternary operator intention popup](TernaryOperator.png)
+![Convert ternary operator intention popup](ternary_operator_intention.png)
+{width=675}
 
-In this example:
-
-<compare>
-
-```java
-return (n>=0) ? n : -n;
-```
-
-```java
-if ((n>=0)) {
-  return n;
-} else {
-  return -n;
-}
-```
-</compare>
+Invoking <control>SDK: Convert ternary operator to if statement</control> intention action will result in transforming expression to the form visible in the [preview](code_intentions_preview.md) popup (code fragment on the right).
 
 #### Testing the Plugin
 

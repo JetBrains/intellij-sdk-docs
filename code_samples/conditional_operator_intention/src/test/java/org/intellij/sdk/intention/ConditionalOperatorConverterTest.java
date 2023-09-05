@@ -1,4 +1,4 @@
-// Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 package org.intellij.sdk.intention;
 
 import com.intellij.codeInsight.intention.IntentionAction;
@@ -27,7 +27,7 @@ public class ConditionalOperatorConverterTest extends LightJavaCodeInsightFixtur
   }
 
   public void testIntention() {
-    doTest("before.template", "SDK Convert ternary operator to if statement");
+    doTest("before.template", "SDK: Convert ternary operator to if statement");
   }
 
 }

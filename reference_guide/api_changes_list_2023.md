@@ -81,6 +81,9 @@ JsonPath library unbundled
 `com.intellij.codeInsight.intention.BaseElementAtCaretIntentionAction.invoke` method `Editor` parameter marked `@NotNull`
 : This may break source-compatibility with inheritors written in Kotlin if they declare it as nullable.
 
+`com.intellij.openapi.actionSystem.ex.ActionUtil.showDumbModeWarning(Project, AnActionEvent[])` method removed
+: Use `showDumbModeWarning(@Nullable Project project, @NotNull AnAction action, AnActionEvent @NotNull ... events)` instead
+
 ### Java Plugin 2023.3
 
 `com.siyeh.ipp.base.Intention` class removed

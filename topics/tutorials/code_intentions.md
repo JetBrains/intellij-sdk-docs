@@ -1,6 +1,6 @@
-# Intentions
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Intentions
 
 <link-summary>Intention actions allowing to fix code issues or transform the code to a different form.</link-summary>
 
@@ -32,6 +32,15 @@ The [conditional_operator_intention](%gh-sdk-samples%/conditional_operator_inten
 - How to find a Java token of interest in the PSI tree.
 - How to invoke a quick fix action for a token element under cursor using the [`PsiElementBaseIntentionAction`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/intention/PsiElementBaseIntentionAction.java) class.
 - How to create a JUnit test for this plugin using the [`IdeaTestFixtureFactory`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/IdeaTestFixtureFactory.java) class.
+
+> In case of providing multiple intention actions for a single element, their ordering is indeterministic due to performance reasons.
+> It is possible to push specific items up or down by implementing
+> [`HighPriorityAction`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/intention/HighPriorityAction.java)
+> or
+> [`LowPriorityAction`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/intention/LowPriorityAction.java)
+> respectively.
+>
+{style="note"}
 
 ## Sample Plugin
 

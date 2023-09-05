@@ -98,6 +98,15 @@ The change to the PSI tree is accomplished by the usual approach to modification
 * Substituting the original left and right operands into the new `PsiMethodCallExpression`.
 * Replacing the original binary expression with the `PsiMethodCallExpression`.
 
+> In case of providing multiple quick fixes for a single element, their ordering is indeterministic due to performance reasons.
+> It is possible to push specific items up or down by implementing
+> [`HighPriorityAction`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/intention/HighPriorityAction.java)
+> or
+> [`LowPriorityAction`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/intention/LowPriorityAction.java)
+> respectively.
+>
+{style="note"}
+
 ### Inspection Description
 
 The inspection description is an HTML file.

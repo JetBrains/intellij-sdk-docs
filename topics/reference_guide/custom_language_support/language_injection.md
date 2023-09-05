@@ -1,6 +1,6 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
-
 # Language Injection
+
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Injecting a language into different language elements.</link-summary>
 
@@ -115,7 +115,7 @@ as an example implementation.
 
 Create an XML file with the injection configuration.
 You can export existing injections from the IntelliLang settings to create a template and then edit it.
-[Element patterns](https://plugins.jetbrains.com/docs/intellij/element-patterns.html) are used to specify the context where injections will take place.
+[](element_patterns.md) are used to specify the context where injections will take place.
 Custom language authors can use the specific patterns returned from their implementation of
 [`JavaLanguageInjectionSupport.getPatternClasses`](%gh-ic%/plugins/IntelliLang/java-support/org/intellij/plugins/intelliLang/inject/java/JavaLanguageInjectionSupport.java).
 

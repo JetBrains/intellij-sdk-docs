@@ -33,7 +33,7 @@ See [](testing_plugins.md#ui-tests) for UI integration tests.
 
 ### "No Tests Found" targeting 2021.3+
 
-Please see [notes](https://plugins.jetbrains.com/docs/intellij/api-changes-list-2021.html#20213).
+Please see [notes](api_changes_list_2021.md#20213).
 
 ### How to avoid flaky tests?
 

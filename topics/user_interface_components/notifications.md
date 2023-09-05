@@ -57,8 +57,7 @@ For UI reference, see [Balloon](https://jetbrains.design/intellij/controls/ballo
 The specific method used to display a notification is [`Notifications.Bus.notify()`](%gh-ic%/platform/ide-core/src/com/intellij/notification/Notifications.java).
 If the current Project is known, please use overload with `Project` parameter, so the notification is shown in its associated frame.
 
-The text of the notification can include HTML tags.
-
+The text of the notification can include HTML tags for presentation purposes.
 Use `Notification.addAction(AnAction)` to add links below the content, use [`NotificationAction`](%gh-ic%/platform/ide-core/src/com/intellij/notification/NotificationAction.java) for convenience.
 
 The `groupId` parameter of the [`Notification`](%gh-ic%/platform/ide-core/src/com/intellij/notification/Notification.java) constructor specifies a notification type.

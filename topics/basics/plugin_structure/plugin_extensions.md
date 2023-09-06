@@ -78,9 +78,11 @@ Please note the following important points:
 
 - Extension implementations should be stateless. Use explicit [](plugin_services.md) for managing (runtime) data.
 - Avoid any initialization in constructor, see also notes for [Services](plugin_services.md#constructor).
-- Kotlin: Do not use `object` but `class` for implementation ([more details](using_kotlin.md#caution)).
-- Kotlin: Do not use `companion object` to avoid excessive classloading/initialization when the extension class is loaded.
-Use top-level declarations or objects instead.
+
+When using Kotlin:
+- Do not use `object` but `class` for implementation. [More details](using_kotlin.md#object-vs-class)
+- Do not use `companion object` to avoid excessive classloading/initialization when the extension class is loaded.
+Use top-level declarations or objects instead. [More details](using_kotlin.md#companion-object-extensions)
 
 </procedure>
 

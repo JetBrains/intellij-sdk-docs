@@ -161,7 +161,10 @@ You can find the current state of the issue in [KT-57757](https://youtrack.jetbr
 
 Please see [Third-Party Software and Licenses](https://www.jetbrains.com/legal/third-party-software/).
 
-## Caution
+## Plugin Implementation Notes
+
+### Do not use "object" but "class"
+{id="object-vs-class"}
 
 Plugins *may* use [Kotlin classes](https://kotlinlang.org/docs/classes.html) (`class` keyword) to implement declarations in the [plugin configuration file](plugin_configuration_file.md).
 When registering an extension, the platform uses a dependency injection framework to instantiate these classes at runtime.
@@ -171,6 +174,15 @@ Managing the lifecycle of extensions is the platform responsibility and instanti
 Problems are highlighted via these inspections (2023.2):
 - <control>Plugin DevKit | Code | Kotlin object registered as extension</control> for Kotlin code
 - <control>Plugin DevKit | Plugin descriptor | Extension class is a Kotlin object</control> for <path>plugin.xml</path>
+
+### Do not use "companion object" in extensions
+{id="companion-object-extensions"}
+
+Kotlin `companion object` is always created once you try to load its containing class, and [extension point implementations](plugin_extensions.md) are supposed to be cheap to create.
+To avoid unnecessary classloading (and thus slowdown in IDE startup), `companion object` in extensions must only contain simple constants or [logger](ide_infrastructure.md#logging).
+Anything else must be a top-level declaration or stored in an `object`.
+
+Use inspection <control>Plugin DevKit | Code | Companion object in extensions</control> to highlight such problems (2023.3).
 
 ## Kotlin Code FAQ
 

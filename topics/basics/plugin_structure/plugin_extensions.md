@@ -12,7 +12,7 @@ The following are some of the most common tasks accomplished using extensions:
 * The `com.intellij.applicationConfigurable` and `com.intellij.projectConfigurable` extension points allow plugins to add pages to the [Settings dialog](settings.md);
 * [Custom language plugins](custom_language_support.md) use many extension points to extend various language support features in the IDE.
 
-There are more than 1000 extension points available in the platform and the bundled plugins, allowing customizing different parts of the IDE behavior.
+There are more than 1500 extension points available in the platform and the bundled plugins, allowing customizing different parts of the IDE behavior.
 
 ## Exploring Available Extensions
 
@@ -32,13 +32,13 @@ See [](explore_api.md) for more information and strategies.
 
 1. Add an [`<extensions>`](plugin_configuration_file.md#idea-plugin__extensions) element to your <path>plugin.xml</path> if it's not yet present there.
    Set the `defaultExtensionNs` attribute to one of the following values:
-   * `com.intellij` if your plugin extends the IntelliJ Platform core functionality.
-   * `{ID of a plugin}` if your plugin extends the functionality of another plugin (must configure [Plugin Dependencies](plugin_dependencies.md)).
+    * `com.intellij` if your plugin extends the IntelliJ Platform core functionality.
+    * `{ID of a plugin}` if your plugin extends the functionality of another plugin (must configure [Plugin Dependencies](plugin_dependencies.md)).
 2. Add a new child element to the `<extensions>` element.
    The child element's name must match the name of the extension point you want the extension to access.
 3. Depending on the type of the extension point, do one of the following:
-   * If the extension point was declared using the `interface` attribute, set the `implementation` attribute to the name of the class that implements the specified interface.
-   * If the extension point was declared using the `beanClass` attribute, set all properties annotated with the [`@Attribute`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) and [`Tag`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Tag.java) annotations in the specified bean class.
+    * If the extension point was declared using the `interface` attribute, set the `implementation` attribute to the name of the class that implements the specified interface.
+    * If the extension point was declared using the `beanClass` attribute, set all properties annotated with the [`@Attribute`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) and [`Tag`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Tag.java) annotations in the specified bean class.
 
    See the [](plugin_extension_points.md#declaring-extension-points) section for details.
 4. Implement the extension API as required (see [](#implementing-extension)).
@@ -76,23 +76,27 @@ and one extension to access the `another.plugin.myExtensionPoint` extension poin
 
 Please note the following important points:
 
-- Extension implementations should be stateless. Use explicit [](plugin_services.md) for managing (runtime) data.
+- Extension implementations must be stateless. Use explicit [](plugin_services.md) for managing (runtime) data.
 - Avoid any initialization in constructor, see also notes for [Services](plugin_services.md#constructor).
 
-When using Kotlin:
+When using [Kotlin](using_kotlin.md):
+
 - Do not use `object` but `class` for implementation. [More details](using_kotlin.md#object-vs-class)
 - Do not use `companion object` to avoid excessive classloading/initialization when the extension class is loaded.
-Use top-level declarations or objects instead. [More details](using_kotlin.md#companion-object-extensions)
+  Use top-level declarations or objects instead. [More details](using_kotlin.md#companion-object-extensions)
 
 </procedure>
 
 ### Extension Default Properties
 
-The following properties are available always:
+`id`
+: Unique ID. Consider prepending ID with the prefix related to the plugin name or ID to not clash with other plugins defining extensions with the same ID, e.g., `com.example.myplugin.myExtension`.
 
-* `id` - unique ID. Consider prepending ID with the prefix related to the plugin name or ID to not clash with other plugins defining extensions with the same ID, e.g., `com.example.myplugin.myExtension`.
-* `order` - allows ordering all defined extensions using `first`, `last` or `before|after [id]` respectively
-* `os` - allows restricting an extension to given OS, e.g., `os="windows"` registers the extension on Windows only
+`order`
+: Allows ordering all defined extensions using `first`, `last` or `before|after [id]` respectively.
+
+`os`
+: Allows restricting an extension to given OS, e.g., `os="windows"` registers the extension on Windows only
 
 If an extension instance needs to "opt out" in certain scenarios, it can throw [`ExtensionNotApplicableException`](%gh-ic%/platform/extensions/src/com/intellij/openapi/extensions/ExtensionNotApplicableException.java) in its constructor.
 
@@ -104,6 +108,7 @@ Properties annotated with [`RequiredElement`](%gh-ic%/platform/core-api/src/com/
 If the given property is allowed to have an explicit empty value, set `allowEmpty` to `true` (2020.3 and later).
 
 Property names matching the following list will resolve to fully qualified class name:
+
 - `implementation`
 - `className`
 - `serviceInterface` / `serviceImplementation`
@@ -112,6 +117,7 @@ Property names matching the following list will resolve to fully qualified class
 A required parent type can be specified in the extension point declaration via nested [`<with>`](plugin_configuration_file.md#idea-plugin__extensionPoints__extensionPoint__with):
 
 ```xml
+
 <extensionPoint name="myExtension" beanClass="MyExtensionBean">
   <with
       attribute="psiElementClass"

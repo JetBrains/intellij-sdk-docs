@@ -58,7 +58,10 @@ and register it in `com.intellij.codeInsight.parameterNameHintsSuppressor` EP.
 >
 {style="note"}
 
-To provide **inline** inlay hints with custom presentation and behavior, implement declarative
+Declarative inlay hints are **inline** textual inlays that can hold expandable list of clickable items.
+Please note this API has limited presentation customization possibilities due to its UI-independent design, which allows utilizing it by different frontend technologies (not only in Swing).
+
+To provide declarative inlay hints implement declarative
 [`InlayHintsProvider`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hints/declarative/InlayHintsProvider.kt)
 and register it in `com.intellij.codeInsight.declarativeInlayProvider` EP.
 See the API documentation for the details.

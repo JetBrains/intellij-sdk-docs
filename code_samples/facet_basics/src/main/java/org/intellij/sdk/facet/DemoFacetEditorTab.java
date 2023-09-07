@@ -18,6 +18,7 @@ import java.awt.*;
  * Manages validation and modification of the {@link DemoFacet} state.
  */
 public class DemoFacetEditorTab extends FacetEditorTab {
+
   private static final String FACET_PANEL_PROMPT = "Path To SDK: ";
 
   private final DemoFacetState mySettings;
@@ -84,7 +85,7 @@ public class DemoFacetEditorTab extends FacetEditorTab {
     try {
       String newTextContent = myPath.getText();
       mySettings.setDemoFacetState(newTextContent);
-    } catch(Exception e) {
+    } catch (Exception e) {
       throw new ConfigurationException(e.toString());
     }
   }

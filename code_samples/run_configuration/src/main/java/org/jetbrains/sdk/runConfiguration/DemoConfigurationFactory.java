@@ -24,7 +24,7 @@ public class DemoConfigurationFactory extends ConfigurationFactory {
   @NotNull
   @Override
   public RunConfiguration createTemplateConfiguration(
-          @NotNull Project project) {
+      @NotNull Project project) {
     return new DemoRunConfiguration(project, this, "Demo");
   }
 

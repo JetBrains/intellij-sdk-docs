@@ -34,15 +34,15 @@ public class PsiNavigationDemoAction extends AnAction {
     if (element != null) {
       PsiMethod containingMethod = PsiTreeUtil.getParentOfType(element, PsiMethod.class);
       infoBuilder
-              .append("Containing method: ")
-              .append(containingMethod != null ? containingMethod.getName() : "none")
-              .append("\n");
+          .append("Containing method: ")
+          .append(containingMethod != null ? containingMethod.getName() : "none")
+          .append("\n");
       if (containingMethod != null) {
         PsiClass containingClass = containingMethod.getContainingClass();
         infoBuilder
-                .append("Containing class: ")
-                .append(containingClass != null ? containingClass.getName() : "none")
-                .append("\n");
+            .append("Containing class: ")
+            .append(containingClass != null ? containingClass.getName() : "none")
+            .append("\n");
 
         infoBuilder.append("Local variables:\n");
         containingMethod.accept(new JavaRecursiveElementVisitor() {

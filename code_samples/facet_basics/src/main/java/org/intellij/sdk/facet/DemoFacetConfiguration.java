@@ -51,7 +51,7 @@ public class DemoFacetConfiguration implements FacetConfiguration, PersistentSta
   @Override
   public FacetEditorTab[] createEditorTabs(FacetEditorContext context, FacetValidatorsManager manager) {
     return new FacetEditorTab[]{
-            new DemoFacetEditorTab(myFacetState, context, manager)
+        new DemoFacetEditorTab(myFacetState, context, manager)
     };
   }
 

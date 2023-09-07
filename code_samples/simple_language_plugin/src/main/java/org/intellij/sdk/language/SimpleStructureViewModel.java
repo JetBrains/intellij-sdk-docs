@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class SimpleStructureViewModel extends StructureViewModelBase implements
-        StructureViewModel.ElementInfoProvider {
+    StructureViewModel.ElementInfoProvider {
 
   public SimpleStructureViewModel(@Nullable Editor editor, PsiFile psiFile) {
     super(psiFile, editor, new SimpleStructureViewElement(psiFile));
@@ -39,4 +39,5 @@ public class SimpleStructureViewModel extends StructureViewModelBase implements
   protected Class<?> @NotNull [] getSuitableClasses() {
     return new Class[]{SimpleProperty.class};
   }
+
 }

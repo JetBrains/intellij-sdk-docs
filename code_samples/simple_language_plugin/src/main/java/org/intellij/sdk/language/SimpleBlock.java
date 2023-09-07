@@ -29,7 +29,7 @@ public class SimpleBlock extends AbstractBlock {
     while (child != null) {
       if (child.getElementType() != TokenType.WHITE_SPACE) {
         Block block = new SimpleBlock(child, Wrap.createWrap(WrapType.NONE, false), Alignment.createAlignment(),
-                spacingBuilder);
+            spacingBuilder);
         blocks.add(block);
       }
       child = child.getTreeNext();

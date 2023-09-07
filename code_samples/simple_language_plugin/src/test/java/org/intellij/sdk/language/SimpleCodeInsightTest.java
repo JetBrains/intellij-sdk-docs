@@ -47,10 +47,10 @@ public class SimpleCodeInsightTest extends LightJavaCodeInsightFixtureTestCase {
     CodeStyle.getLanguageSettings(myFixture.getFile()).SPACE_AROUND_ASSIGNMENT_OPERATORS = true;
     CodeStyle.getLanguageSettings(myFixture.getFile()).KEEP_BLANK_LINES_IN_CODE = 2;
     WriteCommandAction.writeCommandAction(getProject()).run(() ->
-            CodeStyleManager.getInstance(getProject()).reformatText(
-                    myFixture.getFile(),
-                    ContainerUtil.newArrayList(myFixture.getFile().getTextRange())
-            )
+        CodeStyleManager.getInstance(getProject()).reformatText(
+            myFixture.getFile(),
+            ContainerUtil.newArrayList(myFixture.getFile().getTextRange())
+        )
     );
     myFixture.checkResultByFile("DefaultTestData.simple");
   }
@@ -82,7 +82,7 @@ public class SimpleCodeInsightTest extends LightJavaCodeInsightFixtureTestCase {
 
   public void testReference() {
     PsiReference referenceAtCaret =
-            myFixture.getReferenceAtCaretPositionWithAssertion("ReferenceTestData.java", "DefaultTestData.simple");
+        myFixture.getReferenceAtCaretPositionWithAssertion("ReferenceTestData.java", "DefaultTestData.simple");
     final SimpleProperty resolvedSimpleProperty = assertInstanceOf(referenceAtCaret.resolve(), SimpleProperty.class);
     assertEquals("https://en.wikipedia.org/", resolvedSimpleProperty.getValue());
   }

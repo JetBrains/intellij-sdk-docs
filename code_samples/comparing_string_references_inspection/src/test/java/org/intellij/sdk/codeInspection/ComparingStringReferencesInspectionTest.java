@@ -14,7 +14,7 @@ import java.util.List;
 public class ComparingStringReferencesInspectionTest extends LightJavaCodeInsightFixtureTestCase {
 
   private static final String QUICK_FIX_NAME =
-          InspectionBundle.message("inspection.comparing.string.references.use.quickfix");
+      InspectionBundle.message("inspection.comparing.string.references.use.quickfix");
 
   @Override
   protected void setUp() throws Exception {

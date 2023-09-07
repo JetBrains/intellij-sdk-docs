@@ -41,7 +41,7 @@ public class EditorAreaIllustration extends AnAction {
     int caretOffset = primaryCaret.getOffset();
     // Build and display the caret report.
     String report = logicalPos + "\n" + visualPos + "\n" +
-            "Offset: " + caretOffset;
+        "Offset: " + caretOffset;
     Messages.showInfoMessage(report, "Caret Parameters Inside The Editor");
   }
 

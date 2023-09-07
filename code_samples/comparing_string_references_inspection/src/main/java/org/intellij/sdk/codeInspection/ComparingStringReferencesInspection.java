@@ -58,8 +58,8 @@ public class ComparingStringReferencesInspection extends AbstractBaseJavaLocalIn
           if (isStringType(lOperand) || isStringType(rOperand)) {
             // Identified an expression with potential problems, register problem with the quick fix object
             holder.registerProblem(expression,
-                    InspectionBundle.message("inspection.comparing.string.references.problem.descriptor"),
-                    myQuickFix);
+                InspectionBundle.message("inspection.comparing.string.references.problem.descriptor"),
+                myQuickFix);
           }
         }
       }
@@ -75,7 +75,7 @@ public class ComparingStringReferencesInspection extends AbstractBaseJavaLocalIn
 
       private static boolean isNullLiteral(PsiExpression expression) {
         return expression instanceof PsiLiteralExpression &&
-                ((PsiLiteralExpression) expression).getValue() == null;
+            ((PsiLiteralExpression) expression).getValue() == null;
       }
     };
   }
@@ -115,7 +115,7 @@ public class ComparingStringReferencesInspection extends AbstractBaseJavaLocalIn
 
       PsiElementFactory factory = JavaPsiFacade.getInstance(project).getElementFactory();
       PsiMethodCallExpression equalsCall =
-              (PsiMethodCallExpression) factory.createExpressionFromText("a.equals(b)", null);
+          (PsiMethodCallExpression) factory.createExpressionFromText("a.equals(b)", null);
 
       PsiExpression qualifierExpression = equalsCall.getMethodExpression().getQualifierExpression();
       assert qualifierExpression != null;

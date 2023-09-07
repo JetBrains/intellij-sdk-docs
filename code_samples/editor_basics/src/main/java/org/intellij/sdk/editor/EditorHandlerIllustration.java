@@ -34,7 +34,7 @@ public class EditorHandlerIllustration extends AnAction {
     final EditorActionManager actionManager = EditorActionManager.getInstance();
     // Get the action handler registered to clone carets
     final EditorActionHandler actionHandler =
-            actionManager.getActionHandler(IdeActions.ACTION_EDITOR_CLONE_CARET_BELOW);
+        actionManager.getActionHandler(IdeActions.ACTION_EDITOR_CLONE_CARET_BELOW);
     // Clone one caret below the active caret
     actionHandler.execute(editor, editor.getCaretModel().getPrimaryCaret(), e.getDataContext());
   }

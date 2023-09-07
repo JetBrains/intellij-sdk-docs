@@ -11,7 +11,7 @@ public class DemoRunConfigurationType extends ConfigurationTypeBase {
 
   protected DemoRunConfigurationType() {
     super(ID, "Demo", "Demo run configuration type",
-            NotNullLazyValue.createValue(() -> AllIcons.Nodes.Console));
+        NotNullLazyValue.createValue(() -> AllIcons.Nodes.Console));
     addFactory(new DemoConfigurationFactory(this));
   }
 

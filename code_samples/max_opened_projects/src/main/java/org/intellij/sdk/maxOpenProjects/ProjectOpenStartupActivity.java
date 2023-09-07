@@ -22,7 +22,7 @@ public class ProjectOpenStartupActivity implements StartupActivity.DumbAware {
 
     // Get the counting service
     ProjectCountingService projectCountingService =
-            ApplicationManager.getApplication().getService(ProjectCountingService.class);
+        ApplicationManager.getApplication().getService(ProjectCountingService.class);
     // Increment the project count
     projectCountingService.increaseOpenProjectCount();
 
@@ -33,7 +33,7 @@ public class ProjectOpenStartupActivity implements StartupActivity.DumbAware {
       String message = "<br>The number of open projects exceeds the SDK plugin max_opened_projects limit.<br><br>";
 
       ApplicationManager.getApplication().invokeLater(() ->
-              Messages.showMessageDialog(project, message, title, Messages.getInformationIcon())
+          Messages.showMessageDialog(project, message, title, Messages.getInformationIcon())
       );
     }
   }

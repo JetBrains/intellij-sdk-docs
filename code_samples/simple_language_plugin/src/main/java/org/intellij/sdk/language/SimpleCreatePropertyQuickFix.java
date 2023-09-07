@@ -54,15 +54,15 @@ class SimpleCreatePropertyQuickFix extends BaseIntentionAction {
 
   @Override
   public void invoke(@NotNull final Project project, final Editor editor, PsiFile file) throws
-          IncorrectOperationException {
+      IncorrectOperationException {
     ApplicationManager.getApplication().invokeLater(() -> {
       Collection<VirtualFile> virtualFiles =
-              FileTypeIndex.getFiles(SimpleFileType.INSTANCE, GlobalSearchScope.allScope(project));
+          FileTypeIndex.getFiles(SimpleFileType.INSTANCE, GlobalSearchScope.allScope(project));
       if (virtualFiles.size() == 1) {
         createProperty(project, virtualFiles.iterator().next());
       } else {
         final FileChooserDescriptor descriptor =
-                FileChooserDescriptorFactory.createSingleFileDescriptor(SimpleFileType.INSTANCE);
+            FileChooserDescriptorFactory.createSingleFileDescriptor(SimpleFileType.INSTANCE);
         descriptor.setRoots(ProjectUtil.guessProjectDir(project));
         final VirtualFile file1 = FileChooser.chooseFile(descriptor, project, null);
         if (file1 != null) {

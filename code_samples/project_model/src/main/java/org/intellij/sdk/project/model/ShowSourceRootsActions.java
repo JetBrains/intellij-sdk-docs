@@ -32,8 +32,8 @@ public class ShowSourceRootsActions extends AnAction {
       sourceRootsList.append(file.getUrl()).append("\n");
     }
     Messages.showInfoMessage(
-            "Source roots for the " + projectName + " plugin:\n" + sourceRootsList.toString(),
-            "Project Properties"
+        "Source roots for the " + projectName + " plugin:\n" + sourceRootsList.toString(),
+        "Project Properties"
     );
   }
 

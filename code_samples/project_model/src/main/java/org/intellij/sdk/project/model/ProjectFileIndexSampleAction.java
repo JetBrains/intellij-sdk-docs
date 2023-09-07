@@ -54,11 +54,11 @@ public class ProjectFileIndexSampleAction extends AnAction {
       boolean isInLibraryClasses = projectFileIndex.isInLibraryClasses(virtualFile);
       boolean isInLibrarySource = projectFileIndex.isInLibrarySource(virtualFile);
       Messages.showInfoMessage("Module: " + moduleName + "\n" +
-                      "Module content root: " + moduleContentRoot + "\n" +
-                      "Is library file: " + isLibraryFile + "\n" +
-                      "Is in library classes: " + isInLibraryClasses +
-                      ", Is in library source: " + isInLibrarySource,
-              "Main File Info for" + virtualFile.getName());
+              "Module content root: " + moduleContentRoot + "\n" +
+              "Is library file: " + isLibraryFile + "\n" +
+              "Is in library classes: " + isInLibraryClasses +
+              ", Is in library source: " + isInLibrarySource,
+          "Main File Info for" + virtualFile.getName());
     }
   }
 

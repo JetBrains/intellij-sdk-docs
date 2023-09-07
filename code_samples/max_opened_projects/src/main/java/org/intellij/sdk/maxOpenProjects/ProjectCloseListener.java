@@ -21,7 +21,7 @@ public class ProjectCloseListener implements ProjectManagerListener {
 
     // Get the counting service
     ProjectCountingService projectCountingService =
-            ApplicationManager.getApplication().getService(ProjectCountingService.class);
+        ApplicationManager.getApplication().getService(ProjectCountingService.class);
     // Decrement the count because a project just closed
     projectCountingService.decreaseOpenProjectCount();
   }

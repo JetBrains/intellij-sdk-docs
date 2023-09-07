@@ -49,8 +49,8 @@ public class SimpleReference extends PsiReferenceBase<PsiElement> implements Psi
     for (final SimpleProperty property : properties) {
       if (property.getKey() != null && property.getKey().length() > 0) {
         variants.add(LookupElementBuilder
-                .create(property).withIcon(SimpleIcons.FILE)
-                .withTypeText(property.getContainingFile().getName())
+            .create(property).withIcon(SimpleIcons.FILE)
+            .withTypeText(property.getContainingFile().getName())
         );
       }
     }

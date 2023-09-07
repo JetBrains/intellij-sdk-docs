@@ -80,8 +80,8 @@ public class CalendarToolWindowFactory implements ToolWindowFactory, DumbAware {
 
     private String getCurrentDate(Calendar calendar) {
       return calendar.get(Calendar.DAY_OF_MONTH) + "/"
-              + (calendar.get(Calendar.MONTH) + 1) + "/"
-              + calendar.get(Calendar.YEAR);
+          + (calendar.get(Calendar.MONTH) + 1) + "/"
+          + calendar.get(Calendar.YEAR);
     }
 
     private String getTimeZone(Calendar calendar) {
@@ -102,5 +102,7 @@ public class CalendarToolWindowFactory implements ToolWindowFactory, DumbAware {
     public JPanel getContentPanel() {
       return contentPanel;
     }
+
   }
+
 }

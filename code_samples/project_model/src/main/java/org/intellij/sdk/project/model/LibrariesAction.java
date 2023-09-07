@@ -84,7 +84,7 @@ public class LibrariesAction extends AnAction {
         fileAndLibs = "None";
       }
       Messages.showInfoMessage("Libraries for file: " + fileAndLibs,
-              "Libraries Info");
+          "Libraries Info");
     }
   }
 

@@ -44,7 +44,7 @@ public class EditorIllustrationAction extends AnAction {
     // Replace the selection with a fixed string.
     // Must do this document change in a write action context.
     WriteCommandAction.runWriteCommandAction(project, () ->
-            document.replaceString(start, end, "Replacement")
+        document.replaceString(start, end, "Replacement")
     );
     // De-select the text range that was just replaced
     primaryCaret.removeSelection();
@@ -67,7 +67,7 @@ public class EditorIllustrationAction extends AnAction {
     final Editor editor = e.getData(CommonDataKeys.EDITOR);
     // Set visibility and enable only in case of existing project and editor and if a selection exists
     e.getPresentation().setEnabledAndVisible(
-            project != null && editor != null && editor.getSelectionModel().hasSelection()
+        project != null && editor != null && editor.getSelectionModel().hasSelection()
     );
   }
 

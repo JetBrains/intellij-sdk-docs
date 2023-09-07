@@ -16,8 +16,8 @@ import org.jetbrains.annotations.Nullable;
  * these persistent application settings are stored.
  */
 @State(
-        name = "org.intellij.sdk.settings.AppSettingsState",
-        storages = @Storage("SdkSettingsPlugin.xml")
+    name = "org.intellij.sdk.settings.AppSettingsState",
+    storages = @Storage("SdkSettingsPlugin.xml")
 )
 public class AppSettingsState implements PersistentStateComponent<AppSettingsState> {
 

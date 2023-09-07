@@ -43,9 +43,9 @@ public class SimpleAnnotator implements Annotator {
 
     // highlight "simple" prefix and ":" separator
     holder.newSilentAnnotation(HighlightSeverity.INFORMATION)
-            .range(prefixRange).textAttributes(DefaultLanguageHighlighterColors.KEYWORD).create();
+        .range(prefixRange).textAttributes(DefaultLanguageHighlighterColors.KEYWORD).create();
     holder.newSilentAnnotation(HighlightSeverity.INFORMATION)
-            .range(separatorRange).textAttributes(SimpleSyntaxHighlighter.SEPARATOR).create();
+        .range(separatorRange).textAttributes(SimpleSyntaxHighlighter.SEPARATOR).create();
 
 
     // Get the list of properties for given key
@@ -53,15 +53,15 @@ public class SimpleAnnotator implements Annotator {
     List<SimpleProperty> properties = SimpleUtil.findProperties(element.getProject(), key);
     if (properties.isEmpty()) {
       holder.newAnnotation(HighlightSeverity.ERROR, "Unresolved property")
-              .range(keyRange)
-              .highlightType(ProblemHighlightType.LIKE_UNKNOWN_SYMBOL)
-              // ** Tutorial step 19. - Add a quick fix for the string containing possible properties
-              .withFix(new SimpleCreatePropertyQuickFix(key))
-              .create();
+          .range(keyRange)
+          .highlightType(ProblemHighlightType.LIKE_UNKNOWN_SYMBOL)
+          // ** Tutorial step 19. - Add a quick fix for the string containing possible properties
+          .withFix(new SimpleCreatePropertyQuickFix(key))
+          .create();
     } else {
       // Found at least one property, force the text attributes to Simple syntax value character
       holder.newSilentAnnotation(HighlightSeverity.INFORMATION)
-              .range(keyRange).textAttributes(SimpleSyntaxHighlighter.VALUE).create();
+          .range(keyRange).textAttributes(SimpleSyntaxHighlighter.VALUE).create();
     }
   }
 

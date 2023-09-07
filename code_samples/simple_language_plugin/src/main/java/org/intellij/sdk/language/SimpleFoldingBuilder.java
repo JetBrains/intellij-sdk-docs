@@ -43,16 +43,16 @@ public class SimpleFoldingBuilder extends FoldingBuilderEx implements DumbAware 
         if (value != null && value.startsWith(SimpleAnnotator.SIMPLE_PREFIX_STR + SimpleAnnotator.SIMPLE_SEPARATOR_STR)) {
           Project project = literalExpression.getProject();
           String key = value.substring(
-                  SimpleAnnotator.SIMPLE_PREFIX_STR.length() + SimpleAnnotator.SIMPLE_SEPARATOR_STR.length()
+              SimpleAnnotator.SIMPLE_PREFIX_STR.length() + SimpleAnnotator.SIMPLE_SEPARATOR_STR.length()
           );
           // find SimpleProperty for the given key in the project
           SimpleProperty simpleProperty = ContainerUtil.getOnlyItem(SimpleUtil.findProperties(project, key));
           if (simpleProperty != null) {
             // Add a folding descriptor for the literal expression at this node.
             descriptors.add(new FoldingDescriptor(literalExpression.getNode(),
-                    new TextRange(literalExpression.getTextRange().getStartOffset() + 1,
-                            literalExpression.getTextRange().getEndOffset() - 1),
-                    group, Collections.singleton(simpleProperty)));
+                new TextRange(literalExpression.getTextRange().getStartOffset() + 1,
+                    literalExpression.getTextRange().getEndOffset() - 1),
+                group, Collections.singleton(simpleProperty)));
           }
         }
       }
@@ -78,10 +78,10 @@ public class SimpleFoldingBuilder extends FoldingBuilderEx implements DumbAware 
       }
 
       String key = text.substring(SimpleAnnotator.SIMPLE_PREFIX_STR.length() +
-              SimpleAnnotator.SIMPLE_SEPARATOR_STR.length());
+          SimpleAnnotator.SIMPLE_SEPARATOR_STR.length());
 
       SimpleProperty simpleProperty = ContainerUtil.getOnlyItem(
-              SimpleUtil.findProperties(psiLiteralExpression.getProject(), key)
+          SimpleUtil.findProperties(psiLiteralExpression.getProject(), key)
       );
       if (simpleProperty == null) {
         return StringUtil.THREE_DOTS;

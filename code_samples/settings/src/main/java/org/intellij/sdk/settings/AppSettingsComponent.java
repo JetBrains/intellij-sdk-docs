@@ -21,10 +21,10 @@ public class AppSettingsComponent {
 
   public AppSettingsComponent() {
     myMainPanel = FormBuilder.createFormBuilder()
-            .addLabeledComponent(new JBLabel("Enter user name: "), myUserNameText, 1, false)
-            .addComponent(myIdeaUserStatus, 1)
-            .addComponentFillVertically(new JPanel(), 0)
-            .getPanel();
+        .addLabeledComponent(new JBLabel("Enter user name: "), myUserNameText, 1, false)
+        .addComponent(myIdeaUserStatus, 1)
+        .addComponentFillVertically(new JPanel(), 0)
+        .getPanel();
   }
 
   public JPanel getPanel() {

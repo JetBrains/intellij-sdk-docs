@@ -13,32 +13,33 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
 
 public class SimpleStructureAwareNavbar extends StructureAwareNavBarModelExtension {
-    @NotNull
-    @Override
-    protected Language getLanguage() {
-        return SimpleLanguage.INSTANCE;
+
+  @NotNull
+  @Override
+  protected Language getLanguage() {
+    return SimpleLanguage.INSTANCE;
+  }
+
+  @Override
+  public @Nullable String getPresentableText(Object object) {
+    if (object instanceof SimpleFile) {
+      return ((SimpleFile) object).getName();
+    }
+    if (object instanceof SimpleProperty) {
+      return ((SimpleProperty) object).getName();
     }
 
-    @Override
-    public @Nullable String getPresentableText(Object object) {
-        if (object instanceof SimpleFile) {
-            return ((SimpleFile) object).getName();
-        }
-        if (object instanceof SimpleProperty) {
-            return ((SimpleProperty) object).getName();
-        }
+    return null;
+  }
 
-        return null;
+  @Override
+  @Nullable
+  public Icon getIcon(Object object) {
+    if (object instanceof SimpleProperty) {
+      return AllIcons.Nodes.Property;
     }
 
-    @Override
-    @Nullable
-    public Icon getIcon(Object object) {
-        if (object instanceof SimpleProperty) {
-            return AllIcons.Nodes.Property;
-        }
-
-        return null;
-    }
+    return null;
+  }
 
 }

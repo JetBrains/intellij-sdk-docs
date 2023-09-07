@@ -17,10 +17,10 @@ public class DemoSettingsEditor extends SettingsEditor<DemoRunConfiguration> {
   public DemoSettingsEditor() {
     scriptPathField = new TextFieldWithBrowseButton();
     scriptPathField.addBrowseFolderListener("Select Script File", null, null,
-            FileChooserDescriptorFactory.createSingleFileDescriptor());
+        FileChooserDescriptorFactory.createSingleFileDescriptor());
     myPanel = FormBuilder.createFormBuilder()
-            .addLabeledComponent("Script file", scriptPathField)
-            .getPanel();
+        .addLabeledComponent("Script file", scriptPathField)
+        .getPanel();
   }
 
   @Override

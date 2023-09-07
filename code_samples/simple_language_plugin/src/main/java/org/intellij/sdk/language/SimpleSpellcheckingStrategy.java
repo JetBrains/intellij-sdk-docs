@@ -18,63 +18,63 @@ import org.jetbrains.annotations.NotNull;
 
 public class SimpleSpellcheckingStrategy extends SpellcheckingStrategy {
 
+  @Override
+  public @NotNull Tokenizer<?> getTokenizer(PsiElement element) {
+    if (element instanceof PsiComment) {
+      return new SimpleCommentTokenizer();
+    }
+
+    if (element instanceof SimpleProperty) {
+      return new SimplePropertyTokenizer();
+    }
+
+    return EMPTY_TOKENIZER;
+  }
+
+  private static class SimpleCommentTokenizer extends Tokenizer<PsiComment> {
+
     @Override
-    public @NotNull Tokenizer<?> getTokenizer(PsiElement element) {
-        if (element instanceof PsiComment) {
-            return new SimpleCommentTokenizer();
+    public void tokenize(@NotNull PsiComment element, TokenConsumer consumer) {
+      // Exclude the start of the comment with its # characters from spell checking
+      int startIndex = 0;
+      for (char c : element.textToCharArray()) {
+        if (c == '#' || Character.isWhitespace(c)) {
+          startIndex++;
+        } else {
+          break;
         }
-
-        if (element instanceof SimpleProperty) {
-            return new SimplePropertyTokenizer();
-        }
-
-        return EMPTY_TOKENIZER;
+      }
+      consumer.consumeToken(element, element.getText(), false, 0,
+          TextRange.create(startIndex, element.getTextLength()),
+          CommentSplitter.getInstance());
     }
 
-    private static class SimpleCommentTokenizer extends Tokenizer<PsiComment> {
+  }
 
-        @Override
-        public void tokenize(@NotNull PsiComment element, TokenConsumer consumer) {
-            // Exclude the start of the comment with its # characters from spell checking
-            int startIndex = 0;
-            for (char c : element.textToCharArray()) {
-                if (c == '#' || Character.isWhitespace(c)) {
-                    startIndex++;
-                } else {
-                    break;
-                }
-            }
-            consumer.consumeToken(element, element.getText(), false, 0,
-                    TextRange.create(startIndex, element.getTextLength()),
-                    CommentSplitter.getInstance());
-        }
+  private static class SimplePropertyTokenizer extends Tokenizer<SimpleProperty> {
 
+    public void tokenize(@NotNull SimpleProperty element, TokenConsumer consumer) {
+      //Spell check the keys and values of properties with different splitters
+      final ASTNode key = element.getNode().findChildByType(SimpleTypes.KEY);
+      if (key != null && key.getTextLength() > 0) {
+        final PsiElement keyPsi = key.getPsi();
+        final String text = key.getText();
+        //For keys, use a splitter for identifiers
+        //Note we set "useRename" to true so that keys will be properly refactored (renamed)
+        consumer.consumeToken(keyPsi, text, true, 0,
+            TextRange.allOf(text), IdentifierSplitter.getInstance());
+      }
+
+      final ASTNode value = element.getNode().findChildByType(SimpleTypes.VALUE);
+      if (value != null && value.getTextLength() > 0) {
+        final PsiElement valuePsi = value.getPsi();
+        final String text = valuePsi.getText();
+        //For values, use a splitter for plain text
+        consumer.consumeToken(valuePsi, text, false, 0,
+            TextRange.allOf(text), PlainTextSplitter.getInstance());
+      }
     }
 
-    private static class SimplePropertyTokenizer extends Tokenizer<SimpleProperty> {
-
-        public void tokenize(@NotNull SimpleProperty element, TokenConsumer consumer) {
-            //Spell check the keys and values of properties with different splitters
-            final ASTNode key = element.getNode().findChildByType(SimpleTypes.KEY);
-            if (key != null && key.getTextLength() > 0) {
-                final PsiElement keyPsi = key.getPsi();
-                final String text = key.getText();
-                //For keys, use a splitter for identifiers
-                //Note we set "useRename" to true so that keys will be properly refactored (renamed)
-                consumer.consumeToken(keyPsi, text, true, 0,
-                        TextRange.allOf(text), IdentifierSplitter.getInstance());
-            }
-
-            final ASTNode value = element.getNode().findChildByType(SimpleTypes.VALUE);
-            if (value != null && value.getTextLength() > 0) {
-                final PsiElement valuePsi = value.getPsi();
-                final String text = valuePsi.getText();
-                //For values, use a splitter for plain text
-                consumer.consumeToken(valuePsi, text, false, 0,
-                        TextRange.allOf(text), PlainTextSplitter.getInstance());
-            }
-        }
-
-    }
+  }
 
 }

@@ -6,8 +6,10 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Iguana \| 2023.2.1 Canary 3 | ![Canary][canary] | September 7, 2023 | **2023.2.1.3**<p>AI-232.9559.62.2321.10773421</p> | **2023.2.1**<p>232.9559.62</p> |
 | Iguana \| 2023.2.1 Canary 2 | ![Canary][canary] | September 5, 2023 | **2023.2.1.2**<p>AI-232.9559.62.2321.10749089</p> | **2023.2.1**<p>232.9559.62</p> |
 | Iguana \| 2023.2.1 Canary 1 | ![Canary][canary] | August 25, 2023 | **2023.2.1.1**<p>AI-232.8660.185.2321.10696284</p> | **2023.2**<p>232.8660.185</p> |
+| Hedgehog \| 2023.1.1 Beta 3 | ![Beta][beta] | September 7, 2023 | **2023.1.1.19**<p>AI-231.9392.1.2311.10749307</p> | **2023.1.5**<p>231.9392.1</p> |
 | Hedgehog \| 2023.1.1 Beta 2 | ![Beta][beta] | September 5, 2023 | **2023.1.1.18**<p>AI-231.9392.1.2311.10717887</p> | **2023.1.5**<p>231.9392.1</p> |
 | Hedgehog \| 2023.1.1 Beta 1 | ![Beta][beta] | August 24, 2023 | **2023.1.1.17**<p>AI-231.9392.1.2311.10680768</p> | **2023.1.5**<p>231.9392.1</p> |
 | Hedgehog \| 2023.1.1 Canary 16 | ![Canary][canary] | August 14, 2023 | **2023.1.1.16**<p>AI-231.9225.16.2311.10647019</p> | **2023.1.4**<p>231.9225.16</p> |
@@ -457,11 +459,11 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Iguana \| 2023.2.1 Canary 3 | ![Canary][canary] | September 7, 2023 | **2023.2.1.3**<p>AI-232.9559.62.2321.10773421</p> | **2023.2.1**<p>232.9559.62</p> |
 | Iguana \| 2023.2.1 Canary 2 | ![Canary][canary] | September 5, 2023 | **2023.2.1.2**<p>AI-232.9559.62.2321.10749089</p> | **2023.2.1**<p>232.9559.62</p> |
 | Iguana \| 2023.2.1 Canary 1 | ![Canary][canary] | August 25, 2023 | **2023.2.1.1**<p>AI-232.8660.185.2321.10696284</p> | **2023.2**<p>232.8660.185</p> |
+| Hedgehog \| 2023.1.1 Beta 3 | ![Beta][beta] | September 7, 2023 | **2023.1.1.19**<p>AI-231.9392.1.2311.10749307</p> | **2023.1.5**<p>231.9392.1</p> |
 | Hedgehog \| 2023.1.1 Beta 2 | ![Beta][beta] | September 5, 2023 | **2023.1.1.18**<p>AI-231.9392.1.2311.10717887</p> | **2023.1.5**<p>231.9392.1</p> |
-| Hedgehog \| 2023.1.1 Beta 1 | ![Beta][beta] | August 24, 2023 | **2023.1.1.17**<p>AI-231.9392.1.2311.10680768</p> | **2023.1.5**<p>231.9392.1</p> |
-| Giraffe \| 2022.3.1 Patch 1 | ![Patch][patch] | August 21, 2023 | **2022.3.1.19**<p>AI-223.8836.35.2231.10671973</p> | **2022.3.3**<p>223.8836.35</p> |
 
 [release]: https://img.shields.io/badge/-Release-blue?style=flat-square
 [patch]: https://img.shields.io/badge/-Patch-orange?style=flat-square

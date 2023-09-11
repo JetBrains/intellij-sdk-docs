@@ -72,6 +72,10 @@ JBCefBrowser myBrowser = new JBCefBrowser(myUrl);
 myBrowser.openDevtools();
 ```
 
+## Testing
+
+See [`JBCefTestHelper`](%gh-ic%/platform/platform-tests/testSrc/com/intellij/ui/jcef/JBCefTestHelper.java) and tests in that package.
+
 ## API
 
 ### JBCefApp

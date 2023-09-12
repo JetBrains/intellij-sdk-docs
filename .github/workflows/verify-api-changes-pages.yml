@@ -1,7 +1,7 @@
 name: Check API Changes pages
 on:
   push:
-    branches: [ main ]
+    branches: [ cn ]
     paths: [ 'reference_guide/**', '.github/workflows/verify-api-changes-pages.yml' ]
   pull_request:
     paths: [ 'reference_guide/**', '.github/workflows/verify-api-changes-pages.yml' ]

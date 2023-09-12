@@ -1,7 +1,7 @@
 name: Code Samples
 on:
   push:
-    branches: [ main ]
+    branches: [ cn ]
     paths: [ 'code_samples/**','.github/workflows/code-samples.yml' ]
   pull_request:
     paths: [ 'code_samples/**','.github/workflows/code-samples.yml' ]

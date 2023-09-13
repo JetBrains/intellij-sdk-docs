@@ -1,6 +1,8 @@
+# General Threading Rules
+
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# General Threading Rules
+<!-- short link: https://jb.gg/ij-platform-threading -->
 
 <link-summary>Threading rules for reading and writing to IntelliJ Platform data models, running and canceling background processes, and avoiding UI freezes.</link-summary>
 
@@ -12,8 +14,8 @@ In general, code-related data structures in the IntelliJ Platform are covered by
 
 You must not access the model outside a read or write action for the following subsystems:
 
-- [Program Structure Interface](psi.md) (PSI)
-- [Virtual File System](virtual_file_system.md) (VFS)
+- [](psi.md) (PSI)
+- [](virtual_file_system.md) (VFS)
 - [Project root model](project_structure.md).
 
 ### Read Access
@@ -77,17 +79,32 @@ This call throws a special unchecked [`ProcessCanceledException`](%gh-ic%/platfo
 
 All code working with PSI, or in other kinds of background processes, must be prepared for [`ProcessCanceledException`](%gh-ic%/platform/util/base/src/com/intellij/openapi/progress/ProcessCanceledException.java) being thrown from any point.
 This exception should never be logged but rethrown, and it'll be handled in the infrastructure that started the process.
+Use inspection <control>Plugin DevKit | Code | 'ProcessCanceledException' handled incorrectly</control> (2023.3).
 
 The `checkCanceled()` should be called often enough to guarantee the process's smooth cancellation.
 PSI internals have a lot of `checkCanceled()` calls inside.
 If a process does lengthy non-PSI activity, insert explicit `checkCanceled()` calls so that it happens frequently, e.g., on each _Nth_ loop iteration.
+Use inspection <control>Plugin DevKit | Code | Cancellation check in loops</control> (2023.1).
 
-> Throwing `ProcessCanceledException` from `checkCanceled()` can be disabled for development (e.g. while debugging the code) by invoking:
->
-> - _2023.2+_ <ui-path>Tools | Internal Actions | Skip Window Deactivation Events</ui-path>
-> - _earlier versions_ <ui-path>Tools | Internal Actions | Disable ProcessCanceledException</ui-path>
->
-> These actions are available only if [Internal Mode is enabled](enabling_internal.md).
+### Disabling ProcessCanceledException
+
+Throwing `ProcessCanceledException` from `ProgressIndicator.checkCanceled()` can be disabled for development (e.g., while debugging the code) by invoking:
+
+<tabs>
+<tab title="2023.2 and later">
+
+<ui-path>Tools | Internal Actions | Skip Window Deactivation Events</ui-path>
+
+</tab>
+
+<tab title="Earlier Versions">
+
+<ui-path>Tools | Internal Actions | Disable ProcessCanceledException</ui-path>
+
+</tab>
+</tabs>
+
+These actions are available only if [Internal Mode is enabled](enabling_internal.md).
 
 ## Read Action Cancellability
 

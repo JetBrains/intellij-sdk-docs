@@ -56,6 +56,7 @@ For each element type that needs to be stored in the stub tree, perform the foll
   Implement the `createPsi()` and `createStub()` methods for creating PSI from a stub and vice versa.
   Implement the `serialize()` and `deserialize()` methods for storing the data in a binary stream.
   Override `getExternalId()` according to common used `externalIdPrefix` for the language.
+  For always-leaf stub nodes return `true` from `isAlwaysLeaf()` (2023.3).
 6. Use the class implementing `IStubElementType` as the element type constant when parsing ([example](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertiesElementTypes.java)).
 7. Make sure all methods in the PSI element interface access the stub data rather than the PSI tree when appropriate ([example: `Property.getKey()` implementation](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java)).
 

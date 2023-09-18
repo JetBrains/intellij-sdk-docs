@@ -4,21 +4,19 @@
 
 <link-summary>Listeners allow subscription to application and project events.</link-summary>
 
-_Listeners_ allow plugins to declaratively subscribe to events delivered through the message bus (see [Messaging infrastructure](messaging_infrastructure.md) for details).
-Listener implementations must be stateless and may not implement life-cycle (e.g., `Disposable`).
+_Listeners_ allow plugins to subscribe to events delivered through the message bus (see [Messaging infrastructure](messaging_infrastructure.md) for details).
 
-You can define both application- and project-level listeners.
+Listeners are defined at application (global) or [project](project.md) level.
 
 > All available listeners/topics are listed on [](extension_point_list.md) under _Listeners_ sections.
 > Browse usages inside existing implementations of open-source IntelliJ Platform plugins via [IntelliJ Platform Explorer](https://jb.gg/ipe).
 >
 
-Declarative registration of listeners allows you to achieve better performance than registering listeners from code.
-The advantage is because listener instances get created lazily — the first time an event is sent to the topic — and not during application startup or project opening.
+Listener implementations must be stateless and may not implement life-cycle (e.g., `Disposable`).
+Use inspection <control>Plugin DevKit | Code | Listener implementation implements 'Disposable'</control> to verify (2023.3).
 
-> Defining listeners in <path>plugin.xml</path> is supported starting with version 2019.3 of the platform.
->
-{style="note"}
+Declarative registration of listeners (2019.3 and later) allows you to achieve better performance than registering listeners from code.
+The advantage is because listener instances get created lazily — the first time an event is sent to the topic — and not during application startup or project opening.
 
 ## Defining Application-Level Listeners
 

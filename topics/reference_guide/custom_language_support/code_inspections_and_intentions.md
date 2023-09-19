@@ -33,7 +33,7 @@ See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in 
 
 #### Inspections Performance
 
-To optimize processing in local inspections, a custom language plugin should register the default visitor for its language in `com.intellij.inspection.basicVisitor` extension point (2023.3).
+To optimize processing in local inspections, a custom language plugin should register the default [`PsiElementVisitor`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElementVisitor.java) for its language in `com.intellij.inspection.basicVisitor` extension point (2023.3).
 
 ### Intentions
 

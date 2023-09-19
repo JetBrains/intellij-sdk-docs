@@ -29,11 +29,11 @@ Check presence of JVM library
 Inspection description: code snippets highlighting
 : Embedded code is shown with [syntax highlighting](code_inspections.md#code-snippets).
 
-Intentions that can not show meaningful before/after preview
+Intentions that cannot show meaningful before/after preview
 : Intentions not modifying code can specify `<skipBeforeAfter>true</skipBeforeAfter>` in their registration.
 
 JCEF-based SVG viewer
-: SVG pictures are now shown using [JCEF](jcef.md) instead of rendering via Apache Batik library ([Details](https://youtrack.jetbrains.com/issue/IDEA-230850)).
+: SVG pictures are now shown using [JCEF](jcef.md) instead of rendering via the Apache Batik library ([Details](https://youtrack.jetbrains.com/issue/IDEA-230850)).
 
 ### IntelliJ IDEA 2023.2
 
@@ -56,7 +56,7 @@ Nested Index Access
 : Accessing index data in [nested calls](file_based_indexes.md#nested-index-access) is now possible.
 
 File Type Index Topic
-: [`FileTypeIndex.IndexChangeListener`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/FileTypeIndex.java) allows monitoring addition/removal of files by `FileType`.
+: [`FileTypeIndex.IndexChangeListener`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/FileTypeIndex.java) allows monitoring the addition/removal of files by `FileType`.
 
 Run Annotator During Indexing
 : [Annotators](syntax_highlighting_and_error_highlighting.md#annotator) can implement `DumbAware` to run during indexing (e.g., providing additional syntax highlighting).

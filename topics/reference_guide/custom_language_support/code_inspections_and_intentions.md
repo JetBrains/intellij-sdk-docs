@@ -1,6 +1,6 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
-
 # Code Inspections and Intentions
+
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Introduction to analysing the code and providing quick fixes for the found issues.</link-summary>
 
@@ -30,6 +30,10 @@ See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in 
 **Examples**:
 - [Code Inspections Tutorial](code_inspections.md)
 - A [simple inspection](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/codeInspection/TrailingSpacesInPropertyInspection.java) for [Properties language plugin](%gh-ic%/plugins/properties)
+
+#### Inspections Performance
+
+To optimize processing in local inspections, a custom language plugin should register the default visitor for its language in `com.intellij.inspection.basicVisitor` extension point (2023.3).
 
 ### Intentions
 

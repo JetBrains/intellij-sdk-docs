@@ -16,6 +16,9 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 External Annotators in Dumb Mode
 : [](syntax_highlighting_and_error_highlighting.md#external-annotator) can now run in during indexing.
 
+Local inspections performance
+: Custom language plugins with many inspections should consider registering a default visitor to improve processing, see [](code_inspections_and_intentions.md#inspections-performance).
+
 ## 2023.2
 
 ### IntelliJ Platform 2023.2

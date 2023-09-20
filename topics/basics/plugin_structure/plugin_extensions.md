@@ -133,4 +133,4 @@ Specifying `@org.jetbrains.annotations.Nls` validates a UI `String` capitalizati
 
 Properties marked as `@Deprecated` or annotated with any of [`ApiStatus`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java) `@Internal`, `@Experimental`, `@ScheduledForRemoval`, or `@Obsolete` will be highlighted accordingly.
 
-Attributes with `Enum` type support code insight with _lowerCamelCased_ notation (2020.1 and later).
+Attributes with `Enum` type support code insight with _lowerCamelCased_ notation (2020.1 and later). Note: these must not override `toString()`.

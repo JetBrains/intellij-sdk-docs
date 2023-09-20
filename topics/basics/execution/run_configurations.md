@@ -217,3 +217,30 @@ Plugins can provide custom tasks that can be added by users to a created run con
 
 To provide a custom task, implement [`BeforeRunTaskProvider`](%gh-ic%/platform/execution/src/com/intellij/execution/BeforeRunTaskProvider.java) and register it in `com.intellij.stepsBeforeRunProvider` EP.
 The provider implementation is responsible for creating a task instance for a given run configuration and executing the task.
+
+## Macros
+
+Macros are dynamic variables, which can be referenced in run configurations, and expanded to actual values when a run configuration is executed.
+
+For example, a macro with a name `ProjectFileDir` can be referenced as `$ProjectFileDir$` in a run configuration command line argument, and is expanded to the absolute path of the current project directory, when the run configuration is executed by a user.
+
+A list of built-in macros is available in the [IntelliJ IDEA Web Help](https://www.jetbrains.com/help/idea/built-in-macros.html) and other products' documentation pages.
+
+> Note that Macro API is not specific to execution or run configuration API and can be used in other places.
+
+### Adding Macro Selector in Run Configuration Editor
+
+Macro selecting support can be added to a text field on the run configuration editor by installing it with [`MacrosDialog.addMacroSupport()`](%gh-ic%/platform/execution-impl/src/com/intellij/ide/macro/MacrosDialog.java) or other similar methods from this class.
+After installation, a text field will be extended by a button invoking the macro dialog, which lists available macros with descriptions and previews.
+After selecting and accepting a macro from the list, the macro placeholder is inserted into the text field at the current caret position.
+
+### Expanding Macros Before Execution
+
+Macros used in run configuration must be expanded to actual values before the process execution.
+It is usually done in the `RunProfile.getState()` method called during the [execution workflow](execution.md#execution-workflow).
+To expand configured values, use one of [`ProgramParametersConfigurator`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/util/ProgramParametersConfigurator.java)'s method: `expandMacros()`, `expandPathAndMacros()`, or `expandMacrosAndParseParameters()`.
+See their Javadocs for the details.
+
+### Providing Custom Macros
+
+If the predefined list of macros is insufficient, a plugin can provide custom macros by extending [`Macro`](%gh-ic%/platform/macro/src/com/intellij/ide/macro/Macro.java) and registering it in the `com.intellij.macro` EP.

@@ -16,7 +16,7 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 {#september-23}
 
 Run Configuration Macros
-: Add [](run_configurations.md#macros) sections describing how to support dynamic expandable values in run configuration settings.
+: Add [](run_configurations.md#macros) section describing how to support dynamic expandable values in run configuration settings.
 
 Inlay Hints
 : Update [](inlay_hints.md) page with the information about new APIs.

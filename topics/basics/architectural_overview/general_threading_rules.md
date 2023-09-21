@@ -14,7 +14,7 @@ In general, code-related data structures in the IntelliJ Platform are covered by
 
 You must not access the model outside a read or write action for the following subsystems:
 
-- [](psi.md) (PSI)
+- [](psi.md)
 - [](virtual_file_system.md) (VFS)
 - [Project root model](project_structure.md).
 
@@ -72,12 +72,12 @@ The current thread's indicator can be retrieved any time via `ProgressIndicatorP
 
 For visible progresses, threads can use `ProgressIndicator` to notify the user about current status: e.g., set text or visual fraction of the work done.
 
-Progress indicators also provide means to handle cancellation of background processes, either by the user (pressing the _Cancel_ button) or from code (e.g., when the current operation becomes obsolete due to some changes in the project).
+Progress indicators also provide means to handle cancellation of background processes, either by the user (pressing the <control>Cancel</control> button) or from code (e.g., when the current operation becomes obsolete due to some changes in the project).
 The progress can be marked as canceled by calling `ProgressIndicator.cancel()`.
-The process reacts to this by calling `ProgressIndicator.checkCanceled()` (or `ProgressManager.checkCanceled()` if no indicator instance at hand).
-This call throws a special unchecked [`ProcessCanceledException`](%gh-ic%/platform/util/base/src/com/intellij/openapi/progress/ProcessCanceledException.java) if the background process has been canceled.
+The process reacts to this by calling `ProgressIndicator.checkCanceled()` (or `ProgressManager.checkCanceled()` if no indicator instances at hand).
+This call throws a special unchecked [`ProcessCanceledException`](%gh-ic%/platform/util/base/src/com/intellij/openapi/progress/ProcessCanceledException.java) (PCE) if the background process has been canceled.
 
-All code working with PSI, or in other kinds of background processes, must be prepared for [`ProcessCanceledException`](%gh-ic%/platform/util/base/src/com/intellij/openapi/progress/ProcessCanceledException.java) being thrown from any point.
+All code working with [PSI](psi.md), or in other kinds of background processes, must be prepared for [`ProcessCanceledException`](%gh-ic%/platform/util/base/src/com/intellij/openapi/progress/ProcessCanceledException.java) (PCE) being thrown from any point.
 This exception should never be logged but rethrown, and it'll be handled in the infrastructure that started the process.
 Use inspection <control>Plugin DevKit | Code | 'ProcessCanceledException' handled incorrectly</control> (2023.3).
 

@@ -54,6 +54,8 @@ The following options are available and described in the paragraphs below:
 - Return an instance of `IntentionPreviewInfo.CustomDiff` to provide an original and changed text that is used to show the diff.
 - Return `IntentionPreviewInfo.EMPTY` in cases where it is not possible to show any preview.
 
+See [`IntentionPreviewUtils`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/intention/preview/IntentionPreviewUtils.java) for a number of useful helper methods.
+
 ### HTML Preview
 
 To show a dynamically generated HTML description as a preview, return an instance of

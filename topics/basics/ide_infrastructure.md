@@ -122,6 +122,10 @@ To request restart of the IDE, use [`Application.restart()`](%gh-ic%/platform/co
 
 Use [`BrowserLauncher`](%gh-ic%/platform/platform-api/src/com/intellij/ide/browsers/BrowserLauncher.kt).
 
+## Open File in System File Manager
+
+Use [`RevealFileAction.openFile()`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/actions/RevealFileAction.java) or `openDirectory()`.
+
 ## Theme Change
 
 Use [`LafManagerListener`](%gh-ic%/platform/platform-api/src/com/intellij/ide/ui/LafManagerListener.java) topic to receive change notifications (e.g., to refresh UI).

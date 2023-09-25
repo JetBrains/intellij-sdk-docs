@@ -1,6 +1,6 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
-
 # Services
+
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Registering and using on-demand services to encapsulate plugin functionality.</link-summary>
 
@@ -43,12 +43,17 @@ Instead, annotate service class with [`@Service`](%gh-ic%/platform/core-api/src/
 Project-level services must specify `@Service(Service.Level.PROJECT)`.
 The service instance will be created in scope according to the caller (see [Retrieving a Service](#retrieving-a-service)).
 
-Restrictions:
+### Light Service Restrictions
 
 * None of these attributes is required: `os`, `client`, `overrides`, `id`, `preload`.
 * Service class must be `final`.
-* Constructor injection of dependency services is not supported.
+* [Constructor injection](#constructor) of dependency services is not supported.
 * If application-level service is a [PersistentStateComponent](persisting_state_of_components.md), roaming must be disabled (`roamingType = RoamingType.DISABLED`).
+
+Use these inspections to verify these and highlight services that can be converted (2023.3):
+- <control>Plugin DevKit | Code | Light service must be final</control>
+- <control>Plugin DevKit | Code | Mismatch between light service level and its constructor</control>
+- <control>Plugin DevKit | Code | A service can be converted to a light one</control> and corresponding <control>Plugin DevKit | Plugin descriptor | A service can be converted to a light one</control> for <path>plugin.xml</path>
 
 ### Examples
 
@@ -128,6 +133,7 @@ To register a non-[Light Service](#light-services), distinct extension points ar
 
 To expose service API, create separate class for `serviceInterface` and extend it in corresponding class registered in `serviceImplementation`.
 If `serviceInterface` isn't specified, it's supposed to have the same value as `serviceImplementation`.
+Use inspection <control>Plugin DevKit | Plugin descriptor | Plugin.xml extension registration</control> to highlight redundant `serviceInterface` declarations.
 
 To provide custom implementation for test/headless environment, specify `testServiceImplementation`/`headlessImplementation` additionally.
 
@@ -259,6 +265,10 @@ Registration in <path>plugin.xml</path>:
 > **Never** acquire service instances prematurely or store them in fields for later use.
 > Instead, **always** obtain these service instances directly and **only** at the location where they're needed.
 > Failing to do so can lead to unexpected exceptions and severe consequences for your plugin's functionality.
+>
+> Such problems are highlighted via inspections (2023.3):
+> - <control>Plugin DevKit | Code | Application service assigned to a static final field or immutable property</control>
+> - <control>Plugin DevKit | Code | Incorrect or simplifiable retrieving service</control>
 >
 {style="warning"}
 

@@ -63,10 +63,6 @@ plugins {
 
 When upgrading to `1.x` version, please make sure to follow the [migration guide](https://lp.jetbrains.com/gradle-intellij-plugin) to adjust your existing build script.
 
-> <control>Gradle JVM</control> must be set to Java 11 in <ui-path>Settings | Build, Execution, Deployment | Build Tools | Gradle</ui-path>.
->
-> If targeting 2022.3+, Java 17 is required instead.
-
 > This project requires Gradle 7.3 or newer. However, it is highly recommended to always use the latest available Gradle version.
 > Update it with:
 > ```Bash
@@ -74,6 +70,15 @@ When upgrading to `1.x` version, please make sure to follow the [migration guide
 > ```
 >
 > See also: [Gradle Installation](https://gradle.org/install/) guide.
+
+### IDE Configuration
+
+Some additional settings are required in the IDE after setting up the plugin.
+
+<control>Gradle JVM</control> must be set to Java 11 in <ui-path>Settings | Build, Execution, Deployment | Build Tools | Gradle</ui-path>.
+When targeting 2022.3+, Java 17 is required instead (see [details](build_number_ranges.md#platformVersions)).
+
+In 2023.3, the setting <control>Download sources for dependencies</control> must be checked in <ui-path>Settings | Build, Execution, Deployment | Build Tools | Gradle</ui-path> to attach IntelliJ Platform sources in the IDE when enabled via [](#intellij-extension-downloadsources) .
 
 ### Snapshot Release
 The Snapshot release is a pre-release version built nightly from the latest main branch – as it is built every day using the same version number, it's not recommended to use it for production builds.

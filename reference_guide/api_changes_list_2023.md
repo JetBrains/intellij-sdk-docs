@@ -1,6 +1,6 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
-
 # Incompatible Changes in IntelliJ Platform and Plugins API 2023.*
+
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <!--
 Before documenting a breaking API change, please make sure that the change cannot be avoided in an alternative way.
@@ -71,6 +71,11 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 ## 2023.3
 
 ### IntelliJ Platform 2023.3
+
+Removal of commons-lang2 and commons-collections libraries
+: _commons-lang2_ library is going to be removed, a temporary compatibility layer (marked with `@Deprecated(forRemoval = true)` to highlight usages) is bundled.
+Please consider migrating to either _commons-lang3_ or _commons-text_ libraries and bundle them with your plugin.
+Library _commons-collections_ is going to be removed.
 
 JsonPath library unbundled
 : Bundle it [explicitly](https://youtrack.jetbrains.com/issue/IDEA-328219) with your plugin.

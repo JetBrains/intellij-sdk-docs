@@ -28,14 +28,15 @@ Usually there is no need to have stubs for things like statements or local varia
 >
 {style="note"}
 
-<procedure title="Stubs Setup">
+<procedure id="stubs-setup" title="Stubs Setup">
 
 The following steps need to be performed only once for each language that supports stubs:
 
 1. Change the file element type for the language (the element type returned from `ParserDefinition.getFileNodeType()`) to a class that extends [`IStubFileElementType`](%gh-ic%/platform/core-impl/src/com/intellij/psi/tree/IStubFileElementType.java) and override its `getExternalId()` method (see also following item).
 2. In the <path>[plugin.xml](plugin_configuration_file.md)</path>, define the `com.intellij.stubElementTypeHolder` extension and specify the interface which contains the `IElementType` constants used by the language's parser.
-  Define the common `externalIdPrefix` to be used for all stub element types (see below).
-  See [`StubElementTypeHolderEP`](%gh-ic%/platform/core-api/src/com/intellij/psi/stubs/StubElementTypeHolderEP.java) docs for important requirements.
+
+   Define the common `externalIdPrefix` to be used for all stub element types (see [](#adding-stub-elements)).
+   See [`StubElementTypeHolderEP`](%gh-ic%/platform/core-api/src/com/intellij/psi/stubs/StubElementTypeHolderEP.java) docs for important requirements.
 
 **Examples**:
 - [`JavaStubElementTypes`](%gh-ic%/java/java-psi-impl/src/com/intellij/psi/impl/java/stubs/JavaStubElementTypes.java) registered in [`JavaPsiPlugin.xml`](%gh-ic%/java/java-psi-impl/src/META-INF/JavaPsiPlugin.xml)
@@ -43,7 +44,7 @@ The following steps need to be performed only once for each language that suppor
 
 </procedure>
 
-<procedure title="Adding Stub Elements">
+<procedure id="adding-stub-elements" title="Adding Stub Elements">
 
 For each element type that needs to be stored in the stub tree, perform the following steps:
 
@@ -56,7 +57,7 @@ For each element type that needs to be stored in the stub tree, perform the foll
    Implement the `createPsi()` and `createStub()` methods for creating PSI from a stub and vice versa.
    Implement the `serialize()` and `deserialize()` methods for storing the data in a binary stream.
 
-   Override `getExternalId()` according to common used `externalIdPrefix` for the language.
+   Override `getExternalId()` according to common used `externalIdPrefix` for the language (see [](#stubs-setup)).
 
    For always-leaf stub nodes return `true` from `isAlwaysLeaf()` (2023.3).
    "Container" stubs that do not serialize any data of their own may implement [`EmptyStubSerializer`](%gh-ic-master%/platform/core-api/src/com/intellij/psi/stubs/EmptyStubSerializer.java) to optimize storage (2023.3).

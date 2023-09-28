@@ -94,7 +94,7 @@ Multiple categories can be set using a comma separated value list.
 
 **Sample** Set DEBUG level for categories `com.my.plugin.ui` and `com.my.plugin.backend`:
 
-<tabs group="languages">
+<tabs group="gradle">
 <tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
@@ -177,7 +177,7 @@ These JAR files are not available in plugin project dependencies, so the Intelli
 It's done by setting the `idea.home.path` system property to the absolute path of the checked-out sources in the `test` task configuration:
 
 
-<tabs>
+<tabs group="gradle">
 <tab title="Kotlin" group-key="kotlin">
 
 ```kotlin

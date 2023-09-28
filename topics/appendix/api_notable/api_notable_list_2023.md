@@ -56,7 +56,8 @@ Declarative Inspection Options
 : [Code inspections](code_inspections.md) can provide additional options in a [declarative](inspection_options.md#declarative-inspection-options) way which has several benefits over the [UI-based](inspection_options.md#ui-based-inspection-options) approach.
 
 Nested Index Access
-: Accessing index data in [nested calls](file_based_indexes.md#nested-index-access) is now possible.
+: ~~Accessing index data in [nested calls](file_based_indexes.md#nested-index-access) is now possible.~~
+**NOTE: Please do not use yet** This is known to cause problems under certain conditions, please watch this [issue](https://youtrack.jetbrains.com/issue/IJPL-265/Nested-index-lookups-still-leads-to-deadlocks).
 
 File Type Index Topic
 : [`FileTypeIndex.IndexChangeListener`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/FileTypeIndex.java) allows monitoring the addition/removal of files by `FileType`.

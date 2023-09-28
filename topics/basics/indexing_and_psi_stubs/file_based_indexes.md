@@ -89,7 +89,9 @@ When accessing index data in nested calls (usually from multiple indexes), limit
 
 <tab title="2023.1 and later">
 
-Nested index access is now possible.
+~~Nested index access is now possible.~~
+
+**NOTE: Please do not use yet** This is known to cause problems under certain conditions, please watch this [issue](https://youtrack.jetbrains.com/issue/IJPL-265/Nested-index-lookups-still-leads-to-deadlocks).
 
 </tab>
 

@@ -1,6 +1,6 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
-
 # Messaging Infrastructure
+
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Subscribing and publishing messages via message bus.</link-summary>
 
@@ -170,8 +170,7 @@ When a message is sent to the target topic, the following happens:
 
 ### Relief Listeners Management
 
-[//]: # (TODO: revert link to https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)
-Messaging infrastructure is very light-weight, so it's possible to reuse it at local sub-systems in order to relieve [Subscribers](https://w.wiki/5xaV) construction.
+Messaging infrastructure is very light-weight, so it's possible to reuse it at local sub-systems in order to relieve [Subscribers](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern){ignore-vars="true"} construction.
 Let's see what is necessary to do then:
 
 1. Define business interface to work with.

@@ -13,6 +13,9 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ### IntelliJ Platform 2023.3
 
+Threading Model changes
+: Please see updated [](general_threading_rules.md).
+
 External Annotators in Dumb Mode
 : [](syntax_highlighting_and_error_highlighting.md#external-annotator) can now run in during indexing.
 

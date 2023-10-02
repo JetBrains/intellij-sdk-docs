@@ -18,11 +18,31 @@ You must not access the model outside a read or write action for the following s
 - [](virtual_file_system.md) (VFS)
 - [Project root model](project_structure.md).
 
+> Threading model has changed in 2023.3, please make sure to choose the correct version below.
+>
+{title="2023.3 Threading Model Changes" style="warning"}
+
 ### Read Access
+
+<tabs group="threading">
+
+<tab title="2023.3 and later" group-key="newThreading">
+
+Reading data is allowed from any thread.
+Read operations need to be wrapped in a read action (RA) if not invoked via `Application.invokeLater()`.
+
+</tab>
+
+<tab title="Earlier versions" group-key="oldThreading">
 
 Reading data is allowed from any thread.
 Reading data from the UI thread does not require any special effort.
 However, read operations performed from any other thread need to be wrapped in a read action (RA).
+
+</tab>
+
+</tabs>
+
 The corresponding objects are not guaranteed to survive between several consecutive read actions.
 As a rule of thumb, whenever starting a read action, check if the PSI/VFS/project/module is still valid.
 

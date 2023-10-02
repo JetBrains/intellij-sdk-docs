@@ -1,6 +1,6 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
-
 # Content Updates
+
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Notable updates and additions to this documentation.</link-summary>
 
@@ -20,6 +20,9 @@ Run Configuration Macros
 
 Inlay Hints
 : Update [](inlay_hints.md) page with the information about new APIs.
+
+Threading Model
+: Update [](general_threading_rules.md) to reflect changes in 2023.3 platform.
 
 ### June
 {#june-23}

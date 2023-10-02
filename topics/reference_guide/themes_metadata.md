@@ -1,6 +1,6 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
-
 # Exposing Theme Metadata
+
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Exposing plugin's UI components' customization keys allowing theme developers to change your components look.</link-summary>
 
@@ -57,12 +57,14 @@ The following minimal sample demonstrates all details required when exposing UI 
 > Do not remove existing keys, but deprecate them instead to help Theme authors upgrade their existing themes.
 >
 
-Color keys can be used via `JBColor.namedColor()` providing defaults for Light and Dark theme:
+Color keys can be used via [`JBColor.namedColor()`](%gh-ic%/platform/util/ui/src/com/intellij/ui/JBColor.java) providing defaults for Light and Dark theme:
 
 ```java
-private static final Color SECTION_HEADER_FOREGROUND = JBColor.namedColor(
-    "Plugins.SectionHeader.foreground",
-    new JBColor(0x787878, 0x999999));
+private static final JBColor SECTION_HEADER_FOREGROUND =
+    JBColor.namedColor(
+      "Plugins.SectionHeader.foreground",
+      new JBColor(0x787878,0x999999)
+    );
 ```
 
 Other keys can be obtained via `javax.swing.UIManager#getXXX()` methods.

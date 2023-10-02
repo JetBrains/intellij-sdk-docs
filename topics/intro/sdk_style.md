@@ -1,6 +1,6 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
-
 # SDK Docs Style Guide
+
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Writing and notation styleguide for SDK Docs.</link-summary>
 
@@ -124,7 +124,7 @@ In some cases (e.g., the same heading text appears multiple times on the same pa
 General Markdown links have the default Markdown link style:
 
 * `[Gradle](https://gradle.org)`{disable-links} ([Gradle](https://gradle.org)) links to an external site, such as companies, articles, etc.
-  If URL contains `%` character, append `{interpolate-variables="false"}`.
+  If URL contains `%` character, append `{ignore-vars="true"}`.
 * Linking to pages and page sections within the SDK documentation:
     * `[Page Title](page.md)`{disable-links} or `[](page.md)` (use page title as link text) links to an SDK doc page (all located under <path>/topics</path>).
       Note that the extension is <path>.md</path>, _NOT_ <path>.html</path>.

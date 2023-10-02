@@ -10,9 +10,9 @@
 
 > [Thread Access Info](https://plugins.jetbrains.com/plugin/16815-thread-access-info) plugin visualizes Read/Write Access and Thread information in debugger.
 
-In general, code-related data structures in the IntelliJ Platform are covered by a single reader/writer lock.
+In general, code-related data structures in the IntelliJ Platform are covered by a single [readers-writer (RW) lock](https://en.wikipedia.org/wiki/Readers%E2%80%93writer_lock){ignore-vars="true"}.
 
-You must not access the model outside a read or write action for the following subsystems:
+Access to the model must be performed in a read or write action for the following subsystems:
 
 - [](psi.md)
 - [](virtual_file_system.md) (VFS)
@@ -46,15 +46,22 @@ However, read operations performed from any other thread need to be wrapped in a
 The corresponding objects are not guaranteed to survive between several consecutive read actions.
 As a rule of thumb, whenever starting a read action, check if the PSI/VFS/project/module is still valid.
 
-**API**: `ApplicationManager.getApplication().runReadAction()` or [`ReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) `run()`/`compute()`
+#### Read Action (RA) API
+
+- [`Application.runReadAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java)
+- [`ReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) `run()` or `compute()`
 
 ### Write Access
 
 Writing data is only allowed from the UI thread, and write operations always need to be wrapped in a write action (WA).
-Modifying the model is only allowed from write-safe contexts, including user actions and `SwingUtilities.invokeLater()` calls from them (see the next section).
+Modifying the model is only allowed from write-safe contexts, including user actions and `SwingUtilities.invokeLater()` calls from them (see [](#modality-and-invokelater)).
+
 You may not modify PSI, VFS, or project model from inside UI renderers or `SwingUtilities.invokeLater()` calls.
 
-**API**: `ApplicationManager.getApplication().runWriteAction()` or [`WriteAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/WriteAction.java) `run()`/`compute()`
+#### Write Action (WA) API
+
+- [`Application.runWriteAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java)
+- [`WriteAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/WriteAction.java) `run()` or `compute()`
 
 ## Modality and `invokeLater()`
 

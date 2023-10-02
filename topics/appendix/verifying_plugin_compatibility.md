@@ -1,6 +1,6 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
-
 # Verifying Plugin Compatibility
+
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Tooling for ensuring compatibility.</link-summary>
 
@@ -13,6 +13,10 @@ For API annotated with `ApiStatus.@Internal`, see [](api_internal.md) for more d
 Compatibility with newer IDEs can easily be verified for plugins hosted on the [JetBrains Marketplace](https://plugins.jetbrains.com) using the built-in [Plugin Verifier](https://blog.jetbrains.com/platform/2018/07/plugins-repository-now-integrates-with-the-plugin-verification-tool/).
 
 Integration in [Gradle build](configuring_plugin_project.md) is available using the [`runPluginVerifier`](tools_gradle_intellij_plugin.md#tasks-runpluginverifier) task, please see [Gradle IntelliJ Plugin - Plugin Verifier](tools_gradle_intellij_plugin.md#tasks-runpluginverifier) for details.
+
+> Reported places are highlighted and linked to the plugin's source code in the <control>Gradle</control> toolwindow output (2023.3).
+>
+{title="Navigation in the IDE" style="tip"}
 
 You can easily integrate it in Continuous Integration (CI) environments by running this task as another quality check step.
 Check the IntelliJ Platform Plugin Template [GitHub workflow configuration file](https://github.com/JetBrains/intellij-platform-plugin-template/blob/main/.github/workflows/build.yml) as sample.

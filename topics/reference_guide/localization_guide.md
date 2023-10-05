@@ -11,9 +11,9 @@ The purpose of the document is to describe steps necessary to create localized v
 In regard to localization purpose all the resources (in English) that need to be translated are located in jar files called
 <path>resources_en.jar</path>.
 There's one such jar file for IDEA core functionality located at
-<path>INSTALL_HOME\lib\resources_en.jar</path>
+<path>INSTALL_HOME/lib/resources_en.jar</path>
 and one jar for each of bundled plugins at
-<path>INSTALL_HOME\plugins\$Plugin$\lib\resources_en.jar</path>.
+<path>INSTALL_HOME/plugins/$Plugin$/lib/resources_en.jar</path>.
 
 Translated resources should be jarred and placed exactly in the same folder original jar comes from.
 So localization pack should have exactly the same number of jar files, and they have to be laid out in exactly the same way original jars are laid out.

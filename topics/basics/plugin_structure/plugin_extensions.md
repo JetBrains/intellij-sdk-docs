@@ -76,8 +76,9 @@ and one extension to access the `another.plugin.myExtensionPoint` extension poin
 
 Please note the following important points:
 
-- Extension implementations must be stateless. Use explicit [](plugin_services.md) for managing (runtime) data.
-- Avoid any initialization in constructor, see also notes for [Services](plugin_services.md#constructor).
+- Extension implementation must be stateless. Use explicit [](plugin_services.md) for managing (runtime) data.
+- Avoid any initialization in the constructor, see also notes for [Services](plugin_services.md#constructor).
+- Do not perform any static initialization. Use inspection <control>Plugin DevKit | Code | Static initialization in extension point implementations</control> (2023.3).
 
 When using [Kotlin](using_kotlin.md):
 

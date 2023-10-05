@@ -220,6 +220,10 @@ To exclude a group from appearing in <ui-path>Help | Find Action</ui-path> resul
 
 #### Localizing Actions and Groups
 
+> Hard-coding the presentation in the `AnAction` constructor is discouraged, use inspection <control>Plugin DevKit | Code | Eager creation of action presentation</control> (2023.3)
+> to highlight such problems.
+>
+
 Action and group localization use resource bundles containing property files named <path>$NAME$Bundle.properties</path>, each file consisting of `key=value` pairs.
 The [`action_basics`](%gh-sdk-samples%/action_basics) plugin demonstrates using a resource bundle to localize the group and action entries added to the Editor Popup Menu.
 

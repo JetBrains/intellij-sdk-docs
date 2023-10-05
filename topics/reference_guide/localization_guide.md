@@ -37,7 +37,7 @@ Property values mostly follow MessageFormat rules.
 
 ## Components Location
 
-* **Inspection descriptions** appear in Settings|Errors and represent short information about what each of the inspection tools is intended to do.
+* **Inspection descriptions** appear in <ui-path>Settings | Editor | Inspections</ui-path> and represent short information about what each of the inspection tools is intended to do.
   Each description is represented by single html file under <path>/inspectionDescriptions/</path> folder that should be encoded in UTF-8 encoding.
   Localized versions should be stored in folder suffixed with locale instead.
   For instance <path>/inspectionDescriptions/CanBeFinal.html</path> from <path>resources_en.jar</path> translation should be placed in <path>/inspectionDescriptions_ja/CanBeFinal.html</path> in <path>resources_ja.jar</path>.

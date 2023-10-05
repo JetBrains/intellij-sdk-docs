@@ -29,7 +29,7 @@ See [native2ascii](https://docs.oracle.com/javase/7/docs/technotes/tools/solaris
 
 Property values mostly follow MessageFormat rules.
 
-> Due to historic reasons main menu, toolbar, popup menus and other actions have their mnemonic char prefixed with `\_` (underscore) char while all other mnemonics like those for checkboxes, buttons etc. use `&` (ampersand) sign for the same purpose.
+> Due to historic reasons main menu, toolbar, popup menus and other actions have their mnemonic char prefixed with `_` (underscore) char while all other mnemonics like those for checkboxes, buttons etc. use `&` (ampersand) sign for the same purpose.
 > Moreover one can encounter `&&` (double ampersand) in some places, which denote alternative mnemonic to be used under macOS (mnemonics mapped to `U`, `I`, `O`, `N` chars won't work there).
 > Generally, use the same mnemonic denotation used in the original property value and everything will be OK.
 >

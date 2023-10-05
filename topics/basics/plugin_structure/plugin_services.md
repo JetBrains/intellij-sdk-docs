@@ -268,7 +268,8 @@ Registration in <path>plugin.xml</path>:
 >
 > Such problems are highlighted via inspections (2023.3):
 > - <control>Plugin DevKit | Code | Application service assigned to a static final field or immutable property</control>
-> - <control>Plugin DevKit | Code | Incorrect or simplifiable retrieving service</control>
+> - <control>Plugin DevKit | Code | Incorrect service retrieving</control>
+> - <control>Plugin DevKit | Code | Simplifiable service retrieving</control>
 >
 {style="warning"}
 

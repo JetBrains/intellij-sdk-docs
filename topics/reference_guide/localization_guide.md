@@ -8,21 +8,21 @@ The purpose of the document is to describe steps necessary to create localized v
 
 ## Application Bundle Layout
 
-In regard to localization purpose all the resources (in English) that need to be translated are located in jar files called
+In regard to localization purpose all the resources (in English) that need to be translated are located in JAR files called
 <path>resources_en.jar</path>.
-There's one such jar file for IDEA core functionality located at
+There's one such JAR file for IDEA core functionality located at
 <path>INSTALL_HOME/lib/resources_en.jar</path>
-and one jar for each of bundled plugins at
+and one JAR for each of bundled plugins at
 <path>INSTALL_HOME/plugins/$Plugin$/lib/resources_en.jar</path>.
 
-Translated resources should be jarred and placed exactly in the same folder original jar comes from.
-So localization pack should have exactly the same number of jar files, and they have to be laid out in exactly the same way original jars are laid out.
-In order to enable multiple localizations per installation without localization packs overriding each other we suggest to include the name of the locale in the jar name (for example, <path>resources_ja.jar</path>).
+Translated resources should be packed to JAR and placed exactly in the same folder original JAR comes from.
+So localization pack should have exactly the same number of JAR files, and they have to be laid out in exactly the same way original JAR files are laid out.
+In order to enable multiple localizations per installation without localization packs overriding each other we suggest to include the name of the locale in the JAR name (for example, <path>resources_ja.jar</path>).
 
 ## Content and Layout of resources_en.jar
 
 Property files usually contain messages, menu items, dialog labels texts etc.
-For every such file localized jar should contain translated version that is placed to exactly the same path relative to the jar root and has exactly the same name as original file plus locale identifier.
+For every such file localized JAR should contain translated version that is placed to exactly the same path relative to the JAR root and has exactly the same name as original file plus locale identifier.
 For example <path>messages/ActionsBundle.properties</path> file from <path>resources_en.jar</path> should have its translated version <path>messages/ActionsBundle_ja.properties</path> file in <path>resources_ja.jar</path>.
 All property files should be ASCII encoded with `\uXXXX` sequences used for characters that have no representation in ASCII range.
 See [native2ascii](https://docs.oracle.com/javase/7/docs/technotes/tools/solaris/native2ascii.html) tool for more details.
@@ -38,7 +38,7 @@ Property values mostly follow MessageFormat rules.
 ## Components Location
 
 * **Inspection descriptions** appear in <ui-path>Settings | Editor | Inspections</ui-path> and represent short information about what each of the inspection tools is intended to do.
-  Each description is represented by single html file under <path>/inspectionDescriptions/</path> folder that should be encoded in UTF-8 encoding.
+  Each description is represented by single HTML file under <path>/inspectionDescriptions/</path> folder that should be encoded in UTF-8 encoding.
   Localized versions should be stored in folder suffixed with locale instead.
   For instance <path>/inspectionDescriptions/CanBeFinal.html</path> from <path>resources_en.jar</path> translation should be placed in <path>/inspectionDescriptions_ja/CanBeFinal.html</path> in <path>resources_ja.jar</path>.
 * **Intention descriptions and samples**  are very similar to inspection descriptions but the layout is a bit more advanced.

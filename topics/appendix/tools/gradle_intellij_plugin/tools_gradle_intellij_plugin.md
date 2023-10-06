@@ -1798,6 +1798,24 @@ Acceptable values
 - `android-only`
 - `without-android`
 
+#### freeArgs
+{#tasks-runpluginverifier-freeArgs}
+
+Arbitrary command line arguments that are passed to the IntelliJ Plugin Verifier as is in addition to the arguments provided by the Plugin Verifier DSL.
+
+Arguments that require a value must be provided in the separate elements of the list.
+
+{style="narrow"}
+Type
+: `List<String>`
+
+Default value
+: `[]`
+
+Acceptable values
+:
+- `["-team-city"]` as a switch
+- `["-suppress-internal-api-usages", "jetbrains-plugins"]` as an argument with a value
 
 ### setupDependencies
 {#tasks-setupdependencies}

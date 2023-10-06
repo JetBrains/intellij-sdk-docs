@@ -1754,6 +1754,18 @@ Type
 Default value
 : `[]`
 
+#### ignoredProblems
+{#tasks-runpluginverifier-ignoredproblems}
+
+A file that contains a list of problems that will be ignored in the verification report.
+Such file must contain lines in form `<plugin_xml_id>:<plugin_version>:<problem_description_regexp_pattern>`.
+
+{style="narrow"}
+Type
+: `File`
+
+Default value
+: `null`
 
 #### teamCityOutputFormat
 {#tasks-runpluginverifier-teamcityoutputformat}

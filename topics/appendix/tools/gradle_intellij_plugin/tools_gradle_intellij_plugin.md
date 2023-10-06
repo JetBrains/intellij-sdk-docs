@@ -1646,6 +1646,23 @@ Type
 Default value
 : `${project.buildDir}/reports/pluginVerifier`
 
+#### verificationReportsFormats
+{#tasks-runpluginverifier-verificationreportsformats}
+
+The output formats of the verification reports that will be emitted.
+
+{style="narrow"}
+Type
+: `List<String>`
+
+Default value
+: `["plain", "html"]`
+
+Acceptable values
+:
+- `plain` (console output)
+- `html` (HTML format)
+- `markdown` (Markdown format)
 
 #### downloadDir
 {#tasks-runpluginverifier-downloaddir}

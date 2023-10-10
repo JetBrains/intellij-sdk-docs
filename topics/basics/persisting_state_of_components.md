@@ -7,7 +7,7 @@
 The IntelliJ Platform provides an API that allows components or services to persist their state between restarts of the IDE.
 You can use either a simple API to persist a few values or persist the state of more complicated components using the [`PersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) interface.
 
-> If you need to persist sensitive data like passwords, please see [Persisting Sensitive Data](persisting_sensitive_data.md).
+> For persisting sensitive data like passwords, see [Persisting Sensitive Data](persisting_sensitive_data.md).
 >
 {style="warning"}
 
@@ -204,19 +204,19 @@ See the [](#defining-the-storage-location) for more details.
 
 ### Customizing the XML Format of Persisted Values
 
-> Please consider using annotation parameters only to achieve backward compatibility.
-> Otherwise, please feel free to file issues about specific serialization cosmetics.
+> Consider using annotation parameters only to achieve backward compatibility.
+> Otherwise, feel free to file issues about specific serialization cosmetics.
 >
 {style="note"}
 
 If you want to use the default bean serialization but need to customize the storage format in XML (for example, for compatibility with previous versions of your plugin or externally defined XML formats), you can use the `@Tag`, `@Attribute`, `@Property`, `@MapAnnotation`, `@XCollection` annotations.
 
-Please see `com.intellij.util.xmlb.annotations`'s [`package.html`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/package.html) for more information.
+See `com.intellij.util.xmlb.annotations`'s [`package.html`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/package.html) for more information.
 
 If the state you need to serialize doesn't map cleanly to a JavaBean, you can use `org.jdom.Element` as the state class.
 In that case, you can use the `getState()` method to build an XML element with an arbitrary structure, which then is saved directly in the state XML file.
 In the `loadState()` method, you can deserialize the JDOM element tree using any custom logic.
-Please note this is not recommended and should be avoided whenever possible.
+This is not recommended and should be avoided whenever possible.
 
 ### Migrating Persisted Values
 

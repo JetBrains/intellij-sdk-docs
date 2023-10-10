@@ -97,6 +97,9 @@ JsonPath library unbundled
 `com.siyeh.ipp.base.Intention` class removed
 : As a part of migration to new experimental [`ModCommand`](%gh-ic%/platform/analysis-api/src/com/intellij/modcommand/ModCommand.java) API, the class was removed completely. It's a part of implementation module and was never intended to be inherited by external plugins. Consider implementing [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java) directly.
 
+`com.intellij.codeInsight.TailTypes` class renamed to `com.intellij.codeInsight.JavaTailTypes`
+: Update code usages.
+
 ### External System Run Configuration 2023.3
 
 Property `com.intellij.openapi.externalSystem.service.ui.command.line.CompletionTableInfo.completionInfo` replaced by suspend function `CompletionTableInfo.collectCompletionInfo`

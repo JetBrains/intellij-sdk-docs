@@ -13,12 +13,12 @@ You can use either a simple API to persist a few values or persist the state of 
 
 ## Using PersistentStateComponent
 
-The [`com.intellij.openapi.components.PersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) interface gives you the most flexibility for defining the values to be persisted, their format, and storage location.
+The [`PersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) interface allows for persisting state classes and gives the most flexibility for defining the values to be persisted, their format, and storage location.
 
 To use it:
 - mark a [service](plugin_services.md) as implementing the `PersistentStateComponent` interface
 - define the state class
-- specify the storage location using `@com.intellij.openapi.components.State`
+- specify the storage location using [`@State`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/State.java)
 
 Note that instances of extensions cannot persist their state by implementing `PersistentStateComponent`.
 If your extension needs to have a persistent state, you need to define a separate service responsible for managing that state.
@@ -72,7 +72,7 @@ class MyService implements PersistentStateComponent<MyService> {
 
 The implementation of `PersistentStateComponent` works by serializing public fields, [annotated](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations) private fields (see also [Customizing the XML format of persisted values](#customizing-the-xml-format-of-persisted-values)), and bean properties into an XML format.
 
-To exclude a public field or bean property from serialization, annotate the field or getter with `@com.intellij.util.xmlb.annotations.Transient`.
+To exclude a public field or bean property from serialization, annotate the field or getter with [`@Transient`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Transient.java).
 
 Note that the state class must have a default constructor.
 It should return the component's default state: the one used if there is nothing persisted in the XML files yet.
@@ -89,7 +89,7 @@ The following types of values can be persisted:
 * maps
 * enums
 
-For other types, extend [`com.intellij.util.xmlb.Converter`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/Converter.java):
+For other types, extend [`Converter`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/Converter.java):
 
 ```java
 class LocalDateTimeConverter extends Converter<LocalDateTime> {
@@ -107,7 +107,7 @@ class LocalDateTimeConverter extends Converter<LocalDateTime> {
 }
 ```
 
-Define the converter above in `@com.intellij.util.xmlb.annotations.OptionTag` or `@com.intellij.util.xmlb.annotations.Attribute`:
+Define the converter above in [`@OptionTag`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/OptionTag.java) or [`@Attribute`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java):
 
 ```java
 class State {
@@ -122,7 +122,7 @@ To specify where precisely the persisted values are stored, add `@State` annotat
 
 It has the following fields:
 * `name` (required) — specifies the name of the state (name of the root tag in XML).
-* `storages` — one or more of `@com.intellij.openapi.components.Storage` annotations to specify the storage locations.
+* `storages` — one or more of [`@Storage`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/Storage.java) annotations to specify the storage locations.
   Optional for project-level values — standard project file is used in this case.
 * `reloadable` (optional) — if set to false, a full project (or application) reload is required when the XML file is changed externally, and the state has changed.
 
@@ -225,7 +225,7 @@ Otherwise, the returned state is serialized in XML and stored.
 
 ## Using PropertiesComponent for Simple Non-Roamable Persistence
 
-If the plugin needs to persist just a few simple values, the easiest way to do so is to use the [`com.intellij.ide.util.PropertiesComponent`](%gh-ic%/platform/core-api/src/com/intellij/ide/util/PropertiesComponent.java) service.
+If the plugin needs to persist just a few simple values, the easiest way to do so is to use the [`PropertiesComponent`](%gh-ic%/platform/core-api/src/com/intellij/ide/util/PropertiesComponent.java) service.
 It can save both application-level values and project-level values in the workspace file.
 Roaming is disabled for `PropertiesComponent`, so use it only for temporary, non-roamable properties.
 

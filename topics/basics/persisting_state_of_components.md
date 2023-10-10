@@ -34,10 +34,6 @@ In the former case, the state class instance is typically stored as a field in t
 @State(...)
 class MyService implements PersistentStateComponent<MyService.State> {
 
-  public static MyService getInstance() {
-    // implementation according to Application/Project level service
-  }
-
   static class State {
     public String value;
   }
@@ -59,10 +55,6 @@ In the latter case, you can use the following pattern to implement `getState()` 
 ```java
 @State(...)
 class MyService implements PersistentStateComponent<MyService> {
-
-  public static MyService getInstance() {
-    // implementation according to Application/Project level service
-  }
 
   public String stateValue;
 

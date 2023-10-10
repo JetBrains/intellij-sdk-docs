@@ -17,6 +17,6 @@
   <var name="gh-ij-plugins" value="https://github.com/JetBrains/intellij-plugins/tree/idea/%ijPlatformBuild%"/>
   <var name="gh-ij-plugins-master" value="https://github.com/JetBrains/intellij-plugins/tree/master"/>
 
-  <var name="gradle-intellij-plugin-version" value="1.15.0"/>
+  <var name="gradle-intellij-plugin-version" value="1.16.0"/>
   <var name="gradle-grammar-kit-plugin-version" value="2022.3.2"/>
 </vars>

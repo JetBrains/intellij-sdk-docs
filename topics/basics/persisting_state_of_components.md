@@ -89,7 +89,10 @@ The following types of values can be persisted:
 * maps
 * enums
 
-For other types, extend [`Converter`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/Converter.java):
+For other types, extend [`Converter`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/Converter.java).
+See the example below.
+
+#### Converter Example {collapsible="true"}
 
 ```java
 class LocalDateTimeConverter extends Converter<LocalDateTime> {

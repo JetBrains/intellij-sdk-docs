@@ -68,7 +68,7 @@ You may not modify PSI, VFS, or project model from inside UI renderers or `Swing
 To pass control from a background thread to the [Event Dispatch Thread](https://docs.oracle.com/javase/tutorial/uiswing/concurrency/dispatch.html) (EDT), instead of the standard `SwingUtilities.invokeLater()`, plugins should use `ApplicationManager.getApplication().invokeLater()`.
 The latter API allows specifying the _modality state_ ([`ModalityState`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ModalityState.java)) for the call, i.e., the stack of modal dialogs under which the call is allowed to execute:
 
-#### `ModalityState.NON_MODAL`
+#### `ModalityState.NON_MODAL` / `nonModal()`
 
 The operation will be executed after all modal dialogs are closed.
 If any of the open (unrelated) projects displays a per-project modal dialog, the action will be performed after the dialog is closed.

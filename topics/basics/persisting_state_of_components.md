@@ -5,7 +5,7 @@
 <link-summary>Persisting data that is available after IDE restarts and can be shared between different IDE installations.</link-summary>
 
 The IntelliJ Platform provides an API that allows components or services to persist their state between restarts of the IDE.
-You can use either a simple API to persist a few values or persist the state of more complicated components using the [`PersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) interface.
+The API allows for persisting simple key-value entries and complex state classes.
 
 > For persisting sensitive data like passwords, see [Persisting Sensitive Data](persisting_sensitive_data.md).
 >
@@ -21,12 +21,12 @@ To use it:
 - specify the storage location using [`@State`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/State.java)
 
 Note that instances of extensions cannot persist their state by implementing `PersistentStateComponent`.
-If your extension needs to have a persistent state, you need to define a separate service responsible for managing that state.
+If an extension needs to have a persistent state, define a separate service responsible for managing that state.
 
 ### Implementing the PersistentStateComponent Interface
 
 The implementation of `PersistentStateComponent` needs to be parameterized with the type of state class.
-The state class can either be a separate JavaBean class, or the class implementing `PersistentStateComponent`.
+The state class can either be a separate class, or the class implementing `PersistentStateComponent`.
 
 In the former case, the state class instance is typically stored as a field in the `PersistentStateComponent` class:
 
@@ -50,7 +50,7 @@ class MyService implements PersistentStateComponent<MyService.State> {
 }
 ```
 
-In the latter case, you can use the following pattern to implement `getState()` and `loadState()` methods:
+In the latter case, use the following pattern to implement `getState()` and `loadState()` methods:
 
 ```java
 @State(...)
@@ -78,7 +78,7 @@ Note that the state class must have a default constructor.
 It should return the component's default state: the one used if there is nothing persisted in the XML files yet.
 
 State class should have an `equals()` method, but state objects are compared by fields if it is not implemented.
-When using Kotlin, use [Data Classes](https://kotlinlang.org/docs/reference/data-classes.html).
+When using Kotlin, it is recommended to use [Data Classes](https://kotlinlang.org/docs/reference/data-classes.html).
 
 The following types of values can be persisted:
 
@@ -136,7 +136,8 @@ The state is persisted in a separate file by specifying a different setting for 
 
 See [`StoragePathMacros`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/StoragePathMacros.java) for commonly used values.
 
-> For application-level storage, it is strongly recommended to use a custom file, using of <path>other.xml</path> is deprecated.
+> For application-level storage, it is strongly recommended to use a custom file.
+> Using of <path>other.xml</path> is deprecated.
 >
 {style="note"}
 
@@ -161,7 +162,6 @@ Settings can be shared via the following functionalities:
 - _[Export Settings](https://www.jetbrains.com/help/idea/2019.3/sharing-your-ide-settings.html#import-export-settings)_ feature that allows for the manual import and export of settings.
 
 > Synchronization via the _Settings Sync_ or _Settings Repository_ plugins only works when these plugins are installed and enabled.
->
 
 The decision about making a specific component's state shareable should be made carefully.
 Only the settings that are not specific to a given machine should be shared, e.g. paths to user-specific directories shouldn't be shared.
@@ -203,11 +203,9 @@ See the [](#defining-the-storage-location) for more details.
 
 If you want to use the default bean serialization but need to customize the storage format in XML (for example, for compatibility with previous versions of your plugin or externally defined XML formats), you can use the `@Tag`, `@Attribute`, `@Property`, `@MapAnnotation`, `@XCollection` annotations.
 
-See `com.intellij.util.xmlb.annotations`'s [`package.html`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/package.html) for more information.
-
-If the state you need to serialize doesn't map cleanly to a JavaBean, you can use `org.jdom.Element` as the state class.
-In that case, you can use the `getState()` method to build an XML element with an arbitrary structure, which then is saved directly in the state XML file.
-In the `loadState()` method, you can deserialize the JDOM element tree using any custom logic.
+If the state to serialize doesn't map cleanly to a JavaBean, then `org.jdom.Element` can be used as the state class.
+In that case, use the `getState()` method to build an XML element with an arbitrary structure, which then is saved directly in the state XML file.
+In the `loadState()` method, deserialize the JDOM element tree using any custom logic.
 This is not recommended and should be avoided whenever possible.
 
 ### Migrating Persisted Values
@@ -216,10 +214,10 @@ If the underlying persistence model or storage format has changed, a [`Converter
 
 ### Persistent Component Lifecycle
 
-The `loadState()` method is called after the component has been created (only if there is some non-default state persisted for the component), and after the XML file with the persisted state is changed externally (for example, if the project file was updated from the version control system).
+The `PersistentStateComponent.loadState()` method is called after the component has been created (only if there is some non-default state persisted for the component), and after the XML file with the persisted state is changed externally (for example, if the project file was updated from the version control system).
 In the latter case, the component is responsible for updating the UI and other related components according to the changed state.
 
-The `getState()` method is called every time the settings are saved (for example, on frame deactivation or when closing the IDE).
+The `PersistentStateComponent.getState()` method is called every time the settings are saved (for example, on frame deactivation or when closing the IDE).
 If the state returned from `getState()` is equal to the default state (obtained by creating the state class with a default constructor), nothing is persisted in the XML.
 Otherwise, the returned state is serialized in XML and stored.
 

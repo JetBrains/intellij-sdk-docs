@@ -78,7 +78,6 @@ Note that the state class must have a default constructor.
 It should return the component's default state: the one used if there is nothing persisted in the XML files yet.
 
 State class should have an `equals()` method, but state objects are compared by fields if it is not implemented.
-When using Kotlin, it is recommended to use [Data Classes](https://kotlinlang.org/docs/reference/data-classes.html).
 
 The following types of values can be persisted:
 

@@ -37,6 +37,7 @@ In addition, delegates track property modifications internally, which help decre
 It is recommended to create a separate classes for a component and its state:
 
 ```kotlin
+@Service
 @State(...)
 class MySettings : SimplePersistentStateComponent<MyState>(MyState())
 
@@ -57,6 +58,7 @@ In this case, the state class instance is typically stored as a field in the `Pe
 When the state is loaded from the storage, it is assigned to the state field (see `loadState()`):
 
 ```java
+@Service
 @State(...)
 class MySettings implements PersistentStateComponent<MySettings.State> {
 
@@ -85,6 +87,7 @@ Using a separate state class is the recommended approach.
 In this case, `getState()` returns the component itself, and `loadState()` copies properties of the state loaded from storage to the component instance:
 
 ```java
+@Service
 @State(...)
 class MySettings implements PersistentStateComponent<MySettings> {
 

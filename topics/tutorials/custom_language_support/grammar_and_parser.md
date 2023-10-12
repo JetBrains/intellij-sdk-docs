@@ -100,6 +100,6 @@ sourceSets.main.java.srcDirs 'src/main/gen'
 </tab>
 </tabs>
 
-See <path>[gradle.build.kts](%gh-sdk-samples%/simple_language_plugin/build.gradle.kts)</path> for the reference.
+See <path>[build.gradle.kts](%gh-sdk-samples%/simple_language_plugin/build.gradle.kts)</path> for the reference.
 
 Reload the Gradle project for changes to take effect and build the project.

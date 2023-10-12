@@ -1646,6 +1646,23 @@ Type
 Default value
 : `${project.buildDir}/reports/pluginVerifier`
 
+#### verificationReportsFormats
+{#tasks-runpluginverifier-verificationreportsformats}
+
+The output formats of the verification reports that will be emitted.
+
+{style="narrow"}
+Type
+: `List<String>`
+
+Default value
+: `["plain", "html"]`
+
+Acceptable values
+:
+- `plain` (console output)
+- `html` (HTML format)
+- `markdown` (Markdown format)
 
 #### downloadDir
 {#tasks-runpluginverifier-downloaddir}
@@ -1737,6 +1754,18 @@ Type
 Default value
 : `[]`
 
+#### ignoredProblems
+{#tasks-runpluginverifier-ignoredproblems}
+
+A file that contains a list of problems that will be ignored in the verification report.
+Such file must contain lines in form `<plugin_xml_id>:<plugin_version>:<problem_description_regexp_pattern>`.
+
+{style="narrow"}
+Type
+: `File`
+
+Default value
+: `null`
 
 #### teamCityOutputFormat
 {#tasks-runpluginverifier-teamcityoutputformat}
@@ -1769,6 +1798,24 @@ Acceptable values
 - `android-only`
 - `without-android`
 
+#### freeArgs
+{#tasks-runpluginverifier-freeArgs}
+
+Arbitrary command line arguments that are passed to the IntelliJ Plugin Verifier as is in addition to the arguments provided by the Plugin Verifier DSL.
+
+Arguments that require a value must be provided in the separate elements of the list.
+
+{style="narrow"}
+Type
+: `List<String>`
+
+Default value
+: `[]`
+
+Acceptable values
+:
+- `["-team-city"]` as a switch
+- `["-suppress-internal-api-usages", "jetbrains-plugins"]` as an argument with a value
 
 ### setupDependencies
 {#tasks-setupdependencies}

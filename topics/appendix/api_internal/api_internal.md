@@ -75,6 +75,7 @@ Therefore, any reported violations can be disregarded.
 
 | Internal API                                                                                                                                         | Note                                            |
 |------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
+| [`AnAction.setShortcutSet()`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)                                    | Made public in 2023.3                           |
 | [`AnimatedIcon.ANIMATION_IN_RENDERER_ALLOWED`](%gh-ic%/platform/ide-core/src/com/intellij/ui/AnimatedIcon.java)                                      | Made public in 2021.3                           |
 | [`BaseExpirableExecutor.expireWith()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/BaseExpirableExecutor.java)                    | Made public in 2023.2                           |
 | [`BundleBase`](%gh-ic%/platform/util/src/com/intellij/BundleBase.kt)                                                                                 | Made public in 2022.1                           |

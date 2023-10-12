@@ -25,14 +25,40 @@ If an extension needs to have a persistent state, define a separate service resp
 
 ### Implementing the PersistentStateComponent Interface
 
-The implementation of `PersistentStateComponent` needs to be parameterized with the type of state class.
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+The easiest way to implement a persistent state component in Kotlin is extending [`SimplePersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/SimplePersistentStateComponent.kt), which implements `PersistentStateComponent`.
+
+`SimplePersistentStateComponent` is parameterized by a subclass of [`BaseState`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/BaseState.kt).
+`BaseState` provides set of handy [property delegates](https://kotlinlang.org/docs/delegated-properties.html), which make it easy to create properties with default values.
+In addition, delegates track property modifications internally, which help decrease calling `PersistentStateComponent.getState()` by the platform.
+
+It is recommended to create a separate classes for a component and its state:
+
+```kotlin
+@State(...)
+class MySettings : SimplePersistentStateComponent<MyState>(MyState())
+
+class MyState : BaseState() {
+  var value by string()
+}
+```
+
+</tab>
+<tab title="Java" group-key="java">
+
+The implementation of `PersistentStateComponent` must be parameterized with the type of state class.
 The state class can either be a separate class, or the class implementing `PersistentStateComponent`.
 
-In the former case, the state class instance is typically stored as a field in the `PersistentStateComponent` class:
+<chapter title="Persistent Component with Separate State Class">
+
+In this case, the state class instance is typically stored as a field in the `PersistentStateComponent` class.
+When the state is loaded from the storage, it is assigned to the state field (see `loadState()`):
 
 ```java
 @State(...)
-class MyService implements PersistentStateComponent<MyService.State> {
+class MySettings implements PersistentStateComponent<MySettings.State> {
 
   static class State {
     public String value;
@@ -50,23 +76,34 @@ class MyService implements PersistentStateComponent<MyService.State> {
 }
 ```
 
-In the latter case, use the following pattern to implement `getState()` and `loadState()` methods:
+Using a separate state class is the recommended approach.
+
+</chapter>
+
+<chapter title="Persistent Component Being a State Class">
+
+In this case, `getState()` returns the component itself, and `loadState()` copies properties of the state loaded from storage to the component instance:
 
 ```java
 @State(...)
-class MyService implements PersistentStateComponent<MyService> {
+class MySettings implements PersistentStateComponent<MySettings> {
 
   public String stateValue;
 
-  public MyService getState() {
+  public MySettings getState() {
     return this;
   }
 
-  public void loadState(MyService state) {
+  public void loadState(MySettings state) {
     XmlSerializerUtil.copyBean(state, this);
   }
 }
 ```
+
+</chapter>
+
+</tab>
+</tabs>
 
 ### Implementing the State Class
 

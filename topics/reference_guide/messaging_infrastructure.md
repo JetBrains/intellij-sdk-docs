@@ -94,9 +94,6 @@ messageBus.connect().subscribe(ActionTopics.CHANGE_ACTION_TOPIC,
 `MessageBus` instances are available via [`ComponentManager.getMessageBus()`](%gh-ic%/platform/extensions/src/com/intellij/openapi/components/ComponentManager.java).
 Many standard interfaces implement returning a message bus, e.g., [`Application.getMessageBus()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java) and [`Project.getMessageBus()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/Project.java).
 
-A number of public topics are used by the IntelliJ Platform, e.g., [`AppTopics`](%gh-ic%/platform/platform-api/src/com/intellij/AppTopics.java), [`ProjectTopics`](%gh-ic%/platform/projectModel-api/src/com/intellij/ProjectTopics.java), etc.
-So, it's possible to subscribe to them in order to receive information about the processing.
-
 ### Publishing Messages
 
 ![Publishing](publish.svg)

@@ -243,7 +243,14 @@ See the [](#defining-the-storage-location) for more details.
 >
 {style="note"}
 
-If you want to use the default bean serialization but need to customize the storage format in XML (for example, for compatibility with previous versions of your plugin or externally defined XML formats), you can use the `@Tag`, `@Attribute`, `@Property`, `@MapAnnotation`, `@XCollection` annotations.
+If you want to use the default bean serialization but need to customize the storage format in XML (for example, for compatibility with previous versions of a plugin or externally defined XML formats), use the
+[`@Tag`](%gh-ic-master%/platform/util/src/com/intellij/util/xmlb/annotations/Tag.java),
+[`@Attribute`](%gh-ic-master%/platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java),
+[`@Property`](%gh-ic-master%/platform/util/src/com/intellij/util/xmlb/annotations/Property.java),
+[`@MapAnnotation`](%gh-ic-master%/platform/util/src/com/intellij/util/xmlb/annotations/MapAnnotation.java),
+[`@XMap`](%gh-ic-master%/platform/util/src/com/intellij/util/xmlb/annotations/XMap.java),
+and [`@XCollection`](%gh-ic-master%/platform/util/src/com/intellij/util/xmlb/annotations/XCollection.java)
+annotations.
 
 If the state to serialize doesn't map cleanly to a JavaBean, then `org.jdom.Element` can be used as the state class.
 In that case, use the `getState()` method to build an XML element with an arbitrary structure, which then is saved directly in the state XML file.

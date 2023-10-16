@@ -123,6 +123,12 @@ Parameter type of fragment builder functions from `ExternalSystemRunConfiguratio
 Fragment builder functions from `ExternalSystemRunConfigurationUtil` file moved to `SettingsEditorFragmentBuilders` and `ExternalSystemRunConfigurationFragmentBuilders` files
 : Use the new run configuration fragment builders.
 
+### Python Plugin 2023.3
+
+`com.jetbrains.python.psi.PyStringLiteralUtil.getText` method removed
+: Please, use PyExpression.getText method with nullability check
+
+
 ### Kotlin Plugin 2023.3
 
 `org.jetbrains.kotlin.idea.actions.JavaToKotlinAction.Companion` class renamed to `org.jetbrains.kotlin.idea.actions.JavaToKotlinAction.Handler`

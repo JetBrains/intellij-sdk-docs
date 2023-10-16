@@ -20,10 +20,11 @@ The class used to specify how a particular range of text should be highlighted i
 An instance of this class is created for every distinct type of item that should be highlighted (keyword, number, string, etc.).
 
 The `TextAttributesKey` defines the default attributes applied to items of the corresponding type (for example, keywords are bold, numbers are blue, strings are bold and green).
-Highlighting from multiple `TextAttributesKey` items can be layered — for example, one key may define an item's boldness and another color.
+Highlighting from multiple `TextAttributesKey` items can be layered — for example, one key may define an item's boldness and another one its color.
 
 > To inspect applied `TextAttributesKey`(s) for the element at the caret, use <ui-path>Jump to Colors and Fonts</ui-path> action.
 >
+> The underlying `TextAttributeKey`'s external name for items in <ui-path>Settings | Editor | Color Scheme</ui-path> can be inspected using [UI Inspector](internal_ui_inspector.md#inspecting-settings).
 
 ## Color Settings
 

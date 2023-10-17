@@ -6,6 +6,8 @@
 
 IntelliJ Platform's messaging infrastructure is an implementation of [Publisher Subscriber Pattern](https://w.wiki/5xaV) that provides additional features like _broadcasting on hierarchy_ and special _nested events_ processing (a _nested event_ is an event directly or indirectly fired from the callback of another event).
 
+> All available listeners/topics are listed on [](extension_point_list.md) under _Listeners_ sections.
+
 ## Design
 
 The following sections describe the main components of the messaging API:
@@ -17,19 +19,23 @@ The following sections describe the main components of the messaging API:
 
 The [`Topic`](%gh-ic%/platform/extensions/src/com/intellij/util/messages/Topic.java) class serves as an endpoint at the messaging infrastructure.
 Clients are allowed to subscribe to a specific topic within a bus and send messages to that topic within that particular bus.
+To clarify the corresponding message bus, a `Topic` field declaration should be annotated with `Topic.@AppLevel` and/or `Topic.@ProjectLevel`.
 
 ![Topic](topic.svg)
 
-- **Display name** - a human-readable name used for logging/monitoring purposes.
-- **Broadcast direction** - see [](#broadcasting) for more details. Default value is `TO_CHILDREN`.
-- **Listener class** - a business interface for a particular topic.
+#### Topic Properties
+
+Display name
+: Human-readable name used for logging/monitoring purposes.
+
+Broadcast direction
+: See [](#broadcasting) for more details. The default value is `TO_CHILDREN`.
+
+Listener class
+: A business interface for a particular topic.
   Subscribers register an implementation of this interface at the messaging infrastructure.
   Publishers later retrieve objects that conform to the interface (IS-A) and call any methods defined on those implementations.
   The messaging infrastructure takes care of dispatching the message to all subscribers of the topic by calling the same method with the same arguments on the registered implementation callbacks.
-
-To clarify the corresponding message bus, a `Topic` field declaration can be annotated with `com.intellij.util.messages.Topic.AppLevel` or `com.intellij.util.messages.Topic.ProjectLevel`.
-
-> All available listeners/topics are listed on [](extension_point_list.md) under _Listeners_ sections.
 
 ### Message Bus
 
@@ -54,6 +60,8 @@ Also, it can be plugged to standard semi-automatic disposing ([`Disposable`](%gh
 
 ## Messaging API Usage
 
+The sample below assumes a Project-level topic.
+
 ### Defining a Business Interface and a Topic
 
 Create an interface with the business methods and a topic field bound to the business interface:
@@ -61,6 +69,7 @@ Create an interface with the business methods and a topic field bound to the bus
 ```java
 public interface ChangeActionNotifier {
 
+  @Topic.ProjectLevel
   Topic<ChangeActionNotifier> CHANGE_ACTION_TOPIC =
       Topic.create("custom name", ChangeActionNotifier.class);
 
@@ -73,12 +82,12 @@ public interface ChangeActionNotifier {
 
 ![Subscribing](subscribe.svg)
 
-> If targeting 2019.3 or later, use [declarative registration](plugin_listeners.md) if possible.
+> If targeting 2019.3 or later, use [declarative registration](plugin_listeners.md) whenever possible.
 >
 {style="note"}
 
 ```java
-messageBus.connect().subscribe(ActionTopics.CHANGE_ACTION_TOPIC,
+project.getMessageBus().connect().subscribe(ActionTopics.CHANGE_ACTION_TOPIC,
     new ChangeActionNotifier() {
         @Override
         public void beforeAction(Context context) {
@@ -101,7 +110,7 @@ Many standard interfaces implement returning a message bus, e.g., [`Application.
 ```java
 public void doChange(Context context) {
   ChangeActionNotifier publisher =
-      messageBus.syncPublisher(ActionTopics.CHANGE_ACTION_TOPIC);
+      project.getMessageBus().syncPublisher(ActionTopics.CHANGE_ACTION_TOPIC);
   publisher.beforeAction(context);
   try {
     // do action

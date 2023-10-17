@@ -63,6 +63,7 @@ See also [](extension_point_list.md#intellij-community-plugins) and [](plugin_co
 | Maven                     | `org.jetbrains.idea.maven`      |                               |
 | Spring                    | `com.intellij.spring`           | [](spring_api.md)             |
 | Spring Boot               | `com.intellij.spring.boot`      | [](spring_api.md#spring-boot) |
+| YAML                      | `org.jetbrains.plugins.yaml`    |                               |
 
 ### Preparing Sandbox
 

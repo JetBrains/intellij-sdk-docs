@@ -128,6 +128,50 @@ Fragment builder functions from `ExternalSystemRunConfigurationUtil` file moved 
 `org.jetbrains.kotlin.idea.actions.JavaToKotlinAction.Companion` class renamed to `org.jetbrains.kotlin.idea.actions.JavaToKotlinAction.Handler`
 : In order to not load additional code eagerly on action instantiation.
 
+### Markdown Plugin 2023.3
+
+`org.intellij.plugins.markdown.editor.images` package removed
+: Use `org.intellij.plugins.markdown.images` from `intellij.markdown.images` module.
+
+`org.intellij.plugins.markdown.lang.psi.MarkdownPsiElementFactory.createHtmlBlockWithImage(Project, MarkdownImageData)` method removed
+: Use `org.intellij.plugins.markdown.images.editor.ImagePsiElementFactory.createHtmlBlockWithImage` instead.
+
+`org.intellij.plugins.markdown.lang.psi.MarkdownPsiElementFactory.createHtmlImageTag(Project, MarkdownImageData)` method removed
+: Use `org.intellij.plugins.markdown.images.editor.ImagePsiElementFactory.createHtmlImageTag` instead.
+
+`org.intellij.plugins.markdown.lang.psi.MarkdownPsiElementFactory.createImage(Project, String, String, String)` method removed
+: Use `org.intellij.plugins.markdown.images.editor.ImagePsiElementFactory.createImage`.
+
+`action.org.intellij.plugins.markdown.ui.actions.styling.InsertImageAction.insert.popup.text` property removed from resource bundle `messages.MarkdownBundle`
+: Use `org.intellij.plugins.markdown.images.MarkdownImagesBundle` instead.
+
+`markdown.configure.image.dialog.browse.image.title` property removed from resource bundle `messages.MarkdownBundle`
+: Use `org.intellij.plugins.markdown.images.MarkdownImagesBundle` instead.
+
+`markdown.configure.image.dialog.convert.to.html.label` property removed from resource bundle `messages.MarkdownBundle`
+: Use `org.intellij.plugins.markdown.images.MarkdownImagesBundle` instead.
+
+`markdown.configure.image.dialog.description.label` property removed from resource bundle `messages.MarkdownBundle`
+: Use `org.intellij.plugins.markdown.images.MarkdownImagesBundle` instead.
+
+`markdown.configure.image.dialog.height.label` property removed from resource bundle `messages.MarkdownBundle`
+: Use `org.intellij.plugins.markdown.images.MarkdownImagesBundle` instead.
+
+`markdown.configure.image.dialog.path.label` property removed from resource bundle `messages.MarkdownBundle`
+: Use `org.intellij.plugins.markdown.images.MarkdownImagesBundle` instead.
+
+`markdown.configure.image.dialog.screen.reader.text.panel.title` property removed from resource bundle `messages.MarkdownBundle`
+: Use `org.intellij.plugins.markdown.images.MarkdownImagesBundle` instead.
+
+`markdown.configure.image.dialog.title.label` property removed from resource bundle `messages.MarkdownBundle`
+: Use `org.intellij.plugins.markdown.images.MarkdownImagesBundle` instead.
+
+`markdown.configure.image.dialog.width.label` property removed from resource bundle `messages.MarkdownBundle`
+: Use `org.intellij.plugins.markdown.images.MarkdownImagesBundle` instead.
+
+`markdown.insert.image.dialog.title` property removed from resource bundle `messages.MarkdownBundle`
+: Use `org.intellij.plugins.markdown.images.MarkdownImagesBundle` instead.
+
 ## 2023.2
 
 ### IntelliJ Platform 2023.2

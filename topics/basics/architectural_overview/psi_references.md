@@ -11,7 +11,7 @@ For example, consider a simple Java method:
 
 ```java
 public void hello(String message) {
-    System.out.println(message);
+  System.out.println(message);
 }
 ```
 
@@ -45,7 +45,7 @@ In addition to references defined by the semantics of the programming language, 
 Consider the following example:
 
 ```java
-File f = new File("foo.txt");
+File file = new File("foo.txt");
 ```
 
 Here, "foo.txt" has no special meaning from the point of view of the Java syntax - it's just a string literal.

@@ -23,7 +23,7 @@ The following snippet shows the use of a visitor to find all Java local variable
 ```java
 file.accept(new JavaRecursiveElementVisitor() {
   @Override
-  public void visitLocalVariable(PsiLocalVariable variable) {
+  public void visitLocalVariable(@NotNull PsiLocalVariable variable) {
     super.visitLocalVariable(variable);
     System.out.println("Found a variable at offset " +
          variable.getTextRange().getStartOffset());

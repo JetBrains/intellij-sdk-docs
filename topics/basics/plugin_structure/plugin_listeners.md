@@ -42,10 +42,10 @@ To subscribe to this topic from code, you could use something like the following
 ```java
 messageBus.connect().subscribe(VirtualFileManager.VFS_CHANGES,
     new BulkFileListener() {
-        @Override
-        public void after(@NotNull List<? extends VFileEvent> events) {
-          // handle the events
-        }
+      @Override
+      public void after(@NotNull List<? extends VFileEvent> events) {
+        // handle the events
+      }
 });
 ```
 
@@ -96,7 +96,7 @@ package myPlugin;
 public class MyToolWindowListener implements ToolWindowManagerListener {
   private final Project project;
 
-  public MyToolwindowListener(Project project) {
+  public MyToolWindowListener(Project project) {
     this.project = project;
   }
 

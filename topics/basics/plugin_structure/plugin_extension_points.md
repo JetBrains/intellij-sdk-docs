@@ -132,7 +132,7 @@ To refer to all registered extension instances at runtime, declare an [`Extensio
 public class MyExtensionUsingService {
 
   private static final ExtensionPointName<MyBeanClass> EP_NAME =
-          ExtensionPointName.create("my.plugin.myExtensionPoint1");
+      ExtensionPointName.create("my.plugin.myExtensionPoint1");
 
   public void useExtensions() {
     for (MyBeanClass extension : EP_NAME.getExtensionList()) {

@@ -23,24 +23,24 @@ private CredentialAttributes createCredentialAttributes(String key) {
 
 ```java
 String key = null; // e.g. serverURL, accountID
-CredentialAttributes credentialAttributes = createCredentialAttributes(key);
+CredentialAttributes attributes = createCredentialAttributes(key);
+PasswordSafe passwordSafe = PasswordSafe.getInstance();
 
-Credentials credentials = PasswordSafe.getInstance().get(credentialAttributes);
+Credentials credentials = passwordSafe.get(attributes);
 if (credentials != null) {
   String password = credentials.getPasswordAsString();
 }
 
 // or get password only
-String password = PasswordSafe.getInstance().getPassword(credentialAttributes);
+String password = passwordSafe.getPassword(attributes);
 ```
 
 ### Store Credentials
 
 ```java
-CredentialAttributes credentialAttributes =
-    createCredentialAttributes(serverId); // see previous sample
+CredentialAttributes attributes = createCredentialAttributes(key);
 Credentials credentials = new Credentials(username, password);
-PasswordSafe.getInstance().set(credentialAttributes, credentials);
+PasswordSafe.getInstance().set(attributes, credentials);
 ```
 
 To remove stored credentials, pass `null` for the `credentials` parameter.

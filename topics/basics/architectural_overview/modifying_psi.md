@@ -40,24 +40,8 @@ Just as everywhere else in the IntelliJ Platform API, the text passed to `create
 As an example of this approach, see the quickfix in the `ComparingStringReferencesInspection` [example](code_inspections.md):
 
 ```java
-// binaryExpression holds a PSI expression of the form "x == y", which needs to be replaced with "x.equals(y)"
-PsiBinaryExpression binaryExpression = (PsiBinaryExpression) descriptor.getPsiElement();
-IElementType opSign = binaryExpression.getOperationTokenType();
-PsiExpression lExpr = binaryExpression.getLOperand();
-PsiExpression rExpr = binaryExpression.getROperand();
-
-// Step 1: Create a replacement fragment from text, with "a" and "b" as placeholders
-PsiElementFactory factory = JavaPsiFacade.getInstance(project).getElementFactory();
-PsiMethodCallExpression equalsCall =
-    (PsiMethodCallExpression) factory.createExpressionFromText("a.equals(b)", null);
-
-// Step 2: replace "a" and "b" with elements from the original file
-equalsCall.getMethodExpression().getQualifierExpression().replace(lExpr);
-equalsCall.getArgumentList().getExpressions()[0].replace(rExpr);
-
-// Step 3: replace a larger element in the original file with the replacement tree
-PsiExpression result = (PsiExpression) binaryExpression.replace(equalsCall);
 ```
+{src="comparing_string_references_inspection/src/main/java/org/intellij/sdk/codeInspection/ComparingStringReferencesInspection.java" include-symbol="applyFix"}
 
 ## Maintaining Tree Structure Consistency
 

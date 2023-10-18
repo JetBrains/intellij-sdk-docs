@@ -98,13 +98,9 @@ public class ComparingStringReferencesInspection extends AbstractBaseJavaLocalIn
       return InspectionBundle.message("inspection.comparing.string.references.use.quickfix");
     }
 
-    /**
-     * This method manipulates the PSI tree to replace 'a==b' with 'a.equals(b)' or 'a!=b' with '!a.equals(b)'.
-     *
-     * @param project    The project that contains the file being edited.
-     * @param descriptor A problem found by this inspection.
-     */
     public void applyFix(@NotNull Project project, @NotNull ProblemDescriptor descriptor) {
+      // binaryExpression holds a PSI expression of the form "x == y",
+      // which needs to be replaced with "x.equals(y)"
       PsiBinaryExpression binaryExpression = (PsiBinaryExpression) descriptor.getPsiElement();
       IElementType opSign = binaryExpression.getOperationTokenType();
       PsiExpression lExpr = binaryExpression.getLOperand();
@@ -112,23 +108,29 @@ public class ComparingStringReferencesInspection extends AbstractBaseJavaLocalIn
       if (rExpr == null) {
         return;
       }
-
+      // Step 1: Create a replacement fragment from text, with "a" and "b" as placeholders
       PsiElementFactory factory = JavaPsiFacade.getInstance(project).getElementFactory();
       PsiMethodCallExpression equalsCall =
           (PsiMethodCallExpression) factory.createExpressionFromText("a.equals(b)", null);
-
-      PsiExpression qualifierExpression = equalsCall.getMethodExpression().getQualifierExpression();
+      // Step 2: Replace "a" and "b" with elements from the original file
+      PsiExpression qualifierExpression =
+          equalsCall.getMethodExpression().getQualifierExpression();
       assert qualifierExpression != null;
       qualifierExpression.replace(lExpr);
       equalsCall.getArgumentList().getExpressions()[0].replace(rExpr);
-
+      // Step 3: Replace a larger element in the original file with the replacement tree
       PsiExpression result = (PsiExpression) binaryExpression.replace(equalsCall);
 
+      // Steps 4-6 needed only for negation
       if (opSign == JavaTokenType.NE) {
-        PsiPrefixExpression negation = (PsiPrefixExpression) factory.createExpressionFromText("!a", null);
+        // Step 4: Create a replacement fragment with negation and negated operand placeholder
+        PsiPrefixExpression negation =
+            (PsiPrefixExpression) factory.createExpressionFromText("!a", null);
         PsiExpression operand = negation.getOperand();
         assert operand != null;
+        // Step 5: Replace operand placeholder with the actual expression
         operand.replace(result);
+        // Step 6: Replace the result with the negated expression
         result.replace(negation);
       }
     }
@@ -137,7 +139,5 @@ public class ComparingStringReferencesInspection extends AbstractBaseJavaLocalIn
     public String getFamilyName() {
       return getName();
     }
-
   }
-
 }

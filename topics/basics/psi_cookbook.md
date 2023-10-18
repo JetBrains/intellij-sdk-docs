@@ -1,6 +1,6 @@
-# PSI Cookbook
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# PSI Cookbook
 
 <link-summary rel="excerpt"/>
 <p id="excerpt">
@@ -56,9 +56,9 @@ Unlike [Developing Custom Language Plugins](custom_language_support.md), it is a
 ### How do I get a reference to the containing package of a Java class?
 
 ```java
-  PsiJavaFile javaFile = (PsiJavaFile)psiClass.getContainingFile();
-  PsiPackage psiPackage = JavaPsiFacade.getInstance(project)
-        .findPackage(javaFile.getPackageName());
+PsiJavaFile javaFile = (PsiJavaFile) psiClass.getContainingFile();
+PsiPackage psiPackage = JavaPsiFacade.getInstance(project)
+    .findPackage(javaFile.getPackageName());
 ```
 
 or

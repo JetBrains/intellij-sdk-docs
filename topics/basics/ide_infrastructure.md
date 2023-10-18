@@ -1,6 +1,6 @@
-# IDE Infrastructure
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+# IDE Infrastructure
 
 <link-summary>General IDE-level functionality (logging, error reporting, environment/installation info).</link-summary>
 
@@ -21,13 +21,11 @@ Plugins should obtain a dedicated instance:
 import com.intellij.openapi.diagnostic.Logger;
 
 public class MyPluginClass {
-
   private static final Logger LOG = Logger.getInstance(MyPluginClass.class);
 
   public void someMethod() {
     LOG.info("someMethod() was called");
   }
-
 }
 ```
 
@@ -41,7 +39,6 @@ import com.intellij.openapi.diagnostic.logger
 private val LOG = logger<MyPluginClass>()
 
 class MyPluginClass {
-
   fun someMethod() {
     LOG.info("someMethod() was called")
   }
@@ -53,8 +50,7 @@ If logging is used only to report exceptions, use convenience method `thisLogger
 ```kotlin
 try {
   // some code
-}
-catch (e: Throwable) {
+} catch (e: Throwable) {
   thisLogger().error("some code failed", e)
 }
 ```

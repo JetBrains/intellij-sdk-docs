@@ -135,7 +135,7 @@ See the example below.
 
 ```java
 class LocalDateTimeConverter extends Converter<LocalDateTime> {
-  public LocalDateTime fromString(String value) {
+  public LocalDateTime fromString(@NotNull String value) {
     long epochMilli = Long.parseLong(value);
     ZoneId zoneId = ZoneId.systemDefault();
     return Instant.ofEpochMilli(epochMilli).atZone(zoneId).toLocalDateTime();

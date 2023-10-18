@@ -1,6 +1,6 @@
-# Element Patterns
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+# Element Patterns
 
 <link-summary rel="excerpt"/>
 <p id="excerpt">
@@ -43,8 +43,9 @@ For instance, an example can be found in the JavaFX plugin [`FxmlReferencesContr
 
 ```java
 XmlAttributeValuePattern attributeValueInFxml =
-  XmlPatterns.xmlAttributeValue().inVirtualFile(
-    virtualFile().withExtension(JavaFxFileTypeFactory.FXML_EXTENSION));
+    XmlPatterns.xmlAttributeValue().inVirtualFile(
+        virtualFile().withExtension(JavaFxFileTypeFactory.FXML_EXTENSION)
+    );
 ```
 
 As shown in the code above, element patterns can be stacked and combined to create more complex conditions.
@@ -52,13 +53,12 @@ As shown in the code above, element patterns can be stacked and combined to crea
 
 ```java
 PsiElementPattern.Capture<PsiElement> AFTER_COMMA_OR_BRACKET_IN_ARRAY =
-  psiElement().
-  afterLeaf("[", ",").
-  withSuperParent(2, JsonArray.class).
-  andNot(
-    psiElement().
-    withParent(JsonStringLiteral.class)
-  );
+    psiElement()
+        .afterLeaf("[", ",")
+        .withSuperParent(2, JsonArray.class)
+        .andNot(
+            psiElement().withParent(JsonStringLiteral.class)
+        );
 ```
 
 The above pattern makes sure that the PSI element:

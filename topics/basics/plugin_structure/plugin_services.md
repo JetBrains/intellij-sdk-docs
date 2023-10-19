@@ -1,6 +1,6 @@
-# Services
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Services
 
 <link-summary>Registering and using on-demand services to encapsulate plugin functionality.</link-summary>
 
@@ -157,7 +157,7 @@ Application-level service:
 - Implementation:
 
   ```java
-  public class MyAppServiceImpl implements MyAppService {
+  public final class MyAppServiceImpl implements MyAppService {
     @Override
     public void doSomething(String param) {
       // ...
@@ -178,7 +178,7 @@ Project-level service:
 - Implementation:
 
   ```java
-  public class MyProjectServiceImpl implements MyProjectService {
+  public final class MyProjectServiceImpl implements MyProjectService {
     private final Project myProject;
 
     public MyProjectServiceImpl(Project project) {

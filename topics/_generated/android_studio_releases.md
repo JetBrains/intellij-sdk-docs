@@ -6,6 +6,7 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Iguana \| 2023.2.1 Canary 9 | ![Canary][canary] | October 19, 2023 | **2023.2.1.9**<p>AI-232.10072.27.2321.10977308</p> | **2023.2**<p>232.1007.27</p> |
 | Iguana \| 2023.2.1 Canary 8 | ![Canary][canary] | October 19, 2023 | **2023.2.1.8**<p>AI-232.9921.47.2321.10958940</p> | **2023.2.2**<p>232.9921.47</p> |
 | Iguana \| 2023.2.1 Canary 7 | ![Canary][canary] | October 5, 2023 | **2023.2.1.7**<p>AI-232.9921.47.2321.10905494</p> | **2023.2.2**<p>232.9921.47</p> |
 | Iguana \| 2023.2.1 Canary 6 | ![Canary][canary] | September 28, 2023 | **2023.2.1.6**<p>AI-232.9921.47.2321.10875067</p> | **2023.2.2**<p>232.9921.47</p> |
@@ -469,11 +470,11 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Iguana \| 2023.2.1 Canary 9 | ![Canary][canary] | October 19, 2023 | **2023.2.1.9**<p>AI-232.10072.27.2321.10977308</p> | **2023.2**<p>232.1007.27</p> |
 | Iguana \| 2023.2.1 Canary 8 | ![Canary][canary] | October 19, 2023 | **2023.2.1.8**<p>AI-232.9921.47.2321.10958940</p> | **2023.2.2**<p>232.9921.47</p> |
 | Iguana \| 2023.2.1 Canary 7 | ![Canary][canary] | October 5, 2023 | **2023.2.1.7**<p>AI-232.9921.47.2321.10905494</p> | **2023.2.2**<p>232.9921.47</p> |
 | Iguana \| 2023.2.1 Canary 6 | ![Canary][canary] | September 28, 2023 | **2023.2.1.6**<p>AI-232.9921.47.2321.10875067</p> | **2023.2.2**<p>232.9921.47</p> |
 | Hedgehog \| 2023.1.1 RC 1 | ![RC][rc] | October 17, 2023 | **2023.1.1.23**<p>AI-231.9392.1.2311.10949950</p> | **2023.1.5**<p>231.9392.1</p> |
-| Giraffe \| 2022.3.1 Patch 2 | ![Patch][patch] | September 28, 2023 | **2022.3.1.20**<p>AI-223.8836.35.2231.10811636</p> | **2022.3.3**<p>223.8836.35</p> |
 
 [release]: https://img.shields.io/badge/-Release-blue?style=flat-square
 [patch]: https://img.shields.io/badge/-Patch-orange?style=flat-square

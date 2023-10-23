@@ -1,6 +1,6 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
-
 # Creating a Theme Project
+
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Creating a theme plugin project with Plugin DevKit wizard and generated project overview.</link-summary>
 
@@ -8,7 +8,7 @@ This documentation page describes a DevKit-based theme project generated with th
 
 ## Creating a Theme with New Project Wizard
 
-Before creating a theme project, make sure that [development environment is set up](setting_up_theme_environment.md).
+> Before creating a theme project, make sure that [development environment is set up](setting_up_theme_environment.md).
 
 <procedure title="Create Theme Plugin" id="create-theme">
 
@@ -51,7 +51,7 @@ See [](theme_structure.md) for more details.
 Theme plugin project [created with the new project wizard](#create-theme) contains a single theme description file by default.
 In case a plugin needs to provide multiple themes (e.g., dark and light variants), it is possible to add them with the dedicated action.
 
-Additional plugin themes can be added using the DevKit Theme Wizard, which is a part of the Plugin DevKit bundled in IntelliJ IDEA.
+Additional plugin themes can be added using the DevKit Theme Wizard, which is a part of the <control>Plugin DevKit</control> plugin.
 The wizard can be used for both DevKit-based and Gradle-based plugins.
 
 <procedure title="Add Theme" id="add-theme">

@@ -22,6 +22,15 @@
 
 </snippet>
 
+<snippet id="pluginDevKitAvailability">
+
+> When using IntelliJ IDEA 2023.3 or later, the <control>Plugin DevKit</control> plugin must be installed from JetBrains Marketplace ([Plugin Homepage](https://plugins.jetbrains.com/plugin/22851-plugin-devkit))
+> as it is no longer bundled with the IDE.
+>
+{title="Plugin DevKit Availability" style="warning"}
+
+</snippet>
+
 <snippet id="jetbrainsProductOpenSourceLicense">
 
 > Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.

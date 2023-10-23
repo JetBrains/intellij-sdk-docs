@@ -1,25 +1,26 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
-
 # Developing a Plugin
+
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Develop an IntelliJ Platform plugin using Gradle and Gradle IntelliJ Plugin.</link-summary>
 
 IntelliJ Platform plugins can be developed by using either [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/) or [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/) as your IDE.
-Both include the complete set of plugin development tools.
-It is highly recommended to always use the latest available version, as the plugin development tooling support from bundled <control>Plugin DevKit</control> continues supporting new features.
-
-To become more familiar with IntelliJ IDEA, please refer to the [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/).
+It is highly recommended to always use the latest available version, as the plugin development tooling support from <control>Plugin DevKit</control> continues supporting new features.
 
 Before starting with the actual development, make sure to understand all requirements to achieve best [](plugin_user_experience.md).
 
 > In some cases, implementing an actual IntelliJ Platform plugin might not be necessary, as [alternative solutions](plugin_alternatives.md) exist.
 >
+{title="Plugin Alternatives"}
 
 ## Gradle IntelliJ Plugin
 
 The recommended solution for building IntelliJ Platform plugins is [](tools_gradle_intellij_plugin.md).
-The IntelliJ IDEA Ultimate and Community editions bundle the necessary plugins to support Gradle-based plugin development: _Gradle_ and _Plugin DevKit_.
+
+The IntelliJ IDEA Ultimate and Community editions provide the necessary plugins to support Gradle-based plugin development: _Gradle_ and _Plugin DevKit_.
 To verify these plugins are installed and enabled, see the help section about [Managing Plugins](https://www.jetbrains.com/help/idea/managing-plugins.html).
+
+<include from="snippets.md" element-id="pluginDevKitAvailability"/>
 
 Gradle IntelliJ Plugin manages the dependencies of a plugin project - both the base IDE and other [plugin dependencies](plugin_dependencies.md).
 It provides tasks to run the IDE with your plugin and to package and [publish](publishing_plugin.md#publishing-plugin-with-gradle) your plugin to the [JetBrains Marketplace](https://plugins.jetbrains.com).

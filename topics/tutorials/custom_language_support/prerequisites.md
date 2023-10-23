@@ -1,6 +1,6 @@
-# 1. Prerequisites
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# 1. Prerequisites
 
 <link-summary>Steps required before starting implementation of a sample custom language support.</link-summary>
 
@@ -20,7 +20,10 @@ Download the IntelliJ IDEA Community Edition source files as described in the In
 
 ## Install Required Plugins
 
-Make sure that the bundled *Plugin DevKit* and *Gradle* plugins are enabled.
+Make sure that the _Plugin DevKit_ and _Gradle_ plugins are enabled.
+
+<include from="snippets.md" element-id="pluginDevKitAvailability"/>
+
 Install and enable [Grammar-Kit](https://plugins.jetbrains.com/plugin/6606-grammar-kit) and [PsiViewer](https://plugins.jetbrains.com/plugin/227-psiviewer) plugins.
 
 ## Create a Project

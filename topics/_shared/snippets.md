@@ -24,7 +24,9 @@
 
 <snippet id="pluginDevKitAvailability">
 
-> When using IntelliJ IDEA 2023.3 or later, the <control>Plugin DevKit</control> plugin must be installed from JetBrains Marketplace ([Plugin Homepage](https://plugins.jetbrains.com/plugin/22851-plugin-devkit))
+_Plugin DevKit_ plugin is bundled with IntelliJ IDEA until 2023.2.
+
+> When using IntelliJ IDEA 2023.3 or later, the _Plugin DevKit_ plugin must be installed from JetBrains Marketplace ([Plugin Homepage](https://plugins.jetbrains.com/plugin/22851-plugin-devkit))
 > as it is no longer bundled with the IDE.
 >
 {title="Plugin DevKit Availability" style="warning"}

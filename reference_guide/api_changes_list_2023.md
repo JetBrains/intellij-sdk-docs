@@ -92,6 +92,9 @@ JsonPath library unbundled
 `com.intellij.openapi.actionSystem.ex.ActionUtil.showDumbModeWarning(Project, AnActionEvent[])` method removed
 : Use `showDumbModeWarning(@Nullable Project project, @NotNull AnAction action, AnActionEvent @NotNull ... events)` instead
 
+`com.intellij.profiler.eventtrace` package removed
+: Update code usages.
+
 ### Java Plugin 2023.3
 
 `com.siyeh.ipp.base.Intention` class removed

@@ -1,6 +1,6 @@
-# Build Number Ranges
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Build Number Ranges
 
 <link-summary>Defining product compatibility by specifying plugin since-build and until-build ranges.</link-summary>
 
@@ -81,6 +81,7 @@ In some cases, keeping a dedicated branch and corresponding plugin release for e
 
 | Branch number                                                   | IntelliJ Platform version                                                                                                                |
 |-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| [233](https://github.com/JetBrains/intellij-community/tree/233) | 2023.3                                                                                                                                   |
 | [232](https://github.com/JetBrains/intellij-community/tree/232) | 2023.2                                                                                                                                   |
 | [231](https://github.com/JetBrains/intellij-community/tree/231) | 2023.1                                                                                                                                   |
 | [223](https://github.com/JetBrains/intellij-community/tree/223) | 2022.3                                                                                                                                   |

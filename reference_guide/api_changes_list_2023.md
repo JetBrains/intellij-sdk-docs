@@ -1,6 +1,6 @@
-# Incompatible Changes in IntelliJ Platform and Plugins API 2023.*
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+# Incompatible Changes in IntelliJ Platform and Plugins API 2023.*
 
 <!--
 Before documenting a breaking API change, please make sure that the change cannot be avoided in an alternative way.
@@ -181,6 +181,7 @@ Fragment builder functions from `ExternalSystemRunConfigurationUtil` file moved 
 : Use `org.intellij.plugins.markdown.images.MarkdownImagesBundle` instead.
 
 ### Python Plugin 2023.3
+
 `org.jetbrains.plugins.notebooks.jupyter.variables` package removed
 : It is now part of separate _Jupyter_ plugin.
 
@@ -219,7 +220,6 @@ Specify `displayName`/`key` for `Configurable`
 `org.jetbrains.idea.maven.server.MavenEmbedderWrapper.execute(VirtualFile, Collection, Collection, List)` method removed
 : Use `executeGoal(Collection, String, MavenProgressIndicator, MavenConsole)` instead.
 
-
 ### Apache Velocity Plugin 2023.2
 
 `com.intellij.velocity.psi.VtlVariable.getPsiType()` method return type changed from `com.intellij.psi.PsiType` to `com.intellij.velocity.psi.VtlVariableType`
@@ -229,7 +229,6 @@ Specify `displayName`/`key` for `Configurable`
 
 Moved package `com.intellij.jsonpath`
 : It is now part of separate _JSONPath_ plugin. [Add dependency](plugin_dependencies.md) on `com.intellij.jsonpath` to use its API.
-
 
 ## 2023.1
 

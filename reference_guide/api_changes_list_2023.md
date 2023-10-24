@@ -180,6 +180,10 @@ Fragment builder functions from `ExternalSystemRunConfigurationUtil` file moved 
 `markdown.insert.image.dialog.title` property removed from resource bundle `messages.MarkdownBundle`
 : Use `org.intellij.plugins.markdown.images.MarkdownImagesBundle` instead.
 
+### Python Plugin 2023.3
+`org.jetbrains.plugins.notebooks.jupyter.variables` package removed
+: It is now part of separate _Jupyter_ plugin.
+
 ## 2023.2
 
 ### IntelliJ Platform 2023.2

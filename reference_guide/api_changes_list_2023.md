@@ -100,6 +100,11 @@ JsonPath library unbundled
 `com.intellij.codeInsight.TailTypes` class renamed to `com.intellij.codeInsight.JavaTailTypes`
 : Update code usages.
 
+### JavaScript Plugin 2023.3
+
+`com.intellij.lang.javascript.buildTools.npm.PackageJsonUtil.createPackageJson(PsiDirectory, boolean)` method removed
+: Use `com.intellij.lang.javascript.buildTools.npm.PackageJsonFileTemplate.create(PsiDirectory, boolean, Consumer<PsiFile>)` instead.
+
 ### External System Run Configuration 2023.3
 
 Property `com.intellij.openapi.externalSystem.service.ui.command.line.CompletionTableInfo.completionInfo` replaced by suspend function `CompletionTableInfo.collectCompletionInfo`

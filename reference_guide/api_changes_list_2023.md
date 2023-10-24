@@ -102,8 +102,8 @@ JsonPath library unbundled
 
 ### JavaScript Plugin 2023.3
 
-`com.intellij.lang.javascript.buildTools.npm.PackageJsonUtil.createPackageJson(PsiDirectory, boolean) : PsiFile` method removed
-: Replaced by `com.intellij.lang.javascript.buildTools.npm.PackageJsonFileTemplate.create(PsiDirectory, boolean, Consumer<PsiFile>)`.
+`com.intellij.lang.javascript.buildTools.npm.PackageJsonUtil.createPackageJson(PsiDirectory, boolean)` method removed
+: Use `com.intellij.lang.javascript.buildTools.npm.PackageJsonFileTemplate.create(PsiDirectory, boolean, Consumer<PsiFile>)` instead.
 
 ### External System Run Configuration 2023.3
 

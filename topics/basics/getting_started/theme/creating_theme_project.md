@@ -1,6 +1,6 @@
-# Creating a Theme Project
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Creating a Theme Project
 
 <link-summary>Creating a theme plugin project with Plugin DevKit wizard and generated project overview.</link-summary>
 
@@ -51,7 +51,7 @@ See [](theme_structure.md) for more details.
 Theme plugin project [created with the new project wizard](#create-theme) contains a single theme description file by default.
 In case a plugin needs to provide multiple themes (e.g., dark and light variants), it is possible to add them with the dedicated action.
 
-Additional plugin themes can be added using the DevKit Theme Wizard, which is a part of the <control>Plugin DevKit</control> plugin.
+Additional plugin themes can be added using the DevKit Theme Wizard, which is a part of the _Plugin DevKit_ plugin.
 The wizard can be used for both DevKit-based and Gradle-based plugins.
 
 <procedure title="Add Theme" id="add-theme">

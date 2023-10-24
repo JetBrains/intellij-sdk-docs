@@ -6,11 +6,12 @@
 
 <procedure title="Preliminary Steps">
 
+<include from="snippets.md" element-id="pluginDevKitAvailability"/>
+
 Use the following checklist to ensure that you are ready to develop your custom theme:
 
 1. **[IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/)** or **[IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/)** is installed.
 2. **Plugin DevKit** plugin is installed and [enabled in IntelliJ IDEA](https://www.jetbrains.com/help/idea/managing-plugins.html).
-   <include from="snippets.md" element-id="pluginDevKitAvailability"/>
 3. **IntelliJ IDEA CE source code** is checked-out. _(Optional)_
 
    This step is needed only when you plan to debug the IntelliJ Platform code.

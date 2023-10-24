@@ -1,6 +1,6 @@
-# JCEF — Java Chromium Embedded Framework
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# JCEF — Java Chromium Embedded Framework
 
 <link-summary>Embedding Chromium-based browser in IDE.</link-summary>
 
@@ -32,8 +32,9 @@ Embedding of the browser component inside the IDE allows amongst others:
 </tab>
 <tab title="Earlier versions">
 
-Using JCEF requires using a dedicated JetBrains Runtime, please follow these [installation instructions](https://youtrack.jetbrains.com/issue/IDEA-231833#focus=streamItem-27-3993099.0-0) on how to obtain and activate it in your IDE.
-Enable `ide.browser.jcef.enabled` in <control>Registry</control> dialog (invoke <ui-path>Help | Find Action</ui-path> and type "Registry") and restart the IDE for changes to take effect.
+Using JCEF requires using a dedicated JetBrains Runtime.
+See [installation instructions](https://youtrack.jetbrains.com/issue/IDEA-231833#focus=streamItem-27-3993099.0-0) on how to obtain and activate it in your IDE.
+Enable `ide.browser.jcef.enabled` in <control>Registry</control> dialog (invoke <ui-path>Help | Find Action...</ui-path> and type "Registry") and restart the IDE for changes to take effect.
 
 </tab>
 </tabs>
@@ -41,7 +42,7 @@ Enable `ide.browser.jcef.enabled` in <control>Registry</control> dialog (invoke 
 ## Debugging
 
 The [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/), embedded into JCEF, can be used as a debugging and profiling tool.
-It's active by default, so that a Chrome DevTools client can attach to it via the default port number - `9222`.
+It's active by default, so that a Chrome DevTools client can attach to it via the default port number (9222).
 The port number can be configured with the following registry key:
 
 ```
@@ -52,7 +53,8 @@ JavaScript debugger in IntelliJ IDEA Ultimate can thus be used to debug JavaScri
 Use the <control>Attach to Node.js/Chrome</control> configurations with a proper port number.
 
 Also, JCEF provides a default Chrome DevTools front-end (similar to the one in the Chrome browser) that can be opened from the JCEF's browser component context menu via <ui-path>Open DevTools</ui-path>.
-The menu item is available in [internal mode](enabling_internal.md) only, starting with 2021.3 platform registry key `ide.browser.jcef.contextMenu.devTools.enabled` must be set to `true` explicitly.
+The menu item is available in [internal mode](enabling_internal.md) only.
+Starting with version 2021.3, the registry key `ide.browser.jcef.contextMenu.devTools.enabled` must be set to `true` explicitly.
 
 To access the Chrome DevTools in plugin code, use the following API:
 
@@ -80,9 +82,7 @@ See [`JBCefTestHelper`](%gh-ic%/platform/platform-tests/testSrc/com/intellij/ui/
 
 ### JBCefApp
 
-[`JBCefApp`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefApp.java)
-
-Performs JCEF auto-initialization, manages its lifecycle, and provides `JBCefClient` instances.
+[`JBCefApp`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefApp.java) performs JCEF auto-initialization, manages its lifecycle, and provides `JBCefClient` instances.
 
 Before using JCEF, `JBCefApp.isSupported()` check must be called:
 
@@ -102,32 +102,29 @@ To avoid the above problems, the IDE should be run with the bundled JetBrains Ru
 
 ### JBCefClient
 
-[`JBCefClient`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefClient.java)
-
-Is tied to every browser component explicitly or implicitly.
-Used for adding handlers to the associated browser.
+[`JBCefClient`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefClient.java) is tied to every browser component explicitly or implicitly.
+It is used for adding handlers to the associated browser.
 The same instance can be shared among multiple browsers.
 It is up to the developer to use a shared or per-browser instance, depending on the handlers' logic.
-If a client was created explicitly, it should be [disposed](disposers.md) by the developer; otherwise, it is disposed automatically following the associated browser instance disposal.
+If a client was created explicitly, it should be [disposed](disposers.md) by the developer.
+Otherwise, it is disposed automatically following the associated browser instance disposal.
 
 ### JBCefBrowser
 
-[`JBCefBrowser`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefBrowser.java)
-
-Provides the browser UI component:
+[`JBCefBrowser`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefBrowser.java) provides the browser UI component:
 
 ```java
 JComponent getComponent();
 ```
 
-Provides the load methods (callable from non-EDT thread as well):
+It also provides the load methods (callable from non-EDT thread as well):
 
 ```java
 void loadURL(String);
 void loadHTML(String);
 ```
 
-For executing JS code and callbacks (see below), use the wrapped `CefBrowser` instance directly:
+For executing JS code and callbacks (see [](#jbcefjsquery)), use the wrapped `CefBrowser` instance directly:
 
 ```java
 getCefBrowser().executeJavaScript(myCode, myUrl, myLine);
@@ -136,13 +133,13 @@ getCefBrowser().executeJavaScript(myCode, myUrl, myLine);
 By default, `JBCefBrowser` is created with implicit `JBCefClient` (disposed automatically).
 It is possible to pass your own `JBCefClient` (disposed by the developer).
 
-For accessing:
+For accessing the browser use `JBCefClient`:
 
 ```java
 JBCefClient getJBCefClient();
 ```
 
-The simplest way to add a browser component to your UI:
+The simplest way to add a browser component to the plugin UI:
 
 ```java
 JPanel myPanel = ...;
@@ -151,15 +148,12 @@ myPanel.add(new JBCefBrowser("https://example.com").getComponent());
 
 ### JBCefJSQuery
 
-[`JBCefJSQuery`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefJSQuery.java)
+[`JBCefJSQuery`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefJSQuery.java) provides JS query callback mechanism.
 
-Provides JS query callback mechanism.
-
-There's no direct access to JS DOM from Java (like in JavaFX WebView, see also [this issue](https://youtrack.jetbrains.com/issue/JBR-2046)).
+There is no direct access to JS DOM from Java (like in JavaFX WebView, see also [this issue](https://youtrack.jetbrains.com/issue/JBR-2046)).
 Still, JCEF provides an asynchronous way to communicate to JS.
 
-It's simpler to illustrate it by an example.
-Say we want to open a link in an external browser and handle it:
+The example below shows opening a link in an external browser, and handling it:
 
 ```java
 JBCefBrowser myJBCefBrowser = ...;

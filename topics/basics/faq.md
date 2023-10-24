@@ -9,9 +9,6 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 > See also [Explore the IntelliJ Platform API](explore_api.md) for more information and strategies.
 >
 
-## Unresolved Classes after Upgrading to 2019.2 or later
-*  Dependency on Java plugin must be defined, see [](plugin_compatibility.md#java)
-
 ## Accessing and Modifying the Source Code
 
 > See also [](psi.md) and [](psi_cookbook.md)

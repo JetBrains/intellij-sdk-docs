@@ -1,13 +1,11 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-# Incompatible Changes in IntelliJ Platform and Plugins API
+# Incompatible Changes in IntelliJ Platform and Plugins API 2024.*
 
 <!--
-=============== DO NOT RENAME OR MOVE THIS FILE ===============
+Before documenting a breaking API change, please make sure that the change cannot be avoided in an alternative way.
 
-Before documenting a breaking API change, please, make sure that the change cannot be avoided in an alternative way.
-
-APIs marked with @ApiStatus.Experimental, @ApiStatus.Internal, or @ApiStatus.ScheduledForRemoval don't need to be documented.
+APIs marked with @Deprecated(forRemoval=true), @ApiStatus.Experimental, @ApiStatus.Internal/IntellijInternalApi, or @ApiStatus.ScheduledForRemoval don't need to be documented.
 
 To document a new incompatible change, add a new line with the problem pattern followed by a 2nd line with ": "-prefixed human-readable description and recommended fix/action.
 
@@ -59,30 +57,17 @@ An example of a ticket is https://youtrack.jetbrains.com/issue/MP-1218. Until su
 
 NOTE: You are allowed to prettify the pattern using links: [`org.example.Foo`](https://github.com/JetBrains/intellij-community/tree/master/)
 
-NOTE: Entries not starting with code quotes (`name`) can be added to document non-code changes  and will be skipped in API verification.
+NOTE: Entries not starting with code quotes (`name`) can be added to document non-code changes and will be skipped in API verification.
 -->
 
-<link-summary>List of known Breaking API Changes by version</link-summary>
+<link-summary>List of known Breaking API Changes in 2024.*</link-summary>
 
-IntelliJ API may be occasionally changed between releases, leading to existing plugins' incompatibilities with newer IDE builds.
+<include from="snippets.md" element-id="apiChangesHeader"/>
 
-Please see [](verifying_plugin_compatibility.md) on how to use Plugin Verifier and IDE inspections to check such problems.
+<include from="snippets.md" element-id="apiChangesJavaVersion"/>
 
-## Known Breaking Changes
+<include from="tools_gradle_intellij_plugin.md" element-id="gradle_plugin_223_problem"/>
 
-> [Subscribe to Marketplace Developer News](https://jb.gg/mp-updates) to receive news and announcements.
-> Also follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/).
->
+## 2024.1
 
-The following pages list the breaking changes in IDE and plugin releases with required/recommended steps to take by plugin authors.
-
-* [Changes in 2024.*](api_changes_list_2024.md)
-* [Changes in 2023.*](api_changes_list_2023.md)
-* [Changes in 2022.*](api_changes_list_2022.md)
-* [Changes in 2021.*](api_changes_list_2021.md)
-* [Changes in 2020.*](api_changes_list_2020.md)
-* [Changes in 2019.*](api_changes_list_2019.md)
-
-## Library Updates
-
-Information about bundled Third-Party Software/Libraries and their respective versions is available [here](https://www.jetbrains.com/legal/third-party-software/).
+### IntelliJ Platform 2024.1

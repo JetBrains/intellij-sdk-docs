@@ -10,6 +10,7 @@ Plugin authors are encouraged to verify their compatible releases take advantage
 
 <include from="snippets.md" element-id="subscribeNews"/>
 
+* [Changes in 2024.*](api_notable_list_2024.md)
 * [Changes in 2023.*](api_notable_list_2023.md)
 * [Changes in 2022.*](api_notable_list_2022.md)
 * [Changes in 2021.*](api_notable_list_2021.md)

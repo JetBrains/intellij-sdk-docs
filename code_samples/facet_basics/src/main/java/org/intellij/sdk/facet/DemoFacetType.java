@@ -1,4 +1,4 @@
-// Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
 package org.intellij.sdk.facet;
 
@@ -18,7 +18,7 @@ import javax.swing.*;
  * Provides creation of {@link DemoFacet} and associated Configuration.
  * Allows application of this facet to all {@link ModuleType} instances.
  */
-public class DemoFacetType extends FacetType<DemoFacet, DemoFacetConfiguration> {
+final class DemoFacetType extends FacetType<DemoFacet, DemoFacetConfiguration> {
 
   public static final String FACET_ID = "DEMO_FACET_ID";
   public static final String FACET_NAME = "SDK Facet";

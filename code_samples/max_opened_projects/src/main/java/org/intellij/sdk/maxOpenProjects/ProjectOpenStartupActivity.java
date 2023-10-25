@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Invoked on opening a project.
  */
-public class ProjectOpenStartupActivity implements StartupActivity.DumbAware {
+final class ProjectOpenStartupActivity implements StartupActivity.DumbAware {
 
   @Override
   public void runActivity(@NotNull Project project) {

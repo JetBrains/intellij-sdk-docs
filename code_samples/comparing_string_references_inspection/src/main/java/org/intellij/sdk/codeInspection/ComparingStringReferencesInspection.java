@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
  * Implements an inspection to detect when String references are compared using 'a==b' or 'a!=b'.
  * The quick fix converts these comparisons to 'a.equals(b) or '!a.equals(b)' respectively.
  */
-public class ComparingStringReferencesInspection extends AbstractBaseJavaLocalInspectionTool {
+final class ComparingStringReferencesInspection extends AbstractBaseJavaLocalInspectionTool {
 
   private final ReplaceWithEqualsQuickFix myQuickFix = new ReplaceWithEqualsQuickFix();
 

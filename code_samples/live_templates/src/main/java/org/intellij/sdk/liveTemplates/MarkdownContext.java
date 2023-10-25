@@ -6,9 +6,9 @@ import com.intellij.codeInsight.template.TemplateActionContext;
 import com.intellij.codeInsight.template.TemplateContextType;
 import org.jetbrains.annotations.NotNull;
 
-public class MarkdownContext extends TemplateContextType {
+final class MarkdownContext extends TemplateContextType {
 
-  protected MarkdownContext() {
+  MarkdownContext() {
     super("Markdown");
   }
 

@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 
-public class SimplePropertyIconProvider extends IconProvider {
+final class SimplePropertyIconProvider extends IconProvider {
 
   @Override
   public @Nullable Icon getIcon(@NotNull PsiElement element, int flags) {

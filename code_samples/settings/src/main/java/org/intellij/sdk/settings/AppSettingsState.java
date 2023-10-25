@@ -19,12 +19,12 @@ import org.jetbrains.annotations.Nullable;
     name = "org.intellij.sdk.settings.AppSettingsState",
     storages = @Storage("SdkSettingsPlugin.xml")
 )
-public class AppSettingsState implements PersistentStateComponent<AppSettingsState> {
+final class AppSettingsState implements PersistentStateComponent<AppSettingsState> {
 
   public String userId = "John Q. Public";
   public boolean ideaStatus = false;
 
-  public static AppSettingsState getInstance() {
+  static AppSettingsState getInstance() {
     return ApplicationManager.getApplication().getService(AppSettingsState.class);
   }
 

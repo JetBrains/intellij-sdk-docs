@@ -15,7 +15,7 @@ import java.awt.*;
 import java.util.Calendar;
 import java.util.Objects;
 
-public class CalendarToolWindowFactory implements ToolWindowFactory, DumbAware {
+final class CalendarToolWindowFactory implements ToolWindowFactory, DumbAware {
 
   @Override
   public void createToolWindowContent(@NotNull Project project, @NotNull ToolWindow toolWindow) {

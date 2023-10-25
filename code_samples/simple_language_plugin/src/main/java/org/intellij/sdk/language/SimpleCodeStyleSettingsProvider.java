@@ -12,7 +12,7 @@ import com.intellij.psi.codeStyle.CustomCodeStyleSettings;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class SimpleCodeStyleSettingsProvider extends CodeStyleSettingsProvider {
+final class SimpleCodeStyleSettingsProvider extends CodeStyleSettingsProvider {
 
   @Override
   public CustomCodeStyleSettings createCustomSettings(@NotNull CodeStyleSettings settings) {

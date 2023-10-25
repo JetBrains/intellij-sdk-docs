@@ -1,4 +1,4 @@
-// Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
 package org.intellij.sdk.framework;
 
@@ -15,11 +15,11 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 
-public class DemoFramework extends FrameworkTypeEx {
+final class DemoFramework extends FrameworkTypeEx {
 
   public static final String FRAMEWORK_ID = "org.intellij.sdk.framework.DemoFramework";
 
-  protected DemoFramework() {
+  DemoFramework() {
     super(FRAMEWORK_ID);
   }
 

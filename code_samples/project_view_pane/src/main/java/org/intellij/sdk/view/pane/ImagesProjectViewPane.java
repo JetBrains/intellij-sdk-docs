@@ -13,11 +13,11 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.tree.DefaultTreeModel;
 
-public class ImagesProjectViewPane extends ProjectViewPane {
+final class ImagesProjectViewPane extends ProjectViewPane {
 
   public static final String ID = "IMAGES";
 
-  protected ImagesProjectViewPane(Project project) {
+  ImagesProjectViewPane(Project project) {
     super(project);
   }
 

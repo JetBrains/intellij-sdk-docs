@@ -17,7 +17,7 @@ import org.jetbrains.annotations.Nullable;
  * Implements an intention action to replace a ternary statement with if-then-else.
  */
 @NonNls
-public class ConditionalOperatorConverter extends PsiElementBaseIntentionAction implements IntentionAction {
+final class ConditionalOperatorConverter extends PsiElementBaseIntentionAction implements IntentionAction {
 
   /**
    * Checks whether this intention is available at the caret offset in file - the caret must sit just before a "?"

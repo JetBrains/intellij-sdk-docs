@@ -17,7 +17,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.Objects;
 
-public class SimpleChooseByNameContributor implements ChooseByNameContributorEx {
+final class SimpleChooseByNameContributor implements ChooseByNameContributorEx {
 
   @Override
   public void processNames(@NotNull Processor<? super String> processor,

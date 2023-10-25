@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class SimpleFoldingBuilder extends FoldingBuilderEx implements DumbAware {
+final class SimpleFoldingBuilder extends FoldingBuilderEx implements DumbAware {
 
   @Override
   public FoldingDescriptor @NotNull [] buildFoldRegions(@NotNull PsiElement root, @NotNull Document document, boolean quick) {

@@ -18,7 +18,7 @@ Access to the model must be performed in a read or write action for the followin
 - [](virtual_file_system.md) (VFS)
 - [Project root model](project_structure.md).
 
-> Threading model has changed in 2023.3, please make sure to choose the correct version below.
+> Threading model has changed in 2023.3, please make sure to choose the correct version in the tabs below.
 >
 {title="2023.3 Threading Model Changes" style="warning"}
 
@@ -29,15 +29,20 @@ Access to the model must be performed in a read or write action for the followin
 <tab title="2023.3 and later" group-key="newThreading">
 
 Reading data is allowed from any thread.
+
 Read operations need to be wrapped in a read action (RA) if not invoked via `Application.invokeLater()`.
+
+If invoked from a non-UI thread or from the UI thread but via `SwingUtilities.invokeLater()`, it must be explicitly wrapped in a read action (RA).
 
 </tab>
 
 <tab title="Earlier versions" group-key="oldThreading">
 
 Reading data is allowed from any thread.
+
 Reading data from the UI thread does not require any special effort.
-However, read operations performed from any other thread need to be wrapped in a read action (RA).
+
+However, read operations performed from any other thread must be wrapped in a read action (RA).
 
 </tab>
 
@@ -54,6 +59,7 @@ As a rule of thumb, whenever starting a read action, check if the PSI/VFS/projec
 ### Write Access
 
 Writing data is only allowed from the UI thread, and write operations always need to be wrapped in a write action (WA).
+
 Modifying the model is only allowed from write-safe contexts, including user actions and `SwingUtilities.invokeLater()` calls from them (see [](#modality-and-invokelater)).
 
 You may not modify PSI, VFS, or project model from inside UI renderers or `SwingUtilities.invokeLater()` calls.

@@ -1,6 +1,6 @@
-# General Threading Rules
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# General Threading Rules
 
 <!-- short link: https://jb.gg/ij-platform-threading -->
 
@@ -8,7 +8,7 @@
 
 ## Read-Write Lock
 
-> [Thread Access Info](https://plugins.jetbrains.com/plugin/16815-thread-access-info) plugin visualizes Read/Write Access and Thread information in debugger.
+> [Thread Access Info](https://plugins.jetbrains.com/plugin/16815-thread-access-info) plugin visualizes Read/Write Access and Thread information in the debugger.
 
 In general, code-related data structures in the IntelliJ Platform are covered by a single [readers-writer (RW) lock](https://en.wikipedia.org/wiki/Readers%E2%80%93writer_lock){ignore-vars="true"}.
 
@@ -104,8 +104,8 @@ The progress can be marked as canceled by calling `ProgressIndicator.cancel()`.
 The process reacts to this by calling `ProgressIndicator.checkCanceled()` (or `ProgressManager.checkCanceled()` if no indicator instances at hand).
 This call throws a special unchecked [`ProcessCanceledException`](%gh-ic%/platform/util/base/src/com/intellij/openapi/progress/ProcessCanceledException.java) (PCE) if the background process has been canceled.
 
-All code working with [PSI](psi.md), or in other kinds of background processes, must be prepared for [`ProcessCanceledException`](%gh-ic%/platform/util/base/src/com/intellij/openapi/progress/ProcessCanceledException.java) (PCE) being thrown from any point.
-This exception should never be logged but rethrown, and it'll be handled in the infrastructure that started the process.
+All code working with [PSI](psi.md), or in other kinds of background processes, must be prepared for [`ProcessCanceledException`](%gh-ic%/platform/util/base/src/com/intellij/openapi/progress/ProcessCanceledException.java) (PCE) being thrown at any point.
+This exception must never be logged but rethrown, and it'll be handled in the infrastructure that started the process.
 Use inspection <control>Plugin DevKit | Code | 'ProcessCanceledException' handled incorrectly</control> (2023.3).
 
 The `checkCanceled()` should be called often enough to guarantee the process's smooth cancellation.
@@ -147,8 +147,8 @@ The next time the background thread calls `checkCanceled()`, a `ProcessCanceledE
 
 There are two recommended ways of doing this:
 
-* If on UI thread, call `ReadAction.nonBlocking()` which returns [`NonBlockingReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/NonBlockingReadAction.java) (NBRA)
-* If already in a background thread, use `ProgressManager.getInstance().runInReadActionWithWriteActionPriority()` in a loop, until it passes or the whole activity becomes obsolete.
+* If on UI thread, call [`ReadAction.nonBlocking()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) which returns [`NonBlockingReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/NonBlockingReadAction.java) (NBRA)
+* If already in a background thread, use [`ProgressManager.runInReadActionWithWriteActionPriority()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java) in a loop, until it passes or the whole activity becomes obsolete.
 
 In both approaches, always check at the start of each read action if the objects are still valid, and if the whole operation still makes sense (i.e., not canceled by the user, the project isn't closed, etc.).
 With `ReadAction.nonBlocking()`, use `expireWith()` or `expireWhen()` for that.
@@ -166,11 +166,18 @@ Meanwhile, please try to speed up what you can in your plugin as it will be gene
 For implementations of [`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java), plugin authors should specifically
 review the documentation of `AnAction.getActionUpdateThread()` in the [](basic_action_system.md) section as it describes how threading works for actions.
 
-`WriteAction`s currently have to happen on UI thread, so to speed them up, you can try moving as much as possible out of write action into a preparation step which can be then invoked in background (e.g., using `ReadAction.nonBlocking()`, see above).
+`WriteAction`s currently have to happen on UI thread.
+To speed them up, as much as possible should be moved out of the write action into a preparation step which can be then invoked in the background (e.g., using `ReadAction.nonBlocking()`, see above).
 
-Don't do anything expensive inside event listeners.
-Ideally, you should only clear some caches.
-You can also schedule background processing of events, but be prepared that some new events might be delivered before your background processing starts, and thus the world might have changed by that moment or even in the middle of background processing.
-Consider using [`MergingUpdateQueue`](%gh-ic%/platform/ide-core/src/com/intellij/util/ui/update/MergingUpdateQueue.java) and `ReadAction.nonBlocking()` to mitigate these issues.
+#### Event Listeners
 
-Massive batches of VFS events can be pre-processed in background, see [`AsyncFileListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/AsyncFileListener.java) (2019.2 or later).
+Listeners must not perform any heavy operations.
+Ideally, they should only clear some caches.
+
+It is also possible to schedule background processing of events, but be prepared that some new events might be delivered before the background processing starts
+— and thus the world might have changed by that moment or even in the middle of background processing.
+Consider using [`MergingUpdateQueue`](%gh-ic%/platform/ide-core/src/com/intellij/util/ui/update/MergingUpdateQueue.java) and `ReadAction.nonBlocking()` (see [](#read-action-cancellability)) to mitigate these issues.
+
+#### VFS Events
+
+Massive batches of VFS events can be pre-processed in the background, see [`AsyncFileListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/AsyncFileListener.java) (2019.2 or later).

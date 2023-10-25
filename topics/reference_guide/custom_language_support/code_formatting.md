@@ -120,6 +120,10 @@ The return value of `createIndentOptions()` determines the default indent size.
 **Example**:
 [Custom Language Support Tutorial: Code Style Settings](code_style_settings.md)
 
+## Restricting Formatting
+
+Use [`LanguageFormattingRestriction`](%gh-ic%/platform/code-style-api/src/com/intellij/lang/LanguageFormattingRestriction.java) to restrict (automatic) code formatting for given contexts.
+
 ## External Code Formatter
 
 _2021.3_

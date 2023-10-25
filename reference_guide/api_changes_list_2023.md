@@ -185,6 +185,11 @@ Fragment builder functions from `ExternalSystemRunConfigurationUtil` file moved 
 `org.jetbrains.plugins.notebooks.jupyter.variables` package removed
 : It is now part of separate _Jupyter_ plugin.
 
+### Database Plugin 2023.3
+
+`com.intellij.database.datagrid.DataGrid.getName(ModelIndex<GridColumn>)` method removed
+: Only recompilation is needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
+
 ## 2023.2
 
 ### IntelliJ Platform 2023.2
@@ -211,6 +216,9 @@ Specify `displayName`/`key` for `Configurable`
 
 `com.intellij.database.datagrid.CoreGrid(ModelIndex<Row>, ModelIndex<Column>)` method parameter type changed from `ModelIndex<Row>` to `int`
 : `ModelIndex` class is used to reference data in the table model. Row indexes in the table model start with 0, even when the table is scrolled to page _N>1_. Parameter type was changed to `int` to indicate that it is an absolute index in the DB table.
+
+`com.intellij.database.datagrid.DataGrid.getName(ModelIndex<GridColumn>)` abstract method added
+: Only recompilation is needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
 
 ### Maven Plugin 2023.2
 

@@ -95,6 +95,47 @@ JsonPath library unbundled
 `com.intellij.profiler.eventtrace` package removed
 : Update code usages.
 
+#### Collaboration Tools Module 2023.3
+
+`com.intellij.collaboration.ui.codereview.action.CodeReviewCheckoutRemoteBranchAction` class removed
+: Action moved to a view model
+
+`com.intellij.collaboration.ui.codereview.details.CodeReviewDetailsBranchComponentFactory.create(CoroutineScope, CodeReviewBranchesViewModel, AnAction, DataContext)` method removed
+: Action moved to a view model
+
+`com.intellij.collaboration.ui.codereview.diff.viewer.DiffEditorUtilKt` class removed
+: Moved to `com.intellij.collaboration.ui.codereview.editor.EditorComponentInlaysUtilKt.controlInlaysIn`
+
+`com.intellij.collaboration.ui.toolwindow.ReviewListTabComponentDescriptor` class removed
+: Descriptor removed in favour of tab type `com.intellij.collaboration.ui.toolwindow.ReviewTab`
+
+`com.intellij.collaboration.ui.toolwindow.ReviewTabsController` class removed
+: Controller reworked to viewmodel `com.intellij.collaboration.ui.toolwindow.ReviewToolwindowProjectViewModel`
+
+`com.intellij.collaboration.ui.toolwindow.ReviewToolwindowDataKeys.getREVIEW_TABS_CONTROLLER()` method removed
+: Controller reworked to viewmodel `com.intellij.collaboration.ui.toolwindow.ReviewToolwindowProjectViewModel`
+
+`com.intellij.collaboration.ui.toolwindow.ReviewToolwindowProjectContext` class removed
+: Context reworked to viewmodel `com.intellij.collaboration.ui.toolwindow.ReviewToolwindowProjectViewModel`
+
+`com.intellij.collaboration.ui.toolwindow.ReviewToolwindowViewModel.getProjectVm()` method return type changed from SharedFlow<C> to SharedFlow<PVM>
+: Context reworked to viewmodel `com.intellij.collaboration.ui.toolwindow.ReviewToolwindowProjectViewModel`
+
+`com.intellij.collaboration.ui.toolwindow.ReviewTabsComponentFactory.createReviewListComponent(CoroutineScope, PVM)` abstract method added
+: Context reworked to viewmodel `com.intellij.collaboration.ui.toolwindow.ReviewToolwindowProjectViewModel`
+
+`com.intellij.collaboration.ui.toolwindow.ReviewTabsComponentFactory.createTabComponent(CoroutineScope, PVM, TVM)` abstract method added
+: Context reworked to viewmodel `com.intellij.collaboration.ui.toolwindow.ReviewToolwindowProjectViewModel`
+
+`com.intellij.collaboration.ui.toolwindow.ReviewToolwindowTabsManagerKt.manageReviewToolwindowTabs(CoroutineScope, ToolWindow, ReviewToolwindowViewModel, ReviewTabsController, ReviewTabsComponentFactory, String)` method removed
+: Added a tab viewmodel type
+
+`com.intellij.collaboration.ui.codereview.timeline.TimelineDiffComponentFactory.createDiffComponent(Project, EditorFactory, PatchHunk, Pair, Pair)` method removed
+: Coroutine scope was added to track editor lifetime
+
+`com.intellij.collaboration.ui.codereview.details.model.CodeReviewChangesViewModelBase` class removed
+: Incorrect EDT-reliant implementation removed
+
 ### Java Plugin 2023.3
 
 `com.siyeh.ipp.base.Intention` class removed

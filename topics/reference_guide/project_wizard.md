@@ -114,9 +114,9 @@ Here is an example that creates a module if no other modules exist in the projec
 
 ```java
 @Override
-public void setupProjectStructure(Collection<DetectedProjectRoot> roots,
-                                  ProjectDescriptor projectDescriptor,
-                                  ProjectFromSourcesBuilder builder) {
+public void setupProjectStructure(@NotNull Collection<DetectedProjectRoot> roots,
+                                  @NotNull ProjectDescriptor projectDescriptor,
+                                  @NotNull ProjectFromSourcesBuilder builder) {
   List<ModuleDescriptor> modules = projectDescriptor.getModules();
   if (modules.isEmpty()) {
     modules = new ArrayList<>();

@@ -46,7 +46,7 @@ Sdk projectSdk = ProjectRootManager.getInstance(project).getProjectSdk();
 * To set the project-level SDK name:
 
   ```java
-  ProjectRootManager.getInstance(project).setProjectSdkName(name);
+  ProjectRootManager.getInstance(project).setProjectSdkName(name, sdk.getSdkType().getName());
   ```
 
 See the [project_model](%gh-sdk-samples%/project_model/src/main/java/org/intellij/sdk/project/model/ProjectSdkAction.java) code sample to get more familiar with SDK manipulation toolset.

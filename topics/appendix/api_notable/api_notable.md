@@ -6,7 +6,7 @@
 
 The following pages list notable changes and new features in IDE releases.
 
-Plugin authors are encouraged to verify their compatible releases take advantage of the latest API additions.
+Plugin authors are encouraged to verify their compatible releases and take advantage of the latest API additions.
 
 <include from="snippets.md" element-id="subscribeNews"/>
 

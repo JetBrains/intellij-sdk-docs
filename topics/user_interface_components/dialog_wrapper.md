@@ -75,23 +75,23 @@ Simple definition of a [`DialogWrapper`](%gh-ic%/platform/platform-api/src/com/i
 ```java
 public class SampleDialogWrapper extends DialogWrapper {
 
-    public SampleDialogWrapper() {
-        super(true); // use current window as parent
-        setTitle("Test DialogWrapper");
-        init();
-    }
+  public SampleDialogWrapper() {
+    super(true); // use current window as parent
+    setTitle("Test DialogWrapper");
+    init();
+  }
 
-    @Nullable
-    @Override
-    protected JComponent createCenterPanel() {
-        JPanel dialogPanel = new JPanel(new BorderLayout());
+  @Nullable
+  @Override
+  protected JComponent createCenterPanel() {
+    JPanel dialogPanel = new JPanel(new BorderLayout());
 
-        JLabel label = new JLabel("testing");
-        label.setPreferredSize(new Dimension(100, 100));
-        dialogPanel.add(label, BorderLayout.CENTER);
+    JLabel label = new JLabel("Testing");
+    label.setPreferredSize(new Dimension(100, 100));
+    dialogPanel.add(label, BorderLayout.CENTER);
 
-        return dialogPanel;
-    }
+    return dialogPanel;
+  }
 }
 ```
 

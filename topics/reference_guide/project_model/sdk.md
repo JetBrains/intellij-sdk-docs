@@ -85,7 +85,7 @@ Use `com.intellij.projectSdkSetupValidator` extension point to register an imple
 The following is a simplified example that checks whether an instance of "DemoSdk" has been configured in the project when the user opens a "DemoFileType":
 
 ```kotlin
-class DemoProjectSdkSetupValidator : ProjectSdkSetupValidator {
+internal class DemoProjectSdkSetupValidator : ProjectSdkSetupValidator {
   override fun isApplicableFor(project: Project, file: VirtualFile): Boolean {
     return file.fileType == DemoFileType
   }

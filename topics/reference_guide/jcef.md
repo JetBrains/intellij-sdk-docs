@@ -59,19 +59,19 @@ Starting with version 2021.3, the registry key `ide.browser.jcef.contextMenu.dev
 To access the Chrome DevTools in plugin code, use the following API:
 
 ```java
-JBCefBrowser myBrowser = new JBCefBrowser(myUrl);
-CefBrowser myDevTools = myBrowser.getCefBrowser().getDevTools();
-JBCefBrowser myDevToolsBrowser = JBCefBrowser.createBuilder()
-    .setCefBrowser(myDevTools)
-    .setClient(myBrowser.getJBCefClient())
+JBCefBrowser browser = new JBCefBrowser(myUrl);
+CefBrowser devTools = browser.getCefBrowser().getDevTools();
+JBCefBrowser devToolsBrowser = JBCefBrowser.createBuilder()
+    .setCefBrowser(devTools)
+    .setClient(browser.getJBCefClient())
     .build();
 ```
 
 Or in order to just open it in a separate window:
 
 ```java
-JBCefBrowser myBrowser = new JBCefBrowser(myUrl);
-myBrowser.openDevtools();
+JBCefBrowser browser = new JBCefBrowser(myUrl);
+browser.openDevtools();
 ```
 
 ## Testing
@@ -156,28 +156,28 @@ Still, JCEF provides an asynchronous way to communicate to JS.
 The example below shows opening a link in an external browser, and handling it:
 
 ```java
-JBCefBrowser myJBCefBrowser = ...;
-CefBrowser myCefBrowser = ...;
+JBCefBrowser browser = new JBCefBrowser();
+CefBrowser cefBrowser = browser.getCefBrowser();
 
 // Create a JS query instance
-JBCefJSQuery myJSQueryOpenInBrowser =
-    JBCefJSQuery.create((JBCefBrowserBase)myJBCefBrowser);
+JBCefJSQuery openInBrowserJsQuery =
+    JBCefJSQuery.create((JBCefBrowserBase)browser);
 
 // Add a query handler
-myJSQueryOpenInBrowser.addHandler((link) -> {
+openInBrowserJsQuery.addHandler((link) -> {
       // handle link here
       return null; // can respond back to JS with JBCefJSQuery.Response
     });
 
 // Inject the query callback into JS
-myCefBrowser.executeJavaScript(
+cefBrowser.executeJavaScript(
     "window.JavaPanelBridge = {" +
         "openInExternalBrowser : function(link) {" +
-            myJSQueryOpenInBrowser.inject("link") +
+            openInBrowserJsQuery.inject("link") +
         "}" +
     "};",
-    myCefBrowser.getURL(), 0);
+    cefBrowser.getURL(), 0);
 
 // Dispose the query when necessary
-Disposer.dispose(myJSQueryOpenInBrowser);
+Disposer.dispose(openInBrowserJsQuery);
 ```

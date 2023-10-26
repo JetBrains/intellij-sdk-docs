@@ -34,7 +34,7 @@ In the first step, we create an empty class that extends
 and register it in the <path>[plugin.xml](plugin_configuration_file.md)</path>.
 
 ```java
-public class SimpleDocumentationProvider extends AbstractDocumentationProvider { }
+final class SimpleDocumentationProvider extends AbstractDocumentationProvider { }
 ```
 
 Make sure the class is registered in the <path>plugin.xml</path> between the `extensions` tags, as shown below:

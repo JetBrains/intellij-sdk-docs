@@ -1,6 +1,6 @@
-# Syntax and Error Highlighting
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Syntax and Error Highlighting
 
 <link-summary>Highlighting syntax and semantic code errors on multiple levels.</link-summary>
 
@@ -102,9 +102,9 @@ To highlight a region of text as a warning or error:
 <tab title="2020.1 and later" group-key="2020.1">
 
 ```java
-    holder.newAnnotation(HighlightSeverity.WARNING, "Invalid code") // or HighlightSeverity.ERROR
-        .withFix(new MyFix(psiElement))
-        .create();
+holder.newAnnotation(HighlightSeverity.WARNING, "Invalid code") // or HighlightSeverity.ERROR
+    .withFix(new MyFix(psiElement))
+    .create();
 ```
 
 </tab>
@@ -126,10 +126,10 @@ To apply additional syntax highlighting:
 <tab title="2020.1 and later" group-key="2020.1">
 
 ```java
-    holder.newSilentAnnotation(HighlightSeverity.INFORMATION)
-        .range(rangeToHighlight)
-        .textAttributes(MyHighlighter.EXTRA_HIGHLIGHT_ATTRIBUTE)
-        .create();
+holder.newSilentAnnotation(HighlightSeverity.INFORMATION)
+    .range(rangeToHighlight)
+    .textAttributes(MyHighlighter.EXTRA_HIGHLIGHT_ATTRIBUTE)
+    .create();
 ```
 
 </tab>

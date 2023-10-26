@@ -95,7 +95,7 @@ See [](plugin_listeners.md) on how to register listeners.
 
 **Extension Point** searches for usages inside existing implementations of open-source IntelliJ Platform plugins via [IntelliJ Platform Explorer](https://jb.gg/ipe).
 
-**Implementation** is related Extension Point class.
+**Implementation** is the related Extension Point class.
 
 See [](plugin_extensions.md) on how to declare extensions in your plugin.
 

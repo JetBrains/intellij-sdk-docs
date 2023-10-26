@@ -49,16 +49,12 @@ Example action:
 ```java
 public class CreateMyClassAction extends CreateFileFromTemplateAction {
 
-  public CreateMyClassAction() {
-    super("My Class", "Creates new class", CLASS_ICON);
-  }
-
   @Override
   protected void buildDialog(Project project, PsiDirectory directory,
       CreateFileFromTemplateDialog.Builder builder) {
     builder
     .setTitle("New My File")
-    .addKind("Class", CLASS_ICON, "My Class");
+    .addKind("Class", MyIcons.CLASS_ICON, "My Class");
   }
 
   @Override
@@ -73,10 +69,17 @@ The new action should be registered under the `NewGroup` group, e.g:
 
 ```xml
 <actions>
-  <action id="Create.MyClass" class="com.example.CreateMyClassAction">
+  <action id="Create.MyClass" class="com.example.CreateMyClassAction" icon="MyIcons.CLASS_ICON">
     <add-to-group group-id="NewGroup"/>
   </action>
 </actions>
+```
+
+Action presentation texts should be added to the [resource bundle defined in plugin.xml](plugin_configuration_file.md#idea-plugin__resource-bundle) according to the rules described in [](basic_action_system.md#localizing-actions-and-groups):
+
+```
+action.Create.MyClass.text=My Class
+action.Create.MyClass.description=Creates new class
 ```
 
 ### Custom "Create File From Template" Actions
@@ -100,9 +103,9 @@ protected void buildDialog(Project project, PsiDirectory directory,
     CreateFileFromTemplateDialog.Builder builder) {
   builder
     .setTitle("My File")
-    .addKind("Class", CLASS_ICON, "My Class")
-    .addKind("Record", RECORD_ICON, "My Record")
-    .addKind("Enum", ENUM_ICON, "My Enum");
+    .addKind("Class", MyIcons.CLASS_ICON, "My Class")
+    .addKind("Record", MyIcons.RECORD_ICON, "My Record")
+    .addKind("Enum", MyIcons.ENUM_ICON, "My Enum");
 }
 ```
 

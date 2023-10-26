@@ -89,13 +89,13 @@ myFixture = JavaTestFixtureFactory.getFixtureFactory()
     .createCodeInsightFixture(projectBuilder.getFixture());
 
 // add and configure modules:
-JavaModuleFixtureBuilder builder1 =
+JavaModuleFixtureBuilder<?> builder1 =
     projectBuilder.addModule(JavaModuleFixtureBuilder.class);
 // optionally, configure the module, e.g.:
 // builder1.setLanguageLevel(...);
 // builder1.addJdk(...);
 
-JavaModuleFixtureBuilder builder2 =
+JavaModuleFixtureBuilder<?> builder2 =
     projectBuilder.addModule(JavaModuleFixtureBuilder.class);
 // configure another module...
 ```

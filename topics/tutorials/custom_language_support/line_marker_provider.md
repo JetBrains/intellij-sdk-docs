@@ -47,7 +47,7 @@ What happens when a `LineMarkerProvider` returns marker information for a `PsiEl
 For example, if `MyWrongLineMarkerProvider()` erroneously returns a `PsiMethod` instead of a `PsiIdentifier` element:
 
 ```java
-public class MyWrongLineMarkerProvider implements LineMarkerProvider {
+final class MyWrongLineMarkerProvider implements LineMarkerProvider {
   public LineMarkerInfo getLineMarkerInfo(@NotNull PsiElement element) {
     if (element instanceof PsiMethod) {
       return new LineMarkerInfo(element, ...);
@@ -71,7 +71,7 @@ As a result, _the line marker icon would blink annoyingly_.
 To fix this problem for this case, rewrite `MyWrongLineMarkerProvider` to return info for `PsiIdentifier` instead of `PsiMethod` as shown below:
 
 ```java
-public class MyCorrectLineMarkerProvider implements LineMarkerProvider {
+final class MyCorrectLineMarkerProvider implements LineMarkerProvider {
   public LineMarkerInfo getLineMarkerInfo(@NotNull PsiElement element) {
     if (element instanceof PsiIdentifier &&
             element.getParent() instanceof PsiMethod) {

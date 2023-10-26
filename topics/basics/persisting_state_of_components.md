@@ -2,7 +2,7 @@
 
 # Persisting State of Components
 
-<link-summary>Persisting data that is available after IDE restarts and can be shared between different IDE installations.</link-summary>
+<link-summary>Persisting data that is available after the IDE restarts and can be shared between different IDE installations.</link-summary>
 
 The IntelliJ Platform provides an API that allows components or services to persist their state between restarts of the IDE.
 The API allows for persisting simple key-value entries and complex state classes.
@@ -31,10 +31,10 @@ If an extension needs to have a persistent state, define a separate service resp
 The easiest way to implement a persistent state component in Kotlin is extending [`SimplePersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/SimplePersistentStateComponent.kt), which implements `PersistentStateComponent`.
 
 `SimplePersistentStateComponent` is parameterized by a subclass of [`BaseState`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/BaseState.kt).
-`BaseState` provides set of handy [property delegates](https://kotlinlang.org/docs/delegated-properties.html), which make it easy to create properties with default values.
-In addition, delegates track property modifications internally, which help decrease calling `PersistentStateComponent.getState()` by the platform.
+`BaseState` provides a set of handy [property delegates](https://kotlinlang.org/docs/delegated-properties.html), which make it easy to create properties with default values.
+In addition, delegates track property modifications internally, which helps decrease calling `PersistentStateComponent.getState()` by the platform.
 
-It is recommended to create a separate classes for a component and its state:
+It is recommended to create separate classes for a component and its state:
 
 ```kotlin
 @Service
@@ -206,19 +206,19 @@ Settings can be shared via the following functionalities:
 > Synchronization via the _Settings Sync_ or _Settings Repository_ plugins only works when these plugins are installed and enabled.
 
 The decision about making a specific component's state shareable should be made carefully.
-Only the settings that are not specific to a given machine should be shared, e.g. paths to user-specific directories shouldn't be shared.
+Only the settings that are not specific to a given machine should be shared, e.g., paths to user-specific directories shouldn't be shared.
 If a component contains both shareable and non-shareable data, it should be split into two separate components.
 
 #### Settings Sync Plugin
 
-> The _Settings Sync_ plugin is available starting with the version 2022.3.
+> The _Settings Sync_ plugin is available starting with version 2022.3.
 >
 {style="note"}
 
 To include a plugin's component state in the _Settings Sync_ plugin synchronization, the following requirements must be met:
 - The `RoamingType` is defined via the `roamingType` attribute of the `@Storage` annotation and is not equal to `DISABLED`.
 - The `SettingsCategory` is defined via the `category` attribute of the `@State` annotation and is not equal to `OTHER`.
-- There is no other `PersistentStateComponent` which is stored to the same XML file and has different `RoamingType`.
+- There is no other `PersistentStateComponent`, which is stored to the same XML file and has a different `RoamingType`.
 
 If the component state is OS-dependent, the `roamingType` of the `@Storage` annotation must be set to `RoamingType.PER_OS`.
 
@@ -229,7 +229,7 @@ If the component state is OS-dependent, the `roamingType` of the `@Storage` anno
 
 #### Settings Repository Plugin and Export Settings Feature
 
-> The _Settings Repository_ plugin is unbundled starting with the version 2022.3 and will be no longer maintained.
+> The _Settings Repository_ plugin is unbundled starting with version 2022.3 and will be no longer maintained.
 >
 {style="warning"}
 
@@ -259,7 +259,7 @@ This is not recommended and should be avoided whenever possible.
 
 ### Migrating Persisted Values
 
-If the underlying persistence model or storage format has changed, a [`ConverterProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/conversion/ConverterProvider.java) can provide [`ProjectConverter`](%gh-ic%/platform/lang-impl/src/com/intellij/conversion/ProjectConverter.java) whose `getAdditionalAffectedFiles()` method returns affected files to migrate and performs programmatic migration of stored values.
+If the underlying persistence model or storage format has changed, a [`ConverterProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/conversion/ConverterProvider.java) can provide [`ProjectConverter`](%gh-ic%/platform/lang-impl/src/com/intellij/conversion/ProjectConverter.java), whose `getAdditionalAffectedFiles()` method returns affected files to migrate and performs programmatic migration of stored values.
 
 ### Persistent Component Lifecycle
 

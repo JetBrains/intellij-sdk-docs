@@ -231,6 +231,15 @@ Fragment builder functions from `ExternalSystemRunConfigurationUtil` file moved 
 `com.intellij.database.datagrid.DataGrid.getName(ModelIndex<GridColumn>)` method removed
 : Only recompilation is needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
 
+`com.intellij.database.datagrid.DataGrid.setBinaryDisplayType(ModelIndex<GridColumn>, BinaryDisplayType)` method removed
+: Use `com.intellij.database.datagrid.DataGrid.setDisplayType(ModelIndex<GridColumn>, DisplayType)` instead.
+
+`com.intellij.database.datagrid.DataGrid.getBinaryDisplayType(ModelIndex<GridColumn>)` method removed
+: Use `com.intellij.database.datagrid.DataGrid.getDisplayType(ModelIndex<GridColumn>)` instead.
+
+`com.intellij.database.datagrid.DataGrid.getPureBinaryDisplayType(ModelIndex<GridColumn>)` method removed
+: Use `com.intellij.database.datagrid.DataGrid.getPureDisplayType(ModelIndex<GridColumn>)` instead.
+
 ## 2023.2
 
 ### IntelliJ Platform 2023.2

@@ -12,7 +12,7 @@ The examples in this tutorial rely heavily on the [framework_basics](%gh-sdk-sam
 In oder to make a custom framework available and configurable for a project the [`FrameworkTypeEx`](%gh-ic%/java/idea-ui/src/com/intellij/framework/FrameworkTypeEx.java) class needs to be extended, in this example to make the [DemoFramework](%gh-sdk-samples%/framework_basics/src/main/java/org/intellij/sdk/framework/DemoFramework.java) class.
 
 ```java
-public class DemoFramework extends FrameworkTypeEx {
+final class DemoFramework extends FrameworkTypeEx {
 }
 ```
 
@@ -33,12 +33,12 @@ The framework component should have a unique name passed as a string literal to 
 It is best if this is the FQN name of the class:
 
 ```java
-public class DemoFramework extends FrameworkTypeEx {
+final class DemoFramework extends FrameworkTypeEx {
 
   public static final String FRAMEWORK_ID =
       "org.intellij.sdk.framework.DemoFramework";
 
-  protected DemoFramework() {
+  DemoFramework() {
     super(FRAMEWORK_ID);
   }
 }
@@ -47,7 +47,7 @@ public class DemoFramework extends FrameworkTypeEx {
 The *Presentable name* and *icon* define the appearance of visual components related to the framework:
 
 ```java
-public class DemoFramework extends FrameworkTypeEx {
+final class DemoFramework extends FrameworkTypeEx {
   @NotNull
   @Override
   public String getPresentableName() {

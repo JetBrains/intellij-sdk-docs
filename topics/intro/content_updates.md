@@ -12,6 +12,12 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2023
 
+### October
+{#october-23}
+
+Kotlin Persisting State Component
+: Add an [example](persisting_state_of_components.md#implementing-the-persistentstatecomponent-interface) of a persistent state component implemented in Kotlin.
+
 ### September
 {#september-23}
 

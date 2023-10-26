@@ -28,7 +28,7 @@ Sdk projectSdk = ProjectRootManager.getInstance(project).getProjectSdk();
 * To get the project-level SDK:
 
   ```java
-  Sdk projectSdk = ProjectRootManager.getInstance(project).getProjectSdk();
+  Sdk projectSdk = ProjectRootManager.getInstance(project).getProjectSdkName();
   ```
 
 * To get the project-level SDK name:

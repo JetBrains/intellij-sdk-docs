@@ -226,7 +226,7 @@ Plugin authors need to implement `getLanguagesToInject()` to provide a list of p
 For example, inject regular expressions into Java string literal:
 
 ```java
-public class MyRegExpToJavaInjector implements MultiHostInjector {
+final class MyRegExpToJavaInjector implements MultiHostInjector {
 
   @Override
   public void getLanguagesToInject(@NotNull MultiHostRegistrar registrar,
@@ -276,7 +276,7 @@ class MyDsl { void foo() { System.out.println(42); } }
 Here, we need to inject Java into several places at once, i.e. method name and its body:
 
 ```java
-public class MyBizarreDSLInjector implements MultiHostInjector {
+public class MyDSLInjector implements MultiHostInjector {
 
   @Override
   public void getLanguagesToInject(@NotNull MultiHostRegistrar registrar,

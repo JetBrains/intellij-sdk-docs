@@ -30,6 +30,11 @@ Inlay Hints
 Threading Model
 : Update [](general_threading_rules.md) to reflect changes in 2023.3 platform.
 
+Minor Changes and Additions
+:
+- Add information about ordering [quick fixes](code_inspections.md#quick-fix-implementation) and [intentions actions](code_intentions.md#techniques-used).
+- Clarify the information about [declarative inlay hints](inlay_hints.md#declarative-inlay-hints-provider) customization possibilities.
+
 ### June
 {#june-23}
 

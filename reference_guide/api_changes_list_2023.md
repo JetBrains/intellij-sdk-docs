@@ -98,8 +98,8 @@ JsonPath library unbundled
 `org.jetbrains.plugins.gradle.service.project.GradleProjectResolverUtil.buildDependencies(ProjectResolverContext, Map, Map, DataNode, Collection, DataNode)` method parameter type changed from `Map<String, String>` to `ArtifactMappingService`
 : Update usages of this method. Change parameter `artifactsMap` value to an `ArtifactMappingService` instance. It can be obtained from `ProjectResolverContext`, or created in-place using the `MapBasedArtifactMappingService`
 
-`org.jetbrains.plugins.gradle.service.project.GradleProjectResolver.CONFIGURATION_ARTIFACTS` field removed.
-: Related mapping information is no longer accessible using this key. Artifacts mapping data is now stored in the instance of the `ArtifactMappingService` and can be obtained via `org.jetbrains.plugins.gradle.service.project.ProjectResolverContext#getArtifactsMap()`
+`org.jetbrains.plugins.gradle.service.project.GradleProjectResolver.CONFIGURATION_ARTIFACTS` field removed
+: Related mapping information is no longer accessible using this key. Artifacts mapping data is now stored in the instance of the `ArtifactMappingService` and can be obtained via `org.jetbrains.plugins.gradle.service.project.ProjectResolverContext#getArtifactsMap()`.
 
 ### Collaboration Tools Module 2023.3
 

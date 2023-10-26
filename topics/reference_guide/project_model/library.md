@@ -26,7 +26,7 @@ Package [`com.intellij.openapi.roots.libraries`](%gh-ic%/platform/projectModel-a
 To get the list of libraries that a module depends on, use `OrderEnumerator.forEachLibrary` as follows.
 
 ```java
-final List<String> libraryNames = new ArrayList<String>();
+List<String> libraryNames = new ArrayList<>();
 ModuleRootManager.getInstance(module).orderEntries().forEachLibrary(library -> {
   libraryNames.add(library.getName());
   return true;

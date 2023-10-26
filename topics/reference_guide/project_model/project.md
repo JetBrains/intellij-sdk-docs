@@ -118,10 +118,12 @@ Refer to the [project_model](%gh-sdk-samples%/project_model/src/main/java/org/in
 To receive notifications about changes in project structure (modules or libraries being added or removed, module dependencies being changed, and so on), use the [message bus](messaging_infrastructure.md) and the `ProjectTopics.PROJECT_ROOTS` topic:
 
 ```java
-project.getMessageBus().connect().subscribe(ProjectTopics.PROJECT_ROOTS,
+project.getMessageBus().connect().subscribe(
+    ProjectTopics.PROJECT_ROOTS,
     new ModuleRootListener() {
       @Override
-      public void rootsChanged(ModuleRootEvent event) {
+      public void rootsChanged(@NotNull ModuleRootEvent event) {
+        // action
       }
     });
 ```

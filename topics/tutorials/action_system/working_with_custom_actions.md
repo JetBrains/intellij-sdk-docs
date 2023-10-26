@@ -1,6 +1,6 @@
-# Creating Actions
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Creating Actions
 
 <link-summary>Implementing and registering custom actions.</link-summary>
 
@@ -178,25 +178,8 @@ If so, information about the selected element is added to the dialog.
 See [](basic_action_system.md#determining-the-action-context) for more information about accessing information from the `AnActionEvent` input parameter.
 
 ```java
-@Override
-public void actionPerformed(@NotNull AnActionEvent event) {
-  // Using the event, create and show a dialog
-  Project currentProject = event.getProject();
-  StringBuilder message =
-      new StringBuilder(event.getPresentation().getText() + " Selected!");
-  // If an element is selected in the editor, add info about it.
-  Navigatable selectedElement = event.getData(CommonDataKeys.NAVIGATABLE);
-  if (selectedElement != null) {
-    message.append("\nSelected Element: ").append(selectedElement);
-  }
-  String title = event.getPresentation().getDescription();
-  Messages.showMessageDialog(
-      currentProject,
-      message.toString(),
-      title,
-      Messages.getInformationIcon());
-}
 ```
+{src="action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java" include-symbol="actionPerformed"}
 
 ### Extending the `update()` Method
 
@@ -216,13 +199,8 @@ The availability (enabled and visible) is set on the `Presentation` object.
 Setting both the enabled state and visibility produces consistent behavior despite possible host menu settings, as discussed in [](basic_action_system.md#grouping-actions).
 
 ```java
-@Override
-public void update(@NotNull AnActionEvent event) {
-  // Set the availability based on whether a project is open
-  Project currentProject = event.getProject();
-  event.getPresentation().setEnabledAndVisible(currentProject != null);
-}
 ```
+{src="action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java" include-symbol="update"}
 
 The `update()` method does not check to see if a `Navigatable` object is available before enabling `PopupDialogAction`.
 This check is unnecessary because using the `Navigatable` object is opportunistic in `actionPerformed()`.

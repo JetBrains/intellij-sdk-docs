@@ -50,33 +50,25 @@ public class PopupDialogAction extends AnAction {
     super(text, description, icon);
   }
 
-  /**
-   * Gives the user feedback when the dynamic action menu is chosen.
-   * Pops a simple message dialog. See the psi_demo plugin for an
-   * example of how to use {@link AnActionEvent} to access data.
-   *
-   * @param event Event received when the associated menu item is chosen.
-   */
   @Override
   public void actionPerformed(@NotNull AnActionEvent event) {
     // Using the event, create and show a dialog
     Project currentProject = event.getProject();
-    StringBuilder dlgMsg = new StringBuilder(event.getPresentation().getText() + " Selected!");
-    String dialogTitle = event.getPresentation().getDescription();
+    StringBuilder message =
+        new StringBuilder(event.getPresentation().getText() + " Selected!");
     // If an element is selected in the editor, add info about it.
-    Navigatable navigatable = event.getData(CommonDataKeys.NAVIGATABLE);
-    if (navigatable != null) {
-      dlgMsg.append(String.format("\nSelected Element: %s", navigatable));
+    Navigatable selectedElement = event.getData(CommonDataKeys.NAVIGATABLE);
+    if (selectedElement != null) {
+      message.append("\nSelected Element: ").append(selectedElement);
     }
-    Messages.showMessageDialog(currentProject, dlgMsg.toString(), dialogTitle, Messages.getInformationIcon());
+    String title = event.getPresentation().getDescription();
+    Messages.showMessageDialog(
+        currentProject,
+        message.toString(),
+        title,
+        Messages.getInformationIcon());
   }
 
-  /**
-   * Determines whether this menu item is available for the current context.
-   * Requires a project to be open.
-   *
-   * @param e Event received when the associated group-id menu is chosen.
-   */
   @Override
   public void update(AnActionEvent e) {
     // Set the availability based on whether a project is open

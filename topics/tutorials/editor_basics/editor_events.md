@@ -124,7 +124,7 @@ As explained in [Working with Text](working_with_text.md#safely-replacing-select
 So although a method on the `Document` interface does the `String` insertion, the write action ensures a stable context.
 
 ```java
-class MyTypedHandler implements TypedActionHandler {
+final class MyTypedHandler implements TypedActionHandler {
   @Override
   public void execute(@NotNull Editor editor,
                       char c,

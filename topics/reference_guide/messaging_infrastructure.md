@@ -87,7 +87,8 @@ public interface ChangeActionNotifier {
 {style="note"}
 
 ```java
-project.getMessageBus().connect().subscribe(ActionTopics.CHANGE_ACTION_TOPIC,
+project.getMessageBus().connect().subscribe(
+    ChangeActionNotifier.CHANGE_ACTION_TOPIC,
     new ChangeActionNotifier() {
         @Override
         public void beforeAction(Context context) {
@@ -109,8 +110,8 @@ Many standard interfaces implement returning a message bus, e.g., [`Application.
 
 ```java
 public void doChange(Context context) {
-  ChangeActionNotifier publisher =
-      project.getMessageBus().syncPublisher(ActionTopics.CHANGE_ACTION_TOPIC);
+  ChangeActionNotifier publisher = project.getMessageBus()
+      .syncPublisher(ChangeActionNotifier.CHANGE_ACTION_TOPIC);
   publisher.beforeAction(context);
   try {
     // do action

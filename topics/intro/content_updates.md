@@ -35,6 +35,12 @@ Minor Changes and Additions
 - Add information about ordering [quick fixes](code_inspections.md#quick-fix-implementation) and [intentions actions](code_intentions.md#techniques-used).
 - Clarify the information about [declarative inlay hints](inlay_hints.md#declarative-inlay-hints-provider) customization possibilities.
 
+### July
+{#july-23}
+
+Run Configurations
+: Describe techniques for [simplifying run configuration settings editors](run_configurations.md#simplifying-settings-editors).
+
 ### June
 {#june-23}
 

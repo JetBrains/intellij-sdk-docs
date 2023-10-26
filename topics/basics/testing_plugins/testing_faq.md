@@ -46,11 +46,9 @@ Always call `super.tearDown()` inside `finally {..}` block of your test class to
 protected void tearDown() throws Exception {
   try {
     // test specific tear down calls
-  }
-  catch (Exception e) {
+  } catch (Exception e) {
     addSuppressedException(e);
-  }
-  finally {
+  } finally {
     super.tearDown();
   }
 }
@@ -63,11 +61,9 @@ protected void tearDown() throws Exception {
 override fun tearDown() {
   try {
     // test specific tear down calls
-  }
-  catch (e: Throwable) {
+  } catch (e: Throwable) {
     addSuppressedException(e)
-  }
-  finally {
+  } finally {
     super.tearDown()
   }
 }

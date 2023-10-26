@@ -70,9 +70,7 @@ Please see [](verifying_plugin_compatibility.md) on how to use Plugin Verifier a
 
 ## Known Breaking Changes
 
-> [Subscribe to Marketplace Developer News](https://jb.gg/mp-updates) to receive news and announcements.
-> Also follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/).
->
+<include from="snippets.md" element-id="subscribeNews"/>
 
 The following pages list the breaking changes in IDE and plugin releases with required/recommended steps to take by plugin authors.
 

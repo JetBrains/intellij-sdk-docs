@@ -1,6 +1,6 @@
-# Module
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+# Module
 
 <tldr>
 
@@ -70,9 +70,11 @@ The following code snippet illustrates how you can get detailed information on S
 
 ```java
 ModuleRootManager moduleRootManager = ModuleRootManager.getInstance(module);
-Sdk SDK = moduleRootManager.getSdk();
-String jdkInfo = "Module: " + module.getName() + " SDK: " + SDK.getName() + " SDK version: "
-                 + SDK.getVersionString() + " SDK home directory: " + SDK.getHomePath();
+Sdk sdk = moduleRootManager.getSdk();
+String jdkInfo = "Module: " + module.getName() +
+    " SDK: " + sdk.getName() +
+    " SDK version: " + sdk.getVersionString() +
+    " SDK home directory: " + sdk.getHomePath();
 ```
 
 ### How do I get a list of modules on which this module directly depends?
@@ -93,7 +95,7 @@ Use the `ModuleManager.getModuleDependentModules(module)` method.
 Note that you can also check whether a module (*module1*) depends on another specified module (*module2*) using the `ModuleManager.isModuleDependent()` method in the following way:
 
 ```java
-boolean isDependent = ModuleManager.getInstance(project).isModuleDependent(module1,module2);
+boolean isDependent = ModuleManager.getInstance(project).isModuleDependent(module1, module2);
 ```
 
 ### How do I get a module to which the specified file or PSI element belongs?
@@ -103,9 +105,9 @@ boolean isDependent = ModuleManager.getInstance(project).isModuleDependent(modul
     To clarify, consider the following code snippet:
 
 ```java
-String pathToFile = "C:\\users\\firstName.LastName\\plugins\\myPlugin\\src\\MyAction.java";
+String pathToFile = "/Users/john/plugins/myPlugin/src/MyAction.java";
 VirtualFile virtualFile = LocalFileSystem.getInstance().findFileByPath(pathToFile);
-Module module = ModuleUtil.findModuleForFile(virtualFile,myProject);
+Module module = ModuleUtil.findModuleForFile(virtualFile, myProject);
 String moduleName = module == null ? "Module not found" : module.getName();
 ```
 
@@ -138,12 +140,14 @@ Obtain [`CompilerModuleExtension`](%gh-ic%/platform/projectModel-api/src/com/int
 To receive notifications about module changes (modules being added, removed or renamed), use the [message bus](messaging_infrastructure.md) and the `ProjectTopics.MODULES` topic:
 
 ```java
-project.getMessageBus().connect().subscribe(ProjectTopics.MODULES, new ModuleListener() {
-  @Override
-  public void moduleAdded(@NotNull Project project, @NotNull Module module) {
-
-  }
-});
+project.getMessageBus().connect().subscribe(
+    ProjectTopics.MODULES,
+    new ModuleListener() {
+      @Override
+      public void moduleAdded(@NotNull Project project, @NotNull Module module) {
+        // action
+      }
+    });
 ```
 
 If targeting 2019.3 or later, [declarative registration](plugin_listeners.md) is available as well.

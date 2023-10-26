@@ -177,6 +177,15 @@ Fragment builder functions from `ExternalSystemRunConfigurationUtil` file moved 
 `org.jetbrains.kotlin.idea.actions.JavaToKotlinAction.Companion` class renamed to `org.jetbrains.kotlin.idea.actions.JavaToKotlinAction.Handler`
 : In order to not load additional code eagerly on action instantiation.
 
+`org.jetbrains.kotlin.idea.facet.KotlinFacetConfiguration.getSettings()` method return type changed from `org.jetbrains.kotlin.config.KotlinFacetSettings` to `org.jetbrains.kotlin.config.IKotlinFacetSettings`
+: Use `IKotlinFacetSettings` interface instead of `KotlinFacetSettings` class. All fields and functionality are saved.
+
+`org.jetbrains.kotlin.config.KotlinFacetSettingsProvider.getInitializedSettings(Module)` method return type changed from `org.jetbrains.kotlin.config.KotlinFacetSettings` to `org.jetbrains.kotlin.config.IKotlinFacetSettings`
+: Use `IKotlinFacetSettings` interface instead of `KotlinFacetSettings` class. All fields and functionality are saved.
+
+`org.jetbrains.kotlin.config.KotlinFacetSettingsProvider.getSettings(Module)` method return type changed from `org.jetbrains.kotlin.config.KotlinFacetSettings` to `org.jetbrains.kotlin.config.IKotlinFacetSettings?`
+: Use `IKotlinFacetSettings` interface instead of `KotlinFacetSettings` class. All fields and functionality are saved.
+
 ### Markdown Plugin 2023.3
 
 `org.intellij.plugins.markdown.editor.images` package removed

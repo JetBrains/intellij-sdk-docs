@@ -140,7 +140,7 @@ package org.intellij.sdk.liveTemplates;
 import com.intellij.codeInsight.template.impl.DefaultLiveTemplatesProvider;
 import org.jetbrains.annotations.Nullable;
 
-public class MarkdownTemplateProvider implements DefaultLiveTemplatesProvider {
+final class MarkdownTemplateProvider implements DefaultLiveTemplatesProvider {
   @Override
   public String[] getDefaultLiveTemplateFiles() {
     return new String[]{"liveTemplates/Markdown"};

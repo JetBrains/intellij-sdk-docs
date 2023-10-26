@@ -36,6 +36,9 @@ Threading Model
 Execution
 : Rework [](execution.md), [](run_configurations.md), and [](run_configurations_tutorial.md) pages.
 
+Highlighting Tests Clarification
+: Clarified [the syntax highlighting](testing_highlighting.md#syntax-highlighting) test file format and test implementation initial approach.
+
 ### April
 {#april-23}
 
@@ -51,6 +54,8 @@ by utilizing the [](symbols.md) API and supporting custom syntaxes.
 
 Open Source Plugins Extension Points
 : Added [](oss_plugins_extension_point_list.md) for plugins bundled with [](idea_ultimate.md) and other IDEs.
+
+
 
 ### February
 {#february-23}

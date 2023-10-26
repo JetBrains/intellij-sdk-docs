@@ -36,8 +36,10 @@ Threading Model
 Execution
 : Rework [](execution.md), [](run_configurations.md), and [](run_configurations_tutorial.md) pages.
 
-Highlighting Tests Clarification
-: Clarified [the syntax highlighting](testing_highlighting.md#syntax-highlighting) test file format and test implementation initial approach.
+Minor Changes and Additions
+:
+- Clarify [the syntax highlighting](testing_highlighting.md#syntax-highlighting) test file format and test implementation initial approach.
+- Clarify referencing icons by paths and icon holder class constants in [](work_with_icons_and_images.md).
 
 ### April
 {#april-23}

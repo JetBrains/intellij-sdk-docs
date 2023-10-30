@@ -1,6 +1,6 @@
-# Content Updates
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Content Updates
 
 <link-summary>Notable updates and additions to this documentation.</link-summary>
 
@@ -17,6 +17,10 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 Kotlin Persisting State Component
 : Add an [example](persisting_state_of_components.md#implementing-the-persistentstatecomponent-interface) of a persistent state component implemented in Kotlin.
+
+Minor Changes and Additions
+:
+- Add section [](module.md#storing-a-reference-to-a-module).
 
 ### September
 {#september-23}

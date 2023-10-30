@@ -113,6 +113,11 @@ String moduleName = module == null ? "Module not found" : module.getName();
 
 * To get the project module to which the specified [PSI element](psi_elements.md) belongs, use the `ModuleUtil.findModuleForPsiElement()` method.
 
+### Storing a reference to a Module
+
+Use [`ModulePointer`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/module/ModulePointer.java) to store a reference to a `Module` by its instance or name.
+A removal or rename of the `Module` will be tracked automatically.
+
 ### Accessing Module Roots
 
 Information about module roots can be accessed via [`ModuleRootManager`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootManager.java).

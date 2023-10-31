@@ -18,6 +18,8 @@ This page describes developing plugins using the [Kotlin](https://kotlinlang.org
 
 > To implement a plugin _operating_ on Kotlin code in the IDE, configure Kotlin [plugin dependency](plugin_dependencies.md) (`org.jetbrains.kotlin`).
 > See also [UAST](uast.md) page for information about how to support multiple JVM languages, including Kotlin.
+>
+{title="Operating on Kotlin code"}
 
 ## Advantages of Developing a Plugin in Kotlin
 
@@ -31,9 +33,9 @@ Likewise, it is easy to customize the behavior of internal classes in the Intell
 For example, it is common practice to [guard logging statements](https://www.slf4j.org/faq.html#logging_performance) to avoid the cost of parameter construction, leading to the following ceremony when using the log:
 
 ```java
-if (logger.isDebugEnabled()) {
-  logger.debug("..."+expensiveComputation());
-}
+if(logger.isDebugEnabled()){
+    logger.debug("..."+expensiveComputation());
+    }
 ```
 
 We can achieve the same result more succinctly in Kotlin, by declaring the following extension method:
@@ -81,7 +83,7 @@ See the <path>build.gradle.kts</path> from [kotlin_demo](%gh-sdk-samples%/kotlin
 
 {src="kotlin_demo/build.gradle.kts" include-lines="2-"}
 
-### Kotlin Standard Library
+### Kotlin Standard Library (stdlib)
 
 Since Kotlin 1.4, a dependency on the standard library _stdlib_ is added automatically ([API Docs](https://kotlinlang.org/api/latest/jvm/stdlib/)).
 In most cases, it is not necessary to include it in the plugin distribution as the platform already bundles it.
@@ -121,6 +123,15 @@ See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html
 > If you need to add the Kotlin Standard Library to your **test project** dependencies, see the [](testing_faq.md#how-to-test-a-jvm-language) section.
 >
 
+### Kotlin Coroutines Libraries (kotlinx.coroutines)
+
+Plugins _must_ always use the bundled library from the target IDE and not bundle their own version.
+Please make sure it is not added via transitive dependencies either.
+
+### Other Bundled Kotlin Libraries
+
+Please see [Third-Party Software and Licenses](https://www.jetbrains.com/legal/third-party-software/).
+
 ### Incremental compilation
 
 The Kotlin Gradle plugin supports [incremental compilation](https://kotlinlang.org/docs/gradle-compilation-and-caches.html#incremental-compilation), which allows tracking changes in the source files so the compiler handles only updated code.
@@ -158,13 +169,10 @@ You can find the current state of the issue in [KT-57757](https://youtrack.jetbr
 </tab>
 </tabs>
 
-### Other Bundled Kotlin Libraries
-
-Please see [Third-Party Software and Licenses](https://www.jetbrains.com/legal/third-party-software/).
-
 ## Plugin Implementation Notes
 
 ### Do not use "object" but "class"
+
 {id="object-vs-class"}
 
 Plugins *may* use [Kotlin classes](https://kotlinlang.org/docs/classes.html) (`class` keyword) to implement declarations in the [plugin configuration file](plugin_configuration_file.md).
@@ -175,10 +183,12 @@ Managing the lifecycle of extensions is the platform responsibility and instanti
 A notable exception is `com.intellij.openapi.fileTypes.FileType` (`com.intellij.fileType` extension point), see also the inspection descriptions below.
 
 Problems are highlighted via these inspections (2023.2):
+
 - <control>Plugin DevKit | Code | Kotlin object registered as extension</control> for Kotlin code
 - <control>Plugin DevKit | Plugin descriptor | Extension class is a Kotlin object</control> for <path>plugin.xml</path>
 
 ### Do not use "companion object" in extensions
+
 {id="companion-object-extensions"}
 
 Kotlin `companion object` is always created once you try to load its containing class, and [extension point implementations](plugin_extensions.md) are supposed to be cheap to create.

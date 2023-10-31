@@ -148,8 +148,8 @@ Remove additional `kotlin.incremental.useClasspathSnapshot=false` property in <p
 
 > Please consider using Kotlin 1.9.0 where this issue has been resolved.
 
-The Kotlin `1.8.20` release has a [new incremental compilation approach](https://kotlinlang.org/docs/gradle-compilation-and-caches.html#a-new-approach-to-incremental-compilation) enabled by default.
-Unfortunately, it is not compatible with the IntelliJ Platform — when reading large JAR files (like <path>app.jar</path> or <path>3rd-party-rt.jar</path>), leading to the `Out of Memory` exception:
+Kotlin `1.8.20` has a [new incremental compilation approach](https://kotlinlang.org/docs/gradle-compilation-and-caches.html#a-new-approach-to-incremental-compilation) which is enabled by default.
+Unfortunately, it is not compatible with the IntelliJ Platform — when reading large JAR files (like <path>app.jar</path> or <path>3rd-party-rt.jar</path>), leading to an `Out of Memory` exception:
 
 ```
 Execution failed for task ':compileKotlin'.
@@ -158,13 +158,11 @@ Execution failed for task ':compileKotlin'.
       > Java heap space
 ```
 
-To avoid this exception, add the following line to the <path>gradle.properties</path>:
+To avoid this exception, add the following line to <path>gradle.properties</path>:
 
 ```
 kotlin.incremental.useClasspathSnapshot=false
 ```
-
-You can find the current state of the issue in [KT-57757](https://youtrack.jetbrains.com/issue/KT-57757/Reduce-classpath-snapshotter-memory-consumption).
 
 </tab>
 </tabs>

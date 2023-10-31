@@ -1,6 +1,6 @@
-# Configuring Kotlin Support
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Configuring Kotlin Support
 
 <link-summary>Advantages and configuration required for developing a plugin in Kotlin.</link-summary>
 
@@ -83,7 +83,7 @@ See the <path>build.gradle.kts</path> from [kotlin_demo](%gh-sdk-samples%/kotlin
 
 ### Kotlin Standard Library
 
-Since Kotlin 1.4, a dependency on the standard library `stdlib` is added automatically ([API Docs](https://kotlinlang.org/api/latest/jvm/stdlib/)).
+Since Kotlin 1.4, a dependency on the standard library _stdlib_ is added automatically ([API Docs](https://kotlinlang.org/api/latest/jvm/stdlib/)).
 In most cases, it is not necessary to include it in the plugin distribution as the platform already bundles it.
 
 To opt out, add this line in <path>gradle.properties</path>:
@@ -93,13 +93,14 @@ kotlin.stdlib.default.dependency = false
 ```
 
 The presence of this Gradle property is checked by the [](tools_gradle_intellij_plugin.md) with the [](tools_gradle_intellij_plugin.md#tasks-verifypluginconfiguration).
-If the property is not present, a warning will be reported during the plugin configuration verification, as it is a common problem when Kotlin stdlib gets bundled within the plugin archive.
-If it is expected to make Kotlin stdlib present in the final archive, explicitly specify it with `kotlin.stdlib.default.dependency = true`.
+If the property is not present, a warning will be reported during the plugin configuration verification, as it is a common problem when Kotlin _stdlib_ gets bundled within the plugin archive.
+If it is expected to make Kotlin _stdlib_ present in the final archive, explicitly specify it with `kotlin.stdlib.default.dependency = true`.
 
-If a plugin supports [multiple platform versions](build_number_ranges.md), it must either target the lowest bundled `stdlib` version or provide the specific version in plugin distribution.
+If a plugin supports [multiple platform versions](build_number_ranges.md), it must either target the lowest bundled _stdlib_ version or provide the specific version in plugin distribution.
 
-| IntelliJ Platform version | Bundled `stdlib` version |
+| IntelliJ Platform version | Bundled _stdlib_ version |
 |---------------------------|--------------------------|
+| 2023.3                    | 1.9.10                   |
 | 2023.2                    | 1.8.20                   |
 | 2023.1                    | 1.8.0                    |
 | 2022.3                    | 1.7.0                    |
@@ -117,7 +118,7 @@ If a plugin supports [multiple platform versions](build_number_ranges.md), it mu
 
 See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html#dependency-on-the-standard-library) for more details.
 
-> If you need to add Kotlin Standard Library to your **test project** dependencies, see the [](testing_faq.md#how-to-test-a-jvm-language) section.
+> If you need to add the Kotlin Standard Library to your **test project** dependencies, see the [](testing_faq.md#how-to-test-a-jvm-language) section.
 >
 
 ### Incremental compilation

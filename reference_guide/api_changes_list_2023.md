@@ -101,10 +101,10 @@ JsonPath library unbundled
 `org.jetbrains.plugins.gradle.service.project.GradleProjectResolver.CONFIGURATION_ARTIFACTS` field removed
 : Related mapping information is no longer accessible using this key. Artifacts mapping data is now stored in the instance of the `ArtifactMappingService` and can be obtained via `org.jetbrains.plugins.gradle.service.project.ProjectResolverContext#getArtifactsMap()`.
 
-`com.intellij.ide.plugins.enums.PluginsGroupType.FEATURED` enum value renamed to `com.intellij.ide.plugins.enums.PluginsGroupType.STAFF_PICKS`
+`com.intellij.ide.plugins.enums.PluginsGroupType.FEATURED` enum renamed to `com.intellij.ide.plugins.enums.PluginsGroupType.STAFF_PICKS`
 : Use `com.intellij.ide.plugins.enums.PluginsGroupType.STAFF_PICKS` instead.
 
-`com.intellij.ide.plugins.newui.SearchWords.ORGANIZATION` enum value renamed to `com.intellij.ide.plugins.newui.SearchWords.VENDOR` 
+`com.intellij.ide.plugins.newui.SearchWords.ORGANIZATION` enum renamed to `com.intellij.ide.plugins.newui.SearchWords.VENDOR` 
 : Use `com.intellij.ide.plugins.newui.SearchWords.VENDOR` instead.
 
 ### Collaboration Tools Module 2023.3

@@ -84,6 +84,7 @@ See the <path>build.gradle.kts</path> from [kotlin_demo](%gh-sdk-samples%/kotlin
 {src="kotlin_demo/build.gradle.kts" include-lines="2-"}
 
 ### Kotlin Standard Library (stdlib)
+{id="kotlin-standard-library"}
 
 Since Kotlin 1.4, a dependency on the standard library _stdlib_ is added automatically ([API Docs](https://kotlinlang.org/api/latest/jvm/stdlib/)).
 In most cases, it is not necessary to include it in the plugin distribution as the platform already bundles it.

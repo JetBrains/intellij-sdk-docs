@@ -132,7 +132,7 @@ tasks {
   * The [Kotlin Gradle](https://kotlinlang.org/docs/gradle-configure-project.html#apply-the-plugin) plugin (`org.jetbrains.kotlin.jvm`).
   * The [](tools_gradle_intellij_plugin.md) (`org.jetbrains.intellij`).
 * The <control>Group</control> from the [New Project](#create-ide-plugin) wizard is the `project.group` value.
-* The `sourceCompatibility` line is injected to enforce using Java 11 JDK to compile Java sources.
+* The `sourceCompatibility` line is injected to enforce using Java 17 JDK to compile Java sources.
 * The values of the [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) and [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type) properties specify the version and type of the IntelliJ Platform to be used to build the plugin.
 * The empty placeholder list for [plugin dependencies](tools_gradle_intellij_plugin.md#intellij-extension-plugins).
 * The values of the [`patchPluginXml.sinceBuild`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml-sincebuild) and [`patchPluginXml.untilBuild`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml-untilbuild) properties specifying the minimum and maximum versions of the IDE build the plugin is compatible with.

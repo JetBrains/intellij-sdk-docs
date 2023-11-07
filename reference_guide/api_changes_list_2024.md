@@ -71,3 +71,6 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 ## 2024.1
 
 ### IntelliJ Platform 2024.1
+
+`com.intellij.application.options.editor.CodeFoldingConfigurable.applyCodeFoldingSettingsChanges()` method removed
+: Use top-level method `CodeFoldingConfigurableKt.applyCodeFoldingSettingsChanges` instead.

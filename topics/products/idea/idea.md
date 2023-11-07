@@ -30,11 +30,11 @@ See [](extension_point_list.md#intellij-community-plugins) for API from bundled 
 
 ## Java
 
-See "Java" entry in table [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) on how to use Java specific functionality.
+See [](plugin_compatibility.md#java) on how to use Java-specific functionality.
 
 [PSI Cookbook](psi_cookbook.md#java-specific) lists a number of common operations for working with Java PSI.
 
-Depending on exact functionality, a plugin can also target [UAST (Unified Abstract Syntax Tree)](uast.md) to support multiple JVM languages, including Java and Kotlin.
+Depending on exact functionality, a plugin can also target [](uast.md) to support multiple JVM languages, including Java and Kotlin.
 
 Relevant Extension Points:
 

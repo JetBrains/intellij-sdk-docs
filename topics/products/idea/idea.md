@@ -17,10 +17,10 @@ See [Choose your edition](https://www.jetbrains.com/idea/features/#choose-your-e
 
 The configuration of IntelliJ IDEA plugin projects follows the methods described in [Configuring Plugin Projects using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-plugin-projects-using-the-intellij-idea-product-attribute).
 
-| `gradle-intellij-plugin` Attribute                                               | Attribute Value                                                                                 |
-|----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-| [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type)       | <p>`IC` for IntelliJ IDEA Community Edition (default)</p><p>`IU` for IntelliJ IDEA Ultimate</p> |
-| [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) | IDE version, e.g. `2022.2`                                                                      |
+| `gradle-intellij-plugin` Attribute                                               | Attribute Value                                                                               |
+|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type)       | <p>`IC` for IntelliJ IDEA Community Edition (default)</p><p>`IU` for [](idea_ultimate.md)</p> |
+| [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) | IDE version, e.g. `2022.2`                                                                    |
 
 ## Available API
 

@@ -1,6 +1,6 @@
-# Actions
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Actions
 
 <link-summary>Adding custom actions to IntelliJ Platform-based IDEs menus and toolbar.</link-summary>
 
@@ -64,7 +64,7 @@ Every IntelliJ Platform action should override `AnAction.update()` and must over
 There are other methods to override in the `AnAction` class, such as changing the default `Presentation` object for the action.
 There is also a use case for overriding action constructors when registering them with dynamic action groups, demonstrated in the [Grouping Actions](grouping_action.md#adding-child-actions-to-the-dynamic-group) tutorial.
 
-### Overriding the AnAction.update Method
+### Overriding the AnAction.update() Method
 
 The method `AnAction.update()` is periodically called by the IntelliJ Platform in response to user gestures.
 The `update()` method gives an action to evaluate the current context and enable or disable its functionality.
@@ -116,7 +116,7 @@ See [Grouping Actions](#grouping-actions) for more information about the `compac
 
 An example of enabling a menu action based on whether a project is open is demonstrated in [`PopupDialogAction.update()`](%gh-sdk-samples%/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java) method.
 
-### Overriding the AnAction.actionPerformed Method
+### Overriding the AnAction.actionPerformed() Method
 
 When the user selects an enabled action, be it from a menu or toolbar, the action's `AnAction.actionPerformed()` method is called.
 This method contains the code executed to perform the action, and it is here that the real work gets done.
@@ -206,7 +206,7 @@ Users can locate actions via their name by invoking <ui-path>Help | Find Action<
 To allow using alternative names in search, add one or more [`<synonym>`](plugin_configuration_file.md#idea-plugin__actions__action__synonym) elements inside [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) or [`<reference>`](plugin_configuration_file.md#idea-plugin__actions__reference):
 
 ```xml
-<action id="MyAction" text="My Action Name" ...>
+<action id="MyAction" text="My Action Name" class="...">
   <synonym text="Another Search Term"/>
 </action>
 ```
@@ -361,7 +361,7 @@ This, and additional information can also be found by using the [Code Completion
       id="TestActionGroup"
       text="Test Group"
       description="Group with test actions"
-      icon="icons/testgroup.png"
+      icon="icons/testGroup.png"
       popup="true"
       compact="true">
 
@@ -426,4 +426,4 @@ Use [`BackAction`](%gh-ic%/platform/platform-api/src/com/intellij/ui/navigation/
 
 For actions registered at runtime (e.g., in a tool window toolbar), add an [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) entry with
 [`EmptyAction`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/EmptyAction.java)
-to "reserve" Action ID so they become visible in <ui-path>Settings | Keymap</ui-path>.
+to "reserve" Action ID, so they become visible in <ui-path>Settings | Keymap</ui-path>.

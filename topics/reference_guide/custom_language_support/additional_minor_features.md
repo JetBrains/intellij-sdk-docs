@@ -1,6 +1,6 @@
-# Additional Minor Features
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+# Additional Minor Features
 
 <link-summary>Additional minor features for custom languages.</link-summary>
 
@@ -89,9 +89,13 @@ EP: `com.intellij.highlightUsagesHandlerFactory`
 
 ### TODO View
 
-EP: n/a
+[`ParserDefinition.getCommentTokens()`](%gh-ic%/platform/core-api/src/com/intellij/lang/ParserDefinition.java) must return the set of tokens treated as comments to populate the *TODO* tool window.
 
-[`ParserDefinition.getCommentTokens()`](%gh-ic%/platform/core-api/src/com/intellij/lang/ParserDefinition.java) must return the set of tokens treated as comments to populate the *TODO* window.
+#### Additional places
+
+EP: `com.intellij.indexPatternSearch`
+
+Additional places can be provided via [`IndexPatternSearch`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/searches/IndexPatternSearch.java) registered in `com.intellij.indexPatternSearch` extension point.
 
 ### Context Info
 

@@ -12,6 +12,13 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2023
 
+### November
+{#november-23}
+
+Minor Changes and Additions
+:
+- Add information about [executing actions programmatically](basic_action_system.md#executing-actions-programmatically).
+
 ### October
 {#october-23}
 

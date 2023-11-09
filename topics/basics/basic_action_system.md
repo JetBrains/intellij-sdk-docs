@@ -427,3 +427,13 @@ Use [`BackAction`](%gh-ic%/platform/platform-api/src/com/intellij/ui/navigation/
 For actions registered at runtime (e.g., in a tool window toolbar), add an [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) entry with
 [`EmptyAction`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/EmptyAction.java)
 to "reserve" Action ID, so they become visible in <ui-path>Settings | Keymap</ui-path>.
+
+## Executing Actions Programmatically
+
+Sometimes, it is required to execute actions programmatically, e.g., executing an action implementing logic we need and the implementation is out of our control.
+Executing actions can be achieved with [`ActionUtils.invokeAction()`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/ex/ActionUtil.java).
+
+> Executing actions programmatically should be avoided whenever possible.
+> If an action executed programmatically is under your control, extract its logic to a service or util and call it directly.
+>
+{style="warning"}

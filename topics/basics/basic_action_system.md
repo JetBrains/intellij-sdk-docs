@@ -434,6 +434,6 @@ Sometimes, it is required to execute actions programmatically, e.g., executing a
 Executing actions can be achieved with [`ActionUtils.invokeAction()`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/ex/ActionUtil.java).
 
 > Executing actions programmatically should be avoided whenever possible.
-> If an action executed programmatically is under your control, extract its logic to a service or util and call it directly.
+> If an action executed programmatically is under your control, extract its logic to a [service](plugin_services.md) or utility class and call it directly.
 >
 {style="warning"}

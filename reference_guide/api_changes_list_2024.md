@@ -75,5 +75,5 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.intellij.application.options.editor.CodeFoldingConfigurable.applyCodeFoldingSettingsChanges()` method removed
 : Use top-level method `CodeFoldingConfigurableKt.applyCodeFoldingSettingsChanges` instead.
 
-`com.intellij.ide.bookmark.providers.LineBookmarkProvider.Companion` class method
+`com.intellij.ide.bookmark.providers.LineBookmarkProvider.Companion` class removed
 : Use `com.intellij.ide.bookmark.providers.LineBookmarkProvider.Util` instead.

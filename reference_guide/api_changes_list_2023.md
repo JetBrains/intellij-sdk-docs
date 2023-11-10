@@ -285,7 +285,7 @@ Specify `displayName`/`key` for `Configurable`
 `com.intellij.database.dataSource.DataSourceStorageCore$Listener` class renamed to `com.intellij.database.dataSource.DataSourceStorage$Listener`
 : `Core` class removed from hierarchy.
 
-`com.intellij.database.datagrid.CoreGrid(ModelIndex<Row>, ModelIndex<Column>)` method parameter type changed from `ModelIndex<Row>` to `int`
+`com.intellij.database.datagrid.CoreGrid.showCell(ModelIndex<Row>, ModelIndex<Column>)` method parameter type changed from `ModelIndex<Row>` to `int`
 : `ModelIndex` class is used to reference data in the table model. Row indexes in the table model start with 0, even when the table is scrolled to page _N>1_. Parameter type was changed to `int` to indicate that it is an absolute index in the DB table.
 
 `com.intellij.database.datagrid.DataGrid.getName(ModelIndex<GridColumn>)` abstract method added

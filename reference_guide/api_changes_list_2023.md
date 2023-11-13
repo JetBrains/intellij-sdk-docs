@@ -189,6 +189,13 @@ Fragment builder functions from `ExternalSystemRunConfigurationUtil` file moved 
 `org.jetbrains.kotlin.idea.actions.JavaToKotlinAction.Companion` class renamed to `org.jetbrains.kotlin.idea.actions.JavaToKotlinAction.Handler`
 : In order to not load additional code eagerly on action instantiation.
 
+`org.jetbrains.kotlin.idea.compiler.configuration.KotlinIdePluginVersion.Companion` class removed
+: Now, the Kotlin plugin version does not include a compiler version, so the class is unnecessary. Use `com.intellij.openapi.application.ApplicationInfo` to get the IntelliJ version.
+
+`org.jetbrains.kotlin.idea.compiler.configuration.KotlinIdePluginVersion` class removed
+: Now, the Kotlin plugin version does not include a compiler version, so the class is unnecessary. Use `com.intellij.openapi.application.ApplicationInfo` to get the IntelliJ version.
+
+
 ### Markdown Plugin 2023.3
 
 `org.intellij.plugins.markdown.editor.images` package removed

@@ -190,10 +190,10 @@ Fragment builder functions from `ExternalSystemRunConfigurationUtil` file moved 
 : In order to not load additional code eagerly on action instantiation.
 
 `org.jetbrains.kotlin.idea.compiler.configuration.KotlinIdePluginVersion.Companion` class removed
-: It was an internal API. Now, the Kotlin plugin version does not include a compiler version, so the class is unnecessary. Use `com.intellij.openapi.application.ApplicationInfo` to get the IntelliJ version.
+: Now, the Kotlin plugin version does not include a compiler version, so the class is unnecessary. Use `com.intellij.openapi.application.ApplicationInfo` to get the IntelliJ version.
 
 `org.jetbrains.kotlin.idea.compiler.configuration.KotlinIdePluginVersion` class removed
-: It was an internal API. Now, the Kotlin plugin version does not include a compiler version, so the class is unnecessary. Use `com.intellij.openapi.application.ApplicationInfo` to get the IntelliJ version.
+: Now, the Kotlin plugin version does not include a compiler version, so the class is unnecessary. Use `com.intellij.openapi.application.ApplicationInfo` to get the IntelliJ version.
 
 
 ### Markdown Plugin 2023.3

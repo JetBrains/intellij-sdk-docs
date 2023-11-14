@@ -78,7 +78,33 @@ Some additional settings are required in the IDE after setting up the plugin.
 <control>Gradle JVM</control> must be set to Java 11 in <ui-path>Settings | Build, Execution, Deployment | Build Tools | Gradle</ui-path>.
 When targeting 2022.3+, Java 17 is required instead (see [details](build_number_ranges.md#platformVersions)).
 
-In 2023.3, the setting <control>Download sources for dependencies</control> must be checked in <ui-path>Settings | Build, Execution, Deployment | Build Tools | Gradle</ui-path> to attach IntelliJ Platform sources in the IDE when enabled via [](#intellij-extension-downloadsources).
+#### Attaching Sources
+
+To attach IntelliJ Platform sources in the IDE when enabled via [](#intellij-extension-downloadsources) some additional settings are required in 2023.2 and later.
+
+<tabs>
+
+<tab title="2023.3">
+
+In <ui-path>Settings | Advanced Settings</ui-path> enable option <control>Download sources</control> in section <ui-path>Build Tools. Gradle</ui-path>.
+Then invoke <control>Reload All Gradle Projects</control> action from the <control>Gradle</control> tool window.
+
+</tab>
+
+<tab title="2023.2">
+
+In <ui-path>Settings | Build, Execution, Deployment | Build Tools | Gradle</ui-path> enable <control>Download sources for dependencies</control>.
+Then invoke <control>Reload All Gradle Projects</control> action from the <control>Gradle</control> tool window.
+
+</tab>
+
+<tab title="Earlier versions">
+
+No additional IDE settings are required.
+
+</tab>
+
+</tabs>
 
 ### Snapshot Release
 The Snapshot release is a pre-release version built nightly from the latest main branch – as it is built every day using the same version number, it's not recommended to use it for production builds.

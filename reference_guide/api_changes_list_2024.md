@@ -77,3 +77,6 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 `com.intellij.ide.bookmark.providers.LineBookmarkProvider.Companion` class removed
 : Use `com.intellij.ide.bookmark.providers.LineBookmarkProvider.Util` instead.
+
+`com.intellij.execution.process.mediator.util` package removed
+: The sole extension method `Deferred<T>.blockingGet()` contained in this package is an anti-pattern, and was not supposed to be exposed in the first place. The process mediator and the elevation service are now a product modules, and no longer part of the platform.

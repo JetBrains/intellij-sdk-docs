@@ -521,7 +521,7 @@ Default value
 #### ideaDependencyCachePath
 {#intellij-extension-ideadependencycachepath}
 
-Path to the directory where IDE dependency cache is stored.
+Path to the directory where the IDE dependency cache is stored.
 If not set, the dependency will be extracted next to the downloaded ZIP archive in [Gradle cache](https://docs.gradle.org/current/userguide/directory_layout.html#dir:gradle_user_home) directory.
 
 {style="narrow"}
@@ -536,7 +536,7 @@ Default value
 {#intellij-extension-downloadsources}
 
 Enables downloading the IntelliJ Platform sources.
-It is enabled by default if the `CI` environment variable is not set – which is present on Continuous Integration environments, like GitHub Actions, TeamCity, and others.
+It is enabled by default if the `CI` environment variable is not set – which is present in Continuous Integration environments, like GitHub Actions, TeamCity, and others.
 
 {style="narrow"}
 Type
@@ -563,7 +563,7 @@ Default value
 #### extraDependencies
 {#intellij-extension-extradependencies}
 
-Configures extra dependency artifacts from the IntelliJ repository.
+Configure extra dependency artifacts from the IntelliJ repository.
 The dependencies on them could be configured only explicitly using the `DependenciesUtils.intellijExtra()` function in the `dependencies` block.
 
 {style="narrow"}
@@ -776,7 +776,7 @@ Default value
 #### javac2
 {#tasks-instrumentcode-javac2}
 
-Path to the <path>javac2.jar</path> file of the IntelliJ IDEA.
+Path to the <path>javac2.jar</path> file of IntelliJ IDEA.
 
 {style="narrow"}
 Type
@@ -852,13 +852,13 @@ Type
 ### instrumentedJar
 {#tasks-instrumentedjar}
 
-Creates a JAR file with instrumented classes.
+Create a JAR file with instrumented classes.
 
 
 ### jarSearchableOptions
 {#tasks-jarsearchableoptions}
 
-Creates a JAR file with searchable options to be distributed with the plugin.
+Create a JAR file with searchable options to be distributed with the plugin.
 
 
 #### outputDir
@@ -1077,7 +1077,7 @@ Default value
 
 Patches <path>[plugin.xml](plugin_configuration_file.md)</path> files with values provided to the task.
 
-> To maintain and generate an up-to-date changelog, try using [Gradle Changelog Plugin](https://github.com/JetBrains/gradle-changelog-plugin).
+> To maintain and generate an up-to-date changelog, try using the [Gradle Changelog Plugin](https://github.com/JetBrains/gradle-changelog-plugin).
 >
 {style="note"}
 
@@ -1276,7 +1276,7 @@ See [`prepareSandbox` Task](#tasks-preparesandbox).
 ### printProductsReleases
 {#tasks-printproductsreleases}
 
-Prints the output produced by the [`listProductsReleases`](#tasks-listproductsreleases) task.
+Print the output produced by the [`listProductsReleases`](#tasks-listproductsreleases) task.
 
 
 #### inputFile
@@ -1288,7 +1288,7 @@ Output file provided by the [`listProductsReleases`](#tasks-listproductsreleases
 ### printBundledPlugins
 {#tasks-printBundledPlugins}
 
-Prints the output produced by the [`listBundledPlugins`](#tasks-listbundledplugins) task.
+Print the output produced by the [`listBundledPlugins`](#tasks-listbundledplugins) task.
 
 
 #### inputFile
@@ -1303,7 +1303,7 @@ Output file provided by the [`listBundledPlugins`](#tasks-listbundledplugins) ta
 Publishes plugin to the remote [JetBrains Marketplace](https://plugins.jetbrains.com) repository.
 
 The following attributes are a part of the Publishing DSL `publishPlugin { ... }` in which allows Gradle to upload plugin to [JetBrains Marketplace](https://plugins.jetbrains.com).
-Note that you need to [upload the plugin](publishing_plugin.md#uploading-a-plugin-to-jetbrains-marketplace) to the repository at least once manually (to specify options like the license, repository URL etc.) before uploads through Gradle can be used.
+Note that you need to [upload the plugin](publishing_plugin.md#uploading-a-plugin-to-jetbrains-marketplace) to the repository at least once manually (to specify options like the license, repository URL, etc.) before uploads through Gradle can be used.
 
 See the instruction on [how to generate authentication token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html).
 
@@ -1367,7 +1367,7 @@ Default value
 #### toolboxEnterprise
 {#tasks-publishplugin-toolboxenterprise}
 
-Specifies if the Toolbox Enterprise plugin repository service should be used.
+Specify if the Toolbox Enterprise plugin repository service should be used.
 This feature is still in the incubating phase and is not yet available for public use.
 
 {style="narrow"}
@@ -1381,7 +1381,7 @@ Default value
 ### runIde
 {#tasks-runide}
 
-Runs the IDE instance with the developed plugin installed.
+Run the IDE instance with the developed plugin installed.
 
 `runIde` task extends the [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html) Gradle task – all properties available in the `JavaExec` as well as the following ones can be used to configure the `runIde` task.
 
@@ -1484,7 +1484,7 @@ Default value
 ### runIdeForUiTests
 {#tasks-runideforuitests}
 
-Runs the IDE instance with the developed plugin and robot-server installed and ready for UI testing.
+Run the IDE instance with the developed plugin and robot-server installed and ready for UI testing.
 
 See [intellij-ui-test-robot](https://github.com/JetBrains/intellij-ui-test-robot) project.
 
@@ -1494,7 +1494,7 @@ See [`runIde`](#tasks-runide) task for more details.
 ### runIdePerformanceTest
 {#tasks-runideperformancetest}
 
-Runs performance tests on the IDE with the developed plugin installed.
+Run performance tests on the IDE with the developed plugin installed.
 
 The `runIdePerformanceTest` task extends the `RunIdeBase` task, so all configuration attributes of `JavaExec` and [`runIde`](#tasks-runide) tasks can be used in the `runIdePerformanceTest` as well.
 See [`runIde`](#tasks-runide) task for more details.
@@ -1549,7 +1549,7 @@ Acceptable values
 ### runPluginVerifier
 {#tasks-runpluginverifier}
 
-Runs the [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) tool to check the binary compatibility with specified IDE builds (see also [](verifying_plugin_compatibility.md)).
+Run the [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) tool to check the binary compatibility with specified IDE builds (see also [](verifying_plugin_compatibility.md)).
 
 Plugin Verifier DSL `runPluginVerifier { ... }` allows to define the list of IDEs used for the verification, as well as explicit tool version and any of the available [options](https://github.com/JetBrains/intellij-plugin-verifier#common-options) by proxifying them to the Verifier CLI.
 
@@ -1694,7 +1694,7 @@ Acceptable values
 {#tasks-runpluginverifier-downloaddir}
 
 The path to the directory where IDEs used for the verification will be downloaded.
-By default, it relies on the `plugin.verifier.home.dir` system property and falls back to `XDG_CACHE_HOME` environment variable – see [XDG Base Directory](https://wiki.archlinux.org/title/XDG_Base_Directory) for more details.
+By default, it relies on the `plugin.verifier.home.dir` system property and falls back to the `XDG_CACHE_HOME` environment variable – see [XDG Base Directory](https://wiki.archlinux.org/title/XDG_Base_Directory) for more details.
 
 {style="narrow"}
 Type
@@ -1784,7 +1784,7 @@ Default value
 {#tasks-runpluginverifier-ignoredproblems}
 
 A file that contains a list of problems that will be ignored in the verification report.
-Such file must contain lines in form `<plugin_xml_id>:<plugin_version>:<problem_description_regexp_pattern>`.
+It must contain lines in form `<plugin_xml_id>:<plugin_version>:<problem_description_regexp_pattern>`.
 
 {style="narrow"}
 Type
@@ -1809,7 +1809,7 @@ Default value
 #### subsystemsToCheck
 {#tasks-runpluginverifier-subsystemstocheck}
 
-Specifies which subsystems of IDE should be checked.
+Specify which subsystems of the IDE should be checked.
 
 {style="narrow"}
 Type
@@ -1846,7 +1846,7 @@ Acceptable values
 ### setupDependencies
 {#tasks-setupdependencies}
 
-Setups required dependencies for building and running project.
+Setup required dependencies for building and running the project.
 This task is automatically added to the ["After Sync" Gradle trigger](https://www.jetbrains.com/help/idea/work-with-gradle-tasks.html#config_triggers_gradle) to make the IntelliJ SDK dependency available for IntelliJ IDEA right after the Gradle synchronization.
 
 > After removing the Gradle IntelliJ Plugin from your project, the `Task 'setupDependencies' not found in root project` exception may occur.
@@ -1898,7 +1898,7 @@ Default value
 ### signPlugin
 {#tasks-signplugin}
 
-Signs the ZIP archive with the provided key using the [marketplace-zip-signer](https://github.com/JetBrains/marketplace-zip-signer) library.
+Sign the ZIP archive with the provided key using the [marketplace-zip-signer](https://github.com/JetBrains/marketplace-zip-signer) library.
 
 To sign the plugin before publishing to [JetBrains Marketplace](https://plugins.jetbrains.com) with the [`signPlugin`](#tasks-signplugin) task, it is required to provide a certificate chain and a private key with its password using `signPlugin { ... }` Plugin Signing DSL.
 
@@ -2111,7 +2111,7 @@ Validates completeness and contents of <path>[plugin.xml](plugin_configuration_f
 #### ignoreFailures
 {#tasks-verifyplugin-ignorefailures}
 
-Specifies whether the build should fail when the verifications performed by this task fail.
+Specify whether the build should fail when the verifications performed by this task fail.
 
 {style="narrow"}
 Type
@@ -2124,7 +2124,7 @@ Default value
 #### ignoreWarnings
 {#tasks-verifyplugin-ignorewarnings}
 
-Specifies whether the build should fail when the verifications performed by this task emit warnings.
+Specify whether the build should fail when the verifications performed by this task emit warnings.
 
 {style="narrow"}
 Type
@@ -2137,7 +2137,7 @@ Default value
 #### ignoreUnacceptableWarnings
 {#tasks-verifyplugin-ignoreunacceptablewarnings}
 
-Specifies whether the build should fail when the verifications performed by this task emit unacceptable warnings.
+Specify whether the build should fail when the verifications performed by this task emit unacceptable warnings.
 
 {style="narrow"}
 Type
@@ -2178,7 +2178,7 @@ Validates the plugin project configuration:
 
 > Read more about controlling this behavior on [](using_kotlin.md#kotlin-standard-library).
 
-- An old default [`runPluginVerifier.downloadDir`][#tasks-runpluginverifier-downloaddir] path contains downloaded IDEs but another default is in use. Links to the [FAQ section](tools_gradle_intellij_plugin_faq.md#the-plugin-verifier-download-directory-is-set-to-but-downloaded-ides-were-also-found-in)
+- An old default [`runPluginVerifier.downloadDir`][#tasks-runpluginverifier-downloaddir] path contains downloaded IDEs, but another default is in use. Links to the [FAQ section](tools_gradle_intellij_plugin_faq.md#the-plugin-verifier-download-directory-is-set-to-but-downloaded-ides-were-also-found-in)
 
 
 ### verifyPluginSignature

@@ -245,6 +245,9 @@ Fragment builder functions from `ExternalSystemRunConfigurationUtil` file moved 
 `org.jetbrains.plugins.notebooks.jupyter.variables` package removed
 : It is now part of separate _Jupyter_ plugin.
 
+`com.jetbrains.python.psi.PyClass.getPropertiesInherited(TypeEvalContext)` abstract method added
+: Should implement this method.
+
 ### Database Plugin 2023.3
 
 `com.intellij.database.datagrid.DataGrid.getName(ModelIndex<GridColumn>)` method removed

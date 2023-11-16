@@ -104,7 +104,7 @@ JsonPath library unbundled
 `com.intellij.ide.plugins.enums.PluginsGroupType.FEATURED` enum renamed to `com.intellij.ide.plugins.enums.PluginsGroupType.STAFF_PICKS`
 : Use `com.intellij.ide.plugins.enums.PluginsGroupType.STAFF_PICKS` instead.
 
-`com.intellij.ide.plugins.newui.SearchWords.ORGANIZATION` enum renamed to `com.intellij.ide.plugins.newui.SearchWords.VENDOR` 
+`com.intellij.ide.plugins.newui.SearchWords.ORGANIZATION` enum renamed to `com.intellij.ide.plugins.newui.SearchWords.VENDOR`
 : Use `com.intellij.ide.plugins.newui.SearchWords.VENDOR` instead.
 
 ### Collaboration Tools Module 2023.3
@@ -147,6 +147,9 @@ JsonPath library unbundled
 
 `com.intellij.collaboration.ui.codereview.details.model.CodeReviewChangesViewModelBase` class removed
 : Incorrect EDT-reliant implementation removed.
+
+`com.intellij.collaboration.async.CoroutineUtilKt.DisposingScope(Disposable, CoroutineContext)` method removed
+: Use `com.intellij.collaboration.async.CoroutineUtilKt.disposingScope(CoroutineContext)` instead
 
 ### Java Plugin 2023.3
 

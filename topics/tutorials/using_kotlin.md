@@ -131,6 +131,8 @@ Please make sure it is not added via transitive dependencies either.
 
 ### Other Bundled Kotlin Libraries
 
+In general, it is advised to always use the bundled library version.
+
 Please see [Third-Party Software and Licenses](https://www.jetbrains.com/legal/third-party-software/).
 
 ### Incremental compilation

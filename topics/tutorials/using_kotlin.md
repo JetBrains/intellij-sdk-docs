@@ -24,18 +24,21 @@ This page describes developing plugins using the [Kotlin](https://kotlinlang.org
 ## Advantages of Developing a Plugin in Kotlin
 
 Using Kotlin to write plugins for the IntelliJ Platform is very similar to writing plugins in Java.
-Existing plugin developers can get started by converting boilerplate Java classes to their Kotlin equivalents by using the [J2K converter](https://kotlinlang.org/docs/mixing-java-kotlin-intellij.html#converting-an-existing-java-file-to-kotlin-with-j2k) (part of Kotlin plugin), and developers can easily mix and match Kotlin classes with their existing Java code.
+Existing plugin developers can get started by converting existing Java sources to their Kotlin equivalents by using the [J2K converter](https://kotlinlang.org/docs/mixing-java-kotlin-intellij.html#converting-an-existing-java-file-to-kotlin-with-j2k) (part of Kotlin plugin).
+Developers can also easily mix and match Kotlin classes with their existing Java code.
 
 In addition to [null safety](https://kotlinlang.org/docs/null-safety.html) and [type-safe builders](https://kotlinlang.org/docs/type-safe-builders.html), the Kotlin language offers many convenient features for plugin development, which make plugins easier to read and simpler to maintain.
 Much like [Kotlin for Android](https://kotlinlang.org/docs/android-overview.html), the IntelliJ Platform makes extensive use of callbacks, which are easy to express as [lambdas](https://kotlinlang.org/docs/lambdas.html) in Kotlin.
 
-Likewise, it is easy to customize the behavior of internal classes in the IntelliJ Platform using [extensions](https://kotlinlang.org/docs/extensions.html).
+### Adding Extensions
+
+Likewise, it is possible to customize the behavior of internal classes in the IntelliJ Platform using [extensions](https://kotlinlang.org/docs/extensions.html).
 For example, it is common practice to [guard logging statements](https://www.slf4j.org/faq.html#logging_performance) to avoid the cost of parameter construction, leading to the following ceremony when using the log:
 
 ```java
-if(logger.isDebugEnabled()){
-    logger.debug("..."+expensiveComputation());
-    }
+if (logger.isDebugEnabled()) {
+  logger.debug("..." + expensiveComputation());
+}
 ```
 
 We can achieve the same result more succinctly in Kotlin, by declaring the following extension method:
@@ -60,7 +63,7 @@ With practice, you will be able to recognize many idioms in the IntelliJ Platfor
 
 ### UI Forms in Kotlin
 
-The IntelliJ Platform provides the [type safe DSL](kotlin_ui_dsl_version_2.md) allowing to build UI forms in a declarative way.
+The IntelliJ Platform provides a [type safe DSL](kotlin_ui_dsl_version_2.md) to build UI forms in a declarative way.
 
 > Using _UI Designer_ plugin with Kotlin is [not supported](https://youtrack.jetbrains.com/issue/KTIJ-791).
 >
@@ -95,9 +98,9 @@ To opt out, add this line in <path>gradle.properties</path>:
 kotlin.stdlib.default.dependency = false
 ```
 
-The presence of this Gradle property is checked by the [](tools_gradle_intellij_plugin.md) with the [](tools_gradle_intellij_plugin.md#tasks-verifypluginconfiguration).
+The presence of this Gradle property is checked by the [](tools_gradle_intellij_plugin.md) with the [](tools_gradle_intellij_plugin.md#tasks-verifypluginconfiguration) task.
 If the property is not present, a warning will be reported during the plugin configuration verification, as it is a common problem when Kotlin _stdlib_ gets bundled within the plugin archive.
-If it is expected to make Kotlin _stdlib_ present in the final archive, explicitly specify it with `kotlin.stdlib.default.dependency = true`.
+To bundle _stdlib_ in the plugin distribution, specify explicitly `kotlin.stdlib.default.dependency = true`.
 
 If a plugin supports [multiple platform versions](build_number_ranges.md), it must either target the lowest bundled _stdlib_ version or provide the specific version in plugin distribution.
 
@@ -123,6 +126,7 @@ See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html
 
 > If you need to add the Kotlin Standard Library to your **test project** dependencies, see the [](testing_faq.md#how-to-test-a-jvm-language) section.
 >
+{title="Adding stdlib in tests"}
 
 ### Kotlin Coroutines Libraries (kotlinx.coroutines)
 
@@ -131,9 +135,9 @@ Please make sure it is not added via transitive dependencies either.
 
 ### Other Bundled Kotlin Libraries
 
-In general, it is advised to always use the bundled library version.
+In general, it is strongly advised to always use the bundled library version.
 
-Please see [Third-Party Software and Licenses](https://www.jetbrains.com/legal/third-party-software/).
+Please see [Third-Party Software and Licenses](https://www.jetbrains.com/legal/third-party-software/) for an overview of all bundled libraries.
 
 ### Incremental compilation
 
@@ -179,7 +183,7 @@ kotlin.incremental.useClasspathSnapshot=false
 Plugins *may* use [Kotlin classes](https://kotlinlang.org/docs/classes.html) (`class` keyword) to implement declarations in the [plugin configuration file](plugin_configuration_file.md).
 When registering an extension, the platform uses a dependency injection framework to instantiate these classes at runtime.
 For this reason, plugins *must not* use [Kotlin objects](https://kotlinlang.org/docs/object-declarations.html#object-declarations-overview) (`object` keyword) to implement any <path>[plugin.xml](plugin_configuration_file.md)</path> declarations.
-Managing the lifecycle of extensions is the platform responsibility and instantiating these classes as Kotlin singletons may cause issues.
+Managing the lifecycle of extensions is the platform's responsibility and instantiating these classes as Kotlin singletons may cause issues.
 
 A notable exception is `com.intellij.openapi.fileTypes.FileType` (`com.intellij.fileType` extension point), see also the inspection descriptions below.
 
@@ -207,7 +211,6 @@ Use inspection <control>Plugin DevKit | Code | Companion object in extensions</c
 There are many [open-source Kotlin plugins](https://jb.gg/ipe?language=kotlin) built on the IntelliJ Platform.
 For a readily available source of up-to-date examples of plugins implemented in Kotlin, developers may look to these projects for inspiration:
 
-* [Presentation Assistant](https://github.com/chashnikov/IntelliJ-presentation-assistant)
 * [Rust](https://github.com/intellij-rust/intellij-rust)
 * [TeXiFy IDEA](https://github.com/Hannah-Sten/TeXiFy-IDEA)
 * [Deno](%gh-ij-plugins%/Deno)

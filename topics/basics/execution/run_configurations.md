@@ -11,7 +11,7 @@
 </tldr>
 
 A run configuration is a specific type of [run profile](execution.md#configuration-classes).
-Run configurations can be managed from the UI and persisted between IDE restarts.
+Run configurations can be managed from the UI and are persisted between IDE restarts.
 They allow users to specify execution options like a working directory, environment variables, program arguments, and other parameters required to run a process.
 Run configurations can be started from the <control>Run</control> toolbar, the editor, and executed programmatically from actions or other components.
 
@@ -43,7 +43,7 @@ Standard base classes for configuration type implementations are:
   Factories should be added in the constructor by calling the `addFactory()` method.
 
 Sometimes, it is required to provide run configurations programmatically from contexts external to run configuration UI.
-Implementing [`VirtualConfigurationType`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/VirtualConfigurationType.java) blocks the possibility of adding and removing run configurations of this type in <control>Run/Debug Configurations</control> panel. Editing its template is also not available.
+Implementing [`VirtualConfigurationType`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/VirtualConfigurationType.java) blocks the possibility of adding and removing run configurations of this type in the <control>Run/Debug Configurations</control> panel. Editing its template is also not available.
 
 ### ConfigurationFactory
 
@@ -55,7 +55,7 @@ Configuration factory presentation is inherited from the containing configuratio
 If customization is needed, override the presentation methods in the factory class.
 
 By default, configurations created by a given factory are not editable in [Dumb Mode](indexing_and_psi_stubs.md#dumb-mode).
-To enable editing them in Dumb Mode, return true from `ConfigurationFactory.isEditableInDumbMode()`.
+To enable editing them in Dumb Mode, return `true` from `isEditableInDumbMode()`.
 
 ### RunConfiguration
 
@@ -64,7 +64,7 @@ To enable editing them in Dumb Mode, return true from `ConfigurationFactory.isEd
 When implementing a run configuration class, consider using one of the standard base classes:
 * [`RunConfigurationBase`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RunConfigurationBase.java) - a general-purpose base class that contains the most basic implementation of a run configuration.
 * [`LocatableConfigurationBase`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/LocatableConfigurationBase.java) - a base class for [configurations that can be created from context](#creating-a-run-configuration-from-context).
-* [`ModuleBasedConfiguration`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/ModuleBasedConfiguration.java) - a base class for a configuration that is associated with a specific [module](module.md) (e.g., Java run configurations use the selected module to determine the run classpath).
+* [`ModuleBasedConfiguration`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/ModuleBasedConfiguration.java) - a base class for a configuration that is associated with a specific [](module.md) (e.g., Java run configurations use the selected module to determine the run classpath).
 
 ### SettingsEditor
 
@@ -109,9 +109,9 @@ This is achieved by implementing [`LazyRunConfigurationProducer`](%gh-ic%/platfo
 The extension requires implementing the following methods:
 * `getConfigurationFactory()` - returns the factory creating run configurations of the type specified in the extension class implementation.
 * `setupConfigurationFromContext()` - receives a blank configuration of the specified type and a [`ConfigurationContext`](%gh-ic%/platform/lang-api/src/com/intellij/execution/actions/ConfigurationContext.java) containing information about a source code location (accessible by calling `getLocation()` or `getPsiLocation()`).
-  The implementation needs to check whether the location is applicable to the configuration type (e.g. if it's in a file of the supported language).
-  If it is, put the correct context-specific settings into the run configuration and return true.
-  Return false otherwise.
+  The implementation needs to check whether the location is applicable to the configuration type (e.g., if it is in a file of the supported language).
+  If it is, put the correct context-specific settings into the run configuration and return `true`.
+  Return `false` otherwise.
 * `isConfigurationFromContext()` - checks if a configuration was created from the specified context.
   This method allows reusing an existing run configuration, which applies to the current context, instead of creating a new one and possibly ignoring the user's customizations in the existing one.
 
@@ -174,9 +174,9 @@ The method must return a list of [`SettingsEditorFragment`](%gh-ic%/platform/pla
 ### Settings Editor Groups
 
 A complex settings editor can be split into smaller editors focused on a specific area, e.g.:
-- Configuration - containing the main configuration settings
-- Logs - containing settings related to logging
-- Coverage - containing settings related to code coverage
+- <control>Configuration</control> - containing the main configuration settings
+- <control>Logs</control> - containing settings related to logging
+- <control>Coverage</control> - containing settings related to code coverage
 - etc.
 
 These editors should be added to the [`SettingsEditorGroup`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/SettingsEditorGroup.java) object, which is a `SettingsEditor`'s implementation itself and must be returned from `getConfigurationEditor()` or `getRunnerSettingsEditor()`.
@@ -222,7 +222,8 @@ The provider implementation is responsible for creating a task instance for a gi
 
 Macros are dynamic variables, which can be referenced in run configurations, and expanded to actual values when a run configuration is executed.
 
-For example, a macro with a name `ProjectFileDir` can be referenced as `$ProjectFileDir$` in a run configuration command line argument, and is expanded to the absolute path of the current project directory, when the run configuration is executed by a user.
+For example, a macro with a name `ProjectFileDir` can be referenced as `$ProjectFileDir$` in a run configuration command line argument.
+It is expanded to the absolute path of the current project directory when the run configuration is executed by a user.
 
 A list of built-in macros is available in the [IntelliJ IDEA Web Help](https://www.jetbrains.com/help/idea/built-in-macros.html) and other products' documentation pages.
 

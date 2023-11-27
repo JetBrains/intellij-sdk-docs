@@ -107,6 +107,9 @@ JsonPath library unbundled
 `com.intellij.ide.plugins.newui.SearchWords.ORGANIZATION` enum renamed to `com.intellij.ide.plugins.newui.SearchWords.VENDOR`
 : Use `com.intellij.ide.plugins.newui.SearchWords.VENDOR` instead.
 
+`com.intellij.execution.console.ConsoleHistoryCopyHandler.PROMPT_LENGTH_MARKER` field removed
+: Use `com.intellij.execution.console.ConsoleHistoryCopyHandlerKt#PROMPT_LENGTH_MARKER` instead.
+
 ### Collaboration Tools Module 2023.3
 
 `com.intellij.collaboration.ui.codereview.action.CodeReviewCheckoutRemoteBranchAction` class removed

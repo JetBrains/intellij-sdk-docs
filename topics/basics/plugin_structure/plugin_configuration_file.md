@@ -770,7 +770,7 @@ Examples
 ##### `synonym`
 {#idea-plugin__actions__action__synonym}
 
-Defines an alternative name for searching the action by name.
+Defines an alternative text for searching the action in <ui-path>Help | Find Action...</ui-path> or <ui-path>Navigate | Search Everywhere</ui-path> popups.
 A single action can have multiple synonyms.
 
 {style="narrow"}
@@ -781,19 +781,24 @@ Required
 : no
 
 Attributes
-: - `text` _(**required**)_<br/>
+:
+- `key`  _(`key` or `text` is **required**)_<br/>
+  The key of synonym text provided in a message bundle.
+- `text` _(`key` or `text` is **required**)_<br/>
   The synonym text.
 
 Example
 :
 ```xml
-<synonym text="GC"/>
+<!-- Default action text: Delete Element -->
+<synonym key="my.action.text.remove.element"/>
+<synonym text="Remove Element"/>
 ```
 
 ##### `abbreviation`
 {#idea-plugin__actions__action__abbreviation}
 
-Defines an alias for the action name which the user can use in <ui-path>Help | Find Action...</ui-path> or <ui-path>Navigate | Search Everywhere</ui-path> popups.
+Defines an abbreviation for searching the action in <ui-path>Help | Find Action...</ui-path> or <ui-path>Navigate | Search Everywhere</ui-path> popups.
 A single action can have multiple abbreviations.
 
 {style="narrow"}
@@ -807,7 +812,8 @@ The abbreviation value.
 Example
 :
 ```xml
-<abbreviation value="abc"/>
+<!-- Default action text: UI Inspector -->
+<abbreviation value="uii"/>
 ```
 
 #### `group`

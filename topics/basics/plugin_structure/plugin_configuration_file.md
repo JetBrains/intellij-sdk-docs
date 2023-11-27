@@ -45,16 +45,16 @@ See also [](marketing.md) about widgets and badges.
       - [`<keyboard-shortcut>`](#idea-plugin__actions__action__keyboard-shortcut)
       - [`<mouse-shortcut>`](#idea-plugin__actions__action__mouse-shortcut)
       - [`<override-text>`](#idea-plugin__actions__action__override-text)
-      - [`<abbreviation>`](#idea-plugin__actions__action__abbreviation)
       - [`<synonym>`](#idea-plugin__actions__action__synonym)
+      - [`<abbreviation>`](#idea-plugin__actions__action__abbreviation)
     - [`<group>`](#idea-plugin__actions__group)
       - [`<action>`](#idea-plugin__actions__action)
         - [`<add-to-group>`](#idea-plugin__actions__action__add-to-group)
         - [`<keyboard-shortcut>`](#idea-plugin__actions__action__keyboard-shortcut)
         - [`<mouse-shortcut>`](#idea-plugin__actions__action__mouse-shortcut)
         - [`<override-text>`](#idea-plugin__actions__action__override-text)
-        - [`<abbreviation>`](#idea-plugin__actions__action__abbreviation)
         - [`<synonym>`](#idea-plugin__actions__action__synonym)
+        - [`<abbreviation>`](#idea-plugin__actions__action__abbreviation)
       - [`<group>`](#idea-plugin__actions__group)
       - [`<add-to-group>`](#idea-plugin__actions__action__add-to-group)
       - [`<override-text>`](#idea-plugin__actions__action__override-text)
@@ -767,26 +767,6 @@ Examples
         use-text-of-place="MainMenu"/>
     ```
 
-##### `abbreviation`
-{#idea-plugin__actions__action__abbreviation}
-
-Defines an alias for the action name which the user can use in <ui-path>Help | Find Action...</ui-path> or <ui-path>Navigate | Search Everywhere</ui-path> popups.
-A single action can have multiple abbreviations.
-
-{style="narrow"}
-Required
-: no
-
-Attributes
-: - `value` _(**required**)_<br/>
-The abbreviation value.
-
-Example
-:
-```xml
-<abbreviation value="abc"/>
-```
-
 ##### `synonym`
 {#idea-plugin__actions__action__synonym}
 
@@ -808,6 +788,26 @@ Example
 :
 ```xml
 <synonym text="GC"/>
+```
+
+##### `abbreviation`
+{#idea-plugin__actions__action__abbreviation}
+
+Defines an alias for the action name which the user can use in <ui-path>Help | Find Action...</ui-path> or <ui-path>Navigate | Search Everywhere</ui-path> popups.
+A single action can have multiple abbreviations.
+
+{style="narrow"}
+Required
+: no
+
+Attributes
+: - `value` _(**required**)_<br/>
+The abbreviation value.
+
+Example
+:
+```xml
+<abbreviation value="abc"/>
 ```
 
 #### `group`

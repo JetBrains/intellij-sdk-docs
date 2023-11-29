@@ -15,8 +15,6 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Menu action to replace a selection of characters with a fixed string.
- *
- * @see AnAction
  */
 public class EditorIllustrationAction extends AnAction {
 

@@ -28,7 +28,6 @@ final class ComparingStringReferencesInspection extends AbstractBaseJavaLocalIns
    * @param holder     object for the visitor to register problems found
    * @param isOnTheFly true if inspection was run in non-batch mode
    * @return non-null visitor for this inspection
-   * @see JavaElementVisitor
    */
   @NotNull
   @Override
@@ -139,5 +138,7 @@ final class ComparingStringReferencesInspection extends AbstractBaseJavaLocalIns
     public String getFamilyName() {
       return getName();
     }
+
   }
+
 }

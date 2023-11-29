@@ -30,8 +30,6 @@ public class PopupDialogAction extends AnAction {
   /**
    * This default constructor is used by the IntelliJ Platform framework to instantiate this class based on plugin.xml
    * declarations. Only needed in {@link PopupDialogAction} class because a second constructor is overridden.
-   *
-   * @see AnAction#AnAction()
    */
   public PopupDialogAction() {
     super();

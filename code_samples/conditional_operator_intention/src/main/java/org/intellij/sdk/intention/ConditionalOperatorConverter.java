@@ -54,16 +54,15 @@ final class ConditionalOperatorConverter extends PsiElementBaseIntentionAction i
   }
 
   /**
-   * Modifies the Psi to change a ternary expression to an if-then-else statement.
+   * Modifies the PSI to change a ternary expression to an if-then-else statement.
    * If the ternary is part of a declaration, the declaration is separated and moved above the if-then-else statement.
    * Called when user selects this intention action from the available intentions list.
    *
    * @param project a reference to the Project object being edited.
    * @param editor  a reference to the object editing the project source
    * @param element a reference to the PSI element currently under the caret
-   * @throws IncorrectOperationException Thrown by underlying (Psi model) write action context
-   *                                     when manipulation of the psi tree fails.
-   * @see ConditionalOperatorConverter#startInWriteAction()
+   * @throws IncorrectOperationException Thrown by underlying (PSI model) write action context
+   *                                     when manipulation of the PSI tree fails.
    */
   public void invoke(@NotNull Project project, Editor editor, @NotNull PsiElement element)
       throws IncorrectOperationException {
@@ -84,7 +83,7 @@ final class ConditionalOperatorConverter extends PsiElementBaseIntentionAction i
       return;
     }
 
-    // Keep searching up the Psi Tree in case the ternary is part of a FOR statement.
+    // Keep searching up the PSI Tree in case the ternary is part of a FOR statement.
     PsiElement originalStatement = PsiTreeUtil.getParentOfType(conditionalExpression, PsiStatement.class, false);
     while (originalStatement instanceof PsiForStatement) {
       originalStatement = PsiTreeUtil.getParentOfType(originalStatement, PsiStatement.class, true);

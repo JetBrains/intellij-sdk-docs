@@ -28,7 +28,7 @@ final class SimpleAnnotator implements Annotator {
       return;
     }
 
-    // Ensure the Psi element contains a string that starts with the prefix and separator
+    // Ensure the PSI element contains a string that starts with the prefix and separator
     String value = literalExpression.getValue() instanceof String ? (String) literalExpression.getValue() : null;
     if (value == null || !value.startsWith(SIMPLE_PREFIX_STR + SIMPLE_SEPARATOR_STR)) {
       return;

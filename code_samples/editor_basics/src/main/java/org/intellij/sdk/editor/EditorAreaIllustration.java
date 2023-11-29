@@ -13,8 +13,6 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * If conditions support it, makes a menu visible to display information about the caret.
- *
- * @see AnAction
  */
 public class EditorAreaIllustration extends AnAction {
 

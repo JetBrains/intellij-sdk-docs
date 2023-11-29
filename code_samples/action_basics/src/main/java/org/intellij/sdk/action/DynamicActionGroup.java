@@ -13,8 +13,6 @@ import org.jetbrains.annotations.NotNull;
  * the group at runtime. See plugin.xml for the declaration of {@link DynamicActionGroup}, and note the group
  * declaration does not contain an action. {@link DynamicActionGroup} is based on {@link ActionGroup} because menu
  * children are determined on rules other than just positional constraints.
- *
- * @see ActionGroup
  */
 public class DynamicActionGroup extends ActionGroup {
 

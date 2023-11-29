@@ -26,7 +26,6 @@ public class CustomDefaultActionGroup extends DefaultActionGroup {
    * Requires an editor to be active in order to enable the group functionality.
    *
    * @param event Event received when the associated group-id menu is chosen.
-   * @see com.intellij.openapi.actionSystem.AnAction#update(AnActionEvent)
    */
   @Override
   public void update(AnActionEvent event) {

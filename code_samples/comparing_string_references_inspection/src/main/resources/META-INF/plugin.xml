@@ -38,8 +38,7 @@
       Extend the IntelliJ Platform local inspection type and connect it to the implementation class in this plugin.
       <localInspection> type element is applied within the scope of a file under edit.
       It is preferred over <inspectionToolProvider>
-        @see intellij.platform.resources.LangExtensionPoints
-        @see com.intellij.codeInspection.InspectionProfileEntry
+      @see com.intellij.codeInspection.InspectionProfileEntry
 
       Attributes:
         - language - inspection language ID

@@ -11,8 +11,6 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Menu action to clone a new caret based on an existing one.
- *
- * @see AnAction
  */
 public class EditorHandlerIllustration extends AnAction {
 

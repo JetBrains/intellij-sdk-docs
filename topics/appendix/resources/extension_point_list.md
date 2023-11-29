@@ -16,6 +16,8 @@
 
 <include from="snippets.md" element-id="ep_list_legend"/>
 
+## IntelliJ Platform
+
 ### IntelliJ Platform - Listeners
 
 | Topic | Listener |

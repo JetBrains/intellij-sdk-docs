@@ -56,7 +56,7 @@ public @NotNull OptPane getOptionsPane() {
 ```
 
 The above example builds a form with two options (see
-[`SizeReplaceableByIsEmptyInspection`](%gh-ic%/plugins/InspectionGadgets/src/com/siyeh/ig/style/SizeReplaceableByIsEmptyInspection.java)
+[`SizeReplaceableByIsEmptyInspection`](%gh-ic%/java/java-impl/src/com/siyeh/ig/style/SizeReplaceableByIsEmptyInspection.java)
 for the full implementation context):
 * List of strings, which are validated for being Java classes. The provided list is bound to the `ignoredTypes` field in the inspection class.
 * Checkbox, which value is bound to the boolean `ignoreNegations` field in the inspection class.

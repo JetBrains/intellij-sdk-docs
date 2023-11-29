@@ -4,7 +4,7 @@
 
 <link-summary>Overview of Extension Points and Listeners for PHP.</link-summary>
 
-62 Extension Points and 10 Listeners for PHP
+61 Extension Points and 10 Listeners for PHP
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
@@ -96,7 +96,6 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [com.jetbrains.php.templateLanguageHighlightingExtension](https://jb.gg/ipe?extensions=com.jetbrains.php.templateLanguageHighlightingExtension) ![Internal][internal] | `TemplateLanguageBackgroundColorProvider` |
 | [com.jetbrains.php.testFramework.phpTestOldConfigHolder](https://jb.gg/ipe?extensions=com.jetbrains.php.testFramework.phpTestOldConfigHolder) ![Deprecated][deprecated] ![Internal][internal] | `PhpTestFrameworkOldConfigHolder` |
 | [com.jetbrains.php.testFrameworkType](https://jb.gg/ipe?extensions=com.jetbrains.php.testFrameworkType) | `PhpTestFrameworkType` |
-| [com.jetbrains.php.tools.projectConfigurableForm](https://jb.gg/ipe?extensions=com.jetbrains.php.tools.projectConfigurableForm) ![Internal][internal] ![Project-Level][project-level] | `QualityToolProjectConfigurableForm` |
 | [com.jetbrains.php.tools.quality.laravelPint.laravelPintConfigurationProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.tools.quality.laravelPint.laravelPintConfigurationProvider) | `LaravelPintConfigurationProvider` |
 | [com.jetbrains.php.tools.quality.messDetector.messDetectorConfigurationProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.tools.quality.messDetector.messDetectorConfigurationProvider) | `MessDetectorConfigurationProvider` |
 | [com.jetbrains.php.tools.quality.phpCSFixer.phpCSFixerConfigurationProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.tools.quality.phpCSFixer.phpCSFixerConfigurationProvider) | `PhpCSFixerConfigurationProvider` |

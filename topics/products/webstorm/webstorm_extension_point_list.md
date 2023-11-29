@@ -4,9 +4,9 @@
 
 <link-summary>Overview of Extension Points and Listeners for WebStorm.</link-summary>
 
-69 Extension Points and 6 Listeners for WebStorm
+69 Extension Points and 5 Listeners for WebStorm
 
-See [](extension_point_list.md) for IntelliJ Platform.
+See [](extension_point_list.md) for IntelliJ Platform and [](oss_plugins_extension_point_list.md) for additional plugins.
 
 <include from="snippets.md" element-id="ep_list_legend"/>
 
@@ -17,7 +17,6 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | Topic | Listener |
 |-------|----------|
 | [JestConsoleProperties#COVERAGE_CONFIG_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.javascript.jest.JestCoverageConfigListener)  ![Project-Level][project-level] | `JestCoverageConfigListener` |
-| [PackageJsonFileManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.javascript.nodejs.packageJson.PackageJsonFileManager.PackageJsonChangeListener)  ![Deprecated][deprecated] ![Project-Level][project-level] | `PackageJsonChangeListener` |
 | [PackageJsonFileManager#CHANGES_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.javascript.nodejs.packageJson.PackageJsonFileManager.PackageJsonChangesListener)  ![Project-Level][project-level] | `PackageJsonChangesListener` |
 | [VitestConsoleProperties#COVERAGE_CONFIG_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.javascript.testing.vitest.coverage.VitestCoverageConfigListener)  ![Project-Level][project-level] | `VitestCoverageConfigListener` |
 | [JSLibraryManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.lang.javascript.library.JSLibraryManager.JSLibraryManagerChangeListener)  ![Project-Level][project-level] | `JSLibraryManagerChangeListener` |
@@ -28,6 +27,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.intellij.css.classOrIdUsagesProvider](https://jb.gg/ipe?extensions=com.intellij.css.classOrIdUsagesProvider) | `CssClassOrIdUsagesProvider` |
+| [com.intellij.css.cssFileReferenceProvider](https://jb.gg/ipe?extensions=com.intellij.css.cssFileReferenceProvider) | `CssFileReferenceProvider` |
 | [com.intellij.css.cssInspectionFilter](https://jb.gg/ipe?extensions=com.intellij.css.cssInspectionFilter) | `CssInspectionFilter` |
 | [com.intellij.css.cssIntentionFilter](https://jb.gg/ipe?extensions=com.intellij.css.cssIntentionFilter) | `CssIntentionFilter` |
 | [com.intellij.css.dialect](https://jb.gg/ipe?extensions=com.intellij.css.dialect) | `CssDialect` |
@@ -47,7 +47,6 @@ See [](extension_point_list.md) for IntelliJ Platform.
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.intellij.javascript.web.context](https://jb.gg/ipe?extensions=com.intellij.javascript.web.context) ![Deprecated][deprecated] ![Removal][removal] | `WebFrameworkContext` |
 | [com.intellij.javascript.webTypes](https://jb.gg/ipe?extensions=com.intellij.javascript.webTypes) ![Removal][removal] | `n/a` |
 
 ### JavaScript

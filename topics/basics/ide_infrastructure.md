@@ -133,7 +133,7 @@ Use [`PowerSaveMode`](%gh-ic%/platform/core-api/src/com/intellij/ide/PowerSaveMo
 
 ## Plugin Management
 
-Installed plugins can be checked via [`PluginManagerCore.isPluginInstalled()`](%gh-ic%/platform/core-impl/src/com/intellij/ide/plugins/PluginManagerCore.java).
+Installed plugins can be checked via [`PluginManagerCore.isPluginInstalled()`](%gh-ic%/platform/core-impl/src/com/intellij/ide/plugins/PluginManagerCore.kt).
 
 ### Plugin Suggestions
 

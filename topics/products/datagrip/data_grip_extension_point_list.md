@@ -4,7 +4,7 @@
 
 <link-summary>Overview of Extension Points and Listeners for DataGrip.</link-summary>
 
-72 Extension Points and 22 Listeners for DataGrip
+74 Extension Points and 27 Listeners for DataGrip
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
@@ -16,25 +16,30 @@ See [](extension_point_list.md) for IntelliJ Platform.
 
 | Topic | Listener |
 |-------|----------|
+| [JdbcDriverManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.console.JdbcDriverManager.Listener)  | `Listener` |
 | [DatabaseSessionManager#topic](https://jb.gg/ipe/listeners?topics=com.intellij.database.console.session.DatabaseSessionManagerListener)  | `DatabaseSessionManagerListener` |
 | [DatabaseSession.Companion#topic](https://jb.gg/ipe/listeners?topics=com.intellij.database.console.session.DatabaseSessionStateListener)  | `DatabaseSessionStateListener` |
 | [CsvFormatsSettings#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.csv.CsvFormatsSettings.Listener)  | `Listener` |
 | [AbstractDataSource#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.dataSource.AbstractDataSource.Listener)  | `Listener` |
+| [DataSourceModelStorage#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.dataSource.DataSourceModelStorage.Listener)  | `Listener` |
 | [DataSourceStorage#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.dataSource.DataSourceStorage.Listener)  | `Listener` |
 | [DatabaseConnectionManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.dataSource.DatabaseConnectionManager.Listener)  | `Listener` |
+| [DatabaseModelLoader#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.dataSource.DatabaseModelLoader.Listener)  | `Listener` |
 | [DatabaseArtifactManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.dataSource.artifacts.DatabaseArtifactManager.ArtifactListener)  | `ArtifactListener` |
+| [DataSourceTestConnectionManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.dataSource.ui.DataSourceTestConnectionManager.Listener)  | `Listener` |
 | [DatabaseTopics#AUDIT_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.datagrid.DataAuditor)  | `DataAuditor` |
 | [DatabaseTopics#RESPONSE_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.datagrid.DataConsumer)  | `DataConsumer` |
 | [DataGrid#ACTIVE_GRID_CHANGED_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.datagrid.DataGrid.ActiveGridListener)  | `ActiveGridListener` |
 | [DataGridListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.datagrid.DataGridListener)  | `DataGridListener` |
 | [DatabaseTopics#REQUEST_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.datagrid.DataProducer)  | `DataProducer` |
+| [ImportHead#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.dbimport.ImportHead.Listener)  | `Listener` |
 | [ScriptGeneratorDiagnosticListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.dialects.base.generator.ScriptGeneratorDiagnosticListener)  | `ScriptGeneratorDiagnosticListener` |
 | [DataSourceManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.psi.DataSourceManager.Listener)  | `Listener` |
 | [DbPsiFacade#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.psi.DbPsiFacade.Listener)  | `Listener` |
 | [DataGridAppearanceSettings#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.settings.DataGridAppearanceSettings.Listener)  | `Listener` |
 | [DataGridSettings#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.settings.DataGridSettings.Listener)  | `Listener` |
 | [DatabaseColorManager#COLOR_CHANGE_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.view.DatabaseColorManager.ColorChangeListener)  | `ColorChangeListener` |
-| [DatabaseNodeWrappingService#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.view.DatabaseNodeWrappingService.Listener)  | `Listener` |
+| [DatabaseConfigEditor#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.view.ui.DatabaseConfigEditor.Listener)  | `Listener` |
 | [SqlRoutineIndex#topic](https://jb.gg/ipe/listeners?topics=com.intellij.sql.SqlRoutineIndex.SqlRoutineIndexListener)  | `SqlRoutineIndexListener` |
 | [DatabaseSettings#TOPIC](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
 | [DatabaseViewOptions#TOPIC](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
@@ -64,7 +69,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 |-----------------|----------------|
 | [com.intellij.database.addToHSet](https://jb.gg/ipe?extensions=com.intellij.database.addToHSet) | `n/a` |
 | [com.intellij.database.artifactsConfig](https://jb.gg/ipe?extensions=com.intellij.database.artifactsConfig) ![Non-Dynamic][non-dynamic] | `n/a` |
-| [com.intellij.database.connectionInterceptor](https://jb.gg/ipe?extensions=com.intellij.database.connectionInterceptor) ![Internal][internal] | `DatabaseConnectionInterceptor` |
+| [com.intellij.database.connectionInterceptor](https://jb.gg/ipe?extensions=com.intellij.database.connectionInterceptor) ![Experimental][experimental] | `DatabaseConnectionInterceptor` |
 | [com.intellij.database.consoleProvider](https://jb.gg/ipe?extensions=com.intellij.database.consoleProvider) | `PersistenceConsoleProvider` |
 | [com.intellij.database.consoleRunContextParametersTuner](https://jb.gg/ipe?extensions=com.intellij.database.consoleRunContextParametersTuner) | `ConsoleRunContextParametersTuner` |
 | [com.intellij.database.dataAuditor](https://jb.gg/ipe?extensions=com.intellij.database.dataAuditor) | `DataAuditor` |
@@ -84,6 +89,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.database.gridColumnsManagerFactory](https://jb.gg/ipe?extensions=com.intellij.database.gridColumnsManagerFactory) | `GridColumnsManagerFactory` |
 | [com.intellij.database.hookUpHelper](https://jb.gg/ipe?extensions=com.intellij.database.hookUpHelper) | `HookUpHelper` |
 | [com.intellij.database.introspector](https://jb.gg/ipe?extensions=com.intellij.database.introspector) ![Internal][internal] | `Factory` |
+| [com.intellij.database.introspectorStatsProvider](https://jb.gg/ipe?extensions=com.intellij.database.introspectorStatsProvider) | `DBIntrospectorStatsProvider` |
 | [com.intellij.database.linkedDataSourceHelper](https://jb.gg/ipe?extensions=com.intellij.database.linkedDataSourceHelper) | `LinkedDataSourceHelper` |
 | [com.intellij.database.modelExternalData](https://jb.gg/ipe?extensions=com.intellij.database.modelExternalData) ![Non-Dynamic][non-dynamic] | `n/a` |
 | [com.intellij.database.modelFacade](https://jb.gg/ipe?extensions=com.intellij.database.modelFacade) ![Non-Dynamic][non-dynamic] | `ModelFacade` |
@@ -96,7 +102,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.database.scriptGenerator](https://jb.gg/ipe?extensions=com.intellij.database.scriptGenerator) | `ScriptGenerator` |
 | [com.intellij.database.sqlObjectBuilder](https://jb.gg/ipe?extensions=com.intellij.database.sqlObjectBuilder) | `SqlObjectBuilder` |
 | [com.intellij.database.synchronizeHandler](https://jb.gg/ipe?extensions=com.intellij.database.synchronizeHandler) | `SynchronizeHandler` |
-| [com.intellij.database.typeService](https://jb.gg/ipe?extensions=com.intellij.database.typeService) | `DasTypeService` |
+| [com.intellij.database.typeSystem](https://jb.gg/ipe?extensions=com.intellij.database.typeSystem) | `DasTypeSystem` |
 | [com.intellij.database.urlEditorInspector](https://jb.gg/ipe?extensions=com.intellij.database.urlEditorInspector) | `UrlEditorInspector` |
 | [com.intellij.database.urlParamEditorProvider](https://jb.gg/ipe?extensions=com.intellij.database.urlParamEditorProvider) ![Non-Dynamic][non-dynamic] | `TypeDescriptorFactory` |
 | [com.intellij.database.virtualFileDataSourceProvider](https://jb.gg/ipe?extensions=com.intellij.database.virtualFileDataSourceProvider) | `VirtualFileDataSourceProvider` |
@@ -108,6 +114,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.database.databaseViewStructureExtension](https://jb.gg/ipe?extensions=com.intellij.database.databaseViewStructureExtension) | `DvStructureExtension` |
 | [com.intellij.database.debuggerFacade](https://jb.gg/ipe?extensions=com.intellij.database.debuggerFacade) | `SqlDebuggerFacade` |
 | [com.intellij.database.predicatesHelper](https://jb.gg/ipe?extensions=com.intellij.database.predicatesHelper) | `PredicatesHelper` |
+| [com.intellij.database.runConsoleAvailable](https://jb.gg/ipe?extensions=com.intellij.database.runConsoleAvailable) | `RunQueryIntentionActionAvailable` |
 | [com.intellij.database.schemaDiffCustomization](https://jb.gg/ipe?extensions=com.intellij.database.schemaDiffCustomization) | `SchemaDiffCustomization` |
 | [com.intellij.database.urlParamEditorUiProvider](https://jb.gg/ipe?extensions=com.intellij.database.urlParamEditorUiProvider) ![Non-Dynamic][non-dynamic] | `TypeDescriptorUiFactory` |
 
@@ -136,6 +143,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.intellij.database.dialect](https://jb.gg/ipe?extensions=com.intellij.database.dialect) ![Non-Dynamic][non-dynamic] | `DatabaseDialect` |
+| [com.intellij.sql.dataSourceProvider](https://jb.gg/ipe?extensions=com.intellij.sql.dataSourceProvider) | `DataSourceProvider` |
 | [com.intellij.sql.dialect](https://jb.gg/ipe?extensions=com.intellij.sql.dialect) ![Non-Dynamic][non-dynamic] | `SqlLanguageDialect` |
 | [com.intellij.sql.dialectCodeStyleProvider](https://jb.gg/ipe?extensions=com.intellij.sql.dialectCodeStyleProvider) | `SqlDialectCodeStyleProvider` |
 | [com.intellij.sql.evaluationHelper](https://jb.gg/ipe?extensions=com.intellij.sql.evaluationHelper) | `EvaluationHelper` |
@@ -145,7 +153,6 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.sql.membersHelper](https://jb.gg/ipe?extensions=com.intellij.sql.membersHelper) | `SqlMembersHelper` |
 | [com.intellij.sql.navigationHelper](https://jb.gg/ipe?extensions=com.intellij.sql.navigationHelper) | `NavigationHelper` |
 | [com.intellij.sql.resolveExtension](https://jb.gg/ipe?extensions=com.intellij.sql.resolveExtension) | `SqlResolveExtension` |
-| [com.intellij.sql.typeSystem](https://jb.gg/ipe?extensions=com.intellij.sql.typeSystem) | `SqlTypeSystem` |
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square
 [removal]: https://img.shields.io/badge/-Removal-red?style=flat-square

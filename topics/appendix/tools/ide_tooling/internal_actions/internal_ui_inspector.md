@@ -1,6 +1,6 @@
-# Internal Actions - UI Inspector
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Internal Actions - UI Inspector
 
 <link-summary>UI Inspector allows checking properties of a component selected in the frame of running IDE instance.</link-summary>
 
@@ -60,11 +60,11 @@ Custom Swing components can also provide additional properties via [`UiInspector
 
 ### IDE and UI Components
 
-| Type                                 | Properties                                                                                                                                                                                                                                                |
-|--------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [`DialogWrapper`](dialog_wrapper.md) | <control>dialogWrapperClass</control> - [`DialogWrapper`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) implementation                                                                                                    |
-| [`ToolWindow`](tool_windows.md)      | <p><control>Tool Window ID</control> - `id`</p><p><control>Tool Window Icon</control> - `icon`</p><p><control>Tool Window Factory</control> - [`ToolWindowFactory`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java)</p> |
-| [`Tree`](lists_and_trees.md)         | <control>treeModelClass</control> - `javax.swing.tree.TreeModel` implementation                                                                                                                                                                           |
+| Type                                 | Properties                                                                                                                                                                                                                                              |
+|--------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [`DialogWrapper`](dialog_wrapper.md) | <control>dialogWrapperClass</control> - [`DialogWrapper`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) implementation                                                                                                  |
+| [`ToolWindow`](tool_windows.md)      | <p><control>Tool Window ID</control> - `id`</p><p><control>Tool Window Icon</control> - `icon`</p><p><control>Tool Window Factory</control> - [`ToolWindowFactory`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.kt)</p> |
+| [`Tree`](lists_and_trees.md)         | <control>treeModelClass</control> - `javax.swing.tree.TreeModel` implementation                                                                                                                                                                         |
 
 ## Inspecting Settings
 

@@ -122,8 +122,7 @@ See the API documentation for the details.
 ### Further Tips
 
 1. Go to
-   [Settings | Editor | Inlay Hints](https://www.jetbrains.com/help/idea/inlay-hints.html) and check out inlays that have already been implemented.
-   It gives insight into what’s possible.
+   <ui-path>Settings | Editor | Inlay Hints</ui-path> ([Product Help](https://www.jetbrains.com/help/idea/inlay-hints.html)) and check out inlays that have already been implemented.
 2. To support multiple languages with a single type of inlay hints, see declarative
    [`InlayHintsProviderFactory`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hints/declarative/InlayHintsProviderFactory.kt) (2023.1+)
    or
@@ -131,11 +130,3 @@ See the API documentation for the details.
 3. For testing inlay hints, see
    [`InlayHintsProviderTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/utils/inlays/InlayHintsProviderTestCase.kt)
    and [`InlayParameterHintsTest`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/utils/inlays/InlayParameterHintsTest.kt).
-4. To force inlay hints to update when using
-   [`DaemonCodeAnalyzer.restart()`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/daemon/DaemonCodeAnalyzer.java),
-   use
-   [`InlayHintsPassFactory.forceHintsUpdateOnNextPass()`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/hints/InlayHintsPassFactory.kt)
-   or
-   [`ParameterHintsPassFactory.forceHintsUpdateOnNextPass()`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/hints/ParameterHintsPassFactory.java)
-   when using `InlayParameterHintsProvider` before you call `restart()`.
-   To force an update on a specific editor, use the method overload that takes an `Editor` instance.

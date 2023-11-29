@@ -14,7 +14,7 @@ Overview of Extension Points and Listeners for OSS plugins bundled with [](idea_
 
 <include from="snippets.md" element-id="ep_list_legend"/>
 
-20 Extension Points and 8 Listeners
+20 Extension Points and 9 Listeners
 
 ## IntelliJ Open Source Plugins
 
@@ -22,6 +22,7 @@ Overview of Extension Points and Listeners for OSS plugins bundled with [](idea_
 
 | Topic | Listener |
 |-------|----------|
+| [ChangeListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.dts.settings.DtsSettings.ChangeListener)  ![Project-Level][project-level] | [`ChangeListener`](%gh-ij-plugins%/dts/src/com/intellij/dts/settings/DtsSettings.kt) |
 | [FlexBuildConfigurationChangeListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.lang.javascript.flex.projectStructure.model.impl.FlexBuildConfigurationChangeListener)  | [`FlexBuildConfigurationChangeListener`](%gh-ij-plugins%/flex/src/com/intellij/lang/javascript/flex/projectStructure/model/impl/FlexBuildConfigurationChangeListener.java) |
 | [SerialSettingsChangeListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.plugins.serialmonitor.service.SerialSettingsChangeListener)  | [`SerialSettingsChangeListener`](%gh-ij-plugins%/serial-monitor/src/main/java/com/intellij/plugins/serialmonitor/service/SerialSettingsChangeListener.java) |
 | [PlatformioServiceKt#PLATFORMIO_UPDATES_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.embedded.platformio.PlatformioUpdatesNotifier)  ![Project-Level][project-level] | [`PlatformioUpdatesNotifier`](%gh-ij-plugins%/platformio/src/com/jetbrains/cidr/cpp/embedded/platformio/PlatformioService.kt) |

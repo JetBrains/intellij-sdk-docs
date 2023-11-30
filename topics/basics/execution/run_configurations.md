@@ -21,6 +21,27 @@ The following diagram shows the key run configurations classes:
 
 ![Run Configuration Classes](run_configuration_classes.svg)
 
+```plantuml
+@startuml
+
+hide empty members
+hide circle
+
+interface RunProfile
+interface ConfigurationType
+abstract class ConfigurationFactory
+interface RunConfiguration
+abstract class SettingsEditor
+
+
+ConfigurationType *-- "*" ConfigurationFactory
+ConfigurationFactory --> RunConfiguration: creates
+RunConfiguration o-- "0..*" SettingsEditor
+RunConfiguration -l|> RunProfile
+
+@enduml
+```
+
 Run Configuration API (except `SettingsEditor` class, which is a class shared by many IntelliJ Platform APIs) is a part of the [Execution API](execution.md).
 
 ### ConfigurationType

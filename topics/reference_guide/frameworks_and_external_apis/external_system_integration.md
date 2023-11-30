@@ -28,12 +28,59 @@ That information is built with the following base classes:
 
 ![DataNode](data_node.svg)
 
+```plantuml
+@startuml
+
+hide empty members
+hide circle
+
+class "parent DataNode" as parent
+class DataNode
+together {
+  class "child n DataNode" as child3
+  class "..." as child2
+  class "child 1 DataNode" as child1
+  class Key
+  class ExternalEntityData
+}
+
+' Define the class relationships
+parent -- DataNode
+
+ExternalEntityData --o DataNode
+Key --o DataNode
+DataNode -- child1
+DataNode -- child2
+DataNode -- child3
+
+@enduml
+```
+
 The `DataNode` class is just a holder for the target data (a data type is defined by the `Key`).
 Multiple `DataNode` objects might be organized in directed graph where every edge identifies parent-child relation.
 
 For example, a simple one-module project might look as below:
 
 ![DataNode Example](data_node_example.svg)
+
+```plantuml
+@startuml
+
+rectangle "DataNode<ProjectData>" as root
+rectangle "DataNode<ModuleData>" as child1
+rectangle "DataNode<LibraryData>\n(JUnit)" as child2
+rectangle "DataNode<ContentRootData>" as child11
+rectangle "DataNode<LibraryDependencyData>\n(JUnit)" as child12
+
+' Define the class relationships
+root -- child1
+root -- child2
+
+child1 -- child11
+child1 -- child12
+
+@enduml
+```
 
 The IDE provides a set of built-in `Key` and `ExternalEntityData` classes but any external system integration or third-party plugin developer might enhance project data by defining custom `Key` and `ExternalEntityData` and store them at a child of appropriate `DataNode`.
 

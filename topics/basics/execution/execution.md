@@ -19,6 +19,44 @@ The following diagram shows the relations between the key classes:
 
 ![Execution Classes](execution_classes.svg)
 
+```plantuml
+@startuml
+
+hide empty members
+hide circle
+
+package Configuration <<Rectangle>> {
+interface RunProfile
+interface RunConfiguration
+interface RunProfileState
+}
+
+package Execution <<Rectangle>> {
+abstract class Executor
+interface ProgramRunner
+class ExecutionEnvironment
+class RunContentBuilder
+abstract class ExecutionResult
+interface ExecutionConsole
+abstract class ProcessHandler
+}
+
+RunProfile <|.. RunConfiguration
+RunProfile --> RunProfileState: creates
+
+RunProfileState --> ExecutionResult: prepares
+
+ExecutionResult o-- "1" ExecutionConsole
+ExecutionResult o-- "1" ProcessHandler
+
+ProgramRunner --> RunProfile: executes
+ProgramRunner --> Executor
+ProgramRunner --> ExecutionEnvironment
+ProgramRunner -r-> RunContentBuilder
+
+@enduml
+```
+
 ### Configuration Classes
 
 [`RunProfile`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RunProfile.java) is a base interface for things that can be executed (e.g., an application started via a `main()` method, a test or test suite, a remote debug session to a specific host, etc.).

@@ -78,6 +78,35 @@ browser.openDevtools();
 
 See [`JBCefTestHelper`](%gh-ic%/platform/platform-tests/testSrc/com/intellij/ui/jcef/JBCefTestHelper.java) and tests in that package.
 
+## File Download
+
+Downloading files can be achieved by implementing the [`CefDownloadHandler`](https://github.com/JetBrains/jcef/blob/7560ce68418f8d8d1ac55a4fd318141053be8fea/java/org/cef/handler/CefDownloadHandler.java) interface and adding the download handler to the `JBCefClient`, as follows:
+
+```java
+JBCefBrowser browser = new JBCefBrowser();
+browser.getJBCefClient()
+       .addDownloadHandler(new SimpleDownloadHandler(), browser.getCefBrowser());
+```
+
+The `SimpleDownloadHandler` implements the `CefDownloadHandler` interface:
+
+```java
+public class SimpleDownloadHandler implements CefDownloadHandler {
+
+  @Override
+  public void onBeforeDownload(
+      CefBrowser browser,
+      CefDownloadItem downloadItem,
+      String suggestedName,
+      CefBeforeDownloadCallback callback) {
+    callback.Continue("", true);
+  }
+...
+}
+```
+
+Using the callback it opens the usual browser file download dialog.
+
 ## API
 
 ### JBCefApp

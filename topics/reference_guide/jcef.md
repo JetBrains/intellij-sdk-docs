@@ -99,13 +99,12 @@ public class SimpleDownloadHandler implements CefDownloadHandler {
       CefDownloadItem downloadItem,
       String suggestedName,
       CefBeforeDownloadCallback callback) {
+    // Use the callback to open the browser file download dialog
     callback.Continue("", true);
   }
 ...
 }
 ```
-
-Using the callback it opens the browser file download dialog.
 
 ## API
 

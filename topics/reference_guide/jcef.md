@@ -80,7 +80,7 @@ See [`JBCefTestHelper`](%gh-ic%/platform/platform-tests/testSrc/com/intellij/ui/
 
 ## File Download
 
-Downloading files can be achieved by implementing the [`CefDownloadHandler`](https://github.com/JetBrains/jcef/blob/7560ce68418f8d8d1ac55a4fd318141053be8fea/java/org/cef/handler/CefDownloadHandler.java) and adding the download handler to the `JBCefClient`, as follows:
+Downloading files can be achieved by implementing the [`CefDownloadHandler`](https://github.com/JetBrains/jcef/blob/7560ce68418f8d8d1ac55a4fd318141053be8fea/java/org/cef/handler/CefDownloadHandler.java) and adding the download handler to the `JBCefClient`:
 
 ```java
 JBCefBrowser browser = new JBCefBrowser();

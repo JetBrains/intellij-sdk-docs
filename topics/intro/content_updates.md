@@ -16,7 +16,7 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 {#december-23}
 
 JCEF
-: Revamp [](jcef.md) page.
+: Revamp [JCEF (Java Chromium Embedded Framework)](jcef.md) page.
 
 ### November
 {#november-23}
@@ -364,7 +364,7 @@ UI Inspector
 {#march-20}
 
 JCEF Support
-: Allows [embedding](jcef.md) Chromium-based browser in the IDE.
+: Allows [embedding](embedded-browser.md) Chromium-based browser in the IDE.
 
 ### February
 {#february-20}

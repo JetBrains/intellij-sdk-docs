@@ -61,7 +61,7 @@ The core JCEF class exposed by IntelliJ Platform API is [`JBCefApp`](%gh-ic%/pla
 It is responsible for initializing JCEF context and managing its lifecycle.
 
 There is no need for initializing `JBCefApp` explicitly.
-It is done when `JBCefApp.getInstance()` is called explicitly, or when browser or client objects are created.
+It is done when `JBCefApp.getInstance()` is called, or when [browser](#browser) or [client](#browser-client) objects are created.
 
 Before using JCEF API, it is required to check whether JCEF is supported in the running IDE.
 It is done by calling `JBCefApp.isSupported()`:
@@ -74,7 +74,7 @@ if (JBCefApp.isSupported()) {
 ```
 
 JCEF can be unsupported when:
-- It's not available at the IDE runtime (the IDE is started with an alternative JDK).
+- The IDE is started with an alternative JDK that does not include JCEF.
 - Its version is not compatible with the running IDE.
 
 ### Browser
@@ -83,7 +83,7 @@ JCEF browser is represented by [`JBCefBrowser`](%gh-ic%/platform/platform-api/sr
 It is responsible for loading and rendering requested documents in the actual Chromium-based browser.
 
 JCEF browsers can be created either by using the `JBCefBrowser` class' constructors, or via [`JBCefBrowserBuilder`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefBrowserBuilder.java).
-Use constructors in the cases when a browser with default [client](#browser-client) and default options is enough.
+Use constructors in the cases when a browser with the default [client](#browser-client) and default options is enough.
 The builder approach allows using custom clients and configuring other options.
 
 #### Adding Browser to UI
@@ -174,7 +174,7 @@ It allows executing plugin code from the embedded browser via JavaScript, e.g., 
 JavaScript query callback is represented by [`JBCefJSQuery`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefJSQuery.java).
 It is an object bound to a specific browser, and it holds a set of handlers that implement the required plugin behavior.
 
-Consider a case, which requires opening local files links in the editor and external links in an external browser installed on the user's computer.
+Consider a case, which requires opening local files links in the editor and external links in an external browser.
 Such a requirement could be implemented as follows (each step is explained under the code snippet):
 
 ```java
@@ -214,22 +214,23 @@ browser.getCefBrowser().executeJavaScript( // 6
    It can be handled in the browser if needed.
 4. Execute JavaScript, which creates a custom `openLink` function.
 5. Inject JavaScript code responsible for invoking plugin code implemented in step 2.
-   Handler added to `openLinkQuery` will be invoked on each `openLink` function call.
+   The handler added to `openLinkQuery` will be invoked on each `openLink` function call.
 
    Note the `"link"` parameter of the `JBCefJSQuery.inject()` method.
    It is the name of the `openLink`'s function `link` parameter.
    This value is injected to the query function call, and can be any value that is required by handler, e.g., `"myJsObject.prop"`, `"'JavaScript string'"`, etc.
 6. Execute JavaScript, which registers a click event listener in the browser.
-   Whenever an `a` element is clicked in the browser, the listener will invoke `openLink` function defined in step 4 with the href value of a clicked link.
+   Whenever an `a` element is clicked in the browser, the listener will invoke the `openLink` function defined in step 4 with the `href` value of the clicked link.
 
 ### Loading Resources From Plugin Distribution
 
 In cases when a plugin feature implements a web-based UI, the plugin may provide HTML, CSS, and JavaScript files in its [distribution](plugin_content.md) or build them on the fly depending on some configuration.
-Such resources cannot be easily accessed by browser, and it can be achieved by implementing proper request [handlers](#event-handlers), which make them available to the browser at predefined URLs.
+Such resources cannot be easily accessed by the browser.
+They can be made accessible by implementing proper request [handlers](#event-handlers), which make them available to the browser at predefined URLs.
 
-This approach requires implementing [`CefRequestHandler`](https://github.com/JetBrains/jcef/blob/master/java/org/cef/handler/CefRequestHandler.java), and [`CefResourceRequestHandler`](https://github.com/JetBrains/jcef/blob/master/java/org/cef/handler/CefResourceRequestHandler.java), which maps resource paths to resource providers.
+This approach requires implementing [`CefRequestHandler`](https://github.com/JetBrains/jcef/blob/master/java/org/cef/handler/CefRequestHandler.java), and [`CefResourceRequestHandler`](https://github.com/JetBrains/jcef/blob/master/java/org/cef/handler/CefResourceRequestHandler.java), which map resource paths to resource providers.
 
-This approach is implemented by the Image Viewer component responsible for displaying SVG files in IntelliJ Platform-based IDEs.
+Serving such resources is implemented by the Image Viewer component responsible for displaying SVG files in IntelliJ Platform-based IDEs.
 See [`JCefImageViewer`](%gh-ic%/images/src/org/intellij/images/editor/impl/jcef/JCefImageViewer.kt) and related classes for the implementation details.
 
 ### Disposing Resources
@@ -252,9 +253,8 @@ Default port can be changed via the registry key `ide.browser.jcef.debug.port` (
 JavaScript debugger in IntelliJ IDEA Ultimate can thus be used to debug JavaScript code running in the IDE via the Chrome DevTools.
 Use the [<control>Attach to Node.js/Chrome</control>](https://www.jetbrains.com/help/idea/run-debug-configuration-node-js-remote-debug.html) configuration with a proper port number.
 
-Also, JCEF provides a default Chrome DevTools front-end (similar to the one in the Chrome browser) that can be opened from the JCEF's browser component context menu via <ui-path>Open DevTools</ui-path>.
-The menu item is available in [internal mode](enabling_internal.md) only.
-Starting with version 2021.3, the registry key `ide.browser.jcef.contextMenu.devTools.enabled` must be set to `true` explicitly.
+Also, JCEF provides a default Chrome DevTools frontend (similar to the one in the Chrome browser) that can be opened from the JCEF's browser component context menu via <ui-path>Open DevTools</ui-path>.
+The menu item is available in the [internal mode](enabling_internal.md) only, and since version 2021.3, the registry key `ide.browser.jcef.contextMenu.devTools.enabled` must be set to `true` explicitly.
 
 ### Accessing DevTools Programmatically
 
@@ -274,6 +274,7 @@ In order to open DevTools in a separate window, call `JBCefBrowser.openDevtools(
 
 - [Markdown preview panel](%gh-ic%/plugins/markdown/core/src/org/intellij/plugins/markdown/ui/preview/jcef/MarkdownJCEFHtmlPanel.kt)
 - [SVG Image Viewer](%gh-ic%/images/src/org/intellij/images/editor/impl/jcef/JCefImageViewer.kt)
+- [PDF Viewer](https://github.com/FirstTimeInForever/intellij-pdf-viewer) plugin
 - [CodeStream](https://github.com/TeamCodeStream/codestream) plugin
 - [Excalidraw Integration](https://github.com/bric3/excalidraw-jetbrains-plugin) plugin
 - [Creating IntelliJ plugin with WebView](https://medium.com/virtuslab/creating-intellij-plugin-with-webview-3b27c3f87aea) blog post

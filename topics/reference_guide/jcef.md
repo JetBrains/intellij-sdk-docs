@@ -139,6 +139,9 @@ Example handlers:
 - [`CefContextMenuHandler`](https://github.com/JetBrains/jcef/blob/master/java/org/cef/handler/CefContextMenuHandler.java) - handles context menu events.<br/>
   **Example**: Implement `CefContextMenuHandler.onBeforeContextMenu()` to change the items of the browser context menu.
 
+- [`CefDownloadHandler`](https://github.com/JetBrains/jcef/blob/master/java/org/cef/handler/CefDownloadHandler.java) - file download events.<br/>
+  **Example**: Implement `CefDownloadHandler.onBeforeDownload()` to enable downloading files in the embedded browser.
+
 See [org.cef.handler](https://github.com/JetBrains/jcef/tree/master/java/org/cef/handler) package for all available handlers.
 
 > For each handler interface, JCEF API provides an adapter class, which can be extended to avoid implementing unused methods, e.g., [`CefLoadHandlerAdapter`](https://github.com/JetBrains/jcef/blob/master/java/org/cef/handler/CefLoadHandlerAdapter.java).

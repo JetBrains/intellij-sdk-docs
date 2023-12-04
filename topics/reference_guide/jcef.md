@@ -104,7 +104,7 @@ It is possible to set an initial URL (passed to constructor or builder) that wil
 
 ### Browser Client
 
-Browser client provides an interface for setting up handlers related to various browser events, e.g.:
+Browser client provides an interface for setting up [handlers](#event-handlers) related to various browser events, e.g.:
 - HTML document loaded
 - console message printed
 - browser gained focus
@@ -126,7 +126,7 @@ Custom clients must be disposed explicitly in the plugin code.
 
 To access the client associated with a browser, call `JBCefBrowser.getJBCefClient()`.
 
-#### Event Handlers
+### Event Handlers
 
 JCEF API provides various event handler interfaces that allows handling a wide set of events emitted by the browser.
 Example handlers:

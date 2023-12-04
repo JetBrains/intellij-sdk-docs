@@ -12,11 +12,14 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2023
 
-### November
-{#november-23}
+### December
+{#december-23}
 
 JCEF
 : Revamp [](jcef.md) page.
+
+### November
+{#november-23}
 
 Minor Changes and Additions
 :

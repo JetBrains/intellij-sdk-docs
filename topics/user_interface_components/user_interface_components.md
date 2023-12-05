@@ -17,7 +17,7 @@ Using those components in your plugins will ensure that your plugin looks and wo
 
 > Use [UI Inspector](internal_ui_inspector.md) to locate the underlying Swing component implementation or to inspect an existing UI at runtime.
 >
-{title="Inspecting exiting UI"}
+{title="Inspecting existing UI"}
 
 </snippet>
 

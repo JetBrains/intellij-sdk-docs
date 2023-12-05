@@ -364,7 +364,7 @@ UI Inspector
 {#march-20}
 
 JCEF Support
-: Allows [embedding](embedded-browser.md) Chromium-based browser in the IDE.
+: Allows [embedding](jcef.md) Chromium-based browser in the IDE.
 
 ### February
 {#february-20}

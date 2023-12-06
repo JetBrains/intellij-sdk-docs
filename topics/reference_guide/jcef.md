@@ -25,7 +25,7 @@ JCEF replaces JavaFX, which was used to render web content in IDEs in the past.
 >
 > See [JavaFX and JCEF in the IntelliJ Platform](https://blog.jetbrains.com/platform/2020/07/javafx-and-jcef-in-the-intellij-platform/) blog post for the details.
 >
-{style="warning"}
+{style="warning" title="Using JavaFX"}
 
 ## Enabling JCEF
 
@@ -65,6 +65,7 @@ It is done when `JBCefApp.getInstance()` is called, or when [browser](#browser) 
 
 Before using JCEF API, it is required to check whether JCEF is supported in the running IDE.
 It is done by calling `JBCefApp.isSupported()`:
+
 ```java
 if (JBCefApp.isSupported()) {
   // use JCEF
@@ -90,6 +91,7 @@ The builder approach allows using custom clients and configuring other options.
 
 [`JBCefBrowser.getComponent()`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefBrowser.java) exposes the UI component embedding the actual browser.
 The component is an instance of Swing `JComponent`, which can be added to the plugin UI:
+
 ```java
 // assume 'JPanel myPanel' is a part of a tool window UI
 JBCefBrowser browser = new JBCefBrowser();
@@ -112,7 +114,7 @@ Browser client provides an interface for setting up [handlers](#event-handlers) 
 Handlers allow reacting to these events in plugin code and change browser's behavior.
 Each browser is tied to a single client and a single client can be shared with multiple browser instances.
 
-Browser client is represented by [`JBCefClient`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefClient.java), which is a wrapper for JCEF's [`CefClient`](https://github.com/JetBrains/jcef/blob/master/java/org/cef/CefClient.java).
+Browser client is represented by [`JBCefClient`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefClient.java), which is a wrapper for JCEF's [`CefClient`](%gh-jcef%/org/cef/CefClient.java).
 `JBCefClient` allows registering multiple handlers of the same type, which is not possible with `CefClient`.
 To access the underlying `CefClient` and its API, call `JBCefClient.getCefClient()`.
 
@@ -130,21 +132,21 @@ To access the client associated with a browser, call `JBCefBrowser.getJBCefClien
 
 JCEF API provides various event handler interfaces that allows handling a wide set of events emitted by the browser.
 Example handlers:
-- [`CefLoadHandler`](https://github.com/JetBrains/jcef/blob/master/java/org/cef/handler/CefLoadHandler.java) - handles browser loading events.<br/>
+- [`CefLoadHandler`](%gh-jcef%/org/cef/handler/CefLoadHandler.java) - handles browser loading events.<br/>
   **Example**: Implement `CefLoadHandler.onLoadEnd()` to [execute scripts](#executing-javascript) after document is loaded.
 
-- [`CefDisplayHandler`](https://github.com/JetBrains/jcef/blob/master/java/org/cef/handler/CefDisplayHandler.java) - handles events related to browser display state.<br/>
+- [`CefDisplayHandler`](%gh-jcef%/org/cef/handler/CefDisplayHandler.java) - handles events related to browser display state.<br/>
   **Example**: Implement `CefDisplayHandler.onAddressChange()` to load project files in the browser when a local file link is clicked, or opening an external browser if an external link is clicked.
 
-- [`CefContextMenuHandler`](https://github.com/JetBrains/jcef/blob/master/java/org/cef/handler/CefContextMenuHandler.java) - handles context menu events.<br/>
+- [`CefContextMenuHandler`](%gh-jcef%/org/cef/handler/CefContextMenuHandler.java) - handles context menu events.<br/>
   **Example**: Implement `CefContextMenuHandler.onBeforeContextMenu()` to change the items of the browser context menu.
 
-- [`CefDownloadHandler`](https://github.com/JetBrains/jcef/blob/master/java/org/cef/handler/CefDownloadHandler.java) - file download events.<br/>
+- [`CefDownloadHandler`](%gh-jcef%/org/cef/handler/CefDownloadHandler.java) - file download events.<br/>
   **Example**: Implement `CefDownloadHandler.onBeforeDownload()` to enable downloading files in the embedded browser.
 
-See [org.cef.handler](https://github.com/JetBrains/jcef/tree/master/java/org/cef/handler) package for all available handlers.
+See [org.cef.handler](%gh-jcef%/org/cef/handler) package for all available handlers.
 
-> For each handler interface, JCEF API provides an adapter class, which can be extended to avoid implementing unused methods, e.g., [`CefLoadHandlerAdapter`](https://github.com/JetBrains/jcef/blob/master/java/org/cef/handler/CefLoadHandlerAdapter.java).
+> For each handler interface, JCEF API provides an adapter class, which can be extended to avoid implementing unused methods, e.g., [`CefLoadHandlerAdapter`](%gh-jcef%/org/cef/handler/CefLoadHandlerAdapter.java).
 
 Handlers should be registered with `JBCefClient.getCefClient().add*Handler()` methods.
 
@@ -233,7 +235,7 @@ In cases when a plugin feature implements a web-based UI, the plugin may provide
 Such resources cannot be easily accessed by the browser.
 They can be made accessible by implementing proper request [handlers](#event-handlers), which make them available to the browser at predefined URLs.
 
-This approach requires implementing [`CefRequestHandler`](https://github.com/JetBrains/jcef/blob/master/java/org/cef/handler/CefRequestHandler.java), and [`CefResourceRequestHandler`](https://github.com/JetBrains/jcef/blob/master/java/org/cef/handler/CefResourceRequestHandler.java), which map resource paths to resource providers.
+This approach requires implementing [`CefRequestHandler`](%gh-jcef%/org/cef/handler/CefRequestHandler.java), and [`CefResourceRequestHandler`](%gh-jcef%/org/cef/handler/CefResourceRequestHandler.java), which map resource paths to resource providers.
 
 Serving such resources is implemented by the Image Viewer component responsible for displaying SVG files in IntelliJ Platform-based IDEs.
 See [`JCefImageViewer`](%gh-ic%/images/src/org/intellij/images/editor/impl/jcef/JCefImageViewer.kt) and related classes for the implementation details.
@@ -294,3 +296,5 @@ In order to open DevTools in a separate window, call `JBCefBrowser.openDevtools(
 - [CodeStream](https://github.com/TeamCodeStream/codestream) plugin
 - [Excalidraw Integration](https://github.com/bric3/excalidraw-jetbrains-plugin) plugin
 - [Creating IntelliJ plugin with WebView](https://medium.com/virtuslab/creating-intellij-plugin-with-webview-3b27c3f87aea) blog post
+
+<include from="snippets.md" element-id="missingContent"/>

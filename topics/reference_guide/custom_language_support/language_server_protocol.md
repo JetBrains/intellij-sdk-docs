@@ -52,7 +52,7 @@ intellij {
 
 For projects based on the [](plugin_github_template.md), update the Gradle IntelliJ Plugin to the latest version, and amend the <path>gradle.properties</path> file as follows:
 
-```properties
+```
 platformType = IU
 platformVersion = %ijPlatform%
 ```

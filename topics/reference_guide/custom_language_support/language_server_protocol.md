@@ -144,10 +144,6 @@ To implement a minimal LSP plugin, perform the following steps:
 
 See bundled LSP API source code and its documentation for more information.
 
-## Testing
-
-Utility classes used for testing are not yet extracted for public use, but we'll provide suitable methods for testing LSP-based third-party plugins as soon as possible.
-
 ## Troubleshooting
 
 All the IDE and LSP server communication logs are passed to the IDE log file.

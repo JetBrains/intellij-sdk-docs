@@ -238,6 +238,17 @@ This approach requires implementing [`CefRequestHandler`](https://github.com/Jet
 Serving such resources is implemented by the Image Viewer component responsible for displaying SVG files in IntelliJ Platform-based IDEs.
 See [`JCefImageViewer`](%gh-ic%/images/src/org/intellij/images/editor/impl/jcef/JCefImageViewer.kt) and related classes for the implementation details.
 
+### Scrollbars Look and Feel
+
+Default browser scrollbars may be insufficient, e.g. when they stand out of the IDE scrollbars look, or specific look and behavior is required.
+
+In JCEF browsers, scrollbars look and feel can be customized by CSS and JavaScript.
+IntelliJ Platform provides [`JBCefScrollbarsHelper`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefScrollbarsHelper.java) that allows to customize scrollbars in two ways:
+1. Using `JBCefScrollbarsHelper.getOverlayScrollbarStyle()`, which provides the styles adapted to the IDE scrollbars.
+2. Using [OverlayScrollbars](https://kingsora.github.io/OverlayScrollbars/) library adapted to the IDE look and feel.
+   For the details, see `getOverlayScrollbarsSourceCSS()`, `getOverlayScrollbarsSourceJS()`, and `buildScrollbarsStyle()` Javadocs.
+   It should be used when transparent scrollbars or other advanced options are required.
+
 ### Disposing Resources
 
 `JBCefBrowser`, `JBCefClient`, and `JBCefJSQuery` classes implement [`JBCefDisposable`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefDisposable.java), which extends [`Disposable`](%gh-ic%/platform/util/src/com/intellij/openapi/Disposable.java).

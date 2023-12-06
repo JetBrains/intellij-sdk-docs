@@ -1,6 +1,6 @@
-# Language Server Protocol
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Language Server Protocol
 
 <link-summary>Language Server Protocol support in IntelliJ-based IDEs</link-summary>
 
@@ -10,6 +10,11 @@ It also reduces the need for constant maintenance and tracking of changes in rel
 
 However, the canonical custom language support provided by IntelliJ Platform still offers a wider range of integration with IDE features than handling and presenting data provided by a Language Server.
 Therefore, the LSP approach shouldn't be considered as a replacement for the existing language API, but rather as an added value.
+
+> The integration with the Language Server Protocol is created as an extension to the paid IntelliJ-based IDEs.
+> Therefore, plugins utilizing Language Server integration may not be available in Community releases of JetBrains products and Android Studio from Google.
+>
+{style="note"}
 
 Starting with the 2023.2 release cycle, the LSP API is publicly available as part of the IntelliJ Platform in the following IDEs:
 - IntelliJ IDEA Ultimate
@@ -36,11 +41,11 @@ Example <path>build.gradle.kts</path> configuration:
 ```kotlin
 plugins {
   // ...
-  id("org.jetbrains.intellij") version "1.16.1"
+  id("org.jetbrains.intellij") version "%gradle-intellij-plugin-version%"
 }
 
 intellij {
-  version = "232-EAP-SNAPSHOT"
+  version = "%ijPlatform%"
   type = "IU"
 }
 ```
@@ -49,9 +54,7 @@ For projects based on the [](plugin_github_template.md), update the Gradle Intel
 
 ```properties
 platformType = IU
-platformVersion = 232-EAP-SNAPSHOT
-pluginSinceBuild = 232
-pluginUntilBuild = 232.*
+platformVersion = %ijPlatform%
 ```
 
 The <path>plugin.xml</path> configuration file needs to specify the dependency on the IntelliJ IDEA Ultimate module:
@@ -59,7 +62,6 @@ The <path>plugin.xml</path> configuration file needs to specify the dependency o
 ```xml
 <idea-plugin>
    <!-- ... -->
-   <depends>com.intellij.modules.platform</depends>
    <depends>com.intellij.modules.ultimate</depends>
 </idea-plugin>
 ```
@@ -74,7 +76,6 @@ The initial LSP support within the IntelliJ Platform covers the following featur
 - Quick fixes for errors and warnings ([textDocument/codeAction](https://microsoft.github.io/language-server-protocol/specification/#textDocument_codeAction))
 - Code completion ([textDocument/completion](https://microsoft.github.io/language-server-protocol/specification/#textDocument_completion))
 - Go to Declaration ([textDocument/definition](https://microsoft.github.io/language-server-protocol/specification/#textDocument_definition))
-- More features will be announced soon.
 
 ## Basic Implementation
 
@@ -164,7 +165,7 @@ For more information, see the [](ide_infrastructure.md#logging) section.
 - The current LSP API implementation assumes that the IDE <-> LSP server communication channel is `stdio`.
 - The IDE doesn't send [workspace/didChangeWatchedFiles](https://microsoft.github.io/language-server-protocol/specification/#workspace_didChangeWatchedFiles) notifications to the server.
 
-## Conclusion
+## Integration Overview
 
 Integrating the Language Server Protocol (LSP) into a plugin for IntelliJ-based IDEs involves a trade-off between simple and fast language support and a complex custom language support plugin with IDE capabilities.
 
@@ -174,10 +175,5 @@ When considering the LSP-based approach, it is important to assess the following
 - Availability of the latest version online.
 - Compatibility with breaking changes between versions.
 - Feasibility of requesting the user to provide the Language Server binary path.
-
-> The integration with the Language Server Protocol is created as an extension to the paid IntelliJ-based IDEs.
-> Therefore, plugins utilizing Language Server integration may not be available in Community releases of JetBrains products and Android Studio from Google.
->
-{style="note"}
 
 If you encounter any issues or need assistance, please provide feedback by reaching out to us through the `#intellij-platform` channel in our [JetBrains Platform Slack](https://plugins.jetbrains.com/slack/) workspace or by submitting an issue in [YouTrack](https://youtrack.jetbrains.com/newIssue?project=IDEA&c=Subsystem%20Core.%20Platform%20API).

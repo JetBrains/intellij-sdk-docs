@@ -4,7 +4,7 @@
 
 <link-summary>Overview of Extension Points and Listeners for RubyMine.</link-summary>
 
-73 Extension Points and 11 Listeners for RubyMine
+79 Extension Points and 11 Listeners for RubyMine
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
@@ -45,6 +45,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [org.jetbrains.plugins.ruby.callNavigationOffsetProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.callNavigationOffsetProvider) | `StructureCallNavigationOffsetProvider` |
 | [org.jetbrains.plugins.ruby.callTypeProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.callTypeProvider) | `RubyCallTypeProvider` |
 | [org.jetbrains.plugins.ruby.completionProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.completionProvider) | `RubyCompletionProvider` |
+| [org.jetbrains.plugins.ruby.fileLocationProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.fileLocationProvider) | `FileLocationProvider` |
 | [org.jetbrains.plugins.ruby.gem.module.gemInfrastructure](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.gem.module.gemInfrastructure) | `GemInfrastructure` |
 | [org.jetbrains.plugins.ruby.gemScannerSuppressor](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.gemScannerSuppressor) | `GemScannerSuppressor` |
 | [org.jetbrains.plugins.ruby.implicitGemProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.implicitGemProvider) | `ImplicitRequireGemProvider` |
@@ -56,6 +57,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [org.jetbrains.plugins.ruby.moduleGemProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.moduleGemProvider) | `ModuleGemProvider` |
 | [org.jetbrains.plugins.ruby.overriddenMethodGenerator](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.overriddenMethodGenerator) | `OverriddenMethodGenerator` |
 | [org.jetbrains.plugins.ruby.paramDefProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.paramDefProvider) | `ParamDefProvider` |
+| [org.jetbrains.plugins.ruby.rails.viewFileTemplateProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rails.viewFileTemplateProvider) | `RailsViewFileTemplateProvider` |
 | [org.jetbrains.plugins.ruby.renameHelper](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.renameHelper) | `RubyRenameHelper` |
 | [org.jetbrains.plugins.ruby.routesProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.routesProvider) | `RubyRoutesProvider` |
 | [org.jetbrains.plugins.ruby.ruby.coercibleExpressionTypeProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.coercibleExpressionTypeProvider) | `RubyCoercibleExpressionTypeProvider` |
@@ -99,8 +101,8 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [org.jetbrains.plugins.ruby.i18n.i18nProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.i18n.i18nProvider) | `I18nProvider` |
 | [org.jetbrains.plugins.ruby.methodTypeInfoProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.methodTypeInfoProvider) | `RubyMethodTypeInfoProvider` |
 | [org.jetbrains.plugins.ruby.rails.assetsPathsProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rails.assetsPathsProvider) | `SprocketAssetsPathProvider` |
-| [org.jetbrains.plugins.ruby.rails.railsViewFileTypesProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rails.railsViewFileTypesProvider) | `RailsViewFileTypesProvider` |
 | [org.jetbrains.plugins.ruby.rails.sprocketsDirectiveContextProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rails.sprocketsDirectiveContextProvider) | `SprocketsDirectiveContextProvider` |
+| [org.jetbrains.plugins.ruby.rails.viewFileTypesProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rails.viewFileTypesProvider) | `RailsViewFileTypesProvider` |
 | [org.jetbrains.plugins.ruby.railsFacetEditorTab](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.railsFacetEditorTab) | `FacetEditorTabFactory` |
 | [org.jetbrains.plugins.ruby.railsModelFieldsProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.railsModelFieldsProvider) | `RailsModelFieldsProvider` |
 | [org.jetbrains.plugins.ruby.railsNavigateFrom](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.railsNavigateFrom) | `RailsNavigateFromProvider` |
@@ -113,8 +115,12 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [org.jetbrains.plugins.ruby.ruby.topLevelSymbolProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.topLevelSymbolProvider) | `RubyTopLevelSymbolProvider` |
 | [org.jetbrains.plugins.ruby.ruby.typeSignatureProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.typeSignatureProvider) | `RubyTypeSignatureProvider` |
 | [org.jetbrains.plugins.ruby.rubyFileStructureProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rubyFileStructureProvider) | `RubyFileStructureViewProvider` |
+| [org.jetbrains.plugins.ruby.rubyInsertHandlerProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rubyInsertHandlerProvider) | `RubyInsertHandlerProvider` |
+| [org.jetbrains.plugins.ruby.rubyLocalVariablesProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rubyLocalVariablesProvider) | `RubyLocalVariablesProvider` |
 | [org.jetbrains.plugins.ruby.runConfigurationExtension](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.runConfigurationExtension) | `RubyRunConfigurationExtension` |
 | [org.jetbrains.plugins.ruby.structureViewCustomizer](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.structureViewCustomizer) | `RubyStructureViewCustomizer` |
+| [org.jetbrains.plugins.ruby.testing.rspec.rspecContextNameProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.testing.rspec.rspecContextNameProvider) | `RSpecContextNameProvider` |
+| [org.jetbrains.plugins.ruby.testing.rspec.rspecContextSymbolProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.testing.rspec.rspecContextSymbolProvider) | `RSpecContextSymbolProvider` |
 
 ### ruby-rbs.xml
 

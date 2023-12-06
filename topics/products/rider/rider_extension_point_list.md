@@ -4,7 +4,7 @@
 
 <link-summary>Overview of Extension Points and Listeners for Rider.</link-summary>
 
-110 Extension Points and 5 Listeners for Rider
+109 Extension Points and 5 Listeners for Rider
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
@@ -20,7 +20,8 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [SSHCredentialsInClipboardNotifier.Companion#SSH_CREDENTIALS_IN_CLIPBOARD_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.debugger.attach.remoting.SSHCredentialsInClipboardNotifier)  | `SSHCredentialsInClipboardNotifier` |
 | [FrontendTypedHandlerManager#BEFORE_TYPING_SENT](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.editorActions.IFrontendTypingListener)  | `IFrontendTypingListener` |
 | [MSBuildEvaluationListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.run.environment.MSBuildEvaluationListener)  | `MSBuildEvaluationListener` |
-| [RiderGlobalBackendProgressListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.services.RiderGlobalProgressHost.RiderGlobalBackendProgressListener)  | `RiderGlobalBackendProgressListener` |i
+| [RiderGlobalBackendProgressListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.services.RiderGlobalProgressHost.RiderGlobalBackendProgressListener)  | `RiderGlobalBackendProgressListener` |
+
 
 ### com.jetbrains.dotTrace.dotMemory
 
@@ -114,12 +115,6 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [JavaScript.packageJson.configuration.handler](https://jb.gg/ipe?extensions=JavaScript.packageJson.configuration.handler) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `RiderPackageJsonConfiguratorHandler` |
-
-### rider-plugins-appender.lang.xml
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| [com.intellij.backendLanguageInjectionBridge](https://jb.gg/ipe?extensions=com.intellij.backendLanguageInjectionBridge) | `BackendLanguageInjectionBridge` |
 
 ### RiderCppCore.xml
 

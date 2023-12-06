@@ -3,8 +3,8 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/vars.dtd">
 
 <vars>
-  <var name="ijPlatform" value="2023.2.5"/>
-  <var name="ijPlatformBuild" value="232.10227.8"/>
+  <var name="ijPlatform" value="2023.3"/>
+  <var name="ijPlatformBuild" value="233.11799.241"/>
 
   <var name="gh-sdk-samples" value="https://github.com/JetBrains/intellij-sdk-code-samples/tree/main"/>
 

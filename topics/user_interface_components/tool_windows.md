@@ -1,6 +1,6 @@
-# Tool Windows
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Tool Windows
 
 <link-summary>Displaying additional information and controls in child windows of the IDE.</link-summary>
 
@@ -38,7 +38,7 @@ To provide a localized text, specify matching `toolwindow.stripe.[id]` message k
 
 * The `secondary` attribute, specifying whether the tool window is displayed in the primary or the secondary group
 
-* The `factoryClass` attribute (required), a class implementing [`ToolWindowFactory`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java).
+* The `factoryClass` attribute (required), a class implementing [`ToolWindowFactory`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.kt).
 
 When the user clicks on the tool window button, the `createToolWindowContent()` method of the factory class is called, and initializes the UI of the tool window.
 This procedure ensures that unused tool windows don't cause any overhead in startup time or memory usage: if a user does not interact with the tool window, no plugin code will be loaded or executed.

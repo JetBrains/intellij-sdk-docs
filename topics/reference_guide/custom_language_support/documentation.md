@@ -93,14 +93,14 @@ When implementing the `createPointer()` method, it is essential to handle invali
 Unlike PSI elements, the `DocumentationTarget` API does not include an `isValid()` method and the returned pointer is expected
 to be `null` if the instance (and all contained objects) cannot be restored.
 See
-[`KotlinDocumentationTarget.createPointer()`](%gh-ic%/plugins/kotlin/fir/src/org/jetbrains/kotlin/idea/quickDoc/KotlinDocumentationTarget.kt)
+[`KotlinDocumentationTarget.createPointer()`](%gh-ic%/plugins/kotlin/code-insight/kotlin.code-insight.k2/src/org/jetbrains/kotlin/idea/k2/codeinsight/quickDoc/KotlinDocumentationTarget.kt)
 as a reference.
 
 ### Examples
 {#documentationtarget-api-examples}
 
-- [`KotlinPsiDocumentationTargetProvider`](%gh-ic%/plugins/kotlin/fir/src/org/jetbrains/kotlin/idea/quickDoc/KotlinPsiDocumentationTargetProvider.kt).
-- [`KotlinDocumentationTarget`](%gh-ic%/plugins/kotlin/fir/src/org/jetbrains/kotlin/idea/quickDoc/KotlinDocumentationTarget.kt)
+- [`KotlinPsiDocumentationTargetProvider`](%gh-ic%/plugins/kotlin/code-insight/kotlin.code-insight.k2/src/org/jetbrains/kotlin/idea/k2/codeinsight/quickDoc/KotlinPsiDocumentationTargetProvider.kt)
+- [`KotlinDocumentationTarget`](%gh-ic%/plugins/kotlin/code-insight/kotlin.code-insight.k2/src/org/jetbrains/kotlin/idea/k2/codeinsight/quickDoc/KotlinDocumentationTarget.kt)
 - [`PsiElementDocumentationTarget`](%gh-ic%/platform/lang-impl/src/com/intellij/lang/documentation/psi/PsiElementDocumentationTarget.kt)
 
 ## Documentation Provider API

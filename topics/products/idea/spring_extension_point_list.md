@@ -4,7 +4,7 @@
 
 <link-summary>Overview of Extension Points and Listeners for Spring API.</link-summary>
 
-53 Extension Points and 5 Listeners for Spring API
+52 Extension Points and 5 Listeners for Spring API
 
 <include from="snippets.md" element-id="ep_list_legend"/>
 
@@ -27,7 +27,6 @@
 |-----------------|----------------|
 | [com.intellij.spring.autodetected.filesets](https://jb.gg/ipe?extensions=com.intellij.spring.autodetected.filesets) | `SpringAutodetectedFilesetsSearcher` |
 | [com.intellij.spring.autodetected.models](https://jb.gg/ipe?extensions=com.intellij.spring.autodetected.models) | `SpringAutodetectedModelsSearcher` |
-| [com.intellij.spring.beanPointerPanelContent](https://jb.gg/ipe?extensions=com.intellij.spring.beanPointerPanelContent) | `SpringBeanPointerPanelContent` |
 | [com.intellij.spring.beans.stereotype](https://jb.gg/ipe?extensions=com.intellij.spring.beans.stereotype) | `SpringBeanStereotype` |
 | [com.intellij.spring.componentScanExtender](https://jb.gg/ipe?extensions=com.intellij.spring.componentScanExtender) | `ComponentScanExtender` |
 | [com.intellij.spring.conditionalEvaluatorProvider](https://jb.gg/ipe?extensions=com.intellij.spring.conditionalEvaluatorProvider) | `ConditionalEvaluatorProvider` |
@@ -51,7 +50,6 @@
 | [com.intellij.spring.scriptBeanPsiClassDiscoverer](https://jb.gg/ipe?extensions=com.intellij.spring.scriptBeanPsiClassDiscoverer) | `ScriptBeanPsiClassDiscoverer` |
 | [com.intellij.spring.testingAnnotationsProvider](https://jb.gg/ipe?extensions=com.intellij.spring.testingAnnotationsProvider) | `SpringTestingAnnotationsProvider` |
 | [com.intellij.spring.testingImplicitContextsProvider](https://jb.gg/ipe?extensions=com.intellij.spring.testingImplicitContextsProvider) | `SpringTestingImplicitContextsProvider` |
-| [com.intellij.spring.toolWindowContent](https://jb.gg/ipe?extensions=com.intellij.spring.toolWindowContent) | `SpringToolWindowContentProvider` |
 | [com.intellij.spring.valueConverter](https://jb.gg/ipe?extensions=com.intellij.spring.valueConverter) | `SpringValueConvertersProvider` |
 
 ### com.intellij.spring.boot
@@ -71,6 +69,12 @@
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.intellij.spring.boot.initializr.sharedIndexesProvider](https://jb.gg/ipe?extensions=com.intellij.spring.boot.initializr.sharedIndexesProvider) | `SpringSharedIndexesProvider` |
+
+### com.intellij.spring.graphql
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.intellij.spring.graphql.appPathProvider](https://jb.gg/ipe?extensions=com.intellij.spring.graphql.appPathProvider) | `GraphQLApplicationPathProvider` |
 
 ### com.intellij.spring.messaging
 
@@ -109,7 +113,7 @@
 | [com.intellij.spring.boot.run.endpoint](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.endpoint) ![Experimental][experimental] | `Endpoint` |
 | [com.intellij.spring.boot.run.endpointTabConfigurable](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.endpointTabConfigurable) ![Project-Level][project-level] | `EndpointTabConfigurable` |
 | [com.intellij.spring.boot.run.liveBeansPanelContent](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.liveBeansPanelContent) | `LiveBeansPanelContent` |
-| [com.intellij.spring.boot.run.starterManager](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.starterManager) ![Internal][internal] | `SpringBootStarterManager` |
+| [com.intellij.spring.boot.run.starterManager](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.starterManager) ![Experimental][experimental] | `SpringBootStarterManager` |
 
 ### intellij.spring.el.xml
 

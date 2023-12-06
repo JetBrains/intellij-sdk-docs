@@ -286,6 +286,7 @@
       <toc-element topic="documentation_test.md"/>
     </toc-element>
     <toc-element topic="language_injection.md"/>
+    <toc-element topic="language_server_protocol.md"/>
     <toc-element toc-title="Build System"/>
     <toc-element toc-title="Compiler"/>
     <toc-element toc-title="Debugger"/>

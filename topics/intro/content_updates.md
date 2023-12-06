@@ -12,13 +12,19 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2023
 
+### December
+{#december-23}
+
+JCEF
+: Revamp [JCEF (Java Chromium Embedded Framework)](jcef.md) page.
+
 ### November
 {#november-23}
 
 Minor Changes and Additions
 :
 - Add information about [executing actions programmatically](basic_action_system.md#executing-actions-programmatically).
-- Please see [](tools_gradle_intellij_plugin.md#attaching-sources) on how to setup 2023.2/3 IDEs for Gradle plugin projects.
+- Please see [](tools_gradle_intellij_plugin.md#attaching-sources) on how to set up 2023.2/3 IDEs for Gradle plugin projects.
 
 ### October
 {#october-23}

@@ -146,9 +146,11 @@ See [org.cef.handler](https://github.com/JetBrains/jcef/tree/master/java/org/cef
 
 > For each handler interface, JCEF API provides an adapter class, which can be extended to avoid implementing unused methods, e.g., [`CefLoadHandlerAdapter`](https://github.com/JetBrains/jcef/blob/master/java/org/cef/handler/CefLoadHandlerAdapter.java).
 
-Handlers should be registered with `JBCefClient.add*Handler()` methods.
-Please note that `JBCefClient` allows registering only a subset of handler types available in JCEF API.
-For other types, use `JBCefClient.getCefClient().add*Handler()`.
+Handlers should be registered with `JBCefClient.getCefClient().add*Handler()` methods.
+
+> Please note that `JBCefClient` exposes methods for adding handlers, but it is not recommended to use them.
+>
+{style="warning"}
 
 ### Executing JavaScript
 

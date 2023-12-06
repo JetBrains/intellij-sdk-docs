@@ -273,7 +273,7 @@ JBCefBrowser devToolsBrowser = JBCefBrowser.createBuilder()
 
 In order to open DevTools in a separate window, call `JBCefBrowser.openDevtools()`.
 
-## JCEF Implementation Examples
+## JCEF Usage Examples
 
 - [Markdown preview panel](%gh-ic%/plugins/markdown/core/src/org/intellij/plugins/markdown/ui/preview/jcef/MarkdownJCEFHtmlPanel.kt)
 - [SVG Image Viewer](%gh-ic%/images/src/org/intellij/images/editor/impl/jcef/JCefImageViewer.kt)

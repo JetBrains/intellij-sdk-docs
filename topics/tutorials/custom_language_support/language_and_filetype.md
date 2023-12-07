@@ -38,7 +38,7 @@ The [`SimpleLanguage`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org
 
 The [icon](%gh-sdk-samples%/simple_language_plugin/src/main/resources/icons/jar-gray.png) for the Simple Language is defined by the
 [`SimpleIcons`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleIcons.java) class.
-Please see [](work_with_icons_and_images.md) for details on how to define and use icons.
+Please see [](icons.md) for details on how to define and use icons.
 
 ```java
 ```

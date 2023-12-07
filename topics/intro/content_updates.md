@@ -68,7 +68,7 @@ Execution
 Minor Changes and Additions
 :
 - Clarify [the syntax highlighting](testing_highlighting.md#syntax-highlighting) test file format and test implementation initial approach.
-- Clarify referencing icons by paths and icon holder class constants in [](work_with_icons_and_images.md).
+- Clarify referencing icons by paths and icon holder class constants in [](icons.md).
 - Add information about requirements for persistent state components to be included in [the _Settings Sync_ plugin synchronization mechanism](persisting_state_of_components.md#settings-sync-plugin).
 
 ### April
@@ -97,7 +97,7 @@ Inspection Options
 
 Minor Changes and Additions
 :
-- Add section on [](work_with_icons_and_images.md#new-ui-icons).
+- Add section on [](icons.md#new-ui-icons).
 - Document [](spell_checking.md#runtimedictionaryprovider) EP for spellchecking.
 
 ### January
@@ -193,7 +193,7 @@ Minor Changes and Additions
 :
 - Add a small section to [](php_open_api.md#utility-classes) describing `PhpFilePathUtils` utility class.
 - Add mention of the way to programmatically open an autocomplete popup to [](code_completion.md).
-- Add a small section to [](work_with_icons_and_images.md#animated-icons) describing animated icons.
+- Add a small section to [](icons.md#animated-icons) describing animated icons.
 - Moved [](tools_gradle_grammar_kit_plugin.md) documentation to _Appendix III — Tooling_
 
 ### May

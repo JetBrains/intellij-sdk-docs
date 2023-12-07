@@ -8,7 +8,7 @@ Beginning in version 2019.1, the IntelliJ Platform supports representing a plugi
 A _Plugin Logo_ is intended to be a unique representation of a plugin's functionality, technology, or company.
 
 **Note:** icons and images used within a plugin have different requirements.
-See [Working with Icons and Images](work_with_icons_and_images.md) for more information.
+See [](icons.md) for more information.
 
 ## Plugin Logo Usages
 Plugin Logos are shown in the [JetBrains Marketplace](https://plugins.jetbrains.com).

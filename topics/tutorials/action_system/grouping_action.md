@@ -23,7 +23,7 @@ This default implementation is used if a set of actions belonging to the group i
 The `id` attribute must be unique, so incorporating the plugin ID or package name is the best practice.
 
 The `popup` attribute determines whether actions in the group are placed in a submenu.
-The `icon` attribute specifies the FQN of an [`Icon`](work_with_icons_and_images.md) object to be displayed.
+The `icon` attribute specifies the FQN of an [`Icon`](icons.md) object to be displayed.
 No `compact` attribute is specified, which means this group will support submenus.
 See [](basic_action_system.md#registering-actions-in-pluginxml) for more information about these attributes.
 

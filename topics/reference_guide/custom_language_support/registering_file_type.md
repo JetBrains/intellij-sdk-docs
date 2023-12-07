@@ -50,7 +50,7 @@ To register a file type, the plugin developer provides a subclass of [`FileTypeF
 - [Custom Language Support Tutorial: Language and File Type](language_and_filetype.md)
 - [`LanguageFileType`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java) subclass in [Properties language plugin](%gh-ic%/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/PropertiesFileType.java)
 
-To verify that the file type is registered correctly, you can implement the [`LanguageFileType.getIcon()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java) method and verify that the correct icon (see [Working with Icons and Images](work_with_icons_and_images.md)) is displayed for files associated with your file type.
+To verify that the file type is registered correctly, you can implement the [`LanguageFileType.getIcon()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java) method and verify that the correct icon (see [](icons.md)) is displayed for files associated with your file type.
 
 ### Additional Features
 

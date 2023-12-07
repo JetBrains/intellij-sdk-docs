@@ -561,7 +561,7 @@ Attributes
   The text which is displayed in the status bar when the action is focused.
 - `icon` _(optional)_<br/>
   The icon that is displayed on the toolbar button or next to the action menu item.
-  See [](work_with_icons_and_images.md) for more information about defining and using icons.
+  See [](icons.md) for more information about defining and using icons.
 - `use-shortcut-of` _(optional)_<br/>
   The ID of the action whose keyboard shortcut this action will use.
 
@@ -844,7 +844,7 @@ Attributes
   The text which is displayed in the status bar when the group is focused.
 - `icon` _(optional)_<br/>
   The icon that is displayed next to the group menu item.
-  See [](work_with_icons_and_images.md) for more information about defining and using icons.
+  See [](icons.md) for more information about defining and using icons.
 - `popup` _(optional)_<br/>
   Boolean flag defining whether the group items are presented in the submenu popup.
     - `true` - group actions are placed in a submenu

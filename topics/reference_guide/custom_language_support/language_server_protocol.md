@@ -112,7 +112,7 @@ After providing the implementation of the LSP Server support provider extension 
 </idea-plugin>
 ```
 
-As a reference, check out the [Prisma ORM](https://plugins.jetbrains.com/plugin/20686-prisma-orm) open-source plugin implementation: [](%gh-ij-plugins%/prisma/src/org/intellij/prisma/ide/lsp)
+As a reference, check out the [Prisma ORM](https://plugins.jetbrains.com/plugin/20686-prisma-orm) open-source plugin implementation: [Prisma ORM LSP](%gh-ij-plugins%/prisma/src/org/intellij/prisma/ide/lsp)
 
 ## Language Server Integration
 

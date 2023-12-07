@@ -59,12 +59,10 @@ Inspection
 Intention
 : Provides an [automated fix](code_inspections_and_intentions.md) for commonly encountered code problems.
 
-## K
+## L
 
 Language Server Protocol _(LSP)_
 : Communication standard between development tools and Language Servers, see [](language_server_protocol.md).
-
-## L
 
 Local History _(LVCS)_
 : A builtin &rarr;&nbsp;_Version Control System_ tracking all changes in the project [locally](https://www.jetbrains.com/help/idea/local-history.html).

@@ -224,7 +224,7 @@ browser.getCefBrowser().executeJavaScript( // 6
    The handler added to `openLinkQuery` will be invoked on each `openLink` function call.
 
    Note the `"link"` parameter of the `JBCefJSQuery.inject()` method.
-   It is the name of the `openLink`'s function `link` parameter.
+   It is the name of the `openLink` function's `link` parameter.
    This value is injected to the query function call, and can be any value that is required by handler, e.g., `"myJsObject.prop"`, `"'JavaScript string'"`, etc.
 6. Execute JavaScript, which registers a click event listener in the browser.
    Whenever an `a` element is clicked in the browser, the listener will invoke the `openLink` function defined in step 4 with the `href` value of the clicked link.

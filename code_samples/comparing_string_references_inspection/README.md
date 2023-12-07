@@ -6,7 +6,7 @@
 Comparing References Inspection Sample demonstrates the implementation of the [Code Inspections][docs:code_inspections] feature for Java classes.
 
 The plugin inspects your Java code and highlights any fragments containing the comparison of two `String` variables.
-If such a check finds a comparison using the `==` or !`=` operators instead of the `.equals()` method, the plugin proposes a *quick-fix* action.
+If such a check finds a comparison using the `==` or !`=` operators instead of the `.equals()` method, the plugin proposes a *quick fix* action.
 
 ### Extension Points
 

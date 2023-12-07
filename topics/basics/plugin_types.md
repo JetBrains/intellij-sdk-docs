@@ -27,7 +27,7 @@ Custom language support provides basic functionality for working with a particul
 * Syntax highlighting
 * Formatting
 * Code insight and code completion
-* Inspections and quick-fixes
+* Inspections and quick fixes
 * Intention actions
 
 Plugins can also augment existing (bundled) custom languages, e.g., by providing additional inspections, intentions, or any other features.

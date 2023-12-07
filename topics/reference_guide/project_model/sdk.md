@@ -113,7 +113,7 @@ Within `DemoProjectSdkSetupValidator`:
 * `isApplicableFor()` checks what condition(s) should be met to run the validation.
 * `getErrorMessage()` runs the validation and return an appropriate error message if the validation fails.
 * If the validation is successful, then it should return null.
-* `getFixHandler()` returns an `EditorNotificationPanel.ActionHandler` that enables the user to execute a quick-fix to resolve the validation issue.
+* `getFixHandler()` returns an `EditorNotificationPanel.ActionHandler` that enables the user to execute a quick fix to resolve the validation issue.
 
 
 > `ProjectSdkSetupValidator` will not work in IntelliJ Platform-based IDEs such as PyCharm.

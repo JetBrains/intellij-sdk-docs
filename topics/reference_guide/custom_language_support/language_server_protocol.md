@@ -173,3 +173,5 @@ When considering the LSP-based approach, it is important to assess the following
 - Feasibility of requesting the user to provide the Language Server binary path.
 
 If you encounter any issues or need assistance, please provide feedback by reaching out to us through the `#intellij-platform` channel in our [JetBrains Platform Slack](https://plugins.jetbrains.com/slack/) workspace or by submitting an issue in [YouTrack](https://youtrack.jetbrains.com/newIssue?project=IDEA&c=Subsystem%20Core.%20Platform%20API).
+
+<include from="snippets.md" element-id="missingContent"/>

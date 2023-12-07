@@ -1,8 +1,8 @@
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# Working with Icons and Images
+# Working with Icons
 
-<link-summary>Adding, organizing, and working with IntelliJ Platform and custom icons and images.</link-summary>
+<link-summary>Adding, organizing, and working with IntelliJ Platform and custom icons.</link-summary>
 
 <tldr>
 
@@ -12,10 +12,10 @@
 
 </tldr>
 
-Icons and images are used widely by IntelliJ Platform plugins.
+Icons are used widely by IntelliJ Platform plugins.
 Plugins need icons mostly for [](basic_action_system.md), custom component renderers, [](tool_windows.md), etc.
 
-> Plugin _Logos_, which represent a plugin itself, have different requirements than icons and images used within a plugin.
+> Plugin _Logos_, which represent a plugin itself, have different requirements than icons used within a plugin.
 > For more information, see the [](plugin_icon_file.md).
 >
 
@@ -117,7 +117,7 @@ In case of placing the class in a custom package, the full package name must be 
 </extensions>
 ```
 
-## Image Formats
+## Icon Formats
 
 IntelliJ Platform supports Retina displays and has a bundled dark theme called [Darcula](https://www.jetbrains.com/help/idea/user-interface-themes.html).
 Thus, every icon should have a dedicated variant for Retina devices and Darcula theme.
@@ -177,7 +177,7 @@ The `IconLoader` class will load the icon that matches the best depending on the
 
 Here are examples of <path>toolWindowStructure.png</path> icon representations:
 
-| Theme/Resolution | File name                                    | Image                                                                   |
+| Theme/Resolution | File name                                    | Icon                                                                    |
 |------------------|----------------------------------------------|-------------------------------------------------------------------------|
 | Default          | <path>toolWindowStructure.png</path>         | ![Tool Window Structure](toolWindowStructure.png)                       |
 | Darcula          | <path>toolWindowStructure_dark.png</path>    | ![Tool Window Structure, dark](toolWindowStructure_dark.png)            |

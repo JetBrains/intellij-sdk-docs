@@ -84,10 +84,10 @@
       <toc-element topic="status_bar_widgets.md"/>
       <toc-element topic="misc_swing_components.md"/>
       <toc-element topic="icons.md" toc-title="Icons" accepts-web-file-names="work-with-icons-and-images.html"/>
+      <toc-element topic="jcef.md"/>
       <toc-element topic="color_scheme_management.md"/>
       <toc-element topic="themes_metadata.md"/>
     </toc-element>
-    <toc-element topic="jcef.md"/>
     <toc-element topic="basic_action_system.md" accepts-web-file-names="action_system.html">
       <toc-element topic="action_system.md">
         <toc-element topic="working_with_custom_actions.md"/>

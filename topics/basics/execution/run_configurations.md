@@ -24,6 +24,8 @@ The following diagram shows the key run configurations classes:
 ```plantuml
 @startuml
 
+skinparam DefaultFontName Roboto,sans-serif
+skinparam DefaultFontSize 14
 hide empty members
 hide circle
 

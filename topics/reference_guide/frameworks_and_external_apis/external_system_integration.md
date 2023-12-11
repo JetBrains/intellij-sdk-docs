@@ -31,6 +31,8 @@ That information is built with the following base classes:
 ```plantuml
 @startuml
 
+skinparam DefaultFontName Roboto,sans-serif
+skinparam DefaultFontSize 14
 hide empty members
 hide circle
 
@@ -65,6 +67,12 @@ For example, a simple one-module project might look as below:
 
 ```plantuml
 @startuml
+
+skinparam DefaultFontName Roboto,sans-serif
+skinparam DefaultFontSize 14
+skinparam DefaultTextAlignment center
+hide empty members
+hide circle
 
 rectangle "DataNode<ProjectData>" as root
 rectangle "DataNode<ModuleData>" as child1

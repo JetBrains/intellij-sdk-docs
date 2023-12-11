@@ -22,6 +22,8 @@ The following diagram shows the relations between the key classes:
 ```plantuml
 @startuml
 
+skinparam DefaultFontName Roboto,sans-serif
+skinparam DefaultFontSize 14
 hide empty members
 hide circle
 

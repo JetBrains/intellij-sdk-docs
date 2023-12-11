@@ -1,6 +1,6 @@
-# Messaging Infrastructure
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Messaging Infrastructure
 
 <link-summary>Subscribing and publishing messages via message bus.</link-summary>
 
@@ -25,24 +25,29 @@ To clarify the corresponding message bus, a `Topic` field declaration should be 
 
 ```plantuml
 @startuml
+
+skinparam monochrome true
+skinparam DefaultFontName Roboto,sans-serif
+skinparam DefaultFontSize 14
 skinparam classAttributeIconSize 0
 hide empty fields
 hide empty methods
+
 left to right direction
 
-' Define the objects in the diagram
 class "com.intellij.util.messages.Topic" as Topic {
   +getDisplayName()
   +getBroadcastDirection()
 }
+
 class ListenerClass {
   +method1()
   {method} ...
   +methodN()
 }
 
-' Define the class relationships
 Topic o--> "1 " ListenerClass
+
 @enduml
 ```
 
@@ -69,9 +74,12 @@ It is used in the following scenarios:
 
 ```plantuml
 @startuml
+
+skinparam monochrome true
+skinparam DefaultFontName Roboto,sans-serif
+skinparam DefaultFontSize 14
 hide empty members
 hide circle
-top to bottom direction
 
 :Subscriber:
 (Create connection) as (C)
@@ -93,21 +101,22 @@ Connection is represented by [`MessageBusConnection`](%gh-ic%/platform/extension
 
 ```plantuml
 @startuml
+
+skinparam monochrome true
+skinparam DefaultFontName Roboto,sans-serif
+skinparam DefaultFontSize 14
 hide empty members
 hide circle
-top to bottom direction
 
-
-' Define the objects in the diagram
 class MessageBus
 class MessageBusConnection
 class "Default Handler" as DH
 class "(Topic-Handler)" as TH
 
-' Define the class relationships
 MessageBus "1" o-- "*" MessageBusConnection
 MessageBusConnection o-- "0..1" DH
 MessageBusConnection *-- "*" TH
+
 @enduml
 ```
 
@@ -145,11 +154,18 @@ public interface ChangeActionNotifier {
 
 ```plantuml
 @startuml
+
+skinparam monochrome true
+skinparam DefaultFontName Roboto,sans-serif
+skinparam DefaultFontSize 14
+skinparam DefaultTextAlignment center
+skinparam ActivityBorderThickness 1
+
 left to right direction
 
 ' Define the activity
 (*) --> if "" then
-  --> [don't have connection] "Get message\nbus reference"
+  --> [no connection] "Get message\nbus reference"
   --> "Create connection\nto the bus"
   --> "Subscribe"
 else
@@ -187,6 +203,13 @@ Many standard interfaces implement returning a message bus, e.g., [`Application.
 
 ```plantuml
 @startuml
+
+skinparam monochrome true
+skinparam DefaultFontName Roboto,sans-serif
+skinparam DefaultFontSize 14
+skinparam DefaultTextAlignment center
+skinparam ActivityBorderThickness 1
+
 left to right direction
 
 ' Define the activity
@@ -220,8 +243,13 @@ Moreover, the IntelliJ Platform has them already:
 
 ```plantuml
 @startuml
+
+skinparam monochrome true
+skinparam DefaultFontName Roboto,sans-serif
+skinparam DefaultFontSize 14
 hide empty members
 hide circle
+
 left to right direction
 
 ' Define the objects in the diagram
@@ -243,11 +271,15 @@ Example setup:
 
 ```plantuml
 @startuml
+
+skinparam monochrome true
+skinparam DefaultFontName Roboto,sans-serif
+skinparam DefaultFontSize 14
+
 hide empty members
 hide circle
 top to bottom direction
 
-' Define the objects in the diagram
 class "application bus" as AB
 class "project bus" as PB
 class "connection1" as C1
@@ -259,7 +291,7 @@ class "topic1-handler1" as T1H1
 class "topic1-handler2" as T1H2
 class "topic1-handler3" as T1H3
 
-' Define the class relationships
+
 AB o-- PB
 AB *-- C1
 
@@ -269,6 +301,7 @@ C1 *-- T1H1
 
 C2 *-- T1H2
 C3 *-- T1H3
+
 @enduml
 ```
 
@@ -305,11 +338,15 @@ Consider the following configuration:
 
 ```plantuml
 @startuml
+
+skinparam DefaultFontName Roboto,sans-serif
+skinparam DefaultFontSize 14
 hide empty members
 hide circle
+
 top to bottom direction
 
-' Define the objects in the diagram
+
 class "bus" as B
 
 class "connection1" as C1
@@ -318,7 +355,7 @@ class "connection2" as C2
 class "topic-handler1" as TH1
 class "topic-handler2" as TH2
 
-' Define the class relationships
+
 B *-- C1
 B *-- C2
 

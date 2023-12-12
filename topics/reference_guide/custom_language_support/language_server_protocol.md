@@ -1,14 +1,14 @@
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# Language Server Protocol
+# Language Server Protocol (LSP)
 
-<link-summary>Language Server Protocol support in IntelliJ-based IDEs</link-summary>
+<link-summary>Language Server Protocol (LSP) support in IntelliJ-based IDEs</link-summary>
 
 The [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) (LSP) is an open-standard protocol developed by Microsoft. It enables communication between development tools and Language Servers.
 Language Servers can provide language-specific features such as code completion, documentation, and formatting, which is far easier than implementing language support from scratch.
 It also reduces the need for constant maintenance and tracking of changes in relevant languages and tools, making it easier to bring consistent language support to various development environments.
 
-However, the canonical custom language support provided by IntelliJ Platform still offers a wider range of integration with IDE features than handling and presenting data provided by a Language Server.
+However, the canonical [](custom_language_support.md) provided by IntelliJ Platform still offers a wider range of integration with IDE features than handling and presenting data provided by a Language Server.
 Therefore, the LSP approach shouldn't be considered as a replacement for the existing language API, but rather as an added value.
 
 > The integration with the Language Server Protocol is created as an extension to the paid IntelliJ-based IDEs.
@@ -17,17 +17,7 @@ Therefore, the LSP approach shouldn't be considered as a replacement for the exi
 {style="note"}
 
 Starting with the 2023.2 release cycle, the LSP API is publicly available as part of the IntelliJ Platform in the following IDEs:
-- IntelliJ IDEA Ultimate
-- WebStorm
-- PhpStorm
-- PyCharm Professional
-- DataSpell
-- RubyMine
-- CLion
-- Aqua
-- DataGrip
-- GoLand
-- Rider
+IntelliJ IDEA Ultimate, WebStorm, PhpStorm, PyCharm Professional, DataSpell, RubyMine, CLion, Aqua, DataGrip, GoLand, and Rider.
 
 ## Plugin Configuration
 
@@ -70,22 +60,31 @@ The LSP API sources are bundled in IntelliJ IDEA Ultimate and can be found withi
 
 ## Supported Features
 
-The initial LSP support within the IntelliJ Platform covers the following features:
+The LSP support within the IntelliJ Platform covers the following features:
 
-- Errors and warnings highlighting ([textDocument/publishDiagnostics](https://microsoft.github.io/language-server-protocol/specification/#textDocument_publishDiagnostics))
-- Quick fixes for errors and warnings ([textDocument/codeAction](https://microsoft.github.io/language-server-protocol/specification/#textDocument_codeAction))
-- Code completion ([textDocument/completion](https://microsoft.github.io/language-server-protocol/specification/#textDocument_completion))
-- Go to Declaration ([textDocument/definition](https://microsoft.github.io/language-server-protocol/specification/#textDocument_definition))
+- Since 2023.2:
+  - Errors and warnings highlighting ([textDocument/publishDiagnostics](https://microsoft.github.io/language-server-protocol/specification/#textDocument_publishDiagnostics))
+  - Quick fixes for errors and warnings ([textDocument/codeAction](https://microsoft.github.io/language-server-protocol/specification/#textDocument_codeAction))
+  - Code completion ([textDocument/completion](https://microsoft.github.io/language-server-protocol/specification/#textDocument_completion))
+  - Go to Declaration ([textDocument/definition](https://microsoft.github.io/language-server-protocol/specification/#textDocument_definition))
+- Since 2023.3:
+  - Intention actions ([textDocument/codeAction](https://microsoft.github.io/language-server-protocol/specification/#textDocument_codeAction))
+  - Code formatting ([textDocument/formatting](https://microsoft.github.io/language-server-protocol/specification/#textDocument_formatting))
+- Since 2023.3.1:
+  - Quick documentation ([textDocument/hover](https://microsoft.github.io/language-server-protocol/specification#textDocument_hover))
 
 ## Basic Implementation
 
-A minimal LSP integration must implement `LspServerSupportProvider` along with a service descriptor and [register](plugin_extensions.md#declaring-extensions) it as a `com.intellij.platform.lsp.serverSupportProvider` [Extension Point (EP)](plugin_extension_points.md):
+To implement a minimal LSP plugin, perform the following steps:
+- Implement `LspServerSupportProvider` and within the `LspServerSupportProvider.fileOpened()` method, spin up the relevant LSP server descriptor, which can decide if the given file is supported by using the `LspServerDescriptor.isSupportedFile()` check method.
+- [Register](plugin_extensions.md#declaring-extensions) it as a `com.intellij.platform.lsp.serverSupportProvider` [Extension Point (EP)](plugin_extension_points.md):
+- Tell how to start the server by implementing `LspServerDescriptor.createCommandLine()`.
 
 ```kotlin
 import com.intellij.platform.lsp.api.LspServerSupportProvider
 import com.intellij.platform.lsp.api.ProjectWideLspServerDescriptor
 
-class FooLspServerSupportProvider : LspServerSupportProvider {
+internal class FooLspServerSupportProvider : LspServerSupportProvider {
   override fun fileOpened(project: Project, file: VirtualFile, serverStarter: LspServerStarter) {
     if (file.extension == "foo") {
       serverStarter.ensureServerStarted(FooLspServerDescriptor(project))
@@ -97,19 +96,6 @@ private class FooLspServerDescriptor(project: Project) : ProjectWideLspServerDes
   override fun isSupportedFile(file: VirtualFile) = file.extension == "foo"
   override fun createCommandLine() = GeneralCommandLine("foo", "--stdio")
 }
-```
-
-After providing the implementation of the LSP Server support provider extension point, register it in the <path>plugin.xml</path> file as follows:
-
-```xml
-<idea-plugin>
-   <!-- ... -->
-   <depends>com.intellij.modules.platform</depends>
-   <depends>com.intellij.modules.ultimate</depends>
-   <extensions defaultExtensionNs="com.intellij">
-       <platform.lsp.serverSupportProvider implementation="FooLspServerSupportProvider"/>
-   </extensions>
-</idea-plugin>
 ```
 
 As a reference, check out the [Prisma ORM](https://plugins.jetbrains.com/plugin/20686-prisma-orm) open-source plugin implementation: [Prisma ORM LSP](%gh-ij-plugins%/prisma/src/org/intellij/prisma/ide/lsp)
@@ -126,21 +112,22 @@ The Prisma ORM plugin presents the first approach, which distributes the `prisma
 
 For more complex cases, the plugin may request to provide a detailed configuration with a dedicated [Settings](settings_guide.md) implementation.
 
-To implement a minimal LSP plugin, perform the following steps:
-- Within the `LspServerSupportProvider.fileOpened()` method, spin up the relevant LSP server descriptor, which can decide if the given file is supported by using the `LspServerDescriptor.isSupportedFile()` check method.
-- Tell how to start the server by implementing `LspServerDescriptor.createCommandLine()`.
-
 ## Customization
 
-- To fine-tune or disable the implementation of LSP-based features, the plugins may override the corresponding properties of the `LspServerDescriptor` class.
+- To fine-tune or disable the implementation of LSP-based features, plugins may override the corresponding properties of the `LspServerDescriptor` class.
   See the properties documentation for more details:
-  - `lspGoToDefinitionSupport`
-  - `lspCompletionSupport`
-  - `lspDiagnosticsSupport`
-  - `lspCodeActionsSupport`
-  - `lspCommandsSupport`
-- To handle custom (undocumented) requests and notifications from the LSP server, override `LspServerDescriptor.createLsp4jClient`.
-- To send custom (undocumented) requests and notifications to the LSP server, override `LspServerDescriptor.lsp4jServerClass` and implement the `LspClientNotification` and/or `LspRequest` classes.
+  - Since 2023.2:
+    - `lspGoToDefinitionSupport`
+    - `lspCompletionSupport`
+    - `lspDiagnosticsSupport`
+    - `lspCodeActionsSupport`
+    - `lspCommandsSupport`
+  - Since 2023.3:
+    - `lspFormattingSupport`
+    - `lspHoverSupport`
+- To handle custom (undocumented) requests and notifications from the LSP server, override `LspServerDescriptor.createLsp4jClient` property and the `Lsp4jClient` class according to their documentation.
+- To send custom (undocumented) requests and notifications to the LSP server, override `LspServerDescriptor.lsp4jServerClass` property and implement the `LspClientNotification` and/or `LspRequest` classes.
+  The documentation in the source code includes implementation examples.
 
 See bundled LSP API source code and its documentation for more information.
 
@@ -159,7 +146,6 @@ For more information, see the [](ide_infrastructure.md#logging) section.
 ## Limitations
 
 - The current LSP API implementation assumes that the IDE <-> LSP server communication channel is `stdio`.
-- The IDE doesn't send [workspace/didChangeWatchedFiles](https://microsoft.github.io/language-server-protocol/specification/#workspace_didChangeWatchedFiles) notifications to the server.
 
 ## Integration Overview
 
@@ -172,6 +158,13 @@ When considering the LSP-based approach, it is important to assess the following
 - Compatibility with breaking changes between versions.
 - Feasibility of requesting the user to provide the Language Server binary path.
 
-If you encounter any issues or need assistance, please provide feedback by reaching out to us through the `#intellij-platform` channel in our [JetBrains Platform Slack](https://plugins.jetbrains.com/slack/) workspace or by submitting an issue in [YouTrack](https://youtrack.jetbrains.com/newIssue?project=IDEA&c=Subsystem%20Core.%20Platform%20API).
+## Sample Plugins
+
+The following bundled open-source plugins make (heavy) use of DOM:
+
+- [Prisma ORM LSP](%gh-ij-plugins%/prisma)
+- [Vue.js](%gh-ij-plugins%/vuejs)
+
+Explore 3rd party plugins using LSP on [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.platform.lsp.serverSupportProvider).
 
 <include from="snippets.md" element-id="missingContent"/>

@@ -45,7 +45,7 @@ listfonts
 ```plantuml
 @startuml
 
-skinparam DefaultFontName JetBrains Sans,Roboto Mono,sans-serif
+skinparam DefaultFontName Roboto Mono,sans-serif
 skinparam DefaultFontSize 14
 hide empty members
 hide circle
@@ -82,7 +82,7 @@ For example, a simple one-module project might look as below:
 ```plantuml
 @startuml
 
-skinparam DefaultFontName JetBrains Sans,Roboto,sans-serif
+skinparam DefaultFontName Roboto,sans-serif
 skinparam DefaultFontSize 14
 skinparam DefaultTextAlignment center
 hide empty members

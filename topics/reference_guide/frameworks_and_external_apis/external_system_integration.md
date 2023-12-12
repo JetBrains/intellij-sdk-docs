@@ -30,8 +30,22 @@ That information is built with the following base classes:
 
 ```plantuml
 @startuml
+legend
+PlantUML Version %version()
+end legend
+@enduml
+```
 
-skinparam DefaultFontName Roboto,sans-serif
+```plantuml
+@startuml
+listfonts
+@enduml
+```
+
+```plantuml
+@startuml
+
+skinparam DefaultFontName JetBrains Sans,Roboto Mono,sans-serif
 skinparam DefaultFontSize 14
 hide empty members
 hide circle
@@ -68,7 +82,7 @@ For example, a simple one-module project might look as below:
 ```plantuml
 @startuml
 
-skinparam DefaultFontName Roboto,sans-serif
+skinparam DefaultFontName JetBrains Sans,Roboto,sans-serif
 skinparam DefaultFontSize 14
 skinparam DefaultTextAlignment center
 hide empty members

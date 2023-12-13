@@ -23,11 +23,43 @@ To clarify the corresponding message bus, a `Topic` field declaration should be 
 
 ![Topic](topic.svg)
 
+Inter:
+
 ```plantuml
 @startuml
 
 skinparam monochrome true
-skinparam DefaultFontName Roboto,sans-serif
+skinparam DefaultFontName Inter,sans-serif
+skinparam DefaultFontSize 14
+skinparam classAttributeIconSize 0
+hide empty fields
+hide empty methods
+
+left to right direction
+
+class "com.intellij.util.messages.Topic" as Topic {
+  +getDisplayName()
+  +getBroadcastDirection()
+}
+
+class ListenerClass {
+  +method1()
+  {method} ...
+  +methodN()
+}
+
+Topic o--> "1 " ListenerClass
+
+@enduml
+```
+
+JetBrains Sans:
+
+```plantuml
+@startuml
+
+skinparam monochrome true
+skinparam DefaultFontName JetBrains Sans,sans-serif
 skinparam DefaultFontSize 14
 skinparam classAttributeIconSize 0
 hide empty fields
@@ -72,11 +104,36 @@ It is used in the following scenarios:
 
 ![Bus](bus.svg)
 
+Inter:
+
 ```plantuml
 @startuml
 
 skinparam monochrome true
-skinparam DefaultFontName Roboto,sans-serif
+skinparam DefaultFontName Inter,sans-serif
+skinparam DefaultFontSize 14
+hide empty members
+hide circle
+
+:Subscriber:
+(Create connection) as (C)
+note top of (C): Necessary for subscribing
+Subscriber --> C
+
+:Publisher:
+(Publish)
+Publisher --> Publish
+
+@enduml
+```
+
+JetBrains Sans:
+
+```plantuml
+@startuml
+
+skinparam monochrome true
+skinparam DefaultFontName JetBrains Sans,sans-serif
 skinparam DefaultFontSize 14
 hide empty members
 hide circle
@@ -99,11 +156,36 @@ Connection is represented by [`MessageBusConnection`](%gh-ic%/platform/extension
 
 ![Connection](connection.svg)
 
+Inter:
+
 ```plantuml
 @startuml
 
 skinparam monochrome true
-skinparam DefaultFontName Roboto,sans-serif
+skinparam DefaultFontName Inter,sans-serif
+skinparam DefaultFontSize 14
+hide empty members
+hide circle
+
+class MessageBus
+class MessageBusConnection
+class "Default Handler" as DH
+class "(Topic-Handler)" as TH
+
+MessageBus "1" o-- "*" MessageBusConnection
+MessageBusConnection o-- "0..1" DH
+MessageBusConnection *-- "*" TH
+
+@enduml
+```
+
+JetBrains Sans:
+
+```plantuml
+@startuml
+
+skinparam monochrome true
+skinparam DefaultFontName JetBrains Sans,sans-serif
 skinparam DefaultFontSize 14
 hide empty members
 hide circle
@@ -152,11 +234,38 @@ public interface ChangeActionNotifier {
 
 ![Subscribing](subscribe.svg)
 
+Inter:
+
 ```plantuml
 @startuml
 
 skinparam monochrome true
-skinparam DefaultFontName Roboto,sans-serif
+skinparam DefaultFontName Inter,sans-serif
+skinparam DefaultFontSize 14
+skinparam DefaultTextAlignment center
+skinparam ActivityBorderThickness 1
+
+left to right direction
+
+' Define the activity
+(*) --> if "" then
+  --> [no connection] "Get message\nbus reference"
+  --> "Create connection\nto the bus"
+  --> "Subscribe"
+else
+  --> [have connection] "Subscribe"
+endif
+--> (*)
+@enduml
+```
+
+JetBrains Sans:
+
+```plantuml
+@startuml
+
+skinparam monochrome true
+skinparam DefaultFontName JetBrains Sans,sans-serif
 skinparam DefaultFontSize 14
 skinparam DefaultTextAlignment center
 skinparam ActivityBorderThickness 1
@@ -201,11 +310,35 @@ Many standard interfaces implement returning a message bus, e.g., [`Application.
 
 ![Publishing](publish.svg)
 
+Inter:
+
 ```plantuml
 @startuml
 
 skinparam monochrome true
-skinparam DefaultFontName Roboto,sans-serif
+skinparam DefaultFontName Inter,sans-serif
+skinparam DefaultFontSize 14
+skinparam DefaultTextAlignment center
+skinparam ActivityBorderThickness 1
+
+left to right direction
+
+' Define the activity
+(*) --> "Get message\nbus reference"
+  --> "Ask the bus\nfor a particular\ntopic's publisher"
+  --> "Call target\nmethod on\npublisher"
+  --> "Messaging\ncalls the\nsame method\non target\nhandlers"
+--> (*)
+@enduml
+```
+
+JetBrains Sans:
+
+```plantuml
+@startuml
+
+skinparam monochrome true
+skinparam DefaultFontName JetBrains Sans,sans-serif
 skinparam DefaultFontSize 14
 skinparam DefaultTextAlignment center
 skinparam ActivityBorderThickness 1
@@ -241,11 +374,37 @@ Moreover, the IntelliJ Platform has them already:
 
 ![Standard hierarchy](standard_hierarchy.svg)
 
+Inter:
+
 ```plantuml
 @startuml
 
 skinparam monochrome true
-skinparam DefaultFontName Roboto,sans-serif
+skinparam DefaultFontName Inter,sans-serif
+skinparam DefaultFontSize 14
+hide empty members
+hide circle
+
+left to right direction
+
+' Define the objects in the diagram
+class "application bus" as AB
+class "project bus" as PB
+class "module bus" as MB
+
+' Define the class relationships
+AB o-- "*" PB
+PB o-- "*" MB
+@enduml
+```
+
+JetBrains Sans:
+
+```plantuml
+@startuml
+
+skinparam monochrome true
+skinparam DefaultFontName JetBrains Sans,sans-serif
 skinparam DefaultFontSize 14
 hide empty members
 hide circle
@@ -269,11 +428,51 @@ Example setup:
 
 ![Parent-child broadcast](parent_child_broadcast.svg)
 
+Inter:
+
 ```plantuml
 @startuml
 
 skinparam monochrome true
-skinparam DefaultFontName Roboto,sans-serif
+skinparam DefaultFontName Inter,sans-serif
+skinparam DefaultFontSize 14
+
+hide empty members
+hide circle
+top to bottom direction
+
+class "application bus" as AB
+class "project bus" as PB
+class "connection1" as C1
+
+class "connection2" as C2
+class "connection3" as C3
+class "topic1-handler1" as T1H1
+
+class "topic1-handler2" as T1H2
+class "topic1-handler3" as T1H3
+
+
+AB o-- PB
+AB *-- C1
+
+PB *-- C2
+PB *-- C3
+C1 *-- T1H1
+
+C2 *-- T1H2
+C3 *-- T1H3
+
+@enduml
+```
+
+JetBrains Sans:
+
+```plantuml
+@startuml
+
+skinparam monochrome true
+skinparam DefaultFontName JetBrains Sans,sans-serif
 skinparam DefaultFontSize 14
 
 hide empty members
@@ -336,10 +535,42 @@ Consider the following configuration:
 
 ![Nested messages](nested_config.svg)
 
+Inter:
+
 ```plantuml
 @startuml
 
-skinparam DefaultFontName Roboto,sans-serif
+skinparam DefaultFontName Inter,sans-serif
+skinparam DefaultFontSize 14
+hide empty members
+hide circle
+
+top to bottom direction
+
+
+class "bus" as B
+
+class "connection1" as C1
+class "connection2" as C2
+
+class "topic-handler1" as TH1
+class "topic-handler2" as TH2
+
+
+B *-- C1
+B *-- C2
+
+C1 *-- TH1
+C2 *-- TH2
+@enduml
+```
+
+JetBrains Sans:
+
+```plantuml
+@startuml
+
+skinparam DefaultFontName JetBrains Sans,sans-serif
 skinparam DefaultFontSize 14
 hide empty members
 hide circle

@@ -21,10 +21,37 @@ The following diagram shows the key run configurations classes:
 
 ![Run Configuration Classes](run_configuration_classes.svg)
 
+Inter:
+
 ```plantuml
 @startuml
 
-skinparam DefaultFontName Roboto,sans-serif
+skinparam DefaultFontName Inter,sans-serif
+skinparam DefaultFontSize 14
+hide empty members
+hide circle
+
+interface RunProfile
+interface ConfigurationType
+abstract class ConfigurationFactory
+interface RunConfiguration
+abstract class SettingsEditor
+
+
+ConfigurationType *-- "*" ConfigurationFactory
+ConfigurationFactory --> RunConfiguration: creates
+RunConfiguration o-- "0..*" SettingsEditor
+RunConfiguration -l|> RunProfile
+
+@enduml
+```
+
+JetBrains Sans:
+
+```plantuml
+@startuml
+
+skinparam DefaultFontName JetBrains Sans,sans-serif
 skinparam DefaultFontSize 14
 hide empty members
 hide circle

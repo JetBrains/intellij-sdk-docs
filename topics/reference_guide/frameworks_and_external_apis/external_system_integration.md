@@ -28,24 +28,44 @@ That information is built with the following base classes:
 
 ![DataNode](data_node.svg)
 
+Inter:
+
 ```plantuml
 @startuml
-legend
-PlantUML Version %version()
-end legend
+
+skinparam DefaultFontName Inter,sans-serif
+skinparam DefaultFontSize 14
+hide empty members
+hide circle
+
+class "parent DataNode" as parent
+class DataNode
+together {
+  class "child n DataNode" as child3
+  class "..." as child2
+  class "child 1 DataNode" as child1
+  class Key
+  class ExternalEntityData
+}
+
+' Define the class relationships
+parent -- DataNode
+
+ExternalEntityData --o DataNode
+Key --o DataNode
+DataNode -- child1
+DataNode -- child2
+DataNode -- child3
+
 @enduml
 ```
 
-```plantuml
-@startuml
-listfonts
-@enduml
-```
+JetBrains Sans:
 
 ```plantuml
 @startuml
 
-skinparam DefaultFontName Roboto Mono,sans-serif
+skinparam DefaultFontName JetBrains Sans,sans-serif
 skinparam DefaultFontSize 14
 hide empty members
 hide circle
@@ -79,10 +99,39 @@ For example, a simple one-module project might look as below:
 
 ![DataNode Example](data_node_example.svg)
 
+Inter:
+
 ```plantuml
 @startuml
 
-skinparam DefaultFontName Roboto,sans-serif
+skinparam DefaultFontName Inter,sans-serif
+skinparam DefaultFontSize 14
+skinparam DefaultTextAlignment center
+hide empty members
+hide circle
+
+rectangle "DataNode<ProjectData>" as root
+rectangle "DataNode<ModuleData>" as child1
+rectangle "DataNode<LibraryData>\n(JUnit)" as child2
+rectangle "DataNode<ContentRootData>" as child11
+rectangle "DataNode<LibraryDependencyData>\n(JUnit)" as child12
+
+' Define the class relationships
+root -- child1
+root -- child2
+
+child1 -- child11
+child1 -- child12
+
+@enduml
+```
+
+JetBrains Sans:
+
+```plantuml
+@startuml
+
+skinparam DefaultFontName JetBrains Sans,sans-serif
 skinparam DefaultFontSize 14
 skinparam DefaultTextAlignment center
 hide empty members

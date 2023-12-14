@@ -19,14 +19,12 @@ Run configurations can be started from the <control>Run</control> toolbar, the e
 
 The following diagram shows the key run configurations classes:
 
-![Run Configuration Classes](run_configuration_classes.svg)
-
-JetBrains Sans:
+Original:
 
 ```plantuml
 @startuml
 
-skinparam DefaultFontName JetBrains Sans,sans-serif
+skinparam DefaultFontName JetBrains Sans
 skinparam DefaultFontSize 14
 hide empty members
 hide circle

@@ -21,15 +21,11 @@ The [`Topic`](%gh-ic%/platform/extensions/src/com/intellij/util/messages/Topic.j
 Clients are allowed to subscribe to a specific topic within a bus and send messages to that topic within that particular bus.
 To clarify the corresponding message bus, a `Topic` field declaration should be annotated with `Topic.@AppLevel` and/or `Topic.@ProjectLevel`.
 
-![Topic](topic.svg)
-
-JetBrains Sans:
-
 ```plantuml
 @startuml
 
 skinparam monochrome true
-skinparam DefaultFontName JetBrains Sans,sans-serif
+skinparam DefaultFontName JetBrains Sans
 skinparam DefaultFontSize 14
 skinparam classAttributeIconSize 0
 hide empty fields
@@ -72,18 +68,12 @@ Listener class
 [`MessageBus`](%gh-ic%/platform/extensions/src/com/intellij/util/messages/MessageBus.kt) is the core of the messaging system.
 It is used in the following scenarios:
 
-![Bus](bus.svg)
-
-JetBrains Sans:
-
 ```plantuml
 @startuml
 
 skinparam monochrome true
-skinparam DefaultFontName JetBrains Sans,sans-serif
+skinparam DefaultFontName JetBrains Sans
 skinparam DefaultFontSize 14
-hide empty members
-hide circle
 
 :Subscriber:
 (Create connection) as (C)
@@ -101,15 +91,11 @@ Publisher --> Publish
 
 Connection is represented by [`MessageBusConnection`](%gh-ic%/platform/extensions/src/com/intellij/util/messages/MessageBusConnection.kt) class and manages all subscriptions for a particular client within a particular bus.
 
-![Connection](connection.svg)
-
-JetBrains Sans:
-
 ```plantuml
 @startuml
 
 skinparam monochrome true
-skinparam DefaultFontName JetBrains Sans,sans-serif
+skinparam DefaultFontName JetBrains Sans
 skinparam DefaultFontSize 14
 hide empty members
 hide circle
@@ -156,15 +142,11 @@ public interface ChangeActionNotifier {
 
 ### Subscribing to a Topic
 
-![Subscribing](subscribe.svg)
-
-JetBrains Sans:
-
 ```plantuml
 @startuml
 
 skinparam monochrome true
-skinparam DefaultFontName JetBrains Sans,sans-serif
+skinparam DefaultFontName JetBrains Sans
 skinparam DefaultFontSize 14
 skinparam DefaultTextAlignment center
 skinparam ActivityBorderThickness 1
@@ -173,11 +155,11 @@ left to right direction
 
 ' Define the activity
 (*) --> if "" then
-  --> [no connection] "Get message\nbus reference"
-  --> "Create connection\nto the bus"
+  --> [no connection] "Get a message\nbus reference"
+  --> "Create\na connection\nto the bus"
   --> "Subscribe"
 else
-  --> [have connection] "Subscribe"
+  --> [connection exists] "Subscribe"
 endif
 --> (*)
 @enduml
@@ -207,15 +189,11 @@ Many standard interfaces implement returning a message bus, e.g., [`Application.
 
 ### Publishing Messages
 
-![Publishing](publish.svg)
-
-JetBrains Sans:
-
 ```plantuml
 @startuml
 
 skinparam monochrome true
-skinparam DefaultFontName JetBrains Sans,sans-serif
+skinparam DefaultFontName JetBrains Sans
 skinparam DefaultFontSize 14
 skinparam DefaultTextAlignment center
 skinparam ActivityBorderThickness 1
@@ -226,7 +204,7 @@ left to right direction
 (*) --> "Get message\nbus reference"
   --> "Ask the bus\nfor a particular\ntopic's publisher"
   --> "Call target\nmethod on\npublisher"
-  --> "Messaging\ncalls the\nsame method\non target\nhandlers"
+  --> "Messaging calls\nthe same method\non target handlers"
 --> (*)
 @enduml
 ```
@@ -249,15 +227,11 @@ public void doChange(Context context) {
 Message buses can be organised into hierarchies.
 Moreover, the IntelliJ Platform has them already:
 
-![Standard hierarchy](standard_hierarchy.svg)
-
-JetBrains Sans:
-
 ```plantuml
 @startuml
 
 skinparam monochrome true
-skinparam DefaultFontName JetBrains Sans,sans-serif
+skinparam DefaultFontName JetBrains Sans
 skinparam DefaultFontSize 14
 hide empty members
 hide circle
@@ -279,17 +253,12 @@ That allows to notify subscribers registered in one message bus on messages sent
 
 Example setup:
 
-![Parent-child broadcast](parent_child_broadcast.svg)
-
-JetBrains Sans:
-
 ```plantuml
 @startuml
 
 skinparam monochrome true
-skinparam DefaultFontName JetBrains Sans,sans-serif
+skinparam DefaultFontName JetBrains Sans
 skinparam DefaultFontSize 14
-
 hide empty members
 hide circle
 top to bottom direction
@@ -304,7 +273,6 @@ class "topic1-handler1" as T1H1
 
 class "topic1-handler2" as T1H2
 class "topic1-handler3" as T1H3
-
 
 AB o-- PB
 AB *-- C1
@@ -348,20 +316,15 @@ The IntelliJ Platform's messaging infrastructure guarantees that all messages se
 
 Consider the following configuration:
 
-![Nested messages](nested_config.svg)
-
-JetBrains Sans:
-
 ```plantuml
 @startuml
 
-skinparam DefaultFontName JetBrains Sans,sans-serif
+skinparam DefaultFontName JetBrains Sans
 skinparam DefaultFontSize 14
 hide empty members
 hide circle
 
 top to bottom direction
-
 
 class "bus" as B
 

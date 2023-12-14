@@ -20,12 +20,6 @@ The *External System* sub-system provides a simple API for wrapping external sys
 
 Fonts installed on the build server:
 
-```plantuml
-@startuml
-listfonts
-@enduml
-```
-
 ### Project Data Domain
 
 The external system wrapper is required to be able to build project info on the basis of the given external system config.
@@ -34,14 +28,10 @@ That information is built with the following base classes:
 * [`Key`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/model/Key.java)
 * [`ExternalEntityData`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/model/project/ExternalEntityData.java)
 
-![DataNode](data_node.svg)
-
-JetBrains Sans:
-
 ```plantuml
 @startuml
 
-skinparam DefaultFontName Trebuchet MS,sans-serif
+skinparam DefaultFontName JetBrains Sans
 skinparam DefaultFontSize 14
 hide empty members
 hide circle
@@ -73,14 +63,10 @@ Multiple `DataNode` objects might be organized in directed graph where every edg
 
 For example, a simple one-module project might look as below:
 
-![DataNode Example](data_node_example.svg)
-
-JetBrains Sans:
-
 ```plantuml
 @startuml
 
-skinparam DefaultFontName JetBrains Sans,sans-serif
+skinparam DefaultFontName JetBrains Sans
 skinparam DefaultFontSize 14
 skinparam DefaultTextAlignment center
 hide empty members

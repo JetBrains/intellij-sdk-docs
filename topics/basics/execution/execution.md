@@ -17,13 +17,10 @@ The key Execution API classes are divided into two groups:
 
 The following diagram shows the relations between the key classes:
 
-![Execution Classes](execution_classes.svg)
-
-JetBrains Sans:
 ```plantuml
 @startuml
 
-skinparam DefaultFontName JetBrains Sans,sans-serif
+skinparam DefaultFontName JetBrains Sans
 skinparam DefaultFontSize 14
 hide empty members
 hide circle

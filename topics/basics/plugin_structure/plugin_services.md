@@ -314,7 +314,7 @@ val projectService = project.service<MyProjectService>()
 @startuml
 skinparam monochrome true
 skinparam DefaultFontName JetBrains Sans
-skinparam DefaultFontSize 14
+skinparam DefaultFontSize 13
 skinparam DefaultTextAlignment center
 skinparam NoteTextAlignment left
 
@@ -378,7 +378,7 @@ else (no)
     }
   else (disposed or dispose in progress)
     :Throw
-    ""ProcessCanceledException"";
+    ProcessCanceledException;
     detach
   endif
 endif

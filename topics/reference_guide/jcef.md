@@ -21,7 +21,7 @@ Consider using JCEF approach only in cases, when a plugin needs to display HTML 
 JCEF replaces JavaFX, which was used to render web content in IDEs in the past.
 
 > Using JavaFX in 3rd party plugins has been deprecated since 2020.2.
-> To continue using JavaFX in 2020.2 or later, add an explicit [dependency](https://plugins.jetbrains.com/docs/intellij/plugin-dependencies.html) on [JavaFX Runtime for Plugins](https://plugins.jetbrains.com/plugin/14250-javafx-runtime-for-plugins) (not recommended).
+> To continue using JavaFX in 2020.2 or later, add an explicit [dependency](plugin_dependencies.md) on [JavaFX Runtime for Plugins](https://plugins.jetbrains.com/plugin/14250-javafx-runtime-for-plugins) (not recommended).
 >
 > See [JavaFX and JCEF in the IntelliJ Platform](https://blog.jetbrains.com/platform/2020/07/javafx-and-jcef-in-the-intellij-platform/) blog post for the details.
 >

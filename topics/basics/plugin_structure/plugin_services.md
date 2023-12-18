@@ -308,11 +308,87 @@ val projectService = project.service<MyProjectService>()
 
 </tabs>
 
-<procedure title="Getting Service Flow" collapsible="true" default-state="collapsed">
+<chapter title="Getting Service Flow" collapsible="true" default-state="collapsed">
 
-![Getting Service](getting_service.svg){thumbnail="true" thumbnail-same-file="true"}
+```plantuml
+@startuml
+skinparam monochrome true
+skinparam DefaultFontName JetBrains Sans
+skinparam DefaultFontSize 13
+skinparam DefaultTextAlignment center
+skinparam NoteTextAlignment left
 
-</procedure>
+' default 1.5
+skinparam ActivityBorderThickness 1
+' default 2
+skinparam PartitionBorderThickness 1.5
+
+:getService;
+note right
+  Allowed in any thread.
+  Call on demand only.
+  Never cache the result.
+  Do not call in constructors
+  unless needed.
+end note
+
+if (Is Light Service) then (yes)
+else (no)
+  if (Is Service Declaration Found) then (yes)
+  else (no)
+    :Return null;
+    detach
+  endif
+endif
+
+if (Is Created and Initialized?) then (yes)
+else (no)
+  if (Is Container Active?) then (yes)
+    partition "synchronized\non service class" {
+      if (Is Created and Initialized?) then (yes)
+      else (no)
+        if (Is Initializing?) then (yes)
+          :Throw
+          PluginException
+          (Cyclic Service
+          Initialization);
+          detach
+        else (no)
+          partition "non-cancelable" {
+            :Create Instance]
+            note right
+              Avoid getting other
+              services to reduce
+              the initialization tree.
+              The fewer the
+              dependencies,
+              the faster and more
+              reliable initialization.
+            end note
+
+            :Register to be Disposed
+            on Container Dispose
+            (Disposable only)]
+            :Load Persistent State
+            (PersistentStateComponent
+            only)]
+          }
+        endif
+      endif
+    }
+  else (disposed or dispose in progress)
+    :Throw
+    ProcessCanceledException;
+    detach
+  endif
+endif
+
+:Return Instance;
+
+@enduml
+```
+
+</chapter>
 
 ## Sample Plugin
 

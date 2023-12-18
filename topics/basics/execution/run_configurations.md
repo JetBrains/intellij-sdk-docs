@@ -19,7 +19,30 @@ Run configurations can be started from the <control>Run</control> toolbar, the e
 
 The following diagram shows the key run configurations classes:
 
-![Run Configuration Classes](run_configuration_classes.svg)
+Original:
+
+```plantuml
+@startuml
+
+skinparam DefaultFontName JetBrains Sans
+skinparam DefaultFontSize 14
+hide empty members
+hide circle
+
+interface RunProfile
+interface ConfigurationType
+abstract class ConfigurationFactory
+interface RunConfiguration
+abstract class SettingsEditor
+
+
+ConfigurationType *-- "*" ConfigurationFactory
+ConfigurationFactory --> RunConfiguration: creates
+RunConfiguration o-- "0..*" SettingsEditor
+RunConfiguration -l|> RunProfile
+
+@enduml
+```
 
 Run Configuration API (except `SettingsEditor` class, which is a class shared by many IntelliJ Platform APIs) is a part of the [Execution API](execution.md).
 

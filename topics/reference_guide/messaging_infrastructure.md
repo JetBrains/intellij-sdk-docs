@@ -1,6 +1,6 @@
-# Messaging Infrastructure
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Messaging Infrastructure
 
 <link-summary>Subscribing and publishing messages via message bus.</link-summary>
 
@@ -21,7 +21,33 @@ The [`Topic`](%gh-ic%/platform/extensions/src/com/intellij/util/messages/Topic.j
 Clients are allowed to subscribe to a specific topic within a bus and send messages to that topic within that particular bus.
 To clarify the corresponding message bus, a `Topic` field declaration should be annotated with `Topic.@AppLevel` and/or `Topic.@ProjectLevel`.
 
-![Topic](topic.svg)
+```plantuml
+@startuml
+
+skinparam monochrome true
+skinparam DefaultFontName JetBrains Sans
+skinparam DefaultFontSize 14
+skinparam classAttributeIconSize 0
+hide empty fields
+hide empty methods
+
+left to right direction
+
+class "com.intellij.util.messages.Topic" as Topic {
+  +getDisplayName()
+  +getBroadcastDirection()
+}
+
+class ListenerClass {
+  +method1()
+  {method} ...
+  +methodN()
+}
+
+Topic o--> "1 " ListenerClass
+
+@enduml
+```
 
 #### Topic Properties
 
@@ -42,13 +68,49 @@ Listener class
 [`MessageBus`](%gh-ic%/platform/extensions/src/com/intellij/util/messages/MessageBus.kt) is the core of the messaging system.
 It is used in the following scenarios:
 
-![Bus](bus.svg)
+```plantuml
+@startuml
+
+skinparam monochrome true
+skinparam DefaultFontName JetBrains Sans
+skinparam DefaultFontSize 14
+
+:Subscriber:
+(Create connection) as (C)
+note top of (C): Necessary for subscribing
+Subscriber --> C
+
+:Publisher:
+(Publish)
+Publisher --> Publish
+
+@enduml
+```
 
 ### Connection
 
 Connection is represented by [`MessageBusConnection`](%gh-ic%/platform/extensions/src/com/intellij/util/messages/MessageBusConnection.kt) class and manages all subscriptions for a particular client within a particular bus.
 
-![Connection](connection.svg)
+```plantuml
+@startuml
+
+skinparam monochrome true
+skinparam DefaultFontName JetBrains Sans
+skinparam DefaultFontSize 14
+hide empty members
+hide circle
+
+class MessageBus
+class MessageBusConnection
+class "Default Handler" as DH
+class "(Topic-Handler)" as TH
+
+MessageBus "1" o-- "*" MessageBusConnection
+MessageBusConnection o-- "0..1" DH
+MessageBusConnection *-- "*" TH
+
+@enduml
+```
 
 Connection stores *topic-handler* mappings - callbacks to invoke when message for the target topic is received (not more than one handler per topic within the same connection is allowed).
 
@@ -80,7 +142,28 @@ public interface ChangeActionNotifier {
 
 ### Subscribing to a Topic
 
-![Subscribing](subscribe.svg)
+```plantuml
+@startuml
+
+skinparam monochrome true
+skinparam DefaultFontName JetBrains Sans
+skinparam DefaultFontSize 14
+skinparam DefaultTextAlignment center
+skinparam ActivityBorderThickness 1
+
+left to right direction
+
+' Define the activity
+(*) --> if "" then
+  --> [no connection] "Get a message\nbus reference"
+  --> "Create\na connection\nto the bus"
+  --> "Subscribe"
+else
+  --> [connection exists] "Subscribe"
+endif
+--> (*)
+@enduml
+```
 
 > If targeting 2019.3 or later, use [declarative registration](plugin_listeners.md) whenever possible.
 >
@@ -106,7 +189,25 @@ Many standard interfaces implement returning a message bus, e.g., [`Application.
 
 ### Publishing Messages
 
-![Publishing](publish.svg)
+```plantuml
+@startuml
+
+skinparam monochrome true
+skinparam DefaultFontName JetBrains Sans
+skinparam DefaultFontSize 14
+skinparam DefaultTextAlignment center
+skinparam ActivityBorderThickness 1
+
+left to right direction
+
+' Define the activity
+(*) --> "Get message\nbus reference"
+  --> "Ask the bus\nfor a particular\ntopic's publisher"
+  --> "Call target\nmethod on\npublisher"
+  --> "Messaging calls\nthe same method\non target handlers"
+--> (*)
+@enduml
+```
 
 ```java
 public void doChange(Context context) {
@@ -126,13 +227,65 @@ public void doChange(Context context) {
 Message buses can be organised into hierarchies.
 Moreover, the IntelliJ Platform has them already:
 
-![Standard hierarchy](standard_hierarchy.svg)
+```plantuml
+@startuml
+
+skinparam monochrome true
+skinparam DefaultFontName JetBrains Sans
+skinparam DefaultFontSize 14
+hide empty members
+hide circle
+
+left to right direction
+
+' Define the objects in the diagram
+class "application bus" as AB
+class "project bus" as PB
+class "module bus" as MB
+
+' Define the class relationships
+AB o-- "*" PB
+PB o-- "*" MB
+@enduml
+```
 
 That allows to notify subscribers registered in one message bus on messages sent to another message bus.
 
 Example setup:
 
-![Parent-child broadcast](parent_child_broadcast.svg)
+```plantuml
+@startuml
+
+skinparam monochrome true
+skinparam DefaultFontName JetBrains Sans
+skinparam DefaultFontSize 14
+hide empty members
+hide circle
+top to bottom direction
+
+class "application bus" as AB
+class "project bus" as PB
+class "connection1" as C1
+
+class "connection2" as C2
+class "connection3" as C3
+class "topic1-handler1" as T1H1
+
+class "topic1-handler2" as T1H2
+class "topic1-handler3" as T1H3
+
+AB o-- PB
+AB *-- C1
+
+PB *-- C2
+PB *-- C3
+C1 *-- T1H1
+
+C2 *-- T1H2
+C3 *-- T1H3
+
+@enduml
+```
 
 The example setup presents a simple hierarchy (the *application bus* is a parent of the *project bus*) with three subscribers for the same topic.
 
@@ -163,7 +316,32 @@ The IntelliJ Platform's messaging infrastructure guarantees that all messages se
 
 Consider the following configuration:
 
-![Nested messages](nested_config.svg)
+```plantuml
+@startuml
+
+skinparam DefaultFontName JetBrains Sans
+skinparam DefaultFontSize 14
+hide empty members
+hide circle
+
+top to bottom direction
+
+class "bus" as B
+
+class "connection1" as C1
+class "connection2" as C2
+
+class "topic-handler1" as TH1
+class "topic-handler2" as TH2
+
+
+B *-- C1
+B *-- C2
+
+C1 *-- TH1
+C2 *-- TH2
+@enduml
+```
 
 When a message is sent to the target topic, the following happens:
 

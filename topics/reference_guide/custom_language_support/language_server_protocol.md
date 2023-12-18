@@ -58,6 +58,11 @@ The <path>plugin.xml</path> configuration file needs to specify the dependency o
 
 The LSP API sources are bundled in IntelliJ IDEA Ultimate and can be found within the <path>[IDE]/lib/src/src_lsp-openapi.zip</path> archive.
 
+> Due to technical limitations, it is currently necessary to manually attach sources to the IntelliJ IDEA Ultimate dependency.
+> To do so, when reviewing the compiled class which belongs to the LSP API, run the _Choose Sources..._ action, and point the <path>[IDE]/lib/src/src_lsp-openapi.zip</path> file.
+>
+{style="warning"}
+
 ## Supported Features
 
 The LSP support within the IntelliJ Platform covers the following features:
@@ -70,7 +75,7 @@ The LSP support within the IntelliJ Platform covers the following features:
 - Since 2023.3:
   - Intention actions ([textDocument/codeAction](https://microsoft.github.io/language-server-protocol/specification/#textDocument_codeAction))
   - Code formatting ([textDocument/formatting](https://microsoft.github.io/language-server-protocol/specification/#textDocument_formatting))
-- Since 2023.3.1:
+- Since 2023.3.2:
   - Quick documentation ([textDocument/hover](https://microsoft.github.io/language-server-protocol/specification#textDocument_hover))
 
 ## Basic Implementation
@@ -160,10 +165,9 @@ When considering the LSP-based approach, it is important to assess the following
 
 ## Sample Plugins
 
-The following bundled open-source plugins make (heavy) use of DOM:
+The following open-source plugins make use of LSP:
 
 - [Prisma ORM LSP](%gh-ij-plugins%/prisma)
-- [Vue.js](%gh-ij-plugins%/vuejs)
 
 Explore 3rd party plugins using LSP on [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.platform.lsp.serverSupportProvider).
 

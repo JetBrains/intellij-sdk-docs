@@ -10,6 +10,8 @@ This documentation page describes a Gradle-based plugin project generated with t
 
 <procedure title="Create IDE Plugin" id="create-ide-plugin">
 
+<include from="snippets.md" element-id="pluginDevKitAvailability"/>
+
 Launch the <control>New Project</control> wizard via the <ui-path>File | New | Project...</ui-path> action and provide the following information:
 1. Select the <control>IDE Plugin</control> generator type from the list on the left.
 2. Specify the project <control>Name</control> and <control>Location</control>.

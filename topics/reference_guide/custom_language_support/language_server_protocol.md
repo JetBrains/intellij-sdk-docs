@@ -17,7 +17,7 @@ Therefore, the LSP approach shouldn't be considered as a replacement for the exi
 {style="note"}
 
 Starting with the 2023.2 release cycle, the LSP API is publicly available as part of the IntelliJ Platform in the following IDEs:
-IntelliJ IDEA Ultimate, WebStorm, PhpStorm, PyCharm Professional, DataSpell, RubyMine, CLion, Aqua, DataGrip, GoLand, and Rider.
+IntelliJ IDEA Ultimate, WebStorm, PhpStorm, PyCharm Professional, DataSpell, RubyMine, CLion, Aqua, DataGrip, GoLand, Rider, and RustRover.
 
 ## Plugin Configuration
 
@@ -148,10 +148,6 @@ To include them for preview, add the following entry to the <control>Help | Diag
 
 For more information, see the [](ide_infrastructure.md#logging) section.
 
-## Limitations
-
-- The current LSP API implementation assumes that the IDE <-> LSP server communication channel is `stdio`.
-
 ## Integration Overview
 
 Integrating the Language Server Protocol (LSP) into a plugin for IntelliJ-based IDEs involves a trade-off between simple and fast language support and a complex custom language support plugin with IDE capabilities.
@@ -167,7 +163,7 @@ When considering the LSP-based approach, it is important to assess the following
 
 The following open-source plugins make use of LSP:
 
-- [Prisma ORM LSP](%gh-ij-plugins%/prisma)
+- [Prisma ORM](%gh-ij-plugins%/prisma/src/org/intellij/prisma/ide/lsp)
 
 Explore 3rd party plugins using LSP on [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.platform.lsp.serverSupportProvider).
 

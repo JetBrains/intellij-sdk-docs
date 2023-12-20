@@ -32,7 +32,7 @@ Unbundled plugins
 ### IntelliJ Platform 2023.2
 
 Language Server Protocol (LSP) API
-: Please see this [blogpost](https://jb.gg/lsp).
+: Provide custom language support by using language servers, see [](language_server_protocol.md).
 
 Check presence of JVM library
 : Use [dedicated API](psi_cookbook.md#how-do-i-check-the-presence-of-a-jvm-library) to check presence via class FQN or Maven coordinates.

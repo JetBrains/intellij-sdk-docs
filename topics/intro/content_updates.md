@@ -18,6 +18,9 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 JCEF
 : Revamp [JCEF (Java Chromium Embedded Framework)](jcef.md) page.
 
+User Interface FAQ
+: Added [](ui_faq.md).
+
 ### November
 {#november-23}
 

@@ -46,4 +46,6 @@ The following components are particularly noteworthy:
 * Drag & Drop Helpers (TBD)
 * [](misc_swing_components.md)
 
+See also [](ui_faq.md).
+
 <include from="snippets.md" element-id="missingContent"/>

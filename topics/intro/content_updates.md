@@ -21,6 +21,9 @@ JCEF
 User Interface FAQ
 : Added [](ui_faq.md).
 
+Language Server Protocol (LSP)
+: Added [](language_server_protocol.md).
+
 ### November
 {#november-23}
 

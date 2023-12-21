@@ -62,4 +62,6 @@ The webinar [How We Built Comma, the Raku IDE, on the IntelliJ Platform](https:/
 * [](spell_checking.md)
 * [](additional_minor_features.md)
 
+See [](language_server_protocol.md) for supporting language servers.
+
 <include from="snippets.md" element-id="missingContent"/>

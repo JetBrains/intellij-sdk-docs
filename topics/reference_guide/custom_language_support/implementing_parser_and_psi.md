@@ -15,7 +15,7 @@ The AST nodes have a direct mapping to text ranges in the underlying document.
 The bottom-most nodes of the AST match individual tokens returned by the [lexer](implementing_lexer.md), and higher-level nodes match multiple-token fragments.
 Operations performed on nodes of the AST tree, such as inserting, removing, reordering nodes, and so on, are immediately reflected as changes to the underlying document's text.
 
-Second, a PSI, or Program Structure Interface, tree is built on top of the AST, adding semantics and methods for manipulating specific language constructs.
+Second, a [](psi.md) tree is built on top of the AST, adding semantics and methods for manipulating specific language constructs.
 Nodes of the PSI tree are represented by classes implementing the [`PsiElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) interface and are created by the language plugin in the [`ParserDefinition.createElement()`](%gh-ic%/platform/core-api/src/com/intellij/lang/ParserDefinition.java) method.
 The top-level node of the PSI tree for a file needs to implement the [`PsiFile`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiFile.java) interface and is created in the [`ParserDefinition.createFile()`](%gh-ic%/platform/core-api/src/com/intellij/lang/ParserDefinition.java) method.
 
@@ -34,15 +34,16 @@ The base classes for the PSI implementation, including [`PsiFileBase`](%gh-ic%/p
 
 ### Parser Implementation
 
-While coding parser manually is quite possible, we highly recommend generating parser and corresponding PSI classes from grammars using [Grammar-Kit](https://plugins.jetbrains.com/plugin/6606-grammar-kit) plugin.
+While coding parser manually is quite possible, we highly recommend generating parser and corresponding PSI classes from BNF grammars using [Grammar-Kit](https://plugins.jetbrains.com/plugin/6606-grammar-kit) plugin.
 Besides code generation, it provides various features for editing grammar files: syntax highlighting, quick navigation, refactorings, etc. as well as integration with Gradle via [](tools_gradle_grammar_kit_plugin.md).
 The Grammar-Kit plugin is built using its own engine; its source code and documentation can be found on [GitHub](https://github.com/JetBrains/Grammar-Kit).
 
-For re-using existing ANTLRv4 grammars, see [antlr4-intellij-adaptor](https://github.com/antlr/antlr4-intellij-adaptor) library.
+For re-using existing ANTLRv4 grammars, see [antlr4-intellij-adaptor](https://github.com/antlr/antlr4-intellij-adaptor) third-party library.
 
 The language plugin provides the parser implementation as an implementation of the [`PsiParser`](%gh-ic%/platform/core-api/src/com/intellij/lang/PsiParser.java) interface, returned from [`ParserDefinition.createParser()`](%gh-ic%/platform/core-api/src/com/intellij/lang/ParserDefinition.java).
-The parser receives an instance of the [`PsiBuilder`](%gh-ic%/platform/core-api/src/com/intellij/lang/PsiBuilder.java) class, which is used to get the stream of tokens from the lexer and to hold the intermediate state of the AST being built.
-The parser must process all tokens returned by the lexer up to the end of the stream, in other words, until [`PsiBuilder.getTokenType()`](%gh-ic%/platform/core-api/src/com/intellij/lang/PsiBuilder.java) returns `null`, even if the tokens are not valid according to the language syntax.
+The parser receives an instance of the [`PsiBuilder`](%gh-ic%/platform/core-api/src/com/intellij/lang/PsiBuilder.java) class, which is used to get the stream of tokens from the [lexer](implementing_lexer.md) and to hold the intermediate state of the AST being built.
+
+> The parser must process _all_ tokens returned by the lexer up to the end of the stream (until [`PsiBuilder.getTokenType()`](%gh-ic%/platform/core-api/src/com/intellij/lang/PsiBuilder.java) returns `null`) — even if the tokens are not valid according to the language syntax.
 
 **Examples**:
 - [Custom Language Support Tutorial: Grammar and Parser](grammar_and_parser.md)
@@ -78,6 +79,7 @@ To better understand the process of building a PSI tree for a simple expression,
 ### PSI Implementation
 
 In general, there is no single right way to implement a PSI for a custom language, and the plugin author can choose the PSI structure and set of methods that are the most convenient for the code which uses the PSI (error analysis, refactorings, and so on).
+
 However, one base interface needs to be used by a custom language PSI implementation to support features like [](rename_refactoring.md) and [](find_usages.md).
 Every element which can be renamed or referenced (a class definition, a method definition, and so on) needs to implement the [`PsiNamedElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiNamedElement.java) interface, with methods `getName()` and `setName()`.
 

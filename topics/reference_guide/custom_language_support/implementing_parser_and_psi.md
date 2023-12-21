@@ -1,6 +1,6 @@
-# Implementing Parser and PSI
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Implementing Parser and PSI
 
 <link-summary>Introduction to parsing custom language files code and representing it with AST and PSI trees.</link-summary>
 
@@ -26,7 +26,7 @@ The top-level node of the PSI tree for a file needs to implement the [`PsiFile`]
 >
 > See also inspection <control>Plugin DevKit | Code | Non-platform TokenSet declared in ParserDefinition</control> (2023.3).
 >
-{style="note"}
+{style="note" title="Using TokenSets in ParserDefinition"}
 
 The PSI's lifecycle is described in more detail in [Fundamentals](fundamentals.md).
 
@@ -45,10 +45,6 @@ The parser receives an instance of the [`PsiBuilder`](%gh-ic%/platform/core-api/
 
 > The parser must process _all_ tokens returned by the lexer up to the end of the stream (until [`PsiBuilder.getTokenType()`](%gh-ic%/platform/core-api/src/com/intellij/lang/PsiBuilder.java) returns `null`) — even if the tokens are not valid according to the language syntax.
 
-**Examples**:
-- [Custom Language Support Tutorial: Grammar and Parser](grammar_and_parser.md)
-- [`PsiParser`](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertiesParser.java) implementation for [Properties language plugin](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties).
-
 The parser works by setting pairs of markers ([`PsiBuilder.Marker`](%gh-ic%/platform/core-api/src/com/intellij/lang/PsiBuilder.java) instances) within the stream of tokens received from the lexer.
 Each pair of markers defines the range of lexer tokens for a single node in the AST tree.
 If a pair of markers is nested in another pair (starts after its start and ends before its end), it becomes the outer pair's child node.
@@ -62,6 +58,12 @@ The method `PsiBuilder.Marker.precede()` is useful for right-to-left parsing whe
 For example, a binary expression `a+b+c` needs to be parsed as `( (a+b) + c )`.
 Thus, two start markers are needed at the position of the token 'a', but that is not known until the token 'c' is read.
 When the parser reaches the '+' token following 'b', it can call `precede()` to duplicate the start marker at 'a' position, and then put its matching end marker after 'c'.
+
+**Examples**:
+
+- [Custom Language Support Tutorial: Grammar and Parser](grammar_and_parser.md) (using Grammar-Kit)
+- Simple [`PropertiesParser`](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertiesParser.java) implementation for [Properties language plugin](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties).
+- Complex [`RegExpParser`](%gh-ic%/RegExpSupport/src/org/intellij/lang/regexp/RegExpParser.java) for RegEx language
 
 #### Whitespace and Comments
 

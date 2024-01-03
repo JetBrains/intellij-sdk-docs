@@ -61,7 +61,7 @@ To execute code when a project is being opened, use one of these two [extensions
 Implement `DumbAware` to indicate activity can run in background thread (in parallel with other such tasks).
 
 `com.intellij.backgroundPostStartupActivity`
-: [`StartupActivity.Background`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) for execution with 5 seconds delay in background thread (2019.3 or later).
+: [`StartupActivity.Background`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) for execution with a 5-second delay in background thread (2019.3 or later).
 
 Any long-running or CPU intensive tasks should be made visible to users by using `ProgressManager.run(Task.Backgroundable)`.
 Access to indices must be wrapped with `DumbService`, see also [General Threading Rules](general_threading_rules.md).

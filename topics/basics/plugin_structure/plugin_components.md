@@ -48,6 +48,7 @@ See also [Running Tasks Once](ide_infrastructure.md#running-tasks-once).
 <tab title="2023.1 and later">
 
 Using [Kotlin](using_kotlin.md), implement [`ProjectActivity`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) and register in `com.intellij.postStartupActivity` extension point.
+Implementation in Kotlin is required because Java doesn't support suspending functions.
 
 </tab>
 

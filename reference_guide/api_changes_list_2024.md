@@ -72,6 +72,8 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ### IntelliJ Platform 2024.1
 
+`com.jetbrains.rest.RestLanguage` class moved to package `com.intellij.python.reStructuredText`
+
 `com.intellij.application.options.editor.CodeFoldingConfigurable.applyCodeFoldingSettingsChanges()` method removed
 : Use top-level method `CodeFoldingConfigurableKt.applyCodeFoldingSettingsChanges` instead.
 

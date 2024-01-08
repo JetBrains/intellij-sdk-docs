@@ -1,6 +1,6 @@
 # SDK Docs Style Guide
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Writing and notation styleguide for SDK Docs.</link-summary>
 
@@ -27,7 +27,7 @@ The topic files themselves are [Markdown](https://github.github.com/gfm/) files 
 Each Markdown file **must** start with a copyright notice, formatted using HTML comment notation:
 
 ```html
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 ```
 
 It **must** be followed by a header defining its title using the level 1 heading:

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Testing Highlighting
 
@@ -76,8 +76,7 @@ The following severities are supported:
 The tag can also have the following optional attributes.
 
 **Message**
-* `descr` expected (hardcoded) message associated with the highlighter (if not specified, any text will match). If the message contains a quotation mark, it can be escaped by putting two backslash characters before it.
-* `bundleMsg` expected message from a message bundle in format `[bundleName#] bundleKey [|argument]...`
+* `descr` expected message associated with the highlighter (if not specified, any text will match). If the message contains a quotation mark, it can be escaped by putting two backslash characters before it.
 * `tooltip` expected tooltip message
 
 **Visual**

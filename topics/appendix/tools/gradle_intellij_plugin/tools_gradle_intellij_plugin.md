@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Gradle IntelliJ Plugin
 
@@ -63,13 +63,11 @@ plugins {
 
 When upgrading to `1.x` version, please make sure to follow the [migration guide](https://lp.jetbrains.com/gradle-intellij-plugin) to adjust your existing build script.
 
-> The plugin requires Gradle 7.3 or newer. However, it is highly recommended to always use the latest available Gradle version.
-> Update it with:
-> ```Bash
-> ./gradlew wrapper --gradle-version=VERSION
-> ```
+> This project requires Gradle 7.3 or newer.
+> However, it is recommended to use the latest Gradle available.
+> See [Gradle Installation](https://gradle.org/install/) guide.
 >
-> See also: [Gradle Installation](https://gradle.org/install/) guide.
+{title="Minimum Gradle Version"}
 
 ### IDE Configuration
 

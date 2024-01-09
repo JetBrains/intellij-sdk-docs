@@ -72,6 +72,8 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ### IntelliJ Platform 2024.1
 
+`com.jetbrains.jinja2` package renamed to `com.intellij.jinja`
+
 `com.intellij.application.options.editor.CodeFoldingConfigurable.applyCodeFoldingSettingsChanges()` method removed
 : Use top-level method `CodeFoldingConfigurableKt.applyCodeFoldingSettingsChanges` instead.
 

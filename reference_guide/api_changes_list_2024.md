@@ -72,6 +72,14 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ### IntelliJ Platform 2024.1
 
+`com.jetbrains.commandInterface.commandLine.psi.CommandLineFile` class moved to package `com.intellij.commandInterface.commandLine.psi`
+
+`com.jetbrains.commandInterface.commandLine.CommandLineLanguage` class moved to package `com.intellij.commandInterface.commandLine`
+
+`com.jetbrains.commandInterface.commandLine.psi.CommandLineArgument` class moved to package `com.intellij.commandInterface.commandLine.psi`
+
+`com.jetbrains.commandInterface.commandLine.psi.CommandLineOption` class moved to package `com.intellij.commandInterface.commandLine.psi`
+
 `com.intellij.application.options.editor.CodeFoldingConfigurable.applyCodeFoldingSettingsChanges()` method removed
 : Use top-level method `CodeFoldingConfigurableKt.applyCodeFoldingSettingsChanges` instead.
 

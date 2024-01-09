@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 # IDE Infrastructure
 
@@ -10,7 +10,7 @@
 >
 {style="note"}
 
-The IntelliJ platform uses [`Logger`](%gh-ic%/platform/util/src/com/intellij/openapi/diagnostic/Logger.java) abstraction class to shield from underlying logging implementation and configuration.
+The IntelliJ Platform uses [`Logger`](%gh-ic%/platform/util/src/com/intellij/openapi/diagnostic/Logger.java) abstraction class to shield from underlying logging implementation and configuration.
 
 Plugins should obtain a dedicated instance:
 

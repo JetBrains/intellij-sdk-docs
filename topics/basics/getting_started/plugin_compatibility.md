@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Plugin Compatibility with IntelliJ Platform Products
 
@@ -228,7 +228,7 @@ To browse the opportunities for an extension, start by placing the cursor on the
 Use the [Go to Declaration](https://www.jetbrains.com/help/idea/navigating-through-the-source-code.html#go_to_declaration) IDE feature to navigate to the <path>plugin.xml</path> file for the plugin on which the project depends.
 
 For example, performing this procedure on the `<depends>com.jetbrains.php</depends>` declaration in a project's <path>plugin.xml</path> file will navigate to the <path>plugin.xml</path> file for the `com.jetbrains.php` (PHP) project.
-A common, but not universal, pattern in the IntelliJ platform is for a plugin (like PHP) to declare [`<extensionPoints>`](plugin_configuration_file.md#idea-plugin__extensionPoints) and then implement each one as [`<extensions>`](plugin_configuration_file.md#idea-plugin__extensions).
+A common, but not universal, pattern in the IntelliJ Platform is for a plugin (like PHP) to declare [`<extensionPoints>`](plugin_configuration_file.md#idea-plugin__extensionPoints) and then implement each one as [`<extensions>`](plugin_configuration_file.md#idea-plugin__extensions).
 Continuing the example, search the PHP plugin's <path>plugin.xml</path> file for:
 * `<extensionPoints>` to find the opportunities for extending the PHP plugin's functionality.
 * `<extensions defaultExtensionNs="com.jetbrains.php">` to find where the PHP plugin extends functionality.
@@ -245,7 +245,7 @@ Before marking a plugin project as _dependent only on modules in a target produc
 For [Gradle-based](developing_plugins.md) projects, [](verifying_plugin_compatibility.md#plugin-verifier) can be used to ensure compatibility with all specified target IDEs.
 
 For DevKit-based projects, [create an SDK](setting_up_theme_environment.md#add-intellij-platform-plugin-sdk) pointing to an installation of the intended target IntelliJ Platform-based product, e.g., PhpStorm, rather than IntelliJ IDEA.
-Use the same development version of the IntelliJ platform as the targeted product.
+Use the same development version of the IntelliJ Platform as the targeted product.
 
 Based on the tables above, the [JetBrains Marketplace](https://plugins.jetbrains.com/) automatically detects the JetBrains products with which a plugin is compatible, and makes the compatibility information available to plugin authors.
 The compatibility information determines if plugins are available for users of a particular JetBrains product.

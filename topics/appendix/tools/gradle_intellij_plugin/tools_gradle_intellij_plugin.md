@@ -20,7 +20,7 @@ The plugin provides functionalities like:
 - adding extra IntelliJ-specific dependencies
 - patching `processResources` tasks to fill some tags (name, version) in <path>[plugin.xml](plugin_configuration_file.md)</path> with appropriate values
 - patching compile tasks to instrument code with nullability assertions and form classes made with IntelliJ GUI Designer
-- additional build steps that are helpful for developing plugins for the IntelliJ platform
+- additional build steps that are helpful for developing plugins for the IntelliJ Platform
 
 > Please see also [](tools_gradle_intellij_plugin_faq.md) and [](tools_gradle_intellij_plugin_examples.md).
 >

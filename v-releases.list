@@ -4,5 +4,5 @@
 
 <vars>
   <var name="gradle-intellij-plugin-version" value="1.16.1"/>
-  <var name="gradle-grammar-kit-plugin-version" value="2022.3.2"/>
+  <var name="gradle-grammar-kit-plugin-version" value="2022.3.2.1"/>
 </vars>

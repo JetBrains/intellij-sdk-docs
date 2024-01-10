@@ -2,7 +2,7 @@
 
 [![official JetBrains project](https://jb.gg/badges/official-flat-square.svg)][jb:github]
 [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg?style=flat-square)][jb:docs]
-[![Twitter Follow](https://img.shields.io/badge/follow-%40JBPlatform-1DA1F2?logo=twitter)][jb:twitter]
+[![X Follow](https://img.shields.io/badge/follow-%40JBPlatform-1DA1F2?logo=x)][jb:x]
 [![Build](https://img.shields.io/github/actions/workflow/status/JetBrains/intellij-sdk-docs/code-samples.yml?branch=main&style=flat-square)][gh:workflow-code-samples]
 [![Slack](https://img.shields.io/badge/Slack-%23intellij--platform-blue?style=flat-square&logo=Slack)][jb:slack]
 
@@ -64,7 +64,7 @@ In the following table, you may find all available samples provided in the separ
 [jb:docs]: https://plugins.jetbrains.com/docs/intellij/
 [jb:products]: https://www.jetbrains.com/products.html
 [jb:slack]: https://plugins.jetbrains.com/slack
-[jb:twitter]: https://twitter.com/JBPlatform
+[jb:x]: https://x.com/JBPlatform
 
 [docs]: https://plugins.jetbrains.com/docs/intellij/
 [docs:code-samples]: https://plugins.jetbrains.com/docs/intellij/code-samples.html

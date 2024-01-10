@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Snippets
 {is-library="true"}
@@ -16,7 +16,7 @@
 <snippet id="subscribeNews">
 
 > [Subscribe to Marketplace Developer News](https://jb.gg/mp-updates) to receive news and announcements.
-> Also follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/).
+> Also follow [JBPlatform](https://x.com/JBPlatform/) on X (formerly Twitter) and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/).
 >
 {title="Staying up to date"}
 

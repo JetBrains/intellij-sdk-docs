@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Internal Actions - UI Inspector
 
@@ -17,7 +17,7 @@ The enabled state of the _UI Inspector_ is modal; it remains enabled until it is
 
 ## Using the UI Inspector
 
-Centering the cursor on a UI element and pressing <shortcut>Ctrl/Cmd+Alt</shortcut> when _clicking_ the left mouse button reveals the properties of the Swing component.
+Centering the cursor on a UI element and pressing <shortcut>Ctrl+Alt</shortcut> (<shortcut>Cmd+Option</shortcut> on macOS) when _clicking_ the left mouse button reveals the properties of the Swing component.
 
 For example, to get information about the <control>Build Project</control> button's "hammer" icon on the toolbar (highlighted in green), put the mouse cursor on the icon and press <shortcut>Ctrl/Cmd+Alt</shortcut> while clicking the mouse.
 

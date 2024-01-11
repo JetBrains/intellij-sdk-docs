@@ -87,3 +87,7 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 ### Django Plugin 2024.1
 
 Package `com.jetbrains.jinja2` renamed to `com.intellij.jinja`
+
+### Restructured Text Plugin 2024.1
+
+`com.jetbrains.rest.RestLanguage` class moved to package `com.intellij.python.reStructuredText`

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 # Incompatible Changes in IntelliJ Platform and Plugins API 2024.*
 
@@ -83,3 +83,7 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 `com.intellij.vcs.log.VcsLogFileHistoryHandler.getSupportedVcs()` abstract method added
 : Must be implemented.
+
+### Django Plugin 2024.1
+
+Package `com.jetbrains.jinja2` renamed to `com.intellij.jinja`

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # External System Integration
 
@@ -17,8 +17,6 @@ That means that we can separate external system-specific logic and general IDE p
 The *External System* sub-system provides a simple API for wrapping external system elements and extensible IDE-specific processing logic.
 
 ## Project Management
-
-Fonts installed on the build server:
 
 ### Project Data Domain
 

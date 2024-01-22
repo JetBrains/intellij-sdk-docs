@@ -176,12 +176,12 @@ The simplest ways of specifying the `@Storage` annotation are as follows:
 
 The state is persisted in a separate file by specifying a different setting for the `value` parameter, which was the `file` parameter before 2016.x.
 
-See [`StoragePathMacros`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/StoragePathMacros.java) for commonly used values.
-
 > For application-level storage, it is strongly recommended to use a custom file.
 > Using of <path>other.xml</path> is deprecated.
 >
 {style="note"}
+
+When planning your storage location, consider its intended purpose. A project-level custom file should be preferred for storing plugin settings. For storing cached values, use `@Storage(StoragePathMacros.CACHE_FILE)`. Refer to [`StoragePathMacros`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/StoragePathMacros.java) for commonly used macros.
 
 The `roamingType` parameter of the `@Storage` annotation specifies the roaming type when the [settings are shared](#sharing-settings-between-ide-installations):
 

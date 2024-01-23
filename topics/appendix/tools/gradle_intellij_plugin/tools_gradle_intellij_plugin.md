@@ -1336,6 +1336,19 @@ Type
 Default value
 : `["default"]`
 
+#### hidden
+{#tasks-publishplugin-hidden}
+
+Mark the release as hidden to prevent public release after approval.
+See [Hidden release](https://plugins.jetbrains.com/docs/marketplace/hidden-plugin.html) in JetBrains Marketplace docs.
+
+{style="narrow"}
+Type
+: `Boolean`
+
+Default value
+: `false`
+
 
 #### host
 {#tasks-publishplugin-host}

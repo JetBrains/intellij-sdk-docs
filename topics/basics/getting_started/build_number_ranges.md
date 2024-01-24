@@ -1,19 +1,23 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Build Number Ranges
 
 <link-summary>Defining product compatibility by specifying plugin since-build and until-build ranges.</link-summary>
 
 Use this reference of build number ranges to specify the correct `since-build` and `until-build` values in your plugin descriptor.
-Setting the actual values in <path>[plugin.xml](plugin_configuration_file.md)</path> is managed by [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) Gradle task, see [](configuring_plugin_project.md#patching-the-plugin-configuration-file).
+
+Setting the actual values in <path>[plugin.xml](plugin_configuration_file.md)</path> is managed by the [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) Gradle task, see [](configuring_plugin_project.md#patching-the-plugin-configuration-file).
+
+### Build Number Validity
 
 Please note the following regarding values:
 
-- Values must represent the [actual build numbers](#build-number-format), any made-up numbers must not be used (for example, `999.*`, `234.*`, or `223.9999` are invalid for `until-build`).
+- Values must represent the [actual build numbers](#build-number-format). Any made-up numbers must not be used and such plugins will be rejected on JetBrains Marketplace (for example, `999.*`, `234.*`, or `223.9999` are invalid for `until-build`).
 - Not specifying `until-build` means it will include _all_ future builds. This includes future, yet unreleased versions and possibly new IDEs, which might impact compatibility later.
 - Use dot-star suffix (`.* `) in `until-build` to support all releases for the specific branch (for example, `232.*` for all 2023.2.x releases).
 
 > Before publishing, the plugin must be checked using [](verifying_plugin_compatibility.md#plugin-verifier) against the specified version range (and specified compatible products) to ensure binary compatibility.
+> Any additional reported errors/warnings should also be fixed when possible.
 >
 > Plugins hosted on [JetBrains Marketplace](https://plugins.jetbrains.com) are checked automatically.
 > According to [Approval Guidelines](https://plugins.jetbrains.com/legal/approval-guidelines), incompatible plugin versions will be restricted by JetBrains if necessary.
@@ -77,6 +81,9 @@ In some cases, keeping a dedicated branch and corresponding plugin release for e
 ### IntelliJ Platform Based Products of Recent IDE Versions
 {id="platformVersions"}
 
+Note that there is no `YY0`.
+In the `YYYY.R` versioning scheme, the `R` part starts at 1.
+
 <include from="tools_gradle_intellij_plugin.md" element-id="gradle_plugin_223_problem"/>
 
 | Branch number                                                   | IntelliJ Platform version                                                                                                                |
@@ -97,5 +104,3 @@ In some cases, keeping a dedicated branch and corresponding plugin release for e
 | [192](https://github.com/JetBrains/intellij-community/tree/192) | 2019.2                                                                                                                                   |
 | [191](https://github.com/JetBrains/intellij-community/tree/191) | 2019.1                                                                                                                                   |
 
-Note that there is no `YY0`.
-In the `YYYY.R` versioning scheme, the `R` part starts at 1.

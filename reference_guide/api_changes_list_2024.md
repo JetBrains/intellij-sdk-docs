@@ -73,12 +73,16 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 ### IntelliJ Platform 2024.1
 
 `com.jetbrains.commandInterface.commandLine.psi.CommandLineFile` class moved to package `com.intellij.commandInterface.commandLine.psi`
+: Update code usages.
 
 `com.jetbrains.commandInterface.commandLine.CommandLineLanguage` class moved to package `com.intellij.commandInterface.commandLine`
+: Update code usages.
 
 `com.jetbrains.commandInterface.commandLine.psi.CommandLineArgument` class moved to package `com.intellij.commandInterface.commandLine.psi`
+: Update code usages.
 
 `com.jetbrains.commandInterface.commandLine.psi.CommandLineOption` class moved to package `com.intellij.commandInterface.commandLine.psi`
+: Update code usages.
 
 `com.intellij.application.options.editor.CodeFoldingConfigurable.applyCodeFoldingSettingsChanges()` method removed
 : Use top-level method `CodeFoldingConfigurableKt.applyCodeFoldingSettingsChanges` instead.
@@ -95,7 +99,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 ### Django Plugin 2024.1
 
 Package `com.jetbrains.jinja2` renamed to `com.intellij.jinja`
+: Update code usages.
 
 ### Restructured Text Plugin 2024.1
 
 `com.jetbrains.rest.RestLanguage` class moved to package `com.intellij.python.reStructuredText`
+: Update code usages.

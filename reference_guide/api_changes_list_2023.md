@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 # Incompatible Changes in IntelliJ Platform and Plugins API 2023.*
 
@@ -90,7 +90,7 @@ JsonPath library unbundled
 : This may break source-compatibility with inheritors written in Kotlin if they declare it as nullable.
 
 `com.intellij.openapi.actionSystem.ex.ActionUtil.showDumbModeWarning(Project, AnActionEvent[])` method removed
-: Use `showDumbModeWarning(@Nullable Project project, @NotNull AnAction action, AnActionEvent @NotNull ... events)` instead.
+: Use `showDumbModeWarning(Project project, AnAction action, AnActionEvent @NotNull ... events)` instead.
 
 `com.intellij.profiler.eventtrace` package removed
 : Update code usages.

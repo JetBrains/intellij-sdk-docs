@@ -72,11 +72,11 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ### IntelliJ Platform 2024.1
 
-`com.intellij.refactoring.RefactoringHelper.prepareOperation(UsageInfo @NotNull [] usages)` method removed
-: Use `com.intellij.refactoring.RefactoringHelper.prepareOperation(UsageInfo @NotNull [] usages, @NotNull List<@NotNull PsiElement> elements)` instead.
+`com.intellij.refactoring.RefactoringHelper.prepareOperation(UsageInfo [] usages)` method removed
+: Use `com.intellij.refactoring.RefactoringHelper.prepareOperation(UsageInfo [] usages, List<PsiElement> elements)` instead.
 
-`com.intellij.refactoring.RefactoringHelper.prepareOperation(UsageInfo @NotNull [] usages, @NotNull PsiElement primaryElement)` method removed
-: Use `com.intellij.refactoring.RefactoringHelper.prepareOperation(UsageInfo @NotNull [] usages, @NotNull List<@NotNull PsiElement> elements)` instead.
+`com.intellij.refactoring.RefactoringHelper.prepareOperation(UsageInfo [] usages, PsiElement primaryElement)` method removed
+: Use `com.intellij.refactoring.RefactoringHelper.prepareOperation(UsageInfo [] usages, List<PsiElement> elements)` instead.
 
 `com.jetbrains.commandInterface.commandLine.psi.CommandLineFile` class moved to package `com.intellij.commandInterface.commandLine.psi`
 : Update code usages.

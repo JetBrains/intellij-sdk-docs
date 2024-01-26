@@ -102,6 +102,12 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.intellij.vcs.log.VcsLogFileHistoryHandler.getSupportedVcs()` abstract method added
 : Must be implemented.
 
+`com.intellij.psi.util.PsiTreeUtilKt.getFirstLeaf(PsiElement)` method renamed to `com.intellij.psi.util.PsiTreeUtilKt.firstLeaf(PsiElement)`
+
+`com.intellij.psi.util.PsiTreeUtilKt.getLastLeaf(PsiElement)` method renamed to `com.intellij.psi.util.PsiTreeUtilKt.lastLeaf(PsiElement)`
+
+`com.intellij.psi.util.PsiTreeUtilKt.getChildLeafs(PsiElement)` method renamed to `com.intellij.psi.util.PsiTreeUtilKt.childLeafs(PsiElement)`
+
 ### Django Plugin 2024.1
 
 Package `com.jetbrains.jinja2` renamed to `com.intellij.jinja`

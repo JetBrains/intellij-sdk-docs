@@ -103,10 +103,13 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 : Must be implemented.
 
 `com.intellij.psi.util.PsiTreeUtilKt.getFirstLeaf(PsiElement)` method renamed to `com.intellij.psi.util.PsiTreeUtilKt.firstLeaf(PsiElement)`
+: Update code usages.
 
 `com.intellij.psi.util.PsiTreeUtilKt.getLastLeaf(PsiElement)` method renamed to `com.intellij.psi.util.PsiTreeUtilKt.lastLeaf(PsiElement)`
+: Update code usages.
 
 `com.intellij.psi.util.PsiTreeUtilKt.getChildLeafs(PsiElement)` method renamed to `com.intellij.psi.util.PsiTreeUtilKt.childLeafs(PsiElement)`
+: Update code usages.
 
 `org.apache.tools` package removed
 : Please provide all necessary libraries in your plugin distribution.

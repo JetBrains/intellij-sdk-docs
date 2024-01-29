@@ -108,6 +108,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 `com.intellij.psi.util.PsiTreeUtilKt.getChildLeafs(PsiElement)` method renamed to `com.intellij.psi.util.PsiTreeUtilKt.childLeafs(PsiElement)`
 
+`org.apache.tools` package removed
+: Please provide all necessary libraries in your plugin distribution.
+
 ### Django Plugin 2024.1
 
 Package `com.jetbrains.jinja2` renamed to `com.intellij.jinja`

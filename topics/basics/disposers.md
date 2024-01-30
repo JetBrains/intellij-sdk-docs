@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Disposer and Disposable
 
@@ -14,7 +14,7 @@ The most common resource type managed by `Disposer` is listeners, but there are 
 The `Disposer` is a singleton that manages a tree of [`Disposable`](%gh-ic%/platform/util/src/com/intellij/openapi/Disposable.java) instances.
 A `Disposable` is an interface for any object providing a `Disposable.dispose()` method to release heavyweight resources after a specific lifetime.
 
-The `Disposer` supports chaining `Disposables` in parent-child relationships.
+The `Disposer` supports chaining `Disposable` objects in parent-child relationships.
 
 ## Automatically Disposed Objects
 
@@ -60,7 +60,7 @@ Use the following guidelines to choose the correct parent:
 >
 {style="warning"}
 
-The `Disposer` API's flexibility means that if the parent instance is chosen unwisely, the child may consume resources for longer than required.
+The `Disposer` API flexibility means that if the parent instance is chosen unwisely, the child may consume resources for longer than required.
 Continuing to use resources when they are no longer needed can be a severe source of contention due to leaving some zombie objects behind due to each invocation.
 An additional challenge is that these kinds of issues won't be reported by the regular leak checker utilities, because technically, it's not a memory leak from the test suite perspective.
 
@@ -92,7 +92,7 @@ Always pass a parent disposable to `MessageBus.connect()`, and make sure it has 
 
 ### Determining Disposal Status
 You can use `Disposer.isDisposed()` to check whether a `Disposable` has already been disposed.
-This check is useful, for example, for an asynchronous callback to a  `Disposable` that may be disposed before the callback is executed.
+This check is useful, for example, for an asynchronous callback to a `Disposable` that may be disposed before the callback is executed.
 In such a case, the best strategy is usually to do nothing and return early.
 
 > Non-disposed objects shouldn't hold onto references to disposed objects, as this constitutes a memory leak.
@@ -135,7 +135,7 @@ public class Foo<T> extends JBFoo implements Disposable {
 }
 ```
 
-A lot of code setting-up all the conditions requiring release in `dispose()` has been omitted for simplicity.
+A lot of code setting up all the conditions requiring release in `dispose()` has been omitted for simplicity.
 
 Regardless, it illustrates the basic pattern, which is:
 * In this case, the parent disposable is passed into the constructor,
@@ -153,7 +153,7 @@ When the application exits, it performs a final sanity check to verify everythin
 If something was registered with the `Disposer` but remains undisposed, the IntelliJ Platform reports it before shutting down.
 
 In test and Debug mode (`idea.disposer.debug` is set to `on`), registering a `Disposable` with the `Disposer` also registers a stack trace for the object's allocation path.
-The `Disposer` accomplishes this by creating a dummy `Throwable` at the time of registration.
+The `Disposer` accomplishes this by creating a `Throwable` at the time of registration.
 
 The following snippet represents the sort of "memory leak detected" error encountered in practice:
 

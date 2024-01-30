@@ -31,6 +31,60 @@ The primary purpose of the [`Disposer`](%gh-ic%/platform/util/src/com/intellij/o
 
 The `Disposer` organizes `Disposable` objects in a tree of parent-child relationships.
 The tree of `Disposable` objects ensures the `Disposer` releases children of a parent first.
+Parent objects always live longer than their children.
+
+The following diagram shows a simplified example of `Disposer`'s tree:
+
+```plantuml
+@startuml
+
+skinparam DefaultFontName JetBrains Sans
+skinparam DefaultFontSize 13
+skinparam DefaultTextAlignment center
+hide empty members
+hide circle
+
+rectangle "Root\nDisposable" as root
+
+rectangle "Application" as application
+rectangle "App\nListener" as listener
+rectangle "Dialog\nWrapper" as dialogDisposable
+rectangle "Dialog\nResource" as dialogResource
+
+rectangle "Services of\nApplication" as applicationServices
+rectangle "App\nService 1" as appService1
+rectangle "App\nService 2" as appService2
+
+rectangle "My\nProject" as project
+rectangle "My\nListener" as projectListener
+rectangle "My\nAlarm" as projectAlarm
+
+rectangle "Services of\nMy Project" as projectServices
+rectangle "Project\nService A" as projectService1
+rectangle "Project\nService B" as projectService2
+
+root -- application
+root -- applicationServices
+root -- project
+root -- projectServices
+
+application -- listener
+application -- dialogDisposable
+dialogDisposable -- dialogResource
+
+applicationServices -- appService1
+applicationServices -- appService2
+
+project -- projectListener
+project -- projectAlarm
+
+projectServices -- projectService1
+projectServices -- projectService2
+
+@enduml
+```
+
+When _My Project_ is closed and its disposal is triggered by the platform, the Disposer API will dispose _My Listener_ and _My Alarm_ before _My Project_, and _Project Service A_ and _Project Service B_ before _Services of My Project_.
 
 See [The Disposable Interface](#implementing-the-disposable-interface) for more information about creating `Disposable` classes.
 

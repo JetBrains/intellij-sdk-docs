@@ -27,9 +27,10 @@ A plugin consisting of a single <path>.jar</path> file is placed in the <path>/p
 skinparam TitleFontName JetBrains Sans
 skinparam TitleFontStyle plain
 skinparam TitleFontSize 16
+skinparam DefaultTextAlignment left
 
 title
-|_ .IntelliJIDEAx0
+  .IntelliJIDEAx0
   |_ plugins
     |_ sample.jar // (Plugin distribution) //
       |_ com
@@ -61,9 +62,10 @@ All jars from the <path>/lib</path> folder are automatically added to the classp
 skinparam TitleFontName JetBrains Sans
 skinparam TitleFontStyle plain
 skinparam TitleFontSize 16
+skinparam DefaultTextAlignment left
 
 title
-|_ .IntelliJIDEAx0
+  .IntelliJIDEAx0
   |_ plugins
     |_ sample
       |_ lib

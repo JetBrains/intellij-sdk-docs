@@ -150,7 +150,7 @@ dependencyResolutionManagement {
 
     repositories {
         mavenCentral()
-    
+
         intellijPlatform {
             recommended()
         }
@@ -165,11 +165,7 @@ dependencyResolutionManagement {
 Some repositories, by default, point to JetBrains Cache Redirector to provide better resources resolution.
 However, it is possible to use the direct repository URL, if available.
 
-To switch off the default usage of JetBrains Cache Redirector, add to <path>gradle.properties</path>:
-
-```
-org.jetbrains.intellij.platform.buildFeature.useCacheRedirector=false
-```
+To switch off the default usage of JetBrains Cache Redirector, see the [](tools_intellij_platform_gradle_plugin_build_features.md#useCacheRedirector) build feature.
 
 ### Setting up IntelliJ Platform
 
@@ -228,7 +224,7 @@ dependencies {
   intellijPlatform {
     val type = providers.gradleProperty("platformType")
     val version = providers.gradleProperty("platformVersion")
-    
+
     intellijPlatform(type, version)
   }
 }
@@ -242,7 +238,7 @@ import org.jetbrains.intellij.platform.gradle.utils.IntelliJPlatformType
 dependencies {
   intellijPlatform {
     val version = providers.gradleProperty("platformVersion")
-    
+
     intellijPlatform(IntelliJPlatformType.IntellijIdeaUltimate, version)
   }
 }

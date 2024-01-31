@@ -111,6 +111,13 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `org.apache.tools` package removed
 : Please provide all necessary libraries in your plugin distribution.
 
+`com.intellij.openapi.projectRoots.impl.ProjectJdkImpl.readExternal(Element, ProjectJdkTable)` method removed
+: Use `com.intellij.openapi.projectRoots.impl.ProjectJdkImpl.readExternal(Element, Function<String, SdkTypeId>)` instead.
+
+`com.intellij.openapi.projectRoots.impl.SdkConfigurationUtil.createSdk(Collection<Sdk>, String, SdkType, SdkAdditionalData, String)` method return type changed from `ProjectJdkImpl` to `Sdk`
+
+`com.intellij.openapi.projectRoots.impl.SdkConfigurationUtil.createSdk(Collection<Sdk>, VirtualFile, SdkType, SdkAdditionalData, String)` method return type changed from `ProjectJdkImpl` to `Sdk`
+
 ### Django Plugin 2024.1
 
 Package `com.jetbrains.jinja2` renamed to `com.intellij.jinja`

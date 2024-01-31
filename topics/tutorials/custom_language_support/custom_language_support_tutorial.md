@@ -1,6 +1,6 @@
 # Custom Language Support Tutorial
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Tutorial for creating a .properties-like custom language.</link-summary>
 
@@ -13,12 +13,13 @@ In this tutorial, we will add support for a [.properties](https://en.wikipedia.o
 >
 > The accompanying [](writing_tests_for_plugins.md) tutorial covers testing the functionality; corresponding parts are linked under **Testing**.
 >
-
+{title="Navigating this tutorial"}
 
 > The complete and fully working example plugin used in this tutorial is the [`simple_language_plugin`](%gh-sdk-samples%/simple_language_plugin) code sample.
+>
 > See [](code_samples.md) on how to build and run it.
 >
-{style="note"}
+{title="Accessing the code" style="note"}
 
 This a step-by-step tutorial, and it requires completing each step, in order:
 

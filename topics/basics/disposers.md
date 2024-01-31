@@ -110,9 +110,35 @@ Use the following guidelines to choose the correct parent:
 > Even though `Application` and `Project` implement `Disposable`, they must NEVER be used as parent disposables in plugin code.
 > Disposables registered using those objects as parents will not be disposed when the plugin is unloaded, leading to memory leaks.
 >
+> Consider a case of a disposable resource created by a plugin and registered with a project as its parent.
+> The following lifetime diagram shows that the resource will outlive the plugin and live as long as the project.
+> ```mermaid
+> %%{init: {'theme': 'base', 'themeVariables': { 'primaryBorderColor': 'green', 'background': 'yellow'}}}%%
+> gantt
+>     dateFormat X
+>     %% do not remove trailing space in axisFormat
+>     axisFormat ‎
+>     section Lifetimes
+>         Project         : 0, 10
+>         Plugin          : 2, 5
+>         Plugin Resource : crit, 2, 10
+> ```
+>
+> If the resource used, e.g., a plugin's project-level service (if shorter living parents are possible, prefer them), the resource would be disposed together with the plugin:
+> ```mermaid
+> gantt
+>     dateFormat X
+>     %% do not remove trailing space in axisFormat
+>     axisFormat ‎
+>     section Lifetimes
+>         Project         : 0, 10
+>         Plugin          : 2, 5
+>         Plugin Resource : 2, 5
+> ```
+>
 > Inspection <control>Plugin DevKit | Code | Incorrect parentDisposable parameter</control> will highlight such problems.
 >
-{style="warning"}
+{style="warning" title="Plugin disposable leaks"}
 
 The `Disposer` API flexibility means that if the parent instance is chosen unwisely, the child may consume resources for longer than required.
 Continuing to use resources when they are no longer needed can be a severe source of contention due to leaving some zombie objects behind due to each invocation.

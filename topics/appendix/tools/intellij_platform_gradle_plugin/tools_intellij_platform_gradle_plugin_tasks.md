@@ -19,6 +19,10 @@ See also:
 ## classpathIndexCleanup
 {#classpathIndexCleanup}
 
+> Deprecated?
+>
+{style="warning"}
+
 
 ## initializeIntelliJPlatformPlugin
 {#initializeIntelliJPlatformPlugin}
@@ -37,6 +41,10 @@ See also:
 
 ## instrumentedJar
 {#instrumentedJar}
+
+> Not implemented.
+>
+{style="warning"}
 
 
 ## jarSearchableOptions
@@ -380,35 +388,124 @@ See also:
 ## publishPlugin
 {#publishPlugin}
 
+The task for publishing plugin to the remote plugins repository, such as [JetBrains Marketplace](https://plugins.jetbrains.com).
+
+See also:
+- [Uploading a Plugin to JetBrains Marketplace](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html#uploading-a-plugin-to-jetbrains-marketplace)
+- [Plugin upload API](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html)
+- [Publishing Plugin With Gradle](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html#publishing-plugin-with-gradle)
+
 
 ### archiveFile
 {#publishPlugin-archiveFile}
+
+ZIP archive to be published to the remote repository.
+
+By default, it uses an output `archiveFile` of the [`signPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin) task if plugin signing is configured, otherwise [`buildPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#buildPlugin).
+
+{style="narrow"}
+Type
+: `Property<RegularFileProperty>`
+
+Default value
+: [`signPlugin.archiveFile`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-archiveFile) or [`buildPlugin.archiveFile`](tools_intellij_platform_gradle_plugin_tasks.md#buildPlugin-archiveFile)
+
+See also:
+- [Extension: `intellijPlatform.signing`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing)
+- [Tasks: `signPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin)
+- [Tasks: `buildPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#buildPlugin)
 
 
 ### host
 {#publishPlugin-host}
 
+URL host of a plugin repository.
+
+{style="narrow"}
+Type
+: `Property<String>`
+
+Default value
+: [`intellijPlatform.publishing.host`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-host)
+
+See also:
+- [Extension `intellijPlatform.publishing.host`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-host)
+
 
 ### token
 {#publishPlugin-token}
 
+Authorization token.
 
-### channels
-{#publishPlugin-channels}
+{style="narrow"}
+Type
+: `Property<String>`
+
+Required
+: yes
+
+Default value
+: [`intellijPlatform.publishing.token`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-token)
+
+See also:
+- [Extension: `intellijPlatform.publishing.token`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-token)
+
+
+### channel
+{#publishPlugin-channel}
+
+A channel name to upload plugin to.
+
+{style="narrow"}
+Type
+: `Property<String>`
+
+Default value:
+: [`intellijPlatform.publishing.channel`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-channel)
+
+See also:
+- [Extension: `intellijPlatform.publishing.channel`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-channel)
 
 
 ### hidden
 {#publishPlugin-hidden}
 
+Publish the plugin update and mark it as hidden to prevent public release after approval.
+
+{style="narrow"}
+Type
+: `Property<String>`
+
+Default value
+: [`intellijPlatform.publishing.hidden`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-hidden)
+
+See also:
+- [Extension: `intellijPlatform.publishing.hidden`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-hidden)
+- [Hidden release](https://plugins.jetbrains.com/docs/marketplace/hidden-plugin.html)
+
 
 ### toolboxEnterprise
 {#publishPlugin-toolboxEnterprise}
 
+Specifies if the Toolbox Enterprise plugin repository service should be used.
 
+{style="narrow"}
+Type
+: `Property<String>`
+
+Default value
+: [`intellijPlatform.publishing.toolboxEnterprise`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-toolboxEnterprise)
+
+See also:
+- [Extension: `intellijPlatform.publishing.toolboxEnterprise`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-toolboxEnterprise)
 
 
 ## runIdePerformanceTest
 {#runIdePerformanceTest}
+
+> Not implemented.
+>
+{style="warning"}
 
 
 ## runIde
@@ -417,6 +514,10 @@ See also:
 
 ## setupDependencies
 {#setupDependencies}
+
+> Deprecated.
+>
+{style="warning"}
 
 
 ## signPlugin
@@ -429,6 +530,10 @@ See also:
 
 ## testIdeUi
 {#testIdeUi}
+
+> Not implemented.
+>
+{style="warning"}
 
 
 ## verifyPluginProjectConfiguration

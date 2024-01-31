@@ -482,6 +482,9 @@ The hostname used for publishing the plugin.
 Type
 : `Property<String>`
 
+Default value
+: `"https://plugins.jetbrains.com"`
+
 See also:
 - [Tasks: `publishPlugin.host`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-host)
 
@@ -489,9 +492,14 @@ See also:
 ### token
 {#intellijPlatform-publishing-token}
 
+Authorization token.
+
 {style="narrow"}
 Type
 : `Property<String>`
+
+Required
+: yes
 
 See also:
 - [Tasks: `publishPlugin.token`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-token)
@@ -500,20 +508,30 @@ See also:
 ### channel
 {#intellijPlatform-publishing-channel}
 
+A channel name to upload plugin to.
+
 {style="narrow"}
 Type
 : `Property<String>`
 
+Default value:
+: `"default"`
+
 See also:
-- [Tasks: `publishPlugin.channels`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-channels)
--
+- [Tasks: `publishPlugin.channel`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-channel)
+
 
 ### toolboxEnterprise
 {#intellijPlatform-publishing-toolboxEnterprise}
 
+Specifies if the Toolbox Enterprise plugin repository service should be used.
+
 {style="narrow"}
 Type
 : `Property<String>`
+
+Default value
+: `false`
 
 See also:
 - [Tasks: `publishPlugin.toolboxEnterprise`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-toolboxEnterprise)
@@ -522,12 +540,18 @@ See also:
 ### hidden
 {#intellijPlatform-publishing-hidden}
 
+Publish the plugin update and mark it as hidden to prevent public release after approval.
+
 {style="narrow"}
 Type
 : `Property<String>`
 
+Default value
+: `false`
+
 See also:
 - [Tasks: `publishPlugin.hidden`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-hidden)
+- [Hidden release](https://plugins.jetbrains.com/docs/marketplace/hidden-plugin.html)
 
 
 ## Signing

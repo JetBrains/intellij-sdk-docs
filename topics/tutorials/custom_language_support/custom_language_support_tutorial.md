@@ -46,3 +46,10 @@ This a step-by-step tutorial, and it requires completing each step, in order:
 * [](spell_checking_strategy.md)
 
 <include from="snippets.md" element-id="missingContent"/>
+
+<seealso style="cards">
+    <category ref="related">
+        <a href="custom_language_support.md"/>
+        <a href="writing_tests_for_plugins.md"/>
+    </category>
+</seealso>

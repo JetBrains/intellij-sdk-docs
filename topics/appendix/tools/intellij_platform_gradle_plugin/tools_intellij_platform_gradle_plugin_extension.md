@@ -233,13 +233,15 @@ intellijPlatform {
     productDescriptor {
       code.set("MY_CODE")
       releaseDate.set("20240217")
-      releaseVersion.set("")
-      optional.set("")
+      releaseVersion.set("20241")
+      optional.set(false)
     }
   }
 }
 ```
 
+See also:
+- [How to add required parameters for paid plugins](https://plugins.jetbrains.com/docs/marketplace/add-required-parameters.html)
 
 ### code
 {#intellijPlatform-pluginConfiguration-productDescriptor-code}
@@ -470,6 +472,7 @@ intellijPlatform {
 }
 ```
 
+
 ### host
 {#intellijPlatform-publishing-host}
 
@@ -480,23 +483,51 @@ Type
 : `Property<String>`
 
 See also:
-- [Tasks: `patchPluginXml.vendorUrl`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin)
+- [Tasks: `publishPlugin.host`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-host)
+
 
 ### token
 {#intellijPlatform-publishing-token}
+
+{style="narrow"}
+Type
+: `Property<String>`
+
+See also:
+- [Tasks: `publishPlugin.token`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-token)
 
 
 ### channel
 {#intellijPlatform-publishing-channel}
 
+{style="narrow"}
+Type
+: `Property<String>`
+
+See also:
+- [Tasks: `publishPlugin.channels`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-channels)
+-
 
 ### toolboxEnterprise
 {#intellijPlatform-publishing-toolboxEnterprise}
+
+{style="narrow"}
+Type
+: `Property<String>`
+
+See also:
+- [Tasks: `publishPlugin.toolboxEnterprise`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-toolboxEnterprise)
 
 
 ### hidden
 {#intellijPlatform-publishing-hidden}
 
+{style="narrow"}
+Type
+: `Property<String>`
+
+See also:
+- [Tasks: `publishPlugin.hidden`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-hidden)
 
 
 ## Signing

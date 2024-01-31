@@ -37,7 +37,11 @@ The following platforms and environments are supported:
 
 ## Usage
 
-To use the current Early Access Preview snapshot versions, add to your <path>settings.gradle.kts</path> file:
+> Please note that the plugin has a new ID `org.jetbrain.intellij.platform`.
+>
+{style="note"}
+
+To use the current Early Access Preview snapshot versions, add the following to your <path>settings.gradle.kts</path> file:
 
 ```kotlin
 pluginManagement {
@@ -56,10 +60,10 @@ plugins {
 }
 ```
 
-### Available Subplugins
+### Subplugins
 
-The plugin has a new ID: `org.jetbrains.intellij.platform`, but also was split into subplugins.
-This approach allows you to choose between applying all configurations and tasks at once, or applying them separately, e.g., to only use an IntelliJ Platform SDK dependency without creating any tasks.
+The plugin was split into subplugins that can be applied separately.
+This allows for applying only a subset of features, e.g. when you only use an IntelliJ Platform SDK dependency without creating any tasks.
 
 #### org.jetbrains.intellij.platform
 
@@ -73,7 +77,7 @@ It includes [](#plugin.core) and [](#plugin.tasks) subplugins.
 
 {id="plugin.core"}
 
-Base plugin registers all necessary custom configurations and dependencies transformers used for handling IntelliJ Platform SDK, JetBrains Runtime, CLI tools, or other plugins when used as dependencies.
+The base plugin sets up all the custom configurations and transforms needed to manage the IntelliJ Platform SDK, JetBrains Runtime, CLI tools, and other plugins when they're added as dependencies.
 
 #### org.jetbrains.intellij.platform.tasks
 
@@ -86,7 +90,7 @@ It can be omitted when referring to any IntelliJ Platform SDK dependencies witho
 
 {id="plugin.settings"}
 
-Settings plugin is required in <path>settings.gradle.kts</path> when using `RepositoryHandler` extensions when declaring the IntelliJ Maven repository (see [](intellij_artifacts.md)) for the `dependencyResolutionManagement` Gradle mechanism.
+If you define repositories within the <path>settings.gradle.kts</path> using the `dependencyResolutionManagement` Gradle, make sure to include the Settings plugin in your <filepath>settings.gradle.kts</filepath>.
 
 ## Configuration
 
@@ -94,7 +98,7 @@ Settings plugin is required in <path>settings.gradle.kts</path> when using `Repo
 >
 {title="Exploring Configuration Options"}
 
-### Setting up repositories
+### Setting Up Repositories
 
 {id="configuration.repositories"}
 
@@ -102,9 +106,9 @@ All IntelliJ Platform SDK artifacts are available via IntelliJ Maven repositorie
 
 - releases
 - snapshots
-- nightly (only select artifacts)
+- nightly (only selected artifacts)
 
-All required repositories for the project must be declared explicitly within the `intellijPlatform` extension:
+Assume you want to build your plugin against a release version of the IntelliJ Platform and you also have a dependency on a plugin from the Marketplace, then you would declare the following repositories:
 
 ```kotlin
 repositories {
@@ -112,8 +116,7 @@ repositories {
 
   intellijPlatform {
     releases()
-    snapshots()
-    nightly()
+    marketplace()
   }
 }
 ```
@@ -167,7 +170,7 @@ However, it is possible to use the direct repository URL, if available.
 
 To switch off the default usage of JetBrains Cache Redirector, see the [](tools_intellij_platform_gradle_plugin_build_features.md#useCacheRedirector) build feature.
 
-### Setting up IntelliJ Platform
+### Setting Up IntelliJ Platform
 
 Dependencies and [repositories](#configuration.repositories) are handled using explicit entries within `dependencies {}` and `repositories {}` blocks in <path>build.gradle.kts</path> file.
 
@@ -208,7 +211,7 @@ Other IDEs can be targeted using one the extensions listed in the table below.
 | `rustRover`             | Rust Rover                                 |
 | `writerside`            | Writerside                                 |
 
-#### Parametrized IntelliJ Platform dependency
+#### Parametrize IntelliJ Platform Dependency
 
 As a fallback, `intellijPlatform` extension can be used to allow dynamic configuration of the target platform, e.g., via <path>gradle.properties</path>:
 
@@ -244,7 +247,7 @@ dependencies {
 }
 ```
 
-#### Local IntelliJ Platform IDE instance
+#### Local IntelliJ Platform IDE Instance
 
 It is possible to refer to the locally available IntelliJ-based IDE using the `local` helper function:
 
@@ -265,7 +268,7 @@ dependencies {
 
 Note that the `ivy` entry needs to be added to the `repositories {}` block as all local dependencies (local IDE, bundled plugins, etc.) rely on the Ivy repositories.
 
-### Setting up plugin dependencies
+### Setting Up Plugin Dependencies
 
 TODO
 
@@ -275,7 +278,7 @@ TODO
 
 ## Migration FAQ
 
-### Unresolved 'idea' plugin
+### Unresolved 'idea' Plugin
 
 Add an explicit dependency on the plugin in <path>build.gradle.kts</path>:
 

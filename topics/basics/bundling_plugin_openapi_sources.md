@@ -1,6 +1,6 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
-
 # Bundling Plugin API Sources
+
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Exposing plugin's API sources for other plugins.</link-summary>
 
@@ -17,16 +17,26 @@ Being able to see API sources drastically improves the development experience, a
 
 The API source JARs must be located in the <path>example-plugin.zip!/plugin/lib/src</path> directory in the plugin ZIP distribution, e.g.:
 
-```text
-example-plugin.zip
-└── example-plugin
-    └── lib
-        ├── example-plugin.jar
-        └── src
-            └── example-plugin-api-src.jar
+```plantuml
+@startuml
+
+skinparam TitleFontName JetBrains Sans
+skinparam TitleFontStyle plain
+skinparam TitleFontSize 16
+skinparam DefaultTextAlignment left
+
+title
+  example-plugin.zip // (Plugin distribution file) //
+  |_ example-plugin
+    |_ lib
+      |_ example-plugin.jar // (Plugin) //
+      |_ src
+        |_ example-plugin-api-src.jar // (API sources JAR) //
+end title
+@enduml
 ```
 
-The plugin ZIP can contain multiple source JARs, and there are no strict rules for the source JAR names.
+The plugin distribution ZIP file can contain multiple source JARs, and there are no strict rules for the source JAR names.
 
 ## Defining Plugin API
 

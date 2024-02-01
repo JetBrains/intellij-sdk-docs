@@ -557,6 +557,134 @@ See also:
 ## Signing
 {#intellijPlatform-signing}
 
+Plugin signing configuration.
+
+See also:
+- [](plugin_signing.md)
+- [Task Awares: `SigningAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SigningAware)
+- [Marketplace ZIP Signer](https://github.com/JetBrains/marketplace-zip-signer)
+
+### cliPath
+{#intellijPlatform-signing-cliPath}
+
+A path to the local Marketplace ZIP Signer CLI tool to be used.
+
+{style="narrow"}
+Type
+: `RegularFileProperty`
+
+
+### keyStore
+{#intellijPlatform-signing-keyStore}
+
+KeyStore file path.
+Refers to `ks` CLI option.
+
+{style="narrow"}
+Type
+: `Property<String>`
+
+
+### keyStorePassword
+{#intellijPlatform-signing-keyStorePassword}
+
+KeyStore password.
+Refers to `ks-pass` CLI option.
+
+{style="narrow"}
+Type
+: `Property<String>`
+
+
+### keyStoreKeyAlias
+{#intellijPlatform-signing-keyStoreKeyAlias}
+
+KeyStore key alias.
+Refers to `ks-key-alias` CLI option.
+
+{style="narrow"}
+Type
+: `Property<String>`
+
+
+### keyStoreType
+{#intellijPlatform-signing-keyStoreType}
+
+KeyStore type.
+Refers to `ks-type` CLI option.
+
+{style="narrow"}
+Type
+: `Property<String>`
+
+
+### keyStoreProviderName
+{#intellijPlatform-signing-keyStoreProviderName}
+
+JCA KeyStore Provider name.
+Refers to `ks-provider-name` CLI option.
+
+{style="narrow"}
+Type
+: `Property<String>`
+
+
+### privateKey
+{#intellijPlatform-signing-privateKey}
+
+Encoded private key in the PEM format.
+Refers to `key` CLI option.
+
+{style="narrow"}
+Type
+: `Property<String>`
+
+
+### privateKeyFile
+{#intellijPlatform-signing-privateKeyFile}
+
+A file with an encoded private key in the PEM format.
+Refers to `key-file` CLI option.
+
+{style="narrow"}
+Type
+: `RegularFileProperty`
+
+
+### password
+{#intellijPlatform-signing-password}
+
+Password required to decrypt the private key.
+Refers to `key-pass` CLI option.
+
+{style="narrow"}
+Type
+: `Property<String>`
+
+
+### certificateChain
+{#intellijPlatform-signing-certificateChain}
+
+A string containing X509 certificates.
+The first certificate from the chain will be used as a certificate authority (CA).
+Refers to `cert` CLI option.
+
+{style="narrow"}
+Type
+: `Property<String>`
+
+
+### certificateChainFile
+{#intellijPlatform-signing-certificateChainFile}
+
+Path to the file containing X509 certificates.
+The first certificate from the chain will be used as a certificate authority (CA).
+Refers to `cert-file` CLI option.
+
+{style="narrow"}
+Type
+: `RegularFileProperty`
+
 
 ## Verify Plugin
 {#intellijPlatform-verifyPlugin}

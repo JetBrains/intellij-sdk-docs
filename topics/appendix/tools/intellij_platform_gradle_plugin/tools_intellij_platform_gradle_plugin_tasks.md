@@ -66,7 +66,7 @@ By default, a <path>plugin.xml</path> file is picked from the main resource loca
 Type
 : `RegularFileProperty`
 
-Default value:
+Default value
 : <path>src/main/<kotlin|java>/resources/META-INF/plugin.xml</path>
 
 
@@ -460,7 +460,7 @@ A channel name to upload plugin to.
 Type
 : `Property<String>`
 
-Default value:
+Default value
 : [`intellijPlatform.publishing.channel`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-channel)
 
 See also:
@@ -522,6 +522,222 @@ See also:
 
 ## signPlugin
 {#signPlugin}
+
+Signs the ZIP archive with the provided key using [Marketplace ZIP Signer](https://github.com/JetBrains/marketplace-zip-signer) library.
+
+To sign the plugin before publishing to [JetBrains Marketplace](https://plugins.jetbrains.com) with the [SignPluginTask] task, it is required to provide a certificate chain and a private key with its password using `signPlugin { ... }` Plugin Signing DSL.
+
+As soon as [privateKey] (or [privateKeyFile]) and [certificateChain] (or [certificateChainFile]) properties are specified, the task will be executed automatically right before the [PublishPluginTask] task.
+
+For more details, see [Plugin Signing](https://plugins.jetbrains.com/docs/intellij/plugin-signing.html) article.
+
+
+### archiveFile
+{#signPlugin-archiveFile}
+
+Input, unsigned ZIP archive file.
+Refers to `in` CLI option.
+
+By default, it uses the output archive of the [`buildPlugin`](#buildPlugin) task.
+
+{style="narrow"}
+Type
+: `RegularFileProperty`
+
+Default value
+: [`buildPlugin.archiveFile`](#buildPlugin-archiveFile)
+
+See also:
+- [Tasks: `buildPlugin.archiveFile`](#buildPlugin-archiveFile)
+
+
+### signedArchiveFile
+{#signPlugin-signedArchiveFile}
+
+Output, signed ZIP archive file.
+Refers to `out` CLI option.
+
+Predefined with the name of the ZIP archive file with `-signed` name suffix attached.
+The output file is placed next to the input [`archiveFile`](#signPlugin-archiveFile).
+
+{style="narrow"}
+Type
+: `RegularFileProperty`
+
+Default value
+: [`signPlugin.archiveFile`](#signPlugin-archiveFile) with `-signed` suffix applied to the name
+
+
+### keyStore
+{#signPlugin-keyStore}
+
+KeyStore file path.
+Refers to `ks` CLI option.
+
+{style="narrow"}
+Type
+: `String`
+
+Default value
+: [`intellijPlatform.signing.keyStore`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStore)
+
+See also:
+- [Extension: `intellijPlatform.signing.keyStore`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStore)
+
+
+### keyStorePassword
+{#signPlugin-keyStorePassword}
+
+KeyStore password.
+Refers to `ks-pass` CLI option.
+
+{style="narrow"}
+Type
+: `String`
+
+Default value
+: [`intellijPlatform.signing.keyStorePassword`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStorePassword)
+
+See also:
+- [Extension: `intellijPlatform.signing.keyStorePassword`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStorePassword)
+
+
+### keyStoreKeyAlias
+{#signPlugin-keyStoreKeyAlias}
+
+KeyStore key alias.
+Refers to `ks-key-alias` CLI option.
+
+{style="narrow"}
+Type
+: `String`
+
+Default value
+: [`intellijPlatform.signing.keyStoreKeyAlias`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStoreKeyAlias)
+
+See also:
+- [Extension: `intellijPlatform.signing.keyStoreKeyAlias`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStoreKeyAlias)
+
+
+### keyStoreType
+{#signPlugin-keyStoreType}
+
+KeyStore type.
+Refers to `ks-type` CLI option.
+
+{style="narrow"}
+Type
+: `String`
+
+Default value
+: [`intellijPlatform.signing.keyStoreType`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStoreType)
+
+See also:
+- [Extension: `intellijPlatform.signing.keyStoreType`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStoreType)
+
+
+### keyStoreProviderName
+{#signPlugin-keyStoreProviderName}
+
+JCA KeyStore Provider name.
+Refers to `ks-provider-name` CLI option.
+
+{style="narrow"}
+Type
+: `String`
+
+Default value
+: [`intellijPlatform.signing.keyStoreProviderName`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStoreProviderName)
+
+See also:
+- [Extension: `intellijPlatform.signing.keyStoreProviderName`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStoreProviderName)
+
+
+### privateKey
+{#signPlugin-privateKey}
+
+Encoded private key in the PEM format.
+Refers to `key` CLI option.
+
+{style="narrow"}
+Type
+: `String`
+
+Default value
+: [`intellijPlatform.signing.privateKey`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-privateKey)
+
+See also:
+- [Extension: `intellijPlatform.signing.privateKey`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-privateKey)
+
+
+### privateKeyFile
+{#signPlugin-privateKeyFile}
+
+A file with an encoded private key in the PEM format.
+Refers to `key-file` CLI option.
+
+{style="narrow"}
+Type
+: `RegularFileProperty`
+
+Default value
+: [`intellijPlatform.signing.privateKeyFile`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-privateKeyFile)
+
+See also:
+- [Extension: `intellijPlatform.signing.privateKeyFile`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-privateKeyFile)
+
+
+### password
+{#signPlugin-password}
+
+Password required to decrypt the private key.
+Refers to `key-pass` CLI option.
+
+{style="narrow"}
+Type
+: `String`
+
+Default value
+: [`intellijPlatform.signing.password`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-password)
+
+See also:
+- [Extension: `intellijPlatform.signing.password`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-password)
+
+
+### certificateChain
+{#signPlugin-certificateChain}
+
+A string containing X509 certificates.
+The first certificate from the chain will be used as a certificate authority (CA).
+Refers to `cert` CLI option.
+
+{style="narrow"}
+Type
+: `String`
+
+Default value
+: [`intellijPlatform.signing.certificateChain`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-certificateChain)
+
+See also:
+- [Extension: `intellijPlatform.signing.certificateChain`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-certificateChain)
+
+
+### certificateChainFile
+{#signPlugin-certificateChainFile}
+
+Path to the file containing X509 certificates.
+The first certificate from the chain will be used as a certificate authority (CA).
+Refers to `cert-file` CLI option.
+
+{style="narrow"}
+Type
+: `RegularFileProperty`
+
+Default value
+: [`intellijPlatform.signing.certificateChainFile`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-certificateChainFile)
+
+See also:
+- [Extension: `intellijPlatform.signing.certificateChainFile`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-certificateChainFile)
 
 
 ## testIde

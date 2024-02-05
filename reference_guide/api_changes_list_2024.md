@@ -103,10 +103,13 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 : Must be implemented.
 
 `com.intellij.psi.util.PsiTreeUtilKt.getFirstLeaf(PsiElement)` method renamed to `com.intellij.psi.util.PsiTreeUtilKt.firstLeaf(PsiElement)`
+: Update code usages.
 
 `com.intellij.psi.util.PsiTreeUtilKt.getLastLeaf(PsiElement)` method renamed to `com.intellij.psi.util.PsiTreeUtilKt.lastLeaf(PsiElement)`
+: Update code usages.
 
 `com.intellij.psi.util.PsiTreeUtilKt.getChildLeafs(PsiElement)` method renamed to `com.intellij.psi.util.PsiTreeUtilKt.childLeafs(PsiElement)`
+: Update code usages.
 
 `org.apache.tools` package removed
 : Please provide all necessary libraries in your plugin distribution.
@@ -115,8 +118,10 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 : Use `com.intellij.openapi.projectRoots.impl.ProjectJdkImpl.readExternal(Element, Function<String, SdkTypeId>)` instead.
 
 `com.intellij.openapi.projectRoots.impl.SdkConfigurationUtil.createSdk(Collection<Sdk>, String, SdkType, SdkAdditionalData, String)` method return type changed from `ProjectJdkImpl` to `Sdk`
+: Update code usages.
 
 `com.intellij.openapi.projectRoots.impl.SdkConfigurationUtil.createSdk(Collection<Sdk>, VirtualFile, SdkType, SdkAdditionalData, String)` method return type changed from `ProjectJdkImpl` to `Sdk`
+: Update code usages.
 
 ### Django Plugin 2024.1
 

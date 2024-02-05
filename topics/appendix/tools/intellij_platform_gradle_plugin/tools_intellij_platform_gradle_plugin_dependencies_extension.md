@@ -4,6 +4,8 @@
 
 <link-summary>IntelliJ Platform Gradle Plugin dependencies extension.</link-summary>
 
+<include from="tools_intellij_platform_gradle_plugin.md" element-id="EAP_Status"/>
+
 Extension class for managing IntelliJ Platform dependencies in a Gradle build script applied to the `DependencyHandler`.
 
 This class provides methods for adding dependencies to different IntelliJ Platform products and managing local dependencies.

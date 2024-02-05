@@ -4,6 +4,8 @@
 
 <link-summary>IntelliJ Platform Gradle Plugin repositories extension.</link-summary>
 
+<include from="tools_intellij_platform_gradle_plugin.md" element-id="EAP_Status"/>
+
 This is an extension class for managing IntelliJ Platform repositories in a Gradle build script.
 It's applied to the `RepositoryHandler`.
 

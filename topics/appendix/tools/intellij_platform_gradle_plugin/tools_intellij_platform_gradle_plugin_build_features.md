@@ -4,6 +4,7 @@
 
 <link-summary>IntelliJ Platform Gradle Plugin build features.</link-summary>
 
+<include from="tools_intellij_platform_gradle_plugin.md" element-id="EAP_Status"/>
 
 The IntelliJ Platform Gradle Plugin build features dedicated to control some of the low-level Gradle plugin behaviors.
 To enable or disable a particular feature, add a Project property to the <path>gradle.properties</path> file with the following pattern:

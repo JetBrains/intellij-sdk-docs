@@ -4,6 +4,8 @@
 
 <link-summary>IntelliJ Platform Gradle Plugin task `*Aware` interfaces.</link-summary>
 
+<include from="tools_intellij_platform_gradle_plugin.md" element-id="EAP_Status"/>
+
 The Task Awares is a set of interfaces that can be applied to custom Gradle tasks and, when registered using the dedicated register method, inject new features or properties with predefined values.
 
 

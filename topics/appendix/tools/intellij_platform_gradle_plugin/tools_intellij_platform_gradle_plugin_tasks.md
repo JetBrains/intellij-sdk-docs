@@ -4,6 +4,8 @@
 
 <link-summary>IntelliJ Platform Gradle Plugin tasks.</link-summary>
 
+<include from="tools_intellij_platform_gradle_plugin.md" element-id="EAP_Status"/>
+
 ## buildPlugin
 {#buildPlugin}
 

@@ -4,7 +4,7 @@
 
 <link-summary>IntelliJ Platform Gradle Plugin user and migration guide.</link-summary>
 
-<tldr>
+<tldr id="tldr">
 
 **Current Release**: Early Access Preview
 
@@ -18,14 +18,18 @@ The _IntelliJ Platform Gradle Plugin 2.x_ is a plugin for the Gradle build syste
 
 It is going to replace the current _[](tools_gradle_intellij_plugin.md) (1.x)_ in the future.
 
-> This plugin is currently in **Early Access** and may not support all features and project setups yet (see also [](#requirements)).
-> Please report bugs or problems in the above-linked issue tracker or Slack channel.
+<snippet id="EAP_Status">
+
+> This plugin is currently in **Early Access** and may not support all features and project setups yet (see also [](tools_intellij_platform_gradle_plugin.md#requirements)).
+> Please report bugs or problems in GitHub issue tracker or Slack channel (see [here](tools_intellij_platform_gradle_plugin.md#tldr)).
 >
 > Any documentation issues on this page should be reported using the feedback form on the bottom of this page.
 >
 > Thanks a lot in advance for your feedback!
 >
 {title="Early Access Status" style="warning"}
+
+</snippet>
 
 ## Requirements
 

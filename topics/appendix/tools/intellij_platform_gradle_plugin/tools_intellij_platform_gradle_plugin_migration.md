@@ -4,6 +4,8 @@
 
 <link-summary>This is the IntelliJ Platform Gradle Plugin migration guide from the Gradle IntelliJ Plugin 1.x</link-summary>
 
+<include from="tools_intellij_platform_gradle_plugin.md" element-id="EAP_Status"/>
+
 ## Plugin name change
 As the `2.x` branch brings significant breaking changes to the plugin, we also decided to change its name from _Gradle IntelliJ Plugin_ to _IntelliJ Platform Gradle Plugin_ as the old one was confused with the Gradle support plugin for IntelliJ-based IDEs.
 The plugin is published to the Gradle Plugin Portal with a new name as a new entry, and the old one is marked as deprecated.

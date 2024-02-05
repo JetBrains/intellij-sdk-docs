@@ -4,6 +4,8 @@
 
 <link-summary>IntelliJ Platform Gradle Plugin data types, enums, and constants.</link-summary>
 
+<include from="tools_intellij_platform_gradle_plugin.md" element-id="EAP_Status"/>
+
 ## FailureLevel
 {#FailureLevel}
 

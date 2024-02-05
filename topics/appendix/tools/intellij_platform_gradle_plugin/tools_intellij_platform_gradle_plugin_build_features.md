@@ -6,7 +6,7 @@
 
 <include from="tools_intellij_platform_gradle_plugin.md" element-id="EAP_Status"/>
 
-The IntelliJ Platform Gradle Plugin build features dedicated to control some of the low-level Gradle plugin behaviors.
+The IntelliJ Platform Gradle Plugin exposes a number of build features to control some of the low-level Gradle plugin behaviors.
 To enable or disable a particular feature, add a Project property to the <path>gradle.properties</path> file with the following pattern:
 
 ```
@@ -57,7 +57,7 @@ org.jetbrains.intellij.platform.buildFeature.paidPluginSearchableOptionsWarning=
 ## selfUpdateCheck
 {#selfUpdateCheck}
 
-Checks whether the currently used Gradle IntelliJ Plugin is outdated and if a new release is available.
+Checks whether the currently used IntelliJ Platform Gradle Plugin is outdated and if a new release is available.
 The plugin performs an update check on every run asking the GitHub Releases page for the redirection URL
 to the latest version with `HEAD` HTTP request: [](https://github.com/jetbrains/gradle-intellij-plugin/releases/latest).
 

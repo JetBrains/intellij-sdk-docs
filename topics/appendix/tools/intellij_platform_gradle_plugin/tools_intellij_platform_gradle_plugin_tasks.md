@@ -486,7 +486,7 @@ The name of the plugin.
 
 {style="narrow"}
 Type
-: `String`
+: `Property<String>`
 
 Default value
 : [`intellijPlatform.pluginConfiguration.name`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-name)
@@ -710,7 +710,7 @@ Refers to `ks` CLI option.
 
 {style="narrow"}
 Type
-: `String`
+: `Property<String>`
 
 Default value
 : [`intellijPlatform.signing.keyStore`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStore)
@@ -724,7 +724,7 @@ Refers to `ks-pass` CLI option.
 
 {style="narrow"}
 Type
-: `String`
+: `Property<String>`
 
 Default value
 : [`intellijPlatform.signing.keyStorePassword`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStorePassword)
@@ -738,7 +738,7 @@ Refers to `ks-key-alias` CLI option.
 
 {style="narrow"}
 Type
-: `String`
+: `Property<String>`
 
 Default value
 : [`intellijPlatform.signing.keyStoreKeyAlias`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStoreKeyAlias)
@@ -752,7 +752,7 @@ Refers to `ks-type` CLI option.
 
 {style="narrow"}
 Type
-: `String`
+: `Property<String>`
 
 Default value
 : [`intellijPlatform.signing.keyStoreType`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStoreType)
@@ -766,7 +766,7 @@ Refers to `ks-provider-name` CLI option.
 
 {style="narrow"}
 Type
-: `String`
+: `Property<String>`
 
 Default value
 : [`intellijPlatform.signing.keyStoreProviderName`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStoreProviderName)
@@ -780,7 +780,7 @@ Refers to `key` CLI option.
 
 {style="narrow"}
 Type
-: `String`
+: `Property<String>`
 
 Default value
 : [`intellijPlatform.signing.privateKey`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-privateKey)
@@ -808,7 +808,7 @@ Refers to `key-pass` CLI option.
 
 {style="narrow"}
 Type
-: `String`
+: `Property<String>`
 
 Default value
 : [`intellijPlatform.signing.password`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-password)
@@ -823,7 +823,7 @@ Refers to `cert` CLI option.
 
 {style="narrow"}
 Type
-: `String`
+: `Property<String>`
 
 Default value
 : [`intellijPlatform.signing.certificateChain`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-certificateChain)

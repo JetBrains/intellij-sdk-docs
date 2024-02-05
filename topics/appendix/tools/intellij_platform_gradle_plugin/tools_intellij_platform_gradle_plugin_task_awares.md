@@ -12,6 +12,8 @@ The Task Awares is a set of interfaces that can be applied to custom Gradle task
 ## CoroutinesJavaAgentAware
 {#CoroutinesJavaAgentAware}
 
+[`CoroutinesJavaAgentAware`](%gh-ipgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/CoroutinesJavaAgentAware.kt)
+
 The interface provides the path to the Java Agent file for the Coroutines library required to enable coroutines debugging.
 
 Inherited also by [`RunnableIdeAware`](#RunnableIdeAware).
@@ -31,6 +33,8 @@ Default value
 
 ## CustomIntelliJPlatformVersionAware
 {#CustomIntelliJPlatformVersionAware}
+
+[`CustomIntelliJPlatformVersionAware`](%gh-ipgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/CustomIntelliJPlatformVersionAware.kt)
 
 By default, the project with the IntelliJ Platform Gradle Plugin applied required the presence of the IntelliJ Platform, referred to later by various tasks, configurations, and extensions.
 
@@ -79,6 +83,8 @@ Type
 
 ## IntelliJPlatformVersionAware
 {#IntelliJPlatformVersionAware}
+
+[`IntelliJPlatformVersionAware`](%gh-ipgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/IntelliJPlatformVersionAware.kt)
 
 This interface provides tasks a possibility for accessing information about the IntelliJ Platform currently used in the project.
 
@@ -135,6 +141,8 @@ Throws
 ## PluginVerifierAware
 {#PluginVerifierAware}
 
+[`PluginVerifierAware`](%gh-ipgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/PluginVerifierAware.kt)
+
 The interface provides the path to the IntelliJ Plugin Verifier executable.
 
 It is required to have a dependency on the IntelliJ Plugin Verifier added to the project with [`intellijPlatform.pluginVerifier()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md) dependencies extension.
@@ -153,6 +161,8 @@ Type
 ## RunnableIdeAware
 {#RunnableIdeAware}
 
+[`RunnableIdeAware`](%gh-ipgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/RunnableIdeAware.kt)
+
 The interface which utilizes a set of various interfaces required for running a guest IDE.  Inherits from:
 - [`CoroutinesJavaAgentAware`](#CoroutinesJavaAgentAware)
 - [`RuntimeAware`](#RuntimeAware)
@@ -162,6 +172,8 @@ The interface which utilizes a set of various interfaces required for running a 
 
 ## RuntimeAware
 {#RuntimeAware}
+
+[`RuntimeAware`](%gh-ipgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/RuntimeAware.kt)
 
 This interface provides access to the Java Runtime (i.e., JetBrains Runtime) resolved with `RuntimeResolver`.
 
@@ -198,6 +210,8 @@ Type
 
 ## SandboxAware
 {#SandboxAware}
+
+[`SandboxAware`](%gh-ipgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SandboxAware.kt)
 
 The interface provides quick access to the sandbox container and specific directories located within it.
 
@@ -270,6 +284,8 @@ Type
 
 ## SigningAware
 {#SigningAware}
+
+[`SigningAware`](%gh-ipgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SigningAware.kt)
 
 The interface provides the path to the Marketplace ZIP Signer executable.
 

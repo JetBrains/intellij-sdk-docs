@@ -73,7 +73,7 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 >
 > Please make sure to always upgrade `gradle-intellij-plugin` to the latest version [%gradle-intellij-plugin-version%](https://github.com/jetbrains/gradle-intellij-plugin/releases)
 >
-{style="note"}
+{title="IDE and Java Versions" style="note"}
 
 </snippet>
 

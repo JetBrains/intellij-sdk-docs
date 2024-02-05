@@ -17,9 +17,9 @@ After the IntelliJ Platform Gradle Plugin is applied, the `intellijPlatform` ext
 
 ```kotlin
 intellijPlatform {
-  instrumentCode.set(true)
-  buildSearchableOptions.set(true)
-  sandboxContainer.set("...")
+  instrumentCode = true
+  buildSearchableOptions = true
+  sandboxContainer = "..."
 
   pluginConfiguration {
     // ...
@@ -106,15 +106,14 @@ intellijPlatform {
   // ...
 
   pluginConfiguration {
-    id.set("my-plugin-id")
-    name.set("My Awesome Plugin")
-    version.set("1.0.0")
-    description.set("It's an awesome plugin!")
-    changeNotes.set(
+    id = "my-plugin-id"
+    name = "My Awesome Plugin"
+    version = "1.0.0"
+    description = "It's an awesome plugin!"
+    changeNotes =
       """
       A descriptive release note...
       """.trimIndent()
-    )
 
     productDescriptor {
       // ...
@@ -243,10 +242,10 @@ intellijPlatform {
     // ...
 
     productDescriptor {
-      code.set("MY_CODE")
-      releaseDate.set("20240217")
-      releaseVersion.set("20241")
-      optional.set(false)
+      code = "MY_CODE"
+      releaseDate = "20240217"
+      releaseVersion = "20241"
+      optional = false
     }
   }
 }
@@ -340,8 +339,8 @@ intellijPlatform {
     // ...
 
     ideaVersion {
-      sinceBuild.set("241")
-      untilBuild.set("241.*")
+      sinceBuild = "241"
+      untilBuild = "241.*"
     }
   }
 }
@@ -407,9 +406,9 @@ intellijPlatform {
     // ...
 
     vendor {
-      name.set("JetBrains")
-      email.set("hello@jetbrains.com")
-      url.set("https://www.jetbrains.com")
+      name = "JetBrains"
+      email = "hello@jetbrains.com"
+      url = "https://www.jetbrains.com"
     }
   }
 }
@@ -477,11 +476,11 @@ intellijPlatform {
   // ...
 
   publishing {
-    host.set("")
-    token.set("7hR4nD0mT0k3n_8f2eG")
-    channel.set("default")
-    toolboxEnterprise.set(false)
-    hidden.set(false)
+    host = ""
+    token = "7hR4nD0mT0k3n_8f2eG"
+    channel = "default"
+    toolboxEnterprise = false
+    hidden = false
   }
 }
 ```
@@ -580,17 +579,17 @@ intellijPlatform {
   // ...
 
   signing {
-    cliPath.set(file("/path/to/marketplace-zip-signer-cli.jar"))
-    keyStore.set(file("/path/to/keyStore.ks"))
-    keyStorePassword.set("...")
-    keyStoreKeyAlias.set("...")
-    keyStoreType.set("...")
-    keyStoreProviderName.set("...")
-    privateKey.set("...")
-    privateKeyFile.set(file("/path/to/private.pem"))
-    password.set("...")
-    certificateChain.set("...")
-    certificateChainFile.set(file("/path/to/chain.crt"))
+    cliPath = file("/path/to/marketplace-zip-signer-cli.jar")
+    keyStore = file("/path/to/keyStore.ks")
+    keyStorePassword = "..."
+    keyStoreKeyAlias = "..."
+    keyStoreType = "..."
+    keyStoreProviderName = "..."
+    privateKey = "..."
+    privateKeyFile = file("/path/to/private.pem")
+    password = "..."
+    certificateChain = "..."
+    certificateChainFile = file("/path/to/chain.crt")
   }
 }
 ```
@@ -773,17 +772,17 @@ intellijPlatform {
   // ...
 
   verifyPlugin {
-    cliPath.set(file("/path/to/plugin-verifier-cli.jar"))
-    freeArgs.set(listOf("foo", "bar"))
-    homeDirectory.set(file("/path/to/pluginVerifierHomeDirectory/"))
-    downloadDirectory.set(file("/path/to/pluginVerifierHomeDirectory/ides/"))
-    failureLevel.set(VerifyPluginTask.FailureLevel.ALL)
-    verificationReportsDirectory.set("build/reports/pluginVerifier")
-    verificationReportsFormats.set(VerifyPluginTask.VerificationReportsFormats.ALL)
-    externalPrefixes.set("com.example")
-    teamCityOutputFormat.set(false)
-    subsystemsToCheck.set(VerifyPluginTask.Subsystems.ALL)
-    ignoredProblemsFile.set(file("/path/to/ignoredProblems.txt"))
+    cliPath = file("/path/to/plugin-verifier-cli.jar")
+    freeArgs = listOf("foo", "bar")
+    homeDirectory = file("/path/to/pluginVerifierHomeDirectory/")
+    downloadDirectory = file("/path/to/pluginVerifierHomeDirectory/ides/")
+    failureLevel = VerifyPluginTask.FailureLevel.ALL
+    verificationReportsDirectory = "build/reports/pluginVerifier"
+    verificationReportsFormats = VerifyPluginTask.VerificationReportsFormats.ALL
+    externalPrefixes = "com.example"
+    teamCityOutputFormat = false
+    subsystemsToCheck = VerifyPluginTask.Subsystems.ALL
+    ignoredProblemsFile = file("/path/to/ignoredProblems.txt")
 
     ides {
       // ...

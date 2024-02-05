@@ -102,11 +102,14 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.intellij.vcs.log.VcsLogFileHistoryHandler.getSupportedVcs()` abstract method added
 : Must be implemented.
 
-`com.intellij.psi.util.PsiTreeUtilKt.getFirstLeaf(PsiElement)` method renamed to `com.intellij.psi.util.PsiTreeUtilKt.firstLeaf(PsiElement)`
+Method `com.intellij.psi.util.PsiTreeUtilKt.getFirstLeaf(PsiElement)` renamed to `com.intellij.psi.util.PsiTreeUtilKt.firstLeaf(PsiElement)`
+: Update code usages.
 
-`com.intellij.psi.util.PsiTreeUtilKt.getLastLeaf(PsiElement)` method renamed to `com.intellij.psi.util.PsiTreeUtilKt.lastLeaf(PsiElement)`
+Method `com.intellij.psi.util.PsiTreeUtilKt.getLastLeaf(PsiElement)` renamed to `com.intellij.psi.util.PsiTreeUtilKt.lastLeaf(PsiElement)`
+: Update code usages.
 
-`com.intellij.psi.util.PsiTreeUtilKt.getChildLeafs(PsiElement)` method renamed to `com.intellij.psi.util.PsiTreeUtilKt.childLeafs(PsiElement)`
+Method `com.intellij.psi.util.PsiTreeUtilKt.getChildLeafs(PsiElement)` renamed to `com.intellij.psi.util.PsiTreeUtilKt.childLeafs(PsiElement)`
+: Update code usages.
 
 `org.apache.tools` package removed
 : Please provide all necessary libraries in your plugin distribution.

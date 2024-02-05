@@ -7,6 +7,7 @@
 The _IntelliJ Platform Gradle Plugin_ introduces a top-level `intellijPlatform` extension.
 It consists of sections dedicated to the general Gradle plugin configuration, <path>plugin.xml</path> definition, publishing, signing, and verifying of the output plugin for IntelliJ-based IDEs.
 
+
 ## IntelliJ Platform
 {#intellijPlatform}
 
@@ -20,12 +21,21 @@ intellijPlatform {
   buildSearchableOptions.set(true)
   sandboxContainer.set("...")
 
-  pluginConfiguration { ... }
-  publishing { ... }
-  signing { ... }
-  verifyPlugin { ... }
+  pluginConfiguration {
+    // ...
+  }
+  publishing {
+    // ...
+  }
+  signing {
+    // ...
+  }
+  verifyPlugin {
+    // ...
+  }
 }
 ```
+
 
 ### instrumentCode
 {#intellijPlatform-instrumentCode}
@@ -39,7 +49,7 @@ The compiled code will be enhanced with:
 - nullability assertions
 - post-processing of forms created by IntelliJ GUI Designer
 
-Controls the execution of the [](tools_intellij_platform_gradle_plugin_tasks.md#instrumentCode) task.
+Controls the execution of the [`instrumentCode`](tools_intellij_platform_gradle_plugin_tasks.md#instrumentCode) task.
 
 {style="narrow"}
 Type
@@ -47,16 +57,13 @@ Type
 
 Default value
 : `true`
-
-See also:
-- [Tasks: `instrumentCode`](tools_intellij_platform_gradle_plugin_tasks.md#instrumentCode)
 
 
 ### buildSearchableOptions
 {#intellijPlatform-buildSearchableOptions}
 
 Builds an index of UI components (searchable options) for the plugin.
-Controls the execution of the [](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions) task.
+Controls the execution of the [`buildSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions) task.
 
 {style="narrow"}
 Type
@@ -66,7 +73,6 @@ Default value
 : `true`
 
 See also:
-- [Tasks: `buildSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions)
 - [Build Features: `noSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_build_features.md#noSearchableOptionsWarning)
 
 
@@ -80,7 +86,7 @@ Type
 : `DirectoryProperty`
 
 Default value
-: <path>build/<Sandbox.CONTAINER></path>
+: <path>[buildDirectory]/[Sandbox.CONTAINER]</path>
 
 See also:
 - [Tasks: `prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox)
@@ -91,13 +97,13 @@ See also:
 {#intellijPlatform-pluginConfiguration}
 
 Configures the plugin definition and stores in the `plugin.xml` file.
-Data provided to the `intellijPlatform.pluginConfiguration {}` extension is passed to the [](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml) task, which overrides the <path>plugin.xml</path> file with new values.
+Data provided to the `intellijPlatform.pluginConfiguration {}` extension is passed to the [`patchPluginXml`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml) task, which overrides the <path>plugin.xml</path> file with new values.
 
 **Example:**
 
 ```kotlin
 intellijPlatform {
-  ...
+  // ...
 
   pluginConfiguration {
     id.set("my-plugin-id")
@@ -110,9 +116,15 @@ intellijPlatform {
       """.trimIndent()
     )
 
-    productDescriptor { ... }
-    ideaVersion { ... }
-    vendor { ... }
+    productDescriptor {
+      // ...
+    }
+    ideaVersion {
+      // ...
+    }
+    vendor {
+      // ...
+    }
   }
 }
 ```
@@ -130,7 +142,7 @@ The plugin's unique identifier.
 This should mirror the structure of fully qualified Java packages and must remain distinct from the IDs of existing plugins.
 This ID is a technical descriptor used not only within the IDE, but also on [JetBrains Marketplace](https://plugins.jetbrains.com/).
 
-Please restrict input to characters, numbers, and `.`/`-`/`_` symbols , and aim for a concise length.
+Please restrict input to characters, numbers, and `.`/`-`/`_` symbols, and aim for a concise length.
 
 The entered value will populate the `<id>` element.
 
@@ -166,7 +178,7 @@ The plugin version, presented in the Plugins settings dialog and on its JetBrain
 
 For plugins uploaded to the JetBrains Marketplace, semantic versioning must be adhered to.
 
-The specified value will be used as an `<version>` element.
+The specified value will be used as a `<version>` element.
 
 {style="narrow"}
 Type
@@ -225,10 +237,10 @@ A part of the [](#intellijPlatform-pluginConfiguration) which describes the `pro
 
 ```kotlin
 intellijPlatform {
-  ...
+  // ...
 
   pluginConfiguration {
-    ...
+    // ...
 
     productDescriptor {
       code.set("MY_CODE")
@@ -242,6 +254,7 @@ intellijPlatform {
 
 See also:
 - [How to add required parameters for paid plugins](https://plugins.jetbrains.com/docs/marketplace/add-required-parameters.html)
+
 
 ### code
 {#intellijPlatform-pluginConfiguration-productDescriptor-code}
@@ -321,10 +334,10 @@ A part of the [](#intellijPlatform-pluginConfiguration) which describes the `ide
 
 ```kotlin
 intellijPlatform {
-  ...
+  // ...
 
   pluginConfiguration {
-    ...
+    // ...
 
     ideaVersion {
       sinceBuild.set("241")
@@ -333,6 +346,7 @@ intellijPlatform {
   }
 }
 ```
+
 
 ### sinceBuild
 {#intellijPlatform-pluginConfiguration-ideaVersion-sinceBuild}
@@ -387,10 +401,10 @@ A part of the [](#intellijPlatform-pluginConfiguration) which describes the `ven
 
 ```kotlin
 intellijPlatform {
-  ...
+  // ...
 
   pluginConfiguration {
-    ...
+    // ...
 
     vendor {
       name.set("JetBrains")
@@ -460,7 +474,7 @@ All values are passed to the [](tools_intellij_platform_gradle_plugin_tasks.md#p
 
 ```kotlin
 intellijPlatform {
-  ...
+  // ...
 
   publishing {
     host.set("")
@@ -559,10 +573,34 @@ See also:
 
 Plugin signing configuration.
 
+**Example:**
+
+```kotlin
+intellijPlatform {
+  // ...
+
+  signing {
+    cliPath.set(file("/path/to/marketplace-zip-signer-cli.jar"))
+    keyStore.set(file("/path/to/keyStore.ks"))
+    keyStorePassword.set("...")
+    keyStoreKeyAlias.set("...")
+    keyStoreType.set("...")
+    keyStoreProviderName.set("...")
+    privateKey.set("...")
+    privateKeyFile.set(file("/path/to/private.pem"))
+    password.set("...")
+    certificateChain.set("...")
+    certificateChainFile.set(file("/path/to/chain.crt"))
+  }
+}
+```
+
 See also:
 - [](plugin_signing.md)
+- [Tasks: `signPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin)
 - [Task Awares: `SigningAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SigningAware)
 - [Marketplace ZIP Signer](https://github.com/JetBrains/marketplace-zip-signer)
+
 
 ### cliPath
 {#intellijPlatform-signing-cliPath}
@@ -572,6 +610,9 @@ A path to the local Marketplace ZIP Signer CLI tool to be used.
 {style="narrow"}
 Type
 : `RegularFileProperty`
+
+See also:
+- [Task Awares: `SigningAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SigningAware)
 
 
 ### keyStore
@@ -584,6 +625,9 @@ Refers to `ks` CLI option.
 Type
 : `Property<String>`
 
+See also:
+- [Tasks: `signPlugin.keyStore`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-keyStore)
+
 
 ### keyStorePassword
 {#intellijPlatform-signing-keyStorePassword}
@@ -594,6 +638,9 @@ Refers to `ks-pass` CLI option.
 {style="narrow"}
 Type
 : `Property<String>`
+
+See also:
+- [Tasks: `signPlugin.keyStorePassword`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-keyStorePassword)
 
 
 ### keyStoreKeyAlias
@@ -606,6 +653,9 @@ Refers to `ks-key-alias` CLI option.
 Type
 : `Property<String>`
 
+See also:
+- [Tasks: `signPlugin.keyStoreKeyAlias`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-keyStoreKeyAlias)
+
 
 ### keyStoreType
 {#intellijPlatform-signing-keyStoreType}
@@ -616,6 +666,9 @@ Refers to `ks-type` CLI option.
 {style="narrow"}
 Type
 : `Property<String>`
+
+See also:
+- [Tasks: `signPlugin.keyStoreType`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-keyStoreType)
 
 
 ### keyStoreProviderName
@@ -628,6 +681,9 @@ Refers to `ks-provider-name` CLI option.
 Type
 : `Property<String>`
 
+See also:
+- [Tasks: `signPlugin.keyStoreProviderName`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-keyStoreProviderName)
+
 
 ### privateKey
 {#intellijPlatform-signing-privateKey}
@@ -635,9 +691,14 @@ Type
 Encoded private key in the PEM format.
 Refers to `key` CLI option.
 
+Takes precedence over the [](#intellijPlatform-signing-privateKeyFile) property.
+
 {style="narrow"}
 Type
 : `Property<String>`
+
+See also:
+- [Tasks: `signPlugin.privateKey`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-privateKey)
 
 
 ### privateKeyFile
@@ -650,6 +711,9 @@ Refers to `key-file` CLI option.
 Type
 : `RegularFileProperty`
 
+See also:
+- [Tasks: `signPlugin.privateKeyFile`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-privateKeyFile)
+
 
 ### password
 {#intellijPlatform-signing-password}
@@ -661,6 +725,9 @@ Refers to `key-pass` CLI option.
 Type
 : `Property<String>`
 
+See also:
+- [Tasks: `signPlugin.password`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-password)
+
 
 ### certificateChain
 {#intellijPlatform-signing-certificateChain}
@@ -669,9 +736,14 @@ A string containing X509 certificates.
 The first certificate from the chain will be used as a certificate authority (CA).
 Refers to `cert` CLI option.
 
+Takes precedence over the [](#intellijPlatform-signing-certificateChainFile) property.
+
 {style="narrow"}
 Type
 : `Property<String>`
+
+See also:
+- [Tasks: `signPlugin.certificateChain`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-certificateChain)
 
 
 ### certificateChainFile
@@ -685,9 +757,262 @@ Refers to `cert-file` CLI option.
 Type
 : `RegularFileProperty`
 
+See also:
+- [Tasks: `signPlugin.certificateChainFile`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-certificateChainFile)
+
 
 ## Verify Plugin
 {#intellijPlatform-verifyPlugin}
+
+IntelliJ Plugin Verifier CLI tool configuration.
+
+**Example:**
+
+```kotlin
+intellijPlatform {
+  // ...
+
+  verifyPlugin {
+    cliPath.set(file("/path/to/plugin-verifier-cli.jar"))
+    freeArgs.set(listOf("foo", "bar"))
+    homeDirectory.set(file("/path/to/pluginVerifierHomeDirectory/"))
+    downloadDirectory.set(file("/path/to/pluginVerifierHomeDirectory/ides/"))
+    failureLevel.set(VerifyPluginTask.FailureLevel.ALL)
+    verificationReportsDirectory.set("build/reports/pluginVerifier")
+    verificationReportsFormats.set(VerifyPluginTask.VerificationReportsFormats.ALL)
+    externalPrefixes.set("com.example")
+    teamCityOutputFormat.set(false)
+    subsystemsToCheck.set(VerifyPluginTask.Subsystems.ALL)
+    ignoredProblemsFile.set(file("/path/to/ignoredProblems.txt"))
+
+    ides {
+      // ...
+    }
+  }
+}
+```
+
+See also:
+- [](verifying_plugin_compatibility.md)
+- [Tasks: `verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin)
+- [Task Awares: `PluginVerifierAware`](tools_intellij_platform_gradle_plugin_task_awares.md#PluginVerifierAware)
+- [](#intellijPlatform-verifyPlugin-ides)
+- [IntelliJ Plugin Verifier CLI](https://github.com/JetBrains/intellij-plugin-verifier)
+
+
+### cliPath
+{#intellijPlatform-verifyPlugin-cliPath}
+
+A path to the local IntelliJ Plugin Verifier CLI tool to be used.
+
+{style="narrow"}
+Type
+: `RegularFileProperty`
+
+See also:
+- [Task Awares: `PluginVerifierAware`](tools_intellij_platform_gradle_plugin_task_awares.md#PluginVerifierAware)
+
+
+### downloadDirectory
+{#intellijPlatform-verifyPlugin-downloadDirectory}
+
+The path to the directory where IDEs used for the verification will be downloaded.
+
+{style="narrow"}
+Type
+: `DirectoryProperty`
+
+Default value
+: <path>[`homeDirectory`](#intellijPlatform-verifyPlugin-homeDirectory)/ides</path>
+
+
+### failureLevel
+{#intellijPlatform-verifyPlugin-failureLevel}
+
+Defines the verification level at which the task should fail if any reported issue matches.
+
+{style="narrow"}
+Type
+: `ListProperty<FailureLevel>`
+
+Default value
+: [`FailureLevel.COMPATIBILITY_PROBLEMS`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel)
+
+See also:
+- [Tasks: `verifyPlugin.failureLevel`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-failureLevel)
+
+
+### externalPrefixes
+{#intellijPlatform-verifyPlugin-externalPrefixes}
+
+The list of class prefixes from the external libraries.
+The Plugin Verifier will not report `No such class` for classes of these packages.
+
+{style="narrow"}
+Type
+: `ListProperty<String>`
+
+See also:
+- [Tasks: `verifyPlugin.externalPrefixes`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-externalPrefixes)
+
+
+### freeArgs
+{#intellijPlatform-verifyPlugin-freeArgs}
+
+The list of free arguments is passed directly to the IntelliJ Plugin Verifier CLI tool.
+
+They can be used in addition to the arguments that are provided by dedicated options.
+
+{style="narrow"}
+Type
+: `ListProperty<String>`
+
+See also:
+- [Tasks: `verifyPlugin.freeArgs`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-freeArgs)
+
+
+### homeDirectory
+{#intellijPlatform-verifyPlugin-homeDirectory}
+
+Retrieve the Plugin Verifier home directory used for storing downloaded IDEs.
+Following home directory resolving method is taken directly from the Plugin Verifier to keep the compatibility.
+
+{style="narrow"}
+Type
+: `DirectoryProperty`
+
+Default value
+: - Directory specified with `plugin.verifier.home.dir` system property
+  - Directory specified with `XDG_CACHE_HOME` environment variable
+  - <path>~/.cache/pluginVerifier</path>
+  - <path>[buildDirectory]/tmp/pluginVerifier</path>
+
+
+### ignoredProblemsFile
+{#intellijPlatform-verifyPlugin-ignoredProblemsFile}
+
+A file that contains a list of problems that will be ignored in a report.
+
+{style="narrow"}
+Type
+: `RegularFileProperty`
+
+See also:
+- [Tasks: `verifyPlugin.ignoredProblemsFile`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-ignoredProblemsFile)
+
+
+### subsystemsToCheck
+{#intellijPlatform-verifyPlugin-subsystemsToCheck}
+
+Specifies which subsystems of IDE should be checked.
+
+{style="narrow"}
+Type
+: `Subsystems`
+
+Default value
+: [`Subsystems.ALL`](tools_intellij_platform_gradle_plugin_types.md#Subsystems)
+
+See also:
+- [Tasks: `verifyPlugin.subsystemsToCheck`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-subsystemsToCheck)
+
+
+### teamCityOutputFormat
+{#intellijPlatform-verifyPlugin-teamCityOutputFormat}
+
+A flag that controls the output format.
+If set to `true`, the TeamCity compatible output will be returned to stdout.
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: `false`
+
+See also:
+- [Tasks: `verifyPlugin.teamCityOutputFormat`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-teamCityOutputFormat)
+
+
+### verificationReportsDirectory
+{#intellijPlatform-verifyPlugin-verificationReportsDirectory}
+
+The path to the directory where verification reports will be saved.
+
+{style="narrow"}
+Type
+: `DirectoryProperty`
+
+Default value
+: <path>[buildDirectory]/reports/pluginVerifier</path>
+
+See also:
+- [Tasks: `verifyPlugin.verificationReportsDirectory`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-verificationReportsDirectory)
+
+
+### verificationReportsFormats
+{#intellijPlatform-verifyPlugin-verificationReportsFormats}
+
+The output formats of the verification reports.
+
+{style="narrow"}
+Type
+: `ListProperty<VerificationReportsFormats>`
+
+Default value
+: [`VerificationReportsFormats.PLAIN`](tools_intellij_platform_gradle_plugin_types.md#VerificationReportsFormats), [`FailureVerificationReportsFormats`](tools_intellij_platform_gradle_plugin_types.md#VerificationReportsFormats)
+
+See also:
+- [Tasks: `verifyPlugin.verificationReportsFormats`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-verificationReportsFormats)
+
+
+## Verify Plugin IDEs
+{#intellijPlatform-verifyPlugin-ides}
+
+The extension to define the IDEs to be used along with the IntelliJ Plugin Verifier CLI tool for the binary plugin verification.
+
+It provides a set of helpers which add relevant entries to the configuration, which later is used to resolve IntelliJ-based IDE binary releases.
+
+**Example:**
+
+```kotlin
+import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
+
+intellijPlatform {
+  // ...
+
+  verifyPlugin {
+    // ...
+
+    ides {
+      ide(IntelliJPlatformType.PhpStorm)
+      ide(IntelliJPlatformType.RustRover, "2023.3")
+      localIde(file("/path/to/ide/"))
+      recommended()
+      select {
+        types = listOf(IntelliJPlatformType.PhpStorm)
+        channels = listOf(ProductRelease.Channel.RELEASE)
+        sinceBuild = "232"
+        untilBuild = "241.*"
+      }
+    }
+  }
+}
+```
+
+See also:
+- [](verifying_plugin_compatibility.md)
+- [Tasks: `verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin)
+- [Types: `IntelliJPlatformType`](tools_intellij_platform_gradle_plugin_types.md#IntelliJPlatformType)
+- [Types: `ProductRelease.Channel`](tools_intellij_platform_gradle_plugin_types.md#ProductRelease-Channel)
+- [Types: `ProductReleasesValueSource.FilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesValueSource-FilterParameters)
+
+| Function                               | Description                                                                                                                                                                                         |
+|----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `ide(type, version)` `ide(definition)` | Adds a dependency to a binary IDE release to be used for testing with the IntelliJ Plugin Verifier.                                                                                                 |
+| `localIde(localPath)`                  | Adds the local IDE to be used for testing with the IntelliJ Plugin Verifier.                                                                                                                        |
+| `recommended()`                        | Retrieves matching IDEs using the default configuration based on the currently used IntelliJ Platform and applies them for IntelliJ Platform Verifier using the `ide` helper method.                |
+| `select(configure)`                    | Retrieves matching IDEs using custom [`ProductReleasesValueSource.FilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesValueSource-FilterParameters) filter parameters. |
 
 
 <include from="snippets.md" element-id="missingContent"/>

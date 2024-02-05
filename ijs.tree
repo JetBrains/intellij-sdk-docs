@@ -412,6 +412,7 @@
       <toc-element topic="tools_intellij_platform_gradle_plugin_dependencies_extension.md"/>
       <toc-element topic="tools_intellij_platform_gradle_plugin_tasks.md"/>
       <toc-element topic="tools_intellij_platform_gradle_plugin_task_awares.md"/>
+      <toc-element topic="tools_intellij_platform_gradle_plugin_types.md"/>
       <toc-element topic="tools_intellij_platform_gradle_plugin_build_features.md"/>
       <toc-element topic="tools_intellij_platform_gradle_plugin_migration.md"/>
     </toc-element>

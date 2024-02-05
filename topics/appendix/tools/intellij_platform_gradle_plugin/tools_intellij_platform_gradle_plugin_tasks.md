@@ -7,6 +7,34 @@
 ## buildPlugin
 {#buildPlugin}
 
+This class represents a task for building a plugin and preparing a ZIP archive for deployment.
+
+It uses the content produced by [`prepareSandbox`](#prepareSandbox) and [`jarSearchableOptions`](#jarSearchableOptions) tasks as an input.
+
+
+### archiveBaseName
+{#buildPlugin-archiveBaseName}
+
+{style="narrow"}
+Type
+: `Property<String>`
+
+Default value
+: [`prepareSandbox.pluginName`](#prepareSandbox-pluginName)
+
+
+### archiveFile
+{#buildPlugin-archiveFile}
+
+The archive file which represents the output file produced by the task.
+
+{style="narrow"}
+Type
+: `RegularFileProperty`
+
+Default value
+: [`buildPlugin.archiveFile`](#buildPlugin-archiveFile)
+
 
 ## buildSearchableOptions
 {#buildSearchableOptions}
@@ -26,6 +54,76 @@ See also:
 
 ## initializeIntelliJPlatformPlugin
 {#initializeIntelliJPlatformPlugin}
+
+Initializes the IntelliJ Platform Gradle Plugin and performs various checks, like if the plugin is up-to-date.
+
+### offline
+{#initializeIntelliJPlatformPlugin-offline}
+
+Determines if the operation is running in offline mode.
+
+Depends on Gradle start parameters
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: `StartParameter.isOffline`
+
+See also:
+- [StartParameter](https://docs.gradle.org/current/javadoc/org/gradle/StartParameter.html)
+- [Command Line Execution Options](https://docs.gradle.org/current/userguide/command_line_interface.html#sec:command_line_execution_options)
+
+
+### selfUpdateCheck
+{#initializeIntelliJPlatformPlugin-selfUpdateCheck}
+
+Represents the property for checking if self-update is enabled.
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: [Build Features: `selfUpdateCheck`](tools_intellij_platform_gradle_plugin_build_features.md#selfUpdateCheck)
+
+
+### selfUpdateLock
+{#initializeIntelliJPlatformPlugin-selfUpdateLock}
+
+Represents a lock file used to limit the plugin version checks in time.
+If a file is absent, and other conditions are met, the version check is performed.
+
+{style="narrow"}
+Type
+: `RegularFileProperty`
+
+
+### coroutinesJavaAgent
+{#initializeIntelliJPlatformPlugin-coroutinesJavaAgent}
+
+Java Agent file for the Coroutines library, which is required to enable coroutines debugging.
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: `[buildDirectory]/tmp/initializeIntelliJPlatformPlugin/coroutines-javaagent.jar`
+
+See also:
+- [Task Awares: `CoroutinesJavaAgentAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CoroutinesJavaAgentAware)
+
+
+### pluginVersion
+{#initializeIntelliJPlatformPlugin-pluginVersion}
+
+Represents the current version of the plugin.
+
+{style="narrow"}
+Type
+: `Property<String>`
 
 
 ## instrumentCode
@@ -82,7 +180,7 @@ Type
 : `RegularFileProperty`
 
 Default value
-: <path>build/tmp/patchPluginXml/plugin.xml</path>
+: <path>[buildDirectory]/tmp/patchPluginXml/plugin.xml</path>
 
 ### pluginId
 {#patchPluginXml-pluginId}
@@ -104,7 +202,6 @@ Default value
 : [`intellijPlatform.pluginConfiguration.id`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-id)
 
 See also:
-- [Extension: `intellijPlatform.pluginConfiguration.id`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-id)
 - [Plugin Configuration File: `id`](plugin_configuration_file.md#idea-plugin__id)
 
 
@@ -123,7 +220,6 @@ Default value
 : [`intellijPlatform.pluginConfiguration.name`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-name)
 
 See also:
-- [Extension: `intellijPlatform.pluginConfiguration.name`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-name)
 - [Plugin Configuration File: `name`](plugin_configuration_file.md#idea-plugin__name)
 
 
@@ -144,7 +240,6 @@ Default value
 : [`intellijPlatform.pluginConfiguration.version`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-version)
 
 See also:
-- [Extension: `intellijPlatform.pluginConfiguration.version`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-version)
 - [Plugin Configuration File: `version`](plugin_configuration_file.md#idea-plugin__version)
 
 
@@ -166,7 +261,6 @@ Default value
 : [`intellijPlatform.pluginConfiguration.description`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-description)
 
 See also:
-- [Extension: `intellijPlatform.pluginConfiguration.description`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-description)
 - [Plugin Configuration File: `description`](plugin_configuration_file.md#idea-plugin__description)
 
 
@@ -189,7 +283,6 @@ Default value
 : [`intellijPlatform.pluginConfiguration.changeNotes`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-changeNotes)
 
 See also:
-- [Extension: `intellijPlatform.pluginConfiguration.changeNotes`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-changeNotes)
 - [Plugin Configuration File: `change-notes`](plugin_configuration_file.md#idea-plugin__change-notes)
 
 
@@ -209,7 +302,6 @@ Default value
 : [`intellijPlatform.pluginConfiguration.productDescriptor.code`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-productDescriptor-code)
 
 See also:
-- [Extension: `intellijPlatform.pluginConfiguration.productDescriptor.code`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-productDescriptor-code)
 - [Plugin Configuration File: `product-descriptor`](plugin_configuration_file.md#idea-plugin__product-descriptor)
 
 
@@ -228,7 +320,6 @@ Default value
 : [`intellijPlatform.pluginConfiguration.productDescriptor.releaseDate`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-productDescriptor-releaseDate)
 
 See also:
-- [Extension: `intellijPlatform.pluginConfiguration.productDescriptor.releaseDate`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-productDescriptor-releaseDate)
 - [Plugin Configuration File: `product-descriptor`](plugin_configuration_file.md#idea-plugin__product-descriptor)
 
 
@@ -247,7 +338,6 @@ Default value
 : [`intellijPlatform.pluginConfiguration.productDescriptor.releaseVersion`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-productDescriptor-releaseVersion)
 
 See also:
-- [Extension: `intellijPlatform.pluginConfiguration.productDescriptor.releaseVersion`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-productDescriptor-releaseVersion)
 - [Plugin Configuration File: `product-descriptor`](plugin_configuration_file.md#idea-plugin__product-descriptor)
 
 
@@ -269,7 +359,6 @@ Default value
 : `false`
 
 See also:
-- [Extension: `intellijPlatform.pluginConfiguration.productDescriptor.optional`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-productDescriptor-optional)
 - [Plugin Configuration File: `product-descriptor`](plugin_configuration_file.md#idea-plugin__product-descriptor)
 
 
@@ -288,7 +377,6 @@ Default value
 : [`intellijPlatform.pluginConfiguration.ideaVersion.sinceBuild`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-ideaVersion-sinceBuild)
 
 See also:
-- [Extension: `intellijPlatform.pluginConfiguration.ideaVersion.sinceBuild`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-ideaVersion-sinceBuild)
 - [Plugin Configuration File: `idea-version`](plugin_configuration_file.md#idea-plugin__idea-version)
 
 
@@ -308,7 +396,6 @@ Default value
 : [`intellijPlatform.pluginConfiguration.ideaVersion.untilBuild`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-ideaVersion-untilBuild)
 
 See also:
-- [Extension: `intellijPlatform.pluginConfiguration.ideaVersion.untilBuild`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-ideaVersion-untilBuild)
 - [Plugin Configuration File: `idea-version`](plugin_configuration_file.md#idea-plugin__idea-version)
 
 
@@ -327,7 +414,6 @@ Default value
 : [`intellijPlatform.pluginConfiguration.vendor.name`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-vendor-name)
 
 See also:
-- [Extension: `intellijPlatform.pluginConfiguration.vendor.name`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-vendor-name)
 - [Plugin Configuration File: `vendor`](plugin_configuration_file.md#idea-plugin__vendor)
 
 
@@ -346,7 +432,6 @@ Default value
 : [`intellijPlatform.pluginConfiguration.vendor.email`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-vendor-email)
 
 See also:
-- [Extension: `intellijPlatform.pluginConfiguration.vendor.email`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-vendor-email)
 - [Plugin Configuration File: `vendor`](plugin_configuration_file.md#idea-plugin__vendor)
 
 
@@ -365,16 +450,86 @@ Default value
 : [`intellijPlatform.pluginConfiguration.vendor.url`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-vendor-url)
 
 See also:
-- [Extension: `intellijPlatform.pluginConfiguration.vendor.url`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-vendor-url)
 - [Plugin Configuration File: `vendor`](plugin_configuration_file.md#idea-plugin__vendor)
 
 
 ## prepareSandbox
 {#prepareSandbox}
 
+Prepares a sandbox environment with the installed plugin and its dependencies.
+
+The sandbox directory is required to run a guest IDE and tests in isolation from other instances, like when multiple IntelliJ Platforms are used for testing with [`runIde`](#runIde), [`testIde`](#testIde), [`testIdeUi`](#testIdeUi), or [`testIdePerformance`](#testIdePerformance) tasks.
+
+To fully utilize the sandbox capabilities in a task, make it extend the [`SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware) interface.
+
 See also:
 - [Extension: `intellijPlatform.sandboxContainer`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-sandboxContainer)
-- [Task Awares: `SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware)
+
+
+### defaultDestinationDirectory
+{#prepareSandbox-defaultDestinationDirectory}
+
+Default sandbox destination directory to where the plugin files will be copied into.
+
+{style="narrow"}
+Type
+: `DirectoryProperty`
+
+Default value
+: [`SandboxAware.sandboxPluginsDirectory`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware-sandboxPluginsDirectory)
+
+
+### pluginName
+{#prepareSandbox-pluginName}
+
+The name of the plugin.
+
+{style="narrow"}
+Type
+: `String`
+
+Default value
+: [`intellijPlatform.pluginConfiguration.name`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-name)
+
+
+### pluginJar
+{#prepareSandbox-pluginJar}
+
+The output of `Jar` task.
+The proper `Jar.archiveFile` is picked depending on if code instrumentation is enabled.
+
+{style="narrow"}
+Type
+: `RegularFileProperty`
+
+Default value
+: `Jar.archiveFile`
+
+See also:
+- [Extension: `intellijPlatform.instrumentCode`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-instrumentCode)
+
+
+### pluginsClasspath
+{#prepareSandbox-pluginsClasspath}
+
+List of dependencies on external plugins resolved from the `intellijPlatformPluginsExtracted` configuration.
+
+{style="narrow"}
+Type
+: `ConfigurableFileCollection`
+
+See also:
+- [Dependencies Extension](tools_intellij_platform_gradle_plugin_dependencies_extension.md)
+
+
+### runtimeClasspath
+{#prepareSandbox-runtimeClasspath}
+
+Dependencies removed with the `runtimeClasspath` configuration.
+
+{style="narrow"}
+Type
+: `ConfigurableFileCollection`
 
 
 ## printBundledPlugins
@@ -401,19 +556,17 @@ See also:
 
 ZIP archive to be published to the remote repository.
 
-By default, it uses an output `archiveFile` of the [`signPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin) task if plugin signing is configured, otherwise [`buildPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#buildPlugin).
+By default, it uses an output `archiveFile` of the [`signPlugin`](#signPlugin) task if plugin signing is configured, otherwise [`buildPlugin`](#buildPlugin).
 
 {style="narrow"}
 Type
-: `Property<RegularFileProperty>`
+: `RegularFileProperty`
 
 Default value
-: [`signPlugin.archiveFile`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-archiveFile) or [`buildPlugin.archiveFile`](tools_intellij_platform_gradle_plugin_tasks.md#buildPlugin-archiveFile)
+: [`signPlugin.archiveFile`](#signPlugin-archiveFile) or [`buildPlugin.archiveFile`](#buildPlugin-archiveFile)
 
 See also:
 - [Extension: `intellijPlatform.signing`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing)
-- [Tasks: `signPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin)
-- [Tasks: `buildPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#buildPlugin)
 
 
 ### host
@@ -427,9 +580,6 @@ Type
 
 Default value
 : [`intellijPlatform.publishing.host`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-host)
-
-See also:
-- [Extension `intellijPlatform.publishing.host`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-host)
 
 
 ### token
@@ -447,9 +597,6 @@ Required
 Default value
 : [`intellijPlatform.publishing.token`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-token)
 
-See also:
-- [Extension: `intellijPlatform.publishing.token`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-token)
-
 
 ### channel
 {#publishPlugin-channel}
@@ -462,9 +609,6 @@ Type
 
 Default value
 : [`intellijPlatform.publishing.channel`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-channel)
-
-See also:
-- [Extension: `intellijPlatform.publishing.channel`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-channel)
 
 
 ### hidden
@@ -480,7 +624,6 @@ Default value
 : [`intellijPlatform.publishing.hidden`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-hidden)
 
 See also:
-- [Extension: `intellijPlatform.publishing.hidden`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-hidden)
 - [Hidden release](https://plugins.jetbrains.com/docs/marketplace/hidden-plugin.html)
 
 
@@ -496,12 +639,6 @@ Type
 Default value
 : [`intellijPlatform.publishing.toolboxEnterprise`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-toolboxEnterprise)
 
-See also:
-- [Extension: `intellijPlatform.publishing.toolboxEnterprise`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-toolboxEnterprise)
-
-
-## runIdePerformanceTest
-{#runIdePerformanceTest}
 
 > Not implemented.
 >
@@ -523,11 +660,11 @@ See also:
 ## signPlugin
 {#signPlugin}
 
-Signs the ZIP archive with the provided key using [Marketplace ZIP Signer](https://github.com/JetBrains/marketplace-zip-signer) library.
+Signs the ZIP archive with the provided key using the [Marketplace ZIP Signer](https://github.com/JetBrains/marketplace-zip-signer) library.
 
-To sign the plugin before publishing to [JetBrains Marketplace](https://plugins.jetbrains.com) with the [SignPluginTask] task, it is required to provide a certificate chain and a private key with its password using `signPlugin { ... }` Plugin Signing DSL.
+To sign the plugin before publishing to [JetBrains Marketplace](https://plugins.jetbrains.com) with the [`signPlugin`](#signPlugin) task, it is required to provide a certificate chain and a private key with its password using [`intellijPlatform.signing`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing) extension.
 
-As soon as [privateKey] (or [privateKeyFile]) and [certificateChain] (or [certificateChainFile]) properties are specified, the task will be executed automatically right before the [PublishPluginTask] task.
+As soon as [`privateKey`](#signPlugin-privateKey) (or [`privateKeyFile`](#signPlugin-privateKeyFile)) and [`certificateChain`](#signPlugin-certificateChain) (or [`certificateChainFile`](#signPlugin-certificateChainFile) properties are specified, the task will be executed automatically right before the [`publishPlugin`](#publishPlugin) task.
 
 For more details, see [Plugin Signing](https://plugins.jetbrains.com/docs/intellij/plugin-signing.html) article.
 
@@ -546,9 +683,6 @@ Type
 
 Default value
 : [`buildPlugin.archiveFile`](#buildPlugin-archiveFile)
-
-See also:
-- [Tasks: `buildPlugin.archiveFile`](#buildPlugin-archiveFile)
 
 
 ### signedArchiveFile
@@ -581,9 +715,6 @@ Type
 Default value
 : [`intellijPlatform.signing.keyStore`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStore)
 
-See also:
-- [Extension: `intellijPlatform.signing.keyStore`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStore)
-
 
 ### keyStorePassword
 {#signPlugin-keyStorePassword}
@@ -597,9 +728,6 @@ Type
 
 Default value
 : [`intellijPlatform.signing.keyStorePassword`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStorePassword)
-
-See also:
-- [Extension: `intellijPlatform.signing.keyStorePassword`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStorePassword)
 
 
 ### keyStoreKeyAlias
@@ -615,9 +743,6 @@ Type
 Default value
 : [`intellijPlatform.signing.keyStoreKeyAlias`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStoreKeyAlias)
 
-See also:
-- [Extension: `intellijPlatform.signing.keyStoreKeyAlias`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStoreKeyAlias)
-
 
 ### keyStoreType
 {#signPlugin-keyStoreType}
@@ -631,9 +756,6 @@ Type
 
 Default value
 : [`intellijPlatform.signing.keyStoreType`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStoreType)
-
-See also:
-- [Extension: `intellijPlatform.signing.keyStoreType`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStoreType)
 
 
 ### keyStoreProviderName
@@ -649,9 +771,6 @@ Type
 Default value
 : [`intellijPlatform.signing.keyStoreProviderName`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStoreProviderName)
 
-See also:
-- [Extension: `intellijPlatform.signing.keyStoreProviderName`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStoreProviderName)
-
 
 ### privateKey
 {#signPlugin-privateKey}
@@ -665,9 +784,6 @@ Type
 
 Default value
 : [`intellijPlatform.signing.privateKey`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-privateKey)
-
-See also:
-- [Extension: `intellijPlatform.signing.privateKey`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-privateKey)
 
 
 ### privateKeyFile
@@ -683,9 +799,6 @@ Type
 Default value
 : [`intellijPlatform.signing.privateKeyFile`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-privateKeyFile)
 
-See also:
-- [Extension: `intellijPlatform.signing.privateKeyFile`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-privateKeyFile)
-
 
 ### password
 {#signPlugin-password}
@@ -699,9 +812,6 @@ Type
 
 Default value
 : [`intellijPlatform.signing.password`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-password)
-
-See also:
-- [Extension: `intellijPlatform.signing.password`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-password)
 
 
 ### certificateChain
@@ -718,9 +828,6 @@ Type
 Default value
 : [`intellijPlatform.signing.certificateChain`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-certificateChain)
 
-See also:
-- [Extension: `intellijPlatform.signing.certificateChain`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-certificateChain)
-
 
 ### certificateChainFile
 {#signPlugin-certificateChainFile}
@@ -736,12 +843,17 @@ Type
 Default value
 : [`intellijPlatform.signing.certificateChainFile`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-certificateChainFile)
 
-See also:
-- [Extension: `intellijPlatform.signing.certificateChainFile`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-certificateChainFile)
-
 
 ## testIde
 {#testIde}
+
+
+## testIdePerformance
+{#testIdePerformance}
+
+> Not implemented.
+>
+{style="warning"}
 
 
 ## testIdeUi
@@ -766,6 +878,170 @@ See also:
 
 ## verifyPlugin
 {#verifyPlugin}
+
+Runs the IntelliJ Plugin Verifier CLI tool to check the binary compatibility with specified IDE builds.
+
+See also:
+- [Awares: `PluginVerifierAware`](tools_intellij_platform_gradle_plugin_task_awares.md#PluginVerifierAware)
+- [Extension: `intellijPlatform.verifyPlugin`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin)
+- [Types: `FailureLevel`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel)
+- [Types: `Subsystems`](tools_intellij_platform_gradle_plugin_types.md#Subsystems)
+- [Types: `VerificationReportsFormats`](tools_intellij_platform_gradle_plugin_types.md#VerificationReportsFormats)
+- [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier)
+- [Verifying Plugin Compatibility](https://plugins.jetbrains.com/docs/intellij/verifying-plugin-compatibility.html)
+
+
+### ides
+{#verifyPlugin-ides}
+
+Holds a reference to IntelliJ Platform IDEs which will be used by the IntelliJ Plugin Verifier CLI tool for the binary plugin verification.
+
+The list of IDEs is controlled with the [`intellijPlatform.verifyPlugin.ides`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin-ides) extension.
+
+{style="narrow"}
+Type
+: `ConfigurableFileCollection`
+
+
+### archiveFile
+{#verifyPlugin-archiveFile}
+
+Input ZIP archive file of the plugin to verify.
+If empty, the task will be skipped.
+
+{style="narrow"}
+Type
+: `RegularFileProperty`
+
+Default value
+: [`buildPlugin.archiveFile`](#buildPlugin-archiveFile)
+
+
+### externalPrefixes
+{#verifyPlugin-externalPrefixes}
+
+The list of class prefixes from the external libraries.
+The Plugin Verifier will not report `No such class` for classes of these packages.
+
+{style="narrow"}
+Type
+: `ListProperty<String>`
+
+Default value
+: [`intellijPlatform.verifyPlugin.externalPrefixes`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin-externalPrefixes)
+
+
+### failureLevel
+{#verifyPlugin-failureLevel}
+
+Defines the verification level at which the task should fail if any reported issue matches.
+
+{style="narrow"}
+Type
+: [`ListProperty<FailureLevel>`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel)
+
+Default value
+: [`intellijPlatform.verifyPlugin.failureLevel`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin-failureLevel)
+
+
+### freeArgs
+{#verifyPlugin-freeArgs}
+
+The list of free arguments is passed directly to the IntelliJ Plugin Verifier CLI tool.
+
+They can be used in addition to the arguments that are provided by dedicated options.
+
+{style="narrow"}
+Type
+: `ListProperty<String>`
+
+Default value
+: [`intellijPlatform.verifyPlugin.freeArgs`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin-freeArgs)
+
+
+### ignoredProblemsFile
+{#verifyPlugin-ignoredProblemsFile}
+
+A file that contains a list of problems that will be ignored in a report.
+
+{style="narrow"}
+Type
+: `RegularFileProperty`
+
+Default value
+: [`intellijPlatform.verifyPlugin.ignoredProblemsFile`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin-ignoredProblemsFile)
+
+
+### offline
+{#verifyPlugin-offline}
+
+Determines if the operation is running in offline mode.
+
+Depends on Gradle start parameters
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: `StartParameter.isOffline`
+
+See also:
+- [StartParameter](https://docs.gradle.org/current/javadoc/org/gradle/StartParameter.html)
+- [Command Line Execution Options](https://docs.gradle.org/current/userguide/command_line_interface.html#sec:command_line_execution_options)
+
+
+### subsystemsToCheck
+{#verifyPlugin-subsystemsToCheck}
+
+Specifies which subsystems of IDE should be checked.
+
+{style="narrow"}
+Type
+: [`Subsystems`](tools_intellij_platform_gradle_plugin_types.md#Subsystems)
+
+Default value
+: [`intellijPlatform.verifyPlugin.subsystemsToCheck`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin-subsystemsToCheck)
+
+
+### teamCityOutputFormat
+{#verifyPlugin-teamCityOutputFormat}
+
+A flag that controls the output format.
+If set to `true`, the TeamCity compatible output will be returned to stdout.
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: [`intellijPlatform.verifyPlugin.teamCityOutputFormat`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin-teamCityOutputFormat)
+
+
+### verificationReportsDirectory
+{#verifyPlugin-verificationReportsDirectory}
+
+The path to the directory where verification reports will be saved.
+
+{style="narrow"}
+Type
+: `DirectoryProperty`
+
+Default value
+: [`intellijPlatform.verifyPlugin.verificationReportsDirectory`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin-verificationReportsDirectory)
+
+
+### verificationReportsFormats
+{#verifyPlugin-verificationReportsFormats}
+
+The output formats of the verification reports.
+
+{style="narrow"}
+Type
+: [`ListProperty<VerificationReportsFormats>`](tools_intellij_platform_gradle_plugin_types.md#VerificationReportsFormats)
+
+Default value
+: [`intellijPlatform.verifyPlugin.verificationReportsFormats`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin-verificationReportsFormats)
 
 
 <include from="snippets.md" element-id="missingContent"/>

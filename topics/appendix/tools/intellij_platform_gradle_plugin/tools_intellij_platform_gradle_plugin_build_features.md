@@ -34,10 +34,6 @@ Example
 org.jetbrains.intellij.buildFeature.buildSearchableOptions=false
 ```
 
-See also:
-- [Tasks: buildSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions)
-- [Build Features: `noSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_build_features.md#noSearchableOptionsWarning)
-
 
 ## paidPluginSearchableOptionsWarning
 {#paidPluginSearchableOptionsWarning}
@@ -62,7 +58,7 @@ org.jetbrains.intellij.platform.buildFeature.paidPluginSearchableOptionsWarning=
 
 Checks whether the currently used Gradle IntelliJ Plugin is outdated and if a new release is available.
 The plugin performs an update check on every run asking the GitHub Releases page for the redirection URL
-to the latest version with `HEAD` HTTP request: `https://github.com/jetbrains/gradle-intellij-plugin/releases/latest`.
+to the latest version with `HEAD` HTTP request: [](https://github.com/jetbrains/gradle-intellij-plugin/releases/latest).
 
 If the current version is outdated, the plugin will emit a warning with its current and the latest version.
 

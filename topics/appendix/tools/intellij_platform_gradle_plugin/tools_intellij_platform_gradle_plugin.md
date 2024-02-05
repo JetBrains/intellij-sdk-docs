@@ -90,7 +90,7 @@ It can be omitted when referring to any IntelliJ Platform SDK dependencies witho
 
 {id="plugin.settings"}
 
-If you define repositories within the <path>settings.gradle.kts</path> using the `dependencyResolutionManagement` Gradle, make sure to include the Settings plugin in your <filepath>settings.gradle.kts</filepath>.
+If you define repositories within the <path>settings.gradle.kts</path> using the `dependencyResolutionManagement` Gradle, make sure to include the Settings plugin in your <path>settings.gradle.kts</path>.
 
 ## Configuration
 
@@ -228,21 +228,21 @@ dependencies {
     val type = providers.gradleProperty("platformType")
     val version = providers.gradleProperty("platformVersion")
 
-    intellijPlatform(type, version)
+    create(type, version)
   }
 }
 ```
 
-The `intellijPlatform` helper accepts also the `IntelliJPlatformType` enum type:
+The `intellijPlatform` helper accepts also the [`IntelliJPlatformType`](tools_intellij_platform_gradle_plugin_types.md#IntelliJPlatformType) type:
 
 ```kotlin
-import org.jetbrains.intellij.platform.gradle.utils.IntelliJPlatformType
+import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
 
 dependencies {
   intellijPlatform {
     val version = providers.gradleProperty("platformVersion")
 
-    intellijPlatform(IntelliJPlatformType.IntellijIdeaUltimate, version)
+    create(IntelliJPlatformType.IntellijIdeaUltimate, version)
   }
 }
 ```

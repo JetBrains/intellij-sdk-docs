@@ -107,7 +107,11 @@ All IntelliJ Platform SDK artifacts are available via IntelliJ Maven repositorie
 - snapshots
 - nightly (only selected artifacts)
 
-Assume you want to build your plugin against a release version of the IntelliJ Platform and you also have a dependency on a plugin from the Marketplace, then you would declare the following repositories:
+<include from="tools_intellij_platform_gradle_plugin_repositories_extension.md" element-id="recommendedCallout"/>
+
+**Example #2:**
+
+Build a plugin against a release version of the IntelliJ Platform with dependency on a plugin from the JetBrains Marketplace:
 
 ```kotlin
 repositories {
@@ -120,19 +124,7 @@ repositories {
 }
 ```
 
-The `intellijPlatform` extension available for the `repositories {}` provides the following helper methods for adding repositories:
-
-| Name                          | Description                                                                                                                                       |
-|-------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| `releases`                    | IntelliJ Platform Releases repository.                                                                                                            |
-| `snapshots`                   | IntelliJ Platform Snapshots repository.                                                                                                           |
-| `nightly`                     | IntelliJ Platform Nightly repository, not available publicly.                                                                                     |
-| `ivy`                         | Local Ivy repository for resolving local Ivy XML files used for describing artifacts like local IntelliJ Platform instance, bundled plugins, etc. |
-| `marketplace`                 | JetBrains Marketplace Repository, hosts plugins for IntelliJ-based IDEs.                                                                          |
-| `jetbrainsRuntime`            | JetBrains Runtime (JBR), CloudFront-based hosting from which specific JBR releases are fetched, if explicitly requested.                          |
-| `binaryReleasesAndroidStudio` | Android Studio Binary Releases, required when running IntelliJ Plugin Verifier against Android Studio releases.                                   |
-| `binaryReleases`              | IntelliJ IDEA Binary Releases, required when running IntelliJ Plugin Verifier against JetBrains IntelliJ-based IDE releases.                      |
-| `recommended`                 | Applies a set of recommended repositories.                                                                                                        |
+See [](tools_intellij_platform_gradle_plugin_repositories_extension.md) on how to configure additional repositories.
 
 #### Dependency Resolution Management
 {#configuration.dependencyResolutionManagement}
@@ -169,7 +161,7 @@ To switch off the default usage of JetBrains Cache Redirector, see the [](tools_
 
 ### Setting Up IntelliJ Platform
 
-Dependencies and [repositories](#configuration.repositories) are handled using explicit entries within `dependencies {}` and `repositories {}` blocks in <path>build.gradle.kts</path> file.
+Dependencies and [repositories](#configuration.repositories) are handled using explicit entries within `dependencies {}` and `repositories {}` blocks in <path>build.gradle.kts</path> file.
 
 A minimum configuration for targeting IntelliJ IDEA Community 2023.3:
 

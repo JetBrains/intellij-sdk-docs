@@ -18,6 +18,9 @@ The _IntelliJ Platform Gradle Plugin 2.x_ is a plugin for the Gradle build syste
 
 It is going to replace the current _[](tools_gradle_intellij_plugin.md) (1.x)_ in the future.
 
+> See [](tools_intellij_platform_gradle_plugin_migration.md) for FAQ.
+>
+
 <snippet id="EAP_Status">
 
 > IntelliJ Platform Gradle Plugin 2.x is currently in **Early Access** and may not support all features and project setups yet (see also [](tools_intellij_platform_gradle_plugin.md#requirements)).
@@ -246,15 +249,5 @@ Note that the `ivy` entry needs to be added to the `repositories {}` block as al
 ### Setting Up Plugin Dependencies
 
 TODO
-
-## Migration FAQ
-
-### Unresolved 'idea' Plugin
-
-Add an explicit dependency on the plugin in <path>build.gradle.kts</path>:
-
-```kotlin
-id("org.jetbrains.gradle.plugin.idea-ext") version "1.1.7"
-```
 
 <include from="snippets.md" element-id="missingContent"/>

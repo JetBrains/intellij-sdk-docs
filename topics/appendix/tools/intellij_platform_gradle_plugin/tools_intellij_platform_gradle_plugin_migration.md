@@ -46,5 +46,13 @@ To completely drop this approach, it is mandatory to remove its reference manual
 
 </procedure>
 
+## Unresolved 'idea' Plugin
+
+Add an explicit dependency on the plugin in <path>build.gradle.kts</path>:
+
+```kotlin
+id("org.jetbrains.gradle.plugin.idea-ext") version "1.1.7"
+```
+
 
 

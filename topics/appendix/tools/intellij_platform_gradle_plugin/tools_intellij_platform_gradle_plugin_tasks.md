@@ -13,16 +13,25 @@ Tasks are applied to the project with the [`org.jetbrains.intellij.platform.task
 Each of the tasks has relations described between each other, inherit from [](tools_intellij_platform_gradle_plugin_task_awares.md) interfaces, respect configuration and build cache, and can be configured independently, but for the most cases, the [](tools_intellij_platform_gradle_plugin_extension.md) covers all necessary cases.
 
 ```mermaid
-graph TD
+flowchart TD
     buildPlugin
+    buildSearchableOptions
     jarSearchableOptions
+    patchPluginXml
     prepareSandbox
 
     jarSearchableOptions & prepareSandbox --> buildPlugin
+    patchPluginXml --> buildSearchableOptions
 
     click buildPlugin "#buildPlugin"
+    click buildSearchableOptions "#buildSearchableOptions"
     click jarSearchableOptions "#jarSearchableOptions"
+    click patchPluginXml "#patchPluginXml"
     click prepareSandbox "#prepareSandbox"
+
+    style jarSearchableOptions fill:#eee
+    style patchPluginXml fill:#eee
+    style prepareSandbox fill:#eee
 ```
 
 ## buildPlugin
@@ -32,12 +41,11 @@ graph TD
 
 **Sources**: [`BuildPluginTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/BuildPluginTask.kt)
 
-**Extends**: [`Zip`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Zip.html)
+**Extends**: [`Zip`][gradle-zip-task]
 
 **Depends on**: [`jarSearchableOptions`](#jarSearchableOptions), [`prepareSandbox`](#prepareSandbox)
 
 </tldr>
-
 
 A task responsible for building plugin and preparing a ZIP archive for testing and deployment.
 
@@ -64,9 +72,50 @@ Default value
 ## buildSearchableOptions
 {#buildSearchableOptions}
 
-See also:
-- [Extension: `intellijPlatform.buildSearchableOptions`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-buildSearchableOptions)
-- [Build Features: `noSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_build_features.md#noSearchableOptionsWarning)
+<tldr>
+
+**Sources**: [`BuildSearchableOptionsTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/BuildSearchableOptionsTask.kt)
+
+**Extends**: [`JavaExec`][gradle-javaexec-task], [`RunnableIdeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#RunnableIdeAware)
+
+**Depends on**: [`patchPluginXml`](#patchPluginXml)
+
+</tldr>
+
+Builds the index of UI components (searchable options) for the plugin.
+This task runs a headless IDE instance to collect all the available options provided by the plugin's [](settings.md).
+
+If your plugin doesn't implement custom settings, it is recommended to disable it with [`intellijPlatform.buildSearchableOptions`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-buildSearchableOptions).
+
+In the case of running the task for the plugin which has the [`intellijPlatform.pluginConfiguration.productDescriptor`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-productDescriptor) configures, a warning will be logged regarding potential issues with running headless IDE for paid plugins.
+It is possible to mute this warning with the [`paidPluginSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_build_features.md#paidPluginSearchableOptionsWarning) build feature.
+
+
+### outputDirectory
+{#buildSearchableOptions-outputDirectory}
+
+The directory to which searchable options will be generated.
+
+{style="narrow"}
+Type
+: `DirectoryProperty`
+
+Default value
+: <path>[buildDirectory]/searchableOptions</path>
+
+
+### showPaidPluginWarning
+{#buildSearchableOptions-showPaidPluginWarning}
+
+Emit warning if the task is executed by a paid plugin.
+Can be disabled with the [`paidPluginSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_build_features.md#paidPluginSearchableOptionsWarning) build feature.
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: [`paidPluginSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_build_features.md#paidPluginSearchableOptionsWarning) && `productDescriptor` is defined
 
 
 ## classpathIndexCleanup
@@ -1070,3 +1119,6 @@ Default value
 
 
 <include from="snippets.md" element-id="missingContent"/>
+
+[gradle-javaexec-task]: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec
+[gradle-zip-task]: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Zip.html

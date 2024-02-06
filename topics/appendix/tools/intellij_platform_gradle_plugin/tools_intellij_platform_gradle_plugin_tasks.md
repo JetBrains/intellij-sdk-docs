@@ -6,23 +6,46 @@
 
 <include from="tools_intellij_platform_gradle_plugin.md" element-id="EAP_Status"/>
 
+The IntelliJ Platform Gradle Plugin introduces a set of tasks to handle activities of the plugin development for IntelliJ-based IDEs, such as building, verifying, testing, and publishing the output archive.
+
+Tasks are applied to the project with the [`org.jetbrains.intellij.platform.tasks`](tools_intellij_platform_gradle_plugin.md#plugin.tasks), which is a part of [`org.jetbrains.intellij.platform`](tools_intellij_platform_gradle_plugin.md#plugin.platform).
+
+Each of the tasks has relations described between each other, inherit from [](tools_intellij_platform_gradle_plugin_task_awares.md) interfaces, respect configuration and build cache, and can be configured independently, but for the most cases, the [](tools_intellij_platform_gradle_plugin_extension.md) covers all necessary cases.
+
+```mermaid
+graph TD
+    buildPlugin
+    jarSearchableOptions
+    prepareSandbox
+
+    jarSearchableOptions & prepareSandbox --> buildPlugin
+
+    click buildPlugin "#buildPlugin"
+    click jarSearchableOptions "#jarSearchableOptions"
+    click prepareSandbox "#prepareSandbox"
+```
+
 ## buildPlugin
 {#buildPlugin}
 
-This class represents a task for building a plugin and preparing a ZIP archive for deployment.
+<tldr>
 
-It uses the content produced by [`prepareSandbox`](#prepareSandbox) and [`jarSearchableOptions`](#jarSearchableOptions) tasks as an input.
+**Sources**: [`BuildPluginTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/BuildPluginTask.kt)
+
+**Extends**: [`Zip`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Zip.html)
+
+**Depends on**: [`jarSearchableOptions`](#jarSearchableOptions), [`prepareSandbox`](#prepareSandbox)
+
+</tldr>
 
 
-### archiveBaseName
-{#buildPlugin-archiveBaseName}
+A task responsible for building plugin and preparing a ZIP archive for testing and deployment.
 
-{style="narrow"}
-Type
-: `Property<String>`
+It takes the output of the [`prepareSandbox`](#prepareSandbox) task containing the built project with all its modules and dependencies, and the output of [`jarSearchableOptions`](#jarSearchableOptions) task.
 
-Default value
-: [`prepareSandbox.pluginName`](#prepareSandbox-pluginName)
+The produced archive is stored in the <path>[buildDirectory]/distributions/[`archiveFile`](#buildPlugin-archiveFile)</path> file.
+The [`archiveFile`](#buildPlugin-archiveFile) name and location can be controlled with properties provided with the [`Zip`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Zip.html) base task.
+By default, the `archiveBaseName` is set to the value of [`prepareSandbox.pluginName`](#prepareSandbox-pluginName).
 
 
 ### archiveFile

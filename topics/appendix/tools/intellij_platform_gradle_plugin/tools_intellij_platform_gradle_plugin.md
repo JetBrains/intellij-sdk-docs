@@ -70,29 +70,25 @@ The plugin was split into subplugins that can be applied separately.
 This allows for applying only a subset of features, e.g. when you only use an IntelliJ Platform SDK dependency without creating any tasks.
 
 #### org.jetbrains.intellij.platform
-
-{id="plugin.platform"}
+{#plugin.platform}
 
 This plugin applies all project-level plugins, which brings the fully-flagged tooling for plugin development for IntelliJ-based IDEs.
 
 It includes [](#plugin.core) and [](#plugin.tasks) subplugins.
 
 #### org.jetbrains.intellij.platform.core
-
-{id="plugin.core"}
+{#plugin.core}
 
 The base plugin sets up all the custom configurations and transforms needed to manage the IntelliJ Platform SDK, JetBrains Runtime, CLI tools, and other plugins when they're added as dependencies.
 
 #### org.jetbrains.intellij.platform.tasks
-
-{id="plugin.tasks"}
+{#plugin.tasks}
 
 Tasks plugin registers and preconfigures all tasks introduced by the IntelliJ Platform Gradle Plugin.
 It can be omitted when referring to any IntelliJ Platform SDK dependencies without invoking tasks on project submodules.
 
 #### org.jetbrains.intellij.platform.settings
-
-{id="plugin.settings"}
+{#plugin.settings}
 
 If you define repositories within the <path>settings.gradle.kts</path> using the `dependencyResolutionManagement` Gradle, make sure to include the Settings plugin in your <path>settings.gradle.kts</path>.
 
@@ -103,8 +99,7 @@ If you define repositories within the <path>settings.gradle.kts</path> using the
 {title="Exploring Configuration Options"}
 
 ### Setting Up Repositories
-
-{id="configuration.repositories"}
+{#configuration.repositories}
 
 All IntelliJ Platform SDK artifacts are available via IntelliJ Maven repositories (see [](intellij_artifacts.md)), which exist in three variants:
 
@@ -140,8 +135,7 @@ The `intellijPlatform` extension available for the `repositories {}` provides th
 | `recommended`                 | Applies a set of recommended repositories.                                                                                                        |
 
 #### Dependency Resolution Management
-
-{id="configuration.dependencyResolutionManagement"}
+{#configuration.dependencyResolutionManagement}
 
 To access the IntelliJ Platform Gradle Plugin within the <path>settings.gradle.kts</path> to use with `dependencyResolutionManagement`, add:
 
@@ -166,8 +160,7 @@ dependencyResolutionManagement {
 ```
 
 #### Cache Redirector
-
-{id="configuration.cacheRedirector"}
+{#configuration.cacheRedirector}
 
 Some repositories, by default, point to JetBrains Cache Redirector to provide better resources resolution.
 However, it is possible to use the direct repository URL, if available.

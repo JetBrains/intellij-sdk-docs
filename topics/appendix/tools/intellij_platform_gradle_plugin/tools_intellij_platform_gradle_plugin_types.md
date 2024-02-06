@@ -9,7 +9,7 @@
 ## FailureLevel
 {#FailureLevel}
 
-[`VerifyPluginTask.FailureLevel`](%gh-ipgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginTask.kt)
+[`VerifyPluginTask.FailureLevel`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginTask.kt)
 
 Enum class describing the failure level of the IntelliJ Plugin Verifier CLI tool run with the [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) task.
 
@@ -38,7 +38,7 @@ See also:
 ## IntelliJPlatformType
 {#IntelliJPlatformType}
 
-[`IntelliJPlatformType`](%gh-ipgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/IntelliJPlatformType.kt)
+[`IntelliJPlatformType`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/IntelliJPlatformType.kt)
 
 Describes all IntelliJ Platform types available to be used for plugin development, dependency resolution, and plugin verification.
 
@@ -99,7 +99,7 @@ Throws
 ## ProductRelease.Channel
 {#ProductRelease-Channel}
 
-[`ProductRelease.Channel`](%gh-ipgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/model/ProductRelease.kt)
+[`ProductRelease.Channel`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/model/ProductRelease.kt)
 
 List of available channels used by JetBrains IDEs and Android Studio for describing binary releases.
 
@@ -122,7 +122,7 @@ See also:
 ## ProductReleasesValueSource.FilterParameters
 {#ProductReleasesValueSource-FilterParameters}
 
-[`ProductReleasesValueSource.FilterParameters`](%gh-ipgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/provider/ProductReleasesValueSource.kt)
+[`ProductReleasesValueSource.FilterParameters`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/provider/ProductReleasesValueSource.kt)
 
 Interface that provides a clear way to filter binary product releases for the purposes of IntelliJ Plugin Verifier.
 
@@ -141,7 +141,7 @@ See also:
 ## Subsystems
 {#Subsystems}
 
-[`VerifyPluginTask.Subsystems`](%gh-ipgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginTask.kt)
+[`VerifyPluginTask.Subsystems`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginTask.kt)
 
 Specifies which subsystems of the IDE should be checked by the IntelliJ Plugin Verifier CLI tool run with the [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) task.
 
@@ -159,7 +159,7 @@ See also:
 ## VerificationReportsFormats
 {#VerificationReportsFormats}
 
-[`VerifyPluginTask.VerificationReportsFormats`](%gh-ipgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginTask.kt)
+[`VerifyPluginTask.VerificationReportsFormats`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginTask.kt)
 
 Enum class describing the type of the results produced by the IntelliJ Plugin Verifier CLI tool run with the [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) task.
 

@@ -14,24 +14,35 @@ Each of the tasks has relations described between each other, inherit from [](to
 
 ```mermaid
 flowchart TD
-    buildPlugin
-    buildSearchableOptions
-    jarSearchableOptions
-    patchPluginXml
-    prepareSandbox
+    subgraph ALL ["` `"]
+        buildPlugin
+        buildSearchableOptions
+        jarSearchableOptions
+        patchPluginXml
+        prepareSandbox
 
-    jarSearchableOptions & prepareSandbox --> buildPlugin
-    patchPluginXml --> buildSearchableOptions
+        jarSearchableOptions & prepareSandbox --> buildPlugin
+        patchPluginXml --> buildSearchableOptions
+    end
+
+    classpathIndexCleanup
+    initializeIntelliJPlatformPlugin --> ALL
 
     click buildPlugin "#buildPlugin"
     click buildSearchableOptions "#buildSearchableOptions"
+    click classpathIndexCleanup "#classpathIndexCleanup"
+    click initializeIntelliJPlatformPlugin "#initializeIntelliJPlatformPlugin"
     click jarSearchableOptions "#jarSearchableOptions"
     click patchPluginXml "#patchPluginXml"
     click prepareSandbox "#prepareSandbox"
 
+    style classpathIndexCleanup fill:#eee,stroke-dasharray: 5 5
     style jarSearchableOptions fill:#eee
     style patchPluginXml fill:#eee
     style prepareSandbox fill:#eee
+    style prepareSandbox fill:#eee
+
+    style ALL fill:#fff,stroke:#eee
 ```
 
 ## buildPlugin
@@ -129,7 +140,24 @@ Default value
 ## initializeIntelliJPlatformPlugin
 {#initializeIntelliJPlatformPlugin}
 
-Initializes the IntelliJ Platform Gradle Plugin and performs various checks, like if the plugin is up-to-date.
+<tldr>
+
+**Sources**: [`InitializeIntelliJPlatformPluginTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/InitializeIntelliJPlatformPluginTask.kt)
+
+**Extends**: [`DefaultTask`][gradle-default-task], [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware)
+
+</tldr>
+
+This task is executed before every other task introduced by IntelliJ Platform Gradle Plugin to prepare it to run.
+
+It is responsible for:
+- checking if the project uses IntelliJ Platform Gradle Plugin in the latest available version,
+- preparing the KotlinX Coroutines Java Agent file to enable coroutines debugging when developing the plugin.
+
+The self-update check can be disabled with [`selfUpdateCheck`](tools_intellij_platform_gradle_plugin_build_features.md#selfUpdateCheck) build feature.
+
+To make the Coroutines Java Agent available for the task, inherit from [`CoroutinesJavaAgentAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CoroutinesJavaAgentAware).
+
 
 ### offline
 {#initializeIntelliJPlatformPlugin-offline}
@@ -160,7 +188,7 @@ Type
 : `Property<Boolean>`
 
 Default value
-: [Build Features: `selfUpdateCheck`](tools_intellij_platform_gradle_plugin_build_features.md#selfUpdateCheck)
+: [`selfUpdateCheck`](tools_intellij_platform_gradle_plugin_build_features.md#selfUpdateCheck)
 
 
 ### selfUpdateLock
@@ -185,9 +213,6 @@ Type
 
 Default value
 : `[buildDirectory]/tmp/initializeIntelliJPlatformPlugin/coroutines-javaagent.jar`
-
-See also:
-- [Task Awares: `CoroutinesJavaAgentAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CoroutinesJavaAgentAware)
 
 
 ### pluginVersion
@@ -1120,5 +1145,6 @@ Default value
 
 <include from="snippets.md" element-id="missingContent"/>
 
+[gradle-default-task]: https://docs.gradle.org/current/dsl/org.gradle.api.DefaultTask.html
 [gradle-javaexec-task]: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec
 [gradle-zip-task]: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Zip.html

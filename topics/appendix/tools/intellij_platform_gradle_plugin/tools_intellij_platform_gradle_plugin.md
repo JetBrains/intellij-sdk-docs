@@ -255,10 +255,6 @@ Note that the `ivy` entry needs to be added to the `repositories {}` block as al
 
 TODO
 
-## Tasks
-
-TODO
-
 ## Migration FAQ
 
 ### Unresolved 'idea' Plugin

@@ -23,9 +23,10 @@ plugins {
 }
 ```
 
-## Minimal Gradle version
+## Minimum Gradle version
 
-The minimal required Gradle version is now `8.0`. See also [](tools_intellij_platform_gradle_plugin.md#requirements).
+The minimum required Gradle version is now `8.0`, see [Gradle Installation](https://gradle.org/install/) guide on how to upgrade.
+See also [](tools_intellij_platform_gradle_plugin.md#requirements).
 
 ## `intellij` extension
 

@@ -46,27 +46,37 @@ Launch the <control>New Project</control> wizard via the <ui-path>File | New | P
 
 For the example `my_plugin` created with the steps describes above, the _IDE Plugin_ generator creates the following directory content:
 
-```text
-my_plugin
-├── .run
-│   └── Run IDE with Plugin.run.xml
-├── gradle
-│   └── wrapper
-│       ├── gradle-wrapper.jar
-│       └── gradle-wrapper.properties
-├── src
-│   └── main
-│       ├── kotlin
-│       └── resources
-│           └── META-INF
-│               ├── plugin.xml
-│               └── pluginIcon.svg
-├── .gitignore
-├── build.gradle.kts
-├── gradle.properties
-├── gradlew
-├── gradlew.bat
-└── settings.gradle.kts
+```plantuml
+@startuml
+
+skinparam TitleFontName JetBrains Sans
+skinparam TitleFontStyle plain
+skinparam TitleFontSize 16
+skinparam DefaultTextAlignment left
+
+title
+  my_plugin
+  |_ .run
+    |_ Run IDE with Plugin.run.xml
+  |_ gradle
+    |_ wrapper
+      |_ gradle-wrapper.jar
+      |_ gradle-wrapper.properties
+  |_ src
+    |_ main
+      |_ kotlin
+      |_ resources
+        |_ META-INF
+          |_ plugin.xml
+          |_ pluginIcon.svg
+  |_ .gitignore
+  |_ build.gradle.kts
+  |_ gradle.properties
+  |_ gradlew
+  |_ gradlew.bat
+  |_ settings.gradle.kts
+end title
+@enduml
 ```
 
 * The default IntelliJ Platform <path>build.gradle.kts</path> file (see next paragraph).
@@ -74,7 +84,7 @@ my_plugin
 * The <path>settings.gradle.kts</path> file, containing a definition of the `rootProject.name` and required repositories.
 * The Gradle Wrapper files, and in particular the <path>gradle-wrapper.properties</path> file, which specifies the version of Gradle to be used to build the plugin.
   If needed, the IntelliJ IDEA Gradle plugin downloads the version of Gradle specified in this file.
-* The <path>META-INF</path> directory under the default `main` [source set](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) contains the plugin [configuration file](plugin_configuration_file.md) and [plugin icon](plugin_icon_file.md).
+* The <path>META-INF</path> directory under the default `main` [source set](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) contains the plugin [configuration file](plugin_configuration_file.md) and [plugin logo](plugin_icon_file.md).
 * The _Run Plugin_ [run configuration](https://www.jetbrains.com/help/idea/run-debug-configuration.html).
 
 The generated `my_plugin` project <path>build.gradle.kts</path> file:
@@ -83,7 +93,7 @@ The generated `my_plugin` project <path>build.gradle.kts</path> file:
 plugins {
   id("java")
   id("org.jetbrains.kotlin.jvm") version "1.9.21"
-  id("org.jetbrains.intellij") version "1.17.0"
+  id("org.jetbrains.intellij") version "1.17.1"
 }
 
 group = "com.example"

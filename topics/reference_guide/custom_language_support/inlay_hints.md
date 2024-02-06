@@ -1,6 +1,6 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
-
 # Inlay Hints
+
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Providing additional code information directly in the editor without changing the document content.</link-summary>
 
@@ -81,7 +81,7 @@ Code vision provider allows for providing **block** inlay hints for elements lik
 If there are multiple hints provided for a single element, all will be displayed in the same line to save vertical space.
 
 Code vision hints can be displayed over the element, or on the right, at the end of line.
-It is configurable by users in <ui-path>Preferences | Editor | Inlay Hints | Code vision</ui-path> by choosing a value in <control>Default position for metrics</control> combo box, or by selecting <control>Position</control> in specific provider entries.
+It is configurable by users in <ui-path>Settings | Editor | Inlay Hints | Code vision</ui-path> by choosing a value in <control>Default position for metrics</control> combo box, or by selecting <control>Position</control> in specific provider entries.
 
 There are two extension points for implementing a code vision provider:
 - [`DaemonBoundCodeVisionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/hints/codeVision/DaemonBoundCodeVisionProvider.kt) registered in `com.intellij.codeInsight.daemonBoundCodeVisionProvider` EP
@@ -105,7 +105,7 @@ See the API documentation for the details.
 >
 > For implementing **block** inlay hints in versions 2022.1 and newer, [](#code-vision-provider) is recommended.
 >
-{style="warning"}
+{title="Deprecation Notice" style="warning"}
 
 To provide inlay hints, implement
 [`InlayHintsProvider`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hints/InlayHintsProvider.kt)

@@ -1,6 +1,6 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
-
 # Creating a Theme Project
+
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Creating a theme plugin project with Plugin DevKit wizard and generated project overview.</link-summary>
 
@@ -25,22 +25,33 @@ Launch the <control>New Project</control> wizard via the <ui-path>File | New | P
 
 For the example `my_theme` created with the steps describes above, the _IDE Plugin_ generator creates the following directory content:
 
-```text
-my_theme
-├── resources
-│   ├── META-INF
-│   │   └── plugin.xml
-│   │   └── pluginIcon.svg
-│   └── theme
-│       └── my_theme.theme.json
-└── my_theme.iml
+```plantuml
+@startuml
+
+skinparam TitleFontName JetBrains Sans
+skinparam TitleFontStyle plain
+skinparam TitleFontSize 16
+skinparam DefaultTextAlignment left
+
+title
+  my_theme
+  |_ resources
+    |_ META-INF
+      |_ plugin.xml // (Plugin Configuration File) //
+      |_ pluginIcon.svg // (Plugin Logo) //
+      |_ ...
+    |_ theme
+      |_ my_theme.theme.json // (Theme description file) //
+  |_ my_theme.iml // (IntelliJ IDEA Module configuration file) //
+end title
+@enduml
 ```
 
-- <path>META-INF</path> directory with:
+<path>META-INF</path> directory with:
   - <path>[plugin.xml](plugin_configuration_file.md)</path> configuration file containing preconfigured theme provider
   - <path>pluginIcon.svg</path> file that is a [plugin logo](plugin_icon_file.md)
 
-    It is recommended to replace it with a custom icon.
+    Replace it with a custom logo representing the Theme.
 - <path>my_theme.theme.json</path> - a minimal [theme description file](themes_customize.md#introduction-to-theme-description-file-syntax)
 - <path>my_theme.iml</path> - [IntelliJ IDEA Module](https://www.jetbrains.com/help/idea/creating-and-managing-modules.html) configuration file
 

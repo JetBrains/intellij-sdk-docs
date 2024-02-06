@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+<!DOCTYPE categories SYSTEM "https://resources.jetbrains.com/writerside/1.0/categories.dtd">
+<categories>
+  <category id="related" name="Related topics" order="1"/>
+  <category id="external" name="External resources" order="2"/>
+</categories>

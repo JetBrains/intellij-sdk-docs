@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Disposer and Disposable
 
@@ -14,7 +14,7 @@ The most common resource type managed by `Disposer` is listeners, but there are 
 The `Disposer` is a singleton that manages a tree of [`Disposable`](%gh-ic%/platform/util/src/com/intellij/openapi/Disposable.java) instances.
 A `Disposable` is an interface for any object providing a `Disposable.dispose()` method to release heavyweight resources after a specific lifetime.
 
-The `Disposer` supports chaining `Disposables` in parent-child relationships.
+The `Disposer` supports chaining `Disposable` objects in parent-child relationships.
 
 ## Automatically Disposed Objects
 
@@ -31,6 +31,60 @@ The primary purpose of the [`Disposer`](%gh-ic%/platform/util/src/com/intellij/o
 
 The `Disposer` organizes `Disposable` objects in a tree of parent-child relationships.
 The tree of `Disposable` objects ensures the `Disposer` releases children of a parent first.
+Parent objects always live longer than their children.
+
+The following diagram shows a simplified example of `Disposer`'s tree:
+
+```plantuml
+@startuml
+
+skinparam DefaultFontName JetBrains Sans
+skinparam DefaultFontSize 13
+skinparam DefaultTextAlignment center
+hide empty members
+hide circle
+
+rectangle "Root\nDisposable" as root
+
+rectangle "Application" as application
+rectangle "App\nListener" as listener
+rectangle "Dialog\nWrapper" as dialogDisposable
+rectangle "Dialog\nResource" as dialogResource
+
+rectangle "Services of\nApplication" as applicationServices
+rectangle "App\nService 1" as appService1
+rectangle "App\nService 2" as appService2
+
+rectangle "My\nProject" as project
+rectangle "My\nListener" as projectListener
+rectangle "My\nAlarm" as projectAlarm
+
+rectangle "Services of\nMy Project" as projectServices
+rectangle "Project\nService A" as projectService1
+rectangle "Project\nService B" as projectService2
+
+root -- application
+root -- applicationServices
+root -- project
+root -- projectServices
+
+application -- listener
+application -- dialogDisposable
+dialogDisposable -- dialogResource
+
+applicationServices -- appService1
+applicationServices -- appService2
+
+project -- projectListener
+project -- projectAlarm
+
+projectServices -- projectService1
+projectServices -- projectService2
+
+@enduml
+```
+
+When _My Project_ is closed and its disposal is triggered by the platform, the Disposer API will dispose _My Listener_ and _My Alarm_ before _My Project_, and _Project Service A_ and _Project Service B_ before _Services of My Project_.
 
 See [The Disposable Interface](#implementing-the-disposable-interface) for more information about creating `Disposable` classes.
 
@@ -47,7 +101,7 @@ One of the parent `Disposables` provided by the IntelliJ Platform can be chosen,
 
 Use the following guidelines to choose the correct parent:
 
-* For resources required for a plugin's entire lifetime, use an application or project level [service](plugin_services.md).
+* For resources required for a plugin's entire lifetime, use an application or project level [service](plugin_services.md). Example: [`PythonPluginDisposable`](%gh-ic%/python/openapi/src/com/jetbrains/python/PythonPluginDisposable.java).
 * For resources required while a [dialog](dialog_wrapper.md) is displayed, use `DialogWrapper.getDisposable()`.
 * For resources required while a [tool window](tool_windows.md) tab is displayed, pass your instance implementing `Disposable` to `Content.setDisposer()`.
 * For resources with a shorter lifetime, create a disposable using `Disposer.newDisposable()` and dispose it manually using `Disposable.dispose()`.
@@ -56,11 +110,37 @@ Use the following guidelines to choose the correct parent:
 > Even though `Application` and `Project` implement `Disposable`, they must NEVER be used as parent disposables in plugin code.
 > Disposables registered using those objects as parents will not be disposed when the plugin is unloaded, leading to memory leaks.
 >
+> Consider a case of a disposable resource created by a plugin and registered with a project as its parent.
+> The following lifetime diagram shows that the resource will outlive the plugin and live as long as the project.
+> ```mermaid
+> %%{init: {'theme': 'base', 'themeVariables': { 'primaryBorderColor': 'green', 'background': 'yellow'}}}%%
+> gantt
+>     dateFormat X
+>     %% do not remove trailing space in axisFormat
+>     axisFormat ‎
+>     section Lifetimes
+>         Project         : 0, 10
+>         Plugin          : 2, 5
+>         Plugin Resource : crit, 2, 10
+> ```
+>
+> If the resource used, e.g., a plugin's project-level service (if shorter living parents are possible, prefer them), the resource would be disposed together with the plugin:
+> ```mermaid
+> gantt
+>     dateFormat X
+>     %% do not remove trailing space in axisFormat
+>     axisFormat ‎
+>     section Lifetimes
+>         Project         : 0, 10
+>         Plugin          : 2, 5
+>         Plugin Resource : 2, 5
+> ```
+>
 > Inspection <control>Plugin DevKit | Code | Incorrect parentDisposable parameter</control> will highlight such problems.
 >
-{style="warning"}
+{style="warning" title="Plugin disposable leaks"}
 
-The `Disposer` API's flexibility means that if the parent instance is chosen unwisely, the child may consume resources for longer than required.
+The `Disposer` API flexibility means that if the parent instance is chosen unwisely, the child may consume resources for longer than required.
 Continuing to use resources when they are no longer needed can be a severe source of contention due to leaving some zombie objects behind due to each invocation.
 An additional challenge is that these kinds of issues won't be reported by the regular leak checker utilities, because technically, it's not a memory leak from the test suite perspective.
 
@@ -92,7 +172,7 @@ Always pass a parent disposable to `MessageBus.connect()`, and make sure it has 
 
 ### Determining Disposal Status
 You can use `Disposer.isDisposed()` to check whether a `Disposable` has already been disposed.
-This check is useful, for example, for an asynchronous callback to a  `Disposable` that may be disposed before the callback is executed.
+This check is useful, for example, for an asynchronous callback to a `Disposable` that may be disposed before the callback is executed.
 In such a case, the best strategy is usually to do nothing and return early.
 
 > Non-disposed objects shouldn't hold onto references to disposed objects, as this constitutes a memory leak.
@@ -135,7 +215,7 @@ public class Foo<T> extends JBFoo implements Disposable {
 }
 ```
 
-A lot of code setting-up all the conditions requiring release in `dispose()` has been omitted for simplicity.
+A lot of code setting up all the conditions requiring release in `dispose()` has been omitted for simplicity.
 
 Regardless, it illustrates the basic pattern, which is:
 * In this case, the parent disposable is passed into the constructor,
@@ -153,7 +233,7 @@ When the application exits, it performs a final sanity check to verify everythin
 If something was registered with the `Disposer` but remains undisposed, the IntelliJ Platform reports it before shutting down.
 
 In test and Debug mode (`idea.disposer.debug` is set to `on`), registering a `Disposable` with the `Disposer` also registers a stack trace for the object's allocation path.
-The `Disposer` accomplishes this by creating a dummy `Throwable` at the time of registration.
+The `Disposer` accomplishes this by creating a `Throwable` at the time of registration.
 
 The following snippet represents the sort of "memory leak detected" error encountered in practice:
 

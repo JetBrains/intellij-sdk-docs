@@ -1,6 +1,6 @@
-# Settings Guide
+<!-- Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Settings Guide
 
 <link-summary>Adding entries in Settings.</link-summary>
 
@@ -198,4 +198,6 @@ In that case the IntelliJ Platform calls `ConfigurableProvider.createConfigurabl
 By choosing not to provide a `Configuration` implementation in some circumstances, the `ConfigurableProvider` opts out of the Settings display and modification process.
 The use of `ConfigurableProvider` as a basis for a Settings implementation is declared using [attributes](#table-of-attributes) in the EP declaration.
 
-**Example**: [`RunToolbarSettingsConfigurableProvider`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/runToolbar/RunToolbarSettingsConfigurableProvider.kt)
+**Examples**:
+- [`RunToolbarSettingsConfigurableProvider`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/runToolbar/RunToolbarSettingsConfigurableProvider.kt)
+- [`VcsManagerConfigurableProvider`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/configurable/VcsManagerConfigurableProvider.java)

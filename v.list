@@ -3,8 +3,8 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/vars.dtd">
 
 <vars>
-  <var name="ijPlatform" value="2023.3.2"/>
-  <var name="ijPlatformBuild" value="233.13135.103"/>
+  <var name="ijPlatform" value="2023.3.3"/>
+  <var name="ijPlatformBuild" value="233.14015.106"/>
 
   <var name="gh-sdk-samples" value="https://github.com/JetBrains/intellij-sdk-code-samples/tree/main"/>
 
@@ -21,7 +21,7 @@
 
   <var name="gh-ijpgp" value="https://github.com/JetBrains/gradle-intellij-plugin/blob/2.0"/>
 
-  <var name="gradle-intellij-plugin-version" value="1.17.0"/>
+  <var name="gradle-intellij-plugin-version" value="1.17.1"/>
   <var name="gradle-grammar-kit-plugin-version" value="2022.3.2.1"/>
   <var name="intellij-platform-gradle-plugin-version" value="2.0.0-SNAPSHOT"/>
 </vars>

@@ -20,7 +20,7 @@ It is going to replace the current _[](tools_gradle_intellij_plugin.md) (1.x)_ i
 
 <snippet id="EAP_Status">
 
-> This plugin is currently in **Early Access** and may not support all features and project setups yet (see also [](tools_intellij_platform_gradle_plugin.md#requirements)).
+> IntelliJ Platform Gradle Plugin 2.x is currently in **Early Access** and may not support all features and project setups yet (see also [](tools_intellij_platform_gradle_plugin.md#requirements)).
 > Please report bugs or problems in GitHub issue tracker or Slack channel (see [here](tools_intellij_platform_gradle_plugin.md#tldr)).
 >
 > Any documentation issues on this page should be reported using the feedback form on the bottom of this page.

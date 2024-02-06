@@ -10,64 +10,106 @@ Extension class for managing IntelliJ Platform dependencies in a Gradle build sc
 
 This class provides methods for adding dependencies to different IntelliJ Platform products and managing local dependencies.
 
-It also includes methods for adding JetBrains Runtime, IntelliJ Platform plugins, IntelliJ Platform bundled plugins, IntelliJ Plugin Verifier, and Marketplace ZIP Signer.
+It also includes methods for adding IntelliJ Platform plugins, IntelliJ Platform bundled plugins, JetBrains Runtime, as well as IntelliJ Plugin Verifier and Marketplace ZIP Signer tools.
+
+> Corresponding required repositories must be defined in `repositories {}` section, see [](tools_intellij_platform_gradle_plugin_repositories_extension.md).
+>
+{style="note"}
 
 **Example:**
 
-```kotlin
-import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
+- setup Maven Central and `recommended()` [repositories](tools_intellij_platform_gradle_plugin_repositories_extension.md)
+- target IntelliJ IDEA Community %ijPlatform%
+- add dependency on bundled Java plugin
+- add IntelliJ Plugin Verifier and Marketplace ZIP Signer CLI tools
 
-dependencies {
-  // ...
+```kotlin
+repositories {
+
+  mavenCentral()
 
   intellijPlatform {
-    // ...
+    recommended()
+  }
+}
 
-    create(IntelliJPlatformType.PhpStorm, "2023.3")
-    create("PS", "2023.3")
-    intellijIdeaCommunity("2023.3")
-    local(file("/path/to/ide/"))
-    jetbrainsRuntime("...")
-    plugin("org.intellij.scala")
+dependencies {
+
+  intellijPlatform {
+    intellijIdeaCommunity("%ijPlatform%")
+
     bundledPlugin("com.intellij.java")
+
     pluginVerifier()
     zipSigner()
   }
+
+  // other dependencies, e.g., 3rd-party libraries
 }
 ```
 
-> Just one IntelliJ Platform dependency can be added to the project at the time.
+> Just one IntelliJ Platform dependency can be added to the project at a time.
 >
 {style="warning"}
 
-| Function                                                                               | Description                                                    |
-|----------------------------------------------------------------------------------------|----------------------------------------------------------------|
-| `create(type, version)`                                                                | Adds a dependency on the IntelliJ Platform.                    |
-| `androidStudio(version)`                                                               | Adds a dependency on Android Studio.                           |
-| `clion(version)`                                                                       | Adds a dependency on CLion.                                    |
-| `fleetBackend(version)`                                                                | Adds a dependency on Fleet Backend.                            |
-| `gateway(version)`                                                                     | Adds a dependency on Gateway.                                  |
-| `goland(version)`                                                                      | Adds a dependency on GoLand.                                   |
-| `intellijIdeaCommunity(version)`                                                       | Adds a dependency on IntelliJ IDEA Community.                  |
-| `intellijIdeaUltimate(version)`                                                        | Adds a dependency on IntelliJ IDEA Ultimate.                   |
-| `phpstorm(version)`                                                                    | Adds a dependency on PhpStorm.                                 |
-| `pycharmCommunity(version)`                                                            | Adds a dependency on PyCharm Community.                        |
-| `pycharmProfessional(version)`                                                         | Adds a dependency on PyCharm Professional.                     |
-| `rider(version)`                                                                       | Adds a dependency on Rider.                                    |
-| `rustRover(version)`                                                                   | Adds a dependency on Rust Rover.                               |
-| `writerside(version)`                                                                  | Adds a dependency on Writerside.                               |
-| `local(localPath)`                                                                     | Adds a local dependency on a local IntelliJ Platform instance. |
-| `jetbrainsRuntime(version, variant, architecture)` `jetbrainsRuntime(explicitVersion)` | Adds a dependency on JetBrains Runtime.                        |
-| `plugin(id, version, channel)`                                                         | Adds a dependency on a plugin for IntelliJ Platform.           |
-| `bundledPlugin(id)`                                                                    | Adds a dependency on a bundled IntelliJ Platform plugin.       |
-| `pluginVerifier(version)`                                                              | Adds a dependency on IntelliJ Plugin Verifier.                 |
-| `zipSigner(version)`                                                                   | Adds a dependency on Marketplace ZIP Signer.                   |
+### Default Target Platforms
+
+See [](#custom-target-platforms) for non-default targets.
+
+| Function                         | Description                                                      |
+|----------------------------------|------------------------------------------------------------------|
+| `androidStudio(version)`         | Adds a dependency on [Android Studio](android_studio.md).        |
+| `clion(version)`                 | Adds a dependency on [CLion](clion.md).                          |
+| `fleetBackend(version)`          | Adds a dependency on Fleet Backend.                              |
+| `gateway(version)`               | Adds a dependency on Gateway.                                    |
+| `goland(version)`                | Adds a dependency on [GoLand](goland.md).                        |
+| `intellijIdeaCommunity(version)` | Adds a dependency on [IntelliJ IDEA Community](idea.md).         |
+| `intellijIdeaUltimate(version)`  | Adds a dependency on [IntelliJ IDEA Ultimate](idea_ultimate.md). |
+| `phpstorm(version)`              | Adds a dependency on [PhpStorm](phpstorm.md).                    |
+| `pycharmCommunity(version)`      | Adds a dependency on [PyCharm Community](pycharm.md).            |
+| `pycharmProfessional(version)`   | Adds a dependency on [PyCharm Professional](pycharm.md).         |
+| `rider(version)`                 | Adds a dependency on [Rider](rider.md).                          |
+| `rustRover(version)`             | Adds a dependency on Rust Rover.                                 |
+| `writerside(version)`            | Adds a dependency on Writerside.                                 |
+
+### Custom Target Platforms
+
+| Function                | Description                                                                                                                                |
+|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| `create(type, version)` | Adds a configurable dependency on the IntelliJ Platform. See [](tools_intellij_platform_gradle_plugin.md#dependenciesParametrizePlatform). |
+| `local(localPath)`      | Adds a dependency on a local IntelliJ Platform instance. See [](tools_intellij_platform_gradle_plugin.md#dependenciesLocalPlatform).       |
 
 See also:
-- [](verifying_plugin_compatibility.md)
-- [Tasks: `signPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin)
-- [Tasks: `verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin)
+
 - [Types: `IntelliJPlatformType`](tools_intellij_platform_gradle_plugin_types.md#IntelliJPlatformType)
 
+### Plugins
+
+| Function                       | Description                                              |
+|--------------------------------|----------------------------------------------------------|
+| `plugin(id, version, channel)` | Adds a dependency on a plugin for IntelliJ Platform.     |
+| `bundledPlugin(id)`            | Adds a dependency on a bundled IntelliJ Platform plugin. |
+
+See also:
+
+- [](plugin_dependencies.md)
+
+### Tools
+
+| Function                  | Description                                                                         |
+|---------------------------|-------------------------------------------------------------------------------------|
+| `pluginVerifier(version)` | Adds a dependency on [IntelliJ Plugin Verifier](verifying_plugin_compatibility.md). |
+| `zipSigner(version)`      | Adds a dependency on [Marketplace ZIP Signer](plugin_signing.md).                   |
+
+See also:
+
+- [](verifying_plugin_compatibility.md), [Tasks: `verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin)
+- [](plugin_signing.md), [Tasks: `signPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin)
+
+### Java Runtime
+
+| Function                                                                                            | Description                                                                                                                   |
+|-----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| <p>`jetbrainsRuntime(version, variant, architecture)`</p><p>`jetbrainsRuntime(explicitVersion)`</p> | Adds a dependency on [JetBrains Runtime](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance). |
 
 <include from="snippets.md" element-id="missingContent"/>

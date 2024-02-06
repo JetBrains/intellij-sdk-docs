@@ -189,26 +189,11 @@ dependencies {
 }
 ```
 
-The `intellijIdeaCommunity` in the previous sample is one of extension functions available for adding IntelliJ Platform dependencies to the project.
-Other IDEs can be targeted using one the extensions listed in the table below.
-
-| Extension               | Target IDE                                 |
-|-------------------------|--------------------------------------------|
-| `androidStudio`         | [Android Studio](android_studio.md)        |
-| `clion`                 | [CLion](clion.md)                          |
-| `fleetBackend`          | Fleet Backend                              |
-| `gateway`               | Gateway                                    |
-| `goland`                | [GoLand](goland.md)                        |
-| `intellijIdeaCommunity` | [IntelliJ IDEA Community Edition](idea.md) |
-| `intellijIdeaUltimate`  | [](idea_ultimate.md)                       |
-| `phpstorm`              | [PhpStorm](phpstorm.md)                    |
-| `pycharmCommunity`      | [PyCharm Community Edition](pycharm.md)    |
-| `pycharmProfessional`   | [PyCharm Professional](pycharm.md)         |
-| `rider`                 | [Rider](rider.md)                          |
-| `rustRover`             | Rust Rover                                 |
-| `writerside`            | Writerside                                 |
+The `intellijIdeaCommunity` in the previous sample is one of the extension functions available for adding IntelliJ Platform dependencies to the project.
+See [](tools_intellij_platform_gradle_plugin_dependencies_extension.md) on how to target other IDEs.
 
 #### Parametrize IntelliJ Platform Dependency
+{id="dependenciesParametrizePlatform"}
 
 As a fallback, `intellijPlatform` extension can be used to allow dynamic configuration of the target platform, e.g., via <path>gradle.properties</path>:
 
@@ -245,6 +230,7 @@ dependencies {
 ```
 
 #### Local IntelliJ Platform IDE Instance
+{id="dependenciesLocalPlatform"}
 
 It is possible to refer to the locally available IntelliJ-based IDE using the `local` helper function:
 

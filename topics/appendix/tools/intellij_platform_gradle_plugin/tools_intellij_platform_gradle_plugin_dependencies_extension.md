@@ -52,7 +52,7 @@ dependencies {
 >
 {style="warning"}
 
-### Default Target Platforms
+## Default Target Platforms
 
 See [](#custom-target-platforms) for non-default targets.
 
@@ -72,7 +72,7 @@ See [](#custom-target-platforms) for non-default targets.
 | `rustRover(version)`             | Adds a dependency on Rust Rover.                                 |
 | `writerside(version)`            | Adds a dependency on Writerside.                                 |
 
-### Custom Target Platforms
+## Custom Target Platforms
 
 | Function                | Description                                                                                                                                |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
@@ -83,7 +83,7 @@ See also:
 
 - [Types: `IntelliJPlatformType`](tools_intellij_platform_gradle_plugin_types.md#IntelliJPlatformType)
 
-### Plugins
+## Plugins
 
 | Function                       | Description                                              |
 |--------------------------------|----------------------------------------------------------|
@@ -94,7 +94,7 @@ See also:
 
 - [](plugin_dependencies.md)
 
-### Tools
+## Tools
 
 | Function                  | Description                                                                         |
 |---------------------------|-------------------------------------------------------------------------------------|
@@ -106,7 +106,7 @@ See also:
 - [](verifying_plugin_compatibility.md), [Tasks: `verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin)
 - [](plugin_signing.md), [Tasks: `signPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin)
 
-### Java Runtime
+## Java Runtime
 
 | Function                                                                                            | Description                                                                                                                   |
 |-----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|

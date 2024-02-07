@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Migration Guide from Gradle IntelliJ Plugin
 
@@ -47,13 +47,12 @@ To completely drop this approach, it is mandatory to remove its reference manual
 
 </procedure>
 
-## Unresolved 'idea' Plugin
+## Unresolved 'idea-ext' Plugin
 
-Add an explicit dependency on the plugin in <path>build.gradle.kts</path>:
+Add an explicit dependency on [the plugin](https://github.com/JetBrains/gradle-idea-ext-plugin) in <path>build.gradle.kts</path>:
 
 ```kotlin
-id("org.jetbrains.gradle.plugin.idea-ext") version "1.1.7"
+plugins {
+  id("org.jetbrains.gradle.plugin.idea-ext") version "1.1.7"
+}
 ```
-
-
-

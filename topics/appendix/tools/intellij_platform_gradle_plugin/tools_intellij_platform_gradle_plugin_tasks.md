@@ -13,8 +13,10 @@ Tasks are applied to the project with the [`org.jetbrains.intellij.platform.task
 Each of the tasks has relations described between each other, inherit from [](tools_intellij_platform_gradle_plugin_task_awares.md) interfaces, respect configuration and build cache, and can be configured independently, but for the most cases, the [](tools_intellij_platform_gradle_plugin_extension.md) covers all necessary cases.
 
 ```mermaid
-flowchart TD
+flowchart
     subgraph ALL ["` `"]
+        direction TB
+
         buildPlugin
         buildSearchableOptions
         jarSearchableOptions
@@ -23,21 +25,31 @@ flowchart TD
 
         jarSearchableOptions & prepareSandbox --> buildPlugin
         patchPluginXml --> buildSearchableOptions
+        buildSearchableOptions --> jarSearchableOptions
     end
 
-    classpathIndexCleanup
     initializeIntelliJPlatformPlugin --> ALL
+
+    subgraph Undocumented
+        classpathIndexCleanup
+        instrumentCode
+        instrumentedJar
+    end
 
     click buildPlugin "#buildPlugin"
     click buildSearchableOptions "#buildSearchableOptions"
     click classpathIndexCleanup "#classpathIndexCleanup"
     click initializeIntelliJPlatformPlugin "#initializeIntelliJPlatformPlugin"
+    click instrumentCode "#instrumentCode"
+    click instrumentedJar "#instrumentedJar"
     click jarSearchableOptions "#jarSearchableOptions"
     click patchPluginXml "#patchPluginXml"
     click prepareSandbox "#prepareSandbox"
 
     style classpathIndexCleanup fill:#eee,stroke-dasharray: 5 5
-    style jarSearchableOptions fill:#eee
+    style instrumentCode fill:#eee,stroke-dasharray: 5 5
+    style instrumentedJar fill:#eee,stroke-dasharray: 5 5
+
     style patchPluginXml fill:#eee
     style prepareSandbox fill:#eee
     style prepareSandbox fill:#eee
@@ -246,6 +258,71 @@ See also:
 
 ## jarSearchableOptions
 {#jarSearchableOptions}
+
+<tldr>
+
+**Sources**: [`JarSearchableOptionsTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/JarSearchableOptionsTask.kt)
+
+**Extends**: [`Jar`][gradle-jar-task], [`SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware)
+
+**Depends on**: [`buildSearchableOptions`](#buildSearchableOptions)
+
+</tldr>
+
+Creates a JAR file with searchable options to be distributed with the plugin.
+
+
+### destinationDirectory
+{#jarSearchableOptions-destinationDirectory}
+
+The directory where the JAR file will be created.
+
+{style="narrow"}
+Type
+: `DirectoryProperty`
+
+Default value
+: `[buildDirectory]/libsSearchableOptions`
+
+
+### inputDirectory
+{#jarSearchableOptions-inputDirectory}
+
+The directory from which
+
+{style="narrow"}
+Type
+: `DirectoryProperty`
+
+Default value
+: `[buildDirectory]/tmp/initializeIntelliJPlatformPlugin/coroutines-javaagent.jar`
+
+
+### noSearchableOptionsWarning
+{#jarSearchableOptions-noSearchableOptionsWarning}
+
+Emit warning if no searchable options are found.
+Can be disabled with [`noSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_build_features.md#noSearchableOptionsWarning) build feature.
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: [`noSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_build_features.md#noSearchableOptionsWarning)
+
+
+### pluginName
+{#jarSearchableOptions-pluginName}
+
+The name of the plugin.
+
+{style="narrow"}
+Type
+: `Property<String>`
+
+Default value
+: [`intellijPlatform.pluginConfiguration.name`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-name)
 
 
 ## patchPluginXml
@@ -1146,5 +1223,6 @@ Default value
 <include from="snippets.md" element-id="missingContent"/>
 
 [gradle-default-task]: https://docs.gradle.org/current/dsl/org.gradle.api.DefaultTask.html
-[gradle-javaexec-task]: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec
+[gradle-jar-task]: https://docs.gradle.org/current/dsl/org.gradle.jvm.tasks.Jar.html
+[gradle-javaexec-task]: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html
 [gradle-zip-task]: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Zip.html

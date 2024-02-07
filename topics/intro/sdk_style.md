@@ -1,6 +1,6 @@
-# SDK Docs Style Guide
-
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# SDK Docs Style Guide
 
 <link-summary>Writing and notation styleguide for SDK Docs.</link-summary>
 
@@ -223,6 +223,8 @@ The syntax is to use the pipe (`|`) and minus symbols:
 ```
 
 Use `& #124;` (remove space before `#`!) instead of `|` to prevent escaping problems for `<ui-path>` elements inside cells.
+
+Use `<p>Line 1</p><p>Line 2</p>` for multi-line content in a cell.
 
 ### Notes and Callouts
 

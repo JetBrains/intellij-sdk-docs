@@ -6,9 +6,9 @@
 
 <include from="tools_intellij_platform_gradle_plugin.md" element-id="EAP_Status"/>
 
-The IntelliJ Platform Gradle Plugin introduces a set of tasks to handle activities of the plugin development for IntelliJ-based IDEs, such as building, verifying, testing, and publishing the output archive.
+The IntelliJ Platform Gradle Plugin introduces a set of tasks to handle activities of the plugin development for IntelliJ-based IDEs, such as building, verifying, testing, and publishing the plugin archive.
 
-Tasks are applied to the project with the [`org.jetbrains.intellij.platform.tasks`](tools_intellij_platform_gradle_plugin.md#plugin.tasks), which is a part of [`org.jetbrains.intellij.platform`](tools_intellij_platform_gradle_plugin.md#plugin.platform).
+Tasks are applied to the project with the [`org.jetbrains.intellij.platform.tasks`](tools_intellij_platform_gradle_plugin.md#plugin.tasks) subplugin, which is a part of [`org.jetbrains.intellij.platform`](tools_intellij_platform_gradle_plugin.md#plugin.platform).
 
 Each of the tasks has relations described between each other, inherit from [](tools_intellij_platform_gradle_plugin_task_awares.md) interfaces, respect configuration and build cache, and can be configured independently, but for the most cases, the [](tools_intellij_platform_gradle_plugin_extension.md) covers all necessary cases.
 
@@ -58,7 +58,7 @@ flowchart TD
 
 </tldr>
 
-A task responsible for building plugin and preparing a ZIP archive for testing and deployment.
+Builds the plugin and prepares the ZIP archive for testing and deployment.
 
 It takes the output of the [`prepareSandbox`](#prepareSandbox) task containing the built project with all its modules and dependencies, and the output of [`jarSearchableOptions`](#jarSearchableOptions) task.
 
@@ -96,9 +96,9 @@ Default value
 Builds the index of UI components (searchable options) for the plugin.
 This task runs a headless IDE instance to collect all the available options provided by the plugin's [](settings.md).
 
-If your plugin doesn't implement custom settings, it is recommended to disable it with [`intellijPlatform.buildSearchableOptions`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-buildSearchableOptions).
+If your plugin doesn't implement custom settings, it is recommended to disable this task via [`intellijPlatform.buildSearchableOptions`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-buildSearchableOptions) build feature.
 
-In the case of running the task for the plugin which has the [`intellijPlatform.pluginConfiguration.productDescriptor`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-productDescriptor) configures, a warning will be logged regarding potential issues with running headless IDE for paid plugins.
+In the case of running the task for the plugin using [`intellijPlatform.pluginConfiguration.productDescriptor`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-productDescriptor), a warning will be logged regarding potential issues with running headless IDE for paid plugins.
 It is possible to mute this warning with the [`paidPluginSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_build_features.md#paidPluginSearchableOptionsWarning) build feature.
 
 
@@ -151,10 +151,10 @@ Default value
 This task is executed before every other task introduced by IntelliJ Platform Gradle Plugin to prepare it to run.
 
 It is responsible for:
-- checking if the project uses IntelliJ Platform Gradle Plugin in the latest available version,
-- preparing the KotlinX Coroutines Java Agent file to enable coroutines debugging when developing the plugin.
+- checking if the project uses IntelliJ Platform Gradle Plugin in the latest available version
+- preparing the KotlinX Coroutines Java Agent file to enable coroutines debugging when developing the plugin
 
-The self-update check can be disabled with [`selfUpdateCheck`](tools_intellij_platform_gradle_plugin_build_features.md#selfUpdateCheck) build feature.
+The self-update check can be disabled via [`selfUpdateCheck`](tools_intellij_platform_gradle_plugin_build_features.md#selfUpdateCheck) build feature.
 
 To make the Coroutines Java Agent available for the task, inherit from [`CoroutinesJavaAgentAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CoroutinesJavaAgentAware).
 
@@ -164,7 +164,7 @@ To make the Coroutines Java Agent available for the task, inherit from [`Corouti
 
 Determines if the operation is running in offline mode.
 
-Depends on Gradle start parameters
+Depends on Gradle start parameters.
 
 {style="narrow"}
 Type
@@ -181,7 +181,7 @@ See also:
 ### selfUpdateCheck
 {#initializeIntelliJPlatformPlugin-selfUpdateCheck}
 
-Represents the property for checking if self-update is enabled.
+Represents the property for checking if self-update checks are enabled.
 
 {style="narrow"}
 Type
@@ -195,7 +195,7 @@ Default value
 {#initializeIntelliJPlatformPlugin-selfUpdateLock}
 
 Represents a lock file used to limit the plugin version checks in time.
-If a file is absent, and other conditions are met, the version check is performed.
+If the file is absent, and other conditions are met, the version check is performed.
 
 {style="narrow"}
 Type
@@ -255,7 +255,7 @@ See also:
 ### inputFile
 {#patchPluginXml-inputFile}
 
-Represents an input `plugin.xml` file.
+Represents an input <path>plugin.xml</path> file.
 
 By default, a <path>plugin.xml</path> file is picked from the main resource location.
 
@@ -270,9 +270,9 @@ Default value
 ### outputFile
 {#patchPluginXml-outputFile}
 
-Represents the output <path>plugin.xml</path> file property for a task.
+Represents the output <path>plugin.xml</path> file property for the task.
 
-By default, the file is written to a temporary task directory within the <path>build</path> directory.
+By default, the file is written to a temporary task-specific directory within the <path>build</path> directory.
 
 {style="narrow"}
 Type
@@ -559,7 +559,7 @@ Prepares a sandbox environment with the installed plugin and its dependencies.
 
 The sandbox directory is required to run a guest IDE and tests in isolation from other instances, like when multiple IntelliJ Platforms are used for testing with [`runIde`](#runIde), [`testIde`](#testIde), [`testIdeUi`](#testIdeUi), or [`testIdePerformance`](#testIdePerformance) tasks.
 
-To fully utilize the sandbox capabilities in a task, make it extend the [`SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware) interface.
+To fully utilize the sandbox capabilities in a task, extend from [`SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware) interface.
 
 See also:
 - [Extension: `intellijPlatform.sandboxContainer`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-sandboxContainer)
@@ -645,9 +645,9 @@ Type
 The task for publishing plugin to the remote plugins repository, such as [JetBrains Marketplace](https://plugins.jetbrains.com).
 
 See also:
-- [Uploading a Plugin to JetBrains Marketplace](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html#uploading-a-plugin-to-jetbrains-marketplace)
+- [Uploading a Plugin to JetBrains Marketplace](publishing_plugin.md#uploading-a-plugin-to-jetbrains-marketplace)
+- [Publishing Plugin With Gradle](publishing_plugin.md#publishing-plugin-with-gradle)
 - [Plugin upload API](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html)
-- [Publishing Plugin With Gradle](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html#publishing-plugin-with-gradle)
 
 
 ### archiveFile
@@ -655,7 +655,7 @@ See also:
 
 ZIP archive to be published to the remote repository.
 
-By default, it uses an output `archiveFile` of the [`signPlugin`](#signPlugin) task if plugin signing is configured, otherwise [`buildPlugin`](#buildPlugin).
+By default, it uses the output `archiveFile` of the [`signPlugin`](#signPlugin) task if plugin signing is configured, otherwise the one from [`buildPlugin`](#buildPlugin).
 
 {style="narrow"}
 Type
@@ -751,7 +751,7 @@ Default value
 ## setupDependencies
 {#setupDependencies}
 
-> Deprecated.
+> Deprecated. See [Migration FAQ](tools_intellij_platform_gradle_plugin_migration.md#setupdependencies-task).
 >
 {style="warning"}
 
@@ -765,7 +765,7 @@ To sign the plugin before publishing to [JetBrains Marketplace](https://plugins.
 
 As soon as [`privateKey`](#signPlugin-privateKey) (or [`privateKeyFile`](#signPlugin-privateKeyFile)) and [`certificateChain`](#signPlugin-certificateChain) (or [`certificateChainFile`](#signPlugin-certificateChainFile) properties are specified, the task will be executed automatically right before the [`publishPlugin`](#publishPlugin) task.
 
-For more details, see [Plugin Signing](https://plugins.jetbrains.com/docs/intellij/plugin-signing.html) article.
+For more details, see [](plugin_signing.md).
 
 
 ### archiveFile
@@ -986,8 +986,8 @@ See also:
 - [Types: `FailureLevel`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel)
 - [Types: `Subsystems`](tools_intellij_platform_gradle_plugin_types.md#Subsystems)
 - [Types: `VerificationReportsFormats`](tools_intellij_platform_gradle_plugin_types.md#VerificationReportsFormats)
+- [Verifying Plugin Compatibility](verifying_plugin_compatibility.md)
 - [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier)
-- [Verifying Plugin Compatibility](https://plugins.jetbrains.com/docs/intellij/verifying-plugin-compatibility.html)
 
 
 ### ides

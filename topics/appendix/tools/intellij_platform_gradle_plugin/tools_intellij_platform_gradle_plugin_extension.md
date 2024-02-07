@@ -13,7 +13,7 @@ It consists of sections dedicated to the general Gradle plugin configuration, <p
 ## IntelliJ Platform
 {#intellijPlatform}
 
-After the IntelliJ Platform Gradle Plugin is applied, the `intellijPlatform` extension can be used to configure the plugin and common settings of the provided tasks.
+After the IntelliJ Platform Gradle Plugin is [applied](tools_intellij_platform_gradle_plugin.md#usage), the `intellijPlatform` extension can be used to configure the plugin and common settings of the provided tasks.
 
 **Example:**
 
@@ -98,8 +98,8 @@ See also:
 ## Plugin Configuration
 {#intellijPlatform-pluginConfiguration}
 
-Configures the plugin definition and stores in the `plugin.xml` file.
-Data provided to the `intellijPlatform.pluginConfiguration {}` extension is passed to the [`patchPluginXml`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml) task, which overrides the <path>plugin.xml</path> file with new values.
+Configures the plugin definition and stores values in the `plugin.xml` file.
+Data provided to the `intellijPlatform.pluginConfiguration {}` extension is passed to the [`patchPluginXml`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml) task, which augments the <path>plugin.xml</path> file with new values.
 
 **Example:**
 
@@ -159,7 +159,7 @@ See also:
 ### name
 {#intellijPlatform-pluginConfiguration-name}
 
-The plugin display name, visible to users (Title Case).
+The plugin's display name, visible to users (Title Case).
 
 The inputted value will be used to populate the `<name>` element.
 
@@ -177,7 +177,7 @@ See also:
 
 The plugin version, presented in the Plugins settings dialog and on its JetBrains Marketplace page.
 
-For plugins uploaded to the JetBrains Marketplace, semantic versioning must be adhered to.
+For plugins uploaded to the JetBrains Marketplace, [semantic versioning](https://plugins.jetbrains.com/docs/marketplace/semver.html) must be adhered to.
 
 The specified value will be used as a `<version>` element.
 
@@ -196,7 +196,7 @@ See also:
 The plugin description, which is presented on the JetBrains Marketplace plugin page and in the Plugins settings dialog.
 Basic HTML elements such as text formatting, paragraphs, and lists are permitted.
 
-The description content is automatically enclosed by `<![CDATA[... ]]>`.
+The description content is automatically enclosed in `<![CDATA[... ]]>`.
 
 The supplied value will populate the `<description>` element.
 
@@ -216,7 +216,7 @@ A concise summary of new features, bug fixes, and alterations provided in the la
 These change notes will be displayed on the JetBrains Marketplace plugin page and in the Plugins settings dialog.
 Basic HTML elements such as text formatting, paragraphs, and lists are permitted.
 
-The change notes content is automatically encapsulated in `<![CDATA[... ]]>`.
+The change notes content is automatically enclosed in `<![CDATA[... ]]>`.
 
 The inputted value will populate the `<change-notes>` element.
 
@@ -324,12 +324,10 @@ See also:
 - [Plugin Configuration File: `product-descriptor`](plugin_configuration_file.md#idea-plugin__product-descriptor)
 
 
-## IDEA Version
+## Idea Version
 {#intellijPlatform-pluginConfiguration-ideaVersion}
 
-Configures the `idea-version` section of the plugin.
-
-A part of the [](#intellijPlatform-pluginConfiguration) which describes the `idea-version` element.
+A part of the [](#intellijPlatform-pluginConfiguration) which describes the `<idea-version>` element.
 
 **Example:**
 
@@ -347,7 +345,10 @@ intellijPlatform {
   }
 }
 ```
+See also:
 
+- [Plugin Configuration File: `idea-version`](plugin_configuration_file.md#idea-plugin__idea-version)
+- [](build_number_ranges.md)
 
 ### sinceBuild
 {#intellijPlatform-pluginConfiguration-ideaVersion-sinceBuild}
@@ -367,13 +368,14 @@ Default value
 
 See also:
 - [Tasks: `patchPluginXml.sinceBuild`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-sinceBuild)
-- [Plugin Configuration File: `idea-version`](plugin_configuration_file.md#idea-plugin__idea-version)
 
 
 ### untilBuild
 {#intellijPlatform-pluginConfiguration-ideaVersion-untilBuild}
 
-The latest IDE version that is compatible with the plugin. An undefined value signifies compatibility with all IDEs starting from the version mentioned in `since-build`, including potential future builds that may cause compatibility issues.
+The latest IDE version that is compatible with the plugin.
+An undefined value signifies compatibility with all IDEs starting from the version mentioned in `since-build`,
+including potential future builds that may cause compatibility issues.
 
 The given value will be assigned to the `<idea-version until-build=""/>` element attribute.
 
@@ -388,15 +390,12 @@ Default value
 
 See also:
 - [Tasks: `patchPluginXml.untilBuild`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-untilBuild)
-- [Plugin Configuration File: `idea-version`](plugin_configuration_file.md#idea-plugin__idea-version)
 
 
 ## Vendor
 {#intellijPlatform-pluginConfiguration-vendor}
 
-Configures the `idea-version` section of the plugin.
-
-A part of the [](#intellijPlatform-pluginConfiguration) which describes the `vendor` element.
+A part of the [](#intellijPlatform-pluginConfiguration) which describes the `<vendor>` element.
 
 **Example:**
 
@@ -416,6 +415,8 @@ intellijPlatform {
 }
 ```
 
+See also:
+- [Plugin Configuration File: `vendor`](plugin_configuration_file.md#idea-plugin__vendor)
 
 ### name
 {#intellijPlatform-pluginConfiguration-vendor-name}
@@ -430,7 +431,6 @@ Type
 
 See also:
 - [Tasks: `patchPluginXml.vendorName`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-vendorName)
-- [Plugin Configuration File: `vendor`](plugin_configuration_file.md#idea-plugin__vendor)
 
 
 ### email
@@ -446,7 +446,6 @@ Type
 
 See also:
 - [Tasks: `patchPluginXml.vendorEmail`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-vendorEmail)
-- [Plugin Configuration File: `vendor`](plugin_configuration_file.md#idea-plugin__vendor)
 
 
 ### url
@@ -462,7 +461,6 @@ Type
 
 See also:
 - [Tasks: `patchPluginXml.vendorUrl`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-vendorUrl)
-- [Plugin Configuration File: `vendor`](plugin_configuration_file.md#idea-plugin__vendor)
 
 
 ## Publishing
@@ -539,7 +537,7 @@ See also:
 ### toolboxEnterprise
 {#intellijPlatform-publishing-toolboxEnterprise}
 
-Specifies if the Toolbox Enterprise plugin repository service should be used.
+Specify if the Toolbox Enterprise plugin repository service should be used.
 
 {style="narrow"}
 Type
@@ -905,7 +903,7 @@ See also:
 ### subsystemsToCheck
 {#intellijPlatform-verifyPlugin-subsystemsToCheck}
 
-Specifies which subsystems of IDE should be checked.
+Which subsystems of the IDE should be checked.
 
 {style="narrow"}
 Type
@@ -1008,12 +1006,12 @@ See also:
 - [Types: `ProductRelease.Channel`](tools_intellij_platform_gradle_plugin_types.md#ProductRelease-Channel)
 - [Types: `ProductReleasesValueSource.FilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesValueSource-FilterParameters)
 
-| Function                               | Description                                                                                                                                                                                         |
-|----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `ide(type, version)` `ide(definition)` | Adds a dependency to a binary IDE release to be used for testing with the IntelliJ Plugin Verifier.                                                                                                 |
-| `localIde(localPath)`                  | Adds the local IDE to be used for testing with the IntelliJ Plugin Verifier.                                                                                                                        |
-| `recommended()`                        | Retrieves matching IDEs using the default configuration based on the currently used IntelliJ Platform and applies them for IntelliJ Platform Verifier using the `ide` helper method.                |
-| `select(configure)`                    | Retrieves matching IDEs using custom [`ProductReleasesValueSource.FilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesValueSource-FilterParameters) filter parameters. |
+| Function                                            | Description                                                                                                                                                                                         |
+|-----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <p>`ide(type, version)`</p><p>`ide(definition)`</p> | Adds a dependency to a binary IDE release to be used for testing with the IntelliJ Plugin Verifier.                                                                                                 |
+| `localIde(localPath)`                               | Adds the local IDE to be used for testing with the IntelliJ Plugin Verifier.                                                                                                                        |
+| `recommended()`                                     | Retrieves matching IDEs using the default configuration based on the currently used IntelliJ Platform and applies them for IntelliJ Platform Verifier using the `ide` helper method.                |
+| `select(configure)`                                 | Retrieves matching IDEs using custom [`ProductReleasesValueSource.FilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesValueSource-FilterParameters) filter parameters. |
 
 
 <include from="snippets.md" element-id="missingContent"/>

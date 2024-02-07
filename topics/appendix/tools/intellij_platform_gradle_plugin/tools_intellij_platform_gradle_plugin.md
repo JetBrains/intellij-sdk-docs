@@ -6,7 +6,7 @@
 
 <tldr id="tldr">
 
-**Current Release**: Early Access Preview
+**Current Release**: %intellij-platform-gradle-plugin-version% (Early Access Preview)
 
 **GitHub**: [Releases & Changelog](https://github.com/JetBrains/gradle-intellij-plugin/releases), [Issue Tracker](https://github.com/JetBrains/gradle-intellij-plugin/issues)
 
@@ -23,10 +23,11 @@ It is going to replace the current _[](tools_gradle_intellij_plugin.md) (1.x)_ i
 
 <snippet id="EAP_Status">
 
-> IntelliJ Platform Gradle Plugin 2.x is currently in **Early Access** and may not support all features and project setups yet (see also [](tools_intellij_platform_gradle_plugin.md#requirements)).
-> Please report bugs or problems in GitHub issue tracker or Slack channel (see [here](tools_intellij_platform_gradle_plugin.md#tldr)).
+> IntelliJ Platform Gradle Plugin 2.x is currently in **Early Access Preview** and may not support all features and project setups yet (see also [](tools_intellij_platform_gradle_plugin.md#requirements)).
+> Please report bugs or problems in the GitHub issue tracker or Slack channel (see [here](tools_intellij_platform_gradle_plugin.md#tldr)).
 >
-> Any documentation issues on this page should be reported using the feedback form on the bottom of this page.
+> Any documentation issues should be reported using the feedback form on the bottom of this page.
+> Please leave your email in case we need more details.
 >
 > Thanks a lot in advance for your feedback!
 >
@@ -232,7 +233,6 @@ It is possible to refer to the locally available IntelliJ-based IDE using the `l
 ```kotlin
 repositories {
   intellijPlatform {
-    ...
     ivy()
   }
 }

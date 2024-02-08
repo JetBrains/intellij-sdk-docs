@@ -394,6 +394,9 @@ The given value will be assigned to the `<idea-version until-build=""/>` element
 
 The default value is set to the `MAJOR.*` version based on the currently selected IntelliJ Platform, such as `233.*`.
 
+The `until-build` attribute can be unset by setting `provider { null }` as a value.
+Note that passing only `null` will make Gradle use a default value instead.
+
 {style="narrow"}
 Type
 : `Property<String>`

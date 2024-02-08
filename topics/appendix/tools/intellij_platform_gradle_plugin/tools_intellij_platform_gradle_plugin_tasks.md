@@ -543,7 +543,7 @@ See also:
 
 The lowest IDE version compatible with the plugin.
 
-The provided value will be set as a value of the `<idea-version since-build=""/>` element attribute.
+The provided value will be set as a value of the `<idea-version since-build="..."/>` element attribute.
 
 {style="narrow"}
 Type
@@ -562,7 +562,10 @@ See also:
 The highest IDE version compatible with the plugin.
 Undefined value declares compatibility with all the IDEs since the version specified by the `since-build` (also with the future builds that may cause incompatibility errors).
 
-The provided value will be set as a value of the `<idea-version until-build=""/>` element attribute.
+The provided value will be set as a value of the `<idea-version until-build="..."/>` element attribute.
+
+The `until-build` attribute can be unset by setting `provider { null }` as a value.
+Note that passing only `null` will make Gradle use a default value instead.
 
 {style="narrow"}
 Type

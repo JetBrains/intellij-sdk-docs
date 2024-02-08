@@ -19,8 +19,8 @@ After the IntelliJ Platform Gradle Plugin is [applied](tools_intellij_platform_g
 
 ```kotlin
 intellijPlatform {
-  instrumentCode = true
   buildSearchableOptions = true
+  instrumentCode = true
   sandboxContainer = "..."
 
   pluginConfiguration {
@@ -37,6 +37,23 @@ intellijPlatform {
   }
 }
 ```
+
+
+### buildSearchableOptions
+{#intellijPlatform-buildSearchableOptions}
+
+Builds an index of UI components (searchable options) for the plugin.
+Controls the execution of the [`buildSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions) task.
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: `true`
+
+See also:
+- [Build Features: `noSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_build_features.md#noSearchableOptionsWarning)
 
 
 ### instrumentCode
@@ -61,21 +78,17 @@ Default value
 : `true`
 
 
-### buildSearchableOptions
-{#intellijPlatform-buildSearchableOptions}
+### productInfo
+{#intellijPlatform-productInfo}
 
-Builds an index of UI components (searchable options) for the plugin.
-Controls the execution of the [`buildSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions) task.
+Provides read access for the [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) object associated with the IntelliJ Platform dependency configured for the current project.
 
 {style="narrow"}
 Type
-: `Property<Boolean>`
+: [`Property<ProductInfo>`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo)
 
 Default value
-: `true`
-
-See also:
-- [Build Features: `noSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_build_features.md#noSearchableOptionsWarning)
+: [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) for the current IntelliJ Platform
 
 
 ### sandboxContainer

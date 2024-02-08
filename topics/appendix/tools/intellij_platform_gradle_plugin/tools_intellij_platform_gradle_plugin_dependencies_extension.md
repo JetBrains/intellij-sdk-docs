@@ -85,10 +85,13 @@ See also:
 
 ## Plugins
 
-| Function                       | Description                                              |
-|--------------------------------|----------------------------------------------------------|
-| `plugin(id, version, channel)` | Adds a dependency on a plugin for IntelliJ Platform.     |
-| `bundledPlugin(id)`            | Adds a dependency on a bundled IntelliJ Platform plugin. |
+| Function                       | Description                                                                                                                  |
+|--------------------------------|------------------------------------------------------------------------------------------------------------------------------|
+| `plugin(id, version, channel)` | Adds a dependency on a plugin for IntelliJ Platform.                                                                         |
+| `plugin(notation)`             | Adds a dependency on a plugin for IntelliJ Platform using a string notation (`pluginId:version`, `pluginId:version@channel`) |
+| `plugins(notations)`           | Adds dependencies on plugins for IntelliJ Platform using a string notation (`pluginId:version`, `pluginId:version@channel`)  |
+| `bundledPlugin(id)`            | Adds a dependency on a bundled IntelliJ Platform plugin.                                                                     |
+| `bundledPlugins(ids)`          | Adds dependencies on bundled IntelliJ Platform plugins.                                                                      |
 
 See also:
 

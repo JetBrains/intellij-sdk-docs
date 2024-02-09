@@ -46,15 +46,14 @@ flowchart
     click patchPluginXml "#patchPluginXml"
     click prepareSandbox "#prepareSandbox"
 
-    style classpathIndexCleanup fill:#eee,stroke-dasharray: 5 5
-    style instrumentCode fill:#eee,stroke-dasharray: 5 5
-    style instrumentedJar fill:#eee,stroke-dasharray: 5 5
+    style classpathIndexCleanup stroke-dasharray: 5 5
+    style instrumentCode stroke-dasharray: 5 5
+    style instrumentedJar stroke-dasharray: 5 5
 
-    style patchPluginXml fill:#eee
-    style prepareSandbox fill:#eee
-    style prepareSandbox fill:#eee
+    style patchPluginXml stroke-dasharray: 5 5
+    style prepareSandbox stroke-dasharray: 5 5
 
-    style ALL fill:#fff,stroke:#eee
+    style ALL fill:transparent,stroke:#eee
 ```
 
 ## buildPlugin

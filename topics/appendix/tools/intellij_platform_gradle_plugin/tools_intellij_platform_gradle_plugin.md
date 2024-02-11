@@ -233,7 +233,7 @@ It is possible to refer to the locally available IntelliJ-based IDE using the `l
 ```kotlin
 repositories {
   intellijPlatform {
-    ivy()
+    localPlatformArtifacts()
   }
 }
 
@@ -244,7 +244,7 @@ dependencies {
 }
 ```
 
-Note that the `ivy` entry needs to be added to the `repositories {}` block as all local dependencies (local IDE, bundled plugins, etc.) rely on the Ivy repositories.
+Note that the `localPlatformArtifacts()` entry needs to be added to the `repositories {}` block as all local dependencies (local IDE, bundled plugins, etc.) rely on the Ivy repositories.
 
 ### Setting Up Plugin Dependencies
 

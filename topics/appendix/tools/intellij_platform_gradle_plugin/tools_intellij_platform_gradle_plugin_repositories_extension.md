@@ -45,16 +45,16 @@ repositories {
 
 The default repository definition suitable for most plugins.
 
-| Function                | Description                                |
-|-------------------------|--------------------------------------------|
-| `defaultRepositories()` | Applies a set of recommended repositories. |
+| Function                | Description                                                                                                                           |
+|-------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| `defaultRepositories()` | Applies a set of recommended repositories required for running the most common tasks provided by the IntelliJ Platform Gradle Plugin. |
 
 It includes:
+- `localPlatformArtifacts()` — required to use plugins bundled with IntelliJ Platform or refer to the local IDE
+- `releases()` and `snapshots()` — IntelliJ Platform releases channels
+- `marketplace()` — JetBrains Marketplace plugins repository
+- `binaryReleases()` — JetBrains IDEs releases required for running the IntelliJ Plugin Verifier
 
-- `ivy()`
-- `releases()`, `snapshots()`
-- `marketplace()`
-- `binaryReleases()`
 
 ## IDE Releases
 
@@ -80,11 +80,11 @@ See also:
 
 ## Additional Repositories
 
-| Function             | Description                                                                                                                                                                                                                                                                                                         |
-|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `ivy()`              | Adds a local [Ivy](https://ant.apache.org/ivy/) repository for resolving local Ivy XML files used for describing artifacts like [local IntelliJ Platform instance](tools_intellij_platform_gradle_plugin.md#dependenciesLocalPlatform), bundled plugins, and other dependencies that utilize `createIvyDependency`. |
-| `jetbrainsRuntime()` | Adds a repository for accessing [JetBrains Runtime](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance) releases.                                                                                                                                                                   |
-| `marketplace()`      | Adds a repository for accessing plugins hosted on [JetBrains Marketplace](https://plugins.jetbrains.com).                                                                                                                                                                                                           |
+| Function                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `localPlatformArtifacts()` | Certain dependencies, such as the [local IntelliJ Platform instance](tools_intellij_platform_gradle_plugin.md#dependenciesLocalPlatform) and bundled IDE plugins, need extra pre-processing before they can be correctly used by the IntelliJ Platform Gradle Plugin and loaded by Gradle. This pre-processing involves generating XML files that detail these specific artifacts. Once created, these XMLs are stored in a unique custom [Ivy](https://ant.apache.org/ivy/) repository directory. |
+| `jetbrainsRuntime()`       | Adds a repository for accessing [JetBrains Runtime](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance) releases.                                                                                                                                                                                                                                                                                                                                                  |
+| `marketplace()`            | Adds a repository for accessing plugins hosted on [JetBrains Marketplace](https://plugins.jetbrains.com).                                                                                                                                                                                                                                                                                                                                                                                          |
 
 See also:
 

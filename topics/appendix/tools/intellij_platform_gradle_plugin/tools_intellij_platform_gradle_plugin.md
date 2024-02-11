@@ -139,19 +139,19 @@ To access the IntelliJ Platform Gradle Plugin within the <path>settings.gradle.k
 import org.jetbrains.intellij.platform.gradle.extensions.intellijPlatform
 
 plugins {
-    id("org.jetbrains.intellij.platform.settings") version "%intellij-platform-gradle-plugin-version%"
+  id("org.jetbrains.intellij.platform.settings") version "%intellij-platform-gradle-plugin-version%"
 }
 
 dependencyResolutionManagement {
-    repositoriesMode = RepositoriesMode.FAIL_ON_PROJECT_REPOS
+  repositoriesMode = RepositoriesMode.FAIL_ON_PROJECT_REPOS
 
-    repositories {
-        mavenCentral()
+  repositories {
+    mavenCentral()
 
-        intellijPlatform {
-            recommended()
-        }
+    intellijPlatform {
+      defaultRepositories()
     }
+  }
 }
 ```
 
@@ -174,7 +174,7 @@ repositories {
   mavenCentral()
 
   intellijPlatform {
-    recommended()
+    defaultRepositories()
   }
 }
 

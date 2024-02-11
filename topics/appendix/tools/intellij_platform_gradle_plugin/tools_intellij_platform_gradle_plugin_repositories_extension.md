@@ -21,40 +21,40 @@ It provides methods to add:
 
 <snippet id="recommendedCallout">
 
-> In most cases, simply using [`recommended()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#recommended) repository will be sufficient.
+> In most cases, simply using [`defaultRepositories()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories) repository will be sufficient.
 >
 {style="tip"}
 
 **Example:**
 
-Setup Maven Central and [`recommended()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#recommended) repositories:
+Setup Maven Central and [`defaultRepositories()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories) repositories:
 
 ```kotlin
 repositories {
   mavenCentral()
 
   intellijPlatform {
-    recommended()
+    defaultRepositories()
   }
 }
 ```
 
 </snippet>
 
-## Recommended
+## Default Repositories
 
 The default repository definition suitable for most plugins.
 
-| Function        | Description                                |
-|-----------------|--------------------------------------------|
-| `recommended()` | Applies a set of recommended repositories. |
+| Function                | Description                                |
+|-------------------------|--------------------------------------------|
+| `defaultRepositories()` | Applies a set of recommended repositories. |
 
 It includes:
 
+- `ivy()`
 - `releases()`, `snapshots()`
 - `marketplace()`
-- `jetbrainsRuntime()`
-- `binaryReleases()`, `binaryReleasesAndroidStudio()`
+- `binaryReleases()`
 
 ## IDE Releases
 

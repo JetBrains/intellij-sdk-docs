@@ -18,7 +18,7 @@ It also includes methods for adding IntelliJ Platform plugins, IntelliJ Platform
 
 **Example:**
 
-- setup Maven Central and `recommended()` [repositories](tools_intellij_platform_gradle_plugin_repositories_extension.md)
+- setup Maven Central and [`defaultRepositories()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories)
 - target IntelliJ IDEA Community %ijPlatform%
 - add dependency on bundled Java plugin
 - add IntelliJ Plugin Verifier and Marketplace ZIP Signer CLI tools
@@ -29,7 +29,7 @@ repositories {
   mavenCentral()
 
   intellijPlatform {
-    recommended()
+    defaultRepositories()
   }
 }
 

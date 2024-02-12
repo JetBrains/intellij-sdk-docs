@@ -14,6 +14,10 @@ Each of the tasks has relations described between each other, inherit from [](to
 
 ```mermaid
 flowchart
+    subgraph Gradle Tasks
+        jar
+    end
+
     subgraph ALL ["` `"]
         direction TB
 
@@ -26,6 +30,7 @@ flowchart
         jarSearchableOptions & prepareSandbox --> buildPlugin
         patchPluginXml --> buildSearchableOptions
         buildSearchableOptions --> jarSearchableOptions
+        jar & instrumentedJar --> prepareSandbox
     end
 
     initializeIntelliJPlatformPlugin --> ALL
@@ -49,8 +54,6 @@ flowchart
     style classpathIndexCleanup stroke-dasharray: 5 5
     style instrumentCode stroke-dasharray: 5 5
     style instrumentedJar stroke-dasharray: 5 5
-
-    style prepareSandbox stroke-dasharray: 5 5
 
     style ALL fill:transparent,stroke:#eee
 ```
@@ -642,6 +645,16 @@ See also:
 ## prepareSandbox
 {#prepareSandbox}
 
+<tldr>
+
+**Sources**: [`PrepareSandboxTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PrepareSandboxTask.kt)
+
+**Extends**: [`Sync`][gradle-jar-task], [`SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware)
+
+**Depends on**: `jar`, [`instrumentedJar`](#instrumentedJar)
+
+</tldr>
+
 Prepares a sandbox environment with the installed plugin and its dependencies.
 
 The sandbox directory is required by tasks that run IDE and tests in isolation from other instances, like when multiple IntelliJ Platforms are used for testing with [`runIde`](#runIde), [`testIde`](#testIde), [`testIdeUi`](#testIdeUi), or [`testIdePerformance`](#testIdePerformance) tasks.
@@ -711,7 +724,7 @@ See also:
 ### runtimeClasspath
 {#prepareSandbox-runtimeClasspath}
 
-Dependencies removed with the `runtimeClasspath` configuration.
+Dependencies defined with the `runtimeClasspath` configuration.
 
 {style="narrow"}
 Type
@@ -1235,4 +1248,5 @@ Default value
 [gradle-default-task]: https://docs.gradle.org/current/dsl/org.gradle.api.DefaultTask.html
 [gradle-jar-task]: https://docs.gradle.org/current/dsl/org.gradle.jvm.tasks.Jar.html
 [gradle-javaexec-task]: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html
+[gradle-sync-task]: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Sync.html
 [gradle-zip-task]: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Zip.html

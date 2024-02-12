@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Frameworks
 
@@ -6,6 +6,10 @@
 
 The following tutorial shows how to support a custom framework type for a project and make this framework type embedded in a [project wizard](project_wizard.md) as a UI component.
 The examples in this tutorial rely heavily on the [framework_basics](%gh-sdk-samples%/framework_basics) code sample.
+
+> Note that this feature requires a [dependency](plugin_dependencies.md) on [the Java plugin](idea.md#java).
+>
+{style="warning"}
 
 ## Creating a New Framework
 

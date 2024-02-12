@@ -126,12 +126,12 @@ Type
 : [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo)
 
 
-### assertIntelliJPlatformSupportedVersion()
-{#IntelliJPlatformVersionAware-assertIntelliJPlatformSupportedVersion}
+### validateIntelliJPlatformVersion()
+{#IntelliJPlatformVersionAware-validateIntelliJPlatformVersion}
 
-Asserts that the resolved IntelliJ Platform is supported by checking against the minimal supported IntelliJ Platform version.
+Validates that the resolved IntelliJ Platform is supported by checking against the minimal supported IntelliJ Platform version.
 
-Invokes [`ProductInfo.assertSupportedVersion()`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo-assertSupportedVersion).
+Invokes [`ProductInfo.validateSupportedVersion()`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo-validateSupportedVersion).
 
 {style="narrow"}
 Throws

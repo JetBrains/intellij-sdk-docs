@@ -84,10 +84,10 @@ The information is retrieved from the <path>product-info.json</path> file in the
 | fileExtensions    | The list of file extensions associated with the product.                 |
 | modules           | The list of modules of the product.                                      |
 
-### assertSupportedVersion()
-{#ProductInfo-assertSupportedVersion}
+### validateSupportedVersion()
+{#ProductInfo-validateSupportedVersion}
 
-Asserts that the resolved IntelliJ Platform is supported by checking against the minimal supported IntelliJ Platform version.
+Validates that the resolved IntelliJ Platform is supported by checking against the minimal supported IntelliJ Platform version.
 
 If the provided version is lower, an `IllegalArgumentException` is thrown with an appropriate message.
 

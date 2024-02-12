@@ -29,6 +29,7 @@ flowchart
         printBundledPlugins
         printProductsReleases
         publishPlugin
+        runIde
         signPlugin
 
         jarSearchableOptions & prepareSandbox --> buildPlugin
@@ -59,6 +60,8 @@ flowchart
     click printBundledPlugins "#printBundledPlugins"
     click printProductsReleases "#printProductsReleases"
     click publishPlugin "#publishPlugin"
+    click runIde "#runIde"
+    click signPlugin "#signPlugin"
 
     style classpathIndexCleanup stroke-dasharray: 5 5
     style instrumentCode stroke-dasharray: 5 5
@@ -891,13 +894,37 @@ Default value
 : [`intellijPlatform.publishing.toolboxEnterprise`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-toolboxEnterprise)
 
 
-> Not implemented.
->
-{style="warning"}
-
-
 ## runIde
 {#runIde}
+
+<tldr>
+
+**Sources**: [`RunIdeTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/RunIdeTask.kt)
+
+**Extends**: [`JavaExec`][gradle-javaexec-task], [`RunnableIdeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#RunnableIdeAware), [`CustomIntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware)
+
+</tldr>
+
+Runs the IDE instance using the currently selected IntelliJ Platform with the built plugin loaded.
+It directly extends the [`JavaExec`][gradle-javaexec-task] Gradle task, which allows for an extensive configuration (system properties, memory management, etc.).
+
+This task class also inherits from [`CustomIntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware), which makes it possible to create `runIde` tasks using custom IntelliJ Platform versions:
+
+```Kotlin
+import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
+import org.jetbrains.intellij.platform.gradle.tasks.RunIdeTask
+
+tasks {
+  val runPhpStorm by registering(RunIdeTask::class) {
+    type = IntelliJPlatformType.PhpStorm
+    version = "2023.2.2"
+  }
+
+  val runLocalIde by registering(RunIdeTask::class) {
+    localPath = file("/Users/hsz/Applications/Android Studio.app")
+  }
+}
+```
 
 
 ## setupDependencies

@@ -50,7 +50,6 @@ flowchart
     style instrumentCode stroke-dasharray: 5 5
     style instrumentedJar stroke-dasharray: 5 5
 
-    style patchPluginXml stroke-dasharray: 5 5
     style prepareSandbox stroke-dasharray: 5 5
 
     style ALL fill:transparent,stroke:#eee
@@ -327,6 +326,14 @@ Default value
 ## patchPluginXml
 {#patchPluginXml}
 
+<tldr>
+
+**Sources**: [`PatchPluginXmlTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PatchPluginXmlTask.kt)
+
+**Extends**: [`DefaultTask`][gradle-default-task], [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware)
+
+</tldr>
+
 
 ### inputFile
 {#patchPluginXml-inputFile}
@@ -356,6 +363,7 @@ Type
 
 Default value
 : <path>[buildDirectory]/tmp/patchPluginXml/plugin.xml</path>
+
 
 ### pluginId
 {#patchPluginXml-pluginId}

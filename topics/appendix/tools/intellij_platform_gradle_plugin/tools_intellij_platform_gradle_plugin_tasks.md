@@ -776,17 +776,17 @@ Default value
 : [`intellijPlatform.publishing.token`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-token)
 
 
-### channel
-{#publishPlugin-channel}
+### channels
+{#publishPlugin-channels}
 
-A channel name to upload plugin to.
+A list of channel names to upload plugin to.
 
 {style="narrow"}
 Type
-: `Property<String>`
+: `ListProperty<String>`
 
 Default value
-: [`intellijPlatform.publishing.channel`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-channel)
+: [`intellijPlatform.publishing.channels`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-channels)
 
 
 ### hidden

@@ -494,7 +494,7 @@ intellijPlatform {
   publishing {
     host = ""
     token = "7hR4nD0mT0k3n_8f2eG"
-    channel = "default"
+    channels = listOf("default")
     toolboxEnterprise = false
     hidden = false
   }
@@ -534,20 +534,20 @@ See also:
 - [Tasks: `publishPlugin.token`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-token)
 
 
-### channel
-{#intellijPlatform-publishing-channel}
+### channels
+{#intellijPlatform-publishing-channels}
 
-A channel name to upload plugin to.
+A list of channel names to upload plugin to.
 
 {style="narrow"}
 Type
-: `Property<String>`
+: `ListProperty<String>`
 
 Default value:
-: `"default"`
+: `listOf("default")`
 
 See also:
-- [Tasks: `publishPlugin.channel`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-channel)
+- [Tasks: `publishPlugin.channels`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-channels)
 
 
 ### toolboxEnterprise

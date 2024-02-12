@@ -27,6 +27,7 @@ flowchart
         patchPluginXml
         prepareSandbox
         printBundledPlugins
+        printProductsReleases
 
         jarSearchableOptions & prepareSandbox --> buildPlugin
         patchPluginXml --> buildSearchableOptions
@@ -52,6 +53,7 @@ flowchart
     click patchPluginXml "#patchPluginXml"
     click prepareSandbox "#prepareSandbox"
     click printBundledPlugins "#printBundledPlugins"
+    click printProductsReleases "#printProductsReleases"
 
     style classpathIndexCleanup stroke-dasharray: 5 5
     style instrumentCode stroke-dasharray: 5 5
@@ -749,6 +751,30 @@ Prints the list of bundled plugins available within the currently targeted Intel
 
 ## printProductsReleases
 {#printProductsReleases}
+
+<tldr>
+
+**Sources**: [`PrintProductsReleasesTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PrintProductsReleasesTask.kt)
+
+**Extends**: [`DefaultTask`][gradle-default-task]
+
+</tldr>
+
+Prints the list of binary product releases that, by default, match the currently selected IntelliJ Platform along with [`intellijPlatform.pluginConfiguration.ideaVersion.sinceBuild`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-ideaVersion-sinceBuild) and [`intellijPlatform.pluginConfiguration.ideaVersion.untilBuild`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-ideaVersion-untilBuild) properties.
+
+
+### productsReleases
+{#printProductsReleases-productsReleases}
+
+Property holds the list of product releases to print.
+
+{style="narrow"}
+Type
+: `ListProperty<String>`
+
+Default value
+: The output of `ProductReleasesValueSource` using default configuration
+
 
 
 ## publishPlugin

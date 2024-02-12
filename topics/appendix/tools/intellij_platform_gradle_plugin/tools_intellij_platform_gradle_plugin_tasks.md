@@ -36,6 +36,7 @@ flowchart
         buildSearchableOptions --> jarSearchableOptions
         jar & instrumentedJar --> prepareSandbox
         buildPlugin & signPlugin --> publishPlugin
+        buildPlugin --> signPlugin
     end
 
     initializeIntelliJPlatformPlugin --> ALL
@@ -909,6 +910,16 @@ Default value
 
 ## signPlugin
 {#signPlugin}
+
+<tldr>
+
+**Sources**: [`SignPluginTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/SignPluginTask.kt)
+
+**Extends**: [`JavaExec`][gradle-javaexec-task], [`SigningAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SigningAware)
+
+**Depends on**: [`buildPlugin`](#buildPlugin)
+
+</tldr>
 
 Signs the ZIP archive with the provided key using the [Marketplace ZIP Signer](https://github.com/JetBrains/marketplace-zip-signer) library.
 

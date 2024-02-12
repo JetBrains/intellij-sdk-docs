@@ -31,6 +31,7 @@ flowchart
         publishPlugin
         runIde
         signPlugin
+        testIde
 
         jarSearchableOptions & prepareSandbox --> buildPlugin
         patchPluginXml --> buildSearchableOptions
@@ -62,6 +63,7 @@ flowchart
     click publishPlugin "#publishPlugin"
     click runIde "#runIde"
     click signPlugin "#signPlugin"
+    click testIde "#testIde"
 
     style classpathIndexCleanup stroke-dasharray: 5 5
     style instrumentCode stroke-dasharray: 5 5
@@ -908,9 +910,9 @@ Default value
 Runs the IDE instance using the currently selected IntelliJ Platform with the built plugin loaded.
 It directly extends the [`JavaExec`][gradle-javaexec-task] Gradle task, which allows for an extensive configuration (system properties, memory management, etc.).
 
-This task class also inherits from [`CustomIntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware), which makes it possible to create `runIde` tasks using custom IntelliJ Platform versions:
+This task class also inherits from [`CustomIntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware), which makes it possible to create `runIde`-like tasks using custom IntelliJ Platform versions:
 
-```Kotlin
+```kotlin
 import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
 import org.jetbrains.intellij.platform.gradle.tasks.RunIdeTask
 
@@ -1136,6 +1138,36 @@ Default value
 {#testIde}
 
 
+<tldr>
+
+**Sources**: [`TestIdeTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/TestIdeTask.kt)
+
+**Extends**: [`Test`][gradle-test-task], [`RunnableIdeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#RunnableIdeAware), [`CustomIntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware)
+
+</tldr>
+
+Runs plugin tests against the currently selected IntelliJ Platform with the built plugin loaded.
+It directly extends the [`Test`][gradle-test-task] Gradle task, which allows for an extensive configuration (system properties, memory management, etc.).
+
+This task class also inherits from [`CustomIntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware), which makes it possible to create `testIde`-like tasks using custom IntelliJ Platform versions:
+
+```kotlin
+import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
+import org.jetbrains.intellij.platform.gradle.tasks.TestIdeTask
+
+tasks {
+  val testPhpStorm by registering(TestIdeTask::class) {
+    type = IntelliJPlatformType.PhpStorm
+    version = "2023.2.2"
+  }
+
+  val testLocalIde by registering(TestIdeTask::class) {
+    localPath = file("/Users/hsz/Applications/Android Studio.app")
+  }
+}
+```
+
+
 ## testIdePerformance
 {#testIdePerformance}
 
@@ -1338,4 +1370,5 @@ Default value
 [gradle-jar-task]: https://docs.gradle.org/current/dsl/org.gradle.jvm.tasks.Jar.html
 [gradle-javaexec-task]: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html
 [gradle-sync-task]: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Sync.html
+[gradle-test-task]: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.testing.Test.html
 [gradle-zip-task]: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Zip.html

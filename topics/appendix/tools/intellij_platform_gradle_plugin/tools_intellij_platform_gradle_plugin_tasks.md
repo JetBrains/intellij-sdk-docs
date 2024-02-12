@@ -26,6 +26,7 @@ flowchart
         jarSearchableOptions
         patchPluginXml
         prepareSandbox
+        printBundledPlugins
 
         jarSearchableOptions & prepareSandbox --> buildPlugin
         patchPluginXml --> buildSearchableOptions
@@ -50,6 +51,7 @@ flowchart
     click jarSearchableOptions "#jarSearchableOptions"
     click patchPluginXml "#patchPluginXml"
     click prepareSandbox "#prepareSandbox"
+    click printBundledPlugins "#printBundledPlugins"
 
     style classpathIndexCleanup stroke-dasharray: 5 5
     style instrumentCode stroke-dasharray: 5 5
@@ -733,6 +735,16 @@ Type
 
 ## printBundledPlugins
 {#printBundledPlugins}
+
+<tldr>
+
+**Sources**: [`PrintBundledPluginsTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PrintBundledPluginsTask.kt)
+
+**Extends**: [`DefaultTask`][gradle-default-task], [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware)
+
+</tldr>
+
+Prints the list of bundled plugins available within the currently targeted IntelliJ Platform.
 
 
 ## printProductsReleases

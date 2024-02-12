@@ -28,11 +28,14 @@ flowchart
         prepareSandbox
         printBundledPlugins
         printProductsReleases
+        publishPlugin
+        signPlugin
 
         jarSearchableOptions & prepareSandbox --> buildPlugin
         patchPluginXml --> buildSearchableOptions
         buildSearchableOptions --> jarSearchableOptions
         jar & instrumentedJar --> prepareSandbox
+        buildPlugin & signPlugin --> publishPlugin
     end
 
     initializeIntelliJPlatformPlugin --> ALL
@@ -54,6 +57,7 @@ flowchart
     click prepareSandbox "#prepareSandbox"
     click printBundledPlugins "#printBundledPlugins"
     click printProductsReleases "#printProductsReleases"
+    click publishPlugin "#publishPlugin"
 
     style classpathIndexCleanup stroke-dasharray: 5 5
     style instrumentCode stroke-dasharray: 5 5
@@ -776,9 +780,18 @@ Default value
 : The output of `ProductReleasesValueSource` using default configuration
 
 
-
 ## publishPlugin
 {#publishPlugin}
+
+<tldr>
+
+**Sources**: [`PublishPluginTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PublishPluginTask.kt)
+
+**Extends**: [`DefaultTask`][gradle-default-task]
+
+**Depends on**: [`buildPlugin`](#buildPlugin), [`signPlugin`](#signPlugin)
+
+</tldr>
 
 The task for publishing plugin to the remote plugins repository, such as [JetBrains Marketplace](https://plugins.jetbrains.com).
 

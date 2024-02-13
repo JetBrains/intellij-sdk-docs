@@ -13,44 +13,50 @@ Tasks are applied to the project with the [`org.jetbrains.intellij.platform.task
 Each of the tasks has relations described between each other, inherit from [](tools_intellij_platform_gradle_plugin_task_awares.md) interfaces, respect configuration and build cache, and can be configured independently, but for the most cases, the [](tools_intellij_platform_gradle_plugin_extension.md) covers all necessary cases.
 
 ```mermaid
-flowchart
+flowchart LR
 
     subgraph TASKS ["`**IntelliJ Platform Gradle Plugin Tasks**`"]
-        direction BT
+        direction TB
 
-        buildPlugin
-        buildSearchableOptions
-        jarSearchableOptions
-        patchPluginXml
-        prepareSandbox
-        verifyPluginProjectConfiguration
-        verifyPluginStructure
-        verifyPlugin
+        initializeIntelliJPlatformPlugin
 
-        subgraph PUBLISH ["Publish"]
-            publishPlugin
-            signPlugin
+        subgraph ALL ["` `"]
+            buildPlugin
+            buildSearchableOptions
+            classpathIndexCleanup>classpathIndexCleanup]
+            instrumentCode>instrumentCode]
+            instrumentedJar>instrumentedJar]
+            jarSearchableOptions
+            patchPluginXml
+            prepareSandbox
+            setupDependencies>setupDependencies]
+
+            subgraph PUBLISH ["Publish"]
+                publishPlugin
+                signPlugin
+            end
+
+            subgraph RUN ["Run/Test"]
+                runIde
+                testIde
+                testIdePerformance>testIdePerformance]
+                testIdeUi>testIdeUi]
+            end
+
+            subgraph VERIFY ["Verify"]
+                direction TB
+
+                verifyPluginSignature
+                verifyPluginProjectConfiguration
+                verifyPluginStructure
+                verifyPlugin
+            end
+
+            subgraph PLATFORM ["Target Platform"]
+                printBundledPlugins
+                printProductsReleases
+            end
         end
-
-        subgraph RUN ["Run/Test"]
-            runIde
-            testIde
-        end
-        verifyPluginSignature
-
-        subgraph PLATFORM ["Target Platform"]
-            printBundledPlugins
-            printProductsReleases
-        end
-        verifyPluginSignature --> signPlugin
-    end
-
-    initializeIntelliJPlatformPlugin[/initializeIntelliJPlatformPlugin/] --> |Runs before| TASKS
-
-    subgraph Undocumented
-        classpathIndexCleanup
-        instrumentCode
-        instrumentedJar
     end
 
     subgraph GRADLE ["Gradle Tasks"]
@@ -59,16 +65,22 @@ flowchart
         compileKotlin
     end
 
+
+    initializeIntelliJPlatformPlugin --> | runs before | ALL
     buildPlugin --> jarSearchableOptions & prepareSandbox
-    buildSearchableOptions --> patchPluginXml
-    jarSearchableOptions --> buildSearchableOptions
+    jarSearchableOptions --> buildSearchableOptions & prepareSandbox
+    buildSearchableOptions --> patchPluginXml & prepareSandbox
     prepareSandbox --> jar & instrumentedJar
     publishPlugin --> buildPlugin & signPlugin
+    runIde --> prepareSandbox
     signPlugin --> buildPlugin
+    testIde --> prepareSandbox
+    test --> testIde
+    verifyPluginProjectConfiguration --> patchPluginXml
+    verifyPluginSignature --> signPlugin & prepareSandbox
+    verifyPluginStructure --> prepareSandbox
+    verifyPlugin --> buildPlugin
 
-    test ~~~ jar
-    buildSearchableOptions ~~~ instrumentedJar
-    TASKS ~~~ GRADLE
 
     click buildPlugin "#buildPlugin"
     click buildSearchableOptions "#buildSearchableOptions"
@@ -83,17 +95,23 @@ flowchart
     click printProductsReleases "#printProductsReleases"
     click publishPlugin "#publishPlugin"
     click runIde "#runIde"
+    click setupDependencies "#setupDependencies"
     click signPlugin "#signPlugin"
     click testIde "#testIde"
+    click testIdePerformance "#testIdePerformance"
+    click testIdeUi "#testIdeUi"
     click verifyPluginProjectConfiguration "#verifyPluginProjectConfiguration"
     click verifyPluginSignature "#verifyPluginSignature"
     click verifyPluginStructure "#verifyPluginStructure"
+    click verifyPlugin "#verifyPlugin"
+
+    style TASKS fill:transparent
+    style ALL fill:transparent
 
     style classpathIndexCleanup stroke-dasharray: 5 5
     style instrumentCode stroke-dasharray: 5 5
     style instrumentedJar stroke-dasharray: 5 5
-
-    style TASKS fill:transparent
+    style setupDependencies stroke-dasharray: 5 5
 ```
 
 ## buildPlugin
@@ -263,7 +281,7 @@ Type
 : `Property<Boolean>`
 
 Default value
-: `[buildDirectory]/tmp/initializeIntelliJPlatformPlugin/coroutines-javaagent.jar`
+: <path>[buildDirectory]/tmp/initializeIntelliJPlatformPlugin/coroutines-javaagent.jar</path>
 
 
 ### pluginVersion
@@ -321,7 +339,7 @@ Type
 : `DirectoryProperty`
 
 Default value
-: `[buildDirectory]/libsSearchableOptions`
+: <path>[buildDirectory]/libsSearchableOptions</path>
 
 
 ### inputDirectory
@@ -334,7 +352,7 @@ Type
 : `DirectoryProperty`
 
 Default value
-: `[buildDirectory]/tmp/initializeIntelliJPlatformPlugin/coroutines-javaagent.jar`
+: <path>[buildDirectory]/tmp/initializeIntelliJPlatformPlugin/coroutines-javaagent.jar</path>
 
 
 ### noSearchableOptionsWarning
@@ -1464,7 +1482,7 @@ Default value
 
 **Extends**: [`DefaultTask`][gradle-default-task], [`SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware)
 
-**Sources**: [`/Users/hsz/Projects/JetBrains/gradle-intellij-plugin/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginStructureTask.kt`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks//Users/hsz/Projects/JetBrains/gradle-intellij-plugin/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginStructureTask.kt.kt)
+**Sources**: [`VerifyPluginStructureTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginStructureTask.kt)
 
 </tldr>
 

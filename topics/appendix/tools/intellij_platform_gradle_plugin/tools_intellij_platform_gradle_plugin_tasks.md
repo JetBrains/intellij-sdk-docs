@@ -19,6 +19,7 @@ flowchart TB
 
         test
         jar
+        compileKotlin
     end
 
     subgraph ALL ["` `"]
@@ -44,7 +45,7 @@ flowchart TB
         buildPlugin & signPlugin --> publishPlugin
         buildPlugin --> signPlugin
         patchPluginXml --> verifyPluginProjectConfiguration
-        verifyPluginProjectConfiguration ----> test
+        verifyPluginProjectConfiguration ----> test & compileKotlin
     end
 
     initializeIntelliJPlatformPlugin ---> ALL

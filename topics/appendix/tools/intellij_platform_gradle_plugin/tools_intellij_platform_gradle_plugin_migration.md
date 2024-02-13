@@ -19,21 +19,101 @@ To apply it, use:
 
 ```kotlin
 plugins {
-  id("org.jetbrains.intellij.platform")
+  id("org.jetbrains.intellij.platform") version "%intellij-platform-gradle-plugin-version%"
+}
+```
+
+## Migration Plugin
+
+The 2.x release introduces [](tools_intellij_platform_gradle_plugin.md#subplugins), which contains also one to help with migration from the Gradle IntelliJ Plugin 1.x.
+
+When you apply the [](#plugin-id-change), Gradle will fail to process the <path>build.gradle.kts</path> file as the old [](#intellij-extension) doesn't exist.
+To fulfill all gaps and help you figure out what is required to change, right in the IDE, the `org.jetbrains.intellij.platform.migration` plugin was introduced:
+
+```kotlin
+plugins {
+  id("org.jetbrains.intellij.platform") version "%intellij-platform-gradle-plugin-version%"
+  id("org.jetbrains.intellij.platform.migration") version "%intellij-platform-gradle-plugin-version%"
 }
 ```
 
 ## Minimum Gradle version
 
-The minimum required Gradle version is now `8.0`, see [Gradle Installation](https://gradle.org/install/) guide on how to upgrade.
+The minimum required Gradle version is now `8.1`, see [the Gradle Installation guide](https://gradle.org/install/) on how to upgrade.
 See also [](tools_intellij_platform_gradle_plugin.md#requirements).
 
-## `intellij` extension
+## intellij {} extension
 
 The `intellij {}` extension is no longer available and was replaced with `intellijPlatform {}`.
 Note that the available properties differ, see [](tools_intellij_platform_gradle_plugin_extension.md) for details.
 
-## `setupDependencies` task
+### intellij.pluginName
+
+The `intellij.pluginName` property is no longer available.
+
+Use: [`intellijPlatform.pluginConfiguration.name`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-name) instead:
+
+```kotlin
+intellijPlatform {
+  pluginConfiguration {
+    name = ...
+  }
+}
+```
+
+### intellij.type, intellij.version
+
+The `intellij.type` and `intellij.version` properties are no longer available.
+
+Define the IntelliJ Platform dependency in `dependencies {}` block instead:
+
+```kotlin
+repositories {
+  mavenCentral()
+  intellijPlatform {
+    defaultRepositories()
+  }
+}
+
+dependencies {
+  intellijPlatform {
+    create(type, version)
+  }
+}
+```
+
+See: [](tools_intellij_platform_gradle_plugin_dependencies_extension.md)
+
+### intellij.plugins
+
+The `intellij.plugins` property is no longer available.
+
+Define dependencies on plugins or bundled plugins in `dependencies {}` block instead:
+
+```kotlin
+repositories {
+  mavenCentral()
+  intellijPlatform {
+    defaultRepositories()
+  }
+}
+
+dependencies {
+  intellijPlatform {
+    plugins(properties("platformPlugins").map { it.split(',') })
+    bundledPlugins(properties("platformBundledPlugins").map { it.split(',') })
+  }
+}
+```
+
+See: [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins)
+
+> Bundled plugins are now separated from plugins available in JetBrains Marketplace.
+>
+{style="note"}
+
+
+## setupDependencies task
 
 To make the IntelliJ SDK dependency available in the IDE, the `setupDependencies` task was provided by Gradle IntelliJ Plugin 1.x.
 This task is no longer required, but when switching from 1.x, Gradle may still want to execute it in the _afterSync_ phase.

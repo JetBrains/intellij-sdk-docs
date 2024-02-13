@@ -96,6 +96,14 @@ It can be omitted when referring to any IntelliJ Platform SDK dependencies witho
 
 If you define repositories within the <path>settings.gradle.kts</path> using the `dependencyResolutionManagement` Gradle, make sure to include the Settings plugin in your <path>settings.gradle.kts</path>.
 
+#### org.jetbrains.intellij.platform.migration
+{#plugin.migration}
+
+The Migration Plugin is designed to assist in upgrading your configuration from Gradle IntelliJ Plugin version 1.x.
+To prevent Gradle failing due to breaking changes, the `org.jetbrains.intellij.platform.migration` plugin was introduced to fill missing gaps and provide migration hints.
+
+See [](tools_intellij_platform_gradle_plugin_migration.md) for more details.
+
 ## Configuration
 
 > Auto-completion, Quick Documentation, and other code insight features are available for many extension functions and properties.

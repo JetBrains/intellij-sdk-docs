@@ -24,6 +24,7 @@ flowchart
         patchPluginXml
         prepareSandbox
         verifyPluginProjectConfiguration
+        verifyPluginStructure
 
         subgraph PUBLISH ["Publish"]
             publishPlugin
@@ -85,6 +86,7 @@ flowchart
     click testIde "#testIde"
     click verifyPluginProjectConfiguration "#verifyPluginProjectConfiguration"
     click verifyPluginSignature "#verifyPluginSignature"
+    click verifyPluginStructure "#verifyPluginStructure"
 
     style classpathIndexCleanup stroke-dasharray: 5 5
     style instrumentCode stroke-dasharray: 5 5
@@ -1456,6 +1458,71 @@ Default value
 
 ## verifyPluginStructure
 {#verifyPluginStructure}
+
+<tldr>
+
+**Extends**: [`DefaultTask`][gradle-default-task], [`SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware)
+
+**Sources**: [`/Users/hsz/Projects/JetBrains/gradle-intellij-plugin/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginStructureTask.kt`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks//Users/hsz/Projects/JetBrains/gradle-intellij-plugin/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginStructureTask.kt.kt)
+
+</tldr>
+
+Validates completeness and contents of `plugin.xml` descriptors as well as plugin archive structure.
+
+See also:
+- [](plugin_configuration_file.md)
+
+
+### ignoreFailures
+{#verifyPluginStructure-ignoreFailures}
+
+Specifies whether the build should fail when the verifications performed by this task fail.
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: `false`
+
+
+### ignoreUnacceptableWarnings
+{#verifyPluginStructure-ignoreUnacceptableWarnings}
+
+Specifies whether the build should fail when the verifications performed by this task emit unacceptable warnings.
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: `false`
+
+
+### ignoreWarnings
+{#verifyPluginStructure-ignoreWarnings}
+
+Specifies whether the build should fail when the verifications performed by this task emit warnings.
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: `true`
+
+
+### pluginDirectory
+{#verifyPluginStructure-pluginDirectory}
+
+The location of the built plugin file which will be used for verification.
+
+{style="narrow"}
+Type
+: `DirectoryProperty`
+
+Default value
+: <path>[`prepareSandbox.defaultDestinationDirectory`](#prepareSandbox-defaultDestinationDirectory)/[`intellijPlatform.pluginConfiguration.name`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-name)</path>
 
 
 ## verifyPlugin

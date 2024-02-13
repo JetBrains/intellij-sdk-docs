@@ -25,6 +25,7 @@ flowchart
         prepareSandbox
         verifyPluginProjectConfiguration
         verifyPluginStructure
+        verifyPlugin
 
         subgraph PUBLISH ["Publish"]
             publishPlugin
@@ -1528,10 +1529,19 @@ Default value
 ## verifyPlugin
 {#verifyPlugin}
 
+<tldr>
+
+**Depends on**: [`buildPlugin`](#buildPlugin)
+
+**Extends**: [`JavaExec`][gradle-javaexec-task], [`RuntimeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#RuntimeAware), [`PluginVerifierAware`](tools_intellij_platform_gradle_plugin_task_awares.md#PluginVerifierAware)
+
+**Sources**: [`VerifyPluginTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginTask.kt)
+
+</tldr>
+
 Runs the IntelliJ Plugin Verifier CLI tool to check the binary compatibility with specified IDE builds.
 
 See also:
-- [Awares: `PluginVerifierAware`](tools_intellij_platform_gradle_plugin_task_awares.md#PluginVerifierAware)
 - [Extension: `intellijPlatform.verifyPlugin`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin)
 - [Types: `FailureLevel`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel)
 - [Types: `Subsystems`](tools_intellij_platform_gradle_plugin_types.md#Subsystems)

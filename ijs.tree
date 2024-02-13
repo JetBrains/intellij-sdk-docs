@@ -406,6 +406,16 @@
       <toc-element toc-title="Migration Guide from 0.x to 1.x"
                    target-for-accept-web-file-names="https://lp.jetbrains.com/gradle-intellij-plugin/"/>
     </toc-element>
+    <toc-element topic="tools_intellij_platform_gradle_plugin.md">
+      <toc-element topic="tools_intellij_platform_gradle_plugin_extension.md"/>
+      <toc-element topic="tools_intellij_platform_gradle_plugin_repositories_extension.md"/>
+      <toc-element topic="tools_intellij_platform_gradle_plugin_dependencies_extension.md"/>
+      <toc-element topic="tools_intellij_platform_gradle_plugin_tasks.md"/>
+      <toc-element topic="tools_intellij_platform_gradle_plugin_task_awares.md"/>
+      <toc-element topic="tools_intellij_platform_gradle_plugin_types.md"/>
+      <toc-element topic="tools_intellij_platform_gradle_plugin_build_features.md"/>
+      <toc-element topic="tools_intellij_platform_gradle_plugin_migration.md"/>
+    </toc-element>
     <toc-element topic="tools_gradle_grammar_kit_plugin.md"/>
     <toc-element toc-title="IDE Tooling">
       <toc-element topic="internal_actions_intro.md" accepts-web-file-names="interal_actions_menu.html">

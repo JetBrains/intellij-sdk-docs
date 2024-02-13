@@ -37,6 +37,7 @@ flowchart TB
         signPlugin
         testIde
         verifyPluginProjectConfiguration
+        verifyPluginSignature
 
         jarSearchableOptions & prepareSandbox --> buildPlugin
         patchPluginXml --> buildSearchableOptions
@@ -46,6 +47,7 @@ flowchart TB
         buildPlugin --> signPlugin
         patchPluginXml --> verifyPluginProjectConfiguration
         verifyPluginProjectConfiguration ----> test & compileKotlin
+        verifyPluginSignature --> signPlugin
     end
 
     initializeIntelliJPlatformPlugin ---> ALL
@@ -77,6 +79,7 @@ flowchart TB
     click signPlugin "#signPlugin"
     click testIde "#testIde"
     click verifyPluginProjectConfiguration "#verifyPluginProjectConfiguration"
+    click verifyPluginSignature "#verifyPluginSignature"
 
     style classpathIndexCleanup stroke-dasharray: 5 5
     style instrumentCode stroke-dasharray: 5 5
@@ -1385,6 +1388,65 @@ Default value
 
 ## verifyPluginSignature
 {#verifyPluginSignature}
+
+<tldr>
+
+**Depends on**: [`signPlugin`](#signPlugin)
+
+**Extends**: [`JavaExec`][gradle-javaexec-task], [`SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SigningAware)
+
+**Sources**: [`PrepareSandboxTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginSignatureTask.kt)
+
+</tldr>
+
+Validates the signature of the plugin archive file using the [Marketplace ZIP Signer](https://github.com/JetBrains/marketplace-zip-signer) library.
+
+See also:
+- [](plugin_signing.md)
+- [Marketplace ZIP Signer](https://github.com/JetBrains/marketplace-zip-signer)
+
+
+### inputArchiveFile
+{#verifyPluginSignature-inputArchiveFile}
+
+Input, unsigned ZIP archive file.
+Refers to `in` CLI option.
+
+{style="narrow"}
+Type
+: `RegularFileProperty`
+
+Default value
+: [`signPlugin.signedArchiveFile`](#signPlugin-signedArchiveFile)
+
+
+### certificateChain
+{#verifyPluginSignature-certificateChain}
+
+A string containing X509 certificates.
+The first certificate from the chain will be used as a certificate authority (CA).
+Refers to `cert` CLI option.
+
+Takes precedence over the [`certificateChainFile`](#verifyPluginSignature-certificateChainFile) property.
+
+{style="narrow"}
+Type
+: `Property<String>`
+
+
+### certificateChainFile
+{#verifyPluginSignature-certificateChainFile}
+
+Path to the file containing X509 certificates.
+The first certificate from the chain will be used as a certificate authority (CA).
+Refers to `cert-file` CLI option.
+
+{style="narrow"}
+Type
+: `RegularFileProperty`
+
+Default value
+: [`signPlugin.certificateChainFile`](#signPlugin-certificateChainFile) or [`signPlugin.certificateChain`](#signPlugin-certificateChain) written to a temporary file
 
 
 ## verifyPluginStructure

@@ -13,8 +13,11 @@ Tasks are applied to the project with the [`org.jetbrains.intellij.platform.task
 Each of the tasks has relations described between each other, inherit from [](tools_intellij_platform_gradle_plugin_task_awares.md) interfaces, respect configuration and build cache, and can be configured independently, but for the most cases, the [](tools_intellij_platform_gradle_plugin_extension.md) covers all necessary cases.
 
 ```mermaid
-flowchart
-    subgraph Gradle Tasks
+flowchart TB
+    subgraph GRADLE ["Gradle Tasks"]
+        direction LR
+
+        test
         jar
     end
 
@@ -32,6 +35,7 @@ flowchart
         runIde
         signPlugin
         testIde
+        verifyPluginProjectConfiguration
 
         jarSearchableOptions & prepareSandbox --> buildPlugin
         patchPluginXml --> buildSearchableOptions
@@ -39,15 +43,22 @@ flowchart
         jar & instrumentedJar --> prepareSandbox
         buildPlugin & signPlugin --> publishPlugin
         buildPlugin --> signPlugin
+        patchPluginXml --> verifyPluginProjectConfiguration
+        verifyPluginProjectConfiguration ----> test
     end
 
-    initializeIntelliJPlatformPlugin --> ALL
+    initializeIntelliJPlatformPlugin ---> ALL
 
     subgraph Undocumented
         classpathIndexCleanup
         instrumentCode
         instrumentedJar
     end
+
+
+    test ~~~ jar
+    buildSearchableOptions ~~~ instrumentedJar
+    ALL ~~~ GRADLE
 
     click buildPlugin "#buildPlugin"
     click buildSearchableOptions "#buildSearchableOptions"
@@ -64,6 +75,7 @@ flowchart
     click runIde "#runIde"
     click signPlugin "#signPlugin"
     click testIde "#testIde"
+    click verifyPluginProjectConfiguration "#verifyPluginProjectConfiguration"
 
     style classpathIndexCleanup stroke-dasharray: 5 5
     style instrumentCode stroke-dasharray: 5 5
@@ -1186,6 +1198,188 @@ tasks {
 
 ## verifyPluginProjectConfiguration
 {#verifyPluginProjectConfiguration}
+
+<tldr>
+
+**Sources**: [`VerifyPluginProjectConfigurationTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginProjectConfigurationTask.kt)
+
+**Extends**: [`DefaultTask`][gradle-default-task], [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware)
+
+**Depends on**: [`patchPluginXml`](#patchPluginXml)
+
+</tldr>
+
+Validates the plugin project configuration:
+- The [`patchPluginXml.sinceBuild`](#patchPluginXml-sinceBuild) property can't be lower than the target IntelliJ Platform major version.
+- The Java/Kotlin `sourceCompatibility` and `targetCompatibility` properties should align Java versions required by [`patchPluginXml.sinceBuild`](#patchPluginXml-sinceBuild) and the currently used IntelliJ Platform.
+- The Kotlin API version should align the version required by [`patchPluginXml.sinceBuild`](#patchPluginXml-sinceBuild) and the currently used IntelliJ Platform.
+- The used IntelliJ Platform version should be higher than `2022.3` (`223.0`).
+- The dependency on the [](using_kotlin.md#kotlin-standard-library) should be excluded.
+- The Kotlin plugin in version `1.8.20` is not used with IntelliJ Platform Gradle Plugin due to the 'java.lang.OutOfMemoryError: Java heap space' exception.
+- The Kotlin Coroutines library should not be added explicitly to the project as it is already provided with the IntelliJ Platform.
+
+For more details regarding the Java version used in the specific IntelliJ SDK, see [](build_number_ranges.md).
+
+See also:
+- [](build_number_ranges.md)
+- [](using_kotlin.md#kotlin-standard-library)
+- [](using_kotlin.md#incremental-compilation)
+
+
+### pluginXmlFile
+{#verifyPluginProjectConfiguration-pluginXmlFile}
+
+The location of the built plugin file which will be used for verification.
+
+{style="narrow"}
+Type
+: `RegularFileProperty`
+
+Default value
+: [`patchPluginXml.outputFile`](#patchPluginXml-outputFile)
+
+
+### reportDirectory
+{#verifyPluginProjectConfiguration-reportDirectory}
+
+Report directory where the verification result will be stored.
+
+{style="narrow"}
+Type
+: `DirectoryProperty`
+
+Default value
+: <path>[buildDirectory]/reports/verifyPluginConfiguration</path>
+
+
+### sourceCompatibility
+{#verifyPluginProjectConfiguration-sourceCompatibility}
+
+The `JavaCompile.sourceCompatibility` property value defined in the build script.
+
+{style="narrow"}
+Type
+: `Property<String>`
+
+Default value
+: `JavaCompile.sourceCompatibility`
+
+
+### targetCompatibility
+{#verifyPluginProjectConfiguration-targetCompatibility}
+
+The `JavaCompile.targetCompatibility` property value defined in the build script.
+
+{style="narrow"}
+Type
+: `Property<String>`
+
+Default value
+: `JavaCompile.targetCompatibility`
+
+
+### kotlinPluginAvailable
+{#verifyPluginProjectConfiguration-kotlinPluginAvailable}
+
+Indicates that the Kotlin Gradle Plugin is loaded and available.
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: Kotlin Gradle Plugin presence
+
+
+### kotlinApiVersion
+{#verifyPluginProjectConfiguration-kotlinApiVersion}
+
+The `apiVersion` property value of `compileKotlin.kotlinOptions` defined in the build script.
+
+{style="narrow"}
+Type
+: `Property<String?>`
+
+Default value
+: `compileKotlin.kotlinOptions.apiVersion`
+
+
+### kotlinLanguageVersion
+{#verifyPluginProjectConfiguration-kotlinLanguageVersion}
+
+The `languageVersion` property value of `compileKotlin.kotlinOptions` defined in the build script.
+
+{style="narrow"}
+Type
+: `Property<String?>`
+
+Default value
+: `compileKotlin.kotlinOptions.languageVersion`
+
+
+### kotlinVersion
+{#verifyPluginProjectConfiguration-kotlinVersion}
+
+The version of the Kotlin used in the project.
+
+{style="narrow"}
+Type
+: `Property<String?>`
+
+Default value
+: `kotlin.coreLibrariesVersion`
+
+
+### kotlinJvmTarget
+{#verifyPluginProjectConfiguration-kotlinJvmTarget}
+
+The `jvmTarget` property value of `compileKotlin.kotlinOptions` defined in the build script.
+
+{style="narrow"}
+Type
+: `Property<String?>`
+
+Default value
+: `compileKotlin.kotlinOptions.jvmTarget`
+
+
+### kotlinStdlibDefaultDependency
+{#verifyPluginProjectConfiguration-kotlinStdlibDefaultDependency}
+
+`kotlin.stdlib.default.dependency` property value defined in the `gradle.properties` file.
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: `kotlin.stdlib.default.dependency` Gradle property
+
+
+### kotlinIncrementalUseClasspathSnapshot
+{#verifyPluginProjectConfiguration-kotlinIncrementalUseClasspathSnapshot}
+
+`kotlin.incremental.useClasspathSnapshot` property value defined in the `gradle.properties` file.
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: `kotlin.incremental.useClasspathSnapshot` Gradle property
+
+
+### kotlinxCoroutinesLibraryPresent
+{#verifyPluginProjectConfiguration-kotlinxCoroutinesLibraryPresent}
+
+This variable represents whether the Kotlin Coroutines library is added explicitly to the project dependencies.
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: The `org.jetbrains.kotlinx:kotlinx-coroutines` dependency presence
 
 
 ## verifyPluginSignature

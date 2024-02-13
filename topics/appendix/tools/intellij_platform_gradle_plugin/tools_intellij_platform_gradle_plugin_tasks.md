@@ -13,44 +13,37 @@ Tasks are applied to the project with the [`org.jetbrains.intellij.platform.task
 Each of the tasks has relations described between each other, inherit from [](tools_intellij_platform_gradle_plugin_task_awares.md) interfaces, respect configuration and build cache, and can be configured independently, but for the most cases, the [](tools_intellij_platform_gradle_plugin_extension.md) covers all necessary cases.
 
 ```mermaid
-flowchart TB
-    subgraph GRADLE ["Gradle Tasks"]
-        direction LR
+flowchart
 
-        test
-        jar
-        compileKotlin
-    end
-
-    subgraph ALL ["` `"]
-        direction TB
+    subgraph TASKS ["`**IntelliJ Platform Gradle Plugin Tasks**`"]
+        direction BT
 
         buildPlugin
         buildSearchableOptions
         jarSearchableOptions
         patchPluginXml
         prepareSandbox
-        printBundledPlugins
-        printProductsReleases
-        publishPlugin
-        runIde
-        signPlugin
-        testIde
         verifyPluginProjectConfiguration
+
+        subgraph PUBLISH ["Publish"]
+            publishPlugin
+            signPlugin
+        end
+
+        subgraph RUN ["Run/Test"]
+            runIde
+            testIde
+        end
         verifyPluginSignature
 
-        jarSearchableOptions & prepareSandbox --> buildPlugin
-        patchPluginXml --> buildSearchableOptions
-        buildSearchableOptions --> jarSearchableOptions
-        jar & instrumentedJar --> prepareSandbox
-        buildPlugin & signPlugin --> publishPlugin
-        buildPlugin --> signPlugin
-        patchPluginXml --> verifyPluginProjectConfiguration
-        verifyPluginProjectConfiguration ----> test & compileKotlin
+        subgraph PLATFORM ["Target Platform"]
+            printBundledPlugins
+            printProductsReleases
+        end
         verifyPluginSignature --> signPlugin
     end
 
-    initializeIntelliJPlatformPlugin ---> ALL
+    initializeIntelliJPlatformPlugin[/initializeIntelliJPlatformPlugin/] --> |Runs before| TASKS
 
     subgraph Undocumented
         classpathIndexCleanup
@@ -58,10 +51,22 @@ flowchart TB
         instrumentedJar
     end
 
+    subgraph GRADLE ["Gradle Tasks"]
+        test
+        jar
+        compileKotlin
+    end
+
+    buildPlugin --> jarSearchableOptions & prepareSandbox
+    buildSearchableOptions --> patchPluginXml
+    jarSearchableOptions --> buildSearchableOptions
+    prepareSandbox --> jar & instrumentedJar
+    publishPlugin --> buildPlugin & signPlugin
+    signPlugin --> buildPlugin
 
     test ~~~ jar
     buildSearchableOptions ~~~ instrumentedJar
-    ALL ~~~ GRADLE
+    TASKS ~~~ GRADLE
 
     click buildPlugin "#buildPlugin"
     click buildSearchableOptions "#buildSearchableOptions"
@@ -85,7 +90,7 @@ flowchart TB
     style instrumentCode stroke-dasharray: 5 5
     style instrumentedJar stroke-dasharray: 5 5
 
-    style ALL fill:transparent,stroke:#eee
+    style TASKS fill:transparent
 ```
 
 ## buildPlugin

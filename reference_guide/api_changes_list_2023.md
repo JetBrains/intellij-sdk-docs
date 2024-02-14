@@ -154,6 +154,27 @@ JsonPath library unbundled
 `com.intellij.collaboration.async.CoroutineUtilKt.DisposingScope(Disposable, CoroutineContext)` method removed
 : Use `com.intellij.collaboration.async.CoroutineUtilKt.disposingScope(CoroutineContext)` instead.
 
+`com.intellij.collaboration.ui.codereview.details.model.CodeReviewChangesViewModel.getReviewCommits()` method return type changed from `Flow` to `SharedFlow`
+: Concrete type usage forced to ensure correct behavior
+
+`com.intellij.collaboration.ui.codereview.details.model.CodeReviewChangesViewModel.getSelectedCommit()` method return type changed from `Flow` to `SharedFlow`
+: Concrete type usage forced to ensure correct behavior
+
+`com.intellij.collaboration.ui.codereview.details.model.CodeReviewChangesViewModel.getSelectedCommitIndex()` method return type changed from `Flow` to `SharedFlow`
+: Concrete type usage forced to ensure correct behavior
+
+`com.intellij.collaboration.auth.ui.login.LoginTokenGenerator` method return type changed from `String` to `void`
+: Removed unused return value
+
+`com.intellij.collaboration.auth.ui.login.TokenLoginDialog(Project, Component, LoginModel, String, DialogPanelSupplier)` constructor parameter type changed from `() -> DialogPanel`  to `CoroutineScope.() -> DialogPanel`
+: Allow using dialog scope in dialog panel
+
+`com.intellij.collaboration.ui.codereview.list.search.ChooserPopupUtil.showAsyncChooserPopup(RelativePoint, Flow<List<T>>, Mapper, ListCellRenderer, PopupConfig)` method parameter type changed from `Flow<List<T>>` to `Flow<Result<List<T>>>`
+: Handle list loading errors inside the popup
+
+`com.intellij.collaboration.ui.codereview.list.search.ChooserPopupUtil.showAsyncChooserPopup(RelativePoint, Flow<List<T>>, Presenter, PopupConfig)` method parameter type changed from `Flow<List<T>>` to `Flow<Result<List<T>>>`
+: Handle list loading errors inside the popup
+
 ### Java Plugin 2023.3
 
 `com.siyeh.ipp.base.Intention` class removed

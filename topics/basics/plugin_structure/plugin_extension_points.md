@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Extension Points
 
@@ -57,6 +57,9 @@ As extensions should be stateless, it is **not** recommended to use non-default.
 Must be one of `IDEA_APPLICATION` for Application (default), `IDEA_PROJECT` for Project, or `IDEA_MODULE` for Module scope.
 
 The plugin that contributes to the extension point will read those properties from the <path>plugin.xml</path> file.
+
+If extension implementations are filtered according to [](indexing_and_psi_stubs.md#dumb-mode), the base class should be
+marked with [`PossiblyDumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/PossiblyDumbAware.java) to highlight this.
 
 Base classes for extensions requiring a key:
 

@@ -147,3 +147,14 @@ Package `com.jetbrains.jinja2` renamed to `com.intellij.jinja`
 
 `com.jetbrains.rest.RestLanguage` class moved to package `com.intellij.python.reStructuredText`
 : Update code usages.
+
+### GitHub Plugin 2024.1
+
+`org.jetbrains.plugins.github.pullrequest.comment.GHPRDiffReviewSupport` class removed
+: Migrated to MVVM
+
+`org.jetbrains.plugins.github.pullrequest.comment.GHPRDiffReviewSupport.Companion` class removed
+: Migrated to MVVM
+
+`org.jetbrains.plugins.github.pullrequest.action.GHPRActionKeys.getPULL_REQUEST_DATA_PROVIDER()` method removed
+: Migrated to MVVM, hidden implementation details

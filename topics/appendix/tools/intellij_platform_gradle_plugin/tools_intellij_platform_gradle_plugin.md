@@ -78,10 +78,10 @@ This allows for applying only a subset of features, e.g. when you only use an In
 
 This plugin applies all project-level plugins, which brings the fully-flagged tooling for plugin development for IntelliJ-based IDEs.
 
-It includes [](#plugin.core) and [](#plugin.tasks) subplugins.
+It includes [](#plugin.base) and [](#plugin.tasks) subplugins.
 
-#### org.jetbrains.intellij.platform.core
-{#plugin.core}
+#### org.jetbrains.intellij.platform.base
+{#plugin.base}
 
 The base plugin sets up all the custom configurations and transforms needed to manage the IntelliJ Platform SDK, JetBrains Runtime, CLI tools, and other plugins when they're added as dependencies.
 

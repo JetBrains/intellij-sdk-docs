@@ -72,7 +72,19 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ### IntelliJ Platform 2024.1
 
-`com.intellij.psi.util.PsiUtil#isLanguageLevelXYZOrHigher()` methods removed for XYZ > 9
+`com.intellij.psi.util.PsiUtil#isLanguageLevel10OrHigher()` method removed
+: It's recommended to use a new method `com.intellij.psi.util.PsiUtil#isAvailable()` instead to check whether a particular feature is available, rather than to check against a language level. If you still need an explicit language level check, you may use `PsiUtil.getLanguageLevel(element).isAtLeast(level)`.
+
+`com.intellij.psi.util.PsiUtil#isLanguageLevel11OrHigher()` method removed
+: It's recommended to use a new method `com.intellij.psi.util.PsiUtil#isAvailable()` instead to check whether a particular feature is available, rather than to check against a language level. If you still need an explicit language level check, you may use `PsiUtil.getLanguageLevel(element).isAtLeast(level)`.
+
+`com.intellij.psi.util.PsiUtil#isLanguageLevel14OrHigher()` method removed
+: It's recommended to use a new method `com.intellij.psi.util.PsiUtil#isAvailable()` instead to check whether a particular feature is available, rather than to check against a language level. If you still need an explicit language level check, you may use `PsiUtil.getLanguageLevel(element).isAtLeast(level)`.
+
+`com.intellij.psi.util.PsiUtil#isLanguageLevel16OrHigher()` method removed
+: It's recommended to use a new method `com.intellij.psi.util.PsiUtil#isAvailable()` instead to check whether a particular feature is available, rather than to check against a language level. If you still need an explicit language level check, you may use `PsiUtil.getLanguageLevel(element).isAtLeast(level)`.
+
+`com.intellij.psi.util.PsiUtil#isLanguageLevel17OrHigher()` method removed
 : It's recommended to use a new method `com.intellij.psi.util.PsiUtil#isAvailable()` instead to check whether a particular feature is available, rather than to check against a language level. If you still need an explicit language level check, you may use `PsiUtil.getLanguageLevel(element).isAtLeast(level)`.
 
 `com.intellij.refactoring.RefactoringHelper.prepareOperation(UsageInfo [] usages)` method removed

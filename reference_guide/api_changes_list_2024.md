@@ -70,6 +70,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ## 2024.1
 
+### IntelliJ Platform 2024.2
+
+
 ### IntelliJ Platform 2024.1
 
 `com.intellij.refactoring.RefactoringHelper.prepareOperation(UsageInfo [] usages)` method removed

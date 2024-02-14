@@ -72,21 +72,6 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ### IntelliJ Platform 2024.1
 
-`com.intellij.psi.util.PsiUtil#isLanguageLevel10OrHigher()` method removed
-: It's recommended to use a new method `com.intellij.psi.util.PsiUtil#isAvailable()` instead to check whether a particular feature is available, rather than to check against a language level. If you still need an explicit language level check, you may use `PsiUtil.getLanguageLevel(element).isAtLeast(level)`.
-
-`com.intellij.psi.util.PsiUtil#isLanguageLevel11OrHigher()` method removed
-: It's recommended to use a new method `com.intellij.psi.util.PsiUtil#isAvailable()` instead to check whether a particular feature is available, rather than to check against a language level. If you still need an explicit language level check, you may use `PsiUtil.getLanguageLevel(element).isAtLeast(level)`.
-
-`com.intellij.psi.util.PsiUtil#isLanguageLevel14OrHigher()` method removed
-: It's recommended to use a new method `com.intellij.psi.util.PsiUtil#isAvailable()` instead to check whether a particular feature is available, rather than to check against a language level. If you still need an explicit language level check, you may use `PsiUtil.getLanguageLevel(element).isAtLeast(level)`.
-
-`com.intellij.psi.util.PsiUtil#isLanguageLevel16OrHigher()` method removed
-: It's recommended to use a new method `com.intellij.psi.util.PsiUtil#isAvailable()` instead to check whether a particular feature is available, rather than to check against a language level. If you still need an explicit language level check, you may use `PsiUtil.getLanguageLevel(element).isAtLeast(level)`.
-
-`com.intellij.psi.util.PsiUtil#isLanguageLevel17OrHigher()` method removed
-: It's recommended to use a new method `com.intellij.psi.util.PsiUtil#isAvailable()` instead to check whether a particular feature is available, rather than to check against a language level. If you still need an explicit language level check, you may use `PsiUtil.getLanguageLevel(element).isAtLeast(level)`.
-
 `com.intellij.refactoring.RefactoringHelper.prepareOperation(UsageInfo [] usages)` method removed
 : Use `com.intellij.refactoring.RefactoringHelper.prepareOperation(UsageInfo [] usages, List<PsiElement> elements)` instead.
 
@@ -138,6 +123,23 @@ Method `com.intellij.psi.util.PsiTreeUtilKt.getChildLeafs(PsiElement)` renamed t
 `com.intellij.openapi.projectRoots.impl.SdkConfigurationUtil.createSdk(Collection<Sdk>, VirtualFile, SdkType, SdkAdditionalData, String)` method return type changed from `ProjectJdkImpl` to `Sdk`
 : Update code usages.
 
+### Java Plugin 2024.1
+
+`com.intellij.psi.util.PsiUtil#isLanguageLevel10OrHigher()` method removed
+: It's recommended to use a new method `com.intellij.psi.util.PsiUtil#isAvailable()` instead to check whether a particular feature is available, rather than to check against a language level. If you still need an explicit language level check, you may use `PsiUtil.getLanguageLevel(element).isAtLeast(level)`.
+
+`com.intellij.psi.util.PsiUtil#isLanguageLevel11OrHigher()` method removed
+: It's recommended to use a new method `com.intellij.psi.util.PsiUtil#isAvailable()` instead to check whether a particular feature is available, rather than to check against a language level. If you still need an explicit language level check, you may use `PsiUtil.getLanguageLevel(element).isAtLeast(level)`.
+
+`com.intellij.psi.util.PsiUtil#isLanguageLevel14OrHigher()` method removed
+: It's recommended to use a new method `com.intellij.psi.util.PsiUtil#isAvailable()` instead to check whether a particular feature is available, rather than to check against a language level. If you still need an explicit language level check, you may use `PsiUtil.getLanguageLevel(element).isAtLeast(level)`.
+
+`com.intellij.psi.util.PsiUtil#isLanguageLevel16OrHigher()` method removed
+: It's recommended to use a new method `com.intellij.psi.util.PsiUtil#isAvailable()` instead to check whether a particular feature is available, rather than to check against a language level. If you still need an explicit language level check, you may use `PsiUtil.getLanguageLevel(element).isAtLeast(level)`.
+
+`com.intellij.psi.util.PsiUtil#isLanguageLevel17OrHigher()` method removed
+: It's recommended to use a new method `com.intellij.psi.util.PsiUtil#isAvailable()` instead to check whether a particular feature is available, rather than to check against a language level. If you still need an explicit language level check, you may use `PsiUtil.getLanguageLevel(element).isAtLeast(level)`.
+
 ### Django Plugin 2024.1
 
 Package `com.jetbrains.jinja2` renamed to `com.intellij.jinja`
@@ -151,10 +153,10 @@ Package `com.jetbrains.jinja2` renamed to `com.intellij.jinja`
 ### GitHub Plugin 2024.1
 
 `org.jetbrains.plugins.github.pullrequest.comment.GHPRDiffReviewSupport` class removed
-: Migrated to MVVM
+: Migrated to MVVM.
 
 `org.jetbrains.plugins.github.pullrequest.comment.GHPRDiffReviewSupport.Companion` class removed
-: Migrated to MVVM
+: Migrated to MVVM.
 
 `org.jetbrains.plugins.github.pullrequest.action.GHPRActionKeys.getPULL_REQUEST_DATA_PROVIDER()` method removed
-: Migrated to MVVM, hidden implementation details
+: Migrated to MVVM, hidden implementation details.

@@ -131,6 +131,9 @@ Method `com.intellij.psi.util.PsiTreeUtilKt.getChildLeafs(PsiElement)` renamed t
 
 ### Java Plugin 2024.1
 
+`com.intellij.lang.properties.RemovePropertyLocalFix` class removed
+: Use `com.intellij.codeInsight.daemon.impl.quickfix.DeleteElementFix` instead.
+
 `com.intellij.psi.util.PsiUtil#isLanguageLevel10OrHigher()` method removed
 : It's recommended to use a new method `com.intellij.psi.util.PsiUtil#isAvailable()` instead to check whether a particular feature is available, rather than to check against a language level. If you still need an explicit language level check, you may use `PsiUtil.getLanguageLevel(element).isAtLeast(level)`.
 

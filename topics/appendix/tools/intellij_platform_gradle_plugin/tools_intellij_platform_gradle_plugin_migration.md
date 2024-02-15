@@ -149,7 +149,7 @@ Downloading sources is managed with the DevKit Plugin in version 2024.1+.
 
 ### intellij.ideaDependency
 
-Access now the [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) object using the [`intellijPlatform.productInfo`](tools_intellij_platform_gradle_plugin_extension.md#productinfo) property.
+Access now the [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) object using the [`intellijPlatform.productInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) property.
 
 ## Tasks
 

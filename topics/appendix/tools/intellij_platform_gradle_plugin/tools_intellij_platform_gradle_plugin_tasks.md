@@ -970,15 +970,6 @@ tasks {
 }
 ```
 
-
-## setupDependencies
-{#setupDependencies}
-
-> Deprecated. See [Migration FAQ](tools_intellij_platform_gradle_plugin_migration.md#setupdependencies-task).
->
-{style="warning"}
-
-
 ## signPlugin
 {#signPlugin}
 

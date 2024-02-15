@@ -96,8 +96,8 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    plugins(properties("platformPlugins").map { it.split(',') })
-    bundledPlugins(properties("platformBundledPlugins").map { it.split(',') })
+    plugins(providers.gradleProperty("platformPlugins").map { it.split(',') })
+    bundledPlugins(providers.gradleProperty("platformBundledPlugins").map { it.split(',') })
   }
 }
 ```

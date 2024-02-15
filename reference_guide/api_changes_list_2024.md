@@ -185,13 +185,13 @@ Package `com.jetbrains.jinja2` renamed to `com.intellij.jinja`
 `org.jetbrains.kotlin.ir.declarations.IrDeclarationOrigin.DELEGATE` class removed
 : `org.jetbrains.kotlin.ir.declarations.IrDeclarationOrigin.Companion.DELEGATE` should be used instead
 
-`org.jetbrains.kotlin.ir.declarations.IrDeclarationOrigin.DELEGATED_MEMBER`
+`org.jetbrains.kotlin.ir.declarations.IrDeclarationOrigin.DELEGATED_MEMBER` class removed
 : `org.jetbrains.kotlin.ir.declarations.IrDeclarationOrigin.Companion.DELEGATED_MEMBER` should be used instead
 
 `org.jetbrains.kotlin.config.JvmDefaultMode.DEFAULT` field removed
 : Use `org.jetbrains.kotlin.config.JvmDefaultMode.DISABLE`
 
-`org.jetbrains.kotlin.backend.common.lower.LocalDeclarationsLoweringKt.getParentsWithSelf(IrDeclaration)` method renamed `org.jetbrains.kotlin.ir.util.IrUtilsKt.getParentsWithSelf`
+Method `org.jetbrains.kotlin.backend.common.lower.LocalDeclarationsLoweringKt.getParentsWithSelf(IrDeclaration)` renamed to `org.jetbrains.kotlin.ir.util.IrUtilsKt.getParentsWithSelf`
 
 `org.jetbrains.kotlin.daemon.common.CompileService.Companion.getNO_SESSION()` method removed
 : Use `org.jetbrains.kotlin.daemon.common.CompileService.NO_SESSION` const instead

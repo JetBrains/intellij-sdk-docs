@@ -49,9 +49,7 @@ Note that the available properties differ, see [](tools_intellij_platform_gradle
 
 ### intellij.pluginName
 
-The `intellij.pluginName` property is no longer available.
-
-Use: [`intellijPlatform.pluginConfiguration.name`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-name) instead:
+Use: [`intellijPlatform.pluginConfiguration.name`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-name):
 
 ```kotlin
 intellijPlatform {
@@ -63,9 +61,7 @@ intellijPlatform {
 
 ### intellij.type, intellij.version
 
-The `intellij.type` and `intellij.version` properties are no longer available.
-
-Define the IntelliJ Platform dependency in `dependencies {}` block instead:
+Define the IntelliJ Platform dependency in `dependencies {}` block:
 
 ```kotlin
 repositories {
@@ -112,8 +108,66 @@ See: [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins)
 >
 {style="note"}
 
+### intellij.localPath
 
-## setupDependencies task
+Define dependencies on local IDE instance in `dependencies {}` block:
+
+```kotlin
+repositories {
+  mavenCentral()
+  intellijPlatform {
+    defaultRepositories()
+  }
+}
+
+dependencies {
+  intellijPlatform {
+    local(localPath)
+  }
+}
+```
+
+See: [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#custom-target-platforms)
+
+### intellij.updateSinceUntilBuild, intellij.sameSinceUntilBuild
+
+The <path>plugin.xml</path> file is now fully managed by the [`intellijPlatform`](tools_intellij_platform_gradle_plugin_extension.md) extension`.
+
+### intellij.intellijRepository, intellij.pluginsRepositories, intellij.jreRepository
+
+### intellij.sandboxDir
+
+Use the [`intellijPlatform.sandboxContainer`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-sandboxContainer).
+
+Use the `repositories {}` block to manage repositories instead.
+
+See: [](tools_intellij_platform_gradle_plugin_repositories_extension.md)
+
+### intellij.downloadSources
+
+Downloading sources is managed with the DevKit Plugin in version 2024.1+.
+
+### intellij.ideaDependency
+
+Access now the [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) object using the [`intellijPlatform.productInfo`](tools_intellij_platform_gradle_plugin_extension.md#productinfo) property.
+
+## Tasks
+
+### downloadRobotServerPlugin
+
+The Robot Server Plugin integration is not yet available. See [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi).
+
+### runIdeForUiTests
+
+Use [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi).
+
+### runPluginVerifier
+
+Task responsible for running the IntelliJ Plugin Verifier is now called [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin).
+
+Use [`intellijPlatform.verifyPlugin`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin) extension to configure it.
+
+### setupDependencies
 
 To make the IntelliJ SDK dependency available in the IDE, the `setupDependencies` task was provided by Gradle IntelliJ Plugin 1.x.
 This task is no longer required, but when switching from 1.x, Gradle may still want to execute it in the _afterSync_ phase.

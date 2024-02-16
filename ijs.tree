@@ -66,7 +66,7 @@
       <toc-element topic="general_threading_rules.md" toc-title="Threading">
         <toc-element toc-title="Background Tasks"/>
       </toc-element>
-      <toc-element topic="coroutines.md"/>
+      <toc-element topic="kotlin-coroutines.md"/>
       <toc-element topic="messaging_infrastructure.md"/>
       <toc-element toc-title="Queries and Query Executors"/>
     </toc-element>

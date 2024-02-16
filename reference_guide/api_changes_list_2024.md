@@ -113,15 +113,6 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.intellij.vcs.log.VcsLogFileHistoryHandler.collectHistory(root: VirtualFile, filePath: FilePath, hash: Hash?, filters: VcsLogFilterCollection, consumer)` abstract method added
 : Parameter `filters: VcsLogFilterCollection` was added to provide filtering capabilities to file history. Implement `com.intellij.vcs.log.VcsLogFileHistoryHandler#getSupportedFilters` to specify which filters are supported by this extension (currently, branch filter, revision filter and range filter are available).
 
-Method `com.intellij.psi.util.PsiTreeUtilKt.getFirstLeaf(PsiElement)` renamed to `com.intellij.psi.util.PsiTreeUtilKt.firstLeaf(PsiElement)`
-: Update code usages.
-
-Method `com.intellij.psi.util.PsiTreeUtilKt.getLastLeaf(PsiElement)` renamed to `com.intellij.psi.util.PsiTreeUtilKt.lastLeaf(PsiElement)`
-: Update code usages.
-
-Method `com.intellij.psi.util.PsiTreeUtilKt.getChildLeafs(PsiElement)` renamed to `com.intellij.psi.util.PsiTreeUtilKt.childLeafs(PsiElement)`
-: Update code usages.
-
 `org.apache.tools` package removed
 : Please provide all necessary libraries in your plugin distribution.
 
@@ -138,21 +129,6 @@ Method `com.intellij.psi.util.PsiTreeUtilKt.getChildLeafs(PsiElement)` renamed t
 
 `com.intellij.lang.properties.RemovePropertyLocalFix` class removed
 : Use `com.intellij.codeInsight.daemon.impl.quickfix.DeleteElementFix` instead.
-
-`com.intellij.psi.util.PsiUtil#isLanguageLevel10OrHigher()` method removed
-: It's recommended to use a new method `com.intellij.psi.util.PsiUtil#isAvailable()` instead to check whether a particular feature is available, rather than to check against a language level. If you still need an explicit language level check, you may use `PsiUtil.getLanguageLevel(element).isAtLeast(level)`.
-
-`com.intellij.psi.util.PsiUtil#isLanguageLevel11OrHigher()` method removed
-: It's recommended to use a new method `com.intellij.psi.util.PsiUtil#isAvailable()` instead to check whether a particular feature is available, rather than to check against a language level. If you still need an explicit language level check, you may use `PsiUtil.getLanguageLevel(element).isAtLeast(level)`.
-
-`com.intellij.psi.util.PsiUtil#isLanguageLevel14OrHigher()` method removed
-: It's recommended to use a new method `com.intellij.psi.util.PsiUtil#isAvailable()` instead to check whether a particular feature is available, rather than to check against a language level. If you still need an explicit language level check, you may use `PsiUtil.getLanguageLevel(element).isAtLeast(level)`.
-
-`com.intellij.psi.util.PsiUtil#isLanguageLevel16OrHigher()` method removed
-: It's recommended to use a new method `com.intellij.psi.util.PsiUtil#isAvailable()` instead to check whether a particular feature is available, rather than to check against a language level. If you still need an explicit language level check, you may use `PsiUtil.getLanguageLevel(element).isAtLeast(level)`.
-
-`com.intellij.psi.util.PsiUtil#isLanguageLevel17OrHigher()` method removed
-: It's recommended to use a new method `com.intellij.psi.util.PsiUtil#isAvailable()` instead to check whether a particular feature is available, rather than to check against a language level. If you still need an explicit language level check, you may use `PsiUtil.getLanguageLevel(element).isAtLeast(level)`.
 
 ### Django Plugin 2024.1
 

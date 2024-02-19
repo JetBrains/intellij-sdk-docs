@@ -211,17 +211,17 @@ Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
 ### Maven Plugin 2024.1
 
 `org.jetbrains.idea.maven.indices.MavenIndex.getUpdateTimestamp()` method removed
-: Use org.jetbrains.idea.maven.indices.MavenIndexImpl.getUpdateTimestamp() instead. MavenIndex is an obsolete interface now with MavenIndexImpl as the only implementation, consider using MavenGAVIndex to get information about available Maven GAV coordinates, or MavenSearchIndex to search Maven artifacts by content
+: Use `org.jetbrains.idea.maven.indices.MavenIndexImpl.getUpdateTimestamp()` instead. `MavenIndex` is an obsolete interface now with `MavenIndexImpl` as the only implementation, consider using `MavenGAVIndex` to get information about available Maven GAV coordinates, or `MavenSearchIndex` to search Maven artifacts by content.
 
 `org.jetbrains.idea.maven.indices.MavenIndex.getFailureMessage()` method removed
-: Use org.jetbrains.idea.maven.indices.MavenIndexImpl.getFailureMessage() instead. MavenIndex is an obsolete interface now with MavenIndexImpl as the only implementation, consider using MavenGAVIndex to get information about available Maven GAV coordinates, or MavenSearchIndex to search Maven artifacts by content
+: Use `org.jetbrains.idea.maven.indices.MavenIndexImpl.getFailureMessage()` instead. `MavenIndex` is an obsolete interface now with `MavenIndexImpl` as the only implementation, consider using `MavenGAVIndex` to get information about available Maven GAV coordinates, or `MavenSearchIndex` to search Maven artifacts by content.
 
 `org.jetbrains.idea.maven.indices.MavenIndex.getRepositoryPathOrUrl()` method removed
-: Use org.jetbrains.idea.maven.indices.MavenRepositoryIndex.getRepository().getUrl() instead. Also, MavenRepositoryInfo.getKind() could be used to distinguish between local and remote repo/
+: Use `org.jetbrains.idea.maven.indices.MavenRepositoryIndex.getRepository().getUrl()` instead. Also, `MavenRepositoryInfo.getKind()` could be used to distinguish between local and remote repo.
 
 `org.jetbrains.idea.maven.indices.MavenIndicesManager.scheduleUpdateContent(List<MavenIndex>, boolean)` method removed
-: Use org.jetbrains.idea.maven.indices.searcher.MavenLuceneIndexer.update(repos: List<MavenRepositoryInfo>, explicit: Boolean) to update content for lucene indices. You should not care of GAV indices update.
+: Use `org.jetbrains.idea.maven.indices.searcher.MavenLuceneIndexer.update(List<MavenRepositoryInfo>, Boolean)` to update content for lucene indices. You should not care of GAV indices update.
 
 `org.jetbrains.idea.maven.indices.MavenIndicesManager.scheduleUpdateIndicesList(Consumer<MavenIndex>)` method removed
-: Use org.jetbrains.idea.maven.indices.searcher.MavenIndicesManager.scheduleUpdateIndicesList() to update an indices list for a specific project. To get all search indices for specific project use MavenSystemIndicesManager.getClassIndexForRepository, you can get a list of all repositories with MavenIndexUtils.getAllRepositories(project: Project)
+: Use `org.jetbrains.idea.maven.indices.searcher.MavenIndicesManager.scheduleUpdateIndicesList()` to update an indices list for a specific project. To get all search indices for specific project use `MavenSystemIndicesManager.getClassIndexForRepository()`, you can get a list of all repositories with `MavenIndexUtils.getAllRepositories(Project)`.
 

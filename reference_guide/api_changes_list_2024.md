@@ -219,7 +219,7 @@ Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
 `org.jetbrains.idea.maven.indices.MavenIndex.getRepositoryPathOrUrl()` method removed
 : Use org.jetbrains.idea.maven.indices.MavenRepositoryIndex.getRepository().getUrl() instead. Also, MavenRepositoryInfo.getKind() could be used to distinguish between local and remote repo/
 
-`org.jetbrains.idea.maven.indices.MavenIndicesManager.scheduleUpdateContent(List<MavenIndex>, boolean) : CompletableFuture<?>` method removed
+`org.jetbrains.idea.maven.indices.MavenIndicesManager.scheduleUpdateContent(List<MavenIndex>, boolean)` method removed
 : Use org.jetbrains.idea.maven.indices.searcher.MavenLuceneIndexer.update(repos: List<MavenRepositoryInfo>, explicit: Boolean) to update content for lucene indices. You should not care of GAV indices update.
 
 `org.jetbrains.idea.maven.indices.MavenIndicesManager.scheduleUpdateIndicesList(Consumer<MavenIndex>)` method removed

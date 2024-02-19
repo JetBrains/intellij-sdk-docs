@@ -108,6 +108,12 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.intellij.vcs.log.VcsLogFileHistoryHandler.getSupportedVcs()` abstract method added
 : Must be implemented.
 
+`com.intellij.vcs.log.VcsLogFileHistoryHandler.getHistoryFast(root: VirtualFile, filePath: FilePath, hash: Hash?, filters: VcsLogFilterCollection, commitCount: Int)` abstract method added
+: Parameter `filters: VcsLogFilterCollection` was added to provide filtering capabilities to file history. Implement `com.intellij.vcs.log.VcsLogFileHistoryHandler#getSupportedFilters` to specify which filters are supported by this extension (currently, branch filter, revision filter and range filter are available).
+
+`com.intellij.vcs.log.VcsLogFileHistoryHandler.collectHistory(root: VirtualFile, filePath: FilePath, hash: Hash?, filters: VcsLogFilterCollection, consumer)` abstract method added
+: Parameter `filters: VcsLogFilterCollection` was added to provide filtering capabilities to file history. Implement `com.intellij.vcs.log.VcsLogFileHistoryHandler#getSupportedFilters` to specify which filters are supported by this extension (currently, branch filter, revision filter and range filter are available).
+
 Method `com.intellij.psi.util.PsiTreeUtilKt.getFirstLeaf(PsiElement)` renamed to `com.intellij.psi.util.PsiTreeUtilKt.firstLeaf(PsiElement)`
 : Update code usages.
 

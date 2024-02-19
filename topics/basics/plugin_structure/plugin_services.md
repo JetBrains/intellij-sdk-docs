@@ -81,7 +81,7 @@ Project-level light service example:
 public final class MyProjectService {
   private final Project myProject;
 
-  public MyProjectService(Project project) {
+  MyProjectService(Project project) {
     myProject = project;
   }
 
@@ -157,7 +157,7 @@ Application-level service:
 - Implementation:
 
   ```java
-  public final class MyAppServiceImpl implements MyAppService {
+  final class MyAppServiceImpl implements MyAppService {
     @Override
     public void doSomething(String param) {
       // ...
@@ -178,10 +178,10 @@ Project-level service:
 - Implementation:
 
   ```java
-  public final class MyProjectServiceImpl implements MyProjectService {
+  final class MyProjectServiceImpl implements MyProjectService {
     private final Project myProject;
 
-    public MyProjectServiceImpl(Project project) {
+    MyProjectServiceImpl(Project project) {
       myProject = project;
     }
 
@@ -208,7 +208,7 @@ Application-level service:
 - Implementation:
 
   ```kotlin
-  class MyAppServiceImpl : MyAppService {
+  internal class MyAppServiceImpl : MyAppService {
     override fun doSomething(param: String) {
       // ...
     }
@@ -228,7 +228,7 @@ Project-level service:
 - Implementation:
 
   ```kotlin
-  class MyProjectServiceImpl(private val project: Project)
+  internal class MyProjectServiceImpl(private val project: Project)
       : MyProjectService {
 
     fun doSomething(param: String) {

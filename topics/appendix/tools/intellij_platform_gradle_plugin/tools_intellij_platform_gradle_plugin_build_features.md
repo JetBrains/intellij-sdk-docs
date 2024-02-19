@@ -10,7 +10,7 @@ The IntelliJ Platform Gradle Plugin exposes a number of build features to contro
 To enable or disable a particular feature, add a Project property to the <path>gradle.properties</path> file with the following pattern:
 
 ```
-org.jetbrains.intellij.buildFeature.<buildFeatureName>=<true|false>
+org.jetbrains.intellij.platform.buildFeature.<buildFeatureName>=<true|false>
 ```
 
 E.g., to disable the [](#selfUpdateCheck) feature, add this line:
@@ -32,7 +32,7 @@ Default value
 Example
 :
 ```
-org.jetbrains.intellij.buildFeature.buildSearchableOptions=false
+org.jetbrains.intellij.platform.buildFeature.buildSearchableOptions=false
 ```
 
 

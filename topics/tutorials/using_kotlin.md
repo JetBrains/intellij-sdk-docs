@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Configuring Kotlin Support
 
@@ -106,6 +106,7 @@ If a plugin supports [multiple platform versions](build_number_ranges.md), it mu
 
 | IntelliJ Platform version | Bundled _stdlib_ version |
 |---------------------------|--------------------------|
+| 2024.1                    | 1.9.22                   |
 | 2023.3                    | 1.9.10                   |
 | 2023.2                    | 1.8.20                   |
 | 2023.1                    | 1.8.0                    |

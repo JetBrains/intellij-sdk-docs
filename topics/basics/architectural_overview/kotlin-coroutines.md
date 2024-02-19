@@ -4,8 +4,6 @@
 
 <link-summary>Introduction to Kotlin Coroutines in the IntelliJ Platform.</link-summary>
 
-## Introduction
-
 IntelliJ Platform is a multithreading environment that executes many asynchronous and non-blocking tasks to avoid UI freezes.
 These tasks are usually executed in background threads, which is a standard approach in the JVM world.
 
@@ -35,29 +33,9 @@ Kotlin Coroutines are new to the IntelliJ Platform and are not yet widely adopte
 In the future, the number of coroutine-based APIs will grow and using only Java may not be enough to implement a fully functional plugin.
 It will be required to use Kotlin, at least partially, e.g., to implement coroutine-based extension points.
 
-## Coroutines Basics
+## Learning Resources
 
-_TODO_
-
-### Coroutine Builders
-
-_TODO: basic builders_
-
-### Suspending Functions
-
-_TODO: `suspend` keyword, how does suspending work, we can call suspending function only from suspending function/lambda_
-
-### Coroutine Context
-
-_TODO: dispatchers, error handling_
-
-### Lifecycle
-
-TODO: children, cancelling
-
-### Additional Resources
-
-It is highly recommended to check the following resources to understand coroutines more deeply and become fluent with available APIs:
+Before going to the next coroutine sections, it is highly recommended to check the following resources to understand coroutines and become fluent with available APIs:
 
 - [Official Kotlin Coroutines Guide](https://kotlinlang.org/docs/coroutines-guide.html)
 - KotlinConf talks by Roman Elizarov (Kotlin Coroutines architect):

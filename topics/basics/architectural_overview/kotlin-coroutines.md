@@ -35,7 +35,8 @@ It will be required to use Kotlin, at least partially, e.g., to implement corout
 
 ## Learning Resources
 
-Before going to the next coroutine sections, it is highly recommended to check the following resources to understand coroutines and become fluent with available APIs:
+Before going to the next coroutine-related sections, it is highly recommended to go through the following resources.
+It will help understand coroutines and become fluent with available APIs:
 
 - [Official Kotlin Coroutines Guide](https://kotlinlang.org/docs/coroutines-guide.html)
 - KotlinConf talks by Roman Elizarov (Kotlin Coroutines architect):

@@ -61,6 +61,15 @@ Each entry is composed of a product code name and coordinates used for dependenc
 | `Writerside`            | `WRS`  | `com.jetbrains.intellij.idea:writerside`           |
 
 
+## PluginBean
+{#PluginBean}
+
+The `PluginBean` class describes the content of the <path>plugin.xml</path> file.
+
+See also:
+- [`PluginBean` sources](https://github.com/JetBrains/intellij-plugin-verifier/blob/master/intellij-plugin-structure/structure-intellij/src/main/java/com/jetbrains/plugin/structure/intellij/beans/PluginBean.java)
+
+
 ## ProductInfo
 {#ProductInfo}
 

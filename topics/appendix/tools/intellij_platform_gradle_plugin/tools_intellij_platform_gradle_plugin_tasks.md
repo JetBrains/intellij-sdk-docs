@@ -1224,7 +1224,7 @@ tasks {
 
 **Depends on**: [`patchPluginXml`](#patchPluginXml)
 
-**Extends**: [`DefaultTask`][gradle-default-task], [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware)
+**Extends**: [`DefaultTask`][gradle-default-task], [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware), [`PluginAware`](tools_intellij_platform_gradle_plugin_task_awares.md#PluginAware)
 
 **Sources**: [`VerifyPluginProjectConfigurationTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginProjectConfigurationTask.kt)
 
@@ -1245,19 +1245,6 @@ See also:
 - [](build_number_ranges.md)
 - [](using_kotlin.md#kotlin-standard-library)
 - [](using_kotlin.md#incremental-compilation)
-
-
-### pluginXmlFile
-{#verifyPluginProjectConfiguration-pluginXmlFile}
-
-The location of the built plugin file which will be used for verification.
-
-{style="narrow"}
-Type
-: `RegularFileProperty`
-
-Default value
-: [`patchPluginXml.outputFile`](#patchPluginXml-outputFile)
 
 
 ### reportDirectory

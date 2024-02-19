@@ -12,11 +12,13 @@ The Task Awares is a set of interfaces that can be applied to custom Gradle task
 ## CoroutinesJavaAgentAware
 {#CoroutinesJavaAgentAware}
 
-[`CoroutinesJavaAgentAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/CoroutinesJavaAgentAware.kt)
+**Depends on**: [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin)
+
+**Inherited by**: [`RunnableIdeAware`](#RunnableIdeAware)
+
+**Sources**: [`CoroutinesJavaAgentAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/CoroutinesJavaAgentAware.kt)
 
 The interface provides the path to the Java Agent file for the Coroutines library required to enable coroutines debugging.
-
-Inherited also by [`RunnableIdeAware`](#RunnableIdeAware).
 
 ### coroutinesJavaAgentFile
 {#CoroutinesJavaAgentAware-coroutinesJavaAgentFile}
@@ -34,7 +36,9 @@ Default value
 ## CustomIntelliJPlatformVersionAware
 {#CustomIntelliJPlatformVersionAware}
 
-[`CustomIntelliJPlatformVersionAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/CustomIntelliJPlatformVersionAware.kt)
+**Inherited by**: [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde), [`testIde`](tools_intellij_platform_gradle_plugin_tasks.md#testIde), [`testIdePerformance`](tools_intellij_platform_gradle_plugin_tasks.md#testIdePerformance), [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi)
+
+**Sources**: [`CustomIntelliJPlatformVersionAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/CustomIntelliJPlatformVersionAware.kt)
 
 By default, the project with the IntelliJ Platform Gradle Plugin applied required the presence of the IntelliJ Platform, referred to later by various tasks, configurations, and extensions.
 
@@ -84,7 +88,9 @@ Type
 ## IntelliJPlatformVersionAware
 {#IntelliJPlatformVersionAware}
 
-[`IntelliJPlatformVersionAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/IntelliJPlatformVersionAware.kt)
+**Inherited by**: [`CustomIntelliJPlatformVersionAware`](#CustomIntelliJPlatformVersionAware), [`RuntimeAware`](#RuntimeAware), [`SandboxAware`](#SandboxAware), [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin), [`patchPluginXml`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml), [`printBundledPlugins`](tools_intellij_platform_gradle_plugin_tasks.md#printBundledPlugins), [`verifyPluginProjectConfiguration`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginProjectConfiguration)
+
+**Sources**: [`IntelliJPlatformVersionAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/IntelliJPlatformVersionAware.kt)
 
 This interface provides tasks a possibility for accessing information about the IntelliJ Platform currently used in the project.
 
@@ -138,10 +144,50 @@ Throws
 : `IllegalArgumentException`
 
 
+## PluginAware
+{#PluginAware}
+
+**Depends on**: [`patchPluginXml`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml)
+
+**Inherited by**: [`RunnableIdeAware`](#RunnableIdeAware), [`verifyPluginProjectConfiguration`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginProjectConfiguration)
+
+**Sources**: [`PluginAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/PluginAware.kt)
+
+
+This interface provides information about the currently built plugin.
+
+It resolves and parses the final <path>plugin.xml</path> descriptor file, making its details easily accessible.
+
+
+### pluginXml
+{#PluginAware-pluginXml}
+
+Holds the path to the patched <path>plugin.xml</path> file.
+
+{style="narrow"}
+Type
+: `RegularPropertyFile`
+
+Default value
+: [`patchPluginXml.outputFile`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-outputFile)
+
+
+### plugin
+{#PluginAware-plugin}
+
+Provides a parsed <path>plugin.xml</path> file as a [`PluginBean`](tools_intellij_platform_gradle_plugin_types.md#PluginBean) object.
+
+{style="narrow"}
+Type
+: [`PluginBean`](tools_intellij_platform_gradle_plugin_types.md#PluginBean)
+
+
 ## PluginVerifierAware
 {#PluginVerifierAware}
 
-[`PluginVerifierAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/PluginVerifierAware.kt)
+**Inherited by**: [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin)
+
+**Sources**: [`PluginVerifierAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/PluginVerifierAware.kt)
 
 The interface provides the path to the IntelliJ Plugin Verifier executable.
 
@@ -161,10 +207,15 @@ Type
 ## RunnableIdeAware
 {#RunnableIdeAware}
 
-[`RunnableIdeAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/RunnableIdeAware.kt)
+**Depends on**: [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin)
 
-The interface which utilizes a set of various interfaces required for running a guest IDE.  Inherits from:
+**Inherited by**: [`buildSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions), [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde), [`testIde`](tools_intellij_platform_gradle_plugin_tasks.md#testIde), [`testIdePerformance`](tools_intellij_platform_gradle_plugin_tasks.md#testIdePerformance), [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi)
+
+**Sources**: [`RunnableIdeAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/RunnableIdeAware.kt)
+
+The interface which uses a set of various interfaces required for running a guest IDE.  Inherits from:
 - [`CoroutinesJavaAgentAware`](#CoroutinesJavaAgentAware)
+- [`PluginAware`](#PluginAware)
 - [`RuntimeAware`](#RuntimeAware)
 - [`SandboxAware`](#SandboxAware)
 - `JavaForkOptions`
@@ -173,7 +224,9 @@ The interface which utilizes a set of various interfaces required for running a 
 ## RuntimeAware
 {#RuntimeAware}
 
-[`RuntimeAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/RuntimeAware.kt)
+**Inherited by**: [`RunnableIdeAware`](#RunnableIdeAware), [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin)
+
+**Sources**: [`RuntimeAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/RuntimeAware.kt)
 
 This interface provides access to the Java Runtime (i.e., JetBrains Runtime) resolved with `RuntimeResolver`.
 
@@ -207,11 +260,14 @@ Type
 : `Property<String>`
 
 
-
 ## SandboxAware
 {#SandboxAware}
 
-[`SandboxAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SandboxAware.kt)
+**Depends on**: [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox)
+
+**Inherited by**: [`RunnableIdeAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/RunnableIdeAware.kt), [`jarSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#jarSearchableOptions), [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox), [`verifyPluginStructure`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginStructure)
+
+**Sources**: [`SandboxAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SandboxAware.kt)
 
 The interface provides quick access to the sandbox container and specific directories located within it.
 
@@ -285,7 +341,9 @@ Type
 ## SigningAware
 {#SigningAware}
 
-[`SigningAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SigningAware.kt)
+**Inherited by**: [`signPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin), [`verifyPluginSignature`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginSignature)
+
+**Sources**: [`SigningAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SigningAware.kt)
 
 The interface provides the path to the Marketplace ZIP Signer executable.
 

@@ -34,7 +34,7 @@ To improve startup performance, avoid any heavy initializations in the construct
 >
 > Use inspection <control>Plugin DevKit | Code | Non-default constructors for service and extension class</control> to verify code.
 >
-{style="warning"}
+{style="warning" title="Do not use Constructor Injection"}
 
 ## Light Services
 

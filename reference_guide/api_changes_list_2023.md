@@ -163,7 +163,7 @@ JsonPath library unbundled
 `com.intellij.collaboration.ui.codereview.details.model.CodeReviewChangesViewModel.getSelectedCommitIndex()` method return type changed from `Flow` to `SharedFlow`
 : Concrete type usage forced to ensure correct behavior
 
-`com.intellij.collaboration.auth.ui.login.LoginTokenGenerator` method return type changed from `String` to `void`
+`com.intellij.collaboration.auth.ui.login.LoginTokenGenerator.generateToken(String)` method return type changed from `String` to `void`
 : Removed unused return value
 
 `com.intellij.collaboration.auth.ui.login.TokenLoginDialog(Project, Component, LoginModel, String, DialogPanelSupplier)` constructor parameter type changed from `() -> DialogPanel`  to `CoroutineScope.() -> DialogPanel`

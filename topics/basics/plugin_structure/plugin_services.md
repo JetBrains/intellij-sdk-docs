@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Services
 
@@ -263,15 +263,15 @@ Registration in <path>plugin.xml</path>:
 ## Retrieving a Service
 
 > **Never** acquire service instances prematurely or store them in fields for later use.
-> Instead, **always** obtain these service instances directly and **only** at the location where they're needed.
-> Failing to do so can lead to unexpected exceptions and severe consequences for your plugin's functionality.
+> Instead, **always** obtain service instances directly and **only** at the location where they're needed.
+> Failing to do so will lead to unexpected exceptions and severe consequences for the plugin's functionality.
 >
 > Such problems are highlighted via inspections (2023.3):
 > - <control>Plugin DevKit | Code | Application service assigned to a static final field or immutable property</control>
 > - <control>Plugin DevKit | Code | Incorrect service retrieving</control>
 > - <control>Plugin DevKit | Code | Simplifiable service retrieving</control>
 >
-{style="warning"}
+{style="warning" title="Correct Service Retrieval"}
 
 Getting a service doesn't need a read action and can be performed from any thread.
 If a service is requested from several threads, it will be initialized in the first thread, and other threads will be blocked until it is fully initialized.

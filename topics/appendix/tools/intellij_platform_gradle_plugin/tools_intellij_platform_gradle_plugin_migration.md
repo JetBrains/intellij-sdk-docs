@@ -84,6 +84,10 @@ See: [](tools_intellij_platform_gradle_plugin_dependencies_extension.md)
 
 The `intellij.plugins` property is no longer available.
 
+> Bundled plugins are now separated from plugins available in JetBrains Marketplace.
+>
+{style="note"}
+
 Define dependencies on plugins or bundled plugins in `dependencies {}` block instead:
 
 ```kotlin
@@ -104,9 +108,7 @@ dependencies {
 
 See: [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins)
 
-> Bundled plugins are now separated from plugins available in JetBrains Marketplace.
->
-{style="note"}
+<include from="tools_intellij_platform_gradle_plugin_repositories_extension.md" element-id="localPlatformArtifacts_required"/>
 
 ### intellij.localPath
 
@@ -128,6 +130,8 @@ dependencies {
 ```
 
 See: [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#custom-target-platforms)
+
+<include from="tools_intellij_platform_gradle_plugin_repositories_extension.md" element-id="localPlatformArtifacts_required"/>
 
 ### intellij.updateSinceUntilBuild, intellij.sameSinceUntilBuild
 

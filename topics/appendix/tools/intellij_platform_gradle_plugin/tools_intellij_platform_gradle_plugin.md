@@ -252,10 +252,31 @@ dependencies {
 }
 ```
 
-Note that the `localPlatformArtifacts()` entry needs to be added to the `repositories {}` block as all local dependencies (local IDE, bundled plugins, etc.) rely on the Ivy repositories.
+<include from="tools_intellij_platform_gradle_plugin_repositories_extension.md" element-id="localPlatformArtifacts_required"/>
 
 ### Setting Up Plugin Dependencies
 
-TODO
+To specify a dependency on a plugin, it is important to distinguish bundled plugins from plugins available in JetBrains Marketplace.
+
+The [](tools_intellij_platform_gradle_plugin_dependencies_extension.md) provides a set of helpers to manage [plugins dependencies](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins):
+
+```kotlin
+repositories {
+  intellijPlatform {
+    localPlatformArtifacts()
+  }
+}
+
+dependencies {
+  intellijPlatform {
+    intellijIdeaCommunity("%ijPlatform%")
+
+    bundledPlugin("com.intellij.java")
+    plugin("org.intellij.scala", "2024.1.4")
+  }
+}
+```
+
+<include from="tools_intellij_platform_gradle_plugin_repositories_extension.md" element-id="localPlatformArtifacts_required"/>
 
 <include from="snippets.md" element-id="missingContent"/>

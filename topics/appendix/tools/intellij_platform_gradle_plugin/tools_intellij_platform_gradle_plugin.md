@@ -169,7 +169,7 @@ dependencyResolutionManagement {
 Some repositories, by default, point to JetBrains Cache Redirector to provide better resources resolution.
 However, it is possible to use the direct repository URL, if available.
 
-To switch off the default usage of JetBrains Cache Redirector, see the [](tools_intellij_platform_gradle_plugin_build_features.md#useCacheRedirector) build feature.
+To switch off the default usage of JetBrains Cache Redirector, see the [](tools_intellij_platform_gradle_plugin_gradle_properties.md#useCacheRedirector) build feature.
 
 ### Setting Up IntelliJ Platform
 

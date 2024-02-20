@@ -168,7 +168,7 @@ This task runs a headless IDE instance to collect all the available options prov
 If your plugin doesn't implement custom settings, it is recommended to disable this task via [`intellijPlatform.buildSearchableOptions`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-buildSearchableOptions) build feature.
 
 In the case of running the task for the plugin using [`intellijPlatform.pluginConfiguration.productDescriptor`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-productDescriptor), a warning will be logged regarding potential issues with running headless IDE for paid plugins.
-It is possible to mute this warning with the [`paidPluginSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_build_features.md#paidPluginSearchableOptionsWarning) build feature.
+It is possible to mute this warning with the [`paidPluginSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_gradle_properties.md#paidPluginSearchableOptionsWarning) build feature.
 
 
 ### outputDirectory
@@ -188,14 +188,14 @@ Default value
 {#buildSearchableOptions-showPaidPluginWarning}
 
 Emit warning if the task is executed by a paid plugin.
-Can be disabled with the [`paidPluginSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_build_features.md#paidPluginSearchableOptionsWarning) build feature.
+Can be disabled with the [`paidPluginSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_gradle_properties.md#paidPluginSearchableOptionsWarning) build feature.
 
 {style="narrow"}
 Type
 : `Property<Boolean>`
 
 Default value
-: [`paidPluginSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_build_features.md#paidPluginSearchableOptionsWarning) && `productDescriptor` is defined
+: [`paidPluginSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_gradle_properties.md#paidPluginSearchableOptionsWarning) && `productDescriptor` is defined
 
 
 ## classpathIndexCleanup
@@ -223,7 +223,7 @@ It is responsible for:
 - checking if the project uses IntelliJ Platform Gradle Plugin in the latest available version
 - preparing the KotlinX Coroutines Java Agent file to enable coroutines debugging when developing the plugin
 
-The self-update check can be disabled via [`selfUpdateCheck`](tools_intellij_platform_gradle_plugin_build_features.md#selfUpdateCheck) build feature.
+The self-update check can be disabled via [`selfUpdateCheck`](tools_intellij_platform_gradle_plugin_gradle_properties.md#selfUpdateCheck) build feature.
 
 To make the Coroutines Java Agent available for the task, inherit from [`CoroutinesJavaAgentAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CoroutinesJavaAgentAware).
 
@@ -257,7 +257,7 @@ Type
 : `Property<Boolean>`
 
 Default value
-: [`selfUpdateCheck`](tools_intellij_platform_gradle_plugin_build_features.md#selfUpdateCheck)
+: [`selfUpdateCheck`](tools_intellij_platform_gradle_plugin_gradle_properties.md#selfUpdateCheck)
 
 
 ### selfUpdateLock
@@ -359,14 +359,14 @@ Default value
 {#jarSearchableOptions-noSearchableOptionsWarning}
 
 Emit warning if no searchable options are found.
-Can be disabled with [`noSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_build_features.md#noSearchableOptionsWarning) build feature.
+Can be disabled with [`noSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_gradle_properties.md#noSearchableOptionsWarning) build feature.
 
 {style="narrow"}
 Type
 : `Property<Boolean>`
 
 Default value
-: [`noSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_build_features.md#noSearchableOptionsWarning)
+: [`noSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_gradle_properties.md#noSearchableOptionsWarning)
 
 
 ### pluginName

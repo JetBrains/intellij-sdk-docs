@@ -1,13 +1,40 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# Build Features
+# Gradle Properties
 
-<link-summary>IntelliJ Platform Gradle Plugin build features.</link-summary>
+<link-summary>IntelliJ Platform Gradle Plugin provides a set of Gradle properties and build features to control its behaviors.</link-summary>
 
 <include from="tools_intellij_platform_gradle_plugin.md" element-id="EAP_Status"/>
 
 The IntelliJ Platform Gradle Plugin exposes a number of build features to control some of the low-level Gradle plugin behaviors.
 To enable or disable a particular feature, add a Project property to the <path>gradle.properties</path> file with the following pattern:
+
+```
+org.jetbrains.intellij.platform.<name>=<value>
+```
+
+## General Gradle Properties
+
+### localPlatformArtifacts
+{#localPlatformArtifacts}
+
+The [`localPlatformArtifacts()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) entry applied to the `repositories {}` block is required to apply to the project dependencies that need extra pre-processing before they can be correctly used by the IntelliJ Platform Gradle Plugin and loaded by Gradle.
+
+This is resolved by creating an Ivy XML file in a dedicated directory, which by default points to the <path>[rootProject]/.gradle/</path>.
+
+It is possible to customize this path using the `org.jetbrains.intellij.platform.localPlatformArtifacts` property.
+
+Example
+:
+```
+org.jetbrains.intellij.platform.localPlatformArtifacts=/path/to/localPlatformArtifacts/
+```
+
+
+## Build Features
+
+Build features are Gradle properties defined by the IntelliJ Platform Gradle Plugin to control specific features.
+Such properties have a simplified form:
 
 ```
 org.jetbrains.intellij.platform.buildFeature.<buildFeatureName>=<true|false>

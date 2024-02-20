@@ -68,6 +68,9 @@ plugins {
 }
 ```
 
+> The snapshot release is published with the constant version, creating a possibility for Gradle to resort to the cached version of the plugin.
+> If you wish to update all dependencies in the dependency cache, the command line option `--refresh-dependencies` should be used.
+
 ### Subplugins
 
 The plugin was split into subplugins that can be applied separately.

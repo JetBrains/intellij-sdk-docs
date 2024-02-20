@@ -61,7 +61,7 @@ intellijPlatform {
 
 ### intellij.type, intellij.version
 
-Define the IntelliJ Platform dependency in `dependencies {}` block:
+Define the IntelliJ Platform dependency in `dependencies {}` block:
 
 ```kotlin
 repositories {
@@ -88,7 +88,7 @@ The `intellij.plugins` property is no longer available.
 >
 {style="note"}
 
-Define dependencies on plugins or bundled plugins in `dependencies {}` block instead:
+Define dependencies on plugins or bundled plugins in `dependencies {}` block instead:
 
 ```kotlin
 repositories {
@@ -112,7 +112,7 @@ See: [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins)
 
 ### intellij.localPath
 
-Define dependencies on local IDE instance in `dependencies {}` block:
+Define dependencies on local IDE instance in `dependencies {}` block:
 
 ```kotlin
 repositories {
@@ -143,7 +143,7 @@ The <path>plugin.xml</path> file is now fully managed by the [`intellijPlatform`
 
 Use the [`intellijPlatform.sandboxContainer`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-sandboxContainer).
 
-Use the `repositories {}` block to manage repositories instead.
+Use the `repositories {}` block to manage repositories instead.
 
 See: [](tools_intellij_platform_gradle_plugin_repositories_extension.md)
 

@@ -92,7 +92,7 @@ See also:
 
 <snippet id="localPlatformArtifacts_required">
 
-> Note that the [`localPlatformArtifacts()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) entry needs to be added to the `repositories {}` block as all local dependencies (local IDE, bundled plugins, etc.) rely on the local Ivy repositories.
+> Note that the [`localPlatformArtifacts()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) entry needs to be added to the `repositories {}` block as all local dependencies (local IDE, bundled plugins, etc.) rely on the local Ivy repositories.
 >
 > The `localPlatformArtifacts()` is applied automatically when using the [`defaultRepositories()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories) entry.
 >

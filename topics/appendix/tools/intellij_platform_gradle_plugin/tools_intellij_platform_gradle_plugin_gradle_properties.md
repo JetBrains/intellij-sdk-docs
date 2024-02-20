@@ -18,7 +18,7 @@ org.jetbrains.intellij.platform.<name>=<value>
 ### localPlatformArtifacts
 {#localPlatformArtifacts}
 
-The [`localPlatformArtifacts()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) entry applied to the `repositories {}` block is required to apply to the project dependencies that need extra pre-processing before they can be correctly used by the IntelliJ Platform Gradle Plugin and loaded by Gradle.
+The [`localPlatformArtifacts()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) entry applied to the `repositories {}` block is required to apply to the project dependencies that need extra pre-processing before they can be correctly used by the IntelliJ Platform Gradle Plugin and loaded by Gradle.
 
 This is resolved by creating an Ivy XML file in a dedicated directory, which by default points to the <path>[rootProject]/.gradle/</path>.
 

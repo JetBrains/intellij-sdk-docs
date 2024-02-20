@@ -30,7 +30,6 @@ Example
 org.jetbrains.intellij.platform.localPlatformArtifacts=/path/to/localPlatformArtifacts/
 ```
 
-
 ## Build Features
 
 Build features are Gradle properties defined by the IntelliJ Platform Gradle Plugin to control specific features.
@@ -46,8 +45,17 @@ E.g., to disable the [](#selfUpdateCheck) feature, add this line:
 org.jetbrains.intellij.platform.buildFeature.selfUpdateCheck=false
 ```
 
+### downloadSources
+{#downloadSources}
 
-## noSearchableOptionsWarning
+Instruct IDE that sources are needed to be downloaded when working with IntelliJ Platform Gradle Plugin.
+
+Value is passed directly to the [Idea Gradle Plugin](https://docs.gradle.org/current/userguide/idea_plugin.html) to the `idea.module.downloadSources` property.
+
+See also:
+- [`IdeaModule.downloadSources`](https://docs.gradle.org/current/dsl/org.gradle.plugins.ide.idea.model.IdeaModule.html#org.gradle.plugins.ide.idea.model.IdeaModule:downloadSources)
+
+### noSearchableOptionsWarning
 {#noSearchableOptionsWarning}
 
 When the [](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions) doesn't produce any results, e.g., when the plugin doesn't implement any [Settings](settings.md), a warning is shown to suggest disabling it for better performance with [](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-buildSearchableOptions).
@@ -62,8 +70,7 @@ Example
 org.jetbrains.intellij.platform.buildFeature.buildSearchableOptions=false
 ```
 
-
-## paidPluginSearchableOptionsWarning
+### paidPluginSearchableOptionsWarning
 {#paidPluginSearchableOptionsWarning}
 
 Due to IDE limitations, it is impossible to run the IDE in headless mode to collect searchable options for a paid plugin.
@@ -80,8 +87,7 @@ Example
 org.jetbrains.intellij.platform.buildFeature.paidPluginSearchableOptionsWarning=false
 ```
 
-
-## selfUpdateCheck
+### selfUpdateCheck
 {#selfUpdateCheck}
 
 Checks whether the currently used IntelliJ Platform Gradle Plugin is outdated and if a new release is available.
@@ -104,8 +110,7 @@ Example
 org.jetbrains.intellij.platform.buildFeature.selfUpdateCheck=false
 ```
 
-
-## useCacheRedirector
+### useCacheRedirector
 {#useCacheRedirector}
 
 By default, JetBrains Cache Redirector is used when resolving Maven repositories or any resources used by the IntelliJ Platform Gradle Plugin.

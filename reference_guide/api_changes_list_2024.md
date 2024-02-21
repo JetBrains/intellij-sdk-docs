@@ -74,7 +74,6 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 
 ### IntelliJ Platform 2024.1
-
 `com.intellij.refactoring.RefactoringHelper.prepareOperation(UsageInfo [] usages, List<PsiElement> elements)` abstract method added
 : Use instead of `com.intellij.refactoring.RefactoringHelper.prepareOperation(UsageInfo [] usages)` and `com.intellij.refactoring.RefactoringHelper.prepareOperation(UsageInfo [] usages, PsiElement primaryElement)`.
 
@@ -231,3 +230,8 @@ Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
 
 `com.intellij.database.datagrid.DataGrid.getColumnAttributes()` abstract method added
 : Only recompilation is needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
+
+### HTTP Client Plugin 2024.1
+`com.intellij.httpClient.actions.generation.RequestUrlContextInfo(requestContextData: RequestContextData)` constructor parameter removed.
+: Use `com.intellij.httpClient.actions.generation.RequestBody` and `com.intellij.httpClient.actions.generation.HttpRequestUrlPathInfo.Companion#create` to describe a request body that will be coomputed lazily during the corresponding request generation.
+

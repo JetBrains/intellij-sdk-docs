@@ -25,10 +25,10 @@ plugins {
 
 ## Migration Plugin
 
-The 2.x release introduces [](tools_intellij_platform_gradle_plugin.md#subplugins), which contains also one to help with migration from the Gradle IntelliJ Plugin 1.x.
+The 2.x release introduces [](tools_intellij_platform_gradle_plugin.md#subplugins), featuring a dedicated one to help with migration from Gradle IntelliJ Plugin 1.x.
 
-When you apply the [](#plugin-id-change), Gradle will fail to process the <path>build.gradle.kts</path> file as the old [](#intellij-extension) doesn't exist.
-To fulfill all gaps and help you figure out what is required to change, right in the IDE, the `org.jetbrains.intellij.platform.migration` plugin was introduced:
+When you apply the [](#plugin-id-change), Gradle will fail to process the <path>build.gradle.kts</path> file as the old [](#intellij-extension) doesn't exist anymore.
+To fill all gaps and help users figure out required changes - right in the IDE - the `org.jetbrains.intellij.platform.migration` plugin was introduced:
 
 ```kotlin
 plugins {
@@ -84,11 +84,15 @@ See: [](tools_intellij_platform_gradle_plugin_dependencies_extension.md)
 
 The `intellij.plugins` property is no longer available.
 
-> Bundled plugins are now separated from plugins available in JetBrains Marketplace.
+> Bundled plugins are now defined separately from plugins of other sources (like JetBrains Marketplace).
 >
 {style="note"}
 
 Define dependencies on plugins or bundled plugins in `dependencies {}` block instead:
+
+**Example**:
+
+Setting up dependencies on comma-separated plugins listed in `platformPlugins` and `platformBundledPlugins` properties from <path>gradle.properties</path>.
 
 ```kotlin
 repositories {
@@ -135,7 +139,7 @@ See: [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#custom-t
 
 ### intellij.updateSinceUntilBuild, intellij.sameSinceUntilBuild
 
-The <path>plugin.xml</path> file is now fully managed by the [`intellijPlatform`](tools_intellij_platform_gradle_plugin_extension.md) extension`.
+The <path>plugin.xml</path> file is now fully managed by the [`intellijPlatform`](tools_intellij_platform_gradle_plugin_extension.md) extension.
 
 ### intellij.intellijRepository, intellij.pluginsRepositories, intellij.jreRepository
 
@@ -149,7 +153,7 @@ See: [](tools_intellij_platform_gradle_plugin_repositories_extension.md)
 
 ### intellij.downloadSources
 
-Downloading sources is managed with the DevKit Plugin in version 2024.1+.
+Downloading sources is managed by the Plugin DevKit plugin in version 2024.1+.
 
 ### intellij.ideaDependency
 
@@ -167,7 +171,7 @@ Use [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi).
 
 ### runPluginVerifier
 
-Task responsible for running the IntelliJ Plugin Verifier is now called [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin).
+The task for running the IntelliJ Plugin Verifier is now called [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin).
 
 Use [`intellijPlatform.verifyPlugin`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin) extension to configure it.
 

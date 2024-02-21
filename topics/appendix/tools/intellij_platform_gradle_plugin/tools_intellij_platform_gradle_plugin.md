@@ -266,7 +266,7 @@ The [](tools_intellij_platform_gradle_plugin_dependencies_extension.md) provides
 ```kotlin
 repositories {
   intellijPlatform {
-    localPlatformArtifacts()
+    defaultRepositories()
   }
 }
 

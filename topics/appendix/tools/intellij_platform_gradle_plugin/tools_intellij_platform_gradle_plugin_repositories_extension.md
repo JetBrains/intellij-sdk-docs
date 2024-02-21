@@ -80,11 +80,11 @@ See also:
 
 ## Additional Repositories
 
-| Function                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `localPlatformArtifacts()` | Certain dependencies, such as the [local IntelliJ Platform instance](tools_intellij_platform_gradle_plugin.md#dependenciesLocalPlatform) and bundled IDE plugins, need extra pre-processing before they can be correctly used by the IntelliJ Platform Gradle Plugin and loaded by Gradle. This pre-processing involves generating XML files that detail these specific artifacts. Once created, these XMLs are stored in a unique custom [Ivy](https://ant.apache.org/ivy/) repository directory. |
-| `jetbrainsRuntime()`       | Adds a repository for accessing [JetBrains Runtime](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance) releases.                                                                                                                                                                                                                                                                                                                                                  |
-| `marketplace()`            | Adds a repository for accessing plugins hosted on [JetBrains Marketplace](https://plugins.jetbrains.com).                                                                                                                                                                                                                                                                                                                                                                                          |
+| Function                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `localPlatformArtifacts()` | Certain dependencies, such as the [local IntelliJ Platform instance](tools_intellij_platform_gradle_plugin.md#dependenciesLocalPlatform) and bundled IDE plugins, need extra pre-processing before they can be correctly used by the IntelliJ Platform Gradle Plugin and loaded by Gradle. <p>This pre-processing involves generating XML files that detail these specific artifacts. Once created, these are stored in a unique custom [Ivy](https://ant.apache.org/ivy/) repository directory.</p> |
+| `jetbrainsRuntime()`       | Adds a repository for accessing [JetBrains Runtime](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance) releases.                                                                                                                                                                                                                                                                                                                                                    |
+| `marketplace()`            | Adds a repository for accessing plugins hosted on [JetBrains Marketplace](https://plugins.jetbrains.com).                                                                                                                                                                                                                                                                                                                                                                                            |
 
 See also:
 
@@ -92,11 +92,12 @@ See also:
 
 <snippet id="localPlatformArtifacts_required">
 
-> Note that the [`localPlatformArtifacts()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) entry needs to be added to the `repositories {}` block as all local dependencies (local IDE, bundled plugins, etc.) rely on the local Ivy repositories.
+> Note that the [`localPlatformArtifacts()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories)
+> entry needs to be added to the `repositories {}` block as all local dependencies (bundled plugins, local IDE, etc.) require it.
 >
-> The `localPlatformArtifacts()` is applied automatically when using the [`defaultRepositories()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories) entry.
+> It is applied automatically when using the [`defaultRepositories()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories) entry.
 >
-{style="tip"}
+{style="tip" title="localPlatformArtifacts() and defaultRepositories()"}
 
 </snippet>
 

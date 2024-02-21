@@ -16,7 +16,9 @@
 <snippet id="subscribeNews">
 
 > [Subscribe to Marketplace Developer News](https://jb.gg/mp-updates) to receive news and announcements.
-> Also follow [JBPlatform](https://x.com/JBPlatform/) on X (formerly Twitter) and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/).
+> Also follow [JBPlatform](https://x.com/JBPlatform/) on X (formerly Twitter) and visit
+> [JetBrains Platform Blog](https://blog.jetbrains.com/platform/) and
+> [JetBrains Marketplace on LinkedIn](https://www.linkedin.com/showcase/jetbrains-marketplace/).
 >
 {title="Staying up to date"}
 

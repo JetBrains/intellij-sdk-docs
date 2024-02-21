@@ -189,7 +189,9 @@ To completely drop this approach, it is mandatory to remove its reference manual
 
 </procedure>
 
-## Unresolved 'idea-ext' Plugin
+## Other
+
+### Unresolved 'idea-ext' Plugin
 
 Add an explicit dependency on [the plugin](https://github.com/JetBrains/gradle-idea-ext-plugin) in <path>build.gradle.kts</path>:
 

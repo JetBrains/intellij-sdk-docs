@@ -12,6 +12,11 @@ As the `2.x` branch brings significant breaking changes to the plugin, the name 
 _IntelliJ Platform Gradle Plugin_ as the old one was confused with the bundled Gradle support plugin in the IDE.
 The plugin is published to the Gradle Plugin Portal with a new name as a new entry, and the old one is marked as deprecated.
 
+## Minimum Gradle version
+
+The minimum required Gradle version is now `8.1`, see [the Gradle Installation guide](https://gradle.org/install/) on how to upgrade.
+See also [](tools_intellij_platform_gradle_plugin.md#requirements).
+
 ## Plugin ID change
 
 Plugin ID has changed from `org.jetbrains.intellij` to `org.jetbrains.intellij.platform`.
@@ -36,11 +41,6 @@ plugins {
   id("org.jetbrains.intellij.platform.migration") version "%intellij-platform-gradle-plugin-version%"
 }
 ```
-
-## Minimum Gradle version
-
-The minimum required Gradle version is now `8.1`, see [the Gradle Installation guide](https://gradle.org/install/) on how to upgrade.
-See also [](tools_intellij_platform_gradle_plugin.md#requirements).
 
 ## intellij {} extension
 

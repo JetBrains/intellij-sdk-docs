@@ -14,10 +14,10 @@ Available in both `Project` scope and Gradle Settings for `DependencyResolutionM
 It provides methods to add:
 
 - IntelliJ Platform repositories (for releases, snapshots, and nightly builds)
-- JetBrains Marketplace repository for fetching plugins
+- JetBrains Marketplace repository (for dependencies on non-bundled plugins)
 - JetBrains Runtime repository
 - Android Studio and IntelliJ Platform binary release repositories (for IntelliJ Plugin Verifier)
-- Ivy local repository (for correct access to local dependencies)
+- Ivy local repository (for access to local dependencies)
 
 <snippet id="recommendedCallout">
 
@@ -45,14 +45,14 @@ repositories {
 
 The default repository definition suitable for most plugins.
 
-| Function                | Description                                                                                                                           |
-|-------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| `defaultRepositories()` | Applies a set of recommended repositories required for running the most common tasks provided by the IntelliJ Platform Gradle Plugin. |
+| Function                | Description                                                                                                |
+|-------------------------|------------------------------------------------------------------------------------------------------------|
+| `defaultRepositories()` | Applies a set of recommended repositories required for building plugins and running the most common tasks. |
 
 It includes:
-- `localPlatformArtifacts()` — required to use plugins bundled with IntelliJ Platform or refer to the local IDE
 - `releases()` and `snapshots()` — IntelliJ Platform releases channels
 - `marketplace()` — JetBrains Marketplace plugins repository
+- `localPlatformArtifacts()` — required to use plugins bundled with IntelliJ Platform or refer to a local IDE
 - `binaryReleases()` — JetBrains IDEs releases required for running the IntelliJ Plugin Verifier
 
 
@@ -92,10 +92,9 @@ See also:
 
 <snippet id="localPlatformArtifacts_required">
 
-> Note that the [`localPlatformArtifacts()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories)
-> entry needs to be added to the `repositories {}` block as all local dependencies (bundled plugins, local IDE, etc.) require it.
->
-> It is applied automatically when using the [`defaultRepositories()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories) entry.
+> Note that unless using recommended default [`defaultRepositories()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories),
+> the [`localPlatformArtifacts()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) entry needs to be added to the `repositories {}` block
+> explicitly to use local dependencies (bundled plugins, local IDE, etc.).
 >
 {style="tip" title="localPlatformArtifacts() and defaultRepositories()"}
 

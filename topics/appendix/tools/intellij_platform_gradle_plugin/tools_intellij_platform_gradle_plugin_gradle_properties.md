@@ -55,6 +55,17 @@ Value is passed directly to the [Idea Gradle Plugin](https://docs.gradle.org/cur
 See also:
 - [`IdeaModule.downloadSources`](https://docs.gradle.org/current/dsl/org.gradle.plugins.ide.idea.model.IdeaModule.html#org.gradle.plugins.ide.idea.model.IdeaModule:downloadSources)
 
+{style="narrow"}
+Default value
+: `true`
+
+Example
+:
+```
+org.jetbrains.intellij.platform.buildFeature.downloadSources=true
+```
+
+
 ### noSearchableOptionsWarning
 {#noSearchableOptionsWarning}
 

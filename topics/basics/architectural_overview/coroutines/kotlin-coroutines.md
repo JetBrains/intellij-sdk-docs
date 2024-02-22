@@ -4,17 +4,17 @@
 
 <link-summary>Introduction to Kotlin Coroutines in the IntelliJ Platform.</link-summary>
 
-IntelliJ Platform is a multithreading environment that executes many asynchronous and non-blocking tasks to avoid UI freezes.
+The IntelliJ Platform is a multithreading environment that executes many asynchronous and non-blocking tasks to avoid UI freezes.
 These tasks are usually executed in background threads, which is a standard approach in the JVM world.
 
-Since version 1.1, Kotlin has introduced coroutines as a lightweight and easy to implement alternative to threads.
-IntelliJ Platform started adapting coroutines in its APIs and internal code, and since 2024.1 it is recommended to use the coroutines approach over threads.
+Since version 1.1, [Kotlin](using_kotlin.md) has introduced coroutines as a lightweight and easy to implement alternative to threads.
+The IntelliJ Platform started adapting coroutines in its APIs and internal code, and since 2024.1 it is recommended to use the coroutines approach over threads.
 
 ### Coroutines Advantages
 
 The reason for coroutines being lightweight is the fact that they are not bound to OS native threads, as opposed to the JVM threads.
 It enables much less memory consumption and cheaper context switching, which makes the platform and plugins more performant.
-For example, it's easy to run 100.000 coroutines on a standard computer, which is not possible with threads as it would cause `OutOfMemoryError`.
+For example, it's straightforward to run 100.000 coroutines on a standard computer, which is not possible with threads as it would cause `OutOfMemoryError`.
 
 Besides performance, there are more advantages of using coroutines:
 - Coroutines greatly simplify the way of writing non-blocking code.
@@ -31,7 +31,7 @@ Coroutines provide very limited Java interoperability, and coroutine-based APIs 
 
 Kotlin Coroutines are new to the IntelliJ Platform and are not yet widely adopted in public APIs.
 In the future, the number of coroutine-based APIs will grow and using only Java may not be enough to implement a fully functional plugin.
-It will be required to use Kotlin, at least partially, e.g., to implement coroutine-based extension points.
+It will be required to use [Kotlin](using_kotlin.md), at least partially, e.g., to implement coroutine-based [](plugin_extension_points.md).
 
 ## Learning Resources
 

@@ -21,14 +21,14 @@ The following diagram presents the scopes and their parent-child relationships:
 
 ![intellij-platform-coroutines-scopes.svg](intellij-platform-coroutines-scopes.svg){width="644"}
 
-All scopes presented on the diagram are [supervisor scopes](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/supervisor-scope.html) - they ignore the failures of their children.
+All scopes presented on the diagram are [supervisor scopes](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/supervisor-scope.html) — they ignore the failures of their children.
 
 Each coroutine scope can have only one actual parent, pointed with solid arrow lines.
 Dashed arrow lines point to fictional parents, which follow the actual coroutine parent-child semantics:
 - a parent scope cancels children on its own cancellation
 - a parent scope awaits children before considering itself complete
 
-The _Application x Plugin_ and _Project x Plugin_ are intersection scopes with two semantic parents (actual and fictional).
+The **Application x Plugin** and **Project x Plugin** are [intersection scopes](#intersection-scopes) with two semantic parents (actual and fictional).
 
 ### Main Scopes
 
@@ -49,21 +49,21 @@ The _Application x Plugin_ and _Project x Plugin_ are intersection scopes with t
 
 ### Intersection Scopes
 
-- **Application x Plugin** - a scope which is an intersection of the application and plugin scopes.
+- **Application x Plugin** - a scope which is an intersection of the **Application** and **Plugin** scopes.
   It is canceled when the application is shutdown or the corresponding plugin is unloaded.
   This triggers the cancellation of its children and the **Project x Plugin** scope and, subsequently, its children.
-- **Project x Plugin** - a scope which is an intersection of the project and plugin scopes.
+- **Project x Plugin** - a scope which is an intersection of the **Project** and **Plugin** scopes.
   It is canceled when a project is being closed or the corresponding plugin is unloaded.
 
 Intersection scopes enable creating coroutines whose lifetime is limited by application/project and plugin lifetimes, e.g.,
-application/project services provided by a plugin.
+application/project [services](plugin_services.md) provided by a plugin.
 
 ### Service Scopes
 
-The **Application Service** and **Project Service** scopes are bound to an application and project service lifetimes accordingly.
+The **Application Service** and **Project Service** scopes are bound to an application and project [service](plugin_services.md) lifetimes accordingly.
 They are children of the [](#intersection-scopes), which means that they are canceled when the application/project is closed or a plugin is unloaded.
 
-The service scope is provided to services via the constructor injection.
+The service scope is provided to services via constructor injection.
 The following constructor signatures are supported:
 
 - `MyService(CoroutineScope)` for application and project services
@@ -79,12 +79,13 @@ The injected scopes' contexts contain [`Dispatchers.Default`](https://kotlinlang
 
 ### Use Service Scopes
 
-If a plugin requires running some code in a coroutine, the recommended approach is to create a separate service that will receive its [own scope](#service-scopes) via constructor and launch the coroutine in this scope.
+If a plugin requires running some code in a coroutine, the recommended approach is to create a separate [service](plugin_services.md) that will receive its [own scope](#service-scopes) via constructor and launch the coroutine in this scope.
 This approach guarantees the usage of the correct scope, preventing canceling wrong scopes and killing all their (e.g., application's or project's) coroutines accidentally:
 
 ```kotlin
+@Service
 class MyPluginService(private val cs: CoroutineScope) {
-  ...
+
   fun shutdownService() {
     // this does not affect other services
     // in the same plugin/container:
@@ -95,8 +96,10 @@ class MyPluginService(private val cs: CoroutineScope) {
 
 See the [](launching-coroutines.md) section for details.
 
-The following sections describe the potential problems that would occur if the wrong coroutine scopes were used.
-This allows better understanding of the platform scopes and why the mentioned service approach should be used.
+> The following sections describe the potential problems that would occur if the wrong coroutine scopes were used.
+> This allows better understanding of the platform scopes and why the [service approach](#use-service-scopes) mentioned above should be used.
+>
+{style="warning"}
 
 ### Do Not Use Application/Project Scope
 
@@ -133,7 +136,9 @@ Using these scopes could easily lead to project or plugin class leaks, or accide
 
 ### Do Not Use Intersection Scopes
 
-There is no API for retrieving Application x Plugin and Project x Plugin scopes, but let's assume there is a method exposing the Project x Plugin scope:
+There is no API for retrieving **Application x Plugin** and **Project x Plugin** [intersection scopes](#intersection-scopes),
+but let's assume there is a method exposing the **Project x Plugin** scope:
+
 ```kotlin
 /**
  * Returns the correct intersection scope for the project and plugin

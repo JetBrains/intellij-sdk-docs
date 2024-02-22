@@ -172,14 +172,10 @@ Default value
 : [`patchPluginXml.outputFile`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-outputFile)
 
 
-### plugin
-{#PluginAware-plugin}
+### parse {}
+{#PluginAware-parse}
 
-Provides a parsed <path>plugin.xml</path> file as a [`PluginBean`](tools_intellij_platform_gradle_plugin_types.md#PluginBean) object.
-
-{style="narrow"}
-Type
-: [`PluginBean`](tools_intellij_platform_gradle_plugin_types.md#PluginBean)
+The `parse` method provides a possibility for parsing the <path>pluginXml</path> file and direct access to the [`PluginBean`](tools_intellij_platform_gradle_plugin_types.md#PluginBean) object.
 
 
 ## PluginVerifierAware

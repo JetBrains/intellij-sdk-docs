@@ -67,8 +67,8 @@ flowchart LR
 
 
     initializeIntelliJPlatformPlugin --> | runs before | ALL
-    buildPlugin --> jarSearchableOptions & prepareSandbox
-    jarSearchableOptions --> buildSearchableOptions & prepareSandbox
+    buildPlugin --> jarSearchableOptions & prepareSandbox & patchPluginXml
+    jarSearchableOptions --> buildSearchableOptions & prepareSandbox & patchPluginXml
     buildSearchableOptions --> patchPluginXml & prepareSandbox
     prepareSandbox --> jar & instrumentedJar
     publishPlugin --> buildPlugin & signPlugin
@@ -133,7 +133,7 @@ It takes the output of the [`prepareSandbox`](#prepareSandbox) task containing t
 
 The produced archive is stored in the <path>[buildDirectory]/distributions/[`archiveFile`](#buildPlugin-archiveFile)</path> file.
 The [`archiveFile`](#buildPlugin-archiveFile) name and location can be controlled with properties provided with the [`Zip`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Zip.html) base task.
-By default, the `archiveBaseName` is set to the value of [`prepareSandbox.pluginName`](#prepareSandbox-pluginName).
+By default, the `archiveBaseName` is set to the plugin name specified in the <path>plugin.xml</path> file, after it gets patched with the [`patchPluginXml`](#patchPluginXml) task.
 
 
 ### archiveFile
@@ -318,9 +318,9 @@ See also:
 
 <tldr>
 
-**Depends on**: [`buildSearchableOptions`](#buildSearchableOptions)
+**Depends on**: [`buildSearchableOptions`](#buildSearchableOptions), [`patchPluginXml`](#patchPluginXml)
 
-**Extends**: [`Jar`][gradle-jar-task], [`SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware)
+**Extends**: [`Jar`][gradle-jar-task], [`PluginAware`](tools_intellij_platform_gradle_plugin_task_awares.md#PluginAware), [`SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware)
 
 **Sources**: [`JarSearchableOptionsTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/JarSearchableOptionsTask.kt)
 
@@ -358,7 +358,7 @@ Default value
 ### noSearchableOptionsWarning
 {#jarSearchableOptions-noSearchableOptionsWarning}
 
-Emit warning if no searchable options are found.
+Emit a warning if no searchable options are found.
 Can be disabled with [`noSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_gradle_properties.md#noSearchableOptionsWarning) build feature.
 
 {style="narrow"}
@@ -367,19 +367,6 @@ Type
 
 Default value
 : [`noSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_gradle_properties.md#noSearchableOptionsWarning)
-
-
-### pluginName
-{#jarSearchableOptions-pluginName}
-
-The name of the plugin.
-
-{style="narrow"}
-Type
-: `Property<String>`
-
-Default value
-: [`intellijPlatform.pluginConfiguration.name`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-name)
 
 
 ## patchPluginXml
@@ -732,19 +719,6 @@ Type
 
 Default value
 : [`SandboxAware.sandboxPluginsDirectory`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware-sandboxPluginsDirectory)
-
-
-### pluginName
-{#prepareSandbox-pluginName}
-
-The name of the plugin.
-
-{style="narrow"}
-Type
-: `Property<String>`
-
-Default value
-: [`intellijPlatform.pluginConfiguration.name`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-name)
 
 
 ### pluginJar

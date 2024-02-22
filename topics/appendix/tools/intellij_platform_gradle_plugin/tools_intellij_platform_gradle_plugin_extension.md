@@ -21,6 +21,7 @@ After the IntelliJ Platform Gradle Plugin is [applied](tools_intellij_platform_g
 intellijPlatform {
   buildSearchableOptions = true
   instrumentCode = true
+  projectName = project.name
   sandboxContainer = "..."
 
   pluginConfiguration {
@@ -102,6 +103,19 @@ Type
 
 Default value
 : [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) of the current IntelliJ Platform
+
+
+### projectName
+{#intellijPlatform-projectName}
+
+Defines the project name, which is used for creating file structure and the build archive.
+
+{style="narrow"}
+Type
+: `Property<String>`
+
+Default value
+: `project.name`
 
 
 ### sandboxContainer

@@ -113,6 +113,12 @@ If a plugin supports [multiple platform versions](build_number_ranges.md), it mu
 | 2022.3                    | 1.7.0                    |
 | 2022.2                    | 1.6.21                   |
 | 2022.1                    | 1.6.20                   |
+
+#### Earlier Versions
+{collapsible="true"}
+
+| IntelliJ Platform version | Bundled _stdlib_ version |
+|---------------------------|--------------------------|
 | 2021.3                    | 1.5.10                   |
 | 2021.2                    | 1.5.10                   |
 | 2021.1                    | 1.4.32                   |

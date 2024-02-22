@@ -22,6 +22,6 @@
   <var name="gh-ijpgp" value="https://github.com/JetBrains/gradle-intellij-plugin/blob/2.0"/>
 
   <var name="gradle-intellij-plugin-version" value="1.17.2"/>
-  <var name="gradle-grammar-kit-plugin-version" value="2022.3.2.1"/>
+  <var name="gradle-grammar-kit-plugin-version" value="2022.3.2.2"/>
   <var name="intellij-platform-gradle-plugin-version" value="2.0.0-SNAPSHOT"/>
 </vars>

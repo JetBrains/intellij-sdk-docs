@@ -65,7 +65,7 @@ Usually you should omit the product ID and use only the branch number and build 
 >
 > See also [What versions of IntelliJ-based IDEs are supported?](https://intellij-support.jetbrains.com/hc/en-us/articles/360019574859-What-versions-of-IntelliJ-based-IDEs-are-supported-) for JetBrains IDE support policy.
 >
-{style="note"}
+{style="note" title="Build numbers for products"}
 
 ### Targeting Multiple IDE Versions
 {id="multipleIDEVersions"}

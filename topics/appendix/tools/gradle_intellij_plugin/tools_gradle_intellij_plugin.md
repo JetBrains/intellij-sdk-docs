@@ -83,7 +83,11 @@ When targeting 2022.3+, Java 17 is required instead (see [details](build_number_
 
 #### Attaching Sources
 
-To attach IntelliJ Platform sources in the IDE when enabled via [](#intellij-extension-downloadsources) some additional settings are required in 2023.2 and later.
+> This step is not required when using Gradle IntelliJ Plugin version **1.17.2** or later.
+>
+{style="tip"}
+
+To attach IntelliJ Platform sources in the IDE when enabled via [](#intellij-extension-downloadsources) some additional settings are required in IDE versions 2023.2 and later.
 
 <tabs>
 

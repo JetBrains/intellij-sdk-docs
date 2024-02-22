@@ -27,8 +27,9 @@ Using Kotlin to write plugins for the IntelliJ Platform is very similar to writi
 Existing plugin developers can get started by converting existing Java sources to their Kotlin equivalents by using the [J2K converter](https://kotlinlang.org/docs/mixing-java-kotlin-intellij.html#converting-an-existing-java-file-to-kotlin-with-j2k) (part of Kotlin plugin).
 Developers can also easily mix and match Kotlin classes with their existing Java code.
 
-In addition to [null safety](https://kotlinlang.org/docs/null-safety.html) and [type-safe builders](https://kotlinlang.org/docs/type-safe-builders.html), the Kotlin language offers many convenient features for plugin development, which make plugins easier to read and simpler to maintain.
-Much like [Kotlin for Android](https://kotlinlang.org/docs/android-overview.html), the IntelliJ Platform makes extensive use of callbacks, which are easy to express as [lambdas](https://kotlinlang.org/docs/lambdas.html) in Kotlin.
+In addition to [null safety](https://kotlinlang.org/docs/null-safety.html) and [type-safe builders](https://kotlinlang.org/docs/type-safe-builders.html), the Kotlin language offers many convenient features for plugin development,
+which make plugins easier to read and simpler to maintain.
+Much like [Kotlin for Android](https://kotlinlang.org/docs/android-overview.html), the IntelliJ Platform makes extensive use of callbacks, which are straightforward to express as [lambdas](https://kotlinlang.org/docs/lambdas.html) in Kotlin.
 
 ### Adding Extensions
 
@@ -99,10 +100,12 @@ kotlin.stdlib.default.dependency = false
 ```
 
 The presence of this Gradle property is checked by the [](tools_gradle_intellij_plugin.md) with the [](tools_gradle_intellij_plugin.md#tasks-verifypluginconfiguration) task.
-If the property is not present, a warning will be reported during the plugin configuration verification, as it is a common problem when Kotlin _stdlib_ gets bundled within the plugin archive.
+If the property is not present, a warning will be reported during the plugin configuration verification,
+as it is a common problem when Kotlin _stdlib_ gets bundled within the plugin archive.
 To bundle _stdlib_ in the plugin distribution, specify explicitly `kotlin.stdlib.default.dependency = true`.
 
-If a plugin supports [multiple platform versions](build_number_ranges.md), it must either target the lowest bundled _stdlib_ version or provide the specific version in plugin distribution.
+If a plugin supports [multiple platform versions](build_number_ranges.md), it must either target the lowest bundled _stdlib_ version
+or the specific version must be [provided in plugin distribution](plugin_content.md#plugin-with-dependencies).
 
 | IntelliJ Platform version | Bundled _stdlib_ version |
 |---------------------------|--------------------------|
@@ -163,7 +166,8 @@ Remove additional `kotlin.incremental.useClasspathSnapshot=false` property in <p
 > Please consider using Kotlin 1.9.0 where this issue has been resolved.
 
 Kotlin `1.8.20` has a [new incremental compilation approach](https://kotlinlang.org/docs/gradle-compilation-and-caches.html#a-new-approach-to-incremental-compilation) which is enabled by default.
-Unfortunately, it is not compatible with the IntelliJ Platform — when reading large JAR files (like <path>app.jar</path> or <path>3rd-party-rt.jar</path>), leading to an `Out of Memory` exception:
+Unfortunately, it is not compatible with the IntelliJ Platform — when reading large JAR files (like <path>app.jar</path> or <path>3rd-party-rt.jar</path>),
+leading to an `Out of Memory` exception:
 
 ```
 Execution failed for task ':compileKotlin'.

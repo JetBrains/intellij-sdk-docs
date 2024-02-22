@@ -32,9 +32,9 @@ The plugin provides functionalities like:
 
 <snippet id="gradle_plugin_223_problem">
 
-> When targeting 2022.3+ IDE releases, [Gradle IntelliJ Plugin](https://github.com/JetBrains/gradle-intellij-plugin) version **1.10.1** or higher is required.
+> [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md#usage) version **1.10.1** or higher is required (current: %gradle-intellij-plugin-version%).
 >
-{style="warning"}
+{style="warning" title="Targeting 2022.3+"}
 
 </snippet>
 

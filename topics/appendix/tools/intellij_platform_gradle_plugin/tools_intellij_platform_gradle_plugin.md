@@ -39,9 +39,16 @@ It is going to replace the current _[](tools_gradle_intellij_plugin.md) (1.x)_ i
 
 The following platforms and environments are supported:
 
-- IntelliJ Platform: 2022.3 and later
-- Java Runtime: 17 and later
-- Gradle: 8.1 and later
+### IDE Target Platform
+
+IntelliJ Platform 2022.3 and later
+
+### Gradle
+
+Gradle version **8.1** and later is required.
+See [the Gradle Installation guide](https://gradle.org/install/) on how to upgrade.
+
+Java Runtime **17** and later is required. See <control>Gradle JVM</control> in <ui-path>Settings | Build, Execution, Deployment | Build Tools | Gradle</ui-path> settings.
 
 ## Usage
 

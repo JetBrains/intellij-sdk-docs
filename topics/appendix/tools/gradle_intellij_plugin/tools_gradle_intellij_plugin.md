@@ -28,6 +28,11 @@ The plugin provides functionalities like:
 > Please see [CONTRIBUTING](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/CONTRIBUTING.md) on how to submit feedback and contribute to this project.
 >
 
+> [](tools_intellij_platform_gradle_plugin.md) (currently in Early Access Preview) is going to replace this plugin in the future.
+> Please note that production usage is currently not recommended yet.
+>
+{style="note"}
+
 ## Usage
 
 <snippet id="gradle_plugin_223_problem">

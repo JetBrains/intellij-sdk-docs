@@ -10,6 +10,14 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 <include from="snippets.md" element-id="subscribeNews"/>
 
+## 2024
+
+### February
+{#february-24}
+
+IntelliJ Platform Gradle Plugin 2.x (Early Access Preview)
+: Add [documentation](tools_intellij_platform_gradle_plugin.md) for the next generation of Gradle tooling for plugin development.
+
 ## 2023
 
 ### December

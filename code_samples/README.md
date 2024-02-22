@@ -9,7 +9,7 @@
 Learn how to build plugins using IntelliJ Platform SDK for the [JetBrains products][jb:products] by experimenting with our code samples.
 These samples show you how features work and help you jumpstart your plugins.
 
-> **Note**
+> [!TIP]
 > To start a new plugin project, consider using [IntelliJ Platform Plugin Template][gh:template] which offers a pure boilerplate template to make it easier to create a new plugin project.
 >
 > The code samples can also be found in the [IntelliJ SDK Code Samples](https://github.com/JetBrains/intellij-sdk-code-samples) mirror repository.
@@ -69,6 +69,6 @@ In the following table, you may find all available samples provided in the separ
 [docs]: https://plugins.jetbrains.com/docs/intellij/
 [docs:code-samples]: https://plugins.jetbrains.com/docs/intellij/code-samples.html
 [docs:eps]: https://plugins.jetbrains.com/docs/intellij/extension-point-list.html
-[docs:gradle]: https://plugins.jetbrains.com/docs/intellij/gradle-build-system.html
+[docs:gradle]: https://plugins.jetbrains.com/docs/intellij/developing-plugins.html
 [docs:plugin.xml]: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html
 [docs:explore-api]: https://plugins.jetbrains.com/docs/intellij/explore-api.html

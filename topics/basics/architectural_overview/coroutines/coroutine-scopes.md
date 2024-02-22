@@ -101,8 +101,7 @@ This allows better understanding of the platform scopes and why the mentioned se
 ### Do Not Use Application/Project Scope
 
 Application and Project scopes are exposed with `Application.getCoroutineScope()` and `Project.getCoroutineScope()`.
-These methods are deprecated and will be removed in the future platform version.
-Never use these methods.
+Never use these methods, as they are deprecated and will be removed in the future.
 
 Using these scopes could easily lead to project or plugin class leaks, or accidental killing all their coroutines.
 

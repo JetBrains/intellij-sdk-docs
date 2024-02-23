@@ -27,6 +27,7 @@ Each coroutine scope can have only one actual parent, pointed with solid arrow l
 Dashed arrow lines point to fictional parents, which follow the actual coroutine parent-child semantics:
 - a parent scope cancels children on its own cancellation
 - a parent scope awaits children before considering itself complete
+- a failed child cancels its parent (which effectively is not happening because presented scopes are supervisors)
 
 The **Application x Plugin** and **Project x Plugin** are [intersection scopes](#intersection-scopes) with two semantic parents (actual and fictional).
 

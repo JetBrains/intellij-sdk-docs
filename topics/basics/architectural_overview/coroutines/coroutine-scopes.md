@@ -106,7 +106,7 @@ See the [](launching-coroutines.md) section for details.
 Application and Project scopes are exposed with `Application.getCoroutineScope()` and `Project.getCoroutineScope()`.
 Never use these methods, as they are deprecated and will be removed in the future.
 
-Using these scopes could easily lead to project or plugin class leaks, or accidental killing all their coroutines.
+Using these scopes could easily lead to project or plugin class leaks.
 
 1. Project leak:
     ```kotlin
@@ -126,14 +126,6 @@ Using these scopes could easily lead to project or plugin class leaks, or accide
     Unloading of the plugin cancels its scope.
     The project scope remains active, and the plugin classes are leaked.
 
-3. Accidental cancellations:
-    ```kotlin
-    // kills all application coroutines:
-    application.coroutineScope.cancel()
-    // kills all project coroutines:
-    project.coroutineScope.cancel()
-    ```
-
 ### Do Not Use Intersection Scopes
 
 There is no API for retrieving **Application x Plugin** and **Project x Plugin** [intersection scopes](#intersection-scopes),
@@ -147,19 +139,13 @@ but let's assume there is a method exposing the **Project x Plugin** scope:
 fun Project.getCoroutineScope(pluginClass: Class<*>): CoroutineScope
 ```
 
-Using this scope could lead to similar [problems as with the main scopes](#do-not-use-applicationproject-scope):
+Using this scope could lead to a plugin leak:
 
-1. Plugin leak:
-    ```kotlin
-    project.getCoroutineScope(AnotherPluginService::class.java).launch {
-      project.getService(MyPluginService::class.java)
-    }
-    ```
-    Unloading of the plugin cancels its scope.
-    The scope of another plugin remains active, and the plugin classes are leaked.
+```kotlin
+project.getCoroutineScope(AnotherPluginService::class.java).launch {
+  project.getService(MyPluginService::class.java)
+}
+```
 
-2. Accidental cancellations:
-    ```kotlin
-    // kills another plugin's coroutines:
-    project.getCoroutineScope(AnotherPluginService::class.java).cancel()
-    ```
+Unloading of the plugin cancels its scope.
+The scope of another plugin remains active, and the plugin classes are leaked.

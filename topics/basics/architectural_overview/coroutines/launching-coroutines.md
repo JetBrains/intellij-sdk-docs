@@ -57,7 +57,9 @@ The injected scope is canceled when the container (application/project) is shut 
 
 ### Example Use Cases
 
-1. Start a long-running IO operation and show success notification:
+#### Perform a Slow I/O Operation and Finish on UI Thread
+
+The example below reads file content and displays a notification in the UI thread:
 
 ```kotlin
 class DoLongAction : AnAction() {
@@ -93,7 +95,9 @@ class LongOperationService(
 }
 ```
 
-2. Read PSI data and change it with a proper undo record:
+#### Run Read Action and Finish on UI Thread
+
+The example below starts a read action to retrieve required data from the PSI model and renames a file, wrapping it in a command action:
 
 ```kotlin
 class ReadPsiAction : AnAction() {
@@ -129,7 +133,9 @@ class ReadPsiActionService(
 }
 ```
 
-3. Read PSI and change it with a guarantee that it is not changed in between by another thread or coroutine:
+#### Read PSI Data Under Read Lock and Rename File Under Write Lock
+
+The example below runs a read action to compute a new file name and finishes by renaming a file under write lock:
 
 ```kotlin
 class DangerousPsiAction : AnAction() {
@@ -166,7 +172,9 @@ class DangerousPsiActionService(
 }
 ```
 
-4. Load data in a UI component and display it:
+#### Launching Coroutines in UI Component
+
+The code below presents an example UI component, which loads its data by calling a slow suspending method.
 
 ```kotlin
 class SlowDataPanel(

@@ -29,7 +29,7 @@ Dashed arrow lines point to fictional parents, which follow the actual coroutine
 - a parent scope awaits children before considering itself complete
 - a failed child cancels its parent (which effectively is not happening because presented scopes are supervisors)
 
-The **Application x Plugin** and **Project x Plugin** are [intersection scopes](#intersection-scopes) with two semantic parents (actual and fictional).
+The **Application×Plugin** and **Project×Plugin** are [intersection scopes](#intersection-scopes) with two semantic parents (actual and fictional).
 
 ### Main Scopes
 
@@ -38,22 +38,22 @@ The **Application x Plugin** and **Project x Plugin** are [intersection scopes](
 
 - **Application** - a scope associated with the [`Application`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java) container (component manager) lifetime.
   It is canceled on application shutdown.
-  This triggers cancellation of the **Application x Plugin** scope and, subsequently, its children, including the **Project x Plugin** scope.
+  This triggers cancellation of the **Application×Plugin** scope and, subsequently, its children, including the **Project×Plugin** scope.
 
 - **Project** - a scope associated with a [`Project`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/Project.java) container (component manager) lifetime.
   It is canceled when a project is being closed.
-  This triggers the cancellation of the **Project x Plugin** scope and, subsequently, its children.
+  This triggers the cancellation of the **Project×Plugin** scope and, subsequently, its children.
 
 - **Plugin** - a scope associated with a plugin lifetime.
   It is canceled on unloading of the corresponding plugin.
-  This triggers cancellation of the **Application x Plugin** scope and, subsequently, its children, including the **Project x Plugin** scope.
+  This triggers cancellation of the **Application×Plugin** scope and, subsequently, its children, including the **Project×Plugin** scope.
 
 ### Intersection Scopes
 
-- **Application x Plugin** - a scope which is an intersection of the **Application** and **Plugin** scopes.
+- **Application×Plugin** - a scope which is an intersection of the **Application** and **Plugin** scopes.
   It is canceled when the application is shutdown or the corresponding plugin is unloaded.
-  This triggers the cancellation of its children and the **Project x Plugin** scope and, subsequently, its children.
-- **Project x Plugin** - a scope which is an intersection of the **Project** and **Plugin** scopes.
+  This triggers the cancellation of its children and the **Project×Plugin** scope and, subsequently, its children.
+- **Project×Plugin** - a scope which is an intersection of the **Project** and **Plugin** scopes.
   It is canceled when a project is being closed or the corresponding plugin is unloaded.
 
 Intersection scopes enable creating coroutines whose lifetime is limited by application/project and plugin lifetimes, e.g.,
@@ -126,8 +126,8 @@ Using these scopes could easily lead to project or plugin class leaks.
 
 ### Do Not Use Intersection Scopes
 
-There is no API for retrieving **Application x Plugin** and **Project x Plugin** [intersection scopes](#intersection-scopes),
-but let's assume there is a method exposing the **Project x Plugin** scope:
+There is no API for retrieving **Application×Plugin** and **Project×Plugin** [intersection scopes](#intersection-scopes),
+but let's assume there is a method exposing the **Project×Plugin** scope:
 
 ```kotlin
 /**

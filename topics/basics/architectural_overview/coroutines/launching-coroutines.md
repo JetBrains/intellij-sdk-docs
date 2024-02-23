@@ -5,8 +5,8 @@
 <link-summary>Techniques for launching coroutines from various contexts.</link-summary>
 
 There are two approaches to launching coroutines in the IntelliJ Platform:
-1. Service with its own scope.
-2. The `runBlockingCancellable` function.
+1. [Service with its own scope](#launching-coroutine-from-service-scope). (recommended)
+2. [The `runBlockingCancellable` function](#using-runblockingcancellable).
 
 ## Launching Coroutine From Service Scope
 

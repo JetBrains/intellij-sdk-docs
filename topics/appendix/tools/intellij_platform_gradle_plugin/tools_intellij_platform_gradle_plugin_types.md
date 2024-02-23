@@ -58,6 +58,7 @@ Each entry is composed of a product code name and coordinates used for dependenc
 | `PyCharmCommunity`      | `PC`   | `com.jetbrains.intellij.pycharm:pycharmPC`         |
 | `Rider`                 | `RD`   | `com.jetbrains.intellij.rider:riderRD`             |
 | `RustRover`             | `RR`   | `com.jetbrains.intellij.rustrover:RustRover`       |
+| `WebStorm`              | `WS`   | `com.jetbrains.intellij.webstorm:webstorm`         |
 | `Writerside`            | `WRS`  | `com.jetbrains.intellij.idea:writerside`           |
 
 

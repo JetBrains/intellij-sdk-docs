@@ -69,7 +69,8 @@ See [](#custom-target-platforms) for non-default targets.
 | `pycharmCommunity(version)`      | Adds a dependency on [PyCharm Community](pycharm.md).            |
 | `pycharmProfessional(version)`   | Adds a dependency on [PyCharm Professional](pycharm.md).         |
 | `rider(version)`                 | Adds a dependency on [Rider](rider.md).                          |
-| `rustRover(version)`             | Adds a dependency on Rust Rover.                                 |
+| `rustrover(version)`             | Adds a dependency on RustRover.                                  |
+| `webstorm(version)`              | Adds a dependency on [WebStorm](webstorm.md).                    |
 | `writerside(version)`            | Adds a dependency on Writerside.                                 |
 
 ## Custom Target Platforms

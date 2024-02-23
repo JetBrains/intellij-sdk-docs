@@ -72,10 +72,6 @@ The following constructor signatures are supported:
 Each service instance receives its own scope instance.
 The injected scopes' contexts contain [`Dispatchers.Default`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-default.html) and [`CoroutineName(serviceClass)`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-name/).
 
-### EP Invocation Scopes
-- **Application EP invocation** - TODO
-- **Project EP invocation** - TODO
-
 ## Using a Correct Scope
 
 ### Use Service Scopes

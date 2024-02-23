@@ -35,11 +35,11 @@ The **Application x Plugin** and **Project x Plugin** are [intersection scopes](
 - **Root** - the root scope spans all the coroutines.
   This is the standard root scope launched with [`runBlocking`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/run-blocking.html) coroutine builder.
 
-- **Application** - a scope associated with the [`Application`'s](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java) lifetime.
+- **Application** - a scope associated with the [`Application`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java) container (component manager) lifetime.
   It is canceled on application shutdown.
   This triggers cancellation of the **Application x Plugin** scope and, subsequently, its children, including the **Project x Plugin** scope.
 
-- **Project** - a scope associated with a [`Project`'s](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/Project.java) lifetime.
+- **Project** - a scope associated with a [`Project`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/Project.java) container (component manager) lifetime.
   It is canceled when a project is being closed.
   This triggers the cancellation of the **Project x Plugin** scope and, subsequently, its children.
 

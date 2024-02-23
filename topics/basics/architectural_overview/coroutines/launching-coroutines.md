@@ -219,6 +219,11 @@ This pattern still limits the launched coroutine to the service scope and follow
 
 ## Using `runBlockingCancellable`
 
+> Using `runBlockingCancellable` is not recommended.
+> Use [service scope](#launching-coroutine-from-service-scope) whenever possible.
+>
+{style="warning"}
+
 In standard coroutine-based application, the bridge between the regular blocking code and the suspending code is the [`runBlocking`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/run-blocking.html) function.
 
 In the IntelliJ Platform, a similar purpose is achieved by the [`runBlockingCancellable`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) function.

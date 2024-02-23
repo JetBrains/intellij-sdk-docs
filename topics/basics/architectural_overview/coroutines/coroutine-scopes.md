@@ -19,7 +19,7 @@ Using correct parent scopes guarantees that child coroutines will be properly ca
 
 The following diagram presents the scopes and their parent-child relationships:
 
-![intellij-platform-coroutines-scopes.svg](intellij-platform-coroutines-scopes.svg){width="644"}
+![IntelliJ Platform Coroutine Scopes](intellij-platform-coroutine-scopes.svg)
 
 All scopes presented on the diagram are [supervisor scopes](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/supervisor-scope.html) — they ignore the failures of their children.
 

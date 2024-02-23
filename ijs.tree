@@ -68,6 +68,7 @@
       </toc-element>
       <toc-element topic="kotlin-coroutines.md">
         <toc-element topic="coroutine-scopes.md"/>
+        <toc-element topic="coroutine-dispatchers.md"/>
         <toc-element topic="launching-coroutines.md"/>
       </toc-element>
       <toc-element topic="messaging_infrastructure.md"/>

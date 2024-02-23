@@ -4,6 +4,8 @@
 
 <link-summary>Explanation of coroutine dispatcher in the IntelliJ Platform.</link-summary>
 
+<include from="coroutines_snippets.md" element-id="learnCoroutines"/>
+
 TODO: intro
 
 ## Default Dispatcher

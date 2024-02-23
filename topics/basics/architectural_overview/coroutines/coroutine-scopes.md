@@ -4,6 +4,8 @@
 
 <link-summary>Explanation of coroutine scopes in the IntelliJ Platform.</link-summary>
 
+<include from="coroutines_snippets.md" element-id="learnCoroutines"/>
+
 Kotlin's coroutines follow the principle of structured concurrency.
 It means that each coroutine is run in a specific [CoroutineScope](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-scope/), which delimits the lifetime of the coroutine.
 This ensures that they are not lost and do not leak.

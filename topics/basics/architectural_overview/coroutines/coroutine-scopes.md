@@ -80,12 +80,11 @@ The injected scopes' contexts contain [`Dispatchers.Default`](https://kotlinlang
 ### Use Service Scopes
 
 If a plugin requires running some code in a coroutine, the recommended approach is to create a separate [service](plugin_services.md) that will receive its [own scope](#service-scopes) via constructor and launch the coroutine in this scope.
-This approach guarantees the usage of the correct scope, preventing canceling wrong scopes and killing all their (e.g., application's or project's) coroutines accidentally:
+This approach guarantees the usage of the correct scope, preventing leaks and canceling wrong scopes and killing all their (e.g., application's or project's) coroutines accidentally:
 
 ```kotlin
 @Service
 class MyPluginService(private val cs: CoroutineScope) {
-
   fun shutdownService() {
     // this does not affect other services
     // in the same plugin/container:

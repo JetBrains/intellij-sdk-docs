@@ -1,6 +1,6 @@
-# Useful Links
+<!-- Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Useful Links
 
 <link-summary>Useful tooling, plugins, and repositories.</link-summary>
 
@@ -8,13 +8,12 @@ The following links represent useful resources for working with the IntelliJ Pla
 
 ### Tooling
 
-> Use [Writerside](https://blog.jetbrains.com/platform/2023/03/publish-documentation-for-your-plugin-with-writerside/) to create and publish documentation for your plugin.
+> Use [Writerside](https://www.jetbrains.com/writerside/) to create and publish documentation for your plugin.
 >
 {style="note"}
 
 * [IDE Settings, Caches, Logs, and Plugins](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs)
 * [](internal_actions_intro.md)
-* [](intellij_artifacts.md)
 * [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) (see also [](verifying_plugin_compatibility.md))
 * [IntelliJ Platform Explorer](https://jb.gg/ipe) ([Blog post](https://blog.jetbrains.com/platform/2020/12/intellij-platform-explorer-get-to-the-extension-point/))
 * [IntelliJ Log Analyzer](https://github.com/JetBrains/IntelliJ-Log-Analyzer)

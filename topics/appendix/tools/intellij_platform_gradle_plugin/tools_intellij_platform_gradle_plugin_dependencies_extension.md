@@ -56,22 +56,22 @@ dependencies {
 
 See [](#custom-target-platforms) for non-default targets.
 
-| Function                         | Description                                                      |
-|----------------------------------|------------------------------------------------------------------|
-| `androidStudio(version)`         | Adds a dependency on [Android Studio](android_studio.md).        |
-| `clion(version)`                 | Adds a dependency on [CLion](clion.md).                          |
-| `fleetBackend(version)`          | Adds a dependency on Fleet Backend.                              |
-| `gateway(version)`               | Adds a dependency on Gateway.                                    |
-| `goland(version)`                | Adds a dependency on [GoLand](goland.md).                        |
-| `intellijIdeaCommunity(version)` | Adds a dependency on [IntelliJ IDEA Community](idea.md).         |
-| `intellijIdeaUltimate(version)`  | Adds a dependency on [IntelliJ IDEA Ultimate](idea_ultimate.md). |
-| `phpstorm(version)`              | Adds a dependency on [PhpStorm](phpstorm.md).                    |
-| `pycharmCommunity(version)`      | Adds a dependency on [PyCharm Community](pycharm.md).            |
-| `pycharmProfessional(version)`   | Adds a dependency on [PyCharm Professional](pycharm.md).         |
-| `rider(version)`                 | Adds a dependency on [Rider](rider.md).                          |
-| `rustrover(version)`             | Adds a dependency on RustRover.                                  |
-| `webstorm(version)`              | Adds a dependency on [WebStorm](webstorm.md).                    |
-| `writerside(version)`            | Adds a dependency on Writerside.                                 |
+| Function                         | Description                                                               |
+|----------------------------------|---------------------------------------------------------------------------|
+| `androidStudio(version)`         | Adds a dependency on [Android Studio](android_studio.md).                 |
+| `clion(version)`                 | Adds a dependency on [CLion](clion.md).                                   |
+| `fleetBackend(version)`          | Adds a dependency on Fleet Backend.                                       |
+| `gateway(version)`               | Adds a dependency on Gateway.                                             |
+| `goland(version)`                | Adds a dependency on [GoLand](goland.md).                                 |
+| `intellijIdeaCommunity(version)` | Adds a dependency on [IntelliJ IDEA Community](idea.md).                  |
+| `intellijIdeaUltimate(version)`  | Adds a dependency on [IntelliJ IDEA Ultimate](idea_ultimate.md).          |
+| `phpstorm(version)`              | Adds a dependency on [PhpStorm](phpstorm.md).                             |
+| `pycharmCommunity(version)`      | Adds a dependency on [PyCharm Community](pycharm.md).                     |
+| `pycharmProfessional(version)`   | Adds a dependency on [PyCharm Professional](pycharm.md).                  |
+| `rider(version)`                 | Adds a dependency on [Rider](rider.md).                                   |
+| `rustrover(version)`             | Adds a dependency on [RustRover](https://www.jetbrains.com/rust/).        |
+| `webstorm(version)`              | Adds a dependency on [WebStorm](webstorm.md).                             |
+| `writerside(version)`            | Adds a dependency on [Writerside](https://www.jetbrains.com/writerside/). |
 
 ## Custom Target Platforms
 

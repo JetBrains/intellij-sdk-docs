@@ -42,6 +42,7 @@ Use to highlight important new/changed features via [`GotItTooltip`](%gh-ic%/pla
 See [Got It tooltip](https://jetbrains.design/intellij/controls/got_it_tooltip/) in IntelliJ Platform UI Guidelines for an overview.
 
 ### Top-Level Notifications (Balloons)
+{id="balloons"}
 
 The most general way to display non-modal notifications is to use the [`Notifications`](%gh-ic%/platform/ide-core/src/com/intellij/notification/Notifications.java) class.
 

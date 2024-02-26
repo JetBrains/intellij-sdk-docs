@@ -61,10 +61,10 @@ The injected scope is canceled when the container (application/project) is shut 
 
 #### Perform a Slow I/O Operation and Finish on UI Thread
 
-The example below reads file content and displays a notification in the UI thread:
+The example below reads file content and displays a [notification](notifications.md#balloons) in the UI thread:
 
 ```kotlin
-class DoLongAction : AnAction() {
+internal class DoLongAction : AnAction() {
   override fun actionPerformed(e: AnActionEvent) {
     val project = e.project ?: return
     project.service<LongOperationService>().startLongOperation()
@@ -99,7 +99,7 @@ class LongOperationService(
 
 #### Run Read Action and Finish on UI Thread
 
-The example below starts a read action to retrieve required data from the PSI model and renames a file, wrapping it in a command action:
+The example below starts a read action to retrieve required data from the [PSI model](psi.md) and renames a file, wrapping it in a command action:
 
 ```kotlin
 class ReadPsiAction : AnAction() {
@@ -140,7 +140,7 @@ class ReadPsiActionService(
 The example below runs a read action to compute a new file name and finishes by renaming a file under write lock:
 
 ```kotlin
-class DangerousPsiAction : AnAction() {
+internal class DangerousPsiAction : AnAction() {
   override fun actionPerformed(e: AnActionEvent) {
     val project = e.project ?: return
     val psiFile = e.getData(CommonDataKeys.PSI_FILE) ?: return
@@ -183,9 +183,9 @@ class SlowDataPanel(
   private val project: Project,
   parentDisposable: Disposable
 ) : JBLoadingPanel(BorderLayout(), parentDisposable) {
-  // store a UI-dedicated child scope...
+  // store a UI-dedicated child scope
   private val uiScope: CoroutineScope =
-      project.service<UserDataService>().childScope("MyPanel")
+      project.service<UserDataService>().childScope("SlowDataPanel")
 
   init {
     // ...and cancel it when the UI is disposed:
@@ -224,7 +224,7 @@ class UserDataService(
 }
 ```
 
-In this case, a coroutine is not launched from the service scope, but launched from the UI component in its own scope, which is a child of the service scope.
+In this case, a coroutine is not launched from the [service scope](coroutine-scopes.md#service-scopes), but launched from the UI component in its own scope, which is a child of the service scope.
 This pattern still limits the launched coroutine to the service scope and follows the recommended approach.
 
 ## Using `runBlockingCancellable`
@@ -234,7 +234,7 @@ This pattern still limits the launched coroutine to the service scope and follow
 >
 {style="warning"}
 
-In standard coroutine-based application, the bridge between the regular blocking code and the suspending code is the [`runBlocking`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/run-blocking.html) function.
+In a standard coroutine-based application, the bridge between the regular blocking code and the suspending code is the [`runBlocking`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/run-blocking.html) function.
 
 In the IntelliJ Platform, a similar purpose is achieved by the [`runBlockingCancellable`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) function.
 In addition to the same semantics as `runBlocking`, the action gets canceled when the current progress indicator or the current job is canceled.

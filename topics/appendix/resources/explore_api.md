@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Explore the IntelliJ Platform API
 
@@ -16,7 +16,8 @@ This usually happens in two situations:
 This guide provides a list of proven strategies that can help you overcome these challenges and gather enough information to continue your work.
 Furthermore, the tips below will help build your confidence as you explore the IntelliJ Platform.
 
-> In some cases, implementing an actual IntelliJ Platform plugin might not be necessary, as [alternative solutions](plugin_alternatives.md) exist.
+<include from="intellij_platform.md" element-id="pluginAlternatives"/>
+
 > See also [](plugin_required_experience.md) about necessary technology knowledge.
 
 ## 1 Extension Points (EPs)

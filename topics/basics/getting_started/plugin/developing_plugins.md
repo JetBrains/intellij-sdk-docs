@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Developing a Plugin
 
@@ -9,9 +9,7 @@ It is highly recommended to always use the latest available version, as the plug
 
 Before starting with the actual development, make sure to understand all requirements to achieve best [](plugin_user_experience.md).
 
-> In some cases, implementing an actual IntelliJ Platform plugin might not be necessary, as [alternative solutions](plugin_alternatives.md) exist.
->
-{title="Plugin Alternatives"}
+<include from="intellij_platform.md" element-id="pluginAlternatives"/>
 
 ## Gradle IntelliJ Plugin
 

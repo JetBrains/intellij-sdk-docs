@@ -1,6 +1,6 @@
-# Required Experience
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# Required Experience
 
 <link-summary>Required technology knowledge.</link-summary>
 
@@ -20,6 +20,4 @@ Developing a plugin will sometimes require digging into the [IntelliJ Platform c
 
 It's highly recommended to get familiar with the [](explore_api.md) section before you start the plugin implementation.
 
-> In some cases, implementing an actual IntelliJ Platform plugin might not be necessary, as [alternative solutions](plugin_alternatives.md) exist.
->
-{style="note"}
+<include from="intellij_platform.md" element-id="pluginAlternatives"/>

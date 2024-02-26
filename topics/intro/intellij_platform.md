@@ -33,9 +33,13 @@ Plugins can extend the platform in many ways, from adding a simple menu item to 
 Many of the existing IntelliJ Platform features are implemented as plugins that can be included or excluded depending on the needs of the end product.
 See the [](plugins_quick_start.md) for more details.
 
+<snippet id="pluginAlternatives">
+
 > In some cases, implementing an actual IntelliJ Platform plugin might not be necessary, as [alternative solutions](plugin_alternatives.md) exist.
 >
-{style="note"}
+{style="note" title="Plugin Alternatives"}
+
+</snippet>
 
 ## Open Source
 

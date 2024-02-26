@@ -8,9 +8,9 @@
 
 Extension class for managing IntelliJ Platform dependencies in a Gradle build script applied to the `DependencyHandler`.
 
-This class provides methods for adding dependencies to different IntelliJ Platform products and managing local dependencies.
+This class provides methods for adding dependencies to different IntelliJ Platform [products](#default-target-platforms) and managing [local](#custom-target-platforms) dependencies.
 
-It also includes methods for adding IntelliJ Platform plugins, IntelliJ Platform bundled plugins, JetBrains Runtime, as well as IntelliJ Plugin Verifier and Marketplace ZIP Signer tools.
+It also includes methods for adding [(bundled) plugins](#plugins), [JetBrains Runtime](#java-runtime), as well as [tools](#tools) like IntelliJ Plugin Verifier and Marketplace ZIP Signer.
 
 > Corresponding required repositories must be defined in `repositories {}` section, see [](tools_intellij_platform_gradle_plugin_repositories_extension.md).
 >
@@ -48,32 +48,34 @@ dependencies {
 }
 ```
 
-> Just one IntelliJ Platform dependency can be added to the project at a time.
+## Target Platforms
+
+> Only one IntelliJ Platform dependency can be added to the project at a time.
 >
 {style="warning"}
 
-## Default Target Platforms
+### Default Target Platforms
 
 See [](#custom-target-platforms) for non-default targets.
 
-| Function                         | Description                                                               |
-|----------------------------------|---------------------------------------------------------------------------|
-| `androidStudio(version)`         | Adds a dependency on [Android Studio](android_studio.md).                 |
-| `clion(version)`                 | Adds a dependency on [CLion](clion.md).                                   |
-| `fleetBackend(version)`          | Adds a dependency on Fleet Backend.                                       |
-| `gateway(version)`               | Adds a dependency on Gateway.                                             |
-| `goland(version)`                | Adds a dependency on [GoLand](goland.md).                                 |
-| `intellijIdeaCommunity(version)` | Adds a dependency on [IntelliJ IDEA Community](idea.md).                  |
-| `intellijIdeaUltimate(version)`  | Adds a dependency on [IntelliJ IDEA Ultimate](idea_ultimate.md).          |
-| `phpstorm(version)`              | Adds a dependency on [PhpStorm](phpstorm.md).                             |
-| `pycharmCommunity(version)`      | Adds a dependency on [PyCharm Community](pycharm.md).                     |
-| `pycharmProfessional(version)`   | Adds a dependency on [PyCharm Professional](pycharm.md).                  |
-| `rider(version)`                 | Adds a dependency on [Rider](rider.md).                                   |
-| `rustrover(version)`             | Adds a dependency on [RustRover](https://www.jetbrains.com/rust/).        |
-| `webstorm(version)`              | Adds a dependency on [WebStorm](webstorm.md).                             |
-| `writerside(version)`            | Adds a dependency on [Writerside](https://www.jetbrains.com/writerside/). |
+| Function                         | Description                                         |
+|----------------------------------|-----------------------------------------------------|
+| `androidStudio(version)`         | [Android Studio](android_studio.md)                 |
+| `clion(version)`                 | [CLion](clion.md)                                   |
+| `fleetBackend(version)`          | Fleet Backend                                       |
+| `gateway(version)`               | Gateway                                             |
+| `goland(version)`                | [GoLand](goland.md)                                 |
+| `intellijIdeaCommunity(version)` | [IntelliJ IDEA Community](idea.md)                  |
+| `intellijIdeaUltimate(version)`  | [IntelliJ IDEA Ultimate](idea_ultimate.md)          |
+| `phpstorm(version)`              | [PhpStorm](phpstorm.md)                             |
+| `pycharmCommunity(version)`      | [PyCharm Community](pycharm.md)                     |
+| `pycharmProfessional(version)`   | [PyCharm Professional](pycharm.md)                  |
+| `rider(version)`                 | [Rider](rider.md)                                   |
+| `rustrover(version)`             | [RustRover](https://www.jetbrains.com/rust/)        |
+| `webstorm(version)`              | [WebStorm](webstorm.md)                             |
+| `writerside(version)`            | [Writerside](https://www.jetbrains.com/writerside/) |
 
-## Custom Target Platforms
+### Custom Target Platforms
 
 | Function                | Description                                                                                                                                |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
@@ -86,13 +88,18 @@ See also:
 
 ## Plugins
 
-| Function                       | Description                                                                                                                  |
-|--------------------------------|------------------------------------------------------------------------------------------------------------------------------|
-| `plugin(id, version, channel)` | Adds a dependency on a plugin for IntelliJ Platform.                                                                         |
-| `plugin(notation)`             | Adds a dependency on a plugin for IntelliJ Platform using a string notation (`pluginId:version`, `pluginId:version@channel`) |
-| `plugins(notations)`           | Adds dependencies on plugins for IntelliJ Platform using a string notation (`pluginId:version`, `pluginId:version@channel`)  |
-| `bundledPlugin(id)`            | Adds a dependency on a bundled IntelliJ Platform plugin.                                                                     |
-| `bundledPlugins(ids)`          | Adds dependencies on bundled IntelliJ Platform plugins.                                                                      |
+> Use the correct function depending on whether the
+targeted plugin is _bundled_ with the Target Platform or not.
+>
+{title="Bundled vs. non-bundled plugins"}
+
+| Function                       | Description                                                                                                                         |
+|--------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| `bundledPlugin(id)`            | Adds a dependency on a bundled IntelliJ Platform plugin.                                                                            |
+| `bundledPlugins(ids)`          | Adds dependencies on bundled IntelliJ Platform plugins.                                                                             |
+| `plugin(id, version, channel)` | Adds a dependency on a plugin for IntelliJ Platform.                                                                                |
+| `plugin(notation)`             | Adds a dependency on a plugin for IntelliJ Platform using a string notation:<p>`pluginId:version` or `pluginId:version@channel`</p> |
+| `plugins(notations)`           | Adds dependencies on plugins for IntelliJ Platform using a string notation:<p>`pluginId:version` or `pluginId:version@channel`</p>  |
 
 See also:
 

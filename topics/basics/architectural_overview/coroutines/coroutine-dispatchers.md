@@ -10,9 +10,9 @@ Coroutines are always executed in a [context](https://kotlinlang.org/docs/corout
 One of the most important parts of the context is a dispatcher, which determines what thread or thread pool the corresponding coroutine is executed on.
 
 In the IntelliJ Platform, coroutines are executed on three main dispatchers:
-- [Default Dispatcher](#default-dispatcher)
-- [IO Dispatcher](#io-dispatcher)
-- [EDT Dispatcher](#edt-dispatcher)
+- [](#default-dispatcher)
+- [](#io-dispatcher)
+- [](#edt-dispatcher)
 
 ## Default Dispatcher
 
@@ -58,6 +58,8 @@ suspend fun readDataFromFile(): Data {
 
 The [`Dispatchers.EDT`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt) dispatcher is used for executing UI actions on the Swing Event Dispatch Thread.
 `Dispatchers.EDT` dispatches onto the EDT within the context [modality state](general_threading_rules.md#modality-and-invokelater).
+
+### `Dispatchers.Main` vs `Dispatchers.EDT`
 
 In Kotlin, a standard dispatcher for UI-based activities is [`Dispatchers.Main`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-main.html).
 In the IntelliJ Platform, the EDT dispatcher is also installed as `Dispatchers.Main` so both can be used, however always prefer `Dispatchers.EDT`.

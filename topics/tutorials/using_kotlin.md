@@ -25,7 +25,9 @@ This page describes developing plugins using the [Kotlin](https://kotlinlang.org
 
 Using Kotlin to write plugins for the IntelliJ Platform is very similar to writing plugins in Java.
 Existing plugin developers can get started by converting existing Java sources to their Kotlin equivalents by using the [J2K converter](https://kotlinlang.org/docs/mixing-java-kotlin-intellij.html#converting-an-existing-java-file-to-kotlin-with-j2k) (part of Kotlin plugin).
+
 Developers can also easily mix and match Kotlin classes with their existing Java code.
+This might come handy when certain APIs require the use of [](kotlin-coroutines.md).
 
 In addition to [null safety](https://kotlinlang.org/docs/null-safety.html) and [type-safe builders](https://kotlinlang.org/docs/type-safe-builders.html), the Kotlin language offers many convenient features for plugin development,
 which make plugins easier to read and simpler to maintain.
@@ -68,6 +70,10 @@ The IntelliJ Platform provides a [type safe DSL](kotlin_ui_dsl_version_2.md) to 
 
 > Using _UI Designer_ plugin with Kotlin is [not supported](https://youtrack.jetbrains.com/issue/KTIJ-791).
 >
+
+### Kotlin Coroutines
+
+[](kotlin-coroutines.md) are a lightweight and easy to implement alternative to threads with many [advantages](kotlin-coroutines.md#coroutines-advantages).
 
 ## Adding Kotlin Support
 
@@ -144,6 +150,8 @@ Plugins _must_ always use the bundled library from the target IDE and not bundle
 Please make sure it is not added via transitive dependencies either
 (see [View and Debug Dependencies](https://docs.gradle.org/current/userguide/viewing_debugging_dependencies.html) in Gradle user guide).
 
+See [](kotlin-coroutines.md) on how to use them in plugins.
+
 ### Other Bundled Kotlin Libraries
 
 In general, it is strongly advised to always use the bundled library version.
@@ -166,7 +174,7 @@ Remove additional `kotlin.incremental.useClasspathSnapshot=false` property in <p
 
 <tab title="Kotlin 1.8.20">
 
-> Please consider using Kotlin 1.9.0 where this issue has been resolved.
+> Please consider using Kotlin 1.9.0 or later where this issue has been resolved.
 
 Kotlin `1.8.20` has a [new incremental compilation approach](https://kotlinlang.org/docs/gradle-compilation-and-caches.html#a-new-approach-to-incremental-compilation) which is enabled by default.
 Unfortunately, it is not compatible with the IntelliJ Platform — when reading large JAR files (like <path>app.jar</path> or <path>3rd-party-rt.jar</path>),

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # General Threading Rules
 
@@ -110,7 +110,7 @@ The progress can be marked as canceled by calling `ProgressIndicator.cancel()`.
 The process reacts to this by calling `ProgressIndicator.checkCanceled()` (or `ProgressManager.checkCanceled()` if no indicator instances at hand).
 This call throws a special unchecked [`ProcessCanceledException`](%gh-ic%/platform/util/base/src/com/intellij/openapi/progress/ProcessCanceledException.java) (PCE) if the background process has been canceled.
 
-All code working with [PSI](psi.md), or in other kinds of background processes, must be prepared for [`ProcessCanceledException`](%gh-ic%/platform/util/base/src/com/intellij/openapi/progress/ProcessCanceledException.java) (PCE) being thrown at any point.
+All code working with [PSI](psi.md), or in other kinds of background processes, must be prepared for PCE being thrown at any point.
 This exception must never be logged but rethrown, and it'll be handled in the infrastructure that started the process.
 Use inspection <control>Plugin DevKit | Code | 'ProcessCanceledException' handled incorrectly</control> (2023.3).
 
@@ -119,9 +119,9 @@ PSI internals have a lot of `checkCanceled()` calls inside.
 If a process does lengthy non-PSI activity, insert explicit `checkCanceled()` calls so that it happens frequently, e.g., on each _Nth_ loop iteration.
 Use inspection <control>Plugin DevKit | Code | Cancellation check in loops</control> (2023.1).
 
-### Disabling ProcessCanceledException
+### Disabling `ProcessCanceledException`
 
-Throwing `ProcessCanceledException` from `ProgressIndicator.checkCanceled()` can be disabled for development (e.g., while debugging the code) by invoking:
+Throwing PCE from `ProgressIndicator.checkCanceled()` can be disabled for development (e.g., while debugging the code) by invoking:
 
 <tabs>
 <tab title="2023.2 and later">
@@ -149,7 +149,7 @@ The best-known approach is to cancel background read actions whenever there's a 
 Editor highlighting, code completion, Goto Class/File/... actions all work like this.
 
 To achieve that, the lengthy background operation is started with a `ProgressIndicator`, and a dedicated listener cancels that indicator when write action is initiated.
-The next time the background thread calls `checkCanceled()`, a `ProcessCanceledException` is thrown, and the thread should stop its operation (and finish the read action) as soon as possible.
+The next time the background thread calls `checkCanceled()`, a PCE is thrown, and the thread should stop its operation (and finish the read action) as soon as possible.
 
 There are two recommended ways of doing this:
 

@@ -138,3 +138,28 @@ Example
 ```
 org.jetbrains.intellij.platform.buildFeature.useCacheRedirector=false
 ```
+
+### useClosestJavaCompilerVersion
+{#useClosestJavaCompilerVersion}
+
+Java Compiler dependencies are tied to IntelliJ Platform build numbers and hosted in the IntelliJ Dependencies Repository.
+Despite this, certain versions (like EAP or nightly builds) might be absent.
+
+To solve this, we fetch a list of all versions from the Maven repository and locate the closest match.
+This method requires an additional remote repository request.
+If undesired, this feature can be disabled to strictly match dependencies to your build version.
+
+{style="narrow"}
+Default value
+: `true`
+
+Example
+:
+```
+org.jetbrains.intellij.platform.buildFeature.useClosestJavaCompilerVersion=false
+```
+
+See also:
+- [Dependencies: `javaCompiler()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#code-instrumentation)
+- [Task Awares: `JavaCompilerAware`](tools_intellij_platform_gradle_plugin_task_awares.md#JavaCompilerAware)
+- [Tasks: `instrumentCode`](tools_intellij_platform_gradle_plugin_tasks.md#instrumentCode)

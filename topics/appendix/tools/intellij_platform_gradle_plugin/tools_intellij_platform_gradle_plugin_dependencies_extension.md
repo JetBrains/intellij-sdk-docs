@@ -123,4 +123,22 @@ See also:
 |-----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
 | <p>`jetbrainsRuntime(version, variant, architecture)`</p><p>`jetbrainsRuntime(explicitVersion)`</p> | Adds a dependency on [JetBrains Runtime](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance). |
 
+## Code Instrumentation
+
+The code instrumentation process handled with the [`instrumentCode`](tools_intellij_platform_gradle_plugin_tasks.md#instrumentCode) task, requires extra dependencies to work and properly adjust the Java bytecode.
+There's the `instrumentationTools()` dependencies helper introduced to apply all required dependencies using default configuration, however, you still can add and configure them separately.
+
+Adds a Java Compiler dependency for code instrumentation.
+The version is determined by the IntelliJ Platform build number.
+If the exact version is unavailable, the closest one is used, found by scanning all releases.
+
+| Function                                              | Description                                           |
+|-------------------------------------------------------|-------------------------------------------------------|
+| <p>`instrumentationTools()`</p>                       | A helper function to apply all required dependencies. |
+| <p>`javaCompiler()`</p><p>`javaCompiler(version)`</p> | Adds a dependency on Java Compiler.                   |
+
+- [Extension: `intellijPlatform.instrumentCode`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-instrumentCode)
+- [Task Awares: `JavaCompilerAware`](tools_intellij_platform_gradle_plugin_task_awares.md#JavaCompilerAware)
+- [Build Features: `useClosestJavaCompilerVersion`](tools_intellij_platform_gradle_plugin_gradle_properties.md#useClosestJavaCompilerVersion)
+
 <include from="snippets.md" element-id="missingContent"/>

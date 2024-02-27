@@ -297,12 +297,23 @@ Type
 ## instrumentCode
 {#instrumentCode}
 
+<tldr>
+
+**Extends**: [`DefaultTask`][gradle-default-task], [`JavaCompilerAware`](tools_intellij_platform_gradle_plugin_task_awares.md#JavaCompilerAware)
+
+**Sources**: [`InstrumentCodeTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/InstrumentCodeTask.kt)
+
+</tldr>
+
 > Not implemented.
 >
 {style="warning"}
 
 See also:
 - [Extension: `intellijPlatform.instrumentCode`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-instrumentCode)
+- [Dependencies: `instrumentationTools()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#code-instrumentation)
+- [Task Awares: `JavaCompilerAware`](tools_intellij_platform_gradle_plugin_task_awares.md#JavaCompilerAware)
+- [Build Features: `useClosestJavaCompilerVersion`](tools_intellij_platform_gradle_plugin_gradle_properties.md#useClosestJavaCompilerVersion)
 
 
 ## instrumentedJar

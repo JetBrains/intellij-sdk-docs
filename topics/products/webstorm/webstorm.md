@@ -52,6 +52,7 @@ To use existing test base classes, specify `com.jetbrains.intellij.javascript:ja
 
 ## Open Source Plugins for WebStorm
 When learning new plugin development it is helpful to have some representative projects for reference:
+* [Vue.js](https://github.com/JetBrains/intellij-plugins/tree/master/vuejs)
 * [JS Toolbox](https://github.com/andresdominguez/jsToolbox)
 * [Require.js](https://github.com/Fedott/WebStormRequireJsPlugin)
 * [deep-js-completion](https://github.com/klesun/deep-js-completion)

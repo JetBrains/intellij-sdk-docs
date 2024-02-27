@@ -141,7 +141,8 @@ See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html
 ### Kotlin Coroutines Libraries (kotlinx.coroutines)
 
 Plugins _must_ always use the bundled library from the target IDE and not bundle their own version.
-Please make sure it is not added via transitive dependencies either.
+Please make sure it is not added via transitive dependencies either
+(see [View and Debug Dependencies](https://docs.gradle.org/current/userguide/viewing_debugging_dependencies.html) in Gradle user guide).
 
 ### Other Bundled Kotlin Libraries
 

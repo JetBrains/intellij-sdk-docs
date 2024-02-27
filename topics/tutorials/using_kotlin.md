@@ -156,7 +156,9 @@ The Kotlin Gradle plugin supports [incremental compilation](https://kotlinlang.o
 
 <tabs>
 
-<tab title="Kotlin 1.9.0">
+<tab title="Kotlin 1.9.0 and later">
+
+No action required.
 
 Remove additional `kotlin.incremental.useClasspathSnapshot=false` property in <path>gradle.properties</path> if present.
 

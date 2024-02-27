@@ -287,6 +287,21 @@ dependencies {
 }
 ```
 
+## Code Instrumentation
+
+TBD
+
+The compiled code will be enhanced with:
+- nullability assertions
+- post-processing of forms created by IntelliJ GUI Designer
+
+See also:
+- [Tasks: `instrumentCode`](tools_intellij_platform_gradle_plugin_tasks.md#instrumentCode)
+- [Extension: `intellijPlatform.instrumentCode`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-instrumentCode)
+- [Task Awares: `JavaCompilerAware`](tools_intellij_platform_gradle_plugin_task_awares.md#JavaCompilerAware)
+- [Dependencies: `javaCompiler()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#code-instrumentation)
+- [Build Features: `useClosestJavaCompilerVersion`](tools_intellij_platform_gradle_plugin_gradle_properties.md#useClosestJavaCompilerVersion)
+
 <include from="tools_intellij_platform_gradle_plugin_repositories_extension.md" element-id="localPlatformArtifacts_required"/>
 
 <include from="snippets.md" element-id="missingContent"/>

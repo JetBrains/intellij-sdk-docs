@@ -60,14 +60,7 @@ See also:
 ### instrumentCode
 {#intellijPlatform-instrumentCode}
 
-> Not implemented.
->
-{style="warning"}
-
-Enables the compiled classes instrumentation.
-The compiled code will be enhanced with:
-- nullability assertions
-- post-processing of forms created by IntelliJ GUI Designer
+Enables the [](tools_intellij_platform_gradle_plugin.md#code-instrumentation) of the compiled classes.
 
 Controls the execution of the [`instrumentCode`](tools_intellij_platform_gradle_plugin_tasks.md#instrumentCode) task.
 

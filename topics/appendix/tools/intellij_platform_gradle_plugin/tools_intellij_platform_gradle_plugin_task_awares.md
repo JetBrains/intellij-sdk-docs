@@ -167,14 +167,7 @@ Throws
 
 </tldr>
 
-The interface provides the dependency on Java Compiler used by Ant tasks.
-
-This dependency is required, i.e., for [`instrumentCode`](tools_intellij_platform_gradle_plugin_tasks.md#instrumentCode) to properly configure Ant tasks provided by the IntelliJ Platform.
-
-See also:
-- [Build Features: `useClosestJavaCompilerVersion`](tools_intellij_platform_gradle_plugin_gradle_properties.md#useClosestJavaCompilerVersion)
-- [Dependencies: `instrumentationTools()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#code-instrumentation)
-- [Tasks: `instrumentCode`](tools_intellij_platform_gradle_plugin_tasks.md#instrumentCode)
+The interface provides the dependency on Java Compiler required for the [](tools_intellij_platform_gradle_plugin.md#code-instrumentation) to properly configure Ant tasks provided by the IntelliJ Platform.
 
 
 ## PluginAware

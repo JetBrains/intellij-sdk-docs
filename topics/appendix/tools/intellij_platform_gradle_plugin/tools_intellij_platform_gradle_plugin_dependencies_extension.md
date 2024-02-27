@@ -137,8 +137,6 @@ If the exact version is unavailable, the closest one is used, found by scanning 
 | <p>`instrumentationTools()`</p>                       | A helper function to apply all required dependencies. |
 | <p>`javaCompiler()`</p><p>`javaCompiler(version)`</p> | Adds a dependency on Java Compiler.                   |
 
-- [Extension: `intellijPlatform.instrumentCode`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-instrumentCode)
-- [Task Awares: `JavaCompilerAware`](tools_intellij_platform_gradle_plugin_task_awares.md#JavaCompilerAware)
-- [Build Features: `useClosestJavaCompilerVersion`](tools_intellij_platform_gradle_plugin_gradle_properties.md#useClosestJavaCompilerVersion)
+- [](tools_intellij_platform_gradle_plugin.md#code-instrumentation)
 
 <include from="snippets.md" element-id="missingContent"/>

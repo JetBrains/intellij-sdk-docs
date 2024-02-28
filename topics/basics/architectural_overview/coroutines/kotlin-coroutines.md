@@ -10,6 +10,8 @@ These tasks are usually executed in background threads, which is a standard appr
 Since version 1.1, [Kotlin](using_kotlin.md) has introduced coroutines as a lightweight and easy to implement alternative to threads.
 The IntelliJ Platform started adapting coroutines in its APIs and internal code, and since 2024.1 it is recommended to use the coroutines approach over threads.
 
+> Plugins _must_ use the bundled Kotlin Coroutines library, see [](using_kotlin.md#coroutinesLibraries).
+
 ### Coroutines Advantages
 
 The reason for coroutines being lightweight is the fact that they are not bound to OS native threads, as opposed to the JVM threads.

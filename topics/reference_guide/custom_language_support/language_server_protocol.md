@@ -14,17 +14,17 @@ Therefore, the LSP approach shouldn't be considered as a replacement for the exi
 ## Supported IDEs
 
 The integration with the Language Server Protocol is created as an extension to the *paid* IntelliJ-based IDEs.
-Therefore, plugins utilizing Language Server integration are not available in Community releases of JetBrains products and Android Studio from Google.
+Therefore, plugins using Language Server integration are not available in Community releases of JetBrains products and Android Studio from Google.
 
 Starting with the 2023.2 release cycle, the LSP API is publicly available as part of the IntelliJ Platform in the following IDEs:
 IntelliJ IDEA Ultimate, WebStorm, PhpStorm, PyCharm Professional, DataSpell, RubyMine, CLion, Aqua, DataGrip, GoLand, Rider, and RustRover.
 
 ## Plugin Configuration
 
-To fully utilize the LSP API in a third-party plugin based on the [](tools_gradle_intellij_plugin.md), it is required to upgrade the Gradle IntelliJ Plugin to the latest version available.
+To use the LSP API in a third-party plugin based on the [](tools_gradle_intellij_plugin.md), it is required to upgrade the Gradle IntelliJ Plugin to the latest version available.
 This plugin will attach the LSP API sources and code documentation to the project.
 
-As LSP became available in the 2023.2 EAP7 of IntelliJ-based IDEs, the plugin must target IntelliJ IDEA Ultimate `2023.2` or later.
+As LSP became available in the 2023.2 EAP7 of IntelliJ-based IDEs, the plugin must target [](idea_ultimate.md) version `2023.2` or later.
 
 Example <path>build.gradle.kts</path> configuration:
 
@@ -117,7 +117,7 @@ private class FooLspServerDescriptor(project: Project) : ProjectWideLspServerDes
 ## Language Server Integration
 
 Language Server is a separate process that analyzes source code and provides language-specific features to development tools.
-When creating a plugin that utilizes LSP within the IDE, there are two possibilities for providing a Language Server to end-users:
+When creating a plugin that uses LSP within the IDE, there are two possibilities for providing a Language Server to end-users:
 
 - Bundle a [Language Server implementation](https://microsoft.github.io/language-server-protocol/implementors/servers/) binary as a resource delivered with a plugin.
 - Provide a possibility for users to define the location of the Language Server binary in their environment.

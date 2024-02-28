@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Language Server Protocol (LSP)
 
@@ -58,10 +58,11 @@ The <path>plugin.xml</path> configuration file needs to specify the dependency o
 
 The LSP API sources are bundled in IntelliJ IDEA Ultimate and can be found within the <path>[IDE]/lib/src/src_lsp-openapi.zip</path> archive.
 
-> Due to technical limitations, it is currently necessary to manually attach sources to the IntelliJ IDEA Ultimate dependency.
-> To do so, when reviewing the compiled class which belongs to the LSP API, run the _Choose Sources..._ action, and point the <path>[IDE]/lib/src/src_lsp-openapi.zip</path> file.
+> Due to technical limitations in IDEs before 2024.1, it is necessary to manually attach sources to the IntelliJ IDEA Ultimate dependency.
+> To do so, when reviewing the compiled class which belongs to the LSP API, run the _Choose Sources..._ action, and point to the
+> <path>[IDE]/lib/src/src_lsp-openapi.zip</path> file.
 >
-{style="warning"}
+{style="note" title="Attaching Sources in IDE before 2024.1"}
 
 ## Supported Features
 

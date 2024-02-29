@@ -1159,11 +1159,13 @@ Default value
 
 <tldr>
 
-**Extends**: [`Test`][gradle-test-task], [`RunnableIdeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#RunnableIdeAware), [`CustomIntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware)
+**Extends**: [`Test`][gradle-test-task], [`CoroutinesJavaAgentAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CoroutinesJavaAgentAware), [`CustomIntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware), [`PluginAware`](tools_intellij_platform_gradle_plugin_task_awares.md#PluginAware), [`RuntimeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#RuntimeAware), [`SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SigningAware)
 
 **Sources**: [`TestIdeTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/TestIdeTask.kt)
 
 </tldr>
+
+> This task is not registered with the `testIde` name, but its configuration extends the default `test` task.
 
 Runs plugin tests against the currently selected IntelliJ Platform with the built plugin loaded.
 It directly extends the [`Test`][gradle-test-task] Gradle task, which allows for an extensive configuration (system properties, memory management, etc.).

@@ -166,6 +166,24 @@ See also:
 - [Tasks: `verifyPlugin.subsystemsToCheck`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-subsystemsToCheck)
 
 
+## TestFrameworkType
+{#TestFrameworkType}
+
+Allows for adding `test-framework` testing library variants. See [Dependencies Extension: Testing](tools_intellij_platform_gradle_plugin_dependencies_extension.md#testing).
+
+| Name         | Coordinates                                                   |
+|--------------|---------------------------------------------------------------|
+| `Common`     | `com.jetbrains.intellij.platform:test-framework-common`       |
+| `Core`       | `com.jetbrains.intellij.platform:test-framework-core`         |
+| `Default`    | `com.jetbrains.intellij.platform:test-framework`              |
+| `Go`         | `com.jetbrains.intellij.go:go-test-framework`                 |
+| `Ruby`       | `com.jetbrains.intellij.idea:ruby-test-framework`             |
+| `Java`       | `com.jetbrains.intellij.java:java-test-framework`             |
+| `JavaScript` | `com.jetbrains.intellij.javascript:javascript-test-framework` |
+| `JUnit5`     | `com.jetbrains.intellij.platform:test-framework-junit5`       |
+| `Maven`      | `com.jetbrains.intellij.maven:maven-test-framework`           |
+| `ReSharper`  | `com.jetbrains.intellij.resharper:resharper-test-framework`   |
+
 ## VerificationReportsFormats
 {#VerificationReportsFormats}
 

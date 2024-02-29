@@ -105,6 +105,19 @@ See also:
 
 - [](plugin_dependencies.md)
 
+## Testing
+
+To implement tests for IntelliJ Platform plugin, it is necessary to explicitly add a dependency on the `test-framework` library containing IntelliJ Platform test classes.
+
+The provided `testFramework(type, version)` helper method makes it possible to add the base artifact to the test classpath or its variants, such as Java, Go, ReSharper, etc.
+
+| Function                       | Description                                                                                                                                            |
+|--------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `testFramework(type, version)` | Adds a dependency on Test Framework or its variant using [`TestFrameworkType`](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType) type. |
+
+See also:
+- [Types: `TestFrameworkType`](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType)
+
 ## Tools
 
 | Function                  | Description                                                                         |

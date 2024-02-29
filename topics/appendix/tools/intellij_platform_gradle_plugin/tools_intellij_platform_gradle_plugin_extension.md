@@ -378,6 +378,7 @@ intellijPlatform {
   }
 }
 ```
+
 See also:
 
 - [Plugin Configuration File: `idea-version`](plugin_configuration_file.md#idea-plugin__idea-version)

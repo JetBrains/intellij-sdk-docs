@@ -73,10 +73,4 @@ While the code is always executed on threads, do not think about dispatchers as 
 
 A single coroutine is not bound to the same thread during the whole execution time.
 It may happen that a coroutine starts on thread A, is suspended, and finished on thread B, even if the whole is executed with the same dispatcher context.
-
-### ThreadLocal Alternative
-
-The consequence of dispatching coroutines on unpredictable thread instances is that `ThreadLocal` class is unusable in coroutines.
-
-If it is required to store values from coroutines in a thread context, use [`ThreadContextElement`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-thread-context-element/).
-It is possible to wrap a `ThreadLocal` instance into `ThreadContextElement` with `ThreadLocal.asContextElement()`.
+This behavior can result in unexpected consequences for code that relies on thread-specific data and assumes it will execute consistently on the same thread.

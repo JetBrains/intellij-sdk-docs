@@ -15,12 +15,28 @@ org.jetbrains.intellij.platform.<name>=<value>
 
 ## General Gradle Properties
 
+### intellijPlatformCache
+{#intellijPlatformCache}
+
+The plugin uses a dedicated cache directory to store files related to the current project configuration files, such as:
+- XML files generated for the [`localPlatformArtifacts()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) local Ivy repository
+- coroutines Java agent file created by the [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin) task
+
+The IntelliJ Platform cache, by default, points to the <path>[rootProject]/.intellijPlatform</path>.
+It is possible to override that path using with the `org.jetbrains.intellij.platform.intellijPlatformCache` property.
+
+Example
+:
+```
+org.jetbrains.intellij.platform.intellijPlatformCache=/path/to/intellijPlatformCache/
+```
+
 ### localPlatformArtifacts
 {#localPlatformArtifacts}
 
 The [`localPlatformArtifacts()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) entry applied to the `repositories {}` block is required to apply to the project dependencies that need extra pre-processing before they can be correctly used by the IntelliJ Platform Gradle Plugin and loaded by Gradle.
 
-This is resolved by creating an Ivy XML file in a dedicated directory, which by default points to the <path>[rootProject]/.gradle/</path>.
+This is resolved by creating an Ivy XML file in a dedicated directory, which by default points to the <path>[`intellijPlatformCache`](#intellijPlatformCache)/ivy/</path>.
 
 It is possible to customize this path using the `org.jetbrains.intellij.platform.localPlatformArtifacts` property.
 

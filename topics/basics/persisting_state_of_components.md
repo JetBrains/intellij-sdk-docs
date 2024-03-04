@@ -181,7 +181,10 @@ The state is persisted in a separate file by specifying a different setting for 
 >
 {style="note"}
 
-When planning your storage location, consider its intended purpose. A project-level custom file should be preferred for storing plugin settings. For storing cached values, use `@Storage(StoragePathMacros.CACHE_FILE)`. Refer to [`StoragePathMacros`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/StoragePathMacros.java) for commonly used macros.
+When planning your storage location, consider its intended purpose.
+A project-level custom file should be preferred for storing plugin settings.
+To store cached values, use `@Storage(StoragePathMacros.CACHE_FILE)`.
+Refer to [`StoragePathMacros`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/StoragePathMacros.java) for commonly used macros.
 
 The `roamingType` parameter of the `@Storage` annotation specifies the roaming type when the [settings are shared](#sharing-settings-between-ide-installations):
 
@@ -218,7 +221,7 @@ If a component contains both shareable and non-shareable data, it should be spli
 To include a plugin's component state in the _Settings Sync_ plugin synchronization, the following requirements must be met:
 - The `RoamingType` is defined via the `roamingType` attribute of the `@Storage` annotation and is not equal to `DISABLED`.
 - The `SettingsCategory` is defined via the `category` attribute of the `@State` annotation and is not equal to `OTHER`.
-- There is no other `PersistentStateComponent`, which is stored to the same XML file and has a different `RoamingType`.
+- There is no other `PersistentStateComponent`, which is stored in the same XML file and has a different `RoamingType`.
 
 If the component state is OS-dependent, the `roamingType` of the `@Storage` annotation must be set to `RoamingType.PER_OS`.
 

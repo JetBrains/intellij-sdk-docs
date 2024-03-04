@@ -96,7 +96,7 @@ class MyPluginService(private val cs: CoroutineScope) {
 See the [](launching-coroutines.md) section for details.
 
 > The following sections describe the potential problems that would occur if the wrong coroutine scopes were used.
-> This allows better understanding of the platform scopes and why the [service approach](#use-service-scopes) mentioned above should be used.
+> This allows better understanding of the platform scopes and why the [service approach](#use-service-scopes) mentioned above must be used.
 >
 {style="warning"}
 

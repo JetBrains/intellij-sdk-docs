@@ -27,7 +27,7 @@ Using the default dispatcher (or its [`limitedParallelism()`](https://kotlinlang
 
 The [`Dispatchers.IO`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-i-o.html) dispatcher is used for performing IO operations like reading/writing to files, network, executing external processes, etc.
 
-It should be used at the very deep moment in the trace right before the actual IO operation happens and exited as soon as the operation is finished.
+It must be used at the very deep moment in the trace right before the actual IO operation happens and exited as soon as the operation is finished.
 Example:
 
 <compare first-title="Wrong" second-title="Correct" type="top-bottom">

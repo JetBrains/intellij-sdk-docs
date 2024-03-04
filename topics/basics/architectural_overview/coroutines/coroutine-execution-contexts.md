@@ -33,10 +33,7 @@ This context is recommended for executing background tasks since 2024.1, and sho
 In a suspending context, it is forbidden to call blocking functions directly.
 See how to [switch to a blocking context](#suspending-context-switching-to-other-contexts).
 
-> Functions which schedule execution via [`Application.executeOnPooledThread()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java)
-> and similar methods, and which rely on [`ProgressManager.checkCanceled()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java)
-> should be marked with [`@RequiresBlockingContext`](%gh-ic%/platform/core-api/src/com/intellij/util/concurrency/annotations/RequiresBlockingContext.java)
-> to inform clients about the required switch to a blocking context.
+> Inspection <control>Plugin DevKit | Code | Forbidden in suspend context method usage</control> reports calling blocking code from suspending context.
 
 ### Cancellation Check
 {#suspending-context-cancellation-check}
@@ -66,6 +63,13 @@ See how to [switch to a blocking context](#suspending-context-switching-to-other
 
 Executing tasks in a blocking context means executing them in a background thread, not under a coroutine or [a progress indicator](#progress-indicator).
 
+> Functions which schedule execution via [`Application.executeOnPooledThread()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java)
+> and similar methods, and which rely on [`ProgressManager.checkCanceled()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java)
+> should be annotated with [`@RequiresBlockingContext`](%gh-ic%/platform/core-api/src/com/intellij/util/concurrency/annotations/RequiresBlockingContext.java)
+> to inform clients about the required switch to a blocking context.
+>
+> Inspection <control>Plugin DevKit | Code | Calling method should be annotated with @RequiresBlockingContext</control> reports missing annotations.
+
 ### Cancellation Check
 {#blocking-context-cancellation-check}
 
@@ -87,7 +91,10 @@ Progress reporting is not available in a blocking context.
 
 ## Progress Indicator
 
-Code executed via the Progress API ([`ProgressManager`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java), [`ProgressIndicator`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressIndicator.java), etc.) is executed in a progress indicator context.
+Code executed via the Progress API
+([`ProgressManager`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java),
+[`ProgressIndicator`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressIndicator.java), etc.)
+is executed in a progress indicator context.
 See the [running background processes](general_threading_rules.md#background-processes-and-processcanceledexception) section for details.
 
 > Executing code under progress indicator is obsolete since 2024.1.

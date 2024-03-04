@@ -42,6 +42,8 @@ dependencies {
 
     pluginVerifier()
     zipSigner()
+
+    testFramework(TestFrameworkType.JUnit4)
   }
 
   // other dependencies, e.g., 3rd-party libraries
@@ -108,6 +110,17 @@ See also:
 ## Testing
 
 To implement tests for IntelliJ Platform plugin, it is necessary to explicitly add a dependency on the `test-framework` library containing IntelliJ Platform test classes.
+In the most cases, the `JUnit4` package will be needed:
+
+```kotlin
+import org.jetbrains.intellij.platform.gradle.extensions.TestFrameworkType
+
+dependencies {
+  intellijPlatform {
+    testFramework(TestFrameworkType.JUnit4)
+  }
+}
+```
 
 The provided `testFramework(type, version)` helper method makes it possible to add the base artifact to the test classpath or its variants, such as Java, Go, ReSharper, etc.
 

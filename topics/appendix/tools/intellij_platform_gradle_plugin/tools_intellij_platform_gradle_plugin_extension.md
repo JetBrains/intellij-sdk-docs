@@ -45,6 +45,12 @@ intellijPlatform {
 
 Provides read-only access to the IntelliJ Platform project cache location.
 
+The IntelliJ Platform cache is used for storing IntelliJ Platform Gradle Plugin-specific files, such as:
+- XML files generated for the [`localPlatformArtifacts()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) local Ivy repository
+- coroutines Java agent file created by the [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin) task
+
+This path can be changed with the [`org.jetbrains.intellij.platform.intellijPlatformCache`](tools_intellij_platform_gradle_plugin_gradle_properties.md#intellijPlatformCache) Gradle property
+
 {style="narrow"}
 Access
 : Read-only
@@ -53,7 +59,7 @@ Type
 : `Path`
 
 Default value
-: Path of the IntelliJ Platform project cache
+: <path>[rootProject]/.intellijPlatform/</path>
 
 
 ### platformPath

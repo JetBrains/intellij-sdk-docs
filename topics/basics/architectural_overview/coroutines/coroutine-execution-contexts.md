@@ -15,7 +15,7 @@ Background processes can be executed in three contexts:
 
 Currently, the Progress Indicator context is the most widely used approach in the IntelliJ Platform.
 As the platform's execution model moves towards coroutines, this approach can be considered obsolete.
-Starting with 2024.1, it is recommended to execute new code in suspending or blocking context.
+Starting with 2024.1, it is recommended to execute new code in [suspending](#suspending-context) or [blocking](#blocking-context) context.
 
 Once the client code switches to a suspending or a blocking context, it should not switch back to a progress indicator context.
 
@@ -96,7 +96,7 @@ See the [running background processes](general_threading_rules.md#background-pro
 > Please note that obsolete status does not mean deprecation.
 > Executing code using the Progress API is still allowed, but the alternatives presented in this section are more performant.
 >
-{style="warning"}
+{style="warning" title="Obsolete approach since 2024.1"}
 
 ### Cancellation Check
 {#progress-indicator-cancellation-check}

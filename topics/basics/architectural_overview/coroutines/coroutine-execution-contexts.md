@@ -64,7 +64,7 @@ See how to [switch to a blocking context](#suspending-context-switching-to-other
 
 ## Blocking Context
 
-Code executed on a background thread, not under a coroutine or [a progress indicator](#progress-indicator), is executed in a blocking context.
+Executing tasks in a blocking context means executing them in a background thread, not under a coroutine or [a progress indicator](#progress-indicator).
 
 ### Cancellation Check
 {#blocking-context-cancellation-check}

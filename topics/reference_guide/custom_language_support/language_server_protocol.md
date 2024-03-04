@@ -114,6 +114,14 @@ private class FooLspServerDescriptor(project: Project) : ProjectWideLspServerDes
 
 </procedure>
 
+### Status Bar Integration
+
+Since 2024.1, a dedicated <control>Language Services</control> status bar widget is available to monitor the status of all LSP servers.
+Override `LspServerSupportProvider.createLspServerWidgetItem()` to provide a custom icon and link to [Settings](settings.md) page (if available).
+
+If there are configuration problems preventing from starting an LSP server, the plugin can provide a widget item
+with an error and give the user a hint how to fix the problem.
+
 ## Language Server Integration
 
 Language Server is a separate process that analyzes source code and provides language-specific features to development tools.

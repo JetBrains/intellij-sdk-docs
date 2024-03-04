@@ -18,6 +18,9 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ### IntelliJ Platform 2024.1
 
+Status bar widget for LSP servers
+: Language plugins using LSP can now provide their status for [](language_server_protocol.md#status-bar-integration).
+
 ### IntelliJ IDEA 2024.1
 
 Unbundled plugins

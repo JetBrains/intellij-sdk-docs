@@ -169,8 +169,8 @@ It has the following fields:
 - `reloadable` (optional) — if set to false, a full project (or application) reload is required when the XML file is changed externally, and the state has changed.
 
 The simplest ways of specifying the `@Storage` annotation are as follows:
-- `@Storage("yourName.xml")` If a component is project-level — for <path>.ipr</path> based projects standard project file is used automatically - no need to specify anything.
-- `@Storage(StoragePathMacros.WORKSPACE_FILE)` for values stored in the project workspace file.
+- `@Storage(StoragePathMacros.WORKSPACE_FILE)` - for values stored in the project workspace file (project-level components only).
+- `@Storage("yourName.xml")` - if a component is project-level, for <path>.ipr</path> based projects, standard project file is used automatically, and there is no need to specify anything.
 
 The state is persisted in a separate file by specifying a different setting for the `value` parameter, which was the `file` parameter before 2016.x.
 

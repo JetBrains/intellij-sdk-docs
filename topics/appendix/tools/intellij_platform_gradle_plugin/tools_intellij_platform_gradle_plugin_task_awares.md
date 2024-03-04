@@ -129,6 +129,9 @@ Type
 Provides a direct path to the IntelliJ Platform dependency artifact.
 
 {style="narrow"}
+Access
+: Read-only
+
 Type
 : `Path`
 
@@ -140,6 +143,9 @@ Provides information about the IntelliJ Platform product.
 The information is retrieved from the <path>product-info.json</path> file in the IntelliJ Platform directory.
 
 {style="narrow"}
+Access
+: Read-only
+
 Type
 : [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo)
 

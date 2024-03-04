@@ -40,6 +40,38 @@ intellijPlatform {
 ```
 
 
+### platformPath
+{#intellijPlatform-platformPath}
+
+Provides read-only access to the IntelliJ Platform dependency artifact path.
+
+{style="narrow"}
+Access
+: Read-only
+
+Type
+: `Path`
+
+Default value
+: Path of the current IntelliJ Platform
+
+
+### productInfo
+{#intellijPlatform-productInfo}
+
+Provides read-only access to the [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) object associated with the IntelliJ Platform dependency configured for the current project.
+
+{style="narrow"}
+Access
+: Read-only
+
+Type
+: [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo)
+
+Default value
+: [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) of the current IntelliJ Platform
+
+
 ### buildSearchableOptions
 {#intellijPlatform-buildSearchableOptions}
 
@@ -70,32 +102,6 @@ Type
 
 Default value
 : `true`
-
-
-### platformPath
-{#intellijPlatform-platformPath}
-
-Provides read-only access to the IntelliJ Platform dependency artifact path.
-
-{style="narrow"}
-Type
-: `DirectoryProperty`
-
-Default value
-: Path of the current IntelliJ Platform
-
-
-### productInfo
-{#intellijPlatform-productInfo}
-
-Provides read-only access to the [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) object associated with the IntelliJ Platform dependency configured for the current project.
-
-{style="narrow"}
-Type
-: [`Property<ProductInfo>`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo)
-
-Default value
-: [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) of the current IntelliJ Platform
 
 
 ### projectName

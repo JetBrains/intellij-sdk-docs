@@ -70,6 +70,8 @@ Executing tasks in a blocking context means executing them in a background threa
 >
 > Inspection <control>Plugin DevKit | Code | Calling method should be annotated with @RequiresBlockingContext</control> reports missing annotations.
 
+[//]: # (TODO: highlight the downsides and when to use it 'properly')
+
 ### Cancellation Check
 {#blocking-context-cancellation-check}
 

@@ -6,6 +6,8 @@
 
 <include from="tools_intellij_platform_gradle_plugin.md" element-id="EAP_Status"/>
 
+This page lists various types used to configure [](tools_intellij_platform_gradle_plugin_tasks.md).
+
 ## FailureLevel
 {#FailureLevel}
 
@@ -42,7 +44,7 @@ See also:
 
 Describes all IntelliJ Platform types available to be used for plugin development, dependency resolution, and plugin verification.
 
-Each entry is composed of a product code name and coordinates used for dependency and binary release resolution.
+Each entry is composed of a product code and coordinates used for dependency and binary release resolution.
 
 | Name                    | Code   | Coordinates                                        |
 |-------------------------|--------|----------------------------------------------------|
@@ -65,14 +67,17 @@ Each entry is composed of a product code name and coordinates used for dependenc
 ## PluginBean
 {#PluginBean}
 
-The `PluginBean` class describes the content of the <path>plugin.xml</path> file.
+[`PluginBean`](%gh-pv%/intellij-plugin-structure/structure-intellij/src/main/java/com/jetbrains/plugin/structure/intellij/beans/PluginBean.java)
+
+Describes the content of the <path>plugin.xml</path> file.
 
 See also:
-- [`PluginBean` sources](https://github.com/JetBrains/intellij-plugin-verifier/blob/master/intellij-plugin-structure/structure-intellij/src/main/java/com/jetbrains/plugin/structure/intellij/beans/PluginBean.java)
-
+- [](plugin_configuration_file.md)
 
 ## ProductInfo
 {#ProductInfo}
+
+[`ProductInfo`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/model/ProductInfo.kt)
 
 Represents information about the IntelliJ Platform product.
 

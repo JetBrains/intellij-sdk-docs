@@ -40,6 +40,22 @@ intellijPlatform {
 ```
 
 
+### cachePath
+{#intellijPlatform-cachePath}
+
+Provides read-only access to the IntelliJ Platform project cache location.
+
+{style="narrow"}
+Access
+: Read-only
+
+Type
+: `Path`
+
+Default value
+: Path of the IntelliJ Platform project cache
+
+
 ### platformPath
 {#intellijPlatform-platformPath}
 

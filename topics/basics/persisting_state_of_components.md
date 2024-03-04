@@ -121,12 +121,12 @@ State class should have an `equals()` method, but state objects are compared by 
 
 The following types of values can be persisted:
 
-* numbers (both primitive types, such as `int`, and boxed types, such as `Integer`)
-* booleans
-* strings
-* collections
-* maps
-* enums
+- numbers (both primitive types, such as `int`, and boxed types, such as `Integer`)
+- booleans
+- strings
+- collections
+- maps
+- enums
 
 For other types, extend [`Converter`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/Converter.java).
 See the example below.
@@ -163,16 +163,14 @@ class State {
 To specify where precisely the persisted values are stored, add `@State` annotation to the `PersistentStateComponent` class.
 
 It has the following fields:
-* `name` (required) — specifies the name of the state (name of the root tag in XML).
-* `storages` — one or more of [`@Storage`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/Storage.java) annotations to specify the storage locations.
+- `name` (required) — specifies the name of the state (name of the root tag in XML).
+- `storages` — one or more of [`@Storage`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/Storage.java) annotations to specify the storage locations.
   Optional for project-level values — standard project file is used in this case.
-* `reloadable` (optional) — if set to false, a full project (or application) reload is required when the XML file is changed externally, and the state has changed.
+- `reloadable` (optional) — if set to false, a full project (or application) reload is required when the XML file is changed externally, and the state has changed.
 
 The simplest ways of specifying the `@Storage` annotation are as follows:
-
-* `@Storage("yourName.xml")` If a component is project-level — for <path>.ipr</path> based projects standard project file is used automatically - no need to specify anything.
-
-* `@Storage(StoragePathMacros.WORKSPACE_FILE)` for values stored in the project workspace file.
+- `@Storage("yourName.xml")` If a component is project-level — for <path>.ipr</path> based projects standard project file is used automatically - no need to specify anything.
+- `@Storage(StoragePathMacros.WORKSPACE_FILE)` for values stored in the project workspace file.
 
 The state is persisted in a separate file by specifying a different setting for the `value` parameter, which was the `file` parameter before 2016.x.
 
@@ -292,6 +290,6 @@ Implementations can manually store the state in attributes and sub-elements or u
 
 Components save their state in the following files:
 
-* Project-level: project (<path>.ipr</path>) file.
+- Project-level: project (<path>.ipr</path>) file.
   However, if the workspace option in the <path>[plugin.xml](plugin_configuration_file.md)</path> file is set to `true`, then the workspace (<path>.iws</path>) file is used instead.
-* Module-level: module (<path>.iml</path>) file.
+- Module-level: module (<path>.iml</path>) file.

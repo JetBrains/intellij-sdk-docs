@@ -59,7 +59,7 @@ See how to [switch to a blocking context](#suspending-context-switching-to-other
 - to blocking context:
   - [`blockingContext()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) - enables `ProgressManager.checkCanceled()`, forwards modality state, etc.
   - [`blockingContextScope()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) - same as `blockingContext()`, but additionally enables tracking of the children completion (structured concurrency)
-- to progress indicator: unavailable ([`coroutineToIndicator()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) is internal and exists only to aid platform migration)
+- to progress indicator: unavailable ([`coroutineToIndicator()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) is internal API and exists only to aid platform migration)
 
 ## Blocking Context
 
@@ -71,7 +71,7 @@ Code executed on a background thread, not under a coroutine or [a progress indic
 - [`ProgressManager.checkCanceled()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java) - delegates to [`Cancellation.checkCancelled()`](%gh-ic%/platform/util/src/com/intellij/openapi/progress/Cancellation.java),
   which throws a special [`ProcessCanceledException`](%gh-ic%/platform/util/base/src/com/intellij/openapi/progress/ProcessCanceledException.java)
   with wrapped [`CancellationException`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/CancellationException.html).
-  Note that `Cancellation.checkCancelled()` is internal and must not be used by plugins directly.
+  Note that `Cancellation.checkCancelled()` is internal API and must not be used by plugins directly.
 
 ### Progress Reporting
 {#blocking-context-progress-reporting}
@@ -82,7 +82,7 @@ Progress reporting is not available in a blocking context.
 {#blocking-context-switching-to-other-contexts}
 
 - to coroutine: [`runBlockingCancellable()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt)
-- to progress indicator: unavailable ([`blockingContextToIndicator()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) is internal and exists only to aid platform migration)
+- to progress indicator: unavailable ([`blockingContextToIndicator()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) is internal API and exists only to aid platform migration)
 
 ## Progress Indicator
 

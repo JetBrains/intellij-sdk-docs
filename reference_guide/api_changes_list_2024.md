@@ -214,3 +214,7 @@ Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
 `com.intellij.httpClient.actions.generation.RequestUrlContextInfo(requestContextData: RequestContextData)` constructor parameter removed.
 : Use `com.intellij.httpClient.actions.generation.RequestBody` and `com.intellij.httpClient.actions.generation.HttpRequestUrlPathInfo.Companion#create` to describe a request body that will be coomputed lazily during the corresponding request generation.
 
+### Markdown Plugin 2024.1
+`org.intellij.plugins.markdown.ui.split.SplitTextEditorProvider` class removed
+: `com.intellij.openapi.fileEditor.TextEditorWithPreviewProvider` should be used instead
+

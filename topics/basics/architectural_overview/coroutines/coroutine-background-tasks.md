@@ -38,8 +38,7 @@ See how to [switch to a blocking context](#suspending-context-switching-to-other
 ### Cancellation Check
 {#suspending-context-cancellation-check}
 
-- IntelliJ Platform API: [`checkCancelled()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) - supports coroutine pause-ability while checking for cancellation
-- Kotlin coroutine's API: [`ensureActive()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/ensure-active.html)
+- [`ensureActive()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/ensure-active.html) from Kotlin coroutine's API
 
 > Note that [`ProgressManager.checkCanceled()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java) does not work in a coroutine context.
 >
@@ -54,10 +53,8 @@ See how to [switch to a blocking context](#suspending-context-switching-to-other
 ### Switching to Other Contexts
 {#suspending-context-switching-to-other-contexts}
 
-- to blocking context:
-  - [`blockingContext()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) - enables `ProgressManager.checkCanceled()`, forwards modality state, etc.
-  - [`blockingContextScope()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) - same as `blockingContext()`, but additionally enables tracking of the children completion (structured concurrency)
-- to progress indicator: unavailable ([`coroutineToIndicator()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) is internal API and exists only to aid platform migration)
+- to blocking context: [`blockingContext()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) - enables `ProgressManager.checkCanceled()`, forwards modality state, etc.
+- to progress indicator: unavailable ([`coroutineToIndicator()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) is an internal API and exists only to aid platform migration)
 
 ## Blocking Context
 
@@ -83,7 +80,7 @@ Executing tasks in a blocking context means executing them in a background threa
 ### Progress Reporting
 {#blocking-context-progress-reporting}
 
-Progress reporting is not available in a blocking context.
+Progress reporting is not available in the blocking context.
 
 ### Switching to Other Contexts
 {#blocking-context-switching-to-other-contexts}
@@ -100,11 +97,10 @@ is executed in a progress indicator context.
 See the [running background processes](general_threading_rules.md#background-processes-and-processcanceledexception) section for details.
 
 > Executing code under progress indicator is obsolete since 2024.1.
->
-> New code should use Kotlin coroutines (preferred) or be invoked on background threads with [`Application.executeOnPooledThread()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java) and `Application.invokeLater()`.
+> New code should use Kotlin coroutines.
 >
 > Please note that obsolete status does not mean deprecation.
-> Executing code using the Progress API is still allowed, but the alternatives presented in this section are more performant.
+> Executing code using the Progress API is still allowed, but coroutines are recommended as a more performant solution.
 >
 {style="warning" title="Obsolete approach since 2024.1"}
 
@@ -122,5 +118,5 @@ See the [running background processes](general_threading_rules.md#background-pro
 ### Switching to Other Contexts
 {#progress-indicator-switching-to-other-contexts}
 
-- to coroutine: [`runBlockingCancellable`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) - it installs [`RawProgressReporter`](%gh-ic%/platform/util/progress/src/RawProgressReporter.kt) into coroutine context
+- to coroutine: [`runBlockingCancellable`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt)
 - to blocking: unavailable

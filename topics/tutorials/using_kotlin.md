@@ -26,7 +26,7 @@ This page describes developing plugins using the [Kotlin](https://kotlinlang.org
 Using Kotlin to write plugins for the IntelliJ Platform is very similar to writing plugins in Java.
 Existing Java classes can be converted to their Kotlin equivalents by using the [J2K converter](https://kotlinlang.org/docs/mixing-java-kotlin-intellij.html#converting-an-existing-java-file-to-kotlin-with-j2k) (part of Kotlin plugin).
 
-In addition to [null safety](https://kotlinlang.org/docs/null-safety.html), [type-safe builders](https://kotlinlang.org/docs/type-safe-builders.html), and [](kotlin-coroutines.md), the Kotlin language offers many convenient features for plugin development,
+In addition to [null safety](https://kotlinlang.org/docs/null-safety.html), [type-safe builders](https://kotlinlang.org/docs/type-safe-builders.html), and [](kotlin_coroutines.md), the Kotlin language offers many convenient features for plugin development,
 which make plugins easier to read and simpler to maintain.
 Much like [Kotlin for Android](https://kotlinlang.org/docs/android-overview.html), the IntelliJ Platform makes extensive use of callbacks, which are straightforward to express as [lambdas](https://kotlinlang.org/docs/lambdas.html) in Kotlin.
 
@@ -73,7 +73,7 @@ The IntelliJ Platform provides a [type safe DSL](kotlin_ui_dsl_version_2.md) to 
 
 ### Kotlin Coroutines
 
-[](kotlin-coroutines.md) are a lightweight and easy to implement alternative to threads with many [advantages](kotlin-coroutines.md#coroutines-advantages).
+[](kotlin_coroutines.md) are a lightweight and easy to implement alternative to threads with many [advantages](kotlin_coroutines.md#coroutines-advantages).
 
 ## Adding Kotlin Support
 
@@ -151,7 +151,7 @@ Plugins _must_ always use the bundled library from the target IDE and not bundle
 Please make sure it is not added via transitive dependencies either
 (see [View and Debug Dependencies](https://docs.gradle.org/current/userguide/viewing_debugging_dependencies.html) in Gradle user guide).
 
-See [](kotlin-coroutines.md) on how to use them in plugins.
+See [](kotlin_coroutines.md) on how to use them in plugins.
 
 | IntelliJ Platform version | Bundled _kotlinx-coroutines_ version |
 |---------------------------|--------------------------------------|

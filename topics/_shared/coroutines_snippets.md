@@ -7,7 +7,7 @@
 
 > This section focuses on explaining coroutines in the specific context of the [IntelliJ Platform](intellij_platform.md).
 > If you are not experienced with Kotlin Coroutines, it is highly recommended to get familiar with
-> [](kotlin-coroutines.md#learning-resources) first.
+> [](kotlin_coroutines.md#learning-resources) first.
 {title="Kotlin Coroutines×IntelliJ Platform"}
 
 </snippet>

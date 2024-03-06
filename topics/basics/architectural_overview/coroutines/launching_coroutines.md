@@ -12,7 +12,7 @@ There are two approaches to launching coroutines in the IntelliJ Platform:
 
 ## Launching Coroutine From Service Scope
 
-The recommended approach is creating a [service](plugin_services.md) that receives [its scope](coroutine-scopes.md#service-scopes) via the constructor injection and launching a coroutine from the service methods.
+The recommended approach is creating a [service](plugin_services.md) that receives [its scope](coroutine_scopes.md#service-scopes) via the constructor injection and launching a coroutine from the service methods.
 Please note that while creating a service instance does allocate additional resources, using a dedicated service and scope remains a lightweight and, most importantly, safe solution for launching coroutines.
 It should be used whenever possible.
 
@@ -54,7 +54,7 @@ class MyProjectService(
 </tab>
 </tabs>
 
-The injected scope is created per service, so each instance has its own isolated scope with a common parent, which is an [intersection scope](coroutine-scopes.md#intersection-scopes).
+The injected scope is created per service, so each instance has its own isolated scope with a common parent, which is an [intersection scope](coroutine_scopes.md#intersection-scopes).
 The injected scope is canceled when the container (application/project) is shut down or when the plugin is unloaded.
 
 ### Example Use Cases
@@ -224,7 +224,7 @@ class UserDataService(
 }
 ```
 
-In this case, a coroutine is not launched from the [service scope](coroutine-scopes.md#service-scopes), but launched from the UI component in its own scope, which is a child of the service scope.
+In this case, a coroutine is not launched from the [service scope](coroutine_scopes.md#service-scopes), but launched from the UI component in its own scope, which is a child of the service scope.
 This pattern still limits the launched coroutine to the service scope and follows the recommended approach.
 
 ## Using `runBlockingCancellable`

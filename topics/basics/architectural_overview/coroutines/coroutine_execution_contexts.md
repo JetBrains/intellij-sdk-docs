@@ -15,7 +15,7 @@ Background processes can be executed in three contexts:
 
 Currently, the Progress Indicator context is the most widely used approach in the IntelliJ Platform.
 As the platform's execution model moves towards coroutines, this approach can be considered obsolete.
-Starting with 2024.1, it is recommended to execute new code in [suspending](#suspending-context) or [blocking](#blocking-context) context.
+Starting with 2024.1, it is recommended to execute new code in the [suspending context](#suspending-context).
 
 Once the client code switches to a suspending or a blocking context, it should not switch back to a progress indicator context.
 
@@ -59,6 +59,8 @@ See how to [switch to a blocking context](#suspending-context-switching-to-other
 ## Blocking Context
 
 Executing tasks in a blocking context means executing them in a background thread, not under a coroutine or [a progress indicator](#progress-indicator).
+Usually, plugins should not execute a new code in the blocking context.
+Prefer the [suspending context](#suspending-context) or fall back to [progress indicator](#progress-indicator) if a plugin cannot use Kotlin.
 
 > Functions which schedule execution via [`Application.executeOnPooledThread()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java)
 > and similar methods, and which rely on [`ProgressManager.checkCanceled()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java)

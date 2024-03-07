@@ -1,13 +1,13 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Plugin Dependencies
 
 <link-summary>Declaring dependencies on other IntelliJ Platform-based plugins.</link-summary>
 
-A plugin may depend on classes from other plugins, either bundled, third-party, or by the same author.
+A plugin may depend on API and classes from other plugins, either bundled or third-party.
 
 This document describes the syntax for declaring plugin dependencies and optional plugin dependencies.
-For more information about dependencies on the IntelliJ Platform modules, see Part II of this document: [](plugin_compatibility.md).
+For more information about dependencies on the IntelliJ Platform modules, see [](plugin_compatibility.md).
 
 > For adding dependencies on 3rd party libraries, use regular [Gradle dependency management](https://docs.gradle.org/current/userguide/core_dependency_management.html).
 >
@@ -21,7 +21,12 @@ To express a dependency on classes from other plugins or modules, perform the fo
 2. Project Setup
 3. Declaration in <path>[plugin.xml](plugin_configuration_file.md)</path>
 
-If `java.lang.NoClassDefFoundError` occurs at runtime, it means that either Step 3 was omitted or loading the plugin dependency failed (please check log files from [Development Instance](ide_development_instance.md#development-instance-settings-caches-logs-and-plugins)).
+> If `java.lang.NoClassDefFoundError` occurs at runtime, most likely Step 3 was omitted.
+>
+> Otherwise, loading the plugin dependency may have failed, please check log files from
+> the [Development Instance](ide_development_instance.md#development-instance-settings-caches-logs-and-plugins)).
+>
+{title="Getting java.lang.NoClassDefFoundError"}
 
 </procedure>
 
@@ -40,7 +45,7 @@ For plugins published on [JetBrains Marketplace](https://plugins.jetbrains.com):
 
 ### Bundled and Other Plugins
 
-When using [Gradle IntelliJ Plugin](developing_plugins.md), all bundled plugins can be gathered using [`listBundledPlugins`](tools_gradle_intellij_plugin.md#tasks-listbundledplugins) task.
+When using [Gradle IntelliJ Plugin](developing_plugins.md), all bundled plugin IDs can be gathered using [`listBundledPlugins`](tools_gradle_intellij_plugin.md#tasks-listbundledplugins) task.
 
 When using [DevKit](developing_themes.md) and for non-public plugins, locate the plugin's main JAR file containing <path>META-INF/plugin.xml</path> descriptor with [`<id>`](plugin_configuration_file.md#idea-plugin__id) tag (or [`<name>`](plugin_configuration_file.md#idea-plugin__name) if not specified).
 Bundled plugins are located in <path>$PRODUCT_ROOT$/plugins/$PLUGIN_NAME$/lib/$PLUGIN_NAME$.jar</path>.
@@ -157,7 +162,7 @@ Continuing with the example from [Project Setup](#2-project-setup) above, the de
 A plugin can also specify an optional plugin dependency.
 In this case, the plugin will load even if the plugin it depends on is not installed or enabled, but part of the plugin's functionality will not be available.
 
-Declare additional `optional="true"` and `config-file` attribute pointing to [optional plugin descriptor file](plugin_configuration_file.md#additional-plugin-configuration-files):
+Declare additional `optional="true"` and required `config-file` attribute pointing to the [optional plugin descriptor file](plugin_configuration_file.md#additional-plugin-configuration-files):
 
 ```xml
 <depends

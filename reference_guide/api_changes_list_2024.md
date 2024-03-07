@@ -170,21 +170,21 @@ Package `com.jetbrains.jinja2` renamed to `com.intellij.jinja`
 `org.jetbrains.kotlin.fir.expressions.FirConstExpression` class renamed `org.jetbrains.kotlin.fir.expressions.FirLiteralExpression`
 
 `org.jetbrains.kotlin.ir.declarations.IrDeclarationOrigin.DELEGATE` class removed
-: `org.jetbrains.kotlin.ir.declarations.IrDeclarationOrigin.Companion.DELEGATE` should be used instead
+: `org.jetbrains.kotlin.ir.declarations.IrDeclarationOrigin.Companion.DELEGATE` should be used instead.
 
 `org.jetbrains.kotlin.ir.declarations.IrDeclarationOrigin.DELEGATED_MEMBER` class removed
-: `org.jetbrains.kotlin.ir.declarations.IrDeclarationOrigin.Companion.DELEGATED_MEMBER` should be used instead
+: `org.jetbrains.kotlin.ir.declarations.IrDeclarationOrigin.Companion.DELEGATED_MEMBER` should be used instead.
 
 `org.jetbrains.kotlin.config.JvmDefaultMode.DEFAULT` field removed
-: Use `org.jetbrains.kotlin.config.JvmDefaultMode.DISABLE`
+: Use `org.jetbrains.kotlin.config.JvmDefaultMode.DISABLE`.
 
 Method `org.jetbrains.kotlin.backend.common.lower.LocalDeclarationsLoweringKt.getParentsWithSelf(IrDeclaration)` renamed to `org.jetbrains.kotlin.ir.util.IrUtilsKt.getParentsWithSelf`
 
 `org.jetbrains.kotlin.daemon.common.CompileService.Companion.getNO_SESSION()` method removed
-: Use `org.jetbrains.kotlin.daemon.common.CompileService.NO_SESSION` const instead
+: Use `org.jetbrains.kotlin.daemon.common.CompileService.NO_SESSION` const instead.
 
 Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
-: Create a new `IrDeclarationOrigin` by delegation. See https://github.com/JetBrains/kotlin/blob/a3b55cf758f3a7ceb596f65507c2f61ada5266af/compiler/ir/ir.tree/src/org/jetbrains/kotlin/ir/declarations/IrDeclarationOrigin.kt#L20
+: Create a new `IrDeclarationOrigin` by delegation. See https://github.com/JetBrains/kotlin/blob/a3b55cf758f3a7ceb596f65507c2f61ada5266af/compiler/ir/ir.tree/src/org/jetbrains/kotlin/ir/declarations/IrDeclarationOrigin.kt#L20.
 
 ### Maven Plugin 2024.1
 
@@ -211,10 +211,13 @@ Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
 : Only recompilation is needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
 
 ### HTTP Client Plugin 2024.1
-`com.intellij.httpClient.actions.generation.RequestUrlContextInfo(requestContextData: RequestContextData)` constructor parameter removed.
+`com.intellij.httpClient.actions.generation.RequestUrlContextInfo(requestContextData: RequestContextData)` constructor parameter removed
 : Use `com.intellij.httpClient.actions.generation.RequestBody` and `com.intellij.httpClient.actions.generation.HttpRequestUrlPathInfo.Companion#create` to describe a request body that will be coomputed lazily during the corresponding request generation.
 
 ### Markdown Plugin 2024.1
+
+`org.intellij.plugins.markdown.ui.split` package removed
+
 `org.intellij.plugins.markdown.ui.split.SplitTextEditorProvider` class removed
-: `com.intellij.openapi.fileEditor.TextEditorWithPreviewProvider` should be used instead
+: Use `com.intellij.openapi.fileEditor.TextEditorWithPreviewProvider` instead.
 

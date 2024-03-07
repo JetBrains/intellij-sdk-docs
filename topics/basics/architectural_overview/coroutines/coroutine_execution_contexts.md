@@ -25,12 +25,9 @@ The following sections explain the contexts and provide information about proces
 
 Code executed in Kotlin coroutines is executed in a suspending context.
 Since 2024.1, this context is recommended for executing background tasks to maximize CPU utilization.
+Note that executing code in a suspending context is possible only with [Kotlin](using_kotlin.md).
 
-> Note that executing code in a suspending context is possible only with [Kotlin](using_kotlin.md).
->
-{style="warning"}
-
-In a suspending context, it is forbidden to call blocking functions directly.
+In a suspending context, it is not allowed to call blocking functions directly, as methods like `ProgressManager.checkCanceled()` or `ModalityState.defaultModalityState()` won't take any effect.
 See how to [switch to a blocking context](#suspending-context-switching-to-other-contexts).
 
 > Inspection <control>Plugin DevKit | Code | Forbidden in suspend context method usage</control> reports calling blocking code from suspending context.
@@ -53,12 +50,12 @@ See how to [switch to a blocking context](#suspending-context-switching-to-other
 ### Switching to Other Contexts
 {#suspending-context-switching-to-other-contexts}
 
-- to blocking context: [`blockingContext()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) - enables `ProgressManager.checkCanceled()`, forwards modality state, etc.
+- to blocking context: [`blockingContext()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) - enables `ProgressManager.checkCanceled()`, forwards modality state, etc. This function has an opposite behavior to [`runBlockingCancellable()`](#blocking-context-switching-to-other-contexts).
 - to progress indicator: unavailable ([`coroutineToIndicator()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) is an internal API and exists only to aid platform migration)
 
 ## Blocking Context
 
-Executing tasks in a blocking context means executing them in a background thread, not under a coroutine or [a progress indicator](#progress-indicator).
+Executing tasks in a blocking context means executing them on a thread without access to the coroutine context (basically, in non-suspending functions) and not under [a progress indicator](#progress-indicator).
 Usually, plugins should not execute a new code in the blocking context.
 Prefer the [suspending context](#suspending-context) or fall back to [progress indicator](#progress-indicator) if a plugin cannot use Kotlin.
 
@@ -69,15 +66,10 @@ Prefer the [suspending context](#suspending-context) or fall back to [progress i
 >
 > Inspection <control>Plugin DevKit | Code | Calling method should be annotated with @RequiresBlockingContext</control> reports missing annotations.
 
-[//]: # (TODO: highlight the downsides and when to use it 'properly')
-
 ### Cancellation Check
 {#blocking-context-cancellation-check}
 
-- [`ProgressManager.checkCanceled()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java) - delegates to [`Cancellation.checkCancelled()`](%gh-ic%/platform/util/src/com/intellij/openapi/progress/Cancellation.java),
-  which throws a special [`ProcessCanceledException`](%gh-ic%/platform/util/base/src/com/intellij/openapi/progress/ProcessCanceledException.java)
-  with wrapped [`CancellationException`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/CancellationException.html).
-  Note that `Cancellation.checkCancelled()` is internal API and must not be used by plugins directly.
+- [`ProgressManager.checkCanceled()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java)
 
 ### Progress Reporting
 {#blocking-context-progress-reporting}
@@ -87,7 +79,7 @@ Progress reporting is not available in the blocking context.
 ### Switching to Other Contexts
 {#blocking-context-switching-to-other-contexts}
 
-- to coroutine: [`runBlockingCancellable()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt)
+- to coroutine: [`runBlockingCancellable()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt). This function has an opposite behavior to [`blockingContext()`](#suspending-context-switching-to-other-contexts).
 - to progress indicator: unavailable ([`blockingContextToIndicator()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) is internal API and exists only to aid platform migration)
 
 ## Progress Indicator
@@ -99,12 +91,12 @@ is executed in a progress indicator context.
 See the [running background processes](general_threading_rules.md#background-processes-and-processcanceledexception) section for details.
 
 > Executing code under progress indicator is obsolete since 2024.1.
-> New code should use Kotlin coroutines.
+> It is advised to use Kotlin coroutines in new code.
 >
 > Please note that obsolete status does not mean deprecation.
 > Executing code using the Progress API is still allowed, but coroutines are recommended as a more performant solution.
 >
-{style="warning" title="Obsolete approach since 2024.1"}
+{style="tip" title="Obsolete approach since 2024.1"}
 
 ### Cancellation Check
 {#progress-indicator-cancellation-check}

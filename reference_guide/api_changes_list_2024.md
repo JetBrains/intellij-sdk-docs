@@ -74,7 +74,7 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 
 ### IntelliJ Platform 2024.1
-` com.jetbrains.python.module.PythonModuleBuilder` class moved to package `com.intellij.python.community.plugin.java.facet`.
+` com.jetbrains.python.module.PythonModuleBuilder` class moved to package `com.intellij.python.community.plugin.java.facet`
 : Update code usages.
 
 `com.intellij.refactoring.RefactoringHelper.prepareOperation(UsageInfo [] usages, List<PsiElement> elements)` abstract method added

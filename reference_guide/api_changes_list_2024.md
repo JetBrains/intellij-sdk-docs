@@ -71,7 +71,8 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 ## 2024.1
 
 ### IntelliJ Platform 2024.2
-
+`com.jetbrains.django.testRunner` package removed
+: Private package is no longer available as an API.
 
 ### IntelliJ Platform 2024.1
 `com.intellij.refactoring.RefactoringHelper.prepareOperation(UsageInfo [] usages, List<PsiElement> elements)` abstract method added

@@ -68,11 +68,11 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 <include from="tools_gradle_intellij_plugin.md" element-id="gradle_plugin_223_problem"/>
 
-## 2024.1
+## 2024.2
 
 ### IntelliJ Platform 2024.2
-`com.jetbrains.django.testRunner` package removed
-: Private package is no longer available as an API.
+
+## 2024.1
 
 ### IntelliJ Platform 2024.1
 
@@ -239,3 +239,6 @@ Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
 
 `com.jetbrains.django.util.DjangoUtil` class removed
 : Private class is no longer available as an API.
+
+`com.jetbrains.django.testRunner` package removed
+: Private package is no longer available as an API.

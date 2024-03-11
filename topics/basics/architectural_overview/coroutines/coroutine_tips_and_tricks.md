@@ -6,7 +6,7 @@
 
 <include from="coroutines_snippets.md" element-id="learnCoroutines"/>
 
-This section presents techniques to use coroutines efficiently and common pitfalls.
+This section presents techniques to use coroutines efficiently and avoid common pitfalls.
 
 ## Switching Between the Background and UI Threads
 
@@ -139,7 +139,7 @@ suspend fun doSomething() {
 
 ## Changing Modality State
 
-Avoid changing modality state in the middle of a running coroutine:
+Avoid [changing modality state](general_threading_rules.md#modality-and-invokelater) in the middle of a running coroutine:
 
 ```kotlin
 cs.launch {

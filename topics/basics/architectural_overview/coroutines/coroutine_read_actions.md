@@ -67,5 +67,5 @@ The block needs to know whether the current attempt was canceled.
 `*ReadAction` functions create a child `Job` for each attempt, and this job becomes canceled when a write action arrives.
 `*ReadAction` restarts the block if it was canceled by a write action, or throws `CancellationException` if the calling coroutine was canceled, causing the cancellation of the child `Job`.
 
-To check whether the current action was canceled, clients must call `ProgressManager.checkCanceled()`, which was adjusted to work in coroutines.
-Clients must not throw `ProcessCanceledException` manually.
+To check whether the current action was canceled, clients must call [`ProgressManager.checkCanceled()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java), which was adjusted to work in coroutines.
+Clients must not throw [`ProcessCanceledException`](%gh-ic%/platform/util/base/src/com/intellij/openapi/progress/ProcessCanceledException.java) manually.

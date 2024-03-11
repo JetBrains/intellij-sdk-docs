@@ -71,11 +71,22 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 ## 2024.1
 
 ### IntelliJ Platform 2024.2
-
+`com.jetbrains.django.testRunner` package removed
+: Private package is no longer available as an API.
 
 ### IntelliJ Platform 2024.1
+
 ` com.jetbrains.python.module.PythonModuleBuilder` class moved to package `com.intellij.python.community.plugin.java.facet`
 : Update code usages.
+
+`com.jetbrains.python.facet` package removed
+: Private package is no longer available as an API.
+
+`com.jetbrains.python.debugger.remote` package removed
+: Private package is no longer available as an API.
+
+`com.jetbrains.django.util.DjangoUtil` class removed
+: Private class is no longer available as an API.
 
 `com.intellij.refactoring.RefactoringHelper.prepareOperation(UsageInfo [] usages, List<PsiElement> elements)` abstract method added
 : Use instead of `com.intellij.refactoring.RefactoringHelper.prepareOperation(UsageInfo [] usages)` and `com.intellij.refactoring.RefactoringHelper.prepareOperation(UsageInfo [] usages, PsiElement primaryElement)`.

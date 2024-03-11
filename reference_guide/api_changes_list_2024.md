@@ -188,6 +188,9 @@ Method `org.jetbrains.kotlin.backend.common.lower.LocalDeclarationsLoweringKt.ge
 Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
 : Create a new `IrDeclarationOrigin` by delegation. See https://github.com/JetBrains/kotlin/blob/a3b55cf758f3a7ceb596f65507c2f61ada5266af/compiler/ir/ir.tree/src/org/jetbrains/kotlin/ir/declarations/IrDeclarationOrigin.kt#L20.
 
+`org.jetbrains.kotlin.idea.refactoring.introduce.extractFunction.ExtractKotlinFunctionHandlerKt` class removed
+: Use `com.intellij.lang.refactoring.RefactoringSupportProvider.getExtractMethodHandler` instead to invoke Kotlin extract function refactoring
+
 ### Maven Plugin 2024.1
 
 `org.jetbrains.idea.maven.indices.MavenIndex.getUpdateTimestamp()` method removed

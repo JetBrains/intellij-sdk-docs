@@ -81,6 +81,6 @@ The following pages list the breaking changes in IDE and plugin releases with re
 * [Changes in 2020.*](api_changes_list_2020.md)
 * [Changes in 2019.*](api_changes_list_2019.md)
 
-## Library Updates
+## Bundled Library Updates
 
 Information about bundled Third-Party Software/Libraries and their respective versions is available [here](https://www.jetbrains.com/legal/third-party-software/).

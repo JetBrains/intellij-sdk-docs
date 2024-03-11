@@ -76,21 +76,6 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ### IntelliJ Platform 2024.1
 
-`com.jetbrains.extensions.python.FileChooserDescriptorExtKt` class moved to package `com.jetbrains.python.extensions`
-: Update code usages.
-
-` com.jetbrains.python.module.PythonModuleBuilder` class moved to package `com.intellij.python.community.plugin.java.facet`
-: Update code usages.
-
-`com.jetbrains.python.facet` package removed
-: Private package is no longer available as an API.
-
-`com.jetbrains.python.debugger.remote` package removed
-: Private package is no longer available as an API.
-
-`com.jetbrains.django.util.DjangoUtil` class removed
-: Private class is no longer available as an API.
-
 `com.intellij.refactoring.RefactoringHelper.prepareOperation(UsageInfo [] usages, List<PsiElement> elements)` abstract method added
 : Use instead of `com.intellij.refactoring.RefactoringHelper.prepareOperation(UsageInfo [] usages)` and `com.intellij.refactoring.RefactoringHelper.prepareOperation(UsageInfo [] usages, PsiElement primaryElement)`.
 
@@ -238,3 +223,19 @@ Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
 `org.intellij.plugins.markdown.ui.split.SplitTextEditorProvider` class removed
 : Use `com.intellij.openapi.fileEditor.TextEditorWithPreviewProvider` instead.
 
+### Python Plugin 2024.1
+
+`com.jetbrains.extensions.python.FileChooserDescriptorExtKt` class moved to package `com.jetbrains.python.extensions`
+: Update code usages.
+
+` com.jetbrains.python.module.PythonModuleBuilder` class moved to package `com.intellij.python.community.plugin.java.facet`
+: Update code usages.
+
+`com.jetbrains.python.facet` package removed
+: Private package is no longer available as an API.
+
+`com.jetbrains.python.debugger.remote` package removed
+: Private package is no longer available as an API.
+
+`com.jetbrains.django.util.DjangoUtil` class removed
+: Private class is no longer available as an API.

@@ -228,7 +228,7 @@ Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
 `com.jetbrains.extensions.python.FileChooserDescriptorExtKt` class moved to package `com.jetbrains.python.extensions`
 : Update code usages.
 
-` com.jetbrains.python.module.PythonModuleBuilder` class moved to package `com.intellij.python.community.plugin.java.facet`
+`com.jetbrains.python.module.PythonModuleBuilder` class moved to package `com.intellij.python.community.plugin.java.facet`
 : Update code usages.
 
 `com.jetbrains.python.facet` package removed

@@ -76,9 +76,11 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ### IntelliJ Platform 2024.1
 
+` com.jetbrains.python.module.PythonModuleBuilder` class moved to package `com.intellij.python.community.plugin.java.facet`
+: Update code usages.
+
 `com.jetbrains.python.facet` package removed
 : Private package is no longer available as an API.
-
 
 `com.jetbrains.python.debugger.remote` package removed
 : Private package is no longer available as an API.

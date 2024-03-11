@@ -24,10 +24,12 @@ Running suspending read actions from coroutines is executed with the following f
 
 See their KDocs for the details.
 
-It is important to note that in the coroutines context, default functions (without the `Blocking` suffix) behavior is non-blocking.
-In contrast, in the non-coroutine context, [`Application.runReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java) and similar methods (without any prefix/suffix) perform blocking read actions whereas non-blocking read actions are invoked via the [`NonBlockingReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/NonBlockingReadAction.java) API.
-
-Be careful when migrating the code running read actions to coroutines.
+> It is important to note that in the coroutines context, default functions (without the `Blocking` suffix) behavior is non-blocking.
+> In contrast, in the non-coroutine context, [`Application.runReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java) and similar methods (without any prefix/suffix) perform blocking read actions whereas non-blocking read actions are invoked via the [`NonBlockingReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/NonBlockingReadAction.java) API.
+>
+> Be careful when migrating the code running read actions to coroutines.
+>
+{style="warning" title="Naming Convention"}
 
 ### Suspending Non-Blocking Read Action vs. `NonBlockingReadAction`
 

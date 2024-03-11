@@ -31,13 +31,14 @@ Be careful when migrating the code running read actions to coroutines.
 
 ### Suspending Non-Blocking Read Action vs. `NonBlockingReadAction`
 
-The differences between suspending non-blocking read action (SNBRA) API and `NonBlockingReadAction` (NBRA) API are the following:
-- SNBRA doesn't need `submit(Executor backgroundThreadExecutor)` because this is a responsibility of the coroutine dispatcher
-- SNBRA doesn't need `executeSynchronously()` because effectively they are executed in the current coroutine dispatcher already
-- SNBRA doesn't need `expireWhen(BooleanSupplier expireCondition)`/`expireWith(Disposable parentDisposable)`/`wrapProgress(ProgressIndicator progressIndicator)` because they are canceled when the calling coroutine is canceled
-- SNBRA doesn't need `finishOnUiThread()` because this is handled by switching to the [EDT dispatcher](coroutine_dispatchers.md#edt-dispatcher).
+Suspending non-blocking read action (SNBRA) API is simpler than `NonBlockingReadAction` (NBRA).
+SNBRA doesn't need the following API methods:
+- `submit(Executor backgroundThreadExecutor)` because this is a responsibility of the coroutine dispatcher
+- `executeSynchronously()` because effectively they are executed in the current coroutine dispatcher already
+- `expireWhen(BooleanSupplier expireCondition)`/`expireWith(Disposable parentDisposable)`/`wrapProgress(ProgressIndicator progressIndicator)` because they are canceled when the calling coroutine is canceled
+- `finishOnUiThread()` because this is handled by switching to the [EDT dispatcher](coroutine_dispatchers.md#edt-dispatcher).
   Note that the UI data must be pure (e.g., strings/icons/element pointers), which inherently cannot be invalidated during the transfer from a background thread to the UI thread.
-- SNBRA doesn't need `coalesceBy(Object ... equality)` because this should be handled by [`Flow.collectLatest()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/collect-latest.html) and/or [`Flow.distinctUntilChanged()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/distinct-until-changed.html).
+- `coalesceBy(Object ... equality)` because this should be handled by [`Flow.collectLatest()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/collect-latest.html) and/or [`Flow.distinctUntilChanged()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/distinct-until-changed.html).
   Usually, NBRAs are run as a reaction to user actions, and there might be multiple NBRAs running, even if their results are unused.
   Instead of cancelling the read action, in the coroutine world the coroutines are canceled:
   ```kotlin

@@ -25,7 +25,7 @@ Running suspending read actions from coroutines is executed with the following f
 See their KDocs for the details.
 
 > It is important to note that in the coroutines context, default functions (without the `Blocking` suffix) behavior is non-blocking.
-> In contrast, in the non-coroutine context, [`Application.runReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java) and similar methods (without any prefix/suffix) perform blocking read actions whereas non-blocking read actions are invoked via the [`NonBlockingReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/NonBlockingReadAction.java) API.
+> In contrast, in the non-coroutine context, [`Application.runReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java) and similar methods (without any prefix/suffix) perform blocking read actions whereas non-blocking read actions are invoked via the [`NonBlockingReadAction` API](general_threading_rules.md#read-action-cancellability).
 >
 > Be careful when migrating the code running read actions to coroutines.
 >
@@ -33,7 +33,7 @@ See their KDocs for the details.
 
 ### Suspending Non-Blocking Read Action vs. `NonBlockingReadAction`
 
-Suspending non-blocking read action (SNBRA) API is simpler than `NonBlockingReadAction` (NBRA).
+Suspending non-blocking read action (SNBRA) API is simpler than [`NonBlockingReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/NonBlockingReadAction.java) (NBRA).
 SNBRA doesn't need the following API methods:
 - `submit(Executor backgroundThreadExecutor)` because this is a responsibility of the coroutine dispatcher
 - `executeSynchronously()` because effectively they are executed in the current coroutine dispatcher already

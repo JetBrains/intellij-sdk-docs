@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Plugin User Experience (UX)
 
@@ -55,6 +55,8 @@ Always try to follow the performance tips described on the topic pages, e.g.:
 * [](psi_performance.md)
 * [](general_threading_rules.md#avoiding-ui-freezes)
 * [](indexing_and_psi_stubs.md#improving-indexing-performance)
+
+Making as much functionality as possible working during [](indexing_and_psi_stubs.md#dumb-mode) can also improve perceived performance.
 
 ## Distribution Size
 

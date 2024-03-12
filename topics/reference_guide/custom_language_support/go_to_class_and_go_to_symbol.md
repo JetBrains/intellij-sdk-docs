@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Go to Class and Go to Symbol
 
@@ -18,7 +18,7 @@ Each `ChooseByNameContributorEx` implementation must provide the following metho
 * `processNames(@NotNull Processor<? super String> processor, @NotNull GlobalSearchScope scope, @Nullable IdFilter filter)`
 
   Feeds the processor with a complete list of names available in a specified scope, which the IDE will then filter according to the text typed by the user in the dialog.
-  Using [File-based or Stub indices](indexing_and_psi_stubs.md) to obtain matching candidates is highly recommended to improve performance.
+  Using [](indexing_and_psi_stubs.md) to obtain matching candidates is highly recommended to improve performance.
 * `processElementsWithName(String name, Processor<? super NavigationItem> processor, FindSymbolParameters parameters)`
 
   Feeds the processor with a list of [`NavigationItem`](%gh-ic%/platform/core-api/src/com/intellij/navigation/NavigationItem.java) instances (typically [`PsiElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java)) matching the given name and parameters.

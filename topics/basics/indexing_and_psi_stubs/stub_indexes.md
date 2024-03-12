@@ -1,6 +1,6 @@
-# Stub Indexes
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# Stub Indexes
 
 <link-summary>Creating stub indexes containing PSI tree fragments, which allow searching for PSI elements without parsing files.</link-summary>
 
@@ -24,7 +24,7 @@ Usually there is no need to have stubs for things like statements or local varia
 
 ### Implementation
 
-> When using [Grammar-Kit](https://github.com/JetBrains/Grammar-Kit) to generate the language PSI, see the [Stub indices support](https://github.com/JetBrains/Grammar-Kit/blob/master/HOWTO.md#35-stub-indices-support) section for instructions on integrating the grammar with stubs.
+> When using [Grammar-Kit](https://github.com/JetBrains/Grammar-Kit) to generate the language PSI, see the [Stub indexes support](https://github.com/JetBrains/Grammar-Kit/blob/master/HOWTO.md#35-stub-indices-support) section for instructions on integrating the grammar with stubs.
 >
 {style="note"}
 

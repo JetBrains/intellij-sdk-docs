@@ -42,6 +42,8 @@ Such Extension Points are marked with _DumbAware_ tag in [](extension_point_list
 
 For [](basic_action_system.md) available during Dumb Mode, extend [`DumbAwareAction`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/project/DumbAwareAction.java).
 
+Other API might indicate its Dumb Mode compatibility by extending [`PossiblyDumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/PossiblyDumbAware.java).
+
 ## Gists
 
 Sometimes, the following conditions hold:

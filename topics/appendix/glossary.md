@@ -80,7 +80,7 @@ JetBrains Runtime _(JBR)_
 
 ## N
 
-Non-Blocking Read Action (NBRA)
+Non-Blocking Read Action _(NBRA)_
 : A &rarr;&nbsp;_Read Action_ that is canceled by &rarr;&nbsp;_Write Action_. See also [](general_threading_rules.md#read-action-cancellability).
 
 ## P

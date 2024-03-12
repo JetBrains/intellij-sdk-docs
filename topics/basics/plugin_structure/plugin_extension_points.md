@@ -58,7 +58,7 @@ Must be one of `IDEA_APPLICATION` for Application (default), `IDEA_PROJECT` for 
 
 The plugin that contributes to the extension point will read those properties from the <path>plugin.xml</path> file.
 
-If extension implementations are filtered according to [](indexing_and_psi_stubs.md#dumb-mode), the base class should be
+If extension implementations are filtered according to [dumb mode](indexing_and_psi_stubs.md#dumb-mode), the base class should be
 marked with [`PossiblyDumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/PossiblyDumbAware.java) to highlight this.
 
 Base classes for extensions requiring a key:

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Syntax and Error Highlighting
 
@@ -157,7 +157,7 @@ It uses the same [`AnnotationHolder`](%gh-ic%/platform/analysis-api/src/com/inte
 
 To skip running specific `ExternalAnnotator` for given file, register [`ExternalAnnotatorsFilter`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/ExternalAnnotatorsFilter.java) extension in `com.intellij.daemon.externalAnnotatorsFilter` extension point.
 
-To enable running `ExternalAnnotator` during indexing in [](indexing_and_psi_stubs.md#dumb-mode), implement [`DumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbAware.java) additionally (2023.3).
+To enable running `ExternalAnnotator` during indexing in [dumb mode](indexing_and_psi_stubs.md#dumb-mode), implement [`DumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbAware.java) additionally (2023.3).
 
 ## Controlling Highlighting
 

@@ -26,7 +26,7 @@ The [](grouping_action.md) tutorial demonstrates three types of groups that can 
 ## Action Implementation
 
 An action is a class derived from the abstract class [`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java).
-For actions available during [](indexing_and_psi_stubs.md#dumb-mode), extend [`DumbAwareAction`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/project/DumbAwareAction.java).
+For actions available during [dumb mode](indexing_and_psi_stubs.md#dumb-mode), extend [`DumbAwareAction`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/project/DumbAwareAction.java).
 See also [](#useful-action-base-classes) below.
 
 The IntelliJ Platform calls methods of actions when a user interacts with a menu item or toolbar button.

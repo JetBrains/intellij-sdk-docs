@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # File-Based Indexes
 
@@ -64,7 +64,7 @@ Please see also [Improving indexing performance](indexing_and_psi_stubs.md#impro
 
 Access to file-based indexes is performed through the [`FileBasedIndex`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndex.java) class.
 
-> Please note index access is restricted during [](indexing_and_psi_stubs.md#dumb-mode).
+> Please note index access is restricted during [dumb mode](indexing_and_psi_stubs.md#dumb-mode).
 >
 {style="note"}
 

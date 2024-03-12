@@ -93,7 +93,7 @@ should be implemented when whitespace matters in a language.
 
 Note that parameter info works during indexing (using incomplete data) when the implementations also extend
 [`DumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbAware.java).
-It is recommended to adapt tests for [](indexing_and_psi_stubs.md#dumb-mode) since the results might be surprising,
+It is recommended to adapt tests for [dumb mode](indexing_and_psi_stubs.md#dumb-mode) since the results might be surprising,
 and more changes to the handler might be required for better results.
 
 Finally, language authors should be aware of the global

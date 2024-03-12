@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Run Configurations
 
@@ -77,7 +77,7 @@ The actual run configurations are created in the `createConfiguration()` method 
 Configuration factory presentation is inherited from the containing configuration type.
 If customization is needed, override the presentation methods in the factory class.
 
-By default, configurations created by a given factory are not editable in [](indexing_and_psi_stubs.md#dumb-mode).
+By default, configurations created by a given factory are not editable in [dumb mode](indexing_and_psi_stubs.md#dumb-mode).
 To enable editing them in Dumb Mode, return `true` from `isEditableInDumbMode()`.
 
 ### RunConfiguration

@@ -24,7 +24,7 @@ The [`SimpleFoldingBuilder`](%gh-sdk-samples%/simple_language_plugin/src/main/ja
 Start by subclassing [`FoldingBuilderEx`](%gh-ic%/platform/core-api/src/com/intellij/lang/folding/FoldingBuilderEx.java)
 
 Note that `SimpleFoldingBuilder` also implements [`DumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbAware.java),
-which means the class is allowed to run in [](indexing_and_psi_stubs.md#dumb-mode), when indexes are in background update.
+which means the class is allowed to run in [dumb mode](indexing_and_psi_stubs.md#dumb-mode), when indexes are in background update.
 
 > A folding builder must implement [`DumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbAware.java) to function in this tutorial and pass tests.
 >

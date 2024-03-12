@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # PSI Performance
 
@@ -47,7 +47,7 @@ If the information you cache depends only on a subtree of the current PSI elemen
 ### Using `ProjectRootManager` as Dependency
 {id="projectRootManagerDependency"}
 
-Since 2024.1, the platform no longer increments root changes modification tracker on finish of [](indexing_and_psi_stubs.md#dumb-mode).
+Since 2024.1, the platform no longer increments root changes modification tracker on finish of [dumb mode](indexing_and_psi_stubs.md#dumb-mode).
 If cached values use [`ProjectRootManager`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java) as dependency
 (without [`PsiModificationTracker`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/PsiModificationTracker.java))
 and at the same time depend on [indexes](indexing_and_psi_stubs.md), a dependency on

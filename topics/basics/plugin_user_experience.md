@@ -29,7 +29,7 @@ Plugins should be just easy to use.
 Ideally, all the features should work out of the box after the installation, without any special user interactions, like manually enabling crucial plugin features.
 Default settings should reflect the typical plugin usage in a standard project.
 
-All the settings and actions should be easy to find and be placed in the proper [](settings.md) or [Action Group](grouping_action.md), e.g.:
+All the settings and actions should be easy to find and be placed in the proper [settings](settings.md) or [action group](grouping_action.md), e.g.:
 
 * Framework plugin settings should be placed under the <ui-path>Settings | Languages & Frameworks</ui-path>
 * Action marking a directory as a plugin-specific root type should be added to <ui-path>Mark Directory as...</ui-path> group
@@ -44,8 +44,8 @@ To improve the overall stability and minimize the risk of introducing regression
 It is a great safety net, which in the long term, will speed up your development and help you release new versions without the fear of breaking existing plugin features.
 
 It's nearly impossible to develop software without bugs, so it is recommended to set up an issue tracker where users can report errors.
-In addition, it's worth implementing [](ide_infrastructure.md#error-reporting) that allows sending reports directly from within the IDE, with all required information attached.
-To reproduce and understand problems in production, use [](ide_infrastructure.md#logging) consistently.
+In addition, it's worth implementing [error reporting](ide_infrastructure.md#error-reporting) that allows sending reports directly from within the IDE, with all required information attached.
+To reproduce and understand problems in production, use [logging](ide_infrastructure.md#logging) consistently.
 
 ## Performance
 
@@ -53,7 +53,7 @@ Even if a plugin works correctly and looks pleasing, poor performance will impac
 Slow highlighting, code completion, code generation, and other features may break the user's workflow and cause frustration leading to plugin uninstallation.
 Always try to follow the performance tips described on the relevant topic pages, e.g., [](psi_performance.md), [](general_threading_rules.md#avoiding-ui-freezes), [](indexing_and_psi_stubs.md#improving-indexing-performance).
 
-Making as much functionality as possible working during [](indexing_and_psi_stubs.md#dumb-mode) can also improve perceived performance.
+Making as much functionality as possible working during [dumb mode](indexing_and_psi_stubs.md#dumb-mode) can also improve perceived performance.
 
 ## Distribution Size
 
@@ -61,7 +61,7 @@ In addition to the plugin execution performance, it is recommended to optimize t
 Users with a poor internet connection may cancel the download when they realize that it will take too long to wait for a plugin they are not sure will meet their expectations.
 Consider the following techniques for optimizing the plugin distribution size:
 
-* Decrease the number of dependencies. Check if the target platform includes utilities like those mentioned in [](ui_faq.md) or [libraries](api_changes_list.md#bundled-library-updates) you need and reuse them.
+* Decrease the number of dependencies. Check if the target platform includes utilities (like those mentioned in [](ui_faq.md)) or [libraries](api_changes_list.md#bundled-library-updates) you need and reuse them.
 * Optimize assets like icons, images, videos, etc.
 * If large resources (e.g., SDKs) are needed only in specific setups, consider downloading them by the plugin on-demand instead of bundling them in the plugin distribution.
 
@@ -72,7 +72,7 @@ Consider the following techniques for optimizing the plugin distribution size:
 When designing and implementing features, review existing functionalities of the IDE and plugins and design your features in a similar and consistent way.
 A consistent approach will make it easier for users to work with your plugin, increasing overall satisfaction.
 
-If you implement [](custom_language_support.md), review and consider implementing extension points from the [](additional_minor_features.md) list so that your plugin provides an experience consistent with other plugins.
+If you implement [custom language support](custom_language_support.md), review and consider implementing extension points from the [](additional_minor_features.md) list so that your plugin provides an experience consistent with other plugins.
 
 ## Consistent and Good-Looking UI
 

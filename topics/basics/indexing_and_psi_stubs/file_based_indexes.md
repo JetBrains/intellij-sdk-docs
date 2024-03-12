@@ -64,7 +64,7 @@ Please see also [Improving indexing performance](indexing_and_psi_stubs.md#impro
 
 Access to file-based indexes is performed through the [`FileBasedIndex`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndex.java) class.
 
-> Please note index access is restricted during [Dumb Mode](indexing_and_psi_stubs.md#dumb-mode).
+> Please note index access is restricted during [](indexing_and_psi_stubs.md#dumb-mode).
 >
 {style="note"}
 

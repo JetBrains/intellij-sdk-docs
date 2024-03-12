@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Indexing and PSI Stubs
 
@@ -27,13 +27,20 @@ Therefore, custom language plugin developers typically use stub indexes in their
 ## Dumb Mode
 
 Indexing is a potentially lengthy process.
-It's performed in the background, and during this time, IDE features are restricted to the ones that don't require index: basic text editing, version control, etc.
+It's performed in the background, and during this time, all IDE features are restricted to the ones that don't require indexes: basic text editing, version control, etc.
 This restriction is managed by [`DumbService`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbService.kt).
-Violations are reported via [`IndexNotReadyException`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/IndexNotReadyException.java) - see its Javadoc for the information on how to adapt callers.
+Violations are reported via [`IndexNotReadyException`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/IndexNotReadyException.java), see its documentation for information on how to adapt callers.
 
 `DumbService` provides API to query whether the IDE is currently in "dumb" mode (where index access is not allowed) or "smart" mode (with all index built and ready to use).
 It also provides ways of delaying code execution until indexes are ready.
-See its Javadoc for more details.
+
+### `DumbAware` API
+
+Implementations of certain [](plugin_extension_points.md) can be marked as available during Dumb Mode by implementing
+[`DumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbAware.java).
+Such Extension Points are marked with _DumbAware_ tag in [](extension_point_list.md).
+
+For [](basic_action_system.md) available during Dumb Mode, extend [`DumbAwareAction`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/project/DumbAwareAction.java).
 
 ## Gists
 

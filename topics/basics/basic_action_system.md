@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Actions
 
@@ -33,7 +33,7 @@ The IntelliJ Platform calls methods of actions when a user interacts with a menu
 > If the `AnAction` class uses a field to store data that has a shorter lifetime and doesn't clear this data promptly, the data leaks.
 > For example, any `AnAction` data that exists only within the context of a `Project` causes the `Project` to be kept in memory after the user has closed it.
 >
-{style="warning"}
+{style="warning" title="No fields allowed"}
 
 ### Principal Implementation Overrides
 
@@ -74,7 +74,7 @@ Implementors must ensure that changing presentation and availability status hand
 > It must _execute very quickly_; no real work must be performed.
 > For example, checking selection in a tree or a list is considered valid, but working with the file system is not.
 >
-{style="warning"}
+{style="warning" title="Performance"}
 
 > If the new state of an action cannot be determined quickly, then evaluation should be performed in the `AnAction.actionPerformed()` method, and [notify](notifications.md) the user that the action cannot be executed if the context isn't suitable.
 >

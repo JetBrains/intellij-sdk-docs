@@ -21,6 +21,9 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 Status bar widget for LSP servers
 : Language plugins using LSP can now provide their status for [](language_server_protocol.md#status-bar-integration).
 
+Cached Values and Dumb Mode
+: Note change for [](psi_performance.md#projectRootManagerDependency).
+
 ### IntelliJ IDEA 2024.1
 
 Unbundled plugins

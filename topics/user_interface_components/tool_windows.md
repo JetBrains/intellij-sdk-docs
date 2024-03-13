@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Tool Windows
 
@@ -81,7 +81,7 @@ Always use [`ToolWindowManager.invokeLater()`](%gh-ic%/platform/platform-api/src
 ## Contents (Tabs)
 
 Displaying the contents of many tool windows requires access to [indexes](indexing_and_psi_stubs.md).
-Because of that, tool windows are normally disabled while building indexes unless the `ToolWindowFactory` implements [`DumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbAware.java).
+Because of that, tool windows are normally disabled while building indexes unless the `ToolWindowFactory` is marked [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI).
 
 As mentioned previously, tool windows can contain multiple contents (tabs).
 To manage the contents of a tool window, call [`ToolWindow.getContentManager()`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/wm/ToolWindow.java).

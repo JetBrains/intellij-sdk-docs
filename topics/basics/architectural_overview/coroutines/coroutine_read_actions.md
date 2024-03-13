@@ -62,7 +62,7 @@ SNBRA doesn't need the following API methods:
 
 Suspending read actions use coroutines as the underlying framework.
 
-A non-blocking read action (invoked with [mentioned `*ReadAction` functions](#suspending-read-actions-api)) may make several attempts to execute its block.
+A non-blocking read action (invoked with [mentioned `*ReadAction` functions](#suspending-read-actions-api)) may make several attempts to execute its lambda.
 The block needs to know whether the current attempt was canceled.
 `*ReadAction` functions create a child [`Job`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-job/) for each attempt, and this job becomes canceled when a write action arrives.
 `*ReadAction` restarts the block if it was canceled by a write action, or throws `CancellationException` if the calling coroutine was canceled, causing the cancellation of the child `Job`.

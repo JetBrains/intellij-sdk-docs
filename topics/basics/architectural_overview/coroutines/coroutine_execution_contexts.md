@@ -25,7 +25,10 @@ The following sections explain the contexts and provide information about proces
 
 Code executed in Kotlin coroutines is executed in a suspending context.
 Since 2024.1, this context is recommended for executing background tasks to maximize CPU utilization.
-Note that executing code in a suspending context is possible only with [Kotlin](using_kotlin.md).
+
+> Note that executing code in a suspending context is possible only with [Kotlin](using_kotlin.md).
+>
+{style="warning"}
 
 In a suspending context, it is not allowed to call blocking functions directly, as methods like `ProgressManager.checkCanceled()` or `ModalityState.defaultModalityState()` won't take any effect.
 See how to [switch to a blocking context](#suspending-context-switching-to-other-contexts).

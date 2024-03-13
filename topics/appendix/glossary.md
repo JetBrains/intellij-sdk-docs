@@ -134,12 +134,6 @@ Suspending Context
 &rarr;&nbsp;_Blocking Context_
 &rarr;&nbsp;_Coroutine_
 
-Suspending Non-Blocking Read Action _(SNBRA)_
-: A suspending &rarr;&nbsp;_Read Action_ that is canceled by a &rarr;&nbsp;_Write Action_.
-See [](coroutine_read_actions.md#suspending-read-actions-api) for details.
-&rarr;&nbsp;_Suspending Context_
-&rarr;&nbsp;_Coroutine_
-
 Symbol
 : A semantic element in some model, e.g., language or framework model, see [](symbols.md).
 
@@ -164,5 +158,17 @@ Virtual File System _(VFS)_
 Write Action _(WA)_
 : Allows accessing code-related data structures for writing purposes. See also [](general_threading_rules.md).
 &rarr;&nbsp;_Read Action_
+
+Write Allowing Read Action _(WARA)_
+: A coroutine &rarr;&nbsp;_Read Action_ that is canceled by an incoming &rarr;&nbsp;_Write Action_.
+See [](coroutine_read_actions.md#coroutine-read-actions-api) for details.
+&rarr;&nbsp;_Suspending Context_
+&rarr;&nbsp;_Coroutine_
+
+Write Blocking Read Action _(WBRA)_
+: A coroutine &rarr;&nbsp;_Read Action_ that blocks incoming &rarr;&nbsp;_Write Action_.
+See [](coroutine_read_actions.md#coroutine-read-actions-api) for details.
+&rarr;&nbsp;_Suspending Context_
+&rarr;&nbsp;_Coroutine_
 
 <include from="snippets.md" element-id="missingContent"/>

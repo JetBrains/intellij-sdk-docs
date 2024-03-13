@@ -12,6 +12,12 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2024
 
+### March
+{#march-24}
+
+Minor Changes and Additions
+: Add [documentation](plugin_extension_points.md#error-handling) on how to handle errors and deprecations in extensions.
+
 ### February
 {#february-24}
 

@@ -48,9 +48,9 @@ Its fully qualified name required in [Using Extension Points](#using-extension-p
 
 The `beanClass` attribute sets a bean class that specifies one or several properties annotated with the [`@Attribute`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotation.
 Note that bean classes do not follow the JavaBean standard.
-Implement [`PluginAware`](%gh-ic%/platform/extensions/src/com/intellij/openapi/extensions/PluginAware.java) to obtain information about the plugin providing the actual extension.
+Implement [`PluginAware`](%gh-ic%/platform/extensions/src/com/intellij/openapi/extensions/PluginAware.java) to obtain information about the plugin providing the actual extension (see [](#error-handling)).
 
-The `interface` attribute sets an interface the plugin that contributes to the extension point must implement.
+Alternatively, the `interface` attribute sets an interface the plugin that contributes to the extension point must then implement.
 
 The `area` attribute determines the scope in which the extension will be instantiated.
 As extensions should be stateless, it is **not** recommended to use non-default.
@@ -79,7 +79,7 @@ To clarify this, consider the following sample `MyBeanClass` bean class used in 
 <path>myPlugin/src/com/myplugin/MyBeanClass.java</path>
 
 ```java
-public class MyBeanClass extends AbstractExtensionPointBean {
+public final class MyBeanClass extends AbstractExtensionPointBean {
 
   @Attribute("key")
   public String key;
@@ -132,7 +132,8 @@ To refer to all registered extension instances at runtime, declare an [`Extensio
 <path>myPlugin/src/com/myplugin/MyExtensionUsingService.java</path>
 
 ```java
-public class MyExtensionUsingService {
+@Service
+public final class MyExtensionUsingService {
 
   private static final ExtensionPointName<MyBeanClass> EP_NAME =
       ExtensionPointName.create("my.plugin.myExtensionPoint1");
@@ -150,6 +151,18 @@ public class MyExtensionUsingService {
 
 A gutter icon for the `ExtensionPointName` declaration allows navigating to the corresponding [`<extensionPoint>`](plugin_configuration_file.md#idea-plugin__extensionPoints__extensionPoint) declaration in <path>plugin.xml</path>.
 Code insight is available for the extension point name String literal (2022.3).
+
+### Error Handling
+
+When processing extension implementations or registrations, there might be errors, compatibility and configuration issues.
+Use [`PluginException`](%gh-ic%/platform/core-api/src/com/intellij/diagnostic/PluginException.java) to log and correctly attribute the causing plugin for
+[builtin error reporting](ide_infrastructure.md#error-reporting).
+
+To report use of deprecated API, use `PluginException.reportDeprecatedUsage()` methods.
+
+**Examples:**
+- [`CompositeFoldingBuilder.assertSameFile()`](%gh-ic%/platform/core-api/src/com/intellij/lang/folding/CompositeFoldingBuilder.java)
+- [`InspectionProfileEntry.getDisplayName()`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/InspectionProfileEntry.java)
 
 ## Dynamic Extension Points
 

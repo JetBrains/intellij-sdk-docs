@@ -132,6 +132,8 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.intellij.openapi.projectRoots.impl.SdkConfigurationUtil.createSdk(Collection<Sdk>, VirtualFile, SdkType, SdkAdditionalData, String)` method return type changed from `ProjectJdkImpl` to `Sdk`
 : Update code usages.
 
+### UML Plugin 2024.1
+
 `com.intellij.uml.core.actions.ShowDiagramBase#findProviders(AnActionEvent, DiagramProvider, BiFunction)` method removed
 : Use `com.intellij.uml.core.actions.ShowDiagramBase#findProviders(DiagramProvider<?>, BiFunction<? super DiagramProvider<?>,? super DataContext,java.lang.Object>, DataContext)` instead.
 

@@ -116,6 +116,17 @@ Using these scopes could easily lead to project or plugin class leaks.
     Closing the project cancels its scope.
     The application scope remains active, and the project is leaked.
 
+    ```mermaid
+    gantt
+        dateFormat X
+        %% do not remove trailing space in axisFormat
+        axisFormat ‎
+        section Lifetimes
+            Application Scope                      : 0, 10
+            Project Scope                          : 2, 8
+            Project leak : crit, 4, 10
+    ```
+
 2. Plugin leak:
     ```kotlin
     project.coroutineScope.launch {
@@ -124,6 +135,17 @@ Using these scopes could easily lead to project or plugin class leaks.
     ```
     Unloading of the plugin cancels its scope.
     The project scope remains active, and the plugin classes are leaked.
+
+    ```mermaid
+    gantt
+        dateFormat X
+        %% do not remove trailing space in axisFormat
+        axisFormat ‎
+        section Lifetimes
+            Project Scope                : 0, 10
+            Plugin Scope                  : 2, 8
+            MyPluginService leak : crit, 4, 10
+    ```
 
 ### Do Not Use Intersection Scopes
 
@@ -141,12 +163,27 @@ fun Project.getCoroutineScope(pluginClass: Class<*>): CoroutineScope
 Using this scope could lead to a plugin leak:
 
 ```kotlin
-project.getCoroutineScope(AnotherPluginService::class.java).launch {
-  project.getService(MyPluginService::class.java)
+project.getCoroutineScope(PluginBService::class.java).launch {
+  project.getService(PluginAService::class.java)
 }
 ```
 
-Unloading of the plugin cancels its scope.
-The scope of another plugin remains active, and the plugin classes are leaked.
+Unloading of Plugin A cancels its scope.
+The scope of Plugin B remains active, and the Plugin A classes are leaked.
+
+```mermaid
+gantt
+    dateFormat X
+    %% do not remove trailing space in axisFormat
+    axisFormat ‎
+    section Lifetimes
+        Application Scope        : 0, 10
+        Plugin A Scope           : 1, 6
+        Plugin B Scope           : 4, 9
+        Project Scope            : 2, 8
+        Project × Plugin A Scope : 2, 6
+        Project × Plugin B Scope : 4, 8
+        PluginAService leak      : crit, 5, 9
+```
 
 <include from="snippets.md" element-id="missingContent"/>

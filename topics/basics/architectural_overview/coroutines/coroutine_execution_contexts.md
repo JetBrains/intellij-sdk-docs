@@ -30,8 +30,8 @@ Since 2024.1, this context is recommended for executing background tasks to maxi
 >
 {style="warning"}
 
-In a suspending context, it is not allowed to call blocking functions directly, as methods like `ProgressManager.checkCanceled()` or `ModalityState.defaultModalityState()` won't take any effect.
-See how to [switch to a blocking context](#suspending-context-switching-to-other-contexts).
+In a suspending context, methods such as `ProgressManager.checkCanceled()` or `ModalityState.defaultModalityState()` won't have any effect.
+Therefore, if their behavior is required, [switch to a blocking context](#suspending-context-switching-to-other-contexts).
 
 > Inspection <control>Plugin DevKit | Code | Forbidden in suspend context method usage</control> reports calling blocking code from suspending context.
 

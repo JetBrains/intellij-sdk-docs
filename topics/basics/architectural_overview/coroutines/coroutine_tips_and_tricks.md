@@ -254,3 +254,5 @@ where:
     - a modal coroutine awaits another unrelated coroutine, which in turn requires non-modal EDT to complete.
 
     Same problems can be found in regular thread dumps and blocking code, but coroutines suspend instead of blocking a thread, so it’s only possible to observe the last seen frame, which is usually enough.
+
+<include from="snippets.md" element-id="missingContent"/>

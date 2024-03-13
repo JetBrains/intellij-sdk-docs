@@ -117,3 +117,5 @@ See the [running background processes](general_threading_rules.md#background-pro
 
 - to coroutine: [`runBlockingCancellable`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt)
 - to blocking: unavailable
+
+<include from="snippets.md" element-id="missingContent"/>

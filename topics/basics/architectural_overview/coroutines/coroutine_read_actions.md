@@ -69,3 +69,5 @@ The block needs to know whether the current attempt was canceled.
 
 To check whether the current action was canceled, clients must call [`ProgressManager.checkCanceled()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java), which was adjusted to work in coroutines.
 Clients must not throw [`ProcessCanceledException`](%gh-ic%/platform/util/base/src/com/intellij/openapi/progress/ProcessCanceledException.java) manually.
+
+<include from="snippets.md" element-id="missingContent"/>

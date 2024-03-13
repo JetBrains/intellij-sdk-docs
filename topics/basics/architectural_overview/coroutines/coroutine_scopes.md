@@ -148,3 +148,5 @@ project.getCoroutineScope(AnotherPluginService::class.java).launch {
 
 Unloading of the plugin cancels its scope.
 The scope of another plugin remains active, and the plugin classes are leaked.
+
+<include from="snippets.md" element-id="missingContent"/>

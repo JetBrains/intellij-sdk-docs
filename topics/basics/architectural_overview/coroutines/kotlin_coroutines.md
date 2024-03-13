@@ -46,3 +46,5 @@ It will help understand coroutines and become fluent with available APIs:
   - [Deep Dive into Coroutines on JVM](https://www.youtube.com/watch?v=YrrUCSi72E8)
   - [Coroutines in Practice](https://www.youtube.com/watch?v=a3agLJQ6vt8)
   - [Asynchronous Data Streams with Flow](https://www.youtube.com/watch?v=tYcqn48SMT8)
+
+<include from="snippets.md" element-id="missingContent"/>

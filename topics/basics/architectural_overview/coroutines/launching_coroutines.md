@@ -238,3 +238,5 @@ In a standard coroutine-based application, the bridge between the regular blocki
 
 In the IntelliJ Platform, a similar purpose is achieved by the [`runBlockingCancellable`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) function.
 In addition to the same semantics as `runBlocking`, the action gets canceled when the current progress indicator or the current job is canceled.
+
+<include from="snippets.md" element-id="missingContent"/>

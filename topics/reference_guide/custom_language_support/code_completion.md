@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Code Completion
 
@@ -47,6 +47,8 @@ The core scenario of using [`CompletionContributor`](%gh-ic%/platform/analysis-a
 
 Keep in mind that the pattern is checked against the leaf PSI element.
 If you want to match a composite element, use `withParent()` or `withSuperParent()` methods.
+
+If completion items do not depend on indexes (e.g., keywords), it can be marked as [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI).
 
 **Examples**:
 - [`CompletionContributor`](%gh-ij-plugins%/osmorc/src/org/osmorc/manifest/completion/OsgiManifestCompletionContributor.java) for completing keywords in MANIFEST.MF files.

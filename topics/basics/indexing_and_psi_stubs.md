@@ -35,6 +35,7 @@ Violations are reported via [`IndexNotReadyException`](%gh-ic%/platform/core-api
 It also provides ways of delaying code execution until indexes are ready.
 
 ### `DumbAware` API
+{id="DumbAwareAPI"}
 
 Implementations of certain [](plugin_extension_points.md) can be marked as available during Dumb Mode by implementing
 [`DumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbAware.java).

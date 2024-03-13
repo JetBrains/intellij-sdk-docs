@@ -85,7 +85,7 @@ Annotators can analyze not only the syntax, but also the semantics using PSI, an
 The annotator can also provide quick fixes to problems it detects.
 When the file is changed, the annotator is called incrementally to process only changed elements in the PSI tree.
 
-Annotators not requiring information from [indexes](indexing_and_psi_stubs.md) may implement [`DumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbAware.java) to work during indexing (e.g., for additional [syntax highlighting](#syntax)). (2023.1+)
+Annotators not requiring information from [indexes](indexing_and_psi_stubs.md) can be marked [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI) to work during indexing (e.g., for additional [syntax highlighting](#syntax)). (2023.1+)
 
 > See also [Code Inspections](code_inspections_and_intentions.md) which offer a more fine-grained control and some additional features.
 >

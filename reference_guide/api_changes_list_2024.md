@@ -72,6 +72,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ### IntelliJ Platform 2024.2
 
+`org.apache.sanselan.util` package removed
+: `org.apache.sanselan.util.IOUtils` compatibility shim is obsolete; instead, please use JRE methods or `org.apache.commons.io.IOUtils`
+
 ## 2024.1
 
 ### IntelliJ Platform 2024.1

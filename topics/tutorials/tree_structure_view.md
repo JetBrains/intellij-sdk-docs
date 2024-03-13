@@ -1,6 +1,6 @@
-# Modifying Project View Structure
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+# Modifying Project View Structure
 
 <link-summary>Modifying Project View Tutorial.</link-summary>
 
@@ -27,6 +27,8 @@ Add new `com.intellij.treeStructureProvider` extension to the [plugin.xml](%gh-s
 ## Implement Custom TreeStructureProvider
 
 To provide custom Structure View behaviour, implement [`TreeStructureProvider`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/projectView/TreeStructureProvider.java) with the nodes filtering logic in `modify()` method.
+If access to indexes is not required, it can be marked [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI).
+
 The example below shows how to filter out all the Project View nodes except those which correspond to text files and directories.
 
 ```java

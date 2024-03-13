@@ -24,6 +24,9 @@ Status bar widget for LSP servers
 Cached Values and Dumb Mode
 : Note change for [](psi_performance.md#projectRootManagerDependency).
 
+Saving Settings on background thread
+: Saving project/application [settings](settings.md) is no longer performed on [EDT](general_threading_rules.md) to avoid freezes. [Issue](https://youtrack.jetbrains.com/issue/IJPL-127/Save-project-application-settings-on-background-thread)
+
 ### IntelliJ IDEA 2024.1
 
 Unbundled plugins

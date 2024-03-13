@@ -91,8 +91,7 @@ Only `isWhitespaceSensitive()` which is used in the `getCurrentOffset()` method 
 [`ParameterInfoControllerBase`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/hint/ParameterInfoControllerBase.java)
 should be implemented when whitespace matters in a language.
 
-Note that parameter info works during indexing (using incomplete data) when the implementations also extend
-[`DumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbAware.java).
+Note that parameter info works during indexing (using incomplete data) when the implementations is marked [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI).
 It is recommended to adapt tests for [dumb mode](indexing_and_psi_stubs.md#dumb-mode) since the results might be surprising,
 and more changes to the handler might be required for better results.
 

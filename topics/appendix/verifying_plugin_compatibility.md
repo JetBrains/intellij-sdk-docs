@@ -1,12 +1,12 @@
-# Verifying Plugin Compatibility
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Verifying Plugin Compatibility
 
 <link-summary>Tooling for ensuring compatibility.</link-summary>
 
 Please see [](api_changes_list.md) for known breaking changes.
 
-For API annotated with `ApiStatus.@Internal`, see [](api_internal.md) for more details and replacements.
+For API annotated with [`ApiStatus.@Internal`](%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/ApiStatus.java), see [](api_internal.md) for more details and replacements.
 
 ## Plugin Verifier
 
@@ -27,7 +27,7 @@ In other cases, [intellij-plugin-verifier](https://github.com/JetBrains/intellij
 
 ## IDE Support
 
-The status of an API is marked using various annotations defined in [`ApiStatus`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java), please see their Javadoc for more details.
+The status of an API is marked using various annotations defined in [`ApiStatus`](%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/ApiStatus.java), please see their doc for more details.
 Use highlighting available via dedicated [IDE inspections](https://www.jetbrains.com/help/idea/code-inspection.html) as noted below to prevent problems as early as possible.
 
 ### Unstable API
@@ -67,6 +67,6 @@ Inspection: <control>Plugin DevKit | Plugin descriptor | Plugin.xml validity</co
 A plugin might specify a [compatibility range](build_number_ranges.md) including releases where some API is not available.
 Under the hood, it uses an artifact containing generated data via `ApiStatus.@AvailableSince`, which is automatically attached to the project.
 
-NOTE: If values are not specified directly in [<path>plugin.xml</path>](plugin_configuration_file.md) (e.g., when providing values via [](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) Gradle task), they must be set explicitly in the inspection's settings.
+> If values are not specified directly in [<path>plugin.xml</path>](plugin_configuration_file.md) (e.g., when providing values via [](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) Gradle task), they must be set explicitly in the inspection's settings.
 
 Inspection: <control>Plugin DevKit | Code | Usage of IntelliJ API not available in older IDEs</control>

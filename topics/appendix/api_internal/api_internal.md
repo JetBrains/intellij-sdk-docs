@@ -1,18 +1,18 @@
-# Internal API Migration
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<link-summary>Lists private API annotated with ApiStatus.Internal/IntellijInternalApi and corresponding replacement.</link-summary>
+# Internal API Migration
 
-This page lists commonly used API annotated with [`org.jetbrains.annotations.ApiStatus.Internal`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java)
-or [`IntellijInternalApi`](%gh-ic%/platform/util/src/com/intellij/openapi/util/IntellijInternalApi.kt)
+<link-summary>Lists private API annotated with ApiStatus.@Internal/@IntellijInternalApi and corresponding replacement.</link-summary>
+
+This page lists commonly used API annotated with [`ApiStatus.@Internal`](%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/ApiStatus.java)
+or [`@IntellijInternalApi`](%gh-ic%/platform/util/src/com/intellij/openapi/util/IntellijInternalApi.kt)
 which indicates it is _private API_ and must not be used outside of IntelliJ Platform itself:
 
 > Indicates that the annotated element (class, method, field, etc.) **must not be considered as a public API**. It's made visible to allow
 > usages in other packages of the declaring library, but it **must not be used outside of that library**. Such elements
 > may be renamed, changed, or removed in future versions.
 >
-{title="ApiStatus.Internal Javadoc"}
+{title="`ApiStatus.Internal Javadoc"}
 
 Such violations are reported from [](verifying_plugin_compatibility.md#plugin-verifier) and are highlighted in the IDE using [dedicated inspection](verifying_plugin_compatibility.md#ide-support).
 
@@ -70,7 +70,7 @@ Each entry is mapped to its corresponding _Replacement_, pointing to the recomme
 
 ## Exceptions
 
-The API listed in this table is currently (or was previously) marked with `@ApiStatus.Internal`, but its status has changed in the meantime (or will change).
+The API listed in this table is currently (or was previously) marked with `ApiStatus.@Internal`, but its status has changed in the meantime (or will change).
 Therefore, any reported violations can be disregarded.
 
 | Internal API                                                                                                                                         | Note                                            |

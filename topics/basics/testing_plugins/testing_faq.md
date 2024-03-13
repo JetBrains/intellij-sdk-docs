@@ -1,6 +1,6 @@
-# Testing FAQ
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Testing FAQ
 
 <link-summary>Common questions and issues for testing plugins.</link-summary>
 
@@ -121,9 +121,9 @@ Set system property `idea.split.test.logs` to `true` to generate separate test l
 
 ### How to mark test-only elements in production code?
 
-Annotate with [`org.jetbrains.annotations.TestOnly`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/TestOnly.java), usages will be highlighted via inspection <control>JVM languages | Test-only usage in production code</control>.
+Annotate with [`@TestOnly`](%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/TestOnly.java), usages will be highlighted via inspection <control>JVM languages | Test-only usage in production code</control>.
 
-To mark members whose visibility is higher than necessary to be used from tests, use [`org.jetbrains.annotations.VisibleForTesting`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/VisibleForTesting.java)
+To mark members whose visibility is higher than necessary to be used from tests, use [`@VisibleForTesting`](%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/VisibleForTesting.java)
 
 ### How to run tests for all files in a directory?
 

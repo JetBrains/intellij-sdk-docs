@@ -18,6 +18,7 @@
   <var name="gh-ij-plugins-master" value="https://github.com/JetBrains/intellij-plugins/tree/master"/>
 
   <var name="gh-jcef" value="https://github.com/JetBrains/jcef/tree/master/java"/>
+  <var name="gh-java-annotations" value="https://github.com/JetBrains/java-annotations/tree/master/"/>
 
   <var name="gh-ijpgp" value="https://github.com/JetBrains/gradle-intellij-plugin/blob/2.0"/>
   <var name="gh-pv" value="https://github.com/JetBrains/intellij-plugin-verifier/blob/master"/>

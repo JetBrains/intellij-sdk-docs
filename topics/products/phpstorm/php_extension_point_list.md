@@ -1,5 +1,7 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<!-- EP List Directory: /phpstorm/ -->
+
 # PHP Extension Point and Listener List
 
 <link-summary>Overview of Extension Points and Listeners for PHP.</link-summary>

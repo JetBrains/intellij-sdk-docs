@@ -243,6 +243,8 @@ Plugins can provide custom tasks that can be added by users to a created run con
 To provide a custom task, implement [`BeforeRunTaskProvider`](%gh-ic%/platform/execution/src/com/intellij/execution/BeforeRunTaskProvider.java) and register it in `com.intellij.stepsBeforeRunProvider` EP.
 The provider implementation is responsible for creating a task instance for a given run configuration and executing the task.
 
+If access to indexes is not required, it can be marked [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI).
+
 ## Macros
 
 Macros are dynamic variables, which can be referenced in run configurations, and expanded to actual values when a run configuration is executed.

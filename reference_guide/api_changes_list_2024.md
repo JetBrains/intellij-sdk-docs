@@ -8,7 +8,7 @@ Before documenting a breaking API change, please make sure that the change canno
 APIs marked with @Deprecated(forRemoval=true), @ApiStatus.Experimental, @ApiStatus.Internal/IntellijInternalApi, or @ApiStatus.ScheduledForRemoval don't need to be documented.
 
 To document a new incompatible change, add a new line with the problem pattern followed by a 2nd line with ": "-prefixed human-readable description
-and recommended fix/action (please write full sentence ending with '.', see existing entries as reference).
+and recommended fix/action (REQUIRED, please write full sentence ending with '.', see existing entries as reference).
 Non-platform changes must be grouped under relevant section for plugin.
 
 The following problem patterns are supported and must be followed EXACTLY:
@@ -133,8 +133,10 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 : Update code usages.
 
 `com.intellij.diff.editor.DiffVirtualFile` now extends `com.intellij.diff.editor.DiffViewerVirtualFile` and inherits its abstract method `com.intellij.diff.editor.DiffViewerVirtualFile#createViewer(Project)`
+: Update code usages.
 
 `com.intellij.diff.tools.combined.CombinedDiffVirtualFile#getSourceId()` method removed.
+: Update code usages.
 
 `com.intellij.diff.tools.combined.CombinedDiffModel` interface removed
 : Use `com.intellij.diff.tools.combined.CombinedDiffModel` class instead.
@@ -174,19 +176,27 @@ Package `com.jetbrains.jinja2` renamed to `com.intellij.jinja`
 : Migrated to MVVM, hidden implementation details.
 
 ### Kotlin Plugin 2024.1
+
 `org.jetbrains.kotlin.ir.visitors.IrElementVisitor.visitInlinedFunctionBlock(inlinedFunctionBlock: IrInlinedFunctionBlock, data: D)` abstract method added
+: Update code usages.
 
 `org.jetbrains.kotlin.ir.visitors.IrElementVisitor.visitReturnableBlock(returnableBlock: IrReturnableBlock, data: D)` abstract method added
+: Update code usages.
 
 `org.jetbrains.kotlin.ir.visitors.IrElementVisitorVoid.visitInlinedFunctionBlock(inlinedFunctionBlock: IrInlinedFunctionBlock)` abstract method added
+: Update code usages.
 
 `org.jetbrains.kotlin.ir.visitors.IrElementVisitorVoid.visitInlinedFunctionBlock(inlinedFunctionBlock: IrInlinedFunctionBlock, data: Nothing?)` abstract method added
+: Update code usages.
 
 `org.jetbrains.kotlin.ir.visitors.IrElementVisitorVoid.visitReturnableBlock(returnableBlock: IrReturnableBlock)` abstract method added
+: Update code usages.
 
 `org.jetbrains.kotlin.ir.visitors.IrElementVisitorVoid.visitReturnableBlock(retunrableBlock: IrReturnableBlock, data: Nothing?)` abstract method added
+: Update code usages.
 
 `org.jetbrains.kotlin.fir.expressions.FirConstExpression` class renamed `org.jetbrains.kotlin.fir.expressions.FirLiteralExpression`
+: Update code usages.
 
 `org.jetbrains.kotlin.ir.declarations.IrDeclarationOrigin.DELEGATE` class removed
 : `org.jetbrains.kotlin.ir.declarations.IrDeclarationOrigin.Companion.DELEGATE` should be used instead.
@@ -198,6 +208,7 @@ Package `com.jetbrains.jinja2` renamed to `com.intellij.jinja`
 : Use `org.jetbrains.kotlin.config.JvmDefaultMode.DISABLE`.
 
 Method `org.jetbrains.kotlin.backend.common.lower.LocalDeclarationsLoweringKt.getParentsWithSelf(IrDeclaration)` renamed to `org.jetbrains.kotlin.ir.util.IrUtilsKt.getParentsWithSelf`
+: Update code usages.
 
 `org.jetbrains.kotlin.daemon.common.CompileService.Companion.getNO_SESSION()` method removed
 : Use `org.jetbrains.kotlin.daemon.common.CompileService.NO_SESSION` const instead.
@@ -239,6 +250,7 @@ Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
 ### Markdown Plugin 2024.1
 
 `org.intellij.plugins.markdown.ui.split` package removed
+: Update code usages.
 
 `org.intellij.plugins.markdown.ui.split.SplitTextEditorProvider` class removed
 : Use `com.intellij.openapi.fileEditor.TextEditorWithPreviewProvider` instead.

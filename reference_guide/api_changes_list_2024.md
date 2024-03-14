@@ -115,10 +115,10 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 : Must be implemented.
 
 `com.intellij.vcs.log.VcsLogFileHistoryHandler.getHistoryFast(root: VirtualFile, filePath: FilePath, hash: Hash?, filters: VcsLogFilterCollection, commitCount: Int)` abstract method added
-: Parameter `filters: VcsLogFilterCollection` was added to provide filtering capabilities to file history. Implement `com.intellij.vcs.log.VcsLogFileHistoryHandler#getSupportedFilters` to specify which filters are supported by this extension (currently, branch filter, revision filter and range filter are available).
+: Parameter `filters: VcsLogFilterCollection` was added to provide filtering capabilities to file history. Implement `com.intellij.vcs.log.VcsLogFileHistoryHandler.getSupportedFilters` to specify which filters are supported by this extension (currently, branch filter, revision filter and range filter are available).
 
 `com.intellij.vcs.log.VcsLogFileHistoryHandler.collectHistory(root: VirtualFile, filePath: FilePath, hash: Hash?, filters: VcsLogFilterCollection, consumer)` abstract method added
-: Parameter `filters: VcsLogFilterCollection` was added to provide filtering capabilities to file history. Implement `com.intellij.vcs.log.VcsLogFileHistoryHandler#getSupportedFilters` to specify which filters are supported by this extension (currently, branch filter, revision filter and range filter are available).
+: Parameter `filters: VcsLogFilterCollection` was added to provide filtering capabilities to file history. Implement `com.intellij.vcs.log.VcsLogFileHistoryHandler.getSupportedFilters` to specify which filters are supported by this extension (currently, branch filter, revision filter and range filter are available).
 
 `org.apache.tools` package removed
 : Please provide all necessary libraries in your plugin distribution.
@@ -132,22 +132,22 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.intellij.openapi.projectRoots.impl.SdkConfigurationUtil.createSdk(Collection<Sdk>, VirtualFile, SdkType, SdkAdditionalData, String)` method return type changed from `ProjectJdkImpl` to `Sdk`
 : Update code usages.
 
-Class `com.intellij.diff.editor.DiffVirtualFile` now extends `com.intellij.diff.editor.DiffViewerVirtualFile` and inherits its abstract method `com.intellij.diff.editor.DiffViewerVirtualFile#createViewer(Project)`
+Class `com.intellij.diff.editor.DiffVirtualFile` now extends `com.intellij.diff.editor.DiffViewerVirtualFile` and inherits its abstract method `com.intellij.diff.editor.DiffViewerVirtualFile.createViewer(Project)`
 : Update code usages.
 
-`com.intellij.diff.tools.combined.CombinedDiffVirtualFile#getSourceId()` method removed.
+`com.intellij.diff.tools.combined.CombinedDiffVirtualFile.getSourceId()` method removed.
 : Update code usages.
 
 `com.intellij.diff.tools.combined.CombinedDiffModel` interface removed
 : Use `com.intellij.diff.tools.combined.CombinedDiffModel` class instead.
 
-`com.intellij.diff.tools.combined.CombinedDiffVirtualFile#createViewer(Project)` abstract method added
+`com.intellij.diff.tools.combined.CombinedDiffVirtualFile.createViewer(Project)` abstract method added
 : Must be implemented.
 
 ### UML Plugin 2024.1
 
-`com.intellij.uml.core.actions.ShowDiagramBase#findProviders(AnActionEvent, DiagramProvider, BiFunction)` method removed
-: Use `com.intellij.uml.core.actions.ShowDiagramBase#findProviders(DiagramProvider<?>, BiFunction<? super DiagramProvider<?>,? super DataContext,java.lang.Object>, DataContext)` instead.
+`com.intellij.uml.core.actions.ShowDiagramBase.findProviders(AnActionEvent, DiagramProvider, BiFunction)` method removed
+: Use `com.intellij.uml.core.actions.ShowDiagramBase.findProviders(DiagramProvider<?>, BiFunction<? super DiagramProvider<?>,? super DataContext,java.lang.Object>, DataContext)` instead.
 
 ### Java Plugin 2024.1
 
@@ -245,7 +245,7 @@ Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
 
 ### HTTP Client Plugin 2024.1
 `com.intellij.httpClient.actions.generation.RequestUrlContextInfo(requestContextData: RequestContextData)` constructor parameter removed
-: Use `com.intellij.httpClient.actions.generation.RequestBody` and `com.intellij.httpClient.actions.generation.HttpRequestUrlPathInfo.Companion#create` to describe a request body that will be coomputed lazily during the corresponding request generation.
+: Use `com.intellij.httpClient.actions.generation.RequestBody` and `com.intellij.httpClient.actions.generation.HttpRequestUrlPathInfo.Companion.create()` to describe a request body that will be coomputed lazily during the corresponding request generation.
 
 ### Markdown Plugin 2024.1
 

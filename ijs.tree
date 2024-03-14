@@ -197,6 +197,7 @@
         <toc-element toc-title="Structural Search"/>
       </toc-element>
       <toc-element topic="controlling_highlighting.md"/>
+      <toc-element topic="mod_command.md"/>
     </toc-element>
     <toc-element toc-title="Refactoring"/>
     <toc-element topic="project_view.md">

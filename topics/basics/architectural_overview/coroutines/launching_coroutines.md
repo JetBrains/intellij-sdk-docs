@@ -122,13 +122,13 @@ class ReadPsiActionService(
         if (!file.isValid) return@readAction -1
         file.viewProvider.allFiles.size
       }
+      if (count == -1) return@launch
       // switch to EDT dispatcher to perform UI operations:
       withContext(Dispatchers.EDT) {
+        if (!file.isValid) return@withContext
         WriteCommandAction.writeCommandAction(project)
-          .withName("Change it")
-          .run<Throwable> {
-            file.setName("renamed $count.txt")
-          }
+            .withName("Rename file")
+            .run<Throwable> { file.setName("renamed $count.txt") }
       }
     }
   }

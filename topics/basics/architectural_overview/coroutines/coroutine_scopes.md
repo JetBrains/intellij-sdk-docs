@@ -122,8 +122,8 @@ Using these scopes could easily lead to project or plugin class leaks.
         %% do not remove trailing space in axisFormat
         axisFormat ‎
         section Lifetimes
-            Application Scope : done, 0, 10
-            Project Scope     : 2, 8
+            Application Scope : 0, 10
+            Project Scope     : done, 2, 8
             Project leak      : crit, 4, 10
     ```
 
@@ -142,8 +142,8 @@ Using these scopes could easily lead to project or plugin class leaks.
         %% do not remove trailing space in axisFormat
         axisFormat ‎
         section Lifetimes
-            Project Scope        : done, 0, 10
-            Plugin Scope         : 2, 8
+            Project Scope        : 0, 10
+            Plugin Scope         : done, 2, 8
             MyPluginService leak : crit, 4, 10
     ```
 
@@ -177,12 +177,12 @@ gantt
     %% do not remove trailing space in axisFormat
     axisFormat ‎
     section Lifetimes
-        Application Scope        : 0, 10
-        Plugin A Scope           : 1, 6
-        Plugin B Scope           : done, 4, 9
-        Project Scope            : 2, 8
-        Project × Plugin A Scope : 2, 6
-        Project × Plugin B Scope : 4, 8
+        Application Scope        : done, 0, 10
+        Plugin A Scope           : done, 1, 6
+        Plugin B Scope           : 4, 9
+        Project Scope            : done, 2, 8
+        Project × Plugin A Scope : done, 2, 6
+        Project × Plugin B Scope : done, 4, 8
         PluginAService leak      : crit, 5, 9
 ```
 

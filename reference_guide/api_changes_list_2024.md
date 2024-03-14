@@ -144,6 +144,9 @@ Class `com.intellij.diff.editor.DiffVirtualFile` now extends `com.intellij.diff.
 `com.intellij.diff.tools.combined.CombinedDiffVirtualFile.createViewer(Project)` abstract method added
 : Must be implemented.
 
+`com.intellij.openapi.util.io.NioPathUtil.isAncestor(Path, Path, boolean)` method removed
+: Use `Path#startsWith` instead.
+
 ### UML Plugin 2024.1
 
 `com.intellij.uml.core.actions.ShowDiagramBase.findProviders(AnActionEvent, DiagramProvider, BiFunction)` method removed

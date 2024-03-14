@@ -183,6 +183,7 @@ class SlowDataPanel(
   private val project: Project,
   parentDisposable: Disposable
 ) : JBLoadingPanel(BorderLayout(), parentDisposable) {
+
   // store a UI-dedicated child scope
   private val uiScope: CoroutineScope =
       project.service<UserDataService>().childScope("SlowDataPanel")
@@ -197,9 +198,11 @@ class SlowDataPanel(
   fun start() {
     setLoadingText("Loading user data...")
     startLoading()
-    // load user data on IO dispatcher:
-    uiScope.launch(Dispatchers.IO) {
-      val user = project.service<UserDataService>().loadUserData()
+    uiScope.launch {
+      // load user data on IO dispatcher:
+      val user = withContext(Dispatchers.IO) {
+        project.service<UserDataService>().loadUserData()
+      }
       // ...and display it in the UI on EDT dispatcher:
       withContext(Dispatchers.EDT) {
         stopLoading()

@@ -11,7 +11,7 @@ To document a new incompatible change, add a new line with the problem pattern f
 and recommended fix/action (REQUIRED, please write full sentence ending with '.', see existing entries as reference).
 Non-platform changes must be grouped under relevant section for plugin.
 
-The following problem patterns are supported and must be followed EXACTLY:
+The following problem patterns are supported and must be followed EXACTLY (e.g., no '#' instead of '.'):
 
 <package name> package removed
 
@@ -135,7 +135,7 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 Class `com.intellij.diff.editor.DiffVirtualFile` now extends `com.intellij.diff.editor.DiffViewerVirtualFile` and inherits its abstract method `com.intellij.diff.editor.DiffViewerVirtualFile.createViewer(Project)`
 : Update code usages.
 
-`com.intellij.diff.tools.combined.CombinedDiffVirtualFile.getSourceId()` method removed.
+`com.intellij.diff.tools.combined.CombinedDiffVirtualFile.getSourceId()` method removed
 : Update code usages.
 
 `com.intellij.diff.tools.combined.CombinedDiffModel` interface removed

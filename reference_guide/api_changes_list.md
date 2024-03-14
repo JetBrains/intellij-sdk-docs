@@ -13,7 +13,7 @@ To document a new incompatible change, add a new line with the problem pattern f
 and recommended fix/action (REQUIRED, please write full sentence ending with '.', see existing entries as reference).
 Non-platform changes must be grouped under relevant section for plugin.
 
-The following problem patterns are supported and must be followed EXACTLY:
+The following problem patterns are supported and must be followed EXACTLY (e.g., no '#' instead of '.'):
 
 <package name> package removed
 

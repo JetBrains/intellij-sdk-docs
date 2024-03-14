@@ -8,10 +8,10 @@ Before documenting a breaking API change, please make sure that the change canno
 APIs marked with @Deprecated(forRemoval=true), @ApiStatus.Experimental, @ApiStatus.Internal/IntellijInternalApi, or @ApiStatus.ScheduledForRemoval don't need to be documented.
 
 To document a new incompatible change, add a new line with the problem pattern followed by a 2nd line with ": "-prefixed human-readable description
-and recommended fix/action (please write full sentence ending with '.', see existing entries as reference).
+and recommended fix/action (REQUIRED, please write full sentence ending with '.', see existing entries as reference).
 Non-platform changes must be grouped under relevant section for plugin.
 
-The following problem patterns are supported and must be followed EXACTLY:
+The following problem patterns are supported and must be followed EXACTLY (e.g., no '#' instead of '.'):
 
 <package name> package removed
 

@@ -78,9 +78,9 @@ This behavior can result in unexpected consequences for code that relies on thre
 Consider the following code snippet:
 ```kotlin
 suspend fun doSomething() {
-  val data = suspendingTask()
+  val fetchedData = suspendingTask()
   withContext(Dispatchers.EDT) {
-    updateUI(data)
+    updateUI(fetchedData)
   }
 }
 

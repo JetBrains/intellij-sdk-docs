@@ -23,7 +23,7 @@ Functions can be divided into two groups, which differ in reacting to an incomin
 | `smartReadAction`                 | `smartReadActionBlocking`         |
 | `constrainedReadAction`           | `constrainedReadActionBlocking`   |
 
-WARA is canceled when a parent coroutine is canceled and a WA arrives.
+WARA is canceled when a parent coroutine is canceled or a WA arrives.
 
 WBRA is canceled only when a parent coroutine is canceled.
 It blocks WA until finishing its lambda.

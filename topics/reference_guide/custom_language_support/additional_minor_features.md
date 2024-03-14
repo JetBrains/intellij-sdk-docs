@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 # Additional Minor Features
 
@@ -194,6 +194,7 @@ EP: `com.intellij.editorTabColorProvider`
 
 [`EditorTabColorProvider`](%gh-ic%/platform/ide-core-impl/src/com/intellij/openapi/fileEditor/impl/EditorTabColorProvider.java)
 allows for the modification of the background colors for specific files.
+If access to indexes is not required, it can be marked [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI).
 
 ### Custom Names and Tooltips for Editor Tabs
 
@@ -201,6 +202,8 @@ EP: `com.intellij.editorTabTitleProvider`
 
 [`EditorTabTitleProvider`](%gh-ic%/platform/ide-core-impl/src/com/intellij/openapi/fileEditor/impl/EditorTabTitleProvider.java)
 allows for specifying custom names and tooltips displayed in the title of editor tabs.
+If access to indexes is not required, it can be marked [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI).
+
 Please see, e.g.,
 [`GradleEditorTabTitleProvider`](%gh-ic%/plugins/gradle/src/org/jetbrains/plugins/gradle/util/GradleEditorTabTitleProvider.kt)
 which shows how the project name is added to the editor tab for Gradle files.

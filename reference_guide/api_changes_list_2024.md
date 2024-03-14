@@ -132,7 +132,7 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.intellij.openapi.projectRoots.impl.SdkConfigurationUtil.createSdk(Collection<Sdk>, VirtualFile, SdkType, SdkAdditionalData, String)` method return type changed from `ProjectJdkImpl` to `Sdk`
 : Update code usages.
 
-`com.intellij.diff.editor.DiffVirtualFile` now extends `com.intellij.diff.editor.DiffViewerVirtualFile` and inherits its abstract method `com.intellij.diff.editor.DiffViewerVirtualFile#createViewer(Project)`
+Class `com.intellij.diff.editor.DiffVirtualFile` now extends `com.intellij.diff.editor.DiffViewerVirtualFile` and inherits its abstract method `com.intellij.diff.editor.DiffViewerVirtualFile#createViewer(Project)`
 : Update code usages.
 
 `com.intellij.diff.tools.combined.CombinedDiffVirtualFile#getSourceId()` method removed.

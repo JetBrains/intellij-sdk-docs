@@ -24,7 +24,7 @@ The bigger picture here is that documentation providers co-exist and if there is
 the first one that returns a value different from `null` wins.
 
 Although discouraged, the ordering of documentation providers can be influenced by using the `order` attribute when registering the extension.
-For instance, [`python-core-common.xml`](%gh-ic%/python/src/META-INF/python-core-common.xml) uses the following to call the external documentation
+For instance, [`intellij.python.community.impl.xml`](%gh-ic%/python/src/intellij.python.community.impl.xml) uses the following to call the external documentation
 provider before the default one (registered with `id="pythonDocumentationProvider"`):
 
 ```xml

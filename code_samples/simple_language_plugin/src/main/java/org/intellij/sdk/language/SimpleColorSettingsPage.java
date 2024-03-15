@@ -1,4 +1,4 @@
-// Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 
 package org.intellij.sdk.language;
 
@@ -22,7 +22,6 @@ final class SimpleColorSettingsPage implements ColorSettingsPage {
       new AttributesDescriptor("Bad value", SimpleSyntaxHighlighter.BAD_CHARACTER)
   };
 
-  @Nullable
   @Override
   public Icon getIcon() {
     return SimpleIcons.FILE;
@@ -37,18 +36,19 @@ final class SimpleColorSettingsPage implements ColorSettingsPage {
   @NotNull
   @Override
   public String getDemoText() {
-    return "# You are reading the \".properties\" entry.\n" +
-        "! The exclamation mark can also mark text as comments.\n" +
-        "website = https://en.wikipedia.org/\n" +
-        "language = English\n" +
-        "# The backslash below tells the application to continue reading\n" +
-        "# the value onto the next line.\n" +
-        "message = Welcome to \\\n" +
-        "          Wikipedia!\n" +
-        "# Add spaces to the key\n" +
-        "key\\ with\\ spaces = This is the value that could be looked up with the key \"key with spaces\".\n" +
-        "# Unicode\n" +
-        "tab : \\u0009";
+    return """
+        # You are reading the ".properties" entry.
+        ! The exclamation mark can also mark text as comments.
+        website = https://en.wikipedia.org/
+        language = English
+        # The backslash below tells the application to continue reading
+        # the value onto the next line.
+        message = Welcome to \\
+                  Wikipedia!
+        # Add spaces to the key
+        key\\ with\\ spaces = This is the value that could be looked up with the key "key with spaces".
+        # Unicode
+        tab : \\u0009""";
   }
 
   @Nullable

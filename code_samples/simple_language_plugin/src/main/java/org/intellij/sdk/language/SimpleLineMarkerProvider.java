@@ -1,4 +1,4 @@
-// Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 
 package org.intellij.sdk.language;
 
@@ -21,12 +21,11 @@ final class SimpleLineMarkerProvider extends RelatedItemLineMarkerProvider {
   protected void collectNavigationMarkers(@NotNull PsiElement element,
                                           @NotNull Collection<? super RelatedItemLineMarkerInfo<?>> result) {
     // This must be an element with a literal expression as a parent
-    if (!(element instanceof PsiJavaTokenImpl) || !(element.getParent() instanceof PsiLiteralExpression)) {
+    if (!(element instanceof PsiJavaTokenImpl) || !(element.getParent() instanceof PsiLiteralExpression literalExpression)) {
       return;
     }
 
     // The literal expression must start with the Simple language literal expression
-    PsiLiteralExpression literalExpression = (PsiLiteralExpression) element.getParent();
     String value = literalExpression.getValue() instanceof String ? (String) literalExpression.getValue() : null;
     if ((value == null) ||
         !value.startsWith(SimpleAnnotator.SIMPLE_PREFIX_STR + SimpleAnnotator.SIMPLE_SEPARATOR_STR)) {
@@ -39,7 +38,7 @@ final class SimpleLineMarkerProvider extends RelatedItemLineMarkerProvider {
         SimpleAnnotator.SIMPLE_PREFIX_STR.length() + SimpleAnnotator.SIMPLE_SEPARATOR_STR.length()
     );
     final List<SimpleProperty> properties = SimpleUtil.findProperties(project, possibleProperties);
-    if (properties.size() > 0) {
+    if (!properties.isEmpty()) {
       // Add the property to a collection of line marker info
       NavigationGutterIconBuilder<PsiElement> builder =
           NavigationGutterIconBuilder.create(SimpleIcons.FILE)

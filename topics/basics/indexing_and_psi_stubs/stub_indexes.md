@@ -60,7 +60,7 @@ For each element type that needs to be stored in the stub tree, perform the foll
    Override `getExternalId()` according to common used `externalIdPrefix` for the language (see [](#stubs-setup)).
 
    For always-leaf stub nodes return `true` from `isAlwaysLeaf()` (2023.3).
-   "Container" stubs that do not serialize any data of their own may implement [`EmptyStubSerializer`](%gh-ic-master%/platform/core-api/src/com/intellij/psi/stubs/EmptyStubSerializer.java) to optimize storage (2023.3).
+   "Container" stubs that do not serialize any data of their own may implement [`EmptyStubSerializer`](%gh-ic%/platform/core-api/src/com/intellij/psi/stubs/EmptyStubSerializer.java) to optimize storage (2023.3).
 6. Use the class implementing `IStubElementType` as the element type constant when parsing ([example](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertiesElementTypes.java)).
 7. Make sure all methods in the PSI element interface access the stub data rather than the PSI tree when appropriate ([example: `Property.getKey()` implementation](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java)).
 

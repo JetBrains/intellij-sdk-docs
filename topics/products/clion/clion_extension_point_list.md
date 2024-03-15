@@ -6,7 +6,7 @@
 
 <link-summary>Overview of Extension Points and Listeners for CLion.</link-summary>
 
-128 Extension Points and 38 Listeners for CLion
+134 Extension Points and 40 Listeners for CLion
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
@@ -18,11 +18,13 @@ See [](extension_point_list.md) for IntelliJ Platform.
 
 | Topic | Listener |
 |-------|----------|
+| [CubeMXManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.clion.embedded.stm32cubemx.CubeMXManager.CubeStatusListener)  | `CubeStatusListener` |
 | [FileSymbolTablesCache#OUT_OF_CODE_BLOCK_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.psi.util.PsiModificationTracker.Listener)  ![Project-Level][project-level] | [`Listener`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/PsiModificationTracker.java) |
 | [CMakeSettingsListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.cmake.CMakeSettingsListener)  | `CMakeSettingsListener` |
+| [Listener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.cmake.python.CMakePythonSdkService.Companion.Listener)  | `Listener` |
+| [Listener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.cmake.python.CMakePythonSettingListenerService.Companion.Listener)  | `Listener` |
 | [CMakeWorkspaceListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.cmake.workspace.CMakeWorkspaceListener)  | `CMakeWorkspaceListener` |
 | [CompDBSettingsListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.compdb.settings.CompDBSettingsListener)  | `CompDBSettingsListener` |
-| [CubeMXManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.embedded.stm32cubemx.CubeMXManager.CubeStatusListener)  | `CubeStatusListener` |
 | [CLionExternalBuildManagerListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.execution.external.build.CLionExternalBuildManagerListener)  | `CLionExternalBuildManagerListener` |
 | [ClionProjectToolManagerListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.execution.external.build.ClionProjectToolManagerListener)  | `ClionProjectToolManagerListener` |
 | [MakefileBuildTargetsManagerListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.makefile.execution.build.MakefileBuildTargetsManagerListener)  | `MakefileBuildTargetsManagerListener` |
@@ -66,7 +68,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [clangd.clangTidyResolveInfoProvider](https://jb.gg/ipe?extensions=clangd.clangTidyResolveInfoProvider) | `ClangTidyResolveInfoProvider` |
 | [clangd.clangdAnnotatorUtil](https://jb.gg/ipe?extensions=clangd.clangdAnnotatorUtil) | `ClangAnnotatorUtil` |
 | [clangd.clangdBridge](https://jb.gg/ipe?extensions=clangd.clangdBridge) | `ClangdBridgeInterface` |
-| [clangd.externalCompletionProvider](https://jb.gg/ipe?extensions=clangd.externalCompletionProvider) | `ExternalCompletionProvider` |
+| [clangd.externalCompletionProvider](https://jb.gg/ipe?extensions=clangd.externalCompletionProvider) ![DumbAware][dumb-aware] | `ExternalCompletionProvider` |
 
 ### CidrCoveragePlugin.xml
 
@@ -87,6 +89,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [cidr.debugger.backendConsoleInjectionHelper](https://jb.gg/ipe?extensions=cidr.debugger.backendConsoleInjectionHelper) | `BackendConsoleInjectionHelper` |
 | [cidr.debugger.customDebuggerProvider](https://jb.gg/ipe?extensions=cidr.debugger.customDebuggerProvider) | `CidrCustomDebuggerProvider` |
 | [cidr.debugger.debugProcessConfigurator](https://jb.gg/ipe?extensions=cidr.debugger.debugProcessConfigurator) | `CidrDebugProcessConfigurator` |
+| [cidr.debugger.debuggerMessagesProvider](https://jb.gg/ipe?extensions=cidr.debugger.debuggerMessagesProvider) ![Internal][internal] | `CidrDebuggerMessagesProvider` |
 | [cidr.debugger.disasmRegisterProvider](https://jb.gg/ipe?extensions=cidr.debugger.disasmRegisterProvider) ![Experimental][experimental] | `CidrDisasmRegisterProvider` |
 | [cidr.debugger.editorsExtension](https://jb.gg/ipe?extensions=cidr.debugger.editorsExtension) | `CidrDebuggerEditorsExtension` |
 | [cidr.debugger.formatters.natvis.provider](https://jb.gg/ipe?extensions=cidr.debugger.formatters.natvis.provider) | `NatvisFileProvider` |
@@ -138,6 +141,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [cidr.lang.customHeaderProvider](https://jb.gg/ipe?extensions=cidr.lang.customHeaderProvider) ![Non-Dynamic][non-dynamic] | `CustomHeaderProvider` |
 | [cidr.lang.doxygenExtension](https://jb.gg/ipe?extensions=cidr.lang.doxygenExtension) ![Non-Dynamic][non-dynamic] | `Doxygen` |
 | [cidr.lang.externalResolver](https://jb.gg/ipe?extensions=cidr.lang.externalResolver) | `OCExternalResolver` |
+| [cidr.lang.fileToBuildSymbolsCollector](https://jb.gg/ipe?extensions=cidr.lang.fileToBuildSymbolsCollector) ![Non-Dynamic][non-dynamic] | `FileToBuildSymbolsCollector` |
 | [cidr.lang.foreignUsagesRenameProcessor](https://jb.gg/ipe?extensions=cidr.lang.foreignUsagesRenameProcessor) ![Non-Dynamic][non-dynamic] | `OCForeignUsagesRenameProcessor` |
 | [cidr.lang.groupedFileNaming](https://jb.gg/ipe?extensions=cidr.lang.groupedFileNaming) ![Non-Dynamic][non-dynamic] | `OCGroupedFileNaming` |
 | [cidr.lang.includeHelper](https://jb.gg/ipe?extensions=cidr.lang.includeHelper) ![Non-Dynamic][non-dynamic] | `OCIncludeHelper` |
@@ -176,7 +180,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [cidr.lang.compilerKindProvider](https://jb.gg/ipe?extensions=cidr.lang.compilerKindProvider) | `OCCompilerKindProvider` |
 | [cidr.lang.compilerResolver](https://jb.gg/ipe?extensions=cidr.lang.compilerResolver) ![Project-Level][project-level] | `OCCompilerResolver` |
 | [cidr.lang.fileScopeProvider](https://jb.gg/ipe?extensions=cidr.lang.fileScopeProvider) ![Non-Dynamic][non-dynamic] | `OCFileScopeProvider` |
-| [cidr.lang.fileWideHighlighter](https://jb.gg/ipe?extensions=cidr.lang.fileWideHighlighter) ![Non-Dynamic][non-dynamic] | `FileWideHighlighter` |
+| [cidr.lang.fileWideHighlighter](https://jb.gg/ipe?extensions=cidr.lang.fileWideHighlighter) ![Non-Dynamic][non-dynamic] ![DumbAware][dumb-aware] | `FileWideHighlighter` |
 | [cidr.lang.headerSearchRootFactory](https://jb.gg/ipe?extensions=cidr.lang.headerSearchRootFactory) | `HeadersSearchRootFactory` |
 | [cidr.lang.resolveConfigurationSelector](https://jb.gg/ipe?extensions=cidr.lang.resolveConfigurationSelector) | `OCResolveConfigurationSelector` |
 | [cidr.projectModel.deserializingVetoCondition](https://jb.gg/ipe?extensions=cidr.projectModel.deserializingVetoCondition) | `OCWorkspaceDeserializingVetoCondition` |
@@ -279,18 +283,26 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [cidr.uml.dragAndDropReceiver](https://jb.gg/ipe?extensions=cidr.uml.dragAndDropReceiver) | `UmlDiagramDragAndDropReceiver` |
 | [cidr.uml.umlDiagramProvider](https://jb.gg/ipe?extensions=cidr.uml.umlDiagramProvider) | `UmlDiagramLanguage` |
 
-### com.intellij.rml.dfa.ide
+### intellij.cidr.profiling.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.intellij.rml.dfa.debug.provider](https://jb.gg/ipe?extensions=com.intellij.rml.dfa.debug.provider) | `DFADebugProvider` |
-
-### intellij.clion.profiling.xml
-
-| Extension Point | Implementation |
-|-----------------|----------------|
+| [cidr.profiler.memory.environmentProvider](https://jb.gg/ipe?extensions=cidr.profiler.memory.environmentProvider) ![Non-Dynamic][non-dynamic] | `MemoryProfileEnvironmentProvider` |
+| [cidr.profiler.memory.presentation](https://jb.gg/ipe?extensions=cidr.profiler.memory.presentation) ![Non-Dynamic][non-dynamic] | `MemoryProfilePresentation` |
 | [cidr.profiler.valgrind.disabler](https://jb.gg/ipe?extensions=cidr.profiler.valgrind.disabler) | `ValgrindDisabler` |
+| [cidr.profiler.valgrind.executionContext](https://jb.gg/ipe?extensions=cidr.profiler.valgrind.executionContext) | `ValgrindExecutionContext` |
 
+### intellij.clion.featuresTrainer.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [training.clion.lessons](https://jb.gg/ipe?extensions=training.clion.lessons) | `CLionExternalLessons` |
+
+### intellij.rml.dfa.devtools.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.intellij.rml.dfa.devtools.debug.provider](https://jb.gg/ipe?extensions=com.intellij.rml.dfa.devtools.debug.provider) | `DfaDebugProvider` |
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square
 [removal]: https://img.shields.io/badge/-Removal-red?style=flat-square

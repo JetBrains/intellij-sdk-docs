@@ -1,4 +1,4 @@
-// Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 
 package org.intellij.sdk.language;
 
@@ -27,7 +27,9 @@ import java.util.List;
 final class SimpleFoldingBuilder extends FoldingBuilderEx implements DumbAware {
 
   @Override
-  public FoldingDescriptor @NotNull [] buildFoldRegions(@NotNull PsiElement root, @NotNull Document document, boolean quick) {
+  public FoldingDescriptor @NotNull [] buildFoldRegions(@NotNull PsiElement root,
+                                                        @NotNull Document document,
+                                                        boolean quick) {
     // Initialize the group of folding regions that will expand/collapse together.
     FoldingGroup group = FoldingGroup.newGroup(SimpleAnnotator.SIMPLE_PREFIX_STR);
     // Initialize the list of folding regions
@@ -40,7 +42,8 @@ final class SimpleFoldingBuilder extends FoldingBuilderEx implements DumbAware {
         super.visitLiteralExpression(literalExpression);
 
         String value = PsiLiteralUtil.getStringLiteralContent(literalExpression);
-        if (value != null && value.startsWith(SimpleAnnotator.SIMPLE_PREFIX_STR + SimpleAnnotator.SIMPLE_SEPARATOR_STR)) {
+        if (value != null &&
+            value.startsWith(SimpleAnnotator.SIMPLE_PREFIX_STR + SimpleAnnotator.SIMPLE_SEPARATOR_STR)) {
           Project project = literalExpression.getProject();
           String key = value.substring(
               SimpleAnnotator.SIMPLE_PREFIX_STR.length() + SimpleAnnotator.SIMPLE_SEPARATOR_STR.length()
@@ -58,7 +61,7 @@ final class SimpleFoldingBuilder extends FoldingBuilderEx implements DumbAware {
       }
     });
 
-    return descriptors.toArray(FoldingDescriptor.EMPTY);
+    return descriptors.toArray(FoldingDescriptor.EMPTY_ARRAY);
   }
 
   /**
@@ -95,7 +98,9 @@ final class SimpleFoldingBuilder extends FoldingBuilderEx implements DumbAware {
         return StringUtil.THREE_DOTS;
       }
 
-      return propertyValue.replaceAll("\n", "\\n").replaceAll("\"", "\\\\\"");
+      return propertyValue
+          .replaceAll("\n", "\\n")
+          .replaceAll("\"", "\\\\\"");
     }
 
     return null;

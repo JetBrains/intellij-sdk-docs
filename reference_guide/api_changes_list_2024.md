@@ -314,3 +314,24 @@ Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
 ### JavaScript Plugin 2024.1
 `com.intellij.lang.javascript.documentation.JSDocumentationProvider.generateDoc(PsiElement, PsiElement)` method marked final
 : Override `com.intellij.lang.javascript.documentation.JSDocumentationProvider.generateDoc(PsiElement, PsiElement, Ref<String>)` instead
+
+
+### Rd Framework 2024.1
+
+`com.jetbrains.rd.framework.IMarshaller.DefaultImpls.getId(IMarshaller)` method removed
+: Due to `RdId` becoming a value class, the `getId` method is removed at runtime, causing unresolved method invocations. Use the method that returns `long` in java and just recompile the kotlin code
+
+`com.jetbrains.rd.framework.RdId.write(AbstractBuffer)` method removed
+: Due to `RdId` becoming a value class, the `getId` method is removed at runtime, causing unresolved method invocations. Use `AbstractBuffe::writeLong(long)` method in java and just recompile the kotlin code.
+
+`org.digma.intellij.plugin.rider.protocol.LensPerObjectId.getRdid()` method removed
+: Due to `RdId` becoming a value class, the `getId` method is removed at runtime, causing unresolved method invocations. Use the method that returns `long` in java and just recompile the kotlin code
+
+`com.jetbrains.rd.framework.RdId.Companion.read(AbstractBuffer)` method removed
+: Due to `RdId` becoming a value class, the `getId` method is removed at runtime, causing unresolved method invocations. Use `AbstractBuffe::readLong()` method in java and just recompile the kotlin code.
+
+`com.jetbrains.rd.framework.base.RdBindableBaseKt.withId(RdBindableBase, RdId)` method removed
+: Due to `RdId` becoming a value class, the `getId` method is removed at runtime, causing unresolved method invocations. Use `withId(RdBindableBase, long)` method in java and just recompile the kotlin code.
+
+`com.jetbrains.rd.framework.IMarshaller.getId-yyTGXKE()` abstract method added
+: Due to `RdId` becoming a value class, the `getId` method is removed at runtime, causing unresolved method invocations. Implement the method that returns `long` method in java and just recompile the kotlin code.

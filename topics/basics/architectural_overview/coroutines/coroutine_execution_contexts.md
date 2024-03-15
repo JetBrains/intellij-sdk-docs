@@ -50,6 +50,9 @@ Therefore, if their behavior is required, [switch to a blocking context](#suspen
 - [`ProgressStep`](%gh-ic-master%/platform/util/progress/src/impl/ProgressStep.kt) - a step-based progress reporting (see its KDoc for details)
 - [`RawProgressReporter`](%gh-ic%/platform/util/progress/src/RawProgressReporter.kt) - a raw text, details, and fraction reporting (invoked via [`reportRawProgress()`](%gh-ic-master%/platform/util/progress/src/steps.kt))
 
+Any [`report*Progress()`](%gh-ic-master%/platform/util/progress/src/steps.kt) function should be used inside [`with*Progress()` or `runWithModalProgressBlocking()`](%gh-ic%/platform/ide/progress/src/tasks.kt).
+Otherwise, if there is no reporter in the context, using `report*Progress()` will have no effect.
+
 ### Switching to Other Contexts
 {#suspending-context-switching-to-other-contexts}
 

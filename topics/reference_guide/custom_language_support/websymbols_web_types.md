@@ -178,7 +178,7 @@ Prior to 2023.1 IDEs were required to have JavaScript plugin installed for the s
 ### Angular
 
 Angular plugin Web Types are available
-[here](%gh-ij-plugins%/AngularJS/resources/web-types)
+[here](%gh-ij-plugins%/Angular/resources/web-types)
 for reference.
 Any Web Types file targeting only Angular support should have `framework` property set to `angular`.
 Highlights: `js/ng-custom-events` contribute symbols with patterns for any custom events supported by Angular `EventManager`s, e.g.:

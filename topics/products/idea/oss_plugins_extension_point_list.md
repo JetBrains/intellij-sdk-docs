@@ -16,17 +16,17 @@ Overview of Extension Points and Listeners for OSS plugins bundled with [](idea_
 
 <include from="snippets.md" element-id="ep_list_legend"/>
 
-20 Extension Points and 9 Listeners
+25 Extension Points and 9 Listeners
 
-## IntelliJ Open Source Plugins
+## IntelliJ Community Plugins
 
-### IntelliJ Open Source Plugins - Listeners
+### IntelliJ Community Plugins - Listeners
 
 | Topic | Listener |
 |-------|----------|
 | [ChangeListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.dts.settings.DtsSettings.ChangeListener)  ![Project-Level][project-level] | [`ChangeListener`](%gh-ij-plugins%/dts/src/com/intellij/dts/settings/DtsSettings.kt) |
 | [FlexBuildConfigurationChangeListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.lang.javascript.flex.projectStructure.model.impl.FlexBuildConfigurationChangeListener)  | [`FlexBuildConfigurationChangeListener`](%gh-ij-plugins%/flex/src/com/intellij/lang/javascript/flex/projectStructure/model/impl/FlexBuildConfigurationChangeListener.java) |
-| [SerialSettingsChangeListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.plugins.serialmonitor.service.SerialSettingsChangeListener)  | [`SerialSettingsChangeListener`](%gh-ij-plugins%/serial-monitor/src/main/java/com/intellij/plugins/serialmonitor/service/SerialSettingsChangeListener.java) |
+| [SerialPortsListener.Companion#SERIAL_PORTS_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.plugins.serialmonitor.service.SerialPortsListener)  | [`SerialPortsListener`](%gh-ij-plugins%/serial-monitor/src/main/java/com/intellij/plugins/serialmonitor/service/SerialPortsListener.kt) |
 | [PlatformioServiceKt#PLATFORMIO_UPDATES_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.embedded.platformio.PlatformioUpdatesNotifier)  ![Project-Level][project-level] | [`PlatformioUpdatesNotifier`](%gh-ij-plugins%/platformio/src/com/jetbrains/cidr/cpp/embedded/platformio/PlatformioService.kt) |
 | [PlatformioSettingsListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.embedded.platformio.project.PlatformioSettingsListener)  | [`PlatformioSettingsListener`](%gh-ij-plugins%/platformio/src/com/jetbrains/cidr/cpp/embedded/platformio/project/PlatformioSettings.kt) |
 | [DartAnalysisServerMessages#DART_ANALYSIS_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.lang.dart.analyzer.DartAnalysisServerMessages.DartAnalysisNotifier)  | [`DartAnalysisNotifier`](%gh-ij-plugins%/Dart/src/com/jetbrains/lang/dart/analyzer/DartAnalysisServerMessages.java) |
@@ -37,12 +37,24 @@ Overview of Extension Points and Listeners for OSS plugins bundled with [](idea_
 
 ### AngularJS
 
-[`AngularJS`](%gh-ij-plugins%/AngularJS/resources/META-INF/plugin.xml)
+[`AngularJS`](%gh-ij-plugins%/Angular/resources/META-INF/plugin.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [org.angular2.frameworkHandler](https://jb.gg/ipe?extensions=org.angular2.frameworkHandler) ![Experimental][experimental] | [`Angular2FrameworkHandler`](%gh-ij-plugins%/AngularJS/src/org/angular2/entities/Angular2FrameworkHandler.kt) |
-| [org.angular2.templateScopesProvider](https://jb.gg/ipe?extensions=org.angular2.templateScopesProvider) | [`Angular2TemplateScopesProvider`](%gh-ij-plugins%/AngularJS/src/org/angular2/codeInsight/template/Angular2TemplateScopesProvider.kt) |
+| [org.angular2.configProvider](https://jb.gg/ipe?extensions=org.angular2.configProvider) | [`AngularConfigProvider`](%gh-ij-plugins%/Angular/src/org/angular2/cli/config/AngularConfigProvider.kt) |
+| [org.angular2.entitiesSource](https://jb.gg/ipe?extensions=org.angular2.entitiesSource) | [`Angular2EntitiesSource`](%gh-ij-plugins%/Angular/src/org/angular2/entities/Angular2EntitiesSource.kt) |
+| [org.angular2.frameworkHandler](https://jb.gg/ipe?extensions=org.angular2.frameworkHandler) ![Experimental][experimental] | [`Angular2FrameworkHandler`](%gh-ij-plugins%/Angular/src/org/angular2/entities/Angular2FrameworkHandler.kt) |
+| [org.angular2.importsHandler](https://jb.gg/ipe?extensions=org.angular2.importsHandler) | [`Angular2ImportsHandler`](%gh-ij-plugins%/Angular/src/org/angular2/codeInsight/imports/Angular2ImportsHandler.kt) |
+| [org.angular2.jsHandlersFactory](https://jb.gg/ipe?extensions=org.angular2.jsHandlersFactory) | [`Angular2JSHandlersFactory`](%gh-ij-plugins%/Angular/src/org/angular2/codeInsight/Angular2HandlersFactory.kt) |
+| [org.angular2.templateScopesProvider](https://jb.gg/ipe?extensions=org.angular2.templateScopesProvider) | [`Angular2TemplateScopesProvider`](%gh-ij-plugins%/Angular/src/org/angular2/codeInsight/template/Angular2TemplateScopesProvider.kt) |
+
+### com.intellij.dts
+
+[`com.intellij.dts`](%gh-ij-plugins%/dts/resources/META-INF/plugin.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.intellij.clion.dtsUtil](https://jb.gg/ipe?extensions=com.intellij.clion.dtsUtil) | [`DtsCLionUtil`](%gh-ij-plugins%/dts/src/com/intellij/dts/clion/DtsCLionUtil.kt) |
 
 ### com.intellij.flex
 

@@ -2,28 +2,34 @@
 
 package org.intellij.sdk.maxOpenProjects;
 
+import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.startup.StartupActivity;
+import com.intellij.openapi.startup.ProjectActivity;
 import com.intellij.openapi.ui.Messages;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Invoked on opening a project.
  */
-// TODO: reimplement to ProjectActivity
-final class ProjectOpenStartupActivity implements StartupActivity.DumbAware {
+// TODO: convert to Kotlin
+final class ProjectOpenStartupActivity implements ProjectActivity, DumbAware {
 
+  @Nullable
   @Override
-  public void runActivity(@NotNull Project project) {
+  public Object execute(@NotNull Project project, @NotNull Continuation<? super Unit> continuation) {
     // Ensure this isn't part of testing
-    if (ApplicationManager.getApplication().isUnitTestMode()) {
-      return;
+    Application application = ApplicationManager.getApplication();
+    if (application.isUnitTestMode()) {
+      return null;
     }
 
     // Get the counting service
-    ProjectCountingService projectCountingService =
-        ApplicationManager.getApplication().getService(ProjectCountingService.class);
+    ProjectCountingService projectCountingService = application.getService(ProjectCountingService.class);
     // Increment the project count
     projectCountingService.increaseOpenProjectCount();
 
@@ -33,10 +39,11 @@ final class ProjectOpenStartupActivity implements StartupActivity.DumbAware {
       String title = String.format("Opening Project \"%s\"", project.getName());
       String message = "<br>The number of open projects exceeds the SDK plugin max_opened_projects limit.<br><br>";
 
-      ApplicationManager.getApplication().invokeLater(() ->
+      application.invokeLater(() ->
           Messages.showMessageDialog(project, message, title, Messages.getInformationIcon())
       );
     }
+    return null;
   }
 
 }

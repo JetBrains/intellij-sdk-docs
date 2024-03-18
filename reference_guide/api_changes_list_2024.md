@@ -147,6 +147,15 @@ Class `com.intellij.diff.editor.DiffVirtualFile` now extends `com.intellij.diff.
 `com.intellij.openapi.util.io.NioPathUtil.isAncestor(Path, Path, boolean)` method removed
 : Use `Path.startsWith()` instead.
 
+`com.intellij.util.CachedValueBase.setData(CachedValueBase.Data)` abstract method added
+: Must be implemented.
+
+`com.intellij.util.CachedValueBase.getRawData()` abstract method added
+: Must be implemented.
+
+Visibility of class `com.intellij.util.CachedValuesFactory` changed from public to internal
+: The class is not supposed to be used directly.
+
 ### UML Plugin 2024.1
 
 `com.intellij.uml.core.actions.ShowDiagramBase.findProviders(AnActionEvent, DiagramProvider, BiFunction)` method removed

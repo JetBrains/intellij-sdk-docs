@@ -246,6 +246,9 @@ Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
 `com.intellij.database.datagrid.DataGrid.getColumnAttributes()` abstract method added
 : Only recompilation is needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
 
+`com.intellij.sql.psi.SqlTableExpression.getSqlType()` method removed
+: Use `getDasType()` instead
+
 ### HTTP Client Plugin 2024.1
 `com.intellij.httpClient.actions.generation.RequestUrlContextInfo(requestContextData: RequestContextData)` constructor parameter removed
 : Use `com.intellij.httpClient.actions.generation.RequestBody` and `com.intellij.httpClient.actions.generation.HttpRequestUrlPathInfo.Companion.create()` to describe a request body that will be coomputed lazily during the corresponding request generation.

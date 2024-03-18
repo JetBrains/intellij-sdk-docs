@@ -14,7 +14,7 @@ val UNKNOWN = "unknown"
 val releasesList = mapOf(
         "gradle-intellij-plugin-version" to ReleaseInfo(
                 type = ReleaseType.GitHub,
-                url = "https://github.com/JetBrains/gradle-intellij-plugin/releases/latest",
+                url = "https://github.com/JetBrains/intellij-platform-gradle-plugin/releases/latest",
         ),
         "gradle-grammar-kit-plugin-version" to ReleaseInfo(
                 type = ReleaseType.GitHub,

@@ -1,6 +1,6 @@
-# Kotlin UI DSL Version 2
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# Kotlin UI DSL Version 2
 
 <link-summary>Kotlin DSL for creating UI forms with input components bound to state object.</link-summary>
 
@@ -416,6 +416,8 @@ It can be created by `Row.placeholder()` method and populated by content later v
 It is possible to bind component values to properties with the following methods.
 
 ### Cell.graphProperty
+
+> Removed in 2023.3, please use `validationRequestor(property::afterPropagation)` instead.
 
 Binds `component` value changing to property.
 The property is updated when the value is changed and is not related to `DialogPanel.apply()`.

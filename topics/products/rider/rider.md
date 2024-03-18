@@ -62,8 +62,12 @@ And the following <path>plugin.xml</path> would require placing the file under <
 
 ## Open Source Rider Plugins
 
-When learning new development configurations, it is helpful to have some existing plugins for reference.
-This list is intended to provide some representative projects.
+It can be useful to refer to existing projects to help understand how to build plugins for Rider.
+The following list of plugins is all open source, and can demonstrate how to implement different functionality.
+Please note that the list includes ReSharper plugins as well as Rider plugins.
+Since a lot of Rider's language features are shared with the ReSharper engine, and since the Rider SDK includes the ReSharper SDK, then it can be useful to look at ReSharper plugins too.
+Also note that these plugins might not be up-to-date with the current SDK.
+
 * [Unity support for both ReSharper and Rider](https://github.com/JetBrains/resharper-unity)
 * [F# support in JetBrains Rider](https://github.com/JetBrains/fsharp-support)
 * [AgentMulder](https://github.com/ERNICommunity/AgentMulder/)

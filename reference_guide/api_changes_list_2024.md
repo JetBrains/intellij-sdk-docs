@@ -145,7 +145,7 @@ Class `com.intellij.diff.editor.DiffVirtualFile` now extends `com.intellij.diff.
 : Must be implemented.
 
 `com.intellij.openapi.util.io.NioPathUtil.isAncestor(Path, Path, boolean)` method removed
-: Use `Path#startsWith` instead.
+: Use `Path.startsWith()` instead.
 
 ### UML Plugin 2024.1
 

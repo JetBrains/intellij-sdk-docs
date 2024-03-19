@@ -416,6 +416,7 @@ See [Toolbar](https://jetbrains.design/intellij/controls/toolbar/) in IntelliJ P
 ### Toggle/Selection
 
 Use [`ToggleAction`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/ToggleAction.java)
+or [`DumbAwareToggleAction`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/project/DumbAwareToggleAction.java)
 for actions with "selected"/"pressed" state (e.g., menu item with checkbox, toolbar action button).
 See also [`ToggleOptionAction`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/ToggleOptionAction.java).
 

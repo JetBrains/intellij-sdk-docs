@@ -2,7 +2,6 @@
 
 package org.intellij.sdk.maxOpenProjects;
 
-import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManagerListener;
@@ -15,14 +14,9 @@ public class ProjectCloseListener implements ProjectManagerListener {
 
   @Override
   public void projectClosed(@NotNull Project project) {
-    // Ensure this isn't part of testing
-    Application application = ApplicationManager.getApplication();
-    if (application.isUnitTestMode()) {
-      return;
-    }
-
     // Get the counting service
-    ProjectCountingService projectCountingService = application.getService(ProjectCountingService.class);
+    ProjectCountingService projectCountingService =
+        ApplicationManager.getApplication().getService(ProjectCountingService.class);
     // Decrement the count because a project just closed
     projectCountingService.decreaseOpenProjectCount();
   }

@@ -22,12 +22,7 @@ final class ProjectOpenStartupActivity implements ProjectActivity, DumbAware {
   @Nullable
   @Override
   public Object execute(@NotNull Project project, @NotNull Continuation<? super Unit> continuation) {
-    // Ensure this isn't part of testing
     Application application = ApplicationManager.getApplication();
-    if (application.isUnitTestMode()) {
-      return null;
-    }
-
     // Get the counting service
     ProjectCountingService projectCountingService = application.getService(ProjectCountingService.class);
     // Increment the project count

@@ -137,6 +137,11 @@ suspend fun doSomething() {
 }
 ```
 
+> Do not use `limitedParallelism(1)` for code synchronization.
+> Use [`Mutex`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.sync/-mutex/) instead.
+>
+{style="warning"}
+
 ## Changing Modality State
 
 Avoid [changing modality state](general_threading_rules.md#modality-and-invokelater) in the middle of a running coroutine:

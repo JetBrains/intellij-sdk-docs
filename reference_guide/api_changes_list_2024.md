@@ -156,6 +156,18 @@ Class `com.intellij.diff.editor.DiffVirtualFile` now extends `com.intellij.diff.
 Visibility of class `com.intellij.util.CachedValuesFactory` changed from public to internal
 : The class is not supposed to be used directly.
 
+`com.intellij.ui.popup.ActionPopupStep.performAction(AnAction, InputEvent)` method parameter type changed from `AnAction` to `ActionItem`
+: Use `com.intellij.ui.popup.ActionPopupStep.performActionItem(ActionItem, InputEvent)` instead.
+
+`com.intellij.openapi.actionSystem.AnAction.getTemplateText()` method marked final
+: Use `AnAction.getTemplatePresentation().setText()` instead.
+
+`com.intellij.openapi.actionSystem.ActionGroup.isPopup()` method marked final
+: Use `ActionGroup.getTemplatePresentation().setPopupGroup(boolean)` instead.
+
+`com.intellij.webcore.packaging.InstalledPackagesPanel.myInstallButton` field removed
+: Use `InstalledPackagesPanel.myInstallEnabled` instead.
+
 ### UML Plugin 2024.1
 
 `com.intellij.uml.core.actions.ShowDiagramBase.findProviders(AnActionEvent, DiagramProvider, BiFunction)` method removed

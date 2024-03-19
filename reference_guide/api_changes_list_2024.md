@@ -272,13 +272,13 @@ Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
 
 ### Python Plugin 2024.1
 
-`com.jetbrains.extensions.ModuleExt` class moved to package `com.jetrbains.python.extensions`
+`com.jetbrains.extensions.ModuleExt` class moved to package `com.jetbrains.python.extensions`
 : Update code usages.
 
-`com.jetbrains.extensions.QualifiedNameExt` class moved to package `com.jetrbains.python.extensions`
+`com.jetbrains.extensions.QualifiedNameExt` class moved to package `com.jetbrains.python.extensions`
 : Update code usages.
 
-`com.jetbrains.extensions.python.PyCallExpressionExt` class moved to package `com.jetrbains.python.extensions.python`
+`com.jetbrains.extensions.python.PyCallExpressionExt` class moved to package `com.jetbrains.python.extensions.python`
 : Update code usages.
 
 `com.jetbrains.extensions.python.FileChooserDescriptorExtKt` class moved to package `com.jetbrains.python.extensions`

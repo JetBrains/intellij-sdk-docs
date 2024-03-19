@@ -18,9 +18,9 @@ Overview of Extension Points and Listeners for OSS plugins bundled with [](idea_
 
 25 Extension Points and 9 Listeners
 
-## IntelliJ Community Plugins
+## IntelliJ Open Source Plugins
 
-### IntelliJ Community Plugins - Listeners
+### IntelliJ Open Source Plugins - Listeners
 
 | Topic | Listener |
 |-------|----------|

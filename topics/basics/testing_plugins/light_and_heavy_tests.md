@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Light and Heavy Tests
 
@@ -25,7 +25,9 @@ The standard way of writing a light test is to extend one of the following class
 <tabs>
 <tab title="Default">
 
-[`BasePlatformTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/BasePlatformTestCase.java) for tests that don't have any dependency on Java functionality.
+Use [`LightPlatformTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/LightPlatformTestCase.java)
+or [`BasePlatformTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/BasePlatformTestCase.java)
+for tests that don't have any dependency on Java functionality.
 
 For 2019.2 and earlier, use [`LightPlatformCodeInsightFixtureTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/LightPlatformCodeInsightFixtureTestCase.java).
 

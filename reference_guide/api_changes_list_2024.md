@@ -298,3 +298,7 @@ Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
 
 `com.jetbrains.django.testRunner` package removed
 : Private package is no longer available as an API.
+
+### JavaScript Plugin 2024.1
+`com.intellij.lang.javascript.documentation.JSDocumentationProvider.generateDoc(PsiElement, PsiElement)` method marked final
+: Override `com.intellij.lang.javascript.documentation.JSDocumentationProvider.generateDoc(PsiElement, PsiElement, Ref<String>)` instead

@@ -19,7 +19,9 @@ Kotlin Coroutines
 : Add [](kotlin_coroutines.md) describing how to write asynchronous code in an imperative style.
 
 Minor Changes and Additions
-: Add [documentation](plugin_extension_points.md#error-handling) on how to handle errors and deprecations in extensions.
+:
+- Add [documentation](plugin_extension_points.md#error-handling) on how to handle errors and deprecations in extensions.
+- Note changes in how highlighting is now [performed more efficiently](syntax_highlighting_and_error_highlighting.md#order-of-running-highlighting) in 2024.1.
 
 ### February
 {#february-24}

@@ -165,3 +165,37 @@ Existing highlighting can be suppressed programmatically in certain contexts, se
 
 To force re-highlighting all open or specific file(s) (e.g., after changing plugin specific settings), use
 [`DaemonCodeAnalyzer.restart()`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/daemon/DaemonCodeAnalyzer.java).
+
+## Order of Running Highlighting
+
+Since 2024.1, [inspections](code_inspections_and_intentions.md) and [annotators](#annotator) do not run sequentially on each `PsiElement` anymore.
+Instead, they're run in parallel on all relevant PSI independently with the following consequences.
+
+**Independent Annotators**
+
+[Annotators](#annotator) are run independent of each other: if an annotator found an error, it no longer stops annotating the `PsiElement`'s parents.
+Effectively, there is "more" highlighting now.
+
+**Highlight Range**
+
+Producing highlights must be done as close as possible for the relevant `PsiElement`.
+For example, instead of
+
+```text
+annotate(PsiFile) {
+  <<highlight all relevant identifiers>>
+}
+```
+
+this approach should be used:
+
+```text
+annotate(PsiIdentifier) {
+  <<highlight this identifier if it's relevant>>
+}
+```
+
+The latter version:
+- performs faster highlighting — it doesn’t have to wait until all other identifiers are visited
+- removes outdated highlights faster — right after the identifier was visited and the annotator didn't produce a highlighting anymore
+

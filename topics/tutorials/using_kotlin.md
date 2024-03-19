@@ -24,12 +24,14 @@ This page describes developing plugins using the [Kotlin](https://kotlinlang.org
 ## Advantages of Developing a Plugin in Kotlin
 
 Using Kotlin to write plugins for the IntelliJ Platform is very similar to writing plugins in Java.
-Existing plugin developers can get started by converting existing Java sources to their Kotlin equivalents by using the [J2K converter](https://kotlinlang.org/docs/mixing-java-kotlin-intellij.html#converting-an-existing-java-file-to-kotlin-with-j2k) (part of Kotlin plugin).
-Developers can also easily mix and match Kotlin classes with their existing Java code.
+Existing Java classes can be converted to their Kotlin equivalents by using the [J2K converter](https://kotlinlang.org/docs/mixing-java-kotlin-intellij.html#converting-an-existing-java-file-to-kotlin-with-j2k) (part of Kotlin plugin).
 
-In addition to [null safety](https://kotlinlang.org/docs/null-safety.html) and [type-safe builders](https://kotlinlang.org/docs/type-safe-builders.html), the Kotlin language offers many convenient features for plugin development,
+In addition to [null safety](https://kotlinlang.org/docs/null-safety.html), [type-safe builders](https://kotlinlang.org/docs/type-safe-builders.html), and [](kotlin_coroutines.md), the Kotlin language offers many convenient features for plugin development,
 which make plugins easier to read and simpler to maintain.
 Much like [Kotlin for Android](https://kotlinlang.org/docs/android-overview.html), the IntelliJ Platform makes extensive use of callbacks, which are straightforward to express as [lambdas](https://kotlinlang.org/docs/lambdas.html) in Kotlin.
+
+Kotlin classes can be mixed in a project with existing Java code.
+This might come handy when certain APIs require the use of mentioned Kotlin Coroutines.
 
 ### Adding Extensions
 
@@ -68,6 +70,10 @@ The IntelliJ Platform provides a [type safe DSL](kotlin_ui_dsl_version_2.md) to 
 
 > Using _UI Designer_ plugin with Kotlin is [not supported](https://youtrack.jetbrains.com/issue/KTIJ-791).
 >
+
+### Kotlin Coroutines
+
+[](kotlin_coroutines.md) are a lightweight and easy to implement alternative to threads with many [advantages](kotlin_coroutines.md#coroutines-advantages).
 
 ## Adding Kotlin Support
 
@@ -139,10 +145,17 @@ See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html
 {title="Adding stdlib in tests"}
 
 ### Kotlin Coroutines Libraries (kotlinx.coroutines)
+{id="coroutinesLibraries"}
 
 Plugins _must_ always use the bundled library from the target IDE and not bundle their own version.
 Please make sure it is not added via transitive dependencies either
 (see [View and Debug Dependencies](https://docs.gradle.org/current/userguide/viewing_debugging_dependencies.html) in Gradle user guide).
+
+See [](kotlin_coroutines.md) on how to use them in plugins.
+
+| IntelliJ Platform version | Bundled _kotlinx-coroutines_ version |
+|---------------------------|--------------------------------------|
+| 2024.1                    | 1.7.3                                |
 
 ### Other Bundled Kotlin Libraries
 
@@ -166,7 +179,7 @@ Remove additional `kotlin.incremental.useClasspathSnapshot=false` property in <p
 
 <tab title="Kotlin 1.8.20">
 
-> Please consider using Kotlin 1.9.0 where this issue has been resolved.
+> Please consider using Kotlin 1.9.0 or later where this issue has been resolved.
 
 Kotlin `1.8.20` has a [new incremental compilation approach](https://kotlinlang.org/docs/gradle-compilation-and-caches.html#a-new-approach-to-incremental-compilation) which is enabled by default.
 Unfortunately, it is not compatible with the IntelliJ Platform — when reading large JAR files (like <path>app.jar</path> or <path>3rd-party-rt.jar</path>),

@@ -15,6 +15,9 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 ### March
 {#march-24}
 
+Kotlin Coroutines
+: Add [](kotlin_coroutines.md) describing how to write asynchronous code in an imperative style.
+
 Minor Changes and Additions
 : Add [documentation](plugin_extension_points.md#error-handling) on how to handle errors and deprecations in extensions.
 

@@ -30,8 +30,12 @@ For the latter two, a separate instance of the service is created for each insta
 
 #### Constructor
 
-Project/Module-level service constructors can have a [`Project`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/Project.java)/[`Module`](%gh-ic%/platform/core-api/src/com/intellij/openapi/module/Module.java) argument.
 To improve startup performance, avoid any heavy initializations in the constructor.
+
+Project/Module-level service constructors can have a [`Project`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/Project.java)/[`Module`](%gh-ic%/platform/core-api/src/com/intellij/openapi/module/Module.java) argument.
+
+When using [](kotlin_coroutines.md), a distinct [Service Scope](coroutine_scopes.md#service-scopes) can be injected as parameter.
+See [](launching_coroutines.md#launching-coroutine-from-service-scope) for full samples.
 
 > Using constructor injection of dependency services is deprecated (and not supported in [](#light-services)) for performance reasons.
 >

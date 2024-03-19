@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Glossary
 
@@ -16,11 +16,31 @@ Annotator
 : Provides [semantic highlighting](syntax_highlighting_and_error_highlighting.md) based on underlying &rarr;&nbsp;_Program Structure Interface_ elements.
 &rarr;&nbsp;_Inspection_
 
+## B
+
+Blocking Context
+: Executing in the [blocking context](coroutine_execution_contexts.md#blocking-context) means executing tasks on a thread without access to a coroutine context.
+&rarr;&nbsp;_Suspending Context_
+&rarr;&nbsp;_Coroutine_
+
 ## C
 
 CancellationException _(CE)_
 : `java.util.concurrent.CancellationException`, `kotlin.coroutines.cancellation.CancellationException` (typealias in stdlib), `kotlinx.coroutines.CancellationException` (typealias in kotlinx-coroutines)
 &rarr;&nbsp;_ProcessCanceledException_
+
+Coroutine
+: A [Kotlin coroutines](kotlin_coroutines.md) execution unit allowing for handling concurrency and asynchronous tasks efficiently with a sequential/imperative code style.
+
+Coroutine Dispatcher
+: Part of the coroutine context.
+Determines a thread or a thread pool the corresponding coroutine is executed on.
+See [](coroutine_dispatchers.md) for more details.
+&rarr;&nbsp;_Coroutine_
+
+Coroutine Scope
+: [Coroutine scopes](coroutine_scopes.md) define the lifetime of coroutines and ensure proper handling of coroutine cancellations and structured concurrency.
+&rarr;&nbsp;_Coroutine_
 
 ## D
 
@@ -30,7 +50,7 @@ Document Object Model _(DOM)_
 ## E
 
 Event Dispatch Thread _(EDT)_
-: The [Event Dispatch Thread](https://docs.oracle.com/javase/tutorial/uiswing/concurrency/dispatch.html) handles all Swing events. See also [](general_threading_rules.md).
+: The [Event Dispatch Thread](https://docs.oracle.com/javase/tutorial/uiswing/concurrency/dispatch.html) handles all Swing events. See also [](general_threading_rules.md) and [](coroutine_dispatchers.md#edt-dispatcher).
 
 Extension Point _(EP)_
 : Most functionality is provided by [Using Extension Points](plugin_extensions.md) provided by the platform or plugins. Plugins can also [define their own](plugin_extension_points.md) to allow extensibility.
@@ -80,8 +100,8 @@ JetBrains Runtime _(JBR)_
 
 ## N
 
-Non-Blocking Read Action (NBRA)
-: A &rarr;&nbsp;_Read Action_ that is canceled by &rarr;&nbsp;_Write Action_. See also [](general_threading_rules.md#read-action-cancellability).
+Non-Blocking Read Action _(NBRA)_
+: A &rarr;&nbsp;_Read Action_ that is canceled by a &rarr;&nbsp;_Write Action_. See also [](general_threading_rules.md#read-action-cancellability).
 
 ## P
 
@@ -109,6 +129,11 @@ Structural Search and Replace _(SSR)_
 Stubs
 : A subset of a &rarr;&nbsp;_Program Structure Interface_ tree in a binary serialized compact format, see [](stub_indexes.md).
 
+Suspending Context
+: Executing in the [suspending context](coroutine_execution_contexts.md#suspending-context) means executing tasks in Kotlin coroutines.
+&rarr;&nbsp;_Blocking Context_
+&rarr;&nbsp;_Coroutine_
+
 Symbol
 : A semantic element in some model, e.g., language or framework model, see [](symbols.md).
 
@@ -133,5 +158,17 @@ Virtual File System _(VFS)_
 Write Action _(WA)_
 : Allows accessing code-related data structures for writing purposes. See also [](general_threading_rules.md).
 &rarr;&nbsp;_Read Action_
+
+Write Allowing Read Action _(WARA)_
+: A coroutine &rarr;&nbsp;_Read Action_ that is canceled by an incoming &rarr;&nbsp;_Write Action_.
+See [](coroutine_read_actions.md#coroutine-read-actions-api) for details.
+&rarr;&nbsp;_Suspending Context_
+&rarr;&nbsp;_Coroutine_
+
+Write Blocking Read Action _(WBRA)_
+: A coroutine &rarr;&nbsp;_Read Action_ that blocks incoming &rarr;&nbsp;_Write Action_.
+See [](coroutine_read_actions.md#coroutine-read-actions-api) for details.
+&rarr;&nbsp;_Suspending Context_
+&rarr;&nbsp;_Coroutine_
 
 <include from="snippets.md" element-id="missingContent"/>

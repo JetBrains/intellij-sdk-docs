@@ -4,7 +4,7 @@
 
 <vars>
   <var name="ijPlatform" value="2024.1"/>
-  <var name="ijPlatformBuild" value="241.14494.17"/>
+  <var name="ijPlatformBuild" value="241.14494.127"/>
 
   <var name="gh-sdk-samples" value="https://github.com/JetBrains/intellij-sdk-code-samples/tree/main"/>
 

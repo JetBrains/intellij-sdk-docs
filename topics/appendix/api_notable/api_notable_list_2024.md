@@ -18,6 +18,9 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ### IntelliJ Platform 2024.1
 
+Using Coroutines
+: It is now recommended to use [](kotlin_coroutines.md) for asynchronous code.
+
 Running highlighting
 : Highlighting is now performed more efficiently, please refer to [](syntax_highlighting_and_error_highlighting.md#order-of-running-highlighting).
 

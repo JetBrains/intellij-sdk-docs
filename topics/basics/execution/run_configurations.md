@@ -65,8 +65,11 @@ Standard base classes for configuration type implementations are:
 * [`ConfigurationTypeBase`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/runConfigurationType.kt) - used for configuration types that have multiple configuration factories.
   Factories should be added in the constructor by calling the `addFactory()` method.
 
+Marking a configuration type as [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI) makes all its configurations available during indexing.
+
 Sometimes, it is required to provide run configurations programmatically from contexts external to run configuration UI.
-Implementing [`VirtualConfigurationType`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/VirtualConfigurationType.java) blocks the possibility of adding and removing run configurations of this type in the <control>Run/Debug Configurations</control> panel. Editing its template is also not available.
+Implementing [`VirtualConfigurationType`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/VirtualConfigurationType.java) blocks the possibility of adding and removing run configurations of this type in the <control>Run/Debug Configurations</control> panel.
+Editing its template is also not available.
 
 ### ConfigurationFactory
 

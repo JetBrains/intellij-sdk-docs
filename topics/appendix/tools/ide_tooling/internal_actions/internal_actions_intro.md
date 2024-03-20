@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Internal Actions Menu
 
@@ -8,11 +8,12 @@ The <ui-path>Tools | Internal Actions</ui-path> menu provides plugin developers 
 
 <snippet id="enable_internal_mode_tip">
 
-> If the menu item <ui-path>Tools | Internal Actions</ui-path> is not available in IntelliJ IDEA, then the first step is [Enabling Internal Mode](enabling_internal.md).
+> If the menu item <ui-path>Tools | Internal Actions</ui-path> is not available in the IDE, then the first step is [Enabling Internal Mode](enabling_internal.md).
 >
 
 </snippet>
 
-Click on the following topics to learn more about the _Internal Actions_ menu.
-* [Enabling Internal Mode](enabling_internal.md) provides instructions for enabling the Internal Actions menu in IntelliJ IDEA.
-* [UI Tools](internal_ui_sub.md) has information about some Internal Actions menu tools for inspecting and testing plugin UI.
+Click on the following topics to learn more about the <ui-path>Internal Actions</ui-path> menu.
+
+* [Enabling Internal Mode](enabling_internal.md) provides instructions for enabling the Internal Actions menu.
+* [UI Tools](internal_ui_sub.md) has information about some tools for inspecting and testing plugin UI.

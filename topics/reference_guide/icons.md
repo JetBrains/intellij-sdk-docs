@@ -252,11 +252,11 @@ In this example, the icon root folder is named <path>icons</path>:
   "icons": {
     "expui": {
       "folderName": {
-        "expUiIcon1.svg": "icons/icon1.svg",
-        "expUiIcon2.svg": "icons/icon2.svg"
+        "icon1.svg": "icons/icon1.svg",
+        "icon2.svg": "icons/icon2.svg"
       },
       "anotherFolder": {
-        "expUiAnotherIcon.svg": "images/anotherIcon.svg"
+        "anotherIcon.svg": "images/anotherIcon.svg"
       }
     }
   }

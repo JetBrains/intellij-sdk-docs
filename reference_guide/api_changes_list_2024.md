@@ -332,6 +332,3 @@ Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
 
 `com.jetbrains.rd.framework.base.RdBindableBaseKt.withId(RdBindableBase, RdId)` method removed
 : Due to `RdId` becoming a value class, the `getId` method is removed at runtime, causing unresolved method invocations. Use `withId(RdBindableBase, long)` method in Java and recompile the Kotlin code.
-
-`com.jetbrains.rd.framework.IMarshaller.getId-yyTGXKE()` abstract method added
-: Due to `RdId` becoming a value class, the `getId` method is removed at runtime, causing unresolved method invocations. Implement the method that returns `long` method in java and just recompile the kotlin code.

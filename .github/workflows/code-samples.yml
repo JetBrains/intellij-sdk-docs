@@ -18,7 +18,7 @@ jobs:
       - name: Fetch Sources
         uses: actions/checkout@v4
       - name: Gradle Wrapper Validation
-        uses: gradle/wrapper-validation-action@v2.1.1
+        uses: gradle/wrapper-validation-action@v2.1.2
 
   samples:
     name: Code Samples / ${{ matrix.plugin }}

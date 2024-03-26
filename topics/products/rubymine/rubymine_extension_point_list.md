@@ -6,7 +6,7 @@
 
 <link-summary>Overview of Extension Points and Listeners for RubyMine.</link-summary>
 
-79 Extension Points and 11 Listeners for RubyMine
+80 Extension Points and 12 Listeners for RubyMine
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
@@ -25,6 +25,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [InflectorService#INFLECTIONS_CHANGED](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.rails.InflectorService.InflectionChanged)  | `InflectionChanged` |
 | [AssetsRegistrationWatcher#ASSETS_CHANGED_TOPIC](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.rails.codeInsight.sprockets.assetsPaths.AssetsRegistrationWatcher.AssetsListener)  | `AssetsListener` |
 | [MigrationParser#MIGRATIONS_CHANGED_TOPIC](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.rails.database.MigrationParser.MigrationListener)  ![Project-Level][project-level] | `MigrationListener` |
+| [RailsPathsChangedListener#TOPIC](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.rails.facet.configuration.RailsPathsChangedListener)  | `RailsPathsChangedListener` |
 | [RubyRemoteInterpreterManager#RUBY_REMOTE_SDK_TRANSFER_LISTENER_TOPIC](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.remote.RubyRemoteSdkTransferListener)  | `RubyRemoteSdkTransferListener` |
 | [RequireSetChangedListener#TOPIC](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.ruby.codeInsight.symbols.cache.RequiresIndexExtension.RequireSetChangedListener)  | `RequireSetChangedListener` |
 | [RubySdkType#SDK_PATHS_INITIALIZED_TOPIC](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.ruby.sdk.RubySdkType.SdkPathsInitializedListener)  | `SdkPathsInitializedListener` |
@@ -73,6 +74,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [org.jetbrains.plugins.ruby.ruby.run.runEnvironmentProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.run.runEnvironmentProvider) | `RunEnvironmentProvider` |
 | [org.jetbrains.plugins.ruby.ruby.run.testFrameworkConfigurator](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.run.testFrameworkConfigurator) | `TestFrameworkConfigurator` |
 | [org.jetbrains.plugins.ruby.rubyElementNameAndDescriptionProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rubyElementNameAndDescriptionProvider) | `RubyElementNameAndDescriptionProvider` |
+| [org.jetbrains.plugins.ruby.rubyLocalVariablesProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rubyLocalVariablesProvider) | `RubyLocalVariablesProvider` |
 | [org.jetbrains.plugins.ruby.rubyParamDefSearchTextProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rubyParamDefSearchTextProvider) | `RubyParamDefSearchTextProvider` |
 | [org.jetbrains.plugins.ruby.rubyParameterInfoDelegateProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rubyParameterInfoDelegateProvider) | `RubyParameterInfoDelegateProvider` |
 | [org.jetbrains.plugins.ruby.rubyRenameProcessor](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rubyRenameProcessor) | `RenameProcessor` |
@@ -101,6 +103,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [org.jetbrains.plugins.ruby.gemFacetEditorTab](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.gemFacetEditorTab) | `GemFacetEditorTabFactory` |
 | [org.jetbrains.plugins.ruby.generatorConfigurator](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.generatorConfigurator) | `GeneratorActionConfigurator` |
 | [org.jetbrains.plugins.ruby.i18n.i18nProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.i18n.i18nProvider) | `I18nProvider` |
+| [org.jetbrains.plugins.ruby.inflectionsProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.inflectionsProvider) | `RubyInflectionsProvider` |
 | [org.jetbrains.plugins.ruby.methodTypeInfoProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.methodTypeInfoProvider) | `RubyMethodTypeInfoProvider` |
 | [org.jetbrains.plugins.ruby.rails.assetsPathsProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rails.assetsPathsProvider) | `SprocketAssetsPathProvider` |
 | [org.jetbrains.plugins.ruby.rails.sprocketsDirectiveContextProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rails.sprocketsDirectiveContextProvider) | `SprocketsDirectiveContextProvider` |
@@ -112,13 +115,12 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [org.jetbrains.plugins.ruby.rake.rakeRunCommandLineModifierProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rake.rakeRunCommandLineModifierProvider) | `RakeRunCommandLineModifierProvider` |
 | [org.jetbrains.plugins.ruby.rake.runConfigurationSettingsFactory](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rake.runConfigurationSettingsFactory) | `RakeRunConfigurationSettingsFactory` |
 | [org.jetbrains.plugins.ruby.rerunFailedTestsActionProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rerunFailedTestsActionProvider) | `RubyRerunFailedTestsProvider` |
-| [org.jetbrains.plugins.ruby.ruby.associatedDeclarationProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.associatedDeclarationProvider) | `RubyAssociatedDeclarationProvider` |
+| [org.jetbrains.plugins.ruby.ruby.associatedDeclarationProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.associatedDeclarationProvider) ![DumbAware][dumb-aware] | `RubyAssociatedDeclarationProvider` |
 | [org.jetbrains.plugins.ruby.ruby.run.configuration.debugger.rubyDebugHelperFactory](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.run.configuration.debugger.rubyDebugHelperFactory) | `RubyDebugHelperFactory` |
 | [org.jetbrains.plugins.ruby.ruby.topLevelSymbolProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.topLevelSymbolProvider) | `RubyTopLevelSymbolProvider` |
-| [org.jetbrains.plugins.ruby.ruby.typeSignatureProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.typeSignatureProvider) | `RubyTypeSignatureProvider` |
+| [org.jetbrains.plugins.ruby.ruby.typeSignatureProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.typeSignatureProvider) ![DumbAware][dumb-aware] | `RubyTypeSignatureProvider` |
 | [org.jetbrains.plugins.ruby.rubyFileStructureProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rubyFileStructureProvider) | `RubyFileStructureViewProvider` |
 | [org.jetbrains.plugins.ruby.rubyInsertHandlerProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rubyInsertHandlerProvider) | `RubyInsertHandlerProvider` |
-| [org.jetbrains.plugins.ruby.rubyLocalVariablesProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rubyLocalVariablesProvider) | `RubyLocalVariablesProvider` |
 | [org.jetbrains.plugins.ruby.runConfigurationExtension](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.runConfigurationExtension) | `RubyRunConfigurationExtension` |
 | [org.jetbrains.plugins.ruby.structureViewCustomizer](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.structureViewCustomizer) | `RubyStructureViewCustomizer` |
 | [org.jetbrains.plugins.ruby.testing.rspec.rspecContextNameProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.testing.rspec.rspecContextNameProvider) | `RSpecContextNameProvider` |

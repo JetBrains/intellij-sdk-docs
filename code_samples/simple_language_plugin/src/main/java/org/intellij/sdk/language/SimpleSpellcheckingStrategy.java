@@ -1,4 +1,4 @@
-// Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
+// Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 
 package org.intellij.sdk.language;
 
@@ -34,7 +34,7 @@ final class SimpleSpellcheckingStrategy extends SpellcheckingStrategy {
   private static class SimpleCommentTokenizer extends Tokenizer<PsiComment> {
 
     @Override
-    public void tokenize(@NotNull PsiComment element, TokenConsumer consumer) {
+    public void tokenize(@NotNull PsiComment element, @NotNull TokenConsumer consumer) {
       // Exclude the start of the comment with its # characters from spell checking
       int startIndex = 0;
       for (char c : element.textToCharArray()) {
@@ -53,7 +53,7 @@ final class SimpleSpellcheckingStrategy extends SpellcheckingStrategy {
 
   private static class SimplePropertyTokenizer extends Tokenizer<SimpleProperty> {
 
-    public void tokenize(@NotNull SimpleProperty element, TokenConsumer consumer) {
+    public void tokenize(@NotNull SimpleProperty element, @NotNull TokenConsumer consumer) {
       //Spell check the keys and values of properties with different splitters
       final ASTNode key = element.getNode().findChildByType(SimpleTypes.KEY);
       if (key != null && key.getTextLength() > 0) {

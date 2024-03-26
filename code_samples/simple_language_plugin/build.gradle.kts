@@ -31,7 +31,7 @@ java {
 
 // See https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
-  version.set("2023.1.5")
+  version.set("2023.2.6")
   plugins.set(listOf("com.intellij.java"))
 }
 
@@ -42,7 +42,7 @@ tasks {
 
   patchPluginXml {
     version.set("${project.version}")
-    sinceBuild.set("231")
-    untilBuild.set("233.*")
+    sinceBuild.set("232")
+    untilBuild.set("241.*")
   }
 }

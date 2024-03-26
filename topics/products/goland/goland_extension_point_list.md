@@ -24,6 +24,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [GoProjectLifecycleListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.goide.project.GoProjectLifecycleListener)  | `GoProjectLifecycleListener` |
 | [VgoProjectSettings#VGO_INTEGRATION_TOPIC](https://jb.gg/ipe/listeners?topics=com.goide.vgo.configuration.VgoProjectSettings.IntegrationListener)  | `IntegrationListener` |
 
+
 ### goland.xml
 
 | Extension Point | Implementation |

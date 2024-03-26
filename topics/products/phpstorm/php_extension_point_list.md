@@ -6,7 +6,7 @@
 
 <link-summary>Overview of Extension Points and Listeners for PHP.</link-summary>
 
-61 Extension Points and 10 Listeners for PHP
+62 Extension Points and 11 Listeners for PHP
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
@@ -28,6 +28,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [StateChangedListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.debug.listener.PhpDebugExternalConnectionsAccepter.StateChangedListener)  | `StateChangedListener` |
 | [RectorChangesListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.rector.RectorChangesListener)  | `RectorChangesListener` |
 | [PhpRemoteInterpreterChangedListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.remote.interpreter.ui.PhpRemoteInterpreterConfigurationForm.PhpRemoteInterpreterChangedListener)  | `PhpRemoteInterpreterChangedListener` |
+| [CustomExpectationNotifier.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.pestphp.pest.features.customExpectations.CustomExpectationNotifier)  ![Project-Level][project-level] | `CustomExpectationNotifier` |
 
 
 ### com.intellij.phing
@@ -111,6 +112,12 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.jetbrains.php.behat.gherkinContextProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.behat.gherkinContextProvider) | `ContextInterfaceProvider` |
+
+### com.jetbrains.php.blade
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.jetbrains.php.blade.bladeDirectiveContributor](https://jb.gg/ipe?extensions=com.jetbrains.php.blade.bladeDirectiveContributor) ![Experimental][experimental] | `BladeDirectiveContributor` |
 
 ### com.jetbrains.php.framework
 

@@ -34,9 +34,6 @@ To improve startup performance, avoid any heavy initializations in the construct
 
 Project/Module-level service constructors can have a [`Project`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/Project.java)/[`Module`](%gh-ic%/platform/core-api/src/com/intellij/openapi/module/Module.java) argument.
 
-When using [](kotlin_coroutines.md), a distinct [Service Scope](coroutine_scopes.md#service-scopes) can be injected as parameter.
-See [](launching_coroutines.md#launching-coroutine-from-service-scope) for full samples.
-
 > Using constructor injection of dependency services is deprecated (and not supported in [](#light-services)) for performance reasons.
 >
 > Other service dependencies must be [acquired only when needed](#retrieving-a-service) in all corresponding methods, e.g., if you need a service to get some data or execute a task, retrieve the service before calling its methods.
@@ -45,6 +42,12 @@ See [](launching_coroutines.md#launching-coroutine-from-service-scope) for full 
 > Use inspection <control>Plugin DevKit | Code | Non-default constructors for service and extension class</control> to verify code.
 >
 {style="warning" title="Do not use Constructor Injection"}
+
+##### Kotlin Coroutines
+
+When using [](kotlin_coroutines.md), a distinct service [scope](coroutine_scopes.md) can be injected as parameter.
+
+<include from="coroutine_scopes.md" element-id="serviceScopes"/>
 
 ## Light Services
 

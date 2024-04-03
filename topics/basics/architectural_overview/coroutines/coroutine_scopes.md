@@ -63,8 +63,10 @@ application/project [services](plugin_services.md) provided by a plugin.
 
 ### Service Scopes
 
-The **Application Service** and **Project Service** scopes are bound to an application and project [service](plugin_services.md) lifetimes accordingly.
-They are children of the [](#intersection-scopes), which means that they are canceled when the application/project is closed or a plugin is unloaded.
+<snippet id="serviceScopes">
+
+The **Application Service** and **Project Service** scopes are bound to an application and project [service](plugin_services.md#types) lifetimes accordingly.
+They are children of the [](coroutine_scopes.md#intersection-scopes), which means that they are canceled when the application/project is closed or a plugin is unloaded.
 
 The service scope is provided to services via constructor injection.
 The following constructor signatures are supported:
@@ -74,6 +76,10 @@ The following constructor signatures are supported:
 
 Each service instance receives its own scope instance.
 The injected scopes' contexts contain [`Dispatchers.Default`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-default.html) and [`CoroutineName(serviceClass)`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-name/).
+
+See [](launching_coroutines.md#launching-coroutine-from-service-scope) for full samples.
+
+</snippet>
 
 ## Using a Correct Scope
 

@@ -2,6 +2,14 @@
 
 <snippet id="releases_table">
 
+## 2024.*
+
+| Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
+|--------------|:-------:|--------------|---------|-----------------------|
+| Koala \| 2024.1.1 Canary 3 | ![Canary][canary] | April 2, 2024 | **2024.1.1.1**<p>AI-241.14494.158.2411.11648550</p> | **2024.1**<p>241.14494.158</p> |
+
+
+
 ## 2023.*
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
@@ -509,11 +517,11 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Koala \| 2024.1.1 Canary 3 | ![Canary][canary] | April 2, 2024 | **2024.1.1.1**<p>AI-241.14494.158.2411.11648550</p> | **2024.1**<p>241.14494.158</p> |
 | Koala \| 2023.3.2 Canary 2 | ![Canary][canary] | March 22, 2024 | **2023.3.2.2**<p>AI-233.14475.28.2332.11606850</p> | **2023.3.4**<p>233.14475.28</p> |
 | Jellyfish \| 2023.3.2 Canary 1 | ![Canary][canary] | March 19, 2024 | **2023.3.2.1**<p>AI-233.14475.28.2332.11578541</p> | **2023.3.4**<p>233.14475.28</p> |
 | Jellyfish \| 2023.3.1 Beta 2 | ![Beta][beta] | March 27, 2024 | **2023.3.1.15**<p>AI-233.14808.21.2331.11608968</p> | **2023.3.5**<p>233.14808.21</p> |
 | Jellyfish \| 2023.3.1 Beta 1 | ![Beta][beta] | March 21, 2024 | **2023.3.1.14**<p>AI-233.14808.21.2331.11574862</p> | **2023.3.5**<p>233.14808.21</p> |
-| Iguana \| 2023.2.1 Patch 1 | ![Patch][patch] | March 18, 2024 | **2023.2.1.24**<p>AI-232.10300.40.2321.11567975</p> | **2023.2.6**<p>232.10300.40</p> |
 
 [release]: https://img.shields.io/badge/-Release-blue?style=flat-square
 [patch]: https://img.shields.io/badge/-Patch-orange?style=flat-square

@@ -1,6 +1,6 @@
-# Providing Live Templates
+<!-- Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Providing Live Templates
 
 <link-summary>Adding custom Live Templates.</link-summary>
 
@@ -57,7 +57,9 @@ The export produces a file called <path>Markdown.xml</path> with the following c
 </templateSet>
 ```
 
-The display `name` can also provide localized variants by specifying `key` and `resource-bundle` attributes additionally (2020.3 and later).
+The display `description` can also provide localized variants by specifying
+`key` and `resource-bundle` attributes instead (code insight is available in 2020.3 and later).
+A quick fix to extract the localized key is available since 2024.2.
 
 Copy this file into the [plugin's resources folder](%gh-sdk-samples%/live_templates/src/main/resources/liveTemplates).
 

@@ -32,6 +32,8 @@
   <!-- Text to display as company information on Settings | Plugin page -->
   <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
+  <resource-bundle>messages.LiveTemplates</resource-bundle>
+
   <extensions defaultExtensionNs="com.intellij">
     <defaultLiveTemplates file="/liveTemplates/Markdown.xml"/>
     <liveTemplateContext implementation="org.intellij.sdk.liveTemplates.MarkdownContext"

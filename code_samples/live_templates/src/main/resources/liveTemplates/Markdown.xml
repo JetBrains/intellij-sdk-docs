@@ -1,9 +1,9 @@
 <templateSet group="Markdown">
   <template name="{"
             value="[$TEXT$]($LINK$)$END$"
-            description="SDK: New link reference"
             toReformat="false"
-            toShortenFQNames="false">
+            toShortenFQNames="false"
+            key="live.template.{.description" resource-bundle="messages.LiveTemplates">
     <variable name="TEXT" expression="" defaultValue="" alwaysStopAt="true"/>
     <variable name="LINK" expression="complete()" defaultValue="" alwaysStopAt="true"/>
     <context>
@@ -12,9 +12,9 @@
   </template>
   <template name="mc"
             value="$TITLE$"
-            description="SDK: Convert to title case"
             toReformat="true"
-            toShortenFQNames="false">
+            toShortenFQNames="false"
+            key="live.template.mc.description" resource-bundle="messages.LiveTemplates">
     <variable name="TITLE" expression="titleCase(SELECTION)" defaultValue="the quick brown fox" alwaysStopAt="true" />
     <context>
       <option name="MARKDOWN" value="true" />

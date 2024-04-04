@@ -6,7 +6,7 @@
 
 <link-summary>Overview of Extension Points and Listeners for CLion.</link-summary>
 
-134 Extension Points and 40 Listeners for CLion
+135 Extension Points and 40 Listeners for CLion
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
@@ -297,6 +297,12 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [training.clion.lessons](https://jb.gg/ipe?extensions=training.clion.lessons) | `CLionExternalLessons` |
+
+### intellij.clion.runFile.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [cidr.cpp.runFile.entryPointDetector](https://jb.gg/ipe?extensions=cidr.cpp.runFile.entryPointDetector) | `CppFileEntryPointDetector` |
 
 ### intellij.rml.dfa.devtools.xml
 

@@ -6,7 +6,7 @@
 
 <link-summary>Overview of Extension Points and Listeners for PHP.</link-summary>
 
-62 Extension Points and 11 Listeners for PHP
+61 Extension Points and 11 Listeners for PHP
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
@@ -112,12 +112,6 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.jetbrains.php.behat.gherkinContextProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.behat.gherkinContextProvider) | `ContextInterfaceProvider` |
-
-### com.jetbrains.php.blade
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| [com.jetbrains.php.blade.bladeDirectiveContributor](https://jb.gg/ipe?extensions=com.jetbrains.php.blade.bladeDirectiveContributor) ![Experimental][experimental] | `BladeDirectiveContributor` |
 
 ### com.jetbrains.php.framework
 

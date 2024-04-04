@@ -1,4 +1,4 @@
-// Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 
 package org.intellij.sdk.project.model;
 
@@ -62,8 +62,7 @@ public class LibrariesAction extends AnAction {
       final ProjectFileIndex fileIndex = ProjectRootManager.getInstance(project).getFileIndex();
       StringBuilder jars = new StringBuilder();
       for (OrderEntry orderEntry : fileIndex.getOrderEntriesForFile(virtualFile)) {
-        if (orderEntry instanceof LibraryOrderEntry) {
-          final LibraryOrderEntry libraryEntry = (LibraryOrderEntry) orderEntry;
+        if (orderEntry instanceof LibraryOrderEntry libraryEntry) {
           final Library library = libraryEntry.getLibrary();
           if (library == null) {
             continue;
@@ -79,7 +78,7 @@ public class LibrariesAction extends AnAction {
       }
       String fileAndLibs;
       if (jars.length() > 0) {
-        fileAndLibs = virtualFile.getName() + ": " + jars.toString();
+        fileAndLibs = virtualFile.getName() + ": " + jars;
       } else {
         fileAndLibs = "None";
       }

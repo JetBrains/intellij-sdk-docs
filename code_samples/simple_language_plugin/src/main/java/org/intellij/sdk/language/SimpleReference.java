@@ -1,4 +1,4 @@
-// Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 
 package org.intellij.sdk.language;
 
@@ -47,7 +47,7 @@ final class SimpleReference extends PsiReferenceBase<PsiElement> implements PsiP
     List<SimpleProperty> properties = SimpleUtil.findProperties(project);
     List<LookupElement> variants = new ArrayList<>();
     for (final SimpleProperty property : properties) {
-      if (property.getKey() != null && property.getKey().length() > 0) {
+      if (property.getKey() != null && !property.getKey().isEmpty()) {
         variants.add(LookupElementBuilder
             .create(property).withIcon(SimpleIcons.FILE)
             .withTypeText(property.getContainingFile().getName())

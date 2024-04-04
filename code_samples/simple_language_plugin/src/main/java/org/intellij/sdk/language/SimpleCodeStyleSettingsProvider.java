@@ -1,4 +1,4 @@
-// Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 
 package org.intellij.sdk.language;
 
@@ -10,7 +10,6 @@ import com.intellij.psi.codeStyle.CodeStyleSettings;
 import com.intellij.psi.codeStyle.CodeStyleSettingsProvider;
 import com.intellij.psi.codeStyle.CustomCodeStyleSettings;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 final class SimpleCodeStyleSettingsProvider extends CodeStyleSettingsProvider {
 
@@ -19,7 +18,6 @@ final class SimpleCodeStyleSettingsProvider extends CodeStyleSettingsProvider {
     return new SimpleCodeStyleSettings(settings);
   }
 
-  @Nullable
   @Override
   public String getConfigurableDisplayName() {
     return "Simple";

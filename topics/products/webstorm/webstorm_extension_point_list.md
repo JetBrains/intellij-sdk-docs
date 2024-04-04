@@ -11,7 +11,7 @@
 
 <link-summary>Overview of Extension Points and Listeners for WebStorm.</link-summary>
 
-69 Extension Points and 5 Listeners for WebStorm
+74 Extension Points and 5 Listeners for WebStorm
 
 See [](extension_point_list.md) for IntelliJ Platform and [](oss_plugins_extension_point_list.md) for additional plugins.
 
@@ -28,6 +28,7 @@ See [](extension_point_list.md) for IntelliJ Platform and [](oss_plugins_extensi
 | [VitestConsoleProperties#COVERAGE_CONFIG_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.javascript.testing.vitest.coverage.VitestCoverageConfigListener)  ![Project-Level][project-level] | `VitestCoverageConfigListener` |
 | [JSLibraryManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.lang.javascript.library.JSLibraryManager.JSLibraryManagerChangeListener)  ![Project-Level][project-level] | `JSLibraryManagerChangeListener` |
 | [JSRemoteModulesRegistry#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.lang.javascript.modules.remote.JSRemoteModulesChangeListener)  | `JSRemoteModulesChangeListener` |
+
 
 ### com.intellij.css
 
@@ -67,18 +68,22 @@ See [](extension_point_list.md) for IntelliJ Platform and [](oss_plugins_extensi
 | [JavaScript.classInheritorsProvider](https://jb.gg/ipe?extensions=JavaScript.classInheritorsProvider) | `JSClassInheritorsProvider` |
 | [JavaScript.completionHelper](https://jb.gg/ipe?extensions=JavaScript.completionHelper) | `JSCompletionHelper` |
 | [JavaScript.completionPlaceFilter](https://jb.gg/ipe?extensions=JavaScript.completionPlaceFilter) ![Project-Level][project-level] | `JSCompletionPlaceFilterProvider` |
+| [JavaScript.componentUsageProvider](https://jb.gg/ipe?extensions=JavaScript.componentUsageProvider) | `JSComponentUsageProvider` |
 | [JavaScript.conditionalCompilationDefinitionsProvider](https://jb.gg/ipe?extensions=JavaScript.conditionalCompilationDefinitionsProvider) | `JSConditionalCompilationDefinitionsProvider` |
 | [JavaScript.dialectSpecificHandlersFactory](https://jb.gg/ipe?extensions=JavaScript.dialectSpecificHandlersFactory) | `JSDialectSpecificHandlersFactory` |
 | [JavaScript.elementScopeProvider](https://jb.gg/ipe?extensions=JavaScript.elementScopeProvider) | `JSElementResolveScopeProvider` |
 | [JavaScript.frameworkIndexingHandler](https://jb.gg/ipe?extensions=JavaScript.frameworkIndexingHandler) | `FrameworkIndexingHandler` |
 | [JavaScript.frameworkSpecificHandler](https://jb.gg/ipe?extensions=JavaScript.frameworkSpecificHandler) | `JSFrameworkSpecificHandler` |
+| [JavaScript.frameworkSpecificStructureViewExtension](https://jb.gg/ipe?extensions=JavaScript.frameworkSpecificStructureViewExtension) | `JSFrameworkSpecificStructureExtension` |
 | [JavaScript.handlersFactory](https://jb.gg/ipe?extensions=JavaScript.handlersFactory) | `JSHandlersFactory` |
 | [JavaScript.iconProvider](https://jb.gg/ipe?extensions=JavaScript.iconProvider) | `JSIconProvider` |
 | [JavaScript.importCandidatesFactory](https://jb.gg/ipe?extensions=JavaScript.importCandidatesFactory) | `CandidatesFactory` |
+| [JavaScript.importCandidatesFilterFactory](https://jb.gg/ipe?extensions=JavaScript.importCandidatesFilterFactory) | `FilterFactory` |
 | [JavaScript.importModulePathStrategy](https://jb.gg/ipe?extensions=JavaScript.importModulePathStrategy) ![Experimental][experimental] | `JSImportModulePathStrategy` |
 | [JavaScript.indexedFileTypeProvider](https://jb.gg/ipe?extensions=JavaScript.indexedFileTypeProvider) | `IndexedFileTypeProvider` |
 | [JavaScript.inheritedLanguagesConfigurableProvider](https://jb.gg/ipe?extensions=JavaScript.inheritedLanguagesConfigurableProvider) | `JSInheritedLanguagesConfigurableProvider` |
 | [JavaScript.intentionAndInspectionFilter](https://jb.gg/ipe?extensions=JavaScript.intentionAndInspectionFilter) | `IntentionAndInspectionFilter` |
+| [JavaScript.isNotMinifiedFile.provider](https://jb.gg/ipe?extensions=JavaScript.isNotMinifiedFile.provider) ![Internal][internal] | `JSIsNotMinifiedFileProvider` |
 | [JavaScript.jestPackageProvider](https://jb.gg/ipe?extensions=JavaScript.jestPackageProvider) | `JestPackageProvider` |
 | [JavaScript.jsDocCustomTagsHandler](https://jb.gg/ipe?extensions=JavaScript.jsDocCustomTagsHandler) ![Experimental][experimental] | `JSDocCustomTagsHandler` |
 | [JavaScript.jsxImplementation](https://jb.gg/ipe?extensions=JavaScript.jsxImplementation) | `JSXImplementation` |
@@ -90,6 +95,7 @@ See [](extension_point_list.md) for IntelliJ Platform and [](oss_plugins_extensi
 | [JavaScript.nodeModulesIndexableFileNamesProvider](https://jb.gg/ipe?extensions=JavaScript.nodeModulesIndexableFileNamesProvider) | `NodeModulesIndexableFileNamesProvider` |
 | [JavaScript.nodeRunConfigurationExtension](https://jb.gg/ipe?extensions=JavaScript.nodeRunConfigurationExtension) | `AbstractNodeRunConfigurationExtension` |
 | [JavaScript.predefinedLibraryProvider](https://jb.gg/ipe?extensions=JavaScript.predefinedLibraryProvider) | `JSPredefinedLibraryProvider` |
+| [JavaScript.projectGeneratorPanelCustomizer](https://jb.gg/ipe?extensions=JavaScript.projectGeneratorPanelCustomizer) | `ProjectGeneratorSettingsCustomizer` |
 | [JavaScript.resolveHelper](https://jb.gg/ipe?extensions=JavaScript.resolveHelper) | `JSResolveHelper` |
 | [JavaScript.runConfigurationBuilder](https://jb.gg/ipe?extensions=JavaScript.runConfigurationBuilder) ![Project-Level][project-level] | `JSRunConfigurationBuilder` |
 | [JavaScript.scanningFileListenerContributor](https://jb.gg/ipe?extensions=JavaScript.scanningFileListenerContributor) | `ScanningFileListenerContributor` |

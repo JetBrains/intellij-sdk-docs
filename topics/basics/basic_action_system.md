@@ -435,7 +435,7 @@ to "reserve" Action ID, so they become visible in <ui-path>Settings | Keymap</ui
 ## Executing Actions Programmatically
 
 Sometimes, it is required to execute actions programmatically, e.g., executing an action implementing logic we need and the implementation is out of our control.
-Executing actions can be achieved with [`ActionUtils.invokeAction()`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/ex/ActionUtil.java).
+Executing actions can be achieved with [`ActionUtils.invokeAction()`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/ex/ActionUtil.kt).
 
 > Executing actions programmatically should be avoided whenever possible.
 > If an action executed programmatically is under your control, extract its logic to a [service](plugin_services.md) or utility class and call it directly.

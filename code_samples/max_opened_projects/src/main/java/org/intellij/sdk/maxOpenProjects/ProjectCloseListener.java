@@ -1,4 +1,4 @@
-// Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 
 package org.intellij.sdk.maxOpenProjects;
 
@@ -14,11 +14,6 @@ public class ProjectCloseListener implements ProjectManagerListener {
 
   @Override
   public void projectClosed(@NotNull Project project) {
-    // Ensure this isn't part of testing
-    if (ApplicationManager.getApplication().isUnitTestMode()) {
-      return;
-    }
-
     // Get the counting service
     ProjectCountingService projectCountingService =
         ApplicationManager.getApplication().getService(ProjectCountingService.class);

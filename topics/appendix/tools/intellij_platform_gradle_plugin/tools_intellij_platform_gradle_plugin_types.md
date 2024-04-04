@@ -77,7 +77,7 @@ See also:
 ## ProductInfo
 {#ProductInfo}
 
-[`ProductInfo`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/model/ProductInfo.kt)
+[`ProductInfo`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/models/ProductInfo.kt)
 
 Represents information about the IntelliJ Platform product.
 
@@ -114,7 +114,7 @@ Throws
 ## ProductRelease.Channel
 {#ProductRelease-Channel}
 
-[`ProductRelease.Channel`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/model/ProductRelease.kt)
+[`ProductRelease.Channel`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/models/ProductRelease.kt)
 
 List of available channels used by JetBrains IDEs and Android Studio for describing binary releases.
 
@@ -137,7 +137,7 @@ See also:
 ## ProductReleasesValueSource.FilterParameters
 {#ProductReleasesValueSource-FilterParameters}
 
-[`ProductReleasesValueSource.FilterParameters`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/provider/ProductReleasesValueSource.kt)
+[`ProductReleasesValueSource.FilterParameters`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/providers/ProductReleasesValueSource.kt)
 
 Interface that provides a clear way to filter binary product releases for the purposes of IntelliJ Plugin Verifier.
 

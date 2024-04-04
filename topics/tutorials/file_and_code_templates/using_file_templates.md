@@ -117,7 +117,7 @@ Internal templates can be exposed in the <control>Files</control> category by ad
 ```
 
 **Example**:
-[`NewKotlinFileAction`](%gh-ic%/plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/actions/NewKotlinFileAction.kt) for Kotlin files creation action.
+[`NewKotlinFileAction`](%gh-ic%/plugins/kotlin/kotlin.ide/src/org/jetbrains/kotlin/idea/actions/NewKotlinFileAction.kt) for Kotlin files creation action.
 
 ## Improving "Save File as Template…" Action
 

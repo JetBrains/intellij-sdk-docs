@@ -1,4 +1,4 @@
-// Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 
 package org.intellij.sdk.language;
 
@@ -13,7 +13,6 @@ import com.intellij.psi.PsiReference;
 import com.intellij.psi.codeStyle.CodeStyleManager;
 import com.intellij.testFramework.fixtures.LightJavaCodeInsightFixtureTestCase;
 import com.intellij.usageView.UsageInfo;
-import com.intellij.util.containers.ContainerUtil;
 import org.intellij.sdk.language.psi.SimpleProperty;
 
 import java.util.Collection;
@@ -49,7 +48,7 @@ public class SimpleCodeInsightTest extends LightJavaCodeInsightFixtureTestCase {
     WriteCommandAction.writeCommandAction(getProject()).run(() ->
         CodeStyleManager.getInstance(getProject()).reformatText(
             myFixture.getFile(),
-            ContainerUtil.newArrayList(myFixture.getFile().getTextRange())
+            List.of(myFixture.getFile().getTextRange())
         )
     );
     myFixture.checkResultByFile("DefaultTestData.simple");

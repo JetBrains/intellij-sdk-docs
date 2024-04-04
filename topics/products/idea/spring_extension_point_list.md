@@ -6,7 +6,7 @@
 
 <link-summary>Overview of Extension Points and Listeners for Spring API.</link-summary>
 
-52 Extension Points and 5 Listeners for Spring API
+53 Extension Points and 5 Listeners for Spring API
 
 <include from="snippets.md" element-id="ep_list_legend"/>
 
@@ -29,6 +29,7 @@
 |-----------------|----------------|
 | [com.intellij.spring.autodetected.filesets](https://jb.gg/ipe?extensions=com.intellij.spring.autodetected.filesets) | `SpringAutodetectedFilesetsSearcher` |
 | [com.intellij.spring.autodetected.models](https://jb.gg/ipe?extensions=com.intellij.spring.autodetected.models) | `SpringAutodetectedModelsSearcher` |
+| [com.intellij.spring.beanClassLineMarker](https://jb.gg/ipe?extensions=com.intellij.spring.beanClassLineMarker) | `BeanClassLineMarker` |
 | [com.intellij.spring.beans.stereotype](https://jb.gg/ipe?extensions=com.intellij.spring.beans.stereotype) | `SpringBeanStereotype` |
 | [com.intellij.spring.componentScanExtender](https://jb.gg/ipe?extensions=com.intellij.spring.componentScanExtender) | `ComponentScanExtender` |
 | [com.intellij.spring.conditionalEvaluatorProvider](https://jb.gg/ipe?extensions=com.intellij.spring.conditionalEvaluatorProvider) | `ConditionalEvaluatorProvider` |
@@ -50,6 +51,7 @@
 | [com.intellij.spring.placeholderReferenceResolver](https://jb.gg/ipe?extensions=com.intellij.spring.placeholderReferenceResolver) | `SpringPlaceholderReferenceResolver` |
 | [com.intellij.spring.resourceTypeProvider](https://jb.gg/ipe?extensions=com.intellij.spring.resourceTypeProvider) | `SpringResourceTypeProvider` |
 | [com.intellij.spring.scriptBeanPsiClassDiscoverer](https://jb.gg/ipe?extensions=com.intellij.spring.scriptBeanPsiClassDiscoverer) | `ScriptBeanPsiClassDiscoverer` |
+| [com.intellij.spring.settingsProvider](https://jb.gg/ipe?extensions=com.intellij.spring.settingsProvider) | `SpringSettingsProvider` |
 | [com.intellij.spring.testingAnnotationsProvider](https://jb.gg/ipe?extensions=com.intellij.spring.testingAnnotationsProvider) | `SpringTestingAnnotationsProvider` |
 | [com.intellij.spring.testingImplicitContextsProvider](https://jb.gg/ipe?extensions=com.intellij.spring.testingImplicitContextsProvider) | `SpringTestingImplicitContextsProvider` |
 | [com.intellij.spring.valueConverter](https://jb.gg/ipe?extensions=com.intellij.spring.valueConverter) | `SpringValueConvertersProvider` |
@@ -89,7 +91,6 @@
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.intellij.spring.mvc.applicationPathProvider](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.applicationPathProvider) | `SpringApplicationPathProvider` |
-| [com.intellij.spring.mvc.applicationPortProvider](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.applicationPortProvider) | `SpringApplicationPortProvider` |
 | [com.intellij.spring.mvc.mergingMvcRequestMappingLineMarkerProvider](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.mergingMvcRequestMappingLineMarkerProvider) | `SpringMergingMvcRequestMappingLineMarkerProvider` |
 | [com.intellij.spring.mvc.springEndpointsIconProvider](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.springEndpointsIconProvider) | `SpringEndpointsIconProvider` |
 | [com.intellij.spring.mvc.viewResolverFactory](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.viewResolverFactory) | `ViewResolverFactory` |

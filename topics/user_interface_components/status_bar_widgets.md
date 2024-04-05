@@ -36,7 +36,7 @@ interface.
 To reuse the IntelliJ Platform implementation, you can extend one of two classes:
 
 - [`EditorBasedWidget`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/EditorBasedWidget.kt)
-- [`EditorBasedStatusBarPopup`]([`EditorBasedStatusBarPopup`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/EditorBasedStatusBarPopup.kt))
+- [`EditorBasedStatusBarPopup`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/EditorBasedStatusBarPopup.kt)
 
 ## EditorBasedWidget
 

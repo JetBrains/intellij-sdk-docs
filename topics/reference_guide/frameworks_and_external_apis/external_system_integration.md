@@ -125,7 +125,7 @@ It's possible to configure external system integration to automatically refresh 
 > From 2020.1, auto-import cannot be disabled by a user.
 >
 
-### Auto-Import for ExternalSystemManager Implementation
+### Auto-Import for `ExternalSystemManager` Implementation
 
 Describe project's settings files to track by having external system [`ExternalSystemManager`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/ExternalSystemManager.java) implement [`ExternalSystemAutoImportAware`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/ExternalSystemAutoImportAware.java).
 

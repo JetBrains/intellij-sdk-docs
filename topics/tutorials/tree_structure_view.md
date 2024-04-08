@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Modifying Project View Structure
 
@@ -14,7 +14,7 @@ Other use cases include:
 - grouping/nesting related entries, e.g., [GUI Designer](https://www.jetbrains.com/help/idea/gui-designer-basics.html) <path>.form</path> file and related bound class ([`FormMergerTreeStructureProvider`](%gh-ic%/plugins/ui-designer/src/com/intellij/uiDesigner/projectView/FormMergerTreeStructureProvider.java)).
 - provide additional "nested" nodes, e.g., contents of custom archive file
 
-## Register Custom TreeStructure Provider
+## Register Custom `TreeStructureProvider`
 
 Add new `com.intellij.treeStructureProvider` extension to the [plugin.xml](%gh-sdk-samples%/tree_structure_provider/src/main/resources/META-INF/plugin.xml)
 
@@ -24,7 +24,7 @@ Add new `com.intellij.treeStructureProvider` extension to the [plugin.xml](%gh-s
 </extensions>
 ```
 
-## Implement Custom TreeStructureProvider
+## Implement Custom `TreeStructureProvider`
 
 To provide custom Structure View behaviour, implement [`TreeStructureProvider`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/projectView/TreeStructureProvider.java) with the nodes filtering logic in `modify()` method.
 If access to indexes is not required, it can be marked [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI).

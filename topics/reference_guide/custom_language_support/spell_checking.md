@@ -1,6 +1,6 @@
-# Spell Checking
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Spell Checking
 
 <link-summary>Providing spellchecking for custom language.</link-summary>
 
@@ -21,7 +21,7 @@ and registering it in the `com.intellij.spellchecker.support` extension point.
 - [`JavaSpellcheckingStrategy`](%gh-ic%/java/java-impl/src/com/intellij/spellchecker/JavaSpellcheckingStrategy.java)
 - [`HtmlSpellcheckingStrategy`](%gh-ic%/xml/impl/src/com/intellij/spellchecker/xml/HtmlSpellcheckingStrategy.java)
 
-## SpellcheckingStrategy
+## `SpellcheckingStrategy`
 
 `SpellcheckingStrategy` adjusts the spell checking behavior for PSI elements of a custom language
 by providing methods to define:
@@ -40,7 +40,7 @@ The `getTokenizer()` method returns an instance of
 [Tokenizer](%gh-ic%/spellchecker/src/com/intellij/spellchecker/tokenizer/Tokenizer.java)
 and is explained below.
 
-### Tokenizer
+### `Tokenizer`
 
 The `tokenize()` method of `Tokenizer` defines which portions of a PSI element
 need to be spell-checked by feeding them into the
@@ -63,7 +63,7 @@ and implement `tokenize()` with the logic you need.
 **Example:**
 [`MethodNameTokenizerJava`](%gh-ic%/java/java-impl/src/com/intellij/spellchecker/MethodNameTokenizerJava.java)
 
-#### Splitter
+#### `Splitter`
 
 In `Tokenizer.tokenize()` the `consumeToken()` method can take an instance of
 [`Splitter`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/inspections/Splitter.java) as the second argument.
@@ -91,7 +91,7 @@ overriding `getSuppressActions()` to add quick fix actions that suppress warning
 
 ## Providing Dictionaries
 
-### BundledDictionaryProvider
+### `BundledDictionaryProvider`
 
 Some custom languages may have a distinct fixed set of words or key identifiers.
 These words can be provided in additional dictionaries from
@@ -102,7 +102,7 @@ register it with the `com.intellij.spellchecker.bundledDictionaryProvider` exten
 **Example:**
 [`PythonBundledDictionaryProvider`](%gh-ic%/python/src/com/jetbrains/python/spellchecker/PythonBundledDictionaryProvider.java)
 
-### RuntimeDictionaryProvider
+### `RuntimeDictionaryProvider`
 
 [`RuntimeDictionaryProvider`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/dictionary/RuntimeDictionaryProvider.java)
 allows providing (dynamic) dictionaries generated at runtime, e.g., downloaded from a server, created from project sources on-the-fly, etc.

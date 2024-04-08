@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Library
 
@@ -19,7 +19,7 @@ The IntelliJ Platform supports three types of libraries:
 
 A particular type of programmatically defined libraries is [Predefined Libraries](#predefined-libraries).
 
-## Accessing Libraries and Jars
+## Accessing Libraries and JARs
 Package [`com.intellij.openapi.roots.libraries`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/libraries) provides functionality for working with project libraries and JAR files.
 
 ### Getting a List of Libraries a Module Depends On

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Creating, showing, and getting the input provided by users in dialogs.</link-summary>
 
@@ -10,7 +10,7 @@
 
 </tldr>
 
-## DialogWrapper
+## `DialogWrapper`
 
 The [`DialogWrapper`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) is the base class which is supposed to be used for all modal dialogs (and some non-modal dialogs) shown in IntelliJ Platform.
 

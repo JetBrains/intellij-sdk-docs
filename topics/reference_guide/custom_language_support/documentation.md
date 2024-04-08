@@ -1,6 +1,6 @@
-# Documentation
-
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Documentation
 
 <link-summary>Providing code documentation displayed in the popup invoked by hovering over a symbol or invoking the "View | Quick Documentation" action.</link-summary>
 
@@ -54,19 +54,19 @@ outlining the primary components and their interactions.
 </procedure>
 
 {style="full"}
-DocumentationTargetProvider
+`DocumentationTargetProvider`
 : Implement
 [`DocumentationTargetProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/DocumentationTargetProvider.java)
 and register it as `com.intellij.platform.backend.documentation.targetProvider` extension point to build documentation
 for a certain offset in a `PsiFile` by overriding `documentationTargets()`.
 
-PsiDocumentationTargetProvider
+`PsiDocumentationTargetProvider`
 : Implement
 [`PsiDocumentationTargetProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/PsiDocumentationTargetProvider.java)
 and register it as `com.intellij.platform.backend.documentation.psiTargetProvider` extension point to build documentation
 for PSI elements by overriding `documentationTarget()`.
 
-SymbolDocumentationTargetProvider
+`SymbolDocumentationTargetProvider`
 : Implement
 [`SymbolDocumentationTargetProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/SymbolDocumentationTargetProvider.java)
 and register it as `com.intellij.platform.backend.documentation.symbolTargetProvider` extension point to build documentation

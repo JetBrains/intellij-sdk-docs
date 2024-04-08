@@ -76,7 +76,7 @@ EditorTextField editorTextField =
         new EditorTextField(document, project, JavaFileType.INSTANCE);
 ```
 
-**TIPS**:
+#### Tips
 
 * When creating more than one field, two separate documents are needed.
   This is accomplished by using separate instances of `PsiExpressionCodeFragment`.

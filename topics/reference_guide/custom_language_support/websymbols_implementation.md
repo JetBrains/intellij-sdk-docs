@@ -1,10 +1,8 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Implementing Web Symbols
 
-<link-summary>
-Implementation details for the Web Symbols API.
-</link-summary>
+<link-summary>Implementation details for the Web Symbols API.</link-summary>
 
 The core element of the framework is a
 [`WebSymbol`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/WebSymbol.kt),
@@ -31,77 +29,77 @@ Each symbol is treated by the framework the same, regardless of their origin.
 
 ## General Properties
 
-WebSymbol has a number of properties, which are used across IDE features:
+`WebSymbol` has a number of properties, which are used across IDE features:
 
 {style="full"}
-namespace
+`namespace`
 : Describes which language or concept the symbol belongs to.
 
-kind
+`kind`
 : Describes which group of symbols within the particular language or concept (namespace) the symbol belongs to.
 The kind should be plural in form, e.g. "attributes".
 
-name
+`name`
 : The name of the symbol. If the symbol does not have a pattern, the name will be used as-is for matching.
 
-origin
+`origin`
 : Specifies where this symbol comes from. Besides descriptive information like framework, library, version or default icon,
 it also provides an interface to load symbol types and icons.
 
-icon
+`icon`
 : An optional icon associated with the symbol, which is going to be used across the IDE.
 If none is specified, a default icon of the `origin` will be used and if that’s not available, a default icon for symbol `namespace` and `kind`.
 
-priority
+`priority`
 : Symbols with higher priority will have precedence over those with lower priority, when matching is performed.
 Symbols with higher priority will also show higher on the completion list.
 
-proximity
+`proximity`
 : Provides additional way to sort symbols in code completion list within a particular priority.
 The value must be a non-negative integer and the higher proximity, the higher the symbol would be on the list.
 
-apiStatus
+`apiStatus`
 : *Since 2023.2 - replaces `deprecated` and `experimental` properties*
 : Documents API status of the symbol. It is one of the sub-interfaces of [`WebSymbolApiStatus`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/WebSymbolApiStatus.kt):
    `Stable`, `Experimental` or `Deprecated`. Deprecated symbols are appropriately highlighted in the code editor, code completion and quick documentation.
 
-deprecated
+`deprecated`
 : *Removed in 2023.2 - replaced with `apiStatus` property*
 : Documents, whether the symbol is deprecated. Deprecated symbols are appropriately highlighted in the code editor,
 code completion and quick documentation.
 
-experimental
+`experimental`
 : *Removed in 2023.2 - replaced with `apiStatus` property*
 : Documents, whether the symbol is considered an experimental feature and should be used with caution and might be
 removed or its API altered in the future.
 
-required
+`required`
 : Whether this symbol is required. What "is required" means, depends on the symbol.
 For instance, for an HTML attribute it would mean that the attribute is required to be present for the particular HTML element.
 For JavaScript property is would mean that it is not optional, so it cannot be `undefined`.
 
-defaultValue
+`defaultValue`
 : If the symbol represents some property, variable or anything that can hold a value, this property documents what is the default value.
 
-type
+`type`
 : The type of the symbol. The type can be interpreted only within the context of symbol origin and in regard to its namespace and kind.
 The type may be a language type, coming from e.g. Java or TypeScript, or it may be any arbitrary value.
 Usually a type would be associated with symbols, which can hold a value, or represent some language symbol, like class, method, etc.
 
-psiContext
+`psiContext`
 : A PsiElement, which is a file or an element, which can be used to roughly locate the source of the symbol within a project to provide
 a context for loading additional information, like types.
 If the symbol is
 [`PsiSourcedWebSymbol`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/PsiSourcedWebSymbol.kt)
 (see [](#psisourcedwebsymbol)), then `psiContext` is equal to `source`.
 
-properties
+`properties`
 : Various symbol properties. There should be no assumption on the type of properties.
 Properties can be used by plugins to provide additional information on the symbol.
 See [Web Types Special Properties](websymbols_web_types.md#special-properties) section
 for reference on the custom properties supported by IDEs.
 
-presentation
+`presentation`
 : Returns
 [`TargetPresentation`](%gh-ic%/platform/core-api/src/com/intellij/platform/backend/presentation/TargetPresentation.kt)
 used by
@@ -121,16 +119,16 @@ Following properties handle generation of
 in the IDE:
 
 {style="full"}
-description
+`description`
 : An optional text, which describes the symbol purpose and usage. It is rendered in the documentation popup or view.
 
-descriptionSections
+`descriptionSections`
 : Additional sections, to be rendered in the symbols’ documentation. Each section should have a name, but the contents are optional.
 
-docUrl
+`docUrl`
 : An optional URL to a website with detailed symbol's documentation
 
-documentation
+`documentation`
 : *Removed in 2023.1.1 - replaced by `createDocumentation()`*
 : An interface holding information required to render documentation for the symbol. To customize symbols documentation,
 one can override the method, or implement
@@ -144,7 +142,7 @@ interface provides builder methods for customizing the documentation.
 Following properties are related to name matching and code completion queries:
 
 {style="full"}
-pattern
+`pattern`
 : The pattern to match names against. As a result of pattern matching a
 [`WebSymbolMatch`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/query/WebSymbolMatch.kt)
 will be created.
@@ -152,28 +150,28 @@ A pattern may specify that a reference to other Web Symbols is expected in some 
 For such places, appropriate segments with referenced Web Symbols will be created and navigation,
 validation and refactoring support is available out-of-the-box.
 
-queryScope
+`queryScope`
 : When pattern is being evaluated, matched symbols can provide additional scope for further resolution in the pattern.
 By default, the `queryScope` returns the symbol itself
 
-virtual
+`virtual`
 : Some symbols represent only a framework syntax, which does not translate to a particular symbol in the runtime.
 For instance a Vue directive, which needs to be prefixed with `v-` will result in some special code generated,
 but as such is not a real HTML attribute. This distinction allows us to ignore such symbols when looking for references.
 
-abstract
+`abstract`
 : Some symbols may have a lot in common with each other and one can use abstract symbols as their super symbol.
 For performance reasons, only statically defined symbols ([](websymbols_web_types.md),
 [Custom Elements Manifest](https://github.com/webcomponents/custom-elements-manifest))
 can inherit from other statically defined symbols. For dynamically defined symbols regular class inheritance should be used.
 
-extension
+`extension`
 : Specifies whether the symbol is an extension. When matched along with a non-extension symbol it can provide or
 override some properties of the symbol, or it can extend its scope contents.
 
 ## HTML support
 
-attributeValue
+`attributeValue`
 : A special property to support symbols representing HTML attributes.
 It can specify the kind (plain, expression, no-value), type (boolean, number, string, enum, complex, of-match),
 whether an attribute value is required, a default value and the result type of value expression in the appropriate language.
@@ -185,28 +183,28 @@ By default - when properties are `null` - attribute value is of plain type and i
 {#query-methods}
 
 {style="full"}
-createPointer()
+`createPointer()`
 : Returns the pointer to the symbol, which can survive between read actions. The dereferenced symbol should be valid,
 i.e. any PSI based properties should return valid PsiElements.
 
-getModificationCount()
+`getModificationCount()`
 : Symbols can be used in
 [`CachedValue`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/CachedValue.java)s
 as dependencies. If a symbol instance can mutate over the time, it should properly implement this method.
 
-isEquivalentTo()
+`isEquivalentTo()`
 : Returns true if two symbols are the same or equivalent for resolve purposes.
 
-adjustNameForRefactoring()
+`adjustNameForRefactoring()`
 : Web Symbols can have various naming conventions.
 This method is used by the framework to determine a new name for a symbol based on its occurrence.
 
-getDocumentationTarget()
+`getDocumentationTarget()`
 : *Since 2023.1.1*
 : Used by Web Symbols framework to get a [`DocumentationTarget`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/DocumentationTarget.kt), which handles documentation
 rendering for the symbol. Default implementation will use `createDocumentation()` to render the documentation.
 
-createDocumentation()
+`createDocumentation()`
 : *Since 2023.1.1 - replaces `documentation` property*
 : Returns [`WebSymbolDocumentation`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/documentation/WebSymbolDocumentation.kt) -
 an interface holding information required to render documentation for the symbol.
@@ -218,7 +216,7 @@ interface provides builder methods for customizing the documentation.
 `with*` methods return a copy of the documentation with customized fields.
 
 
-## PsiSourcedWebSymbol
+## `PsiSourcedWebSymbol`
 
 A symbol should implement
 [`PsiSourcedWebSymbol`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/PsiSourcedWebSymbol.kt)
@@ -232,10 +230,10 @@ contribution of a dedicated declaration provider instead of implementing this in
 {#psisourcedwebsymbol-properties}
 
 {style="full"}
-source
+`source`
 : The `PsiElement`, which is the symbol declaration.
 
-## CompositeWebSymbol
+## `CompositeWebSymbol`
 
 [`WebSymbolMatch`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/query/WebSymbolMatch.kt)
 and some special symbols can have a name, which consists of other Web Symbols.
@@ -244,7 +242,7 @@ and some special symbols can have a name, which consists of other Web Symbols.
 {#compositewebsymbol-properties}
 
 {style="full"}
-nameSegments
+`nameSegments`
 : List of
 [`WebSymbolNameSegment`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/WebSymbolNameSegment.kt).
 Each segment describes a range in the symbol name.
@@ -264,20 +262,20 @@ When configuring queries, Web Symbols scope are added to the list to create an i
 {#websymbolsscope-methods}
 
 {style="full"}
-getSymbols()
+`getSymbols()`
 : Returns symbols within the scope. If provided `name` is `null`, no pattern evaluation will happen and all symbols of a particular
 kind and from particular namespace will be returned.
 
-getCodeCompletions()
+`getCodeCompletions()`
 : Returns code completions for symbols within the scope.
 
-isExclusiveFor()
+`isExclusiveFor()`
 : When scope is exclusive for a particular namespace and kind, resolve will not continue down the stack during pattern matching.
 
-createPointer()
+`createPointer()`
 : Returns the pointer to the symbol scope, which can survive between read actions. The dereferenced symbol scope should be valid.
 
-getModificationCount()
+`getModificationCount()`
 : Symbol scopes are used in CachedValues as dependencies for query executors.
 If a symbol scope instance can mutate over the time, it should properly implement this method.
 

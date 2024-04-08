@@ -1,6 +1,6 @@
-# Documents
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# Documents
 
 <link-summary>Introduction to documents - an editable sequence of Unicode characters, typically storing the content of a virtual file.</link-summary>
 
@@ -9,7 +9,7 @@ A [`Document`](%gh-ic%/platform/core-api/src/com/intellij/openapi/editor/Documen
 Line breaks in a document are _always_ normalized to `\n`.
 The IntelliJ Platform handles encoding and line break conversions when loading and saving documents transparently.
 
-## How do I get a Document?
+## How do I get a `Document`?
 
 | Context                          | API                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -17,16 +17,16 @@ The IntelliJ Platform handles encoding and line break conversions when loading a
 | [PSI File](psi_files.md)         | [`PsiDocumentManager.getDocument()`/`getCachedDocument()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiDocumentManager.java)                                                                                                                                                                                                                                                                                                  |
 | [Virtual File](virtual_file.md)  | <p>[`FileDocumentManager.getDocument()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileEditor/FileDocumentManager.java) (forces the document content to be loaded from a disk if it wasn't loaded previously)</p><p>[`FileDocumentManager.getCachedDocument()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileEditor/FileDocumentManager.java) (use if only open or possibly modified documents are relevant)</p> |
 
-## What can I do with a Document?
+## What can I do with a `Document`?
 
 You may perform any operations that access or modify the file contents on the "plain text" level (as a sequence of characters, not as a tree of [](psi.md) elements).
 
-## Where does a Document come from?
+## Where does a `Document` come from?
 
-Document instances are created when some operation needs to access the text contents of a file (in particular, this is necessary to build the PSI for a file).
+`Document` instances are created when some operation needs to access the text contents of a file (in particular, this is necessary to build the PSI for a file).
 Also, document instances not linked to any [](virtual_file.md) can be created temporarily, for example, representing the contents of a text editor field in a dialog.
 
-## How long does a Document persist?
+## How long does a `Document` persist?
 
 Document instances are weakly referenced from `VirtualFile` instances.
 Thus, an unmodified `Document` instance can be garbage-collected if no one references it, and a new instance is created if the document contents are reaccessed later.
@@ -35,18 +35,18 @@ Thus, an unmodified `Document` instance can be garbage-collected if no one refer
 >
 {style="warning"}
 
-## How do I create a Document?
+## How do I create a `Document`?
 
 For creating a new file on disk, please do not create a `Document` but a PSI file and get its `Document` (see [](psi_files.md#how-do-i-create-a-psi-file)).
 To create a `Document` instance that isn't bound to anything, use [`EditorFactory.createDocument()`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/EditorFactory.java).
 
-## How do I get notified when Documents change?
+## How do I get notified when documents change?
 
 * `Document.addDocumentListener()` allows receiving notifications about changes in a particular `Document` instance.
 * `EditorFactory.getEventMulticaster().addDocumentListener()` allows receiving notifications about changes in all open documents.
 * Register [`FileDocumentManagerListener`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/fileEditor/FileDocumentManagerListener.java) [listener](plugin_listeners.md) or subscribe to `AppTopics.FILE_DOCUMENT_SYNC` on any level bus to receive notifications when a `Document` is saved or reloaded from disk.
 
-## What are the rules of working with Documents?
+## What are the rules of working with documents?
 
 The general read/write action rules are in effect (see [](general_threading_rules.md)).
 Besides, any operations which modify the contents of the document must be wrapped in a command ([`CommandProcessor.executeCommand()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/command/CommandProcessor.java)).
@@ -60,7 +60,7 @@ All text strings passed to `Document` modification methods (`setText()`, `insert
 
 See also [Working with Text](working_with_text.md#safely-replacing-selected-text-in-the-document) in Editors Basics tutorial.
 
-## Are there any utilities available for working with Documents?
+## Are there any utilities available for working with documents?
 
 [`DocumentUtil`](%gh-ic%/platform/core-impl/src/com/intellij/util/DocumentUtil.java) contains utility methods for `Document` processing.
 This allows you to get information like the text offsets of particular lines.

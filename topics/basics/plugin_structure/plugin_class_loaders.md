@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Class Loaders
 
@@ -44,7 +44,7 @@ However, in the <path>[plugin.xml](plugin_configuration_file.md)</path> file, yo
 In this case, the class loaders of those plugins will be used for classes not found in the current plugin.
 This allows a plugin to reference classes from other plugins.
 
-## Using ServiceLoader
+## Using `ServiceLoader`
 
 Some libraries use [`ServiceLoader`](https://docs.oracle.com/javase/8/docs/api/index.html?java/util/ServiceLoader.html) to detect and load implementations.
 For this to work in a plugin, the context class loader must be set to the plugin's classloader and restored afterwards with the original one around initialization code:

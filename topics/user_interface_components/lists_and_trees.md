@@ -1,10 +1,10 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # List and Tree Controls
 
 <link-summary>Creating list and tree components consistent with IntelliJ Platform UI components.</link-summary>
 
-### JBList and Tree
+### `JBList` and `Tree`
 
 Whenever you would normally use a standard [Swing `JList`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JList.html) component, it's recommended to use the [`JBList`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/JBList.java) class as drop-in replacement. [`JBList`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/JBList.java) supports the following additional features on top of [`JList`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JList.html):
 
@@ -17,13 +17,13 @@ Whenever you would normally use a standard [Swing `JList`](https://docs.oracle.c
 Similarly, the [`Tree`](%gh-ic%/platform/platform-api/src/com/intellij/ui/treeStructure/Tree.java) class provides a replacement for the standard [`JTree`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JTree.html) class.
 In addition to the features of [`JBList`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/JBList.java), it supports wide selection painting (Mac style) and auto-scroll on drag & drop.
 
-### ColoredListCellRenderer and ColoredTreeCellRenderer
+### `ColoredListCellRenderer` and `ColoredTreeCellRenderer`
 
 When you need to customize the presentation of items in a list box or a tree, it's recommended to use the [`ColoredListCellRenderer`](%gh-ic%/platform/platform-api/src/com/intellij/ui/ColoredListCellRenderer.java) or [`ColoredTreeCellRenderer`](%gh-ic%/platform/platform-api/src/com/intellij/ui/ColoredTreeCellRenderer.java) classes as the cell renderer.
 These classes allow you to compose the presentation out of multiple text fragments with different attributes by calling `append()` and to set an optional icon for the item by calling `setIcon()`.
 The renderer automatically takes care of setting the correct text color for selected items and of many other platform-specific rendering details.
 
-### ListSpeedSearch and TreeSpeedSearch
+### `ListSpeedSearch` and `TreeSpeedSearch`
 
 To facilitate keyboard-based selection of items in a list box or a tree, you can install a speed search handler on it using the [`ListSpeedSearch`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/ListSpeedSearch.java) and [`TreeSpeedSearch`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/TreeSpeedSearch.java).
 This can be done simply by calling `new ListSpeedSearch(list)` or `new TreeSpeedSearch(tree)`.
@@ -31,7 +31,7 @@ To customize the text which is used to locate the element, override the `getElem
 Alternatively, you can pass a function to convert items to strings.
 A function needs to be passed as `elementTextDelegate` to the [`ListSpeedSearch`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/ListSpeedSearch.java) constructor or as `toString` to the [`TreeSpeedSearch`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/TreeSpeedSearch.java) constructor.
 
-### ToolbarDecorator
+### `ToolbarDecorator`
 
 A very common task in plugin development is showing a list or a tree where the user is allowed to add, remove, edit or reorder the items.
 The implementation of this task is greatly facilitated by the [`ToolbarDecorator`](%gh-ic%/platform/platform-api/src/com/intellij/ui/ToolbarDecorator.java) class.

@@ -46,7 +46,7 @@ RunConfiguration -l|> RunProfile
 
 Run Configuration API (except `SettingsEditor` class, which is a class shared by many IntelliJ Platform APIs) is a part of the [Execution API](execution.md).
 
-### ConfigurationType
+### `ConfigurationType`
 
 The entry point of a run configuration implementation is [`ConfigurationType`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/ConfigurationType.java).
 It is responsible for the run configuration type and instances presentation and contains [configuration factories](#configurationfactory).
@@ -71,7 +71,7 @@ Sometimes, it is required to provide run configurations programmatically from co
 Implementing [`VirtualConfigurationType`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/VirtualConfigurationType.java) blocks the possibility of adding and removing run configurations of this type in the <control>Run/Debug Configurations</control> panel.
 Editing its template is also not available.
 
-### ConfigurationFactory
+### `ConfigurationFactory`
 
 [`ConfigurationFactory`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/ConfigurationFactory.java) classes are responsible for creating [run configuration](#runconfiguration) instances.
 The only method required to be implemented is `createTemplateConfiguration()`, which is called once for each project to create the run configuration template.
@@ -83,7 +83,7 @@ If customization is needed, override the presentation methods in the factory cla
 By default, configurations created by a given factory are not editable in [dumb mode](indexing_and_psi_stubs.md#dumb-mode).
 To enable editing them in Dumb Mode, return `true` from `isEditableInDumbMode()`.
 
-### RunConfiguration
+### `RunConfiguration`
 
 [`RunConfiguration`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RunConfiguration.java) extends [`RunProfile`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RunProfile.java) and represents a named profile that can be run by the [Execution API](execution.md).
 
@@ -92,7 +92,7 @@ When implementing a run configuration class, consider using one of the standard 
 * [`LocatableConfigurationBase`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/LocatableConfigurationBase.java) - a base class for [configurations that can be created from context](#creating-a-run-configuration-from-context).
 * [`ModuleBasedConfiguration`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/ModuleBasedConfiguration.java) - a base class for a configuration that is associated with a specific [](module.md) (e.g., Java run configurations use the selected module to determine the run classpath).
 
-### SettingsEditor
+### `SettingsEditor`
 
 A run configuration may allow editing its general settings and settings specific to a [program runner](execution.md#execution-classes).
 If it is required, a `RunConfiguration` implementation should return a [`SettingsEditor`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/SettingsEditor.java) instance from:

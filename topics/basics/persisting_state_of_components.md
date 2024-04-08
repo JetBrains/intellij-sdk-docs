@@ -281,7 +281,7 @@ Use the `PropertiesComponent.getInstance()` method for storing application-level
 
 Since all plugins share the same namespace, it is highly recommended prefixing key names (e.g., using plugin ID `com.example.myCustomSetting`).
 
-## Legacy API (`JDOMExternalizable`)
+## Legacy API (`JDOMExternalizable`) {collapsible="true"}
 
 Older components use the [`JDOMExternalizable`](%gh-ic%/platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java) interface for persisting state.
 It uses the `readExternal()` method for reading the state from a JDOM element, and `writeExternal()` to write the state.

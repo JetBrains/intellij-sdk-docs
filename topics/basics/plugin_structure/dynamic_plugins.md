@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Dynamic Plugins
 
@@ -59,7 +59,7 @@ Application, project, and module [services](plugin_services.md) declared with `o
 >
 {style="note"}
 
-### CachedValue
+### `CachedValue`
 
 Loading/Unloading a plugin clears all cached values created using [`CachedValuesManager`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/CachedValuesManager.java).
 
@@ -67,7 +67,7 @@ Loading/Unloading a plugin clears all cached values created using [`CachedValues
 
 Do not store references to PSI elements in objects which can survive plugin loading or unloading; use [`SmartPsiElementPointer`](%gh-ic%/platform/core-api/src/com/intellij/psi/SmartPsiElementPointer.java) instead.
 
-### Do not Use FileType/Language as Map Key
+### Do not Use `FileType`/`Language` as Map Key
 
 Replace with `String` from `Language.getID()`/`FileType.getName()` (use inspection <control>Plugin DevKit | Code | Map key may leak</control>).
 

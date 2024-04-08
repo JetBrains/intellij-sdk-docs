@@ -1,8 +1,8 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
-
-<link-summary>Organizing actions in custom groups and attaching them to the existing ones.</link-summary>
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Grouping Actions
+
+<link-summary>Organizing actions in custom groups and attaching them to the existing ones.</link-summary>
 
 If an implementation requires several actions, or there are simply too many actions that overload the menu, the actions can be placed into groups.
 This tutorial demonstrates adding an action to an existing group, creating a new action group, and action groups with a variable number of actions.
@@ -99,7 +99,7 @@ The steps below show how to make a group of actions available and visible if cer
 In this case, the condition is having an instance of available editor.
 This condition is needed because the custom action group is added to an IntelliJ menu that is only enabled for editing.
 
-### Extending DefaultActionGroup
+### Extending `DefaultActionGroup`
 
 The [`DefaultActionGroup`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java) is an implementation of [`ActionGroup`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java).
 The `DefaultActionGroup` class is used to add child actions and separators between them to a group.
@@ -177,6 +177,7 @@ group.org.intellij.sdk.action.CustomDefaultActionGroup.description=Custom defaul
 ```
 
 ### Providing Specific Behavior for the Custom Group
+
 Override the `CustomDefaultActionGroup.update()` method to make the group visible only if there's an instance of the editor available.
 Also, a custom icon is added to demonstrate that group icons can be changed depending on the action context:
 

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Multiple Carets
 
@@ -30,7 +30,7 @@ In the context of `CaretModel.runForEachCaret()` method though, they operate on 
 
 ## Editor Actions
 
-### EditorAction and EditorActionHandler
+### `EditorAction` and `EditorActionHandler`
 
 When [`EditorActionHandler`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionHandler.java) is invoked, an additional parameter will be passed to it: a caret instance on which it should operate, or `null` if it's invoked without any caret context.
 If the handler invokes another handler (delegate handler for the same `actionId` or a completely unrelated handler), that parameter should normally be passed to the delegate unchanged (unless no context caret has been provided to the handler, but it needs to invoke another handler on a specific caret).
@@ -55,7 +55,7 @@ There is no need to make any changes in the handlers to support multiple carets 
 
 ## Typing Actions
 
-### TypedActionHandler, TypedHandlerDelegate
+### `TypedActionHandler`, `TypedHandlerDelegate`
 
 [`TypedActionHandler`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java) and [`TypedHandlerDelegate`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/TypedHandlerDelegate.java) implementations are invoked only once for each typed character.
 If those handlers need to support multiple carets, they will need to implement that explicitly.

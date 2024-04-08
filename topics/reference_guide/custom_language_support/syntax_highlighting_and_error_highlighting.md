@@ -14,7 +14,7 @@
 
 The syntax and error highlighting are performed on multiple levels: [](#lexer), [](#parser), and [](#annotator)/[](#external-annotator).
 
-## TextAttributesKey
+## Text Attributes Key
 
 How a particular range of text should be highlighted is defined via [`TextAttributesKey`](%gh-ic%/platform/core-api/src/com/intellij/openapi/editor/colors/TextAttributesKey.java).
 An instance of this class is created for every distinct type of item that should be highlighted (keyword, number, string literal, etc.).

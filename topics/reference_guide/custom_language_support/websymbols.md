@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Web Symbols
 
@@ -19,7 +19,7 @@ It also provides an efficient JSON format (Web Types) for static symbol definiti
 Web Symbols core advantage, however, is the ability to evaluate symbol patterns.
 
 Web frameworks tend to have custom syntaxes to enable various things,
-e.g. through HTML attribute name (see [Model Queries example](websymbols_implementation.md#example) to see Vue directive syntax).
+e.g. through HTML attribute name (see [Model Queries example](websymbols_implementation.md#model-queries-example) to see Vue directive syntax).
 The pattern evaluator is able to recognize symbols in different sections of the element name and provide reference resolution,
 documentation, usage occurrence, etc.
 It also supports rename refactoring for symbols originating from source code.

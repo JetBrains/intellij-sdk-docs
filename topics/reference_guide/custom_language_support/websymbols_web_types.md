@@ -1,10 +1,8 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Web Types
 
-<link-summary>
-Web Types - contributing statically defined Web Symbols through JSONs.
-</link-summary>
+<link-summary>Web Types - contributing statically defined Web Symbols through JSONs.</link-summary>
 
 Web Types is a JSON metadata format, which provides an easy way to contribute statically defined Web Symbols.
 The JSON Web Types detailed schema can be accessed by
@@ -147,13 +145,13 @@ or only if an NPM package with the same name is present in the project.
 ## Special Properties
 
 {style="full"}
-inject-language
+`inject-language`
 : Supported by `html/elements` and `html/attributes`, allows to inject the specified language into HTML element text or HTML attribute value.
 
-doc-hide-pattern
+`doc-hide-pattern`
 : If a symbol uses a RegEx pattern, usually it will be displayed in a documentation popup section "pattern". Setting this property to `true` hides that section.
 
-hide-from-completion
+`hide-from-completion`
 : By default all symbols show up in code completion. Setting this property to `true` prevents a symbol from showing up in the code completion.
 
 ## Symbol Kinds
@@ -233,10 +231,10 @@ Any Web Types file targeting only Vue support should have `framework` property s
 Highlights:
 
 {style="full"}
-/html/vue-components
+`/html/vue-components`
 : Use `/html/vue-components` to contribute Vue components.
 
-/html/vue-directives
+`/html/vue-directives`
 : Use `/html/vue-directives` to contribute Vue directives.
 Use `attribute-value` property to specify the type of value expression. E.g.:
 ```JSON
@@ -248,13 +246,13 @@ Use `attribute-value` property to specify the type of value expression. E.g.:
 }
 ```
 
-/html/vue-file-top-elements
+`/html/vue-file-top-elements`
 : Use `/html/vue-file-top-elements` to contribute any custom top-level elements available in Vue Single Component File
 
 A Vue `/html/vue-components` contribution supports:
 
 {style="full"}
-/html/props
+`/html/props`
 : Use `/html/props` to contribute Vue component props, e.g:
 ```JSON
 {
@@ -267,7 +265,7 @@ A Vue `/html/vue-components` contribution supports:
 }
 ```
 
-/html/slots
+`/html/slots`
 : Use `/html/slots` to contribute Vue component slots.
 For scoped slots use `vue-properties` to provide list of scoped slot properties.
 Example:
@@ -287,7 +285,7 @@ Example:
 }
 ```
 
-/js/events
+`/js/events`
 : Use `/js/events` to contribute Vue component events, e.g.:
 ```JSON
 {
@@ -302,7 +300,7 @@ Example:
 }
 ```
 
-html/vue-model
+`html/vue-model`
 : Use `html/vue-model` to contribute settings for Vue model directive. E.g.:
 ```JSON
 {
@@ -317,7 +315,7 @@ html/vue-model
 A Vue `/html/vue-directives` contribution supports:
 
 {style="full"}
-/html/argument
+`/html/argument`
 : Use `/html/argument` as a Vue directive argument. E.g.:
 ```JSON
 {
@@ -336,8 +334,7 @@ A Vue `/html/vue-directives` contribution supports:
 }
 ```
 
-
-/html/modifiers
+`/html/modifiers`
 : Use `/html/modifiers` as a Vue directive modifier. E.g.:
 ```JSON
 {

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Status Bar Widgets
 
@@ -38,7 +38,7 @@ To reuse the IntelliJ Platform implementation, you can extend one of two classes
 - [`EditorBasedWidget`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/EditorBasedWidget.kt)
 - [`EditorBasedStatusBarPopup`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/EditorBasedStatusBarPopup.kt)
 
-## EditorBasedWidget
+## `EditorBasedWidget`
 
 `EditorBasedWidget` is the basic widget implementation.
 To implement it, override `ID()` where returns the unique ID of the widget.
@@ -81,7 +81,7 @@ Override `getComponent()` to return the custom widget's component to display.
 Example:
 [MemoryUsagePanel](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/MemoryUsagePanel.java)
 
-## EditorBasedStatusBarPopup
+## `EditorBasedStatusBarPopup`
 
 `EditorBasedStatusBarPopup` is the basis for all widgets that have a popup with a list of actions.
 For example, the encoding widget of the current file.

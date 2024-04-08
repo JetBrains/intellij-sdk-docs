@@ -1,10 +1,10 @@
-# Editor Components
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# Editor Components
 
 <link-summary>Creating, customizing, and using editor components in different contexts.</link-summary>
 
-## EditorTextField
+## 1
 
 Compared to [Swing `JTextArea`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextArea.html), the IntelliJ Platform's editor component has a ton of advantages: syntax highlighting support, code completion, code folding, and much more.
 [Editors](editors.md) are normally displayed in editor tabs, but they can be embedded in dialogs or tool windows, too.

@@ -26,7 +26,7 @@ Project-level services are disposed on project close or plugin unload events.
 Note that extensions registered in <path>[plugin.xml](plugin_configuration_file.md)</path> are *not* automatically disposed.
 If an extension requires executing some code to dispose it, you need to define a service and to put the code in its `dispose()` method or use it as a parent disposable.
 
-## The Disposer Singleton
+## The `Disposer` Singleton
 The primary purpose of the [`Disposer`](%gh-ic%/platform/util/src/com/intellij/openapi/util/Disposer.java) singleton is to enforce the rule that _a child `Disposable` never outlives its parent_.
 
 The `Disposer` organizes `Disposable` objects in a tree of parent-child relationships.
@@ -184,7 +184,7 @@ In such a case, the best strategy is usually to do nothing and return early.
 A plugin can manually end a `Disposable` lifecycle by calling `Disposer.dispose(Disposable)`.
 This method handles recursively disposing of all the `Disposable` child descendants as well.
 
-## Implementing the Disposable Interface
+## Implementing the `Disposable` Interface
 
 Creating a class requires implementing the `Disposable` interface and defining the `dispose()` method.
 
@@ -227,7 +227,7 @@ Regardless, it illustrates the basic pattern, which is:
 >
 {style="warning"}
 
-## Diagnosing Disposer Leaks
+## Diagnosing `Disposer` Leaks
 
 When the application exits, it performs a final sanity check to verify everything was disposed.
 If something was registered with the `Disposer` but remains undisposed, the IntelliJ Platform reports it before shutting down.

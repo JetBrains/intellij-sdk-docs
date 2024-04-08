@@ -12,7 +12,7 @@
 - [](#intellij-community-plugins)
 - [](#android-plugin)
 
-> Dedicated Extension Point/Listener Lists specific to IDEs (e.g., [WebStorm](webstorm.md)) are available under _Part VIII — Product Specific_.
+> Dedicated Extension Point/Listener Lists specific to IDEs (e.g., [WebStorm](webstorm.md)) are available under _Product Specific_.
 >
 {title="Product Specific Information"}
 

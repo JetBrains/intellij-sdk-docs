@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Quick Start Guide
 
@@ -17,6 +17,6 @@ It will familiarize you with the working environment, project structure, and fre
 * [](ide_development_instance.md)
 * [](faq.md)
 
-> If you are interested in the UI theme development, please see [Part X - Themes](themes_getting_started.md).
+> If you are interested in the UI theme development, please see [Themes](themes_getting_started.md).
 >
 {style="note"}

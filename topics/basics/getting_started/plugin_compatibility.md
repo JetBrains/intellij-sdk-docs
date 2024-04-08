@@ -221,7 +221,7 @@ Drill down into the JAR files to expose the packages and (decompiled) classes.
 If a project is dependent on a plugin or module, in some cases, the project can also [extend](plugin_extensions.md) the functionality available from the plugin or module.
 
 > See [Explore the IntelliJ Platform API](explore_api.md) for more information and strategies.
-> Dedicated Extension Point Lists specific to IDEs are available under _Part VIII — Product Specific_.
+> Dedicated Extension Point Lists specific to IDEs are available under _Product Specific_.
 >
 
 To browse the opportunities for an extension, start by placing the cursor on the contents of the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) elements in the project's <path>plugin.xml</path> file.

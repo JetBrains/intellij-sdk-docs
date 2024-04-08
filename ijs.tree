@@ -21,7 +21,7 @@
     <toc-element topic="getting_help.topic"/>
     <toc-element topic="content_updates.md" accepts-web-file-names="recently_updated.html"/>
   </toc-element>
-  <toc-element toc-title="Part I — Plugins">
+  <toc-element toc-title="Plugins">
     <toc-element topic="plugins_quick_start.md" accepts-web-file-names="basics.html">
       <toc-element topic="plugin_alternatives.md" toc-title="Plugin Alternatives"/>
       <toc-element topic="plugin_required_experience.md"/>
@@ -59,7 +59,7 @@
     <toc-element topic="plugin_user_experience.md"/>
     <toc-element topic="faq.md"/>
   </toc-element>
-  <toc-element toc-title="Part II — Base Platform">
+  <toc-element toc-title="Base Platform">
     <toc-element topic="fundamentals.md" accepts-web-file-names="reference_guide.html,architectural_overview.html">
       <toc-element toc-title="Component Model"/>
       <toc-element topic="disposers.md"/>
@@ -139,7 +139,7 @@
     <toc-element topic="localization_guide.md"/>
     <toc-element toc-title="Diagrams"/>
   </toc-element>
-  <toc-element toc-title="Part III — Project Model">
+  <toc-element toc-title="Project Model">
     <toc-element topic="project_structure.md"/>
     <toc-element topic="project.md">
       <toc-element topic="trusted_projects.md"/>
@@ -156,7 +156,7 @@
     <toc-element topic="facet.md"/>
     <toc-element topic="external_system_integration.md"/>
   </toc-element>
-  <toc-element toc-title="Part IV — PSI">
+  <toc-element toc-title="PSI">
     <toc-element topic="psi.md" toc-title="What Is the PSI?"/>
     <toc-element topic="psi_files.md"/>
     <toc-element topic="file_view_providers.md"/>
@@ -174,7 +174,7 @@
     <toc-element topic="uast.md" toc-title="Unified AST"/>
     <toc-element topic="xml_dom_api.md"/>
   </toc-element>
-  <toc-element toc-title="Part V — Features">
+  <toc-element toc-title="Features">
     <toc-element toc-title="Navigation"/>
     <toc-element topic="editing.md">
       <toc-element toc-title="Code Completion"/>
@@ -216,7 +216,7 @@
       <toc-element topic="external_builder_api.md"/>
     </toc-element>
   </toc-element>
-  <toc-element toc-title="Part VI — Testing">
+  <toc-element toc-title="Testing">
     <toc-element topic="testing_plugins.md" accepts-web-file-names="testing_plugins.html"/>
     <toc-element topic="tests_and_fixtures.md"/>
     <toc-element topic="light_and_heavy_tests.md"/>
@@ -225,7 +225,7 @@
     <toc-element topic="testing_highlighting.md"/>
     <toc-element topic="testing_faq.md"/>
   </toc-element>
-  <toc-element toc-title="Part VII — Custom Languages">
+  <toc-element toc-title="Custom Languages">
     <toc-element topic="custom_language_support.md">
       <toc-element topic="registering_file_type.md"/>
       <toc-element topic="implementing_lexer.md"/>
@@ -301,7 +301,7 @@
     <toc-element toc-title="Compiler"/>
     <toc-element toc-title="Debugger"/>
   </toc-element>
-  <toc-element toc-title="Part VIII — Product Specific">
+  <toc-element toc-title="Product Specific">
     <toc-element topic="dev_alternate_products.md" toc-title="Developing for Multiple Products"/>
     <toc-element topic="plugin_compatibility.md" toc-title="Compatibility with Multiple Products"/>
     <toc-element topic="android_studio.md" toc-title="Android Studio">
@@ -353,11 +353,11 @@
       <toc-element topic="webstorm_extension_point_list.md"/>
     </toc-element>
   </toc-element>
-  <toc-element toc-title="Part IX — Custom IDEs">
+  <toc-element toc-title="Custom IDEs">
     <toc-element toc-title="Build Your Own IDE"/>
     <toc-element toc-title="Licensing"/>
   </toc-element>
-  <toc-element toc-title="Part X — Themes">
+  <toc-element toc-title="Themes">
     <toc-element topic="themes_getting_started.md" accepts-web-file-names="themes-intro.html"/>
     <toc-element topic="developing_themes.md" accepts-web-file-names="using-dev-kit.html">
       <toc-element topic="setting_up_theme_environment.md" accepts-web-file-names="setting-up-environment.html"/>
@@ -371,7 +371,7 @@
       <toc-element topic="themes_extras.md" toc-title="Adding Schemes and Images"/>
     </toc-element>
   </toc-element>
-  <toc-element toc-title="Appendix I — Resources">
+  <toc-element toc-title="Resources">
     <toc-element topic="glossary.md"/>
     <toc-element topic="explore_api.md" toc-title="Explore the API"/>
     <toc-element topic="build_number_ranges.md"/>
@@ -385,7 +385,7 @@
     <toc-element topic="plugin_repository_obsolete.md"
                  accepts-web-file-names="api_reference.html,feature_extractor.html,plugin_details.html,custom_channels.html,plugins_list.html,maven_interface.html,plugin_upload.html,plugin_developers.html"/>
   </toc-element>
-  <toc-element toc-title="Appendix II — API and Compatibility">
+  <toc-element toc-title="API and Compatibility">
     <toc-element topic="verifying_plugin_compatibility.md"/>
     <toc-element topic="api_changes_list.md" toc-title="Incompatible API Changes"
                  accepts-web-file-names="api-changes-list-2016.html,api-changes-list-2017.html,api-changes-list-2018.html">
@@ -407,7 +407,7 @@
     </toc-element>
     <toc-element topic="api_internal.md"/>
   </toc-element>
-  <toc-element toc-title="Appendix III — Tooling">
+  <toc-element toc-title="Tooling">
     <toc-element topic="tools_gradle_intellij_plugin.md">
       <toc-element topic="tools_gradle_intellij_plugin_examples.md" toc-title="Usage Examples"/>
       <toc-element topic="tools_gradle_intellij_plugin_build_features.md" toc-title="Build Features"/>

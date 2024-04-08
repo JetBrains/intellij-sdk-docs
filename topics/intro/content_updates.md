@@ -165,7 +165,7 @@ Minor Changes and Additions
 ### September
 {#september-22}
 
-Extract Part X — Themes
+Extract "Themes" part
 :
 All the content related to [themes customization](theme_structure.md) and creating a project using the [DevKit approach](developing_themes.md) has been moved to a new [_Themes_](themes_getting_started.md) part.
 Content has been refreshed to match the current state of the project and SDK wizards.
@@ -209,7 +209,7 @@ Postfix Completion
 : Add [](postfix_completion.md) section explaining how to implement generating or wrapping the existing code into additional constructs without navigating the caret back.
 
 Gradle IntelliJ Plugin
-: Add [](tools_gradle_intellij_plugin.md) documentation to _Appendix III — Tooling_.
+: Add [](tools_gradle_intellij_plugin.md) documentation to _Tooling_.
 
 Bundling Plugin API Sources
 : Add the [](bundling_plugin_openapi_sources.md) section explaining how to expose plugin API sources to dependent plugin developers.
@@ -219,7 +219,7 @@ Minor Changes and Additions
 - Add a small section to [](php_open_api.md#utility-classes) describing `PhpFilePathUtils` utility class.
 - Add mention of the way to programmatically open an autocomplete popup to [](code_completion.md).
 - Add a small section to [](icons.md#animated-icons) describing animated icons.
-- Moved [](tools_gradle_grammar_kit_plugin.md) documentation to _Appendix III — Tooling_
+- Moved [](tools_gradle_grammar_kit_plugin.md) documentation to _Tooling_.
 
 ### May
 {#may-22}
@@ -303,7 +303,7 @@ IDE Infrastructure
 : [](ide_infrastructure.md) handles Logging, Error Reporting, Runtime Information, and how to provide Context Help.
 
 Extension Point Lists: Listeners, Deprecation status
-: [](extension_point_list.md) now contains sections listing all provided [Listener](plugin_listeners.md) Topics. See also corresponding Extension Point Lists under _Part VIII — Product Specific_. Also, all deprecated API now has a dedicated tag.
+: [](extension_point_list.md) now contains sections listing all provided [Listener](plugin_listeners.md) Topics. See also corresponding Extension Point Lists under _Product Specific_. Also, all deprecated API now has a dedicated tag.
 
 ### July
 {#july-21}
@@ -324,7 +324,7 @@ Documentation Provider
 {#may-21}
 
 IDE specific Extension Point Lists
-: See _Part VIII — Product Specific_.
+: See _Product Specific_.
 
 New Guide - Explore the IntelliJ Platform API
 : Add a new section [](explore_api.md) that describes how plugin authors work with the IntelliJ Platform API and what tools they use.
@@ -404,7 +404,7 @@ Custom Language Support Tutorial converted to Gradle
 : The [corresponding tutorial](custom_language_support_tutorial.md) and [Testing a Custom Language Plugin](writing_tests_for_plugins.md) have been updated and enhanced as well.
 
 Targeting specific IDEs
-: [Part VIII — Product Specific](plugin_compatibility.md) has been expanded massively, now also covering each IDE with its dedicated page.
+: [Product Specific](plugin_compatibility.md) has been expanded massively, now also covering each IDE with its dedicated page.
 
 ## 2019
 
@@ -420,7 +420,7 @@ Plugin Components migration
 ### October
 {#october-19}
 
-Part X — Plugin Repository moved
+Plugin Repository moved
 : All contents have been moved to [JetBrains Marketplace Documentation](https://plugins.jetbrains.com/docs/marketplace/).
 
 ### July

@@ -45,7 +45,7 @@ IntelliJ Platform 2022.3 and later
 
 ### Gradle
 
-Gradle version **8.1** and later is required.
+Gradle version **8.2** and later is required.
 See [the Gradle Installation guide](https://gradle.org/install/) on how to upgrade.
 
 Java Runtime **17** and later is required. See <control>Gradle JVM</control> in <ui-path>Settings | Build, Execution, Deployment | Build Tools | Gradle</ui-path> settings.

@@ -203,7 +203,7 @@ kotlin.incremental.useClasspathSnapshot=false
 
 ## Plugin Implementation Notes
 
-### Do not use "object" but "class"
+### Do not use `object` but `class`
 
 {id="object-vs-class"}
 
@@ -219,7 +219,7 @@ Problems are highlighted via these inspections (2023.2):
 - <control>Plugin DevKit | Code | Kotlin object registered as extension</control> for Kotlin code
 - <control>Plugin DevKit | Plugin descriptor | Extension class is a Kotlin object</control> for <path>plugin.xml</path>
 
-### Do not use "companion object" in extensions
+### Do not use `companion object` in extensions
 
 {id="companion-object-extensions"}
 

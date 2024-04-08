@@ -67,7 +67,7 @@ Every IntelliJ Platform action should override `AnAction.update()` and must over
 There are other methods to override in the `AnAction` class, such as changing the default `Presentation` object for the action.
 There is also a use case for overriding action constructors when registering them with dynamic action groups, demonstrated in the [Grouping Actions](grouping_action.md#adding-child-actions-to-the-dynamic-group) tutorial.
 
-### Overriding the AnAction.update() Method
+### Overriding the `AnAction.update()` Method
 
 The method `AnAction.update()` is periodically called by the IntelliJ Platform in response to user gestures.
 The `update()` method gives an action to evaluate the current context and enable or disable its functionality.
@@ -119,7 +119,7 @@ See [Grouping Actions](#grouping-actions) for more information about the `compac
 
 An example of enabling a menu action based on whether a project is open is demonstrated in [`PopupDialogAction.update()`](%gh-sdk-samples%/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java) method.
 
-### Overriding the AnAction.actionPerformed() Method
+### Overriding the `AnAction.actionPerformed()` Method
 
 When the user selects an enabled action, be it from a menu or toolbar, the action's `AnAction.actionPerformed()` method is called.
 This method contains the code executed to perform the action, and it is here that the real work gets done.
@@ -156,7 +156,7 @@ A new [`Presentation`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/a
 Therefore, the same action can have a different text or icon when it appears in different places of the user interface.
 Different presentations for the action are created by copying the Presentation returned by the `AnAction.getTemplatePresentation()` method.
 
-#### Compact Attribute
+#### The `compact` Attribute
 
 A group's `compact` attribute specifies whether an action within that group is visible when disabled.
 See [Registering Actions in plugin.xml](#registering-actions-in-pluginxml) for an explanation of how the `compact` attribute is set for a group.
@@ -183,7 +183,7 @@ There are two main ways to register an action: either by listing it in the [`<ac
 
 Registering actions in <path>plugin.xml</path> is demonstrated in the following reference examples, which document all elements and attributes used in the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section and describe each element's meaning.
 
-#### Setting the Override-Text Element
+#### Setting the `override-text` Element
 
 Beginning in 2020.1, an alternate version of an action's menu text can be declared for use depending on where an action appears.
 Using the [`<override-text>`](plugin_configuration_file.md#idea-plugin__actions__action__override-text) element, the menu text for an action can be different depending on context: menu location, toolbar, etc.
@@ -201,7 +201,7 @@ Additional `<override-text>` elements could be used to specify other places wher
 
 An example of using `<override-text>` is demonstrated in the [Creating Actions](working_with_custom_actions.md#using-override-text-for-an-action) tutorial.
 
-#### Setting the Synonym Element
+#### Setting the `synonym` Element
 
 _2020.3_
 Users can locate actions via their name by invoking <ui-path>Help | Find Action</ui-path>.

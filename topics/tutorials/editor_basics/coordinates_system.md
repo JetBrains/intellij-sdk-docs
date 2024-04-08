@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 2. Editor Coordinates System. Positions and Offsets
 
@@ -22,7 +22,7 @@ The source code for the Java class behind the menu action is [EditorAreaIllustra
 The focus of discussion will be the `EditorAreaIllustration.actionPerformed()` method.
 For more information about creating action classes, see the [Actions Tutorial](action_system.md), which covers the topic in depth.
 
-## Caret Positions from the CaretModel and Caret Objects
+## Caret Positions from the `CaretModel` and `Caret` Objects
 
 The properties of a caret can be accessed by obtaining an instance of the [`CaretModel`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/CaretModel.java) object.
 As in the [Working with Text](working_with_text.md) tutorial, the `AnActionEvent` is used to get the `Editor` object.

@@ -11,7 +11,7 @@ The API allows for persisting simple key-value entries and complex state classes
 >
 {style="warning"}
 
-## Using PersistentStateComponent
+## Using `PersistentStateComponent`
 
 The [`PersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) interface allows for persisting state classes and gives the most flexibility for defining the values to be persisted, their format, and storage location.
 
@@ -23,7 +23,7 @@ To use it:
 Note that instances of extensions cannot persist their state by implementing `PersistentStateComponent`.
 If an extension needs to have a persistent state, define a separate service responsible for managing that state.
 
-### Implementing the PersistentStateComponent Interface
+### Implementing the `PersistentStateComponent` Interface
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -271,7 +271,7 @@ The `PersistentStateComponent.getState()` method is called every time the settin
 If the state returned from `getState()` is equal to the default state (obtained by creating the state class with a default constructor), nothing is persisted in the XML.
 Otherwise, the returned state is serialized in XML and stored.
 
-## Using PropertiesComponent for Simple Non-Roamable Persistence
+## Using `PropertiesComponent` for Simple Non-Roamable Persistence
 
 If the plugin needs to persist just a few simple values, the easiest way to do so is to use the [`PropertiesComponent`](%gh-ic%/platform/core-api/src/com/intellij/ide/util/PropertiesComponent.java) service.
 It can save both application-level values and project-level values in the workspace file.
@@ -281,7 +281,7 @@ Use the `PropertiesComponent.getInstance()` method for storing application-level
 
 Since all plugins share the same namespace, it is highly recommended prefixing key names (e.g., using plugin ID `com.example.myCustomSetting`).
 
-## Legacy API (JDOMExternalizable)
+## Legacy API (`JDOMExternalizable`)
 
 Older components use the [`JDOMExternalizable`](%gh-ic%/platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java) interface for persisting state.
 It uses the `readExternal()` method for reading the state from a JDOM element, and `writeExternal()` to write the state.

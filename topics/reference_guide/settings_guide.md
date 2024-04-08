@@ -130,7 +130,7 @@ Implementations for `com.intellij.projectConfigurable` EP and `com.intellij.appl
   Most Settings providers are based on the `Configurable` interface or one of its sub- or supertypes.
 * The [`ConfigurableProvider`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/ConfigurableProvider.java) class, which can hide a configurable component from the Settings dialog based on runtime conditions.
 
-### The Configurable Interface
+### The `Configurable` Interface
 
 Many Settings in the `intellij-community` code base implement `Configurable` or one of its subtypes, such as [`SearchableConfigurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/SearchableConfigurable.java).
 Readers are encouraged to review the Javadoc comments for `Configurable`.
@@ -148,7 +148,7 @@ For a `Configurable` implementation correctly declared using an EP, the implemen
 >
 {style="warning"}
 
-#### IntelliJ Platform Interactions with Configurable
+#### IntelliJ Platform Interactions with `Configurable`
 
 The instantiation of a generic `Configurable` implementation is documented in the interface file.
 A few high-level points are reviewed here:
@@ -161,7 +161,7 @@ A few high-level points are reviewed here:
 
 To open Settings dialog or show specific `Configurable`, see [`ShowSettingsUtil`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/ShowSettingsUtil.java).
 
-#### Configurable Marker Interfaces
+#### `Configurable` Marker Interfaces
 
 Implementations based on `Configurable` can implement marker interfaces, which provide additional flexibility in the implementation.
 
@@ -176,7 +176,7 @@ Implementations based on `Configurable` can implement marker interfaces, which p
 `Configurable.Beta`
 : _(2022.3)_ Adds <control>Beta</control> label next to settings page title in <control>Settings</control> tree.
 
-#### Additional Interfaces Based on Configurable
+#### Additional Interfaces Based on `Configurable`
 
 There are classes in the IntelliJ Platform specialized in particular types of Settings.
 These subtypes are based on `com.intellij.openapi.options.ConfigurableEP`.
@@ -188,7 +188,7 @@ Existing implementations of `Configurable` in the IntelliJ Platform that can ser
 * [`ConsoleConfigurable`](%gh-ic%/platform/lang-impl/src/com/intellij/execution/console/ConsoleConfigurable.java) (application configurable)
 * [`AutoImportOptionsConfigurable`](%gh-ic%/platform/lang-impl/src/com/intellij/application/options/editor/AutoImportOptionsConfigurable.kt) (project configurable)
 
-### The ConfigurableProvider Class
+### The `ConfigurableProvider` Class
 
 The [`ConfigurableProvider`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/ConfigurableProvider.java) class only provides a `Configurable` implementation if its runtime conditions are met.
 The IntelliJ Platform first calls the `ConfigurableProvider.canCreateConfigurable()`, which evaluates runtime conditions to determine if Settings changes make sense in the current context.

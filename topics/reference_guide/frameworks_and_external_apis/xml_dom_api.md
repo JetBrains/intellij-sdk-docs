@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # XML DOM API
 
@@ -415,7 +415,7 @@ Finally, `getChooserTypes()` just returns all the types that could be returned b
 
 To make your `TypeChooser` work, register it in your overridden `DomFileDescription.initializeFileDescription()` method by calling `registerTypeChooser()`.
 
-### Useful Methods of DomElement and DomManager
+### Useful Methods of `DomElement` and `DomManager`
 
 #### PSI Connection
 
@@ -482,7 +482,7 @@ You need to implement the [`DomElementAnnotator`](%gh-ic%/xml/dom-openapi/src/co
 In `DomElementsAnnotator.annotate(DomElement element, DomElementsProblemsHolder annotator)` you should report about all errors and warnings in the element's subtree to the annotator (`DomElementsProblemsHolder.createProblem()`).
 You should return this annotator in the corresponding virtual method of the `DomFileDescription`.
 
-#### Automatic Highlighting (BasicDomElementsInspection)
+#### Automatic Highlighting (`BasicDomElementsInspection`)
 
 The following errors can be highlighted automatically by providing an instance of `BasicDomElementsInspection`:
 
@@ -688,14 +688,14 @@ This method understands which control to create by using DOM reflection (`DomGen
 But sometimes you may want to create the controls directly.
 So let's look at the simple controls more closely.
 
-##### BooleanControl
+##### `BooleanControl`
 
 It allows you to edit boolean values.
 The control is bound to `JCheckBox`.
 
 ![BooleanControl](booleancontrol.gif)
 
-##### ComboControl
+##### `ComboControl`
 
 The control is bound to a non-editable `JComboBox`, so it can be used to choose something from a limited set.
 One case of such a limited set is enum.
@@ -707,7 +707,7 @@ Or you can just delegate to that renderer in your own way.
 
 ![ComboControl](combocontrol.gif)
 
-##### BooleanEnumControl
+##### `BooleanEnumControl`
 
 Sometimes, when there are only 2 alternatives, it's convenient to use a checkbox instead of a combobox.
 This control is designed specially for such cases.
@@ -721,7 +721,7 @@ If you set the parameter to `true`, the states will swap.
 Please note that editor-based controls are built on IntelliJ Platform's `Editor` instead of standard `JTextField`.
 Since there's currently no way to instantiate Editor directly through the Open API, controls are bound to special `JPanel` inheritors, and their `bind()` method adds the necessary content to those panels.
 
-##### TextControl
+##### `TextControl`
 
 This control allows you to edit simple string values.
 The control is bound to a `TextPanel` component.
@@ -730,7 +730,7 @@ If you bind a `StringControl` to it, a big editor will appear on the screen.
 In case you don't have space for a big editor, bind it to a `BigTextPanel`.
 Then it will be filled with a text editor, and the browse button will be added to open a dialog with the big editor where you can type a longer string.
 
-##### PsiClassControl
+##### `PsiClassControl`
 
 This is a one-line editor with a browse button that opens the standard class selection dialog.
 The control accepts class names only.
@@ -738,7 +738,7 @@ It is bound to `PsiClassPanel`.
 
 ![PsiClassControl](psiclasscontrol.gif)
 
-##### PsiTypeControl
+##### `PsiTypeControl`
 
 This is almost the same as PsiClassControl, but allows entering not only class names, but also Java primitive types and even arrays.
 It is bound to `PsiTypePanel`.

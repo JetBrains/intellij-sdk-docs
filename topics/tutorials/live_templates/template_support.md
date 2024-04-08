@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Providing Live Templates
 
@@ -63,7 +63,7 @@ A quick fix to extract the localized key is available since 2024.2.
 
 Copy this file into the [plugin's resources folder](%gh-sdk-samples%/live_templates/src/main/resources/liveTemplates).
 
-## Implement TemplateContextType
+## Implement `TemplateContextType`
 
 A [`TemplateContextType`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/template/TemplateContextType.java) tells the IntelliJ Platform where the Live Template is applicable: Markdown files.
 Every context must have a unique `TemplateContextType` defined for it, and the Platform defines many context types out of the box.

@@ -1,6 +1,6 @@
-# References and Resolve
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# References and Resolve
 
 <link-summary>PSI references allow for resolving from a symbol usage to its declaration.</link-summary>
 
@@ -12,7 +12,7 @@ This feature is needed in order to support the <ui-path>Navigate | Declaration o
 The <ui-path>View | Quick Definition</ui-path> action is based on the same mechanism, so it becomes automatically available for all references that can be resolved by the language plugin.
 To customize the exact document range to show in the popup (e.g., include "surrounding" code or comments), provide [`ImplementationTextSelectioner`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hint/ImplementationTextSelectioner.java) registered in `com.intellij.lang.implementationTextSelectioner` extension point.
 
-## PsiReference
+## PSI References
 
 All PSI elements which work as references (for which the <ui-path>Navigate | Declaration or Usages</ui-path> action applies) need to implement the
 [`PsiElement.getReference()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) method and to return a [`PsiReference`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReference.java) implementation from that method.

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # File and Class Choosers
 
@@ -19,7 +19,7 @@ For more fine-grained control over the allowed selection, you can overload the `
 You can also customize the presentation of files by overriding `getIcon()`, `getName()` and `getComment()` methods.
 Note that the native macOS file chooser does not support most of the customizations, so if you rely on them, you need to use an overload of `chooseFiles()` which displays the standard IntelliJ Platform dialog.
 
-### Via Textfield
+### Via Text Field
 
 A very common way of using file choosers is to use a text field for entering the path with an ellipsis button (<control>...</control>) for showing the file chooser.
 To create such a control, use the [`TextFieldWithBrowseButton`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/TextFieldWithBrowseButton.java) component and call the `addBrowseFolderListener()` method on it to set up the file chooser.

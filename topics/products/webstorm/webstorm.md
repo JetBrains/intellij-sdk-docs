@@ -19,6 +19,7 @@ Plugin projects for WebStorm can be developed using IntelliJ IDEA with the [](to
 <include from="snippets.md" element-id="jetbrainsProductOpenSourceLicense"/>
 
 ## Configuring Plugin Projects Targeting WebStorm
+
 The configuration of WebStorm plugin projects follows the methods described in [Configuring Plugin Projects using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-plugin-projects-using-the-intellij-idea-product-attribute) and [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml) for PhpStorm.
 
 The table below summarizes the [](tools_gradle_intellij_plugin.md) attributes to set in the plugin project's Gradle build script.
@@ -47,7 +48,8 @@ Consequently, without the `com.intellij.modules.platform` declaration the plugin
 See [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-consumer).
 Test your plugin with any version of WebStorm you wish to support.
 
-### Javascript Testframework
+### Javascript Test Framework
+
 To use existing test base classes, specify `com.jetbrains.intellij.javascript:javascript-test-framework:$VERSION$` as `testImplementation` dependency explicitly (see [IntelliJ Platform Artifacts Repositories](intellij_artifacts.md#gradle-example-for-an-individual-module-from-the-intellij-platform)) (2020.3 and later).
 
 ## Open Source Plugins for WebStorm

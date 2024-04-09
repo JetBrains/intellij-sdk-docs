@@ -1,6 +1,6 @@
-# Notable Changes in IntelliJ Platform and Plugins API 2020.*
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Notable Changes in IntelliJ Platform and Plugins API 2020.*
 
 <link-summary>List of known Notable API Changes in 2020.*</link-summary>
 
@@ -44,7 +44,7 @@ Text Editor customization
 ### JavaScript Plugin 2020.3
 
 Published Javascript Testframework
-: This allows using existing test base classes, see [WebStorm Plugin Development](webstorm.md#javascript-testframework) page for details.
+: This allows using existing test base classes, see [WebStorm Plugin Development](webstorm.md#javascript-test-framework) page for details.
 
 ### CLion/AppCode 2020.3
 

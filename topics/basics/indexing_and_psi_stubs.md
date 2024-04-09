@@ -47,6 +47,11 @@ For [](basic_action_system.md) available during Dumb Mode, extend [`DumbAwareAct
 
 Other API might indicate its Dumb Mode compatibility by extending [`PossiblyDumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/PossiblyDumbAware.java).
 
+### Testing
+
+To toggle Dumb Mode for testing purposes, invoke <ui-path>Tools | Internal Actions | Enter/Exit Dumb Mode</ui-path>
+while the IDE is running in [internal mode](enabling_internal.md).
+
 ## Gists
 
 Sometimes, the following conditions hold:

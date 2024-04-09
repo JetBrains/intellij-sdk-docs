@@ -12,6 +12,13 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2024
 
+### April
+{april-24}
+
+Minor Changes and Additions
+:
+- How to mark functionality available during indexing via [](indexing_and_psi_stubs.md#DumbAwareAPI).
+
 ### March
 {#march-24}
 

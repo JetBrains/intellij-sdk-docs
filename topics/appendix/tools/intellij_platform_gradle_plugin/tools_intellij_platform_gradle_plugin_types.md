@@ -46,22 +46,27 @@ Describes all IntelliJ Platform types available to be used for plugin developmen
 
 Each entry is composed of a product code and coordinates used for dependency and binary release resolution.
 
-| Name                    | Code   | Coordinates                                        |
-|-------------------------|--------|----------------------------------------------------|
-| `AndroidStudio`         | `AI`   | `com.google.android.studio:studio`                 |
-| `CLion`                 | `CL`   | `com.jetbrains.intellij.clion:clion`               |
-| `Fleet`                 | `FLIJ` | `com.jetbrains.intellij.fleetBackend:fleetBackend` |
-| `Gateway`               | `GW`   | `com.jetbrains.intellij.gateway:gateway`           |
-| `GoLand`                | `GO`   | `com.jetbrains.intellij.goland:goland`             |
-| `IntellijIdeaCommunity` | `IC`   | `com.jetbrains.intellij.idea:ideaIC`               |
-| `IntellijIdeaUltimate`  | `IU`   | `com.jetbrains.intellij.idea:ideaIU`               |
-| `PhpStorm`              | `PS`   | `com.jetbrains.intellij.phpstorm:phpstorm`         |
-| `PyCharmProfessional`   | `PY`   | `com.jetbrains.intellij.pycharm:pycharmPY`         |
-| `PyCharmCommunity`      | `PC`   | `com.jetbrains.intellij.pycharm:pycharmPC`         |
-| `Rider`                 | `RD`   | `com.jetbrains.intellij.rider:riderRD`             |
-| `RustRover`             | `RR`   | `com.jetbrains.intellij.rustrover:RustRover`       |
-| `WebStorm`              | `WS`   | `com.jetbrains.intellij.webstorm:webstorm`         |
-| `Writerside`            | `WRS`  | `com.jetbrains.intellij.idea:writerside`           |
+| Name                    | Code   | Artifact Coordinates                               | Binary release |
+|-------------------------|--------|----------------------------------------------------|:--------------:|
+| `AndroidStudio`         | `AI`   | `com.google.android.studio:studio`                 |       +        |
+| `Aqua`                  | `QA`   | -                                                  |       +        |
+| `CLion`                 | `CL`   | `com.jetbrains.intellij.clion:clion`               |       +        |
+| `DataGrip`              | `DB`   | -                                                  |       +        |
+| `DataSpell`             | `DS`   | -                                                  |       +        |
+| `Fleet`                 | `FLIJ` | `com.jetbrains.intellij.fleetBackend:fleetBackend` |       -        |
+| `Gateway`               | `GW`   | `com.jetbrains.intellij.gateway:gateway`           |       +        |
+| `GoLand`                | `GO`   | `com.jetbrains.intellij.goland:goland`             |       +        |
+| `IntellijIdeaCommunity` | `IC`   | `com.jetbrains.intellij.idea:ideaIC`               |       +        |
+| `IntellijIdeaUltimate`  | `IU`   | `com.jetbrains.intellij.idea:ideaIU`               |       +        |
+| `MPS`                   | `MPS`  | -                                                  |       +        |
+| `PhpStorm`              | `PS`   | `com.jetbrains.intellij.phpstorm:phpstorm`         |       +        |
+| `PyCharmProfessional`   | `PY`   | `com.jetbrains.intellij.pycharm:pycharmPY`         |       +        |
+| `PyCharmCommunity`      | `PC`   | `com.jetbrains.intellij.pycharm:pycharmPC`         |       +        |
+| `Rider`                 | `RD`   | `com.jetbrains.intellij.rider:riderRD`             |       +        |
+| `RubyMine`              | `RM`   | -                                                  |       +        |
+| `RustRover`             | `RR`   | `com.jetbrains.intellij.rustrover:RustRover`       |       +        |
+| `WebStorm`              | `WS`   | `com.jetbrains.intellij.webstorm:webstorm`         |       +        |
+| `Writerside`            | `WRS`  | `com.jetbrains.intellij.idea:writerside`           |       +        |
 
 
 ## `PluginBean`
@@ -83,21 +88,21 @@ Represents information about the IntelliJ Platform product.
 
 The information is retrieved from the <path>product-info.json</path> file in the IntelliJ Platform directory.
 
-| Name              | Description                                                              |
-|-------------------|--------------------------------------------------------------------------|
-| name              | The product's name, like "IntelliJ IDEA".                                |
-| version           | The marketing version of the product, like "2023.2".                     |
-| versionSuffix     | The suffix of the version, like "EAP".                                   |
-| buildNumber       | The build number of the product, like "232.8660.185".                    |
-| productCode       | The product code, like "IU".                                             |
-| dataDirectoryName | The directory name of the product data.                                  |
-| svgIconPath       | The path to the SVG icon of the product.                                 |
-| productVendor     | The vendor of the product.                                               |
-| launch            | The list of OS- and arch-specific launch configurations for the product. |
-| customProperties  | The list of custom properties of the product.                            |
-| bundledPlugins    | The list of bundled plugins provided with the current release.           |
-| fileExtensions    | The list of file extensions associated with the product.                 |
-| modules           | The list of modules of the product.                                      |
+| Name                | Description                                                              |
+|---------------------|--------------------------------------------------------------------------|
+| `name`              | The product's name, like "IntelliJ IDEA".                                |
+| `version`           | The marketing version of the product, like "2023.2".                     |
+| `versionSuffix`     | The suffix of the version, like "EAP".                                   |
+| `buildNumber`       | The build number of the product, like "232.8660.185".                    |
+| `productCode`       | The product code, like "IU".                                             |
+| `dataDirectoryName` | The directory name of the product data.                                  |
+| `svgIconPath`       | The path to the SVG icon of the product.                                 |
+| `productVendor`     | The vendor of the product.                                               |
+| `launch`            | The list of OS- and arch-specific launch configurations for the product. |
+| `customProperties`  | The list of custom properties of the product.                            |
+| `bundledPlugins`    | The list of bundled plugins provided with the current release.           |
+| `fileExtensions`    | The list of file extensions associated with the product.                 |
+| `modules`           | The list of modules of the product.                                      |
 
 ### `validateSupportedVersion()`
 {#ProductInfo-validateSupportedVersion}
@@ -120,14 +125,14 @@ List of available channels used by JetBrains IDEs and Android Studio for describ
 
 | Name        | JetBrains IDEs | Android Studio |
 |-------------|:--------------:|:--------------:|
-| `EAP`       |       X        |                |
-| `MILESTONE` |                |       X        |
-| `BETA`      |                |       X        |
-| `RELEASE`   |       X        |       X        |
-| `CANARY`    |                |       X        |
-| `PATCH`     |                |       X        |
-| `RC`        |                |       X        |
-| `PREVIEW`   |                |       X        |
+| `EAP`       |       +        |       -        |
+| `MILESTONE` |       -        |       +        |
+| `BETA`      |       -        |       +        |
+| `RELEASE`   |       +        |       +        |
+| `CANARY`    |       -        |       +        |
+| `PATCH`     |       -        |       +        |
+| `RC`        |       -        |       +        |
+| `PREVIEW`   |       -        |       +        |
 
 See also:
 - [Extension: `intellijPlatform.verifyPlugin.ides`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin-ides)
@@ -176,16 +181,16 @@ See also:
 
 Allows for adding `test-framework` testing library variants. See [Dependencies Extension: Testing](tools_intellij_platform_gradle_plugin_dependencies_extension.md#testing).
 
-| Name         | Coordinates                                                   |
-|--------------|---------------------------------------------------------------|
-| `Go`         | `com.jetbrains.intellij.go:go-test-framework`                 |
-| `Ruby`       | `com.jetbrains.intellij.idea:ruby-test-framework`             |
-| `Java`       | `com.jetbrains.intellij.java:java-test-framework`             |
-| `JavaScript` | `com.jetbrains.intellij.javascript:javascript-test-framework` |
-| `JUnit4`     | `com.jetbrains.intellij.platform:test-framework`              |
-| `JUnit5`     | `com.jetbrains.intellij.platform:test-framework-junit5`       |
-| `Maven`      | `com.jetbrains.intellij.maven:maven-test-framework`           |
-| `ReSharper`  | `com.jetbrains.intellij.resharper:resharper-test-framework`   |
+| Name                | Coordinates                                                   |
+|---------------------|---------------------------------------------------------------|
+| `Platform.JUnit4`   | `com.jetbrains.intellij.platform:test-framework`              |
+| `Platform.JUnit5`   | `com.jetbrains.intellij.platform:test-framework-junit5`       |
+| `Plugin.Go`         | `com.jetbrains.intellij.go:go-test-framework`                 |
+| `Plugin.Ruby`       | `com.jetbrains.intellij.idea:ruby-test-framework`             |
+| `Plugin.Java`       | `com.jetbrains.intellij.java:java-test-framework`             |
+| `Plugin.JavaScript` | `com.jetbrains.intellij.javascript:javascript-test-framework` |
+| `Plugin.Maven`      | `com.jetbrains.intellij.maven:maven-test-framework`           |
+| `Plugin.ReSharper`  | `com.jetbrains.intellij.resharper:resharper-test-framework`   |
 
 ## `VerificationReportsFormats`
 {#VerificationReportsFormats}

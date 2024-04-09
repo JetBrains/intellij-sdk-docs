@@ -6,7 +6,7 @@
 
 <include from="tools_intellij_platform_gradle_plugin.md" element-id="EAP_Status"/>
 
-Extension class for managing IntelliJ Platform dependencies in a Gradle build script applied to the `DependencyHandler`.
+IntelliJ Platform Gradle Plugin enhances the `dependencies {}` configuration block by applying a nested `dependencies.intellijPlatform {}` extension.
 
 This class provides methods for adding dependencies to different IntelliJ Platform [products](#default-target-platforms) and managing [local](#custom-target-platforms) dependencies.
 
@@ -20,8 +20,9 @@ It also includes methods for adding [(bundled) plugins](#plugins), [JetBrains Ru
 
 - setup Maven Central and [`defaultRepositories()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories)
 - target IntelliJ IDEA Community %ijPlatform%
-- add dependency on bundled Java plugin
-- add IntelliJ Plugin Verifier and Marketplace ZIP Signer CLI tools
+- add dependency on a bundled Java plugin
+- add IntelliJ Plugin Verifier, Marketplace ZIP Signer CLI, and code instrumentation tools
+- add Test Framework for testing plugin with JUnit4
 
 ```kotlin
 repositories {
@@ -42,8 +43,9 @@ dependencies {
 
     pluginVerifier()
     zipSigner()
+    instrumentationTools()
 
-    testFramework(TestFrameworkType.JUnit4)
+    testFramework(TestFrameworkType.Platform.JUnit4)
   }
 
   // other dependencies, e.g., 3rd-party libraries
@@ -63,16 +65,21 @@ See [](#custom-target-platforms) for non-default targets.
 | Function                         | Description                                         |
 |----------------------------------|-----------------------------------------------------|
 | `androidStudio(version)`         | [Android Studio](android_studio.md)                 |
+| `aqua(version)`                  | Aqua                                                |
 | `clion(version)`                 | [CLion](clion.md)                                   |
+| `datagrip(version)`              | DataGrip                                            |
+| `dataspell(version)`             | DataSpell                                           |
 | `fleetBackend(version)`          | Fleet Backend                                       |
 | `gateway(version)`               | Gateway                                             |
 | `goland(version)`                | [GoLand](goland.md)                                 |
 | `intellijIdeaCommunity(version)` | [IntelliJ IDEA Community](idea.md)                  |
 | `intellijIdeaUltimate(version)`  | [IntelliJ IDEA Ultimate](idea_ultimate.md)          |
+| `mps(version)`                   | MPS                                                 |
 | `phpstorm(version)`              | [PhpStorm](phpstorm.md)                             |
 | `pycharmCommunity(version)`      | [PyCharm Community](pycharm.md)                     |
 | `pycharmProfessional(version)`   | [PyCharm Professional](pycharm.md)                  |
 | `rider(version)`                 | [Rider](rider.md)                                   |
+| `rubymine(version)`              | RubyMine                                            |
 | `rustrover(version)`             | [RustRover](https://www.jetbrains.com/rust/)        |
 | `webstorm(version)`              | [WebStorm](webstorm.md)                             |
 | `writerside(version)`            | [Writerside](https://www.jetbrains.com/writerside/) |
@@ -110,14 +117,14 @@ See also:
 ## Testing
 
 To implement tests for IntelliJ Platform plugin, it is necessary to explicitly add a dependency on the `test-framework` library containing IntelliJ Platform test classes.
-In the most cases, the `JUnit4` package will be needed:
+In most cases, the `Platform.JUnit4` package will be needed:
 
 ```kotlin
 import org.jetbrains.intellij.platform.gradle.extensions.TestFrameworkType
 
 dependencies {
   intellijPlatform {
-    testFramework(TestFrameworkType.JUnit4)
+    testFramework(TestFrameworkType.Platform.JUnit4)
   }
 }
 ```
@@ -145,9 +152,14 @@ See also:
 
 ## Java Runtime
 
+Using the `jetbrainsRuntime()` dependency helper, it is possible to load a custom version of JetBrains Runtime.
+However, it is recommended to rely on a runtime bundled within the IntelliJ Platform dependency, if present.
+
 | Function                                                                                            | Description                                                                                                                   |
 |-----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
 | <p>`jetbrainsRuntime(version, variant, architecture)`</p><p>`jetbrainsRuntime(explicitVersion)`</p> | Adds a dependency on [JetBrains Runtime](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance). |
+
+See the [JetBrains Runtime releases page](https://github.com/JetBrains/JetBrainsRuntime/releases) for the list of available releases.
 
 ## Code Instrumentation
 
@@ -158,10 +170,10 @@ Adds a Java Compiler dependency for code instrumentation.
 The version is determined by the IntelliJ Platform build number.
 If the exact version is unavailable, the closest one is used, found by scanning all releases.
 
-| Function                                              | Description                                           |
-|-------------------------------------------------------|-------------------------------------------------------|
-| <p>`instrumentationTools()`</p>                       | A helper function to apply all required dependencies. |
-| <p>`javaCompiler()`</p><p>`javaCompiler(version)`</p> | Adds a dependency on Java Compiler.                   |
+| Function                                              | Description                                                            |
+|-------------------------------------------------------|------------------------------------------------------------------------|
+| <p>`instrumentationTools()`</p>                       | A helper function to apply all required dependencies: `javaCompiler()` |
+| <p>`javaCompiler()`</p><p>`javaCompiler(version)`</p> | Adds a dependency on Java Compiler.                                    |
 
 - [](tools_intellij_platform_gradle_plugin.md#code-instrumentation)
 

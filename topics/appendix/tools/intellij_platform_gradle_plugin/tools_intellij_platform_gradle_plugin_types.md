@@ -48,25 +48,25 @@ Each entry is composed of a product code and coordinates used for dependency and
 
 | Name                    | Code   | Artifact Coordinates                               | Binary release |
 |-------------------------|--------|----------------------------------------------------|:--------------:|
-| `AndroidStudio`         | `AI`   | `com.google.android.studio:studio`                 |       +        |
-| `Aqua`                  | `QA`   | -                                                  |       +        |
-| `CLion`                 | `CL`   | `com.jetbrains.intellij.clion:clion`               |       +        |
-| `DataGrip`              | `DB`   | -                                                  |       +        |
-| `DataSpell`             | `DS`   | -                                                  |       +        |
-| `Fleet`                 | `FLIJ` | `com.jetbrains.intellij.fleetBackend:fleetBackend` |       -        |
-| `Gateway`               | `GW`   | `com.jetbrains.intellij.gateway:gateway`           |       +        |
-| `GoLand`                | `GO`   | `com.jetbrains.intellij.goland:goland`             |       +        |
-| `IntellijIdeaCommunity` | `IC`   | `com.jetbrains.intellij.idea:ideaIC`               |       +        |
-| `IntellijIdeaUltimate`  | `IU`   | `com.jetbrains.intellij.idea:ideaIU`               |       +        |
-| `MPS`                   | `MPS`  | -                                                  |       +        |
-| `PhpStorm`              | `PS`   | `com.jetbrains.intellij.phpstorm:phpstorm`         |       +        |
-| `PyCharmProfessional`   | `PY`   | `com.jetbrains.intellij.pycharm:pycharmPY`         |       +        |
-| `PyCharmCommunity`      | `PC`   | `com.jetbrains.intellij.pycharm:pycharmPC`         |       +        |
-| `Rider`                 | `RD`   | `com.jetbrains.intellij.rider:riderRD`             |       +        |
-| `RubyMine`              | `RM`   | -                                                  |       +        |
-| `RustRover`             | `RR`   | `com.jetbrains.intellij.rustrover:RustRover`       |       +        |
-| `WebStorm`              | `WS`   | `com.jetbrains.intellij.webstorm:webstorm`         |       +        |
-| `Writerside`            | `WRS`  | `com.jetbrains.intellij.idea:writerside`           |       +        |
+| `AndroidStudio`         | `AI`   | `com.google.android.studio:studio`                 |    &check;     |
+| `Aqua`                  | `QA`   | -                                                  |    &check;     |
+| `CLion`                 | `CL`   | `com.jetbrains.intellij.clion:clion`               |    &check;     |
+| `DataGrip`              | `DB`   | -                                                  |    &check;     |
+| `DataSpell`             | `DS`   | -                                                  |    &check;     |
+| `Fleet`                 | `FLIJ` | `com.jetbrains.intellij.fleetBackend:fleetBackend` |                |
+| `Gateway`               | `GW`   | `com.jetbrains.intellij.gateway:gateway`           |    &check;     |
+| `GoLand`                | `GO`   | `com.jetbrains.intellij.goland:goland`             |    &check;     |
+| `IntellijIdeaCommunity` | `IC`   | `com.jetbrains.intellij.idea:ideaIC`               |    &check;     |
+| `IntellijIdeaUltimate`  | `IU`   | `com.jetbrains.intellij.idea:ideaIU`               |    &check;     |
+| `MPS`                   | `MPS`  | -                                                  |    &check;     |
+| `PhpStorm`              | `PS`   | `com.jetbrains.intellij.phpstorm:phpstorm`         |    &check;     |
+| `PyCharmProfessional`   | `PY`   | `com.jetbrains.intellij.pycharm:pycharmPY`         |    &check;     |
+| `PyCharmCommunity`      | `PC`   | `com.jetbrains.intellij.pycharm:pycharmPC`         |    &check;     |
+| `Rider`                 | `RD`   | `com.jetbrains.intellij.rider:riderRD`             |    &check;     |
+| `RubyMine`              | `RM`   | -                                                  |    &check;     |
+| `RustRover`             | `RR`   | `com.jetbrains.intellij.rustrover:RustRover`       |    &check;     |
+| `WebStorm`              | `WS`   | `com.jetbrains.intellij.webstorm:webstorm`         |    &check;     |
+| `Writerside`            | `WRS`  | `com.jetbrains.intellij.idea:writerside`           |    &check;     |
 
 
 ## `PluginBean`
@@ -121,18 +121,18 @@ Throws
 
 [`ProductRelease.Channel`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/models/ProductRelease.kt)
 
-List of available channels used by JetBrains IDEs and Android Studio for describing binary releases.
+List of available channels used by JetBrains IDEs and [Android Studio](android_studio.md) for describing binary releases.
 
-| Name        | JetBrains IDEs | Android Studio |
-|-------------|:--------------:|:--------------:|
-| `EAP`       |       +        |       -        |
-| `MILESTONE` |       -        |       +        |
-| `BETA`      |       -        |       +        |
-| `RELEASE`   |       +        |       +        |
-| `CANARY`    |       -        |       +        |
-| `PATCH`     |       -        |       +        |
-| `RC`        |       -        |       +        |
-| `PREVIEW`   |       -        |       +        |
+| Name        | JetBrains IDEs | Android Studio  |
+|-------------|:--------------:|:---------------:|
+| `RELEASE`   |    &check;     |     &check;     |
+| `EAP`       |    &check;     |                 |
+| `MILESTONE` |                |     &check;     |
+| `BETA`      |                |     &check;     |
+| `CANARY`    |                |     &check;     |
+| `PATCH`     |                |     &check;     |
+| `RC`        |                |     &check;     |
+| `PREVIEW`   |                |     &check;     |
 
 See also:
 - [Extension: `intellijPlatform.verifyPlugin.ides`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin-ides)
@@ -144,7 +144,7 @@ See also:
 
 [`ProductReleasesValueSource.FilterParameters`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/providers/ProductReleasesValueSource.kt)
 
-Interface that provides a clear way to filter binary product releases for the purposes of IntelliJ Plugin Verifier.
+Interface that provides a clear way to filter binary product releases for IntelliJ Plugin Verifier.
 
 | Name         | Description                                                                                          |
 |--------------|------------------------------------------------------------------------------------------------------|
@@ -163,7 +163,7 @@ See also:
 
 [`VerifyPluginTask.Subsystems`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginTask.kt)
 
-Specifies which subsystems of the IDE should be checked by the IntelliJ Plugin Verifier CLI tool run with the [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) task.
+Specify which subsystems of the IDE should be checked by the IntelliJ Plugin Verifier CLI tool run with the [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) task.
 
 | Name              | Description                                  |
 |-------------------|----------------------------------------------|

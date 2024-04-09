@@ -114,7 +114,7 @@ flowchart LR
     style setupDependencies stroke-dasharray: 5 5
 ```
 
-## buildPlugin
+## `buildPlugin`
 {#buildPlugin}
 
 <tldr>
@@ -136,7 +136,7 @@ The [`archiveFile`](#buildPlugin-archiveFile) name and location can be controlle
 By default, the `archiveBaseName` is set to the plugin name specified in the <path>plugin.xml</path> file, after it gets patched with the [`patchPluginXml`](#patchPluginXml) task.
 
 
-### archiveFile
+### `archiveFile`
 {#buildPlugin-archiveFile}
 
 The archive file which represents the output file produced by the task.
@@ -149,7 +149,7 @@ Default value
 : [`buildPlugin.archiveFile`](#buildPlugin-archiveFile)
 
 
-## buildSearchableOptions
+## `buildSearchableOptions`
 {#buildSearchableOptions}
 
 <tldr>
@@ -171,7 +171,7 @@ In the case of running the task for the plugin using [`intellijPlatform.pluginCo
 It is possible to mute this warning with the [`paidPluginSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_gradle_properties.md#paidPluginSearchableOptionsWarning) build feature.
 
 
-### outputDirectory
+### `outputDirectory`
 {#buildSearchableOptions-outputDirectory}
 
 The directory to which searchable options will be generated.
@@ -184,7 +184,7 @@ Default value
 : <path>[buildDirectory]/searchableOptions</path>
 
 
-### showPaidPluginWarning
+### `showPaidPluginWarning`
 {#buildSearchableOptions-showPaidPluginWarning}
 
 Emit warning if the task is executed by a paid plugin.
@@ -198,7 +198,7 @@ Default value
 : [`paidPluginSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_gradle_properties.md#paidPluginSearchableOptionsWarning) && `productDescriptor` is defined
 
 
-## classpathIndexCleanup
+## `classpathIndexCleanup`
 {#classpathIndexCleanup}
 
 > Deprecated?
@@ -206,7 +206,7 @@ Default value
 {style="warning"}
 
 
-## initializeIntelliJPlatformPlugin
+## `initializeIntelliJPlatformPlugin`
 {#initializeIntelliJPlatformPlugin}
 
 <tldr>
@@ -228,7 +228,7 @@ The self-update check can be disabled via [`selfUpdateCheck`](tools_intellij_pla
 To make the Coroutines Java Agent available for the task, inherit from [`CoroutinesJavaAgentAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CoroutinesJavaAgentAware).
 
 
-### offline
+### `offline`
 {#initializeIntelliJPlatformPlugin-offline}
 
 Determines if the operation is running in offline mode.
@@ -247,7 +247,7 @@ See also:
 - [Command Line Execution Options](https://docs.gradle.org/current/userguide/command_line_interface.html#sec:command_line_execution_options)
 
 
-### selfUpdateCheck
+### `selfUpdateCheck`
 {#initializeIntelliJPlatformPlugin-selfUpdateCheck}
 
 Represents the property for checking if self-update checks are enabled.
@@ -260,7 +260,7 @@ Default value
 : [`selfUpdateCheck`](tools_intellij_platform_gradle_plugin_gradle_properties.md#selfUpdateCheck)
 
 
-### selfUpdateLock
+### `selfUpdateLock`
 {#initializeIntelliJPlatformPlugin-selfUpdateLock}
 
 Represents a lock file used to limit the plugin version checks in time.
@@ -271,7 +271,7 @@ Type
 : `RegularFileProperty`
 
 
-### coroutinesJavaAgent
+### `coroutinesJavaAgent`
 {#initializeIntelliJPlatformPlugin-coroutinesJavaAgent}
 
 Java Agent file for the Coroutines library, which is required to enable coroutines debugging.
@@ -284,7 +284,7 @@ Default value
 : <path>[buildDirectory]/tmp/initializeIntelliJPlatformPlugin/coroutines-javaagent.jar</path>
 
 
-### pluginVersion
+### `pluginVersion`
 {#initializeIntelliJPlatformPlugin-pluginVersion}
 
 Represents the current version of the plugin.
@@ -294,7 +294,7 @@ Type
 : `Property<String>`
 
 
-## instrumentCode
+## `instrumentCode`
 {#instrumentCode}
 
 <tldr>
@@ -317,7 +317,7 @@ See also:
 - [](tools_intellij_platform_gradle_plugin.md#code-instrumentation)
 
 
-## instrumentedJar
+## `instrumentedJar`
 {#instrumentedJar}
 
 > Not implemented.
@@ -325,7 +325,7 @@ See also:
 {style="warning"}
 
 
-## jarSearchableOptions
+## `jarSearchableOptions`
 {#jarSearchableOptions}
 
 <tldr>
@@ -341,7 +341,7 @@ See also:
 Creates a JAR file with searchable options to be distributed with the plugin.
 
 
-### destinationDirectory
+### `destinationDirectory`
 {#jarSearchableOptions-destinationDirectory}
 
 The directory where the JAR file will be created.
@@ -354,7 +354,7 @@ Default value
 : <path>[buildDirectory]/libsSearchableOptions</path>
 
 
-### inputDirectory
+### `inputDirectory`
 {#jarSearchableOptions-inputDirectory}
 
 The directory from which
@@ -367,7 +367,7 @@ Default value
 : <path>[buildDirectory]/tmp/initializeIntelliJPlatformPlugin/coroutines-javaagent.jar</path>
 
 
-### noSearchableOptionsWarning
+### `noSearchableOptionsWarning`
 {#jarSearchableOptions-noSearchableOptionsWarning}
 
 Emit a warning if no searchable options are found.
@@ -381,7 +381,7 @@ Default value
 : [`noSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_gradle_properties.md#noSearchableOptionsWarning)
 
 
-## patchPluginXml
+## `patchPluginXml`
 {#patchPluginXml}
 
 <tldr>
@@ -393,7 +393,7 @@ Default value
 </tldr>
 
 
-### inputFile
+### `inputFile`
 {#patchPluginXml-inputFile}
 
 Represents an input <path>plugin.xml</path> file.
@@ -408,7 +408,7 @@ Default value
 : <path>src/main/<kotlin|java>/resources/META-INF/plugin.xml</path>
 
 
-### outputFile
+### `outputFile`
 {#patchPluginXml-outputFile}
 
 Represents the output <path>plugin.xml</path> file property for the task.
@@ -423,7 +423,7 @@ Default value
 : <path>[buildDirectory]/tmp/patchPluginXml/plugin.xml</path>
 
 
-### pluginId
+### `pluginId`
 {#patchPluginXml-pluginId}
 
 A unique identifier of the plugin.
@@ -446,7 +446,7 @@ See also:
 - [Plugin Configuration File: `id`](plugin_configuration_file.md#idea-plugin__id)
 
 
-### pluginName
+### `pluginName`
 {#patchPluginXml-pluginName}
 
 The user-visible plugin display name (Title Case).
@@ -464,7 +464,7 @@ See also:
 - [Plugin Configuration File: `name`](plugin_configuration_file.md#idea-plugin__name)
 
 
-### pluginVersion
+### `pluginVersion`
 {#patchPluginXml-pluginVersion}
 
 The plugin version is displayed in the Plugins settings dialog and on the JetBrains Marketplace plugin page.
@@ -484,7 +484,7 @@ See also:
 - [Plugin Configuration File: `version`](plugin_configuration_file.md#idea-plugin__version)
 
 
-### pluginDescription
+### `pluginDescription`
 {#patchPluginXml-pluginDescription}
 
 The plugin description is displayed on the JetBrains Marketplace plugin page and in the Plugins settings dialog.
@@ -505,7 +505,7 @@ See also:
 - [Plugin Configuration File: `description`](plugin_configuration_file.md#idea-plugin__description)
 
 
-### changeNotes
+### `changeNotes`
 {#patchPluginXml-changeNotes}
 
 A short summary of new features, bugfixes, and changes provided with the latest plugin version.
@@ -527,7 +527,7 @@ See also:
 - [Plugin Configuration File: `change-notes`](plugin_configuration_file.md#idea-plugin__change-notes)
 
 
-### productDescriptorCode
+### `productDescriptorCode`
 {#patchPluginXml-productDescriptorCode}
 
 The plugin product code used in the JetBrains Sales System.
@@ -546,7 +546,7 @@ See also:
 - [Plugin Configuration File: `product-descriptor`](plugin_configuration_file.md#idea-plugin__product-descriptor)
 
 
-### productDescriptorReleaseDate
+### `productDescriptorReleaseDate`
 {#patchPluginXml-productDescriptorReleaseDate}
 
 Date of the major version release in the `YYYYMMDD` format.
@@ -564,7 +564,7 @@ See also:
 - [Plugin Configuration File: `product-descriptor`](plugin_configuration_file.md#idea-plugin__product-descriptor)
 
 
-### productDescriptorReleaseVersion
+### `productDescriptorReleaseVersion`
 {#patchPluginXml-productDescriptorReleaseVersion}
 
 A major version in a special number format.
@@ -582,7 +582,7 @@ See also:
 - [Plugin Configuration File: `product-descriptor`](plugin_configuration_file.md#idea-plugin__product-descriptor)
 
 
-### productDescriptorOptional
+### `productDescriptorOptional`
 {#patchPluginXml-productDescriptorOptional}
 
 The boolean value determining whether the plugin is a [Freemium](https://plugins.jetbrains.com/docs/marketplace/freemium.html) plugin.
@@ -603,7 +603,7 @@ See also:
 - [Plugin Configuration File: `product-descriptor`](plugin_configuration_file.md#idea-plugin__product-descriptor)
 
 
-### sinceBuild
+### `sinceBuild`
 {#patchPluginXml-sinceBuild}
 
 The lowest IDE version compatible with the plugin.
@@ -621,7 +621,7 @@ See also:
 - [Plugin Configuration File: `idea-version`](plugin_configuration_file.md#idea-plugin__idea-version)
 
 
-### untilBuild
+### `untilBuild`
 {#patchPluginXml-untilBuild}
 
 The highest IDE version compatible with the plugin.
@@ -643,7 +643,7 @@ See also:
 - [Plugin Configuration File: `idea-version`](plugin_configuration_file.md#idea-plugin__idea-version)
 
 
-### vendorName
+### `vendorName`
 {#patchPluginXml-vendorName}
 
 The vendor name or organization ID (if created) in the Plugins settings dialog and on the JetBrains Marketplace plugin page.
@@ -661,7 +661,7 @@ See also:
 - [Plugin Configuration File: `vendor`](plugin_configuration_file.md#idea-plugin__vendor)
 
 
-### vendorEmail
+### `vendorEmail`
 {#patchPluginXml-vendorEmail}
 
 The vendor's email address.
@@ -679,7 +679,7 @@ See also:
 - [Plugin Configuration File: `vendor`](plugin_configuration_file.md#idea-plugin__vendor)
 
 
-### vendorUrl
+### `vendorUrl`
 {#patchPluginXml-vendorUrl}
 
 The link to the vendor's homepage.
@@ -697,7 +697,7 @@ See also:
 - [Plugin Configuration File: `vendor`](plugin_configuration_file.md#idea-plugin__vendor)
 
 
-## prepareSandbox
+## `prepareSandbox`
 {#prepareSandbox}
 
 <tldr>
@@ -720,7 +720,7 @@ See also:
 - [Extension: `intellijPlatform.sandboxContainer`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-sandboxContainer)
 
 
-### defaultDestinationDirectory
+### `defaultDestinationDirectory`
 {#prepareSandbox-defaultDestinationDirectory}
 
 Default sandbox destination directory to where the plugin files will be copied into.
@@ -733,7 +733,7 @@ Default value
 : [`SandboxAware.sandboxPluginsDirectory`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware-sandboxPluginsDirectory)
 
 
-### pluginJar
+### `pluginJar`
 {#prepareSandbox-pluginJar}
 
 The output of `Jar` task.
@@ -750,7 +750,7 @@ See also:
 - [Extension: `intellijPlatform.instrumentCode`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-instrumentCode)
 
 
-### pluginsClasspath
+### `pluginsClasspath`
 {#prepareSandbox-pluginsClasspath}
 
 List of dependencies on external plugins resolved from the `intellijPlatformPluginsExtracted` configuration.
@@ -763,7 +763,7 @@ See also:
 - [Dependencies Extension](tools_intellij_platform_gradle_plugin_dependencies_extension.md)
 
 
-### runtimeClasspath
+### `runtimeClasspath`
 {#prepareSandbox-runtimeClasspath}
 
 Dependencies defined with the `runtimeClasspath` configuration.
@@ -773,7 +773,7 @@ Type
 : `ConfigurableFileCollection`
 
 
-## printBundledPlugins
+## `printBundledPlugins`
 {#printBundledPlugins}
 
 <tldr>
@@ -787,7 +787,7 @@ Type
 Prints the list of bundled plugins available within the currently targeted IntelliJ Platform.
 
 
-## printProductsReleases
+## `printProductsReleases`
 {#printProductsReleases}
 
 <tldr>
@@ -801,7 +801,7 @@ Prints the list of bundled plugins available within the currently targeted Intel
 Prints the list of binary product releases that, by default, match the currently selected IntelliJ Platform along with [`intellijPlatform.pluginConfiguration.ideaVersion.sinceBuild`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-ideaVersion-sinceBuild) and [`intellijPlatform.pluginConfiguration.ideaVersion.untilBuild`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-ideaVersion-untilBuild) properties.
 
 
-### productsReleases
+### `productsReleases`
 {#printProductsReleases-productsReleases}
 
 Property holds the list of product releases to print.
@@ -814,7 +814,7 @@ Default value
 : The output of `ProductReleasesValueSource` using default configuration
 
 
-## publishPlugin
+## `publishPlugin`
 {#publishPlugin}
 
 <tldr>
@@ -835,7 +835,7 @@ See also:
 - [Plugin upload API](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html)
 
 
-### archiveFile
+### `archiveFile`
 {#publishPlugin-archiveFile}
 
 ZIP archive to be published to the remote repository.
@@ -853,7 +853,7 @@ See also:
 - [Extension: `intellijPlatform.signing`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing)
 
 
-### host
+### `host`
 {#publishPlugin-host}
 
 URL host of a plugin repository.
@@ -866,7 +866,7 @@ Default value
 : [`intellijPlatform.publishing.host`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-host)
 
 
-### token
+### `token`
 {#publishPlugin-token}
 
 Authorization token.
@@ -882,7 +882,7 @@ Default value
 : [`intellijPlatform.publishing.token`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-token)
 
 
-### channels
+### `channels`
 {#publishPlugin-channels}
 
 A list of channel names to upload plugin to.
@@ -895,7 +895,7 @@ Default value
 : [`intellijPlatform.publishing.channels`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-channels)
 
 
-### hidden
+### `hidden`
 {#publishPlugin-hidden}
 
 Publish the plugin update and mark it as hidden to prevent public release after approval.
@@ -911,7 +911,7 @@ See also:
 - [Hidden release](https://plugins.jetbrains.com/docs/marketplace/hidden-plugin.html)
 
 
-### toolboxEnterprise
+### `toolboxEnterprise`
 {#publishPlugin-toolboxEnterprise}
 
 Specifies if the Toolbox Enterprise plugin repository service should be used.
@@ -924,7 +924,7 @@ Default value
 : [`intellijPlatform.publishing.toolboxEnterprise`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-toolboxEnterprise)
 
 
-## runIde
+## `runIde`
 {#runIde}
 
 <tldr>
@@ -956,7 +956,7 @@ tasks {
 }
 ```
 
-## signPlugin
+## `signPlugin`
 {#signPlugin}
 
 <tldr>
@@ -978,7 +978,7 @@ As soon as [`privateKey`](#signPlugin-privateKey) (or [`privateKeyFile`](#signPl
 For more details, see [](plugin_signing.md).
 
 
-### archiveFile
+### `archiveFile`
 {#signPlugin-archiveFile}
 
 Input, unsigned ZIP archive file.
@@ -994,7 +994,7 @@ Default value
 : [`buildPlugin.archiveFile`](#buildPlugin-archiveFile)
 
 
-### signedArchiveFile
+### `signedArchiveFile`
 {#signPlugin-signedArchiveFile}
 
 Output, signed ZIP archive file.
@@ -1011,7 +1011,7 @@ Default value
 : [`signPlugin.archiveFile`](#signPlugin-archiveFile) with `-signed` suffix applied to the name
 
 
-### keyStore
+### `keyStore`
 {#signPlugin-keyStore}
 
 KeyStore file path.
@@ -1025,7 +1025,7 @@ Default value
 : [`intellijPlatform.signing.keyStore`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStore)
 
 
-### keyStorePassword
+### `keyStorePassword`
 {#signPlugin-keyStorePassword}
 
 KeyStore password.
@@ -1039,7 +1039,7 @@ Default value
 : [`intellijPlatform.signing.keyStorePassword`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStorePassword)
 
 
-### keyStoreKeyAlias
+### `keyStoreKeyAlias`
 {#signPlugin-keyStoreKeyAlias}
 
 KeyStore key alias.
@@ -1053,7 +1053,7 @@ Default value
 : [`intellijPlatform.signing.keyStoreKeyAlias`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStoreKeyAlias)
 
 
-### keyStoreType
+### `keyStoreType`
 {#signPlugin-keyStoreType}
 
 KeyStore type.
@@ -1067,7 +1067,7 @@ Default value
 : [`intellijPlatform.signing.keyStoreType`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStoreType)
 
 
-### keyStoreProviderName
+### `keyStoreProviderName`
 {#signPlugin-keyStoreProviderName}
 
 JCA KeyStore Provider name.
@@ -1081,7 +1081,7 @@ Default value
 : [`intellijPlatform.signing.keyStoreProviderName`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-keyStoreProviderName)
 
 
-### privateKey
+### `privateKey`
 {#signPlugin-privateKey}
 
 Encoded private key in the PEM format.
@@ -1095,7 +1095,7 @@ Default value
 : [`intellijPlatform.signing.privateKey`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-privateKey)
 
 
-### privateKeyFile
+### `privateKeyFile`
 {#signPlugin-privateKeyFile}
 
 A file with an encoded private key in the PEM format.
@@ -1109,7 +1109,7 @@ Default value
 : [`intellijPlatform.signing.privateKeyFile`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-privateKeyFile)
 
 
-### password
+### `password`
 {#signPlugin-password}
 
 Password required to decrypt the private key.
@@ -1123,7 +1123,7 @@ Default value
 : [`intellijPlatform.signing.password`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-password)
 
 
-### certificateChain
+### `certificateChain`
 {#signPlugin-certificateChain}
 
 A string containing X509 certificates.
@@ -1138,7 +1138,7 @@ Default value
 : [`intellijPlatform.signing.certificateChain`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-certificateChain)
 
 
-### certificateChainFile
+### `certificateChainFile`
 {#signPlugin-certificateChainFile}
 
 Path to the file containing X509 certificates.
@@ -1153,7 +1153,7 @@ Default value
 : [`intellijPlatform.signing.certificateChainFile`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-certificateChainFile)
 
 
-## testIde
+## `testIde`
 {#testIde}
 
 
@@ -1189,7 +1189,7 @@ tasks {
 ```
 
 
-## testIdePerformance
+## `testIdePerformance`
 {#testIdePerformance}
 
 > Not implemented.
@@ -1197,7 +1197,7 @@ tasks {
 {style="warning"}
 
 
-## testIdeUi
+## `testIdeUi`
 {#testIdeUi}
 
 > Not implemented.
@@ -1205,7 +1205,7 @@ tasks {
 {style="warning"}
 
 
-## verifyPluginProjectConfiguration
+## `verifyPluginProjectConfiguration`
 {#verifyPluginProjectConfiguration}
 
 <tldr>
@@ -1236,7 +1236,7 @@ See also:
 - [](using_kotlin.md#incremental-compilation)
 
 
-### reportDirectory
+### `reportDirectory`
 {#verifyPluginProjectConfiguration-reportDirectory}
 
 Report directory where the verification result will be stored.
@@ -1249,7 +1249,7 @@ Default value
 : <path>[buildDirectory]/reports/verifyPluginConfiguration</path>
 
 
-### rootProject
+### `rootProject`
 {#verifyPluginProjectConfiguration-rootProject}
 
 Root project path.
@@ -1262,7 +1262,7 @@ Default value
 : <path>[rootProject]</path>
 
 
-### sourceCompatibility
+### `sourceCompatibility`
 {#verifyPluginProjectConfiguration-sourceCompatibility}
 
 The `JavaCompile.sourceCompatibility` property value defined in the build script.
@@ -1275,7 +1275,7 @@ Default value
 : `JavaCompile.sourceCompatibility`
 
 
-### targetCompatibility
+### `targetCompatibility`
 {#verifyPluginProjectConfiguration-targetCompatibility}
 
 The `JavaCompile.targetCompatibility` property value defined in the build script.
@@ -1288,7 +1288,7 @@ Default value
 : `JavaCompile.targetCompatibility`
 
 
-### kotlinPluginAvailable
+### `kotlinPluginAvailable`
 {#verifyPluginProjectConfiguration-kotlinPluginAvailable}
 
 Indicates that the Kotlin Gradle Plugin is loaded and available.
@@ -1301,7 +1301,7 @@ Default value
 : Kotlin Gradle Plugin presence
 
 
-### kotlinApiVersion
+### `kotlinApiVersion`
 {#verifyPluginProjectConfiguration-kotlinApiVersion}
 
 The `apiVersion` property value of `compileKotlin.kotlinOptions` defined in the build script.
@@ -1314,7 +1314,7 @@ Default value
 : `compileKotlin.kotlinOptions.apiVersion`
 
 
-### kotlinLanguageVersion
+### `kotlinLanguageVersion`
 {#verifyPluginProjectConfiguration-kotlinLanguageVersion}
 
 The `languageVersion` property value of `compileKotlin.kotlinOptions` defined in the build script.
@@ -1327,7 +1327,7 @@ Default value
 : `compileKotlin.kotlinOptions.languageVersion`
 
 
-### kotlinVersion
+### `kotlinVersion`
 {#verifyPluginProjectConfiguration-kotlinVersion}
 
 The version of the Kotlin used in the project.
@@ -1340,7 +1340,7 @@ Default value
 : `kotlin.coreLibrariesVersion`
 
 
-### kotlinJvmTarget
+### `kotlinJvmTarget`
 {#verifyPluginProjectConfiguration-kotlinJvmTarget}
 
 The `jvmTarget` property value of `compileKotlin.kotlinOptions` defined in the build script.
@@ -1353,7 +1353,7 @@ Default value
 : `compileKotlin.kotlinOptions.jvmTarget`
 
 
-### kotlinStdlibDefaultDependency
+### `kotlinStdlibDefaultDependency`
 {#verifyPluginProjectConfiguration-kotlinStdlibDefaultDependency}
 
 `kotlin.stdlib.default.dependency` property value defined in the `gradle.properties` file.
@@ -1366,7 +1366,7 @@ Default value
 : `kotlin.stdlib.default.dependency` Gradle property
 
 
-### kotlinIncrementalUseClasspathSnapshot
+### `kotlinIncrementalUseClasspathSnapshot`
 {#verifyPluginProjectConfiguration-kotlinIncrementalUseClasspathSnapshot}
 
 `kotlin.incremental.useClasspathSnapshot` property value defined in the `gradle.properties` file.
@@ -1379,7 +1379,7 @@ Default value
 : `kotlin.incremental.useClasspathSnapshot` Gradle property
 
 
-### kotlinxCoroutinesLibraryPresent
+### `kotlinxCoroutinesLibraryPresent`
 {#verifyPluginProjectConfiguration-kotlinxCoroutinesLibraryPresent}
 
 This variable represents whether the Kotlin Coroutines library is added explicitly to the project dependencies.
@@ -1392,7 +1392,7 @@ Default value
 : The `org.jetbrains.kotlinx:kotlinx-coroutines` dependency presence
 
 
-## verifyPluginSignature
+## `verifyPluginSignature`
 {#verifyPluginSignature}
 
 <tldr>
@@ -1412,7 +1412,7 @@ See also:
 - [Marketplace ZIP Signer](https://github.com/JetBrains/marketplace-zip-signer)
 
 
-### inputArchiveFile
+### `inputArchiveFile`
 {#verifyPluginSignature-inputArchiveFile}
 
 Input, unsigned ZIP archive file.
@@ -1426,7 +1426,7 @@ Default value
 : [`signPlugin.signedArchiveFile`](#signPlugin-signedArchiveFile)
 
 
-### certificateChain
+### `certificateChain`
 {#verifyPluginSignature-certificateChain}
 
 A string containing X509 certificates.
@@ -1440,7 +1440,7 @@ Type
 : `Property<String>`
 
 
-### certificateChainFile
+### `certificateChainFile`
 {#verifyPluginSignature-certificateChainFile}
 
 Path to the file containing X509 certificates.
@@ -1455,7 +1455,7 @@ Default value
 : [`signPlugin.certificateChainFile`](#signPlugin-certificateChainFile) or [`signPlugin.certificateChain`](#signPlugin-certificateChain) written to a temporary file
 
 
-## verifyPluginStructure
+## `verifyPluginStructure`
 {#verifyPluginStructure}
 
 <tldr>
@@ -1472,7 +1472,7 @@ See also:
 - [](plugin_configuration_file.md)
 
 
-### ignoreFailures
+### `ignoreFailures`
 {#verifyPluginStructure-ignoreFailures}
 
 Specifies whether the build should fail when the verifications performed by this task fail.
@@ -1485,7 +1485,7 @@ Default value
 : `false`
 
 
-### ignoreUnacceptableWarnings
+### `ignoreUnacceptableWarnings`
 {#verifyPluginStructure-ignoreUnacceptableWarnings}
 
 Specifies whether the build should fail when the verifications performed by this task emit unacceptable warnings.
@@ -1498,7 +1498,7 @@ Default value
 : `false`
 
 
-### ignoreWarnings
+### `ignoreWarnings`
 {#verifyPluginStructure-ignoreWarnings}
 
 Specifies whether the build should fail when the verifications performed by this task emit warnings.
@@ -1511,7 +1511,7 @@ Default value
 : `true`
 
 
-### pluginDirectory
+### `pluginDirectory`
 {#verifyPluginStructure-pluginDirectory}
 
 The location of the built plugin file which will be used for verification.
@@ -1524,7 +1524,7 @@ Default value
 : <path>[`prepareSandbox.defaultDestinationDirectory`](#prepareSandbox-defaultDestinationDirectory)/[`intellijPlatform.pluginConfiguration.name`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-name)</path>
 
 
-## verifyPlugin
+## `verifyPlugin`
 {#verifyPlugin}
 
 <tldr>
@@ -1548,7 +1548,7 @@ See also:
 - [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier)
 
 
-### ides
+### `ides`
 {#verifyPlugin-ides}
 
 Holds a reference to IntelliJ Platform IDEs which will be used by the IntelliJ Plugin Verifier CLI tool for the binary plugin verification.
@@ -1560,7 +1560,7 @@ Type
 : `ConfigurableFileCollection`
 
 
-### archiveFile
+### `archiveFile`
 {#verifyPlugin-archiveFile}
 
 Input ZIP archive file of the plugin to verify.
@@ -1574,7 +1574,7 @@ Default value
 : [`buildPlugin.archiveFile`](#buildPlugin-archiveFile)
 
 
-### externalPrefixes
+### `externalPrefixes`
 {#verifyPlugin-externalPrefixes}
 
 The list of class prefixes from the external libraries.
@@ -1588,7 +1588,7 @@ Default value
 : [`intellijPlatform.verifyPlugin.externalPrefixes`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin-externalPrefixes)
 
 
-### failureLevel
+### `failureLevel`
 {#verifyPlugin-failureLevel}
 
 Defines the verification level at which the task should fail if any reported issue matches.
@@ -1601,7 +1601,7 @@ Default value
 : [`intellijPlatform.verifyPlugin.failureLevel`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin-failureLevel)
 
 
-### freeArgs
+### `freeArgs`
 {#verifyPlugin-freeArgs}
 
 The list of free arguments is passed directly to the IntelliJ Plugin Verifier CLI tool.
@@ -1616,7 +1616,7 @@ Default value
 : [`intellijPlatform.verifyPlugin.freeArgs`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin-freeArgs)
 
 
-### ignoredProblemsFile
+### `ignoredProblemsFile`
 {#verifyPlugin-ignoredProblemsFile}
 
 A file that contains a list of problems that will be ignored in a report.
@@ -1629,7 +1629,7 @@ Default value
 : [`intellijPlatform.verifyPlugin.ignoredProblemsFile`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin-ignoredProblemsFile)
 
 
-### offline
+### `offline`
 {#verifyPlugin-offline}
 
 Determines if the operation is running in offline mode.
@@ -1648,7 +1648,7 @@ See also:
 - [Command Line Execution Options](https://docs.gradle.org/current/userguide/command_line_interface.html#sec:command_line_execution_options)
 
 
-### subsystemsToCheck
+### `subsystemsToCheck`
 {#verifyPlugin-subsystemsToCheck}
 
 Specifies which subsystems of IDE should be checked.
@@ -1661,7 +1661,7 @@ Default value
 : [`intellijPlatform.verifyPlugin.subsystemsToCheck`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin-subsystemsToCheck)
 
 
-### teamCityOutputFormat
+### `teamCityOutputFormat`
 {#verifyPlugin-teamCityOutputFormat}
 
 A flag that controls the output format.
@@ -1675,7 +1675,7 @@ Default value
 : [`intellijPlatform.verifyPlugin.teamCityOutputFormat`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin-teamCityOutputFormat)
 
 
-### verificationReportsDirectory
+### `verificationReportsDirectory`
 {#verifyPlugin-verificationReportsDirectory}
 
 The path to the directory where verification reports will be saved.
@@ -1688,7 +1688,7 @@ Default value
 : [`intellijPlatform.verifyPlugin.verificationReportsDirectory`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin-verificationReportsDirectory)
 
 
-### verificationReportsFormats
+### `verificationReportsFormats`
 {#verifyPlugin-verificationReportsFormats}
 
 The output formats of the verification reports.

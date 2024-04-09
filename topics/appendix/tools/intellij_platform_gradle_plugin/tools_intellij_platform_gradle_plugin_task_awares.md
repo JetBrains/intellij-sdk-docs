@@ -9,7 +9,7 @@
 The Task Awares is a set of interfaces that can be applied to custom Gradle tasks and, when registered using the dedicated register method, inject new features or properties with predefined values.
 
 
-## CoroutinesJavaAgentAware
+## `CoroutinesJavaAgentAware`
 {#CoroutinesJavaAgentAware}
 
 <tldr>
@@ -24,7 +24,7 @@ The Task Awares is a set of interfaces that can be applied to custom Gradle task
 
 The interface provides the path to the Java Agent file for the Coroutines library required to enable coroutines debugging.
 
-### coroutinesJavaAgentFile
+### `coroutinesJavaAgentFile`
 {#CoroutinesJavaAgentAware-coroutinesJavaAgentFile}
 
 The path to the coroutines Java Agent file.
@@ -37,7 +37,7 @@ Default value
 : [`initializeIntellijPlatformPlugin.coroutinesJavaAgent`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin-coroutinesJavaAgent)
 
 
-## CustomIntelliJPlatformVersionAware
+## `CustomIntelliJPlatformVersionAware`
 {#CustomIntelliJPlatformVersionAware}
 
 <tldr>
@@ -57,7 +57,7 @@ When applying this interface to the task, custom configurations to hold new depe
 Configurations, as well as the task preparing sandbox for running and testing the custom IntelliJ Platform (if required), have a random suffix applied to avoid collisions.
 
 
-### type
+### `type`
 {#CustomIntelliJPlatformVersionAware-type}
 
 An input property to configure the type of the custom IntelliJ Platform.
@@ -69,7 +69,7 @@ Type
 : [`IntelliJPlatformType`](tools_intellij_platform_gradle_plugin_types.md#IntelliJPlatformType)
 
 
-### version
+### `version`
 {#CustomIntelliJPlatformVersionAware-version}
 
 An input property to configure the version of the custom IntelliJ Platform.
@@ -81,7 +81,7 @@ Type
 : `Property<String>`
 
 
-### localPath
+### `localPath`
 {#CustomIntelliJPlatformVersionAware-localPath}
 
 An input property to define the path to the local IntelliJ Platform instance to configure the version of the custom IntelliJ Platform.
@@ -93,7 +93,7 @@ Type
 : `DirectoryProperty`
 
 
-## IntelliJPlatformVersionAware
+## `IntelliJPlatformVersionAware`
 {#IntelliJPlatformVersionAware}
 
 <tldr>
@@ -111,7 +111,7 @@ The [`intelliJPlatformConfiguration`](#IntelliJPlatformVersionAware-intelliJPlat
 It is required to have a dependency on the IntelliJ Platform added to the project with helpers available in [](tools_intellij_platform_gradle_plugin_dependencies_extension.md).
 
 
-### intelliJPlatformConfiguration
+### `intelliJPlatformConfiguration`
 {#IntelliJPlatformVersionAware-intelliJPlatformConfiguration}
 
 Holds the `intellijPlatform` configuration with the IntelliJ Platform dependency added.
@@ -123,7 +123,7 @@ Type
 : `ConfigurableFileCollection`
 
 
-### platformPath
+### `platformPath`
 {#IntelliJPlatformVersionAware-platformPath}
 
 Provides a direct path to the IntelliJ Platform dependency artifact.
@@ -135,7 +135,7 @@ Access
 Type
 : `Path`
 
-### productInfo
+### `productInfo`
 {#IntelliJPlatformVersionAware-productInfo}
 
 Provides information about the IntelliJ Platform product.
@@ -150,7 +150,7 @@ Type
 : [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo)
 
 
-### validateIntelliJPlatformVersion()
+### `validateIntelliJPlatformVersion()`
 {#IntelliJPlatformVersionAware-validateIntelliJPlatformVersion}
 
 Validates that the resolved IntelliJ Platform is supported by checking against the minimal supported IntelliJ Platform version.
@@ -162,7 +162,7 @@ Throws
 : `IllegalArgumentException`
 
 
-## JavaCompilerAware
+## `JavaCompilerAware`
 {#JavaCompilerAware}
 
 <tldr>
@@ -176,7 +176,7 @@ Throws
 The interface provides the dependency on Java Compiler required for the [](tools_intellij_platform_gradle_plugin.md#code-instrumentation) to properly configure Ant tasks provided by the IntelliJ Platform.
 
 
-## PluginAware
+## `PluginAware`
 {#PluginAware}
 
 <tldr>
@@ -194,7 +194,7 @@ This interface provides information about the currently built plugin.
 It resolves and parses the final <path>plugin.xml</path> descriptor file, making its details easily accessible.
 
 
-### pluginXml
+### `pluginXml`
 {#PluginAware-pluginXml}
 
 Holds the path to the patched <path>plugin.xml</path> file.
@@ -207,13 +207,13 @@ Default value
 : [`patchPluginXml.outputFile`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-outputFile)
 
 
-### parse {}
+### `parse {}`
 {#PluginAware-parse}
 
 The `parse` method provides a possibility for parsing the <path>pluginXml</path> file and direct access to the [`PluginBean`](tools_intellij_platform_gradle_plugin_types.md#PluginBean) object.
 
 
-## PluginVerifierAware
+## `PluginVerifierAware`
 {#PluginVerifierAware}
 
 <tldr>
@@ -229,7 +229,7 @@ The interface provides the path to the IntelliJ Plugin Verifier executable.
 It is required to have a dependency on the IntelliJ Plugin Verifier added to the project with [`intellijPlatform.pluginVerifier()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md) dependencies extension.
 
 
-### pluginVerifierExecutable
+### `pluginVerifierExecutable`
 {#PluginVerifierAware-pluginVerifierExecutable}
 
 Path to the IntelliJ Plugin Verifier executable.
@@ -239,7 +239,7 @@ Type
 : `RegularFileProperty`
 
 
-## RunnableIdeAware
+## `RunnableIdeAware`
 {#RunnableIdeAware}
 
 <tldr>
@@ -260,7 +260,7 @@ The interface which uses a set of various interfaces required for running a gues
 - `JavaForkOptions`
 
 
-## RuntimeAware
+## `RuntimeAware`
 {#RuntimeAware}
 
 <tldr>
@@ -273,7 +273,7 @@ The interface which uses a set of various interfaces required for running a gues
 
 This interface provides access to the Java Runtime (i.e., JetBrains Runtime) resolved with `RuntimeResolver`.
 
-### runtimeDirectory
+### `runtimeDirectory`
 {#RuntimeAware-runtimeDirectory}
 
 Java Runtime parent directory.
@@ -283,7 +283,7 @@ Type
 : `DirectoryProperty`
 
 
-### runtimeExecutable
+### `runtimeExecutable`
 {#RuntimeAware-runtimeExecutable}
 
 Path to the Java Runtime executable.
@@ -293,7 +293,7 @@ Type
 : `RegularFileProperty`
 
 
-### runtimeArch
+### `runtimeArch`
 {#RuntimeAware-runtimeArch}
 
 An architecture of the Java Runtime currently used for running Gradle.
@@ -303,7 +303,7 @@ Type
 : `Property<String>`
 
 
-## SandboxAware
+## `SandboxAware`
 {#SandboxAware}
 
 <tldr>
@@ -323,7 +323,7 @@ The path to the sandbox container is obtained using the [`intellijPlatform.sandb
 Paths respect custom IntelliJ Platform when combined with [`CustomIntelliJPlatformVersionAware`](#CustomIntelliJPlatformVersionAware).
 
 
-### sandboxSuffix
+### `sandboxSuffix`
 {#SandboxAware-sandboxSuffix}
 
 Represents the suffix used i.e., for test-related tasks.
@@ -333,7 +333,7 @@ Type
 : `Property<String>`
 
 
-### sandboxContainerDirectory
+### `sandboxContainerDirectory`
 {#SandboxAware-sandboxContainerDirectory}
 
 The container for all sandbox-related directories.
@@ -345,7 +345,7 @@ Type
 : `DirectoryProperty`
 
 
-### sandboxConfigDirectory
+### `sandboxConfigDirectory`
 {#SandboxAware-sandboxConfigDirectory}
 
 A configuration directory located within the [`sandboxContainerDirectory`](#SandboxAware-sandboxContainerDirectory).
@@ -355,7 +355,7 @@ Type
 : `DirectoryProperty`
 
 
-### sandboxPluginsDirectory
+### `sandboxPluginsDirectory`
 {#SandboxAware-sandboxPluginsDirectory}
 
 A plugins directory located within the [`sandboxContainerDirectory`](#SandboxAware-sandboxContainerDirectory).
@@ -365,7 +365,7 @@ Type
 : `DirectoryProperty`
 
 
-### sandboxSystemDirectory
+### `sandboxSystemDirectory`
 {#SandboxAware-sandboxSystemDirectory}
 
 A system directory located within the [`sandboxContainerDirectory`](#SandboxAware-sandboxContainerDirectory).
@@ -375,7 +375,7 @@ Type
 : `DirectoryProperty`
 
 
-### sandboxLogDirectory
+### `sandboxLogDirectory`
 {#SandboxAware-sandboxLogDirectory}
 
 A log directory located within the [`sandboxContainerDirectory`](#SandboxAware-sandboxContainerDirectory).
@@ -385,7 +385,7 @@ Type
 : `DirectoryProperty`
 
 
-## SigningAware
+## `SigningAware`
 {#SigningAware}
 
 <tldr>
@@ -401,7 +401,7 @@ The interface provides the path to the Marketplace ZIP Signer executable.
 It is required to have a dependency on the Marketplace ZIP Signer added to the project with [`intellijPlatform.zipSigner()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md) dependencies extension.
 
 
-### zipSignerExecutable
+### `zipSignerExecutable`
 {#SigningAware-zipSignerExecutable}
 
 Path to the Marketplace ZIP Signer executable.

@@ -40,7 +40,7 @@ intellijPlatform {
 ```
 
 
-### cachePath
+### `cachePath`
 {#intellijPlatform-cachePath}
 
 Provides read-only access to the IntelliJ Platform project cache location.
@@ -62,7 +62,7 @@ Default value
 : <path>[rootProject]/.intellijPlatform/</path>
 
 
-### platformPath
+### `platformPath`
 {#intellijPlatform-platformPath}
 
 Provides read-only access to the IntelliJ Platform dependency artifact path.
@@ -78,7 +78,7 @@ Default value
 : Path of the current IntelliJ Platform
 
 
-### productInfo
+### `productInfo`
 {#intellijPlatform-productInfo}
 
 Provides read-only access to the [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) object associated with the IntelliJ Platform dependency configured for the current project.
@@ -94,7 +94,7 @@ Default value
 : [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) of the current IntelliJ Platform
 
 
-### buildSearchableOptions
+### `buildSearchableOptions`
 {#intellijPlatform-buildSearchableOptions}
 
 Builds an index of UI components (searchable options) for the plugin.
@@ -111,7 +111,7 @@ See also:
 - [Build Features: `noSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_gradle_properties.md#noSearchableOptionsWarning)
 
 
-### instrumentCode
+### `instrumentCode`
 {#intellijPlatform-instrumentCode}
 
 Enables the [](tools_intellij_platform_gradle_plugin.md#code-instrumentation) of the compiled classes.
@@ -126,7 +126,7 @@ Default value
 : `true`
 
 
-### projectName
+### `projectName`
 {#intellijPlatform-projectName}
 
 Defines the project name, which is used for creating file structure and the build archive.
@@ -139,7 +139,7 @@ Default value
 : `project.name`
 
 
-### sandboxContainer
+### `sandboxContainer`
 {#intellijPlatform-sandboxContainer}
 
 The path to the sandbox container where tests and IDE instances read and write data.
@@ -197,7 +197,7 @@ See also:
 - [](#intellijPlatform-pluginConfiguration-vendor)
 
 
-### id
+### `id`
 {#intellijPlatform-pluginConfiguration-id}
 
 The plugin's unique identifier.
@@ -217,7 +217,7 @@ See also:
 - [Plugin Configuration File: `id`](plugin_configuration_file.md#idea-plugin__id)
 
 
-### name
+### `name`
 {#intellijPlatform-pluginConfiguration-name}
 
 The plugin's display name, visible to users (Title Case).
@@ -233,7 +233,7 @@ See also:
 - [Plugin Configuration File: `name`](plugin_configuration_file.md#idea-plugin__name)
 
 
-### version
+### `version`
 {#intellijPlatform-pluginConfiguration-version}
 
 The plugin version, presented in the Plugins settings dialog and on its JetBrains Marketplace page.
@@ -251,7 +251,7 @@ See also:
 - [Plugin Configuration File: `version`](plugin_configuration_file.md#idea-plugin__version)
 
 
-### description
+### `description`
 {#intellijPlatform-pluginConfiguration-description}
 
 The plugin description, which is presented on the JetBrains Marketplace plugin page and in the Plugins settings dialog.
@@ -270,7 +270,7 @@ See also:
 - [Plugin Configuration File: `description`](plugin_configuration_file.md#idea-plugin__description)
 
 
-### changeNotes
+### `changeNotes`
 {#intellijPlatform-pluginConfiguration-changeNotes}
 
 A concise summary of new features, bug fixes, and alterations provided in the latest plugin version.
@@ -318,7 +318,7 @@ See also:
 - [How to add required parameters for paid plugins](https://plugins.jetbrains.com/docs/marketplace/add-required-parameters.html)
 
 
-### code
+### `code`
 {#intellijPlatform-pluginConfiguration-productDescriptor-code}
 
 The product code for the plugin, used in the JetBrains Sales System, needs to be pre-approved by JetBrains and must adhere to [specified requirements](https://plugins.jetbrains.com/docs/marketplace/obtain-a-product-code-from-jetbrains.html).
@@ -334,7 +334,7 @@ See also:
 - [Plugin Configuration File: `product-descriptor`](plugin_configuration_file.md#idea-plugin__product-descriptor)
 
 
-### releaseDate
+### `releaseDate`
 {#intellijPlatform-pluginConfiguration-productDescriptor-releaseDate}
 
 The release date of the major version, formatted as `YYYYMMDD`.
@@ -350,7 +350,7 @@ See also:
 - [Plugin Configuration File: `product-descriptor`](plugin_configuration_file.md#idea-plugin__product-descriptor)
 
 
-### releaseVersion
+### `releaseVersion`
 {#intellijPlatform-pluginConfiguration-productDescriptor-releaseVersion}
 
 The major version, represented in a specific numerical format.
@@ -366,7 +366,7 @@ See also:
 - [Plugin Configuration File: `product-descriptor`](plugin_configuration_file.md#idea-plugin__product-descriptor)
 
 
-### optional
+### `optional`
 {#intellijPlatform-pluginConfiguration-productDescriptor-optional}
 
 The boolean value that indicates if the plugin is a [Freemium](https://plugins.jetbrains.com/docs/marketplace/freemium.html) plugin.
@@ -412,7 +412,7 @@ See also:
 - [Plugin Configuration File: `idea-version`](plugin_configuration_file.md#idea-plugin__idea-version)
 - [](build_number_ranges.md)
 
-### sinceBuild
+### `sinceBuild`
 {#intellijPlatform-pluginConfiguration-ideaVersion-sinceBuild}
 
 The earliest IDE version that is compatible with the plugin.
@@ -432,7 +432,7 @@ See also:
 - [Tasks: `patchPluginXml.sinceBuild`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-sinceBuild)
 
 
-### untilBuild
+### `untilBuild`
 {#intellijPlatform-pluginConfiguration-ideaVersion-untilBuild}
 
 The latest IDE version that is compatible with the plugin.
@@ -483,7 +483,7 @@ intellijPlatform {
 See also:
 - [Plugin Configuration File: `vendor`](plugin_configuration_file.md#idea-plugin__vendor)
 
-### name
+### `name`
 {#intellijPlatform-pluginConfiguration-vendor-name}
 
 The name of the vendor or the organization ID (if created), as displayed in the Plugins settings dialog and on the JetBrains Marketplace plugin page.
@@ -498,7 +498,7 @@ See also:
 - [Tasks: `patchPluginXml.vendorName`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-vendorName)
 
 
-### email
+### `email`
 {#intellijPlatform-pluginConfiguration-vendor-email}
 
 The email address of the vendor.
@@ -513,7 +513,7 @@ See also:
 - [Tasks: `patchPluginXml.vendorEmail`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-vendorEmail)
 
 
-### url
+### `url`
 {#intellijPlatform-pluginConfiguration-vendor-url}
 
 The URL to the vendor's homepage.
@@ -551,7 +551,7 @@ intellijPlatform {
 ```
 
 
-### host
+### `host`
 {#intellijPlatform-publishing-host}
 
 The hostname used for publishing the plugin.
@@ -567,7 +567,7 @@ See also:
 - [Tasks: `publishPlugin.host`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-host)
 
 
-### token
+### `token`
 {#intellijPlatform-publishing-token}
 
 Authorization token.
@@ -583,7 +583,7 @@ See also:
 - [Tasks: `publishPlugin.token`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-token)
 
 
-### channels
+### `channels`
 {#intellijPlatform-publishing-channels}
 
 A list of channel names to upload plugin to.
@@ -599,7 +599,7 @@ See also:
 - [Tasks: `publishPlugin.channels`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-channels)
 
 
-### toolboxEnterprise
+### `toolboxEnterprise`
 {#intellijPlatform-publishing-toolboxEnterprise}
 
 Specify if the Toolbox Enterprise plugin repository service should be used.
@@ -615,7 +615,7 @@ See also:
 - [Tasks: `publishPlugin.toolboxEnterprise`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-toolboxEnterprise)
 
 
-### hidden
+### `hidden`
 {#intellijPlatform-publishing-hidden}
 
 Publish the plugin update and mark it as hidden to prevent public release after approval.
@@ -666,7 +666,7 @@ See also:
 - [Marketplace ZIP Signer](https://github.com/JetBrains/marketplace-zip-signer)
 
 
-### cliPath
+### `cliPath`
 {#intellijPlatform-signing-cliPath}
 
 A path to the local Marketplace ZIP Signer CLI tool to be used.
@@ -679,7 +679,7 @@ See also:
 - [Task Awares: `SigningAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SigningAware)
 
 
-### keyStore
+### `keyStore`
 {#intellijPlatform-signing-keyStore}
 
 KeyStore file path.
@@ -693,7 +693,7 @@ See also:
 - [Tasks: `signPlugin.keyStore`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-keyStore)
 
 
-### keyStorePassword
+### `keyStorePassword`
 {#intellijPlatform-signing-keyStorePassword}
 
 KeyStore password.
@@ -707,7 +707,7 @@ See also:
 - [Tasks: `signPlugin.keyStorePassword`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-keyStorePassword)
 
 
-### keyStoreKeyAlias
+### `keyStoreKeyAlias`
 {#intellijPlatform-signing-keyStoreKeyAlias}
 
 KeyStore key alias.
@@ -721,7 +721,7 @@ See also:
 - [Tasks: `signPlugin.keyStoreKeyAlias`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-keyStoreKeyAlias)
 
 
-### keyStoreType
+### `keyStoreType`
 {#intellijPlatform-signing-keyStoreType}
 
 KeyStore type.
@@ -735,7 +735,7 @@ See also:
 - [Tasks: `signPlugin.keyStoreType`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-keyStoreType)
 
 
-### keyStoreProviderName
+### `keyStoreProviderName`
 {#intellijPlatform-signing-keyStoreProviderName}
 
 JCA KeyStore Provider name.
@@ -749,7 +749,7 @@ See also:
 - [Tasks: `signPlugin.keyStoreProviderName`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-keyStoreProviderName)
 
 
-### privateKey
+### `privateKey`
 {#intellijPlatform-signing-privateKey}
 
 Encoded private key in the PEM format.
@@ -765,7 +765,7 @@ See also:
 - [Tasks: `signPlugin.privateKey`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-privateKey)
 
 
-### privateKeyFile
+### `privateKeyFile`
 {#intellijPlatform-signing-privateKeyFile}
 
 A file with an encoded private key in the PEM format.
@@ -779,7 +779,7 @@ See also:
 - [Tasks: `signPlugin.privateKeyFile`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-privateKeyFile)
 
 
-### password
+### `password`
 {#intellijPlatform-signing-password}
 
 Password required to decrypt the private key.
@@ -793,7 +793,7 @@ See also:
 - [Tasks: `signPlugin.password`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-password)
 
 
-### certificateChain
+### `certificateChain`
 {#intellijPlatform-signing-certificateChain}
 
 A string containing X509 certificates.
@@ -810,7 +810,7 @@ See also:
 - [Tasks: `signPlugin.certificateChain`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-certificateChain)
 
 
-### certificateChainFile
+### `certificateChainFile`
 {#intellijPlatform-signing-certificateChainFile}
 
 Path to the file containing X509 certificates.
@@ -864,7 +864,7 @@ See also:
 - [IntelliJ Plugin Verifier CLI](https://github.com/JetBrains/intellij-plugin-verifier)
 
 
-### cliPath
+### `cliPath`
 {#intellijPlatform-verifyPlugin-cliPath}
 
 A path to the local IntelliJ Plugin Verifier CLI tool to be used.
@@ -877,7 +877,7 @@ See also:
 - [Task Awares: `PluginVerifierAware`](tools_intellij_platform_gradle_plugin_task_awares.md#PluginVerifierAware)
 
 
-### downloadDirectory
+### `downloadDirectory`
 {#intellijPlatform-verifyPlugin-downloadDirectory}
 
 The path to the directory where IDEs used for the verification will be downloaded.
@@ -890,7 +890,7 @@ Default value
 : <path>[`homeDirectory`](#intellijPlatform-verifyPlugin-homeDirectory)/ides</path>
 
 
-### failureLevel
+### `failureLevel`
 {#intellijPlatform-verifyPlugin-failureLevel}
 
 Defines the verification level at which the task should fail if any reported issue matches.
@@ -906,7 +906,7 @@ See also:
 - [Tasks: `verifyPlugin.failureLevel`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-failureLevel)
 
 
-### externalPrefixes
+### `externalPrefixes`
 {#intellijPlatform-verifyPlugin-externalPrefixes}
 
 The list of class prefixes from the external libraries.
@@ -920,7 +920,7 @@ See also:
 - [Tasks: `verifyPlugin.externalPrefixes`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-externalPrefixes)
 
 
-### freeArgs
+### `freeArgs`
 {#intellijPlatform-verifyPlugin-freeArgs}
 
 The list of free arguments is passed directly to the IntelliJ Plugin Verifier CLI tool.
@@ -935,7 +935,7 @@ See also:
 - [Tasks: `verifyPlugin.freeArgs`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-freeArgs)
 
 
-### homeDirectory
+### `homeDirectory`
 {#intellijPlatform-verifyPlugin-homeDirectory}
 
 Retrieve the Plugin Verifier home directory used for storing downloaded IDEs.
@@ -952,7 +952,7 @@ Default value
   - <path>[buildDirectory]/tmp/pluginVerifier</path>
 
 
-### ignoredProblemsFile
+### `ignoredProblemsFile`
 {#intellijPlatform-verifyPlugin-ignoredProblemsFile}
 
 A file that contains a list of problems that will be ignored in a report.
@@ -965,7 +965,7 @@ See also:
 - [Tasks: `verifyPlugin.ignoredProblemsFile`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-ignoredProblemsFile)
 
 
-### subsystemsToCheck
+### `subsystemsToCheck`
 {#intellijPlatform-verifyPlugin-subsystemsToCheck}
 
 Which subsystems of the IDE should be checked.
@@ -981,7 +981,7 @@ See also:
 - [Tasks: `verifyPlugin.subsystemsToCheck`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-subsystemsToCheck)
 
 
-### teamCityOutputFormat
+### `teamCityOutputFormat`
 {#intellijPlatform-verifyPlugin-teamCityOutputFormat}
 
 A flag that controls the output format.
@@ -998,7 +998,7 @@ See also:
 - [Tasks: `verifyPlugin.teamCityOutputFormat`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-teamCityOutputFormat)
 
 
-### verificationReportsDirectory
+### `verificationReportsDirectory`
 {#intellijPlatform-verifyPlugin-verificationReportsDirectory}
 
 The path to the directory where verification reports will be saved.
@@ -1014,7 +1014,7 @@ See also:
 - [Tasks: `verifyPlugin.verificationReportsDirectory`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-verificationReportsDirectory)
 
 
-### verificationReportsFormats
+### `verificationReportsFormats`
 {#intellijPlatform-verifyPlugin-verificationReportsFormats}
 
 The output formats of the verification reports.

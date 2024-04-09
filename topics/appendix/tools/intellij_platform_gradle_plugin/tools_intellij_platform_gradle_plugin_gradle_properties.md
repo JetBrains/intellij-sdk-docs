@@ -15,7 +15,7 @@ org.jetbrains.intellij.platform.<name>=<value>
 
 ## General Gradle Properties
 
-### intellijPlatformCache
+### `intellijPlatformCache`
 {#intellijPlatformCache}
 
 The plugin uses a dedicated cache directory to store files related to the current project configuration files, such as:
@@ -31,7 +31,7 @@ Example
 org.jetbrains.intellij.platform.intellijPlatformCache=/path/to/intellijPlatformCache/
 ```
 
-### localPlatformArtifacts
+### `localPlatformArtifacts`
 {#localPlatformArtifacts}
 
 The [`localPlatformArtifacts()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) entry applied to the `repositories {}` block is required to apply to the project dependencies that need extra pre-processing before they can be correctly used by the IntelliJ Platform Gradle Plugin and loaded by Gradle.
@@ -61,7 +61,7 @@ E.g., to disable the [](#selfUpdateCheck) feature, add this line:
 org.jetbrains.intellij.platform.buildFeature.selfUpdateCheck=false
 ```
 
-### downloadSources
+### `downloadSources`
 {#downloadSources}
 
 Instruct IDE that sources are needed to be downloaded when working with IntelliJ Platform Gradle Plugin.
@@ -82,7 +82,7 @@ org.jetbrains.intellij.platform.buildFeature.downloadSources=true
 ```
 
 
-### noSearchableOptionsWarning
+### `noSearchableOptionsWarning`
 {#noSearchableOptionsWarning}
 
 When the [](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions) doesn't produce any results, e.g., when the plugin doesn't implement any [Settings](settings.md), a warning is shown to suggest disabling it for better performance with [](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-buildSearchableOptions).
@@ -97,7 +97,7 @@ Example
 org.jetbrains.intellij.platform.buildFeature.buildSearchableOptions=false
 ```
 
-### paidPluginSearchableOptionsWarning
+### `paidPluginSearchableOptionsWarning`
 {#paidPluginSearchableOptionsWarning}
 
 Due to IDE limitations, it is impossible to run the IDE in headless mode to collect searchable options for a paid plugin.
@@ -114,7 +114,7 @@ Example
 org.jetbrains.intellij.platform.buildFeature.paidPluginSearchableOptionsWarning=false
 ```
 
-### selfUpdateCheck
+### `selfUpdateCheck`
 {#selfUpdateCheck}
 
 Checks whether the currently used IntelliJ Platform Gradle Plugin is outdated and if a new release is available.
@@ -137,7 +137,7 @@ Example
 org.jetbrains.intellij.platform.buildFeature.selfUpdateCheck=false
 ```
 
-### useCacheRedirector
+### `useCacheRedirector`
 {#useCacheRedirector}
 
 By default, JetBrains Cache Redirector is used when resolving Maven repositories or any resources used by the IntelliJ Platform Gradle Plugin.
@@ -155,7 +155,7 @@ Example
 org.jetbrains.intellij.platform.buildFeature.useCacheRedirector=false
 ```
 
-### useClosestJavaCompilerVersion
+### `useClosestJavaCompilerVersion`
 {#useClosestJavaCompilerVersion}
 
 Java Compiler dependency required for the [](tools_intellij_platform_gradle_plugin.md#code-instrumentation) is tied to IntelliJ Platform build numbers and hosted in the IntelliJ Dependencies Repository.

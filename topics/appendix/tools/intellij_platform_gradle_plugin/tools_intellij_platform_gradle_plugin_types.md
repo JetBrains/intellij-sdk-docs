@@ -8,7 +8,7 @@
 
 This page lists various types used to configure [](tools_intellij_platform_gradle_plugin_tasks.md).
 
-## FailureLevel
+## `FailureLevel`
 {#FailureLevel}
 
 [`VerifyPluginTask.FailureLevel`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginTask.kt)
@@ -37,7 +37,7 @@ See also:
 - [Tasks: `verifyPlugin.failureLevel`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-failureLevel)
 
 
-## IntelliJPlatformType
+## `IntelliJPlatformType`
 {#IntelliJPlatformType}
 
 [`IntelliJPlatformType`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/IntelliJPlatformType.kt)
@@ -64,7 +64,7 @@ Each entry is composed of a product code and coordinates used for dependency and
 | `Writerside`            | `WRS`  | `com.jetbrains.intellij.idea:writerside`           |
 
 
-## PluginBean
+## `PluginBean`
 {#PluginBean}
 
 [`PluginBean`](%gh-pv%/intellij-plugin-structure/structure-intellij/src/main/java/com/jetbrains/plugin/structure/intellij/beans/PluginBean.java)
@@ -74,7 +74,7 @@ Describes the content of the <path>plugin.xml</path> file.
 See also:
 - [](plugin_configuration_file.md)
 
-## ProductInfo
+## `ProductInfo`
 {#ProductInfo}
 
 [`ProductInfo`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/models/ProductInfo.kt)
@@ -99,7 +99,7 @@ The information is retrieved from the <path>product-info.json</path> file in the
 | fileExtensions    | The list of file extensions associated with the product.                 |
 | modules           | The list of modules of the product.                                      |
 
-### validateSupportedVersion()
+### `validateSupportedVersion()`
 {#ProductInfo-validateSupportedVersion}
 
 Validates that the resolved IntelliJ Platform is supported by checking against the minimal supported IntelliJ Platform version.
@@ -111,7 +111,7 @@ Throws
 : `IllegalArgumentException`
 
 
-## ProductRelease.Channel
+## `ProductRelease.Channel`
 {#ProductRelease-Channel}
 
 [`ProductRelease.Channel`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/models/ProductRelease.kt)
@@ -134,7 +134,7 @@ See also:
 - [Tasks: `printProductsReleases`](tools_intellij_platform_gradle_plugin_tasks.md#printProductsReleases)
 
 
-## ProductReleasesValueSource.FilterParameters
+## `ProductReleasesValueSource.FilterParameters`
 {#ProductReleasesValueSource-FilterParameters}
 
 [`ProductReleasesValueSource.FilterParameters`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/providers/ProductReleasesValueSource.kt)
@@ -153,7 +153,7 @@ See also:
 - [Tasks: `printProductsReleases`](tools_intellij_platform_gradle_plugin_tasks.md#printProductsReleases)
 
 
-## Subsystems
+## `Subsystems`
 {#Subsystems}
 
 [`VerifyPluginTask.Subsystems`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginTask.kt)
@@ -171,7 +171,7 @@ See also:
 - [Tasks: `verifyPlugin.subsystemsToCheck`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-subsystemsToCheck)
 
 
-## TestFrameworkType
+## `TestFrameworkType`
 {#TestFrameworkType}
 
 Allows for adding `test-framework` testing library variants. See [Dependencies Extension: Testing](tools_intellij_platform_gradle_plugin_dependencies_extension.md#testing).
@@ -187,7 +187,7 @@ Allows for adding `test-framework` testing library variants. See [Dependencies E
 | `Maven`      | `com.jetbrains.intellij.maven:maven-test-framework`           |
 | `ReSharper`  | `com.jetbrains.intellij.resharper:resharper-test-framework`   |
 
-## VerificationReportsFormats
+## `VerificationReportsFormats`
 {#VerificationReportsFormats}
 
 [`VerifyPluginTask.VerificationReportsFormats`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginTask.kt)

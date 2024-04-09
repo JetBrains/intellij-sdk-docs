@@ -42,12 +42,12 @@ plugins {
 }
 ```
 
-## intellij {} extension
+## `intellij {}` extension
 
 The `intellij {}` extension is no longer available and was replaced with `intellijPlatform {}`.
 Note that the available properties differ, see [](tools_intellij_platform_gradle_plugin_extension.md) for details.
 
-### intellij.pluginName
+### `intellij.pluginName`
 
 Use: [`intellijPlatform.pluginConfiguration.name`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-name):
 
@@ -59,9 +59,9 @@ intellijPlatform {
 }
 ```
 
-### intellij.type, intellij.version
+### `intellij.type`, `intellij.version`
 
-Define the IntelliJ Platform dependency in `dependencies {}` block:
+Define the IntelliJ Platform dependency in `dependencies{}` block:
 
 ```kotlin
 repositories {
@@ -80,7 +80,7 @@ dependencies {
 
 See: [](tools_intellij_platform_gradle_plugin_dependencies_extension.md)
 
-### intellij.plugins
+### `intellij.plugins`
 
 The `intellij.plugins` property is no longer available.
 
@@ -114,7 +114,7 @@ See: [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins)
 
 <include from="tools_intellij_platform_gradle_plugin_repositories_extension.md" element-id="localPlatformArtifacts_required"/>
 
-### intellij.localPath
+### `intellij.localPath`
 
 Define dependencies on local IDE instance in `dependencies {}` block:
 
@@ -137,13 +137,13 @@ See: [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#custom-t
 
 <include from="tools_intellij_platform_gradle_plugin_repositories_extension.md" element-id="localPlatformArtifacts_required"/>
 
-### intellij.updateSinceUntilBuild, intellij.sameSinceUntilBuild
+### `intellij.updateSinceUntilBuild`, `intellij.sameSinceUntilBuild`
 
 The <path>plugin.xml</path> file is now fully managed by the [`intellijPlatform`](tools_intellij_platform_gradle_plugin_extension.md) extension.
 
-### intellij.intellijRepository, intellij.pluginsRepositories, intellij.jreRepository
+### `intellij.intellijRepository`,` intellij.pluginsRepositories`, `intellij.jreRepository`
 
-### intellij.sandboxDir
+### `intellij.sandboxDir`
 
 Use the [`intellijPlatform.sandboxContainer`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-sandboxContainer).
 
@@ -151,31 +151,31 @@ Use the `repositories {}` block to manage repositories instead.
 
 See: [](tools_intellij_platform_gradle_plugin_repositories_extension.md)
 
-### intellij.downloadSources
+### `intellij.downloadSources`
 
 Downloading sources is managed by the Plugin DevKit plugin in version 2024.1+.
 
-### intellij.ideaDependency
+### `intellij.ideaDependency`
 
 Access now the [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) object using the [`intellijPlatform.productInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) property.
 
 ## Tasks
 
-### downloadRobotServerPlugin
+### `downloadRobotServerPlugin`
 
 The Robot Server Plugin integration is not yet available. See [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi).
 
-### runIdeForUiTests
+### `runIdeForUiTests`
 
 Use [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi).
 
-### runPluginVerifier
+### `runPluginVerifier`
 
 The task for running the IntelliJ Plugin Verifier is now called [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin).
 
 Use [`intellijPlatform.verifyPlugin`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin) extension to configure it.
 
-### setupDependencies
+### `setupDependencies`
 
 To make the IntelliJ SDK dependency available in the IDE, the `setupDependencies` task was provided by Gradle IntelliJ Plugin 1.x.
 This task is no longer required, but when switching from 1.x, Gradle may still want to execute it in the _afterSync_ phase.

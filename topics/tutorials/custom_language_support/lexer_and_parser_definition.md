@@ -1,6 +1,6 @@
-# 4. Lexer and Parser Definition
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# 4. Lexer and Parser Definition
 
 <link-summary>Sample implementation of Simple language lexer and parser.</link-summary>
 
@@ -63,7 +63,7 @@ The [`SimpleFile`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/int
 ```
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleFile.java" include-symbol="SimpleFile"}
 
-## Define SimpleTokenSets
+## Define Token Sets
 
 Define all sets of related token types from `SimpleTypes` in [`SimpleTokenSets`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleTokenSets.java).
 

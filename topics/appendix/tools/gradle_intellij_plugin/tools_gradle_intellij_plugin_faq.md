@@ -1,14 +1,14 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Gradle IntelliJ Plugin – FAQ
 
 <link-summary>FAQ for using Gradle IntelliJ Plugin</link-summary>
 
-### How to target 2022.3 platform
+### How to target 2022.3 platform?
 
 <include from="tools_gradle_intellij_plugin.md" element-id="gradle_plugin_223_problem"/>
 
-### How to modify JVM arguments of runIde task
+### How to modify JVM arguments of runIde task?
 
 [`runIde`](tools_gradle_intellij_plugin.md#tasks-runide) task is a [Java Exec](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html) task and can be modified according to the documentation.
 
@@ -37,7 +37,7 @@ runIde {
 </tab>
 </tabs>
 
-### How to modify system properties of runIde task
+### How to modify system properties of runIde task?
 
 Using the [very same task documentation](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html), configure [`runIde`](tools_gradle_intellij_plugin.md#tasks-runide) task:
 
@@ -64,7 +64,7 @@ runIde {
 </tab>
 </tabs>
 
-### How to disable automatic reload of dynamic plugins
+### How to disable automatic reload of dynamic plugins?
 
 See [](ide_development_instance.md#enabling-auto-reload) for important caveats.
 
@@ -93,7 +93,7 @@ runIde {
 </tab>
 </tabs>
 
-### How to disable building searchable options
+### How to disable building searchable options?
 
 Building searchable options can be disabled as a task:
 
@@ -121,12 +121,12 @@ buildSearchableOptions.enabled = false
 As a result of disabling building searchable options, the [Settings](settings.md) that your plugin provides won't be searchable in the <ui-path>Settings</ui-path> dialog.
 Disabling of the task is suggested for plugins that are not intended to provide custom settings.
 
-### How to show log file of sandbox instance
+### How to show log file of sandbox instance?
 
 The most convenient way to see the logs of running IDE is to add a tab to the <control>Run</control> tool window displaying the contents of <path>idea.log</path> file.
 In the Gradle `runIde` run configuration, add the log file path according to [sandbox location](ide_development_instance.md#the-development-instance-sandbox-directory) as described in [View logs](https://www.jetbrains.com/help/idea/setting-log-options.html).
 
-### How to add a custom file inside plugin distribution
+### How to add a custom file inside plugin distribution?
 
 [`prepareSandbox`](tools_gradle_intellij_plugin.md#tasks-preparesandbox) task is a [`Sync`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Sync.html) task and can be modified accordingly.
 Something like following should work:
@@ -158,7 +158,7 @@ prepareSandbox {
 </tab>
 </tabs>
 
-### Task 'setupDependencies' not found in root project
+### Task `setupDependencies` not found in root project
 
 The [`setupDependencies`](tools_gradle_intellij_plugin.md#tasks-setupdependencies) task is designed to fetch the target IDE dependency from the IntelliJ Repository in the after-sync Gradle phase, but only when working inside IntelliJ IDEA – to make the IntelliJ SDK classes resolved and code completion available.
 To achieve that, the [`gradle-idea-ext-plugin`](https://github.com/JetBrains/gradle-idea-ext-plugin) is used, which alters the IDEA project's <path>.idea/workspace.xml</path> file making the [`setupDependencies`](tools_gradle_intellij_plugin.md#tasks-setupdependencies) task activated on `after_sync` event.
@@ -171,7 +171,7 @@ Task 'setupDependencies' not found in root project 'projectName'.
 
 To fix that, manually edit the <path>.idea/workspace.xml</path> file removing mentioned entry, go to the <control>Gradle</control> tool window, select the <ui-path>Tasks Activation</ui-path> action from the context menu of the root project item, and remove it.
 
-### How to expose my plugin API sources to dependent plugins
+### How to expose my plugin API sources to dependent plugins?
 
 See the [](bundling_plugin_openapi_sources.md) section for details.
 
@@ -266,7 +266,7 @@ jacocoTestCoverageVerification {
 </tabs>
 
 
-### Exception javax.net.ssl.SSLPeerUnverifiedException: peer not authenticated
+### Exception `SSLPeerUnverifiedException: peer not authenticated`
 
 When using Java `11.0.2` for building plugins, resolving dependencies (or making any other network requests) in Gradle IntelliJ Plugin fails due to the [JDK-8220723](https://bugs.openjdk.org/browse/JDK-8220723) issue with the following exception:
 
@@ -277,7 +277,7 @@ Exception in thread "main" javax.net.ssl.SSLPeerUnverifiedException: peer not au
 To fix that issue, upgrade the Java version to the latest patch available of the major version of your choice.
 
 
-### How to add a dependency on a plugin available in the file system
+### How to add a dependency on a plugin available in the file system?
 
 It is possible to add a dependency on a plugin available in the file system — like a plugin update downloaded manually from JetBrains Marketplace or built separately in another project.
 

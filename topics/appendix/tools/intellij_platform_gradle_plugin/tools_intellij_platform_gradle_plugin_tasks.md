@@ -23,7 +23,6 @@ flowchart LR
         subgraph ALL ["` `"]
             buildPlugin
             buildSearchableOptions
-            classpathIndexCleanup>classpathIndexCleanup]
             instrumentCode>instrumentCode]
             instrumentedJar>instrumentedJar]
             jarSearchableOptions
@@ -84,7 +83,6 @@ flowchart LR
 
     click buildPlugin "#buildPlugin"
     click buildSearchableOptions "#buildSearchableOptions"
-    click classpathIndexCleanup "#classpathIndexCleanup"
     click initializeIntelliJPlatformPlugin "#initializeIntelliJPlatformPlugin"
     click instrumentCode "#instrumentCode"
     click instrumentedJar "#instrumentedJar"
@@ -108,7 +106,6 @@ flowchart LR
     style TASKS fill:transparent
     style ALL fill:transparent
 
-    style classpathIndexCleanup stroke-dasharray: 5 5
     style instrumentCode stroke-dasharray: 5 5
     style instrumentedJar stroke-dasharray: 5 5
     style setupDependencies stroke-dasharray: 5 5
@@ -154,7 +151,7 @@ Default value
 
 <tldr>
 
-**Depends on**: [`patchPluginXml`](#patchPluginXml)
+**Depends on**: [`patchPluginXml`](#patchPluginXml), [`prepareSandbox`](#prepareSandbox)
 
 **Extends**: [`JavaExec`][gradle-javaexec-task], [`RunnableIdeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#RunnableIdeAware)
 
@@ -196,14 +193,6 @@ Type
 
 Default value
 : [`paidPluginSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_gradle_properties.md#paidPluginSearchableOptionsWarning) && `productDescriptor` is defined
-
-
-## `classpathIndexCleanup`
-{#classpathIndexCleanup}
-
-> Deprecated?
->
-{style="warning"}
 
 
 ## `initializeIntelliJPlatformPlugin`
@@ -317,12 +306,86 @@ See also:
 - [](tools_intellij_platform_gradle_plugin.md#code-instrumentation)
 
 
+### `sourceSetCompileClasspath`
+{#instrumentCode-sourceSetCompileClasspath}
+
+Compile classpath of the project's source set.
+
+{style="narrow"}
+Type
+: `ConfigurableFileCollection`
+
+
+### `classesDirs`
+{#instrumentCode-classesDirs}
+
+The list of directories with compiled classes.
+
+{style="narrow"}
+Type
+: `ConfigurableFileCollection`
+
+Default value
+: `classesDirs` of the project's source sets.
+
+
+### `formsDirs`
+{#instrumentCode-formsDirs}
+
+The list of directories with GUI Designer form files.
+
+{style="narrow"}
+Type
+: `ConfigurableFileCollection`
+
+Default value:
+: `.form` files of the project's source sets.
+
+### `sourceDirs`
+{#instrumentCode-sourceDirs}
+
+Location of the source code.
+
+{style="narrow"}
+Type
+: `ConfigurableFileCollection`
+
+
+### `instrumentationLogs`
+{#instrumentCode-instrumentationLogs}
+
+Enables `INFO` logging when running Ant tasks.
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value:
+: `false`
+
+
+### `outputDirectory`
+{#instrumentCode-outputDirectory}
+
+The output directory for instrumented classes.
+
+{style="narrow"}
+Type
+: `DirectoryProperty`
+
+
 ## `instrumentedJar`
 {#instrumentedJar}
 
-> Not implemented.
->
-{style="warning"}
+<tldr>
+
+**Depends on**: `jar`, [`instrumentCode`](#instrumentCode)
+
+**Extends**: [`Jar`][gradle-jar-task]
+
+</tldr>
+
+Creates a duplicate of the current module's `jar` file with instrumented classes added.
 
 
 ## `jarSearchableOptions`
@@ -351,20 +414,20 @@ Type
 : `DirectoryProperty`
 
 Default value
-: <path>[buildDirectory]/libsSearchableOptions</path>
+: <path>[buildDirectory]/libs</path>
 
 
 ### `inputDirectory`
 {#jarSearchableOptions-inputDirectory}
 
-The directory from which
+The directory from which the prepared searchable options are read.
 
 {style="narrow"}
 Type
 : `DirectoryProperty`
 
 Default value
-: <path>[buildDirectory]/tmp/initializeIntelliJPlatformPlugin/coroutines-javaagent.jar</path>
+: [`buildSearchableOptions.outputDirectory`](#buildSearchableOptions-outputDirectory)
 
 
 ### `noSearchableOptionsWarning`
@@ -704,7 +767,7 @@ See also:
 
 **Depends on**: `jar`, [`instrumentedJar`](#instrumentedJar)
 
-**Extends**: [`Sync`][gradle-jar-task], [`SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware)
+**Extends**: [`Sync`][gradle-jar-task], [`SandboxProducerAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxProducerAware)
 
 **Sources**: [`PrepareSandboxTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PrepareSandboxTask.kt)
 
@@ -714,7 +777,7 @@ Prepares a sandbox environment with the installed plugin and its dependencies.
 
 The sandbox directory is required by tasks that run IDE and tests in isolation from other instances, like when multiple IntelliJ Platforms are used for testing with [`runIde`](#runIde), [`testIde`](#testIde), [`testIdeUi`](#testIdeUi), or [`testIdePerformance`](#testIdePerformance) tasks.
 
-To fully utilize the sandbox capabilities in a task, extend from [`SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware) interface.
+To fully use the sandbox capabilities in a task, extend from [`SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware) interface.
 
 See also:
 - [Extension: `intellijPlatform.sandboxContainer`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-sandboxContainer)
@@ -773,6 +836,20 @@ Type
 : `ConfigurableFileCollection`
 
 
+## `prepareTest`
+{#prepareTest}
+
+<tldr>
+
+**Extends**: [`DefaultTask`][gradle-default-task], [`TestableAware`](tools_intellij_platform_gradle_plugin_task_awares.md#TestableAware)
+
+**Sources**: [`PrepareTestTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PrepareTestTask.kt)
+
+</tldr>
+
+This is a task used to prepare an immutable `test` task and provide all necessary dependencies and configuration for a proper testing configuration.
+
+
 ## `printBundledPlugins`
 {#printBundledPlugins}
 
@@ -792,7 +869,7 @@ Prints the list of bundled plugins available within the currently targeted Intel
 
 <tldr>
 
-**Extends**: [`DefaultTask`][gradle-default-task]
+**Extends**: [`DefaultTask`][gradle-default-task], [`ProductReleasesValueSource.FilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesValueSource-FilterParameters)
 
 **Sources**: [`PrintProductsReleasesTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PrintProductsReleasesTask.kt)
 
@@ -800,11 +877,14 @@ Prints the list of bundled plugins available within the currently targeted Intel
 
 Prints the list of binary product releases that, by default, match the currently selected IntelliJ Platform along with [`intellijPlatform.pluginConfiguration.ideaVersion.sinceBuild`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-ideaVersion-sinceBuild) and [`intellijPlatform.pluginConfiguration.ideaVersion.untilBuild`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-ideaVersion-untilBuild) properties.
 
+The filer used for retrieving the release list can be customized by using properties provided with [`ProductReleasesValueSource.FilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesValueSource-FilterParameters).
 
 ### `productsReleases`
 {#printProductsReleases-productsReleases}
 
 Property holds the list of product releases to print.
+
+Can be used to retrieve the result list.
 
 {style="narrow"}
 Type
@@ -812,6 +892,9 @@ Type
 
 Default value
 : The output of `ProductReleasesValueSource` using default configuration
+
+See also:
+- [Types: `ProductReleasesValueSource.FilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesValueSource-FilterParameters)
 
 
 ## `publishPlugin`
@@ -1156,10 +1239,9 @@ Default value
 ## `testIde`
 {#testIde}
 
-
 <tldr>
 
-**Extends**: [`Test`][gradle-test-task], [`CoroutinesJavaAgentAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CoroutinesJavaAgentAware), [`CustomIntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware), [`PluginAware`](tools_intellij_platform_gradle_plugin_task_awares.md#PluginAware), [`RuntimeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#RuntimeAware), [`SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SigningAware)
+**Extends**: [`Test`][gradle-test-task], [`TestableAware`](tools_intellij_platform_gradle_plugin_task_awares.md#TestableAware), [`CustomIntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware)
 
 **Sources**: [`TestIdeTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/TestIdeTask.kt)
 
@@ -1256,10 +1338,36 @@ Root project path.
 
 {style="narrow"}
 Type
-: `DirectoryProperty`
+: `Property<File>`
 
 Default value
 : <path>[rootProject]</path>
+
+
+### `intellijPlatformCache`
+{#verifyPluginProjectConfiguration-intellijPlatformCache}
+
+IntelliJ Platform cache directory.
+
+{style="narrow"}
+Type
+: `Property<File>`
+
+Default value
+: [`intellijPlatform.cachePath`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-cachePath)
+
+
+### `gitignoreFile`
+{#verifyPluginProjectConfiguration-gitignoreFile}
+
+The `.gitignore` file located in the <path>[rootDirectory]</path>, tracked for content change.
+
+{style="narrow"}
+Type
+: `Property<File>`
+
+Default value
+: <path>[rootProject]/.gitignore</path>
 
 
 ### `sourceCompatibility`
@@ -1366,19 +1474,6 @@ Default value
 : `kotlin.stdlib.default.dependency` Gradle property
 
 
-### `kotlinIncrementalUseClasspathSnapshot`
-{#verifyPluginProjectConfiguration-kotlinIncrementalUseClasspathSnapshot}
-
-`kotlin.incremental.useClasspathSnapshot` property value defined in the `gradle.properties` file.
-
-{style="narrow"}
-Type
-: `Property<Boolean>`
-
-Default value
-: `kotlin.incremental.useClasspathSnapshot` Gradle property
-
-
 ### `kotlinxCoroutinesLibraryPresent`
 {#verifyPluginProjectConfiguration-kotlinxCoroutinesLibraryPresent}
 
@@ -1397,9 +1492,7 @@ Default value
 
 <tldr>
 
-**Depends on**: [`signPlugin`](#signPlugin)
-
-**Extends**: [`JavaExec`][gradle-javaexec-task], [`SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SigningAware)
+**Extends**: [`JavaExec`][gradle-javaexec-task], [`SigningAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SigningAware)
 
 **Sources**: [`PrepareSandboxTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginSignatureTask.kt)
 
@@ -1459,6 +1552,8 @@ Default value
 {#verifyPluginStructure}
 
 <tldr>
+
+**Depends on**: [`prepareSandbox`](#prepareSandbox)
 
 **Extends**: [`DefaultTask`][gradle-default-task], [`SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware)
 

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # PHP Open API
 
@@ -7,7 +7,7 @@
 > Please join the dedicated [intellij-php](https://jetbrains-platform.slack.com/archives/C5P9YB0LT/p1653913208725609) Slack channel to discuss PHP related plugin development.
 >
 
-## Dependency in `plugin.xml`
+## Dependency in plugin.xml
 
 ```xml
 <depends>com.jetbrains.php</depends>

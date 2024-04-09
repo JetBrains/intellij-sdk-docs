@@ -19,7 +19,6 @@ Also, consider posting requests in _#jobs_ channel on [JetBrains Platform Slack]
 | Mikhail Bolotov    | [mikhail.bolotov@gmail.com][mb]                         | Plugins: [Cypress Support Pro][cspro], [k6]                                  |
 | Ilscipio GmbH      | [Paul Piper][il], [www.ilscipio.com][il2]               | Custom Plugin Development                                                    |
 | Tamás Balog        | [www.picimako.com][pm]                                  | Custom Plugin Development                                                    |
-| Jacky Liu          | [beansoft@126.com][bn], [Marketplace of BeanSoft][bn2]  | Custom Plugin Development, Plugins: [React Native Console][rnc]              |
 
 [ja]: https://www.plugin-dev.com
 [de]: mailto:daniel@espendiller.net

@@ -1,6 +1,6 @@
-# 2. Language and File Type
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# 2. Language and File Type
 
 <link-summary>Sample implementation of Simple language and file type definitions.</link-summary>
 
@@ -44,7 +44,7 @@ Please see [](icons.md) for details on how to define and use icons.
 ```
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleIcons.java" include-symbol="SimpleIcons"}
 
-## Define a FileType
+## Define a File Type
 
 The [`SimpleFileType`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFileType.java) is defined by subclassing [`LanguageFileType`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java):
 
@@ -52,7 +52,7 @@ The [`SimpleFileType`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org
 ```
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFileType.java" include-symbol="SimpleFileType"}
 
-## Register the FileType
+## Register the File Type
 
 The Simple Language file type is registered via the `com.intellij.fileType` extension point in <path>[plugin.xml](plugin_configuration_file.md)</path> and registered with <path>*.simple</path> extension:
 

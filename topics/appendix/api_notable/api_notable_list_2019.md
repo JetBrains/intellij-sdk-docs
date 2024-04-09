@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 # Notable Changes in IntelliJ Platform and Plugins API 2019.*
 
@@ -61,7 +61,7 @@ New API for Editor Inlay Hints
 : Use new dedicated `com.intellij.highlightingPassFactory` extension point.
 
 `com.intellij.openapi.fileTypes.FileTypeFactory` deprecated
-: When registering file type via file extension, pattern or exact file name matching, use `com.intellij.fileType` extension point instead (see [Sample](language_and_filetype.md#register-the-filetype)).
+: When registering a file type via file extension, pattern or exact file name matching, use `com.intellij.fileType` extension point instead (see [Sample](language_and_filetype.md#register-the-file-type)).
 
 `org.jetbrains.annotations.ApiStatus.@NonExtendable`
 : Indicates that the annotated API class, interface, or method must not get extended, implemented, or overridden by external plugins but can only be obtained or instantiated for classes and interfaces, or called for methods.

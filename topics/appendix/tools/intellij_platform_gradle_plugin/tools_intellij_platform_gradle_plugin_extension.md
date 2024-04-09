@@ -587,7 +587,7 @@ intellijPlatform {
     host = ""
     token = "7hR4nD0mT0k3n_8f2eG"
     channels = listOf("default")
-    toolboxEnterprise = false
+    ideServices = false
     hidden = false
   }
 }
@@ -642,10 +642,10 @@ See also:
 - [Tasks: `publishPlugin.channels`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-channels)
 
 
-### `toolboxEnterprise`
-{#intellijPlatform-publishing-toolboxEnterprise}
+### `ideServices`
+{#intellijPlatform-publishing-ideServices}
 
-Specify if the Toolbox Enterprise plugin repository service should be used.
+Specify if the IDE Services plugin repository service should be used.
 
 {style="narrow"}
 Type
@@ -655,7 +655,7 @@ Default value
 : `false`
 
 See also:
-- [Tasks: `publishPlugin.toolboxEnterprise`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-toolboxEnterprise)
+- [Tasks: `publishPlugin.ideServices`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-ideServices)
 
 
 ### `hidden`

@@ -1024,17 +1024,17 @@ See also:
 - [Hidden release](https://plugins.jetbrains.com/docs/marketplace/hidden-plugin.html)
 
 
-### `toolboxEnterprise`
-{#publishPlugin-toolboxEnterprise}
+### `ideServices`
+{#publishPlugin-ideServices}
 
-Specifies if the Toolbox Enterprise plugin repository service should be used.
+Specifies if the IDE Services plugin repository service should be used.
 
 {style="narrow"}
 Type
 : `Property<String>`
 
 Default value
-: [`intellijPlatform.publishing.toolboxEnterprise`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-toolboxEnterprise)
+: [`intellijPlatform.publishing.ideServices`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-ideServices)
 
 
 ## `runIde`

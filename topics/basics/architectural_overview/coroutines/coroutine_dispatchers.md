@@ -73,7 +73,6 @@ While the code is always executed on threads, do not think about dispatchers as 
 
 A single coroutine is not bound to the same thread during the whole execution time.
 It may happen that a coroutine starts on thread A, is suspended, and finished on thread B, even if the whole is executed with the same dispatcher context.
-This behavior can result in unexpected consequences for code that relies on thread-specific data and assumes it will execute consistently on the same thread.
 
 Consider the following code snippet:
 ```kotlin
@@ -109,5 +108,10 @@ The code is executed as follows:
 2. `suspendingTask` is suspended when it waits for data fetched from the internet.
 3. After receiving data, `suspendingTask` is resumed, but now it is executed on **Thread 1**.
 4. Execution explicitly switches to the EDT Dispatcher and `updateUI` is executed on the UI thread.
+
+
+> This behavior can result in unexpected consequences for code that relies on thread-specific data and assumes it will execute consistently on the same thread.
+>
+{style="warning"}
 
 <include from="snippets.md" element-id="missingContent"/>

@@ -51,7 +51,7 @@ When using [](kotlin_coroutines.md), a distinct service [scope](coroutine_scopes
 
 ## Light Services
 
-A service not going to be overridden does not need to be registered in <path>[plugin.xml](plugin_configuration_file.md)</path> (see [](#declaring-a-service)).
+A service not going to be overridden/exposed as API to other plugins does not need to be registered in <path>[plugin.xml](plugin_configuration_file.md)</path> (see [](#declaring-a-service)).
 Instead, annotate service class with [`@Service`](%gh-ic%/platform/core-api/src/com/intellij/openapi/components/Service.java) (see [](#examples)).
 The service instance will be created in scope according to the caller (see [](#retrieving-a-service)).
 

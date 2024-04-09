@@ -127,7 +127,8 @@ For above extension points usage in _anotherPlugin_ would look like this (see al
 
 ## Using Extension Points
 
-To refer to all registered extension instances at runtime, declare an [`ExtensionPointName`](%gh-ic%/platform/extensions/src/com/intellij/openapi/extensions/ExtensionPointName.kt) passing in the fully-qualified name matching its [declaration in plugin.xml](#declaring-extension-points).
+To refer to all registered extension instances at runtime, declare an [`ExtensionPointName`](%gh-ic%/platform/extensions/src/com/intellij/openapi/extensions/ExtensionPointName.kt) with private visibility passing in the fully qualified name matching its [declaration in plugin.xml](#declaring-extension-points).
+If needed, provide a public method to query registered extensions (Sample: [`TestSourcesFilter.isTestSources()`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/TestSourcesFilter.java)).
 
 <path>myPlugin/src/com/myplugin/MyExtensionUsingService.java</path>
 
@@ -138,7 +139,7 @@ public final class MyExtensionUsingService {
   private static final ExtensionPointName<MyBeanClass> EP_NAME =
       ExtensionPointName.create("my.plugin.myExtensionPoint1");
 
-  public void useExtensions() {
+  public void useRegisteredExtensions() {
     for (MyBeanClass extension : EP_NAME.getExtensionList()) {
       String key = extension.getKey();
       String clazz = extension.getClass();

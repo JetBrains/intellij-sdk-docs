@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Listeners
 
@@ -15,12 +15,12 @@ Listeners are defined at application (global) or [project](project.md) level.
 Listener implementations must be stateless and may not implement life-cycle (e.g., `Disposable`).
 Use inspection <control>Plugin DevKit | Code | Listener implementation implements 'Disposable'</control> to verify (2023.3).
 
-Declarative registration of listeners (2019.3 and later) allows you to achieve better performance than registering listeners from code.
+Declarative registration of listeners (2019.3 and later) allows achieving better performance than registering listeners from code.
 The advantage is because listener instances get created lazily — the first time an event is sent to the topic — and not during application startup or project opening.
 
 ## Defining Application-Level Listeners
 
-To define an application-level listener, add the [`<applicationListeners>`](plugin_configuration_file.md#idea-plugin__applicationListeners) section to your <path>[plugin.xml](plugin_configuration_file.md)</path>:
+To define an application-level listener, add the [`<applicationListeners>`](plugin_configuration_file.md#idea-plugin__applicationListeners) section to <path>[plugin.xml](plugin_configuration_file.md)</path>:
 
 ```xml
 <idea-plugin>
@@ -32,12 +32,12 @@ To define an application-level listener, add the [`<applicationListeners>`](plug
 </idea-plugin>
 ```
 
-The `topic` attribute specifies the listener interface corresponding to the type of events you want to receive.
+The `topic` attribute specifies the listener interface corresponding to the type of events to receive.
 Usually, this is the interface used as the type parameter of the [`Topic`](%gh-ic%/platform/extensions/src/com/intellij/util/messages/Topic.java) instance for the type of events.
-The `class` attribute specifies the class in your plugin that implements the listener interface and receives the events.
+The `class` attribute specifies the class in the plugin that implements the listener interface and receives the events.
 
-As a specific example, if you want to receive events about all [Virtual File System](virtual_file_system.md) changes, you need to implement the `BulkFileListener` interface, corresponding to the topic `VirtualFileManager.VFS_CHANGES`.
-To subscribe to this topic from code, you could use something like the following snippet:
+As a specific example, to receive events about all [Virtual File System](virtual_file_system.md) changes, implement the `BulkFileListener` interface, corresponding to the topic `VirtualFileManager.VFS_CHANGES`.
+To subscribe to this topic from code, use something like the following snippet:
 
 ```java
 messageBus.connect().subscribe(VirtualFileManager.VFS_CHANGES,
@@ -49,8 +49,8 @@ messageBus.connect().subscribe(VirtualFileManager.VFS_CHANGES,
 });
 ```
 
-To use declarative registration, you no longer need to reference the `Topic` instance.
-Instead, you refer directly to the listener interface class:
+To use declarative registration, it's no longer required to reference the `Topic` instance.
+Instead, refer directly to the listener interface class:
 
 ```xml
 <applicationListeners>
@@ -60,12 +60,12 @@ Instead, you refer directly to the listener interface class:
 </applicationListeners>
 ```
 
-Then you provide the listener implementation as a top-level class:
+Then provide the listener implementation:
 
 ```java
 package myPlugin;
 
-public class MyVfsListener implements BulkFileListener {
+final class MyVfsListener implements BulkFileListener {
   @Override
   public void after(@NotNull List<? extends VFileEvent> events) {
     // handle the events
@@ -93,10 +93,10 @@ The class implementing the listener interface can define a one-argument construc
 ```java
 package myPlugin;
 
-public class MyToolWindowListener implements ToolWindowManagerListener {
+final class MyToolWindowListener implements ToolWindowManagerListener {
   private final Project project;
 
-  public MyToolWindowListener(Project project) {
+  MyToolWindowListener(Project project) {
     this.project = project;
   }
 
@@ -109,14 +109,18 @@ public class MyToolWindowListener implements ToolWindowManagerListener {
 
 ## Additional Attributes
 
-Registration of listeners can be restricted using the following attributes:
+Registration of listeners can be restricted using the following attributes.
 
-- `os` - allows restricting listener to given OS, e.g., `os="windows"` for Windows only (2020.1 and later)
-- `activeInTestMode` - set to `false` to disable listener if [`Application.isUnitTestMode()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java) returns `true`
-- `activeInHeadlessMode` - set to `false` to disable listener if [`Application.isHeadlessEnvironment()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java) returns `true`.
-  Also, covers `activeInTestMode` as test mode implies headless mode.
+`os`
+: Allows restricting listener to given OS, e.g., `os="windows"` for Windows only (2020.1 and later)
 
+`activeInTestMode`
+: Set to `false` to disable listener if [`Application.isUnitTestMode()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java) returns `true`
 
-> If declared listeners are intended to be used by other plugins depending on your plugin, consider [bundling their sources](bundling_plugin_openapi_sources.md) in the plugin distribution.
+`activeInHeadlessMode`
+: Set to `false` to disable listener if [`Application.isHeadlessEnvironment()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java) returns `true`.
+  Also covers `activeInTestMode` as test mode implies headless mode.
+
+> If declared listener topics are intended to be used by other plugins depending on your plugin, consider [bundling their sources](bundling_plugin_openapi_sources.md) in the plugin distribution.
 >
 {style="note"}

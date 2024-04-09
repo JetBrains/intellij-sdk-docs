@@ -69,8 +69,7 @@ public @Nullable String generateDoc(PsiElement element,
 
 Now, we set a breakpoint in our dummy implementation, debug the plugin, and call <ui-path>View | Quick Documentation</ui-path>
 for the Simple property both in the Java file and the Simple file.
-We do this by placing the cursor over the key and invoking <ui-path>View | Quick Documentation</ui-path>
-for showing the documentation.
+We do this by placing the cursor over the key and invoking <ui-path>View | Quick Documentation</ui-path> to show the documentation.
 
 In both cases, we find that the element provided is `SimplePropertyImpl`, which is exactly what we hoped for.
 However, there are two drawbacks: inside a Java string, your cursor needs to be directly over `key` in the string `"simple:key"` to make <emphasis>Quick Documentation</emphasis> work.
@@ -84,7 +83,7 @@ Please refer to the Addendum below, which explains how to improve on this situat
 
 While `SimpleProperty` elements will provide us with their key and value, we have no direct access to a possible comment that is preceding the key/value definition.
 Since we would like to show this comment in the documentation as well, we need a small helper function that extracts the text from the comment.
-This function will reside in the `SimpleUtil` class and will find for instance the comment preceding `apikey` in the following short example:
+This function will reside in the `SimpleUtil` class and will find, for instance, the comment preceding `apikey` in the following short example:
 
 ```text
 #An application programming interface key (API key) is a unique identifier
@@ -134,7 +133,7 @@ After implementing all the steps above, the IDE will show the rendered documenta
 
 We can provide implementations for additional functionality that comes with a `DocumentationProvider`.
 For instance, when simply hovering the mouse over the code, it also shows documentation after a short delay.
-It's not necessary that this popup show the exact same information as when calling _Quick Documentation_, but for the purpose of this tutorial, we'll do just that.
+It's not necessary that this popup shows the exact same information as when calling _Quick Documentation_, but for the purpose of this tutorial, we'll do just that.
 
 ```java
 ```

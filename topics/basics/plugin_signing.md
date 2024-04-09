@@ -81,6 +81,8 @@ openssl req\
 
 The content of the <path>chain.crt</path> file will be used for the [`signPlugin.certificateChain`](tools_gradle_intellij_plugin.md#tasks-signplugin-certificatechain) property.
 
+> Information about generating a public key based on the private key will be added later, when uploading public keys to JetBrains Marketplace is available.
+
 ### Gradle IntelliJ Plugin
 
 In version `1.x`, the Gradle IntelliJ Plugin provides the [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) task, which will be executed automatically right before the [`publishPlugin`](tools_gradle_intellij_plugin.md#tasks-publishplugin) task when [`signPlugin.certificateChain`](tools_gradle_intellij_plugin.md#tasks-signplugin-certificatechain) and [`signPlugin.privateKey`](tools_gradle_intellij_plugin.md#tasks-signplugin-privatekey) signing properties are specified.

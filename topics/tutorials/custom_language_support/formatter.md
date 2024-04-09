@@ -1,6 +1,6 @@
-# 16. Formatter
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# 16. Formatter
 
 <link-summary>Sample implementation of Simple language formatter.</link-summary>
 
@@ -23,7 +23,7 @@ The formatter controls spaces, indents, wrap, and alignment.
 
 ## Define a Block
 
-The formatting model represents the formatting structure of a file as a tree of [`Block`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/Block.java) objects, with associated indent, wrap, alignment and spacing settings.
+The formatting model represents the formatting structure of a file as a tree of [`Block`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/Block.java) objects, with associated indent, wrap, alignment, and spacing settings.
 The goal is to cover each PSI element with such a block.
 Since each block builds its children's blocks, it can generate extra blocks or skip any PSI elements.
 Define [`SimpleBlock`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleBlock.java) based on [`AbstractBlock`](%gh-ic%/platform/code-style-impl/src/com/intellij/psi/formatter/common/AbstractBlock.java).
@@ -69,7 +69,7 @@ The `SimpleFormattingModelBuilder` implementation is registered with the Intelli
 
 Run the plugin by using the Gradle [`runIde`](creating_plugin_project.md#running-a-plugin-with-the-runide-gradle-task) task.
 
-Open the example Simple Language [properties file ](lexer_and_parser_definition.md#run-the-project) in the IDE Development Instance.
+Open the example Simple Language [properties file](lexer_and_parser_definition.md#run-the-project) in the IDE Development Instance.
 Add some extra spaces around the `=` separator between `language` and `English`.
 Reformat the code by invoking <ui-path>Code | Reformat File...</ui-path> dialog and choose <control>Run</control>.
 

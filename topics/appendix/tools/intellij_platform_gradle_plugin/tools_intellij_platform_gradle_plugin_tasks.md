@@ -14,101 +14,131 @@ Each of the tasks has relations described between each other, inherit from [](to
 
 ```mermaid
 flowchart LR
-
     subgraph TASKS ["`**IntelliJ Platform Gradle Plugin Tasks**`"]
         direction TB
 
         initializeIntelliJPlatformPlugin
 
         subgraph ALL ["` `"]
-            buildPlugin
-            buildSearchableOptions
-            instrumentCode>instrumentCode]
-            instrumentedJar>instrumentedJar]
-            jarSearchableOptions
-            patchPluginXml
-            prepareSandbox
-            setupDependencies>setupDependencies]
+            subgraph BUILD ["Build"]
+                buildPlugin
+                buildSearchableOptions
+                jarSearchableOptions
+
+                subgraph prepareSandbox_patchPluginXml ["` `"]
+                    prepareSandbox
+                    patchPluginXml
+                end
+
+                subgraph instrumentation
+                    direction BT
+
+                    instrumentedJar
+                    instrumentCode
+                end
+            end
+
+            subgraph RUN ["Run"]
+                runIde
+            end
+
 
             subgraph PUBLISH ["Publish"]
                 publishPlugin
                 signPlugin
             end
 
-            subgraph RUN ["Run/Test"]
-                runIde
+            subgraph TEST ["Test"]
+                prepareTest
                 testIde
                 testIdePerformance>testIdePerformance]
                 testIdeUi>testIdeUi]
+
             end
 
             subgraph VERIFY ["Verify"]
                 direction TB
 
-                verifyPluginSignature
-                verifyPluginProjectConfiguration
-                verifyPluginStructure
                 verifyPlugin
+                verifyPluginSignature
+                verifyPluginStructure
+                verifyPluginProjectConfiguration
             end
 
-            subgraph PLATFORM ["Target Platform"]
-                printBundledPlugins
-                printProductsReleases
-            end
+            TEST ~~~ VERIFY
+
+            printBundledPlugins
+            printProductsReleases
         end
     end
 
     subgraph GRADLE ["Gradle Tasks"]
-        test
         jar
-        compileKotlin
+        test
+
+        subgraph compile ["` `"]
+            compileJava
+            compileKotlin
+        end
     end
 
 
     initializeIntelliJPlatformPlugin --> | runs before | ALL
-    buildPlugin --> jarSearchableOptions & prepareSandbox & patchPluginXml
-    jarSearchableOptions --> buildSearchableOptions & prepareSandbox & patchPluginXml
-    buildSearchableOptions --> patchPluginXml & prepareSandbox
-    prepareSandbox --> jar & instrumentedJar
-    publishPlugin --> buildPlugin & signPlugin
-    runIde --> prepareSandbox
-    signPlugin --> buildPlugin
-    testIde --> prepareSandbox
-    test --> testIde
-    verifyPluginProjectConfiguration --> patchPluginXml
-    verifyPluginSignature --> signPlugin & prepareSandbox
-    verifyPluginStructure --> prepareSandbox
-    verifyPlugin --> buildPlugin
 
+    buildPlugin --> jarSearchableOptions & prepareSandbox_patchPluginXml
+    buildSearchableOptions --> prepareSandbox_patchPluginXml
+    instrumentCode --> compile
+    instrumentedJar --> jar & instrumentCode
+    jarSearchableOptions --> buildSearchableOptions & prepareSandbox_patchPluginXml
+    patchPluginXml
+    prepareSandbox --> jar & instrumentedJar
+
+    publishPlugin --> buildPlugin & signPlugin
+    signPlugin --> buildPlugin
+
+    runIde --> prepareSandbox_patchPluginXml
+
+    prepareTest --> prepareSandbox_patchPluginXml
+    test --> prepareTest
+    testIde --> prepareSandbox_patchPluginXml
+    testIdePerformance
+    testIdeUi
+
+    verifyPlugin --> buildPlugin
+    verifyPluginProjectConfiguration --> patchPluginXml
+    verifyPluginSignature
+    verifyPluginStructure --> prepareSandbox
+
+    click initializeIntelliJPlatformPlugin "#initializeIntelliJPlatformPlugin"
 
     click buildPlugin "#buildPlugin"
     click buildSearchableOptions "#buildSearchableOptions"
-    click initializeIntelliJPlatformPlugin "#initializeIntelliJPlatformPlugin"
     click instrumentCode "#instrumentCode"
     click instrumentedJar "#instrumentedJar"
     click jarSearchableOptions "#jarSearchableOptions"
     click patchPluginXml "#patchPluginXml"
     click prepareSandbox "#prepareSandbox"
-    click printBundledPlugins "#printBundledPlugins"
-    click printProductsReleases "#printProductsReleases"
+
     click publishPlugin "#publishPlugin"
-    click runIde "#runIde"
-    click setupDependencies "#setupDependencies"
     click signPlugin "#signPlugin"
+
+    click runIde "#runIde"
+
+    click prepareTest "#prepareTest"
     click testIde "#testIde"
     click testIdePerformance "#testIdePerformance"
     click testIdeUi "#testIdeUi"
+
+    click verifyPlugin "#verifyPlugin"
     click verifyPluginProjectConfiguration "#verifyPluginProjectConfiguration"
     click verifyPluginSignature "#verifyPluginSignature"
     click verifyPluginStructure "#verifyPluginStructure"
-    click verifyPlugin "#verifyPlugin"
+
+    click printBundledPlugins "#printBundledPlugins"
+    click printProductsReleases "#printProductsReleases"
 
     style TASKS fill:transparent
     style ALL fill:transparent
-
-    style instrumentCode stroke-dasharray: 5 5
-    style instrumentedJar stroke-dasharray: 5 5
-    style setupDependencies stroke-dasharray: 5 5
 ```
 
 ## `buildPlugin`
@@ -393,7 +423,7 @@ Creates a duplicate of the current module's `jar` file with instrumented classes
 
 <tldr>
 
-**Depends on**: [`buildSearchableOptions`](#buildSearchableOptions), [`patchPluginXml`](#patchPluginXml)
+**Depends on**: [`buildSearchableOptions`](#buildSearchableOptions), [`patchPluginXml`](#patchPluginXml), [`prepareSandbox`](#prepareSandbox)
 
 **Extends**: [`Jar`][gradle-jar-task], [`PluginAware`](tools_intellij_platform_gradle_plugin_task_awares.md#PluginAware), [`SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware)
 
@@ -1011,6 +1041,8 @@ Default value
 {#runIde}
 
 <tldr>
+
+**Depends on**: [`patchPluginXml`](#patchPluginXml), [`prepareSandbox`](#prepareSandbox)
 
 **Extends**: [`JavaExec`][gradle-javaexec-task], [`RunnableIdeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#RunnableIdeAware), [`CustomIntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware)
 

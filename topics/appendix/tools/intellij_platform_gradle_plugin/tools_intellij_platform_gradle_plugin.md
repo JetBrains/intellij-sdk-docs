@@ -300,7 +300,7 @@ See also:
 - [Extension: `intellijPlatform.instrumentCode`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-instrumentCode)
 - [Task Awares: `JavaCompilerAware`](tools_intellij_platform_gradle_plugin_task_awares.md#JavaCompilerAware)
 - [Dependencies: `javaCompiler()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#code-instrumentation)
-- [Build Features: `useClosestJavaCompilerVersion`](tools_intellij_platform_gradle_plugin_gradle_properties.md#useClosestJavaCompilerVersion)
+- [Build Features: `useClosestVersionResolving`](tools_intellij_platform_gradle_plugin_gradle_properties.md#useClosestVersionResolving)
 
 <include from="tools_intellij_platform_gradle_plugin_repositories_extension.md" element-id="localPlatformArtifacts_required"/>
 

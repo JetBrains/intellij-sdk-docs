@@ -64,7 +64,7 @@ org.jetbrains.intellij.platform.buildFeature.selfUpdateCheck=false
 ### `downloadSources`
 {#downloadSources}
 
-Instruct IDE that sources are needed to be downloaded when working with IntelliJ Platform Gradle Plugin.
+Instruct the IDE that sources are needed to be downloaded when working with IntelliJ Platform Gradle Plugin.
 
 Value is passed directly to the [Idea Gradle Plugin](https://docs.gradle.org/current/userguide/idea_plugin.html) to the `idea.module.downloadSources` property.
 
@@ -155,10 +155,10 @@ Example
 org.jetbrains.intellij.platform.buildFeature.useCacheRedirector=false
 ```
 
-### `useClosestJavaCompilerVersion`
-{#useClosestJavaCompilerVersion}
+### `useClosestVersionResolving`
+{#useClosestVersionResolving}
 
-Java Compiler dependency required for the [](tools_intellij_platform_gradle_plugin.md#code-instrumentation) is tied to IntelliJ Platform build numbers and hosted in the IntelliJ Dependencies Repository.
+Some dependencies are tied to IntelliJ Platform build numbers and hosted in the IntelliJ Dependencies Repository.
 Despite this, certain versions (like EAP or nightly builds) might be absent.
 
 To solve this, we fetch a list of all versions from the Maven repository and locate the closest match.
@@ -172,5 +172,5 @@ Default value
 Example
 :
 ```
-org.jetbrains.intellij.platform.buildFeature.useClosestJavaCompilerVersion=false
+org.jetbrains.intellij.platform.buildFeature.useClosestVersionResolving=false
 ```

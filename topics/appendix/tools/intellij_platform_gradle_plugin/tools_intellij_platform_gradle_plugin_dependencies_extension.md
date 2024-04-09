@@ -20,7 +20,7 @@ It also includes methods for adding [(bundled) plugins](#plugins), [JetBrains Ru
 
 - setup Maven Central and [`defaultRepositories()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories)
 - target IntelliJ IDEA Community %ijPlatform%
-- add dependency on a bundled Java plugin
+- add dependency on the bundled Java plugin
 - add IntelliJ Plugin Verifier, Marketplace ZIP Signer CLI, and code instrumentation tools
 - add Test Framework for testing plugin with JUnit4
 
@@ -65,21 +65,21 @@ See [](#custom-target-platforms) for non-default targets.
 | Function                         | Description                                         |
 |----------------------------------|-----------------------------------------------------|
 | `androidStudio(version)`         | [Android Studio](android_studio.md)                 |
-| `aqua(version)`                  | Aqua                                                |
+| `aqua(version)`                  | [Aqua](https://www.jetbrains.com/aqua/)             |
 | `clion(version)`                 | [CLion](clion.md)                                   |
-| `datagrip(version)`              | DataGrip                                            |
-| `dataspell(version)`             | DataSpell                                           |
+| `datagrip(version)`              | [DataGrip](data_grip.md)                            |
+| `dataspell(version)`             | [DataSpell](https://www.jetbrains.com/dataspell/)   |
 | `fleetBackend(version)`          | Fleet Backend                                       |
 | `gateway(version)`               | Gateway                                             |
 | `goland(version)`                | [GoLand](goland.md)                                 |
 | `intellijIdeaCommunity(version)` | [IntelliJ IDEA Community](idea.md)                  |
 | `intellijIdeaUltimate(version)`  | [IntelliJ IDEA Ultimate](idea_ultimate.md)          |
-| `mps(version)`                   | MPS                                                 |
+| `mps(version)`                   | [MPS](https://www.jetbrains.com/mps/)               |
 | `phpstorm(version)`              | [PhpStorm](phpstorm.md)                             |
 | `pycharmCommunity(version)`      | [PyCharm Community](pycharm.md)                     |
 | `pycharmProfessional(version)`   | [PyCharm Professional](pycharm.md)                  |
 | `rider(version)`                 | [Rider](rider.md)                                   |
-| `rubymine(version)`              | RubyMine                                            |
+| `rubymine(version)`              | [RubyMine](rubymine.md)                             |
 | `rustrover(version)`             | [RustRover](https://www.jetbrains.com/rust/)        |
 | `webstorm(version)`              | [WebStorm](webstorm.md)                             |
 | `writerside(version)`            | [Writerside](https://www.jetbrains.com/writerside/) |
@@ -153,7 +153,7 @@ See also:
 ## Java Runtime
 
 Using the `jetbrainsRuntime()` dependency helper, it is possible to load a custom version of JetBrains Runtime.
-However, it is recommended to rely on a runtime bundled within the IntelliJ Platform dependency, if present.
+However, it is recommended to rely on the runtime bundled within the IntelliJ Platform dependency, if present.
 
 | Function                                                                                            | Description                                                                                                                   |
 |-----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|

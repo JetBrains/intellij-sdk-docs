@@ -1,6 +1,6 @@
-# Language Injection
-
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Language Injection
 
 <link-summary>Injecting a language into different language elements.</link-summary>
 
@@ -101,7 +101,7 @@ Both define their injections by providing XML configurations and loading them th
 However, custom language authors need to implement the `org.intellij.intelliLang.languageSupport` EP to make their language and PSI element patterns known to IntelliLang.
 Therefore, plugin authors who want to provide injections for existing languages can skip the first step.
 
-#### Implement org.intellij.intelliLang.languageSupport EP
+#### Implement `org.intellij.intelliLang.languageSupport` EP
 
 Implement the `org.intellij.intelliLang.languageSupport` EP and use
 [`AbstractLanguageInjectionSupport`](%gh-ic%/plugins/IntelliLang/src/org/intellij/plugins/intelliLang/inject/AbstractLanguageInjectionSupport.java) as a base class.
@@ -166,7 +166,7 @@ Therefore, you load the configuration optionally in your main <path>plugin.xml</
     config-file="myLanguageID-injections.xml">org.intellij.intelliLang</depends>
 ````
 
-## LanguageInjectionContributor and LanguageInjectionPerformer
+## `LanguageInjectionContributor` and `LanguageInjectionPerformer`
 
 The `com.intellij.languageInjectionContributor` EP provides injection information for the given context in terms of _what_ to inject.
 As a plugin author, implement [`LanguageInjectionContributor`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionContributor.java) to provide context-specific injections.
@@ -216,7 +216,7 @@ The method `performInjection()` does the actual injection into the context PSI e
 >
 {style="note"}
 
-## MultiHostInjector
+## `MultiHostInjector`
 
 [`MultiHostInjector`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/MultiHostInjector.java) registered in `com.intellij.multiHostInjector` EP is a very low-level API, but it gives plugin authors the most freedom.
 It performs language injection inside other PSI elements, e.g. inject SQL inside an XML tag text or inject regular expressions into Java string literals.

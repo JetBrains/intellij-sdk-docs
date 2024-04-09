@@ -8,9 +8,9 @@ import com.intellij.openapi.project.ProjectManagerListener;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Listener to detect project close.
+ * Listener to detect project closing.
  */
-public class ProjectCloseListener implements ProjectManagerListener {
+final class ProjectCloseListener implements ProjectManagerListener {
 
   @Override
   public void projectClosed(@NotNull Project project) {

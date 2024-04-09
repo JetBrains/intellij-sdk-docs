@@ -94,6 +94,26 @@ Default value
 : [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) of the current IntelliJ Platform
 
 
+### `autoReload`
+{#intellijPlatform-autoReload}
+
+Enables auto-reload of dynamic plugins.
+Dynamic plugin will be reloaded automatically when its content is modified.
+
+This allows a much faster development cycle by avoiding a full restart of the development instance after code changes.
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: `true`
+
+See also:
+- [](ide_development_instance.md#enabling-auto-reload)
+- [Task Awares: `AutoReloadAware`](tools_intellij_platform_gradle_plugin_task_awares.md#AutoReloadAware)
+
+
 ### `buildSearchableOptions`
 {#intellijPlatform-buildSearchableOptions}
 
@@ -154,6 +174,29 @@ Default value
 See also:
 - [Tasks: `prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox)
 - [Task Awares: `SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware)
+
+
+### `splitMode`
+{#intellijPlatform-splitMode}
+
+> Split Mode requires the IntelliJ Platform in version `241.14473` or later.
+>
+{style="warning"}
+
+When you develop a plugin, you may want to check how it works in remote development mode, when one machine is running the backend part and another is running a frontend part (JetBrains Client) which connects to the backend.
+
+This property allows running the IDE with backend and frontend parts running in separate processes.
+The developed plugin is installed in the backend part.
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: `true`
+
+See also:
+- [Task Awares: `SplitModeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitModeAware)
 
 
 ## Plugin Configuration

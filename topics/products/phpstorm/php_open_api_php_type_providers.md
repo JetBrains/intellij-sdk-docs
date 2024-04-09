@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # PHP Type Providers
 
@@ -125,7 +125,7 @@ In the Incomplete type resolving process, PhpStorm will resolve each union type 
 
 Since some providers may return types for the same PSI element, union types may appear for some elements.
 
-## PhpType
+## `PhpType`
 
 PhpStorm uses the `com.jetbrains.php.lang.psi.resolve.types.PhpType` class to work with types.
 
@@ -136,7 +136,7 @@ To check that a type is Complete, use `isComplete()`.
 To resolve the Incomplete type, use `global()`.
 This method shouldn't be used during indexing, namely inside `PhpTypeProvider4.getType()`.
 
-### How to get PhpType from PSI?
+### How to get `PhpType` from PSI?
 
 In PhpStorm, PSI elements with types implement the `com.jetbrains.php.lang.psi.elements.PhpTypedElement` interface.
 To get the type of element, use the `getType()`.
@@ -220,7 +220,7 @@ You can also override the `emptyResultIsComplete()`, which indicates whether the
 
 The goal of this example is to provide types for field references assigned in `setUp` method if containing class is PHPUnit one.
 
-### Define a PhpUnitFiledInitializedInSetUpMethodsTP
+### Define a `PhpUnitFiledInitializedInSetUpMethodsTP`
 
 ```java
 import com.intellij.openapi.project.Project;
@@ -294,7 +294,7 @@ public class PhpUnitFiledInitializedInSetUpMethodsTP implements PhpTypeProvider4
 }
 ```
 
-### Register the PhpUnitFiledInitializedInSetUpMethodsTP
+### Register the `PhpUnitFiledInitializedInSetUpMethodsTP`
 
 The `PhpUnitFiledInitializedInSetUpMethodsTP` implementation is registered with the IntelliJ Platform in the
 plugin configuration file using the `com.jetbrains.php.typeProvider4` extension point.

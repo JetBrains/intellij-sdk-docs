@@ -1,10 +1,10 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Spring API
 
 <link-summary rel="excerpt"/>
 <p id="excerpt">
-Spring API allows 3rd party plugins to re-use, integrate with or extend existing Spring Framework support in IntelliJ IDEA Ultimate.
+Spring API allows 3rd party plugins to re-use, integrate with, or extend existing Spring Framework support in IntelliJ IDEA Ultimate.
 </p>
 
 Please see [Spring Framework Support](https://www.jetbrains.com/lp/intellij-frameworks/) for general feature overview.
@@ -62,7 +62,7 @@ _2016.2_ See `com.intellij.spring.SpringLibraryUtil` to obtain information about
 
 ### Spring Model
 
-#### Obtain Spring Model by File, PsiElement, ...
+#### Obtain Spring Model by a File, PSI Element, ...
 See `SpringManager#getSpringModel(s)...` and `com.intellij.spring.model.utils.SpringModelUtils`.
 
 #### Contribute Implicit Model
@@ -118,7 +118,7 @@ Register available elements via standard `DomExtender<Beans>` EP or `com.intelli
 
 Please pay attention to `getModelVersion` and `getStubVersion` (see Javadoc).
 
-#### Add Reference to Spring Bean in DomElement
+#### Add Reference to Spring Bean in DOM Element
 Use the following template:
 
 ```java
@@ -129,7 +129,7 @@ GenericAttributeValue<SpringBeanPointer> getMyAttributeName();
 
 ### Code Configuration
 
-#### Add Reference to Spring Bean in JamElement
+#### Add Reference to Spring Bean in JAM Element
 _Version 14_
 
 ```java

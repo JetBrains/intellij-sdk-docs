@@ -8,6 +8,48 @@
 
 The Task Awares is a set of interfaces that can be applied to custom Gradle tasks and, when registered using the dedicated register method, inject new features or properties with predefined values.
 
+IntelliJ Platform Gradle Plugin supports creating custom tasks which can use `*Aware` interfaces:
+
+```kotlin
+abstract class RetrievePluginNameTask : DefaultTask(), PluginAware
+
+val retrievePluginName by tasks.registering(RetrievePluginNameTask::class) {
+    val outputFile = layout.buildDirectory.file("pluginName.txt")
+
+    doLast {
+        outputFile.get().asFile.writeText(pluginXml.parse { name }.get())
+    }
+}
+```
+
+## `AutoReloadAware`
+{#AutoReloadAware}
+
+<tldr>
+
+**Inherited by**: [`RunnableIdeAware`](#RunnableIdeAware)
+
+**Sources**: [`AutoReloadAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/AutoReloadAware.kt)
+
+</tldr>
+
+The interface provides the possibility to auto-reload plugin when run in the IDE.
+
+### `autoReload`
+{#AutoReloadAware-autoReload}
+
+Enables auto-reload of dynamic plugins.
+Dynamic plugin will be reloaded automatically when its content is modified.
+
+This allows a much faster development cycle by avoiding a full restart of the development instance after code changes.
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: [`intellijPlatform.autoReload`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-autoReload)
+
 
 ## `CoroutinesJavaAgentAware`
 {#CoroutinesJavaAgentAware}
@@ -42,7 +84,9 @@ Default value
 
 <tldr>
 
-**Inherited by**: [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde), [`testIde`](tools_intellij_platform_gradle_plugin_tasks.md#testIde), [`testIdePerformance`](tools_intellij_platform_gradle_plugin_tasks.md#testIdePerformance), [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi)
+**Depends on**: [`IntelliJPlatformVersionAware`](#IntelliJPlatformVersionAware)
+
+**Inherited by**: [`SandboxAware`](#SandboxAware), [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde), [`testIde`](tools_intellij_platform_gradle_plugin_tasks.md#testIde), [`testIdePerformance`](tools_intellij_platform_gradle_plugin_tasks.md#testIdePerformance), [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi)
 
 **Sources**: [`CustomIntelliJPlatformVersionAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/CustomIntelliJPlatformVersionAware.kt)
 
@@ -98,7 +142,7 @@ Type
 
 <tldr>
 
-**Inherited by**: [`CustomIntelliJPlatformVersionAware`](#CustomIntelliJPlatformVersionAware), [`RuntimeAware`](#RuntimeAware), [`SandboxAware`](#SandboxAware), [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin), [`patchPluginXml`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml), [`printBundledPlugins`](tools_intellij_platform_gradle_plugin_tasks.md#printBundledPlugins), [`verifyPluginProjectConfiguration`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginProjectConfiguration)
+**Inherited by**: [`CustomIntelliJPlatformVersionAware`](#CustomIntelliJPlatformVersionAware), [`RuntimeAware`](#RuntimeAware), [`SandboxAware`](#SandboxAware), [`SplitModeAware`](#SplitModeAware), [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin), [`patchPluginXml`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml), [`printBundledPlugins`](tools_intellij_platform_gradle_plugin_tasks.md#printBundledPlugins), [`verifyPluginProjectConfiguration`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginProjectConfiguration)
 
 **Sources**: [`IntelliJPlatformVersionAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/IntelliJPlatformVersionAware.kt)
 
@@ -176,6 +220,16 @@ Throws
 The interface provides the dependency on Java Compiler required for the [](tools_intellij_platform_gradle_plugin.md#code-instrumentation) to properly configure Ant tasks provided by the IntelliJ Platform.
 
 
+### `javaCompilerConfiguration`
+{#JavaCompilerAware-javaCompilerConfiguration}
+
+Holds the `intellijPlatformJavaCompiler` configuration with the Java Compiler dependency added.
+
+{style="narrow"}
+Type
+: `ConfigurableFileCollection`
+
+
 ## `PluginAware`
 {#PluginAware}
 
@@ -183,7 +237,7 @@ The interface provides the dependency on Java Compiler required for the [](tools
 
 **Depends on**: [`patchPluginXml`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml)
 
-**Inherited by**: [`RunnableIdeAware`](#RunnableIdeAware), [`verifyPluginProjectConfiguration`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginProjectConfiguration)
+**Inherited by**: [`TestableAware`](#TestableAware), [`RunnableIdeAware`](#RunnableIdeAware), [`jarSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#jarSearchableOptions)
 
 **Sources**: [`PluginAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/PluginAware.kt)
 
@@ -211,6 +265,19 @@ Default value
 {#PluginAware-parse}
 
 The `parse` method provides a possibility for parsing the <path>pluginXml</path> file and direct access to the [`PluginBean`](tools_intellij_platform_gradle_plugin_types.md#PluginBean) object.
+
+Should be used along with the [`pluginXml`](#PluginAware-pluginXml) property like:
+
+```kotlin
+abstract class RetrievePluginNameTask : DefaultTask(), PluginAware
+
+val retrievePluginName by tasks.registering(RetrievePluginNameTask::class) {
+    doLast {
+        val name = pluginXml.parse { name }.get()
+        println("Plugin Name: $name")
+    }
+}
+```
 
 
 ## `PluginVerifierAware`
@@ -244,7 +311,7 @@ Type
 
 <tldr>
 
-**Depends on**: [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin)
+**Depends on**: [`AutoReloadAware`](#AutoReloadAware), [`CoroutinesJavaAgentAware`](#CoroutinesJavaAgentAware), [`PluginAware`](#PluginAware), [`RuntimeAware`](#RuntimeAware), [`SandboxAware`](#SandboxAware), [`SplitModeAware`](#SplitModeAware), [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin)
 
 **Inherited by**: [`buildSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions), [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde), [`testIde`](tools_intellij_platform_gradle_plugin_tasks.md#testIde), [`testIdePerformance`](tools_intellij_platform_gradle_plugin_tasks.md#testIdePerformance), [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi)
 
@@ -265,13 +332,14 @@ The interface which uses a set of various interfaces required for running a gues
 
 <tldr>
 
-**Inherited by**: [`RunnableIdeAware`](#RunnableIdeAware), [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin)
+**Inherited by**: [`RunnableIdeAware`](#RunnableIdeAware), [`TestableAware`](#TestableAware), [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin)
 
 **Sources**: [`RuntimeAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/RuntimeAware.kt)
 
 </tldr>
 
 This interface provides access to the Java Runtime (i.e., JetBrains Runtime) resolved with `RuntimeResolver`.
+
 
 ### `runtimeDirectory`
 {#RuntimeAware-runtimeDirectory}
@@ -283,20 +351,30 @@ Type
 : `DirectoryProperty`
 
 
-### `runtimeExecutable`
-{#RuntimeAware-runtimeExecutable}
+### `runtimeArchitecture`
+{#RuntimeAware-runtimeArchitecture}
 
-Path to the Java Runtime executable.
+An architecture of the Java Runtime currently used for running Gradle.
 
 {style="narrow"}
 Type
-: `RegularFileProperty`
+: `Property<String>`
 
 
-### `runtimeArch`
-{#RuntimeAware-runtimeArch}
+### `runtimeMetadata`
+{#RuntimeAware-runtimeMetadata}
 
-An architecture of the Java Runtime currently used for running Gradle.
+Metadata object of the Java Runtime currently used for running Gradle.
+
+{style="narrow"}
+Type
+: `Property<String>`
+
+
+### `runtimeLauncher`
+{#RuntimeAware-runtimeLauncher}
+
+A custom `JavaLauncher` instance configured with the resolved [`runtimeDirectory`](#RuntimeAware-runtimeDirectory).
 
 {style="narrow"}
 Type
@@ -310,7 +388,7 @@ Type
 
 **Depends on**: [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox)
 
-**Inherited by**: [`RunnableIdeAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/RunnableIdeAware.kt), [`jarSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#jarSearchableOptions), [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox), [`verifyPluginStructure`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginStructure)
+**Inherited by**: [`RunnableIdeAware`](#RunnableIdeAware), [`SandboxProducerAware`](#SandboxProducerAware), [`jarSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#jarSearchableOptions), [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox), [`verifyPluginStructure`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginStructure)
 
 **Sources**: [`SandboxAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SandboxAware.kt)
 
@@ -385,6 +463,22 @@ Type
 : `DirectoryProperty`
 
 
+## `SandboxProducerAware`
+{#SandboxProducerAware}
+
+<tldr>
+
+**Depends on**: [`SandboxAware`](#SandboxAware)
+
+**Inherited by**: [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox)
+
+**Sources**: [`SandboxProducerAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SandboxProducerAware.kt)
+
+</tldr>
+
+An interface used to distinguish between the [SandboxAware] consumers and producers.
+
+
 ## `SigningAware`
 {#SigningAware}
 
@@ -409,6 +503,39 @@ Path to the Marketplace ZIP Signer executable.
 {style="narrow"}
 Type
 : `RegularFileProperty`
+
+
+## `SplitModeAware`
+{#SplitModeAware}
+
+<tldr>
+
+**Inherited by**: [`RunnableIdeAware`](#RunnableIdeAware)
+
+**Sources**: [`SplitModeAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SplitModeAware.kt)
+
+</tldr>
+
+When you develop a plugin, you may want to check how it works in remote development mode, when one machine is running the backend part and another is running a frontend part (JetBrains Client) which connects to the backend.
+
+This property allows running the IDE with backend and frontend parts running in separate processes.
+The developed plugin is installed in the backend part.
+
+Split Mode requires the IntelliJ Platform in the version `241.14473` or later.
+
+
+## `TestableAware`
+{#TestableAware}
+
+<tldr>
+
+**Inherited by**: [`prepareTest`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTest), [`testIde`](tools_intellij_platform_gradle_plugin_tasks.md#testIde)
+
+**Sources**: [`TestableAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/TestableAware.kt)
+
+</tldr>
+
+Interface used to describe tasks used for running tests, such as a customizable [`testIde`](tools_intellij_platform_gradle_plugin_tasks.md#testIde) or [`prepareTest`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTest) used for configuring `test` and keeping it immutable.
 
 
 <include from="snippets.md" element-id="missingContent"/>

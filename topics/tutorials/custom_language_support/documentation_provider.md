@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 20. Documentation
 
@@ -27,7 +27,7 @@ helps users by showing documentation for symbols like method calls inside the ed
 For the custom language tutorial, we're implementing a version of this extension point (EP) for the Simple Language that shows the key/value,
 the file where it is defined, and any related documentation comment.
 
-## Implement DocumentationProvider and Register the EP
+## Implement a Documentation Provider and Register the EP
 
 In the first step, we create an empty class that extends
 [`AbstractDocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/AbstractDocumentationProvider.java)

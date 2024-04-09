@@ -1094,7 +1094,7 @@ intellijPlatform {
     ides {
       ide(IntelliJPlatformType.PhpStorm)
       ide(IntelliJPlatformType.RustRover, "2023.3")
-      localIde(file("/path/to/ide/"))
+      local(file("/path/to/ide/"))
       recommended()
       select {
         types = listOf(IntelliJPlatformType.PhpStorm)
@@ -1117,7 +1117,7 @@ See also:
 | Function                                            | Description                                                                                                                                                                                         |
 |-----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | <p>`ide(type, version)`</p><p>`ide(definition)`</p> | Adds a dependency to a binary IDE release to be used for testing with the IntelliJ Plugin Verifier.                                                                                                 |
-| `localIde(localPath)`                               | Adds the local IDE to be used for testing with the IntelliJ Plugin Verifier.                                                                                                                        |
+| `local(localPath)`                                  | Adds the local IDE to be used for testing with the IntelliJ Plugin Verifier.                                                                                                                        |
 | `recommended()`                                     | Retrieves matching IDEs using the default configuration based on the currently used IntelliJ Platform and applies them for IntelliJ Platform Verifier using the `ide` helper method.                |
 | `select(configure)`                                 | Retrieves matching IDEs using custom [`ProductReleasesValueSource.FilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesValueSource-FilterParameters) filter parameters. |
 

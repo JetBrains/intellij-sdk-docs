@@ -37,7 +37,7 @@ The dependency on the WebStorm APIs must be declared in the <path>[plugin.xml](p
 As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) tags must declare `JavaScript`.
 
 **Note** that for WebStorm, the <path>plugin.xml</path> file must also declare a dependency on `com.intellij.modules.platform` because `JavaScript` is not recognized as a module.
-Consequently, without the `com.intellij.modules.platform` declaration the plugin is assumed to be a [legacy plugin](plugin_compatibility.md#declaring-plugin-dependencies) and will not load in WebStorm.
+Consequently, without the `com.intellij.modules.platform` declaration, the plugin is assumed to be a [legacy plugin](plugin_compatibility.md#declaring-plugin-dependencies) and will not load in WebStorm.
 
 ## Available WebStorm APIs
 
@@ -53,7 +53,8 @@ Test your plugin with any version of WebStorm you wish to support.
 To use existing test base classes, specify `com.jetbrains.intellij.javascript:javascript-test-framework:$VERSION$` as `testImplementation` dependency explicitly (see [IntelliJ Platform Artifacts Repositories](intellij_artifacts.md#gradle-example-for-an-individual-module-from-the-intellij-platform)) (2020.3 and later).
 
 ## Open Source Plugins for WebStorm
-When learning new plugin development it is helpful to have some representative projects for reference:
+
+When learning new plugin development, it is helpful to have some representative projects for reference:
 * [Vue.js](https://github.com/JetBrains/intellij-plugins/tree/master/vuejs)
 * [JS Toolbox](https://github.com/andresdominguez/jsToolbox)
 * [Require.js](https://github.com/Fedott/WebStormRequireJsPlugin)

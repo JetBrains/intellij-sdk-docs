@@ -1,6 +1,6 @@
-# Code Samples
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# Code Samples
 
 <link-summary>Accessing SDK Docs code samples.</link-summary>
 
@@ -20,6 +20,8 @@ Additionally, the [Working with Gradle in IntelliJ IDEA](https://youtu.be/6V6G3R
 ## Setting up Code Samples
 
 Make sure plugins _Git_, _Gradle_, and _Plugin DevKit_ are enabled.
+
+<include from="snippets.md" element-id="pluginDevKitAvailability"/>
 
 Clone the [intellij-sdk-code-samples](https://github.com/JetBrains/intellij-sdk-code-samples) GitHub repository via <control>Git | Clone...</control>.
 After successful cloning, the IDE suggests opening the project.

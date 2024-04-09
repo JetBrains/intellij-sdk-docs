@@ -1,6 +1,6 @@
-# Plugin Content
-
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Plugin Content
 
 <link-summary>Layout and contents of a plugin distribution file.</link-summary>
 
@@ -30,7 +30,7 @@ skinparam TitleFontSize 16
 skinparam DefaultTextAlignment left
 
 title
-  .IntelliJIDEAx0
+  <IDE directory>
   |_ plugins
     |_ sample.jar // (Plugin distribution) //
       |_ com
@@ -65,7 +65,7 @@ skinparam TitleFontSize 16
 skinparam DefaultTextAlignment left
 
 title
-  .IntelliJIDEAx0
+  <IDE directory>
   |_ plugins
     |_ sample
       |_ lib

@@ -25,7 +25,7 @@ Blocking Context
 
 ## C
 
-CancellationException _(CE)_
+`CancellationException` _(CE)_
 : `java.util.concurrent.CancellationException`, `kotlin.coroutines.cancellation.CancellationException` (typealias in stdlib), `kotlinx.coroutines.CancellationException` (typealias in kotlinx-coroutines)
 &rarr;&nbsp;_ProcessCanceledException_
 
@@ -105,7 +105,7 @@ Non-Blocking Read Action _(NBRA)_
 
 ## P
 
-ProcessCanceledException _(PCE)_
+`ProcessCanceledException` _(PCE)_
 : [`ProcessCanceledException`](%gh-ic%/platform/util/base/src/com/intellij/openapi/progress/ProcessCanceledException.java) An exception indicating that the currently running operation was terminated and should finish as soon as possible.
 &rarr;&nbsp;_CancellationException_
 

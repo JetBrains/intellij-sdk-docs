@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Plugin Signing
 
@@ -41,7 +41,7 @@ JetBrains Marketplace uses AWS KMS as a signature provider to sign plugin files.
 
 To provide a suitable method for plugin signing, we have introduced the [Marketplace ZIP Signer](https://github.com/JetBrains/marketplace-zip-signer) library.
 It can be executed using the [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) task provided by the [](tools_gradle_intellij_plugin.md) if your project is Gradle-based.
-Alternatively, it can be used standalone [CLI Tool](#cli-tool).
+Alternatively, a standalone [CLI Tool](#cli-tool) can be used.
 
 Both methods require a private certificate key to be already present.
 
@@ -157,7 +157,7 @@ publishPlugin {
 >
 {style="warning"}
 
-Instead of using the [`signPlugin.privateKey`](tools_gradle_intellij_plugin.md#tasks-signplugin-privatekey) and [`signPlugin.certificateChain`](tools_gradle_intellij_plugin.md#tasks-signplugin-certificatechain) properties which expect providing the key and certificate chain content directly, it's also possible to specify the paths to the files containing the key and certificate chain content.
+Instead of using the [`signPlugin.privateKey`](tools_gradle_intellij_plugin.md#tasks-signplugin-privatekey) and [`signPlugin.certificateChain`](tools_gradle_intellij_plugin.md#tasks-signplugin-certificatechain) properties which expect the key and certificate chain content to be provided directly, it's also possible to specify the paths to the files containing the key and certificate chain content.
 To do that, use the [`signPlugin.privateKeyFile`](tools_gradle_intellij_plugin.md#tasks-signplugin-privatekeyfile) and [`signPlugin.certificateChainFile`](tools_gradle_intellij_plugin.md#tasks-signplugin-certificatechainfile) properties instead.
 
 <tabs group="languages">
@@ -237,7 +237,7 @@ In the <control>Run/Debug Configuration</control> for [`publishPlugin`](tools_gr
 ![Run/Debug Configuration Environment Variables](plugin_singing_env_variables.png)
 
 > Note that both the private key and certificate chain are multi-line values.
-> It is necessary to transform them first using Base64 encoding before providing to the single-line field in <control>Environment Variables</control> panel.
+> It is necessary to transform them first using Base64 encoding before providing the single-line field in the <control>Environment Variables</control> panel.
 >
 > [`signPlugin.privateKey`](tools_gradle_intellij_plugin.md#tasks-signplugin-privatekey) and [`signPlugin.certificateChain`](tools_gradle_intellij_plugin.md#tasks-signplugin-certificatechain) properties will automatically detect and decode the Base64-encoded values.
 >
@@ -245,7 +245,7 @@ In the <control>Run/Debug Configuration</control> for [`publishPlugin`](tools_gr
 
 ### CLI Tool
 
-CLI tool is required if you don't rely on the Gradle IntelliJ Plugin – i.e. when working with Themes.
+CLI tool is required if you don't rely on the Gradle IntelliJ Plugin – i.e., when working with [Themes](developing_themes.md).
 
 To get the latest Marketplace ZIP Signer CLI Tool, visit the [JetBrains/marketplace-zip-signer](https://github.com/JetBrains/marketplace-zip-signer/releases) GitHub Releases page.
 After downloading the <path>marketplace-zip-signer-cli.jar</path>, execute it as below:
@@ -281,7 +281,7 @@ With this approach, existing internal TrustStores may exist and could be used.
 Be sure when choosing a TrustStore that the CAs are limited to the internal CAs you trust.
 Using a TrustStore with public CAs can expose the users to an attack vector.
 
-If adding a TrustStore to a users environment is not possible, the user may also add the root CAs public key to <ui-path>Settings | Plugins | Manage Plugin Certificates</ui-path>.
+If adding a TrustStore to a user's environment is not possible, the user may also add the root CAs public key to <ui-path>Settings | Plugins | Manage Plugin Certificates</ui-path>.
 
 ### Using Self-Signed Certificates
 
@@ -298,6 +298,7 @@ keytool -import -alias IdeaPlugin -file chain.crt -keystore pluginKeystore.jks -
 Otherwise, users may add the public key manually to <ui-path>Settings | Plugins | Manage Plugin Certificates</ui-path>.
 
 ## Plugin Signature Verification
+
 To verify the signature of a plugin, you can use the [`verifyPluginSignature`](tools_gradle_intellij_plugin.md#tasks-verifypluginsignature) task.
 
 By default, this task will use the same certificate chain as provided to the [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) task in the previous section.

@@ -83,7 +83,7 @@ Included plugins:
 ## `org.jetbrains.intellij.platform.module`
 {#module}
 
-This top-level plugin applies a smaller set of subplugins required for providing required dependencies and build/test tasks for a submodule when working on a plugifor IntelliJ-based IDEs in a multi-module architecture.
+This top-level plugin applies a smaller set of subplugins required for providing required dependencies and build/test tasks for a submodule when working on a plugin for IntelliJ-based IDEs in a multi-module architecture.
 
 Comparing to the main plugin, it doesn't contain tasks related to publishing or running the IDE for testing purposes.
 

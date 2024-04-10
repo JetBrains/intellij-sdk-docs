@@ -57,8 +57,9 @@ flowchart LR
     style settings stroke-width: 3px
 ```
 
-## `org.jetbrains.intellij.platform`
-{#platform}
+## Platform
+
+**Plugin ID: `org.jetbrains.intellij.platform`**
 
 This is a top-level plugin that applies all project-level subplugins that bring the fully flagged tooling for plugin development for IntelliJ-based IDEs.
 
@@ -80,8 +81,9 @@ Included plugins:
 - [](#publish)
 
 
-## `org.jetbrains.intellij.platform.module`
-{#module}
+## Module
+
+**Plugin ID: `org.jetbrains.intellij.platform.module`**
 
 This top-level plugin applies a smaller set of subplugins required for providing required dependencies and build/test tasks for a submodule when working on a plugin for IntelliJ-based IDEs in a multi-module architecture.
 
@@ -148,8 +150,9 @@ Included plugins:
 - [](#verify)
 
 
-## `org.jetbrains.intellij.platform.settings`
-{#settings}
+## Settings
+
+**Plugin ID: `org.jetbrains.intellij.platform.settings`**
 
 If you define repositories within the <path>settings.gradle.kts</path> using the `dependencyResolutionManagement` Gradle, make sure to include the Settings plugin in your <path>settings.gradle.kts</path>.
 
@@ -211,8 +214,9 @@ dependencies {
 }
 ```
 
-## `org.jetbrains.intellij.platform.migration`
-{#migration}
+## Migration
+
+**Plugin ID: `org.jetbrains.intellij.platform.migration`**
 
 The Migration Plugin is designed to assist in upgrading your configuration from Gradle IntelliJ Plugin version `1.x`.
 To prevent Gradle failing due to breaking changes, the `org.jetbrains.intellij.platform.migration` plugin was introduced to fill missing gaps and provide migration hints.
@@ -220,8 +224,9 @@ To prevent Gradle failing due to breaking changes, the `org.jetbrains.intellij.p
 See [](tools_intellij_platform_gradle_plugin_migration.md) for more details.
 
 
-## `org.jetbrains.intellij.platform.base`
-{#base}
+## Base
+
+**Plugin ID: `org.jetbrains.intellij.platform.base`**
 
 The base plugin sets up all the custom configurations and transformers needed to manage the IntelliJ Platform dependency, JetBrains Runtime, CLI tools, and other plugins when they're added as dependencies.
 
@@ -257,8 +262,9 @@ Included tasks:
 - [](tools_intellij_platform_gradle_plugin_tasks.md#printProductsReleases)
 
 
-## `org.jetbrains.intellij.platform.build`
-{#build}
+## Build
+
+**Plugin ID: `org.jetbrains.intellij.platform.build`**
 
 Tasks plugin registers and preconfigures tasks responsible for patching, instrumenting, and building the plugin.
 
@@ -271,8 +277,9 @@ Included tasks:
 - [](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox)
 
 
-## `org.jetbrains.intellij.platform.publish`
-{#publish}
+## Publish
+
+**Plugin ID: `org.jetbrains.intellij.platform.publish`**
 
 Tasks plugin adds tasks responsible for signing and publishing the final plugin archive to JetBrains Marketplace.
 
@@ -281,8 +288,9 @@ Included tasks:
 - [](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin)
 
 
-## `org.jetbrains.intellij.platform.run`
-{#run}
+## Run
+
+**Plugin ID: `org.jetbrains.intellij.platform.run`**
 
 Registers the task used for running the local instance of the IntelliJ Platform used for development.
 
@@ -292,8 +300,9 @@ Included tasks:
 - [](tools_intellij_platform_gradle_plugin_tasks.md#runIde)
 
 
-## `org.jetbrains.intellij.platform.test`
-{#test}
+## Test
+
+**Plugin ID: `org.jetbrains.intellij.platform.test`**
 
 Preconfigures the existing `test` task to make the plugin testing possible (unit tests, UI tests, performance tests) as well as preconfigures the customizable `TestIdeTask` class so you could register multiple `test*` task for running tests against different IDEs.
 
@@ -304,8 +313,9 @@ Included tasks:
 - [](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi)
 
 
-## `org.jetbrains.intellij.platform.verify`
-{#verify}
+## Verify
+
+**Plugin ID: `org.jetbrains.intellij.platform.verify`**
 
 Introduces various verification tasks that run checks against your project configuration, <path>plugin.xml</path> file, signature check, or execute the IntelliJ Plugin Verifier tool.
 

@@ -85,9 +85,9 @@ pluginManagement {
 
 ### Plugins
 
-The IntelliJ Platform Gradle Plugin consist of multiple [](tools_intellij_platform_gradle_plugin_plugins.md) which you can apply in bundles ([](tools_intellij_platform_gradle_plugin_plugins.md#platform) or [](tools_intellij_platform_gradle_plugin_plugins.md#module)) or separately.
+The IntelliJ Platform Gradle Plugin consists of multiple [](tools_intellij_platform_gradle_plugin_plugins.md) which you can apply in bundles ([](tools_intellij_platform_gradle_plugin_plugins.md#platform) or [](tools_intellij_platform_gradle_plugin_plugins.md#module)) or separately.
 
-Subplugins architecture allows to apply a subset of features, e.g., when you want to provide the IntelliJ Platform dependency to a project submodule without creating unnecessary tasks.
+Subplugins architecture allows applying a subset of features, e.g., when you want to provide the IntelliJ Platform dependency to a project submodule without creating unnecessary tasks.
 
 ## Configuration
 
@@ -151,7 +151,7 @@ dependencyResolutionManagement {
 #### Cache Redirector
 {#configuration.cacheRedirector}
 
-Some repositories, by default, point to JetBrains Cache Redirector to provide better resources resolution.
+Some repositories, by default, point to JetBrains Cache Redirector to provide better resource resolution.
 However, it is possible to use the direct repository URL, if available.
 
 To switch off the default usage of JetBrains Cache Redirector, see the [](tools_intellij_platform_gradle_plugin_gradle_properties.md#useCacheRedirector) build feature.
@@ -243,7 +243,7 @@ dependencies {
 
 To specify a dependency on a plugin, it is important to distinguish bundled plugins from plugins available in JetBrains Marketplace.
 
-The [](tools_intellij_platform_gradle_plugin_dependencies_extension.md) provides a set of helpers to manage [plugins dependencies](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins):
+The [](tools_intellij_platform_gradle_plugin_dependencies_extension.md) provides a set of helpers to manage [plugin dependencies](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins):
 
 ```kotlin
 repositories {

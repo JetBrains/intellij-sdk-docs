@@ -99,7 +99,7 @@ gantt
         suspendingTask() : 2, 3
     section Thread 2
         suspendingTask() : 0, 1
-    section UI Thread
+    section EDT
         updateUI() : 3, 4
 ```
 
@@ -107,7 +107,7 @@ The code is executed as follows:
 1. `suspendingTask` is started and partially executed on **Thread 2**.
 2. `suspendingTask` is suspended when it waits for data fetched from the internet.
 3. After receiving data, `suspendingTask` is resumed, but now it is executed on **Thread 1**.
-4. Execution explicitly switches to the EDT dispatcher and `updateUI` is executed on the UI thread.
+4. Execution explicitly switches to the EDT dispatcher and `updateUI` is executed on EDT.
 
 
 > This behavior can result in unexpected consequences for code that relies on thread-specific data and assumes it will execute consistently on the same thread.

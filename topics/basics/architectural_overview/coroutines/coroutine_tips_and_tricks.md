@@ -8,7 +8,7 @@
 
 This section presents techniques to use coroutines efficiently and avoid common pitfalls.
 
-## Switching Between the Background and UI Threads
+## Switching Between the Background Threads and EDT
 
 Avoid the `invokeLater`-style often found in Java:
 
@@ -166,7 +166,7 @@ cs.launch(ModalityState.current().asContextElement()) {
 }
 ```
 
-It is possible that the coroutine is launched as a response to a user event from the UI thread, where `ModalityState.current()` is available.
+It is possible that the coroutine is launched as a response to a user event from EDT, where `ModalityState.current()` is available.
 
 If the coroutine is launched from a background thread, then it should not be invoked on top of an unrelated dialog anyway.
 The absence of the context modality state is effectively equivalent to specifying `ModalityState.nonModal()`.

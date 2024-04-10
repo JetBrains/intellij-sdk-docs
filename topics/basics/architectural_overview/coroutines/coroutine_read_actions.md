@@ -44,7 +44,7 @@ WARA doesn't need the following API methods:
 - `executeSynchronously()` because effectively they are executed in the current coroutine dispatcher already
 - `expireWhen(BooleanSupplier expireCondition)`/`expireWith(Disposable parentDisposable)`/`wrapProgress(ProgressIndicator progressIndicator)` because they are canceled when the calling coroutine is canceled
 - `finishOnUiThread()` because this is handled by switching to the [EDT dispatcher](coroutine_dispatchers.md#edt-dispatcher).
-  Note that the UI data must be pure (e.g., strings/icons/element pointers), which inherently cannot be invalidated during the transfer from a background thread to the UI thread.
+  Note that the UI data must be pure (e.g., strings/icons/element pointers), which inherently cannot be invalidated during the transfer from a background thread to EDT.
 - `coalesceBy(Object ... equality)` because this should be handled by [`Flow.collectLatest()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/collect-latest.html) and/or [`Flow.distinctUntilChanged()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/distinct-until-changed.html).
   Usually, NBRAs are run as a reaction to user actions, and there might be multiple NBRAs running, even if their results are unused.
   Instead of cancelling the read action, in the coroutine world the coroutines are canceled:

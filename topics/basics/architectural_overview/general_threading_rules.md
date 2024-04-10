@@ -36,7 +36,7 @@ Reading data is allowed from any thread.
 
 Read operations need to be wrapped in a read action (RA) if not invoked via `Application.invokeLater()`.
 
-If invoked from a non-UI thread or from the UI thread but via `SwingUtilities.invokeLater()`, it must be explicitly wrapped in a read action (RA).
+If invoked from a background thread or from EDT but via `SwingUtilities.invokeLater()`, it must be explicitly wrapped in a read action (RA).
 
 </tab>
 
@@ -44,7 +44,7 @@ If invoked from a non-UI thread or from the UI thread but via `SwingUtilities.in
 
 Reading data is allowed from any thread.
 
-Reading data from the UI thread does not require any special effort.
+Reading data from EDT does not require any special effort.
 
 However, read operations performed from any other thread must be wrapped in a read action (RA).
 
@@ -62,7 +62,7 @@ As a rule of thumb, whenever starting a read action, check if the PSI/VFS/projec
 
 ### Write Access
 
-Writing data is only allowed from the UI thread, and write operations always need to be wrapped in a write action (WA).
+Writing data is only allowed from EDT, and write operations always need to be wrapped in a write action (WA).
 
 Modifying the model is only allowed from write-safe contexts, including user actions and `SwingUtilities.invokeLater()` calls from them (see [](#modality-and-invokelater)).
 
@@ -75,10 +75,10 @@ You may not modify PSI, VFS, or project model from inside UI renderers or `Swing
 
 ## Modality and `invokeLater()`
 
-To pass control from a background thread to the [Event Dispatch Thread](https://docs.oracle.com/javase/tutorial/uiswing/concurrency/dispatch.html) (EDT), instead of the standard `SwingUtilities.invokeLater()`, plugins should use `ApplicationManager.getApplication().invokeLater()`.
+To pass control from a background thread to EDT, instead of the standard `SwingUtilities.invokeLater()`, plugins should use `ApplicationManager.getApplication().invokeLater()`.
 The latter API allows specifying the _modality state_ ([`ModalityState`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ModalityState.java)) for the call, i.e., the stack of modal dialogs under which the call is allowed to execute:
 
-#### `ModalityState.nonModal()` / `NON_MODAL`
+### `ModalityState.nonModal()` / `NON_MODAL`
 
 The operation will be executed after all modal dialogs are closed.
 If any of the open (unrelated) projects displays a per-project modal dialog, the action will be performed after the dialog is closed.
@@ -90,7 +90,7 @@ The operation can be executed when the topmost shown dialog is the one that cont
 ### None Specified
 
 `ModalityState.defaultModalityState()` will be used.
-This is the optimal choice in most cases that uses the current modality state when invoked from UI thread.
+This is the optimal choice in most cases that uses the current modality state when invoked from EDT.
 It has special handling for background processes started with `ProgressManager`: `invokeLater()` from such a process may run in the same dialog that the process started.
 
 ### `ModalityState.any()`
@@ -98,7 +98,7 @@ It has special handling for background processes started with `ProgressManager`:
 The operation will be executed as soon as possible regardless of modal dialogs.
 Please note that modifying PSI, VFS, or project model is prohibited from such runnables.
 
-If a UI thread activity needs to access [file-based index](indexing_and_psi_stubs.md) (e.g., it's doing any project-wide PSI analysis, resolves references, etc.), please use `DumbService.smartInvokeLater()`.
+If EDT activity needs to access [file-based index](indexing_and_psi_stubs.md) (e.g., it's doing any project-wide PSI analysis, resolves references, etc.), please use `DumbService.smartInvokeLater()`.
 That way, it is run after all possible indexing processes have been completed.
 
 ## Background Processes and `ProcessCanceledException`
@@ -146,7 +146,7 @@ These actions are available only if [Internal Mode is enabled](enabling_internal
 ## Read Action Cancellability
 
 Background threads shouldn't take plain read actions for a long time.
-The reason is that if the UI thread needs a write action (e.g., the user types something), it must be acquired as soon as possible.
+The reason is that if EDT needs a write action (e.g., the user types something), it must be acquired as soon as possible.
 Otherwise, the UI will freeze until all background threads have released their read actions.
 
 The best-known approach is to cancel background read actions whenever there's a write action about to occur, and restart that background read action later from scratch.
@@ -157,7 +157,7 @@ The next time the background thread calls `checkCanceled()`, a PCE is thrown, an
 
 There are two recommended ways of doing this:
 
-* If on UI thread, call [`ReadAction.nonBlocking()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) which returns [`NonBlockingReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/NonBlockingReadAction.java) (NBRA)
+* If on EDT, call [`ReadAction.nonBlocking()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) which returns [`NonBlockingReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/NonBlockingReadAction.java) (NBRA)
 * If already in a background thread, use [`ProgressManager.runInReadActionWithWriteActionPriority()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java) in a loop, until it passes or the whole activity becomes obsolete.
 
 In both approaches, always check at the start of each read action if the objects are still valid, and if the whole operation still makes sense (i.e., not canceled by the user, the project isn't closed, etc.).
@@ -167,7 +167,7 @@ If the activity has to access [file-based index](indexing_and_psi_stubs.md) (e.g
 
 ## Avoiding UI Freezes
 
-#### Do not Perform Long Operations in UI Thread
+#### Do not Perform Long Operations in EDT
 
 In particular, don't traverse [](virtual_file_system.md), parse [PSI](psi.md), resolve [references](psi_references.md) or query [indexes/stubs](indexing_and_psi_stubs.md).
 
@@ -176,7 +176,7 @@ Meanwhile, please try to speed up what you can in your plugin as it will be gene
 For implementations of [`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java), plugin authors should specifically
 review the documentation of `AnAction.getActionUpdateThread()` in the [](basic_action_system.md) section as it describes how threading works for actions.
 
-`WriteAction`s currently have to happen on UI thread.
+`WriteAction`s currently have to happen on EDT.
 To speed them up, as much as possible should be moved out of the write action into a preparation step which can be then invoked in the background (e.g., using `ReadAction.nonBlocking()`, see above).
 
 #### Event Listeners

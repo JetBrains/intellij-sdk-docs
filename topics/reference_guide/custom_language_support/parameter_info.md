@@ -53,7 +53,7 @@ The initial phase describes what happens when no parameter info is currently dis
 2. If the returned function call element is valid, the `showParameterInfo()` method is invoked.
    Implementations of this method usually just call `showHint()` of the `CreateParameterInfoContext` providing the offset at which the popup should appear.
 3. For each item to show from step 1, the `updateUI()` method is called.
-   No heavy work is allowed in this method since it runs on the UI thread and it should only update the UI representation using, e.g.,
+   No heavy work is allowed in this method since it runs on EDT, and it should only update the UI representation using, e.g.,
    `setUIComponentEnabled()` or `setupUIComponentPresentation()` of the provided `ParameterInfoUIContext`.
 4. After that the following methods are called which will be explained in the next phase: `findElementForUpdatingParameterInfo()`,
    `updateParameterInfo()`, `updateUI()`.

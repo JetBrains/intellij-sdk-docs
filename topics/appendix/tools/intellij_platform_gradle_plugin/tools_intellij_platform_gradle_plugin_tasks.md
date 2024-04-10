@@ -1067,7 +1067,7 @@ tasks {
   }
 
   val runLocalIde by registering(RunIdeTask::class) {
-    localPath = file("/Users/hsz/Applications/Android Studio.app")
+    localPath = file("/Users/user/Applications/Android Studio.app")
   }
 }
 ```
@@ -1298,7 +1298,7 @@ tasks {
   }
 
   val testLocalIde by registering(TestIdeTask::class) {
-    localPath = file("/Users/hsz/Applications/Android Studio.app")
+    localPath = file("/Users/user/Applications/Android Studio.app")
   }
 }
 ```

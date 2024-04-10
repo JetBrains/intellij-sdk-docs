@@ -232,7 +232,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    local("/Users/hsz/Applications/IntelliJ IDEA Ultimate.app")
+    local("/Users/user/Applications/IntelliJ IDEA Ultimate.app")
   }
 }
 ```

@@ -41,14 +41,14 @@ It is a successor of _[](tools_gradle_intellij_plugin.md) (1.x)_.
 
 ## Requirements
 
-The following platforms and environments are supported:
+IntelliJ Platform Gradle Plugin 2.x requires the following minimal versions:
+- IntelliJ Platform: **2022.3**
+- Gradle: **8.2**
 
-| Name              | Minimal version |                                                                                                                                                 |
-|-------------------|:---------------:|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| IntelliJ Platform |    `2022.3`     |                                                                                                                                                 |
-| Gradle            |      `8.2`      | See [the Gradle Installation guide](https://gradle.org/install/) on how to upgrade.                                                             |
-| Java Runtime      |      `17`       | See <control>Gradle JVM</control> in <ui-path>Settings &#124; Build, Execution, Deployment &#124; Build Tools &#124; Gradle</ui-path> settings. |
+  See [the Gradle Installation guide](https://gradle.org/install/) on how to upgrade.
+- Java Runtime: **17**
 
+  See <control>Gradle JVM</control> in <ui-path>Settings | Build, Execution, Deployment | Build Tools | Gradle</ui-path>.
 
 ## Usage
 

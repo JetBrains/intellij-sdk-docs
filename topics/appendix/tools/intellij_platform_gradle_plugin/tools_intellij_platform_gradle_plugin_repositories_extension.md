@@ -22,7 +22,7 @@ It provides methods to add:
 
 <snippet id="recommendedCallout">
 
-> In most cases, simply using [`defaultRepositories()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories) repository will be sufficient.
+> In most cases, [`defaultRepositories()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories) repository should be sufficient.
 >
 {style="tip"}
 

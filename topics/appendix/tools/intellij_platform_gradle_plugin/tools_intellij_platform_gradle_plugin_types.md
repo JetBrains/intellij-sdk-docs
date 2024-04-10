@@ -54,7 +54,7 @@ Each entry is composed of a product code and coordinates used for dependency and
 | `CLion`                 | `CL`   | `com.jetbrains.intellij.clion:clion`               |    &check;     |
 | `DataGrip`              | `DB`   | -                                                  |    &check;     |
 | `DataSpell`             | `DS`   | -                                                  |    &check;     |
-| `Fleet`                 | `FLIJ` | `com.jetbrains.intellij.fleetBackend:fleetBackend` |                |
+| `FleetBackend`          | `FLIJ` | `com.jetbrains.intellij.fleetBackend:fleetBackend` |                |
 | `Gateway`               | `GW`   | `com.jetbrains.intellij.gateway:gateway`           |    &check;     |
 | `GoLand`                | `GO`   | `com.jetbrains.intellij.goland:goland`             |    &check;     |
 | `IntellijIdeaCommunity` | `IC`   | `com.jetbrains.intellij.idea:ideaIC`               |    &check;     |

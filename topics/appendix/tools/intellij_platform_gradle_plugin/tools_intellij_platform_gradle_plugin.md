@@ -14,7 +14,7 @@
 
 </tldr>
 
-The _IntelliJ Platform Gradle Plugin 2.x_ is a plugin for the Gradle build system to help configure your environment for building, testing, verifying, and publishing plugins for IntelliJ-based IDEs.
+The _IntelliJ Platform Gradle Plugin 2.x_ is a plugin for the Gradle build system to help configure environments for building, testing, verifying, and publishing plugins for IntelliJ-based IDEs.
 It is a successor of _[](tools_gradle_intellij_plugin.md) (1.x)_.
 
 <snippet id="faq">
@@ -56,7 +56,7 @@ IntelliJ Platform Gradle Plugin 2.x requires the following minimal versions:
 >
 {style="note"}
 
-To apply the IntelliJ Platform Gradle Plugin to your project, add the following entry to the `plugins` block in your <path>build.gradle.kts</path> file:
+To apply the IntelliJ Platform Gradle Plugin to a project, add the following entry to the `plugins` block in the <path>build.gradle.kts</path> file:
 
 ```kotlin
 plugins {
@@ -64,11 +64,11 @@ plugins {
 }
 ```
 
-If you migrate from the Gradle IntelliJ Plugin `1.x`, replace the old `org.jetbrains.intellij` identifier to `org.jetbrain.intellij.platform` and apply its latest `%intellij-platform-gradle-plugin-version%` version.
+If migrating from the Gradle IntelliJ Plugin `1.x`, replace the old `org.jetbrains.intellij` identifier to `org.jetbrain.intellij.platform` and apply its latest `%intellij-platform-gradle-plugin-version%` version.
 
 ### Early Access Preview
 
-To use the current Early Access Preview snapshot versions, add the following to your <path>settings.gradle.kts</path> file:
+To use the current Early Access Preview snapshot versions, add the following to the <path>settings.gradle.kts</path> file:
 
 ```kotlin
 pluginManagement {
@@ -80,14 +80,14 @@ pluginManagement {
 ```
 
 > The snapshot release is published with the constant version, creating a possibility for Gradle to resort to the cached version of the plugin.
-> If you wish to update all dependencies in the dependency cache, the command line option `--refresh-dependencies` should be used.
+> To update all dependencies in the dependency cache, use the `--refresh-dependencies` command line option.
 
 
 ### Plugins
 
-The IntelliJ Platform Gradle Plugin consists of multiple [](tools_intellij_platform_gradle_plugin_plugins.md) which you can apply in bundles ([](tools_intellij_platform_gradle_plugin_plugins.md#platform) or [](tools_intellij_platform_gradle_plugin_plugins.md#module)) or separately.
+The IntelliJ Platform Gradle Plugin consists of multiple [plugins](tools_intellij_platform_gradle_plugin_plugins.md) which can be applied in bundles ([](tools_intellij_platform_gradle_plugin_plugins.md#platform) or [](tools_intellij_platform_gradle_plugin_plugins.md#module)) or separately.
 
-Subplugins architecture allows applying a subset of features, e.g., when you want to provide the IntelliJ Platform dependency to a project submodule without creating unnecessary tasks.
+Subplugins architecture allows applying a subset of features, e.g., to provide the IntelliJ Platform dependency to a project submodule without creating unnecessary tasks.
 
 ## Configuration
 

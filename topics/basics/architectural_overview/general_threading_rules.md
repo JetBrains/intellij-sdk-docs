@@ -10,7 +10,7 @@
 
 > [Thread Access Info](https://plugins.jetbrains.com/plugin/16815-thread-access-info) plugin visualizes Read/Write Access and Thread information in the debugger.
 
-In general, code-related data structures in the IntelliJ Platform are covered by a single [readers-writer (RW) lock](https://en.wikipedia.org/wiki/Readers%E2%80%93writer_lock){ignore-vars="true"}.
+In general, code-related data structures in the IntelliJ Platform are covered by a single [readers-writer (RW) lock](https://w.wiki/7dBy).
 
 Access to the model must be performed in a read or write action for the following subsystems:
 

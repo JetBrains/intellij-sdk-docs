@@ -8,7 +8,7 @@ Themes can also provide custom color and font settings, as well as custom images
 
 ## Adding a Custom Editor Scheme
 
-Users of IntelliJ Platform-based IDEs, such as Intellij IDEA, can set preferences to configure the colors and fonts used in the Editor.
+Users of IntelliJ Platform-based IDEs, such as IntelliJ IDEA, can set preferences to configure the colors and fonts used in the Editor.
 These custom color and font settings are called _Editor Color Schemes_.
 
 ### Creating a Custom Editor Scheme Using Settings

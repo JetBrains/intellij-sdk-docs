@@ -13,7 +13,7 @@ First and foremost, we should keep in mind our audience and their objectives:
 _Someone reading technical content is usually looking to answer a specific question.
 That question might be broad or narrowly-focused, but either way, our goal is to provide answers without distraction._
 
-The style of the Intellij Platform SDK documentation is captured by using a markup language named [Markdown](https://github.github.com/gfm/).
+The style of the IntelliJ Platform SDK documentation is captured by using a markup language named [Markdown](https://github.github.com/gfm/).
 
 To verify grammar and correct spelling, it is highly recommended to use [Grazie Professional](https://plugins.jetbrains.com/plugin/16136-grazie-professional) plugin to highlight any issues on-the-fly in the IDE.
 

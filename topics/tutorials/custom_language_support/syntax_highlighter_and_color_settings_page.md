@@ -22,7 +22,7 @@ A plugin can also define color settings based on `ColorSettingPage` so the user 
 ## Define a Syntax Highlighter
 
 The [`SimpleSyntaxHighlighter`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleSyntaxHighlighter.java) class extends [`SyntaxHighlighterBase`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/fileTypes/SyntaxHighlighterBase.java).
-As recommended in [Color Scheme Management](color_scheme_management.md#text-attribute-key-dependency), the Simple Language highlighting text attributes are specified as a dependency on one of standard Intellij Platform keys.
+As recommended in [Color Scheme Management](color_scheme_management.md#text-attribute-key-dependency), the Simple Language highlighting text attributes are specified as a dependency on one of standard IntelliJ Platform keys.
 For the Simple Language, define only one scheme.
 
 ```java

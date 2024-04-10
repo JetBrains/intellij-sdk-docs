@@ -40,7 +40,7 @@ For a more in-depth example of an Intention Action, see [`conditional_operator_i
 ## Update the Annotator
 When a `badProperty` annotation is created, the `badProperty.registerFix()` method in
 [`SimpleAnnotator`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleAnnotator.java) is called.
-This method call registers the `SimpleCreatePropertyQuickFix` as the Intention Action for the Intellij Platform to use to correct the problem.
+This method call registers the `SimpleCreatePropertyQuickFix` as the Intention Action for the IntelliJ Platform to use to correct the problem.
 
 ```java
 ```

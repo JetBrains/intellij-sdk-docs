@@ -5,6 +5,7 @@
 <link-summary>IntelliJ Platform Gradle Plugin tasks.</link-summary>
 
 <include from="tools_intellij_platform_gradle_plugin.md" element-id="EAP_Status"/>
+<include from="tools_intellij_platform_gradle_plugin.md" element-id="faq"/>
 
 The IntelliJ Platform Gradle Plugin introduces a set of tasks to handle activities of the plugin development for IntelliJ-based IDEs, such as building, verifying, testing, and publishing the plugin archive.
 

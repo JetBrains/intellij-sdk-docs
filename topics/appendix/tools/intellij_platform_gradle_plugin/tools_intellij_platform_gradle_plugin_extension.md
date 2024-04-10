@@ -5,6 +5,7 @@
 <link-summary>IntelliJ Platform Gradle Plugin extension.</link-summary>
 
 <include from="tools_intellij_platform_gradle_plugin.md" element-id="EAP_Status"/>
+<include from="tools_intellij_platform_gradle_plugin.md" element-id="faq"/>
 
 The _IntelliJ Platform Gradle Plugin_ introduces a top-level `intellijPlatform` extension.
 It consists of sections dedicated to the general Gradle plugin configuration, <path>plugin.xml</path> definition, publishing, signing, and verifying of the output plugin for IntelliJ-based IDEs.

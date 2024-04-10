@@ -18,8 +18,13 @@ The _IntelliJ Platform Gradle Plugin 2.x_ is a plugin for the Gradle build syste
 
 It is going to replace the current _[](tools_gradle_intellij_plugin.md) (1.x)_ in the future.
 
-> See [](tools_intellij_platform_gradle_plugin_migration.md) for FAQ.
+<snippet id="faq">
+
+> See [](tools_intellij_platform_gradle_plugin_faq.md) and [](tools_intellij_platform_gradle_plugin_migration.md).
 >
+{title="FAQ"}
+
+</snippet>
 
 <snippet id="EAP_Status">
 

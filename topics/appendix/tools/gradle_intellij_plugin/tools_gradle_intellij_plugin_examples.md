@@ -35,7 +35,7 @@ As examples of using this plugin, you can also check out the following projects:
     - Fully written in Kotlin
     - Uses template language
 - [F# plugin](https://github.com/JetBrains/resharper-fsharp/tree/net222/rider-fsharp) for JetBrains Rider
-- [Intellij Rainbow Brackets](https://github.com/izhangzhihao/intellij-rainbow-brackets)
+- [IntelliJ Rainbow Brackets](https://github.com/izhangzhihao/intellij-rainbow-brackets)
     - Fully written in Kotlin
     - Uses other IntelliJ IDEA plugins as test dependencies
     - Circle CI configuration file & Travis CI configuration file

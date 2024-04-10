@@ -17,13 +17,13 @@ Subplugins architecture allows applying a subset of features, e.g., when you wan
 
 The following chart describes dependencies between plugins provided with the IntelliJ Platform Gradle Plugin.
 
-The plugins highlighted with the thicker border are recommended for most of the cases when creating a plugin for IntelliJ-based IDEs.
+The plugins highlighted in bold are recommended for most of the cases when creating a plugin for IntelliJ-based IDEs.
 
 ```mermaid
 flowchart LR
-    platform
-    module
-    settings
+    platform("<b>platform</b>")
+    module("<b>module</b>")
+    settings("<b>settings</b>")
     migration
 
     base
@@ -52,9 +52,9 @@ flowchart LR
     click run "#run"
     click publish "#publish"
 
-    style platform stroke-width:3px
-    style module stroke-width:3px
-    style settings stroke-width:3px
+    style platform stroke-width: 3px
+    style module stroke-width: 3px
+    style settings stroke-width: 3px
 ```
 
 ## `org.jetbrains.intellij.platform`

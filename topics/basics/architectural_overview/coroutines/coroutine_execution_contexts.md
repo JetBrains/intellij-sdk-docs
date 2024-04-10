@@ -62,7 +62,7 @@ Otherwise, if there is no reporter in the context, using `report*Progress()` wil
 ## Blocking Context
 
 Executing tasks in a blocking context means executing them on a thread without access to the coroutine context (basically, in non-suspending functions) and not under [a progress indicator](#progress-indicator).
-Usually, plugins should not execute a new code in the blocking context.
+Usually, plugins should not execute new code in the blocking context.
 Prefer the [suspending context](#suspending-context) or fall back to [progress indicator](#progress-indicator) if a plugin cannot use Kotlin.
 
 > Functions which schedule execution via [`Application.executeOnPooledThread()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java)

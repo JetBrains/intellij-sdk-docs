@@ -186,12 +186,18 @@ Allows for adding `test-framework` testing library variants. See [Dependencies E
 |---------------------|---------------------------------------------------------------|
 | `Platform.JUnit4`   | `com.jetbrains.intellij.platform:test-framework`              |
 | `Platform.JUnit5`   | `com.jetbrains.intellij.platform:test-framework-junit5`       |
+| `Platform.Bundled`  | <path>[platformPath]/lib/testFramework.jar</path>             |
 | `Plugin.Go`         | `com.jetbrains.intellij.go:go-test-framework`                 |
 | `Plugin.Ruby`       | `com.jetbrains.intellij.idea:ruby-test-framework`             |
 | `Plugin.Java`       | `com.jetbrains.intellij.java:java-test-framework`             |
 | `Plugin.JavaScript` | `com.jetbrains.intellij.javascript:javascript-test-framework` |
 | `Plugin.Maven`      | `com.jetbrains.intellij.maven:maven-test-framework`           |
 | `Plugin.ReSharper`  | `com.jetbrains.intellij.resharper:resharper-test-framework`   |
+
+> The `Platform.Bundled` type should not be used unless it is necessary, like in the case of Rider, as its `test-framework` is not published as an artifact.
+>
+{style="warning"}
+
 
 ## `VerificationReportsFormats`
 {#VerificationReportsFormats}

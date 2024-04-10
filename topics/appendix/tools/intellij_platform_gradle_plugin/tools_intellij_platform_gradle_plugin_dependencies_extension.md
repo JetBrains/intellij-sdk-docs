@@ -136,6 +136,10 @@ The provided `testFramework(type, version)` helper method makes it possible to 
 |--------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `testFramework(type, version)` | Adds a dependency on Test Framework or its variant using [`TestFrameworkType`](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType) type. |
 
+> In rare cases, when the presence of a bundled <path>[platformPath]/lib/testFramework.jar</path> library is necessary (like in the case of Rider, as its `test-framework` is not published as an artifact),
+> it is possible to attach it by using the [`TestFrameworkType.Platform.Bundled`](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType) type.
+{style="warning"}
+
 See also:
 - [Types: `TestFrameworkType`](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType)
 

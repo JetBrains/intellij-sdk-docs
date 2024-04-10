@@ -79,17 +79,17 @@ The latter API allows specifying the _modality state_ ([`ModalityState`](%gh-ic%
 The operation will be executed after all modal dialogs are closed.
 If any of the open (unrelated) projects displays a per-project modal dialog, the action will be performed after the dialog is closed.
 
-#### `ModalityState.stateForComponent()`
+### `ModalityState.stateForComponent()`
 
 The operation can be executed when the topmost shown dialog is the one that contains the specified component or is one of its parent dialogs.
 
-#### None Specified
+### None Specified
 
 `ModalityState.defaultModalityState()` will be used.
 This is the optimal choice in most cases that uses the current modality state when invoked from UI thread.
 It has special handling for background processes started with `ProgressManager`: `invokeLater()` from such a process may run in the same dialog that the process started.
 
-#### `ModalityState.any()`
+### `ModalityState.any()`
 
 The operation will be executed as soon as possible regardless of modal dialogs.
 Please note that modifying PSI, VFS, or project model is prohibited from such runnables.

@@ -21,40 +21,40 @@ The plugins highlighted in bold are recommended for most of the cases when creat
 
 ```mermaid
 flowchart LR
-    platform("<b>platform</b>")
-    module("<b>module</b>")
-    settings("<b>settings</b>")
-    migration
+    Platform("<b>Platform</b>")
+    Module("<b>Module</b>")
+    Settings("<b>Settings</b>")
+    Migration
 
-    base
-    build
-    test
-    verify
-    run
-    publish
+    Base
+    Build
+    Test
+    Verify
+    Run
+    Publish
 
-    build --> base
-    publish --> build
-    run --> build
-    test --> build
-    verify --> build
-    module --> test & verify
-    platform --> publish & run & module
+    Build --> Base
+    Publish --> Build
+    Run --> Build
+    Test --> Build
+    Verify --> Build
+    Module --> Test & Verify
+    Platform --> Publish & Run & Module
 
-    click platform "#platform"
-    click module "#module"
-    click settings "#settings"
-    click migration "#migration"
-    click base "#base"
-    click build "#build"
-    click test "#test"
-    click verify "#verify"
-    click run "#run"
-    click publish "#publish"
+    click Platform "#platform"
+    click Module "#module"
+    click Settings "#settings"
+    click Migration "#migration"
+    click Base "#base"
+    click Build "#build"
+    click Test "#test"
+    click Verify "#verify"
+    click Run "#run"
+    click Publish "#publish"
 
-    style platform stroke-width: 3px
-    style module stroke-width: 3px
-    style settings stroke-width: 3px
+    style Platform stroke-width: 3px
+    style Module stroke-width: 3px
+    style Settings stroke-width: 3px
 ```
 
 ## Platform

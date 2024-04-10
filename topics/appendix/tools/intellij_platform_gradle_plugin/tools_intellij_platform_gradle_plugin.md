@@ -15,8 +15,7 @@
 </tldr>
 
 The _IntelliJ Platform Gradle Plugin 2.x_ is a plugin for the Gradle build system to help configure your environment for building, testing, verifying, and publishing plugins for IntelliJ-based IDEs.
-
-It is going to replace the current _[](tools_gradle_intellij_plugin.md) (1.x)_ in the future.
+It is a successor of _[](tools_gradle_intellij_plugin.md) (1.x)_.
 
 <snippet id="faq">
 
@@ -44,22 +43,30 @@ It is going to replace the current _[](tools_gradle_intellij_plugin.md) (1.x)_ i
 
 The following platforms and environments are supported:
 
-### IDE Target Platform
+| Name              | Minimal version |                                                                                                                                                 |
+|-------------------|:---------------:|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| IntelliJ Platform |    `2022.3`     |                                                                                                                                                 |
+| Gradle            |      `8.2`      | See [the Gradle Installation guide](https://gradle.org/install/) on how to upgrade.                                                             |
+| Java Runtime      |      `17`       | See <control>Gradle JVM</control> in <ui-path>Settings &#124; Build, Execution, Deployment &#124; Build Tools &#124; Gradle</ui-path> settings. |
 
-IntelliJ Platform 2022.3 and later
-
-### Gradle
-
-Gradle version **8.2** and later is required.
-See [the Gradle Installation guide](https://gradle.org/install/) on how to upgrade.
-
-Java Runtime **17** and later is required. See <control>Gradle JVM</control> in <ui-path>Settings | Build, Execution, Deployment | Build Tools | Gradle</ui-path> settings.
 
 ## Usage
 
 > Please note that the plugin has a new ID `org.jetbrain.intellij.platform`.
 >
 {style="note"}
+
+To apply the IntelliJ Platform Gradle Plugin to your project, add the following entry to the `plugins` block in your <path>build.gradle.kts</path> file:
+
+```kotlin
+plugins {
+  id("org.jetbrains.intellij.platform") version "%intellij-platform-gradle-plugin-version%"
+}
+```
+
+If you migrate from the Gradle IntelliJ Plugin `1.x`, replace the old `org.jetbrains.intellij` identifier to `org.jetbrain.intellij.platform` and apply its latest `%intellij-platform-gradle-plugin-version%` version.
+
+### Early Access Preview
 
 To use the current Early Access Preview snapshot versions, add the following to your <path>settings.gradle.kts</path> file:
 
@@ -72,52 +79,15 @@ pluginManagement {
 }
 ```
 
-In the <path>build.gradle.kts</path> file, replace the existing reference to the [](tools_gradle_intellij_plugin.md) plugin (`org.jetbrains.intellij`) with:
-
-```kotlin
-plugins {
-  id("org.jetbrains.intellij.platform") version "%intellij-platform-gradle-plugin-version%"
-}
-```
-
 > The snapshot release is published with the constant version, creating a possibility for Gradle to resort to the cached version of the plugin.
 > If you wish to update all dependencies in the dependency cache, the command line option `--refresh-dependencies` should be used.
 
-### Subplugins
 
-The plugin was split into subplugins that can be applied separately.
-This allows for applying only a subset of features, e.g. when you only use an IntelliJ Platform SDK dependency without creating any tasks.
+### Plugins
 
-#### org.jetbrains.intellij.platform
-{#plugin.platform}
+The IntelliJ Platform Gradle Plugin consist of multiple [](tools_intellij_platform_gradle_plugin_plugins.md) which you can apply in bundles ([](tools_intellij_platform_gradle_plugin_plugins.md#platform) or [](tools_intellij_platform_gradle_plugin_plugins.md#module)) or separately.
 
-This plugin applies all project-level plugins, which brings the fully-flagged tooling for plugin development for IntelliJ-based IDEs.
-
-It includes [](#plugin.base) and [](#plugin.tasks) subplugins.
-
-#### org.jetbrains.intellij.platform.base
-{#plugin.base}
-
-The base plugin sets up all the custom configurations and transforms needed to manage the IntelliJ Platform SDK, JetBrains Runtime, CLI tools, and other plugins when they're added as dependencies.
-
-#### org.jetbrains.intellij.platform.tasks
-{#plugin.tasks}
-
-Tasks plugin registers and preconfigures all tasks introduced by the IntelliJ Platform Gradle Plugin.
-It can be omitted when referring to any IntelliJ Platform SDK dependencies without invoking tasks on project submodules.
-
-#### org.jetbrains.intellij.platform.settings
-{#plugin.settings}
-
-If you define repositories within the <path>settings.gradle.kts</path> using the `dependencyResolutionManagement` Gradle, make sure to include the Settings plugin in your <path>settings.gradle.kts</path>.
-
-#### org.jetbrains.intellij.platform.migration
-{#plugin.migration}
-
-The Migration Plugin is designed to assist in upgrading your configuration from Gradle IntelliJ Plugin version 1.x.
-To prevent Gradle failing due to breaking changes, the `org.jetbrains.intellij.platform.migration` plugin was introduced to fill missing gaps and provide migration hints.
-
-See [](tools_intellij_platform_gradle_plugin_migration.md) for more details.
+Subplugins architecture allows to apply a subset of features, e.g., when you want to provide the IntelliJ Platform dependency to a project submodule without creating unnecessary tasks.
 
 ## Configuration
 

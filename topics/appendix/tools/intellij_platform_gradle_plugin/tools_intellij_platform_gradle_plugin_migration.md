@@ -30,7 +30,7 @@ plugins {
 
 ## Migration Plugin
 
-The 2.x release introduces [](tools_intellij_platform_gradle_plugin.md#subplugins), featuring a dedicated one to help with migration from Gradle IntelliJ Plugin 1.x.
+The `2.x` release introduces multiple [](tools_intellij_platform_gradle_plugin_plugins.md), featuring a dedicated one to help with migration from Gradle IntelliJ Plugin `1.x`: [](tools_intellij_platform_gradle_plugin_plugins.md#migration).
 
 When you apply the [](#plugin-id-change), Gradle will fail to process the <path>build.gradle.kts</path> file as the old [](#intellij-extension) doesn't exist anymore.
 To fill all gaps and help users figure out required changes - right in the IDE - the `org.jetbrains.intellij.platform.migration` plugin was introduced:

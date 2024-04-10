@@ -6,6 +6,10 @@
 
 <link-summary>Threading rules for reading and writing to IntelliJ Platform data models, running and canceling background processes, and avoiding UI freezes.</link-summary>
 
+In the IntelliJ Platform, code is executed on one of two thread types:
+- [Event Dispatch Thread](https://docs.oracle.com/javase/tutorial/uiswing/concurrency/dispatch.html) (EDT) - also known as the UI thread. It is used for updating the UI and performing changes in the IDE data model. Operations performed on EDT must be fast.
+- background threads - used for performing costly operations.
+
 ## Read-Write Lock
 
 > [Thread Access Info](https://plugins.jetbrains.com/plugin/16815-thread-access-info) plugin visualizes Read/Write Access and Thread information in the debugger.

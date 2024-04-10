@@ -57,7 +57,7 @@ suspend fun readDataFromFile(): Data {
 ## EDT Dispatcher
 
 The [`Dispatchers.EDT`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt) dispatcher is used for executing UI actions on the Swing Event Dispatch Thread.
-`Dispatchers.EDT` dispatches onto the EDT within the context [modality state](general_threading_rules.md#modality-and-invokelater).
+`Dispatchers.EDT` dispatches onto EDT within the context [modality state](general_threading_rules.md#modality-and-invokelater).
 
 ### `Dispatchers.Main` vs. `Dispatchers.EDT`
 
@@ -107,7 +107,7 @@ The code is executed as follows:
 1. `suspendingTask` is started and partially executed on **Thread 2**.
 2. `suspendingTask` is suspended when it waits for data fetched from the internet.
 3. After receiving data, `suspendingTask` is resumed, but now it is executed on **Thread 1**.
-4. Execution explicitly switches to the EDT Dispatcher and `updateUI` is executed on the UI thread.
+4. Execution explicitly switches to the EDT dispatcher and `updateUI` is executed on the UI thread.
 
 
 > This behavior can result in unexpected consequences for code that relies on thread-specific data and assumes it will execute consistently on the same thread.

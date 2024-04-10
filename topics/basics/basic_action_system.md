@@ -51,11 +51,11 @@ Every IntelliJ Platform action should override `AnAction.update()` and must over
   The preferred method is to run the update on the BGT, which has the advantage of guaranteeing application-wide read access to
   [PSI](psi.md), [the virtual file system](virtual_file_system.md) (VFS), or [project models](project_structure.md).
   Actions that run the update session on the BGT should not access the Swing component hierarchy directly.
-  Conversely, actions that specify to run their update on the EDT must not access PSI, VFS, or project data but have access to Swing components and other UI models.
+  Conversely, actions that specify to run their update on EDT must not access PSI, VFS, or project data but have access to Swing components and other UI models.
   All accessible data is provided by the `DataContext` as explained in [](#determining-the-action-context).
   When switching from BGT to EDT is absolutely necessary, actions can use `AnActionEvent.getUpdateSession()` to
   access the [`UpdateSession`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/UpdateSession.java) and
-  then call `UpdateSession.compute()` to run a function on the EDT.
+  then call `UpdateSession.compute()` to run a function on EDT.
   Inspection <ui-path>Plugin DevKit | Code | ActionUpdateThread is missing</ui-path> highlights missing implementation of
   `AnAction.getActionUpdateThread()` (2022.3+).
 * An action's method `AnAction.actionPerformed()` is called by the IntelliJ Platform if available and selected by the user.

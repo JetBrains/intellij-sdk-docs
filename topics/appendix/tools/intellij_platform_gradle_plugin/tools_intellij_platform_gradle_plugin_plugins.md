@@ -5,6 +5,7 @@
 <link-summary>IntelliJ Platform Gradle Plugin plugins.</link-summary>
 
 <include from="tools_intellij_platform_gradle_plugin.md" element-id="EAP_Status"/>
+<include from="tools_intellij_platform_gradle_plugin.md" element-id="faq"/>
 
 The IntelliJ Platform Gradle Plugin consists of multiple subplugins which you can apply in bundles ([](#platform) or [](#module)) or separately.
 

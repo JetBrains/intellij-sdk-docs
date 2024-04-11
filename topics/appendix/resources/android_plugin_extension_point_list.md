@@ -2,7 +2,7 @@
 
 <!-- EP List Directory: /community/android -->
 
-# Android Extension Point and Listener List
+# Android Plugin Extension Point and Listener List
 
 <link-summary>Overview of Extension Points and Listeners for Android Plugin.</link-summary>
 

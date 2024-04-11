@@ -9,7 +9,7 @@ EP List Directory:
 /community/python
 -->
 
-# Extension Point and Listener List
+# IntelliJ Community Plugins Extension Point and Listener List
 
 <link-summary>Overview of Extension Points and Listeners for IntelliJ Platform.</link-summary>
 

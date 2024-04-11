@@ -14,7 +14,7 @@ Note: if section 'IntelliJ Community Plugins" appears on this page, add excluded
 and add in intellij_community_plugins_extension_point_list.md.
 -->
 
-# Extension Point and Listener List
+# IntelliJ Platform Extension Point and Listener List
 
 <link-summary>Overview of Extension Points and Listeners for IntelliJ Platform.</link-summary>
 

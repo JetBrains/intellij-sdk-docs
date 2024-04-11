@@ -7,9 +7,9 @@
 <include from="tools_intellij_platform_gradle_plugin.md" element-id="EAP_Status"/>
 <include from="tools_intellij_platform_gradle_plugin.md" element-id="faq"/>
 
-The IntelliJ Platform Gradle Plugin consists of multiple subplugins which you can apply in bundles ([](#platform) or [](#module)) or separately.
+The IntelliJ Platform Gradle Plugin consists of multiple subplugins which can be applied in bundles ([](#platform) or [](#module)) or separately.
 
-Subplugins architecture allows applying a subset of features, e.g., when you want to provide the IntelliJ Platform dependency to a project submodule without creating unnecessary tasks.
+Subplugins architecture allows applying a subset of features, e.g., to provide the IntelliJ Platform dependency to a project submodule without creating unnecessary tasks.
 
 > Plugins depend on each other.
 >
@@ -152,7 +152,7 @@ Included plugins:
 
 **Plugin ID: `org.jetbrains.intellij.platform.settings`**
 
-If repositories are defined within the <path>settings.gradle.kts</path> using the `dependencyResolutionManagement` Gradle, make sure to include the Settings plugin in your <path>settings.gradle.kts</path>.
+If repositories are defined within the <path>settings.gradle.kts</path> using the `dependencyResolutionManagement` Gradle, make sure to include the Settings plugin in <path>settings.gradle.kts</path>.
 
 See [](tools_intellij_platform_gradle_plugin.md#configuration.dependencyResolutionManagement) for more details.
 
@@ -216,7 +216,7 @@ dependencies {
 
 **Plugin ID: `org.jetbrains.intellij.platform.migration`**
 
-The Migration plugin is designed to assist in upgrading your configuration from Gradle IntelliJ Plugin version `1.x`.
+The Migration plugin is designed to assist in upgrading projects using Gradle IntelliJ Plugin **1.x**.
 To prevent Gradle failing due to breaking changes, the `org.jetbrains.intellij.platform.migration` plugin was introduced to fill missing gaps and provide migration hints.
 
 See [](tools_intellij_platform_gradle_plugin_migration.md) for more details.
@@ -288,7 +288,7 @@ Included tasks:
 
 Registers the task used for running the local instance of the IntelliJ Platform used for development.
 
-It is also possible to introduce custom tasks so you could run your plugin against various IDEs during the development process.
+It allows introducing custom tasks, so it is possible to run a plugin against various IDEs during the development process.
 
 Included tasks:
 - [](tools_intellij_platform_gradle_plugin_tasks.md#runIde)
@@ -310,7 +310,7 @@ Included tasks:
 
 **Plugin ID: `org.jetbrains.intellij.platform.verify`**
 
-Introduces various verification tasks that run checks against your project configuration, <path>plugin.xml</path> file, signature check, or execute the IntelliJ Plugin Verifier tool.
+Introduces various verification tasks that run checks against project configuration, <path>plugin.xml</path> file, signature check, or execute the IntelliJ Plugin Verifier tool.
 
 Included tasks:
 - [](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginProjectConfiguration)

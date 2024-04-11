@@ -260,7 +260,6 @@ Type
 
 See also:
 - [Tasks: `patchPluginXml.pluginId`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-pluginId)
-- [Plugin Configuration File: `id`](plugin_configuration_file.md#idea-plugin__id)
 
 
 ### `name`
@@ -276,7 +275,6 @@ Type
 
 See also:
 - [Tasks: `patchPluginXml.pluginName`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-pluginName)
-- [Plugin Configuration File: `name`](plugin_configuration_file.md#idea-plugin__name)
 
 
 ### `version`
@@ -294,7 +292,6 @@ Type
 
 See also:
 - [Tasks: `patchPluginXml.pluginVersion`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-pluginVersion)
-- [Plugin Configuration File: `version`](plugin_configuration_file.md#idea-plugin__version)
 
 
 ### `description`
@@ -313,7 +310,6 @@ Type
 
 See also:
 - [Tasks: `patchPluginXml.pluginDescription`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-pluginDescription)
-- [Plugin Configuration File: `description`](plugin_configuration_file.md#idea-plugin__description)
 
 
 ### `changeNotes`
@@ -333,7 +329,6 @@ Type
 
 See also:
 - [Tasks: `patchPluginXml.changeNotes`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-changeNotes)
-- [Plugin Configuration File: `change-notes`](plugin_configuration_file.md#idea-plugin__change-notes)
 
 
 ## Product Descriptor

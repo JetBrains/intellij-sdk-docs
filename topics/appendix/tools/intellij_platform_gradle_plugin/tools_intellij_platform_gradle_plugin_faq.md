@@ -4,7 +4,7 @@
 
 <link-summary>FAQ for using IntelliJ Platform Gradle Plugin</link-summary>
 
-### How to modify JVM arguments of runIde task?
+### How to modify JVM arguments of the `runIde` task?
 
 [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde) task is a [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html) task and can be modified according to the documentation.
 
@@ -18,7 +18,7 @@ tasks {
 }
 ```
 
-### How to modify system properties of runIde task?
+### How to modify system properties of the `runIde` task?
 
 Using the [very same task documentation](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html), configure [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde) task:
 
@@ -42,7 +42,7 @@ intellijPlatform {
 }
 ```
 
-It is also possible to disable it for specific [`runIde`](tools_gradle_intellij_plugin.md#tasks-runide)-base task as follows:
+It is also possible to disable it for a specific [`runIde`](tools_gradle_intellij_plugin.md#tasks-runide)-based task as follows:
 
 ```kotlin
 tasks {
@@ -65,12 +65,12 @@ intellijPlatform {
 As a result of disabling building searchable options, the [Settings](settings.md) that your plugin provides won't be searchable in the <ui-path>Settings</ui-path> dialog.
 Disabling of the task is suggested for plugins that are not intended to provide custom settings.
 
-### How to show log file of sandbox instance?
+### How to show the log file of a sandbox instance?
 
 The most convenient way to see the logs of a running IDE is to add a tab to the <control>Run</control> tool window displaying the contents of <path>idea.log</path> file.
 In the Gradle `runIde` run configuration, add the log file path according to [sandbox location](ide_development_instance.md#the-development-instance-sandbox-directory) as described in [View logs](https://www.jetbrains.com/help/idea/setting-log-options.html).
 
-### Task `setupDependencies` not found in root project
+### Task `setupDependencies` not found in root project 'projectName'
 
 The [`setupDependencies`](tools_gradle_intellij_plugin.md#tasks-setupdependencies) task was designed to fetch the target IntelliJ Platform dependency in the after-sync Gradle phase as a workaround for the Gradle IntelliJ Plugin `1.x` limitations.
 Starting with the IntelliJ Platform Gradle Plugin `2.0`, this task is no longer needed and was removed from available tasks.
@@ -82,7 +82,7 @@ Task 'setupDependencies' not found in root project 'projectName'.
 ```
 
 There are two possible solutions:
-- manually edit the <path>.idea/workspace.xml</path> file removing the `setupDependencies` entry
+- manually edit the <path>.idea/workspace.xml</path> file and remove the `setupDependencies` entry
 - open the <control>Gradle</control> tool window, select the <ui-path>Tasks Activation</ui-path> action from the context menu of the root project item, and remove the `setupDependencies` entry
 
 ### How to expose my plugin API sources to dependent plugins?
@@ -160,15 +160,15 @@ To list the IntelliJ Platform releases matching your criteria (IntelliJ Platform
 
 ```kotlin
 tasks {
-    printProductsReleases {
-        channels = listOf(ProductRelease.Channel.EAP)
-        types = listOf(IntelliJPlatformType.IntellijIdeaCommunity)
-        untilBuild = provider { null }
+  printProductsReleases {
+    channels = listOf(ProductRelease.Channel.EAP)
+    types = listOf(IntelliJPlatformType.IntellijIdeaCommunity)
+    untilBuild = provider { null }
 
-        doLast {
-            val latestEap = productsReleases.get().max()
-        }
+    doLast {
+      val latestEap = productsReleases.get().max()
     }
+  }
 }
 ```
 

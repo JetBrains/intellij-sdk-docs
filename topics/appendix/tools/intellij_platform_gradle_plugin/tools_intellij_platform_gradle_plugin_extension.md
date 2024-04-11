@@ -184,7 +184,7 @@ See also:
 >
 {style="warning"}
 
-When you develop a plugin, you may want to check how it works in remote development mode, when one machine is running the backend part and another is running a frontend part (JetBrains Client) which connects to the backend.
+Allows for checking how a plugin works in remote development mode, when one machine is running the backend part and another is running a frontend part (JetBrains Client) which connects to the backend.
 
 This property allows running the IDE with backend and frontend parts running in separate processes.
 The developed plugin is installed in the backend part.
@@ -265,7 +265,8 @@ See also:
 ### `name`
 {#intellijPlatform-pluginConfiguration-name}
 
-The plugin's display name, visible to users (Title Case).
+The plugin's display name, visible to users.
+It should use Title Case.
 
 The provided value is used to populate the [`<name>`](plugin_configuration_file.md#idea-plugin__name) element.
 
@@ -362,7 +363,8 @@ See also:
 ### `code`
 {#intellijPlatform-pluginConfiguration-productDescriptor-code}
 
-The product code for the plugin, used in the JetBrains Sales System, needs to be pre-approved by JetBrains and must adhere to [specified requirements](https://plugins.jetbrains.com/docs/marketplace/obtain-a-product-code-from-jetbrains.html).
+The product code for the plugin, used in the JetBrains Sales System.
+The value must be pre-approved by JetBrains and must adhere to [specified requirements](https://plugins.jetbrains.com/docs/marketplace/obtain-a-product-code-from-jetbrains.html).
 
 The provided value is used for a `<product-descriptor code="">` element attribute.
 
@@ -429,7 +431,7 @@ See also:
 ## Idea Version
 {#intellijPlatform-pluginConfiguration-ideaVersion}
 
-A part of the [](#intellijPlatform-pluginConfiguration) which describes the `<idea-version>` element.
+A part of the [](#intellijPlatform-pluginConfiguration) which describes the [`<idea-version>`](plugin_configuration_file.md#idea-plugin__idea-version) element.
 
 **Example:**
 
@@ -450,7 +452,6 @@ intellijPlatform {
 
 See also:
 
-- [Plugin Configuration File: `idea-version`](plugin_configuration_file.md#idea-plugin__idea-version)
 - [](build_number_ranges.md)
 
 ### `sinceBuild`
@@ -501,7 +502,7 @@ See also:
 ## Vendor
 {#intellijPlatform-pluginConfiguration-vendor}
 
-A part of the [](#intellijPlatform-pluginConfiguration) which describes the `<vendor>` element.
+A part of the [](#intellijPlatform-pluginConfiguration) which describes the [`<vendor>`](plugin_configuration_file.md#idea-plugin__vendor) element.
 
 **Example:**
 
@@ -521,15 +522,12 @@ intellijPlatform {
 }
 ```
 
-See also:
-- [Plugin Configuration File: `vendor`](plugin_configuration_file.md#idea-plugin__vendor)
-
 ### `name`
 {#intellijPlatform-pluginConfiguration-vendor-name}
 
-The name of the vendor or the organization ID (if created), as displayed in the Plugins settings dialog and on the JetBrains Marketplace plugin page.
+The name of the vendor or the organization ID (if created), as displayed in the <control>Plugins</control> settings dialog and on the JetBrains Marketplace plugin page.
 
-The provided value is used as the value for the `<vendor>` element.
+The provided value is used as the value of the [`<vendor>`](plugin_configuration_file.md#idea-plugin__vendor) element.
 
 {style="narrow"}
 Type
@@ -604,7 +602,7 @@ Type
 : `Property<String>`
 
 Default value
-: `"https://plugins.jetbrains.com"`
+: `https://plugins.jetbrains.com`
 
 See also:
 - [Tasks: `publishPlugin.host`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-host)
@@ -661,7 +659,7 @@ See also:
 ### `hidden`
 {#intellijPlatform-publishing-hidden}
 
-Publish the plugin update and mark it as hidden to prevent public release after approval.
+Publish the plugin update and mark it as hidden to prevent public visibility after approval.
 
 {style="narrow"}
 Type

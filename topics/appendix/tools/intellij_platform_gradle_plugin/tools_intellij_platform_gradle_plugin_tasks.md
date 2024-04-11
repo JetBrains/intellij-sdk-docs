@@ -1793,7 +1793,7 @@ Default value
 {#verifyPlugin-teamCityOutputFormat}
 
 A flag that controls the output format.
-If set to `true`, the TeamCity compatible output will be returned to stdout.
+If set to `true`, the [TeamCity](https://www.jetbrains.com/teamcity/) compatible output will be returned to stdout.
 
 {style="narrow"}
 Type

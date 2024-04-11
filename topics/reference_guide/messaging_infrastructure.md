@@ -6,7 +6,7 @@
 
 IntelliJ Platform's messaging infrastructure is an implementation of [Publisher Subscriber Pattern](https://w.wiki/5xaV) that provides additional features like _broadcasting on hierarchy_ and special _nested events_ processing (a _nested event_ is an event directly or indirectly fired from the callback of another event).
 
-> All available listeners/topics are listed on [](extension_point_list.md) under _Listeners_ sections.
+> All available listeners/topics are listed on [](intellij_platform_extension_point_list.md) under _Listeners_ sections.
 
 ## Design
 

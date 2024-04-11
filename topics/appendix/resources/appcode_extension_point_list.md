@@ -8,7 +8,7 @@
 
 34 Extension Points and 6 Listeners for AppCode 2022.3
 
-See [](extension_point_list.md) for IntelliJ Platform.
+See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 
 <include from="app_code.md" element-id="appCodeSunset"/>
 

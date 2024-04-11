@@ -37,7 +37,7 @@ All [`<group>`](plugin_configuration_file.md#idea-plugin__actions__group) elemen
 
 ### Use Only Dynamic Extensions
 
-Whether defined in the platform itself ([](extension_point_list.md)) or coming from other plugins, all used extension points must be marked explicitly as dynamic (see next paragraph).
+Whether defined in the platform itself ([](intellij_platform_extension_point_list.md)) or coming from other plugins, all used extension points must be marked explicitly as dynamic (see next paragraph).
 
 Some deprecated extension points (e.g., `com.intellij.configurationProducer`) are intentionally non-dynamic, and their usage should be migrated to the corresponding replacement.
 

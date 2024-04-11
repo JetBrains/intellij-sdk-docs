@@ -12,7 +12,7 @@ _`com.extensionPoint.class`_ _description text_ — Extension Point class/interf
 
 _- Sample 1_ - Sample implementation
 
-> See also [](extension_point_list.md#langextensionpointsxml) to discover more Language-related Extension Points as well as general guide [](explore_api.md).
+> See also [](intellij_platform_extension_point_list.md#langextensionpointsxml) to discover more Language-related Extension Points as well as general guide [](explore_api.md).
 >
 {title="Locating more Language EPs"}
 

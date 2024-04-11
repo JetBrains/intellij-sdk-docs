@@ -310,7 +310,7 @@ IDE Infrastructure
 : [](ide_infrastructure.md) handles Logging, Error Reporting, Runtime Information, and how to provide Context Help.
 
 Extension Point Lists: Listeners, Deprecation status
-: [](extension_point_list.md) now contains sections listing all provided [Listener](plugin_listeners.md) Topics. See also corresponding Extension Point Lists under _Product Specific_. Also, all deprecated API now has a dedicated tag.
+: [](intellij_platform_extension_point_list.md) now contains sections listing all provided [Listener](plugin_listeners.md) Topics. See also corresponding Extension Point Lists under _Product Specific_. Also, all deprecated API now has a dedicated tag.
 
 ### July
 {#july-21}
@@ -357,13 +357,13 @@ Unified AST
 {#december-20}
 
 IntelliJ Platform Explorer
-: Explore usages of [Extension Points](extension_point_list.md) in open-source plugins using [IntelliJ Platform Explorer](https://jb.gg/ipe).
+: Explore usages of [Extension Points](intellij_platform_extension_point_list.md) in open-source plugins using [IntelliJ Platform Explorer](https://jb.gg/ipe).
 
 ### November
 {#november-20}
 
 Extension Point List
-: All EPs [available in IJ Platform and Android](extension_point_list.md) can now be browsed conveniently.
+: All EPs [available in IJ Platform and Android](intellij_platform_extension_point_list.md) can now be browsed conveniently.
 
 ### August
 {#august-20}

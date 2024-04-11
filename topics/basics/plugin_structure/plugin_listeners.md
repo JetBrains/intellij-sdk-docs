@@ -8,7 +8,7 @@ _Listeners_ allow plugins to subscribe to events delivered through the message b
 
 Listeners are defined at application (global) or [project](project.md) level.
 
-> All available listeners/topics are listed on [](extension_point_list.md) under _Listeners_ sections.
+> All available listeners/topics are listed on [](intellij_platform_extension_point_list.md) and [](intellij_platform_extension_point_list.md) under _Listeners_ sections.
 > Browse usages inside existing implementations of open-source IntelliJ Platform plugins via [IntelliJ Platform Explorer](https://jb.gg/ipe).
 >
 

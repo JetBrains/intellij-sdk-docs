@@ -8,7 +8,7 @@
 
 61 Extension Points and 11 Listeners for PHP
 
-See [](extension_point_list.md) for IntelliJ Platform.
+See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 
 <include from="snippets.md" element-id="ep_list_legend"/>
 

@@ -87,7 +87,7 @@ In some cases, keeping a dedicated branch and corresponding plugin release for e
 Note that there is no `YY0`.
 In the `YYYY.R` versioning scheme, the `R` part starts at 1.
 
-<include from="tools_gradle_intellij_plugin.md" element-id="gradle_plugin_223_problem"/>
+<include from="snippets.md" element-id="gradlePluginVersion"/>
 
 | Branch number                                                   | IntelliJ Platform version                                                                                                                |
 |-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|

@@ -6,7 +6,7 @@
 
 ### How to target 2022.3 platform?
 
-<include from="tools_gradle_intellij_plugin.md" element-id="gradle_plugin_223_problem"/>
+<include from="snippets.md" element-id="gradlePluginVersion"/>
 
 ### How to modify JVM arguments of runIde task?
 

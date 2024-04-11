@@ -79,6 +79,16 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 </snippet>
 
+<snippet id="gradlePluginVersion">
+
+> When targeting 2024.2 or later, [](tools_intellij_platform_gradle_plugin.md) is required.
+>
+> When targeting 2022.3 or later, [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md#usage) version **1.10.1** or higher is required (current: %gradle-intellij-plugin-version%).
+>
+{style="warning" title="Gradle: Minimum Plugin Versions"}
+
+</snippet>
+
 <snippet id="ep_list_legend">
 
 ## Legend

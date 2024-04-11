@@ -35,13 +35,7 @@ The plugin provides functionalities like:
 
 ## Usage
 
-<snippet id="gradle_plugin_223_problem">
-
-> [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md#usage) version **1.10.1** or higher is required (current: %gradle-intellij-plugin-version%).
->
-{style="warning" title="Targeting 2022.3+"}
-
-</snippet>
+<include from="snippets.md" element-id="gradlePluginVersion"/>
 
 To enable this plugin in your Gradle-based project, register the plugin in the Gradle build script's `plugins` section:
 

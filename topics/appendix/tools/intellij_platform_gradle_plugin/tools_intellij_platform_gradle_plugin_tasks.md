@@ -540,7 +540,8 @@ Default value
 ### `pluginName`
 {#patchPluginXml-pluginName}
 
-The user-visible plugin display name (Title Case).
+The user-visible plugin display name.
+It should use Title Case.
 
 The provided value will be set as a value of the [`<name>`](plugin_configuration_file.md#idea-plugin__name) element.
 
@@ -555,7 +556,7 @@ Default value
 ### `pluginVersion`
 {#patchPluginXml-pluginVersion}
 
-The plugin version is displayed in the Plugins settings dialog and on the JetBrains Marketplace plugin page.
+The plugin version is displayed in the <control>Plugins</control> settings dialog and on the JetBrains Marketplace plugin page.
 
 Plugins uploaded to the JetBrains Marketplace must follow semantic versioning.
 
@@ -572,7 +573,7 @@ Default value
 ### `pluginDescription`
 {#patchPluginXml-pluginDescription}
 
-The plugin description is displayed on the JetBrains Marketplace plugin page and in the Plugins settings dialog.
+The plugin description is displayed in the <control>Plugins</control> settings dialog and on the JetBrains Marketplace plugin page.
 Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed.
 
 The description content is automatically wrapped with `<![CDATA[... ]]>`.
@@ -591,7 +592,7 @@ Default value
 {#patchPluginXml-changeNotes}
 
 A short summary of new features, bugfixes, and changes provided with the latest plugin version.
-Change notes are displayed on the JetBrains Marketplace plugin page and in the Plugins settings dialog.
+Change notes are displayed on the JetBrains Marketplace plugin page and in the <control>Plugins</control> settings dialog.
 Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed.
 
 The change notes content is automatically wrapped with `<![CDATA[... ]]>`.
@@ -725,7 +726,7 @@ See also:
 ### `vendorName`
 {#patchPluginXml-vendorName}
 
-The vendor name or organization ID (if created) in the Plugins settings dialog and on the JetBrains Marketplace plugin page.
+The vendor name or organization ID (if created) in the <control>Plugins</control> settings dialog and on the JetBrains Marketplace plugin page.
 
 The provided value will be set as a value of the [`<vendor>`](plugin_configuration_file.md#idea-plugin__vendor) element.
 
@@ -994,7 +995,7 @@ Default value
 ### `hidden`
 {#publishPlugin-hidden}
 
-Publish the plugin update and mark it as hidden to prevent public release after approval.
+Publish the plugin update and mark it as hidden to prevent public visibility after approval.
 
 {style="narrow"}
 Type
@@ -1479,7 +1480,7 @@ Default value
 ### `kotlinStdlibDefaultDependency`
 {#verifyPluginProjectConfiguration-kotlinStdlibDefaultDependency}
 
-`kotlin.stdlib.default.dependency` property value defined in the `gradle.properties` file.
+`kotlin.stdlib.default.dependency` property value defined in the <path>gradle.properties</path> file.
 
 {style="narrow"}
 Type
@@ -1576,7 +1577,7 @@ Default value
 
 </tldr>
 
-Validates completeness and contents of `plugin.xml` descriptors as well as plugin archive structure.
+Validates completeness and contents of <path>plugin.xml</path> descriptors as well as plugin archive structure.
 
 See also:
 - [](plugin_configuration_file.md)

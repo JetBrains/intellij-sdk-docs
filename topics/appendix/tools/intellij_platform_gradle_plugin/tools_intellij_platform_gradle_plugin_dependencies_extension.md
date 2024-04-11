@@ -143,10 +143,11 @@ See also:
 
 ## Tools
 
-| Function                  | Description                                                                         |
-|---------------------------|-------------------------------------------------------------------------------------|
-| `pluginVerifier(version)` | Adds a dependency on [IntelliJ Plugin Verifier](verifying_plugin_compatibility.md). |
-| `zipSigner(version)`      | Adds a dependency on [Marketplace ZIP Signer](plugin_signing.md).                   |
+| Function                  | Description                                                                                                                   |
+|---------------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| `pluginVerifier(version)` | Adds a dependency on [IntelliJ Plugin Verifier](verifying_plugin_compatibility.md).                                           |
+| `zipSigner(version)`      | Adds a dependency on [Marketplace ZIP Signer](plugin_signing.md).                                                             |
+| `bundledLibrary(path)`     | Adds a dependency on a Jar bundled within the current IntelliJ Platform, like <path>lib/annotations.jar</path> |
 
 See also:
 

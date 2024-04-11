@@ -527,7 +527,7 @@ The ID is a technical value used to identify the plugin in the IDE and [JetBrain
 
 Please use characters, numbers, and `.`/`-`/`_` symbols only and keep it reasonably short.
 
-The provided value will be set as a value of the `<id>` element.
+The provided value will be set as a value of the [`<id>`](plugin_configuration_file.md#idea-plugin__id) element.
 
 {style="narrow"}
 Type
@@ -536,16 +536,13 @@ Type
 Default value
 : [`intellijPlatform.pluginConfiguration.id`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-id)
 
-See also:
-- [Plugin Configuration File: `id`](plugin_configuration_file.md#idea-plugin__id)
-
 
 ### `pluginName`
 {#patchPluginXml-pluginName}
 
 The user-visible plugin display name (Title Case).
 
-The provided value will be set as a value of the `<name>` element.
+The provided value will be set as a value of the [`<name>`](plugin_configuration_file.md#idea-plugin__name) element.
 
 {style="narrow"}
 Type
@@ -553,9 +550,6 @@ Type
 
 Default value
 : [`intellijPlatform.pluginConfiguration.name`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-name)
-
-See also:
-- [Plugin Configuration File: `name`](plugin_configuration_file.md#idea-plugin__name)
 
 
 ### `pluginVersion`
@@ -565,7 +559,7 @@ The plugin version is displayed in the Plugins settings dialog and on the JetBra
 
 Plugins uploaded to the JetBrains Marketplace must follow semantic versioning.
 
-The provided value will be set as a value of the `<version>` element.
+The provided value will be set as a value of the [`<version>`](plugin_configuration_file.md#idea-plugin__version) element.
 
 {style="narrow"}
 Type
@@ -573,9 +567,6 @@ Type
 
 Default value
 : [`intellijPlatform.pluginConfiguration.version`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-version)
-
-See also:
-- [Plugin Configuration File: `version`](plugin_configuration_file.md#idea-plugin__version)
 
 
 ### `pluginDescription`
@@ -586,7 +577,7 @@ Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed
 
 The description content is automatically wrapped with `<![CDATA[... ]]>`.
 
-The provided value will be set as a value of the `<description>` element.
+The provided value will be set as a value of the [`<description>`](plugin_configuration_file.md#idea-plugin__description) element.
 
 {style="narrow"}
 Type
@@ -594,9 +585,6 @@ Type
 
 Default value
 : [`intellijPlatform.pluginConfiguration.description`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-description)
-
-See also:
-- [Plugin Configuration File: `description`](plugin_configuration_file.md#idea-plugin__description)
 
 
 ### `changeNotes`
@@ -608,7 +596,7 @@ Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed
 
 The change notes content is automatically wrapped with `<![CDATA[... ]]>`.
 
-The provided value will be set as a value of the `<change-notes>` element.
+The provided value will be set as a value of the [`<change-notes>`](plugin_configuration_file.md#idea-plugin__change-notes) element.
 
 {style="narrow"}
 Type
@@ -616,9 +604,6 @@ Type
 
 Default value
 : [`intellijPlatform.pluginConfiguration.changeNotes`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-changeNotes)
-
-See also:
-- [Plugin Configuration File: `change-notes`](plugin_configuration_file.md#idea-plugin__change-notes)
 
 
 ### `productDescriptorCode`
@@ -742,7 +727,7 @@ See also:
 
 The vendor name or organization ID (if created) in the Plugins settings dialog and on the JetBrains Marketplace plugin page.
 
-The provided value will be set as a value of the `<vendor>` element.
+The provided value will be set as a value of the [`<vendor>`](plugin_configuration_file.md#idea-plugin__vendor) element.
 
 {style="narrow"}
 Type
@@ -750,9 +735,6 @@ Type
 
 Default value
 : [`intellijPlatform.pluginConfiguration.vendor.name`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-vendor-name)
-
-See also:
-- [Plugin Configuration File: `vendor`](plugin_configuration_file.md#idea-plugin__vendor)
 
 
 ### `vendorEmail`

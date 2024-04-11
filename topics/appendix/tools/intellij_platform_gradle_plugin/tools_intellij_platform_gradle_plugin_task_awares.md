@@ -9,7 +9,8 @@
 
 The Task Awares is a set of interfaces that can be applied to custom Gradle tasks and, when registered using the dedicated register method, inject new features or properties with predefined values.
 
-IntelliJ Platform Gradle Plugin supports creating custom tasks which can use `*Aware` interfaces:
+IntelliJ Platform Gradle Plugin supports creating custom tasks which can use `*Aware` interfaces.
+Example:
 
 ```kotlin
 abstract class RetrievePluginNameTask : DefaultTask(), PluginAware
@@ -34,7 +35,7 @@ val retrievePluginName by tasks.registering(RetrievePluginNameTask::class) {
 
 </tldr>
 
-The interface provides the possibility to auto-reload plugin when run in the IDE.
+Provides the possibility to auto-reload plugin when run in the IDE.
 
 ### `autoReload`
 {#AutoReloadAware-autoReload}
@@ -65,7 +66,7 @@ Default value
 
 </tldr>
 
-The interface provides the path to the Java Agent file for the Coroutines library required to enable coroutines debugging.
+Provides the path to the Java Agent file for the Coroutines library required to enable coroutines debugging.
 
 ### `coroutinesJavaAgentFile`
 {#CoroutinesJavaAgentAware-coroutinesJavaAgentFile}
@@ -149,7 +150,7 @@ Type
 
 </tldr>
 
-This interface provides tasks a possibility for accessing information about the IntelliJ Platform currently used in the project.
+Provides tasks a possibility for accessing information about the IntelliJ Platform currently used in the project.
 
 The [`intelliJPlatformConfiguration`](#IntelliJPlatformVersionAware-intelliJPlatformConfiguration) input property receives a dependency added to the `intellijPlatform` configuration, which eventually is resolved and lets to access the IntelliJ Platform details such as [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) or the path to the IntelliJ Platform directory.
 
@@ -218,7 +219,7 @@ Throws
 
 </tldr>
 
-The interface provides the dependency on Java Compiler required for the [](tools_intellij_platform_gradle_plugin.md#code-instrumentation) to properly configure Ant tasks provided by the IntelliJ Platform.
+Provides the dependency on Java Compiler required for the [](tools_intellij_platform_gradle_plugin.md#code-instrumentation) to properly configure Ant tasks provided by the IntelliJ Platform.
 
 
 ### `javaCompilerConfiguration`
@@ -244,7 +245,7 @@ Type
 
 </tldr>
 
-This interface provides information about the currently built plugin.
+Provides information about the currently built plugin.
 
 It resolves and parses the final <path>plugin.xml</path> descriptor file, making its details easily accessible.
 
@@ -292,7 +293,7 @@ val retrievePluginName by tasks.registering(RetrievePluginNameTask::class) {
 
 </tldr>
 
-The interface provides the path to the IntelliJ Plugin Verifier executable.
+Provides the path to the IntelliJ Plugin Verifier executable.
 
 It is required to have a dependency on the IntelliJ Plugin Verifier added to the project with [`intellijPlatform.pluginVerifier()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md) dependencies extension.
 
@@ -320,7 +321,8 @@ Type
 
 </tldr>
 
-The interface which uses a set of various interfaces required for running a guest IDE.  Inherits from:
+The interface which uses a set of various interfaces required for running a guest IDE.
+Inherits from:
 - [`CoroutinesJavaAgentAware`](#CoroutinesJavaAgentAware)
 - [`PluginAware`](#PluginAware)
 - [`RuntimeAware`](#RuntimeAware)
@@ -339,7 +341,7 @@ The interface which uses a set of various interfaces required for running a gues
 
 </tldr>
 
-This interface provides access to the Java Runtime (i.e., JetBrains Runtime) resolved with `RuntimeResolver`.
+Provides access to the Java Runtime (i.e., JetBrains Runtime) resolved with `RuntimeResolver`.
 
 
 ### `runtimeDirectory`
@@ -395,7 +397,7 @@ Type
 
 </tldr>
 
-The interface provides quick access to the sandbox container and specific directories located within it.
+Provides quick access to the sandbox container and specific directories located within it.
 
 The path to the sandbox container is obtained using the [`intellijPlatform.sandboxContainer`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-sandboxContainer) extension property and the type and version of the IntelliJ Platform applied to the project.
 
@@ -477,7 +479,7 @@ Type
 
 </tldr>
 
-An interface used to distinguish between the [SandboxAware] consumers and producers.
+Allows distinguishing between the [`SandboxAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SandboxAware.kt) consumers and producers.
 
 
 ## `SigningAware`
@@ -491,7 +493,7 @@ An interface used to distinguish between the [SandboxAware] consumers and produc
 
 </tldr>
 
-The interface provides the path to the Marketplace ZIP Signer executable.
+Provides the path to the Marketplace ZIP Signer executable.
 
 It is required to have a dependency on the Marketplace ZIP Signer added to the project with [`intellijPlatform.zipSigner()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md) dependencies extension.
 

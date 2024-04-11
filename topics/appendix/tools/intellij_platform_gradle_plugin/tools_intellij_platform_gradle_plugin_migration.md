@@ -6,18 +6,18 @@
 
 <include from="tools_intellij_platform_gradle_plugin.md" element-id="EAP_Status"/>
 
-## Plugin name change
+## Plugin Name Change
 
 As the `2.x` branch brings significant breaking changes to the plugin, the name was changed from _Gradle IntelliJ Plugin_ to
 _IntelliJ Platform Gradle Plugin_ as the old one was confused with the bundled Gradle support plugin in the IDE.
 The plugin is published to the Gradle Plugin Portal with a new name as a new entry, and the old one is marked as deprecated.
 
-## Minimum Gradle and Java version
+## Minimum Gradle and Java Versions
 
 The minimum required Gradle version is now `8.2` running on Java 17 or later.
 See [](tools_intellij_platform_gradle_plugin.md#requirements).
 
-## Plugin ID change
+## Plugin ID Change
 
 Plugin ID has changed from `org.jetbrains.intellij` to `org.jetbrains.intellij.platform`.
 To apply it, use:
@@ -42,7 +42,7 @@ plugins {
 }
 ```
 
-## `intellij {}` extension
+## `intellij {}` Extension
 
 The `intellij {}` extension is no longer available and was replaced with `intellijPlatform {}`.
 Note that the available properties differ, see [](tools_intellij_platform_gradle_plugin_extension.md) for details.
@@ -157,7 +157,7 @@ Downloading sources is managed by the Plugin DevKit plugin in version 2024.1+.
 
 ### `intellij.ideaDependency`
 
-Access now the [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) object using the [`intellijPlatform.productInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) property.
+Access the [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) object using the [`intellijPlatform.productInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) property.
 
 ## Tasks
 
@@ -181,7 +181,7 @@ To make the IntelliJ SDK dependency available in the IDE, the `setupDependencies
 This task is no longer required, but when switching from 1.x, Gradle may still want to execute it in the _afterSync_ phase.
 To completely drop this approach, it is mandatory to remove its reference manually in the IDE.
 
-<procedure title="Removing setupDependencies task">
+<procedure title="Removing 'setupDependencies' Task">
 
 1. Open <control>Gradle</control> Tool Window
 2. Right-click on the main module and select <control>Tasks Activation</control>

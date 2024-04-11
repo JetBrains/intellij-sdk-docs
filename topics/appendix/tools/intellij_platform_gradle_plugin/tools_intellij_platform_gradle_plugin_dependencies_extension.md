@@ -11,9 +11,9 @@ IntelliJ Platform Gradle Plugin enhances the `dependencies {}` configuration blo
 
 This class provides methods for adding dependencies to different IntelliJ Platform [products](#default-target-platforms) and managing [local](#custom-target-platforms) dependencies.
 
-It also includes methods for adding [(bundled) plugins](#plugins), [JetBrains Runtime](#java-runtime), as well as [tools](#tools) like IntelliJ Plugin Verifier and Marketplace ZIP Signer.
+It also includes methods for adding [plugins](#plugins) (including bundled), [JetBrains Runtime](#java-runtime), as well as [tools](#tools) like IntelliJ Plugin Verifier and Marketplace ZIP Signer.
 
-> Corresponding required repositories must be defined in `repositories {}` section, see [](tools_intellij_platform_gradle_plugin_repositories_extension.md).
+> Corresponding required repositories must be defined in the `repositories {}` section, see [](tools_intellij_platform_gradle_plugin_repositories_extension.md).
 >
 {style="note"}
 
@@ -27,7 +27,6 @@ It also includes methods for adding [(bundled) plugins](#plugins), [JetBrains Ru
 
 ```kotlin
 repositories {
-
   mavenCentral()
 
   intellijPlatform {
@@ -36,7 +35,6 @@ repositories {
 }
 
 dependencies {
-
   intellijPlatform {
     intellijIdeaCommunity("%ijPlatform%")
 
@@ -101,7 +99,7 @@ See also:
 > Use the correct function depending on whether the
 targeted plugin is _bundled_ with the Target Platform or not.
 >
-{title="Bundled vs. non-bundled plugins"}
+{title="Bundled vs. Non-Bundled Plugins"}
 
 | Function                       | Description                                                                                                                         |
 |--------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
@@ -136,7 +134,7 @@ The provided `testFramework(type, version)` helper method makes it possible to 
 |--------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `testFramework(type, version)` | Adds a dependency on Test Framework or its variant using [`TestFrameworkType`](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType) type. |
 
-> In rare cases, when the presence of a bundled <path>[platformPath]/lib/testFramework.jar</path> library is necessary (like in the case of Rider, as its `test-framework` is not published as an artifact),
+> In rare cases, when the presence of a bundled <path>$PLATFORM_PATH$/lib/testFramework.jar</path> library is necessary (like in the case of Rider, as its `test-framework` is not published as an artifact),
 > it is possible to attach it by using the [`TestFrameworkType.Platform.Bundled`](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType) type.
 {style="warning"}
 
@@ -169,7 +167,7 @@ See the [JetBrains Runtime releases page](https://github.com/JetBrains/JetBrains
 ## Code Instrumentation
 
 The code instrumentation process handled with the [`instrumentCode`](tools_intellij_platform_gradle_plugin_tasks.md#instrumentCode) task, requires extra dependencies to work and properly adjust the Java bytecode.
-There's the `instrumentationTools()` dependencies helper introduced to apply all required dependencies using default configuration, however, you still can add and configure them separately.
+There's the `instrumentationTools()` dependencies helper introduced to apply all required dependencies using default configuration, however, it is possible to add and configure them separately.
 
 Adds a Java Compiler dependency for code instrumentation.
 The version is determined by the IntelliJ Platform build number.

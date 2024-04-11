@@ -499,7 +499,7 @@ Type
 : `RegularFileProperty`
 
 Default value
-: <path>src/main/<kotlin|java>/resources/META-INF/plugin.xml</path>
+: <path>src/main/resources/META-INF/plugin.xml</path>
 
 
 ### `outputFile`

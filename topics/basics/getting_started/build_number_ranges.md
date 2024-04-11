@@ -87,10 +87,13 @@ In some cases, keeping a dedicated branch and corresponding plugin release for e
 Note that there is no `YY0`.
 In the `YYYY.R` versioning scheme, the `R` part starts at 1.
 
+<include from="snippets.md" element-id="apiChangesJavaVersion"/>
+
 <include from="snippets.md" element-id="gradlePluginVersion"/>
 
 | Branch number                                                   | IntelliJ Platform version                                                                                                                |
 |-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| 242                                                             | 2024.2 **NOTE** Java 21 is now required                                                                                                  |
 | [241](https://github.com/JetBrains/intellij-community/tree/241) | 2024.1                                                                                                                                   |
 | [233](https://github.com/JetBrains/intellij-community/tree/233) | 2023.3                                                                                                                                   |
 | [232](https://github.com/JetBrains/intellij-community/tree/232) | 2023.2                                                                                                                                   |

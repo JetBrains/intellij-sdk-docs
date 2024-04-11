@@ -69,11 +69,11 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 <snippet id="apiChangesJavaVersion">
 
+> Java 21 is required when targeting 2024.2 and later only.
+>
 > Java 17 is required ([blog post](https://blog.jetbrains.com/platform/2022/08/intellij-project-migrates-to-java-17/)) when targeting 2022.2 and later only.
 >
 > Java 11 is required ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)) when targeting 2020.3 and later only.
->
-> Please make sure to always upgrade `gradle-intellij-plugin` to the latest version [%gradle-intellij-plugin-version%](https://github.com/jetbrains/gradle-intellij-plugin/releases)
 >
 {title="IDE and Java Versions" style="note"}
 

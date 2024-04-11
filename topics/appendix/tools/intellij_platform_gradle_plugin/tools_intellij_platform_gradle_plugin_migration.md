@@ -8,13 +8,13 @@
 
 ## Plugin Name Change
 
-As the `2.x` branch brings significant breaking changes to the plugin, the name was changed from _Gradle IntelliJ Plugin_ to
+As the **2.x** branch brings significant breaking changes to the plugin, the name was changed from _Gradle IntelliJ Plugin_ to
 _IntelliJ Platform Gradle Plugin_ as the old one was confused with the bundled Gradle support plugin in the IDE.
 The plugin is published to the Gradle Plugin Portal with a new name as a new entry, and the old one is marked as deprecated.
 
 ## Minimum Gradle and Java Versions
 
-The minimum required Gradle version is now `8.2` running on Java 17 or later.
+The minimum required Gradle version is now **8.2** running on Java **17** or later.
 See [](tools_intellij_platform_gradle_plugin.md#requirements).
 
 ## Plugin ID Change
@@ -30,7 +30,7 @@ plugins {
 
 ## Migration Plugin
 
-The `2.x` release introduces multiple [](tools_intellij_platform_gradle_plugin_plugins.md), featuring a dedicated one to help with migration from Gradle IntelliJ Plugin `1.x`: [](tools_intellij_platform_gradle_plugin_plugins.md#migration).
+The 2.x release introduces multiple [](tools_intellij_platform_gradle_plugin_plugins.md), featuring a dedicated one to help with migration from Gradle IntelliJ Plugin 1.x: [](tools_intellij_platform_gradle_plugin_plugins.md#migration).
 
 When you apply the [](#plugin-id-change), Gradle will fail to process the <path>build.gradle.kts</path> file as the old [](#intellij-extension) doesn't exist anymore.
 To fill all gaps and help users figure out required changes - right in the IDE - the `org.jetbrains.intellij.platform.migration` plugin was introduced:

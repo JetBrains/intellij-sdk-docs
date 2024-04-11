@@ -104,7 +104,7 @@ Finally, implement the `createPopup()` method, which returns the [popup](popups.
 
 Custom listeners to be notified of widget updates can be registered using `registerCustomListeners()`.
 
-To update a widget, use `update()`.
+To update a widget, use `update()` (`update { ... }` in Kotlin).
 
 ## Showing Widget in LightEdit Mode
 

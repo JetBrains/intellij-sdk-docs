@@ -267,7 +267,7 @@ See also:
 
 The plugin's display name, visible to users (Title Case).
 
-The provided value will be used to populate the [`<name>`](plugin_configuration_file.md#idea-plugin__name) element.
+The provided value is used to populate the [`<name>`](plugin_configuration_file.md#idea-plugin__name) element.
 
 {style="narrow"}
 Type
@@ -284,7 +284,7 @@ The plugin version, presented in the Plugins settings dialog and on its JetBrain
 
 For plugins uploaded to the JetBrains Marketplace, [semantic versioning](https://plugins.jetbrains.com/docs/marketplace/semver.html) must be adhered to.
 
-The provided value will be used as a [`<version>`](plugin_configuration_file.md#idea-plugin__version) element.
+The provided value is used as a [`<version>`](plugin_configuration_file.md#idea-plugin__version) element.
 
 {style="narrow"}
 Type
@@ -302,7 +302,7 @@ Basic HTML elements such as text formatting, paragraphs, and lists are permitted
 
 The description content is automatically enclosed in `<![CDATA[... ]]>`.
 
-The provided value will populate the [`<description>`](plugin_configuration_file.md#idea-plugin__description) element.
+The provided value is used to populate the [`<description>`](plugin_configuration_file.md#idea-plugin__description) element.
 
 {style="narrow"}
 Type
@@ -321,7 +321,7 @@ Basic HTML elements such as text formatting, paragraphs, and lists are permitted
 
 The change notes content is automatically enclosed in `<![CDATA[... ]]>`.
 
-The provided value will populate the [`<change-notes>`](plugin_configuration_file.md#idea-plugin__change-notes) element.
+The provided value is used to populate the [`<change-notes>`](plugin_configuration_file.md#idea-plugin__change-notes) element.
 
 {style="narrow"}
 Type
@@ -364,7 +364,7 @@ See also:
 
 The product code for the plugin, used in the JetBrains Sales System, needs to be pre-approved by JetBrains and must adhere to [specified requirements](https://plugins.jetbrains.com/docs/marketplace/obtain-a-product-code-from-jetbrains.html).
 
-The provided value will be utilized as a `<product-descriptor code="">` element attribute.
+The provided value is used for a `<product-descriptor code="">` element attribute.
 
 {style="narrow"}
 Type
@@ -380,7 +380,7 @@ See also:
 
 The release date of the major version, formatted as `YYYYMMDD`.
 
-The provided value will be used to populate the `<product-descriptor release-date="">` element attribute.
+The provided value is used for the `<product-descriptor release-date="">` element attribute.
 
 {style="narrow"}
 Type
@@ -396,7 +396,7 @@ See also:
 
 The major version, represented in a specific numerical format.
 
-The provided value will be used as the `<product-descriptor release-version="">` element attribute.
+The provided value is used for the `<product-descriptor release-version="">` element attribute.
 
 {style="narrow"}
 Type
@@ -412,7 +412,7 @@ See also:
 
 The boolean value that indicates if the plugin is a [Freemium](https://plugins.jetbrains.com/docs/marketplace/freemium.html) plugin.
 
-The provided value will be used for the `<product-descriptor optional="">` element attribute.
+The provided value is used for the `<product-descriptor optional="">` element attribute.
 
 {style="narrow"}
 Type
@@ -458,7 +458,7 @@ See also:
 
 The earliest IDE version that is compatible with the plugin.
 
-The provided value will be utilized as the `<idea-version since-build=""/>` element attribute.
+The provided value is used for the `<idea-version since-build=""/>` element attribute.
 
 The default value is set to the `MAJOR.MINOR` version based on the currently selected IntelliJ Platform, like `233.12345`.
 
@@ -480,7 +480,7 @@ The latest IDE version that is compatible with the plugin.
 An undefined value signifies compatibility with all IDEs starting from the version mentioned in `since-build`,
 including potential future builds that may cause compatibility issues.
 
-The provided value will be assigned to the `<idea-version until-build=""/>` element attribute.
+The provided value is used for the `<idea-version until-build=""/>` element attribute.
 
 The default value is set to the `MAJOR.*` version based on the currently selected IntelliJ Platform, such as `233.*`.
 
@@ -529,7 +529,7 @@ See also:
 
 The name of the vendor or the organization ID (if created), as displayed in the Plugins settings dialog and on the JetBrains Marketplace plugin page.
 
-The provided value will be used as the value for the `<vendor>` element.
+The provided value is used as the value for the `<vendor>` element.
 
 {style="narrow"}
 Type
@@ -544,7 +544,7 @@ See also:
 
 The email address of the vendor.
 
-The provided value will be utilized as the `<vendor email="">` element attribute.
+The provided value is used for the `<vendor email="">` element attribute.
 
 {style="narrow"}
 Type
@@ -559,7 +559,7 @@ See also:
 
 The URL to the vendor's homepage.
 
-The provided value will be assigned to the `<vendor url="">` element attribute.
+The provided value is used for the `<vendor url="">` element attribute.
 
 {style="narrow"}
 Type

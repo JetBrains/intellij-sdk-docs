@@ -800,7 +800,7 @@ See also:
 ### `defaultDestinationDirectory`
 {#prepareSandbox-defaultDestinationDirectory}
 
-Default sandbox destination directory to where the plugin files will be copied into.
+Default sandbox destination directory where the plugin files will be copied.
 
 {style="narrow"}
 Type
@@ -891,7 +891,7 @@ Prints the list of bundled plugins available within the currently targeted Intel
 
 Prints the list of binary product releases that, by default, match the currently selected IntelliJ Platform along with [`intellijPlatform.pluginConfiguration.ideaVersion.sinceBuild`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-ideaVersion-sinceBuild) and [`intellijPlatform.pluginConfiguration.ideaVersion.untilBuild`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-ideaVersion-untilBuild) properties.
 
-The filer used for retrieving the release list can be customized by using properties provided with [`ProductReleasesValueSource.FilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesValueSource-FilterParameters).
+The filter used for retrieving the release list can be customized by using properties provided with [`ProductReleasesValueSource.FilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesValueSource-FilterParameters).
 
 ### `productsReleases`
 {#printProductsReleases-productsReleases}

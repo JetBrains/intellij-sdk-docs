@@ -359,7 +359,9 @@
     <toc-element topic="build_number_ranges.md"/>
     <toc-element topic="intellij_artifacts.md"/>
     <toc-element toc-title="Extension Points and Listeners">
-      <toc-element toc-title="IntelliJ Platform, Plugins, Android" topic="extension_point_list.md"/>
+      <toc-element toc-title="IntelliJ Platform" topic="extension_point_list.md"/>
+      <toc-element toc-title="IntelliJ Community Plugins" topic="community_plugins_extension_point_list.md"/>
+      <toc-element toc-title="Android Plugin" topic="android_plugin_extension_point_list.md" />
       <toc-element toc-title="AppCode" topic="appcode_extension_point_list.md" />
       <toc-element toc-title="CLion" topic="clion_extension_point_list.md" />
       <toc-element toc-title="DataGrip" topic="data_grip_extension_point_list.md" />

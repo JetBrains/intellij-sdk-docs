@@ -4,7 +4,7 @@
 
 <link-summary>IntelliJ Platform Gradle Plugin dependencies extension.</link-summary>
 
-<include from="tools_intellij_platform_gradle_plugin.md" element-id="EAP_Status"/>
+<include from="tools_intellij_platform_gradle_plugin.md" element-id="Beta_Status"/>
 <include from="tools_intellij_platform_gradle_plugin.md" element-id="faq"/>
 
 IntelliJ Platform Gradle Plugin enhances the `dependencies {}` configuration block by applying a nested `dependencies.intellijPlatform {}` extension.
@@ -143,11 +143,11 @@ See also:
 
 ## Tools
 
-| Function                  | Description                                                                                                                   |
-|---------------------------|-------------------------------------------------------------------------------------------------------------------------------|
-| `pluginVerifier(version)` | Adds a dependency on [IntelliJ Plugin Verifier](verifying_plugin_compatibility.md).                                           |
-| `zipSigner(version)`      | Adds a dependency on [Marketplace ZIP Signer](plugin_signing.md).                                                             |
-| `bundledLibrary(path)`     | Adds a dependency on a Jar bundled within the current IntelliJ Platform, like <path>lib/annotations.jar</path> |
+| Function                  | Description                                                                                                    |
+|---------------------------|----------------------------------------------------------------------------------------------------------------|
+| `pluginVerifier(version)` | Adds a dependency on [IntelliJ Plugin Verifier](verifying_plugin_compatibility.md).                            |
+| `zipSigner(version)`      | Adds a dependency on [Marketplace ZIP Signer](plugin_signing.md).                                              |
+| `bundledLibrary(path)`    | Adds a dependency on a Jar bundled within the current IntelliJ Platform, like <path>lib/annotations.jar</path> |
 
 See also:
 

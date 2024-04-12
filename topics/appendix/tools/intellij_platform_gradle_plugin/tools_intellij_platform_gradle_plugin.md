@@ -6,7 +6,7 @@
 
 <tldr id="tldr">
 
-**Current Release**: %intellij-platform-gradle-plugin-version% (Early Access Preview)
+**Current Release**: %intellij-platform-gradle-plugin-version%
 
 **GitHub**: [Releases & Changelog](https://github.com/JetBrains/gradle-intellij-plugin/releases), [Issue Tracker](https://github.com/JetBrains/gradle-intellij-plugin/issues)
 
@@ -25,9 +25,9 @@ It is a successor of _[](tools_gradle_intellij_plugin.md) (1.x)_.
 
 </snippet>
 
-<snippet id="EAP_Status">
+<snippet id="Beta_Status">
 
-> IntelliJ Platform Gradle Plugin 2.x is currently in **Early Access Preview** and may not support all features and project setups yet (see also [](tools_intellij_platform_gradle_plugin.md#requirements)).
+> IntelliJ Platform Gradle Plugin 2.0.0 is currently in **Beta** and may not support all features and project setups yet (see also [](tools_intellij_platform_gradle_plugin.md#requirements)).
 > Please report bugs or problems in the GitHub issue tracker or Slack channel (see [here](tools_intellij_platform_gradle_plugin.md#tldr)).
 >
 > Any documentation issues should be reported using the feedback form on the bottom of this page.
@@ -66,9 +66,9 @@ plugins {
 
 If migrating from the Gradle IntelliJ Plugin `1.x`, replace the old `org.jetbrains.intellij` identifier to `org.jetbrain.intellij.platform` and apply its latest `%intellij-platform-gradle-plugin-version%` version.
 
-### Early Access Preview
+### Snapshot Release
 
-To use the current Early Access Preview snapshot versions, add the following to the <path>settings.gradle.kts</path> file:
+To use the latest snapshot versions, add the following to the <path>settings.gradle.kts</path> file:
 
 ```kotlin
 pluginManagement {

@@ -4,7 +4,7 @@
 
 <link-summary>IntelliJ Platform Gradle Plugin 2.x migration guide from Gradle IntelliJ Plugin 1.x</link-summary>
 
-<include from="tools_intellij_platform_gradle_plugin.md" element-id="EAP_Status"/>
+<include from="tools_intellij_platform_gradle_plugin.md" element-id="Beta_Status"/>
 
 ## Plugin Name Change
 

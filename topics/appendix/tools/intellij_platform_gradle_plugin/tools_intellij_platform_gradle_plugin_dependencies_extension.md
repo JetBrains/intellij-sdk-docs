@@ -149,6 +149,12 @@ See also:
 | `zipSigner(version)`      | Adds a dependency on [Marketplace ZIP Signer](plugin_signing.md).                                              |
 | `bundledLibrary(path)`    | Adds a dependency on a Jar bundled within the current IntelliJ Platform, like <path>lib/annotations.jar</path> |
 
+> The **`bundledLibrary(path)`** is not supposed to be used in production as direct access to the IntelliJ Platform libraries is not recommended.
+>
+> This helper is introduced to help provide workarounds when the IntelliJ Platform Gradle Plugin is not aligned with the latest IntelliJ Platform classpath changes.
+>
+{style="warning"}
+
 See also:
 
 - [](verifying_plugin_compatibility.md), [Tasks: `verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin)

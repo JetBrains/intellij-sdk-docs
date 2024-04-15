@@ -41,6 +41,16 @@ flowchart LR
     Module --> Test & Verify
     Platform --> Publish & Run & Module
 
+    subgraph ALL ["` `"]
+            Settings
+            Platform
+            Module
+            Migration
+    end
+
+    Migration --> Platform
+    Migration ~~~ Build
+
     click Platform "#platform"
     click Module "#module"
     click Settings "#settings"
@@ -55,6 +65,7 @@ flowchart LR
     style Platform stroke-width: 3px
     style Module stroke-width: 3px
     style Settings stroke-width: 3px
+    style ALL fill:transparent,stroke:transparent
 ```
 
 ## Platform
@@ -218,6 +229,8 @@ dependencies {
 
 The Migration plugin is designed to assist in upgrading projects using Gradle IntelliJ Plugin **1.x**.
 To prevent Gradle failing due to breaking changes, the `org.jetbrains.intellij.platform.migration` plugin was introduced to fill missing gaps and provide migration hints.
+
+It loads the [](#platform) plugin with additional mocks and checks applied — after the successful migration, it is recommended to replace the `org.jetbrains.intellij.platform.migration` identifier with `org.jetbrains.intellij.platform`.
 
 See [](tools_intellij_platform_gradle_plugin_migration.md) for more details.
 

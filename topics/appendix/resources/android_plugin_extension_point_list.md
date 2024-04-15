@@ -6,6 +6,12 @@
 
 <link-summary>Overview of Extension Points and Listeners for Android Plugin.</link-summary>
 
+<tldr>
+
+**Product-Specific Plugin Development**: [Android Studio](android_studio.md)
+
+</tldr>
+
 60 Extension Points and 29 Listeners for Android Plugin
 
 <include from="snippets.md" element-id="ep_list_legend"/>

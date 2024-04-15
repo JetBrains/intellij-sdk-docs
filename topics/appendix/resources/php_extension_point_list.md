@@ -6,6 +6,12 @@
 
 <link-summary>Overview of Extension Points and Listeners for PHP.</link-summary>
 
+<tldr>
+
+**Product-Specific Plugin Development**: [PhpStorm](phpstorm.md)
+
+</tldr>
+
 61 Extension Points and 11 Listeners for PHP
 
 See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.

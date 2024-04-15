@@ -6,6 +6,12 @@
 
 <link-summary>Overview of Extension Points and Listeners for GoLand.</link-summary>
 
+<tldr>
+
+**Product-Specific Plugin Development**: [GoLand](goland.md)
+
+</tldr>
+
 17 Extension Points and 5 Listeners for GoLand
 
 See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.

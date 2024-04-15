@@ -6,6 +6,12 @@
 
 <link-summary>Overview of Extension Points and Listeners for Rider.</link-summary>
 
+<tldr>
+
+**Product-Specific Plugin Development**: [Rider](rider.md)
+
+</tldr>
+
 128 Extension Points and 7 Listeners for Rider
 
 See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.

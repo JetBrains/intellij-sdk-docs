@@ -6,8 +6,14 @@
 
 <link-summary>Overview of Extension Points and Listeners for Spring API.</link-summary>
 
+<tldr>
+
+**Product-Specific Plugin Development**: [IntelliJ IDEA Ultimate](idea_ultimate.md)
+
+</tldr>
+
 > Spring API Extension Points and Listeners are available in the Spring-related plugins,
-> which are available in [](idea_ultimate.md) only.
+> which are available in IntelliJ IDEA Ultimate only.
 >
 {style="note"}
 

@@ -307,25 +307,14 @@
     <toc-element topic="android_studio.md" toc-title="Android Studio">
       <toc-element topic="android_studio_releases_list.md"/>
     </toc-element>
-    <toc-element topic="app_code.md" toc-title="AppCode">
-      <toc-element topic="appcode_extension_point_list.md"/>
-    </toc-element>
-    <toc-element topic="clion.md" toc-title="CLion">
-      <toc-element topic="clion_extension_point_list.md"/>
-    </toc-element>
-    <toc-element topic="data_grip.md" toc-title="DataGrip">
-      <toc-element topic="data_grip_extension_point_list.md"/>
-    </toc-element>
-    <toc-element topic="goland.md" toc-title="GoLand">
-      <toc-element topic="goland_extension_point_list.md"/>
-    </toc-element>
+    <toc-element topic="app_code.md" toc-title="AppCode"/>
+    <toc-element topic="clion.md" toc-title="CLion"/>
+    <toc-element topic="data_grip.md" toc-title="DataGrip"/>
+    <toc-element topic="goland.md" toc-title="GoLand"/>
     <toc-element topic="idea.md" toc-title="IntelliJ IDEA">
       <toc-element topic="idea_ultimate.md">
-        <toc-element topic="oss_plugins_extension_point_list.md"/>
         <toc-element topic="tomcat_integration.md"/>
-        <toc-element topic="spring_api.md">
-          <toc-element topic="spring_extension_point_list.md"/>
-        </toc-element>
+        <toc-element topic="spring_api.md"/>
       </toc-element>
     </toc-element>
     <toc-element topic="phpstorm.md"
@@ -338,20 +327,13 @@
           <toc-element topic="php_open_api_breaking_changes_202.md" toc-title="2020.2"/>
         </toc-element>
       </toc-element>
-      <toc-element topic="php_extension_point_list.md"/>
       <toc-element topic="existing_plugins.md" accepts-web-file-names="existing_plugins.html"
                    toc-title="Existing Third Party Plugins"/>
     </toc-element>
     <toc-element topic="pycharm.md" toc-title="PyCharm"/>
-    <toc-element topic="rider.md" toc-title="Rider">
-      <toc-element topic="rider_extension_point_list.md"/>
-    </toc-element>
-    <toc-element topic="rubymine.md" toc-title="RubyMine">
-      <toc-element topic="rubymine_extension_point_list.md"/>
-    </toc-element>
-    <toc-element topic="webstorm.md" toc-title="WebStorm">
-      <toc-element topic="webstorm_extension_point_list.md"/>
-    </toc-element>
+    <toc-element topic="rider.md" toc-title="Rider"/>
+    <toc-element topic="rubymine.md" toc-title="RubyMine"/>
+    <toc-element topic="webstorm.md" toc-title="WebStorm"/>
   </toc-element>
   <toc-element toc-title="Custom IDEs">
     <toc-element toc-title="Build Your Own IDE"/>
@@ -376,7 +358,21 @@
     <toc-element topic="explore_api.md" toc-title="Explore the API"/>
     <toc-element topic="build_number_ranges.md"/>
     <toc-element topic="intellij_artifacts.md"/>
-    <toc-element topic="extension_point_list.md"/>
+    <toc-element toc-title="Extension Points and Listeners">
+      <toc-element toc-title="IntelliJ Platform" topic="intellij_platform_extension_point_list.md" accepts-web-file-names="extension-point-list.html"/>
+      <toc-element toc-title="IntelliJ Community Plugins" topic="intellij_community_plugins_extension_point_list.md"/>
+      <toc-element toc-title="Android Plugin" topic="android_plugin_extension_point_list.md" />
+      <toc-element toc-title="AppCode" topic="appcode_extension_point_list.md" />
+      <toc-element toc-title="CLion" topic="clion_extension_point_list.md" />
+      <toc-element toc-title="DataGrip" topic="data_grip_extension_point_list.md" />
+      <toc-element toc-title="GoLand" topic="goland_extension_point_list.md" />
+      <toc-element toc-title="Open Source Plugins" topic="oss_plugins_extension_point_list.md" />
+      <toc-element toc-title="PhpStorm" topic="php_extension_point_list.md" />
+      <toc-element toc-title="Rider" topic="rider_extension_point_list.md" />
+      <toc-element toc-title="RubyMine" topic="rubymine_extension_point_list.md" />
+      <toc-element toc-title="Spring" topic="spring_extension_point_list.md" />
+      <toc-element toc-title="WebStorm" topic="webstorm_extension_point_list.md" />
+    </toc-element>
     <toc-element topic="useful_links.md" accepts-web-file-names="resources.html"/>
     <toc-element topic="learning_resources.md"/>
     <toc-element topic="marketing.md"/>

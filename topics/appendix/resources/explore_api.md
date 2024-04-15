@@ -25,7 +25,7 @@ Furthermore, the tips below will help build your confidence as you explore the I
 ### 1.1 Browse Lists of EPs
 
 The most important resource for discovering new EPs is the extensive list provided directly in the
-[IntelliJ Platform SDK Documentation](extension_point_list.md).
+[IntelliJ Platform SDK Documentation](intellij_platform_extension_point_list.md).
 On this page, you will find all the EPs, and each entry includes a link to the online source code and a link to the
 [IntelliJ Platform Explorer](https://jb.gg/ipe),
 which helps you find examples of this EP in other plugins.
@@ -183,7 +183,7 @@ Here is a condensed list you can use for further reference:
 
 - [](useful_links.md)
 - [](learning_resources.md)
-- [](extension_point_list.md)
+- [](intellij_platform_extension_point_list.md)
 - Section on [exploring module and plugin APIs](plugin_compatibility.md#exploring-module-and-plugin-apis).
 - List of [notable](api_notable.md) and [incompatible](api_changes_list.md) API changes.
 

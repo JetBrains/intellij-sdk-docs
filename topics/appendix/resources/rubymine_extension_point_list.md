@@ -6,9 +6,15 @@
 
 <link-summary>Overview of Extension Points and Listeners for RubyMine.</link-summary>
 
+<tldr>
+
+**Product-Specific Plugin Development**: [RubyMine](rubymine.md)
+
+</tldr>
+
 80 Extension Points and 12 Listeners for RubyMine
 
-See [](extension_point_list.md) for IntelliJ Platform.
+See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 
 <include from="snippets.md" element-id="ep_list_legend"/>
 

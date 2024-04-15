@@ -39,7 +39,7 @@ It also provides ways of delaying code execution until indexes are ready.
 
 Implementations of certain [](plugin_extension_points.md) can be marked as available during Dumb Mode by implementing
 [`DumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbAware.java).
-Such Extension Points are marked with _DumbAware_ tag in [](extension_point_list.md).
+Such Extension Points are marked with _DumbAware_ tag in [](intellij_platform_extension_point_list.md).
 Commonly used include [`CompletionContributor`](code_completion.md), [`(External)Annotator`](syntax_highlighting_and_error_highlighting.md#annotator) and various
 [run configuration](run_configurations.md) EPs.
 

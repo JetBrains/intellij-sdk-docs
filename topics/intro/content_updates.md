@@ -18,6 +18,7 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 Minor Changes and Additions
 :
 - How to mark functionality available during indexing via [](indexing_and_psi_stubs.md#DumbAwareAPI).
+- Move Extension Point and Listener Lists to the _Resources_ section and split the main _Extension Point and Listener List_ into: _IntelliJ Platform_, _IntelliJ Community Plugins_, and _Android Plugin_.
 
 ### March
 {#march-24}
@@ -310,7 +311,7 @@ IDE Infrastructure
 : [](ide_infrastructure.md) handles Logging, Error Reporting, Runtime Information, and how to provide Context Help.
 
 Extension Point Lists: Listeners, Deprecation status
-: [](extension_point_list.md) now contains sections listing all provided [Listener](plugin_listeners.md) Topics. See also corresponding Extension Point Lists under _Product Specific_. Also, all deprecated API now has a dedicated tag.
+: [](intellij_platform_extension_point_list.md) now contains sections listing all provided [Listener](plugin_listeners.md) Topics. See also corresponding Extension Point Lists under _Product Specific_. Also, all deprecated API now has a dedicated tag.
 
 ### July
 {#july-21}
@@ -357,13 +358,13 @@ Unified AST
 {#december-20}
 
 IntelliJ Platform Explorer
-: Explore usages of [Extension Points](extension_point_list.md) in open-source plugins using [IntelliJ Platform Explorer](https://jb.gg/ipe).
+: Explore usages of [Extension Points](intellij_platform_extension_point_list.md) in open-source plugins using [IntelliJ Platform Explorer](https://jb.gg/ipe).
 
 ### November
 {#november-20}
 
 Extension Point List
-: All EPs [available in IJ Platform and Android](extension_point_list.md) can now be browsed conveniently.
+: All EPs [available in IJ Platform and Android](intellij_platform_extension_point_list.md) can now be browsed conveniently.
 
 ### August
 {#august-20}

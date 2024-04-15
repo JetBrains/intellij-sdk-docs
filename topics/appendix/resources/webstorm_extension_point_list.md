@@ -11,9 +11,15 @@
 
 <link-summary>Overview of Extension Points and Listeners for WebStorm.</link-summary>
 
+<tldr>
+
+**Product-Specific Plugin Development**: [WebStorm](webstorm.md)
+
+</tldr>
+
 74 Extension Points and 5 Listeners for WebStorm
 
-See [](extension_point_list.md) for IntelliJ Platform and [](oss_plugins_extension_point_list.md) for additional plugins.
+See [](intellij_platform_extension_point_list.md) for IntelliJ Platform and [](oss_plugins_extension_point_list.md) for additional plugins.
 
 <include from="snippets.md" element-id="ep_list_legend"/>
 

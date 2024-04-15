@@ -53,7 +53,7 @@ Bundled plugins are located in <path>$PRODUCT_ROOT$/plugins/$PLUGIN_NAME$/lib/$P
 #### IDs of Bundled Plugins
 
 The following table lists some commonly used bundled plugins and their ID.
-See also [](extension_point_list.md#intellij-community-plugins) and [](plugin_compatibility.md#modules-specific-to-functionality).
+See also [](intellij_community_plugins_extension_point_list.md) and [](plugin_compatibility.md#modules-specific-to-functionality).
 
 | Plugin Name               | Plugin ID                       | Related Documentation         |
 |---------------------------|---------------------------------|-------------------------------|

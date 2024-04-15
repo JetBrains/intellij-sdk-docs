@@ -73,7 +73,7 @@ Includes details on how to set up the theme project, customize, build, and publi
 
 #### Resources
 
-Links to [useful resources](useful_links.md), a [](glossary.md), [](extension_point_list.md), tips on how to [](explore_api.md) and [](learning_resources.md).
+Links to [useful resources](useful_links.md), a [](glossary.md), [](intellij_platform_extension_point_list.md), tips on how to [](explore_api.md) and [](learning_resources.md).
 
 #### API and Compatibility
 

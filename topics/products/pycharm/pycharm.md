@@ -33,7 +33,7 @@ See the SDK code sample [`pycharm_basics`](%gh-sdk-samples%/product_specific/pyc
 Please note that this code sample must be imported into Gradle explicitly, as it is not included in the `_gradleCompositeBuild`.
 
 ## Available PyCharm APIs
-See [](extension_point_list.md) for PyCharm Community.
+See [](intellij_community_plugins_extension_point_list.md) for PyCharm Community.
 
 The plugin [Python](https://plugins.jetbrains.com/plugin/631-python) (Plugin ID `Pythonid`) defines the APIs for PyCharm Professional.
 

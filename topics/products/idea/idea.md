@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # IntelliJ IDEA Plugin Development
 
@@ -24,7 +24,7 @@ The configuration of IntelliJ IDEA plugin projects follows the methods described
 
 ## Available API
 
-See [](extension_point_list.md#intellij-community-plugins) for API from bundled plugins.
+See [](intellij_community_plugins_extension_point_list.md) for API from bundled plugins.
 
 [](idea_ultimate.md) provides information specific to this edition.
 
@@ -38,7 +38,7 @@ Depending on exact functionality, a plugin can also target [](uast.md) to suppor
 
 Relevant Extension Points:
 
-- [](extension_point_list.md#javaanalysispluginxml)
-- [](extension_point_list.md#javaindexingpluginxml)
-- [](extension_point_list.md#javapluginxml)
-- [](extension_point_list.md#javapsipluginxml)
+- [](intellij_community_plugins_extension_point_list.md#javaanalysispluginxml)
+- [](intellij_community_plugins_extension_point_list.md#javaindexingpluginxml)
+- [](intellij_community_plugins_extension_point_list.md#javapluginxml)
+- [](intellij_community_plugins_extension_point_list.md#javapsipluginxml)

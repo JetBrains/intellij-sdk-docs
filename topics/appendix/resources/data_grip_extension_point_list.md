@@ -6,9 +6,15 @@
 
 <link-summary>Overview of Extension Points and Listeners for DataGrip.</link-summary>
 
+<tldr>
+
+**Product-Specific Plugin Development**: [DataGrip](data_grip.md)
+
+</tldr>
+
 75 Extension Points and 28 Listeners for DataGrip
 
-See [](extension_point_list.md) for IntelliJ Platform.
+See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 
 <include from="snippets.md" element-id="ep_list_legend"/>
 

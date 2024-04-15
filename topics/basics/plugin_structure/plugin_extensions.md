@@ -16,7 +16,7 @@ There are more than 1500 extension points available in the platform and the bund
 
 ## Exploring Available Extensions
 
-[](extension_point_list.md) lists all available extension points in IntelliJ Platform and from bundled plugins in IntelliJ IDEA.
+[](intellij_platform_extension_point_list.md) and [](intellij_community_plugins_extension_point_list.md) list all available extension points in IntelliJ Platform and from bundled plugins in IntelliJ IDEA.
 Additionally, dedicated Extension Point and Listener Lists specific to IDEs are available under _Product Specific_.
 Browse usages inside existing implementations of open-source IntelliJ Platform plugins via [IntelliJ Platform Explorer](https://jb.gg/ipe).
 

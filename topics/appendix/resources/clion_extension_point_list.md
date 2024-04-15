@@ -6,9 +6,15 @@
 
 <link-summary>Overview of Extension Points and Listeners for CLion.</link-summary>
 
+<tldr>
+
+**Product-Specific Plugin Development**: [CLion](clion.md)
+
+</tldr>
+
 135 Extension Points and 40 Listeners for CLion
 
-See [](extension_point_list.md) for IntelliJ Platform.
+See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 
 <include from="snippets.md" element-id="ep_list_legend"/>
 

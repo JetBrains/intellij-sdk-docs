@@ -119,7 +119,7 @@ To implement tests for IntelliJ Platform plugin, it is necessary to explicitly a
 In most cases, the `Platform.JUnit4` package will be needed:
 
 ```kotlin
-import org.jetbrains.intellij.platform.gradle.extensions.TestFrameworkType
+import org.jetbrains.intellij.platform.gradle.TestFrameworkType
 
 dependencies {
   intellijPlatform {

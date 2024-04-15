@@ -180,6 +180,8 @@ See also:
 ## `TestFrameworkType`
 {#TestFrameworkType}
 
+[`TestFrameworkType`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/TestFrameworkType.kt)
+
 Allows for adding `test-framework` testing library variants. See [Dependencies Extension: Testing](tools_intellij_platform_gradle_plugin_dependencies_extension.md#testing).
 
 | Name                | Coordinates                                                   |

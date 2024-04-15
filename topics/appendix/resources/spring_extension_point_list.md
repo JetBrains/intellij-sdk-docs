@@ -6,6 +6,11 @@
 
 <link-summary>Overview of Extension Points and Listeners for Spring API.</link-summary>
 
+> Spring API Extension Points and Listeners are available in the Spring-related plugins,
+> which are available in [](idea_ultimate.md) only.
+>
+{style="note"}
+
 53 Extension Points and 5 Listeners for Spring API
 
 <include from="snippets.md" element-id="ep_list_legend"/>

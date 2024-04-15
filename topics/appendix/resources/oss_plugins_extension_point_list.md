@@ -12,11 +12,12 @@
 
 </tldr>
 
-Overview of Extension Points and Listeners for OSS plugins bundled with [](idea_ultimate.md) and other IDEs.
+Overview of Extension Points and Listeners for open source plugins available in [](idea_ultimate.md) and other IDEs.
+
+25 Extension Points and 9 Listeners
 
 <include from="snippets.md" element-id="ep_list_legend"/>
 
-25 Extension Points and 9 Listeners
 
 ## IntelliJ Open Source Plugins
 

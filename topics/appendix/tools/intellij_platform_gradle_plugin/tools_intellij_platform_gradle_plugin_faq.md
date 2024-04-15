@@ -172,4 +172,64 @@ tasks {
 }
 ```
 
+### The currently selected Java Runtime is not JetBrains Runtime (JBR)
+
+When running tests or IDE with your plugin loaded, it is necessary to use JetBrains Runtime (JBR).
+In the case, no JBR is found in the plugin configuration, there's the following warning logged by the [`verifyPluginProjectConfiguration`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginProjectConfiguration) task:
+
+
+```
+The currently selected Java Runtime is not JetBrains Runtime (JBR).
+This may lead to unexpected IDE behaviors.
+Please use IntelliJ Platform binary release with bundled JBR
+or define it explicitly with project dependencies or JVM Toolchain.
+```
+
+To correctly run your tests or a specific IDE:
+- use a binary IDE distribution with bundled JetBrains Runtime, i.e., by referring to a local IDE [`local(localPath)`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#custom-target-platforms)
+  ```kotlin
+  repositories {
+    mavenCentral()
+
+    intellijPlatform {
+      defaultRepositories()
+    }
+  }
+
+  dependencies {
+    intellijPlatform {
+      local("/Users/hsz/Applications/IntelliJ IDEA Ultimate.app")
+    }
+  }
+  ```
+
+- add an explicit dependency on a JetBrains Runtime with [`jetbrainsRuntime()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#java-runtime)
+  ```kotlin
+  repositories {
+    mavenCentral()
+
+    intellijPlatform {
+      defaultRepositories()
+      jetbrainsRuntime()
+    }
+  }
+
+  dependencies {
+    intellijPlatform {
+      intellijIdeaCommunity("%ijPlatform%")
+      jetbrainsRuntime(...)
+    }
+  }
+  ```
+- specify the vendor when configuring the JVM Toolchain along with [Foojay Toolchains Plugin](https://github.com/gradle/foojay-toolchains):
+  ```kotlin
+  kotlin {
+    jvmToolchain {
+      languageVersion = JavaLanguageVersion.of(17)
+      vendor = JvmVendorSpec.JETBRAINS
+    }
+  }
+  ```
+
+
 <include from="snippets.md" element-id="missingContent"/>

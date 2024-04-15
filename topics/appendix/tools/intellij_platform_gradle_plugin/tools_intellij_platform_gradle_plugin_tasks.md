@@ -1325,6 +1325,7 @@ Validates the plugin project configuration:
 - The Kotlin plugin in version `1.8.20` is not used with IntelliJ Platform Gradle Plugin due to the 'java.lang.OutOfMemoryError: Java heap space' exception.
 - The Kotlin Coroutines library should not be added explicitly to the project as it is already provided with the IntelliJ Platform.
 - The IntelliJ Platform cache directory should be excluded from the version control system. Add the `.intellijPlatform`'` entry to the <path>.gitignore</path> file.
+- The currently selected Java Runtime is not JetBrains Runtime (JBR).
 
 For more details regarding the Java version used in the specific IntelliJ SDK, see [](build_number_ranges.md).
 

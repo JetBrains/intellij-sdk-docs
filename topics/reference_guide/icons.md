@@ -130,6 +130,7 @@ Required icon sizes depend on the usage as listed in the following table:
 | Node, Action, Filetype | 16x16              |
 | Tool window            | 13x13              |
 | Editor gutter          | 12x12              |
+| Editor gutter (New UI) | 14x14              |
 
 ### SVG Format
 

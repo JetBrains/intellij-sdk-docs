@@ -115,8 +115,8 @@ See also:
 
 ## Testing
 
-To implement tests for IntelliJ Platform plugin, it is necessary to explicitly add a dependency on the `test-framework` library containing IntelliJ Platform test classes.
-In most cases, the `Platform.JUnit4` package will be needed:
+To implement [tests](testing_plugins.md) for IntelliJ Platform plugin, it is necessary to explicitly add a dependency on the `test-framework` library containing the necessary test base classes.
+In most cases, the `Platform.JUnit4` variant will be used:
 
 ```kotlin
 import org.jetbrains.intellij.platform.gradle.TestFrameworkType

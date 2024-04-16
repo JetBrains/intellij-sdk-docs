@@ -219,7 +219,7 @@ Throws
 
 </tldr>
 
-Provides the dependency on Java Compiler required for the [](tools_intellij_platform_gradle_plugin.md#code-instrumentation) to properly configure Ant tasks provided by the IntelliJ Platform.
+Provides the dependency on Java Compiler required for the [code instrumentation](tools_intellij_platform_gradle_plugin_tasks.md#instrumentCode) to properly configure Ant tasks provided by the IntelliJ Platform.
 
 
 ### `javaCompilerConfiguration`

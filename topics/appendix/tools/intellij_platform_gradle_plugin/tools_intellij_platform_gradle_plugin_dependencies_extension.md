@@ -185,6 +185,6 @@ If the exact version is unavailable, the closest one is used, found by scanning 
 | <p>`instrumentationTools()`</p>                       | A helper function to apply all required dependencies: `javaCompiler()` |
 | <p>`javaCompiler()`</p><p>`javaCompiler(version)`</p> | Adds a dependency on Java Compiler.                                    |
 
-- [](tools_intellij_platform_gradle_plugin.md#code-instrumentation)
+- [](tools_intellij_platform_gradle_plugin_tasks.md#instrumentCode)
 
 <include from="snippets.md" element-id="missingContent"/>

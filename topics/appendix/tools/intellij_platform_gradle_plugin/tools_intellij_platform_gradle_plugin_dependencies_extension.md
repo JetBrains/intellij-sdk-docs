@@ -143,15 +143,15 @@ See also:
 
 ## Tools
 
-| Function                  | Description                                                                                                    |
-|---------------------------|----------------------------------------------------------------------------------------------------------------|
-| `pluginVerifier(version)` | Adds a dependency on [IntelliJ Plugin Verifier](verifying_plugin_compatibility.md).                            |
-| `zipSigner(version)`      | Adds a dependency on [Marketplace ZIP Signer](plugin_signing.md).                                              |
-| `bundledLibrary(path)`    | Adds a dependency on a Jar bundled within the current IntelliJ Platform, like <path>lib/annotations.jar</path> |
+| Function                  | Description                                                                                                                                |
+|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| `pluginVerifier(version)` | Adds a dependency on [IntelliJ Plugin Verifier](verifying_plugin_compatibility.md).                                                        |
+| `zipSigner(version)`      | Adds a dependency on [Marketplace ZIP Signer](plugin_signing.md).                                                                          |
+| `bundledLibrary(path)`    | **SEE NOTE BELOW** Adds a dependency on a bundled library JAR file of the current IntelliJ Platform, like <path>lib/annotations.jar</path> |
 
-> The **`bundledLibrary(path)`** is not supposed to be used in production as direct access to the IntelliJ Platform libraries is not recommended.
+> Do not use **`bundledLibrary()`** in production, as direct access to the IntelliJ Platform libraries is not recommended.
 >
-> This helper is introduced to help provide workarounds when the IntelliJ Platform Gradle Plugin is not aligned with the latest IntelliJ Platform classpath changes.
+> It should only be used as a workaround in case the IntelliJ Platform Gradle Plugin is not aligned with the latest IntelliJ Platform classpath changes.
 >
 {style="warning"}
 

@@ -41,20 +41,26 @@
 
         <misc>
             <cards>
+                <title>Staying up to date</title>
+                <a href="content_updates.md" summary="Latest updates to the documentation."/>
+                <a href="https://jb.gg/mp-updates" summary="Subscribe to receive news and announcements.">Marketplace
+                    Developer News</a>
+            </cards>
+
+            <cards narrow="true">
+                <title>Tracking API Changes</title>
+                <a href="verifying_plugin_compatibility.md" summary="Using Plugin Verifier and IDE features.">Compatibility
+                    Tooling</a>
+                <a href="api_changes_list.md" summary="Known breaking changes.">Incompatible API Changes</a>
+                <a href="api_notable.md" summary="Notable changes and new features.">Notable API Changes</a>
+            </cards>
+
+            <cards>
                 <title>Tools</title>
                 <a href="https://jb.gg/ipe" summary="Explore extensions and listeners in open source plugins.">IntelliJ
                     Platform Explorer</a>
                 <a href="https://plugins.jetbrains.com/plugin-ideas/"
                    summary="Browse and vote on suggestions for new plugins.">Plugin Ideas</a>
-            </cards>
-
-            <cards>
-                <title>Staying up to date</title>
-                <a href="content_updates.md" summary="Latest updates to the documentation."/>
-                <a href="https://jb.gg/mp-updates" summary="Subscribe to receive news and announcements.">Marketplace
-                    Developer News</a>
-                <a href="api_changes_list.md" summary="Known breaking changes.">Incompatible API Changes</a>
-                <a href="api_notable.md" summary="Notable changes and new features.">Notable API Changes</a>
             </cards>
         </misc>
 

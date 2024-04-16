@@ -421,7 +421,7 @@
       <toc-element topic="tools_intellij_platform_gradle_plugin_types.md"/>
       <toc-element topic="tools_intellij_platform_gradle_plugin_gradle_properties.md"/>
       <toc-element topic="tools_intellij_platform_gradle_plugin_migration.md"/>
-      <toc-element topic="tools_intellij_platform_gradle_plugin_faq.md"/>
+      <toc-element topic="tools_intellij_platform_gradle_plugin_faq.md" toc-title="Frequently Asked Questions"/>
     </toc-element>
     <toc-element topic="tools_gradle_grammar_kit_plugin.md"/>
     <toc-element toc-title="IDE Tooling">

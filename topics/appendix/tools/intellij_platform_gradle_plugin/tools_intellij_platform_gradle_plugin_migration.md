@@ -1,6 +1,6 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# Migration Guide from Gradle IntelliJ Plugin
+# Migrating from Gradle IntelliJ Plugin
 
 <link-summary>IntelliJ Platform Gradle Plugin 2.x migration guide from Gradle IntelliJ Plugin 1.x</link-summary>
 

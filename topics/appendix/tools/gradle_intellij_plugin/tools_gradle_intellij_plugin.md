@@ -599,6 +599,10 @@ Assembles a plugin and prepares ZIP archive for [deployment](publishing_plugin.m
 
 `buildPlugin` task extends the [`Zip`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Zip.html) Gradle task.
 
+> Do not repackage libraries into the main plugin archive, see [](plugin_content.md#plugin-with-dependencies).
+>
+{style="warning"}
+
 #### `archiveBaseName`
 {#tasks-buildplugin-archivebasename}
 

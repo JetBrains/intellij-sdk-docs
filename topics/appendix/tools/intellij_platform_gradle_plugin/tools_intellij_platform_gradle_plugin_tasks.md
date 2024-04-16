@@ -163,6 +163,9 @@ The produced archive is stored in the <path>[buildDirectory]/distributions/[`arc
 The [`archiveFile`](#buildPlugin-archiveFile) name and location can be controlled with properties provided with the [`Zip`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Zip.html) base task.
 By default, the `archiveBaseName` is set to the plugin name specified in the <path>plugin.xml</path> file, after it gets patched with the [`patchPluginXml`](#patchPluginXml) task.
 
+> Do not repackage libraries into the main plugin archive, see [](plugin_content.md#plugin-with-dependencies).
+>
+{style="warning"}
 
 ### `archiveFile`
 {#buildPlugin-archiveFile}

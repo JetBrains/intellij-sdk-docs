@@ -86,10 +86,10 @@ The following table contains the possible translated elements and information ab
 | Message bundles<p>(<path>*.properties</path> files)</p>                                                                                                                     | Yes           | Since 2024.1     |
 | [Inspection descriptions](code_inspections.md#inspection-description)<p>(<path>*.html</path> files in <path>/inspectionDescriptions</path> directory)</p>                   | Yes           | Since 2024.1     |
 | [Intention descriptions](code_intentions.md#about-intention-actions)<p>(<path>*.html</path> files in <path>/intentionDescriptions</path> directory)</p>                     | Yes           | Since 2024.1     |
-| tips of the day<p><path>*.html</path> files in <path>tips</path> directory</p>                                                                                              | Yes           | Since 2024.1     |
 | [searchable options](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions)<p>(<path>*.xml</path> file in <path>/search</path>)</p>                         | Yes           | 2024.2 (planned) |
 | [File template descriptions](providing_file_templates.md#creating-file-template-description)<p>(<path>*.html</path> files in the <path>/fileTemplates</path> directory)</p> | Yes           | 2024.2 (planned) |
 | [Postfix template descriptions](postfix_templates.md#postfix-template-description)<p>(<path>*.xml</path> file in <path>/postfixTemplates</path> directory)</p>              | Yes           | 2024.2 (planned) |
+| tips of the day<p><path>*.html</path> files in <path>tips</path> directory</p>                                                                                              | Yes           | 2024.2 (planned) |
 
 ## Translation Priority
 

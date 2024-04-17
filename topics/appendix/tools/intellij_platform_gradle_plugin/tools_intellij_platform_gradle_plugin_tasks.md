@@ -9,9 +9,13 @@
 
 The IntelliJ Platform Gradle Plugin introduces a set of tasks to handle activities of the plugin development for IntelliJ-based IDEs, such as building, verifying, testing, and publishing the plugin archive.
 
-Tasks are applied to the project with [](tools_intellij_platform_gradle_plugin_plugins.md) depending on their contect.
+Tasks related to the IntelliJ Platform Gradle Plugin are selectively applied to your project based on specific conditions or criteria defined within the plugin's context.
+This means that the plugin intelligently determines which tasks are relevant and necessary based on the current state or configuration of your project.
+This contextual application of tasks ensures that the plugin operates efficiently, performing only those actions that are appropriate for the given project environment at any time.
 
-Each of the tasks has relations described between each other, inherit from [](tools_intellij_platform_gradle_plugin_task_awares.md) interfaces, respect configuration and build cache, and can be configured independently, but for the most cases, the [](tools_intellij_platform_gradle_plugin_extension.md) covers all necessary cases.
+Tasks have dependencies on each other, they inherit from [](tools_intellij_platform_gradle_plugin_task_awares.md) interfaces, respect configuration and build cache,
+and can be configured independently.
+However, most cases will be covered by the [](tools_intellij_platform_gradle_plugin_extension.md).
 
 ```mermaid
 flowchart LR
@@ -159,8 +163,9 @@ Builds the plugin and prepares the ZIP archive for testing and deployment.
 
 It takes the output of the [`prepareSandbox`](#prepareSandbox) task containing the built project with all its modules and dependencies, and the output of [`jarSearchableOptions`](#jarSearchableOptions) task.
 
-The produced archive is stored in the <path>[buildDirectory]/distributions/[`archiveFile`](#buildPlugin-archiveFile)</path> file.
-The [`archiveFile`](#buildPlugin-archiveFile) name and location can be controlled with properties provided with the [`Zip`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Zip.html) base task.
+The produced archive is stored in <path>[buildDirectory]/distributions/[`archiveFile`](#buildPlugin-archiveFile)</path>,
+where the name and location of [`archiveFile`](#buildPlugin-archiveFile) can be controlled with properties provided with the
+[`Zip`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Zip.html) base task.
 By default, the `archiveBaseName` is set to the plugin name specified in the <path>plugin.xml</path> file, after it gets patched with the [`patchPluginXml`](#patchPluginXml) task.
 
 > Do not repackage libraries into the main plugin archive, see [](plugin_content.md#plugin-with-dependencies).
@@ -205,7 +210,7 @@ It is possible to mute this warning with the [`paidPluginSearchableOptionsWarnin
 ### `outputDirectory`
 {#buildSearchableOptions-outputDirectory}
 
-The directory to which searchable options will be generated.
+The directory where searchable options will be generated.
 
 {style="narrow"}
 Type
@@ -241,8 +246,8 @@ Default value
 </tldr>
 
 This task is executed before every other task introduced by IntelliJ Platform Gradle Plugin to prepare it to run.
-
 It is responsible for:
+
 - checking if the project uses IntelliJ Platform Gradle Plugin in the latest available version
 - preparing the KotlinX Coroutines Java Agent file to enable coroutines debugging when developing the plugin
 
@@ -254,9 +259,7 @@ To make the Coroutines Java Agent available for the task, inherit from [`Corouti
 ### `offline`
 {#initializeIntelliJPlatformPlugin-offline}
 
-Determines if the operation is running in offline mode.
-
-Depends on Gradle start parameters.
+Determines if the operation is running in offline mode, and depends on Gradle start parameters.
 
 {style="narrow"}
 Type
@@ -328,11 +331,10 @@ Type
 
 </tldr>
 
-Task dedicated to executing the code instrumentation using the Ant tasks provided with the currently used IntelliJ Platform dependency.
+Task dedicated to executing the code instrumentation using the Ant tasks provided by the used IntelliJ Platform dependency.
+The code instrumentation scans the compiled Java and Kotlin classes for JetBrains Annotations usages to replace them with their relevant functionalities.
 
-The code instrumentation scans the compiled Java and Kotlin classes for JetBrains Annotations usages to replace them with relevant functionalities they're responsible for.
-
-This task is controlled with the [`intellijPlatform.instrumentCode`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-instrumentCode) extension property, enabled by default.
+The task is controlled with the [`intellijPlatform.instrumentCode`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-instrumentCode) extension property, enabled by default.
 To properly run the instrumentation, it is required to add [`instrumentationTools()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#code-instrumentation) dependencies to the project.
 This dependency is available via the [`intellijDependencies()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) repository, which can be added separately or using the [`defaultRepositories()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories) helper.
 
@@ -454,7 +456,7 @@ Default value
 ### `inputDirectory`
 {#jarSearchableOptions-inputDirectory}
 
-The directory from which the prepared searchable options are read.
+The directory where the prepared searchable options are read from.
 
 {style="narrow"}
 Type
@@ -493,9 +495,7 @@ Default value
 ### `inputFile`
 {#patchPluginXml-inputFile}
 
-Represents an input <path>plugin.xml</path> file.
-
-By default, a <path>plugin.xml</path> file is picked from the main resource location.
+Represents the input <path>plugin.xml</path> file, which by default is picked from the main resource location.
 
 {style="narrow"}
 Type
@@ -508,9 +508,7 @@ Default value
 ### `outputFile`
 {#patchPluginXml-outputFile}
 
-Represents the output <path>plugin.xml</path> file property for the task.
-
-By default, the file is written to a temporary task-specific directory within the <path>build</path> directory.
+Represents the patched output <path>plugin.xml</path> file, which by default is written to a temporary task-specific directory within the <path>build</path> directory.
 
 {style="narrow"}
 Type
@@ -523,14 +521,12 @@ Default value
 ### `pluginId`
 {#patchPluginXml-pluginId}
 
-A unique identifier of the plugin.
-
-It should be a fully qualified name similar to Java packages and must not collide with the ID of existing plugins.
+A unique identifier of the plugin, which should be a fully qualified name similar to Java packages and must not collide with the ID of existing plugins.
 The ID is a technical value used to identify the plugin in the IDE and [JetBrains Marketplace](https://plugins.jetbrains.com/).
+The provided value will be assigned to the [`<id>`](plugin_configuration_file.md#idea-plugin__id) element.
 
 Please use characters, numbers, and `.`/`-`/`_` symbols only and keep it reasonably short.
 
-The provided value will be set as a value of the [`<id>`](plugin_configuration_file.md#idea-plugin__id) element.
 
 {style="narrow"}
 Type
@@ -546,7 +542,7 @@ Default value
 The user-visible plugin display name.
 It should use Title Case.
 
-The provided value will be set as a value of the [`<name>`](plugin_configuration_file.md#idea-plugin__name) element.
+The provided value will be assigned to the [`<name>`](plugin_configuration_file.md#idea-plugin__name) element.
 
 {style="narrow"}
 Type
@@ -559,11 +555,10 @@ Default value
 ### `pluginVersion`
 {#patchPluginXml-pluginVersion}
 
-The plugin version is displayed in the <control>Plugins</control> settings dialog and on the JetBrains Marketplace plugin page.
+The plugin version is displayed in the <control>Plugins</control> settings dialog and on the JetBrains Marketplace plugin page,
+and plugins uploaded to the JetBrains Marketplace must follow [semantic versioning](https://plugins.jetbrains.com/docs/marketplace/semver.htm).
 
-Plugins uploaded to the JetBrains Marketplace must follow semantic versioning.
-
-The provided value will be set as a value of the [`<version>`](plugin_configuration_file.md#idea-plugin__version) element.
+The provided value will be assigned to the [`<version>`](plugin_configuration_file.md#idea-plugin__version) element.
 
 {style="narrow"}
 Type
@@ -579,9 +574,9 @@ Default value
 The plugin description is displayed in the <control>Plugins</control> settings dialog and on the JetBrains Marketplace plugin page.
 Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed.
 
-The description content is automatically wrapped with `<![CDATA[... ]]>`.
+The description content is automatically wrapped in `<![CDATA[... ]]>`.
 
-The provided value will be set as a value of the [`<description>`](plugin_configuration_file.md#idea-plugin__description) element.
+The provided value will be assigned to the [`<description>`](plugin_configuration_file.md#idea-plugin__description) element.
 
 {style="narrow"}
 Type
@@ -594,13 +589,13 @@ Default value
 ### `changeNotes`
 {#patchPluginXml-changeNotes}
 
-A short summary of new features, bugfixes, and changes provided with the latest plugin version.
+A short summary of new features, bugfixes, and changes provided in this plugin version.
 Change notes are displayed on the JetBrains Marketplace plugin page and in the <control>Plugins</control> settings dialog.
 Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed.
 
-The change notes content is automatically wrapped with `<![CDATA[... ]]>`.
+The change notes content is automatically wrapped in `<![CDATA[... ]]>`.
 
-The provided value will be set as a value of the [`<change-notes>`](plugin_configuration_file.md#idea-plugin__change-notes) element.
+The provided value will be assigned to the [`<change-notes>`](plugin_configuration_file.md#idea-plugin__change-notes) element.
 
 {style="narrow"}
 Type
@@ -616,7 +611,7 @@ Default value
 The plugin product code used in the JetBrains Sales System.
 The code must be agreed with JetBrains in advance and follow [the requirements](https://plugins.jetbrains.com/docs/marketplace/obtain-a-product-code-from-jetbrains.html).
 
-The provided value will be set as a value of the `<product-descriptor code="">` element attribute.
+The provided value will be assigned to the `<product-descriptor code="">` element attribute.
 
 {style="narrow"}
 Type
@@ -634,7 +629,7 @@ See also:
 
 Date of the major version release in the `YYYYMMDD` format.
 
-The provided value will be set as a value of the `<product-descriptor release-date="">` element attribute.
+The provided value will be assigned to the `<product-descriptor release-date="">` element attribute.
 
 {style="narrow"}
 Type
@@ -652,7 +647,7 @@ See also:
 
 A major version in a special number format.
 
-The provided value will be set as a value of the `<product-descriptor release-version="">` element attribute.
+The provided value will be assigned to the `<product-descriptor release-version="">` element attribute.
 
 {style="narrow"}
 Type
@@ -670,7 +665,7 @@ See also:
 
 The boolean value determining whether the plugin is a [Freemium](https://plugins.jetbrains.com/docs/marketplace/freemium.html) plugin.
 
-The provided value will be set as a value of the `<product-descriptor optional="">` element attribute.
+The provided value will be assigned to the `<product-descriptor optional="">` element attribute.
 
 {style="narrow"}
 Type
@@ -691,7 +686,7 @@ See also:
 
 The lowest IDE version compatible with the plugin.
 
-The provided value will be set as a value of the `<idea-version since-build="..."/>` element attribute.
+The provided value will be assigned to the `<idea-version since-build="..."/>` element attribute.
 
 {style="narrow"}
 Type
@@ -708,12 +703,10 @@ See also:
 {#patchPluginXml-untilBuild}
 
 The highest IDE version compatible with the plugin.
-Undefined value declares compatibility with all the IDEs since the version specified by the `since-build` (also with the future builds that may cause incompatibility errors).
+The `until-build` attribute can be unset by setting `provider { null }` as a value, and not that only passing `null` will make Gradle use the default value instead.
+However, if `until-build` is undefined, compatibility with all the IDEs since the version specified by the `since-build` is assumed, which can cause incompatibility errors in future builds.
 
-The provided value will be set as a value of the `<idea-version until-build="..."/>` element attribute.
-
-The `until-build` attribute can be unset by setting `provider { null }` as a value.
-Note that passing only `null` will make Gradle use a default value instead.
+The provided value will be assigned to the `<idea-version until-build="..."/>` element attribute.
 
 {style="narrow"}
 Type
@@ -731,7 +724,7 @@ See also:
 
 The vendor name or organization ID (if created) in the <control>Plugins</control> settings dialog and on the JetBrains Marketplace plugin page.
 
-The provided value will be set as a value of the [`<vendor>`](plugin_configuration_file.md#idea-plugin__vendor) element.
+The provided value will be assigned to the [`<vendor>`](plugin_configuration_file.md#idea-plugin__vendor) element.
 
 {style="narrow"}
 Type
@@ -746,7 +739,7 @@ Default value
 
 The vendor's email address.
 
-The provided value will be set as a value of the `<vendor email="">` element attribute.
+The provided value will be assigned to the `<vendor email="">` element attribute.
 
 {style="narrow"}
 Type
@@ -762,9 +755,9 @@ See also:
 ### `vendorUrl`
 {#patchPluginXml-vendorUrl}
 
-The link to the vendor's homepage.
+A link to the vendor's homepage.
 
-The provided value will be set as a value of the `<vendor url="">` element attribute.
+The provided value will be assigned to the `<vendor url="">` element attribute.
 
 {style="narrow"}
 Type
@@ -790,11 +783,11 @@ See also:
 
 </tldr>
 
-Prepares a sandbox environment with the installed plugin and its dependencies.
+Prepares a sandbox environment with the plugin and its dependencies installed.
+The sandbox directory is required by tasks that run IDE and tests in isolation from other instances,
+like when multiple IntelliJ Platforms are used for testing with [`runIde`](#runIde), [`testIde`](#testIde), [`testIdeUi`](#testIdeUi), or [`testIdePerformance`](#testIdePerformance) tasks.
 
-The sandbox directory is required by tasks that run IDE and tests in isolation from other instances, like when multiple IntelliJ Platforms are used for testing with [`runIde`](#runIde), [`testIde`](#testIde), [`testIdeUi`](#testIdeUi), or [`testIdePerformance`](#testIdePerformance) tasks.
-
-To fully use the sandbox capabilities in a task, extend from [`SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware) interface.
+To fully use the sandbox capabilities in a task, extend from [`SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware).
 
 See also:
 - [Extension: `intellijPlatform.sandboxContainer`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-sandboxContainer)
@@ -803,7 +796,7 @@ See also:
 ### `defaultDestinationDirectory`
 {#prepareSandbox-defaultDestinationDirectory}
 
-Default sandbox destination directory where the plugin files will be copied.
+Default sandbox destination directory where plugin files will be copied.
 
 {style="narrow"}
 Type
@@ -864,7 +857,7 @@ Type
 
 </tldr>
 
-This is a task used to prepare an immutable `test` task and provide all necessary dependencies and configuration for a proper testing configuration.
+This is a task used to prepare an immutable `test` task and provides all necessary dependencies and configurations for a proper testing configuration.
 
 
 ## `printBundledPlugins`
@@ -892,16 +885,17 @@ Prints the list of bundled plugins available within the currently targeted Intel
 
 </tldr>
 
-Prints the list of binary product releases that, by default, match the currently selected IntelliJ Platform along with [`intellijPlatform.pluginConfiguration.ideaVersion.sinceBuild`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-ideaVersion-sinceBuild) and [`intellijPlatform.pluginConfiguration.ideaVersion.untilBuild`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-ideaVersion-untilBuild) properties.
+Prints the list of binary product releases that, by default, match the currently selected IntelliJ Platform along with
+[`intellijPlatform.pluginConfiguration.ideaVersion.sinceBuild`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-ideaVersion-sinceBuild)
+and [`intellijPlatform.pluginConfiguration.ideaVersion.untilBuild`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-ideaVersion-untilBuild) properties.
 
-The filter used for retrieving the release list can be customized by using properties provided with [`ProductReleasesValueSource.FilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesValueSource-FilterParameters).
+The filter used for retrieving the release list can be customized by using properties provided with
+[`ProductReleasesValueSource.FilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesValueSource-FilterParameters).
 
 ### `productsReleases`
 {#printProductsReleases-productsReleases}
 
-Property holds the list of product releases to print.
-
-Can be used to retrieve the result list.
+Property that holds the list of product releases to print and which can be used to retrieve the result list.
 
 {style="narrow"}
 Type
@@ -939,7 +933,6 @@ See also:
 {#publishPlugin-archiveFile}
 
 ZIP archive to be published to the remote repository.
-
 By default, it uses the output `archiveFile` of the [`signPlugin`](#signPlugin) task if plugin signing is configured, otherwise the one from [`buildPlugin`](#buildPlugin).
 
 {style="narrow"}
@@ -985,7 +978,7 @@ Default value
 ### `channels`
 {#publishPlugin-channels}
 
-A list of channel names to upload plugin to.
+A list of JetBrains Marketplace channel names used as destination for the plugin upload.
 
 {style="narrow"}
 Type
@@ -1040,7 +1033,8 @@ Default value
 Runs the IDE instance using the currently selected IntelliJ Platform with the built plugin loaded.
 It directly extends the [`JavaExec`][gradle-javaexec-task] Gradle task, which allows for an extensive configuration (system properties, memory management, etc.).
 
-This task class also inherits from [`CustomIntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware), which makes it possible to create `runIde`-like tasks using custom IntelliJ Platform versions:
+This task class also inherits from [`CustomIntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware),
+which makes it possible to create `runIde`-like tasks using custom IntelliJ Platform versions:
 
 ```kotlin
 import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
@@ -1072,10 +1066,12 @@ tasks {
 </tldr>
 
 Signs the ZIP archive with the provided key using the [Marketplace ZIP Signer](https://github.com/JetBrains/marketplace-zip-signer) library.
-
-To sign the plugin before publishing to [JetBrains Marketplace](https://plugins.jetbrains.com) with the [`signPlugin`](#signPlugin) task, it is required to provide a certificate chain and a private key with its password using [`intellijPlatform.signing`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing) extension.
-
-As soon as [`privateKey`](#signPlugin-privateKey) (or [`privateKeyFile`](#signPlugin-privateKeyFile)) and [`certificateChain`](#signPlugin-certificateChain) (or [`certificateChainFile`](#signPlugin-certificateChainFile) properties are specified, the task will be executed automatically right before the [`publishPlugin`](#publishPlugin) task.
+To sign the plugin before publishing to [JetBrains Marketplace](https://plugins.jetbrains.com) with the [`signPlugin`](#signPlugin) task,
+it is required to provide a certificate chain and a private key with its password using
+[`intellijPlatform.signing`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing) extension.
+As soon as [`privateKey`](#signPlugin-privateKey) (or [`privateKeyFile`](#signPlugin-privateKeyFile)) and [`certificateChain`](#signPlugin-certificateChain)
+(or [`certificateChainFile`](#signPlugin-certificateChainFile) properties are specified,
+the task will be executed automatically right before the [`publishPlugin`](#publishPlugin) task.
 
 For more details, see [](plugin_signing.md).
 
@@ -1321,8 +1317,8 @@ tasks {
 
 Validates the plugin project configuration:
 - The [`patchPluginXml.sinceBuild`](#patchPluginXml-sinceBuild) property can't be lower than the target IntelliJ Platform major version.
-- The Java/Kotlin `sourceCompatibility` and `targetCompatibility` properties should align Java versions required by [`patchPluginXml.sinceBuild`](#patchPluginXml-sinceBuild) and the currently used IntelliJ Platform.
-- The Kotlin API version should align the version required by [`patchPluginXml.sinceBuild`](#patchPluginXml-sinceBuild) and the currently used IntelliJ Platform.
+- The Java/Kotlin `sourceCompatibility` and `targetCompatibility` properties should be aligned with the Java versions required by [`patchPluginXml.sinceBuild`](#patchPluginXml-sinceBuild) and the currently used IntelliJ Platform.
+- The Kotlin API version should be aligned with the version required by [`patchPluginXml.sinceBuild`](#patchPluginXml-sinceBuild) and the currently used IntelliJ Platform.
 - The used IntelliJ Platform version should be higher than `2022.3` (`223.0`).
 - The dependency on the [](using_kotlin.md#kotlin-standard-library) should be excluded.
 - The Kotlin plugin in version `1.8.20` is not used with IntelliJ Platform Gradle Plugin due to the 'java.lang.OutOfMemoryError: Java heap space' exception.

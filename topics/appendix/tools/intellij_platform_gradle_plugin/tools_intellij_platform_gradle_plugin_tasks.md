@@ -703,7 +703,7 @@ See also:
 {#patchPluginXml-untilBuild}
 
 The highest IDE version compatible with the plugin.
-The `until-build` attribute can be unset by setting `provider { null }` as a value, and not that only passing `null` will make Gradle use the default value instead.
+The `until-build` attribute can be unset by setting `provider { null }` as a value, and note that only passing `null` will make Gradle use the default value instead.
 However, if `until-build` is undefined, compatibility with all the IDEs since the version specified by the `since-build` is assumed, which can cause incompatibility errors in future builds.
 
 The provided value will be assigned to the `<idea-version until-build="..."/>` element attribute.

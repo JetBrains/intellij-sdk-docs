@@ -857,7 +857,7 @@ Type
 
 </tldr>
 
-This is a task used to prepare an immutable `test` task and provides all necessary dependencies and configurations for a proper testing configuration.
+This is a task used to prepare an immutable `test` task and provide all necessary dependencies and configurations for a proper testing configuration.
 
 
 ## `printBundledPlugins`

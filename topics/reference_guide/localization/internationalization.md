@@ -179,7 +179,7 @@ They include but are not limited to:
 - capitalization (e.g., "usage" and "Usage")
 - pluralization (e.g., "child" and "children")
 - grammatical casing ("das Projekt" and "dem Projekt" - "the project" in German used for different grammatical cases: "the project" and "of the project" accordingly)
-- gender-based modification (e.g., "nuevo" and "nueva" - "new" in Spanish used for a male and female subject accordingly)
+- gender-based modification (e.g., "nuevo" and "nueva" - "new" in Spanish used for a masculine and feminine subject accordingly)
 
 Such transformations make the incorrect assumption about:
 - existence of a transformation in another language (e.g., there might be no casing in some language)

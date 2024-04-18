@@ -83,7 +83,7 @@ The following table contains the possible translated elements and information ab
 
 | Element                                                                                                                                                                     | Language Pack | IDE/Plugin       |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|------------------|
-| Message bundles<p>(<path>*.properties</path> files)</p>                                                                                                                     | Yes           | Since 2024.1     |
+| [Message bundles](internationalization.md#message-bundles)<p>(<path>*.properties</path> files)</p>                                                                          | Yes           | Since 2024.1     |
 | [Inspection descriptions](code_inspections.md#inspection-description)<p>(<path>*.html</path> files in <path>/inspectionDescriptions</path> directory)</p>                   | Yes           | Since 2024.1     |
 | [Intention descriptions](code_intentions.md#about-intention-actions)<p>(<path>*.html</path> files in <path>/intentionDescriptions</path> directory)</p>                     | Yes           | Since 2024.1     |
 | [searchable options](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions)<p>(<path>*.xml</path> file in <path>/search</path>)</p>                         | Yes           | 2024.2 (planned) |

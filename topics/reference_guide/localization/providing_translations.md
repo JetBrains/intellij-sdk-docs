@@ -29,6 +29,10 @@ The `locale` attribute defines the translation language on two possible levels:
 - region level, e.g.: `zh-CN` - Chinese (Simplified), `zh-TW` - Chinese (Taiwan)
 - language level, e.g., `ja` - Japanese
 
+> Please note that `com.intellij.languageBundle` EP is internal and should be used by JetBrains only.
+>
+{style="warning"}
+
 ### Language Selection
 
 It is important to note that there is no language chooser available in the IDE and language packs serve as the IDE "language switcher".
@@ -81,15 +85,17 @@ No additional actions like registering EPs are needed.
 
 The following table contains the possible translated elements and information about their support in language packs and IDE/plugins.
 
-| Element                                                                                                                                                                     | Language Pack | IDE/Plugin       |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|------------------|
-| [Message bundles](internationalization.md#message-bundles)<p>(<path>*.properties</path> files)</p>                                                                          | Yes           | Since 2024.1     |
-| [Inspection descriptions](code_inspections.md#inspection-description)<p>(<path>*.html</path> files in <path>/inspectionDescriptions</path> directory)</p>                   | Yes           | Since 2024.1     |
-| [Intention descriptions](code_intentions.md#about-intention-actions)<p>(<path>*.html</path> files in <path>/intentionDescriptions</path> directory)</p>                     | Yes           | Since 2024.1     |
-| [searchable options](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions)<p>(<path>*.xml</path> file in <path>/search</path>)</p>                         | Yes           | 2024.2 (planned) |
-| [File template descriptions](providing_file_templates.md#creating-file-template-description)<p>(<path>*.html</path> files in the <path>/fileTemplates</path> directory)</p> | Yes           | 2024.2 (planned) |
-| [Postfix template descriptions](postfix_templates.md#postfix-template-description)<p>(<path>*.xml</path> file in <path>/postfixTemplates</path> directory)</p>              | Yes           | 2024.2 (planned) |
-| tips of the day<p><path>*.html</path> files in <path>tips</path> directory</p>                                                                                              | Yes           | 2024.2 (planned) |
+| Element                                                                                                                                                                     | Language Pack | Bundled Translations |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|----------------------|
+| [Message bundles](internationalization.md#message-bundles)<p>(<path>*.properties</path> files)</p>                                                                          | Yes           | Since 2024.1         |
+| [Inspection descriptions](code_inspections.md#inspection-description)<p>(<path>*.html</path> files in <path>/inspectionDescriptions</path> directory)</p>                   | Yes           | Since 2024.1         |
+| [Intention descriptions](code_intentions.md#about-intention-actions)<p>(<path>*.html</path> files in <path>/intentionDescriptions</path> directory)</p>                     | Yes           | Since 2024.1         |
+| [Searchable options](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions)<p>(<path>*.xml</path> file in <path>/search</path>)</p>                         | Yes           | 2024.2 (planned)     |
+| [File template descriptions](providing_file_templates.md#creating-file-template-description)<p>(<path>*.html</path> files in the <path>/fileTemplates</path> directory)</p> | Yes           | 2024.2 (planned)     |
+| [Postfix template descriptions](postfix_templates.md#postfix-template-description)<p>(<path>*.xml</path> file in <path>/postfixTemplates</path> directory)</p>              | Yes           | 2024.2 (planned)     |
+| Tips of the day<p><path>*.html</path> files in <path>tips</path> directory</p>                                                                                              | Yes           | 2024.2 (planned)     |
+
+See the [IntelliJ Platform UI Guidelines | Text](https://jetbrains.design/intellij/text/capitalization/) sections for good practices about writing UI texts.
 
 ## Translation Priority
 
@@ -102,18 +108,24 @@ In addition, translations can be [organized in directories or with file suffixes
 
 All these conditions determine how a single translation is resolved at runtime.
 The priority is as follows:
-1. Region level localization file:
+1. Region level (e.g., `zh_CN`, `zh_TW`) localization file:
     1. located within the <path>localization</path> directory of the language pack
     2. located within the <path>localization</path> directory of the IDE or plugin
     3. via suffix within the language pack
     4. via suffix within the IDE or plugin
-2. Language level localization file:
+
+    {type="alpha-lower"}
+2. Language level (e.g., `zh`) localization file:
     1. located within the <path>localization</path> directory of the language pack
     2. located within the <path>localization</path> directory of the IDE or plugin
     3. via suffix within the language pack
     4. via suffix within the IDE or plugin
-3. Default file within:
+
+   {type="alpha-lower"}
+3. Default file (no suffix) within:
     1. the language pack
     2. the IDE or plugin
+
+   {type="alpha-lower"}
 
 <include from="snippets.md" element-id="missingContent"/>

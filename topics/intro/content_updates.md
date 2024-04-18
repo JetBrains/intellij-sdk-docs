@@ -15,6 +15,9 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 ### April
 {april-24}
 
+Plugin Internationalization
+: Add [](internationalization.md) and [](providing_translations.md) pages describing IDE and plugin translation possibilities and best practices.
+
 Minor Changes and Additions
 :
 - How to mark functionality available during indexing via [](indexing_and_psi_stubs.md#DumbAwareAPI).

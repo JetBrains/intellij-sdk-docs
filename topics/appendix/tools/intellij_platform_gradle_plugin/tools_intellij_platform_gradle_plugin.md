@@ -52,7 +52,7 @@ IntelliJ Platform Gradle Plugin 2.x requires the following minimal versions:
 
 ## Usage
 
-> Please note that the plugin has a new ID `org.jetbrain.intellij.platform`.
+> Please note that the plugin has a new ID `org.jetbrains.intellij.platform`.
 >
 {style="note"}
 
@@ -64,7 +64,7 @@ plugins {
 }
 ```
 
-If migrating from the Gradle IntelliJ Plugin `1.x`, replace the old `org.jetbrains.intellij` identifier to `org.jetbrain.intellij.platform` and apply its latest `%intellij-platform-gradle-plugin-version%` version.
+If migrating from the Gradle IntelliJ Plugin `1.x`, replace the old `org.jetbrains.intellij` identifier to `org.jetbrains.intellij.platform` and apply its latest `%intellij-platform-gradle-plugin-version%` version.
 
 ### Snapshot Release
 

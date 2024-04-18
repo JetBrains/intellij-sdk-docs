@@ -20,6 +20,11 @@ Annotating strings enables inspecting NLS string content correctness.
 For example, if an API method parameter is annotated as an NLS string, any hardcoded string passed as a value will be reported and extracting it to a message bundle will be proposed as a quick fix.
 Another example is inspecting whether a given string value is properly capitalized for the usage context.
 
+> Internationalization-related inspections can be enabled in <ui-path>Settings | Editor | Inspections</ui-path> in the following groups (some inspections require enabling _Java Internationalization_ bundled plugin):
+> - <ui-path>Java | Internationalization</ui-path>
+> - <ui-path>Java | Properties files</ui-path>
+> - <ui-path>Properties files</ui-path>
+
 Consider using the following annotations:
 - [`@Nls`](%gh-java-annotations%common/src/main/java/org/jetbrains/annotations/Nls.java) - for NLS strings.
   The `capitalization` attribute allows to specify required capitalization.
@@ -33,17 +38,12 @@ For example, [`@InspectionMessage`](%gh-ic%/platform/analysis-api/src/com/intell
 
 NLS context annotations must be annotated with `@Nls` and they can define:
 - capitalization requirement - via `@Nls.capitalization` attribute
-- [`@NlsContext`](%gh-ic%/platform/util/src/com/intellij/openapi/util/NlsContext.java) - specifies default prefix and suffix for property keys, which will be suggested by the <control>I18nize hardcoded string literal</control> quick fix
+- [`@NlsContext`](%gh-ic%/platform/util/src/com/intellij/openapi/util/NlsContext.java) - specifies default prefix and suffix for property keys, which will be suggested by the <control>I18nize hardcoded string literal</control> quick fix provided by <ui-path>Java | Internationalization | Hardcoded strings</ui-path> inspection
 
 The IntelliJ Platform provides NLS context annotations, including:
-- [`NlsContexts`](%gh-ic%/platform/util/src/com/intellij/openapi/util/NlsContexts.java) nested annotations
-- [`NlsActions`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/util/NlsActions.java) nested annotations
-- [`BuildEventsNls`](%gh-ic%/platform/execution/src/com/intellij/build/events/BuildEventsNls.java) nested annotations
-- [`InspectionMessage`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/util/InspectionMessage.java)
-- [`IntentionFamilyName`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/util/IntentionFamilyName.java)
-- [`IntentionName`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/util/IntentionName.java)
-- [`GutterName`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/daemon/GutterName.java)
-- [`TooltipTitle`](%gh-ic%/platform/platform-api/src/com/intellij/ide/TooltipTitle.java)
+- general contexts: [`NlsContexts`](%gh-ic%/platform/util/src/com/intellij/openapi/util/NlsContexts.java) nested annotations
+- action contexts: [`NlsActions`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/util/NlsActions.java) nested annotations
+- miscellaneous contexts: [`@InspectionMessage`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/util/InspectionMessage.java), [`@IntentionFamilyName`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/util/IntentionFamilyName.java), [`@IntentionName`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/util/IntentionName.java), [`@GutterName`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/daemon/GutterName.java), [`@TooltipTitle`](%gh-ic%/platform/platform-api/src/com/intellij/ide/TooltipTitle.java)
 
 To find all available annotations, search for `@NlsContext` usages in the [intellij-community](https://github.com/JetBrains/intellij-community) source code.
 
@@ -58,13 +58,15 @@ If it is required to use some class as a key in configuration files and present 
 
 To enable localization, all NLS strings must be placed in [resource bundle](#message-bundles) files.
 It is important to avoid adding non-NLS strings to a resource bundle.
-At best, this will add unnecessary work for translators, but it is also quite possible that if such a string is translated, it could break something in the IDE or a plugin.
+At best, this will add unnecessary work for translators, but it is also quite possible that if such a string is translated, it could break some features.
 
 ## Message Bundles
 
 All NLS strings from a module should be added to a <path>*.properties</path> file.
 A standard location of message files in JAR is <path>/messages/\*.properties</path>.
-In a [Gradle-based plugin](developing_plugins.md#gradle-intellij-plugin) project sources, message files are located in <path>$MODULE_ROOT$/src/main/resources/messages/\*.properties</path>.
+In [Gradle-based plugin](developing_plugins.md#gradle-intellij-plugin) project sources, message files are located in <path>$MODULE_ROOT$/src/main/resources/messages/\*.properties</path>.
+
+> A standard convention for naming message bundle properties file is <path>*Bundle.properties</path>.
 
 A corresponding [bundle class](#message-bundle-class) should be used to access the strings from the code.
 
@@ -89,6 +91,13 @@ internal object ExampleBundle {
   ): @Nls String {
     return INSTANCE.getMessage(key, *params)
   }
+
+  fun lazyMessage(
+      @PropertyKey(resourceBundle = BUNDLE) key: String,
+      vararg params: Any
+  ): Supplier<@Nls String> {
+    return INSTANCE.getLazyMessage(key, *params)
+  }
 }
 ```
 </tab>
@@ -108,6 +117,13 @@ final class ExampleBundle {
       Object @NotNull ... params
   ) {
     return INSTANCE.getMessage(key, params);
+  }
+
+  public static Supplier<@Nls String> messagePointer(
+      @NotNull @PropertyKey(resourceBundle = BUNDLE) String key,
+      Object @NotNull ... params
+  ) {
+    return INSTANCE.getLazyMessage(key, params);
   }
 }
 ```

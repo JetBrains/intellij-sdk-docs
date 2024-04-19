@@ -85,15 +85,15 @@ No additional actions like registering EPs are needed.
 
 The following table contains the possible translated elements and information about their support in language packs and IDE/plugins.
 
-| Element                                                                                                                                                                     | Language Pack | Bundled Translations |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|----------------------|
-| [Message bundles](internationalization.md#message-bundles)<p>(<path>*.properties</path> files)</p>                                                                          | Yes           | Since 2024.1         |
-| [Inspection descriptions](code_inspections.md#inspection-description)<p>(<path>*.html</path> files in <path>/inspectionDescriptions</path> directory)</p>                   | Yes           | Since 2024.1         |
-| [Intention descriptions](code_intentions.md#about-intention-actions)<p>(<path>*.html</path> files in <path>/intentionDescriptions</path> directory)</p>                     | Yes           | Since 2024.1         |
-| [Searchable options](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions)<p>(<path>*.xml</path> file in <path>/search</path>)</p>                         | Yes           | 2024.2 (planned)     |
-| [File template descriptions](providing_file_templates.md#creating-file-template-description)<p>(<path>*.html</path> files in the <path>/fileTemplates</path> directory)</p> | Yes           | 2024.2 (planned)     |
-| [Postfix template descriptions](postfix_templates.md#postfix-template-description)<p>(<path>*.xml</path> file in <path>/postfixTemplates</path> directory)</p>              | Yes           | 2024.2 (planned)     |
-| Tips of the day<p><path>*.html</path> files in <path>tips</path> directory</p>                                                                                              | Yes           | 2024.2 (planned)     |
+| Element                                                                                                                                                                     | Language Pack | Bundled Translations                                                                     |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|------------------------------------------------------------------------------------------|
+| [Message bundles](internationalization.md#message-bundles)<p>(<path>*.properties</path> files)</p>                                                                          | Yes           | Since 2024.1<p>_Use [`DynamicBundle`](internationalization.md#message-bundle-class)_</p> |
+| [Inspection descriptions](code_inspections.md#inspection-description)<p>(<path>*.html</path> files in <path>/inspectionDescriptions</path> directory)</p>                   | Yes           | Since 2024.1                                                                             |
+| [Intention descriptions](code_intentions.md#about-intention-actions)<p>(<path>*.html</path> files in <path>/intentionDescriptions</path> directory)</p>                     | Yes           | Since 2024.1                                                                             |
+| [Searchable options](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions)<p>(<path>*.xml</path> file in <path>/search</path>)</p>                         | Yes           | 2024.2 (planned)                                                                         |
+| [File template descriptions](providing_file_templates.md#creating-file-template-description)<p>(<path>*.html</path> files in the <path>/fileTemplates</path> directory)</p> | Yes           | 2024.2 (planned)                                                                         |
+| [Postfix template descriptions](postfix_templates.md#postfix-template-description)<p>(<path>*.xml</path> file in <path>/postfixTemplates</path> directory)</p>              | Yes           | 2024.2 (planned)                                                                         |
+| Tips of the day<p><path>*.html</path> files in <path>tips</path> directory</p>                                                                                              | Yes           | 2024.2 (planned)                                                                         |
 
 See the [IntelliJ Platform UI Guidelines | Text](https://jetbrains.design/intellij/text/capitalization/) sections for good practices about writing UI texts.
 

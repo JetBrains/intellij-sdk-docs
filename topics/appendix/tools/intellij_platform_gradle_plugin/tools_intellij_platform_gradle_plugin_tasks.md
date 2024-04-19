@@ -331,7 +331,7 @@ Type
 
 </tldr>
 
-Task dedicated to executing the code instrumentation using the Ant tasks provided by the used IntelliJ Platform dependency.
+Executes the code instrumentation using the Ant tasks provided by the used IntelliJ Platform dependency.
 The code instrumentation scans the compiled Java and Kotlin classes for JetBrains Annotations usages to replace them with their relevant functionalities.
 
 The task is controlled with the [`intellijPlatform.instrumentCode`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-instrumentCode) extension property, enabled by default.

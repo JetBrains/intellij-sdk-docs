@@ -555,8 +555,8 @@ Default value
 ### `pluginVersion`
 {#patchPluginXml-pluginVersion}
 
-The plugin version is displayed in the <control>Plugins</control> settings dialog and on the JetBrains Marketplace plugin page,
-and plugins uploaded to the JetBrains Marketplace must follow [semantic versioning](https://plugins.jetbrains.com/docs/marketplace/semver.htm).
+The plugin version is displayed in the <control>Plugins</control> settings dialog and on the JetBrains Marketplace plugin page.
+Plugins uploaded to the JetBrains Marketplace must follow [semantic versioning](https://plugins.jetbrains.com/docs/marketplace/semver.htm).
 
 The provided value will be assigned to the [`<version>`](plugin_configuration_file.md#idea-plugin__version) element.
 

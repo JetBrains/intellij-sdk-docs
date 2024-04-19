@@ -17,6 +17,9 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ### IntelliJ Platform 2024.1
 
+Bundled Localization
+: Initial plugin [localization](providing_translations.md#translated-elements) capabilities.
+
 Using Coroutines
 : It is now recommended to use [](kotlin_coroutines.md) for asynchronous code.
 

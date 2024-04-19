@@ -136,7 +136,9 @@
       <toc-element toc-title="Local History"/>
     </toc-element>
     <toc-element toc-title="Tasks and Contexts"/>
-    <toc-element topic="localization_guide.md"/>
+    <toc-element topic="internationalization.md">
+      <toc-element topic="providing_translations.md" accepts-web-file-names="localization-guide.html"/>
+    </toc-element>
     <toc-element toc-title="Diagrams"/>
   </toc-element>
   <toc-element toc-title="Project Model">

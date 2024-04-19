@@ -1,0 +1,120 @@
+---
+title: Inspections
+category: Text
+---
+
+![](main.png)
+*Inspections configuration on Editor > Inspections settings page or in Configure Inspections dialog.*
+
+Inspection names, descriptions, and editor messages should be short and descriptive. Follow the rules for [short and clear texts](writing_short.md) and [punctuation](punctuation.md) in addition to rules described below.
+
+### Group Names
+
+Use the names of technologies and frameworks as titles for inspection groups, for example, Ant, Android, Java.
+
+### Inspection Names
+
+Limit a name by ~50 symbols so that it fits the line in the list of inspections in settings.
+
+An inspection name should reflect the code problem that this inspection detects, for example:![](correct.png)
+
+Do not just describe the type of code that is being checked:
+
+![](not-a-problem.png)
+
+When describing a problem, prefer adjectives to complex nouns:
+
+![](noun2.png)
+
+![](noun.png)
+
+Do not repeat the group titles in the inspection name:
+
+![](../../../images/ui/inspections/group.png)
+
+Do not use the word "problems" or other words that describe how inspections function in general (i.e. “check”, “inspection”, or “issue”). An inspection is supposed to check code for problems, so mentioning it in its name is not needed.
+
+![](problem.png)
+
+Do not use the words "warning" and “error” in inspection names. Such a name will become incorrect and misleading if the inspection severity level change.
+
+![](../../../images/ui/inspections/warning.png)
+
+Do not use parentheses in inspection names. All supporting information can be moved to inspection descriptions.
+
+![](parens.png)
+
+If an inspection is powered by a third-party code quality tool, use the name of this tool in the inspection name.
+
+![](third-party.png)
+
+### Descriptions
+
+Start descriptions with a verb, e.g. “Reports”. Use “Run” for external tools. Do not begin a description with "This inspection".
+
+![](start.png)
+
+Provide details, such as:
+
+* A quick-fix if applicable:
+
+![](quick-fix.png)
+
+* A link to the language or framework docs explaining the correct usage of the syntax or feature, if applicable.
+
+![](link.png)
+
+* Two code samples: the code with a problem and the code that bypasses this problem. By comparing the good code and the bad code, users can work out what causes the problem and how to avoid it.
+  For example, for "Java | Probable bugs | 'equals()' called on array" adding such an example helps to understand the inspection quicker:
+
+![](../../../images/ui/inspections/example.png)
+
+* Information from external validators.
+  Prefer separating inspections so that a user can control them individually.
+  If it is not possible, list all problems that an inspection can detect:
+
+![](multiple.png)
+
+Be very specific about the code problems that an inspection can detect:
+
+![](vague.png)
+
+Remove unnecessary words:
+
+* Do not duplicate an inspection’s name in its description.
+
+* Inspections highlight code problems, it's their primary functionality. Don't explain it in descriptions:
+
+  ![](purpuse.png)
+
+For text formatting, see [Description text](description_text.md).
+
+
+### Editor messages
+
+Describe the problem in the highlighted code in the current context.
+
+![](editor-error-message.png)
+*For example, Unresolved reference inspection provides the exact reference name which is unresolved.*
+
+Use single quotes for the highlighted piece of code if it is referenced in the error message.
+
+If a quick-fix is not available, describe in more detail a way to resolve the problem:
+
+![](editor-error-message-detail.png)
+
+### Quick-fixes
+
+Describe the action that fixes the problem. For wording, follow the rules for [buttons](button.topic#label) and [menu actions](menu.md).
+
+Use single quotes for the referenced piece of code.
+
+![](quick-fix-menu.png)
+
+### Capitalization
+
+Use [sentence case](capitalization.md#sentence) for everything:
+* Inspection names and descriptions
+* Names of inspection groups and subgroups in settings
+* Inspection texts in editor tooltips and quick-fixes
+

@@ -1,0 +1,95 @@
+---
+title: Radio button
+codename: JBRadioButton
+category: Controls
+---
+<tldr>JBRadioButton</tldr>
+
+![](radio_example.png)
+
+## When to use
+
+Use a radio button group to choose one option from 2 to 4 mutually exclusive options.
+
+Do **not** use radio buttons if:
+* Several options in a group can be selected. Use a group of [checkboxes](checkbox.md) instead.
+* There are only 2 opposite yes/no options. Use a checkbox instead.
+
+![](tworadio_checkbox.png)
+
+* There are 5 and more options that can be charted on an axis, e.g. time delay. Use a [slider](slider.md) instead.
+
+* There are 5 and more options. Use a [drop-down list](drop_down.md):
+  <table>
+      <tr>
+          <td> <p>Incorrect</p> </td>
+          <td> <p>Correct</p> </td>
+      </tr>
+      <tr>
+          <td> <img src="../../../images/ui/radiobutton/dropdown_incorrect.png" /> </td>
+          <td> <img src="../../../images/ui/radiobutton/dropdown_correct.png" /> </td>
+      </tr>
+  </table>
+
+Consider using a [drop-down list](drop_down.md) if:
+* The screen space is limited.
+* The option might be used less often than other options on the screen.
+* There are other drop-down lists in the same group of UI components. A radio button group is more noticeable than a drop-down list so it will look like a more important setting.
+* There is a combination of several UI components for one setting:
+![](dropdown.png)
+*The automatic updates setting consists of a checkbox, three lengthy-labeled options in a dropdown and a button.*
+
+
+## How to use
+
+### Label
+A label accompanies each checkbox and is placed next to it.
+
+![](label.png)
+
+If a label is long, split it into two lines. Avoid labels that take more than two lines. See recommendations on writing concise labels below.
+
+![](twoline_label.png)
+
+To implement this, use HTML formatting:
+
+<code-block lang="java">
+JRadioButton radioButton = new JRadioButton(
+    "&lt;html>Show options before adding&lt;br>to version control&lt;/html>");
+</code-block>
+
+### Writing guidelines
+
+Use sentence-style capitalization.
+
+Do not use ending punctuation.
+
+Use the imperative form of verbs.
+
+Do not use negation in labels as it complicates understanding.
+
+<p>Incorrect</p>
+
+![](../../../images/ui/radiobutton/answeryes_incorrect.png)
+
+<p>Correct</p>
+
+![](../../../images/ui/radiobutton/answeryes_correct.png)
+
+Make labels short and intelligible — see [Writing short and clear text](writing_short.md).
+
+
+### Group label
+![](grouplabel.png)
+
+Always start a radio button group with a group label. It explains what the options are for.
+
+Use a checkbox or another radio button as a group label if the radio button group needs to be turned on or off.
+
+Use a colon at the end of a group label.
+
+
+## Sizes and placement
+
+If a radio button group depends on another control, e.g. a checkbox, follow the rules for [dependent colors](layout.md#dependent-controls). Otherwise, follow the rules for [independent colors](layout.md).
+

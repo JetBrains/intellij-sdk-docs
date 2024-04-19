@@ -1,0 +1,94 @@
+---
+title: Built-in button
+type: Subpage
+subpageOf: Button
+category: Controls
+---
+
+A built-in button is an icon placed inside an input control.
+
+![](input_browse.png)
+
+
+## How to use
+
+Place the built-in button inside the input control. Do **not** place the built-in button on the right of a control:
+![](outside.png)
+
+To place a button inside a text field, use the `com.intellij.ui.components.fields.ExtendableTextField` class and
+its `addExtension` method.
+
+The shortcut for a built-in button is <shortcut>Shift+Enter</shortcut>.
+
+
+## Types
+
+### Browse
+A browse button opens a dialog with the disk, a tree view or a table of values.
+Use a control with the browse icon for a file/folder path selected from the disk.
+
+![](input_browse.png)
+
+An input field with browse button:
+
+<code-block lang="java">com.intellij.openapi.ui.TextFieldWithBrowseButton
+</code-block>
+
+A combo box with browse button:
+
+<code-block lang="java">
+ExtendableTextComponent.Extension browseExtension =
+ExtendableTextComponent.Extension.create(AllIcons.General.OpenDisk, AllIcons.General.OpenDiskHover,
+                                         "Open file", () -&gt;System.out.println("Browse file clicked"));
+ComboBox&lt;String&gt;
+eComboBox = new ComboBox&lt;&gt;(STRING_VALUES);
+eComboBox.setEditable(true);
+eComboBox.setEditor(new BasicComboBoxEditor(){
+  @Override
+  protected JTextField createEditorComponent() {
+    ExtendableTextField ecbEditor = new ExtendableTextField();
+    ecbEditor.addExtension(browseExtension);
+    ecbEditor.setBorder(null);
+    return ecbEditor;
+  }
+});</code-block>
+
+
+Do **not** place the button on the right of the control.
+
+![](browse_buttons.png)
+
+### Expand field
+If input text can be long and place is constrained, use built-in button to expand the control (`com.intellij.ui.components.fields.ExpandableTextField`):
+
+![](expandable_1.png)
+![](expandable_2.png)
+
+Do **not** use the Show Viewer button instead.
+![](input_expand.png)
+
+
+### List values
+Use a control with the table icon to select from the list of classes, methods or environment variables:
+![](input_table.png)
+
+Use a combo box instead of the Variables button. This icon works as a combo box.
+![](variables_combobox.png)
+
+
+### Add value
+The Plus button works the same way as the Browse button, the only difference is that the selected value is added, instead of overwriting the existing one. Place the plus icon inside the control.
+![](plus.png)
+
+### Copy, Info
+<p></p>
+<table>
+    <tr>
+        <td> <img src="../../../images/ui/built_in_button/copy_button.png"/></td>
+        <td> Do not use the Copy button, the content can be selected and copied using the Cmd/Ctrl+C shortcut or the context menu. </td>
+    </tr>
+    <tr>
+        <td> <img src="../../../images/ui/built_in_button/info_button.png"/></td>
+        <td> Do not use the info button to open an external link. Use <a href="context_help.md">context help</a> instead.</td>
+    </tr>
+</table>

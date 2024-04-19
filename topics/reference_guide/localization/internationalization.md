@@ -119,7 +119,7 @@ final class ExampleBundle {
     return INSTANCE.getMessage(key, params);
   }
 
-  public static Supplier<@Nls String> messagePointer(
+  public static Supplier<@Nls String> lazyMessage(
       @NotNull @PropertyKey(resourceBundle = BUNDLE) String key,
       Object @NotNull ... params
   ) {

@@ -52,6 +52,10 @@ In case of doubts, it is recommended to inspect the contents of existing languag
 
 ## Bundled Translations
 
+> Please note that bundled translations are in the experimental state.
+>
+{style="warning"}
+
 Since 2024.1, IntelliJ Platform partially supports providing translations directly bundled in the IDE or plugins.
 See the [translated elements](#translated-elements) list for the elements possible to translate.
 

@@ -436,4 +436,98 @@
       </toc-element>
     </toc-element>
   </toc-element>
+  <toc-element toc-title="UI Guidelines">
+    <toc-element toc-title="Controls">
+      <toc-element topic="alert.md" hidden="true"/>
+      <toc-element topic="button.topic">
+        <toc-element topic="built_in_button.md"/>
+        <toc-element topic="split_button.md"/>
+      </toc-element>
+      <toc-element topic="checkbox.md"/>
+      <toc-element topic="combo_box.md"/>
+      <toc-element topic="context_menu.md" hidden="true"/>
+      <toc-element topic="description_text.md"/>
+      <toc-element topic="drop_down.md"/>
+      <toc-element topic="got_it_tooltip.md"/>
+      <toc-element topic="group_header.md"/>
+      <toc-element topic="input_field.md"/>
+      <toc-element topic="link.md"/>
+      <toc-element topic="list.md" hidden="true"/>
+      <toc-element topic="main_menu.md" hidden="true"/>
+      <toc-element topic="menu.md" hidden="true"/>
+      <toc-element topic="menu_list.md" hidden="true"/>
+      <toc-element toc-title="Notifications" topic="notification_types.md">
+      <toc-element topic="balloon.md"/>
+        <toc-element topic="banner.md"/>
+      </toc-element>
+      <toc-element topic="progress_indicators.md">
+        <toc-element topic="loader.md"/>
+        <toc-element topic="progress_bar.md">
+        </toc-element>
+        <toc-element topic="progress_text.md"/>
+      </toc-element>
+      <toc-element topic="radio_button.md">
+      </toc-element>
+      <toc-element topic="scrollbar.md"/>
+      <toc-element topic="search_field.md"/>
+      <toc-element topic="slider.md" hidden="true"/>
+      <toc-element topic="table.md"/>
+      <toc-element topic="tabs.md"/>
+      <toc-element topic="text_area.md"/>
+      <toc-element topic="toggle_button.md"/>
+      <toc-element topic="tool_window_balloon.md" hidden="true"/>
+      <toc-element topic="toolbar.md">
+        <toc-element topic="icon_button.md"/>
+        <toc-element topic="split_icon_button.md"/>
+        <toc-element topic="toolbar_drop_down.md"/>
+      </toc-element>
+      <toc-element topic="tree.md" hidden="true"/>
+      <toc-element topic="context_help.md">
+        <toc-element topic="inline_help_text.md"/>
+        <toc-element topic="tooltip.md">
+        </toc-element>
+        <toc-element topic="empty_state.md"/>
+      </toc-element>
+    </toc-element>
+    <toc-element toc-title="Components">
+      <toc-element topic="dialog_window.md" hidden="true"/>
+      <toc-element topic="popup.md" hidden="true"/>
+      <toc-element topic="status_bar.md" hidden="true"/>
+      <toc-element topic="tool_window.md"/>
+    </toc-element>
+    <toc-element toc-title="Text">
+      <toc-element topic="capitalization.md"/>
+      <toc-element topic="inspections.md"/>
+      <toc-element topic="punctuation.md"/>
+      <toc-element topic="notification_and_error.md" hidden="true"/>
+      <toc-element topic="terminology.md" hidden="true"/>
+      <toc-element topic="writing_short.md"/>
+    </toc-element>
+    <toc-element toc-title="Principles">
+      <toc-element topic="accessibility.md" hidden="true"/>
+      <toc-element topic="dangerous_actions.md" hidden="true"/>
+      <toc-element topic="data_formats.md"/>
+      <toc-element topic="default_values.md" hidden="true"/>
+      <toc-element topic="discoverability.md" hidden="true"/>
+      <toc-element topic="groups_of_controls.md"/>
+<!--      <toc-element topic="icons.md"/>-->
+      <toc-element topic="layout.md"/>
+      <toc-element topic="masterdetail_layout.md" hidden="true"/>
+      <toc-element topic="mnemonics.md"/>
+      <toc-element topic="platform_theme_colors.md"/>
+      <toc-element topic="search.md" hidden="true"/>
+      <toc-element topic="search_results.md" hidden="true"/>
+      <toc-element topic="sharing_settings.md" hidden="true"/>
+      <toc-element topic="sizes_and_insets.md" hidden="true"/>
+      <toc-element topic="speed_search.md" hidden="true"/>
+      <toc-element topic="typography.md"/>
+      <toc-element topic="feedback.md" hidden="true"/>
+      <toc-element topic="validation_errors.md"/>
+    </toc-element>
+    <toc-element toc-title="Resources">
+      <toc-element href="https://jetbrains.design/intellij/resources/icons_list/" toc-title="Icons"/>
+      <toc-element topic="how_to_write_guidelines.md"/>
+      <toc-element topic="UI_kit.md"/>
+    </toc-element>
+  </toc-element>
 </instance-profile>

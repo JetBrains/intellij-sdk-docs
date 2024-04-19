@@ -9,8 +9,7 @@ To enable IntelliJ-based IDEs and plugins for _National Language Support (NLS)_,
 - **non-NLS strings** - strings which are used internally and aren't shown in UI: attributes in configuration files, keys in indices and caches, etc.
 - **NLS-safe strings** - strings which don't need to be localized but can be shown in UI: strings written by users (e.g., parts of program code, file names, URLs, etc.), names of frameworks (in some cases names of frameworks may be translated, e.g., if they consist of multiple words), etc.
 
-[//]: # (TODO: what does it mean? to be changed after the first phase of localization)
-By default, a string is considered as non-NLS (to be changed after the first phase of localization).
+By default, a string is considered as non-NLS.
 
 ## NLS Annotations
 
@@ -302,6 +301,7 @@ Correct result:
 message("dialog.title.name.0.1", message("concept.library"), "foo")
 // Biblioteka 'foo'
 ```
+
 Wrong result:
 ```kotlin
 message("dialog.title.add.0", message("concept.library"))
@@ -338,9 +338,7 @@ If several localized strings (non-user input) are used to concatenate the string
    - Given X terms and Y contexts, it will result in X*Y strings.
      It is acceptable to have several strings for small X and Y.
      For more cases, the translations may become unmaintainable.
-   - The API will have to be modified to provide the full string if the strings are obtained from plugins/extensions
-
-[//]: # (TODO: is the above internal knowledge? What does it mean? Any example?)
+   - If terms are provided other by plugins via an extension point, the extension point API would require a change to provide full strings.
 
 #### Messages Depending on Numbers
 

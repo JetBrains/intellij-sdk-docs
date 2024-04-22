@@ -73,4 +73,4 @@ Run Annotator During Indexing
 : [Annotators](syntax_highlighting_and_error_highlighting.md#annotator) can implement `DumbAware` to run during indexing (e.g., providing additional syntax highlighting).
 
 Obsolete API Status
-: Newly introduced `ApiStatus.@Obsolete` marks API that should not be used for new code, see [](verifying_plugin_compatibility.md#obsolete-api).
+: Newly introduced `@ApiStatus.Obsolete` marks API that should not be used for new code, see [](verifying_plugin_compatibility.md#obsolete-api).

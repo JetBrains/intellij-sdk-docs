@@ -260,7 +260,7 @@ Minor Changes and Additions
 {#april-22}
 
 Internal API Migration
-: As API annotated with `ApiStatus.@Internal` must not be used in plugins, refer to [](api_internal.md) for a list corresponding API replacements and additional information.
+: As API annotated with `@ApiStatus.Internal` must not be used in plugins, refer to [](api_internal.md) for a list corresponding API replacements and additional information.
 
 ### March
 {#march-22}

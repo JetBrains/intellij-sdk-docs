@@ -63,10 +63,10 @@ New API for Editor Inlay Hints
 `com.intellij.openapi.fileTypes.FileTypeFactory` deprecated
 : When registering a file type via file extension, pattern or exact file name matching, use `com.intellij.fileType` extension point instead (see [Sample](language_and_filetype.md#register-the-file-type)).
 
-`org.jetbrains.annotations.ApiStatus.@NonExtendable`
+`@org.jetbrains.annotations.ApiStatus.NonExtendable`
 : Indicates that the annotated API class, interface, or method must not get extended, implemented, or overridden by external plugins but can only be obtained or instantiated for classes and interfaces, or called for methods.
 
-`org.jetbrains.annotations.ApiStatus.@OverrideOnly`
+`@org.jetbrains.annotations.ApiStatus.OverrideOnly`
 : Indicates that the annotated method is part of SPI (Service Provider Interface), which is intended to be only implemented or overridden but never called by external plugins.
 
 `com.intellij.util.Query.forEach`
@@ -90,13 +90,13 @@ Unbundled plugins
 `com.intellij.testFramework.InspectionTestCase` changed to light test
 : Use dedicated `ProjectDescriptor` or rollback project setup changes in `tearDown()` (see [Light and Heavy Tests](light_and_heavy_tests.md)).
 
-`org.jetbrains.annotations.ApiStatus.@AvailableSince`
+`@org.jetbrains.annotations.ApiStatus.AvailableSince`
 : External annotations for the IntelliJ Platform are generated and attached to plugin projects automatically (replacing `@since` Javadoc).
 
-`org.jetbrains.annotations.ApiStatus.@ScheduledForRemoval`
+`@org.jetbrains.annotations.ApiStatus.ScheduledForRemoval`
 : External annotations for the IntelliJ Platform are generated and attached to plugin projects automatically. This allows highlighting of API, which has been removed in newer platform versions.
 
-`org.jetbrains.annotations.ApiStatus.@Internal`
+`@org.jetbrains.annotations.ApiStatus.Internal`
 : Indicates that the annotated element must not be considered as a public API. Do not use outside of the IntelliJ Platform, see [](api_internal.md).
 
 `PsiReferenceProvider` assert underlying element

@@ -21,11 +21,11 @@ Enum class describing the failure level of the IntelliJ Plugin Verifier CLI tool
 | `COMPATIBILITY_WARNINGS`           | Compatibility warnings detected against the specified IDE version.                  |
 | `COMPATIBILITY_PROBLEMS`           | Compatibility problems detected against the specified IDE version.                  |
 | `DEPRECATED_API_USAGES`            | Plugin uses API marked as deprecated (`@Deprecated`).                               |
-| `SCHEDULED_FOR_REMOVAL_API_USAGES` | Plugin uses API marked as scheduled for removal (`ApiStatus.@ScheduledForRemoval`). |
-| `EXPERIMENTAL_API_USAGES`          | Plugin uses API marked as experimental (`ApiStatus.@Experimental`).                 |
-| `INTERNAL_API_USAGES`              | Plugin uses API marked as internal (`ApiStatus.@Internal`).                         |
-| `OVERRIDE_ONLY_API_USAGES`         | Override-only API is used incorrectly (`ApiStatus.@OverrideOnly`).                  |
-| `NON_EXTENDABLE_API_USAGES`        | Non-extendable API is used incorrectly (`ApiStatus.@NonExtendable`).                |
+| `SCHEDULED_FOR_REMOVAL_API_USAGES` | Plugin uses API marked as scheduled for removal (`@ApiStatus.ScheduledForRemoval`). |
+| `EXPERIMENTAL_API_USAGES`          | Plugin uses API marked as experimental (`@ApiStatus.Experimental`).                 |
+| `INTERNAL_API_USAGES`              | Plugin uses API marked as internal (`@ApiStatus.Internal`).                         |
+| `OVERRIDE_ONLY_API_USAGES`         | Override-only API is used incorrectly (`@ApiStatus.OverrideOnly`).                  |
+| `NON_EXTENDABLE_API_USAGES`        | Non-extendable API is used incorrectly (`@ApiStatus.NonExtendable`).                |
 | `PLUGIN_STRUCTURE_WARNINGS`        | The structure of the plugin is not valid.                                           |
 | `MISSING_DEPENDENCIES`             | Plugin has some dependencies missing.                                               |
 | `INVALID_PLUGIN`                   | Provided plugin artifact is not valid.                                              |

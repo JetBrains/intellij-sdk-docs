@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Verifying Plugin Compatibility
 
@@ -6,7 +6,7 @@
 
 Please see [](api_changes_list.md) for known breaking changes.
 
-For API annotated with [`ApiStatus.@Internal`](%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/ApiStatus.java), see [](api_internal.md) for more details and replacements.
+For API annotated with [`@ApiStatus.Internal`](%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/ApiStatus.java), see [](api_internal.md) for more details and replacements.
 
 ## Plugin Verifier
 
@@ -32,40 +32,40 @@ Use highlighting available via dedicated [IDE inspections](https://www.jetbrains
 
 ### Unstable API
 
-- `ApiStatus.@Experimental` is considered unstable and may break or be removed.
-- `ApiStatus.@Internal` must not be used by plugins, see [](api_internal.md) for more details and replacements.
-- `ApiStatus.@ScheduledForRemoval` denotes API that will be removed in a future version.
+- `@ApiStatus.Experimental` is considered unstable and may break or be removed.
+- `@ApiStatus.Internal` must not be used by plugins, see [](api_internal.md) for more details and replacements.
+- `@ApiStatus.ScheduledForRemoval` denotes API that will be removed in a future version.
 
 Inspection: <control>JVM languages | Unstable API Usage</control> and <control>JVM languages | Unstable type is used in signature</control>
 
 ### Obsolete API
 
-API annotated with `ApiStatus.@Obsolete` has been replaced with a better alternative and must not be used for new code.
+API annotated with `@ApiStatus.Obsolete` has been replaced with a better alternative and must not be used for new code.
 
 Inspection: <control>Plugin DevKit | Code | Usages of ApiStatus.@Obsolete</control> (2023.1)
 
 ### Non-Extendable API
 
-API annotated with `ApiStatus.@NonExtendable` must not be extended, implemented or overridden.
+API annotated with `@ApiStatus.NonExtendable` must not be extended, implemented or overridden.
 
 Inspection: <control>JVM languages | Class, interface, or method should not be extended</control>
 
 ### Override-Only API
 
-API annotated with `ApiStatus.@OverrideOnly` must not be called directly by the client.
+API annotated with `@ApiStatus.OverrideOnly` must not be called directly by the client.
 
 Inspection: <control>JVM languages | Method can only be overridden</control>
 
 ### plugin.xml
 
-Usage of [Extension Points](plugin_extensions.md) which are deprecated or annotated with `ApiStatus.@Experimental` or `ApiStatus.@Internal` is also highlighted in <path>[plugin.xml](plugin_configuration_file.md)</path> files.
+Usage of [Extension Points](plugin_extensions.md) which are deprecated or annotated with `@ApiStatus.Experimental` or `@ApiStatus.Internal` is also highlighted in <path>[plugin.xml](plugin_configuration_file.md)</path> files.
 
 Inspection: <control>Plugin DevKit | Plugin descriptor | Plugin.xml validity</control>
 
 ### API Compatibility
 
 A plugin might specify a [compatibility range](build_number_ranges.md) including releases where some API is not available.
-Under the hood, it uses an artifact containing generated data via `ApiStatus.@AvailableSince`, which is automatically attached to the project.
+Under the hood, it uses an artifact containing generated data via `@ApiStatus.AvailableSince`, which is automatically attached to the project.
 
 > If values are not specified directly in [<path>plugin.xml</path>](plugin_configuration_file.md) (e.g., when providing values via [](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) Gradle task), they must be set explicitly in the inspection's settings.
 

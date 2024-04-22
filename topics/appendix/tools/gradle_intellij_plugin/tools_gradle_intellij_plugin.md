@@ -1666,11 +1666,11 @@ Accepted values
 - `FailureLevel.COMPATIBILITY_WARNINGS` - Compatibility warnings detected against the specified IDE version.
 - `FailureLevel.COMPATIBILITY_PROBLEMS` - Compatibility problems detected against the specified IDE version.
 - `FailureLevel.DEPRECATED_API_USAGES` - Plugin uses API marked as deprecated (`@Deprecated`).
-- `FailureLevel.SCHEDULED_FOR_REMOVAL_API_USAGES` - Plugin uses API marked as scheduled for removal (`ApiStatus.@ScheduledForRemoval`).
-- `FailureLevel.EXPERIMENTAL_API_USAGES` - Plugin uses API marked as experimental (`ApiStatus.@Experimental`).
-- `FailureLevel.INTERNAL_API_USAGES` - Plugin uses API marked as internal (`ApiStatus.@Internal`).
-- `FailureLevel.OVERRIDE_ONLY_API_USAGES` - Override-only API is used incorrectly (`ApiStatus.@OverrideOnly`).
-- `FailureLevel.NON_EXTENDABLE_API_USAGES` - Non-extendable API is used incorrectly (`ApiStatus.@NonExtendable`).
+- `FailureLevel.SCHEDULED_FOR_REMOVAL_API_USAGES` - Plugin uses API marked as scheduled for removal (`@ApiStatus.ScheduledForRemoval`).
+- `FailureLevel.EXPERIMENTAL_API_USAGES` - Plugin uses API marked as experimental (`@ApiStatus.Experimental`).
+- `FailureLevel.INTERNAL_API_USAGES` - Plugin uses API marked as internal (`@ApiStatus.Internal`).
+- `FailureLevel.OVERRIDE_ONLY_API_USAGES` - Override-only API is used incorrectly (`@ApiStatus.OverrideOnly`).
+- `FailureLevel.NON_EXTENDABLE_API_USAGES` - Non-extendable API is used incorrectly (`@ApiStatus.NonExtendable`).
 - `FailureLevel.PLUGIN_STRUCTURE_WARNINGS` - The structure of the plugin is not valid.
 - `FailureLevel.MISSING_DEPENDENCIES` - Plugin has some dependencies missing.
 - `FailureLevel.INVALID_PLUGIN` - "Provided plugin artifact is not valid."

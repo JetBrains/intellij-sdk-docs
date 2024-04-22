@@ -14,7 +14,7 @@ There are two types of extension points:
 * _Interface_ extension points allow other plugins to extend your plugins with _code_.
   When defining an interface extension point, specify an interface, and other plugins will provide classes implementing that interface.
   The providing plugin can then invoke methods on this interface.
-  In most cases, the interface can be annotated with `ApiStatus.@OverrideOnly` (see [](verifying_plugin_compatibility.md#override-only-api)).
+  In most cases, the interface can be annotated with `@ApiStatus.OverrideOnly` (see [](verifying_plugin_compatibility.md#override-only-api)).
 * _Bean_ extension points allow other plugins to extend a plugin with _data_.
   Specify the fully qualified name of an extension class, and other plugins will provide data that will be turned into instances of that class.
 

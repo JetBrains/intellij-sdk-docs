@@ -509,6 +509,7 @@
       <toc-element topic="data_formats.md"/>
       <toc-element topic="default_values.md" hidden="true"/>
       <toc-element topic="discoverability.md" hidden="true"/>
+      <toc-element topic="icons_style.md"/>
       <toc-element topic="groups_of_controls.md"/>
 <!--      <toc-element topic="icons.md"/>-->
       <toc-element topic="layout.md"/>

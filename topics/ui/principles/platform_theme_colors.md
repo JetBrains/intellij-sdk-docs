@@ -17,7 +17,7 @@ Use the colors consistently within the default themes. To do so, follow these gu
 
 ## UI components
 
-Colors for UI components are specified with **color keys**. 
+Colors for UI components are specified with **color keys**.
 A color key is a name of a color property in a particular component, e.g. `ComboBox.background`, or a generic color property for several components, e.g. `Component.borderColor`.
 
 
@@ -31,7 +31,7 @@ Keys allow creating [custom color themes](http://www.jetbrains.org/intellij/sdk/
 
 See custom themes in the <a href="https://plugins.jetbrains.com/search?tags=Theme">plugins repository</a>.
 
-See the meanings of the parts in a color key in the [key naming scheme](http://www.jetbrains.org/intellij/sdk/docs/reference_guide/ui_themes/tdemes_metadata.html#key-naming-scheme). 
+See the meanings of the parts in a color key in the [key naming scheme](http://www.jetbrains.org/intellij/sdk/docs/reference_guide/ui_themes/tdemes_metadata.html#key-naming-scheme).
 
 See a complete list of keys with their descriptions in the JSON files: [IntelliJ custom keys](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources/src/tdemes/metadata/IntelliJPlatform.themeMetadata.json), [JDK keys](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources/src/tdemes/metadata/JDK.themeMetadata.json).
 
@@ -42,10 +42,10 @@ See the color values for the currently selected theme in the LaF Defaults dialog
 * The dialog is available in the [internal mode](http://www.jetbrains.org/intellij/sdk/docs/reference_guide/internal_actions/enabling_internal.html). See Tools > Internal Actions > UI in the main menu or find it with Go to Action.
 * Some color keys are not shown in the dialog by default because they are loaded at runtime with a corresponding UI component. Open the UI with this component to see such keys in the dialog.
 * Edit a color in the dialog to preview it in the IDE. The edited color is stored until the theme is switched.
-  
+
 ![](03_LaF_Defaults.png)
 
-<note>For IntelliJ designers: 
+<note>For IntelliJ designers:
 <list>
 <li>Provide color keys in design specifications to be sure that correct keys are used.</li>
 <li>When a new key is implemented, check that <a href="https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources/src/tdemes/metadata/IntelliJPlatform.themeMetadata.json">IntelliJPlatform.themeMetadata.json</a> has the new key with the “since” parameter and description, and the old keys are deprecated.</li>
@@ -68,7 +68,7 @@ Incorrect: A new component with a light-blue background reuses Focus.borderColor
 Correct: A new component with a light-blue background has its own color key <code>ComponentName.background</code>.
 
 
-**Implementation**  
+**Implementation**
 Use `JBColor.namedColor` to set a color key and fallback color values:
 
 <code-block lang="java">

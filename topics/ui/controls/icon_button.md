@@ -33,7 +33,7 @@ Follow the rules for [toolbar](toolbar.md#what-items-to-add-on-toolbar).
 ## How to use
 
 Provide a recognizable icon. Use an [existing icon](https://jetbrains.design/intellij/resources/icons_list/) or create a new one using
-[icon guidelines](icons.md).
+[icon guidelines](icons_style.md).
 
 Provide a short and descriptive name for a toolbar icon button. Show a tooltip with the button name on mouse hover.
 Include a shortcut if there is one. See [Context help](context_help.md) for details.

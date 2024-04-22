@@ -32,7 +32,7 @@ Show the tool window name in the tool window button and header. If there are tab
 
 ![](pull_requests.png)
 
-Add an icon for the tool window. The icon is 13px x 13px, grey and monochromatic. See how to create icons in the [icons guidelines](icons.md).
+Add an icon for the tool window. The icon is 13px x 13px, grey and monochromatic. See how to create icons in the [icons guidelines](icons_style.md).
 
 <p> <b>Exception:</b> Problems and Event Log icons change color and show the current status.</p>
 

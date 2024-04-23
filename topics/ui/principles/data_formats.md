@@ -51,7 +51,7 @@ category: Principles
 
 ## Date and time
 
-By default, the date and time formats are taken from the system settings. The format can be changed on the Settings > Appearance & Behavior > System Settings > Date Formats page.
+By default, the date and time formats are taken from the system settings. The format can be changed on the <ui-path>Settings | Appearance & Behavior | System Settings | Date Formats</ui-path> page.
 
 See the table below to understand in which cases to show date and time.
 

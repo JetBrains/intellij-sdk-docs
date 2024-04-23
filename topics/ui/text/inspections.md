@@ -4,7 +4,7 @@ category: Text
 ---
 
 ![](main.png)
-*Inspections configuration on Editor > Inspections settings page or in Configure Inspections dialog.*
+*Inspections configuration on <ui-path>Settings | Editor | Inspections</ui-path> page or in <control>Configure Inspections</control> dialog.*
 
 Inspection names, descriptions, and editor messages should be short and descriptive. Follow the rules for [short and clear texts](writing_short.md) and [punctuation](punctuation.md) in addition to rules described below.
 
@@ -65,7 +65,7 @@ Provide details, such as:
 ![](link.png)
 
 * Two code samples: the code with a problem and the code that bypasses this problem. By comparing the good code and the bad code, users can work out what causes the problem and how to avoid it.
-  For example, for "Java | Probable bugs | 'equals()' called on array" adding such an example helps to understand the inspection quicker:
+  For example, for <ui-path>Java | Probable bugs | 'equals()' called on array</ui-path> adding such an example helps to understand the inspection quicker:
 
 ![](../../../images/ui/inspections/example.png)
 

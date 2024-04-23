@@ -8,7 +8,10 @@ category: Controls
 
 ## When to use
 
-Use tables so that users can review, enter or edit uniform sets of data or options. For example: VCS > Git > Show History, Settings > Appearance & Behavior > Path Variables,  Settings > Appearance & Behavior > File Colors.
+Use tables so that users can review, enter or edit uniform sets of data or options. For example:
+* <ui-path>Git | Show Git Log</ui-path>
+* <ui-path>Settings | Appearance & Behavior | Path Variables</ui-path>
+* <ui-path>Settings | Appearance & Behavior | File Colors</ui-path>
 
 Use tables:
 
@@ -28,7 +31,7 @@ Do **not** use tables:
 
 * When there are more than 4 options per entry. Use the Master-Detail layout instead.
 
-* When at least one of the options requires a multi-line control, for example, the Text Area in Editor > Copyright > Copyright Profiles. Use Master-Detail layout instead:
+* When at least one of the options requires a multi-line control, for example, the Text Area in <ui-path>Settings | Editor | Copyright | Copyright Profiles</ui-path>. Use Master-Detail layout instead:
   ![](master-detail.png)
 
 ## How to use
@@ -41,7 +44,7 @@ Add a label if the table content is not obvious from the dialog title or the tab
 
 ![](../../../images/ui/table/label.png)
 
-Avoid a label if it duplicates the dialog title or the table header. For example, there is no need in a label in the JavaScript > Libraries table since the Settings page title and the table context make it clear what is in the table:
+Avoid a label if it duplicates the dialog title or the table header. For example, there is no need in a label in the <ui-path>JavaScript | Libraries</ui-path> table since the Settings page title and the table context make it clear what is in the table:
 
 ![](label-header.png)
 
@@ -236,7 +239,7 @@ Allow in-place editing for paths and add the Browse button to the cell:
 
 Show a separate dialog for non-text data, for example, a color chooser for colors.
 
-Do **not** show a separate dialog for editing simple data rows without a compound preview (an example of a compound preview can be found in Editor > Language Injections). For example, there is no need in a separate dialog in the Appearance & Behaviour > Path Variables table, as all editing could be done in place.
+Do **not** show a separate dialog for editing simple data rows without a compound preview (an example of a compound preview can be found in <ui-path>Settings | Editor | Language Injections</ui-path>). For example, there is no need in a separate dialog in the <ui-path>Settings | Appearance & Behavior | Path Variables</ui-path> table, as all editing could be done in place.
 
 If it’s possible to enumerate less than 15 most likely or valid variants, show a combobox-like configurable with a down-arrow icon and a popup on click:
 

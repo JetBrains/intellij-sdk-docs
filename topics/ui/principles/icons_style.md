@@ -133,7 +133,7 @@ Use a 2px stroke as the main drawing line. Consistent line weight makes icons co
 
 Align pixels on the X and Y axis and round to the nearest whole pixel, or 0.5px if it’s not possible to align to integer pixels. Aligning icons off the pixel grid will make the icon blurry when it’s rasterized.
 
-<note>To check what an icon will look like when rasterized use the View > Canvas > Show Pixels on Zoom option <shortcut>Ctrl+P</shortcut> in Sketch, View > Pixel Preview <shortcut>Alt+Ctrl+Y</shortcut> in Illustrator.</note>
+<note>To check what an icon will look like when rasterized use the <ui-path>View | Canvas | Show Pixels on Zoom</ui-path> option <shortcut>Ctrl+P</shortcut> in Sketch, <ui-path>View | Pixel Preview</ui-path> <shortcut>Alt+Ctrl+Y</shortcut> in Illustrator.</note>
 
 <table style="none">
 <tr>

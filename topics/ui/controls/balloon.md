@@ -121,7 +121,7 @@ If no actions are available, provide more details in the body text, e.g. how to 
 ![](09_error_correct.png)
 
 ### Naming a notification group
-Each balloon notification belongs to a group. Groups can be seen in _Settings > Appearance & Behavior > Notifications_.
+Each balloon notification belongs to a group. Groups can be seen in <ui-path>Settings | Appearance & Behavior | Notifications</ui-path>.
 
 To name a notification group, follow these rules:
 * Name the group with an ending to the phrase “Notifications in this group notify the user about…“. Examples: _Automatic indent detection_, _Content root duplicates_.

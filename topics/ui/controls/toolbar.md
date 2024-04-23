@@ -88,7 +88,7 @@ Provide commands for invoking the toolbar. Use the main menu for the main window
 
 ![](reveal.png)
 
-Provide the ability to customize toolbars in the main window. To do this, add the toolbar to the list on the Settings > Appearance & Behavior > Menus and Toolbar page and open it using the "Customize Toolbar..." action from the toolbar context menu.
+Provide the ability to customize toolbars in the main window. To do this, add the toolbar to the list on the <ui-path>Settings | Appearance & Behavior | Menus and Toolbars</ui-path> page and open it using the <control>Customize Toolbar...</control> action from the toolbar context menu.
 
 ![](customize.png)
 

@@ -149,7 +149,7 @@ Enclose meta-options in pointy brackets and place meta-options at the beginning 
 
 ![](run_tests.png)
 
-*\<Choose per test\> is a meta-options because it’s not a  real runner.*
+*<control>&lt;Choose per test></control> is a meta-options because it’s not a  real runner.*
 
 Do **not** assign special meanings to numeric or string values, use meta-options instead. It can be unclear that 0 or an empty string are used to disable an option.
 
@@ -164,9 +164,9 @@ Do **not** assign special meanings to numeric or string values, use meta-options
       </tr>
   </table>
 
-  <p><em>In the incorrect example empty string is used to set &lt;Same
-  as language level&gt;, which is unclear.</em></p>
-  <p>Replace the &lt;None&gt; option with a checkbox if it does not make the layout more complex:</p>
+  <p><em>In the incorrect example an empty string is used to set <control>&lt;Same
+  as language level&gt;</control>, which is unclear.</em></p>
+  <p>Replace the <control>&lt;None&gt;</control> option with a checkbox if it does not make the layout more complex:</p>
 
   <p>Incorrect</p>
 

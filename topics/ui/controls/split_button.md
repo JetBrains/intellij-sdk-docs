@@ -92,7 +92,7 @@ Do **not** use the Split Button in other cases, use simple [Buttons](button.topi
     <td>Hover</td>
     <td>
         <ul>
-            <li>Show a tooltip after delay (delay for tooltips is configured in Appearance & Behavior > Appearance > Tooltip initial delay):
+            <li>Show a tooltip:
                 <img src="../../../images/ui/split_button/tooltip-button.png" /></li>
             <li>
                 The tooltip must not overlap the dropdown menu. Do not show a tooltip under the menu, show it on the opposite side of the button:

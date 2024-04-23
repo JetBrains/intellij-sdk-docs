@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Inspection Options
 
@@ -18,7 +18,7 @@ Currently, there are two ways of providing the inspection options:
 {style="note"}
 
 Declarative API allows to:
-* delegate component rendering to the platform and make all the inspection options UI consistent and compliant with the [IntelliJ Platform UI Guideline](https://jetbrains.design/intellij/)
+* delegate component rendering to the platform and make all the inspection options UI consistent and compliant with the [](ui_guidelines_welcome.md)
 * optimize checking whether the inspection contains any options
 * manipulate options in places other than inspection panels (e.g., in quick fixes)
 * render options in contexts other than IntelliJ Platform-based IDEs

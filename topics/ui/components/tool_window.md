@@ -3,7 +3,7 @@ title: Tool window
 category: Components
 ---
 
-A tool window is a pane inside the main IDE window. For information about tool windows, see [IntelliJ IDEA Web Help](https://www.jetbrains.com/help/idea/tool-windows.html). For information about implementing tool windows, see [IntelliJ Platform SDK DevGuide](https://jetbrains.org/intellij/sdk/docs/user_interface_components/tool_windows.html).
+A tool window is a pane inside the main IDE window. For information about tool windows, see [IntelliJ IDEA Web Help](https://www.jetbrains.com/help/idea/tool-windows.html). For information about implementing tool windows, see [](tool_windows.md).
 
 <img src="../../../images/ui/tool_window/example.png"/>
 

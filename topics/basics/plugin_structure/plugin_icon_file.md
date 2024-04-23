@@ -50,7 +50,7 @@ Plugin Logo designs should leave at least 2px transparent padding around the per
 
 Make sure Plugin Logos have the same visual weight as the logos in the examples below.
 The more filled a Plugin Logo design is, the less actual space it needs.
-See more examples of [visual weight compensation](https://jetbrains.design/intellij/principles/icons/#08) in the IntelliJ Platform UI Guidelines for Icons.
+See more examples of [visual weight compensation](icons_style.md#basic-shapes) in the UI Guidelines for Icons.
 
 For basic shapes, use the following sizes.
 Note the different areas of transparent padding used for each shape:
@@ -65,7 +65,7 @@ Note the different areas of transparent padding used for each shape:
 ### Plugin Logo Colors
 If the plugin's technology already has a logo, use its colors.
 Check the license terms before using the logo.
-If there is no existing logo, or its use is prohibited, create a custom logo based on the [Action Colors Palette](https://jetbrains.design/intellij/principles/icons/#action-icons) in the IntelliJ Platform UI Guidelines for Icons.
+If there is no existing logo, or its use is prohibited, create a custom logo based on the [Action Colors Palette](icons_style.md#action-icons) in the UI Guidelines for Icons.
 
 | ![The YouTrack Plugin Logo uses the YouTrack product logo ](yt_logo.png){height="200" width="200"} | ![The Keymap Plugin Logo uses a color from the Action Colors Palette](keymap_logo.png){:height="200" width="200"} |
 |:--------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------:|

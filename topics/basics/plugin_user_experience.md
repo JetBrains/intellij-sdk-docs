@@ -77,15 +77,15 @@ If you implement [custom language support](custom_language_support.md), review a
 ## Consistent and Good-Looking UI
 
 If a plugin UI significantly differs from the other application parts, it can feel alien to people and might be considered low quality or neglected.
-Review and follow the rules described in the [IntelliJ Platform UI Guidelines](https://jetbrains.design/intellij/).
-Pay attention to [icons](https://jetbrains.design/intellij/principles/icons/) and make them match the IDE style.
+Review and follow the rules described in the [](ui_guidelines_welcome.md).
+Pay attention to [icons](icons_style.md) and make them match the IDE style.
 Use the UI controls recommended for a given use case.
 Use [UI Inspector](internal_ui_inspector.md) to see how the existing UI is implemented.
 
 ## High-Quality Texts
 
 Bad-quality labels or texts with typos and grammatical errors make a bad impression.
-All the UI texts should follow the rules described in the _Text_ section of the [IntelliJ Platform UI Guidelines](https://jetbrains.design/intellij/).
+All the UI texts should follow the rules described in the _Text_ section of the [](ui_guidelines_welcome.md).
 It is recommended to proofread the texts or use one of the [spellcheck plugins](https://plugins.jetbrains.com/search?tags=Spellcheck).
 
 ## Plugin Description and Presentation

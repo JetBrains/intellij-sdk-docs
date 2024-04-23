@@ -1,12 +1,12 @@
-# Kotlin UI DSL Version 1
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# Kotlin UI DSL Version 1
 
 <link-summary>Kotlin DSL for creating UI forms with input components bound to state object.</link-summary>
 
 <tldr>
 
-**Platform UI Guidelines:** [Layout](https://jetbrains.design/intellij/principles/layout)
+**UI Guidelines:** [](layout.md)
 
 </tldr>
 
@@ -32,7 +32,7 @@ The _Kotlin UI DSL Version 1_ functions are located in the [`com.intellij.ui.lay
 
 ## Layout Structure
 
-> See [Layout](https://jetbrains.design/intellij/principles/layout) topic in IntelliJ Platform UI Guidelines for recommendations on arranging UI controls in dialogs.
+> See [](layout.md) topic in UI Guidelines for recommendations on arranging UI controls in dialogs.
 >
 
 Use [`panel`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/layout/layout.kt) to create UI:

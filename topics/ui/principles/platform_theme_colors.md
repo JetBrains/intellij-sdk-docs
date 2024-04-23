@@ -27,13 +27,13 @@ A color key is a name of a color property in a particular component, e.g. `Combo
 
 Each key has two default color values: one for IntelliJ Light and another for Darcula. Example: `ComboBox.background` is #FFFFFF in IntelliJ Light and #3C3F41 in Darcula.
 
-Keys allow creating [custom color themes](themes_getting_started.md). A custom theme is one of the default themes plus a set of color keys with new values in a JSON file. Example: the High contrast theme is a custom theme based on Darcula. New color values are stored in the [JSON file](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources/src/tdemes/HighContrast.theme.json).
+Keys allow creating [custom color themes](themes_getting_started.md). A custom theme is one of the default themes plus a set of color keys with new values in a JSON file. Example: the High contrast theme is a custom theme based on Darcula. New color values are stored in the [`HighContrast.theme.json`](%gh-ic%/platform/platform-resources/src/themes/HighContrast.theme.json) JSON file.
 
 See custom themes in the <a href="https://plugins.jetbrains.com/search?tags=Theme">plugins repository</a>.
 
 See the meanings of the parts in a color key in the [key naming scheme](themes_metadata.md#key-naming-scheme).
 
-See a complete list of keys with their descriptions in the JSON files: [IntelliJ custom keys](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources/src/tdemes/metadata/IntelliJPlatform.themeMetadata.json), [JDK keys](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources/src/tdemes/metadata/JDK.themeMetadata.json).
+See a complete list of keys with their descriptions in the JSON files: [`IntelliJPlatform.themeMetadata.json`](%gh-ic%/platform/platform-resources/src/themes/metadata/IntelliJPlatform.themeMetadata.json), [`JDK.themeMetadata.json`](%gh-ic%/platform/platform-resources/src/themes/metadata/JDK.themeMetadata.json).
 
 See the color values for the currently selected theme in the LaF Defaults dialog:
 

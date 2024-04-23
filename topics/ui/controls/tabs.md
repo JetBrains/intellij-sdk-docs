@@ -9,7 +9,7 @@ Tabs organize content in dialogs by grouping similar UI controls.
 
 ![](../../../images/ui/tabs/01_example.png)
 
-In code editors, tabs are created with another component — [JBEditorTabs](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/ui/tabs/impl/JBEditorTabs.java). It supports extended functionality like icons, closeable, and draggable tabs. Do **not** use this component in dialogs.
+In code editors, tabs are created with another component — [`JBEditorTabs`](%gh-ic%/platform/platform-api/src/com/intellij/ui/tabs/impl/JBEditorTabs.java). It supports extended functionality like icons, closeable, and draggable tabs. Do **not** use this component in dialogs.
 
 In tool windows, tabs are generated automatically. See [Tool window](tool_window.md).
 

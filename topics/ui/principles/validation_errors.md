@@ -103,17 +103,17 @@ Hide the error when the incorrect symbol is deleted.
 
 #### Implementation {id="implementation_1"}
 
-<code-block lang="java">
+```java
 // Fields initializers
 private JTextField myPort = new JTextField();
 private static final String MESSAGE = "The port number should be between 0 and 65535";
 // Components initialization
-new ComponentValidator(project).withValidator(() -&gt;; {
+new ComponentValidator(project).withValidator(() -> {
   String pt = myPort.getText();
   if (StringUtil.isNotEmpty(pt)) {
     try {
       int portValue = Integer.parseInt(pt);
-      if (portValue &gt;= 0 &amp;&amp; portValue &lt;= 65535) {
+      if (portValue >= 0 && portValue <= 65535) {
         return null;
       }
       else {
@@ -131,10 +131,10 @@ new ComponentValidator(project).withValidator(() -&gt;; {
 myPort.getDocument().addDocumentListener(new DocumentAdapter() {
   @Override
   protected void textChanged(@NotNull DocumentEvent e) {
-    ComponentValidator.getInstance(myPort).ifPresent(v -&gt; v.revalidate());
+    ComponentValidator.getInstance(myPort).ifPresent(v -> v.revalidate());
   }
 });
-</code-block>
+```
 
 
 ### 2. Non-allowed values in dialogs
@@ -168,9 +168,11 @@ When the focus is returned to the field with an error, use validation on input. 
 
 #### Implementation {id="implementation_2"}
 Add `andStartOnFocusLost()` call on `ComponentValidator` before installing it on a component:
-<code-block lang="java">new ComponentValidator(getDisposable()).withValidator(...).
-    andStartOnFocusLost().installOn(component);</code-block>
 
+```java
+new ComponentValidator(getDisposable()).withValidator(...).
+    andStartOnFocusLost().installOn(component);
+```
 
 ### 3. Empty required fields in dialogs
 
@@ -206,9 +208,10 @@ Show the error tooltip for the next field when it gets the focus, hover or the u
 By default, `DialogWrapper` disables "OK" button until all fields that participate in validation
     become valid. Explicitly enable "OK" button for each input field:
 
-<code-block lang="java">new ValidationInfo("The host cannot be reached", myHostField)
-.withOkEnabled();</code-block>
-
+```java
+new ValidationInfo("The host cannot be reached", myHostField)
+    .withOkEnabled();
+```
 
 ### 4. Non-allowed or empty values in the main window
 
@@ -238,11 +241,12 @@ Hide the error messages once any field related to the error is edited. Set the d
 
 #### Implementation {id="implementation_4"}
 
-`ValidationInfo` for messages in inline area is created with null component:
- <code-block lang="java"> new ValidationInfo("The host cannot be reached. Check the address and
-     credentials.");</code-block>
+`ValidationInfo` for messages in inline area is created with `null` component:
 
-
+```java
+new ValidationInfo("The host cannot be reached. " +
+                   "Check the address and credentials.");
+```
 
 ### 6. Complex values in multi-page dialogs
 
@@ -403,9 +407,10 @@ The warning can be shown:
 
 In a tooltip for a specific field. Follow the rules for [the error tooltip](tooltip.md).
 
-<code-block lang="java">new ValidationInfo("Target name is not specified", myNameField)
-.asWarning();</code-block>
-
+```java
+new ValidationInfo("Target name is not specified", myNameField)
+    .asWarning();
+```
 
 On the form under the controls. Show the message with the yellow warning icon.
 
@@ -452,7 +457,7 @@ Use a warning icon for warnings:
 #### Implementation
 
 
-<code-block lang="java">
+```java
 JTextField cellEditor = new JTextField();
 cellEditor.putClientProperty(DarculaUIUtil.COMPACT_PROPERTY, Boolean.TRUE);
 cellEditor.getDocument().addDocumentListener(new DocumentAdapter() {
@@ -473,8 +478,7 @@ col0.setCellRenderer(new DefaultTableCellRenderer() {
       return size;
     }
 });
-</code-block>
-
+```
 
 
 ### Trees and lists

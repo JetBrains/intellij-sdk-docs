@@ -18,9 +18,10 @@ Follow the rules for [progress indicators](progress_indicators.md).
 
 The loader form and sizes are the same in all themes. Use the default 16x16 loader in all cases.
 
-<code-block lang="java">
-JLabel label = new JLabel("Loading...", new AnimatedIcon.Default(), SwingConstants.LEFT)
-</code-block>
+```java
+JLabel label = new JLabel("Loading...",
+    new AnimatedIcon.Default(), SwingConstants.LEFT);
+```
 
 
 A loader may have a label if the process is long and the loader is shown in an empty area. In this case, use a [progress text](progress_text.md) as the label:
@@ -40,8 +41,10 @@ Remove the loader as soon as the process completes.
 
 <tr>
     <td colspan="2">
-    <code-block lang="java">ExpandableTextField textField = new ExpandableTextField();
-textField.addExtension(Extension.create(new AnimatedIcon.Default(),null, null));</code-block>
+    <code-block lang="java">
+    ExpandableTextField textField = new ExpandableTextField();
+    textField.addExtension(Extension.create(new AnimatedIcon.Default(), null, null));
+    </code-block>
     </td>
 </tr>
 

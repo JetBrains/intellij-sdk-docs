@@ -32,11 +32,11 @@ If a label is long, split it into two lines. Use HTML formatting for that.
 
 ![](label_twoline.png)
 
-<code-block lang="java">
+```java
 JCheckBox checkBox = new JCheckBox(
-    "&lt;html>Insert selected suggestion by  pressing space, dot,&lt;br/>" +
-    "or other context-dependent keys&lt;/html>");
-</code-block>
+    "<html>Insert selected suggestion by  pressing space, dot,<br/>" +
+    "or other context-dependent keys</html>");
+```
 
 Avoid labels that take more than two lines. See recommendations on writing concise labels below.
 
@@ -46,23 +46,22 @@ If a checkbox appears in a table, place the label into the column header and do 
 
 **Implementation**: Checkboxes are rendered in tables with `BooleanTableCellRenderer` and edited with `DefaultCellEditor(JCheckBox)` implementation. For any column that should be rendered as a checkbox, set both a renderer and editor for consistency. The type of data in the correspondent column of the `Table` model should either be `Boolean` or `String` containing `true` or `false`.
 
-<code-block lang="java">
+```java
 TableColumn col = table.getColumnModel().getColumn(...);
 col.setCellEditor(JBTable.createBooleanEditor());
 col.setCellRenderer(new BooleanTableCellRender());
-</code-block>
-
+```
 
 ### Writing guidelines
 
-Use sentence-style capitalization. 
+Use sentence-style capitalization.
 
 Do not use ending punctuation.
 
 Use the imperative form of verbs.
 ![](label_short.png)
 
-Do not use negation in labels as it complicates understanding.  
+Do not use negation in labels as it complicates understanding.
 **Exception**: "Do not show again" checkbox.
 
 ![](label_answeryes.png)
@@ -120,25 +119,25 @@ If a checkbox depends on another control, e.g. an input field, follow the rules 
      <tr>
          <td> Unchecked border </td>
          <td> Checkbox.Border.Default <br/>
-              Checkbox.Border.Default.Dark 
+              Checkbox.Border.Default.Dark
          </td>
      </tr>
      <tr>
          <td> Checked border </td>
          <td> Checkbox.Border.Selected <br/>
-              Checkbox.Border.Selected.Dark 
+              Checkbox.Border.Selected.Dark
          </td>
-     </tr> 
+     </tr>
      <tr>
          <td> Disabled border </td>
          <td> Checkbox.Border.Disabled <br/>
-              Checkbox.Border.Disabled.Dark 
+              Checkbox.Border.Disabled.Dark
          </td>
      </tr>
      <tr>
           <td> Focused inner 1px border for unchecked state </td>
           <td> Checkbox.Focus.Thin.Default <br/>
-               Checkbox.Focus.Thin.Default.Dark 
+               Checkbox.Focus.Thin.Default.Dark
           </td>
       </tr>
       <tr>
@@ -156,7 +155,7 @@ If a checkbox depends on another control, e.g. an input field, follow the rules 
       <tr>
           <td> Checkmark fill </td>
           <td> Checkbox.Foreground.Selected <br/>
-               Checkbox.Foreground.Selected.Dark 
+               Checkbox.Foreground.Selected.Dark
           </td>
       </tr>
       <tr>
@@ -164,6 +163,6 @@ If a checkbox depends on another control, e.g. an input field, follow the rules 
           <td> Checkbox.Foreground.Disabled <br/>
                Checkbox.Foreground.Disabled.Dark
           </td>
-      </tr>             
+      </tr>
 </table>
 -->

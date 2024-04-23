@@ -72,6 +72,9 @@ Correct: A new component with a light-blue background has its own color key <cod
 **Implementation**
 Use `JBColor.namedColor` to set a color key and fallback color values:
 
-<code-block lang="java">
-private static final Color SELECTED_BACKGROUND_COLOR = JBColor.namedColor("CompletionPopup.selectionBackground", new JBColor(0xc5dffc, 0x113a5c));
-</code-block>
+```java
+private static final Color SELECTED_BACKGROUND_COLOR =
+    JBColor.namedColor("CompletionPopup.selectionBackground",
+        new JBColor(0xc5dffc, 0x113a5c)
+    );
+```

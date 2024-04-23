@@ -85,11 +85,12 @@ Always add the arrow icon for an external link. The icon shows that the user wil
 
 ![](04_external_link.png)
 
-<code-block lang="java">ActionLink externalLink = new ActionLink("External link", event -> {
-    BrowserUtil.browse("http://google.com");
+```java
+ActionLink externalLink = new ActionLink("External link", event -> {
+    BrowserUtil.browse("https://www.jetbrains.com");
 });
 externalLink.setExternalLinkIcon();
-</code-block>
+```
 
 An exception is a help topic link in [empty states](empty_state.md). The help icon already hints that this is an external help resource so the arrow icon is unnecessary.
 ![](12_external_link_no_icon.png)

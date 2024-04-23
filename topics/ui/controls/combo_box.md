@@ -10,12 +10,11 @@ A combo box combines a [drop-down list](drop_down.md) and an [input field](input
 
 ![](/../../../images/ui/combo_box/example.png)
 
-Use `com.intellij.openapi.ui.ComboBox`  instead of `javax.swing.JComboBox`. To make combo box editable call:
+Use `com.intellij.openapi.ui.ComboBox`  instead of `javax.swing.JComboBox`. To make combo box editable invoke:
 
-<code-block lang="java">
-comboBox.setEditable(true)
-</code-block>
-
+```java
+comboBox.setEditable(true);
+```
 
 ## When to use
 

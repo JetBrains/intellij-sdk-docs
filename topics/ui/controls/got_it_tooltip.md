@@ -55,34 +55,33 @@ Add a shortcut, if the tooltip describes a single action that has a shortcut.
 ![](11_shortcut.png)
 
 Implementation:
-<code-block lang="java">
+```java
 val GOT_IT_TEXT = "Learn the most useful shortcuts and essential IDE features interactively";
 val shortcut = ...;
 val tooltip = GotItTooltip("ide.features.trainer", GOT_IT_TEXT, project)
-              .withHeader("IDE features trainer");
+              .withHeader("IDE features trainer")
               .withShortcut(shortcut);
-</code-block>
-
+```
 
 ### Link
 Add a local link if users might want to revert changes in a feature or configure it.
 
 ![](12_link_action.png)
 
-<code-block lang="java">
+```java
 new GotItTooltip("some.id", "Show output result in the editor", project)
     .withLink("Disable for all files", this::actionMethodReference);
-</code-block>
+```
 
 
 Add an external link if there is a help source that can further explain the functionality.
 
 ![](13_link_help.png)
 
-<code-block lang="java">
+```java
 new GotItTooltip("some.id", GOT_IT_TEXT, project)
-    .withBrowserLink("How to use", URL("https://www.jetbrains.com/howtouse"));
-</code-block>
+    .withBrowserLink("How to use", new URL("https://www.jetbrains.com/howtouse"));
+```
 
 Do <b>not</b> add more than one link.
 
@@ -129,11 +128,10 @@ Do **not** cover the information the user is currently working with.
 <p>
 <b>Implementation.</b> See four predefined point providers in the <code>GotItTooltip</code> class.
 </p>
-<code-block lang="java">
+```java
 new GotItTooltip("some.id", "You can rename usages", project)
     .show(gutterComponent, GotItTooltip.TOP_MIDDLE)
-</code-block>
-
+```
 
 ### Timeout
 
@@ -149,11 +147,11 @@ Consider adding a timeout if:
 Note that adding a timeout automatically hides the Got It button.<br/><br/>
 
 <b>Implementation.</b> Default timeout duration is 5 seconds. A custom duration can be set:
-<code-block lang="java">
-new GotItTooltip("refactorings", "Press Tab to show options", project)
-    .withTimeout(3000)
-</code-block>
 
+```java
+new GotItTooltip("refactorings", "Press Tab to show options", project)
+    .withTimeout(3000);
+```
 
 ### Versioning
 

@@ -53,10 +53,10 @@ If a label is long, split it into two lines. Avoid labels that take more than tw
 
 To implement this, use HTML formatting:
 
-<code-block lang="java">
+```java
 JRadioButton radioButton = new JRadioButton(
-    "&lt;html>Show options before adding&lt;br>to version control&lt;/html>");
-</code-block>
+    "<html>Show options before adding<br>to version control</html>");
+```
 
 ### Writing guidelines
 

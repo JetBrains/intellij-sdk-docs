@@ -29,21 +29,19 @@ Use a control with the browse icon for a file/folder path selected from the disk
 
 ![](input_browse.png)
 
-An input field with browse button:
-
-<code-block lang="java">com.intellij.openapi.ui.TextFieldWithBrowseButton
-</code-block>
+An input field with browse button: [`TextFieldWithBrowseButton`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/TextFieldWithBrowseButton.java)
 
 A combo box with browse button:
 
-<code-block lang="java">
+```java
 ExtendableTextComponent.Extension browseExtension =
-ExtendableTextComponent.Extension.create(AllIcons.General.OpenDisk, AllIcons.General.OpenDiskHover,
-                                         "Open file", () -&gt;System.out.println("Browse file clicked"));
-ComboBox&lt;String&gt;
-eComboBox = new ComboBox&lt;&gt;(STRING_VALUES);
+  ExtendableTextComponent.Extension.create(
+    AllIcons.General.OpenDisk, AllIcons.General.OpenDiskHover,
+    "Open file", () -> System.out.println("Browse file clicked")
+  );
+ComboBox<String> eComboBox = new ComboBox<>(STRING_VALUES);
 eComboBox.setEditable(true);
-eComboBox.setEditor(new BasicComboBoxEditor(){
+eComboBox.setEditor(new BasicComboBoxEditor() {
   @Override
   protected JTextField createEditorComponent() {
     ExtendableTextField ecbEditor = new ExtendableTextField();
@@ -51,8 +49,8 @@ eComboBox.setEditor(new BasicComboBoxEditor(){
     ecbEditor.setBorder(null);
     return ecbEditor;
   }
-});</code-block>
-
+});
+```
 
 Do **not** place the button on the right of the control.
 

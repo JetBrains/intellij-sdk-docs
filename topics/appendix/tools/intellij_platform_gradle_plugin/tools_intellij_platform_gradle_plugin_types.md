@@ -184,21 +184,21 @@ See also:
 
 Allows for adding `test-framework` testing library variants. See [Dependencies Extension: Testing](tools_intellij_platform_gradle_plugin_dependencies_extension.md#testing).
 
-| Name                | Coordinates                                                   |
-|---------------------|---------------------------------------------------------------|
-| `Platform.JUnit4`   | `com.jetbrains.intellij.platform:test-framework`              |
-| `Platform.JUnit5`   | `com.jetbrains.intellij.platform:test-framework-junit5`       |
-| `Platform.Bundled`  | <path>[platformPath]/lib/testFramework.jar</path>             |
-| `Plugin.Go`         | `com.jetbrains.intellij.go:go-test-framework`                 |
-| `Plugin.Ruby`       | `com.jetbrains.intellij.idea:ruby-test-framework`             |
-| `Plugin.Java`       | `com.jetbrains.intellij.java:java-test-framework`             |
-| `Plugin.JavaScript` | `com.jetbrains.intellij.javascript:javascript-test-framework` |
-| `Plugin.Maven`      | `com.jetbrains.intellij.maven:maven-test-framework`           |
-| `Plugin.ReSharper`  | `com.jetbrains.intellij.resharper:resharper-test-framework`   |
+| Name                | Coordinates                                                                    |
+|---------------------|--------------------------------------------------------------------------------|
+| `Platform.JUnit4`   | `com.jetbrains.intellij.platform:test-framework`                               |
+| `Platform.JUnit5`   | `com.jetbrains.intellij.platform:test-framework-junit5`                        |
+| `Platform.Bundled`  | **SEE NOTE BELOW** Adds <path>[platformPath]/lib/testFramework.jar</path> file |
+| `Plugin.Go`         | `com.jetbrains.intellij.go:go-test-framework`                                  |
+| `Plugin.Ruby`       | `com.jetbrains.intellij.idea:ruby-test-framework`                              |
+| `Plugin.Java`       | `com.jetbrains.intellij.java:java-test-framework`                              |
+| `Plugin.JavaScript` | `com.jetbrains.intellij.javascript:javascript-test-framework`                  |
+| `Plugin.Maven`      | `com.jetbrains.intellij.maven:maven-test-framework`                            |
+| `Plugin.ReSharper`  | `com.jetbrains.intellij.resharper:resharper-test-framework`                    |
 
-> The `Platform.Bundled` type should not be used unless it is necessary, like in the case of Rider, as its `test-framework` is not published as an artifact.
+> The `Platform.Bundled` type should not be used unless it is necessary, like in the case of [Rider](rider.md), as its `test-framework` is not published as an artifact.
 >
-{style="warning"}
+{style="warning" title="Using Platform.Bundled"}
 
 
 ## `VerificationReportsFormats`
@@ -214,7 +214,7 @@ Enum class describing the type of the results produced by the IntelliJ Plugin Ve
 | `HTML`     | HTML formatted output file.    |
 | `MARKDOWN` | Markdown file.                 |
 | `ALL`      | Contains all possible options. |
-| `NONE`     | Contains no option.            |
+| `NONE`     | Contains no options.           |
 
 See also:
 - [Extension: `intellijPlatform.verifyPlugin.verificationReportsFormats`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin-verificationReportsFormats)

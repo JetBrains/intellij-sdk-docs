@@ -17,7 +17,9 @@ Use the following controls or layouts:
 
 Use **group headers** if all rules apply:
 
-<note>If there are less than 3 controls in all groups, consider separating with <a href="group_header.md" anchor="how-to-use">vertical insets</a>.</note>
+> If there are less than 3 controls in all groups, consider separating with [vertical insets](group_header.md#how-to-use).
+>
+{style="note"}
 
 * Each group contains **no** more than 10 controls
 

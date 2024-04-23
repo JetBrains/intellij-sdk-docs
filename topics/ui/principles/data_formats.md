@@ -4,8 +4,11 @@ category: Principles
 ---
 
 ## Numbers
-<note>If there is a space between the number and the unit, use a non-breaking space.</note>
-<p><br /></p>
+
+> If there is a space between the number and the unit, use a non-breaking space.
+>
+{style="note"}
+
 <table>
 <tr>
     <td></td>

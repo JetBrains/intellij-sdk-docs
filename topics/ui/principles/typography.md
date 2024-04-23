@@ -10,7 +10,7 @@ The system fonts are used for the IDE user interface by default. The default fon
 <table style="header-column">
   <tr>
     <td> <strong> macOS </strong> </td>
-    <td> SF Pro Text  </td> 
+    <td> SF Pro Text  </td>
     <td> 13 </td>
   </tr>
   <tr>
@@ -30,37 +30,39 @@ Users can change the default font size in Settings. If the default font size is 
 
 Use the built-in text styles from the table below whenever possible.
 
-<note><a href="https://github.com/JetBrains/intellij-community/blob/2b64d3b15dbd16ae03b3f0fd40a503c65601e3b0/platform/platform-impl/src/com/intellij/internal/LabelSizeDemoAction.kt#L13">Implementation example for&nbsp;font styles</a> </note>
+> Implementation example for font styles: [`LabelSizeDemoAction`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/LabelSizeDemoAction.kt)
+>
+{style="note"}
 
 <table>
 
   <tr><td> Name </td>
   <td> Font size </td>
   <td> <p>Usage&nbsp;&nbsp;&nbsp;<a href="typography.md">Examples</a> </p></td></tr>
-  
+
   <tr>
     <td> <strong>H0 bold</strong> <code>JBFont.h0().asBold()</code></td>
     <td> Default + 12 </td>
     <td>
-        Rich text headers. See the "What’s New" page example below.          
-    </td>    
+        Rich text headers. See the "What’s New" page example below.
+    </td>
   </tr>
 
   <tr>
     <td> <strong>H1 bold</strong> <code>JBFont.h1().asBold()</code></td>
     <td> Default + 9 </td>
-    <td> </td>    
+    <td> </td>
   </tr>
 
   <tr>
     <td >H2<code>JBFont.h2()</code></td>
     <td> Default + 5 </td>
-    <td class="table-line"> </td>    
+    <td class="table-line"> </td>
   </tr>
 
   <tr>
     <td> <strong>H2 bold</strong> <code>JBFont.h2().asBold()</code></td>
-    <td> </td>    
+    <td> </td>
     <td>
         Small page header. Examples: Plugin name, GitHub timeline header
     </td>
@@ -70,25 +72,25 @@ Use the built-in text styles from the table below whenever possible.
     <td > H3<code>JBFont.h3()</code></td>
     <td> Default + 3 </td>
     <td class="table-line">
-        Accent body text 
-    </td>    
+        Accent body text
+    </td>
   </tr>
 
   <tr>
     <td><strong>H3 bold</strong><code>JBFont.h3().asBold()</code></td>
-    <td> </td>    
+    <td> </td>
     <td>
         Headers in dialogs with a small number of elements (Customize page on Welcome screen, Login page in Get from VCS dialog)
-    </td>    
+    </td>
   </tr>
 
   <tr>
     <td> <strong>H4 bold <br/> (Default bold)</strong> <div style="margin: 10px 0 5px -5px"> <code>JBFont.h4().asBold()</code> <code>JBFont.regular().asBold()</code> </div> </td>
-    <td> Default </td>    
+    <td> Default </td>
     <td>
         Header in dialogs with a large number of elements (Run configurations dialog), notification header, breadcrumbs in settings, header in navigation popup, accent elements in lists and trees. <br/><br/>
         Use <a href="group_header.md">Group header</a> to divide the page on groups, but not to draw too much attention to the headings.
-    </td>    
+    </td>
   </tr>
 
   <tr>
@@ -101,7 +103,7 @@ Use the built-in text styles from the table below whenever possible.
 
   <tr>
     <td> Paragraph </td>
-    <td> 
+    <td>
          Default <br/>
          Line height default + 3
     </td>
@@ -159,12 +161,12 @@ JetBrains Mono font is used by default for the Editor.
   <tr>
     <td> Default </td>
     <td> Default </td>
-    <td> Editor </td>    
+    <td> Editor </td>
   </tr>
   <tr>
     <td> <span style="font-size: 13px;"> Small </span> </td>
     <td> Default - 1 </td>
-    <td> Line number </td>    
+    <td> Line number </td>
   </tr>
 </table>
 
@@ -178,7 +180,7 @@ The IDE text colors are in the table below. The editor text colors are managed b
 <td> Light </td>
 <td> Dark </td>
 <td> Usage </td>
-<td> Color key </td>  
+<td> Color key </td>
 </tr>
   <tr>
     <td> Default </td>
@@ -188,7 +190,7 @@ The IDE text colors are in the table below. The editor text colors are managed b
         Labels, inputs, trees, etc.
     </td>
     <td>
-        <code>.foreground</code> keys for various UI controls. Examples: 
+        <code>.foreground</code> keys for various UI controls. Examples:
         <code>Label.foreground</code>
         <code>Button.foreground</code>
         <code>ComboBox.foreground</code>
@@ -204,7 +206,7 @@ The IDE text colors are in the table below. The editor text colors are managed b
         Inline help, shortcuts
     </td>
     <td>
-        <code>Label.infoForeground</code> 
+        <code>Label.infoForeground</code>
     </td>
   </tr>
 
@@ -216,7 +218,7 @@ The IDE text colors are in the table below. The editor text colors are managed b
         Additional info in&nbsp;lists (paths, counters), placeholder
     </td>
     <td>
-        <code>Component.infoForeground</code> 
+        <code>Component.infoForeground</code>
     </td>
   </tr>
 
@@ -228,7 +230,7 @@ The IDE text colors are in the table below. The editor text colors are managed b
         Disabled labels, disabled links
     </td>
     <td>
-        <code>.disabledForeground</code> and <code>.disabledText</code> keys for various UI controls. Examples: 
+        <code>.disabledForeground</code> and <code>.disabledText</code> keys for various UI controls. Examples:
         <code>Label.disabledForeground</code> <br/>
         <code>ComboBox.disabledForeground</code> <br/>
         <code>MenuItem.disabledForeground</code> <br/>
@@ -255,7 +257,7 @@ The IDE text colors are in the table below. The editor text colors are managed b
     <td> Link </td>
     <td> <span style="color: #2470B3">2470B3</span> </td>
     <td> <span style="color: #589DF6">589DF6</span> </td>
-    <td> 
+    <td>
         Links
     </td>
     <td>

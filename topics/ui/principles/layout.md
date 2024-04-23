@@ -26,11 +26,11 @@ See [Dialog window](dialog_window.md) for buttons and other controls at the bott
 ## Independent controls
 
 
-### Labeled input controls 
+### Labeled input controls
 
 Labeled input controls are: [input field](input_field.md), [combo box](combo_box.md), [drop-down list](drop_down.md), [text area](text_area.md), and spinner.
 
-By default, put input controls with labels of similar length on different lines and align their input boxes on the left side. 
+By default, put input controls with labels of similar length on different lines and align their input boxes on the left side.
 
 ![](1_01_input_similar_labels.png)
 
@@ -49,7 +49,7 @@ If an input box is long, and the horizontal space is limited, place the label ab
 ![](1_04_input_top_label.png)
 
 
-#### Separated by other controls  
+#### Separated by other controls
 
 If there are two input controls with labels of similar length that are separated from each other by a single control, align their input boxes on the left side.
 
@@ -69,7 +69,9 @@ If input groups are separated by a group of other UI controls, align only the bo
 
 Always left-align labels.
 
-<note>This alignment is inconsistent with macOS guidelines, but the aim is to maintain consistency in all JetBrains IDEs on all supported platforms.</note>
+> This alignment is inconsistent with macOS guidelines, but the aim is to maintain consistency in all JetBrains IDEs on all supported platforms.
+>
+{style="note"}
 
 
 ![](1_08_label_alignment.png)
@@ -89,7 +91,7 @@ If there is a group of 2–3 checkboxes with short labels (1–3 words), place t
 
 ![](2_02_checkbox_radio_line.png)
 
-When there is an input control on one line and a group of checkboxes or radio buttons on the next line, and their labels are of similar length (one is no more that 5 characters longer than the other), align the input box with the checkbox/radio button. 
+When there is an input control on one line and a group of checkboxes or radio buttons on the next line, and their labels are of similar length (one is no more that 5 characters longer than the other), align the input box with the checkbox/radio button.
 
 <p>If one label is much longer than the other, do <b>not</b> align these UI elements.</p>
 
@@ -116,7 +118,7 @@ Do **not** arrange radio buttons from one group in several columns. Splitting a 
 
 ### Buttons and links
 
-Align an independent button or link to the left with other controls. 
+Align an independent button or link to the left with other controls.
 
 ![](3_01_button_column.png)
 
@@ -133,7 +135,7 @@ Do **not** arrange buttons or links in several columns. Such a layout takes more
 
 ### Lists, trees and tables
 
-Choose a control width such that most of the common values are visible. Take the whole width of the dialog if necessary. 
+Choose a control width such that most of the common values are visible. Take the whole width of the dialog if necessary.
 
 ![](4_01_table_full_width.png)
 
@@ -157,9 +159,9 @@ Place 2–3 related UI controls on the same line if each control takes up to 30 
 
 ![](5_01_dependent_one_line.png)
 
-<p>In all other cases, place interrelated controls on different lines:</p> 
+<p>In all other cases, place interrelated controls on different lines:</p>
 
-Main control: **labeled input control**. 
+Main control: **labeled input control**.
 
 * Align other dependent elements with the left border of the input box.
 
@@ -171,7 +173,7 @@ Main control: **labeled input control**.
 
 ![](5_04_dependent_on_field_long_label.png)
 
-Main control: **checkbox** or **radio button**. Align dependent controls by the label. 
+Main control: **checkbox** or **radio button**. Align dependent controls by the label.
 
 ![](5_02_dependent_on_checkbox.png)
 
@@ -233,7 +235,7 @@ Horizontal insets also matter for grouping controls.
 <p>Better</p>
 
 ![](6_05_hor_inset_better.png)
-*With a smaller horizontal and bigger vertical insets, the checkboxes and the "Length" fields look related. However, it could be made better if the repeating word “Separator” appears only once.* 
+*With a smaller horizontal and bigger vertical insets, the checkboxes and the "Length" fields look related. However, it could be made better if the repeating word “Separator” appears only once.*
 
 <p>Correct</p>
 

@@ -5,15 +5,17 @@ category: Text
 
 ## Title
 
-<note>The current Windows guidelines use sentence capitalization for actions. Some Microsoft products still title-capitalize actions according to the previous guidelines. macOS also title-capitalizes actions. Since IntelliJ IDEs are cross-platform, we use title capitalization as well.</note>
+> The current Windows guidelines use sentence capitalization for actions. Some Microsoft products still title-capitalize actions according to the previous guidelines. macOS also title-capitalizes actions. Since IntelliJ IDEs are cross-platform, we use title capitalization as well.
+>
+{style="note"}
 
 Use for:
 * Actions in buttons, menus and tooltips
 * Headers in tables, popups, message boxes and dialogs
-* Headers of UI control groups  
+* Headers of UI control groups
 
 Do **not** use for:
-* Actions in links 
+* Actions in links
 * Actions in the popup on Alt+Enter: quick-fixes, intention actions and others
 * Headers in notifications
 

@@ -5,8 +5,11 @@ category: Principles
 
 Follow these guidelines to create a new icon or redesign an existing one for IntelliJ-based products.
 
-<note>See all icons in the Icons list. Use the <a href="https://www.figma.com/community/plugin/948276470997072333/IntelliJ-Icons">IntelliJ Icons Figma plugin</a> to quickly find and use icons in UI mockups.</note>
-
+> See all icons in the [Icons list](https://jetbrains.design/intellij/resources/icons_list/).
+> Use the [IntelliJ Icons Figma plugin](https://www.figma.com/community/plugin/948276470997072333/IntelliJ-Icons)
+> to quickly find and use icons in UI mockups.
+>
+{style="note"}
 
 ## Style
 A common style unites several icons into a set and makes them recognizable.
@@ -133,7 +136,10 @@ Use a 2px stroke as the main drawing line. Consistent line weight makes icons co
 
 Align pixels on the X and Y axis and round to the nearest whole pixel, or 0.5px if it’s not possible to align to integer pixels. Aligning icons off the pixel grid will make the icon blurry when it’s rasterized.
 
-<note>To check what an icon will look like when rasterized use the <ui-path>View | Canvas | Show Pixels on Zoom</ui-path> option <shortcut>Ctrl+P</shortcut> in Sketch, <ui-path>View | Pixel Preview</ui-path> <shortcut>Alt+Ctrl+Y</shortcut> in Illustrator.</note>
+> To check what an icon will look like when rasterized use the <ui-path>View | Canvas | Show Pixels on Zoom</ui-path> option <shortcut>Ctrl+P</shortcut> in Sketch,
+> <ui-path>View | Pixel Preview</ui-path> <shortcut>Alt+Ctrl+Y</shortcut> in Illustrator.
+>
+{style="note"}
 
 <table style="none">
 <tr>
@@ -390,17 +396,15 @@ To make a new icon with a letter, reuse letters from existing icons. If there's 
 
 ## Export Icons
 
+> Install the [Svgo-compressor plugin](https://www.sketchapp.com/extensions/plugins/svgo-compressor/) in Sketch to optimize icons before save.
+>
+{style="note"}
+
 Use the SVG format for icons files. Use camelCase capitalization for icon names:
 
-<note>Install the <a href="https://www.sketchapp.com/extensions/plugins/svgo-compressor/">Svgo-compressor plugin</a> in Sketch to optimize icons before save.</note>
-
-<code>iconName.svg</code>
+<path>iconName.svg</path>
 
 If an icon is not the same in the dark theme, then also create:
 
-<code>iconName_dark.svg</code>
-
-
-
-
+<path>iconName_dark.svg</path>
 

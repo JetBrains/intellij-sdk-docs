@@ -47,12 +47,11 @@ See the color values for the currently selected theme in the LaF Defaults dialog
 
 ![](03_LaF_Defaults.png)
 
-<note>For IntelliJ designers:
-<list>
-<li>Provide color keys in design specifications to be sure that correct keys are used.</li>
-<li>When a new key is implemented, check that <a href="https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources/src/tdemes/metadata/IntelliJPlatform.themeMetadata.json">IntelliJPlatform.themeMetadata.json</a> has the new key with the “since” parameter and description, and the old keys are deprecated.</li>
-</list>
-</note>
+> For IntelliJ designers:
+> * Provide color keys in design specifications to be sure that correct keys are used.
+> * When a new key is implemented, check that [`IntelliJPlatform.themeMetadata.json`](%gh-ic%/platform/platform-resources/src/themes/metadata/IntelliJPlatform.themeMetadata.json) has the new key with the `since` parameter and description, and the old keys are deprecated.
+>
+{style="note"}
 
 If a color is needed:
 1. Choose a color value for all default themes:

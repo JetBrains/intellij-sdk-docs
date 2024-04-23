@@ -436,7 +436,7 @@
       </toc-element>
     </toc-element>
   </toc-element>
-  <toc-element toc-title="UI Guidelines">
+  <toc-element topic="ui_guidelines_welcome.md">
     <toc-element toc-title="Controls">
       <toc-element topic="alert.md" hidden="true"/>
       <toc-element topic="button.topic">

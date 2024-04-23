@@ -1,6 +1,6 @@
-# The IntelliJ Platform
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# The IntelliJ Platform
 
 <link-summary>Introduction to the IntelliJ Platform, plugins, and IDEs based on it.</link-summary>
 
@@ -68,8 +68,10 @@ The following IDEs are based on the IntelliJ Platform:
 
 * [JetBrains](https://www.jetbrains.com) IDEs:
     * [AppCode](app_code.md)
+    * [Aqua](https://www.jetbrains.com/aqua/)
     * [CLion](clion.md)
     * [DataGrip](data_grip.md)
+    * [DataSpell](https://www.jetbrains.com/dataspell/)
     * [GoLand](goland.md)
     * [IntelliJ IDEA](idea.md)
     * [MPS](https://www.jetbrains.com/mps/)
@@ -78,6 +80,7 @@ The following IDEs are based on the IntelliJ Platform:
     * [Rider](#rider)
     * [RubyMine](rubymine.md)
     * [WebStorm](webstorm.md)
+    * [Writerside](https://www.jetbrains.com/writerside/)
 * [Android Studio](android_studio.md) IDE from Google
 * [Comma](https://commaide.com/) IDE for Raku (formerly known as Perl 6)
 * [Jmix Studio](https://www.jmix.io/tools/)

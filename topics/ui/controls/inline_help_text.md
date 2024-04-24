@@ -1,10 +1,7 @@
----
-title: Inline help text
-category: Controls
-type: Subpage
-subpageOf: Context help
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
----
+# Inline Help Text
+
 Inline help text provides useful information about a setting.
 
 ![](01_header_pic.png)

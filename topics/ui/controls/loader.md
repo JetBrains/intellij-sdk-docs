@@ -1,9 +1,6 @@
----
-title: Loader
-category: Controls
-type: Subpage
-subpageOf: Progress indicators
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Loader
 
 A loader informs users about performing a lengthy operation.
 

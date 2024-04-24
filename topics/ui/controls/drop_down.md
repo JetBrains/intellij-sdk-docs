@@ -1,8 +1,7 @@
----
-title: Drop-down list
-codename: ComboBox
-category: Controls
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Drop-Down List
+
 <tldr>ComboBox</tldr>
 
 A drop-down list is a type of button that appears in dialogs. It shows a list of choices on clicking it and allows selecting one option.

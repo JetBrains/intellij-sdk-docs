@@ -1,8 +1,7 @@
----
-title: Combo box
-codename: ComboBox setEditable(true)
-category: Controls
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Combo box
+
 <tldr>ComboBox setEditable(true)</tldr>
 
 A combo box combines a [drop-down list](drop_down.md) and an [input field](input_field.md), allowing the user to select a value from the list or enter a custom value.

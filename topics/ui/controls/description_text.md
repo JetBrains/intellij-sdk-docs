@@ -1,8 +1,6 @@
----
-title: Description text
-codename: TBD
-category: Controls
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Description Text
 
 Description text provides explanatory information about a set of settings or a single item in a list or tree.
 

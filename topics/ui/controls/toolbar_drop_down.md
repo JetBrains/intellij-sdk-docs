@@ -1,10 +1,7 @@
----
-title: Toolbar drop-down list
-codename: ComboBoxButton
-category: Controls
-type: Subpage
-subpageOf: Toolbar
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Toolbar Drop-Down List
+
 <tldr>ComboBoxButton</tldr>
 
 A toolbar drop-down list is a type of button that appears on a horizontal toolbar and shows a list of choices on clicking it.

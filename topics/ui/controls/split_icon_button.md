@@ -1,9 +1,6 @@
----
-title: Split icon button
-category: Controls
-type: Subpage
-subpageOf: Toolbar
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Split Icon Button
 
 A split icon button appears on a horizontal toolbar and consists of two parts: the main icon and a triangle icon for the actions list.
 

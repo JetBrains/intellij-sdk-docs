@@ -1,7 +1,6 @@
----
-title: How to write guidelines
-category: Resources
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# How to Write Guidelines
 
 <p>This page describes the workflow and basic rules of writing articles for IntelliJ Platform UI Guidelines.</p>
 

@@ -1,8 +1,6 @@
----
-title: Context help
-category: Controls
-type: GroupHeader
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Context Help
 
 Use context help to briefly explain how a functionality works if it is not clear from the UI and the application behavior. Provide full description of the functionality in [product web help](https://www.jetbrains.com/help/idea/).
 

@@ -1,8 +1,6 @@
----
-title: Progress indicators
-category: Controls
-type: GroupHeader
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Progress Indicators
 
 Progress indicators inform users about an ongoing operation. There are three types of indicators:
 
@@ -37,7 +35,7 @@ If the progress is non-modal, select progress indicator based on where it appear
 
 ### Input field, combo box, drop-down
 
-Place the loader inside an input field on the right to show that the field content is being loaded or checked. 
+Place the loader inside an input field on the right to show that the field content is being loaded or checked.
 
 ![](combo_box_loader.png)
 
@@ -53,11 +51,11 @@ If each tree node loads independently and it’s important to know the current s
 
 ![](tree_loader_icon.png)
 
-If nodes do not have icons, or icons can’t be replaced for some reason, show progress text after the node’s label: 
+If nodes do not have icons, or icons can’t be replaced for some reason, show progress text after the node’s label:
 
 ![](tree_text.png)
 
-If the loader applies to the whole content, place it in the top right corner: 
+If the loader applies to the whole content, place it in the top right corner:
 
 ![](tree_loader_corner.png)
 
@@ -66,7 +64,7 @@ If processes start simultaneously and have the same execution time, place the lo
 ![](tree_loader_push.png)
 
 If the top right corner of the area is taken with content and there is no space for the loader, show the progress bar
- at the top of the tool window.  
+ at the top of the tool window.
 For example, the VCS Log tool window has a progress bar at the top when the content is loading or during searching.
 
 ![](progress_tool_window.png)
@@ -92,9 +90,9 @@ If the state is empty, show progress text. For example, in search dialogs, and t
 
 Show one more progress indicator, e.g. a loader like on the example above, if loading continues when some data is already displayed.
 
-If a process takes longer than 4 seconds, provide [process details](progress_text.md#details), e.g. the time left or 
-passed, work units 
-like the current step, to indicate that the process is being performed and is not hanging: 
+If a process takes longer than 4 seconds, provide [process details](progress_text.md#details), e.g. the time left or
+passed, work units
+like the current step, to indicate that the process is being performed and is not hanging:
 
 ![](empty_state_details.png)
 
@@ -107,7 +105,7 @@ If it’s not possible to provide progress details, show the loader to indicate 
 
 If a process is long and can run in the background, show the progress bar in the main window in the [status bar](status_bar.md):
 
-![](status_bar_progress.png)	
+![](status_bar_progress.png)
 
 Or in a non-modal dialog:
 

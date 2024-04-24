@@ -1,8 +1,7 @@
----
-title: Tabs
-codename: JBTabbedPane
-category: Controls
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Tabs
+
 <tldr>JBTabbedPane</tldr>
 
 Tabs organize content in dialogs by grouping similar UI controls.

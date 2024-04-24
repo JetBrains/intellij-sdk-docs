@@ -1,7 +1,6 @@
----
-title: Platform theme colors
-category: Principles
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Platform Theme Colors
 
 There are two default color themes: IntelliJ Light and Darcula.
 

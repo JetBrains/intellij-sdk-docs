@@ -1,9 +1,6 @@
----
-title: Layout
-category: Principles
-type: GroupHeader
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+# Layout
 
 Arrange UI controls in dialogs according to the rules below to help people locate the necessary settings faster and understand how they are related. <br/>
 

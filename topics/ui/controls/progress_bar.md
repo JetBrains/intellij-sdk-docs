@@ -1,10 +1,7 @@
----
-title: Progress bar
-codename: JProgressBar
-category: Controls
-type: Subpage
-subpageOf: Progress indicators
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Progress Bar
+
 <tldr>JProgressBar</tldr>
 
 A progress bar informs users about the progress of a lengthy operation.

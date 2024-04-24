@@ -1,9 +1,6 @@
----
-title: Banner
-type: Subpage
-subpageOf: Notifications
-category: Controls
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Banner
 
 A banner notification informs the user about the state of a specific context in the project. For example, when there is a missing or broken configuration for some file.
 

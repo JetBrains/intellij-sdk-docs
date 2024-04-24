@@ -1,9 +1,6 @@
----
-title: Built-in button
-type: Subpage
-subpageOf: Button
-category: Controls
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Built-In Button
 
 A built-in button is an icon placed inside an input control.
 

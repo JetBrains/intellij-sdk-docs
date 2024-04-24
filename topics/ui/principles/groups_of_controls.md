@@ -1,9 +1,6 @@
----
-title: Groups of controls
-type: Subpage
-subpageOf: Layout
-category: Principles
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Groups of Controls
 
 Group controls to organize content on a screen and help people locate the necessary controls faster.
 

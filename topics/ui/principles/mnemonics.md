@@ -1,7 +1,6 @@
----
-title: Mnemonics
-category: Principles
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Mnemonics
 
 A mnemonic is an alphanumeric character, which indicates the key to press to activate a command or navigate to a component.
 

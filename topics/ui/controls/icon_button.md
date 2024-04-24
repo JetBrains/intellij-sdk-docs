@@ -1,10 +1,6 @@
----
-title: Icon button
-codename: ActionButton
-category: Controls
-type: Subpage
-subpageOf: Toolbar
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Icon Button
 <tldr>ActionButton</tldr>
 
 A toolbar icon button is an icon that appears on a toolbar.

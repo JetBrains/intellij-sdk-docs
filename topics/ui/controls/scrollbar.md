@@ -1,7 +1,6 @@
----
-title: Scrollbar
-category: Controls
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Scrollbar
 
 The scrollbar allows users to browse content that’s larger than the visible area, such as text or images, by scrolling it horizontally or vertically.
 ![](scrollbar-small.png)

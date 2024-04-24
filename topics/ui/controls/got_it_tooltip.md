@@ -1,9 +1,9 @@
----
-title: Got It tooltip
-codename: com.intellij.ui.GotItTooltip
-category: Controls
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Got It tooltip
+
 <tldr>com.intellij.ui.GotItTooltip</tldr>
+
 A Got It tooltip informs users about a new or changed feature and gives basic information about it.
 
 ![](01_got_it_example.png)

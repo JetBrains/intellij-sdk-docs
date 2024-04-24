@@ -1,7 +1,6 @@
----
-title: Icons
-category: Principles
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Icons
 
 Follow these guidelines to create a new icon or redesign an existing one for IntelliJ-based products.
 

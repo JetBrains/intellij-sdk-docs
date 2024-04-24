@@ -1,8 +1,7 @@
----
-title: Search field
-codename: SearchTextField
-category: Controls
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Search field
+
 <tldr>SearchTextField</tldr>
 
 A search field is an input field that helps users locate objects, actions or text in an application.

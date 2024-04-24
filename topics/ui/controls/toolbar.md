@@ -1,8 +1,6 @@
----
-title: Toolbar
-category: Controls
-type: GroupHeader
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Toolbar
 
 A toolbar provides quick access to frequently used actions and filters. It appears in dialogs, pop-ups, tool windows, lists, trees, and tables.
 

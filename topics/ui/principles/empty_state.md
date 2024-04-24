@@ -1,9 +1,6 @@
----
-title: Empty state
-category: Controls
-type: Subpage
-subpageOf: Context help
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Empty State
 
 Provide instructions in an empty UI area on how to fill it with data. Empty UI areas described here are:
 * [Tool window, list, tree or table](#tool-windows-lists-trees-and-tables)

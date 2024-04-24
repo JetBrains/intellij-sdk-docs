@@ -1,8 +1,7 @@
----
-title: Radio button
-codename: JBRadioButton
-category: Controls
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Radio Button
+
 <tldr>JBRadioButton</tldr>
 
 ![](radio_example.png)

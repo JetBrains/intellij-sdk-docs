@@ -438,14 +438,17 @@
   </toc-element>
   <toc-element topic="ui_guidelines_welcome.md">
     <toc-element toc-title="Controls">
-      <toc-element topic="alert.md" hidden="true"/>
       <toc-element topic="button.topic">
         <toc-element topic="built_in_button.md"/>
         <toc-element topic="split_button.md"/>
       </toc-element>
       <toc-element topic="checkbox.md"/>
       <toc-element topic="combo_box.md"/>
-      <toc-element topic="context_menu.md" hidden="true"/>
+      <toc-element topic="context_help.md">
+        <toc-element topic="inline_help_text.md"/>
+        <toc-element topic="tooltip.md"/>
+        <toc-element topic="empty_state.md"/>
+      </toc-element>
       <toc-element topic="description_text.md"/>
       <toc-element topic="drop_down.md"/>
       <toc-element topic="got_it_tooltip.md"/>
@@ -453,17 +456,20 @@
       <toc-element topic="input_field.md"/>
       <toc-element topic="link.md"/>
       <toc-element topic="list.md" hidden="true"/>
-      <toc-element topic="main_menu.md" hidden="true"/>
-      <toc-element topic="menu.md" hidden="true"/>
-      <toc-element topic="menu_list.md" hidden="true"/>
-      <toc-element toc-title="Notifications" topic="notification_types.md">
-      <toc-element topic="balloon.md"/>
+      <toc-element topic="menu.md" hidden="true">
+        <toc-element topic="context_menu.md" toc-title="" hidden="true"/>
+        <toc-element topic="main_menu.md" hidden="true"/>
+        <toc-element topic="menu_list.md" hidden="true"/>
+      </toc-element>
+      <toc-element topic="notification_types.md">
+        <toc-element topic="alert.md" hidden="true"/>
+        <toc-element topic="balloon.md"/>
         <toc-element topic="banner.md"/>
+        <toc-element topic="tool_window_balloon.md" hidden="true"/>
       </toc-element>
       <toc-element topic="progress_indicators.md">
         <toc-element topic="loader.md"/>
-        <toc-element topic="progress_bar.md">
-        </toc-element>
+        <toc-element topic="progress_bar.md"/>
         <toc-element topic="progress_text.md"/>
       </toc-element>
       <toc-element topic="radio_button.md">
@@ -475,19 +481,12 @@
       <toc-element topic="tabs.md"/>
       <toc-element topic="text_area.md"/>
       <toc-element topic="toggle_button.md"/>
-      <toc-element topic="tool_window_balloon.md" hidden="true"/>
       <toc-element topic="toolbar.md">
         <toc-element topic="icon_button.md"/>
         <toc-element topic="split_icon_button.md"/>
         <toc-element topic="toolbar_drop_down.md"/>
       </toc-element>
       <toc-element topic="tree.md" hidden="true"/>
-      <toc-element topic="context_help.md">
-        <toc-element topic="inline_help_text.md"/>
-        <toc-element topic="tooltip.md">
-        </toc-element>
-        <toc-element topic="empty_state.md"/>
-      </toc-element>
     </toc-element>
     <toc-element toc-title="Components">
       <toc-element topic="dialog_window.md" hidden="true"/>
@@ -511,7 +510,7 @@
       <toc-element topic="discoverability.md" hidden="true"/>
       <toc-element topic="icons_style.md"/>
       <toc-element topic="groups_of_controls.md"/>
-<!--      <toc-element topic="icons.md"/>-->
+      <!--      <toc-element topic="icons.md"/>-->
       <toc-element topic="layout.md"/>
       <toc-element topic="masterdetail_layout.md" hidden="true"/>
       <toc-element topic="mnemonics.md"/>

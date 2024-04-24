@@ -16,29 +16,28 @@ Icons are used widely by IntelliJ Platform plugins.
 Plugins need icons mostly for [](basic_action_system.md), custom component renderers, [](tool_windows.md), etc.
 
 > Plugin _Logos_, which represent a plugin itself, have different requirements than icons used within a plugin.
-> For more information, see the [](plugin_icon_file.md).
+> For more information, see the [](plugin_icon_file.md) section.
 >
 
 ## Platform vs. Custom Icons
 
 Plugins should reuse existing platform icons whenever possible.
-Use [Icons list](https://jetbrains.design/intellij/resources/icons_list/) to browse existing icons.
+Use the [Icons list](https://jetbrains.design/intellij/resources/icons_list/) to browse existing icons.
 Platform icons are located in [`AllIcons`](%gh-ic%/platform/util/ui/src/com/intellij/icons/AllIcons.java).
-Icons from plugins are located in corresponding `<PLUGIN_NAME>Icons` class (e.g., [`GithubIcons`](%gh-ic%/plugins/github/gen/org/jetbrains/plugins/github/GithubIcons.java)).
+Icons from plugins are located in the corresponding `<PLUGIN_NAME>Icons` class (e.g., [`GithubIcons`](%gh-ic%/plugins/github/gen/org/jetbrains/plugins/github/GithubIcons.java)).
 
-If custom icons are required, please refer to detailed [design guide](https://jetbrains.design/intellij/principles/icons/).
+If custom icons are required, please refer to the detailed [design guide](https://jetbrains.design/intellij/principles/icons/).
 To generate SVG icons suited for the IntelliJ-based IDEs, also consider third-party web tool [IntelliJ Icon Generator](https://bjansen.github.io/intellij-icon-generator/).
 
 ## Organizing Icons
 
 > See [Action Basics](%gh-sdk-samples%/action_basics) sample plugin as a reference.
->
 
-In the case of a Gradle-based project, icons should be placed in the <path>resources</path> folder.
+In the case of a Gradle-based project, icons should be placed in the <path>resources</path> directory.
 If the project is DevKit-based, the recommended approach is to put icons to a dedicated [source root](https://www.jetbrains.com/help/idea/content-roots.html) marked as <control>Resources Root</control>, e.g., <path>icons</path> or <path>resources</path>.
 
 If the icons are referenced only in <path>[plugin.xml](plugin_configuration_file.md)</path> attributes or elements, or in the [`@Presentation`](%gh-ic%/platform/analysis-api/src/com/intellij/ide/presentation/Presentation.java) `icon` attribute, then they can be [referenced](#using-icons) by paths.
-In case the icons are referenced from the code and/or XML many times, it's convenient to organize them in an [icons holder class](#icons-class).
+In case the icons are referenced from the code and/or XML many times, it's convenient to organize them in an [icon holder class](#icons-class).
 
 ### Icons Class
 
@@ -87,7 +86,7 @@ The path to the icon passed in as argument to `IconLoader.getIcon()` **must** st
 
 Icons defined inside <path>plugin.xml</path> with `icon` attribute for [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) or extension point, as well in `@Presentation`'s `icon` attribute, can be referenced in two ways:
 - by icon file path
-- by icon constant in the icons holder class
+- by icon constant in the icon holder class
 
 To reference an icon by path, provide the path relative to the resources directory, e.g., for icons located in <path>my-plugin/src/main/resources/icons</path> directory:
 
@@ -101,7 +100,7 @@ To reference an icon by path, provide the path relative to the resources directo
 </extensions>
 ```
 
-In case of icons holder class, reference the icon constants.
+In the case of icon holder class, reference the icon constants.
 Note that if the class is located in the top-level `icons` package, name `icons` will be automatically prefixed and must not be specified.
 In case of placing the class in a custom package, the full package name must be provided, e.g.:
 
@@ -187,14 +186,13 @@ Here are examples of <path>toolWindowStructure.png</path> icon representations:
 
 ## Animated Icons
 
-Animated icons are a way to show that plugin is now performing some long-time action.
-For example, when plugin is loading some data.
+Animated icons are a way to show that a plugin is now performing some long-time action, e.g., when the plugin is loading some data.
 
-Any animated icon is a set of frames that loop with some delay.
+Any animated icon is a set of frames that loop with a delay.
 
 To create a new animated icon, use the
 [`AnimatedIcon`](%gh-ic%/platform/ide-core/src/com/intellij/ui/AnimatedIcon.java).
-If you want to create an icon where frames follow each other with the same delay, use a constructor that accepts a delay and icons:
+To create an icon where frames follow each other with the same delay, use a constructor that accepts a delay and icons:
 
 ```java
 AnimatedIcon icon = new AnimatedIcon(
@@ -206,15 +204,14 @@ AnimatedIcon icon = new AnimatedIcon(
 To create an icon from frames with different delays, use `AnimatedIcon.Frame`.
 Each frame represents an icon, and a delay until the next frame.
 
-If you want to show somewhere that there is a long process, you can use the predefined `AnimatedIcon.Default` loader icon.
+Use the predefined `AnimatedIcon.Default` loader icon to indicate a long process.
 This icon has a larger `AnimatedIcon.Big` version.
 
 ## Icon Tooltips
 
-Register resource bundle via `com.intellij.iconDescriptionBundle` extension point to provide tooltips automatically for all [`SimpleColoredComponent`](%gh-ic%/platform/platform-api/src/com/intellij/ui/SimpleColoredComponent.java) renderers.
+Register a resource bundle via `com.intellij.iconDescriptionBundle` extension point to provide tooltips automatically for all [`SimpleColoredComponent`](%gh-ic%/platform/platform-api/src/com/intellij/ui/SimpleColoredComponent.java) renderers.
 
-Create `icon.<icon-path>.tooltip` key in given resource bundle, where `<icon-path>` is the icon path with leading slash and `.svg` removed and slashes replaced with dots
-(e.g., `/nodes/class.svg` &rarr; `icon.nodes.class.tooltip`).
+Create `icon.<icon-path>.tooltip` key in a resource bundle, where `<icon-path>` is the icon path with leading slash and `.svg` removed and slashes replaced with dots (e.g., `/nodes/class.svg` &rarr; `icon.nodes.class.tooltip`).
 
 ## New UI Icons
 
@@ -227,16 +224,16 @@ This allows supporting both UI variants at the same time, depending on what the 
 
 <procedure title="Setup">
 
-1. Create a new <path>expui</path> folder in your icon root folder ([Reference](#organizing-icons)).
-2. Copy all icons for the New UI into this folder.
-3. Create an empty <path>$PluginName$IconMappings.json</path> mapping file in the resources root folder.
+1. Create a new <path>expui</path> directory in the icon root directory ([Reference](#organizing-icons)).
+2. Copy all icons for the New UI into this directory.
+3. Create an empty <path>$PluginName$IconMappings.json</path> mapping file in the resources root directory.
 4. Register <path>$PluginName$IconMappings.json</path> in <path>plugin.xml</path> via the `com.intellij.iconMapper` extension point.
 
 </procedure>
 
 > Sample setup from Maven plugin:
 >
-> - Icon resources root folder: [`images`](%gh-ic%/plugins/maven/src/main/resources/images)
+> - Icon resources root directory: [`images`](%gh-ic%/plugins/maven/src/main/resources/images)
 > - Mapping file: [`MavenIconMappings.json`](%gh-ic%/plugins/maven/src/main/resources/MavenIconMappings.json)
 > - Extension point registration (`<iconMapper mappingFile="MavenIconMappings.json"/>`): [`plugin.xml`](%gh-ic%/plugins/maven/src/main/resources/META-INF/plugin.xml)
 
@@ -245,18 +242,18 @@ This allows supporting both UI variants at the same time, depending on what the 
 All New UI icons must be mapped in the <path>$PluginName$IconMappings.json</path> mapping file.
 
 For each New UI icon, add a mapping entry inside `expui` block.
-Each folder starts a new block containing all its entries (see linked `MavenIconMappins.json` sample from above).
+Each directory starts a new block containing all its entries (see linked `MavenIconMappins.json` sample from above).
 
-In this example, the icon root folder is named <path>icons</path>:
+In this example, the icon root directory is named <path>icons</path>:
 ```json
 {
   "icons": {
     "expui": {
-      "folderName": {
+      "dirName": {
         "icon1.svg": "icons/icon1.svg",
         "icon2.svg": "icons/icon2.svg"
       },
-      "anotherFolder": {
+      "anotherDir": {
         "anotherIcon.svg": "images/anotherIcon.svg"
       }
     }

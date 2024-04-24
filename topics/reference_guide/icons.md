@@ -207,8 +207,8 @@ Each frame represents an icon, and a delay until the next frame.
 Use the predefined `AnimatedIcon.Default` loader icon to indicate a long process.
 This icon has a larger `AnimatedIcon.Big` version.
 
-> Add `true` [`AnimatedIcon.ANIMATION_IN_RENDERER_ALLOWED`](%gh-ic%/platform/ide-core/src/com/intellij/ui/AnimatedIcon.java) client property to list, table, and tree component to repaint animated icons automatically.
-> See its Javadoc for details.
+> Add `true` [`AnimatedIcon.ANIMATION_IN_RENDERER_ALLOWED`](%gh-ic%/platform/ide-core/src/com/intellij/ui/AnimatedIcon.java) client property to list, table, and tree components to repaint animated icons automatically.
+> See `ANIMATION_IN_RENDERER_ALLOWED`'s Javadoc for details.
 
 ## Icon Tooltips
 

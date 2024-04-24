@@ -813,6 +813,17 @@ Default value
 : [`SandboxAware.sandboxPluginsDirectory`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware-sandboxPluginsDirectory)
 
 
+### `disabledPlugins`
+{#prepareSandbox-disabledPlugins}
+
+An internal field to hold a list of plugins to be disabled within the current sandbox.
+This property is controlled with [`disablePlugin()`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware-plugins) method of [](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware).
+
+{style="narrow"}
+Type
+: `SetProperty<String>`
+
+
 ### `pluginJar`
 {#prepareSandbox-pluginJar}
 

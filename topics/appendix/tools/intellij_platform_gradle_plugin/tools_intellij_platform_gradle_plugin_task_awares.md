@@ -139,6 +139,35 @@ Type
 : `DirectoryProperty`
 
 
+### `plugins {}`
+{#CustomIntelliJPlatformVersionAware-plugins}
+
+An extension to provide custom plugins to be added when running the task enhanced with `CustomIntelliJPlatformVersionAware`.
+It provides several methods for adding remote and local plugins, or for disabling already loaded or bundled plugin.
+
+**Example:**
+
+```kotlin
+tasks {
+  val runIdeWithPlugins by registering(RunIdeTask::class) {
+    // ...
+    plugins {
+      plugin("pluginId", "1.0.0")
+      disablePlugin("pluginId")
+    }
+  }
+}
+```
+
+| Function                       | Description                                                                                                                                  |
+|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| `plugin(id, version, channel)` | Adds a dependency on a plugin for a custom IntelliJ Platform.                                                                                |
+| `plugin(notation)`             | Adds a dependency on a plugin for a custom IntelliJ Platform using a string notation:<p>`pluginId:version` or `pluginId:version@channel`</p> |
+| `plugins(notations)`           | Adds dependencies on plugins for a custom IntelliJ Platform using a string notation:<p>`pluginId:version` or `pluginId:version@channel`</p>  |
+| `disablePlugin(id)`            | Disables the specific plugin with its ID.                                                                                                    |
+| `disablePlugins(ids)`          | Disables specific plugins with the list of their IDs.                                                                                        |
+
+
 ## `IntelliJPlatformVersionAware`
 {#IntelliJPlatformVersionAware}
 

@@ -455,17 +455,17 @@
       <toc-element topic="group_header.md"/>
       <toc-element topic="input_field.md"/>
       <toc-element topic="link.md"/>
-      <toc-element topic="list.md" hidden="true"/>
-      <toc-element topic="menu.md" hidden="true">
-        <toc-element topic="context_menu.md" toc-title="" hidden="true"/>
-        <toc-element topic="main_menu.md" hidden="true"/>
-        <toc-element topic="menu_list.md" hidden="true"/>
+      <toc-element toc-title="List"/> <!--TODO-->
+      <toc-element toc-title="Menu">
+        <toc-element toc-title="Context Menu"/> <!--TODO-->
+        <toc-element toc-title="Main Menu"/> <!--TODO-->
+        <toc-element toc-title="Menu List"/> <!--TODO-->
       </toc-element>
       <toc-element topic="notification_types.md">
-        <toc-element topic="alert.md" hidden="true"/>
+        <toc-element toc-title="Alert"/> <!--TODO-->
         <toc-element topic="balloon.md"/>
         <toc-element topic="banner.md"/>
-        <toc-element topic="tool_window_balloon.md" hidden="true"/>
+        <toc-element toc-title="Tool Window Balloon"/> <!--TODO-->
       </toc-element>
       <toc-element topic="progress_indicators.md">
         <toc-element topic="loader.md"/>
@@ -476,7 +476,7 @@
       </toc-element>
       <toc-element topic="scrollbar.md"/>
       <toc-element topic="search_field.md"/>
-      <toc-element topic="slider.md" hidden="true"/>
+      <toc-element toc-title="Slider"/> <!--TODO-->
       <toc-element topic="table.md"/>
       <toc-element topic="tabs.md"/>
       <toc-element topic="text_area.md"/>
@@ -486,42 +486,42 @@
         <toc-element topic="split_icon_button.md"/>
         <toc-element topic="toolbar_drop_down.md"/>
       </toc-element>
-      <toc-element topic="tree.md" hidden="true"/>
+      <toc-element toc-title="Tree"/> <!--TODO-->
     </toc-element>
     <toc-element toc-title="Components">
-      <toc-element topic="dialog_window.md" hidden="true"/>
-      <toc-element topic="popup.md" hidden="true"/>
-      <toc-element topic="status_bar.md" hidden="true"/>
+      <toc-element toc-title="Dialog Window"/> <!--TODO-->
+      <toc-element toc-title="Popup"/> <!--TODO-->
+      <toc-element toc-title="Status Bar"/> <!--TODO-->
       <toc-element topic="tool_window.md"/>
     </toc-element>
     <toc-element toc-title="Text">
       <toc-element topic="capitalization.md"/>
       <toc-element topic="inspections.md"/>
       <toc-element topic="punctuation.md"/>
-      <toc-element topic="notification_and_error.md" hidden="true"/>
-      <toc-element topic="terminology.md" hidden="true"/>
+      <toc-element toc-title="Notification and Error Texts"/> <!--TODO-->
+      <toc-element toc-title="Terminology"/> <!--TODO-->
       <toc-element topic="writing_short.md"/>
     </toc-element>
     <toc-element toc-title="Principles">
-      <toc-element topic="accessibility.md" hidden="true"/>
-      <toc-element topic="dangerous_actions.md" hidden="true"/>
+      <toc-element toc-title="Accessibility"/> <!--TODO-->
+      <toc-element toc-title="Dangerous Actions"/> <!--TODO-->
       <toc-element topic="data_formats.md"/>
-      <toc-element topic="default_values.md" hidden="true"/>
-      <toc-element topic="discoverability.md" hidden="true"/>
+      <toc-element toc-title="Default Values"/> <!--TODO-->
+      <toc-element toc-title="Discoverability"/> <!--TODO-->
       <toc-element topic="icons_style.md"/>
       <toc-element topic="groups_of_controls.md"/>
       <!--      <toc-element topic="icons.md"/>-->
       <toc-element topic="layout.md"/>
-      <toc-element topic="masterdetail_layout.md" hidden="true"/>
+      <toc-element toc-title="Master-detail Layout"/> <!--TODO-->
       <toc-element topic="mnemonics.md"/>
       <toc-element topic="platform_theme_colors.md"/>
-      <toc-element topic="search.md" hidden="true"/>
-      <toc-element topic="search_results.md" hidden="true"/>
-      <toc-element topic="sharing_settings.md" hidden="true"/>
-      <toc-element topic="sizes_and_insets.md" hidden="true"/>
-      <toc-element topic="speed_search.md" hidden="true"/>
+      <toc-element toc-title="Search"/> <!--TODO-->
+      <toc-element toc-title="Search Results"/> <!--TODO-->
+      <toc-element toc-title="Sharing Settings"/> <!--TODO-->
+      <toc-element toc-title="Sizes and Insets"/> <!--TODO-->
+      <toc-element toc-title="Speed Search"/> <!--TODO-->
       <toc-element topic="typography.md"/>
-      <toc-element topic="feedback.md" hidden="true"/>
+      <toc-element toc-title="Feedback"/> <!--TODO-->
       <toc-element topic="validation_errors.md"/>
     </toc-element>
     <toc-element toc-title="Resources">

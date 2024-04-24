@@ -20,7 +20,7 @@ If input has to be in a specific format, use one of the following controls:
 
 * If the previous user input must be preserved, use a [combo box](combo_box.md).
 * Use a [text area](text_area.md) for long (commit message) or multi-line (code snippet) input. If place is constrained, use an [expandable input field](#input-field-types).
-* Use a [slider](slider.md) if a precise value is not required, or if it’s possible to provide feedback on the effect of setting changes. If place is constrained, use an input field.
+* Use a slider if a precise value is not required, or if it’s possible to provide feedback on the effect of setting changes. If place is constrained, use an input field.
 * Use a [search field](search_field.md) to input a search query.
 * Use calendar to set a date.
 * Use color box to choose a color.

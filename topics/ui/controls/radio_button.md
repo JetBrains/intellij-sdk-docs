@@ -18,7 +18,7 @@ Do **not** use radio buttons if:
 
 ![](tworadio_checkbox.png)
 
-* There are 5 and more options that can be charted on an axis, e.g. time delay. Use a [slider](slider.md) instead.
+* There are 5 and more options that can be charted on an axis, e.g. time delay. Use a slider instead.
 
 * There are 5 and more options. Use a [drop-down list](drop_down.md):
   <table>

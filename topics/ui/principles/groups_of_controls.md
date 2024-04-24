@@ -9,7 +9,7 @@ Group controls to organize content on a screen and help people locate the necess
 Use the following controls or layouts:
 * [Group headers](group_header.md)
 * [Tabs](tabs.md)
-* [Master-detail layout](masterdetail_layout.md)
+* Master-detail layout
 
 
 ## What grouping to choose

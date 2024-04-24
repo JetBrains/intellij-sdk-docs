@@ -9,7 +9,7 @@ Use the following rules for labels and description texts in IntelliJ user interf
 ## Ellipsis
 End an action name with an ellipsis if it opens a dialog where input is required or possible. An ellipsis helps users understand if an action is immediate or additional interaction is to follow.
 
-<p>This rule applies to actions in the following controls: <a href="button.topic">button</a>, <a href="link.md">link</a>, <a href="menu.md">menu item</a>.</p>
+<p>This rule applies to actions in the following controls: <a href="button.topic">button</a>, <a href="link.md">link</a>, menu item.</p>
 
 <p>Examples:</p>
 <table style="none">

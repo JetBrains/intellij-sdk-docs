@@ -18,7 +18,7 @@ Independent controls:
 
 Organize controls into easily readable groups with [vertical and horizontal insets](layout.md#organize-with-insets).
 
-See [Dialog window](dialog_window.md) for buttons and other controls at the bottom of a dialog.
+[//]: # (TODO: See [Dialog window]&#40;dialog_window.md&#41; for buttons and other controls at the bottom of a dialog.)
 
 
 
@@ -140,7 +140,8 @@ Choose a control width such that most of the common values are visible. Take the
 
 If the dialog containing the control is noticeably wider than the control itself, reduce the length of the control.
 
-Do **not** put other independent controls to the right of a list, tree, or table. They would look like dependent controls in the [master-detail layout](masterdetail_layout.md).
+Do **not** put other independent controls to the right of a list, tree, or table.
+They would look like dependent controls in the master-detail layout.
 
 ![](4_02_table_fixed_width.png)
 
@@ -188,7 +189,7 @@ When the main control takes the whole width of a panel, and there is one small d
 
 ![](5_07_whole_width_top_right_corner.png)
 
-See [Master-detail layout](masterdetail_layout.md) for more information on how to lay out controls if they depend on lists or trees.
+[//]: # (TODO: See [Master-detail layout]&#40;masterdetail_layout.md&#41; for more information on how to lay out controls if they depend on lists or trees.)
 
 See the [Inline help text](inline_help_text.md#placement) and [Tooltip](tooltip.md#question-mark-icon-for-help-tooltips) articles for details on how to arrange help information in dialogs.
 

@@ -218,7 +218,7 @@ Choose a list length that eliminates unnecessary vertical scrolling. The minimum
 
 ![](menu_height.png)
 
-For sizes inside the menu list see [Menu list](menu_list.md).
+[//]: # (TODO: For sizes inside the menu list see [Menu list]&#40;menu_list.md&#41;.)
 
 ### Placement
 

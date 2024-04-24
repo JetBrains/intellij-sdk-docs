@@ -59,7 +59,10 @@ For example, Force Push can override remote commits from other authors and shoul
 
 ![](dangerous.png)
 
-<p>If an action is dangerous but common, do not hide it under the split button, use simple buttons. An action should follow the <a href="dangerous_actions.md">principles for dangerous actions</a> behavior.</p>
+<p>If an action is dangerous but common, do not hide it under the split button, use simple buttons.
+
+[//]: # (TODO: An action should follow the <a href="dangerous_actions.md">principles for dangerous actions</a> behavior.)
+</p>
 
 Do **not** use the Split Button in other cases, use simple [Buttons](button.topic) instead.
 

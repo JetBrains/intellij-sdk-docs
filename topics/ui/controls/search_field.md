@@ -10,7 +10,9 @@ A search field is an input field that helps users locate objects, actions or tex
 
 ![](../../../images/ui/search_field/example.png)
 
-This article focuses on the search field. See another article for [search results](search_results.md).
+This article focuses on the search field.
+
+[//]: # (TODO: See another article for [search results]&#40;search_results.md&#41;.)
 
 ## When to use
 

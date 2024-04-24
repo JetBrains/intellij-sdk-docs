@@ -28,7 +28,9 @@ The toggle button in search results should duplicate the option from the setting
     *Setting in the preferences*
     ![](label_checkbox_se.png)
     *The same setting in search results*
-Do not make a setting available only from search results. See [discoverability](discoverability.md) for details.
+Do not make a setting available only from search results.
+
+[//]: # (TODO: See [discoverability]&#40;discoverability.md&#41; for details.)
 
 If the setting is in a tree or menu, use the toggle button label to specify where the setting is located:
     ![](label_tree.png)
@@ -43,7 +45,9 @@ If the setting is in a tree or menu, use the toggle button label to specify wher
 ![](label_menu_se.png)
 *The same setting in search results; separate the first menu level with a vertical bar, and separate others with a colon*
 
-Refer to [checkbox](checkbox.md) and [menu](menu_list.md) for writing checkbox labels and menu labels.
+Refer to [checkbox](checkbox.md) for writing checkbox labels and menu labels.
+
+[//]: # (TODO: and [menu]&#40;menu_list.md&#41;)
 
 Do not add the word "On" or "Off" to the item name, since the state description is already in the toggle button.
 

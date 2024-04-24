@@ -98,7 +98,7 @@ An exception is a help topic link in [empty states](empty_state.md). The help ic
 
 ### Drop-down link
 
-Drop-down links show a [context menu](context_menu.md) or a [popup](popup.md). Use `com.intellij.ui.components.DropDownLink` to implement a drop-down link.
+Drop-down links show a context menu or a popup. Use `com.intellij.ui.components.DropDownLink` to implement a drop-down link.
 ![](13_drop_down_links.png)
 
 

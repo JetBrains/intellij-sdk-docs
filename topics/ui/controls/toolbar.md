@@ -36,7 +36,7 @@ Put only the most frequently used commands on the toolbar. Rely on usage statist
 
 <p>If an action is new and it seems to be useful, add it to the corresponding toolbar. Remove it after several releases if it’s not popular which means it’s used by less than ~5% of users who use this toolbar.</p>
 
-Do **not** put unpopular or well-known commands, like Copy and Paste on the toolbar. Use the [main menu](main_menu.md) or the [context menu](context_menu.md) for such commands.
+Do **not** put unpopular or well-known commands, like Copy and Paste on the toolbar. Use the main menu or the context menu for such commands.
 
 It’s **not** recommended to add more items than the default toolbar length. Otherwise, the items will be hidden and it will be hard to discover them.
 
@@ -72,7 +72,7 @@ Do **not** put two toolbars next to each other. One toolbar should be enough for
   </tr>
 </table>
 
-Make every toolbar action available from the [main menu](main_menu.md) or the [context menu](context_menu.md). Toolbars are customizable and can be hidden, so commands should be available from other places as well.
+Make every toolbar action available from the main menu or the context menu. Toolbars are customizable and can be hidden, so commands should be available from other places as well.
 
 If the default component size changes and there is not enough space for items on a toolbar, hide them under the chevron.
 

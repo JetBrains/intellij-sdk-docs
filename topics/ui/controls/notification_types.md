@@ -8,10 +8,10 @@ Notifications inform users about the status of user or system initiated operatio
 
 There are four types of notifications:
 
-- [Alert](alert.md)
+- Alert
 - [Banner](banner.md)
 - [Balloon](balloon.md)
-- [Tool window balloon](tool_window_balloon.md)
+- Tool window balloon
 
 ## What notification to use
 

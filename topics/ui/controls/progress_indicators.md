@@ -105,7 +105,7 @@ If it’s not possible to provide progress details, show the loader to indicate 
 
 ### Main window
 
-If a process is long and can run in the background, show the progress bar in the main window in the [status bar](status_bar.md):
+If a process is long and can run in the background, show the progress bar in the main window in the status bar:
 
 ![](status_bar_progress.png)
 

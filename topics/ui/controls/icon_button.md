@@ -20,8 +20,10 @@ An action button triggers an action immediately on clicking it, e.g. the Open bu
 A toggle button switches the state on clicking it, e.g. a button to show and hide warnings in the output tree.
 ![](toggle.png)
 
-A drop-down button has an arrow icon in the bottom right corner and opens a menu with actions or checkboxes. Use
-[menu list](menu_list.md) guidelines for drop-down buttons.
+A drop-down button has an arrow icon in the bottom right corner and opens a menu with actions or checkboxes.
+
+[//]: # (TODO: Use [menu list]&#40;menu_list.md&#41; guidelines for drop-down buttons.)
+
 ![](drop-down.png)
 
 

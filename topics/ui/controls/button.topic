@@ -178,8 +178,7 @@
             on macOS.
             <p>The default button should be always present in a dialog. Only one button in a dialog can be the default
                 one.</p>
-            <p>If the action is dangerous, e.g. can lead to data loss, provide an easy way to undo the
-                command. See <a href="dangerous_actions.md">Dangerous actions</a> for more details.</p>
+            <p>If the action is dangerous, e.g. can lead to data loss, provide an easy way to undo the command.</p>
             <p>If it's not posible to undo the action, make a secondary button the default one:
                 <img src="merge_dialog.png" alt=""/></p>
         </chapter>

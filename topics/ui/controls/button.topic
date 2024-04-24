@@ -5,6 +5,8 @@
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        id="button" title="Button">
 
+    <link-summary>UI guidelines on using buttons.</link-summary>
+
     <tldr>
         JButton
     </tldr>

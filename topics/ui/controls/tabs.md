@@ -2,6 +2,8 @@
 
 # Tabs
 
+<link-summary>UI guidelines on using tabs.</link-summary>
+
 <tldr>JBTabbedPane</tldr>
 
 Tabs organize content in dialogs by grouping similar UI controls.

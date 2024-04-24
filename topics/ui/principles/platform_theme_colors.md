@@ -2,6 +2,8 @@
 
 # Platform Theme Colors
 
+<link-summary>Guidelines on working with themes.</link-summary>
+
 There are two default color themes: IntelliJ Light and Darcula.
 
 ![](01_default_themes.png)

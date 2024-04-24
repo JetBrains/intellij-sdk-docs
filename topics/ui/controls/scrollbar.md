@@ -2,6 +2,8 @@
 
 # Scrollbar
 
+<link-summary>UI guidelines on using scrollbars.</link-summary>
+
 The scrollbar allows users to browse content that’s larger than the visible area, such as text or images, by scrolling it horizontally or vertically.
 ![](scrollbar-small.png)
 

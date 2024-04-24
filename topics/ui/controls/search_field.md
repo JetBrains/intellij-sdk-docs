@@ -1,6 +1,8 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# Search field
+# Search Field
+
+<link-summary>UI guidelines on using search fields.</link-summary>
 
 <tldr>SearchTextField</tldr>
 

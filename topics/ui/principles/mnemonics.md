@@ -2,6 +2,8 @@
 
 # Mnemonics
 
+<link-summary>Guidelines on using mnemonics.</link-summary>
+
 A mnemonic is an alphanumeric character, which indicates the key to press to activate a command or navigate to a component.
 
 There are *regular* and *numeric* mnemonics.

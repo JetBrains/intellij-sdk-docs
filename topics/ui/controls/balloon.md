@@ -2,6 +2,8 @@
 
 # Balloon
 
+<link-summary>UI guidelines on using balloons.</link-summary>
+
 Balloon notifications inform users of the events or system states related to a project or IDE.
 
 ![](01_example.png)

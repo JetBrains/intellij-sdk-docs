@@ -1,7 +1,9 @@
----
-title: Writing short and clear
-category: Text
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Writing Short and Clear
+
+<link-summary>Tips on writing short and clear UI texts.</link-summary>
+
 <p>
 Texts in user interfaces should be short and clear. Short texts save reading time. Clear texts lead to fewer mistakes. Editing methods described below can help with that.
 </p>

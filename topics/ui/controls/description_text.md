@@ -2,6 +2,8 @@
 
 # Description Text
 
+<link-summary>UI guidelines on descriptions texts.</link-summary>
+
 Description text provides explanatory information about a set of settings or a single item in a list or tree.
 
 ![](../../../images/ui/description_text/01_example.png)

@@ -2,6 +2,8 @@
 
 # Tooltip
 
+<link-summary>UI guidelines on using tooltips.</link-summary>
+
 A tooltip shows an action name or provides useful information about an action or a setting.
 
 ![](01_top_pic.png)

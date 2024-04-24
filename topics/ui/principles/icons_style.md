@@ -2,6 +2,8 @@
 
 # Icons
 
+<link-summary>Guidelines on designing and creating icons.</link-summary>
+
 Follow these guidelines to create a new icon or redesign an existing one for IntelliJ-based products.
 
 > See all icons in the [Icons list](https://jetbrains.design/intellij/resources/icons_list/).

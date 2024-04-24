@@ -1,6 +1,8 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# Validation errors
+# Validation Errors
+
+<link-summary>UI guidelines on displaying and writing texts of validation errors.</link-summary>
 
 Validation is the process of checking the values specified by the user, and displaying the errors that are found.
 

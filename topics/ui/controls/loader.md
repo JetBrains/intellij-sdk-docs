@@ -2,6 +2,8 @@
 
 # Loader
 
+<link-summary>UI guidelines on using loaders.</link-summary>
+
 A loader informs users about performing a lengthy operation.
 
 ![](loader.png)

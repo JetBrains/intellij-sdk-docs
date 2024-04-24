@@ -2,6 +2,8 @@
 
 # Layout
 
+<link-summary>UI guidelines on laying out the controls in dialogs.</link-summary>
+
 Arrange UI controls in dialogs according to the rules below to help people locate the necessary settings faster and understand how they are related. <br/>
 
 Independent controls:

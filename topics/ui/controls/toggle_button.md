@@ -2,6 +2,8 @@
 
 # Toggle Button
 
+<link-summary>UI guidelines on using toggle buttons.</link-summary>
+
 The toggle button is used to switch between On and Off states.
 
 ![](../../../images/ui/toggle_button/example.png)

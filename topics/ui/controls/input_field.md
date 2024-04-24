@@ -2,6 +2,8 @@
 
 # Input Field
 
+<link-summary>UI guidelines on using input fields.</link-summary>
+
 <tldr>JBTextField</tldr>
 
 An input field allows users to enter or edit a text line using the keyboard.

@@ -2,6 +2,8 @@
 
 # Radio Button
 
+<link-summary>UI guidelines on using radio buttons.</link-summary>
+
 <tldr>JBRadioButton</tldr>
 
 ![](radio_example.png)

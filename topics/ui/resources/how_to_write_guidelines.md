@@ -2,6 +2,8 @@
 
 # How to Write Guidelines
 
+<link-summary>Workflow and basic rules of writing articles for IntelliJ Platform UI Guidelines.</link-summary>
+
 <p>This page describes the workflow and basic rules of writing articles for IntelliJ Platform UI Guidelines.</p>
 
 ## Workflow

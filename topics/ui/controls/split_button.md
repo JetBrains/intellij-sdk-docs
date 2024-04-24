@@ -2,6 +2,8 @@
 
 # Split Button
 
+<link-summary>UI guidelines on using split buttons.</link-summary>
+
 <tldr>
 JBOptionButton
 </tldr>

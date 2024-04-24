@@ -1,7 +1,8 @@
----
-title: Inspections
-category: Text
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Inspections
+
+<link-summary>UI guidelines on writing texts used in inspections.</link-summary>
 
 ![](main.png)
 *Inspections configuration on <ui-path>Settings | Editor | Inspections</ui-path> page or in <control>Configure Inspections</control> dialog.*

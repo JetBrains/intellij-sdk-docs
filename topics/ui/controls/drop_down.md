@@ -2,6 +2,8 @@
 
 # Drop-Down List
 
+<link-summary>UI guidelines on using drop-down lists.</link-summary>
+
 <tldr>ComboBox</tldr>
 
 A drop-down list is a type of button that appears in dialogs. It shows a list of choices on clicking it and allows selecting one option.

@@ -1,6 +1,8 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# Got It tooltip
+# Got It Tooltip
+
+<link-summary>UI guidelines on using "Got it" tooltips.</link-summary>
 
 <tldr>com.intellij.ui.GotItTooltip</tldr>
 

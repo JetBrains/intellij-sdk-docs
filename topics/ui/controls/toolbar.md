@@ -2,6 +2,8 @@
 
 # Toolbar
 
+<link-summary>UI guidelines on using toolbars.</link-summary>
+
 A toolbar provides quick access to frequently used actions and filters. It appears in dialogs, pop-ups, tool windows, lists, trees, and tables.
 
 ![](../../../images/ui/toolbar/example.png)

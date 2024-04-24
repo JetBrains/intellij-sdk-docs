@@ -2,6 +2,8 @@
 
 # Toolbar Drop-Down List
 
+<link-summary>UI guidelines on using toolbar drop-down lists.</link-summary>
+
 <tldr>ComboBoxButton</tldr>
 
 A toolbar drop-down list is a type of button that appears on a horizontal toolbar and shows a list of choices on clicking it.

@@ -2,6 +2,8 @@
 
 # Notifications
 
+<link-summary>UI guidelines on using notifications.</link-summary>
+
 Notifications inform users about the status of user or system initiated operations. They can have different actions depending on the message.
 
 There are four types of notifications:

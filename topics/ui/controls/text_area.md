@@ -2,6 +2,8 @@
 
 # Text Area
 
+<link-summary>UI guidelines on using text areas.</link-summary>
+
 <tldr>JBTextArea</tldr>
 
 A text area allows users to enter or edit multi-line text.

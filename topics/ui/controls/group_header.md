@@ -2,6 +2,8 @@
 
 # Group Header
 
+<link-summary>UI guidelines on using group headers.</link-summary>
+
 <tldr>TitledSeparator</tldr>
 
 A group header clearly labels a group of UI controls.

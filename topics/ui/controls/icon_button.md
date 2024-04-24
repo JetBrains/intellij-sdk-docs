@@ -1,6 +1,9 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Icon Button
+
+<link-summary>UI guidelines on using icon buttons.</link-summary>
+
 <tldr>ActionButton</tldr>
 
 A toolbar icon button is an icon that appears on a toolbar.

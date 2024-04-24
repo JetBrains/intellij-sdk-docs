@@ -2,6 +2,8 @@
 
 # Typography
 
+<link-summary>UI guidelines on using proper fonts in different contexts.</link-summary>
+
 ## IDE font
 
 The system fonts are used for the IDE user interface by default. The default font sizes are below:

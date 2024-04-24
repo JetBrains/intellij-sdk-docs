@@ -2,6 +2,8 @@
 
 # Progress Text
 
+<link-summary>UI guidelines on writing progress texts.</link-summary>
+
 ![](desc.png)
 
 ## When to use

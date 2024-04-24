@@ -2,6 +2,8 @@
 
 # Empty State
 
+<link-summary>Providing instructions in an empty UI area on how to fill it with data.</link-summary>
+
 Provide instructions in an empty UI area on how to fill it with data. Empty UI areas described here are:
 * [Tool window, list, tree or table](#tool-windows-lists-trees-and-tables)
 * [Details area in a master-detail layout](#master-detail-layout)

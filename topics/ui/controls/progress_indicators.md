@@ -2,6 +2,8 @@
 
 # Progress Indicators
 
+<link-summary>UI guidelines on using progress indicators.</link-summary>
+
 Progress indicators inform users about an ongoing operation. There are three types of indicators:
 
 * [Loader](loader.md)

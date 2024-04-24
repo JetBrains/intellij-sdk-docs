@@ -2,6 +2,8 @@
 
 # Table
 
+<link-summary>UI guidelines on using tables.</link-summary>
+
 ![](table.png)
 
 ## When to use

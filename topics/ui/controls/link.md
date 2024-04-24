@@ -2,6 +2,8 @@
 
 # Link
 
+<link-summary>UI guidelines on using links.</link-summary>
+
 <tldr>ActionLink, DropDownLink</tldr>
 
 ![](../../../images/ui/link/01_example.png)

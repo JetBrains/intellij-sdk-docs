@@ -2,6 +2,8 @@
 
 # Progress Bar
 
+<link-summary>UI guidelines on using progress bars.</link-summary>
+
 <tldr>JProgressBar</tldr>
 
 A progress bar informs users about the progress of a lengthy operation.

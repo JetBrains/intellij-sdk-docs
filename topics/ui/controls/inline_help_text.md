@@ -2,6 +2,8 @@
 
 # Inline Help Text
 
+<link-summary>UI guidelines on using inline help texts.</link-summary>
+
 Inline help text provides useful information about a setting.
 
 ![](01_header_pic.png)

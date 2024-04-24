@@ -2,6 +2,8 @@
 
 # Split Icon Button
 
+<link-summary>UI guidelines on using split icon buttons.</link-summary>
+
 A split icon button appears on a horizontal toolbar and consists of two parts: the main icon and a triangle icon for the actions list.
 
 ![](../../../images/ui/split_icon_button/example.png)

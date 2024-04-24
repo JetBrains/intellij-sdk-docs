@@ -2,6 +2,8 @@
 
 # Data Formats
 
+<link-summary>Choosing proper date formats to display data to users.</link-summary>
+
 ## Numbers
 
 > If there is a space between the number and the unit, use a non-breaking space.

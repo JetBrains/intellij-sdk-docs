@@ -2,6 +2,8 @@
 
 # Groups of Controls
 
+<link-summary>Grouping content to help users locate the necessary controls faster.</link-summary>
+
 Group controls to organize content on a screen and help people locate the necessary controls faster.
 
 Use the following controls or layouts:

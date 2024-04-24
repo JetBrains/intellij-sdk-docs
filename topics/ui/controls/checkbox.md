@@ -2,6 +2,8 @@
 
 # Checkbox
 
+<link-summary>UI guidelines on using checkboxes.</link-summary>
+
 <tldr>
 JCheckBox or JBCheckBox
 </tldr>

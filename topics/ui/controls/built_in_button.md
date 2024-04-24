@@ -2,6 +2,8 @@
 
 # Built-In Button
 
+<link-summary>UI guidelines on using built-in buttons.</link-summary>
+
 A built-in button is an icon placed inside an input control.
 
 ![](input_browse.png)

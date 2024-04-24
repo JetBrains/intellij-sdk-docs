@@ -1,7 +1,8 @@
----
-title: Punctuation
-category: Text
----
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Punctuation
+
+<link-summary>Punctuation rules for labels and description texts.</link-summary>
 
 Use the following rules for labels and description texts in IntelliJ user interfaces. For punctuation in numbers and times, see [Data formats](data_formats.md).
 

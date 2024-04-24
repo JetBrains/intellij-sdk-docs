@@ -79,6 +79,7 @@ The following IDEs are based on the IntelliJ Platform:
     * [PyCharm](pycharm.md)
     * [Rider](#rider)
     * [RubyMine](rubymine.md)
+    * [RustRover](https://www.jetbrains.com/rust/)
     * [WebStorm](webstorm.md)
     * [Writerside](https://www.jetbrains.com/writerside/)
 * [Android Studio](android_studio.md) IDE from Google

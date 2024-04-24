@@ -207,6 +207,9 @@ Each frame represents an icon, and a delay until the next frame.
 Use the predefined `AnimatedIcon.Default` loader icon to indicate a long process.
 This icon has a larger `AnimatedIcon.Big` version.
 
+> Add `true` [`AnimatedIcon.ANIMATION_IN_RENDERER_ALLOWED`](%gh-ic%/platform/ide-core/src/com/intellij/ui/AnimatedIcon.java) client property to list, table, and tree component to repaint animated icons automatically.
+> See its Javadoc for details.
+
 ## Icon Tooltips
 
 Register a resource bundle via `com.intellij.iconDescriptionBundle` extension point to provide tooltips automatically for all [`SimpleColoredComponent`](%gh-ic%/platform/platform-api/src/com/intellij/ui/SimpleColoredComponent.java) renderers.

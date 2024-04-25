@@ -381,21 +381,8 @@ For aligning in a dialog with other controls, see [Layout](layout.md).
 -->
 
 ## Style
-<table>
-  <tr>
-    <td>
-        <p style="margin-left: 20px; margin-top: 30px"><span style="color: #999999">IntelliJ</span></p>
-    </td>
-    <td>
-        <p style="margin-left:20px">          <img src="../../../images/ui/table/Mac.png" /></p>
-    </td>
-  </tr>
-  <tr>
-    <td>
-        <p style="margin-left: 20px; margin-top: 30px"><span style="color: #999999">Darcula</span></p>
-    </td>
-    <td>
-        <p style="margin-left:20px">          <img src="../../../images/ui/table/Darcula.png" /></p>
-    </td>
-  </tr>
-</table>
+
+| IntelliJ | ![](../../../images/ui/table/Mac.png)     |
+|----------|-------------------------------------------|
+| Darcula  | ![](../../../images/ui/table/Darcula.png) |
+{style=none}

@@ -79,17 +79,9 @@ Select the most likely or the safest value by default.
 
 Do **not** use an empty value as the default value. If no values are added to a drop-down yet, replace it with a button to add values.
 
-<table>
-    <tr>
-        <td> <p>Incorrect</p> </td>
-        <td> <p>Correct</p> </td>
-    </tr>
-    <tr>
-        <td> <img src="../../../images/ui/drop_down/empty.png" /> </td>
-        <td> <img src="../../../images/ui/drop_down/button.png" /> </td>
-    </tr>
-</table>
-
+| Incorrect                                   | Correct                                      |
+|---------------------------------------------|----------------------------------------------|
+| ![](../../../images/ui/drop_down/empty.png) | ![](../../../images/ui/drop_down/button.png) |
 
 ## Menu {id="menu_1"}
 
@@ -154,16 +146,9 @@ Enclose meta-options in pointy brackets and place meta-options at the beginning 
 
 Do **not** assign special meanings to numeric or string values, use meta-options instead. It can be unclear that 0 or an empty string are used to disable an option.
 
-  <table>
-      <tr>
-          <td> <p>Incorrect</p> </td>
-          <td> <p>Correct</p> </td>
-      </tr>
-      <tr>
-          <td> <img src="../../../images/ui/drop_down/version_incorrect.png"/> </td>
-          <td> <img src="../../../images/ui/drop_down/version_correct.png"/> </td>
-      </tr>
-  </table>
+| Incorrect                                               | Correct                                               |
+|---------------------------------------------------------|-------------------------------------------------------|
+| ![](../../../images/ui/drop_down/version_incorrect.png) | ![](../../../images/ui/drop_down/version_correct.png) |
 
   <p><em>In the incorrect example an empty string is used to set <control>&lt;Same
   as language level&gt;</control>, which is unclear.</em></p>

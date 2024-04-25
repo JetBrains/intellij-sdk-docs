@@ -21,38 +21,17 @@ For example, it is useful for the Commit actions group in the Commit dialog:
 
 ![](button-and-dropdown-menu.png)
 
-<p>The Split button is not useful in the Replace popup, since not all actions are related, for example Open in Find Window is not related to the main action. Such actions are hard to find in the drop-down menu:</p>
+The Split button is not useful in the Replace popup, since not all actions are related, for example Open in Find Window is not related to the main action. Such actions are hard to find in the drop-down menu:
 
-<table>
-<tr>
-<td>Incorrect</td>
-<td>Correct</td>
-</tr>
-<tr>
-<td>
-<img src="../../../images/ui/split_button/not-related-incorrect.png"/>
-</td>
-<td>
-<img src="../../../images/ui/split_button/not-related.png"/></td>
-</tr>
+| Incorrect                                                      | Correct                                              |
+|----------------------------------------------------------------|------------------------------------------------------|
+| ![](../../../images/ui/split_button/not-related-incorrect.png) | ![](../../../images/ui/split_button/not-related.png) |
 
-</table>
+In the Adjust Code Style dialog only 1 related action is possible and it does not save a lot of space:
 
-<p>In the Adjust Code Style dialog only 1 related action is possible and it does not save a lot of space:</p>
-<table>
-<tr>
-<td>Incorrect</td>
-<td>Correct</td>
-</tr>
-<tr>
-<td>
-<img src="../../../images/ui/split_button/space-not-limited-incorrect.png"/>
-</td>
-<td>
-<img src="../../../images/ui/split_button/space-not-limited.png"/></td>
-</tr>
-
-</table>
+| Correct                                                              | Incorrect                                                  |
+|----------------------------------------------------------------------|------------------------------------------------------------|
+| ![](../../../images/ui/split_button/space-not-limited-incorrect.png) | ![](../../../images/ui/split_button/space-not-limited.png) |
 
 To hide actions which are dangerous and uncommon. Dangerous means an action can destroy users’ data and cannot be easily undone. It is less possible to accidentally click an action hidden in a menu.  It is recommended to hide even a single related uncommon dangerous action.
 For example, Force Push can override remote commits from other authors and should not be easily available:
@@ -186,19 +165,9 @@ Follow the rules for the [simple button](button.topic#sizes-and-placement).
 
 The width of the split button equals to the width of the main button (follow the rules of the [simple button](button.topic)) plus the width of the drop-down button.
 
-<table>
-  <tr>
-    <td><p style="margin-top:10px">Windows</p></td>
-    <td><p style="margin-top:10px">Mac</p></td>
-    <td><p style="margin-top:10px">Darcula</p></td>
-  </tr>
-  <tr>
-    <td><img src="../../../images/ui/split_button/win-button-size.png" /></td>
-    <td><img src="../../../images/ui/split_button/mac-sizes.png" /></td>
-    <td><img src="../../../images/ui/split_button/darcula-sizes.png" /></td>
-  </tr>
-</table>
-
+| Windows                                                  | Mac                                                | Darcula                                                |
+|----------------------------------------------------------|----------------------------------------------------|--------------------------------------------------------|
+| ![](../../../images/ui/split_button/win-button-size.png) | ![](../../../images/ui/split_button/mac-sizes.png) | ![](../../../images/ui/split_button/darcula-sizes.png) |
 
 A different width for the split button makes it easier to understand that this button is different from other buttons in the dialog.
 

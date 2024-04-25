@@ -17,40 +17,33 @@ A common style unites several icons into a set and makes them recognizable.
 
 Use a flat geometric icon style with straight corners and edges. Flat icons remain legible even in small sizes.
 
-<table style="none">
-<tr>
-    <td> <p>Incorrect</p> <br /><img src="../../../images/ui/icons/style_pin_3d.png"/> </td>
-    <td> <p>Correct</p> <br /><img src="../../../images/ui/icons/style_pin_flat.png"/> </td>
-</tr>
-<tr>
-    <td colspan="2">
-        <p style="color: #999999; font-size: 13px; margin-top: -40px; margin-left: 20px">Use flat shapes instead of complex 3d forms.</p>
-    </td>
-</tr>
-</table>
+Use flat shapes instead of complex 3D forms:
 
-<table style="none">
-<tr>
-    <td> <p>Incorrect</p> <br /><img src="../../../images/ui/icons/style_folder_round.png"/> </td>
-    <td> <p>Correct</p> <br /><img src="../../../images/ui/icons/style_folder_straigt.png"/> </td>
-</tr>
-<tr>
-    <td colspan="2">
-        <p style="color: #999999; font-size: 13px; margin-top: -40px; margin-left: 20px">Use straight corners and lines instead of curves. It’s recommended to use 45° and 90° angles,<br />or 30° and 60° where possible.</p>
-    </td>
-</tr>
-</table>
+| Incorrect                                      | Correct                                          |
+|------------------------------------------------|--------------------------------------------------|
+| ![](../../../images/ui/icons/style_pin_3d.png) | ![](../../../images/ui/icons/style_pin_flat.png) |
+
+
+Use straight corners and lines instead of curves. It’s recommended to use 45° and 90° angles, or 30° and 60° where possible:
+
+| Incorrect                                            | Correct                                                |
+|------------------------------------------------------|--------------------------------------------------------|
+| ![](../../../images/ui/icons/style_folder_round.png) | ![](../../../images/ui/icons/style_folder_straigt.png) |
+
 
 Icons should be as simple as possible without losing their meaning. Clean and simple icons ensure readability and reduce visual clutter.
-<table style="none">
+
+<table>
 <tr>
-    <td> <p>Incorrect</p> <br /><img src="../../../images/ui/icons/style_soft_wrap_detailed.png"/> </td>
-    <td> <p>Correct</p> <br /><img src="../../../images/ui/icons/style_soft_wrap_simple.png"/> </td>
+    <td> Incorrect </td>
+    <td> Correct </td>
 </tr>
 <tr>
-    <td colspan="2">
-        <p style="color: #999999; font-size: 13px; margin-top: -40px; margin-left: 20px">Reduced the icon to its minimal form, without losing its meaning.</p>
-    </td>
+    <td> <img src="../../../images/ui/icons/style_soft_wrap_detailed.png"/> </td>
+    <td> <img src="../../../images/ui/icons/style_soft_wrap_simple.png"/> </td>
+</tr>
+<tr>
+    <td colspan="2"><em>Reduced the icon to its minimal form, without losing its meaning.</em></td>
 </tr>
 </table>
 
@@ -100,16 +93,10 @@ Sizes for other icon sizes can be found in the table below:
 ## Basic shapes
 Use basic shapes to build icons, such as squares, circles and rectangles. Using a grid and basic shapes ensures consistent visual proportions and placement.
 
-<table style="none">
-<tr>
-    <td> <img src="../../../images/ui/icons/shape_square.png"/> <em> Square 12px x 12px </em></td>
-    <td> <img src="../../../images/ui/icons/shape_circle.png"/> <em> Circle 14px </em></td>
-</tr>
-<tr>
-    <td> <img src="../../../images/ui/icons/shape_rect_horizontal.png"/> <em> Horizontal rectangle 10px x 14px</em></td>
-    <td> <img src="../../../images/ui/icons/shape_rect_vertical.png"/> <em> Vertical rectangle 14px x 10px </em></td>
-</tr>
-</table>
+| ![](../../../images/ui/icons/shape_square.png) _Square 12px x 12px_                        | ![](../../../images/ui/icons/shape_circle.png) _Circle 14px_                           |
+|--------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| ![](../../../images/ui/icons/shape_rect_horizontal.png) _Horizontal rectangle 10px x 14px_ | ![](../../../images/ui/icons/shape_rect_vertical.png) _Vertical rectangle 14px x 10px_ |
+{style=none}
 
 Make sure that icons have the same visual weight. The more filled an icon is, the less space it needs. Following this rule, circles, rhombuses, triangles and other non-square shapes should have larger height and width to be optically balanced with square figures.
 ![](shapes_weight_1.png)
@@ -128,10 +115,12 @@ Use a 2px stroke as the main drawing line. Consistent line weight makes icons co
 
 <table style="none">
 <tr>
-    <td> <img src="../../../images/ui/icons/stroke_download.png"/>
-         <em> Use consistent stroke width.</em> </td>
-    <td> <img src="../../../images/ui/icons/stroke_calc.png"/>
-         <em> A thinner stroke can be used for subtle tweaks to the&nbsp;legibility of an icon and for optical correction.</em> </td>
+    <td width="50%"> <img src="../../../images/ui/icons/stroke_download.png" width="215"/></td>
+    <td width="50%"> <img src="../../../images/ui/icons/stroke_calc.png" width="233"/></td>
+</tr>
+<tr>
+    <td><em>Use consistent stroke width.</em></td>
+    <td><em>A thinner stroke can be used for subtle tweaks to the&nbsp;legibility of an icon and for optical correction.</em></td>
 </tr>
 </table>
 
@@ -142,11 +131,15 @@ Align pixels on the X and Y axis and round to the nearest whole pixel, or 0.5px 
 >
 {style="note"}
 
-<table style="none">
+<table>
 <tr>
-    <td> <p>Incorrect</p> <br /> <img src="../../../images/ui/icons/stroke_pixels_incorrect.png"/>
+    <td>Incorrect</td>
+    <td>Correct</td>
+</tr>
+<tr>
+    <td width="50%"><img src="../../../images/ui/icons/stroke_pixels_incorrect.png"/>
          <em> If an icon is positioned off pixels, <br /> it becomes blurry when rasterized.</em> </td>
-    <td> <p>Correct</p> <br /> <img src="../../../images/ui/icons/stroke_pixels_correct.png"/>
+    <td width="50%"><img src="../../../images/ui/icons/stroke_pixels_correct.png"/>
          <em> Position stokes on integer pixels where possible.</em> </td>
 </tr>
 </table>
@@ -157,11 +150,15 @@ Round shapes, small details and some letters cannot be aligned to the pixel grid
 
 Reduce the number of anchors, as they increase the size of the image and takes longer to process it.
 
-<table style="none">
+<table>
 <tr>
-    <td> <p>Incorrect</p> <br /> <img src="../../../images/ui/icons/stroke_anchors_incorrect.png"/>
+    <td>Incorrect</td>
+    <td>Correct</td>
+</tr>
+<tr>
+    <td width="50%"><img src="../../../images/ui/icons/stroke_anchors_incorrect.png"/>
          <em> Unneeded anchors are added.</em> </td>
-    <td>  <p>Correct</p> <br /> <img src="../../../images/ui/icons/stroke_anchors_correct.png"/>
+    <td width="50%"><img src="../../../images/ui/icons/stroke_anchors_correct.png"/>
          <em> Use the minimum number of anchors.</em> </td>
 </tr>
 </table>
@@ -174,9 +171,9 @@ The default modifier position is the bottom right corner. If the base shape is b
 
   <table style="none">
   <tr>
-      <td> <img src="../../../images/ui/icons/modifier_search.png"/>
+      <td width="50%"> <img src="../../../images/ui/icons/modifier_search.png"/>
            <em> Place the modifier in the left corner <br/> if the base shape is badly recognizable <br/> with the modifier in the right corner.</em> </td>
-      <td> <img src="../../../images/ui/icons/modifier_parameter.png"/>
+      <td width="50%"> <img src="../../../images/ui/icons/modifier_parameter.png"/>
            <em> Place the modifier in the left corner <br/> if there are several modifiers.</em> </td>
   </tr>
   </table>
@@ -194,12 +191,14 @@ General rules for arrows: arrowhead is a filled triangle with a 90° pointing an
 Unfilled arrowhead can be used if there is only one arrow on an icon to reduce excessive visual weight, for example, for navigation arrows, such as back and forward, up and down.
 
 
-<table>
+<table style="none">
 <tr>
-    <td> <img src="../../../images/ui/icons/arrow_filled.png"/>
-         <em> 90° arrowhead and 2px square stroke body.</em> </td>
-    <td> <img src="../../../images/ui/icons/arrow_unfilled.png"/>
-         <em> Back arrow with unfilled arrowhead to compensate visual weight.</em> </td>
+    <td width="50%"> <img src="../../../images/ui/icons/arrow_filled.png"/></td>
+    <td width="50%"> <img src="../../../images/ui/icons/arrow_unfilled.png"/></td>
+</tr>
+<tr>
+    <td><em> 90° arrowhead and 2px square stroke body.</em></td>
+    <td><em> Back arrow with unfilled arrowhead to compensate visual weight.</em></td>
 </tr>
 </table>
 
@@ -221,38 +220,70 @@ There are 5 colors in the actions icons palette. Dark version is for Darcula the
 
 [//]: # (<note>Download a <a href="../../../images/ui/icons/Icons template.sketch" download>Sketch file</a> with the&nbsp;color palette.</note>)
 
+[//]: # (FIXME: colors are wrong, dark are rendered)
 
 <table>
     <tr>
-        <td> <img src="../../../images/ui/icons/action/red.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Red </span> <br/> <span style="font-size: 80%">#DB5860 </span></td>
-        <td> <img src="../../../images/ui/icons/action/red_dark.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Red dark </span> <br/> <span style="font-size: 80%">#C75450 </span></td>
+        <td>
+            <img src="../../../images/ui/icons/action/red.png" />
+            <br/>
+            <p><b>Red</b></p><p>#DB5860</p>
+        </td>
+        <td>
+            <img src="../../../images/ui/icons/action/red_dark.png" />
+            <br/>
+            <p><b>Red dark</b></p><p>#C75450</p>
+        </td>
     </tr>
     <tr>
-        <td> <img src="../../../images/ui/icons/action/yellow.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Yellow </span> <br/> <span style="font-size: 80%">#EDA200 </span></td>
-        <td> <img src="../../../images/ui/icons/action/yellow_dark.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Yellow dark </span> <br/> <span style="font-size: 80%">#F0A732 </span></td>
+        <td>
+            <img src="../../../images/ui/icons/action/yellow.png" />
+            <br/>
+            <p><b>Yellow</b></p><p>#EDA200</p>
+        </td>
+        <td>
+            <img src="../../../images/ui/icons/action/yellow_dark.png" />
+            <br/>
+            <p><b>Yellow dark</b></p><p>#F0A732</p>
+        </td>
     </tr>
     <tr>
-        <td> <img src="../../../images/ui/icons/action/green.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Green </span> <br/> <span style="font-size: 80%">#59A869 </span></td>
-        <td> <img src="../../../images/ui/icons/action/green_dark.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Green dark </span> <br/> <span style="font-size: 80%">#499C54 </span></td>
+        <td>
+            <img src="../../../images/ui/icons/action/green.png" />
+            <br/>
+            <p><b>Green</b></p><p>#59A869</p>
+        </td>
+        <td>
+            <img src="../../../images/ui/icons/action/green_dark.png" />
+            <br/>
+            <p><b>Green dark</b></p><p>#499C54</p>
+        </td>
     </tr>
     <tr>
-        <td> <img src="../../../images/ui/icons/action/blue.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Blue </span> <br/> <span style="font-size: 80%">#389FD6 </span></td>
-        <td> <img src="../../../images/ui/icons/action/blue_dark.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Blue dark </span> <br/> <span style="font-size: 80%">#3592C4 </span></td>
+        <td>
+            <img src="../../../images/ui/icons/action/blue.png" />
+            <br/>
+            <p><b>Blue</b></p><p>#389FD6</p>
+        </td>
+        <td>
+            <img src="../../../images/ui/icons/action/blue_dark.png" />
+            <br/>
+            <p><b>Blue dark</b></p><p>#3592C4</p>
+        </td>
     </tr>
     <tr>
-        <td> <img src="../../../images/ui/icons/action/grey.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Grey </span> <br/> <span style="font-size: 80%">#6E6E6E </span></td>
-        <td> <img src="../../../images/ui/icons/action/grey_dark.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Grey dark </span> <br/> <span style="font-size: 80%">#AFB1B3 </span></td>
+        <td>
+            <img src="../../../images/ui/icons/action/grey.png" />
+            <br/>
+            <p><b>Grey</b></p><p>#6E6E6E</p>
+        </td>
+        <td>
+            <img src="../../../images/ui/icons/action/grey_dark.png" />
+            <br/>
+            <p><b>Grey dark</b></p><p>#AFB1B3</p>
+        </td>
     </tr>
+
 </table>
 
 Use these colors according to the following rules:
@@ -261,16 +292,14 @@ Use these colors according to the following rules:
 
 2. If an icon falls into one of the categories below, use the corresponding color:
 
-    <table>
+    <table style="none">
         <tr>
-            <td> <span style="font-weight: bold"> Green </span> <br/> Positive actions: run, create <br /><img src="../../../images/ui/icons/colors_actions_green.png" /> </td>
-            <td></td>
-            <td> <span style="font-weight: bold"> Red </span> <br/> Destructive actions: stop, remove, force <br /><img src="../../../images/ui/icons/colors_actions_red.png" /> </td>
+            <td width="50%"> <b>Green</b> <p>Positive actions: run, create</p><br /><img src="../../../images/ui/icons/colors_actions_green.png" /> </td>
+            <td width="50%"> <b>Red</b> <p>Destructive actions: stop, remove, force</p><br /><img src="../../../images/ui/icons/colors_actions_red.png" /> </td>
         </tr>
         <tr>
-            <td> <span style="font-weight: bold"> Blue </span> <br/> Accent color to highlight popular icons based on usage statistics, highlight small elements in complex icons <br /><img src="../../../images/ui/icons/colors_actions_blue.png" /> </td>
-            <td></td>
-            <td> <span style="font-weight: bold"> Yellow </span> <br/> Warning actions: attract attention to the places (e.g. code) that can be optimized or improved <br /><img src="../../../images/ui/icons/colors_actions_yellow.png" /> </td>
+            <td> <b>Blue</b> <p>Accent color to highlight popular icons based on usage statistics, highlight small elements in complex icons</p> <br /><img src="../../../images/ui/icons/colors_actions_blue.png" /> </td>
+            <td> <b>Yellow</b> <p>Warning actions: attract attention to the places (e.g. code) that can be optimized or improved</p> <br /><img src="../../../images/ui/icons/colors_actions_yellow.png" /> </td>
         </tr>
     </table>
 
@@ -300,80 +329,158 @@ A noun icon is an icon that appears in the tree view to mark different file type
 
 The palette for noun icons is wider, because there are lots of icons in one set:
 
-<table>
+<table style="none">
     <tr>
-        <td> <img src="../../../images/ui/icons/noun/grey.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Grey </span> <br/> <span style="font-size: 80%"> #9AA7B0 </span> </td>
-        <td> <img src="../../../images/ui/icons/noun/grey_80.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Grey 80% </span> <br/> <span style="font-size: 80%"> #9AA7B0 op. 80% </span> </td>
-        <td> <img src="../../../images/ui/icons/noun/grey_60.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Grey 60% </span> <br/> <span style="font-size: 80%"> #9AA7B0 op. 60% </span> </td>
+        <td>
+            <img src="../../../images/ui/icons/noun/grey.png" />
+            <br/>
+            <p><b>Grey</b></p><p>#9AA7B0</p>
+        </td>
+        <td>
+            <img src="../../../images/ui/icons/noun/grey_80.png" />
+            <br/>
+            <p><b>Grey 80%</b></p><p>#9AA7B0 op. 80%</p>
+        </td>
+        <td>
+            <img src="../../../images/ui/icons/noun/grey_60.png" />
+            <br/>
+            <p><b>Grey 60%</b></p><p>#9AA7B0 op. 60%</p>
+        </td>
     </tr>
     <tr>
-        <td> <img src="../../../images/ui/icons/noun/blue.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Blue </span> <br/> <span style="font-size: 80%"> #40B6E0 </span> </td>
-        <td> <img src="../../../images/ui/icons/noun/blue_70.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Blue 70% </span> <br/> <span style="font-size: 80%"> #40B6E0 op. 70% </span> </td>
-        <td> <img src="../../../images/ui/icons/noun/blue_60.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Blue 60% </span> <br/> <span style="font-size: 80%"> #40B6E0 op. 60%</span> </td>
+        <td>
+            <img src="../../../images/ui/icons/noun/blue.png" />
+            <br/>
+            <p><b>Blue</b></p><p>#40B6E0</p>
+        </td>
+        <td>
+            <img src="../../../images/ui/icons/noun/blue_70.png" />
+            <br/>
+            <p><b>Blue 70%</b></p><p>#40B6E0 op. 70%</p>
+        </td>
+        <td>
+            <img src="../../../images/ui/icons/noun/blue_60.png" />
+            <br/>
+            <p><b>Blue 60%</b></p><p>#40B6E0 op. 60%</p>
+        </td>
     </tr>
     <tr>
-        <td> <img src="../../../images/ui/icons/noun/green.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Green </span> <br/> <span style="font-size: 80%"> #62B543 </span> </td>
-        <td> <img src="../../../images/ui/icons/noun/green_70.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Green 70% </span> <br/> <span style="font-size: 80%"> #62B543 op. 70%</span> </td>
-        <td> <img src="../../../images/ui/icons/noun/green_60.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Green 60% </span> <br/> <span style="font-size: 80%"> #62B543 op. 60%</span> </td>
+        <td>
+            <img src="../../../images/ui/icons/noun/green.png" />
+            <br/>
+            <p><b>Green</b></p><p>#62B543</p>
+        </td>
+        <td>
+            <img src="../../../images/ui/icons/noun/green_70.png" />
+            <br/>
+            <p><b>Green 70%</b></p><p>#62B543 op. 70%</p>
+        </td>
+        <td>
+            <img src="../../../images/ui/icons/noun/green_60.png" />
+            <br/>
+            <p><b>Green 60%</b></p><p>#62B543 op. 60%</p>
+        </td>
     </tr>
     <tr>
-        <td> <img src="../../../images/ui/icons/noun/yellow.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Yellow </span> <br/> <span style="font-size: 80%"> #F4AF3D </span> </td>
-        <td> <img src="../../../images/ui/icons/noun/yellow_70.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Yellow 70% </span> <br/> <span style="font-size: 80%"> #F4AF3D op. 70%</span> </td>
-        <td> <img src="../../../images/ui/icons/noun/yellow_60.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Yellow 60% </span> <br/> <span style="font-size: 80%"> #F4AF3D op. 60%</span> </td>
+        <td>
+            <img src="../../../images/ui/icons/noun/yellow.png" />
+            <br/>
+            <p><b>Yellow</b></p><p>#F4AF3D</p>
+        </td>
+        <td>
+            <img src="../../../images/ui/icons/noun/yellow_70.png" />
+            <br/>
+            <p><b>Yellow 70%</b></p><p>#F4AF3D op. 70%</p>
+        </td>
+        <td>
+            <img src="../../../images/ui/icons/noun/yellow_60.png" />
+            <br/>
+            <p><b>Yellow 60%</b></p><p>#F4AF3D op. 60%</p>
+        </td>
     </tr>
     <tr>
-        <td> <img src="../../../images/ui/icons/noun/purple.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Purple </span> <br/> <span style="font-size: 80%"> #B99BF8 </span> </td>
-        <td> <img src="../../../images/ui/icons/noun/purple_70.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Purple 70% </span> <br/> <span style="font-size: 80%"> #B99BF8 op. 70% </span> </td>
-        <td> <img src="../../../images/ui/icons/noun/purple_60.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Purple 60% </span> <br/> <span style="font-size: 80%"> #B99BF8 op. 60%</span> </td>
+        <td>
+            <img src="../../../images/ui/icons/noun/purple.png" />
+            <br/>
+            <p><b>Purple</b></p><p>#B99BF8</p>
+        </td>
+        <td>
+            <img src="../../../images/ui/icons/noun/purple_70.png" />
+            <br/>
+            <p><b>Purple 70%</b></p><p>#B99BF8 op. 70%</p>
+        </td>
+        <td>
+            <img src="../../../images/ui/icons/noun/purple_60.png" />
+            <br/>
+            <p><b>Purple 60%</b></p><p>#B99BF8 op. 60%</p>
+        </td>
     </tr>
     <tr>
-        <td> <img src="../../../images/ui/icons/noun/pink.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Pink </span> <br/> <span style="font-size: 80%"> #F98B9E </span> </td>
-        <td> <img src="../../../images/ui/icons/noun/pink_70.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Pink 70% </span> <br/> <span style="font-size: 80%"> #F98B9E op. 70%</span> </td>
-        <td> <img src="../../../images/ui/icons/noun/pink_60.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Pink 60% </span> <br/> <span style="font-size: 80%"> #F98B9E op. 60%</span> </td>
+        <td>
+            <img src="../../../images/ui/icons/noun/pink.png" />
+            <br/>
+            <p><b>Pink</b></p><p>#F98B9E</p>
+        </td>
+        <td>
+            <img src="../../../images/ui/icons/noun/pink_70.png" />
+            <br/>
+            <p><b>Pink 70%</b></p><p>#F98B9E op. 70%</p>
+        </td>
+        <td>
+            <img src="../../../images/ui/icons/noun/pink_60.png" />
+            <br/>
+            <p><b>Pink 60%</b></p><p>#F98B9E op. 60%</p>
+        </td>
     </tr>
     <tr>
-        <td> <img src="../../../images/ui/icons/noun/red.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Red </span> <br/> <span style="font-size: 80%"> #F26522 </span> </td>
-        <td> <img src="../../../images/ui/icons/noun/red_70.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Red 70% </span> <br/> <span style="font-size: 80%"> #F26522 op. 70%</span> </td>
-        <td> <img src="../../../images/ui/icons/noun/red_60.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Red 60% </span> <br/> <span style="font-size: 80%"> #F26522 op. 60%</span> </td>
+        <td>
+            <img src="../../../images/ui/icons/noun/red.png" />
+            <br/>
+            <p><b>Red</b></p><p>#F26522</p>
+        </td>
+        <td>
+            <img src="../../../images/ui/icons/noun/red_70.png" />
+            <br/>
+            <p><b>Red 70%</b></p><p>#F26522 op. 70%</p>
+        </td>
+        <td>
+            <img src="../../../images/ui/icons/noun/red_60.png" />
+            <br/>
+            <p><b>Red 60%</b></p><p>#F26522 op. 60%</p>
+        </td>
     </tr>
     <tr>
-        <td> <img src="../../../images/ui/icons/noun/red_status.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Red status</span> <br/> <span style="font-size: 80%"> #E05555 </span> </td>
-        <td> <img src="../../../images/ui/icons/noun/red_status_70.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Red status 70% </span> <br/> <span style="font-size: 80%"> #E05555 op. 70%</span> </td>
+        <td>
+            <img src="../../../images/ui/icons/noun/red_status.png" />
+            <br/>
+            <p><b>Red status</b></p><p>#E05555</p>
+        </td>
+        <td>
+            <img src="../../../images/ui/icons/noun/red_status_70.png" />
+            <br/>
+            <p><b>Red status 70%</b></p><p>#E05555 op. 70%</p>
+        </td>
     </tr>
     <tr>
-        <td> <img src="../../../images/ui/icons/noun/yellow_dark.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Yellow dark </span> <br/> <span style="font-size: 80%"> #D9A343 </span> </td>
+        <td>
+            <img src="../../../images/ui/icons/noun/yellow_dark.png" />
+            <br/>
+            <p><b>Yellow dark</b></p><p>#D9A343</p>
+        </td>
     </tr>
     <tr>
-        <td> <img src="../../../images/ui/icons/noun/green_android.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Green Android </span> <br/> <span style="font-size: 80%"> #A4C639 </span> </td>
+        <td>
+            <img src="../../../images/ui/icons/noun/green_android.png" />
+            <br/>
+            <p><b>Green Android</b></p><p>#A4C639</p>
+        </td>
     </tr>
     <tr>
-        <td> <img src="../../../images/ui/icons/noun/black.png" /> </td>
-        <td style="padding-top: 30px; padding-left: 16px"> <span style="font-size: 110%"> Black_text </span> <br/> <span style="font-size: 80%"> #231F20 op. 70% </span> </td>
+        <td>
+            <img src="../../../images/ui/icons/noun/black.png" />
+            <br/>
+            <p><b>Black text</b></p><p>#231F20 op. 70%</p>
+        </td>
     </tr>
 </table>
 
@@ -408,4 +515,3 @@ Use the SVG format for icons files. Use camelCase capitalization for icon names:
 If an icon is not the same in the dark theme, then also create:
 
 <path>iconName_dark.svg</path>
-

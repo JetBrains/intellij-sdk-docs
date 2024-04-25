@@ -51,16 +51,9 @@ Use sentence-style capitalization.
 
 If there are several input fields on a form, it’s recommended to make labels approximately the same length to avoid gaps between labels and fields. For example:
 
-<table style="header-column">
-    <tr>
-        <td> <p>Incorrect</p> </td>
-        <td> <img src="../../../images/ui/input_field/several_labels_length.png" /> </td>
-    </tr>
-    <tr>
-        <td> <p>Correct</p> </td>
-        <td> <img src="../../../images/ui/input_field/several_labels_length_1.png" /> </td>
-    </tr>
-</table>
+| Incorrect                                                        | Correct                                                        |
+|------------------------------------------------------------------|----------------------------------------------------------------|
+| ![](../../../images/ui/input_field/several_labels_length.png) | ![](../../../images/ui/input_field/several_labels_length_1.png) |
 
 If an input field is disabled, disable the label too:
 
@@ -93,16 +86,9 @@ If the user overwrites the value, it can be restored by removing the new value f
 
 Do **not** use the placeholder to show examples. The user can get the impression that the field is already filled. Provide examples or explanation under the input field (see [Context help](context_help.md)):
 
-<table>
-    <tr>
-        <td>Incorrect</td>
-        <td>Correct</td>
-    </tr>
-    <tr>
-        <td> <img src="../../../images/ui/input_field/placeholder_examples.png" /> </td>
-        <td> <img src="../../../images/ui/input_field/placeholder_examples_1.png" /> </td>
-    </tr>
-</table>
+| Incorrect                                                    | Correct                                                        |
+|--------------------------------------------------------------|----------------------------------------------------------------|
+| ![](../../../images/ui/input_field/placeholder_examples.png) | ![](../../../images/ui/input_field/placeholder_examples_1.png) |
 
 Do **not** use the placeholder as the field label. After the field has been filled, it is difficult to understand its purpose.
 
@@ -168,25 +154,12 @@ Sizes are the same for all themes:
 
 Choose the width appropriate for the most common values, but not less than 65 px. The field width helps the user understand what value is expected and to make sure that they fill the field correctly.
 
-<table style="header-column">
-    <tr>
-        <td> <p>Incorrect</p> </td>
-        <td> <img src="../../../images/ui/input_field/size_1.png" /> </td>
-    </tr>
-    <tr>
-        <td> <p style="margin-top: 10px;">Correct</p> </td>
-        <td> <img src="../../../images/ui/input_field/size_2.png"/> </td>
-    </tr>
-    <tr>
-        <td> <p>Incorrect</p> </td>
-        <td> <img src="../../../images/ui/input_field/size_3.png" /> </td>
-    </tr>
-    <tr>
-        <td> <p style="margin-top: 10px;">Correct </p> </td>
-        <td> <img src="../../../images/ui/input_field/size_4.png" /> </td>
-    </tr>
-</table>
-
+| Correct   | ![](../../../images/ui/input_field/size_1.png) |
+|-----------|------------------------------------------------|
+| Incorrect | ![](../../../images/ui/input_field/size_2.png) |
+| Correct   | ![](../../../images/ui/input_field/size_3.png) |
+| Incorrect | ![](../../../images/ui/input_field/size_4.png) |
+{style=none}
 
 If input value is longer than the field width, show the beginning of the value when the field becomes inactive:
 

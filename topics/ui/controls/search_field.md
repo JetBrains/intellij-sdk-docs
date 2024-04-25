@@ -52,24 +52,12 @@ Use icon buttons inside the search field to save space and not to overload the U
 
 Available option icons:
 
-<table>
-    <tr>
-        <td> <img src="../../../images/ui/search_field/icons/matchCase.png"/> </td>
-        <td> Match case </td>
-    </tr>
-    <tr>
-        <td> <img src="../../../images/ui/search_field/icons/regex.png" /> </td>
-        <td> Regex </td>
-    </tr>
-    <tr>
-        <td> <img src="../../../images/ui/search_field/icons/words.png" /> </td>
-        <td> Words </td>
-    </tr>
-    <tr>
-        <td> <img src="../../../images/ui/search_field/icons/inSelection.png" /> </td>
-        <td> In selection </td>
-    </tr>
-</table>
+| ![](../../../images/ui/search_field/icons/matchCase.png)  | Match case  |
+|---|---|
+| ![](../../../images/ui/search_field/icons/regex.png)  | Regex  |
+| ![](../../../images/ui/search_field/icons/words.png)  | Words  |
+| ![](../../../images/ui/search_field/icons/inSelection.png)  | In selection  |
+{style=none}
 
 Change the state of options icons on hover so that it is clear that they are clickable:
 
@@ -176,11 +164,11 @@ And without an arrow when it's not:
 
 Show search history in a popup on clicking on the magnifying glass icon:
 
-<img src="../../../images/ui/search_field/search-history-popup.png"/>
+![](../../../images/ui/search_field/search-history-popup.png)
 
 Show context help in the history popup when it is empty:
 
-<img src="../../../images/ui/search_field/search-history-empty.png"/>
+![](../../../images/ui/search_field/search-history-empty.png)
 
 The keyboard shortcut for the History action is <shortcut>Alt + Down</shortcut> on all systems.
 
@@ -217,17 +205,9 @@ Fit the search field to the popup windows and to a toolbar if it has top borders
 
 ![](../../../images/ui/search_field/log-correct.png)
 
-
-<table>
-    <tr>
-        <td> <p>Incorrect</p> </td>
-        <td> <p>Correct</p> </td>
-    </tr>
-    <tr>
-        <td> <img src="../../../images/ui/search_field/popup-incorrect.png" /> </td>
-        <td> <img src="../../../images/ui/search_field/popup-correct.png" /> </td>
-    </tr>
-</table>
+| Incorrect                                                | Correct                                                |
+|----------------------------------------------------------|--------------------------------------------------------|
+| ![](../../../images/ui/search_field/popup-incorrect.png) | ![](../../../images/ui/search_field/popup-correct.png) |
 
 Show the search field on demand when search is supplementary to other functionality or if space is limited. For example, space in the Project view is limited and too loaded to always show the _Speed Search_ bar:
 

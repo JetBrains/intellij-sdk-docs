@@ -21,17 +21,9 @@ Explain the current state.
 
 The default pattern is “_No [entity] added._” If _added, created, configured_ or other such verbs act as synonyms in a particular case, use the verb _added_ for consistency.
 
-<table>
-    <tr>
-        <td> <p>Incorrect</p> </td>
-        <td> <p>Correct</p> </td>
-    </tr>
-    <tr>
-        <td> <img src="../../../images/ui/empty_state/libraries-before.png"/> <em> Avoid ”Nothing to show” as it is not informative.</em> </td>
-        <td> <img src="../../../images/ui/empty_state/libraries-after.png"/> </td>
-    </tr>
-</table>
-
+| Incorrect                                                                                                  | Correct                                                 |
+|------------------------------------------------------------------------------------------------------------|---------------------------------------------------------|
+| ![](../../../images/ui/empty_state/libraries-before.png) Avoid "Nothing to show" as it is not informative. | ![](../../../images/ui/empty_state/libraries-after.png) |
 
 Make the reason descriptive:
 

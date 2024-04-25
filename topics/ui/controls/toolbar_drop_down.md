@@ -39,16 +39,9 @@ Use a [toolbar drop-down button](icon_button.md) instead of a drop-down list in 
 
 Do **not** use toolbar drop-down in dialogs, use the [drop-down list](drop_down.md) instead.
 
-<table>
-  <tr>
-      <td> <p>Incorrect</p> </td>
-      <td> <p>Correct</p> </td>
-  </tr>
-  <tr>
-      <td> <img src="../../../images/ui/toolbar_dropdown/settings_incorrect.png"/> </td>
-      <td> <img src="../../../images/ui/toolbar_dropdown/settings_correct.png" /> </td>
-  </tr>
-</table>
+| Incorrect                                                       | Correct                                                       |
+|-----------------------------------------------------------------|---------------------------------------------------------------|
+| ![](../../../images/ui/toolbar_dropdown/settings_incorrect.png) | ![](../../../images/ui/toolbar_dropdown/settings_correct.png) |
 
 ## How to use
 

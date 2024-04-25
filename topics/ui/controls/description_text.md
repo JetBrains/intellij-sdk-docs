@@ -19,7 +19,7 @@ Use description text to:
 
 * Describe a group of settings:
 
-<img src="../../../images/ui/description_text/03_use_in_settings.png"/>
+![](../../../images/ui/description_text/03_use_in_settings.png)
 
 
 ## How to Use
@@ -61,20 +61,9 @@ If the text does not fit, add a scrollbar:
 
 Do not add borders around description text. Use the panel color for the background.
 
-<table>
-<tr>
-<td> <p> Incorrect </p></td>
-<td> <p> Correct </p></td>
-</tr>
-  <tr>
-    <td>
-        <img src="../../../images/ui/description_text/09_frame_incorrect.png" />
-    </td>
-    <td>
-        <img src="../../../images/ui/description_text/09_frame_correct.png" />
-    </td>
-  </tr>
-</table>
+| Incorrect                                                       | Correct                                                       |
+|-----------------------------------------------------------------|---------------------------------------------------------------|
+| ![](../../../images/ui/description_text/09_frame_incorrect.png) | ![](../../../images/ui/description_text/09_frame_correct.png) |
 
 For [links](link.md), use the default link color: `Link.activeForeground`. Underline links on hover:
 

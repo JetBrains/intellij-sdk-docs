@@ -49,7 +49,7 @@ Remove verbs that explain the function of a UI control:
 ![](obvious-specify.png)
 *Text boxes are made for input — an explicit instruction "specify" duplicates the meaning expressed by the text field. Additional information can be given under the field — see [Context help](context_help.md).*
 
-<table>
+<table style="none">
   <tr>
      <td> <img src="../../../images/ui/writing_short/obvious-prefer.png"/><em> A selected radio button means its option is "preferred". </em> </td>
       <td> <img src="../../../images/ui/writing_short/obvious-allow.png"/><em> A checked checkbox means its feature is "allowed". </em> </td>
@@ -57,7 +57,7 @@ Remove verbs that explain the function of a UI control:
 </table>
 
 Remove words with a meaning that is already expressed in the label:
-<table>
+<table style="none">
     <tr>
        <td> <img src="../../../images/ui/writing_short/obvious-contents.png"/>
             <em> The clipboard’s purpose is to keep information so the infinitive "to keep" is implying the obvious and can be removed.</em> </td>

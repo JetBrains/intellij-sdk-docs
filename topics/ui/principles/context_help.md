@@ -29,7 +29,7 @@ Use a **help tooltip** if:
 *A refactoring dialog is used more often than a settings dialog. A help tooltip is less distracting than an inline help text.*
 
 * There is no space for an inline text.
-<img src="../../../images/ui/context_help/11_no_space_in_settings.png" />
+![](../../../images/ui/context_help/11_no_space_in_settings.png)
 
 * The control that needs explanation is an icon or does not have a label.
 ![](03_action_help_tooltip.png)
@@ -39,33 +39,33 @@ Use a **help tooltip** if:
 
 Explain complex behavior that a short action or a setting name cannot convey clearly.
 
-<img src="../../../images/ui/tooltip/04_question_icon_tooltip.png"/>
+![](../../../images/ui/tooltip/04_question_icon_tooltip.png)
 
-<img src="../../../images/ui/inline_help_text/02_text_size.png"/>
+![](../../../images/ui/inline_help_text/02_text_size.png)
 
 Explain IDE-specific entities.
 
-<img src="../../../images/ui/context_help/01_IDE_specific.png" />
+![](../../../images/ui/context_help/01_IDE_specific.png)
 
 Provide input format requirements and examples.
 
-<img src="../../../images/ui/context_help/02_formatting_example.png" />
+![](../../../images/ui/context_help/02_formatting_example.png)
 
 Suggest alternative ways.
 
-<img src="../../../images/ui/context_help/03_alternative_ways.png" />
+![](../../../images/ui/context_help/03_alternative_ways.png)
 
 Warn about possible problems.
 
-<img src="../../../images/ui/context_help/04_possible_problems.png" />
+![](../../../images/ui/context_help/04_possible_problems.png)
 
 Explain limitations.
 
-<img src="../../../images/ui/context_help/05_limitations.png" />
+![](../../../images/ui/context_help/05_limitations.png)
 
 Provide quick navigation to related settings.
 
-<img src="../../../images/ui/inline_help_text/04_link_internal.png" />
+![](../../../images/ui/inline_help_text/04_link_internal.png)
 
 
 ## When not to use
@@ -78,26 +78,9 @@ Do not use context help to explain how the user interface works. If you need to 
 
 Do not explain common actions and entities. Show a regular tooltip with an action name and shortcut in this case.
 
-<table>
-
-  <tr>
-    <td>
-        <p>Incorrect</p>
-    </td>
-    <td>
-        <p>Correct</p>
-    </td>
-  </tr>
-  <tr>
-    <td>
-          <img src="../../../images/ui/context_help/07_explain_obvious_incorrect.png" />
-    </td>
-    <td>
-        <img src="../../../images/ui/context_help/07_explain_obvious_correct.png" />
-    </td>
-  </tr>
-</table>
-
+| Incorrect                                                             | Correct                                                             |
+|-----------------------------------------------------------------------|---------------------------------------------------------------------|
+| ![](../../../images/ui/context_help/07_explain_obvious_incorrect.png) | ![](../../../images/ui/context_help/07_explain_obvious_correct.png) |
 
 Do not explain each option. Too many help icons or too much inline text make a dialog cluttered and harder to navigate visually. If all options need to be explained, consider rewriting the labels to make them clearer.
 

@@ -200,31 +200,15 @@ All numeric values should be given a unit or clearly labeled if they do not have
 
 Select the most convenient units.
 
-<table>
-  <tr>
-      <td> <p>Incorrect</p> </td>
-      <td> <p>Correct</p> </td>
-  </tr>
-  <tr>
-      <td> <img src="../../../images/ui/data_formats/connection_incorrect.png"/> </td>
-      <td> <img src="../../../images/ui/data_formats/connection_correct.png" /> </td>
-  </tr>
-</table>
+| Incorrect                                                     | Correct                                                     |
+|---------------------------------------------------------------|-------------------------------------------------------------|
+| ![](../../../images/ui/data_formats/connection_incorrect.png) | ![](../../../images/ui/data_formats/connection_correct.png) |
 
 Place units after the input field.
 
-<table>
-  <tr>
-      <td> <p>Incorrect</p> </td>
-      <td> <p>Correct</p> </td>
-  </tr>
-  <tr>
-      <td> <img src="../../../images/ui/data_formats/caret_incorrect.png" /> </td>
-      <td> <img src="../../../images/ui/data_formats/caret_correct.png" /> </td>
-  </tr>
-</table>
-
-
+| Incorrect                                                | Correct                                                |
+|----------------------------------------------------------|--------------------------------------------------------|
+| ![](../../../images/ui/data_formats/caret_incorrect.png) | ![](../../../images/ui/data_formats/caret_correct.png) |
 
 ## Tables
 
@@ -235,27 +219,12 @@ Right-align numeric values.
 
 Include the unit in the column header if all values share the same unit. Convert each number to use the same unit. If it’s not possible, e.g. the scatter of numbers is too large, include the unit with each value.
 
-<table>
-  <tr>
-      <td> <p>Incorrect</p> </td>
-      <td> <p>Correct</p> </td>
-  </tr>
-  <tr>
-      <td> <img src="../../../images/ui/data_formats/table_units_incorrect.png" /> </td>
-      <td> <img src="../../../images/ui/data_formats/table_units_correct.png" /> </td>
-  </tr>
-</table>
-
+| Incorrect                                                      | Correct                                                      |
+|----------------------------------------------------------------|--------------------------------------------------------------|
+| ![](../../../images/ui/data_formats/table_units_incorrect.png) | ![](../../../images/ui/data_formats/table_units_correct.png) |
 
 Be consistent with the precision of the significand.
 
-<table>
-  <tr>
-      <td> <p>Incorrect</p> </td>
-      <td> <p>Correct</p> </td>
-  </tr>
-  <tr>
-      <td> <img src="../../../images/ui/data_formats/precision_incorrect.png" /> </td>
-      <td> <img src="../../../images/ui/data_formats/precision_correct.png" /> </td>
-  </tr>
-</table>
+| Incorrect                                                    | Correct                                                    |
+|--------------------------------------------------------------|------------------------------------------------------------|
+| ![](../../../images/ui/data_formats/precision_incorrect.png) | ![](../../../images/ui/data_formats/precision_correct.png) |

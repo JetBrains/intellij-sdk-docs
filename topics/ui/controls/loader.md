@@ -40,10 +40,12 @@ Remove the loader as soon as the process completes.
 
 <tr>
     <td colspan="2">
-    <code-block lang="java">
-    ExpandableTextField textField = new ExpandableTextField();
-    textField.addExtension(Extension.create(new AnimatedIcon.Default(), null, null));
-    </code-block>
+        <code-block lang="java">
+            ExpandableTextField textField = new ExpandableTextField();
+            textField.addExtension(
+              Extension.create(new AnimatedIcon.Default(), null, null)
+            );
+        </code-block>
     </td>
 </tr>
 
@@ -65,7 +67,3 @@ Remove the loader as soon as the process completes.
 </tr>
 
 </table>
-
-
-
-

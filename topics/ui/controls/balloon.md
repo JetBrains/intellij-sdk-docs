@@ -87,7 +87,7 @@ Provide the details on the event or system state to help users decide what to do
 
 Note that only the first line of the body text is visible by default. The rest of the message is only visible when expanded with an arrow icon. Make the beginning of the text most informative.
 
-<img src="../../../images/ui/balloon/07_expandable.png" />
+![](../../../images/ui/balloon/07_expandable.png)
 
 
 ### Actions

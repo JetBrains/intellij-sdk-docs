@@ -21,16 +21,10 @@ Do **not** use radio buttons if:
 * There are 5 and more options that can be charted on an axis, e.g. time delay. Use a slider instead.
 
 * There are 5 and more options. Use a [drop-down list](drop_down.md):
-  <table>
-      <tr>
-          <td> <p>Incorrect</p> </td>
-          <td> <p>Correct</p> </td>
-      </tr>
-      <tr>
-          <td> <img src="../../../images/ui/radiobutton/dropdown_incorrect.png" /> </td>
-          <td> <img src="../../../images/ui/radiobutton/dropdown_correct.png" /> </td>
-      </tr>
-  </table>
+
+  | Incorrect                                                  | Correct                                                  |
+  |------------------------------------------------------------|----------------------------------------------------------|
+  | ![](../../../images/ui/radiobutton/dropdown_incorrect.png) | ![](../../../images/ui/radiobutton/dropdown_correct.png) |
 
 Consider using a [drop-down list](drop_down.md) if:
 * The screen space is limited.

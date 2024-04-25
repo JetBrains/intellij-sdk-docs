@@ -129,25 +129,9 @@ Show a shortcut if an action or a setting has one. Do not show a single shortcut
 
 Provide a link to a source that can further explain the action or the setting. A link can navigate to a place in the IDE or to an external help article.
 
-<table style="none">
-  <tr>
-    <td>
-        <img src="../../../images/ui/tooltip/10_tooltip_local_link.png" />
-    </td>
-    <td>
-        <img src="../../../images/ui/tooltip/10_tooltip_ext_link.png" />
-    </td>
-  </tr>
-  <tr>
-    <td style="padding-top: 0">
-        <span style="color: #999999; margin-left: 20px">Local link</span>
-    </td>
-    <td style="padding-top: 0">
-        <span style="color: #999999; margin-left: 20px">External link</span>
-    </td>
-  </tr>
-</table>
-
+| Local link                                                | External link                                           |
+|-----------------------------------------------------------|---------------------------------------------------------|
+| ![](../../../images/ui/tooltip/10_tooltip_local_link.png) | ![](../../../images/ui/tooltip/10_tooltip_ext_link.png) |
 
 Do not show just an action name and a link to a help article. Provide help text so that the user does not need to switch to a web browser.
 
@@ -241,7 +225,7 @@ Always place the question mark icon to the right of the corresponding UI compone
 
 ## Style
 
-<img src="../../../images/ui/tooltip/tooltip_style.png" />
+![](../../../images/ui/tooltip/tooltip_style.png)
 
 ## Built-in behavior
 

@@ -79,17 +79,9 @@ This is the default size, it can be changed if the dialog is resized.
 
 Size the text area to display an integral number of lines of text:
 
-<table style="header-column">
-    <tr>
-        <td> <p>Incorrect</p> </td>
-        <td> <img src="../../../images/ui/text_area/size_2.png"/> </td>
-    </tr>
-    <tr>
-        <td> <p style="margin-top: 10px;">Correct</p> </td>
-        <td> <img src="../../../images/ui/text_area/size_3.png"/> </td>
-    </tr>
-</table>
-
+| Incorrect                                    | Correct                                      |
+|----------------------------------------------|----------------------------------------------|
+| ![](../../../images/ui/text_area/size_2.png) | ![](../../../images/ui/text_area/size_3.png) |
 
 Do **not** resize a text area on input. It will change the position of other controls and they can become hardly discoverable.
 
@@ -107,9 +99,3 @@ Do **not** highlight a text area on selection, only if a validation error occurs
 ### History
 <p>Background: dialog default theme color</p>
 <p>Font: Windows, IntelliJ — default, Mac OS 2px smaller than default</p>
-
-
-
-
-
-

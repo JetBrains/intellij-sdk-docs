@@ -6,7 +6,7 @@
 
 A tool window is a pane inside the main IDE window. For information about tool windows, see [IntelliJ IDEA Web Help](https://www.jetbrains.com/help/idea/tool-windows.html). For information about implementing tool windows, see [](tool_windows.md).
 
-<img src="../../../images/ui/tool_window/example.png"/>
+![](../../../images/ui/tool_window/example.png)
 
 
 ## When to use

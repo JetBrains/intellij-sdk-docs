@@ -61,16 +61,10 @@ The less frequently used commands can be right aligned.
 ![](right_aligned.png)
 
 Do **not** put two toolbars next to each other. One toolbar should be enough for the most popular actions.
-<table>
-  <tr>
-      <td> <p>Incorrect</p> </td>
-      <td> <p>Correct</p> </td>
-  </tr>
-  <tr>
-      <td> <img src="../../../images/ui/toolbar/toolbars_2.png" /> </td>
-      <td> <img src="../../../images/ui/toolbar/toolbars_1.png" /> </td>
-  </tr>
-</table>
+
+| Incorrect                                      | Correct                                        |
+|------------------------------------------------|------------------------------------------------|
+| ![](../../../images/ui/toolbar/toolbars_2.png) | ![](../../../images/ui/toolbar/toolbars_1.png) |
 
 Make every toolbar action available from the main menu or the context menu. Toolbars are customizable and can be hidden, so commands should be available from other places as well.
 
@@ -113,17 +107,10 @@ Place the toolbar at the bottom on macOS, and on the right on Windows and Linux 
 *Windows*
 
 The toolbar width is limited by the width of the element it belongs to. For example, by the width of the tool window or the list part in a master-detail layout.
-<table>
-  <tr>
-      <td> <p>Incorrect</p> </td>
-      <td> <p>Correct</p> </td>
-  </tr>
-  <tr>
-      <td> <img src="../../../images/ui/toolbar/width_incorrect.png" /> </td>
-      <td> <img src="../../../images/ui/toolbar/width_correct.png"/> </td>
-  </tr>
-</table>
 
+| Incorrect                                           | Correct                                           |
+|-----------------------------------------------------|---------------------------------------------------|
+| ![](../../../images/ui/toolbar/width_incorrect.png) | ![](../../../images/ui/toolbar/width_correct.png) |
 
 Toolbar sizes are the same for all themes:
 
@@ -141,20 +128,12 @@ The toolbar items sizes change together with the application font size proportio
 ![](style.png)
 
 Separate the toolbar from the content with a line from all four sides if it appears in a tool window or a table:
-<table>
-  <tr>
-      <td> <p>Incorrect</p> </td>
-      <td> <p>Correct</p> </td>
-  </tr>
-  <tr>
-      <td> <img src="../../../images/ui/toolbar/style_incorrect.png"/> </td>
-      <td> <img src="../../../images/ui/toolbar/style_correct.png" /> </td>
-  </tr>
-</table>
+
+
+| Incorrect                                           | Correct                                           |
+|-----------------------------------------------------|---------------------------------------------------|
+| ![](../../../images/ui/toolbar/style_incorrect.png) | ![](../../../images/ui/toolbar/style_correct.png) |
 
 Do **not** separate a toolbar with lines if it appears above the list:
 
 ![](customize.png)
-
-
-

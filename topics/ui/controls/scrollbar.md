@@ -96,23 +96,6 @@ Reserve the space for a vertical scrollbar if there is a column on the right sid
 
 ## Style
 
-<table>
-  <tr>
-    <td>
-        <p style="margin:20px 0px 0px 20px">Windows/Linux</p>
-    </td>
-    <td>
-        <p style="margin:20px 0px 0px 40px">Mac</p>
-    </td>
-  </tr>
-  <tr>
-    <td>
-        <p style="margin-left:20px">          <img src="../../../images/ui/scrollbar/win-light.png" /></p>
-    </td>
-    <td>
-        <p style="margin-left:20px">          <img src="../../../images/ui/scrollbar/mac-light.png" /></p>
-    </td>
-  </tr>
-</table>
-
-
+| Windows/Linux                                   | Mac                                             |
+|-------------------------------------------------|-------------------------------------------------|
+| ![](../../../images/ui/scrollbar/win-light.png) | ![](../../../images/ui/scrollbar/mac-light.png) |

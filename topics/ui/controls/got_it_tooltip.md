@@ -115,17 +115,9 @@ Avoid using style formatting. It makes the tooltip harder to read.
 
 Do **not** cover the information the user is currently working with.
 
-<table>
-<tr><td>Incorrect</td>
-<td>Correct</td></tr>
-<tr>
-<td>
-<img src="../../../images/ui/got_it_tooltip/15_location_incorrect.png"/>
-</td>
-<td><img src="../../../images/ui/got_it_tooltip/15_location_correct.png"/>
-</td>
-</tr>
-</table>
+| Incorrect                                                        | Correct                                                        |
+|------------------------------------------------------------------|----------------------------------------------------------------|
+| ![](../../../images/ui/got_it_tooltip/15_location_incorrect.png) | ![](../../../images/ui/got_it_tooltip/15_location_correct.png) |
 
 <p>
 <b>Implementation.</b> See four predefined point providers in the <code>GotItTooltip</code> class.

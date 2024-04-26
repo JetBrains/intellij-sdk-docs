@@ -6,7 +6,7 @@
 
 The toggle button is used to switch between On and Off states.
 
-![](../../../images/ui/toggle_button/example.png)
+![](toggle_button_example.png)
 
 ## When to use
 

@@ -6,7 +6,7 @@
 
 Description text provides explanatory information about a set of settings or a single item in a list or tree.
 
-![](../../../images/ui/description_text/01_example.png)
+![](01_description_text_example.png)
 
 
 ## When to Use

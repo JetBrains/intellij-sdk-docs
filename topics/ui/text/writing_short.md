@@ -78,7 +78,7 @@ A user interface is for a person who uses it. Addressing this person is unnecess
 ## Remove duplicates
 If the repeating word appears in element labels, move it to the beginning. Finding a setting becomes faster as you scan only meaningful words:
 
-![](duplicates.png)
+![](writing_short_duplicates.png)
 
 Remove duplicates in meaning:
 

@@ -8,7 +8,7 @@
 
 A toolbar drop-down list is a type of button that appears on a horizontal toolbar and shows a list of choices on clicking it.
 
-![](../../../images/ui/toolbar_dropdown/example.png)
+![](toolbar_dropdown_example.png)
 
 
 ## When to use
@@ -30,7 +30,7 @@ Use a [toolbar drop-down button](icon_button.md) instead of a drop-down list in 
 
 * If there is a list of actions:
 
-![](../../../images/ui/toolbar_dropdown/menu_button.png)
+![](toolbar_dropdown_menu_button.png)
 
 * The options are secondary and the user won’t change them in most cases.
 
@@ -59,7 +59,7 @@ If a drop-down is controlled by buttons, add a border, as separators will break 
 
 The toolbar drop-down does not get the focus. Highlight it on hover the same way as toolbar icons.
 
-![](../../../images/ui/toolbar_dropdown/hover.png)
+![](toolbar_dropdown_hover.png)
 
 ### Menu
 
@@ -87,7 +87,7 @@ Follow the rules for the [drop-down list](drop_down.md#menu-items).
 
 If it’s necessary to configure options in a toolbar drop-down list, add customization actions at the top or at the bottom of the list and separate them with a line. Use title case capitalization for actions.
 
-![](../../../images/ui/toolbar_dropdown/customize.png)
+![](toolbar_dropdown_customize.png)
 
 A toolbar drop-down list can have submenus.
 
@@ -109,11 +109,11 @@ Avoid submenus inside submenus. Submenus hide choices too deep and are difficult
 
 Toolbar drop-down sizes are the same for all themes.
 
-![](../../../images/ui/toolbar_dropdown/toolbar_sizes.png)
+![](toolbar_dropdown_sizes.png)
 
 
 The width changes depending on the selected value to save space if the value is short.
 
-![](../../../images/ui/toolbar_dropdown/width.png)
+![](toolbar_dropdown_width.png)
 
 For menu sizes see [Drop-down menu](drop_down.md#menu_1).

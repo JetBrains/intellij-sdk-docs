@@ -6,7 +6,7 @@
 
 <tldr>ActionLink, DropDownLink</tldr>
 
-![](../../../images/ui/link/01_example.png)
+![](01_link_example.png)
 
 ## When to use
 

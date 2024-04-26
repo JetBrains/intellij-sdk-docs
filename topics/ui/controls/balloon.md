@@ -6,7 +6,7 @@
 
 Balloon notifications inform users of the events or system states related to a project or IDE.
 
-![](01_example.png)
+![](01_balloon_example.png)
 
 
 ## When to use

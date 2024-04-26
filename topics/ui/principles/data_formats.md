@@ -187,7 +187,7 @@ Use decimal numeral system.
 </tr>
 </table>
 
-![](../../../images/ui/data_formats/tree.png)
+![](data_formats_tree.png)
 
 
 ## Units
@@ -215,7 +215,7 @@ Place units after the input field.
 <p>Use the rules below to make it easier to compare numbers in one column.</p>
 
 Right-align numeric values.
-![](../../../images/ui/data_formats/table.png)
+![](data_formats_table.png)
 
 Include the unit in the column header if all values share the same unit. Convert each number to use the same unit. If it’s not possible, e.g. the scatter of numbers is too large, include the unit with each value.
 

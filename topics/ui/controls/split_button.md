@@ -190,5 +190,5 @@ Leave 2px around the separator inactive to lessen the chance of choosing the wro
 
 Align the dropdown with the button left border:
 
-![](alignment.png)
+![](split_button_alignment.png)
 

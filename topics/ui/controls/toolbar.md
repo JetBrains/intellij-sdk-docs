@@ -6,7 +6,7 @@
 
 A toolbar provides quick access to frequently used actions and filters. It appears in dialogs, pop-ups, tool windows, lists, trees, and tables.
 
-![](../../../images/ui/toolbar/example.png)
+![](toolbar_example.png)
 
 ## Toolbar items
 
@@ -46,7 +46,7 @@ Left align items on a horizontal toolbar and top align on a vertical toolbar.
 
 Group related toolbar icon buttons and separate groups with lines. If there are several unrelated icons do **not** add separators after each icon.
 
-![](../../../images/ui/toolbar/group.png)
+![](toolbar_group.png)
 
 Label group of icons if it helps to make the icons more clear and if it’s needed to promote the icons. The icons group becomes more visible with the label.
 
@@ -54,7 +54,7 @@ Label group of icons if it helps to make the icons more clear and if it’s need
 Arrange items inside groups by the frequency of use, from left to right from top to bottom. Rely on statistics.
 
 It is recommended to arrange groups in the following order unless it contradicts the usage statistics. If it does, arrange groups by the frequency of use.
-![](../../../images/ui/toolbar/tool_window.png)
+![](toolbar_tool_window.png)
 
 The less frequently used commands can be right aligned.
 
@@ -84,7 +84,7 @@ Provide commands for invoking the toolbar. Use the main menu for the main window
 
 Provide the ability to customize toolbars in the main window. To do this, add the toolbar to the list on the <ui-path>Settings | Appearance & Behavior | Menus and Toolbars</ui-path> page and open it using the <control>Customize Toolbar...</control> action from the toolbar context menu.
 
-![](customize.png)
+![](toolbar_customize.png)
 
 ## Sizes and placement
 
@@ -121,7 +121,7 @@ Toolbar sizes are the same for all themes:
 
 The toolbar items sizes change together with the application font size proportionally.
 
-![](../../../images/ui/toolbar/font_size.png)
+![](toolbar_font_size.png)
 
 ## Style
 
@@ -136,4 +136,4 @@ Separate the toolbar from the content with a line from all four sides if it appe
 
 Do **not** separate a toolbar with lines if it appears above the list:
 
-![](customize.png)
+![](toolbar_customize.png)

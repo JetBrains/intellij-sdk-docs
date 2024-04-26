@@ -248,7 +248,7 @@ If line is horizontal, center it with the first comment line.
 
 Use the Hex Code format to specify colors:
 
-![](../../../images/ui/how_to_write_guidelines/colors.png)
+![](how_to_write_guidelines_colors.png)
 
 Use colored rectangles to specify sizes inside the element and lines to specify external sizes:
 
@@ -261,10 +261,10 @@ Use colored rectangles to specify sizes inside the element and lines to specify 
 * Align all sizes on the right.
 
 Use line to show that text is aligned with an element:
-![](../../../images/ui/how_to_write_guidelines/alignment.png)
+![](how_to_write_guidelines_alignment.png)
 
 Specify the element sizes in the following format:
-![](../../../images/ui/how_to_write_guidelines/sizes.png)
+![](how_to_write_guidelines_sizes.png)
 
 For text labels, specify insets from the bounding box:
 

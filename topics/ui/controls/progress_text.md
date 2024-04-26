@@ -84,7 +84,7 @@ Wrap text when the area’s width changes.
 Fields and vertical spaces:![](fields.png)
 
 ### Tree
-![](tree.png)
+![](progress_text_tree.png)
 
 ## Style
 

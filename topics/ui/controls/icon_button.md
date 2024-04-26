@@ -8,7 +8,7 @@
 
 A toolbar icon button is an icon that appears on a toolbar.
 
-![](../../../images/ui/button/example.png)
+![](button_example.png)
 
 
 

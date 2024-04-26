@@ -8,7 +8,7 @@
 
 An input field allows users to enter or edit a text line using the keyboard.
 
-![](../../../images/ui/input_field/example.png)
+![](input_field_example.png)
 
 
 ## When to use
@@ -125,7 +125,7 @@ If input data is secured, replace it with dots `JPasswordField`.
 
 If there are many predefined values (for example, code snippets, commit author), add completion to the input field `com.intellij.util.textCompletion.TextFieldWithCompletion`.
 
-![](completion.png)
+![](input_field_completion.png)
 
 An input field with completion looks the same way as a regular input field. When an empty input field gets the focus, show a tooltip after a delay to indicate that code completion is supported.
 
@@ -141,24 +141,24 @@ to browse the disk.
 ### Validation
 If the user enters an invalid value, highlight the field with red and show an error message in a tooltip. For more details see [Validation errors](validation_errors.md).
 
-![](../../../images/ui/input_field/error.png)
+![](input_field_error.png)
 
 
 ## Sizes and placement
 
 Sizes are the same for all themes:
 
-![](../../../images/ui/input_field/sizes.png)
+![](input_field_sizes.png)
 
 ### Field width
 
 Choose the width appropriate for the most common values, but not less than 65 px. The field width helps the user understand what value is expected and to make sure that they fill the field correctly.
 
-| Correct   | ![](../../../images/ui/input_field/size_1.png) |
-|-----------|------------------------------------------------|
-| Incorrect | ![](../../../images/ui/input_field/size_2.png) |
-| Correct   | ![](../../../images/ui/input_field/size_3.png) |
-| Incorrect | ![](../../../images/ui/input_field/size_4.png) |
+| Correct   | ![](input_field_size_1.png) |
+|-----------|-----------------------------|
+| Incorrect | ![](input_field_size_2.png) |
+| Correct   | ![](input_field_size_3.png) |
+| Incorrect | ![](input_field_size_4.png) |
 {style=none}
 
 If input value is longer than the field width, show the beginning of the value when the field becomes inactive:

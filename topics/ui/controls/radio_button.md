@@ -40,7 +40,7 @@ Consider using a [drop-down list](drop_down.md) if:
 ### Label
 A label accompanies each checkbox and is placed next to it.
 
-![](label.png)
+![](radiobutton_label.png)
 
 If a label is long, split it into two lines. Avoid labels that take more than two lines. See recommendations on writing concise labels below.
 

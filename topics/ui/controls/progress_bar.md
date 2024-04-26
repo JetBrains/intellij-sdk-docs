@@ -47,7 +47,7 @@ Place a process name above the progress bar:
 
 If the vertical space is limited, place the process name with a colon on the left:
 
-![](label_left.png)
+![](progress_bar_label_left.png)
 
 If there are several processes in a group, add a bold header. The header is a noun.
 
@@ -55,7 +55,7 @@ If there are several processes in a group, add a bold header. The header is a no
 
 Do **not** show a process name for inline processes:
 
-![](tool_window.png)
+![](progress_bar_tool_window.png)
 
 
 #### Process details
@@ -126,7 +126,7 @@ Hide the progress bar as soon as the process completes.
 
 The progress form and sizes are the same in all themes.
 
-![](../../../images/ui/progress_bar/sizes.png)
+![](progress_bar_sizes.png)
 
 
 

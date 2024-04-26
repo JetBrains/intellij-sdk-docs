@@ -31,7 +31,7 @@ When describing a problem, prefer adjectives to complex nouns:
 
 Do not repeat the group titles in the inspection name:
 
-![](../../../images/ui/inspections/group.png)
+![](inspections_group.png)
 
 Do not use the word "problems" or other words that describe how inspections function in general (i.e. “check”, “inspection”, or “issue”). An inspection is supposed to check code for problems, so mentioning it in its name is not needed.
 
@@ -39,7 +39,7 @@ Do not use the word "problems" or other words that describe how inspections func
 
 Do not use the words "warning" and “error” in inspection names. Such a name will become incorrect and misleading if the inspection severity level change.
 
-![](../../../images/ui/inspections/warning.png)
+![](inspections_warning.png)
 
 Do not use parentheses in inspection names. All supporting information can be moved to inspection descriptions.
 
@@ -68,7 +68,7 @@ Provide details, such as:
 * Two code samples: the code with a problem and the code that bypasses this problem. By comparing the good code and the bad code, users can work out what causes the problem and how to avoid it.
   For example, for <ui-path>Java | Probable bugs | 'equals()' called on array</ui-path> adding such an example helps to understand the inspection quicker:
 
-![](../../../images/ui/inspections/example.png)
+![](inspections_example.png)
 
 * Information from external validators.
   Prefer separating inspections so that a user can control them individually.

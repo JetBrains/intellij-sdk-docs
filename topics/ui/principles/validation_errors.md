@@ -283,7 +283,7 @@ If the field loses focus, hide the tooltip and highlight the field with light-re
 
 On hover over the field or the element with an error:
 ![](incorrect_symbol_hover.png)
-![](../../../images/ui/validation/table_hover.png)
+![](validation_table_hover.png)
 
 Show the tooltip above the field and move it 40px right, so that the controls above it are not overlapped.
 If there is an important info above the field, the tooltip can be shown on the right.
@@ -394,7 +394,7 @@ Use encouraging tone:
 
 ## Warning
 
-![](warning.png)
+![](validation_warning.png)
 
 A warning informs the user that something is configured incorrectly, but does not prevent them from applying the changes.
 
@@ -449,7 +449,7 @@ Add a red light bulb on the right side of the input field if an action to fix th
 ![](table_error.png)
 
 When the field in a table loses focus, show an error icon. An error tooltip appears on mouse hover or when the line gets focus:
-![](../../../images/ui/validation/table_hover.png)
+![](../../../images/ui/validation/validation_table_hover.png)
 
 Use a warning icon for warnings:
 ![](table_warning.png)

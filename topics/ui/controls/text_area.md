@@ -56,7 +56,7 @@ value](input_field.md#prefilled-value), [field focus](input_field.md#field-focus
 
 If the previous user input should be saved, use <shortcut>⌥↑</shortcut> and <shortcut>⌥↓</shortcut> on Mac OS and <shortcut>Alt+Up/Down</shortcut> on Windows and Linux to navigate through the history. If history is available, add a note at the bottom of the input field:
 
-![](../../../images/ui/text_area/history.png)
+![](text_area_history.png)
 
 Save the current value, so that the user can return to it while navigating through the history.
 
@@ -65,23 +65,23 @@ Save the current value, so that the user can return to it while navigating throu
 
 If the user types an invalid value, highlight the text area with red and show an error message in a tooltip. For more details see [Validation errors](validation_errors.md).
 
-![](../../../images/ui/text_area/error.png)
+![](text_area_error.png)
 
 
 
 ## Size and placement
 
 Recommended sizes:
-![](../../../images/ui/text_area/sizes.png)
+![](text_area_sizes.png)
 This is the default size, it can be changed if the dialog is resized.
 **Height**. The minimum text area height is 3 lines ~55px, so the user understands that it’s multi-line. The maximum height is not limited and should be appropriate for the most common values.
 **Width**. The minimum text area width is 270px. It’s inconvenient to use a narrower field due to frequent line breaks. The maximum width is 80 symbols ~600px, otherwise, it’s hard to read the text.
 
 Size the text area to display an integral number of lines of text:
 
-| Incorrect                                    | Correct                                      |
-|----------------------------------------------|----------------------------------------------|
-| ![](../../../images/ui/text_area/size_2.png) | ![](../../../images/ui/text_area/size_3.png) |
+| Incorrect                 | Correct                   |
+|---------------------------|---------------------------|
+| ![](text_area_size_2.png) | ![](text_area_size_3.png) |
 
 Do **not** resize a text area on input. It will change the position of other controls and they can become hardly discoverable.
 

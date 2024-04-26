@@ -64,7 +64,7 @@ Hide the area's toolbar if it does not have the same action as in the empty stat
 
 **Tool windows:** provide a link to a help topic that explains the functionality. Add the question mark icon in the beginning.
 
-![](database-tw-segment.png)
+![](empty_state_database-tw-segment.png)
 
 **Tables, trees and lists:** provide instructions according to the [Context help](context_help.md) rules. Smaller UI areas rarely require an in-depth explanation compared to complex tool windows. A short help text should be enough, and it does not require switching contexts.
 

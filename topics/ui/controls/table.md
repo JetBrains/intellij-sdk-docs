@@ -4,7 +4,7 @@
 
 <link-summary>UI guidelines on using tables.</link-summary>
 
-![](table.png)
+![](table_table.png)
 
 ## When to use
 
@@ -21,7 +21,7 @@ Use tables:
 
 * To search by all parameters in a data set, for example, in the File History table it is possible to quickly filter the table by the date, author or commit message.
 
-![](history.png)
+![](table_history.png)
 
 
 
@@ -42,7 +42,7 @@ A label is optional for tables.
 
 Add a label if the table content is not obvious from the dialog title or the table header. For example, in the table that lets you configure filters for import and completion per-scope:
 
-![](../../../images/ui/table/label.png)
+![](table_label.png)
 
 Avoid a label if it duplicates the dialog title or the table header. For example, there is no need in a label in the <ui-path>JavaScript | Libraries</ui-path> table since the Settings page title and the table context make it clear what is in the table:
 
@@ -85,7 +85,7 @@ Do **not** use a Group separator instead of a Table label. A horizontal line is 
 
 <p class='label correct'>Correct</p>
 
-![](../../../images/ui/table/label.png)
+![](../../../images/ui/table/table_label.png)
 
 ### Header
 
@@ -104,7 +104,7 @@ Do **not** use a header if all columns in a table have self-descriptive content,
 
 <p class='label correct'>Correct</p>
 
-![](../../../images/ui/table/history.png)
+![](../../../images/ui/table/table_history.png)
 
 <p class='label incorrect'>Incorrect
 </p>
@@ -160,7 +160,7 @@ Do **not** use stripes In a simple data set as guides to track content between c
 
 <p class='label correct'>Correct</p>
 
-![](../../../images/ui/table/table.png)
+![](table_table.png)
 
 
 <p>Bigger distance between groups of related information can also help in tracking content. Line height between groups should be increased by 4px for each group level.</p>
@@ -222,7 +222,7 @@ If columns can be reordered, change the cursor to "Hand" when hovering the table
 This makes it clear that columns can be dragged even if there is no table header.</p>
 
 In disabled table greyed-out text, disable controls and any interaction:
-![](../../../images/ui/table/disabled.png)
+![](table_disabled.png)
 
 ### Editing values
 
@@ -292,7 +292,7 @@ Do **not** put vertical elements (for example, diagrams) in the middle of a tabl
 
 <p class='label correct'>Correct</p>
 
-![](../../../images/ui/table/history.png)
+![](../../../images/ui/table/table_history.png)
 
 Right-align numbers when it is useful to compare them by their length. Left-align all the other content.
 
@@ -382,7 +382,7 @@ For aligning in a dialog with other controls, see [Layout](layout.md).
 
 ## Style
 
-| IntelliJ | ![](../../../images/ui/table/Mac.png)     |
+| IntelliJ | ![](table_intellij.png)     |
 |----------|-------------------------------------------|
-| Darcula  | ![](../../../images/ui/table/Darcula.png) |
+| Darcula  | ![](table_darcula.png) |
 {style=none}

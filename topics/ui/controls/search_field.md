@@ -8,7 +8,7 @@
 
 A search field is an input field that helps users locate objects, actions or text in an application.
 
-![](../../../images/ui/search_field/example.png)
+![](search_field_example.png)
 
 This article focuses on the search field.
 
@@ -85,7 +85,7 @@ Do **not** show the clear button when the initial data state is empty or doesn't
 
 When search can be configured with options, show the clear button on the left of the option buttons. This way, option buttons won't jump when the clear button appears. The separator between the options and the clear button makes it harder to misclick the potentially dangerous clear icon.
 
-![](../../../images/ui/search_field/example.png)
+![](search_field_example.png)
 
 #### Multiline Search Strings
 
@@ -122,7 +122,7 @@ The default shortcut for the New Line action:
 
 Provide completion for complex searches with filtering by attributes:
 
-![](../../../images/ui/search_field/completion.png)
+![](search_field_completion.png)
 
 Do **not** use filter attributes as separate controls on the toolbar. Not all of them are needed every time while they take a lot of space and overload the interface. Use completion instead:
 
@@ -183,7 +183,7 @@ Add a search string to history:
 Put the search field on top of the on-screen content that is being searched, and align them vertically, for example, the search field in settings is aligned with the filtered settings tree:
 <p>Correct</p>
 
-![](../../../images/ui/search_field/settings.png)
+![](search_field_settings.png)
 
 The search field is not aligned with the content on the Keymap settings page, which makes it harder to relate the content and the search string:
 
@@ -221,7 +221,7 @@ When searching through content that is not displayed on the screen, put the sear
 
 For a search field shown without a toolbar (i.e. _Speed Search_ in trees) the search width could be adjusted on typing to accommodate input:
 
-![](../../../images/ui/search_field/width.png)
+![](search_field_width.png)
 
 For a search field that is not fitted to a toolbar, set the minimum width to 200:
 

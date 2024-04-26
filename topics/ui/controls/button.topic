@@ -10,7 +10,7 @@
     <tldr>
         JButton
     </tldr>
-    <img src="../../../images/ui/button/example.png"/>
+    <img src="button_example.png"/>
     <chapter title="When to use" id="when-to-use">
         <p>Use a button to invoke an immediate action.</p>
         <p>Use a <a href="link.md">link</a> instead if:</p>
@@ -249,7 +249,7 @@
             </list>
         </chapter>
         <chapter title="Disabled" id="disabled">
-            <img src="disabled.png" alt=""/>
+            <img src="button_disabled.png" alt=""/>
             <p>Disable a button if:</p>
             <list>
                 <li>It’s an Apply button and no changes have been made in this dialog.</li>
@@ -300,7 +300,7 @@
     <chapter title="Sizes and placement" id="sizes-and-placement">
         <p>The button width accommodates the length of the label plus standard indents 14px, but not less than the
             72px.</p>
-        <img src="sizes.png" alt=""/>
+        <img src="button_sizes.png" alt=""/>
         <p>The button height is fixed, so the label is always a single line.</p>
         <p>To lay out the button that depends on other control, e.g. input field, follow the rules
             for <a href="layout.md" anchor="dependent-controls">dependent controls</a>. Otherwise, follow
@@ -317,26 +317,26 @@
              </tr>
              <tr>
                  <td> <p style="color: #999999; margin-top: 10px;"> Several buttons </p></td>
-                 <td> <img src="../../../images/ui/button/size_1.png" style="margin: -5px 0 0 0"></td>
-                 <td> <img src="../../../images/ui/button/size_2.png" style="margin: -5px 0 0 0"></td>
+                 <td> <img src="button_size_1.png" style="margin: -5px 0 0 0"></td>
+                 <td> <img src="button_size_2.png" style="margin: -5px 0 0 0"></td>
              </tr>
          </table>
          <table>
          <col width="140px">
              <tr>
                  <td> <p style="color: #999999; margin-top: 10px;"> Button on the right </p></td>
-                 <td> <img src="../../../images/ui/button/size_3.png" style="margin: -5px 0 0 0"></td>
+                 <td> <img src="button_size_3.png" style="margin: -5px 0 0 0"></td>
              </tr>
              <tr>
                  <td>  </td>
-                 <td> <img src="../../../images/ui/button/size_4.png" style="margin: -5px 0 0 0"></td>
+                 <td> <img src="button_size_4.png" style="margin: -5px 0 0 0"></td>
              </tr>
              <tr>
                  <td>  </td>
              </tr>
              <tr>
                  <td> <p style="color: #999999; margin-top: -5px;"> Button under </p></td>
-                 <td> <img src="../../../images/ui/button/size_5.png" style="margin: -5px 0 0 0"></td>
+                 <td> <img src="button_size_5.png" style="margin: -5px 0 0 0"></td>
              </tr>
          </table>
         -->

@@ -6,7 +6,7 @@
 
 A banner notification informs the user about the state of a specific context in the project. For example, when there is a missing or broken configuration for some file.
 
-![](error.png)
+![](banner_error.png)
 
 ## When to use
 
@@ -43,12 +43,12 @@ Use to suggest actions that can impact the user’s workflow.
 
 Use to suggest actions that are required to unblock the user’s workflow.
 
-![](error.png)
+![](banner_error.png)
 *Syntax highlighting and other inspections are broken until a JDK is defined for the project.*
 
 ## How to use
 
-![](../../../images/ui/banner/structure.png)
+![](banner_structure.png)
 ### Message
 
 *   The message should be [short and descriptive](writing_short.md) (two sentences at most) and follow the [Punctuation](punctuation.md) guide.

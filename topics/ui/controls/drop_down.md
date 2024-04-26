@@ -8,7 +8,7 @@
 
 A drop-down list is a type of button that appears in dialogs. It shows a list of choices on clicking it and allows selecting one option.
 
-![](../../../images/ui/drop_down/example.png)
+![](drop_down_example.png)
 
 
 ## When to use
@@ -45,7 +45,7 @@ If multiple selections are possible, use checkboxes.
 
 If there is a list of actions, use a menu or a split button:
 
-![](menu_button.png)
+![](drop_down_menu_button.png)
 
 If there are 4 options or fewer, use radio buttons.
 
@@ -53,7 +53,7 @@ If there are 4 options or fewer, use radio buttons.
 
 If users may need to enter a value that not currently in the list, use a combo box.
 
-![](font_size.png)
+![](combo_box_font_size.png)
 
 If a drop-down appears on a toolbar, use [toolbar drop-down](toolbar_drop_down.md) instead.
 
@@ -79,9 +79,9 @@ Select the most likely or the safest value by default.
 
 Do **not** use an empty value as the default value. If no values are added to a drop-down yet, replace it with a button to add values.
 
-| Incorrect                                   | Correct                                      |
-|---------------------------------------------|----------------------------------------------|
-| ![](../../../images/ui/drop_down/empty.png) | ![](../../../images/ui/drop_down/button.png) |
+| Incorrect                | Correct         |
+|--------------------------|-----------------|
+| ![](drop_down_empty.png) | ![](button.png) |
 
 ## Menu {id="menu_1"}
 
@@ -132,7 +132,7 @@ Sort items in one of the following orders:
 
 Group related options, add a separator and group header if possible:
 
-![](group.png)
+![](drop_down_group.png)
 
 If there are actions related to the drop-down, put them under the gear icon on the right:
 
@@ -186,7 +186,7 @@ Submenus are not supported for the drop-down list. Use a tree view instead:
 
 A drop-down width is fixed and does not change depending on the selected value.
 
-![](width.png)
+![](drop_down_width.png)
 
 A drop-down width should be enough to fit the longest option plus 20px, but not less than 72px.
 

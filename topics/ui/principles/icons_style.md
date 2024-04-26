@@ -225,60 +225,60 @@ There are 5 colors in the actions icons palette. Dark version is for Darcula the
 <table>
     <tr>
         <td>
-            <img src="../../../images/ui/icons/action/red.png" />
+            <img src="action_red.png" />
             <br/>
             <p><b>Red</b></p><p>#DB5860</p>
         </td>
         <td>
-            <img src="../../../images/ui/icons/action/red_dark.png" />
+            <img src="action_red_d.png" />
             <br/>
             <p><b>Red dark</b></p><p>#C75450</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="../../../images/ui/icons/action/yellow.png" />
+            <img src="action_yellow.png" />
             <br/>
             <p><b>Yellow</b></p><p>#EDA200</p>
         </td>
         <td>
-            <img src="../../../images/ui/icons/action/yellow_dark.png" />
+            <img src="action_yellow_d.png" />
             <br/>
             <p><b>Yellow dark</b></p><p>#F0A732</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="../../../images/ui/icons/action/green.png" />
+            <img src="action_green.png" />
             <br/>
             <p><b>Green</b></p><p>#59A869</p>
         </td>
         <td>
-            <img src="../../../images/ui/icons/action/green_dark.png" />
+            <img src="action_green_d.png" />
             <br/>
             <p><b>Green dark</b></p><p>#499C54</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="../../../images/ui/icons/action/blue.png" />
+            <img src="action_blue.png" />
             <br/>
             <p><b>Blue</b></p><p>#389FD6</p>
         </td>
         <td>
-            <img src="../../../images/ui/icons/action/blue_dark.png" />
+            <img src="action_blue_d.png" />
             <br/>
             <p><b>Blue dark</b></p><p>#3592C4</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="../../../images/ui/icons/action/grey.png" />
+            <img src="action_grey.png" />
             <br/>
             <p><b>Grey</b></p><p>#6E6E6E</p>
         </td>
         <td>
-            <img src="../../../images/ui/icons/action/grey_dark.png" />
+            <img src="action_grey_d.png" />
             <br/>
             <p><b>Grey dark</b></p><p>#AFB1B3</p>
         </td>
@@ -332,152 +332,152 @@ The palette for noun icons is wider, because there are lots of icons in one set:
 <table style="none">
     <tr>
         <td>
-            <img src="../../../images/ui/icons/noun/grey.png" />
+            <img src="noun_grey.png" />
             <br/>
             <p><b>Grey</b></p><p>#9AA7B0</p>
         </td>
         <td>
-            <img src="../../../images/ui/icons/noun/grey_80.png" />
+            <img src="noun_grey_80.png" />
             <br/>
             <p><b>Grey 80%</b></p><p>#9AA7B0 op. 80%</p>
         </td>
         <td>
-            <img src="../../../images/ui/icons/noun/grey_60.png" />
+            <img src="noun_grey_60.png" />
             <br/>
             <p><b>Grey 60%</b></p><p>#9AA7B0 op. 60%</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="../../../images/ui/icons/noun/blue.png" />
+            <img src="noun_blue.png" />
             <br/>
             <p><b>Blue</b></p><p>#40B6E0</p>
         </td>
         <td>
-            <img src="../../../images/ui/icons/noun/blue_70.png" />
+            <img src="noun_blue_70.png" />
             <br/>
             <p><b>Blue 70%</b></p><p>#40B6E0 op. 70%</p>
         </td>
         <td>
-            <img src="../../../images/ui/icons/noun/blue_60.png" />
+            <img src="noun_blue_60.png" />
             <br/>
             <p><b>Blue 60%</b></p><p>#40B6E0 op. 60%</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="../../../images/ui/icons/noun/green.png" />
+            <img src="noun_green.png" />
             <br/>
             <p><b>Green</b></p><p>#62B543</p>
         </td>
         <td>
-            <img src="../../../images/ui/icons/noun/green_70.png" />
+            <img src="noun_green_70.png" />
             <br/>
             <p><b>Green 70%</b></p><p>#62B543 op. 70%</p>
         </td>
         <td>
-            <img src="../../../images/ui/icons/noun/green_60.png" />
+            <img src="noun_green_60.png" />
             <br/>
             <p><b>Green 60%</b></p><p>#62B543 op. 60%</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="../../../images/ui/icons/noun/yellow.png" />
+            <img src="noun_yellow.png" />
             <br/>
             <p><b>Yellow</b></p><p>#F4AF3D</p>
         </td>
         <td>
-            <img src="../../../images/ui/icons/noun/yellow_70.png" />
+            <img src="noun_yellow_70.png" />
             <br/>
             <p><b>Yellow 70%</b></p><p>#F4AF3D op. 70%</p>
         </td>
         <td>
-            <img src="../../../images/ui/icons/noun/yellow_60.png" />
+            <img src="noun_yellow_60.png" />
             <br/>
             <p><b>Yellow 60%</b></p><p>#F4AF3D op. 60%</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="../../../images/ui/icons/noun/purple.png" />
+            <img src="noun_purple.png" />
             <br/>
             <p><b>Purple</b></p><p>#B99BF8</p>
         </td>
         <td>
-            <img src="../../../images/ui/icons/noun/purple_70.png" />
+            <img src="noun_purple_70.png" />
             <br/>
             <p><b>Purple 70%</b></p><p>#B99BF8 op. 70%</p>
         </td>
         <td>
-            <img src="../../../images/ui/icons/noun/purple_60.png" />
+            <img src="noun_purple_60.png" />
             <br/>
             <p><b>Purple 60%</b></p><p>#B99BF8 op. 60%</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="../../../images/ui/icons/noun/pink.png" />
+            <img src="noun_pink.png" />
             <br/>
             <p><b>Pink</b></p><p>#F98B9E</p>
         </td>
         <td>
-            <img src="../../../images/ui/icons/noun/pink_70.png" />
+            <img src="noun_pink_70.png" />
             <br/>
             <p><b>Pink 70%</b></p><p>#F98B9E op. 70%</p>
         </td>
         <td>
-            <img src="../../../images/ui/icons/noun/pink_60.png" />
+            <img src="noun_pink_60.png" />
             <br/>
             <p><b>Pink 60%</b></p><p>#F98B9E op. 60%</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="../../../images/ui/icons/noun/red.png" />
+            <img src="noun_red.png" />
             <br/>
             <p><b>Red</b></p><p>#F26522</p>
         </td>
         <td>
-            <img src="../../../images/ui/icons/noun/red_70.png" />
+            <img src="noun_red_70.png" />
             <br/>
             <p><b>Red 70%</b></p><p>#F26522 op. 70%</p>
         </td>
         <td>
-            <img src="../../../images/ui/icons/noun/red_60.png" />
+            <img src="noun_red_60.png" />
             <br/>
             <p><b>Red 60%</b></p><p>#F26522 op. 60%</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="../../../images/ui/icons/noun/red_status.png" />
+            <img src="noun_red_status.png" />
             <br/>
             <p><b>Red status</b></p><p>#E05555</p>
         </td>
         <td>
-            <img src="../../../images/ui/icons/noun/red_status_70.png" />
+            <img src="noun_red_status_70.png" />
             <br/>
             <p><b>Red status 70%</b></p><p>#E05555 op. 70%</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="../../../images/ui/icons/noun/yellow_dark.png" />
+            <img src="noun_yellow_d.png" />
             <br/>
             <p><b>Yellow dark</b></p><p>#D9A343</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="../../../images/ui/icons/noun/green_android.png" />
+            <img src="noun_green_android.png" />
             <br/>
             <p><b>Green Android</b></p><p>#A4C639</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="../../../images/ui/icons/noun/black.png" />
+            <img src="noun_black.png" />
             <br/>
             <p><b>Black text</b></p><p>#231F20 op. 70%</p>
         </td>

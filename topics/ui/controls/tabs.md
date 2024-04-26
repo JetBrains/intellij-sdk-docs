@@ -8,7 +8,7 @@
 
 Tabs organize content in dialogs by grouping similar UI controls.
 
-![](../../../images/ui/tabs/01_example.png)
+![](01_tabs_example.png)
 
 In code editors, tabs are created with another component — [`JBEditorTabs`](%gh-ic%/platform/platform-api/src/com/intellij/ui/tabs/impl/JBEditorTabs.java). It supports extended functionality like icons, closeable, and draggable tabs. Do **not** use this component in dialogs.
 

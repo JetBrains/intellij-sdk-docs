@@ -9,7 +9,7 @@
 A combo box combines a [drop-down list](drop_down.md) and an [input field](input_field.md), allowing the user to select a value from the list or enter a custom value.
 
 
-![](/../../../images/ui/combo_box/example.png)
+![](combo_box_example.png)
 
 Use `com.intellij.openapi.ui.ComboBox`  instead of `javax.swing.JComboBox`. To make combo box editable invoke:
 
@@ -23,7 +23,7 @@ Use a combo box if:
 
 * The user needs to select a value or enter a custom value.
 
-    ![](font_size.png)
+    ![](combo_box_font_size.png)
 
 * The possible choices are objects or states.
 
@@ -45,7 +45,7 @@ If it’s not possible to list the most likely choices. In this case, use an [in
 
 If the list is big and the user knows what value they need and won’t review the list. In this case, use an input field with completion.
 
-![](completion.png)
+![](input_field_completion.png)
 
 
 ## How to use
@@ -55,9 +55,9 @@ For the [label](drop_down.md#label) and the [default value](drop_down.md#default
 
 If there are no values in the list initially, replace the combo box with an input field. This way users won't waste their time clicking the empty combo box to find out that there are no options available.
 
-| Incorrect                                   | Correct                                                       |
-|---------------------------------------------|---------------------------------------------------------------|
-| ![](../../../images/ui/combo_box/empty.png) | ![](../../../images/ui/combo_box/replace_with_iput_field.png) |
+| Incorrect                | Correct                          |
+|--------------------------|----------------------------------|
+| ![](combo_box_empty.png) | ![](replace_with_iput_field.png) |
 
 Replace the input field with a combo box after a value has been entered and confirmed.
 

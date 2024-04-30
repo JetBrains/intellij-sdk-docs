@@ -11,8 +11,32 @@
 </tldr>
 
 The IntelliJ Platform includes a powerful framework for implementing custom language formatters.
-In this framework, the plugin specifies the *constraints* on the whitespaces between different syntax elements.
-The formatting engine, provided by the IDE, calculates the smallest number of whitespace modifications that need to be performed on the file to make it match the constraints.
+At its core, the framework represents formatting rules by nested _blocks_ ([`Block`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/Block.java)) that cover the whole file.
+Each block specifies *constraints* on whitespaces, like indents, wraps, spacing, or alignments.
+This allows the formatting engine to calculate the smallest number of whitespace modifications necessary to properly format a file.
+
+## Introduction
+
+The easiest way to understand how formatting works in practice is to use a small code example in an existing language and
+use [PsiViewer](explore_api.md#31-use-internal-mode-and-psiviewer) to inspect how formatting blocks are built.
+To invoke PsiViewer with the possibility of inspecting <control>Block Structure</control>,
+use <ui-path>Tools | View PSI Structure...</ui-path> or <ui-path>Tools | View PSI Structure of Current File...</ui-path>.
+
+![Formatting Blocks Structure](psi_viewer_formatting_blocks_2.png){width="720"}
+
+The image above shows a snippet of code at the top, the PSI structure at the bottom left and the block structure at the bottom right.
+Like in this example, the structure of blocks is usually built to reflect the PSI structure of the file.
+I.e., there is a root block that covers the entire file and its nested children cover smaller portions like classes, functions, etc. down to
+statements, identifiers, or braces.
+If you compare the Psi and block structure above, similarities in the nesting become obvious.
+
+In general, however, PSI structure and formatting model are two different things serving different purposes.
+While the structure of formatting blocks and PSI are usually similar, they do not have to match one-to-one.
+Additionally, it is vital to understand that the formatter modifies only characters between blocks.
+Therefore, the tree of blocks must cover all non-whitespace characters the bottom-level, or otherwise, the formatter may delete the characters between blocks.
+On the other hand, spacing elements should never be covered by blocks unless you want the space to be left as it is.
+
+## Implementation
 
 The process of formatting a file or a file fragment consists of the following main steps:
 
@@ -132,3 +156,10 @@ Register [`AsyncDocumentFormattingService`](%gh-ic%/platform/code-style-api/src/
 
 **Example**:
 [`ShExternalFormatter`](%gh-ic%/plugins/sh/core/src/com/intellij/sh/formatter/ShExternalFormatter.java) from _Shell Script_ plugin
+
+Todo:
+
+- Create macOS screenshot for PSI Viewer
+- Explain relations `Block`, `ASTBlock`, `AbstractBlock`
+- Relations `plugin.xml`, `FormattingModelBuilder`, `FormattingModel`, `FormattingContext`
+- Also `FormattingModelWithShiftIndentInsideDocument`, `DelegatingFormattingModel`, `PsiBasedFormattingModel`, `DocumentBasedFormattingModel`

@@ -149,22 +149,22 @@ The text width in an action tooltip is not limited. The text width in a help too
 
 Show no more than 10 lines of help text. If the text does not fit, leave only the essential information and add a link to a help article.
 
-<p>Incorrect</p>
+Incorrect:
 
 ![](tooltip_long_text_incorrect.png)
 
-<p>Correct</p>
+Correct:
 
 ![](tooltip_long_text_correct.png)
 
 Text style formatting:
 
 * Avoid using style formatting in the help text. Usually, the text is short and no bold or italics are needed.
-<p>Incorrect</p>
+Incorrect:
 
 ![](../../../images/ui/tooltip/tooltip_no_styling_incorrect.png)
 
-<p>Correct</p>
+Correct:
 
 ![](../../../images/ui/tooltip/tooltip_no_styling_correct.png)
 
@@ -223,7 +223,8 @@ Examples with different controls:
 
 ![](07_help_tooltip_button.png)
 
-**Exception:** do not use the help tooltip with buttons at a dialog’s bottom. Put the information into the help article that is opened with the question mark button in the bottom left corner.</p>
+**Exception:** do not use the help tooltip with buttons at a dialog’s bottom.
+Put the information into the help article that is opened with the question mark button in the bottom left corner.
 
 Incorrect:
 

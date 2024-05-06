@@ -31,7 +31,7 @@ Do **not** use group headers when each group contains 3 controls and less. Separ
 
 Use title capitalization for the label.
 
-Make the label short, preferably no more than 4 words. Avoid generic words, such as "General" or “Options”. See [Writing short and clear](writing_short.md).
+Make the label short, preferably no more than 4 words. Avoid generic words, such as "General" or "Options". See [Writing short and clear](writing_short.md).
 
 If a group contains rarely used or advanced settings, use a **collapsible group header** and collapse it by default.
 

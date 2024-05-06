@@ -199,7 +199,7 @@ Columns in tables should be resizable to allow users set a comfortable column wi
 
 ![](resize.png)
 
-<p>Double click when the “Horizontal Resize” cursor is activated, should auto resize the column to fit the content.</p>
+<p>Double click when the "Horizontal Resize" cursor is activated, should auto resize the column to fit the content.</p>
 
 If column sorting is available, display the sorting state in the column header. If the user clicks on a column that is already sorted, reverse the sorting order and rotate the sorting icon:
 
@@ -214,7 +214,7 @@ If columns can be reordered, change the cursor to "Hand" when hovering the table
 
 ![](history-drag.png)
 
-<p>Change the cursor to “Hand” on the icon hover:</p>
+<p>Change the cursor to "Hand" on the icon hover:</p>
 
 ![](history-drag-cursor.png)
 

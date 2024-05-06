@@ -19,7 +19,7 @@ Instructional text for these UI areas consists of three parts:
 
 Explain the current state.
 
-The default pattern is “_No [entity] added._” If _added, created, configured_ or other such verbs act as synonyms in a particular case, use the verb _added_ for consistency.
+The default pattern is "_No [entity] added._" If _added, created, configured_ or other such verbs act as synonyms in a particular case, use the verb _added_ for consistency.
 
 | Incorrect                                                                                                  | Correct                                                 |
 |------------------------------------------------------------------------------------------------------------|---------------------------------------------------------|
@@ -35,7 +35,7 @@ Make the reason descriptive:
 <p>Correct</p>
 
 ![](../../../images/ui/empty_state/sql-dialect-after.png)
-*The word “individual” is used in contrast with the project SQL dialect above the table. The verb specified is used instead of added because, in the table, SQL dialects are not added but selected from a drop-down list in the SQL Dialect column.*
+*The word "individual" is used in contrast with the project SQL dialect above the table. The verb specified is used instead of added because, in the table, SQL dialects are not added but selected from a drop-down list in the SQL Dialect column.*
 
 
 ### 2. Actions to fill the area
@@ -93,14 +93,14 @@ Avoid saying _add new_. Just use _add_ because all that is added is new in the c
 ## Master-detail layout
 Provide only the action part for the detail area in a master-detail layout. The detail area is filled when an item is selected in the master part. This behavior is obvious and does not need to be explained.
 
-The default pattern for the action is “_Select_ [entity] _to configure_”.
+The default pattern for the action is "_Select_ [entity] _to configure_".
 
 The master area is usually a list or a tree, its empty state instructions should follow the guidelines for lists and trees.
 
 ![](app-servers.png)
 
 ![](run-configs.png)
-*The “Add Java application configuration” link is a shortcut to creating a new configuration instead of clicking the + button in the toolbar.*
+*The "Add Java application configuration" link is a shortcut to creating a new configuration instead of clicking the + button in the toolbar.*
 
 
 ## Sizes and placement

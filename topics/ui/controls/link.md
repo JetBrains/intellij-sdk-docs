@@ -14,7 +14,7 @@ Use a regular link for navigation between pages of the same window.
 
 ![](02_deployment_server.png)
 
-*This option is in the Settings dialog. “Configure servers” opens another page of the same dialog.*
+*This option is in the Settings dialog. "Configure servers" opens another page of the same dialog.*
 
 ![](03_manage_scopes.png)
 
@@ -48,11 +48,11 @@ Use sentence capitalization.
 
 Add an ellipsis to a button-link if it opens another UI area where input is possible. See examples for the [Button](button.topic).
 
-Do not use words like “navigate” or “click here”. A link already implies navigation or clicking.
+Do not use words like "navigate" or "click here". A link already implies navigation or clicking.
 
 ![](08_writing_1.png)
 
-When possible, replace “Learn more” and other generic phrases with more informative ones.
+When possible, replace "Learn more" and other generic phrases with more informative ones.
 
 ![](08_writing_2.png)
 
@@ -77,7 +77,7 @@ If an action is needed for all items of a tree or table:
 * For a list of choices, add a separate table column of drop-down cells (see [Table](table.md#editing-values)).
 * If a link in every tree or table line has meaningful formatting, leave it:
 ![](11_table.png)
-*Links in the “Push Commits” window have the format that helps understand the relation between them: “[remote repository] : [branch]”. Moving these links elsewhere would break this meaning.*
+*Links in the "Push Commits" window have the format that helps understand the relation between them: "[remote repository] : [branch]". Moving these links elsewhere would break this meaning.*
 
 
 ### External link icon

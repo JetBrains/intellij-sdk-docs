@@ -235,7 +235,7 @@ Horizontal insets also matter for grouping controls.
 <p>Better</p>
 
 ![](6_05_hor_inset_better.png)
-*With a smaller horizontal and bigger vertical insets, the checkboxes and the "Length" fields look related. However, it could be made better if the repeating word “Separator” appears only once.*
+*With a smaller horizontal and bigger vertical insets, the checkboxes and the "Length" fields look related. However, it could be made better if the repeating word "Separator" appears only once.*
 
 <p>Correct</p>
 

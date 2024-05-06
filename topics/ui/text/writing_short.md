@@ -62,7 +62,7 @@ Remove words with a meaning that is already expressed in the label:
        <td> <img src="../../../images/ui/writing_short/obvious-contents.png"/>
             <em> The clipboard’s purpose is to keep information so the infinitive "to keep" is implying the obvious and can be removed.</em> </td>
        <td> <img src="../../../images/ui/writing_short/obvious-functionality.png"/>
-            <em> The word “functionality” is already implied by "Drag’n’Drop" and can be removed. </em> </td>
+            <em> The word "functionality" is already implied by "Drag’n’Drop" and can be removed. </em> </td>
     </tr>
 </table>
 
@@ -98,7 +98,7 @@ Remove duplicates in meaning:
 <tr>
     <td> <span style="color:#cc4700;"> if you want to help make IntelliJ IDEA better </span> </td>
     <td> Allow sending anonymous usage statistics to JetBrains s.r.o. </td>
-    <td> <font color="#999999"> “Help make IntelliJ IDEA better” is already expressed in the message header. The body text now explains how the user can do that. </font> </td>
+    <td> <font color="#999999"> "Help make IntelliJ IDEA better" is already expressed in the message header. The body text now explains how the user can do that. </font> </td>
 </tr>
 <tr>
     <td> <span style="color:#cc4700;"> more... </span> </td>
@@ -119,7 +119,7 @@ Remove duplicates in meaning:
 </tr>
 <tr>
     <td> <span style="color:#cc4700;"> click...&nbsp;I&nbsp;don’t agree otherwise </span> </td>
-    <td> <span style="color:#999999;"> The link "I don’t agree" duplicates the notification “Close” button which appears on hover. </span> </td>
+    <td> <span style="color:#999999;"> The link "I don’t agree" duplicates the notification "Close" button which appears on hover. </span> </td>
 </tr>
 <tr>
     <td> <img src="../../../images/ui/writing_short/notificationInfo.png"/> </td>
@@ -133,7 +133,7 @@ When you make a feature, you know how it works from the inside and can describe 
 
 ![](indent-options-before.png)
 
-A person not familiar with implementation details won’t know what the Automatic indent options detector is, why file’s indent options have been overwritten and what indent size=2 means. Translated to the “human” language, the message reads:
+A person not familiar with implementation details won’t know what the Automatic indent options detector is, why file’s indent options have been overwritten and what indent size=2 means. Translated to the "human" language, the message reads:
 
 ![](indent-options-after.png)
 
@@ -153,7 +153,7 @@ After writing a UI text, imagine seeing it for the first time and try to underst
 More examples:
 
 ![](first-time-auto-insert.png)
-*Before: The title can be read as “Auto-insert when only one checkbox is on” making you ask how does it work when both checkboxes are on. After: Replacing choice with completion option makes the title unambiguous.*
+*Before: The title can be read as "Auto-insert when only one checkbox is on" making you ask how does it work when both checkboxes are on. After: Replacing choice with completion option makes the title unambiguous.*
 
 ![](first-time-smart-keys.png)
 *Before: What do smart Home and End keys do? What do they do if they are not smart? After: Added text explains what the options do so that the reader can make an informed choice.*
@@ -184,12 +184,12 @@ More examples:
 <tr>
     <td> store <span style="color:#cc4700;">all</span> project compilation <span style="color:#cc4700;">results</span> </td>
     <td> stores project compilation output </td>
-    <td> <span style="color:#999999;"> “all” is extra because it is implied by default. “results” is another word for “output” — having different words for the same meaning complicates understanding. </span> </td>
+    <td> <span style="color:#999999;"> "all" is extra because it is implied by default. "results" is another word for "output" — having different words for the same meaning complicates understanding. </span> </td>
 </tr>
 <tr>
     <td> A directory corresponding to each module <span style="color:#cc4700;">is created</span> under this path. This directory contains <span style="color:#cc4700;">two</span> subdirectories... </td>
     <td> It has a separate directory for each module, with the Production and Test subdirectories. </td>
-    <td> <span style="color:#999999;"> “is created” is not relevant to the meaning of this phrase. “two” is obvious from context: you see that there are two subdirectories because only two are named. </span> </td>
+    <td> <span style="color:#999999;"> "is created" is not relevant to the meaning of this phrase. "two" is obvious from context: you see that there are two subdirectories because only two are named. </span> </td>
 </tr>
 </table>
 
@@ -213,12 +213,12 @@ More examples:
 <tr>
     <td> <span style="color:#cc4700;">visits the</span> remote repositories <span style="color:#cc4700;">and</span> checks for&nbsp;updates </td>
     <td> checks remote repositories for updates </td>
-    <td> <span style="color:#999999;"> “Checks” already includes the meaning of&nbsp;“visits”. </span> </td>
+    <td> <span style="color:#999999;"> "Checks" already includes the meaning of "visits". </span> </td>
 </tr>
 <tr>
     <td> <span style="color:#cc4700;">When you switch to</span> offline mode </td>
     <td> In the offline mode </td>
-    <td> <span style="color:#999999;"> The action “switched” is not relevant for the meaning of this phrase. Also, an unnecessary reference to the user — “you”. </span> </td>
+    <td> <span style="color:#999999;"> The action "switched" is not relevant for the meaning of this phrase. Also, an unnecessary reference to the user — "you". </span> </td>
 </tr>
 <tr>
     <td> Maven <span style="color:#cc4700;">has to</span> use </td>

@@ -24,7 +24,7 @@ Follow the rules in [Groups of controls](groups_of_controls.md).
 
 Use title capitalization for tab labels.
 
-Make the label short, preferably no more than 3 words. Avoid generic words, such as "General" or “Advanced”. See [Writing short and clear](writing_short.md).
+Make the label short, preferably no more than 3 words. Avoid generic words, such as "General" or "Advanced". See [Writing short and clear](writing_short.md).
 
 ![](02_naming.png)
 

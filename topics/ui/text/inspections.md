@@ -33,11 +33,11 @@ Do not repeat the group titles in the inspection name:
 
 ![](inspections_group.png)
 
-Do not use the word "problems" or other words that describe how inspections function in general (i.e. “check”, “inspection”, or “issue”). An inspection is supposed to check code for problems, so mentioning it in its name is not needed.
+Do not use the word "problems" or other words that describe how inspections function in general (i.e. "check", "inspection", or "issue"). An inspection is supposed to check code for problems, so mentioning it in its name is not needed.
 
 ![](problem.png)
 
-Do not use the words "warning" and “error” in inspection names. Such a name will become incorrect and misleading if the inspection severity level change.
+Do not use the words "warning" and "error" in inspection names. Such a name will become incorrect and misleading if the inspection severity level change.
 
 ![](inspections_warning.png)
 
@@ -51,7 +51,7 @@ If an inspection is powered by a third-party code quality tool, use the name of 
 
 ### Descriptions
 
-Start descriptions with a verb, e.g. “Reports”. Use “Run” for external tools. Do not begin a description with "This inspection".
+Start descriptions with a verb, e.g. "Reports". Use "Run" for external tools. Do not begin a description with "This inspection".
 
 ![](start.png)
 

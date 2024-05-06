@@ -105,17 +105,17 @@ Use the Stop icon if there are several processes running at the same time in one
 
 ![](tasks_dialog.png)
 
-Always place the Stop icon on the right next to the progress bar. On hover over the Stop icon, show the “Stop” or “Cancel” comment under the progress bar instead of process details:
+Always place the Stop icon on the right next to the progress bar. On hover over the Stop icon, show the "Stop" or "Cancel" comment under the progress bar instead of process details:
 
 ![](hover_stop_icon.png)
 
-If the process takes a long time and can prevent the user from performing tasks, provide an option to pause a process using the Pause button or the Pause icon. Replace process details with the “Pause” comment on hover over the Pause icon:
+If the process takes a long time and can prevent the user from performing tasks, provide an option to pause a process using the Pause button or the Pause icon. Replace process details with the "Pause" comment on hover over the Pause icon:
 
 ![](pause.png)
 
 It is **not** recommended providing an option to pause the process. It is preferable, that the process runs in a background and does not interfere with a user.
 
-If a user pauses the process, show “Paused” under the progress bar. Replace the Pause icon with Resume, show “Resume” under the progress bar and when hovered over the Resume button:
+If a user pauses the process, show "Paused" under the progress bar. Replace the Pause icon with Resume, show "Resume" under the progress bar and when hovered over the Resume button:
 
 ![](resume.png)
 

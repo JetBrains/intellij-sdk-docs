@@ -122,7 +122,7 @@ If no actions are available, provide more details in the body text, e.g. how to 
 Each balloon notification belongs to a group. Groups can be seen in <ui-path>Settings | Appearance & Behavior | Notifications</ui-path>.
 
 To name a notification group, follow these rules:
-* Name the group with an ending to the phrase “Notifications in this group notify the user about…“. Examples: _Automatic indent detection_, _Content root duplicates_.
+* Name the group with an ending to the phrase "Notifications in this group notify the user about…". Examples: _Automatic indent detection_, _Content root duplicates_.
 * If a name about a particular process or event cannot be given, use the name of a subsystem or plugin. Examples: _HTTP Client_, _Power Save Mode_.
 * When a group contains notifications about errors or problems, do not use a verb. Example: _Debugger errors_, not _Debugger errors ~~found~~_.
 * Do **not** use words "notification" or "group". They are implied from the settings context.

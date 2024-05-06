@@ -55,9 +55,9 @@ Use an ellipsis at the end of a truncated text if there is no scrollbar and this
 ![](2_01_truncated_text.png)
 *A notification can be expanded to show the full text.*
 
-Use an ellipsis with verbs describing an ongoing process, for example,  Searching… See more examples in [Progress text](progress_text.md).
+Use an ellipsis with verbs describing an ongoing process, for example, Searching… See more examples in [Progress text](progress_text.md).
 
-Use the ellipsis character … <span style="color: #999999;">(U+2026 in Unicode)</span>. Do not use three separate “dot” characters.
+Use the ellipsis character … <span style="color: #999999;">(U+2026 in Unicode)</span>. Do not use three separate "dot" characters.
 
 
 ## Period

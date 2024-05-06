@@ -193,7 +193,7 @@ Complex forms are:
 
 #### How to use
 
-Validation is performed when the user clicks the confirmation button (for example, the “Add” button).
+Validation is performed when the user clicks the confirmation button (for example, the "Add" button).
 
 Highlight all invalid fields, move the focus to the first invalid field and show the tooltip.
 
@@ -201,7 +201,7 @@ Highlight all invalid fields, move the focus to the first invalid field and show
 
 Hide the tooltip and the red highlighting when the user starts editing the invalid value or entering symbols into the empty required field.
 
-Show the error tooltip for the next field when it gets the focus, hover or the user clicks the “Add” button one more time.
+Show the error tooltip for the next field when it gets the focus, hover or the user clicks the "Add" button one more time.
 
 #### Implementation {id="implementation_3"}
 
@@ -346,7 +346,7 @@ Examples of common errors and corresponding error messages:
 </tr>
 <tr>
     <td> Incorrect symbol </td>
-    <td> “/” is not an allowed symbol </td>
+    <td> "/" is not an allowed symbol </td>
 </tr>
 <tr>
     <td> Incorrect value </td>
@@ -424,7 +424,7 @@ On the form under the controls. Show the message with the yellow warning icon.
 
 Mark all navigation elements for areas that contain warnings with yellow icons.
 
-Update the problems counter when a problem is detected. When all problems have been fixed, do not show the “Problems” tab.
+Update the problems counter when a problem is detected. When all problems have been fixed, do not show the "Problems" tab.
 
 On a particular page, highlight the element that contains a warning in yellow or add warning icon next to it.
 

@@ -16,9 +16,9 @@ Use checkboxes for yes/no choices or for selecting several items in a group.
 
 Do **not** use checkboxes if:
 * Only one option in a group can be selected. Use a [radio button group](radio_button.md) instead.
-* The behavior in the “off” state is unclear from the checkbox label. Use two radio buttons instead and label them accordingly.
+* The behavior in the "off" state is unclear from the checkbox label. Use two radio buttons instead and label them accordingly.
 ![](when_to_use.png)
-*With the checkbox, it is unclear how the setting works if it’s unchecked. With radio buttons, both states are labeled clearly.*
+* With the checkbox, it is unclear how the setting works if it’s unchecked. With radio buttons, both states are labeled clearly.*
 
 
 ## How to use
@@ -85,7 +85,7 @@ An indeterminate checkbox can also show the download status. An example with a r
 
 ![](indeterminate_status.png)
 
-*Repositories “tools-base” and “contrib” are being loaded. When loading is finished, the indeterminate checkbox will be replaced with the checked checkbox if there are commits, or an unchecked checkbox if there are no commits.*
+*Repositories "tools-base" and "contrib" are being loaded. When loading is finished, the indeterminate checkbox will be replaced with the checked checkbox if there are commits, or an unchecked checkbox if there are no commits.*
 
 **Implementation**: In a table, the three-state checkbox is represented by `ThreeStateCheckBoxRenderer` that provides both `TableCellRenderer` and `TableEditor`. It accepts `Boolean` type in the column being supplied by the `TableModel` and becomes `DONT_CARE` when the value in the cell is null. Otherwise it becomes `SELECTED` for `Boolean.TRUE`, and `NOT_SELECTED` for `Boolean.FALSE`.
 

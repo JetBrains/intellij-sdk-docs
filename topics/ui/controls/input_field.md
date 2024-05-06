@@ -99,7 +99,7 @@ Pre-fill the field if it has the default or a frequently used value. Use the def
 
 ![](prefill.png)
 
-Do **not** prefill with “Unnamed”. It takes time to read it and does not help the user to fill the form.
+Do **not** prefill with "Unnamed". It takes time to read it and does not help the user to fill the form.
 
 ![](prefill_unnamed.png)
 

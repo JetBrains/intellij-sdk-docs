@@ -38,7 +38,7 @@ Do not provide details that are meaningless for the user, for example, "Please w
 
 Add time units if the remaining time can be predicted.
 
-<p>Round up the first time unit to one of the following numeric anchors: 1, 2, 3, 5, 10, 15, 20 and 30. For example, if there are 7 minutes and 50 seconds remaining, the progress text should read "About 10 minutes left". If less than 5 seconds are left, it should say “About 5 seconds left”.</p>
+<p>Round up the first time unit to one of the following numeric anchors: 1, 2, 3, 5, 10, 15, 20 and 30. For example, if there are 7 minutes and 50 seconds remaining, the progress text should read "About 10 minutes left". If less than 5 seconds are left, it should say "About 5 seconds left".</p>
 
 ![](../../../images/ui/progress_text/time.png)
 

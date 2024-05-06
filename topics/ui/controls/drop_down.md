@@ -30,7 +30,7 @@ The default value is recommended for the most users. A drop-down is a good way t
 
 ![](antialiasing.png)
 
-*“Subpixels” is the best choice for most users.*
+*"Subpixels" is the best choice for most users.*
 
 If there are other drop-downs in the same window and these options are not more important than others. A list of radio buttons is more noticeable than the drop-down.
 
@@ -75,7 +75,7 @@ Follow the rules for the [input field](input_field.md#label).
 Select the most likely or the safest value by default.
 
 ![](imports.png)
-*The safest value is “Ask”, the behavior will not be unexpected to the user.*
+*The safest value is "Ask", the behavior will not be unexpected to the user.*
 
 Do **not** use an empty value as the default value. If no values are added to a drop-down yet, replace it with a button to add values.
 

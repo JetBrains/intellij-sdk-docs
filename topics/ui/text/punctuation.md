@@ -57,7 +57,7 @@ Use an ellipsis at the end of a truncated text if there is no scrollbar and this
 
 Use an ellipsis with verbs describing an ongoing process, for example, Searching… See more examples in [Progress text](progress_text.md).
 
-Use the ellipsis character … <span style="color: #999999;">(U+2026 in Unicode)</span>. Do not use three separate "dot" characters.
+Use the ellipsis character … (`U+2026` in Unicode). Do not use three separate "dot" characters.
 
 
 ## Period
@@ -104,23 +104,23 @@ Do **not** use a colon if a label and text inside the input element make a phras
 
 ## Contractions
 Generally, do not use contractions.
-<p style="margin: 0 0 36px 20px;">
-<i>Path <span style="color: #C3481B;">can’t</span> be found → Path cannot be found</i>
-</p>
+
+*Path <format color="#C3481B">can’t</format> be found → Path cannot be found*
+
 
 Use contractions only if the action name has 4 and more words, and the contracted word does not affect the meaning significantly.
-<p style="margin: 0 0 36px 20px;">
-<i>What’s New in IntelliJ IDEA</i>
-</p>
+
+*What’s New in IntelliJ IDEA*
+
 
 *Don’t* or *Do not*:
 * Always contract in the phrase *Don’t [some verb] again*. The phrase is common, and the meaning is easily recognized.
   ![](3_01_dont_ask_again.png)
 * In other cases, do not contract. The full form reduces chances that the relevant meaning might be missed.
-<p style="margin: -10px 0 36px 41px; line-height: 240%;">
-<i><span style="color: #C3481B;">Don’t</span> send → Do not send</i><br/>
-<i>Do not save, forget passwords after restart</i>
-</p>
+
+*<format color="#C3481B">Don’t</format> send → Do not send*
+
+*Do not save, forget passwords after restart*
 
 
 ## Quotation marks
@@ -130,32 +130,27 @@ Use single quotation marks by default.
 >
 {style="note"}
 
-<p style="margin: -10px 0 36px 20px; line-height: 240%;">
+
 <i>Indexing library 'KotlinJavaRuntime'<br/>
 Error parsing '.mvn/maven.config'<br/>
 Add 'root=true' to the beginning of the file<br/>
 Show 'Scratches and Consoles' in the Project view</i>
-</p>
 
 Do not use quotation marks for keyboard key names.
-<p style="margin: 0 0 36px 20px;">
-<i>Type an expression and press <span style="color: #C3481B;"><b>'</b></span>Enter<span style="color: #C3481B;"><b>'</b></span> → press Enter</i>
-</p>
+
+*Type an expression and press <format color="#cc4700" style="bold">'</format>Enter<format color="#cc4700" style="bold">'</format> → press Enter*
 
 Do not use double quotation marks.
 
 
 ## Question marks
 Use only in alerts when asking for confirmation.
-<p style="margin: 0 0 36px 20px;">
-<i>A file with this name already exists. Do you want to overwrite it?</i>
-</p>
+
+*A file with this name already exists. Do you want to overwrite it?*
 
 Avoid in other cases.
-<p style="margin: 0 0 36px 20px;">
-<i>Forgot password? → Remind password</i>
-</p>
 
+*Forgot password? → Remind password*
 
 ## Exclamation points
 Do not use. Exclamation points can cause the sentence tone to be interpreted as aggressive, condescending, or overly informal.

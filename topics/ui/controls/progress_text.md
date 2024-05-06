@@ -33,7 +33,7 @@ Use sentence case for details.
 
 Do not provide details that are meaningless for the user, for example, "Please wait":
 
-<p class='label incorrect'>Incorrect</p>
+Incorrect:
 
 ![](../../../images/ui/progress_text/meaningless.png)
 

@@ -171,8 +171,8 @@ Preview list items with images if they are associated with well-known icons. Use
 ![](preview.png)
 
 
-Use **bold** font to show default values, <font color="#2600FF">blue</font> font for values changed from the default,
- and <font color="#787878">grey</font> font to add a hint.
+Use **bold** font to show default values, <format color="#2600FF">blue</format> font for values changed from the default,
+ and <format color="#787878">grey</format> font to add a hint.
 ![](blue_text.png)
 *Default and Darcula are bundled schemes, Default is blue because it’s customized.*
 

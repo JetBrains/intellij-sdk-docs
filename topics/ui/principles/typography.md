@@ -86,7 +86,7 @@ Use the built-in text styles from the table below whenever possible.
   </tr>
 
   <tr>
-    <td> <strong>H4 bold <br/> (Default bold)</strong> <div style="margin: 10px 0 5px -5px"> <code>JBFont.h4().asBold()</code> <code>JBFont.regular().asBold()</code> </div> </td>
+    <td> <strong>H4 bold <br/> (Default bold)</strong> <br/> <code>JBFont.h4().asBold()</code> <br/> <code>JBFont.regular().asBold()</code> </td>
     <td> Default </td>
     <td>
         Header in dialogs with a large number of elements (Run configurations dialog), notification header, breadcrumbs in settings, header in navigation popup, accent elements in lists and trees. <br/><br/>
@@ -95,7 +95,7 @@ Use the built-in text styles from the table below whenever possible.
   </tr>
 
   <tr>
-    <td> Default <div style="margin: 10px 0 5px -5px"><code>JBFont.regular()</code></div></td>
+    <td> Default<br/> <code>JBFont.regular()</code></td>
     <td> Default </td>
     <td>
         Labels, inputs, links, trees, tables and other controls; text outputs, notifications, shortcuts
@@ -114,19 +114,19 @@ Use the built-in text styles from the table below whenever possible.
   </tr>
 
   <tr>
-    <td >Medium<code>JBFont.medium()</code></td>
+    <td >Medium <br/> <code>JBFont.medium()</code></td>
     <td>
         macOS: Default - 1 <br/>
         Win: Default <br/>
         Linux: Default - 1
     </td>
-    <td class="table-line">
+    <td>
         Tool window header, navigation bar, editor breadcrumbs, editor tabs (small on macOS)
     </td>
   </tr>
 
   <tr>
-    <td> <span style="font-size: 13px"> <strong>Medium bold</strong> </span> <div style="margin: 10px 0 5px -5px"><code>JBFont.medium().asBold()</code></div></td>
+    <td> <strong>Medium bold</strong> <br/> <code>JBFont.medium().asBold()</code> </td>
     <td> </td>
     <td>
         Module in the navigation bar
@@ -134,7 +134,7 @@ Use the built-in text styles from the table below whenever possible.
   </tr>
 
   <tr>
-    <td> <span style="font-size: 12px"> Small </span> <div style="margin: 10px 0 5px -5px"><code>JBFont.small()</code></div></td>
+    <td> Small <br/> <code>JBFont.small()</code> </td>
     <td>
         macOS: Default - 2 <br/>
         Win: Default <br/>
@@ -165,7 +165,7 @@ JetBrains Mono font is used by default for the Editor.
     <td> Editor </td>
   </tr>
   <tr>
-    <td> <span style="font-size: 13px;"> Small </span> </td>
+    <td> Small </td>
     <td> Default - 1 </td>
     <td> Line number </td>
   </tr>
@@ -186,7 +186,7 @@ The IDE text colors are in the table below. The editor text colors are managed b
   <tr>
     <td> Default </td>
     <td> 000 </td>
-    <td> BBB</td>
+    <td> <format color="#BBBBBB">BBB</format> </td>
     <td>
         Labels, inputs, trees, etc.
     </td>
@@ -201,8 +201,8 @@ The IDE text colors are in the table below. The editor text colors are managed b
 
   <tr>
     <td> Info panel </td>
-    <td> <span style="color: #808080">808080</span> </td>
-    <td> <span style="color: #8C8C8C">8C8C8C</span> </td>
+    <td> <format color="#808080">808080</format> </td>
+    <td> <format color="#8C8C8C">8C8C8C</format> </td>
     <td>
         Inline help, shortcuts
     </td>
@@ -213,8 +213,8 @@ The IDE text colors are in the table below. The editor text colors are managed b
 
   <tr>
     <td> Info input </td>
-    <td> <span style="color: #999999">999999</span> </td>
-    <td> <span style="color: #787878">787878</span> </td>
+    <td> <format color="#999999">999999</format> </td>
+    <td> <format color="#787878">787878</format> </td>
     <td>
         Additional info in&nbsp;lists (paths, counters), placeholder
     </td>
@@ -225,8 +225,8 @@ The IDE text colors are in the table below. The editor text colors are managed b
 
   <tr>
     <td> Disabled </td>
-    <td> <span style="color: #8C8C8C">8C8C8C</span> </td>
-    <td> <span style="color: #777777">777777</span> </td>
+    <td> <format color="#8C8C8C">8C8C8C</format> </td>
+    <td> <format color="#777777">777777</format> </td>
     <td>
         Disabled labels, disabled links
     </td>
@@ -242,8 +242,8 @@ The IDE text colors are in the table below. The editor text colors are managed b
 
   <tr>
     <td> Selected </td>
-    <td> <span style="color: #ffffff; background: #62A7DB;">FFF</span> </td>
-    <td> <span style="color: #ffffff; background: #62A7DB;">FFF</span> </td>
+    <td> FFF on <format color="#62A7DB">BACKGROUND</format> </td>
+    <td> FFF on <format color="#62A7DB">BACKGROUND</format> </td>
     <td>
         Selected text
     </td>
@@ -256,8 +256,8 @@ The IDE text colors are in the table below. The editor text colors are managed b
 
   <tr>
     <td> Link </td>
-    <td> <span style="color: #2470B3">2470B3</span> </td>
-    <td> <span style="color: #589DF6">589DF6</span> </td>
+    <td> <format color="#2470B3">2470B3</format> </td>
+    <td> <format color="#589DF6">589DF6</format> </td>
     <td>
         Links
     </td>
@@ -273,8 +273,8 @@ The IDE text colors are in the table below. The editor text colors are managed b
 
   <tr>
     <td> Error </td>
-    <td> <span style="color: #C7222D">C7222D</span> </td>
-    <td> <span style="color: #FF5261">FF5261</span> </td>
+    <td> <format color="#C7222D">C7222D</format> </td>
+    <td> <format color="#FF5261">FF5261</format> </td>
     <td>
         Inline errors text
     </td>

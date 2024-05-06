@@ -167,7 +167,7 @@ When the user changes the value, the tooltip disappears and error highlighting i
 When the focus is returned to the field with an error, use validation on input. Otherwise, it can be unclear for the user how to initiate validation.
 
 #### Implementation {id="implementation_2"}
-Add `andStartOnFocusLost()` call on `ComponentValidator` before installing it on a component:
+Add `andStartOnFocusLost()` call on [`ComponentValidator`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/ComponentValidator.java) before installing it on a component:
 
 ```java
 new ComponentValidator(getDisposable()).withValidator(...).
@@ -205,8 +205,10 @@ Show the error tooltip for the next field when it gets the focus, hover or the u
 
 #### Implementation {id="implementation_3"}
 
-By default, `DialogWrapper` disables "OK" button until all fields that participate in validation
-    become valid. Explicitly enable "OK" button for each input field:
+By default, [`DialogWrapper`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) disables <control>OK</control> button until
+all fields that participate in validation become valid.
+
+Explicitly enable <control>OK</control> button for each input field:
 
 ```java
 new ValidationInfo("The host cannot be reached", myHostField)
@@ -241,7 +243,7 @@ Hide the error messages once any field related to the error is edited. Set the d
 
 #### Implementation {id="implementation_4"}
 
-`ValidationInfo` for messages in inline area is created with `null` component:
+[`ValidationInfo`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/ui/ValidationInfo.java) for messages in inline area is created with `null` component:
 
 ```java
 new ValidationInfo("The host cannot be reached. " +
@@ -547,7 +549,7 @@ Do not allow to submit the form with the error. When the form is opened again, t
 <col width="20%">
 <col width="20%">
 <td> </td>
-<td> Mac OS </td>
+<td> macOS </td>
 <td> Windows </td>
 <td> IntelliJ </td>
 <td> Darcula </td>
@@ -598,7 +600,7 @@ Do not allow to submit the form with the error. When the form is opened again, t
 <col width="20%">
 <col width="20%">
 <td> </td>
-<td> Mac OS </td>
+<td> macOS </td>
 <td> Windows, IntelliJ </td>
 <td> Darcula </td>
 <tr>

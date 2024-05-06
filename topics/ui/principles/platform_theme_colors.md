@@ -38,7 +38,7 @@ See a complete list of keys with their descriptions in the JSON files: [`Intelli
 
 See the color values for the currently selected theme in the LaF Defaults dialog:
 
-> To store color values between theme switching, use a scratch `*.theme.json` file.
+> To store color values between theme switching, use a scratch <path>*.theme.json</path> file.
 > This might be useful if you want to test colors before implementing them.
 > See guidelines for the [Theme JSON Structure](themes_customize.md#defining-named-colors).
 

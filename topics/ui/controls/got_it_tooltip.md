@@ -91,7 +91,7 @@ new GotItTooltip("some.id", GOT_IT_TEXT, project)
     .withBrowserLink("How to use", new URL("https://www.jetbrains.com/howtouse"));
 ```
 
-Do <b>not</b> add more than one link.
+Do **not** add more than one link.
 
 
 ### Text length and formatting
@@ -125,9 +125,8 @@ Do **not** cover the information the user is currently working with.
 |------------------------------------------------------------------|----------------------------------------------------------------|
 | ![](../../../images/ui/got_it_tooltip/15_location_incorrect.png) | ![](../../../images/ui/got_it_tooltip/15_location_correct.png) |
 
-<p>
-<b>Implementation.</b> See four predefined point providers in the <code>GotItTooltip</code> class.
-</p>
+
+**Implementation:** See four predefined point providers in the [`GotItTooltip`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/GotItTooltip.kt) class.
 
 ```java
 new GotItTooltip("some.id", "You can rename usages", project)
@@ -147,7 +146,7 @@ Consider adding a timeout if:
 
 Note that adding a timeout automatically hides the Got It button.<br/><br/>
 
-<b>Implementation.</b> Default timeout duration is 5 seconds. A custom duration can be set:
+**Implementation:** Default timeout duration is 5 seconds. A custom duration can be set:
 
 ```java
 new GotItTooltip("refactorings", "Press Tab to show options", project)

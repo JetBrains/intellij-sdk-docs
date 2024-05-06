@@ -96,7 +96,7 @@ Always show the required information in a tooltip:
     </td>
     <td>
         Help text <br/>
-        <span style="color: #999999">No action name or label because it is already shown in&nbsp;the UI.</span>
+        <format color="#999999">No action name or label because it is already shown in&nbsp;the UI.</format>
     </td>
     <td>
         Shortcut <br/>
@@ -252,7 +252,7 @@ If the mouse cursor stays in the tooltip trigger area, tooltips are also hidden 
     </td>
     <td>
         <strong>Hides after</strong> <br/>
-        <span style="color: #999999">If cursor is in the tooltip trigger area</span>
+        <format color="#999999">If cursor is in the tooltip trigger area</format>
     </td>
   </tr>
   <tr>
@@ -261,11 +261,11 @@ If the mouse cursor stays in the tooltip trigger area, tooltips are also hidden 
     </td>
     <td>
         300 milliseconds <br/>
-        <span style="color: #999999">ide.tooltip.initialReshowDelay registry key </span>
+        <format color="#999999">ide.tooltip.initialReshowDelay registry key</format>
     </td>
     <td>
         10 seconds <br/>
-        <span style="color: #999999">ide.helptooltip.regular.dismissDelay</span>
+        <format color="#999999">ide.helptooltip.regular.dismissDelay</format>
     </td>
   </tr>
   <tr>
@@ -276,7 +276,7 @@ If the mouse cursor stays in the tooltip trigger area, tooltips are also hidden 
     </td>
     <td>
         30 seconds <br/>
-        <span style="color: #999999">ide.helptooltip.full.dismissDelay</span>
+        <format color="#999999">ide.helptooltip.full.dismissDelay</format>
     </td>
   </tr>
   <tr>

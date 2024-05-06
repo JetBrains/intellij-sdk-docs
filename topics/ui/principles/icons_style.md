@@ -73,7 +73,7 @@ Sizes for other icon sizes can be found in the table below:
     <td> — </td>
 </tr>
 <tr>
-    <td> <span style="font-weight: bold"> Default </span>: toolbar icons, project tree, etc. </td>
+    <td> <b>Default:</b> toolbar icons, project tree, etc. </td>
     <td> 16px x 16px </td>
     <td> 1px, except for modifier </td>
 </tr>

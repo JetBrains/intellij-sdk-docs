@@ -105,7 +105,7 @@ Place the toolbar on the right if it’s not the first toolbar in the pane and i
 
 Place the toolbar at the bottom on macOS, and on the right on Windows and Linux in [tables](table.md).
 ![](table_mac.png)
-*Mac OS*
+*macOS*
 
 ![](table_win.png)
 *Windows*

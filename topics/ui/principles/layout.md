@@ -54,7 +54,7 @@ If there are two input controls with labels of similar length that are separated
 
 ![](1_05_separated_by_one.png)
 
-Align only the input boxes of the neighboring input controls. If there're several input controls on a page, and they are separated from each other by two or more other UI elements, do **not** align their input boxes.
+Align only the input boxes of the neighboring input controls. If there are several input controls on a page, and they are separated from each other by two or more other UI elements, do **not** align their input boxes.
 
 ![](1_06_separated_by_two.png)
 
@@ -86,13 +86,16 @@ By default, put independent checkboxes and radio button groups on different line
 
 ![](2_01_checkbox_radio_column.png)
 
-If there is a group of 2–3 checkboxes with short labels (1–3 words), place them on the same line. The same rule applies to radio buttons. With this alignment, controls form a short sentence making it easier to understand their meaning compared to when they are split into several lines.
+If there is a group of 2–3 checkboxes with short labels (1–3 words), place them on the same line.
+The same rule applies to radio buttons.
+With this alignment, controls form a short sentence, making it easier to understand their meaning compared to when they are split into several lines.
 
 ![](2_02_checkbox_radio_line.png)
 
-When there is an input control on one line and a group of checkboxes or radio buttons on the next line, and their labels are of similar length (one is no more that 5 characters longer than the other), align the input box with the checkbox/radio button.
+When there is an input control on one line and a group of checkboxes or radio buttons on the next line, and their labels are of similar length
+(one is no more than 5 characters longer than the other), align the input box with the checkbox/radio button.
 
-<p>If one label is much longer than the other, do <b>not</b> align these UI elements.</p>
+If one label is much longer than the other, do **not** align these UI elements.
 
 ![](2_03_align_group_labels.png)
 
@@ -169,7 +172,7 @@ Main control: **labeled input control**.
 
 ![](5_03_dependent_on_field_button.png)
 
-* If an input’s label is long or the input box is very short, align by the label and add a horizontal inset.
+* If an input's label is long or the input box is very short, align by the label and add a horizontal inset.
 
 ![](5_04_dependent_on_field_long_label.png)
 
@@ -223,7 +226,7 @@ Treat insets with extra care and make sure that elements within a group are actu
 <p>Correct</p>
 
 ![](6_04_inset_correct.png)
-*The first checkbox is closer to its main control and it is easier to see that the combo box and the checkbox are related.*
+*The first checkbox is closer to its main control, and it is easier to see that the combo box and checkbox are related.*
 
 Horizontal insets also matter for grouping controls.
 
@@ -240,6 +243,6 @@ Horizontal insets also matter for grouping controls.
 <p>Correct</p>
 
 ![](6_05_hor_inset_correct.png)
-*Correct grouping and no duplicates help understanding the UI quicker.*
+*Correct grouping and no duplicates help understand the UI quicker.*
 
 See [Groups of controls](groups_of_controls.md) for how to organize a bigger group of controls.

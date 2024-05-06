@@ -88,42 +88,42 @@ Remove duplicates in meaning:
 <tr>
 <td> Before </td>
 <td> After </td>
-<td></td>
+<td> Explanation</td>
 </tr>
 <tr>
-    <td> Help improve IntelliJ IDEA <span style="color:#cc4700;"> by&nbsp;sending anonymous usage statistics to JetBrains s.r.o. </span> </td>
+    <td> Help improve IntelliJ IDEA <format color="#cc4700"> by sending anonymous usage statistics to JetBrains s.r.o.</format> </td>
     <td> Help improve IntelliJ IDEA </td>
-    <td> <font color="#999999"> The purpose of the header is to attract attention. The&nbsp;shorter and clearer header does that better. </font> </td>
+    <td> <format color="#999999"> The purpose of the header is to attract attention. The&nbsp;shorter and clearer header does that better. </format> </td>
 </tr>
 <tr>
-    <td> <span style="color:#cc4700;"> if you want to help make IntelliJ IDEA better </span> </td>
+    <td> <format color="#cc4700"> if you want to help make IntelliJ IDEA better </format> </td>
     <td> Allow sending anonymous usage statistics to JetBrains s.r.o. </td>
-    <td> <font color="#999999"> "Help make IntelliJ IDEA better" is already expressed in the message header. The body text now explains how the user can do that. </font> </td>
+    <td> <format color="#999999"> "Help make IntelliJ IDEA better" is already expressed in the message header. The body text now explains how the user can do that. </format> </td>
 </tr>
 <tr>
-    <td> <span style="color:#cc4700;"> more... </span> </td>
+    <td> <format color="#cc4700"> more... </format> </td>
     <td> Terms and conditions </td>
-    <td> <font color="#999999">The link more... does not tell what is behind it — unclear for the user why to click it.</font></td>
+    <td> <format color="#999999">The link more... does not tell what is behind it — unclear for the user why to click it.</format></td>
 </tr>
 </table>
 
 <table>
 <tr>
 <td> Removed </td>
-<td> </td>
+<td> Explanation </td>
 
 </tr>
 <tr>
-    <td> <span style="color:#cc4700;"> click I agree</span> </td>
-    <td> <span style="color:#999999;"> The verb "click" is obvious from context: you cannot do much with a link other than click. </span> </td>
+    <td> <format color="#cc4700"> click I agree</format> </td>
+    <td> <format color="#999999"> The verb "click" is obvious from context: you cannot do much with a link other than click. </format> </td>
 </tr>
 <tr>
-    <td> <span style="color:#cc4700;"> click...&nbsp;I&nbsp;don’t agree otherwise </span> </td>
-    <td> <span style="color:#999999;"> The link "I don’t agree" duplicates the notification "Close" button which appears on hover. </span> </td>
+    <td> <format color="#cc4700"> click...&nbsp;I&nbsp;don’t agree otherwise </format> </td>
+    <td> <format color="#999999"> The link "I don’t agree" duplicates the notification "Close" button which appears on hover. </format> </td>
 </tr>
 <tr>
     <td> <img src="../../../images/ui/writing_short/notificationInfo.png"/> </td>
-    <td> <span style="color:#999999;"> The icon is not needed because the message is purely informative, not an error or a warning. Texts are information by default, there is no need to specify that meaning explicitly. </span> </td>
+    <td> <format color="#999999"> The icon is not needed because the message is purely informative, not an error or a warning. Texts are information by default, there is no need to specify that meaning explicitly. </format> </td>
 </tr>
 </table>
 
@@ -168,28 +168,28 @@ More examples:
 <tr>
 <td> Before </td>
 <td> After </td>
-<td></td>
+<td> Explanation </td>
 </tr>
 
 <tr>
-    <td> <span style="color:#cc4700;">Project</span> name <span style="color:#cc4700;">Project</span> SDK <span style="color:#cc4700;">Project</span> language level </td>
+    <td> <format color="#cc4700">Project</format> name <format color="#cc4700">Project</format> SDK <format color="#cc4700">Project</format> language level </td>
     <td> Project name SDK Language level </td>
-    <td> <span style="color:#999999;"> "Project" can be left only for the first field. All others will be understood as project settings because they appear in the same group of UI elements. </span> </td>
+    <td> <format color="#999999"> "Project" can be left only for the first field. All others will be understood as project settings because they appear in the same group of UI elements. </format> </td>
 </tr>
 <tr>
-    <td> This path <span style="color:#cc4700;">is used</span> to store </td>
+    <td> This path <format color="#cc4700">is used</format> to store </td>
     <td> This path stores </td>
-    <td> <span style="color:#999999;"> Simple verb form </span> </td>
+    <td> <format color="#999999"> Simple verb form </format> </td>
 </tr>
 <tr>
-    <td> store <span style="color:#cc4700;">all</span> project compilation <span style="color:#cc4700;">results</span> </td>
+    <td> store <format color="#cc4700">all</format> project compilation <format color="#cc4700">results</format> </td>
     <td> stores project compilation output </td>
-    <td> <span style="color:#999999;"> "all" is extra because it is implied by default. "results" is another word for "output" — having different words for the same meaning complicates understanding. </span> </td>
+    <td> <format color="#999999"> "all" is extra because it is implied by default. "results" is another word for "output" — having different words for the same meaning complicates understanding. </format> </td>
 </tr>
 <tr>
-    <td> A directory corresponding to each module <span style="color:#cc4700;">is created</span> under this path. This directory contains <span style="color:#cc4700;">two</span> subdirectories... </td>
+    <td> A directory corresponding to each module <format color="#cc4700">is created</format> under this path. This directory contains <format color="#cc4700">two</format> subdirectories... </td>
     <td> It has a separate directory for each module, with the Production and Test subdirectories. </td>
-    <td> <span style="color:#999999;"> "is created" is not relevant to the meaning of this phrase. "two" is obvious from context: you see that there are two subdirectories because only two are named. </span> </td>
+    <td> <format color="#999999"> "is created" is not relevant to the meaning of this phrase. "two" is obvious from context: you see that there are two subdirectories because only two are named. </format> </td>
 </tr>
 </table>
 
@@ -198,8 +198,8 @@ More examples:
 <td> Moved </td>
 <td> Moved </td></tr>
 <tr>
-    <td> <span style="color:#cc4700;">This</span> [field name] <span style="color:#cc4700;">is default for all project modules. A module specific</span> [field name] <span style="color:#cc4700;">can be configured for each of the modules is required.</span> </td>
-    <td> <span style="color:#999999;"> This phrase is repeated for all fields. Can be shown only once at the bottom of the dialog.</span> </td>
+    <td> <format color="#cc4700">This</format> [field name] <format color="#cc4700">is default for all project modules. A module specific</format> [field name] <format color="#cc4700">can be configured for each of the modules is required.</format> </td>
+    <td> <format color="#999999"> This phrase is repeated for all fields. Can be shown only once at the bottom of the dialog.</format> </td>
 </tr>
 </table>
 
@@ -208,30 +208,30 @@ More examples:
 <tr>
 <td> Before </td>
 <td> After </td>
-<td></td>
+<td> Explanation </td>
 </tr>
 <tr>
-    <td> <span style="color:#cc4700;">visits the</span> remote repositories <span style="color:#cc4700;">and</span> checks for&nbsp;updates </td>
+    <td> <format color="#cc4700">visits the</format> remote repositories <format color="#cc4700">and</format> checks for&nbsp;updates </td>
     <td> checks remote repositories for updates </td>
-    <td> <span style="color:#999999;"> "Checks" already includes the meaning of "visits". </span> </td>
+    <td> <format color="#999999"> "Checks" already includes the meaning of "visits". </format> </td>
 </tr>
 <tr>
-    <td> <span style="color:#cc4700;">When you switch to</span> offline mode </td>
+    <td> <format color="#cc4700">When you switch to</format> offline mode </td>
     <td> In the offline mode </td>
-    <td> <span style="color:#999999;"> The action "switched" is not relevant for the meaning of this phrase. Also, an unnecessary reference to the user — "you". </span> </td>
+    <td> <format color="#999999"> The action "switched" is not relevant for the meaning of this phrase. Also, an unnecessary reference to the user — "you". </format> </td>
 </tr>
 <tr>
-    <td> Maven <span style="color:#cc4700;">has to</span> use </td>
+    <td> Maven <format color="#cc4700">has to</format> use </td>
     <td> Maven uses </td>
-    <td> <span style="color:#999999;"> Not relevant that a technology must do something, enough to say it just works this&nbsp;way. </span> </td>
+    <td> <format color="#999999"> Not relevant that a technology must do something, enough to say it just works this&nbsp;way. </format> </td>
 </tr>
 <tr>
-    <td> <span style="color:#cc4700;">those</span> resources <span style="color:#cc4700;">that are&nbsp;available</span> locally  </td>
+    <td> <format color="#cc4700">those</format> resources <format color="#cc4700">that are&nbsp;available</format> locally  </td>
     <td> local resources </td>
     <td>  </td>
 </tr>
 <tr>
-    <td> reports <span style="color:#cc4700;">about the problems</span> if something is missing  </td>
+    <td> reports <format color="#cc4700">about the problems</format> if something is missing  </td>
     <td> reports if something is&nbsp;missing </td>
     <td>  </td>
 </tr>
@@ -240,14 +240,14 @@ More examples:
 <table>
 <tr>
 <td> Removed </td>
-<td> </td>
+<td> Explanation </td>
 </tr>
 <tr>
-    <td> <span style="color:#cc4700;">The offline mode is helpful when you need to work offline</span> </td>
-    <td> <span style="color:#999999;"> The phrase does not explain when the offline mode is helpful. It should either be elaborated or removed. </span> </td>
+    <td> <format color="#cc4700">The offline mode is helpful when you need to work offline</format> </td>
+    <td> <format color="#999999"> The phrase does not explain when the offline mode is helpful. It should either be elaborated or removed. </format> </td>
 </tr>
 <tr>
-    <td> <span style="color:#cc4700;"> or when your network connection is slow </span> </td>
-    <td> <span style="color:#999999;"> Only one of possible uses for the offline mode and an obvious one. Can be removed for a more concise text. </span> </td>
+    <td> <format color="#cc4700"> or when your network connection is slow </format> </td>
+    <td> <format color="#999999"> Only one of possible uses for the offline mode and an obvious one. Can be removed for a more concise text. </format> </td>
 </tr>
 </table>

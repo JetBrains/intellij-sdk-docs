@@ -4,6 +4,12 @@
 
 <link-summary>UI guidelines on using loaders.</link-summary>
 
+<tldr>
+
+**Implementation:** [`AnimatedIcon.Default`](%gh-ic%/platform/ide-core/src/com/intellij/ui/AnimatedIcon.java)
+
+</tldr>
+
 A loader informs users about performing a lengthy operation.
 
 ![](loader.png)

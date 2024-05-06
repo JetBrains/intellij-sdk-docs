@@ -4,6 +4,12 @@
 
 <link-summary>Providing instructions in an empty UI area on how to fill it with data.</link-summary>
 
+<tldr>
+
+**Implementation:** [`ComponentWithEmptyText`](%gh-ic%/platform/platform-api/src/com/intellij/util/ui/ComponentWithEmptyText.java)
+
+</tldr>
+
 Provide instructions in an empty UI area on how to fill it with data. Empty UI areas described here are:
 * [Tool window, list, tree or table](#tool-windows-lists-trees-and-tables)
 * [Details area in a master-detail layout](#master-detail-layout)

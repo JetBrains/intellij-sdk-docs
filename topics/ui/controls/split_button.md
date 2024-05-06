@@ -5,7 +5,9 @@
 <link-summary>UI guidelines on using split buttons.</link-summary>
 
 <tldr>
-JBOptionButton
+
+**Implementation:** [`JBOptionButton`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/JBOptionButton.kt)
+
 </tldr>
 
 The Split button is a button which has two parts — the main action on the left and a control button which shows a dropdown with less common actions on the right.
@@ -17,24 +19,27 @@ The Split button is a button which has two parts — the main action on the left
 <p>Use the split button:</p>
 
 When more than 2 related actions are possible but the space is limited and/or packed:
-For example, it is useful for the Commit actions group in the Commit dialog:
+For example, it is useful for the Commit actions group in the <control>Commit</control> dialog:
 
 ![](button-and-dropdown-menu.png)
 
-The Split button is not useful in the Replace popup, since not all actions are related, for example Open in Find Window is not related to the main action. Such actions are hard to find in the drop-down menu:
+The Split button is not useful in the <control>Replace</control> popup, since not all actions are related, for example <control>Open in Find Window</control>
+is not related to the main action. Such actions are hard to find in the drop-down menu:
 
 | Incorrect                                                      | Correct                                              |
 |----------------------------------------------------------------|------------------------------------------------------|
 | ![](../../../images/ui/split_button/not-related-incorrect.png) | ![](../../../images/ui/split_button/not-related.png) |
 
-In the Adjust Code Style dialog only 1 related action is possible and it does not save a lot of space:
+In the <control>Adjust Code Style</control> dialog only 1 related action is possible and it does not save a lot of space:
 
 | Correct                                                              | Incorrect                                                  |
 |----------------------------------------------------------------------|------------------------------------------------------------|
 | ![](../../../images/ui/split_button/space-not-limited-incorrect.png) | ![](../../../images/ui/split_button/space-not-limited.png) |
 
-To hide actions which are dangerous and uncommon. Dangerous means an action can destroy users’ data and cannot be easily undone. It is less possible to accidentally click an action hidden in a menu.  It is recommended to hide even a single related uncommon dangerous action.
-For example, Force Push can override remote commits from other authors and should not be easily available:
+To hide actions which are dangerous and uncommon. Dangerous means an action can destroy users’ data and cannot be easily undone.
+It is less possible to accidentally click an action hidden in a menu.
+It is recommended to hide even a single related uncommon dangerous action.
+For example, <control>Force Push</control> can override remote commits from other authors and should not be easily available:
 
 ![](dangerous.png)
 
@@ -98,10 +103,10 @@ Do **not** duplicate the main action in the dropdown menu, otherwise it is confu
 
 ### Reduce split button to simple action buttons
 
-The Split button can be reduced to simple action buttons which are layed out automatically next to each other. This is controlled by the following option in settings:
+The Split button can be reduced to simple action buttons which are laid out automatically next to each other. This is controlled by the following option in settings:
 _Appearance & Behavior > Appearance > Merge buttons in dialogs_
 
-<p>For example, the Commit button reduced to its components (the option is disabled) looks like the following:</p>
+<p>For example, the <control>Commit</control> button reduced to its components (the option is disabled) looks like the following:</p>
 
 ![](reduced.png)
 
@@ -117,19 +122,19 @@ Do **not** show the dropdown menu when the button gains focus.
 
 <table style="none">
   <tr>
-    <td><p style="margin-top:10px"><shortcut>Enter \ Ctrl+Enter</shortcut></p></td>
+    <td><shortcut>Enter</shortcut> and <shortcut>Ctrl+Enter</shortcut></td>
     <td><ul><li>Invoke the default button action</li></ul></td>
   </tr>
   <tr>
-    <td><p style="margin-top:10px"><shortcut>Space</shortcut></p></td>
+    <td><shortcut>Space</shortcut></td>
     <td><ul><li>Invoke the main action</li></ul></td>
   </tr>
   <tr>
-    <td><p style="margin-top:10px"><shortcut>Arrow Down</shortcut></p></td>
+    <td><shortcut>Arrow Down</shortcut></td>
     <td><ul><li>Show the dropdown menu with secondary actions and move focus to the first item in the menu</li></ul></td>
   </tr>
   <tr>
-    <td><p style="margin-top:10px"><shortcut>Tab \ Shift + Tab</shortcut></p></td>
+    <td><shortcut>Tab</shortcut> and <shortcut>Shift + Tab</shortcut></td>
     <td><ul><li>Move focus to the control next to the split button and hide the drop-down menu</li></ul></td>
   </tr>
 </table>
@@ -139,11 +144,11 @@ Do **not** show the dropdown menu when the button gains focus.
 
 <table style="none">
   <tr>
-    <td><p style="margin-top:10px"><shortcut>Enter \ Space</shortcut></p></td>
+    <td><shortcut>Enter</shortcut> and <shortcut>Space</shortcut></td>
     <td>Invoke the selected action</td>
   </tr>
   <tr>
-    <td><p style="margin-top:10px"><shortcut>Arrow Down \ Up</shortcut></p></td>
+    <td><shortcut>Arrow Down</shortcut> and <shortcut>Arrow Up</shortcut></td>
     <td>
         <ul>
             <li>Navigate through the elements</li>
@@ -153,7 +158,7 @@ Do **not** show the dropdown menu when the button gains focus.
     </td>
   </tr>
   <tr>
-    <td><p style="margin-top:10px"><shortcut>Esc</shortcut></p></td>
+    <td><shortcut>Esc</shortcut></td>
     <td>Close the popup and move the focus to the split button</td>
   </tr>
 </table>

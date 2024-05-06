@@ -4,7 +4,11 @@
 
 <link-summary>UI guidelines on using input fields.</link-summary>
 
-<tldr>JBTextField</tldr>
+<tldr>
+
+**Implementation:** [`JBTextField`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/JBTextField.java)
+
+</tldr>
 
 An input field allows users to enter or edit a text line using the keyboard.
 
@@ -13,8 +17,7 @@ An input field allows users to enter or edit a text line using the keyboard.
 
 ## When to use
 
-Use an input field if it’s not possible to enumerate the most likely values. Otherwise, use a [combo
- box](combo_box.md) or a [drop-down list](drop_down.md).
+Use an input field if it’s not possible to enumerate the most likely values. Otherwise, use a [combo box](combo_box.md) or a [drop-down list](drop_down.md).
 
 If input has to be in a specific format, use one of the following controls:
 
@@ -51,8 +54,8 @@ Use sentence-style capitalization.
 
 If there are several input fields on a form, it’s recommended to make labels approximately the same length to avoid gaps between labels and fields. For example:
 
-| Incorrect                                                        | Correct                                                        |
-|------------------------------------------------------------------|----------------------------------------------------------------|
+| Incorrect                                                     | Correct                                                         |
+|---------------------------------------------------------------|-----------------------------------------------------------------|
 | ![](../../../images/ui/input_field/several_labels_length.png) | ![](../../../images/ui/input_field/several_labels_length_1.png) |
 
 If an input field is disabled, disable the label too:
@@ -61,7 +64,7 @@ If an input field is disabled, disable the label too:
 
 Make the label text selectable. The user may want to search for this option on the Internet or to send a question to support.
 
-Place the label on the left or above the input field. For more details see [Layout](layout.md).
+Place the label on the left or above the input field. For more details, see the [Layout](layout.md) topic.
 
 
 ### Placeholder
@@ -115,15 +118,16 @@ If users are more likely to re-enter the entire value, select the whole text, wh
 
 ### Input field types
 
-If input text can be long and place is constrained, use an expandable input field `com.intellij.ui.components.fields.ExpandableTextField`. For more details see [built-in buttons](built_in_button.md#expand-field).
+If input text can be long and place is constrained, use an expandable input field [`ExpandableTextField`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/fields/ExpandableTextField.java).
+For more details see [built-in buttons](built_in_button.md#expand-field).
 
 ![](expandable_1.png)
 
-If input data is secured, replace it with dots `JPasswordField`.
+If input data is secured, replace it with dots via [`JBPasswordField`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/JBPasswordField.java).
 
 ![](password.png)
 
-If there are many predefined values (for example, code snippets, commit author), add completion to the input field `com.intellij.util.textCompletion.TextFieldWithCompletion`.
+If there are many predefined values (for example, code snippets, commit author), add completion to the input field [`TextFieldWithCompletion`](%gh-ic%/platform/platform-impl/src/com/intellij/util/textCompletion/TextFieldWithCompletion.java).
 
 ![](input_field_completion.png)
 
@@ -131,11 +135,9 @@ An input field with completion looks the same way as a regular input field. When
 
 ![](completion_tooltip.png)
 
-<p>Show the completion popup when the user starts typing or presses <shortcut>Ctrl+Space</shortcut>.
-</p>
+Show the completion popup when the user starts typing or presses <shortcut>Ctrl+Space</shortcut>.
 
-Use [built-in buttons](built_in_button.md) to help the user enter data. For example,
-to browse the disk.
+Use [built-in buttons](built_in_button.md) to help the user enter data. For example, to browse the disk.
 
 
 ### Validation

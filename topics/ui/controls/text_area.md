@@ -4,7 +4,11 @@
 
 <link-summary>UI guidelines on using text areas.</link-summary>
 
-<tldr>JBTextArea</tldr>
+<tldr>
+
+**Implementation:** [`JBTextArea`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/JBTextArea.java)
+
+</tldr>
 
 A text area allows users to enter or edit multi-line text.
 
@@ -28,7 +32,9 @@ Do **not** use a text area if:
 
 Follow the rules for the [input field](input_field.md).
 
-A label is required for all empty text areas. If a text area is prefilled and it’s clear from the context what data it contains, a label can be omitted. For example, the following text area is used to preview file and code templates:
+A label is required for all empty text areas.
+If a text area is prefilled and it’s clear from the context what data it contains, a label can be omitted.
+For example, the following text area is used to preview file and code templates:
 ![](no_label.png)
 
 *If new file template is added and the text area is empty, the label is required.*
@@ -37,24 +43,26 @@ Do **not** put units on the right of the text area.
 
 Do **not** use a [group header](group_header.md) instead of the text area label. The horizontal
 line is redundant here. Use [context help](context_help.md) to explain the field behavior.
-<p>Incorrect</p>
+
+Incorrect:
 
 ![](../../../images/ui/text_area/label_incorrect.png)
 
-<p>Correct</p>
+Correct:
 
 ![](../../../images/ui/text_area/label_correct.png)
 
 
 ### Placeholder, prefilled values and field focus
 
-Follow the rules for the input field: [placeholder](input_field.md#placeholder), [prefilled
-value](input_field.md#prefilled-value), [field focus](input_field.md#field-focus).
+Follow the rules for the input field: [placeholder](input_field.md#placeholder), [prefilled value](input_field.md#prefilled-value), [field focus](input_field.md#field-focus).
 
 
 ### History {id="history_1"}
 
-If the previous user input should be saved, use <shortcut>⌥↑</shortcut> and <shortcut>⌥↓</shortcut> on Mac OS and <shortcut>Alt+Up/Down</shortcut> on Windows and Linux to navigate through the history. If history is available, add a note at the bottom of the input field:
+If the previous user input should be saved, use <shortcut>⌥↑</shortcut> and <shortcut>⌥↓</shortcut> on macOS and <shortcut>Alt+Up/Down</shortcut>
+on Windows and Linux to navigate through the history.
+If history is available, add a note at the bottom of the input field:
 
 ![](text_area_history.png)
 
@@ -97,5 +105,6 @@ Do **not** highlight a text area on selection, only if a validation error occurs
 
 
 ### History
-<p>Background: dialog default theme color</p>
-<p>Font: Windows, IntelliJ — default, Mac OS 2px smaller than default</p>
+Background: dialog default theme color
+
+Font: Windows, IntelliJ — default, macOS 2px smaller than default

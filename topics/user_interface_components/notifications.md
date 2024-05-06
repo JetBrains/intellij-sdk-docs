@@ -37,6 +37,7 @@ If access to indexes is not required, it can be marked [dumb aware](indexing_and
 A commonly used UI implementation is [`EditorNotificationPanel`](%gh-ic%/platform/platform-api/src/com/intellij/ui/EditorNotificationPanel.java).
 
 ### "Got It" Notification
+{id="gotIt"}
 
 Use to highlight important new/changed features via [`GotItTooltip`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/GotItTooltip.kt).
 See [](got_it_tooltip.md) in UI Guidelines for an overview.

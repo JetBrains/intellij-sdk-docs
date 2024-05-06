@@ -11,7 +11,7 @@ There are three ways to show context help:
 * as [inline help text](inline_help_text.md)
 * in an [empty state](empty_state.md)
 
-<p>This article explains when to use the first two. For when to use the empty state, see the <a href="empty_state.md">Empty state</a>.</p>
+This article explains when to use the first two. For when to use the empty state, see the [](empty_state.md) topic.
 
 
 ## Inline text or a tooltip
@@ -82,7 +82,8 @@ Do not explain common actions and entities. Show a regular tooltip with an actio
 |-----------------------------------------------------------------------|---------------------------------------------------------------------|
 | ![](../../../images/ui/context_help/07_explain_obvious_incorrect.png) | ![](../../../images/ui/context_help/07_explain_obvious_correct.png) |
 
-Do not explain each option. Too many help icons or too much inline text make a dialog cluttered and harder to navigate visually. If all options need to be explained, consider rewriting the labels to make them clearer.
+Do not explain each option. Too many help icons or too much inline text make a dialog cluttered and harder to navigate visually.
+If all options need to be explained, consider rewriting the labels to make them clearer.
 
 <p>Incorrect</p>
 

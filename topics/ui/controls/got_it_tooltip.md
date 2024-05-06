@@ -4,7 +4,13 @@
 
 <link-summary>UI guidelines on using "Got it" tooltips.</link-summary>
 
-<tldr>com.intellij.ui.GotItTooltip</tldr>
+<tldr>
+
+**Implementation:** [`GotItTooltip`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/GotItTooltip.kt)
+
+**Related:** [](notifications.md#gotIt)
+
+</tldr>
 
 A Got It tooltip informs users about a new or changed feature and gives basic information about it.
 
@@ -122,6 +128,7 @@ Do **not** cover the information the user is currently working with.
 <p>
 <b>Implementation.</b> See four predefined point providers in the <code>GotItTooltip</code> class.
 </p>
+
 ```java
 new GotItTooltip("some.id", "You can rename usages", project)
     .show(gutterComponent, GotItTooltip.TOP_MIDDLE)
@@ -159,7 +166,7 @@ If a tooltip is triggered by an action or plugin installation, do not tie them t
 By default, a tooltip is shown only once per user.
 
 The tooltip disappears when:
-* Esc is pressed
+* <shortcut>Esc</shortcut> is pressed
 * User clicks any place outside the tooltip
 
 The default timeout duration is 5 seconds.

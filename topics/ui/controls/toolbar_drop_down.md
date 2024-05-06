@@ -4,7 +4,11 @@
 
 <link-summary>UI guidelines on using toolbar drop-down lists.</link-summary>
 
-<tldr>ComboBoxButton</tldr>
+<tldr>
+
+**Implementation:** [`ComboBoxButton`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/ex/ComboBoxAction.java)
+
+</tldr>
 
 A toolbar drop-down list is a type of button that appears on a horizontal toolbar and shows a list of choices on clicking it.
 
@@ -34,7 +38,7 @@ Use a [toolbar drop-down button](icon_button.md) instead of a drop-down list in 
 
 * The options are secondary and the user won’t change them in most cases.
 
-* Multi-selection is required, for example to group by several attributes.
+* Multi-selection is required, for example, to group by several attributes.
 
 
 Do **not** use toolbar drop-down in dialogs, use the [drop-down list](drop_down.md) instead.
@@ -47,7 +51,7 @@ Do **not** use toolbar drop-down in dialogs, use the [drop-down list](drop_down.
 
 Do **not** add a label to the toolbar drop-down.
 
-For the default value follow the rules for the [drop-down list](drop_down.md#default-value).
+For the default value, follow the rules for the [drop-down list](drop_down.md#default-value).
 
 Add separators between the toolbar drop-down and icons:
 
@@ -65,7 +69,7 @@ The toolbar drop-down does not get the focus. Highlight it on hover the same way
 
 #### Control
 
-Open the drop-down menu on clicking anywhere on a drop-down list.
+Open the drop-down menu when clicking anywhere on a drop-down list.
 Open the menu down by default. If there is not enough space, open the menu up.
 
 Select the first option when the menu opens.
@@ -78,14 +82,17 @@ Filter items in the list on typing:
 
 Close the menu if the user selects an item, clicks outside the menu, presses the Esc key or switches to another app.
 
-Allow single-click activation using mouse: click on a drop-down, the drop-down opens, select an item by hovering, close the drop-down with the new item selected by releasing the mouse button.
+Allow single-click activation using mouse: click on a drop-down, the drop-down opens, select an item by hovering,
+close the drop-down with the new item selected by releasing the mouse button.
 
 
 #### Menu items
 
 Follow the rules for the [drop-down list](drop_down.md#menu-items).
 
-If it’s necessary to configure options in a toolbar drop-down list, add customization actions at the top or at the bottom of the list and separate them with a line. Use title case capitalization for actions.
+If it’s necessary to configure options in a toolbar drop-down list, add customization actions at the top or at the bottom of the list
+and separate them with a line.
+Use title case capitalization for actions.
 
 ![](toolbar_dropdown_customize.png)
 
@@ -95,7 +102,7 @@ A toolbar drop-down list can have submenus.
 
 A submenu is a menu item that shows a list of nested items. A submenu includes a triangular indicator that distinguishes it from other menu items.
 
-Use items submenus to group related options and to show hierarchy:
+Use item submenus to group related options and to show hierarchy:
 
 ![](submenu_example.png)
 

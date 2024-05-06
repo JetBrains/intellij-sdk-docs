@@ -4,6 +4,12 @@
 
 <link-summary>UI guidelines on using tooltips.</link-summary>
 
+<tldr>
+
+**Implementation:** [`HelpTooltip`](%gh-ic%/platform/platform-api/src/com/intellij/ide/HelpTooltip.java)
+
+</tldr>
+
 A tooltip shows an action name or provides useful information about an action or a setting.
 
 ![](01_top_pic.png)
@@ -16,7 +22,7 @@ There are three types of tooltips:
   <tr>
     <td>
         <strong>Action </strong><br/>
-        Shows an action name or label for&nbsp;icons and unlabeled controls, and&nbsp;a&nbsp;shortcut if available
+        Shows an action name or label for icons and unlabeled controls, and a shortcut if available.
     </td>
     <td>
         <img src="../../../images/ui/tooltip/02_regular_tooltip.png" />
@@ -25,7 +31,7 @@ There are three types of tooltips:
   <tr>
     <td>
         <strong>Action help </strong><br/>
-        Shows help text for icons and unlabeled controls in addition to&nbsp;an&nbsp;action name or label
+        Shows help text for icons and unlabeled controls in addition to an action name or label.
     </td>
     <td>
         <img src="../../../images/ui/tooltip/03_action_help_tooltip.png" />
@@ -34,7 +40,7 @@ There are three types of tooltips:
   <tr>
     <td>
         <strong>Help</strong><br/>
-        Shows help text for all other controls
+        Shows help text for all other controls.
     </td>
     <td>
         <img src="../../../images/ui/tooltip/03_help_tooltip.png" />
@@ -191,35 +197,35 @@ Always use the help tooltip with the question mark icon. Without the icon, it is
 
 Always place the question mark icon to the right of the corresponding UI component.
 
-<p>Examples with different controls:</p>
+Examples with different controls:
 
-<p style="margin-left: 20px">Checkbox</p>
+#### Checkbox
 
 ![](04_question_icon_tooltip.png)
 
-<p style="margin-left: 20px">Tree item</p>
+#### Tree item
 
 ![](05_question_icon_tree.png)
 
-<p style="margin-left: 20px">Combo box</p>
+#### Combo box
 
 ![](14_placement_labeled_input.png)
 
-<p style="margin-left: 20px">Group header</p>
+#### Group header
 
 ![](15_placement_group_header.png)
 
-<p style="margin-left: 20px">Settings breadcrumbs</p>
+#### Settings breadcrumbs
 
 ![](16_placement_settings_header.png)
 
-<p style="margin-left: 20px">Stand-alone button not at the bottom of a dialog</p>
+#### Stand-alone button not at the bottom of a dialog
 
 ![](07_help_tooltip_button.png)
 
-<p style="margin-left: 20px"><strong>Exception:</strong> do not use the help tooltip with buttons at a dialog’s bottom. Put the information into the help article that is opened with the question mark button in the bottom left corner.</p>
+**Exception:** do not use the help tooltip with buttons at a dialog’s bottom. Put the information into the help article that is opened with the question mark button in the bottom left corner.</p>
 
-<p>Incorrect</p>
+Incorrect:
 
 ![](06_help_tooltip_button_incorrect.png)
 

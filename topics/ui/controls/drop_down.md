@@ -4,7 +4,11 @@
 
 <link-summary>UI guidelines on using drop-down lists.</link-summary>
 
-<tldr>ComboBox</tldr>
+<tldr>
+
+**Implementation:** [`ComboBox`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/ComboBox.java)
+
+</tldr>
 
 A drop-down list is a type of button that appears in dialogs. It shows a list of choices on clicking it and allows selecting one option.
 
@@ -13,9 +17,8 @@ A drop-down list is a type of button that appears in dialogs. It shows a list of
 
 ## When to use
 
-<p>
+
 Use a drop-down list if:
-</p>
 
 A single option should be selected.
 
@@ -142,7 +145,7 @@ Enclose meta-options in pointy brackets and place meta-options at the beginning 
 
 ![](run_tests.png)
 
-*<control>&lt;Choose per test></control> is a meta-options because it’s not a  real runner.*
+*<control>&lt;Choose per test></control> is a meta-options because it’s not a real runner.*
 
 Do **not** assign special meanings to numeric or string values, use meta-options instead. It can be unclear that 0 or an empty string are used to disable an option.
 

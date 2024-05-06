@@ -34,7 +34,8 @@ The following controls can appear on a toolbar:
 
 Put only the most frequently used commands on the toolbar. Rely on usage statistics if it’s available.
 
-<p>If an action is new and it seems to be useful, add it to the corresponding toolbar. Remove it after several releases if it’s not popular which means it’s used by less than ~5% of users who use this toolbar.</p>
+If an action is new and it seems to be useful, add it to the corresponding toolbar.
+Remove it after several releases if it’s not popular which means it’s used by less than ~5% of users who use this toolbar.
 
 Do **not** put unpopular or well-known commands, like Copy and Paste on the toolbar. Use the main menu or the context menu for such commands.
 
@@ -44,7 +45,7 @@ It’s **not** recommended to add more items than the default toolbar length. Ot
 
 Left align items on a horizontal toolbar and top align on a vertical toolbar.
 
-Group related toolbar icon buttons and separate groups with lines. If there are several unrelated icons do **not** add separators after each icon.
+Group related toolbar icon buttons and separate groups with lines. If there are several unrelated icons, do **not** add separators after each icon.
 
 ![](toolbar_group.png)
 
@@ -66,7 +67,8 @@ Do **not** put two toolbars next to each other. One toolbar should be enough for
 |------------------------------------------------|------------------------------------------------|
 | ![](../../../images/ui/toolbar/toolbars_2.png) | ![](../../../images/ui/toolbar/toolbars_1.png) |
 
-Make every toolbar action available from the main menu or the context menu. Toolbars are customizable and can be hidden, so commands should be available from other places as well.
+Make every toolbar action available from the main menu or the context menu.
+Toolbars are customizable and can be hidden, so commands should be available from other places as well.
 
 If the default component size changes and there is not enough space for items on a toolbar, hide them under the chevron.
 
@@ -82,7 +84,9 @@ Provide commands for invoking the toolbar. Use the main menu for the main window
 
 ![](reveal.png)
 
-Provide the ability to customize toolbars in the main window. To do this, add the toolbar to the list on the <ui-path>Settings | Appearance & Behavior | Menus and Toolbars</ui-path> page and open it using the <control>Customize Toolbar...</control> action from the toolbar context menu.
+Provide the ability to customize toolbars in the main window.
+To do this, add the toolbar to the list on the <ui-path>Settings | Appearance & Behavior | Menus and Toolbars</ui-path> page and open
+it using the <control>Customize Toolbar...</control> action from the toolbar context menu.
 
 ![](toolbar_customize.png)
 

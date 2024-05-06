@@ -4,14 +4,19 @@
 
 <link-summary>UI guidelines on using combo boxes.</link-summary>
 
-<tldr>ComboBox setEditable(true)</tldr>
+<tldr>
+
+**Implementation**: [`ComboBox`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/ComboBox.java)
+
+</tldr>
 
 A combo box combines a [drop-down list](drop_down.md) and an [input field](input_field.md), allowing the user to select a value from the list or enter a custom value.
 
 
 ![](combo_box_example.png)
 
-Use `com.intellij.openapi.ui.ComboBox`  instead of `javax.swing.JComboBox`. To make combo box editable invoke:
+Use [`ComboBox`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/ComboBox.java) instead of `javax.swing.JComboBox`.
+To make combo box editable invoke:
 
 ```java
 comboBox.setEditable(true);
@@ -38,8 +43,7 @@ select them later:
 
 If the number of options is finite, and there’s no need to enter custom values. In this case, use a [drop-down list](drop_down.md) or [radio buttons](radio_button.md).
 
-If it’s not possible to list the most likely choices. In this case, use an [input field]({{site
-.baseurl}}/controls/input_field) instead.
+If it’s not possible to list the most likely choices. In this case, use an [input field](input_field.md) instead.
 
 ![](prefill.png)
 
@@ -66,17 +70,15 @@ Replace the input field with a combo box after a value has been entered and conf
 
 #### Control
 
-Open the combo box menu on clicking the arrow button on the right or pressing the Down key when the combo box is
-focused.
+Open the combo box menu on clicking the arrow button on the right or pressing the Down key when the combo box is focused.
 The menu opens down by default. If there is not enough space, the menu opens up.
 
-When the menu opens, select the element that was shown in the closed combo box. If a custom value is entered, then
-do not select a value in the list.
+When the menu opens, select the element that was shown in the closed combo box. If a custom value is entered, then do not select a value in the list.
 
-Move the selection in the menu and update the value in the combo box on pressing the Up and Down arrow keys. On
-mouse hover, move the selection to an item the cursor is pointing to, and, update the value on clicking the mouse button or pressing Enter.
+Move the selection in the menu and update the value in the combo box on pressing the <control>Up</control> and <control>Down</control> arrow keys.
+On mouse hover, move the selection to an item the cursor is pointing to, and, update the value on clicking the mouse button or pressing <shortcut>Enter</shortcut>.
 
-The menu remains opened until the user clicks the item in the list, presses Enter or Esc, clicks outside the menu,
+The menu remains opened until the user clicks the item in the list, presses <shortcut>Enter</shortcut> or <shortcut>Esc</shortcut>, clicks outside the menu,
 or switches to another app.
 
 
@@ -88,7 +90,7 @@ If the user needs to return to previous inputs, add such values to the end of th
 
 ![](maven.png)
 
-Use [built-in buttons](built_in_button.md) to add values or expand the combo box, e.g. the browse button:
+Use [built-in buttons](built_in_button.md) to add values or expand the combo box, e.g., the browse button:
 
 ![](built_in_button.png)
 

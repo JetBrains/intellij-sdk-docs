@@ -36,7 +36,8 @@ The data sent complies with the <a href=\"https://www.jetbrains.com\">JetBrains 
 createPanel();
 ```
 
-Provide a link to the corresponding help article or to a place in the IDE where the related settings can be found. Place the link at the end of the text where possible so that it does not disrupt reading.
+Provide a link to the corresponding help article or to a place in the IDE where the related settings can be found.
+Place the link at the end of the text where possible so that it does not disrupt reading.
 
 ![](04_link_external.png)
 *External link*
@@ -48,7 +49,7 @@ Text style formatting:
 * Avoid text highlighting. Usually, the help text is short and no bold or italics is needed.
 ![](inline_text_no_styling.png)
 
-* Use formatting for code, console commands or parameters. Use HTML tags. Enclosing text in `<html></html>` tags is not needed.
+* Use formatting for code, console commands, or parameters. Use HTML tags. Enclosing text in `<html></html>` tags is not needed.
 ![](inline_text_parameter_styling.png)
 
 Avoid using brackets.
@@ -121,7 +122,8 @@ JPanel p = UI.PanelFactory.panel(tfbb)
     .withComment("Preselected in \"Open ...\" and \"New | Project\" dialogs");
 ```
 
-If there is no space under the UI control, use the [help tooltip](tooltip.md#question-mark-icon-for-help-tooltips) with the question mark icon for labeled inputs, checkboxes and radio buttons. For buttons, use the help tooltip without the icon.
+If there is no space under the UI control, use the [help tooltip](tooltip.md#question-mark-icon-for-help-tooltips) with the question mark icon for labeled inputs, checkboxes and radio buttons.
+For buttons, use the help tooltip without the icon.
 
 
 ### List, tree or table
@@ -151,7 +153,7 @@ If it applies to a single list, tree or table item:
 
 ![](../../../images/ui/inline_help_text/13_master-detail_help_text.png)
 
-<p>If the case with the master-detail layout above does not apply, use the <a href="tooltip.md" anchor="question-mark-icon-for-help-tooltips">help tooltip</a> with the question mark icon.</p>
+If the case with the master-detail layout above does not apply, use the [help tooltip](tooltip.md#question-mark-icon-for-help-tooltips) with the question mark icon.
 
 ![](../../../images/ui/tooltip/05_question_icon_tree.png)
 
@@ -164,7 +166,7 @@ If the help text applies to several UI controls, place it at the bottom of the g
 
 <p>Implementation</p>
 
-<p>Use <code>IdeaTitledBorder</code> as the border for panels that need title and possibly the gray line on the right of the title:</p>
+Use [`IdeaTitledBorder`](%gh-ic%/platform/platform-api/src/com/intellij/ui/border/IdeaTitledBorder.java) as the border for panels that need title and possibly the gray line on the right of the title:
 
 ```java
 String INNER_COMMENT = "<p>By default IntelliJ IDEA uses Gradle to build the project and run the tasks.</p>"+
@@ -181,5 +183,6 @@ JPanel panel = UI.PanelFactory.panel(innerGrid)
 panel.setBorder(IdeBorderFactory.createTitledBorder("Build and Run"));
 ```
 
-You can find more examples in the <code>ComponentPanelTestAction</code> implementation or the <i>Show Standard Panels</i> action.
+You can find more examples in the [`ComponentPanelTestAction`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/ui/ComponentPanelTestAction.java) implementation
+or the <ui-path>Tools | Internal Actions | UI | Show Standard Panels</ui-path> action (available in [internal mode](enabling_internal.md)).
 

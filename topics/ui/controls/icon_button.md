@@ -4,7 +4,11 @@
 
 <link-summary>UI guidelines on using icon buttons.</link-summary>
 
-<tldr>ActionButton</tldr>
+<tldr>
+
+**Implementation:** [`ActionButton`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/actionSystem/impl/ActionButton.java)
+
+</tldr>
 
 A toolbar icon button is an icon that appears on a toolbar.
 
@@ -15,9 +19,9 @@ A toolbar icon button is an icon that appears on a toolbar.
 ## Types
 <p>There are three types of toolbar icon buttons:</p>
 
-An action button triggers an action immediately on clicking it, e.g. the Open button.
+An action button triggers an action immediately on clicking it, e.g., the Open button.
 
-A toggle button switches the state on clicking it, e.g. a button to show and hide warnings in the output tree.
+A toggle button switches the state on clicking it, e.g., a button to show and hide warnings in the output tree.
 ![](toggle.png)
 
 A drop-down button has an arrow icon in the bottom right corner and opens a menu with actions or checkboxes.
@@ -33,8 +37,7 @@ Follow the rules for [toolbar](toolbar.md#what-items-to-add-on-toolbar).
 
 ## How to use
 
-Provide a recognizable icon. Use an [existing icon](https://jetbrains.design/intellij/resources/icons_list/) or create a new one using
-[icon guidelines](icons_style.md).
+Provide a recognizable icon. Use an [existing icon](https://jetbrains.design/intellij/resources/icons_list/) or create a new one using [icon guidelines](icons_style.md).
 
 Provide a short and descriptive name for a toolbar icon button. Show a tooltip with the button name on mouse hover.
 Include a shortcut if there is one. See [Context help](context_help.md) for details.
@@ -43,14 +46,15 @@ Include a shortcut if there is one. See [Context help](context_help.md) for deta
 
 Highlight a toolbar icon button on mouse hover. Highlight a toolbar icon button with a brighter color on clicking it.
 
-* Toggle buttons remains highlighted when they are in the switched on mode. Toggled on buttons do not change color on
- hover.
+* Toggle buttons remains highlighted when they are in the switched on mode. Toggled on buttons do not change color on hover.
 
 * Drop-down buttons remain highlighted while the menu is opened.
 
 ![](states.png)
 
-If an action is not available in this context, disable the corresponding button and gray out the icon. For toolbar drop-down buttons, disable the arrow icon as well. Do **not** highlight a disabled icon on mouse hover.
+If an action is not available in this context, disable the corresponding button and gray out the icon.
+For toolbar drop-down buttons, disable the arrow icon as well.
+Do **not** highlight a disabled icon on mouse hover.
 
 ## Sizes and placement
 

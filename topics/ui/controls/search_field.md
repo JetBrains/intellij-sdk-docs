@@ -4,7 +4,11 @@
 
 <link-summary>UI guidelines on using search fields.</link-summary>
 
-<tldr>SearchTextField</tldr>
+<tldr>
+
+**Implementation:** [`SearchTextField`](%gh-ic%/platform/platform-api/src/com/intellij/ui/SearchTextField.java)
+
+</tldr>
 
 A search field is an input field that helps users locate objects, actions or text in an application.
 
@@ -52,18 +56,20 @@ Use icon buttons inside the search field to save space and not to overload the U
 
 Available option icons:
 
-| ![](../../../images/ui/search_field/icons/matchCase.png)  | Match case  |
-|---|---|
-| ![](../../../images/ui/search_field/icons/regex.png)  | Regex  |
-| ![](../../../images/ui/search_field/icons/words.png)  | Words  |
-| ![](../../../images/ui/search_field/icons/inSelection.png)  | In selection  |
+| ![](../../../images/ui/search_field/icons/matchCase.png)   | Match case   |
+|------------------------------------------------------------|--------------|
+| ![](../../../images/ui/search_field/icons/regex.png)       | Regex        |
+| ![](../../../images/ui/search_field/icons/words.png)       | Words        |
+| ![](../../../images/ui/search_field/icons/inSelection.png) | In selection |
 {style=none}
 
 Change the state of options icons on hover so that it is clear that they are clickable:
 
 ![](options-hovered.png)
 
-Make icon buttons easily accessible with Tab navigation. Option icons should be placed on the right of the search field in the tabbing order. Show a border around the focused option.
+Make icon buttons easily accessible with Tab navigation.
+Option icons should be placed on the right of the search field in the tabbing order.
+Show a border around the focused option.
 
 ![](options-focused.png)
 
@@ -73,17 +79,22 @@ Icon buttons should change color when enabled so that it is clear which options 
 
 #### Clear a Search String
 
-<p>Show the clear button <icon src="../../../images/ui/search_field/icons/clear-light.png" /> only when filtering on-screen content. When the button is clicked, clear the search field and restore the content to its default state. Do <strong>not</strong> show the clear button if the search field is empty. </p>
+Show the clear button <icon src="../../../images/ui/search_field/icons/clear-light.png" /> only when filtering on-screen content.
+When the button is clicked, clear the search field and restore the content to its default state.
+Do **not** show the clear button if the search field is empty.
 
 ![](../../../images/ui/search_field/clear-search-correct.png)
 
-Do **not** show the clear button when the initial data state is empty or doesn't differ from the result. For example, the close icon is not really useful in the editor search field since matches are highlighted and not filtered:
+Do **not** show the clear button when the initial data state is empty or doesn't differ from the result.
+For example, the close icon is not really useful in the editor search field since matches are highlighted and not filtered:
 
 <p>Incorrect</p>
 
 ![](../../../images/ui/search_field/clear-search-incorrect.png)
 
-When search can be configured with options, show the clear button on the left of the option buttons. This way, option buttons won't jump when the clear button appears. The separator between the options and the clear button makes it harder to misclick the potentially dangerous clear icon.
+When search can be configured with options, show the clear button on the left of the option buttons.
+This way, option buttons won't jump when the clear button appears.
+The separator between the options and the clear button makes it harder to mis-click the potentially dangerous clear icon.
 
 ![](search_field_example.png)
 
@@ -124,7 +135,9 @@ Provide completion for complex searches with filtering by attributes:
 
 ![](search_field_completion.png)
 
-Do **not** use filter attributes as separate controls on the toolbar. Not all of them are needed every time while they take a lot of space and overload the interface. Use completion instead:
+Do **not** use filter attributes as separate controls on the toolbar.
+Not all of them are needed every time while they take a lot of space and overload the interface.
+Use completion instead:
 
 <p>Incorrect</p>
 
@@ -136,13 +149,15 @@ Do **not** use filter attributes as separate controls on the toolbar. Not all of
 
 The following syntax is used for attributes:
 
-*   Binary attributes are marked with a number sign (#), for example, _#by-jetbrains_ to show plugins which are developed by JetBrains.
+* Binary attributes are marked with a number sign (#), for example, _#by-jetbrains_ to show plugins which are developed by JetBrains.
 
-*   Values for open attributes are provided after a colon, for example, _status: disabled_ to show all disabled plugins.
+* Values for open attributes are provided after a colon, for example, _status: disabled_ to show all disabled plugins.
 
-Provide aliases to the main attributes where possible, this way it would be easier for users to find the required filter. For example, the User attribute in the VCS Log search field can have the Author alias.
+Provide aliases to the main attributes where possible, this way it would be easier for users to find the required filter.
+For example, the User attribute in the VCS Log search field can have the Author alias.
 
-Show a popup with search attributes when the field gets focus, and after each space character except the space character following an attribute's name. This will make it clear that filtering by attributes is available.
+Show a popup with search attributes when the field gets focus, and after each space character except the space character following an attribute's name.
+This will make it clear that filtering by attributes is available.
 
 Filter out the completion suggestions as the user types:
 
@@ -209,11 +224,14 @@ Fit the search field to the popup windows and to a toolbar if it has top borders
 |----------------------------------------------------------|--------------------------------------------------------|
 | ![](../../../images/ui/search_field/popup-incorrect.png) | ![](../../../images/ui/search_field/popup-correct.png) |
 
-Show the search field on demand when search is supplementary to other functionality or if space is limited. For example, space in the Project view is limited and too loaded to always show the _Speed Search_ bar:
+Show the search field on demand when search is supplementary to other functionality or if space is limited.
+For example, space in the Project view is limited and too loaded to always show the _Speed Search_ bar:
 
 ![](ptree-correct.png)
 
-When searching through content that is not displayed on the screen, put the search field on top of the active frame as a popup. This makes it more prominent and gives space for search results. For example, Search Everywhere is shown on top of the main IDEA frame:
+When searching through content that is not displayed on the screen, put the search field on top of the active frame as a popup.
+This makes it more prominent and gives space for search results.
+For example, Search Everywhere is shown on top of the main IDE frame:
 
 ![](search-everywhere.png)
 

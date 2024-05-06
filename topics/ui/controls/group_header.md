@@ -4,7 +4,11 @@
 
 <link-summary>UI guidelines on using group headers.</link-summary>
 
-<tldr>TitledSeparator</tldr>
+<tldr>
+
+**Implementation:** [`TitledSeparator`](%gh-ic%/platform/platform-api/src/com/intellij/ui/TitledSeparator.java)
+
+</tldr>
 
 A group header clearly labels a group of UI controls.
 

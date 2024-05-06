@@ -4,6 +4,12 @@
 
 <link-summary>UI guidelines on using tables.</link-summary>
 
+<tldr>
+
+**Implementation:** [`JBTable`](%gh-ic%/platform/platform-api/src/com/intellij/ui/table/JBTable.java)
+
+</tldr>
+
 ![](table_table.png)
 
 ## When to use
@@ -15,11 +21,11 @@ Use tables so that users can review, enter or edit uniform sets of data or optio
 
 Use tables:
 
-* To compare data in a set, for example, in the File Colors table it is convenient to compare file colors with one another and make sure that they are distinguishable:
+* To compare data in a set, for example, in the <control>File Colors</control> table it is convenient to compare file colors with one another and make sure that they are distinguishable:
 
 * ![](fileColors.png)
 
-* To search by all parameters in a data set, for example, in the File History table it is possible to quickly filter the table by the date, author or commit message.
+* To search by all parameters in a data set, for example, in the <control>File History</control> table it is possible to quickly filter the table by the date, author or commit message.
 
 ![](table_history.png)
 
@@ -54,24 +60,20 @@ Add a label if the control above can be mistaken for a table header:
 
 Do **not** add a label to explain the table behavior. Use context help instead:
 
-<p class='label incorrect'>Incorrect</p>
+Incorrect:
 
 ![](../../../images/ui/table/label-help-header.png)
 
-<p class='label correct'>Correct</p>
+Correct:
 
 ![](../../../images/ui/table/label-help.png)
 
 Follow the rules for the [Input field](input_field.md):
 
 * The label should be short and descriptive.
-
 * A label must be a noun phrase punctuated with a colon.
-
 * Use sentence-style capitalization.
-
 * If a table is disabled, disable the label.
-
 * Make label text selectable.
 
 
@@ -79,11 +81,11 @@ Always put the label on top of the table.
 
 Do **not** use a Group separator instead of a Table label. A horizontal line is redundant here:
 
-<p class='label incorrect'>Incorrect</p>
+Incorrect:
 
 ![](../../../images/ui/table/label-group-incorrect.png)
 
-<p class='label correct'>Correct</p>
+Correct:
 
 ![](../../../images/ui/table/table_label.png)
 
@@ -91,23 +93,24 @@ Do **not** use a Group separator instead of a Table label. A horizontal line is 
 
 A table header is the row at the top of the table that helps identify the columns below each of the headers. Follow these rules:
 
-Add a header to a table if table data is non-descriptive or ambiguous. For example, in the Environment Variables table a header is required, since that content of each column is not clear:
-<p class='label correct'>Correct</p>
+Add a header to a table if table data is non-descriptive or ambiguous.
+For example, in the Environment Variables table a header is required, since that content of each column is not clear:
+
+Correct:
 
 ![](../../../images/ui/table/header-needed-correct.png)
 
-<p class='label incorrect'>Incorrect</p>
+Incorrect:
 
 ![](../../../images/ui/table/header-needed-incorrect.png)
 
 Do **not** use a header if all columns in a table have self-descriptive content, for example, names, dates, color previews, etc. For example, a header in File History is redundant:
 
-<p class='label correct'>Correct</p>
+Correct:
 
 ![](../../../images/ui/table/table_history.png)
 
-<p class='label incorrect'>Incorrect
-</p>
+Incorrect:
 
 ![](../../../images/ui/table/history-header-redundant.png)
 
@@ -140,7 +143,7 @@ Add a toolbar to provide actions which help manipulate data in the table (add, r
 
 ![](too-long-line.png)
 
-Use the `com.intellij.ui.ToolbarDecorator` class to implement such a toolbar. See more on toolbars [here](toolbar.md).
+Use the [`ToolbarDecorator`](%gh-ic%/platform/platform-api/src/com/intellij/ui/ToolbarDecorator.java) class to implement such a toolbar. See more on toolbars [here](toolbar.md).
 
 ### Zebra striping and inner borders
 
@@ -152,30 +155,31 @@ Use stripes if you want to help users distinguish between different data sets. F
 
 Do **not** use stripes In a simple data set as guides to track content between columns. Alternating backgrounds create two distinct layers of focus while the type of data in different rows is the same.
 
-<p class='label incorrect'>Incorrect</p>
+Incorrect:
 
 ![](../../../images/ui/table/table-zebra-incorrect.png)
 
-<p>Default line height, <a href="table.md" anchor="sizes-and-placement">proper column width</a> and highlighting rows on mouse hover should provide enough guidance to track content. For example, look at the same table without stripes, with bigger line height and adjusted column width:</p>
+Default line height, [proper column width](table.md#sizes-and-placement) and highlighting rows on mouse hover should provide enough guidance to track content.
+For example, look at the same table without stripes, with bigger line height and adjusted column width:
 
-<p class='label correct'>Correct</p>
+Correct:
 
 ![](table_table.png)
 
 
-<p>Bigger distance between groups of related information can also help in tracking content. Line height between groups should be increased by 4px for each group level.</p>
+Bigger distance between groups of related information can also help in tracking content. Line height between groups should be increased by 4px for each group level.
 
-<p>For example, look at the File History table grouped by commit, author, and date:</p>
+For example, look at the File History table grouped by commit, author, and date:
 
 ![](../../../images/ui/table/history-grouped.png)
 
 Do **not** add borders between rows or columns, they add unnecessary noise to the table:
 
-<p class='label incorrect'>Incorrect</p>
+Incorrect:
 
 ![](../../../images/ui/table/inner-borders-incorrect.png)
 
-<p class='label correct'>Correct</p>
+Correct:
 
 ![](../../../images/ui/table/inner-borders.png)
 
@@ -189,49 +193,56 @@ Change the background to active selection color for the selected row when the ta
 
 ![](selection-active.png)
 
-<p>and to inactive selection when the focus is on another element:</p>
+and to inactive selection when the focus is on another element:
 
 ![](../../../images/ui/table/selection-inactive.png)
 
-<p>Do <b>not</b> leave the active selection color in the table when the focus switches to some other element. It is otherwise confusing which element is currently active.</p>
+Do **not** leave the active selection color in the table when the focus switches to some other element.
+It is otherwise confusing which element is currently active.
 
-Columns in tables should be resizable to allow users set a comfortable column width. Change the mouse cursor to "Horizontal Resize" when hovering the rectangular area between columns. This area is defined by table height and by 2px padding around the columns’ divider. This makes it clear that columns can be resized even in a table without a header:
+Columns in tables should be resizable to allow users set a comfortable column width.
+Change the mouse cursor to "Horizontal Resize" when hovering the rectangular area between columns.
+This area is defined by table height and by 2px padding around the columns’ divider.
+This makes it clear that columns can be resized even in a table without a header:
 
 ![](resize.png)
 
-<p>Double click when the "Horizontal Resize" cursor is activated, should auto resize the column to fit the content.</p>
+Double click when the "Horizontal Resize" cursor is activated, should auto resize the column to fit the content.
 
-If column sorting is available, display the sorting state in the column header. If the user clicks on a column that is already sorted, reverse the sorting order and rotate the sorting icon:
+If column sorting is available, display the sorting state in the column header.
+If the user clicks on a column that is already sorted, reverse the sorting order and rotate the sorting icon:
 
 ![](sorting.png)
 
-<p>Add sorting to a table if the default sorting by one column may be insufficient to scan the data set. For example, in the table above, it is useful to be able to sort both by path and encoding to quickly find all paths with a specific encoding, or to find a specific path in the sorted list.</p>
-
+Add sorting to a table if the default sorting by one column may be insufficient to scan the data set.
+For example, in the table above, it is useful to be able to sort both by path and encoding to quickly find all paths with a specific encoding,
+or to find a specific path in the sorted list.
 
 If columns can be reordered, change the cursor to "Hand" when hovering the table header, and allow changing their order by dragging the table header.
 
-<p>In tables without header show the drag icon on top of the column when hovering it:</p>
+In tables without header show the drag icon on top of the column when hovering it:
 
 ![](history-drag.png)
 
-<p>Change the cursor to "Hand" on the icon hover:</p>
+Change the cursor to "Hand" on the icon hover:
 
 ![](history-drag-cursor.png)
 
-<p>Allow dragging a column when the cursor is placed anyplace over this column.
-This makes it clear that columns can be dragged even if there is no table header.</p>
+Allow dragging a column when the cursor is placed anyplace over this column.
+This makes it clear that columns can be dragged even if there is no table header.
 
 In disabled table greyed-out text, disable controls and any interaction:
 ![](table_disabled.png)
 
 ### Editing values
 
-<p>If data in a cell is editable or configurable:</p>
+If data in a cell is editable or configurable:
 
 Allow in-place editing of content for text data. It should be possible to activate editing on mouse click:
 
 ![](inline-edit.png)
-The line with the edited cell should be selected. The edited cell should have borders and their color should be the same as the color for [Input field](input_field.md) borders.
+The line with the edited cell should be selected.
+The edited cell should have borders and their color should be the same as the color for [Input field](input_field.md) borders.
 
 Allow in-place editing for paths and add the Browse button to the cell:
 
@@ -239,7 +250,8 @@ Allow in-place editing for paths and add the Browse button to the cell:
 
 Show a separate dialog for non-text data, for example, a color chooser for colors.
 
-Do **not** show a separate dialog for editing simple data rows without a compound preview (an example of a compound preview can be found in <ui-path>Settings | Editor | Language Injections</ui-path>). For example, there is no need in a separate dialog in the <ui-path>Settings | Appearance & Behavior | Path Variables</ui-path> table, as all editing could be done in place.
+Do **not** show a separate dialog for editing simple data rows without a compound preview (an example of a compound preview can be found in <ui-path>Settings | Editor | Language Injections</ui-path>).
+For example, there is no need in a separate dialog in the <ui-path>Settings | Appearance & Behavior | Path Variables</ui-path> table, as all editing could be done in place.
 
 If it’s possible to enumerate less than 15 most likely or valid variants, show a combobox-like configurable with a down-arrow icon and a popup on click:
 
@@ -250,7 +262,8 @@ Show the combo icon only on hover or when the corresponding line is selected. A 
 If there are more than 15 variants, show a completion popup.
 
 Do **not** use a full-size combobox inside tables. It looks inconsistent and has too much details for a table; a simple dropdown icon with the variants popup is enough.
-<p class='label incorrect'>Incorrect</p>
+
+Incorrect:
 
 ![](../../../images/ui/table/combo-incorrect.png)
 
@@ -260,11 +273,11 @@ Do **not** use a full-size combobox inside tables. It looks inconsistent and has
 ### Sizes
 Choose a column width appropriate for the most common values, but no less than **65 px**. Too wide columns make it hard to read data.
 
-<p class='label correct'>Correct</p>
+Correct:
 
 ![](../../../images/ui/table/fileColors.png)
 
-<p class='label incorrect'>Incorrect</p>
+Incorrect:
 
 ![](../../../images/ui/table/fileColorsTooWide.png)
 
@@ -272,25 +285,26 @@ Minimum table width is **350px**. If a table is too narrow after you have adjust
 
 Add space to the rightmost column if you need to align it with other tables in the same window.
 
-If content doesn’t fit a cell’s width, cut the text by the right border:
+If content doesn't fit a cell's width, cut the text by the right border:
 
 ![](too-long-line.png)
 
-<p>Do <b>not</b> put ellipsis at the end of a cropped line, as it can be confused with the content. Also, ellipsis can form a separate redundant column when content in the majority of cells in one column doesn’t fit its width.</p>
-<p>Do <b>not</b> add a fade-away gradient for cropped text, as it adds too many shades to a table text, and they attract too much attention.</p>
+Do **not** put ellipsis at the end of a cropped line, as it can be confused with the content.
+Also, ellipsis can form a separate redundant column when content in the majority of cells in one column doesn't fit its width.
 
+Do **not** add a fade-away gradient for cropped text, as it adds too many shades to a table text, and they attract too much attention.
 
 ### Placement
 
 Do **not** put vertical elements (for example, diagrams) in the middle of a table, as they prevent users from scanning data easily:
 
-<p class='label incorrect'>Incorrect</p>
+Incorrect:
 
 ![](../../../images/ui/table/history-graph-incorrect.png)
 
-<p>Place them closer to the sides instead:</p>
+Place them closer to the sides instead:
 
-<p class='label correct'>Correct</p>
+Correct:
 
 ![](../../../images/ui/table/table_history.png)
 
@@ -382,7 +396,7 @@ For aligning in a dialog with other controls, see [Layout](layout.md).
 
 ## Style
 
-| IntelliJ | ![](table_intellij.png)     |
-|----------|-------------------------------------------|
-| Darcula  | ![](table_darcula.png) |
+| IntelliJ | ![](table_intellij.png) |
+|----------|-------------------------|
+| Darcula  | ![](table_darcula.png)  |
 {style=none}

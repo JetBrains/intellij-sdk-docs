@@ -4,7 +4,11 @@
 
 <link-summary>UI guidelines on using links.</link-summary>
 
-<tldr>ActionLink, DropDownLink</tldr>
+<tldr>
+
+**Implementation:** [`ActionLink`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/ActionLink.kt), [`DropDownLink`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/DropDownLink.kt)
+
+</tldr>
 
 ![](01_link_example.png)
 
@@ -28,14 +32,16 @@ Use a regular or [drop-down link](#drop-down-link) for secondary actions in pack
 
 ![](05_action_regular_link.png)
 
-*The "Reset" action is a link for two reasons: (1) The action appears only when the default value in the field is changed and reverting to a&nbsp;default is considered a rare scenario. (2) A lightweight link fits better than a button in this busy layout.*
+*The "Reset" action is a link for two reasons: (1) The action appears only when the default value in the field is changed and reverting to a default is considered a rare scenario. (2) A lightweight link fits better than a button in this busy layout.*
 
 ![](06_action_dropdown.png)
 
 *The "Modify options" drop-down link fits into the top right corner of a busy layout.*
 
-<p>
-Do <control>not</control> use links for primary actions or when a UI is not constrained. Use a <a href="button.topic">button</a> or a <a href="drop_down.md">drop-down list</a> instead. These controls can be selected from the keyboard and are bigger and easier to click.</p>
+
+Do <control>not</control> use links for primary actions or when a UI is not constrained.
+Use a [button](button.topic) or a [drop down list](drop_down.md) instead.
+These controls can be selected from the keyboard and are bigger and easier to click.
 
 ![](../../../images/ui/link/07_android_sdk.png)
 
@@ -98,7 +104,7 @@ An exception is a help topic link in [empty states](empty_state.md). The help ic
 
 ### Drop-down link
 
-Drop-down links show a context menu or a popup. Use `com.intellij.ui.components.DropDownLink` to implement a drop-down link.
+Drop-down links show a context menu or a popup. Use [`DropDownLink`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/DropDownLink.kt) to implement a drop-down link.
 ![](13_drop_down_links.png)
 
 

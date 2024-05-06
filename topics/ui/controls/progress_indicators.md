@@ -61,12 +61,13 @@ If the loader applies to the whole content, place it in the top right corner:
 
 ![](tree_loader_corner.png)
 
-If processes start simultaneously and have the same execution time, place the loader in the top right corner of the area. For example, in the Push dialog repositories are loaded at the same time. Loaders in each line will blink at the same time and will look distracting.
+If processes start simultaneously and have the same execution time, place the loader in the top right corner of the area.
+For example, in the <control>Push</control> dialog repositories are loaded at the same time.
+Loaders in each line will blink at the same time and will look distracting.
 
 ![](tree_loader_push.png)
 
-If the top right corner of the area is taken with content and there is no space for the loader, show the progress bar
- at the top of the tool window.
+If the top right corner of the area is taken with content and there is no space for the loader, show the progress bar at the top of the tool window.
 For example, the VCS Log tool window has a progress bar at the top when the content is loading or during searching.
 
 ![](progress_tool_window.png)
@@ -80,7 +81,8 @@ Place the loader after breadcrumbs or a dialog label to show that the page is be
 
 ### Settings dialog
 
-If some settings or configurations take a significant time to load, it’s preferable to reserve space for a progress bar. For example, show a progress bar while installing a plugin:
+If some settings or configurations take a significant time to load, it’s preferable to reserve space for a progress bar.
+For example, show a progress bar while installing a plugin:
 
 ![](settings_loader.png)
 
@@ -92,8 +94,7 @@ If the state is empty, show progress text. For example, in search dialogs, and t
 
 Show one more progress indicator, e.g. a loader like on the example above, if loading continues when some data is already displayed.
 
-If a process takes longer than 4 seconds, provide [process details](progress_text.md#details), e.g. the time left or
-passed, work units
+If a process takes longer than 4 seconds, provide [process details](progress_text.md#details), e.g. the time left or passed, work units
 like the current step, to indicate that the process is being performed and is not hanging:
 
 ![](empty_state_details.png)

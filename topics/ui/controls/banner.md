@@ -4,6 +4,14 @@
 
 <link-summary>UI guidelines on using banners.</link-summary>
 
+<tldr>
+
+**Implementation:** [`EditorNotifications.Provider`](%gh-ic%/platform/platform-api/src/com/intellij/ui/EditorNotifications.java)
+
+**Related:** [](notifications.md#editor-banner)
+
+</tldr>
+
 A banner notification informs the user about the state of a specific context in the project. For example, when there is a missing or broken configuration for some file.
 
 ![](banner_error.png)

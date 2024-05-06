@@ -8,8 +8,10 @@
     <link-summary>UI guidelines on using buttons.</link-summary>
 
     <tldr>
-        JButton
+        <p><b>Implementation:</b> <a href="https://docs.oracle.com/javase/tutorial/uiswing/components/button.html"><code>JButton</code></a>
+    </p>
     </tldr>
+
     <img src="button_example.png"/>
     <chapter title="When to use" id="when-to-use">
         <p>Use a button to invoke an immediate action.</p>
@@ -141,10 +143,17 @@
                 see <a href="context_help.md">Context help</a>.</p>
             <table style="none">
                 <tr>
-                    <td><img src="../../../images/ui/button/hover_shortcut.png"/> <em style="margin-bottom: 5px;">If the
-                        action is clear, show the shortcut only.</em></td>
-                    <td><img src="../../../images/ui/button/hover_name_shortcut.png"/> <em style="margin-bottom: 5px;">If
-                        the action can be clarified, show the action name and the shortcut.</em></td>
+                    <td><img src="../../../images/ui/button/hover_shortcut.png"/>
+                        <p>
+                            <emphasis>If the action is clear, show the shortcut only.</emphasis>
+                        </p>
+                    </td>
+                    <td>
+                        <img src="../../../images/ui/button/hover_name_shortcut.png"/>
+                        <p>
+                            <emphasis>If the action can be clarified, show the action name and the shortcut.</emphasis>
+                        </p>
+                    </td>
                 </tr>
             </table>
         </chapter>
@@ -153,10 +162,18 @@
         <chapter title="Default" id="default">
             <table style="none">
                 <tr>
-                    <td><img src="../../../images/ui/button/default_save.png"/> <em style="margin-bottom: 5px;">Mac OS</em>
+                    <td>
+                        <img src="../../../images/ui/button/default_save.png"/>
+                        <p>
+                            <emphasis>macOS</emphasis>
+                        </p>
                     </td>
-                    <td><img src="../../../images/ui/button/default_save_win.png"/> <em
-                            style="margin-bottom: 5px;">Windows</em></td>
+                    <td>
+                        <img src="../../../images/ui/button/default_save_win.png"/>
+                        <p>
+                            <emphasis>Windows</emphasis>
+                        </p>
+                    </td>
                 </tr>
             </table>
             The default button confirms the main purpose of a dialog. It is triggered by pressing
@@ -170,8 +187,7 @@
             on macOS.
             **Exception**: If the focus is on an element that uses the
             <shortcut>Enter</shortcut>
-            key (e.g. a text
-            area), the default button is triggered only by
+            key (e.g. a text area), the default button is triggered only by
             <shortcut>Ctrl+Enter</shortcut>
             on Windows/Linux and
             <shortcut>Cmd+Enter</shortcut>
@@ -179,19 +195,19 @@
             <p>The default button should be always present in a dialog. Only one button in a dialog can be the default
                 one.</p>
             <p>If the action is dangerous, e.g. can lead to data loss, provide an easy way to undo the command.</p>
-            <p>If it's not posible to undo the action, make a secondary button the default one:
+            <p>If it's not possible to undo the action, make a secondary button the default one:
                 <img src="merge_dialog.png" alt=""/></p>
         </chapter>
         <chapter title="Focused" id="focused">
             <img src="focused.png" alt=""/>
-            <p>All buttons can get focus, even on Mac OS if the
+            <p>All buttons can get focus, even on macOS if the
                 <control>Full Keyboard Access</control>
                 option is disabled in Preferences &gt; Keyboard &gt;
                 Shortcuts.
-                A focused button behavior varies on Mac OS/Linux and Windows.
+                A focused button behavior varies on macOS/Linux and Windows.
             </p>
             <p>
-                <control>Mac OS</control>
+                <control>macOS</control>
             </p>
             <list>
                 <li>
@@ -236,9 +252,8 @@
                     <shortcut>Ctrl+Enter</shortcut>
                     .
                     <img src="open_project_dialog_win.png" alt=""/>
-                    <emphasis>On pressing the Tab key, the New Window button gets the focus and is triggered with Enter
-                        or Space. The original This
-                        Window button is triggered with Ctrl+Enter.
+                    <emphasis>On pressing the <shortcut>Tab</shortcut> key, the New Window button gets the focus and is triggered with Enter
+                        or Space. The original This Window button is triggered with Ctrl+Enter.
                     </emphasis>
                     If the focus moves to a control that’s not a button, the original default button is triggered by
                     <shortcut>
@@ -270,13 +285,13 @@
                 <shortcut>Esc</shortcut>
                 or
                 <shortcut>Cmd+Period</shortcut>
-                on Mac.
+                on macOS.
                 If a confirmation button is present in a dialog, e.g.
                 <emphasis>OK</emphasis>
                 or
                 <emphasis>Save</emphasis>
                 , it’s recommended to have a button that cancels the
-                dialog, e.g.
+                dialog, e.g.,
                 <emphasis>Cancel</emphasis>
                 ,
                 <emphasis>Continue Editing</emphasis>

@@ -44,11 +44,11 @@ Use bullets for lists:
 
 Limit the width of the line to 70–80 symbols, as it is not convenient to read very long lines:
 
-<p class='label incorrect'>Incorrect</p>
+Incorrect
 
 ![](07_width_incorrect.png)
 
-<p class='label correct'>Correct</p>
+Correct
 
 ![](07_width_correct.png)
 
@@ -72,7 +72,7 @@ For [links](link.md), use the default link color: `Link.activeForeground`. Under
 
 ### Insets
 
-<p>Separate the text from the surroundings with insets.</p>
+Separate the text from the surroundings with insets.
 
 Use a 12px horizontal inset if the description text’s area has other elements:
 

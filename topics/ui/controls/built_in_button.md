@@ -14,8 +14,8 @@ A built-in button is an icon placed inside an input control.
 Place the built-in button inside the input control. Do **not** place the built-in button on the right of a control:
 ![](outside.png)
 
-To place a button inside a text field, use the `com.intellij.ui.components.fields.ExtendableTextField` class and
-its `addExtension` method.
+To place a button inside a text field, use [`ExtendableTextField`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/fields/ExtendableTextField.java) and
+its `addExtension()` method.
 
 The shortcut for a built-in button is <shortcut>Shift+Enter</shortcut>.
 
@@ -56,7 +56,7 @@ Do **not** place the button on the right of the control.
 ![](browse_buttons.png)
 
 ### Expand field
-If input text can be long and place is constrained, use built-in button to expand the control (`com.intellij.ui.components.fields.ExpandableTextField`):
+If input text can be long and place is constrained, use built-in button to expand the control ([`ExtendableTextField`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/fields/ExtendableTextField.java)):
 
 ![](expandable_1.png)
 ![](expandable_2.png)

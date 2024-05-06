@@ -5,7 +5,9 @@
 <link-summary>UI guidelines on using checkboxes.</link-summary>
 
 <tldr>
-JCheckBox or JBCheckBox
+
+**Implementation:** [`JCheckBox`](https://docs.oracle.com/javase/tutorial/uiswing/components/button.html), [`JBCheckBox`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/JBCheckBox.java)
+
 </tldr>
 
 ![](checkbox_example.png)
@@ -45,7 +47,10 @@ If a checkbox appears in a table, place the label into the column header and do 
 
 ![](checkbox_table.png)
 
-**Implementation**: Checkboxes are rendered in tables with `BooleanTableCellRenderer` and edited with `DefaultCellEditor(JCheckBox)` implementation. For any column that should be rendered as a checkbox, set both a renderer and editor for consistency. The type of data in the correspondent column of the `Table` model should either be `Boolean` or `String` containing `true` or `false`.
+**Implementation**: Checkboxes are rendered in tables with [`BooleanTableCellRenderer`](%gh-ic%/platform/core-ui/src/ui/BooleanTableCellRenderer.java)
+and edited with `DefaultCellEditor(JCheckBox)` implementation.
+For any column that should be rendered as a checkbox, set both a renderer and editor for consistency.
+The type of data in the correspondent column of the `Table` model should either be `Boolean` or `String` containing `true` or `false`.
 
 ```java
 TableColumn col = table.getColumnModel().getColumn(...);
@@ -77,7 +82,8 @@ In a group of options, use the parent checkbox to show the status of its childre
 ![](indeterminate_checkbox.png)
 
 *The parent checkbox in checked, indeterminate and unchecked states*
-**Implementation**: The three-state checkbox is represented by the `ThreeStateCheckBox` class which represents its state with the `ThreeStateCheckBox.State` enum containing `SELECTED, NOT_SELECTED, DONT_CARE` states.
+**Implementation**: The three-state checkbox is represented by the [`ThreeStateCheckBox`](%gh-ic%/platform/util/ui/src/com/intellij/util/ui/ThreeStateCheckBox.java)
+class which represents its state with the `ThreeStateCheckBox.State` enum containing `SELECTED, NOT_SELECTED, DONT_CARE` states.
 
 When the user clicks an indeterminate checkbox for the first time, the whole group becomes checked. The second click unchecks the whole group.
 
@@ -87,8 +93,9 @@ An indeterminate checkbox can also show the download status. An example with a r
 
 *Repositories "tools-base" and "contrib" are being loaded. When loading is finished, the indeterminate checkbox will be replaced with the checked checkbox if there are commits, or an unchecked checkbox if there are no commits.*
 
-**Implementation**: In a table, the three-state checkbox is represented by `ThreeStateCheckBoxRenderer` that provides both `TableCellRenderer` and `TableEditor`. It accepts `Boolean` type in the column being supplied by the `TableModel` and becomes `DONT_CARE` when the value in the cell is null. Otherwise it becomes `SELECTED` for `Boolean.TRUE`, and `NOT_SELECTED` for `Boolean.FALSE`.
-
+**Implementation**: In a table, the three-state checkbox is represented by [`ThreeStateCheckBoxRenderer`](%gh-ic%/platform/lang-impl/src/com/intellij/profile/codeInspection/ui/table/ThreeStateCheckBoxRenderer.java)
+that provides both `TableCellRenderer` and `TableEditor`.
+It accepts `Boolean` type in the column being supplied by the `TableModel` and becomes `DONT_CARE` when the value in the cell is null. Otherwise it becomes `SELECTED` for `Boolean.TRUE`, and `NOT_SELECTED` for `Boolean.FALSE`.
 
 ## Placement
 

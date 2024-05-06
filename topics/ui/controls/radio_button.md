@@ -4,7 +4,11 @@
 
 <link-summary>UI guidelines on using radio buttons.</link-summary>
 
-<tldr>JBRadioButton</tldr>
+<tldr>
+
+**Implementation:** [`JBRadioButton`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/JBRadioButton.java)
+
+</tldr>
 
 ![](radio_example.png)
 
@@ -18,7 +22,7 @@ Do **not** use radio buttons if:
 
 ![](tworadio_checkbox.png)
 
-* There are 5 and more options that can be charted on an axis, e.g. time delay. Use a slider instead.
+* There are 5 and more options that can be charted on an axis, e.g., time delay. Use a slider instead.
 
 * There are 5 and more options. Use a [drop-down list](drop_down.md):
 
@@ -86,5 +90,6 @@ Use a colon at the end of a group label.
 
 ## Sizes and placement
 
-If a radio button group depends on another control, e.g. a checkbox, follow the rules for [dependent colors](layout.md#dependent-controls). Otherwise, follow the rules for [independent colors](layout.md).
+If a radio button group depends on another control, e.g. a checkbox, follow the rules for [dependent colors](layout.md#dependent-controls).
+Otherwise, follow the rules for [independent colors](layout.md).
 

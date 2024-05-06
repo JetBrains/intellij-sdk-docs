@@ -4,7 +4,11 @@
 
 <link-summary>UI guidelines on using progress bars.</link-summary>
 
-<tldr>JProgressBar</tldr>
+<tldr>
+
+**Implementation:** [`JProgressBar`](https://docs.oracle.com/javase/tutorial/uiswing/components/progress.html)
+
+</tldr>
 
 A progress bar informs users about the progress of a lengthy operation.
 
@@ -36,8 +40,7 @@ If an indeterminate process reaches a point where its duration can be determined
 
 ### Process name and details
 
-A progress bar can have a process name and process details. For wording, follow the rules for [progress text]({{site
-.baseurl}}/controls/progress_text).
+A progress bar can have a process name and process details. For wording, follow the rules for [progress text](progress_text.md).
 
 #### Process name
 
@@ -90,16 +93,19 @@ Place a process name under the progress bar in the Status bar:
 
 ### Process status
 
-If a process consists of substeps that can fail but do not terminate the process, then use green and red colors to show the intermediate status. For example, show the status of the running tests:
+If a process consists of substeps that can fail but do not terminate the process, then use green and red colors to show the intermediate status.
+For example, show the status of the running tests:
 
 ![](progress_color.png)
 
-Do **not** color progress bar to show the final result of the task, use [notifications](notification_types.md). In case of success, show notification for the user-initiated tasks, in case of failure — for all tasks.
+Do **not** color progress bar to show the final result of the task, use [notifications](notification_types.md).
+In case of success, show notification for the user-initiated tasks, in case of failure — for all tasks.
 
 
 ### Process control
 
-Provide the Cancel button in the progress dialog if the process can be interrupted (see [Loading Project dialog](#in-dialog)). Use the Stop button if interrupting does not return the environment to its previous state.
+Provide the Cancel button in the progress dialog if the process can be interrupted (see [Loading Project dialog](#in-dialog)).
+Use the Stop button if interrupting does not return the environment to its previous state.
 
 Use the Stop icon if there are several processes running at the same time in one dialog or there is not enough space for the button (e.g. [Status bar](#in-status-bar)):
 
@@ -109,13 +115,15 @@ Always place the Stop icon on the right next to the progress bar. On hover over 
 
 ![](hover_stop_icon.png)
 
-If the process takes a long time and can prevent the user from performing tasks, provide an option to pause a process using the Pause button or the Pause icon. Replace process details with the "Pause" comment on hover over the Pause icon:
+If the process takes a long time and can prevent the user from performing tasks, provide an option to pause a process using the Pause button or the Pause icon.
+Replace process details with the "Pause" comment on hover over the Pause icon:
 
 ![](pause.png)
 
-It is **not** recommended providing an option to pause the process. It is preferable, that the process runs in a background and does not interfere with a user.
+It is **not** recommended providing an option to pause the process. It is preferable that the process runs in the background and does not interfere with a user.
 
-If a user pauses the process, show "Paused" under the progress bar. Replace the Pause icon with Resume, show "Resume" under the progress bar and when hovered over the Resume button:
+If a user pauses the process, show "Paused" under the progress bar.
+Replace the Pause icon with Resume, show "Resume" under the progress bar and when hovered over the Resume button:
 
 ![](resume.png)
 

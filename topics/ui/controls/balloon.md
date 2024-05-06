@@ -4,6 +4,14 @@
 
 <link-summary>UI guidelines on using balloons.</link-summary>
 
+<tldr>
+
+**Implementation:** [`Notifications`](%gh-ic%/platform/ide-core/src/com/intellij/notification/Notifications.java)
+
+**Related:** [](notifications.md#balloons)
+
+</tldr>
+
 Balloon notifications inform users of the events or system states related to a project or IDE.
 
 ![](01_balloon_example.png)
@@ -15,9 +23,7 @@ Use a balloon notification if:
 * There is no need to point to a particular context or location in the interface.
 * User action is recommended but not required immediately.
 
-<p>
-In other cases, choose another <a href="notification_types.md">notification type</a>.
-</p>
+In other cases, choose another [notification type](notification_types.md).
 
 ## How to use
 
@@ -42,21 +48,24 @@ Use to suggest optimizations for the IDE settings and notify on the results of a
 
 Use to show a plugin-related suggestion.
 
-Add the plugin’s icon to indicate that the notification relates to a particular plugin. Use a 16×16 svg icon.
+Add the plugin’s icon to indicate that the notification relates to a particular plugin. Use a 16×16 SVG icon.
 
 ![](05_information_plugin.png)
 
 
 ### Sticky or Timed
 
-By default, choose a **sticky** balloon. Sticky notifications stay on screen until the user clicks a link in the message or closes the notification manually. This behaviour is preferable as it guarantees the user will not miss the notification.
+By default, choose a **sticky** balloon. Sticky notifications stay on screen until the user clicks a link in the message or closes the notification manually.
+This behaviour is preferable as it guarantees the user will not miss the notification.
 
-Use a **timed** notification when the message is informational, and missing it will not affect the user’s workflow. Timed notifications stay on screen for 10 seconds and then disappear. They can be viewed later in the Event Log.
+Use a **timed** notification when the message is informational, and missing it will not affect the user’s workflow.
+Timed notifications stay on screen for 10 seconds and then disappear.
+They can be viewed later in the <control>Event Log</control>.
 
 
 ### Title
 
-Briefly describe the event and the context in which it occurred, e.g. a particular plugin or library, VCS, a run/debug configuration, etc.
+Briefly describe the event and the context in which it occurred, e.g., a particular plugin or library, VCS, a run/debug configuration, etc.
 
 [Write short and clear](writing_short.md) as the title should fit in one line.
 
@@ -69,11 +78,11 @@ If the message fits well in one sentence and does not require a separate title, 
 
 * Use only body text when the message fits in two lines and the title would duplicate its meaning, fully or partially:
 
-<p class='label incorrect'> Incorrect </p>
+Incorrect
 
 ![](06_only_text_incorrect.png)
 
-<p class='label correct'> Correct</p>
+Correct
 
 ![](06_only_text_correct.png)
 
@@ -85,7 +94,8 @@ Provide the details on the event or system state to help users decide what to do
 * What are the consequences.
 * What exactly is affected: files, libraries, versions, plugins, etc.
 
-Note that only the first line of the body text is visible by default. The rest of the message is only visible when expanded with an arrow icon. Make the beginning of the text most informative.
+Note that only the first line of the body text is visible by default. The rest of the message is only visible when expanded with an arrow icon.
+Make the beginning of the text most informative.
 
 ![](../../../images/ui/balloon/07_expandable.png)
 
@@ -110,11 +120,11 @@ If the notification reports an error or warning, always provide an action to hel
 
 If no actions are available, provide more details in the body text, e.g. how to fix the error or what is the warning/error cause:
 
-<p class='label incorrect'> Incorrect </p>
+Incorrect
 
 ![](09_error_incorrect.png)
 
-<p class='label correct'>Correct</p>
+Correct
 
 ![](09_error_correct.png)
 

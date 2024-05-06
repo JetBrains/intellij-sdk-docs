@@ -4,6 +4,12 @@
 
 <link-summary>UI guidelines on using split icon buttons.</link-summary>
 
+<tldr>
+
+**Implementation:** [`SplitButtonAction`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/actionSystem/SplitButtonAction.java)
+
+</tldr>
+
 A split icon button appears on a horizontal toolbar and consists of two parts: the main icon and a triangle icon for the actions list.
 
 ![](split_icon_button_example.png)
@@ -41,7 +47,8 @@ Make sure that all actions in the popup menu have icons. When an action is launc
 
 ## Built-in behavior
 
-On hover, the main icon and the triangle icon are highlighted separately, and the line between two parts is added. The tooltip for the main icon action is shown on hovering over it.
+On hover, the main icon and the triangle icon are highlighted separately, and the line between two parts is added.
+The tooltip for the main icon action is shown on hovering over it.
 
 ![](split_icon_button_hover.png)
 

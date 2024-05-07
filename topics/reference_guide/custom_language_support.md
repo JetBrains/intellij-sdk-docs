@@ -32,20 +32,24 @@ The webinar [How We Built Comma, the Raku IDE, on the IntelliJ Platform](https:/
 * [](implementing_lexer.md)
 * [](implementing_parser_and_psi.md)
 * [](syntax_highlighting_and_error_highlighting.md)
+* {columns="2"}
 
 ### Resolving and Completion
 
 * [](references_and_resolve.md)
-* [](symbols.md)
-* [](declarations_and_references.md)
+    * [](symbols.md)
+    * [](declarations_and_references.md)
+    * [](websymbols.md)
 * [](navigation.md)
 * [](code_completion.md)
+* {columns="2"}
 
 ### Refactoring
 
 * [](find_usages.md)
 * [](rename_refactoring.md)
 * [](safe_delete_refactoring.md)
+* {columns="2"}
 
 ### Editor and IDE Features
 
@@ -61,6 +65,7 @@ The webinar [How We Built Comma, the Raku IDE, on the IntelliJ Platform](https:/
 * [](inlay_hints.md)
 * [](spell_checking.md)
 * [](additional_minor_features.md)
+* {columns="2"}
 
 See [](language_server_protocol.md) for supporting language servers.
 

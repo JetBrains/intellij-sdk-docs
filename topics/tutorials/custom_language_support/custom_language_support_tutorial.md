@@ -1,6 +1,6 @@
-# Custom Language Support Tutorial
-
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Custom Language Support Tutorial
 
 <link-summary>Tutorial for creating a .properties-like custom language.</link-summary>
 
@@ -44,6 +44,7 @@ This a step-by-step tutorial, and it requires completing each step, in order:
 * [](quick_fix.md)
 * [](documentation_provider.md)
 * [](spell_checking_strategy.md)
+* {columns="2"}
 
 <include from="snippets.md" element-id="missingContent"/>
 

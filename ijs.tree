@@ -359,19 +359,20 @@
     <toc-element topic="build_number_ranges.md"/>
     <toc-element topic="intellij_artifacts.md"/>
     <toc-element toc-title="Extension Points and Listeners">
-      <toc-element toc-title="IntelliJ Platform" topic="intellij_platform_extension_point_list.md" accepts-web-file-names="extension-point-list.html"/>
+      <toc-element toc-title="IntelliJ Platform" topic="intellij_platform_extension_point_list.md"
+                   accepts-web-file-names="extension-point-list.html"/>
       <toc-element toc-title="IntelliJ Community Plugins" topic="intellij_community_plugins_extension_point_list.md"/>
-      <toc-element toc-title="Android Plugin" topic="android_plugin_extension_point_list.md" />
-      <toc-element toc-title="AppCode" topic="appcode_extension_point_list.md" />
-      <toc-element toc-title="CLion" topic="clion_extension_point_list.md" />
-      <toc-element toc-title="DataGrip" topic="data_grip_extension_point_list.md" />
-      <toc-element toc-title="GoLand" topic="goland_extension_point_list.md" />
-      <toc-element toc-title="Open Source Plugins" topic="oss_plugins_extension_point_list.md" />
-      <toc-element toc-title="PhpStorm" topic="php_extension_point_list.md" />
-      <toc-element toc-title="Rider" topic="rider_extension_point_list.md" />
-      <toc-element toc-title="RubyMine" topic="rubymine_extension_point_list.md" />
-      <toc-element toc-title="Spring" topic="spring_extension_point_list.md" />
-      <toc-element toc-title="WebStorm" topic="webstorm_extension_point_list.md" />
+      <toc-element toc-title="Android Plugin" topic="android_plugin_extension_point_list.md"/>
+      <toc-element toc-title="AppCode" topic="appcode_extension_point_list.md"/>
+      <toc-element toc-title="CLion" topic="clion_extension_point_list.md"/>
+      <toc-element toc-title="DataGrip" topic="data_grip_extension_point_list.md"/>
+      <toc-element toc-title="GoLand" topic="goland_extension_point_list.md"/>
+      <toc-element toc-title="Open Source Plugins" topic="oss_plugins_extension_point_list.md"/>
+      <toc-element toc-title="PhpStorm" topic="php_extension_point_list.md"/>
+      <toc-element toc-title="Rider" topic="rider_extension_point_list.md"/>
+      <toc-element toc-title="RubyMine" topic="rubymine_extension_point_list.md"/>
+      <toc-element toc-title="Spring" topic="spring_extension_point_list.md"/>
+      <toc-element toc-title="WebStorm" topic="webstorm_extension_point_list.md"/>
     </toc-element>
     <toc-element topic="useful_links.md" accepts-web-file-names="resources.html"/>
     <toc-element topic="learning_resources.md"/>
@@ -472,8 +473,7 @@
         <toc-element topic="progress_bar.md"/>
         <toc-element topic="progress_text.md"/>
       </toc-element>
-      <toc-element topic="radio_button.md">
-      </toc-element>
+      <toc-element topic="radio_button.md"/>
       <toc-element topic="scrollbar.md"/>
       <toc-element topic="search_field.md"/>
       <toc-element toc-title="Slider"/> <!--TODO-->
@@ -509,23 +509,25 @@
       <toc-element toc-title="Default Values"/> <!--TODO-->
       <toc-element toc-title="Discoverability"/> <!--TODO-->
       <toc-element topic="icons_style.md"/>
-      <toc-element topic="groups_of_controls.md"/>
       <!--      <toc-element topic="icons.md"/>-->
-      <toc-element topic="layout.md"/>
-      <toc-element toc-title="Master-detail Layout"/> <!--TODO-->
+      <toc-element topic="layout.md">
+        <toc-element topic="groups_of_controls.md"/>
+        <toc-element toc-title="Master-detail Layout"/> <!--TODO-->
+        <toc-element toc-title="Sizes and Insets"/> <!--TODO-->
+      </toc-element>
       <toc-element topic="mnemonics.md"/>
       <toc-element topic="platform_theme_colors.md"/>
-      <toc-element toc-title="Search"/> <!--TODO-->
-      <toc-element toc-title="Search Results"/> <!--TODO-->
+      <toc-element toc-title="Search"> <!--TODO-->
+        <toc-element toc-title="Search Results"/> <!--TODO-->
+        <toc-element toc-title="Speed Search"/> <!--TODO-->
+      </toc-element>
       <toc-element toc-title="Sharing Settings"/> <!--TODO-->
-      <toc-element toc-title="Sizes and Insets"/> <!--TODO-->
-      <toc-element toc-title="Speed Search"/> <!--TODO-->
       <toc-element topic="typography.md"/>
-      <toc-element toc-title="Feedback"/> <!--TODO-->
+      <toc-element toc-title="UI Feedback"/> <!--TODO-->
       <toc-element topic="validation_errors.md"/>
     </toc-element>
     <toc-element toc-title="Resources">
-      <toc-element href="https://jetbrains.design/intellij/resources/icons_list/" toc-title="Icons"/>
+      <toc-element href="https://jetbrains.design/intellij/resources/icons_list/" toc-title="Icons List"/>
       <toc-element topic="how_to_write_guidelines.md"/>
       <toc-element topic="UI_kit.md"/>
     </toc-element>

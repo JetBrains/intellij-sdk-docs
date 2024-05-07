@@ -17,10 +17,15 @@
         <p>Use a button to invoke an immediate action.</p>
         <p>Use a <a href="link.md">link</a> instead if:</p>
         <list>
-            <li><p>The action takes the user to another page of the same dialog or an external source like documentation:</p>
+            <li><p>The action takes the user to another page of the same dialog or an external source like
+                documentation:</p>
                 <img src="link_after.png" width="465" alt=""/>
-                <p><emphasis>The Manage scope link takes to another page of the Settings dialog.</emphasis></p>
-                <p><control>Exception</control>: Next and Previous buttons in wizard navigation.</p>
+                <p>
+                    <emphasis>The Manage scope link takes to another page of the Settings dialog.</emphasis>
+                </p>
+                <p>
+                    <b>Exception</b>: Next and Previous buttons in wizard navigation.
+                </p>
             </li>
             <li>The command is a secondary action that is not related to the primary purpose of the window and the space
                 is
@@ -29,28 +34,46 @@
         </list>
         <table>
             <tr>
-                <td>Incorrect</td>
-                <td>Correct</td>
+                <td>
+                    <p>
+                        <format color="Red" style="bold">Incorrect</format>
+                    </p>
+                </td>
+                <td>
+                    <p>
+                        <format color="Green" style="bold">Correct</format>
+                    </p>
+                </td>
             </tr>
             <tr>
                 <td><img src="link_incorrect.png" width="313"/></td>
                 <td><img src="link_correct.png" width="272"/></td>
             </tr>
         </table>
+
         <p>Use toolbar buttons instead if there are several buttons related to a table or list:</p>
         <table>
             <tr>
-                <td>Incorrect</td>
-                <td>Correct</td>
+                <td>
+                    <p>
+                        <format color="Red" style="bold">Incorrect</format>
+                    </p>
+                </td>
+                <td>
+                    <p>
+                        <format color="Green" style="bold">Correct</format>
+                    </p>
+                </td>
             </tr>
             <tr>
                 <td><img src="many_buttons.png" width="370"/></td>
                 <td><img src="toolbar.png" width="220"/></td>
             </tr>
         </table>
+
         <p>Use a <a href="split_button.md">split button</a> instead if:</p>
         <list>
-            <li>There are several related actions (more than 2) but the space is limited and/or packed.</li>
+            <li>There are several related actions (more than 2), but the space is limited and/or packed.</li>
             <li>The action is not common and is dangerous, for example, can destroy user data and cannot be easily
                 undone.
             </li>
@@ -58,12 +81,14 @@
         <p>Use a <a href="built_in_button.md">built-in button</a> instead if it's related to an input field, combo box,
             search field.</p>
     </chapter>
+
+
     <chapter title="How to use" id="how-to-use">
         <chapter title="Label" id="label">
             <p>The label displays the action the button performs.</p>
             <p>Write the label as an imperative verb, e.g. Save, Print, Cancel. Use title capitalization.</p>
             <p>
-                <control>Exceptions</control>
+                <b>Exceptions</b>
                 : standard buttons like OK, Back/Forward, Previous/Next, Yes/No, Agree, Options, Settings, Details.
             </p>
             <p>The button should answer the question in the title, so the user can skip the description. Prefer specific
@@ -71,8 +96,16 @@
                 generic ones:</p>
             <table>
                 <tr>
-                    <td>Incorrect</td>
-                    <td>Correct</td>
+                    <td>
+                        <p>
+                            <format color="Red" style="bold">Incorrect</format>
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            <format color="Green" style="bold">Correct</format>
+                        </p>
+                    </td>
                 </tr>
                 <tr>
                     <td><img src="default_OK.png" width="72"/>
@@ -82,23 +115,31 @@
                 </tr>
             </table>
             <p>
-                <control>Exception</control>
-                : the Cancel button if it is clear what action is being canceled. For example, use the Cancel button,
-                not the Don’t Create button.
+                <b>Exception</b>: the Cancel button if it is clear what action is being canceled.
+                For example, use the Cancel button, not the Don’t Create button.
             </p>
             <p>The label should be short, not more than 5 words. If it’s not obvious what element the button is related
                 to, add more
                 words to make it clear. Prefer clear labels to short:</p>
             <table>
                 <tr>
-                    <td>Acceptable</td>
-                    <td>Better</td>
+                    <td>
+                        <p>
+                            <format color="DarkOrange" style="bold">Acceptable</format>
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            <format color="Green" style="bold">Better</format>
+                        </p>
+                    </td>
                 </tr>
                 <tr>
                     <td><img src="active_edit.png" width="72"/></td>
                     <td><img src="active_edit_action_icon.png" width="146"/></td>
                 </tr>
             </table>
+
             <p>Add an ellipsis if additional actions such as adding more info or confirming the action are required:
                 <img src="buttons_with_ellipsis.png" width="146" alt=""/></p>
             <p>Do
@@ -106,16 +147,24 @@
                 add ellipsis if another window is opened, but no more input from the user is required. For example,
                 About, Details.
             </p>
-            <p>Do
-                <control>not</control>
+            <p>Do <b>not</b>
                 use the word
                 <emphasis>Now</emphasis>
-                in the label because button always trigger an immediate action:
+                in the label because buttons always trigger an immediate action:
             </p>
+
             <table>
                 <tr>
-                    <td>Incorrect</td>
-                    <td>Better</td>
+                    <td>
+                        <p>
+                            <format color="Red" style="bold">Incorrect</format>
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            <format color="Green" style="bold">Better</format>
+                        </p>
+                    </td>
                 </tr>
                 <tr>
                     <td><img src="check_now.png" width="336"/></td>
@@ -124,22 +173,26 @@
             </table>
             <p>Use the
                 <emphasis>Close</emphasis>
-                label only if nothing can be changed in the dialog and there is no confirmation button, for example in
-                the Productivity Guide dialog. In all other cases, use the
-                <emphasis>Cancel</emphasis>
+                label only if nothing can be changed in the dialog and there is no confirmation button, for example, in
+                the
+                <ui-path>Help | My Productivity</ui-path>
+                dialog.
+                In all other cases, use the
+                <control>Cancel</control>
                 button.
             </p>
             <p>Do
-                <control>not</control>
+                <b>not</b>
                 add an icon to the button. The main purpose of an icon is to quickly find a familiar action in a packed
-                toolbar or menu. Usually, no more than 3 buttons are placed nearby, their labels can be scanned quickly
-                and icons are
-                not required.
+                toolbar or menu. Usually, no more than 3 buttons are placed nearby, their labels can be scanned quickly,
+                and icons are not required.
             </p>
         </chapter>
+
+
         <chapter title="Hover" id="hover">
             <p>On hovering over a button, show a tooltip with the shortcut and the action name if it can be clarified.
-                For more details
+                For more details,
                 see <a href="context_help.md">Context help</a>.</p>
             <table style="none">
                 <tr>
@@ -158,6 +211,8 @@
             </table>
         </chapter>
     </chapter>
+
+
     <chapter title="Button states" id="button-states">
         <chapter title="Default" id="default">
             <table style="none">
@@ -185,19 +240,21 @@
             or
             <shortcut>Cmd+Enter</shortcut>
             on macOS.
-            **Exception**: If the focus is on an element that uses the
+            <b>Exception</b>: If the focus is on an element that uses the
             <shortcut>Enter</shortcut>
             key (e.g. a text area), the default button is triggered only by
             <shortcut>Ctrl+Enter</shortcut>
             on Windows/Linux and
             <shortcut>Cmd+Enter</shortcut>
             on macOS.
-            <p>The default button should be always present in a dialog. Only one button in a dialog can be the default
+            <p>The default button should always be present in a dialog. Only one button in a dialog can be the default
                 one.</p>
-            <p>If the action is dangerous, e.g. can lead to data loss, provide an easy way to undo the command.</p>
+            <p>If the action is dangerous, e.g., can lead to data loss, provide an easy way to undo the command.</p>
             <p>If it's not possible to undo the action, make a secondary button the default one:
                 <img src="merge_dialog.png" width="426" alt=""/></p>
         </chapter>
+
+
         <chapter title="Focused" id="focused">
             <img src="focused.png" width="78" alt=""/>
             <p>All buttons can get focus, even on macOS if the
@@ -207,14 +264,14 @@
                 A focused button behavior varies on macOS/Linux and Windows.
             </p>
             <p>
-                <control>macOS</control>
+                <b>macOS</b>
             </p>
             <list>
                 <li>
                     <p>A focused button is invoked by pressing
                         <shortcut>Space</shortcut>
                         . Focused and default buttons are
-                        <control>independent</control>
+                        <b>independent</b>
                         ,
                         so when
                         the focus moves from one button to another, the default button does not change.
@@ -222,8 +279,9 @@
                 </li>
                 <li>
                     <p>Make the second most popular button in the dialog focused. For example, the
-                        <emphasis>New Window</emphasis>
-                        button in the Open Project
+                        <control>New Window</control>
+                        button in the
+                        <control>Open Project</control>
                         dialog:
                         <img src="open_project_dialog.png" width="448" alt=""/></p>
                 </li>
@@ -231,16 +289,23 @@
                     <p>It’s recommended to have one default and one focused button, so that most of the actions can be
                         triggered using
                         the keyboard.</p>
-                    <p>Incorrect</p>
+                    <p>
+                        <format color="Red" style="bold">Incorrect</format>
+                    </p>
                     <img src="open_project_dialog_incorrect_focus.png" width="448" alt=""/></li>
             </list>
             <p>
-                <emphasis>The Window button is the default and the focused one, while it’s better to place the focus on
-                    the New Window button, so that the user can access both options using the keyboard.
+                <emphasis>The
+                    <control>This Window</control>
+                    button is the default and the focused one, while it’s
+                    better to place the focus on the
+                    <control>New Window</control>
+                    button, so that the user can
+                    access both options using the keyboard.
                 </emphasis>
             </p>
             <p>
-                <control>Windows/Linux</control>
+                <b>Windows/Linux</b>
             </p>
             <list>
                 <li>The focused button is triggered by pressing
@@ -252,28 +317,45 @@
                     <shortcut>Ctrl+Enter</shortcut>
                     .
                     <img src="open_project_dialog_win.png" width="672" alt=""/>
-                    <emphasis>On pressing the <shortcut>Tab</shortcut> key, the New Window button gets the focus and is triggered with Enter
-                        or Space. The original This Window button is triggered with Ctrl+Enter.
+                    <emphasis>On pressing the
+                        <shortcut>Tab</shortcut>
+                        key, the
+                        <control>New Window</control>
+                        button gets the focus and is triggered with
+                        <shortcut>Enter</shortcut>
+                        or
+                        <shortcut>Space</shortcut>
+                        .
+                        The original
+                        <control>This Window</control>
+                        button is triggered with
+                        <shortcut>Ctrl+Enter</shortcut>
+                        .
                     </emphasis>
                     If the focus moves to a control that’s not a button, the original default button is triggered by
-                    <shortcut>
-                        Enter
-                    </shortcut>
+                    <shortcut>Enter</shortcut>
                     .
                 </li>
             </list>
         </chapter>
+
+
         <chapter title="Disabled" id="disabled">
             <img src="button_disabled.png" width="72" alt=""/>
             <p>Disable a button if:</p>
             <list>
-                <li>It’s an Apply button and no changes have been made in this dialog.</li>
+                <li>It’s an
+                    <control>Apply</control>
+                    button and no changes have been made in this dialog.
+                </li>
                 <li>The control to which the button is related is disabled.</li>
                 <li>Not all required fields in the dialog are filled. For more details, see the <a>Required fields</a>.
                 </li>
             </list>
             <p>Other common buttons are described below. They can be regular or default buttons.</p>
         </chapter>
+
+
         <chapter title="Cancel" id="cancel">
             <p>The
                 <emphasis>Cancel</emphasis>
@@ -286,15 +368,15 @@
                 or
                 <shortcut>Cmd+Period</shortcut>
                 on macOS.
-                If a confirmation button is present in a dialog, e.g.
-                <emphasis>OK</emphasis>
+                If a confirmation button is present in a dialog, e.g.,
+                <control>OK</control>
                 or
-                <emphasis>Save</emphasis>
+                <control>Save</control>
                 , it’s recommended to have a button that cancels the
                 dialog, e.g.,
-                <emphasis>Cancel</emphasis>
+                <control>Cancel</control>
                 ,
-                <emphasis>Continue Editing</emphasis>
+                <control>Continue Editing</control>
                 , etc.
             </p>
         </chapter>
@@ -308,7 +390,7 @@
         <chapter title="Help" id="help">
             <p>The help button appears in the bottom-left corner of a dialog and shows help in a tooltip on hover, or
                 opens a help
-                dialog on clicking it. For more details see <a href="context_help.md">Context help</a>.
+                dialog on clicking it. For more details, see <a href="context_help.md">Context help</a>.
                 <img src="helpButton_mac.png" width="21" alt=""/></p>
         </chapter>
     </chapter>
@@ -317,7 +399,7 @@
             72px.</p>
         <img src="button_sizes.png" width="491" alt=""/>
         <p>The button height is fixed, so the label is always a single line.</p>
-        <p>To lay out the button that depends on other control, e.g. input field, follow the rules
+        <p>To lay out the button that depends on other control, e.g., input field, follow the rules
             for <a href="layout.md" anchor="dependent-controls">dependent controls</a>. Otherwise, follow
             the rules for <a href="layout.md" anchor="independent-controls">independent controls</a>.</p>
         <!--

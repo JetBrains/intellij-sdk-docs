@@ -4,6 +4,12 @@
 
 <link-summary>UI guidelines on using proper fonts in different contexts.</link-summary>
 
+<tldr>
+
+**Implementation:** [`JBFont`](%gh-ic%/platform/util/ui/src/com/intellij/util/ui/JBFont.java)
+
+</tldr>
+
 ## IDE font
 
 The system fonts are used for the IDE user interface by default. The default font sizes are below:
@@ -42,7 +48,7 @@ Use the built-in text styles from the table below whenever possible.
   <td> <p>Usage&nbsp;&nbsp;&nbsp;<a href="typography.md">Examples</a> </p></td></tr>
 
   <tr>
-    <td> <strong>H0 bold</strong> <code>JBFont.h0().asBold()</code></td>
+    <td> <strong>H0 bold</strong> <br/><code>JBFont.h0().asBold()</code></td>
     <td> Default + 12 </td>
     <td>
         Rich text headers. See the "What’s New" page example below.
@@ -50,19 +56,19 @@ Use the built-in text styles from the table below whenever possible.
   </tr>
 
   <tr>
-    <td> <strong>H1 bold</strong> <code>JBFont.h1().asBold()</code></td>
+    <td> <strong>H1 bold</strong> <br/><code>JBFont.h1().asBold()</code></td>
     <td> Default + 9 </td>
     <td> </td>
   </tr>
 
   <tr>
-    <td >H2<code>JBFont.h2()</code></td>
+    <td >H2 <br/><code>JBFont.h2()</code></td>
     <td> Default + 5 </td>
-    <td class="table-line"> </td>
+    <td> </td>
   </tr>
 
   <tr>
-    <td> <strong>H2 bold</strong> <code>JBFont.h2().asBold()</code></td>
+    <td> <strong>H2 bold</strong> <br/><code>JBFont.h2().asBold()</code></td>
     <td> </td>
     <td>
         Small page header. Examples: Plugin name, GitHub timeline header
@@ -70,15 +76,15 @@ Use the built-in text styles from the table below whenever possible.
   </tr>
 
   <tr>
-    <td > H3<code>JBFont.h3()</code></td>
+    <td > H3 <br/><code>JBFont.h3()</code></td>
     <td> Default + 3 </td>
-    <td class="table-line">
+    <td>
         Accent body text
     </td>
   </tr>
 
   <tr>
-    <td><strong>H3 bold</strong><code>JBFont.h3().asBold()</code></td>
+    <td><strong>H3 bold</strong> <br/><code>JBFont.h3().asBold()</code></td>
     <td> </td>
     <td>
         Headers in dialogs with a small number of elements (Customize page on Welcome screen, Login page in Get from VCS dialog)
@@ -150,7 +156,6 @@ If none of the built-in sizes work and a custom one is needed, define it as the 
 
 Use the underlined text style for hovered links.
 
-
 ## Editor font
 
 JetBrains Mono font is used by default for the Editor.
@@ -171,7 +176,6 @@ JetBrains Mono font is used by default for the Editor.
   </tr>
 </table>
 
-
 ## Colors
 
 The IDE text colors are in the table below. The editor text colors are managed by the editor color theme.
@@ -191,7 +195,8 @@ The IDE text colors are in the table below. The editor text colors are managed b
         Labels, inputs, trees, etc.
     </td>
     <td>
-        <code>.foreground</code> keys for various UI controls. Examples:
+        <code>.foreground</code> keys for various UI controls.
+        <br/>Examples:<br/>
         <code>Label.foreground</code>
         <code>Button.foreground</code>
         <code>ComboBox.foreground</code>
@@ -231,12 +236,13 @@ The IDE text colors are in the table below. The editor text colors are managed b
         Disabled labels, disabled links
     </td>
     <td>
-        <code>.disabledForeground</code> and <code>.disabledText</code> keys for various UI controls. Examples:
-        <code>Label.disabledForeground</code> <br/>
-        <code>ComboBox.disabledForeground</code> <br/>
-        <code>MenuItem.disabledForeground</code> <br/>
-        <code>CheckBox.disabledText</code> <br/>
-        <code>Button.disabledText</code> <br/>
+        <code>.disabledForeground</code> and <code>.disabledText</code> keys for various UI controls.
+        <br/>Examples:<br/>
+        <code>Label.disabledForeground</code>
+        <code>ComboBox.disabledForeground</code>
+        <code>MenuItem.disabledForeground</code>
+        <code>CheckBox.disabledText</code>
+        <code>Button.disabledText</code>
 </td>
   </tr>
 
@@ -248,7 +254,8 @@ The IDE text colors are in the table below. The editor text colors are managed b
         Selected text
     </td>
     <td>
-        <code>.selectionForeground</code> keys for various UI controls. Examples:
+        <code>.selectionForeground</code> keys for various UI controls.
+        <br/>Examples:<br/>
         <code>MenuItem.selectionForeground</code>
         <code>Table.selectionForeground</code>
     </td>
@@ -262,12 +269,12 @@ The IDE text colors are in the table below. The editor text colors are managed b
         Links
     </td>
     <td>
-        Use the component <code>LinkLabel</code> <br/><br/>
-        Color keys: <br/>
-        <code>Link.activeForeground</code> <br/>
-        <code>Link.hoverForeground</code> <br/>
-        <code>Link.pressedForeground</code> <br/>
-        <code>Link.visitedForeground</code> <br/>
+        Use the component <code>LinkLabel</code>
+        <br/>Color keys: <br/>
+        <code>Link.activeForeground</code>
+        <code>Link.hoverForeground</code>
+        <code>Link.pressedForeground</code>
+        <code>Link.visitedForeground</code>
     </td>
   </tr>
 
@@ -284,7 +291,6 @@ The IDE text colors are in the table below. The editor text colors are managed b
   </tr>
 </table>
 
-
 ## Examples
 
 What’s New page that appears in the Editor tab:
@@ -294,7 +300,6 @@ What’s New page that appears in the Editor tab:
 Plugin page in the Settings dialog:
 
 ![](plugins.png)
-
 
 Log in to GitHub page in the dialog:
 

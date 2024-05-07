@@ -45,7 +45,7 @@ Use the built-in text styles from the table below whenever possible.
 
   <tr><td> Name </td>
   <td> Font size </td>
-  <td> <p>Usage&nbsp;&nbsp;&nbsp;<a href="typography.md">Examples</a> </p></td></tr>
+  <td> Usage&nbsp;Examples </td></tr>
 
   <tr>
     <td> <strong>H0 bold</strong> <br/><code>JBFont.h0().asBold()</code></td>

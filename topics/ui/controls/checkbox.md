@@ -95,11 +95,12 @@ An indeterminate checkbox can also show the download status. An example with a r
 
 **Implementation**: In a table, the three-state checkbox is represented by [`ThreeStateCheckBoxRenderer`](%gh-ic%/platform/lang-impl/src/com/intellij/profile/codeInspection/ui/table/ThreeStateCheckBoxRenderer.java)
 that provides both `TableCellRenderer` and `TableEditor`.
-It accepts `Boolean` type in the column being supplied by the `TableModel` and becomes `DONT_CARE` when the value in the cell is null. Otherwise it becomes `SELECTED` for `Boolean.TRUE`, and `NOT_SELECTED` for `Boolean.FALSE`.
+It accepts `Boolean` type in the column being supplied by the `TableModel` and becomes `DONT_CARE` when the value in the cell is null.
+Otherwise, it becomes `SELECTED` for `Boolean.TRUE`, and `NOT_SELECTED` for `Boolean.FALSE`.
 
 ## Placement
 
-If a checkbox depends on another control, e.g. an input field, follow the rules for [dependent controls](layout.md#dependent-controls). Otherwise, follow the rules for [independent controls](layout.md#independent-controls).
+If a checkbox depends on another control, e.g., an input field, follow the rules for [dependent controls](layout.md#dependent-controls). Otherwise, follow the rules for [independent controls](layout.md#independent-controls).
 
 <!--
 ### Colors

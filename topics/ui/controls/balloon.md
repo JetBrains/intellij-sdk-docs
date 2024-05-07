@@ -40,7 +40,7 @@ Use in case of an event or state that might slow the user's work down or require
 ![](03_warning.png){width=389}
 
 #### Information
-Use to suggest optimizations for the IDE settings and notify on the results of a process that is not tied to any tool window.
+Use to suggest optimizations for the IDE settings and notify about the results of a process that is not tied to any tool window.
 
 ![](04_information.png){width=389}
 
@@ -90,9 +90,9 @@ If the message fits well in one sentence and does not require a separate title, 
 ### Body
 
 Provide the details on the event or system state to help users decide what to do next:
-* What is the cause or trigger.
-* What are the consequences.
-* What exactly is affected: files, libraries, versions, plugins, etc.
+* What is the cause or trigger?
+* What are the consequences?
+* What exactly is affected? Files, libraries, versions, plugins, etc.
 
 Note that only the first line of the body text is visible by default. The rest of the message is only visible when expanded with an arrow icon.
 Make the beginning of the text most informative.
@@ -108,9 +108,9 @@ If the notification is informational and there is a possibility it might appear 
 
 ![](04_information.png){width=389}
 
-Preferable number of actions is two, as it is easier for the user to choose.
+The Preferable number of actions is two, as it is easier for the user to choose.
 
-If a set of more than 2 actions will be useful for the user, place the primary action first, and hide the others under the "More actions" dropdown:
+If a set of more than 2 actions is useful for the user, place the primary action first, and hide the others under the "More actions" dropdown:
 
 ![](08_dropdown.png){width=389}
 
@@ -118,7 +118,7 @@ If the notification reports an error or warning, always provide an action to hel
 
 ![](02_error.png){width=389}
 
-If no actions are available, provide more details in the body text, e.g. how to fix the error or what is the warning/error cause:
+If no actions are available, provide more details in the body text, e.g., how to fix the error or what is the warning/error cause:
 
 <format color="Red" style="bold">Incorrect</format>
 

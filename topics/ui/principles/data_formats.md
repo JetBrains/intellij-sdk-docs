@@ -69,7 +69,7 @@ See the table below to understand in which cases to show date and time.
         05 Jan<br />
         05 Jan 2017
     </td>
-    <td>Omit the time for events if the exact time does not matter, e.g. Annotate panel<br /><br />
+    <td>Omit the time for events if the exact time does not matter, e.g., Annotate panel<br /><br />
         Use <i>Today</i> and <i>Yesterday</i> for the last two days, use exact date for all other days<br /><br />
         Do <b>not</b> show the year if it’s within the current calendar year
     </td>
@@ -80,7 +80,7 @@ See the table below to understand in which cases to show date and time.
         05 Jan, 14:04<br />
         05 Jan 2019, 14:04
     </td>
-    <td>When it is important to know the exact sequence of actions, e.g. Version Control Log</td>
+    <td>When it is important to know the exact sequence of actions, e.g., Version Control Log</td>
 </tr>
 <tr>
     <td>Time</td>
@@ -90,7 +90,7 @@ See the table below to understand in which cases to show date and time.
 <tr>
     <td>Date and day of week</td>
     <td>Tuesday, 30 August</td>
-    <td>Use as headers in timelines, e.g. Event Log. The day of the week helps to quickly understand how long ago was the event<br /><br />
+    <td>Use as headers in timelines, e.g., Event Log. The day of the week helps to quickly understand how long ago was the event<br /><br />
         Use <i>Today</i> and <i>Yesterday</i> for the last two days, use exact date for all other days
     </td>
 </tr>
@@ -100,7 +100,7 @@ See the table below to understand in which cases to show date and time.
        10 minutes ago<br />
        2 hours ago
     </td>
-    <td><p>Use for a single event that happened recently, e.g. in the Status bar:</p>
+    <td><p>Use for a single event that happened recently, e.g., in the Status bar:</p>
         <p><img src="approximate.png" width="215" /></p>
         <p>Do <b>not</b> use in tables as it’s harder to compare.</p>
         <p>If more than 12 hours have passed since the event, use Date format</p>
@@ -142,7 +142,7 @@ See the table below to understand in which cases to show date and time.
         1 m 30 s<br />
         05 Jan 2019, 14:04
     </td>
-    <td>Use for changing duration. Select units depending on the process type. E.g. Unit tests usually run less than a minute, so show only seconds and milliseconds. Build tasks usually run more than a minute, so show minutes and seconds.<br /><br />
+    <td>Use for changing duration. Select units depending on the process type. E.g., Unit tests usually run less than a minute, so show only seconds and milliseconds. Build tasks usually run more than a minute, so show minutes and seconds.<br /><br />
         Omit hours and seconds that do not provide additional data
 </td>
 </tr>
@@ -217,7 +217,8 @@ Place units after the input field.
 Right-align numeric values.
 ![](data_formats_table.png){width=299}
 
-Include the unit in the column header if all values share the same unit. Convert each number to use the same unit. If it’s not possible, e.g. the scatter of numbers is too large, include the unit with each value.
+Include the unit in the column header if all values share the same unit. Convert each number to use the same unit.
+If it’s not possible, e.g., the scatter of numbers is too large, include the unit with each value.
 
 | <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
 |-----------------------------------------------------|-----------------------------------------------------|

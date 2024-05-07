@@ -24,7 +24,7 @@ Use sentence case for process names.
 
 A process name remains unchanged while the process runs.
 
-Do not animate the ellipsis, it attracts too much attention.
+Do not animate the ellipsis, as it attracts too much attention.
 The progressive verb form, the text position and the style are enough to understand that this is an action in progress.
 
 ### Details
@@ -66,7 +66,7 @@ If the process can be cancelled, add a [link](link.md) for the cancel action for
 Use title case for the cancel action.
 
 Replace progress text with the loaded data or an [empty state](empty_state.md) when the process has finished.
-Show another progress indicator, e.g. a loader as in the example below, if loading continues after some data has been displayed.
+Show another progress indicator, e.g., a loader as in the example below, if loading continues after some data has been displayed.
 ![](empty_state_text.png){width=708}
 
 ### Trees
@@ -82,7 +82,8 @@ If it is longer than 200px, center-align characters from the first 200px and put
 
 Left-align subsequent lines with the first line.
 
-Minimum text width is 40 characters. If an area is too narrow to fit the minimum text width, show text using the whole width, including margins.
+The minimum text width is 40 characters.
+If an area is too narrow to fit the minimum text width, show text using the whole width, including margins.
 If no space is left, hide the text under area borders.
 
 Wrap text when the area’s width changes.

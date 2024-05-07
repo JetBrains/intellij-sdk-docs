@@ -22,12 +22,12 @@ Use controls that are constrained to valid values. For example, use a combo box 
 
 Limit the characters users can enter. For example, if only numbers are supported in a field, and this is obvious to the user, ignore input of letters instead of showing an error:
 ![](port_correct.png){width=188}
-If it’s not obvious that only numbers can be entered, allow to enter any sign and perform validation.
+If it’s not obvious that only numbers can be entered, allow entering any sign and perform validation.
 ![](font_error.png){width=301}
 
 Provide a default value if possible. Even if the user decides to change the default value, it gives a clue on the expected input format.
 
-Write instructions and examples on how to fill a form using [сontext help](context_help.md).
+Write instructions and examples on how to fill a form using [context help](context_help.md).
 
 If it’s not possible to limit input, try to show an error as soon as possible so that the user can quickly return and fix it.
 
@@ -91,7 +91,7 @@ If a non-allowed character is entered, or the maximum input size or value is exc
 
 #### How it works {id="how-it-works_1"}
 
-The field is highlighted with red and the error appears in the tooltip.
+The field is highlighted with red, and the error appears in the tooltip.
 
 ![](create_class.png){width=373}
 
@@ -201,7 +201,7 @@ Highlight all invalid fields, move the focus to the first invalid field and show
 
 Hide the tooltip and the red highlighting when the user starts editing the invalid value or entering symbols into the empty required field.
 
-Show the error tooltip for the next field when it gets the focus, hover or the user clicks the "Add" button one more time.
+Show the error tooltip for the next field when it gets the focus, hover, or the user clicks the "Add" button one more time.
 
 #### Implementation {id="implementation_3"}
 
@@ -288,7 +288,7 @@ On hover over the field or the element with an error:
 ![](validation_table_hover.png){width=429}
 
 Show the tooltip above the field and move it 40px right, so that the controls above it are not overlapped.
-If there is an important info above the field, the tooltip can be shown on the right.
+If there is important info above the field, the tooltip can be shown on the right.
 
 
 
@@ -400,7 +400,7 @@ Use encouraging tone:
 
 A warning informs the user that something is configured incorrectly, but does not prevent them from applying the changes.
 
-A warning can appear on input, focus loss, or on reopening a filled form. For example, make the empty field Target name as warning on reopening:
+A warning can appear on input, focus loss, or on reopening a filled form. For example, make the empty field <control>Target name</control> show a warning on reopening:
 
 ![](warning_dialog.png){width=580}
 
@@ -426,9 +426,9 @@ On the form under the controls. Show the message with the yellow warning icon.
 
 Mark all navigation elements for areas that contain warnings with yellow icons.
 
-Update the problems counter when a problem is detected. When all problems have been fixed, do not show the "Problems" tab.
+Update the problem counter when a problem is detected. When all problems have been fixed, do not show the "Problems" tab.
 
-On a particular page, highlight the element that contains a warning in yellow or add warning icon next to it.
+On a particular page, highlight the element that contains a warning in yellow or add a warning icon next to it.
 
 
 
@@ -492,7 +492,7 @@ Add an error or warning icon on the right side of the invalid line.
 
 ### Multi-page dialog
 
-If validation in a multipage form can be performed only on clicking the confirmation button, then:
+If validation in a multipage form can be performed only by clicking the confirmation button, then:
 * Use red highlighting for navigation elements such as tabs, menu and list items for areas that contain errors so that the user can quickly locate the error.
 * Open the first page with an error or stay on the opened page if it has errors on clicking the confirmation button.
 
@@ -511,7 +511,7 @@ Do not allow to click "OK" button if a form contains empty required fields. For 
 
 ![](wildcard.png){width=521}
 
-Do not show error message inside the empty required field. It looks like a prefilled field, not like an error message.
+Do not show an error message inside the empty required field. It looks like a prefilled field, not like an error message.
 
 ![](goto_line.png){width=438}
 
@@ -527,8 +527,8 @@ Do not show an error immediately after opening a form. It distracts the user fro
 
 ![](add_tfs.png){width=350}
 
-Do not allow to submit the form with the error. When the form is opened again, the value is reset, so users don’t know
- if they entered incorrect data.
+Do not allow submitting the form with the error.
+When the form is opened again, the value is reset, so users don’t know if they entered incorrect data.
 
 ![](save.png){width=471}
 

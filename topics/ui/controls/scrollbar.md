@@ -58,7 +58,7 @@ If at least one inspection has failed, the overall status should be the status o
 Respect the OS settings when showing the scrollbar.
 For example, on macOS you can hide the scrollbar until you scroll the content.
 Always show the scrollbar when it is important to understand which part of the content is currently shown.
-For example, the scrollbar in the Editor helps users understand the location of the current code fragment, and the overall size of the currently opened file.
+For example, the scrollbar in the Editor helps users understand the location of the current code fragment and the overall size of the currently opened file.
 
 Show the track on hover to make the clickable area clearer. Consider not showing the track on hover if it might have more than 5–10 stripes at a time.
 
@@ -68,7 +68,7 @@ Clicking the track above/below the thumb scrolls one page up/down the viewpoint.
 This allows you to hide the up/down icons on the scrollbar to lessen the visual noise and to scroll with mouse-clicks.
 Track markers serve as a mini-map of the document.
 If they are present, clicking them takes you to the position that this marker is pointing to without having to scroll down the page.
-Change cursor to "Hand" when hovering such scrollbars.
+Change the cursor to "Hand" when hovering such scrollbars.
 
 When showing a text, wrap it instead of showing the horizontal scrollbar when possible. With both scrollbars, it is harder to manipulate the content.
 

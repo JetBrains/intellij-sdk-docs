@@ -18,7 +18,7 @@ Use simple sentences: one idea per sentence.
 Avoid passive voice.
 
 
-This way the same meaning can be expressed with less words. Compare:
+This way, the same meaning can be expressed with fewer words. Compare:
 
 <i>Those resources that are available locally</i> → <i>Local resources</i>
 
@@ -30,14 +30,14 @@ This way the same meaning can be expressed with less words. Compare:
 
 ## Remove or elaborate generic words
 
-Words like general, advanced, and options do not add useful information and can be removed with no harm to the meaning:
+Words like *general*, *advanced*, and *options* do not add useful information and can be removed with no harm to the meaning:
 
 ![](generic-general.png){width=540}
 
 ![](generic-options.png){width=540}
 *No meaning is lost after removing group headers "General" and "Options".*
 
-Some generic words cannot be removed. They can appear in actionable elements like buttons, checkboxes or links. Or removing a group header could break a dialog layout. In such cases, use a more informative label instead:
+Some generic words cannot be removed. They can appear in actionable elements like buttons, checkboxes, or links. Or removing a group header could break a dialog layout. In such cases, use a more informative label instead:
 
 ![](generic-renamed-link.png){width=576}
 *The link "Learn more" does not explain what useful information could be there for the user to click it.*
@@ -153,10 +153,10 @@ After writing a UI text, imagine seeing it for the first time and try to underst
 More examples:
 
 ![](first-time-auto-insert.png){width=318}
-*Before: The title can be read as "Auto-insert when only one checkbox is on" making you ask how does it work when both checkboxes are on. After: Replacing choice with completion option makes the title unambiguous.*
+*Before: The title can be read as "Auto-insert when only one checkbox is on" making you ask how it works when both checkboxes are on. After: Replacing choice with completion option makes the title unambiguous.*
 
 ![](first-time-smart-keys.png){width=318}
-*Before: What do smart Home and End keys do? What do they do if they are not smart? After: Added text explains what the options do so that the reader can make an informed choice.*
+*Before: What do smart Home and End keys do? What do they do if they are not smart? After: The added text explains what the options do so that the reader can make an informed choice.*
 
 
 ## Examples
@@ -248,6 +248,6 @@ More examples:
 </tr>
 <tr>
     <td> <format color="#cc4700"> or when your network connection is slow </format> </td>
-    <td> <format color="#999999"> Only one of possible uses for the offline mode and an obvious one. Can be removed for a more concise text. </format> </td>
+    <td> <format color="#999999"> Only one of possible uses for the offline mode and an obvious one. It can be removed for a more concise text. </format> </td>
 </tr>
 </table>

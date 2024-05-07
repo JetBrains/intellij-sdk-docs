@@ -10,7 +10,7 @@
 
 </tldr>
 
-A split icon button appears on a horizontal toolbar and consists of two parts: the main icon and a triangle icon for the actions list.
+A split icon button appears on a horizontal toolbar and consists of two parts: the main icon and a triangle icon for the action list.
 
 ![](split_icon_button_example.png){width=278}
 
@@ -38,7 +38,7 @@ Use the split icon button on horizontal toolbars only, as it’s too wide for ve
 
 ## How to use
 
-Make sure that all actions in the popup menu have icons. When an action is launched its icon will be used as the main icon.
+Make sure that all actions in the popup menu have icons. When an action is launched, its icon will be used as the main icon.
 
 ![](behavior.png){width=325}
 
@@ -52,7 +52,7 @@ The tooltip for the main icon action is shown on hovering over it.
 
 ![](split_icon_button_hover.png){width=192}
 
-The main icon invokes its action on click. The triangle icon opens the actions menu on click:
+The main icon invokes its action on click. The triangle icon opens the action menu on click:
 
 ![](click.png){width=325}
 

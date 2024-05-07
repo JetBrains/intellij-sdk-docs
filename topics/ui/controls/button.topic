@@ -116,7 +116,7 @@
             </table>
             <p>
                 <b>Exception</b>: the Cancel button if it is clear what action is being canceled.
-                For example, use the Cancel button, not the Don’t Create button.
+                For example, use the <control>Cancel</control> button, not the <control>Don’t Create</control> button.
             </p>
             <p>The label should be short, not more than 5 words. If it’s not obvious what element the button is related
                 to, add more
@@ -242,7 +242,7 @@
             on macOS.
             <b>Exception</b>: If the focus is on an element that uses the
             <shortcut>Enter</shortcut>
-            key (e.g. a text area), the default button is triggered only by
+            key (e.g., a text area), the default button is triggered only by
             <shortcut>Ctrl+Enter</shortcut>
             on Windows/Linux and
             <shortcut>Cmd+Enter</shortcut>
@@ -390,7 +390,7 @@
         <chapter title="Help" id="help">
             <p>The help button appears in the bottom-left corner of a dialog and shows help in a tooltip on hover, or
                 opens a help
-                dialog on clicking it. For more details, see <a href="context_help.md">Context help</a>.
+                dialog when clicking it. For more details, see <a href="context_help.md">Context help</a>.
                 <img src="helpButton_mac.png" width="21" alt=""/></p>
         </chapter>
     </chapter>

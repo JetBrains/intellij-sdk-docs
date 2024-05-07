@@ -58,7 +58,7 @@ Make mnemonics in the label discoverable, they must be easy to find:
 Make it easy to remember for the most frequently used actions:
 
 * Use standard Windows mnemonic if any. For example, Properties, Rename, Delete, Cut, Copy, Paste, Exit, etc.
-  Note, that Windows users are more likely to form habits for mnemonics as mnemonics are not that common on Mac or Linux.
+  Note that Windows users are more likely to form habits for mnemonics as mnemonics are not that common on macOS or Linux.
 
 * Do **not** use silent letters. For example, Design, Column, etc.
 

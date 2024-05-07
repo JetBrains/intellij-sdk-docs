@@ -7,7 +7,7 @@
 Use the following rules for labels and description texts in IntelliJ user interfaces. For punctuation in numbers and times, see [Data formats](data_formats.md).
 
 ## Ellipsis
-End an action name with an ellipsis if it opens a dialog where input is required or possible. An ellipsis helps users understand if an action is immediate or additional interaction is to follow.
+End an action name with an ellipsis if it opens a dialog where input is required or possible. An ellipsis helps users understand if an action is immediate, or additional interaction is to follow.
 
 <p>This rule applies to actions in the following controls: <a href="button.topic">button</a>, <a href="link.md">link</a>, menu item.</p>
 
@@ -72,7 +72,7 @@ If a text consists of several sentences, put a period after each sentence.
 
 Do **not** put a period at the end of an IDE action.
 ![](1_03_periods_action.png){width=385}
-*The empty text consists of two sentences but the second one is an IDE action so it should not have a period.*
+*The empty text consists of two sentences, but the second one is an IDE action, so it should not have a period.*
 
 <p>Note that links that are not IDE actions can have a period in the end.</p>
 

@@ -64,7 +64,7 @@ When possible, replace "Learn more" and other generic phrases with more informat
 
 
 ### Link as a part of text
-A link can be a part of a checkbox or radio button label or of any stand-alone text, like text in an [empty state](empty_state.md) or in [context help](context_help.md).
+A link can be a part of a checkbox or radio button label or of any stand-alone text, like the text in an [empty state](empty_state.md) or in [context help](context_help.md).
 
 ![](09_part_of_text_1.png){width=403}
 
@@ -98,7 +98,7 @@ ActionLink externalLink = new ActionLink("External link", event -> {
 externalLink.setExternalLinkIcon();
 ```
 
-An exception is a help topic link in [empty states](empty_state.md). The help icon already hints that this is an external help resource so the arrow icon is unnecessary.
+An exception is a help topic link in [empty states](empty_state.md). The help icon already hints that this is an external help resource, so the arrow icon is unnecessary.
 ![](12_external_link_no_icon.png){width=164}
 
 

@@ -43,7 +43,7 @@ Do **not** show the tool window button if the tool window is not relevant to the
 
 If a tool window has no content yet, show its button by default only if the window contains basic functionality that is likely to be used for all projects, for example, Version Control or Problems. Otherwise, do not show the tool window button by default.
 
-Add a toolbar for [frequently used actions and filters](toolbar.md#what-items-to-add-on-toolbar). Use a horizontal toolbar for vertical tool windows and a vertical toolbar for horizontal tool windows. For more details see the [toolbar guidelines](toolbar.md).
+Add a toolbar for [frequently used actions and filters](toolbar.md#what-items-to-add-on-toolbar). Use a horizontal toolbar for vertical tool windows and a vertical toolbar for horizontal tool windows. For more details, see the [toolbar guidelines](toolbar.md).
 
 Put tool window viewing mode settings under the gear icon in the header. If there is no toolbar, put other options under the gear icon as well. For example, see the gear icon in the Project tool window.
 

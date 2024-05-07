@@ -16,7 +16,7 @@ Tabs organize content in dialogs by grouping similar UI controls.
 
 In code editors, tabs are created with another component — [`JBEditorTabs`](%gh-ic%/platform/platform-api/src/com/intellij/ui/tabs/impl/JBEditorTabs.java). It supports extended functionality like icons, closeable, and draggable tabs. Do **not** use this component in dialogs.
 
-In tool windows, tabs are generated automatically. See [Tool window](tool_window.md).
+In tool windows, tabs are generated automatically. See also [Tool window](tool_window.md).
 
 
 ## When to use
@@ -34,9 +34,9 @@ See [Writing short and clear](writing_short.md).
 
 ![](02_naming.png){width=284}
 
-Place the most frequently used content in first tabs.
+Place the most frequently used content in the first tab.
 Tabs that do not fit allotted screen space automatically hide under the dropdown component.
-(It is better to add no more than 8 tabs but this number is not limited.)
+(It is better to add no more than 8 tabs, but this number is not limited.)
 
 ![](03_hidden_tabs.png){width=533}
 
@@ -63,7 +63,7 @@ Do **not** surround the tab content area with a visible border.
 
 ![](05_bordered.png){width=595}
 
-Avoid placing independent content groups under the tabs area.
+Avoid placing independent content groups under the tabs' area.
 
 <format color="Red" style="bold">Incorrect</format>
 

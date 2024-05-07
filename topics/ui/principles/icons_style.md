@@ -51,7 +51,7 @@ Icons should be as simple as possible without losing their meaning. Clean and si
 ## Grid and size
 Basically, icons fit into a square artboard. Leave a transparent padding around the perimeter. For default 16px icons, the transparent border is 1px, so the icon’s visible part should be inside the 14px x 14px area.
 ![](grid.png){width=251}
-*14px x 14px is the area where the visible part <br/> of the icon should fit for an 16px icon.*
+*14px x 14px is the area where the visible part <br/> of the icon should fit for a 16px icon.*
 
 Content should only go beyond the borders if a [modifier](#modifier) is added, or if additional visual weight is required.
 
@@ -100,7 +100,7 @@ Use basic shapes to build icons, such as squares, circles and rectangles. Using 
 
 Make sure that icons have the same visual weight. The more filled an icon is, the less space it needs. Following this rule, circles, rhombuses, triangles and other non-square shapes should have larger height and width to be optically balanced with square figures.
 ![](shapes_weight_1.png){width=542}
-*Make the circle diameter 2px bigger than square icons’ height to compensate the visual weight.*
+*Make the circle diameter 2px bigger than square icons’ height to compensate for the visual weight.*
 
 Icons with more details should occupy more space.
 ![](shapes_weight_2.png){width=542}
@@ -120,7 +120,7 @@ Use a 2px stroke as the main drawing line. Consistent line weight makes icons co
 </tr>
 <tr>
     <td><em>Use consistent stroke width.</em></td>
-    <td><em>A thinner stroke can be used for subtle tweaks to the&nbsp;legibility of an icon and for optical correction.</em></td>
+    <td><em>A thinner stroke can be used for subtle tweaks to the legibility of an icon and for optical correction.</em></td>
 </tr>
 </table>
 
@@ -148,7 +148,7 @@ Use the 30°, 45° and 60° angles for diagonal lines as they look sharper than 
 
 Round shapes, small details and some letters cannot be aligned to the pixel grid. Make sure that the significant pixels have sufficient saturation.
 
-Reduce the number of anchors, as they increase the size of the image and takes longer to process it.
+Reduce the number of anchors as they increase the size of the image and takes longer to process it.
 
 <table>
 <tr>
@@ -178,7 +178,8 @@ The default modifier position is the bottom right corner. If the base shape is b
   </tr>
   </table>
 
-A modifier size is from 6px to 9px, depending on the shape weight.  Leave a 1-2px spacing between the modifier and the main shape, to make the modifier clearly visible.
+A modifier size is from 6px to 9px, depending on the shape's weight.
+Leave a 1-2px spacing between the modifier and the main shape, to make the modifier clearly visible.
 ![](modifier_size.png){width=577}
 *Modifier sizes*
 
@@ -201,7 +202,7 @@ Unfilled arrowhead can be used if there is only one arrow on an icon to reduce e
 </tr>
 </table>
 
-Do **not** use other arrow styles, for example unfilled arrows or arrows with thinned tails.
+Do **not** use other arrow styles, for example, unfilled arrows or arrows with thinned tails.
 
 <format color="Red" style="bold">Incorrect</format>
 
@@ -216,7 +217,8 @@ Do not use gradients or shadows.
 ### Action icons
 
 An action icon is an icon that triggers an action. It usually appears on toolbars and in dialogs.
-There are 5 colors in the actions icons palette. Dark version is for Darcula theme.
+There are 5 colors in the action icons palette.
+The dark version is for Darcula theme.
 
 [//]: # (<note>Download a <a href="../../../images/ui/icons/Icons template.sketch" download>Sketch file</a> with the&nbsp;color palette.</note>)
 
@@ -299,12 +301,12 @@ Use these colors according to the following rules:
         </tr>
         <tr>
             <td> <b>Blue</b> <p>Accent color to highlight popular icons based on usage statistics, highlight small elements in complex icons</p> <br /><img src="colors_actions_blue.png" /> </td>
-            <td> <b>Yellow</b> <p>Warning actions: attract attention to the places (e.g. code) that can be optimized or improved</p> <br /><img src="colors_actions_yellow.png" /> </td>
+            <td> <b>Yellow</b> <p>Warning actions: attract attention to the places (e.g., code) that can be optimized or improved</p> <br /><img src="colors_actions_yellow.png" /> </td>
         </tr>
     </table>
 
 
-3. Preserve colors in icons combinations. If an icon is colored in its full size, it should have the same color when reduced.
+3. Preserve colors in icon combinations. If an icon is colored in its full size, it should have the same color when reduced.
     ![](colors_actions_modifier.png){width=248}
 
 4. Use green and red colors for paired icons. Color helps distinguish between similar icons faster.

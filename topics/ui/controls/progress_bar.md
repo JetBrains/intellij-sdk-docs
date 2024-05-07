@@ -107,7 +107,7 @@ In case of success, show notification for the user-initiated tasks, in case of f
 Provide the Cancel button in the progress dialog if the process can be interrupted (see [Loading Project dialog](#in-dialog)).
 Use the Stop button if interrupting does not return the environment to its previous state.
 
-Use the Stop icon if there are several processes running at the same time in one dialog or there is not enough space for the button (e.g. [Status bar](#in-status-bar)):
+Use the Stop icon if there are several processes running at the same time in one dialog or there is not enough space for the button (e.g., [Status bar](#in-status-bar)):
 
 ![](tasks_dialog.png){width=700}
 

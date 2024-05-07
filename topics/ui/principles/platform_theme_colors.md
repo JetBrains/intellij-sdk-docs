@@ -36,7 +36,7 @@ See the meanings of the parts in a color key in the [key naming scheme](themes_m
 
 See a complete list of keys with their descriptions in the JSON files: [`IntelliJPlatform.themeMetadata.json`](%gh-ic%/platform/platform-resources/src/themes/metadata/IntelliJPlatform.themeMetadata.json), [`JDK.themeMetadata.json`](%gh-ic%/platform/platform-resources/src/themes/metadata/JDK.themeMetadata.json).
 
-See the color values for the currently selected theme in the LaF Defaults dialog:
+See the color values for the currently selected theme in the <control>LaF Defaults</control> dialog:
 
 > To store color values between theme switching, use a scratch <path>*.theme.json</path> file.
 > This might be useful if you want to test colors before implementing them.

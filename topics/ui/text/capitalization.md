@@ -17,7 +17,7 @@ Use for:
 
 Do **not** use for:
 * Actions in links
-* Actions in the popup on Alt+Enter: quick-fixes, intention actions and others
+* Actions in the popup on <shortcut>Alt+Enter</shortcut>: quick-fixes, intention actions, and others
 * Headers in notifications
 
 
@@ -27,9 +27,9 @@ Do **not** use for:
 Always capitalize the first and the last words.
 
 Capitalize the words in-between except:
-* articles: _a, an, the_,
+* articles: *a, an, the*,
 * coordinating conjunctions: *and, or, but*,
-* prepositions of four and less letters which are not a part of a phrasal verb: *in, with*.
+* prepositions of four and fewer letters which are not a part of a phrasal verb: *in, with*.
 
 In hyphenated phrases, capitalize all nouns, adjectives and adverbs: *Auto-Indent, Command-Line Launcher*.
 Do not capitalize articles, prepositions and conjunctions: *Side-by-Side, Drag-and-Drop*.
@@ -37,11 +37,11 @@ Do not capitalize articles, prepositions and conjunctions: *Side-by-Side, Drag-a
 
 ### Examples {id="examples_1"}
 
-<i>Compare With…</i> — the short preposition <i>with</i> is capitalized as the last word.
+*Compare With…* — the short preposition *with* is capitalized as the last word.
 
-<i>Compare with Latest Repository Version</i> — <i>with</i> is not capitalized when in the middle.
+*Compare with Latest Repository Version* — *with* is not capitalized when in the middle.
 
-<i>Check Out from Version Control</i> — <i>out</i> is a part of the phrasal verb <i>check out</i> and is capitalized.
+*Check Out from Version Control* — *out* is a part of the phrasal verb *check out* and is capitalized.
 
 
 

@@ -49,7 +49,7 @@ Place the loader on the right to show that search is being performed.
 
 ### Tree, list, tool window
 
-If each tree node loads independently and it’s important to know the current state of each node, show the loader instead of the node icon:
+If each tree node loads independently, and it’s important to know the current state of each node, show the loader instead of the node icon:
 
 ![](tree_loader_icon.png){width=372}
 
@@ -62,7 +62,7 @@ If the loader applies to the whole content, place it in the top right corner:
 ![](tree_loader_corner.png){width=400}
 
 If processes start simultaneously and have the same execution time, place the loader in the top right corner of the area.
-For example, in the <control>Push</control> dialog repositories are loaded at the same time.
+For example, in the <control>Push</control> dialog, repositories are loaded at the same time.
 Loaders in each line will blink at the same time and will look distracting.
 
 ![](tree_loader_push.png){width=400}
@@ -92,9 +92,9 @@ If the state is empty, show progress text. For example, in search dialogs, and t
 
 ![](empty_state_text.png){width=708}
 
-Show one more progress indicator, e.g. a loader like on the example above, if loading continues when some data is already displayed.
+Show one more progress indicator, e.g., a loader like on the example above, if loading continues when some data is already displayed.
 
-If a process takes longer than 4 seconds, provide [process details](progress_text.md#details), e.g. the time left or passed, work units
+If a process takes longer than 4 seconds, provide [process details](progress_text.md#details), e.g., the time left or passed, work units
 like the current step, to indicate that the process is being performed and is not hanging:
 
 ![](empty_state_details.png){width=576}

@@ -46,7 +46,7 @@ Place the link at the end of the text where possible so that it does not disrupt
 *Local link*
 
 Text style formatting:
-* Avoid text highlighting. Usually, the help text is short and no bold or italics is needed.
+* Avoid text highlighting. Usually, the help text is short and no bold or italics are needed.
 ![](inline_text_no_styling.png){width=364}
 
 * Use formatting for code, console commands, or parameters. Use HTML tags. Enclosing text in `<html></html>` tags is not needed.
@@ -122,13 +122,13 @@ JPanel p = UI.PanelFactory.panel(tfbb)
     .withComment("Preselected in \"Open ...\" and \"New | Project\" dialogs");
 ```
 
-If there is no space under the UI control, use the [help tooltip](tooltip.md#question-mark-icon-for-help-tooltips) with the question mark icon for labeled inputs, checkboxes and radio buttons.
+If there is no space under the UI control, use the [help tooltip](tooltip.md#question-mark-icon-for-help-tooltips) with the question mark icon for labeled inputs, checkboxes, and radio buttons.
 For buttons, use the help tooltip without the icon.
 
 
 ### List, tree or table
 
-If the help text applies to a whole list, tree, or table, place it under the control.
+If the help text applies to a whole list, tree, or table, place it below the control.
 
 ![](11_under_table.png){width=531}
 

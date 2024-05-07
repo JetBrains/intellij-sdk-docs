@@ -59,7 +59,7 @@ If the text does not fit, add a scrollbar:
 
 ### Appearance
 
-Do not add borders around description text. Use the panel color for the background.
+Do not add borders around the description text. Use the panel color for the background.
 
 | <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
 |-----------------------------------------------------|-----------------------------------------------------|

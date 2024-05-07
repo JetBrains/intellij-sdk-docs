@@ -58,7 +58,7 @@ Add a header if the body text is 2 lines and more. A short header can quickly ex
 
 ![](10_header.png){width=342}
 
-Add a shortcut, if the tooltip describes a single action that has a shortcut.
+Add a shortcut if the tooltip describes a single action that has a shortcut.
 
 ![](11_shortcut.png){width=248}
 

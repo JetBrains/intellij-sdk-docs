@@ -54,7 +54,7 @@ If there are 4 options or fewer, use radio buttons.
 
 ![](radio_buttons.png){width=255}
 
-If users may need to enter a value that not currently in the list, use a combo box.
+If users may need to enter a value not currently in the list, use a combo box.
 
 ![](combo_box_font_size.png){width=165}
 
@@ -96,7 +96,7 @@ The menu opens down by default. If there is not enough space, the menu opens up.
 
 When the menu opens, the default option (displayed when the menu is closed) is selected.
 
-Move the selection in the menu on pressing Up and Down arrows when an item is hovered. On hover the cursor over the item just move selection, do not update the value.
+Move the selection in the menu by pressing Up and Down arrows when an item is hovered. On hovering the cursor over the item just move selection and do not update the value.
 
 <!-- * Filter items in the list on typing:
 
@@ -121,7 +121,7 @@ Avoid repeating words in drop-down list items. Move repeating words to the label
 
 Sort items in one of the following orders:
 
-* Logical order, for example in a spatial relationship:
+* Logical order, for example, in a spatial relationship:
 
     ![](order_logical.png){width=172}
 
@@ -147,7 +147,7 @@ Enclose meta-options in pointy brackets and place meta-options at the beginning 
 
 *<control>&lt;Choose per test></control> is a meta-options because it’s not a real runner.*
 
-Do **not** assign special meanings to numeric or string values, use meta-options instead. It can be unclear that 0 or an empty string are used to disable an option.
+Do **not** assign special meanings to numeric or string values, use meta-options instead. It can be unclear that either 0 or an empty string are used to disable an option.
 
 | <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
 |-----------------------------------------------------|-----------------------------------------------------|
@@ -202,7 +202,7 @@ The width of a drop-down menu can either equal the drop-down control width, or b
 
 ![](menu_width.png){width=100}
 
-Choose a list length that eliminates unnecessary vertical scrolling. The minimum height of the list with scrolling is 200px. Expand the list to 600px if space is not constrained and the list does not hide meaningful information under it, e.g. the information that can be important to make a choice.
+Choose a list length that eliminates unnecessary vertical scrolling. The minimum height of the list with scrolling is 200px. Expand the list to 600px if space is not constrained and the list does not hide meaningful information under it, e.g., the information that can be important to make a choice.
 
 ![](menu_height.png){width=225}
 

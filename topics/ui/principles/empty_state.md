@@ -55,7 +55,7 @@ Use one or two actions. Three or more actions would make it harder to choose wha
 If an action opens a menu, open it at the same position where it would be opened with the corresponding toolbar button. This would explain which toolbar icon opens the menu.
 
 
-If an action cannot be tied to a link, explain  what to do.
+If an action cannot be tied to a link, explain what to do.
 
 ![](todo-tw.png){width=574}
 
@@ -110,7 +110,7 @@ The master area is usually a list or a tree, its empty state instructions should
 
 
 ## Sizes and placement
-Minimum text width is 40 characters. If an area is too narrow to show the minimum text width, show text in area fields, and if no fields are left, under the area borders.
+The minimum text width is 40 characters. If an area is too narrow to show the minimum text width, show text in area fields, and if no fields are left, under the area borders.
 
 Use non-breaking spaces in an action name and shortcut, so it is not split into two lines.
 
@@ -124,7 +124,7 @@ Use non-breaking spaces for articles and prepositions in the instructional text.
 
 ![](nbsp-correct.png){width=379}
 
-The text is center-aligned. If possible, the center for the help topic link should be calculated with an 16 px inset on the left. This helps visually align the help link with the lines above it.
+The text is center-aligned. If possible, the center for the help topic link should be calculated with a 16px inset on the left. This helps visually align the help link with the lines above it.
 ![](database-tw-markup1.png){width=300}
 
 Fields and vertical spaces:

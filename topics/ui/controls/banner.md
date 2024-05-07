@@ -18,7 +18,7 @@ A banner notification informs the user about the state of a specific context in 
 
 ## When to use
 
-Use a banner if user actions should attract  attention in a file tab, tool window, or dialog, but are not required immediately.
+Use a banner if user actions should attract attention in a file tab, tool window, or dialog, but are not required immediately.
 
 ![](tool-window.png){width=600}
 *Reconnecting to the database is required to make edits.*
@@ -71,7 +71,7 @@ Use to suggest actions that are required to unblock the user’s workflow.
 
 ### Icon (optional)
 
-*   16x16 icons can be used to complement the message, e.g. a gift icon to advertise functionality.
+*   16x16 icons can be used to complement the message, e.g., a gift icon to advertise functionality.
 
 ### Placement
 

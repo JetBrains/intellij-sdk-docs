@@ -111,15 +111,15 @@ When an input field gets the focus, place the caret at the end of the text:
 
 ![](focus_end.png){width=321}
 
-If users are more likely to re-enter the entire value, select the whole text, when the field gets the focus:
+If users are more likely to re-enter the entire value, select the whole text when the field gets the focus:
 
 ![](focus_all.png){width=274}
 
 
 ### Input field types
 
-If input text can be long and place is constrained, use an expandable input field [`ExpandableTextField`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/fields/ExpandableTextField.java).
-For more details see [built-in buttons](built_in_button.md#expand-field).
+If the input text can be long and place is constrained, use an expandable input field [`ExpandableTextField`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/fields/ExpandableTextField.java).
+For more details, see [built-in buttons](built_in_button.md#expand-field).
 
 ![](expandable_1.png){width=332}
 
@@ -141,7 +141,7 @@ Use [built-in buttons](built_in_button.md) to help the user enter data. For exam
 
 
 ### Validation
-If the user enters an invalid value, highlight the field with red and show an error message in a tooltip. For more details see [Validation errors](validation_errors.md).
+If the user enters an invalid value, highlight the field with red and show an error message in a tooltip. For more details, see [Validation errors](validation_errors.md).
 
 ![](input_field_error.png){width=239}
 
@@ -163,7 +163,7 @@ Choose the width appropriate for the most common values, but not less than 65 px
 | <format color="Red" style="bold">Incorrect</format> | ![](input_field_size_4.png){width=331} |
 {style=none}
 
-If input value is longer than the field width, show the beginning of the value when the field becomes inactive:
+If the input value is longer than the field width, show the beginning of the value when the field becomes inactive:
 
 ![](size_long_name.png){width=243}
 

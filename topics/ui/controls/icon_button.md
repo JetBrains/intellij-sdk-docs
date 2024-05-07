@@ -46,7 +46,7 @@ Include a shortcut if there is one. See [Context help](context_help.md) for deta
 
 Highlight a toolbar icon button on mouse hover. Highlight a toolbar icon button with a brighter color on clicking it.
 
-* Toggle buttons remains highlighted when they are in the switched on mode. Toggled on buttons do not change color on hover.
+* Toggle buttons remain highlighted when they are in the switched on mode. Toggled on buttons do not change color on hover.
 
 * Drop-down buttons remain highlighted while the menu is opened.
 

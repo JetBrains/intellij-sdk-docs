@@ -42,7 +42,8 @@ Mark the replace field with a label or a placeholder when shown together with th
 ![](structural-replace.png){width=865}
 
 
-Provide hints and scope as placeholder text, for example, the placeholder for plugins' search depends on the settings page tab to make it clear that search depends on the tab:
+Provide hints and scope as placeholder text.
+For example, the placeholder for plugins' search depends on the settings page tab to make it clear that search depends on the tab:
 ![](placeholder.png){width=581}
 
 
@@ -177,7 +178,7 @@ And without an arrow when it's not:
 
 ![](search-no-history.png){width=250}
 
-Show search history in a popup on clicking on the magnifying glass icon:
+Show search history in a popup when clicking on the magnifying glass icon:
 
 ![](search-history-popup.png){width=256}
 
@@ -189,13 +190,14 @@ The keyboard shortcut for the History action is <shortcut>Alt + Down</shortcut> 
 
 Add a search string to history:
 
-*   On Enter for searches that are executed on enter.
+*   On <shortcut>Enter</shortcut> for searches that are executed.
 *   When the search field loses focus for searches that are executed on any keystroke.
 
 ## Sizes and placement
 ### Placement
 
-Put the search field on top of the on-screen content that is being searched, and align them vertically, for example, the search field in settings is aligned with the filtered settings tree:
+Put the search field on top of the on-screen content that is being searched, and align them vertically.
+For example, the search field in <control>Settings</control> dialog is aligned with the filtered settings tree:
 
 <format color="Green" style="bold">Correct</format>
 
@@ -238,7 +240,7 @@ For example, Search Everywhere is shown on top of the main IDE frame:
 
 ### Sizes
 
-For a search field shown without a toolbar (i.e. _Speed Search_ in trees) the search width could be adjusted on typing to accommodate input:
+For a search field shown without a toolbar (i.e. _Speed Search_ in trees), the search width could be adjusted on typing to accommodate input:
 
 ![](search_field_width.png){width=160}
 
@@ -273,7 +275,7 @@ Completion popup:
 
 ### Colors and Fonts
 
-For a general search field use the same colors as for an input field.
+For a general search field, use the same colors as for an input field.
 
 For a search field that is fitted to the toolbar, use a narrower focus border on macOS. The border width is 2px in that case:
 ![](log-focused.png){width=475}

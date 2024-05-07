@@ -7,7 +7,8 @@
 ![](main.png){width=834}
 *Inspections configuration on <ui-path>Settings | Editor | Inspections</ui-path> page or in <control>Configure Inspections</control> dialog.*
 
-Inspection names, descriptions, and editor messages should be short and descriptive. Follow the rules for [short and clear texts](writing_short.md) and [punctuation](punctuation.md) in addition to rules described below.
+Inspection names, descriptions, and editor messages should be short and descriptive.
+Follow the rules for [short and clear texts](writing_short.md) and [punctuation](punctuation.md) in addition to the rules described below.
 
 ### Group Names
 
@@ -37,7 +38,7 @@ Do not use the word "problems" or other words that describe how inspections func
 
 ![](problem.png){width=613}
 
-Do not use the words "warning" and "error" in inspection names. Such a name will become incorrect and misleading if the inspection severity level change.
+Do not use the words "warning" and "error" in inspection names. Such a name will become incorrect and misleading if the inspection severity level changes.
 
 ![](inspections_warning.png){width=613}
 

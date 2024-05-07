@@ -56,7 +56,7 @@ Do **not** place the button on the right of the control.
 ![](browse_buttons.png){width=250}
 
 ### Expand field
-If input text can be long and place is constrained, use built-in button to expand the control ([`ExtendableTextField`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/fields/ExtendableTextField.java)):
+If the input text can be long and place is constrained, use a built-in button to expand the control ([`ExtendableTextField`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/fields/ExtendableTextField.java)):
 
 ![](expandable_1.png){width=332}
 ![](expandable_2.png){width=582}
@@ -74,7 +74,9 @@ Use a combo box instead of the Variables button. This icon works as a combo box.
 
 
 ### Add value
-The Plus button works the same way as the Browse button, the only difference is that the selected value is added, instead of overwriting the existing one. Place the plus icon inside the control.
+The Plus button works the same way as the Browse button.
+The only difference is that the selected value is added, instead of overwriting the existing one.
+Place the plus icon inside the control.
 ![](plus.png){width=250}
 
 ### Copy, Info

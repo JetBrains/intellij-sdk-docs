@@ -21,11 +21,11 @@ Use tables so that users can review, enter or edit uniform sets of data or optio
 
 Use tables:
 
-* To compare data in a set, for example, in the <control>File Colors</control> table it is convenient to compare file colors with one another and make sure that they are distinguishable:
+* To compare data in a set, for example, in the <control>File Colors</control> table, it is convenient to compare file colors with one another and make sure that they are distinguishable:
 
 * ![](fileColors.png){width=350}
 
-* To search by all parameters in a data set, for example, in the <control>File History</control> table it is possible to quickly filter the table by the date, author or commit message.
+* To search by all parameters in a data set, for example, in the <control>File History</control> table, it is possible to quickly filter the table by the date, author or commit message.
 
 ![](table_history.png){width=488}
 
@@ -50,7 +50,7 @@ Add a label if the table content is not obvious from the dialog title or the tab
 
 ![](table_label.png){width=448}
 
-Avoid a label if it duplicates the dialog title or the table header. For example, there is no need in a label in the <ui-path>JavaScript | Libraries</ui-path> table since the Settings page title and the table context make it clear what is in the table:
+Avoid a label if it duplicates the dialog title or the table header. For example, there is no need for a label in the <ui-path>JavaScript | Libraries</ui-path> table since the Settings page title and the table context make it clear what is in the table:
 
 ![](label-header.png){width=424}
 
@@ -200,7 +200,7 @@ and to inactive selection when the focus is on another element:
 Do **not** leave the active selection color in the table when the focus switches to some other element.
 It is otherwise confusing which element is currently active.
 
-Columns in tables should be resizable to allow users set a comfortable column width.
+Columns in tables should be resizable to allow users to set a comfortable column width.
 Change the mouse cursor to "Horizontal Resize" when hovering the rectangular area between columns.
 This area is defined by table height and by 2px padding around the columns’ divider.
 This makes it clear that columns can be resized even in a table without a header:
@@ -220,7 +220,7 @@ or to find a specific path in the sorted list.
 
 If columns can be reordered, change the cursor to "Hand" when hovering the table header, and allow changing their order by dragging the table header.
 
-In tables without header show the drag icon on top of the column when hovering it:
+In tables without a header show the drag icon on top of the column when hovering it:
 
 ![](history-drag.png){width=488}
 
@@ -242,7 +242,7 @@ Allow in-place editing of content for text data. It should be possible to activa
 
 ![](inline-edit.png){width=448}
 The line with the edited cell should be selected.
-The edited cell should have borders and their color should be the same as the color for [Input field](input_field.md) borders.
+The edited cell should have borders, and their color should be the same as the color for [Input field](input_field.md) borders.
 
 Allow in-place editing for paths and add the Browse button to the cell:
 
@@ -251,7 +251,7 @@ Allow in-place editing for paths and add the Browse button to the cell:
 Show a separate dialog for non-text data, for example, a color chooser for colors.
 
 Do **not** show a separate dialog for editing simple data rows without a compound preview (an example of a compound preview can be found in <ui-path>Settings | Editor | Language Injections</ui-path>).
-For example, there is no need in a separate dialog in the <ui-path>Settings | Appearance & Behavior | Path Variables</ui-path> table, as all editing could be done in place.
+For example, there is no need for a separate dialog in the <ui-path>Settings | Appearance & Behavior | Path Variables</ui-path> table, as all editing could be done in place.
 
 If it’s possible to enumerate less than 15 most likely or valid variants, show a combobox-like configurable with a down-arrow icon and a popup on click:
 
@@ -261,7 +261,7 @@ Show the combo icon only on hover or when the corresponding line is selected. A 
 
 If there are more than 15 variants, show a completion popup.
 
-Do **not** use a full-size combobox inside tables. It looks inconsistent and has too much details for a table; a simple dropdown icon with the variants popup is enough.
+Do **not** use a full-size combobox inside tables. It looks inconsistent and has too many details for a table; a simple dropdown icon with the variants popup is enough.
 
 <format color="Red" style="bold">Incorrect</format>
 
@@ -281,7 +281,7 @@ Choose a column width appropriate for the most common values, but no less than *
 
 ![](fileColorsTooWide.png){width=592}
 
-Minimum table width is **350px**. If a table is too narrow after you have adjusted columns width, add space to the rightmost column.
+The minimum table width is **350px**. If a table is too narrow after you have adjusted column widths, add space to the rightmost column.
 
 Add space to the rightmost column if you need to align it with other tables in the same window.
 

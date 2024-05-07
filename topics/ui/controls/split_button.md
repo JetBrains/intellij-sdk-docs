@@ -10,7 +10,7 @@
 
 </tldr>
 
-The Split button is a button which has two parts — the main action on the left and a control button which shows a dropdown with less common actions on the right.
+The Split button is a button that has two parts — the main action on the left and a control button which shows a dropdown with less common actions on the right.
 
 ![](button-and-dropdown-menu.png){width=218}
 
@@ -23,14 +23,15 @@ For example, it is useful for the Commit actions group in the <control>Commit</c
 
 ![](button-and-dropdown-menu.png){width=218}
 
-The Split button is not useful in the <control>Replace</control> popup, since not all actions are related, for example <control>Open in Find Window</control>
+The Split button is not useful in the <control>Replace</control> popup, since not all actions are related.
+For example, <control>Open in Find Window</control>
 is not related to the main action. Such actions are hard to find in the drop-down menu:
 
 | <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
 |-----------------------------------------------------|-----------------------------------------------------|
 | ![](not-related-incorrect.png){width="152"}         | ![](not-related.png){width="327"}                   |
 
-In the <control>Adjust Code Style</control> dialog only 1 related action is possible and it does not save a lot of space:
+In the <control>Adjust Code Style</control> dialog, only 1 related action is possible, and it does not save a lot of space:
 
 | <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
 |-----------------------------------------------------|-----------------------------------------------------|

@@ -34,8 +34,8 @@ The following controls can appear on a toolbar:
 
 Put only the most frequently used commands on the toolbar. Rely on usage statistics if it’s available.
 
-If an action is new and it seems to be useful, add it to the corresponding toolbar.
-Remove it after several releases if it’s not popular which means it’s used by less than ~5% of users who use this toolbar.
+If an action is new, and it seems useful, add it to the corresponding toolbar.
+Remove it after several releases if it’s not popular, which means it’s used by less than ~5% of users who use this toolbar.
 
 Do **not** put unpopular or well-known commands, like Copy and Paste on the toolbar. Use the main menu or the context menu for such commands.
 
@@ -49,7 +49,7 @@ Group related toolbar icon buttons and separate groups with lines. If there are 
 
 ![](toolbar_group.png){width=242}
 
-Label group of icons if it helps to make the icons more clear and if it’s needed to promote the icons. The icons group becomes more visible with the label.
+Label a group of icons if it helps to make the icons clearer and if it’s needed to promote the icons. The icons group becomes more visible with the label.
 
 
 Arrange items inside groups by the frequency of use, from left to right from top to bottom. Rely on statistics.
@@ -101,7 +101,7 @@ By default, place the toolbar at the top of the area.
 **Exceptions**
 Place the toolbar on the left in horizontal tool windows if horizontal space is not limited. A horizontal toolbar will be too wide and will occupy lots of space:
 ![](placement_left.png){width=220}
-Place the toolbar on the right if it’s not the first toolbar in the pane and it’s rarely used.![](placement_right.png){width=386}
+Place the toolbar on the right if it’s not the first toolbar in the pane, and it’s rarely used.![](placement_right.png){width=386}
 
 Place the toolbar at the bottom on macOS, and on the right on Windows and Linux in [tables](table.md).
 ![](table_mac.png){width=432}

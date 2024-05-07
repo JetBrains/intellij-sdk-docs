@@ -33,7 +33,7 @@ Do **not** use radio buttons if:
 Consider using a [drop-down list](drop_down.md) if:
 * The screen space is limited.
 * The option might be used less often than other options on the screen.
-* There are other drop-down lists in the same group of UI components. A radio button group is more noticeable than a drop-down list so it will look like a more important setting.
+* There are other drop-down lists in the same group of UI components. A radio button group is more noticeable than a drop-down list, so it will look like a more important setting.
 * There is a combination of several UI components for one setting:
 ![](dropdown.png){width=575}
 *The automatic updates setting consists of a checkbox, three lengthy-labeled options in a dropdown and a button.*
@@ -90,6 +90,6 @@ Use a colon at the end of a group label.
 
 ## Sizes and placement
 
-If a radio button group depends on another control, e.g. a checkbox, follow the rules for [dependent colors](layout.md#dependent-controls).
+If a radio button group depends on another control, e.g., a checkbox, follow the rules for [dependent colors](layout.md#dependent-controls).
 Otherwise, follow the rules for [independent colors](layout.md).
 

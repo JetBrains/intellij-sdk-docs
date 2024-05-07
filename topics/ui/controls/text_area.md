@@ -21,7 +21,7 @@ Use a text area if input is unconstrained and long, or if the newline character 
 Do **not** use a text area if:
 
 * Input consists of several words. Use an [input field](input_field.md) instead.
-* There is not enough space for a text area, or if input is normally short but can occasionally be long or multi-line. Use an [expandable input field](input_field.md#input-field-types) field instead.
+* There is not enough space for a text area, or if input is normally short but can occasionally be long or multi-line. Use an [expandable input field](input_field.md#input-field-types) instead.
 * Values are added one by one. Use a [table](table.md) instead.
 * Text is read-only. Use a [description text](description_text.md) instead.
 
@@ -33,11 +33,11 @@ Do **not** use a text area if:
 Follow the rules for the [input field](input_field.md).
 
 A label is required for all empty text areas.
-If a text area is prefilled and it’s clear from the context what data it contains, a label can be omitted.
+If a text area is prefilled, and it’s clear from the context what data it contains, a label can be omitted.
 For example, the following text area is used to preview file and code templates:
 ![](no_label.png){width=584}
 
-*If new file template is added and the text area is empty, the label is required.*
+*If a new file template is added and the text area is empty, the label is required.*
 
 Do **not** put units on the right of the text area.
 
@@ -71,7 +71,7 @@ Save the current value, so that the user can return to it while navigating throu
 
 ### Validation
 
-If the user types an invalid value, highlight the text area with red and show an error message in a tooltip. For more details see [Validation errors](validation_errors.md).
+If the user types an invalid value, highlight the text area with red and show an error message in a tooltip. For more details, see [Validation errors](validation_errors.md).
 
 ![](text_area_error.png){width=306}
 

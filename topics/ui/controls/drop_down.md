@@ -100,7 +100,7 @@ Move the selection in the menu on pressing Up and Down arrows when an item is ho
 
 <!-- * Filter items in the list on typing:
 
-    ![](../../../images/ui/drop_down/filter.png)
+    ![](filter.png)
 -->
 
 The menu remains opened until the user selects an item, clicks outside the menu, presses the <shortcut>Esc</shortcut> key or
@@ -149,9 +149,9 @@ Enclose meta-options in pointy brackets and place meta-options at the beginning 
 
 Do **not** assign special meanings to numeric or string values, use meta-options instead. It can be unclear that 0 or an empty string are used to disable an option.
 
-| Incorrect                                               | Correct                                               |
-|---------------------------------------------------------|-------------------------------------------------------|
-| ![](../../../images/ui/drop_down/version_incorrect.png) | ![](../../../images/ui/drop_down/version_correct.png) |
+| Incorrect                  | Correct                  |
+|----------------------------|--------------------------|
+| ![](version_incorrect.png) | ![](version_correct.png) |
 
   <p><em>In the incorrect example an empty string is used to set <control>&lt;Same
   as language level&gt;</control>, which is unclear.</em></p>
@@ -159,11 +159,11 @@ Do **not** assign special meanings to numeric or string values, use meta-options
 
   <p>Incorrect</p>
 
-  ![](../../../images/ui/drop_down/none_incorrect.png)
+  ![](none_incorrect.png)
 
   <p>Correct</p>
 
-  ![](../../../images/ui/drop_down/none_correct.png)
+  ![](none_correct.png)
 
 
 Preview list items with images if they are associated with well-known icons. Use formatting for a list of fonts. It will help users make a choice.

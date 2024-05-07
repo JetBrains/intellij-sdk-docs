@@ -27,20 +27,20 @@ Explain the current state.
 
 The default pattern is "_No [entity] added._" If _added, created, configured_ or other such verbs act as synonyms in a particular case, use the verb _added_ for consistency.
 
-| Incorrect                                                                                                  | Correct                                                 |
-|------------------------------------------------------------------------------------------------------------|---------------------------------------------------------|
-| ![](../../../images/ui/empty_state/libraries-before.png) Avoid "Nothing to show" as it is not informative. | ![](../../../images/ui/empty_state/libraries-after.png) |
+| Incorrect                                                                   | Correct                  |
+|-----------------------------------------------------------------------------|--------------------------|
+| ![](libraries-before.png) Avoid "Nothing to show" as it is not informative. | ![](libraries-after.png) |
 
 Make the reason descriptive:
 
 <p>Incorrect</p>
 
-![](../../../images/ui/empty_state/sql-dialect-before.png)
+![](sql-dialect-before.png)
 *The word mapping introduces a new entity while there are already two in the table header — path and SQL dialect. In the instructions, it is better to use already existing entities to connect them to what users see on the screen.*
 
 <p>Correct</p>
 
-![](../../../images/ui/empty_state/sql-dialect-after.png)
+![](sql-dialect-after.png)
 *The word "individual" is used in contrast with the project SQL dialect above the table. The verb specified is used instead of added because, in the table, SQL dialects are not added but selected from a drop-down list in the SQL Dialect column.*
 
 
@@ -63,7 +63,7 @@ Hide the area's toolbar if it does not have the same action as in the empty stat
 
 <p>Incorrect</p>
 
-![](../../../images/ui/empty_state/todo-tw-toolbar-incorrect.png)
+![](todo-tw-toolbar-incorrect.png)
 
 
 ### 3. Help topic
@@ -76,12 +76,12 @@ Hide the area's toolbar if it does not have the same action as in the empty stat
 
 <p>Incorrect</p>
 
-![](../../../images/ui/empty_state/todo-filters-incorrect.png)
+![](todo-filters-incorrect.png)
 *Do not use a help topic link in a table and UI areas other than tool windows.*
 
 <p>Correct</p>
 
-![](../../../images/ui/empty_state/todo-filters-correct.png)
+![](todo-filters-correct.png)
 *Place an inline help text under the table.*
 
 
@@ -118,11 +118,11 @@ Use non-breaking spaces for articles and prepositions in the instructional text.
 
 <p>Incorrect</p>
 
-![](../../../images/ui/empty_state/nbsp-incorrect.png)
+![](nbsp-incorrect.png)
 
 <p>Correct</p>
 
-![](../../../images/ui/empty_state/nbsp-correct.png)
+![](nbsp-correct.png)
 
 The text is center-aligned. If possible, the center for the help topic link should be calculated with an 16 px inset on the left. This helps visually align the help link with the lines above it.
 ![](database-tw-markup1.png)

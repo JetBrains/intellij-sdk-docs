@@ -107,11 +107,11 @@ Avoid using style formatting. It makes the tooltip harder to read.
   <tr>
     <td>
         <p>Incorrect</p>
-        <img  src="../../../images/ui/got_it_tooltip/14_formatting_incorrect.png" />
+        <img src="14_formatting_incorrect.png" />
     </td>
     <td>
         <p>Correct</p>
-        <img  src="../../../images/ui/got_it_tooltip/14_formatting_correct.png" />
+        <img src="14_formatting_correct.png" />
     </td>
   </tr>
 </table>
@@ -121,9 +121,9 @@ Avoid using style formatting. It makes the tooltip harder to read.
 
 Do **not** cover the information the user is currently working with.
 
-| Incorrect                                                        | Correct                                                        |
-|------------------------------------------------------------------|----------------------------------------------------------------|
-| ![](../../../images/ui/got_it_tooltip/15_location_incorrect.png) | ![](../../../images/ui/got_it_tooltip/15_location_correct.png) |
+| Incorrect                      | Correct                      |
+|--------------------------------|------------------------------|
+| ![](15_location_incorrect.png) | ![](15_location_correct.png) |
 
 
 **Implementation:** See four predefined point providers in the [`GotItTooltip`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/GotItTooltip.kt) class.

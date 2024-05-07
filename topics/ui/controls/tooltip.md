@@ -25,7 +25,7 @@ There are three types of tooltips:
         Shows an action name or label for icons and unlabeled controls, and a shortcut if available.
     </td>
     <td>
-        <img src="../../../images/ui/tooltip/02_regular_tooltip.png" />
+        <img src="02_regular_tooltip.png" />
     </td>
   </tr>
   <tr>
@@ -34,7 +34,7 @@ There are three types of tooltips:
         Shows help text for icons and unlabeled controls in addition to an action name or label.
     </td>
     <td>
-        <img src="../../../images/ui/tooltip/03_action_help_tooltip.png" />
+        <img src="03_action_help_tooltip.png" />
     </td>
   </tr>
   <tr>
@@ -43,7 +43,7 @@ There are three types of tooltips:
         Shows help text for all other controls.
     </td>
     <td>
-        <img src="../../../images/ui/tooltip/03_help_tooltip.png" />
+        <img src="03_help_tooltip.png" />
     </td>
   </tr>
 </table>
@@ -66,7 +66,7 @@ Always show the required information in a tooltip:
   <tr>
     <td>
         Action <br/>
-        <img src="../../../images/ui/tooltip/08_regular_tooltip.png"/>
+        <img src="08_regular_tooltip.png"/>
     </td>
     <td>
         Action name
@@ -78,7 +78,7 @@ Always show the required information in a tooltip:
   <tr>
     <td>
         Action help <br/>
-        <img src="../../../images/ui/tooltip/08_toolbar_help_tooltip.png"/>
+        <img src="08_toolbar_help_tooltip.png"/>
     </td>
     <td>
         Action name <br/>
@@ -92,7 +92,7 @@ Always show the required information in a tooltip:
   <tr>
     <td>
         Help <br/>
-        <img src="../../../images/ui/tooltip/08_help_tooltip.png"/>
+        <img src="08_help_tooltip.png"/>
     </td>
     <td>
         Help text <br/>
@@ -135,9 +135,9 @@ Show a shortcut if an action or a setting has one. Do not show a single shortcut
 
 Provide a link to a source that can further explain the action or the setting. A link can navigate to a place in the IDE or to an external help article.
 
-| Local link                                                | External link                                           |
-|-----------------------------------------------------------|---------------------------------------------------------|
-| ![](../../../images/ui/tooltip/10_tooltip_local_link.png) | ![](../../../images/ui/tooltip/10_tooltip_ext_link.png) |
+| Local link                     | External link                |
+|--------------------------------|------------------------------|
+| ![](10_tooltip_local_link.png) | ![](10_tooltip_ext_link.png) |
 
 Do not show just an action name and a link to a help article. Provide help text so that the user does not need to switch to a web browser.
 
@@ -162,11 +162,11 @@ Text style formatting:
 * Avoid using style formatting in the help text. Usually, the text is short and no bold or italics are needed.
 Incorrect:
 
-![](../../../images/ui/tooltip/tooltip_no_styling_incorrect.png)
+![](tooltip_no_styling_incorrect.png)
 
 Correct:
 
-![](../../../images/ui/tooltip/tooltip_no_styling_correct.png)
+![](tooltip_no_styling_correct.png)
 
 * Use formatting for code, console commands or parameters. Use HTML tags. Enclosing the text in `<html></html>` tags is not needed.
 ![](tooltip_code_styling.png)
@@ -232,7 +232,7 @@ Incorrect:
 
 ## Style
 
-![](../../../images/ui/tooltip/tooltip_style.png)
+![](tooltip_style.png)
 
 ## Built-in behavior
 

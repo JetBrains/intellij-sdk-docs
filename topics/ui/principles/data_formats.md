@@ -20,7 +20,7 @@
     <td>Numbers</td>
     <td>4,255,165.00</td>
     <td>Space is not limited, e.g. Settings dialog
-        <p style="margin: -10px 0 -30px -20px"><img src="../../../images/ui/data_formats/numbers.png" /></p>
+        <p style="margin: -10px 0 -30px -20px"><img src="numbers.png" /></p>
     </td>
 </tr>
 <tr>
@@ -101,7 +101,7 @@ See the table below to understand in which cases to show date and time.
        2 hours ago
     </td>
     <td><p>Use for a single event that happened recently, e.g. in the Status bar:</p>
-        <p><img src="../../../images/ui/data_formats/approximate.png" /></p>
+        <p><img src="approximate.png" /></p>
         <p>Do <b>not</b> use in tables as it’s harder to compare.</p>
         <p>If more than 12 hours have passed since the event, use Date format</p>
     </td>
@@ -130,7 +130,7 @@ See the table below to understand in which cases to show date and time.
         1 hour
     </td>
     <td>Space is not limited, e.g. Settings dialog
-        <p><img src="../../../images/ui/data_formats/period.png" /></p>
+        <p><img src="period.png" /></p>
     </td>
 </tr>
 <tr>
@@ -200,15 +200,15 @@ All numeric values should be given a unit or clearly labeled if they do not have
 
 Select the most convenient units.
 
-| Incorrect                                                     | Correct                                                     |
-|---------------------------------------------------------------|-------------------------------------------------------------|
-| ![](../../../images/ui/data_formats/connection_incorrect.png) | ![](../../../images/ui/data_formats/connection_correct.png) |
+| Incorrect                     | Correct                     |
+|-------------------------------|-----------------------------|
+| ![](connection_incorrect.png) | ![](connection_correct.png) |
 
 Place units after the input field.
 
-| Incorrect                                                | Correct                                                |
-|----------------------------------------------------------|--------------------------------------------------------|
-| ![](../../../images/ui/data_formats/caret_incorrect.png) | ![](../../../images/ui/data_formats/caret_correct.png) |
+| Incorrect                | Correct                |
+|--------------------------|------------------------|
+| ![](caret_incorrect.png) | ![](caret_correct.png) |
 
 ## Tables
 
@@ -219,12 +219,12 @@ Right-align numeric values.
 
 Include the unit in the column header if all values share the same unit. Convert each number to use the same unit. If it’s not possible, e.g. the scatter of numbers is too large, include the unit with each value.
 
-| Incorrect                                                      | Correct                                                      |
-|----------------------------------------------------------------|--------------------------------------------------------------|
-| ![](../../../images/ui/data_formats/table_units_incorrect.png) | ![](../../../images/ui/data_formats/table_units_correct.png) |
+| Incorrect                      | Correct                      |
+|--------------------------------|------------------------------|
+| ![](table_units_incorrect.png) | ![](table_units_correct.png) |
 
 Be consistent with the precision of the significand.
 
-| Incorrect                                                    | Correct                                                    |
-|--------------------------------------------------------------|------------------------------------------------------------|
-| ![](../../../images/ui/data_formats/precision_incorrect.png) | ![](../../../images/ui/data_formats/precision_correct.png) |
+| Incorrect                    | Correct                    |
+|------------------------------|----------------------------|
+| ![](precision_incorrect.png) | ![](precision_correct.png) |

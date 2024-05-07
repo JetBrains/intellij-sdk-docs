@@ -32,11 +32,11 @@ Do **not** add a label to the search field. The magnifying glass icon is self-ex
 
 <p>Incorrect</p>
 
-![](../../../images/ui/search_field/ptree-incorrect.png)
+![](ptree-incorrect.png)
 
 <p>Correct</p>
 
-![](../../../images/ui/search_field/ptree-correct.png)
+![](ptree-correct.png)
 
 Mark the replace field with a label or a placeholder when shown together with the search field to distinguish between them:
 ![](structural-replace.png)
@@ -56,11 +56,11 @@ Use icon buttons inside the search field to save space and not to overload the U
 
 Available option icons:
 
-| ![](../../../images/ui/search_field/icons/matchCase.png)   | Match case   |
-|------------------------------------------------------------|--------------|
-| ![](../../../images/ui/search_field/icons/regex.png)       | Regex        |
-| ![](../../../images/ui/search_field/icons/words.png)       | Words        |
-| ![](../../../images/ui/search_field/icons/inSelection.png) | In selection |
+| ![](matchCase.png)   | Match case   |
+|----------------------|--------------|
+| ![](regex.png)       | Regex        |
+| ![](words.png)       | Words        |
+| ![](inSelection.png) | In selection |
 {style=none}
 
 Change the state of options icons on hover so that it is clear that they are clickable:
@@ -83,14 +83,14 @@ Show the clear button <icon src="../../../images/ui/search_field/icons/clear-lig
 When the button is clicked, clear the search field and restore the content to its default state.
 Do **not** show the clear button if the search field is empty.
 
-![](../../../images/ui/search_field/clear-search-correct.png)
+![](clear-search-correct.png)
 
 Do **not** show the clear button when the initial data state is empty or doesn't differ from the result.
 For example, the close icon is not really useful in the editor search field since matches are highlighted and not filtered:
 
 <p>Incorrect</p>
 
-![](../../../images/ui/search_field/clear-search-incorrect.png)
+![](clear-search-incorrect.png)
 
 When search can be configured with options, show the clear button on the left of the option buttons.
 This way, option buttons won't jump when the clear button appears.
@@ -141,11 +141,11 @@ Use completion instead:
 
 <p>Incorrect</p>
 
-![](../../../images/ui/search_field/filters-incorrect.png)
+![](filters-incorrect.png)
 
 <p>Correct</p>
 
-![](../../../images/ui/search_field/filters-correct.png)
+![](filters-correct.png)
 
 The following syntax is used for attributes:
 
@@ -179,11 +179,11 @@ And without an arrow when it's not:
 
 Show search history in a popup on clicking on the magnifying glass icon:
 
-![](../../../images/ui/search_field/search-history-popup.png)
+![](search-history-popup.png)
 
 Show context help in the history popup when it is empty:
 
-![](../../../images/ui/search_field/search-history-empty.png)
+![](search-history-empty.png)
 
 The keyboard shortcut for the History action is <shortcut>Alt + Down</shortcut> on all systems.
 
@@ -204,25 +204,25 @@ The search field is not aligned with the content on the Keymap settings page, wh
 
 <p>Incorrect</p>
 
-![](../../../images/ui/search_field/keymap-search-incorrect.png)
+![](keymap-search-incorrect.png)
 
 <p>Correct</p>
 
-![](../../../images/ui/search_field/keymap-search-correct.png)
+![](keymap-search-correct.png)
 
 Fit the search field to the popup windows and to a toolbar if it has top borders. This way the overall form looks less complex.
 
 <p>Incorrect</p>
 
-![](../../../images/ui/search_field/log-incorrect.png)
+![](log-incorrect.png)
 
 <p>Correct</p>
 
-![](../../../images/ui/search_field/log-correct.png)
+![](log-correct.png)
 
-| Incorrect                                                | Correct                                                |
-|----------------------------------------------------------|--------------------------------------------------------|
-| ![](../../../images/ui/search_field/popup-incorrect.png) | ![](../../../images/ui/search_field/popup-correct.png) |
+| Incorrect                | Correct                |
+|--------------------------|------------------------|
+| ![](popup-incorrect.png) | ![](popup-correct.png) |
 
 Show the search field on demand when search is supplementary to other functionality or if space is limited.
 For example, space in the Project view is limited and too loaded to always show the _Speed Search_ bar:

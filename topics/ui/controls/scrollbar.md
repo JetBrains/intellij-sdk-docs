@@ -73,26 +73,26 @@ Change cursor to "Hand" when hovering such scrollbars.
 When showing a text, wrap it instead of showing the horizontal scrollbar when possible. With both scrollbars, it is harder to manipulate the content.
 Incorrect
 
-![](../../../images/ui/scrollbar/soft-wrap-incorrect.png)
+![](soft-wrap-incorrect.png)
 
 Correct
 
-![](../../../images/ui/scrollbar/soft-wrap-correct.png)
+![](soft-wrap-correct.png)
 
 A horizontal scroll bar can be added for code snippets or for formatted input. Use the context menu to enable soft-wrapping.
 
 Correct
 
-![](../../../images/ui/scrollbar/soft-wrap-context.png)
+![](soft-wrap-context.png)
 
 Show only 1 scrollbar per table which scrolls the entire table:
 Incorrect:
 
-![](../../../images/ui/scrollbar/table-scrollbar-incorrect.png)
+![](table-scrollbar-incorrect.png)
 
 Correct:
 
-![](../../../images/ui/scrollbar/table-scrollbar-correct.png)
+![](table-scrollbar-correct.png)
 
 ## Placement
 
@@ -100,14 +100,14 @@ Reserve the space for a vertical scrollbar if there is a column on the right sid
 
 Incorrect:
 
-![](../../../images/ui/scrollbar/vertical-scrollbar-incorrect.png)
+![](vertical-scrollbar-incorrect.png)
 
 Correct:
 
-![](../../../images/ui/scrollbar/vertical-scrollbar-correct.png)
+![](vertical-scrollbar-correct.png)
 
 ## Style
 
-| Windows/Linux                                   | Mac                                             |
-|-------------------------------------------------|-------------------------------------------------|
-| ![](../../../images/ui/scrollbar/win-light.png) | ![](../../../images/ui/scrollbar/mac-light.png) |
+| Windows/Linux      | Mac                |
+|--------------------|--------------------|
+| ![](win-light.png) | ![](mac-light.png) |

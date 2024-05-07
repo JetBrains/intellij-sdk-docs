@@ -256,12 +256,12 @@ If a value is complex, for example, a list of values, a regexp, or a value copie
 
 For example, in a complex Resource patterns field
 
-![](../../../images/ui/validation/comlex_field.png)
+![](comlex_field.png)
 
 
 show the following dialog on pressing the confirmation button:
 
-![](../../../images/ui/validation/confirmation_dialog.png)
+![](confirmation_dialog.png)
 
 It should be possible to close the Settings dialog and save the entered data if the user wants to fix the values later or needs additional data outside of the modal Settings dialog.
 
@@ -280,7 +280,7 @@ If the field with an error gets focus:
 
 If the field loses focus, hide the tooltip and highlight the field with light-red:
 
-![](../../../images/ui/validation/incorrect_symbol_non_focused.png)
+![](incorrect_symbol_non_focused.png)
 
 
 On hover over the field or the element with an error:
@@ -321,11 +321,11 @@ Provide specific names, locations, and values of the objects involved:
 <table style="header-column">
     <tr>
         <td> <p>Incorrect</p> </td>
-        <td> <img src="../../../images/ui/validation/message_unclear.png"/> </td>
+        <td> <img src="message_unclear.png"/> </td>
     </tr>
     <tr>
-        <td> <p>Correct</p> </td>
-        <td> <img src="../../../images/ui/validation/message_clear.png"/> </td>
+        <td> <p>Correct
+        <td> <img src="message_clear.png"/> </td>
     </tr>
 </table>
 
@@ -451,7 +451,7 @@ Add a red light bulb on the right side of the input field if an action to fix th
 ![](table_error.png)
 
 When the field in a table loses focus, show an error icon. An error tooltip appears on mouse hover or when the line gets focus:
-![](../../../images/ui/validation/validation_table_hover.png)
+![](validation_table_hover.png)
 
 Use a warning icon for warnings:
 ![](table_warning.png)

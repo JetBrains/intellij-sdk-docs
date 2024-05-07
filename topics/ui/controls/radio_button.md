@@ -26,9 +26,9 @@ Do **not** use radio buttons if:
 
 * There are 5 and more options. Use a [drop-down list](drop_down.md):
 
-  | Incorrect                                                  | Correct                                                  |
-  |------------------------------------------------------------|----------------------------------------------------------|
-  | ![](../../../images/ui/radiobutton/dropdown_incorrect.png) | ![](../../../images/ui/radiobutton/dropdown_correct.png) |
+  | Incorrect                   | Correct                   |
+  |-----------------------------|---------------------------|
+  | ![](dropdown_incorrect.png) | ![](dropdown_correct.png) |
 
 Consider using a [drop-down list](drop_down.md) if:
 * The screen space is limited.
@@ -69,11 +69,11 @@ Do not use negation in labels as it complicates understanding.
 
 <p>Incorrect</p>
 
-![](../../../images/ui/radiobutton/answeryes_incorrect.png)
+![](answeryes_incorrect.png)
 
 <p>Correct</p>
 
-![](../../../images/ui/radiobutton/answeryes_correct.png)
+![](answeryes_correct.png)
 
 Make labels short and intelligible — see [Writing short and clear text](writing_short.md).
 

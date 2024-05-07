@@ -46,11 +46,11 @@ line is redundant here. Use [context help](context_help.md) to explain the field
 
 Incorrect:
 
-![](../../../images/ui/text_area/label_incorrect.png)
+![](label_incorrect.png)
 
 Correct:
 
-![](../../../images/ui/text_area/label_correct.png)
+![](label_correct.png)
 
 
 ### Placeholder, prefilled values and field focus

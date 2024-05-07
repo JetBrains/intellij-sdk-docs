@@ -79,7 +79,7 @@ The Plus button works the same way as the Browse button, the only difference is 
 
 ### Copy, Info
 
-| ![](../../../images/ui/built_in_button/copy_button.png)                                                               | ![](../../../images/ui/built_in_button/info_button.png)                                                      |
+| ![](copy_button.png)                                                                                                  | ![](info_button.png)                                                                                         |
 |-----------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
 | Do not use the Copy button, the content can be selected and copied using the Cmd/Ctrl+C shortcut or the context menu. | Do not use the info button to open an external link. Use <a href="context_help.md">context help</a> instead. |
 {style=none}

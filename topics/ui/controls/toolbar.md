@@ -63,9 +63,9 @@ The less frequently used commands can be right aligned.
 
 Do **not** put two toolbars next to each other. One toolbar should be enough for the most popular actions.
 
-| Incorrect                                      | Correct                                        |
-|------------------------------------------------|------------------------------------------------|
-| ![](../../../images/ui/toolbar/toolbars_2.png) | ![](../../../images/ui/toolbar/toolbars_1.png) |
+| Incorrect           | Correct             |
+|---------------------|---------------------|
+| ![](toolbars_2.png) | ![](toolbars_1.png) |
 
 Make every toolbar action available from the main menu or the context menu.
 Toolbars are customizable and can be hidden, so commands should be available from other places as well.
@@ -112,9 +112,9 @@ Place the toolbar at the bottom on macOS, and on the right on Windows and Linux 
 
 The toolbar width is limited by the width of the element it belongs to. For example, by the width of the tool window or the list part in a master-detail layout.
 
-| Incorrect                                           | Correct                                           |
-|-----------------------------------------------------|---------------------------------------------------|
-| ![](../../../images/ui/toolbar/width_incorrect.png) | ![](../../../images/ui/toolbar/width_correct.png) |
+| Incorrect                | Correct                |
+|--------------------------|------------------------|
+| ![](width_incorrect.png) | ![](width_correct.png) |
 
 Toolbar sizes are the same for all themes:
 
@@ -134,9 +134,9 @@ The toolbar items sizes change together with the application font size proportio
 Separate the toolbar from the content with a line from all four sides if it appears in a tool window or a table:
 
 
-| Incorrect                                           | Correct                                           |
-|-----------------------------------------------------|---------------------------------------------------|
-| ![](../../../images/ui/toolbar/style_incorrect.png) | ![](../../../images/ui/toolbar/style_correct.png) |
+| Incorrect                | Correct                |
+|--------------------------|------------------------|
+| ![](style_incorrect.png) | ![](style_correct.png) |
 
 Do **not** separate a toolbar with lines if it appears above the list:
 

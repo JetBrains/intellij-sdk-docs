@@ -19,7 +19,7 @@ Use description text to:
 
 * Describe a group of settings:
 
-![](../../../images/ui/description_text/03_use_in_settings.png)
+![](03_use_in_settings.png)
 
 
 ## How to Use
@@ -61,9 +61,9 @@ If the text does not fit, add a scrollbar:
 
 Do not add borders around description text. Use the panel color for the background.
 
-| Incorrect                                                       | Correct                                                       |
-|-----------------------------------------------------------------|---------------------------------------------------------------|
-| ![](../../../images/ui/description_text/09_frame_incorrect.png) | ![](../../../images/ui/description_text/09_frame_correct.png) |
+| Incorrect                   | Correct                   |
+|-----------------------------|---------------------------|
+| ![](09_frame_incorrect.png) | ![](09_frame_correct.png) |
 
 For [links](link.md), use the default link color: `Link.activeForeground`. Underline links on hover:
 

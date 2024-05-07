@@ -62,11 +62,11 @@ Do **not** add a label to explain the table behavior. Use context help instead:
 
 Incorrect:
 
-![](../../../images/ui/table/label-help-header.png)
+![](label-help-header.png)
 
 Correct:
 
-![](../../../images/ui/table/label-help.png)
+![](label-help.png)
 
 Follow the rules for the [Input field](input_field.md):
 
@@ -83,11 +83,11 @@ Do **not** use a Group separator instead of a Table label. A horizontal line is 
 
 Incorrect:
 
-![](../../../images/ui/table/label-group-incorrect.png)
+![](label-group-incorrect.png)
 
 Correct:
 
-![](../../../images/ui/table/table_label.png)
+![](table_label.png)
 
 ### Header
 
@@ -98,21 +98,21 @@ For example, in the Environment Variables table a header is required, since that
 
 Correct:
 
-![](../../../images/ui/table/header-needed-correct.png)
+![](header-needed-correct.png)
 
 Incorrect:
 
-![](../../../images/ui/table/header-needed-incorrect.png)
+![](header-needed-incorrect.png)
 
 Do **not** use a header if all columns in a table have self-descriptive content, for example, names, dates, color previews, etc. For example, a header in File History is redundant:
 
 Correct:
 
-![](../../../images/ui/table/table_history.png)
+![](table_history.png)
 
 Incorrect:
 
-![](../../../images/ui/table/history-header-redundant.png)
+![](history-header-redundant.png)
 
 
 Labels in a header should be short and descriptive. Try to avoid headers which are too long for the content in the rows below. [How to write texts](writing_short.md).
@@ -157,7 +157,7 @@ Do **not** use stripes In a simple data set as guides to track content between c
 
 Incorrect:
 
-![](../../../images/ui/table/table-zebra-incorrect.png)
+![](table-zebra-incorrect.png)
 
 Default line height, [proper column width](table.md#sizes-and-placement) and highlighting rows on mouse hover should provide enough guidance to track content.
 For example, look at the same table without stripes, with bigger line height and adjusted column width:
@@ -171,17 +171,17 @@ Bigger distance between groups of related information can also help in tracking 
 
 For example, look at the File History table grouped by commit, author, and date:
 
-![](../../../images/ui/table/history-grouped.png)
+![](history-grouped.png)
 
 Do **not** add borders between rows or columns, they add unnecessary noise to the table:
 
 Incorrect:
 
-![](../../../images/ui/table/inner-borders-incorrect.png)
+![](inner-borders-incorrect.png)
 
 Correct:
 
-![](../../../images/ui/table/inner-borders.png)
+![](inner-borders.png)
 
 ### Interaction
 
@@ -195,7 +195,7 @@ Change the background to active selection color for the selected row when the ta
 
 and to inactive selection when the focus is on another element:
 
-![](../../../images/ui/table/selection-inactive.png)
+![](selection-inactive.png)
 
 Do **not** leave the active selection color in the table when the focus switches to some other element.
 It is otherwise confusing which element is currently active.
@@ -265,7 +265,7 @@ Do **not** use a full-size combobox inside tables. It looks inconsistent and has
 
 Incorrect:
 
-![](../../../images/ui/table/combo-incorrect.png)
+![](combo-incorrect.png)
 
 
 ## Sizes and placement
@@ -275,11 +275,11 @@ Choose a column width appropriate for the most common values, but no less than *
 
 Correct:
 
-![](../../../images/ui/table/fileColors.png)
+![](fileColors.png)
 
 Incorrect:
 
-![](../../../images/ui/table/fileColorsTooWide.png)
+![](fileColorsTooWide.png)
 
 Minimum table width is **350px**. If a table is too narrow after you have adjusted columns width, add space to the rightmost column.
 
@@ -300,13 +300,13 @@ Do **not** put vertical elements (for example, diagrams) in the middle of a tabl
 
 Incorrect:
 
-![](../../../images/ui/table/history-graph-incorrect.png)
+![](history-graph-incorrect.png)
 
 Place them closer to the sides instead:
 
 Correct:
 
-![](../../../images/ui/table/table_history.png)
+![](table_history.png)
 
 Right-align numbers when it is useful to compare them by their length. Left-align all the other content.
 
@@ -364,7 +364,7 @@ For aligning in a dialog with other controls, see [Layout](layout.md).
         <p style="margin-left: 20px; margin-top: 30px"><span style="color: #999999">Label</span></p>
     </td>
     <td>
-        <p style="margin-left:20px">          <img src="../../../images/ui/table/bytecode-version-mes.png" style="margin-bottom: 9px; margin-left: 40px;" /></p>
+        <p style="margin-left:20px">          <img src="bytecode-version-mes.png" style="margin-bottom: 9px; margin-left: 40px;" /></p>
     </td>
   </tr>
   <tr>
@@ -372,7 +372,7 @@ For aligning in a dialog with other controls, see [Layout](layout.md).
         <p style="margin-left: 20px; margin-top: 30px"><span style="color: #999999">Column content</span></p>
     </td>
     <td>
-        <p style="margin-left:20px">          <img src="../../../images/ui/table/columnMes.png" style="margin-bottom: 9px; margin-left: 40px;" /></p>
+        <p style="margin-left:20px">          <img src="columnMes.png" style="margin-bottom: 9px; margin-left: 40px;" /></p>
     </td>
   </tr>
   <tr>
@@ -380,7 +380,7 @@ For aligning in a dialog with other controls, see [Layout](layout.md).
         <p style="margin-left: 20px; margin-top: 30px"><span style="color: #999999">Combo icon</span></p>
     </td>
     <td>
-        <p style="margin-left:20px">          <img src="../../../images/ui/table/combo-mes.png" style="margin-bottom: 9px; margin-left: 40px;" /></p>
+        <p style="margin-left:20px">          <img src="combo-mes.png" style="margin-bottom: 9px; margin-left: 40px;" /></p>
     </td>
   </tr>
   <tr>
@@ -388,7 +388,7 @@ For aligning in a dialog with other controls, see [Layout](layout.md).
         <p style="margin-left: 20px; margin-top: 30px"><span style="color: #999999">Sorted column</span></p>
     </td>
     <td>
-        <p style="margin-left:20px">          <img src="../../../images/ui/table/sorted-mes.png" style="margin-bottom: 9px; margin-left: 40px;" /></p>
+        <p style="margin-left:20px">          <img src="sorted-mes.png" style="margin-bottom: 9px; margin-left: 40px;" /></p>
     </td>
   </tr>
 </table>

@@ -51,17 +51,17 @@ Remove verbs that explain the function of a UI control:
 
 <table style="none">
   <tr>
-     <td> <img src="../../../images/ui/writing_short/obvious-prefer.png"/><em> A selected radio button means its option is "preferred". </em> </td>
-      <td> <img src="../../../images/ui/writing_short/obvious-allow.png"/><em> A checked checkbox means its feature is "allowed". </em> </td>
+     <td> <img src="obvious-prefer.png"/><em> A selected radio button means its option is "preferred". </em> </td>
+      <td> <img src="obvious-allow.png"/><em> A checked checkbox means its feature is "allowed". </em> </td>
   </tr>
 </table>
 
 Remove words with a meaning that is already expressed in the label:
 <table style="none">
     <tr>
-       <td> <img src="../../../images/ui/writing_short/obvious-contents.png"/>
+       <td> <img src="obvious-contents.png"/>
             <em> The clipboard’s purpose is to keep information so the infinitive "to keep" is implying the obvious and can be removed.</em> </td>
-       <td> <img src="../../../images/ui/writing_short/obvious-functionality.png"/>
+       <td> <img src="obvious-functionality.png"/>
             <em> The word "functionality" is already implied by "Drag’n’Drop" and can be removed. </em> </td>
     </tr>
 </table>
@@ -122,7 +122,7 @@ Remove duplicates in meaning:
     <td> <format color="#999999"> The link "I don’t agree" duplicates the notification "Close" button which appears on hover. </format> </td>
 </tr>
 <tr>
-    <td> <img src="../../../images/ui/writing_short/notificationInfo.png"/> </td>
+    <td> <img src="notificationInfo.png"/> </td>
     <td> <format color="#999999"> The icon is not needed because the message is purely informative, not an error or a warning. Texts are information by default, there is no need to specify that meaning explicitly. </format> </td>
 </tr>
 </table>

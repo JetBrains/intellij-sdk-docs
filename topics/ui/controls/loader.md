@@ -41,7 +41,7 @@ Remove the loader as soon as the process completes.
 
 <tr>
     <td> Inside a field </td>
-    <td> <img src="../../../images/ui/loader/placement_field.png"/> </td>
+    <td> <img src="placement_field.png"/> </td>
 </tr>
 
 <tr>
@@ -57,18 +57,18 @@ Remove the loader as soon as the process completes.
 
 <tr>
     <td>In a corner</td>
-    <td> <img src="../../../images/ui/loader/placement_corner.png" />
+    <td> <img src="placement_corner.png" />
     </td>
 </tr>
 
 <tr>
     <td>  Next to an item </td>
-    <td> <img src="../../../images/ui/loader/placement_item.png" /> </td>
+    <td> <img src="placement_item.png" /> </td>
 </tr>
 
 <tr>
     <td> Before a progress text </td>
-    <td> <img src="../../../images/ui/loader/placement_progress_text.png" />
+    <td> <img src="placement_progress_text.png" />
     </td>
 </tr>
 

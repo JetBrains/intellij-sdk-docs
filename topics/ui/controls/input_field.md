@@ -54,9 +54,9 @@ Use sentence-style capitalization.
 
 If there are several input fields on a form, it’s recommended to make labels approximately the same length to avoid gaps between labels and fields. For example:
 
-| Incorrect                                                     | Correct                                                         |
-|---------------------------------------------------------------|-----------------------------------------------------------------|
-| ![](../../../images/ui/input_field/several_labels_length.png) | ![](../../../images/ui/input_field/several_labels_length_1.png) |
+| Incorrect                      | Correct                          |
+|--------------------------------|----------------------------------|
+| ![](several_labels_length.png) | ![](several_labels_length_1.png) |
 
 If an input field is disabled, disable the label too:
 
@@ -89,9 +89,9 @@ If the user overwrites the value, it can be restored by removing the new value f
 
 Do **not** use the placeholder to show examples. The user can get the impression that the field is already filled. Provide examples or explanation under the input field (see [Context help](context_help.md)):
 
-| Incorrect                                                    | Correct                                                        |
-|--------------------------------------------------------------|----------------------------------------------------------------|
-| ![](../../../images/ui/input_field/placeholder_examples.png) | ![](../../../images/ui/input_field/placeholder_examples_1.png) |
+| Incorrect                     | Correct                         |
+|-------------------------------|---------------------------------|
+| ![](placeholder_examples.png) | ![](placeholder_examples_1.png) |
 
 Do **not** use the placeholder as the field label. After the field has been filled, it is difficult to understand its purpose.
 
@@ -172,9 +172,9 @@ If input value is longer than the field width, show the beginning of the value w
 If the input field depends on another control, for example, a checkbox, follow the rules for (layout.md#dependent-controls). Otherwise, follow the rules for [independent controls](layout.md#independent-controls).
 
 <!--
-![](../../../images/ui/input_field/sizes_label.png)
+![](sizes_label.png)
 
-![](../../../images/ui/input_field/sizes_button.png)
+![](sizes_button.png)
 
-![](../../../images/ui/input_field/sizes_several.png)
+![](sizes_several.png)
 -->

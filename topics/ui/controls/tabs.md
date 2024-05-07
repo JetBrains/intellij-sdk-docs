@@ -51,25 +51,25 @@ Make sure the border of the tab reaches the edges of the area tabs occupy.
 
 Incorrect:
 
-![](../../../images/ui/tabs/04_layout_border_incorrect.png)
+![](04_layout_border_incorrect.png)
 
 Correct:
 
-![](../../../images/ui/tabs/04_layout_border_correct.png)
+![](04_layout_border_correct.png)
 
 Do **not** surround the tab content area with a visible border.
 
 Incorrect:
 
-![](../../../images/ui/tabs/05_bordered.png)
+![](05_bordered.png)
 
 Avoid placing independent content groups under the tabs area.
 
 Incorrect:
 
-![](../../../images/ui/tabs/06_layout_content_under.png)
+![](06_layout_content_under.png)
 
 When there are other UI controls above tabs, separate them with a vertical indent.
 
-![](../../../images/ui/tabs/07_inset.png)
+![](07_inset.png)
 

@@ -19,16 +19,16 @@ Use a flat geometric icon style with straight corners and edges. Flat icons rema
 
 Use flat shapes instead of complex 3D forms:
 
-| Incorrect                                      | Correct                                          |
-|------------------------------------------------|--------------------------------------------------|
-| ![](../../../images/ui/icons/style_pin_3d.png) | ![](../../../images/ui/icons/style_pin_flat.png) |
+| Incorrect             | Correct                 |
+|-----------------------|-------------------------|
+| ![](style_pin_3d.png) | ![](style_pin_flat.png) |
 
 
 Use straight corners and lines instead of curves. It’s recommended to use 45° and 90° angles, or 30° and 60° where possible:
 
-| Incorrect                                            | Correct                                                |
-|------------------------------------------------------|--------------------------------------------------------|
-| ![](../../../images/ui/icons/style_folder_round.png) | ![](../../../images/ui/icons/style_folder_straigt.png) |
+| Incorrect                   | Correct                       |
+|-----------------------------|-------------------------------|
+| ![](style_folder_round.png) | ![](style_folder_straigt.png) |
 
 
 Icons should be as simple as possible without losing their meaning. Clean and simple icons ensure readability and reduce visual clutter.
@@ -39,8 +39,8 @@ Icons should be as simple as possible without losing their meaning. Clean and si
     <td> Correct </td>
 </tr>
 <tr>
-    <td> <img src="../../../images/ui/icons/style_soft_wrap_detailed.png"/> </td>
-    <td> <img src="../../../images/ui/icons/style_soft_wrap_simple.png"/> </td>
+    <td> <img src="style_soft_wrap_detailed.png"/> </td>
+    <td> <img src="style_soft_wrap_simple.png"/> </td>
 </tr>
 <tr>
     <td colspan="2"><em>Reduced the icon to its minimal form, without losing its meaning.</em></td>
@@ -93,9 +93,9 @@ Sizes for other icon sizes can be found in the table below:
 ## Basic shapes
 Use basic shapes to build icons, such as squares, circles and rectangles. Using a grid and basic shapes ensures consistent visual proportions and placement.
 
-| ![](../../../images/ui/icons/shape_square.png) _Square 12px x 12px_                        | ![](../../../images/ui/icons/shape_circle.png) _Circle 14px_                           |
-|--------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
-| ![](../../../images/ui/icons/shape_rect_horizontal.png) _Horizontal rectangle 10px x 14px_ | ![](../../../images/ui/icons/shape_rect_vertical.png) _Vertical rectangle 14px x 10px_ |
+| ![](shape_square.png) _Square 12px x 12px_                        | ![](shape_circle.png) _Circle 14px_                           |
+|-------------------------------------------------------------------|---------------------------------------------------------------|
+| ![](shape_rect_horizontal.png) _Horizontal rectangle 10px x 14px_ | ![](shape_rect_vertical.png) _Vertical rectangle 14px x 10px_ |
 {style=none}
 
 Make sure that icons have the same visual weight. The more filled an icon is, the less space it needs. Following this rule, circles, rhombuses, triangles and other non-square shapes should have larger height and width to be optically balanced with square figures.
@@ -115,8 +115,8 @@ Use a 2px stroke as the main drawing line. Consistent line weight makes icons co
 
 <table style="none">
 <tr>
-    <td width="50%"> <img src="../../../images/ui/icons/stroke_download.png" width="215"/></td>
-    <td width="50%"> <img src="../../../images/ui/icons/stroke_calc.png" width="233"/></td>
+    <td width="50%"> <img src="stroke_download.png" width="215"/></td>
+    <td width="50%"> <img src="stroke_calc.png" width="233"/></td>
 </tr>
 <tr>
     <td><em>Use consistent stroke width.</em></td>
@@ -137,9 +137,9 @@ Align pixels on the X and Y axis and round to the nearest whole pixel, or 0.5px 
     <td>Correct</td>
 </tr>
 <tr>
-    <td width="50%"><img src="../../../images/ui/icons/stroke_pixels_incorrect.png"/>
+    <td width="50%"><img src="stroke_pixels_incorrect.png"/>
          <em> If an icon is positioned off pixels, <br /> it becomes blurry when rasterized.</em> </td>
-    <td width="50%"><img src="../../../images/ui/icons/stroke_pixels_correct.png"/>
+    <td width="50%"><img src="stroke_pixels_correct.png"/>
          <em> Position stokes on integer pixels where possible.</em> </td>
 </tr>
 </table>
@@ -156,9 +156,9 @@ Reduce the number of anchors, as they increase the size of the image and takes l
     <td>Correct</td>
 </tr>
 <tr>
-    <td width="50%"><img src="../../../images/ui/icons/stroke_anchors_incorrect.png"/>
+    <td width="50%"><img src="stroke_anchors_incorrect.png"/>
          <em> Unneeded anchors are added.</em> </td>
-    <td width="50%"><img src="../../../images/ui/icons/stroke_anchors_correct.png"/>
+    <td width="50%"><img src="stroke_anchors_correct.png"/>
          <em> Use the minimum number of anchors.</em> </td>
 </tr>
 </table>
@@ -171,9 +171,9 @@ The default modifier position is the bottom right corner. If the base shape is b
 
   <table style="none">
   <tr>
-      <td width="50%"> <img src="../../../images/ui/icons/modifier_search.png"/>
+      <td width="50%"> <img src="modifier_search.png"/>
            <em> Place the modifier in the left corner <br/> if the base shape is badly recognizable <br/> with the modifier in the right corner.</em> </td>
-      <td width="50%"> <img src="../../../images/ui/icons/modifier_parameter.png"/>
+      <td width="50%"> <img src="modifier_parameter.png"/>
            <em> Place the modifier in the left corner <br/> if there are several modifiers.</em> </td>
   </tr>
   </table>
@@ -193,8 +193,8 @@ Unfilled arrowhead can be used if there is only one arrow on an icon to reduce e
 
 <table style="none">
 <tr>
-    <td width="50%"> <img src="../../../images/ui/icons/arrow_filled.png"/></td>
-    <td width="50%"> <img src="../../../images/ui/icons/arrow_unfilled.png"/></td>
+    <td width="50%"> <img src="arrow_filled.png"/></td>
+    <td width="50%"> <img src="arrow_unfilled.png"/></td>
 </tr>
 <tr>
     <td><em> 90° arrowhead and 2px square stroke body.</em></td>
@@ -205,7 +205,7 @@ Unfilled arrowhead can be used if there is only one arrow on an icon to reduce e
 Do **not** use other arrow styles, for example unfilled arrows or arrows with thinned tails.
 <p>Incorrect</p>
 
-![](../../../images/ui/icons/arrows_incorrect.png)
+![](arrows_incorrect.png)
 
 
 ## Color
@@ -294,12 +294,12 @@ Use these colors according to the following rules:
 
     <table style="none">
         <tr>
-            <td width="50%"> <b>Green</b> <p>Positive actions: run, create</p><br /><img src="../../../images/ui/icons/colors_actions_green.png" /> </td>
-            <td width="50%"> <b>Red</b> <p>Destructive actions: stop, remove, force</p><br /><img src="../../../images/ui/icons/colors_actions_red.png" /> </td>
+            <td width="50%"> <b>Green</b> <p>Positive actions: run, create</p><br /><img src="colors_actions_green.png" /> </td>
+            <td width="50%"> <b>Red</b> <p>Destructive actions: stop, remove, force</p><br /><img src="colors_actions_red.png" /> </td>
         </tr>
         <tr>
-            <td> <b>Blue</b> <p>Accent color to highlight popular icons based on usage statistics, highlight small elements in complex icons</p> <br /><img src="../../../images/ui/icons/colors_actions_blue.png" /> </td>
-            <td> <b>Yellow</b> <p>Warning actions: attract attention to the places (e.g. code) that can be optimized or improved</p> <br /><img src="../../../images/ui/icons/colors_actions_yellow.png" /> </td>
+            <td> <b>Blue</b> <p>Accent color to highlight popular icons based on usage statistics, highlight small elements in complex icons</p> <br /><img src="colors_actions_blue.png" /> </td>
+            <td> <b>Yellow</b> <p>Warning actions: attract attention to the places (e.g. code) that can be optimized or improved</p> <br /><img src="colors_actions_yellow.png" /> </td>
         </tr>
     </table>
 

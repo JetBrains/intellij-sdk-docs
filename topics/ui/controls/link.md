@@ -43,7 +43,7 @@ Do <control>not</control> use links for primary actions or when a UI is not cons
 Use a [button](button.topic) or a [drop down list](drop_down.md) instead.
 These controls can be selected from the keyboard and are bigger and easier to click.
 
-![](../../../images/ui/link/07_android_sdk.png)
+![](07_android_sdk.png)
 
 
 ## How to use

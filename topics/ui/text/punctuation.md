@@ -93,13 +93,13 @@ Between symbols in series.
 ## Colon
 Use a colon after labels for inputs and radio button / checkbox groups.
 
-![](../../../images/ui/input_field/label_noun.png)
+![](label_noun.png)
 
-![](../../../images/ui/radiobutton/radio_example.png)
+![](radio_example.png)
 
 Do **not** use a colon if a label and text inside the input element make a phrase.
 
-![](../../../images/ui/input_field/label_sentence.png)
+![](label_sentence.png)
 
 
 ## Contractions

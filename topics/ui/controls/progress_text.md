@@ -35,7 +35,7 @@ Do not provide details that are meaningless for the user, for example, "Please w
 
 Incorrect:
 
-![](../../../images/ui/progress_text/meaningless.png)
+![](meaningless.png)
 
 Add time units if the remaining time can be predicted.
 
@@ -43,13 +43,13 @@ Round up the first time unit to one of the following numeric anchors: 1, 2, 3, 5
 For example, if there are 7 minutes and 50 seconds remaining, the progress text should read "About 10 minutes left".
 If less than 5 seconds are left, it should say "About 5 seconds left".
 
-![](../../../images/ui/progress_text/time.png)
+![](time.png)
 
 Use work units if the remaining time cannot be predicted, as they help the user understand why the process takes so long.
 
 Work units: the current step, the currently processed file, the number of processed files/tde amount of information, the percentage of work completed, and so on:
 
-![](../../../images/ui/progress_text/work.png)
+![](work.png)
 
 
 The time passed if the user controls the process, for example, needs to stop it after a certain time:

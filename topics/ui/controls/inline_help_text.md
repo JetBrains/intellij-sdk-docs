@@ -151,11 +151,11 @@ If it applies to a single list, tree or table item:
 
 <p>For a list or tree in the master part, place the text into the detail part.</p>
 
-![](../../../images/ui/inline_help_text/13_master-detail_help_text.png)
+![](13_master-detail_help_text.png)
 
 If the case with the master-detail layout above does not apply, use the [help tooltip](tooltip.md#question-mark-icon-for-help-tooltips) with the question mark icon.
 
-![](../../../images/ui/tooltip/05_question_icon_tree.png)
+![](05_question_icon_tree.png)
 
 
 ### Group of controls

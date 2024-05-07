@@ -19,8 +19,8 @@
 <tr>
     <td>Numbers</td>
     <td>4,255,165.00</td>
-    <td>Space is not limited, e.g. Settings dialog
-        <p style="margin: -10px 0 -30px -20px"><img src="numbers.png" width="277" /></p>
+    <td>Space is not limited, e.g. <control>Settings</control> dialog<br/>
+        <img src="numbers.png" width="277" />
     </td>
 </tr>
 <tr>

@@ -80,14 +80,15 @@ Do **not** put a period at the end of an IDE action.
 
 
 ## Comma
-<p>Use a comma:</p>
+Use a comma:
 
 Before a conjunction in a list of three or more items (the Oxford or serial comma).
-<p style="margin: 0 0 36px 20px;"><i>Border for a text field, combo box, or spinner</i></p>
+
+*Border for a text field, combo box, or spinner*
 
 Between symbols in series.
-<p style="margin: 0 0 36px 20px;"><i>Use the following characters: &, $, ., and *</i></p>
 
+*Use the following characters: &, $, ., and \**
 
 
 ## Colon

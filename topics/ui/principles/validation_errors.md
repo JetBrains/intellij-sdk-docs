@@ -7,10 +7,10 @@
 Validation is the process of checking the values specified by the user, and displaying the errors that are found.
 
 An error can appear in a **tooltip**:
-![](example_tooltip.png)
+![](example_tooltip.png){width=235}
 
 Or **inline**, above the confirmation buttons:
-![](example_inline.png)
+![](example_inline.png){width=358}
 
 ## Principles
 
@@ -21,9 +21,9 @@ Always try not to let the user enter invalid data. To achieve this:
 Use controls that are constrained to valid values. For example, use a combo box or a slider instead of the input field.
 
 Limit the characters users can enter. For example, if only numbers are supported in a field, and this is obvious to the user, ignore input of letters instead of showing an error:
-![](port_correct.png)
+![](port_correct.png){width=188}
 If it’s not obvious that only numbers can be entered, allow to enter any sign and perform validation.
-![](font_error.png)
+![](font_error.png){width=301}
 
 Provide a default value if possible. Even if the user decides to change the default value, it gives a clue on the expected input format.
 
@@ -93,11 +93,11 @@ If a non-allowed character is entered, or the maximum input size or value is exc
 
 The field is highlighted with red and the error appears in the tooltip.
 
-![](create_class.png)
+![](create_class.png){width=373}
 
 If the maximum value is exceeded, specify what values are allowed (e.g. a range for numeric values, or the number of symbols):
 
-![](port_error.png)
+![](port_error.png){width=461}
 
 Hide the error when the incorrect symbol is deleted.
 
@@ -152,17 +152,17 @@ Do **not** validate empty fields on focus loss. Users should be able to fill the
 
 On sending the form, the field is highlighted in red and the error tooltip appears.
 
-![](exesting_name.png)
+![](exesting_name.png){width=257}
 
 If validated on focus loss, highlight the field in light-red. Do not return focus to the field with the error automatically.
 
-![](focus_loss.png)
+![](focus_loss.png){width=169}
 
 The error tooltip appears when the invalid field gets the focus or on hovering over the field.
 
 When the user changes the value, the tooltip disappears and error highlighting is replaced with the regular focus:
 
-![](fix_error.png)
+![](fix_error.png){width=480}
 
 When the focus is returned to the field with an error, use validation on input. Otherwise, it can be unclear for the user how to initiate validation.
 
@@ -178,7 +178,7 @@ new ComponentValidator(getDisposable()).withValidator(...).
 
 #### Simple form
 If a form is simple, move the focus to the first required field and disable the confirmation button until all required fields have been filled. It is clear from the form behavior that input is required, showing validation messages is redundant.
-![](simple_dialog.png)
+![](simple_dialog.png){width=373}
 
 #### Complex form
 
@@ -197,7 +197,7 @@ Validation is performed when the user clicks the confirmation button (for exampl
 
 Highlight all invalid fields, move the focus to the first invalid field and show the tooltip.
 
-![](complex_dialog.png)
+![](complex_dialog.png){width=912}
 
 Hide the tooltip and the red highlighting when the user starts editing the invalid value or entering symbols into the empty required field.
 
@@ -222,7 +222,7 @@ If a non-allowed or an empty value is entered into a field that’s within the P
 #### How it works
 
 On Enter, the field is highlighted with red and the error tooltip appears.
-![](main_window.png)
+![](main_window.png){width=379}
 
 If validated on focus loss, the field is highlighted with light-red. The focus is not returned to the field automatically.
 
@@ -235,7 +235,7 @@ Hide the field highlighting and the tooltip when the user fixes the invalid valu
 If validation is slow or attempts are limited, for example, due to connection to a remote server, validate values on sending the form.
 
 If it’s not possible to detect the fields with errors, show the error message inline under the fields:
-![](example_inline.png)
+![](example_inline.png){width=358}
 
 An inline error only appears on clicking the confirmation button. The dialog is resized to fit the error message. Do **not** leave an empty space for the error in advance.
 
@@ -256,12 +256,12 @@ If a value is complex, for example, a list of values, a regexp, or a value copie
 
 For example, in a complex Resource patterns field
 
-![](comlex_field.png)
+![](comlex_field.png){width=694}
 
 
 show the following dialog on pressing the confirmation button:
 
-![](confirmation_dialog.png)
+![](confirmation_dialog.png){width=409}
 
 It should be possible to close the Settings dialog and save the entered data if the user wants to fix the values later or needs additional data outside of the modal Settings dialog.
 
@@ -275,17 +275,17 @@ An error tooltip appears in two cases:
 </p>
 
 If the field with an error gets focus:
-![](example_tooltip.png)
+![](example_tooltip.png){width=235}
 
 
 If the field loses focus, hide the tooltip and highlight the field with light-red:
 
-![](incorrect_symbol_non_focused.png)
+![](incorrect_symbol_non_focused.png){width=206}
 
 
 On hover over the field or the element with an error:
-![](incorrect_symbol_hover.png)
-![](validation_table_hover.png)
+![](incorrect_symbol_hover.png){width=235}
+![](validation_table_hover.png){width=429}
 
 Show the tooltip above the field and move it 40px right, so that the controls above it are not overlapped.
 If there is an important info above the field, the tooltip can be shown on the right.
@@ -296,11 +296,11 @@ If there is an important info above the field, the tooltip can be shown on the r
 
 An error message describes the problem and provides the way to solve it if it’s not clear from the problem description.
 
-![](message_short.png)
+![](message_short.png){width=319}
 
 *It’s clear how to fix the error from the error description.*
 
-![](message_long.png)
+![](message_long.png){width=456}
 *The way to solve the problem is provided.*
 
 Describe the problem in terms of target users’ actions or goals, not in terms of the program’s architecture.
@@ -321,11 +321,11 @@ Provide specific names, locations, and values of the objects involved:
 <table style="header-column">
     <tr>
         <td> <format color="Red" style="bold">Incorrect</format> </td>
-        <td> <img src="message_unclear.png"/> </td>
+        <td> <img src="message_unclear.png" width="343"/> </td>
     </tr>
     <tr>
         <td> <format color="Green" style="bold">Correct</format> </td>
-        <td> <img src="message_clear.png"/> </td>
+        <td> <img src="message_clear.png" width="277"/> </td>
     </tr>
 </table>
 
@@ -396,13 +396,13 @@ Use encouraging tone:
 
 ## Warning
 
-![](validation_warning.png)
+![](validation_warning.png){width=336}
 
 A warning informs the user that something is configured incorrectly, but does not prevent them from applying the changes.
 
 A warning can appear on input, focus loss, or on reopening a filled form. For example, make the empty field Target name as warning on reopening:
 
-![](warning_dialog.png)
+![](warning_dialog.png){width=580}
 
 
 The warning can be shown:
@@ -416,11 +416,11 @@ new ValidationInfo("Target name is not specified", myNameField)
 
 On the form under the controls. Show the message with the yellow warning icon.
 
-![](warning_inline.png)
+![](warning_inline.png){width=303}
 
  On the "Problems" page in complex multipage dialogs. Show warnings and fix options:
 
-![](problems.png)
+![](problems.png){width=418}
 *Problems page in the Project Structure dialog.*
 
 
@@ -436,25 +436,25 @@ On a particular page, highlight the element that contains a warning in yellow or
 
 ### Input field
 
-![](example_tooltip.png)
+![](example_tooltip.png){width=235}
 
 Add a red light bulb on the right side of the input field if an action to fix the error is available:
 
-![](input_field_bulb.png)
+![](input_field_bulb.png){width=729}
 
 ### Combo box
 
-![](combo_box.png)
+![](combo_box.png){width=235}
 
 ### Tables and lists
 
-![](table_error.png)
+![](table_error.png){width=429}
 
 When the field in a table loses focus, show an error icon. An error tooltip appears on mouse hover or when the line gets focus:
-![](validation_table_hover.png)
+![](validation_table_hover.png){width=429}
 
 Use a warning icon for warnings:
-![](table_warning.png)
+![](table_warning.png){width=429}
 
 #### Implementation
 
@@ -487,7 +487,7 @@ col0.setCellRenderer(new DefaultTableCellRenderer() {
 
 Add an error or warning icon on the right side of the invalid line.
 
-![](list.png)
+![](list.png){width=647}
 
 
 ### Multi-page dialog
@@ -496,7 +496,7 @@ If validation in a multipage form can be performed only on clicking the confirma
 * Use red highlighting for navigation elements such as tabs, menu and list items for areas that contain errors so that the user can quickly locate the error.
 * Open the first page with an error or stay on the opened page if it has errors on clicking the confirmation button.
 
-![](multipage1.png)
+![](multipage1.png){width=1014}
 
 
 
@@ -504,42 +504,42 @@ If validation in a multipage form can be performed only on clicking the confirma
 
 Do not show an error in a message box. Users are pulled out of the context, they need to close the dialog and locate the invalid field.
 
-![](message_box.png)
+![](message_box.png){width=472}
 
 
 Do not allow to click "OK" button if a form contains empty required fields. For this, the Cancel button should be used, and the OK button should be disabled. Otherwise, if users accidentally leave the field empty, they can expect that the value was entered correctly.
 
-![](wildcard.png)
+![](wildcard.png){width=521}
 
 Do not show error message inside the empty required field. It looks like a prefilled field, not like an error message.
 
-![](goto_line.png)
+![](goto_line.png){width=438}
 
 Do not underline the field label. It looks like a spell error and poorly visible.
 
-![](underline.png)
+![](underline.png){width=278}
 
 Do not shake a form and show an error with a delay. A shaking form is distracting and time-consuming.
 
-![](new_class.png)
+![](new_class.png){width=445}
 
 Do not show an error immediately after opening a form. It distracts the user from filling the form.
 
-![](add_tfs.png)
+![](add_tfs.png){width=350}
 
 Do not allow to submit the form with the error. When the form is opened again, the value is reset, so users don’t know
  if they entered incorrect data.
 
-![](save.png)
+![](save.png){width=471}
 
 
 
 
 ## Insets and colors
 
-![](tooltip_insets.png)
+![](tooltip_insets.png){width=534}
 
-![](dialog_insets.png)
+![](dialog_insets.png){width=354}
 
 <!--
 ### Error colors

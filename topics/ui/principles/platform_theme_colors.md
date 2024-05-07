@@ -6,7 +6,7 @@
 
 There are two default color themes: IntelliJ Light and Darcula.
 
-![](01_default_themes.png)
+![](01_default_themes.png){width=689}
 
 Use the colors consistently within the default themes. To do so, follow these guidelines:
 
@@ -22,7 +22,7 @@ Colors for UI components are specified with **color keys**.
 A color key is a name of a color property in a particular component, e.g. `ComboBox.background`, or a generic color property for several components, e.g. `Component.borderColor`.
 
 
-![](02_keys_naming.png)
+![](02_keys_naming.png){width=735}
 
 *Color keys of a combo box*
 
@@ -46,7 +46,7 @@ See the color values for the currently selected theme in the LaF Defaults dialog
 * Some color keys are not shown in the dialog by default because they are loaded at runtime with a corresponding UI component. Open the UI with this component to see such keys in the dialog.
 * Edit a color in the dialog to preview it in the IDE. The edited color is stored until the theme is switched.
 
-![](03_LaF_Defaults.png)
+![](03_LaF_Defaults.png){width=641}
 
 > For IntelliJ designers:
 > * Provide color keys in design specifications to be sure that correct keys are used.

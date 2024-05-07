@@ -32,36 +32,36 @@ This way the same meaning can be expressed with less words. Compare:
 
 Words like general, advanced, and options do not add useful information and can be removed with no harm to the meaning:
 
-![](generic-general.png)
+![](generic-general.png){width=540}
 
-![](generic-options.png)
+![](generic-options.png){width=540}
 *No meaning is lost after removing group headers "General" and "Options".*
 
 Some generic words cannot be removed. They can appear in actionable elements like buttons, checkboxes or links. Or removing a group header could break a dialog layout. In such cases, use a more informative label instead:
 
-![](generic-renamed-link.png)
+![](generic-renamed-link.png){width=576}
 *The link "Learn more" does not explain what useful information could be there for the user to click it.*
 
 
 ## Remove obvious objects and actions
 Remove verbs that explain the function of a UI control:
 
-![](obvious-specify.png)
+![](obvious-specify.png){width=403}
 *Text boxes are made for input — an explicit instruction "specify" duplicates the meaning expressed by the text field. Additional information can be given under the field — see [Context help](context_help.md).*
 
 <table style="none">
   <tr>
-     <td> <img src="obvious-prefer.png"/><em> A selected radio button means its option is "preferred". </em> </td>
-      <td> <img src="obvious-allow.png"/><em> A checked checkbox means its feature is "allowed". </em> </td>
+     <td> <img src="obvious-prefer.png" width="357"/><em> A selected radio button means its option is "preferred". </em> </td>
+      <td> <img src="obvious-allow.png" width="266"/><em> A checked checkbox means its feature is "allowed". </em> </td>
   </tr>
 </table>
 
 Remove words with a meaning that is already expressed in the label:
 <table style="none">
     <tr>
-       <td> <img src="obvious-contents.png"/>
+       <td> <img src="obvious-contents.png" width="357"/>
             <em> The clipboard’s purpose is to keep information so the infinitive "to keep" is implying the obvious and can be removed.</em> </td>
-       <td> <img src="obvious-functionality.png"/>
+       <td> <img src="obvious-functionality.png" width="266"/>
             <em> The word "functionality" is already implied by "Drag’n’Drop" and can be removed. </em> </td>
     </tr>
 </table>
@@ -70,19 +70,19 @@ Remove words with a meaning that is already expressed in the label:
 ## Do not address the user
 A user interface is for a person who uses it. Addressing this person is unnecessary because they by default perceive the text they see as for them:
 
-![](addressing1.png)
-![](addressing2.png)
+![](addressing1.png){width=674}
+![](addressing2.png){width=674}
 *The whole phrase after the comma is not needed because its meaning is already expressed by the verb "configure".*
 
 
 ## Remove duplicates
 If the repeating word appears in element labels, move it to the beginning. Finding a setting becomes faster as you scan only meaningful words:
 
-![](writing_short_duplicates.png)
+![](writing_short_duplicates.png){width=438}
 
 Remove duplicates in meaning:
 
-![](help-improve-notification.png)
+![](help-improve-notification.png){width=498}
 
 <table>
 <tr>
@@ -131,11 +131,11 @@ Remove duplicates in meaning:
 ## Translate from tech to human
 When you make a feature, you know how it works from the inside and can describe it from the implementation point of view:
 
-![](indent-options-before.png)
+![](indent-options-before.png){width=560}
 
 A person not familiar with implementation details won’t know what the Automatic indent options detector is, why file’s indent options have been overwritten and what indent size=2 means. Translated to the "human" language, the message reads:
 
-![](indent-options-after.png)
+![](indent-options-after.png){width=560}
 
 Always write UI text from a user’s perspective. Avoid technical terms, jargon and descriptions of inner logic that a user might not know.
 
@@ -144,24 +144,24 @@ Always write UI text from a user’s perspective. Avoid technical terms, jargon 
 
 After writing a UI text, imagine seeing it for the first time and try to understand what might be unclear or confusing. Then correct if necessary.
 
-![](first-time-file-colors-before.png)
+![](first-time-file-colors-before.png){width=474}
 *For a first-time user, Enable File Colors enables or disables the other two options (but it does not).*
 
-![](first-time-file-colors-after.png)
+![](first-time-file-colors-after.png){width=474}
 *Rewritten: now all options are equal.*
 
 More examples:
 
-![](first-time-auto-insert.png)
+![](first-time-auto-insert.png){width=318}
 *Before: The title can be read as "Auto-insert when only one checkbox is on" making you ask how does it work when both checkboxes are on. After: Replacing choice with completion option makes the title unambiguous.*
 
-![](first-time-smart-keys.png)
+![](first-time-smart-keys.png){width=318}
 *Before: What do smart Home and End keys do? What do they do if they are not smart? After: Added text explains what the options do so that the reader can make an informed choice.*
 
 
 ## Examples
 
-![](project-structure.png)
+![](project-structure.png){width=642}
 
 <table>
 
@@ -203,7 +203,7 @@ More examples:
 </tr>
 </table>
 
-![](offline-mode.png)
+![](offline-mode.png){width=566}
 <table>
 <tr>
 <td> Before </td>

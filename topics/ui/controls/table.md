@@ -10,7 +10,7 @@
 
 </tldr>
 
-![](table_table.png)
+![](table_table.png){width=448}
 
 ## When to use
 
@@ -23,11 +23,11 @@ Use tables:
 
 * To compare data in a set, for example, in the <control>File Colors</control> table it is convenient to compare file colors with one another and make sure that they are distinguishable:
 
-* ![](fileColors.png)
+* ![](fileColors.png){width=350}
 
 * To search by all parameters in a data set, for example, in the <control>File History</control> table it is possible to quickly filter the table by the date, author or commit message.
 
-![](table_history.png)
+![](table_history.png){width=488}
 
 
 
@@ -38,7 +38,7 @@ Do **not** use tables:
 * When there are more than 4 options per entry. Use the Master-Detail layout instead.
 
 * When at least one of the options requires a multi-line control, for example, the Text Area in <ui-path>Settings | Editor | Copyright | Copyright Profiles</ui-path>. Use Master-Detail layout instead:
-  ![](master-detail.png)
+  ![](master-detail.png){width=709}
 
 ## How to use
 
@@ -48,25 +48,25 @@ A label is optional for tables.
 
 Add a label if the table content is not obvious from the dialog title or the table header. For example, in the table that lets you configure filters for import and completion per-scope:
 
-![](table_label.png)
+![](table_label.png){width=448}
 
 Avoid a label if it duplicates the dialog title or the table header. For example, there is no need in a label in the <ui-path>JavaScript | Libraries</ui-path> table since the Settings page title and the table context make it clear what is in the table:
 
-![](label-header.png)
+![](label-header.png){width=424}
 
 Add a label if the control above can be mistaken for a table header:
 
-![](bytecode-version.png)
+![](bytecode-version.png){width=350}
 
 Do **not** add a label to explain the table behavior. Use context help instead:
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](label-help-header.png)
+![](label-help-header.png){width=448}
 
 <format color="Green" style="bold">Correct</format>
 
-![](label-help.png)
+![](label-help.png){width=448}
 
 Follow the rules for the [Input field](input_field.md):
 
@@ -83,11 +83,11 @@ Do **not** use a Group separator instead of a Table label. A horizontal line is 
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](label-group-incorrect.png)
+![](label-group-incorrect.png){width=448}
 
 <format color="Green" style="bold">Correct</format>
 
-![](table_label.png)
+![](table_label.png){width=448}
 
 ### Header
 
@@ -98,21 +98,21 @@ For example, in the Environment Variables table a header is required, since that
 
 <format color="Green" style="bold">Correct</format>
 
-![](header-needed-correct.png)
+![](header-needed-correct.png){width=350}
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](header-needed-incorrect.png)
+![](header-needed-incorrect.png){width=350}
 
 Do **not** use a header if all columns in a table have self-descriptive content, for example, names, dates, color previews, etc. For example, a header in File History is redundant:
 
 <format color="Green" style="bold">Correct</format>
 
-![](table_history.png)
+![](table_history.png){width=488}
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](history-header-redundant.png)
+![](history-header-redundant.png){width=488}
 
 
 Labels in a header should be short and descriptive. Try to avoid headers which are too long for the content in the rows below. [How to write texts](writing_short.md).
@@ -124,16 +124,16 @@ Use title-case capitalization.
 Freeze a headers when scrolling the table. A header provides useful context and should not be hidden.
 
 Align header with the content in the column below:
-![](fileColorsAlignment.png)
+![](fileColorsAlignment.png){width=350}
 
 ### Placeholder
 
 A table placeholder is shown when there is no data yet. Always put meaningful text here, do **not** write "Nothing to show".
 
-![](empty-incorrect.png)
+![](empty-incorrect.png){width=226}
 
 It is better to add a reason why a table is empty, and an action link to fill it:
-![](empty-correct.png)
+![](empty-correct.png){width=226}
 
 See more on empty tables [here](empty_state.md).
 
@@ -141,7 +141,7 @@ See more on empty tables [here](empty_state.md).
 
 Add a toolbar to provide actions which help manipulate data in the table (add, remove, import, etc.):
 
-![](too-long-line.png)
+![](too-long-line.png){width=370}
 
 Use the [`ToolbarDecorator`](%gh-ic%/platform/platform-api/src/com/intellij/ui/ToolbarDecorator.java) class to implement such a toolbar. See more on toolbars [here](toolbar.md).
 
@@ -151,51 +151,51 @@ Zebra striping is alternate highlighting of lines or rows in data tables or form
 
 Use stripes if you want to help users distinguish between different data sets. For example, the current branch is highlighted differently from other branches:
 
-![](history-zebra.png)
+![](history-zebra.png){width=488}
 
 Do **not** use stripes In a simple data set as guides to track content between columns. Alternating backgrounds create two distinct layers of focus while the type of data in different rows is the same.
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](table-zebra-incorrect.png)
+![](table-zebra-incorrect.png){width=448}
 
 Default line height, [proper column width](table.md#sizes-and-placement) and highlighting rows on mouse hover should provide enough guidance to track content.
 For example, look at the same table without stripes, with bigger line height and adjusted column width:
 
 <format color="Green" style="bold">Correct</format>
 
-![](table_table.png)
+![](table_table.png){width=448}
 
 
 Bigger distance between groups of related information can also help in tracking content. Line height between groups should be increased by 4px for each group level.
 
 For example, look at the File History table grouped by commit, author, and date:
 
-![](history-grouped.png)
+![](history-grouped.png){width=488}
 
 Do **not** add borders between rows or columns, they add unnecessary noise to the table:
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](inner-borders-incorrect.png)
+![](inner-borders-incorrect.png){width=493}
 
 <format color="Green" style="bold">Correct</format>
 
-![](inner-borders.png)
+![](inner-borders.png){width=493}
 
 ### Interaction
 
 Highlight the hovered row to assist in tracking content across columns:
 
-![](table_hover.png)
+![](table_hover.png){width=448}
 
 Change the background to active selection color for the selected row when the table is focused:
 
-![](selection-active.png)
+![](selection-active.png){width=448}
 
 and to inactive selection when the focus is on another element:
 
-![](selection-inactive.png)
+![](selection-inactive.png){width=448}
 
 Do **not** leave the active selection color in the table when the focus switches to some other element.
 It is otherwise confusing which element is currently active.
@@ -205,14 +205,14 @@ Change the mouse cursor to "Horizontal Resize" when hovering the rectangular are
 This area is defined by table height and by 2px padding around the columns’ divider.
 This makes it clear that columns can be resized even in a table without a header:
 
-![](resize.png)
+![](resize.png){width=448}
 
 Double click when the "Horizontal Resize" cursor is activated, should auto resize the column to fit the content.
 
 If column sorting is available, display the sorting state in the column header.
 If the user clicks on a column that is already sorted, reverse the sorting order and rotate the sorting icon:
 
-![](sorting.png)
+![](sorting.png){width=350}
 
 Add sorting to a table if the default sorting by one column may be insufficient to scan the data set.
 For example, in the table above, it is useful to be able to sort both by path and encoding to quickly find all paths with a specific encoding,
@@ -222,17 +222,17 @@ If columns can be reordered, change the cursor to "Hand" when hovering the table
 
 In tables without header show the drag icon on top of the column when hovering it:
 
-![](history-drag.png)
+![](history-drag.png){width=488}
 
 Change the cursor to "Hand" on the icon hover:
 
-![](history-drag-cursor.png)
+![](history-drag-cursor.png){width=488}
 
 Allow dragging a column when the cursor is placed anyplace over this column.
 This makes it clear that columns can be dragged even if there is no table header.
 
 In disabled table greyed-out text, disable controls and any interaction:
-![](table_disabled.png)
+![](table_disabled.png){width=448}
 
 ### Editing values
 
@@ -240,13 +240,13 @@ If data in a cell is editable or configurable:
 
 Allow in-place editing of content for text data. It should be possible to activate editing on mouse click:
 
-![](inline-edit.png)
+![](inline-edit.png){width=448}
 The line with the edited cell should be selected.
 The edited cell should have borders and their color should be the same as the color for [Input field](input_field.md) borders.
 
 Allow in-place editing for paths and add the Browse button to the cell:
 
-![](inline-edit-path.png)
+![](inline-edit-path.png){width=448}
 
 Show a separate dialog for non-text data, for example, a color chooser for colors.
 
@@ -255,7 +255,7 @@ For example, there is no need in a separate dialog in the <ui-path>Settings | Ap
 
 If it’s possible to enumerate less than 15 most likely or valid variants, show a combobox-like configurable with a down-arrow icon and a popup on click:
 
-![](combo.png)
+![](combo.png){width=115}
 
 Show the combo icon only on hover or when the corresponding line is selected. A lot of arrows in one column form their own information layers and attract too much attention.
 
@@ -265,7 +265,7 @@ Do **not** use a full-size combobox inside tables. It looks inconsistent and has
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](combo-incorrect.png)
+![](combo-incorrect.png){width=115}
 
 
 ## Sizes and placement
@@ -275,11 +275,11 @@ Choose a column width appropriate for the most common values, but no less than *
 
 <format color="Green" style="bold">Correct</format>
 
-![](fileColors.png)
+![](fileColors.png){width=350}
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](fileColorsTooWide.png)
+![](fileColorsTooWide.png){width=592}
 
 Minimum table width is **350px**. If a table is too narrow after you have adjusted columns width, add space to the rightmost column.
 
@@ -287,7 +287,7 @@ Add space to the rightmost column if you need to align it with other tables in t
 
 If content doesn't fit a cell's width, cut the text by the right border:
 
-![](too-long-line.png)
+![](too-long-line.png){width=370}
 
 Do **not** put ellipsis at the end of a cropped line, as it can be confused with the content.
 Also, ellipsis can form a separate redundant column when content in the majority of cells in one column doesn't fit its width.
@@ -300,17 +300,17 @@ Do **not** put vertical elements (for example, diagrams) in the middle of a tabl
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](history-graph-incorrect.png)
+![](history-graph-incorrect.png){width=488}
 
 Place them closer to the sides instead:
 
 <format color="Green" style="bold">Correct</format>
 
-![](table_history.png)
+![](table_history.png){width=488}
 
 Right-align numbers when it is useful to compare them by their length. Left-align all the other content.
 
-![](rightAlignNumbers.png)
+![](rightAlignNumbers.png){width=350}
 
 For aligning in a dialog with other controls, see [Layout](layout.md).
 
@@ -396,7 +396,7 @@ For aligning in a dialog with other controls, see [Layout](layout.md).
 
 ## Style
 
-| IntelliJ | ![](table_intellij.png) |
-|----------|-------------------------|
-| Darcula  | ![](table_darcula.png)  |
+| IntelliJ | ![](table_intellij.png){width=350} |
+|----------|------------------------------------|
+| Darcula  | ![](table_darcula.png){width=350}  |
 {style=none}

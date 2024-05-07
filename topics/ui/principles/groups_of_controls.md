@@ -24,17 +24,17 @@ Use **group headers** if all rules apply:
 
 * All groups occupy no more than 2 heights of the dialog in its default size
 
-![](6_01_group_headers.png)
+![](6_01_group_headers.png){width=396}
 
 Use **tabs** if all rules apply:
 * One of the groups contains more than 10 controls or groups occupy more than 2 heights of a dialog
 * There are **no** more than 8 groups
 
-![](01_use_tabs.png)
+![](01_use_tabs.png){width=565}
 
 Use the **master-detail layout** if either of the rules applies:
 * There are more than 8 groups
 * The number of groups can change
 
-![](02_use_master_detail.png)
+![](02_use_master_detail.png){width=565}
 

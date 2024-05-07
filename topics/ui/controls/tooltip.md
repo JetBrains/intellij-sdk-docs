@@ -12,7 +12,7 @@
 
 A tooltip shows an action name or provides useful information about an action or a setting.
 
-![](01_top_pic.png)
+![](01_top_pic.png){width=174}
 
 ## When to use
 
@@ -25,7 +25,7 @@ There are three types of tooltips:
         Shows an action name or label for icons and unlabeled controls, and a shortcut if available.
     </td>
     <td>
-        <img src="02_regular_tooltip.png" />
+        <img src="02_regular_tooltip.png" width="218" />
     </td>
   </tr>
   <tr>
@@ -34,7 +34,7 @@ There are three types of tooltips:
         Shows help text for icons and unlabeled controls in addition to an action name or label.
     </td>
     <td>
-        <img src="03_action_help_tooltip.png" />
+        <img src="03_action_help_tooltip.png" width="305" />
     </td>
   </tr>
   <tr>
@@ -43,7 +43,7 @@ There are three types of tooltips:
         Shows help text for all other controls.
     </td>
     <td>
-        <img src="03_help_tooltip.png" />
+        <img src="03_help_tooltip.png" width="275" />
     </td>
   </tr>
 </table>
@@ -66,7 +66,7 @@ Always show the required information in a tooltip:
   <tr>
     <td>
         Action <br/>
-        <img src="08_regular_tooltip.png"/>
+        <img src="08_regular_tooltip.png" width="126"/>
     </td>
     <td>
         Action name
@@ -78,7 +78,7 @@ Always show the required information in a tooltip:
   <tr>
     <td>
         Action help <br/>
-        <img src="08_toolbar_help_tooltip.png"/>
+        <img src="08_toolbar_help_tooltip.png" width="300"/>
     </td>
     <td>
         Action name <br/>
@@ -92,7 +92,7 @@ Always show the required information in a tooltip:
   <tr>
     <td>
         Help <br/>
-        <img src="08_help_tooltip.png"/>
+        <img src="08_help_tooltip.png" width="300"/>
     </td>
     <td>
         Help text <br/>
@@ -131,17 +131,17 @@ new HelpTooltip().setDescription("Useful when moving constants (static final fie
 
 Show a shortcut if an action or a setting has one. Do not show a single shortcut in a tooltip.
 
-![](09_tooltip_only_incorrect.png)
+![](09_tooltip_only_incorrect.png){width=230}
 
 Provide a link to a source that can further explain the action or the setting. A link can navigate to a place in the IDE or to an external help article.
 
-| Local link                     | External link                |
-|--------------------------------|------------------------------|
-| ![](10_tooltip_local_link.png) | ![](10_tooltip_ext_link.png) |
+| Local link                                  | External link                             |
+|---------------------------------------------|-------------------------------------------|
+| ![](10_tooltip_local_link.png){width="300"} | ![](10_tooltip_ext_link.png){width="300"} |
 
 Do not show just an action name and a link to a help article. Provide help text so that the user does not need to switch to a web browser.
 
-![](11_link_only_incorrect.png)
+![](11_link_only_incorrect.png){width=516}
 
 ### Text length and formatting
 
@@ -151,11 +151,11 @@ Show no more than 10 lines of help text. If the text does not fit, leave only th
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](tooltip_long_text_incorrect.png)
+![](tooltip_long_text_incorrect.png){width=601}
 
 <format color="Green" style="bold">Correct</format>
 
-![](tooltip_long_text_correct.png)
+![](tooltip_long_text_correct.png){width=601}
 
 Text style formatting:
 
@@ -163,21 +163,21 @@ Text style formatting:
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](tooltip_no_styling_incorrect.png)
+![](tooltip_no_styling_incorrect.png){width=461}
 
 <format color="Green" style="bold">Correct</format>
 
-![](tooltip_no_styling_correct.png)
+![](tooltip_no_styling_correct.png){width=461}
 
 * Use formatting for code, console commands or parameters. Use HTML tags. Enclosing the text in `<html></html>` tags is not needed.
-![](tooltip_code_styling.png)
+![](tooltip_code_styling.png){width=407}
 *Editor breadcrumbs*
 
 * Action name, shortcut and link do not allow HTML tagging.
 
 If the help text is longer than 5 lines, separate the text into paragraphs with the `<p>` tag. The `<p>` tag adds vertical space between paragraphs to visually separate them. Do not use the `<br/>` tag as it does not add space.
 
-![](12_tooltip_paragraph.png)
+![](12_tooltip_paragraph.png){width=300}
 
 ```java
 String LONG_TEXT = "A new overloading method will be created with the new parameter added to this method definition.<p>The method with the old signature will be kept and the call to the new method will be added to it. The necessary value or expression will be passed to the new method call.";
@@ -190,7 +190,7 @@ Make the help text [short and descriptive](writing_short.md).
 
 In a help tooltip, do not repeat an action or a setting name in the text.
 
-![](13_tooltip_dont_repeat_setting.png)
+![](13_tooltip_dont_repeat_setting.png){width=394}
 
 ### Question mark icon for help tooltips
 
@@ -202,38 +202,38 @@ Examples with different controls:
 
 #### Checkbox
 
-![](04_question_icon_tooltip.png)
+![](04_question_icon_tooltip.png){width=543}
 
 #### Tree item
 
-![](05_question_icon_tree.png)
+![](05_question_icon_tree.png){width=390}
 
 #### Combo box
 
-![](14_placement_labeled_input.png)
+![](14_placement_labeled_input.png){width=467}
 
 #### Group header
 
-![](15_placement_group_header.png)
+![](15_placement_group_header.png){width=409}
 
 #### Settings breadcrumbs
 
-![](16_placement_settings_header.png)
+![](16_placement_settings_header.png){width=458}
 
 #### Stand-alone button not at the bottom of a dialog
 
-![](07_help_tooltip_button.png)
+![](07_help_tooltip_button.png){width=476}
 
 **Exception:** do not use the help tooltip with buttons at a dialog’s bottom.
 Put the information into the help article that is opened with the question mark button in the bottom left corner.
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](06_help_tooltip_button_incorrect.png)
+![](06_help_tooltip_button_incorrect.png){width=372}
 
 ## Style
 
-![](tooltip_style.png)
+![](tooltip_style.png){width=723}
 
 ## Built-in behavior
 

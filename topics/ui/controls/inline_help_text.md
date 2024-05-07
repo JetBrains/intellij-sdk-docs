@@ -6,7 +6,7 @@
 
 Inline help text provides useful information about a setting.
 
-![](01_header_pic.png)
+![](01_header_pic.png){width=304}
 
 ## When to use
 
@@ -18,11 +18,11 @@ Follow the rules for [context help](context_help.md).
 
 Show no more than 5 lines of help text not to clutter the screen. Note that the text width is limited to 70 characters.
 
-![](02_text_size.png)
+![](02_text_size.png){width=380}
 
 Show more than 5 lines only when a text cannot be shortened for legal purposes.
 
-![](03_text_size_long.png)
+![](03_text_size_long.png){width=396}
 
 <p>Implementation</p>
 
@@ -39,22 +39,22 @@ createPanel();
 Provide a link to the corresponding help article or to a place in the IDE where the related settings can be found.
 Place the link at the end of the text where possible so that it does not disrupt reading.
 
-![](04_link_external.png)
+![](04_link_external.png){width=366}
 *External link*
 
-![](04_link_internal.png)
+![](04_link_internal.png){width=345}
 *Local link*
 
 Text style formatting:
 * Avoid text highlighting. Usually, the help text is short and no bold or italics is needed.
-![](inline_text_no_styling.png)
+![](inline_text_no_styling.png){width=364}
 
 * Use formatting for code, console commands, or parameters. Use HTML tags. Enclosing text in `<html></html>` tags is not needed.
-![](inline_text_parameter_styling.png)
+![](inline_text_parameter_styling.png){width=213}
 
 Avoid using brackets.
 
-![](05_no_brackets.png)
+![](05_no_brackets.png){width=362}
 
 ### Writing guidelines
 
@@ -62,7 +62,7 @@ Make help text [short and descriptive](writing_short.md).
 
 Do not repeat the setting name in the help text.
 
-![](06_inline_text_dont_repeat_setting.png)
+![](06_inline_text_dont_repeat_setting.png){width=481}
 
 
 ## Placement
@@ -76,7 +76,7 @@ Place the help text to the right of a labeled input, checkbox, or radio button i
 * The help text has 1–5 words, not counting articles and prepositions.
 * The control label has 1–5 words.
 
-![](07_right_inputs.png)
+![](07_right_inputs.png){width=433}
 
 ```java
 JPanel p = UI.PanelFactory.grid().splitColumns().
@@ -91,7 +91,7 @@ JPanel p = UI.PanelFactory.grid().splitColumns().
  createPanel();
 ```
 
-![](08_right_checkboxes.png)
+![](08_right_checkboxes.png){width=438}
 
 ```java
 JCheckBox cb1 = new JCheckBox("Build project automatically");
@@ -106,11 +106,11 @@ JPanel p2 = UI.PanelFactory.grid().
 createPanel();
 ```
 
-![](09_right_button.png)
+![](09_right_button.png){width=309}
 
 Otherwise, place the help text under the UI control.
 
-![](10_under_field.png)
+![](10_under_field.png){width=484}
 
 ```java
 TextFieldWithBrowseButton tfbb =
@@ -130,7 +130,7 @@ For buttons, use the help tooltip without the icon.
 
 If the help text applies to a whole list, tree, or table, place it under the control.
 
-![](11_under_table.png)
+![](11_under_table.png){width=531}
 
 ```java
 JTable table = createTable(); // Actual table creation
@@ -145,24 +145,24 @@ JPanel panel = UI.PanelFactory.panel(pane).
 
 If it applies to a single list, tree or table item:
 * If the help text has 1–10 words, place it to the right of the item.
-![](12_tree_inline_help_text.png)
+![](12_tree_inline_help_text.png){width=422}
 
 * If the text is longer than 10 words:
 
 <p>For a list or tree in the master part, place the text into the detail part.</p>
 
-![](13_master-detail_help_text.png)
+![](13_master-detail_help_text.png){width=673}
 
 If the case with the master-detail layout above does not apply, use the [help tooltip](tooltip.md#question-mark-icon-for-help-tooltips) with the question mark icon.
 
-![](05_question_icon_tree.png)
+![](05_question_icon_tree.png){width=390}
 
 
 ### Group of controls
 
 If the help text applies to several UI controls, place it at the bottom of the group.
 
-![](14_under_group.png)
+![](14_under_group.png){width=430}
 
 <p>Implementation</p>
 

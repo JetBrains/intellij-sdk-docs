@@ -20,7 +20,7 @@
     <td>Numbers</td>
     <td>4,255,165.00</td>
     <td>Space is not limited, e.g. Settings dialog
-        <p style="margin: -10px 0 -30px -20px"><img src="numbers.png" /></p>
+        <p style="margin: -10px 0 -30px -20px"><img src="numbers.png" width="277" /></p>
     </td>
 </tr>
 <tr>
@@ -101,17 +101,17 @@ See the table below to understand in which cases to show date and time.
        2 hours ago
     </td>
     <td><p>Use for a single event that happened recently, e.g. in the Status bar:</p>
-        <p><img src="approximate.png" /></p>
+        <p><img src="approximate.png" width="215" /></p>
         <p>Do <b>not</b> use in tables as it’s harder to compare.</p>
         <p>If more than 12 hours have passed since the event, use Date format</p>
     </td>
 </tr>
 </table>
 
-![](vcs_log.png)
+![](vcs_log.png){width=1053}
 *Version Control Log (in IntelliJ IDEA incorrect format is used at the moment)*
 
-![](event_log.png)
+![](event_log.png){width=1053}
 *Event Log*
 
 ## Duration
@@ -130,7 +130,7 @@ See the table below to understand in which cases to show date and time.
         1 hour
     </td>
     <td>Space is not limited, e.g. Settings dialog
-        <p><img src="period.png" /></p>
+        <p><img src="period.png" width="242" /></p>
     </td>
 </tr>
 <tr>
@@ -154,7 +154,7 @@ See the table below to understand in which cases to show date and time.
 </table>
 
 
-![](run.png)
+![](run.png){width=518}
 
 ## Quantities of data
 
@@ -187,44 +187,44 @@ Use decimal numeral system.
 </tr>
 </table>
 
-![](data_formats_tree.png)
+![](data_formats_tree.png){width=511}
 
 
 ## Units
 
 All numeric values should be given a unit or clearly labeled if they do not have suitable units, e.g. counters.
 
-![](period.png)
+![](period.png){width=242}
 
-![](no_units.png)
+![](no_units.png){width=264}
 
 Select the most convenient units.
 
-| <format color="Red" style="bold">Incorrect</format>             | <format color="Green" style="bold">Correct</format>           |
-|-------------------------------|-----------------------------|
-| ![](connection_incorrect.png) | ![](connection_correct.png) |
+| <format color="Red" style="bold">Incorrect                                  </format> | <format color="Green" style="bold"> Correct                       </format> |
+|---------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
+| ![](connection_incorrect.png){width="284"}                                            | ![](connection_correct.png){width="259"}                                    |
 
 Place units after the input field.
 
 | <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
 |-----------------------------------------------------|-----------------------------------------------------|
-| ![](caret_incorrect.png)                            | ![](caret_correct.png)                              |
+| ![](caret_incorrect.png){width="196"}               | ![](caret_correct.png){width="242"}                 |
 
 ## Tables
 
 <p>Use the rules below to make it easier to compare numbers in one column.</p>
 
 Right-align numeric values.
-![](data_formats_table.png)
+![](data_formats_table.png){width=299}
 
 Include the unit in the column header if all values share the same unit. Convert each number to use the same unit. If it’s not possible, e.g. the scatter of numbers is too large, include the unit with each value.
 
 | <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
 |-----------------------------------------------------|-----------------------------------------------------|
-| ![](table_units_incorrect.png)                      | ![](table_units_correct.png)                        |
+| ![](table_units_incorrect.png){width="110"}         | ![](table_units_correct.png){width="110"}           |
 
 Be consistent with the precision of the significand.
 
 | <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
 |-----------------------------------------------------|-----------------------------------------------------|
-| ![](precision_incorrect.png)                        | ![](precision_correct.png)                          |
+| ![](precision_incorrect.png){width="110"}           | ![](precision_correct.png){width="110"}             |

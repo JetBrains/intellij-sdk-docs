@@ -20,52 +20,52 @@ Use **inline help text** in settings dialogs:
 * Settings are rarely changed. Users may forget what a setting does when they use it the next time, so it makes sense to provide additional information straight away.
 * Settings dialogs are usually not constrained in space. In most cases it is possible to fit in a help text.
 
-![](09_use_inline_help_text.png)
+![](09_use_inline_help_text.png){width=600}
 
 Use a **help tooltip** if:
 * A dialog is often used. The more often a person uses an interface, the more likely they are to remember what each option does.
 
-![](10_use_help_tooltip.png)
+![](10_use_help_tooltip.png){width=573}
 *A refactoring dialog is used more often than a settings dialog. A help tooltip is less distracting than an inline help text.*
 
 * There is no space for an inline text.
-![](11_no_space_in_settings.png)
+![](11_no_space_in_settings.png){width=734}
 
 * The control that needs explanation is an icon or does not have a label.
-![](03_action_help_tooltip.png)
+![](03_action_help_tooltip.png){width=305}
 
 
 ## When to use context help
 
 Explain complex behavior that a short action or a setting name cannot convey clearly.
 
-![](04_question_icon_tooltip.png)
+![](04_question_icon_tooltip.png){width=543}
 
-![](02_text_size.png)
+![](02_text_size.png){width=380}
 
 Explain IDE-specific entities.
 
-![](01_IDE_specific.png)
+![](01_IDE_specific.png){width=300}
 
 Provide input format requirements and examples.
 
-![](02_formatting_example.png)
+![](02_formatting_example.png){width=478}
 
 Suggest alternative ways.
 
-![](03_alternative_ways.png)
+![](03_alternative_ways.png){width=418}
 
 Warn about possible problems.
 
-![](04_possible_problems.png)
+![](04_possible_problems.png){width=361}
 
 Explain limitations.
 
-![](05_limitations.png)
+![](05_limitations.png){width=432}
 
 Provide quick navigation to related settings.
 
-![](04_link_internal.png)
+![](04_link_internal.png){width=345}
 
 
 ## When not to use
@@ -74,20 +74,20 @@ Do not use context help to explain how the user interface works. If you need to 
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](06_explain_how_ui_works.png)
+![](06_explain_how_ui_works.png){width=418}
 
 Do not explain common actions and entities. Show a regular tooltip with an action name and shortcut in this case.
 
 | <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
 |-----------------------------------------------------|-----------------------------------------------------|
-| ![](07_explain_obvious_incorrect.png)               | ![](07_explain_obvious_correct.png)                 |
+| ![](07_explain_obvious_incorrect.png){width=300}    | ![](07_explain_obvious_correct.png){width=145}      |
 
 Do not explain each option. Too many help icons or too much inline text make a dialog cluttered and harder to navigate visually.
 If all options need to be explained, consider rewriting the labels to make them clearer.
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](08_explain_all_options.png)
+![](08_explain_all_options.png){width=317}
 
 ## How to use
 

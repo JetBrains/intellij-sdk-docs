@@ -12,13 +12,13 @@
     </p>
     </tldr>
 
-    <img src="button_example.png"/>
+    <img src="button_example.png" width="156"/>
     <chapter title="When to use" id="when-to-use">
         <p>Use a button to invoke an immediate action.</p>
         <p>Use a <a href="link.md">link</a> instead if:</p>
         <list>
             <li><p>The action takes the user to another page of the same dialog or an external source like documentation:</p>
-                <img src="link_after.png" alt=""/>
+                <img src="link_after.png" width="465" alt=""/>
                 <p><emphasis>The Manage scope link takes to another page of the Settings dialog.</emphasis></p>
                 <p><control>Exception</control>: Next and Previous buttons in wizard navigation.</p>
             </li>
@@ -33,8 +33,8 @@
                 <td>Correct</td>
             </tr>
             <tr>
-                <td><img src="link_incorrect.png"/></td>
-                <td><img src="link_correct.png"/></td>
+                <td><img src="link_incorrect.png" width="313"/></td>
+                <td><img src="link_correct.png" width="272"/></td>
             </tr>
         </table>
         <p>Use toolbar buttons instead if there are several buttons related to a table or list:</p>
@@ -44,8 +44,8 @@
                 <td>Correct</td>
             </tr>
             <tr>
-                <td><img src="many_buttons.png"/></td>
-                <td><img src="toolbar.png"/></td>
+                <td><img src="many_buttons.png" width="370"/></td>
+                <td><img src="toolbar.png" width="220"/></td>
             </tr>
         </table>
         <p>Use a <a href="split_button.md">split button</a> instead if:</p>
@@ -75,9 +75,9 @@
                     <td>Correct</td>
                 </tr>
                 <tr>
-                    <td><img src="../../../images/ui/button/default_OK.png"/>
+                    <td><img src="default_OK.png" width="72"/>
                         <p>Unclear what happens on the click.</p></td>
-                    <td><img src="../../../images/ui/button/default_save.png"/>
+                    <td><img src="default_save.png" width="72"/>
                         <p>The label indicates what happens on the click.</p></td>
                 </tr>
             </table>
@@ -95,12 +95,12 @@
                     <td>Better</td>
                 </tr>
                 <tr>
-                    <td><img src="../../../images/ui/button/active_edit.png"/></td>
-                    <td><img src="../../../images/ui/button/active_edit_action_icon.png"/></td>
+                    <td><img src="active_edit.png" width="72"/></td>
+                    <td><img src="active_edit_action_icon.png" width="146"/></td>
                 </tr>
             </table>
             <p>Add an ellipsis if additional actions such as adding more info or confirming the action are required:
-                <img src="buttons_with_ellipsis.png" alt=""/></p>
+                <img src="buttons_with_ellipsis.png" width="146" alt=""/></p>
             <p>Do
                 <control>not</control>
                 add ellipsis if another window is opened, but no more input from the user is required. For example,
@@ -118,8 +118,8 @@
                     <td>Better</td>
                 </tr>
                 <tr>
-                    <td><img src="check_now.png"/></td>
-                    <td><img src="check_for_updates.png"/></td>
+                    <td><img src="check_now.png" width="336"/></td>
+                    <td><img src="check_for_updates.png" width="384"/></td>
                 </tr>
             </table>
             <p>Use the
@@ -143,13 +143,13 @@
                 see <a href="context_help.md">Context help</a>.</p>
             <table style="none">
                 <tr>
-                    <td><img src="../../../images/ui/button/hover_shortcut.png"/>
+                    <td><img src="hover_shortcut.png" width="77"/>
                         <p>
                             <emphasis>If the action is clear, show the shortcut only.</emphasis>
                         </p>
                     </td>
                     <td>
-                        <img src="../../../images/ui/button/hover_name_shortcut.png"/>
+                        <img src="hover_name_shortcut.png" width="155"/>
                         <p>
                             <emphasis>If the action can be clarified, show the action name and the shortcut.</emphasis>
                         </p>
@@ -163,13 +163,13 @@
             <table style="none">
                 <tr>
                     <td>
-                        <img src="../../../images/ui/button/default_save.png"/>
+                        <img src="default_save.png" width="72"/>
                         <p>
                             <emphasis>macOS</emphasis>
                         </p>
                     </td>
                     <td>
-                        <img src="../../../images/ui/button/default_save_win.png"/>
+                        <img src="default_save_win.png" width="72"/>
                         <p>
                             <emphasis>Windows</emphasis>
                         </p>
@@ -196,10 +196,10 @@
                 one.</p>
             <p>If the action is dangerous, e.g. can lead to data loss, provide an easy way to undo the command.</p>
             <p>If it's not possible to undo the action, make a secondary button the default one:
-                <img src="merge_dialog.png" alt=""/></p>
+                <img src="merge_dialog.png" width="426" alt=""/></p>
         </chapter>
         <chapter title="Focused" id="focused">
-            <img src="focused.png" alt=""/>
+            <img src="focused.png" width="78" alt=""/>
             <p>All buttons can get focus, even on macOS if the
                 <control>Full Keyboard Access</control>
                 option is disabled in Preferences &gt; Keyboard &gt;
@@ -225,14 +225,14 @@
                         <emphasis>New Window</emphasis>
                         button in the Open Project
                         dialog:
-                        <img src="open_project_dialog.png" alt=""/></p>
+                        <img src="open_project_dialog.png" width="448" alt=""/></p>
                 </li>
                 <li>
                     <p>It’s recommended to have one default and one focused button, so that most of the actions can be
                         triggered using
                         the keyboard.</p>
                     <p>Incorrect</p>
-                    <img src="../../../images/ui/button/open_project_dialog_incorrect_focus.png" alt=""/></li>
+                    <img src="open_project_dialog_incorrect_focus.png" width="448" alt=""/></li>
             </list>
             <p>
                 <emphasis>The Window button is the default and the focused one, while it’s better to place the focus on
@@ -251,7 +251,7 @@
                     button gets focus, the default button is invoked using
                     <shortcut>Ctrl+Enter</shortcut>
                     .
-                    <img src="open_project_dialog_win.png" alt=""/>
+                    <img src="open_project_dialog_win.png" width="672" alt=""/>
                     <emphasis>On pressing the <shortcut>Tab</shortcut> key, the New Window button gets the focus and is triggered with Enter
                         or Space. The original This Window button is triggered with Ctrl+Enter.
                     </emphasis>
@@ -264,7 +264,7 @@
             </list>
         </chapter>
         <chapter title="Disabled" id="disabled">
-            <img src="button_disabled.png" alt=""/>
+            <img src="button_disabled.png" width="72" alt=""/>
             <p>Disable a button if:</p>
             <list>
                 <li>It’s an Apply button and no changes have been made in this dialog.</li>
@@ -309,13 +309,13 @@
             <p>The help button appears in the bottom-left corner of a dialog and shows help in a tooltip on hover, or
                 opens a help
                 dialog on clicking it. For more details see <a href="context_help.md">Context help</a>.
-                <img src="helpButton_mac.png" alt=""/></p>
+                <img src="helpButton_mac.png" width="21" alt=""/></p>
         </chapter>
     </chapter>
     <chapter title="Sizes and placement" id="sizes-and-placement">
         <p>The button width accommodates the length of the label plus standard indents 14px, but not less than the
             72px.</p>
-        <img src="button_sizes.png" alt=""/>
+        <img src="button_sizes.png" width="491" alt=""/>
         <p>The button height is fixed, so the label is always a single line.</p>
         <p>To lay out the button that depends on other control, e.g. input field, follow the rules
             for <a href="layout.md" anchor="dependent-controls">dependent controls</a>. Otherwise, follow

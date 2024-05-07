@@ -295,13 +295,13 @@ The IDE text colors are in the table below. The editor text colors are managed b
 
 What’s New page that appears in the Editor tab:
 
-![](whats_new.png)
+![](whats_new.png){width=802}
 
 Plugin page in the Settings dialog:
 
-![](plugins.png)
+![](plugins.png){width=439}
 
 Log in to GitHub page in the dialog:
 
-![](github.png)
+![](github.png){width=587}
 

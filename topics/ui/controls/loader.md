@@ -12,7 +12,7 @@
 
 A loader informs users about performing a lengthy operation.
 
-![](loader.png)
+![](loader.png){width=330}
 
 ## When to use
 
@@ -30,7 +30,7 @@ JLabel label = new JLabel("Loading...",
 
 
 A loader may have a label if the process is long and the loader is shown in an empty area. In this case, use a [progress text](progress_text.md) as the label:
-![](loader_with_progress_text.png)
+![](loader_with_progress_text.png){width=597}
 
 Remove the loader as soon as the process completes.
 
@@ -41,7 +41,7 @@ Remove the loader as soon as the process completes.
 
 <tr>
     <td> Inside a field </td>
-    <td> <img src="placement_field.png"/> </td>
+    <td> <img src="placement_field.png" width="161"/> </td>
 </tr>
 
 <tr>
@@ -57,18 +57,18 @@ Remove the loader as soon as the process completes.
 
 <tr>
     <td>In a corner</td>
-    <td> <img src="placement_corner.png" />
+    <td> <img src="placement_corner.png" width="32" />
     </td>
 </tr>
 
 <tr>
     <td>  Next to an item </td>
-    <td> <img src="placement_item.png" /> </td>
+    <td> <img src="placement_item.png" width="55" /> </td>
 </tr>
 
 <tr>
     <td> Before a progress text </td>
-    <td> <img src="placement_progress_text.png" />
+    <td> <img src="placement_progress_text.png" width="110" />
     </td>
 </tr>
 

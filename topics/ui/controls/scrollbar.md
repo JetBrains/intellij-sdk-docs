@@ -11,13 +11,13 @@
 </tldr>
 
 The scrollbar allows users to browse content that’s larger than the visible area, such as text or images, by scrolling it horizontally or vertically.
-![](scrollbar-small.png)
+![](scrollbar-small.png){width=370}
 
 ## Parts of a scrollbar
 
 A scroll bar consists of a track, a thumb, and a status icon if there is a known status for displayed content.
 
-![](scrollbar-detailed.png)
+![](scrollbar-detailed.png){width=157}
 
 ### Track
 
@@ -40,7 +40,7 @@ A marker can fit the track width or be placed to the left of the track. Use the 
 Hovering over the track can also show a lens with a preview of the content at the corresponding position in the document.
 This can be useful in large documents when it is not desirable to change the viewpoint:
 
-![](lens-temp.png)
+![](lens-temp.png){width=622}
 
 ### Thumb
 
@@ -51,7 +51,7 @@ A thumb represents the visible portion of the content. For example, a small thum
 A status icon shows the overall status of inspections performed on the content and allows you to avoid scrolling over the entire view.
 If at least one inspection has failed, the overall status should be the status of that inspection.
 
-![](commit.png)
+![](commit.png){width=492}
 
 ## How to use
 
@@ -74,27 +74,27 @@ When showing a text, wrap it instead of showing the horizontal scrollbar when po
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](soft-wrap-incorrect.png)
+![](soft-wrap-incorrect.png){width=500}
 
 <format color="Green" style="bold">Correct</format>
 
-![](soft-wrap-correct.png)
+![](soft-wrap-correct.png){width=500}
 
 A horizontal scroll bar can be added for code snippets or for formatted input. Use the context menu to enable soft-wrapping.
 
 <format color="Green" style="bold">Correct</format>
 
-![](soft-wrap-context.png)
+![](soft-wrap-context.png){width=370}
 
 Show only 1 scrollbar per table which scrolls the entire table:
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](table-scrollbar-incorrect.png)
+![](table-scrollbar-incorrect.png){width=562}
 
 <format color="Green" style="bold">Correct</format>
 
-![](table-scrollbar-correct.png)
+![](table-scrollbar-correct.png){width=562}
 
 ## Placement
 
@@ -102,14 +102,14 @@ Reserve the space for a vertical scrollbar if there is a column on the right sid
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](vertical-scrollbar-incorrect.png)
+![](vertical-scrollbar-incorrect.png){width=350}
 
 <format color="Green" style="bold">Correct</format>
 
-![](vertical-scrollbar-correct.png)
+![](vertical-scrollbar-correct.png){width=350}
 
 ## Style
 
-| Windows/Linux      | macOS              |
-|--------------------|--------------------|
-| ![](win-light.png) | ![](mac-light.png) |
+| Windows/Linux                  | macOS                          |
+|--------------------------------|--------------------------------|
+| ![](win-light.png){width="96"} | ![](mac-light.png){width="96"} |

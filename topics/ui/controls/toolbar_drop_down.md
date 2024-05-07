@@ -12,7 +12,7 @@
 
 A toolbar drop-down list is a type of button that appears on a horizontal toolbar and shows a list of choices on clicking it.
 
-![](toolbar_dropdown_example.png)
+![](toolbar_dropdown_example.png){width=205}
 
 
 ## When to use
@@ -23,18 +23,18 @@ If the choices are objects or states.
 
 To select values that are controlled by the toolbar button on the right.
 
-![](toolbar_main.png)
+![](toolbar_main.png){width=209}
 
 To filter values or change the appearance in the control below:
 
-![](toolbar_filter.png)
+![](toolbar_filter.png){width=244}
 
 
 Use a [toolbar drop-down button](icon_button.md) instead of a drop-down list in the following cases:
 
 * If there is a list of actions:
 
-![](toolbar_dropdown_menu_button.png)
+![](toolbar_dropdown_menu_button.png){width=136}
 
 * The options are secondary and the user won’t change them in most cases.
 
@@ -45,7 +45,7 @@ Do **not** use toolbar drop-down in dialogs, use the [drop-down list](drop_down.
 
 | <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
 |-----------------------------------------------------|-----------------------------------------------------|
-| ![](settings_incorrect.png)                         | ![](settings_correct.png)                           |
+| ![](settings_incorrect.png){width="302"}            | ![](settings_correct.png){width="302"}              |
 
 ## How to use
 
@@ -55,15 +55,15 @@ For the default value, follow the rules for the [drop-down list](drop_down.md#de
 
 Add separators between the toolbar drop-down and icons:
 
-![](diff.png)
+![](diff.png){width=313}
 
 If a drop-down is controlled by buttons, add a border, as separators will break the connection between the controlling icons and the drop-down:
 
-![](toolbar_main.png)
+![](toolbar_main.png){width=209}
 
 The toolbar drop-down does not get the focus. Highlight it on hover the same way as toolbar icons.
 
-![](toolbar_dropdown_hover.png)
+![](toolbar_dropdown_hover.png){width=209}
 
 ### Menu
 
@@ -78,7 +78,7 @@ Move the selection in the menu on pressing the Up and Down arrows or on hovering
 
 Filter items in the list on typing:
 
-![](search.png)
+![](search.png){width=209}
 
 Close the menu if the user selects an item, clicks outside the menu, presses the Esc key or switches to another app.
 
@@ -94,7 +94,7 @@ If it’s necessary to configure options in a toolbar drop-down list, add custom
 and separate them with a line.
 Use title case capitalization for actions.
 
-![](toolbar_dropdown_customize.png)
+![](toolbar_dropdown_customize.png){width=201}
 
 A toolbar drop-down list can have submenus.
 
@@ -104,7 +104,7 @@ A submenu is a menu item that shows a list of nested items. A submenu includes a
 
 Use item submenus to group related options and to show hierarchy:
 
-![](submenu_example.png)
+![](submenu_example.png){width=272}
 
 Show the submenu list on hovering over an item.
 
@@ -116,11 +116,11 @@ Avoid submenus inside submenus. Submenus hide choices too deep and are difficult
 
 Toolbar drop-down sizes are the same for all themes.
 
-![](toolbar_dropdown_sizes.png)
+![](toolbar_dropdown_sizes.png){width=181}
 
 
 The width changes depending on the selected value to save space if the value is short.
 
-![](toolbar_dropdown_width.png)
+![](toolbar_dropdown_width.png){width=169}
 
 For menu sizes see [Drop-down menu](drop_down.md#menu_1).

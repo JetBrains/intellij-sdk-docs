@@ -10,7 +10,7 @@
 
 </tldr>
 
-![](checkbox_example.png)
+![](checkbox_example.png){width=166}
 
 ## When to use
 
@@ -19,7 +19,7 @@ Use checkboxes for yes/no choices or for selecting several items in a group.
 Do **not** use checkboxes if:
 * Only one option in a group can be selected. Use a [radio button group](radio_button.md) instead.
 * The behavior in the "off" state is unclear from the checkbox label. Use two radio buttons instead and label them accordingly.
-![](when_to_use.png)
+![](when_to_use.png){width=365}
 * With the checkbox, it is unclear how the setting works if it’s unchecked. With radio buttons, both states are labeled clearly.*
 
 
@@ -29,11 +29,11 @@ Do **not** use checkboxes if:
 
 A label accompanies each checkbox and is placed next to it.
 
-![](checkbox_label.png)
+![](checkbox_label.png){width=161}
 
 If a label is long, split it into two lines. Use HTML formatting for that.
 
-![](label_twoline.png)
+![](label_twoline.png){width=331}
 
 ```java
 JCheckBox checkBox = new JCheckBox(
@@ -45,7 +45,7 @@ Avoid labels that take more than two lines. See recommendations on writing conci
 
 If a checkbox appears in a table, place the label into the column header and do not repeat it on every row.
 
-![](checkbox_table.png)
+![](checkbox_table.png){width=347}
 
 **Implementation**: Checkboxes are rendered in tables with [`BooleanTableCellRenderer`](%gh-ic%/platform/core-ui/src/ui/BooleanTableCellRenderer.java)
 and edited with `DefaultCellEditor(JCheckBox)` implementation.
@@ -65,12 +65,12 @@ Use sentence-style capitalization.
 Do not use ending punctuation.
 
 Use the imperative form of verbs.
-![](label_short.png)
+![](label_short.png){width=350}
 
 Do not use negation in labels as it complicates understanding.
 **Exception**: "Do not show again" checkbox.
 
-![](label_answeryes.png)
+![](label_answeryes.png){width=224}
 
 Make labels short and intelligible — see [Writing short and clear](writing_short.md).
 
@@ -79,7 +79,7 @@ Make labels short and intelligible — see [Writing short and clear](writing_sho
 
 In a group of options, use the parent checkbox to show the status of its children.
 
-![](indeterminate_checkbox.png)
+![](indeterminate_checkbox.png){width=542}
 
 *The parent checkbox in checked, indeterminate and unchecked states*
 **Implementation**: The three-state checkbox is represented by the [`ThreeStateCheckBox`](%gh-ic%/platform/util/ui/src/com/intellij/util/ui/ThreeStateCheckBox.java)
@@ -89,7 +89,7 @@ When the user clicks an indeterminate checkbox for the first time, the whole gro
 
 An indeterminate checkbox can also show the download status. An example with a remote repository:
 
-![](indeterminate_status.png)
+![](indeterminate_status.png){width=358}
 
 *Repositories "tools-base" and "contrib" are being loaded. When loading is finished, the indeterminate checkbox will be replaced with the checked checkbox if there are commits, or an unchecked checkbox if there are no commits.*
 

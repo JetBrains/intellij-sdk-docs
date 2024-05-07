@@ -21,14 +21,14 @@ Use flat shapes instead of complex 3D forms:
 
 | <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
 |-----------------------------------------------------|-----------------------------------------------------|
-| ![](style_pin_3d.png)                               | ![](style_pin_flat.png)                             |
+| ![](style_pin_3d.png){width="190"}                  | ![](style_pin_flat.png){width="190"}                |
 
 
 Use straight corners and lines instead of curves. It’s recommended to use 45° and 90° angles, or 30° and 60° where possible:
 
 | <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
 |-----------------------------------------------------|-----------------------------------------------------|
-| ![](style_folder_round.png)                         | ![](style_folder_straigt.png)                       |
+| ![](style_folder_round.png){width="144"}            | ![](style_folder_straigt.png){width="144"}          |
 
 
 Icons should be as simple as possible without losing their meaning. Clean and simple icons ensure readability and reduce visual clutter.
@@ -39,8 +39,8 @@ Icons should be as simple as possible without losing their meaning. Clean and si
     <td> <format color="Green" style="bold">Correct</format> </td>
 </tr>
 <tr>
-    <td> <img src="style_soft_wrap_detailed.png"/> </td>
-    <td> <img src="style_soft_wrap_simple.png"/> </td>
+    <td> <img src="style_soft_wrap_detailed.png" width="160"/> </td>
+    <td> <img src="style_soft_wrap_simple.png" width="160"/> </td>
 </tr>
 <tr>
     <td colspan="2"><em>Reduced the icon to its minimal form, without losing its meaning.</em></td>
@@ -50,7 +50,7 @@ Icons should be as simple as possible without losing their meaning. Clean and si
 
 ## Grid and size
 Basically, icons fit into a square artboard. Leave a transparent padding around the perimeter. For default 16px icons, the transparent border is 1px, so the icon’s visible part should be inside the 14px x 14px area.
-![](grid.png)
+![](grid.png){width=251}
 *14px x 14px is the area where the visible part <br/> of the icon should fit for an 16px icon.*
 
 Content should only go beyond the borders if a [modifier](#modifier) is added, or if additional visual weight is required.
@@ -93,17 +93,17 @@ Sizes for other icon sizes can be found in the table below:
 ## Basic shapes
 Use basic shapes to build icons, such as squares, circles and rectangles. Using a grid and basic shapes ensures consistent visual proportions and placement.
 
-| ![](shape_square.png) _Square 12px x 12px_                        | ![](shape_circle.png) _Circle 14px_                           |
-|-------------------------------------------------------------------|---------------------------------------------------------------|
-| ![](shape_rect_horizontal.png) _Horizontal rectangle 10px x 14px_ | ![](shape_rect_vertical.png) _Vertical rectangle 14px x 10px_ |
+| ![](shape_square.png){width="192"} _Square 12px x 12px_                        | ![](shape_circle.png){width="195"} _Circle 14px_                           |
+|--------------------------------------------------------------------------------|----------------------------------------------------------------------------|
+| ![](shape_rect_horizontal.png){width="192"} _Horizontal rectangle 10px x 14px_ | ![](shape_rect_vertical.png){width="192"} _Vertical rectangle 14px x 10px_ |
 {style=none}
 
 Make sure that icons have the same visual weight. The more filled an icon is, the less space it needs. Following this rule, circles, rhombuses, triangles and other non-square shapes should have larger height and width to be optically balanced with square figures.
-![](shapes_weight_1.png)
+![](shapes_weight_1.png){width=542}
 *Make the circle diameter 2px bigger than square icons’ height to compensate the visual weight.*
 
 Icons with more details should occupy more space.
-![](shapes_weight_2.png)
+![](shapes_weight_2.png){width=542}
 *The eye icon is less detailed and occupies less space than a more complex scissors icon.*
 
 Icon weight can often take priority over the basic shape sizing. For more examples on visual weight compensation, see [Optical Effects in User Interfaces](https://medium.muz.li/optical-effects-9fca82b4cd9a).
@@ -137,9 +137,9 @@ Align pixels on the X and Y axis and round to the nearest whole pixel, or 0.5px 
     <td><format color="Green" style="bold">Correct</format></td>
 </tr>
 <tr>
-    <td width="50%"><img src="stroke_pixels_incorrect.png"/>
+    <td width="50%"><img src="stroke_pixels_incorrect.png" width="192"/>
          <em> If an icon is positioned off pixels, <br /> it becomes blurry when rasterized.</em> </td>
-    <td width="50%"><img src="stroke_pixels_correct.png"/>
+    <td width="50%"><img src="stroke_pixels_correct.png" width="192"/>
          <em> Position stokes on integer pixels where possible.</em> </td>
 </tr>
 </table>
@@ -156,9 +156,9 @@ Reduce the number of anchors, as they increase the size of the image and takes l
     <td><format color="Green" style="bold">Correct</format></td>
 </tr>
 <tr>
-    <td width="50%"><img src="stroke_anchors_incorrect.png"/>
+    <td width="50%"><img src="stroke_anchors_incorrect.png" width="192"/>
          <em> Unneeded anchors are added.</em> </td>
-    <td width="50%"><img src="stroke_anchors_correct.png"/>
+    <td width="50%"><img src="stroke_anchors_correct.png" width="192"/>
          <em> Use the minimum number of anchors.</em> </td>
 </tr>
 </table>
@@ -171,29 +171,29 @@ The default modifier position is the bottom right corner. If the base shape is b
 
   <table style="none">
   <tr>
-      <td width="50%"> <img src="modifier_search.png"/>
+      <td width="50%"> <img src="modifier_search.png" width="192"/>
            <em> Place the modifier in the left corner <br/> if the base shape is badly recognizable <br/> with the modifier in the right corner.</em> </td>
-      <td width="50%"> <img src="modifier_parameter.png"/>
+      <td width="50%"> <img src="modifier_parameter.png" width="192"/>
            <em> Place the modifier in the left corner <br/> if there are several modifiers.</em> </td>
   </tr>
   </table>
 
 A modifier size is from 6px to 9px, depending on the shape weight.  Leave a 1-2px spacing between the modifier and the main shape, to make the modifier clearly visible.
-![](modifier_size.png)
+![](modifier_size.png){width=577}
 *Modifier sizes*
 
 
 ## Arrows
 General rules for arrows: arrowhead is a filled triangle with a 90° pointing angle, a 2px body ends in a square stroke. An arrow’s orientation is horizontal, vertical, 45° or round.
-![](arrows_basic.png)
+![](arrows_basic.png){width=515}
 *Basic arrow icons*
 
 Unfilled arrowhead can be used if there is only one arrow on an icon to reduce excessive visual weight, for example, for navigation arrows, such as back and forward, up and down.
 
 <table style="none">
 <tr>
-    <td width="50%"> <img src="arrow_filled.png"/></td>
-    <td width="50%"> <img src="arrow_unfilled.png"/></td>
+    <td width="50%"> <img src="arrow_filled.png" width="144"/></td>
+    <td width="50%"> <img src="arrow_unfilled.png" width="192"/></td>
 </tr>
 <tr>
     <td><em> 90° arrowhead and 2px square stroke body.</em></td>
@@ -205,7 +205,7 @@ Do **not** use other arrow styles, for example unfilled arrows or arrows with th
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](arrows_incorrect.png)
+![](arrows_incorrect.png){width=510}
 
 
 ## Color
@@ -222,63 +222,63 @@ There are 5 colors in the actions icons palette. Dark version is for Darcula the
 
 [//]: # (FIXME: colors are wrong, dark are rendered)
 
-<table>
+<table style="none">
     <tr>
         <td>
-            <img src="action_red.png" />
+            <img src="action_red.png" width="64" />
             <br/>
             <p><b>Red</b></p><p>#DB5860</p>
         </td>
         <td>
-            <img src="action_red_d.png" />
+            <img src="action_red_d.png" width="64" />
             <br/>
             <p><b>Red dark</b></p><p>#C75450</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="action_yellow.png" />
+            <img src="action_yellow.png" width="64" />
             <br/>
             <p><b>Yellow</b></p><p>#EDA200</p>
         </td>
         <td>
-            <img src="action_yellow_d.png" />
+            <img src="action_yellow_d.png" width="64" />
             <br/>
             <p><b>Yellow dark</b></p><p>#F0A732</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="action_green.png" />
+            <img src="action_green.png" width="64" />
             <br/>
             <p><b>Green</b></p><p>#59A869</p>
         </td>
         <td>
-            <img src="action_green_d.png" />
+            <img src="action_green_d.png" width="64" />
             <br/>
             <p><b>Green dark</b></p><p>#499C54</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="action_blue.png" />
+            <img src="action_blue.png" width="64" />
             <br/>
             <p><b>Blue</b></p><p>#389FD6</p>
         </td>
         <td>
-            <img src="action_blue_d.png" />
+            <img src="action_blue_d.png" width="64" />
             <br/>
             <p><b>Blue dark</b></p><p>#3592C4</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="action_grey.png" />
+            <img src="action_grey.png" width="64" />
             <br/>
             <p><b>Grey</b></p><p>#6E6E6E</p>
         </td>
         <td>
-            <img src="action_grey_d.png" />
+            <img src="action_grey_d.png" width="64" />
             <br/>
             <p><b>Grey dark</b></p><p>#AFB1B3</p>
         </td>
@@ -288,7 +288,7 @@ There are 5 colors in the actions icons palette. Dark version is for Darcula the
 
 Use these colors according to the following rules:
 1. By default, action icons are grey and monochromatic:
-    ![](colors_actions_grey.png)
+    ![](colors_actions_grey.png){width=319}
 
 2. If an icon falls into one of the categories below, use the corresponding color:
 
@@ -305,20 +305,20 @@ Use these colors according to the following rules:
 
 
 3. Preserve colors in icons combinations. If an icon is colored in its full size, it should have the same color when reduced.
-    ![](colors_actions_modifier.png)
+    ![](colors_actions_modifier.png){width=248}
 
 4. Use green and red colors for paired icons. Color helps distinguish between similar icons faster.
-    ![](colors_actions_pair.png)
+    ![](colors_actions_pair.png){width=233}
 
 5. Use grey color for tool window icons. Icons are placed on the perimeter of the IDE, so they should not attract too much attention and distract users.
-    ![](colors_toolbuttons.png)
+    ![](colors_toolbuttons.png){width=750}
 
 
 ### Status icons
 
 Color is a great way to provide status information. Use status icons that are already present in the IDE repository:
 
-![](colors_status.png)
+![](colors_status.png){width=308}
 
 If you need a new icon, color it according to its semantics. Make sure that the status icons are easily distinguishable by their form, as many colorblind people find it difficult to distinguish between red and green.
 
@@ -332,152 +332,152 @@ The palette for noun icons is wider, because there are lots of icons in one set:
 <table style="none">
     <tr>
         <td>
-            <img src="noun_grey.png" />
+            <img src="noun_grey.png" width="64" />
             <br/>
             <p><b>Grey</b></p><p>#9AA7B0</p>
         </td>
         <td>
-            <img src="noun_grey_80.png" />
+            <img src="noun_grey_80.png" width="64" />
             <br/>
             <p><b>Grey 80%</b></p><p>#9AA7B0 op. 80%</p>
         </td>
         <td>
-            <img src="noun_grey_60.png" />
+            <img src="noun_grey_60.png" width="64" />
             <br/>
             <p><b>Grey 60%</b></p><p>#9AA7B0 op. 60%</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="noun_blue.png" />
+            <img src="noun_blue.png" width="64" />
             <br/>
             <p><b>Blue</b></p><p>#40B6E0</p>
         </td>
         <td>
-            <img src="noun_blue_70.png" />
+            <img src="noun_blue_70.png" width="64" />
             <br/>
             <p><b>Blue 70%</b></p><p>#40B6E0 op. 70%</p>
         </td>
         <td>
-            <img src="noun_blue_60.png" />
+            <img src="noun_blue_60.png" width="64" />
             <br/>
             <p><b>Blue 60%</b></p><p>#40B6E0 op. 60%</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="noun_green.png" />
+            <img src="noun_green.png" width="64" />
             <br/>
             <p><b>Green</b></p><p>#62B543</p>
         </td>
         <td>
-            <img src="noun_green_70.png" />
+            <img src="noun_green_70.png" width="64" />
             <br/>
             <p><b>Green 70%</b></p><p>#62B543 op. 70%</p>
         </td>
         <td>
-            <img src="noun_green_60.png" />
+            <img src="noun_green_60.png" width="64" />
             <br/>
             <p><b>Green 60%</b></p><p>#62B543 op. 60%</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="noun_yellow.png" />
+            <img src="noun_yellow.png" width="64" />
             <br/>
             <p><b>Yellow</b></p><p>#F4AF3D</p>
         </td>
         <td>
-            <img src="noun_yellow_70.png" />
+            <img src="noun_yellow_70.png" width="64" />
             <br/>
             <p><b>Yellow 70%</b></p><p>#F4AF3D op. 70%</p>
         </td>
         <td>
-            <img src="noun_yellow_60.png" />
+            <img src="noun_yellow_60.png" width="64" />
             <br/>
             <p><b>Yellow 60%</b></p><p>#F4AF3D op. 60%</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="noun_purple.png" />
+            <img src="noun_purple.png" width="64" />
             <br/>
             <p><b>Purple</b></p><p>#B99BF8</p>
         </td>
         <td>
-            <img src="noun_purple_70.png" />
+            <img src="noun_purple_70.png" width="64" />
             <br/>
             <p><b>Purple 70%</b></p><p>#B99BF8 op. 70%</p>
         </td>
         <td>
-            <img src="noun_purple_60.png" />
+            <img src="noun_purple_60.png" width="64" />
             <br/>
             <p><b>Purple 60%</b></p><p>#B99BF8 op. 60%</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="noun_pink.png" />
+            <img src="noun_pink.png" width="64" />
             <br/>
             <p><b>Pink</b></p><p>#F98B9E</p>
         </td>
         <td>
-            <img src="noun_pink_70.png" />
+            <img src="noun_pink_70.png" width="64" />
             <br/>
             <p><b>Pink 70%</b></p><p>#F98B9E op. 70%</p>
         </td>
         <td>
-            <img src="noun_pink_60.png" />
+            <img src="noun_pink_60.png" width="64" />
             <br/>
             <p><b>Pink 60%</b></p><p>#F98B9E op. 60%</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="noun_red.png" />
+            <img src="noun_red.png" width="64" />
             <br/>
             <p><b>Red</b></p><p>#F26522</p>
         </td>
         <td>
-            <img src="noun_red_70.png" />
+            <img src="noun_red_70.png" width="64" />
             <br/>
             <p><b>Red 70%</b></p><p>#F26522 op. 70%</p>
         </td>
         <td>
-            <img src="noun_red_60.png" />
+            <img src="noun_red_60.png" width="64" />
             <br/>
             <p><b>Red 60%</b></p><p>#F26522 op. 60%</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="noun_red_status.png" />
+            <img src="noun_red_status.png" width="64" />
             <br/>
             <p><b>Red status</b></p><p>#E05555</p>
         </td>
         <td>
-            <img src="noun_red_status_70.png" />
+            <img src="noun_red_status_70.png" width="64" />
             <br/>
             <p><b>Red status 70%</b></p><p>#E05555 op. 70%</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="noun_yellow_d.png" />
+            <img src="noun_yellow_d.png" width="64" />
             <br/>
             <p><b>Yellow dark</b></p><p>#D9A343</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="noun_green_android.png" />
+            <img src="noun_green_android.png" width="64" />
             <br/>
             <p><b>Green Android</b></p><p>#A4C639</p>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="noun_black.png" />
+            <img src="noun_black.png" width="64" />
             <br/>
             <p><b>Black text</b></p><p>#231F20 op. 70%</p>
         </td>
@@ -487,16 +487,16 @@ The palette for noun icons is wider, because there are lots of icons in one set:
 Select colors for new icons based on existing colors and users’ habits.
 
 Use colors with 60% opacity and grey 80% for big parts, like folder icons:
-![](colors_nouns_folder.png)
+![](colors_nouns_folder.png){width=86}
 Transparent icons are used in both light and dark themes, so in most cases there’s only one version.
 
 
 Use colors with 70% opacity for medium size elements that occupy about half of an icon, like file type icons:
-![](colors_nouns_file.png)
+![](colors_nouns_file.png){width=111}
 
 
 Use colors without opacity for small elements, like modifiers.
-![](colors_nouns_modifier.png)
+![](colors_nouns_modifier.png){width=87}
 
 ## Font
 

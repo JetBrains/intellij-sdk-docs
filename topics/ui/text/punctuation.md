@@ -52,7 +52,7 @@ End an action name with an ellipsis if it opens a dialog where input is required
 
 Use an ellipsis at the end of a truncated text if there is no scrollbar and this is not a table column, see [truncation in table columns](table.md#sizes-and-placement). Provide a way to show the full text, for example, expand the control or show a tooltip on hover.
 
-![](2_01_truncated_text.png)
+![](2_01_truncated_text.png){width=399}
 *A notification can be expanded to show the full text.*
 
 Use an ellipsis with verbs describing an ongoing process, for example, Searching… See more examples in [Progress text](progress_text.md).
@@ -63,20 +63,20 @@ Use the ellipsis character … (`U+2026` in Unicode). Do not use three separate 
 ## Period
 Do **not** put a period at the end of a single sentence, even if it is a complete sentence.
 
-![](1_01_no_period_1.png)
+![](1_01_no_period_1.png){width=385}
 
-![](1_01_no_period_2.png)
+![](1_01_no_period_2.png){width=396}
 
 If a text consists of several sentences, put a period after each sentence.
-![](1_02_periods_several_sentences.png)
+![](1_02_periods_several_sentences.png){width=488}
 
 Do **not** put a period at the end of an IDE action.
-![](1_03_periods_action.png)
+![](1_03_periods_action.png){width=385}
 *The empty text consists of two sentences but the second one is an IDE action so it should not have a period.*
 
 <p>Note that links that are not IDE actions can have a period in the end.</p>
 
-![](1_04_period_navigation_link.png)
+![](1_04_period_navigation_link.png){width=376}
 
 
 ## Comma
@@ -93,13 +93,13 @@ Between symbols in series.
 ## Colon
 Use a colon after labels for inputs and radio button / checkbox groups.
 
-![](label_noun.png)
+![](label_noun.png){width=153}
 
-![](radio_example.png)
+![](radio_example.png){width=213}
 
 Do **not** use a colon if a label and text inside the input element make a phrase.
 
-![](label_sentence.png)
+![](label_sentence.png){width=247}
 
 
 ## Contractions
@@ -115,7 +115,7 @@ Use contractions only if the action name has 4 and more words, and the contracte
 
 *Don’t* or *Do not*:
 * Always contract in the phrase *Don’t [some verb] again*. The phrase is common, and the meaning is easily recognized.
-  ![](3_01_dont_ask_again.png)
+  ![](3_01_dont_ask_again.png){width=399}
 * In other cases, do not contract. The full form reduces chances that the relevant meaning might be missed.
 
 *<format color="#C3481B">Don’t</format> send → Do not send*

@@ -14,7 +14,7 @@
 
 Balloon notifications inform users of the events or system states related to a project or IDE.
 
-![](01_balloon_example.png)
+![](01_balloon_example.png){width=389}
 
 
 ## When to use
@@ -32,17 +32,17 @@ In other cases, choose another [notification type](notification_types.md).
 #### Error
 Use to inform of a critical event or state that might disrupt the user's experience.
 
-![](02_error.png)
+![](02_error.png){width=389}
 
 #### Warning
 Use in case of an event or state that might slow the user's work down or require an action to fix the IDE settings.
 
-![](03_warning.png)
+![](03_warning.png){width=389}
 
 #### Information
 Use to suggest optimizations for the IDE settings and notify on the results of a process that is not tied to any tool window.
 
-![](04_information.png)
+![](04_information.png){width=389}
 
 #### Information about a certain plugin
 
@@ -50,7 +50,7 @@ Use to show a plugin-related suggestion.
 
 Add the plugin’s icon to indicate that the notification relates to a particular plugin. Use a 16×16 SVG icon.
 
-![](05_information_plugin.png)
+![](05_information_plugin.png){width=389}
 
 
 ### Sticky or Timed
@@ -74,17 +74,17 @@ Use sentence case and follow the [punctuation rules](punctuation.md).
 If the message fits well in one sentence and does not require a separate title, choose either a title or a body:
 * Use title-only message when it’s short and fits in one line:
 
-![](03_warning.png)
+![](03_warning.png){width=389}
 
 * Use only body text when the message fits in two lines and the title would duplicate its meaning, fully or partially:
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](06_only_text_incorrect.png)
+![](06_only_text_incorrect.png){width=389}
 
 <format color="Green" style="bold">Correct</format>
 
-![](06_only_text_correct.png)
+![](06_only_text_correct.png){width=389}
 
 
 ### Body
@@ -97,7 +97,7 @@ Provide the details on the event or system state to help users decide what to do
 Note that only the first line of the body text is visible by default. The rest of the message is only visible when expanded with an arrow icon.
 Make the beginning of the text most informative.
 
-![](07_expandable.png)
+![](07_expandable.png){width=777}
 
 
 ### Actions
@@ -106,27 +106,27 @@ Add actions to help users take the next steps: fix a problem, view relevant info
 
 If the notification is informational and there is a possibility it might appear too often, add the "Don’t ask again" action:
 
-![](04_information.png)
+![](04_information.png){width=389}
 
 Preferable number of actions is two, as it is easier for the user to choose.
 
 If a set of more than 2 actions will be useful for the user, place the primary action first, and hide the others under the "More actions" dropdown:
 
-![](08_dropdown.png)
+![](08_dropdown.png){width=389}
 
 If the notification reports an error or warning, always provide an action to help users fix the problem:
 
-![](02_error.png)
+![](02_error.png){width=389}
 
 If no actions are available, provide more details in the body text, e.g. how to fix the error or what is the warning/error cause:
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](09_error_incorrect.png)
+![](09_error_incorrect.png){width=389}
 
 <format color="Green" style="bold">Correct</format>
 
-![](09_error_correct.png)
+![](09_error_correct.png){width=389}
 
 ### Naming a notification group
 Each balloon notification belongs to a group. Groups can be seen in <ui-path>Settings | Appearance & Behavior | Notifications</ui-path>.

@@ -11,9 +11,9 @@ There are *regular* and *numeric* mnemonics.
 * Regular mnemonics are used inside the text. The mnemonic is underlined in this case to be distinguishable.
 
   In a control:
-  ![](inside.png)
+  ![](inside.png){width=264}
   In a menu:
-  ![](menu.png)
+  ![](menu.png){width=288}
 
   Activate the control by pressing the mnemonic with:
 
@@ -22,7 +22,7 @@ There are *regular* and *numeric* mnemonics.
     * Ctrl+Alt modifier keys on macOS.
 
 * Numeric mnemonics are used as the first numeric character of an action in a popup:
-  ![](first.png)
+  ![](first.png){width=373}
   _Invoke the action by pressing the corresponding number key._
 
 ## When to use
@@ -39,7 +39,7 @@ Note: The rules for using numeric mnemonics in popups are under discussion. [Con
 
 ## How to use
 
-![](letters.png)
+![](letters.png){width=555}
 
 Make mnemonics in the label discoverable, they must be easy to find:
 

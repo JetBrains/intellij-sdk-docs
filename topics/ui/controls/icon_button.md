@@ -12,7 +12,7 @@
 
 A toolbar icon button is an icon that appears on a toolbar.
 
-![](button_example.png)
+![](button_example.png){width=156}
 
 
 
@@ -22,13 +22,13 @@ A toolbar icon button is an icon that appears on a toolbar.
 An action button triggers an action immediately on clicking it, e.g., the Open button.
 
 A toggle button switches the state on clicking it, e.g., a button to show and hide warnings in the output tree.
-![](toggle.png)
+![](toggle.png){width=143}
 
 A drop-down button has an arrow icon in the bottom right corner and opens a menu with actions or checkboxes.
 
 [//]: # (TODO: Use [menu list]&#40;menu_list.md&#41; guidelines for drop-down buttons.)
 
-![](drop-down.png)
+![](drop-down.png){width=284}
 
 
 ## When to use
@@ -42,7 +42,7 @@ Provide a recognizable icon. Use an [existing icon](https://jetbrains.design/int
 Provide a short and descriptive name for a toolbar icon button. Show a tooltip with the button name on mouse hover.
 Include a shortcut if there is one. See [Context help](context_help.md) for details.
 
-![](tooltip.png)
+![](tooltip.png){width=163}
 
 Highlight a toolbar icon button on mouse hover. Highlight a toolbar icon button with a brighter color on clicking it.
 
@@ -50,7 +50,7 @@ Highlight a toolbar icon button on mouse hover. Highlight a toolbar icon button 
 
 * Drop-down buttons remain highlighted while the menu is opened.
 
-![](states.png)
+![](states.png){width=183}
 
 If an action is not available in this context, disable the corresponding button and gray out the icon.
 For toolbar drop-down buttons, disable the arrow icon as well.

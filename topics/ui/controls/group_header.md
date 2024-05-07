@@ -12,7 +12,7 @@
 
 A group header clearly labels a group of UI controls.
 
-![](01_group_header.png)
+![](01_group_header.png){width=455}
 
 
 ## When to use
@@ -23,12 +23,12 @@ Do **not** use group headers when each group contains 3 controls and less. Separ
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](6_03_group_incorrect.png)
+![](6_03_group_incorrect.png){width=569}
 *Each group has less than 3 controls. Group headers only add noise in this case because control labels are enough to understand their purpose.*
 
 <format color="Green" style="bold">Correct</format>
 
-![](6_03_group_correct.png)
+![](6_03_group_correct.png){width=569}
 
 
 ## How to use
@@ -39,7 +39,7 @@ Make the label short, preferably no more than 4 words. Avoid generic words, such
 
 If a group contains rarely used or advanced settings, use a **collapsible group header** and collapse it by default.
 
-![](02_collapsed_header.png)
+![](02_collapsed_header.png){width=455}
 
 
 

@@ -12,43 +12,43 @@
 
 The toggle button is used to switch between On and Off states.
 
-![](toggle_button_example.png)
+![](toggle_button_example.png){width=53}
 
 ## When to use
 
 Use the toggle button to switch the state of an item in search results:
 
-![](example_se.png)
+![](example_se.png){width=676}
 
 
 Do not use the toggle button for items in dialogs and menus. Instead, use a checkbox in dialogs and a checkmark in menus:
 
-![](when_to_use_dialog_or_menu.png)
+![](when_to_use_dialog_or_menu.png){width=400}
 
 
 ## How to use
 
 ### Label
 The toggle button in search results should duplicate the option from the settings or the menu. Label and capitalization should be the same as on the option label:
-    ![](label_checkbox.png)
+    ![](label_checkbox.png){width=228}
     *Setting in the preferences*
-    ![](label_checkbox_se.png)
+    ![](label_checkbox_se.png){width=676}
     *The same setting in search results*
 Do not make a setting available only from search results.
 
 [//]: # (TODO: See [discoverability]&#40;discoverability.md&#41; for details.)
 
 If the setting is in a tree or menu, use the toggle button label to specify where the setting is located:
-    ![](label_tree.png)
+    ![](label_tree.png){width=387}
 *Setting in a tree*
 
-![](label_tree_se.png)
+![](label_tree_se.png){width=676}
 *The same setting in search results; separate tree levels with a colon*
 
-![](label_menu.png)
+![](label_menu.png){width=497}
 *Setting in the main menu*
 
-![](label_menu_se.png)
+![](label_menu_se.png){width=676}
 *The same setting in search results; separate the first menu level with a vertical bar, and separate others with a colon*
 
 Refer to [checkbox](checkbox.md) for writing checkbox labels and menu labels.

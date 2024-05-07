@@ -4,7 +4,7 @@
 
 <link-summary>UI guidelines on writing progress texts.</link-summary>
 
-![](desc.png)
+![](desc.png){width=632}
 
 ## When to use
 
@@ -16,7 +16,7 @@ Follow the rules for [progress indicators](progress_indicators.md).
 
 Use the progressive form of the verb which describes the process, for example:
 
-![](progressive_form.png)
+![](progressive_form.png){width=288}
 
 Add an ellipsis at the end to show that an action is in progress.
 
@@ -35,7 +35,7 @@ Do not provide details that are meaningless for the user, for example, "Please w
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](meaningless.png)
+![](meaningless.png){width=288}
 
 Add time units if the remaining time can be predicted.
 
@@ -43,31 +43,31 @@ Round up the first time unit to one of the following numeric anchors: 1, 2, 3, 5
 For example, if there are 7 minutes and 50 seconds remaining, the progress text should read "About 10 minutes left".
 If less than 5 seconds are left, it should say "About 5 seconds left".
 
-![](time.png)
+![](time.png){width=288}
 
 Use work units if the remaining time cannot be predicted, as they help the user understand why the process takes so long.
 
 Work units: the current step, the currently processed file, the number of processed files/tde amount of information, the percentage of work completed, and so on:
 
-![](work.png)
+![](work.png){width=288}
 
 
 The time passed if the user controls the process, for example, needs to stop it after a certain time:
-![](passed.png)
+![](passed.png){width=288}
 
 <p>Update the timer every second.</p>
 
 ### Cancellation action
 
 If the process can be cancelled, add a [link](link.md) for the cancel action for an empty state:
-![](cancellation.png)
+![](cancellation.png){width=475}
 
 
 Use title case for the cancel action.
 
 Replace progress text with the loaded data or an [empty state](empty_state.md) when the process has finished.
 Show another progress indicator, e.g. a loader as in the example below, if loading continues after some data has been displayed.
-![](empty_state_text.png)
+![](empty_state_text.png){width=708}
 
 ### Trees
 
@@ -87,10 +87,10 @@ If no space is left, hide the text under area borders.
 
 Wrap text when the area’s width changes.
 
-Fields and vertical spaces:![](fields.png)
+Fields and vertical spaces:![](fields.png){width=757}
 
 ### Tree
-![](progress_text_tree.png)
+![](progress_text_tree.png){width=261}
 
 ## Style
 

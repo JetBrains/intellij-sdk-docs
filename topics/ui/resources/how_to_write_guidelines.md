@@ -171,39 +171,39 @@ Illustrate all statements with interface examples. Use **default macOS** theme a
 
 If an image description appears above the image, end it with a colon:
 
-![](example_1.png)
+![](example_1.png){width=312}
 
 If under, do not use a period at the end:
 
-![](example_1.png)
+![](example_1.png){width=312}
 
 *Image description*
 
 Several not wide images can be placed in two or three columns:
 
-![](example_2.png)
+![](example_2.png){width=760}
 
 If there is a set of images that illustrates the sequence of states, place them horizontally or vertically and link with an arrow:
 
-![](example_3.png)
+![](example_3.png){width=565}
 
 If there is a common mistake in UI, provide Correct/Incorrect images:
 
-![](corret_incorrect.png)
+![](corret_incorrect.png){width=417}
 
 The “Correct/Incorrect” can be placed above the image or on the left:
 
-![](correct_incorrect_vertical.png)
+![](correct_incorrect_vertical.png){width=285}
 
 If there is one image and it’s not big, cross out the image with 1px line instead of “Incorrect” header:
 
-![](incorrect.png)
+![](incorrect.png){width=268}
 
 Use html to add Correct/Incorrect label:
 <code-block>{% highlight html %}&lt;p>Incorrect&lt;/p>
 </code-block>
 
-![](correct_incorrect_sizes.png)
+![](correct_incorrect_sizes.png){width=530}
 
 Save all images in two sizes: example.png and example@2x.png.
 
@@ -220,11 +220,11 @@ Color:  #999999
 
 Place callouts around the image at a distance of at least 30px:
 
-![](callout_1.png)
+![](callout_1.png){width=474}
 
 Or use leader lines to sign specific items on the image:
 
-![](callout_2.png)
+![](callout_2.png){width=330}
 
 **Leader line** is 1px line, color: #000000 op. 0.3.
 
@@ -232,15 +232,15 @@ Line is vertical or horizontal. It can be bent once if there is not enough space
 
 Leave 1px between the line and the element to which it refers or place line over the element:
 
-![](leader_lines_1.png)
+![](leader_lines_1.png){width=182}
 
 Lines go beyond the image by 20px:
 
-![](leader_lines_2.png)
+![](leader_lines_2.png){width=353}
 
 Text position:
 
-![](leader_lines_3.png)
+![](leader_lines_3.png){width=452}
 
 If line is horizontal, center it with the first comment line.
 
@@ -248,11 +248,11 @@ If line is horizontal, center it with the first comment line.
 
 Use the Hex Code format to specify colors:
 
-![](how_to_write_guidelines_colors.png)
+![](how_to_write_guidelines_colors.png){width=252}
 
 Use colored rectangles to specify sizes inside the element and lines to specify external sizes:
 
-![](insets.png)
+![](insets.png){width=377}
 
 * Main rectangle: <span style="color:#DA769D">#DA769D</span> op. 0.4.
 * Secondary rectangle: <span style="color:#6D9AE6">#6D9AE6</span> op. 0.4.
@@ -261,16 +261,16 @@ Use colored rectangles to specify sizes inside the element and lines to specify 
 * Align all sizes on the right.
 
 Use line to show that text is aligned with an element:
-![](how_to_write_guidelines_alignment.png)
+![](how_to_write_guidelines_alignment.png){width=155}
 
 Specify the element sizes in the following format:
-![](how_to_write_guidelines_sizes.png)
+![](how_to_write_guidelines_sizes.png){width=54}
 
 For text labels, specify insets from the bounding box:
 
-![](boundingBox.png)
+![](boundingBox.png){width=216}
 
-![](insetsText.png)
+![](insetsText.png){width=125}
 
 Parameters for regular labels that make bounding boxes in Sketch the same size as in Java (already used in Sketch libraries symbols):
 - *macOS*: SF UI Text Medium / 13 size / –0.1 character spacing / 16 line spacing

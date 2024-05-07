@@ -12,7 +12,7 @@
 
 A text area allows users to enter or edit multi-line text.
 
-![](text_area_example.png)
+![](text_area_example.png){width=300}
 
 ## When to use
 
@@ -35,7 +35,7 @@ Follow the rules for the [input field](input_field.md).
 A label is required for all empty text areas.
 If a text area is prefilled and it’s clear from the context what data it contains, a label can be omitted.
 For example, the following text area is used to preview file and code templates:
-![](no_label.png)
+![](no_label.png){width=584}
 
 *If new file template is added and the text area is empty, the label is required.*
 
@@ -46,11 +46,11 @@ line is redundant here. Use [context help](context_help.md) to explain the field
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](label_incorrect.png)
+![](label_incorrect.png){width=598}
 
 <format color="Green" style="bold">Correct</format>
 
-![](label_correct.png)
+![](label_correct.png){width=598}
 
 
 ### Placeholder, prefilled values and field focus
@@ -64,7 +64,7 @@ If the previous user input should be saved, use <shortcut>⌥↑</shortcut> and 
 on Windows and Linux to navigate through the history.
 If history is available, add a note at the bottom of the input field:
 
-![](text_area_history.png)
+![](text_area_history.png){width=400}
 
 Save the current value, so that the user can return to it while navigating through the history.
 
@@ -73,14 +73,14 @@ Save the current value, so that the user can return to it while navigating throu
 
 If the user types an invalid value, highlight the text area with red and show an error message in a tooltip. For more details see [Validation errors](validation_errors.md).
 
-![](text_area_error.png)
+![](text_area_error.png){width=306}
 
 
 
 ## Size and placement
 
 Recommended sizes:
-![](text_area_sizes.png)
+![](text_area_sizes.png){width=492}
 This is the default size, it can be changed if the dialog is resized.
 **Height**. The minimum text area height is 3 lines ~55px, so the user understands that it’s multi-line. The maximum height is not limited and should be appropriate for the most common values.
 **Width**. The minimum text area width is 270px. It’s inconvenient to use a narrower field due to frequent line breaks. The maximum width is 80 symbols ~600px, otherwise, it’s hard to read the text.

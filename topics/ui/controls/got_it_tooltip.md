@@ -14,53 +14,53 @@
 
 A Got It tooltip informs users about a new or changed feature and gives basic information about it.
 
-![](01_got_it_example.png)
+![](01_got_it_example.png){width=335}
 
 ## When to use
 
 Point to small UI controls that can be missed among other information in the screen.
 
-![](02_new_feature.png)
+![](02_new_feature.png){width=509}
 *After method or parameter names are edited, the Inplace Refactoring icon appears.*
 
-![](03_new_plugin.png)
+![](03_new_plugin.png){width=375}
 *After the "Code With Me" plugin is installed, a drop-down menu appears on the toolbar.*
 
 Explain behavior that is not clear from the UI.
 
-![](04_explain_how_to_use.png)
+![](04_explain_how_to_use.png){width=333}
 *When extracting a method, users can change only the method name in the blue box. The tooltip explains where to change the order of parameters in the parentheses and other properties of a method.*
 
 Suggest keyboard interactions.
 
-![](05_suggest_keyboard_actions.png)
+![](05_suggest_keyboard_actions.png){width=244}
 *The inlay with options after the blue box is a new control. The tooltip explains how to use it with the keyboard.*
 
 Explain how to revert to the old UI in case of significant UI changes.
 
-![](06_suggest_rollback.png)
+![](06_suggest_rollback.png){width=552}
 *The tooltip explains how to revert to a new experimental UI. Only users who switched to the new UI can see it.*
 
 Do **not** use the tooltip if there is no space to attach it. Instead, use a [banner](banner.md) in a dialog or a notification in the main window.
 
-![](07_got_it_banner.png)
+![](07_got_it_banner.png){width=709}
 
-![](08_got_it_notification.png)
+![](08_got_it_notification.png){width=397}
 
 
 ## How to use
 
-![](09_required_and_optional_information.png)
+![](09_required_and_optional_information.png){width=527}
 
 Always add the body text.
 
 Add a header if the body text is 2 lines and more. A short header can quickly explain what this tooltip is about.
 
-![](10_header.png)
+![](10_header.png){width=342}
 
 Add a shortcut, if the tooltip describes a single action that has a shortcut.
 
-![](11_shortcut.png)
+![](11_shortcut.png){width=248}
 
 Implementation:
 ```java
@@ -74,7 +74,7 @@ val tooltip = GotItTooltip("ide.features.trainer", GOT_IT_TEXT, project)
 ### Link
 Add a local link if users might want to revert changes in a feature or configure it.
 
-![](12_link_action.png)
+![](12_link_action.png){width=389}
 
 ```java
 new GotItTooltip("some.id", "Show output result in the editor", project)
@@ -84,7 +84,7 @@ new GotItTooltip("some.id", "Show output result in the editor", project)
 
 Add an external link if there is a help source that can further explain the functionality.
 
-![](13_link_help.png)
+![](13_link_help.png){width=340}
 
 ```java
 new GotItTooltip("some.id", GOT_IT_TEXT, project)
@@ -106,7 +106,7 @@ Avoid using style formatting. It makes the tooltip harder to read.
 
 | <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
 |-----------------------------------------------------|-----------------------------------------------------|
-| ![](14_formatting_incorrect.png)                    | ![](14_formatting_correct.png)                      |
+| ![](14_formatting_incorrect.png){width="341"}       | ![](14_formatting_correct.png){width="341"}         |
 
 ### Location
 
@@ -114,7 +114,7 @@ Do **not** cover the information the user is currently working with.
 
 | <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
 |-----------------------------------------------------|-----------------------------------------------------|
-| ![](15_location_incorrect.png)                      | ![](15_location_correct.png)                        |
+| ![](15_location_incorrect.png){width="509"}         | ![](15_location_correct.png){width="509"}           |
 
 
 **Implementation:** See four predefined point providers in the [`GotItTooltip`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/GotItTooltip.kt) class.
@@ -131,7 +131,7 @@ Consider adding a timeout if:
 * The tooltip appears at the place at which the user is currently looking.
 * There is no link in the tooltip.
 
-![](05_suggest_keyboard_actions.png)
+![](05_suggest_keyboard_actions.png){width=244}
 
 *The Got It tooltip has a timeout because the text is short, the user has just started the Rename refactoring, and is very likely looking at this place.*
 
@@ -165,6 +165,6 @@ If several tooltips appear on application start, they are shown one by one.
 
 Text width is 280 px by default. The tooltip width adjusts automatically to make the right margin 16 px.
 
-![](16_width_custom.png)
+![](16_width_custom.png){width=681}
 
-![](17_width_adjusted.png)
+![](17_width_adjusted.png){width=625}

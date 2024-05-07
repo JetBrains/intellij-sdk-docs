@@ -6,7 +6,7 @@
 
 A tool window is a pane inside the main IDE window. For information about tool windows, see [IntelliJ IDEA Web Help](https://www.jetbrains.com/help/idea/tool-windows.html). For information about implementing tool windows, see [](tool_windows.md).
 
-![](tool_window_example.png)
+![](tool_window_example.png){width=960}
 
 
 ## When to use
@@ -20,7 +20,7 @@ If the user does not need the information from the main window to complete an op
 
 ## Tool window structure
 
-![](tool_window_structure.png)
+![](tool_window_structure.png){width=483}
 
 
 ## How to use
@@ -31,7 +31,7 @@ Give the tool window a name:
 
 Show the tool window name in the tool window button and header. If there are tabs in the tool window header, add a colon after the tool window name. Otherwise, do not add it.
 
-![](pull_requests.png)
+![](pull_requests.png){width=308}
 
 Add an icon for the tool window. The icon is 13px x 13px, grey and monochromatic. See how to create icons in the [icons guidelines](icons_style.md).
 
@@ -49,9 +49,9 @@ Put tool window viewing mode settings under the gear icon in the header. If ther
 
 Add tabs if all the information does not fit in one tab or refers to similar instances, like run sessions, history for files, find results. The tabs for entities should be closable.
 
-![](git.png)
+![](git.png){width=308}
 *Separate tabs are added for each file history.*
 
-![](find.png)
+![](find.png){width=448}
 *Separate tabs are added for different search queries.*
 

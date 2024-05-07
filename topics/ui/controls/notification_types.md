@@ -50,7 +50,7 @@ Use the following table to determine which notification to use based on the two 
       Opening projects in new window<br/><br/>
       When trying to rename a method, but a conflict is found<br/><br/>
       Need a dependency before using a feature<br/>
-      <img src="alert.png" />
+      <img src="alert.png" width="406" />
    </td>
   </tr>
   <tr>
@@ -63,7 +63,7 @@ Use the following table to determine which notification to use based on the two 
     <td>
       Configuring SDK for your project<br/><br/>
       Requiring a Gradle sync for tools to work properly<br/>
-      <img src="banner.png" />
+      <img src="banner.png" width="431" />
     </td>
     </tr>
   <tr>
@@ -73,7 +73,7 @@ Use the following table to determine which notification to use based on the two 
     <td>
       Status of task completion<br/><br/>
       When Find Usages is invoked on a method, use a tool window balloon to show the feedback since the results will be found in the Find tool window<br/>
-      <img src="toolwindow_balloon.png"  />
+      <img src="toolwindow_balloon.png" width="208" />
     </td>
   </tr>
   <tr>
@@ -82,7 +82,7 @@ Use the following table to determine which notification to use based on the two 
     <td>Sticky balloons</td>
     <td>
       IDE and Plugin Updates
-      <img src="sticky_toast.png" />
+      <img src="sticky_toast.png" width="391" />
     </td>
   </tr>
   <tr>
@@ -92,7 +92,7 @@ Use the following table to determine which notification to use based on the two 
     <td>
       Module imported<br/><br/>
       Framework detection
-      <img src="timed_toast.png" />
+      <img src="timed_toast.png" width="391" />
     </td>
   </tr>
 </table>

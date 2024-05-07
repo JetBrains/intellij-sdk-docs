@@ -59,9 +59,9 @@ For the [label](drop_down.md#label) and the [default value](drop_down.md#default
 
 If there are no values in the list initially, replace the combo box with an input field. This way users won't waste their time clicking the empty combo box to find out that there are no options available.
 
-| Incorrect                | Correct                          |
-|--------------------------|----------------------------------|
-| ![](combo_box_empty.png) | ![](replace_with_iput_field.png) |
+| <format color="Red" style="bold">Incorrect</format>  | <format color="Green" style="bold">Correct</format>  |
+|------------------------------------------------------|------------------------------------------------------|
+| ![](combo_box_empty.png)                             | ![](replace_with_iput_field.png)                     |
 
 Replace the input field with a combo box after a value has been entered and confirmed.
 

@@ -206,41 +206,41 @@ If controls do **not** depend on each other, left-align them all. Otherwise, the
 
 Use vertical insets to break a list of controls into easily readable groups. Compare:
 
-<p>Incorrect</p>
+<format color="Red" style="bold">Incorrect</format>
 
 ![](6_02_group_insets_incorrect.png)
 *The list of controls is hard to scan quickly because the controls "stick" together.*
 
-<p>Correct</p>
+<format color="Green" style="bold">Correct</format>
 
 ![](6_02_group_insets_correct.png)
 *Scanning a list of controls becomes easier when vertical insets are added between the groups of controls.*
 
 Treat insets with extra care and make sure that elements within a group are actually related. An unnecessary inset may create a false impression that the controls are grouped. This complicates the UI and might cause confusion.
 
-<p>Incorrect</p>
+<format color="Red" style="bold">Incorrect</format>
 
 ![](6_04_inset_incorrect.png)
 *The first checkbox depends on the combo box which is shown with the horizontal inset. However, the checkboxes appear grouped because they are closer.*
 
-<p>Correct</p>
+<format color="Green" style="bold">Correct</format>
 
 ![](6_04_inset_correct.png)
 *The first checkbox is closer to its main control, and it is easier to see that the combo box and checkbox are related.*
 
 Horizontal insets also matter for grouping controls.
 
-<p>Incorrect</p>
+<format color="Red" style="bold">Incorrect</format>
 
 ![](6_05_hor_inset_incorrect.png)
 *The checkboxes and the "Length" fields look independent because the horizontal inset between them is bigger than the vertical inset below the second checkbox.*
 
-<p>Better</p>
+<format color="DarkOrange" style="bold">Better</format>
 
 ![](6_05_hor_inset_better.png)
 *With a smaller horizontal and bigger vertical insets, the checkboxes and the "Length" fields look related. However, it could be made better if the repeating word "Separator" appears only once.*
 
-<p>Correct</p>
+<format color="Green" style="bold">Correct</format>
 
 ![](6_05_hor_inset_correct.png)
 *Correct grouping and no duplicates help understand the UI quicker.*

@@ -33,7 +33,7 @@ Use sentence case for details.
 
 Do not provide details that are meaningless for the user, for example, "Please wait":
 
-Incorrect:
+<format color="Red" style="bold">Incorrect</format>
 
 ![](meaningless.png)
 

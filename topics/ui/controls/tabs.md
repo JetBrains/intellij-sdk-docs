@@ -49,23 +49,23 @@ Do not remove or disable a tab when its function is unavailable. Explain why a t
 
 Make sure the border of the tab reaches the edges of the area tabs occupy.
 
-Incorrect:
+<format color="Red" style="bold">Incorrect</format>
 
 ![](04_layout_border_incorrect.png)
 
-Correct:
+<format color="Green" style="bold">Correct</format>
 
 ![](04_layout_border_correct.png)
 
 Do **not** surround the tab content area with a visible border.
 
-Incorrect:
+<format color="Red" style="bold">Incorrect</format>
 
 ![](05_bordered.png)
 
 Avoid placing independent content groups under the tabs area.
 
-Incorrect:
+<format color="Red" style="bold">Incorrect</format>
 
 ![](06_layout_content_under.png)
 

@@ -21,12 +21,12 @@ Follow the rules in [Groups of controls](groups_of_controls.md).
 
 Do **not** use group headers when each group contains 3 controls and less. Separate with [vertical insets](layout.md#organize-with-insets) instead.
 
-<p> Incorrect </p>
+<format color="Red" style="bold">Incorrect</format>
 
 ![](6_03_group_incorrect.png)
 *Each group has less than 3 controls. Group headers only add noise in this case because control labels are enough to understand their purpose.*
 
-<p> Correct </p>
+<format color="Green" style="bold">Correct</format>
 
 ![](6_03_group_correct.png)
 

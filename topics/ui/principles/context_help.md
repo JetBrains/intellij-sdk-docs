@@ -72,20 +72,20 @@ Provide quick navigation to related settings.
 
 Do not use context help to explain how the user interface works. If you need to explain that, consider redesigning the UI.
 
-<p>Incorrect</p>
+<format color="Red" style="bold">Incorrect</format>
 
 ![](06_explain_how_ui_works.png)
 
 Do not explain common actions and entities. Show a regular tooltip with an action name and shortcut in this case.
 
-| Incorrect                             | Correct                             |
-|---------------------------------------|-------------------------------------|
-| ![](07_explain_obvious_incorrect.png) | ![](07_explain_obvious_correct.png) |
+| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
+|-----------------------------------------------------|-----------------------------------------------------|
+| ![](07_explain_obvious_incorrect.png)               | ![](07_explain_obvious_correct.png)                 |
 
 Do not explain each option. Too many help icons or too much inline text make a dialog cluttered and harder to navigate visually.
 If all options need to be explained, consider rewriting the labels to make them clearer.
 
-<p>Incorrect</p>
+<format color="Red" style="bold">Incorrect</format>
 
 ![](08_explain_all_options.png)
 

@@ -103,27 +103,18 @@ Use sentence case both for the header and body text, and follow the [punctuation
 Make the help text [short and descriptive](writing_short.md).
 
 Avoid using style formatting. It makes the tooltip harder to read.
-<table>
-  <tr>
-    <td>
-        <p>Incorrect</p>
-        <img src="14_formatting_incorrect.png" />
-    </td>
-    <td>
-        <p>Correct</p>
-        <img src="14_formatting_correct.png" />
-    </td>
-  </tr>
-</table>
 
+| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
+|-----------------------------------------------------|-----------------------------------------------------|
+| ![](14_formatting_incorrect.png)                    | ![](14_formatting_correct.png)                      |
 
 ### Location
 
 Do **not** cover the information the user is currently working with.
 
-| Incorrect                      | Correct                      |
-|--------------------------------|------------------------------|
-| ![](15_location_incorrect.png) | ![](15_location_correct.png) |
+| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
+|-----------------------------------------------------|-----------------------------------------------------|
+| ![](15_location_incorrect.png)                      | ![](15_location_correct.png)                        |
 
 
 **Implementation:** See four predefined point providers in the [`GotItTooltip`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/GotItTooltip.kt) class.

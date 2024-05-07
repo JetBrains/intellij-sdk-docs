@@ -82,9 +82,9 @@ Select the most likely or the safest value by default.
 
 Do **not** use an empty value as the default value. If no values are added to a drop-down yet, replace it with a button to add values.
 
-| Incorrect                | Correct         |
-|--------------------------|-----------------|
-| ![](drop_down_empty.png) | ![](button.png) |
+| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format>  |
+|-----------------------------------------------------|------------------------------------------------------|
+| ![](drop_down_empty.png)                            | ![](button.png)                                      |
 
 ## Menu {id="menu_1"}
 
@@ -149,19 +149,19 @@ Enclose meta-options in pointy brackets and place meta-options at the beginning 
 
 Do **not** assign special meanings to numeric or string values, use meta-options instead. It can be unclear that 0 or an empty string are used to disable an option.
 
-| Incorrect                  | Correct                  |
-|----------------------------|--------------------------|
+| <format color="Red" style="bold">Incorrect</format>     | <format color="Green" style="bold">Correct</format>   |
+|---------------------------------------------------------|-------------------------------------------------------|
 | ![](version_incorrect.png) | ![](version_correct.png) |
 
   <p><em>In the incorrect example an empty string is used to set <control>&lt;Same
   as language level&gt;</control>, which is unclear.</em></p>
   <p>Replace the <control>&lt;None&gt;</control> option with a checkbox if it does not make the layout more complex:</p>
 
-  <p>Incorrect</p>
+<format color="Red" style="bold">Incorrect</format>
 
   ![](none_incorrect.png)
 
-  <p>Correct</p>
+<format color="Green" style="bold">Correct</format>
 
   ![](none_correct.png)
 

@@ -200,15 +200,15 @@ All numeric values should be given a unit or clearly labeled if they do not have
 
 Select the most convenient units.
 
-| Incorrect                     | Correct                     |
+| <format color="Red" style="bold">Incorrect</format>             | <format color="Green" style="bold">Correct</format>           |
 |-------------------------------|-----------------------------|
 | ![](connection_incorrect.png) | ![](connection_correct.png) |
 
 Place units after the input field.
 
-| Incorrect                | Correct                |
-|--------------------------|------------------------|
-| ![](caret_incorrect.png) | ![](caret_correct.png) |
+| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
+|-----------------------------------------------------|-----------------------------------------------------|
+| ![](caret_incorrect.png)                            | ![](caret_correct.png)                              |
 
 ## Tables
 
@@ -219,12 +219,12 @@ Right-align numeric values.
 
 Include the unit in the column header if all values share the same unit. Convert each number to use the same unit. If it’s not possible, e.g. the scatter of numbers is too large, include the unit with each value.
 
-| Incorrect                      | Correct                      |
-|--------------------------------|------------------------------|
-| ![](table_units_incorrect.png) | ![](table_units_correct.png) |
+| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
+|-----------------------------------------------------|-----------------------------------------------------|
+| ![](table_units_incorrect.png)                      | ![](table_units_correct.png)                        |
 
 Be consistent with the precision of the significand.
 
-| Incorrect                    | Correct                    |
-|------------------------------|----------------------------|
-| ![](precision_incorrect.png) | ![](precision_correct.png) |
+| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
+|-----------------------------------------------------|-----------------------------------------------------|
+| ![](precision_incorrect.png)                        | ![](precision_correct.png)                          |

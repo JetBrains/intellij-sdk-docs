@@ -307,11 +307,11 @@ Describe the problem in terms of target users’ actions or goals, not in terms 
 
 <table style="header-column">
     <tr>
-        <td> <p>Incorrect</p> </td>
+        <td> <format color="Red" style="bold">Incorrect</format> </td>
         <td> Invalid Git Executable. Error running "git.exe". File not found: "git.exe".</td>
     </tr>
     <tr>
-        <td> <p>Correct</p> </td>
+        <td> <format color="Green" style="bold">Correct</format> </td>
         <td> Cannot run "git.exe". The file is not found.</td>
     </tr>
 </table>
@@ -320,11 +320,11 @@ Provide specific names, locations, and values of the objects involved:
 
 <table style="header-column">
     <tr>
-        <td> Incorrect </td>
+        <td> <format color="Red" style="bold">Incorrect</format> </td>
         <td> <img src="message_unclear.png"/> </td>
     </tr>
     <tr>
-        <td> Correct </td>
+        <td> <format color="Green" style="bold">Correct</format> </td>
         <td> <img src="message_clear.png"/> </td>
     </tr>
 </table>

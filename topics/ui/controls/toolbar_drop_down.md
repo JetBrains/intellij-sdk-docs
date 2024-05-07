@@ -43,9 +43,9 @@ Use a [toolbar drop-down button](icon_button.md) instead of a drop-down list in 
 
 Do **not** use toolbar drop-down in dialogs, use the [drop-down list](drop_down.md) instead.
 
-| Incorrect                   | Correct                   |
-|-----------------------------|---------------------------|
-| ![](settings_incorrect.png) | ![](settings_correct.png) |
+| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
+|-----------------------------------------------------|-----------------------------------------------------|
+| ![](settings_incorrect.png)                         | ![](settings_correct.png)                           |
 
 ## How to use
 

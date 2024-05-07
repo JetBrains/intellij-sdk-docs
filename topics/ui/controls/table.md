@@ -60,11 +60,11 @@ Add a label if the control above can be mistaken for a table header:
 
 Do **not** add a label to explain the table behavior. Use context help instead:
 
-Incorrect:
+<format color="Red" style="bold">Incorrect</format>
 
 ![](label-help-header.png)
 
-Correct:
+<format color="Green" style="bold">Correct</format>
 
 ![](label-help.png)
 
@@ -81,11 +81,11 @@ Always put the label on top of the table.
 
 Do **not** use a Group separator instead of a Table label. A horizontal line is redundant here:
 
-Incorrect:
+<format color="Red" style="bold">Incorrect</format>
 
 ![](label-group-incorrect.png)
 
-Correct:
+<format color="Green" style="bold">Correct</format>
 
 ![](table_label.png)
 
@@ -96,21 +96,21 @@ A table header is the row at the top of the table that helps identify the column
 Add a header to a table if table data is non-descriptive or ambiguous.
 For example, in the Environment Variables table a header is required, since that content of each column is not clear:
 
-Correct:
+<format color="Green" style="bold">Correct</format>
 
 ![](header-needed-correct.png)
 
-Incorrect:
+<format color="Red" style="bold">Incorrect</format>
 
 ![](header-needed-incorrect.png)
 
 Do **not** use a header if all columns in a table have self-descriptive content, for example, names, dates, color previews, etc. For example, a header in File History is redundant:
 
-Correct:
+<format color="Green" style="bold">Correct</format>
 
 ![](table_history.png)
 
-Incorrect:
+<format color="Red" style="bold">Incorrect</format>
 
 ![](history-header-redundant.png)
 
@@ -155,14 +155,14 @@ Use stripes if you want to help users distinguish between different data sets. F
 
 Do **not** use stripes In a simple data set as guides to track content between columns. Alternating backgrounds create two distinct layers of focus while the type of data in different rows is the same.
 
-Incorrect:
+<format color="Red" style="bold">Incorrect</format>
 
 ![](table-zebra-incorrect.png)
 
 Default line height, [proper column width](table.md#sizes-and-placement) and highlighting rows on mouse hover should provide enough guidance to track content.
 For example, look at the same table without stripes, with bigger line height and adjusted column width:
 
-Correct:
+<format color="Green" style="bold">Correct</format>
 
 ![](table_table.png)
 
@@ -175,11 +175,11 @@ For example, look at the File History table grouped by commit, author, and date:
 
 Do **not** add borders between rows or columns, they add unnecessary noise to the table:
 
-Incorrect:
+<format color="Red" style="bold">Incorrect</format>
 
 ![](inner-borders-incorrect.png)
 
-Correct:
+<format color="Green" style="bold">Correct</format>
 
 ![](inner-borders.png)
 
@@ -263,7 +263,7 @@ If there are more than 15 variants, show a completion popup.
 
 Do **not** use a full-size combobox inside tables. It looks inconsistent and has too much details for a table; a simple dropdown icon with the variants popup is enough.
 
-Incorrect:
+<format color="Red" style="bold">Incorrect</format>
 
 ![](combo-incorrect.png)
 
@@ -273,11 +273,11 @@ Incorrect:
 ### Sizes
 Choose a column width appropriate for the most common values, but no less than **65 px**. Too wide columns make it hard to read data.
 
-Correct:
+<format color="Green" style="bold">Correct</format>
 
 ![](fileColors.png)
 
-Incorrect:
+<format color="Red" style="bold">Incorrect</format>
 
 ![](fileColorsTooWide.png)
 
@@ -298,13 +298,13 @@ Do **not** add a fade-away gradient for cropped text, as it adds too many shades
 
 Do **not** put vertical elements (for example, diagrams) in the middle of a table, as they prevent users from scanning data easily:
 
-Incorrect:
+<format color="Red" style="bold">Incorrect</format>
 
 ![](history-graph-incorrect.png)
 
 Place them closer to the sides instead:
 
-Correct:
+<format color="Green" style="bold">Correct</format>
 
 ![](table_history.png)
 

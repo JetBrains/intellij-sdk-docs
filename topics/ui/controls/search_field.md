@@ -30,11 +30,11 @@ Use the search field when specific objects are difficult to find at a glance, fo
 
 Do **not** add a label to the search field. The magnifying glass icon is self-explanatory.
 
-<p>Incorrect</p>
+<format color="Red" style="bold">Incorrect</format>
 
 ![](ptree-incorrect.png)
 
-<p>Correct</p>
+<format color="Green" style="bold">Correct</format>
 
 ![](ptree-correct.png)
 
@@ -88,7 +88,7 @@ Do **not** show the clear button if the search field is empty.
 Do **not** show the clear button when the initial data state is empty or doesn't differ from the result.
 For example, the close icon is not really useful in the editor search field since matches are highlighted and not filtered:
 
-<p>Incorrect</p>
+<format color="Red" style="bold">Incorrect</format>
 
 ![](clear-search-incorrect.png)
 
@@ -139,11 +139,11 @@ Do **not** use filter attributes as separate controls on the toolbar.
 Not all of them are needed every time while they take a lot of space and overload the interface.
 Use completion instead:
 
-<p>Incorrect</p>
+<format color="Red" style="bold">Incorrect</format>
 
 ![](filters-incorrect.png)
 
-<p>Correct</p>
+<format color="Green" style="bold">Correct</format>
 
 ![](filters-correct.png)
 
@@ -196,33 +196,34 @@ Add a search string to history:
 ### Placement
 
 Put the search field on top of the on-screen content that is being searched, and align them vertically, for example, the search field in settings is aligned with the filtered settings tree:
-<p>Correct</p>
+
+<format color="Green" style="bold">Correct</format>
 
 ![](search_field_settings.png)
 
 The search field is not aligned with the content on the Keymap settings page, which makes it harder to relate the content and the search string:
 
-<p>Incorrect</p>
+<format color="Red" style="bold">Incorrect</format>
 
 ![](keymap-search-incorrect.png)
 
-<p>Correct</p>
+<format color="Green" style="bold">Correct</format>
 
 ![](keymap-search-correct.png)
 
 Fit the search field to the popup windows and to a toolbar if it has top borders. This way the overall form looks less complex.
 
-<p>Incorrect</p>
+<format color="Red" style="bold">Incorrect</format>
 
 ![](log-incorrect.png)
 
-<p>Correct</p>
+<format color="Green" style="bold">Correct</format>
 
 ![](log-correct.png)
 
-| Incorrect                | Correct                |
-|--------------------------|------------------------|
-| ![](popup-incorrect.png) | ![](popup-correct.png) |
+| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
+|-----------------------------------------------------|-----------------------------------------------------|
+| ![](popup-incorrect.png)                            | ![](popup-correct.png)                              |
 
 Show the search field on demand when search is supplementary to other functionality or if space is limited.
 For example, space in the Project view is limited and too loaded to always show the _Speed Search_ bar:

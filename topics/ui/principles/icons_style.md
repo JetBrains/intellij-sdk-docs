@@ -19,24 +19,24 @@ Use a flat geometric icon style with straight corners and edges. Flat icons rema
 
 Use flat shapes instead of complex 3D forms:
 
-| Incorrect             | Correct                 |
-|-----------------------|-------------------------|
-| ![](style_pin_3d.png) | ![](style_pin_flat.png) |
+| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
+|-----------------------------------------------------|-----------------------------------------------------|
+| ![](style_pin_3d.png)                               | ![](style_pin_flat.png)                             |
 
 
 Use straight corners and lines instead of curves. It’s recommended to use 45° and 90° angles, or 30° and 60° where possible:
 
-| Incorrect                   | Correct                       |
-|-----------------------------|-------------------------------|
-| ![](style_folder_round.png) | ![](style_folder_straigt.png) |
+| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
+|-----------------------------------------------------|-----------------------------------------------------|
+| ![](style_folder_round.png)                         | ![](style_folder_straigt.png)                       |
 
 
 Icons should be as simple as possible without losing their meaning. Clean and simple icons ensure readability and reduce visual clutter.
 
 <table>
 <tr>
-    <td> Incorrect </td>
-    <td> Correct </td>
+    <td> <format color="Red" style="bold">Incorrect</format> </td>
+    <td> <format color="Green" style="bold">Correct</format> </td>
 </tr>
 <tr>
     <td> <img src="style_soft_wrap_detailed.png"/> </td>
@@ -133,8 +133,8 @@ Align pixels on the X and Y axis and round to the nearest whole pixel, or 0.5px 
 
 <table>
 <tr>
-    <td>Incorrect</td>
-    <td>Correct</td>
+    <td><format color="Red" style="bold">Incorrect</format></td>
+    <td><format color="Green" style="bold">Correct</format></td>
 </tr>
 <tr>
     <td width="50%"><img src="stroke_pixels_incorrect.png"/>
@@ -152,8 +152,8 @@ Reduce the number of anchors, as they increase the size of the image and takes l
 
 <table>
 <tr>
-    <td>Incorrect</td>
-    <td>Correct</td>
+    <td><format color="Red" style="bold">Incorrect</format></td>
+    <td><format color="Green" style="bold">Correct</format></td>
 </tr>
 <tr>
     <td width="50%"><img src="stroke_anchors_incorrect.png"/>
@@ -190,7 +190,6 @@ General rules for arrows: arrowhead is a filled triangle with a 90° pointing an
 
 Unfilled arrowhead can be used if there is only one arrow on an icon to reduce excessive visual weight, for example, for navigation arrows, such as back and forward, up and down.
 
-
 <table style="none">
 <tr>
     <td width="50%"> <img src="arrow_filled.png"/></td>
@@ -203,7 +202,8 @@ Unfilled arrowhead can be used if there is only one arrow on an icon to reduce e
 </table>
 
 Do **not** use other arrow styles, for example unfilled arrows or arrows with thinned tails.
-<p>Incorrect</p>
+
+<format color="Red" style="bold">Incorrect</format>
 
 ![](arrows_incorrect.png)
 

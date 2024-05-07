@@ -54,9 +54,9 @@ Use sentence-style capitalization.
 
 If there are several input fields on a form, it’s recommended to make labels approximately the same length to avoid gaps between labels and fields. For example:
 
-| Incorrect                      | Correct                          |
-|--------------------------------|----------------------------------|
-| ![](several_labels_length.png) | ![](several_labels_length_1.png) |
+| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
+|-----------------------------------------------------|-----------------------------------------------------|
+| ![](several_labels_length.png)                      | ![](several_labels_length_1.png)                    |
 
 If an input field is disabled, disable the label too:
 
@@ -89,9 +89,9 @@ If the user overwrites the value, it can be restored by removing the new value f
 
 Do **not** use the placeholder to show examples. The user can get the impression that the field is already filled. Provide examples or explanation under the input field (see [Context help](context_help.md)):
 
-| Incorrect                     | Correct                         |
-|-------------------------------|---------------------------------|
-| ![](placeholder_examples.png) | ![](placeholder_examples_1.png) |
+| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
+|-----------------------------------------------------|-----------------------------------------------------|
+| ![](placeholder_examples.png)                       | ![](placeholder_examples_1.png)                     |
 
 Do **not** use the placeholder as the field label. After the field has been filled, it is difficult to understand its purpose.
 
@@ -156,11 +156,11 @@ Sizes are the same for all themes:
 
 Choose the width appropriate for the most common values, but not less than 65 px. The field width helps the user understand what value is expected and to make sure that they fill the field correctly.
 
-| Correct   | ![](input_field_size_1.png) |
-|-----------|-----------------------------|
-| Incorrect | ![](input_field_size_2.png) |
-| Correct   | ![](input_field_size_3.png) |
-| Incorrect | ![](input_field_size_4.png) |
+| <format color="Green" style="bold">Correct</format> | ![](input_field_size_1.png) |
+|-----------------------------------------------------|-----------------------------|
+| <format color="Red" style="bold">Incorrect</format> | ![](input_field_size_2.png) |
+| <format color="Green" style="bold">Correct</format> | ![](input_field_size_3.png) |
+| <format color="Red" style="bold">Incorrect</format> | ![](input_field_size_4.png) |
 {style=none}
 
 If input value is longer than the field width, show the beginning of the value when the field becomes inactive:

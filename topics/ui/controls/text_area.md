@@ -44,11 +44,11 @@ Do **not** put units on the right of the text area.
 Do **not** use a [group header](group_header.md) instead of the text area label. The horizontal
 line is redundant here. Use [context help](context_help.md) to explain the field behavior.
 
-Incorrect:
+<format color="Red" style="bold">Incorrect</format>
 
 ![](label_incorrect.png)
 
-Correct:
+<format color="Green" style="bold">Correct</format>
 
 ![](label_correct.png)
 
@@ -87,9 +87,9 @@ This is the default size, it can be changed if the dialog is resized.
 
 Size the text area to display an integral number of lines of text:
 
-| Incorrect                 | Correct                   |
-|---------------------------|---------------------------|
-| ![](text_area_size_2.png) | ![](text_area_size_3.png) |
+| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
+|-----------------------------------------------------|-----------------------------------------------------|
+| ![](text_area_size_2.png)                           | ![](text_area_size_3.png)                           |
 
 Do **not** resize a text area on input. It will change the position of other controls and they can become hardly discoverable.
 

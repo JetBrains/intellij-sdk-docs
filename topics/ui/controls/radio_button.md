@@ -26,9 +26,9 @@ Do **not** use radio buttons if:
 
 * There are 5 and more options. Use a [drop-down list](drop_down.md):
 
-  | Incorrect                   | Correct                   |
-  |-----------------------------|---------------------------|
-  | ![](dropdown_incorrect.png) | ![](dropdown_correct.png) |
+| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
+|-----------------------------------------------------|-----------------------------------------------------|
+| ![](dropdown_incorrect.png)                         | ![](dropdown_correct.png)                           |
 
 Consider using a [drop-down list](drop_down.md) if:
 * The screen space is limited.
@@ -67,11 +67,11 @@ Use the imperative form of verbs.
 
 Do not use negation in labels as it complicates understanding.
 
-<p>Incorrect</p>
+<format color="Red" style="bold">Incorrect</format>
 
 ![](answeryes_incorrect.png)
 
-<p>Correct</p>
+<format color="Green" style="bold">Correct</format>
 
 ![](answeryes_correct.png)
 

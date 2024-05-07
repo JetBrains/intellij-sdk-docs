@@ -78,11 +78,11 @@ If the message fits well in one sentence and does not require a separate title, 
 
 * Use only body text when the message fits in two lines and the title would duplicate its meaning, fully or partially:
 
-Incorrect
+<format color="Red" style="bold">Incorrect</format>
 
 ![](06_only_text_incorrect.png)
 
-Correct
+<format color="Green" style="bold">Correct</format>
 
 ![](06_only_text_correct.png)
 
@@ -120,11 +120,11 @@ If the notification reports an error or warning, always provide an action to hel
 
 If no actions are available, provide more details in the body text, e.g. how to fix the error or what is the warning/error cause:
 
-Incorrect
+<format color="Red" style="bold">Incorrect</format>
 
 ![](09_error_incorrect.png)
 
-Correct
+<format color="Green" style="bold">Correct</format>
 
 ![](09_error_correct.png)
 

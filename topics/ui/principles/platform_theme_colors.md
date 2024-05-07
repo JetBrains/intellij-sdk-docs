@@ -65,9 +65,9 @@ If a color is needed:
 
 **Example**
 
-Incorrect: A new component with a light-blue background reuses Focus.borderColor which has a light-blue color in the default themes. A theme author decides they need a bright focus border and changes the color value for Focus.borderColor. As a result, the new component has a bright background with the text unreadable over it.
+<format color="Red" style="bold">Incorrect:</format> A new component with a light-blue background reuses Focus.borderColor which has a light-blue color in the default themes. A theme author decides they need a bright focus border and changes the color value for Focus.borderColor. As a result, the new component has a bright background with the text unreadable over it.
 
-Correct: A new component with a light-blue background has its own color key <code>ComponentName.background</code>.
+<format color="Green" style="bold">Correct:</format> A new component with a light-blue background has its own color key <code>ComponentName.background</code>.
 
 
 **Implementation**

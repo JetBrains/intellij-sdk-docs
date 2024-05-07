@@ -44,11 +44,11 @@ Use bullets for lists:
 
 Limit the width of the line to 70–80 symbols, as it is not convenient to read very long lines:
 
-Incorrect
+<format color="Red" style="bold">Incorrect</format>
 
 ![](07_width_incorrect.png)
 
-Correct
+<format color="Green" style="bold">Correct</format>
 
 ![](07_width_correct.png)
 
@@ -61,8 +61,8 @@ If the text does not fit, add a scrollbar:
 
 Do not add borders around description text. Use the panel color for the background.
 
-| Incorrect                   | Correct                   |
-|-----------------------------|---------------------------|
+| <format color="Red" style="bold">Incorrect</format>             | <format color="Green" style="bold">Correct</format>           |
+|-----------------------------------------------------------------|---------------------------------------------------------------|
 | ![](09_frame_incorrect.png) | ![](09_frame_correct.png) |
 
 For [links](link.md), use the default link color: `Link.activeForeground`. Underline links on hover:

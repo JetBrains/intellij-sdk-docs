@@ -71,26 +71,28 @@ If they are present, clicking them takes you to the position that this marker is
 Change cursor to "Hand" when hovering such scrollbars.
 
 When showing a text, wrap it instead of showing the horizontal scrollbar when possible. With both scrollbars, it is harder to manipulate the content.
-Incorrect
+
+<format color="Red" style="bold">Incorrect</format>
 
 ![](soft-wrap-incorrect.png)
 
-Correct
+<format color="Green" style="bold">Correct</format>
 
 ![](soft-wrap-correct.png)
 
 A horizontal scroll bar can be added for code snippets or for formatted input. Use the context menu to enable soft-wrapping.
 
-Correct
+<format color="Green" style="bold">Correct</format>
 
 ![](soft-wrap-context.png)
 
 Show only 1 scrollbar per table which scrolls the entire table:
-Incorrect:
+
+<format color="Red" style="bold">Incorrect</format>
 
 ![](table-scrollbar-incorrect.png)
 
-Correct:
+<format color="Green" style="bold">Correct</format>
 
 ![](table-scrollbar-correct.png)
 
@@ -98,16 +100,16 @@ Correct:
 
 Reserve the space for a vertical scrollbar if there is a column on the right side, otherwise the scrollbar always overlaps content.
 
-Incorrect:
+<format color="Red" style="bold">Incorrect</format>
 
 ![](vertical-scrollbar-incorrect.png)
 
-Correct:
+<format color="Green" style="bold">Correct</format>
 
 ![](vertical-scrollbar-correct.png)
 
 ## Style
 
-| Windows/Linux      | Mac                |
+| Windows/Linux      | macOS              |
 |--------------------|--------------------|
 | ![](win-light.png) | ![](mac-light.png) |

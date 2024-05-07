@@ -26,15 +26,15 @@ For example, it is useful for the Commit actions group in the <control>Commit</c
 The Split button is not useful in the <control>Replace</control> popup, since not all actions are related, for example <control>Open in Find Window</control>
 is not related to the main action. Such actions are hard to find in the drop-down menu:
 
-| Incorrect                      | Correct              |
-|--------------------------------|----------------------|
-| ![](not-related-incorrect.png) | ![](not-related.png) |
+| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
+|-----------------------------------------------------|-----------------------------------------------------|
+| ![](not-related-incorrect.png)                      | ![](not-related.png)                                |
 
 In the <control>Adjust Code Style</control> dialog only 1 related action is possible and it does not save a lot of space:
 
-| Correct                              | Incorrect                  |
-|--------------------------------------|----------------------------|
-| ![](space-not-limited-incorrect.png) | ![](space-not-limited.png) |
+| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
+|-----------------------------------------------------|-----------------------------------------------------|
+| ![](space-not-limited-incorrect.png)                | ![](space-not-limited.png)                          |
 
 To hide actions which are dangerous and uncommon. Dangerous means an action can destroy users’ data and cannot be easily undone.
 It is less possible to accidentally click an action hidden in a menu.
@@ -82,9 +82,11 @@ Do **not** use the Split Button in other cases, use simple [Buttons](button.topi
                 <img src="tooltip-button.png" /></li>
             <li>
                 The tooltip must not overlap the dropdown menu. Do not show a tooltip under the menu, show it on the opposite side of the button:
-                <p>Correct</p>
+                <br/>
+                <format color="Green" style="bold">Correct</format>
                 <img src="tooltip-correct.png" />
-                <p>Incorrect</p>
+                <br/>
+                <format color="Red" style="bold">Incorrect</format>
                 <img src="tooltip-incorrect.png" />
             </li>
         </ul>

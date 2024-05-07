@@ -27,18 +27,18 @@ Explain the current state.
 
 The default pattern is "_No [entity] added._" If _added, created, configured_ or other such verbs act as synonyms in a particular case, use the verb _added_ for consistency.
 
-| Incorrect                                                                   | Correct                  |
-|-----------------------------------------------------------------------------|--------------------------|
-| ![](libraries-before.png) Avoid "Nothing to show" as it is not informative. | ![](libraries-after.png) |
+| <format color="Red" style="bold">Incorrect</format>                         | <format color="Green" style="bold">Correct</format> |
+|-----------------------------------------------------------------------------|-----------------------------------------------------|
+| ![](libraries-before.png) Avoid "Nothing to show" as it is not informative. | ![](libraries-after.png)                            |
 
 Make the reason descriptive:
 
-<p>Incorrect</p>
+<format color="Red" style="bold">Incorrect</format>
 
 ![](sql-dialect-before.png)
 *The word mapping introduces a new entity while there are already two in the table header — path and SQL dialect. In the instructions, it is better to use already existing entities to connect them to what users see on the screen.*
 
-<p>Correct</p>
+<format color="Green" style="bold">Correct</format>
 
 ![](sql-dialect-after.png)
 *The word "individual" is used in contrast with the project SQL dialect above the table. The verb specified is used instead of added because, in the table, SQL dialects are not added but selected from a drop-down list in the SQL Dialect column.*
@@ -61,7 +61,7 @@ If an action cannot be tied to a link, explain  what to do.
 
 Hide the area's toolbar if it does not have the same action as in the empty state. Usually, all other toolbar actions are not relevant in this case.
 
-<p>Incorrect</p>
+<format color="Red" style="bold">Incorrect</format>
 
 ![](todo-tw-toolbar-incorrect.png)
 
@@ -74,12 +74,12 @@ Hide the area's toolbar if it does not have the same action as in the empty stat
 
 **Tables, trees and lists:** provide instructions according to the [Context help](context_help.md) rules. Smaller UI areas rarely require an in-depth explanation compared to complex tool windows. A short help text should be enough, and it does not require switching contexts.
 
-<p>Incorrect</p>
+<format color="Red" style="bold">Incorrect</format>
 
 ![](todo-filters-incorrect.png)
 *Do not use a help topic link in a table and UI areas other than tool windows.*
 
-<p>Correct</p>
+<format color="Green" style="bold">Correct</format>
 
 ![](todo-filters-correct.png)
 *Place an inline help text under the table.*
@@ -116,11 +116,11 @@ Use non-breaking spaces in an action name and shortcut, so it is not split into 
 
 Use non-breaking spaces for articles and prepositions in the instructional text.
 
-<p>Incorrect</p>
+<format color="Red" style="bold">Incorrect</format>
 
 ![](nbsp-incorrect.png)
 
-<p>Correct</p>
+<format color="Green" style="bold">Correct</format>
 
 ![](nbsp-correct.png)
 

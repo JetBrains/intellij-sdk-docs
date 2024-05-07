@@ -45,7 +45,7 @@ Use the built-in text styles from the table below whenever possible.
 
   <tr><td> Name </td>
   <td> Font size </td>
-  <td> Usage&nbsp;Examples </td></tr>
+  <td> Usage Examples </td></tr>
 
   <tr>
     <td> <strong>H0 bold</strong> <br/><code>JBFont.h0().asBold()</code></td>
@@ -221,7 +221,7 @@ The IDE text colors are in the table below. The editor text colors are managed b
     <td> <format color="#999999">999999</format> </td>
     <td> <format color="#787878">787878</format> </td>
     <td>
-        Additional info in&nbsp;lists (paths, counters), placeholder
+        Additional info in lists (paths, counters), placeholder
     </td>
     <td>
         <code>Component.infoForeground</code>

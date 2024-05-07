@@ -93,7 +93,7 @@ Remove duplicates in meaning:
 <tr>
     <td> Help improve IntelliJ IDEA <format color="#cc4700"> by sending anonymous usage statistics to JetBrains s.r.o.</format> </td>
     <td> Help improve IntelliJ IDEA </td>
-    <td> <format color="#999999"> The purpose of the header is to attract attention. The&nbsp;shorter and clearer header does that better. </format> </td>
+    <td> <format color="#999999"> The purpose of the header is to attract attention. The shorter and clearer header does that better. </format> </td>
 </tr>
 <tr>
     <td> <format color="#cc4700"> if you want to help make IntelliJ IDEA better </format> </td>
@@ -118,7 +118,7 @@ Remove duplicates in meaning:
     <td> <format color="#999999"> The verb "click" is obvious from context: you cannot do much with a link other than click. </format> </td>
 </tr>
 <tr>
-    <td> <format color="#cc4700"> click...&nbsp;I&nbsp;don’t agree otherwise </format> </td>
+    <td> <format color="#cc4700"> click... I don’t agree otherwise </format> </td>
     <td> <format color="#999999"> The link "I don’t agree" duplicates the notification "Close" button which appears on hover. </format> </td>
 </tr>
 <tr>
@@ -211,7 +211,7 @@ More examples:
 <td> Explanation </td>
 </tr>
 <tr>
-    <td> <format color="#cc4700">visits the</format> remote repositories <format color="#cc4700">and</format> checks for&nbsp;updates </td>
+    <td> <format color="#cc4700">visits the</format> remote repositories <format color="#cc4700">and</format> checks for updates </td>
     <td> checks remote repositories for updates </td>
     <td> <format color="#999999"> "Checks" already includes the meaning of "visits". </format> </td>
 </tr>
@@ -223,16 +223,16 @@ More examples:
 <tr>
     <td> Maven <format color="#cc4700">has to</format> use </td>
     <td> Maven uses </td>
-    <td> <format color="#999999"> Not relevant that a technology must do something, enough to say it just works this&nbsp;way. </format> </td>
+    <td> <format color="#999999"> Not relevant that a technology must do something, enough to say it just works this way. </format> </td>
 </tr>
 <tr>
-    <td> <format color="#cc4700">those</format> resources <format color="#cc4700">that are&nbsp;available</format> locally  </td>
+    <td> <format color="#cc4700">those</format> resources <format color="#cc4700">that are available</format> locally </td>
     <td> local resources </td>
     <td>  </td>
 </tr>
 <tr>
     <td> reports <format color="#cc4700">about the problems</format> if something is missing  </td>
-    <td> reports if something is&nbsp;missing </td>
+    <td> reports if something is missing </td>
     <td>  </td>
 </tr>
 </table>

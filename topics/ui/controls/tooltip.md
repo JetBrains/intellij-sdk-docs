@@ -96,7 +96,7 @@ Always show the required information in a tooltip:
     </td>
     <td>
         Help text <br/>
-        <format color="#999999">No action name or label because it is already shown in&nbsp;the UI.</format>
+        <format color="#999999">No action name or label because it is already shown in the UI.</format>
     </td>
     <td>
         Shortcut <br/>

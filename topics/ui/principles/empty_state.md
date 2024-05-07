@@ -16,7 +16,7 @@ Provide instructions in an empty UI area on how to fill it with data. Empty UI a
 * Empty search results — TBD
 
 
-## Tool windows, lists, trees and&nbsp;tables
+## Tool windows, lists, trees and tables
 Instructional text for these UI areas consists of three parts:
 ![](database-tw-callouts.png){width=626}
 

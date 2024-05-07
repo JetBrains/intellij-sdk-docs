@@ -220,7 +220,7 @@ An action icon is an icon that triggers an action. It usually appears on toolbar
 There are 5 colors in the action icons palette.
 The dark version is for Darcula theme.
 
-[//]: # (<note>Download a <a href="../../../images/ui/icons/Icons template.sketch" download>Sketch file</a> with the&nbsp;color palette.</note>)
+[//]: # (<note>Download a <a href="../../../images/ui/icons/Icons template.sketch" download>Sketch file</a> with the color palette.</note>)
 
 [//]: # (FIXME: colors are wrong, dark are rendered)
 

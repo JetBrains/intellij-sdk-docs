@@ -320,11 +320,11 @@ Provide specific names, locations, and values of the objects involved:
 
 <table style="header-column">
     <tr>
-        <td> <p>Incorrect</p> </td>
+        <td> Incorrect </td>
         <td> <img src="message_unclear.png"/> </td>
     </tr>
     <tr>
-        <td> <p>Correct
+        <td> Correct </td>
         <td> <img src="message_clear.png"/> </td>
     </tr>
 </table>

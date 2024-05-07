@@ -58,7 +58,7 @@ Do **not** highlight a disabled icon on mouse hover.
 
 ## Sizes and placement
 
-Icons size is 16x16 px, icon selection is 22x22 px.
+Icons size is 16x16px, icon selection is 22x22px.
 
 For guidelines on the space between toolbar icon buttons see [Toolbar](toolbar.md).
 

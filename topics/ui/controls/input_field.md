@@ -154,7 +154,7 @@ Sizes are the same for all themes:
 
 ### Field width
 
-Choose the width appropriate for the most common values, but not less than 65 px. The field width helps the user understand what value is expected and to make sure that they fill the field correctly.
+Choose the width appropriate for the most common values, but not less than 65px. The field width helps the user understand what value is expected and to make sure that they fill the field correctly.
 
 | <format color="Green" style="bold">Correct</format> | ![](input_field_size_1.png){width=104} |
 |-----------------------------------------------------|----------------------------------------|

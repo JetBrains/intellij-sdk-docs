@@ -145,7 +145,7 @@ Do not show just an action name and a link to a help article. Provide help text 
 
 ### Text length and formatting
 
-The text width in an action tooltip is not limited. The text width in a help tooltip is limited by 250 px.
+The text width in an action tooltip is not limited. The text width in a help tooltip is limited by 250px.
 
 Show no more than 10 lines of help text. If the text does not fit, leave only the essential information and add a link to a help article.
 

@@ -271,7 +271,7 @@ Do **not** use a full-size combobox inside tables. It looks inconsistent and has
 ## Sizes and placement
 
 ### Sizes
-Choose a column width appropriate for the most common values, but no less than **65 px**. Too wide columns make it hard to read data.
+Choose a column width appropriate for the most common values, but no less than **65px**. Too wide columns make it hard to read data.
 
 <format color="Green" style="bold">Correct</format>
 

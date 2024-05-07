@@ -163,7 +163,7 @@ The default timeout duration is 5 seconds.
 
 If several tooltips appear on application start, they are shown one by one.
 
-Text width is 280 px by default. The tooltip width adjusts automatically to make the right margin 16 px.
+Text width is 280px by default. The tooltip width adjusts automatically to make the right margin 16px.
 
 ![](16_width_custom.png){width=681}
 

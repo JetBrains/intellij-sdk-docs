@@ -16,16 +16,16 @@ As an example, the plugin implemented in the [Custom Language Support Tutorial](
 >
 
 * [](tests_prerequisites.md)
-* [](parsing_test.md)
-* [](completion_test.md)
-* [](annotator_test.md)
-* [](formatter_test.md)
-* [](rename_test.md)
 * [](folding_test.md)
+* [](parsing_test.md)
 * [](find_usages_test.md)
+* [](completion_test.md)
 * [](commenter_test.md)
+* [](annotator_test.md)
 * [](reference_test.md)
+* [](formatter_test.md)
 * [](documentation_test.md)
+* [](rename_test.md)
 * {columns="2"}
 
 <seealso style="cards">

@@ -115,19 +115,20 @@ or the specific version must be [provided in plugin distribution](plugin_content
 
 | IntelliJ Platform version | Bundled _stdlib_ version |
 |---------------------------|--------------------------|
+| 2024.2                    | 1.9.24                   |
 | 2024.1                    | 1.9.22                   |
 | 2023.3                    | 1.9.10                   |
 | 2023.2                    | 1.8.20                   |
 | 2023.1                    | 1.8.0                    |
-| 2022.3                    | 1.7.0                    |
-| 2022.2                    | 1.6.21                   |
-| 2022.1                    | 1.6.20                   |
 
 #### Earlier Versions
 {collapsible="true"}
 
 | IntelliJ Platform version | Bundled _stdlib_ version |
 |---------------------------|--------------------------|
+| 2022.3                    | 1.7.0                    |
+| 2022.2                    | 1.6.21                   |
+| 2022.1                    | 1.6.20                   |
 | 2021.3                    | 1.5.10                   |
 | 2021.2                    | 1.5.10                   |
 | 2021.1                    | 1.4.32                   |

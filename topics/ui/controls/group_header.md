@@ -23,7 +23,7 @@ Do **not** use group headers when each group contains 3 controls and less. Separ
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](6_03_group_incorrect.png){width=569}
+![](6_03_group_incorrect.png){width=569 style=block}
 *Each group has less than 3 controls. Group headers only add noise in this case because control labels are enough to understand their purpose.*
 
 <format color="Green" style="bold">Correct</format>

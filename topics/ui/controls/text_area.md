@@ -35,6 +35,7 @@ Follow the rules for the [input field](input_field.md).
 A label is required for all empty text areas.
 If a text area is prefilled, and it’s clear from the context what data it contains, a label can be omitted.
 For example, the following text area is used to preview file and code templates:
+
 ![](no_label.png){width=584}
 
 *If a new file template is added and the text area is empty, the label is required.*
@@ -80,9 +81,13 @@ If the user types an invalid value, highlight the text area with red and show an
 ## Size and placement
 
 Recommended sizes:
+
 ![](text_area_sizes.png){width=492}
+
 This is the default size, it can be changed if the dialog is resized.
+<br/>
 **Height**. The minimum text area height is 3 lines ~55px, so the user understands that it’s multi-line. The maximum height is not limited and should be appropriate for the most common values.
+<br/>
 **Width**. The minimum text area width is 270px. It’s inconvenient to use a narrower field due to frequent line breaks. The maximum width is 80 symbols ~600px, otherwise, it’s hard to read the text.
 
 Size the text area to display an integral number of lines of text:

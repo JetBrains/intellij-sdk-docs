@@ -55,6 +55,7 @@ Label a group of icons if it helps to make the icons clearer and if it’s neede
 Arrange items inside groups by the frequency of use, from left to right from top to bottom. Rely on statistics.
 
 It is recommended to arrange groups in the following order unless it contradicts the usage statistics. If it does, arrange groups by the frequency of use.
+
 ![](toolbar_tool_window.png){width=260}
 
 The less frequently used commands can be right aligned.
@@ -97,17 +98,26 @@ The toolbar can be vertical or horizontal.
 ![](placement.png){width=498}
 
 By default, place the toolbar at the top of the area.
+
 ![](placement_top.png){width=220}
-**Exceptions**
-Place the toolbar on the left in horizontal tool windows if horizontal space is not limited. A horizontal toolbar will be too wide and will occupy lots of space:
+
+### Exceptions
+
+Place the toolbar on the left in horizontal tool windows if horizontal space is not limited.
+A horizontal toolbar will be too wide and will occupy lots of space:
+
 ![](placement_left.png){width=220}
-Place the toolbar on the right if it’s not the first toolbar in the pane, and it’s rarely used.![](placement_right.png){width=386}
+
+Place the toolbar on the right if it’s not the first toolbar in the pane, and it’s rarely used.
+
+![](placement_right.png){width=386}
 
 Place the toolbar at the bottom on macOS, and on the right on Windows and Linux in [tables](table.md).
-![](table_mac.png){width=432}
+
+![](table_mac.png){width=432 style=block}
 *macOS*
 
-![](table_win.png){width=431}
+![](table_win.png){width=431 style=block}
 *Windows*
 
 The toolbar width is limited by the width of the element it belongs to. For example, by the width of the tool window or the list part in a master-detail layout.

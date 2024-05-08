@@ -20,25 +20,25 @@ A Got It tooltip informs users about a new or changed feature and gives basic in
 
 Point to small UI controls that can be missed among other information in the screen.
 
-![](02_new_feature.png){width=509}
+![](02_new_feature.png){width=509 style=block}
 *After method or parameter names are edited, the Inplace Refactoring icon appears.*
 
-![](03_new_plugin.png){width=375}
+![](03_new_plugin.png){width=375 style=block}
 *After the "Code With Me" plugin is installed, a drop-down menu appears on the toolbar.*
 
 Explain behavior that is not clear from the UI.
 
-![](04_explain_how_to_use.png){width=333}
+![](04_explain_how_to_use.png){width=333 style=block}
 *When extracting a method, users can change only the method name in the blue box. The tooltip explains where to change the order of parameters in the parentheses and other properties of a method.*
 
 Suggest keyboard interactions.
 
-![](05_suggest_keyboard_actions.png){width=244}
+![](05_suggest_keyboard_actions.png){width=244 style=block}
 *The inlay with options after the blue box is a new control. The tooltip explains how to use it with the keyboard.*
 
 Explain how to revert to the old UI in case of significant UI changes.
 
-![](06_suggest_rollback.png){width=552}
+![](06_suggest_rollback.png){width=552 style=block}
 *The tooltip explains how to revert to a new experimental UI. Only users who switched to the new UI can see it.*
 
 Do **not** use the tooltip if there is no space to attach it. Instead, use a [banner](banner.md) in a dialog or a notification in the main window.

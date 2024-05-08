@@ -39,11 +39,13 @@ Do **not** add a label to the search field. The magnifying glass icon is self-ex
 ![](ptree-correct.png){width=360}
 
 Mark the replace field with a label or a placeholder when shown together with the search field to distinguish between them:
+
 ![](structural-replace.png){width=865}
 
 
 Provide hints and scope as placeholder text.
 For example, the placeholder for plugins' search depends on the settings page tab to make it clear that search depends on the tab:
+
 ![](placeholder.png){width=581}
 
 
@@ -251,24 +253,31 @@ For a search field that is not fitted to a toolbar, set the minimum width to 200
 For a search which is fitted to the toolbar, expand the field to the toolbar width.
 
 Center-align icons and the search string with the one-line search field vertically. Adjust the right and left paddings to the higher search fields:
+
 ![](search-icon-position-small.png){width=297}
+
 ![](search-icon-position-big.png){width=296}
 
 Save the position of the search and option icons when the search field becomes a multi-line one:
+
 ![](multiline-mes.png){width=250}
 
 ### Spaces
 
 Between the floating search field and on-screen content:
+
 ![](ptree-sizes.png){width=265}
 
 Between history and the search field:
+
 ![](search-history-popup-mes.png){width=269}
 
 Between search string and completion popup:
+
 ![](completion-mes-2.png){width=266}
 
 Completion popup:
+
 ![](completion-mes.png){width=95}
 
 ## Style

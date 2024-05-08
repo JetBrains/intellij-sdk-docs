@@ -22,6 +22,7 @@ A toolbar icon button is an icon that appears on a toolbar.
 An action button triggers an action immediately on clicking it, e.g., the Open button.
 
 A toggle button switches the state on clicking it, e.g., a button to show and hide warnings in the output tree.
+
 ![](toggle.png){width=143}
 
 A drop-down button has an arrow icon in the bottom right corner and opens a menu with actions or checkboxes.

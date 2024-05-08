@@ -98,13 +98,17 @@ ActionLink externalLink = new ActionLink("External link", event -> {
 externalLink.setExternalLinkIcon();
 ```
 
-An exception is a help topic link in [empty states](empty_state.md). The help icon already hints that this is an external help resource, so the arrow icon is unnecessary.
+An exception is a help topic link in [empty states](empty_state.md).
+The help icon already hints that this is an external help resource, so the arrow icon is unnecessary.
+
 ![](12_external_link_no_icon.png){width=164}
 
 
 ### Drop-down link
 
-Drop-down links show a context menu or a popup. Use [`DropDownLink`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/DropDownLink.kt) to implement a drop-down link.
+Drop-down links show a context menu or a popup.
+Use [`DropDownLink`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/DropDownLink.kt) to implement a drop-down link.
+
 ![](13_drop_down_links.png){width=445}
 
 

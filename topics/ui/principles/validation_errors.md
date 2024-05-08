@@ -7,9 +7,11 @@
 Validation is the process of checking the values specified by the user, and displaying the errors that are found.
 
 An error can appear in a **tooltip**:
+
 ![](example_tooltip.png){width=235}
 
 Or **inline**, above the confirmation buttons:
+
 ![](example_inline.png){width=358}
 
 ## Principles
@@ -21,8 +23,11 @@ Always try not to let the user enter invalid data. To achieve this:
 Use controls that are constrained to valid values. For example, use a combo box or a slider instead of the input field.
 
 Limit the characters users can enter. For example, if only numbers are supported in a field, and this is obvious to the user, ignore input of letters instead of showing an error:
+
 ![](port_correct.png){width=188}
+
 If it’s not obvious that only numbers can be entered, allow entering any sign and perform validation.
+
 ![](font_error.png){width=301}
 
 Provide a default value if possible. Even if the user decides to change the default value, it gives a clue on the expected input format.
@@ -178,6 +183,7 @@ new ComponentValidator(getDisposable()).withValidator(...).
 
 #### Simple form
 If a form is simple, move the focus to the first required field and disable the confirmation button until all required fields have been filled. It is clear from the form behavior that input is required, showing validation messages is redundant.
+
 ![](simple_dialog.png){width=373}
 
 #### Complex form
@@ -222,6 +228,7 @@ If a non-allowed or an empty value is entered into a field that’s within the P
 #### How it works
 
 On Enter, the field is highlighted with red and the error tooltip appears.
+
 ![](main_window.png){width=379}
 
 If validated on focus loss, the field is highlighted with light-red. The focus is not returned to the field automatically.
@@ -235,6 +242,7 @@ Hide the field highlighting and the tooltip when the user fixes the invalid valu
 If validation is slow or attempts are limited, for example, due to connection to a remote server, validate values on sending the form.
 
 If it’s not possible to detect the fields with errors, show the error message inline under the fields:
+
 ![](example_inline.png){width=358}
 
 An inline error only appears on clicking the confirmation button. The dialog is resized to fit the error message. Do **not** leave an empty space for the error in advance.
@@ -275,6 +283,7 @@ An error tooltip appears in two cases:
 </p>
 
 If the field with an error gets focus:
+
 ![](example_tooltip.png){width=235}
 
 
@@ -284,7 +293,9 @@ If the field loses focus, hide the tooltip and highlight the field with light-re
 
 
 On hover over the field or the element with an error:
+
 ![](incorrect_symbol_hover.png){width=235}
+
 ![](validation_table_hover.png){width=429}
 
 Show the tooltip above the field and move it 40px right, so that the controls above it are not overlapped.
@@ -296,11 +307,10 @@ If there is important info above the field, the tooltip can be shown on the righ
 
 An error message describes the problem and provides the way to solve it if it’s not clear from the problem description.
 
-![](message_short.png){width=319}
-
+![](message_short.png){width=319 style=block}
 *It’s clear how to fix the error from the error description.*
 
-![](message_long.png){width=456}
+![](message_long.png){width=456 style=block}
 *The way to solve the problem is provided.*
 
 Describe the problem in terms of target users’ actions or goals, not in terms of the program’s architecture.
@@ -420,7 +430,7 @@ On the form under the controls. Show the message with the yellow warning icon.
 
  On the "Problems" page in complex multipage dialogs. Show warnings and fix options:
 
-![](problems.png){width=418}
+![](problems.png){width=418 style=block}
 *Problems page in the Project Structure dialog.*
 
 
@@ -451,9 +461,11 @@ Add a red light bulb on the right side of the input field if an action to fix th
 ![](table_error.png){width=429}
 
 When the field in a table loses focus, show an error icon. An error tooltip appears on mouse hover or when the line gets focus:
+
 ![](validation_table_hover.png){width=429}
 
 Use a warning icon for warnings:
+
 ![](table_warning.png){width=429}
 
 #### Implementation

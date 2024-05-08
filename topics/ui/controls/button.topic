@@ -140,8 +140,10 @@
                 </tr>
             </table>
 
-            <p>Add an ellipsis if additional actions such as adding more info or confirming the action are required:
-                <img src="buttons_with_ellipsis.png" width="146" alt=""/></p>
+            <p>
+                Add an ellipsis if additional actions such as adding more info or confirming the action are required:
+                <img src="buttons_with_ellipsis.png" width="146" alt="" style="block"/>
+            </p>
             <p>Do
                 <control>not</control>
                 add ellipsis if another window is opened, but no more input from the user is required. For example,
@@ -251,7 +253,7 @@
                 one.</p>
             <p>If the action is dangerous, e.g., can lead to data loss, provide an easy way to undo the command.</p>
             <p>If it's not possible to undo the action, make a secondary button the default one:
-                <img src="merge_dialog.png" width="426" alt=""/></p>
+                <img src="merge_dialog.png" width="426" alt="" style="block"/></p>
         </chapter>
 
 
@@ -278,12 +280,12 @@
                     </p>
                 </li>
                 <li>
-                    <p>Make the second most popular button in the dialog focused. For example, the
-                        <control>New Window</control>
-                        button in the
-                        <control>Open Project</control>
+                    <p>
+                        Make the second most popular button in the dialog focused.
+                        For example, the <control>New Window</control> button in the <control>Open Project</control>
                         dialog:
-                        <img src="open_project_dialog.png" width="448" alt=""/></p>
+                        <img src="open_project_dialog.png" width="448" alt="" style="block"/>
+                    </p>
                 </li>
                 <li>
                     <p>It’s recommended to have one default and one focused button, so that most of the actions can be
@@ -349,7 +351,7 @@
                     button and no changes have been made in this dialog.
                 </li>
                 <li>The control to which the button is related is disabled.</li>
-                <li>Not all required fields in the dialog are filled. For more details, see the <a>Required fields</a>.
+                <li>Not all required fields in the dialog are filled.
                 </li>
             </list>
             <p>Other common buttons are described below. They can be regular or default buttons.</p>

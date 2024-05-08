@@ -50,8 +50,9 @@ Icons should be as simple as possible without losing their meaning. Clean and si
 
 ## Grid and size
 Basically, icons fit into a square artboard. Leave a transparent padding around the perimeter. For default 16px icons, the transparent border is 1px, so the icon’s visible part should be inside the 14px x 14px area.
-![](grid.png){width=251}
-*14px x 14px is the area where the visible part <br/> of the icon should fit for a 16px icon.*
+
+![](grid.png){width=251 style=block}
+*14px x 14px is the area where the visible part of the icon should fit for a 16px icon.*
 
 Content should only go beyond the borders if a [modifier](#modifier) is added, or if additional visual weight is required.
 
@@ -99,11 +100,13 @@ Use basic shapes to build icons, such as squares, circles and rectangles. Using 
 {style=none}
 
 Make sure that icons have the same visual weight. The more filled an icon is, the less space it needs. Following this rule, circles, rhombuses, triangles and other non-square shapes should have larger height and width to be optically balanced with square figures.
-![](shapes_weight_1.png){width=542}
+
+![](shapes_weight_1.png){width=542 style=block}
 *Make the circle diameter 2px bigger than square icons’ height to compensate for the visual weight.*
 
 Icons with more details should occupy more space.
-![](shapes_weight_2.png){width=542}
+
+![](shapes_weight_2.png){width=542 style=block}
 *The eye icon is less detailed and occupies less space than a more complex scissors icon.*
 
 Icon weight can often take priority over the basic shape sizing. For more examples on visual weight compensation, see [Optical Effects in User Interfaces](https://medium.muz.li/optical-effects-9fca82b4cd9a).
@@ -180,13 +183,15 @@ The default modifier position is the bottom right corner. If the base shape is b
 
 A modifier size is from 6px to 9px, depending on the shape's weight.
 Leave a 1-2px spacing between the modifier and the main shape, to make the modifier clearly visible.
-![](modifier_size.png){width=577}
+
+![](modifier_size.png){width=577 style=block}
 *Modifier sizes*
 
 
 ## Arrows
 General rules for arrows: arrowhead is a filled triangle with a 90° pointing angle, a 2px body ends in a square stroke. An arrow’s orientation is horizontal, vertical, 45° or round.
-![](arrows_basic.png){width=515}
+
+![](arrows_basic.png){width=515 style=block}
 *Basic arrow icons*
 
 Unfilled arrowhead can be used if there is only one arrow on an icon to reduce excessive visual weight, for example, for navigation arrows, such as back and forward, up and down.
@@ -290,7 +295,8 @@ The dark version is for Darcula theme.
 
 Use these colors according to the following rules:
 1. By default, action icons are grey and monochromatic:
-    ![](colors_actions_grey.png){width=319}
+
+   ![](colors_actions_grey.png){width=319}
 
 2. If an icon falls into one of the categories below, use the corresponding color:
 
@@ -305,15 +311,17 @@ Use these colors according to the following rules:
         </tr>
     </table>
 
-
 3. Preserve colors in icon combinations. If an icon is colored in its full size, it should have the same color when reduced.
-    ![](colors_actions_modifier.png){width=248}
+
+   ![](colors_actions_modifier.png){width=248}
 
 4. Use green and red colors for paired icons. Color helps distinguish between similar icons faster.
-    ![](colors_actions_pair.png){width=233}
+
+   ![](colors_actions_pair.png){width=233}
 
 5. Use grey color for tool window icons. Icons are placed on the perimeter of the IDE, so they should not attract too much attention and distract users.
-    ![](colors_toolbuttons.png){width=750}
+
+   ![](colors_toolbuttons.png){width=750}
 
 
 ### Status icons

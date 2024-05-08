@@ -182,10 +182,10 @@ Main control: **checkbox** or **radio button**. Align dependent controls by the 
 
 When the main control or one of the dependent controls takes the whole width of a panel, left align all elements.
 
-![](5_05_whole_width_text_area.png){width=475}
+![](5_05_whole_width_text_area.png){width=475 style=block}
 *The text area is the main control, the button is the dependent control.*
 
-![](5_06_whole_width_checkbox.png){width=475}
+![](5_06_whole_width_checkbox.png){width=475 style=block}
 *The checkbox is the main control, the table is the dependent control.*
 
 When the main control takes the whole width of a panel, and there is one small dependent control (for example, a drop-down list), place this dependent control to the top-right corner, above the main control.
@@ -198,7 +198,7 @@ See the [Inline help text](inline_help_text.md#placement) and [Tooltip](tooltip.
 
 If controls do **not** depend on each other, left-align them all. Otherwise, the user might think that controls are linked.
 
-![](5_09_incorrect_alignment.png){width=517}
+![](5_09_incorrect_alignment.png){width=517 style=block}
 *The spinners do not depend on the top checkbox.*
 
 
@@ -208,41 +208,41 @@ Use vertical insets to break a list of controls into easily readable groups. Com
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](6_02_group_insets_incorrect.png){width=396}
+![](6_02_group_insets_incorrect.png){width=396 style=block}
 *The list of controls is hard to scan quickly because the controls "stick" together.*
 
 <format color="Green" style="bold">Correct</format>
 
-![](6_02_group_insets_correct.png){width=396}
+![](6_02_group_insets_correct.png){width=396 style=block}
 *Scanning a list of controls becomes easier when vertical insets are added between the groups of controls.*
 
 Treat insets with extra care and make sure that elements within a group are actually related. An unnecessary inset may create a false impression that the controls are grouped. This complicates the UI and might cause confusion.
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](6_04_inset_incorrect.png){width=396}
+![](6_04_inset_incorrect.png){width=396 style=block}
 *The first checkbox depends on the combo box which is shown with the horizontal inset. However, the checkboxes appear grouped because they are closer.*
 
 <format color="Green" style="bold">Correct</format>
 
-![](6_04_inset_correct.png){width=396}
+![](6_04_inset_correct.png){width=396 style=block}
 *The first checkbox is closer to its main control, and it is easier to see that the combo box and checkbox are related.*
 
 Horizontal insets also matter for grouping controls.
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](6_05_hor_inset_incorrect.png){width=396}
+![](6_05_hor_inset_incorrect.png){width=396 style=block}
 *The checkboxes and the "Length" fields look independent because the horizontal inset between them is bigger than the vertical inset below the second checkbox.*
 
 <format color="DarkOrange" style="bold">Better</format>
 
-![](6_05_hor_inset_better.png){width=396}
+![](6_05_hor_inset_better.png){width=396 style=block}
 *With smaller horizontal and bigger vertical insets, the checkboxes and the "Length" fields look related. However, it could be made better if the repeating word "Separator" appears only once.*
 
 <format color="Green" style="bold">Correct</format>
 
-![](6_05_hor_inset_correct.png){width=396}
+![](6_05_hor_inset_correct.png){width=396 style=block}
 *Correct grouping and no duplicates help understand the UI quicker.*
 
 See [Groups of controls](groups_of_controls.md) for how to organize a bigger group of controls.

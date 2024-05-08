@@ -30,6 +30,7 @@ JLabel label = new JLabel("Loading...",
 
 
 A loader may have a label if the process is long and the loader is shown in an empty area. In this case, use a [progress text](progress_text.md) as the label:
+
 ![](loader_with_progress_text.png){width=597}
 
 Remove the loader as soon as the process completes.

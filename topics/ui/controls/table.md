@@ -38,6 +38,7 @@ Do **not** use tables:
 * When there are more than 4 options per entry. Use the Master-Detail layout instead.
 
 * When at least one of the options requires a multi-line control, for example, the Text Area in <ui-path>Settings | Editor | Copyright | Copyright Profiles</ui-path>. Use Master-Detail layout instead:
+
   ![](master-detail.png){width=709}
 
 ## How to use
@@ -124,6 +125,7 @@ Use title-case capitalization.
 Freeze a headers when scrolling the table. A header provides useful context and should not be hidden.
 
 Align header with the content in the column below:
+
 ![](fileColorsAlignment.png){width=350}
 
 ### Placeholder
@@ -133,6 +135,7 @@ A table placeholder is shown when there is no data yet. Always put meaningful te
 ![](empty-incorrect.png){width=226}
 
 It is better to add a reason why a table is empty, and an action link to fill it:
+
 ![](empty-correct.png){width=226}
 
 See more on empty tables [here](empty_state.md).
@@ -232,6 +235,7 @@ Allow dragging a column when the cursor is placed anyplace over this column.
 This makes it clear that columns can be dragged even if there is no table header.
 
 In disabled table greyed-out text, disable controls and any interaction:
+
 ![](table_disabled.png){width=448}
 
 ### Editing values
@@ -241,6 +245,7 @@ If data in a cell is editable or configurable:
 Allow in-place editing of content for text data. It should be possible to activate editing on mouse click:
 
 ![](inline-edit.png){width=448}
+
 The line with the edited cell should be selected.
 The edited cell should have borders, and their color should be the same as the color for [Input field](input_field.md) borders.
 

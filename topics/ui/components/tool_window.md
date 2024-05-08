@@ -49,9 +49,9 @@ Put tool window viewing mode settings under the gear icon in the header. If ther
 
 Add tabs if all the information does not fit in one tab or refers to similar instances, like run sessions, history for files, find results. The tabs for entities should be closable.
 
-![](git.png){width=308}
+![](git.png){width=308 style=block}
 *Separate tabs are added for each file history.*
 
-![](find.png){width=448}
+![](find.png){width=448 style=block}
 *Separate tabs are added for different search queries.*
 

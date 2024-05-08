@@ -53,6 +53,7 @@ Work units: the current step, the currently processed file, the number of proces
 
 
 The time passed if the user controls the process, for example, needs to stop it after a certain time:
+
 ![](passed.png){width=288}
 
 <p>Update the timer every second.</p>
@@ -60,6 +61,7 @@ The time passed if the user controls the process, for example, needs to stop it 
 ### Cancellation action
 
 If the process can be cancelled, add a [link](link.md) for the cancel action for an empty state:
+
 ![](cancellation.png){width=475}
 
 
@@ -67,6 +69,7 @@ Use title case for the cancel action.
 
 Replace progress text with the loaded data or an [empty state](empty_state.md) when the process has finished.
 Show another progress indicator, e.g., a loader as in the example below, if loading continues after some data has been displayed.
+
 ![](empty_state_text.png){width=708}
 
 ### Trees
@@ -88,12 +91,14 @@ If no space is left, hide the text under area borders.
 
 Wrap text when the area’s width changes.
 
-Fields and vertical spaces:![](fields.png){width=757}
+Fields and vertical spaces:
+
+![](fields.png){width=757}
 
 ### Tree
+
 ![](progress_text_tree.png){width=261}
 
 ## Style
 
 Font color is the same as for [Empty state](empty_state.md) text.
-

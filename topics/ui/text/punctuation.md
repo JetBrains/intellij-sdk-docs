@@ -52,7 +52,7 @@ End an action name with an ellipsis if it opens a dialog where input is required
 
 Use an ellipsis at the end of a truncated text if there is no scrollbar and this is not a table column, see [truncation in table columns](table.md#sizes-and-placement). Provide a way to show the full text, for example, expand the control or show a tooltip on hover.
 
-![](2_01_truncated_text.png){width=399}
+![](2_01_truncated_text.png){width=399 style=block}
 *A notification can be expanded to show the full text.*
 
 Use an ellipsis with verbs describing an ongoing process, for example, Searching… See more examples in [Progress text](progress_text.md).
@@ -71,7 +71,8 @@ If a text consists of several sentences, put a period after each sentence.
 ![](1_02_periods_several_sentences.png){width=488}
 
 Do **not** put a period at the end of an IDE action.
-![](1_03_periods_action.png){width=385}
+
+![](1_03_periods_action.png){width=385 style=block}
 *The empty text consists of two sentences, but the second one is an IDE action, so it should not have a period.*
 
 <p>Note that links that are not IDE actions can have a period in the end.</p>

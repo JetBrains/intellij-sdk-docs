@@ -23,6 +23,7 @@ Use a drop-down list if:
 A single option should be selected.
 
 The possible choices are objects or states.
+
 ![](output_level.png){width=182}
 
 The number of choices is more than 4.
@@ -77,7 +78,7 @@ Follow the rules for the [input field](input_field.md#label).
 
 Select the most likely or the safest value by default.
 
-![](imports.png){width=298}
+![](imports.png){width=298 style=block}
 *The safest value is "Ask", the behavior will not be unexpected to the user.*
 
 Do **not** use an empty value as the default value. If no values are added to a drop-down yet, replace it with a button to add values.
@@ -173,13 +174,15 @@ Preview list items with images if they are associated with well-known icons. Use
 
 Use **bold** font to show default values, <format color="#2600FF">blue</format> font for values changed from the default,
  and <format color="#787878">grey</format> font to add a hint.
-![](blue_text.png){width=188}
+
+![](blue_text.png){width=188 style=block}
 *Default and Darcula are bundled schemes, Default is blue because it’s customized.*
 
 
 ![](grey_text.png){width=529}
 
 Submenus are not supported for the drop-down list. Use a tree view instead:
+
 ![](hierarchy.png){width=169}
 
 

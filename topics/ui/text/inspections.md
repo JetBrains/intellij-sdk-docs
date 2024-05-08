@@ -4,7 +4,7 @@
 
 <link-summary>UI guidelines on writing texts used in inspections.</link-summary>
 
-![](main.png){width=834}
+![](main.png){width=834 style=block}
 *Inspections configuration on <ui-path>Settings | Editor | Inspections</ui-path> page or in <control>Configure Inspections</control> dialog.*
 
 Inspection names, descriptions, and editor messages should be short and descriptive.
@@ -18,7 +18,9 @@ Use the names of technologies and frameworks as titles for inspection groups, fo
 
 Limit a name by ~50 symbols so that it fits the line in the list of inspections in settings.
 
-An inspection name should reflect the code problem that this inspection detects, for example:![](correct.png){width=245}
+An inspection name should reflect the code problem that this inspection detects, for example:
+
+![](correct.png){width=245}
 
 Do not just describe the type of code that is being checked:
 
@@ -96,7 +98,7 @@ For text formatting, see [Description text](description_text.md).
 
 Describe the problem in the highlighted code in the current context.
 
-![](editor-error-message.png){width=592}
+![](editor-error-message.png){width=592 style=block}
 *For example, Unresolved reference inspection provides the exact reference name which is unresolved.*
 
 Use single quotes for the highlighted piece of code if it is referenced in the error message.

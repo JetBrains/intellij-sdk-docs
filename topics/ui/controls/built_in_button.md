@@ -12,6 +12,7 @@ A built-in button is an icon placed inside an input control.
 ## How to use
 
 Place the built-in button inside the input control. Do **not** place the built-in button on the right of a control:
+
 ![](outside.png){width=250}
 
 To place a button inside a text field, use [`ExtendableTextField`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/fields/ExtendableTextField.java) and
@@ -59,17 +60,21 @@ Do **not** place the button on the right of the control.
 If the input text can be long and place is constrained, use a built-in button to expand the control ([`ExtendableTextField`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/fields/ExtendableTextField.java)):
 
 ![](expandable_1.png){width=332}
+
 ![](expandable_2.png){width=582}
 
 Do **not** use the Show Viewer button instead.
+
 ![](input_expand.png){width=357}
 
 
 ### List values
 Use a control with the table icon to select from the list of classes, methods or environment variables:
+
 ![](input_table.png){width=250}
 
 Use a combo box instead of the Variables button. This icon works as a combo box.
+
 ![](variables_combobox.png){width=514}
 
 

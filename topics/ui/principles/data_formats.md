@@ -108,10 +108,10 @@ See the table below to understand in which cases to show date and time.
 </tr>
 </table>
 
-![](vcs_log.png){width=1053}
+![](vcs_log.png){width=1053 style=block}
 *Version Control Log (in IntelliJ IDEA incorrect format is used at the moment)*
 
-![](event_log.png){width=1053}
+![](event_log.png){width=1053 style=block}
 *Event Log*
 
 ## Duration
@@ -215,6 +215,7 @@ Place units after the input field.
 <p>Use the rules below to make it easier to compare numbers in one column.</p>
 
 Right-align numeric values.
+
 ![](data_formats_table.png){width=299}
 
 Include the unit in the column header if all values share the same unit. Convert each number to use the same unit.

@@ -161,17 +161,18 @@ Text style formatting:
 
 * Avoid using style formatting in the help text. Usually, the text is short and no bold or italics are needed.
 
-<format color="Red" style="bold">Incorrect</format>
+  <format color="Red" style="bold">Incorrect</format>
 
-![](tooltip_no_styling_incorrect.png){width=461}
+  ![](tooltip_no_styling_incorrect.png){width=461}
 
-<format color="Green" style="bold">Correct</format>
+  <format color="Green" style="bold">Correct</format>
 
-![](tooltip_no_styling_correct.png){width=461}
+  ![](tooltip_no_styling_correct.png){width=461}
 
 * Use formatting for code, console commands or parameters. Use HTML tags. Enclosing the text in `<html></html>` tags is not needed.
-![](tooltip_code_styling.png){width=407}
-*Editor breadcrumbs*
+
+  ![](tooltip_code_styling.png){width=407 style=block}
+  *Editor breadcrumbs*
 
 * Action name, shortcut and link do not allow HTML tagging.
 

@@ -11,6 +11,7 @@
 </tldr>
 
 The scrollbar allows users to browse content that’s larger than the visible area, such as text or images, by scrolling it horizontally or vertically.
+
 ![](scrollbar-small.png){width=370}
 
 ## Parts of a scrollbar

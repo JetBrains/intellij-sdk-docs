@@ -25,14 +25,16 @@ Use **inline help text** in settings dialogs:
 Use a **help tooltip** if:
 * A dialog is often used. The more often a person uses an interface, the more likely they are to remember what each option does.
 
-![](10_use_help_tooltip.png){width=573}
-*A refactoring dialog is used more often than a settings dialog. A help tooltip is less distracting than an inline help text.*
+  ![](10_use_help_tooltip.png){width=573 style=block}
+  *A refactoring dialog is used more often than a settings dialog. A help tooltip is less distracting than an inline help text.*
 
 * There is no space for an inline text.
-![](11_no_space_in_settings.png){width=734}
+
+  ![](11_no_space_in_settings.png){width=734}
 
 * The control that needs explanation is an icon or does not have a label.
-![](03_action_help_tooltip.png){width=305}
+
+  ![](03_action_help_tooltip.png){width=305}
 
 
 ## When to use context help

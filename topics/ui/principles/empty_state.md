@@ -18,6 +18,7 @@ Provide instructions in an empty UI area on how to fill it with data. Empty UI a
 
 ## Tool windows, lists, trees and tables
 Instructional text for these UI areas consists of three parts:
+
 ![](database-tw-callouts.png){width=626}
 
 
@@ -35,12 +36,12 @@ Make the reason descriptive:
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](sql-dialect-before.png){width=456}
+![](sql-dialect-before.png){width=456 style=block}
 *The word mapping introduces a new entity while there are already two in the table header — path and SQL dialect. In the instructions, it is better to use already existing entities to connect them to what users see on the screen.*
 
 <format color="Green" style="bold">Correct</format>
 
-![](sql-dialect-after.png){width=456}
+![](sql-dialect-after.png){width=456 style=block}
 *The word "individual" is used in contrast with the project SQL dialect above the table. The verb specified is used instead of added because, in the table, SQL dialects are not added but selected from a drop-down list in the SQL Dialect column.*
 
 
@@ -76,12 +77,12 @@ Hide the area's toolbar if it does not have the same action as in the empty stat
 
 <format color="Red" style="bold">Incorrect</format>
 
-![](todo-filters-incorrect.png){width=456}
+![](todo-filters-incorrect.png){width=456 style=block}
 *Do not use a help topic link in a table and UI areas other than tool windows.*
 
 <format color="Green" style="bold">Correct</format>
 
-![](todo-filters-correct.png){width=456}
+![](todo-filters-correct.png){width=456 style=block}
 *Place an inline help text under the table.*
 
 
@@ -105,7 +106,7 @@ The master area is usually a list or a tree, its empty state instructions should
 
 ![](app-servers.png){width=586}
 
-![](run-configs.png){width=720}
+![](run-configs.png){width=720 style=block}
 *The "Add Java application configuration" link is a shortcut to creating a new configuration instead of clicking the + button in the toolbar.*
 
 
@@ -125,13 +126,17 @@ Use non-breaking spaces for articles and prepositions in the instructional text.
 ![](nbsp-correct.png){width=379}
 
 The text is center-aligned. If possible, the center for the help topic link should be calculated with a 16px inset on the left. This helps visually align the help link with the lines above it.
+
 ![](database-tw-markup1.png){width=300}
 
 Fields and vertical spaces:
+
 ![](database-tw-markup2.png){width=530}
 
 The text should wrap when a UI area’s width changes:
+
 ![](database-tw-horizontal.png){width=579}
+
 ![](database-tw.png){width=300}
 
 
@@ -140,6 +145,7 @@ The text should wrap when a UI area’s width changes:
 The link should not be underlined.
 
 In Darcula:
+
 ![](database-tw-darcula.png){width=300}
 
 

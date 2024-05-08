@@ -261,6 +261,7 @@ Use colored rectangles to specify sizes inside the element and lines to specify 
 * Align all sizes on the right.
 
 Use line to show that text is aligned with an element:
+
 ![](how_to_write_guidelines_alignment.png){width=155}
 
 Specify the element sizes in the following format:

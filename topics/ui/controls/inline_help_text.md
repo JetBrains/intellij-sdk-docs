@@ -39,18 +39,20 @@ createPanel();
 Provide a link to the corresponding help article or to a place in the IDE where the related settings can be found.
 Place the link at the end of the text where possible so that it does not disrupt reading.
 
-![](04_link_external.png){width=366}
+![](04_link_external.png){width=366 style=block}
 *External link*
 
-![](04_link_internal.png){width=345}
+![](04_link_internal.png){width=345 style=block}
 *Local link*
 
 Text style formatting:
 * Avoid text highlighting. Usually, the help text is short and no bold or italics are needed.
-![](inline_text_no_styling.png){width=364}
+
+  ![](inline_text_no_styling.png){width=364}
 
 * Use formatting for code, console commands, or parameters. Use HTML tags. Enclosing text in `<html></html>` tags is not needed.
-![](inline_text_parameter_styling.png){width=213}
+
+  ![](inline_text_parameter_styling.png){width=213}
 
 Avoid using brackets.
 
@@ -145,6 +147,7 @@ JPanel panel = UI.PanelFactory.panel(pane).
 
 If it applies to a single list, tree or table item:
 * If the help text has 1–10 words, place it to the right of the item.
+*
 ![](12_tree_inline_help_text.png){width=422}
 
 * If the text is longer than 10 words:

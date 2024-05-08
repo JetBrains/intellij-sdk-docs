@@ -20,10 +20,10 @@ A banner notification informs the user about the state of a specific context in 
 
 Use a banner if user actions should attract attention in a file tab, tool window, or dialog, but are not required immediately.
 
-![](tool-window.png){width=600}
+![](tool-window.png){width=600 style=block}
 *Reconnecting to the database is required to make edits.*
 
-![](dialog-example.png){width=500}
+![](dialog-example.png){width=500 style=block}
 *The component needs to be installed in order to run the available virtual devices.*
 
 Do **not** use a banner if there is no particular UI component it can be tied to. Use a [balloon notification](balloon.md) in the main window instead.
@@ -37,21 +37,21 @@ For all other cases, choose another notification type.
 
 Use when actions can improve the user’s workflow, but are considered optional and can be safely ignored.
 
-![](information-example.png){width=733}
+![](information-example.png){width=733 style=block}
 *The new tool window UI is suggested to improve the workflow for version control.*
 
 #### Warning
 
 Use to suggest actions that can impact the user’s workflow.
 
-![](warning-example.png){width=698}
+![](warning-example.png){width=698 style=block}
 *Generated files should be edited directly.*
 
 #### Error
 
 Use to suggest actions that are required to unblock the user’s workflow.
 
-![](banner_error.png){width=796}
+![](banner_error.png){width=796 style=block}
 *Syntax highlighting and other inspections are broken until a JDK is defined for the project.*
 
 ## How to use

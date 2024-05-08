@@ -65,6 +65,7 @@ Use sentence-style capitalization.
 Do not use ending punctuation.
 
 Use the imperative form of verbs.
+
 ![](label_short.png){width=350}
 
 Do not use negation in labels as it complicates understanding.

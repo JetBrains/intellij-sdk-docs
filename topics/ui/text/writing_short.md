@@ -34,19 +34,19 @@ Words like *general*, *advanced*, and *options* do not add useful information an
 
 ![](generic-general.png){width=540}
 
-![](generic-options.png){width=540}
+![](generic-options.png){width=540 style=block}
 *No meaning is lost after removing group headers "General" and "Options".*
 
 Some generic words cannot be removed. They can appear in actionable elements like buttons, checkboxes, or links. Or removing a group header could break a dialog layout. In such cases, use a more informative label instead:
 
-![](generic-renamed-link.png){width=576}
+![](generic-renamed-link.png){width=576 style=block}
 *The link "Learn more" does not explain what useful information could be there for the user to click it.*
 
 
 ## Remove obvious objects and actions
 Remove verbs that explain the function of a UI control:
 
-![](obvious-specify.png){width=403}
+![](obvious-specify.png){width=403 style=block}
 *Text boxes are made for input — an explicit instruction "specify" duplicates the meaning expressed by the text field. Additional information can be given under the field — see [Context help](context_help.md).*
 
 <table style="none">
@@ -71,7 +71,8 @@ Remove words with a meaning that is already expressed in the label:
 A user interface is for a person who uses it. Addressing this person is unnecessary because they by default perceive the text they see as for them:
 
 ![](addressing1.png){width=674}
-![](addressing2.png){width=674}
+
+![](addressing2.png){width=674 style=block}
 *The whole phrase after the comma is not needed because its meaning is already expressed by the verb "configure".*
 
 
@@ -144,18 +145,18 @@ Always write UI text from a user’s perspective. Avoid technical terms, jargon 
 
 After writing a UI text, imagine seeing it for the first time and try to understand what might be unclear or confusing. Then correct if necessary.
 
-![](first-time-file-colors-before.png){width=474}
+![](first-time-file-colors-before.png){width=474 style=block}
 *For a first-time user, Enable File Colors enables or disables the other two options (but it does not).*
 
-![](first-time-file-colors-after.png){width=474}
+![](first-time-file-colors-after.png){width=474 style=block}
 *Rewritten: now all options are equal.*
 
 More examples:
 
-![](first-time-auto-insert.png){width=318}
+![](first-time-auto-insert.png){width=318 style=block}
 *Before: The title can be read as "Auto-insert when only one checkbox is on" making you ask how it works when both checkboxes are on. After: Replacing choice with completion option makes the title unambiguous.*
 
-![](first-time-smart-keys.png){width=318}
+![](first-time-smart-keys.png){width=318 style=block}
 *Before: What do smart Home and End keys do? What do they do if they are not smart? After: The added text explains what the options do so that the reader can make an informed choice.*
 
 

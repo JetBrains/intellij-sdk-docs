@@ -51,7 +51,6 @@ flowchart LR
 
             subgraph TEST ["Test"]
                 prepareTest
-                testIde
                 testIdePerformance>testIdePerformance]
                 testIdeUi>testIdeUi]
 
@@ -101,7 +100,6 @@ flowchart LR
 
     prepareTest --> prepareSandbox_patchPluginXml
     test --> prepareTest
-    testIde --> prepareSandbox_patchPluginXml
     testIdePerformance
     testIdeUi
 
@@ -126,7 +124,6 @@ flowchart LR
     click runIde "#runIde"
 
     click prepareTest "#prepareTest"
-    click testIde "#testIde"
     click testIdePerformance "#testIdePerformance"
     click testIdeUi "#testIdeUi"
 
@@ -792,7 +789,7 @@ See also:
 
 Prepares a sandbox environment with the installed plugin and its dependencies.
 
-The sandbox directory is required by tasks that run IDE and tests in isolation from other instances, like when multiple IntelliJ Platforms are used for testing with [`runIde`](#runIde), [`testIde`](#testIde), [`testIdeUi`](#testIdeUi), or [`testIdePerformance`](#testIdePerformance) tasks.
+The sandbox directory is required by tasks that run IDE and tests in isolation from other instances, like when multiple IntelliJ Platforms are used for testing with [`runIde`](#runIde), [`prepareTest`](#prepareTest), [`testIdeUi`](#testIdeUi), or [`testIdePerformance`](#testIdePerformance) tasks.
 
 To fully use the sandbox capabilities in a task, extend from [`SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware) interface.
 
@@ -1042,7 +1039,7 @@ Default value
 
 **Depends on**: [`patchPluginXml`](#patchPluginXml), [`prepareSandbox`](#prepareSandbox)
 
-**Extends**: [`JavaExec`][gradle-javaexec-task], [`RunnableIdeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#RunnableIdeAware), [`CustomIntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware)
+**Extends**: [`JavaExec`][gradle-javaexec-task], [`RunnableIdeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#RunnableIdeAware)
 
 **Sources**: [`RunIdeTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/RunIdeTask.kt)
 
@@ -1053,21 +1050,6 @@ It directly extends the [`JavaExec`][gradle-javaexec-task] Gradle task, which al
 
 This task class also inherits from [`CustomIntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware), which makes it possible to create `runIde`-like tasks using custom IntelliJ Platform versions:
 
-```kotlin
-import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
-import org.jetbrains.intellij.platform.gradle.tasks.RunIdeTask
-
-tasks {
-  val runPhpStorm by registering(RunIdeTask::class) {
-    type = IntelliJPlatformType.PhpStorm
-    version = "2023.2.2"
-  }
-
-  val runLocalIde by registering(RunIdeTask::class) {
-    localPath = file("/Users/user/Applications/Android Studio.app")
-  }
-}
-```
 
 ## `signPlugin`
 {#signPlugin}
@@ -1264,41 +1246,6 @@ Type
 
 Default value
 : [`intellijPlatform.signing.certificateChainFile`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-certificateChainFile)
-
-
-## `testIde`
-{#testIde}
-
-<tldr>
-
-**Extends**: [`Test`][gradle-test-task], [`TestableAware`](tools_intellij_platform_gradle_plugin_task_awares.md#TestableAware), [`CustomIntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware)
-
-**Sources**: [`TestIdeTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/TestIdeTask.kt)
-
-</tldr>
-
-> This task is not registered with the `testIde` name, but its configuration extends the default `test` task.
-
-Runs plugin tests against the currently selected IntelliJ Platform with the built plugin loaded.
-It directly extends the [`Test`][gradle-test-task] Gradle task, which allows for an extensive configuration (system properties, memory management, etc.).
-
-This task class also inherits from [`CustomIntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware), which makes it possible to create `testIde`-like tasks using custom IntelliJ Platform versions:
-
-```kotlin
-import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
-import org.jetbrains.intellij.platform.gradle.tasks.TestIdeTask
-
-tasks {
-  val testPhpStorm by registering(TestIdeTask::class) {
-    type = IntelliJPlatformType.PhpStorm
-    version = "2023.2.2"
-  }
-
-  val testLocalIde by registering(TestIdeTask::class) {
-    localPath = file("/Users/user/Applications/Android Studio.app")
-  }
-}
-```
 
 
 ## `testIdePerformance`

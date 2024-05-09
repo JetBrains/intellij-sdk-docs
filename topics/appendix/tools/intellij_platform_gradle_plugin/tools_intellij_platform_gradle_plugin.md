@@ -226,7 +226,7 @@ It is possible to refer to the locally available IntelliJ-based IDE using the `l
 ```kotlin
 repositories {
   intellijPlatform {
-    localPlatformArtifacts()
+    defaultRepositories()
   }
 }
 
@@ -255,6 +255,7 @@ repositories {
 dependencies {
   intellijPlatform {
     intellijIdeaCommunity("%ijPlatform%")
+    instrumentationTools()
 
     bundledPlugin("com.intellij.java")
     plugin("org.intellij.scala", "2024.1.4")

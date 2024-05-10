@@ -25,9 +25,9 @@ Another example is inspecting whether a given string value is properly capitaliz
 > - <ui-path>Properties files</ui-path>
 
 Consider using the following annotations:
-- [`@Nls`](%gh-java-annotations%java-annotations/src/main/java/org/jetbrains/annotations/Nls.java) - for NLS strings.
+- [`@Nls`](%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/Nls.java) - for NLS strings.
   The `capitalization` attribute allows to specify required capitalization.
-- [`@NonNls`](%gh-java-annotations%java-annotations/src/main/java/org/jetbrains/annotations/NonNls.java) - for non-NLS strings
+- [`@NonNls`](%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/NonNls.java) - for non-NLS strings
 - [`@NlsSafe`](%gh-ic%/platform/util/base/src/com/intellij/openapi/util/NlsSafe.java) - for NLS-safe strings
 
 ### NLS Context Annotations
@@ -132,7 +132,7 @@ final class ExampleBundle {
 
 Do not extend `DynamicBundle` in bundle classes.
 
-Annotating message key parameter with [`@PropertyKey`](%gh-java-annotations%/java-annotations/src/main/java/org/jetbrains/annotations/PropertyKey.java) adds the IDE support in the client code, e.g., reporting unresolved message keys.
+Annotating message key parameter with [`@PropertyKey`](%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/PropertyKey.java) adds the IDE support in the client code, e.g., reporting unresolved message keys.
 
 ### Moving Strings to Message Bundles
 

@@ -39,7 +39,7 @@ If there are many actions and/or controls, and it is not possible to assign mnem
 
 * Provide mnemonics for [group headers](group_header.md) for quick navigation to the first element of the group.
 
-Note: The rules for using numeric mnemonics in popups are under discussion. [Contact us](https://github.com/JetBrains/ui/issues) if you have questions.
+Note: The rules for using numeric mnemonics in popups are under discussion. [Contact us](https://youtrack.jetbrains.com/issues/IJSDK) if you have questions.
 
 ## How to use
 

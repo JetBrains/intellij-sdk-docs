@@ -315,7 +315,6 @@ In addition, it preconfigures the customizable `TestIdeTask` class, so it is pos
 
 Included tasks:
 - [](tools_intellij_platform_gradle_plugin_tasks.md#prepareTest)
-- testIde
 - [](tools_intellij_platform_gradle_plugin_tasks.md#testIdePerformance)
 - [](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi)
 

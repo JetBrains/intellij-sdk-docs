@@ -107,7 +107,7 @@ Do **not** duplicate the main action in the dropdown menu, otherwise it is confu
 ### Reduce split button to simple action buttons
 
 The Split button can be reduced to simple action buttons which are laid out automatically next to each other. This is controlled by the following option in settings:
-_Appearance & Behavior > Appearance > Merge buttons in dialogs_
+<ui-path>Settings | Appearance & Behavior | Appearance | Merge buttons in dialogs</ui-path>
 
 <p>For example, the <control>Commit</control> button reduced to its components (the option is disabled) looks like the following:</p>
 

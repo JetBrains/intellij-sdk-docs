@@ -152,10 +152,13 @@ Plugins _must_ always use the bundled library from the target IDE and not bundle
 Please make sure it is not added via transitive dependencies either
 (see [View and Debug Dependencies](https://docs.gradle.org/current/userguide/viewing_debugging_dependencies.html) in Gradle user guide).
 
+Since 2024.2, a custom [fork](https://github.com/JetBrains/intellij-deps-kotlinx.coroutines) with additional patches is bundled.
+
 See [](kotlin_coroutines.md) on how to use them in plugins.
 
 | IntelliJ Platform version | Bundled _kotlinx-coroutines_ version |
 |---------------------------|--------------------------------------|
+| 2024.2                    | 1.8.0                                |
 | 2024.1                    | 1.7.3                                |
 
 ### Other Bundled Kotlin Libraries

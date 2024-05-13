@@ -114,7 +114,7 @@ private JTextField myPort = new JTextField();
 private static final String MESSAGE =
     "The port number should be between 0 and 65535";
 // Components initialization
-new ComponentValidator(project).withValidator(() -> {
+new ComponentValidator(parentDisposable).withValidator(() -> {
   String pt = myPort.getText();
   if (StringUtil.isNotEmpty(pt)) {
     try {
@@ -174,7 +174,7 @@ When the focus is returned to the field with an error, use validation on input. 
 Add `andStartOnFocusLost()` call on [`ComponentValidator`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/ComponentValidator.java) before installing it on a component:
 
 ```java
-new ComponentValidator(getDisposable())
+new ComponentValidator(parentDisposable)
     .withValidator(...)
     .andStartOnFocusLost()
     .installOn(component);

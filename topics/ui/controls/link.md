@@ -92,9 +92,10 @@ Always add the arrow icon for an external link. The icon shows that the user wil
 ![](04_external_link.png){width=248}
 
 ```java
-ActionLink externalLink = new ActionLink("External link", event -> {
-    BrowserUtil.browse("https://www.jetbrains.com");
-});
+ActionLink externalLink = new ActionLink(
+    "External link",
+    event -> BrowserUtil.browse("https://www.jetbrains.com")
+);
 externalLink.setExternalLinkIcon();
 ```
 

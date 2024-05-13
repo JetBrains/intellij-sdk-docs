@@ -111,7 +111,8 @@ Hide the error when the incorrect symbol is deleted.
 ```java
 // Fields initializers
 private JTextField myPort = new JTextField();
-private static final String MESSAGE = "The port number should be between 0 and 65535";
+private static final String MESSAGE =
+    "The port number should be between 0 and 65535";
 // Components initialization
 new ComponentValidator(project).withValidator(() -> {
   String pt = myPort.getText();
@@ -120,23 +121,21 @@ new ComponentValidator(project).withValidator(() -> {
       int portValue = Integer.parseInt(pt);
       if (portValue >= 0 && portValue <= 65535) {
         return null;
-      }
-      else {
+      } else {
         return new ValidationInfo(MESSAGE, myPort);
       }
-    }
-    catch (NumberFormatException nfe) {
+    } catch (NumberFormatException nfe) {
       return new ValidationInfo(MESSAGE, myPort);
     }
-  }
-  else {
+  } else {
     return null;
   }
 }).installOn(myPort);
 myPort.getDocument().addDocumentListener(new DocumentAdapter() {
   @Override
   protected void textChanged(@NotNull DocumentEvent e) {
-    ComponentValidator.getInstance(myPort).ifPresent(v -> v.revalidate());
+    ComponentValidator.getInstance(myPort)
+        .ifPresent(v -> v.revalidate());
   }
 });
 ```
@@ -175,8 +174,10 @@ When the focus is returned to the field with an error, use validation on input. 
 Add `andStartOnFocusLost()` call on [`ComponentValidator`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/ComponentValidator.java) before installing it on a component:
 
 ```java
-new ComponentValidator(getDisposable()).withValidator(...).
-    andStartOnFocusLost().installOn(component);
+new ComponentValidator(getDisposable())
+    .withValidator(...)
+    .andStartOnFocusLost()
+    .installOn(component);
 ```
 
 ### 3. Empty required fields in dialogs
@@ -254,8 +255,8 @@ Hide the error messages once any field related to the error is edited. Set the d
 [`ValidationInfo`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/ui/ValidationInfo.java) for messages in inline area is created with `null` component:
 
 ```java
-new ValidationInfo("The host cannot be reached. " +
-                   "Check the address and credentials.");
+new ValidationInfo(
+    "The host cannot be reached. Check the address and credentials.");
 ```
 
 ### 6. Complex values in multi-page dialogs
@@ -473,7 +474,8 @@ Use a warning icon for warnings:
 
 ```java
 JTextField cellEditor = new JTextField();
-cellEditor.putClientProperty(DarculaUIUtil.COMPACT_PROPERTY, Boolean.TRUE);
+cellEditor.putClientProperty(
+    DarculaUIUtil.COMPACT_PROPERTY, Boolean.TRUE);
 cellEditor.getDocument().addDocumentListener(new DocumentAdapter() {
     @Override
     protected void textChanged(@NotNull DocumentEvent e) {
@@ -481,9 +483,9 @@ cellEditor.getDocument().addDocumentListener(new DocumentAdapter() {
       cellEditor.putClientProperty("JComponent.outline", op);
     }
 });
-TableColumn col0 = table.getColumnModel().getColumn(0);
-col0.setCellEditor(new DefaultCellEditor(cellEditor));
-col0.setCellRenderer(new DefaultTableCellRenderer() {
+TableColumn firstColumn = table.getColumnModel().getColumn(0);
+firstColumn.setCellEditor(new DefaultCellEditor(cellEditor));
+firstColumn.setCellRenderer(new DefaultTableCellRenderer() {
     @Override
     public Dimension getPreferredSize() {
       Dimension size = super.getPreferredSize();

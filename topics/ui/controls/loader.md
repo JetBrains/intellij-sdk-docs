@@ -24,8 +24,11 @@ Follow the rules for [progress indicators](progress_indicators.md).
 The loader form and sizes are the same in all themes. Use the default 16x16 loader in all cases.
 
 ```java
-JLabel label = new JLabel("Loading...",
-    new AnimatedIcon.Default(), SwingConstants.LEFT);
+JLabel label = new JLabel(
+    "Loading...",
+    new AnimatedIcon.Default(),
+    SwingConstants.LEFT
+);
 ```
 
 

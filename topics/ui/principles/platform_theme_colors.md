@@ -75,7 +75,8 @@ Use `JBColor.namedColor` to set a color key and fallback color values:
 
 ```java
 private static final Color SELECTED_BACKGROUND_COLOR =
-    JBColor.namedColor("CompletionPopup.selectionBackground",
+    JBColor.namedColor(
+        "CompletionPopup.selectionBackground",
         new JBColor(0xc5dffc, 0x113a5c)
     );
 ```

@@ -181,7 +181,11 @@ If the help text is longer than 5 lines, separate the text into paragraphs with 
 ![](12_tooltip_paragraph.png){width=300}
 
 ```java
-String LONG_TEXT = "A new overloading method will be created with the new parameter added to this method definition.<p>The method with the old signature will be kept and the call to the new method will be added to it. The necessary value or expression will be passed to the new method call.";
+String LONG_TEXT = "A new overloading method will be created with " +
+    "the new parameter added to this method definition.<p>" +
+    "The method with the old signature will be kept and the call " +
+    "to the new method will be added to it. The necessary value " +
+    "or expression will be passed to the new method call.";
 new HelpTooltip().setDescription(LONG_TEXT).installOn(component);
 ```
 

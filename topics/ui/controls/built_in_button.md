@@ -36,12 +36,14 @@ A combo box with browse button:
 ```java
 ExtendableTextComponent.Extension browseExtension =
   ExtendableTextComponent.Extension.create(
-    AllIcons.General.OpenDisk, AllIcons.General.OpenDiskHover,
-    "Open file", () -> System.out.println("Browse file clicked")
+    AllIcons.General.OpenDisk,
+    AllIcons.General.OpenDiskHover,
+    "Open file",
+    () -> System.out.println("Browse file clicked")
   );
-ComboBox<String> eComboBox = new ComboBox<>(STRING_VALUES);
-eComboBox.setEditable(true);
-eComboBox.setEditor(new BasicComboBoxEditor() {
+ComboBox<String> extComboBox = new ComboBox<>(STRING_VALUES);
+extComboBox.setEditable(true);
+extComboBox.setEditor(new BasicComboBoxEditor() {
   @Override
   protected JTextField createEditorComponent() {
     ExtendableTextField ecbEditor = new ExtendableTextField();

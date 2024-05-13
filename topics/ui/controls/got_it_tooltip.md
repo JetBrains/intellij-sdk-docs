@@ -64,7 +64,8 @@ Add a shortcut if the tooltip describes a single action that has a shortcut.
 
 Implementation:
 ```java
-val GOT_IT_TEXT = "Learn the most useful shortcuts and essential IDE features interactively";
+val GOT_IT_TEXT = "Learn the most useful shortcuts " +
+    "and essential IDE features interactively";
 val shortcut = ...;
 val tooltip = GotItTooltip("ide.features.trainer", GOT_IT_TEXT, project)
               .withHeader("IDE features trainer")
@@ -77,7 +78,7 @@ Add a local link if users might want to revert changes in a feature or configure
 ![](12_link_action.png){width=389}
 
 ```java
-new GotItTooltip("some.id", "Show output result in the editor", project)
+new GotItTooltip("my.id", "Show output result in the editor", project)
     .withLink("Disable for all files", this::actionMethodReference);
 ```
 
@@ -88,7 +89,7 @@ Add an external link if there is a help source that can further explain the func
 
 ```java
 new GotItTooltip("some.id", GOT_IT_TEXT, project)
-    .withBrowserLink("How to use", new URL("https://www.jetbrains.com/howtouse"));
+    .withBrowserLink("How to use", new URL("https://example.com"));
 ```
 
 Do **not** add more than one link.

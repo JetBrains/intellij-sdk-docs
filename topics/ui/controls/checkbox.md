@@ -53,9 +53,9 @@ For any column that should be rendered as a checkbox, set both a renderer and ed
 The type of data in the correspondent column of the `Table` model should either be `Boolean` or `String` containing `true` or `false`.
 
 ```java
-TableColumn col = table.getColumnModel().getColumn(...);
-col.setCellEditor(JBTable.createBooleanEditor());
-col.setCellRenderer(new BooleanTableCellRender());
+TableColumn column = table.getColumnModel().getColumn(...);
+column.setCellEditor(JBTable.createBooleanEditor());
+column.setCellRenderer(new BooleanTableCellRender());
 ```
 
 ### Writing guidelines

@@ -564,7 +564,23 @@ Enables Split Mode when running the IDE.
 
 {style="narrow"}
 Type
-: `DirectoryProperty`
+: `Property<Boolean>`
+
+Default value
+: [`intellijPlatform.splitMode`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-splitMode)
+
+
+### `splitModeTarget`
+{#SplitModeAware-splitModeTarget}
+
+Specifies in which part of the product the developed plugin should be installed.
+
+{style="narrow"}
+Type
+: [`Property<SplitModeTarget>`](tools_intellij_platform_gradle_plugin_types.md#SplitModeAware-SplitModeTarget)
+
+Default value
+: [`intellijPlatform.splitModeTarget`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-splitModeTarget)
 
 
 ## `TestableAware`

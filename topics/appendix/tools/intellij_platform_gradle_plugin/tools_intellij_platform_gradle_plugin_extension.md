@@ -200,6 +200,26 @@ See also:
 - [Task Awares: `SplitModeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitModeAware)
 
 
+### `splitModeTarget`
+{#intellijPlatform-splitModeTarget}
+
+> Split Mode requires the IntelliJ Platform in version `241.14473` or later.
+>
+{style="warning"}
+
+Specifies in which part of the product the developed plugin should be installed.
+
+{style="narrow"}
+Type
+: [`Property<SplitModeTarget>`](tools_intellij_platform_gradle_plugin_types.md#SplitModeAware-SplitModeTarget)
+
+Default value
+: [`SplitModeTarget.BACKEND`](tools_intellij_platform_gradle_plugin_types.md#SplitModeAware-SplitModeTarget)
+
+See also:
+- [Task Awares: `SplitModeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitModeAware)
+
+
 ## Plugin Configuration
 {#intellijPlatform-pluginConfiguration}
 
@@ -942,7 +962,7 @@ Defines the verification level at which the task should fail if any reported iss
 
 {style="narrow"}
 Type
-: `ListProperty<FailureLevel>`
+: [`ListProperty<FailureLevel>`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel)
 
 Default value
 : [`FailureLevel.COMPATIBILITY_PROBLEMS`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel)

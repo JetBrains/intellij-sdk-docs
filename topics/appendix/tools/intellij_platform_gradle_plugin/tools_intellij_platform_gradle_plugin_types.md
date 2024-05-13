@@ -159,6 +159,20 @@ See also:
 - [Tasks: `printProductsReleases`](tools_intellij_platform_gradle_plugin_tasks.md#printProductsReleases)
 
 
+## `SplitModeAware.SplitModeTarget`
+{#SplitModeAware-SplitModeTarget}
+
+[`SplitModeAware.SplitModeTarget`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SplitModeAware.kt)
+
+Describes a part of the product where the developed plugin can be installed when running in _splitMode_ handled by [`SplitModeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitModeAware).
+
+| Name                   | Description                                       |
+|------------------------|---------------------------------------------------|
+| `BACKEND`              | Install plugin in the backed IDE.                 |
+| `FRONTEND`             | Install plugin in the frontend IDE.               |
+| `BACKEND_AND_FRONTEND` | Install plugin in both backend and frontend IDEs. |
+
+
 ## `Subsystems`
 {#Subsystems}
 

@@ -58,18 +58,26 @@ Add a header if the body text is 2 lines and more. A short header can quickly ex
 
 ![](10_header.png){width=342}
 
+Implementation:
+```java
+new GotItTooltip(TOOLTIP_ID, GET_IT_TEXT, parentDisposable)
+    .withHeader("The reader mode is on");
+```
+
 Add a shortcut if the tooltip describes a single action that has a shortcut.
 
 ![](11_shortcut.png){width=248}
 
 Implementation:
 ```java
-val GOT_IT_TEXT = "Learn the most useful shortcuts " +
-    "and essential IDE features interactively";
-val shortcut = ...;
-val tooltip = GotItTooltip("ide.features.trainer", GOT_IT_TEXT, project)
-              .withHeader("IDE features trainer")
-              .withShortcut(shortcut);
+new GotItTooltip(
+    TOOLTIP_ID,
+    gotItTextBuilder -> {
+        String shortcut = gotItTextBuilder.shortcut("My.Action");
+        return "You can rename usages " + shortcut;
+    },
+    parentDisposable
+);
 ```
 
 ### Link
@@ -78,7 +86,7 @@ Add a local link if users might want to revert changes in a feature or configure
 ![](12_link_action.png){width=389}
 
 ```java
-new GotItTooltip("my.id", "Show output result in the editor", project)
+new GotItTooltip(TOOLTIP_ID, TOOLTIP_TEXT, parentDisposable)
     .withLink("Disable for all files", this::actionMethodReference);
 ```
 
@@ -88,7 +96,7 @@ Add an external link if there is a help source that can further explain the func
 ![](13_link_help.png){width=340}
 
 ```java
-new GotItTooltip("some.id", GOT_IT_TEXT, project)
+new GotItTooltip(TOOLTIP_ID, GOT_IT_TEXT, parentDisposable)
     .withBrowserLink("How to use", new URL("https://example.com"));
 ```
 
@@ -121,8 +129,8 @@ Do **not** cover the information the user is currently working with.
 **Implementation:** See four predefined point providers in the [`GotItTooltip`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/GotItTooltip.kt) class.
 
 ```java
-new GotItTooltip("some.id", "You can rename usages", project)
-    .show(gutterComponent, GotItTooltip.TOP_MIDDLE)
+new GotItTooltip(TOOLTIP_ID, GOT_IT_TEXT, parentDisposable)
+    .show(gutterComponent, GotItTooltip.TOP_MIDDLE);
 ```
 
 ### Timeout
@@ -141,7 +149,7 @@ Note that adding a timeout automatically hides the Got It button.<br/><br/>
 **Implementation:** Default timeout duration is 5 seconds. A custom duration can be set:
 
 ```java
-new GotItTooltip("refactorings", "Press Tab to show options", project)
+new GotItTooltip(TOOLTIP_ID, GOT_IT_TEXT, parentDisposable)
     .withTimeout(3000);
 ```
 

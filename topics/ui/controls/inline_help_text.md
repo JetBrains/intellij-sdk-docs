@@ -26,23 +26,25 @@ Show more than 5 lines only when a text cannot be shortened for legal purposes.
 
 <p>Implementation</p>
 
-```java
-JCheckBox checkBox =
-    new JCheckBox("Send usage statistics when using EAP versions");
-JPanel panel = UI.PanelFactory.panel(checkBox)
-    .withComment("<p>Help JetBrains improve its products by sending" +
-        "anonymous data about features and plugins used," +
-        "hardware and software configuration," +
-        "statistics on types of files," +
-        "number of files per project, etc.</p>" +
-        "<br/>" +
-        "<p>Please note that this will not include personal data" +
-        "or any sensitive information, such as source code," +
-        "file names, etc." +
-        "The data sent complies with the" +
-        "<a href=\"https://www.jetbrains.com\">" +
-        "JetBrains Privacy Policy</a></p>")
-    .createPanel();
+```kotlin
+panel {
+  row {
+    checkBox("Send usage statistics when using EAP versions")
+      .comment("""
+        <p>Help JetBrains improve its products by sending anonymous
+        data about features and plugins used, hardware and software
+        configuration, statistics on types of files, number of files
+        per project, etc.</p>
+        <br/>
+        <p>Please note that this will not include personal data or
+        any sensitive information, such as source code, file names,
+        etc. The data sent complies with the
+        <a href=\"https://www.jetbrains.com\">
+        JetBrains Privacy Policy</a></p>
+        """.trimIndent()
+      )
+  }
+}
 ```
 
 Provide a link to the corresponding help article or to a place in the IDE where the related settings can be found.
@@ -89,46 +91,32 @@ Place the help text to the right of a labeled input, checkbox, or radio button i
 
 ![](07_right_inputs.png){width=433}
 
-```java
-JCheckBox<String> updatePolicyComboBox =
-    new JComboBox<>(new String [] {"Default", "Non default"});
-JPanel panel = UI.PanelFactory.grid().splitColumns()
-    .add(
-        UI.PanelFactory.panel(updatePolicyComboBox)
-            .withLabel("Plugin update policy:")
-            .withComment("Ignore by Maven 3+")
-            .moveCommentRight()
-    )
-    .add(
-        UI.PanelFactory.panel(new JTextField())
-            .withLabel("Thread count:")
-            .withComment("-T option")
-            .moveCommentRight()
-    )
-    .createPanel();
+```kotlin
+panel {
+  row("Plugin update policy:") {
+      comboBox(listOf("Default", "Non default"))
+      comment("Ignore by Maven 3+")
+  }
+  row("Thread count:") {
+      textField()
+      comment("-T option")
+  }
+}
 ```
 
 ![](08_right_checkboxes.png){width=438}
 
-```java
-JCheckBox<String> buildAutomaticallyComboBox =
-    new JCheckBox<>("Build project automatically");
-JCheckBox<String> compileInParallel =
-    new JCheckBox<>("Compile independent modules in parallel");
-JPanel panel = UI.PanelFactory.grid()
-    .add(
-        UI.PanelFactory.panel(buildAutomaticallyComboBox)
-            .resizeX(false)
-            .withComment("Works while not running / debugging")
-            .moveCommentRight()
-    )
-    .add(
-        UI.PanelFactory.panel(compileInParallel)
-            .resizeX(false)
-            .withComment("May require larger heap size")
-            .moveCommentRight()
-    )
-    .createPanel();
+```kotlin
+panel {
+  row {
+    checkBox("Build project automatically")
+    comment("Works while not running / debugging")
+  }
+  row {
+    checkBox("Compile independent modules in parallel")
+    comment("May require larger heap size")
+  }
+}
 ```
 
 ![](09_right_button.png){width=309}
@@ -137,15 +125,15 @@ Otherwise, place the help text under the UI control.
 
 ![](10_under_field.png){width=484}
 
-```java
-TextFieldWithBrowseButton textFieldWithBrowseButton =
-    new TextFieldWithBrowseButton(e ->
-        System.out.println("JTextField browse button pressed")
-    );
-JPanel panel = UI.PanelFactory.panel(textFieldWithBrowseButton)
-    .withLabel("Default directory:")
-    .withComment("Preselected in " +
-        "\"Open ...\" and \"New | Project\" dialogs");
+```kotlin
+panel {
+  row("Default directory:") {
+    textFieldWithBrowseButton()
+      .comment(
+        "Preselected in \"Open ...\" and \"New | Project\" dialogs"
+      )
+  }
+}
 ```
 
 If there is no space under the UI control, use the [help tooltip](tooltip.md#question-mark-icon-for-help-tooltips) with the question mark icon for labeled inputs, checkboxes, and radio buttons.
@@ -158,17 +146,22 @@ If the help text applies to a whole list, tree, or table, place it below the con
 
 ![](11_under_table.png){width=531}
 
-```java
-JTable table = createTable(); // Actual table creation
-JBScrollPane pane = new JBScrollPane(table);
-pane.setPreferredSize(JBUI.size(400, 300));
-pane.putClientProperty(UIUtil.KEEP_BORDER_SIDES, SideBorder.ALL);
-JPanel panel = UI.PanelFactory.panel(pane)
-    .withComment("&lt;Project> is content roots of all modules, " +
-        "all immediate descendants<br/>of the projects base " +
-        "directory, and .idea directory contents")
-    .resizeY(true)
-    .createPanel();
+```kotlin
+
+import javax.swing.JTable
+
+panel {
+  row {
+    cell(createTable()) // Actual table creation
+      .align(Align.FILL)
+      .comment("""
+        &lt;Project> is content roots of all modules,
+        all immediate descendants<br/>of the projects base
+        directory, and .idea directory contents
+        """.trimIndent()
+      )
+  }.resizableRow()
+}
 ```
 
 If it applies to a single list, tree or table item:
@@ -195,36 +188,35 @@ If the help text applies to several UI controls, place it at the bottom of the g
 
 <p>Implementation</p>
 
-Use [`IdeaTitledBorder`](%gh-ic%/platform/platform-api/src/com/intellij/ui/border/IdeaTitledBorder.java) as the border for panels that need title and possibly the gray line on the right of the title:
+Use [`Panel.group()`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/dsl/builder/Panel.kt) as the border for panels that need title and possibly the gray line on the right of the title:
 
-```java
-JComboBox<String> buildAndRunComboBox =
-    new JComboBox<>(new String [] {"IntelliJ IDEA", "Gradle"});
-JComboBox<String> runTestsComboBox =
-    new JComboBox<>(new String [] {"IntelliJ IDEA", "Gradle"});
-String INNER_COMMENT = "<p>By default IntelliJ IDEA uses Gradle " +
-    "to build the project and run the tasks.</p>" +
-    "<p>In a pure Java/Kotlin project, building and running " +
-    "by means of IDE might be faster, thanks to optimizations. " +
-    "Note, that the IDE doesn't support all Gradle plugins and " +
-    "the project might not be built correctly with some of them.</p>";
-JPanel innerGrid = UI.PanelFactory.grid().splitColumns()
-    .add(
-        UI.PanelFactory.panel(buildAndRunComboBox)
-            .resizeX(false)
-            .withLabel("Build and run with:")
-    )
-    .add(
-        UI.PanelFactory.panel(runTestsComboBox)
-            .resizeX(false)
-            .withLabel("Run tests with:")
-    )
-    .createPanel();
-JPanel panel = UI.PanelFactory.panel(innerGrid)
-    .withComment(INNER_COMMENT)
-    .createPanel();
-panel.setBorder(IdeBorderFactory.createTitledBorder("Build and Run"));
+```kotlin
+panel {
+  group("Build and Run") {
+    row("Build and run with:") {
+      comboBox(listOf("IntelliJ IDEA", "Gradle"))
+    }
+    row("Run tests with:") {
+      comboBox(listOf("IntelliJ IDEA", "Gradle"))
+    }
+    row {
+      comment("""
+        <p>By default IntelliJ IDEA uses Gradle to build the project
+        and run the tasks.</p>
+        <p>In a pure Java/Kotlin project, building and running
+        by means of IDE might be faster, thanks to optimizations.
+        Note, that the IDE doesn't support all Gradle plugins and
+        the project might not be built correctly with some of them.</p>
+        """.trimIndent()
+      )
+    }
+  }
+  group("Gradle") {
+    row("Use Gradle from:") {
+      comboBox(gradleModel)
+    }
+  }
+}
 ```
 
-You can find more examples in the [`ComponentPanelTestAction`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/ui/ComponentPanelTestAction.java) implementation
-or the <ui-path>Tools | Internal Actions | UI | Show Standard Panels</ui-path> action (available in [internal mode](enabling_internal.md)).
+You can find more examples by invoking the <ui-path>Tools | Internal Actions | UI | Kotlin UI DSL | UI DSL Showcase</ui-path> action (available in [internal mode](enabling_internal.md)) and clicking the <control>View source</control> links on specific pages.

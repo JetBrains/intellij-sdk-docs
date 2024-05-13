@@ -101,3 +101,5 @@ When working on an IntelliJ Platform-based IDE or a plugin, use these guidelines
 - [Icons List](https://jetbrains.design/intellij/resources/icons_list/)
 - [](UI_kit.md)
 - {columns="4"}
+
+<include from="snippets.md" element-id="missingContent"/>

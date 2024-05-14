@@ -12,6 +12,12 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2024
 
+### May
+{may-24}
+Minor Changes and Additions
+:
+- How to support [grammar checks](spell_checking.md#grammar-checks) provided by Grazie plugin in custom languages.
+
 ### April
 {april-24}
 

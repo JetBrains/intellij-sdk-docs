@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Basics of Working with the Editor
 
@@ -13,7 +13,7 @@ This tutorial will lead you through a series of steps showing how to work with t
 > For operations that require access to the PSI, please see [](psi.md).
 
 The following are referenced in the tutorial:
-* The [editor_basics](%gh-sdk-samples%/editor_basics/) plugin code sample,
+* The [editor_basics](%gh-sdk-samples-master%/editor_basics/) plugin code sample,
 * [editor-ui-api package](%gh-ic%/platform/editor-ui-api),
 * Those not found in `editor-ui-api` package:
   * [`EditorActionManager`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionManager.java),

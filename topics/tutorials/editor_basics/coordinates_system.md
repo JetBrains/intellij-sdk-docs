@@ -12,13 +12,13 @@ This tutorial describes how to access information about the caret(s) in an edito
 
 ## Editor Basics Code Sample
 
-In this tutorial, the [editor_basics](%gh-sdk-samples%/editor_basics) code sample is used to explore caret positions.
+In this tutorial, the [editor_basics](%gh-sdk-samples-master%/editor_basics) code sample is used to explore caret positions.
 In particular, the **Caret Position** action added by `editor_basics` to the editor context menu is used to retrieve information about the current caret position.
 A keyboard shortcut can also initiate the action.
 
 ![Editor Basics Menu](basics.png){width="600"}
 
-The source code for the Java class behind the menu action is [EditorAreaIllustration](%gh-sdk-samples%/editor_basics/src/main/java/org/intellij/sdk/editor/EditorAreaIllustration.java).
+The source code for the Java class behind the menu action is [EditorAreaIllustration](%gh-sdk-samples-master%/editor_basics/src/main/java/org/intellij/sdk/editor/EditorAreaIllustration.java).
 The focus of discussion will be the `EditorAreaIllustration.actionPerformed()` method.
 For more information about creating action classes, see the [Actions Tutorial](action_system.md), which covers the topic in depth.
 

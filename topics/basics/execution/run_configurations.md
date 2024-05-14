@@ -111,7 +111,7 @@ If the settings editor requires validation, implement [`CheckableRunConfiguratio
 
 If the settings editor is complex, see [](#simplifying-settings-editors) for solutions.
 
-**Example**: [DemoSettingsEditor](%gh-sdk-samples%/run_configuration/src/main/java/org/jetbrains/sdk/runConfiguration/DemoSettingsEditor.java) from the `run_configuration` code sample.
+**Example**: [DemoSettingsEditor](%gh-sdk-samples-master%/run_configuration/src/main/java/org/jetbrains/sdk/runConfiguration/DemoSettingsEditor.java) from the `run_configuration` code sample.
 
 ## Persistence
 

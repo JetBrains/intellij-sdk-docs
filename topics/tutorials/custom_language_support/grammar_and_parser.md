@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 3. Grammar and Parser
 
@@ -8,8 +8,8 @@
 
 **Reference**: [](implementing_lexer.md), [](implementing_parser_and_psi.md)
 
-**Code**: [`SimpleTokenType`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleTokenType.java),
-[`SimpleElementType`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleElementType.java)
+**Code**: [`SimpleTokenType`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleTokenType.java),
+[`SimpleElementType`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleElementType.java)
 </tldr>
 
 <include from="language_and_filetype.md" element-id="custom_language_tutorial_header"></include>
@@ -19,7 +19,7 @@ The Simple Language grammar must also be defined to generate a parser.
 
 ## Define a Token Type
 
-Create [`SimpleTokenType`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleTokenType.java)
+Create [`SimpleTokenType`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleTokenType.java)
 in the `org.intellij.sdk.language.psi` package by subclassing `IElementType`.
 
 ```java
@@ -28,7 +28,7 @@ in the `org.intellij.sdk.language.psi` package by subclassing `IElementType`.
 
 ## Define an Element Type
 
-Create the [`SimpleElementType`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleElementType.java) in the `org.intellij.sdk.language.psi` package by subclassing `IElementType`.
+Create the [`SimpleElementType`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleElementType.java) in the `org.intellij.sdk.language.psi` package by subclassing `IElementType`.
 
 ```java
 ```
@@ -100,6 +100,6 @@ sourceSets.main.java.srcDirs 'src/main/gen'
 </tab>
 </tabs>
 
-See <path>[build.gradle.kts](%gh-sdk-samples%/simple_language_plugin/build.gradle.kts)</path> for the reference.
+See <path>[build.gradle.kts](%gh-sdk-samples-master%/simple_language_plugin/build.gradle.kts)</path> for the reference.
 
 Reload the Gradle project for changes to take effect and build the project.

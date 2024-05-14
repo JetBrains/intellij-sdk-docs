@@ -1,6 +1,6 @@
-# 18. Commenter
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# 18. Commenter
 
 <link-summary>Sample implementation of Simple language code commenter.</link-summary>
 
@@ -8,7 +8,7 @@
 
 **Reference**: [](additional_minor_features.md#comment-code)
 
-**Code**: [`SimpleCommenter`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCommenter.java)
+**Code**: [`SimpleCommenter`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCommenter.java)
 
 **Testing**: [](commenter_test.md)
 
@@ -21,7 +21,7 @@ The [`Commenter`](%gh-ic%/platform/core-api/src/com/intellij/lang/Commenter.java
 
 ## Define a Commenter
 
-The [`SimpleCommenter`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCommenter.java) for Simple Language defines the line comment prefix as `#`.
+The [`SimpleCommenter`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCommenter.java) for Simple Language defines the line comment prefix as `#`.
 
 ```java
 ```

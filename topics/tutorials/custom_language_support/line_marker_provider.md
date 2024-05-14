@@ -1,12 +1,12 @@
-# 8. Line Marker Provider
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# 8. Line Marker Provider
 
 <link-summary>Sample implementation of line marker provider adding gutter icons for Simple language property occurrences in Java files, and allowing to navigate to a property definition.</link-summary>
 
 <tldr>
 
-**Code**: [`SimpleLineMarkerProvider`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLineMarkerProvider.java)
+**Code**: [`SimpleLineMarkerProvider`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLineMarkerProvider.java)
 
 </tldr>
 
@@ -20,7 +20,7 @@ These markers can provide navigation targets to related code.
 A line marker provider annotates usages of Simple Language properties within Java code and provides navigation to the definition of these properties.
 The visual marker is a Simple Language icon in the gutter of the Editor window.
 
-The [`SimpleLineMarkerProvider`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLineMarkerProvider.java) subclasses [`RelatedItemLineMarkerProvider`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/daemon/RelatedItemLineMarkerProvider.java).
+The [`SimpleLineMarkerProvider`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLineMarkerProvider.java) subclasses [`RelatedItemLineMarkerProvider`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/daemon/RelatedItemLineMarkerProvider.java).
 For this example, override the `collectNavigationMarkers()` method to collect usage of a Simple Language [key and separators](language_and_filetype.md#define-the-language):
 
 ```java

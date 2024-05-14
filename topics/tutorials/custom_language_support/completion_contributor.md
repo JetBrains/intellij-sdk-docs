@@ -1,6 +1,6 @@
-# 9. Completion Contributor
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# 9. Completion Contributor
 
 <link-summary>Sample implementation of code completion in Simple language files.</link-summary>
 
@@ -8,7 +8,7 @@
 
 **Reference**: [](code_completion.md)
 
-**Code**: [`SimpleCompletionContributor`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCompletionContributor.java)
+**Code**: [`SimpleCompletionContributor`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCompletionContributor.java)
 
 </tldr>
 
@@ -19,7 +19,7 @@ Custom languages provide code completion using one of two approaches: Contributo
 ## Define a Completion Contributor
 
 For this tutorial, the `simple_language_plugin` provides custom completion for values in Simple Language property files.
-Create [`SimpleCompletionContributor`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCompletionContributor.java)
+Create [`SimpleCompletionContributor`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCompletionContributor.java)
 by subclassing [`CompletionContributor`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java).
 This rudimentary completion contributor always adds "Hello" to the completion variants result set, regardless of context:
 

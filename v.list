@@ -10,7 +10,7 @@
 
   <!-- Links to master/main branches **MUST** have "-master" suffix for recheck when running inspection globally -->
 
-  <var name="gh-sdk-samples" value="https://github.com/JetBrains/intellij-sdk-code-samples/tree/main"/>
+  <var name="gh-sdk-samples-master" value="https://github.com/JetBrains/intellij-sdk-code-samples/tree/main"/>
 
   <var name="gh-ic" value="https://github.com/JetBrains/intellij-community/tree/idea/%ijPlatformBuild%"/>
   <var name="gh-ic-master" value="https://github.com/JetBrains/intellij-community/tree/master"/>

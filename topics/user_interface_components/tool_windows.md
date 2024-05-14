@@ -114,7 +114,7 @@ Project-level topic [`ToolWindowManagerListener`](%gh-ic%/platform/platform-impl
 
 ## Sample Plugin
 
-To clarify how to develop plugins that create tool windows, consider the **toolWindow** sample plugin available in the [code samples](%gh-sdk-samples%/tool_window).
+To clarify how to develop plugins that create tool windows, consider the **toolWindow** sample plugin available in the [code samples](%gh-sdk-samples-master%/tool_window).
 
 See [](code_samples.md) on how to set up and run the plugin.
 

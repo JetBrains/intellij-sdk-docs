@@ -8,9 +8,9 @@
 
 **Reference**: [](registering_file_type.md)
 
-**Code**: [`SimpleLanguage`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLanguage.java),
-[`SimpleIcons`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleIcons.java),
-[`SimpleFileType`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFileType.java)
+**Code**: [`SimpleLanguage`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLanguage.java),
+[`SimpleIcons`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleIcons.java),
+[`SimpleFileType`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFileType.java)
 
 </tldr>
 
@@ -28,7 +28,7 @@ Register the `LanguageFileType` with the IntelliJ Platform in the plugin configu
 ## Define the Language
 
 The language implemented in this tutorial is named "Simple" - note the case of the name.
-The [`SimpleLanguage`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLanguage.java) class is defined in the `org.intellij.sdk.language` package of the `simple_language_plugin` code sample:
+The [`SimpleLanguage`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLanguage.java) class is defined in the `org.intellij.sdk.language` package of the `simple_language_plugin` code sample:
 
 ```java
 ```
@@ -36,8 +36,8 @@ The [`SimpleLanguage`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org
 
 ## Define an Icon
 
-The [icon](%gh-sdk-samples%/simple_language_plugin/src/main/resources/icons/jar-gray.png) for the Simple Language is defined by the
-[`SimpleIcons`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleIcons.java) class.
+The [icon](%gh-sdk-samples-master%/simple_language_plugin/src/main/resources/icons/jar-gray.png) for the Simple Language is defined by the
+[`SimpleIcons`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleIcons.java) class.
 Please see [](icons.md) for details on how to define and use icons.
 
 ```java
@@ -46,7 +46,7 @@ Please see [](icons.md) for details on how to define and use icons.
 
 ## Define a File Type
 
-The [`SimpleFileType`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFileType.java) is defined by subclassing [`LanguageFileType`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java):
+The [`SimpleFileType`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFileType.java) is defined by subclassing [`LanguageFileType`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java):
 
 ```java
 ```

@@ -5,7 +5,7 @@
 <link-summary>Tutorial on implementing custom framework types.</link-summary>
 
 The following tutorial shows how to support a custom framework type for a project and make this framework type embedded in a [project wizard](project_wizard.md) as a UI component.
-The examples in this tutorial rely heavily on the [framework_basics](%gh-sdk-samples%/framework_basics) code sample.
+The examples in this tutorial rely heavily on the [framework_basics](%gh-sdk-samples-master%/framework_basics) code sample.
 
 > Note that this feature requires a [dependency](plugin_dependencies.md) on [the Java plugin](idea.md#java).
 >
@@ -13,7 +13,7 @@ The examples in this tutorial rely heavily on the [framework_basics](%gh-sdk-sam
 
 ## Creating a New Framework
 
-In oder to make a custom framework available and configurable for a project the [`FrameworkTypeEx`](%gh-ic%/java/idea-ui/src/com/intellij/framework/FrameworkTypeEx.java) class needs to be extended, in this example to make the [DemoFramework](%gh-sdk-samples%/framework_basics/src/main/java/org/intellij/sdk/framework/DemoFramework.java) class.
+In oder to make a custom framework available and configurable for a project the [`FrameworkTypeEx`](%gh-ic%/java/idea-ui/src/com/intellij/framework/FrameworkTypeEx.java) class needs to be extended, in this example to make the [DemoFramework](%gh-sdk-samples-master%/framework_basics/src/main/java/org/intellij/sdk/framework/DemoFramework.java) class.
 
 ```java
 final class DemoFramework extends FrameworkTypeEx {
@@ -22,7 +22,7 @@ final class DemoFramework extends FrameworkTypeEx {
 
 ## Registering Framework
 
-The newly created framework class should be registered as an extension point by adding `com.intellij.framework.type` extension in [`plugin.xml`](%gh-sdk-samples%/framework_basics/src/main/resources/META-INF/plugin.xml) configuration file:
+The newly created framework class should be registered as an extension point by adding `com.intellij.framework.type` extension in [`plugin.xml`](%gh-sdk-samples-master%/framework_basics/src/main/resources/META-INF/plugin.xml) configuration file:
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

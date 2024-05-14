@@ -8,11 +8,11 @@
 
 **Reference**: [](implementing_lexer.md)
 
-**Code**: [`Simple.flex`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/Simple.flex),
-[`SimpleLexerAdapter`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLexerAdapter.java),
-[`SimpleFile`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleFile.java),
-[`SimpleTokenSets`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleTokenSets.java),
-[`SimpleParserDefinition`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleParserDefinition.java)
+**Code**: [`Simple.flex`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/Simple.flex),
+[`SimpleLexerAdapter`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLexerAdapter.java),
+[`SimpleFile`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleFile.java),
+[`SimpleTokenSets`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleTokenSets.java),
+[`SimpleParserDefinition`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleParserDefinition.java)
 
 **Testing**: [](parsing_test.md)
 
@@ -25,7 +25,7 @@ The easiest way to create a lexer is to use [JFlex](https://jflex.de/).
 
 ## Define a Lexer
 
-Define a [`Simple.flex`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/Simple.flex) file with rules for the Simple Language lexer in package `org.intellij.sdk.language`.
+Define a [`Simple.flex`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/Simple.flex) file with rules for the Simple Language lexer in package `org.intellij.sdk.language`.
 
 ```java
 ```
@@ -49,7 +49,7 @@ After that, the IDE generates the lexer under the <path>gen</path> directory, fo
 ## Define a Lexer Adapter
 
 The JFlex lexer needs to be adapted to the IntelliJ Platform Lexer API.
-Implement [`SimpleLexerAdapter`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLexerAdapter.java) by subclassing [`FlexAdapter`](%gh-ic%/platform/core-api/src/com/intellij/lexer/FlexAdapter.java).
+Implement [`SimpleLexerAdapter`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLexerAdapter.java) by subclassing [`FlexAdapter`](%gh-ic%/platform/core-api/src/com/intellij/lexer/FlexAdapter.java).
 
 ```java
 ```
@@ -57,7 +57,7 @@ Implement [`SimpleLexerAdapter`](%gh-sdk-samples%/simple_language_plugin/src/mai
 
 ## Define a Root File
 
-The [`SimpleFile`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleFile.java) implementation is the top-level node of the [tree of `PsiElements`](implementing_parser_and_psi.md) for a Simple Language file.
+The [`SimpleFile`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleFile.java) implementation is the top-level node of the [tree of `PsiElements`](implementing_parser_and_psi.md) for a Simple Language file.
 
 ```java
 ```
@@ -65,7 +65,7 @@ The [`SimpleFile`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/int
 
 ## Define Token Sets
 
-Define all sets of related token types from `SimpleTypes` in [`SimpleTokenSets`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleTokenSets.java).
+Define all sets of related token types from `SimpleTypes` in [`SimpleTokenSets`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleTokenSets.java).
 
 ```java
 
@@ -74,7 +74,7 @@ Define all sets of related token types from `SimpleTypes` in [`SimpleTokenSets`]
 
 ## Define a Parser
 
-The Simple Language parser is defined in [`SimpleParserDefinition`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleParserDefinition.java) by subclassing [`ParserDefinition`](%gh-ic%/platform/core-api/src/com/intellij/lang/ParserDefinition.java).
+The Simple Language parser is defined in [`SimpleParserDefinition`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleParserDefinition.java) by subclassing [`ParserDefinition`](%gh-ic%/platform/core-api/src/com/intellij/lang/ParserDefinition.java).
 To avoid unnecessary classloading when initializing the extension point implementation, all `TokenSet` return values should use constants from dedicated `$Language$TokenSets` class.
 
 ```java

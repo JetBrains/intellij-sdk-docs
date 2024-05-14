@@ -1,12 +1,12 @@
-# 6. PSI Helpers and Utilities
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# 6. PSI Helpers and Utilities
 
 <link-summary>Extending the Simple language PSI classes with the utility and helper methods.</link-summary>
 
 <tldr>
 
-**Code**: [`SimplePsiImplUtil`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/impl/SimplePsiImplUtil.java),[`SimpleUtil`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleUtil.java)
+**Code**: [`SimplePsiImplUtil`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/impl/SimplePsiImplUtil.java),[`SimpleUtil`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleUtil.java)
 
 </tldr>
 
@@ -91,7 +91,7 @@ After making above changes to the grammar, [regenerate](grammar_and_parser.md#ge
 
 ## Define a Utility to Search Properties
 
-Create [`SimpleUtil`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleUtil.java) utility class to search PSI elements for defined properties over the project.
+Create [`SimpleUtil`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleUtil.java) utility class to search PSI elements for defined properties over the project.
 It will be used later when implementing [code completion](completion_contributor.md).
 
 ```java

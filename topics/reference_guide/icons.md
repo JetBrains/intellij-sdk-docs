@@ -31,7 +31,7 @@ To generate SVG icons suited for the IntelliJ-based IDEs, also consider third-pa
 
 ## Organizing Icons
 
-> See [Action Basics](%gh-sdk-samples%/action_basics) sample plugin as a reference.
+> See [Action Basics](%gh-sdk-samples-master%/action_basics) sample plugin as a reference.
 
 In the case of a Gradle-based project, icons should be placed in the <path>resources</path> directory.
 If the project is DevKit-based, the recommended approach is to put icons to a dedicated [source root](https://www.jetbrains.com/help/idea/content-roots.html) marked as <control>Resources Root</control>, e.g., <path>icons</path> or <path>resources</path>.

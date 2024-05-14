@@ -1,13 +1,13 @@
-# Theme Structure
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# Theme Structure
 
 <link-summary>Overview of a theme plugin project structure and the most important elements.</link-summary>
 
 Themes are components within [IntelliJ Platform plugins](plugin_structure.topic).
 The theme plugins should be stand-alone and not combined with other plugin functionality.
 
-> To see a full example theme project, see the [Theme Basics](%gh-sdk-samples%/theme_basics) in IntelliJ SDK Code Samples.
+> To see a full example theme project, see the [Theme Basics](%gh-sdk-samples-master%/theme_basics) in IntelliJ SDK Code Samples.
 >
 {style="note"}
 

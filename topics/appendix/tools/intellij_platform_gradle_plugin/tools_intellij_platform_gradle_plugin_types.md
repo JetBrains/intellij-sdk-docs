@@ -12,7 +12,7 @@ This page lists various types used to configure [](tools_intellij_platform_gradl
 ## `FailureLevel`
 {#FailureLevel}
 
-[`VerifyPluginTask.FailureLevel`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginTask.kt)
+[`VerifyPluginTask.FailureLevel`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginTask.kt)
 
 Enum class describing the failure level of the IntelliJ Plugin Verifier CLI tool run with the [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) task.
 
@@ -41,7 +41,7 @@ See also:
 ## `IntelliJPlatformType`
 {#IntelliJPlatformType}
 
-[`IntelliJPlatformType`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/IntelliJPlatformType.kt)
+[`IntelliJPlatformType`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/IntelliJPlatformType.kt)
 
 Describes all IntelliJ Platform types available to be used for plugin development, dependency resolution, and plugin verification.
 
@@ -83,7 +83,7 @@ See also:
 ## `ProductInfo`
 {#ProductInfo}
 
-[`ProductInfo`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/models/ProductInfo.kt)
+[`ProductInfo`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/models/ProductInfo.kt)
 
 Represents information about the IntelliJ Platform product.
 
@@ -120,7 +120,7 @@ Throws
 ## `ProductRelease.Channel`
 {#ProductRelease-Channel}
 
-[`ProductRelease.Channel`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/models/ProductRelease.kt)
+[`ProductRelease.Channel`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/models/ProductRelease.kt)
 
 List of available channels used by JetBrains IDEs and [Android Studio](android_studio.md) for describing binary releases.
 
@@ -143,7 +143,7 @@ See also:
 ## `ProductReleasesValueSource.FilterParameters`
 {#ProductReleasesValueSource-FilterParameters}
 
-[`ProductReleasesValueSource.FilterParameters`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/providers/ProductReleasesValueSource.kt)
+[`ProductReleasesValueSource.FilterParameters`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/providers/ProductReleasesValueSource.kt)
 
 Interface that provides a clear way to filter binary product releases for IntelliJ Plugin Verifier.
 
@@ -162,7 +162,7 @@ See also:
 ## `SplitModeAware.SplitModeTarget`
 {#SplitModeAware-SplitModeTarget}
 
-[`SplitModeAware.SplitModeTarget`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SplitModeAware.kt)
+[`SplitModeAware.SplitModeTarget`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SplitModeAware.kt)
 
 Describes a part of the product where the developed plugin can be installed when running in _splitMode_ handled by [`SplitModeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitModeAware).
 
@@ -176,7 +176,7 @@ Describes a part of the product where the developed plugin can be installed when
 ## `Subsystems`
 {#Subsystems}
 
-[`VerifyPluginTask.Subsystems`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginTask.kt)
+[`VerifyPluginTask.Subsystems`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginTask.kt)
 
 Specify which subsystems of the IDE should be checked by the IntelliJ Plugin Verifier CLI tool run with the [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) task.
 
@@ -194,7 +194,7 @@ See also:
 ## `TestFrameworkType`
 {#TestFrameworkType}
 
-[`TestFrameworkType`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/TestFrameworkType.kt)
+[`TestFrameworkType`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/TestFrameworkType.kt)
 
 Allows for adding `test-framework` testing library variants. See [Dependencies Extension: Testing](tools_intellij_platform_gradle_plugin_dependencies_extension.md#testing).
 
@@ -218,7 +218,7 @@ Allows for adding `test-framework` testing library variants. See [Dependencies E
 ## `VerificationReportsFormats`
 {#VerificationReportsFormats}
 
-[`VerifyPluginTask.VerificationReportsFormats`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginTask.kt)
+[`VerifyPluginTask.VerificationReportsFormats`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginTask.kt)
 
 Enum class describing the type of the results produced by the IntelliJ Plugin Verifier CLI tool run with the [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) task.
 

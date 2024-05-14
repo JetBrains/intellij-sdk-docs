@@ -21,7 +21,7 @@ Registering of a custom task which allows for adjusting the IntelliJ Platform ty
 
 **Extends**: [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde), [`CustomIntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware)
 
-**Sources**: [`CustomRunIdeTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/CustomRunIdeTask.kt)
+**Sources**: [`CustomRunIdeTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/CustomRunIdeTask.kt)
 
 </tldr>
 
@@ -67,7 +67,7 @@ tasks {
 
 **Extends**: [`test`][gradle-test-task], [`TestableAware`](tools_intellij_platform_gradle_plugin_task_awares.md#TestableAware), [`CustomIntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware)
 
-**Sources**: [`CustomTestIdeTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/CustomTestIdeTask.kt)
+**Sources**: [`CustomTestIdeTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/CustomTestIdeTask.kt)
 
 </tldr>
 
@@ -101,7 +101,7 @@ tasks {
 
 **Extends**: [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi), [`CustomIntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware)
 
-**Sources**: [`CustomTestIdeUiTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/CustomTestIdeUiTask.kt)
+**Sources**: [`CustomTestIdeUiTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/CustomTestIdeUiTask.kt)
 
 </tldr>
 
@@ -117,7 +117,7 @@ tasks {
 
 **Extends**: [`testIdePerformance`](tools_intellij_platform_gradle_plugin_tasks.md#testIdePerformance), [`CustomIntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware)
 
-**Sources**: [`CustomTestIdePerformanceTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/CustomTestIdePerformanceTask.kt)
+**Sources**: [`CustomTestIdePerformanceTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/CustomTestIdePerformanceTask.kt)
 
 </tldr>
 

@@ -22,7 +22,7 @@
   <var name="gh-jcef" value="https://github.com/JetBrains/jcef/tree/master/java"/>
   <var name="gh-java-annotations" value="https://github.com/JetBrains/java-annotations/tree/24.0.0"/>
 
-  <var name="gh-ijpgp" value="https://github.com/JetBrains/gradle-intellij-plugin/blob/2.0"/>
+  <var name="gh-ijpgp" value="https://github.com/JetBrains/gradle-intellij-plugin/blob/main"/>
   <var name="gh-pv" value="https://github.com/JetBrains/intellij-plugin-verifier/blob/master"/>
 
   <var name="gradle-intellij-plugin-version" value="1.17.3"/>

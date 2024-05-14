@@ -30,7 +30,7 @@ Each Markdown file **must** start with a copyright notice, formatted using HTML 
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 ```
 
-It **must** be followed by a header defining its title using the level 1 heading:
+It **must** be followed by a header defining its title using level 1 heading:
 
 ```
 # Contributing to the IntelliJ Platform SDK
@@ -140,7 +140,7 @@ General Markdown links have the default Markdown link style:
 #### Links to IntelliJ Platform Source
 
 Links to files in the IntelliJ Platform (`intellij-community`) repository use `%\gh-ic%` prefix instead of the full URL to the repository.
-Links to files in source code packages in other GitHub repositories follow much the same rules, except the links use a different custom `gh-...` prefix defined in <path>v.list</path>.
+Links to files in source code packages in other GitHub repositories follow the same rules, except the links use a different custom `gh-...` prefix defined in <path>v.list</path>.
 
 * `[README.md](%\gh-ic%/README.md)`{disable-links} links to general, non-code information files. ([README.md](%gh-ic%/README.md))
   Examples of this file type include _LICENSE.txt_ and _README.md_.
@@ -164,7 +164,7 @@ In-paragraph code fragments and IntelliJ Platform APIs are formatted according t
   Instead, refer to `Foo`.
 * The FQN is used for the first reference to an interface, class, or package on a page.
   Rather than `AnAction`, introduce it as `com.intellij.openapi.actionSystem.AnAction`.
-  Subsequent references on the page can be `AnAction`.
+  Later references on the page can be `AnAction`.
   Exception: the FQN is not used with a GitHub [link](#links).
 * Method names always use empty parentheses: "call `bar()` to apply."
   Method names are prefixed with the class/interface name when needed for clarity: `Foo.bar()`.
@@ -172,10 +172,10 @@ In-paragraph code fragments and IntelliJ Platform APIs are formatted according t
 #### Extension Points
 
 * Extension point name must be followed by "extension point (EP)" for the first occurrence on a page.
-  All following can use "EP" suffix.
+  All following occurrences can use "EP" suffix.
 * Use the FQN when first introducing an [extension point](plugin_extension_points.md) (EP) on a page.
   Rather than `stubIndex`, introduce `com.intellij.stubIndex`.
-  Subsequent mentions on the page can be `stubIndex`.
+  Later mentions on the page can be `stubIndex`.
 
 #### XML
 
@@ -272,8 +272,8 @@ Complex callouts can also specify `title` attribute:
 Every page typically has a dedicated subdirectory within root <path>/images</path>.
 
 Images in this documentation are generally screenshots.
-For consistency, images should be 296, 460, or 706 pixels wide.
-The preferred image format is PNG at 144 DPI resolution.
+For consistency, images should be 296, 460 or 706 pixels wide.
+The preferred image format is PNG at a resolution of 144 DPI.
 A resolution of 72 DPI is acceptable but may look blurry on high-resolution monitors.
 
 Use [Window Resizer](https://plugins.jetbrains.com/plugin/18045-window-resizer) plugin for exact resizing of the IDE application window.
@@ -295,7 +295,7 @@ If the width of an image needs to be adjusted, it can be specified as follows:
 
 #### Zoom Popup
 
-Images too big to fit into main content can have <control>+</control> overlay control to open a popup with the "zoomed" variant.
+Images too big to fit into the main content can have <control>+</control> overlay control to open a popup with the "zoomed" variant.
 
 <tabs>
 <tab title="PNG">

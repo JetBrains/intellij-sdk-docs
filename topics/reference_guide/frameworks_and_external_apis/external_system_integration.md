@@ -163,7 +163,7 @@ A particular external system settings UI contains the following items:
 
 It's recommended to extend from [`AbstractExternalProjectSettingsControl`](%gh-ic%/platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/settings/AbstractExternalProjectSettingsControl.java) for implementing project-level settings control as it already handles some of them.
 
-**Examples**:
+**Examples:**
 * [`GradleSystemSettingsControl`](%gh-ic%/plugins/gradle/src/org/jetbrains/plugins/gradle/service/settings/GradleSystemSettingsControl.java) handling the <control>General settings</control> in <ui-path>Settings | Build, Execution, Deployment | Build Tools | Gradle</ui-path>
 * [`GradleProjectSettingsControl`](%gh-ic%/plugins/gradle/src/org/jetbrains/plugins/gradle/service/settings/GradleProjectSettingsControl.java) handling the selected Gradle project settings in <ui-path>Settings | Build, Execution, Deployment | Build Tools | Gradle</ui-path>
 

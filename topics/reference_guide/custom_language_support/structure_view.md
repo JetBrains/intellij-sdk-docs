@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Structure View
 
@@ -26,7 +26,7 @@ The starting point for the structure view is the [`PsiStructureViewFactory`](%gh
 To reuse the IntelliJ Platform implementation of the `StructureView`, the plugin returns a [`TreeBasedStructureViewBuilder`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/structureView/TreeBasedStructureViewBuilder.java) from its [`PsiStructureViewFactory.getStructureViewBuilder()`](%gh-ic%/platform/editor-ui-api/src/com/intellij/lang/PsiStructureViewFactory.java) method.
 As the builder model, the plugin can specify a subclass of [`TextEditorBasedStructureViewModel`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/structureView/TextEditorBasedStructureViewModel.java), and by overriding methods of this subclass, it customizes the structure view for a specific language.
 
-**Example**:
+**Example:**
 [`StructureViewModel`](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/structureView/PropertiesFileStructureViewModel.java) for [Properties language plugin](%gh-ic%/plugins/properties)
 
 The main method to override is `getRoot()`, which returns the instance of a class implementing the [`StructureViewTreeElement`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/structureView/StructureViewTreeElement.java) interface.

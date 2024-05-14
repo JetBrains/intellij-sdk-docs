@@ -37,7 +37,7 @@ To lookup external name for a setting in the IDE, use [UI Inspector](internal_ui
 The <ui-path>File | Export | Files or Selection to HTML</ui-path> feature uses the same syntax highlighting mechanism as the editor.
 Thus, it will work automatically for custom languages that provide a syntax highlighter.
 
-**Examples**:
+**Examples:**
 
 - [`ColorSettingsPage`](%gh-ic%/plugins/properties/src/com/intellij/lang/properties/PropertiesColorsPage.java) for [Properties language plugin](%gh-ic%/plugins/properties)
 - [Custom Language Support Tutorial: Color Settings Page](syntax_highlighter_and_color_settings_page.md)

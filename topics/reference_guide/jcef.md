@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 #  Embedded Browser (JCEF)
 
@@ -133,16 +133,16 @@ To access the client associated with a browser, call `JBCefBrowser.getJBCefClien
 JCEF API provides various event handler interfaces that allows handling a wide set of events emitted by the browser.
 Example handlers:
 - [`CefLoadHandler`](%gh-jcef-master%/org/cef/handler/CefLoadHandler.java) - handles browser loading events.<br/>
-  **Example**: Implement `CefLoadHandler.onLoadEnd()` to [execute scripts](#executing-javascript) after document is loaded.
+  **Example:** Implement `CefLoadHandler.onLoadEnd()` to [execute scripts](#executing-javascript) after document is loaded.
 
 - [`CefDisplayHandler`](%gh-jcef-master%/org/cef/handler/CefDisplayHandler.java) - handles events related to browser display state.<br/>
-  **Example**: Implement `CefDisplayHandler.onAddressChange()` to load project files in the browser when a local file link is clicked, or opening an external browser if an external link is clicked.
+  **Example:** Implement `CefDisplayHandler.onAddressChange()` to load project files in the browser when a local file link is clicked, or opening an external browser if an external link is clicked.
 
 - [`CefContextMenuHandler`](%gh-jcef-master%/org/cef/handler/CefContextMenuHandler.java) - handles context menu events.<br/>
-  **Example**: Implement `CefContextMenuHandler.onBeforeContextMenu()` to change the items of the browser context menu.
+  **Example:** Implement `CefContextMenuHandler.onBeforeContextMenu()` to change the items of the browser context menu.
 
 - [`CefDownloadHandler`](%gh-jcef-master%/org/cef/handler/CefDownloadHandler.java) - file download events.<br/>
-  **Example**: Implement `CefDownloadHandler.onBeforeDownload()` to enable downloading files in the embedded browser.
+  **Example:** Implement `CefDownloadHandler.onBeforeDownload()` to enable downloading files in the embedded browser.
 
 See [org.cef.handler](%gh-jcef-master%/org/cef/handler) package for all available handlers.
 

@@ -1,6 +1,6 @@
-# Inlay Hints
-
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Inlay Hints
 
 <link-summary>Providing additional code information directly in the editor without changing the document content.</link-summary>
 
@@ -44,7 +44,7 @@ To provide inlay parameter hints, implement
 and register it in `com.intellij.codeInsight.parameterNameHints` extension point (EP).
 The API documentation of `InlayParameterHintsProvider` explains in detail the rationale behind all methods.
 
-**Examples**:
+**Examples:**
 - [`GroovyInlayParameterHintsProvider`](%gh-ic%/plugins/groovy/src/org/jetbrains/plugins/groovy/codeInsight/hint/GroovyInlayParameterHintsProvider.kt) - shows parameter hints in Groovy code
 - [`KotlinInlayParameterHintsProvider`](%gh-ic%/plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/codeInsight/hints/KotlinInlayParameterHintsProvider.kt) - shows parameter hints in Kotlin code
 
@@ -66,7 +66,7 @@ To provide declarative inlay hints implement declarative
 and register it in `com.intellij.codeInsight.declarativeInlayProvider` EP.
 See the API documentation for the details.
 
-**Examples**:
+**Examples:**
 - [`JavaImplicitTypeDeclarativeInlayHintsProvider`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/hints/JavaImplicitTypeDeclarativeInlayHintsProvider.kt) - shows inferred type for variables declared with the `var` keyword in Java code when the inferred type may not be clear
 - [`JavaMethodChainsDeclarativeInlayProvider`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/hints/JavaMethodChainsDeclarativeInlayProvider.kt) - shows method return types in call chains in Java code
 
@@ -91,7 +91,7 @@ There are two extension points for implementing a code vision provider:
 
 `CodeVisionProvider` API should be used for cases when presented information doesn't depend on the PSI.
 
-**Examples**:
+**Examples:**
 - [`JavaInheritorsCodeVisionProvider`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/daemon/impl/JavaInheritorsCodeVisionProvider.kt) - shows number of Java class or method inheritors. Clicking the inlay hint opens the list of inheritors. This provider is `DaemonBoundCodeVisionProvider`.
 - [`JavaReferencesCodeVisionProvider`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/daemon/impl/JavaReferencesCodeVisionProvider.kt) - shows number of usages of Java class or member. Clicking the inlay opens the list of usages or navigates to the usage if only one exists. This provider is `DaemonBoundCodeVisionProvider`.
 - [`VcsCodeVisionProvider`](%gh-ic%/platform/vcs-impl/src/com/intellij/codeInsight/hints/VcsCodeVisionProvider.kt) - shows the author of a given element, e.g., class or method, based on VCS information. This provider is `CodeVisionProvider`.
@@ -112,7 +112,7 @@ To provide inlay hints, implement
 and register it in `com.intellij.codeInsight.inlayProvider` EP.
 See the API documentation for the details.
 
-**Examples**:
+**Examples:**
 - [`GroovyLocalVariableTypeHintsInlayProvider`](%gh-ic%/plugins/groovy/src/org/jetbrains/plugins/groovy/codeInsight/hint/types/GroovyLocalVariableTypeHintsInlayProvider.kt) - shows local variable types in Groovy code
 - [`MarkdownTableInlayProvider`](%gh-ic%/plugins/markdown/core/src/org/intellij/plugins/markdown/editor/tables/ui/MarkdownTableInlayProvider.kt) - _decorates_ tables in Markdown files.
 - For a more complex example, see

@@ -90,7 +90,7 @@ The `intellij.plugins` property is no longer available.
 
 Define dependencies on plugins or bundled plugins in `dependencies {}` block instead:
 
-**Example**:
+**Example:**
 
 Setting up dependencies on comma-separated plugins listed in `platformPlugins` and `platformBundledPlugins` properties from <path>gradle.properties</path>.
 

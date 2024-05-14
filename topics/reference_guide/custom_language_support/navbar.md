@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Navigation Bar
 
@@ -52,4 +52,4 @@ You probably won't need to override other methods unless you want to write your 
 Note that the `getSuitableClasses()` method on the structure view model class that implements `com.intellij.ide.structureView.TextEditorBasedStructureViewModel` (see [](structure_view.md))
 must return all the element types you want to display in the navigation bar.
 
-**Example**: [Custom Language Support Tutorial: Structure Aware Navigation Bar](structure_aware_navbar.md)
+**Example:** [Custom Language Support Tutorial: Structure Aware Navigation Bar](structure_aware_navbar.md)

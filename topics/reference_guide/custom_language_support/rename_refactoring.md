@@ -1,6 +1,6 @@
-# Rename Refactoring
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# Rename Refactoring
 
 <link-summary>Rename refactoring workflow, validation and customization.</link-summary>
 
@@ -31,7 +31,7 @@ To disable renaming for specific elements, implement `com.intellij.openapi.util.
 If an implementation of this interface is not provided by the plugin, Java rules for validating identifiers are used.
 Implementations of `NamesValidator` are registered in the `com.intellij.lang.namesValidator` extension point.
 
-**Example**:
+**Example:**
 [`PropertiesNamesValidator`](%gh-ic%/plugins/properties/src/com/intellij/lang/properties/PropertiesNamesValidator.java) for [Properties language plugin](%gh-ic%/plugins/properties)
 
 Another way to check is
@@ -40,7 +40,7 @@ unlike `NamesValidator` it allows you to more flexibly check the entered name fo
 
 To determine which elements this validator will apply to, override the `getPattern()` method returning the pattern of the element to validate.
 
-**Example**:
+**Example:**
 [`YAMLAnchorRenameInputValidator`](%gh-ic%/plugins/yaml/src/org/jetbrains/yaml/resolve/YAMLAnchorRenameInputValidator.java) validating YAML language anchor names
 
 `RenameInputValidator` can be extended to
@@ -50,7 +50,7 @@ The `getErrorMessage()` method should return a custom error message in case of a
 
 Note that `getErrorMessage()` only works if all `RenameInputValidator` accept the new name in `isInputValid()` and the name is a valid identifier for the language of the element.
 
-**Example**:
+**Example:**
 [`YamlKeyValueRenameInputValidator`](%gh-ic%/plugins/yaml/src/org/jetbrains/yaml/refactoring/rename/YamlKeyValueRenameInputValidator.java) validating YAML language keys
 
 Implementations of `RenameInputValidator` or `RenameInputValidatorEx` are registered in the `com.intellij.renameInputValidator` extension point.
@@ -59,7 +59,7 @@ Implementations of `RenameInputValidator` or `RenameInputValidatorEx` are regist
 Further customization of the Rename refactoring processing is possible on multiple levels.
 Providing a custom implementation of the [`RenameHandler`](%gh-ic%/platform/refactoring/src/com/intellij/refactoring/rename/RenameHandler.java) interface allows you to entirely replace the UI and workflow of the rename refactoring, and also to support renaming something which is not a [`PsiElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) at all.
 
-**Example**:
+**Example:**
 [`RenameHandler`](%gh-ic%/plugins/properties/properties-resource-bundle-editor/src/com/intellij/lang/properties/refactoring/rename/ResourceBundleFromEditorRenameHandler.java) for renaming a resource bundle in the [Properties language plugin](%gh-ic%/plugins/properties)
 
 If you're okay with the standard UI but need to extend the default logic of renaming, you can provide an implementation of the [`RenamePsiElementProcessor`](%gh-ic%/platform/lang-impl/src/com/intellij/refactoring/rename/RenamePsiElementProcessor.java) interface.
@@ -71,5 +71,5 @@ This allows you to:
 * Customize how a search for code references or text references is performed
 * etc.
 
-**Example**:
+**Example:**
 [`RenamePsiElementProcessor`](%gh-ic%/plugins/properties/src/com/intellij/lang/properties/refactoring/rename/RenamePropertyProcessor.java) for renaming a property in [Properties plugin language](%gh-ic%/plugins/properties)

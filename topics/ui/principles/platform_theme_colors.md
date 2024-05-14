@@ -73,6 +73,19 @@ If a color is needed:
 **Implementation**
 Use `JBColor.namedColor` to set a color key and fallback color values:
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+val SELECTED_BACKGROUND_COLOR: Color =
+    JBColor.namedColor(
+        "CompletionPopup.selectionBackground",
+        JBColor(0xc5dffc, 0x113a5c)
+    )
+```
+</tab>
+<tab title="Java" group-key="java">
+
 ```java
 private static final Color SELECTED_BACKGROUND_COLOR =
     JBColor.namedColor(
@@ -80,3 +93,5 @@ private static final Color SELECTED_BACKGROUND_COLOR =
         new JBColor(0xc5dffc, 0x113a5c)
     );
 ```
+</tab>
+</tabs>

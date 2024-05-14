@@ -51,11 +51,22 @@ If a label is long, split it into two lines. Avoid labels that take more than tw
 ![](twoline_label.png){width=195}
 
 To implement this, use HTML formatting:
+<tabs group="languages">
+<tab title="Kotlin UI DSL" group-key="kotlin">
+
+```kotlin
+radioButton(
+    "<html>Show options before adding<br>to version control</html>")
+```
+</tab>
+<tab title="Java" group-key="java">
 
 ```java
-JRadioButton radioButton = new JRadioButton(
+new JRadioButton(
     "<html>Show options before adding<br>to version control</html>");
 ```
+</tab>
+</tabs>
 
 ### Writing guidelines
 

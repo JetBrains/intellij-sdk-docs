@@ -35,11 +35,24 @@ If a label is long, split it into two lines. Use HTML formatting for that.
 
 ![](label_twoline.png){width=331}
 
+<tabs group="languages">
+<tab title="Kotlin UI DSL" group-key="kotlin">
+
+```kotlin
+checkBox(
+    """<html>Insert selected suggestion by  pressing space, dot,<br/>
+    or other context-dependent keys</html>""")
+```
+</tab>
+<tab title="Java" group-key="java">
+
 ```java
-JCheckBox checkBox = new JCheckBox(
+new JCheckBox(
     "<html>Insert selected suggestion by  pressing space, dot,<br/>" +
     "or other context-dependent keys</html>");
 ```
+</tab>
+</tabs>
 
 Avoid labels that take more than two lines. See recommendations on writing concise labels below.
 

@@ -180,6 +180,20 @@ If the help text is longer than 5 lines, separate the text into paragraphs with 
 
 ![](12_tooltip_paragraph.png){width=300}
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+val LONG_TEXT = """A new overloading method will be created with
+    the new parameter added to this method definition.<p>
+    The method with the old signature will be kept and the call
+    to the new method will be added to it. The necessary value
+    or expression will be passed to the new method call."""
+HelpTooltip().setDescription(LONG_TEXT).installOn(component)
+```
+</tab>
+<tab title="Java" group-key="java">
+
 ```java
 String LONG_TEXT = "A new overloading method will be created with " +
     "the new parameter added to this method definition.<p>" +
@@ -188,6 +202,8 @@ String LONG_TEXT = "A new overloading method will be created with " +
     "or expression will be passed to the new method call.";
 new HelpTooltip().setDescription(LONG_TEXT).installOn(component);
 ```
+</tab>
+</tabs>
 
 ### Writing guidelines
 

@@ -32,6 +32,29 @@ Use a control with the browse icon for a file/folder path selected from the disk
 An input field with browse button: [`TextFieldWithBrowseButton`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/TextFieldWithBrowseButton.java)
 
 A combo box with browse button:
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+val browseExtension = ExtendableTextComponent.Extension.create(
+    AllIcons.General.OpenDisk,
+    AllIcons.General.OpenDiskHover,
+    "Open file",
+    { System.out.println("Browse file clicked") }
+)
+val extComboBox = ComboBox<String>(STRING_VALUES)
+extComboBox.setEditable(true)
+extComboBox.setEditor(object : BasicComboBoxEditor() {
+  override fun createEditorComponent(): JTextField {
+    val ecbEditor = ExtendableTextField()
+    ecbEditor.addExtension(browseExtension)
+    ecbEditor.setBorder(null)
+    return ecbEditor
+  }
+})
+```
+</tab>
+<tab title="Java" group-key="java">
 
 ```java
 ExtendableTextComponent.Extension browseExtension =
@@ -53,6 +76,8 @@ extComboBox.setEditor(new BasicComboBoxEditor() {
   }
 });
 ```
+</tab>
+</tabs>
 
 Do **not** place the button on the right of the control.
 

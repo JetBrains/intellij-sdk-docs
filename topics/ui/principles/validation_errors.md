@@ -108,11 +108,40 @@ Hide the error when the incorrect symbol is deleted.
 
 #### Implementation {id="implementation_1"}
 
+<tabs group="languages">
+<tab title="Kotlin UI DSL" group-key="kotlin">
+
+```kotlin
+val MESSAGE =
+    "The port number must be between 0 and 65535";
+textField()
+  .validationOnInput {
+    val portString = it.text
+    if (portString.isNotEmpty()) {
+      try {
+        val portValue = portString.toInt()
+        if (portValue < 0 || portValue > 65535) {
+          error(MESSAGE)
+        } else {
+          null
+        }
+      } catch (_: NumberFormatException) {
+        error(MESSAGE)
+      }
+    } else {
+      null
+    }
+  }
+```
+</tab>
+<tab title="Java" group-key="java">
+
 ```java
 // Fields initializers
 private JTextField myPort = new JTextField();
 private static final String MESSAGE =
-    "The port number should be between 0 and 65535";
+    "The port number must be between 0 and 65535";
+
 // Components initialization
 new ComponentValidator(parentDisposable).withValidator(() -> {
   String pt = myPort.getText();
@@ -139,7 +168,8 @@ myPort.getDocument().addDocumentListener(new DocumentAdapter() {
   }
 });
 ```
-
+</tab>
+</tabs>
 
 ### 2. Non-allowed values in dialogs
 
@@ -171,14 +201,29 @@ When the user changes the value, the tooltip disappears and error highlighting i
 When the focus is returned to the field with an error, use validation on input. Otherwise, it can be unclear for the user how to initiate validation.
 
 #### Implementation {id="implementation_2"}
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+[//]: # (TODO: wait for confirmation)
+
+```kotlin
+textField()
+  .validationOnApply { ... }
+```
+</tab>
+<tab title="Java" group-key="java">
+
 Add `andStartOnFocusLost()` call on [`ComponentValidator`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/ComponentValidator.java) before installing it on a component:
 
 ```java
 new ComponentValidator(parentDisposable)
     .withValidator(...)
     .andStartOnFocusLost()
-    .installOn(component);
+    .installOn(textField);
 ```
+</tab>
+</tabs>
 
 ### 3. Empty required fields in dialogs
 
@@ -216,11 +261,23 @@ By default, [`DialogWrapper`](%gh-ic%/platform/platform-api/src/com/intellij/ope
 all fields that participate in validation become valid.
 
 Explicitly enable <control>OK</control> button for each input field:
+<tabs group="languages">
+<tab title="Kotlin UI DSL" group-key="kotlin">
+
+```kotlin
+error("The host cannot be reached")
+    .withOkEnabled()
+```
+</tab>
+<tab title="Java" group-key="java">
 
 ```java
 new ValidationInfo("The host cannot be reached", myHostField)
     .withOkEnabled();
 ```
+</tab>
+</tabs>
+
 
 ### 4. Non-allowed or empty values in the main window
 
@@ -419,11 +476,22 @@ A warning can appear on input, focus loss, or on reopening a filled form. For ex
 The warning can be shown:
 
 In a tooltip for a specific field. Follow the rules for [the error tooltip](tooltip.md).
+<tabs group="languages">
+<tab title="Kotlin UI DSL" group-key="kotlin">
+
+```kotlin
+warning("Target name is not specified")
+```
+</tab>
+<tab title="Java" group-key="java">
 
 ```java
 new ValidationInfo("Target name is not specified", myNameField)
     .asWarning();
 ```
+</tab>
+</tabs>
+
 
 On the form under the controls. Show the message with the yellow warning icon.
 
@@ -471,6 +539,32 @@ Use a warning icon for warnings:
 
 #### Implementation
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+val cellEditor = JTextField()
+cellEditor.putClientProperty(DarculaUIUtil.COMPACT_PROPERTY, true)
+cellEditor.document.addDocumentListener(object : DocumentAdapter() {
+  override fun textChanged(e: DocumentEvent) {
+    val outline =
+      if (cellEditor.text.contains(".")) "error" else null
+    cellEditor.putClientProperty("JComponent.outline", outline)
+  }
+})
+val firstColumn = table.columnModel.getColumn(0)
+firstColumn.cellEditor = DefaultCellEditor(cellEditor)
+firstColumn.cellRenderer = object : DefaultTableCellRenderer() {
+  override fun getPreferredSize(): Dimension {
+    val size = super.preferredSize
+    val editorSize = cellEditor.preferredSize
+    size.height = max(size.height, editorSize.height)
+    return size
+  }
+}
+```
+</tab>
+<tab title="Java" group-key="java">
 
 ```java
 JTextField cellEditor = new JTextField();
@@ -479,8 +573,9 @@ cellEditor.putClientProperty(
 cellEditor.getDocument().addDocumentListener(new DocumentAdapter() {
     @Override
     protected void textChanged(@NotNull DocumentEvent e) {
-      Object op = cellEditor.getText().contains(".") ? "error": null;
-      cellEditor.putClientProperty("JComponent.outline", op);
+      Object outline = cellEditor.getText().contains(".") ?
+          "error" : null;
+      cellEditor.putClientProperty("JComponent.outline", outline);
     }
 });
 TableColumn firstColumn = table.getColumnModel().getColumn(0);
@@ -495,7 +590,8 @@ firstColumn.setCellRenderer(new DefaultTableCellRenderer() {
     }
 });
 ```
-
+</tab>
+</tabs>
 
 ### Trees and lists
 

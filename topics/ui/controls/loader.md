@@ -22,14 +22,29 @@ Follow the rules for [progress indicators](progress_indicators.md).
 ## How to use
 
 The loader form and sizes are the same in all themes. Use the default 16x16 loader in all cases.
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+JLabel(
+    "Loading...",
+    AnimatedIcon.Default(),
+    SwingConstants.LEFT
+)
+```
+</tab>
+<tab title="Java" group-key="java">
 
 ```java
-JLabel label = new JLabel(
+new JLabel(
     "Loading...",
     new AnimatedIcon.Default(),
     SwingConstants.LEFT
 );
 ```
+</tab>
+</tabs>
+
 
 
 A loader may have a label if the process is long and the loader is shown in an empty area. In this case, use a [progress text](progress_text.md) as the label:

@@ -90,6 +90,18 @@ If an action is needed for all items of a tree or table:
 Always add the arrow icon for an external link. The icon shows that the user will switch to a browser and lose the current context.
 
 ![](04_external_link.png){width=248}
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+val externalLink = ActionLink("External link") {
+  BrowserUtil.browse("https://www.jetbrains.com")
+}.apply {
+  setExternalLinkIcon()
+}
+```
+</tab>
+<tab title="Java" group-key="java">
 
 ```java
 ActionLink externalLink = new ActionLink(
@@ -98,6 +110,8 @@ ActionLink externalLink = new ActionLink(
 );
 externalLink.setExternalLinkIcon();
 ```
+</tab>
+</tabs>
 
 An exception is a help topic link in [empty states](empty_state.md).
 The help icon already hints that this is an external help resource, so the arrow icon is unnecessary.

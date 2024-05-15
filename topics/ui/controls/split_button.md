@@ -104,14 +104,18 @@ Place actions related to the main button’s action in the dropdown menu.
 
 Do **not** duplicate the main action in the dropdown menu, otherwise it is confusing how to trigger the main action — with the button or from the menu.
 
-### Reduce split button to simple action buttons
+[//]: # (### Reduce split button to simple action buttons)
 
-The Split button can be reduced to simple action buttons which are laid out automatically next to each other. This is controlled by the following option in settings:
-<ui-path>Settings | Appearance & Behavior | Appearance | Merge buttons in dialogs</ui-path>
+[//]: # ()
+[//]: # (The Split button can be reduced to simple action buttons which are laid out automatically next to each other. This is controlled by the following option in settings:)
 
-<p>For example, the <control>Commit</control> button reduced to its components (the option is disabled) looks like the following:</p>
+[//]: # (<ui-path>Settings | Appearance & Behavior | Appearance | Merge buttons in dialogs</ui-path>)
 
-![](reduced.png){width=500}
+[//]: # ()
+[//]: # (<p>For example, the <control>Commit</control> button reduced to its components &#40;the option is disabled&#41; looks like the following:</p>)
+
+[//]: # ()
+[//]: # (![]&#40;reduced.png&#41;{width=500})
 
 ## Keyboard navigation & shortcuts
 

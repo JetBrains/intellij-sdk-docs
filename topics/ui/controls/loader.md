@@ -18,7 +18,6 @@ A loader informs users about performing a lengthy operation.
 
 Follow the rules for [progress indicators](progress_indicators.md).
 
-
 ## How to use
 
 The loader form and sizes are the same in all themes. Use the default 16x16 loader in all cases.
@@ -32,6 +31,7 @@ JLabel(
     SwingConstants.LEFT
 )
 ```
+
 </tab>
 <tab title="Java" group-key="java">
 
@@ -42,6 +42,7 @@ new JLabel(
     SwingConstants.LEFT
 );
 ```
+
 </tab>
 </tabs>
 
@@ -52,7 +53,6 @@ A loader may have a label if the process is long and the loader is shown in an e
 ![](loader_with_progress_text.png){width=597}
 
 Remove the loader as soon as the process completes.
-
 
 ## Placement
 

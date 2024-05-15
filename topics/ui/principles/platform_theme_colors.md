@@ -15,12 +15,10 @@ Use the colors consistently within the default themes. To do so, follow these gu
 * Editor scheme TBD
 * Chart TBD
 
-
 ## UI components
 
 Colors for UI components are specified with **color keys**.
 A color key is a name of a color property in a particular component, e.g. `ComboBox.background`, or a generic color property for several components, e.g. `Component.borderColor`.
-
 
 ![](02_keys_naming.png){width=735}
 
@@ -55,13 +53,16 @@ See the color values for the currently selected theme in the <control>LaF Defaul
 {style="note"}
 
 If a color is needed:
+
 1. Choose a color value for all default themes:
+
 * Try reusing any of the existing colors first. Use the LaF Defaults dialog to see the existing colors.
 * If none of them fit, choose two new color values that are consistent with IntelliJ Light and Darcula palettes in hue and contrast.
+
 2. Choose a color key if a component does not have it:
+
 * Use an existing color key if it fits semantically. Otherwise, a UI component might get an unexpected color in a custom color theme.
 * Create a new key if none of the existing ones fit semantically. Follow the naming scheme.
-
 
 **Example**
 
@@ -83,6 +84,7 @@ val SELECTED_BACKGROUND_COLOR: Color =
         JBColor(0xc5dffc, 0x113a5c)
     )
 ```
+
 </tab>
 <tab title="Java" group-key="java">
 
@@ -93,5 +95,6 @@ private static final Color SELECTED_BACKGROUND_COLOR =
         new JBColor(0xc5dffc, 0x113a5c)
     );
 ```
+
 </tab>
 </tabs>

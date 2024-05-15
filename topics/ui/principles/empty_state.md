@@ -11,16 +11,16 @@
 </tldr>
 
 Provide instructions in an empty UI area on how to fill it with data. Empty UI areas described here are:
+
 * [Tool window, list, tree or table](#tool-windows-lists-trees-and-tables)
 * [Details area in a master-detail layout](#master-detail-layout)
 * Empty search results — TBD
 
-
 ## Tool windows, lists, trees and tables
+
 Instructional text for these UI areas consists of three parts:
 
 ![](database-tw-callouts.png){width=626}
-
 
 ### 1. Reason why empty
 
@@ -44,7 +44,6 @@ Make the reason descriptive:
 ![](sql-dialect-after.png){width=456 style=block}
 *The word "individual" is used in contrast with the project SQL dialect above the table. The verb specified is used instead of added because, in the table, SQL dialects are not added but selected from a drop-down list in the SQL Dialect column.*
 
-
 ### 2. Actions to fill the area
 
 Required part. An action makes it easier to understand what to start with, instead of searching for the appropriate icon on the toolbar. It can also educate about the shortcut.
@@ -55,7 +54,6 @@ Use one or two actions. Three or more actions would make it harder to choose wha
 
 If an action opens a menu, open it at the same position where it would be opened with the corresponding toolbar button. This would explain which toolbar icon opens the menu.
 
-
 If an action cannot be tied to a link, explain what to do.
 
 ![](todo-tw.png){width=574}
@@ -65,7 +63,6 @@ Hide the area's toolbar if it does not have the same action as in the empty stat
 <format color="Red" style="bold">Incorrect</format>
 
 ![](todo-tw-toolbar-incorrect.png){width=574}
-
 
 ### 3. Help topic
 
@@ -85,7 +82,6 @@ Hide the area's toolbar if it does not have the same action as in the empty stat
 ![](todo-filters-correct.png){width=456 style=block}
 *Place an inline help text under the table.*
 
-
 ### Writing guidelines
 
 See [Punctuation](punctuation.md) and [Capitalization](capitalization.md).
@@ -96,8 +92,8 @@ In actions, avoid words that describe physical actions like _press_ or _click_ �
 
 Avoid saying _add new_. Just use _add_ because all that is added is new in the context of an empty UI area.
 
-
 ## Master-detail layout
+
 Provide only the action part for the detail area in a master-detail layout. The detail area is filled when an item is selected in the master part. This behavior is obvious and does not need to be explained.
 
 The default pattern for the action is "_Select_ [entity] _to configure_".
@@ -109,8 +105,8 @@ The master area is usually a list or a tree, its empty state instructions should
 ![](run-configs.png){width=720 style=block}
 *The "Add Java application configuration" link is a shortcut to creating a new configuration instead of clicking the + button in the toolbar.*
 
-
 ## Sizes and placement
+
 The minimum text width is 40 characters. If an area is too narrow to show the minimum text width, show text in area fields, and if no fields are left, under the area borders.
 
 Use non-breaking spaces in an action name and shortcut, so it is not split into two lines.
@@ -138,7 +134,6 @@ The text should wrap when a UI area’s width changes:
 ![](database-tw-horizontal.png){width=579}
 
 ![](database-tw.png){width=300}
-
 
 ## Style
 

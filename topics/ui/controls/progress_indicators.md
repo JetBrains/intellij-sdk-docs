@@ -10,7 +10,6 @@ Progress indicators inform users about an ongoing operation. There are three typ
 * [Progress text](progress_text.md)
 * [Progress bar](progress_bar.md)
 
-
 ## Which indicator to use
 
 If an operation lasts for less than a second in most cases, do not show any progress indicator. Progress indicators for a short operation are distracting.
@@ -78,7 +77,6 @@ Place the loader after breadcrumbs or a dialog label to show that the page is be
 
 ![](breadcrumb_loader.png){width=274}
 
-
 ### Settings dialog
 
 If some settings or configurations take a significant time to load, it’s preferable to reserve space for a progress bar.
@@ -86,8 +84,8 @@ For example, show a progress bar while installing a plugin:
 
 ![](settings_loader.png){width=251}
 
-
 ### Empty state
+
 If the state is empty, show progress text. For example, in search dialogs, and the details panel in settings or tool windows:
 
 ![](empty_state_text.png){width=708}
@@ -102,7 +100,6 @@ like the current step, to indicate that the process is being performed and is no
 If it’s not possible to provide progress details, show the loader to indicate that a long process is not frozen:
 
 ![](empty_state_loader.png){width=576}
-
 
 ### Main window
 

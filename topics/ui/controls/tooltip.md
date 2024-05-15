@@ -191,6 +191,7 @@ val LONG_TEXT = """A new overloading method will be created with
     or expression will be passed to the new method call."""
 HelpTooltip().setDescription(LONG_TEXT).installOn(component)
 ```
+
 </tab>
 <tab title="Java" group-key="java">
 
@@ -202,6 +203,7 @@ String LONG_TEXT = "A new overloading method will be created with " +
     "or expression will be passed to the new method call.";
 new HelpTooltip().setDescription(LONG_TEXT).installOn(component);
 ```
+
 </tab>
 </tabs>
 

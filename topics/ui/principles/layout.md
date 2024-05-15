@@ -7,23 +7,19 @@
 Arrange UI controls in dialogs according to the rules below to help people locate the necessary settings faster and understand how they are related. <br/>
 
 Independent controls:
+
 - [Labeled input controls](#labeled-input-controls): fields, combo boxes, text areas, etc.
 - [Checkboxes and radio buttons](#checkboxes-and-radio-buttons)
 - [Buttons and links](#buttons-and-links)
 - [Lists, trees, tables](#lists-trees-and-tables)
 
-
 [Dependent controls ](#dependent-controls)— controls that depend on a parent control. <br/><br/>
-
 
 Organize controls into easily readable groups with [vertical and horizontal insets](layout.md#organize-with-insets).
 
 [//]: # (TODO: See [Dialog window]&#40;dialog_window.md&#41; for buttons and other controls at the bottom of a dialog.)
 
-
-
 ## Independent controls
-
 
 ### Labeled input controls
 
@@ -47,7 +43,6 @@ If an input box is long, and the horizontal space is limited, place the label ab
 
 ![](1_04_input_top_label.png){width=412}
 
-
 #### Separated by other controls
 
 If there are two input controls with labels of similar length that are separated from each other by a single control, align their input boxes on the left side.
@@ -62,9 +57,7 @@ If input groups are separated by a group of other UI controls, align only the bo
 
 ![](1_07_separated_groups.png){width=616}
 
-
 #### Labels and right borders
-
 
 Always left-align labels.
 
@@ -72,13 +65,11 @@ Always left-align labels.
 >
 {style="note"}
 
-
 ![](1_08_label_alignment.png){width=464}
 
 Align the right borders of input boxes that have a similar length. For alignment, use [built-in icons](built_in_button.md). Do **not** use buttons.
 
 ![](1_09_built_in_button.png){width=302}
-
 
 ### Checkboxes and radio buttons
 
@@ -117,7 +108,6 @@ Do **not** arrange radio buttons from one group in several columns. Splitting a 
 
 ![](2_06_radio_columns_incorrect.png){width=417}
 
-
 ### Buttons and links
 
 Align an independent button or link to the left with other controls.
@@ -134,7 +124,6 @@ Do **not** arrange buttons or links in several columns. Such a layout takes more
 
 ![](3_03_button_columns.png){width=361}
 
-
 ### Lists, trees and tables
 
 Choose a control width such that most of the common values are visible. Take the whole width of the dialog if necessary.
@@ -148,11 +137,9 @@ They would look like dependent controls in the master-detail layout.
 
 ![](4_02_table_fixed_width.png){width=638}
 
-
 If there are several lists, trees, or tables in a dialog, make them of the same width.
 
 ![](4_03_aligned_lists.png){width=452}
-
 
 ## Dependent controls
 
@@ -200,7 +187,6 @@ If controls do **not** depend on each other, left-align them all. Otherwise, the
 
 ![](5_09_incorrect_alignment.png){width=517 style=block}
 *The spinners do not depend on the top checkbox.*
-
 
 ## Organize with insets
 

@@ -62,7 +62,7 @@ Use the built-in text styles from the table below whenever possible.
   </tr>
 
   <tr>
-    <td >H2 <br/><code>JBFont.h2()</code></td>
+    <td>H2 <br/><code>JBFont.h2()</code></td>
     <td> Default + 5 </td>
     <td> </td>
   </tr>
@@ -76,7 +76,7 @@ Use the built-in text styles from the table below whenever possible.
   </tr>
 
   <tr>
-    <td > H3 <br/><code>JBFont.h3()</code></td>
+    <td> H3 <br/><code>JBFont.h3()</code></td>
     <td> Default + 3 </td>
     <td>
         Accent body text
@@ -120,7 +120,7 @@ Use the built-in text styles from the table below whenever possible.
   </tr>
 
   <tr>
-    <td >Medium <br/> <code>JBFont.medium()</code></td>
+    <td>Medium <br/> <code>JBFont.medium()</code></td>
     <td>
         macOS: Default - 1 <br/>
         Win: Default <br/>

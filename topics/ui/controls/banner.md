@@ -32,7 +32,6 @@ For all other cases, choose another notification type.
 
 ### Types of banners
 
-
 #### Information
 
 Use when actions can improve the user’s workflow, but are considered optional and can be safely ignored.
@@ -57,26 +56,27 @@ Use to suggest actions that are required to unblock the user’s workflow.
 ## How to use
 
 ![](banner_structure.png){width=504}
+
 ### Message
 
-*   The message should be [short and descriptive](writing_short.md) (two sentences at most) and follow the [Punctuation](punctuation.md) guide.
-*   Use sentence case capitalization.
+* The message should be [short and descriptive](writing_short.md) (two sentences at most) and follow the [Punctuation](punctuation.md) guide.
+* Use sentence case capitalization.
 
 ### Actions
 
-*   The action name should be [short and descriptive](writing_short.md), preferably not longer than two–three words.
-*   Use sentence case capitalization.
-*   Limit the number of actions to two to make the call to action clear in the specific context.
-*   Use the built-in 'Hide' action instead of creating a separate one.
+* The action name should be [short and descriptive](writing_short.md), preferably not longer than two–three words.
+* Use sentence case capitalization.
+* Limit the number of actions to two to make the call to action clear in the specific context.
+* Use the built-in 'Hide' action instead of creating a separate one.
 
 ### Icon (optional)
 
-*   16x16 icons can be used to complement the message, e.g., a gift icon to advertise functionality.
+* 16x16 icons can be used to complement the message, e.g., a gift icon to advertise functionality.
 
 ### Placement
 
-*   Place the banner at the top of the related UI component.
-*   It can float or be adjacent to the content, depending on the amount of the available space and whether or not the content’s vertical shifting needs to be minimized.
+* Place the banner at the top of the related UI component.
+* It can float or be adjacent to the content, depending on the amount of the available space and whether or not the content’s vertical shifting needs to be minimized.
 
 ![](float-example.png){width=509}
 

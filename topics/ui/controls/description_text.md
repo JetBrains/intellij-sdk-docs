@@ -8,7 +8,6 @@ Description text provides explanatory information about a set of settings or a s
 
 ![](01_description_text_example.png){width=715}
 
-
 ## When to Use
 
 Use description text to:
@@ -20,7 +19,6 @@ Use description text to:
 * Describe a group of settings:
 
 ![](03_use_in_settings.png){width=1012}
-
 
 ## How to Use
 
@@ -56,7 +54,6 @@ If the text does not fit, add a scrollbar:
 
 ![](08_scroll.png){width=333}
 
-
 ### Appearance
 
 Do not add borders around the description text. Use the panel color for the background.
@@ -68,7 +65,6 @@ Do not add borders around the description text. Use the panel color for the back
 For [links](link.md), use the default link color: `Link.activeForeground`. Underline links on hover:
 
 ![](10_link.png){width=283}
-
 
 ### Insets
 

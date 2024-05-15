@@ -38,13 +38,11 @@ Use a regular or [drop-down link](#drop-down-link) for secondary actions in pack
 
 *The "Modify options" drop-down link fits into the top right corner of a busy layout.*
 
-
 Do <control>not</control> use links for primary actions or when a UI is not constrained.
 Use a [button](button.topic) or a [drop down list](drop_down.md) instead.
 These controls can be selected from the keyboard and are bigger and easier to click.
 
 ![](07_android_sdk.png){width=451}
-
 
 ## How to use
 
@@ -62,8 +60,8 @@ When possible, replace "Learn more" and other generic phrases with more informat
 
 ![](08_writing_2.png){width=316}
 
-
 ### Link as a part of text
+
 A link can be a part of a checkbox or radio button label or of any stand-alone text, like the text in an [empty state](empty_state.md) or in [context help](context_help.md).
 
 ![](09_part_of_text_1.png){width=403}
@@ -72,21 +70,22 @@ Make a link the minimum phrase that is enough to understand what will happen wit
 
 ![](09_part_of_text_2.png){width=489}
 
-
 ### Link in a tree or table
+
 Use a link as a secondary action for some items of a tree or table.
 
 ![](10_tree.png){width=387}
 
 If an action is needed for all items of a tree or table:
+
 * Add an [icon button](icon_button.md) to a toolbar.
 * For a list of choices, add a separate table column of drop-down cells (see [Table](table.md#editing-values)).
 * If a link in every tree or table line has meaningful formatting, leave it:
-![](11_table.png){width=342}
-*Links in the "Push Commits" window have the format that helps understand the relation between them: "[remote repository] : [branch]". Moving these links elsewhere would break this meaning.*
-
+  ![](11_table.png){width=342}
+  *Links in the "Push Commits" window have the format that helps understand the relation between them: "[remote repository] : [branch]". Moving these links elsewhere would break this meaning.*
 
 ### External link icon
+
 Always add the arrow icon for an external link. The icon shows that the user will switch to a browser and lose the current context.
 
 ![](04_external_link.png){width=248}
@@ -100,6 +99,7 @@ val externalLink = ActionLink("External link") {
   setExternalLinkIcon()
 }
 ```
+
 </tab>
 <tab title="Java" group-key="java">
 
@@ -110,6 +110,7 @@ ActionLink externalLink = new ActionLink(
 );
 externalLink.setExternalLinkIcon();
 ```
+
 </tab>
 </tabs>
 
@@ -118,7 +119,6 @@ The help icon already hints that this is an external help resource, so the arrow
 
 ![](12_external_link_no_icon.png){width=164}
 
-
 ### Drop-down link
 
 Drop-down links show a context menu or a popup.
@@ -126,11 +126,11 @@ Use [`DropDownLink`](%gh-ic%/platform/platform-api/src/com/intellij/ui/component
 
 ![](13_drop_down_links.png){width=445}
 
-
 ## Placement
+
 Lay out button-links as buttons and dropdown-links as combo boxes. See [Layout](layout.md).
 
-
 ## Built-in behavior
+
 A focused link is activated from the keyboard with <shortcut>Space</shortcut>.
 

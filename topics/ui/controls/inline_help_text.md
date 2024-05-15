@@ -57,6 +57,7 @@ Place the link at the end of the text where possible so that it does not disrupt
 *Local link*
 
 Text style formatting:
+
 * Avoid text highlighting. Usually, the help text is short and no bold or italics are needed.
 
   ![](inline_text_no_styling.png){width=364}
@@ -77,7 +78,6 @@ Do not repeat the setting name in the help text.
 
 ![](06_inline_text_dont_repeat_setting.png){width=481}
 
-
 ## Placement
 
 ### Labeled input, button, checkbox, or radio button
@@ -85,6 +85,7 @@ Do not repeat the setting name in the help text.
 Labeled inputs are fields, combo boxes, or text areas.
 
 Place the help text to the right of a labeled input, checkbox, or radio button if all the following applies:
+
 * The space to the right is empty.
 * The help text has 1–5 words, not counting articles and prepositions.
 * The control label has 1–5 words.
@@ -139,7 +140,6 @@ panel {
 If there is no space under the UI control, use the [help tooltip](tooltip.md#question-mark-icon-for-help-tooltips) with the question mark icon for labeled inputs, checkboxes, and radio buttons.
 For buttons, use the help tooltip without the icon.
 
-
 ### List, tree or table
 
 If the help text applies to a whole list, tree, or table, place it below the control.
@@ -165,8 +165,10 @@ panel {
 ```
 
 If it applies to a single list, tree or table item:
+
 * If the help text has 1–10 words, place it to the right of the item.
 *
+
 ![](12_tree_inline_help_text.png){width=422}
 
 * If the text is longer than 10 words:
@@ -178,7 +180,6 @@ If it applies to a single list, tree or table item:
 If the case with the master-detail layout above does not apply, use the [help tooltip](tooltip.md#question-mark-icon-for-help-tooltips) with the question mark icon.
 
 ![](05_question_icon_tree.png){width=390}
-
 
 ### Group of controls
 

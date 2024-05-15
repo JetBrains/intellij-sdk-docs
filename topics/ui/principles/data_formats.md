@@ -41,12 +41,12 @@
     <td>13%</td>
     <td></td>
 </tr>
-<tr >
+<tr>
     <td>Ratios</td>
     <td>3 of 10</td>
     <td></td>
 </tr>
-<tr >
+<tr>
     <td>Ratios short</td>
     <td>3/10</td>
     <td>Space is limited, e.g. in table or lists</td>
@@ -57,7 +57,6 @@
     <td></td>
   </tr>
 </table>
-
 
 ## Date and time
 
@@ -194,7 +193,6 @@ Use decimal numeral system.
 </table>
 
 ![](data_formats_tree.png){width=511}
-
 
 ## Units
 

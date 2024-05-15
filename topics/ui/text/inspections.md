@@ -93,7 +93,6 @@ Remove unnecessary words:
 
 For text formatting, see [Description text](description_text.md).
 
-
 ### Editor messages
 
 Describe the problem in the highlighted code in the current context.
@@ -120,6 +119,7 @@ Use single quotes for the referenced piece of code.
 ### Capitalization
 
 Use [sentence case](capitalization.md#sentence) for everything:
+
 * Inspection names and descriptions
 * Names of inspection groups and subgroups in settings
 * Inspection texts in editor tooltips and quick-fixes

@@ -8,7 +8,6 @@ A built-in button is an icon placed inside an input control.
 
 ![](input_browse.png){width=250}
 
-
 ## How to use
 
 Place the built-in button inside the input control. Do **not** place the built-in button on the right of a control:
@@ -20,10 +19,10 @@ its `addExtension()` method.
 
 The shortcut for a built-in button is <shortcut>Shift+Enter</shortcut>.
 
-
 ## Types
 
 ### Browse
+
 A browse button opens a dialog with the disk, a tree view or a table of values.
 Use a control with the browse icon for a file/folder path selected from the disk.
 
@@ -53,6 +52,7 @@ extComboBox.setEditor(object : BasicComboBoxEditor() {
   }
 })
 ```
+
 </tab>
 <tab title="Java" group-key="java">
 
@@ -76,6 +76,7 @@ extComboBox.setEditor(new BasicComboBoxEditor() {
   }
 });
 ```
+
 </tab>
 </tabs>
 
@@ -84,6 +85,7 @@ Do **not** place the button on the right of the control.
 ![](browse_buttons.png){width=250}
 
 ### Expand field
+
 If the input text can be long and place is constrained, use a built-in button to expand the control ([`ExtendableTextField`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/fields/ExtendableTextField.java)):
 
 ![](expandable_1.png){width=332}
@@ -94,8 +96,8 @@ Do **not** use the Show Viewer button instead.
 
 ![](input_expand.png){width=357}
 
-
 ### List values
+
 Use a control with the table icon to select from the list of classes, methods or environment variables:
 
 ![](input_table.png){width=250}
@@ -104,8 +106,8 @@ Use a combo box instead of the Variables button. This icon works as a combo box.
 
 ![](variables_combobox.png){width=514}
 
-
 ### Add value
+
 The Plus button works the same way as the Browse button.
 The only difference is that the selected value is added, instead of overwriting the existing one.
 Place the plus icon inside the control.

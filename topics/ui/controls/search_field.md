@@ -26,6 +26,7 @@ Use the search field when specific objects are difficult to find at a glance, fo
 * Objects aren't in a single location, for example controls are located on different setting pages.
 
 ## How to use
+
 ### Label and Placeholder
 
 Do **not** add a label to the search field. The magnifying glass icon is self-explanatory.
@@ -42,20 +43,18 @@ Mark the replace field with a label or a placeholder when shown together with th
 
 ![](structural-replace.png){width=865}
 
-
 Provide hints and scope as placeholder text.
 For example, the placeholder for plugins' search depends on the settings page tab to make it clear that search depends on the tab:
 
 ![](placeholder.png){width=581}
 
-
 ### Icons
+
 #### Search Options
 
 Use icon buttons inside the search field to save space and not to overload the UI and to be able to use them in already packed UI such as the Speed Search popup in trees or lists:
 
 ![](options.png){width=400}
-
 
 Available option icons:
 
@@ -192,10 +191,11 @@ The keyboard shortcut for the History action is <shortcut>Alt + Down</shortcut> 
 
 Add a search string to history:
 
-*   On <shortcut>Enter</shortcut> for searches that are executed.
-*   When the search field loses focus for searches that are executed on any keystroke.
+* On <shortcut>Enter</shortcut> for searches that are executed.
+* When the search field loses focus for searches that are executed on any keystroke.
 
 ## Sizes and placement
+
 ### Placement
 
 Put the search field on top of the on-screen content that is being searched, and align them vertically.

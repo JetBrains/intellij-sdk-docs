@@ -12,7 +12,6 @@
 
 A combo box combines a [drop-down list](drop_down.md) and an [input field](input_field.md), allowing the user to select a value from the list or enter a custom value.
 
-
 ![](combo_box_example.png){width=328}
 
 Use [`ComboBox`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/ComboBox.java) instead of `javax.swing.JComboBox`.
@@ -28,16 +27,15 @@ Use a combo box if:
 
 * The user needs to select a value or enter a custom value.
 
-    ![](combo_box_font_size.png){width=165}
+  ![](combo_box_font_size.png){width=165}
 
 * The possible choices are objects or states.
 
 
 * The user may need to return to previous values. For example, save previously entered paths, so the user can quickly
-select them later:
+  select them later:
 
-    ![](maven.png){width=413}
-
+  ![](maven.png){width=413}
 
 ### When not to use
 
@@ -51,11 +49,10 @@ If the list is big, and the user knows what value they need and won’t review t
 
 ![](input_field_completion.png){width=509}
 
-
 ## How to use
 
 For the [label](drop_down.md#label) and the [default value](drop_down.md#default-value) apply the same rules as for the
- [drop-down list](drop_down.md).
+[drop-down list](drop_down.md).
 
 If there are no values in the list initially, replace the combo box with an input field.
 This way, users won't waste their time clicking the empty combo box to find out that there are no options available.
@@ -65,7 +62,6 @@ This way, users won't waste their time clicking the empty combo box to find out 
 | ![](combo_box_empty.png){width="221"}               | ![](replace_with_iput_field.png){width="216"}       |
 
 Replace the input field with a combo box after a value has been entered and confirmed.
-
 
 ### Menu
 
@@ -81,7 +77,6 @@ On mouse hover, move the selection to an item the cursor is pointing to and upda
 
 The menu remains opened until the user clicks the item in the list, presses <shortcut>Enter</shortcut> or <shortcut>Esc</shortcut>, clicks outside the menu,
 or switches to another app.
-
 
 #### Menu items
 
@@ -101,7 +96,6 @@ If the user enters an invalid value, highlight the combo box with red and show a
 more details, see [Validation errors](validation_errors.md).
 
 ![](validation.png){width=235}
-
 
 ## Sizes and placement
 

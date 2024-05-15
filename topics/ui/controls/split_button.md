@@ -62,7 +62,6 @@ Do **not** use the Split Button in other cases, use simple [Buttons](button.topi
   </tr>
 </table>
 
-
 ### Control button
 
 <table style="none">
@@ -95,7 +94,6 @@ Do **not** use the Split Button in other cases, use simple [Buttons](button.topi
   </tr>
 </table>
 
-
 ### Dropdown menu
 
 Place actions related to the main button’s action in the dropdown menu.
@@ -107,14 +105,17 @@ Do **not** duplicate the main action in the dropdown menu, otherwise it is confu
 [//]: # (### Reduce split button to simple action buttons)
 
 [//]: # ()
+
 [//]: # (The Split button can be reduced to simple action buttons which are laid out automatically next to each other. This is controlled by the following option in settings:)
 
 [//]: # (<ui-path>Settings | Appearance & Behavior | Appearance | Merge buttons in dialogs</ui-path>)
 
 [//]: # ()
+
 [//]: # (<p>For example, the <control>Commit</control> button reduced to its components &#40;the option is disabled&#41; looks like the following:</p>)
 
 [//]: # ()
+
 [//]: # (![]&#40;reduced.png&#41;{width=500})
 
 ## Keyboard navigation & shortcuts
@@ -146,7 +147,6 @@ Do **not** show the dropdown menu when the button gains focus.
   </tr>
 </table>
 
-
 ### Focus in the drop-down menu
 
 <table style="none">
@@ -171,6 +171,7 @@ Do **not** show the dropdown menu when the button gains focus.
 </table>
 
 ## Sizes and placement
+
 Follow the rules for the [simple button](button.topic#sizes-and-placement).
 
 ### Button
@@ -190,7 +191,6 @@ Follow the rules for menus with regard to sizes, colors, fonts and spacing.
 Menu item height and spacing between the menu and the button:
 
 ![](button-and-dropdown-sizes.png){width=232}
-
 
 ## Style
 

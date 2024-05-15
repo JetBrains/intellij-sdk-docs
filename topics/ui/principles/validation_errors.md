@@ -36,7 +36,6 @@ Write instructions and examples on how to fill a form using [context help](conte
 
 If it’s not possible to limit input, try to show an error as soon as possible so that the user can quickly return and fix it.
 
-
 ## Validation types and usage
 
 <table style="both">
@@ -89,7 +88,6 @@ If it’s not possible to limit input, try to show an error as soon as possible 
 </tr>
 </table>
 
-
 ### 1. Non-allowed characters or too big values
 
 If a non-allowed character is entered, or the maximum input size or value is exceeded, validate it immediately on input.
@@ -133,6 +131,7 @@ textField()
     }
   }
 ```
+
 </tab>
 <tab title="Java" group-key="java">
 
@@ -168,6 +167,7 @@ myPort.getDocument().addDocumentListener(new DocumentAdapter() {
   }
 });
 ```
+
 </tab>
 </tabs>
 
@@ -180,7 +180,6 @@ If a non-allowed value is entered, validate it on focus loss or on sending the f
 Do **not** validate non-allowed values on input, it will interrupt the user.
 
 Do **not** validate empty fields on focus loss. Users should be able to fill the form in a random order, so do not interrupt them.
-
 
 #### How it works {id="how-it-works_2"}
 
@@ -211,6 +210,7 @@ When the focus is returned to the field with an error, use validation on input. 
 textField()
   .validationOnApply { ... }
 ```
+
 </tab>
 <tab title="Java" group-key="java">
 
@@ -222,12 +222,14 @@ new ComponentValidator(parentDisposable)
     .andStartOnFocusLost()
     .installOn(textField);
 ```
+
 </tab>
 </tabs>
 
 ### 3. Empty required fields in dialogs
 
 #### Simple form
+
 If a form is simple, move the focus to the first required field and disable the confirmation button until all required fields have been filled. It is clear from the form behavior that input is required, showing validation messages is redundant.
 
 ![](simple_dialog.png){width=373}
@@ -268,6 +270,7 @@ Explicitly enable <control>OK</control> button for each input field:
 error("The host cannot be reached")
     .withOkEnabled()
 ```
+
 </tab>
 <tab title="Java" group-key="java">
 
@@ -275,9 +278,9 @@ error("The host cannot be reached")
 new ValidationInfo("The host cannot be reached", myHostField)
     .withOkEnabled();
 ```
+
 </tab>
 </tabs>
-
 
 ### 4. Non-allowed or empty values in the main window
 
@@ -292,8 +295,6 @@ On Enter, the field is highlighted with red and the error tooltip appears.
 If validated on focus loss, the field is highlighted with light-red. The focus is not returned to the field automatically.
 
 Hide the field highlighting and the tooltip when the user fixes the invalid value.
-
-
 
 ### 5. Remote connection
 
@@ -324,7 +325,6 @@ For example, in a complex Resource patterns field
 
 ![](comlex_field.png){width=694}
 
-
 show the following dialog on pressing the confirmation button:
 
 ![](confirmation_dialog.png){width=409}
@@ -332,7 +332,6 @@ show the following dialog on pressing the confirmation button:
 It should be possible to close the Settings dialog and save the entered data if the user wants to fix the values later or needs additional data outside of the modal Settings dialog.
 
 If an invalid field is not empty, highlight it on reopening the Settings dialog or report the error when the entered data is used.
-
 
 ## Tooltip
 
@@ -344,11 +343,9 @@ If the field with an error gets focus:
 
 ![](example_tooltip.png){width=235}
 
-
 If the field loses focus, hide the tooltip and highlight the field with light-red:
 
 ![](incorrect_symbol_non_focused.png){width=206}
-
 
 On hover over the field or the element with an error:
 
@@ -358,8 +355,6 @@ On hover over the field or the element with an error:
 
 Show the tooltip above the field and move it 40px right, so that the controls above it are not overlapped.
 If there is important info above the field, the tooltip can be shown on the right.
-
-
 
 ## Error message text
 
@@ -461,7 +456,6 @@ Use encouraging tone:
 </tr>
 </table>
 
-
 ## Warning
 
 ![](validation_warning.png){width=336}
@@ -472,7 +466,6 @@ A warning can appear on input, focus loss, or on reopening a filled form. For ex
 
 ![](warning_dialog.png){width=580}
 
-
 The warning can be shown:
 
 In a tooltip for a specific field. Follow the rules for [the error tooltip](tooltip.md).
@@ -482,6 +475,7 @@ In a tooltip for a specific field. Follow the rules for [the error tooltip](tool
 ```kotlin
 warning("Target name is not specified")
 ```
+
 </tab>
 <tab title="Java" group-key="java">
 
@@ -489,6 +483,7 @@ warning("Target name is not specified")
 new ValidationInfo("Target name is not specified", myNameField)
     .asWarning();
 ```
+
 </tab>
 </tabs>
 
@@ -497,19 +492,16 @@ On the form under the controls. Show the message with the yellow warning icon.
 
 ![](warning_inline.png){width=303}
 
- On the "Problems" page in complex multipage dialogs. Show warnings and fix options:
+On the "Problems" page in complex multipage dialogs. Show warnings and fix options:
 
 ![](problems.png){width=418 style=block}
 *Problems page in the Project Structure dialog.*
-
 
 Mark all navigation elements for areas that contain warnings with yellow icons.
 
 Update the problem counter when a problem is detected. When all problems have been fixed, do not show the "Problems" tab.
 
 On a particular page, highlight the element that contains a warning in yellow or add a warning icon next to it.
-
-
 
 ## UI elements with validation errors
 
@@ -563,6 +555,7 @@ firstColumn.cellRenderer = object : DefaultTableCellRenderer() {
   }
 }
 ```
+
 </tab>
 <tab title="Java" group-key="java">
 
@@ -590,6 +583,7 @@ firstColumn.setCellRenderer(new DefaultTableCellRenderer() {
     }
 });
 ```
+
 </tab>
 </tabs>
 
@@ -599,23 +593,20 @@ Add an error or warning icon on the right side of the invalid line.
 
 ![](list.png){width=647}
 
-
 ### Multi-page dialog
 
 If validation in a multipage form can be performed only by clicking the confirmation button, then:
+
 * Use red highlighting for navigation elements such as tabs, menu and list items for areas that contain errors so that the user can quickly locate the error.
 * Open the first page with an error or stay on the opened page if it has errors on clicking the confirmation button.
 
 ![](multipage1.png){width=1014}
-
-
 
 ## Avoid mistakes
 
 Do not show an error in a message box. Users are pulled out of the context, they need to close the dialog and locate the invalid field.
 
 ![](message_box.png){width=472}
-
 
 Do not allow to click "OK" button if a form contains empty required fields. For this, the Cancel button should be used, and the OK button should be disabled. Otherwise, if users accidentally leave the field empty, they can expect that the value was entered correctly.
 
@@ -641,9 +632,6 @@ Do not allow submitting the form with the error.
 When the form is opened again, the value is reset, so users don’t know if they entered incorrect data.
 
 ![](save.png){width=471}
-
-
-
 
 ## Insets and colors
 

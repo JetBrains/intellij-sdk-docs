@@ -7,10 +7,10 @@
 Group controls to organize content on a screen and help people locate the necessary controls faster.
 
 Use the following controls or layouts:
+
 * [Group headers](group_header.md)
 * [Tabs](tabs.md)
 * Master-detail layout
-
 
 ## What grouping to choose
 
@@ -27,12 +27,14 @@ Use **group headers** if all rules apply:
 ![](6_01_group_headers.png){width=396}
 
 Use **tabs** if all rules apply:
+
 * One of the groups contains more than 10 controls, or groups occupy more than 2 heights of a dialog
 * There are **no** more than 8 groups
 
 ![](01_use_tabs.png){width=565}
 
 Use the **master-detail layout** if either of the rules applies:
+
 * There are more than 8 groups
 * The number of groups can change
 

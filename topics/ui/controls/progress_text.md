@@ -51,7 +51,6 @@ Work units: the current step, the currently processed file, the number of proces
 
 ![](work.png){width=288}
 
-
 The time passed if the user controls the process, for example, needs to stop it after a certain time:
 
 ![](passed.png){width=288}
@@ -63,7 +62,6 @@ The time passed if the user controls the process, for example, needs to stop it 
 If the process can be cancelled, add a [link](link.md) for the cancel action for an empty state:
 
 ![](cancellation.png){width=475}
-
 
 Use title case for the cancel action.
 

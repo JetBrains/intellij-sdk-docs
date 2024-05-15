@@ -18,11 +18,9 @@ In code editors, tabs are created with another component — [`JBEditorTabs`](%g
 
 In tool windows, tabs are generated automatically. See also [Tool window](tool_window.md).
 
-
 ## When to use
 
 Follow the rules in [Groups of controls](groups_of_controls.md).
-
 
 ## How to use
 
@@ -43,7 +41,6 @@ Tabs that do not fit allotted screen space automatically hide under the dropdown
 Always place tabs on top. It is possible to place them at other sides of the content — bottom, left, or right — but such a placement is extremely rare and might confuse users.
 
 Do not remove or disable a tab when its function is unavailable. Explain why a tab’s content is unavailable in the body of the tab.
-
 
 ## Placement
 

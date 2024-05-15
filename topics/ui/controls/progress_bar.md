@@ -18,7 +18,6 @@ A progress bar informs users about the progress of a lengthy operation.
 
 Follow the rules for [progress indicators](progress_indicators.md).
 
-
 ## How to use
 
 ### Types
@@ -36,7 +35,6 @@ If an indeterminate process reaches a point where its duration can be determined
 ![](progress_bar_indeterminate.png){width=308}
 
 ![](progress_bar_determinate.png){width=308}
-
 
 ### Process name and details
 
@@ -60,7 +58,6 @@ Do **not** show a process name for inline processes:
 
 ![](progress_bar_tool_window.png){width=605}
 
-
 #### Process details
 
 Place process details under the progress bar in one line:
@@ -71,10 +68,9 @@ The length of the comment is limited by the progress bar:
 
 ![](comment_long.png){width=308}
 
-If space is limited,  show percentage completed:
+If space is limited, show percentage completed:
 
 ![](horizontaly.png){width=342}
-
 
 #### In dialog
 
@@ -88,9 +84,6 @@ Place a process name under the progress bar in the Status bar:
 
 ![](status_bar.png){width=238}
 
-
-
-
 ### Process status
 
 If a process consists of substeps that can fail but do not terminate the process, then use green and red colors to show the intermediate status.
@@ -100,7 +93,6 @@ For example, show the status of the running tests:
 
 Do **not** color progress bar to show the final result of the task, use [notifications](notification_types.md).
 In case of success, show notification for the user-initiated tasks, in case of failure — for all tasks.
-
 
 ### Process control
 
@@ -128,7 +120,6 @@ Replace the Pause icon with Resume, show "Resume" under the progress bar and whe
 ![](resume.png){width=330}
 
 Hide the progress bar as soon as the process completes.
-
 
 ## Sizes and placement
 

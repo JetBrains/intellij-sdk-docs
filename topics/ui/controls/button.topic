@@ -21,8 +21,8 @@
         <list>
             <li>
                 <p>The action takes the user to another page of the same dialog or an external source like
-                documentation:</p>
-                <img src="link_after.png" alt="The 'Manage scopes' button next to a combo box" width="465" />
+                    documentation:</p>
+                <img src="link_after.png" alt="The 'Manage scopes' button next to a combo box" width="465"/>
                 <p>
                     <emphasis>The Manage scope link takes to another page of the Settings dialog.</emphasis>
                 </p>
@@ -131,7 +131,11 @@
             </table>
             <p>
                 <b>Exception</b>: the Cancel button if it is clear what action is being canceled.
-                For example, use the <control>Cancel</control> button, not the <control>Don’t Create</control> button.
+                For example, use the
+                <control>Cancel</control>
+                button, not the
+                <control>Don’t Create</control>
+                button.
             </p>
             <p>The label should be short, not more than 5 words. If it’s not obvious what element the button is related
                 to, add more
@@ -314,7 +318,10 @@
                 <li>
                     <p>
                         Make the second most popular button in the dialog focused.
-                        For example, the <control>New Window</control> button in the <control>Open Project</control>
+                        For example, the
+                        <control>New Window</control>
+                        button in the
+                        <control>Open Project</control>
                         dialog:
                         <img src="open_project_dialog.png"
                              width="448"
@@ -334,8 +341,12 @@
                             alt="A dialog with buttons: 'New Window', 'Cancel', and 'This Window' (default and focused)."
                             width="448"/>
                     <emphasis>
-                        The <control>This Window</control> button is the default and the focused one, while it’s
-                        better to place the focus on the <control>New Window</control> button, so that the user can
+                        The
+                        <control>This Window</control>
+                        button is the default and the focused one, while it’s
+                        better to place the focus on the
+                        <control>New Window</control>
+                        button, so that the user can
                         access both options using the keyboard.
                     </emphasis>
                 </li>

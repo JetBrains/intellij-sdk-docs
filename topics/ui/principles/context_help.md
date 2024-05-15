@@ -7,22 +7,24 @@
 Use context help to briefly explain how a functionality works if it is not clear from the UI and the application behavior. Provide a full description of the functionality in [product web help](https://www.jetbrains.com/help/idea/).
 
 There are three ways to show context help:
+
 * in a [help tooltip](tooltip.md)
 * as [inline help text](inline_help_text.md)
 * in an [empty state](empty_state.md)
 
 This article explains when to use the first two. For when to use the empty state, see the [](empty_state.md) topic.
 
-
 ## Inline text or a tooltip
 
 Use **inline help text** in settings dialogs:
+
 * Settings are rarely changed. Users may forget what a setting does when they use it the next time, so it makes sense to provide additional information straight away.
 * Settings dialogs are usually not constrained in space. In most cases, it is possible to fit in a help text.
 
 ![](09_use_inline_help_text.png){width=600}
 
 Use a **help tooltip** if:
+
 * A dialog is often used. The more often a person uses an interface, the more likely they are to remember what each option does.
 
   ![](10_use_help_tooltip.png){width=573 style=block}
@@ -35,7 +37,6 @@ Use a **help tooltip** if:
 * The control that needs explanation is an icon or does not have a label.
 
   ![](03_action_help_tooltip.png){width=305}
-
 
 ## When to use context help
 
@@ -68,7 +69,6 @@ Explain limitations.
 Provide quick navigation to related settings.
 
 ![](04_link_internal.png){width=345}
-
 
 ## When not to use
 

@@ -14,7 +14,6 @@ A toolbar drop-down list is a type of button that appears on a horizontal toolba
 
 ![](toolbar_dropdown_example.png){width=205}
 
-
 ## When to use
 
 Use toolbar drop-down if a single option should be selected.
@@ -29,7 +28,6 @@ To filter values or change the appearance in the control below:
 
 ![](toolbar_filter.png){width=244}
 
-
 Use a [toolbar drop-down button](icon_button.md) instead of a drop-down list in the following cases:
 
 * If there is a list of actions:
@@ -39,7 +37,6 @@ Use a [toolbar drop-down button](icon_button.md) instead of a drop-down list in 
 * The options are secondary and the user won’t change them in most cases.
 
 * Multi-selection is required, for example, to group by several attributes.
-
 
 Do **not** use toolbar drop-down in dialogs, use the [drop-down list](drop_down.md) instead.
 
@@ -85,7 +82,6 @@ Close the menu if the user selects an item, clicks outside the menu, presses the
 Allow single-click activation using mouse: click on a drop-down, the drop-down opens, select an item by hovering,
 close the drop-down with the new item selected by releasing the mouse button.
 
-
 #### Menu items
 
 Follow the rules for the [drop-down list](drop_down.md#menu-items).
@@ -117,7 +113,6 @@ Avoid submenus inside submenus. Submenus hide choices too deep and are difficult
 Toolbar drop-down sizes are the same for all themes.
 
 ![](toolbar_dropdown_sizes.png){width=181}
-
 
 The width changes depending on the selected value to save space if the value is short.
 

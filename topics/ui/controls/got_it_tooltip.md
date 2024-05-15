@@ -47,7 +47,6 @@ Do **not** use the tooltip if there is no space to attach it. Instead, use a [ba
 
 ![](08_got_it_notification.png){width=397}
 
-
 ## How to use
 
 ![](09_required_and_optional_information.png){width=527}
@@ -67,6 +66,7 @@ Implementation:
 GotItTooltip(TOOLTIP_ID, GET_IT_TEXT, parentDisposable)
     .withHeader("The reader mode is on")
 ```
+
 </tab>
 <tab title="Java" group-key="java">
 
@@ -74,6 +74,7 @@ GotItTooltip(TOOLTIP_ID, GET_IT_TEXT, parentDisposable)
 new GotItTooltip(TOOLTIP_ID, GET_IT_TEXT, parentDisposable)
     .withHeader("The reader mode is on");
 ```
+
 </tab>
 </tabs>
 
@@ -93,6 +94,7 @@ GotItTooltip(
     parentDisposable
 )
 ```
+
 </tab>
 <tab title="Java" group-key="java">
 
@@ -106,10 +108,12 @@ new GotItTooltip(
     parentDisposable
 );
 ```
+
 </tab>
 </tabs>
 
 ### Link
+
 Add a local link if users might want to revert changes in a feature or configure it.
 
 ![](12_link_action.png){width=389}
@@ -121,6 +125,7 @@ Add a local link if users might want to revert changes in a feature or configure
 GotItTooltip(TOOLTIP_ID, TOOLTIP_TEXT, parentDisposable)
     .withLink("Disable for all files", this::actionMethodReference)
 ```
+
 </tab>
 <tab title="Java" group-key="java">
 
@@ -128,6 +133,7 @@ GotItTooltip(TOOLTIP_ID, TOOLTIP_TEXT, parentDisposable)
 new GotItTooltip(TOOLTIP_ID, TOOLTIP_TEXT, parentDisposable)
     .withLink("Disable for all files", this::actionMethodReference);
 ```
+
 </tab>
 </tabs>
 
@@ -142,6 +148,7 @@ Add an external link if there is a help source that can further explain the func
 GotItTooltip(TOOLTIP_ID, GOT_IT_TEXT, parentDisposable)
     .withBrowserLink("How to use", new URL("https://example.com"))
 ```
+
 </tab>
 <tab title="Java" group-key="java">
 
@@ -149,11 +156,11 @@ GotItTooltip(TOOLTIP_ID, GOT_IT_TEXT, parentDisposable)
 new GotItTooltip(TOOLTIP_ID, GOT_IT_TEXT, parentDisposable)
     .withBrowserLink("How to use", new URL("https://example.com"));
 ```
+
 </tab>
 </tabs>
 
 Do **not** add more than one link.
-
 
 ### Text length and formatting
 
@@ -177,7 +184,6 @@ Do **not** cover the information the user is currently working with.
 |-----------------------------------------------------|-----------------------------------------------------|
 | ![](15_location_incorrect.png){width="509"}         | ![](15_location_correct.png){width="509"}           |
 
-
 **Implementation:** See four predefined point providers in the [`GotItTooltip`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/GotItTooltip.kt) class.
 
 <tabs group="languages">
@@ -187,6 +193,7 @@ Do **not** cover the information the user is currently working with.
 GotItTooltip(TOOLTIP_ID, GOT_IT_TEXT, parentDisposable)
     .show(gutterComponent, GotItTooltip.TOP_MIDDLE)
 ```
+
 </tab>
 <tab title="Java" group-key="java">
 
@@ -194,12 +201,14 @@ GotItTooltip(TOOLTIP_ID, GOT_IT_TEXT, parentDisposable)
 new GotItTooltip(TOOLTIP_ID, GOT_IT_TEXT, parentDisposable)
     .show(gutterComponent, GotItTooltip.TOP_MIDDLE);
 ```
+
 </tab>
 </tabs>
 
 ### Timeout
 
 Consider adding a timeout if:
+
 * The text is no longer than 10 words.
 * The tooltip appears at the place at which the user is currently looking.
 * There is no link in the tooltip.
@@ -219,6 +228,7 @@ Note that adding a timeout automatically hides the Got It button.<br/><br/>
 GotItTooltip(TOOLTIP_ID, GOT_IT_TEXT, parentDisposable)
     .withTimeout(3000)
 ```
+
 </tab>
 <tab title="Java" group-key="java">
 
@@ -226,10 +236,9 @@ GotItTooltip(TOOLTIP_ID, GOT_IT_TEXT, parentDisposable)
 new GotItTooltip(TOOLTIP_ID, GOT_IT_TEXT, parentDisposable)
     .withTimeout(3000);
 ```
+
 </tab>
 </tabs>
-
-
 
 ### Versioning
 
@@ -237,12 +246,12 @@ If a tooltip appears automatically after the IDE starts, tie it to the IDE versi
 
 If a tooltip is triggered by an action or plugin installation, do not tie them to the current IDE version. In this case, users might miss a tooltip if they are using this functionality or plugin for the first time in the next IDE version.
 
-
 ## Built-in behavior
 
 By default, a tooltip is shown only once per user.
 
 The tooltip disappears when:
+
 * <shortcut>Esc</shortcut> is pressed
 * User clicks any place outside the tooltip
 

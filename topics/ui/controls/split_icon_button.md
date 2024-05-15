@@ -14,7 +14,6 @@ A split icon button appears on a horizontal toolbar and consists of two parts: t
 
 ![](split_icon_button_example.png){width=278}
 
-
 ## When to use
 
 The split icon button helps reduce the number of icons on the toolbar and minimize visual noise.
@@ -35,7 +34,6 @@ To decide whether to add the whole group of actions on the toolbar, follow the r
 
 Use the split icon button on horizontal toolbars only, as it’s too wide for vertical toolbars.
 
-
 ## How to use
 
 Make sure that all actions in the popup menu have icons. When an action is launched, its icon will be used as the main icon.
@@ -43,7 +41,6 @@ Make sure that all actions in the popup menu have icons. When an action is launc
 ![](behavior.png){width=325}
 
 *The user clicks Profile Allocations, the action starts, and its icon is shown as the main icon.*
-
 
 ## Built-in behavior
 

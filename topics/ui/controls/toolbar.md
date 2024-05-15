@@ -51,7 +51,6 @@ Group related toolbar icon buttons and separate groups with lines. If there are 
 
 Label a group of icons if it helps to make the icons clearer and if it’s needed to promote the icons. The icons group becomes more visible with the label.
 
-
 Arrange items inside groups by the frequency of use, from left to right from top to bottom. Rely on statistics.
 
 It is recommended to arrange groups in the following order unless it contradicts the usage statistics. If it does, arrange groups by the frequency of use.
@@ -129,7 +128,6 @@ The toolbar width is limited by the width of the element it belongs to. For exam
 Toolbar sizes are the same for all themes:
 
 ![](toolbar_sizes.png){width=539}
-
 
 ![](sizes_under_list.png){width=418}
 

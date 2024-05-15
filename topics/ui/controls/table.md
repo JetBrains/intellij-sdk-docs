@@ -15,6 +15,7 @@
 ## When to use
 
 Use tables so that users can review, enter or edit uniform sets of data or options. For example:
+
 * <ui-path>Git | Show Git Log</ui-path>
 * <ui-path>Settings | Appearance & Behavior | Path Variables</ui-path>
 * <ui-path>Settings | Appearance & Behavior | File Colors</ui-path>
@@ -28,8 +29,6 @@ Use tables:
 * To search by all parameters in a data set, for example, in the <control>File History</control> table, it is possible to quickly filter the table by the date, author or commit message.
 
 ![](table_history.png){width=488}
-
-
 
 Do **not** use tables:
 
@@ -77,7 +76,6 @@ Follow the rules for the [Input field](input_field.md):
 * If a table is disabled, disable the label.
 * Make label text selectable.
 
-
 Always put the label on top of the table.
 
 Do **not** use a Group separator instead of a Table label. A horizontal line is redundant here:
@@ -114,7 +112,6 @@ Do **not** use a header if all columns in a table have self-descriptive content,
 <format color="Red" style="bold">Incorrect</format>
 
 ![](history-header-redundant.png){width=488}
-
 
 Labels in a header should be short and descriptive. Try to avoid headers which are too long for the content in the rows below. [How to write texts](writing_short.md).
 
@@ -168,7 +165,6 @@ For example, look at the same table without stripes, with bigger line height and
 <format color="Green" style="bold">Correct</format>
 
 ![](table_table.png){width=448}
-
 
 Bigger distance between groups of related information can also help in tracking content. Line height between groups should be increased by 4px for each group level.
 
@@ -272,10 +268,10 @@ Do **not** use a full-size combobox inside tables. It looks inconsistent and has
 
 ![](combo-incorrect.png){width=115}
 
-
 ## Sizes and placement
 
 ### Sizes
+
 Choose a column width appropriate for the most common values, but no less than **65px**. Too wide columns make it hard to read data.
 
 <format color="Green" style="bold">Correct</format>
@@ -404,4 +400,5 @@ For aligning in a dialog with other controls, see [Layout](layout.md).
 | IntelliJ | ![](table_intellij.png){width=350} |
 |----------|------------------------------------|
 | Darcula  | ![](table_darcula.png){width=350}  |
+
 {style=none}

@@ -13,6 +13,7 @@ Follow these guidelines to create a new icon or redesign an existing one for Int
 {style="note"}
 
 ## Style
+
 A common style unites several icons into a set and makes them recognizable.
 
 Use a flat geometric icon style with straight corners and edges. Flat icons remain legible even in small sizes.
@@ -23,13 +24,11 @@ Use flat shapes instead of complex 3D forms:
 |-----------------------------------------------------|-----------------------------------------------------|
 | ![](style_pin_3d.png){width="190"}                  | ![](style_pin_flat.png){width="190"}                |
 
-
 Use straight corners and lines instead of curves. It’s recommended to use 45° and 90° angles, or 30° and 60° where possible:
 
 | <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
 |-----------------------------------------------------|-----------------------------------------------------|
 | ![](style_folder_round.png){width="144"}            | ![](style_folder_straigt.png){width="144"}          |
-
 
 Icons should be as simple as possible without losing their meaning. Clean and simple icons ensure readability and reduce visual clutter.
 
@@ -47,8 +46,8 @@ Icons should be as simple as possible without losing their meaning. Clean and si
 </tr>
 </table>
 
-
 ## Grid and size
+
 Basically, icons fit into a square artboard. Leave a transparent padding around the perimeter. For default 16px icons, the transparent border is 1px, so the icon’s visible part should be inside the 14px x 14px area.
 
 ![](grid.png){width=251 style=block}
@@ -90,13 +89,14 @@ Sizes for other icon sizes can be found in the table below:
 </tr>
 </table>
 
-
 ## Basic shapes
+
 Use basic shapes to build icons, such as squares, circles and rectangles. Using a grid and basic shapes ensures consistent visual proportions and placement.
 
 | ![](shape_square.png){width="192"} _Square 12px x 12px_                        | ![](shape_circle.png){width="195"} _Circle 14px_                           |
 |--------------------------------------------------------------------------------|----------------------------------------------------------------------------|
 | ![](shape_rect_horizontal.png){width="192"} _Horizontal rectangle 10px x 14px_ | ![](shape_rect_vertical.png){width="192"} _Vertical rectangle 14px x 10px_ |
+
 {style=none}
 
 Make sure that icons have the same visual weight. The more filled an icon is, the less space it needs. Following this rule, circles, rhombuses, triangles and other non-square shapes should have larger height and width to be optically balanced with square figures.
@@ -110,7 +110,6 @@ Icons with more details should occupy more space.
 *The eye icon is less detailed and occupies less space than a more complex scissors icon.*
 
 Icon weight can often take priority over the basic shape sizing. For more examples on visual weight compensation, see [Optical Effects in User Interfaces](https://medium.muz.li/optical-effects-9fca82b4cd9a).
-
 
 ## Stroke
 
@@ -166,8 +165,8 @@ Reduce the number of anchors as they increase the size of the image and takes lo
 </tr>
 </table>
 
-
 ## Modifier
+
 A modifier is a small shape added over the base icon.
 
 The default modifier position is the bottom right corner. If the base shape is badly recognizable with a modifier in the bottom right corner, or if several modifiers are needed, the modifier can be placed in other corners.
@@ -187,8 +186,8 @@ Leave a 1-2px spacing between the modifier and the main shape, to make the modif
 ![](modifier_size.png){width=577 style=block}
 *Modifier sizes*
 
-
 ## Arrows
+
 General rules for arrows: arrowhead is a filled triangle with a 90° pointing angle, a 2px body ends in a square stroke. An arrow’s orientation is horizontal, vertical, 45° or round.
 
 ![](arrows_basic.png){width=515 style=block}
@@ -213,8 +212,8 @@ Do **not** use other arrow styles, for example, unfilled arrows or arrows with t
 
 ![](arrows_incorrect.png){width=510}
 
-
 ## Color
+
 Do not use color as the only differentiator between icons (except for the [Noun icon](#noun-icons)) because some people do not distinguish colors. Make sure that icons are easily distinguishable by their shape.
 
 Do not use gradients or shadows.
@@ -294,6 +293,7 @@ The dark version is for Darcula theme.
 </table>
 
 Use these colors according to the following rules:
+
 1. By default, action icons are grey and monochromatic:
 
    ![](colors_actions_grey.png){width=319}
@@ -323,7 +323,6 @@ Use these colors according to the following rules:
 
    ![](colors_toolbuttons.png){width=750}
 
-
 ### Status icons
 
 Color is a great way to provide status information. Use status icons that are already present in the IDE repository:
@@ -331,7 +330,6 @@ Color is a great way to provide status information. Use status icons that are al
 ![](colors_status.png){width=308}
 
 If you need a new icon, color it according to its semantics. Make sure that the status icons are easily distinguishable by their form, as many colorblind people find it difficult to distinguish between red and green.
-
 
 ### Noun icons
 
@@ -500,10 +498,8 @@ Use colors with 60% opacity and grey 80% for big parts, like folder icons:
 ![](colors_nouns_folder.png){width=86}
 Transparent icons are used in both light and dark themes, so in most cases there’s only one version.
 
-
 Use colors with 70% opacity for medium size elements that occupy about half of an icon, like file type icons:
 ![](colors_nouns_file.png){width=111}
-
 
 Use colors without opacity for small elements, like modifiers.
 ![](colors_nouns_modifier.png){width=87}

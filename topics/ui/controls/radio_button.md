@@ -17,6 +17,7 @@
 Use a radio button group to choose one option from 2 to 4 mutually exclusive options.
 
 Do **not** use radio buttons if:
+
 * Several options in a group can be selected. Use a group of [checkboxes](checkbox.md) instead.
 * There are only 2 opposite yes/no options. Use a checkbox instead.
 
@@ -31,17 +32,18 @@ Do **not** use radio buttons if:
   | ![](dropdown_incorrect.png){width="189"}            | ![](dropdown_correct.png){width="351"}              |
 
 Consider using a [drop-down list](drop_down.md) if:
+
 * The screen space is limited.
 * The option might be used less often than other options on the screen.
 * There are other drop-down lists in the same group of UI components. A radio button group is more noticeable than a drop-down list, so it will look like a more important setting.
 * There is a combination of several UI components for one setting:
-![](dropdown.png){width=575}
-*The automatic updates setting consists of a checkbox, three lengthy-labeled options in a dropdown and a button.*
-
+  ![](dropdown.png){width=575}
+  *The automatic updates setting consists of a checkbox, three lengthy-labeled options in a dropdown and a button.*
 
 ## How to use
 
 ### Label
+
 A label accompanies each checkbox and is placed next to it.
 
 ![](radiobutton_label.png){width=197}
@@ -58,6 +60,7 @@ To implement this, use HTML formatting:
 radioButton(
     "<html>Show options before adding<br>to version control</html>")
 ```
+
 </tab>
 <tab title="Java" group-key="java">
 
@@ -65,6 +68,7 @@ radioButton(
 new JRadioButton(
     "<html>Show options before adding<br>to version control</html>");
 ```
+
 </tab>
 </tabs>
 
@@ -88,8 +92,8 @@ Do not use negation in labels as it complicates understanding.
 
 Make labels short and intelligible — see [Writing short and clear text](writing_short.md).
 
-
 ### Group label
+
 ![](grouplabel.png){width=267}
 
 Always start a radio button group with a group label. It explains what the options are for.
@@ -97,7 +101,6 @@ Always start a radio button group with a group label. It explains what the optio
 Use a checkbox or another radio button as a group label if the radio button group needs to be turned on or off.
 
 Use a colon at the end of a group label.
-
 
 ## Sizes and placement
 

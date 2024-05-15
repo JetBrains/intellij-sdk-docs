@@ -8,7 +8,6 @@ A tool window is a pane inside the main IDE window. For information about tool w
 
 ![](tool_window_example.png){width=960}
 
-
 ## When to use
 
 Use the tool window to show a large amount of information that the user needs while working side-by-side with the editor or other tool windows. For example, viewing the project structure, running and debugging an application, and viewing git log.
@@ -17,15 +16,14 @@ If the amount of information is small, show it in the editor, main toolbar, stat
 
 If the user does not need the information from the main window to complete an operation, show the content in the popup or dialog window. For example, Search Everywhere popup, Settings dialog.
 
-
 ## Tool window structure
 
 ![](tool_window_structure.png){width=483}
 
-
 ## How to use
 
 Give the tool window a name:
+
 * The name should be [short and descriptive](writing_short.md), preferably not longer than two words.
 * Use title-case capitalization.
 

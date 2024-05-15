@@ -17,11 +17,11 @@
 Use checkboxes for yes/no choices or for selecting several items in a group.
 
 Do **not** use checkboxes if:
+
 * Only one option in a group can be selected. Use a [radio button group](radio_button.md) instead.
 * The behavior in the "off" state is unclear from the checkbox label. Use two radio buttons instead and label them accordingly.
-![](when_to_use.png){width=365}
+  ![](when_to_use.png){width=365}
 * With the checkbox, it is unclear how the setting works if it’s unchecked. With radio buttons, both states are labeled clearly.*
-
 
 ## How to use
 
@@ -43,6 +43,7 @@ checkBox(
     """<html>Insert selected suggestion by  pressing space, dot,<br/>
     or other context-dependent keys</html>""")
 ```
+
 </tab>
 <tab title="Java" group-key="java">
 
@@ -51,6 +52,7 @@ new JCheckBox(
     "<html>Insert selected suggestion by  pressing space, dot,<br/>" +
     "or other context-dependent keys</html>");
 ```
+
 </tab>
 </tabs>
 
@@ -87,7 +89,6 @@ Do not use negation in labels as it complicates understanding.
 ![](label_answeryes.png){width=224}
 
 Make labels short and intelligible — see [Writing short and clear](writing_short.md).
-
 
 ### Three-state checkbox
 

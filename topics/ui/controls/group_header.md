@@ -14,7 +14,6 @@ A group header clearly labels a group of UI controls.
 
 ![](01_group_header.png){width=455}
 
-
 ## When to use
 
 Follow the rules in [Groups of controls](groups_of_controls.md).
@@ -29,7 +28,6 @@ Do **not** use group headers when each group contains 3 controls and less. Separ
 <format color="Green" style="bold">Correct</format>
 
 ![](6_03_group_correct.png){width=569}
-
 
 ## How to use
 

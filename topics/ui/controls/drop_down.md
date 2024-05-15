@@ -14,9 +14,7 @@ A drop-down list is a type of button that appears in dialogs. It shows a list of
 
 ![](drop_down_example.png){width=134}
 
-
 ## When to use
-
 
 Use a drop-down list if:
 
@@ -42,7 +40,6 @@ If a layout combines various UI elements for one setting, use a drop-down even i
 
 ![](complex_layout.png){width=523}
 
-
 ### When not to use
 
 If multiple selections are possible, use checkboxes.
@@ -63,8 +60,6 @@ If a drop-down appears on a toolbar, use [toolbar drop-down](toolbar_drop_down.m
 
 ![](toolbar_main.png){width=209}
 
-
-
 ## How to use
 
 ### Label
@@ -72,7 +67,6 @@ If a drop-down appears on a toolbar, use [toolbar drop-down](toolbar_drop_down.m
 Follow the rules for the [input field](input_field.md#label).
 
 ![](labels.png){width=490}
-
 
 ### Default value
 
@@ -119,20 +113,19 @@ Avoid repeating words in drop-down list items. Move repeating words to the label
 
 ![](refresh_changes.png){width=274}
 
-
 Sort items in one of the following orders:
 
 * Logical order, for example, in a spatial relationship:
 
-    ![](order_logical.png){width=172}
+  ![](order_logical.png){width=172}
 
 * Alphabetical or numeric order if the options are equivalent to make it easier to find items:
 
-    ![](order_alphabetical.png){width=267}
+  ![](order_alphabetical.png){width=267}
 
 * Place the most common options first. If there are more than 10 options, separate the most popular options with a line:
 
-    ![](order_popular.png){width=254}
+  ![](order_popular.png){width=254}
 
 Group related options, add a separator and group header if possible:
 
@@ -160,31 +153,27 @@ Do **not** assign special meanings to numeric or string values, use meta-options
 
 <format color="Red" style="bold">Incorrect</format>
 
-  ![](none_incorrect.png){width=288}
+![](none_incorrect.png){width=288}
 
 <format color="Green" style="bold">Correct</format>
 
-  ![](none_correct.png){width=277}
-
+![](none_correct.png){width=277}
 
 Preview list items with images if they are associated with well-known icons. Use formatting for a list of fonts. It will help users make a choice.
 
 ![](preview.png){width=609}
 
-
 Use **bold** font to show default values, <format color="#2600FF">blue</format> font for values changed from the default,
- and <format color="#787878">grey</format> font to add a hint.
+and <format color="#787878">grey</format> font to add a hint.
 
 ![](blue_text.png){width=188 style=block}
 *Default and Darcula are bundled schemes, Default is blue because it’s customized.*
-
 
 ![](grey_text.png){width=529}
 
 Submenus are not supported for the drop-down list. Use a tree view instead:
 
 ![](hierarchy.png){width=169}
-
 
 ## Sizes and placement
 
@@ -197,7 +186,6 @@ A drop-down width is fixed and does not change depending on the selected value.
 A drop-down width should be enough to fit the longest option plus 20px, but not less than 72px.
 
 ![](width_sizes.png){width=157}
-
 
 ### Menu
 

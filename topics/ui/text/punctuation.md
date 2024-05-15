@@ -7,6 +7,7 @@
 Use the following rules for labels and description texts in IntelliJ user interfaces. For punctuation in numbers and times, see [Data formats](data_formats.md).
 
 ## Ellipsis
+
 End an action name with an ellipsis if it opens a dialog where input is required or possible. An ellipsis helps users understand if an action is immediate, or additional interaction is to follow.
 
 <p>This rule applies to actions in the following controls: <a href="button.topic">button</a>, <a href="link.md">link</a>, menu item.</p>
@@ -59,8 +60,8 @@ Use an ellipsis with verbs describing an ongoing process, for example, Searching
 
 Use the ellipsis character … (`U+2026` in Unicode). Do not use three separate "dot" characters.
 
-
 ## Period
+
 Do **not** put a period at the end of a single sentence, even if it is a complete sentence.
 
 ![](1_01_no_period_1.png){width=385}
@@ -79,8 +80,8 @@ Do **not** put a period at the end of an IDE action.
 
 ![](1_04_period_navigation_link.png){width=376}
 
-
 ## Comma
+
 Use a comma:
 
 Before a conjunction in a list of three or more items (the Oxford or serial comma).
@@ -91,8 +92,8 @@ Between symbols in series.
 
 *Use the following characters: &, $, ., and \**
 
-
 ## Colon
+
 Use a colon after labels for inputs and radio button / checkbox groups.
 
 ![](label_noun.png){width=153}
@@ -103,19 +104,18 @@ Do **not** use a colon if a label and text inside the input element make a phras
 
 ![](label_sentence.png){width=247}
 
-
 ## Contractions
+
 Generally, do not use contractions.
 
 *Path <format color="#C3481B">can’t</format> be found → Path cannot be found*
-
 
 Use contractions only if the action name has 4 and more words, and the contracted word does not affect the meaning significantly.
 
 *What’s New in IntelliJ IDEA*
 
-
 *Don’t* or *Do not*:
+
 * Always contract in the phrase *Don’t [some verb] again*. The phrase is common, and the meaning is easily recognized.
   ![](3_01_dont_ask_again.png){width=399}
 * In other cases, do not contract. The full form reduces chances that the relevant meaning might be missed.
@@ -124,8 +124,8 @@ Use contractions only if the action name has 4 and more words, and the contracte
 
 *Do not save, forget passwords after restart*
 
-
 ## Quotation marks
+
 Use single quotation marks by default.
 
 > Use a straight single quotation mark ' (`U+0027`). Do not use opening and closing quotation marks ‘ ’ (`U+2018`/`U+2019`).
@@ -144,8 +144,8 @@ Do not use quotation marks for keyboard key names.
 
 Do not use double quotation marks.
 
-
 ## Question marks
+
 Use only in alerts when asking for confirmation.
 
 *A file with this name already exists. Do you want to overwrite it?*
@@ -155,4 +155,5 @@ Avoid in other cases.
 *Forgot password? → Remind password*
 
 ## Exclamation points
+
 Do not use. Exclamation points can cause the sentence tone to be interpreted as aggressive, condescending, or overly informal.

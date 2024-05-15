@@ -25,7 +25,6 @@ Do **not** use a text area if:
 * Values are added one by one. Use a [table](table.md) instead.
 * Text is read-only. Use a [description text](description_text.md) instead.
 
-
 ## How to use
 
 ### Label
@@ -53,11 +52,9 @@ line is redundant here. Use [context help](context_help.md) to explain the field
 
 ![](label_correct.png){width=598}
 
-
 ### Placeholder, prefilled values and field focus
 
 Follow the rules for the input field: [placeholder](input_field.md#placeholder), [prefilled value](input_field.md#prefilled-value), [field focus](input_field.md#field-focus).
-
 
 ### History {id="history_1"}
 
@@ -69,14 +66,11 @@ If history is available, add a note at the bottom of the input field:
 
 Save the current value, so that the user can return to it while navigating through the history.
 
-
 ### Validation
 
 If the user types an invalid value, highlight the text area with red and show an error message in a tooltip. For more details, see [Validation errors](validation_errors.md).
 
 ![](text_area_error.png){width=306}
-
-
 
 ## Size and placement
 
@@ -102,14 +96,14 @@ If the text is long and does not fit the text area, add [scrollbar](scrollbar.md
 
 For placement, follow the rules for the [input field](input_field.md).
 
-
 ## Style
+
 Use the same colors as for the [input field](input_field.md).
 
 Do **not** highlight a text area on selection, only if a validation error occurs.
 
-
 ### History
+
 Background: dialog default theme color
 
 Font: Windows, IntelliJ — default, macOS 2px smaller than default

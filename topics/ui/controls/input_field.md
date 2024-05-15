@@ -14,7 +14,6 @@ An input field allows users to enter or edit a text line using the keyboard.
 
 ![](input_field_example.png){width=170}
 
-
 ## When to use
 
 Use an input field if it’s not possible to enumerate the most likely values. Otherwise, use a [combo box](combo_box.md) or a [drop-down list](drop_down.md).
@@ -27,7 +26,6 @@ If input has to be in a specific format, use one of the following controls:
 * Use a [search field](search_field.md) to input a search query.
 * Use calendar to set a date.
 * Use color box to choose a color.
-
 
 ## How to use
 
@@ -44,7 +42,6 @@ Write the label either as a noun and end it with a colon:
 Or as a phrase with no ending punctuation:
 
 ![](label_sentence.png){width=247}
-
 
 Do **not** use labels to tell users what to do:
 
@@ -66,9 +63,10 @@ Make the label text selectable. The user may want to search for this option on t
 
 Place the label on the left or above the input field. For more details, see the [Layout](layout.md) topic.
 
-
 ### Placeholder
+
 Placeholder is grey text placed inside an input field. Follow these rules:
+
 * Use sentence-style capitalization.
 * Do **not** use ending punctuation or ellipsis.
 * Hide the placeholder when the user starts typing, not when the input field gets the focus.
@@ -98,6 +96,7 @@ Do **not** use the placeholder as the field label. After the field has been fill
 ![](placeholder_label.png){width=100}
 
 ### Prefilled value
+
 Pre-fill the field if it has the default or a frequently used value. Use the default text color for pre-filled values:
 
 ![](prefill.png){width=152}
@@ -107,6 +106,7 @@ Do **not** prefill with "Unnamed". It takes time to read it and does not help th
 ![](prefill_unnamed.png){width=535}
 
 ### Field focus
+
 When an input field gets the focus, place the caret at the end of the text:
 
 ![](focus_end.png){width=321}
@@ -114,7 +114,6 @@ When an input field gets the focus, place the caret at the end of the text:
 If users are more likely to re-enter the entire value, select the whole text when the field gets the focus:
 
 ![](focus_all.png){width=274}
-
 
 ### Input field types
 
@@ -139,12 +138,11 @@ Show the completion popup when the user starts typing or presses <shortcut>Ctrl+
 
 Use [built-in buttons](built_in_button.md) to help the user enter data. For example, to browse the disk.
 
-
 ### Validation
+
 If the user enters an invalid value, highlight the field with red and show an error message in a tooltip. For more details, see [Validation errors](validation_errors.md).
 
 ![](input_field_error.png){width=239}
-
 
 ## Sizes and placement
 
@@ -161,6 +159,7 @@ Choose the width appropriate for the most common values, but not less than 65px.
 | <format color="Red" style="bold">Incorrect</format> | ![](input_field_size_2.png){width=240} |
 | <format color="Green" style="bold">Correct</format> | ![](input_field_size_3.png){width=387} |
 | <format color="Red" style="bold">Incorrect</format> | ![](input_field_size_4.png){width=331} |
+
 {style=none}
 
 If the input value is longer than the field width, show the beginning of the value when the field becomes inactive:

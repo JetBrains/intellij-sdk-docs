@@ -14,9 +14,8 @@ A toolbar icon button is an icon that appears on a toolbar.
 
 ![](button_example.png){width=156}
 
-
-
 ## Types
+
 <p>There are three types of toolbar icon buttons:</p>
 
 An action button triggers an action immediately on clicking it, e.g., the Open button.
@@ -30,7 +29,6 @@ A drop-down button has an arrow icon in the bottom right corner and opens a menu
 [//]: # (TODO: Use [menu list]&#40;menu_list.md&#41; guidelines for drop-down buttons.)
 
 ![](drop-down.png){width=284}
-
 
 ## When to use
 

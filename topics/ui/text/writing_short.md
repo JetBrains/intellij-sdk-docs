@@ -8,7 +8,6 @@
 Texts in user interfaces should be short and clear. Short texts save reading time. Clear texts lead to fewer mistakes. Editing methods described below can help with that.
 </p>
 
-
 ## Use simple constructions
 
 Use simple verb forms. Prefer present tense.
@@ -17,7 +16,6 @@ Use simple sentences: one idea per sentence.
 
 Avoid passive voice.
 
-
 This way, the same meaning can be expressed with fewer words. Compare:
 
 <i>Those resources that are available locally</i> → <i>Local resources</i>
@@ -25,8 +23,6 @@ This way, the same meaning can be expressed with fewer words. Compare:
 <i>Maven has to use</i> → <i>Maven uses</i>
 
 <i>The use of a secure connection is required</i> → <i>Use secure connection</i>
-
-
 
 ## Remove or elaborate generic words
 
@@ -42,8 +38,8 @@ Some generic words cannot be removed. They can appear in actionable elements lik
 ![](generic-renamed-link.png){width=576 style=block}
 *The link "Learn more" does not explain what useful information could be there for the user to click it.*
 
-
 ## Remove obvious objects and actions
+
 Remove verbs that explain the function of a UI control:
 
 ![](obvious-specify.png){width=403 style=block}
@@ -66,8 +62,8 @@ Remove words with a meaning that is already expressed in the label:
     </tr>
 </table>
 
-
 ## Do not address the user
+
 A user interface is for a person who uses it. Addressing this person is unnecessary because they by default perceive the text they see as for them:
 
 ![](addressing1.png){width=674}
@@ -75,8 +71,8 @@ A user interface is for a person who uses it. Addressing this person is unnecess
 ![](addressing2.png){width=674 style=block}
 *The whole phrase after the comma is not needed because its meaning is already expressed by the verb "configure".*
 
-
 ## Remove duplicates
+
 If the repeating word appears in element labels, move it to the beginning. Finding a setting becomes faster as you scan only meaningful words:
 
 ![](writing_short_duplicates.png){width=438}
@@ -128,8 +124,8 @@ Remove duplicates in meaning:
 </tr>
 </table>
 
-
 ## Translate from tech to human
+
 When you make a feature, you know how it works from the inside and can describe it from the implementation point of view:
 
 ![](indent-options-before.png){width=560}
@@ -139,7 +135,6 @@ A person not familiar with implementation details won’t know what the Automati
 ![](indent-options-after.png){width=560}
 
 Always write UI text from a user’s perspective. Avoid technical terms, jargon and descriptions of inner logic that a user might not know.
-
 
 ## Write for first-time users
 
@@ -158,7 +153,6 @@ More examples:
 
 ![](first-time-smart-keys.png){width=318 style=block}
 *Before: What do smart Home and End keys do? What do they do if they are not smart? After: The added text explains what the options do so that the reader can make an informed choice.*
-
 
 ## Examples
 

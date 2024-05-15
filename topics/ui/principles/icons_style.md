@@ -6,7 +6,7 @@
 
 Follow these guidelines to create a new icon or redesign an existing one for IntelliJ-based products.
 
-> See all icons in the [Icons list](https://jetbrains.design/intellij/resources/icons_list/).
+> See all icons in the [Icons list](https://intellij-icons.jetbrains.design).
 > Use the [IntelliJ Icons Figma plugin](https://www.figma.com/community/plugin/948276470997072333/IntelliJ-Icons)
 > to quickly find and use icons in UI mockups.
 >

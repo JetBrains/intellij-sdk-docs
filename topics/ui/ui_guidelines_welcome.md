@@ -98,7 +98,7 @@ When working on an IntelliJ Platform-based IDE or a plugin, use these guidelines
 
 ## Resources
 
-- [Icons List](https://jetbrains.design/intellij/resources/icons_list/)
+- [Icons List](https://intellij-icons.jetbrains.design)
 - [](UI_kit.md)
 - {columns="4"}
 

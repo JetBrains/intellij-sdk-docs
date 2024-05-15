@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # User Interface FAQ
 
@@ -31,6 +31,12 @@ A number of hardcoded colors is defined in `JBColor`, [`Gray`](%gh-ic%/platform/
 
 ## Text
 
+<tldr>
+
+**UI Guidelines:** [](data_formats.md)
+
+</tldr>
+
 Use [`NaturalComparator`](%gh-ic%/platform/util/base/src/com/intellij/openapi/util/text/NaturalComparator.java) for "natural" sorting of items.
 
 [`StringUtil`](%gh-ic%/platform/util/src/com/intellij/openapi/util/text/StringUtil.java) contains a number of useful methods for manipulating text for UI usage:
@@ -54,6 +60,13 @@ To store and retrieve values for *Recently Used* entries (e.g., filter values), 
 To determine the current [Theme](themes_getting_started.md)'s style, use [`JBColor.isBright()`](%gh-ic%/platform/util/ui/src/com/intellij/ui/JBColor.java).
 
 ## Borders and Insets
+
+
+<tldr>
+
+**UI Guidelines:** [](layout.md)
+
+</tldr>
 
 Always create borders and insets via factory methods from [`JBUI.Borders`](%gh-ic%/platform/util/ui/src/com/intellij/util/ui/JBUI.java) and [`JBUI.Insets`](%gh-ic%/platform/util/ui/src/com/intellij/util/ui/JBUI.java), which create DPI-aware instances.
 Using standard DPI-agnostic instances (reported by inspection <ui-path>Plugin DevKit | Code | Use DPI-aware borders</ui-path> and <ui-path>Plugin DevKit | Code | Use DPI-aware insets</ui-path>)

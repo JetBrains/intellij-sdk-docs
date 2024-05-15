@@ -1,5 +1,11 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<tldr>
+
+**Related:** [](ui_faq.md#text)
+
+</tldr>
+
 # Data Formats
 
 <link-summary>Choosing proper date formats to display data to users.</link-summary>

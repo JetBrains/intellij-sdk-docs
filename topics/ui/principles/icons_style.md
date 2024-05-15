@@ -495,13 +495,17 @@ The palette for noun icons is wider, because there are lots of icons in one set:
 Select colors for new icons based on existing colors and users’ habits.
 
 Use colors with 60% opacity and grey 80% for big parts, like folder icons:
+
 ![](colors_nouns_folder.png){width=86}
+
 Transparent icons are used in both light and dark themes, so in most cases there’s only one version.
 
 Use colors with 70% opacity for medium size elements that occupy about half of an icon, like file type icons:
+
 ![](colors_nouns_file.png){width=111}
 
 Use colors without opacity for small elements, like modifiers.
+
 ![](colors_nouns_modifier.png){width=87}
 
 ## Font

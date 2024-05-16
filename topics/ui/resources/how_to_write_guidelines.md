@@ -4,16 +4,22 @@
 
 <link-summary>Workflow and basic rules of writing articles for IntelliJ Platform UI Guidelines.</link-summary>
 
-<p>This page describes the workflow and basic rules of writing articles for IntelliJ Platform UI Guidelines.</p>
+<p>This page describes the basic rules of writing articles for IntelliJ Platform UI Guidelines.</p>
 
-## Workflow
+[//]: # (## Workflow)
 
-Follow these steps if you want to add a new article to the guidelines:
-1. Write an article in the Google doc.
-2. Share the Google doc with the designers team, so they can review and comment the document.
-3. When all comments are resolved, send the Google doc to tech writers for grammar review. [Create ticket](https://youtrack.jetbrains.com/newIssue?project=DOC&clearDraft=true&c=Type+Task&c=Assignee+Anna.Gasparyan&c=Subsystem+IntelliJ+IDEA) in YouTrack project “Documentation”, subsystem “IntelliJ IDEA”, auto-assigned to Anna Gasparyan.
-4. After the review, add the article to the guidelines. Follow the instructions on [https://github.com/JetBrains/ui](https://github.com/JetBrains/ui).
-4. Contact developers to add Code Snippets to the article.
+[//]: # ()
+[//]: # (Follow these steps if you want to add a new article to the guidelines:)
+
+[//]: # (1. Write an article in the Google doc.)
+
+[//]: # (2. Share the Google doc with the designers team, so they can review and comment the document.)
+
+[//]: # (3. When all comments are resolved, send the Google doc to tech writers for grammar review. [Create ticket]&#40;https://youtrack.jetbrains.com/newIssue?project=DOC&clearDraft=true&c=Type+Task&c=Assignee+Anna.Gasparyan&c=Subsystem+IntelliJ+IDEA&#41; in YouTrack project “Documentation”, subsystem “IntelliJ IDEA”, auto-assigned to Anna Gasparyan.)
+
+[//]: # (4. After the review, add the article to the guidelines. Follow the instructions on [https://github.com/JetBrains/ui]&#40;https://github.com/JetBrains/ui&#41;.)
+
+[//]: # (4. Contact developers to add Code Snippets to the article.)
 
 ## Text
 

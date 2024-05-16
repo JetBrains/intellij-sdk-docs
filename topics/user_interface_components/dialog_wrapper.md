@@ -6,7 +6,7 @@
 
 <tldr>
 
-**Platform UI Guidelines:** [Layout](https://jetbrains.design/intellij/principles/layout), [Validation errors](https://jetbrains.design/intellij/principles/validation_errors/)
+**UI Guidelines:** [](layout.md), [](validation_errors.md)
 
 </tldr>
 
@@ -47,7 +47,7 @@ The `DialogWrapper` class is often used together with [GUI Designer forms](https
 In this case, bind a GUI Designer form to the class extending `DialogWrapper`, bind the top-level panel of the form to a field and return that field from the `createCenterPanel()` method.
 When using Kotlin, use [Kotlin UI DSL](kotlin_ui_dsl_version_2.md) to provide the dialog's contents.
 
-> See [Layout](https://jetbrains.design/intellij/principles/layout) topic in IntelliJ Platform UI Guidelines for recommendations on arranging UI controls in dialogs.
+> See [](layout.md) topic in UI Guidelines for recommendations on arranging UI controls in dialogs.
 >
 > Existing dialogs can be inspected at runtime using [UI Inspector](internal_ui_inspector.md), e.g., to locate the underlying implementation of UI components.
 >
@@ -62,7 +62,7 @@ Use `action.putValue(DialogWrapper.DEFAULT_ACTION, true)` to set the default but
 
 ### Input Validation
 
-Please see also [Validation errors](https://jetbrains.design/intellij/principles/validation_errors/) topic in the IntelliJ Platform UI Guidelines.
+Please see also [](validation_errors.md) topic in UI Guidelines.
 
 To validate the data entered into the dialog, override the `doValidate()` method.
 The method will be called automatically by timer.

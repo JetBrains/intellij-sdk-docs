@@ -6,7 +6,7 @@
 
 <tldr>
 
-**Platform UI Guidelines:** [Notifications](https://jetbrains.design/intellij/controls/notifications/), [Banner](https://jetbrains.design/intellij/controls/banner/), [Got It tooltip](https://jetbrains.design/intellij/controls/got_it_tooltip/), [Balloon](https://jetbrains.design/intellij/controls/balloon/)
+**UI Guidelines:** [](notification_types.md), [](banner.md), [](got_it_tooltip.md), [](balloon.md)
 
 </tldr>
 
@@ -27,7 +27,7 @@ Other [`HintManager`](%gh-ic%/platform/platform-api/src/com/intellij/codeInsight
 
 ### Editor Banner
 
-For UI reference, see [Banner](https://jetbrains.design/intellij/controls/banner/) in the IntelliJ Platform UI Guidelines.
+For UI reference, see [](banner.md) in UI Guidelines.
 
 Notifications that appear at the top of the file editor are a great way to ask the user to take an important action that would otherwise impede their experience if ignored (e.g., missing SDK, setup/project configuration requiring user input).
 
@@ -37,9 +37,10 @@ If access to indexes is not required, it can be marked [dumb aware](indexing_and
 A commonly used UI implementation is [`EditorNotificationPanel`](%gh-ic%/platform/platform-api/src/com/intellij/ui/EditorNotificationPanel.java).
 
 ### "Got It" Notification
+{id="gotIt"}
 
 Use to highlight important new/changed features via [`GotItTooltip`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/GotItTooltip.kt).
-See [Got It tooltip](https://jetbrains.design/intellij/controls/got_it_tooltip/) in IntelliJ Platform UI Guidelines for an overview.
+See [](got_it_tooltip.md) in UI Guidelines for an overview.
 
 ### Top-Level Notifications (Balloons)
 {id="balloons"}
@@ -51,7 +52,7 @@ It has two main advantages:
 * The user can control the way each notification type is displayed under <ui-path>Settings | Appearance & Behavior | Notifications</ui-path>
 * All displayed notifications are gathered in the <control>Event Log</control> tool window and can be reviewed later
 
-For UI reference, see [Balloon](https://jetbrains.design/intellij/controls/balloon/) in the IntelliJ Platform UI Guidelines.
+For UI reference, see [](balloon.md) in UI Guidelines.
 
 > See [](tool_windows.md#tool-window-notification) for showing balloons for a specific tool window.
 

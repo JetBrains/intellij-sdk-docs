@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # User Interface Components
 
@@ -6,7 +6,7 @@
 
 <tldr>
 
-**Platform UI Guidelines:** [Overview](https://jetbrains.design/intellij/)
+**UI Guidelines:** [Overview](ui_guidelines_welcome.md)
 
 </tldr>
 
@@ -27,9 +27,9 @@ Using those components in your plugins will ensure that your plugin looks and wo
 >
 {style="note"}
 
-Please refer to [Writing short and clear](https://jetbrains.design/intellij/text/writing_short/) in IntelliJ Platform UI Guidelines on writing UI-related texts.
+Please refer to [](writing_short.md) in UI Guidelines on writing UI-related texts.
 
-See [UI Kit](https://jetbrains.design/intellij/resources/UI_kit/) when using [Figma](https://www.figma.com) to design UI.
+See [](UI_kit.md) when using [Figma](https://www.figma.com) to design UI.
 
 The following components are particularly noteworthy:
 

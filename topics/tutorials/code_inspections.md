@@ -8,7 +8,7 @@
 
 **Product Help:** [Code Inspection](https://www.jetbrains.com/idea/webhelp/code-inspection.html), [Creating Custom Inspections](https://www.jetbrains.com/idea/help/creating-custom-inspections.html)
 
-**Platform UI Guidelines:** [Inspections](https://jetbrains.design/intellij/text/inspections/)
+**UI Guidelines:** [](inspections.md)
 
 </tldr>
 
@@ -16,7 +16,7 @@ The IntelliJ Platform provides tools designed for static code analysis called _c
 Custom code inspections can be implemented as IntelliJ Platform plugins.
 An example of the plugin approach is the [comparing_string_references_inspection](%gh-sdk-samples-master%/comparing_string_references_inspection) code sample.
 
-See the [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in the IntelliJ Platform UI Guidelines on naming, writing description, and message texts for inspections.
+See the [Inspections](inspections.md) topic in UI Guidelines on naming, writing description, and message texts for inspections.
 
 ## Creating an Inspection Plugin
 
@@ -112,7 +112,7 @@ The change to the PSI tree is accomplished by the usual approach to modification
 The inspection description is an HTML file.
 The description is displayed in the upper right panel of the <control>Inspections</control> settings dialog when an inspection is selected from the list.
 
-See the [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in the IntelliJ Platform UI Guidelines on important guidelines for writing the description.
+See the [Inspections](inspections.md) topic in UI Guidelines on important guidelines for writing the description.
 
 Implicit in using [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java) in the class hierarchy of the inspection implementation means following some conventions.
 

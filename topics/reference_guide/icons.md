@@ -8,7 +8,7 @@
 
 **Code**: [`AllIcons`](%gh-ic%/platform/util/ui/src/com/intellij/icons/AllIcons.java)
 
-**Platform UI Guidelines:** [Icons list](https://jetbrains.design/intellij/resources/icons_list/), [Icons](https://jetbrains.design/intellij/principles/icons/)
+**UI Guidelines:** [Icons list](https://intellij-icons.jetbrains.design), [Icons](icons_style.md)
 
 </tldr>
 
@@ -22,11 +22,12 @@ Plugins need icons mostly for [](basic_action_system.md), custom component rende
 ## Platform vs. Custom Icons
 
 Plugins should reuse existing platform icons whenever possible.
-Use the [Icons list](https://jetbrains.design/intellij/resources/icons_list/) to browse existing icons.
+
+Use [Icons list](https://intellij-icons.jetbrains.design) to browse existing icons.
 Platform icons are located in [`AllIcons`](%gh-ic%/platform/util/ui/src/com/intellij/icons/AllIcons.java).
 Icons from plugins are located in the corresponding `<PLUGIN_NAME>Icons` class (e.g., [`GithubIcons`](%gh-ic%/plugins/github/gen/org/jetbrains/plugins/github/GithubIcons.java)).
 
-If custom icons are required, please refer to the detailed [design guide](https://jetbrains.design/intellij/principles/icons/).
+If custom icons are required, please refer to detailed [design guide](icons_style.md).
 To generate SVG icons suited for the IntelliJ-based IDEs, also consider third-party web tool [IntelliJ Icon Generator](https://bjansen.github.io/intellij-icon-generator/).
 
 ## Organizing Icons
@@ -300,9 +301,9 @@ prescribed colors within their icons:
 | Light | `#6C707E` <format color="6C707E">▆</format> |
 | Dark  | `#CED0D6` <format color="CED0D6">▆</format> |
 
-> Various online resources, like the IntelliJ Platform UI Guidelines
-> [here](https://jetbrains.design/intellij/components/tool_window/#07) and
-> [here](https://jetbrains.design/intellij/principles/icons/#grid-and-size),
+> Various online resources, like the UI Guidelines
+> [here](tool_window.md) and
+> [here](icons_style.md#grid-and-size),
 > will be updated soon and currently don't include information about the New UI.
 >
 {style="note"}

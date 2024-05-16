@@ -8,7 +8,7 @@
 
 **Product Help:** [Colors and fonts](https://www.jetbrains.com/help/idea/configuring-colors-and-fonts.html)
 
-**Platform UI Guidelines:** [Inspections](https://jetbrains.design/intellij/text/inspections/)
+**UI Guidelines:** [](inspections.md)
 
 </tldr>
 
@@ -93,7 +93,7 @@ Annotators not requiring information from [indexes](indexing_and_psi_stubs.md) c
 
 ### Errors/Warning
 
-See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in IntelliJ Platform UI Guidelines on how to write message texts for highlighting/quick fixes.
+See [Inspections](inspections.md) topic in UI Guidelines on how to write message texts for highlighting/quick fixes.
 
 To highlight a region of text as a warning or error:
 

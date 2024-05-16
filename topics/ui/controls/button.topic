@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       id="button" title="Button">
+
+    <link-summary>UI guidelines on using buttons.</link-summary>
+
+    <tldr>
+        <p>
+            <b>Implementation:</b>
+            <a href="https://docs.oracle.com/javase/tutorial/uiswing/components/button.html"><code>JButton</code></a>
+        </p>
+    </tldr>
+
+    <img src="button_example.png" alt="Cancel and Save buttons" width="156"/>
+    <chapter title="When to use" id="when-to-use">
+        <p>Use a button to invoke an immediate action.</p>
+        <p>Use a <a href="link.md">link</a> instead if:</p>
+        <list>
+            <li>
+                <p>The action takes the user to another page of the same dialog or an external source like
+                    documentation:</p>
+                <img src="link_after.png" alt="The 'Manage scopes' button next to a combo box" width="465"/>
+                <p>
+                    <emphasis>The Manage scope link takes to another page of the Settings dialog.</emphasis>
+                </p>
+                <p>
+                    <b>Exception</b>: Next and Previous buttons in wizard navigation.
+                </p>
+            </li>
+            <li>
+                <p>
+                    The command is a secondary action that is not related to the primary purpose of the window,
+                    and the space is constrained.
+                </p>
+                <table>
+                    <tr>
+                        <td>
+                            <p>
+                                <format color="Red" style="bold">Incorrect</format>
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                <format color="Green" style="bold">Correct</format>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="link_incorrect.png"
+                                 alt="A 'Configure...' button next to a checkbox"
+                                 width="313"/>
+                        </td>
+                        <td>
+                            <img src="link_correct.png"
+                                 alt="A 'Configure' link next to a checkbox"
+                                 width="272"/>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+        </list>
+
+        <p>Use toolbar buttons instead if there are several buttons related to a table or list:</p>
+        <table>
+            <tr>
+                <td>
+                    <p>
+                        <format color="Red" style="bold">Incorrect</format>
+                    </p>
+                </td>
+                <td>
+                    <p>
+                        <format color="Green" style="bold">Correct</format>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="many_buttons.png" alt="Many regular buttons in a single place" width="370"/>
+                </td>
+                <td><img src="toolbar.png" alt="Toolbar buttons" width="220"/></td>
+            </tr>
+        </table>
+
+        <p>Use a <a href="split_button.md">split button</a> instead if:</p>
+        <list>
+            <li>There are several related actions (more than 2), but the space is limited and/or packed.</li>
+            <li>The action is not common and is dangerous, for example, can destroy user data and cannot be easily
+                undone.
+            </li>
+        </list>
+        <p>Use a <a href="built_in_button.md">built-in button</a> instead if it's related to an input field, combo box,
+            search field.</p>
+    </chapter>
+
+
+    <chapter title="How to use" id="how-to-use">
+        <chapter title="Label" id="label">
+            <p>The label displays the action the button performs.</p>
+            <p>Write the label as an imperative verb, e.g. Save, Print, Cancel. Use title capitalization.</p>
+            <p>
+                <b>Exceptions</b>
+                : standard buttons like OK, Back/Forward, Previous/Next, Yes/No, Agree, Options, Settings, Details.
+            </p>
+            <p>The button should answer the question in the title, so the user can skip the description. Prefer specific
+                labels over
+                generic ones:</p>
+            <table>
+                <tr>
+                    <td>
+                        <p>
+                            <format color="Red" style="bold">Incorrect</format>
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            <format color="Green" style="bold">Correct</format>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="default_OK.png" alt="An incorrect button with a generic 'OK' label" width="72"/>
+                        <p>Unclear what happens on the click.</p></td>
+                    <td><img src="default_save.png" alt="A correct button with a clear 'Save' label" width="72"/>
+                        <p>The label indicates what happens on the click.</p></td>
+                </tr>
+            </table>
+            <p>
+                <b>Exception</b>: the Cancel button if it is clear what action is being canceled.
+                For example, use the
+                <control>Cancel</control>
+                button, not the
+                <control>Don’t Create</control>
+                button.
+            </p>
+            <p>The label should be short, not more than 5 words. If it’s not obvious what element the button is related
+                to, add more
+                words to make it clear. Prefer clear labels to short:</p>
+            <table>
+                <tr>
+                    <td>
+                        <p>
+                            <format color="DarkOrange" style="bold">Acceptable</format>
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            <format color="Green" style="bold">Better</format>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="active_edit.png" alt="A button with 'Edit...' label" width="72"/>
+                    </td>
+                    <td>
+                        <img src="active_edit_action_icon.png"
+                             alt="A button with 'Edit Action Icon...' label"
+                             width="146"/>
+                    </td>
+                </tr>
+            </table>
+
+            <p>
+                Add an ellipsis if additional actions such as adding more info or confirming the action are required:
+                <img src="buttons_with_ellipsis.png" alt="Buttons with ellipsis" width="146" style="block"/>
+            </p>
+            <p>Do
+                <control>not</control>
+                add ellipsis if another window is opened, but no more input from the user is required. For example,
+                About, Details.
+            </p>
+            <p>Do <b>not</b>
+                use the word
+                <emphasis>Now</emphasis>
+                in the label because buttons always trigger an immediate action:
+            </p>
+
+            <table>
+                <tr>
+                    <td>
+                        <p>
+                            <format color="Red" style="bold">Incorrect</format>
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            <format color="Green" style="bold">Better</format>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="check_now.png" alt="A button with 'Check Now' label" width="336"/></td>
+                    <td>
+                        <img src="check_for_updates.png" alt="A button with 'Check for Updates' label" width="384"/>
+                    </td>
+                </tr>
+            </table>
+            <p>Use the
+                <emphasis>Close</emphasis>
+                label only if nothing can be changed in the dialog and there is no confirmation button, for example, in
+                the
+                <ui-path>Help | My Productivity</ui-path>
+                dialog.
+                In all other cases, use the
+                <control>Cancel</control>
+                button.
+            </p>
+            <p>Do
+                <b>not</b>
+                add an icon to the button. The main purpose of an icon is to quickly find a familiar action in a packed
+                toolbar or menu. Usually, no more than 3 buttons are placed nearby, their labels can be scanned quickly,
+                and icons are not required.
+            </p>
+        </chapter>
+
+
+        <chapter title="Hover" id="hover">
+            <p>On hovering over a button, show a tooltip with the shortcut and the action name if it can be clarified.
+                For more details,
+                see <a href="context_help.md">Context help</a>.</p>
+            <table style="none">
+                <tr>
+                    <td>
+                        <img src="hover_shortcut.png"
+                             alt="A 'Replace' button with a shortcut in hover tooltip"
+                             width="77"/>
+                        <p>
+                            <emphasis>If the action is clear, show the shortcut only.</emphasis>
+                        </p>
+                    </td>
+                    <td>
+                        <img src="hover_name_shortcut.png"
+                             alt="'Replace' button with an action name and a shortcut in hover tooltip"
+                             width="155"/>
+                        <p>
+                            <emphasis>If the action can be clarified, show the action name and the shortcut.</emphasis>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </chapter>
+    </chapter>
+
+
+    <chapter title="Button states" id="button-states">
+        <chapter title="Default" id="default">
+            <table style="none">
+                <tr>
+                    <td>
+                        <img src="default_save.png" alt="'Save' button on macOS" width="72"/>
+                        <p>
+                            <emphasis>macOS</emphasis>
+                        </p>
+                    </td>
+                    <td>
+                        <img src="default_save_win.png" alt="'Save' button on Windows" width="72"/>
+                        <p>
+                            <emphasis>Windows</emphasis>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+            The default button confirms the main purpose of a dialog. It is triggered by pressing
+            <shortcut>Enter</shortcut>
+            or
+            <shortcut>Ctrl+Enter</shortcut>
+            on Windows/Linux and
+            <shortcut>Enter</shortcut>
+            or
+            <shortcut>Cmd+Enter</shortcut>
+            on macOS.
+            <b>Exception</b>: If the focus is on an element that uses the
+            <shortcut>Enter</shortcut>
+            key (e.g., a text area), the default button is triggered only by
+            <shortcut>Ctrl+Enter</shortcut>
+            on Windows/Linux and
+            <shortcut>Cmd+Enter</shortcut>
+            on macOS.
+            <p>The default button should always be present in a dialog. Only one button in a dialog can be the default
+                one.</p>
+            <p>If the action is dangerous, e.g., can lead to data loss, provide an easy way to undo the command.</p>
+            <p>If it's not possible to undo the action, make a secondary button the default one:
+                <img src="merge_dialog.png"
+                     alt="A dialog with secondary and primary buttons"
+                     width="426"
+                     style="block"/>
+            </p>
+        </chapter>
+
+
+        <chapter title="Focused" id="focused">
+            <img src="focused.png" alt="'Cancel' button in a focused state" width="78"/>
+            <p>All buttons can get focus, even on macOS if the
+                <control>Full Keyboard Access</control>
+                option is disabled in Preferences &gt; Keyboard &gt;
+                Shortcuts.
+                A focused button behavior varies on macOS/Linux and Windows.
+            </p>
+            <p>
+                <b>macOS</b>
+            </p>
+            <list>
+                <li>
+                    <p>A focused button is invoked by pressing
+                        <shortcut>Space</shortcut>
+                        . Focused and default buttons are
+                        <b>independent</b>
+                        ,
+                        so when
+                        the focus moves from one button to another, the default button does not change.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Make the second most popular button in the dialog focused.
+                        For example, the
+                        <control>New Window</control>
+                        button in the
+                        <control>Open Project</control>
+                        dialog:
+                        <img src="open_project_dialog.png"
+                             width="448"
+                             alt="A dialog with buttons: 'New Window' (focused), 'Cancel', and 'This Window' (default)."
+                             style="block"/>
+                    </p>
+                </li>
+                <li>
+                    <p>It’s recommended to have one default and one focused button, so that most of the actions can be
+                        triggered using
+                        the keyboard.</p>
+                    <p>
+                        <format color="Red" style="bold">Incorrect</format>
+                    </p>
+                    <img
+                            src="open_project_dialog_incorrect_focus.png"
+                            alt="A dialog with buttons: 'New Window', 'Cancel', and 'This Window' (default and focused)."
+                            width="448"/>
+                    <emphasis>
+                        The
+                        <control>This Window</control>
+                        button is the default and the focused one, while it’s
+                        better to place the focus on the
+                        <control>New Window</control>
+                        button, so that the user can
+                        access both options using the keyboard.
+                    </emphasis>
+                </li>
+            </list>
+
+            <p>
+                <b>Windows/Linux</b>
+            </p>
+            <list>
+                <li>The focused button is triggered by pressing
+                    <shortcut>Enter</shortcut>
+                    or
+                    <shortcut>Space</shortcut>
+                    . If non-default
+                    button gets focus, the default button is invoked using
+                    <shortcut>Ctrl+Enter</shortcut>
+                    .
+                    <img src="open_project_dialog_win.png"
+                         alt="A Windows dialog with buttons: 'This Window' (default), 'New Window' (focused), and 'Cancel'."
+                         width="672"/>
+                    <emphasis>On pressing the
+                        <shortcut>Tab</shortcut>
+                        key, the
+                        <control>New Window</control>
+                        button gets the focus and is triggered with
+                        <shortcut>Enter</shortcut>
+                        or
+                        <shortcut>Space</shortcut>
+                        .
+                        The original
+                        <control>This Window</control>
+                        button is triggered with
+                        <shortcut>Ctrl+Enter</shortcut>
+                        .
+                    </emphasis>
+                    If the focus moves to a control that’s not a button, the original default button is triggered by
+                    <shortcut>Enter</shortcut>
+                    .
+                </li>
+            </list>
+        </chapter>
+
+
+        <chapter title="Disabled" id="disabled">
+            <img src="button_disabled.png"
+                 alt="Disabled 'Cancel' button"
+                 width="72"/>
+            <p>Disable a button if:</p>
+            <list>
+                <li>It’s an
+                    <control>Apply</control>
+                    button and no changes have been made in this dialog.
+                </li>
+                <li>The control to which the button is related is disabled.</li>
+                <li>Not all required fields in the dialog are filled.
+                </li>
+            </list>
+            <p>Other common buttons are described below. They can be regular or default buttons.</p>
+        </chapter>
+
+
+        <chapter title="Cancel" id="cancel">
+            <p>The
+                <emphasis>Cancel</emphasis>
+                button reverts the app to the state before the dialog was invoked, and works equivalent to the
+                <shortcut>
+                    Esc
+                </shortcut>
+                key on Win and Linux, and
+                <shortcut>Esc</shortcut>
+                or
+                <shortcut>Cmd+Period</shortcut>
+                on macOS.
+                If a confirmation button is present in a dialog, e.g.,
+                <control>OK</control>
+                or
+                <control>Save</control>
+                , it’s recommended to have a button that cancels the
+                dialog, e.g.,
+                <control>Cancel</control>
+                ,
+                <control>Continue Editing</control>
+                , etc.
+            </p>
+        </chapter>
+        <chapter title="Apply" id="apply">
+            <p>Use the Apply button in dialogs with many settings that affect how data is displayed. The Apply button
+                allows you to
+                save and preview the effect of the selected options, and continue changing the settings, for example,
+                change a scheme in
+                Settings.</p>
+        </chapter>
+        <chapter title="Help" id="help">
+            <p>The help button appears in the bottom-left corner of a dialog and shows help in a tooltip on hover, or
+                opens a help
+                dialog when clicking it. For more details, see <a href="context_help.md">Context help</a>.
+                <br/>
+                <img src="helpButton_mac.png" alt="A question mark in the circle button" width="21"/></p>
+        </chapter>
+    </chapter>
+    <chapter title="Sizes and placement" id="sizes-and-placement">
+        <p>The button width accommodates the length of the label plus standard indents 14px, but not less than the
+            72px.</p>
+        <img src="button_sizes.png" alt="Example buttons with incorrect and correct sizes and indents" width="491"/>
+        <p>The button height is fixed, so the label is always a single line.</p>
+        <p>To lay out the button that depends on other control, e.g., input field, follow the rules
+            for <a href="layout.md" anchor="dependent-controls">dependent controls</a>. Otherwise, follow
+            the rules for <a href="layout.md" anchor="independent-controls">independent controls</a>.</p>
+        <!--
+         <table>
+         <col width="140px">
+         <col width="200px">
+         <col width="300px">
+             <tr>
+                 <td>  </td>
+                 <td> macOS, Darcula </td>
+                 <td> Windows </td>
+             </tr>
+             <tr>
+                 <td> <p style="color: #999999; margin-top: 10px;"> Several buttons </p></td>
+                 <td> <img src="button_size_1.png" style="margin: -5px 0 0 0"></td>
+                 <td> <img src="button_size_2.png" style="margin: -5px 0 0 0"></td>
+             </tr>
+         </table>
+         <table>
+         <col width="140px">
+             <tr>
+                 <td> <p style="color: #999999; margin-top: 10px;"> Button on the right </p></td>
+                 <td> <img src="button_size_3.png" style="margin: -5px 0 0 0"></td>
+             </tr>
+             <tr>
+                 <td>  </td>
+                 <td> <img src="button_size_4.png" style="margin: -5px 0 0 0"></td>
+             </tr>
+             <tr>
+                 <td>  </td>
+             </tr>
+             <tr>
+                 <td> <p style="color: #999999; margin-top: -5px;"> Button under </p></td>
+                 <td> <img src="button_size_5.png" style="margin: -5px 0 0 0"></td>
+             </tr>
+         </table>
+        -->
+        <!--
+        ### Colors
+
+        <table>
+         <col width="50%">
+         <th> Regular button </td>
+             <tr>
+                 <td> Text </td>
+                 <td> Button.foreground </td>
+             </tr>
+             <tr>
+                 <td> Background </td>
+                 <td> Button.startBackground<br/>
+                      Button.endBackground
+                 </td>
+             </tr>
+             <tr>
+                 <td> Border </td>
+                 <td> Button.startBorderColor <br/>
+                      Button.endBorderColor
+                 </td>
+             </tr>
+             <tr>
+                 <td> Inner focused border </td>
+                 <td> Button.focusedBorderColor </td>
+             </tr>
+             <tr>
+                 <td> Outer wider focus border </td>
+                 <td> Component.focusColor </td>
+             </tr>
+             <tr>
+                 <td> Shadow </td>
+                 <td> Button.shadowColor </td>
+             </tr>
+         <th> Default button </td>
+              <tr>
+                  <td> Text </td>
+                  <td> Button.default.foreground </td>
+              </tr>
+              <tr>
+                  <td> Background </td>
+                  <td> Button.default.startBackground<br/>
+                       Button.default.endBackground
+                  </td>
+              </tr>
+              <tr>
+                  <td> Border </td>
+                  <td> Button.default.startBorderColor <br/>
+                       Button.default.endBorderColor
+                  </td>
+              </tr>
+              <tr>
+                  <td> Inner focused border </td>
+                  <td> Button.default.focusedBorderColor </td>
+              </tr>
+              <tr>
+                  <td> Outer wider focus border </td>
+                  <td> IntelliJ: Component.focusColor <br/>
+                        Darcula: Button.default.focusColor</td>
+              </tr>
+              <tr>
+                  <td> Shadow </td>
+                  <td> Button.default.shadowColor </td>
+              </tr>
+          <th> Disabled button </td>
+                <tr>
+                    <td> Text </td>
+                    <td> Button.disabledText </td>
+                </tr>
+                <tr>
+                    <td> Background </td>
+                    <td> Button.background (same as Panel.background) </td>
+                </tr>
+                <tr>
+                    <td> Border </td>
+                    <td> Button.disabledBorderColor </td>
+                </tr>
+        </table>
+        -->
+    </chapter>
+
+</topic>

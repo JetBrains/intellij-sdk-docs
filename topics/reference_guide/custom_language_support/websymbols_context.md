@@ -16,7 +16,7 @@ the context `kind` is not present in the location.
 
 ## Location - `PsiElement` vs `VirtualFile`
 
-The location can either be a `PsiElement` or a `VirtualFile` with a `Project`. If the location is `PsiElement`,
+The location can either be a `PsiElement`, or a `VirtualFile` with a `Project`. If the location is `PsiElement`,
 the PSI tree of the containing file might be checked by `WebSymbolsContextProvider`, for instance, for some imports.
 If the location is a `VirtualFile`, the PSI tree will not be acquired, so the resulting context may differ
 from the one acquired on a `PsiElement` location. This is expected. The `VirtualFile` location is used to,
@@ -42,7 +42,9 @@ to detect a context of a particular name and kind, e.g.:
 ```xml
 <idea-plugin>
   <extensions defaultExtensionNs="com.intellij">
-    <webSymbols.context kind="stimulus-context" name="true" implementation="com.intellij.stimulus.context.StimulusContextProvider"/>
+    <webSymbols.context 
+        kind="stimulus-context" name="true"
+        implementation="com.intellij.stimulus.context.StimulusContextProvider"/>
   </extensions>
 </idea-plugin>
 ```
@@ -57,12 +59,14 @@ WebSymbols.get("stimulus-context", psiElement) == "true"
 ```
 
 `WebSymbolsContextProvider` can also prevent a context from being detected. In this case, you should override `isForbidden` method.
-To prevent any context of a particular kind, use `any` as a name. E.g.:
+To prevent any context of a particular kind, use `any` as a name, e.g.:
 
 ```xml
 <idea-plugin>
   <extensions defaultExtensionNs="com.intellij">
-    <webSymbols.context kind="framework" name="any" implementation="com.intellij.python.js.PyTemplatesWebContextBlocker"/>
+    <webSymbols.context
+        kind="framework" name="any"
+        implementation="com.intellij.python.js.PyTemplatesWebContextBlocker"/>
   </extensions>
 </idea-plugin>
 ```
@@ -70,13 +74,13 @@ To prevent any context of a particular kind, use `any` as a name. E.g.:
 In this example, the `PyTemplatesWebContextBlocker` can check if the project has any Python templating engine enabled in the
 location and forbid the `framework` context to disable web frameworks support, like Angular or Vue, which conflict with e.g., Blade support.
 
-## Context rules
+## Context Rules
 
 `WebSymbolsContextProvider` is straightforward to use, but it is not very efficient. When many providers look for similar information,
 a lot of calculations are repeated and the performance of the whole IDE drops down. One of the examples is when providers look for the presence
 of some package manager dependency (Node package, Ruby Gem, Maven or Gradle dependency, etc.). To optimize this lookup, you can provide context rules.
 
-### Web Types with context rules
+### Web Types with Context Rules
 
 One of the ways to provide context rules is through a [Web Types](websymbols_web_types.md) file.
 You can specify a top-level property `context-config`, e.g.:
@@ -113,8 +117,8 @@ You can specify a top-level property `context-config`, e.g.:
 The first level property under `contexts-config` is the name of context `kind` and the next level property is the context `name`
 for which you provide rules. You can provide `enable-when` and `disable-when` rules.
 
-In IDEs prior to 2024.2 only a deprecated syntax is supported, where the first level property under `contexts-config` is the context `name`
-and the context kind needs to be specified through `kind` property. E.g.:
+In IDEs prior to 2024.2, only a deprecated syntax is supported, where the first level property under `contexts-config` is the context `name`
+and the context kind needs to be specified through `kind` property, e.g.:
 
 ```json
 {
@@ -157,7 +161,7 @@ For `disable-when` supported rules are:
 - `file-extensions` - file extension without leading `.`
 - `file-name-patterns` - file name regular expression pattern
 
-#### Context proximity
+#### Context Proximity
 
 When rules are processed, for each rule match, a proximity score is calculated. A lower score means that the match
 is closer to the location. For instance, `file-extensions` and `file-name-patterns` match has proximity `0.0`, which
@@ -184,14 +188,16 @@ You can embed Web Types with your plugin and point to them via extension point:
 ```xml
 <idea-plugin>
   <extensions defaultExtensionNs="com.intellij">
-    <webSymbols.webTypes source="web-types/vue-store-contexts@0.0.0.web-types.json" enableByDefault="true"/>
+    <webSymbols.webTypes
+        source="web-types/vue-store-contexts@0.0.0.web-types.json"
+        enableByDefault="true"/>
   </extensions>
 </idea-plugin>
 ```
 
 Web Types are designed to correlate to package manager dependencies, so their name should correspond to a
 package dependency. However, in this case, we only want to contribute some context rules, which do not
-correspond to any dependency, so we can name the file as we want to. Currently only Node Package Manager
+correspond to any dependency, so we can name the file as we want to. Currently, only Node Package Manager
 is supported, and JavaScript plugin must be loaded for the extension point to work. In the future, support
 for other package managers should be added and extension point should work regardless of the presence of JavaScript plugin.
 
@@ -209,9 +215,11 @@ through `com.intellij.webSymbols.queryConfigurator` extension point and implemen
 It is important that the results are stable, because any unexpected change in the rules will cause
 rescanning of the project, dropping of all caches and restarting code analysis deamon.
 
-## `.ws-context` file (2024.1.2+)
+## `.ws-context` File
 
-The user can force a context with a `.ws-context` JSON file. E.g.:
+> The `.ws-context` file support is available since 2024.1.2.
+
+The user can force a context with a `.ws-context` JSON file, e.g.:
 ```json
 {
   "framework": "vue",
@@ -252,6 +260,6 @@ The provider has a single method to be overridden — `calculateProximity`. When
 it should calculate the [proximity](#context-proximity) of each source provided by `sourceNames`. For instance, if you implement support for a package manager and
 the `sourceKind` is a `PackageManagerDependency` with the appropriate name, the provider should calculate the [proximity](#context-proximity)
 of each dependency provided through `sourceNames` parameter. The `Result` object contains also a `modificationTrackers` set field, which
-is used to track when the cached results should be recalculated. It is crucial to as few trackers as possible and refresh the cache as little as possible
+is used to track when the cached results should be recalculated. It is crucial to have as few trackers as possible and refresh the cache as little as possible
 because the results are used in every call to the `WebSymbolContext.get()` method.
 

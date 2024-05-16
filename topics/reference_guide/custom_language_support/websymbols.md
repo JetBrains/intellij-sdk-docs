@@ -36,6 +36,8 @@ Currently, IDEs provide built-in integration for following language features (se
 
 There's also the option to write integration for other languages.
 
+Web Symbols framework provides also a convenient way to manage enablement of features through [`WebSymbolsContext` API](websymbols_context.md).
+
 The following sub-pages provide information on how to implement Web Symbols for plugins and how to
 define them statically through JSON schemas:
 - [](websymbols_implementation.md)

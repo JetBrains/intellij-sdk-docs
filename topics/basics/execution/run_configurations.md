@@ -111,7 +111,7 @@ If the settings editor requires validation, implement [`CheckableRunConfiguratio
 
 If the settings editor is complex, see [](#simplifying-settings-editors) for solutions.
 
-**Example**: [DemoSettingsEditor](%gh-sdk-samples%/run_configuration/src/main/java/org/jetbrains/sdk/runConfiguration/DemoSettingsEditor.java) from the `run_configuration` code sample.
+**Example:** [DemoSettingsEditor](%gh-sdk-samples-master%/run_configuration/src/main/java/org/jetbrains/sdk/runConfiguration/DemoSettingsEditor.java) from the `run_configuration` code sample.
 
 ## Persistence
 
@@ -195,7 +195,7 @@ It makes the editor smaller, freeing it from the clutter of unused settings fiel
 To implement a fragmented settings editor in a run configuration, extend [`RunConfigurationFragmentedEditor`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/ui/RunConfigurationFragmentedEditor.java) and implement `createRunFragments()`.
 The method must return a list of [`SettingsEditorFragment`](%gh-ic%/platform/platform-api/src/com/intellij/execution/ui/SettingsEditorFragment.java) instances, which represent particular settings fragments that users can enable and configure.
 
-**Examples**:
+**Examples:**
 - [`JavaApplicationSettingsEditor`](%gh-ic%/java/execution/impl/src/com/intellij/execution/application/JavaApplicationSettingsEditor.java)
 - [`MavenRunConfigurationSettingsEditor`](%gh-ic%/plugins/maven/src/main/java/org/jetbrains/idea/maven/execution/run/configuration/MavenRunConfigurationSettingsEditor.kt)
 
@@ -210,7 +210,7 @@ A complex settings editor can be split into smaller editors focused on a specifi
 These editors should be added to the [`SettingsEditorGroup`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/SettingsEditorGroup.java) object, which is a `SettingsEditor`'s implementation itself and must be returned from `getConfigurationEditor()` or `getRunnerSettingsEditor()`.
 Each editor added to the group is displayed in a separate tab.
 
-**Example**: [`ApplicationConfiguration.getConfigurationEditor()`](%gh-ic%/java/execution/impl/src/com/intellij/execution/application/ApplicationConfiguration.java)
+**Example:** [`ApplicationConfiguration.getConfigurationEditor()`](%gh-ic%/java/execution/impl/src/com/intellij/execution/application/ApplicationConfiguration.java)
 
 
 ## Refactoring Support

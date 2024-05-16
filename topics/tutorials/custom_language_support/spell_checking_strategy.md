@@ -1,6 +1,6 @@
-# 21. Spell Checking
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# 21. Spell Checking
 
 <link-summary>Sample implementation of spellchecking strategy allowing to analyze spell correctness in Simple language elements.</link-summary>
 
@@ -10,7 +10,7 @@
 
 **Reference**: [](spell_checking.md)
 
-**Code**: [`SimpleSpellcheckingStrategy`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleSpellcheckingStrategy.java)
+**Code**: [`SimpleSpellcheckingStrategy`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleSpellcheckingStrategy.java)
 
 </tldr>
 
@@ -18,7 +18,7 @@ Spell checking allows users to see spelling errors while editing code.
 
 ## Define a SimpleSpellcheckingStrategy
 
-The [`SimpleSpellcheckingStrategy`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleSpellcheckingStrategy.java) extends
+The [`SimpleSpellcheckingStrategy`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleSpellcheckingStrategy.java) extends
 [`SpellcheckingStrategy`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/tokenizer/SpellcheckingStrategy.java)
 
 ```java

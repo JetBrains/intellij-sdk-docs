@@ -136,7 +136,9 @@
       <toc-element toc-title="Local History"/>
     </toc-element>
     <toc-element toc-title="Tasks and Contexts"/>
-    <toc-element topic="localization_guide.md"/>
+    <toc-element topic="internationalization.md">
+      <toc-element topic="providing_translations.md" accepts-web-file-names="localization-guide.html"/>
+    </toc-element>
     <toc-element toc-title="Diagrams"/>
   </toc-element>
   <toc-element toc-title="Project Model">
@@ -237,6 +239,7 @@
           <toc-element topic="websymbols.md">
             <toc-element topic="websymbols_implementation.md"/>
             <toc-element topic="websymbols_integration.md"/>
+            <toc-element topic="websymbols_context.md"/>
             <toc-element topic="websymbols_web_types.md" accepts-web-file-names="websymbols-static-symbols.html"/>
           </toc-element>
         </toc-element>
@@ -418,6 +421,7 @@
       <toc-element topic="tools_intellij_platform_gradle_plugin_repositories_extension.md"/>
       <toc-element topic="tools_intellij_platform_gradle_plugin_dependencies_extension.md"/>
       <toc-element topic="tools_intellij_platform_gradle_plugin_tasks.md"/>
+      <toc-element topic="tools_intellij_platform_gradle_plugin_custom_tasks.md"/>
       <toc-element topic="tools_intellij_platform_gradle_plugin_task_awares.md"/>
       <toc-element topic="tools_intellij_platform_gradle_plugin_types.md"/>
       <toc-element topic="tools_intellij_platform_gradle_plugin_gradle_properties.md"/>

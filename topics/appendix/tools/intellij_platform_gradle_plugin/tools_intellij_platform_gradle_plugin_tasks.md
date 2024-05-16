@@ -51,7 +51,6 @@ flowchart LR
 
             subgraph TEST ["Test"]
                 prepareTest
-                testIde
                 testIdePerformance>testIdePerformance]
                 testIdeUi>testIdeUi]
 
@@ -101,7 +100,6 @@ flowchart LR
 
     prepareTest --> prepareSandbox_patchPluginXml
     test --> prepareTest
-    testIde --> prepareSandbox_patchPluginXml
     testIdePerformance
     testIdeUi
 
@@ -126,7 +124,6 @@ flowchart LR
     click runIde "#runIde"
 
     click prepareTest "#prepareTest"
-    click testIde "#testIde"
     click testIdePerformance "#testIdePerformance"
     click testIdeUi "#testIdeUi"
 
@@ -151,7 +148,7 @@ flowchart LR
 
 **Extends**: [`Zip`][gradle-zip-task]
 
-**Sources**: [`BuildPluginTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/BuildPluginTask.kt)
+**Sources**: [`BuildPluginTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/BuildPluginTask.kt)
 
 </tldr>
 
@@ -189,7 +186,7 @@ Default value
 
 **Extends**: [`JavaExec`][gradle-javaexec-task], [`RunnableIdeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#RunnableIdeAware)
 
-**Sources**: [`BuildSearchableOptionsTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/BuildSearchableOptionsTask.kt)
+**Sources**: [`BuildSearchableOptionsTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/BuildSearchableOptionsTask.kt)
 
 </tldr>
 
@@ -236,7 +233,7 @@ Default value
 
 **Extends**: [`DefaultTask`][gradle-default-task], [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware)
 
-**Sources**: [`InitializeIntelliJPlatformPluginTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/InitializeIntelliJPlatformPluginTask.kt)
+**Sources**: [`InitializeIntelliJPlatformPluginTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/InitializeIntelliJPlatformPluginTask.kt)
 
 </tldr>
 
@@ -324,7 +321,7 @@ Type
 
 **Extends**: [`DefaultTask`][gradle-default-task], [`JavaCompilerAware`](tools_intellij_platform_gradle_plugin_task_awares.md#JavaCompilerAware)
 
-**Sources**: [`InstrumentCodeTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/InstrumentCodeTask.kt)
+**Sources**: [`InstrumentCodeTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/InstrumentCodeTask.kt)
 
 </tldr>
 
@@ -431,7 +428,7 @@ Creates a duplicate of the current module's `jar` file with instrumented classes
 
 **Extends**: [`Jar`][gradle-jar-task], [`PluginAware`](tools_intellij_platform_gradle_plugin_task_awares.md#PluginAware), [`SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware)
 
-**Sources**: [`JarSearchableOptionsTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/JarSearchableOptionsTask.kt)
+**Sources**: [`JarSearchableOptionsTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/JarSearchableOptionsTask.kt)
 
 </tldr>
 
@@ -485,7 +482,7 @@ Default value
 
 **Extends**: [`DefaultTask`][gradle-default-task], [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware)
 
-**Sources**: [`PatchPluginXmlTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PatchPluginXmlTask.kt)
+**Sources**: [`PatchPluginXmlTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PatchPluginXmlTask.kt)
 
 </tldr>
 
@@ -786,13 +783,13 @@ See also:
 
 **Extends**: [`Sync`][gradle-jar-task], [`SandboxProducerAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxProducerAware)
 
-**Sources**: [`PrepareSandboxTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PrepareSandboxTask.kt)
+**Sources**: [`PrepareSandboxTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PrepareSandboxTask.kt)
 
 </tldr>
 
 Prepares a sandbox environment with the installed plugin and its dependencies.
 
-The sandbox directory is required by tasks that run IDE and tests in isolation from other instances, like when multiple IntelliJ Platforms are used for testing with [`runIde`](#runIde), [`testIde`](#testIde), [`testIdeUi`](#testIdeUi), or [`testIdePerformance`](#testIdePerformance) tasks.
+The sandbox directory is required by tasks that run IDE and tests in isolation from other instances, like when multiple IntelliJ Platforms are used for testing with [`runIde`](#runIde), [`prepareTest`](#prepareTest), [`testIdeUi`](#testIdeUi), or [`testIdePerformance`](#testIdePerformance) tasks.
 
 To fully use the sandbox capabilities in a task, extend from [`SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware) interface.
 
@@ -811,6 +808,17 @@ Type
 
 Default value
 : [`SandboxAware.sandboxPluginsDirectory`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware-sandboxPluginsDirectory)
+
+
+### `disabledPlugins`
+{#prepareSandbox-disabledPlugins}
+
+An internal field to hold a list of plugins to be disabled within the current sandbox.
+This property is controlled with [`disablePlugin()`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware-plugins) method of [](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware).
+
+{style="narrow"}
+Type
+: `SetProperty<String>`
 
 
 ### `pluginJar`
@@ -860,7 +868,7 @@ Type
 
 **Extends**: [`DefaultTask`][gradle-default-task], [`TestableAware`](tools_intellij_platform_gradle_plugin_task_awares.md#TestableAware)
 
-**Sources**: [`PrepareTestTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PrepareTestTask.kt)
+**Sources**: [`PrepareTestTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PrepareTestTask.kt)
 
 </tldr>
 
@@ -874,7 +882,7 @@ This is a task used to prepare an immutable `test` task and provide all necessar
 
 **Extends**: [`DefaultTask`][gradle-default-task], [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware)
 
-**Sources**: [`PrintBundledPluginsTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PrintBundledPluginsTask.kt)
+**Sources**: [`PrintBundledPluginsTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PrintBundledPluginsTask.kt)
 
 </tldr>
 
@@ -888,7 +896,7 @@ Prints the list of bundled plugins available within the currently targeted Intel
 
 **Extends**: [`DefaultTask`][gradle-default-task], [`ProductReleasesValueSource.FilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesValueSource-FilterParameters)
 
-**Sources**: [`PrintProductsReleasesTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PrintProductsReleasesTask.kt)
+**Sources**: [`PrintProductsReleasesTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PrintProductsReleasesTask.kt)
 
 </tldr>
 
@@ -923,7 +931,7 @@ See also:
 
 **Extends**: [`DefaultTask`][gradle-default-task]
 
-**Sources**: [`PublishPluginTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PublishPluginTask.kt)
+**Sources**: [`PublishPluginTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PublishPluginTask.kt)
 
 </tldr>
 
@@ -1031,9 +1039,9 @@ Default value
 
 **Depends on**: [`patchPluginXml`](#patchPluginXml), [`prepareSandbox`](#prepareSandbox)
 
-**Extends**: [`JavaExec`][gradle-javaexec-task], [`RunnableIdeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#RunnableIdeAware), [`CustomIntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware)
+**Extends**: [`JavaExec`][gradle-javaexec-task], [`RunnableIdeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#RunnableIdeAware)
 
-**Sources**: [`RunIdeTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/RunIdeTask.kt)
+**Sources**: [`RunIdeTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/RunIdeTask.kt)
 
 </tldr>
 
@@ -1042,21 +1050,6 @@ It directly extends the [`JavaExec`][gradle-javaexec-task] Gradle task, which al
 
 This task class also inherits from [`CustomIntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware), which makes it possible to create `runIde`-like tasks using custom IntelliJ Platform versions:
 
-```kotlin
-import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
-import org.jetbrains.intellij.platform.gradle.tasks.RunIdeTask
-
-tasks {
-  val runPhpStorm by registering(RunIdeTask::class) {
-    type = IntelliJPlatformType.PhpStorm
-    version = "2023.2.2"
-  }
-
-  val runLocalIde by registering(RunIdeTask::class) {
-    localPath = file("/Users/user/Applications/Android Studio.app")
-  }
-}
-```
 
 ## `signPlugin`
 {#signPlugin}
@@ -1067,7 +1060,7 @@ tasks {
 
 **Extends**: [`JavaExec`][gradle-javaexec-task], [`SigningAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SigningAware)
 
-**Sources**: [`SignPluginTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/SignPluginTask.kt)
+**Sources**: [`SignPluginTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/SignPluginTask.kt)
 
 </tldr>
 
@@ -1255,41 +1248,6 @@ Default value
 : [`intellijPlatform.signing.certificateChainFile`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-certificateChainFile)
 
 
-## `testIde`
-{#testIde}
-
-<tldr>
-
-**Extends**: [`Test`][gradle-test-task], [`TestableAware`](tools_intellij_platform_gradle_plugin_task_awares.md#TestableAware), [`CustomIntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware)
-
-**Sources**: [`TestIdeTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/TestIdeTask.kt)
-
-</tldr>
-
-> This task is not registered with the `testIde` name, but its configuration extends the default `test` task.
-
-Runs plugin tests against the currently selected IntelliJ Platform with the built plugin loaded.
-It directly extends the [`Test`][gradle-test-task] Gradle task, which allows for an extensive configuration (system properties, memory management, etc.).
-
-This task class also inherits from [`CustomIntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware), which makes it possible to create `testIde`-like tasks using custom IntelliJ Platform versions:
-
-```kotlin
-import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
-import org.jetbrains.intellij.platform.gradle.tasks.TestIdeTask
-
-tasks {
-  val testPhpStorm by registering(TestIdeTask::class) {
-    type = IntelliJPlatformType.PhpStorm
-    version = "2023.2.2"
-  }
-
-  val testLocalIde by registering(TestIdeTask::class) {
-    localPath = file("/Users/user/Applications/Android Studio.app")
-  }
-}
-```
-
-
 ## `testIdePerformance`
 {#testIdePerformance}
 
@@ -1315,7 +1273,7 @@ tasks {
 
 **Extends**: [`DefaultTask`][gradle-default-task], [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware), [`PluginAware`](tools_intellij_platform_gradle_plugin_task_awares.md#PluginAware)
 
-**Sources**: [`VerifyPluginProjectConfigurationTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginProjectConfigurationTask.kt)
+**Sources**: [`VerifyPluginProjectConfigurationTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginProjectConfigurationTask.kt)
 
 </tldr>
 
@@ -1514,7 +1472,7 @@ Default value
 
 **Extends**: [`JavaExec`][gradle-javaexec-task], [`SigningAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SigningAware)
 
-**Sources**: [`PrepareSandboxTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginSignatureTask.kt)
+**Sources**: [`PrepareSandboxTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginSignatureTask.kt)
 
 </tldr>
 
@@ -1577,7 +1535,7 @@ Default value
 
 **Extends**: [`DefaultTask`][gradle-default-task], [`SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware)
 
-**Sources**: [`VerifyPluginStructureTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginStructureTask.kt)
+**Sources**: [`VerifyPluginStructureTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginStructureTask.kt)
 
 </tldr>
 
@@ -1648,7 +1606,7 @@ Default value
 
 **Extends**: [`JavaExec`][gradle-javaexec-task], [`RuntimeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#RuntimeAware), [`PluginVerifierAware`](tools_intellij_platform_gradle_plugin_task_awares.md#PluginVerifierAware)
 
-**Sources**: [`VerifyPluginTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginTask.kt)
+**Sources**: [`VerifyPluginTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginTask.kt)
 
 </tldr>
 

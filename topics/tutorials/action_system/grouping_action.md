@@ -6,7 +6,7 @@
 
 If an implementation requires several actions, or there are simply too many actions that overload the menu, the actions can be placed into groups.
 This tutorial demonstrates adding an action to an existing group, creating a new action group, and action groups with a variable number of actions.
-The sample code discussed in this tutorial is from the code sample [`action_basics`](%gh-sdk-samples%/action_basics).
+The sample code discussed in this tutorial is from the code sample [`action_basics`](%gh-sdk-samples-master%/action_basics).
 
 Some content in this tutorial assumes the reader is familiar with the tutorial for [Creating Actions](working_with_custom_actions.md).
 
@@ -39,7 +39,7 @@ See [](basic_action_system.md#registering-actions-in-pluginxml) for more informa
 
 The following sample shows how to use an [`<add-to-group>`](plugin_configuration_file.md#idea-plugin__actions__action__add-to-group) element to place a custom action group relative to an entry in the <ui-path>Tools</ui-path> menu.
 The attribute `relative-to-action` references the action `id` for `PopupDialogAction`, not a native IntelliJ menu entry.
-Rather `PopupDialogAction` is defined in the same [`plugin.xml`](%gh-sdk-samples%/action_basics/src/main/resources/META-INF/plugin.xml) file.
+Rather `PopupDialogAction` is defined in the same [`plugin.xml`](%gh-sdk-samples-master%/action_basics/src/main/resources/META-INF/plugin.xml) file.
 This group is placed after the single entry for the action `PopupDialogAction`, as defined in the tutorial [Creating Actions](working_with_custom_actions.md#registering-an-action-with-the-new-action-form).
 
 ```xml
@@ -118,7 +118,7 @@ public class CustomDefaultActionGroup extends DefaultActionGroup {
 
 ### Registering the Custom Action Group
 
-As in the case with the static action group, the action [`<group>`](plugin_configuration_file.md#idea-plugin__actions__group) should be declared in the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of the <path>plugin.xml</path> file, for example, the [action_basics](%gh-sdk-samples%/action_basics/src/main/resources/META-INF/plugin.xml) plugin.
+As in the case with the static action group, the action [`<group>`](plugin_configuration_file.md#idea-plugin__actions__group) should be declared in the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of the <path>plugin.xml</path> file, for example, the [action_basics](%gh-sdk-samples-master%/action_basics/src/main/resources/META-INF/plugin.xml) plugin.
 For demonstration purposes, this implementation will use localization.
 
 The `<group>` element declaration below shows:
@@ -165,7 +165,7 @@ In the `<action>` element declaration below:
 </group>
 ```
 
-Now the translations for the `text` and `description` attributes must be provided in the resource bundle [`BasicActionsBundle.properties`](%gh-sdk-samples%/action_basics/src/main/resources/messages/BasicActionsBundle.properties) file according to [Localizing Actions and Groups](basic_action_system.md#localizing-actions-and-groups).
+Now the translations for the `text` and `description` attributes must be provided in the resource bundle [`BasicActionsBundle.properties`](%gh-sdk-samples-master%/action_basics/src/main/resources/messages/BasicActionsBundle.properties) file according to [Localizing Actions and Groups](basic_action_system.md#localizing-actions-and-groups).
 Note there are two sets of `text` and `description` translations, one for the action and one for the group.
 Conceivably, there could be another set of translations for the action if it used the [`<override-text>`](plugin_configuration_file.md#idea-plugin__actions__action__override-text) attribute.
 
@@ -208,7 +208,7 @@ The set of actions in the `ActionGroup` is dynamically defined.
 ### Creating Variable Action Group
 
 To create a group of actions with a variable number of actions, extend `ActionGroup`.
-For example, as in the `action_basics` class [`DynamicActionGroup`](%gh-sdk-samples%/action_basics/src/main/java/org/intellij/sdk/action/DynamicActionGroup.java) code:
+For example, as in the `action_basics` class [`DynamicActionGroup`](%gh-sdk-samples-master%/action_basics/src/main/java/org/intellij/sdk/action/DynamicActionGroup.java) code:
 
 ```java
 public class DynamicActionGroup extends ActionGroup {
@@ -217,7 +217,7 @@ public class DynamicActionGroup extends ActionGroup {
 
 ### Registering a Variable Action Group
 
-To register the dynamic menu group, a [`<group>`](plugin_configuration_file.md#idea-plugin__actions__group) attribute needs to be placed in the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of [`plugin`.xml](%gh-sdk-samples%/action_basics/src/main/resources/META-INF/plugin.xml).
+To register the dynamic menu group, a [`<group>`](plugin_configuration_file.md#idea-plugin__actions__group) attribute needs to be placed in the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of [`plugin`.xml](%gh-sdk-samples-master%/action_basics/src/main/resources/META-INF/plugin.xml).
 When enabled, this group appears just below the [Static Grouped Actions](#binding-action-groups-to-ui-components) in the <ui-path>Tools</ui-path> menu:
 
 ```xml

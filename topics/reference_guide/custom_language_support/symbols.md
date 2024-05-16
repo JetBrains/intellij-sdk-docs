@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Symbols
 
@@ -27,8 +27,16 @@ Examples:
 - Spring Bean is a symbol in [Spring framework model](spring_api.md), it's defined on-the-fly by framework support (not backed by a `PsiElement`) and bound to a `Project`.
 - Database column is a symbol defined by data source (not backed by a `PsiElement`) and not bound to a `Project` since database elements might be shared between projects.
 
+See also [](websymbols.md).
+
 ## Lifecycle
 
-The `Symbol` instance is expected to stay valid within a single read action, which means it's safe to pass the instance to different APIs.
+The `Symbol` instance is expected to stay valid within a single [read action](general_threading_rules.md), which means it's safe to pass the instance to different APIs.
 A `Symbol` instance should not be referenced between read actions.
-One should create a pointer via `Symbol.createPointer()`  in the current read action, and then call `Pointer.dereference()` to obtain a `Symbol` instance in the subsequent read action.
+One should create a pointer via `Symbol.createPointer()` in the current read action, and then call `Pointer.dereference()` to obtain a `Symbol` instance in the subsequent read action.
+
+## Sample plugins
+
+- Java: [`StringFormatSymbolReferenceProvider`](%gh-ic%/java/java-impl/src/com/siyeh/ig/format/StringFormatSymbolReferenceProvider.java)
+- JVM languages: [`LoggingArgumentSymbolReferenceProvider`](%gh-ic-master%/jvm/jvm-analysis-impl/src/com/intellij/analysis/logging/resolve/LoggingArgumentSymbolReferenceProvider.kt)
+- Markdown: [`link labels`](%gh-ic%/plugins/markdown/model/src/main/kotlin/org/intellij/plugins/markdown/model/psi/labels)

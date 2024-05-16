@@ -29,38 +29,43 @@ The webinar [How We Built Comma, the Raku IDE, on the IntelliJ Platform](https:/
 ### Initial Setup
 
 * [](registering_file_type.md)
-* [](implementing_lexer.md)
 * [](implementing_parser_and_psi.md)
+* [](implementing_lexer.md)
 * [](syntax_highlighting_and_error_highlighting.md)
+* {columns="2"}
 
 ### Resolving and Completion
 
 * [](references_and_resolve.md)
-* [](symbols.md)
-* [](declarations_and_references.md)
+    * [](symbols.md)
+    * [](declarations_and_references.md)
+    * [](websymbols.md)
 * [](navigation.md)
 * [](code_completion.md)
+* {columns="2"}
 
 ### Refactoring
 
 * [](find_usages.md)
-* [](rename_refactoring.md)
 * [](safe_delete_refactoring.md)
+* [](rename_refactoring.md)
+* {columns="2"}
 
 ### Editor and IDE Features
 
 * [](code_formatting.md)
-* [](code_inspections_and_intentions.md)
-* [](structure_view.md)
-* [](navbar.md)
-* Code Hierarchy
-* [](surround_with.md)
 * [](go_to_class_and_go_to_symbol.md)
+* [](code_inspections_and_intentions.md)
 * [](documentation.md)
+* [](structure_view.md)
 * [](parameter_info.md)
+* [](navbar.md)
 * [](inlay_hints.md)
+* Code Hierarchy
 * [](spell_checking.md)
+* [](surround_with.md)
 * [](additional_minor_features.md)
+* {columns="2"}
 
 See [](language_server_protocol.md) for supporting language servers.
 

@@ -27,7 +27,7 @@ If none of that is required and the analysis only needs to run in the active edi
 
 See [Inspections](inspections.md) topic in the UI Guidelines on naming, writing description, and message texts for inspections.
 
-**Examples**:
+**Examples:**
 - [Code Inspections Tutorial](code_inspections.md)
 - A [simple inspection](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/codeInspection/TrailingSpacesInPropertyInspection.java) for [Properties language plugin](%gh-ic%/plugins/properties)
 

@@ -31,7 +31,7 @@ val retrievePluginName by tasks.registering(RetrievePluginNameTask::class) {
 
 **Inherited by**: [`RunnableIdeAware`](#RunnableIdeAware)
 
-**Sources**: [`AutoReloadAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/AutoReloadAware.kt)
+**Sources**: [`AutoReloadAware`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/AutoReloadAware.kt)
 
 </tldr>
 
@@ -60,9 +60,9 @@ Default value
 
 **Depends on**: [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin)
 
-**Inherited by**: [`RunnableIdeAware`](#RunnableIdeAware)
+**Inherited by**: [`RunnableIdeAware`](#RunnableIdeAware), [`TestableAware`](#TestableAware)
 
-**Sources**: [`CoroutinesJavaAgentAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/CoroutinesJavaAgentAware.kt)
+**Sources**: [`CoroutinesJavaAgentAware`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/CoroutinesJavaAgentAware.kt)
 
 </tldr>
 
@@ -88,9 +88,9 @@ Default value
 
 **Depends on**: [`IntelliJPlatformVersionAware`](#IntelliJPlatformVersionAware)
 
-**Inherited by**: [`SandboxAware`](#SandboxAware), [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde), [`testIde`](tools_intellij_platform_gradle_plugin_tasks.md#testIde), [`testIdePerformance`](tools_intellij_platform_gradle_plugin_tasks.md#testIdePerformance), [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi)
+**Inherited by**: [`CustomRunIdeTask`](tools_intellij_platform_gradle_plugin_custom_tasks.md#CustomRunIdeTask), [`CustomTestIdePerformanceTask`](tools_intellij_platform_gradle_plugin_custom_tasks.md#CustomTestIdePerformanceTask), [`CustomTestIdeTask`](tools_intellij_platform_gradle_plugin_custom_tasks.md#CustomTestIdeTask), [`CustomTestIdeUiTask`](tools_intellij_platform_gradle_plugin_custom_tasks.md#CustomTestIdeUiTask)
 
-**Sources**: [`CustomIntelliJPlatformVersionAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/CustomIntelliJPlatformVersionAware.kt)
+**Sources**: [`CustomIntelliJPlatformVersionAware`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/CustomIntelliJPlatformVersionAware.kt)
 
 </tldr>
 
@@ -139,14 +139,44 @@ Type
 : `DirectoryProperty`
 
 
+### `plugins {}`
+{#CustomIntelliJPlatformVersionAware-plugins}
+
+An extension to provide custom plugins to be added when running the task enhanced with `CustomIntelliJPlatformVersionAware`.
+
+It provides several methods for adding remote and local plugins, or for disabling already loaded or bundled plugin.
+
+**Example:**
+
+```kotlin
+tasks {
+  val runIdeWithPlugins by registering(CustomRunIdeTask::class) {
+    // ...
+    plugins {
+      plugin("pluginId", "1.0.0")
+      disablePlugin("pluginId")
+    }
+  }
+}
+```
+
+| Function                       | Description                                                                                                                                  |
+|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| `plugin(id, version, channel)` | Adds a dependency on a plugin for a custom IntelliJ Platform.                                                                                |
+| `plugin(notation)`             | Adds a dependency on a plugin for a custom IntelliJ Platform using a string notation:<p>`pluginId:version` or `pluginId:version@channel`</p> |
+| `plugins(notations)`           | Adds dependencies on plugins for a custom IntelliJ Platform using a string notation:<p>`pluginId:version` or `pluginId:version@channel`</p>  |
+| `disablePlugin(id)`            | Disables the specific plugin with its ID.                                                                                                    |
+| `disablePlugins(ids)`          | Disables specific plugins with the list of their IDs.                                                                                        |
+
+
 ## `IntelliJPlatformVersionAware`
 {#IntelliJPlatformVersionAware}
 
 <tldr>
 
-**Inherited by**: [`CustomIntelliJPlatformVersionAware`](#CustomIntelliJPlatformVersionAware), [`RuntimeAware`](#RuntimeAware), [`SandboxAware`](#SandboxAware), [`SplitModeAware`](#SplitModeAware), [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin), [`patchPluginXml`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml), [`printBundledPlugins`](tools_intellij_platform_gradle_plugin_tasks.md#printBundledPlugins), [`verifyPluginProjectConfiguration`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginProjectConfiguration)
+**Inherited by**: [`CustomIntelliJPlatformVersionAware`](#CustomIntelliJPlatformVersionAware), [`RuntimeAware`](#RuntimeAware), [`SandboxAware`](#SandboxAware), [`SplitModeAware`](#SplitModeAware), [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin), [`patchPluginXml`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml), [`printBundledPlugins`](tools_intellij_platform_gradle_plugin_tasks.md#printBundledPlugins), [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde), [`testIdePerformance`](tools_intellij_platform_gradle_plugin_tasks.md#testIdePerformance), [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi), [`verifyPluginProjectConfiguration`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginProjectConfiguration)
 
-**Sources**: [`IntelliJPlatformVersionAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/IntelliJPlatformVersionAware.kt)
+**Sources**: [`IntelliJPlatformVersionAware`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/IntelliJPlatformVersionAware.kt)
 
 </tldr>
 
@@ -215,7 +245,7 @@ Throws
 
 **Inherited by**: [`instrumentCode`](tools_intellij_platform_gradle_plugin_tasks.md#instrumentCode)
 
-**Sources**: [`JavaCompilerAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/JavaCompilerAware.kt)
+**Sources**: [`JavaCompilerAware`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/JavaCompilerAware.kt)
 
 </tldr>
 
@@ -239,9 +269,9 @@ Type
 
 **Depends on**: [`patchPluginXml`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml)
 
-**Inherited by**: [`TestableAware`](#TestableAware), [`RunnableIdeAware`](#RunnableIdeAware), [`jarSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#jarSearchableOptions)
+**Inherited by**: [`TestableAware`](#TestableAware), [`RunnableIdeAware`](#RunnableIdeAware), [`jarSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#jarSearchableOptions), [`verifyPluginProjectConfiguration`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginProjectConfiguration)
 
-**Sources**: [`PluginAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/PluginAware.kt)
+**Sources**: [`PluginAware`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/PluginAware.kt)
 
 </tldr>
 
@@ -289,7 +319,7 @@ val retrievePluginName by tasks.registering(RetrievePluginNameTask::class) {
 
 **Inherited by**: [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin)
 
-**Sources**: [`PluginVerifierAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/PluginVerifierAware.kt)
+**Sources**: [`PluginVerifierAware`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/PluginVerifierAware.kt)
 
 </tldr>
 
@@ -313,11 +343,11 @@ Type
 
 <tldr>
 
-**Depends on**: [`AutoReloadAware`](#AutoReloadAware), [`CoroutinesJavaAgentAware`](#CoroutinesJavaAgentAware), [`PluginAware`](#PluginAware), [`RuntimeAware`](#RuntimeAware), [`SandboxAware`](#SandboxAware), [`SplitModeAware`](#SplitModeAware), [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin)
+**Depends on**: [`AutoReloadAware`](#AutoReloadAware), [`CoroutinesJavaAgentAware`](#CoroutinesJavaAgentAware), [`PluginAware`](#PluginAware), [`RuntimeAware`](#RuntimeAware), [`SandboxAware`](#SandboxAware), [`SplitModeAware`](#SplitModeAware)
 
-**Inherited by**: [`buildSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions), [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde), [`testIde`](tools_intellij_platform_gradle_plugin_tasks.md#testIde), [`testIdePerformance`](tools_intellij_platform_gradle_plugin_tasks.md#testIdePerformance), [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi)
+**Inherited by**: [`buildSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions), [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde), [`testIdePerformance`](tools_intellij_platform_gradle_plugin_tasks.md#testIdePerformance), [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi)
 
-**Sources**: [`RunnableIdeAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/RunnableIdeAware.kt)
+**Sources**: [`RunnableIdeAware`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/RunnableIdeAware.kt)
 
 </tldr>
 
@@ -335,9 +365,9 @@ Inherits from:
 
 <tldr>
 
-**Inherited by**: [`RunnableIdeAware`](#RunnableIdeAware), [`TestableAware`](#TestableAware), [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin)
+**Inherited by**: [`RunnableIdeAware`](#RunnableIdeAware), [`TestableAware`](#TestableAware), [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin), [`verifyPluginProjectConfiguration`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginProjectConfiguration)
 
-**Sources**: [`RuntimeAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/RuntimeAware.kt)
+**Sources**: [`RuntimeAware`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/RuntimeAware.kt)
 
 </tldr>
 
@@ -391,9 +421,9 @@ Type
 
 **Depends on**: [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox)
 
-**Inherited by**: [`RunnableIdeAware`](#RunnableIdeAware), [`SandboxProducerAware`](#SandboxProducerAware), [`jarSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#jarSearchableOptions), [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox), [`verifyPluginStructure`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginStructure)
+**Inherited by**: [`RunnableIdeAware`](#RunnableIdeAware), [`SandboxProducerAware`](#SandboxProducerAware), [`jarSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#jarSearchableOptions), [`verifyPluginStructure`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginStructure)
 
-**Sources**: [`SandboxAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SandboxAware.kt)
+**Sources**: [`SandboxAware`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SandboxAware.kt)
 
 </tldr>
 
@@ -475,11 +505,11 @@ Type
 
 **Inherited by**: [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox)
 
-**Sources**: [`SandboxProducerAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SandboxProducerAware.kt)
+**Sources**: [`SandboxProducerAware`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SandboxProducerAware.kt)
 
 </tldr>
 
-Allows distinguishing between the [`SandboxAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SandboxAware.kt) consumers and producers.
+Allows distinguishing between the [`SandboxAware`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SandboxAware.kt) consumers and producers.
 
 
 ## `SigningAware`
@@ -489,7 +519,7 @@ Allows distinguishing between the [`SandboxAware`](%gh-ijpgp%/src/main/kotlin/or
 
 **Inherited by**: [`signPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin), [`verifyPluginSignature`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginSignature)
 
-**Sources**: [`SigningAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SigningAware.kt)
+**Sources**: [`SigningAware`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SigningAware.kt)
 
 </tldr>
 
@@ -513,9 +543,9 @@ Type
 
 <tldr>
 
-**Inherited by**: [`RunnableIdeAware`](#RunnableIdeAware)
+**Inherited by**: [`RunnableIdeAware`](#RunnableIdeAware), [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox)
 
-**Sources**: [`SplitModeAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SplitModeAware.kt)
+**Sources**: [`SplitModeAware`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SplitModeAware.kt)
 
 </tldr>
 
@@ -527,18 +557,44 @@ The developed plugin is installed in the backend part.
 Split Mode requires the IntelliJ Platform in the version `241.14473` or later.
 
 
+### `splitMode`
+{#SplitModeAware-splitMode}
+
+Enables Split Mode when running the IDE.
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: [`intellijPlatform.splitMode`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-splitMode)
+
+
+### `splitModeTarget`
+{#SplitModeAware-splitModeTarget}
+
+Specifies in which part of the product the developed plugin should be installed.
+
+{style="narrow"}
+Type
+: [`Property<SplitModeTarget>`](tools_intellij_platform_gradle_plugin_types.md#SplitModeAware-SplitModeTarget)
+
+Default value
+: [`intellijPlatform.splitModeTarget`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-splitModeTarget)
+
+
 ## `TestableAware`
 {#TestableAware}
 
 <tldr>
 
-**Inherited by**: [`prepareTest`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTest), [`testIde`](tools_intellij_platform_gradle_plugin_tasks.md#testIde)
+**Inherited by**: [`prepareTest`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTest), [`CustomTestIdeTask`](tools_intellij_platform_gradle_plugin_custom_tasks.md#CustomTestIdeTask)
 
-**Sources**: [`TestableAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/TestableAware.kt)
+**Sources**: [`TestableAware`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/TestableAware.kt)
 
 </tldr>
 
-Interface used to describe tasks used for running tests, such as a customizable [`testIde`](tools_intellij_platform_gradle_plugin_tasks.md#testIde) or [`prepareTest`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTest) used for configuring `test` and keeping it immutable.
+Interface used to describe tasks used for running tests, such as a customizable [`CustomTestIdeTask`](tools_intellij_platform_gradle_plugin_custom_tasks.md#CustomTestIdeTask) or [`prepareTest`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTest) used for configuring `test` and keeping it immutable.
 
 
 <include from="snippets.md" element-id="missingContent"/>

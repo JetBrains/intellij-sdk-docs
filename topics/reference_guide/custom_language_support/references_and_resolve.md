@@ -33,7 +33,7 @@ A counterpart to the `resolve()` method is `isReferenceTo()`, which checks if th
 The latter method can be implemented by calling `resolve()` and comparing the result with the passed PSI element.
 Still, additional optimizations are possible (for example, performing the tree walk only if the element text is equal to the text of the reference).
 
-**Examples**:
+**Examples:**
 
 - [Reference](%gh-ic%/plugins/properties/src/com/intellij/lang/properties/ResourceBundleReference.java) to a ResourceBundle in the [Properties language plugin](%gh-ic%/plugins/properties)
 - [Custom Language Support Tutorial: Reference Contributor](reference_contributor.md)

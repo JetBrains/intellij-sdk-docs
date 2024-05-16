@@ -48,6 +48,8 @@ Use [`NaturalComparator`](%gh-ic%/platform/util/base/src/com/intellij/openapi/ut
 - `shortenTextWithEllipsis()` and `shortenPathWithEllipsis()` to produce abbreviated UI texts ending with '&#8230;'
 - `quote()` and `unquoteString()` to wrap values: _Usages of "$value$": 218 found_
 
+See [](internationalization.md) for information about internationalizing plugins.
+
 See [`NlsMessages`](%gh-ic%/platform/ide-core-impl/src/com/intellij/ide/nls/NlsMessages.java) to produce localized messages.
 
 ## "Recently Used" entries

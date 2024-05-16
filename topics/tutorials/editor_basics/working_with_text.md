@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 1. Working with Text
 
@@ -10,7 +10,7 @@ Using information about the caret, replace selected text in a document with a st
 The approach in this tutorial relies heavily on creating and registering actions.
 To review the fundamentals of creating and registering actions, refer to the [Actions Tutorial](action_system.md).
 
-Multiple examples are used from the [editor_basics](%gh-sdk-samples%/editor_basics) plugin code sample from the IntelliJ Platform SDK.
+Multiple examples are used from the [editor_basics](%gh-sdk-samples-master%/editor_basics) plugin code sample from the IntelliJ Platform SDK.
 It may be helpful to open that project in an IntelliJ Platform-based IDE, build the project, run it, select some text in the editor, and invoke the **Editor Replace Text** menu item on the editor context menu.
 
 ![Editor Basics Menu](basics.png){width="600"}
@@ -18,9 +18,9 @@ It may be helpful to open that project in an IntelliJ Platform-based IDE, build 
 ## Creating a New Menu Action
 
 In this example, we access the `Editor` from an action.
-The source code for the Java class in this example is [EditorIllustrationAction](%gh-sdk-samples%/editor_basics/src/main/java/org/intellij/sdk/editor/EditorIllustrationAction.java).
+The source code for the Java class in this example is [EditorIllustrationAction](%gh-sdk-samples-master%/editor_basics/src/main/java/org/intellij/sdk/editor/EditorIllustrationAction.java).
 
-To register the action, we must add the corresponding elements to the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of the plugin configuration file [plugin.xml](%gh-sdk-samples%/editor_basics/src/main/resources/META-INF/plugin.xml).
+To register the action, we must add the corresponding elements to the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of the plugin configuration file [plugin.xml](%gh-sdk-samples-master%/editor_basics/src/main/resources/META-INF/plugin.xml).
 For more information, refer to the [Registering Actions](working_with_custom_actions.md#registering-a-custom-action) section of the Actions Tutorial.
 The `EditorIllustrationAction` action is registered in the group `EditorPopupMenu` so it will be available from the context menu when focus is on the editor:
 

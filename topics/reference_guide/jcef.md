@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 #  Embedded Browser (JCEF)
 
@@ -114,7 +114,7 @@ Browser client provides an interface for setting up [handlers](#event-handlers) 
 Handlers allow reacting to these events in plugin code and change browser's behavior.
 Each browser is tied to a single client and a single client can be shared with multiple browser instances.
 
-Browser client is represented by [`JBCefClient`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefClient.java), which is a wrapper for JCEF's [`CefClient`](%gh-jcef%/org/cef/CefClient.java).
+Browser client is represented by [`JBCefClient`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefClient.java), which is a wrapper for JCEF's [`CefClient`](%gh-jcef-master%/org/cef/CefClient.java).
 `JBCefClient` allows registering multiple handlers of the same type, which is not possible with `CefClient`.
 To access the underlying `CefClient` and its API, call `JBCefClient.getCefClient()`.
 
@@ -132,21 +132,21 @@ To access the client associated with a browser, call `JBCefBrowser.getJBCefClien
 
 JCEF API provides various event handler interfaces that allows handling a wide set of events emitted by the browser.
 Example handlers:
-- [`CefLoadHandler`](%gh-jcef%/org/cef/handler/CefLoadHandler.java) - handles browser loading events.<br/>
-  **Example**: Implement `CefLoadHandler.onLoadEnd()` to [execute scripts](#executing-javascript) after document is loaded.
+- [`CefLoadHandler`](%gh-jcef-master%/org/cef/handler/CefLoadHandler.java) - handles browser loading events.<br/>
+  **Example:** Implement `CefLoadHandler.onLoadEnd()` to [execute scripts](#executing-javascript) after document is loaded.
 
-- [`CefDisplayHandler`](%gh-jcef%/org/cef/handler/CefDisplayHandler.java) - handles events related to browser display state.<br/>
-  **Example**: Implement `CefDisplayHandler.onAddressChange()` to load project files in the browser when a local file link is clicked, or opening an external browser if an external link is clicked.
+- [`CefDisplayHandler`](%gh-jcef-master%/org/cef/handler/CefDisplayHandler.java) - handles events related to browser display state.<br/>
+  **Example:** Implement `CefDisplayHandler.onAddressChange()` to load project files in the browser when a local file link is clicked, or opening an external browser if an external link is clicked.
 
-- [`CefContextMenuHandler`](%gh-jcef%/org/cef/handler/CefContextMenuHandler.java) - handles context menu events.<br/>
-  **Example**: Implement `CefContextMenuHandler.onBeforeContextMenu()` to change the items of the browser context menu.
+- [`CefContextMenuHandler`](%gh-jcef-master%/org/cef/handler/CefContextMenuHandler.java) - handles context menu events.<br/>
+  **Example:** Implement `CefContextMenuHandler.onBeforeContextMenu()` to change the items of the browser context menu.
 
-- [`CefDownloadHandler`](%gh-jcef%/org/cef/handler/CefDownloadHandler.java) - file download events.<br/>
-  **Example**: Implement `CefDownloadHandler.onBeforeDownload()` to enable downloading files in the embedded browser.
+- [`CefDownloadHandler`](%gh-jcef-master%/org/cef/handler/CefDownloadHandler.java) - file download events.<br/>
+  **Example:** Implement `CefDownloadHandler.onBeforeDownload()` to enable downloading files in the embedded browser.
 
-See [org.cef.handler](%gh-jcef%/org/cef/handler) package for all available handlers.
+See [org.cef.handler](%gh-jcef-master%/org/cef/handler) package for all available handlers.
 
-> For each handler interface, JCEF API provides an adapter class, which can be extended to avoid implementing unused methods, e.g., [`CefLoadHandlerAdapter`](%gh-jcef%/org/cef/handler/CefLoadHandlerAdapter.java).
+> For each handler interface, JCEF API provides an adapter class, which can be extended to avoid implementing unused methods, e.g., [`CefLoadHandlerAdapter`](%gh-jcef-master%/org/cef/handler/CefLoadHandlerAdapter.java).
 
 Handlers should be registered with `JBCefClient.getCefClient().add*Handler()` methods.
 
@@ -235,7 +235,7 @@ In cases when a plugin feature implements a web-based UI, the plugin may provide
 Such resources cannot be easily accessed by the browser.
 They can be made accessible by implementing proper request [handlers](#event-handlers), which make them available to the browser at predefined URLs.
 
-This approach requires implementing [`CefRequestHandler`](%gh-jcef%/org/cef/handler/CefRequestHandler.java), and [`CefResourceRequestHandler`](%gh-jcef%/org/cef/handler/CefResourceRequestHandler.java), which map resource paths to resource providers.
+This approach requires implementing [`CefRequestHandler`](%gh-jcef-master%/org/cef/handler/CefRequestHandler.java), and [`CefResourceRequestHandler`](%gh-jcef-master%/org/cef/handler/CefResourceRequestHandler.java), which map resource paths to resource providers.
 
 Serving such resources is implemented by the Image Viewer component responsible for displaying SVG files in IntelliJ Platform-based IDEs.
 See [`JCefImageViewer`](%gh-ic%/images/src/org/intellij/images/editor/impl/jcef/JCefImageViewer.kt) and related classes for the implementation details.

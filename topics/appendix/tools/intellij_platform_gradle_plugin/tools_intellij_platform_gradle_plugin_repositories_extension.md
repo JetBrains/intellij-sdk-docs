@@ -57,8 +57,11 @@ It includes:
 - `intellijDependencies()` — required for resolving extra IntelliJ Platform dependencies used for running specific tasks
 - `binaryReleases()` — JetBrains IDEs releases required for running the IntelliJ Plugin Verifier
 
-
 ## IDE Releases
+
+The following IntelliJ Platform repositories contain not only the IntelliJ Platform releases in stable, snapshot, and nightly versions, but also various dependencies, such as:
+- Java Compiler required for [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#code-instrumentation)
+- Test Framework required for [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#testing)
 
 | Function      | Description                                                                                 |
 |---------------|---------------------------------------------------------------------------------------------|
@@ -97,7 +100,7 @@ See also:
 
 > Note that unless using recommended default [`defaultRepositories()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories),
 > the [`localPlatformArtifacts()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) entry needs to be added to the `repositories {}` block
-> explicitly to use local dependencies (bundled plugins, local IDE, etc.).
+> explicitly to use local dependencies (bundled plugins, local IDE, custom plugin repositories, etc.).
 >
 {style="tip" title="localPlatformArtifacts() and defaultRepositories()"}
 

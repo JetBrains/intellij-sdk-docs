@@ -69,7 +69,7 @@ See [Development Instance Sandbox Directory](ide_development_instance.md#the-dev
 
 See [Testing FAQ](testing_faq.md) on how to enable `DEBUG`/`TRACE` level logging during tests, and obtain separate logs for failing tests.
 
-To provide additional context for [reporting fatal errors](#error-reporting), use `Logger.error()` methods taking additional `Attachment` (see [`AttachmentFactory`](%gh-ic%/platform/core-impl/src/com/intellij/diagnostic/AttachmentFactory.java)).
+To provide additional context for [reporting fatal errors](#error-reporting), use `Logger.error()` methods taking additional `Attachment` (see [`CoreAttachmentFactory`](%gh-ic%/platform/core-impl/src/com/intellij/diagnostic/CoreAttachmentFactory.java) and [`AttachmentFactory`](%gh-ic%/platform/util/src/com/intellij/openapi/diagnostic/AttachmentFactory.java)).
 
 ## Error Reporting
 

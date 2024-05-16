@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # PyCharm Plugin Development
 
@@ -29,7 +29,7 @@ Click on an entry in the table's *Attribute* column to go to the documentation a
 The dependency on the PyCharm APIs must be declared in the <path>[plugin.xml](plugin_configuration_file.md)</path> file.
 As described in [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml), the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) tags must declare `com.intellij.modules.python`.
 
-See the SDK code sample [`pycharm_basics`](%gh-sdk-samples%/product_specific/pycharm_basics/) for an example configuration.
+See the SDK code sample [`pycharm_basics`](%gh-sdk-samples-master%/product_specific/pycharm_basics/) for an example configuration.
 Please note that this code sample must be imported into Gradle explicitly, as it is not included in the `_gradleCompositeBuild`.
 
 ## Available PyCharm APIs

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Using File Templates Programmatically
 
@@ -33,7 +33,7 @@ It is possible to control a file template's visibility and its available propert
 [`CreateFromTemplateHandler`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/fileTemplates/CreateFromTemplateHandler.java)
 implementation registered in the `com.intellij.createFromTemplateHandler` EP.
 
-**Example**:
+**Example:**
 [`JavaCreateFromTemplateHandler`](%gh-ic%/java/java-impl/src/com/intellij/ide/fileTemplates/JavaCreateFromTemplateHandler.java)
 
 ### Exposing File Templates from the Other Category
@@ -116,7 +116,7 @@ Internal templates can be exposed in the <control>Files</control> category by ad
 <internalFileTemplate name="My Record"/>
 ```
 
-**Example**:
+**Example:**
 [`NewKotlinFileAction`](%gh-ic%/plugins/kotlin/kotlin.ide/src/org/jetbrains/kotlin/idea/actions/NewKotlinFileAction.kt) for Kotlin files creation action.
 
 ## Improving "Save File as Template…" Action
@@ -128,5 +128,5 @@ It can be achieved by implementing the
 [`SaveFileAsTemplateHandler`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/SaveFileAsTemplateHandler.java)
 and registering it via the `com.intellij.saveFileAsTemplateHandler` EP.
 
-**Example**:
+**Example:**
 [`SaveJavaAsTemplateHandler`](%gh-ic%/java/java-impl/src/com/intellij/ide/fileTemplates/SaveJavaAsTemplateHandler.java) replacing existing class and package names with `${NAME}` and `${PACKAGE_NAME}` properties placeholders respectively.

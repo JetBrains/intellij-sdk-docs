@@ -400,7 +400,7 @@ endif
 
 ## Sample Plugin
 
-To clarify how to use services, consider the **maxOpenProjects** sample plugin available in the [code samples](%gh-sdk-samples%/max_opened_projects).
+To clarify how to use services, consider the **maxOpenProjects** sample plugin available in the [code samples](%gh-sdk-samples-master%/max_opened_projects).
 
 This plugin has an application service counting the number of currently opened projects in the IDE.
 If this number exceeds the maximum number of simultaneously opened projects allowed by the plugin (3), it displays an information message.

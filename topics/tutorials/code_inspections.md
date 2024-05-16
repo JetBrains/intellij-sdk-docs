@@ -14,13 +14,13 @@
 
 The IntelliJ Platform provides tools designed for static code analysis called _code inspections_, which help the user maintain and clean up code without actually executing it.
 Custom code inspections can be implemented as IntelliJ Platform plugins.
-An example of the plugin approach is the [comparing_string_references_inspection](%gh-sdk-samples%/comparing_string_references_inspection) code sample.
+An example of the plugin approach is the [comparing_string_references_inspection](%gh-sdk-samples-master%/comparing_string_references_inspection) code sample.
 
 See the [Inspections](inspections.md) topic in UI Guidelines on naming, writing description, and message texts for inspections.
 
 ## Creating an Inspection Plugin
 
-The [comparing_string_references_inspection](%gh-sdk-samples%/comparing_string_references_inspection) code sample adds a new inspection to the <control>Java | Probable Bugs</control> group in the [Inspections list](https://www.jetbrains.com/help/idea/inspections-settings.html).
+The [comparing_string_references_inspection](%gh-sdk-samples-master%/comparing_string_references_inspection) code sample adds a new inspection to the <control>Java | Probable Bugs</control> group in the [Inspections list](https://www.jetbrains.com/help/idea/inspections-settings.html).
 The inspection reports when the `==` or `!=` operator is used between String expressions.
 
 It illustrates the components for a custom inspection plugin:
@@ -39,14 +39,14 @@ Consider also searching for existing implementations in [IntelliJ Platform Explo
 
 ## Creating an Inspection
 
-The [comparing_string_references_inspection](%gh-sdk-samples%/comparing_string_references_inspection) code sample reports when the `==` or `!=` operators are used between String expressions.
+The [comparing_string_references_inspection](%gh-sdk-samples-master%/comparing_string_references_inspection) code sample reports when the `==` or `!=` operators are used between String expressions.
 The user can apply a quick fix to change `a==b` to `a.equals(b)`, or `a!=b` to `!a.equals(b)`.
 
 The details of the `comparing_string_references_inspection` implementation illustrate the components of an inspection plugin.
 
 ### Plugin Configuration File
 
-The `comparing_string_references_inspection` is described as a `com.intellij.localInspection` extension point in the `comparing_string_references_inspection` plugin configuration ([`plugin.xml`](%gh-sdk-samples%/comparing_string_references_inspection/src/main/resources/META-INF/plugin.xml)) file.
+The `comparing_string_references_inspection` is described as a `com.intellij.localInspection` extension point in the `comparing_string_references_inspection` plugin configuration ([`plugin.xml`](%gh-sdk-samples-master%/comparing_string_references_inspection/src/main/resources/META-INF/plugin.xml)) file.
 
 There exist two types of inspection extensions:
 
@@ -61,7 +61,7 @@ If required, inspections can define all the attribute information (except `imple
 
 ### Inspection Implementation Java Class
 
-Inspection implementations for Java files, like [`ComparingStringReferencesInspection`](%gh-sdk-samples%/comparing_string_references_inspection/src/main/java/org/intellij/sdk/codeInspection/ComparingStringReferencesInspection.java), are often based on the Java class [`AbstractBaseJavaLocalInspectionTool`](%gh-ic%/java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseJavaLocalInspectionTool.java).
+Inspection implementations for Java files, like [`ComparingStringReferencesInspection`](%gh-sdk-samples-master%/comparing_string_references_inspection/src/main/java/org/intellij/sdk/codeInspection/ComparingStringReferencesInspection.java), are often based on the Java class [`AbstractBaseJavaLocalInspectionTool`](%gh-ic%/java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseJavaLocalInspectionTool.java).
 The [`AbstractBaseJavaLocalInspectionTool`](%gh-ic%/java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseJavaLocalInspectionTool.java) base class offers methods to inspect Java classes, fields, and methods.
 
 More generally, `localInspection` types are based on the class [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java).
@@ -168,7 +168,7 @@ The `comparing_string_references_inspection` tests run the inspection on the <pa
 
 ## Running the Comparing String References Inspection Code Sample
 
-The [comparing_string_references_inspection](%gh-sdk-samples%/comparing_string_references_inspection) code sample adds a new inspection to the <control>Java | Probable Bugs</control> group in the [Inspections](https://www.jetbrains.com/help/idea/inspections-settings.html) configuration.
+The [comparing_string_references_inspection](%gh-sdk-samples-master%/comparing_string_references_inspection) code sample adds a new inspection to the <control>Java | Probable Bugs</control> group in the [Inspections](https://www.jetbrains.com/help/idea/inspections-settings.html) configuration.
 
 See [](code_samples.md) on how to set up and run the plugin.
 

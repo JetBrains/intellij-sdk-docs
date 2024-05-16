@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Messaging Infrastructure
 
@@ -19,7 +19,7 @@ The following sections describe the main components of the messaging API:
 
 The [`Topic`](%gh-ic%/platform/extensions/src/com/intellij/util/messages/Topic.java) class serves as an endpoint at the messaging infrastructure.
 Clients are allowed to subscribe to a specific topic within a bus and send messages to that topic within that particular bus.
-To clarify the corresponding message bus, a `Topic` field declaration should be annotated with `Topic.@AppLevel` and/or `Topic.@ProjectLevel`.
+To clarify the corresponding message bus, a `Topic` field declaration should be annotated with `@Topic.AppLevel` and/or `@Topic.ProjectLevel`.
 
 ```plantuml
 @startuml

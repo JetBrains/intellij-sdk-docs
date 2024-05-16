@@ -12,7 +12,7 @@ This page lists various types used to configure [](tools_intellij_platform_gradl
 ## `FailureLevel`
 {#FailureLevel}
 
-[`VerifyPluginTask.FailureLevel`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginTask.kt)
+[`VerifyPluginTask.FailureLevel`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginTask.kt)
 
 Enum class describing the failure level of the IntelliJ Plugin Verifier CLI tool run with the [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) task.
 
@@ -21,11 +21,11 @@ Enum class describing the failure level of the IntelliJ Plugin Verifier CLI tool
 | `COMPATIBILITY_WARNINGS`           | Compatibility warnings detected against the specified IDE version.                  |
 | `COMPATIBILITY_PROBLEMS`           | Compatibility problems detected against the specified IDE version.                  |
 | `DEPRECATED_API_USAGES`            | Plugin uses API marked as deprecated (`@Deprecated`).                               |
-| `SCHEDULED_FOR_REMOVAL_API_USAGES` | Plugin uses API marked as scheduled for removal (`ApiStatus.@ScheduledForRemoval`). |
-| `EXPERIMENTAL_API_USAGES`          | Plugin uses API marked as experimental (`ApiStatus.@Experimental`).                 |
-| `INTERNAL_API_USAGES`              | Plugin uses API marked as internal (`ApiStatus.@Internal`).                         |
-| `OVERRIDE_ONLY_API_USAGES`         | Override-only API is used incorrectly (`ApiStatus.@OverrideOnly`).                  |
-| `NON_EXTENDABLE_API_USAGES`        | Non-extendable API is used incorrectly (`ApiStatus.@NonExtendable`).                |
+| `SCHEDULED_FOR_REMOVAL_API_USAGES` | Plugin uses API marked as scheduled for removal (`@ApiStatus.ScheduledForRemoval`). |
+| `EXPERIMENTAL_API_USAGES`          | Plugin uses API marked as experimental (`@ApiStatus.Experimental`).                 |
+| `INTERNAL_API_USAGES`              | Plugin uses API marked as internal (`@ApiStatus.Internal`).                         |
+| `OVERRIDE_ONLY_API_USAGES`         | Override-only API is used incorrectly (`@ApiStatus.OverrideOnly`).                  |
+| `NON_EXTENDABLE_API_USAGES`        | Non-extendable API is used incorrectly (`@ApiStatus.NonExtendable`).                |
 | `PLUGIN_STRUCTURE_WARNINGS`        | The structure of the plugin is not valid.                                           |
 | `MISSING_DEPENDENCIES`             | Plugin has some dependencies missing.                                               |
 | `INVALID_PLUGIN`                   | Provided plugin artifact is not valid.                                              |
@@ -41,7 +41,7 @@ See also:
 ## `IntelliJPlatformType`
 {#IntelliJPlatformType}
 
-[`IntelliJPlatformType`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/IntelliJPlatformType.kt)
+[`IntelliJPlatformType`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/IntelliJPlatformType.kt)
 
 Describes all IntelliJ Platform types available to be used for plugin development, dependency resolution, and plugin verification.
 
@@ -73,7 +73,7 @@ Each entry is composed of a product code and coordinates used for dependency and
 ## `PluginBean`
 {#PluginBean}
 
-[`PluginBean`](%gh-pv%/intellij-plugin-structure/structure-intellij/src/main/java/com/jetbrains/plugin/structure/intellij/beans/PluginBean.java)
+[`PluginBean`](%gh-pv-master%/intellij-plugin-structure/structure-intellij/src/main/java/com/jetbrains/plugin/structure/intellij/beans/PluginBean.java)
 
 Describes the content of the <path>plugin.xml</path> file.
 
@@ -83,7 +83,7 @@ See also:
 ## `ProductInfo`
 {#ProductInfo}
 
-[`ProductInfo`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/models/ProductInfo.kt)
+[`ProductInfo`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/models/ProductInfo.kt)
 
 Represents information about the IntelliJ Platform product.
 
@@ -120,7 +120,7 @@ Throws
 ## `ProductRelease.Channel`
 {#ProductRelease-Channel}
 
-[`ProductRelease.Channel`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/models/ProductRelease.kt)
+[`ProductRelease.Channel`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/models/ProductRelease.kt)
 
 List of available channels used by JetBrains IDEs and [Android Studio](android_studio.md) for describing binary releases.
 
@@ -143,7 +143,7 @@ See also:
 ## `ProductReleasesValueSource.FilterParameters`
 {#ProductReleasesValueSource-FilterParameters}
 
-[`ProductReleasesValueSource.FilterParameters`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/providers/ProductReleasesValueSource.kt)
+[`ProductReleasesValueSource.FilterParameters`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/providers/ProductReleasesValueSource.kt)
 
 Interface that provides a clear way to filter binary product releases for IntelliJ Plugin Verifier.
 
@@ -159,10 +159,24 @@ See also:
 - [Tasks: `printProductsReleases`](tools_intellij_platform_gradle_plugin_tasks.md#printProductsReleases)
 
 
+## `SplitModeAware.SplitModeTarget`
+{#SplitModeAware-SplitModeTarget}
+
+[`SplitModeAware.SplitModeTarget`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SplitModeAware.kt)
+
+Describes a part of the product where the developed plugin can be installed when running in _splitMode_ handled by [`SplitModeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitModeAware).
+
+| Name                   | Description                                       |
+|------------------------|---------------------------------------------------|
+| `BACKEND`              | Install plugin in the backed IDE.                 |
+| `FRONTEND`             | Install plugin in the frontend IDE.               |
+| `BACKEND_AND_FRONTEND` | Install plugin in both backend and frontend IDEs. |
+
+
 ## `Subsystems`
 {#Subsystems}
 
-[`VerifyPluginTask.Subsystems`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginTask.kt)
+[`VerifyPluginTask.Subsystems`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginTask.kt)
 
 Specify which subsystems of the IDE should be checked by the IntelliJ Plugin Verifier CLI tool run with the [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) task.
 
@@ -180,31 +194,31 @@ See also:
 ## `TestFrameworkType`
 {#TestFrameworkType}
 
-[`TestFrameworkType`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/TestFrameworkType.kt)
+[`TestFrameworkType`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/TestFrameworkType.kt)
 
 Allows for adding `test-framework` testing library variants. See [Dependencies Extension: Testing](tools_intellij_platform_gradle_plugin_dependencies_extension.md#testing).
 
-| Name                | Coordinates                                                   |
-|---------------------|---------------------------------------------------------------|
-| `Platform.JUnit4`   | `com.jetbrains.intellij.platform:test-framework`              |
-| `Platform.JUnit5`   | `com.jetbrains.intellij.platform:test-framework-junit5`       |
-| `Platform.Bundled`  | <path>[platformPath]/lib/testFramework.jar</path>             |
-| `Plugin.Go`         | `com.jetbrains.intellij.go:go-test-framework`                 |
-| `Plugin.Ruby`       | `com.jetbrains.intellij.idea:ruby-test-framework`             |
-| `Plugin.Java`       | `com.jetbrains.intellij.java:java-test-framework`             |
-| `Plugin.JavaScript` | `com.jetbrains.intellij.javascript:javascript-test-framework` |
-| `Plugin.Maven`      | `com.jetbrains.intellij.maven:maven-test-framework`           |
-| `Plugin.ReSharper`  | `com.jetbrains.intellij.resharper:resharper-test-framework`   |
+| Name                | Coordinates                                                                    |
+|---------------------|--------------------------------------------------------------------------------|
+| `Platform.JUnit4`   | `com.jetbrains.intellij.platform:test-framework`                               |
+| `Platform.JUnit5`   | `com.jetbrains.intellij.platform:test-framework-junit5`                        |
+| `Platform.Bundled`  | **SEE NOTE BELOW** Adds <path>[platformPath]/lib/testFramework.jar</path> file |
+| `Plugin.Go`         | `com.jetbrains.intellij.go:go-test-framework`                                  |
+| `Plugin.Ruby`       | `com.jetbrains.intellij.idea:ruby-test-framework`                              |
+| `Plugin.Java`       | `com.jetbrains.intellij.java:java-test-framework`                              |
+| `Plugin.JavaScript` | `com.jetbrains.intellij.javascript:javascript-test-framework`                  |
+| `Plugin.Maven`      | `com.jetbrains.intellij.maven:maven-test-framework`                            |
+| `Plugin.ReSharper`  | `com.jetbrains.intellij.resharper:resharper-test-framework`                    |
 
-> The `Platform.Bundled` type should not be used unless it is necessary, like in the case of Rider, as its `test-framework` is not published as an artifact.
+> The `Platform.Bundled` type should not be used unless it is necessary, like in the case of [Rider](rider.md), as its `test-framework` is not published as an artifact.
 >
-{style="warning"}
+{style="warning" title="Using Platform.Bundled"}
 
 
 ## `VerificationReportsFormats`
 {#VerificationReportsFormats}
 
-[`VerifyPluginTask.VerificationReportsFormats`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginTask.kt)
+[`VerifyPluginTask.VerificationReportsFormats`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginTask.kt)
 
 Enum class describing the type of the results produced by the IntelliJ Plugin Verifier CLI tool run with the [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) task.
 
@@ -214,7 +228,7 @@ Enum class describing the type of the results produced by the IntelliJ Plugin Ve
 | `HTML`     | HTML formatted output file.    |
 | `MARKDOWN` | Markdown file.                 |
 | `ALL`      | Contains all possible options. |
-| `NONE`     | Contains no option.            |
+| `NONE`     | Contains no options.           |
 
 See also:
 - [Extension: `intellijPlatform.verifyPlugin.verificationReportsFormats`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin-verificationReportsFormats)

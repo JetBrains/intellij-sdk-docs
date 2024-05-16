@@ -16,11 +16,11 @@ It supports two main types of indexes:
 
 File-based indexes are built directly over the content of files.
 Stub indexes are built over serialized *stub trees*.
-A stub tree for a source file is a subset of its PSI tree, which contains only externally visible declarations and is serialized in a compact binary format.
+A stub tree for a source file is a subset of its [PSI](psi.md) tree, which contains only externally visible declarations and is serialized in a compact binary format.
 
 Querying a file-based index gets you the set of files matching a specific condition.
 Querying a stub index gets you the set of matching PSI elements.
-Therefore, custom language plugin developers typically use stub indexes in their plugin implementations.
+Therefore, custom language plugin developers typically use [stub indexes](stub_indexes.md) in their plugin implementations.
 
 > [Index Viewer](https://plugins.jetbrains.com/plugin/13029-index-viewer/) plugin can be used to inspect indexes' contents and properties.
 

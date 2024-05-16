@@ -149,7 +149,7 @@ As a general remark, the use of implementation classes is strongly discouraged (
 located under `impl` package, or included in <path>*-impl.jar</path>).
 
 API annotated with
-[`ApiStatus.@Internal`](%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/ApiStatus.java)
+[`@ApiStatus.Internal`](%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/ApiStatus.java)
 must not be used, see [](api_internal.md) for more details and replacements.
 
 ## 3 Tools and References

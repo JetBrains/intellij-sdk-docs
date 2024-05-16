@@ -12,8 +12,18 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2024
 
+### May
+{may-24}
+Minor Changes and Additions
+:
+- How to support [grammar checks](spell_checking.md#grammar-checks) provided by Grazie plugin in custom languages.
+- How to provide [code vision provider](inlay_hints.md#code-vision-provider) name and description in the settings.
+
 ### April
 {april-24}
+
+Plugin Internationalization
+: Add [](internationalization.md) and [](providing_translations.md) pages describing IDE and plugin translation possibilities and best practices.
 
 Minor Changes and Additions
 :
@@ -257,7 +267,7 @@ Minor Changes and Additions
 {#april-22}
 
 Internal API Migration
-: As API annotated with `ApiStatus.@Internal` must not be used in plugins, refer to [](api_internal.md) for a list corresponding API replacements and additional information.
+: As API annotated with `@ApiStatus.Internal` must not be used in plugins, refer to [](api_internal.md) for a list corresponding API replacements and additional information.
 
 ### March
 {#march-22}

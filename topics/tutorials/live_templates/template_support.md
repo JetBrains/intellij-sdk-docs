@@ -8,7 +8,7 @@ This tutorial illustrates how to add default Custom Live Templates to an Intelli
 In addition, the tutorial discusses how to export existing Live Templates, and bundle them within a plugin.
 Any Live Template that can be created and exported can be added to a plugin by following the Template Creation, Export, and Extension Point Registration processes.
 
-This tutorial uses the SDK code sample [`live_templates`](%gh-sdk-samples%/live_templates).
+This tutorial uses the SDK code sample [`live_templates`](%gh-sdk-samples-master%/live_templates).
 
 ## Template Creation
 
@@ -61,7 +61,7 @@ The display `description` can also provide localized variants by specifying
 `key` and `resource-bundle` attributes instead (code insight is available in 2020.3 and later).
 A quick fix to extract the localized key is available since 2024.2.
 
-Copy this file into the [plugin's resources folder](%gh-sdk-samples%/live_templates/src/main/resources/liveTemplates).
+Copy this file into the [plugin's resources folder](%gh-sdk-samples-master%/live_templates/src/main/resources/liveTemplates).
 
 ## Implement `TemplateContextType`
 

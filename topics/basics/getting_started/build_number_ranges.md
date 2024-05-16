@@ -98,14 +98,14 @@ In the `YYYY.R` versioning scheme, the `R` part starts at 1.
 | [233](https://github.com/JetBrains/intellij-community/tree/233) | 2023.3                                                                                                                                   |
 | [232](https://github.com/JetBrains/intellij-community/tree/232) | 2023.2                                                                                                                                   |
 | [231](https://github.com/JetBrains/intellij-community/tree/231) | 2023.1                                                                                                                                   |
-| [223](https://github.com/JetBrains/intellij-community/tree/223) | 2022.3                                                                                                                                   |
-| [222](https://github.com/JetBrains/intellij-community/tree/222) | 2022.2 **NOTE** Java 17 is now required ([blog post](https://blog.jetbrains.com/platform/2022/08/intellij-project-migrates-to-java-17/)) |
 
 #### Earlier versions
 {collapsible="true"}
 
 | Branch number                                                   | IntelliJ Platform version                                                                                                                |
 |-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| [223](https://github.com/JetBrains/intellij-community/tree/223) | 2022.3                                                                                                                                   |
+| [222](https://github.com/JetBrains/intellij-community/tree/222) | 2022.2 **NOTE** Java 17 is now required ([blog post](https://blog.jetbrains.com/platform/2022/08/intellij-project-migrates-to-java-17/)) |
 | [221](https://github.com/JetBrains/intellij-community/tree/221) | 2022.1                                                                                                                                   |
 | [213](https://github.com/JetBrains/intellij-community/tree/213) | 2021.3                                                                                                                                   |
 | [212](https://github.com/JetBrains/intellij-community/tree/212) | 2021.2                                                                                                                                   |

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/html-entities.dtd">
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
@@ -33,26 +33,34 @@
 
 
     <chapter title="Problems with the Guide" id="problems-with-the-guide" switcher-key="English">
-        <p>If you're having problems with the guide itself, such as missing, incorrect, or confusing content, please <a
-                href="https://youtrack.jetbrains.com/newIssue?project=IJSDK&amp;clearDraft=true&amp;c=">raise an issue
-            on YouTrack</a>.
-            If the problem is easily solved, you can also submit a <a href="intellij-sdk-docs-original_CONTRIBUTING.md">Pull
-                Request</a>.</p>
-        <p>If you want to report (smaller) issues for a
+        <p>
+            If you're having problems with the guide itself, such as missing, incorrect, or confusing content, please
+            <a href="https://youtrack.jetbrains.com/newIssue?project=IJSDK&amp;clearDraft=true&amp;c=">
+                raise an issue on YouTrack
+            </a>.
+            If the problem is easily solved, you can also submit a
+            <a href="intellij-sdk-docs-original_CONTRIBUTING.md">Pull Request</a>.
+        </p>
+        <p>
+            If you want to report (smaller) issues for a
             <emphasis>specific</emphasis>
-            page, you can also use
-            <control>Was this page helpful</control>
+            page, you can also use the
+            <control>Was this page helpful?</control>
             feedback form on the bottom of each page by providing more details after clicking the
             <control>No</control>
             button.
             Please try to be as specific as possible and provide your e-mail address for further questions and getting
             notified of updates.
         </p>
-        <p>If you just want to share feedback on the guide, again, <a
-                href="https://youtrack.jetbrains.com/newIssue?project=IJSDK&amp;clearDraft=true&amp;c=">raise an
-            issue</a>, even if it's for a discussion, ideas on improvements or suggestions.</p>
+        <p>
+            If you just want to share feedback on the guide, again,
+            <a href="https://youtrack.jetbrains.com/newIssue?project=IJSDK&amp;clearDraft=true&amp;c=">
+                raise an issue
+            </a>, even if it's for a discussion, ideas on improvements or suggestions.
+        </p>
         <note>
-            <p>Please don't use the
+            <p>
+                Please don't use the
                 <control>IJSDK</control>
                 YouTrack project for plugin or <a anchor="problems-with-products">product support</a> requests - it's
                 intended for the SDK and the documentation, and you'll get a better response using one of the methods

@@ -76,7 +76,7 @@ To create a library, perform the following steps:
   * For a module-level library, commit the modifiable model returned by `ModuleRootManager.getInstance(module).getModifiableModel()`.
 
 For module-level libraries, you can also use simplified APIs in the [`ModuleRootModificationUtil`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootModificationUtil.java) class to add a library with a single API call.
-You can find an example of using these APIs in the [project_model](%gh-sdk-samples%/project_model/src/main/java/org/intellij/sdk/project/model/ModificationAction.java) code sample.
+You can find an example of using these APIs in the [project_model](%gh-sdk-samples-master%/project_model/src/main/java/org/intellij/sdk/project/model/ModificationAction.java) code sample.
 
 ### Adding Contents or Modifying a Library
 To add or change the roots of a library, you need to perform the following steps:
@@ -105,9 +105,9 @@ You can use the following methods:
     ProjectFileIndex.isInLibrarySource(virtualFileorDirectory)
   ```
 
-See the [project_model](%gh-sdk-samples%/project_model/src/main/java/org/intellij/sdk/project/model/ProjectFileIndexSampleAction.java) to see how the method mentioned above can be applied.
+See the [project_model](%gh-sdk-samples-master%/project_model/src/main/java/org/intellij/sdk/project/model/ProjectFileIndexSampleAction.java) to see how the method mentioned above can be applied.
 
-More details on libraries can be found in the [plugin_model](%gh-sdk-samples%/project_model/src/main/java/org/intellij/sdk/project/model/LibrariesAction.java) code sample.
+More details on libraries can be found in the [plugin_model](%gh-sdk-samples-master%/project_model/src/main/java/org/intellij/sdk/project/model/LibrariesAction.java) code sample.
 
 ## Predefined Libraries
 EP: `com.intellij.additionalLibraryRootsProvider`

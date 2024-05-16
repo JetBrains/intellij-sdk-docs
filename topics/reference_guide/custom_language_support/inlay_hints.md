@@ -86,10 +86,15 @@ It is configurable by users in <ui-path>Settings | Editor | Inlay Hints | Code v
 There are two extension points for implementing a code vision provider:
 - [`DaemonBoundCodeVisionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/hints/codeVision/DaemonBoundCodeVisionProvider.kt) registered in `com.intellij.codeInsight.daemonBoundCodeVisionProvider` EP
 - [`CodeVisionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/codeVision/CodeVisionProvider.kt) registered in `com.intellij.codeInsight.codeVisionProvider` EP
+- [`CodeVisionGroupSettingProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/codeVision/settings/CodeVisionGroupSettingProvider.kt) registered in `com.intellij.config.codeVisionGroupSettingProvider` EP
 
 `DaemonBoundCodeVisionProvider` API should be used in cases when code vision entries are related to PSI, so that calculated values are invalidated and recalculated on PSI changes.
 
 `CodeVisionProvider` API should be used for cases when presented information doesn't depend on the PSI.
+
+The `CodeVisionGroupSettingProvider` is necessary for displaying the name and description of the code vision provider in the settings.
+The `groupId` must match the value specified in the implementation of the `CodeVisionProvider`; if not specified, it defaults to the `id`.
+The `groupName` is the name shown in the code vision group, and the `description` will be visible in the right details panel.
 
 **Examples:**
 - [`JavaInheritorsCodeVisionProvider`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/daemon/impl/JavaInheritorsCodeVisionProvider.kt) - shows number of Java class or method inheritors. Clicking the inlay hint opens the list of inheritors. This provider is `DaemonBoundCodeVisionProvider`.

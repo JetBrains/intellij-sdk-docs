@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
 <!DOCTYPE instance-profile
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 <instance-profile id="ijs" name="IntelliJ Platform Plugin SDK" start-page="welcome.topic">
@@ -233,15 +235,14 @@
       <toc-element topic="implementing_lexer.md"/>
       <toc-element topic="implementing_parser_and_psi.md"/>
       <toc-element topic="syntax_highlighting_and_error_highlighting.md"/>
-      <toc-element topic="references_and_resolve.md">
-        <toc-element topic="symbols.md">
-          <toc-element topic="declarations_and_references.md"/>
-          <toc-element topic="websymbols.md">
-            <toc-element topic="websymbols_implementation.md"/>
-            <toc-element topic="websymbols_integration.md"/>
-            <toc-element topic="websymbols_context.md"/>
-            <toc-element topic="websymbols_web_types.md" accepts-web-file-names="websymbols-static-symbols.html"/>
-          </toc-element>
+      <toc-element topic="references_and_resolve.md"/>
+      <toc-element topic="symbols.md">
+        <toc-element topic="declarations_and_references.md"/>
+        <toc-element topic="websymbols.md">
+          <toc-element topic="websymbols_implementation.md"/>
+          <toc-element topic="websymbols_integration.md"/>
+          <toc-element topic="websymbols_context.md"/>
+          <toc-element topic="websymbols_web_types.md" accepts-web-file-names="websymbols-static-symbols.html"/>
         </toc-element>
       </toc-element>
       <toc-element topic="navigation.md"/>

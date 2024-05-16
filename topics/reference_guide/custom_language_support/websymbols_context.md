@@ -11,7 +11,7 @@ HTML files should not contain that framework-specific assistance.
 Web Symbols framework provides various ways to detect current context
 and retrieve it through `WebSymbolsContext.get(kind, ...)` methods.
 
-For a particular `kind` of Web Symbol context, there is only one `name` detected, and it can be `null`, if
+For a particular `kind` of Web Symbol context, there is only one `name` detected, and it can be `null` if
 the context `kind` is not present in the location.
 
 ## Location - `PsiElement` vs `VirtualFile`
@@ -35,7 +35,7 @@ which is enabled.
 
 ## `WebSymbolsContextProvider`
 
-The most straightforward way to contribute context is to register a `WebSymbolsContextProvider`
+The most straightforward way to contribute context is to register a [`WebSymbolsContextProvider`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/context/WebSymbolsContextProvider.kt)
 through `com.intellij.webSymbols.context` extension point and override one of `isEnabled()` methods
 to detect a context of a particular name and kind, e.g.:
 
@@ -166,7 +166,7 @@ Supported `enabled-when` rules are:
 - `file-extensions` - file extension without leading `.`
 - `file-name-patterns` - file name regular expression pattern
 - `ide-libraries` - name of a JavaScript library user preconfigured in the IDE
-- `project-tool-executables` - name of a tool executable present in the project, i.e in `node_modules/.bin`
+- `project-tool-executables` - name of a tool executable present in the project, i.e., in `node_modules/.bin`
 - `node-packages` - name of a Node.js package dependency
 - `ruby-gems` - name of a Ruby gem
 
@@ -177,7 +177,7 @@ For `disable-when` supported rules are:
 #### Context Proximity
 
 When rules are processed, for each rule match, a proximity score is calculated. A lower score means that the match
-is closer to the location. For instance, `file-extensions` and `file-name-patterns` match has proximity `0.0`, which
+is closer to the location. For instance, `file-extensions` and `file-name-patterns` match have proximity `0.0`, which
 means that it's a perfect match. `ide-libraries`, or `ruby-gems` have match of value `Double.MAX_VALUE`,
 because they match at project or module level.
 
@@ -192,7 +192,7 @@ if it's in a parent directory, it will have base score `1.0`, etc. Next, the dep
 - `devDependencies` - `0.5`
 - indirect dependencies found in `node_modules` - `0.6`
 
-After all the rules are processed, a context `kind` gets assigned the `name` with the lowest proximity match.
+After all rules have been processed, a context `kind` gets assigned the `name` with the lowest proximity match.
 
 #### Shipping Web Types
 
@@ -222,8 +222,9 @@ for the dependency and the `enableByDefault` attribute set to `true`.
 
 ### `WebSymbolsContextRulesProvider`
 
-Context rules can also be provided dynamically through `WebSymbolsContextRulesProvider`. To do that,
-register a [`WebSymbolsQueryConfigurator`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/query/WebSymbolsQueryConfigurator.kt)
+Context rules can also be provided dynamically through [`WebSymbolsContextRulesProvider`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/context/WebSymbolsContextRulesProvider.kt).
+
+To do that, register a [`WebSymbolsQueryConfigurator`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/query/WebSymbolsQueryConfigurator.kt)
 through `com.intellij.webSymbols.queryConfigurator` extension point and implement `getContextRulesProviders()`.
 It is important that the results are stable, because any unexpected change in the rules will cause
 rescanning of the project, dropping of all caches and restarting code analysis.
@@ -255,13 +256,13 @@ There are two types of properties supported in the file:
 - `<GLOB path>` -> context details object
 
 The paths can be nested for simplicity. The last segment of the GLOB path is the file name pattern, which supports only `*` wildcard.
-If the last segment is `**` it matches all nested directories and files. Top level context properties are assumed to have `/**` pattern.
+If the last segment is `**`, it matches all nested directories and files. Top level context properties are assumed to have `/**` pattern.
 
 When choosing between different patterns matching the same file name, the following approach is taken:
 
 1. Choose a pattern with the most path segments excluding `**` segments.
 2. Choose a pattern which has a file name pattern (i.e., doesn't end with `**` or `/`).
-3. Choose a pattern which was defined first.
+3. Choose a pattern that was defined first.
 
 ## `WebSymbolsContextSourceProximityProvider`
 

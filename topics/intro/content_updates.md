@@ -18,6 +18,7 @@ Minor Changes and Additions
 :
 - How to support [grammar checks](spell_checking.md#grammar-checks) provided by Grazie plugin in custom languages.
 - How to provide [code vision provider](inlay_hints.md#code-vision-provider) name and description in the settings.
+- How to manage [Web Symbols context](websymbols_context.md) detection.
 
 ### April
 {april-24}

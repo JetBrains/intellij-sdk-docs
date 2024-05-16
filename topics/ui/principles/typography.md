@@ -16,17 +16,17 @@ The system fonts are used for the IDE user interface by default. The default fon
 
 <table style="header-column">
   <tr>
-    <td> <strong> macOS </strong> </td>
+    <td>  macOS  </td>
     <td> SF Pro Text  </td>
     <td> 13 </td>
   </tr>
   <tr>
-    <td> <strong>Window</strong> </td>
+    <td> Window </td>
     <td> Segoe UI </td>
     <td> 12 </td>
   </tr>
   <tr>
-    <td> <strong>Linux</strong> </td>
+    <td> Linux </td>
     <td> Ubuntu </td>
     <td> 15 </td>
   </tr>
@@ -43,12 +43,13 @@ Use the built-in text styles from the table below whenever possible.
 
 <table>
 
-  <tr><td> Name </td>
-  <td> Font size </td>
-  <td> Usage Examples </td></tr>
+  <tr>
+  <td width="20%"> Font </td>
+  <td width="27%"> Font size </td>
+  <td width="53%"> Usage Examples </td></tr>
 
   <tr>
-    <td> <strong>H0 bold</strong> <br/><code>JBFont.h0().asBold()</code></td>
+    <td> H0 bold <p><code>JBFont.h0().asBold()</code></p></td>
     <td> Default + 12 </td>
     <td>
         Rich text headers. See the "What’s New" page example below.
@@ -56,19 +57,19 @@ Use the built-in text styles from the table below whenever possible.
   </tr>
 
   <tr>
-    <td> <strong>H1 bold</strong> <br/><code>JBFont.h1().asBold()</code></td>
+    <td> H1 bold <p><code>JBFont.h1().asBold()</code></p></td>
     <td> Default + 9 </td>
     <td> </td>
   </tr>
 
   <tr>
-    <td>H2 <br/><code>JBFont.h2()</code></td>
+    <td>H2 <p><code>JBFont.h2()</code></p></td>
     <td> Default + 5 </td>
     <td> </td>
   </tr>
 
   <tr>
-    <td> <strong>H2 bold</strong> <br/><code>JBFont.h2().asBold()</code></td>
+    <td> H2 bold <p><code>JBFont.h2().asBold()</code></p></td>
     <td> </td>
     <td>
         Small page header. Examples: Plugin name, GitHub timeline header
@@ -76,7 +77,7 @@ Use the built-in text styles from the table below whenever possible.
   </tr>
 
   <tr>
-    <td> H3 <br/><code>JBFont.h3()</code></td>
+    <td> H3 <p><code>JBFont.h3()</code></p></td>
     <td> Default + 3 </td>
     <td>
         Accent body text
@@ -84,7 +85,7 @@ Use the built-in text styles from the table below whenever possible.
   </tr>
 
   <tr>
-    <td><strong>H3 bold</strong> <br/><code>JBFont.h3().asBold()</code></td>
+    <td>H3 bold <p><code>JBFont.h3().asBold()</code></p></td>
     <td> </td>
     <td>
         Headers in dialogs with a small number of elements (Customize page on Welcome screen, Login page in Get from VCS dialog)
@@ -92,16 +93,16 @@ Use the built-in text styles from the table below whenever possible.
   </tr>
 
   <tr>
-    <td> <strong>H4 bold <br/> (Default bold)</strong> <br/> <code>JBFont.h4().asBold()</code> <br/> <code>JBFont.regular().asBold()</code> </td>
+    <td> H4 bold (Default bold) <p> <code>JBFont.h4().asBold()</code></p> <p> <code>JBFont.regular().asBold()</code></p> </td>
     <td> Default </td>
     <td>
-        Header in dialogs with a large number of elements (Run configurations dialog), notification header, breadcrumbs in settings, header in navigation popup, accent elements in lists and trees. <br/><br/>
-        Use <a href="group_header.md">Group header</a> to divide the page on groups, but not to draw too much attention to the headings.
+        <p>Header in dialogs with a large number of elements (Run configurations dialog), notification header, breadcrumbs in settings, header in navigation popup, accent elements in lists and trees.</p>
+        <p>Use <a href="group_header.md">Group header</a> to divide the page on groups, but not to draw too much attention to the headings.</p>
     </td>
   </tr>
 
   <tr>
-    <td> Default<br/> <code>JBFont.regular()</code></td>
+    <td> Default <p><code>JBFont.regular()</code></p></td>
     <td> Default </td>
     <td>
         Labels, inputs, links, trees, tables and other controls; text outputs, notifications, shortcuts
@@ -111,8 +112,8 @@ Use the built-in text styles from the table below whenever possible.
   <tr>
     <td> Paragraph </td>
     <td>
-         Default <br/>
-         Line height default + 3
+         <p>Default</p>
+         <p>Line height default + 3</p>
     </td>
     <td>
         Multiline description text
@@ -120,11 +121,11 @@ Use the built-in text styles from the table below whenever possible.
   </tr>
 
   <tr>
-    <td>Medium <br/> <code>JBFont.medium()</code></td>
+    <td>Medium <p><code>JBFont.medium()</code></p></td>
     <td>
-        macOS: Default - 1 <br/>
-        Win: Default <br/>
-        Linux: Default - 1
+        <p>macOS: Default - 1</p>
+        <p>Win: Default</p>
+        <p>Linux: Default - 1</p>
     </td>
     <td>
         Tool window header, navigation bar, editor breadcrumbs, editor tabs (small on macOS)
@@ -132,7 +133,7 @@ Use the built-in text styles from the table below whenever possible.
   </tr>
 
   <tr>
-    <td> <strong>Medium bold</strong> <br/> <code>JBFont.medium().asBold()</code> </td>
+    <td> Medium bold <p><code>JBFont.medium().asBold()</code></p> </td>
     <td> </td>
     <td>
         Module in the navigation bar
@@ -140,11 +141,11 @@ Use the built-in text styles from the table below whenever possible.
   </tr>
 
   <tr>
-    <td> Small <br/> <code>JBFont.small()</code> </td>
+    <td> Small <p><code>JBFont.small()</code></p> </td>
     <td>
-        macOS: Default - 2 <br/>
-        Win: Default <br/>
-        Linux: Default - 2
+        <p>macOS: Default - 2</p>
+        <p>Win: Default</p>
+        <p>Linux: Default - 2</p>
     </td>
     <td>
         Status bar, tool window buttons, inline help, help text in tooltips, separators in lists
@@ -196,11 +197,13 @@ The IDE text colors are in the table below. The editor text colors are managed b
     </td>
     <td>
         <code>.foreground</code> keys for various UI controls.
-        <br/>Examples:<br/>
-        <code>Label.foreground</code>
-        <code>Button.foreground</code>
-        <code>ComboBox.foreground</code>
-        <code>MenuItem.foreground</code>
+        <p>Examples:</p>
+        <ul>
+        <li><code>Label.foreground</code></li>
+        <li><code>Button.foreground</code></li>
+        <li><code>ComboBox.foreground</code></li>
+        <li><code>MenuItem.foreground</code></li>
+        </ul>
     </td>
   </tr>
 
@@ -237,12 +240,14 @@ The IDE text colors are in the table below. The editor text colors are managed b
     </td>
     <td>
         <code>.disabledForeground</code> and <code>.disabledText</code> keys for various UI controls.
-        <br/>Examples:<br/>
-        <code>Label.disabledForeground</code>
-        <code>ComboBox.disabledForeground</code>
-        <code>MenuItem.disabledForeground</code>
-        <code>CheckBox.disabledText</code>
-        <code>Button.disabledText</code>
+        <p>Examples:</p>
+        <ul>
+            <li><code>Label.disabledForeground</code></li>
+            <li><code>ComboBox.disabledForeground</code></li>
+            <li><code>MenuItem.disabledForeground</code></li>
+            <li><code>CheckBox.disabledText</code></li>
+            <li><code>Button.disabledText</code></li>
+        </ul>
 </td>
   </tr>
 
@@ -255,9 +260,11 @@ The IDE text colors are in the table below. The editor text colors are managed b
     </td>
     <td>
         <code>.selectionForeground</code> keys for various UI controls.
-        <br/>Examples:<br/>
-        <code>MenuItem.selectionForeground</code>
-        <code>Table.selectionForeground</code>
+        <p>Examples:</p>
+        <ul>
+            <li><code>MenuItem.selectionForeground</code></li>
+            <li><code>Table.selectionForeground</code></li>
+        </ul>
     </td>
   </tr>
 
@@ -270,11 +277,13 @@ The IDE text colors are in the table below. The editor text colors are managed b
     </td>
     <td>
         Use the component <code>LinkLabel</code>
-        <br/>Color keys: <br/>
-        <code>Link.activeForeground</code>
-        <code>Link.hoverForeground</code>
-        <code>Link.pressedForeground</code>
-        <code>Link.visitedForeground</code>
+        <p>Color keys:</p>
+        <ul>
+            <li><code>Link.activeForeground</code></li>
+            <li><code>Link.hoverForeground</code></li>
+            <li><code>Link.pressedForeground</code></li>
+            <li><code>Link.visitedForeground</code></li>
+        </ul>
     </td>
   </tr>
 

@@ -48,41 +48,40 @@ If it’s not possible to limit input, try to show an error as soon as possible 
 </tr>
 <tr>
     <td><p>1</p></td>
-    <td> Non-allowed characters
-         Too big or long values
+    <td> <a href="#1-non-allowed-characters-or-too-big-values">Non-allowed characters or too big/long values</a>
     </td>
     <td> Immediately on input </td>
     <td> Tooltip </td>
 </tr>
 <tr>
     <td><p>2</p></td>
-    <td> Non-allowed values in dialogs.
-         For example, an existing file name, a value that does not match the pattern, or a value that’s too small
+    <td> <a href="#2-non-allowed-values-in-dialogs">Non-allowed values in dialogs.</a>
+         <p>For example, an existing file name, a value that does not match the pattern, or a value that’s too small</p>
     </td>
     <td> On sending the form or on focus loss </td>
     <td> Tooltip </td>
 </tr>
 <tr>
     <td><p>3</p></td>
-    <td> Empty required fields in dialogs </td>
+    <td> <a href="#3-empty-required-fields-in-dialogs">Empty required fields in dialogs</a> </td>
     <td> Disable the confirmation button or check on sending the form </td>
     <td> Tooltip </td>
 </tr>
 <tr>
     <td><p>4</p></td>
-    <td> Non-allowed or empty values in the main window  </td>
+    <td> <a href="#4-non-allowed-or-empty-values-in-the-main-window">Non-allowed or empty values in the main window</a> </td>
     <td> On Enter or focus loss </td>
     <td> Tooltip </td>
 </tr>
 <tr>
     <td><p>5</p></td>
-    <td> Remote connection  </td>
+    <td> <a href="#5-remote-connection">Remote connection</a> </td>
     <td> On sending the form </td>
     <td> Tooltip or inline </td>
 </tr>
 <tr>
     <td><p>6</p></td>
-    <td> Complex values in multi-page dialogs </td>
+    <td> <a href="#6-complex-values-in-multi-page-dialogs">Complex values in multi-page dialogs</a> </td>
     <td> On reopening the form or when the values are used </td>
     <td> Tooltip, inline or notification </td>
 </tr>

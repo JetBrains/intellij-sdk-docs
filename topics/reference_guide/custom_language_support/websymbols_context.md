@@ -20,29 +20,29 @@ The location can either be a `PsiElement`, or a `VirtualFile` with a `Project`. 
 the PSI tree of the containing file might be checked by `WebSymbolsContextProvider`, for instance, for some imports.
 If the location is a `VirtualFile`, the PSI tree will not be acquired, so the resulting context may differ
 from the one acquired on a `PsiElement` location. This is expected. The `VirtualFile` location is used to,
-amongst others, determine a language to parse the file, so it cannot use a PSI tree. It must also be rapid,
+amongst others, determine a language to parse the file, so it cannot use a PSI tree. It must also be fast,
 since it's used during the indexing phase.
 
-Usually, the coding assistance logic is working with `PsiElement`, so you should provide it as the location
+Usually, the coding assistance logic is working with `PsiElement`, so it should be provided as the location
 at which context is checked. It is important, though, to remember that the language of the file might only
 be substituted if a context is detected on `VirtualFile` level.
 
 A good example of how context detection can be used is web frameworks, since at a particular location only
 one of the frameworks can be used. Various `WebSymbolsContextProvider` extensions and context rules are used
 to determine which of the frameworks (Vue, Angular, React, Astro, etc.) to enable at the particular location.
-And each of the plugins calls `WebSymbolsContext.get("framework", ...)` method to check if it's their framework,
+And each of the plugins calls `WebSymbolsContext.get("framework", ...)` to check if it's their framework,
 which is enabled.
 
 ## `WebSymbolsContextProvider`
 
 The most straightforward way to contribute context is to register a `WebSymbolsContextProvider`
-through `com.intellij.webSymbols.context` and override one of `isEnabled` methods
+through `com.intellij.webSymbols.context` extension point and override one of `isEnabled()` methods
 to detect a context of a particular name and kind, e.g.:
 
 ```xml
 <idea-plugin>
   <extensions defaultExtensionNs="com.intellij">
-    <webSymbols.context 
+    <webSymbols.context
         kind="stimulus-context" name="true"
         implementation="com.intellij.stimulus.context.StimulusContextProvider"/>
   </extensions>
@@ -50,15 +50,28 @@ to detect a context of a particular name and kind, e.g.:
 ```
 
 The `StimulusContextProvider` can, for instance, check for JavaScript imports in the file to see if some additional Stimulus support
-should be present in the file. The calculations should be cached, as `WebSymbolsContextProvider` methods are called very often.
+should be present in the file. The result should be cached, as `WebSymbolsContextProvider` methods are called very often.
+
+```kotlin
+class StimulusContextProvider : WebSymbolsContextProvider {
+  override fun isEnabled(file: PsiFile): Boolean {
+    if (file is HtmlCompatibleFile) {
+      return CachedValuesManager.getCachedValue(file) {
+        CachedValueProvider.Result.create(hasStimulusImport(file), file)
+      }
+    }
+    return super.isEnabled(file)
+  }
+}
+```
 
 The presence of the context can be checked as follows:
 
 ```kotlin
-WebSymbols.get("stimulus-context", psiElement) == "true"
+WebSymbolsContext.get("stimulus-context", psiElement) == "true"
 ```
 
-`WebSymbolsContextProvider` can also prevent a context from being detected. In this case, you should override `isForbidden` method.
+`WebSymbolsContextProvider` can also prevent a context from being detected. In this case, the `isForbidden` method should be overridden.
 To prevent any context of a particular kind, use `any` as a name, e.g.:
 
 ```xml
@@ -77,13 +90,13 @@ location and forbid the `framework` context to disable web frameworks support, l
 ## Context Rules
 
 `WebSymbolsContextProvider` is straightforward to use, but it is not very efficient. When many providers look for similar information,
-a lot of calculations are repeated and the performance of the whole IDE drops down. One of the examples is when providers look for the presence
-of some package manager dependency (Node package, Ruby Gem, Maven or Gradle dependency, etc.). To optimize this lookup, you can provide context rules.
+a lot of calculations are repeated, affecting the overall performance of the IDE. One of the examples is when providers look for the presence
+of some package manager dependency (Node package, Ruby Gem, Maven or Gradle dependency, etc.). To optimize this lookup, context rules can be provided.
 
 ### Web Types with Context Rules
 
 One of the ways to provide context rules is through a [Web Types](websymbols_web_types.md) file.
-You can specify a top-level property `context-config`, e.g.:
+A top-level property `context-config` should be specified, e.g.:
 
 ```json
 {
@@ -115,7 +128,7 @@ You can specify a top-level property `context-config`, e.g.:
 ```
 
 The first level property under `contexts-config` is the name of context `kind` and the next level property is the context `name`
-for which you provide rules. You can provide `enable-when` and `disable-when` rules.
+for which the `enable-when` and `disable-when` rules are provided.
 
 In IDEs prior to 2024.2, only a deprecated syntax is supported, where the first level property under `contexts-config` is the context `name`
 and the context kind needs to be specified through `kind` property, e.g.:
@@ -183,7 +196,7 @@ After all the rules are processed, a context `kind` gets assigned the `name` wit
 
 #### Shipping Web Types
 
-You can embed Web Types with your plugin and point to them via extension point:
+Web Types can be embedded with a plugin by pointing to the file via extension point:
 
 ```xml
 <idea-plugin>
@@ -201,19 +214,19 @@ correspond to any dependency, so we can name the file as we want to. Currently, 
 is supported, and JavaScript plugin must be loaded for the extension point to work. In the future, support
 for other package managers should be added and extension point should work regardless of the presence of JavaScript plugin.
 
-If your context rules are tied to the presence of some NPM dependency, use the dependency name and
+If context rules are tied to the presence of some NPM dependency, use the dependency name and
 choose the minimal version, for which the Web Types should be loaded.
 
-If your context rules should always be loaded, then use any name (preferably not used by any dependency)
-for the dependency and set `enableByDefault` attribute to `true`.
+If context rules should always be loaded, then any name (preferably not used by any dependency) should be used
+for the dependency and the `enableByDefault` attribute set to `true`.
 
 ### `WebSymbolsContextRulesProvider`
 
-You can also provide context rules dynamically through `WebSymbolsContextRulesProvider`. To do that,
+Context rules can also be provided dynamically through `WebSymbolsContextRulesProvider`. To do that,
 register a [`WebSymbolsQueryConfigurator`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/query/WebSymbolsQueryConfigurator.kt)
-through `com.intellij.webSymbols.queryConfigurator` extension point and implement `getContextRulesProviders()` method.
+through `com.intellij.webSymbols.queryConfigurator` extension point and implement `getContextRulesProviders()`.
 It is important that the results are stable, because any unexpected change in the rules will cause
-rescanning of the project, dropping of all caches and restarting code analysis deamon.
+rescanning of the project, dropping of all caches and restarting code analysis.
 
 ## `.ws-context` File
 
@@ -252,14 +265,14 @@ When choosing between different patterns matching the same file name, the follow
 
 ## `WebSymbolsContextSourceProximityProvider`
 
-`WebSymbolsContextSourceProximityProvider` allows providing evaluation logic for the context rules. This interface should be used if
-you're working on integrating support for a package manager or a language which has a way to define global libraries. Register
-the provider with `com.intellij.webSymbols.contextSourceProximityProvider` extension point.
+`WebSymbolsContextSourceProximityProvider` allows providing evaluation logic for the context rules. It should be used when
+working on integrating support for a package manager or a language which has a way to define global libraries. The provider should be registered
+through `com.intellij.webSymbols.contextSourceProximityProvider` extension point.
 
-The provider has a single method to be overridden — `calculateProximity`. When `sourceKind` parameter matches the provider requirements,
-it should calculate the [proximity](#context-proximity) of each source provided by `sourceNames`. For instance, if you implement support for a package manager and
-the `sourceKind` is a `PackageManagerDependency` with the appropriate name, the provider should calculate the [proximity](#context-proximity)
+The provider has a single method to be overridden — `calculateProximity()`. When `sourceKind` parameter matches the provider requirements,
+it should calculate the [proximity](#context-proximity) of each source provided by `sourceNames`. For instance, when supporting a package manager and
+the method is called with `sourceKind` being a `PackageManagerDependency` with the appropriate name, the provider should calculate the [proximity](#context-proximity)
 of each dependency provided through `sourceNames` parameter. The `Result` object contains also a `modificationTrackers` set field, which
-is used to track when the cached results should be recalculated. It is crucial to have as few trackers as possible and refresh the cache as little as possible
+is used to track when the cached results should be recalculated. It is crucial to have as few trackers as possible and refresh the cache as seldom as possible
 because the results are used in every call to the `WebSymbolContext.get()` method.
 

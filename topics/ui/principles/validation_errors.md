@@ -414,10 +414,10 @@ Examples of common errors and corresponding error messages:
 </tr>
 <tr>
     <td> Incorrect value </td>
-    <td> The port number should be between XXX and XXXX<br /><br />
-         The file name should be at least 4 symbols <br /><br />
-         The name is already in use <br /><br />
-         The username or password is incorrect
+    <td> <p>The port number should be between XXX and XXXX</p>
+         <p>The file name should be at least 4 symbols</p>
+         <p>The name is already in use</p>
+         <p>The username or password is incorrect</p>
     </td>
 </tr>
 <tr>

@@ -18,15 +18,15 @@
 
 <table>
 <tr>
-    <td></td>
-    <td> Example </td>
-    <td> When and how to use </td>
+    <td width="20%"></td>
+    <td width="25%"> Examples </td>
+    <td width="55%"> When and how to use </td>
 </tr>
 <tr>
     <td>Numbers</td>
     <td>4,255,165.00</td>
-    <td>Space is not limited, e.g. <control>Settings</control> dialog<br/>
-        <img src="numbers.png" width="277" />
+    <td><p>Space is not limited, e.g. <control>Settings</control> dialog:</p>
+        <p><img src="numbers.png" width="277" /></p>
     </td>
 </tr>
 <tr>
@@ -34,7 +34,7 @@
     <td>10.5k<br />
         3.3M
     </td>
-    <td>Space is limited, e.g. in table or lists</td>
+    <td>Space is limited, e.g. in table or lists.</td>
 </tr>
 <tr>
     <td>Percentage</td>
@@ -49,7 +49,7 @@
 <tr>
     <td>Ratios short</td>
     <td>3/10</td>
-    <td>Space is limited, e.g. in table or lists</td>
+    <td>Space is limited, e.g. in table or lists.</td>
 </tr>
 <tr>
     <td>Currency</td>
@@ -65,50 +65,56 @@ By default, the date and time formats are taken from the system settings. The fo
 See the table below to understand in which cases to show date and time.
 
 <table>
-<tr><td></td>
-<td> Example </td>
-<td> When and how to use </td></tr>
+<tr>
+<td width="20%"></td>
+<td width="25%"> Examples </td>
+<td width="55%"> When and how to use </td></tr>
 <tr>
     <td>Date</td>
-    <td>Today<br />
-        05 Jan<br />
-        05 Jan 2017
+    <td>
+        <p>Today</p>
+        <p>05 Jan</p>
+        <p>05 Jan 2017</p>
     </td>
-    <td>Omit the time for events if the exact time does not matter, e.g., Annotate panel<br /><br />
-        Use <i>Today</i> and <i>Yesterday</i> for the last two days, use exact date for all other days<br /><br />
-        Do <b>not</b> show the year if it’s within the current calendar year
+    <td>
+        <p>Omit the time for events if the exact time does not matter, e.g., Annotate panel.</p>
+        <p>Use <i>Today</i> and <i>Yesterday</i> for the last two days, use exact date for all other days.</p>
+        <p>Do <b>not</b> show the year if it’s within the current calendar year.</p>
     </td>
 </tr>
 <tr>
     <td>Date and time</td>
-    <td>Today, 14:04<br />
-        05 Jan, 14:04<br />
-        05 Jan 2019, 14:04
+    <td>
+        <p>Today, 14:04</p>
+        <p>05 Jan, 14:04</p>
+        <p>05 Jan 2019, 14:04</p>
     </td>
-    <td>When it is important to know the exact sequence of actions, e.g., Version Control Log</td>
+    <td>When it is important to know the exact sequence of actions, e.g., Version Control Log.</td>
 </tr>
 <tr>
     <td>Time</td>
     <td>22:49</td>
-    <td>Omit date if the event happened today and it’s clear from the context</td>
+    <td>Omit date if the event happened today and it’s clear from the context.</td>
 </tr>
 <tr>
     <td>Date and day of week</td>
     <td>Tuesday, 30 August</td>
-    <td>Use as headers in timelines, e.g., Event Log. The day of the week helps to quickly understand how long ago was the event<br /><br />
-        Use <i>Today</i> and <i>Yesterday</i> for the last two days, use exact date for all other days
+    <td>
+        <p>Use as headers in timelines, e.g., Event Log. The day of the week helps to quickly understand how long ago was the event.</p>
+        <p>Use <i>Today</i> and <i>Yesterday</i> for the last two days, use exact date for all other days.</p>
     </td>
 </tr>
 <tr>
     <td>Approximate time</td>
-   <td>A moment ago<br />
-       10 minutes ago<br />
-       2 hours ago
+   <td>
+       <p>A moment ago</p>
+       <p>10 minutes ago</p>
+       <p>2 hours ago</p>
     </td>
     <td><p>Use for a single event that happened recently, e.g., in the Status bar:</p>
         <p><img src="approximate.png" width="215" /></p>
         <p>Do <b>not</b> use in tables as it’s harder to compare.</p>
-        <p>If more than 12 hours have passed since the event, use Date format</p>
+        <p>If more than 12 hours have passed since the event, use Date format.</p>
     </td>
 </tr>
 </table>
@@ -123,32 +129,34 @@ See the table below to understand in which cases to show date and time.
 
 <table>
 <tr>
-<td></td>
-<td> Example </td>
-<td> When and how to use </td>
+<td width="20%"></td>
+<td width="25%"> Examples </td>
+<td width="55%"> When and how to use </td>
 </tr>
 <tr>
     <td>Period</td>
-    <td>10 milliseconds<br />
-        10 seconds<br />
-        10 minutes<br />
-        1 hour
+    <td>
+        <p>10 milliseconds</p>
+        <p>10 seconds</p>
+        <p>10 minutes</p>
+        <p>1 hour</p>
     </td>
-    <td>Space is not limited, e.g. Settings dialog
+    <td>Space is not limited, e.g. <control>Settings</control> dialog:
         <p><img src="period.png" width="242" /></p>
     </td>
 </tr>
 <tr>
     <td>Time-lapse</td>
-    <td>1 h 30 m 30 s<br />
-        1 h 30 m 30.035 s<br />
-        1 h<br />
-        1 h 0 m 30 s<br />
-        1 m 30 s<br />
-        05 Jan 2019, 14:04
+    <td>
+        <p>1 h 30 m 30 s</p>
+        <p>1 h 30 m 30.035 s</p>
+        <p>1 h</p>
+        <p>1 h 0 m 30 s</p>
+        <p>1 m 30 s</p>
+        <p>05 Jan 2019, 14:04</p>
     </td>
-    <td>Use for changing duration. Select units depending on the process type. E.g., Unit tests usually run less than a minute, so show only seconds and milliseconds. Build tasks usually run more than a minute, so show minutes and seconds.<br /><br />
-        Omit hours and seconds that do not provide additional data
+    <td><p>Use for changing duration. Select units depending on the process type. E.g., Unit tests usually run less than a minute, so show only seconds and milliseconds. Build tasks usually run more than a minute, so show minutes and seconds.</p>
+        <p>Omit hours and seconds that do not provide additional data.</p>
 </td>
 </tr>
 <tr>
@@ -165,10 +173,10 @@ See the table below to understand in which cases to show date and time.
 
 Use decimal numeral system.
 
-<table>
+<table style="none">
 <tr>
-    <td>bits</td>
-    <td>10 bits</td>
+    <td width="50%">bits</td>
+    <td width="50%">10 bits</td>
 </tr>
 <tr>
     <td>bytes</td>

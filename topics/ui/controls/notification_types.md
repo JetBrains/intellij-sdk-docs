@@ -35,10 +35,10 @@ Use the following table to determine which notification to use based on the two 
 
 <table>
   <tr>
-  <td>User action</td>
-  <td>Context</td>
-  <td>Type</td>
-  <td>Examples</td></tr>
+  <td width="16%">User action</td>
+  <td width="16%">Context</td>
+  <td width="16%">Type</td>
+  <td width="52%">Examples</td></tr>
   <tr>
     <td>Required immediately
     </td>

@@ -108,6 +108,7 @@ targeted plugin is _bundled_ with the Target Platform or not.
 | `plugin(id, version, channel)` | Adds a dependency on a plugin for IntelliJ Platform.                                                                                |
 | `plugin(notation)`             | Adds a dependency on a plugin for IntelliJ Platform using a string notation:<p>`pluginId:version` or `pluginId:version@channel`</p> |
 | `plugins(notations)`           | Adds dependencies on plugins for IntelliJ Platform using a string notation:<p>`pluginId:version` or `pluginId:version@channel`</p>  |
+| `localPlugin(localPath)`       | Adds a dependency on a local IntelliJ Platform plugin. Accepts path or a dependency on another module.                              |
 
 See also:
 

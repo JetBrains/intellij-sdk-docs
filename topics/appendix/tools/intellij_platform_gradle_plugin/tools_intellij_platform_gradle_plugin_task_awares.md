@@ -167,6 +167,7 @@ tasks {
 | `plugins(notations)`           | Adds dependencies on plugins for a custom IntelliJ Platform using a string notation:<p>`pluginId:version` or `pluginId:version@channel`</p>  |
 | `disablePlugin(id)`            | Disables the specific plugin with its ID.                                                                                                    |
 | `disablePlugins(ids)`          | Disables specific plugins with the list of their IDs.                                                                                        |
+| `localPlugin(path)`            | Adds a dependency on a local IntelliJ Platform plugin. Accepts path or a dependency on another module.                                       |
 
 
 ## `IntelliJPlatformVersionAware`
@@ -343,7 +344,7 @@ Type
 
 <tldr>
 
-**Depends on**: [`AutoReloadAware`](#AutoReloadAware), [`CoroutinesJavaAgentAware`](#CoroutinesJavaAgentAware), [`PluginAware`](#PluginAware), [`RuntimeAware`](#RuntimeAware), [`SandboxAware`](#SandboxAware), [`SplitModeAware`](#SplitModeAware)
+**Depends on**: [`AutoReloadAware`](#AutoReloadAware), [`CoroutinesJavaAgentAware`](#CoroutinesJavaAgentAware), [`PluginAware`](#PluginAware), [`RuntimeAware`](#RuntimeAware), [`SandboxAware`](#SandboxAware)
 
 **Inherited by**: [`buildSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions), [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde), [`testIdePerformance`](tools_intellij_platform_gradle_plugin_tasks.md#testIdePerformance), [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi)
 
@@ -543,7 +544,7 @@ Type
 
 <tldr>
 
-**Inherited by**: [`RunnableIdeAware`](#RunnableIdeAware), [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox)
+**Inherited by**: [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox), [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde)
 
 **Sources**: [`SplitModeAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SplitModeAware.kt)
 

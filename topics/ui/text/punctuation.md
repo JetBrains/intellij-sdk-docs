@@ -16,8 +16,8 @@ End an action name with an ellipsis if it opens a dialog where input is required
 <table style="none">
 <tr>
     <td>
-        <i>Save All</i><br/>
-        <i>Build Project</i>
+        <p><i>Save All</i></p>
+        <p><i>Build Project</i></p>
     </td>
     <td>
         Happens immediately, no ellipsis
@@ -25,8 +25,8 @@ End an action name with an ellipsis if it opens a dialog where input is required
 </tr>
 <tr>
     <td>
-        <i>Import Settings…</i><br/>
-        <i>Export to HTML…</i>
+        <p><i>Import Settings…</i></p>
+        <p><i>Export to HTML…</i></p>
     </td>
     <td>
         Opens dialogs that require input
@@ -42,8 +42,8 @@ End an action name with an ellipsis if it opens a dialog where input is required
 </tr>
 <tr>
     <td>
-        <i>Tip of the Day</i><br/>
-        <i>About IntelliJ IDEA</i>
+        <p><i>Tip of the Day</i></p>
+        <p><i>About IntelliJ IDEA</i></p>
     </td>
     <td>
         Opens dialogs that just show information, no input is either required or possible

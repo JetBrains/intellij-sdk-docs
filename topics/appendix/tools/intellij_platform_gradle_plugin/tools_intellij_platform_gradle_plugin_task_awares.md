@@ -445,10 +445,10 @@ Type
 : `Property<String>`
 
 
-### `sandboxContainerDirectory`
-{#SandboxAware-sandboxContainerDirectory}
+### `sandboxDirectory`
+{#SandboxAware-sandboxDirectory}
 
-The container for all sandbox-related directories.
+The directory containing content read and produced by the running IDE.
 
 The directory name depends on the platform type and version currently used for running a task.
 
@@ -460,7 +460,7 @@ Type
 ### `sandboxConfigDirectory`
 {#SandboxAware-sandboxConfigDirectory}
 
-A configuration directory located within the [`sandboxContainerDirectory`](#SandboxAware-sandboxContainerDirectory).
+A configuration directory located within the [`sandboxDirectory`](#SandboxAware-sandboxDirectory).
 
 {style="narrow"}
 Type
@@ -470,7 +470,7 @@ Type
 ### `sandboxPluginsDirectory`
 {#SandboxAware-sandboxPluginsDirectory}
 
-A plugins directory located within the [`sandboxContainerDirectory`](#SandboxAware-sandboxContainerDirectory).
+A plugins directory located within the [`sandboxDirectory`](#SandboxAware-sandboxDirectory).
 
 {style="narrow"}
 Type
@@ -480,7 +480,7 @@ Type
 ### `sandboxSystemDirectory`
 {#SandboxAware-sandboxSystemDirectory}
 
-A system directory located within the [`sandboxContainerDirectory`](#SandboxAware-sandboxContainerDirectory).
+A system directory located within the [`sandboxDirectory`](#SandboxAware-sandboxDirectory).
 
 {style="narrow"}
 Type
@@ -490,7 +490,7 @@ Type
 ### `sandboxLogDirectory`
 {#SandboxAware-sandboxLogDirectory}
 
-A log directory located within the [`sandboxContainerDirectory`](#SandboxAware-sandboxContainerDirectory).
+A log directory located within the [`sandboxDirectory`](#SandboxAware-sandboxDirectory).
 
 {style="narrow"}
 Type

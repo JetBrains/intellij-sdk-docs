@@ -34,7 +34,8 @@ Consider two factors when deciding which notification type to use.
 Use the following table to determine which notification to use based on the two factors:
 
 <table>
-  <tr><td>User action</td>
+  <tr>
+  <td>User action</td>
   <td>Context</td>
   <td>Type</td>
   <td>Examples</td></tr>
@@ -46,24 +47,24 @@ Use the following table to determine which notification to use based on the two 
     <td>Alerts
     </td>
     <td>
-      Confirm Restart<br/><br/>
-      Opening projects in new window<br/><br/>
-      When trying to rename a method, but a conflict is found<br/><br/>
-      Need a dependency before using a feature<br/>
-      <img src="alert.png" width="406" />
+      <p>Confirm Restart</p>
+      <p>Opening projects in new window</p>
+      <p>When trying to rename a method, but a conflict is found</p>
+      <p>Need a dependency before using a feature</p>
+      <p><img src="alert.png" width="406" /></p>
    </td>
   </tr>
   <tr>
     <td>Required, but not immediately</td>
     <td>
-      File tabs<br/><br/>
-      Tool windows
+      <p>File tabs</p>
+      <p>Tool windows</p>
     </td>
     <td>Banners</td>
     <td>
-      Configuring SDK for your project<br/><br/>
-      Requiring a Gradle sync for tools to work properly<br/>
-      <img src="banner.png" width="431" />
+      <p>Configuring SDK for your project</p>
+      <p>Requiring a Gradle sync for tools to work properly</p>
+      <p><img src="banner.png" width="431" /></p>
     </td>
     </tr>
   <tr>
@@ -71,9 +72,9 @@ Use the following table to determine which notification to use based on the two 
     <td>Tool windows</td>
     <td>Tool Window balloons</td>
     <td>
-      Status of task completion<br/><br/>
-      When Find Usages is invoked on a method, use a tool window balloon to show the feedback since the results will be found in the Find tool window<br/>
-      <img src="toolwindow_balloon.png" width="208" />
+      <p>Status of task completion</p>
+      <p>When Find Usages is invoked on a method, use a tool window balloon to show the feedback since the results will be found in the Find tool window</p>
+      <p><img src="toolwindow_balloon.png" width="208" /></p>
     </td>
   </tr>
   <tr>
@@ -90,9 +91,9 @@ Use the following table to determine which notification to use based on the two 
     <td></td>
     <td>Timed balloons</td>
     <td>
-      Module imported<br/><br/>
-      Framework detection
-      <img src="timed_toast.png" width="391" />
+      <p>Module imported</p>
+      <p>Framework detection</p>
+      <p><img src="timed_toast.png" width="391" /></p>
     </td>
   </tr>
 </table>

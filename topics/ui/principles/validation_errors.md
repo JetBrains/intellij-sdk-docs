@@ -200,10 +200,12 @@ When the focus is returned to the field with an error, use validation on input. 
 
 #### Implementation {id="implementation_2"}
 
+In [`Configurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/Configurable.java) panels, throw [`ConfigurationException`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/ConfigurationException.java) from `apply()` in case of errors.
+
+Non-configurable panels:
+
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
-
-[//]: # (TODO: wait for confirmation)
 
 ```kotlin
 textField()

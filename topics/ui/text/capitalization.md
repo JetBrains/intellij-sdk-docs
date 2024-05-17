@@ -37,11 +37,9 @@ Do not capitalize articles, prepositions and conjunctions: *Side-by-Side, Drag-a
 
 ### Examples {id="examples_1"}
 
-*Compare With…* — the short preposition *with* is capitalized as the last word.
-
-*Compare with Latest Repository Version* — *with* is not capitalized when in the middle.
-
-*Check Out from Version Control* — *out* is a part of the phrasal verb *check out* and is capitalized.
+- _Compare With…_ — the short preposition *with* is capitalized as the last word.
+- _Compare with Latest Repository Version_ — *with* is not capitalized when in the middle.
+- _Check Out from Version Control_ — *out* is a part of the phrasal verb *check out* and is capitalized.
 
 ## Sentence
 
@@ -60,8 +58,6 @@ Capitalize the first word in a sentence, proper nouns and adjectives, and abbrev
 
 ### Examples
 
-<i>Control+Shift+F</i> — keyboard button names are considered proper nouns. <br/><br/>
-
-<i>Accept the terms of the License Agreement</i> — License Agreement is a proper noun. <br/><br/>
-
-<i>Side-by-side layout</i> — only the first word of a hyphenated phase is capitalized.
+- _Control+Shift+F_ — keyboard button names are considered proper nouns.
+- _Accept the terms of the License Agreement_ — License Agreement is a proper noun.
+- _Side-by-side layout_ — only the first word of a hyphenated phase is capitalized.

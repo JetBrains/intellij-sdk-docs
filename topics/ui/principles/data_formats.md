@@ -31,8 +31,9 @@
 </tr>
 <tr>
     <td>Numbers short</td>
-    <td>10.5k<br />
-        3.3M
+    <td>
+        <p>10.5k</p>
+        <p>3.3M</p>
     </td>
     <td>Space is limited, e.g. in table or lists.</td>
 </tr>

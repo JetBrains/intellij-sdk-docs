@@ -73,9 +73,9 @@ See the [Run Configurations](run_configurations.md) section for more details.
 
 [`Executor`](%gh-ic%/platform/execution/src/com/intellij/execution/Executor.java) describes a specific way of executing run profiles.
 The three default executors provided by the IntelliJ Platform are:
-* [`DefaultRunExecutor`](%gh-ic%/platform/execution/src/com/intellij/execution/executors/DefaultRunExecutor.java) (_Run_)
-* [`DefaultDebugExecutor`](%gh-ic%/platform/xdebugger-api/src/com/intellij/execution/executors/DefaultDebugExecutor.java) (_Debug_)
-* [`CoverageExecutor`](%gh-ic%/plugins/coverage-common/src/com/intellij/coverage/CoverageExecutor.java) _(Run with Coverage_)
+* [`DefaultRunExecutor`](%gh-ic%/platform/execution/src/com/intellij/execution/executors/DefaultRunExecutor.java) _(Run)_
+* [`DefaultDebugExecutor`](%gh-ic%/platform/xdebugger-api/src/com/intellij/execution/executors/DefaultDebugExecutor.java) _(Debug)_
+* [`CoverageExecutor`](%gh-ic%/plugins/coverage-common/src/com/intellij/coverage/CoverageExecutor.java) _(Run with Coverage)_
 
 Custom implementations are rarely required (it may be necessary, e.g., when a profiler integration is implemented).
 Executor implementations are registered in the `com.intellij.executor` extension point (EP).

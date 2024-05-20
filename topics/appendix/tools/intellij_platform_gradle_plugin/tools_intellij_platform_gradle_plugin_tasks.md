@@ -1465,6 +1465,19 @@ Default value
 : The `org.jetbrains.kotlinx:kotlinx-coroutines` dependency presence
 
 
+### `hasModulePlugin`
+{#verifyPluginProjectConfiguration-hasModulePlugin}
+
+Defines if the current module is a main project or imported module, which uses [](tools_intellij_platform_gradle_plugin_plugins.md#module) plugin.
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: The [](tools_intellij_platform_gradle_plugin_plugins.md#module) plugin presence
+
+
 ## `verifyPluginSignature`
 {#verifyPluginSignature}
 

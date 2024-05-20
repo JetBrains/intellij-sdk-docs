@@ -57,7 +57,7 @@ fun List<Item>.renderTable() = """
   | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
   |--------------|:-------:|--------------|---------|-----------------------|
 """ + sortedByDescending { it.version.toLooseVersion() }.joinToString("\n") {
-  val name = it.name.removePrefix("Android Studio").trim().replace("|", "\\|")
+  val name = it.name.removePrefix("Android Studio").trim().replace("|", "&#124;")
   val channel = it.channel.run { "![$this][${this.lowercase()}]" }
   val date = it.date
   val version = "**${it.version}**<p>${it.build}</p>"

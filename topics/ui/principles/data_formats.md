@@ -213,15 +213,29 @@ All numeric values should be given a unit or clearly labeled if they do not have
 
 Select the most convenient units.
 
-| <format color="Red" style="bold">Incorrect                                  </format> | <format color="Green" style="bold"> Correct                       </format> |
-|---------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
-| ![](connection_incorrect.png){width="284"}                                            | ![](connection_correct.png){width="259"}                                    |
+<table>
+    <tr>
+        <td width="50%"><format color="Red" style="bold">Incorrect</format></td>
+        <td width="50%"><format color="Green" style="bold">Correct</format></td>
+    </tr>
+    <tr>
+        <td><img src="connection_incorrect.png" alt="" width="284" /></td>
+        <td><img src="connection_correct.png" alt="" width="259" /></td>
+    </tr>
+</table>
 
 Place units after the input field.
 
-| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
-|-----------------------------------------------------|-----------------------------------------------------|
-| ![](caret_incorrect.png){width="196"}               | ![](caret_correct.png){width="242"}                 |
+<table>
+    <tr>
+        <td width="50%"><format color="Red" style="bold">Incorrect</format></td>
+        <td width="50%"><format color="Green" style="bold">Correct</format></td>
+    </tr>
+    <tr>
+        <td><img src="caret_incorrect.png" alt="" width="196" /></td>
+        <td><img src="caret_correct.png" alt="" width="242" /></td>
+    </tr>
+</table>
 
 ## Tables
 

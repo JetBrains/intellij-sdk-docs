@@ -37,12 +37,12 @@
                 </p>
                 <table>
                     <tr>
-                        <td>
+                        <td width="50%">
                             <p>
                                 <format color="Red" style="bold">Incorrect</format>
                             </p>
                         </td>
-                        <td>
+                        <td width="50%">
                             <p>
                                 <format color="Green" style="bold">Correct</format>
                             </p>
@@ -67,12 +67,12 @@
         <p>Use toolbar buttons instead if there are several buttons related to a table or list:</p>
         <table>
             <tr>
-                <td>
+                <td width="50%">
                     <p>
                         <format color="Red" style="bold">Incorrect</format>
                     </p>
                 </td>
-                <td>
+                <td width="50%">
                     <p>
                         <format color="Green" style="bold">Correct</format>
                     </p>
@@ -111,12 +111,12 @@
                 generic ones:</p>
             <table>
                 <tr>
-                    <td>
+                    <td width="50%">
                         <p>
                             <format color="Red" style="bold">Incorrect</format>
                         </p>
                     </td>
-                    <td>
+                    <td width="50%">
                         <p>
                             <format color="Green" style="bold">Correct</format>
                         </p>
@@ -142,12 +142,12 @@
                 words to make it clear. Prefer clear labels to short:</p>
             <table>
                 <tr>
-                    <td>
+                    <td width="50%">
                         <p>
                             <format color="DarkOrange" style="bold">Acceptable</format>
                         </p>
                     </td>
-                    <td>
+                    <td width="50%">
                         <p>
                             <format color="Green" style="bold">Better</format>
                         </p>
@@ -182,12 +182,12 @@
 
             <table>
                 <tr>
-                    <td>
+                    <td width="50%">
                         <p>
                             <format color="Red" style="bold">Incorrect</format>
                         </p>
                     </td>
-                    <td>
+                    <td width="50%">
                         <p>
                             <format color="Green" style="bold">Better</format>
                         </p>
@@ -225,7 +225,7 @@
                 see <a href="context_help.md">Context help</a>.</p>
             <table style="none">
                 <tr>
-                    <td>
+                    <td width="50%">
                         <img src="hover_shortcut.png"
                              alt="A 'Replace' button with a shortcut in hover tooltip"
                              width="77"/>
@@ -233,7 +233,7 @@
                             <emphasis>If the action is clear, show the shortcut only.</emphasis>
                         </p>
                     </td>
-                    <td>
+                    <td width="50%">
                         <img src="hover_name_shortcut.png"
                              alt="'Replace' button with an action name and a shortcut in hover tooltip"
                              width="155"/>
@@ -251,13 +251,13 @@
         <chapter title="Default" id="default">
             <table style="none">
                 <tr>
-                    <td>
+                    <td width="50%">
                         <img src="default_save.png" alt="'Save' button on macOS" width="72"/>
                         <p>
                             <emphasis>macOS</emphasis>
                         </p>
                     </td>
-                    <td>
+                    <td width="50%">
                         <img src="default_save_win.png" alt="'Save' button on Windows" width="72"/>
                         <p>
                             <emphasis>Windows</emphasis>

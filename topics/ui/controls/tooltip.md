@@ -20,18 +20,18 @@ There are three types of tooltips:
 
 <table style="none">
   <tr>
-    <td>
-        <strong>Action </strong><br/>
-        Shows an action name or label for icons and unlabeled controls, and a shortcut if available.
+    <td width="50%">
+        <strong>Action </strong>
+        <p>Shows an action name or label for icons and unlabeled controls, and a shortcut if available.</p>
     </td>
-    <td>
+    <td width="50%">
         <img src="02_regular_tooltip.png" width="218" />
     </td>
   </tr>
   <tr>
     <td>
-        <strong>Action help </strong><br/>
-        Shows help text for icons and unlabeled controls in addition to an action name or label.
+        <strong>Action help </strong>
+        <p>Shows help text for icons and unlabeled controls in addition to an action name or label.</p>
     </td>
     <td>
         <img src="03_action_help_tooltip.png" width="305" />
@@ -39,8 +39,8 @@ There are three types of tooltips:
   </tr>
   <tr>
     <td>
-        <strong>Help</strong><br/>
-        Shows help text for all other controls.
+        <strong>Help</strong>
+        <p>Shows help text for all other controls.</p>
     </td>
     <td>
         <img src="03_help_tooltip.png" width="275" />
@@ -59,14 +59,15 @@ Use **Action help** and **Help** tooltips according to the [Context help](contex
 
 Always show the required information in a tooltip:
 
-<table style="none">
-  <tr><td> Tooltip </td>
-  <td> Required info </td>
-  <td> Optional </td></tr>
+<table>
+  <tr>
+  <td width="40%"> Tooltip </td>
+  <td width="30%"> Required info </td>
+  <td width="30%"> Optional </td></tr>
   <tr>
     <td>
-        Action <br/>
-        <img src="08_regular_tooltip.png" width="126"/>
+        <p>Action</p>
+        <p><img src="08_regular_tooltip.png" width="126"/></p>
     </td>
     <td>
         Action name
@@ -77,30 +78,30 @@ Always show the required information in a tooltip:
   </tr>
   <tr>
     <td>
-        Action help <br/>
-        <img src="08_toolbar_help_tooltip.png" width="300"/>
+        <p>Action help</p>
+        <p><img src="08_toolbar_help_tooltip.png" width="300"/></p>
     </td>
     <td>
-        Action name <br/>
-        Help text
+        <p>Action name</p>
+        <p>Help text</p>
     </td>
     <td>
-        Shortcut <br/>
-        Link
+        <p>Shortcut</p>
+        <p>Link</p>
     </td>
   </tr>
   <tr>
     <td>
-        Help <br/>
-        <img src="08_help_tooltip.png" width="300"/>
+        <p>Help</p>
+        <p><img src="08_help_tooltip.png" width="300"/></p>
     </td>
     <td>
-        Help text <br/>
-        <format color="#999999">No action name or label because it is already shown in the UI.</format>
+        <p>Help text</p>
+        <p><format color="#999999">No action name or label because it is already shown in the UI.</format></p>
     </td>
     <td>
-        Shortcut <br/>
-        Link
+        <p>Shortcut</p>
+        <p>Link</p>
     </td>
   </tr>
 </table>
@@ -266,17 +267,17 @@ All tooltips are hidden when the mouse cursor leaves the area that triggers the 
 
 If the mouse cursor stays in the tooltip trigger area, tooltips are also hidden after a timeout specified in the table below.
 
-<table style="none">
+<table>
   <tr>
-    <td>
+    <td width="20%">
         <strong>Tooltip</strong>
     </td>
-    <td>
+    <td width="40%">
         <strong>Appears after</strong>
     </td>
-    <td>
-        <strong>Hides after</strong> <br/>
-        <format color="#999999">If cursor is in the tooltip trigger area</format>
+    <td width="40%">
+        <p><strong>Hides after</strong></>
+        <p><format color="#999999">If cursor is in the tooltip trigger area</format></p>
     </td>
   </tr>
   <tr>
@@ -284,12 +285,12 @@ If the mouse cursor stays in the tooltip trigger area, tooltips are also hidden 
         Action
     </td>
     <td>
-        300 milliseconds <br/>
-        <format color="#999999">ide.tooltip.initialReshowDelay registry key</format>
+        <p>300 milliseconds</p>
+        <p><format color="#999999">ide.tooltip.initialReshowDelay registry key</format></p>
     </td>
     <td>
-        10 seconds <br/>
-        <format color="#999999">ide.helptooltip.regular.dismissDelay</format>
+        <p>10 seconds</p>
+        <p><format color="#999999">ide.helptooltip.regular.dismissDelay</format></p>
     </td>
   </tr>
   <tr>
@@ -299,8 +300,8 @@ If the mouse cursor stays in the tooltip trigger area, tooltips are also hidden 
     <td>
     </td>
     <td>
-        30 seconds <br/>
-        <format color="#999999">ide.helptooltip.full.dismissDelay</format>
+        <p>30 seconds</p>
+        <p><format color="#999999">ide.helptooltip.full.dismissDelay</format></p>
     </td>
   </tr>
   <tr>

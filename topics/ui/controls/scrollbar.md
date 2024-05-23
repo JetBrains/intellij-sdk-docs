@@ -111,6 +111,12 @@ Reserve the space for a vertical scrollbar if there is a column on the right sid
 
 ## Style
 
-| Windows/Linux                  | macOS                          |
-|--------------------------------|--------------------------------|
-| ![](win-light.png){width="96"} | ![](mac-light.png){width="96"} |
+<table>
+    <tr>
+        <td width="50%">Windows/Linux</td>
+        <td width="50%">macOS</td></tr>
+    <tr>
+        <td><img src="win-light.png" alt="" width="96" /></td>
+        <td><img src="mac-light.png" alt="" width="96" /></td>
+    </tr>
+</table>

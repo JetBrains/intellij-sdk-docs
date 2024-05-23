@@ -51,9 +51,16 @@ Use sentence-style capitalization.
 
 If there are several input fields on a form, it’s recommended to make labels approximately the same length to avoid gaps between labels and fields. For example:
 
-| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
-|-----------------------------------------------------|-----------------------------------------------------|
-| ![](several_labels_length.png){width="385"}         | ![](several_labels_length_1.png){width="224"}       |
+<table>
+    <tr>
+        <td width="50%"><format color="Red" style="bold">Incorrect</format></td>
+        <td width="50%"><format color="Green" style="bold">Correct</format></td>
+    </tr>
+    <tr>
+        <td><img src="several_labels_length.png" alt="" width="385" /></td>
+        <td><img src="several_labels_length_1.png" alt="" width="224" /></td>
+    </tr>
+</table>
 
 If an input field is disabled, disable the label too:
 
@@ -87,9 +94,16 @@ If the user overwrites the value, it can be restored by removing the new value f
 
 Do **not** use the placeholder to show examples. The user can get the impression that the field is already filled. Provide examples or explanation under the input field (see [Context help](context_help.md)):
 
-| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
-|-----------------------------------------------------|-----------------------------------------------------|
-| ![](placeholder_examples.png){width="150"}          | ![](placeholder_examples_1.png){width="150"}        |
+<table>
+    <tr>
+        <td width="50%"><format color="Red" style="bold">Incorrect</format></td>
+        <td width="50%"><format color="Green" style="bold">Correct</format></td>
+    </tr>
+    <tr>
+        <td><img src="placeholder_examples.png" alt="" width="150" /></td>
+        <td><img src="placeholder_examples_1.png" alt="" width="150" /></td>
+    </tr>
+</table>
 
 Do **not** use the placeholder as the field label. After the field has been filled, it is difficult to understand its purpose.
 

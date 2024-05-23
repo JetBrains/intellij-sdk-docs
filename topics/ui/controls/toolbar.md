@@ -63,9 +63,16 @@ The less frequently used commands can be right aligned.
 
 Do **not** put two toolbars next to each other. One toolbar should be enough for the most popular actions.
 
-| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
-|-----------------------------------------------------|-----------------------------------------------------|
-| ![](toolbars_2.png){width="58"}                     | ![](toolbars_1.png){width="30"}                     |
+<table>
+    <tr>
+        <td width="50%"><format color="Red" style="bold">Incorrect</format></td>
+        <td width="50%"><format color="Green" style="bold">Correct</format></td>
+    </tr>
+    <tr>
+        <td><img src="toolbars_2.png" alt="" width="58" /></td>
+        <td><img src="toolbars_1.png" alt="" width="30" /></td>
+    </tr>
+</table>
 
 Make every toolbar action available from the main menu or the context menu.
 Toolbars are customizable and can be hidden, so commands should be available from other places as well.

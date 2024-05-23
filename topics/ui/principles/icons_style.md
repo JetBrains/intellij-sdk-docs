@@ -59,9 +59,10 @@ Sizes for other icon sizes can be found in the table below:
 
 <table>
 
-<tr><td> Icon Type </td>
-<td> Icons Size </td>
-<td> Transparent Border </td></tr>
+<tr>
+<td width="50%"> Icon Type </td>
+<td width="25%"> Icons Size </td>
+<td width="25%"> Transparent Border </td></tr>
 <tr>
     <td> Gutter, status bar </td>
     <td> 12px x 12px </td>
@@ -84,7 +85,13 @@ Sizes for other icon sizes can be found in the table below:
 </tr>
 <tr>
     <td> Logo app icon </td>
-    <td> 32px x 32px <br /> 64px x 64px <br /> 128px x 128px <br /> 256px x 256px <br /> 512px x 512px </td>
+    <td>
+         <p>32px x 32px</p>
+         <p>64px x 64px</p>
+         <p>128px x 128px</p>
+         <p>256px x 256px</p>
+         <p>512px x 512px</p>
+    </td>
     <td> — </td>
 </tr>
 </table>
@@ -93,11 +100,16 @@ Sizes for other icon sizes can be found in the table below:
 
 Use basic shapes to build icons, such as squares, circles and rectangles. Using a grid and basic shapes ensures consistent visual proportions and placement.
 
-| ![](shape_square.png){width="192"} _Square 12px x 12px_                        | ![](shape_circle.png){width="195"} _Circle 14px_                           |
-|--------------------------------------------------------------------------------|----------------------------------------------------------------------------|
-| ![](shape_rect_horizontal.png){width="192"} _Horizontal rectangle 10px x 14px_ | ![](shape_rect_vertical.png){width="192"} _Vertical rectangle 14px x 10px_ |
-
-{style=none}
+<table style="none">
+    <tr>
+        <td width="50%"><img src="shape_square.png" alt="" width="192" /> <emphasis>Square 12px x 12px</emphasis></td>
+        <td width="50%"><img src="shape_circle.png" alt="" width="195" /> <emphasis>Circle 14px</emphasis></td>
+    </tr>
+    <tr>
+        <td><img src="shape_rect_horizontal.png" alt="" width="192" /> <emphasis>Horizontal rectangle 10px x 14px</emphasis></td>
+        <td><img src="shape_rect_vertical.png" alt="" width="192" /> <emphasis>Vertical rectangle 14px x 10px</emphasis></td>
+    </tr>
+</table>
 
 Make sure that icons have the same visual weight. The more filled an icon is, the less space it needs. Following this rule, circles, rhombuses, triangles and other non-square shapes should have larger height and width to be optically balanced with square figures.
 
@@ -135,13 +147,13 @@ Align pixels on the X and Y axis and round to the nearest whole pixel, or 0.5px 
 
 <table>
 <tr>
-    <td><format color="Red" style="bold">Incorrect</format></td>
-    <td><format color="Green" style="bold">Correct</format></td>
+    <td width="50%"><format color="Red" style="bold">Incorrect</format></td>
+    <td width="50%"><format color="Green" style="bold">Correct</format></td>
 </tr>
 <tr>
-    <td width="50%"><img src="stroke_pixels_incorrect.png" width="192"/>
+    <td><img src="stroke_pixels_incorrect.png" width="192"/>
          <em> If an icon is positioned off pixels, <br /> it becomes blurry when rasterized.</em> </td>
-    <td width="50%"><img src="stroke_pixels_correct.png" width="192"/>
+    <td><img src="stroke_pixels_correct.png" width="192"/>
          <em> Position stokes on integer pixels where possible.</em> </td>
 </tr>
 </table>
@@ -154,13 +166,13 @@ Reduce the number of anchors as they increase the size of the image and takes lo
 
 <table>
 <tr>
-    <td><format color="Red" style="bold">Incorrect</format></td>
-    <td><format color="Green" style="bold">Correct</format></td>
+    <td width="50%"><format color="Red" style="bold">Incorrect</format></td>
+    <td width="50%"><format color="Green" style="bold">Correct</format></td>
 </tr>
 <tr>
-    <td width="50%"><img src="stroke_anchors_incorrect.png" width="192"/>
+    <td><img src="stroke_anchors_incorrect.png" width="192"/>
          <em> Unneeded anchors are added.</em> </td>
-    <td width="50%"><img src="stroke_anchors_correct.png" width="192"/>
+    <td><img src="stroke_anchors_correct.png" width="192"/>
          <em> Use the minimum number of anchors.</em> </td>
 </tr>
 </table>
@@ -226,16 +238,14 @@ The dark version is for Darcula theme.
 
 [//]: # (<note>Download a <a href="../../../images/ui/icons/Icons template.sketch" download>Sketch file</a> with the color palette.</note>)
 
-[//]: # (FIXME: colors are wrong, dark are rendered)
-
 <table style="none">
     <tr>
-        <td>
+        <td width="50%">
             <img src="action_red.png" width="64" />
             <br/>
             <p><b>Red</b></p><p>#DB5860</p>
         </td>
-        <td>
+        <td width="50%">
             <img src="action_red_d.png" width="64" />
             <br/>
             <p><b>Red dark</b></p><p>#C75450</p>
@@ -339,17 +349,17 @@ The palette for noun icons is wider, because there are lots of icons in one set:
 
 <table style="none">
     <tr>
-        <td>
+        <td width="33%">
             <img src="noun_grey.png" width="64" />
             <br/>
             <p><b>Grey</b></p><p>#9AA7B0</p>
         </td>
-        <td>
+        <td width="33%">
             <img src="noun_grey_80.png" width="64" />
             <br/>
             <p><b>Grey 80%</b></p><p>#9AA7B0 op. 80%</p>
         </td>
-        <td>
+        <td width="33%">
             <img src="noun_grey_60.png" width="64" />
             <br/>
             <p><b>Grey 60%</b></p><p>#9AA7B0 op. 60%</p>

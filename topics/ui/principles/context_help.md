@@ -80,9 +80,16 @@ Do not use context help to explain how the user interface works. If you need to 
 
 Do not explain common actions and entities. Show a regular tooltip with an action name and shortcut in this case.
 
-| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
-|-----------------------------------------------------|-----------------------------------------------------|
-| ![](07_explain_obvious_incorrect.png){width=300}    | ![](07_explain_obvious_correct.png){width=145}      |
+<table>
+  <tr>
+    <td width="50%"><format color="Red" style="bold">Incorrect</format></td>
+    <td width="50%"><format color="Green" style="bold">Correct</format></td>
+  </tr>
+  <tr>
+    <td><img src="07_explain_obvious_incorrect.png" alt="" width="300" /></td>
+    <td><img src="07_explain_obvious_correct.png" alt="" width="145" /></td>
+  </tr>
+</table>
 
 Do not explain each option. Too many help icons or too much inline text make a dialog cluttered and harder to navigate visually.
 If all options need to be explained, consider rewriting the labels to make them clearer.

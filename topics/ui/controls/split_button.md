@@ -27,15 +27,29 @@ The Split button is not useful in the <control>Replace</control> popup, since no
 For example, <control>Open in Find Window</control>
 is not related to the main action. Such actions are hard to find in the drop-down menu:
 
-| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
-|-----------------------------------------------------|-----------------------------------------------------|
-| ![](not-related-incorrect.png){width="152"}         | ![](not-related.png){width="327"}                   |
+<table>
+    <tr>
+        <td width="50%"><format color="Red" style="bold">Incorrect</format></td>
+        <td width="50%"><format color="Green" style="bold">Correct</format></td>
+    </tr>
+    <tr>
+        <td><img src="not-related-incorrect.png" alt="" width="152"/></td>
+        <td><img src="not-related.png" alt="" width="327"/></td>
+    </tr>
+</table>
 
 In the <control>Adjust Code Style</control> dialog, only 1 related action is possible, and it does not save a lot of space:
 
-| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
-|-----------------------------------------------------|-----------------------------------------------------|
-| ![](space-not-limited-incorrect.png){width="152"}   | ![](space-not-limited.png){width="234"}             |
+<table>
+    <tr>
+        <td width="50%"><format color="Red" style="bold">Incorrect</format></td>
+        <td width="50%"><format color="Green" style="bold">Correct</format></td>
+    </tr>
+    <tr>
+        <td><img src="space-not-limited-incorrect.png" alt="" width="152" /></td>
+        <td><img src="space-not-limited.png" alt="" width="234" /></td>
+    </tr>
+</table>
 
 To hide actions which are dangerous and uncommon. Dangerous means an action can destroy users’ data and cannot be easily undone.
 It is less possible to accidentally click an action hidden in a menu.

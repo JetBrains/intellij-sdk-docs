@@ -371,8 +371,8 @@ Describe the problem in terms of target users’ actions or goals, not in terms 
 
 <table style="header-column">
     <tr>
-        <td> <format color="Red" style="bold">Incorrect</format> </td>
-        <td> Invalid Git Executable. Error running "git.exe". File not found: "git.exe".</td>
+        <td width="15%"> <format color="Red" style="bold">Incorrect</format> </td>
+        <td width="85%"> Invalid Git Executable. Error running "git.exe". File not found: "git.exe".</td>
     </tr>
     <tr>
         <td> <format color="Green" style="bold">Correct</format> </td>
@@ -384,8 +384,8 @@ Provide specific names, locations, and values of the objects involved:
 
 <table style="header-column">
     <tr>
-        <td> <format color="Red" style="bold">Incorrect</format> </td>
-        <td> <img src="message_unclear.png" width="343"/> </td>
+        <td width="15%"> <format color="Red" style="bold">Incorrect</format> </td>
+        <td width="85%"> <img src="message_unclear.png" width="343"/> </td>
     </tr>
     <tr>
         <td> <format color="Green" style="bold">Correct</format> </td>
@@ -403,8 +403,8 @@ Examples of common errors and corresponding error messages:
 
 <table>
 <tr>
-    <td> Error type </td>
-    <td> Error message </td>
+    <td width="25%"> Error type </td>
+    <td width="75%"> Error message </td>
 </tr>
 <tr>
     <td> Empty required field </td>
@@ -436,24 +436,24 @@ Use encouraging tone:
 
 <table>
 <tr>
-  <td> Use </td>
-  <td> Do not use </td>
+  <td width="50%"> <format color="Red" style="bold">Do not use</format> </td>
+  <td width="50%"> <format color="Green" style="bold">Use</format> </td>
 </tr>
 <tr>
-    <td> Problem </td>
     <td> Error, failure </td>
+    <td> Problem </td>
 </tr>
 <tr>
-    <td> Unable </td>
     <td> Failed to </td>
+    <td> Unable </td>
 </tr>
 <tr>
-    <td> Incorrect </td>
     <td> Illegal, invalid, bad </td>
+    <td> Incorrect </td>
 </tr>
 <tr>
-    <td> Should be </td>
     <td> Must </td>
+    <td> Should be </td>
 </tr>
 </table>
 

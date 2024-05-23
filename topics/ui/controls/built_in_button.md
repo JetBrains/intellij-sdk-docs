@@ -115,7 +115,7 @@ Place the plus icon inside the control.
 
 ### Copy, Info
 
-| ![](copy_button.png){width="57"}                                                                                      | ![](info_button.png){width="57"}                                                                             |
-|-----------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| Do not use the Copy button, the content can be selected and copied using the Cmd/Ctrl+C shortcut or the context menu. | Do not use the info button to open an external link. Use <a href="context_help.md">context help</a> instead. |
+| ![](copy_button.png){width="57"} | Do not use the Copy button, the content can be selected and copied using the Cmd/Ctrl+C shortcut or the context menu. |
+|----------------------------------|-----------------------------------------------------------------------------------------------------------------------|
+| ![](info_button.png){width="57"} | Do not use the info button to open an external link. Use <a href="context_help.md">context help</a> instead.          |
 {style=none}

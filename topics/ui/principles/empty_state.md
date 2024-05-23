@@ -28,9 +28,16 @@ Explain the current state.
 
 The default pattern is "_No [entity] added._" If _added, created, configured_ or other such verbs act as synonyms in a particular case, use the verb _added_ for consistency.
 
-| <format color="Red" style="bold">Incorrect                                                                                </format> | <format color="Green" style="bold"> Correct                              </format> |
-|-------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
-| ![](libraries-before.png){width="241"} Avoid "Nothing to show" as it is not informative.                                            | ![](libraries-after.png){width="241"}                                              |
+<table>
+    <tr>
+        <td width="50%"><format color="Red" style="bold">Incorrect</format></td>
+        <td width="50%"><format color="Green" style="bold"> Correct</format></td>
+    </tr>
+    <tr>
+        <td><img src="libraries-before.png" alt="" width="241" /> Avoid &quot;Nothing to show&quot; as it is not informative.</td>
+        <td><img src="libraries-after.png" alt="" width="241" /></td>
+    </tr>
+</table>
 
 Make the reason descriptive:
 

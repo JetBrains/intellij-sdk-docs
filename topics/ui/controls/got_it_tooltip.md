@@ -172,17 +172,31 @@ Make the help text [short and descriptive](writing_short.md).
 
 Avoid using style formatting. It makes the tooltip harder to read.
 
-| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
-|-----------------------------------------------------|-----------------------------------------------------|
-| ![](14_formatting_incorrect.png){width="341"}       | ![](14_formatting_correct.png){width="341"}         |
+<table>
+    <tr>
+        <td width="50%"><format color="Red" style="bold">Incorrect</format></td>
+        <td width="50%"><format color="Green" style="bold">Correct</format></td>
+    </tr>
+    <tr>
+        <td><img src="14_formatting_incorrect.png" alt="" width="341" /></td>
+        <td><img src="14_formatting_correct.png" alt="" width="341" /></td>
+    </tr>
+</table>
 
 ### Location
 
 Do **not** cover the information the user is currently working with.
 
-| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
-|-----------------------------------------------------|-----------------------------------------------------|
-| ![](15_location_incorrect.png){width="509"}         | ![](15_location_correct.png){width="509"}           |
+<table>
+    <tr>
+        <td width="50%"><format color="Red" style="bold">Incorrect</format></td>
+        <td width="50%"><format color="Green" style="bold">Correct</format></td>
+    </tr>
+    <tr>
+        <td><img src="15_location_incorrect.png" alt="" width="509" /></td>
+        <td><img src="15_location_correct.png" alt="" width="509" /></td>
+    </tr>
+</table>
 
 **Implementation:** See four predefined point providers in the [`GotItTooltip`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/GotItTooltip.kt) class.
 

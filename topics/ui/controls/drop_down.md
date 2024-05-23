@@ -77,9 +77,16 @@ Select the most likely or the safest value by default.
 
 Do **not** use an empty value as the default value. If no values are added to a drop-down yet, replace it with a button to add values.
 
-| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
-|-----------------------------------------------------|-----------------------------------------------------|
-| ![](drop_down_empty.png){width="221"}               | ![](button.png){width="190"}                        |
+<table>
+    <tr>
+        <td width="50%"><format color="Red" style="bold">Incorrect</format></td>
+        <td width="50%"><format color="Green" style="bold">Correct</format></td>
+    </tr>
+    <tr>
+        <td><img src="drop_down_empty.png" alt="" width="221" /></td>
+        <td><img src="button.png" alt="" width="190" /></td>
+    </tr>
+</table>
 
 ## Menu {id="menu_1"}
 
@@ -143,9 +150,16 @@ Enclose meta-options in pointy brackets and place meta-options at the beginning 
 
 Do **not** assign special meanings to numeric or string values, use meta-options instead. It can be unclear that either 0 or an empty string are used to disable an option.
 
-| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
-|-----------------------------------------------------|-----------------------------------------------------|
-| ![](version_incorrect.png){width="262"}             | ![](version_correct.png){width="262"}               |
+<table>
+    <tr>
+        <td width="50%"><format color="Red" style="bold">Incorrect</format></td>
+        <td width="50%"><format color="Green" style="bold">Correct</format></td>
+    </tr>
+    <tr>
+        <td><img src="version_incorrect.png" alt="" width="262" /></td>
+        <td><img src="version_correct.png" alt="" width="262" /></td>
+    </tr>
+</table>
 
   <p><em>In the incorrect example an empty string is used to set <control>&lt;Same
   as language level&gt;</control>, which is unclear.</em></p>

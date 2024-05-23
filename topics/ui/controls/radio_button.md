@@ -27,9 +27,16 @@ Do **not** use radio buttons if:
 
 * There are 5 and more options. Use a [drop-down list](drop_down.md):
 
-  | <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
-  |-----------------------------------------------------|-----------------------------------------------------|
-  | ![](dropdown_incorrect.png){width="189"}            | ![](dropdown_correct.png){width="351"}              |
+  <table>
+      <tr>
+          <td width="40%"><format color="Red" style="bold">Incorrect</format></td>
+          <td width="60%"><format color="Green" style="bold">Correct</format></td>
+      </tr>
+      <tr>
+          <td><img src="dropdown_incorrect.png" alt="" width="189" /></td>
+          <td><img src="dropdown_correct.png" alt="" width="351" /></td>
+      </tr>
+  </table>
 
 Consider using a [drop-down list](drop_down.md) if:
 

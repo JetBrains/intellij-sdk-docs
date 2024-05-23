@@ -47,17 +47,17 @@ Remove verbs that explain the function of a UI control:
 
 <table style="none">
   <tr>
-     <td> <img src="obvious-prefer.png" width="357"/><em> A selected radio button means its option is "preferred". </em> </td>
-      <td> <img src="obvious-allow.png" width="266"/><em> A checked checkbox means its feature is "allowed". </em> </td>
+     <td width="50%"> <img src="obvious-prefer.png" width="357"/><em> A selected radio button means its option is "preferred". </em> </td>
+      <td width="50%"> <img src="obvious-allow.png" width="266"/><em> A checked checkbox means its feature is "allowed". </em> </td>
   </tr>
 </table>
 
 Remove words with a meaning that is already expressed in the label:
 <table style="none">
     <tr>
-       <td> <img src="obvious-contents.png" width="357"/>
+       <td width="50%"> <img src="obvious-contents.png" width="357"/>
             <em> The clipboard’s purpose is to keep information so the infinitive "to keep" is implying the obvious and can be removed.</em> </td>
-       <td> <img src="obvious-functionality.png" width="266"/>
+       <td width="50%"> <img src="obvious-functionality.png" width="266"/>
             <em> The word "functionality" is already implied by "Drag’n’Drop" and can be removed. </em> </td>
     </tr>
 </table>
@@ -83,9 +83,9 @@ Remove duplicates in meaning:
 
 <table>
 <tr>
-<td> Before </td>
-<td> After </td>
-<td> Explanation</td>
+<td width="30%"> Before </td>
+<td width="30%"> After </td>
+<td width="40%"> Explanation</td>
 </tr>
 <tr>
     <td> Help improve IntelliJ IDEA <format color="#cc4700"> by sending anonymous usage statistics to JetBrains s.r.o.</format> </td>
@@ -106,8 +106,8 @@ Remove duplicates in meaning:
 
 <table>
 <tr>
-<td> Removed </td>
-<td> Explanation </td>
+<td width="30%"> Removed </td>
+<td width="70%"> Explanation </td>
 
 </tr>
 <tr>
@@ -161,9 +161,9 @@ More examples:
 <table>
 
 <tr>
-<td> Before </td>
-<td> After </td>
-<td> Explanation </td>
+<td width="30%"> Before </td>
+<td width="30%"> After </td>
+<td width="40%"> Explanation </td>
 </tr>
 
 <tr>
@@ -190,8 +190,8 @@ More examples:
 
 <table>
 <tr>
-<td> Moved </td>
-<td> Moved </td></tr>
+<td width="50%"> Moved </td>
+<td width="50%"> Moved </td></tr>
 <tr>
     <td> <format color="#cc4700">This</format> [field name] <format color="#cc4700">is default for all project modules. A module specific</format> [field name] <format color="#cc4700">can be configured for each of the modules is required.</format> </td>
     <td> <format color="#999999"> This phrase is repeated for all fields. Can be shown only once at the bottom of the dialog.</format> </td>
@@ -201,9 +201,9 @@ More examples:
 ![](offline-mode.png){width=566}
 <table>
 <tr>
-<td> Before </td>
-<td> After </td>
-<td> Explanation </td>
+<td width="30%"> Before </td>
+<td width="30%"> After </td>
+<td width="40%"> Explanation </td>
 </tr>
 <tr>
     <td> <format color="#cc4700">visits the</format> remote repositories <format color="#cc4700">and</format> checks for updates </td>
@@ -234,8 +234,8 @@ More examples:
 
 <table>
 <tr>
-<td> Removed </td>
-<td> Explanation </td>
+<td width="30%"> Removed </td>
+<td width="70%"> Explanation </td>
 </tr>
 <tr>
     <td> <format color="#cc4700">The offline mode is helpful when you need to work offline</format> </td>

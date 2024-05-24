@@ -276,7 +276,7 @@ If the mouse cursor stays in the tooltip trigger area, tooltips are also hidden 
         <strong>Appears after</strong>
     </td>
     <td width="40%">
-        <p><strong>Hides after</strong></>
+        <p><strong>Hides after</strong></p>
         <p><format color="#999999">If cursor is in the tooltip trigger area</format></p>
     </td>
   </tr>

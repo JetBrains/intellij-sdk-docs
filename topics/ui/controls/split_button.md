@@ -144,8 +144,11 @@ Do **not** show the dropdown menu when the button gains focus.
 
 <table style="none">
   <tr>
-    <td><shortcut>Enter</shortcut> and <shortcut>Ctrl+Enter</shortcut></td>
-    <td><ul><li>Invoke the default button action</li></ul></td>
+    <td width="15%">
+        <p><shortcut>Enter</shortcut></p>
+        <p><shortcut>Ctrl+Enter</shortcut></p>
+    </td>
+    <td width="85%"><ul><li>Invoke the default button action</li></ul></td>
   </tr>
   <tr>
     <td><shortcut>Space</shortcut></td>
@@ -156,7 +159,10 @@ Do **not** show the dropdown menu when the button gains focus.
     <td><ul><li>Show the dropdown menu with secondary actions and move focus to the first item in the menu</li></ul></td>
   </tr>
   <tr>
-    <td><shortcut>Tab</shortcut> and <shortcut>Shift + Tab</shortcut></td>
+    <td>
+        <p><shortcut>Tab</shortcut></p>
+        <p><shortcut>Shift + Tab</shortcut></p>
+    </td>
     <td><ul><li>Move focus to the control next to the split button and hide the drop-down menu</li></ul></td>
   </tr>
 </table>
@@ -165,11 +171,17 @@ Do **not** show the dropdown menu when the button gains focus.
 
 <table style="none">
   <tr>
-    <td><shortcut>Enter</shortcut> and <shortcut>Space</shortcut></td>
-    <td>Invoke the selected action</td>
+    <td width="15%">
+        <p><shortcut>Enter</shortcut></p>
+        <p><shortcut>Space</shortcut></p>
+    </td>
+    <td width="85%">Invoke the selected action</td>
   </tr>
   <tr>
-    <td><shortcut>Arrow Down</shortcut> and <shortcut>Arrow Up</shortcut></td>
+    <td>
+        <p><shortcut>Arrow Down</shortcut></p>
+        <p><shortcut>Arrow Up</shortcut></p>
+    </td>
     <td>
         <ul>
             <li>Navigate through the elements</li>

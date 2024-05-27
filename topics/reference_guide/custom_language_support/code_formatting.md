@@ -38,21 +38,19 @@ On the other hand, spacing elements should never be covered by blocks unless you
 
 ## Implementation
 
-The process of formatting a file or a file fragment consists of the following main steps:
+To format a file or a file fragment, plugin authors are required to take the following steps:
 
-*  The _formatting model builder_ (
-   [`FormattingModelBuilder`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/FormattingModelBuilder.java)
-   ), implemented by the plugin, provides a formatting model (
-   [`FormattingModel`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/FormattingModel.java)
-   ) for the document to be formatted.
-
-*  The formatting model is requested to build the structure of the file as applies to formatting, as a tree of _blocks_ (
-   [`Block`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/Block.java)
-   ) with an associated indent, wrap, alignment, and spacing settings.
-
-*  The formatting engine calculates the sequence of whitespace characters (spaces, tabs, and/or line breaks) that needs to be placed at every block boundary, based on the plugin's formatting model.
-
-*  The formatting model is requested to insert the calculated whitespace characters at necessary positions in the file.
+* Implement [`FormattingModelBuilder`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/FormattingModelBuilder.java)
+  and register it as `com.intellij.lang.formatter` in the <path>plugin.xml</path>.
+* The main purpose of the formatting model builder is its `createModel` method that provides a
+  [`FormattingModel`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/FormattingModel.java) to format the document.
+  This method gets the [`FormattingContext`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/FormattingContext.java) as an argument which
+  provides all necessary information to properly build formatting blocks.
+* The formatting model is requested to build the structure of the file as applies to formatting, as a tree of _blocks_ (
+  [`Block`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/Block.java)
+  ) with an associated indent, wrap, alignment, and spacing settings.
+  Based on the provided tree of blocks, the formatting engine calculates the sequence of whitespace characters (spaces, tabs, and/or line breaks)
+  that needs to be inserted at necessary positions in the file.
 
 The structure of blocks is usually built so that it mirrors the PSI structure of the file – for example, in Java code, the top-level formatting block covers the entire file.
 Its children cover individual classes in the file, blocks on the next level cover methods inside classes, etc.
@@ -103,6 +101,71 @@ Code formatting can be suppressed per region via [special comments](https://yout
 
 **Example**:
 [Custom Language Support Tutorial: Formatter](formatter.md)
+
+### Practical Example
+
+A powerful code formatting framework naturally comes with several interconnected parts whose relations might be confusing initially.
+Therefore, here is a more specific guide on how to implement a code formatter which gives additional explanations.
+
+First, implement and register a `FormattingModelBuilder`.
+The `createModel(formattingContext: FormattingContext)` method will do several things:
+
+* Retrieve both global and custom code style settings by using `formattingContext.codeStyleSettings` and `settings.getCustomSettings()`.
+  These will be used to determine the correct amount of whitespace for indentations, wraps, etc. when building the tree of formatting blocks.
+* Create an instance of your `SpacingBuilder` using the formatting settings. How to define a simple `SpacingBuilder` is shown in a moment.
+* Using the settings, the spacing builder, and the PSI node from the `formattingContext`, build the root `Block` for the `formattingContext` which does not have a parent.
+
+After that, use `FormattingModelProvider#createFormattingModelForPsiFile()` to return the standard implementation of `FormattingModel` that uses
+your custom `Block` implementation.
+Note that creating a formatting model on the basis of the PSI structure like this is not the only way.
+The IntelliJ Platform SDK also contains, e.g., [`DocumentBasedFormattingModel`](%gh-ic%/platform/code-style-impl/src/com/intellij/psi/formatter/DocumentBasedFormattingModel.java)
+for other use cases, and we refer to navigating the implementations of the `FormattingModel` to find other usages.
+
+In this example, a useful implementation of a custom `Block` is to base it on `ASTBlock`, because it reflects the PSI structure (and therefore is also based on the AST tree).
+Each block should store the following properties:
+
+* Its parent block, because in some situations it can be necessary to check the parent block to determine the correct properties when building its subblocks.
+* The underlying `ASTNode` to implement `getNode()`, `getTextRange()`, and to access its children for building subblocks.
+* The settings for the language to access, e.g., alignment settings when building subblocks.
+* It should have an instance of the `SpacingBuilder` which can directly be used when implementing the `getSpacing()` method.
+  That means, the `getSpacing()` method of the block simply calls the `getSpacing()` method of the `SpacingBuilder`.
+* Finally, it should know its `Alignment`, `Indent` and `Wrap` necessary to implement the corresponding getter methods for these properties.
+
+Like in all tree-like structures, each block should have a list of subblocks usually called children in a tree.
+Much of the work when implementing a `Block` class goes into implementing the `getSubBlocks()` method that calculates blocks for the children of the current block's AST node.
+Therefore, a common implementation is to check whether the list of subblocks was already calculated and can be returned.
+If not, it uses `getNode().getChildren()` and for each `ASTNode` child that is not whitespace, it builds a subblock which is then added to the list of subblocks.
+
+Building the subblock highly depends on the specific language.
+In general, however, this code inspects the `IElementType`, checks if the node is in a specific `TokenSet` or asserts other properties to determine the correct `Alignment`,
+`Indent` and `Wrap`.
+Then it returns a new `Block` using the parent and its own `ASTNode` and all calculated properties.
+
+The other two more intricate methods that need to be implemented are `getChildAttributes()` and `isIncomplete()`.
+Both are used to determine what indentation to use when Enter is pressed and depend on the structure of the custom language.
+As an example, think of contexts in languages like Java or C that are wrapped in curly braces.
+If the `ASTNode` of the current block is such a context or container element, the `getChildAttributes()` method could return
+`Indent.getNormalIndent()` because block elements in such a context are usually indented.
+Similarly, the `isComplete()` method could check if for such context elements the first and last child are indeed the open and close
+curly braces and return `false` if not.
+
+Finally, the mentioned `SpacingBuilder` is an easy way to specify when to put spaces before, after, between, inside, etc. certain elements.
+It should reflect all possible spacing settings for your language.
+Although authors are free to choose how to implement such a spacing builder, a simple template to create one from settings could look like this:
+
+```kotlin
+private fun createSpacingBuilder(settings: CodeStyleSettings): SpacingBuilder {
+  val customSettings = settings.getCustomSettings(YourLanguage::class.java)
+  val commonSettings = settings.getCommonSettings(YourLanguage.INSTANCE)
+
+  val spacesBeforeEq = if (customSettings.SPACE_BEFORE_EQ) 1 else 0
+  val spacesAfterEq = if (customSettings.SPACE_AFTER_EQ) 1 else 0
+
+  return SpacingBuilder(settings, YourLanguage.INSTANCE)
+    .before(YourLanguageTypes.EQ).spacing(spacesBeforeEq, spacesBeforeEq, 0, false, 0)
+    .after(YourLanguageTypes.EQ).spacing(spacesAfterEq, spacesAfterEq, 0, false, 0)
+}
+```
 
 ## Non-Whitespace Modifications
 

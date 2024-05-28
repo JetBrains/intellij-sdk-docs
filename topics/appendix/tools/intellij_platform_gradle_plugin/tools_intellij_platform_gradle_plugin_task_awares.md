@@ -167,6 +167,7 @@ tasks {
 | `plugins(notations)`           | Adds dependencies on plugins for a custom IntelliJ Platform using a string notation:<p>`pluginId:version` or `pluginId:version@channel`</p>  |
 | `disablePlugin(id)`            | Disables the specific plugin with its ID.                                                                                                    |
 | `disablePlugins(ids)`          | Disables specific plugins with the list of their IDs.                                                                                        |
+| `localPlugin(path)`            | Adds a dependency on a local IntelliJ Platform plugin. Accepts path or a dependency on another module.                                       |
 
 
 ## `IntelliJPlatformVersionAware`
@@ -343,7 +344,7 @@ Type
 
 <tldr>
 
-**Depends on**: [`AutoReloadAware`](#AutoReloadAware), [`CoroutinesJavaAgentAware`](#CoroutinesJavaAgentAware), [`PluginAware`](#PluginAware), [`RuntimeAware`](#RuntimeAware), [`SandboxAware`](#SandboxAware), [`SplitModeAware`](#SplitModeAware)
+**Depends on**: [`AutoReloadAware`](#AutoReloadAware), [`CoroutinesJavaAgentAware`](#CoroutinesJavaAgentAware), [`PluginAware`](#PluginAware), [`RuntimeAware`](#RuntimeAware), [`SandboxAware`](#SandboxAware)
 
 **Inherited by**: [`buildSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions), [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde), [`testIdePerformance`](tools_intellij_platform_gradle_plugin_tasks.md#testIdePerformance), [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi)
 
@@ -444,10 +445,10 @@ Type
 : `Property<String>`
 
 
-### `sandboxContainerDirectory`
-{#SandboxAware-sandboxContainerDirectory}
+### `sandboxDirectory`
+{#SandboxAware-sandboxDirectory}
 
-The container for all sandbox-related directories.
+The directory containing content read and produced by the running IDE.
 
 The directory name depends on the platform type and version currently used for running a task.
 
@@ -459,7 +460,7 @@ Type
 ### `sandboxConfigDirectory`
 {#SandboxAware-sandboxConfigDirectory}
 
-A configuration directory located within the [`sandboxContainerDirectory`](#SandboxAware-sandboxContainerDirectory).
+A configuration directory located within the [`sandboxDirectory`](#SandboxAware-sandboxDirectory).
 
 {style="narrow"}
 Type
@@ -469,7 +470,7 @@ Type
 ### `sandboxPluginsDirectory`
 {#SandboxAware-sandboxPluginsDirectory}
 
-A plugins directory located within the [`sandboxContainerDirectory`](#SandboxAware-sandboxContainerDirectory).
+A plugins directory located within the [`sandboxDirectory`](#SandboxAware-sandboxDirectory).
 
 {style="narrow"}
 Type
@@ -479,7 +480,7 @@ Type
 ### `sandboxSystemDirectory`
 {#SandboxAware-sandboxSystemDirectory}
 
-A system directory located within the [`sandboxContainerDirectory`](#SandboxAware-sandboxContainerDirectory).
+A system directory located within the [`sandboxDirectory`](#SandboxAware-sandboxDirectory).
 
 {style="narrow"}
 Type
@@ -489,7 +490,7 @@ Type
 ### `sandboxLogDirectory`
 {#SandboxAware-sandboxLogDirectory}
 
-A log directory located within the [`sandboxContainerDirectory`](#SandboxAware-sandboxContainerDirectory).
+A log directory located within the [`sandboxDirectory`](#SandboxAware-sandboxDirectory).
 
 {style="narrow"}
 Type
@@ -543,7 +544,7 @@ Type
 
 <tldr>
 
-**Inherited by**: [`RunnableIdeAware`](#RunnableIdeAware), [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox)
+**Inherited by**: [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox), [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde)
 
 **Sources**: [`SplitModeAware`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SplitModeAware.kt)
 

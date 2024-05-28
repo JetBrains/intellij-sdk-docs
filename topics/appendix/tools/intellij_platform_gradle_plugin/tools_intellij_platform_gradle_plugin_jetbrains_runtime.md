@@ -9,7 +9,7 @@
 
 The IntelliJ Platform Gradle Plugin requires JetBrains Runtime (JBR) for running IDE locally, testing, or performing other actions that require Java Runtime adjusted by JetBrains.
 
-For the best experience, it is recommended to rely on JetBrains Runtime bundled with the IntelliJ Platform used for development.
+For the best experience, it is recommended to rely on JBR bundled with the IntelliJ Platform used for development.
 If one is not available, i.e., when targeting IntelliJ Platform snapshot or nightly releases, there are other ways available for providing JetBrains Runtime in a required version or variant.
 
 ## Bundled (Default)

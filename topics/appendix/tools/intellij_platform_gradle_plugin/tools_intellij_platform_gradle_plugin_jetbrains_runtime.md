@@ -7,21 +7,23 @@
 <include from="tools_intellij_platform_gradle_plugin.md" element-id="Beta_Status"/>
 <include from="tools_intellij_platform_gradle_plugin.md" element-id="faq"/>
 
-The IntelliJ Platform Gradle Plugin requires JetBrains Runtime (JBR) for running IDE locally, testing, or performing other actions that require Java Runtime adjusted by JetBrains.
+JetBrains Runtime (JBR) is a custom version of OpenJDK, specifically optimized for IntelliJ-based IDEs. It supports enhanced class redefinition (DCEVM), includes the Java Chromium Embedded Framework (JCEF), and improves aspects such as font rendering and keyboard support, thereby enhancing overall performance.
+IDEs built on the IntelliJ Platform rely on JBR for running.
+Hence, when developing plugins using the IntelliJ Platform Gradle Plugin, it's essential to have JBR provided.
 
 For the best experience, it is recommended to rely on JBR bundled with the IntelliJ Platform used for development.
 If one is not available, i.e., when targeting IntelliJ Platform snapshot or nightly releases, there are other ways available for providing JetBrains Runtime in a required version or variant.
 
 ## Bundled (Default)
 
-IDE releases provided with JetBrains Download CDN are OS-specific and contain JetBrains Runtime (JBR) already bundled within the archive.
-This is the recommended way for developing plugin, as it comes in exactly the same version as JetBrains IDEs delivered to users.
+IDE releases provided with JetBrains CDN (download.jetbrains.com) are OS-specific and contain JetBrains Runtime (JBR) already bundled within the archive.
+This is the recommended way for developing a plugin, as it comes in exactly the same version as JetBrains IDEs delivered to users.
 
 To use this approach, no extra steps are required but declare the IntelliJ Platform, see: [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#target-platforms).
 
 ## Obtained with IntelliJ Platform from Maven
 
-If the IntelliJ Platform is resolved with the IntelliJ Maven Repository instead of JetBrains Download CDN, it has no JetBrains Runtime (JBR) bundled.
+If the IntelliJ Platform is resolved with the IntelliJ Maven Repository, it has no JetBrains Runtime (JBR) bundled.
 In such a case, it is necessary to provide it in the suitable version with the version read from the <path>[intellijPlatform]/dependencies.txt</path> file.
 
 This can be easily achieved by using the `jetbrainsRuntime()` repository helper pointing to [JetBrains Runtime GitHub Releases](https://github.com/JetBrains/JetBrainsRuntime/releases/) and dependency helper with no arguments provided:
@@ -105,7 +107,7 @@ See the [JetBrains Runtime releases page](https://github.com/JetBrains/JetBrains
 
 Since Gradle `8.4`, it is possible to specify JetBrains as a known JVM vendor and instruct Gradle to search for JetBrains Runtime within available toolchains (see [Toolchains for JVM projects](https://docs.gradle.org/current/userguide/toolchains.html)).
 
-Along with the [Foojay Toolchains Plugin](https://github.com/gradle/foojay-toolchains), Gradle can resolve JetBrains Runtime from the remote repository, if the suitable JVM is not present:
+Along with the [Foojay Toolchains Plugin](https://github.com/gradle/foojay-toolchains), Gradle can resolve JetBrains Runtime from the remote repository if the suitable JVM is not present:
 
 <path>build.gradle.kts</path>
 ```kotlin

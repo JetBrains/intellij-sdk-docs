@@ -28,6 +28,6 @@
   <var name="gh-pv-master" value="https://github.com/JetBrains/intellij-plugin-verifier/blob/master"/>
 
   <var name="gradle-intellij-plugin-version" value="1.17.3"/>
-  <var name="intellij-platform-gradle-plugin-version" value="2.0.0-beta3"/>
+  <var name="intellij-platform-gradle-plugin-version" value="2.0.0-beta4"/>
   <var name="gradle-grammar-kit-plugin-version" value="2022.3.2.2"/>
 </vars>

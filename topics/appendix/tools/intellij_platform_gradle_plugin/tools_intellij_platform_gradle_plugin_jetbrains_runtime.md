@@ -47,7 +47,7 @@ dependencies {
 }
 ```
 
-## Declared explicitly
+## Declared Explicitly
 
 It is possible to explicitly specify JetBrains Runtime version, variant, or exact build with:
 

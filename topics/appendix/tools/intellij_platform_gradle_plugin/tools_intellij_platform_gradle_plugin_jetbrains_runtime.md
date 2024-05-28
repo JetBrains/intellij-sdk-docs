@@ -76,7 +76,15 @@ dependencies {
 
 Provided `version`, `variant`, and `architecture` parameters along with the `explicitVersion` are used to resolve the JetBrains Runtime archives published on [GitHub Releases](https://github.com/JetBrains/JetBrainsRuntime/releases/) page.
 
-To correctly understand the pattern, refer to the archive names in format `jbr_[prefix]-[jdk]-[os]-[arch]-b[build].tar.gz`, such as `jbr_jcef-21.0.3-osx-aarch64-b446.1.tar.gz`, which can be split into the following parts:
+To correctly understand the pattern, refer to the archive names in format:
+```
+jbr_[prefix]-[jdk]-[os]-[arch]-b[build].tar.gz
+```
+e.g.:
+```
+jbr_jcef-21.0.3-osx-aarch64-b446.1.tar.gz
+```
+which can be split into the following parts:
 
 - `prefix` = `jcef`
 - `jdk` = `21.0.3`

@@ -42,130 +42,142 @@ To format a file or a file fragment, plugin authors are required to take the fol
 
 * Implement [`FormattingModelBuilder`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/FormattingModelBuilder.java)
   and register it as `com.intellij.lang.formatter` in the <path>plugin.xml</path>.
-* The main purpose of the formatting model builder is its `createModel` method that provides a
+* The main purpose of the formatting model builder is its `createModel` method that must provide a
   [`FormattingModel`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/FormattingModel.java) to format the document.
-  This method gets the [`FormattingContext`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/FormattingContext.java) as an argument which
-  provides all necessary information to properly build formatting blocks.
-* The formatting model is requested to build the structure of the file as applies to formatting, as a tree of _blocks_ (
+  As an argument, it gets the [`FormattingContext`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/FormattingContext.java) which
+  provides text range, PSI element, and other properties required for formatting.
+* The formatting model builds the tree of _blocks_ (
   [`Block`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/Block.java)
-  ) with an associated indent, wrap, alignment, and spacing settings.
+  ) for the file where each block has associated indent, wrap, alignment, and spacing settings.
   Based on the provided tree of blocks, the formatting engine calculates the sequence of whitespace characters (spaces, tabs, and/or line breaks)
   that needs to be inserted at necessary positions in the file.
 
-The structure of blocks is usually built so that it mirrors the PSI structure of the file – for example, in Java code, the top-level formatting block covers the entire file.
-Its children cover individual classes in the file, blocks on the next level cover methods inside classes, etc.
-The formatter modifies only the characters between blocks, and the tree of blocks must be built so that the bottom-level blocks cover all non-whitespace characters in the file.
-Otherwise, the formatter may delete the characters between blocks.
+### `FormattingModelBuilder` and `FormattingModel`
 
-To better understand how to build the block structure, use [PsiViewer](explore_api.md#31-use-internal-mode-and-psiviewer) and inspect formatting blocks built for an existing language.
-To invoke PsiViewer with the possibility of inspecting <control>Block Structure</control>, use <ui-path>Tools | View PSI Structure...</ui-path> or <ui-path>Tools | View PSI Structure of Current File...</ui-path>:
+When implementing a `FormattingModelBuilder`, it is common to use the `createModel()` method and its `FormattingContext` argument to set the stage
+for building the formatting blocks with the `FormattingModel`.
+Usually, the following steps are part of this preparation:
 
-![Formatting Blocks Structure](psi_viewer_formatting_blocks.png){width="720"}
+* Retrieve both global and custom code style settings.
+  Use the `codeStyleSettings` property of the `FormattingContext` to retrieve the settings which in turn provide access to custom settings through `getCustomSettings()`.
+  These are commonly passed along and will be used to determine the correct amount of whitespace for indentations, wraps, etc. when building the tree of formatting blocks.
+* Create an instance of `SpacingBuilder` using the formatting settings.
+* Using the settings, the spacing builder, the PSI node from the `formattingContext`, build the root `Block` for the `formattingContext` which does not have a parent.
+* The root `Block` needs all required information for building its subblocks recursively and is used in the `FormattingModel` returned from `createModel()`
 
-To change the default "block name" taken from class name, return custom `Block.getDebugName()`.
+Plugin authors don't implement `FormattingModel` themselves but instead use concrete implementations provided by the IntelliJ Platform.
+Formatters for custom (programming) languages are usually built so that it mirrors the PSI structure of the file.
+Although not required, this approach is reasonable when thinking about, e.g., Java code where the top-level formatting block covers the entire file,
+its children cover individual classes, blocks on the next level cover methods inside classes, etc.
+For these cases, plugin authors can create a `PsiBasedFormattingModel` by using `FormattingModelProvider.createFormattingModelForPsiFile()`.
 
-If the formatting operation does not affect the entire file (for example, if the formatter is called to format the pasted block of text), a complete tree of blocks is not built.
-Rather, only blocks for the text range covered by the formatting operation and their parents are built.
+There are other implementations of `FormattingModel` like `DocumentBasedFormattingModel` or `DelegatingFormattingModel`.
+However, for most use cases the `PsiBasedFormattingModel` should cover the requirements of plugin authors.
 
-For every block, the plugin specifies the following properties:
+### Building the `Block` Tree
 
-* The _spacing_ ([`Spacing`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/Spacing.java)) specifies what spaces or line breaks are inserted between the specified children of the block.
-   The spacing object specifies the minimum and maximum number of spaces that must be placed between the specified child blocks, the minimum number of line breaks to put there, and whether the existing line breaks and blank lines should be preserved.
-   The formatting model can also specify that the formatter may not modify the spacing between the specified blocks.
+Plugin authors don't need to implement `Block` themselves.
+Instead, `AbstractBlock` can be used as a base class which provides useful default implementations.
+Although, the block implementation of a plugin is specific to the custom language, there are some general hints that can be given.
 
-* The _indent_ ([`Indent`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/Indent.java)) specifies how the block is indented relative to its parent block.
-   There are different modes of indenting defined by factory methods in the `Indent` class.
-   The most commonly used are:
-  * the none indent (which means the child block is not indented)
-  * the regular indent (the child block is indented by the number of spaces specified in the <control>Tabs and Indents | Indent</control> code style setting)
-  * the continuation indent (based on <control>Tabs and Indents | Continuation indent</control> code style setting)
+Each block can be regarded as a node in the recursive tree of blocks and usually stores a list of its direct child-blocks.
+In addition, it is common to store an instance of the `SpacingBuilder` which can directly be used when implementing the `getSpacing()` method
+by calling the `getSpacing()` method of the `SpacingBuilder`.
 
-  If the formatting model does not specify an indent, the "continuation without first" mode is used.
-     This default means that the first block in a sequence of blocks with that type is not indented, and the following blocks are indented with a continuation indent.
-
-* The _wrap_ ([`Wrap`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/Wrap.java)) specifies whether the content of the block is wrapped to the next line.
-   Wrapping is performed by inserting a line break before the block content.
-   The plugin can specify that a particular block is never wrapped, always wrapped, or wrapped only if it exceeds the right margin.
-
-* The _alignment_ ([`Alignment`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/Alignment.java)) specifies which blocks should be aligned with each other.
-   If two blocks with the alignment property set to the same object instance are placed in different lines, and if the second block is the first non-whitespace block in its line, the formatter inserts whitespaces before the second block, so that it starts from the same column as the first one.
-
-For each of these properties, several particular use settings exist, described in the Javadoc comments for the respective classes.
-See also [`SpacingBuilder`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/SpacingBuilder.java), which aids in building rule-based configuration.
-
-An important special case in using the formatter is the smart indent performed when the user presses the `Enter` key in a source code file.
-To determine the indent for the new line, the formatter engine calls the method `getChildAttributes()` on either the block immediately before the caret or the parent of that block, depending on the return value of the `isIncomplete()` method for the block before the caret.
-If the block before the cursor is incomplete (contains elements that the user will probably type but has not yet typed, like a closing parenthesis of the parameter list or the trailing semicolon of a statement), `getChildAttributes()` is called on the block before the caret; otherwise, it's called on the parent block.
-
-Code formatting can be suppressed per region via [special comments](https://youtrack.jetbrains.com/issue/IDEA-56995#comment=27-605969).
-
-**Example**:
-[Custom Language Support Tutorial: Formatter](formatter.md)
-
-### Practical Example
-
-A powerful code formatting framework naturally comes with several interconnected parts whose relations might be confusing initially.
-Therefore, here is a more specific guide on how to implement a code formatter which gives additional explanations.
-
-First, implement and register a `FormattingModelBuilder`.
-The `createModel(formattingContext: FormattingContext)` method will do several things:
-
-* Retrieve both global and custom code style settings by using `formattingContext.codeStyleSettings` and `settings.getCustomSettings()`.
-  These will be used to determine the correct amount of whitespace for indentations, wraps, etc. when building the tree of formatting blocks.
-* Create an instance of your `SpacingBuilder` using the formatting settings. How to define a simple `SpacingBuilder` is shown in a moment.
-* Using the settings, the spacing builder, and the PSI node from the `formattingContext`, build the root `Block` for the `formattingContext` which does not have a parent.
-
-After that, use `FormattingModelProvider#createFormattingModelForPsiFile()` to return the standard implementation of `FormattingModel` that uses
-your custom `Block` implementation.
-Note that creating a formatting model on the basis of the PSI structure like this is not the only way.
-The IntelliJ Platform SDK also contains, e.g., [`DocumentBasedFormattingModel`](%gh-ic%/platform/code-style-impl/src/com/intellij/psi/formatter/DocumentBasedFormattingModel.java)
-for other use cases, and we refer to navigating the implementations of the `FormattingModel` to find other usages.
-
-In this example, a useful implementation of a custom `Block` is to base it on `ASTBlock`, because it reflects the PSI structure (and therefore is also based on the AST tree).
-Each block should store the following properties:
-
-* Its parent block, because in some situations it can be necessary to check the parent block to determine the correct properties when building its subblocks.
-* The underlying `ASTNode` to implement `getNode()`, `getTextRange()`, and to access its children for building subblocks.
-* The settings for the language to access, e.g., alignment settings when building subblocks.
-* It should have an instance of the `SpacingBuilder` which can directly be used when implementing the `getSpacing()` method.
-  That means, the `getSpacing()` method of the block simply calls the `getSpacing()` method of the `SpacingBuilder`.
-* Finally, it should know its `Alignment`, `Indent` and `Wrap` necessary to implement the corresponding getter methods for these properties.
-
-Like in all tree-like structures, each block should have a list of subblocks usually called children in a tree.
 Much of the work when implementing a `Block` class goes into implementing the `getSubBlocks()` method that calculates blocks for the children of the current block's AST node.
 Therefore, a common implementation is to check whether the list of subblocks was already calculated and can be returned.
-If not, it uses `getNode().getChildren()` and for each `ASTNode` child that is not whitespace, it builds a subblock which is then added to the list of subblocks.
+If not, authors can use `getNode().getChildren()` to retrieve the children of the current `ASTNode`.
+For each child that is not whitespace, it builds a subblock which is then added to the list of subblocks.
 
 Building the subblock highly depends on the specific language.
 In general, however, this code inspects the `IElementType`, checks if the node is in a specific `TokenSet` or asserts other properties to determine the correct `Alignment`,
 `Indent` and `Wrap`.
-Then it returns a new `Block` using the parent and its own `ASTNode` and all calculated properties.
+Additionally, to change the default "block name" taken from class name, return custom `Block.getDebugName()`.
 
 The other two more intricate methods that need to be implemented are `getChildAttributes()` and `isIncomplete()`.
-Both are used to determine what indentation to use when Enter is pressed and depend on the structure of the custom language.
+Both are used to determine what indentation to use when `Enter` is pressed and depend on the structure of the custom language.
 As an example, think of contexts in languages like Java or C that are wrapped in curly braces.
 If the `ASTNode` of the current block is such a context or container element, the `getChildAttributes()` method could return
 `Indent.getNormalIndent()` because block elements in such a context are usually indented.
 Similarly, the `isComplete()` method could check if for such context elements the first and last child are indeed the open and close
 curly braces and return `false` if not.
 
-Finally, the mentioned `SpacingBuilder` is an easy way to specify when to put spaces before, after, between, inside, etc. certain elements.
-It should reflect all possible spacing settings for your language.
-Although authors are free to choose how to implement such a spacing builder, a simple template to create one from settings could look like this:
+If the formatting operation does not affect the entire file (for example, if the formatter is called to format the pasted block of text), a complete tree of blocks is not built.
+Rather, only blocks for the text range covered by the formatting operation and their parents are built.
+Also note that code formatting can be suppressed per region via [special comments](https://youtrack.jetbrains.com/issue/IDEA-56995#comment=27-605969).
 
-```kotlin
-private fun createSpacingBuilder(settings: CodeStyleSettings): SpacingBuilder {
-  val customSettings = settings.getCustomSettings(YourLanguage::class.java)
-  val commonSettings = settings.getCommonSettings(YourLanguage.INSTANCE)
+For every block, the plugin specifies the following properties for which several particular use settings exist.
+These settings are described in the Javadoc comments for the respective classes.
 
-  val spacesBeforeEq = if (customSettings.SPACE_BEFORE_EQ) 1 else 0
-  val spacesAfterEq = if (customSettings.SPACE_AFTER_EQ) 1 else 0
+#### Indent
 
-  return SpacingBuilder(settings, YourLanguage.INSTANCE)
-    .before(YourLanguageTypes.EQ).spacing(spacesBeforeEq, spacesBeforeEq, 0, false, 0)
-    .after(YourLanguageTypes.EQ).spacing(spacesAfterEq, spacesAfterEq, 0, false, 0)
-}
+The _indent_ ([`Indent`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/Indent.java)) specifies how the block is indented relative to its parent block.
+It provides various factory methods to create different types of indents based on specific formatting settings.
+There are different modes of indenting defined by factory methods, and the most commonly used are:
+
+* The none indent (`getNoneIndent()`) means the child block is not indented.
+* The regular indent (`getNormalIndent()`) indents the child block by the number of spaces specified in the <control>Tabs and Indents | Indent</control> code style settings.
+* The continuation indent (`getContinuationIndent()`) is based on <control>Tabs and Indents | Continuation indent</control> code style settings, typically used for multi-line statements.
+
+If not specified, the default indent is "continuation without first" mode is used, meaning the first block is not indented, but subsequent blocks are.
+The class also allows for configuring indents to be relative to their direct parent block or to enforce parent indents on children starting on a new line.
+This is useful in complex formatting scenarios, such as aligning blocks within a method call or ensuring consistent indentation in nested structures.
+`Indent` also includes methods to create indents with a specific number of spaces and options to control their behavior relative to parent blocks.
+
+#### Spacing
+
+The _spacing_ ([`Spacing`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/Spacing.java)) specifies what spaces or line breaks are inserted between the specified children of the block.
+The spacing object specifies the minimum and maximum number of spaces that must be placed between the specified child blocks,
+the minimum number of line breaks to put there, and whether the existing line breaks and blank lines should be preserved.
+The formatting model can also specify that the formatter may not modify the spacing between the specified blocks.
+
+[`SpacingBuilder`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/SpacingBuilder.java) helps to build rule-based configuration for spacing and is an easy way to specify when to put spaces before, after, between, inside, etc. certain elements.
+The rules typically reflect all possible spacing settings for a language.
+An example on how to implement such a spacing builder can be found in the
+[Custom Language Support Tutorial: Formatter](formatter.md#define-a-formatting-model-builder).
+
+
+#### Wrap
+
+The _wrap_ ([`Wrap`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/Wrap.java)) specifies whether the content of the block is wrapped to the next line.
+Wrapping is performed by inserting a line break before the block content.
+The plugin can specify that a particular block is never wrapped, always wrapped, or wrapped only if it exceeds the right margin.
+
+
+#### Alignment
+
+[`Alignment`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/Alignment.java) is designed to specify which blocks should be aligned with each other in a formatting model.
+Blocks that return the same `Alignment` object instance from the `getAlignment()` method will be aligned together.
+If two blocks with the same alignment are on different lines and the second block is the first non-whitespace block on its line,
+the formatter inserts whitespaces before the second block to align it with the first block.
+
+The `Alignment` includes the `Anchor` enum with two values, `LEFT` and `RIGHT`, determining how the code blocks are aligned.
+The default alignment is created with the left anchor.
+To create an alignment instance, the class provides several static methods:
+
+- `createAlignment()`: Creates an alignment with default settings (backward shift not allowed, left anchor).
+- `createAlignment(boolean allowBackwardShift)`: Creates an alignment specifying whether backward shift is allowed, with the left anchor.
+- `createAlignment(boolean allowBackwardShift, Anchor anchor)`: Creates an alignment with the specified backward shift setting and anchor.
+
+Backward shift allows a former-aligned element to be shifted right to align with a later element.
+For example, in the code:
+
 ```
+int start  = 1;
+int finish = 2;
+```
+
+the `=` in `int start = 1` can be shifted right to align with the `=` in `int finish = 2` if backward shift is allowed.
+
+Additionally, the `createChildAlignment()` method allows creating an alignment where blocks are aligned based on a base alignment.
+This is useful for cases where nested alignments are needed, such as aligning a ternary operator with its condition.
+
+### Examples
+
+- [Custom Language Support Tutorial: Formatter](formatter.md)
+- [`JsonFormattingBuilderModel`](%gh-ic%/json/src/com/intellij/json/formatter/JsonFormattingBuilderModel.java) as an example that uses a `PsiBasedFormattingModel`.
+- [`MarkdownFormattingModelBuilder`](%gh-ic%/plugins/markdown/core/src/org/intellij/plugins/markdown/lang/formatter/MarkdownFormattingModelBuilder.kt) as an example that uses
+  a `DocumentBasedFormattingModel`.
 
 ## Non-Whitespace Modifications
 

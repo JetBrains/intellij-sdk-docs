@@ -16,12 +16,12 @@ val FILE_PATH = "v-releases.list"
 val UNKNOWN = "unknown"
 
 val releasesList = mapOf(
-  "gradle-intellij-plugin-version" to ReleaseInfo(
+  "intellij-platform-gradle-plugin-version" to ReleaseInfo(
     type = ReleaseInfo.Type.GitHub,
     url = "https://api.github.com/repos/JetBrains/intellij-platform-gradle-plugin/releases",
     transformer = { list -> list.first { it.startsWith("2.") } }
   ),
-  "gradle-intellij-plugin" to ReleaseInfo(
+  "gradle-intellij-plugin-version" to ReleaseInfo(
     type = ReleaseInfo.Type.GitHub,
     url = "https://api.github.com/repos/JetBrains/intellij-platform-gradle-plugin/releases",
     transformer = { list -> list.first { it.startsWith("1.") } }

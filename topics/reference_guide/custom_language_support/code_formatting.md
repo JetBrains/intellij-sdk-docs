@@ -235,6 +235,3 @@ Register [`AsyncDocumentFormattingService`](%gh-ic%/platform/code-style-api/src/
 Todo:
 
 - Create macOS screenshot for PSI Viewer
-- Explain relations `Block`, `ASTBlock`, `AbstractBlock`
-- Relations `plugin.xml`, `FormattingModelBuilder`, `FormattingModel`, `FormattingContext`
-- Also `FormattingModelWithShiftIndentInsideDocument`, `DelegatingFormattingModel`, `PsiBasedFormattingModel`, `DocumentBasedFormattingModel`

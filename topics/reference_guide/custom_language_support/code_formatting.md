@@ -203,7 +203,7 @@ All the introduced changes will be handled by the main formatting step.
 
 To register a formatting pre-processor, a plugin has to provide an implementation of [`PreFormatProcessor`](%gh-ic%/platform/code-style-api/src/com/intellij/psi/impl/source/codeStyle/PreFormatProcessor.java) and register it in the `com.intellij.preFormatProcessor` extension point.
 
-**Example: **
+**Example:**
 [`JsonTrailingCommaRemover`](%gh-ic%/json/src/com/intellij/json/formatter/JsonTrailingCommaRemover.java) removing trailing commas in JSON files
 
 ### Post-Processor
@@ -213,7 +213,7 @@ It can be used for adding, removing, or converting elements like braces, semicol
 
 To register a formatting post-processor, a plugin has to provide an implementation of [`PostFormatProcessor`](%gh-ic%/platform/code-style-api/src/com/intellij/psi/impl/source/codeStyle/PostFormatProcessor.java) and register it in the `com.intellij.postFormatProcessor` extension point.
 
-**Example: **
+**Example:**
 [`TrailingCommaPostFormatProcessor`](%gh-ic%/plugins/kotlin/code-insight/impl-base/src/org/jetbrains/kotlin/idea/formatter/TrailingCommaPostFormatProcessor.kt) inserting trailing commas in Kotlin files
 
 ### Rearranger
@@ -228,7 +228,7 @@ To specify the default indent size for the language provided by your plugin, and
 you need to implement the [`FileTypeIndentOptionsProvider`](%gh-ic%/platform/lang-api/src/com/intellij/psi/codeStyle/FileTypeIndentOptionsProvider.java) interface and to register the implementation in the `com.intellij.fileTypeIndentOptionsProvider` extension point.
 The return value of `createIndentOptions()` determines the default indent size.
 
-**Example: **
+**Example:**
 [Custom Language Support Tutorial: Code Style Settings](code_style_settings.md)
 
 ## Restricting Formatting
@@ -241,5 +241,5 @@ _2021.3_
 
 Register [`AsyncDocumentFormattingService`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/service/AsyncDocumentFormattingService.java) implementation in the [`com.intellij.formattingService`](https://jb.gg/ipe?extensions=com.intellij.formattingService) extension point to invoke external formatter instead of IDE's builtin formatter.
 
-**Example: **
+**Example:**
 [`ShExternalFormatter`](%gh-ic%/plugins/sh/core/src/com/intellij/sh/formatter/ShExternalFormatter.java) from _Shell Script_ plugin

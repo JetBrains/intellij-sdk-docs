@@ -22,7 +22,7 @@ use [PsiViewer](explore_api.md#31-use-internal-mode-and-psiviewer) to inspect ho
 To invoke PsiViewer with the possibility of inspecting <control>Block Structure</control>,
 use <ui-path>Tools | View PSI Structure...</ui-path> or <ui-path>Tools | View PSI Structure of Current File...</ui-path>.
 
-![Formatting Blocks Structure](psi_viewer_formatting_blocks.png){width="702"}
+![Formatting Blocks Structure](psi_viewer_formatting_blocks.png){width="706"}
 
 The image above shows a snippet of code at the top, the PSI structure at the bottom left and the block structure at the bottom right.
 Like in this example, the structure of blocks is usually built to reflect the PSI structure of the file.

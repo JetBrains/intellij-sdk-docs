@@ -22,11 +22,11 @@ use [PsiViewer](explore_api.md#31-use-internal-mode-and-psiviewer) to inspect ho
 To invoke PsiViewer with the possibility of inspecting <control>Block Structure</control>,
 use <ui-path>Tools | View PSI Structure...</ui-path> or <ui-path>Tools | View PSI Structure of Current File...</ui-path>.
 
-![Formatting Blocks Structure](psi_viewer_formatting_blocks_2.png){width="720"}
+![Formatting Blocks Structure](psi_viewer_formatting_blocks.png){width="702"}
 
 The image above shows a snippet of code at the top, the PSI structure at the bottom left and the block structure at the bottom right.
 Like in this example, the structure of blocks is usually built to reflect the PSI structure of the file.
-I.e., there is a root block that covers the entire file and its nested children cover smaller portions like classes, functions, etc. down to
+In other words, there is a root block that covers the entire file and its nested children cover smaller portions like classes, functions, etc. down to
 statements, identifiers, or braces.
 If you compare the Psi and block structure above, similarities in the nesting become obvious.
 
@@ -46,9 +46,7 @@ To format a file or a file fragment, plugin authors are required to take the fol
   [`FormattingModel`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/FormattingModel.java) to format the document.
   As an argument, it gets the [`FormattingContext`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/FormattingContext.java) which
   provides text range, PSI element, and other properties required for formatting.
-* The formatting model builds the tree of _blocks_ (
-  [`Block`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/Block.java)
-  ) for the file where each block has associated indent, wrap, alignment, and spacing settings.
+* The formatting model builds the tree of _blocks_ ([`Block`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/Block.java)) for the file where each block has associated indent, wrap, alignment, and spacing settings.
   Based on the provided tree of blocks, the formatting engine calculates the sequence of whitespace characters (spaces, tabs, and/or line breaks)
   that needs to be inserted at necessary positions in the file.
 
@@ -62,13 +60,13 @@ Usually, the following steps are part of this preparation:
   Use the `codeStyleSettings` property of the `FormattingContext` to retrieve the settings which in turn provide access to custom settings through `getCustomSettings()`.
   These are commonly passed along and will be used to determine the correct amount of whitespace for indentations, wraps, etc. when building the tree of formatting blocks.
 * Create an instance of `SpacingBuilder` using the formatting settings.
-* Using the settings, the spacing builder, the PSI node from the `formattingContext`, build the root `Block` for the `formattingContext` which does not have a parent.
+* Using the settings, the spacing builder, the PSI node from the `formattingContext`, build the root `Block` for the `formattingContext` which doesn't have a parent.
 * The root `Block` needs all required information for building its subblocks recursively and is used in the `FormattingModel` returned from `createModel()`
 
 Plugin authors don't implement `FormattingModel` themselves but instead use concrete implementations provided by the IntelliJ Platform.
 Formatters for custom (programming) languages are usually built so that it mirrors the PSI structure of the file.
-Although not required, this approach is reasonable when thinking about, e.g., Java code where the top-level formatting block covers the entire file,
-its children cover individual classes, blocks on the next level cover methods inside classes, etc.
+Although not required, this approach is reasonable when thinking about, for example, Java code where the top-level formatting block covers the entire file,
+its children cover individual classes, blocks on the next level cover methods inside classes, and so on.
 For these cases, plugin authors can create a `PsiBasedFormattingModel` by using `FormattingModelProvider.createFormattingModelForPsiFile()`.
 
 There are other implementations of `FormattingModel` like `DocumentBasedFormattingModel` or `DelegatingFormattingModel`.
@@ -78,7 +76,7 @@ However, for most use cases the `PsiBasedFormattingModel` should cover the requi
 
 Plugin authors don't need to implement `Block` themselves.
 Instead, `AbstractBlock` can be used as a base class which provides useful default implementations.
-Although, the block implementation of a plugin is specific to the custom language, there are some general hints that can be given.
+Although the block implementation of a plugin is specific to the custom language, there are some general hints that can be given.
 
 Each block can be regarded as a node in the recursive tree of blocks and usually stores a list of its direct child-blocks.
 In addition, it is common to store an instance of the `SpacingBuilder` which can directly be used when implementing the `getSpacing()` method
@@ -91,14 +89,20 @@ For each child that is not whitespace, it builds a subblock which is then added 
 
 Building the subblock highly depends on the specific language.
 In general, however, this code inspects the `IElementType`, checks if the node is in a specific `TokenSet` or asserts other properties to determine the correct `Alignment`,
-`Indent` and `Wrap`.
-Additionally, to change the default "block name" taken from class name, return custom `Block.getDebugName()`.
+`Indent` and `Wrap` for the child block.
+Additionally, to change the default "block name" taken from class name, return a custom `Block.getDebugName()`.
 
 The other two more intricate methods that need to be implemented are `getChildAttributes()` and `isIncomplete()`.
 Both are used to determine what indentation to use when `Enter` is pressed and depend on the structure of the custom language.
+To determine the indent for the new line, the formatter engine calls the method `getChildAttributes()` on either the block immediately before the caret or the parent of that block.
+This depends on the return value of the `isIncomplete()` method for the block before the caret.
+If the block before the cursor is incomplete (contains elements that the user will probably type but has not yet typed,
+like a closing parenthesis of the parameter list or the trailing semicolon of a statement), `getChildAttributes()` is called on the block before the caret;
+otherwise, it's called on the parent block.
+
 As an example, think of contexts in languages like Java or C that are wrapped in curly braces.
 If the `ASTNode` of the current block is such a context or container element, the `getChildAttributes()` method could return
-`Indent.getNormalIndent()` because block elements in such a context are usually indented.
+`Indent.getNormalIndent()` to indent block elements in such a context.
 Similarly, the `isComplete()` method could check if for such context elements the first and last child are indeed the open and close
 curly braces and return `false` if not.
 
@@ -111,7 +115,7 @@ These settings are described in the Javadoc comments for the respective classes.
 
 #### Indent
 
-The _indent_ ([`Indent`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/Indent.java)) specifies how the block is indented relative to its parent block.
+[`Indent`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/Indent.java) specifies how the block is indented relative to its parent block.
 It provides various factory methods to create different types of indents based on specific formatting settings.
 There are different modes of indenting defined by factory methods, and the most commonly used are:
 
@@ -119,19 +123,19 @@ There are different modes of indenting defined by factory methods, and the most 
 * The regular indent (`getNormalIndent()`) indents the child block by the number of spaces specified in the <control>Tabs and Indents | Indent</control> code style settings.
 * The continuation indent (`getContinuationIndent()`) is based on <control>Tabs and Indents | Continuation indent</control> code style settings, typically used for multi-line statements.
 
-If not specified, the default indent is "continuation without first" mode is used, meaning the first block is not indented, but subsequent blocks are.
+If not specified, the default indent is "continuation without first" mode is used, meaning the first block is not indented, but later blocks are.
 The class also allows for configuring indents to be relative to their direct parent block or to enforce parent indents on children starting on a new line.
 This is useful in complex formatting scenarios, such as aligning blocks within a method call or ensuring consistent indentation in nested structures.
 `Indent` also includes methods to create indents with a specific number of spaces and options to control their behavior relative to parent blocks.
 
 #### Spacing
 
-The _spacing_ ([`Spacing`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/Spacing.java)) specifies what spaces or line breaks are inserted between the specified children of the block.
-The spacing object specifies the minimum and maximum number of spaces that must be placed between the specified child blocks,
-the minimum number of line breaks to put there, and whether the existing line breaks and blank lines should be preserved.
+[`Spacing`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/Spacing.java) indicates what spaces or line breaks are inserted between the specified children of a block.
+The spacing object specifies the minimum and maximum number of spaces that must be placed between the child blocks.
+It also specifies the minimum number of line breaks to include and whether the existing line breaks and blank lines should be preserved.
 The formatting model can also specify that the formatter may not modify the spacing between the specified blocks.
 
-[`SpacingBuilder`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/SpacingBuilder.java) helps to build rule-based configuration for spacing and is an easy way to specify when to put spaces before, after, between, inside, etc. certain elements.
+[`SpacingBuilder`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/SpacingBuilder.java) helps to build a rule-based configuration for spacing and is an easy way to specify when to put spaces before, after, between, or inside certain elements.
 The rules typically reflect all possible spacing settings for a language.
 An example on how to implement such a spacing builder can be found in the
 [Custom Language Support Tutorial: Formatter](formatter.md#define-a-formatting-model-builder).
@@ -192,7 +196,7 @@ All the introduced changes will be handled by the main formatting step.
 
 To register a formatting pre-processor, a plugin has to provide an implementation of [`PreFormatProcessor`](%gh-ic%/platform/code-style-api/src/com/intellij/psi/impl/source/codeStyle/PreFormatProcessor.java) and register it in the `com.intellij.preFormatProcessor` extension point.
 
-**Example:**
+**Example: **
 [`JsonTrailingCommaRemover`](%gh-ic%/json/src/com/intellij/json/formatter/JsonTrailingCommaRemover.java) removing trailing commas in JSON files
 
 ### Post-Processor
@@ -202,14 +206,14 @@ It can be used for adding, removing, or converting elements like braces, semicol
 
 To register a formatting post-processor, a plugin has to provide an implementation of [`PostFormatProcessor`](%gh-ic%/platform/code-style-api/src/com/intellij/psi/impl/source/codeStyle/PostFormatProcessor.java) and register it in the `com.intellij.postFormatProcessor` extension point.
 
-**Example:**
+**Example: **
 [`TrailingCommaPostFormatProcessor`](%gh-ic%/plugins/kotlin/code-insight/impl-base/src/org/jetbrains/kotlin/idea/formatter/TrailingCommaPostFormatProcessor.kt) inserting trailing commas in Kotlin files
 
 ### Rearranger
 
 Allows custom languages to provide user-configurable arrangement/grouping rules for element types supported by language plugin.
 Rules can be refined via modifiers and name; ordering can be applied additionally.
-Please see [`Rearranger`](%gh-ic%/platform/code-style-api/src/com/intellij/psi/codeStyle/arrangement/Rearranger.java) and related for Javadoc.
+See [`Rearranger`](%gh-ic%/platform/code-style-api/src/com/intellij/psi/codeStyle/arrangement/Rearranger.java) and related for Javadoc.
 
 ## Code Style Settings
 

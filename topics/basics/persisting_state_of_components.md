@@ -128,7 +128,7 @@ The following types of values can be persisted:
 - maps
 - enums
 
-For other types, extend [`Converter`](%gh-ic-master%/platform/util/src/com/intellij/util/xmlb/api.kt).
+For other types, extend [`Converter`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/api.kt).
 See the example below.
 
 #### Converter Example {collapsible="true"}

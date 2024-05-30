@@ -6,7 +6,7 @@
 
 <tldr>
 
-**Code**: [`SimpleFoldingBuilder`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFoldingBuilder.java)
+**Code**: [`SimpleFoldingBuilder`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFoldingBuilder.java)
 
 **Testing**: [](folding_test.md)
 
@@ -20,7 +20,7 @@ Rather than the usual practice of using a folding builder to collapse a class, m
 
 ## Define a Folding Builder
 
-The [`SimpleFoldingBuilder`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFoldingBuilder.java) replaces usages of properties with their values by default.
+The [`SimpleFoldingBuilder`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFoldingBuilder.java) replaces usages of properties with their values by default.
 Start by subclassing [`FoldingBuilderEx`](%gh-ic%/platform/core-api/src/com/intellij/lang/folding/FoldingBuilderEx.java)
 
 Note that `SimpleFoldingBuilder` is marked [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI),

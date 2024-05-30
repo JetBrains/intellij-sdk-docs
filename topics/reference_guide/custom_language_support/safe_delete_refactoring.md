@@ -30,5 +30,5 @@ In addition to that, to support _Safe Delete_, a plugin needs to implement two t
 
 If needed, it's possible to further customize how _Safe Delete_ is performed for a particular type of element (e.g., how references are searched) via [`SafeDeleteProcessorDelegate`](%gh-ic%/platform/lang-impl/src/com/intellij/refactoring/safeDelete/SafeDeleteProcessorDelegate.java).
 
-**Example**:
+**Example:**
 [`SafeDeleteProcessorDelegate`](%gh-ic%/plugins/properties/src/com/intellij/lang/properties/refactoring/PropertiesFilesSafeDeleteProcessor.java) implementation for [Properties language plugin](%gh-ic%/plugins/properties)

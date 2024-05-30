@@ -90,7 +90,7 @@ The `intellij.plugins` property is no longer available.
 
 Define dependencies on plugins or bundled plugins in `dependencies {}` block instead:
 
-**Example**:
+**Example:**
 
 Setting up dependencies on comma-separated plugins listed in `platformPlugins` and `platformBundledPlugins` properties from <path>gradle.properties</path>.
 
@@ -179,6 +179,16 @@ Use [`intellijPlatform.verifyPlugin`](tools_intellij_platform_gradle_plugin_exte
 
 To make the IntelliJ SDK dependency available in the IDE, the `setupDependencies` task was provided by Gradle IntelliJ Plugin 1.x.
 This task is no longer required, but when switching from 1.x, Gradle may still want to execute it in the _afterSync_ phase.
+
+> Due to the presence of the `setupDependencies` task in the <control>Tasks Activation</control>, the IDE may fail with the following exception if the task is not present:
+> ```
+> Task 'setupDependencies' not found in root project 'projectName'.
+> ```
+>
+> To fix this problem, remove any references to `setupDependencies` task from your project.
+>
+{title="Task 'setupDependencies' not found" style="warning"}
+
 To completely drop this approach, it is mandatory to remove its reference manually in the IDE.
 
 <procedure title="Removing 'setupDependencies' Task">
@@ -188,6 +198,8 @@ To completely drop this approach, it is mandatory to remove its reference manual
 3. In the <control>Tasks Activation</control> modal window, find and remove the `setupDependencies` entry.
 
 </procedure>
+
+Alternatively, edit the <path>.idea/workspace.xml</path> file and remove the `setupDependencies` entry.
 
 ## Other
 

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Execution
 
@@ -73,9 +73,9 @@ See the [Run Configurations](run_configurations.md) section for more details.
 
 [`Executor`](%gh-ic%/platform/execution/src/com/intellij/execution/Executor.java) describes a specific way of executing run profiles.
 The three default executors provided by the IntelliJ Platform are:
-* [`DefaultRunExecutor`](%gh-ic%/platform/execution/src/com/intellij/execution/executors/DefaultRunExecutor.java) (_Run_)
-* [`DefaultDebugExecutor`](%gh-ic%/platform/xdebugger-api/src/com/intellij/execution/executors/DefaultDebugExecutor.java) (_Debug_)
-* [`CoverageExecutor`](%gh-ic%/plugins/coverage-common/src/com/intellij/coverage/CoverageExecutor.java) _(Run with Coverage_)
+* [`DefaultRunExecutor`](%gh-ic%/platform/execution/src/com/intellij/execution/executors/DefaultRunExecutor.java) _(Run)_
+* [`DefaultDebugExecutor`](%gh-ic%/platform/xdebugger-api/src/com/intellij/execution/executors/DefaultDebugExecutor.java) _(Debug)_
+* [`CoverageExecutor`](%gh-ic%/plugins/coverage-common/src/com/intellij/coverage/CoverageExecutor.java) _(Run with Coverage)_
 
 Custom implementations are rarely required (it may be necessary, e.g., when a profiler integration is implemented).
 Executor implementations are registered in the `com.intellij.executor` extension point (EP).
@@ -121,7 +121,7 @@ A standard implementation of `ProgramRunner.execute()` goes through the followin
    It starts the process, attaches a `ProcessHandler` to its input and output streams, creates a console to display the process output, and returns an `ExecutionResult` object aggregating the `ExecutionConsole` and the `ProcessHandler`.
 3. The `RunContentBuilder` object is created and invoked to display the execution console in a <control>Run</control> or <control>Debug</control> tool window tab.
 
-**Example**:
+**Example:**
 [`RunAnythingCommandProvider.runCommand()`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/runAnything/activity/RunAnythingCommandProvider.java), which programmatically executes a command typed by a user in the <control>Run Anything</control> popup
 
 ## Standard Base Classes

@@ -6,7 +6,7 @@
 
 This tutorial is meant to illustrate how the project tree structure view appearance can be modified programmatically.
 
-This topic describes the [treeStructureProvider](%gh-sdk-samples%/tree_structure_provider) sample plugin.
+This topic describes the [treeStructureProvider](%gh-sdk-samples-master%/tree_structure_provider) sample plugin.
 
 The steps below show how to filter out and keep visible only text files and directories in the Project View Panel.
 
@@ -16,7 +16,7 @@ Other use cases include:
 
 ## Register Custom `TreeStructureProvider`
 
-Add new `com.intellij.treeStructureProvider` extension to the [plugin.xml](%gh-sdk-samples%/tree_structure_provider/src/main/resources/META-INF/plugin.xml)
+Add new `com.intellij.treeStructureProvider` extension to the [plugin.xml](%gh-sdk-samples-master%/tree_structure_provider/src/main/resources/META-INF/plugin.xml)
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

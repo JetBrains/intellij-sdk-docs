@@ -1,6 +1,7 @@
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
 # Creating a Theme Project
 
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Creating a theme plugin project with Plugin DevKit wizard and generated project overview.</link-summary>
 
@@ -76,3 +77,8 @@ The wizard can be used for both DevKit-based and Gradle-based plugins.
 4. Click <control>OK</control> button to generate the [theme description file](themes_customize.md#introduction-to-theme-description-file-syntax) with <path>$THEME_NAME$.theme.json</path> name. The generated theme will be automatically configured in the <path>plugin.xml</path> file.
 
 </procedure>
+
+## Bundling Color Schemes
+
+Use `com.intellij.bundledColorScheme` extension point specifying the `path` to the color scheme XML file (without `.xml` suffix).
+Attribute `id` must be specified in <path>plugin.xml</path> and match its `name` attribute.

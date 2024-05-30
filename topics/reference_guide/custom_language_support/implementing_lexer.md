@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Implementing Lexer
 
@@ -53,7 +53,7 @@ It provides syntax highlighting and other useful features for editing JFlex file
 >
 {style="note"}
 
-**Examples**:
+**Examples:**
 - [JFlex](%gh-ic%/plugins/properties/src/com/intellij/lang/properties/parsing/Properties.flex) definition file for [Properties language plugin](%gh-ic%/plugins/properties)
 - [Custom Language Support Tutorial: Lexer](lexer_and_parser_definition.md)
 

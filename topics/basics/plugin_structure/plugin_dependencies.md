@@ -60,6 +60,7 @@ See also [](intellij_community_plugins_extension_point_list.md) and [](plugin_co
 | Copyright                 | `com.intellij.copyright`        |                               |
 | CSS                       | `com.intellij.css`              | [](webstorm.md)               |
 | Database Tools and SQL    | `com.intellij.database`         | [](data_grip.md)              |
+| Gradle                    | `com.intellij.gradle`           |                               |
 | IntelliLang               | `org.intellij.intelliLang`      | [](language_injection.md)     |
 | Java                      | `com.intellij.java`             | [](idea.md#java)              |
 | JavaScript and TypeScript | `JavaScript`                    | [](webstorm.md)               |

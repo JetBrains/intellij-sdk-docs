@@ -8,7 +8,7 @@
 
 **Product Help:** [Colors and fonts](https://www.jetbrains.com/help/idea/configuring-colors-and-fonts.html)
 
-**Platform UI Guidelines:** [Inspections](https://jetbrains.design/intellij/text/inspections/)
+**UI Guidelines:** [](inspections.md)
 
 </tldr>
 
@@ -37,7 +37,7 @@ To lookup external name for a setting in the IDE, use [UI Inspector](internal_ui
 The <ui-path>File | Export | Files or Selection to HTML</ui-path> feature uses the same syntax highlighting mechanism as the editor.
 Thus, it will work automatically for custom languages that provide a syntax highlighter.
 
-**Examples**:
+**Examples:**
 
 - [`ColorSettingsPage`](%gh-ic%/plugins/properties/src/com/intellij/lang/properties/PropertiesColorsPage.java) for [Properties language plugin](%gh-ic%/plugins/properties)
 - [Custom Language Support Tutorial: Color Settings Page](syntax_highlighter_and_color_settings_page.md)
@@ -93,7 +93,7 @@ Annotators not requiring information from [indexes](indexing_and_psi_stubs.md) c
 
 ### Errors/Warning
 
-See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in IntelliJ Platform UI Guidelines on how to write message texts for highlighting/quick fixes.
+See [Inspections](inspections.md) topic in UI Guidelines on how to write message texts for highlighting/quick fixes.
 
 To highlight a region of text as a warning or error:
 

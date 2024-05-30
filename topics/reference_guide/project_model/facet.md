@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Facet
 
@@ -15,7 +15,7 @@ A module can have multiple facets.
 E.g. Spring Framework specific configuration is stored in a Spring facet.
 
 ## Facet Basics Sample
-Please see [Facet Basics](%gh-sdk-samples%/facet_basics) sample plugin project.
+Please see [Facet Basics](%gh-sdk-samples-master%/facet_basics) sample plugin project.
 
 ## Working with Facets
 

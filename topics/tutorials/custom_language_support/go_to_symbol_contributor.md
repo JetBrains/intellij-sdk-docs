@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 13. Go To Symbol Contributor
 
@@ -9,8 +9,8 @@
 **Reference**: [](go_to_class_and_go_to_symbol.md)
 
 **Code**:
-[`SimpleChooseByNameContributor`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleChooseByNameContributor.java),
-[`SimplePsiImplUtil`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/impl/SimplePsiImplUtil.java)
+[`SimpleChooseByNameContributor`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleChooseByNameContributor.java),
+[`SimplePsiImplUtil`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/impl/SimplePsiImplUtil.java)
 
 </tldr>
 
@@ -22,13 +22,13 @@ A _Go to Symbol Contributor_ helps the user to navigate to any PSI element by it
 
 To specify what a PSI element looks like in the <ui-path>Navigate | Symbol</ui-path> popup window, <control>Structure</control> tool window, or other components, it should implement `getPresentation()`.
 This method gets defined in the utility class `SimplePsiImplUtil`, and the parser and PSI classes must be regenerated.
-Add the following method to [`SimplePsiImplUtil`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/impl/SimplePsiImplUtil.java):
+Add the following method to [`SimplePsiImplUtil`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/impl/SimplePsiImplUtil.java):
 
 ```java
 ```
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/impl/SimplePsiImplUtil.java" include-symbol="getPresentation"}
 
-In addition, to provide an icon for the displayed items, extend [`IconProvider`](%gh-ic%/platform/core-api/src/com/intellij/ide/IconProvider.java) and register it in `com.intellij.iconProvider` extension point. See [`SimplePropertyIconProvider`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimplePropertyIconProvider.java):
+In addition, to provide an icon for the displayed items, extend [`IconProvider`](%gh-ic%/platform/core-api/src/com/intellij/ide/IconProvider.java) and register it in `com.intellij.iconProvider` extension point. See [`SimplePropertyIconProvider`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimplePropertyIconProvider.java):
 
 ```java
 ```
@@ -51,7 +51,7 @@ property ::= (KEY? SEPARATOR VALUE?) | KEY {
 ## Define a Go To Symbol Contributor
 
 To contribute items to <ui-path>Navigate | Symbol</ui-path> results, subclass [`ChooseByNameContributorEx`](%gh-ic%/platform/lang-impl/src/com/intellij/navigation/ChooseByNameContributorEx.java)
-to create [`SimpleChooseByNameContributor`](%gh-sdk-samples%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleChooseByNameContributor.java):
+to create [`SimpleChooseByNameContributor`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleChooseByNameContributor.java):
 
 ```java
 ```

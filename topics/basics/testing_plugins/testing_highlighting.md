@@ -13,7 +13,7 @@ To ignore verifying additional highlighting, set parameter `ignoreExtraHighlight
 
 Alternatively, you can use `CodeInsightTestFixture.testHighlighting()`, which loads a [testdata file](test_project_and_testdata_directories.md) into the in-memory editor and highlights it as a single operation.
 
-**Example**:
+**Example:**
 [Custom Language Support Tutorial: Testing Annotator](annotator_test.md)
 
 ### Inspections

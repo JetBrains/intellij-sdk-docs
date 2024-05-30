@@ -108,5 +108,29 @@ register it with the `com.intellij.spellchecker.bundledDictionaryProvider` exten
 allows providing (dynamic) dictionaries generated at runtime, e.g., downloaded from a server, created from project sources on-the-fly, etc.
 Register in `com.intellij.spellchecker.dictionary.runtimeDictionaryProvider` extension point.
 
-**Example**
+**Example:**
 [`PyPackagesDictionary`](%gh-ic%/python/src/com/jetbrains/python/packaging/PyPackagesDictionary.kt)
+
+## Grammar Checks (Grazie plugin)
+{id="grammar-checks"}
+
+[Grazie Lite](https://plugins.jetbrains.com/plugin/12175-grazie-lite) (bundled) and
+[Grazie Pro](https://plugins.jetbrains.com/plugin/16136-grazie-pro/)
+plugins provide intelligent spelling and grammar checks for all texts.
+
+To use the API mentioned below, add a [dependency](plugin_dependencies.md) on plugin ID `tanvd.grazi`.
+
+### `TextExtractor`
+
+To define how to extract natural language text from PSI, implement
+[`TextExtractor`](%gh-ic%/plugins/grazie/src/main/kotlin/com/intellij/grazie/text/TextExtractor.java)
+and register in `com.intellij.grazie.textExtractor` extension point.
+
+**Example:** [`JavaTextExtractor`](%gh-ic%/plugins/grazie/java/src/main/kotlin/com/intellij/grazie/ide/language/java/JavaTextExtractor.java)
+
+### `ProblemFilter`
+
+To ignore specific reported problems, implement [`ProblemFilter`](%gh-ic%/plugins/grazie/src/main/kotlin/com/intellij/grazie/text/ProblemFilter.java)
+registered in `com.intellij.grazie.problemFilter` extension point.
+
+**Example:** [`JavadocProblemFilter`](%gh-ic%/plugins/grazie/java/src/main/kotlin/com/intellij/grazie/ide/language/java/JavadocProblemFilter.java)

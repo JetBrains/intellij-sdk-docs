@@ -1,6 +1,6 @@
-# Custom Language Support Tutorial
-
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Custom Language Support Tutorial
 
 <link-summary>Tutorial for creating a .properties-like custom language.</link-summary>
 
@@ -15,7 +15,7 @@ In this tutorial, we will add support for a [.properties](https://en.wikipedia.o
 >
 {title="Navigating this tutorial"}
 
-> The complete and fully working example plugin used in this tutorial is the [`simple_language_plugin`](%gh-sdk-samples%/simple_language_plugin) code sample.
+> The complete and fully working example plugin used in this tutorial is the [`simple_language_plugin`](%gh-sdk-samples-master%/simple_language_plugin) code sample.
 >
 > See [](code_samples.md) on how to build and run it.
 >
@@ -24,26 +24,27 @@ In this tutorial, we will add support for a [.properties](https://en.wikipedia.o
 This a step-by-step tutorial, and it requires completing each step, in order:
 
 * [](prerequisites.md)
-* [](language_and_filetype.md)
-* [](grammar_and_parser.md)
-* [](lexer_and_parser_definition.md)
-* [](syntax_highlighter_and_color_settings_page.md)
-* [](psi_helper_and_utilities.md)
-* [](annotator.md)
-* [](line_marker_provider.md)
-* [](completion_contributor.md)
-* [](reference_contributor.md)
-* [](find_usages_provider.md)
 * [](folding_builder.md)
+* [](language_and_filetype.md)
 * [](go_to_symbol_contributor.md)
+* [](grammar_and_parser.md)
 * [](structure_view_factory.md)
+* [](lexer_and_parser_definition.md)
 * [](structure_aware_navbar.md)
+* [](syntax_highlighter_and_color_settings_page.md)
 * [](formatter.md)
+* [](psi_helper_and_utilities.md)
 * [](code_style_settings.md)
+* [](annotator.md)
 * [](commenter.md)
+* [](line_marker_provider.md)
 * [](quick_fix.md)
+* [](completion_contributor.md)
 * [](documentation_provider.md)
+* [](reference_contributor.md)
 * [](spell_checking_strategy.md)
+* [](find_usages_provider.md)
+* {columns="2"}
 
 <include from="snippets.md" element-id="missingContent"/>
 

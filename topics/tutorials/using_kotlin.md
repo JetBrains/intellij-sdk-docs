@@ -86,7 +86,7 @@ For detailed instructions, please refer to the [Kotlin documentation](https://ko
 
 Adding Kotlin source files compilation support to the Gradle-based project requires adding and configuring the [Kotlin JVM Gradle plugin](https://kotlinlang.org/docs/gradle.html#targeting-the-jvm).
 
-See the <path>build.gradle.kts</path> from [kotlin_demo](%gh-sdk-samples%/kotlin_demo) sample plugin:
+See the <path>build.gradle.kts</path> from [kotlin_demo](%gh-sdk-samples-master%/kotlin_demo) sample plugin:
 
 ```kotlin
 ```
@@ -115,19 +115,20 @@ or the specific version must be [provided in plugin distribution](plugin_content
 
 | IntelliJ Platform version | Bundled _stdlib_ version |
 |---------------------------|--------------------------|
+| 2024.2                    | 1.9.24                   |
 | 2024.1                    | 1.9.22                   |
 | 2023.3                    | 1.9.10                   |
 | 2023.2                    | 1.8.20                   |
 | 2023.1                    | 1.8.0                    |
-| 2022.3                    | 1.7.0                    |
-| 2022.2                    | 1.6.21                   |
-| 2022.1                    | 1.6.20                   |
 
 #### Earlier Versions
 {collapsible="true"}
 
 | IntelliJ Platform version | Bundled _stdlib_ version |
 |---------------------------|--------------------------|
+| 2022.3                    | 1.7.0                    |
+| 2022.2                    | 1.6.21                   |
+| 2022.1                    | 1.6.20                   |
 | 2021.3                    | 1.5.10                   |
 | 2021.2                    | 1.5.10                   |
 | 2021.1                    | 1.4.32                   |
@@ -151,10 +152,13 @@ Plugins _must_ always use the bundled library from the target IDE and not bundle
 Please make sure it is not added via transitive dependencies either
 (see [View and Debug Dependencies](https://docs.gradle.org/current/userguide/viewing_debugging_dependencies.html) in Gradle user guide).
 
+Since 2024.2, a custom [fork](https://github.com/JetBrains/intellij-deps-kotlinx.coroutines) with additional patches is bundled.
+
 See [](kotlin_coroutines.md) on how to use them in plugins.
 
 | IntelliJ Platform version | Bundled _kotlinx-coroutines_ version |
 |---------------------------|--------------------------------------|
+| 2024.2                    | 1.8.0                                |
 | 2024.1                    | 1.7.3                                |
 
 ### Other Bundled Kotlin Libraries

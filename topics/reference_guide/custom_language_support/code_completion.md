@@ -50,7 +50,7 @@ If you want to match a composite element, use `withParent()` or `withSuperParent
 
 If completion items do not depend on indexes (e.g., keywords), it can be marked as [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI).
 
-**Examples**:
+**Examples:**
 - [`CompletionContributor`](%gh-ij-plugins%/osmorc/src/org/osmorc/manifest/completion/OsgiManifestCompletionContributor.java) for completing keywords in MANIFEST.MF files.
 - [Custom Language Support Tutorial: Completion Contributor](completion_contributor.md)
 

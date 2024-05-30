@@ -1,6 +1,6 @@
-# Exposing Theme Metadata
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# Exposing Theme Metadata
 
 <link-summary>Exposing plugin's UI components' customization keys allowing theme developers to change your components look.</link-summary>
 
@@ -94,7 +94,7 @@ All keys must follow this Naming Pattern:
 | **`Focused`**                                              | The current focused component.                                                                                                                                         | `Button.focusedBorderColor`                                                             |
 | **`Selected`**                                             | A selected tab or any other control that has equally meaningful selected and inactive states.                                                                          | `ToolWindow.HeaderTab.selectedBackground`                                               |
 | <p>**`Hover`**</p><p>**`Pressed`**</p>                     | An action as indicated in states.                                                                                                                                      | <p>`Link.hoverForeground`</p><p>`Link.pressedForeground`</p>                            |
-| <p>**`Error`**</p><p>**`Warning`**</p><p>**`Success`**</p> | Validation states. [See example](https://jetbrains.design/intellij/principles/validation_errors/) in the guide article.                                                | <p>`ValidationTooltip.errorBackground`</p><p>`ValidationTooltip.warningBorderColor`</p> |
+| <p>**`Error`**</p><p>**`Warning`**</p><p>**`Success`**</p> | Validation states. [See example](validation_errors.md) in UI Guidelines.                                                                                               | <p>`ValidationTooltip.errorBackground`</p><p>`ValidationTooltip.warningBorderColor`</p> |
 | **`Disabled`**                                             | Unavailable components.                                                                                                                                                | `Label.disabledForeground`                                                              |
 
 #### Part

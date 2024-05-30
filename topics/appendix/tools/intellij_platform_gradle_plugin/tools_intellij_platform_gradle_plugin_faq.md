@@ -72,18 +72,9 @@ In the Gradle `runIde` run configuration, add the log file path according to [sa
 
 ### Task `setupDependencies` not found in root project 'projectName'
 
-The [`setupDependencies`](tools_gradle_intellij_plugin.md#tasks-setupdependencies) task was designed to fetch the target IntelliJ Platform dependency in the after-sync Gradle phase as a workaround for the Gradle IntelliJ Plugin `1.x` limitations.
-Starting with the IntelliJ Platform Gradle Plugin `2.0`, this task is no longer needed and was removed from available tasks.
+This exception is thrown when there's no `setupDependencies` task present in the project scope.
 
-Unfortunately, this entry may still remain right after the migration to `2.0` and cause the following exception:
-
-```
-Task 'setupDependencies' not found in root project 'projectName'.
-```
-
-There are two possible solutions:
-- manually edit the <path>.idea/workspace.xml</path> file and remove the `setupDependencies` entry
-- open the <control>Gradle</control> tool window, select the <ui-path>Tasks Activation</ui-path> action from the context menu of the root project item, and remove the `setupDependencies` entry
+See [Migrating from Gradle IntelliJ Plugin](tools_intellij_platform_gradle_plugin_migration.md#setupdependencies) for more details.
 
 ### How to expose my plugin API sources to dependent plugins?
 

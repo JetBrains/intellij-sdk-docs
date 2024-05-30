@@ -8,7 +8,7 @@ IntelliJ Platform provides a set of standard module types.
 However, an application might need a module of a type that isn't supported yet.
 This tutorial shows how to register a new module type and link it to the project creation procedure and the UI.
 
-The source code for the [`module`](%gh-sdk-samples%/module) and [`project_wizard`](%gh-sdk-samples%/project_wizard) code samples is used throughout this tutorial.
+The source code for the [`module`](%gh-sdk-samples-master%/module) and [`project_wizard`](%gh-sdk-samples-master%/project_wizard) code samples is used throughout this tutorial.
 
 ## Pre-Requirements
 

@@ -59,13 +59,12 @@ Below are listed a few badges related to the IntelliJ SDK and plugins developmen
 ![Rating](https://img.shields.io/jetbrains/plugin/r/rating/:pluginId)
 ```
 
-[//]: # (FIXME: uncomment when https://youtrack.jetbrains.com/issue/WRS-2932 issue is fixed)
-[//]: # (**IntelliJ Plugin Stars Rating**)
-[//]: # ()
-[//]: # (![Rating]&#40;https://img.shields.io/badge/rating-%E2%98%85%E2%98%85%E2%98%85%E2%98%85%C2%BD-brightgreen&#41;{interpolate-variables="false"})
-[//]: # (```)
-[//]: # (![Rating]&#40;https://img.shields.io/jetbrains/plugin/r/stars/:pluginId&#41;)
-[//]: # (```)
+**IntelliJ Plugin Stars Rating**
+
+![Rating](https://img.shields.io/badge/rating-%E2%98%85%E2%98%85%E2%98%85%E2%98%85%C2%BD-brightgreen){ignore-vars="true"}
+```
+![Rating](https://img.shields.io/jetbrains/plugin/r/stars/:pluginId)
+```
 
 ### Version
 

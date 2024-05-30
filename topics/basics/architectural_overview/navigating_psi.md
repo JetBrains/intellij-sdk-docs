@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Navigating the PSI
 
@@ -58,4 +58,4 @@ PsiMethod containingMethod = PsiTreeUtil.getParentOfType(element, PsiMethod.clas
 PsiClass containingClass = containingMethod.getContainingClass();
 ```
 
-To see how the navigation works in practice, please refer to the [code sample](%gh-sdk-samples%/psi_demo/src/main/java/org/intellij/sdk/psi/PsiNavigationDemoAction.java).
+To see how the navigation works in practice, please refer to the [code sample](%gh-sdk-samples-master%/psi_demo/src/main/java/org/intellij/sdk/psi/PsiNavigationDemoAction.java).

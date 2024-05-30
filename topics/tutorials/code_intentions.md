@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Intentions
 
@@ -8,11 +8,11 @@
 
 **Product Help:** [Intention Actions](https://www.jetbrains.com/help/idea/intention-actions.html)
 
-**Platform UI Guidelines:** [Inspections](https://jetbrains.design/intellij/text/inspections/)
+**UI Guidelines:** [](inspections.md)
 
 </tldr>
 
-This topic describes the [conditional_operator_intention](%gh-sdk-samples%/conditional_operator_intention), a sample plugin that adds a new [intention action](https://www.jetbrains.com/help/idea/intention-actions.html) to the IDE Intentions list.
+This topic describes the [conditional_operator_intention](%gh-sdk-samples-master%/conditional_operator_intention), a sample plugin that adds a new [intention action](https://www.jetbrains.com/help/idea/intention-actions.html) to the IDE Intentions list.
 In addition, the sample plugin contains a JUnit-based test.
 
 ## About Intention Actions
@@ -20,13 +20,13 @@ In addition, the sample plugin contains a JUnit-based test.
 The IntelliJ Platform analyzes your code and helps handle situations that may result in errors.
 When a possible problem is suspected, the IDE suggests an appropriate intention action, denoted with special icons.
 
-See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in the IntelliJ Platform UI Guidelines on naming, writing description, and message texts for inspections/intentions.
+See [Inspections](inspections.md) topic in UI Guidelines on naming, writing description, and message texts for inspections/intentions.
 
 You can view a list of all available intention actions as well as enable/disable them using the [Intentions List](https://www.jetbrains.com/help/idea/intention-actions.html#intention-settings) in <ui-path>Settings | Editor | Intentions</ui-path>.
 
 ## Techniques Used
 
-The [conditional_operator_intention](%gh-sdk-samples%/conditional_operator_intention) sample plugin illustrates the use of the following techniques:
+The [conditional_operator_intention](%gh-sdk-samples-master%/conditional_operator_intention) sample plugin illustrates the use of the following techniques:
 
 - How to analyze a [PSI tree](psi_files.md).
 - How to find a Java token of interest in the PSI tree.

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Inspection Options
 
@@ -18,7 +18,7 @@ Currently, there are two ways of providing the inspection options:
 {style="note"}
 
 Declarative API allows to:
-* delegate component rendering to the platform and make all the inspection options UI consistent and compliant with the [IntelliJ Platform UI Guideline](https://jetbrains.design/intellij/)
+* delegate component rendering to the platform and make all the inspection options UI consistent and compliant with the [](ui_guidelines_welcome.md)
 * optimize checking whether the inspection contains any options
 * manipulate options in places other than inspection panels (e.g., in quick fixes)
 * render options in contexts other than IntelliJ Platform-based IDEs
@@ -131,7 +131,7 @@ Custom Swing controls can be provided by implementing
 and registering the implementation in the `com.intellij.inspectionCustomComponent` extension point.
 Please note that this API is still in experimental state and may be changed without preserving backward compatibility.
 
-**Example**:
+**Example:**
 [`JavaInspectionButtons`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/options/JavaInspectionButtons.java)
 providing buttons for configuring options in custom dialogs
 
@@ -143,7 +143,7 @@ UI-based inspection options are provided by implementing a configuration panel u
 It returns the panel with option components that bind the provided values to the inspection class fields or other properties, similarly as in the [declarative](#declarative-inspection-options) approach.
 Note that since version 2023.1, this method is ignored if `InspectionProfileEntry.getOptionPane()` returns a non-empty panel.
 
-**Example**:
+**Example:**
 [`SizeReplaceableByIsEmptyInspection`](%gh-ic-223%/plugins/InspectionGadgets/src/com/siyeh/ig/style/SizeReplaceableByIsEmptyInspection.java)
 in version 2022.3, implemented using the UI-approach
 

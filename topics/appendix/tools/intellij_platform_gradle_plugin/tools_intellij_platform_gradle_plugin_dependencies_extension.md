@@ -108,6 +108,7 @@ targeted plugin is _bundled_ with the Target Platform or not.
 | `plugin(id, version, channel)` | Adds a dependency on a plugin for IntelliJ Platform.                                                                                |
 | `plugin(notation)`             | Adds a dependency on a plugin for IntelliJ Platform using a string notation:<p>`pluginId:version` or `pluginId:version@channel`</p> |
 | `plugins(notations)`           | Adds dependencies on plugins for IntelliJ Platform using a string notation:<p>`pluginId:version` or `pluginId:version@channel`</p>  |
+| `localPlugin(localPath)`       | Adds a dependency on a local IntelliJ Platform plugin. Accepts path or a dependency on another module.                              |
 
 See also:
 
@@ -162,14 +163,16 @@ See also:
 
 ## Java Runtime
 
-Using the `jetbrainsRuntime()` dependency helper, it is possible to load a custom version of JetBrains Runtime.
+Using the `jetbrainsRuntime()` or `jetbrainsRuntimeExplicit()` dependency helpers, it is possible to load a custom version of JetBrains Runtime.
 However, it is recommended to rely on the runtime bundled within the IntelliJ Platform dependency, if present.
 
-| Function                                                                                            | Description                                                                                                                   |
-|-----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
-| <p>`jetbrainsRuntime(version, variant, architecture)`</p><p>`jetbrainsRuntime(explicitVersion)`</p> | Adds a dependency on [JetBrains Runtime](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance). |
+| Function                                                  | Description                                                                                                                                                                                                                     |
+|-----------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <p>`jetbrainsRuntime()`</p>                               | Adds a dependency on [JetBrains Runtime](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance) in version obtained with the current IntelliJ Platform if resolved from IntelliJ Maven Repository. |
+| <p>`jetbrainsRuntime(version, variant, architecture)`</p> | Adds a dependency on [JetBrains Runtime](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance).                                                                                                   |
+| <p>`jetbrainsRuntimeExplicit(explicitVersion)`</p>        | Adds a dependency on [JetBrains Runtime](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance) in explicit version.                                                                               |
 
-See the [JetBrains Runtime releases page](https://github.com/JetBrains/JetBrainsRuntime/releases) for the list of available releases.
+See [](tools_intellij_platform_gradle_plugin_jetbrains_runtime.md) for more details.
 
 ## Code Instrumentation
 

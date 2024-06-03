@@ -145,3 +145,9 @@ To suggest other relevant plugins, use [`PluginsAdvertiser.installAndEnable()`](
 ### Deprecating a Plugin
 
 To suggest replacing the currently installed deprecated plugin with the new one, implement [`PluginReplacement`](%gh-ic%/platform/platform-api/src/com/intellij/ide/plugins/PluginReplacement.java) registered in `com.intellij.pluginReplacement` extension point.
+
+## Network
+
+Use [`HttpConnectionUtils`](%gh-ic-master%/platform/platform-api/src/com/intellij/util/net/HttpConnectionUtils.kt)
+to use platform network settings (e.g., proxy) (2024.3).
+For earlier versions, see [`HttpConfigurable`](%gh-ic%/platform/platform-api/src/com/intellij/util/net/HttpConfigurable.java)).

@@ -33,7 +33,7 @@ Launch the <control>New Project</control> wizard via the <ui-path>File | New | P
 6. Provide the <control>Artifact</control> which is the default name of the build project artifact (without a version).
    It is also used for the Gradle property `rootProject.name` value in the project's <path>settings.gradle.kts</path> file.
    For this example, enter `my_plugin`.
-7. Select <control>JDK</control> 11.
+7. Select <control>JDK</control> 17.
    This JDK will be the default JRE used to run Gradle, and the JDK version used to compile the plugin sources.
 
 <include from="snippets.md" element-id="apiChangesJavaVersion"/>

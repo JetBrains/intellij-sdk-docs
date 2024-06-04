@@ -12,11 +12,15 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2024
 
-### May
-{may-24}
+### June
+{june-24}
 
 Code Formatter
 : Rework [](code_formatting.md) page, extending explanations and updating content.
+
+
+### May
+{may-24}
 
 Minor Changes and Additions
 :

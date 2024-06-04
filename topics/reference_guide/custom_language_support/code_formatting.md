@@ -28,23 +28,23 @@ The image above shows a snippet of code at the top, the PSI structure at the bot
 Like in this example, the structure of blocks is usually built to reflect the PSI structure of the file.
 In other words, there is a root block that covers the entire file and its nested children cover smaller portions like classes, functions, etc. down to
 statements, identifiers, or braces.
-If you compare the Psi and block structure above, similarities in the nesting become obvious.
+Comparing the PSI and block structure above reveals obvious similarities in the nesting.
 
 In general, however, PSI structure and formatting model are two different things serving different purposes.
 While the structure of formatting blocks and PSI are usually similar, they do not have to match one-to-one.
 Additionally, it is vital to understand that the formatter modifies only characters between blocks.
 Therefore, the tree of blocks must cover all non-whitespace characters the bottom-level, or otherwise, the formatter may delete the characters between blocks.
-On the other hand, spacing elements should never be covered by blocks unless you want the space to be left as it is.
+On the other hand, spacing elements should never be covered by blocks unless the space is intended to be left as it is.
 
 ## Implementation
 
-To format a file or a file fragment, plugin authors are required to take the following steps:
+To format a file or a file fragment, the following steps are required:
 
 * Implement [`FormattingModelBuilder`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/FormattingModelBuilder.java)
-  and register it as `com.intellij.lang.formatter` in the <path>plugin.xml</path>.
+  and register it as `com.intellij.lang.formatter` extension point in the <path>plugin.xml</path>.
 * The main purpose of the formatting model builder is its `createModel()` method that must provide a
   [`FormattingModel`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/FormattingModel.java) necessary for the framework to format the document.
-  As an argument, it gets the [`FormattingContext`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/FormattingContext.java) which
+  As an argument, it receives a [`FormattingContext`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/FormattingContext.java) which
   provides text range, PSI element, and other information required for formatting.
 * The formatting model builds the tree of _blocks_ ([`Block`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/Block.java)) for the file where each block has associated indent, wrap, alignment, and spacing settings.
   Based on the provided tree of blocks, the formatting engine calculates the sequence of whitespace characters (spaces, tabs, and/or line breaks)
@@ -60,32 +60,32 @@ Typically, the following steps are part of this preparation:
   Use the `codeStyleSettings` property of the `FormattingContext` to retrieve the settings which in turn provide access to custom settings through `getCustomSettings()`.
   These are commonly passed along and will be used to determine the correct amount of whitespace for indentations, wraps, etc. when building the tree of formatting blocks.
 * Create an instance of [`SpacingBuilder`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/SpacingBuilder.java) using the formatting settings.
-* Using the settings, the spacing builder, and the PSI node from the formatting context, build the root `Block` that covers the whole file.
+* Build the root `Block` that covers the whole file using the settings, the spacing builder, and the PSI node from the formatting context.
 * The root `Block` needs all required information for building its subblocks recursively and is used in the `FormattingModel` returned from `createModel()`
 
-Plugin authors don't implement `FormattingModel` themselves but instead use concrete implementations provided by the IntelliJ Platform.
-Formatters for custom (programming) languages are usually built so that it mirrors the PSI structure of the file.
+The IntelliJ Platform already provides concrete implementations of `FormattingModel` that should be used instead of implementing a custom one.
+Formatters for custom (programming) languages are usually built so that they mirror the PSI structure of the file.
 Although not required, this approach is reasonable when thinking about, for example, Java code where the top-level formatting block covers the entire file,
 its children cover individual classes, blocks on the next level cover methods inside classes, and so on.
-For these cases, plugin authors can create a [`PsiBasedFormattingModel`](%gh-ic%/platform/code-style-impl/src/com/intellij/psi/formatter/PsiBasedFormattingModel.java) by using
+For these cases, plugins should create a [`PsiBasedFormattingModel`](%gh-ic%/platform/code-style-impl/src/com/intellij/psi/formatter/PsiBasedFormattingModel.java) by using
 [`FormattingModelProvider.createFormattingModelForPsiFile()`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/FormattingModelProvider.java).
 
 Another implementation of `FormattingModel` is [`DocumentBasedFormattingModel`](%gh-ic%/platform/code-style-impl/src/com/intellij/psi/formatter/DocumentBasedFormattingModel.java).
-However, for most use cases the `PsiBasedFormattingModel` should cover the requirements of plugin authors.
+However, in most cases, the `PsiBasedFormattingModel` should meet the requirements of custom language plugins.
 
 ### Building the `Block` Tree
 
-Plugin authors don't need to implement `Block` themselves.
-Instead, `AbstractBlock` can be used as a base class which provides useful default implementations.
+Instead of implementing the `Block` interface, [`AbstractBlock`](%gh-ic%/platform/code-style-impl/src/com/intellij/psi/formatter/common/AbstractBlock.java)
+should be used as a base class which provides useful default implementations.
 Although the block implementation of a plugin is specific to the custom language, for the implementation of `AbstractBlock` some general remarks can be given.
 It is common to store an instance of the `SpacingBuilder` which can directly be used when implementing the `getSpacing()` method
 by calling the `getSpacing()` method of the `SpacingBuilder`.
 
 Much of the work when implementing `AbstractBlock` goes into implementing `buildChildren()` that calculates blocks for the children of the current block's AST node.
-Authors can use `getNode().getChildren()` to retrieve the AST node's children of the current block.
-For each child that is not whitespace, it builds a subblock which is then added to the list of subblocks.
-Building the subblock highly depends on the specific language.
-In general, however, the code for determining the correct `Alignment`, `Indent` and `Wrap` of a block inspects `IElementType`,
+Use `getNode().getChildren()` to retrieve the AST node's children of the current block,
+and or each child that is not whitespace, build a subblock which is then added to the list of subblocks.
+While the exact method of building a subblock highly depends on the specific language,
+in general, the code for determining the correct `Alignment`, `Indent` and `Wrap` of a block inspects `IElementType`,
 checks if the node is in a specific `TokenSet` or asserts other properties.
 
 The other two more intricate methods that need to be implemented are `getChildAttributes()` and `isIncomplete()`.
@@ -183,10 +183,11 @@ This is useful for cases where nested alignments are needed, such as aligning a 
 - To change the default "block name" taken from class name, return a custom `Block.getDebugName()`.
 - The formatter in the IntelliJ Platform SDK only controls spacing, including indentation, between adjacent leaf blocks.
   Therefore, the first leaf block won't get indentation.
-  If plugin authors need this, they can use a `PostFormatProcessor` (see below) to add the needed indentation at the beginning
+  If this is needed, use a [`PostFormatProcessor`](%gh-ic%/platform/code-style-api/src/com/intellij/psi/impl/source/codeStyle/PostFormatProcessor.java)
+  ([see also below](#post-processor)) to add the required indentation at the beginning
   ([see forum post with example](https://intellij-support.jetbrains.com/hc/en-us/community/posts/7982433627666-Formatting-indents-make-me-go-nuts)).
 - An indent is ignored if a corresponding block doesn't start with a new line.
-  You can enforce the indent in this case using `enforceIndentToChidlren` parameter in the factory method `Indent#getIndent(Intent.Type.NORMAL, false, true)`
+  To enforce the indent in this case using `enforceIndentToChildren` parameter in the factory method `Indent#getIndent(Intent.Type.NORMAL, false, true)`
   ([see forum post with example](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360010627319-Formatting-Block-to-indent-relative-to-where-its-parent-would-be)).
 
 
@@ -224,9 +225,11 @@ See [`Rearranger`](%gh-ic%/platform/code-style-api/src/com/intellij/psi/codeStyl
 
 ## Code Style Settings
 
-To specify the default indent size for the language provided by your plugin, and to allow the user to configure the tab size and indent size,
-you need to implement the [`FileTypeIndentOptionsProvider`](%gh-ic%/platform/lang-api/src/com/intellij/psi/codeStyle/FileTypeIndentOptionsProvider.java) interface and to register the implementation in the `com.intellij.fileTypeIndentOptionsProvider` extension point.
-The return value of `createIndentOptions()` determines the default indent size.
+To set the default indent size for a plugin's language and allow user configuration of tab and indent sizes,
+implement the [`FileTypeIndentOptionsProvider`](%gh-ic%/platform/lang-api/src/com/intellij/psi/codeStyle/FileTypeIndentOptionsProvider.java)
+interface and register it at the `com.intellij.fileTypeIndentOptionsProvider` extension point.
+The return value of `createIndentOptions()` sets the default indent size.
+
 
 **Example:**
 [Custom Language Support Tutorial: Code Style Settings](code_style_settings.md)

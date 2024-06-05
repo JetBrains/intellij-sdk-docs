@@ -32,7 +32,7 @@ Highlighting from multiple `TextAttributesKey` items can be layered — for exam
 
 The mapping of the `TextAttributesKey` to specific attributes used in an editor is defined by the [`EditorColorsScheme`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/colors/EditorColorsScheme.java) class.
 It can be configured by the user via <ui-path>Settings | Editor | Color Scheme</ui-path> by providing an implementation of [`ColorSettingPage`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/colors/ColorSettingsPage.java) registered in `com.intellij.colorSettingsPage` extension point.
-To lookup external name for a setting in the IDE, use [UI Inspector](internal_ui_inspector.md#inspecting-settings).
+To look up the external name for a setting in the IDE, use [UI Inspector](internal_ui_inspector.md#inspecting-settings).
 
 The <ui-path>File | Export | Files or Selection to HTML</ui-path> feature uses the same syntax highlighting mechanism as the editor.
 Thus, it will work automatically for custom languages that provide a syntax highlighter.
@@ -57,7 +57,7 @@ For highlighting lexer errors [`HighlighterColors.BAD_CHARACTER`](%gh-ic%/platfo
 - [`SyntaxHighlighter`](%gh-ic%/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/PropertiesHighlighter.java) implementation for [Properties language plugin](%gh-ic%/plugins/properties)
 - [Custom Language Support Tutorial: Syntax Highlighter](syntax_highlighter_and_color_settings_page.md)
 
-> Use [`HtmlSyntaxInfoUtil`](%gh-ic%/platform/lang-impl/src/com/intellij/openapi/editor/richcopy/HtmlSyntaxInfoUtil.java) to create Lexer-based highlighted code samples, e.g. for usage in documentation.
+> Use [`HtmlSyntaxInfoUtil`](%gh-ic%/platform/lang-impl/src/com/intellij/openapi/editor/richcopy/HtmlSyntaxInfoUtil.java) to create Lexer-based highlighted code samples, e.g., for usage in documentation.
 >
 {title="Creating highlighted code sample"}
 
@@ -71,7 +71,7 @@ Register [`RainbowVisitor`](%gh-ic%/platform/analysis-impl/src/com/intellij/code
 ## Parser
 
 The second level of error highlighting happens during parsing.
-If a particular sequence of tokens is invalid according to the grammar of the language, the [`PsiBuilder.error()`](%gh-ic%/platform/core-api/src/com/intellij/lang/PsiBuilder.java) method can highlight the invalid tokens and display an error message showing why they are not valid.
+If according to the grammar of the language a particular sequence of tokens is invalid, the [`PsiBuilder.error()`](%gh-ic%/platform/core-api/src/com/intellij/lang/PsiBuilder.java) method can highlight the invalid tokens and display an error message showing why they are not valid.
 
 See [](syntax_errors.md) on how to programmatically suppress these errors in certain contexts.
 
@@ -80,6 +80,7 @@ See [](syntax_errors.md) on how to programmatically suppress these errors in cer
 The third level of highlighting is performed through the [`Annotator`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/Annotator.java) interface.
 A plugin can register one or more annotators in the `com.intellij.annotator` extension point, and these annotators are called during the background highlighting pass to process the elements in the custom language's PSI tree.
 Attribute `language` should be set to the Language ID where this annotator applies to.
+If highlighting data requires invoking external tools, use [](#external-annotator) instead.
 
 Annotators can analyze not only the syntax, but also the semantics using PSI, and thus can provide much more complex syntax and error highlighting logic.
 The annotator can also provide quick fixes to problems it detects.
@@ -87,7 +88,7 @@ When the file is changed, the annotator is called incrementally to process only 
 
 Annotators not requiring information from [indexes](indexing_and_psi_stubs.md) can be marked [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI) to work during indexing (e.g., for additional [syntax highlighting](#syntax)). (2023.1+)
 
-> See also [Code Inspections](code_inspections_and_intentions.md) which offer a more fine-grained control and some additional features.
+> See also [Code Inspections](code_inspections_and_intentions.md) which offer more fine-grained control and some additional features.
 >
 {style="note"}
 
@@ -111,7 +112,7 @@ holder.newAnnotation(HighlightSeverity.WARNING, "Invalid code") // or HighlightS
 
 <tab title="Pre-2020.1" group-key="pre-2020.1">
 
-Call `createWarningAnnotation()`/`createErrorAnnotation()` on the [`AnnotationHolder`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/AnnotationHolder.java), and optionally calls `registerFix()` on the returned [`Annotation`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/Annotation.java) object to add a quick fix for the error or warning.
+Call `createWarningAnnotation()`/`createErrorAnnotation()` on the [`AnnotationHolder`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/AnnotationHolder.java), and optionally call `registerFix()` on the returned [`Annotation`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/Annotation.java) object to add a quick fix for the error or warning.
 
 </tab>
 
@@ -149,7 +150,7 @@ Call `AnnotationHolder.createInfoAnnotation()` with an empty message and then [`
 
 ## External Annotator
 
-If the custom language employs external tools for validating files in the language (for example, uses the Xerces library for XML schema validation),
+If the custom language employs external tools for validating files in the language (for example, using the Xerces library for XML schema validation),
 it can provide an implementation of the [`ExternalAnnotator`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/ExternalAnnotator.java) interface and register it in `com.intellij.externalAnnotator` extension point (`language` attribute must be specified).
 
 The `ExternalAnnotator` highlighting has the lowest priority and is invoked only after all other background processing has completed.
@@ -196,6 +197,6 @@ annotate(PsiIdentifier) {
 ```
 
 The latter version:
-- performs faster highlighting — it doesn’t have to wait until all other identifiers are visited
-- removes outdated highlights faster — right after the identifier was visited and the annotator didn't produce a highlighting anymore
+- performs faster highlighting – it doesn't have to wait until all other identifiers are visited
+- removes outdated highlights faster – right after the identifier was visited and the annotator didn't produce a highlighting anymore
 

@@ -258,6 +258,10 @@ In that case, use the `getState()` method to build an XML element with an arbitr
 In the `loadState()` method, deserialize the JDOM element tree using any custom logic.
 This is not recommended and should be avoided whenever possible.
 
+To disable the expansion of path macros ([`PathMacro`](%gh-ic%/platform/macro/src/com/intellij/ide/macro/PathMacro.java))
+in stored values, implement [`PathMacroFilter`](%gh-ic%/jps/model-serialization/src/com/intellij/openapi/application/PathMacroFilter.java)
+and register in `com.intellij.pathMacroFilter` extension point.
+
 ### Migrating Persisted Values
 
 If the underlying persistence model or storage format has changed, a [`ConverterProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/conversion/ConverterProvider.java) can provide [`ProjectConverter`](%gh-ic%/platform/lang-impl/src/com/intellij/conversion/ProjectConverter.java), whose `getAdditionalAffectedFiles()` method returns affected files to migrate and performs programmatic migration of stored values.

@@ -75,7 +75,7 @@ The example below demonstrates a nested `configurable` declaration:
         id="com.intellij.sdk.tasks"
         displayName="Tasks"
         nonDefaultProject="true"
-        instance="com.intellij.sdk.TaskConfigurable"/>
+        instance="com.intellij.sdk.TaskConfigurable">
     <configurable
         id="com.intellij.sdk.tasks.servers"
         displayName="Servers"

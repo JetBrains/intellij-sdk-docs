@@ -443,8 +443,8 @@
       </toc-element>
     </toc-element>
   </toc-element>
-  <toc-element topic="ui_guidelines_welcome.md">
-    <toc-element toc-title="Controls">
+  <toc-element topic="ui_guidelines_welcome.topic">
+    <toc-element topic="Components.topic">
       <toc-element topic="button.topic">
         <toc-element topic="built_in_button.md"/>
         <toc-element topic="split_button.md"/>
@@ -457,6 +457,7 @@
         <toc-element topic="empty_state.md"/>
       </toc-element>
       <toc-element topic="description_text.md"/>
+      <toc-element toc-title="Dialog Window"/> <!--TODO-->
       <toc-element topic="drop_down.md"/>
       <toc-element topic="got_it_tooltip.md"/>
       <toc-element topic="group_header.md"/>
@@ -474,6 +475,7 @@
         <toc-element topic="banner.md"/>
         <toc-element toc-title="Tool Window Balloon"/> <!--TODO-->
       </toc-element>
+      <toc-element toc-title="Popup"/> <!--TODO-->
       <toc-element topic="progress_indicators.md">
         <toc-element topic="loader.md"/>
         <toc-element topic="progress_bar.md"/>
@@ -483,6 +485,7 @@
       <toc-element topic="scrollbar.md"/>
       <toc-element topic="search_field.md"/>
       <toc-element toc-title="Slider"/> <!--TODO-->
+      <toc-element toc-title="Status Bar"/> <!--TODO-->
       <toc-element topic="table.md"/>
       <toc-element topic="tabs.md"/>
       <toc-element topic="text_area.md"/>
@@ -492,23 +495,10 @@
         <toc-element topic="split_icon_button.md"/>
         <toc-element topic="toolbar_drop_down.md"/>
       </toc-element>
+      <toc-element topic="tool_window.md"/>
       <toc-element toc-title="Tree"/> <!--TODO-->
     </toc-element>
-    <toc-element toc-title="Components">
-      <toc-element toc-title="Dialog Window"/> <!--TODO-->
-      <toc-element toc-title="Popup"/> <!--TODO-->
-      <toc-element toc-title="Status Bar"/> <!--TODO-->
-      <toc-element topic="tool_window.md"/>
-    </toc-element>
-    <toc-element toc-title="Text">
-      <toc-element topic="capitalization.md"/>
-      <toc-element topic="inspections.md"/>
-      <toc-element topic="punctuation.md"/>
-      <toc-element toc-title="Notification and Error Texts"/> <!--TODO-->
-      <toc-element toc-title="Terminology"/> <!--TODO-->
-      <toc-element topic="writing_short.md"/>
-    </toc-element>
-    <toc-element toc-title="Principles">
+    <toc-element topic="Principles.md">
       <toc-element toc-title="Accessibility"/> <!--TODO-->
       <toc-element toc-title="Dangerous Actions"/> <!--TODO-->
       <toc-element topic="data_formats.md"/>
@@ -531,6 +521,14 @@
       <toc-element topic="typography.md"/>
       <toc-element toc-title="UI Feedback"/> <!--TODO-->
       <toc-element topic="validation_errors.md"/>
+    </toc-element>
+    <toc-element toc-title="Writing UI Texts">
+      <toc-element topic="capitalization.md"/>
+      <toc-element topic="inspections.md"/>
+      <toc-element topic="punctuation.md"/>
+      <toc-element toc-title="Notification and Error Texts"/> <!--TODO-->
+      <toc-element toc-title="Terminology"/> <!--TODO-->
+      <toc-element topic="writing_short.md"/>
     </toc-element>
     <toc-element toc-title="Resources">
       <toc-element href="https://intellij-icons.jetbrains.design" toc-title="Icons List"/>

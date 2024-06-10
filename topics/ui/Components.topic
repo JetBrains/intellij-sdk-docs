@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       id="Components" title="Components">
+
+    <title>
+        Components
+    </title>
+    <table>
+        <tr>
+            <td>Component</td>
+            <td>Description</td>
+        </tr>
+        <tr>
+            <td><a href="button.topic"></a></td>
+            <td>Use a button to invoke an immediate action.
+            </td>
+        </tr>
+        <tr>
+            <td><a href="built_in_button.md"></a></td>
+            <td>An icon placed inside an input control.</td>
+        </tr>
+        <tr>
+            <td><a href="checkbox.md"></a></td>
+            <td>Use checkboxes for yes/no choices or for selecting several items in a group.
+            </td>
+        </tr>
+        <tr>
+            <td><a href="combo_box.md"></a></td>
+            <td><p>A combo box combines a <a href="drop_down.md">drop-down list</a> and an <a href="input_field.md">input
+                field</a>, allowing the user to select a value from the list or enter a custom value.</p>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="context_help.md"></a></td>
+            <td><p>Use context help to briefly explain how a functionality works if it is not clear from the UI and the
+                application behavior:
+            </p>
+                <list>
+                    <li><a href="empty_state.md"></a></li>
+                    <li><a href="inline_help_text.md"></a></li>
+                    <li><a href="tooltip.md"></a></li>
+                </list>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="description_text.md"></a></td>
+            <td><p>Description text provides explanatory information about a set of settings or a single item in a list
+                or tree.</p>
+            </td>
+        </tr>
+        <tr>
+            <td><p><a href="drop_down.md"></a></p></td>
+            <td><p>A drop-down list is a type of button that appears in dialogs. It shows a list of choices on clicking
+                it and allows selecting one option.</p>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="got_it_tooltip.md"></a></td>
+            <td><p>A Got It tooltip informs users about a new or changed feature and gives basic information about
+                it.</p>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="group_header.md"></a></td>
+            <td><p>A group header clearly labels a group of UI controls.</p>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="icon_button.md"></a></td>
+            <td><p>A toolbar icon button is an icon that appears on a toolbar.</p>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="input_field.md"/></td>
+            <td><p>An input field allows users to enter or edit a text line using the keyboard.</p>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="link.md"></a></td>
+            <td><p>Use a regular link for navigation between pages of the same window.</p>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="notification_types.md"/></td>
+            <td><p>Notifications inform users about the status of user or system initiated operations:</p>
+                <list>
+                    <li><a href="balloon.md"></a></li>
+                    <li><a href="banner.md"></a></li>
+                </list>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="progress_indicators.md"></a></td>
+            <td><p>Progress indicators inform users about an ongoing operation:</p>
+                <list>
+                    <li><a href="loader.md">Loader</a></li>
+                    <li><a href="progress_bar.md">Progress bar</a></li>
+                    <li><a href="progress_text.md">Progress text</a></li>
+                </list>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="radio_button.md"></a></td>
+            <td><p>Use a radio button group to choose one option from 2 to 4 mutually exclusive options.</p>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="scrollbar.md"></a></td>
+            <td><p>The scrollbar allows users to browse content that’s larger than the visible area, such as text or
+                images, by scrolling it horizontally or vertically.</p>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="search_field.md"></a></td>
+            <td><p>A search field is an input field that helps users locate objects, actions or text in an
+                application.</p>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="split_button.md"></a></td>
+            <td>A button with two parts — the main action on the left and a dropdown button with secondary actions on the right.</td>
+        </tr>
+        <tr>
+            <td><a href="split_icon_button.md"></a></td>
+            <td><p>A split icon button appears on a horizontal toolbar and consists of two parts: the main icon and a
+                triangle icon for the action list.</p>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="table.md"></a></td>
+            <td><p>Use tables so that users can review, enter or edit uniform sets of data or options. For example:</p>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="tabs.md"></a></td>
+            <td><p>Tabs organize content in dialogs by grouping similar UI controls.</p>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="text_area.md"></a></td>
+            <td><p>A text area allows users to enter or edit multi-line text.</p>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="toggle_button.md"></a></td>
+            <td><p>The toggle button is used to switch between On and Off states.</p>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="toolbar.md"></a></td>
+            <td><p>A toolbar provides quick access to frequently used actions and filters. It appears in dialogs,
+                pop-ups, tool windows, lists, trees, and tables.</p>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td><a href="toolbar_drop_down.md"></a></td>
+            <td><p>A toolbar drop-down list is a type of button that appears on a horizontal toolbar and shows a list of
+                choices on clicking it.</p>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="tool_window.md"></a></td>
+            <td><p>A tool window is a pane inside the main IDE window. For information about tool windows, see <a
+                    href="https://www.jetbrains.com/help/idea/tool-windows.html">IntelliJ IDEA Web Help</a>. For
+                information about implementing tool windows, see <a href="tool_windows.md"></a>.</p>
+            </td>
+        </tr>
+    </table>
+
+
+
+</topic>

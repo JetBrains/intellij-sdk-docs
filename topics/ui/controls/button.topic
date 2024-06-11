@@ -16,8 +16,14 @@
 
     <img src="button_example.png" alt="Cancel and Save buttons" width="156"/>
     <chapter title="When to use" id="when-to-use">
-        <p>Use a button to invoke an immediate action.</p>
-        <p>Use a <a href="link.md">link</a> instead if:</p>
+
+        <chapter title="Using a button" id="using-a-button">
+            Use a button to invoke an immediate action.
+        </chapter>
+
+
+        <chapter title="Using a link" id="using-a-link">
+        <p>Use a <a href="link.md">link</a> instead a button if:</p>
         <list>
             <li>
                 <p>The action takes the user to another page of the same dialog or an external source like
@@ -63,7 +69,8 @@
                 </table>
             </li>
         </list>
-
+        </chapter>
+        <chapter title="Using a toolbar button" id="using-a-toolbar-button">
         <p>Use toolbar buttons instead if there are several buttons related to a table or list:</p>
         <table>
             <tr>
@@ -85,7 +92,8 @@
                 <td><img src="toolbar.png" alt="Toolbar buttons" width="220"/></td>
             </tr>
         </table>
-
+        </chapter>
+    <chapter title="Use a split button instead" id="use-a-split-button-instead">
         <p>Use a <a href="split_button.md">split button</a> instead if:</p>
         <list>
             <li>There are several related actions (more than 2), but the space is limited and/or packed.</li>
@@ -96,16 +104,18 @@
         <p>Use a <a href="built_in_button.md">built-in button</a> instead if it's related to an input field, combo box,
             search field.</p>
     </chapter>
+    </chapter>
 
 
     <chapter title="How to use" id="how-to-use">
         <chapter title="Label" id="label">
             <p>The label displays the action the button performs.</p>
+            <chapter title="Imperative">
             <p>Write the label as an imperative verb, e.g. Save, Print, Cancel. Use title capitalization.</p>
-            <p>
-                <b>Exceptions</b>
-                : standard buttons like OK, Back/Forward, Previous/Next, Yes/No, Agree, Options, Settings, Details.
-            </p>
+            <note><p>Exceptions: standard buttons like OK, Back/Forward, Previous/Next, Yes/No, Agree, Options, Settings, Details.
+            </p></note>
+            </chapter>
+            <chapter title="Specific" id="specific">
             <p>The button should answer the question in the title, so the user can skip the description. Prefer specific
                 labels over
                 generic ones:</p>
@@ -129,14 +139,16 @@
                         <p>The label indicates what happens on the click.</p></td>
                 </tr>
             </table>
-            <p>
-                <b>Exception</b>: the Cancel button if it is clear what action is being canceled.
+            <note>
+                Exception: the Cancel button if it is clear what action is being canceled.
                 For example, use the
                 <control>Cancel</control>
                 button, not the
                 <control>Don’t Create</control>
                 button.
-            </p>
+            </note>
+            </chapter>
+            <chapter title="Short" id="short">
             <p>The label should be short, not more than 5 words. If it’s not obvious what element the button is related
                 to, add more
                 words to make it clear. Prefer clear labels to short:</p>
@@ -164,7 +176,8 @@
                     </td>
                 </tr>
             </table>
-
+            </chapter>
+            <chapter title="Ellipsis" id="ellipsis">
             <p>
                 Add an ellipsis if additional actions such as adding more info or confirming the action are required:
                 <img src="buttons_with_ellipsis.png" alt="Buttons with ellipsis" width="146" style="block"/>
@@ -200,49 +213,7 @@
                     </td>
                 </tr>
             </table>
-            <p>Use the
-                <emphasis>Close</emphasis>
-                label only if nothing can be changed in the dialog and there is no confirmation button, for example, in
-                the
-                <ui-path>Help | My Productivity</ui-path>
-                dialog.
-                In all other cases, use the
-                <control>Cancel</control>
-                button.
-            </p>
-            <p>Do
-                <b>not</b>
-                add an icon to the button. The main purpose of an icon is to quickly find a familiar action in a packed
-                toolbar or menu. Usually, no more than 3 buttons are placed nearby, their labels can be scanned quickly,
-                and icons are not required.
-            </p>
-        </chapter>
-
-
-        <chapter title="Hover" id="hover">
-            <p>On hovering over a button, show a tooltip with the shortcut and the action name if it can be clarified.
-                For more details,
-                see <a href="context_help.md">Context help</a>.</p>
-            <table style="none">
-                <tr>
-                    <td width="50%">
-                        <img src="hover_shortcut.png"
-                             alt="A 'Replace' button with a shortcut in hover tooltip"
-                             width="77"/>
-                        <p>
-                            <emphasis>If the action is clear, show the shortcut only.</emphasis>
-                        </p>
-                    </td>
-                    <td width="50%">
-                        <img src="hover_name_shortcut.png"
-                             alt="'Replace' button with an action name and a shortcut in hover tooltip"
-                             width="155"/>
-                        <p>
-                            <emphasis>If the action can be clarified, show the action name and the shortcut.</emphasis>
-                        </p>
-                    </td>
-                </tr>
-            </table>
+            </chapter>
         </chapter>
     </chapter>
 
@@ -274,13 +245,13 @@
             or
             <shortcut>Cmd+Enter</shortcut>
             on macOS.
-            <b>Exception</b>: If the focus is on an element that uses the
+            <note>Exception: If the focus is on an element that uses the
             <shortcut>Enter</shortcut>
             key (e.g., a text area), the default button is triggered only by
             <shortcut>Ctrl+Enter</shortcut>
             on Windows/Linux and
             <shortcut>Cmd+Enter</shortcut>
-            on macOS.
+            on macOS.</note>
             <p>The default button should always be present in a dialog. Only one button in a dialog can be the default
                 one.</p>
             <p>If the action is dangerous, e.g., can lead to data loss, provide an easy way to undo the command.</p>
@@ -301,60 +272,58 @@
                 Shortcuts.
                 A focused button behavior varies on macOS/Linux and Windows.
             </p>
-            <p>
-                <b>macOS</b>
-            </p>
-            <list>
-                <li>
-                    <p>A focused button is invoked by pressing
-                        <shortcut>Space</shortcut>
-                        . Focused and default buttons are
-                        <b>independent</b>
-                        ,
-                        so when
-                        the focus moves from one button to another, the default button does not change.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Make the second most popular button in the dialog focused.
-                        For example, the
-                        <control>New Window</control>
-                        button in the
-                        <control>Open Project</control>
-                        dialog:
-                        <img src="open_project_dialog.png"
-                             width="448"
-                             alt="A dialog with buttons: 'New Window' (focused), 'Cancel', and 'This Window' (default)."
-                             style="block"/>
-                    </p>
-                </li>
-                <li>
-                    <p>It’s recommended to have one default and one focused button, so that most of the actions can be
-                        triggered using
-                        the keyboard.</p>
-                    <p>
-                        <format color="Red" style="bold">Incorrect</format>
-                    </p>
-                    <img
-                            src="open_project_dialog_incorrect_focus.png"
-                            alt="A dialog with buttons: 'New Window', 'Cancel', and 'This Window' (default and focused)."
-                            width="448"/>
-                    <emphasis>
-                        The
-                        <control>This Window</control>
-                        button is the default and the focused one, while it’s
-                        better to place the focus on the
-                        <control>New Window</control>
-                        button, so that the user can
-                        access both options using the keyboard.
-                    </emphasis>
-                </li>
-            </list>
 
-            <p>
-                <b>Windows/Linux</b>
-            </p>
+           <tabs>
+            <tab title="macOS">
+                <list>
+                    <li>
+                        <p>A focused button is invoked by pressing
+                            <shortcut>Space</shortcut>
+                            . Focused and default buttons are
+                            <b>independent</b>
+                            ,
+                            so when
+                            the focus moves from one button to another, the default button does not change.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Make the second most popular button in the dialog focused.
+                            For example, the
+                            <control>New Window</control>
+                            button in the
+                            <control>Open Project</control>
+                            dialog:
+                            <img src="open_project_dialog.png"
+                                 width="448"
+                                 alt="A dialog with buttons: 'New Window' (focused), 'Cancel', and 'This Window' (default)."
+                                 style="block"/>
+                        </p>
+                    </li>
+                    <li>
+                        <p>It’s recommended to have one default and one focused button, so that most of the actions can be
+                            triggered using
+                            the keyboard.</p>
+                        <p>
+                            <format color="Red" style="bold">Incorrect</format>
+                        </p>
+                        <img
+                                src="open_project_dialog_incorrect_focus.png"
+                                alt="A dialog with buttons: 'New Window', 'Cancel', and 'This Window' (default and focused)."
+                                width="448"/>
+                        <emphasis>
+                            The
+                            <control>This Window</control>
+                            button is the default and the focused one, while it’s
+                            better to place the focus on the
+                            <control>New Window</control>
+                            button, so that the user can
+                            access both options using the keyboard.
+                        </emphasis>
+                    </li>
+                </list>
+            </tab>
+            <tab title="Windows, Linux">
             <list>
                 <li>The focused button is triggered by pressing
                     <shortcut>Enter</shortcut>
@@ -383,10 +352,11 @@
                         .
                     </emphasis>
                     If the focus moves to a control that’s not a button, the original default button is triggered by
-                    <shortcut>Enter</shortcut>
-                    .
+                    <shortcut>Enter</shortcut>.
                 </li>
             </list>
+               </tab>
+           </tabs>
         </chapter>
 
 
@@ -408,6 +378,33 @@
         </chapter>
 
 
+        <chapter title="Hover" id="hover">
+            <p>On hovering over a button, show a tooltip with the shortcut and the action name if it can be clarified.
+                For more details,
+                see <a href="context_help.md">Context help</a>.</p>
+            <table style="none">
+                <tr>
+                    <td width="50%">
+                        <img src="hover_shortcut.png"
+                             alt="A 'Replace' button with a shortcut in hover tooltip"
+                             width="77"/>
+                        <p>
+                            <emphasis>If the action is clear, show the shortcut only.</emphasis>
+                        </p>
+                    </td>
+                    <td width="50%">
+                        <img src="hover_name_shortcut.png"
+                             alt="'Replace' button with an action name and a shortcut in hover tooltip"
+                             width="155"/>
+                        <p>
+                            <emphasis>If the action can be clarified, show the action name and the shortcut.</emphasis>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </chapter>
+    </chapter>
+    <chapter title="Standard buttons" id="standard-buttons">
         <chapter title="Cancel" id="cancel">
             <p>The
                 <emphasis>Cancel</emphasis>
@@ -445,6 +442,24 @@
                 dialog when clicking it. For more details, see <a href="context_help.md">Context help</a>.
                 <br/>
                 <img src="helpButton_mac.png" alt="A question mark in the circle button" width="21"/></p>
+        </chapter>
+        <chapter title="Close">
+            <p>Use the
+                <emphasis>Close</emphasis>
+                label only if nothing can be changed in the dialog and there is no confirmation button, for example, in
+                the
+                <ui-path>Help | My Productivity</ui-path>
+                dialog.
+                In all other cases, use the
+                <control>Cancel</control>
+                button.
+            </p>
+            <p>Do
+                <b>not</b>
+                add an icon to the button. The main purpose of an icon is to quickly find a familiar action in a packed
+                toolbar or menu. Usually, no more than 3 buttons are placed nearby, their labels can be scanned quickly,
+                and icons are not required.
+            </p>
         </chapter>
     </chapter>
     <chapter title="Sizes and placement" id="sizes-and-placement">

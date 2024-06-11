@@ -246,7 +246,7 @@ This allows supporting both UI variants at the same time, depending on what the 
 All New UI icons must be mapped in the <path>\$PluginName\$IconMappings.json</path> mapping file.
 
 For each New UI icon, add a mapping entry inside `expui` block.
-Each directory starts a new block containing all its entries (see linked `MavenIconMappins.json` sample from above).
+Each directory starts a new block containing all its entries (see linked `MavenIconMappings.json` sample from above).
 
 In this example, the icon root directory is named <path>icons</path>:
 ```json

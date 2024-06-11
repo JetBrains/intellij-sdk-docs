@@ -12,6 +12,8 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ### IntelliJ Platform 2024.2
 
+Dumb-aware intentions and quick-fixes
+: Mark implementations as enabled during indexing, see [](indexing_and_psi_stubs.md#DumbAwareAPI).
 
 ## 2024.1
 

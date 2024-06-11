@@ -42,6 +42,7 @@ Implementations of certain [](plugin_extension_points.md) can be marked as avail
 Such Extension Points are marked with _DumbAware_ tag in [](intellij_platform_extension_point_list.md).
 Commonly used include [`CompletionContributor`](code_completion.md), [`(External)Annotator`](syntax_highlighting_and_error_highlighting.md#annotator) and various
 [run configuration](run_configurations.md) EPs.
+Since 2024.2, also [intentions](code_intentions.md) and [quick-fixes](quick_fix.md).
 
 For [](basic_action_system.md) available during Dumb Mode, extend [`DumbAwareAction`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/project/DumbAwareAction.java).
 

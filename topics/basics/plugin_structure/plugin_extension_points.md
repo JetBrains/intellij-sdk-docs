@@ -61,6 +61,7 @@ The plugin that contributes to the extension point will read those properties fr
 
 If extension implementations are filtered according to [dumb mode](indexing_and_psi_stubs.md#dumb-mode), the base class should be
 marked with [`PossiblyDumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/PossiblyDumbAware.java) to highlight this.
+Use [`DumbService.getDumbAwareExtensions()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbService.kt) to retrieve dumb-aware implementations.
 
 Base classes for extensions requiring a key:
 

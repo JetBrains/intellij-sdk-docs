@@ -74,7 +74,7 @@ The wizard can be used for both DevKit-based and Gradle-based plugins.
    It is a good practice to include the name of the plugin in the created theme name.
 3. Check the <control>Dark theme</control> checkbox if the created theme should be based on IntelliJ IDEA _Darcula_ theme.
    Otherwise, the _Light_ theme will be used as the base.
-4. Click <control>OK</control> button to generate the [theme description file](themes_customize.md#introduction-to-theme-description-file-syntax) with <path>$THEME_NAME$.theme.json</path> name. The generated theme will be automatically configured in the <path>plugin.xml</path> file.
+4. Click <control>OK</control> button to generate the [theme description file](themes_customize.md#introduction-to-theme-description-file-syntax) with <path>\$THEME_NAME\$.theme.json</path> name. The generated theme will be automatically configured in the <path>plugin.xml</path> file.
 
 </procedure>
 

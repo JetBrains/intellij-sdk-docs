@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # PhpStorm Plugin Development
 
@@ -57,12 +57,12 @@ The table below summarizes the [](tools_gradle_intellij_plugin.md) attributes to
 Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
 To see how these attributes appear in the Gradle build script for PhpStorm, see [](dev_alternate_products.md#configuring-gradle-build-script-using-the-intellij-idea-product-attribute).
 
-| `gradle-intellij-plugin` Attribute                                               | Attribute Value                                                                                                                                                                                                               |
-|----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type)       | `IU` for IntelliJ IDEA Ultimate. The required PHP plugin isn't compatible with IntelliJ IDEA Community Edition.                                                                                                               |
-| [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) | Set to the same `IU` BRANCH.BUILD as the PhpStorm target version, e.g. `193.5233.102`.                                                                                                                                        |
-| [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) | <p>`com.jetbrains.php:193.5233.102` for the PHP plugin.</p><p>See below for PHP plugin version information.</p>                                                                                                               |
-| [`runIde.ideDir`](tools_gradle_intellij_plugin.md#tasks-runide-idedir)           | <p>Path to locally installed target version of PhpStorm. For example, on macOS:</p><p><path>/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/193.5233.101/PhpStorm.app/Contents</path>.</p> |
+| `gradle-intellij-plugin` Attribute                                               | Attribute Value                                                                                                                                                                                                                 |
+|----------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type)       | `IU` for IntelliJ IDEA Ultimate. The required PHP plugin isn't compatible with IntelliJ IDEA Community Edition.                                                                                                                 |
+| [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) | Set to the same `IU` BRANCH.BUILD as the PhpStorm target version, e.g. `193.5233.102`.                                                                                                                                          |
+| [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) | <p>`com.jetbrains.php:193.5233.102` for the PHP plugin.</p><p>See below for PHP plugin version information.</p>                                                                                                                 |
+| [`runIde.ideDir`](tools_gradle_intellij_plugin.md#tasks-runide-idedir)           | <p>Path to locally installed target version of PhpStorm. For example, on macOS:</p><p><path>/Users/\$USERNAME\$/Library/Application Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/193.5233.101/PhpStorm.app/Contents</path>.</p> |
 
 The PHP plugin version is explicitly declared because it isn't bundled with IntelliJ IDEA Ultimate Edition.
 Select a [version](https://plugins.jetbrains.com/plugin/6610-php/versions) of the PHP plugin compatible with the [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version).

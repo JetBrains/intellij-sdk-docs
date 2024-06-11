@@ -17,7 +17,7 @@ To develop plugins, you will need to use _IntelliJ IDEA Ultimate Edition_ versio
 
 Setup [Gradle build script](configuring_plugin_project.md#intellij-platform-configuration) to target IntelliJ IDEA Ultimate, then [add dependency](plugin_dependencies.md) to bundled Spring plugin with ID `com.intellij.spring`.
 
-Please use only Spring-related functionality exposed in <path>spring-api.jar</path> (sources are provided in <path>$IDEA_HOME$/lib/src/src_spring-boot-openapi.zip</path>) in your plugin.
+Please use only Spring-related functionality exposed in <path>spring-api.jar</path> (sources are provided in <path>\$IDEA_HOME\$/lib/src/src_spring-boot-openapi.zip</path>) in your plugin.
 Using any other "internal" (implementation) classes from Spring plugin itself (<path>spring.jar</path>) is _not_ supported.
 
 ### plugin.xml
@@ -173,7 +173,7 @@ Spring Boot API allows extending/accessing Spring Boot specific support in the I
 
 ### Setting Up
 [Add dependency](plugin_dependencies.md) to bundled Spring Boot plugin with ID `com.intellij.spring.boot`.
-Sources for Spring Boot API are available in <path>$IDEA_HOME$/lib/src/src_spring-boot-openapi.zip</path>.
+Sources for Spring Boot API are available in <path>\$IDEA_HOME\$/lib/src/src_spring-boot-openapi.zip</path>.
 
 ### Update plugin.xml
 Add `<depends>com.intellij.spring.boot</depends>` to your <path>[plugin.xml](plugin_configuration_file.md)</path> to require "Spring Boot" plugin to be activated.

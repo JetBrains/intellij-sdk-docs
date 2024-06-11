@@ -1,6 +1,6 @@
-# Postfix Templates
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# Postfix Templates
 
 <link-summary>Postfix templates implement possibility to modify or wrap the existing code in additional constructs without navigating the caret back.</link-summary>
 
@@ -39,13 +39,13 @@ class and implementing the key methods:
 ## Postfix Template Description
 
 All postfix templates must provide descriptions and examples showing the code before and after a template is expanded.
-The files describing the template must be placed in the plugin's <path>resources</path> in the <path>postfixTemplates/_$TEMPLATE_NAME$_</path> where the _$TEMPLATE_NAME$_ directory must match the simple name of the template class,
+The files describing the template must be placed in the plugin's <path>resources</path> in the <path>postfixTemplates/\$TEMPLATE_NAME\$</path> where the _\$TEMPLATE_NAME\$_ directory must match the simple name of the template class,
 e.g., for a template implemented in `com.example.IntroduceVariablePostfixTemplate` class, the directory name should be named as <path>IntroduceVariablePostfixTemplate</path>.
 
 Providing the description explaining the template purpose and context details is achieved by creating the <path>description.html</path> file.
 
-Providing the code snippets showing the template in "before" and "after" expanding states is achieved via the <path>before._$EXTENSION$_.template</path> and <path>after._$EXTENSION$_.template</path> files accordingly.
-The _$EXTENSION$_ placeholder should be replaced with the extension of the template language, e.g., <path>before.kt.template</path> for a Kotlin template.
+Providing the code snippets showing the template in "before" and "after" expanding states is achieved via the <path>before.\$EXTENSION\$.template</path> and <path>after.\$EXTENSION\$.template</path> files accordingly.
+The _\$EXTENSION\$_ placeholder should be replaced with the extension of the template language, e.g., <path>before.kt.template</path> for a Kotlin template.
 
 The code snippets included in the example files can use the `<spot>` marker, which should surround the most important code parts, e.g., expression to expand and position of the caret after expanding.
 Marked parts will be highlighted in the <ui-path>Settings | Editor | General | Postfix Completion</ui-path> settings page, making it easier for users to understand how a template is expanded, e.g.:

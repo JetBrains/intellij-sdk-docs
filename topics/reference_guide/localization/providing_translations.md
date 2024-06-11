@@ -44,7 +44,7 @@ Only a single language pack can be installed at the same time, and restart is re
 See the [translated elements](#translated-elements) list for the elements possible to translate.
 All the elements should be located in exactly the same paths as in original locations in their JAR files.
 
-For example, if the original location of a message bundle is <path>$PLUGIN_JAR$/messages/AbcBundle.properties</path>, it must be located in <path>$LANGUAGE_PACK_JAR$/messages/AbcBundle.properties</path>.
+For example, if the original location of a message bundle is <path>\$PLUGIN_JAR\$/messages/AbcBundle.properties</path>, it must be located in <path>\$LANGUAGE_PACK_JAR\$/messages/AbcBundle.properties</path>.
 
 It is allowed to organize them within [localization directories or with file name language suffixes](#bundled-translations-structure), but it is unnecessary as language pack can define only a single language.
 

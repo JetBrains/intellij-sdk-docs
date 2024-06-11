@@ -58,7 +58,7 @@ For [](tools_intellij_platform_gradle_plugin.md), use [`printBundledPlugins`](to
 <tab title="DevKit or non-public plugins">
 
 When using [DevKit](developing_themes.md) and for non-public plugins, locate the plugin's main JAR file containing <path>META-INF/plugin.xml</path> descriptor with [`<id>`](plugin_configuration_file.md#idea-plugin__id) tag (or [`<name>`](plugin_configuration_file.md#idea-plugin__name) if not specified).
-Bundled plugins are located in <path>$PRODUCT_ROOT$/plugins/$PLUGIN_NAME$/lib/$PLUGIN_NAME$.jar</path>.
+Bundled plugins are located in <path>\$PRODUCT_ROOT\$/plugins/\$PLUGIN_NAME\$/lib/\$PLUGIN_NAME\$.jar</path>.
 
 </tab>
 

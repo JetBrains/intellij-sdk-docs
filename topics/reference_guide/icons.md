@@ -230,8 +230,8 @@ This allows supporting both UI variants at the same time, depending on what the 
 
 1. Create a new <path>expui</path> directory in the icon root directory ([Reference](#organizing-icons)).
 2. Copy all icons for the New UI into this directory.
-3. Create an empty <path>$PluginName$IconMappings.json</path> mapping file in the resources root directory.
-4. Register <path>$PluginName$IconMappings.json</path> in <path>plugin.xml</path> via the `com.intellij.iconMapper` extension point.
+3. Create an empty <path>\$PluginName\$IconMappings.json</path> mapping file in the resources root directory.
+4. Register <path>\$PluginName\$IconMappings.json</path> in <path>plugin.xml</path> via the `com.intellij.iconMapper` extension point.
 
 </procedure>
 
@@ -243,7 +243,7 @@ This allows supporting both UI variants at the same time, depending on what the 
 
 ### Mapping Entries
 
-All New UI icons must be mapped in the <path>$PluginName$IconMappings.json</path> mapping file.
+All New UI icons must be mapped in the <path>\$PluginName\$IconMappings.json</path> mapping file.
 
 For each New UI icon, add a mapping entry inside `expui` block.
 Each directory starts a new block containing all its entries (see linked `MavenIconMappins.json` sample from above).

@@ -226,7 +226,7 @@ To exclude a group from appearing in <ui-path>Help | Find Action</ui-path> resul
 > to highlight such problems.
 >
 
-Action and group localization use resource bundles containing property files named <path>$NAME$Bundle.properties</path>, each file consisting of `key=value` pairs.
+Action and group localization use resource bundles containing property files named <path>\$NAME\$Bundle.properties</path>, each file consisting of `key=value` pairs.
 The [`action_basics`](%gh-sdk-samples-master%/action_basics) plugin demonstrates using a resource bundle to localize the group and action entries added to the Editor Popup Menu.
 
 When localizing actions and groups, the `text` and `description` attributes are not declared in <path>plugin.xml</path>.

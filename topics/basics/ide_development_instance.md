@@ -1,6 +1,6 @@
-# IDE Development Instance
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# IDE Development Instance
 
 <link-summary>Overview of IDE instance used for running and debugging a plugin during development.</link-summary>
 
@@ -123,8 +123,8 @@ This information is stored in a different location than for the [installed IDE i
 <tab title="Gradle" group-key="gradle">
 
 The default Sandbox Home location in a plugin Gradle project is:
-* Windows: <path>$PROJECT_DIRECTORY$\\build\\idea-sandbox</path>
-* Linux/macOS: <path>$PROJECT_DIRECTORY$/build/idea-sandbox</path>
+* Windows: <path>\$PROJECT_DIRECTORY\$\\build\\idea-sandbox</path>
+* Linux/macOS: <path>\$PROJECT_DIRECTORY\$/build/idea-sandbox</path>
 
 The Sandbox Home location can be configured with the [`intellij.sandboxDir`](tools_gradle_intellij_plugin.md#intellij-extension-sandboxdir) property.
 
@@ -136,9 +136,9 @@ For DevKit-based plugins, the default <control>Sandbox Home</control> location i
 See the [Setting Up a Theme Development Environment](setting_up_theme_environment.md#add-intellij-platform-plugin-sdk) for information about how to set up Sandbox Home in IntelliJ Platform SDK.
 
 The default Sandbox Home directory location is:
-* Windows: <path>$USER_HOME$\\.$PRODUCT_SYSTEM_NAME$$PRODUCT_VERSION$\\system\\plugins-sandbox\\</path>
-* Linux: <path>~/.$PRODUCT_SYSTEM_NAME$$PRODUCT_VERSION$/system/plugins-sandbox/</path>
-* macOS: <path>~/Library/Caches/$PRODUCT_SYSTEM_NAME$$PRODUCT_VERSION$/plugins-sandbox/</path>
+* Windows: <path>\$USER_HOME\$\\.\$PRODUCT_SYSTEM_NAME\$\$PRODUCT_VERSION\$\\system\\plugins-sandbox\\</path>
+* Linux: <path>~/.\$PRODUCT_SYSTEM_NAME\$\$PRODUCT_VERSION\$/system/plugins-sandbox/</path>
+* macOS: <path>~/Library/Caches/\$PRODUCT_SYSTEM_NAME\$\$PRODUCT_VERSION\$/plugins-sandbox/</path>
 
 </tab>
 </tabs>

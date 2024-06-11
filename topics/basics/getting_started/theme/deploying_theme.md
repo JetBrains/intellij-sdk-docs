@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Deploying a Theme
 
@@ -10,8 +10,8 @@ The deployment process prepares the plugin artifact that can be installed in IDE
 
 <procedure title="Deploying Theme Plugin">
 
-1. Build the theme by invoking <ui-path>Build | Build Project</ui-path> or <ui-path>Build | Build Module $MODULE_NAME$</ui-path>.
-2. Create the deployment artifact by invoking <ui-path>Build | Prepare Plugin Module $MODULE_NAME$ for Deployment</ui-path>.
+1. Build the theme by invoking <ui-path>Build | Build Project</ui-path> or <ui-path>Build | Build Module \$MODULE_NAME\$</ui-path>.
+2. Create the deployment artifact by invoking <ui-path>Build | Prepare Plugin Module \$MODULE_NAME\$ for Deployment</ui-path>.
 
    The resulting theme JAR file will be created in the project or module directory.
 

@@ -178,7 +178,7 @@ See the [](bundling_plugin_openapi_sources.md) section for details.
 ### The Plugin Verifier download directory is set to [...], but downloaded IDEs were also found in [...]
 
 With the `1.10.0` release, the [`runPluginVerifier`](tools_gradle_intellij_plugin.md#tasks-runpluginverifier) task uses the `XDG_CACHE_HOME` environment variable (see [XDG Base Directory](https://wiki.archlinux.org/title/XDG_Base_Directory) for more details) to resolve the default directory for downloaded IDEs – instead of the user's home directory.
-We recommend moving your existing IDEs stored i.e., in <path>~/.pluginVerifier/ides/</path> directory into <path>$XDG_CACHE_HOME/pluginVerifier/ides</path> to avoid downloading them once again.
+We recommend moving your existing IDEs stored i.e., in <path>~/.pluginVerifier/ides/</path> directory into <path>\$XDG_CACHE_HOME\$/pluginVerifier/ides</path> to avoid downloading them once again.
 
 In case you want to keep the downloaded archives in the previous location, specify the given path explicitly to the [`runPluginVerifier.downloadDir`](tools_gradle_intellij_plugin.md#tasks-runpluginverifier-downloaddir) property:
 

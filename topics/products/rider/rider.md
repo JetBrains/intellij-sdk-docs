@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Rider Plugin Development
 
@@ -36,7 +36,7 @@ The article is a good counterpoint to the ReSharper DevGuide content, which disc
 Rider plugins may introduce their own <path>.DotSettings</path> files with customized [ReSharper settings](https://www.jetbrains.com/help/resharper/Sharing_Configuration_Options.html).
 This is useful e.g. when a plugin brings its own file templates.
 
-For the ReSharper part to pick these settings, the settings files should be available in the plugin JAR file under the path <path>dotnet/Extensions/$backend-plugin-id$/settings</path>, where `backend-plugin-id` is calculated according to the following rules:
+For the ReSharper part to pick these settings, the settings files should be available in the plugin JAR file under the path <path>dotnet/Extensions/\$backend-plugin-id\$/settings</path>, where `backend-plugin-id` is calculated according to the following rules:
 
 - if the IntelliJ plugin id (the [`<id>`](plugin_configuration_file.md#idea-plugin__id) element of the <path>[plugin.xml](plugin_configuration_file.md)</path>) includes a dot, then `backend-plugin-id` is the same as the IntelliJ plugin id;
 - otherwise, the `backend-plugin-id` is a concatenation of the IntelliJ plugin vendor name (the [`<vendor>`](plugin_configuration_file.md#idea-plugin__vendor) element of the <path>plugin.xml</path>) and the IntelliJ plugin id.

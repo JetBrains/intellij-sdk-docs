@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # External Builder API and Plugins
 
@@ -47,7 +47,7 @@ To pass custom data between the invocation of the same builder between multiple 
 
 The external builder process uses the standard Java [services](https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html) mechanism to support plugins.
 There are several service interfaces (e.g. [`BuilderService`](%gh-ic%/jps/jps-builders/src/org/jetbrains/jps/incremental/BuilderService.java) which can be implemented in plugins to extend the builder functionality.
-An implementation of a service needs to be registered by creating the <path>META-INF/services/$service-interface-fqn$</path> file containing the implementation class's qualified name.
+An implementation of a service needs to be registered by creating the <path>META-INF/services/\$service-interface-fqn\$</path> file containing the implementation class's qualified name.
 E.g. `BuilderService` implementations are registered in <path>META-INF/services/org.jetbrains.jps.incremental.BuilderService</path> file.
 These files don't have extensions, so you need to map corresponding patterns to text files in IDE settings.
 
@@ -55,7 +55,7 @@ These files don't have extensions, so you need to map corresponding patterns to 
 
 Sources of a plugin for External Builder should be put in a separate module.
 By convention, such a module has a name '...-jps-plugin', and its sources are placed under the <path>jps-plugin</path> directory in the main plugin directory.
-Use `com.intellij.compileServer.plugin` extension point to add the plugin to the classpath of the external build process, the plugin JAR should be named <path>$JPS_module_name$.jar</path>. <ui-path>Build | Prepare Plugin Module for Deployment</ui-path> action will automatically pack the 'jps-plugin' part to a separate JAR accordingly.
+Use `com.intellij.compileServer.plugin` extension point to add the plugin to the classpath of the external build process, the plugin JAR should be named <path>\$JPS_module_name\$.jar</path>. <ui-path>Build | Prepare Plugin Module for Deployment</ui-path> action will automatically pack the 'jps-plugin' part to a separate JAR accordingly.
 
 See [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.compileServer.plugin) for samples.
 
@@ -91,14 +91,14 @@ The build process has built-in self-CPU-profiling capabilities.
 <procedure title="Enabling CPU profiling for build process">
 
 1. _2023.2+_ Install [YourKit Profiler for IDE Performance Testing](https://plugins.jetbrains.com/plugin/20892-yourkit-profiler-for-ide-performance-testing) plugin
-2. Copy <path>$IDE_HOME$/lib/yjp-controller-api-redist.jar</path> and <path>$IDE_HOME$/bin/yjpagent.*</path> files to <path>$IDE_SYSTEM_DIR$/compile-server</path>
+2. Copy <path>\$IDE_HOME\$/lib/yjp-controller-api-redist.jar</path> and <path>\$IDE_HOME\$/bin/yjpagent.*</path> files to <path>\$IDE_SYSTEM_DIR\$/compile-server</path>
 3. In <ui-path>Settings | Build, Execution, Deployment | Compiler | Java Compiler</ui-path> add `-Dprofiling.mode=true` in <control>Additional command line parameters</control>
 4. Make sure <control>Build project automatically</control> in <ui-path>Settings | Build, Execution, Deployment | Compiler</ui-path> is disabled
 
 </procedure>
 
-After this, every build process run should result in a CPU snapshot stored in <path>$USER_HOME$/Snapshots</path> directory.
-Snapshots are named like <path>ExternalBuild\-\$DATE$.snapshot</path>.
+After this, every build process run should result in a CPU snapshot stored in <path>\$USER_HOME\$/Snapshots</path> directory.
+Snapshots are named like <path>ExternalBuild\-\$DATE\$.snapshot</path>.
 
 Specifying `-Dprofiling.mode=false` will turn profiling off.
 Please capture a couple of snapshots for the situations you believe the build should work much faster than it does.

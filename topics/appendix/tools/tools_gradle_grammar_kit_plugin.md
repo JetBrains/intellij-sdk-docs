@@ -92,9 +92,7 @@ grammarKit {
 #### grammarKitRelease
 {#grammar-kit-extension-grammarkitrelease}
 
-The release version of [Grammar-Kit](https://github.com/JetBrains/Grammar-Kit) to use.
-
-> Version must be specified without `v` prefix.
+The release version of the [Grammar-Kit](https://github.com/JetBrains/Grammar-Kit) to use.
 
 {style="narrow"}
 Type

@@ -15,6 +15,9 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 Dumb-aware intentions and quick-fixes
 : Mark implementations as enabled during indexing, see [](indexing_and_psi_stubs.md#DumbAwareAPI).
 
+Testing: `ProjectActivity`
+: Executed asynchronously now during tests, see FAQ entry [](testing_faq.md#how-to-handle-projectactivity).
+
 ## 2024.1
 
 ### IntelliJ Platform 2024.1

@@ -78,6 +78,8 @@ Use _ordered_ collections or [`UsefulTestCase.assertUnorderedCollection()`](%gh-
 Code deferring execution (e.g., via `Application.invokeLater()`) might not run during test execution (and possibly fails in production, too).
 Use `Application.invokeLater(runnable, myProject.getDisposed())`.
 
+When targeting 2024.2 or later, see also [](#how-to-handle-projectactivity).
+
 ### How to avoid test failure when using resources?
 
 In some situations, added or changed files (e.g. XML DTDs provided by a plugin) are not refreshed in [](virtual_file_system.md).
@@ -216,5 +218,11 @@ If a required library is an unpublished JAR file, use [`PsiTestUtil.addLibrary()
 PsiTestUtil.addLibrary(model,
     "internal-library", getTestDataPath(), "internal-library-2.0.jar");
 ```
+
+### How to handle `ProjectActivity`?
+
+Since 2024.2, [`ProjectActivity`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) are no longer awaited on project open in tests.
+If tests depend on some job done in `ProjectActivity` (e.g., automatic project re-import), implement a dedicated [event/listener](messaging_infrastructure.md) and wait for it explicitly.
+As a workaround, use [`StartupActivityTestUtil.waitForProjectActivitiesToComplete()`](%gh-ic-master%/platform/testFramework/src/com/intellij/testFramework/StartupActivityTestUtil.kt).
 
 <include from="snippets.md" element-id="missingContent"/>

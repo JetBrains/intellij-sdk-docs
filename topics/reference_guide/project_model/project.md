@@ -69,7 +69,7 @@ Messages.showInfoMessage("Source roots for the " + projectName +
     " plugin:\n" + sourceRootsList, "Project Properties");
 ```
 
-### Checking if a File Belongs to a Project
+### Checking If a File Belongs to a Project
 
 Use [`ProjectFileIndex`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) to get this information:
 

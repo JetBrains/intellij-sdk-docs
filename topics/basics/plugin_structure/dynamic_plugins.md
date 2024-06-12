@@ -63,7 +63,7 @@ Application, project, and module [services](plugin_services.md) declared with `o
 
 Loading/Unloading a plugin clears all cached values created using [`CachedValuesManager`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/CachedValuesManager.java).
 
-### Do not Store PSI
+### Don't Store PSI
 
 Do not store references to PSI elements in objects which can survive plugin loading or unloading; use [`SmartPsiElementPointer`](%gh-ic%/platform/core-api/src/com/intellij/psi/SmartPsiElementPointer.java) instead.
 

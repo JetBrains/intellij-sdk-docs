@@ -99,7 +99,7 @@ In the `YYYY.R` versioning scheme, the `R` part starts at 1.
 | [232](https://github.com/JetBrains/intellij-community/tree/232) | 2023.2                                                                                                                                   |
 | [231](https://github.com/JetBrains/intellij-community/tree/231) | 2023.1                                                                                                                                   |
 
-#### Earlier versions
+#### Earlier Versions
 {collapsible="true"}
 
 | Branch number                                                   | IntelliJ Platform version                                                                                                                |

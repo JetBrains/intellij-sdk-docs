@@ -1,6 +1,6 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# Internal Actions - UI Inspector
+# Internal Actions – UI Inspector
 
 <link-summary>UI Inspector allows checking properties of a component selected in the frame of running IDE instance.</link-summary>
 
@@ -25,14 +25,14 @@ The _UI Inspector_ displays the icon details:
 
 ![Internal Icon Info](internal_ui_inspector_icon_info.png)
 
-## added-at Property
+## `added-at` Property
 
 Sometimes, inspecting complex component's properties is not enough to understand how the component was created and configured.
 _UI Inspector_ gives the possibility of finding the code where the selected component was added, which makes it much easier to understand which APIs can be used to build custom components with similar complexity.
 
 To find the place were component was added, select the <control>added-at</control> property to show the stacktrace:
 
-![added-at Stacktrace](internal_ui_inspector_added_at.png)
+![added-at stack trace](internal_ui_inspector_added_at.png)
 
 ## Specific Component Properties
 

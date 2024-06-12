@@ -206,7 +206,7 @@ runPluginVerifier {
 </tabs>
 
 
-### JaCoCo reports 0% coverage
+### JaCoCo Reports 0% Coverage
 
 The Gradle IntelliJ Plugin, when targeting the IntelliJ SDK `2022.1+`, uses the `PathClassLoader` class loader by the following system property:
 

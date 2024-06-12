@@ -80,7 +80,7 @@ See [Migrating from Gradle IntelliJ Plugin](tools_intellij_platform_gradle_plugi
 
 See the [](bundling_plugin_openapi_sources.md) section for details.
 
-### JaCoCo reports 0% coverage
+### JaCoCo Reports 0% Coverage
 
 The Gradle IntelliJ Plugin, when targeting the IntelliJ SDK `2022.1+`, uses the `PathClassLoader` class loader by the following system property:
 

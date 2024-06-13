@@ -27,8 +27,7 @@ Use [Icons list](https://intellij-icons.jetbrains.design) to browse existing ico
 Platform icons are located in [`AllIcons`](%gh-ic%/platform/util/ui/src/com/intellij/icons/AllIcons.java).
 Icons from plugins are located in the corresponding `<PLUGIN_NAME>Icons` class (e.g., [`GithubIcons`](%gh-ic%/plugins/github/gen/org/jetbrains/plugins/github/GithubIcons.java)).
 
-If custom icons are required, please refer to detailed [design guide](icons_style.md).
-To generate SVG icons suited for the IntelliJ-based IDEs, also consider third-party web tool [IntelliJ Icon Generator](https://bjansen.github.io/intellij-icon-generator/).
+If custom icons are required, refer to detailed [design guide](icons_style.md).
 
 ## Organizing Icons
 

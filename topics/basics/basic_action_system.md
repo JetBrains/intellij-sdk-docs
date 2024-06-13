@@ -41,28 +41,42 @@ The IntelliJ Platform calls methods of actions when a user interacts with a menu
 ### Principal Implementation Overrides
 
 Every IntelliJ Platform action should override `AnAction.update()` and must override `AnAction.actionPerformed()`.
-* An action's method `AnAction.update()` is called by the IntelliJ Platform framework to update an action state.
-  The state (enabled, visible) of an action determines whether the action is available in the UI.
-  An object of the [`AnActionEvent`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java) type is passed to this method and contains information about the current context for the action.
-  Actions are made available by changing state in the [`Presentation`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/Presentation.java) object associated with the event context.
-  As explained in [Overriding the `AnAction.update()`  Method](#overriding-the-anactionupdate-method), it is vital `update()` methods _execute quickly_ and return execution to platform.
-* `AnAction.getActionUpdateThread()` (2022.3+) return an [`ActionUpdateThread`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionUpdateThread.java),
-  which specifies if the `update()` method is called on a [background thread (BGT) or the event-dispatching thread (EDT)](general_threading_rules.md).
-  The preferred method is to run the update on the BGT, which has the advantage of guaranteeing application-wide read access to
-  [PSI](psi.md), [the virtual file system](virtual_file_system.md) (VFS), or [project models](project_structure.md).
-  Actions that run the update session on the BGT should not access the Swing component hierarchy directly.
-  Conversely, actions that specify to run their update on EDT must not access PSI, VFS, or project data but have access to Swing components and other UI models.
-  All accessible data is provided by the `DataContext` as explained in [](#determining-the-action-context).
-  When switching from BGT to EDT is absolutely necessary, actions can use `AnActionEvent.getUpdateSession()` to
-  access the [`UpdateSession`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/UpdateSession.java) and
-  then call `UpdateSession.compute()` to run a function on EDT.
-  Inspection <ui-path>Plugin DevKit | Code | ActionUpdateThread is missing</ui-path> highlights missing implementation of
-  `AnAction.getActionUpdateThread()` (2022.3+).
-* An action's method `AnAction.actionPerformed()` is called by the IntelliJ Platform if available and selected by the user.
-  This method does the heavy lifting for the action: it contains the code executed when the action gets invoked.
-  The `actionPerformed()` method also receives `AnActionEvent` as a parameter, which is used to access any context data like projects, files, selection, etc.
-  See [Overriding the `AnAction.actionPerformed()` Method](#overriding-the-anactionactionperformed-method) for more information.
 
+#### `AnAction.update()`
+
+An action's method `AnAction.update()` is called by the IntelliJ Platform framework to update an action state.
+The state (enabled, visible) of an action determines whether the action is available in the UI.
+An object of the [`AnActionEvent`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java) type is passed to this method and contains information about the current context for the action.
+
+Actions are made available by changing state in the [`Presentation`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/Presentation.java) object associated with the event context.
+As explained in [Overriding the `AnAction.update()`  Method](#overriding-the-anactionupdate-method), it is vital `update()` methods _execute quickly_ and return execution to platform.
+
+#### `AnAction.getActionUpdateThread()`
+<primary-label ref="2022.3"/>
+
+`AnAction.getActionUpdateThread()` returns an [`ActionUpdateThread`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionUpdateThread.java),
+which specifies if the `update()` method is called on a [background thread (BGT) or the event-dispatching thread (EDT)](general_threading_rules.md).
+The preferred method is to run the update on the BGT, which has the advantage of guaranteeing application-wide read access to
+[PSI](psi.md), [the virtual file system](virtual_file_system.md) (VFS), or [project models](project_structure.md).
+Actions that run the update session on the BGT should not access the Swing component hierarchy directly.
+Conversely, actions that specify to run their update on EDT must not access PSI, VFS, or project data but have access to Swing components and other UI models.
+
+All accessible data is provided by the `DataContext` as explained in [](#determining-the-action-context).
+When switching from BGT to EDT is absolutely necessary, actions can use `AnActionEvent.getUpdateSession()` to
+access the [`UpdateSession`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/UpdateSession.java) and
+then call `UpdateSession.compute()` to run a function on EDT.
+
+Inspection <ui-path>Plugin DevKit | Code | ActionUpdateThread is missing</ui-path> highlights missing implementation of
+`AnAction.getActionUpdateThread()`.
+
+#### `AnAction.actionPerformed()`
+
+An action's method `AnAction.actionPerformed()` is called by the IntelliJ Platform if available and selected by the user.
+This method does the heavy lifting for the action: it contains the code executed when the action gets invoked.
+The `actionPerformed()` method also receives `AnActionEvent` as a parameter, which is used to access any context data like projects, files, selection, etc.
+See [Overriding the `AnAction.actionPerformed()` Method](#overriding-the-anactionactionperformed-method) for more information.
+
+#### Miscellaneous
 There are other methods to override in the `AnAction` class, such as changing the default `Presentation` object for the action.
 There is also a use case for overriding action constructors when registering them with dynamic action groups, demonstrated in the [Grouping Actions](grouping_action.md#adding-child-actions-to-the-dynamic-group) tutorial.
 
@@ -216,8 +230,8 @@ To allow using alternative names in search, add one or more [`<synonym>`](plugin
 To provide a localized synonym, specify `key` instead of `text` attribute.
 
 #### Disabling Search for Group
+<primary-label ref="2020.3"/>
 
-_2020.3_
 To exclude a group from appearing in <ui-path>Help | Find Action</ui-path> results (e.g., <control>New...</control> popup), specify `searchable="false"`.
 
 #### Localizing Actions and Groups

@@ -31,6 +31,7 @@ Detailed information on implementing these EPs can be found in the [](#documenta
 {title="Targeting IDEs before 2023.1" style="note"}
 
 ## Documentation Target API
+<primary-label ref="2023.1"/>
 
 Custom language developers have the flexibility to select from three distinct EPs for providing documentation to their users.
 To ensure clarity and avoid confusion, we provide a high-level summary of the overall approach,

@@ -212,10 +212,7 @@ Only the settings that are not specific to a given machine should be shared, e.g
 If a component contains both shareable and non-shareable data, it should be split into two separate components.
 
 #### Settings Sync Plugin
-
-> The _Settings Sync_ plugin is available starting with version 2022.3.
->
-{style="note"}
+<primary-label ref="2022.3"/>
 
 To include a plugin's component state in the _Settings Sync_ plugin synchronization, the following requirements must be met:
 - The `RoamingType` is defined via the `roamingType` attribute of the `@Storage` annotation and is not equal to `DISABLED`.

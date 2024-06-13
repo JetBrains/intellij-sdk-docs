@@ -69,6 +69,7 @@ The <ui-path>Navigate | Declaration or Usages</ui-path> action for such referenc
 The implementation of `multiResolve()` can be also based on [`PsiScopeProcessor`](%gh-ic%/platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java), and can collect all valid targets for the reference instead of stopping when the first valid target is found.
 
 ## Additional Highlighting
+<primary-label ref="2022.2"/>
 
 Implement [`HighlightedReference`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/highlighting/HighlightedReference.java) to add additional highlighting for non-obvious places (e.g., inside String literals).
-Such references will automatically be highlighted using <control>String | Highlighted reference</control> text attributes from <ui-path>Settings | Editor | Color Scheme | Language Defaults</ui-path> (_2022.2_).
+Such references will automatically be highlighted using <control>String | Highlighted reference</control> text attributes from <ui-path>Settings | Editor | Color Scheme | Language Defaults</ui-path>.

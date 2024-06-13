@@ -70,8 +70,7 @@ or
 [`OverridingMethodsSearch.search()`](%gh-ic%/java/java-indexing-api/src/com/intellij/psi/search/searches/OverridingMethodsSearch.java)
 
 ### How do I check the presence of a JVM library?
-
-_2023.2_
+<primary-label ref="2023.2"/>
 
 Use dedicated (and heavily cached) methods from [`JavaLibraryUtil`](%gh-ic%/java/openapi/src/com/intellij/java/library/JavaLibraryUtil.java):
 

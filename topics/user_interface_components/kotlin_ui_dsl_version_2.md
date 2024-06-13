@@ -1,6 +1,7 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Kotlin UI DSL Version 2
+<primary-label ref="2021.3"/>
 
 <link-summary>Kotlin DSL for creating UI forms with input components bound to a state object.</link-summary>
 

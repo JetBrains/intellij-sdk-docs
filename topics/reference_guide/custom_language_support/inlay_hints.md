@@ -53,10 +53,7 @@ To suppress inlay parameter hints in specific places, implement
 and register it in `com.intellij.codeInsight.parameterNameHintsSuppressor` EP.
 
 ### Declarative Inlay Hints Provider
-
-> This API is available since 2023.1.
->
-{style="note"}
+<primary-label ref="2023.1"/>
 
 Declarative inlay hints are **inline** textual inlays that can hold expandable list of clickable items.
 Please note this API has limited presentation customization possibilities due to its UI-independent design, which allows utilizing it by different frontend technologies (not only in Swing).
@@ -71,9 +68,9 @@ See the API documentation for the details.
 - [`JavaMethodChainsDeclarativeInlayProvider`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/hints/JavaMethodChainsDeclarativeInlayProvider.kt) - shows method return types in call chains in Java code
 
 ### Code Vision Provider
+<primary-label ref="2022.1"/>
 
-> This API is available since 2022.1.
-> It is still in experimental state and may be changed without preserving backward compatibility.
+> This API is still in experimental state and may be changed without preserving backward compatibility.
 >
 {style="note"}
 

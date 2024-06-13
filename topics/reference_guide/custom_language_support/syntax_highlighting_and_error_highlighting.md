@@ -168,8 +168,9 @@ To force re-highlighting all open or specific file(s) (e.g., after changing plug
 [`DaemonCodeAnalyzer.restart()`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/daemon/DaemonCodeAnalyzer.java).
 
 ## Order of Running Highlighting
+<primary-label ref="2024.1"/>
 
-Since 2024.1, [inspections](code_inspections_and_intentions.md) and [annotators](#annotator) do not run sequentially on each `PsiElement` anymore.
+[Inspections](code_inspections_and_intentions.md) and [annotators](#annotator) do not run sequentially on each `PsiElement` anymore.
 Instead, they're run in parallel on all relevant PSI independently with the following consequences.
 
 **Independent Annotators**

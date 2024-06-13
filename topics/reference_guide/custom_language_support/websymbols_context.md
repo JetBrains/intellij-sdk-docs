@@ -1,6 +1,7 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Web Symbols Context
+<primary-label ref="2022.3"/>
 
 <link-summary>How to use Web Symbols context detection to manage enablement of plugin features.</link-summary>
 

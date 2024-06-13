@@ -116,8 +116,9 @@ private class FooLspServerDescriptor(project: Project) : ProjectWideLspServerDes
 </procedure>
 
 ### Status Bar Integration
+<primary-label ref="2024.1"/>
 
-Since 2024.1, a dedicated <control>Language Services</control> status bar widget is available to monitor the status of all LSP servers.
+A dedicated <control>Language Services</control> status bar widget is available to monitor the status of all LSP servers.
 Override `LspServerSupportProvider.createLspServerWidgetItem()` to provide a custom icon and link to [Settings](settings.md) page (if available).
 
 ```kotlin

@@ -217,9 +217,8 @@ Register a resource bundle via `com.intellij.iconDescriptionBundle` extension po
 Create `icon.<icon-path>.tooltip` key in a resource bundle, where `<icon-path>` is the icon path with leading slash and `.svg` removed and slashes replaced with dots (e.g., `/nodes/class.svg` &rarr; `icon.nodes.class.tooltip`).
 
 ## New UI Icons
+<primary-label ref="2022.3"/>
 
-> This feature is available since 2022.3.
->
 > See [New UI Icons Guide](https://www.figma.com/community/file/1227729570033544559) for guidelines and overview.
 
 To fully support the [New UI](https://www.jetbrains.com/help/idea/new-ui.html), the plugin must provide additional dedicated icons and mapping information.

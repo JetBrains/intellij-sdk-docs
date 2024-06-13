@@ -3,13 +3,14 @@
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Guide for the preview of Intention and Quick Fix actions.</link-summary>
+<primary-label ref="2022.3"/>
 
 > [Intention](code_intentions.md) previews are supposed to work out-of-the-box in most cases.
 > This page gives guidance to plugin authors in situations where this is not the case and to
 > encourage thorough [testing](writing_tests.md) of intention actions.
 
 
-Since version 2022.3, the IntelliJ Platform can show a preview for
+The IntelliJ Platform can show a preview for
 [`IntentionAction`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/intention/IntentionAction.java)
 and
 [`LocalQuickFix`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalQuickFix.java).

@@ -34,9 +34,10 @@ See [Inspections](inspections.md) topic in the UI Guidelines on naming, writing 
 > Please also note important change in 2024.1, refer to [](syntax_highlighting_and_error_highlighting.md#order-of-running-highlighting).
 
 #### Inspections Performance
+<primary-label ref="2023.3"/>
 
 A [custom language plugin](custom_language_support.md) providing many inspections (>100) can register the default [`PsiElementVisitor`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElementVisitor.java)
-for its language in `com.intellij.inspection.basicVisitor` extension point (2023.3) to optimize processing.
+for its language in `com.intellij.inspection.basicVisitor` extension point to optimize processing.
 
 ### Intentions
 

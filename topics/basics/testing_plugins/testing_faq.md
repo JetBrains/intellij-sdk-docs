@@ -32,6 +32,7 @@ See [](testing_plugins.md#ui-tests) for UI integration tests.
 ## Issues
 
 ### "No Tests Found" targeting 2021.3+
+<primary-label ref="2021.3"/>
 
 Please see [notes](api_changes_list_2021.md#20213).
 
@@ -116,8 +117,9 @@ test {
 </tabs>
 
 ### How to get separate logs for failing tests?
+<primary-label ref="2021.3"/>
 
-Set system property `idea.split.test.logs` to `true` to generate separate test log files in <path>splitTestLogs</path> subdirectory for failing tests (WARN/ERROR level messages) (2021.3).
+Set system property `idea.split.test.logs` to `true` to generate separate test log files in <path>splitTestLogs</path> subdirectory for failing tests (WARN/ERROR level messages).
 
 ## Techniques
 
@@ -221,8 +223,9 @@ PsiTestUtil.addLibrary(model,
 ```
 
 ### How to handle `ProjectActivity`?
+<primary-label ref="2024.2"/>
 
-Since 2024.2, [`ProjectActivity`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) are no longer awaited on project open in tests.
+[`ProjectActivity`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) are no longer awaited on project open in tests.
 If tests depend on some job done in `ProjectActivity` (e.g., automatic project re-import), implement a dedicated [event/listener](messaging_infrastructure.md) and wait for it explicitly.
 As a workaround, use [`StartupActivityTestUtil.waitForProjectActivitiesToComplete()`](%gh-ic-master%/platform/testFramework/src/com/intellij/testFramework/StartupActivityTestUtil.kt).
 

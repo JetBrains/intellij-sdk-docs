@@ -29,7 +29,7 @@ The `locale` attribute defines the translation language on two possible levels:
 - region level, e.g.: `zh-CN` - Chinese (Simplified), `zh-TW` - Chinese (Taiwan)
 - language level, e.g., `ja` - Japanese
 
-> Please note that `com.intellij.languageBundle` EP is internal and should be used by JetBrains only.
+> Please note that `com.intellij.languageBundle` EP is internal and must be used by JetBrains only.
 >
 {style="warning"}
 
@@ -52,11 +52,13 @@ In case of doubts, it is recommended to inspect the contents of existing languag
 
 ## Bundled Translations
 
-> Please note that bundled translations are in the experimental state.
+<primary-label ref="2024.1"/>
+
+> Please note that bundled translations are in experimental state.
 >
 {style="warning"}
 
-Since 2024.1, IntelliJ Platform partially supports providing translations directly bundled in the IDE or plugins.
+The IntelliJ Platform partially supports providing translations directly bundled in the IDE or plugins.
 See the [translated elements](#translated-elements) list for the elements possible to translate.
 
 An IDE module or a plugin can provide multiple language translations in a single distribution, e.g., `zh-CN` and `ja`.

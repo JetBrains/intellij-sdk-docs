@@ -14,10 +14,12 @@ Therefore, the LSP approach shouldn't be considered as a replacement for the exi
 
 ## Supported IDEs
 
+<primary-label ref="2023.2"/>
+
 The integration with the Language Server Protocol is created as an extension to the *paid* IntelliJ-based IDEs.
 Therefore, plugins using Language Server integration are not available in Community releases of JetBrains products and Android Studio from Google.
 
-Starting with the 2023.2 release cycle, the LSP API is publicly available as part of the IntelliJ Platform in the following IDEs:
+The LSP API is publicly available as part of the IntelliJ Platform in the following IDEs:
 IntelliJ IDEA Ultimate, WebStorm, PhpStorm, PyCharm Professional, DataSpell, RubyMine, CLion, Aqua, DataGrip, GoLand, Rider, and RustRover.
 
 ## Plugin Configuration
@@ -57,11 +59,11 @@ The <path>plugin.xml</path> configuration file needs to specify the dependency o
 </idea-plugin>
 ```
 
-The LSP API sources are bundled in IntelliJ IDEA Ultimate and can be found within the <path>[IDE]/lib/src/src_lsp-openapi.zip</path> archive.
+The LSP API sources are bundled in IntelliJ IDEA Ultimate and can be found within the <path>\$IDEA_INSTALLATION\$/lib/src/src_lsp-openapi.zip</path> archive.
 
 > Due to technical limitations in IDEs before 2024.1, it is necessary to manually attach sources to the IntelliJ IDEA Ultimate dependency.
 > To do so, when reviewing the compiled class which belongs to the LSP API, run the _Choose Sources..._ action, and point to the
-> <path>[IDE]/lib/src/src_lsp-openapi.zip</path> file.
+> <path>\$IDEA_INSTALLATION\$/lib/src/src_lsp-openapi.zip</path> file.
 >
 {style="note" title="Attaching Sources in IDE before 2024.1"}
 

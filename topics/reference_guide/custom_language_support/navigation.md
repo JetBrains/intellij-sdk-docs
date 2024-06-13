@@ -1,10 +1,11 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Navigation
 
 <link-summary>Implementing navigation to resolved symbols or other PSI elements.</link-summary>
+<primary-label ref="2020.3"/>
 
-> This API is available starting from 2020.3 and currently in development and thus in experimental state.
+> This API is currently in development and thus in experimental state.
 >
 {style="warning"}
 

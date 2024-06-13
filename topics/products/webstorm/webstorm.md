@@ -49,8 +49,9 @@ See [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-c
 Test your plugin with any version of WebStorm you wish to support.
 
 ### Javascript Test Framework
+<primary-label ref="2020.3"/>
 
-To use existing test base classes, specify `com.jetbrains.intellij.javascript:javascript-test-framework:$VERSION$` as `testImplementation` dependency explicitly (see [IntelliJ Platform Artifacts Repositories](intellij_artifacts.md#gradle-example-for-an-individual-module-from-the-intellij-platform)) (2020.3 and later).
+To use existing test base classes, specify `com.jetbrains.intellij.javascript:javascript-test-framework:$VERSION$` as `testImplementation` dependency explicitly (see [IntelliJ Platform Artifacts Repositories](intellij_artifacts.md#gradle-example-for-an-individual-module-from-the-intellij-platform)).
 
 ## Open Source Plugins for WebStorm
 

@@ -26,8 +26,9 @@ If a [`PsiElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.ja
 The most common way to implement `getVariants()` is to use the same function for walking up the tree as in [`PsiReference.resolve()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReference.java), and a different implementation of [`PsiScopeProcessor`](%gh-ic%/platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java) which collects all declarations passed to its `execute()` method and returns them as an array for filling the completion list.
 
 #### Symbol Reference Completion
+<primary-label ref="2020.3"/>
 
-> This API is available starting from 2020.3 and currently in development and thus in experimental state.
+> This API is currently in development and thus in experimental state.
 >
 {style="warning"}
 

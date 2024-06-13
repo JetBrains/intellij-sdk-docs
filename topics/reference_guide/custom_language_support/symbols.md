@@ -1,8 +1,9 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Symbols
+<primary-label ref="2020.3"/>
 
-> This API is available starting from 2020.3 and is currently in development and thus in an experimental state.
+> This API is currently in development and thus in an experimental state.
 >
 {style="warning"}
 

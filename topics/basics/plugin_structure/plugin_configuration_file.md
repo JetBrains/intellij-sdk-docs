@@ -733,6 +733,8 @@ Examples
 ##### `override-text`
 {#idea-plugin__actions__action__override-text}
 
+<primary-label ref="2020.1"/>
+
 Defines an alternate version of the text for the menu action or group.
 
 {style="narrow"}
@@ -771,13 +773,12 @@ Examples
 ##### `synonym`
 {#idea-plugin__actions__action__synonym}
 
+<primary-label ref="2020.3"/>
+
 Defines an alternative text for searching the action in <ui-path>Help | Find Action...</ui-path> or <ui-path>Navigate | Search Everywhere</ui-path> popups.
 A single action can have multiple synonyms.
 
 {style="narrow"}
-Supported
-: 2020.3+
-
 Required
 : no
 

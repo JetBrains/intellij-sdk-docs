@@ -103,6 +103,7 @@ This refactoring separated the Java implementation from the other, non-language 
 A dependency on the Java plugin (Plugin ID `com.intellij.java`) must be setup using [](plugin_dependencies.md).
 
 #### AppCode/CLion
+<primary-label ref="2020.3"/>
 
 The [AppCode and CLion code was restructured](https://blog.jetbrains.com/clion/2020/12/migration-guide-for-plugins-2020-3/) in version 2020.3.
 This refactoring extracted some functionalities into specific modules for easier maintainability and reuse between AppCode/CLion and other JetBrains IDEs.

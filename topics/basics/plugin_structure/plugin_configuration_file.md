@@ -396,6 +396,7 @@ Examples
 
 ### `incompatible-with`
 {#idea-plugin__incompatible-with}
+
 <primary-label ref="2020.2"/>
 
 Declares incompatibility with a provided module.

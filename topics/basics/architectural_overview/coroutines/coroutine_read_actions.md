@@ -1,6 +1,7 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Coroutine Read Actions
+<primary-label ref="2024.1"/>
 
 <link-summary id="link-summary">Executing read actions in coroutines.</link-summary>
 

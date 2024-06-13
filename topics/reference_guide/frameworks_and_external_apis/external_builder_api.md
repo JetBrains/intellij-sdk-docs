@@ -1,6 +1,7 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # External Builder API and Plugins
+<primary-label ref="IntelliJIDEA"/>
 
 <link-summary>Working with External Builder API.</link-summary>
 

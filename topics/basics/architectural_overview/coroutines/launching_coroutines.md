@@ -1,6 +1,7 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Launching Coroutines
+<primary-label ref="2024.1"/>
 
 <link-summary>Techniques for launching coroutines from various contexts.</link-summary>
 

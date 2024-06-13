@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <labels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/labels.xsd">
-  <!-- empty labels created as a workaround for preview rendering performance issues -->
+        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/labels.xsd">
+
+  <primary-label id="CommercialIDEs" short-name="Commercial IDEs" name="Commercial IDEs"/>
+
+  <primary-label id="IntelliJIDEA" short-name="IntelliJ IDEA" name="IntelliJ IDEA"
+                 href="https://plugins.jetbrains.com/docs/intellij/idea.html"/>
+  <primary-label id="IntelliJIDEA_Ultimate" short-name="IntelliJ IDEA Ultimate" name="IntelliJ IDEA Ultimate"
+                 href="https://plugins.jetbrains.com/docs/intellij/idea-ultimate.html"/>
+
+  <primary-label id="2024.1" short-name="2024.1+" name="2024.1+"/>
 </labels>

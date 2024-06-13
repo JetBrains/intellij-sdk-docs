@@ -168,6 +168,7 @@ If possible, use [](#how-to-wait-for-condition-with-timeout) approach. Otherwise
 Use [`WaitFor`](%gh-ic%/platform/util/src/com/intellij/util/WaitFor.java).
 
 ### How to test a JVM language?
+<primary-label ref="IntelliJIDEA"/>
 
 Plugins supporting a JVM language may require JDK and language standard library to be set up in a test project, so that classes like `java.lang.String` can be correctly resolved during tests.
 Tests extending [`LightJavaCodeInsightFixtureTestCase`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) use one of the mock JDKs distributed with the [IntelliJ Community project](https://github.com/JetBrains/intellij-community) sources (notice <path>java/mockJDK-\$JAVA_VERSION\$</path> directories).

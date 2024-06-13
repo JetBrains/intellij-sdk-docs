@@ -146,8 +146,9 @@ Then register the instance with `ExternalSystemProjectTracker` to start tracking
 {style="note"}
 
 ### Icon for Reload Notification
+<primary-label ref="2020.1"/>
 
-From 2020.1, the icon for reload notification can be specified per external system.
+The icon for reload notification can be specified per external system.
 Implement [`ExternalSystemIconProvider`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/ui/ExternalSystemIconProvider.kt) and register via [com.intellij.externalIconProvider](https://jb.gg/ipe?extensions=com.intellij.externalIconProvider) extension point in <path>[plugin.xml](plugin_configuration_file.md)</path>.
 Alternatively, set `reloadIcon` field external system implements `ExternalSystemIconProvider` directly.
 

@@ -197,8 +197,9 @@ There are two main ways to register an action: either by listing it in the [`<ac
 Registering actions in <path>plugin.xml</path> is demonstrated in the following reference examples, which document all elements and attributes used in the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section and describe each element's meaning.
 
 #### Setting the `override-text` Element
+<primary-label ref="2020.1"/>
 
-Beginning in 2020.1, an alternate version of an action's menu text can be declared for use depending on where an action appears.
+An alternate version of an action's menu text can be declared for use depending on where an action appears.
 Using the [`<override-text>`](plugin_configuration_file.md#idea-plugin__actions__action__override-text) element, the menu text for an action can be different depending on context: menu location, toolbar, etc.
 This is also available for groups in 2020.3 and later.
 

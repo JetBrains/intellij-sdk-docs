@@ -37,8 +37,9 @@ Some modules are available in all products, and some modules are available only 
 This section identifies and discusses modules of both types.
 
 ### Declaring Incompatibility with Module
+<primary-label ref="2020.2"/>
 
-Starting in 2020.2, a plugin can declare incompatibility with an arbitrary module by specifying [`<incompatible-with>`](plugin_configuration_file.md#idea-plugin__incompatible-with) containing module ID in its <path>plugin.xml</path>.
+A plugin can declare incompatibility with an arbitrary module by specifying [`<incompatible-with>`](plugin_configuration_file.md#idea-plugin__incompatible-with) containing module ID in its <path>plugin.xml</path>.
 
 ### Modules Available in All Products
 

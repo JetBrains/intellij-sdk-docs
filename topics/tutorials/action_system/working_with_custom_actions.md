@@ -136,8 +136,9 @@ The full declaration is:
 ```
 
 #### Using `override-text` for an Action
+<primary-label ref="2020.1"/>
 
-By using the `override-text` element introduced in 2020.1 of the IntelliJ Platform, the action text can be different depending on the context of where the action appears: menu, toolbar, etc.
+By using the `override-text` element, the action text can be different depending on the context of where the action appears: menu, toolbar, etc.
 The example above uses this element to ensure the shorter text "Popup Dialog Action" is shown anywhere the action appears in the main menu structure.
 Otherwise, the default, more explanatory text "Action Basics Plugin: Popup Dialog Action" is shown.
 For more information, see [](basic_action_system.md#setting-the-override-text-element).

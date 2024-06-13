@@ -75,8 +75,9 @@ Please see [`VirtualFileGist`](%gh-ic%/platform/indexing-api/src/com/intellij/ut
 ## Improving Indexing Performance
 
 ### Performance Metrics
+<primary-label ref="2020.2"/>
 
-Indexing performance metrics in JSON format are generated in [logs directory](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs) (see [sandbox directory](ide_development_instance.md#the-development-instance-sandbox-directory) for development instance) in 2020.2 and later.
+Indexing performance metrics in JSON format are generated in [logs directory](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs) (see [sandbox directory](ide_development_instance.md#the-development-instance-sandbox-directory) for development instance).
 These are additionally available in HTML format starting with 2021.1.
 
 ### Avoid Using AST

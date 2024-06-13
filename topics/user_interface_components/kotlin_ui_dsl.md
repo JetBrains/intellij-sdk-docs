@@ -16,7 +16,7 @@
 >
 > Please note [breaking changes](api_changes_list.md) can occur for this API between major releases.
 >
-{style="warning"}
+{style="warning" title="Kotlin UI SDL Version 1 vs 2"}
 
 Kotlin UI DSL allows creating UI forms with input components bound to state objects.
 The forms are built by using a declarative Kotlin syntax.

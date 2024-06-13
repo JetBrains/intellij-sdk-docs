@@ -4,7 +4,7 @@
 
 <link-summary>Migrating deprecated plugin components to the current solutions.</link-summary>
 
-> When writing new plugins, creating Components should be avoided.
+> When writing new plugins, creating Components must be avoided.
 > Any existing Components should be migrated to services, extensions, or listeners (see below).
 >
 {style="warning" title="Deprecation Notice"}

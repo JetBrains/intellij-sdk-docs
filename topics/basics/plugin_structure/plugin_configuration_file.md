@@ -152,9 +152,13 @@ Example
 ### `name`
 {#idea-plugin__name}
 
-The user-visible plugin display name (Title Case).
+<tldr>
 
 **Reference:** [JetBrains Marketplace: Plugin Name](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name)
+
+</tldr>
+
+The user-visible plugin display name (Title Case).
 
 {style="narrow"}
 Required
@@ -169,10 +173,14 @@ Example
 ### `version`
 {#idea-plugin__version}
 
-The plugin version displayed in the <control>Plugins</control> settings dialog and in the JetBrains Marketplace plugin page.
-Plugins uploaded to the JetBrains Marketplace must follow semantic versioning.
+<tldr>
 
 **Reference:** [JetBrains Marketplace: Semantic Versioning](https://plugins.jetbrains.com/docs/marketplace/semver.html)
+
+</tldr>
+
+The plugin version displayed in the <control>Plugins</control> settings dialog and in the JetBrains Marketplace plugin page.
+Plugins uploaded to the JetBrains Marketplace must follow semantic versioning.
 
 {style="narrow"}
 Required
@@ -188,9 +196,13 @@ Example
 ### `product-descriptor`
 {#idea-plugin__product-descriptor}
 
-[Paid](https://plugins.jetbrains.com/build-and-market) or [Freemium](https://plugins.jetbrains.com/docs/marketplace/freemium.html) plugin descriptor.
+<tldr>
 
 **Reference:** [JetBrains Marketplace: How to add required parameters for paid plugins](https://plugins.jetbrains.com/docs/marketplace/add-required-parameters.html)
+
+</tldr>
+
+[Paid](https://plugins.jetbrains.com/build-and-market) or [Freemium](https://plugins.jetbrains.com/docs/marketplace/freemium.html) plugin descriptor.
 
 {style="narrow"}
 Required
@@ -213,9 +225,13 @@ Attributes
 ### `idea-version`
 {#idea-plugin__idea-version}
 
-The plugin's range of compatible IntelliJ-based IDE versions.
+<tldr>
 
 **Reference:** [](build_number_ranges.md)
+
+</tldr>
+
+The plugin's range of compatible IntelliJ-based IDE versions.
 
 {style="narrow"}
 Required
@@ -245,10 +261,13 @@ Examples
 ### `vendor`
 {#idea-plugin__vendor}
 
-The vendor name or organization ID (if created) in the <control>Plugins</control> settings dialog and in the JetBrains Marketplace plugin page.
+<tldr>
 
-**Reference:** [JetBrains Marketplace: Contacts and Resources
-](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#contacts-and-resources)
+**Reference:** [JetBrains Marketplace: Contacts and Resources](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#contacts-and-resources)
+
+</tldr>
+
+The vendor name or organization ID (if created) in the <control>Plugins</control> settings dialog and in the JetBrains Marketplace plugin page.
 
 {style="narrow"}
 Required
@@ -279,11 +298,15 @@ Examples
 ### `description`
 {#idea-plugin__description}
 
+<tldr>
+
+**Reference:** [JetBrains Marketplace: Plugin Description](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description)
+
+</tldr>
+
 The plugin description displayed on the JetBrains Marketplace plugin page and in the <control>Plugins</control> settings dialog.
 
 Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed and must be wrapped into `<![CDATA[` ... `]]>` section.
-
-**Reference:** [JetBrains Marketplace: Plugin Description](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description)
 
 {style="narrow"}
 Required
@@ -308,12 +331,16 @@ Example
 ### `change-notes`
 {#idea-plugin__change-notes}
 
+<tldr>
+
+**Reference:** [JetBrains Marketplace: Change Notes](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#change-notes)
+
+</tldr>
+
 A short summary of new features, bugfixes, and changes provided with the latest plugin version.
 Change notes are displayed on the JetBrains Marketplace plugin page and in the <control>Plugins</control> settings dialog.
 
 Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed and must be wrapped into `<![CDATA[` ... `]]>` section.
-
-**Reference:** [JetBrains Marketplace: Change Notes](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#change-notes)
 
 {style="narrow"}
 Required
@@ -341,12 +368,14 @@ Example
 ### `depends`
 {#idea-plugin__depends}
 
+<tldr>
+
+**Reference:** [](plugin_dependencies.md), [](plugin_compatibility.md#modules-specific-to-functionality)
+
+</tldr>
+
 Specifies a dependency on another plugin or a module of an IntelliJ Platform-based product.
 A single [`<idea-plugin>`](#idea-plugin) element can contain multiple `<depends>` elements.
-
-**References:**
-- [](plugin_dependencies.md)
-- [](plugin_compatibility.md#modules-specific-to-functionality)
 
 {style="narrow"}
 Required
@@ -399,9 +428,13 @@ Examples
 
 <primary-label ref="2020.2"/>
 
-Declares incompatibility with a provided module.
+<tldr>
 
 **Reference:** [](plugin_compatibility.md#declaring-incompatibility-with-module)
+
+</tldr>
+
+Declares incompatibility with a provided module.
 
 {style="narrow"}
 Required
@@ -434,9 +467,13 @@ Example
 ### `applicationListeners`
 {#idea-plugin__applicationListeners}
 
-Defines the application-level listeners.
+<tldr>
 
 **Reference:** [](plugin_listeners.md#defining-application-level-listeners)
+
+</tldr>
+
+Defines the application-level listeners.
 
 {style="narrow"}
 Required
@@ -448,9 +485,13 @@ Children
 ### `projectListeners`
 {#idea-plugin__projectListeners}
 
-Defines the project-level listeners.
+<tldr>
 
-**Reference:** [](plugin_listeners.md#defining-project-level-listeners)
+**Reference:** [](plugin_listeners.md#defining-application-level-listeners)
+
+</tldr>
+
+Defines the project-level listeners.
 
 {style="narrow"}
 Required
@@ -462,10 +503,14 @@ Children
 #### `listener`
 {#idea-plugin__listeners__listener}
 
-Defines a single application or project-level listener.
-A single [`<applicationListeners>`](#idea-plugin__applicationListeners) or [`<projectListeners>`](#idea-plugin__projectListeners) can contain multiple `<listener>` elements.
+<tldr>
 
 **Reference:** [](plugin_listeners.md)
+
+</tldr>
+
+Defines a single application or project-level listener.
+A single [`<applicationListeners>`](#idea-plugin__applicationListeners) or [`<projectListeners>`](#idea-plugin__projectListeners) can contain multiple `<listener>` elements.
 
 {style="narrow"}
 Required
@@ -505,9 +550,13 @@ Example
 ### `actions`
 {#idea-plugin__actions}
 
-Defines the plugin actions.
+<tldr>
 
 **Reference:** [](basic_action_system.md)
+
+</tldr>
+
+Defines the plugin actions.
 
 {style="narrow"}
 Required
@@ -539,10 +588,14 @@ Example
 #### `action`
 {#idea-plugin__actions__action}
 
-A single action entry of the [`<actions>`](#idea-plugin__actions) implemented by the plugin.
-A single [`<actions>`](#idea-plugin__actions) element can contain multiple `<action>` elements.
+<tldr>
 
 **Reference:** [](basic_action_system.md#registering-actions-in-pluginxml)
+
+</tldr>
+
+A single action entry of the [`<actions>`](#idea-plugin__actions) implemented by the plugin.
+A single [`<actions>`](#idea-plugin__actions) element can contain multiple `<action>` elements.
 
 {style="narrow"}
 Required
@@ -821,11 +874,15 @@ Example
 #### `group`
 {#idea-plugin__actions__group}
 
+<tldr>
+
+**Reference:** [](basic_action_system.md#grouping-actions)
+
+</tldr>
+
 Defines an action group.
 The `<action>`, `<group>` and `<separator>` elements defined inside the group are automatically included in it.
 The `<group>` elements can be nested.
-
-**Reference:** [](basic_action_system.md#grouping-actions)
 
 {style="narrow"}
 Required
@@ -986,9 +1043,13 @@ Examples
 ### `extensions`
 {#idea-plugin__extensions}
 
-Defines the plugin extensions.
+<tldr>
 
 **Reference:** [](plugin_extensions.md)
+
+</tldr>
+
+Defines the plugin extensions.
 
 {style="narrow"}
 Required
@@ -1023,9 +1084,13 @@ Example
 ### `extensionPoints`
 {#idea-plugin__extensionPoints}
 
-Extension points defined by the plugin.
+<tldr>
 
 **Reference:** [](plugin_extension_points.md)
+
+</tldr>
+
+Extension points defined by the plugin.
 
 {style="narrow"}
 Required
@@ -1037,10 +1102,14 @@ Children
 #### `extensionPoint`
 {#idea-plugin__extensionPoints__extensionPoint}
 
-A single extension point entry of the [`<extensionPoints>`](#idea-plugin__extensionPoints) defined by the plugin.
-A single [`<extensionPoints>`](#idea-plugin__extensionPoints) element can contain multiple `<extensionPoint>` elements.
+<tldr>
 
 **Reference:** [](plugin_extension_points.md#declaring-extension-points)
+
+</tldr>
+
+A single extension point entry of the [`<extensionPoints>`](#idea-plugin__extensionPoints) defined by the plugin.
+A single [`<extensionPoints>`](#idea-plugin__extensionPoints) element can contain multiple `<extensionPoint>` elements.
 
 {style="narrow"}
 Required

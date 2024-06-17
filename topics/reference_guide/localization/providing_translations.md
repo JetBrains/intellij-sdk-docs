@@ -67,7 +67,7 @@ Proper localization files will be used at runtime depending on the [IDE language
 ### Bundled Translations Structure
 
 Translations for a specific language can be organized in two ways:
-- Language directory: <path>/localization/$LANGUAGE_CODE$/$REGION_CODE$</path> (`$REGION_CODE$` level is optional).
+- Language directory: <path>/localization/\$LANGUAGE_CODE\$/\$REGION_CODE\$</path> (`$REGION_CODE$` level is optional).
   Example:
   - Original template description:
 
@@ -75,7 +75,7 @@ Translations for a specific language can be organized in two ways:
   - Translated template description: <path></path>
 
     <path>/localization/zh/CN/fileTemplates/code/JavaDoc Class.java.html</path>
-- Localization suffix in file name: <path>/intentionDescriptions/QuickEditAction/description_$LANGUAGE_CODE$_$REGION_CODE$.html</path>.
+- Localization suffix in file name: <path>/intentionDescriptions/QuickEditAction/description_\$LANGUAGE_CODE\$_\$REGION_CODE\$.html</path>.
   Example:
   - Original template description:
 

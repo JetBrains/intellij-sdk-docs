@@ -119,7 +119,7 @@ There are different modes of indenting defined by factory methods, and the most 
 * The regular indent (`getNormalIndent()`) indents the child block by the number of spaces specified in the <control>Tabs and Indents | Indent</control> code style settings.
 * The continuation indent (`getContinuationIndent()`) is based on <control>Tabs and Indents | Continuation indent</control> code style settings, typically used for multi-line statements.
 
-If not specified, the default indent is "continuation without first" mode is used, meaning the first block is not indented, but later blocks are.
+If not specified, the default "continuation without first" indent mode is used, meaning the first block is not indented, but later blocks are.
 The class also allows for configuring indents to be relative to their direct parent block or to enforce parent indents on children starting on a new line.
 This is useful in complex formatting scenarios, such as aligning blocks within a method call or ensuring consistent indentation in nested structures.
 `Indent` also includes methods to create indents with a specific number of spaces and options to control their behavior relative to parent blocks.

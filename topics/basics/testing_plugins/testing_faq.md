@@ -17,6 +17,7 @@ This page lists a number of common questions/issues and techniques useful for te
 - [`PsiTestUtil`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/PsiTestUtil.java)
 - [`VfsTestUtil`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/VfsTestUtil.java)
 - [`IoTestUtil`](%gh-ic%/platform/testFramework/src/com/intellij/openapi/util/io/IoTestUtil.java)
+- [`IndexingTestUtil`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/IndexingTestUtil.kt)
 - [`LeakHunter`](%gh-ic%/platform/testFramework/common/src/LeakHunter.java)
 
 ### UI
@@ -228,5 +229,12 @@ PsiTestUtil.addLibrary(model,
 [`ProjectActivity`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) are no longer awaited on project open in tests.
 If tests depend on some job done in `ProjectActivity` (e.g., automatic project re-import), implement a dedicated [event/listener](messaging_infrastructure.md) and wait for it explicitly.
 As a workaround, use [`StartupActivityTestUtil.waitForProjectActivitiesToComplete()`](%gh-ic-master%/platform/testFramework/src/com/intellij/testFramework/StartupActivityTestUtil.kt).
+
+### How to handle indexing?
+<primary-label ref="2024.2"/>
+
+Indexing is now run asynchronously in a background thread.
+Use [`IndexingTestUtil.waitUntilIndexesAreReady()/suspendUntilIndexesAreReady()`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/IndexingTestUtil.kt)
+to wait for fully populated indexes.
 
 <include from="snippets.md" element-id="missingContent"/>

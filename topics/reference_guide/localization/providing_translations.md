@@ -46,8 +46,6 @@ All the elements should be located in exactly the same paths as in original loca
 
 For example, if the original location of a message bundle is <path>\$PLUGIN_JAR\$/messages/AbcBundle.properties</path>, it must be located in <path>\$LANGUAGE_PACK_JAR\$/messages/AbcBundle.properties</path>.
 
-It is allowed to organize them within [localization directories or with file name language suffixes](#bundled-translations-structure), but it is unnecessary as language pack can define only a single language.
-
 In case of doubts, it is recommended to inspect the contents of existing language packs.
 
 ## Bundled Translations
@@ -114,23 +112,19 @@ In addition, translations can be [organized in directories or with file suffixes
 
 All these conditions determine how a single translation is resolved at runtime.
 The priority is as follows:
-1. Region level (e.g., `zh_CN`, `zh_TW`) localization file:
-    1. located within the <path>localization</path> directory of the language pack
-    2. located within the <path>localization</path> directory of the IDE or plugin
-    3. via suffix within the language pack
-    4. via suffix within the IDE or plugin
+
+1. Translation file from the language pack.
+2. Region level (e.g., `zh_CN`, `zh_TW`) localization file:
+    1. located within the <path>localization</path> directory of the IDE or plugin
+    2. via suffix within the IDE or plugin
 
     {type="alpha-lower"}
-2. Language level (e.g., `zh`) localization file:
-    1. located within the <path>localization</path> directory of the language pack
-    2. located within the <path>localization</path> directory of the IDE or plugin
-    3. via suffix within the language pack
-    4. via suffix within the IDE or plugin
+3. Language level (e.g., `zh`) localization file:
+    1. located within the <path>localization</path> directory of the IDE or plugin
+    2. via suffix within the IDE or plugin
 
    {type="alpha-lower"}
-3. Default file (no suffix) within:
-    1. the language pack
-    2. the IDE or plugin
+4. Default file (no suffix) within the IDE or plugin (original English message).
 
    {type="alpha-lower"}
 

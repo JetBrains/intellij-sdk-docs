@@ -2,7 +2,7 @@
 
 # Providing Translations
 
-<link-summary>Translating IDE and plugin texts used in UI, inspections, file templates, etc.</link-summary>
+<link-summary>Translating IDE and plugin texts used in UI, inspections, file templates, and other elements</link-summary>
 
 Translations for IntelliJ Platform products and plugins can be provided in two ways:
 - [](#language-packs)
@@ -10,15 +10,15 @@ Translations for IntelliJ Platform products and plugins can be provided in two w
 
 ## Language Packs
 
-Localizing IDEs is achieved by providing language packs (see available [language packs](https://plugins.jetbrains.com/search?tags=Language%20Pack)).
+Localizing IDEs is achieved by providing language packs (see [language packs](https://plugins.jetbrains.com/search?tags=Language%20Pack) provided by JetBrains).
 Language packs are IntelliJ Platform plugins containing translations of UI texts.
 Official language packs contain translations of all the UI texts used in the IDE and in plugins developed by JetBrains.
 
-Please note that language packs aim for full IDE localization.
+Note that language packs aim for full IDE localization.
 If it is required to translate a plugin, see the [](#bundled-translations) section.
 
 Language packs must define their language.
-The language definition is provided in the [`plugin.xml`](plugin_configuration_file.md) file with `com.intellij.languageBundle` extension point (EP), e.g.:
+The language definition is provided in the [`plugin.xml`](plugin_configuration_file.md) file with `com.intellij.languageBundle` extension point (EP), for example:
 ```xml
 <extensions defaultExtensionNs="com.intellij">
   <languageBundle locale="zh-CN"/>
@@ -26,16 +26,16 @@ The language definition is provided in the [`plugin.xml`](plugin_configuration_f
 ```
 
 The `locale` attribute defines the translation language on two possible levels:
-- region level, e.g.: `zh-CN` - Chinese (Simplified), `zh-TW` - Chinese (Taiwan)
-- language level, e.g., `ja` - Japanese
+- region level, for example: `zh-CN` – Chinese (Simplified), `zh-TW` – Chinese (Taiwan)
+- language level, for example, `ja` – Japanese
 
-> Please note that `com.intellij.languageBundle` EP is internal and must be used by JetBrains only.
+> Note that `com.intellij.languageBundle` EP is internal and must be used by JetBrains only.
 >
 {style="warning"}
 
 ### Language Selection
 
-It is important to note that there is no language chooser available in the IDE and language packs serve as the IDE "language switcher".
+It is important to note that there is no language chooser in the IDE, and language packs serve as the IDE "language switcher."
 Installing a language pack changes the IDE language to the one defined by the `languageBundle` EP.
 Only a single language pack can be installed at the same time, and restart is required for the translations to take effect.
 
@@ -52,14 +52,14 @@ In case of doubts, it is recommended to inspect the contents of existing languag
 
 <primary-label ref="2024.1"/>
 
-> Please note that bundled translations are in experimental state.
+> Note that bundled translations are in the experimental state.
 >
 {style="warning"}
 
 The IntelliJ Platform partially supports providing translations directly bundled in the IDE or plugins.
 See the [translated elements](#translated-elements) list for the elements possible to translate.
 
-An IDE module or a plugin can provide multiple language translations in a single distribution, e.g., `zh-CN` and `ja`.
+An IDE module or a plugin can provide multiple language translations in a single distribution, for example, `zh-CN` and `ja`.
 Proper localization files will be used at runtime depending on the [IDE language](#language-selection).
 
 ### Bundled Translations Structure
@@ -73,7 +73,7 @@ Translations for a specific language can be organized in two ways:
   - Translated template description: <path></path>
 
     <path>/localization/zh/CN/fileTemplates/code/JavaDoc Class.java.html</path>
-- Localization suffix in file name: <path>/intentionDescriptions/QuickEditAction/description_\$LANGUAGE_CODE\$_\$REGION_CODE\$.html</path>.
+- Localization suffix in filename: <path>/intentionDescriptions/QuickEditAction/description_\$LANGUAGE_CODE\$_\$REGION_CODE\$.html</path>.
   Example:
   - Original template description:
 
@@ -82,7 +82,7 @@ Translations for a specific language can be organized in two ways:
 
     <path>/intentionDescriptions/QuickEditAction/description_zh_CN.html</path>
 
-The proper directory layout/file name suffixes is the only thing needed for the translations to work.
+The proper directory layout/filename suffixes is the only thing needed for the translations to work.
 No additional actions like registering EPs are needed.
 
 ## Translated Elements
@@ -114,12 +114,12 @@ All these conditions determine how a single translation is resolved at runtime.
 The priority is as follows:
 
 1. Translation file from the language pack.
-2. Region level (e.g., `zh_CN`, `zh_TW`) localization file:
+2. Region level (for example, `zh_CN`, `zh_TW`) localization file:
     1. located within the <path>localization</path> directory of the IDE or plugin
     2. via suffix within the IDE or plugin
 
     {type="alpha-lower"}
-3. Language level (e.g., `zh`) localization file:
+3. Language level (for example, `zh`) localization file:
     1. located within the <path>localization</path> directory of the IDE or plugin
     2. via suffix within the IDE or plugin
 

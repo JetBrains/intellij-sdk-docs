@@ -68,10 +68,12 @@ class MySettings implements PersistentStateComponent<MySettings.State> {
 
   private State myState = new State();
 
+  @Override
   public State getState() {
     return myState;
   }
 
+  @Override
   public void loadState(State state) {
     myState = state;
   }
@@ -93,10 +95,12 @@ class MySettings implements PersistentStateComponent<MySettings> {
 
   public String stateValue;
 
+  @Override
   public MySettings getState() {
     return this;
   }
 
+  @Override
   public void loadState(MySettings state) {
     XmlSerializerUtil.copyBean(state, this);
   }

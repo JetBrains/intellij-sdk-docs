@@ -1,4 +1,4 @@
-// Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 
 package org.intellij.sdk.settings;
 
@@ -17,11 +17,11 @@ public class AppSettingsComponent {
 
   private final JPanel myMainPanel;
   private final JBTextField myUserNameText = new JBTextField();
-  private final JBCheckBox myIdeaUserStatus = new JBCheckBox("Do you use IntelliJ IDEA? ");
+  private final JBCheckBox myIdeaUserStatus = new JBCheckBox("IntelliJ IDEA user");
 
   public AppSettingsComponent() {
     myMainPanel = FormBuilder.createFormBuilder()
-        .addLabeledComponent(new JBLabel("Enter user name: "), myUserNameText, 1, false)
+        .addLabeledComponent(new JBLabel("User name:"), myUserNameText, 1, false)
         .addComponent(myIdeaUserStatus, 1)
         .addComponentFillVertically(new JPanel(), 0)
         .getPanel();

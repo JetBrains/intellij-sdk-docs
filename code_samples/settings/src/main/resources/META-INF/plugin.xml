@@ -1,5 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
-<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <idea-plugin>
 
@@ -35,7 +34,7 @@
     <applicationConfigurable parentId="tools" instance="org.intellij.sdk.settings.AppSettingsConfigurable"
                              id="org.intellij.sdk.settings.AppSettingsConfigurable"
                              displayName="SDK: Application Settings Example"/>
-    <applicationService serviceImplementation="org.intellij.sdk.settings.AppSettingsState"/>
+    <applicationService serviceImplementation="org.intellij.sdk.settings.AppSettings"/>
   </extensions>
 
 </idea-plugin>

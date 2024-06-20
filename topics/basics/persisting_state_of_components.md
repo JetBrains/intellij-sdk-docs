@@ -20,7 +20,7 @@ To use it:
 - define the state class
 - specify the storage location using [`@State`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/State.java)
 
-Note that instances of extensions cannot persist their state by implementing `PersistentStateComponent`.
+Note that instances of extensions can't persist their state by implementing `PersistentStateComponent`.
 If an extension needs to have a persistent state, define a separate service responsible for managing that state.
 
 ### Implementing the `PersistentStateComponent` Interface
@@ -143,12 +143,16 @@ class LocalDateTimeConverter extends Converter<LocalDateTime> {
   public LocalDateTime fromString(@NotNull String value) {
     long epochMilli = Long.parseLong(value);
     ZoneId zoneId = ZoneId.systemDefault();
-    return Instant.ofEpochMilli(epochMilli).atZone(zoneId).toLocalDateTime();
+    return Instant.ofEpochMilli(epochMilli)
+        .atZone(zoneId)
+        .toLocalDateTime();
   }
 
   public String toString(LocalDateTime value) {
     ZoneId zoneId = ZoneId.systemDefault();
-    long toEpochMilli = value.atZone(zoneId).toInstant().toEpochMilli();
+    long toEpochMilli = value.atZone(zoneId)
+        .toInstant()
+        .toEpochMilli();
     return Long.toString(toEpochMilli);
   }
 }
@@ -165,17 +169,17 @@ class State {
 
 ### Defining the Storage Location
 
-To specify where precisely the persisted values are stored, add `@State` annotation to the `PersistentStateComponent` class.
+To specify where precisely the persisted values are stored, add the ` @State ` annotation to the `PersistentStateComponent` class.
 
 It has the following fields:
-- `name` (required) — specifies the name of the state (name of the root tag in XML).
-- `storages` — one or more of [`@Storage`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/Storage.java) annotations to specify the storage locations.
-  Optional for project-level values — standard project file is used in this case.
-- `reloadable` (optional) — if set to false, a full project (or application) reload is required when the XML file is changed externally, and the state has changed.
+- `name` (required) – specifies the name of the state (name of the root tag in XML).
+- `storages` – one or more of [`@Storage`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/Storage.java) annotations to specify the storage locations.
+  Optional for project-level values – a standard project file is used in this case.
+- `reloadable` (optional) – if set to false, a full project (or application) reload is required when the XML file is changed externally, and the state has changed.
 
 The simplest ways of specifying the `@Storage` annotation are as follows:
-- `@Storage(StoragePathMacros.WORKSPACE_FILE)` - for values stored in the project workspace file (project-level components only).
-- `@Storage("yourName.xml")` - if a component is project-level, for <path>.ipr</path> based projects, standard project file is used automatically, and there is no need to specify anything.
+- `@Storage(StoragePathMacros.WORKSPACE_FILE)` – for values stored in the project workspace file (project-level components only).
+- `@Storage("yourName.xml")` – if a component is project-level, for <path>.ipr</path>-based projects, a standard project file is used automatically, and there is no need to specify anything.
 
 The state is persisted in a separate file by specifying a different setting for the `value` parameter, which was the `file` parameter before 2016.x.
 
@@ -191,9 +195,9 @@ Refer to [`StoragePathMacros`](%gh-ic%/platform/projectModel-api/src/com/intelli
 
 The `roamingType` parameter of the `@Storage` annotation specifies the roaming type when the [settings are shared](#sharing-settings-between-ide-installations):
 
-- `RoamingType.DEFAULT` - settings are shared
-- `RoamingType.PER_OS` - settings are shared per operating system
-- `RoamingType.DISABLED` - settings sharing is disabled
+- `RoamingType.DEFAULT` – settings are shared
+- `RoamingType.PER_OS` – settings are shared per operating system
+- `RoamingType.DISABLED` – settings sharing is disabled
 
 > If there are multiple components that store state in the same file, they must have the same `roamingType` attribute value.
 >
@@ -205,14 +209,14 @@ It is possible to share the persistent state of components between different IDE
 This allows users to have the same settings on every development machine or to share their settings within a team.
 
 Settings can be shared via the following functionalities:
-- _[Settings Sync](https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html#IDE_settings_sync)_ plugin that allows synchronizing settings on JetBrains servers. Users can choose the category of settings that are synchronized.
+- _[Settings Sync](https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html#IDE_settings_sync)_ plugin that allows synchronizing settings on JetBrains servers. Users can select the category of settings that are synchronized.
 - _[Settings Repository](https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html#settings-repository)_ plugin that allows synchronizing settings in a Git repository created and configured by a user.
 - _[Export Settings](https://www.jetbrains.com/help/idea/2019.3/sharing-your-ide-settings.html#import-export-settings)_ feature that allows for the manual import and export of settings.
 
 > Synchronization via the _Settings Sync_ or _Settings Repository_ plugins only works when these plugins are installed and enabled.
 
 The decision about making a specific component's state shareable should be made carefully.
-Only the settings that are not specific to a given machine should be shared, e.g., paths to user-specific directories shouldn't be shared.
+Only the settings that aren't specific to a given machine should be shared, for example, paths to user-specific directories shouldn't be shared.
 If a component contains both shareable and non-shareable data, it should be split into two separate components.
 
 #### Settings Sync Plugin
@@ -279,13 +283,13 @@ Otherwise, the returned state is serialized in XML and stored.
 
 ## Using `PropertiesComponent` for Simple Non-Roamable Persistence
 
-If the plugin needs to persist just a few simple values, the easiest way to do so is to use the [`PropertiesComponent`](%gh-ic%/platform/core-api/src/com/intellij/ide/util/PropertiesComponent.java) service.
+If the plugin needs to persist a few simple values, the easiest way to do so is to use the [`PropertiesComponent`](%gh-ic%/platform/core-api/src/com/intellij/ide/util/PropertiesComponent.java) service.
 It can save both application-level values and project-level values in the workspace file.
 Roaming is disabled for `PropertiesComponent`, so use it only for temporary, non-roamable properties.
 
-Use the `PropertiesComponent.getInstance()` method for storing application-level values, and the `PropertiesComponent.getInstance(Project)` method for storing project-level values.
+Use the `PropertiesComponent.getInstance()` method for storing application-level values and the `PropertiesComponent.getInstance(Project)` method for storing project-level values.
 
-Since all plugins share the same namespace, it is highly recommended prefixing key names (e.g., using plugin ID `com.example.myCustomSetting`).
+Since all plugins share the same namespace, it is highly recommended prefixing key names (for example, using plugin ID `com.example.myCustomSetting`).
 
 ## Legacy API (`JDOMExternalizable`) {collapsible="true"}
 

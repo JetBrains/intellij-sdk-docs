@@ -76,7 +76,10 @@ Replace with `String` from `Language.getID()`/`FileType.getName()` (use inspecti
 
 Register [`DynamicPluginListener`](%gh-ic%/platform/core-api/src/com/intellij/ide/plugins/DynamicPluginListener.kt) [application listener](plugin_listeners.md) to receive updates on plugin load/unload events.
 
-This can be used to, for example, cancel long-running activities or disallow unloading due to ongoing processes.
+This can be used to, for example:
+- cancel long-running activities or disallow unloading due to ongoing processes
+- clearing data from `UserDataHolder` objects (see `clearInjectorCache()` and `dropFileCaches()` in [`InjectedLanguageManagerImpl`](%gh-ic%/platform/analysis-impl/src/com/intellij/psi/impl/source/tree/injected/InjectedLanguageManagerImpl.java))
+- and similar cases
 
 ### Resource Cleanup
 

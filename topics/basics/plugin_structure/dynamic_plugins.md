@@ -23,7 +23,7 @@ Please note that any unloading problems in a production environment will simply 
 ## Restrictions
 
 For a plugin to support this, all restrictions listed below must be met.
-To verify a plugin locally, invoke <ui-path>Code | Analyze Code | Run Inspection by Name...</ui-path> and run <control>Plugin DevKit | Plugin descriptor | Plugin.xml dynamic plugin verification inspection</control> inspection on all plugin descriptor files.
+To verify a plugin locally, invoke <ui-path>Code | Analyze Code | Run Inspection by Name...</ui-path> and run <control>Plugin DevKit | Plugin descriptor | Plugin.xml dynamic plugin verification</control> inspection on all plugin descriptor files.
 
 For plugins hosted on the [JetBrains Marketplace](https://plugins.jetbrains.com) the built-in [Plugin Verifier](https://blog.jetbrains.com/platform/2018/07/plugins-repository-now-integrates-with-the-plugin-verification-tool/) will run these checks automatically.
 See [](verifying_plugin_compatibility.md#plugin-verifier) for more information on how to run it locally or on CI.

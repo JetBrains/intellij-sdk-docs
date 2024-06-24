@@ -4,7 +4,7 @@
 
 <link-summary>Creating custom plugin repositories other than JetBrains Marketplace.</link-summary>
 
-> [IDE Provisioner](https://www.jetbrains.com/ide-services/ide-provisioner/) (currently in Early Access) comes with a local built-in repository of IntelliJ Platform plugins that allows you to choose specific plugins to be approved within your organization. It also lets you upload and distribute your own plugins inside your company, as well as any publicly available plugin from the internet.
+> [IDE Provisioner](https://www.jetbrains.com/ide-services/ide-provisioner/) comes with a local built-in repository of IntelliJ Platform plugins that allows you to choose specific plugins to be approved within your organization. It also lets you upload and distribute your own plugins inside your company, as well as any publicly available plugin from the internet.
 
 If you intend to use a plugin repository _other than_ the [JetBrains Marketplace](plugin_repository_obsolete.md), you will need to:
 

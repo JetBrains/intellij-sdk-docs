@@ -59,7 +59,7 @@ The parser generates the `SimpleProperty` interface referenced in the code above
 ## Update Grammar and Regenerate the Parser
 
 Now the utility class is added to the grammar file via the `psiImplUtilClass` global attribute.
-Add `methods` attribute for a particular rule to specify which one should be used for PSI classes.
+Add the `methods` attribute for a particular rule to specify which one should be used for PSI classes.
 
 Compare the `property` rule below to the [previous definition](grammar_and_parser.md#define-the-grammar).
 
@@ -91,7 +91,7 @@ property ::= (KEY? SEPARATOR VALUE?) | KEY
 }
 ```
 
-After making above changes to the grammar, [regenerate](grammar_and_parser.md#generate-a-parser) the parser and PSI classes.
+After including the above changes in the grammar, [regenerate](grammar_and_parser.md#generate-a-parser) the parser and PSI classes.
 
 ## Define a Utility to Search Properties
 

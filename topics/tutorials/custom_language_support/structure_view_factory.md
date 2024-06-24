@@ -2,7 +2,7 @@
 
 # 14. Structure View Factory
 
-<link-summary>Sample implementation of structure view factory adding a Simple language file structure in the Structure tool window.</link-summary>
+<link-summary>Sample implementation of a structure view factory adding a Simple language file structure in the Structure tool window.</link-summary>
 
 <tldr>
 
@@ -66,7 +66,7 @@ The `SimpleStructureViewFactory` implementation is registered with the IntelliJ 
 
 Run the project by using the Gradle [`runIde`](creating_plugin_project.md#running-a-plugin-with-the-runide-gradle-task) task.
 
-Open the <path>test.simple</path> file and choose <ui-path>View | Tool Windows | Structure</ui-path>.
+Open the <path>test.simple</path> file and open <ui-path>View | Tool Windows | Structure</ui-path>.
 The IDE now supports a structure view of the Simple Language:
 
 ![Structure View](structure_view.png)

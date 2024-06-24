@@ -2,7 +2,7 @@
 
 # Intentions
 
-<link-summary>Intention actions allowing to fix code issues or transform the code to a different form.</link-summary>
+<link-summary>Intention actions allow fixing code issues or transforming the code to a different form.</link-summary>
 
 <tldr>
 
@@ -20,7 +20,7 @@ In addition, the sample plugin contains a JUnit-based test.
 The IntelliJ Platform analyzes your code and helps handle situations that may result in errors.
 When a possible problem is suspected, the IDE suggests an appropriate intention action, denoted with special icons.
 
-See [Inspections](inspections.md) topic in UI Guidelines on naming, writing description, and message texts for inspections/intentions.
+See the [Inspections](inspections.md) topic in UI Guidelines on naming, writing description, and message texts for inspections/intentions.
 
 You can view a list of all available intention actions as well as enable/disable them using the [Intentions List](https://www.jetbrains.com/help/idea/intention-actions.html#intention-settings) in <ui-path>Settings | Editor | Intentions</ui-path>.
 
@@ -30,11 +30,11 @@ The [conditional_operator_intention](%gh-sdk-samples-master%/conditional_operato
 
 - How to analyze a [PSI tree](psi_files.md).
 - How to find a Java token of interest in the PSI tree.
-- How to invoke a quick fix action for a token element under cursor using the [`PsiElementBaseIntentionAction`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/intention/PsiElementBaseIntentionAction.java) class.
+- How to invoke a quick-fix action for a token element under the cursor using the [`PsiElementBaseIntentionAction`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/intention/PsiElementBaseIntentionAction.java) class.
 - How to create a JUnit test for this plugin using the [`IdeaTestFixtureFactory`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/IdeaTestFixtureFactory.java) class.
 - How to add an intention description and before/after examples
 
-> In case of providing multiple intention actions for a single element, their ordering is indeterministic due to performance reasons.
+> In the case of providing multiple intention actions for a single element, their ordering is indeterministic due to performance reasons.
 > It is possible to push specific items up or down by implementing
 > [`HighPriorityAction`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/intention/HighPriorityAction.java)
 > or
@@ -77,7 +77,7 @@ It can be customized with the `<descriptionDirectoryName>` element in `<intentio
 
 #### Testing the Plugin
 
-> Please note that running the test requires setting system property `idea.home.path` in the `test` task configuration of the Gradle build script.
+> Note that running the test requires setting system property `idea.home.path` in the `test` task configuration of the Gradle build script.
 >
 {style="note"}
 

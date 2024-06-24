@@ -39,6 +39,10 @@ It is important to note that there is no language chooser in the IDE, and langua
 Installing a language pack changes the IDE language to the one defined by the `languageBundle` EP.
 Only a single language pack can be installed at the same time, and restart is required for the translations to take effect.
 
+### Getting the Current Locale Programmatically
+
+To get a current UI language set in the IDE, use [`DynamicBundle.getLocale()`](%gh-ic%/platform/core-api/src/com/intellij/DynamicBundle.java).
+
 ### Language Pack Translations Structure
 
 See the [translated elements](#translated-elements) list for the elements possible to translate.

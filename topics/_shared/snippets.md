@@ -69,11 +69,15 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 <snippet id="apiChangesJavaVersion">
 
-> Java 21 is required when targeting 2024.2 and later only.
+
 >
-> Java 17 is required ([blog post](https://blog.jetbrains.com/platform/2022/08/intellij-project-migrates-to-java-17/)) when targeting 2022.2 and later only.
+> Java version must be set depending on the target platform version.
 >
-> Java 11 is required ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)) when targeting 2020.3 and later only.
+> **2024.2+**: Java 21
+>
+> **2022.2+**: Java 17 ([blog post](https://blog.jetbrains.com/platform/2022/08/intellij-project-migrates-to-java-17/))
+>
+> **2020.3+**: Java 11 ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/))
 >
 {title="IDE and Java Versions" style="note"}
 
@@ -81,11 +85,13 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 <snippet id="gradlePluginVersion">
 
-> When building against 2024.2 or later, [](tools_intellij_platform_gradle_plugin.md) must be used.
+> Gradle plugin must be chosen depending on the target platform version.
 >
-> When building against 2022.3 or later, [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md#usage) version **1.10.1** or higher is required (current: %gradle-intellij-plugin-version%).
+> **2024.2+**: [](tools_intellij_platform_gradle_plugin.md)
 >
-{style="warning" title="Gradle: Minimum Plugin Versions"}
+> **2022.3+**: [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md#usage) version 1.10.1+ (current: %gradle-intellij-plugin-version%)
+>
+{style="warning" title="Gradle Plugin"}
 
 </snippet>
 

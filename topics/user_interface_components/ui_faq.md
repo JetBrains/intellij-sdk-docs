@@ -46,7 +46,7 @@ Use [`NaturalComparator`](%gh-ic%/platform/util/base/src/com/intellij/openapi/ut
 - `formatFileSize()` to format filesize: _1.23 KB_
 - `escapeLineBreak()` and related methods to escape special characters
 - `shortenTextWithEllipsis()` and `shortenPathWithEllipsis()` to produce abbreviated UI texts ending with '&#8230;'
-- `quote()` and `unquoteString()` to wrap values: _Usages of "$value$": 218 found_
+- `quote()` and `unquoteString()` to wrap values: _Usages of "\$value\$": 218 found_
 
 See [](internationalization.md) for information about internationalizing plugins.
 

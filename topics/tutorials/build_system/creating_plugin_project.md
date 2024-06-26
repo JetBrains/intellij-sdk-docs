@@ -8,6 +8,8 @@ This documentation page describes a Gradle-based plugin project generated with t
 
 ## Creating a Plugin with New Project Wizard
 
+<include from="snippets.md" element-id="gradlePluginVersion"/>
+
 <procedure title="Create IDE Plugin" id="create-ide-plugin">
 
 <include from="snippets.md" element-id="pluginDevKitAvailability"/>

@@ -7,6 +7,8 @@
 This section presents a guided tour of Gradle plugin attributes to achieve the commonly desired functionality.
 For more advanced options, see the full [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) reference.
 
+<include from="snippets.md" element-id="gradlePluginVersion"/>
+
 ## Keep Up To Date
 
 Gradle IntelliJ Plugin and [Gradle](https://gradle.org/install/) build system are constantly developed, and every new release brings important bug fixes, new features, and improvements that makes the development more efficient.

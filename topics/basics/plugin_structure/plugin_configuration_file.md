@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Plugin Configuration File
 
@@ -1202,6 +1202,7 @@ An extension point which restricts the type provided in a `myClass` attribute to
 {#idea-plugin__application-components}
 
 > Element is deprecated. Do not use it in new plugins.
+> See [](plugin_components.md) for migration guide.
 >
 {style="warning"}
 
@@ -1218,6 +1219,7 @@ Children
 {#idea-plugin__project-components}
 
 > Element is deprecated. Do not use it in new plugins.
+> See [](plugin_components.md) for migration guide.
 >
 {style="warning"}
 
@@ -1234,6 +1236,7 @@ Children
 {#idea-plugin__module-components}
 
 > Element is deprecated. Do not use it in new plugins.
+> See [](plugin_components.md) for migration guide.
 >
 {style="warning"}
 
@@ -1250,6 +1253,7 @@ Children
 {#idea-plugin__components__component}
 
 > Element is deprecated. Do not use it in new plugins.
+> See [](plugin_components.md) for migration guide.
 >
 {style="warning"}
 
@@ -1272,6 +1276,7 @@ Children
 {#idea-plugin__components__component__implementation-class}
 
 > Element is deprecated. Do not use it in new plugins.
+> See [](plugin_components.md) for migration guide.
 >
 {style="warning"}
 
@@ -1285,6 +1290,7 @@ Required
 {#idea-plugin__components__component__interface-class}
 
 > Element is deprecated. Do not use it in new plugins.
+> See [](plugin_components.md) for migration guide.
 >
 {style="warning"}
 
@@ -1298,6 +1304,7 @@ Required
 {#idea-plugin__components__component__headless-implementation-class}
 
 > Element is deprecated. Do not use it in new plugins.
+> See [](plugin_components.md) for migration guide.
 >
 {style="warning"}
 
@@ -1311,6 +1318,7 @@ Required
 {#idea-plugin__components__component__option}
 
 > Element is deprecated. Do not use it in new plugins.
+> See [](plugin_components.md) for migration guide.
 >
 {style="warning"}
 
@@ -1332,6 +1340,7 @@ Attributes
 {#idea-plugin__components__component__loadForDefaultProject}
 
 > Element is deprecated. Do not use it in new plugins.
+> See [](plugin_components.md) for migration guide.
 >
 {style="warning"}
 

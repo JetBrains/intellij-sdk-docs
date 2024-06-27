@@ -113,37 +113,30 @@ To bundle _stdlib_ in the plugin distribution, specify explicitly `kotlin.stdlib
 If a plugin supports [multiple platform versions](build_number_ranges.md), it must either target the lowest bundled _stdlib_ version
 or the specific version must be [provided in plugin distribution](plugin_content.md#plugin-with-dependencies).
 
-| IntelliJ Platform version | Bundled _stdlib_ version |
-|---------------------------|--------------------------|
-| 2024.2                    | 1.9.24                   |
-| 2024.1                    | 1.9.22                   |
-| 2023.3                    | 1.9.10                   |
-| 2023.2                    | 1.8.20                   |
-| 2023.1                    | 1.8.0                    |
-
-#### Earlier Versions
-{collapsible="true"}
-
-| IntelliJ Platform version | Bundled _stdlib_ version |
-|---------------------------|--------------------------|
-| 2022.3                    | 1.7.0                    |
-| 2022.2                    | 1.6.21                   |
-| 2022.1                    | 1.6.20                   |
-| 2021.3                    | 1.5.10                   |
-| 2021.2                    | 1.5.10                   |
-| 2021.1                    | 1.4.32                   |
-| 2020.3                    | 1.4.0                    |
-| 2020.2                    | 1.3.70                   |
-| 2020.1                    | 1.3.70                   |
-| 2019.3                    | 1.3.31                   |
-| 2019.2                    | 1.3.3                    |
-| 2019.1                    | 1.3.11                   |
-
 See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html#dependency-on-the-standard-library) for more details.
 
 > If you need to add the Kotlin Standard Library to your **test project** dependencies, see the [](testing_faq.md#how-to-test-a-jvm-language) section.
 >
 {title="Adding stdlib in tests"}
+
+| IntelliJ Platform version (latest update) | Bundled _stdlib_ version |
+|-------------------------------------------|--------------------------|
+| 2024.2                                    | 1.9.24                   |
+| 2024.1                                    | 1.9.22                   |
+| 2023.3                                    | 1.9.21                   |
+| 2023.2                                    | 1.8.20                   |
+| 2023.1                                    | 1.8.0                    |
+
+#### Earlier Versions
+{collapsible="true"}
+
+| IntelliJ Platform version (latest update) | Bundled _stdlib_ version |
+|-------------------------------------------|--------------------------|
+| 2022.3                                    | 1.7.22                   |
+| 2022.2                                    | 1.6.21                   |
+| 2022.1                                    | 1.6.10                   |
+
+See [here](https://www.jetbrains.com/legal/third-party-software/) for earlier versions.
 
 ### Kotlin Coroutines Libraries (kotlinx.coroutines)
 {id="coroutinesLibraries"}

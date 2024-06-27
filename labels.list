@@ -9,6 +9,8 @@
   <primary-label id="IntelliJIDEA_Ultimate" short-name="IntelliJ IDEA Ultimate" name="IntelliJ IDEA Ultimate"
                  href="https://plugins.jetbrains.com/docs/intellij/idea-ultimate.html"/>
 
+  <primary-label id="Deprecated" short-name="Deprecated" name="Deprecated" color="red"/>
+
   <primary-label id="2020.1" short-name="2020.1+" name="2020.1+"/>
   <primary-label id="2020.2" short-name="2020.2+" name="2020.2+"/>
   <primary-label id="2020.3" short-name="2020.3+" name="2020.3+"/>

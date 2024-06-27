@@ -1198,6 +1198,8 @@ An extension point which restricts the type provided in a `myClass` attribute to
 ## Deprecated Elements
 {collapsible="true" initial-collapse-state="collapsed"}
 
+<primary-label ref="Deprecated"/>
+
 ### `application-components`
 {#idea-plugin__application-components}
 

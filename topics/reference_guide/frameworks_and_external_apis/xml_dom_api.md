@@ -636,7 +636,8 @@ DOM elements can be stubbed, so (costly) access to XML/PSI is not necessary (see
 Performance relevant elements, tag or attribute getters can simply be annotated with `@com.intellij.util.xml.Stubbed`.
 Set and increase `stubVersion` of `com.intellij.dom.fileMetaData` extension whenever you change `@Stubbed` annotations usage in your DOM hierarchy to trigger proper rebuilding of Stubs during indexing.
 
-## Building a DOM-Based GUI
+## Building a DOM-Based GUI {collapsible="true"}
+<primary-label ref="Deprecated"/>
 
 > This API is unmaintained and will likely be removed in future versions.
 >

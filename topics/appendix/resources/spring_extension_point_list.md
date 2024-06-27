@@ -3,6 +3,7 @@
 <!-- EP List Directory: /plugins/spring/ -->
 
 # Spring API Extension Point and Listener List
+<primary-label ref="IntelliJIDEA_Ultimate"/>
 
 <link-summary>Overview of Extension Points and Listeners for Spring API.</link-summary>
 

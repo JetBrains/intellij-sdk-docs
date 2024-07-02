@@ -95,6 +95,17 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `org.jetbrains.kotlin.fir.types.ConeTypeUtilsKt.renderReadableWithFqNames(ConeKotlinType)` method removed
 : Internals of Kotlin compiler.
 
+### Database Plugin 2024.2
+
+`com.intellij.database.datagrid.DataGrid.getCoroutineScope()` abstract method added
+: Only recompilation is needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
+
+`com.intellij.database.datagrid.DataGrid.getModificationTracker()` abstract method added
+: Only recompilation is needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
+
+`com.intellij.database.datagrid.DataGrid.adaptForNewQuery()` abstract method added
+: Only recompilation is needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
+
 ## 2024.1
 
 ### IntelliJ Platform 2024.1

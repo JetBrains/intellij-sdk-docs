@@ -1,6 +1,7 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# Components
+# Components (Deprecated)
+<primary-label ref="Deprecated"/>
 
 <link-summary>Migrating deprecated plugin components to the current solutions.</link-summary>
 
@@ -16,7 +17,7 @@ Plugin Components are defined in the `<application-components>`, `<project-compo
 
 ## Migration
 
-To migrate existing code from Components to more modern APIs, please see the following guidelines.
+To migrate existing code from Components to modern APIs, see the following guidelines.
 
 ### Manage State
 

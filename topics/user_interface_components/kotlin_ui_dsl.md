@@ -1,6 +1,7 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Kotlin UI DSL Version 1
+<primary-label ref="Deprecated"/>
 
 <link-summary>Kotlin DSL for creating UI forms with input components bound to state object.</link-summary>
 
@@ -10,7 +11,7 @@
 
 </tldr>
 
-> If you're targeting IntelliJ Platform 2021.3 and later only, please use [](kotlin_ui_dsl_version_2.md).
+> When targeting IntelliJ Platform 2021.3 and later only use [](kotlin_ui_dsl_version_2.md).
 >
 > **The version documented on this page is deprecated and will be removed in future platform releases.**
 >

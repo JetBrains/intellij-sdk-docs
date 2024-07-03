@@ -77,11 +77,11 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `org.apache.sanselan.util` package removed
 : `org.apache.sanselan.util.IOUtils` compatibility shim is obsolete; instead, please use JRE methods or `org.apache.commons.io.IOUtils`.
 
-`com.intellij.platform.workspace.storage.url.VirtualFileUrlManager.getOrCreateFromUri(String) : VirtualFileUrl` method removed
-: Use `com.intellij.platform.workspace.storage.url.VirtualFileUrlManager.getOrCreateFromUrl(String) : VirtualFileUrl` instead.
+`com.intellij.platform.workspace.storage.url.VirtualFileUrlManager.getOrCreateFromUri(String)` method removed
+: Use `com.intellij.platform.workspace.storage.url.VirtualFileUrlManager.getOrCreateFromUrl(String)` instead.
 
-`com.intellij.platform.workspace.jps.entities.DependenciesKt.modifyEntity(MutableEntityStorage, LibraryEntity, Function1) : LibraryEntity` method removed
-: Use `com.intellij.platform.workspace.jps.entities.DependenciesKt.modifyLibraryEntity(MutableEntityStorage, LibraryEntity, Function1) : LibraryEntity` instead.
+`com.intellij.platform.workspace.jps.entities.DependenciesKt.modifyEntity(MutableEntityStorage, LibraryEntity, Function1)` method removed
+: Use `com.intellij.platform.workspace.jps.entities.DependenciesKt.modifyLibraryEntity(MutableEntityStorage, LibraryEntity, Function1)` instead.
 
 ### Python Plugin 2024.2
 `com.jetbrains.python.PyElementTypes.STATEMENT_LIST` field type changed from `PyElementType` to `IElementType`

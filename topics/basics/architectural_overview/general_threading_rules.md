@@ -7,8 +7,8 @@
 <link-summary>Threading rules for reading and writing to IntelliJ Platform data models, running and canceling background processes, and avoiding UI freezes.</link-summary>
 
 In the IntelliJ Platform, code is executed on one of two thread types:
-- [Event Dispatch Thread](https://docs.oracle.com/javase/tutorial/uiswing/concurrency/dispatch.html) (EDT) - also known as the UI thread. It is used for updating the UI and performing changes in the IDE data model. Operations performed on EDT must be fast.
-- background threads - used for performing costly operations.
+- [Event Dispatch Thread](https://docs.oracle.com/javase/tutorial/uiswing/concurrency/dispatch.html) (EDT) – also known as the UI thread. It is used for updating the UI and performing changes in the IDE data model. Operations performed on EDT must be fast.
+- background threads – used for performing costly operations.
 
 ## Read-Write Lock
 
@@ -22,7 +22,7 @@ Access to the model must be performed in a read or write action for the followin
 - [](virtual_file_system.md) (VFS)
 - [Project root model](project_structure.md).
 
-> Threading model has changed in 2023.3, please make sure to choose the correct version in the tabs below.
+> Threading model has changed in 2023.3, make sure to select the correct version in the tabs below.
 >
 {title="2023.3 Threading Model Changes" style="warning"}
 
@@ -44,7 +44,7 @@ If invoked from a background thread or from EDT but via `SwingUtilities.invokeLa
 
 Reading data is allowed from any thread.
 
-Reading data from EDT does not require any special effort.
+Reading data from EDT doesn't require any special effort.
 
 However, read operations performed from any other thread must be wrapped in a read action (RA).
 
@@ -52,7 +52,7 @@ However, read operations performed from any other thread must be wrapped in a re
 
 </tabs>
 
-The corresponding objects are not guaranteed to survive between several consecutive read actions.
+The corresponding objects aren't guaranteed to survive between several consecutive read actions.
 As a rule of thumb, whenever starting a read action, check if the PSI/VFS/project/module is still valid.
 
 #### Read Action (RA) API
@@ -76,9 +76,9 @@ You may not modify PSI, VFS, or project model from inside UI renderers or `Swing
 ## Modality and `invokeLater()`
 
 To pass control from a background thread to EDT, instead of the standard `SwingUtilities.invokeLater()`, plugins should use `ApplicationManager.getApplication().invokeLater()`.
-The latter API allows specifying the _modality state_ ([`ModalityState`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ModalityState.java)) for the call, i.e., the stack of modal dialogs under which the call is allowed to execute:
+The latter API allows specifying the _modality state_ ([`ModalityState`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ModalityState.java)) for the call, that is, the stack of modal dialogs under which the call is allowed to execute:
 
-### `ModalityState.nonModal()` / `NON_MODAL`
+### `ModalityState.nonModal()`/`NON_MODAL`
 
 The operation will be executed after all modal dialogs are closed.
 If any of the open (unrelated) projects displays a per-project modal dialog, the action will be performed after the dialog is closed.
@@ -96,36 +96,36 @@ It has special handling for background processes started with `ProgressManager`:
 ### `ModalityState.any()`
 
 The operation will be executed as soon as possible regardless of modal dialogs.
-Please note that modifying PSI, VFS, or project model is prohibited from such runnables.
+Note that modifying PSI, VFS, or project model is prohibited from such runnables.
 
-If EDT activity needs to access [file-based index](indexing_and_psi_stubs.md) (e.g., it's doing any project-wide PSI analysis, resolves references, etc.), please use `DumbService.smartInvokeLater()`.
+If EDT activity needs to access a [file-based index](indexing_and_psi_stubs.md) (for example, it is doing any project-wide PSI analysis, resolves references, or performs other tasks depending on indexes), use `DumbService.smartInvokeLater()`.
 That way, it is run after all possible indexing processes have been completed.
 
 ## Background Processes and `ProcessCanceledException`
 
-Background progresses are managed by [`ProgressManager`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java) class, which has plenty of methods to execute the given code with a modal (dialog), non-modal (visible in the status bar), or invisible progress.
+Background progresses are managed by [`ProgressManager`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java), which has plenty of methods to execute the given code with a modal (dialog), non-modal (visible in the status bar), or invisible progress.
 In all cases, the code is executed on a background thread, which is associated with a [`ProgressIndicator`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressIndicator.java) object.
 The current thread's indicator can be retrieved any time via `ProgressIndicatorProvider.getGlobalProgressIndicator()`.
 
-For visible progresses, threads can use `ProgressIndicator` to notify the user about current status: e.g., set text or visual fraction of the work done.
+For visible progresses, threads can use `ProgressIndicator` to notify the user about the current status: for example, set text or visual fraction of the work done.
 
-Progress indicators also provide means to handle cancellation of background processes, either by the user (pressing the <control>Cancel</control> button) or from code (e.g., when the current operation becomes obsolete due to some changes in the project).
+Progress indicators also provide the means to handle cancellation of background processes, either by the user (pressing the <control>Cancel</control> button) or from code (for example, when the current operation becomes obsolete due to some changes in the project).
 The progress can be marked as canceled by calling `ProgressIndicator.cancel()`.
-The process reacts to this by calling `ProgressIndicator.checkCanceled()` (or `ProgressManager.checkCanceled()` if no indicator instances at hand).
+The process reacts to this by calling `ProgressIndicator.checkCanceled()` (or `ProgressManager.checkCanceled()` if no indicator instance is available in the current context).
 This call throws a special unchecked [`ProcessCanceledException`](%gh-ic%/platform/util/base/src/com/intellij/openapi/progress/ProcessCanceledException.java) (PCE) if the background process has been canceled.
 
-All code working with [PSI](psi.md), or in other kinds of background processes, must be prepared for PCE being thrown at any point.
-This exception must never be logged but rethrown, and it'll be handled in the infrastructure that started the process.
+All code working with [PSI](psi.md) or in other kinds of background processes must be prepared for PCE being thrown at any point.
+This exception must never be logged but rethrown, and it will be handled in the infrastructure that started the process.
 Use inspection <control>Plugin DevKit | Code | 'ProcessCanceledException' handled incorrectly</control> (2023.3).
 
 The `checkCanceled()` should be called often enough to guarantee the process's smooth cancellation.
 PSI internals have a lot of `checkCanceled()` calls inside.
-If a process does lengthy non-PSI activity, insert explicit `checkCanceled()` calls so that it happens frequently, e.g., on each _Nth_ loop iteration.
+If a process does lengthy non-PSI activity, insert explicit `checkCanceled()` calls so that it happens frequently, for example, on each _Nth_ loop iteration.
 Use inspection <control>Plugin DevKit | Code | Cancellation check in loops</control> (2023.1).
 
 ### Disabling `ProcessCanceledException`
 
-Throwing PCE from `ProgressIndicator.checkCanceled()` can be disabled for development (e.g., while debugging the code) by invoking:
+Throwing PCE from `ProgressIndicator.checkCanceled()` can be disabled for development (for example, while debugging the code) by invoking:
 
 <tabs>
 <tab title="2023.2 and later">
@@ -146,46 +146,46 @@ These actions are available only if [Internal Mode is enabled](enabling_internal
 ## Read Action Cancellability
 
 Background threads shouldn't take plain read actions for a long time.
-The reason is that if EDT needs a write action (e.g., the user types something), it must be acquired as soon as possible.
+The reason is that if EDT needs a write action (for example, the user types something), it must be acquired as soon as possible.
 Otherwise, the UI will freeze until all background threads have released their read actions.
 
-The best-known approach is to cancel background read actions whenever there's a write action about to occur, and restart that background read action later from scratch.
-Editor highlighting, code completion, Goto Class/File/... actions all work like this.
+The best-known approach is to cancel background read actions whenever there is a write action about to occur and restart that background read action later from scratch.
+Editor highlighting, code completion, Goto Class/File/… actions all work like this.
 
-To achieve that, the lengthy background operation is started with a `ProgressIndicator`, and a dedicated listener cancels that indicator when write action is initiated.
+To achieve that, the lengthy background operation is started with a `ProgressIndicator`, and a dedicated listener cancels that indicator when a write action is initiated.
 The next time the background thread calls `checkCanceled()`, a PCE is thrown, and the thread should stop its operation (and finish the read action) as soon as possible.
 
 There are two recommended ways of doing this:
 
-* If on EDT, call [`ReadAction.nonBlocking()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) which returns [`NonBlockingReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/NonBlockingReadAction.java) (NBRA)
-* If already in a background thread, use [`ProgressManager.runInReadActionWithWriteActionPriority()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java) in a loop, until it passes or the whole activity becomes obsolete.
+- If on EDT, call [`ReadAction.nonBlocking()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) which returns [`NonBlockingReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/NonBlockingReadAction.java) (NBRA)
+- If already in a background thread, use [`ProgressManager.runInReadActionWithWriteActionPriority()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java) in a loop, until it passes or the whole activity becomes obsolete.
 
-In both approaches, always check at the start of each read action if the objects are still valid, and if the whole operation still makes sense (i.e., not canceled by the user, the project isn't closed, etc.).
+In both approaches, always check at the start of each read action if the objects are still valid, and if the whole operation still makes sense (for example, not canceled by the user, the project isn't closed, and similar).
 With `ReadAction.nonBlocking()`, use `expireWith()` or `expireWhen()` for that.
 
-If the activity has to access [file-based index](indexing_and_psi_stubs.md) (e.g., it's doing any project-wide PSI analysis, resolves references, etc.), use `ReadAction.nonBlocking(...).inSmartMode()`.
+If the activity has to access a [file-based index](indexing_and_psi_stubs.md) (for example, it is doing any project-wide PSI analysis, resolves references, or performs other tasks depending on indexes), use `ReadAction.nonBlocking(…).inSmartMode()`.
 
 ## Avoiding UI Freezes
 
-#### Do not Perform Long Operations in EDT
+#### Don't Perform Long Operations in EDT
 
 In particular, don't traverse [](virtual_file_system.md), parse [PSI](psi.md), resolve [references](psi_references.md) or query [indexes/stubs](indexing_and_psi_stubs.md).
 
-There are still some cases when the platform itself invokes such expensive code (e.g., resolve in `AnAction.update()`), but these are being worked on.
-Meanwhile, please try to speed up what you can in your plugin as it will be generally beneficial and also improve background highlighting performance.
+There are still some cases when the platform itself invokes such expensive code (for example, resolve in `AnAction.update()`), but these are being worked on.
+Meanwhile, try to speed up what you can in your plugin as it will be generally beneficial and also improve background highlighting performance.
 For implementations of [`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java), plugin authors should specifically
 review the documentation of `AnAction.getActionUpdateThread()` in the [](basic_action_system.md) section as it describes how threading works for actions.
 
-`WriteAction`s currently have to happen on EDT.
-To speed them up, as much as possible should be moved out of the write action into a preparation step which can be then invoked in the background (e.g., using `ReadAction.nonBlocking()`, see above).
+Write actions currently have to happen on EDT.
+To speed them up, as much as possible should be moved out of the write action into a preparation step which can be then invoked in the background (for example, using `ReadAction.nonBlocking()`, see above).
 
 #### Event Listeners
 
-Listeners must not perform any heavy operations.
+Listeners mustn't perform any heavy operations.
 Ideally, they should only clear some caches.
 
-It is also possible to schedule background processing of events, but be prepared that some new events might be delivered before the background processing starts
-— and thus the world might have changed by that moment or even in the middle of background processing.
+It is also possible to schedule background processing of events.
+In such cases, be prepared that some new events might be delivered before the background processing starts – and thus the world might have changed by that moment or even in the middle of background processing.
 Consider using [`MergingUpdateQueue`](%gh-ic%/platform/ide-core/src/com/intellij/util/ui/update/MergingUpdateQueue.java) and `ReadAction.nonBlocking()` (see [](#read-action-cancellability)) to mitigate these issues.
 
 #### VFS Events

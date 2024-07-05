@@ -65,7 +65,7 @@
     <toc-element topic="fundamentals.md" accepts-web-file-names="reference_guide.html,architectural_overview.html">
       <toc-element toc-title="Component Model"/>
       <toc-element topic="disposers.md"/>
-      <toc-element topic="general_threading_rules.md" toc-title="Threading">
+      <toc-element topic="general_threading_rules.md">
         <toc-element toc-title="Background Tasks"/>
       </toc-element>
       <toc-element topic="kotlin_coroutines.md">

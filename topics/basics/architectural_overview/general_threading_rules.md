@@ -1,42 +1,199 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# General Threading Rules
+# Threading Model
 
 <!-- short link: https://jb.gg/ij-platform-threading -->
 
 <link-summary>Threading rules for reading and writing to IntelliJ Platform data models, running and canceling background processes, and avoiding UI freezes.</link-summary>
 
-In the IntelliJ Platform, code is executed on one of two thread types:
-- [Event Dispatch Thread](https://docs.oracle.com/javase/tutorial/uiswing/concurrency/dispatch.html) (EDT) – also known as the UI thread. It is used for updating the UI and performing changes in the IDE data model. Operations performed on EDT must be fast.
-- background threads – used for performing costly operations.
+> It is highly recommended that readers unfamiliar with Java threads go through the official [Java Concurrency](https://docs.oracle.com/javase/tutorial/essential/concurrency/index.html) tutorial before reading this section.
 
-## Read-Write Lock
+The IntelliJ Platform is a highly concurrent environment.
+Code is executed in many threads simultaneously.
+In general, as in a regular [Swing](https://docs.oracle.com/javase%2Ftutorial%2Fuiswing%2F%2F/index.html) application, threads can be categorized into two groups:
+- [Event Dispatch Thread](https://docs.oracle.com/javase/tutorial/uiswing/concurrency/dispatch.html) (EDT) – also known as the UI thread.
+  Its main purpose is handling UI events (such as reacting to clicking a button or updating the UI).
+  EDT executes events taken from the Event Queue.
+  Operations performed on EDT must be as fast as possible to not block other events and freeze the UI.
+  There is only one EDT in the running application.
+- background threads – used for performing long-running and costly operations, or background tasks
 
-> [Thread Access Info](https://plugins.jetbrains.com/plugin/16815-thread-access-info) plugin visualizes Read/Write Access and Thread information in the debugger.
+[//]: # (TODO: `Application` interface provides, among others, methods for working with the IDE thread model.)
 
-In general, code-related data structures in the IntelliJ Platform are covered by a single [readers-writer (RW) lock](https://w.wiki/7dBy).
+## Readers-Writer Lock
 
-Access to the model must be performed in a read or write action for the following subsystems:
+The IntelliJ Platform data structures (such as [Program Structure Interface](psi.md), [Virtual File System](virtual_file_system.md), or [Project root model](project_structure.md)) aren't thread-safe.
+Accessing them requires a synchronization mechanism ensuring that all threads see the data in a consistent and up-to-date state.
+This is implemented with a single application-wide [readers-writer (RW) lock](https://w.wiki/7dBy) that must be acquired by threads requiring reading or writing to data models.
 
-- [](psi.md)
-- [](virtual_file_system.md) (VFS)
-- [Project root model](project_structure.md).
+If a thread requires accessing a data model, it must acquire one of the locks:
 
-> Threading model has changed in 2023.3, make sure to select the correct version in the tabs below.
->
-{title="2023.3 Threading Model Changes" style="warning"}
+**Read Lock:**
+- allows a thread for reading data
+- can be acquired from any thread concurrently with other read locks and write intent lock
+- can't be acquired if write lock is held on another thread
 
-### Read Access
+**Write Intent Lock:**
+- allows a thread for reading data and potentially upgrade to the write lock
+- can be acquired from any thread concurrently with read locks
+- can't be acquired if another write intent lock or write lock is held on another thread
+
+**Write Lock:**
+- allows a thread for reading and writing data
+- can only be acquired from under write intent lock
+- can't be acquired if any other lock is held on another thread
+
+The following table shows compatibility between locks in a simplified form:
+
+<table style="both">
+    <tr>
+        <td width="25%"></td>
+        <td width="25%">Read</td>
+        <td width="25%">Write Intent</td>
+        <td width="25%">Write</td>
+    </tr>
+    <tr>
+        <td>Read</td>
+        <td><img src="green_checkmark.svg" alt="+"/></td>
+        <td><img src="green_checkmark.svg" alt="+"/></td>
+        <td><img src="gray_cross.svg" alt="-"/></td>
+    </tr>
+    <tr>
+        <td>Write Intent</td>
+        <td><img src="green_checkmark.svg" alt="+"/></td>
+        <td><img src="gray_cross.svg" alt="-"/></td>
+        <td><img src="gray_cross.svg" alt="-"/></td>
+    </tr>
+    <tr>
+        <td>Write</td>
+        <td><img src="gray_cross.svg" alt="-"/></td>
+        <td><img src="gray_cross.svg" alt="-"/></td>
+        <td><img src="gray_cross.svg" alt="-"/></td>
+    </tr>
+</table>
+
+The described lock characteristics conclude the following:
+- multiple threads can read data at the same time
+- once a thread acquires the write lock, no other threads can read or write data
+
+Acquiring and releasing locks explicitly in code would be verbose and error-prone and must never be done by plugins.
+The IntelliJ Platform enables write intent lock implicitly on EDT (see [](#locks-and-event-dispatch-thread) for details) and provides an API for accessing data under read or write locks (see [](#accessing-data)).
+
+[//]: # (TODO: diagram[s] showing how the locks are acquired?)
+
+### Locks and Event Dispatch Thread
+
+Although acquiring all types of locks can be, in theory, done from any threads, currently, the platform implicitly acquires write intent lock on EDT only.
+As the write lock can be acquired only from under write intent lock, it means that **writing data can be done only on EDT**.
+
+> It is known that writing data only on EDT has negative consequences of potentially freezing the UI.
+> There is an in-progress effort to [allow writing data from any thread](https://youtrack.jetbrains.com/issue/IJPL-53).
+> This documentation will be updated when that happens.
+
+[//]: # (TODO: what is the historical reason for that?)
+
+The scope of implicitly acquiring the write intent lock on EDT differs depending on the platform version:
 
 <tabs group="threading">
 
-<tab title="2023.3 and later" group-key="newThreading">
+<tab title="2023.3+" group-key="newThreading">
+
+Write intent lock is acquired automatically when action is invoked on EDT with [`Application.invokeLater()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java).
+
+</tab>
+
+<tab title="Earlier versions" group-key="oldThreading">
+
+Write intent lock is acquired automatically when action is invoked on EDT with methods such as:
+- [`Application.invokeLater()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java),
+- [`SwingUtilities.invokeLater()`](https://docs.oracle.com/javase/8/docs/api/javax/swing/SwingUtilities.html#invokeLater-java.lang.Runnable-),
+- [`UIUtil.invokeAndWaitIfNeeded()`](%gh-ic%/platform/util/ui/src/com/intellij/util/ui/UIUtil.java),
+- [`EdtInvocationManager.invokeLaterIfNeeded()`](%gh-ic%/platform/util/src/com/intellij/util/ui/EdtInvocationManager.java),
+- and other similar methods
+
+[//]: # (TODO: only these methods or anything executed on EDT?)
+
+</tab>
+
+</tabs>
+
+## Accessing Data
+
+The IntelliJ Platform provides a simple API for accessing data under read or write locks in a form of read and write actions.
+
+Read and writes actions allow executing a piece of code under a lock, automatically acquiring it before an action starts, and releasing it after the action is finished.
+
+> Always wrap only the required operations into read/write actions, minimizing the time of holding locks.
+>
+{style="warning"}
+
+### Read Actions
+
+#### API
+{#read-actions-api}
+
+- [`Application.runReadAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java):
+  <tabs group="languages">
+  <tab title="Kotlin" group-key="kotlin">
+
+  ```kotlin
+  val file = ApplicationManager.application.runReadAction {
+    // read and return PsiFile
+  }
+  ```
+  </tab>
+  <tab title="Java" group-key="java">
+
+  ```java
+  PsiFile file = ApplicationManager.getApplication()
+      .runReadAction((Computable<PsiFile>)() -> {
+        // read and return PsiFile
+      });
+  ```
+  </tab>
+  </tabs>
+
+- [`ReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) `run()` or `compute()`:
+  <tabs group="languages">
+  <tab title="Kotlin" group-key="kotlin">
+
+  ```kotlin
+  val file = ReadAction.compute<PsiFile, Throwable> {
+   // read and return PsiFile
+  }
+  ```
+  </tab>
+  <tab title="Java" group-key="java">
+
+  ```java
+  PsiFile file = ReadAction.compute(() -> {
+    // read and return PsiFile
+  });
+  ```
+  </tab>
+  </tabs>
+
+
+- Kotlin [`readAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/actions.kt):
+  ```kotlin
+  val psiFile = readAction {
+    // read and return PsiFile
+  }
+  ```
+  Note that this API is obsolete since 2024.1.
+  Plugins implemented in Kotlin and targeting versions 2024.1+ should use [coroutine-compatible read actions](coroutine_read_actions.md).
+
+
+#### Rules
+{#read-actions-rules}
+
+<tabs group="threading">
+
+<tab title="2023.3+" group-key="newThreading">
 
 Reading data is allowed from any thread.
 
-Read operations need to be wrapped in a read action (RA) if not invoked via `Application.invokeLater()`.
-
-If invoked from a background thread or from EDT but via `SwingUtilities.invokeLater()`, it must be explicitly wrapped in a read action (RA).
+Reading data on EDT invoked with `Application.invokeLater()` doesn't require an explicit read action, as the write intent lock allowing to read data is [acquired implicitly](#locks-and-event-dispatch-thread).
 
 </tab>
 
@@ -44,34 +201,88 @@ If invoked from a background thread or from EDT but via `SwingUtilities.invokeLa
 
 Reading data is allowed from any thread.
 
-Reading data from EDT doesn't require any special effort.
-
-However, read operations performed from any other thread must be wrapped in a read action (RA).
+Reading data on EDT doesn't require an explicit read action, as the write intent lock allowing to read data is [acquired implicitly](#locks-and-event-dispatch-thread).
 
 </tab>
 
 </tabs>
 
-The corresponding objects aren't guaranteed to survive between several consecutive read actions.
-As a rule of thumb, whenever starting a read action, check if the PSI/VFS/project/module is still valid.
+In all other cases, it is required to wrap read operation in a read action with one of the [API](#read-actions-api) methods.
 
-#### Read Action (RA) API
+The read objects aren't guaranteed to survive between several consecutive read actions.
+Whenever starting a read action, check if the PSI/VFS/project/module is still valid.
+Example:
+```kotlin
+PsiFile psiFile = ReadAction.compute(() -> {
+  if (project.isDisposed()) { // check if the project is not disposed
+    return null;
+  }
+  return virtulFile.isValid() ? // check if the file is valid
+      PsiManager.getInstance(project).findFile(virtualFile) : null;
+});
+```
 
-- [`Application.runReadAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java)
-- [`ReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) `run()` or `compute()`
+[//]: # (TODO: diagram showing how data can be invalidated)
 
-### Write Access
+### Write Actions
 
-Writing data is only allowed from EDT, and write operations always need to be wrapped in a write action (WA).
-
-Modifying the model is only allowed from write-safe contexts, including user actions and `SwingUtilities.invokeLater()` calls from them (see [](#modality-and-invokelater)).
-
-You may not modify PSI, VFS, or project model from inside UI renderers or `SwingUtilities.invokeLater()` calls.
-
-#### Write Action (WA) API
+#### API
+{#write-actions-api}
 
 - [`Application.runWriteAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java)
 - [`WriteAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/WriteAction.java) `run()` or `compute()`
+
+
+#### Rules
+{#write-actions-rules}
+
+
+Writing data is only allowed from EDT.
+
+Write operations must be wrapped in a write action with one of the [API](#write-actions-api) methods.
+
+Modifying the model is only allowed from write-safe contexts, including user actions and `SwingUtilities.invokeLater()` calls from them (see [](#modality-and-invokelater)).
+
+Modifying PSI, VFS, or project model from inside UI renderers or `SwingUtilities.invokeLater()` calls is forbidden.
+
+> [Thread Access Info](https://plugins.jetbrains.com/plugin/16815-thread-access-info) plugin visualizes Read/Write Access and Thread information in the debugger.
+
+#### WiP
+{collapsible="true" initial-collapse-state="collapsed"}
+
+_Just a draft without a special meaning:_
+
+```plantuml
+
+@startuml
+!pragma teoz true
+
+participant "EDT" as edt order 0
+participant "Thread 1" as thread1 order 1
+participant "Thread 2" as thread2 order 2
+collections "Data\nModel" as resource order 4
+
+thread1 ->(20) resource: read
+Activate resource
+& thread2 ->(25) resource: read
+'& Note over edt : test
+
+thread1 <- resource: result
+thread2 <- resource: result
+Deactivate resource
+
+edt -> resource: write
+Activate resource
+
+'TODO: add RWLock into diagram
+
+thread1 -> resource: read
+
+edt <- resource: done
+Deactivate resource
+
+@enduml
+```
 
 ## Modality and `invokeLater()`
 
@@ -191,3 +402,6 @@ Consider using [`MergingUpdateQueue`](%gh-ic%/platform/ide-core/src/com/intellij
 #### VFS Events
 
 Massive batches of VFS events can be pre-processed in the background, see [`AsyncFileListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/AsyncFileListener.java) (2019.2 or later).
+
+[//]: # (TODO: use swing and other purely UI utilities for UI tasks. Use Application.invokeLater, when writing is needed.)
+[//]: # (TODO: add section about slow operations)

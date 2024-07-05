@@ -213,6 +213,11 @@ Visibility of class `com.intellij.util.CachedValuesFactory` changed from public 
 `com.intellij.lang.properties.RemovePropertyLocalFix` class removed
 : Use `com.intellij.codeInsight.daemon.impl.quickfix.DeleteElementFix` instead.
 
+### Properties Plugin 2024.1
+
+`com.intellij.lang.properties.PropertiesQuickFixFactory.createRemovePropertyLocalFix()` method parameter `Property property` added.
+: Supply the property that the fix should be applied for.
+
 ### Django Plugin 2024.1
 
 Package `com.jetbrains.jinja2` renamed to `com.intellij.jinja`

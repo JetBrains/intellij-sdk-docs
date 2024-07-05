@@ -124,6 +124,7 @@ The IntelliJ Platform provides a simple API for accessing data under read or wri
 Read and writes actions allow executing a piece of code under a lock, automatically acquiring it before an action starts, and releasing it after the action is finished.
 
 > Always wrap only the required operations into read/write actions, minimizing the time of holding locks.
+> If the read operation itself is long, consider using one of [read action cancellability techniques](#read-action-cancellability) to avoid blocking the write lock.
 >
 {style="warning"}
 

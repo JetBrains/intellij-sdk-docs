@@ -91,6 +91,7 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 : Use `com.intellij.platform.workspace.jps.entities.DependenciesKt.modifyLibraryEntity(MutableEntityStorage, LibraryEntity, Function1)` instead.
 
 ### Python Plugin 2024.2
+
 `com.jetbrains.python.PyElementTypes.STATEMENT_LIST` field type changed from `PyElementType` to `IElementType`
 : Update code usages.
 
@@ -303,6 +304,7 @@ Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
 : Use `org.jetbrains.idea.maven.indices.searcher.MavenIndicesManager.scheduleUpdateIndicesList()` to update an indices list for a specific project. To get all search indices for specific project use `MavenSystemIndicesManager.getClassIndexForRepository()`, you can get a list of all repositories with `MavenIndexUtils.getAllRepositories(Project)`.
 
 ### Database Plugin 2024.1
+
 `com.intellij.database.datagrid.DataGrid.getLocalFilterState()` abstract method added
 : Only recompilation is needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
 
@@ -313,6 +315,7 @@ Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
 : Use `getDasType()` instead
 
 ### HTTP Client Plugin 2024.1
+
 `com.intellij.httpClient.actions.generation.RequestUrlContextInfo(requestContextData: RequestContextData)` constructor parameter removed
 : Use `com.intellij.httpClient.actions.generation.RequestBody` and `com.intellij.httpClient.actions.generation.HttpRequestUrlPathInfo.Companion.create()` to describe a request body that will be coomputed lazily during the corresponding request generation.
 
@@ -354,9 +357,9 @@ Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
 : Private package is no longer available as an API.
 
 ### JavaScript Plugin 2024.1
+
 `com.intellij.lang.javascript.documentation.JSDocumentationProvider.generateDoc(PsiElement, PsiElement)` method marked final
 : Override `com.intellij.lang.javascript.documentation.JSDocumentationProvider.generateDoc(PsiElement, PsiElement, Ref<String>)` instead
-
 
 ### Rd Framework 2024.1
 
@@ -374,3 +377,8 @@ Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
 
 `com.jetbrains.rd.framework.base.RdBindableBaseKt.withId(RdBindableBase, RdId)` method removed
 : Due to `RdId` becoming a value class, the `getId` method is removed at runtime, causing unresolved method invocations. Use `withId(RdBindableBase, long)` method in Java and recompile the Kotlin code.
+
+### Properties Plugin 2024.1
+
+Added method parameter `Property` to `com.intellij.lang.properties.PropertiesQuickFixFactory.createRemovePropertyLocalFix()`
+: Supply the property that the fix should be applied for.

@@ -68,9 +68,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 <include from="snippets.md" element-id="apiChangesJavaVersion"/>
 
-## 2022.3
-
 <include from="snippets.md" element-id="gradlePluginVersion"/>
+
+## 2022.3
 
 ### IntelliJ Platform 2022.3
 

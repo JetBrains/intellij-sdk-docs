@@ -16,9 +16,9 @@ In general, as in a regular [Swing](https://docs.oracle.com/javase%2Ftutorial%2F
   EDT executes events taken from the Event Queue.
   Operations performed on EDT must be as fast as possible to not block other events and freeze the UI.
   There is only one EDT in the running application.
-- background threads – used for performing long-running and costly operations, or background tasks
+- background threads (BGT) – used for performing long-running and costly operations, or background tasks
 
-[//]: # (TODO: `Application` interface provides, among others, methods for working with the IDE thread model.)
+[//]: # (TODO: Add diagram showing BGT, EDT and event queue)
 
 ## Readers-Writer Lock
 
@@ -28,20 +28,28 @@ This is implemented with a single application-wide [readers-writer (RW) lock](ht
 
 If a thread requires accessing a data model, it must acquire one of the locks:
 
-**Read Lock:**
-- allows a thread for reading data
-- can be acquired from any thread concurrently with other read locks and write intent lock
-- can't be acquired if write lock is held on another thread
-
-**Write Intent Lock:**
-- allows a thread for reading data and potentially upgrade to the write lock
-- can be acquired from any thread concurrently with read locks
-- can't be acquired if another write intent lock or write lock is held on another thread
-
-**Write Lock:**
-- allows a thread for reading and writing data
-- can only be acquired from under write intent lock
-- can't be acquired if any other lock is held on another thread
+<table>
+    <tr>
+        <td width="33%">Read Lock</td>
+        <td width="33%">Write Intent Lock</td>
+        <td width="33%">Write Lock</td>
+    </tr>
+    <tr>
+        <td>Allows a thread for reading data.</td>
+        <td>Allows a thread for reading data and potentially upgrade to the write lock.</td>
+        <td>Allows a thread for reading and writing data.</td>
+    </tr>
+    <tr>
+        <td>Can be acquired from any thread concurrently with other read locks and write intent lock.</td>
+        <td>Can be acquired from any thread concurrently with read locks.</td>
+        <td>Can only be acquired from under the write intent lock.</td>
+    </tr>
+    <tr>
+        <td>Can't be acquired if write lock is held on another thread.</td>
+        <td>Can't be acquired if another write intent lock or write lock is held on another thread.</td>
+        <td>Can't be acquired if read lock is held on another thread.</td>
+    </tr>
+</table>
 
 The following table shows compatibility between locks in a simplified form:
 
@@ -77,11 +85,11 @@ The described lock characteristics conclude the following:
 - once a thread acquires the write lock, no other threads can read or write data
 
 Acquiring and releasing locks explicitly in code would be verbose and error-prone and must never be done by plugins.
-The IntelliJ Platform enables write intent lock implicitly on EDT (see [](#locks-and-event-dispatch-thread) for details) and provides an API for accessing data under read or write locks (see [](#accessing-data)).
+The IntelliJ Platform [enables write intent lock implicitly on EDT](#locks-and-edt) and provides an [API for accessing data under read or write locks](#accessing-data).
 
 [//]: # (TODO: diagram[s] showing how the locks are acquired?)
 
-### Locks and Event Dispatch Thread
+### Locks and EDT
 
 Although acquiring all types of locks can be, in theory, done from any threads, currently, the platform implicitly acquires write intent lock on EDT only.
 As the write lock can be acquired only from under write intent lock, it means that **writing data can be done only on EDT**.
@@ -98,20 +106,23 @@ The scope of implicitly acquiring the write intent lock on EDT differs depending
 
 <tab title="2023.3+" group-key="newThreading">
 
-Write intent lock is acquired automatically when action is invoked on EDT with [`Application.invokeLater()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java).
+Write intent lock is acquired automatically when operation is invoked on EDT with [`Application.invokeLater()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java).
 
 </tab>
 
 <tab title="Earlier versions" group-key="oldThreading">
 
-Write intent lock is acquired automatically when action is invoked on EDT with methods such as:
+Write intent lock is acquired automatically when operation is invoked on EDT with methods such as:
 - [`Application.invokeLater()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java),
 - [`SwingUtilities.invokeLater()`](https://docs.oracle.com/javase/8/docs/api/javax/swing/SwingUtilities.html#invokeLater-java.lang.Runnable-),
 - [`UIUtil.invokeAndWaitIfNeeded()`](%gh-ic%/platform/util/ui/src/com/intellij/util/ui/UIUtil.java),
 - [`EdtInvocationManager.invokeLaterIfNeeded()`](%gh-ic%/platform/util/src/com/intellij/util/ui/EdtInvocationManager.java),
 - and other similar methods
 
-[//]: # (TODO: only these methods or anything executed on EDT?)
+It is recommended to use `Application.invokeLater()` if the operation is supposed to write data.
+Use other methods for pure UI operations.
+
+[//]: # (TODO: only these methods or anything executed on EDT? ask Lev to verify)
 
 </tab>
 
@@ -124,7 +135,7 @@ The IntelliJ Platform provides a simple API for accessing data under read or wri
 Read and writes actions allow executing a piece of code under a lock, automatically acquiring it before an action starts, and releasing it after the action is finished.
 
 > Always wrap only the required operations into read/write actions, minimizing the time of holding locks.
-> If the read operation itself is long, consider using one of [read action cancellability techniques](#read-action-cancellability) to avoid blocking the write lock.
+> If the read operation itself is long, consider using one of [read action cancellability techniques](#read-action-cancellability) to avoid blocking the write lock and EDT.
 >
 {style="warning"}
 
@@ -138,7 +149,7 @@ Read and writes actions allow executing a piece of code under a lock, automatica
   <tab title="Kotlin" group-key="kotlin">
 
   ```kotlin
-  val file = ApplicationManager.application.runReadAction {
+  val psiFile = ApplicationManager.application.runReadAction {
     // read and return PsiFile
   }
   ```
@@ -146,7 +157,7 @@ Read and writes actions allow executing a piece of code under a lock, automatica
   <tab title="Java" group-key="java">
 
   ```java
-  PsiFile file = ApplicationManager.getApplication()
+  PsiFile psiFile = ApplicationManager.getApplication()
       .runReadAction((Computable<PsiFile>)() -> {
         // read and return PsiFile
       });
@@ -159,31 +170,30 @@ Read and writes actions allow executing a piece of code under a lock, automatica
   <tab title="Kotlin" group-key="kotlin">
 
   ```kotlin
-  val file = ReadAction.compute<PsiFile, Throwable> {
-   // read and return PsiFile
+  val psiFile = ReadAction.compute<PsiFile, Throwable> {
+    // read and return PsiFile
   }
   ```
   </tab>
   <tab title="Java" group-key="java">
 
   ```java
-  PsiFile file = ReadAction.compute(() -> {
+  PsiFile psiFile = ReadAction.compute(() -> {
     // read and return PsiFile
   });
   ```
   </tab>
   </tabs>
 
-
-- Kotlin [`readAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/actions.kt):
+- Kotlin [`runReadAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/actions.kt):
   ```kotlin
-  val psiFile = readAction {
+  val psiFile = runReadAction {
     // read and return PsiFile
   }
   ```
   Note that this API is obsolete since 2024.1.
-  Plugins implemented in Kotlin and targeting versions 2024.1+ should use [coroutine-compatible read actions](coroutine_read_actions.md).
-
+  Plugins implemented in Kotlin and targeting versions 2024.1+ should use [`readAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt).
+  See also [](coroutine_read_actions.md).
 
 #### Rules
 {#read-actions-rules}
@@ -194,7 +204,7 @@ Read and writes actions allow executing a piece of code under a lock, automatica
 
 Reading data is allowed from any thread.
 
-Reading data on EDT invoked with `Application.invokeLater()` doesn't require an explicit read action, as the write intent lock allowing to read data is [acquired implicitly](#locks-and-event-dispatch-thread).
+Reading data on EDT invoked with `Application.invokeLater()` doesn't require an explicit read action, as the write intent lock allowing to read data is [acquired implicitly](#locks-and-edt).
 
 </tab>
 
@@ -202,7 +212,7 @@ Reading data on EDT invoked with `Application.invokeLater()` doesn't require an 
 
 Reading data is allowed from any thread.
 
-Reading data on EDT doesn't require an explicit read action, as the write intent lock allowing to read data is [acquired implicitly](#locks-and-event-dispatch-thread).
+Reading data on EDT doesn't require an explicit read action, as the write intent lock allowing to read data is [acquired implicitly](#locks-and-edt).
 
 </tab>
 
@@ -213,12 +223,12 @@ In all other cases, it is required to wrap read operation in a read action with 
 The read objects aren't guaranteed to survive between several consecutive read actions.
 Whenever starting a read action, check if the PSI/VFS/project/module is still valid.
 Example:
-```kotlin
+```java
 PsiFile psiFile = ReadAction.compute(() -> {
   if (project.isDisposed()) { // check if the project is not disposed
     return null;
   }
-  return virtulFile.isValid() ? // check if the file is valid
+  return virtualFile.isValid() ? // check if the file is valid
       PsiManager.getInstance(project).findFile(virtualFile) : null;
 });
 ```
@@ -230,17 +240,79 @@ PsiFile psiFile = ReadAction.compute(() -> {
 #### API
 {#write-actions-api}
 
-- [`Application.runWriteAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java)
-- [`WriteAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/WriteAction.java) `run()` or `compute()`
+- [`Application.runWriteAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java):
+  <tabs group="languages">
+  <tab title="Kotlin" group-key="kotlin">
 
+  ```kotlin
+  ApplicationManager.application.runWriteAction {
+    // write data
+  }
+  ```
+  </tab>
+  <tab title="Java" group-key="java">
+
+  ```java
+  ApplicationManager.getApplication().runWriteAction(() -> {
+    // write data
+  });
+  ```
+  </tab>
+  </tabs>
+
+- [`WriteAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/WriteAction.java) `run()` or `compute()`:
+  <tabs group="languages">
+  <tab title="Kotlin" group-key="kotlin">
+
+  ```kotlin
+  WriteAction.run<Throwable> {
+    // write data
+  }
+  ```
+  </tab>
+  <tab title="Java" group-key="java">
+
+  ```java
+  WriteAction.run(() -> {
+    // write data
+  });
+  ```
+  </tab>
+  </tabs>
+
+- Kotlin [`runWriteAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/actions.kt):
+  ```kotlin
+  runWriteAction {
+    // write data
+  }
+  ```
+  Note that this API is obsolete since 2024.1.
+  Plugins implemented in Kotlin and targeting versions 2024.1+ should use [`writeAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt).
 
 #### Rules
 {#write-actions-rules}
 
+<tabs group="threading">
 
-Writing data is only allowed from EDT.
+<tab title="2023.3+" group-key="newThreading">
 
-Write operations must be wrapped in a write action with one of the [API](#write-actions-api) methods.
+Writing data is only allowed on EDT invoked with `Application.invokeLater()`, where the write intent lock is [acquired implicitly](#locks-and-edt).
+
+[//]: # (TODO: ask Lev to verify)
+
+</tab>
+
+<tab title="Earlier versions" group-key="oldThreading">
+
+Writing data is only allowed on EDT, where the write intent lock is [acquired implicitly](#locks-and-edt).
+
+</tab>
+
+</tabs>
+
+Write operations must always be wrapped in a write action with one of the [API](#write-actions-api) methods.
+
+[//]: # (TODO: I don't understand the following two paragraphs)
 
 Modifying the model is only allowed from write-safe contexts, including user actions and `SwingUtilities.invokeLater()` calls from them (see [](#modality-and-invokelater)).
 
@@ -287,31 +359,42 @@ Deactivate resource
 
 ## Modality and `invokeLater()`
 
-To pass control from a background thread to EDT, instead of the standard `SwingUtilities.invokeLater()`, plugins should use `ApplicationManager.getApplication().invokeLater()`.
-The latter API allows specifying the _modality state_ ([`ModalityState`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ModalityState.java)) for the call, that is, the stack of modal dialogs under which the call is allowed to execute:
+Executing operations on EDT that are supposed to write data should be invoked with `Application.invokeLater()`.
+The reason for that is that this API allows specifying the _modality state_ ([`ModalityState`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ModalityState.java)) for the scheduled operation.
+This is not supported by `SwingUtilities.invokeLater()` and other similar APIs intended for performing pure UI operations.
 
-### `ModalityState.nonModal()`/`NON_MODAL`
+> Note that `Application.invokeLater()` must be used to write data in versions 2023.3+.
+>
+{style="warning"}
 
-The operation will be executed after all modal dialogs are closed.
-If any of the open (unrelated) projects displays a per-project modal dialog, the action will be performed after the dialog is closed.
+`ModalityState` represents the stack of active modal dialogs.
+It is used in calls to `Application.invokeLater()` to specify that the scheduled runnable is allowed to be executed within the given modality state, that is, when the same set of modal dialogs or its subset is present.
 
-### `ModalityState.stateForComponent()`
+To understand what problem `ModalityState` solves, consider the following scenario:
+1. Some code schedules an operation on EDT with `SwingUtilities.invokeLater()` (without modality state support).
+2. Before that, the user action is processed, which shows a dialog (for example, asking a Yes/No question).
+3. While this dialog is shown, the operation scheduled before is processed and does changes to the data model, for example, removes a module from the project, deletes some files, or invalidates PSI.
+4. The user clicks Yes/No in the dialog, and it executes some code based on the answer.
+5. Now, the code to be executed has to deal with the changed data model it was not prepared for. For example, it was supposed to execute changes in the PSI that might be already invalid.
 
-The operation can be executed when the topmost shown dialog is the one that contains the specified component or is one of its parent dialogs.
+[//]: # (TODO: check it:)
 
-### None Specified
+**_Normally clients of Yes/No question dialogs aren't prepared for this at all, so exceptions are likely to arise.
+Worse than that, there will be no indication on why a particular change has occurred, because the runnable that was incorrectly invoked-later will in many cases leave no trace of itself._**
 
-`ModalityState.defaultModalityState()` will be used.
-This is the optimal choice in most cases that uses the current modality state when invoked from EDT.
-It has special handling for background processes started with `ProgressManager`: `invokeLater()` from such a process may run in the same dialog that the process started.
+The following table presents methods providing useful modality states to be passed to `Application.invokeLater()`:
 
-### `ModalityState.any()`
+| [`ModalityState`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ModalityState.java) | Description                                                                                                                                                                                                                                                                      |
+|------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <p>`defaultModalityState()`</p><p>_Used if none specified_</p>                                       | This is the optimal choice in most cases. It uses the `ModalityState.current()` when invoked from EDT. It has special handling for background processes started with `ProgressManager`: `invokeLater()` from such a process may run in the same dialog that the process started. |
+| <p>`nonModal()` or</p><p>`NON_MODAL`</p>                                                             | The operation will be executed after all modal dialogs are closed. If any of the open (unrelated) projects displays a per-project modal dialog, the action will be performed after the dialog is closed.                                                                         |
+| `stateForComponent()`                                                                                | The operation can be executed when the topmost shown dialog is the one that contains the specified component or is one of its parent dialogs.                                                                                                                                    |
+| `any()`                                                                                              | The operation will be executed as soon as possible regardless of modal dialogs. Note that modifying PSI, VFS, or project model is prohibited from such runnables.                                                                                                                |
 
-The operation will be executed as soon as possible regardless of modal dialogs.
-Note that modifying PSI, VFS, or project model is prohibited from such runnables.
-
-If EDT activity needs to access a [file-based index](indexing_and_psi_stubs.md) (for example, it is doing any project-wide PSI analysis, resolves references, or performs other tasks depending on indexes), use `DumbService.smartInvokeLater()`.
-That way, it is run after all possible indexing processes have been completed.
+> If EDT activity needs to access a [file-based index](indexing_and_psi_stubs.md) (for example, it is doing any project-wide PSI analysis, resolves references, or performs other tasks depending on indexes), use [`DumbService.smartInvokeLater()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbService.kt).
+> This API also supports `ModalityState` and runs the operation after all possible indexing processes have been completed.
+>
+{style="note"}
 
 ## Background Processes and `ProcessCanceledException`
 

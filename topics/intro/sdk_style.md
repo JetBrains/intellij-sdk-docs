@@ -5,15 +5,14 @@
 <link-summary>Writing and notation styleguide for SDK Docs.</link-summary>
 
 This document describes the writing style used in authoring open-source IntelliJ Platform SDK documentation.
-Before you begin, please read this page thoroughly, as well as the [Code of Conduct](intellij-sdk-docs-original_CODE_OF_CONDUCT.md) and [License](https://github.com/JetBrains/intellij-sdk-docs/blob/main/LICENSE.txt) documents.
-Please see also [](intellij-sdk-docs-original_CONTRIBUTING.md) for some general remarks.
-For information about contributing to the IntelliJ Platform itself, please visit [Contributing to the IntelliJ Platform](platform_contributions.md).
+Before you begin, read this page thoroughly, as well as the [Code of Conduct](intellij-sdk-docs-original_CODE_OF_CONDUCT.md) and [License](https://github.com/JetBrains/intellij-sdk-docs/blob/main/LICENSE.txt) documents.
+See also [](intellij-sdk-docs-original_CONTRIBUTING.md) for some general remarks.
+
+For information about contributing to the IntelliJ Platform itself, visit [Contributing to the IntelliJ Platform](platform_contributions.md).
 
 First and foremost, we should keep in mind our audience and their objectives:
 _Someone reading technical content is usually looking to answer a specific question.
 That question might be broad or narrowly-focused, but either way, our goal is to provide answers without distraction._
-
-The style of the IntelliJ Platform SDK documentation is captured by using a markup language named [Markdown](https://github.github.com/gfm/).
 
 To verify grammar and correct spelling, it is highly recommended to use [Grazie Professional](https://plugins.jetbrains.com/plugin/16136-grazie-professional) plugin to highlight any issues on-the-fly in the IDE.
 
@@ -90,7 +89,7 @@ Consistent text styles are used to standardize references and keywords:
 * User interface element names like labels, buttons, checkboxes, etc. are wrapped using `<control>`: `Press <control>Continue</continue>`: Press <control>Continue</control>
 * Non-code keywords and quotations, or the names of non-code files are formatted as italic style: \_Theme\_ (_Theme_), \_README.md\_ (_README.md_.)
   Examples of this file type include _LICENSE.txt_ and _README.md_.
-* Code keywords and classnames are formatted as code style: \`interface\`: `interface`, \`AnAction\`: `AnAction`, \`name\` attribute: `name` attribute.
+* Code keywords and class names are formatted as code style: \`interface\`: `interface`, \`AnAction\`: `AnAction`, \`name\` attribute: `name` attribute.
 * Filenames are wrapped using `<path>`: `<path>build.gradle.kts</path>` <path>build.gradle.kts</path>.
 * File formats are shown as all capital letters: PNG and XML.
 * Filename extensions are not capitalized when part of a full filename, path, or URL: <path>plugin.xml</path>.
@@ -143,7 +142,7 @@ General Markdown links have the default Markdown link style:
 Links to files in the IntelliJ Platform (`intellij-community`) repository use `%\gh-ic%` prefix instead of the full URL to the repository.
 Links to files in source code packages in other GitHub repositories follow the same rules, except the links use a different custom `gh-...` prefix defined in <path>v.list</path>.
 
-* `[README.md](%\gh-ic%/README.md)`{disable-links} links to general, non-code information files. ([README.md](%gh-ic%/README.md))
+* `[README.md](%\gh-ic%/README.md)`{disable-links} links to any general, non-code information files. ([README.md](%gh-ic%/README.md))
   Examples of this file type include _LICENSE.txt_ and _README.md_.
 * `[`IdeaPlugin.xml`](%\gh-ic%/community-resources/resources/META-INF/IdeaPlugin.xml)`{disable-links} links to declarative source code files, use `code` style. ([`IdeaPlugin.xml`](%gh-ic%/community-resources/resources/META-INF/IdeaPlugin.xml))
   Examples of this file type include: `settings.gradle`, `plugin.xml` or `theme_basics.theme.json`.
@@ -211,7 +210,7 @@ The disadvantage is the file may contain a large class, too large for the docume
 If possible, use `include-symbol="ClassName"` to show only the class body without any headers and imports.
 To include only a specific method, specify `include-symbol="methodName"` additionally.
 
-In any case, please keep code samples concise and avoid any unnecessary "surrounding" code or import statements.
+In any case, keep code samples concise and avoid any unnecessary "surrounding" code or import statements.
 
 ### Tables
 

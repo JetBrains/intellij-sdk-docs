@@ -70,6 +70,13 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 <include from="snippets.md" element-id="gradlePluginVersion"/>
 
+## 2024.3
+
+### IntelliJ Platform 2024.3
+
+`com.intellij.psi.stubs.StubElement.getChildrenStubs()` method return type changed from `List<StubElement>` to `List<StubElement<?>>`
+: Raw-type changed to a properly parameterized type. This is binary compatible change but may cause compilation errors. In most of the cases, it's enough to add `<?>` at the use site to fix the issue.
+
 ## 2024.2
 
 ### IntelliJ Platform 2024.2

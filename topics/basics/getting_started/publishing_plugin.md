@@ -1,16 +1,25 @@
-# Publishing a Plugin
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# Publishing a Plugin
 
 <link-summary>Publishing a plugin to JetBrains Marketplace manually or with Gradle IntelliJ Plugin.</link-summary>
 
 When your plugin is ready, you can publish it to a [JetBrains Marketplace](https://plugins.jetbrains.com) plugin repository so that other users can install it in IDE.
-The first plugin publication, even when a project uses the Gradle setup, must be [uploaded manually](#uploading-a-plugin-to-jetbrains-marketplace).
 
-Before publishing a plugin, ensure it follows all recommendations from [](plugin_user_experience.md).
-For an optimal presentation, see the guidelines from [Plugin Overview page](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html).
+The first plugin publication must always be [uploaded manually](#uploading-a-plugin-to-jetbrains-marketplace).
+
+<procedure title="Before Publishing Checklist">
+
+Before publishing a plugin, make sure it:
+
+- follows all recommendations from [](plugin_user_experience.md)
+- follows all requirements from [Plugin Overview page](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html)
+
 The _Busy Plugin Developers. Episode 2_ discusses [5 tips for optimizing JetBrains Marketplace plugin page](https://youtu.be/oB1GA9JeeiY?t=52) in more detail.
+
 See also [](marketing.md) about widgets and badges.
+
+</procedure>
 
 > If you plan to publish your plugin to a repository _other than_ the [JetBrains Marketplace](https://plugins.jetbrains.com), please refer to the [](custom_plugin_repository.md) documentation.
 
@@ -74,6 +83,7 @@ A new token will be created and displayed right below.
 {style="note"}
 
 This section describes two options to supply your _Personal Access Token_ via Gradle using:
+
 * Environment variables,
 * Parameters to the Gradle task.
 
@@ -125,6 +135,7 @@ For example, you can provide the parameter
 ```bash
 -Dorg.gradle.project.intellijPublishToken=YOUR_TOKEN
 ```
+
 on the command line or by putting it in the arguments of your Gradle run configuration.
 
 Note that also, in this case, you still need to put some default values in your Gradle properties.
@@ -184,6 +195,7 @@ When using a non-default release channel, users need to configure a new [custom 
 For example, if you specify `publishPlugin.channels = ['canary']`, then users need to add the `https://plugins.jetbrains.com/plugins/canary/list` repository to install the plugin and receive updates.
 
 Popular channel names include:
+
 * `alpha`: https://plugins.jetbrains.com/plugins/alpha/list
 * `beta`: https://plugins.jetbrains.com/plugins/beta/list
 * `eap`: https://plugins.jetbrains.com/plugins/eap/list

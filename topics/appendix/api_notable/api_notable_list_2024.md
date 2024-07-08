@@ -8,6 +8,10 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 <include from="snippets.md" element-id="gradlePluginVersion"/>
 
+## 2024.3
+
+### IntelliJ Platform 2024.3
+
 ## 2024.2
 
 ### IntelliJ Platform 2024.2

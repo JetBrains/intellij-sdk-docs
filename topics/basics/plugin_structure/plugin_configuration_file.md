@@ -28,6 +28,13 @@ See also [](marketing.md) about widgets and badges.
 
 ## Configuration Structure Overview
 
+> If an element or an attribute is not documented on this page, consider them as configuration items intended to be used by JetBrains only.
+> They must not be used by third-party plugins.
+>
+{title="Private Configuration Elements" style="warning"}
+
+Deprecated elements are omitted in the list below.
+
 - [`<idea-plugin>`](#idea-plugin)
   - [`<id>`](#idea-plugin__id)
   - [`<name>`](#idea-plugin__name)
@@ -75,13 +82,6 @@ See also [](marketing.md) about widgets and badges.
   - [`<projectListeners>`](#idea-plugin__projectListeners)
     - [`<listener>`](#idea-plugin__listeners__listener)
   - [`<resource-bundle>`](#idea-plugin__resource-bundle)
-
-Deprecated elements are omitted in the list above.
-
-> If an element or an attribute is not documented on this page, please consider them as configuration items intended to be used by JetBrains only.
-> They should never be used by 3rd-party plugins.
->
-{style="note"}
 
 ## `idea-plugin`
 {#idea-plugin}

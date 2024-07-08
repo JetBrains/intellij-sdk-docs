@@ -4,9 +4,11 @@
 
 <link-summary>Tooling for ensuring compatibility.</link-summary>
 
-Please see [](api_changes_list.md) for known breaking changes.
+See [](api_changes_list.md) for known breaking changes.
 
 For API annotated with [`@ApiStatus.Internal`](%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/ApiStatus.java), see [](api_internal.md) for more details and replacements.
+
+See also [](build_number_ranges.md#multipleIDEVersions).
 
 ## Plugin Verifier
 

@@ -25,6 +25,11 @@ Testing: `ProjectActivity`
 Testing: indexes
 : Indexes are now built asynchronously during tests, see [](testing_faq.md#how-to-handle-indexing).
 
+### PyCharm 2024.2
+
+Project setup
+: Note [changes in project setup](pycharm.md#python242) when targeting PyCharm Professional.
+
 ## 2024.1
 
 ### IntelliJ Platform 2024.1

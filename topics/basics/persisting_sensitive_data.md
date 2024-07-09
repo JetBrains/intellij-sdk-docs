@@ -7,7 +7,7 @@
 The Credentials Store API allows you to store sensitive user data securely, like passwords, server URLs, etc.
 
 ## How to Use
-Use [`PasswordSafe`](%gh-ic%/platform/remote-core/src/ide/passwordSafe/PasswordSafe.kt) to work with credentials.
+Use [`PasswordSafe`](%gh-ic%/platform/credential-store/src/ide/passwordSafe/PasswordSafe.kt) to work with credentials.
 
 _Common Utility Method:_
 

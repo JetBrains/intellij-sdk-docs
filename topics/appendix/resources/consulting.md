@@ -14,7 +14,6 @@ Also, consider posting requests in _#jobs_ channel on [JetBrains Platform Slack]
 |--------------------|---------------------------------------------------------|------------------------------------------------------------------------------|
 | Joachim Ansorg     | [www.plugin-dev.com][ja]                                | -/-                                                                          |
 | Daniel Espendiller | [daniel@espendiller.net][de]                            | -/-                                                                          |
-| Robert Ekendahl    | [www.edaphic.studio][re]                                | Custom Language support                                                      |
 | Edument            | [jonathan@edument.cz][ed], [edument.se][ed2]            | Developers of [Comma IDE][ed3]                                               |
 | Mikhail Bolotov    | [mikhail.bolotov@gmail.com][mb]                         | Plugins: [Cypress Support Pro][cspro], [k6]                                  |
 | Ilscipio GmbH      | [Paul Piper][il], [www.ilscipio.com][il2]               | Custom Plugin Development                                                    |
@@ -22,7 +21,6 @@ Also, consider posting requests in _#jobs_ channel on [JetBrains Platform Slack]
 
 [ja]: https://www.plugin-dev.com
 [de]: mailto:daniel@espendiller.net
-[re]: https://www.edaphic.studio
 [ed]: mailto:jonathan@edument.cz
 [ed2]: https://www.edument.se/en/page/intellij-platform-development
 [ed3]: https://commaide.com

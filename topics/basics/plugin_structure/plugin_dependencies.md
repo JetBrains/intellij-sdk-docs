@@ -2,6 +2,8 @@
 
 # Plugin Dependencies
 
+<!-- https://jb.gg/ij-plugin-dependencies -->
+
 <link-summary>Declaring dependencies on other IntelliJ Platform-based plugins.</link-summary>
 
 A plugin may depend on API and classes from other plugins, either bundled or third-party.

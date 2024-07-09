@@ -2,6 +2,8 @@
 
 # Persisting State of Components
 
+<!-- https://jb.gg/ij-psoc -->
+
 <link-summary>Persisting data that is available after the IDE restarts and can be shared between different IDE installations.</link-summary>
 
 The IntelliJ Platform provides an API that allows components or services to persist their state between restarts of the IDE.

@@ -96,7 +96,6 @@ As the write lock can be acquired only from under write intent lock, it means th
 
 > It is known that writing data only on EDT has negative consequences of potentially freezing the UI.
 > There is an in-progress effort to [allow writing data from any thread](https://youtrack.jetbrains.com/issue/IJPL-53).
-> This documentation will be updated when that happens.
 
 [//]: # (TODO: what is the historical reason for that?)
 
@@ -320,6 +319,7 @@ Modifying PSI, VFS, or project model from inside UI renderers or `SwingUtilities
 
 > [Thread Access Info](https://plugins.jetbrains.com/plugin/16815-thread-access-info) plugin visualizes Read/Write Access and Thread information in the debugger.
 
+<!--
 #### WiP
 {collapsible="true" initial-collapse-state="collapsed"}
 
@@ -357,39 +357,47 @@ Deactivate resource
 @enduml
 ```
 
+-->
+
 ## Modality and `invokeLater()`
 
-Executing operations on EDT that are supposed to write data should be invoked with `Application.invokeLater()`.
-The reason for that is that this API allows specifying the _modality state_ ([`ModalityState`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ModalityState.java)) for the scheduled operation.
-This is not supported by `SwingUtilities.invokeLater()` and other similar APIs intended for performing pure UI operations.
+Operations that write data on EDT should be invoked with `Application.invokeLater()` because it allows specifying the _modality state_ ([`ModalityState`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ModalityState.java)) for the scheduled operation.
+This is not supported by `SwingUtilities.invokeLater()` and similar APIs.
+
+`ModalityState` represents the stack of active modal dialogs and is used in calls to `Application.invokeLater()` to ensure the scheduled runnable can execute within the given modality state, meaning when the same set of modal dialogs or a subset is present.
 
 > Note that `Application.invokeLater()` must be used to write data in versions 2023.3+.
 >
 {style="warning"}
 
-`ModalityState` represents the stack of active modal dialogs.
-It is used in calls to `Application.invokeLater()` to specify that the scheduled runnable is allowed to be executed within the given modality state, that is, when the same set of modal dialogs or its subset is present.
+To better understand what problem `ModalityState` solves, consider the following scenario:
+1. A user action is started.
+2. In the meantime, another operation is scheduled on EDT with `SwingUtilities.invokeLater()` (without modality state support).
+3. The action from 1. now shows a dialog asking a <control>Yes</control>/<control>No</control> question.
+4. While the dialog is shown, the operation from 2. is now processed and does changes to the data model, which invalidates PSI.
+5. The user clicks <control>Yes</control> or <control>No</control> in the dialog, and it executes some code based on the answer.
+6. Now, the code to be executed as the result of the user's answer has to deal with the changed data model it was not prepared for. For example, it was supposed to execute changes in the PSI that might be already invalid.
 
-To understand what problem `ModalityState` solves, consider the following scenario:
-1. Some code schedules an operation on EDT with `SwingUtilities.invokeLater()` (without modality state support).
-2. Before that, the user action is processed, which shows a dialog (for example, asking a Yes/No question).
-3. While this dialog is shown, the operation scheduled before is processed and does changes to the data model, for example, removes a module from the project, deletes some files, or invalidates PSI.
-4. The user clicks Yes/No in the dialog, and it executes some code based on the answer.
-5. Now, the code to be executed has to deal with the changed data model it was not prepared for. For example, it was supposed to execute changes in the PSI that might be already invalid.
-
-[//]: # (TODO: check it:)
-
-**_Normally clients of Yes/No question dialogs aren't prepared for this at all, so exceptions are likely to arise.
-Worse than that, there will be no indication on why a particular change has occurred, because the runnable that was incorrectly invoked-later will in many cases leave no trace of itself._**
+Passing the modality state solves this problem:
+1. A user action is started.
+2. In the meantime, another operation is scheduled on EDT with `Application.invokeLater()` (supporting modality state).
+   The operation is scheduled with `ModalityState.defaultModalityState()` (see the table below for other helper methods).
+3. The action from 1. now shows a dialog asking a <control>Yes</control>/<control>No</control> question.
+   This adds a modal dialog to the modality state stack.
+4. While the dialog is shown, the scheduled operation waits as it was scheduled with a "lower" modality state than the current state with an additional dialog.
+5. The user clicks <control>Yes</control> or <control>No</control> in the dialog, and it executes some code based on the answer.
+6. The code is executed on data in the same state as before the dialog was shown.
+7. The operation from 1. is executed now without interfering with the user's action.
 
 The following table presents methods providing useful modality states to be passed to `Application.invokeLater()`:
 
-| [`ModalityState`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ModalityState.java) | Description                                                                                                                                                                                                                                                                      |
-|------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <p>`defaultModalityState()`</p><p>_Used if none specified_</p>                                       | This is the optimal choice in most cases. It uses the `ModalityState.current()` when invoked from EDT. It has special handling for background processes started with `ProgressManager`: `invokeLater()` from such a process may run in the same dialog that the process started. |
-| <p>`nonModal()` or</p><p>`NON_MODAL`</p>                                                             | The operation will be executed after all modal dialogs are closed. If any of the open (unrelated) projects displays a per-project modal dialog, the action will be performed after the dialog is closed.                                                                         |
-| `stateForComponent()`                                                                                | The operation can be executed when the topmost shown dialog is the one that contains the specified component or is one of its parent dialogs.                                                                                                                                    |
-| `any()`                                                                                              | The operation will be executed as soon as possible regardless of modal dialogs. Note that modifying PSI, VFS, or project model is prohibited from such runnables.                                                                                                                |
+| [`ModalityState`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ModalityState.java) | Description                                                                                                                                                                                                                                                                                   |
+|------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <p>`defaultModalityState()`</p><p>_Used if none specified_</p>                                       | <p>If invoked from EDT, it uses the `ModalityState.current()`.</p><p>If invoked from a background process started with `ProgressManager`, the operation can be executed in the same dialog that the process started.</p><p>**This is the optimal choice in most cases.**</p>                  |
+| `current()`                                                                                          | The operation can be executed when the modality state stack doesn't grow since the operation was scheduled.                                                                                                                                                                                   |
+| `stateForComponent()`                                                                                | The operation can be executed when the topmost shown dialog is the one that contains the specified component or is one of its parent dialogs.                                                                                                                                                 |
+| <p>`nonModal()` or</p><p>`NON_MODAL`</p>                                                             | The operation will be executed after all modal dialogs are closed. If any of the open (unrelated) projects displays a per-project modal dialog, the operation will be performed after the dialog is closed.                                                                                   |
+| `any()`                                                                                              | The operation will be executed as soon as possible regardless of modal dialogs (the same as with `SwingUtilities.invokeLater()`). It can be used for scheduling only pure UI operations. Modifying PSI, VFS, or project model is prohibited.<p>**Don't use it unless absolutely needed.**</p> |
 
 > If EDT activity needs to access a [file-based index](indexing_and_psi_stubs.md) (for example, it is doing any project-wide PSI analysis, resolves references, or performs other tasks depending on indexes), use [`DumbService.smartInvokeLater()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbService.kt).
 > This API also supports `ModalityState` and runs the operation after all possible indexing processes have been completed.

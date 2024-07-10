@@ -32,7 +32,7 @@ It describes definitions of the actions, extensions, or listeners provided by th
 
 Please see [Code Samples][docs:code-samples] topic on how to import and run code samples.
 
-In the following table, you may find all available samples provided in the separated directories as stand-alone projects available for running with the Gradle [`runIde`](tools_gradle_intellij_plugin.md#tasks-runide) task.
+In the following table, you may find all available samples provided in the separated directories as stand-alone projects available for running with the Gradle `runIde` task.
 
 | Code Sample                                                                 | Description                                                                                                                                                       |
 |-----------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|

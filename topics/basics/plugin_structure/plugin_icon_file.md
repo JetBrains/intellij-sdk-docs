@@ -77,7 +77,7 @@ If one Plugin Logo design does not work on both light and dark backgrounds, crea
 The examples below illustrate how a Plugin Logo design may work well for a light background but not for a dark background.
 Consequently, a separate Plugin Logo for dark backgrounds is needed.
 
-| ![Plugin Logo on Light Theme](light_version.png){width="225"} |     ![Light Plugin Logo on Dark Theme](dark_bad.png){width="225"}     |     ![Plugin Logo for Dark Theme](dark_good.png){width="225"}     |
+| ![Plugin Logo on Light Theme](light_version.png){width="225"} |     ![Light Plugin Logo on Dark Theme](dark_bad.png){width="225"}     |     ![Plugin Logo for Dark Theme](dark_good.png){width="225"}      |
 |:-------------------------------------------------------------:|:---------------------------------------------------------------------:|:------------------------------------------------------------------:|
 | _The light Plugin Logo design<br/>works well on light theme_  | _The light Plugin Logo design does<br/>not work well on a dark theme_ | _A separate, dark Plugin Logo design<br/>works well on dark theme_ |
 {style="none"}

@@ -228,7 +228,7 @@ PsiTestUtil.addLibrary(model,
 
 [`ProjectActivity`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) are no longer awaited on project open in tests.
 If tests depend on some job done in `ProjectActivity` (e.g., automatic project re-import), implement a dedicated [event/listener](messaging_infrastructure.md) and wait for it explicitly.
-As a workaround, use [`StartupActivityTestUtil.waitForProjectActivitiesToComplete()`](%gh-ic-master%/platform/testFramework/src/com/intellij/testFramework/StartupActivityTestUtil.kt).
+As a workaround, use [`StartupActivityTestUtil.waitForProjectActivitiesToComplete()`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/StartupActivityTestUtil.kt).
 
 ### How to handle indexing?
 <primary-label ref="2024.2"/>

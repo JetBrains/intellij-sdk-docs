@@ -12,7 +12,7 @@
 
 </tldr>
 
-61 Extension Points and 11 Listeners for PHP
+62 Extension Points and 11 Listeners for PHP
 
 See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 
@@ -26,8 +26,8 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 |-------|----------|
 | [ComposerInstalledPackagesService#PACKAGE_MANAGER_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.composer.actions.update.ComposerInstalledPackagesService.ComposerUpdateListener)  ![Project-Level][project-level] | `ComposerUpdateListener` |
 | [RepositoriesComposerConfig#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.composer.json.cache.ComposerRepositoriesChangedListener)  | `ComposerRepositoriesChangedListener` |
-| [StateChangedListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.config.PhpProjectConfigurationFacade.StateChangedListener)  | `StateChangedListener` |
-| [StateChangedListener#LANGUAGE_LEVEL_CHANGED_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.config.PhpProjectConfigurationFacade.StateChangedListener)  | `StateChangedListener` |
+| [StateChangedListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.config.PhpProjectSharedConfiguration.StateChangedListener)  | `StateChangedListener` |
+| [StateChangedListener#LANGUAGE_LEVEL_CHANGED_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.config.PhpProjectSharedConfiguration.StateChangedListener)  | `StateChangedListener` |
 | [PhpProjectWorkspaceConfiguration#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.config.PhpProjectWorkspaceConfigurationListener)  | `PhpProjectWorkspaceConfigurationListener` |
 | [DefaultStubsPathListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.config.PhpRuntimeConfiguration.DefaultStubsPathListener)  | `DefaultStubsPathListener` |
 | [PhpInterpreterConflictResolveListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.config.interpreters.PhpInterpretersManagerImpl.PhpInterpreterConflictResolveListener)  | `PhpInterpreterConflictResolveListener` |
@@ -81,7 +81,6 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | [com.jetbrains.php.deprecationProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.deprecationProvider) | `PhpDeprecationProvider` |
 | [com.jetbrains.php.dfaStateFromAssertionProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.dfaStateFromAssertionProvider) ![Internal][internal] | `PhpDfaStateFromAssertionProvider` |
 | [com.jetbrains.php.docPrefixProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.docPrefixProvider) ![Internal][internal] | `PhpDocPrefixProvider` |
-| [com.jetbrains.php.docTagParserExtension](https://jb.gg/ipe?extensions=com.jetbrains.php.docTagParserExtension) ![Internal][internal] | `PhpDocTagParser` |
 | [com.jetbrains.php.docTagValuesStubProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.docTagValuesStubProvider) | `PhpCustomDocTagValuesStubProvider` |
 | [com.jetbrains.php.expressionClassNamesProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.expressionClassNamesProvider) ![Internal][internal] | `PhpExpressionClassNamesProvider` |
 | [com.jetbrains.php.externalUsagesSearcher](https://jb.gg/ipe?extensions=com.jetbrains.php.externalUsagesSearcher) | `PhpExternalUsagesSearcher` |
@@ -119,11 +118,23 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 |-----------------|----------------|
 | [com.jetbrains.php.behat.gherkinContextProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.behat.gherkinContextProvider) | `ContextInterfaceProvider` |
 
+### com.jetbrains.php.blade
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.jetbrains.php.blade.bladeDirectiveContributor](https://jb.gg/ipe?extensions=com.jetbrains.php.blade.bladeDirectiveContributor) ![Experimental][experimental] | `BladeDirectiveContributor` |
+
 ### com.jetbrains.php.framework
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.jetbrains.php.framework.descriptionProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.framework.descriptionProvider) ![Internal][internal] | `FrameworkDescriptionProvider` |
+
+### intellij.php.frontback.impl.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.intellij.php.docTagParserExtension](https://jb.gg/ipe?extensions=com.intellij.php.docTagParserExtension) ![Internal][internal] | `PhpDocTagParser` |
 
 ### phpstorm-remote-interpreter-plugin.xml
 

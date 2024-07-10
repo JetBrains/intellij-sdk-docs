@@ -14,7 +14,7 @@
 
 Overview of Extension Points and Listeners for open source plugins available in [](idea_ultimate.md) and other IDEs.
 
-25 Extension Points and 9 Listeners
+27 Extension Points and 9 Listeners
 
 <include from="snippets.md" element-id="ep_list_legend"/>
 
@@ -23,17 +23,17 @@ Overview of Extension Points and Listeners for open source plugins available in 
 
 ### IntelliJ Open Source Plugins - Listeners
 
-| Topic | Listener |
-|-------|----------|
-| [ChangeListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.dts.settings.DtsSettings.ChangeListener)  ![Project-Level][project-level] | [`ChangeListener`](%gh-ij-plugins%/dts/src/com/intellij/dts/settings/DtsSettings.kt) |
+| Topic | Listener                                                                                                                                                                  |
+|-------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [ChangeListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.dts.settings.DtsSettings.ChangeListener)  ![Project-Level][project-level] | [`ChangeListener`](%gh-ij-plugins%/dts/src/com/intellij/dts/settings/DtsSettings.kt)                                                                                      |
 | [FlexBuildConfigurationChangeListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.lang.javascript.flex.projectStructure.model.impl.FlexBuildConfigurationChangeListener)  | [`FlexBuildConfigurationChangeListener`](%gh-ij-plugins%/flex/src/com/intellij/lang/javascript/flex/projectStructure/model/impl/FlexBuildConfigurationChangeListener.java) |
-| [SerialPortsListener.Companion#SERIAL_PORTS_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.plugins.serialmonitor.service.SerialPortsListener)  | [`SerialPortsListener`](%gh-ij-plugins%/serial-monitor/src/main/java/com/intellij/plugins/serialmonitor/service/SerialPortsListener.kt) |
-| [PlatformioServiceKt#PLATFORMIO_UPDATES_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.embedded.platformio.PlatformioUpdatesNotifier)  ![Project-Level][project-level] | [`PlatformioUpdatesNotifier`](%gh-ij-plugins%/platformio/src/com/jetbrains/cidr/cpp/embedded/platformio/PlatformioService.kt) |
-| [PlatformioSettingsListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.embedded.platformio.project.PlatformioSettingsListener)  | [`PlatformioSettingsListener`](%gh-ij-plugins%/platformio/src/com/jetbrains/cidr/cpp/embedded/platformio/project/PlatformioSettings.kt) |
-| [DartAnalysisServerMessages#DART_ANALYSIS_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.lang.dart.analyzer.DartAnalysisServerMessages.DartAnalysisNotifier)  | [`DartAnalysisNotifier`](%gh-ij-plugins%/Dart/src/com/jetbrains/lang/dart/analyzer/DartAnalysisServerMessages.java) |
-| [PerforceSettings#OFFLINE_MODE_EXITED](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
-| [P4EnvHelper#P4_ENV_CHANGED](https://jb.gg/ipe/listeners?topics=org.jetbrains.idea.perforce.perforce.connections.P4EnvHelper.P4EnvListener)  ![Project-Level][project-level] | [`P4EnvListener`](%gh-ij-plugins%/PerforceIntegration/src/org/jetbrains/idea/perforce/perforce/connections/P4EnvHelper.java) |
-| [FrameworkDefinitionListener#TOPIC](https://jb.gg/ipe/listeners?topics=org.osmorc.settings.FrameworkDefinitionListener)  | [`FrameworkDefinitionListener`](%gh-ij-plugins%/osmorc/src/org/osmorc/settings/FrameworkDefinitionListener.java) |
+| [SerialPortsListener.Companion#SERIAL_PORTS_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.plugins.serialmonitor.service.SerialPortsListener)  | [`SerialPortsListener`](%gh-ij-plugins%/serial-monitor/src/main/java/com/intellij/plugins/serialmonitor/service/SerialPortsListener.kt)                                   |
+| [PlatformioServiceKt#PLATFORMIO_UPDATES_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.embedded.platformio.PlatformioUpdatesNotifier)  ![Project-Level][project-level] | [`PlatformioUpdatesNotifier`](%gh-ij-plugins%/platformio/src/com/jetbrains/cidr/cpp/embedded/platformio/PlatformioService.kt)                                             |
+| [PlatformioSettingsListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.embedded.platformio.project.PlatformioSettingsListener)  | [`PlatformioSettingsListener`](%gh-ij-plugins%/platformio/src/com/jetbrains/cidr/cpp/embedded/platformio/project/PlatformioSettings.kt)                                   |
+| [DartAnalysisServerMessages#DART_ANALYSIS_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.lang.dart.analyzer.DartAnalysisServerMessages.DartAnalysisNotifier)  | [`DartAnalysisNotifier`](%gh-ij-plugins%/Dart/src/com/jetbrains/lang/dart/analyzer/DartAnalysisServerMessages.java)                                                       |
+| [PerforceSettings#OFFLINE_MODE_EXITED](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable`                                                                                                                                                                |
+| [P4EnvHelper#P4_ENV_CHANGED](https://jb.gg/ipe/listeners?topics=org.jetbrains.idea.perforce.perforce.connections.P4EnvHelper.P4EnvListener)  ![Project-Level][project-level] | [`P4EnvListener`](%gh-ij-plugins%/PerforceIntegration/src/org/jetbrains/idea/perforce/perforce/connections/P4EnvHelper.java)                                              |
+| [FrameworkDefinitionListener#TOPIC](https://jb.gg/ipe/listeners?topics=org.osmorc.settings.FrameworkDefinitionListener)  | [`FrameworkDefinitionListener`](%gh-ij-plugins%/osmorc/src/org/osmorc/settings/FrameworkDefinitionListener.java)                                                          |
 
 
 ### AngularJS
@@ -56,6 +56,7 @@ Overview of Extension Points and Listeners for open source plugins available in 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.intellij.clion.dtsUtil](https://jb.gg/ipe?extensions=com.intellij.clion.dtsUtil) | [`DtsCLionUtil`](%gh-ij-plugins%/dts/src/com/intellij/dts/clion/DtsCLionUtil.kt) |
+| [com.intellij.dts.settings.disabler](https://jb.gg/ipe?extensions=com.intellij.dts.settings.disabler) | [`DtsSettingsDisabler`](%gh-ij-plugins%/dts/src/com/intellij/dts/settings/DtsSettingsDisabler.kt) |
 
 ### com.intellij.flex
 
@@ -81,6 +82,14 @@ Overview of Extension Points and Listeners for open source plugins available in 
 |-----------------|----------------|
 | [Dart.completionExtension](https://jb.gg/ipe?extensions=Dart.completionExtension) | [`DartCompletionExtension`](%gh-ij-plugins%/Dart/src/com/jetbrains/lang/dart/ide/completion/DartCompletionExtension.java) |
 | [Dart.completionTimerExtension](https://jb.gg/ipe?extensions=Dart.completionTimerExtension) | [`DartCompletionTimerExtension`](%gh-ij-plugins%/Dart/src/com/jetbrains/lang/dart/ide/completion/DartCompletionTimerExtension.java) |
+
+### dts-withCLion.xml
+
+[`dts-withCLion.xml`](%gh-ij-plugins%/dts/resources/META-INF/dts-withCLion.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.intellij.dts.cmake.configurationDataProvider](https://jb.gg/ipe?extensions=com.intellij.dts.cmake.configurationDataProvider) | [`DtsCMakeModelConfigurationDataProvider`](%gh-ij-plugins%/dts/src/com/intellij/dts/clion/impl/DtsCMakeModelConfigurationDataProvider.kt) |
 
 ### gherkin
 

@@ -18,7 +18,7 @@
 >
 {style="note"}
 
-53 Extension Points and 5 Listeners for Spring API
+52 Extension Points and 5 Listeners for Spring API
 
 <include from="snippets.md" element-id="ep_list_legend"/>
 
@@ -80,12 +80,6 @@
 | [com.intellij.spring.boot.modelExtender](https://jb.gg/ipe?extensions=com.intellij.spring.boot.modelExtender) | `SpringBootModelExtender` |
 | [com.intellij.spring.boot.replacementTokenResolver](https://jb.gg/ipe?extensions=com.intellij.spring.boot.replacementTokenResolver) | `SpringBootReplacementTokenResolver` |
 
-### com.intellij.spring.boot.initializr
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| [com.intellij.spring.boot.initializr.sharedIndexesProvider](https://jb.gg/ipe?extensions=com.intellij.spring.boot.initializr.sharedIndexesProvider) | `SpringSharedIndexesProvider` |
-
 ### com.intellij.spring.graphql
 
 | Extension Point | Implementation |
@@ -103,6 +97,7 @@
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.intellij.spring.mvc.applicationPathProvider](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.applicationPathProvider) | `SpringApplicationPathProvider` |
+| [com.intellij.spring.mvc.completion.controllerParamTypeProvider](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.completion.controllerParamTypeProvider) | `ControllerParameterProvider` |
 | [com.intellij.spring.mvc.mergingMvcRequestMappingLineMarkerProvider](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.mergingMvcRequestMappingLineMarkerProvider) | `SpringMergingMvcRequestMappingLineMarkerProvider` |
 | [com.intellij.spring.mvc.springEndpointsIconProvider](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.springEndpointsIconProvider) | `SpringEndpointsIconProvider` |
 | [com.intellij.spring.mvc.viewResolverFactory](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.viewResolverFactory) | `ViewResolverFactory` |
@@ -128,7 +123,6 @@
 | [com.intellij.spring.boot.run.endpoint](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.endpoint) ![Experimental][experimental] | `Endpoint` |
 | [com.intellij.spring.boot.run.endpointTabConfigurable](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.endpointTabConfigurable) ![Project-Level][project-level] | `EndpointTabConfigurable` |
 | [com.intellij.spring.boot.run.liveBeansPanelContent](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.liveBeansPanelContent) | `LiveBeansPanelContent` |
-| [com.intellij.spring.boot.run.starterManager](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.starterManager) ![Experimental][experimental] | `SpringBootStarterManager` |
 
 ### intellij.spring.el.xml
 

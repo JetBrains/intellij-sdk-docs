@@ -10,13 +10,14 @@
 
 The IntelliJ Platform is a highly concurrent environment.
 Code is executed in many threads simultaneously.
-In general, as in a regular [Swing](https://docs.oracle.com/javase%2Ftutorial%2Fuiswing%2F%2F/index.html) application, threads can be categorized into two groups:
+In general, as in a regular [Swing](https://docs.oracle.com/javase%2Ftutorial%2Fuiswing%2F%2F/index.html) application, threads can be categorized into two main groups:
 - [Event Dispatch Thread](https://docs.oracle.com/javase/tutorial/uiswing/concurrency/dispatch.html) (EDT) – also known as the UI thread.
   Its main purpose is handling UI events (such as reacting to clicking a button or updating the UI).
   EDT executes events taken from the Event Queue.
   Operations performed on EDT must be as fast as possible to not block other events and freeze the UI.
   There is only one EDT in the running application.
 - background threads (BGT) – used for performing long-running and costly operations, or background tasks
+
 
 [//]: # (TODO: Add diagram showing BGT, EDT and event queue)
 
@@ -191,7 +192,7 @@ Read and writes actions allow executing a piece of code under a lock, automatica
   }
   ```
   Note that this API is obsolete since 2024.1.
-  Plugins implemented in Kotlin and targeting versions 2024.1+ should use [`readAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt).
+  Plugins implemented in Kotlin and targeting versions 2024.1+ should use suspending [`readAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt).
   See also [](coroutine_read_actions.md).
 
 #### Rules
@@ -222,17 +223,35 @@ In all other cases, it is required to wrap read operation in a read action with 
 The read objects aren't guaranteed to survive between several consecutive read actions.
 Whenever starting a read action, check if the PSI/VFS/project/module is still valid.
 Example:
-```java
-PsiFile psiFile = ReadAction.compute(() -> {
-  if (project.isDisposed()) { // check if the project is not disposed
-    return null;
-  }
-  return virtualFile.isValid() ? // check if the file is valid
-      PsiManager.getInstance(project).findFile(virtualFile) : null;
-});
+```kotlin
+val virtualFile = runReadAction { // read action 1
+  // read a virtual file
+}
+// do other time-consuming work...
+val psiFile = runReadAction { // read action 2
+  if (virtualFile.isValid()) { // check if the virtual file is valid
+    PsiManager.getInstance(project).findFile(virtualFile)
+  } else null
+}
 ```
 
-[//]: # (TODO: diagram showing how data can be invalidated)
+Between executing first and second read actions, some other thread could invalidate the virtual file:
+
+```mermaid
+---
+displayMode: compact
+---
+gantt
+    dateFormat X
+    %% do not remove trailing space in axisFormat:
+    axisFormat ‎
+    section Thread 1
+        read action 1       : 0, 1
+        time-consuming work : done, 1, 4
+        read action 2       : 4, 5
+    section Thread 2
+        delete virtual file : crit, 2, 3
+```
 
 ### Write Actions
 
@@ -286,7 +305,7 @@ PsiFile psiFile = ReadAction.compute(() -> {
   }
   ```
   Note that this API is obsolete since 2024.1.
-  Plugins implemented in Kotlin and targeting versions 2024.1+ should use [`writeAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt).
+  Plugins implemented in Kotlin and targeting versions 2024.1+ should use suspending [`writeAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt).
 
 #### Rules
 {#write-actions-rules}
@@ -297,6 +316,8 @@ PsiFile psiFile = ReadAction.compute(() -> {
 
 Writing data is only allowed on EDT invoked with `Application.invokeLater()`, where the write intent lock is [acquired implicitly](#locks-and-edt).
 
+Write operations must always be wrapped in a write action with one of the [API](#write-actions-api) methods.
+
 [//]: # (TODO: ask Lev to verify)
 
 </tab>
@@ -305,40 +326,39 @@ Writing data is only allowed on EDT invoked with `Application.invokeLater()`, wh
 
 Writing data is only allowed on EDT, where the write intent lock is [acquired implicitly](#locks-and-edt).
 
+Write operations must always be wrapped in a write action with one of the [API](#write-actions-api) methods.
+
+Modifying the model is only allowed from write-safe contexts, including user actions and `SwingUtilities.invokeLater()` calls from them (see [](#invoking-operations-on-edt-and-modality)).
+
+Modifying PSI, VFS, or project model from inside UI renderers or `SwingUtilities.invokeLater()` calls is forbidden.
+
 </tab>
 
 </tabs>
 
-Write operations must always be wrapped in a write action with one of the [API](#write-actions-api) methods.
-
-[//]: # (TODO: I don't understand the following two paragraphs)
-
-Modifying the model is only allowed from write-safe contexts, including user actions and `SwingUtilities.invokeLater()` calls from them (see [](#modality-and-invokelater)).
-
-Modifying PSI, VFS, or project model from inside UI renderers or `SwingUtilities.invokeLater()` calls is forbidden.
-
 > [Thread Access Info](https://plugins.jetbrains.com/plugin/16815-thread-access-info) plugin visualizes Read/Write Access and Thread information in the debugger.
 
+[//]: # (TODO: needed?)
+
 <!--
-#### WiP
-{collapsible="true" initial-collapse-state="collapsed"}
-
-_Just a draft without a special meaning:_
-
 ```plantuml
 
 @startuml
 !pragma teoz true
 
 participant "EDT" as edt order 0
-participant "Thread 1" as thread1 order 1
-participant "Thread 2" as thread2 order 2
+participant "BGT 1" as thread1 order 1
+participant "BGT 2" as thread2 order 2
+participant "RW\nLock" as lock order 3
 collections "Data\nModel" as resource order 4
 
-thread1 ->(20) resource: read
-Activate resource
-& thread2 ->(25) resource: read
-'& Note over edt : test
+'thread1 ->(20) resource: acquire lock
+'Activate resource
+'& thread2 ->(25) resource: acquire lock
+''& Note over edt : test
+
+thread1 -> lock: acquire RL
+thread2 -> lock: acquire RL
 
 thread1 <- resource: result
 thread2 <- resource: result
@@ -356,10 +376,9 @@ Deactivate resource
 
 @enduml
 ```
-
 -->
 
-## Modality and `invokeLater()`
+## Invoking Operations on EDT and Modality
 
 Operations that write data on EDT should be invoked with `Application.invokeLater()` because it allows specifying the _modality state_ ([`ModalityState`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ModalityState.java)) for the scheduled operation.
 This is not supported by `SwingUtilities.invokeLater()` and similar APIs.
@@ -431,7 +450,7 @@ Use inspection <control>Plugin DevKit | Code | Cancellation check in loops</cont
 Throwing PCE from `ProgressIndicator.checkCanceled()` can be disabled for development (for example, while debugging the code) by invoking:
 
 <tabs>
-<tab title="2023.2 and later">
+<tab title="2023.2+">
 
 <ui-path>Tools | Internal Actions | Skip Window Deactivation Events</ui-path>
 

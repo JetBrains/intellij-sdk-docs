@@ -28,6 +28,6 @@ When opening more projects than the maximum allowed (3), a message dialog is sho
 [docs:plugin_services:light_services]: https://plugins.jetbrains.com/docs/intellij/plugin-services.html#light-services
 [docs:listeners]: https://plugins.jetbrains.com/docs/intellij/plugin-listeners.html
 
-[file:ProjectOpenStartupActivity]: ./src/main/java/org/intellij/sdk/maxOpenProjects/ProjectOpenStartupActivity.java
+[file:ProjectOpenStartupActivity]: ./src/main/kotlin/org/intellij/sdk/maxOpenProjects/ProjectOpenStartupActivity.kt
 [file:ProjectCountingService]: ./src/main/java/org/intellij/sdk/maxOpenProjects/ProjectCountingService.java
 [file:ProjectCloseListener]: ./src/main/java/org/intellij/sdk/maxOpenProjects/ProjectCloseListener.java

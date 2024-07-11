@@ -3,8 +3,7 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       id="coroutine_read_actions" title="Coroutine Read Actions"
-       help-id="coroutine_read_actions;coroutine_read_actions_2">
+       id="coroutine_read_actions" title="Coroutine Read Actions">
 
   <primary-label ref="2024.1"/>
 

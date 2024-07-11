@@ -102,9 +102,9 @@ Name the Plugin Logo files according to the following conventions:
 * <path>pluginIcon_dark.svg</path> is an optional, alternative Plugin Logo for use solely with dark IDE themes.
 
 ## Adding Plugin Logo Files to a Plugin Project
-The Plugin Logo files must be in the <path>META-INF</path> folder of the plugin distribution file, i.e., the <path>plugin.jar</path> or <path>plugin.zip</path> file you upload to the plugin repository and install into an IDE.
+The Plugin Logo files must be packaged in the <path>META-INF</path> folder of the [plugin main JAR file](plugin_content.md).
 
-To include Plugin Logo files in your distribution file, place the Plugin Logo files into a plugin project's <path>resources/META-INF</path> folder.
+To include Plugin Logo files, place them into the plugin project's <path>resources/META-INF</path> folder.
 For example:
 
 ![Plugin Logo Files in META-INF folder](resource_directory_structure.png){width="450"}

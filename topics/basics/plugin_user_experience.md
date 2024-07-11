@@ -59,11 +59,13 @@ Making as much functionality as possible working during [dumb mode](indexing_and
 
 In addition to the plugin execution performance, it is recommended to optimize the size of the plugin distribution that is downloaded by users from JetBrains Marketplace.
 Users with a poor internet connection may cancel the download when they realize that it will take too long to wait for a plugin they are not sure will meet their expectations.
+
 Consider the following techniques for optimizing the plugin distribution size:
 
 * Decrease the number of dependencies. Check if the target platform includes utilities (like those mentioned in [](ui_faq.md)) or [libraries](api_changes_list.md#bundled-library-updates) you need and reuse them.
+* Make sure no unneeded or multiple versions of the same dependencies are packaged in the plugin distribution.
 * Optimize assets like icons, images, videos, etc.
-* If large resources (e.g., SDKs) are needed only in specific setups, consider downloading them by the plugin on-demand instead of bundling them in the plugin distribution.
+* If large resources (e.g., SDKs, reference documentation) are needed only in specific setups, consider downloading them by the plugin on-demand instead of bundling them in the plugin distribution.
 
 [Obfuscation](https://plugins.jetbrains.com/docs/marketplace/obfuscate-the-plugin.html) may also help reduce the distribution file size.
 

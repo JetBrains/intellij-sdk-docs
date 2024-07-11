@@ -87,6 +87,8 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.jetbrains.python.PyElementTypes.STATEMENT_LIST` field type changed from `PyElementType` to `IElementType`
 : Update code usages.
 
+Dependency on the `PythonCore` plugin added
+
 ### Kotlin Plugin 2024.2
 
 `org.jetbrains.kotlin.analysis.low.level.api.fir.LLFirResolveSessionService.getFirResolveSessionNoCaching(module: KtModule)` method removed

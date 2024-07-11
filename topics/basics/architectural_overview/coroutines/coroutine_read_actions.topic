@@ -220,7 +220,7 @@
       </p>
 
       <p>
-        As of Kotlin 1.5.x, it is not possible to combine interceptors and dispatchers.
+        As of Kotlin 1.8.x, it is not possible to combine interceptors and dispatchers.
         Only one of them can exist in the context:
       </p>
 

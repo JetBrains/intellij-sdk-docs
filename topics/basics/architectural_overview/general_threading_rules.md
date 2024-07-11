@@ -235,7 +235,7 @@ val psiFile = runReadAction { // read action 2
 }
 ```
 
-Between executing first and second read actions, some other thread could invalidate the virtual file:
+Between executing first and second read actions, another thread could invalidate the virtual file:
 
 ```mermaid
 ---

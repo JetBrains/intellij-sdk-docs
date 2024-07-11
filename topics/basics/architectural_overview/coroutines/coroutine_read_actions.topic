@@ -88,20 +88,20 @@
           dispatcher
         </li>
         <li>
-          <code>executeSynchronously()</code> because effectively they are executed in the current coroutine dispatcher
+          <code>executeSynchronously()</code> because effectively they're executed in the current coroutine dispatcher
           already
         </li>
         <li>
           <code>expireWhen(BooleanSupplier expireCondition)</code>,
           <code>expireWith(Disposable parentDisposable)</code>,
-          and <code>wrapProgress(ProgressIndicator progressIndicator)</code> because they are canceled when the calling
+          and <code>wrapProgress(ProgressIndicator progressIndicator)</code> because they're canceled when the calling
           coroutine is canceled
         </li>
         <li>
           <p>
             <code>finishOnUiThread()</code> because this is handled by switching to the
             <a href="coroutine_dispatchers.md#edt-dispatcher">EDT dispatcher</a>.
-            Note that the UI data must be pure (e.g., strings/icons/element pointers), which inherently cannot
+            Note that the UI data must be pure (for example, strings/icons/element pointers), which inherently can't
             be invalidated during the transfer from a background thread to EDT.
           </p>
           <p>
@@ -146,7 +146,7 @@
             eventFlow.distinctUntilChanged().collectLatest { event ->
               // the next emitted event will cancel the current coroutine
               // and run it again with the next event if the next event
-              // was not equal to the previous one
+              // wasn't equal to the previous one
               readAction { readData() }
             }
           </code-block>
@@ -172,7 +172,7 @@
 
         <p>
           To check whether the current action was canceled, clients must call <a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java"><code>ProgressManager.checkCanceled()</code></a>, which was adjusted to work in coroutines.
-          Clients must not throw <a href="%gh-ic%/platform/util/base/src/com/intellij/openapi/progress/ProcessCanceledException.java"><code>ProcessCanceledException</code></a> manually.
+          Clients mustn't throw <a href="%gh-ic%/platform/util/base/src/com/intellij/openapi/progress/ProcessCanceledException.java"><code>ProcessCanceledException</code></a> manually.
         </p>
       </chapter>
 
@@ -215,9 +215,9 @@
       </code-block>
 
       <p>
-        It's impossible to give it suspending semantics: the interceptor will block its thread waiting for
+        It is impossible to give it suspending semantics: the interceptor will block its thread waiting for
         the read lock.
-        The interceptors should not be used for that.
+        The interceptors shouldn't be used for that.
       </p>
 
       <p>
@@ -229,7 +229,7 @@
         withContext(ReadAction) {
           foo()
           withContext(Dispatchers.Default) { // replaces ReadAction in the context
-            bar() // this will be called outside of read action
+            bar() // this will be called outside read action
           }
         }
       </code-block>

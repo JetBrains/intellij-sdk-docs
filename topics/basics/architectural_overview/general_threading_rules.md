@@ -65,19 +65,19 @@ The following table shows compatibility between locks in a simplified form:
         <td>Read</td>
         <td><img src="green_checkmark.svg" alt="+"/></td>
         <td><img src="green_checkmark.svg" alt="+"/></td>
-        <td><img src="gray_cross.svg" alt="-"/></td>
+        <td><img src="red_cross.svg" alt="-"/></td>
     </tr>
     <tr>
         <td>Write Intent</td>
         <td><img src="green_checkmark.svg" alt="+"/></td>
-        <td><img src="gray_cross.svg" alt="-"/></td>
-        <td><img src="gray_cross.svg" alt="-"/></td>
+        <td><img src="red_cross.svg" alt="-"/></td>
+        <td><img src="red_cross.svg" alt="-"/></td>
     </tr>
     <tr>
         <td>Write</td>
-        <td><img src="gray_cross.svg" alt="-"/></td>
-        <td><img src="gray_cross.svg" alt="-"/></td>
-        <td><img src="gray_cross.svg" alt="-"/></td>
+        <td><img src="red_cross.svg" alt="-"/></td>
+        <td><img src="red_cross.svg" alt="-"/></td>
+        <td><img src="red_cross.svg" alt="-"/></td>
     </tr>
 </table>
 

@@ -383,11 +383,11 @@ Deactivate resource
 Operations that write data on EDT should be invoked with `Application.invokeLater()` because it allows specifying the _modality state_ ([`ModalityState`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ModalityState.java)) for the scheduled operation.
 This is not supported by `SwingUtilities.invokeLater()` and similar APIs.
 
-`ModalityState` represents the stack of active modal dialogs and is used in calls to `Application.invokeLater()` to ensure the scheduled runnable can execute within the given modality state, meaning when the same set of modal dialogs or a subset is present.
-
 > Note that `Application.invokeLater()` must be used to write data in versions 2023.3+.
 >
 {style="warning"}
+
+`ModalityState` represents the stack of active modal dialogs and is used in calls to `Application.invokeLater()` to ensure the scheduled runnable can execute within the given modality state, meaning when the same set of modal dialogs or a subset is present.
 
 To better understand what problem `ModalityState` solves, consider the following scenario:
 1. A user action is started.
@@ -396,6 +396,24 @@ To better understand what problem `ModalityState` solves, consider the following
 4. While the dialog is shown, the operation from 2. is now processed and does changes to the data model, which invalidates PSI.
 5. The user clicks <control>Yes</control> or <control>No</control> in the dialog, and it executes some code based on the answer.
 6. Now, the code to be executed as the result of the user's answer has to deal with the changed data model it was not prepared for. For example, it was supposed to execute changes in the PSI that might be already invalid.
+
+```mermaid
+---
+displayMode: compact
+---
+gantt
+    dateFormat X
+    %% do not remove trailing space in axisFormat:
+    axisFormat ‎
+    section EDT
+        1. Start action         : 0, 2
+        3. Show dialog          : 2, 3
+        4. Modify data          : crit, active, 3, 4
+        5. Answer dialog        : 4, 5
+        6. Work on invalid data : crit, 5, 7
+    section BGT
+        2. invokeLater()        : crit, active, 1, 2
+```
 
 Passing the modality state solves this problem:
 1. A user action is started.
@@ -407,6 +425,25 @@ Passing the modality state solves this problem:
 5. The user clicks <control>Yes</control> or <control>No</control> in the dialog, and it executes some code based on the answer.
 6. The code is executed on data in the same state as before the dialog was shown.
 7. The operation from 1. is executed now without interfering with the user's action.
+
+```mermaid
+---
+displayMode: compact
+---
+gantt
+    dateFormat X
+    %% do not remove trailing space in axisFormat:
+    axisFormat ‎
+    section EDT
+        1. Start action          : 0, 2
+        3. Show dialog           : 2, 3
+        5. Answer dialog         : 3, 4
+        6. Work on correct data  : 4, 6
+        7. Modify data           : active, 6, 7
+    section BGT
+        2. invokeLater()         : active, 1, 2
+        4. Wait for dialog close : active, 2, 4
+```
 
 The following table presents methods providing useful modality states to be passed to `Application.invokeLater()`:
 

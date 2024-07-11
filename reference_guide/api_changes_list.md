@@ -56,8 +56,7 @@ Where the placeholders must be enclosed in code quotes (`name`):
 <property name> is a full name of a property from .properties file, like `some.action.description`
 <bundle name> is a fully qualified name of the property bundle, which includes its package, like `message.IdeBundle`
 
-NOTE: If a code change you're trying to document doesn't match any of the above patterns, fill in a ticket in the YouTrack.
-An example of a ticket is https://youtrack.jetbrains.com/issue/MP-1218. Until supported, you may document the change as you prefer, and I will correct it later.
+NOTE: If a code change you're trying to document doesn't match any of the above patterns, please ask in #plugins-verifier
 
 NOTE: You are allowed to prettify the pattern using links: [`org.example.Foo`](https://github.com/JetBrains/intellij-community/tree/master/)
 

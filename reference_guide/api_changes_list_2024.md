@@ -120,6 +120,11 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.intellij.database.datagrid.DataGrid.adaptForNewQuery()` abstract method added
 : Only recompilation is needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
 
+### HTTP Client Plugin 2024.2
+`com.intellij.httpClient.http.request.HttpRequestPsiConverter.toRequestConfig(HttpRequest)` method visibility changed from `public` to `private`
+: This method is an implementation detail.
+
+
 ## 2024.1
 
 ### IntelliJ Platform 2024.1

@@ -161,13 +161,13 @@ Write Action _(WA)_
 
 Write Allowing Read Action _(WARA)_
 : A coroutine &rarr;&nbsp;_Read Action_ that is canceled by an incoming &rarr;&nbsp;_Write Action_.
-See [](coroutine_read_actions.md#coroutine-read-actions-api) for details.
+See [](coroutine_read_actions.topic#coroutine-read-actions-api) for details.
 &rarr;&nbsp;_Suspending Context_
 &rarr;&nbsp;_Coroutine_
 
 Write Blocking Read Action _(WBRA)_
 : A coroutine &rarr;&nbsp;_Read Action_ that blocks incoming &rarr;&nbsp;_Write Action_.
-See [](coroutine_read_actions.md#coroutine-read-actions-api) for details.
+See [](coroutine_read_actions.topic#coroutine-read-actions-api) for details.
 &rarr;&nbsp;_Suspending Context_
 &rarr;&nbsp;_Coroutine_
 

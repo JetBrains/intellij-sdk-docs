@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/html-entities.dtd">
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       id="coroutine_read_actions" title="Coroutine Read Actions"
+       help-id="coroutine_read_actions;coroutine_read_actions_2">
+
+  <primary-label ref="2024.1"/>
+
+  <link-summary id="link-summary">Executing read actions in coroutines.</link-summary>
+
+  <include from="coroutines_snippets.md" element-id="learnCoroutines"/>
+
+  <p>
+    The concept of read/write locks and running blocking and cancellable read actions is explained in
+    the Threading section:
+  </p>
+  <list>
+    <li><a href="general_threading_rules.md#read-write-lock">Read-Write Lock</a></li>
+    <li><a href="general_threading_rules.md#read-action-cancellability">Read Action Cancellability</a></li>
+  </list>
+
+  <p>This section explains running read actions (RA) in coroutines specifically.</p>
+
+  <chapter title="Coroutine Read Actions API" id="coroutine-read-actions-api">
+    <p>
+      Running RA from coroutines is executed with <code>*ReadAction*</code> functions from
+      <a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt">
+        <code>coroutines.kt</code>
+      </a>
+      (see their KDocs for the details).
+      Functions can be divided into two groups, which differ in reacting to an incoming write action (WA):
+    </p>
+
+    <table>
+      <tr>
+        <td width="50%">Write Allowing Read Action (WARA)</td>
+        <td width="50%">Write Blocking Read Action (WBRA)</td>
+      </tr>
+      <tr>
+        <td><code>readAction</code></td>
+        <td><code>readActionBlocking</code></td>
+      </tr>
+      <tr>
+        <td><code>smartReadAction</code></td>
+        <td><code>smartReadActionBlocking</code></td>
+      </tr>
+      <tr>
+        <td><code>constrainedReadAction</code></td>
+        <td><code>constrainedReadActionBlocking</code></td>
+      </tr>
+    </table>
+
+    <p>WARA is canceled when a parent coroutine is canceled or a WA arrives.</p>
+
+    <p>
+      WBRA is canceled only when a parent coroutine is canceled.
+      It blocks WA until finishing its lambda.
+    </p>
+
+    <warning title="Naming Convention">
+      <p>
+        It is important to note that in the coroutines context, default functions
+        (without the <code>Blocking</code> suffix) behavior prioritizes WA.
+      </p>
+      <p>
+        In contrast, in the non-coroutine context,
+        <a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java">
+          <code>Application.runReadAction</code>
+        </a>
+        and similar methods (without any prefix/suffix) perform RA blocking WA, whereas RA allowing WA are invoked via
+        the <a href="general_threading_rules.md#read-action-cancellability"><code>NonBlockingReadAction</code> API</a>.
+      </p>
+      <p>Be careful when migrating the code running read actions to coroutines.</p>
+    </warning>
+
+    <chapter title="Write Allowing Read Action vs. NonBlockingReadAction"
+             id="write-allowing-read-action-vs-nonblockingreadaction">
+      <p>
+        WARA API is simpler than <a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/application/NonBlockingReadAction.java"><code>NonBlockingReadAction</code></a> (NBRA).
+        WARA doesn't need the following API methods:
+      </p>
+
+      <list>
+        <li>
+          <code>submit(Executor backgroundThreadExecutor)</code> because this is a responsibility of the coroutine
+          dispatcher
+        </li>
+        <li>
+          <code>executeSynchronously()</code> because effectively they are executed in the current coroutine dispatcher
+          already
+        </li>
+        <li>
+          <code>expireWhen(BooleanSupplier expireCondition)</code>,
+          <code>expireWith(Disposable parentDisposable)</code>,
+          and <code>wrapProgress(ProgressIndicator progressIndicator)</code> because they are canceled when the calling
+          coroutine is canceled
+        </li>
+        <li>
+          <p>
+            <code>finishOnUiThread()</code> because this is handled by switching to the
+            <a href="coroutine_dispatchers.md#edt-dispatcher">EDT dispatcher</a>.
+            Note that the UI data must be pure (e.g., strings/icons/element pointers), which inherently cannot
+            be invalidated during the transfer from a background thread to EDT.
+          </p>
+          <p>
+            In the case of using NBRA's <code>finishOnUiThread</code> to start a write action, the coroutine equivalent
+            is <code>readAndWriteAction</code>:
+          </p>
+          <code-block lang="kotlin">
+            readAndWriteAction {
+              val computedData = computeDataInReadAction()
+              writeAction {
+                applyData(computedData)
+              }
+            }
+          </code-block>
+          <p>
+            It provides the same guarantees as <code>finishOnUIThread</code>
+            (no WA between <code>computeDataInReadAction</code> and <code>applyData</code>),
+            but it is not bound to EDT.
+          </p>
+        </li>
+        <li>
+          <p>
+            <code>coalesceBy(Object ... equality)</code> because this should be handled by
+            <a href="https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/collect-latest.html">
+              <code>Flow.collectLatest()</code>
+            </a>
+            and/or
+            <a href="https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/distinct-until-changed.html">
+              <code>Flow.distinctUntilChanged()</code>
+            </a>.
+            Usually, NBRAs are run as a reaction to user actions, and there might be multiple NBRAs running, even
+            if their results are unused.
+            Instead of cancelling the read action, in the coroutine world the coroutines are canceled:
+          </p>
+          <code-block lang="kotlin">
+            eventFlow.collectLatest { event ->
+              // the next emitted event will cancel the current coroutine
+              // and run it again with the next event
+              readAction { readData() }
+            }
+
+            eventFlow.distinctUntilChanged().collectLatest { event ->
+              // the next emitted event will cancel the current coroutine
+              // and run it again with the next event if the next event
+              // was not equal to the previous one
+              readAction { readData() }
+            }
+          </code-block>
+        </li>
+      </list>
+
+      <chapter title="Read Action Cancellability" id="read-action-cancellability">
+        <p>Suspending read actions use coroutines as the underlying framework.</p>
+
+        <p>
+          WARA (invoked with <a href="#coroutine-read-actions-api">mentioned <code>*ReadAction</code> functions</a>)
+          may make several attempts to execute its lambda.
+          The block needs to know whether the current attempt was canceled.
+          <code>*ReadAction</code> functions create a child
+          <a href="https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-job/">
+            <code>Job</code>
+          </a>
+          for each attempt, and this job becomes canceled when a write action arrives.
+          <code>*ReadAction</code> restarts the block if it was canceled by a write action, or throws
+          <code>CancellationException</code> if the calling coroutine was canceled, causing the cancellation
+          of the child <code>Job</code>.
+        </p>
+
+        <p>
+          To check whether the current action was canceled, clients must call <a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java"><code>ProgressManager.checkCanceled()</code></a>, which was adjusted to work in coroutines.
+          Clients must not throw <a href="%gh-ic%/platform/util/base/src/com/intellij/openapi/progress/ProcessCanceledException.java"><code>ProcessCanceledException</code></a> manually.
+        </p>
+      </chapter>
+
+    </chapter>
+
+  </chapter>
+
+  <chapter title="FAQ" id="faq" collapsible="true" default-state="collapsed">
+
+    <chapter title="Why can't I suspend inside the block?" id="why-can-t-i-suspend-inside-the-block">
+      <p>
+        Read actions must be short.
+        Technically, it is possible to allow suspension during the read action, but it is complex to implement,
+        and it still might be surprising:
+      </p>
+
+      <code-block lang="kotlin">
+        readAction {
+          withContext(IO) {
+            // this will be canceled and restarted on each write action
+            loadTenGigabytesOfIndexes()
+          }
+        }
+      </code-block>
+
+      <p>Also, it is impossible to solve this with a continuation interceptor like:</p>
+      <code-block lang="kotlin">
+        object ReadAction : ContinuationInterceptor, CoroutineContext.Key&lt;RA> {
+          override val key: CoroutineContext.Key&lt;*> get() = this
+          override fun &lt;T> interceptContinuation(
+            continuation: Continuation&lt;T>
+          ): Continuation&lt;T> {
+            return Continuation(continuation.context) { result ->
+              ApplicationManager.getApplication().runReadAction {
+                continuation.resumeWith(result)
+              }
+            }
+          }
+        }
+      </code-block>
+
+      <p>
+        It's impossible to give it suspending semantics: the interceptor will block its thread waiting for
+        the read lock.
+        The interceptors should not be used for that.
+      </p>
+
+      <p>
+        As of Kotlin 1.5.x, it is not possible to combine interceptors and dispatchers.
+        Only one of them can exist in the context:
+      </p>
+
+      <code-block lang="kotlin">
+        withContext(ReadAction) {
+          foo()
+          withContext(Dispatchers.Default) { // replaces ReadAction in the context
+            bar() // this will be called outside of read action
+          }
+        }
+      </code-block>
+
+
+      <p>Even if that wasn't the case, the following code will work unexpectedly:</p>
+
+      <code-block lang="kotlin">
+        withContext(ReadAction) {
+          val foo = foo()
+          yield() // or another function which will suspend
+
+          // At this point 'foo' crossed the boundary between two read actions =>
+          // 'foo' might be invalidated if there was a write action in between.
+          bar(foo)
+        }
+      </code-block>
+    </chapter>
+  </chapter>
+
+  <include from="snippets.md" element-id="missingContent"/>
+
+</topic>

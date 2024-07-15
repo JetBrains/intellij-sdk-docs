@@ -66,7 +66,7 @@
       <toc-element toc-title="Component Model"/>
       <toc-element topic="disposers.md"/>
       <toc-element topic="general_threading_rules.md">
-        <toc-element toc-title="Background Tasks"/>
+        <toc-element topic="background_tasks.md"/>
       </toc-element>
       <toc-element topic="kotlin_coroutines.md">
         <toc-element topic="coroutine_scopes.md"/>

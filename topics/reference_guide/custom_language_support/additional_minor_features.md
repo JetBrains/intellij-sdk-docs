@@ -141,7 +141,8 @@ See also [](#brace-matching).
 EP: `com.intellij.breadcrumbsInfoProvider`
 
 [`BreadcrumbsProvider`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ui/breadcrumbs/BreadcrumbsProvider.java)
-allows for language-specific breadcrumbs.
+allows for language-specific [breadcrumbs](https://www.jetbrains.com/help/idea/navigating-through-the-source-code.html#editor_breadcrumbs).
+[Sticky Lines](https://www.jetbrains.com/help/idea/sticky-lines.html) feature also uses this data.
 
 - [`GroovyBreadcrumbsInfoProvider`](%gh-ic%/plugins/groovy/src/org/jetbrains/plugins/groovy/editor/GroovyBreadcrumbsInfoProvider.kt)
 

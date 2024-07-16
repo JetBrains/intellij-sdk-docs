@@ -19,8 +19,12 @@ In general, as in a regular [Swing](https://docs.oracle.com/javase%2Ftutorial%2F
 - background threads (BGT) – used for performing long-running and costly operations, or background tasks
 
 It is possible to switch between BGT and EDT in both directions.
-Operations can be scheduled to execute on EDT from BGT with `invokeLater()` methods (see the rest of this page for details).
+Operations can be scheduled to execute on EDT from BGT (and EDT) with `invokeLater()` methods (see the rest of this page for details).
 Executing on BGT from EDT can be achieved with [background tasks](background_tasks.md).
+
+> Plugins targeting versions 2024.1+ should use [coroutine dispatchers](coroutine_dispatchers.md) for switching between threads.
+>
+{style="warning"}
 
 ## Readers-Writer Lock
 
@@ -81,62 +85,6 @@ The following table shows compatibility between locks in a simplified form:
         <td><img src="red_cross.svg" alt="-"/></td>
     </tr>
 </table>
-
-[//]: # (FIXME: it doesn't look good. It's hard to visualize lock+resource; maybe try without resource? but acquiring and releasing locks on the diagram without read actions will be like pointless)
-<!--
-
-
-The following diagram presents an example scenario of acquiring and releasing locks by different threads:
-
-```plantuml
-
-@startuml
-!pragma teoz true
-
-autoactivate on
-
-actor "EDT" as edt order 0
-actor "BGT" as thread1 order 1
-'actor "BGT 2" as thread2 order 2
-participant "RW\nLock" as lock order 3
-collections "Data\nModel" as resource order 4
-
-'thread1 ->(20) resource: acquire lock
-'Activate resource
-'& thread2 ->(25) resource: acquire lock
-''& Note over edt : test
-
-thread1 -> lock: acquire RL
-return acquired
-
-thread1 -> resource: read data
-
-edt -> lock: acquire RL
-return acquired
-
-edt -> resource: read data
-
-return result
-return result
-
-thread1 -> lock: release RL
-return released
-
-edt -> lock: acquire WIL
-return acquired
-
-edt -> lock: acquire WL
-return wait
-
-edt -> lock: release RL
-return released
-
-edt <- lock: acquired
-
-@enduml
-```
--->
-
 
 The described lock characteristics conclude the following:
 - multiple threads can read data at the same time
@@ -554,8 +502,7 @@ With `ReadAction.nonBlocking()`, use `expireWith()` or `expireWhen()` for that.
 
 ### Don't Perform Long Operations on EDT
 
-In particular, don't traverse [VFS](virtual_file_system.md), parse [PSI](psi.md), resolve [references](psi_references.md) or query [indexes](indexing_and_psi_stubs.md).
-Some of these operations are reported by [`SlowOperations.assertSlowOperationsAreAllowed()`](%gh-ic%/platform/core-api/src/com/intellij/util/SlowOperations.java), which is enabled in IDE EAP versions, [internal mode](enabling_internal.md), or [development instance](ide_development_instance.md).
+In particular, don't traverse [VFS](virtual_file_system.md), parse [PSI](psi.md), resolve [references,](psi_references.md) or query [indexes](indexing_and_psi_stubs.md).
 
 There are still some cases when the platform itself invokes such expensive code (for example, resolve in `AnAction.update()`), but these are being worked on.
 Meanwhile, try to speed up what you can in your plugin as it will be generally beneficial and will also improve background highlighting performance.
@@ -565,6 +512,12 @@ review the documentation of `AnAction.getActionUpdateThread()` in the [](basic_a
 
 Write actions currently [have to happen on EDT](#locks-and-edt).
 To speed them up, as much as possible should be moved out of the write action into a preparation step which can be then invoked in the [background](background_tasks.md) or inside an [NBRA](#cancellable-read-actions-api).
+
+Some of the long operations are reported by [`SlowOperations.assertSlowOperationsAreAllowed()`](%gh-ic%/platform/core-api/src/com/intellij/util/SlowOperations.java).
+According to its Javadoc, they must be moved to BGT.
+This can be achieved with the techniques mentioned in the Javadoc, [background processes](background_tasks.md), [`Application.executeOnPooledThread()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java), or [coroutines](kotlin_coroutines.md) (recommended for plugins targeting 2024.1+).
+Note that the assertion is enabled in IDE EAP versions, [internal mode](enabling_internal.md), or [development instance](ide_development_instance.md), and regular users don't see them in the IDE.
+This will change in the future, so fixing these exceptions is required.
 
 ### Event Listeners
 
@@ -578,3 +531,11 @@ Consider using [`MergingUpdateQueue`](%gh-ic%/platform/ide-core/src/com/intellij
 ### VFS Events
 
 Massive batches of VFS events can be pre-processed in the background with [`AsyncFileListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/AsyncFileListener.java).
+
+## FAQ
+
+### How to check whether the current thread is the EDT/UI thread?
+
+Use `Application.isDispatchThread()`.
+
+<include from="snippets.md" element-id="missingContent"/>

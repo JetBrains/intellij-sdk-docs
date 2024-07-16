@@ -25,6 +25,9 @@ Testing: `ProjectActivity`
 Testing: indexes
 : Indexes are now built asynchronously during tests, see [](testing_faq.md#how-to-handle-indexing).
 
+ToggleAction in popups
+: No longer closes popups, see [](basic_action_system.md#toggleActionPopupMenus)
+
 ### PyCharm 2024.2
 
 Project setup

@@ -434,6 +434,16 @@ or [`DumbAwareToggleAction`](%gh-ic%/platform/platform-api/src/com/intellij/open
 for actions with "selected"/"pressed" state (e.g., menu item with checkbox, toolbar action button).
 See also [`ToggleOptionAction`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/ToggleOptionAction.java).
 
+#### Popup Menus
+{id="toggleActionPopupMenus"}
+
+<primary-label ref="2024.2"/>
+
+In popup menus, `ToggleAction` no longer closes the popup by default.
+Use [`Presentation.setKeepPopupOnPerform()`](%gh-ic-master%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/Presentation.java)
+with [`KeepPopupOnPerform.IfRequested`](%gh-ic-master%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/KeepPopupOnPerform.java)
+in the action constructor or its `update()` method.
+
 ### Back/Forward Navigation
 
 Use [`BackAction`](%gh-ic%/platform/platform-api/src/com/intellij/ui/navigation/BackAction.java) and

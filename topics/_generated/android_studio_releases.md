@@ -6,6 +6,7 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Ladybug &#124; 2024.1.3 Canary 1 | ![Canary][canary] | July 15, 2024 | **2024.1.3.1**<p>AI-241.18034.62.2413.12081498</p> | **2024.1.4**<p>241.18034.62</p> |
 | Koala Feature Drop &#124; 2024.1.2 Beta 1 | ![Beta][beta] | July 10, 2024 | **2024.1.2.9**<p>AI-241.18034.62.2412.12048879</p> | **2024.1.4**<p>241.18034.62</p> |
 | Koala Feature Drop &#124; 2024.1.2 Canary 8 | ![Canary][canary] | June 27, 2024 | **2024.1.2.8**<p>AI-241.18034.62.2412.12022747</p> | **2024.1.4**<p>241.18034.62</p> |
 | Koala Feature Drop &#124; 2024.1.2 Canary 7 | ![Canary][canary] | June 20, 2024 | **2024.1.2.7**<p>AI-241.17890.1.2412.11993144</p> | **2024.1.3**<p>241.17890.1</p> |
@@ -543,10 +544,10 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Ladybug &#124; 2024.1.3 Canary 1 | ![Canary][canary] | July 15, 2024 | **2024.1.3.1**<p>AI-241.18034.62.2413.12081498</p> | **2024.1.4**<p>241.18034.62</p> |
 | Koala Feature Drop &#124; 2024.1.2 Beta 1 | ![Beta][beta] | July 10, 2024 | **2024.1.2.9**<p>AI-241.18034.62.2412.12048879</p> | **2024.1.4**<p>241.18034.62</p> |
 | Koala Feature Drop &#124; 2024.1.2 Canary 8 | ![Canary][canary] | June 27, 2024 | **2024.1.2.8**<p>AI-241.18034.62.2412.12022747</p> | **2024.1.4**<p>241.18034.62</p> |
 | Koala Feature Drop &#124; 2024.1.2 Canary 7 | ![Canary][canary] | June 20, 2024 | **2024.1.2.7**<p>AI-241.17890.1.2412.11993144</p> | **2024.1.3**<p>241.17890.1</p> |
-| Koala Feature Drop &#124; 2024.1.2 Canary 6 | ![Canary][canary] | June 17, 2024 | **2024.1.2.6**<p>AI-241.17890.1.2412.11972402</p> | **2024.1.3**<p>241.17890.1</p> |
 | Koala &#124; 2024.1.1 Patch 1 | ![Patch][patch] | July 11, 2024 | **2024.1.1.12**<p>AI-241.18034.62.2411.12071903</p> | **2024.1.4**<p>241.18034.62</p> |
 
 [release]: https://img.shields.io/badge/-Release-blue?style=flat-square

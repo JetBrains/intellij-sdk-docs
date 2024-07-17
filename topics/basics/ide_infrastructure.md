@@ -45,7 +45,7 @@ class MyPluginClass {
 }
 ```
 
-If logging is used only to report exceptions, use convenience method `thisLogger()`:
+If logging is used only to report exceptions, use convenience method `thisLogger()` instead of dedicated instance:
 
 ```kotlin
 try {

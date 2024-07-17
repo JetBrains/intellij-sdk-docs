@@ -33,53 +33,9 @@ There are many `ProgressIndicator` implementations and the most commonly used ar
   Stores text/fraction and allows retrieving them and possibly show in the UI.
   Non-modal by default.
 - [`ProgressWindow`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/progress/util/ProgressWindow.java) – visible progress, either modal or background.
-  Usually not created directly, instantiated internally inside `ProgressManager.run()`.
+  Usually not created directly but instantiated internally inside `ProgressManager.run` methods.
 - [`ProgressWrapper`](%gh-ic%/platform/core-impl/src/com/intellij/openapi/progress/util/ProgressWrapper.java) – wraps an existing progress indicator, usually to fork another thread with the same cancellation policy.
   Use [`SensitiveProgressWrapper`](%gh-ic%/platform/core-impl/src/com/intellij/concurrency/SensitiveProgressWrapper.java) to allow that separate thread's indicator to be canceled independently of the main thread.
-
-<!--
-```plantuml
-@startuml
-
-set separator none
-
-interface ProgressIndicator {
-  +start()
-  +stop()
-  +cancel()
-  +isCanceled() : boolean
-  +setText(String text)
-  +setFraction(double fraction)
-}
-
-class ProgressManager {
-  +run(Task task)
-  +checkCanceled()
-}
-
-abstract class Task {
-  +run(ProgressIndicator indicator)
-}
-
-Task <|-- Task.Backgroundable
-Task <|-- Task.Modal
-Task <|-- Task.WithResult
-
-class Task.Backgroundable
-class Task.Modal
-class Task.WithResult
-
-class BackgroundTaskQueue {
-  +add(Task.Backgroundable task)
-}
-
-FIX ARROWS:
-ProgressManager --\> ProgressIndicator : uses
-ProgressManager --\> Task : uses
-BackgroundTaskQueue --\> Task.Backgroundable : adds
-@enduml
-```
--->
 
 ### Starting
 
@@ -87,11 +43,102 @@ Background processes can be started by using one of the following APIs.
 
 #### `ProgressManager`
 
-#### `ProgressRunner`
+Use one of the `run*()` methods.
+Depending on the needs, it allows running processes synchronously/asynchronously, providing progress indicators, callbacks, and more.
+See their Javadocs for more details.
+
+Example:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+ProgressManager.getInstance().runProcessWithProgressSynchronously(
+    ThrowableComputable {
+      // operation
+    },
+    "Synchronizing data", true, project
+)
+```
+</tab>
+<tab title="Java" group-key="java">
+
+```java
+ProgressManager.getInstance().runProcessWithProgressSynchronously(
+    () -> {
+      // operation
+    },
+    "Synchronizing data", true, project
+);
+```
+</tab>
+</tabs>
 
 #### `Task`
 
-TODO
+Represents a process in a form of a task that can be queued to execute.
+See `Task.*` subclasses for backgroundable, modal, and other types.
+
+Example:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+object : Task.Backgroundable(project, "Synchronizing data", true) {
+  override fun run(indicator: ProgressIndicator) {
+    // operation
+  }
+}
+  .setCancelText("Stop loading")
+  .queue()
+```
+</tab>
+<tab title="Java" group-key="java">
+
+```java
+new Task.Backgroundable(project, "Synchronizing data", true) {
+  public void run(ProgressIndicator indicator) {
+    // operation
+  }
+}
+  .setCancelText("Stop loading")
+  .queue();
+```
+</tab>
+</tabs>
+
+#### `ProgressRunner`
+
+ProgressRunner is a simplified builder-like API for running processes.
+It allows for similar options as `ProgressManager` and additionally allows for running the process on write or pooled thread.
+
+Example:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+ProgressRunner { _ ->
+    // operation
+}
+  .onThread(ThreadToUse.POOLED)
+  .modal()
+  .submit()
+```
+</tab>
+<tab title="Java" group-key="java">
+
+```java
+new ProgressRunner<>(() -> {
+      // operation
+})
+  .onThread(ThreadToUse.POOLED)
+  .modal()
+  .submit();
+```
+</tab>
+</tabs>
 
 ### Cancellation
 
@@ -124,7 +171,7 @@ See the section below for handling cancellation.
 
 The cancellation is handled in the running process code by calling `ProgressIndicator.checkCanceled()`, or `ProgressManager.checkCanceled()`, if no indicator instance is available in the current context.
 
-If the process was [marked as canceled](#requesting-cancellation), then the call to `checkCanceled()` throws an instance of a special unchecked [`ProcessCanceledException`](%gh-ic%/platform/util/base/src/com/intellij/openapi/progress/ProcessCanceledException.java) (PCE).
+If the process was [marked as canceled](#requesting-cancellation), then the call to `checkCanceled()` throws an instance of a special unchecked [`ProcessCanceledException`](%gh-ic%/platform/util/base/src/com/intellij/openapi/progress/ProcessCanceledException.java) (PCE) and the actual cancellation happens.
 This exception doesn't represent any error and is only used to handle cancellation for convenience.
 It allows canceling processes deeply in the call stack, without the need to handle cancellation on each level.
 
@@ -134,7 +181,7 @@ Use inspection <control>Plugin DevKit | Code | 'ProcessCanceledException' handle
 
 All code working with [PSI](psi.md) or in other kinds of background processes must be prepared for PCE being thrown at any point.
 
-The `checkCanceled()` should be called often enough to guarantee the process's smooth cancellation.
+**The `checkCanceled()` should be called by the running operation often enough** to guarantee the process's smooth cancellation.
 PSI internals have a lot of `checkCanceled()` calls inside.
 If a process does lengthy non-PSI activity, insert explicit `checkCanceled()` calls so that it happens frequently, for example, on each _Nth_ loop iteration.
 Use inspection <control>Plugin DevKit | Code | Cancellation check in loops</control> (2023.1).

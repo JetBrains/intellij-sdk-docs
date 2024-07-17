@@ -95,7 +95,7 @@ Code executed via the Progress API
 ([`ProgressManager`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java),
 [`ProgressIndicator`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressIndicator.java), etc.)
 is executed in a progress indicator context.
-See the [](background_tasks.md#progress-api) section for details.
+See the [](background_processes.md#progress-api) section for details.
 
 > Executing code under progress indicator is obsolete since 2024.1.
 > It is advised to use Kotlin coroutines in new code.
@@ -108,7 +108,7 @@ See the [](background_tasks.md#progress-api) section for details.
 ### Cancellation Check
 {#progress-indicator-cancellation-check}
 
-- `ProgressManager.checkCanceled()` - as described in the [](background_tasks.md#cancellation) section
+- `ProgressManager.checkCanceled()` - as described in the [](background_processes.md#cancellation) section
 
 ### Progress Reporting
 {#progress-indicator-progress-reporting}

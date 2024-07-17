@@ -20,7 +20,7 @@ In general, as in a regular [Swing](https://docs.oracle.com/javase%2Ftutorial%2F
 
 It is possible to switch between BGT and EDT in both directions.
 Operations can be scheduled to execute on EDT from BGT (and EDT) with `invokeLater()` methods (see the rest of this page for details).
-Executing on BGT from EDT can be achieved with [background tasks](background_tasks.md).
+Executing on BGT from EDT can be achieved with [background processes](background_processes.md).
 
 > Plugins targeting versions 2024.1+ should use [coroutine dispatchers](coroutine_dispatchers.md) for switching between threads.
 >
@@ -473,7 +473,7 @@ In this case, the EDT won't be blocked and the UI freeze is avoided.
 The total execution time of the read action will be longer due to multiple attempts, but not affecting the UI responsiveness is more important.
 
 The canceling approach is widely used in various areas of the IntelliJ Platform: editor highlighting, code completion, "go to class/file/…" actions all work like this.
-Read the [](background_tasks.md) section for more details.
+Read the [](background_processes.md) section for more details.
 
 ### Cancellable Read Actions API
 
@@ -487,7 +487,7 @@ To run a cancellable read action, depending on the context, use one of the avail
 - On EDT, call [`ReadAction.nonBlocking()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) which returns [`NonBlockingReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/NonBlockingReadAction.java) (NBRA). NBRA handles restarting the action out-of-the-box.
 - On BGT, use [`ProgressManager.runInReadActionWithWriteActionPriority()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java) in a loop, until it passes or the whole operation becomes obsolete.
 
-Under the hood, the [Background Processes](background_tasks.md) API is used in both approaches.
+Under the hood, the [Background Processes](background_processes.md) API is used in both approaches.
 The long operation is started with a `ProgressIndicator`, and a dedicated listener cancels that indicator when a write action is initiated.
 The next time the read action code calls `checkCanceled()`, a `ProcessCanceledException` is thrown, and the thread should stop its operation (and finish the read action) as soon as possible.
 
@@ -510,12 +510,13 @@ Meanwhile, try to speed up what you can in your plugin as it will be generally b
 For implementations of [`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java), plugin authors should specifically
 review the documentation of `AnAction.getActionUpdateThread()` in the [](basic_action_system.md) section as it describes how threading works for actions.
 
+
 Write actions currently [have to happen on EDT](#locks-and-edt).
-To speed them up, as much as possible should be moved out of the write action into a preparation step which can be then invoked in the [background](background_tasks.md) or inside an [NBRA](#cancellable-read-actions-api).
+To speed them up, as much as possible should be moved out of the write action into a preparation step which can be then invoked in the [background](background_processes.md) or inside an [NBRA](#cancellable-read-actions-api).
 
 Some of the long operations are reported by [`SlowOperations.assertSlowOperationsAreAllowed()`](%gh-ic%/platform/core-api/src/com/intellij/util/SlowOperations.java).
 According to its Javadoc, they must be moved to BGT.
-This can be achieved with the techniques mentioned in the Javadoc, [background processes](background_tasks.md), [`Application.executeOnPooledThread()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java), or [coroutines](kotlin_coroutines.md) (recommended for plugins targeting 2024.1+).
+This can be achieved with the techniques mentioned in the Javadoc, [background processes](background_processes.md), [`Application.executeOnPooledThread()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java), or [coroutines](kotlin_coroutines.md) (recommended for plugins targeting 2024.1+).
 Note that the assertion is enabled in IDE EAP versions, [internal mode](enabling_internal.md), or [development instance](ide_development_instance.md), and regular users don't see them in the IDE.
 This will change in the future, so fixing these exceptions is required.
 

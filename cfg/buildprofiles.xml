@@ -37,6 +37,7 @@
         <analytics-body-html-file>google-analytics-noscript.html</analytics-body-html-file>
 
         <automaticLinkSummaries>false</automaticLinkSummaries>
+        <resizable-sidebar>true</resizable-sidebar>
     </variables>
 
     <build-profile instance="ijs"/>

@@ -10,12 +10,11 @@ The API is called Progress API and allows for cancelling tasks and tracking thei
 
 ## Progress API
 
-> Note that Progress API is obsolete since 2024.1.
 > Plugins targeting 2024.1+ should use [Kotlin coroutines](kotlin_coroutines.md), which is a more performant solution and provides the cancellation mechanism out of the box.
 >
 > See [](coroutine_execution_contexts.md) for coroutine-based APIs to use in different contexts.
 >
-{style="warning" title="Obsolescence Notice"}
+{style="warning" title="Obsolete Since 2024.1"}
 
 The Progress API allows running processes on BGT with a modal (dialog), non-modal (visible in the status bar), or invisible progress.
 It also allows for process cancellation and progress tracking (as a fraction of work done or textual).

@@ -4,7 +4,6 @@
 
 <link-summary>IntelliJ Platform Gradle Plugin provides a set of Gradle properties and build features to control its behaviors.</link-summary>
 
-<include from="tools_intellij_platform_gradle_plugin.md" element-id="Beta_Status"/>
 <include from="tools_intellij_platform_gradle_plugin.md" element-id="faq"/>
 
 The IntelliJ Platform Gradle Plugin exposes a number of build features to control some of the low-level Gradle plugin behaviors.

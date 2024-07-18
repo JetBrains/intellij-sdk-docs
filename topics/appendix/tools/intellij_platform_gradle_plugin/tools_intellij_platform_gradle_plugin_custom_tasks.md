@@ -4,7 +4,6 @@
 
 <link-summary>IntelliJ Platform Gradle Plugin custom tasks.</link-summary>
 
-<include from="tools_intellij_platform_gradle_plugin.md" element-id="Beta_Status"/>
 <include from="tools_intellij_platform_gradle_plugin.md" element-id="faq"/>
 
 By default, the [](tools_intellij_platform_gradle_plugin_tasks.md#runIde), `test`, [](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi), and [](tools_intellij_platform_gradle_plugin_tasks.md#testIdePerformance) tasks depend on the IntelliJ Platform defined with [](tools_intellij_platform_gradle_plugin_dependencies_extension.md).

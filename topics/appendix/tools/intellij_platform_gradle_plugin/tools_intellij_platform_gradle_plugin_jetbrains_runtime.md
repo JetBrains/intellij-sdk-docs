@@ -4,7 +4,6 @@
 
 <link-summary>The IntelliJ Platform Gradle Plugin requires JetBrains Runtime (JBR), which can be provided in multiple ways.</link-summary>
 
-<include from="tools_intellij_platform_gradle_plugin.md" element-id="Beta_Status"/>
 <include from="tools_intellij_platform_gradle_plugin.md" element-id="faq"/>
 
 JetBrains Runtime (JBR) is a custom version of OpenJDK, specifically optimized for IntelliJ-based IDEs. It supports enhanced class redefinition (DCEVM), includes the Java Chromium Embedded Framework (JCEF), and improves aspects such as font rendering and keyboard support, thereby enhancing overall performance.

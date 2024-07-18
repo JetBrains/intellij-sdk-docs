@@ -4,7 +4,6 @@
 
 <link-summary>IntelliJ Platform Gradle Plugin data types, enums, and constants.</link-summary>
 
-<include from="tools_intellij_platform_gradle_plugin.md" element-id="Beta_Status"/>
 <include from="tools_intellij_platform_gradle_plugin.md" element-id="faq"/>
 
 This page lists various types used to configure [](tools_intellij_platform_gradle_plugin_tasks.md).

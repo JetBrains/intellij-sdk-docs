@@ -1,6 +1,6 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# IntelliJ Platform Gradle Plugin 2.x (Beta)
+# IntelliJ Platform Gradle Plugin 2.x
 
 <link-summary>IntelliJ Platform Gradle Plugin user and migration guide.</link-summary>
 
@@ -22,20 +22,6 @@ It is a successor of _[](tools_gradle_intellij_plugin.md) (1.x)_.
 > See [](tools_intellij_platform_gradle_plugin_faq.md) and [](tools_intellij_platform_gradle_plugin_migration.md).
 >
 {title="FAQ"}
-
-</snippet>
-
-<snippet id="Beta_Status">
-
-> IntelliJ Platform Gradle Plugin 2.0.0 is currently in **Beta** and may not support all features and project setups yet (see also [](tools_intellij_platform_gradle_plugin.md#requirements)).
-> Please report bugs or problems in the GitHub issue tracker or Slack channel (see [here](tools_intellij_platform_gradle_plugin.md#tldr)).
->
-> Any documentation issues should be reported using the feedback form on the bottom of this page.
-> Please leave your email in case we need more details.
->
-> Thanks a lot in advance for your feedback!
->
-{title="Early Access Status" style="warning"}
 
 </snippet>
 

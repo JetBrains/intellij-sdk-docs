@@ -4,7 +4,6 @@
 
 <link-summary>IntelliJ Platform Gradle Plugin extension.</link-summary>
 
-<include from="tools_intellij_platform_gradle_plugin.md" element-id="Beta_Status"/>
 <include from="tools_intellij_platform_gradle_plugin.md" element-id="faq"/>
 
 The _IntelliJ Platform Gradle Plugin_ introduces a top-level `intellijPlatform` extension.

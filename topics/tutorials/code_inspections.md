@@ -122,8 +122,7 @@ Implicit in using [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/
   If a short name is not provided, the IntelliJ Platform computes one by removing `Inspection` suffix from the implementation class name.
 
 #### Code Snippets
-
-(2023.2)
+<primary-label ref="2023.2"/>
 
 Using the following HTML structure, the description can embed code snippets that will be displayed with syntax highlighting:
 

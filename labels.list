@@ -1,26 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE labels SYSTEM "https://resources.jetbrains.com/writerside/1.0/labels-list.dtd">
 <labels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/labels.xsd">
 
-  <primary-label id="CommercialIDEs" short-name="Commercial IDEs" name="Commercial IDEs"/>
+  <primary-label id="CommercialIDEs" short-name="Commercial IDEs" name="Commercial IDEs">
+    Available only in commercial IDEs.
+  </primary-label>
 
   <primary-label id="IntelliJIDEA" short-name="IntelliJ IDEA" name="IntelliJ IDEA"
-                 href="https://plugins.jetbrains.com/docs/intellij/idea.html"/>
+                 href="https://plugins.jetbrains.com/docs/intellij/idea.html">
+    Available only in IntelliJ IDEA.
+  </primary-label>
   <primary-label id="IntelliJIDEA_Ultimate" short-name="IntelliJ IDEA Ultimate" name="IntelliJ IDEA Ultimate"
-                 href="https://plugins.jetbrains.com/docs/intellij/idea-ultimate.html"/>
+                 href="https://plugins.jetbrains.com/docs/intellij/idea-ultimate.html">
+    Available only in IntelliJ IDEA Ultimate.
+  </primary-label>
 
-  <primary-label id="Deprecated" short-name="Deprecated" name="Deprecated" color="red"/>
+  <primary-label id="Deprecated" short-name="Deprecated" name="Deprecated" color="red">
+    Deprecated, see notes.
+  </primary-label>
 
-  <primary-label id="2020.1" short-name="2020.1+" name="2020.1+"/>
-  <primary-label id="2020.2" short-name="2020.2+" name="2020.2+"/>
-  <primary-label id="2020.3" short-name="2020.3+" name="2020.3+"/>
-  <primary-label id="2021.3" short-name="2021.3+" name="2021.3+"/>
-  <primary-label id="2022.1" short-name="2022.1+" name="2022.1+"/>
-  <primary-label id="2022.2" short-name="2022.2+" name="2022.2+"/>
-  <primary-label id="2022.3" short-name="2022.3+" name="2022.3+"/>
-  <primary-label id="2023.1" short-name="2023.1+" name="2023.1+"/>
-  <primary-label id="2023.2" short-name="2023.2+" name="2023.2+"/>
-  <primary-label id="2023.3" short-name="2023.3+" name="2023.3+"/>
-  <primary-label id="2024.1" short-name="2024.1+" name="2024.1+"/>
-  <primary-label id="2024.2" short-name="2024.2+" name="2024.2+"/>
+  <primary-label id="2020.1" short-name="2020.1+" name="2020.1+">
+    Available in IDE version 2020.1 or later
+  </primary-label>
+  <primary-label id="2020.2" short-name="2020.2+" name="2020.2+">
+    Available in IDE version 2020.2 or later
+  </primary-label>
+  <primary-label id="2020.3" short-name="2020.3+" name="2020.3+">
+    Available in IDE version 2020.3 or later
+  </primary-label>
+  <primary-label id="2021.3" short-name="2021.3+" name="2021.3+">
+    Available in IDE version 2021.3 or later
+  </primary-label>
+  <primary-label id="2022.1" short-name="2022.1+" name="2022.1+">
+    Available in IDE version 2022.1 or later
+  </primary-label>
+  <primary-label id="2022.2" short-name="2022.2+" name="2022.2+">
+    Available in IDE version 2022.2 or later
+  </primary-label>
+  <primary-label id="2022.3" short-name="2022.3+" name="2022.3+">
+    Available in IDE version 2022.3 or later
+  </primary-label>
+  <primary-label id="2023.1" short-name="2023.1+" name="2023.1+">
+    Available in IDE version 2023.1 or later
+  </primary-label>
+  <primary-label id="2023.2" short-name="2023.2+" name="2023.2+">
+    Available in IDE version 2023.2 or later
+  </primary-label>
+  <primary-label id="2023.3" short-name="2023.3+" name="2023.3+">
+    Available in IDE version 2023.3 or later
+  </primary-label>
+  <primary-label id="2024.1" short-name="2024.1+" name="2024.1+">
+    Available in IDE version 2024.1 or later
+  </primary-label>
+  <primary-label id="2024.2" short-name="2024.2+" name="2024.2+">
+    Available in IDE version 2024.2 or later
+  </primary-label>
+  <primary-label id="2024.3" short-name="2024.3+" name="2024.3+">
+    Available in IDE version 2024.3 or later
+  </primary-label>
 </labels>

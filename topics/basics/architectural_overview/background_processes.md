@@ -15,7 +15,7 @@ The API is called Progress API and allows for cancelling tasks and tracking thei
 >
 > See [](coroutine_execution_contexts.md) for coroutine-based APIs to use in different contexts.
 >
-{style="warning"}
+{style="warning" title="Obsolescence Notice"}
 
 The Progress API allows running processes on BGT with a modal (dialog), non-modal (visible in the status bar), or invisible progress.
 It also allows for process cancellation and progress tracking (as a fraction of work done or textual).
@@ -157,7 +157,7 @@ Examples:
   3. User types another letter.
   4. The computation started in 2. is now outdated and is canceled to start computation for the new input.
 
-Being prepared for cancellation requests in plugin code is crucial for saving the CPU resources and responsiveness of the IDE.
+Being prepared for cancellation requests in plugin code is crucial for saving CPU resources and responsiveness of the IDE.
 
 #### Requesting Cancellation
 

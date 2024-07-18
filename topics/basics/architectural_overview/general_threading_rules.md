@@ -91,8 +91,7 @@ The described lock characteristics conclude the following:
 - once a thread acquires the write lock, no other threads can read or write data
 
 Acquiring and releasing locks explicitly in code would be verbose and error-prone and must never be done by plugins.
-The IntelliJ Platform [enables write intent lock implicitly on EDT](#locks-and-edt) and provides an [API for accessing data under read or write locks](#accessing-data).
-
+The IntelliJ Platform enables write intent lock implicitly on EDT (see [](#locks-and-edt) for details) and provides an [API for accessing data under read or write locks](#accessing-data).
 
 ### Locks and EDT
 
@@ -136,12 +135,12 @@ Use other methods for pure UI operations.
 
 The IntelliJ Platform provides a simple API for accessing data under read or write locks in a form of read and write actions.
 
-Read and writes actions allow executing a piece of code under a lock, automatically acquiring it before an action starts, and releasing it after the action is finished.
+Read and write actions allow executing a piece of code under a lock, automatically acquiring it before an action starts, and releasing it after the action is finished.
 
 > Always wrap only the required operations into read/write actions, minimizing the time of holding locks.
 > If the read operation itself is long, consider using one of [read action cancellability techniques](#read-action-cancellability) to avoid blocking the write lock and EDT.
 >
-{style="warning"}
+{style="warning" title="Minimize Locking Scopes"}
 
 ### Read Actions
 
@@ -507,12 +506,17 @@ In particular, don't traverse [VFS](virtual_file_system.md), parse [PSI](psi.md)
 There are still some cases when the platform itself invokes such expensive code (for example, resolve in `AnAction.update()`), but these are being worked on.
 Meanwhile, try to speed up what you can in your plugin as it will be generally beneficial and will also improve background highlighting performance.
 
+#### Action Update
+
 For implementations of [`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java), plugin authors should specifically
 review the documentation of `AnAction.getActionUpdateThread()` in the [](basic_action_system.md) section as it describes how threading works for actions.
 
+#### Minimize Write Actions Scope
 
 Write actions currently [have to happen on EDT](#locks-and-edt).
 To speed them up, as much as possible should be moved out of the write action into a preparation step which can be then invoked in the [background](background_processes.md) or inside an [NBRA](#cancellable-read-actions-api).
+
+#### Slow Operations on EDT Assertion
 
 Some of the long operations are reported by [`SlowOperations.assertSlowOperationsAreAllowed()`](%gh-ic%/platform/core-api/src/com/intellij/util/SlowOperations.java).
 According to its Javadoc, they must be moved to BGT.

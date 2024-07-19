@@ -80,101 +80,13 @@ Default value
 : [`initializeIntellijPlatformPlugin.coroutinesJavaAgent`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin-coroutinesJavaAgent)
 
 
-## `CustomIntelliJPlatformVersionAware`
-{#CustomIntelliJPlatformVersionAware}
-
-<tldr>
-
-**Depends on**: [`IntelliJPlatformVersionAware`](#IntelliJPlatformVersionAware)
-
-**Inherited by**: [`CustomRunIdeTask`](tools_intellij_platform_gradle_plugin_custom_tasks.md#CustomRunIdeTask), [`CustomTestIdePerformanceTask`](tools_intellij_platform_gradle_plugin_custom_tasks.md#CustomTestIdePerformanceTask), [`CustomTestIdeTask`](tools_intellij_platform_gradle_plugin_custom_tasks.md#CustomTestIdeTask), [`CustomTestIdeUiTask`](tools_intellij_platform_gradle_plugin_custom_tasks.md#CustomTestIdeUiTask)
-
-**Sources**: [`CustomIntelliJPlatformVersionAware`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/CustomIntelliJPlatformVersionAware.kt)
-
-</tldr>
-
-By default, the project with the IntelliJ Platform Gradle Plugin applied required the presence of the IntelliJ Platform, referred to later by various tasks, configurations, and extensions.
-
-The custom IntelliJ Platform concept allows using another version, i.e., to run a guest IDE or tests against it.
-
-When applying this interface to the task, custom configurations to hold new dependencies defined by [`type`](#CustomIntelliJPlatformVersionAware-type) and [`version`](#CustomIntelliJPlatformVersionAware-version) (or [`localPath`](#CustomIntelliJPlatformVersionAware-localPath), if referring to the local IntelliJ Platform instance) are created, as well as a dedicated [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox) task.
-
-Configurations, as well as the task preparing sandbox for running and testing the custom IntelliJ Platform (if required), have a random suffix applied to avoid collisions.
-
-
-### `type`
-{#CustomIntelliJPlatformVersionAware-type}
-
-An input property to configure the type of the custom IntelliJ Platform.
-
-By default, it refers to the IntelliJ Platform type used by the current project.
-
-{style="narrow"}
-Type
-: [`IntelliJPlatformType`](tools_intellij_platform_gradle_plugin_types.md#IntelliJPlatformType)
-
-
-### `version`
-{#CustomIntelliJPlatformVersionAware-version}
-
-An input property to configure the version of the custom IntelliJ Platform.
-
-By default, it refers to the IntelliJ Platform version used by the current project.
-
-{style="narrow"}
-Type
-: `Property<String>`
-
-
-### `localPath`
-{#CustomIntelliJPlatformVersionAware-localPath}
-
-An input property to define the path to the local IntelliJ Platform instance to configure the version of the custom IntelliJ Platform.
-
-The local path precedes the IntelliJ Platform resolution using the [`type`](#CustomIntelliJPlatformVersionAware-type) and [`version`](#CustomIntelliJPlatformVersionAware-version) properties.
-
-{style="narrow"}
-Type
-: `DirectoryProperty`
-
-
-### `plugins {}`
-{#CustomIntelliJPlatformVersionAware-plugins}
-
-An extension to provide custom plugins to be added when running the task enhanced with `CustomIntelliJPlatformVersionAware`.
-
-It provides several methods for adding remote and local plugins, or for disabling already loaded or bundled plugin.
-
-**Example:**
-
-```kotlin
-tasks {
-  val runIdeWithPlugins by registering(CustomRunIdeTask::class) {
-    // ...
-    plugins {
-      plugin("pluginId", "1.0.0")
-      disablePlugin("pluginId")
-    }
-  }
-}
-```
-
-| Function                       | Description                                                                                                                                  |
-|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| `plugin(id, version, channel)` | Adds a dependency on a plugin for a custom IntelliJ Platform.                                                                                |
-| `plugin(notation)`             | Adds a dependency on a plugin for a custom IntelliJ Platform using a string notation:<p>`pluginId:version` or `pluginId:version@channel`</p> |
-| `plugins(notations)`           | Adds dependencies on plugins for a custom IntelliJ Platform using a string notation:<p>`pluginId:version` or `pluginId:version@channel`</p>  |
-| `disablePlugin(id)`            | Disables the specific plugin with its ID.                                                                                                    |
-| `disablePlugins(ids)`          | Disables specific plugins with the list of their IDs.                                                                                        |
-| `localPlugin(path)`            | Adds a dependency on a local IntelliJ Platform plugin. Accepts path or a dependency on another module.                                       |
-
 
 ## `IntelliJPlatformVersionAware`
 {#IntelliJPlatformVersionAware}
 
 <tldr>
 
-**Inherited by**: [`CustomIntelliJPlatformVersionAware`](#CustomIntelliJPlatformVersionAware), [`RuntimeAware`](#RuntimeAware), [`SandboxAware`](#SandboxAware), [`SplitModeAware`](#SplitModeAware), [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin), [`patchPluginXml`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml), [`printBundledPlugins`](tools_intellij_platform_gradle_plugin_tasks.md#printBundledPlugins), [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde), [`testIdePerformance`](tools_intellij_platform_gradle_plugin_tasks.md#testIdePerformance), [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi), [`verifyPluginProjectConfiguration`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginProjectConfiguration)
+**Inherited by**: [`RuntimeAware`](#RuntimeAware), [`SandboxAware`](#SandboxAware), [`SplitModeAware`](#SplitModeAware), [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin), [`patchPluginXml`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml), [`printBundledPlugins`](tools_intellij_platform_gradle_plugin_tasks.md#printBundledPlugins), [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde), [`testIdePerformance`](tools_intellij_platform_gradle_plugin_tasks.md#testIdePerformance), [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi), [`verifyPluginProjectConfiguration`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginProjectConfiguration)
 
 **Sources**: [`IntelliJPlatformVersionAware`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/IntelliJPlatformVersionAware.kt)
 
@@ -431,8 +343,6 @@ Provides quick access to the sandbox container and specific directories located 
 
 The path to the sandbox container is obtained using the [`intellijPlatform.sandboxContainer`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-sandboxContainer) extension property and the type and version of the IntelliJ Platform applied to the project.
 
-Paths respect custom IntelliJ Platform when combined with [`CustomIntelliJPlatformVersionAware`](#CustomIntelliJPlatformVersionAware).
-
 
 ### `sandboxSuffix`
 {#SandboxAware-sandboxSuffix}
@@ -588,13 +498,13 @@ Default value
 
 <tldr>
 
-**Inherited by**: [`prepareTest`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTest), [`CustomTestIdeTask`](tools_intellij_platform_gradle_plugin_custom_tasks.md#CustomTestIdeTask)
+**Inherited by**: [`prepareTest`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTest)
 
 **Sources**: [`TestableAware`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/TestableAware.kt)
 
 </tldr>
 
-Interface used to describe tasks used for running tests, such as a customizable [`CustomTestIdeTask`](tools_intellij_platform_gradle_plugin_custom_tasks.md#CustomTestIdeTask) or [`prepareTest`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTest) used for configuring `test` and keeping it immutable.
+Interface used to describe tasks used for running tests, such as [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi), [`testIdePerformance`](tools_intellij_platform_gradle_plugin_tasks.md#testIdePerformance), or [`prepareTest`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTest) used for configuring `test` and keeping it immutable.
 
 
 <include from="snippets.md" element-id="missingContent"/>

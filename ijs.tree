@@ -423,10 +423,10 @@
     <toc-element topic="tools_intellij_platform_gradle_plugin.md">
       <toc-element topic="tools_intellij_platform_gradle_plugin_plugins.md"/>
       <toc-element topic="tools_intellij_platform_gradle_plugin_extension.md"/>
+      <toc-element topic="tools_intellij_platform_gradle_plugin_testing_extension.md"/>
       <toc-element topic="tools_intellij_platform_gradle_plugin_repositories_extension.md"/>
       <toc-element topic="tools_intellij_platform_gradle_plugin_dependencies_extension.md"/>
       <toc-element topic="tools_intellij_platform_gradle_plugin_tasks.md"/>
-      <toc-element topic="tools_intellij_platform_gradle_plugin_custom_tasks.md"/>
       <toc-element topic="tools_intellij_platform_gradle_plugin_task_awares.md"/>
       <toc-element topic="tools_intellij_platform_gradle_plugin_types.md"/>
       <toc-element topic="tools_intellij_platform_gradle_plugin_gradle_properties.md"/>

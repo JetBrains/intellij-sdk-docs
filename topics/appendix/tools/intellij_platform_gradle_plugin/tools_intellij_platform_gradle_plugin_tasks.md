@@ -42,21 +42,16 @@ flowchart LR
                 end
             end
 
-            subgraph RUN ["Run"]
-                runIde
-            end
-
-
             subgraph PUBLISH ["Publish"]
                 publishPlugin
                 signPlugin
             end
 
             subgraph TEST ["Test"]
+                runIde
                 prepareTest
                 testIdePerformance>testIdePerformance]
                 testIdeUi>testIdeUi]
-
             end
 
             subgraph VERIFY ["Verify"]
@@ -142,6 +137,8 @@ flowchart LR
     style ALL fill:transparent
 ```
 
+
+
 ## `buildPlugin`
 {#buildPlugin}
 
@@ -168,6 +165,7 @@ By default, the `archiveBaseName` is set to the plugin name specified in the <pa
 >
 {style="warning"}
 
+
 ### `archiveFile`
 {#buildPlugin-archiveFile}
 
@@ -177,8 +175,6 @@ Specifies the archive file representing the output file produced by the task.
 Type
 : `RegularFileProperty`
 
-Default value
-: [`buildPlugin.archiveFile`](#buildPlugin-archiveFile)
 
 
 ## `buildSearchableOptions`
@@ -186,7 +182,7 @@ Default value
 
 <tldr>
 
-**Depends on**: [`patchPluginXml`](#patchPluginXml), [`prepareSandbox`](#prepareSandbox)
+**Depends on**: [`prepareSandbox`](#prepareSandbox)
 
 **Extends**: [`JavaExec`][gradle-javaexec-task], [`RunnableIdeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#RunnableIdeAware)
 
@@ -197,10 +193,10 @@ Default value
 Builds the index of UI components (searchable options) for the plugin.
 This task runs a headless IDE instance to collect all the available options provided by the plugin's [](settings.md).
 
-If the plugin doesn't implement custom settings, it is recommended to disable this task via [`intellijPlatform.buildSearchableOptions`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-buildSearchableOptions) build feature.
+If the plugin doesn't implement custom settings, it is recommended to disable this task via [`intellijPlatform.buildSearchableOptions`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-buildSearchableOptions) flag.
 
-In the case of running the task for the plugin using [`intellijPlatform.pluginConfiguration.productDescriptor`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-productDescriptor), a warning will be logged regarding potential issues with running headless IDE for paid plugins.
-It is possible to mute this warning with the [`paidPluginSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_gradle_properties.md#paidPluginSearchableOptionsWarning) build feature.
+In the case of running the task for the plugin that has [`intellijPlatform.pluginConfiguration.productDescriptor`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-productDescriptor) defined, a warning will be logged regarding potential issues with running headless IDE for paid plugins.
+It is possible to mute this warning with the [`paidPluginSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_gradle_properties.md#paidPluginSearchableOptionsWarning) Gradle property.
 
 
 ### `outputDirectory`
@@ -230,6 +226,104 @@ Default value
 : [`paidPluginSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_gradle_properties.md#paidPluginSearchableOptionsWarning) && `productDescriptor` is defined
 
 
+
+## `composedJar`
+{#composedJar}
+
+<tldr>
+
+**Extends**: [`Jar`][gradle-jar-task], [`instrumentedJar`](#instrumentedJar)
+
+**Sources**: [`ComposedJarTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/ComposedJarTask.kt)
+
+</tldr>
+
+Composes a final Jar archive by combining the output of base `jar` or [`instrumentedJar`](#instrumentedJar) tasks,
+depending on if code instrumentation is enabled with [`intellijPlatform.instrumentCode`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-instrumentCode).
+
+The final Jar is also combined with plugin modules marked using the [`pluginModule`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) dependencies helper.
+
+
+### `archiveFile`
+{#composedJar-archiveFile}
+
+Specifies the archive file representing the output file produced by the task.
+
+{style="narrow"}
+Type
+: `RegularFileProperty`
+
+
+
+## `generateManifest`
+{#generateManifest}
+
+<tldr>
+
+**Extends**: [`DefaultTask`][gradle-default-task], [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware)
+
+**Sources**: [`InitializeIntelliJPlatformPluginTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/InitializeIntelliJPlatformPluginTask.kt)
+
+</tldr>
+
+Generates the <path>MANIFEST.MF</path> file with all relevant information about the project configuration.
+
+To apply the produced manifest file, `JarCompanion.applyPluginManifest` method should be called on a task extending [`Jar`][gradle-jar-task].
+
+This file is bundled into the output jar files produced by [`composedJar`](#composedJar), [`instrumentedJar`](#instrumentedJar), and [`Jar`][gradle-jar-task] tasks.
+
+
+### `pluginVersion`
+{#generateManifest-pluginVersion}
+
+The IntelliJ Platform Gradle Plugin version.
+
+{style="narrow"}
+Type
+: `Property<String>`
+
+
+### `gradleVersion`
+{#generateManifest-gradleVersion}
+
+The version of currently used Gradle.
+
+{style="narrow"}
+Type
+: `Property<String>`
+
+
+### `productInfo`
+{#generateManifest-productInfo}
+
+The [ProductInfo] instance of the current IntelliJ Platform.
+
+{style="narrow"}
+Type
+: `Property<ProductInfo>`
+
+
+### `version`
+{#generateManifest-version}
+
+Plugin version.
+
+{style="narrow"}
+Type
+: `Property<String>`
+
+
+### `generatedManifest`
+{#generateManifest-generatedManifest}
+
+Location of the generated <path>MANIFEST.MF</path> file.
+
+{style="narrow"}
+Type
+: `RegularFileProperty`
+
+
+
 ## `initializeIntelliJPlatformPlugin`
 {#initializeIntelliJPlatformPlugin}
 
@@ -247,14 +341,14 @@ It is responsible for:
 - checking if the project uses IntelliJ Platform Gradle Plugin in the latest available version
 - preparing the KotlinX Coroutines Java Agent file to enable coroutines debugging when developing the plugin
 
-The self-update check can be disabled via [`selfUpdateCheck`](tools_intellij_platform_gradle_plugin_gradle_properties.md#selfUpdateCheck) build feature.
+The self-update check can be disabled via [`selfUpdateCheck`](tools_intellij_platform_gradle_plugin_gradle_properties.md#selfUpdateCheck) Gradle property.
 To make the Coroutines Java Agent available for the task, inherit from [`CoroutinesJavaAgentAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CoroutinesJavaAgentAware).
 
 
 ### `offline`
 {#initializeIntelliJPlatformPlugin-offline}
 
-Determines if the operation is running in offline mode, and depends on Gradle start parameters.
+Determines if the operation is running in offline mode and depends on Gradle start parameters.
 
 {style="narrow"}
 Type
@@ -315,6 +409,27 @@ Type
 : `Property<String>`
 
 
+### `latestPluginVersion`
+{#initializeIntelliJPlatformPlugin-latestPluginVersion}
+
+Represents the latest version of the plugin.
+
+{style="narrow"}
+Type
+: `Property<String>`
+
+
+### `module`
+{#initializeIntelliJPlatformPlugin-module}
+
+Defines that the current project has only the [](tools_intellij_platform_gradle_plugin_plugins.md#module) applied but no [](tools_intellij_platform_gradle_plugin_plugins.md#platform).
+
+{style="narrow"}
+Type
+: `Property<String>`
+
+
+
 ## `instrumentCode`
 {#instrumentCode}
 
@@ -372,6 +487,7 @@ Type
 Default value:
 : `.form` files of the project's source sets.
 
+
 ### `sourceDirs`
 {#instrumentCode-sourceDirs}
 
@@ -405,6 +521,7 @@ Type
 : `DirectoryProperty`
 
 
+
 ## `instrumentedJar`
 {#instrumentedJar}
 
@@ -416,7 +533,8 @@ Type
 
 </tldr>
 
-Creates a duplicate of the current module's `jar` file with instrumented classes added.
+Creates a copy of the current module's `jar` task output with instrumented classes added.
+
 
 
 ## `jarSearchableOptions`
@@ -465,7 +583,7 @@ Default value
 {#jarSearchableOptions-noSearchableOptionsWarning}
 
 Specifies if a warning is emitted when no searchable options are found.
-Can be disabled with [`noSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_gradle_properties.md#noSearchableOptionsWarning) build feature.
+Can be disabled with [`noSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_gradle_properties.md#noSearchableOptionsWarning) Gradle property.
 
 {style="narrow"}
 Type
@@ -473,6 +591,7 @@ Type
 
 Default value
 : [`noSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_gradle_properties.md#noSearchableOptionsWarning)
+
 
 
 ## `patchPluginXml`
@@ -485,6 +604,8 @@ Default value
 **Sources**: [`PatchPluginXmlTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PatchPluginXmlTask.kt)
 
 </tldr>
+
+Patches <path>plugin.xml</path> files with values provided with the [`intelliJPlatform.pluginConfiguration`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration) extension.
 
 
 ### `inputFile`
@@ -549,8 +670,8 @@ Default value
 ### `pluginVersion`
 {#patchPluginXml-pluginVersion}
 
-Specifies the plugin version displayed in the <control>Plugins</control> settings dialog and on the JetBrains Marketplace plugin page.
-Plugins uploaded to the JetBrains Marketplace must follow [semantic versioning](https://plugins.jetbrains.com/docs/marketplace/semver.htm).
+Specifies the plugin version displayed in the <control>Plugins</control> settings dialog and on the [JetBrains Marketplace](https://plugins.jetbrains.com) plugin page.
+Plugins uploaded to [JetBrains Marketplace](https://plugins.jetbrains.com) must follow [semantic versioning](https://plugins.jetbrains.com/docs/marketplace/semver.htm).
 The provided value will be assigned to the [`<version>`](plugin_configuration_file.md#idea-plugin__version) element.
 
 {style="narrow"}
@@ -564,7 +685,7 @@ Default value
 ### `pluginDescription`
 {#patchPluginXml-pluginDescription}
 
-Specifies the plugin description displayed in the <control>Plugins</control> settings dialog and on the JetBrains Marketplace plugin page.
+Specifies the plugin description displayed in the <control>Plugins</control> settings dialog and on the [JetBrains Marketplace](https://plugins.jetbrains.com) plugin page.
 Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed.
 The description content is automatically wrapped in `<![CDATA[... ]]>`.
 The provided value will be assigned to the [`<description>`](plugin_configuration_file.md#idea-plugin__description) element.
@@ -581,11 +702,13 @@ Default value
 {#patchPluginXml-changeNotes}
 
 A short summary of new features, bugfixes, and changes provided in this plugin version.
-Change notes are displayed on the JetBrains Marketplace plugin page and in the <control>Plugins</control> settings dialog.
+Change notes are displayed on the [JetBrains Marketplace](https://plugins.jetbrains.com) plugin page and in the <control>Plugins</control> settings dialog.
 Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed.
 
 The change notes content is automatically wrapped in `<![CDATA[... ]]>`.
 The provided value will be assigned to the [`<change-notes>`](plugin_configuration_file.md#idea-plugin__change-notes) element.
+
+To maintain and generate an up-to-date changelog, try using [Gradle Changelog Plugin](https://github.com/JetBrains/gradle-changelog-plugin).
 
 {style="narrow"}
 Type
@@ -600,7 +723,7 @@ Default value
 
 The plugin product code used in the JetBrains Sales System.
 The code must be agreed with JetBrains in advance and follow [the requirements](https://plugins.jetbrains.com/docs/marketplace/obtain-a-product-code-from-jetbrains.html).
-The provided value will be assigned to the `<product-descriptor code="">` element attribute.
+The provided value will be assigned to the [`<product-descriptor code="">`](plugin_configuration_file.md#idea-plugin__product-descriptor) element attribute.
 
 {style="narrow"}
 Type
@@ -609,15 +732,12 @@ Type
 Default value
 : [`intellijPlatform.pluginConfiguration.productDescriptor.code`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-productDescriptor-code)
 
-See also:
-- [Plugin Configuration File: `product-descriptor`](plugin_configuration_file.md#idea-plugin__product-descriptor)
-
 
 ### `productDescriptorReleaseDate`
 {#patchPluginXml-productDescriptorReleaseDate}
 
 Date of the major version release in the `YYYYMMDD` format.
-The provided value will be assigned to the `<product-descriptor release-date="">` element attribute.
+The provided value will be assigned to the [`<product-descriptor release-date="">`](plugin_configuration_file.md#idea-plugin__product-descriptor) element attribute.
 
 {style="narrow"}
 Type
@@ -626,16 +746,12 @@ Type
 Default value
 : [`intellijPlatform.pluginConfiguration.productDescriptor.releaseDate`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-productDescriptor-releaseDate)
 
-See also:
-- [Plugin Configuration File: `product-descriptor`](plugin_configuration_file.md#idea-plugin__product-descriptor)
-
 
 ### `productDescriptorReleaseVersion`
 {#patchPluginXml-productDescriptorReleaseVersion}
 
-Specifies the major version of the plugin in a special number format used for paid plugins on the
-[JetBrains Marketplace](https://plugins.jetbrains.com/docs/marketplace/add-required-parameters.html)
-The provided value will be assigned to the `<product-descriptor release-version="">` element attribute.
+Specifies the major version of the plugin in a special number format used for paid plugins on [JetBrains Marketplace](https://plugins.jetbrains.com/docs/marketplace/add-required-parameters.html).
+The provided value will be assigned to the [`<product-descriptor release-version="">`](plugin_configuration_file.md#idea-plugin__product-descriptor) element attribute.
 
 {style="narrow"}
 Type
@@ -644,15 +760,12 @@ Type
 Default value
 : [`intellijPlatform.pluginConfiguration.productDescriptor.releaseVersion`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-productDescriptor-releaseVersion)
 
-See also:
-- [Plugin Configuration File: `product-descriptor`](plugin_configuration_file.md#idea-plugin__product-descriptor)
-
 
 ### `productDescriptorOptional`
 {#patchPluginXml-productDescriptorOptional}
 
 Specifies the boolean value determining whether the plugin is a [Freemium](https://plugins.jetbrains.com/docs/marketplace/freemium.html) plugin.
-The provided value will be assigned to the `<product-descriptor optional="">` element attribute.
+The provided value will be assigned to the [`<product-descriptor optional="">`](plugin_configuration_file.md#idea-plugin__product-descriptor) element attribute.
 
 {style="narrow"}
 Type
@@ -661,18 +774,12 @@ Type
 Default value
 : [`intellijPlatform.pluginConfiguration.productDescriptor.optional`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-productDescriptor-optional)
 
-Default value
-: `false`
-
-See also:
-- [Plugin Configuration File: `product-descriptor`](plugin_configuration_file.md#idea-plugin__product-descriptor)
-
 
 ### `sinceBuild`
 {#patchPluginXml-sinceBuild}
 
 Specifies the lowest IDE version compatible with the plugin.
-The provided value will be assigned to the `<idea-version since-build="..."/>` element attribute.
+The provided value will be assigned to the [`<idea-version since-build="..."/>`](plugin_configuration_file.md#idea-plugin__idea-version) element attribute.
 
 {style="narrow"}
 Type
@@ -680,9 +787,6 @@ Type
 
 Default value
 : [`intellijPlatform.pluginConfiguration.ideaVersion.sinceBuild`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-ideaVersion-sinceBuild)
-
-See also:
-- [Plugin Configuration File: `idea-version`](plugin_configuration_file.md#idea-plugin__idea-version)
 
 
 ### `untilBuild`
@@ -692,7 +796,13 @@ The highest IDE version compatible with the plugin.
 The `until-build` attribute can be unset by setting `provider { null }` as a value, and note that only passing `null` will make Gradle use the default value instead.
 However, if `until-build` is undefined, compatibility with all the IDEs since the version specified by the `since-build` is assumed, which can cause incompatibility errors in future builds.
 
-The provided value will be assigned to the `<idea-version until-build="..."/>` element attribute.
+The provided value will be assigned to the [`<idea-version until-build="..."/>`](plugin_configuration_file.md#idea-plugin__idea-version) element attribute.
+
+The `until-build` attribute can be unset by setting `provider { null }` as a value.
+
+> Passing `null` will make Gradle use the default value instead.
+>
+{style="warning"}
 
 {style="narrow"}
 Type
@@ -701,14 +811,11 @@ Type
 Default value
 : [`intellijPlatform.pluginConfiguration.ideaVersion.untilBuild`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-ideaVersion-untilBuild)
 
-See also:
-- [Plugin Configuration File: `idea-version`](plugin_configuration_file.md#idea-plugin__idea-version)
-
 
 ### `vendorName`
 {#patchPluginXml-vendorName}
 
-Specifies the vendor name or organization ID (if created) in the <control>Plugins</control> settings dialog and on the JetBrains Marketplace plugin page.
+Specifies the vendor name or organization ID (if created) in the <control>Plugins</control> settings dialog and on the [JetBrains Marketplace](https://plugins.jetbrains.com) plugin page.
 The provided value will be assigned to the [`<vendor>`](plugin_configuration_file.md#idea-plugin__vendor) element.
 
 {style="narrow"}
@@ -723,7 +830,7 @@ Default value
 {#patchPluginXml-vendorEmail}
 
 Specifies the vendor's email address.
-The provided value will be assigned to the `<vendor email="">` element attribute.
+The provided value will be assigned to the [`<vendor email="">`](plugin_configuration_file.md#idea-plugin__vendor) element attribute.
 
 {style="narrow"}
 Type
@@ -732,15 +839,12 @@ Type
 Default value
 : [`intellijPlatform.pluginConfiguration.vendor.email`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-vendor-email)
 
-See also:
-- [Plugin Configuration File: `vendor`](plugin_configuration_file.md#idea-plugin__vendor)
-
 
 ### `vendorUrl`
 {#patchPluginXml-vendorUrl}
 
 Specifies the link to the vendor's homepage.
-The provided value will be assigned to the `<vendor url="">` element attribute.
+The provided value will be assigned to the [`<vendor url="">`](plugin_configuration_file.md#idea-plugin__vendor) element attribute.
 
 {style="narrow"}
 Type
@@ -749,8 +853,6 @@ Type
 Default value
 : [`intellijPlatform.pluginConfiguration.vendor.url`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-vendor-url)
 
-See also:
-- [Plugin Configuration File: `vendor`](plugin_configuration_file.md#idea-plugin__vendor)
 
 
 ## `prepareSandbox`
@@ -767,13 +869,26 @@ See also:
 </tldr>
 
 Prepares a sandbox environment with the plugin and its dependencies installed.
-The sandbox directory is required by tasks that run IDE and tests in isolation from other instances,
-like when multiple IntelliJ Platforms are used for testing with [`runIde`](#runIde),  [`prepareTest`](#prepareTest), [`testIdeUi`](#testIdeUi), or [`testIdePerformance`](#testIdePerformance) tasks.
+The sandbox directory is required by tasks that run IDE and tests in isolation from other instances, like when multiple IntelliJ Platforms are used for testing with [`runIde`](#runIde), [`prepareTest`](#prepareTest), [`testIdeUi`](#testIdeUi), or [`testIdePerformance`](#testIdePerformance) tasks.
+The sandbox directory is created within the container configurable with [`intellijPlatform.sandboxContainer`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-sandboxContainer).
 
-To fully use the sandbox capabilities in a task, extend from [`SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware).
+Tasks based on the [`PrepareSandboxTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PrepareSandboxTask.kt) are _sandbox producers_ and can be associated with _sandbox consumers_.
+To define the consumer task, make it extend from [`SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware) and apply the `consumer.applySandboxFrom(producer)` function.
 
-See also:
-- [Extension: `intellijPlatform.sandboxContainer`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-sandboxContainer)
+
+### `sandboxSuffix`
+{#prepareSandbox-sandboxSuffix}
+
+Represents the suffix used i.e., for test-related or custom tasks.
+
+The default suffix is composed of the task name (`prepare[X]Sandbox[_Y]`) to the `-[X][Y]` format.
+
+{style="narrow"}
+Type
+: `Property<String>`
+
+Default value
+: [`SandboxAware.sandboxPluginsDirectory`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware-sandboxPluginsDirectory)
 
 
 ### `defaultDestinationDirectory`
@@ -789,11 +904,24 @@ Default value
 : [`SandboxAware.sandboxPluginsDirectory`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware-sandboxPluginsDirectory)
 
 
+### `pluginDirectory`
+{#prepareSandbox-pluginDirectory}
+
+Specifies the directory where the plugin artifacts are to be placed.
+
+{style="narrow"}
+Type
+: `DirectoryProperty`
+
+Default value
+: [`defaultDestinationDirectory`](#prepareSandbox-defaultDestinationDirectory)/[`intellijPlatform.projectName`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-projectName)
+
+
 ### `disabledPlugins`
 {#prepareSandbox-disabledPlugins}
 
 An internal field to hold a list of plugins to be disabled within the current sandbox.
-This property is controlled with [`disablePlugin()`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware-plugins) method of [](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware).
+This property is controlled with [`disablePlugin()`](tools_intellij_platform_gradle_plugin_testing_extension.md#plugins) method of [](tools_intellij_platform_gradle_plugin_testing_extension.md).
 
 {style="narrow"}
 Type
@@ -803,7 +931,7 @@ Type
 ### `pluginJar`
 {#prepareSandbox-pluginJar}
 
-Specifies the output of the `Jar` task.
+Specifies the output of the [`Jar`][gradle-jar-task] task.
 The proper `Jar.archiveFile` picked depends on whether code instrumentation is enabled.
 
 {style="narrow"}
@@ -813,21 +941,15 @@ Type
 Default value
 : `Jar.archiveFile`
 
-See also:
-- [Extension: `intellijPlatform.instrumentCode`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-instrumentCode)
-
 
 ### `pluginsClasspath`
 {#prepareSandbox-pluginsClasspath}
 
-Specifies a list of dependencies on external plugins resolved from the `intellijPlatformPluginsExtracted` configuration.
+Specifies a list of dependencies on external plugins resolved from the `intellijPlatformPluginsExtracted` configuration added with [Dependencies Extension](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins)
 
 {style="narrow"}
 Type
 : `ConfigurableFileCollection`
-
-See also:
-- [Dependencies Extension](tools_intellij_platform_gradle_plugin_dependencies_extension.md)
 
 
 ### `runtimeClasspath`
@@ -840,10 +962,13 @@ Type
 : `ConfigurableFileCollection`
 
 
+
 ## `prepareTest`
 {#prepareTest}
 
 <tldr>
+
+**Depends on**: [`prepareTestSandbox`](#prepareTestSandbox)
 
 **Extends**: [`DefaultTask`][gradle-default-task], [`TestableAware`](tools_intellij_platform_gradle_plugin_task_awares.md#TestableAware)
 
@@ -851,7 +976,25 @@ Type
 
 </tldr>
 
-Prepares an immutable `test` task and provides all necessary dependencies and configurations for a proper testing configuration.
+Prepares an immutable [`test`](#test) task and provides all necessary dependencies and configurations for a proper testing configuration.
+
+
+
+## `prepareTestSandbox`
+{#prepareTestSandbox}
+
+<tldr>
+
+**Depends on**: `jar`, [`instrumentedJar`](#instrumentedJar)
+
+**Extends**: [`Sync`][gradle-jar-task], [`SandboxProducerAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxProducerAware)
+
+**Sources**: [`PrepareSandboxTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PrepareSandboxTask.kt)
+
+</tldr>
+
+The [`prepareSandbox`](#prepareSandbox) task instance configured to work with the [`test`](#test) task.
+
 
 
 ## `printBundledPlugins`
@@ -866,6 +1009,7 @@ Prepares an immutable `test` task and provides all necessary dependencies and co
 </tldr>
 
 Prints the list of bundled plugins available within the currently targeted IntelliJ Platform.
+
 
 
 ## `printProductsReleases`
@@ -886,6 +1030,7 @@ and [`intellijPlatform.pluginConfiguration.ideaVersion.untilBuild`](tools_intell
 The filter used for retrieving the release list can be customized by using properties provided with
 [`ProductReleasesValueSource.FilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesValueSource-FilterParameters).
 
+
 ### `productsReleases`
 {#printProductsReleases-productsReleases}
 
@@ -900,6 +1045,7 @@ Default value
 
 See also:
 - [Types: `ProductReleasesValueSource.FilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesValueSource-FilterParameters)
+
 
 
 ## `publishPlugin`
@@ -927,7 +1073,7 @@ See also:
 {#publishPlugin-archiveFile}
 
 Specifies the ZIP archive file to be published to the remote repository.
-By default, it uses the output `archiveFile` of the [`signPlugin`](#signPlugin) task if plugin signing is configured, otherwise the one from [`buildPlugin`](#buildPlugin).
+By default, it uses the output [`signPlugin.archiveFile`](#signPlugin-archiveFile) if plugin signing is configured, otherwise the [`buildPlugin.archiveFile`](#buildPlugin-archiveFile).
 
 {style="narrow"}
 Type
@@ -972,7 +1118,7 @@ Default value
 ### `channels`
 {#publishPlugin-channels}
 
-Specifies a list of JetBrains Marketplace channel names used as destination for the plugin upload.
+Specifies a list of [JetBrains Marketplace](https://plugins.jetbrains.com) channel names used as destination for the plugin upload.
 
 {style="narrow"}
 Type
@@ -985,7 +1131,7 @@ Default value
 ### `hidden`
 {#publishPlugin-hidden}
 
-Publishes the plugin update and marks it as hidden to prevent public visibility after approval.
+Publishes the plugin update and marks it as [hidden](https://plugins.jetbrains.com/docs/marketplace/hidden-plugin.html) to prevent public visibility after approval.
 
 {style="narrow"}
 Type
@@ -993,9 +1139,6 @@ Type
 
 Default value
 : [`intellijPlatform.publishing.hidden`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-hidden)
-
-See also:
-- [Hidden release](https://plugins.jetbrains.com/docs/marketplace/hidden-plugin.html)
 
 
 ### `ideServices`
@@ -1011,6 +1154,7 @@ Default value
 : [`intellijPlatform.publishing.ideServices`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-ideServices)
 
 
+
 ## `runIde`
 {#runIde}
 
@@ -1018,7 +1162,7 @@ Default value
 
 **Depends on**: [`patchPluginXml`](#patchPluginXml), [`prepareSandbox`](#prepareSandbox)
 
-**Extends**: [`JavaExec`][gradle-javaexec-task], [`RunnableIdeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#RunnableIdeAware)
+**Extends**: [`JavaExec`][gradle-javaexec-task], [`RunnableIdeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#RunnableIdeAware), [`SplitModeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitModeAware), [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware)
 
 **Sources**: [`RunIdeTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/RunIdeTask.kt)
 
@@ -1027,8 +1171,31 @@ Default value
 Runs the IDE instance using the currently selected IntelliJ Platform with the built plugin loaded.
 It directly extends the [`JavaExec`][gradle-javaexec-task] Gradle task, which allows for an extensive configuration (system properties, memory management, etc.).
 
-This task class also inherits from [`CustomIntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CustomIntelliJPlatformVersionAware),
-which makes it possible to create `runIde`-like tasks using custom IntelliJ Platform versions:
+This task runs against the IntelliJ Platform and plugins specified in project dependencies.
+To register a customized task, use [`intelliJPlatformTestingExtension.runIde`](tools_intellij_platform_gradle_plugin_testing_extension.md).
+
+
+
+## `setupDependencies`
+{#setupDependencies}
+
+<tldr>
+
+**Extends**: [`DefaultTask`][gradle-default-task]
+
+**Sources**: [`SetupDependenciesTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/SetupDependenciesTask.kt)
+
+</tldr>
+
+A deprecated method for setting up IntelliJ Platform dependencies.
+
+The `setupDependencies` task was automatically added to the ["After Sync" Gradle trigger](https://www.jetbrains.com/help/idea/work-with-gradle-tasks.html#config_triggers_gradle) to make the IntelliJ Platform dependency available for IntelliJ IDEA right after the Gradle synchronization.
+This method is no longer needed as the dependency on IntelliJ Platform is declared directly in Gradle dependencies.
+
+> It's recommended to remove any references to `setupDependencies` task. See the [Migration](tools_intellij_platform_gradle_plugin_migration.md#setupdependencies) page for more details.
+>
+{style="warning"}
+
 
 
 ## `signPlugin`
@@ -1060,8 +1227,6 @@ For more details, see [](plugin_signing.md).
 
 Specifies the unsigned ZIP archive input file.
 Corresponds to the `in` CLI option.
-
-By default, it uses the output archive of the [`buildPlugin`](#buildPlugin) task.
 
 {style="narrow"}
 Type
@@ -1164,6 +1329,8 @@ Default value
 Specifies the encoded private key in the PEM format.
 Corresponds to the `key` CLI option.
 
+Takes precedence over the [`privateKeyFile`](#signPlugin-privateKeyFile) property.
+
 {style="narrow"}
 Type
 : `Property<String>`
@@ -1207,6 +1374,8 @@ Specifies a string containing X509 certificates.
 The first certificate in the chain will be used as a certificate authority (CA).
 This parameter corresponds to the `cert` CLI option.
 
+Takes precedence over the [`certificateChainFile`](#signPlugin-certificateChainFile) property.
+
 {style="narrow"}
 Type
 : `Property<String>`
@@ -1230,6 +1399,52 @@ Default value
 : [`intellijPlatform.signing.certificateChainFile`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing-certificateChainFile)
 
 
+
+## `test`
+{#test}
+
+<tldr>
+
+**Depends on**: [`prepareTest`](#prepareTest)
+
+**Extends**: [`DefaultTask`][gradle-default-task], [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware), [`PluginAware`](tools_intellij_platform_gradle_plugin_task_awares.md#PluginAware)
+
+**Sources**: [`TestCompanion`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/companion/TestCompanion.kt)
+
+</tldr>
+
+The base Gradle `test` task is preconfigured using the [`TestCompanion`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/companion/TestCompanion.kt) class to run tests with IntelliJ Platform, sandbox, and all system properties set.
+
+The task itself isn't mutated and a dedicated [`prepareTest`](#prepareTest) task is involved to request for required IntelliJ Platform and sandbox configuration.
+
+
+
+## `testIde`*
+{#testIde}
+
+<tldr>
+
+**Depends on**: [`prepareTest`](#prepareTest)
+
+**Extends**: [`DefaultTask`][gradle-default-task], [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware), [`PluginAware`](tools_intellij_platform_gradle_plugin_task_awares.md#PluginAware)
+
+**Sources**: [`TestIdeTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/TestIdeTask.kt)
+
+</tldr>
+
+> The `testIde` task is not registered by default.
+>
+{style="tip"}
+
+Runs plugin tests against the currently selected IntelliJ Platform with the built plugin loaded.
+It directly extends the [Test][gradle-test-task] Gradle task, which allows for an extensive configuration (system properties, memory management, etc.).
+
+The [`TestIdeTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/TestIdeTask.kt) is a class used only for handling custom `testIde` tasks.
+
+To register a customized test task, use [`intelliJPlatformTestingExtension.testIde`](tools_intellij_platform_gradle_plugin_testing_extension.md).
+
+
+
 ## `testIdePerformance`
 {#testIdePerformance}
 
@@ -1238,12 +1453,25 @@ Default value
 {style="warning"}
 
 
+
 ## `testIdeUi`
 {#testIdeUi}
 
-> Not implemented.
->
-{style="warning"}
+Runs the IDE instance with the developed plugin and Starter framework for UI testing.
+
+
+### `archiveFile`
+{#testIdeUi-archiveFile}
+
+Specifies the archive file representing the input file to be tested.
+
+{style="narrow"}
+Type
+: `RegularFileProperty`
+
+Default value
+: [`buildPlugin.archiveFile`](#buildPlugin-archiveFile)
+
 
 
 ## `verifyPluginProjectConfiguration`
@@ -1460,6 +1688,7 @@ Default value
 : The [](tools_intellij_platform_gradle_plugin_plugins.md#module) plugin presence
 
 
+
 ## `verifyPluginSignature`
 {#verifyPluginSignature}
 
@@ -1519,6 +1748,7 @@ Type
 
 Default value
 : [`signPlugin.certificateChainFile`](#signPlugin-certificateChainFile) or [`signPlugin.certificateChain`](#signPlugin-certificateChain) written to a temporary file
+
 
 
 ## `verifyPluginStructure`
@@ -1590,6 +1820,7 @@ Type
 
 Default value
 : <path>[`prepareSandbox.defaultDestinationDirectory`](#prepareSandbox-defaultDestinationDirectory)/[`intellijPlatform.pluginConfiguration.name`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-name)</path>
+
 
 
 ## `verifyPlugin`

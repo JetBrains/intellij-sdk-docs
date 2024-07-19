@@ -225,7 +225,7 @@ See also:
 Configures the plugin definition and stores values in the `plugin.xml` file.
 Data provided to the `intellijPlatform.pluginConfiguration {}` extension is passed to the [`patchPluginXml`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml) task, which augments the <path>plugin.xml</path> file with new values.
 
-Requires the [](tools_intellij_platform_gradle_plugin_plugins.md#build) plugin to be applied.
+Requires the [](tools_intellij_platform_gradle_plugin_plugins.md#platform) plugin to be applied.
 
 **Example:**
 
@@ -592,7 +592,7 @@ See also:
 Configures the publishing process of the plugin.
 All values are passed to the [](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin) task.
 
-Requires the [](tools_intellij_platform_gradle_plugin_plugins.md#publish) plugin to be applied.
+Requires the [](tools_intellij_platform_gradle_plugin_plugins.md#platform) plugin to be applied.
 
 **Example:**
 
@@ -697,7 +697,7 @@ See also:
 
 Plugin signing configuration.
 
-Requires the [](tools_intellij_platform_gradle_plugin_plugins.md#publish) plugin to be applied.
+Requires the [](tools_intellij_platform_gradle_plugin_plugins.md#platform) plugin to be applied.
 
 **Example:**
 
@@ -892,7 +892,7 @@ See also:
 
 IntelliJ Plugin Verifier CLI tool configuration.
 
-Requires the [](tools_intellij_platform_gradle_plugin_plugins.md#verify) plugin to be applied.
+Requires the [](tools_intellij_platform_gradle_plugin_plugins.md#platform) plugin to be applied.
 
 **Example:**
 

@@ -9,12 +9,13 @@ The IntelliJ Platform executes background processes widely and provides the API 
 The API is called Progress API and allows for cancelling tasks and tracking their progress.
 
 ## Progress API
+<primary-label ref="obsolete-2024.1"/>
 
 > Plugins targeting 2024.1+ should use [Kotlin coroutines](kotlin_coroutines.md), which is a more performant solution and provides the cancellation mechanism out of the box.
 >
 > See [](coroutine_execution_contexts.md) for coroutine-based APIs to use in different contexts.
 >
-{style="warning" title="Obsolete Since 2024.1"}
+{style="warning"}
 
 The Progress API allows running processes on BGT with a modal (dialog), non-modal (visible in the status bar), or invisible progress.
 It also allows for process cancellation and progress tracking (as a fraction of work done or textual).
@@ -25,59 +26,23 @@ The key classes are:
   It allows cancelling the process and optionally tracking its progress.
   The current thread's indicator can be retrieved any time via `ProgressManager.getProgressIndicator()`.
 
-There are many `ProgressIndicator` implementations and the most commonly used are:
-- [`EmptyProgressIndicator`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/EmptyProgressIndicator.java) – invisible (ignores text/fraction-related methods), used only for cancellation tracking.
-  Remembers its creation [modality state](general_threading_rules.md#invoking-operations-on-edt-and-modality).
-- [`ProgressIndicatorBase`](%gh-ic%/platform/analysis-impl/src/com/intellij/openapi/progress/util/ProgressIndicatorBase.java) – invisible but can be made visible by subclassing.
-  Stores text/fraction and allows retrieving them and possibly show in the UI.
-  Non-modal by default.
-- [`ProgressWindow`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/progress/util/ProgressWindow.java) – visible progress, either modal or background.
-  Usually not created directly but instantiated internally inside `ProgressManager.run` methods.
-- [`ProgressWrapper`](%gh-ic%/platform/core-impl/src/com/intellij/openapi/progress/util/ProgressWrapper.java) – wraps an existing progress indicator, usually to fork another thread with the same cancellation policy.
-  Use [`SensitiveProgressWrapper`](%gh-ic%/platform/core-impl/src/com/intellij/concurrency/SensitiveProgressWrapper.java) to allow that separate thread's indicator to be canceled independently of the main thread.
+  There are many `ProgressIndicator` implementations and the most commonly used are:
+  - [`EmptyProgressIndicator`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/EmptyProgressIndicator.java) – invisible (ignores text/fraction-related methods), used only for cancellation tracking.
+    Remembers its creation [modality state](general_threading_rules.md#invoking-operations-on-edt-and-modality).
+  - [`ProgressIndicatorBase`](%gh-ic%/platform/analysis-impl/src/com/intellij/openapi/progress/util/ProgressIndicatorBase.java) – invisible but can be made visible by subclassing.
+    Stores text/fraction and allows retrieving them and possibly show in the UI.
+    Non-modal by default.
+  - [`ProgressWindow`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/progress/util/ProgressWindow.java) – visible progress, either modal or background.
+    Usually not created directly but instantiated internally inside `ProgressManager.run` methods.
+  - [`ProgressWrapper`](%gh-ic%/platform/core-impl/src/com/intellij/openapi/progress/util/ProgressWrapper.java) – wraps an existing progress indicator, usually to fork another thread with the same cancellation policy.
+    Use [`SensitiveProgressWrapper`](%gh-ic%/platform/core-impl/src/com/intellij/concurrency/SensitiveProgressWrapper.java) to allow that separate thread's indicator to be canceled independently of the main thread.
+
+- [`Task`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/Task.java) - encapsulates an operation to perform.
+  See `Task`'s inner subclasses for backgroundable, modal and other base task classes.
 
 ### Starting
 
-Background processes can be started by using one of the following APIs.
-
-#### `ProgressManager`
-
-Use one of the `run*()` methods.
-Depending on the needs, it allows running processes synchronously/asynchronously, providing progress indicators, callbacks, and more.
-See their Javadocs for more details.
-
-Example:
-
-<tabs group="languages">
-<tab title="Kotlin" group-key="kotlin">
-
-```kotlin
-ProgressManager.getInstance().runProcessWithProgressSynchronously(
-    ThrowableComputable {
-      // operation
-    },
-    "Synchronizing data", true, project
-)
-```
-</tab>
-<tab title="Java" group-key="java">
-
-```java
-ProgressManager.getInstance().runProcessWithProgressSynchronously(
-    () -> {
-      // operation
-    },
-    "Synchronizing data", true, project
-);
-```
-</tab>
-</tabs>
-
-#### `Task`
-
-Represents a process in a form of a task that can be queued to execute.
-See `Task.*` subclasses for backgroundable, modal, and other types.
-
+Background processes encapsulated within `Task` should be run with queueing them.
 Example:
 
 <tabs group="languages">
@@ -107,34 +72,30 @@ new Task.Backgroundable(project, "Synchronizing data", true) {
 </tab>
 </tabs>
 
-#### `ProgressRunner`
-
-ProgressRunner is a simplified builder-like API for running processes.
-It allows for similar options as `ProgressManager` and additionally allows for running the process on write or pooled thread.
-
+`ProgressManager` also allows running runnables and computables not wrapped within `Task` with several `run*()` methods.
 Example:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
-ProgressRunner { _ ->
-    // operation
-}
-  .onThread(ThreadToUse.POOLED)
-  .modal()
-  .submit()
+ProgressManager.getInstance().runProcessWithProgressSynchronously(
+    ThrowableComputable {
+      // operation
+    },
+    "Synchronizing data", true, project
+)
 ```
 </tab>
 <tab title="Java" group-key="java">
 
 ```java
-new ProgressRunner<>(() -> {
+ProgressManager.getInstance().runProcessWithProgressSynchronously(
+    () -> {
       // operation
-})
-  .onThread(ThreadToUse.POOLED)
-  .modal()
-  .submit();
+    },
+    "Synchronizing data", true, project
+);
 ```
 </tab>
 </tabs>

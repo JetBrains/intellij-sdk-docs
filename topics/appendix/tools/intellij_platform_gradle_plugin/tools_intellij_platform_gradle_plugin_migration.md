@@ -184,7 +184,7 @@ val runIdeForUiTests by intellijPlatformTesting.runIde.registering {
   }
 
   plugins {
-    robotServerPlugin(Constraints.LATEST_VERSION)
+    robotServerPlugin()
   }
 }
 ```

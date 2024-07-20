@@ -221,6 +221,9 @@ Attributes
 - `optional` _(optional)_<br/>
   The boolean value determining whether the plugin is a [Freemium](https://plugins.jetbrains.com/docs/marketplace/freemium.html) plugin.<br/>
   Default value: `false`.
+- `eap` _(optional)_<br/>
+  Specifies the boolean value determining whether the plugin is an EAP release.<br/>
+  Default value: `false`.
 
 ### `idea-version`
 {#idea-plugin__idea-version}

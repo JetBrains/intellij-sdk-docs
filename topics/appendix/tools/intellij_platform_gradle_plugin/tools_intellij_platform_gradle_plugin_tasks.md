@@ -775,6 +775,20 @@ Default value
 : [`intellijPlatform.pluginConfiguration.productDescriptor.optional`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-productDescriptor-optional)
 
 
+### `productDescriptorEap`
+{#patchPluginXml-productDescriptorEap}
+
+Specifies the boolean value determining whether the plugin is an EAP release.
+The provided value will be assigned to the [`<product-descriptor eap="">`](plugin_configuration_file.md#idea-plugin__product-descriptor) element attribute.
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: [`intellijPlatform.pluginConfiguration.productDescriptor.eap`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-productDescriptor-eap)
+
+
 ### `sinceBuild`
 {#patchPluginXml-sinceBuild}
 

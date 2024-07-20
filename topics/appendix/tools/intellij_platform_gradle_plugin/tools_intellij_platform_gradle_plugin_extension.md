@@ -370,6 +370,7 @@ intellijPlatform {
       releaseDate = "20240217"
       releaseVersion = "20241"
       optional = false
+      eap = false
     }
   }
 }
@@ -434,6 +435,25 @@ See also:
 The boolean value that indicates if the plugin is a [Freemium](https://plugins.jetbrains.com/docs/marketplace/freemium.html) plugin.
 
 The provided value is used for the `<product-descriptor optional="">` element attribute.
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: `false`
+
+See also:
+- [Tasks: `patchPluginXml.productDescriptorOptional`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-productDescriptorOptional)
+- [Plugin Configuration File: `product-descriptor`](plugin_configuration_file.md#idea-plugin__product-descriptor)
+
+
+### `eap`
+{#intellijPlatform-pluginConfiguration-productDescriptor-eap}
+
+Specifies the boolean value determining whether the plugin is an EAP release.
+
+The provided value is used for the `<product-descriptor eap="">` element attribute.
 
 {style="narrow"}
 Type

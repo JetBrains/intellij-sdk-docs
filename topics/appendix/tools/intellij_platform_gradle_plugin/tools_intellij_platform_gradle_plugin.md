@@ -1,6 +1,6 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# IntelliJ Platform Gradle Plugin 2.x
+# IntelliJ Platform Gradle Plugin (2.x)
 
 <link-summary>IntelliJ Platform Gradle Plugin user and migration guide.</link-summary>
 
@@ -15,7 +15,7 @@
 </tldr>
 
 The _IntelliJ Platform Gradle Plugin 2.x_ is a plugin for the Gradle build system to help configure environments for building, testing, verifying, and publishing plugins for IntelliJ-based IDEs.
-It is a successor of _[](tools_gradle_intellij_plugin.md) (1.x)_.
+It is a successor of _[](tools_gradle_intellij_plugin.md)_.
 
 <snippet id="faq">
 

@@ -42,7 +42,7 @@ intellijPlatform {
 }
 ```
 
-It is also possible to disable it for a specific [`runIde`](tools_gradle_intellij_plugin.md#tasks-runide)-based task as follows:
+It is also possible to disable it for a specific [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde)-based task as follows:
 
 ```kotlin
 tasks {

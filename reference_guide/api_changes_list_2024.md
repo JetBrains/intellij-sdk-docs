@@ -111,6 +111,13 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `org.jetbrains.kotlin.fir.types.ConeTypeUtilsKt.renderReadableWithFqNames(ConeKotlinType)` method removed
 : Internals of Kotlin compiler.
 
+`org.jetbrains.kotlin.analysis.project.structure.KtModule` class renamed to `org.jetbrains.kotlin.analysis.api.projectStructure.KaModule`
+: Update code usages.
+
+`org.jetbrains.kotlin.fir.expressions.FirAssignmentOperatorStatement` class removed
+: Internals of Kotlin compiler.
+
+
 ### Database Plugin 2024.2
 
 `com.intellij.database.datagrid.DataGrid.getCoroutineScope()` abstract method added

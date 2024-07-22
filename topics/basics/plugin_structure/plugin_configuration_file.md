@@ -124,6 +124,12 @@ Children
   - [`<module-components>`](#idea-plugin__module-components)
   - [`<project-components>`](#idea-plugin__project-components)
 
+<snippet id="patchXmlGradleTask">
+The element can be skipped in the source <path>plugin.xml</path> file if the Gradle
+`patchPluginXml` task ([2.x](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml), [1.x](tools_gradle_intellij_plugin.md#tasks-patchpluginxml))
+task is enabled and configured.
+</snippet>
+
 ### `id`
 {#idea-plugin__id}
 
@@ -138,7 +144,7 @@ Please use characters, numbers, and `'.'`/`'-'`/`'_'` symbols only and keep it r
 Required
 : no; ignored in [additional config file](#additional-plugin-configuration-files)<br/>
 **It is highly recommended to set in <path>plugin.xml</path> file.**<br/>
-The element can be skipped in the source <path>plugin.xml</path> file if the Gradle [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) task is enabled and configured.
+<include from="plugin_configuration_file.md" element-id="patchXmlGradleTask"/>
 
 Default value
 : Value of the [`<name>`](#idea-plugin__name) element.<br/>
@@ -185,7 +191,7 @@ Plugins uploaded to the JetBrains Marketplace must follow semantic versioning.
 {style="narrow"}
 Required
 : **yes**; ignored in [additional config file](#additional-plugin-configuration-files)<br/>
-The element can be skipped in the source <path>plugin.xml</path> file if the Gradle [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) task is enabled and configured.
+<include from="plugin_configuration_file.md" element-id="patchXmlGradleTask"/>
 
 Example
 :
@@ -239,7 +245,7 @@ The plugin's range of compatible IntelliJ-based IDE versions.
 {style="narrow"}
 Required
 : **yes**; ignored in [additional config file](#additional-plugin-configuration-files)<br/>
-The element can be skipped in the source <path>plugin.xml</path> file if the Gradle [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) task is enabled and configured.
+<include from="plugin_configuration_file.md" element-id="patchXmlGradleTask"/>
 
 Attributes
 :

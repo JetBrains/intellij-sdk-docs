@@ -138,7 +138,9 @@ It should be a fully qualified name similar to Java packages and must not collid
 The ID is a technical value used to identify the plugin in the IDE and [JetBrains Marketplace](https://plugins.jetbrains.com).
 Please use characters, numbers, and `'.'`/`'-'`/`'_'` symbols only and keep it reasonably short.
 
-**Make sure to pick a stable ID, as the value cannot be changed between the plugin versions.**
+> Make sure to pick a stable ID, as the value cannot be changed later after public release.
+>
+{style="warning"}
 
 {style="narrow"}
 Required

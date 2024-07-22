@@ -320,7 +320,7 @@ Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed
 {style="narrow"}
 Required
 : **yes**; ignored in [additional config file](#additional-plugin-configuration-files)<br/>
-The element can be skipped in the source <path>plugin.xml</path> file if the Gradle [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) task is enabled and configured.
+<include from="plugin_configuration_file.md" element-id="patchXmlGradleTask"/>
 
 Example
 :
@@ -354,7 +354,7 @@ Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed
 {style="narrow"}
 Required
 : no; ignored in [additional config file](#additional-plugin-configuration-files)<br/>
-The element can be skipped in the source <path>plugin.xml</path> file if the Gradle [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) task is enabled and configured.
+<include from="plugin_configuration_file.md" element-id="patchXmlGradleTask"/>
 
 Example
 :

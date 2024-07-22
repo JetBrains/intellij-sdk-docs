@@ -11,9 +11,12 @@ Before starting with the actual development, make sure to understand all require
 
 <include from="intellij_platform.md" element-id="pluginAlternatives"/>
 
-## Gradle IntelliJ Plugin
+## Gradle Plugin
 
-The recommended solution for building IntelliJ Platform plugins is [](tools_gradle_intellij_plugin.md).
+The recommended solution for building IntelliJ Platform plugins is using [Gradle](https://www.gradle.org) with
+a dedicated Gradle plugin:
+[](tools_intellij_platform_gradle_plugin.md) or
+[](tools_gradle_intellij_plugin.md).
 
 <include from="snippets.md" element-id="gradlePluginVersion"/>
 
@@ -22,16 +25,16 @@ To verify these plugins are installed and enabled, see the help section about [M
 
 <include from="snippets.md" element-id="pluginDevKitAvailability"/>
 
-Gradle IntelliJ Plugin manages the dependencies of a plugin project - both the base IDE and other [plugin dependencies](plugin_dependencies.md).
+The Gradle plugin manages the dependencies of a plugin project – both the base IDE and other [plugin dependencies](plugin_dependencies.md).
 It provides tasks to run the IDE with your plugin and to package and [publish](publishing_plugin.md#publishing-plugin-with-gradle) your plugin to the [JetBrains Marketplace](https://plugins.jetbrains.com).
 To make sure that a plugin is not affected by [API changes](api_changes_list.md), which may happen between major releases of the platform, you can quickly verify your plugin against other IDEs and releases.
 
 There are two main ways of creating a new Gradle-based IntelliJ Platform plugin project:
-- dedicated generator available in the [New Project Wizard](https://www.jetbrains.com/help/idea/new-project-wizard.html) - it creates a minimal plugin project with all the required files
-- [](plugin_github_template.md) available on GitHub - in addition to the required project files, it includes configuration of the GitHub Actions CI workflows
+- dedicated generator available in the [New Project Wizard](https://www.jetbrains.com/help/idea/new-project-wizard.html) – it creates a minimal plugin project with all the required files
+- [](plugin_github_template.md) available on GitHub – in addition to the required project files, it includes configuration of the GitHub Actions CI workflows
 
-This documentation section describes plugin structure generated with the <control>New Project</control> wizard, but the project generated with _IntelliJ Platform Plugin Template_ covers all the described files and directories.
-See the [](plugin_github_template.md) section for more information about the advantages of this approach and instructions on how to use it.
+This documentation section describes the plugin structure generated with the <control>New Project</control> wizard, but the project generated with _IntelliJ Platform Plugin Template_ covers all the described files and directories.
+See [](plugin_github_template.md) for more information about the advantages of this approach and instructions on how to use it.
 
 ### Alternatives
 
@@ -44,5 +47,5 @@ A dedicated [SBT plugin](https://github.com/JetBrains/sbt-idea-plugin) is availa
 
 * [Creating a Gradle-based Plugin Project](creating_plugin_project.md)
 * [Configuring the Gradle IntelliJ Plugin](configuring_plugin_project.md)
-  * [Adding Kotlin Support](using_kotlin.md) (optional)
+  * [Adding Kotlin Support](using_kotlin.md)
 * [Publishing a Plugin](publishing_plugin.md)

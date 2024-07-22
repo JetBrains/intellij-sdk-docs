@@ -14,6 +14,11 @@
 
 The Gradle IntelliJ Plugin is a plugin for the Gradle build system to help configure your environment for building, testing, verifying, and publishing plugins for IntelliJ-based IDEs.
 
+> This plugin is no longer under active development.
+> Whenever possible, use [](tools_intellij_platform_gradle_plugin.md) instead.
+>
+{title="Obsolescence Notice" style="note"}
+
 This plugin allows you to build plugins for IntelliJ Platform using specified IntelliJ SDK and bundled or third-party plugins.
 
 The plugin provides functionalities like:
@@ -27,11 +32,6 @@ The plugin provides functionalities like:
 > Before visiting the [Issue Tracker](https://github.com/JetBrains/gradle-intellij-plugin/issues), update both plugin and Gradle to the latest versions.
 > Please see [CONTRIBUTING](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/CONTRIBUTING.md) on how to submit feedback and contribute to this project.
 >
-
-> [](tools_intellij_platform_gradle_plugin.md) (currently in Early Access Preview) is going to replace this plugin in the future.
-> Please note that production usage is currently not recommended yet.
->
-{style="note"}
 
 ## Usage
 

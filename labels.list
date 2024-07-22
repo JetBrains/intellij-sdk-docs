@@ -59,4 +59,8 @@
   <primary-label id="2024.3" short-name="2024.3+" name="2024.3+">
     Available in IDE version 2024.3 or later
   </primary-label>
+
+  <secondary-label id="deprecated" name="Deprecated" color="red">
+    This item is marked as deprecated.
+  </secondary-label>
 </labels>

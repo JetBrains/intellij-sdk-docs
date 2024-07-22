@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # IntelliJ Platform Artifacts Repositories
 
@@ -20,7 +20,9 @@ See the [Maven coordinates](#specify-the-maven-coordinates-for-the-artifact) sec
 Both the Releases and Snapshots repositories have two types of content:
 * Binary and source code artifacts for cross-platform, ZIP distributions of IntelliJ Platform-based IDEs, such as IntelliJ IDEA, CLion, Rider, and MPS.
   These artifacts are _not intended_ to be accessed directly from a plugin project's Gradle build script.
-  The [](tools_gradle_intellij_plugin.md) will access them as-needed for a plugin project.
+  See also [](tools_intellij_platform_gradle_plugin_repositories_extension.md).
+
+  The [](tools_gradle_intellij_plugin.md) will access them implicitly as-needed for a plugin project.
 * Artifacts for individual modules from the IntelliJ Platform.
 These may be downloaded, or accessed directly from a Gradle build script, as explained below.
 

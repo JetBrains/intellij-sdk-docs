@@ -97,7 +97,7 @@ See the <path>build.gradle.kts</path> from [kotlin_demo](%gh-sdk-samples-master%
 {id="kotlin-standard-library"}
 
 Since Kotlin 1.4, a dependency on the standard library _stdlib_ is added automatically ([API Docs](https://kotlinlang.org/api/latest/jvm/stdlib/)).
-In nearly all cases, it is not necessary to include it in the plugin distribution as the platform already bundles it.
+In nearly all cases, it is _not necessary_ to include it in the plugin distribution as the platform already bundles it.
 
 To opt out, add this line in <path>gradle.properties</path>:
 
@@ -105,12 +105,29 @@ To opt out, add this line in <path>gradle.properties</path>:
 kotlin.stdlib.default.dependency = false
 ```
 
-The presence of this Gradle property is checked by the [](tools_gradle_intellij_plugin.md) with the [](tools_gradle_intellij_plugin.md#tasks-verifypluginconfiguration) task.
-If the property is not present, a warning will be reported during the plugin configuration verification,
-as it is a common problem when Kotlin _stdlib_ gets bundled within the plugin archive.
+#### Gradle check
+
+The presence of this Gradle property is checked with the corresponding Gradle task:
+
+<tabs>
+<tab title="IntelliJ Platform Gradle Plugin (2.x)">
+
+[`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginProjectConfiguration) task
+
+</tab>
+<tab title="Gradle IntelliJ Plugin (1.x)">
+
+[`verifyPluginConfiguration`](tools_gradle_intellij_plugin.md#tasks-verifypluginconfiguration) task
+
+</tab>
+</tabs>
+
+If the property is not present, a warning will be reported during the plugin configuration verification.
 To bundle _stdlib_ in the plugin distribution, specify explicitly `kotlin.stdlib.default.dependency = true`.
 
-If a plugin supports [multiple platform versions](build_number_ranges.md), it must either target the lowest bundled _stdlib_ version
+#### stdlib - Misc
+
+If a plugin supports [multiple platform versions](build_number_ranges.md), it must either target the lowest bundled _stdlib_ version (see table below)
 or the specific version must be [provided in plugin distribution](plugin_content.md#plugin-with-dependencies).
 
 See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html#dependency-on-the-standard-library) for more details.

@@ -92,6 +92,12 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.intellij.platform.workspace.jps.entities.DependenciesKt.modifyEntity(MutableEntityStorage, LibraryEntity, Function1)` method removed
 : Use `com.intellij.platform.workspace.jps.entities.DependenciesKt.modifyLibraryEntity(MutableEntityStorage, LibraryEntity, Function1)` instead.
 
+`com.intellij.uml.UmlGraphBuilder.UmlGraphBuilder(Project, Graph2D, Graph2DView, DiagramDataModel<?>, DiagramPresentationModel)` constructor removed
+: Use `com.intellij.uml.UmlGraphBuilder.UmlGraphBuilder(Project, Graph2D, Graph2DView, DiagramDataModel<?>, GraphThreadingType, DiagramPresentationModel)` instead.
+
+`com.intellij.openapi.graph.impl.builder.GraphBuilderImpl.addEdge(Object, Object, Object)` method removed
+: Use `com.intellij.openapi.graph.impl.builder.GraphBuilderImpl.addEdge(Object, Object, String, Object, Object[], Function<? super E,? extends Edge>)` instead.
+
 ### Python Plugin 2024.2
 
 `com.jetbrains.python.PyElementTypes.STATEMENT_LIST` field type changed from `PyElementType` to `IElementType`

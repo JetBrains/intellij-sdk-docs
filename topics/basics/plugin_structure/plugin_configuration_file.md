@@ -125,9 +125,9 @@ Children
   - [`<project-components>`](#idea-plugin__project-components)
 
 <snippet id="patchXmlGradleTask">
-The element can be skipped in the source <path>plugin.xml</path> file if the Gradle
+The element can be skipped in the source <path>plugin.xml</path> file if the Gradle plugin
 `patchPluginXml` task ([2.x](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml), [1.x](tools_gradle_intellij_plugin.md#tasks-patchpluginxml))
-task is enabled and configured.
+is enabled and configured.
 </snippet>
 
 ### `id`

@@ -92,6 +92,8 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.intellij.platform.workspace.jps.entities.DependenciesKt.modifyEntity(MutableEntityStorage, LibraryEntity, Function1)` method removed
 : Use `com.intellij.platform.workspace.jps.entities.DependenciesKt.modifyLibraryEntity(MutableEntityStorage, LibraryEntity, Function1)` instead.
 
+### UML Plugin 2024.2
+
 `com.intellij.uml.UmlGraphBuilder.UmlGraphBuilder(Project, Graph2D, Graph2DView, DiagramDataModel<?>, DiagramPresentationModel)` constructor removed
 : Use `com.intellij.uml.UmlGraphBuilder.UmlGraphBuilder(Project, Graph2D, Graph2DView, DiagramDataModel<?>, GraphThreadingType, DiagramPresentationModel)` instead.
 

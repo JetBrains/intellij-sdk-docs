@@ -1,6 +1,6 @@
 # Extensions
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <link-summary>Extensions are the most common way of customizing functionality in the IDE.</link-summary>
 
@@ -129,7 +129,7 @@ A required parent type can be specified in the extension point declaration via n
 
 Property name `language` (or ending in `*Language`, 2020.2+) resolves to all present `Language` IDs.
 
-Similarly, `action` resolves to all registered [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) IDs.
+Similarly, `action`/`actionId` (2024.3+) resolves to all registered [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) IDs.
 
 Annotating with [`@Nls`](%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/Nls.java) validates a UI `String` capitalization according to the text property `Capitalization` enum value (2019.2 and later).
 

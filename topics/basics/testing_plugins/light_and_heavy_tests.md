@@ -64,6 +64,8 @@ It is done by extending the [`LightProjectDescriptor`](%gh-ic%/platform/testFram
 
 Before executing each test, the project instance will be reused if the test case returns the same project descriptor as the previous one or recreated if the descriptor is different (`equals() = false`).
 
+When [testing JVM languages](testing_faq.md#how-to-test-a-jvm-language), see also [`DefaultLightProjectDescriptor`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/DefaultLightProjectDescriptor.java).
+
 ## Heavy Tests
 
 The standard way of writing a heavy test is to extend [`HeavyPlatformTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/HeavyPlatformTestCase.java).

@@ -1188,6 +1188,8 @@ As soon as [`privateKey`](#signPlugin-privateKey) (or [`privateKeyFile`](#signPl
 (or [`certificateChainFile`](#signPlugin-certificateChainFile) properties are specified,
 the task will be executed automatically right before the [`publishPlugin`](#publishPlugin) task.
 
+> To start using the plugin signing feature, it is necessary to add a dependency on the Marketplace ZIP Signer CLI tool by adding the [`zipSigner()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#tools) entry to the dependencies section.
+
 For more details, see [](plugin_signing.md).
 
 

@@ -55,13 +55,13 @@ Build features are Gradle properties defined by the IntelliJ Platform Gradle Plu
 Such properties have a simplified form:
 
 ```
-org.jetbrains.intellij.platform.buildFeature.<buildFeatureName>=<true|false>
+org.jetbrains.intellij.platform.<buildFeatureName>=<true|false>
 ```
 
 E.g., to disable the [](#selfUpdateCheck) feature, add this line:
 
 ```
-org.jetbrains.intellij.platform.buildFeature.selfUpdateCheck=false
+org.jetbrains.intellij.platform.selfUpdateCheck=false
 ```
 
 ### `downloadSources`
@@ -81,7 +81,7 @@ Default value
 Example
 :
 ```
-org.jetbrains.intellij.platform.buildFeature.downloadSources=false
+org.jetbrains.intellij.platform.downloadSources=false
 ```
 
 
@@ -97,7 +97,7 @@ Default value
 Example
 :
 ```
-org.jetbrains.intellij.platform.buildFeature.buildSearchableOptions=false
+org.jetbrains.intellij.platform.buildSearchableOptions=false
 ```
 
 ### `paidPluginSearchableOptionsWarning`
@@ -114,7 +114,7 @@ Default value
 Example
 :
 ```
-org.jetbrains.intellij.platform.buildFeature.paidPluginSearchableOptionsWarning=false
+org.jetbrains.intellij.platform.paidPluginSearchableOptionsWarning=false
 ```
 
 ### `selfUpdateCheck`
@@ -137,7 +137,7 @@ Default value
 Example
 :
 ```
-org.jetbrains.intellij.platform.buildFeature.selfUpdateCheck=false
+org.jetbrains.intellij.platform.selfUpdateCheck=false
 ```
 
 ### `useCacheRedirector`
@@ -155,7 +155,7 @@ Default value
 Example
 :
 ```
-org.jetbrains.intellij.platform.buildFeature.useCacheRedirector=false
+org.jetbrains.intellij.platform.useCacheRedirector=false
 ```
 
 ### `useClosestVersionResolving`
@@ -175,5 +175,5 @@ Default value
 Example
 :
 ```
-org.jetbrains.intellij.platform.buildFeature.useClosestVersionResolving=false
+org.jetbrains.intellij.platform.useClosestVersionResolving=false
 ```

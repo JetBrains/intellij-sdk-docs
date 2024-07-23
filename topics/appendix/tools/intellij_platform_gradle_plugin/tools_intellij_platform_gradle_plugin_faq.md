@@ -4,20 +4,6 @@
 
 <link-summary>FAQ for using IntelliJ Platform Gradle Plugin</link-summary>
 
-### How to modify JVM arguments of the `runIde` task?
-
-[`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde) task is a [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html) task and can be modified according to the documentation.
-
-To add some JVM arguments while launching the IDE, configure [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde) task as follows:
-
-```kotlin
-tasks {
-  runIde {
-    jvmArgs("-DmyProperty=value")
-  }
-}
-```
-
 ### How to modify system properties of the `runIde` task?
 
 Using the [very same task documentation](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html), configure [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde) task:
@@ -25,7 +11,9 @@ Using the [very same task documentation](https://docs.gradle.org/current/dsl/org
 ```kotlin
 tasks {
   runIde {
-    systemProperty("name", "value")
+    jvmArgumentProviders += CommandLineArgumentProvider {
+      listOf("-Dname=value")
+    }
   }
 }
 ```

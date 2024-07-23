@@ -65,15 +65,22 @@ pluginManagement {
 }
 ```
 
+[//]: # (> The current IntelliJ Platform Gradle Plugin Snapshot version is ![GitHub Snapshot Release]&#40;https://img.shields.io/nexus/s/org.jetbrains.intellij.platform/intellij-platform-gradle-plugin?server=https://oss.sonatype.org&label=&#41;)
+> The current IntelliJ Platform Gradle Plugin Snapshot version is: `2.0.0-SNAPSHOT`
+>
 > The snapshot release is published with the constant version, creating a possibility for Gradle to resort to the cached version of the plugin.
+>
 > To update all dependencies in the dependency cache, use the `--refresh-dependencies` command line option.
 
 
 ### Plugins
 
-The IntelliJ Platform Gradle Plugin consists of multiple [plugins](tools_intellij_platform_gradle_plugin_plugins.md) which can be applied in bundles ([](tools_intellij_platform_gradle_plugin_plugins.md#platform) or [](tools_intellij_platform_gradle_plugin_plugins.md#module)) or separately.
+The IntelliJ Platform Gradle Plugin consists of [plugins](tools_intellij_platform_gradle_plugin_plugins.md) which can be applied depending on the purpose.
+By default, the [](tools_intellij_platform_gradle_plugin_plugins.md#platform) plugin (`org.jetbrains.intellij.platform`) should be applied to the main plugin project module.
 
-Subplugins architecture allows applying a subset of features, e.g., to provide the IntelliJ Platform dependency to a project submodule without creating unnecessary tasks.
+When working with the [](#multi-module-project-structure) it is required to use [](tools_intellij_platform_gradle_plugin_plugins.md#module) plugin (`org.jetbrains.intellij.platform.module`) instead to creating tasks and configurations specific to the main module only.
+
+The [](tools_intellij_platform_gradle_plugin_plugins.md#settings) plugin (`org.jetbrains.intellij.platform.settings`) allows for adding plugin development related repositories right in the <path>settings.gradle.kts</path> file if project configuration involves [](#configuration.dependencyResolutionManagement).
 
 
 ### Attaching Sources
@@ -105,9 +112,9 @@ No additional IDE settings are required.
 
 </tabs>
 
-The attaching sources is handed by DevKit plugin thus it's recommended to use always the latest available IDE release.
+The attaching sources is handed by the Plugin DevKit plugin thus it's recommended to use always the latest available IDE release.
 
-If the opened compiled class has no sources available locally, the DevKit plugin will detect the relevant source coordinates and provide an action to <control>Download IntelliJ Platform sources</control> or <control>Attach \$API_NAME\$ sources</control>.
+If the opened compiled class has no sources available locally, the Plugin DevKit plugin will detect the relevant source coordinates and provide an action to <control>Download IntelliJ Platform sources</control> or <control>Attach \$API_NAME\$ sources</control>.
 
 ## Configuration
 
@@ -284,5 +291,27 @@ dependencies {
 ```
 
 <include from="tools_intellij_platform_gradle_plugin_repositories_extension.md" element-id="localPlatformArtifacts_required"/>
+
+
+### Multi-Module Project Structure
+
+When working on a complex plugin, it is often convenient to split the code base into multiple submodules.
+To avoid pluting submodules with tasks or configurations specific to the root module only, i.e., responsible for signing, publishing, or running the plugin, a dedicated subplugin was introduced.
+
+The root module of the IntelliJ-based plugin project is supposed to apply the main [](tools_intellij_platform_gradle_plugin_plugins.md#platform) plugin as follows:
+
+```kotlin
+plugins {
+  id("org.jetbrains.intellij.platform") version "%intellij-platform-gradle-plugin-version%"
+}
+```
+
+Any other included submodule should utilize the [](tools_intellij_platform_gradle_plugin_plugins.md#module) instead:
+
+```kotlin
+plugins {
+  id("org.jetbrains.intellij.platform.module")
+}
+```
 
 <include from="snippets.md" element-id="missingContent"/>

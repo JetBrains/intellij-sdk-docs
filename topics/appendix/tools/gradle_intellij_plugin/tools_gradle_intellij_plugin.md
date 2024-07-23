@@ -85,7 +85,7 @@ To attach IntelliJ Platform sources in the IDE when enabled via [](#intellij-ext
 
 <tabs>
 
-<tab title="2023.3">
+<tab title="2023.3+">
 
 In <ui-path>Settings | Advanced Settings</ui-path> enable option <control>Download sources</control> in section <ui-path>Build Tools. Gradle</ui-path>.
 Then invoke <control>Reload All Gradle Projects</control> action from the <control>Gradle</control> tool window.

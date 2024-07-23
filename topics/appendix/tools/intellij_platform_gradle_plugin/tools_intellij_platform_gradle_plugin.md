@@ -75,6 +75,40 @@ The IntelliJ Platform Gradle Plugin consists of multiple [plugins](tools_intelli
 
 Subplugins architecture allows applying a subset of features, e.g., to provide the IntelliJ Platform dependency to a project submodule without creating unnecessary tasks.
 
+
+### Attaching Sources
+
+To attach IntelliJ Platform sources in the IDE the <control>Download sources</control> setting has to be enabled in IDE versions 2023.2 and later.
+This option respects the [](tools_intellij_platform_gradle_plugin_gradle_properties.md#downloadSources) property, which is enabled by default.
+
+<tabs>
+
+<tab title="2023.3+">
+
+In <ui-path>Settings | Advanced Settings</ui-path> enable option <control>Download sources</control> in section <ui-path>Build Tools. Gradle</ui-path>.
+Then invoke <control>Reload All Gradle Projects</control> action from the <control>Gradle</control> tool window.
+
+</tab>
+
+<tab title="2023.2">
+
+In <ui-path>Settings | Build, Execution, Deployment | Build Tools | Gradle</ui-path> enable <control>Download sources for dependencies</control>.
+Then invoke <control>Reload All Gradle Projects</control> action from the <control>Gradle</control> tool window.
+
+</tab>
+
+<tab title="Earlier versions">
+
+No additional IDE settings are required.
+
+</tab>
+
+</tabs>
+
+The attaching sources is handed by DevKit plugin thus it's recommended to use always the latest available IDE release.
+
+If the opened compiled class has no sources available locally, the DevKit plugin will detect the relevant source coordinates and provide an action to <control>Download IntelliJ Platform sources</control> or <control>Attach \$API_NAME\$ sources</control>.
+
 ## Configuration
 
 > Auto-completion, Quick Documentation, and other code insight features are available for many extension functions and properties.

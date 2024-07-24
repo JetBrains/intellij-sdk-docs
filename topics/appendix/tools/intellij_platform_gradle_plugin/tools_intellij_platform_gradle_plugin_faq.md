@@ -4,6 +4,7 @@
 
 <link-summary>FAQ for using IntelliJ Platform Gradle Plugin</link-summary>
 
+
 ### How to modify system properties of the `runIde` task?
 
 Using the [very same task documentation](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html), configure [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde) task:
@@ -18,7 +19,8 @@ tasks {
 }
 ```
 
-### How to disable automatic reload of dynamic plugins?
+
+### How to disable the automatic reload of dynamic plugins?
 
 See [](ide_development_instance.md#enabling-auto-reload) for important caveats.
 
@@ -40,9 +42,10 @@ tasks {
 }
 ```
 
-### How to disable building searchable options?
 
-Building searchable options can be disabled using [`intellijPlatform.buildSearchableOptions`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-instrumentCode):
+### How to disable building the searchable options?
+
+Building the searchable options can be disabled using [`intellijPlatform.buildSearchableOptions`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-instrumentCode):
 
 ```kotlin
 intellijPlatform {
@@ -53,16 +56,28 @@ intellijPlatform {
 As a result of disabling building searchable options, the [Settings](settings.md) that your plugin provides won't be searchable in the <ui-path>Settings</ui-path> dialog.
 Disabling of the task is suggested for plugins that are not intended to provide custom settings.
 
+
+### Gradle fails with `The request for this plugin could not be satisfied`
+
+Gradle may fail with the following exception if the IntelliJ Platform Gradle Plugin is applied to the project multiple times with version specified more than once:
+
+`The request for this plugin could not be satisfied because the plugin is already on the classpath with an unknown version, so compatibility cannot be checked.`
+
+If you apply the plugin in the <path>settings.gradle.kts</path> file, the version needs to be omitted when applying it in other <path>build.gradle.kts</path> files.
+
+
 ### How to show the log file of a sandbox instance?
 
 The most convenient way to see the logs of a running IDE is to add a tab to the <control>Run</control> tool window displaying the contents of <path>idea.log</path> file.
 In the Gradle `runIde` run configuration, add the log file path according to [sandbox location](ide_development_instance.md#the-development-instance-sandbox-directory) as described in [View logs](https://www.jetbrains.com/help/idea/setting-log-options.html).
+
 
 ### Task `setupDependencies` not found in root project 'projectName'
 
 This exception is thrown when there's no `setupDependencies` task present in the project scope.
 
 See [Migrating from Gradle IntelliJ Plugin](tools_intellij_platform_gradle_plugin_migration.md#setupdependencies) for more details.
+
 
 ### How to expose my plugin API sources to dependent plugins?
 
@@ -84,6 +99,7 @@ See the list of [available options](https://github.com/JetBrains/intellij-plugin
         )
     }
 ```
+
 
 ### JaCoCo Reports 0% Coverage
 
@@ -213,7 +229,7 @@ To correctly run your tests or a specific IDE:
   dependencies {
     intellijPlatform {
       intellijIdeaCommunity("%ijPlatform%")
-      jetbrainsRuntime(...)
+      jetbrainsRuntime("...")
     }
   }
   ```

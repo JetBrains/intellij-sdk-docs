@@ -216,7 +216,7 @@ include(":submodule")
 
 ```kotlin
 plugins {
-  id("org.jetbrains.intellij.platform") version "%intellij-platform-gradle-plugin-version%"
+  id("org.jetbrains.intellij.platform")
 }
 
 dependencies {
@@ -226,6 +226,12 @@ dependencies {
   }
 }
 ```
+
+> Note that <path>build.gradle.kts</path> doesn't define the IntelliJ Platform Gradle Plugin version anymore as it was earlier declared in the <path>settings.gradle.kts</path> file.
+> Specifying the version in two places may result in the following Gradle exception:
+>
+> `The request for this plugin could not be satisfied because the plugin is already on the classpath with an unknown version, so compatibility cannot be checked.`
+
 
 <path>submodule/build.gradle.kts</path>
 

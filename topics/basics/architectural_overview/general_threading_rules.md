@@ -545,7 +545,7 @@ The IntelliJ Platform is more than 20 years old, and in its beginnings Java didn
 Code that acquired read locks was very verbose.
 For convenience, it was decided that reading data can be done on EDT without read locks (even implicitly acquired).
 
-The consequence of this was that writing had to be allowed on EDT only to avoid read/write conflicts.
+The consequence of this was that writing had to be allowed only on EDT to avoid read/write conflicts.
 The nature of EDT provided this possibility out-of-the-box due to being a single thread.
 Event queue guaranteed that reads and writes were ordered and executed one by one and couldn't interweave.
 

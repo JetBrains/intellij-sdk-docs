@@ -294,7 +294,7 @@ intellijPlatform { ... }
 ```
 
 The plugin also introduces a task listener which allows for creating custom tasks decorated with [](tools_intellij_platform_gradle_plugin_task_awares.md).
-See [](tools_intellij_platform_gradle_plugin_recipies.md) for more details.
+See [](tools_intellij_platform_gradle_plugin_recipes.md) for more details.
 
 ### Available tasks
 {#base-available-tasks}

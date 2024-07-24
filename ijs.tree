@@ -432,7 +432,7 @@
       <toc-element topic="tools_intellij_platform_gradle_plugin_gradle_properties.md"/>
       <toc-element topic="tools_intellij_platform_gradle_plugin_jetbrains_runtime.md"/>
       <toc-element topic="tools_intellij_platform_gradle_plugin_migration.md"/>
-      <toc-element topic="tools_intellij_platform_gradle_plugin_recipies.md"/>
+      <toc-element topic="tools_intellij_platform_gradle_plugin_recipes.md"/>
       <toc-element topic="tools_intellij_platform_gradle_plugin_faq.md" toc-title="Frequently Asked Questions"/>
     </toc-element>
     <toc-element topic="tools_gradle_grammar_kit_plugin.md"/>

@@ -4,7 +4,7 @@
 
 <link-summary>Recipes for solving particular tasks with IntelliJ Platform Gradle Plugin</link-summary>
 
-## Run custom task with customized sandbox location
+## Run a custom task with customized sandbox location
 
 To create a custom task with the sandbox directory specified outside of the default <path>build/idea-sandbox/[TYPE]-[VERSION]/</path> location, pass the new location to its `prepareSandboxTask` sandbox producer configuration:
 
@@ -30,3 +30,20 @@ build/
 │   └── system
 ...
 ```
+
+## Access IntelliJ Platform from any Gradle task
+
+With [](tools_intellij_platform_gradle_plugin_task_awares.md) it is possible to enhance any Gradle task with features provided with the IntelliJ Platform Gradle Plugin.
+
+```kotlin
+abstract class MyTask : DefaultTask(), IntelliJPlatformVersionAware
+
+val myTask by tasks.registering(MyTask::class) {
+  doLast {
+    println("platformPath = \n${platformPath}")
+    println("productInfo.buildNumber = ${productInfo.buildNumber}")
+  }
+}
+```
+
+As soon as the registered task inherits from the `*Aware` interface, such as [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware), all the related information will be injected during the configuration phase.

@@ -60,54 +60,123 @@ dependencies {
 
 See [](#custom-target-platforms) for non-default targets.
 
-| Function                         | Description                                         |
-|----------------------------------|-----------------------------------------------------|
-| `androidStudio(version)`         | [Android Studio](android_studio.md)                 |
-| `aqua(version)`                  | [Aqua](https://www.jetbrains.com/aqua/)             |
-| `clion(version)`                 | [CLion](clion.md)                                   |
-| `datagrip(version)`              | [DataGrip](data_grip.md)                            |
-| `dataspell(version)`             | [DataSpell](https://www.jetbrains.com/dataspell/)   |
-| `fleetBackend(version)`          | Fleet Backend                                       |
-| `gateway(version)`               | Gateway                                             |
-| `goland(version)`                | [GoLand](goland.md)                                 |
-| `intellijIdeaCommunity(version)` | [IntelliJ IDEA Community](idea.md)                  |
-| `intellijIdeaUltimate(version)`  | [IntelliJ IDEA Ultimate](idea_ultimate.md)          |
-| `mps(version)`                   | [MPS](https://www.jetbrains.com/mps/)               |
-| `phpstorm(version)`              | [PhpStorm](phpstorm.md)                             |
-| `pycharmCommunity(version)`      | [PyCharm Community](pycharm.md)                     |
-| `pycharmProfessional(version)`   | [PyCharm Professional](pycharm.md)                  |
-| `rider(version)`                 | [Rider](rider.md)                                   |
-| `rubymine(version)`              | [RubyMine](rubymine.md)                             |
-| `rustrover(version)`             | [RustRover](https://www.jetbrains.com/rust/)        |
-| `webstorm(version)`              | [WebStorm](webstorm.md)                             |
-| `writerside(version)`            | [Writerside](https://www.jetbrains.com/writerside/) |
+| Function                                              | Description                                         |
+|-------------------------------------------------------|-----------------------------------------------------|
+| `androidStudio(version, useInstaller = true)`         | [Android Studio](android_studio.md)                 |
+| `aqua(version, useInstaller = true)`                  | [Aqua](https://www.jetbrains.com/aqua/)             |
+| `clion(version, useInstaller = true)`                 | [CLion](clion.md)                                   |
+| `datagrip(version, useInstaller = true)`              | [DataGrip](data_grip.md)                            |
+| `dataspell(version, useInstaller = true)`             | [DataSpell](https://www.jetbrains.com/dataspell/)   |
+| `fleetBackend(version, useInstaller = true)`          | Fleet Backend                                       |
+| `gateway(version, useInstaller = true)`               | Gateway                                             |
+| `goland(version, useInstaller = true)`                | [GoLand](goland.md)                                 |
+| `intellijIdeaCommunity(version, useInstaller = true)` | [IntelliJ IDEA Community](idea.md)                  |
+| `intellijIdeaUltimate(version, useInstaller = true)`  | [IntelliJ IDEA Ultimate](idea_ultimate.md)          |
+| `mps(version, useInstaller = true)`                   | [MPS](https://www.jetbrains.com/mps/)               |
+| `phpstorm(version, useInstaller = true)`              | [PhpStorm](phpstorm.md)                             |
+| `pycharmCommunity(version, useInstaller = true)`      | [PyCharm Community](pycharm.md)                     |
+| `pycharmProfessional(version, useInstaller = true)`   | [PyCharm Professional](pycharm.md)                  |
+| `rider(version, useInstaller = true)`                 | [Rider](rider.md)                                   |
+| `rubymine(version, useInstaller = true)`              | [RubyMine](rubymine.md)                             |
+| `rustrover(version, useInstaller = true)`             | [RustRover](https://www.jetbrains.com/rust/)        |
+| `webstorm(version, useInstaller = true)`              | [WebStorm](webstorm.md)                             |
+| `writerside(version, useInstaller = true)`            | [Writerside](https://www.jetbrains.com/writerside/) |
 
 ### Custom Target Platforms
 
-| Function                | Description                                                                                                                                |
-|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| `create(type, version)` | Adds a configurable dependency on the IntelliJ Platform. See [](tools_intellij_platform_gradle_plugin.md#dependenciesParametrizePlatform). |
-| `local(localPath)`      | Adds a dependency on a local IntelliJ Platform instance. See [](tools_intellij_platform_gradle_plugin.md#dependenciesLocalPlatform).       |
+| Function                                     | Description                                                                                                                                |
+|----------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| `create(type, version, useInstaller = true)` | Adds a configurable dependency on the IntelliJ Platform. See [](tools_intellij_platform_gradle_plugin.md#dependenciesParametrizePlatform). |
+| `create(notation, useInstaller = true)`      | Adds a configurable dependency on the IntelliJ Platform. See [](tools_intellij_platform_gradle_plugin.md#dependenciesParametrizePlatform). |
+| `local(localPath)`                           | Adds a dependency on a local IntelliJ Platform instance. See [](tools_intellij_platform_gradle_plugin.md#dependenciesLocalPlatform).       |
 
 See also:
 
 - [Types: `IntelliJPlatformType`](tools_intellij_platform_gradle_plugin_types.md#IntelliJPlatformType)
 
+## Target Versions
+
+{#target-versions}
+
+The IntelliJ Platform Gradle Plugin allows for using two types of IntelliJ Platform artifacts for development: installers and multi-OS ZIP archives.
+Both have advantages and drawbacks, but in the `2.x` releases, installers are now the default choice when setting up the project.
+
+### Installers
+
+{#target-versions-installers}
+
+When declaring a dependency on IntelliJ Platform, the IDE installer is resolved by default.
+The IntelliJ Platform installer is the IDE final distribution used by end-users for installing and running IDE in their machines.
+Those artifacts are resolved from JetBrains Download CDN (download.jetbrains.com) or Android Studio CDN.
+
+```kotlin
+repositories {
+  intellijPlatform {
+    defaultRepositories()
+  }
+}
+
+dependencies {
+  intellijPlatform {
+    IntellijIdeaCommunity("2024.1.4")
+  }
+}
+```
+
+The listing of all present installers can be resolved with updates XML files for [JetBrains IDEs](https://www.jetbrains.com/updates/updates.xml) and [Android Studio](https://jb.gg/android-studio-releases-list.xml) as well as by executing the [`printProductsReleases`](tools_intellij_platform_gradle_plugin_tasks.md#printProductsReleases) task.
+
+IntelliJ Platform installers are OS-specific and contain bundled [](tools_intellij_platform_gradle_plugin_jetbrains_runtime.md), but are limited to public releases only.
+Installers are always used when running the [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) task to perform the binary compatibility checks.
+
+To apply required repositories, use [](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories) or explicit [](tools_intellij_platform_gradle_plugin_repositories_extension.md#intellij-platform-installers) helpers.
+
+### Multi-OS Archives
+
+{#target-versions-multi-os-archives}
+
+It is still possible to use Multi-OS ZIP archives resolved from [](tools_intellij_platform_gradle_plugin_repositories_extension.md#intellij-maven-repositories).
+
+To enable resolving this kind of artifacts, opt-out from the installer dependencies by adding `useInstaller = false` as the latest argument to helpers described in [](#target-platforms), like:
+
+```kotlin
+repositories {
+  intellijPlatform {
+    defaultRepositories()
+    jetbrainsRuntime()
+  }
+}
+
+dependencies {
+  intellijPlatform {
+    IntellijIdeaCommunity("%ijPlatform%", useInstaller = false)
+    jetbrainsRuntime()
+  }
+}
+```
+
+The Multi-OS Archives contain no [](tools_intellij_platform_gradle_plugin_jetbrains_runtime.md) bundled needed to run the IDE locally, perform testing, and other crucial operations.
+Therefore, it is required to explicitly add a dependency on JetBrains Runtime (JBR) by adding extra `jetbrainsRuntime()` repository and dependency entries.
+
+It is advised to rely on installer releases, but targeting EAP multi-OS archives helps when making sure your plugin will work in the upcoming IDE releases.
+
+To apply required repositories, use [](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories) or explicit [](tools_intellij_platform_gradle_plugin_repositories_extension.md#intellij-maven-repositories) helpers.
+
 ## Plugins
 
 > Use the correct function depending on whether the
-targeted plugin is _bundled_ with the Target Platform or not.
+> targeted plugin is _bundled_ with the Target Platform or not.
 >
 {title="Bundled vs. Non-Bundled Plugins"}
 
-| Function                     | Description                                                                                                                                                    |
-|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `bundledPlugin(id)`          | Adds a dependency on a bundled IntelliJ Platform plugin.                                                                                                       |
-| `bundledPlugins(ids)`        | Adds dependencies on bundled IntelliJ Platform plugins.                                                                                                        |
-| `plugin(id, version, group)` | Adds a dependency on a plugin for IntelliJ Platform. The `group` parameter can define a plugin release channel, like `@eap` or a full Maven coordinates group. |
-| `plugin(notation)`           | Adds a dependency on a plugin for IntelliJ Platform using a string notation:<p>`pluginId:version` or `pluginId:version@channel`</p>                            |
-| `plugins(notations)`         | Adds dependencies on plugins for IntelliJ Platform using a string notation:<p>`pluginId:version` or `pluginId:version@channel`</p>                             |
-| `localPlugin(localPath)`     | Adds a dependency on a local IntelliJ Platform plugin. Accepts path or a dependency on another module.                                                         |
+| Function                     | Description                                                                                                                                                                                                                         |
+|------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `pluginModule(dependency)`   | Adds a dependency on a plugin module to be bundled within the main plugin Jar archive, when working on a multi-module project. Requires passing an existing dependency, like: `pluginModule(implementation(project(":submodule")))` |
+| `bundledPlugin(id)`          | Adds a dependency on a bundled IntelliJ Platform plugin.                                                                                                                                                                            |
+| `bundledPlugins(ids)`        | Adds dependencies on bundled IntelliJ Platform plugins.                                                                                                                                                                             |
+| `plugin(id, version, group)` | Adds a dependency on a plugin for IntelliJ Platform. The `group` parameter can define a plugin release channel, like `@eap` or a full Maven coordinates group.                                                                      |
+| `plugin(notation)`           | Adds a dependency on a plugin for IntelliJ Platform using a string notation:<p>`pluginId:version` or `pluginId:version@channel`</p>                                                                                                 |
+| `plugins(notations)`         | Adds dependencies on plugins for IntelliJ Platform using a string notation:<p>`pluginId:version` or `pluginId:version@channel`</p>                                                                                                  |
+| `localPlugin(localPath)`     | Adds a dependency on a local IntelliJ Platform plugin. Accepts path or a dependency on another module.                                                                                                                              |
 
 The `plugin(id, version, group)` helpers accepts `group` as a third parameter, set by default to the common [JetBrains Marketplace](https://plugins.jetbrains.com) plugin artifacts group: `com.jetbrains.plugins`.
 
@@ -123,14 +192,14 @@ See also:
 ## Testing
 
 To implement [tests](testing_plugins.md) for IntelliJ Platform plugin, it is necessary to explicitly add a dependency on the `test-framework` library containing the necessary test base classes.
-In most cases, the `Platform.JUnit4` variant will be used:
+In most cases, the `TestFrameworkType.Platform` variant will be used:
 
 ```kotlin
 import org.jetbrains.intellij.platform.gradle.TestFrameworkType
 
 dependencies {
   intellijPlatform {
-    testFramework(TestFrameworkType.Platform.JUnit4)
+    testFramework(TestFrameworkType.Platform)
   }
 }
 ```
@@ -143,18 +212,21 @@ The provided `testFramework(type, version)` helper method makes it possible to 
 
 > In rare cases, when the presence of a bundled <path>\$PLATFORM_PATH\$/lib/testFramework.jar</path> library is necessary (like in the case of [Rider](rider.md), as its `test-framework` is not published as an artifact),
 > it is possible to attach it by using the [`TestFrameworkType.Platform.Bundled`](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType) type.
-{style="warning"}
+> {style="warning"}
 
 See also:
+
 - [Types: `TestFrameworkType`](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType)
 
 ## Tools
 
-| Function                  | Description                                                                                                                                |
-|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| `pluginVerifier(version)` | Adds a dependency on [IntelliJ Plugin Verifier](verifying_plugin_compatibility.md).                                                        |
-| `zipSigner(version)`      | Adds a dependency on [Marketplace ZIP Signer](plugin_signing.md).                                                                          |
-| `bundledLibrary(path)`    | **SEE NOTE BELOW** Adds a dependency on a bundled library JAR file of the current IntelliJ Platform, like <path>lib/annotations.jar</path> |
+| Function                                       | Description                                                                                                                                                                       |
+|------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `pluginVerifier(version)`                      | Adds a dependency on [IntelliJ Plugin Verifier](verifying_plugin_compatibility.md).                                                                                               |
+| `zipSigner(version)`                           | Adds a dependency on [Marketplace ZIP Signer](plugin_signing.md).                                                                                                                 |
+| `bundledLibrary(path)`                         | **SEE NOTE BELOW** Adds a dependency on a bundled library JAR file of the current IntelliJ Platform, like <path>lib/annotations.jar</path>                                        |
+| `platformDependency(coordinates, version)`     | Adds a dependency on a custom IntelliJ Platform dependency available in the [](tools_intellij_platform_gradle_plugin_repositories_extension.md#intellij-maven-repositories).      |
+| `testPlatformDependency(coordinates, version)` | Adds a test dependency on a custom IntelliJ Platform dependency available in the [](tools_intellij_platform_gradle_plugin_repositories_extension.md#intellij-maven-repositories). |
 
 > Do not use **`bundledLibrary()`** in production, as direct access to the IntelliJ Platform libraries is not recommended.
 >
@@ -176,6 +248,7 @@ However, it is recommended to rely on the runtime bundled within the IntelliJ Pl
 |-----------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | <p>`jetbrainsRuntime()`</p>                               | Adds a dependency on [JetBrains Runtime](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance) in version obtained with the current IntelliJ Platform if resolved from IntelliJ Maven Repository. |
 | <p>`jetbrainsRuntime(version, variant, architecture)`</p> | Adds a dependency on [JetBrains Runtime](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance).                                                                                                   |
+| <p>`jetbrainsRuntimeLocal(path)`</p>                      | Adds a dependency on a local [JetBrains Runtime](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance) instance.                                                                                  |
 | <p>`jetbrainsRuntimeExplicit(explicitVersion)`</p>        | Adds a dependency on [JetBrains Runtime](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance) in explicit version.                                                                               |
 
 See [](tools_intellij_platform_gradle_plugin_jetbrains_runtime.md) for more details.

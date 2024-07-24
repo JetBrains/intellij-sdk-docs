@@ -128,7 +128,7 @@ Default value
 : `true`
 
 See also:
-- [Build Features: `noSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_gradle_properties.md#noSearchableOptionsWarning)
+- [Gradle Property: `noSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_gradle_properties.md#noSearchableOptionsWarning)
 
 
 ### `instrumentCode`

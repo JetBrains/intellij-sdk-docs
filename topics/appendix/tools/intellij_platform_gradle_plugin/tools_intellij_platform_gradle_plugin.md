@@ -181,7 +181,7 @@ dependencyResolutionManagement {
 Some repositories, by default, point to JetBrains Cache Redirector to provide better resource resolution.
 However, it is possible to use the direct repository URL, if available.
 
-To switch off the default usage of JetBrains Cache Redirector, see the [](tools_intellij_platform_gradle_plugin_gradle_properties.md#useCacheRedirector) build feature.
+To switch off the default usage of JetBrains Cache Redirector, see the [](tools_intellij_platform_gradle_plugin_gradle_properties.md#useCacheRedirector) Gradle property.
 
 ### Setting Up IntelliJ Platform
 
@@ -208,8 +208,19 @@ dependencies {
 The `intellijIdeaCommunity` in the previous sample is one of the extension functions available for adding IntelliJ Platform dependencies to the project.
 See [](tools_intellij_platform_gradle_plugin_dependencies_extension.md) on how to target other IDEs.
 
+> When declaring a dependency on IntelliJ Platform, the IDE installer is resolved by default.
+> IDE installers are OS-specific and contain [](tools_intellij_platform_gradle_plugin_jetbrains_runtime.md) bundled, but have no EAP releases available.
+>
+> To resolve EAP releases instead, opt-out from installer releases with `useInstaller = false` passed to the dependency helper.
+>
+> **Important:** non-installer archives have no JetBrains Runtime (JBR) provided.
+>
+> Read more about [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#target-versions).
+>
+{style="note"}
+
 #### Parametrize IntelliJ Platform Dependency
-{id="dependenciesParametrizePlatform"}
+{#dependenciesParametrizePlatform}
 
 As a fallback, `intellijPlatform` extension can be used to allow dynamic configuration of the target platform, e.g., via <path>gradle.properties</path>:
 
@@ -246,7 +257,7 @@ dependencies {
 ```
 
 #### Local IntelliJ Platform IDE Instance
-{id="dependenciesLocalPlatform"}
+{#dependenciesLocalPlatform}
 
 It is possible to refer to the locally available IntelliJ-based IDE using the `local` helper function:
 

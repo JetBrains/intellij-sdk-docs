@@ -101,7 +101,7 @@ Default value
 {#buildSearchableOptions-showPaidPluginWarning}
 
 Emits a warning when the task is executed by a paid plugin.
-Can be disabled with the [`paidPluginSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_gradle_properties.md#paidPluginSearchableOptionsWarning) build feature.
+Can be disabled with the [`paidPluginSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_gradle_properties.md#paidPluginSearchableOptionsWarning) Gradle property.
 
 {style="narrow"}
 Type

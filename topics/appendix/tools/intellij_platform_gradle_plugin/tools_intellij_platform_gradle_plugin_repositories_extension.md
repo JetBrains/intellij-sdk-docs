@@ -21,7 +21,7 @@ It provides methods to add:
 
 <snippet id="recommendedCallout">
 
-> In most cases, [`defaultRepositories()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories) repository should be sufficient.
+> In most cases, the [`defaultRepositories()`](#default-repositories) repository should be enough.
 >
 {style="tip"}
 
@@ -43,21 +43,38 @@ repositories {
 
 ## Default Repositories
 
-The default repository definition suitable for most plugins.
+The default repository definition is suitable for most plugins.
 
 | Function                | Description                                                                                                |
 |-------------------------|------------------------------------------------------------------------------------------------------------|
 | `defaultRepositories()` | Applies a set of recommended repositories required for building plugins and running the most common tasks. |
 
 It includes:
-- `releases()` and `snapshots()` — IntelliJ Platform releases channels
-- `marketplace()` — JetBrains Marketplace plugins repository
-- `localPlatformArtifacts()` — required to use plugins bundled with IntelliJ Platform or refer to a local IDE
+- `jetbrainsIdeInstallers()` and `androidStudioInstallers()` – IntelliJ Platform and Android Studio installer releases channels required for development and running the IntelliJ Plugin Verifier
+- `releases()` and `snapshots()` – IntelliJ Platform releases channels
+- `localPlatformArtifacts()` – required to use plugins bundled with IntelliJ Platform or refer to a local IDE
+- `marketplace()` – JetBrains Marketplace plugins repository
 - `intellijDependencies()` — required for resolving extra IntelliJ Platform dependencies used for running specific tasks
-- `binaryReleases()` — JetBrains IDEs releases required for running the IntelliJ Plugin Verifier
+
+## IntelliJ Platform Installers
+
+IntelliJ Platform installers are the final IDE distributions delivered to end-users for installing and running products on their machines.
+Those installers can also be used for development and running the IntelliJ Plugin Verifier tool integrated with the [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) task.
+
+| Function                    | Description                                                |
+|-----------------------------|------------------------------------------------------------|
+| `jetbrainsIdeInstallers()`  | Adds a repository for accessing JetBrains IDEs installers. |
+| `androidStudioInstallers()` | Adds a repository for accessing Android Studio installers. |
+
+See also:
+- [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#target-versions-installers)
+- [](intellij_artifacts.md)
+- [](verifying_plugin_compatibility.md)
 
 
-## IDE Releases
+## IntelliJ Maven Repositories
+
+IntelliJ Platform artifacts can be also delivered as multi-OS archives, however they do not contain [](tools_intellij_platform_gradle_plugin_jetbrains_runtime.md) bundled and require adding it explicitly to the project dependencies.
 
 The following IntelliJ Platform repositories contain not only the IntelliJ Platform releases in stable, snapshot, and nightly versions, but also various dependencies, such as:
 - Java Compiler required for [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#code-instrumentation)
@@ -70,19 +87,8 @@ The following IntelliJ Platform repositories contain not only the IntelliJ Platf
 | `nightly()`   | Adds a repository for accessing IntelliJ Platform nightly releases, not available publicly. |
 
 See also:
+- [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#target-versions-multi-os-archives)
 - [](intellij_artifacts.md)
-
-
-## Binary IDE Releases
-
-| Function                        | Description                                                                                                  |
-|---------------------------------|--------------------------------------------------------------------------------------------------------------|
-| `binaryReleases()`              | Adds a repository for accessing IntelliJ Platform IDE binary releases for use with IntelliJ Plugin Verifier. |
-| `binaryReleasesAndroidStudio()` | Adds a repository for accessing Android Studio binary releases for use with IntelliJ Plugin Verifier.        |
-
-See also:
-
-- [](verifying_plugin_compatibility.md)
 
 
 ## Plugin Repositories

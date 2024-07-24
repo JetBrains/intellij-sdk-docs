@@ -69,4 +69,7 @@
   <secondary-label id="deprecated" name="Deprecated" color="red">
     This item is marked as deprecated.
   </secondary-label>
+  <secondary-label id="incubating" name="Incubating" color="strawberry">
+    This item is marked as incubating.
+  </secondary-label>
 </labels>

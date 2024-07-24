@@ -1427,6 +1427,8 @@ To register a customized test task, use [`intelliJPlatformTestingExtension.testI
 ## `testIdePerformance`
 {#testIdePerformance}
 
+<secondary-label ref="incubating"/>
+
 <link-summary>Runs performance tests on the IntelliJ Platform with the developed plugin installed.</link-summary>
 
 <tldr>
@@ -1449,6 +1451,8 @@ To register a customized test task, use [`intelliJPlatformTestingExtension.testI
 
 ## `testIdeUi`
 {#testIdeUi}
+
+<secondary-label ref="incubating"/>
 
 <link-summary>Runs the IDE instance with the developed plugin and Starter framework for UI testing.</link-summary>
 

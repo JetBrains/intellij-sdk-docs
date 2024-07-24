@@ -2,6 +2,8 @@
 
 # AppCode Plugin Development
 
+<primary-label ref="Deprecated"/>
+
 <link-summary>Introduction to developing plugins for AppCode.</link-summary>
 
 <var name="productID" value="objc"/>

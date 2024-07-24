@@ -5,8 +5,9 @@
 <link-summary>Background process is a computation executed on a background thread with the possibility of interrupting it and tracking its progress.</link-summary>
 
 Background process is a time-consuming computation usually executed on a background thread.
-The IntelliJ Platform executes background processes widely and provides the API to run them by plugins.
-The API is called Progress API and allows for cancelling tasks and tracking their progress.
+The IntelliJ Platform executes background processes widely and provides two main ways to run them by plugins:
+- [Progress API](#progress-api) that allows for cancelling tasks and tracking their progress
+- [`Application.executeOnPooledThread()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java) methods for running simple background tasks that don't need cancellation or progress tracking
 
 ## Progress API
 <primary-label ref="obsolete-2024.1"/>

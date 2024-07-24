@@ -100,8 +100,7 @@ As the write lock can be acquired only from under write intent lock, it means th
 
 > It is known that writing data only on EDT has negative consequences of potentially freezing the UI.
 > There is an in-progress effort to [allow writing data from any thread](https://youtrack.jetbrains.com/issue/IJPL-53).
-
-[//]: # (TODO: what is the historical reason for that?)
+> See the [historical reason](#why-write-actions-are-currently-allowed-only-on-edt) for this behavior in the current platform versions.
 
 The scope of implicitly acquiring the write intent lock on EDT differs depending on the platform version:
 
@@ -124,8 +123,6 @@ Write intent lock is acquired automatically when operation is invoked on EDT wit
 
 It is recommended to use `Application.invokeLater()` if the operation is supposed to write data.
 Use other methods for pure UI operations.
-
-[//]: # (TODO: only these methods or anything executed on EDT? ask Lev to verify)
 
 </tab>
 
@@ -322,8 +319,6 @@ gantt
 Writing data is only allowed on EDT invoked with `Application.invokeLater()`, where the write intent lock is [acquired implicitly](#locks-and-edt).
 
 Write operations must always be wrapped in a write action with one of the [API](#write-actions-api) methods.
-
-[//]: # (TODO: ask Lev to verify)
 
 </tab>
 
@@ -542,5 +537,16 @@ Massive batches of VFS events can be pre-processed in the background with [`Asyn
 ### How to check whether the current thread is the EDT/UI thread?
 
 Use `Application.isDispatchThread()`.
+
+### Why write actions are currently allowed only on EDT?
+
+Reading data model was often performed on EDT to display results in the UI.
+The IntelliJ Platform is more than 20 years old, and in its beginnings Java didn't offer features like generics and lambdas.
+Code that acquired read locks was very verbose.
+For convenience, it was decided that reading data can be done on EDT without read locks (even implicitly acquired).
+
+The consequence of this was that writing had to be allowed on EDT only to avoid read/write conflicts.
+The nature of EDT provided this possibility out-of-the-box due to being a single thread.
+Event queue guaranteed that reads and writes were ordered and executed one by one and couldn't interweave.
 
 <include from="snippets.md" element-id="missingContent"/>

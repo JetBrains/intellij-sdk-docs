@@ -72,4 +72,7 @@
   <secondary-label id="incubating" name="Incubating" color="strawberry">
     This item is marked as incubating.
   </secondary-label>
+  <secondary-label id="unavailable" name="Unavailable">
+    This item is marked as unavailable.
+  </secondary-label>
 </labels>

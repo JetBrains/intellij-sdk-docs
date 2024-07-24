@@ -1135,6 +1135,36 @@ To register a customized task, use [`intelliJPlatformTestingExtension.runIde`](t
 
 
 
+## `runIdeForUiTests`
+{#runIdeForUiTests}
+
+<secondary-label ref="unavailable"/>
+
+<link-summary>Runs the IDE instance using the currently selected IntelliJ Platform with the built plugin and Robot Server plugin loaded.</link-summary>
+
+Runs the IDE instance using the currently selected IntelliJ Platform with the built plugin and Robot Server plugin loaded.
+
+This task is not available by default and needs to be registered manually by applying the following code:
+
+```kotlin
+val runIdeForUiTests by intellijPlatformTesting.runIde.registering {
+  task {
+    jvmArgumentProviders += CommandLineArgumentProvider {
+      listOf(
+        "-Drobot-server.port=8082",
+        "-Dide.mac.message.dialogs.as.sheets=false",
+        "-Djb.privacy.policy.text=<!--999.999-->",
+        "-Djb.consents.confirmation.enabled=false",
+      )
+    }
+  }
+  plugins {
+    robotServerPlugin()
+  }
+}
+```
+
+
 ## `setupDependencies`
 {#setupDependencies}
 
@@ -1396,6 +1426,8 @@ The task itself isn't mutated and a dedicated [`prepareTest`](#prepareTest) task
 
 ## `testIde`
 {#testIde}
+
+<secondary-label ref="unavailable"/>
 
 <link-summary>Runs tests using a custom IntelliJ Platform with the developed plugin installed.</link-summary>
 

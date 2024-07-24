@@ -13,58 +13,8 @@ To enable or disable a particular feature, add a Project property to the <path>g
 org.jetbrains.intellij.platform.<name>=<value>
 ```
 
-## General Gradle Properties
 
-### `intellijPlatformCache`
-{#intellijPlatformCache}
-
-The plugin uses a dedicated cache directory to store files related to the current project configuration files, such as:
-- XML files generated for the [`localPlatformArtifacts()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) local Ivy repository
-- coroutines Java agent file created by the [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin) task
-
-{style="narrow"}
-Default value
-: <path>[rootProject]/.intellijPlatform</path>
-
-Example
-:
-```
-org.jetbrains.intellij.platform.intellijPlatformCache=/path/to/intellijPlatformCache/
-```
-
-### `localPlatformArtifacts`
-{#localPlatformArtifacts}
-
-The [`localPlatformArtifacts()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) entry applied to the `repositories {}` block is required to apply to the project dependencies that need extra pre-processing before they can be correctly used by the IntelliJ Platform Gradle Plugin and loaded by Gradle.
-
-This is resolved by creating an Ivy XML file in a dedicated directory pointed by the `localPlatformArtifacts` property.
-
-{style="narrow"}
-Default value
-: <path>[intellijPlatformCache](#intellijPlatformCache)/ivy/</path>
-
-Example
-:
-```
-org.jetbrains.intellij.platform.localPlatformArtifacts=/path/to/localPlatformArtifacts/
-```
-
-## Build Features
-
-Build features are Gradle properties defined by the IntelliJ Platform Gradle Plugin to control specific features.
-Such properties have a simplified form:
-
-```
-org.jetbrains.intellij.platform.<buildFeatureName>=<true|false>
-```
-
-E.g., to disable the [](#selfUpdateCheck) feature, add this line:
-
-```
-org.jetbrains.intellij.platform.selfUpdateCheck=false
-```
-
-### `downloadSources`
+## `downloadSources`
 {#downloadSources}
 
 Instruct the IDE that sources are needed to be downloaded when working with IntelliJ Platform Gradle Plugin.
@@ -81,14 +31,52 @@ Default value
 Example
 :
 ```
-org.jetbrains.intellij.platform.downloadSources=false
+org.jetbrains.intellij.platform.downloadSources=true
 ```
 
 
-### `noSearchableOptionsWarning`
+## `intellijPlatformCache`
+{#intellijPlatformCache}
+
+Specifies the location of the local IntelliJ Platform cache directory for storing files related to the current project, like:
+- XML files generated for the [`localPlatformArtifacts`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) local Ivy repository
+- self-update lock file used by the [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin) task
+
+> This directory should be excluded from versioning.
+>
+{style="warning"}
+
+{style="narrow"}
+Default value
+: <path>[rootProject]/.intellijPlatform/</path>
+
+Example
+:
+```
+org.jetbrains.intellij.platform.intellijPlatformCache=/path/to/intellijPlatformCache/
+```
+
+
+## `localPlatformArtifacts`
+{#localPlatformArtifacts}
+
+The [`localPlatformArtifacts()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) entry applied to the `repositories {}` block is required to apply to the project dependencies that need extra pre-processing before they can be correctly used by the IntelliJ Platform Gradle Plugin and loaded by Gradle.
+
+{style="narrow"}
+Default value
+: <path>[intellijPlatformCache](#intellijPlatformCache)/localPlatformArtifacts/</path>
+
+Example
+:
+```
+org.jetbrains.intellij.platform.localPlatformArtifacts=/path/to/localPlatformArtifacts/
+```
+
+
+## `noSearchableOptionsWarning`
 {#noSearchableOptionsWarning}
 
-When the [](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions) doesn't produce any results, e.g., when the plugin doesn't implement any [Settings](settings.md), a warning is shown to suggest disabling it for better performance with [](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-buildSearchableOptions).
+When the [](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions) doesn't produce any results, for example, when the plugin doesn't implement any [Settings](settings.md), a warning is shown to suggest disabling it for better performance with [](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-buildSearchableOptions).
 
 {style="narrow"}
 Default value
@@ -100,7 +88,8 @@ Example
 org.jetbrains.intellij.platform.buildSearchableOptions=false
 ```
 
-### `paidPluginSearchableOptionsWarning`
+
+## `paidPluginSearchableOptionsWarning`
 {#paidPluginSearchableOptionsWarning}
 
 Due to IDE limitations, it is impossible to run the IDE in headless mode to collect searchable options for a paid plugin.
@@ -117,7 +106,42 @@ Example
 org.jetbrains.intellij.platform.paidPluginSearchableOptionsWarning=false
 ```
 
-### `selfUpdateCheck`
+
+## `productsReleasesAndroidStudioUrl`
+{#productsReleasesAndroidStudioUrl}
+
+Specifies the URL from which the list of all Android Studio releases is fetched.
+This listing is later parsed by `ProductReleasesValueSource` to provide a list of IDEs matching the filtering criteria for running the IntelliJ Plugin Verifier tool with the [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) task.
+
+{style="narrow"}
+Default value
+: `https://jb.gg/android-studio-releases-list.xml`
+
+Example
+:
+```
+org.jetbrains.intellij.platform.productsReleasesAndroidStudioUrl=https://...
+```
+
+
+## `productsReleasesJetBrainsIdesUrl`
+{#productsReleasesJetBrainsIdesUrl}
+
+Specifies the URL from which the list of all Android Studio releases is fetched.
+This listing is later parsed by `ProductReleasesValueSource` to provide a list of IDEs matching the filtering criteria for running the IntelliJ Plugin Verifier tool with the [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) task.
+
+{style="narrow"}
+Default value
+: `https://www.jetbrains.com/updates/updates.xml`
+
+Example
+:
+```
+org.jetbrains.intellij.platform.productsReleasesJetBrainsIdesUrl=https://...
+```
+
+
+## `selfUpdateCheck`
 {#selfUpdateCheck}
 
 Checks whether the currently used IntelliJ Platform Gradle Plugin is outdated and if a new release is available.
@@ -140,6 +164,24 @@ Example
 org.jetbrains.intellij.platform.selfUpdateCheck=false
 ```
 
+
+### `shimServerPort`
+{#shimServerPort}
+
+Specifies the default Shim server port at which the local webserver is run.
+The Shim server is used to proxy requests to the authorized custom plugin repositories registered with [`customPluginRepository()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories).
+
+{style="narrow"}
+Default value
+: `7348`
+
+Example
+:
+```
+org.jetbrains.intellij.platform.shimServerPort=7348
+```
+
+
 ### `useCacheRedirector`
 {#useCacheRedirector}
 
@@ -156,24 +198,4 @@ Example
 :
 ```
 org.jetbrains.intellij.platform.useCacheRedirector=false
-```
-
-### `useClosestVersionResolving`
-{#useClosestVersionResolving}
-
-Some dependencies are tied to IntelliJ Platform build numbers and hosted in the IntelliJ Dependencies Repository.
-Despite this, certain versions (like EAP or nightly builds) might be absent.
-
-To solve this, we fetch a list of all versions from the Maven repository and locate the closest match.
-This method requires an additional remote repository request.
-If undesired, this feature can be disabled to strictly match dependencies to your build version.
-
-{style="narrow"}
-Default value
-: `true`
-
-Example
-:
-```
-org.jetbrains.intellij.platform.useClosestVersionResolving=false
 ```

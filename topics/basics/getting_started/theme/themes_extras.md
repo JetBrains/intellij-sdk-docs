@@ -1,10 +1,12 @@
-# Themes - Editor Schemes and Background Images
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# Themes - Editor Schemes and Background Images
 
 <link-summary>Customizing editor schemes and editor or application background images in a theme plugin.</link-summary>
 
 Themes can also provide custom color and font settings, as well as custom images for display in the IDE application window.
+
+<include from="developing_themes.md" element-id="themeSamplePlugin"/>
 
 ## Adding a Custom Editor Scheme
 

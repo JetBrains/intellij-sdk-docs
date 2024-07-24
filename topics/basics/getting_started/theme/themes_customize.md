@@ -17,6 +17,8 @@ For plugin developers, [Exposing Theme Metadata](themes_metadata.md) discusses t
 > [Color Highlighter Plugin](https://plugins.jetbrains.com/plugin/13309-color-highlighter) adds additional color preview inside the editor.
 >
 
+<include from="developing_themes.md" element-id="themeSamplePlugin"/>
+
 ## Introduction to Theme Description File Syntax
 
 The syntax of a Theme description file follows the JSON open-standard file format of key-value pairs.

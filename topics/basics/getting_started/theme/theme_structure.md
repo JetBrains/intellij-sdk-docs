@@ -7,9 +7,7 @@
 Themes are components within [IntelliJ Platform plugins](plugin_structure.topic).
 The theme plugins should be stand-alone and not combined with other plugin functionality.
 
-> To see a full example theme project, see the [Theme Basics](%gh-sdk-samples-master%/theme_basics) in IntelliJ SDK Code Samples.
->
-{style="note"}
+<include from="developing_themes.md" element-id="themeSamplePlugin"/>
 
 Themes have several components:
 * A required Theme description (JSON) file in the plugin project's <path>resources</path> folder.

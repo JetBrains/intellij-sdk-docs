@@ -100,14 +100,21 @@ targeted plugin is _bundled_ with the Target Platform or not.
 >
 {title="Bundled vs. Non-Bundled Plugins"}
 
-| Function                       | Description                                                                                                                         |
-|--------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| `bundledPlugin(id)`            | Adds a dependency on a bundled IntelliJ Platform plugin.                                                                            |
-| `bundledPlugins(ids)`          | Adds dependencies on bundled IntelliJ Platform plugins.                                                                             |
-| `plugin(id, version, channel)` | Adds a dependency on a plugin for IntelliJ Platform.                                                                                |
-| `plugin(notation)`             | Adds a dependency on a plugin for IntelliJ Platform using a string notation:<p>`pluginId:version` or `pluginId:version@channel`</p> |
-| `plugins(notations)`           | Adds dependencies on plugins for IntelliJ Platform using a string notation:<p>`pluginId:version` or `pluginId:version@channel`</p>  |
-| `localPlugin(localPath)`       | Adds a dependency on a local IntelliJ Platform plugin. Accepts path or a dependency on another module.                              |
+| Function                     | Description                                                                                                                                                    |
+|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `bundledPlugin(id)`          | Adds a dependency on a bundled IntelliJ Platform plugin.                                                                                                       |
+| `bundledPlugins(ids)`        | Adds dependencies on bundled IntelliJ Platform plugins.                                                                                                        |
+| `plugin(id, version, group)` | Adds a dependency on a plugin for IntelliJ Platform. The `group` parameter can define a plugin release channel, like `@eap` or a full Maven coordinates group. |
+| `plugin(notation)`           | Adds a dependency on a plugin for IntelliJ Platform using a string notation:<p>`pluginId:version` or `pluginId:version@channel`</p>                            |
+| `plugins(notations)`         | Adds dependencies on plugins for IntelliJ Platform using a string notation:<p>`pluginId:version` or `pluginId:version@channel`</p>                             |
+| `localPlugin(localPath)`     | Adds a dependency on a local IntelliJ Platform plugin. Accepts path or a dependency on another module.                                                         |
+
+The `plugin(id, version, group)` helpers accepts `group` as a third parameter, set by default to the common [JetBrains Marketplace](https://plugins.jetbrains.com) plugin artifacts group: `com.jetbrains.plugins`.
+
+The `group` parameter can also describe the release channel by prefixing the value with `@` character, like `@eap` or `@nightly`.
+The channel value is used to prepend the JetBrains Marketplace group and build `nightly.com.jetbrains.plugins`.
+
+If defined explicitly, can be used along with any custom plugin repository, like: `org.acme.plugins`.
 
 See also:
 

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Registering a File Type
 
@@ -19,12 +19,12 @@ A custom language file type is a class derived from [`LanguageFileType`](%gh-ic%
 ### Registration
 <tabs>
 
-<tab title="2019.2 and later">
+<tab title="2019.2+">
 
-When targeting 2019.2 or later *only*, use `com.intellij.fileType` extension point to register `LanguageFileType` implementation and instance via `implementationClass` and `fieldName` attributes.
+Use `com.intellij.fileType` extension point to register `LanguageFileType` implementation and instance via `implementationClass` and `fieldName` attributes.
 Also, `name` and `language` must be declared matching `FileType.getName()` and ID of language returned from `LanguageFileType.getLanguage()`, respectively.
 
-To associate the file type in the IDE, specify one or more associations as listed in the following table.
+To associate the file type in the IDE, specify one or more associations listed in the following table.
 
 | Association type        | Attribute                                          | Attribute value                                                 |
 |-------------------------|----------------------------------------------------|-----------------------------------------------------------------|
@@ -35,7 +35,7 @@ To associate the file type in the IDE, specify one or more associations as liste
 
 </tab>
 
-<tab title="Pre-2019.2">
+<tab title="Earlier versions">
 
 > The `FileTypeFactory` approach is deprecated. Use it only when the plugin supports platform versions older than 2019.2.
 >

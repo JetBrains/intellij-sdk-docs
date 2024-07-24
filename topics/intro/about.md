@@ -81,7 +81,7 @@ Information on [](verifying_plugin_compatibility.md) and list of [backwards-inco
 
 #### Tooling
 
-Reference and usage guides for commonly used tools like the [](tools_gradle_intellij_plugin.md).
+Reference and usage guides for commonly used tools like the [](tools_intellij_platform_gradle_plugin.md).
 
 #### UI Guidelines
 

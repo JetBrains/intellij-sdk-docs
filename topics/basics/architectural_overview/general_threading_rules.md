@@ -457,8 +457,8 @@ gantt
     section BGT
         very long read action               : 0, 1
         very long read action (2nd attempt) : 2, 5
-        RA canceled : milestone, crit, 0, 2
-        RA restarted : milestone, 2, 2
+        RA canceled                         : milestone, crit, 0, 2
+        RA restarted from scratch           : milestone, 2, 2
     section EDT
         write action : 1, 2
 ```

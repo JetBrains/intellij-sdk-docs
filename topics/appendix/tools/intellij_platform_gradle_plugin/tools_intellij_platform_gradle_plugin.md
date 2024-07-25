@@ -38,7 +38,7 @@ IntelliJ Platform Gradle Plugin 2.x requires the following minimal versions:
 
 ## Usage
 
-> Please note that the plugin has a new ID `org.jetbrains.intellij.platform`.
+> Note that the plugin has a new ID `org.jetbrains.intellij.platform`.
 >
 {style="note"}
 
@@ -85,7 +85,7 @@ The [](tools_intellij_platform_gradle_plugin_plugins.md#settings) plugin (`org.j
 
 ### Attaching Sources
 
-To attach IntelliJ Platform sources in the IDE the <control>Download sources</control> setting has to be enabled in IDE versions 2023.2 and later.
+To attach IntelliJ Platform sources in the IDE, the <control>Download sources</control> setting has to be enabled in IDE versions 2023.2 and later.
 This option respects the [](tools_intellij_platform_gradle_plugin_gradle_properties.md#downloadSources) property, which is enabled by default.
 
 <tabs>
@@ -100,7 +100,7 @@ Then invoke <control>Reload All Gradle Projects</control> action from the <contr
 <tab title="2023.2">
 
 In <ui-path>Settings | Build, Execution, Deployment | Build Tools | Gradle</ui-path> enable <control>Download sources for dependencies</control>.
-Then invoke <control>Reload All Gradle Projects</control> action from the <control>Gradle</control> tool window.
+Then invoke the <control>Reload All Gradle Projects</control> action from the <control>Gradle</control> tool window.
 
 </tab>
 
@@ -222,7 +222,7 @@ See [](tools_intellij_platform_gradle_plugin_dependencies_extension.md) on how t
 #### Parametrize IntelliJ Platform Dependency
 {#dependenciesParametrizePlatform}
 
-As a fallback, `intellijPlatform` extension can be used to allow dynamic configuration of the target platform, e.g., via <path>gradle.properties</path>:
+As a fallback, `intellijPlatform` extension can be used to allow dynamic configuration of the target platform, for example, via <path>gradle.properties</path>:
 
 ```
 platformType = IC
@@ -307,7 +307,7 @@ dependencies {
 ### Multi-Module Project Structure
 
 When working on a complex plugin, it is often convenient to split the code base into multiple submodules.
-To avoid pluting submodules with tasks or configurations specific to the root module only, i.e., responsible for signing, publishing, or running the plugin, a dedicated subplugin was introduced.
+To avoid pluting submodules with tasks or configurations specific to the root module only, that is, responsible for signing, publishing, or running the plugin, a dedicated subplugin was introduced.
 
 The root module of the IntelliJ-based plugin project is supposed to apply the main [](tools_intellij_platform_gradle_plugin_plugins.md#platform) plugin as follows:
 

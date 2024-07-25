@@ -18,7 +18,39 @@ Plugin projects for WebStorm can be developed using IntelliJ IDEA with the [](to
 
 <include from="snippets.md" element-id="jetbrainsProductOpenSourceLicense"/>
 
-## Configuring Plugin Projects Targeting WebStorm
+## WebStorm Plugin Setup
+
+### Gradle Build Script
+
+<tabs>
+<tab title="IntelliJ Platform Gradle Plugin (2.x)">
+
+Define a dependency using [`webstorm()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md), see _Versions_ link on top of this page for all available versions.
+See [](tools_intellij_platform_gradle_plugin.md#dependenciesLocalPlatform) for using a local installation.
+
+A dependency on the bundled `JavaScript` plugin must be added using the [`bundledPlugin()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) helper.
+
+Minimum <path>build.gradle.kts</path> setup:
+
+```kotlin
+repositories {
+  mavenCentral()
+  intellijPlatform {
+    defaultRepositories()
+  }
+}
+
+dependencies {
+  intellijPlatform {
+    webstorm("<versionNumber>")
+    bundledPlugin("JavaScript")
+  }
+}
+```
+
+</tab>
+
+<tab title="Gradle IntelliJ Plugin (1.x)">
 
 The configuration of WebStorm plugin projects follows the methods described in [Configuring Plugin Projects using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-plugin-projects-using-the-intellij-idea-product-attribute) and [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml) for PhpStorm.
 
@@ -33,11 +65,16 @@ To see how these attributes appear in a similar Gradle build script for PhpStorm
 | [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) | Dependency on the `JavaScript` plugin.                                                                                                                                                                                          |
 | [`runIde.ideDir`](tools_gradle_intellij_plugin.md#tasks-runide-idedir)           | <p>Path to locally installed target version of WebStorm. For example, for macOS:</p><p><path>/Users/\$USERNAME\$/Library/Application Support/JetBrains/Toolbox/apps/WebStorm/ch-0/192.7142.35/WebStorm.app/Contents</path>.</p> |
 
+</tab>
+</tabs>
+
+### plugin.xml
+
 The dependency on the WebStorm APIs must be declared in the <path>[plugin.xml](plugin_configuration_file.md)</path> file.
 As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) tags must declare `JavaScript`.
 
-**Note** that for WebStorm, the <path>plugin.xml</path> file must also declare a dependency on `com.intellij.modules.platform` because `JavaScript` is not recognized as a module.
-Consequently, without the `com.intellij.modules.platform` declaration, the plugin is assumed to be a [legacy plugin](plugin_compatibility.md#declaring-plugin-dependencies) and will not load in WebStorm.
+Note that for WebStorm, the <path>plugin.xml</path> file must also declare a dependency on `com.intellij.modules.platform` because `JavaScript` is not recognized as a module.
+Otherwise, the plugin is assumed to be a [legacy plugin](plugin_compatibility.md#declaring-plugin-dependencies) and will not load in WebStorm.
 
 ## Available WebStorm APIs
 
@@ -49,6 +86,7 @@ See [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-c
 Test your plugin with any version of WebStorm you wish to support.
 
 ### Javascript Test Framework
+
 <primary-label ref="2020.3"/>
 
 To use existing test base classes, specify `com.jetbrains.intellij.javascript:javascript-test-framework:$VERSION$` as `testImplementation` dependency explicitly (see [IntelliJ Platform Artifacts Repositories](intellij_artifacts.md#gradle-example-for-an-individual-module-from-the-intellij-platform)).
@@ -56,6 +94,7 @@ To use existing test base classes, specify `com.jetbrains.intellij.javascript:ja
 ## Open Source Plugins for WebStorm
 
 When learning new plugin development, it is helpful to have some representative projects for reference:
+
 * [Vue.js](https://github.com/JetBrains/intellij-plugins/tree/master/vuejs)
 * [JS Toolbox](https://github.com/andresdominguez/jsToolbox)
 * [Require.js](https://github.com/Fedott/WebStormRequireJsPlugin)

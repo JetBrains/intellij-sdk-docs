@@ -25,6 +25,47 @@ tasks {
 The [`runIdeForUiTests`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeForUiTests) is no longer registered by default.
 Follow the task documentation for more details.
 
+
+### Missing `opentest4j` dependency in Test Framework
+
+Due to the [IJPL-157292](https://youtrack.jetbrains.com/issue/IJPL-157292/lib-testFramework.jar-is-missing-library-opentest4j) issue, the `opentest4j` dependency is not resolved when using `TestFrameworkType.Platform` or `TestFrameworkType.JUnit5`.
+
+This results in the `NoClassDefFoundError` exception:
+
+```
+java.lang.NoClassDefFoundError: org/opentest4j/AssertionFailedError
+```
+
+To apply the workaround, add the missing `org.opentest4j:opentest4j` test dependency to your Gradle build configuration:
+
+```kotlin
+depemdencies {
+  // ...
+  testImplementation("org.opentest4j:opentest4j:1.3.0")
+}
+```
+
+### JUnit5 Test Framework refers to JUnit4
+
+Due to the [IJPL-159134](https://youtrack.jetbrains.com/issue/IJPL-159134/JUnit5-Test-Framework-refers-to-JUnit4-java.lang.NoClassDefFoundError-junit-framework-TestCase) issue, the JUnit5 Test Framework refers to JUnit4 classes when running test.
+
+This results in the `NoClassDefFoundError` exceptions:
+
+```
+Caused by: java.lang.NoClassDefFoundError: junit/framework/TestCase
+
+Caused by: java.lang.NoClassDefFoundError: org/junit/rules/TestRule
+```
+
+To apply the workaround, add the JUnit4 test runtime dependency to your Gradle build configuration:
+
+```kotlin
+depemdencies {
+  // ...
+  testRuntimeOnly("junit:junit:4.13.2")
+}
+```
+
 ### How to disable the automatic reload of dynamic plugins?
 
 See [](ide_development_instance.md#enabling-auto-reload) for important caveats.

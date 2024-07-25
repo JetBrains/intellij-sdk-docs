@@ -217,6 +217,10 @@ The provided `testFramework(type, version)` helper method makes it possible to 
 > it is possible to attach it by using the [`TestFrameworkType.Platform.Bundled`](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType) type.
 > {style="warning"}
 
+There are two known issues related to `Platform` and `JUnit5` Test Frameworks:
+- [](tools_intellij_platform_gradle_plugin_faq.md#missing-opentest4j-dependency-in-test-framework)
+- [](tools_intellij_platform_gradle_plugin_faq.md#junit5-test-framework-refers-to-junit4)
+
 See also:
 
 - [Types: `TestFrameworkType`](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType)

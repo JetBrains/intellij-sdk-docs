@@ -22,6 +22,7 @@ It also includes methods for adding [plugins](#plugins) (including bundled), [Je
 - target IntelliJ IDEA Community %ijPlatform%
 - add dependency on the bundled Java plugin
 - add IntelliJ Plugin Verifier, Marketplace ZIP Signer CLI, and code instrumentation tools
+- add JUnit4 test dependency
 - add Test Framework for testing plugin with JUnit4
 
 ```kotlin
@@ -43,9 +44,10 @@ dependencies {
     zipSigner()
     instrumentationTools()
 
-    testFramework(TestFrameworkType.Platform.JUnit4)
+    testFramework(TestFrameworkType.Platform)
   }
 
+  testImplementation("junit:junit:4.13.2")
   // other dependencies, e.g., 3rd-party libraries
 }
 ```
@@ -200,6 +202,8 @@ dependencies {
   intellijPlatform {
     testFramework(TestFrameworkType.Platform)
   }
+
+  testImplementation("junit:junit:4.13.2")
 }
 ```
 

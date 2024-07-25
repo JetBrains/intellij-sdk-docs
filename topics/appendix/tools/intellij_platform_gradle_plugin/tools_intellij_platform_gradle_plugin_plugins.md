@@ -8,9 +8,9 @@
 
 The IntelliJ Platform Gradle Plugin consists of subplugins which should be applied depending on the project structure.
 
-Subplugins architecture allows applying a subset of features, e.g., to provide the IntelliJ Platform dependency to a project submodule without creating unnecessary tasks.
+Subplugins architecture allows applying a subset of features, for example, to provide the IntelliJ Platform dependency to a project submodule without creating unnecessary tasks.
 
-The following chart describes dependencies between plugins provided with the IntelliJ Platform Gradle Plugin.
+The following diagram describes dependencies between plugins provided with the IntelliJ Platform Gradle Plugin.
 
 
 ```mermaid

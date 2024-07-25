@@ -50,7 +50,7 @@ plugins {
 }
 ```
 
-If migrating from the Gradle IntelliJ Plugin `1.x`, replace the old `org.jetbrains.intellij` identifier to `org.jetbrains.intellij.platform` and apply its latest `%intellij-platform-gradle-plugin-version%` version.
+If migrating from the Gradle IntelliJ Plugin 1.x, replace the old `org.jetbrains.intellij` identifier to `org.jetbrains.intellij.platform` and apply its latest `%intellij-platform-gradle-plugin-version%` version.
 
 ### Snapshot Release
 

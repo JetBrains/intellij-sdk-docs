@@ -27,7 +27,7 @@ IntelliJ IDEA Ultimate, WebStorm, PhpStorm, PyCharm Professional, DataSpell, Rub
 
 The plugin must target [](idea_ultimate.md) version `2023.2` or later.
 
-### Gradle
+### Gradle Build Script
 
 <tabs>
 <tab title="IntelliJ Platform Gradle Plugin (2.x)">

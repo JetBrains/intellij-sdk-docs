@@ -136,7 +136,7 @@ To apply required repositories, use [](tools_intellij_platform_gradle_plugin_rep
 
 It is still possible to use Multi-OS ZIP archives resolved from [](tools_intellij_platform_gradle_plugin_repositories_extension.md#intellij-maven-repositories).
 
-To enable resolving this kind of artifacts, opt-out from the installer dependencies by adding `useInstaller = false` as the latest argument to helpers described in [](#target-platforms), like:
+To enable resolving this kind of artifacts, opt-out from the installer dependencies by adding `useInstaller = false` argument to helpers described in [](#target-platforms), like:
 
 ```kotlin
 repositories {

@@ -22,7 +22,7 @@ tasks {
 
 ### Task `runIdeForUiTests` not found
 
-The [`runIdeForUiTests`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeForUiTests) is no longer registeredby default.
+The [`runIdeForUiTests`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeForUiTests) is no longer registered by default.
 Follow the task documentation for more details.
 
 ### How to disable the automatic reload of dynamic plugins?

@@ -60,27 +60,27 @@ dependencies {
 
 See [](#custom-target-platforms) for non-default targets.
 
-| Function                                              | Description                                         |
-|-------------------------------------------------------|-----------------------------------------------------|
-| `androidStudio(version, useInstaller = true)`         | [Android Studio](android_studio.md)                 |
-| `aqua(version, useInstaller = true)`                  | [Aqua](https://www.jetbrains.com/aqua/)             |
-| `clion(version, useInstaller = true)`                 | [CLion](clion.md)                                   |
-| `datagrip(version, useInstaller = true)`              | [DataGrip](data_grip.md)                            |
-| `dataspell(version, useInstaller = true)`             | [DataSpell](https://www.jetbrains.com/dataspell/)   |
-| `fleetBackend(version, useInstaller = true)`          | Fleet Backend                                       |
-| `gateway(version, useInstaller = true)`               | Gateway                                             |
-| `goland(version, useInstaller = true)`                | [GoLand](goland.md)                                 |
-| `intellijIdeaCommunity(version, useInstaller = true)` | [IntelliJ IDEA Community](idea.md)                  |
-| `intellijIdeaUltimate(version, useInstaller = true)`  | [IntelliJ IDEA Ultimate](idea_ultimate.md)          |
-| `mps(version, useInstaller = true)`                   | [MPS](https://www.jetbrains.com/mps/)               |
-| `phpstorm(version, useInstaller = true)`              | [PhpStorm](phpstorm.md)                             |
-| `pycharmCommunity(version, useInstaller = true)`      | [PyCharm Community](pycharm.md)                     |
-| `pycharmProfessional(version, useInstaller = true)`   | [PyCharm Professional](pycharm.md)                  |
-| `rider(version, useInstaller = true)`                 | [Rider](rider.md)                                   |
-| `rubymine(version, useInstaller = true)`              | [RubyMine](rubymine.md)                             |
-| `rustrover(version, useInstaller = true)`             | [RustRover](https://www.jetbrains.com/rust/)        |
-| `webstorm(version, useInstaller = true)`              | [WebStorm](webstorm.md)                             |
-| `writerside(version, useInstaller = true)`            | [Writerside](https://www.jetbrains.com/writerside/) |
+| Function                                              | Description                                                      |
+|-------------------------------------------------------|------------------------------------------------------------------|
+| `androidStudio(version, useInstaller = true)`         | [Android Studio](android_studio.md)                              |
+| `aqua(version, useInstaller = true)`                  | [Aqua](https://www.jetbrains.com/aqua/)                          |
+| `clion(version, useInstaller = true)`                 | [CLion](clion.md)                                                |
+| `datagrip(version, useInstaller = true)`              | [DataGrip](data_grip.md)                                         |
+| `dataspell(version, useInstaller = true)`             | [DataSpell](https://www.jetbrains.com/dataspell/)                |
+| `fleetBackend(version, useInstaller = true)`          | [Fleet](https://www.jetbrains.com/fleet/) Backend                |
+| `gateway(version, useInstaller = true)`               | [Gateway](https://www.jetbrains.com/remote-development/gateway/) |
+| `goland(version, useInstaller = true)`                | [GoLand](goland.md)                                              |
+| `intellijIdeaCommunity(version, useInstaller = true)` | [IntelliJ IDEA Community](idea.md)                               |
+| `intellijIdeaUltimate(version, useInstaller = true)`  | [IntelliJ IDEA Ultimate](idea_ultimate.md)                       |
+| `mps(version, useInstaller = true)`                   | [MPS](https://www.jetbrains.com/mps/)                            |
+| `phpstorm(version, useInstaller = true)`              | [PhpStorm](phpstorm.md)                                          |
+| `pycharmCommunity(version, useInstaller = true)`      | [PyCharm Community](pycharm.md)                                  |
+| `pycharmProfessional(version, useInstaller = true)`   | [PyCharm Professional](pycharm.md)                               |
+| `rider(version, useInstaller = true)`                 | [Rider](rider.md)                                                |
+| `rubymine(version, useInstaller = true)`              | [RubyMine](rubymine.md)                                          |
+| `rustrover(version, useInstaller = true)`             | [RustRover](https://www.jetbrains.com/rust/)                     |
+| `webstorm(version, useInstaller = true)`              | [WebStorm](webstorm.md)                                          |
+| `writerside(version, useInstaller = true)`            | [Writerside](https://www.jetbrains.com/writerside/)              |
 
 ### Custom Target Platforms
 
@@ -99,7 +99,7 @@ See also:
 {#target-versions}
 
 The IntelliJ Platform Gradle Plugin allows for using two types of IntelliJ Platform artifacts for development: installers and multi-OS ZIP archives.
-Both have advantages and drawbacks, but in the `2.x` releases, installers are now the default choice when setting up the project.
+Both have advantages and drawbacks, but in the 2.x releases, installers are now the default choice when setting up the project.
 
 ### Installers
 
@@ -131,7 +131,6 @@ Installers are always used when running the [`verifyPlugin`](tools_intellij_plat
 To apply required repositories, use [](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories) or explicit [](tools_intellij_platform_gradle_plugin_repositories_extension.md#intellij-platform-installers) helpers.
 
 ### Multi-OS Archives
-
 {#target-versions-multi-os-archives}
 
 It is still possible to use Multi-OS ZIP archives resolved from [](tools_intellij_platform_gradle_plugin_repositories_extension.md#intellij-maven-repositories).
@@ -154,7 +153,7 @@ dependencies {
 }
 ```
 
-The Multi-OS Archives contain no [](tools_intellij_platform_gradle_plugin_jetbrains_runtime.md) bundled needed to run the IDE locally, perform testing, and other crucial operations.
+The Multi-OS Archives don't bundle [](tools_intellij_platform_gradle_plugin_jetbrains_runtime.md) needed to run the IDE locally, perform testing, and other crucial operations.
 Therefore, it is required to explicitly add a dependency on JetBrains Runtime (JBR) by adding extra `jetbrainsRuntime()` repository and dependency entries.
 
 It is advised to rely on installer releases, but targeting EAP multi-OS archives helps when making sure your plugin will work in the upcoming IDE releases.
@@ -224,7 +223,7 @@ See also:
 |------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `pluginVerifier(version)`                      | Adds a dependency on [IntelliJ Plugin Verifier](verifying_plugin_compatibility.md).                                                                                               |
 | `zipSigner(version)`                           | Adds a dependency on [Marketplace ZIP Signer](plugin_signing.md).                                                                                                                 |
-| `bundledLibrary(path)`                         | **SEE NOTE BELOW** Adds a dependency on a bundled library JAR file of the current IntelliJ Platform, like <path>lib/annotations.jar</path>                                        |
+| `bundledLibrary(path)`                         | **SEE NOTE BELOW**<p>Adds a dependency on a bundled library JAR file of the current IntelliJ Platform, like <path>lib/annotations.jar</path>.</p>                                 |
 | `platformDependency(coordinates, version)`     | Adds a dependency on a custom IntelliJ Platform dependency available in the [](tools_intellij_platform_gradle_plugin_repositories_extension.md#intellij-maven-repositories).      |
 | `testPlatformDependency(coordinates, version)` | Adds a test dependency on a custom IntelliJ Platform dependency available in the [](tools_intellij_platform_gradle_plugin_repositories_extension.md#intellij-maven-repositories). |
 

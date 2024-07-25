@@ -54,7 +54,7 @@ It includes:
 - `releases()` and `snapshots()` – IntelliJ Platform releases channels
 - `localPlatformArtifacts()` – required to use plugins bundled with IntelliJ Platform or refer to a local IDE
 - `marketplace()` – JetBrains Marketplace plugins repository
-- `intellijDependencies()` — required for resolving extra IntelliJ Platform dependencies used for running specific tasks
+- `intellijDependencies()` – required for resolving extra IntelliJ Platform dependencies used for running specific tasks
 
 ## IntelliJ Platform Installers
 

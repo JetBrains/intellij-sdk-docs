@@ -124,12 +124,6 @@ Children
   - [`<module-components>`](#idea-plugin__module-components)
   - [`<project-components>`](#idea-plugin__project-components)
 
-<snippet id="patchXmlGradleTask">
-The element can be skipped in the source <path>plugin.xml</path> file if the Gradle plugin
-`patchPluginXml` task ([2.x](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml), [1.x](tools_gradle_intellij_plugin.md#tasks-patchpluginxml))
-is enabled and configured.
-</snippet>
-
 ### `id`
 {#idea-plugin__id}
 
@@ -146,7 +140,11 @@ Please use characters, numbers, and `'.'`/`'-'`/`'_'` symbols only and keep it r
 Required
 : no; ignored in [additional config file](#additional-plugin-configuration-files)<br/>
 **It is highly recommended to set in <path>plugin.xml</path> file.**<br/>
-<include from="plugin_configuration_file.md" element-id="patchXmlGradleTask"/>
+<snippet id="patchXmlGradleTask">
+The element can be skipped in the source <path>plugin.xml</path> file if the Gradle plugin
+`patchPluginXml` task ([2.x](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml), [1.x](tools_gradle_intellij_plugin.md#tasks-patchpluginxml))
+is enabled and configured.
+</snippet>
 
 Default value
 : Value of the [`<name>`](#idea-plugin__name) element.<br/>

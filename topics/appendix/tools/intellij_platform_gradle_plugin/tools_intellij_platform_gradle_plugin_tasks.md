@@ -455,9 +455,9 @@ Creates a copy of the current module's `jar` task output with instrumented class
 
 **Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
 
-**Depends on**: [`buildSearchableOptions`](#buildSearchableOptions), [`patchPluginXml`](#patchPluginXml), [`prepareSandbox`](#prepareSandbox)
+**Depends on**: [`buildSearchableOptions`](#buildSearchableOptions), [`prepareSandbox`](#prepareSandbox)
 
-**Extends**: [`Jar`][gradle-jar-task], [`PluginAware`](tools_intellij_platform_gradle_plugin_task_awares.md#PluginAware), [`SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware)
+**Extends**: [`Jar`][gradle-jar-task]
 
 **Sources**: [`JarSearchableOptionsTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/JarSearchableOptionsTask.kt)
 
@@ -477,19 +477,6 @@ Type
 
 Default value
 : <path>[buildDirectory]/libs</path>
-
-
-### `inputDirectory`
-{#jarSearchableOptions-inputDirectory}
-
-Specifies the directory where the prepared searchable options are read from.
-
-{style="narrow"}
-Type
-: `DirectoryProperty`
-
-Default value
-: [`buildSearchableOptions.outputDirectory`](#buildSearchableOptions-outputDirectory)
 
 
 ### `noSearchableOptionsWarning`
@@ -783,6 +770,79 @@ Type
 
 Default value
 : [`intellijPlatform.pluginConfiguration.vendor.url`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-vendor-url)
+
+
+
+## `prepareJarSearchableOptions`
+{#prepareJarSearchableOptions}
+
+<link-summary>Collects the content produced with `buildSearchableOptions` for the `jarSearchableOptions`.</link-summary>
+
+<tldr>
+
+**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
+
+**Depends on**: [`buildSearchableOptions`](#buildSearchableOptions), [`composedJar`](#composedJar), [`prepareSandbox`](#prepareSandbox)
+
+**Extends**: [`DefaultTask`][gradle-default-task]
+
+**Sources**: [`PrepareJarSearchableOptionsTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PrepareJarSearchableOptionsTask.kt)
+
+</tldr>
+
+Collects the content produced with `buildSearchableOptions` for the `jarSearchableOptions`.
+
+
+### `inputDirectory`
+{#prepareJarSearchableOptions-inputDirectory}
+
+Specifies the directory where the prepared searchable options are read from.
+
+{style="narrow"}
+Type
+: `DirectoryProperty`
+
+Default value
+: [`buildSearchableOptions.outputDirectory`](#buildSearchableOptions-outputDirectory)
+
+
+### `outputDirectory`
+{#prepareJarSearchableOptions-outputDirectory}
+
+Specifies the directory where the filtered content is placed.
+
+{style="narrow"}
+Type
+: `DirectoryProperty`
+
+Default value
+: <path>[buildDirectory]/tmp/prepareJarSearchableOptions</path>
+
+
+### `libContainer`
+{#prepareJarSearchableOptions-libContainer}
+
+Specifies the <path>lib</path> directory within the current sandbox.
+
+{style="narrow"}
+Type
+: `DirectoryProperty`
+
+Default value
+: <path>[prepareSandbox.pluginDirectory]/lib</path>
+
+
+### `composedJarFile`
+{#prepareJarSearchableOptions-composedJarFile}
+
+Specifies the final composed Jar archive with the plugin content.
+
+{style="narrow"}
+Type
+: `RegularFileProperty`
+
+Default value
+: [`composedJar.archiveFile`](tools_intellij_platform_gradle_plugin_tasks.md#composedJar-archiveFile)
 
 
 

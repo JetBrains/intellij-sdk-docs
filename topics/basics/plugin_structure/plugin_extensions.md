@@ -55,20 +55,20 @@ and one extension to access the `another.plugin.myExtensionPoint` extension poin
  -->
 <extensions defaultExtensionNs="com.intellij">
   <appStarter
-          implementation="com.example.MyAppStarter"/>
+      implementation="com.example.MyAppStarter"/>
   <projectTemplatesFactory
-          implementation="com.example.MyProjectTemplatesFactory"/>
+      implementation="com.example.MyProjectTemplatesFactory"/>
 </extensions>
 
-        <!--
-          Declare extensions to access extension points in a custom plugin "another.plugin".
-          The "myExtensionPoint" extension point has been declared using "beanClass"
-          and exposes custom properties "key" and "implementationClass".
-        -->
+<!--
+  Declare extensions to access extension points in a custom plugin "another.plugin".
+  The "myExtensionPoint" extension point has been declared using "beanClass"
+  and exposes custom properties "key" and "implementationClass".
+-->
 <extensions defaultExtensionNs="another.plugin">
 <myExtensionPoint
-        key="keyValue"
-        implementationClass="com.example.MyExtensionPointImpl"/>
+    key="keyValue"
+    implementationClass="com.example.MyExtensionPointImpl"/>
 </extensions>
 ```
 
@@ -125,10 +125,10 @@ Property names matching the following list will resolve to a fully qualified cla
 A required parent type can be specified in the [extension point declaration](plugin_extension_points.md) via [`<with>`](plugin_configuration_file.md#idea-plugin__extensionPoints__extensionPoint__with):
 
 ```xml
-
 <extensionPoint name="myExtension" beanClass="MyExtensionBean">
-  <with attribute="psiElementClass"
-        implements="com.intellij.psi.PsiElement"/>
+  <with
+      attribute="psiElementClass"
+      implements="com.intellij.psi.PsiElement"/>
 </extensionPoint>
 ```
 

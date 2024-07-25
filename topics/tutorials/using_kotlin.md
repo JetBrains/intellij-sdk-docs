@@ -125,7 +125,7 @@ The presence of this Gradle property is checked with the corresponding Gradle ta
 If the property is not present, a warning will be reported during the plugin configuration verification.
 To bundle _stdlib_ in the plugin distribution, specify explicitly `kotlin.stdlib.default.dependency = true`.
 
-#### stdlib - Misc
+#### stdlib – Miscellaneous
 
 If a plugin supports [multiple platform versions](build_number_ranges.md), it must either target the lowest bundled _stdlib_ version (see table below)
 or the specific version must be [provided in plugin distribution](plugin_content.md#plugin-with-dependencies).

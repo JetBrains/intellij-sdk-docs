@@ -156,7 +156,7 @@ dependencies {
 ```
 
 Note that the `:submodule` is added both to the `implementation` configuration and `intellijPlatformPluginModule` using the [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) helper method.
-This guarantees that the submodule content will be merged into the main plugin Jar file.
+This guarantees that the submodule content will be merged into the main plugin JAR file.
 
 ### Available tasks
 {#module-available-tasks}

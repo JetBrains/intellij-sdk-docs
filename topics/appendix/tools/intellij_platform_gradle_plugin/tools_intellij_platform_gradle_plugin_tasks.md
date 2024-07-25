@@ -115,7 +115,7 @@ Default value
 ## `composedJar`
 {#composedJar}
 
-<link-summary>Composes a final Jar archive by combining the base jar, and instrumented classes, and declared submodules.</link-summary>
+<link-summary>Composes a final JAR by combining the base JAR, and instrumented classes, and declared submodules.</link-summary>
 
 <tldr>
 
@@ -129,10 +129,10 @@ Default value
 
 </tldr>
 
-Composes a final Jar archive by combining the output of base `jar` or [`instrumentedJar`](#instrumentedJar) tasks,
+Composes a final JAR by combining the output of base `jar` or [`instrumentedJar`](#instrumentedJar) tasks,
 depending on if code instrumentation is enabled with [`intellijPlatform.instrumentCode`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-instrumentCode).
 
-The final Jar is also combined with plugin modules marked using the [`pluginModule`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) dependencies helper.
+The final JAR is also combined with plugin modules marked using the [`pluginModule`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) dependencies helper.
 
 
 ### `archiveFile`
@@ -165,7 +165,7 @@ Generates the <path>MANIFEST.MF</path> file with all relevant information about 
 
 To apply the produced manifest file, `JarCompanion.applyPluginManifest` method should be called on a task extending [`Jar`][gradle-jar-task].
 
-This file is bundled into the output jar files produced by [`composedJar`](#composedJar), [`instrumentedJar`](#instrumentedJar), and [`Jar`][gradle-jar-task] tasks.
+This file is bundled into the output JAR files produced by [`composedJar`](#composedJar), [`instrumentedJar`](#instrumentedJar), and [`Jar`][gradle-jar-task] tasks.
 
 
 ### `pluginVersion`
@@ -430,7 +430,7 @@ Type
 ## `instrumentedJar`
 {#instrumentedJar}
 
-<link-summary>Creates a Jar file with instrumented classes.</link-summary>
+<link-summary>Creates a JAR file with instrumented classes.</link-summary>
 
 <tldr>
 
@@ -449,7 +449,7 @@ Creates a copy of the current module's `jar` task output with instrumented class
 ## `jarSearchableOptions`
 {#jarSearchableOptions}
 
-<link-summary>Creates a Jar file with searchable options to be distributed with the plugin.</link-summary>
+<link-summary>Creates a JAR file with searchable options to be distributed with the plugin.</link-summary>
 
 <tldr>
 
@@ -463,7 +463,7 @@ Creates a copy of the current module's `jar` task output with instrumented class
 
 </tldr>
 
-Creates a Jar file with searchable options to be distributed with the plugin.
+Creates a JAR file with searchable options to be distributed with the plugin.
 
 
 ### `destinationDirectory`

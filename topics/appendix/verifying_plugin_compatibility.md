@@ -33,9 +33,8 @@ Integration with Continuous Integration (CI) environments is as simple as runnin
 See the IntelliJ Platform Plugin Template [GitHub workflow configuration file](https://github.com/JetBrains/intellij-platform-plugin-template/blob/main/.github/workflows/build.yml) as reference.
 
 #### Navigation in the IDE
-<primary-label ref="2023.3"/>
 
-Reported places are highlighted and linked to the plugin's source code in the <control>Gradle</control> tool window output.
+Reported places are highlighted and linked to the plugin's source code in the <control>Gradle</control> tool window output (2023.3+).
 
 ### JetBrains Marketplace
 

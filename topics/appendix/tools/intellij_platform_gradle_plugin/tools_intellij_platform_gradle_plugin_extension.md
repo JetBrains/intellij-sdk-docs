@@ -682,7 +682,7 @@ See also:
 ### `ideServices`
 {#intellijPlatform-publishing-ideServices}
 
-Specify if the IDE Services plugin repository service should be used.
+Specify if the [IDE Services](https://www.jetbrains.com/ide-services/) plugin repository service should be used.
 
 {style="narrow"}
 Type

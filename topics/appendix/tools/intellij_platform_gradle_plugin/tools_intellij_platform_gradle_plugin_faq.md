@@ -39,7 +39,7 @@ java.lang.NoClassDefFoundError: org/opentest4j/AssertionFailedError
 To apply the workaround, add the missing `org.opentest4j:opentest4j` test dependency to your Gradle build configuration:
 
 ```kotlin
-depemdencies {
+dependencies {
   // ...
   testImplementation("org.opentest4j:opentest4j:1.3.0")
 }
@@ -60,7 +60,7 @@ Caused by: java.lang.NoClassDefFoundError: org/junit/rules/TestRule
 To apply the workaround, add the JUnit4 test runtime dependency to your Gradle build configuration:
 
 ```kotlin
-depemdencies {
+dependencies {
   // ...
   testRuntimeOnly("junit:junit:4.13.2")
 }

@@ -48,12 +48,12 @@ If a thread requires accessing a data model, it must acquire one of the locks:
     <tr>
         <td>Can be acquired from any thread concurrently with other read locks and write intent lock.</td>
         <td>Can be acquired from any thread concurrently with read locks.</td>
-        <td>Can only be acquired from under the write intent lock.</td>
+        <td>Can be acquired only from EDT concurrently with a write intent lock acquired on EDT.</td>
     </tr>
     <tr>
         <td>Can't be acquired if write lock is held on another thread.</td>
         <td>Can't be acquired if another write intent lock or write lock is held on another thread.</td>
-        <td>Can't be acquired if read lock is held on another thread.</td>
+        <td>Can't be acquired if any other lock is held on another thread.</td>
     </tr>
 </table>
 
@@ -95,8 +95,8 @@ The IntelliJ Platform enables write intent lock implicitly on EDT (see [](#locks
 
 ### Locks and EDT
 
-Although acquiring all types of locks can be, in theory, done from any threads, currently, the platform implicitly acquires write intent lock on EDT only.
-As the write lock can be acquired only from under write intent lock, it means that **writing data can be done only on EDT**.
+Although acquiring all types of locks can be, in theory, done from any threads, the platform implicitly acquires write intent lock and allows acquiring the write lock only on EDT.
+It means that **writing data can be done only on EDT**.
 
 > It is known that writing data only on EDT has negative consequences of potentially freezing the UI.
 > There is an in-progress effort to [allow writing data from any thread](https://youtrack.jetbrains.com/issue/IJPL-53).
@@ -134,7 +134,7 @@ The IntelliJ Platform provides a simple API for accessing data under read or wri
 
 Read and write actions allow executing a piece of code under a lock, automatically acquiring it before an action starts, and releasing it after the action is finished.
 
-> Always wrap only the required operations into read/write actions, minimizing the time of holding locks.
+> Always try to wrap only the required operations into read/write actions, minimizing the time of holding locks.
 > If the read operation itself is long, consider using one of [read action cancellability techniques](#read-action-cancellability) to avoid blocking the write lock and EDT.
 >
 {style="warning" title="Minimize Locking Scopes"}
@@ -316,7 +316,7 @@ gantt
 
 <tab title="2023.3+" group-key="newThreading">
 
-Writing data is only allowed on EDT invoked with `Application.invokeLater()`, where the write intent lock is [acquired implicitly](#locks-and-edt).
+Writing data is only allowed on EDT invoked with `Application.invokeLater()`.
 
 Write operations must always be wrapped in a write action with one of the [API](#write-actions-api) methods.
 
@@ -324,7 +324,7 @@ Write operations must always be wrapped in a write action with one of the [API](
 
 <tab title="Earlier versions" group-key="oldThreading">
 
-Writing data is only allowed on EDT, where the write intent lock is [acquired implicitly](#locks-and-edt).
+Writing data is only allowed on EDT.
 
 Write operations must always be wrapped in a write action with one of the [API](#write-actions-api) methods.
 
@@ -475,15 +475,14 @@ Read the [](background_processes.md) section for more details.
 >
 {style="warning"}
 
-To run a cancellable read action, depending on the context, use one of the available APIs:
+To run a cancellable read action, use one of the available APIs:
 
-[//]: # (TODO: is it true NBRA can be called from EDT only?)
-- On EDT, call [`ReadAction.nonBlocking()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) which returns [`NonBlockingReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/NonBlockingReadAction.java) (NBRA). NBRA handles restarting the action out-of-the-box.
-- On BGT, use [`ProgressManager.runInReadActionWithWriteActionPriority()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java) in a loop, until it passes or the whole operation becomes obsolete.
+- [`ReadAction.nonBlocking()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) which returns [`NonBlockingReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/NonBlockingReadAction.java) (NBRA). NBRA handles restarting the action out-of-the-box.
+- [`ReadAction.computeCancellable()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) which computes the result immediately in the current thread or throws an exception if there is a running or requested write action.
 
-Under the hood, the [Background Processes](background_processes.md) API is used in both approaches.
-The long operation is started with a `ProgressIndicator`, and a dedicated listener cancels that indicator when a write action is initiated.
-The next time the read action code calls `checkCanceled()`, a `ProcessCanceledException` is thrown, and the thread should stop its operation (and finish the read action) as soon as possible.
+In both cases, when a read action is started and a write action occurs in the meantime, the read action is marked as canceled.
+Read actions must [check for cancellation](background_processes.md#handling-cancellation) often enough to trigger actual cancellation.
+Although the cancellation mechanism may differ under the hood (Progress API or Kotlin Coroutines), the cancellation handling rules are the same in both cases.
 
 Always check at the start of each read action if the [objects are still valid](#objects-validity), and if the whole operation still makes sense.
 With `ReadAction.nonBlocking()`, use `expireWith()` or `expireWhen()` for that.

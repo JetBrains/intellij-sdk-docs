@@ -13,7 +13,38 @@ Plugin projects for GoLand can be developed using IntelliJ IDEA with the [](tool
 
 <include from="snippets.md" element-id="jetbrainsProductOpenSourceLicense"/>
 
-## Configuring Plugin Projects Targeting GoLand
+## GoLand Plugin Setup
+
+### Gradle Build Script
+
+#### IntelliJ Platform Gradle Plugin (2.x)
+
+Define a dependency using [`goland()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md), see _Versions_ link on top of this page for all available versions.
+See [](tools_intellij_platform_gradle_plugin.md#dependenciesLocalPlatform) for using a local installation.
+
+A dependency on the bundled `org.jetbrains.plugins.go` plugin must be added using the [`bundledPlugin()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) helper.
+
+Minimum <path>build.gradle.kts</path> setup:
+
+```kotlin
+repositories {
+  mavenCentral()
+  intellijPlatform {
+    defaultRepositories()
+  }
+}
+
+dependencies {
+  intellijPlatform {
+    goland("<versionNumber>")
+    bundledPlugin("org.jetbrains.plugins.go")
+  }
+}
+```
+
+#### Gradle IntelliJ Plugin (1.x)
+
+{collapsible="true" default-state="collapsed"}
 
 <tabs>
 
@@ -77,18 +108,20 @@ Select a [version](https://plugins.jetbrains.com/plugin/9568-go/versions) of the
 
 </tabs>
 
-### Plugin and Module Dependencies
+### plugin.xml
 
 Depending on plugin's requirements, the following [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) entries are needed in the <path>plugin.xml</path> file:
+
 * `com.intellij.modules.platform` - Always required. See [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml) for details.
 * `org.jetbrains.plugins.go` - Required if the Go plugin APIs are used in the plugin.
 * `com.intellij.modules.goland` (2020.2+) or `com.intellij.modules.go` (pre-2020.2) - Required if the plugin targets GoLand IDE only. The plugin will not be loaded in other IDEs, even if the Go plugin is present.
 
 ### Targeting IDEs Other Than GoLand
 
-Depending on the `com.intellij.modules.goland` allows a plugin to be installed in the GoLand IDE only.
+Depending on `com.intellij.modules.goland` allows a plugin to be installed in the GoLand IDE only.
 However, the Go plugin can be installed in [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/) and potentially other IDEs.
 To make the plugin compatible with GoLand and other IDEs supporting the Go language consider depending on:
+
 * `org.jetbrains.plugins.go` - The plugin will be loaded only when the Go plugin is actually installed in the running IDE.
 * `com.intellij.modules.go-capable` - The plugin will be loaded in IDEs that are capable of installing the Go plugin.
   Note that the Go plugin doesn't have to be actually installed when this module is present.
@@ -109,5 +142,6 @@ Please see [this issue](https://github.com/JetBrains/gradle-intellij-plugin/issu
 ## Open Source Plugins for GoLand
 
 When learning new APIs, it is helpful to have some representative projects for reference:
+
 * [Go Method Generator](https://github.com/pkondratev/Intellij-go-method-generator)
 * [Go Builder Generator](https://github.com/OddCN/go-builder-generator-idea-plugin)

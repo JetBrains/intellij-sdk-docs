@@ -13,11 +13,43 @@ Plugin projects for CLion can be developed using IntelliJ IDEA with the [](tools
 
 <include from="snippets.md" element-id="jetbrainsProductOpenSourceLicense"/>
 
-## Configuring Plugin Projects Targeting CLion
+## CLion Plugin Setup
 
 > When targeting 2020.3, see this [migration guide](https://blog.jetbrains.com/clion/2020/12/migration-guide-for-plugins-2020-3/).
 >
 {style="warning"}
+
+### Gradle Build Script
+
+<tabs>
+<tab title="IntelliJ Platform Gradle Plugin (2.x)">
+
+Define a dependency using [`clion()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md), see _Versions_ link on top of this page for all available versions.
+See [](tools_intellij_platform_gradle_plugin.md#dependenciesLocalPlatform) for using a local installation.
+
+A dependency on the bundled `com.intellij.clion` plugin must be added using the [`bundledPlugin()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) helper.
+
+Minimum <path>build.gradle.kts</path> setup:
+
+```kotlin
+repositories {
+  mavenCentral()
+  intellijPlatform {
+    defaultRepositories()
+  }
+}
+
+dependencies {
+  intellijPlatform {
+    clion("<versionNumber>")
+    bundledPlugin("com.intellij.clion")
+  }
+}
+```
+
+</tab>
+
+<tab title="Gradle IntelliJ Plugin (1.x)">
 
 The configuration of CLion plugin projects follows the methods described in [Configuring Plugin Projects using a Product-Specific Attribute](dev_alternate_products.md#configuring-plugin-projects-using-a-product-specific-attribute), and [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml).
 
@@ -32,8 +64,14 @@ Click on an entry in the table's *Attribute* column to go to the documentation a
 | [`intellij.downloadSources`](tools_gradle_intellij_plugin.md#intellij-extension-downloadsources) | `false` is required because no public source code is available.                |
 | [`runIde.ideDir`](tools_gradle_intellij_plugin.md#tasks-runide-idedir)                           | Not needed; the Development Instance will automatically match `intellij.type`. |
 
+</tab>
+</tabs>
+
+### plugin.xml
+
 The dependency on the CLion APIs must be declared in the <path>[plugin.xml](plugin_configuration_file.md)</path> file.
-As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) tags must declare `com.intellij.modules.clion` module dependency, or `com.intellij.clion` plugin dependency for plugins targeting only versions 2020.3+.
+As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) tags must declare `com.intellij.modules.clion` module dependency,
+or `com.intellij.clion` plugin dependency when targeting only versions 2020.3+.
 
 ## Available CLion APIs
 
@@ -45,6 +83,8 @@ Use the [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as
 Test your plugin with versions of CLion you intend to support.
 
 ## Open Source Plugins for CLion
+
 When learning new APIs, it is helpful to have some representative projects for reference:
+
 * [C/C++ Coverage](https://github.com/zero9178/C-Cpp-Coverage-for-CLion)
 * [C/C++ Single File Execution](https://github.com/corochann/SingleFileExecutionPlugin)

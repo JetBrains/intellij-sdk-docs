@@ -165,7 +165,7 @@ org.jetbrains.intellij.platform.selfUpdateCheck=false
 ```
 
 
-### `shimServerPort`
+## `shimServerPort`
 {#shimServerPort}
 
 Specifies the default Shim server port at which the local webserver is run.
@@ -182,7 +182,7 @@ org.jetbrains.intellij.platform.shimServerPort=7348
 ```
 
 
-### `useCacheRedirector`
+## `useCacheRedirector`
 {#useCacheRedirector}
 
 By default, JetBrains Cache Redirector is used when resolving Maven repositories or any resources used by the IntelliJ Platform Gradle Plugin.

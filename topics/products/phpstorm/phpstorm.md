@@ -14,6 +14,7 @@ This page describes configuring plugin projects targeting PhpStorm.
 <include from="snippets.md" element-id="jetbrainsProductOpenSourceLicense"/>
 
 See also:
+
 * [](plugin_alternatives.md#phpstorm-advanced-metadata)
 * [](php_open_api.md)
 * [](existing_plugins.md)
@@ -21,8 +22,38 @@ See also:
 > Please join the dedicated [intellij-php](https://jetbrains-platform.slack.com/archives/C5P9YB0LT/p1653913208725609) Slack channel to discuss PHP related plugin development.
 >
 
-## Configuring Plugin Projects Targeting PhpStorm
+## PhpStorm Plugin Setup
 
+### Gradle Build Script
+
+#### IntelliJ Platform Gradle Plugin (2.x)
+
+Define a dependency using [`phpstorm()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md), see _Versions_ link on top of this page for all available versions.
+See [](tools_intellij_platform_gradle_plugin.md#dependenciesLocalPlatform) for using a local installation.
+
+A dependency on the bundled `com.jetbrains.php` plugin must be added using the [`bundledPlugin()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) helper.
+
+Minimum <path>build.gradle.kts</path> setup:
+
+```kotlin
+repositories {
+  mavenCentral()
+  intellijPlatform {
+    defaultRepositories()
+  }
+}
+
+dependencies {
+  intellijPlatform {
+    phpstorm("<versionNumber>")
+    bundledPlugin("com.jetbrains.php")
+  }
+}
+```
+
+#### Gradle IntelliJ Plugin (1.x)
+
+{collapsible="true" default-state="collapsed"}
 
 <tabs>
 
@@ -36,10 +67,10 @@ Only the versions of PhpStorm 2022.2 and newer are supported.
 The table below summarizes the Gradle IntelliJ Plugin attributes to set in the plugin project's Gradle build script.
 Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
 
-| `gradle-intellij-plugin` Attribute                                               | Attribute Value                                                                |
-|----------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
-| [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type)       | `PS` for PhpStorm.                                                             |
-| [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) | Set to the targeted `PS` version (only versions 2022.2+ are supported).        |
+| `gradle-intellij-plugin` Attribute                                               | Attribute Value                                                         |
+|----------------------------------------------------------------------------------|-------------------------------------------------------------------------|
+| [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type)       | `PS` for PhpStorm.                                                      |
+| [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) | Set to the targeted `PS` version (only versions 2022.2+ are supported). |
 
 </tab>
 
@@ -70,5 +101,7 @@ Select a [version](https://plugins.jetbrains.com/plugin/6610-php/versions) of th
 </tab>
 
 </tabs>
+
+### plugin.xml
 
 The dependency on the PHP plugin APIs (`com.jetbrains.php`) must be declared in the <path>[plugin.xml](plugin_configuration_file.md)</path> file, as shown in the tutorial [Configuring plugin.xml](dev_alternate_products.md#configuring-pluginxml) section.

@@ -2,6 +2,8 @@
 
 # IntelliJ IDEA Ultimate
 
+<primary-label ref="IntelliJIDEA_Ultimate"/>
+
 <link-summary>The IntelliJ IDEA Ultimate section overview.</link-summary>
 
 <var name="productID" value="idea"/>

@@ -98,12 +98,6 @@ This option respects the [](tools_intellij_platform_gradle_plugin_gradle_propert
 
 <tabs>
 
-<tab title="Earlier versions">
-
-No additional IDE settings are required.
-
-</tab>
-
 <tab title="2023.3+">
 
 In <ui-path>Settings | Advanced Settings</ui-path> enable option <control>Download sources</control> in section <ui-path>Build Tools. Gradle</ui-path>.
@@ -115,6 +109,12 @@ Then invoke <control>Reload All Gradle Projects</control> action from the <contr
 
 In <ui-path>Settings | Build, Execution, Deployment | Build Tools | Gradle</ui-path> enable <control>Download sources for dependencies</control>.
 Then invoke the <control>Reload All Gradle Projects</control> action from the <control>Gradle</control> tool window.
+
+</tab>
+
+<tab title="Earlier versions">
+
+No additional IDE settings are required.
 
 </tab>
 

@@ -167,3 +167,30 @@ To report progress, use the following methods:
 - `setIndeterminate(boolean)` – marks the progress indeterminate (for processes that can't estimate the amount of work to be done) or determinate (for processes that can display the fraction of the work done using `setFraction(double)`).
 
 <include from="snippets.md" element-id="missingContent"/>
+
+## `ProcessCanceledException` and Debugging
+
+Sometimes, a PCE is thrown from `checkCanceled()` in the code inspected by a plugin developer during a debugging session.
+If the developer tries to step over a line and this line throws PCE (potentially from a deep call frame), the next place where the debugger stops is a catch/finally block intercepting the exception.
+This greatly breaks the developer's workflow as the analysis must be started over.
+This situation can be avoided by enabling an action available in the [internal mode](enabling_internal.md):
+
+<tabs>
+<tab title="2023.2+">
+
+<ui-path>Tools | Internal Actions | Skip Window Deactivation Events</ui-path>
+
+Action disabling window deactivation events.
+This helps avoid PCEs thrown as a result of deactivating the IDE development instance window.
+For example, when the IDE window is deactivated, it closes the completion popup, which, in turn, cancels the completion process.
+
+</tab>
+
+<tab title="Earlier Versions">
+
+<ui-path>Tools | Internal Actions | Disable ProcessCanceledException</ui-path>
+
+Action disabling throwing `ProcessCanceledException`.
+
+</tab>
+</tabs>

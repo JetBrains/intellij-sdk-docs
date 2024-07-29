@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # IntelliJ IDEA Ultimate
 
@@ -12,6 +12,10 @@ IntelliJ IDEA Ultimate comes with a number of additional features and bundled pl
 <include from="idea.md" element-id="idea_editions"/>
 
 <include from="snippets.md" element-id="jetbrainsProductOpenSourceLicense"/>
+
+## IntelliJ IDEA Plugin Setup
+
+See [](idea.md#ideaPluginSetup).
 
 ## Bundled Open Source Plugins API
 

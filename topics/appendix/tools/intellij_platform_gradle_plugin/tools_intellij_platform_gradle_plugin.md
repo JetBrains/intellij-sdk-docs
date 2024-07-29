@@ -14,7 +14,7 @@
 
 </tldr>
 
-The _IntelliJ Platform Gradle Plugin 2.x_ is a plugin for the Gradle build system to help configure environments for building, testing, verifying, and publishing plugins for IntelliJ-based IDEs.
+The _IntelliJ Platform Gradle Plugin 2.x_ is a [Gradle](https://docs.gradle.org/current/userguide/userguide.html) plugin for building, testing, verifying,configure environments, and publishing IntelliJ-based IDEs plugins.
 It is a successor of _[](tools_gradle_intellij_plugin.md)_.
 
 <snippet id="faq">
@@ -27,7 +27,8 @@ It is a successor of _[](tools_gradle_intellij_plugin.md)_.
 
 ## Requirements
 
-IntelliJ Platform Gradle Plugin 2.x requires the following minimal versions:
+IntelliJ Platform Gradle Plugin 2.x requires the following **minimal versions**:
+
 - IntelliJ Platform: **2022.3**
 - Gradle: **8.2**
 
@@ -42,19 +43,28 @@ IntelliJ Platform Gradle Plugin 2.x requires the following minimal versions:
 >
 {style="note"}
 
-To apply the IntelliJ Platform Gradle Plugin to a project, add the following entry to the `plugins` block in the <path>build.gradle.kts</path> file:
+To apply the IntelliJ Platform Gradle Plugin to a project, you need to add the following:
 
-```kotlin
-plugins {
-  id("org.jetbrains.intellij.platform") version "%intellij-platform-gradle-plugin-version%"
-}
-```
+1. Add the `gradlePluginPortal` repository to the <path>settings.gradle.kts</path> file:
+   <code-block lang="kotlin" >pluginManagement {
+   repositories {
+   gradlePluginPortal()
+   }
+   }
+   </code-block>
+2. Add the `plugins` block in the <path>build.gradle.kts</path> file:
+   <code-block lang="kotlin" >plugins {
+   id("org.jetbrains.intellij.platform") version "%intellij-platform-gradle-plugin-version%"
+   }
+   </code-block>
 
+<tip>
 If migrating from the Gradle IntelliJ Plugin 1.x, replace the old `org.jetbrains.intellij` identifier to `org.jetbrains.intellij.platform` and apply its latest `%intellij-platform-gradle-plugin-version%` version.
+</tip>
 
 ### Snapshot Release
 
-To use the latest snapshot versions, add the following to the <path>settings.gradle.kts</path> file:
+To use the latest snapshot versions of this plugin, add the following to the <path>settings.gradle.kts</path> file:
 
 ```kotlin
 pluginManagement {
@@ -72,16 +82,14 @@ pluginManagement {
 >
 > To update all dependencies in the dependency cache, use the `--refresh-dependencies` command line option.
 
-
 ### Plugins
 
-The IntelliJ Platform Gradle Plugin consists of [plugins](tools_intellij_platform_gradle_plugin_plugins.md) which can be applied depending on the purpose.
-By default, the [](tools_intellij_platform_gradle_plugin_plugins.md#platform) plugin (`org.jetbrains.intellij.platform`) should be applied to the main plugin project module.
+The IntelliJ Platform Gradle Plugin consists of other [Gradle Plugins](tools_intellij_platform_gradle_plugin_plugins.md) which can be applied depending on the use case you want to fulfill.
+By default,and in the majority of cases, the [](tools_intellij_platform_gradle_plugin_plugins.md#platform) plugin (`org.jetbrains.intellij.platform`) should be applied to the main plugin project module.
 
-When working with the [](#multi-module-project-structure) it is required to use [](tools_intellij_platform_gradle_plugin_plugins.md#module) plugin (`org.jetbrains.intellij.platform.module`) instead to creating tasks and configurations specific to the main module only.
+When working in a [](#multi-module-project-structure) it is required to use [](tools_intellij_platform_gradle_plugin_plugins.md#module) plugin (`org.jetbrains.intellij.platform.module`) instead of creating tasks and configurations specific to the main module only.
 
 The [](tools_intellij_platform_gradle_plugin_plugins.md#settings) plugin (`org.jetbrains.intellij.platform.settings`) allows for adding plugin development related repositories right in the <path>settings.gradle.kts</path> file if project configuration involves [](#configuration.dependencyResolutionManagement).
-
 
 ### Attaching Sources
 
@@ -89,6 +97,12 @@ To attach IntelliJ Platform sources in the IDE, the <control>Download sources</c
 This option respects the [](tools_intellij_platform_gradle_plugin_gradle_properties.md#downloadSources) property, which is enabled by default.
 
 <tabs>
+
+<tab title="Earlier versions">
+
+No additional IDE settings are required.
+
+</tab>
 
 <tab title="2023.3+">
 
@@ -104,17 +118,11 @@ Then invoke the <control>Reload All Gradle Projects</control> action from the <c
 
 </tab>
 
-<tab title="Earlier versions">
-
-No additional IDE settings are required.
-
-</tab>
-
 </tabs>
 
-The attaching sources is handed by the Plugin DevKit plugin thus it's recommended to use always the latest available IDE release.
+The attaching sources operation in the IDE is handled by the Plugin DevKit plugin thus it's always recommended to use the latest available IDE release.
 
-If the opened compiled class has no sources available locally, the Plugin DevKit plugin will detect the relevant source coordinates and provide an action to <control>Download IntelliJ Platform sources</control> or <control>Attach \$API_NAME\$ sources</control>.
+If the opened compiled class has no sources available locally, the DevKit Plugin will detect the relevant source coordinates and provide an action to <control>Download IntelliJ Platform sources</control> or <control>Attach \$API_NAME\$ sources</control>.
 
 ## Configuration
 
@@ -123,6 +131,7 @@ If the opened compiled class has no sources available locally, the Plugin DevKit
 {title="Exploring Configuration Options"}
 
 ### Setting Up Repositories
+
 {#configuration.repositories}
 
 All IntelliJ Platform SDK artifacts are available via IntelliJ Maven repositories (see [](intellij_artifacts.md)), which exist in three variants:
@@ -148,9 +157,10 @@ repositories {
 }
 ```
 
-See [](tools_intellij_platform_gradle_plugin_repositories_extension.md) on how to configure additional repositories.
+See [](tools_intellij_platform_gradle_plugin_repositories_extension.md) to learn more on how to configure additional repositories.
 
 #### Dependency Resolution Management
+
 {#configuration.dependencyResolutionManagement}
 
 To access the IntelliJ Platform Gradle Plugin within the <path>settings.gradle.kts</path> to use with `dependencyResolutionManagement`, add:
@@ -176,6 +186,7 @@ dependencyResolutionManagement {
 ```
 
 #### Cache Redirector
+
 {#configuration.cacheRedirector}
 
 Some repositories, by default, point to JetBrains Cache Redirector to provide better resource resolution.
@@ -206,7 +217,7 @@ dependencies {
 ```
 
 The `intellijIdeaCommunity` in the previous sample is one of the extension functions available for adding IntelliJ Platform dependencies to the project.
-See [](tools_intellij_platform_gradle_plugin_dependencies_extension.md) on how to target other IDEs.
+See [](tools_intellij_platform_gradle_plugin_dependencies_extension.md) to learn more on how to target other IDEs.
 
 > When declaring a dependency on IntelliJ Platform, the IDE installer is resolved by default.
 > IDE installers are OS-specific and contain [](tools_intellij_platform_gradle_plugin_jetbrains_runtime.md) bundled, but have no EAP releases available.
@@ -220,6 +231,7 @@ See [](tools_intellij_platform_gradle_plugin_dependencies_extension.md) on how t
 {style="note"}
 
 #### Parametrize IntelliJ Platform Dependency
+
 {#dependenciesParametrizePlatform}
 
 As a fallback, `intellijPlatform` extension can be used to allow dynamic configuration of the target platform, for example, via <path>gradle.properties</path>:
@@ -257,6 +269,7 @@ dependencies {
 ```
 
 #### Local IntelliJ Platform IDE Instance
+
 {#dependenciesLocalPlatform}
 
 It is possible to refer to the locally available IntelliJ-based IDE using the `local` helper function:
@@ -303,11 +316,10 @@ dependencies {
 
 <include from="tools_intellij_platform_gradle_plugin_repositories_extension.md" element-id="localPlatformArtifacts_required"/>
 
-
 ### Multi-Module Project Structure
 
 When working on a complex plugin, it is often convenient to split the code base into multiple submodules.
-To avoid pluting submodules with tasks or configurations specific to the root module only, that is, responsible for signing, publishing, or running the plugin, a dedicated subplugin was introduced.
+To avoid unnecessary submodules configuration with tasks or configurations that should be specific to the root module only, that is, responsible for signing, publishing, or running the plugin, a dedicated sub-plugin was introduced.
 
 The root module of the IntelliJ-based plugin project is supposed to apply the main [](tools_intellij_platform_gradle_plugin_plugins.md#platform) plugin as follows:
 
@@ -317,7 +329,7 @@ plugins {
 }
 ```
 
-Any other included submodule should utilize the [](tools_intellij_platform_gradle_plugin_plugins.md#module) instead:
+Any other included submodule should use instead the [](tools_intellij_platform_gradle_plugin_plugins.md#module):
 
 ```kotlin
 plugins {

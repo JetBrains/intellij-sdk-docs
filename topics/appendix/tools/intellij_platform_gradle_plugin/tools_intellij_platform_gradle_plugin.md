@@ -307,9 +307,10 @@ dependencies {
 ### Multi-Module Project Structure
 
 When working on a complex plugin, it is often convenient to split the code base into multiple submodules.
-To avoid pluting submodules with tasks or configurations specific to the root module only, that is, responsible for signing, publishing, or running the plugin, a dedicated subplugin was introduced.
+To avoid polluting submodules with tasks or configurations specific to the root module only (e.g., tasks for signing, publishing, or running the plugin),
+a dedicated subplugin was introduced.
 
-The root module of the IntelliJ-based plugin project is supposed to apply the main [](tools_intellij_platform_gradle_plugin_plugins.md#platform) plugin as follows:
+The root module of the IntelliJ-based plugin project must apply the main [](tools_intellij_platform_gradle_plugin_plugins.md#platform) plugin as follows:
 
 ```kotlin
 plugins {
@@ -317,7 +318,7 @@ plugins {
 }
 ```
 
-Any other included submodule should utilize the [](tools_intellij_platform_gradle_plugin_plugins.md#module) instead:
+Any other included submodule must use the [](tools_intellij_platform_gradle_plugin_plugins.md#module) plugin instead:
 
 ```kotlin
 plugins {

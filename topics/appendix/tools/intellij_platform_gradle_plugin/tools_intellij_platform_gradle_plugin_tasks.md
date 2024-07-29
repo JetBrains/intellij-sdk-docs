@@ -1953,7 +1953,11 @@ Default value
 
 </tldr>
 
-Runs the IntelliJ Plugin Verifier CLI tool to check the binary compatibility with specified IDE builds.
+Runs the [IntelliJ Plugin Verifier](verifying_plugin_compatibility.md) CLI tool to check the binary compatibility with specified IDE builds.
+
+Due to caching, the latest Plugin Verifier release version might not be picked up by Gradle immediately.
+In such cases, [refresh dependencies](https://docs.gradle.org/current/userguide/dependency_management.html#sec:refreshing-dependencies)
+manually.
 
 See also:
 - [Extension: `intellijPlatform.verifyPlugin`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin)

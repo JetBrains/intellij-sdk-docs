@@ -857,7 +857,7 @@ Default value
 
 **Depends on**: `jar`, [`instrumentedJar`](#instrumentedJar)
 
-**Extends**: [`Sync`][gradle-jar-task], [`SandboxProducerAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxProducerAware)
+**Extends**: [`Sync`][gradle-jar-task], [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware), [`SplitModeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitModeAware)
 
 **Sources**: [`PrepareSandboxTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PrepareSandboxTask.kt)
 
@@ -990,7 +990,7 @@ Prepares an immutable [`test`](#test) task and provides all necessary dependenci
 
 **Depends on**: `jar`, [`instrumentedJar`](#instrumentedJar)
 
-**Extends**: [`Sync`][gradle-jar-task], [`SandboxProducerAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxProducerAware)
+**Extends**: [`Sync`][gradle-jar-task], [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware), [`SplitModeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitModeAware)
 
 **Sources**: [`PrepareSandboxTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PrepareSandboxTask.kt)
 

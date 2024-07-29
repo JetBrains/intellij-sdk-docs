@@ -23,6 +23,8 @@ val retrievePluginName by tasks.registering(RetrievePluginNameTask::class) {
 }
 ```
 
+
+
 ## `AutoReloadAware`
 {#AutoReloadAware}
 
@@ -35,6 +37,7 @@ val retrievePluginName by tasks.registering(RetrievePluginNameTask::class) {
 </tldr>
 
 Provides the possibility to auto-reload plugin when run in the IDE.
+
 
 ### `autoReload`
 {#AutoReloadAware-autoReload}
@@ -52,6 +55,7 @@ Default value
 : [`intellijPlatform.autoReload`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-autoReload)
 
 
+
 ## `CoroutinesJavaAgentAware`
 {#CoroutinesJavaAgentAware}
 
@@ -66,6 +70,7 @@ Default value
 </tldr>
 
 Provides the path to the Java Agent file for the Coroutines library required to enable coroutines debugging.
+
 
 ### `coroutinesJavaAgentFile`
 {#CoroutinesJavaAgentAware-coroutinesJavaAgentFile}
@@ -92,11 +97,12 @@ Default value
 
 </tldr>
 
-Provides tasks a possibility for accessing information about the IntelliJ Platform currently used in the project.
+Provides a task with the possibility of accessing information about the IntelliJ Platform currently used in the project.
 
 The [`intelliJPlatformConfiguration`](#IntelliJPlatformVersionAware-intelliJPlatformConfiguration) input property receives a dependency added to the `intellijPlatform` configuration, which eventually is resolved and lets to access the IntelliJ Platform details such as [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) or the path to the IntelliJ Platform directory.
 
 It is required to have a dependency on the IntelliJ Platform added to the project with helpers available in [](tools_intellij_platform_gradle_plugin_dependencies_extension.md).
+
 
 
 ### `intelliJPlatformConfiguration`
@@ -122,6 +128,7 @@ Access
 
 Type
 : `Path`
+
 
 ### `productInfo`
 {#IntelliJPlatformVersionAware-productInfo}
@@ -150,6 +157,7 @@ Throws
 : `IllegalArgumentException`
 
 
+
 ## `JavaCompilerAware`
 {#JavaCompilerAware}
 
@@ -172,6 +180,114 @@ Holds the `intellijPlatformJavaCompiler` configuration with the Java Compiler de
 {style="narrow"}
 Type
 : `ConfigurableFileCollection`
+
+
+
+## `KotlinMetadataAware`
+{#KotlinMetadataAware}
+
+<tldr>
+
+**Inherited by**: [`generateManifest`](tools_intellij_platform_gradle_plugin_tasks.md#generateManifest), [`verifyPluginProjectConfiguration`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginProjectConfiguration)
+
+**Sources**: [`KotlinMetadataAware`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/KotlinMetadataAware.kt)
+
+</tldr>
+
+An interface that provides access to Kotlin-specific metadata for a Gradle project.
+The task that inherits from this interface is automatically marked as dependent on the `compileKotlin` task.
+
+
+### `kotlinPluginAvailable`
+{#KotlinMetadataAware-kotlinPluginAvailable}
+
+Indicates that the Kotlin Gradle Plugin is loaded and available.
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: `false`
+
+
+### `kotlinxCoroutinesLibraryPresent`
+{#KotlinMetadataAware-kotlinxCoroutinesLibraryPresent}
+
+This variable represents whether the Kotlin Coroutines library is added explicitly to the project dependencies.
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: `false`
+
+
+### `kotlinApiVersion`
+{#KotlinMetadataAware-kotlinApiVersion}
+
+The `apiVersion` property value of `compileKotlin.kotlinOptions` defined in the build script.
+
+{style="narrow"}
+Type
+: `Property<String?>`
+
+Default value
+: `null`
+
+
+### `kotlinLanguageVersion`
+{#KotlinMetadataAware-kotlinLanguageVersion}
+
+The `languageVersion` property value of `compileKotlin.kotlinOptions` defined in the build script.
+
+{style="narrow"}
+Type
+: `Property<String?>`
+
+Default value
+: `null`
+
+
+### `kotlinVersion`
+{#KotlinMetadataAware-kotlinVersion}
+
+The version of Kotlin used in the project.
+
+{style="narrow"}
+Type
+: `Property<String?>`
+
+Default value
+: `null`
+
+
+### `kotlinJvmTarget`
+{#KotlinMetadataAware-kotlinJvmTarget}
+
+The `jvmTarget` property value of `compileKotlin.kotlinOptions` defined in the build script.
+
+{style="narrow"}
+Type
+: `Property<String?>`
+
+Default value
+: `null`
+
+
+### `kotlinStdlibDefaultDependency`
+{#KotlinMetadataAware-kotlinStdlibDefaultDependency}
+
+`kotlin.stdlib.default.dependency` property value defined in the `gradle.properties` file.
+
+{style="narrow"}
+Type
+: `Property<Boolean?>`
+
+Default value
+: `null`
+
 
 
 ## `PluginAware`
@@ -224,6 +340,7 @@ val retrievePluginName by tasks.registering(RetrievePluginNameTask::class) {
 ```
 
 
+
 ## `PluginVerifierAware`
 {#PluginVerifierAware}
 
@@ -250,6 +367,7 @@ Type
 : `RegularFileProperty`
 
 
+
 ## `RunnableIdeAware`
 {#RunnableIdeAware}
 
@@ -270,6 +388,7 @@ Inherits from:
 - [`RuntimeAware`](#RuntimeAware)
 - [`SandboxAware`](#SandboxAware)
 - `JavaForkOptions`
+
 
 
 ## `RuntimeAware`
@@ -326,6 +445,7 @@ Type
 : `Property<String>`
 
 
+
 ## `SandboxAware`
 {#SandboxAware}
 
@@ -333,7 +453,7 @@ Type
 
 **Depends on**: [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox)
 
-**Inherited by**: [`RunnableIdeAware`](#RunnableIdeAware), [`SandboxProducerAware`](#SandboxProducerAware), [`jarSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#jarSearchableOptions), [`verifyPluginStructure`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginStructure)
+**Inherited by**: [`RunnableIdeAware`](#RunnableIdeAware), [`TestableAware`](tools_intellij_platform_gradle_plugin_task_awares.md#TestableAware)
 
 **Sources**: [`SandboxAware`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SandboxAware.kt)
 
@@ -406,20 +526,11 @@ Type
 : `DirectoryProperty`
 
 
-## `SandboxProducerAware`
-{#SandboxProducerAware}
+### `applySandboxFrom(TaskProvider)`
+{#SandboxAware-applySandboxFrom}
 
-<tldr>
+The helper method used for applying sandbox configuration from the sandbox producer (such as [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox) or [`prepareTestSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTestSandbox) tasks) to sandbox consumers.
 
-**Depends on**: [`SandboxAware`](#SandboxAware)
-
-**Inherited by**: [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox)
-
-**Sources**: [`SandboxProducerAware`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SandboxProducerAware.kt)
-
-</tldr>
-
-Allows distinguishing between the [`SandboxAware`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SandboxAware.kt) consumers and producers.
 
 
 ## `SigningAware`
@@ -491,6 +602,7 @@ Type
 
 Default value
 : [`intellijPlatform.splitModeTarget`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-splitModeTarget)
+
 
 
 ## `TestableAware`

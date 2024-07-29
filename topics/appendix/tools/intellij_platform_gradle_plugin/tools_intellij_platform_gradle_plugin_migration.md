@@ -193,7 +193,7 @@ val runIdeForUiTests by intellijPlatformTesting.runIde.registering {
 
 The task for running the IntelliJ Plugin Verifier is now called [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin).
 
-Use [`intellijPlatform.verifyPlugin`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin) extension to configure it.
+Use [`intellijPlatform.pluginVerification`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification) extension to configure it.
 
 ### `setupDependencies`
 

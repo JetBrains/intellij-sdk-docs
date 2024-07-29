@@ -129,21 +129,22 @@ See [Migrating from Gradle IntelliJ Plugin](tools_intellij_platform_gradle_plugi
 
 See the [](bundling_plugin_openapi_sources.md) section for details.
 
-### How to mute specific problems in `verifyPlugin`?
+### How to mute specific problems in `pluginVerification`?
 
-To mute specific problems (for example, use of specific forbidden words in plugin name) use [`freeArgs`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-freeArgs)
-parameter to pass a comma-separated list of problem IDs to be muted.
+To mute specific problems (for example, use of specific forbidden words in the plugin name), use the [`freeArgs`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-freeArgs) parameter to pass a comma-separated list of problem IDs to be muted.
 
 See the list of [available options](https://github.com/JetBrains/intellij-plugin-verifier/?tab=readme-ov-file#specific-options).
 
 ```kotlin
- verifyPlugin {
-        // ...
-        freeArgs = listOf(
-            "-mute",
-            "TemplateWordInPluginId,ForbiddenPluginIdPrefix"
-        )
-    }
+intellijPlatform {
+  pluginVerification {
+    // ...
+    freeArgs = listOf(
+      "-mute",
+      "TemplateWordInPluginId,ForbiddenPluginIdPrefix"
+    )
+  }
+}
 ```
 
 

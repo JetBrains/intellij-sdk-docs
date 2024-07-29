@@ -33,7 +33,7 @@ intellijPlatform {
   signing {
     // ...
   }
-  verifyPlugin {
+  pluginVerification {
     // ...
   }
 }
@@ -908,7 +908,7 @@ See also:
 
 
 ## Verify Plugin
-{#intellijPlatform-verifyPlugin}
+{#intellijPlatform-pluginVerification}
 
 IntelliJ Plugin Verifier CLI tool configuration.
 
@@ -920,7 +920,7 @@ Requires the [](tools_intellij_platform_gradle_plugin_plugins.md#platform) plugi
 intellijPlatform {
   // ...
 
-  verifyPlugin {
+  pluginVerification {
     cliPath = file("/path/to/plugin-verifier-cli.jar")
     freeArgs = listOf("foo", "bar")
     homeDirectory = file("/path/to/pluginVerifierHomeDirectory/")
@@ -944,12 +944,12 @@ See also:
 - [](verifying_plugin_compatibility.md)
 - [Tasks: `verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin)
 - [Task Awares: `PluginVerifierAware`](tools_intellij_platform_gradle_plugin_task_awares.md#PluginVerifierAware)
-- [](#intellijPlatform-verifyPlugin-ides)
+- [](#intellijPlatform-pluginVerification-ides)
 - [IntelliJ Plugin Verifier CLI](https://github.com/JetBrains/intellij-plugin-verifier)
 
 
 ### `cliPath`
-{#intellijPlatform-verifyPlugin-cliPath}
+{#intellijPlatform-pluginVerification-cliPath}
 
 A path to the local IntelliJ Plugin Verifier CLI tool to be used.
 
@@ -962,7 +962,7 @@ See also:
 
 
 ### `downloadDirectory`
-{#intellijPlatform-verifyPlugin-downloadDirectory}
+{#intellijPlatform-pluginVerification-downloadDirectory}
 
 The path to the directory where IDEs used for the verification will be downloaded.
 
@@ -971,11 +971,11 @@ Type
 : `DirectoryProperty`
 
 Default value
-: <path>[`homeDirectory`](#intellijPlatform-verifyPlugin-homeDirectory)/ides</path>
+: <path>[`homeDirectory`](#intellijPlatform-pluginVerification-homeDirectory)/ides</path>
 
 
 ### `failureLevel`
-{#intellijPlatform-verifyPlugin-failureLevel}
+{#intellijPlatform-pluginVerification-failureLevel}
 
 Defines the verification level at which the task should fail if any reported issue matches.
 
@@ -991,7 +991,7 @@ See also:
 
 
 ### `externalPrefixes`
-{#intellijPlatform-verifyPlugin-externalPrefixes}
+{#intellijPlatform-pluginVerification-externalPrefixes}
 
 The list of class prefixes from the external libraries.
 The Plugin Verifier will not report `No such class` for classes of these packages.
@@ -1005,7 +1005,7 @@ See also:
 
 
 ### `freeArgs`
-{#intellijPlatform-verifyPlugin-freeArgs}
+{#intellijPlatform-pluginVerification-freeArgs}
 
 The list of free arguments is passed directly to the IntelliJ Plugin Verifier CLI tool.
 
@@ -1020,7 +1020,7 @@ See also:
 
 
 ### `homeDirectory`
-{#intellijPlatform-verifyPlugin-homeDirectory}
+{#intellijPlatform-pluginVerification-homeDirectory}
 
 Retrieve the Plugin Verifier home directory used for storing downloaded IDEs.
 Following home directory resolving method is taken directly from the Plugin Verifier to keep the compatibility.
@@ -1037,7 +1037,7 @@ Default value
 
 
 ### `ignoredProblemsFile`
-{#intellijPlatform-verifyPlugin-ignoredProblemsFile}
+{#intellijPlatform-pluginVerification-ignoredProblemsFile}
 
 A file that contains a list of problems that will be ignored in a report.
 
@@ -1050,7 +1050,7 @@ See also:
 
 
 ### `subsystemsToCheck`
-{#intellijPlatform-verifyPlugin-subsystemsToCheck}
+{#intellijPlatform-pluginVerification-subsystemsToCheck}
 
 Which subsystems of the IDE should be checked.
 
@@ -1066,7 +1066,7 @@ See also:
 
 
 ### `teamCityOutputFormat`
-{#intellijPlatform-verifyPlugin-teamCityOutputFormat}
+{#intellijPlatform-pluginVerification-teamCityOutputFormat}
 
 A flag that controls the output format.
 If set to `true`, the [TeamCity](https://www.jetbrains.com/teamcity/) compatible output will be returned to stdout.
@@ -1083,7 +1083,7 @@ See also:
 
 
 ### `verificationReportsDirectory`
-{#intellijPlatform-verifyPlugin-verificationReportsDirectory}
+{#intellijPlatform-pluginVerification-verificationReportsDirectory}
 
 The path to the directory where verification reports will be saved.
 
@@ -1099,7 +1099,7 @@ See also:
 
 
 ### `verificationReportsFormats`
-{#intellijPlatform-verifyPlugin-verificationReportsFormats}
+{#intellijPlatform-pluginVerification-verificationReportsFormats}
 
 The output formats of the verification reports.
 
@@ -1115,7 +1115,7 @@ See also:
 
 
 ## Verify Plugin IDEs
-{#intellijPlatform-verifyPlugin-ides}
+{#intellijPlatform-pluginVerification-ides}
 
 The extension to define the IDEs to be used along with the IntelliJ Plugin Verifier CLI tool for the binary plugin verification.
 
@@ -1129,7 +1129,7 @@ import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
 intellijPlatform {
   // ...
 
-  verifyPlugin {
+  pluginVerification {
     // ...
 
     ides {

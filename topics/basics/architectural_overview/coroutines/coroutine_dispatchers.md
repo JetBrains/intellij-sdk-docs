@@ -58,7 +58,7 @@ suspend fun readDataFromFile(): Data {
 ## EDT Dispatcher
 
 The [`Dispatchers.EDT`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt) dispatcher is used for executing UI actions on the Swing Event Dispatch Thread.
-`Dispatchers.EDT` dispatches onto EDT within the context [modality state](general_threading_rules.md#modality-and-invokelater).
+`Dispatchers.EDT` dispatches onto EDT within the context [modality state](general_threading_rules.md#invoking-operations-on-edt-and-modality).
 
 ### `Dispatchers.Main` vs. `Dispatchers.EDT`
 

@@ -66,7 +66,7 @@ Messages.showInfoMessage(roots.toString(), "Library Info");
 
 ### Creating a Library
 To create a library, perform the following steps:
-  * Get a [write action](general_threading_rules.md#read-write-lock)
+  * Get a [write action](general_threading_rules.md#write-actions)
   * Obtain the library table to which you want to add the library. Use one of the following, depending on the library level:
       * `LibraryTablesRegistrar.getInstance().getLibraryTable()`
       * `LibraryTablesRegistrar.getInstance().getLibraryTable(Project)`
@@ -80,13 +80,13 @@ You can find an example of using these APIs in the [project_model](%gh-sdk-sampl
 
 ### Adding Contents or Modifying a Library
 To add or change the roots of a library, you need to perform the following steps:
-  * Get a [write action](general_threading_rules.md#read-write-lock)
+  * Get a [write action](general_threading_rules.md#write-actions)
   * Get a **modifiable model** for the library, using `Library.getModifiableModel()`
   * Use methods such as `Library.ModifiableModel.addRoot()` to perform the necessary changes
   * Commit the model using `Library.ModifiableModel.commit()`.
 
 ### Adding a Library Dependency to a Module
-Use `ModuleRootModificationUtil.addDependency(Module, Library)` from under a [write action](general_threading_rules.md#read-write-lock).
+Use `ModuleRootModificationUtil.addDependency(Module, Library)` from under a [write action](general_threading_rules.md#write-actions).
 
 ### Checking Belonging to a Library
 The [`ProjectFileIndex`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) interface implements a number of methods you can use to check whether the specified file belongs to the project library classes or library sources.

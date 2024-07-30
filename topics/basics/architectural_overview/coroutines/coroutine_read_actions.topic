@@ -16,7 +16,7 @@
     the Threading section:
   </p>
   <list>
-    <li><a href="general_threading_rules.md#read-write-lock">Read-Write Lock</a></li>
+    <li><a href="general_threading_rules.md#readers-writer-lock">Read-Write Lock</a></li>
     <li><a href="general_threading_rules.md#read-action-cancellability">Read Action Cancellability</a></li>
   </list>
 

@@ -109,7 +109,7 @@ See [SDK](sdk.md) for more details.
 
 Utility classes used for modifying the project structure can be found in the package [`projectModel-impl.openapi`](%gh-ic%/platform/projectModel-impl/src/com/intellij/openapi).
 Its [`roots`](%gh-ic%/platform/projectModel-impl/src/com/intellij/openapi/roots) subpackage contains instances and utilities intended for work with project and module source roots, including [`ModuleRootModificationUtil`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootModificationUtil.java) and [`ProjectRootUtil`](%gh-ic%/platform/projectModel-impl/src/com/intellij/openapi/projectRoots/impl/ProjectRootUtil.java).
-Project structure changes need to be performed in [write action](general_threading_rules.md#read-write-lock).
+Project structure changes need to be performed in [write action](general_threading_rules.md#write-actions).
 
 Refer to the [project_model](%gh-sdk-samples-master%/project_model/src/main/java/org/intellij/sdk/project/model/ModificationAction.java) code sample to learn how project structure modification can be implemented.
 

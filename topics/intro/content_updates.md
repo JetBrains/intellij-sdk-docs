@@ -12,6 +12,13 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2024
 
+### July
+{july-24}
+
+Threading Model
+:
+Revamp the [Threading Model](general_threading_rules.md) page (formerly _General Threading Rules_) and add a new page describing [background processes](background_processes.md), including cancellation and progress tracking.
+
 ### June
 {june-24}
 

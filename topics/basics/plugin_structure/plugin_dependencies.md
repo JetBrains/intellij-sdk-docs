@@ -105,11 +105,22 @@ Depending on the chosen development workflow (Gradle or DevKit), one of the foll
 
 #### IntelliJ Platform Gradle Plugin (2.x)
 
-**Bundled Plugin**: Use `bundledPlugin()`
+{collapsible="true" default-state="expanded"}
 
-**Non-Bundled Plugin**: Use `plugin()`
+Define dependencies on plugins using the provided helper functions in the `dependencies {}` block of the <path>build.gradle.kts</path> file:
 
-See [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) for full reference.
+```kotlin
+dependencies {
+  intellijPlatform {
+    bundledPlugin("<pluginId>")
+    plugin("<nonBundledPluginId>:<version>")
+  }
+}
+```
+
+For bundled plugins, use `bundledPlugin()`. Use `plugin()` for non-bundled plugins (for example, from [JetBrains Marketplace](https://plugins.jetbrains.com)).
+
+See [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) for full reference and additional options.
 
 #### Gradle IntelliJ Plugin (1.x)
 

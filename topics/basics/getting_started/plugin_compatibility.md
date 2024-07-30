@@ -209,8 +209,11 @@ Exploring the available packages and classes in a plugin or module utilizes feat
 If the project is not up-to-date, [reimport the Gradle project](https://www.jetbrains.com/help/idea/work-with-gradle-projects.html#gradle_refresh_project) as a first step.
 Reimporting the project will automatically update the dependencies.
 
-In the Project Window, select Project View and scroll to the bottom to see [External Libraries](https://www.jetbrains.com/help/idea/project-tool-window.html#content_pane).
-Look for the library `Gradle:unzipped.com.jetbrains.plugins:foo:`, where "foo" matches, or is similar to the contents of the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) tags in <path>plugin.xml</path> or the [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) declaration in the Gradle build script.
+In the <control>Project</control> tool window, select <control>Project</control> View and scroll to the bottom to see [External Libraries](https://www.jetbrains.com/help/idea/project-tool-window.html#content_pane).
+Look for the library `Gradle:unzipped.com.jetbrains.plugins:foo:`, where "foo" matches, or is similar to the contents of the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends)
+tags in <path>plugin.xml</path> or the plugin dependency declarations in the Gradle build script
+(2.x: [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins), 1.x: [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins)).
+
 The image below shows the External Libraries for the example plugin project configuration explained in [Configuring Gradle build script](dev_alternate_products.md#configuring-gradle-build-script-using-the-intellij-idea-product-attribute) and [Configuring plugin.xml](dev_alternate_products.md#configuring-pluginxml).
 
 ![Example PhpStorm Project Libraries](php_prj_libs.png){width="700"}

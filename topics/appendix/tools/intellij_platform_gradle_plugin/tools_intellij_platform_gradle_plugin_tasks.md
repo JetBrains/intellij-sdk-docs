@@ -44,9 +44,7 @@ where the name and location of [`archiveFile`](#buildPlugin-archiveFile) can be 
 [`Zip`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Zip.html) base task.
 By default, the `archiveBaseName` is set to the plugin name specified in the <path>plugin.xml</path> file, after it gets patched with the [`patchPluginXml`](#patchPluginXml) task.
 
-> Do not repackage libraries into the main plugin archive, see [](plugin_content.md#plugin-with-dependencies).
->
-{style="warning"}
+<include from="plugin_content.md" element-id="doNotRepackageLibraries"/>
 
 
 ### `archiveFile`

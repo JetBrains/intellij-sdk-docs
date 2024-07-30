@@ -6,6 +6,8 @@
 
 When a plugin is ready, it can be published to the [JetBrains Marketplace](https://plugins.jetbrains.com) plugin repository so that other users can install it in their IDE.
 
+> When publishing a plugin to a repository _other than_ the [JetBrains Marketplace](https://plugins.jetbrains.com), refer to the [](custom_plugin_repository.md) documentation.
+
 The first plugin publication must always be [uploaded manually](#uploading-a-plugin-to-jetbrains-marketplace).
 
 <procedure title="Before Publishing Checklist">
@@ -21,12 +23,7 @@ See also [](marketing.md) about widgets and badges.
 
 </procedure>
 
-> When publishing a plugin to a repository _other than_ the [JetBrains Marketplace](https://plugins.jetbrains.com), refer to the [](custom_plugin_repository.md) documentation.
-
-> If a plugin ships with [additional libraries](plugin_content.md#plugin-with-dependencies), do not repackage them into the main plugin archive.
-> Otherwise, [Plugin Verifier](verifying_plugin_compatibility.md) will yield false positives for unresolved classes and methods.
->
-{style="warning"}
+<include from="plugin_content.md" element-id="doNotRepackageLibraries"/>
 
 ## Uploading a Plugin to JetBrains Marketplace
 

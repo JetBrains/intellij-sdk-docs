@@ -52,10 +52,14 @@ The plugin <path>.jar</path> file is placed in the <path>/lib</path> folder unde
 
 All JARs from the <path>/lib</path> folder are automatically added to the classpath (see also [Plugin Class Loaders](plugin_class_loaders.md)).
 
-> Do not repackage libraries into the main plugin archive (<path>sample.jar</path> in the sample below).
+<snippet id="doNotRepackageLibraries">
+
+> Do not repackage libraries into the main plugin JAR file.
 > Otherwise, [Plugin Verifier](verifying_plugin_compatibility.md) will yield false positives for unresolved classes and methods.
 >
 {title="Do Not Repackage Libraries" style="warning"}
+
+</snippet>
 
 ```plantuml
 @startuml

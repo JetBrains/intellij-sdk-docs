@@ -9,7 +9,7 @@
 <include from="snippets.md" element-id="jetbrainsIDE_TLDR"/>
 
 [WebStorm](https://www.jetbrains.com/webstorm/) is an IntelliJ Platform-based product.
-Plugin projects for WebStorm can be developed using IntelliJ IDEA with the [](tools_gradle_intellij_plugin.md).
+Plugin projects for WebStorm can be developed using [IntelliJ IDEA](idea.md).
 
 > Follow [Building a Plugin for WebStorm – Tutorial for JavaScript Developers](learning_resources.md#articles) blog post series to get started
 > and [How To Build a Plugin for JetBrains IDEs (Analog.js Example)](learning_resources.md#webinars) webinar.

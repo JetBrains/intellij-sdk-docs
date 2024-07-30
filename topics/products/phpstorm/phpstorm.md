@@ -9,7 +9,7 @@
 <include from="snippets.md" element-id="jetbrainsIDE_TLDR"/>
 
 [PhpStorm](https://www.jetbrains.com/phpstorm/) is an IntelliJ Platform-based product.
-This page describes configuring plugin projects targeting PhpStorm.
+Plugin projects targeting PhpStorm can be developed using [IntelliJ IDEA](idea.md).
 
 <include from="snippets.md" element-id="jetbrainsProductOpenSourceLicense"/>
 

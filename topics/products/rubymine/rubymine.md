@@ -9,7 +9,7 @@
 <include from="snippets.md" element-id="jetbrainsIDE_TLDR"/>
 
 [RubyMine](https://www.jetbrains.com/ruby/) is an IntelliJ Platform-based product.
-Plugin projects for RubyMine can be developed using IntelliJ IDEA with the [](tools_gradle_intellij_plugin.md).
+Plugin projects for RubyMine can be developed using [IntelliJ IDEA](idea.md).
 
 <include from="snippets.md" element-id="jetbrainsProductOpenSourceLicense"/>
 

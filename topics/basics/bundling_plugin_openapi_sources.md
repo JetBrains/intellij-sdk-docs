@@ -1,17 +1,14 @@
-# Bundling Plugin API Sources
-
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Bundling Plugin API Sources
 
 <link-summary>Exposing plugin's API sources for other plugins.</link-summary>
 
 If a plugin exposes its own API that is meant to be used by other plugins, it is worth considering bundling the plugin's API sources in the ZIP distribution.
-
-If a third-party plugin uses [](tools_gradle_intellij_plugin.md) and adds a dependency to the plugin which bundles sources in the ZIP distribution, sources will be automatically attached to the plugin library and visible in IDE when developers navigate to the API classes.
 Being able to see API sources drastically improves the development experience, and it is highly recommended to bundle them.
 
-> Attaching bundled plugin sources in IDE is available starting with Gradle IntelliJ Plugin 1.7.0.
->
-{style="note"}
+If a third-party plugin uses [](tools_intellij_platform_gradle_plugin.md) or [](tools_gradle_intellij_plugin.md) (1.7.0+) and adds a dependency to a plugin bundling sources in the ZIP distribution,
+sources will be automatically attached to the plugin library and visible in IDE when developers navigate to the API classes.
 
 ## API Sources Location
 

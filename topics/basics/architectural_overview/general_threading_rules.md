@@ -193,7 +193,7 @@ Read and write actions allow executing a piece of code under a lock, automatical
   ```
   Note that this API is obsolete since 2024.1.
   Plugins implemented in Kotlin and targeting versions 2024.1+ should use suspending [`readAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt).
-  See also [](coroutine_read_actions.md).
+  See also [](coroutine_read_actions.topic).
 
 #### Rules
 {#read-actions-rules}
@@ -471,7 +471,7 @@ Read the [](background_processes.md) section for more details.
 
 ### Cancellable Read Actions API
 
-> Plugins targeting versions 2024.1+ should use Write Allowing Read Actions available in the [Kotlin Coroutines Read Actions API](coroutine_read_actions.md#coroutine-read-actions-api).
+> Plugins targeting versions 2024.1+ should use Write Allowing Read Actions available in the [Kotlin Coroutines Read Actions API](coroutine_read_actions.topic#coroutine-read-actions-api).
 >
 {style="warning"}
 

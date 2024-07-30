@@ -2026,7 +2026,7 @@ Default value
 Represents a list of free arguments that are passed directly to the IntelliJ Plugin Verifier CLI tool.
 These arguments are used in conjunction with those provided by dedicated options.
 
-See [](tools_intellij_platform_gradle_plugin_faq.md#how-to-mute-specific-problems-in-pluginVerification) for sample usage.
+See [](tools_intellij_platform_gradle_plugin_faq.md#mutePluginVerifierProblems) for sample usage.
 
 {style="narrow"}
 Type

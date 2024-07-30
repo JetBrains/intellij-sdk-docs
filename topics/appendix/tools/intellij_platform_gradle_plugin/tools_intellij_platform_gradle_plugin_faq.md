@@ -4,7 +4,6 @@
 
 <link-summary>FAQ for using IntelliJ Platform Gradle Plugin</link-summary>
 
-
 ### How to modify system properties of the `runIde` task?
 
 Using the [very same task documentation](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html), configure [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde) task:
@@ -19,12 +18,10 @@ tasks {
 }
 ```
 
-
 ### Task `runIdeForUiTests` not found
 
 The [`runIdeForUiTests`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeForUiTests) is no longer registered by default.
 Follow the task documentation for more details.
-
 
 ### Missing `opentest4j` dependency in Test Framework
 
@@ -88,20 +85,18 @@ tasks {
 }
 ```
 
-
 ### How to disable building the searchable options?
 
 Building the searchable options can be disabled using [`intellijPlatform.buildSearchableOptions`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-instrumentCode):
 
 ```kotlin
 intellijPlatform {
-  buildSearchableOptions  = false
+  buildSearchableOptions = false
 }
 ```
 
 As a result of disabling building searchable options, the [Settings](settings.md) that your plugin provides won't be searchable in the <ui-path>Settings</ui-path> dialog.
 Disabling of the task is suggested for plugins that are not intended to provide custom settings.
-
 
 ### Gradle fails with `The request for this plugin could not be satisfied`
 
@@ -111,12 +106,10 @@ Gradle may fail with the following exception if the IntelliJ Platform Gradle Plu
 
 If you apply the plugin in the <path>settings.gradle.kts</path> file, the version needs to be omitted when applying it in other <path>build.gradle.kts</path> files.
 
-
 ### How to show the log file of a sandbox instance?
 
 The most convenient way to see the logs of a running IDE is to add a tab to the <control>Run</control> tool window displaying the contents of <path>idea.log</path> file.
 In the Gradle `runIde` run configuration, add the log file path according to [sandbox location](ide_development_instance.md#the-development-instance-sandbox-directory) as described in [View logs](https://www.jetbrains.com/help/idea/setting-log-options.html).
-
 
 ### Task `setupDependencies` not found in root project 'projectName'
 
@@ -124,12 +117,13 @@ This exception is thrown when there's no `setupDependencies` task present in the
 
 See [Migrating from Gradle IntelliJ Plugin](tools_intellij_platform_gradle_plugin_migration.md#setupdependencies) for more details.
 
-
 ### How to expose my plugin API sources to dependent plugins?
 
 See the [](bundling_plugin_openapi_sources.md) section for details.
 
 ### How to mute specific problems in `pluginVerification`?
+
+{id="mutePluginVerifierProblems"}
 
 To mute specific problems (for example, use of specific forbidden words in the plugin name), use the [`freeArgs`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-freeArgs) parameter to pass a comma-separated list of problem IDs to be muted.
 
@@ -146,7 +140,6 @@ intellijPlatform {
   }
 }
 ```
-
 
 ### JaCoCo Reports 0% Coverage
 

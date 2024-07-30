@@ -482,7 +482,7 @@ To run a cancellable read action, use one of the available APIs:
 
 In both cases, when a read action is started and a write action occurs in the meantime, the read action is marked as canceled.
 Read actions must [check for cancellation](background_processes.md#handling-cancellation) often enough to trigger actual cancellation.
-Although the cancellation mechanism may differ under the hood (Progress API or Kotlin Coroutines), the cancellation handling rules are the same in both cases.
+Although the cancellation mechanism may differ under the hood ([Progress API](background_processes.md#progress-api) or [Kotlin Coroutines](kotlin_coroutines.md)), the cancellation handling rules are the same in both cases.
 
 Always check at the start of each read action if the [objects are still valid](#objects-validity), and if the whole operation still makes sense.
 With `ReadAction.nonBlocking()`, use `expireWith()` or `expireWhen()` for that.

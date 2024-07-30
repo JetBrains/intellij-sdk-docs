@@ -85,7 +85,7 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 <snippet id="gradlePluginVersion">
 
-> Gradle plugin must be chosen depending on the target platform version.
+> The Gradle plugin must be chosen depending on the target [platform version](build_number_ranges.md#platformVersions).
 >
 > 2024.2+
 > : **Requires** [](tools_intellij_platform_gradle_plugin.md)

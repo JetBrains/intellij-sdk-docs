@@ -86,12 +86,12 @@ For detailed instructions, please refer to the [Kotlin documentation](https://ko
 
 Adding Kotlin source files compilation support to the Gradle-based project requires adding and configuring the [Kotlin JVM Gradle plugin](https://kotlinlang.org/docs/gradle.html#targeting-the-jvm).
 
-See the <path>build.gradle.kts</path> from [kotlin_demo](%gh-sdk-samples-master%/kotlin_demo) sample plugin:
+See the <path>build.gradle.kts</path> from [kotlin_demo](%gh-sdk-samples-master%/kotlin_demo) sample plugin using [](tools_gradle_intellij_plugin.md):
 
 ```kotlin
 ```
 
-{src="kotlin_demo/build.gradle.kts" include-lines="2-"}
+{src="kotlin_demo/build.gradle.kts" include-lines="2-" default-state="collapsed" collapsible="true" collapsed-title="build.gradle.kts"}
 
 ### Kotlin Standard Library (stdlib)
 {id="kotlin-standard-library"}

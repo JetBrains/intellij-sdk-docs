@@ -44,7 +44,7 @@ To upload a plugin to the [JetBrains Marketplace](https://plugins.jetbrains.com)
 
 <procedure title="Uploading plugin">
 
-To upload a plugin to JetBrains Marketplace:
+To upload a plugin to [JetBrains Marketplace](https://plugins.jetbrains.com):
 
 1. [Log in to JetBrains Marketplace](https://plugins.jetbrains.com/author/me) with your personal JetBrains account.
 2. On the Profile page that opens, click <control>Add new plugin</control>.
@@ -57,6 +57,7 @@ See also [Marketplace Docs](https://plugins.jetbrains.com/docs/marketplace/uploa
 ### Uploading a New Version
 
 New versions can be uploaded manually on the plugin's detail page, see [Marketplace Docs](https://plugins.jetbrains.com/docs/marketplace/plugin-updates.html) for details.
+See [](#deploying-a-plugin-with-gradle) on how to publish new versions using Gradle.
 
 ## Publishing Plugin With Gradle
 
@@ -64,7 +65,7 @@ Once [Gradle support](configuring_plugin_project.md) has been configured, and th
 
 ### Building Distribution
 
-For initial upload, manual distribution or local installation, invoke the [`buildPlugin`](tools_gradle_intellij_plugin.md#tasks-buildplugin) Gradle task to create the plugin distribution.
+For initial upload, manual distribution, or local installation, invoke the [`buildPlugin`](tools_gradle_intellij_plugin.md#tasks-buildplugin) Gradle task to create the plugin distribution.
 If the project is configured to rely on [](plugin_signing.md), use the [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) task instead.
 
 The resulting ZIP file is located in <path>build/distributions</path> and can then be installed via [<ui-path>Install Plugin from Disk...</ui-path>](https://www.jetbrains.com/help/idea/managing-plugins.html#install_plugin_from_disk) action
@@ -72,7 +73,7 @@ or uploaded to a [](custom_plugin_repository.md).
 
 ### Providing Your Personal Access Token to Gradle
 
-To deploy a plugin to the JetBrains Marketplace, supply the Personal Access Token which can be found on your profile page in [My Tokens](https://plugins.jetbrains.com/author/me/tokens) section.
+To deploy a plugin to the JetBrains Marketplace, supply the Personal Access Token, which can be found on your profile page in the [My Tokens](https://plugins.jetbrains.com/author/me/tokens) section.
 
 To create a new token, provide its name and click the <control>Generate Token</control> button.
 A new token will be created and displayed right below.

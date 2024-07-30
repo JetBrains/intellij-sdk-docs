@@ -142,6 +142,11 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.intellij.httpClient.http.request.HttpRequestPsiConverter.toRequestConfig(HttpRequest)` method visibility changed from `public` to `private`
 : This method is an implementation detail.
 
+### Dependency Analysis Plugin 2024.2
+
+`com.jetbrains.dependencyAnalysis` package removed
+: The package `com.jetbrains.dependencyAnalysis` has been removed. Please update your code to use the new package `com.jetbrains.dependencyAnalysis.core` instead.
+
 ## 2024.1
 
 ### IntelliJ Platform 2024.1

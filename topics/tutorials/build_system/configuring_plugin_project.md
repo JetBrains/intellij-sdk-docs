@@ -1,11 +1,18 @@
-# Configuring Gradle IntelliJ Plugin
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Configuring Gradle IntelliJ Plugin
 
 <link-summary>Configuring the essential Gradle IntelliJ Plugin attributes and tasks.</link-summary>
 
 This section presents a guided tour of Gradle plugin attributes to achieve the commonly desired functionality.
-For more advanced options, see the full [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) reference.
+For more advanced options, see the full [](tools_gradle_intellij_plugin.md) reference.
+
+> This page covers [](tools_gradle_intellij_plugin.md) only.
+>
+> See the [](tools_intellij_platform_gradle_plugin.md) reference.
+> A dedicated page for it will be provided later.
+>
+{title="Gradle IntelliJ Plugin (1.x) Only"}
 
 <include from="snippets.md" element-id="gradlePluginVersion"/>
 

@@ -154,13 +154,9 @@ When using APIs from the Android plugin, declare a dependency:
 ```
 
 As discussed in the [Plugin Dependencies](plugin_compatibility.md#declaring-plugin-dependencies) section of this guide, a plugin's dependency on [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) must be declared in <path>[plugin.xml](plugin_configuration_file.md)</path>.
-When using Android Studio-specific features (APIs), a dependency on `com.intellij.modules.androidstudio` must be declared as shown in the code snippet below.
+When using Android Studio-specific features (APIs), a dependency on `com.intellij.modules.androidstudio` must be declared.
 
 Otherwise, if only general IntelliJ Platform features (APIs) are used, then a dependency on `com.intellij.modules.platform` must be declared as discussed in [Plugin Compatibility with IntelliJ Platform Products](plugin_compatibility.md).
-
-```xml
-<depends>com.intellij.modules.androidstudio</depends>
-```
 
 ## Android Specific Extension Points
 

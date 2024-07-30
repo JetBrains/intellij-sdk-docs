@@ -46,6 +46,35 @@ For the full list of Android Studio releases with more details, see [](android_s
 
 ### Gradle Build Script
 
+#### IntelliJ Platform Gradle Plugin (2.x)
+
+Define a dependency using [`androidStudio()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md), see _Versions_ link on top of this page for all available versions.
+See [](tools_intellij_platform_gradle_plugin.md#dependenciesLocalPlatform) for using a local installation.
+
+A dependency on the bundled `org.jetbrains.android` plugin must be added using the [`bundledPlugin()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) helper.
+
+Minimum <path>build.gradle.kts</path> setup:
+
+```kotlin
+repositories {
+  mavenCentral()
+  intellijPlatform {
+    defaultRepositories()
+  }
+}
+
+dependencies {
+  intellijPlatform {
+    webstorm("<versionNumber>")
+    bundledPlugin("org.jetbrains.android")
+  }
+}
+```
+
+#### Gradle IntelliJ Plugin (1.x)
+
+{collapsible="true" default-state="collapsed"}
+
 The use-case of developing for a non-IntelliJ IDEA IDE is reviewed in the [Plugins Targeting Alternate IntelliJ Platform-Based IDEs](dev_alternate_products.md#configuring-gradle-build-script-to-target-products-other-than-intellij-idea) section.
 The particular example in that section discusses configuring a plugin project for PhpStorm, so the details for an Android Studio plugin project are reviewed here.
 

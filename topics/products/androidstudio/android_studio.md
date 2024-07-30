@@ -39,10 +39,7 @@ The [](#gradle-build-script) section below explains how to set the IntelliJ Plat
 
 ### Android Studio Releases Listing
 
-Below, you may find a list of recent Android Studio releases mapped to the relevant IntelliJ IDEA versions.
 For the full list of Android Studio releases with more details, see [](android_studio_releases_list.md).
-
-<include from="android_studio_releases.md" element-id="releases_table_short"/>
 
 ### Gradle Build Script
 

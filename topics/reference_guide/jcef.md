@@ -102,7 +102,7 @@ myPanel.add(browser.getComponent());
 #### Loading Documents
 
 To load a document in the browser, use one of [`JBCefBrowserBase.load*()`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefBrowserBase.java) methods.
-Methods loading documents can be called from both EDT and background threads.
+Methods loading documents can be called from both [EDT and background threads](general_threading_rules.md).
 It is possible to set an initial URL (passed to constructor or builder) that will be loaded when browser is created and initialized.
 
 ### Browser Client

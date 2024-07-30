@@ -6,6 +6,17 @@
 
 This documentation page describes a Gradle-based plugin project generated with the [New Project Wizard](https://www.jetbrains.com/help/idea/new-project-wizard.html), but the project generated with [](plugin_github_template.md) covers all the described files and directories.
 
+<snippet id="gradle1xOnly">
+
+> This page covers [](tools_gradle_intellij_plugin.md) only.
+>
+> See the [](tools_intellij_platform_gradle_plugin.md) reference.
+> A dedicated page for it will be provided later.
+>
+{title="Gradle IntelliJ Plugin (1.x) Only"}
+
+</snippet>
+
 ## Creating a Plugin with New Project Wizard
 
 <include from="snippets.md" element-id="gradlePluginVersion"/>

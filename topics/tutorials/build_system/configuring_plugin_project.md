@@ -7,12 +7,7 @@
 This section presents a guided tour of Gradle plugin attributes to achieve the commonly desired functionality.
 For more advanced options, see the full [](tools_gradle_intellij_plugin.md) reference.
 
-> This page covers [](tools_gradle_intellij_plugin.md) only.
->
-> See the [](tools_intellij_platform_gradle_plugin.md) reference.
-> A dedicated page for it will be provided later.
->
-{title="Gradle IntelliJ Plugin (1.x) Only"}
+<include from="creating_plugin_project.md" element-id="gradle1xOnly"/>
 
 <include from="snippets.md" element-id="gradlePluginVersion"/>
 

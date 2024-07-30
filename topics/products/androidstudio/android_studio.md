@@ -62,7 +62,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    webstorm("<versionNumber>")
+    androidStudio("<versionNumber>")
     bundledPlugin("org.jetbrains.android")
   }
 }

@@ -101,10 +101,19 @@ If the plugin is not bundled with the target IDE, run the (sandbox) [IDE Develop
 
 ## 2. Project Setup
 
-Depending on the chosen development workflow (Gradle or DevKit), one of the two following steps is necessary.
+Depending on the chosen development workflow (Gradle or DevKit), one of the following steps is necessary.
 
-<tabs>
-<tab title="Gradle">
+#### IntelliJ Platform Gradle Plugin (2.x)
+
+**Bundled Plugin**: Use `bundledPlugin()`
+
+**Non-Bundled Plugin**: Use `plugin()`
+
+See [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) for full reference.
+
+#### Gradle IntelliJ Plugin (1.x)
+
+{collapsible="true" default-state="collapsed"}
 
 > Please see the [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) property for acceptable values.
 >
@@ -136,9 +145,10 @@ intellij {
 > Transitive dependencies required for tests must currently be [specified explicitly](https://github.com/JetBrains/gradle-intellij-plugin/issues/38).
 >
 {style="note"}
-</tab>
 
-<tab title="DevKit">
+### Plugin DevKit
+
+{collapsible="true" default-state="collapsed"}
 
 > Existing DevKit-based projects can be [converted to use Gradle setup](migrating_plugin_devkit_to_gradle.md) where dependency management is fully automated.
 >
@@ -162,10 +172,6 @@ Add the JARs of the plugin on which the project depends to the <control>Classpat
      - [plugins directory for versions pre-2020.1](https://www.jetbrains.com/help/idea/2019.3/tuning-the-ide.html#plugins-directory)
 
 </procedure>
-
-</tab>
-
-</tabs>
 
 ## 3. Dependency Declaration in plugin.xml
 

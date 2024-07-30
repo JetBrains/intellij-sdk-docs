@@ -4,7 +4,7 @@
 
 <link-summary>Performance tips on working with PSI.</link-summary>
 
-See also [](general_threading_rules.md#avoiding-ui-freezes) and [](indexing_and_psi_stubs.md#improving-indexing-performance).
+See also [](threading_model.md#avoiding-ui-freezes) and [](indexing_and_psi_stubs.md#improving-indexing-performance).
 
 > [IDE Perf](https://plugins.jetbrains.com/plugin/15104-ide-perf) plugin provides on-the-fly performance diagnostic tools, including a dedicated view for [`CachedValue`](#cache-results-of-heavy-computations) metrics.
 

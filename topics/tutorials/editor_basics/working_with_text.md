@@ -119,7 +119,7 @@ Selection information is measured in terms of [Offset](coordinates_system.md#car
 
 Text replacement could be done by calling the `Document` object's `replaceString()` method.
 However, safely replacing the text requires the `Document` to be locked and any changes performed in a write action.
-See the [Threading Issues](general_threading_rules.md) section to learn more about synchronization issues and changes safety on the IntelliJ Platform.
+See the [Threading Issues](threading_model.md) section to learn more about synchronization issues and changes safety on the IntelliJ Platform.
 This example changes the document within a [`WriteCommandAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/command/WriteCommandAction.java).
 
 The complete `EditorIllustrationAction.actionPerformed()` method is shown below:

@@ -164,7 +164,7 @@ If the above does not show a preview, there could be further problems of the fol
    Example: [`DeleteMultiCatchFix.getFileModifierForPreview()`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/daemon/impl/quickfix/DeleteMultiCatchFix.java)
    Be careful, as there could be subclasses. Better play safe and declare your action/fix class as final.
 3. `invoke()`/`applyFix()` starts a write action. If `startsInWriteAction()` returns `true`, then this is unnecessary, and you can remove the write action.
-4. `invoke()`/`applyFix()` asserts (directly or indirectly) that it is invoked in the dispatch thread or inside a write action (see also [](general_threading_rules.md)).
+4. `invoke()`/`applyFix()` asserts (directly or indirectly) that it is invoked in the dispatch thread or inside a write action (see also [](threading_model.md)).
    The preview is applied in a background thread without a write action as it works on non-physical elements.
    You may consider removing these assertions or keeping them only if the preview is not active (use `IntentionPreviewUtils.isIntentionPreviewActive()`).
 5. `PsiDocumentManager.getDocument(psiFile)` is used which isn't supported for a non-physical `psiFile`.

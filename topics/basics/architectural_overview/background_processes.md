@@ -29,7 +29,7 @@ The key classes are:
 
   There are many `ProgressIndicator` implementations and the most commonly used are:
   - [`EmptyProgressIndicator`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/EmptyProgressIndicator.java) – invisible (ignores text/fraction-related methods), used only for cancellation tracking.
-    Remembers its creation [modality state](general_threading_rules.md#invoking-operations-on-edt-and-modality).
+    Remembers its creation [modality state](threading_model.md#invoking-operations-on-edt-and-modality).
   - [`ProgressIndicatorBase`](%gh-ic%/platform/analysis-impl/src/com/intellij/openapi/progress/util/ProgressIndicatorBase.java) – invisible but can be made visible by subclassing.
     Stores text/fraction and allows retrieving them and possibly show in the UI.
     Non-modal by default.

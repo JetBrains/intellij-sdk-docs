@@ -74,7 +74,7 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 ### IntelliJ Platform 2023.3
 
 Threading Model changes
-: Please see updated [](general_threading_rules.md).
+: Please see updated [](threading_model.md).
 
 Removal of commons-lang2 and commons-collections libraries
 : _commons-lang2_ library is going to be removed, a temporary compatibility layer (marked with `@Deprecated(forRemoval = true)` to highlight usages) is bundled.

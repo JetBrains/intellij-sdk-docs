@@ -16,8 +16,8 @@
     the Threading section:
   </p>
   <list>
-    <li><a href="general_threading_rules.md#readers-writer-lock">Read-Write Lock</a></li>
-    <li><a href="general_threading_rules.md#read-action-cancellability">Read Action Cancellability</a></li>
+    <li><a href="threading_model.md#readers-writer-lock">Read-Write Lock</a></li>
+    <li><a href="threading_model.md#read-action-cancellability">Read Action Cancellability</a></li>
   </list>
 
   <p>This section explains running read actions (RA) in coroutines specifically.</p>
@@ -69,7 +69,7 @@
           <code>Application.runReadAction</code>
         </a>
         and similar methods (without any prefix/suffix) perform RA blocking WA, whereas RA allowing WA are invoked via
-        the <a href="general_threading_rules.md#read-action-cancellability"><code>NonBlockingReadAction</code> API</a>.
+        the <a href="threading_model.md#read-action-cancellability"><code>NonBlockingReadAction</code> API</a>.
       </p>
       <p>Be careful when migrating the code running read actions to coroutines.</p>
     </warning>

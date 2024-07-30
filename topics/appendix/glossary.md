@@ -50,7 +50,7 @@ Document Object Model _(DOM)_
 ## E
 
 Event Dispatch Thread _(EDT)_
-: The [Event Dispatch Thread](https://docs.oracle.com/javase/tutorial/uiswing/concurrency/dispatch.html) handles all Swing events. See also [](general_threading_rules.md) and [](coroutine_dispatchers.md#edt-dispatcher).
+: The [Event Dispatch Thread](https://docs.oracle.com/javase/tutorial/uiswing/concurrency/dispatch.html) handles all Swing events. See also [](threading_model.md) and [](coroutine_dispatchers.md#edt-dispatcher).
 
 Extension Point _(EP)_
 : Most functionality is provided by [Using Extension Points](plugin_extensions.md) provided by the platform or plugins. Plugins can also [define their own](plugin_extension_points.md) to allow extensibility.
@@ -101,7 +101,7 @@ JetBrains Runtime _(JBR)_
 ## N
 
 Non-Blocking Read Action _(NBRA)_
-: A &rarr;&nbsp;_Read Action_ that is canceled by a &rarr;&nbsp;_Write Action_. See also [](general_threading_rules.md#read-action-cancellability).
+: A &rarr;&nbsp;_Read Action_ that is canceled by a &rarr;&nbsp;_Write Action_. See also [](threading_model.md#read-action-cancellability).
 
 ## P
 
@@ -115,7 +115,7 @@ Program Structure Interface _(PSI)_
 ## R
 
 Read Action _(RA)_
-: Allows accessing code-related data structures for reading purposes. See also [](general_threading_rules.md).
+: Allows accessing code-related data structures for reading purposes. See also [](threading_model.md).
 &rarr;&nbsp;_Non-Blocking Read Action_ &rarr;&nbsp;_Write Action_
 
 Run Configuration _(RC)_
@@ -156,7 +156,7 @@ Virtual File System _(VFS)_
 ## W
 
 Write Action _(WA)_
-: Allows accessing code-related data structures for writing purposes. See also [](general_threading_rules.md).
+: Allows accessing code-related data structures for writing purposes. See also [](threading_model.md).
 &rarr;&nbsp;_Read Action_
 
 Write Allowing Read Action _(WARA)_

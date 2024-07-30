@@ -145,7 +145,7 @@ suspend fun doSomething() {
 
 ## Changing Modality State
 
-Avoid [changing modality state](general_threading_rules.md#invoking-operations-on-edt-and-modality) in the middle of a running coroutine:
+Avoid [changing modality state](threading_model.md#invoking-operations-on-edt-and-modality) in the middle of a running coroutine:
 
 ```kotlin
 cs.launch {

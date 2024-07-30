@@ -51,7 +51,7 @@ To reproduce and understand problems in production, use [logging](ide_infrastruc
 
 Even if a plugin works correctly and looks pleasing, poor performance will impact user satisfaction.
 Slow highlighting, code completion, code generation, and other features may break the user's workflow and cause frustration leading to plugin uninstallation.
-Always try to follow the performance tips described on the relevant topic pages, e.g., [](psi_performance.md), [](general_threading_rules.md#avoiding-ui-freezes), [](indexing_and_psi_stubs.md#improving-indexing-performance).
+Always try to follow the performance tips described on the relevant topic pages, e.g., [](psi_performance.md), [](threading_model.md#avoiding-ui-freezes), [](indexing_and_psi_stubs.md#improving-indexing-performance).
 
 Making as much functionality as possible working during [dumb mode](indexing_and_psi_stubs.md#dumb-mode) can also improve perceived performance.
 

@@ -68,7 +68,7 @@ The synchronous flag simply means that the calling thread will be blocked until 
 
 Both synchronous and asynchronous refreshes can be initiated from any thread.
 If a refresh is initiated from a background thread, the calling thread must not hold a read action, because otherwise, a deadlock would occur.
-See [IntelliJ Platform Architectural Overview](general_threading_rules.md) for more details on the threading model and read/write actions.
+See [IntelliJ Platform Architectural Overview](threading_model.md) for more details on the threading model and read/write actions.
 
 The same threading requirements also apply to functions like [`LocalFileSystem.refreshAndFindFileByPath()`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/vfs/LocalFileSystem.java), which perform a partial refresh if the file with the specified path is not found in the snapshot.
 
@@ -78,7 +78,7 @@ If there is some code that needs to be executed after the refresh is complete, t
 * [`RefreshQueue.createSession()`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/vfs/newvfs/RefreshQueue.java)
 * [`VirtualFile.refresh()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java)
 
-In some cases, synchronous refreshes can cause deadlocks, depending on which [locks](general_threading_rules.md#readers-writer-lock) are held by the thread invoking the refresh operation.
+In some cases, synchronous refreshes can cause deadlocks, depending on which [locks](threading_model.md#readers-writer-lock) are held by the thread invoking the refresh operation.
 
 ## Virtual File System Events
 

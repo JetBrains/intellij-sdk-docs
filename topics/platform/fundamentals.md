@@ -8,5 +8,5 @@ This section describes the low-level fundamental building blocks of the IntelliJ
 
 * The component model - how the application is hosted and composed. Lifetime and dependency management.
 * [Disposers](disposers.md) - managing object lifetimes and resource cleanup
-* [Threading models](general_threading_rules.md)
+* [Threading models](threading_model.md)
 * [Messaging](messaging_infrastructure.md)

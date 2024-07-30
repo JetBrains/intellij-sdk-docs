@@ -33,7 +33,7 @@ See also [](#recognizing-complex-multi-block-expressions).
 #### "Heavy" Brace Matching
 <primary-label ref="2022.3"/>
 
-If the brace matching is "too heavy" and should not be executed in [EDT](general_threading_rules.md), implement
+If the brace matching is "too heavy" and should not be executed in [EDT](threading_model.md), implement
 [`HeavyBraceHighlighter`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/highlighting/HeavyBraceHighlighter.java)
 and register in `com.intellij.heavyBracesHighlighter` extension point.
 

@@ -55,7 +55,7 @@ As explained in [Overriding the `AnAction.update()`  Method](#overriding-the-ana
 <primary-label ref="2022.3"/>
 
 `AnAction.getActionUpdateThread()` returns an [`ActionUpdateThread`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionUpdateThread.java),
-which specifies if the `update()` method is called on a [background thread (BGT) or the event-dispatching thread (EDT)](general_threading_rules.md).
+which specifies if the `update()` method is called on a [background thread (BGT) or the event-dispatching thread (EDT)](threading_model.md).
 The preferred method is to run the update on the BGT, which has the advantage of guaranteeing application-wide read access to
 [PSI](psi.md), [the virtual file system](virtual_file_system.md) (VFS), or [project models](project_structure.md).
 Actions that run the update session on the BGT should not access the Swing component hierarchy directly.

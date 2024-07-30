@@ -23,4 +23,4 @@ The following are referenced in the tutorial:
 
 **Related topics:**
 * [](basic_action_system.md)
-* [](general_threading_rules.md)
+* [](threading_model.md)

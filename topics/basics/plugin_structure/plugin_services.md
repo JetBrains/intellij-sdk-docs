@@ -282,7 +282,7 @@ Registration in <path>plugin.xml</path>:
 {style="warning" title="Correct Service Retrieval"}
 
 Getting a service doesn't need a read action and can be performed from any thread.
-If a service is requested from several [threads](general_threading_rules.md), it will be initialized in the first thread, and other threads will be blocked until it is fully initialized.
+If a service is requested from several [threads](threading_model.md), it will be initialized in the first thread, and other threads will be blocked until it is fully initialized.
 
 <tabs group="languages">
 <tab title="Java" group-key="java">

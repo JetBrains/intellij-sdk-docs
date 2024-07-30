@@ -4,7 +4,8 @@
 
 <link-summary>Layout and contents of a plugin distribution file.</link-summary>
 
-Plugin distribution will be built using [Gradle](tools_gradle_intellij_plugin.md#tasks-buildplugin) or [Plugin DevKit](deploying_theme.md).
+Plugin distribution are built using the dedicated Gradle `buildPlugin` task (Reference: [2.x](tools_intellij_platform_gradle_plugin_tasks.md#buildPlugin),
+[1.x](tools_gradle_intellij_plugin.md#tasks-buildplugin)) or [Plugin DevKit](deploying_theme.md).
 
 The plugin distribution <path>.jar</path> file contains:
 

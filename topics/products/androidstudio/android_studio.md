@@ -54,8 +54,8 @@ Here are the steps to configure the Gradle build script for developing a plugin 
 * The Gradle plugin attributes describing the configuration of the [IntelliJ Platform used to build the plugin project](configuring_plugin_project.md#intellij-platform-configuration) must be explicitly set.
   Continuing with the example [above](#matching-versions-of-the-intellij-platform-with-the-android-studio-version), set the [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) value to `191.8026.42`.
   Alternatively, specify [`intellij.localPath`](tools_gradle_intellij_plugin.md#intellij-extension-localpath) to refer to a local installation of Android Studio.
-* Android Studio plugin projects that use APIs from the `android` plugin must declare a dependency on that plugin.
-  Declare the dependency in the Gradle build script using the [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) attribute, which in this case lists the [directory name](tools_gradle_intellij_plugin.md#intellij-extension-pluginname) of the plugin.
+* Android Studio plugin projects that use APIs from the Android plugin must declare a dependency on that plugin with ID `org.jetbrains.android`.
+  Declare the dependency in the Gradle build script using the [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) attribute.
 * The best practice is to use the target version of Android Studio as the IDE Development Instance.
   Set the Development Instance to the (user-specific) absolute path to the target Android Studio application.
 
@@ -74,8 +74,8 @@ intellij {
   // Use IntelliJ IDEA CE because it's the basis of the IntelliJ Platform:
   type.set("IC")
 
-  // Require the Android plugin (Gradle will choose the correct version):
-  plugins.set(listOf("android"))
+  // Require the Android plugin:
+  plugins.set(listOf("org.jetbrains.android"))
 }
 
 tasks {
@@ -100,8 +100,8 @@ intellij {
   // Use IntelliJ IDEA CE because it's the basis of the IntelliJ Platform:
   type = 'IC'
 
-  // Require the Android plugin (Gradle will choose the correct version):
-  plugins = ['android']
+  // Require the Android plugin:
+  plugins = ['org.jetbrains.android']
 }
 
 runIde {

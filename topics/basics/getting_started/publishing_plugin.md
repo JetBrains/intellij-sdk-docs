@@ -17,7 +17,7 @@ Before publishing a plugin, make sure it:
 - follows all recommendations from [](plugin_user_experience.md)
 - follows all requirements from [Plugin Overview page](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html)
 
-The _Busy Plugin Developers. Episode 2_ discusses [5 tips for optimizing JetBrains Marketplace plugin page](https://youtu.be/oB1GA9JeeiY?t=52) in more detail.
+The webinar _Busy Plugin Developers. Episode 2_ discusses [5 tips for optimizing JetBrains Marketplace plugin page](https://youtu.be/oB1GA9JeeiY?t=52) in more detail.
 
 See also [](marketing.md) about widgets and badges.
 
@@ -30,7 +30,7 @@ See also [](marketing.md) about widgets and badges.
 Before publishing a plugin, make sure it is signed.
 For more details on generating a proper certificate and configuring the signing process, check the [Plugin Signing](plugin_signing.md) article.
 
-<procedure title="Creating JetBrains Account">
+<procedure title="Creating a JetBrains Account">
 
 To upload a plugin to the [JetBrains Marketplace](https://plugins.jetbrains.com), log in with your personal JetBrains Account.
 
@@ -58,14 +58,20 @@ See [](#deploying-a-plugin-with-gradle) on how to publish new versions using Gra
 
 ## Publishing Plugin With Gradle
 
-Once [Gradle support](configuring_plugin_project.md) has been configured, and the plugin has been [uploaded](#uploading-a-plugin-to-jetbrains-marketplace) to the plugin repository at least once, it can be built and deployed to the [JetBrains Marketplace](https://plugins.jetbrains.com) automatically.
+Once [Gradle support](configuring_plugin_project.md) has been configured, and the plugin has been [uploaded manually](#uploading-a-plugin-to-jetbrains-marketplace) to the plugin repository at least once,
+it can be built and deployed to the [JetBrains Marketplace](https://plugins.jetbrains.com) automatically using dedicated Gradle tasks.
+
+> **2.x** refers to [](tools_intellij_platform_gradle_plugin.md) and **1.x** to [](tools_gradle_intellij_plugin.md) in the following sections.
+>
 
 ### Building Distribution
 
-For initial upload, manual distribution, or local installation, invoke the [`buildPlugin`](tools_gradle_intellij_plugin.md#tasks-buildplugin) Gradle task to create the plugin distribution.
-If the project is configured to rely on [](plugin_signing.md), use the [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) task instead.
+For the initial upload, manual distribution, or local installation, invoke the `buildPlugin` Gradle task
+(Reference: [2.x](tools_intellij_platform_gradle_plugin_tasks.md#buildPlugin), [1.x](tools_gradle_intellij_plugin.md#tasks-buildplugin)) to create the plugin distribution.
+If the project is configured to rely on [](plugin_signing.md), use the `signPlugin` task instead
+(Reference: [2.x](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin), [1.x](tools_gradle_intellij_plugin.md#tasks-signplugin)).
 
-The resulting ZIP file is located in <path>build/distributions</path> and can then be installed via [<ui-path>Install Plugin from Disk...</ui-path>](https://www.jetbrains.com/help/idea/managing-plugins.html#install_plugin_from_disk) action
+The resulting ZIP file is located in <path>build/distributions</path> and can then be installed in the IDE via [<ui-path>Install Plugin from Disk...</ui-path>](https://www.jetbrains.com/help/idea/managing-plugins.html#install_plugin_from_disk) action
 or uploaded to a [](custom_plugin_repository.md).
 
 ### Providing Your Personal Access Token to Gradle
@@ -89,17 +95,46 @@ This section describes two options to supply the _Personal Access Token_ via Gra
 
 Start by defining an environment variable such as:
 
+<tabs group="gradlePluginVersion">
+
+<tab title="IntelliJ Platform Gradle Plugin (2.x)" group-key="2.x">
+
+```bash
+export ORG_GRADLE_PROJECT_intellijPlatform.publishing.token='YOUR_TOKEN'
+```
+
+</tab>
+
+<tab title="Gradle IntelliJ Plugin (1.x)" group-key="1.x">
+
 ```bash
 export ORG_GRADLE_PROJECT_intellijPublishToken='YOUR_TOKEN'
 ```
 
+</tab>
+</tabs>
+
 > On macOS systems, environment variables set in <path>.bash_profile</path> are only visible to processes run from bash.
 > Environment variables visible to all processes need to be defined in [Environment.plist](https://developer.apple.com/library/archive/qa/qa1067/_index.html).
 >
-{style="note"}
+{style="note" title="macOS Note"}
 
-Now provide the environment variable in the run configuration for running the [`publishPlugin`](tools_gradle_intellij_plugin.md#tasks-publishplugin) task locally.
-To do so, create a Gradle run configuration (if not already done), select the Gradle project, specify the [`publishPlugin`](tools_gradle_intellij_plugin.md#tasks-publishplugin) task, and then add the environment variable.
+Now provide the environment variable in the run configuration for running the `publishPlugin` task locally
+(Reference: [2.x](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin), [1.x](tools_gradle_intellij_plugin.md#tasks-publishplugin)).
+To do so, create a Gradle run configuration (if not already done), select the Gradle project, specify the
+`publishPlugin` task, and then add the environment variable.
+
+#### IntelliJ Platform Gradle Plugin (2.x)
+
+```kotlin
+publishPlugin {
+  token.set(System.getenv("ORG_GRADLE_PROJECT_intellijPlatform.publishing.token"))
+}
+```
+
+#### Gradle IntelliJ Plugin (1.x)
+
+{collapsible="true" default-state="collapsed"}
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -122,19 +157,31 @@ publishPlugin {
 </tab>
 </tabs>
 
-
 Note that it's still required to put some default values (can be empty) in the Gradle properties. Otherwise, there can be a compilation error.
 
 #### Using Parameters for the Gradle Task
 
 Like using environment variables, the token can also be passed as a parameter to the Gradle task.
-For example, provide the parameter
+For example, provide the parameter on the command line or by putting it in the arguments of the Gradle run configuration.
+
+<tabs group="gradlePluginVersion">
+
+<tab title="IntelliJ Platform Gradle Plugin (2.x)" group-key="2.x">
+
+```bash
+-Dorg.gradle.project.intellijPlatform.publishing.token=YOUR_TOKEN
+```
+
+</tab>
+
+<tab title="Gradle IntelliJ Plugin (1.x)" group-key="1.x">
 
 ```bash
 -Dorg.gradle.project.intellijPublishToken=YOUR_TOKEN
 ```
 
-on the command line or by putting it in the arguments of the Gradle run configuration.
+</tab>
+</tabs>
 
 Note that in this case also, it's still required to put some default values (can be empty) in the Gradle properties
 
@@ -146,23 +193,26 @@ Verify this by [installing the plugin from disk](https://www.jetbrains.com/help/
 #### Signing a Plugin
 
 The Marketplace signing is designed to ensure that plugins are not modified over the course of the publishing and delivery pipeline.
-In version `1.x`, the Gradle IntelliJ Plugin provides the [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) task, which will be executed automatically right before the [`publishPlugin`](tools_gradle_intellij_plugin.md#tasks-publishplugin).
+The `signPlugin` Gradle task
+(Reference: [2.x](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin), [1.x](tools_gradle_intellij_plugin.md#tasks-signplugin)),
+will be executed automatically right before the `publishPlugin` task
+(Reference: [2.x](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin), [1.x](tools_gradle_intellij_plugin.md#tasks-publishplugin)).
 
-For more details on generating a proper certificate and configuring the [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) task, check the [Plugin Signing](plugin_signing.md) article.
+For more details on generating a proper certificate and configuring the `signPlugin` task, see [](plugin_signing.md).
 
 #### Publishing a Plugin
 
 Once the plugin works as intended, make sure the plugin version is updated, as the JetBrains Marketplace won't accept multiple artifacts with the same version.
 
-To deploy a new version of the plugin to the JetBrains Marketplace, invoke the [`publishPlugin`](tools_gradle_intellij_plugin.md#tasks-publishplugin) Gradle task.
+To deploy a new version of the plugin to the JetBrains Marketplace, invoke the `publishPlugin` Gradle task.
 
 Now check the most recent version of the plugin on the [JetBrains Marketplace](https://plugins.jetbrains.com/).
 If successfully deployed, any users who currently have this plugin installed on an available version of the IntelliJ Platform are notified of a new update available as soon as the update has been verified.
 
 ### Specifying a Release Channel
 
-It's possible to deploy plugins to a chosen release channel by configuring the [`publishPlugin.channels`](tools_gradle_intellij_plugin.md#tasks-publishplugin-channels) property.
-For example:
+It's possible to deploy plugins to a chosen release channel by configuring the `publishPlugin.channels` property
+(Reference: [2.x](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-channels), [1.x](tools_gradle_intellij_plugin.md#tasks-publishplugin-channels)).
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -190,12 +240,11 @@ However, it's possible to publish it to an arbitrarily named channel.
 These non-default release channels are treated as separate repositories.
 
 When using a non-default release channel, users need to configure a new [custom plugin repository](https://www.jetbrains.com/help/idea/managing-plugins.html#repos) in their IDE to install the plugin.
-For example, when specifying `publishPlugin.channels = ['canary']`, then users will need to add the `https://plugins.jetbrains.com/plugins/canary/list` repository to install the plugin and receive updates.
+
+For example, when specifying `'canary'` as channel name, users will need to add the `https://plugins.jetbrains.com/plugins/canary/list` repository to install the plugin and receive updates.
 
 Popular channel names include:
 
 * `alpha`: https://plugins.jetbrains.com/plugins/alpha/list
 * `beta`: https://plugins.jetbrains.com/plugins/beta/list
 * `eap`: https://plugins.jetbrains.com/plugins/eap/list
-
-More information about the available configuration options is in the [documentation of the IntelliJ Gradle Plugin](tools_gradle_intellij_plugin.md#tasks-publishplugin).

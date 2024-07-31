@@ -12,7 +12,7 @@ which indicates it is _private API_ and must not be used outside of IntelliJ Pla
 > usages in other packages of the declaring library, but it **must not be used outside of that library**. Such elements
 > may be renamed, changed, or removed in future versions.
 >
-{title="`ApiStatus.Internal Javadoc"}
+{title="ApiStatus.Internal Javadoc"}
 
 Such violations are reported from [](verifying_plugin_compatibility.md#plugin-verifier) and are highlighted in the IDE using [dedicated inspection](verifying_plugin_compatibility.md#ide-support).
 

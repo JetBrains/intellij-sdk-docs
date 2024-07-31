@@ -103,7 +103,7 @@ If the plugin is not bundled with the target IDE, run the (sandbox) [IDE Develop
 
 Depending on the chosen development workflow (Gradle or DevKit), one of the following steps is necessary.
 
-#### IntelliJ Platform Gradle Plugin (2.x)
+### IntelliJ Platform Gradle Plugin (2.x)
 
 {collapsible="true" default-state="expanded"}
 
@@ -122,7 +122,7 @@ For bundled plugins, use `bundledPlugin()`. Use `plugin()` for non-bundled plugi
 
 See [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) for full reference and additional options.
 
-#### Gradle IntelliJ Plugin (1.x)
+### Gradle IntelliJ Plugin (1.x)
 
 {collapsible="true" default-state="collapsed"}
 

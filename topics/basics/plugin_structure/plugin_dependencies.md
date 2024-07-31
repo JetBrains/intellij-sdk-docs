@@ -33,6 +33,7 @@ To express a dependency on classes from other plugins or modules, perform the fo
 </procedure>
 
 ## 1. Locating Plugin ID and Preparing Sandbox
+{#locating-plugin-id-and-preparing-sandbox}
 
 A compatible version must be chosen carefully according to the plugin's [compatibility](build_number_ranges.md).
 For non-bundled plugins, it is not possible to specify the minimum/maximum version for the dependent plugin. ([Issue](https://youtrack.jetbrains.com/issue/IDEABKL-7906))
@@ -100,6 +101,7 @@ See also [](intellij_community_plugins_extension_point_list.md) and [](plugin_co
 If the plugin is not bundled with the target IDE, run the (sandbox) [IDE Development Instance](ide_development_instance.md) of your target IDE and install the plugin there.
 
 ## 2. Project Setup
+{#project-setup}
 
 Depending on the chosen development workflow (Gradle or DevKit), one of the following steps is necessary.
 
@@ -185,6 +187,7 @@ Add the JARs of the plugin on which the project depends to the <control>Classpat
 </procedure>
 
 ## 3. Dependency Declaration in plugin.xml
+{#dependency-declaration-in-pluginxml}
 
 Regardless of whether a plugin project uses [](plugin_compatibility.md#modules-available-in-all-products), or [](plugin_compatibility.md#modules-specific-to-functionality), the correct module must be listed as a dependency in <path>plugin.xml</path>.
 If a project depends on another plugin, the dependency must be declared like a [module](plugin_compatibility.md#modules).
@@ -193,7 +196,7 @@ If only general IntelliJ Platform features (APIs) are used, then a default depen
 To display a list of available IntelliJ Platform modules, invoke the [code completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#4eac28ba) feature for the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) element contents while editing the plugin project's <path>plugin.xml</path> file.
 
 In the <path>plugin.xml</path>, add a `<depends>` tag with the dependency plugin's ID as its content.
-Continuing with the example from [Project Setup](#2-project-setup) above, the dependency declaration in <path>plugin.xml</path> would be:
+Continuing with the example from [Project Setup](#project-setup) above, the dependency declaration in <path>plugin.xml</path> would be:
 
 ```xml
 <depends>com.example.another-plugin</depends>

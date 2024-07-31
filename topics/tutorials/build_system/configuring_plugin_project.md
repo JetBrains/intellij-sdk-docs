@@ -56,7 +56,7 @@ The Gradle plugin will fetch any plugins in the list defined by [`intellij.plugi
 See the Gradle plugin [IntelliJ Extension](tools_gradle_intellij_plugin.md#configuration-intellij-extension) for information about specifying the plugin and version.
 
 Note that this attribute describes a dependency so that the Gradle plugin can fetch the required artifacts.
-The runtime dependency must be added in the [Plugin Configuration](plugin_configuration_file.md) (<path>plugin.xml</path>) file as described in [Plugin Dependencies](plugin_dependencies.md#3-dependency-declaration-in-pluginxml).
+The runtime dependency must be added in the [Plugin Configuration](plugin_configuration_file.md) (<path>plugin.xml</path>) file as described in [Plugin Dependencies](plugin_dependencies.md#dependency-declaration-in-pluginxml).
 
 ## Run IDE Task
 

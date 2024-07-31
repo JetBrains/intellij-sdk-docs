@@ -164,7 +164,7 @@ To apply required repositories, use [](tools_intellij_platform_gradle_plugin_rep
 
 ## Plugins
 
-Make sure that required [](tools_intellij_platform_gradle_plugin_repositories_extension.md#plugin-repositories) are defined to access non-bundled plugins.
+Make sure that required [plugin repositories](tools_intellij_platform_gradle_plugin_repositories_extension.md#plugin-repositories) are defined to access non-bundled plugins.
 
 > Use the correct function depending on whether the
 > targeted plugin is _bundled_ with the Target Platform or not.

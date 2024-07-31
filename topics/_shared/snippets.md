@@ -91,7 +91,8 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 > : **Requires** [](tools_intellij_platform_gradle_plugin.md)
 >
 > 2022.3+
-> : **Recommended** [](tools_intellij_platform_gradle_plugin.md),
+> :
+> **Recommended** [](tools_intellij_platform_gradle_plugin.md),<br/>
 > **Requires** [](tools_gradle_intellij_plugin.md) version 1.10.1+ (current: %gradle-intellij-plugin-version%)
 >
 {style="warning" title="Gradle Plugin"}

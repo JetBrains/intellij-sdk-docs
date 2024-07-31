@@ -29,6 +29,7 @@ For the latter two, a separate instance of the service is created for each insta
 {id="moduleServiceNote"}
 
 #### Constructor
+{#ctor}
 
 To improve startup performance, avoid any heavy initializations in the constructor.
 
@@ -59,7 +60,7 @@ The service instance will be created in scope according to the caller (see [](#r
 
 * None of these attributes is required: `os`, `client`, `overrides`, `id`, `preload`.
 * Service class must be `final`.
-* [Constructor injection](#constructor) of dependency services is not supported.
+* [Constructor injection](#ctor) of dependency services is not supported.
 * If application-level service is a [PersistentStateComponent](persisting_state_of_components.md), roaming must be disabled (`roamingType = RoamingType.DISABLED`).
 
 Use these inspections to verify these and highlight services that can be converted (2023.3):

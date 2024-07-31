@@ -77,7 +77,7 @@ and one extension to access the `another.plugin.myExtensionPoint` extension poin
 Please note the following important points:
 
 - Extension implementation must be stateless. Use explicit [](plugin_services.md) for managing (runtime) data.
-- Avoid any initialization in the constructor, see also notes for [Services](plugin_services.md#constructor).
+- Avoid any initialization in the constructor, see also notes for [Services](plugin_services.md#ctor).
 - Do not perform any static initialization. Use inspection <control>Plugin DevKit | Code | Static initialization in extension point implementations</control> (2023.3).
 - An extension implementation must not be registered as [Service](plugin_services.md) additionally. Use inspection <control>Plugin DevKit | Code | Extension registered as service/component</control> (2023.3).
 

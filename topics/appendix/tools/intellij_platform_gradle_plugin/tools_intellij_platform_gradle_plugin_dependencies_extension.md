@@ -133,6 +133,7 @@ Installers are always used when running the [`verifyPlugin`](tools_intellij_plat
 To apply required repositories, use [](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories) or explicit [](tools_intellij_platform_gradle_plugin_repositories_extension.md#intellij-platform-installers) helpers.
 
 ### Multi-OS Archives
+
 {#target-versions-multi-os-archives}
 
 It is still possible to use Multi-OS ZIP archives resolved from [](tools_intellij_platform_gradle_plugin_repositories_extension.md#intellij-maven-repositories).
@@ -166,31 +167,45 @@ To apply required repositories, use [](tools_intellij_platform_gradle_plugin_rep
 
 Make sure that required [plugin repositories](tools_intellij_platform_gradle_plugin_repositories_extension.md#plugin-repositories) are defined to access non-bundled plugins.
 
+See also:
+
+- [](plugin_dependencies.md)
+
 > Use the correct function depending on whether the
 > targeted plugin is _bundled_ with the Target Platform or not.
 >
 {title="Bundled vs. Non-Bundled Plugins"}
 
-| Function                     | Description                                                                                                                                                                                                                 |
-|------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `pluginModule(dependency)`   | Adds a dependency on a plugin module to be bundled within the main plugin JAR, when working on a multi-module project. Requires passing an existing dependency, like: `pluginModule(implementation(project(":submodule")))` |
-| `bundledPlugin(id)`          | Adds a dependency on a bundled IntelliJ Platform plugin.                                                                                                                                                                    |
-| `bundledPlugins(ids)`        | Adds dependencies on bundled IntelliJ Platform plugins.                                                                                                                                                                     |
-| `plugin(id, version, group)` | Adds a dependency on a plugin for IntelliJ Platform. The `group` parameter can define a plugin release channel, like `@eap` or a full Maven coordinates group.                                                              |
-| `plugin(notation)`           | Adds a dependency on a plugin for IntelliJ Platform using a string notation:<p>`pluginId:version` or `pluginId:version@channel`</p>                                                                                         |
-| `plugins(notations)`         | Adds dependencies on plugins for IntelliJ Platform using a string notation:<p>`pluginId:version` or `pluginId:version@channel`</p>                                                                                          |
-| `localPlugin(localPath)`     | Adds a dependency on a local IntelliJ Platform plugin. Accepts path or a dependency on another module.                                                                                                                      |
+### Bundled Plugin
 
-The `plugin(id, version, group)` helpers accepts `group` as a third parameter, set by default to the common [JetBrains Marketplace](https://plugins.jetbrains.com) plugin artifacts group: `com.jetbrains.plugins`.
+Use `bundledPlugin(id)` or `bundledPlugins(ids)` to add a dependency on bundled plugin.
+The list of bundled plugin IDs is available via [`printBundledPlugins`](tools_intellij_platform_gradle_plugin_tasks.md#printBundledPlugins) task.
+
+### Non-Bundled Plugin
+
+Use `plugin(notation)` or `plugin(notations)` to add a dependency on a non-bundled plugin (for example, hosted on [JetBrains Marketplace](https://plugins.jetbrains.com)).
+
+Parameter `notation` uses the following format:
+
+- `pluginId:version` or
+- `pluginId:version@channel`.
+
+Alternatively, use `plugin(id, version, group)` where the `group` parameter can define a plugin release channel, like `@eap` or a full Maven coordinates group.
+It is set by default to the common [JetBrains Marketplace](https://plugins.jetbrains.com) plugin artifacts group `com.jetbrains.plugins`.
 
 The `group` parameter can also describe the release channel by prefixing the value with `@` character, like `@eap` or `@nightly`.
 The channel value is used to prepend the JetBrains Marketplace group and build `nightly.com.jetbrains.plugins`.
 
-If defined explicitly, can be used along with any custom plugin repository, like: `org.acme.plugins`.
+If defined explicitly, can be used along with any custom plugin repository, like `org.acme.plugins`.
 
-See also:
+### Multi-Module Setup
 
-- [](plugin_dependencies.md)
+When working on a multi-module project, use `pluginModule(dependency)` to add a dependency on a plugin module to be bundled within the main plugin JAR.
+Requires passing an existing dependency, like `pluginModule(implementation(project(":submodule")))`.
+
+### Local Plugin
+
+Use `localPlugin(localPath)` to add a dependency on a local IntelliJ Platform plugin. Accepts path or a dependency on another module.
 
 ## Testing
 
@@ -220,6 +235,7 @@ The provided `testFramework(type, version)` helper method makes it possible to 
 > {style="warning"}
 
 There are two known issues related to `Platform` and `JUnit5` Test Frameworks:
+
 - [](tools_intellij_platform_gradle_plugin_faq.md#missing-opentest4j-dependency-in-test-framework)
 - [](tools_intellij_platform_gradle_plugin_faq.md#junit5-test-framework-refers-to-junit4)
 

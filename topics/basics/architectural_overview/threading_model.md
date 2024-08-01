@@ -57,6 +57,8 @@ If a thread requires accessing a data model, it must acquire one of the locks:
     </tr>
 </table>
 
+> See the [reasons](#why-can-write-intent-lock-be-acquired-from-any-thread-but-write-lock-only-from-edt) for allowing to acquire write intent lock from any thread and the write lock only from EDT.
+
 The following table shows compatibility between locks in a simplified form:
 
 <table style="both">
@@ -547,5 +549,16 @@ For convenience, it was decided that reading data can be done on EDT without rea
 The consequence of this was that writing had to be allowed only on EDT to avoid read/write conflicts.
 The nature of EDT provided this possibility out-of-the-box due to being a single thread.
 Event queue guaranteed that reads and writes were ordered and executed one by one and couldn't interweave.
+
+### Why can write intent lock be acquired from any thread but write lock only from EDT?
+
+In the current platform state, technically, write intent lock can be acquired on any thread (it is done only on EDT in practice), but write lock can be acquired only on EDT.
+
+Write intent lock was introduced as a "replacement" for EDT in the context of acquiring write lock.
+Instead of allowing to acquire write lock on EDT only, it was planned to make it possible to acquire it from under write intent lock on any thread.
+Write intent lock provides read access that was also available on EDT.
+This behavior wasn't enabled in production, and the planned locking mechanism has changed.
+It is planned to allow for acquiring write lock from any thread, even without a write intent lock.
+Write intent lock will be still available and will allow performing read sessions finished with data writing.
 
 <include from="snippets.md" element-id="missingContent"/>

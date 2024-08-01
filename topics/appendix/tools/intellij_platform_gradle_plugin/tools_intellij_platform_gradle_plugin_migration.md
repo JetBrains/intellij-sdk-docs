@@ -108,7 +108,9 @@ dependencies {
 }
 ```
 
-See: [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins)
+See:
+- [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins)
+- [](tools_intellij_platform_gradle_plugin_faq.md#migrateToPluginId)
 
 <include from="tools_intellij_platform_gradle_plugin_repositories_extension.md" element-id="localPlatformArtifacts_required"/>
 

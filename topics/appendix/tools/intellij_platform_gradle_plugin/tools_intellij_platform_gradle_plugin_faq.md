@@ -63,6 +63,18 @@ dependencies {
 }
 ```
 
+### Dependency on bundled plugin is not resolved after migrating from 1.x
+
+{id="migrateToPluginId"}
+
+Using [](tools_gradle_intellij_plugin.md), specifying the _directory name_ of the plugin was possible when adding a dependency on a bundled plugin
+for compatibility reasons.
+Now, using the actual plugin ID is required.
+For example, provide plugin ID `com.intellij.java` instead of its directory name `java`.
+A migration hint is provided for this and some other commonly used cases.
+
+See [](plugin_dependencies.md#bundled-and-other-plugins) on how to get all bundled plugin IDs as well as a list of some commonly used ones.
+
 ### How to disable the automatic reload of dynamic plugins?
 
 See [](ide_development_instance.md#enabling-auto-reload) for important caveats.
@@ -200,11 +212,9 @@ jacocoTestCoverageVerification {
 </tab>
 </tabs>
 
-
 ### Kotlin compiler throws `Out of memory. Java heap space` error
 
 Please upgrade to Kotlin 1.9.0. See the [](using_kotlin.md#incremental-compilation) section if using Kotlin 1.8.20.
-
 
 ### How to check the latest available EAP release?
 
@@ -229,7 +239,6 @@ tasks {
 When running tests or IDE with your plugin loaded, it is necessary to use JetBrains Runtime (JBR).
 In the case, no JBR is found in the plugin configuration, there's the following warning logged by the [`verifyPluginProjectConfiguration`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginProjectConfiguration) task:
 
-
 ```
 The currently selected Java Runtime is not JetBrains Runtime (JBR).
 This may lead to unexpected IDE behaviors.
@@ -238,6 +247,7 @@ or define it explicitly with project dependencies or JVM Toolchain.
 ```
 
 To correctly run your tests or a specific IDE:
+
 - use a binary IDE distribution with bundled JetBrains Runtime, i.e., by referring to a local IDE [`local(localPath)`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#custom-target-platforms)
   ```kotlin
   repositories {
@@ -282,6 +292,5 @@ To correctly run your tests or a specific IDE:
     }
   }
   ```
-
 
 <include from="snippets.md" element-id="missingContent"/>

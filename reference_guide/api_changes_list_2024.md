@@ -80,6 +80,8 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ### IntelliJ Platform 2024.2
 
+Constructor of `com.intellij.ui.tabs.TabInfo` requires not-null `JComponent` argument.
+
 `com.intellij.execution.lineMarker.ExecutorAction.Companion.wrap(RunContextAction, Int)` method removed
 : Use `com.intellij.execution.lineMarker.ExecutorAction.Companion.wrap(AnAction, Executor, Int)` instead.
 

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 <buildprofiles xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/build-profiles.xsd"
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <variables>
@@ -41,6 +42,8 @@
     </variables>
 
     <build-profile instance="ijs"/>
+
+    <sitemap priority="0.35" change-frequency="monthly"/>
 
     <footer>
         <copyright>2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.</copyright>

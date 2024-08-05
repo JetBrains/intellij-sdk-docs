@@ -146,6 +146,29 @@ Read and write actions allow executing a piece of code under a lock, automatical
 #### API
 {#read-actions-api}
 
+- [`ReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) `run()` or `compute()`:
+  <tabs group="languages">
+  <tab title="Kotlin" group-key="kotlin">
+
+  ```kotlin
+  val psiFile = ReadAction.compute<PsiFile, Throwable> {
+    // read and return PsiFile
+  }
+  ```
+  </tab>
+  <tab title="Java" group-key="java">
+
+  ```java
+  PsiFile psiFile = ReadAction.compute(() -> {
+    // read and return PsiFile
+  });
+  ```
+  </tab>
+  </tabs>
+
+##### Alternative APIs
+{#read-action-alternative-apis collapsible=true default-state=collapsed}
+
 - [`Application.runReadAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java):
   <tabs group="languages">
   <tab title="Kotlin" group-key="kotlin">
@@ -166,26 +189,7 @@ Read and write actions allow executing a piece of code under a lock, automatical
   ```
   </tab>
   </tabs>
-
-- [`ReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) `run()` or `compute()`:
-  <tabs group="languages">
-  <tab title="Kotlin" group-key="kotlin">
-
-  ```kotlin
-  val psiFile = ReadAction.compute<PsiFile, Throwable> {
-    // read and return PsiFile
-  }
-  ```
-  </tab>
-  <tab title="Java" group-key="java">
-
-  ```java
-  PsiFile psiFile = ReadAction.compute(() -> {
-    // read and return PsiFile
-  });
-  ```
-  </tab>
-  </tabs>
+  Note that this API is considered low-level and should be avoided.
 
 - Kotlin [`runReadAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/actions.kt):
   ```kotlin
@@ -262,26 +266,6 @@ gantt
 #### API
 {#write-actions-api}
 
-- [`Application.runWriteAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java):
-  <tabs group="languages">
-  <tab title="Kotlin" group-key="kotlin">
-
-  ```kotlin
-  ApplicationManager.application.runWriteAction {
-    // write data
-  }
-  ```
-  </tab>
-  <tab title="Java" group-key="java">
-
-  ```java
-  ApplicationManager.getApplication().runWriteAction(() -> {
-    // write data
-  });
-  ```
-  </tab>
-  </tabs>
-
 - [`WriteAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/WriteAction.java) `run()` or `compute()`:
   <tabs group="languages">
   <tab title="Kotlin" group-key="kotlin">
@@ -296,6 +280,30 @@ gantt
 
   ```java
   WriteAction.run(() -> {
+    // write data
+  });
+  ```
+  </tab>
+  </tabs>
+
+##### Alternative APIs
+{#write-action-alternative-apis collapsible=true default-state=collapsed}
+
+- [`Application.runWriteAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java):
+  <tabs group="languages">
+  <tab title="Kotlin" group-key="kotlin">
+
+  ```kotlin
+  ApplicationManager.application.runWriteAction {
+    // write data
+  }
+  ```
+  </tab>
+  <tab title="Java" group-key="java">
+  Note that this API is considered low-level and should be avoided.
+
+  ```java
+  ApplicationManager.getApplication().runWriteAction(() -> {
     // write data
   });
   ```

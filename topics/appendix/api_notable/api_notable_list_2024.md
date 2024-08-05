@@ -12,6 +12,9 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ### IntelliJ Platform 2024.3
 
+Dumb-aware "Highlight Usages"
+: [](additional_minor_features.md#semantic-highlight-usages) can be marked as [](indexing_and_psi_stubs.md#DumbAwareAPI).
+
 ## 2024.2
 
 ### IntelliJ Platform 2024.2

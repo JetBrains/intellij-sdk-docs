@@ -92,6 +92,7 @@ EP: `com.intellij.nameSuggestionProvider`
 EP: `com.intellij.highlightUsagesHandlerFactory`
 
 [`HighlightUsagesHandlerFactory`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/highlighting/HighlightUsagesHandlerFactory.java) allows highlighting e.g., Exit Points or Exceptions.
+Can be [](indexing_and_psi_stubs.md#DumbAwareAPI) (2024.3+).
 
 ### TODO View
 

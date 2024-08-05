@@ -78,7 +78,7 @@ If there is some code that needs to be executed after the refresh is complete, t
 * [`RefreshQueue.createSession()`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/vfs/newvfs/RefreshQueue.java)
 * [`VirtualFile.refresh()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java)
 
-In some cases, synchronous refreshes can cause deadlocks, depending on which [locks](threading_model.md#readers-writer-lock) are held by the thread invoking the refresh operation.
+In some cases, synchronous refreshes can cause deadlocks, depending on which [locks](threading_model.md#read-write-lock) are held by the thread invoking the refresh operation.
 
 ## Virtual File System Events
 

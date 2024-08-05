@@ -16,7 +16,7 @@
     the Threading section:
   </p>
   <list>
-    <li><a href="threading_model.md#readers-writer-lock">Read-Write Lock</a></li>
+    <li><a href="threading_model.md#read-write-lock">Read-Write Lock</a></li>
     <li><a href="threading_model.md#read-action-cancellability">Read Action Cancellability</a></li>
   </list>
 

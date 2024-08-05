@@ -26,11 +26,11 @@ Executing on BGT from EDT can be achieved with [background processes](background
 >
 {style="warning"}
 
-## Readers-Writer Lock
+## Read-Write Lock
 
 The IntelliJ Platform data structures (such as [Program Structure Interface](psi.md), [Virtual File System](virtual_file_system.md), or [Project root model](project_structure.md)) aren't thread-safe.
 Accessing them requires a synchronization mechanism ensuring that all threads see the data in a consistent and up-to-date state.
-This is implemented with a single application-wide [readers-writer (RW) lock](https://w.wiki/7dBy) that must be acquired by threads requiring reading or writing to data models.
+This is implemented with a single application-wide [read-write (RW) lock](https://w.wiki/7dBy) that must be acquired by threads requiring reading or writing to data models.
 
 If a thread requires accessing a data model, it must acquire one of the locks:
 

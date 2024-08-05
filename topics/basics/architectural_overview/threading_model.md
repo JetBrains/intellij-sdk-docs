@@ -300,7 +300,6 @@ gantt
   ```
   </tab>
   <tab title="Java" group-key="java">
-  Note that this API is considered low-level and should be avoided.
 
   ```java
   ApplicationManager.getApplication().runWriteAction(() -> {
@@ -309,6 +308,7 @@ gantt
   ```
   </tab>
   </tabs>
+  Note that this API is considered low-level and should be avoided.
 
 - Kotlin [`runWriteAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/actions.kt):
   ```kotlin

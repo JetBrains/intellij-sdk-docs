@@ -12,7 +12,7 @@
 
 </tldr>
 
-135 Extension Points and 7 Listeners for Rider
+134 Extension Points and 7 Listeners for Rider
 
 See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 
@@ -150,12 +150,6 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 |-----------------|----------------|
 | [com.intellij.rider.client.typedHandler](https://jb.gg/ipe?extensions=com.intellij.rider.client.typedHandler) | `RiderClientLookupTypedHandler` |
 
-### RiderDebugger.xml
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| [com.intellij.rider.debugger.evaluation.advice](https://jb.gg/ipe?extensions=com.intellij.rider.debugger.evaluation.advice) | `DebugEvalAdviceProvider` |
-
 ### RiderExtensionPoints.xml
 
 | Extension Point | Implementation |
@@ -193,7 +187,6 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.rider.fileTemplating.postCreateAction](https://jb.gg/ipe?extensions=com.intellij.rider.fileTemplating.postCreateAction) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `RiderNewFileFromTemplateExtension` |
 | [com.intellij.rider.filesIndexingRuleProvider](https://jb.gg/ipe?extensions=com.intellij.rider.filesIndexingRuleProvider) ![Non-Dynamic][non-dynamic] | `RiderFilesIndexingRuleProvider` |
 | [com.intellij.rider.findPopupProjectScopeProvider](https://jb.gg/ipe?extensions=com.intellij.rider.findPopupProjectScopeProvider) | `FindPopupProjectScopeProvider` |
-| [com.intellij.rider.godotDetector](https://jb.gg/ipe?extensions=com.intellij.rider.godotDetector) | `GodotDetector` |
 | [com.intellij.rider.guidPresenter](https://jb.gg/ipe?extensions=com.intellij.rider.guidPresenter) ![Project-Level][project-level] | `GuidGeneratorPresenter` |
 | [com.intellij.rider.newFileListener](https://jb.gg/ipe?extensions=com.intellij.rider.newFileListener) ![Project-Level][project-level] | `RiderNewFileListener` |
 | [com.intellij.rider.newRunConfigurationTreeGroupingProvider](https://jb.gg/ipe?extensions=com.intellij.rider.newRunConfigurationTreeGroupingProvider) ![Non-Dynamic][non-dynamic] | `RiderNewRunConfigurationTreeGroupingProvider` |
@@ -206,6 +199,7 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.rider.problemsView.problems.processor](https://jb.gg/ipe?extensions=com.intellij.rider.problemsView.problems.processor) | `RiderProblemsDiffProcessor` |
 | [com.intellij.rider.publish.publishSettingsProvider](https://jb.gg/ipe?extensions=com.intellij.rider.publish.publishSettingsProvider) ![Project-Level][project-level] | `IPublishRuntimeCoreSettingsProvider` |
 | [com.intellij.rider.publishConfigurationProvider](https://jb.gg/ipe?extensions=com.intellij.rider.publishConfigurationProvider) ![Non-Dynamic][non-dynamic] | `RiderContextPublishProvider` |
+| [com.intellij.rider.reader.mode.matcher](https://jb.gg/ipe?extensions=com.intellij.rider.reader.mode.matcher) | `RiderCustomReaderModeMatcher` |
 | [com.intellij.rider.refactoringPageProvider](https://jb.gg/ipe?extensions=com.intellij.rider.refactoringPageProvider) ![Non-Dynamic][non-dynamic] | `RefactoringPageProvider` |
 | [com.intellij.rider.resolveContextWidgetProvider](https://jb.gg/ipe?extensions=com.intellij.rider.resolveContextWidgetProvider) ![Non-Dynamic][non-dynamic] | `RiderResolveContextWidgetProvider` |
 | [com.intellij.rider.run.configurations.dotNetExe](https://jb.gg/ipe?extensions=com.intellij.rider.run.configurations.dotNetExe) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `DotNetExeConfigurationExtension` |

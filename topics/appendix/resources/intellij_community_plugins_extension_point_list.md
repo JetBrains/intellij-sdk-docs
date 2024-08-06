@@ -408,7 +408,7 @@ EP List Directory:
 | [DevKit.lang.serviceLevelExtractor](https://jb.gg/ipe?extensions=DevKit.lang.serviceLevelExtractor) ![Internal][internal] | [`ServiceLevelExtractor`](%gh-ic%/plugins/devkit/devkit-core/src/inspections/ServiceLevelExtractor.kt) |
 | [DevKit.lang.staticInitializationInExtensionsVisitorProvider](https://jb.gg/ipe?extensions=DevKit.lang.staticInitializationInExtensionsVisitorProvider) ![Internal][internal] | [`StaticInitializationInExtensionsVisitorProvider`](%gh-ic%/plugins/devkit/devkit-core/src/inspections/StaticInitializationInExtensionsInspection.kt) |
 | [DevKit.lang.uElementAsPsiCheckProvider](https://jb.gg/ipe?extensions=DevKit.lang.uElementAsPsiCheckProvider) ![Internal][internal] | [`UElementAsPsiCheckProvider`](%gh-ic%/plugins/devkit/devkit-core/src/inspections/UElementAsPsiCheckProvider.kt) |
-| [DevKit.lang.visitorProviderForRBCInspection](https://jb.gg/ipe?extensions=DevKit.lang.visitorProviderForRBCInspection) | `n/a` |
+| [DevKit.lang.visitorProviderForRBCInspection](https://jb.gg/ipe?extensions=DevKit.lang.visitorProviderForRBCInspection) ![Internal][internal] | [`VisitorProvider`](%gh-ic%/plugins/devkit/devkit-core/src/inspections/CallingMethodShouldBeRequiresBlockingContextInspection.kt) |
 
 ### intellij.ide.startup.importSettings.xml
 

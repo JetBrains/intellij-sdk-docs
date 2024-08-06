@@ -4,6 +4,12 @@
 
 <link-summary>UI guidelines on using progress indicators.</link-summary>
 
+<tldr>
+
+**Implementation**: Progress tracking in [Progress API](background_processes.md#tracking-progress) and [Kotlin Coroutines](coroutine_execution_contexts.md#suspending-context-progress-reporting)
+
+</tldr>
+
 Progress indicators inform users about an ongoing operation. There are three types of indicators:
 
 * [Loader](loader.md)

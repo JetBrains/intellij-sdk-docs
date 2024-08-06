@@ -21,8 +21,6 @@ EP List Directory:
 
 ### IntelliJ Community Plugins - Listeners
 
-### IntelliJ Community Plugins - Listeners
-
 | Topic | Listener |
 |-------|----------|
 | [ExternalAnnotationsManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.codeInsight.ExternalAnnotationsListener)  ![Project-Level][project-level] | [`ExternalAnnotationsListener`](%gh-ic%/java/java-psi-api/src/com/intellij/codeInsight/ExternalAnnotationsListener.java) |

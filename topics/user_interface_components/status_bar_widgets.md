@@ -2,7 +2,7 @@
 
 # Status Bar Widgets
 
-<link-summary>Extending status bar with custom widgets providing information about the current file, project, IDE, etc.</link-summary>
+<link-summary>Extending the status bar with custom widgets providing information about the current file, project, IDE, and similar.</link-summary>
 
 <tldr>
 
@@ -12,7 +12,7 @@
 
 The IntelliJ Platform allows plugins to extend the IDE status bar with additional custom widgets.
 
-Status bar widgets are small UI elements that allow providing users with useful information and settings for the current file, project, IDE, etc.
+Status bar widgets are small UI elements that allow providing users with useful information and settings for the current file, project, IDE, and similar.
 For example, the status bar contains the widget showing the encoding of the current file, or the current VCS branch of the project.
 
 Due to the prominent presentation and limited space, they should be used only for information or settings that are relevant enough to be "always" shown.
@@ -27,7 +27,8 @@ In case a widget provides information or functionality related to the editor fil
 class.
 
 Each widget factory returns a new widget from `createWidget()`.
-To control the disposing of a widget, implement the `disposeWidget()`, if you just want to dispose it, use `Disposer.dispose(widget)`.
+To control the disposing of a widget, implement the `disposeWidget()`.
+To dispose it, use `Disposer.dispose(widget)`.
 
 Any widget must implement the
 [`StatusBarWidget`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/wm/StatusBarWidget.kt)
@@ -41,8 +42,8 @@ To reuse the IntelliJ Platform implementation, you can extend one of two classes
 ## `EditorBasedWidget`
 
 `EditorBasedWidget` is the basic widget implementation.
-To implement it, override `ID()` where returns the unique ID of the widget.
-This identifier may be needed to later obtain a widget instance.
+To implement it, override `ID()` which returns the unique ID of the widget.
+This identifier may be necessary to later get a widget instance.
 
 Use one of the existing predefined widget appearance options:
 
@@ -92,13 +93,13 @@ In `updateComponent()` implementation, you can describe how the widget should ch
 
 Implement `getWidgetState()` to return the current state of the widget.
 This state will be passed to the `updateComponent()` when the widget is updated.
-The method accepts a file that's currently opened in the editor
+The method accepts a file currently opened in the editor.
 To create your own state class, inherit it from `EditorBasedStatusBarPopup.WidgetState.WidgetState`.
 
-Implement `ID()`, and return the unique ID of the widget.
-This identifier may be needed to later get a widget instance.
+Implement `ID()` and return the unique ID of the widget.
+This identifier may be necessary to later get a widget instance.
 
-Implement `createInstance()`, and return the new widget instance.
+Implement `createInstance()` and return the new widget instance.
 
 Finally, implement the `createPopup()` method, which returns the [popup](popups.md) that will be displayed when the widget is clicked.
 

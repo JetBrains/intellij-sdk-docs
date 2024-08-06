@@ -51,21 +51,21 @@ Use one of the existing predefined widget appearance options:
   Widget with only an icon.
 
   Example:
-  [PowerSaveStatusWidgetFactory](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/PowerSaveStatusWidgetFactory.java)
+  [`PowerSaveStatusWidgetFactory`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/PowerSaveStatusWidgetFactory.java)
 
 - `com.intellij.openapi.wm.StatusBarWidget.TextPresentation`
 
   Widget with only a text.
 
   Example:
-  [PositionPanel](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/PositionPanel.kt)
+  [`PositionPanel`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/PositionPanel.kt)
 
 - `com.intellij.openapi.wm.StatusBarWidget.MultipleTextValuesPresentation`
 
   Widget with a text and a popup.
 
   Example:
-  [DvcsStatusWidget](%gh-ic%/platform/dvcs-impl/src/com/intellij/dvcs/ui/DvcsStatusWidget.java)
+  [`DvcsStatusWidget`](%gh-ic%/platform/dvcs-impl/src/com/intellij/dvcs/ui/DvcsStatusWidget.java)
 
 > Note that they can't be combined to get, for example, an icon and a text.
 >
@@ -79,7 +79,7 @@ interface.
 Override `getComponent()` to return the custom widget's component to display.
 
 Example:
-[MemoryUsagePanel](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/MemoryUsagePanel.java)
+[`MemoryUsagePanel`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/MemoryUsagePanel.java)
 
 ## `EditorBasedStatusBarPopup`
 

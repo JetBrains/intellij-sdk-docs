@@ -167,6 +167,8 @@ myPort.getDocument().addDocumentListener(new DocumentAdapter() {
 });
 ```
 
+See also: [](disposers.md#choosing-a-disposable-parent).
+
 </tab>
 </tabs>
 

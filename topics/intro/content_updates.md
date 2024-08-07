@@ -19,6 +19,10 @@ Threading Model
 :
 Revamp the [Threading Model](threading_model.md) page (formerly _General Threading Rules_) and add a new page describing [background processes](background_processes.md), including cancellation and progress tracking.
 
+Coroutines Read Actions
+:
+Added FAQ section and explanation of [why suspending inside the block is not allowed](coroutine_read_actions.topic#why-can-t-i-suspend-inside-the-block).
+
 ### June
 {june-24}
 

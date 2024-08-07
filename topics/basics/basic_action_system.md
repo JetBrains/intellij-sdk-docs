@@ -440,8 +440,8 @@ See also [`ToggleOptionAction`](%gh-ic%/platform/platform-api/src/com/intellij/o
 <primary-label ref="2024.2"/>
 
 In popup menus, `ToggleAction` no longer closes the popup by default.
-Use [`Presentation.setKeepPopupOnPerform()`](%gh-ic-master%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/Presentation.java)
-with [`KeepPopupOnPerform.IfRequested`](%gh-ic-master%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/KeepPopupOnPerform.java)
+Use [`Presentation.setKeepPopupOnPerform()`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/Presentation.java)
+with [`KeepPopupOnPerform.IfRequested`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/KeepPopupOnPerform.java)
 in the action constructor or its `update()` method.
 
 ### Back/Forward Navigation

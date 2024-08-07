@@ -160,7 +160,7 @@
     <toc-element topic="facet.md"/>
     <toc-element topic="external_system_integration.md"/>
     <toc-element topic="workspace_model.md">
-      <toc-element toc-title="Entity Properties" href="https://youtrack.jetbrains.com/articles/IJPL-A-500/EntityProperties"/>
+      <toc-element topic="workspace_model_entity_properties.md"/>
       <toc-element toc-title="Entity Declaration" href="https://youtrack.jetbrains.com/articles/IJPL-A-504/EntityDeclaration"/>
       <toc-element toc-title="Entity Mutation" href="https://youtrack.jetbrains.com/articles/IJPL-A-501/EntityMutation"/>
       <toc-element toc-title="Entity Read" href="https://youtrack.jetbrains.com/articles/IJPL-A-503/EntityRead"/>

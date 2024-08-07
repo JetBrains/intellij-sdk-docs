@@ -86,14 +86,14 @@ The method `AnAction.update()` is periodically called by the IntelliJ Platform i
 The `update()` method gives an action to evaluate the current context and enable or disable its functionality.
 Implementors must ensure that changing presentation and availability status handles all variants and state transitions; otherwise, the given Action will get "stuck".
 
-> The `AnAction.update()` method can be called frequently and on EDT.
+> The `AnAction.update()` method can be called frequently on [Event Dispatch Thread (EDT)](threading_model.md).
 > It must _execute very quickly_; no real work must be performed.
 > For example, checking selection in a tree or a list is considered valid, but working with the file system is not.
 >
-{style="warning" title="Performance"}
-
-> If the new state of an action can't be determined quickly, then evaluation should be performed in the `AnAction.actionPerformed()` method and [notify](notifications.md) the user that the action can't be executed if the context isn't suitable.
+> If the new state of an action cannot be determined quickly, evaluation should be performed in the `AnAction.actionPerformed()` method
+> and the user [notified](notifications.md) accordingly if the context isn't suitable.
 >
+{style="warning" title="Performance"}
 
 #### Determining the Action Context
 

@@ -150,7 +150,7 @@ JsonPath library unbundled
 : Coroutine scope was added to track editor lifetime.
 
 `com.intellij.collaboration.ui.codereview.details.model.CodeReviewChangesViewModelBase` class removed
-: Incorrect EDT-reliant implementation removed.
+: Incorrect [EDT](threading_model.md)-reliant implementation removed.
 
 `com.intellij.collaboration.async.CoroutineUtilKt.DisposingScope(Disposable, CoroutineContext)` method removed
 : Use `com.intellij.collaboration.async.CoroutineUtilKt.disposingScope(CoroutineContext)` instead.

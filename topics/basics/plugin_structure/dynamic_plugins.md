@@ -56,7 +56,7 @@ Application, project, and module [services](plugin_services.md) declared with `o
 
 ## Code
 
-> Loading and unloading plugins happens in EDT and under write action.
+> Loading and unloading plugins happens in [EDT](threading_model.md) and under write action.
 >
 {style="note"}
 

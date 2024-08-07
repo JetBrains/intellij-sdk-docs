@@ -62,14 +62,14 @@ Implementation in [Kotlin](using_kotlin.md) is required because Java doesn't sup
 To execute code when a project is being opened, use one of these two [extensions](plugin_extensions.md):
 
 `com.intellij.postStartupActivity`
-: [`StartupActivity`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) for immediate execution on EDT.
+: [`StartupActivity`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) for immediate execution on [EDT](threading_model.md).
 Implement `DumbAware` to indicate activity can run in a background thread (in parallel with other such tasks).
 
 `com.intellij.backgroundPostStartupActivity`
 : [`StartupActivity.Background`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) for execution with a 5-second delay in a background thread (2019.3 or later).
 
-Any long-running or CPU-intensive tasks should be made visible to users by using `ProgressManager.run(Task.Backgroundable)`.
-Access to indexes must be wrapped with [`DumbService`](indexing_and_psi_stubs.md#dumb-mode), see also [General Threading Rules](threading_model.md).
+Any long-running or CPU-intensive tasks should be made visible to users by using `ProgressManager.run(Task.Backgroundable)` (see [](background_processes.md)).
+Access to indexes must be wrapped with [`DumbService`](indexing_and_psi_stubs.md#dumb-mode), see also [](threading_model.md).
 
 See also [](ide_infrastructure.md#running-tasks-once).
 

@@ -113,3 +113,13 @@ By default, widgets aren't shown in [LightEdit](https://www.jetbrains.com/help/i
 To show a widget, implement
 [`LightEditCompatible`](%gh-ic%/platform/core-api/src/com/intellij/ide/lightEdit/LightEditCompatible.java)
 in your factory.
+
+## FAQ
+
+### How to get a widget programmatically?
+
+```kotlin
+val widget = WindowManager.getInstance().getStatusBar(project)
+    .getWidget(MyWidget.ID) as MyWidget
+
+```

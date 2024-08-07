@@ -16,7 +16,7 @@ The actions system allows plugins to add their items to IntelliJ Platform-based 
 For example, one of the action classes is responsible for the <ui-path>File | Open File...</ui-path> menu item and the <control>Open...</control> toolbar button.
 
 Actions in the IntelliJ Platform require a [code implementation](#action-implementation) and must be [registered](#registering-actions).
-The action implementation determines the contexts in which an action is available, and its functionality when selected in the UI.
+The action implementation determines the contexts in which an action is available and its functionality when selected in the UI.
 Registration determines where an action appears in the IDE UI.
 Once implemented and registered, an action receives callbacks from the IntelliJ Platform in response to user gestures.
 
@@ -48,7 +48,7 @@ An action's method `AnAction.update()` is called by the IntelliJ Platform framew
 The state (enabled, visible) of an action determines whether the action is available in the UI.
 An object of the [`AnActionEvent`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java) type is passed to this method and contains information about the current context for the action.
 
-Actions are made available by changing state in the [`Presentation`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/Presentation.java) object associated with the event context.
+Actions are made available by changing the state in the [`Presentation`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/Presentation.java) object associated with the event context.
 As explained in [Overriding the `AnAction.update()`  Method](#overriding-the-anactionupdate-method), it is vital `update()` methods _execute quickly_ and return execution to platform.
 
 #### `AnAction.getActionUpdateThread()`
@@ -62,7 +62,7 @@ Actions that run the update session on the BGT should not access the Swing compo
 Conversely, actions that specify to run their update on EDT must not access PSI, VFS, or project data but have access to Swing components and other UI models.
 
 All accessible data is provided by the `DataContext` as explained in [](#determining-the-action-context).
-When switching from BGT to EDT is absolutely necessary, actions can use `AnActionEvent.getUpdateSession()` to
+When switching from BGT to EDT is necessary, actions can use `AnActionEvent.getUpdateSession()` to
 access the [`UpdateSession`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/UpdateSession.java) and
 then call `UpdateSession.compute()` to run a function on EDT.
 
@@ -73,7 +73,7 @@ Inspection <ui-path>Plugin DevKit | Code | ActionUpdateThread is missing</ui-pat
 
 An action's method `AnAction.actionPerformed()` is called by the IntelliJ Platform if available and selected by the user.
 This method does the heavy lifting for the action: it contains the code executed when the action gets invoked.
-The `actionPerformed()` method also receives `AnActionEvent` as a parameter, which is used to access any context data like projects, files, selection, etc.
+The `actionPerformed()` method also receives `AnActionEvent` as a parameter, which is used to access any context data like projects, files, selection, and similar.
 See [Overriding the `AnAction.actionPerformed()` Method](#overriding-the-anactionactionperformed-method) for more information.
 
 #### Miscellaneous
@@ -92,7 +92,7 @@ Implementors must ensure that changing presentation and availability status hand
 >
 {style="warning" title="Performance"}
 
-> If the new state of an action cannot be determined quickly, then evaluation should be performed in the `AnAction.actionPerformed()` method, and [notify](notifications.md) the user that the action cannot be executed if the context isn't suitable.
+> If the new state of an action can't be determined quickly, then evaluation should be performed in the `AnAction.actionPerformed()` method and [notify](notifications.md) the user that the action can't be executed if the context isn't suitable.
 >
 
 #### Determining the Action Context
@@ -100,7 +100,7 @@ Implementors must ensure that changing presentation and availability status hand
 The `AnActionEvent` object passed to `update()` carries information about the current context for the action.
 Context information is available from the methods of `AnActionEvent`, providing information such as the Presentation and whether the action is triggered by a Toolbar.
 Additional context information is available using the method `AnActionEvent.getData()`.
-Keys defined e.g. in [`CommonDataKeys`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/CommonDataKeys.java) are passed to the `getData()` method to retrieve objects such as `Project`, `Editor`, `PsiFile`, and other information.
+Keys defined, for example, in [`CommonDataKeys`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/CommonDataKeys.java) are passed to the `getData()` method to retrieve objects such as `Project`, `Editor`, `PsiFile`, and other information.
 Accessing this information is relatively light-weight and is suited for `AnAction.update()`.
 
 #### Enabling and Setting Visibility for an Action
@@ -109,7 +109,7 @@ Based on information about the action context, the `AnAction.update()` method ca
 An action's enabled/disabled state and visibility are set using methods of the `Presentation` object, which is accessed using `AnActionEvent.getPresentation()`.
 
 The default `Presentation` object is a set of descriptive information about a menu or toolbar action.
-Every context for an action - it might appear in multiple menus, toolbars, or Navigation search locations - has a unique presentation.
+Every context for an action – it might appear in multiple menus, toolbars, or Navigation search locations – has a unique presentation.
 Attributes such as an action's text, description, and icons and visibility and enable/disable state, are stored in the presentation.
 The attributes in a presentation get initialized from the [action registration](#registering-actions).
 However, some can be changed at runtime using the methods of the `Presentation` object associated with an action.
@@ -120,9 +120,9 @@ If an action is enabled, the `AnAction.actionPerformed()` can be called if a use
 A menu action shows in the UI location specified in its registration.
 A toolbar action displays its enabled (or selected) icon, depending on the user interaction.
 
-When an action is disabled `AnAction.actionPerformed()` will not be called.
+When an action is disabled, `AnAction.actionPerformed()` will not be called.
 Toolbar actions display their respective icons for the disabled state.
-The visibility of a disabled action in a menu depends on whether the host menu (e.g., "ToolsMenu") containing the action has the `compact` attribute set.
+The visibility of a disabled action in a menu depends on whether the host menu (for example, "ToolsMenu") containing the action has the `compact` attribute set.
 See [Grouping Actions](#grouping-actions) for more information about the `compact` attribute and menu actions' visibility.
 
 > If an action is added to a toolbar, its `update()` can be called if there was any user activity or focus transfer.
@@ -130,7 +130,7 @@ See [Grouping Actions](#grouping-actions) for more information about the `compac
 >
 {style="note"}
 
-An example of enabling a menu action based on whether a project is open is demonstrated in [`PopupDialogAction.update()`](%gh-sdk-samples-master%/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java) method.
+An example of enabling a menu action based on whether a project is open is demonstrated in [`PopupDialogAction.update()`](%gh-sdk-samples-master%/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java).
 
 ### Overriding the `AnAction.actionPerformed()` Method
 
@@ -142,7 +142,7 @@ For example, the `actionPerformed()` method can modify, remove, or add PSI eleme
 
 The code that executes in the `AnAction.actionPerformed()` method should execute efficiently, but it does not have to meet the same stringent requirements as the `update()` method.
 
-An example of inspecting PSI elements is demonstrated in the SDK code sample `action_basics` [`PopupDialogAction.actionPerformed()`](%gh-sdk-samples-master%/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java) method.
+An example of inspecting PSI elements is demonstrated in the `action_basics` SDK code sample in [`PopupDialogAction.actionPerformed()`](%gh-sdk-samples-master%/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java).
 
 ### Action IDs
 
@@ -159,7 +159,7 @@ Groups organize actions into logical UI structures, which in turn can contain ot
 A group of actions can form a toolbar or a menu.
 Subgroups of a group can form submenus of a menu.
 
-Actions can be included in multiple groups, and thus appear in different places within the UI.
+Actions can be included in multiple groups and thus appear in different places within the UI.
 An action must have a unique identifier for each place it appears in the UI.
 See the [Action Declaration Reference](#action-declaration-reference) section for information about how to specify locations.
 
@@ -200,10 +200,10 @@ Registering actions in <path>plugin.xml</path> is demonstrated in the following 
 <primary-label ref="2020.1"/>
 
 An alternate version of an action's menu text can be declared for use depending on where an action appears.
-Using the [`<override-text>`](plugin_configuration_file.md#idea-plugin__actions__action__override-text) element, the menu text for an action can be different depending on context: menu location, toolbar, etc.
+Using the [`<override-text>`](plugin_configuration_file.md#idea-plugin__actions__action__override-text) element, the menu text for an action can be different depending on context: menu location, toolbar, and other.
 This is also available for groups in 2020.3 and later.
 
-In the `<action>` element reference example (below) with `id` attribute `VssIntegration.GarbageCollection`, the default is to use the menu text "Garbage Collector: Collect _Garbage."
+In the `<action>` element [reference example](#action-declaration-reference) with `id` attribute `VssIntegration.GarbageCollection`, the default is to use the menu text "Garbage Collector: Collect _Garbage."
 The `<add-to-group>` element declares the action is added to the <ui-path>Tools</ui-path> menu.
 
 However, the `<override-text>` element declares that text for `VssIntegration.GarbageCollection` displayed anywhere in the main menu system should be the alternate text "Collect _Garbage."
@@ -228,12 +228,12 @@ To allow using alternative names in search, add one or more [`<synonym>`](plugin
 </action>
 ```
 
-To provide a localized synonym, specify `key` instead of `text` attribute.
+To provide a localized synonym, specify `key` instead of the `text` attribute.
 
 #### Disabling Search for Group
 <primary-label ref="2020.3"/>
 
-To exclude a group from appearing in <ui-path>Help | Find Action</ui-path> results (e.g., <control>New...</control> popup), specify `searchable="false"`.
+To exclude a group from appearing in <ui-path>Help | Find Action</ui-path> results (for example, <control>New...</control> popup), specify `searchable="false"`.
 
 #### Localizing Actions and Groups
 
@@ -259,10 +259,10 @@ If necessary, a dedicated resource bundle to use for actions and groups can be d
 
 ```xml
 <actions resource-bundle="messages.MyActionsBundle">
-  <!-- action/group defined here will use keys from MyActionsBundle.properties -->
+  <!-- action/group defined here will use keys
+  from MyActionsBundle.properties -->
 </actions>
 ```
-
 
 See [Extending DefaultActionGroup](grouping_action.md#extending-defaultactiongroup) for a tutorial of localizing Actions and Groups.
 
@@ -300,9 +300,9 @@ If `<override-text>` is used for a group ID, the key includes the `place` attrib
 The places where actions can appear are defined by constants in [`ActionPlaces`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/actionSystem/ActionPlaces.java).
 Group IDs for the IntelliJ Platform are defined in [`PlatformActions.xml`](%gh-ic%/platform/platform-resources/src/idea/PlatformActions.xml).
 
-This, and additional information can also be found by using the [Code Completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#invoke-basic-completion), [Quick Definition](https://www.jetbrains.com/help/idea/viewing-reference-information.html#view-definition-symbols) and [Quick Documentation](https://www.jetbrains.com/help/idea/viewing-reference-information.html#inline-quick-documentation) features.
+This and additional information can also be found by using the [Code Completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#invoke-basic-completion), [Quick Definition](https://www.jetbrains.com/help/idea/viewing-reference-information.html#view-definition-symbols), and [Quick Documentation](https://www.jetbrains.com/help/idea/viewing-reference-information.html#inline-quick-documentation) features.
 
-> To lookup existing Action ID (e.g. for use in `relative-to-action`), [UI Inspector](internal_ui_inspector.md) can be used.
+> To look up existing Action ID (for example, for use in `relative-to-action`), [UI Inspector](internal_ui_inspector.md) can be used.
 >
 
 > See the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) element and its children documentation for details.
@@ -416,7 +416,7 @@ Two steps are required to register an action from code:
 
 ## Building UI from Actions
 
-If a plugin needs to include a toolbar or popup menu built from a group of actions in its user interface, that is accomplished through [`ActionPopupMenu`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionPopupMenu.java) and [`ActionToolbar`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionToolbar.java).
+If a plugin needs to include a toolbar or popup menu built from a group of actions in its user interface, that is achieved through [`ActionPopupMenu`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionPopupMenu.java) and [`ActionToolbar`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionToolbar.java).
 These objects can be created through calls to the `ActionManager.createActionPopupMenu()` and `createActionToolbar()` methods.
 To get a Swing component from such an object, call the respective `getComponent()` method.
 
@@ -431,7 +431,7 @@ See [Toolbar](toolbar.md) in UI Guidelines for an overview.
 
 Use [`ToggleAction`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/ToggleAction.java)
 or [`DumbAwareToggleAction`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/project/DumbAwareToggleAction.java)
-for actions with "selected"/"pressed" state (e.g., menu item with checkbox, toolbar action button).
+for actions with the "selected"/"pressed" state (for example, menu item with checkbox, toolbar action button).
 See also [`ToggleOptionAction`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/ToggleOptionAction.java).
 
 #### Popup Menus
@@ -447,18 +447,18 @@ in the action constructor or its `update()` method.
 ### Back/Forward Navigation
 
 Use [`BackAction`](%gh-ic%/platform/platform-api/src/com/intellij/ui/navigation/BackAction.java) and
-[`ForwardAction`](%gh-ic%/platform/platform-api/src/com/intellij/ui/navigation/ForwardAction.java) to provide navigation trail taken from
+[`ForwardAction`](%gh-ic%/platform/platform-api/src/com/intellij/ui/navigation/ForwardAction.java) to provide a navigation trail taken from
 [`History`](%gh-ic%/platform/platform-api/src/com/intellij/ui/navigation/History.java) provided by `History.KEY`.
 
 ### Runtime Placeholder Action
 
-For actions registered at runtime (e.g., in a tool window toolbar), add an [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) entry with
+For actions registered at runtime (for example, in a tool window toolbar), add an [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) entry with
 [`EmptyAction`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/EmptyAction.java)
 to "reserve" Action ID, so they become visible in <ui-path>Settings | Keymap</ui-path>.
 
 ## Executing Actions Programmatically
 
-Sometimes, it is required to execute actions programmatically, e.g., executing an action implementing logic we need and the implementation is out of our control.
+Sometimes, it is required to execute actions programmatically, for example, executing an action implementing logic needed in another place, and the implementation is out of our control.
 Executing actions can be achieved with [`ActionUtils.invokeAction()`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/ex/ActionUtil.kt).
 
 > Executing actions programmatically should be avoided whenever possible.

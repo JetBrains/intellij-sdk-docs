@@ -15,7 +15,6 @@
 >
 > See [](kotlin_ui_dsl.md) for targeting earlier releases.
 >
-{style="warning"}
 
 Kotlin UI DSL Version 2 allows creating UI forms with input components bound to state objects.
 The forms are built by using a declarative Kotlin syntax and follow the official IntelliJ Platform UI conventions described in the [](ui_guidelines_welcome.topic).

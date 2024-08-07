@@ -69,7 +69,7 @@ The IDE automatically places the buttons in the search feed if you follow one of
 
 1. If this is a system or editor or another kind of settings, register the corresponding [`BooleanOptionDescription`](%gh-ic%/platform/platform-api/src/com/intellij/ide/ui/search/BooleanOptionDescription.java) for the option. The options can be bound (but not limited) to:
 
-    - A [`SearchTopHitProvider`](%gh-ic%/platform/platform-api/src/com/intellij/ide/SearchTopHitProvider.java) instance which is registered in <path>plugin.xml</path> with the `<search.topHitProvider implementation="fq.class.name"/>` tag. For example, see the [`SystemOptionsTopHitProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/ui/SystemOptionsTopHitProvider.java) class that represents matching of <control>Reopen last project on startup</control> checkbox
+    - A [`SearchTopHitProvider`](%gh-ic%/platform/platform-api/src/com/intellij/ide/SearchTopHitProvider.kt) instance which is registered in <path>plugin.xml</path> with the `<search.topHitProvider implementation="fq.class.name"/>` tag. For example, see the [`SystemOptionsTopHitProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/ui/SystemOptionsTopHitProvider.java) class that represents matching of <control>Reopen last project on startup</control> checkbox
       to `BooleanOptionDescription`.
 
     - [`EditorOptionDescription`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/ui/EditorOptionDescription.java) bound to [`EditorSettingsExternalizable`](%gh-ic%/platform/ide-core-impl/src/com/intellij/openapi/editor/ex/EditorSettingsExternalizable.java), which under the hood works with the <path>editor.xml</path>.

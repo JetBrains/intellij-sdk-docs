@@ -148,6 +148,6 @@ To suggest replacing the currently installed deprecated plugin with the new one,
 
 ## Network
 
-Use [`HttpConnectionUtils`](%gh-ic-master%/platform/platform-api/src/com/intellij/util/net/HttpConnectionUtils.kt)
+Use [`HttpConnectionUtils`](%gh-ic%/platform/platform-api/src/com/intellij/util/net/HttpConnectionUtils.kt)
 to use platform network settings (e.g., proxy) (2024.3).
 For earlier versions, see [`HttpConfigurable`](%gh-ic%/platform/platform-api/src/com/intellij/util/net/HttpConfigurable.java)).

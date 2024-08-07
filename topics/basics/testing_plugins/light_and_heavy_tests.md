@@ -29,7 +29,7 @@ Use [`LightPlatformTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/te
 or [`BasePlatformTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/BasePlatformTestCase.java)
 for tests that don't have any dependency on Java functionality.
 
-For 2019.2 and earlier, use [`LightPlatformCodeInsightFixtureTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/LightPlatformCodeInsightFixtureTestCase.java).
+For 2019.2 and earlier, use [`LightPlatformCodeInsightFixtureTestCase`](%gh-ic-223%/platform/testFramework/src/com/intellij/testFramework/fixtures/LightPlatformCodeInsightFixtureTestCase.java).
 
 **Examples:**
 - [`JavaCopyrightTest`](%gh-ic%/java/java-tests/testSrc/com/intellij/copyright/JavaCopyrightTest.kt)

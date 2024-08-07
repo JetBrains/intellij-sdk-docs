@@ -14,7 +14,7 @@
 
 Overview of Extension Points and Listeners for open source plugins available in [](idea_ultimate.md) and other IDEs.
 
-25 Extension Points and 9 Listeners
+27 Extension Points and 9 Listeners
 
 <include from="snippets.md" element-id="ep_list_legend"/>
 
@@ -56,6 +56,7 @@ Overview of Extension Points and Listeners for open source plugins available in 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.intellij.clion.dtsUtil](https://jb.gg/ipe?extensions=com.intellij.clion.dtsUtil) | [`DtsCLionUtil`](%gh-ij-plugins%/dts/src/com/intellij/dts/clion/DtsCLionUtil.kt) |
+| [com.intellij.dts.settings.disabler](https://jb.gg/ipe?extensions=com.intellij.dts.settings.disabler) | [`DtsSettingsDisabler`](%gh-ij-plugins%/dts/src/com/intellij/dts/settings/DtsSettingsDisabler.kt) |
 
 ### com.intellij.flex
 
@@ -81,6 +82,14 @@ Overview of Extension Points and Listeners for open source plugins available in 
 |-----------------|----------------|
 | [Dart.completionExtension](https://jb.gg/ipe?extensions=Dart.completionExtension) | [`DartCompletionExtension`](%gh-ij-plugins%/Dart/src/com/jetbrains/lang/dart/ide/completion/DartCompletionExtension.java) |
 | [Dart.completionTimerExtension](https://jb.gg/ipe?extensions=Dart.completionTimerExtension) | [`DartCompletionTimerExtension`](%gh-ij-plugins%/Dart/src/com/jetbrains/lang/dart/ide/completion/DartCompletionTimerExtension.java) |
+
+### dts-withCLion.xml
+
+[`dts-withCLion.xml`](%gh-ij-plugins%/dts/resources/META-INF/dts-withCLion.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.intellij.dts.cmake.configurationDataProvider](https://jb.gg/ipe?extensions=com.intellij.dts.cmake.configurationDataProvider) | [`DtsCMakeModelConfigurationDataProvider`](%gh-ij-plugins%/dts/src/com/intellij/dts/clion/impl/DtsCMakeModelConfigurationDataProvider.kt) |
 
 ### gherkin
 

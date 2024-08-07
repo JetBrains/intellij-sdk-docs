@@ -207,7 +207,7 @@ If access to indexes is not required, it can be marked [dumb aware](indexing_and
 
 EP: `com.intellij.editorTabTitleProvider`
 
-[`EditorTabTitleProvider`](%gh-ic%/platform/ide-core-impl/src/com/intellij/openapi/fileEditor/impl/EditorTabTitleProvider.java)
+[`EditorTabTitleProvider`](%gh-ic%/platform/ide-core-impl/src/com/intellij/openapi/fileEditor/impl/EditorTabTitleProvider.kt)
 allows for specifying custom names and tooltips displayed in the title of editor tabs.
 If access to indexes is not required, it can be marked [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI).
 

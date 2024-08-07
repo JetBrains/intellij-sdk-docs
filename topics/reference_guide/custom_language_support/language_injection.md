@@ -84,7 +84,7 @@ On the plugin side, these entries are defined in the file [`javaInjections.xml`]
 ```
 
 The XML file with the injection configurations is loaded through the `org.intellij.intelliLang.injectionConfig` EP in the file
-[`intellilang-java-support.xml`](%gh-ic%/plugins/IntelliLang/src/META-INF/intellilang-java-support.xml).
+[`intellilang-java-support.xml`](%gh-ic%/plugins/IntelliLang/resources/META-INF/intellilang-java-support.xml).
 
 ```xml
 <extensions defaultExtensionNs="org.intellij.intelliLang">

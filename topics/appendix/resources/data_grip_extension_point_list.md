@@ -12,7 +12,7 @@
 
 </tldr>
 
-75 Extension Points and 28 Listeners for DataGrip
+76 Extension Points and 28 Listeners for DataGrip
 
 See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 
@@ -153,6 +153,7 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.intellij.database.dialect](https://jb.gg/ipe?extensions=com.intellij.database.dialect) ![Non-Dynamic][non-dynamic] | `DatabaseDialect` |
+| [com.intellij.database.sqlEffectAnalyzer](https://jb.gg/ipe?extensions=com.intellij.database.sqlEffectAnalyzer) ![Non-Dynamic][non-dynamic] | `SqlAffectAnalyzer` |
 | [com.intellij.sql.dataSourceProvider](https://jb.gg/ipe?extensions=com.intellij.sql.dataSourceProvider) | `DataSourceProvider` |
 | [com.intellij.sql.dialect](https://jb.gg/ipe?extensions=com.intellij.sql.dialect) ![Non-Dynamic][non-dynamic] | `SqlLanguageDialect` |
 | [com.intellij.sql.dialectCodeStyleProvider](https://jb.gg/ipe?extensions=com.intellij.sql.dialectCodeStyleProvider) | `SqlDialectCodeStyleProvider` |

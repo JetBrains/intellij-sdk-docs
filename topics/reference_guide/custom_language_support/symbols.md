@@ -39,5 +39,5 @@ One should create a pointer via `Symbol.createPointer()` in the current read act
 ## Sample plugins
 
 - Java: [`StringFormatSymbolReferenceProvider`](%gh-ic%/java/java-impl/src/com/siyeh/ig/format/StringFormatSymbolReferenceProvider.java)
-- JVM languages: [`LoggingArgumentSymbolReferenceProvider`](%gh-ic-master%/jvm/jvm-analysis-impl/src/com/intellij/analysis/logging/resolve/LoggingArgumentSymbolReferenceProvider.kt)
+- JVM languages: [`LoggingArgumentSymbolReferenceProvider`](%gh-ic%/jvm/jvm-analysis-impl/src/com/intellij/analysis/logging/resolve/LoggingArgumentSymbolReferenceProvider.kt)
 - Markdown: [`link labels`](%gh-ic%/plugins/markdown/model/src/main/kotlin/org/intellij/plugins/markdown/model/psi/labels)

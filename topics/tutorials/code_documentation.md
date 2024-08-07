@@ -1,6 +1,6 @@
-# Documentation
+<!-- Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Documentation
 
 <tldr>
 
@@ -24,7 +24,7 @@ The bigger picture here is that documentation providers co-exist and if there is
 the first one that returns a value different from `null` wins.
 
 Although discouraged, the ordering of documentation providers can be influenced by using the `order` attribute when registering the extension.
-For instance, [`intellij.python.community.impl.xml`](%gh-ic%/python/src/intellij.python.community.impl.xml) uses the following to call the external documentation
+For instance, PythonCore [`plugin.xml`](%gh-ic%/python/pluginCore/resources/META-INF/plugin.xml) uses the following to call the external documentation
 provider before the default one (registered with `id="pythonDocumentationProvider"`):
 
 ```xml

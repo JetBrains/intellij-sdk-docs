@@ -155,6 +155,9 @@ Virtual File System _(VFS)_
 
 ## W
 
+Workspace Model _(WSM)_
+: Represents the project's structure and all its elements, see [](workspace_model.md).
+
 Write Action _(WA)_
 : Allows accessing code-related data structures for writing purposes. See also [](threading_model.md).
 &rarr;&nbsp;_Read Action_

@@ -159,6 +159,13 @@
     <toc-element topic="library.md"/>
     <toc-element topic="facet.md"/>
     <toc-element topic="external_system_integration.md"/>
+    <toc-element topic="workspace_model.md">
+      <toc-element toc-title="Entity Properties" href="https://youtrack.jetbrains.com/articles/IJPL-A-500/EntityProperties"/>
+      <toc-element toc-title="Entity Declaration" href="https://youtrack.jetbrains.com/articles/IJPL-A-504/EntityDeclaration"/>
+      <toc-element toc-title="Entity Mutation" href="https://youtrack.jetbrains.com/articles/IJPL-A-501/EntityMutation"/>
+      <toc-element toc-title="Entity Read" href="https://youtrack.jetbrains.com/articles/IJPL-A-503/EntityRead"/>
+      <toc-element toc-title="Event Listening" href="https://youtrack.jetbrains.com/articles/IJPL-A-499/EventListening"/>
+    </toc-element>
   </toc-element>
   <toc-element toc-title="PSI">
     <toc-element topic="psi.md" toc-title="What Is the PSI?"/>

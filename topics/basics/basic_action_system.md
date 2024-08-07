@@ -270,24 +270,24 @@ See [Extending DefaultActionGroup](grouping_action.md#extending-defaultactiongro
 
 <tab title="Actions">
 
-For Actions, the key in property files incorporates the action `id` in this specific structure:
+For Actions, the key in property files incorporates the action ID in this specific structure:
 * `action.<action-id>.text=Translated Action Text`
 * `action.<action-id>.description=Translated Action Description`
 
 _2020.1_
-If `<override-text>` is used for an action `id`, the key includes the `place` attribute:
+If `<override-text>` is used for an action ID, the key includes the `place` attribute:
 * `action.<action-id>.<place>.text=Place-dependent Translated Action Text`
 
 </tab>
 
 <tab title="Groups">
 
-For Groups, the `key` in the property files incorporates the group `id` in this specific structure:
+For Groups, the key in the property files incorporates the group ID in this specific structure:
 * `group.<group-id>.text=Translated Group Text`
 * `group.<group-id>.description=Translated Group Description`
 
 _2020.3_
-If `<override-text>` is used for a group `id`, the key includes the `<place>` attribute:
+If `<override-text>` is used for a group ID, the key includes the `place` attribute:
 * `group.<group-id>.<place>.text=Place-dependent Translated Group Text`
 
 </tab>

@@ -8,7 +8,7 @@
 
 > WIP. [Original WIKI page](https://youtrack.jetbrains.com/articles/IJPL-A-502/WorkspaceModel).
 >
-> Please discuss in #ijsdk-wsm.
+> Please discuss in #ijsdk-workspacemodel.
 >
 {style="warning"}
 

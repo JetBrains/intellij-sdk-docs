@@ -96,7 +96,7 @@ but via a single entry point.
 <compare type="top-bottom" first-title="Project Model API" second-title="Workspace Model API">
 
 <code-block lang="kotlin">
-ModuleManager.getInstance(project).findModuleByName(moduleName)
+ModuleManager.getInstance(project).findModuleByName("moduleName")
 </code-block>
 
 <code-block lang="kotlin">
@@ -111,7 +111,7 @@ entityStorage.resolve(moduleId)
 [`ImmutableEntityStorage`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/EntityStorage.kt)
 is an immutable snapshot of the storage state and isn't affected by the further modifications of the storage.
 
-### Module rename
+### Renaming Module
 
 <compare type="top-bottom" first-title="Project Model API" second-title="Workspace Model API">
 
@@ -143,7 +143,10 @@ writeAction {
 
 </compare>
 
-[ModuleEntity](https://github.com/JetBrains/intellij-community/blob/8fd1e3474396d7a6222c22edbf1b26e2ffacd8e8/platform/workspace/jps/src/com/intellij/platform/workspace/jps/entities/module.kt#L24) entity from the storage that describes configuration of a [Module](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/module/Module.java) it was created for the compatibility with the old API.
+[`ModuleEntity`](%gh-ic%/platform/workspace/jps/src/com/intellij/platform/workspace/jps/entities/module.kt)
+entity from the storage that describes configuration of a
+[`Module`](%gh-ic%/platform/core-api/src/com/intellij/openapi/module/Module.java)
+was created for compatibility with the old API.
 
 All project model elements have a correspondent entity to store the data in Workspace Model, for example:
 

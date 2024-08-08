@@ -50,6 +50,12 @@ See [](tools_intellij_platform_gradle_plugin.md#dependenciesLocalPlatform) for u
 
 A dependency on the bundled `org.jetbrains.android` plugin must be added using the [`bundledPlugin()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) helper.
 
+> Note that Android plugin is no longer bundled with the IDE.
+>
+> Use `plugin("org.jetbrains.android:$VERSION$")` instead of `bundledPlugin(...)`.
+>
+{title="Targeting 2023.3+"}
+
 Minimum <path>build.gradle.kts</path> setup:
 
 ```kotlin

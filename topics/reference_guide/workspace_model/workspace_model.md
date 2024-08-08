@@ -155,8 +155,7 @@ All project model elements have a correspondent entity to store the data in Work
 
 All operations can be performed on entities.
 
-[//]: # (todo add links)
-See also TODO entity mutation and [](workspace_model_entity_declaration.md) topics.
+See also [](workspace_model_entity_mutation.md) and [](workspace_model_entity_declaration.md) topics.
 
 [//]: # (todo clarify paragraph)
 Use [`WorkspaceModel`](%gh-ic%/platform/backend/workspace/src/WorkspaceModel.kt) to access an instance of this storage used by the IDE process.

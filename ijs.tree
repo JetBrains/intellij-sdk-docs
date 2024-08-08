@@ -162,7 +162,7 @@
     <toc-element topic="workspace_model.md">
       <toc-element topic="workspace_model_entity_declaration.md"/>
       <toc-element topic="workspace_model_entity_properties.md"/>
-      <toc-element toc-title="Entity Mutation" href="https://youtrack.jetbrains.com/articles/IJPL-A-501/EntityMutation"/>
+      <toc-element topic="workspace_model_entity_mutation.md"/>
       <toc-element toc-title="Entity Read" href="https://youtrack.jetbrains.com/articles/IJPL-A-503/EntityRead"/>
       <toc-element toc-title="Event Listening" href="https://youtrack.jetbrains.com/articles/IJPL-A-499/EventListening"/>
     </toc-element>

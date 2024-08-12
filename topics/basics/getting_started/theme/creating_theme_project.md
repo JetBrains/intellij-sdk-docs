@@ -81,4 +81,4 @@ The wizard can be used for both DevKit-based and Gradle-based plugins.
 ## Bundling Color Schemes
 
 Use `com.intellij.bundledColorScheme` extension point specifying the `path` to the color scheme XML file (without `.xml` suffix).
-Attribute `id` must be specified in <path>plugin.xml</path> and match its `name` attribute.
+Specify attribute `id` for this extension in <path>plugin.xml</path> matching its `name` attribute value from the color scheme XML.

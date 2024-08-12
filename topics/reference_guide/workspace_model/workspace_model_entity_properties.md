@@ -173,7 +173,7 @@ Some types of entities may be connected by "parent-child" relationship.
 It is introduced by a property in the parent entity interface which refers to the child entity (entities) with
 [`@Child`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/annotations/Child.kt)
 annotation, and a property in the child entity interface which refers to the parent entity.
-For example, content roots are defined inside a module in the old project model, so
+For example, content roots are defined inside a module in the project model, so
 [`ContentRootEntity`](%gh-ic%/platform/workspace/jps/src/com/intellij/platform/workspace/jps/entities/roots.kt)
 is defined as a child of
 [`ModuleEntity`](%gh-ic%/platform/workspace/jps/src/com/intellij/platform/workspace/jps/entities/module.kt).
@@ -213,7 +213,7 @@ provide an implementation of
 and return it from its `symbolicId` property.
 The entity which refers to it must store an instance of that `SymbolicEntityId` implementation in one of its properties.
 
-For example, a module from the old project model may depend on other modules.
+For example, a module from the project model may depend on other modules.
 This is implemented by a property with the type
 [`ModuleId`](%gh-ic%/platform/workspace/jps/src/com/intellij/platform/workspace/jps/entities/persistent_Id.kt)
 which is stored inside

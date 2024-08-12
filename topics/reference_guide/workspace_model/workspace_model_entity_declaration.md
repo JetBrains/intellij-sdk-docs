@@ -28,7 +28,7 @@ A nested `Builder` interface with setters for these properties, and a `companion
 are generated automatically along with the implementations (see [](#generating-entity-implementations)).
 The platform currently provides some predefined types of entities
 (see [`entities`](%gh-ic%/platform/workspace/jps/src/com/intellij/platform/workspace/jps/entities) package),
-but they're supposed to be used only for interoperability with code which using the old project model API.
+but they're supposed to be used only for interoperability with code which using the project model API.
 
 The plugins should define and use their own types of entities if they need to store framework-specific data.
 

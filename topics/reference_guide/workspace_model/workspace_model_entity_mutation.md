@@ -41,7 +41,7 @@ val module = ModuleEntity(moduleName, dependencies, entitySource) {
   // passed as the last parameter
   type = ModuleTypeId.JAVA_MODULE
 }
-...
+
 WorkspaceModel.getInstance(project).update("Add module") { builder ->
   builder.addEntity(module)
 }
@@ -55,14 +55,14 @@ An entire tree of entities can be prepared first, then add the root to the stora
 To modify or remove an entity, find its instance in the
 [`MutableEntityStorage`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/MutableEntityStorage.kt)
 instance.
-This can be done by resolving
-its
+This can be done by:
+- resolving its
 [`SymbolicEntityId`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/SymbolicEntityId.kt)
-([`SymbolicEntityId.resolve()`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/SymbolicEntityId.kt)),
-or by resolving an
+via [`SymbolicEntityId.resolve()`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/SymbolicEntityId.kt)
+- resolving an
 [`EntityPointer`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/EntityPointer.kt)
-([`EntityPointer.resolve()`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/EntityPointer.kt)),
-or iterating by children of another entity:
+via [`EntityPointer.resolve()`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/EntityPointer.kt)
+- iterating by children of another entity
 
 ```kotlin
 WorkspaceModel.getInstance(project).updateProjectModel("Update module") { builder ->

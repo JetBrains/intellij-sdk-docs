@@ -164,7 +164,7 @@
       <toc-element topic="workspace_model_entity_properties.md"/>
       <toc-element topic="workspace_model_entity_mutation.md"/>
       <toc-element topic="workspace_model_entity_read.md"/>
-      <toc-element toc-title="Event Listening" href="https://youtrack.jetbrains.com/articles/IJPL-A-499/EventListening"/>
+      <toc-element topic="workspace_model_event_listening.md"/>
     </toc-element>
   </toc-element>
   <toc-element toc-title="PSI">

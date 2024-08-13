@@ -157,9 +157,9 @@ flowchart
             n --> p
             n --> q
             n --> r
-            style l fill: #FF9, stroke: #333, stroke-width: 2px
-            style q fill: #FF9, stroke: #333, stroke-width: 2px
-            style r fill: #CCFCC7, stroke: #333, stroke-width: 2px
+            style l fill: #FF9
+            style q fill: #FF9
+            style r fill: #9F9
         end
 
     end
@@ -178,10 +178,10 @@ flowchart
         d --> e
         d --> k
         d --> f
-        style c fill: #F40, stroke: #333, stroke-width: 2px
-        style a fill: #FF0, stroke: #333, stroke-width: 2px
-        style k fill: #FF0, stroke: #333, stroke-width: 2px
-        style f fill: #0F0, stroke: #333, stroke-width: 2px
+        style c fill: #F99
+        style a fill: #FF9
+        style k fill: #FF9
+        style f fill: #9F9
 
     end
   MutableEntityStorage ==  "applyChangesFrom()"  ==> Original
@@ -219,7 +219,7 @@ The diagram below shows a schematic example of the
 [`MutableEntityStorage.replaceBySource()`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/MutableEntityStorage.kt)
 operation.
 The color represents the type of entity source.
-In this example the function is called with the following predicate: `{ entitySource is YellowEntitySource }`.
+In this example it is called with the predicate `{ entitySource is YellowEntitySource }`.
 In the resulting storage we can see that the function automatically calculates the changes for entities with `YellowEntitySource` and
 doesn't touch entities not matching the predicate.
 
@@ -239,12 +239,12 @@ flowchart
             bb --> dd
             cc --> ee
             cc --> ff
-            style aa fill: #FF9, stroke: #333, stroke-width: 2px
-            style bb fill: #FF9, stroke: #333, stroke-width: 2px
-            style dd fill: #FF9, stroke: #333, stroke-width: 2px
-            style cc fill: #CCFCC7, stroke: #333, stroke-width: 2px
-            style ee fill: #CCFCC7, stroke: #333, stroke-width: 2px
-            style ff fill: #CCFCC7, stroke: #333, stroke-width: 2px
+            style aa fill: #FF9
+            style bb fill: #FF9
+            style dd fill: #FF9
+            style cc fill: #9F9
+            style ee fill: #9F9
+            style ff fill: #9F9
         end
 
         subgraph Result
@@ -265,15 +265,15 @@ flowchart
             hh --> oo
             jj --> mm
             jj --> kk
-            style gg fill: #FF9, stroke: #333, stroke-width: 2px
-            style hh fill: #FF9, stroke: #333, stroke-width: 2px
-            style nn fill: #FF9, stroke: #333, stroke-width: 2px
-            style ll fill: #FF9, stroke: #333, stroke-width: 2px
-            style oo fill: #FF9, stroke: #333, stroke-width: 2px
-            style ii fill: #FF9, stroke: #333, stroke-width: 2px
-            style jj fill: #CCFCC7, stroke: #333, stroke-width: 2px
-            style mm fill: #CCFCC7, stroke: #333, stroke-width: 2px
-            style kk fill: #CCFCC7, stroke: #333, stroke-width: 2px
+            style gg fill: #FF9
+            style hh fill: #FF9
+            style nn fill: #FF9
+            style ll fill: #FF9
+            style oo fill: #FF9
+            style ii fill: #FF9
+            style jj fill: #9F9
+            style mm fill: #9F9
+            style kk fill: #9F9
         end
 
     end
@@ -290,15 +290,15 @@ flowchart
         d --> k
         d --> e
         d --> f
-        style a fill: #FF9, stroke: #333, stroke-width: 2px
-        style b fill: #FF9, stroke: #333, stroke-width: 2px
-        style d fill: #FF9, stroke: #333, stroke-width: 2px
-        style k fill: #FF9, stroke: #333, stroke-width: 2px
-        style e fill: #FF9, stroke: #333, stroke-width: 2px
-        style f fill: #FF9, stroke: #333, stroke-width: 2px
+        style a fill: #FF9
+        style b fill: #FF9
+        style d fill: #FF9
+        style k fill: #FF9
+        style e fill: #FF9
+        style f fill: #FF9
 
     end
-    MutableEntityStorage ==  "replaceBySource()"  ==> Original
+    MutableEntityStorage ==  "`**replaceBySource()**`"  ==> Original
 ```
 
 #### Use Cases

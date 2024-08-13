@@ -28,7 +28,7 @@ A nested `Builder` interface with setters for these properties, and a `companion
 are generated automatically along with the implementations (see [](#generating-entity-implementations)).
 The platform currently provides some predefined types of entities
 (see [`entities`](%gh-ic%/platform/workspace/jps/src/com/intellij/platform/workspace/jps/entities) package),
-but they're supposed to be used only for interoperability with code which using the project model API.
+but they're supposed to be used only for interoperability with code which uses the project model API.
 
 The plugins should define and use their own types of entities if they need to store framework-specific data.
 
@@ -103,7 +103,7 @@ data class MavenId(
 
 ## Implementation
 
-### Reference via extension property
+### Reference via Extension Property
 
 Due to the limitation that a reference must be declared on both entities, there needs to be an option to declare a reference to an entity from another module.
 This can be done by declaring an extension property for the entity located outside the module.
@@ -141,12 +141,14 @@ more samples can be found in the
 [`com.intellij.platform.workspace.jps.entities`](%gh-ic%/platform/workspace/jps/src/com/intellij/platform/workspace/jps/entities)
 package.
 
-## Generating entity implementations
+## Generating Entity Implementations
 
-> This feature is currently not enabled outside the IntelliJ IDEA project.
+> This feature is currently not available to third-party plugins and enabled only for the IntelliJ IDEA project itself.
+>
+{style="warning"}
 
 After defining the entity interface, generate some code with the <control>Generate Workspace Model Implementation</control> action,
-available from the context menu <ui-path>Module | Generate Workspace Model Implementation</ui-path> or via <ui-path>Help | Find Action</ui-path>
+available from the module's context menu in the <control>Project</control> tool window or via <ui-path>Help | Find Action</ui-path>
 on the currently open file.
 
 Entity implementations can also be generated via the <control>Generate implementation</control> quick-fix on the interface's name element,

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Project Structure
 
@@ -6,64 +6,114 @@
 
 [//]: # (TODO: split into parts accordingly to the table of contents)
 
-This topic considers the concept of projects based on the IntelliJ Platform and related subjects, such as _modules_, _facets_, _libraries_, and _SDK_.
-The project structure and Java classes available to manage projects and modules are discussed.
+This topic considers the concept of projects based on the IntelliJ Platform and related subjects, such as modules, libraries, facets, and SDKs.
 
-> Internal changes related to a significant redesign of the representation of project models are included in 2020.3 release; please see [blog post](https://blog.jetbrains.com/platform/2020/10/new-implementation-of-project-model-interfaces-in-2020-3/) for details.
-> This shouldn't affect any plugins using the IntelliJ API properly and which don't access internal classes.
+> Internal changes related to a significant redesign of the representation of project models are included in the 2020.3 release;
+> see this [blog post](https://blog.jetbrains.com/platform/2020/10/new-implementation-of-project-model-interfaces-in-2020-3/) for details.
+> This shouldn't affect any plugins using the IntelliJ Platform API properly and which don't access internal classes.
 >
-{style="note"}
+> The [](workspace_model.md) API is available since 2024.1 for use by plugins.
+>
+{style="note" title="Workspace Model API"}
 
-## Project and Its Components
-This section briefly discusses the IDEA project structure, project components, and related terms.
-For more information about projects and their components, refer to [Project](https://www.jetbrains.com/help/idea/about-projects.html), [Module](https://www.jetbrains.com/help/idea/creating-and-managing-modules.html), [Library](https://www.jetbrains.com/help/idea/working-with-libraries.html), [Facet](https://www.jetbrains.com/help/idea/adding-support-for-frameworks-and-technologies.html#facets) in the IntelliJ IDEA Web Help.
+## Project
 
-Use [`ProjectSettingsService`](%gh-ic%/platform/lang-impl/src/com/intellij/openapi/roots/ui/configuration/ProjectSettingsService.java) to open related entries in <control>Project Structure</control> dialog.
+<tldr>
 
-### Project
-In the IntelliJ Platform, a _project_ encapsulates all of a project's source code, libraries, and build instructions into a single organizational unit.
-Everything done using the IntelliJ Platform SDK is done within the context of a project.
-A project defines collections referred to as _modules_ and _libraries_.
-Depending on the project's logical and functional requirements, you can create a _single-module_ or a _multi-module_ project.
+**Reference**: [](project.md)
 
-### Module
-A _module_ is a discrete unit of functionality that can be run, tested, and debugged independently.
+**Product Help**: [Projects](https://www.jetbrains.com/help/idea/creating-and-managing-projects.html)
+
+</tldr>
+
+A project encapsulates all of a project's source code, libraries, and build instructions into a single organizational unit.
+
+> Everything in the IntelliJ Platform SDK is done within the context of a project.
+
+A project defines collections referred to as [Modules](#module) and [Libraries](#library).
+Depending on the project's logical and functional requirements, a _single-module_ or a _multi-module_ project can be created.
+
+## Module
+
+<tldr>
+
+**Reference**: [](module.md)
+
+**Product Help**: [Modules](https://www.jetbrains.com/help/idea/creating-and-managing-modules.html)
+
+</tldr>
+
+A module is a discrete unit of functionality that can be run, tested, and debugged independently.
 Modules include such things as source code, build scripts, unit tests, deployment descriptors, etc.
-In a project, each module can use a specific SDK or inherit the SDK defined at the project level (see the [SDK](#sdk) section below in this document).
+
+In a project, each module can use a specific [Software Development Kit (SDK)](#sdk) or inherit the SDK defined at the project level.
 A module can depend on other modules of the project.
 
-### Library
-A _library_ is an archive of compiled code (such as JAR files) on which modules depend.
+## Library
+
+<tldr>
+
+**Reference**: [](library.md)
+
+**Product Help**: [Libraries](https://www.jetbrains.com/help/idea/library.html)
+
+</tldr>
+
+A library is an archive of compiled code (such as JAR files) on which modules depend.
 The IntelliJ Platform supports three types of libraries:
-* **Module Library**: the library classes are visible only in this module, and the library information is recorded in the module's <path>.iml</path> file.
-* **Project Library**: the library classes are visible within the project, and the library information is recorded in the project's <path>.ipr</path> file or in <path>.idea/libraries</path>.
-* **Global Library**: the library information is recorded in the <path>applicationLibraries.xml</path> file in the <path>~/.IntelliJIdea/config/options</path> directory.
-  Global libraries are similar to project libraries but are visible for different projects.
 
-For more information about libraries, refer to [Library](https://www.jetbrains.com/help/idea/working-with-libraries.html).
+### Module Library
 
-### SDK
-Every project uses a Software Development Kit (_SDK_).
+The library classes are visible only in this [module](#module), and the library information is recorded in the module's <path>.iml</path> file.
+
+### Project Library
+
+The library classes are visible within the [project](#project), and the library information is recorded in the project's <path>.ipr</path> file or in <path>.idea/libraries</path>.
+
+### Global Library
+
+The library information is recorded in the <path>applicationLibraries.xml</path> file in the <path>~/.IntelliJIdea/config/options</path> directory.
+Global libraries are similar to project libraries but are visible for different projects.
+
+## SDK
+
+<tldr>
+
+**Reference**: [](sdk.md)
+
+**Product Help**: [SDK](https://www.jetbrains.com/help/idea/sdk.html)
+
+</tldr>
+
+Every project uses a Software Development Kit (SDK).
 For Java projects, SDK is referred to as JDK (Java Development Kit).
 
 The SDK determines which API library is used to build the project.
-If a project is multi-module, the project SDK is common for all modules within the project by default.
+For a multi-module project, the project SDK is common for all [modules](#module) within the project by default.
 Optionally, a project can configure an individual SDK for each module.
 
-For more information about SDKs, see [Working with SDKs](https://www.jetbrains.com/help/idea/working-with-sdks.html) in the IntelliJ IDEA Web Help.
+## Facet
 
-### Facet
-A _facet_ represents a certain configuration, specific for a particular framework/technology associated with a module.
+<tldr>
+
+**Reference**: [](facet.md)
+
+**Product Help**: [Facets](https://www.jetbrains.com/help/idea/facet-page.html)
+
+</tldr>
+
+A facet represents a certain configuration, specific for a particular framework or technology associated with a [module](#module).
 A module can have multiple facets.
-E.g., Spring-specific configuration is stored in a Spring facet.
+For example, Spring-specific configuration is stored in a dedicated [Spring facet](https://www.jetbrains.com/help/idea/spring-projects.html).
 
-Facets are documented under [Facet](https://www.jetbrains.com/help/idea/adding-support-for-frameworks-and-technologies.html#facets) and [Language and Framework Specific Guidelines](https://www.jetbrains.com/help/idea/language-and-framework-specific-guidelines.html) in the IntelliJ IDEA Web Help.
+## Configuration
 
-## Additional Information
-For more information on each of these entities, see:
+<tldr>
 
-- [Project](project.md)
-- [Module](module.md)
-- [SDK](sdk.md)
-- [Library](library.md)
-- [External system integration](external_system_integration.md) (for projects imported from Gradle or similar build systems)
+**Product Help**: [Project Structure](https://www.jetbrains.com/help/idea/project-settings-and-structure.html)
+
+</tldr>
+
+The user can configure all entities listed above in the <control>Project Structure</control> dialog.
+
+Use [`ProjectSettingsService`](%gh-ic%/platform/lang-impl/src/com/intellij/openapi/roots/ui/configuration/ProjectSettingsService.java) to open related entries programmatically.

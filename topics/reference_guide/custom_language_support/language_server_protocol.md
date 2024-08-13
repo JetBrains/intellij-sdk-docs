@@ -107,21 +107,37 @@ The LSP API sources are bundled in IntelliJ IDEA Ultimate and can be found withi
 
 The LSP support provided by the IntelliJ Platform covers the following features for these releases:
 
-### 2023.2
+### 2024.2
 
-- Errors and warnings highlighting [textDocument/publishDiagnostics](https://microsoft.github.io/language-server-protocol/specification/#textDocument_publishDiagnostics)
-- Quick fixes for errors and warnings ([textDocument/codeAction](https://microsoft.github.io/language-server-protocol/specification/#textDocument_codeAction))
-- Code completion ([textDocument/completion](https://microsoft.github.io/language-server-protocol/specification/#textDocument_completion))
-- Go to Declaration ([textDocument/definition](https://microsoft.github.io/language-server-protocol/specification/#textDocument_definition))
+- Find Usages ([`textDocument/references`](https://microsoft.github.io/language-server-protocol/specification#textDocument_references))
+- Completion Item Resolve Request ([`completionItem/resolve`](https://microsoft.github.io/language-server-protocol/specification/#completionItem_resolve))
+- Code Action Resolve Request ([`codeAction/resolve`](https://microsoft.github.io/language-server-protocol/specification/#codeAction_resolve))
 
-### 2023.3
+### 2024.1
 
-- Intention actions ([textDocument/codeAction](https://microsoft.github.io/language-server-protocol/specification/#textDocument_codeAction))
-- Code formatting ([textDocument/formatting](https://microsoft.github.io/language-server-protocol/specification/#textDocument_formatting))
+- Communication channel: Socket
+- Execute a command ([`workspace/executeCommand`](https://microsoft.github.io/language-server-protocol/specification/#workspace_executeCommand))
+- Apply a WorkspaceEdit ([`workspace/applyEdit`](https://microsoft.github.io/language-server-protocol/specification/#workspace_applyEdit))
+- Show Document Request ([`window/showDocument`](https://microsoft.github.io/language-server-protocol/specification/#window_showDocument))
 
 ### 2023.3.2
 
-- Quick documentation ([textDocument/hover](https://microsoft.github.io/language-server-protocol/specification#textDocument_hover))
+- Quick documentation ([`textDocument/hover`](https://microsoft.github.io/language-server-protocol/specification#textDocument_hover))
+- Client-side file watcher ([`workspace/didChangeWatchedFiles`](https://microsoft.github.io/language-server-protocol/specification#workspace_didChangeWatchedFiles))
+
+### 2023.3
+
+- Intention actions ([`textDocument/codeAction`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_codeAction))
+- Code formatting ([`textDocument/formatting`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_formatting))
+- Request cancellation ([`$/cancelRequest`](https://microsoft.github.io/language-server-protocol/specification/#cancelRequest))
+
+### 2023.2
+
+- Communication channel: StdIO
+- Errors and warnings highlighting ([`textDocument/publishDiagnostics`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_publishDiagnostics))
+- Quick-fixes for errors and warnings ([`textDocument/codeAction`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_codeAction))
+- Code completion ([`textDocument/completion`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_completion))
+- Go to Declaration ([`textDocument/definition`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_definition))
 
 ## Basic Implementation
 
@@ -161,10 +177,14 @@ A dedicated <control>Language Services</control> status bar widget is available 
 Override `LspServerSupportProvider.createLspServerWidgetItem()` to provide a custom icon and link to [Settings](settings.md) page (if available).
 
 ```kotlin
-override fun getLspServerWidgetItem(lspServer: LspServer,
-                                    currentFile: VirtualFile?) =
-  LspServerWidgetItem(lspServer, currentFile,
-                      FooIcons.PluginIcon, FooConfigurable::class.java)
+override fun getLspServerWidgetItem(
+  lspServer: LspServer,
+  currentFile: VirtualFile?
+) =
+  LspServerWidgetItem(
+    lspServer, currentFile,
+    FooIcons.PluginIcon, FooConfigurable::class.java
+  )
 ```
 
 If there are configuration problems preventing from starting an LSP server, the plugin can provide a widget item

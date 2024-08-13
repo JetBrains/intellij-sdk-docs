@@ -12,6 +12,13 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2024
 
+### August
+{august-24}
+
+Minor Changes and Additions
+:
+- Updated list of [supported features](language_server_protocol.md#supported-features) for Language Server Protocol (LSP).
+
 ### July
 {july-24}
 

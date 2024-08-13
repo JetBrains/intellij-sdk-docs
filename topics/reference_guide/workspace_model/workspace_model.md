@@ -76,7 +76,7 @@ model snapshot without fear that it will be modified during an interaction.
 
 ## Interoperability with Project Model API
 
-New implementations of the old [project model](project_structure.md) interfaces
+New implementations of the [project model](project_structure.md) interfaces
 ([`Module`](%gh-ic%/platform/core-api/src/com/intellij/openapi/module/Module.java),
 [`ModuleManager`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/module/ModuleManager.kt),
 [`Library`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/libraries/Library.java),
@@ -84,11 +84,11 @@ etc.) store their data in
 [`WorkspaceModel`](%gh-ic%/platform/backend/workspace/src/WorkspaceModel.kt)
 in corresponding entities defined in the `com.intellij.platform.workspace.jps.entities` package.
 
-Implementations of the old interfaces (so-called _legacy bridges_) use entities of these types to store data.
+Implementations of the interfaces (so-called _legacy bridges_) use entities of these types to store data.
 
 ## Basic Use Cases
 
-[`WorkspaceModel`](%gh-ic%/platform/backend/workspace/src/WorkspaceModel.kt) allows performing operations as with the old [Project Model](project_structure.md) API,
+[`WorkspaceModel`](%gh-ic%/platform/backend/workspace/src/WorkspaceModel.kt) allows performing operations as with the [Project Model](project_structure.md) API,
 but via a single entry point.
 
 ### Search Module by Name
@@ -146,7 +146,7 @@ writeAction {
 [`ModuleEntity`](%gh-ic%/platform/workspace/jps/src/com/intellij/platform/workspace/jps/entities/module.kt)
 entity from the storage that describes configuration of a
 [`Module`](%gh-ic%/platform/core-api/src/com/intellij/openapi/module/Module.java)
-was created for compatibility with the old API.
+was created for compatibility with the existing API.
 
 All project model elements have a correspondent entity to store the data in Workspace Model, for example:
 

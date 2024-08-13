@@ -83,7 +83,7 @@ and amend the values in <path>gradle.properties</path> accordingly.
 
 ### plugin.xml
 
-The <path>plugin.xml</path> configuration file must specify the dependency on the IntelliJ IDEA Ultimate module:
+The <path>plugin.xml</path> configuration file must specify the dependency on the IntelliJ Platform _Ultimate_ module:
 
 ```xml
 
@@ -207,18 +207,22 @@ For more complex cases, the plugin may request to provide a detailed configurati
 To fine-tune or disable the implementation of LSP-based features, plugins may override the corresponding properties of the `LspServerDescriptor` class.
 See the property documentation for more details.
 
-Since 2023.2:
+### 2023.3
+
+{id="customization_2023_3"}
+
+- `lspFormattingSupport`
+- `lspHoverSupport`
+
+### 2023.2
+
+{id="customization_2023_2"}
 
 - `lspGoToDefinitionSupport`
 - `lspCompletionSupport`
 - `lspDiagnosticsSupport`
 - `lspCodeActionsSupport`
 - `lspCommandsSupport`
-
-Since 2023.3:
-
-- `lspFormattingSupport`
-- `lspHoverSupport`
 
 To handle custom (undocumented) requests and notifications from the LSP server, override `LspServerDescriptor.createLsp4jClient` property and the `Lsp4jClient` class according to their documentation.
 

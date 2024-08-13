@@ -107,9 +107,7 @@ For example, entities loaded from configuration files under the <path>.idea</pat
 Information about entity sources is used by the
 [`MutableEntityStorage.replaceBySource()`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/MutableEntityStorage.kt)
 function.
-
-[//]: # (todo link to entity_mutation)
-**N.B** See the following section TODO for [Replace By Source](https://youtrack.jetbrains.com/articles/IJPL-A-501#replace-by-source) operation.
+See also [](workspace_model_entity_mutation.md#replace-by-source) section.
 
 An entity source must be serializable along with entities, so there are some restrictions on its implementation.
 It must be a `data class` that contains read-only properties of the following types:

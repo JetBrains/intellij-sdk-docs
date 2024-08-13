@@ -96,7 +96,7 @@ but via a single entry point.
 <compare type="top-bottom" first-title="Project Model API" second-title="Workspace Model API">
 
 <code-block lang="kotlin">
-ModuleManager.getInstance(project).findModuleByName("moduleName")
+ModuleManager.getInstance(project).findModuleByName(moduleName)
 </code-block>
 
 <code-block lang="kotlin">

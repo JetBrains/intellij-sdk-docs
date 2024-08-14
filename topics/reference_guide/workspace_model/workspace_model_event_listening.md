@@ -2,7 +2,7 @@
 
 # Event Listening
 
-<primary-label ref="2024.1"/>
+<primary-label ref="2024.2"/>
 
 <link-summary>Listening to Workspace Model events</link-summary>
 

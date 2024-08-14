@@ -2,7 +2,7 @@
 
 # Workspace Model
 
-<primary-label ref="2024.1"/>
+<primary-label ref="2024.2"/>
 
 <link-summary>Introduction to Workspace Model representing a project's structure</link-summary>
 

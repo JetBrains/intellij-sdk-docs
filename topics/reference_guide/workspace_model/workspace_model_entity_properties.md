@@ -2,7 +2,7 @@
 
 # Entity Properties
 
-<primary-label ref="2024.1"/>
+<primary-label ref="2024.2"/>
 
 <link-summary>Workspace Model Entity Properties</link-summary>
 

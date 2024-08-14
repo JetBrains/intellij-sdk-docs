@@ -47,3 +47,44 @@ val myTask by tasks.registering(MyTask::class) {
 ```
 
 As soon as the registered task inherits from the `*Aware` interface, such as [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware), all the related information will be injected during the configuration phase.
+
+
+## Bundle additional files with the plugin
+
+Additional files can be bundled by adding them to the plugin directory when preparing the sandbox:
+
+```kotlin
+tasks {
+  prepareSandbox {
+    from(layout.projectDirectory.dir("extraFiles")) {
+      into(pluginName.map { "$it/extra" })
+    }
+  }
+}
+```
+
+To apply that to the custom task, use the [`prepareSandboxTask`](tools_intellij_platform_gradle_plugin_testing_extension.md#preparesandboxtask) reference:
+
+```kotlin
+val runWithCustomSandbox by intellijPlatformTesting.runIde.registering {
+  // ...
+
+  prepareSandboxTask {
+    from(...) {
+      into(...)
+    }
+  }
+}
+```
+
+It is possible to apply that to all [`PrepareSandboxTask`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox) with:
+
+```kotlin
+tasks {
+  withType<PrepareSandboxTask> {
+    from(...) {
+      into(...)
+    }
+  }
+}
+```

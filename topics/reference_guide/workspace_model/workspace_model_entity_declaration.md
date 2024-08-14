@@ -14,6 +14,10 @@
 
 The Workspace Model allows defining types of entities.
 
+> Defining custom entities is not yet available to third-party plugins, see also [](#generating-entity-implementations).
+>
+{style="warning" title="Custom Entities"}
+
 > Entities' declaration is still an experimental feature and can be changed at any time.
 > While this feature is still experimental, it is important for understanding the data
 > stored inside the Workspace Model and its relations.

@@ -139,7 +139,7 @@ See: [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#custom-t
 
 ### `intellij.updateSinceUntilBuild`, `intellij.sameSinceUntilBuild`
 
-The <path>plugin.xml</path> file is now fully managed by the [`intellijPlatform`](tools_intellij_platform_gradle_plugin_extension.md) extension.
+The since/until properties in the <path>plugin.xml</path> file are now managed by the [`intellijPlatform`](tools_intellij_platform_gradle_plugin_extension.md) extension.
 
 ### `intellij.intellijRepository`,` intellij.pluginsRepositories`, `intellij.jreRepository`
 

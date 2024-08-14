@@ -165,6 +165,7 @@
       <toc-element topic="workspace_model_entity_mutation.md"/>
       <toc-element topic="workspace_model_entity_read.md"/>
       <toc-element topic="workspace_model_event_listening.md"/>
+      <toc-element topic="workspace_model_usages.md"/>
     </toc-element>
   </toc-element>
   <toc-element toc-title="PSI">

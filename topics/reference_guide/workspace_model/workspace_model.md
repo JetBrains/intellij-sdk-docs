@@ -15,11 +15,11 @@
 The Workspace Model represents the project's structure and all its elements, such as [modules](module.md), [libraries](library.md), [SDKs](sdk.md), [facets](facet.md),
 and other configurable project components.
 It provides a generic storage for entities describing the user's workspace while maintaining full
-[interoperability](#interoperability-with-project-model-api) with [project model](project_structure.md).
+[interoperability](#interoperability-with-project-model-api) with the [](project_model.md).
 
 ## Why a New API?
 
-There are several problems with the approach that has been used to represent the [project model](project_structure.md) (configuration of modules, libraries, facet, artifacts, etc.)
+There are several problems with the approach that has been used to represent the [project model](project_model.md) (configuration of modules, libraries, facet, artifacts, etc.)
 in the IntelliJ Platform for more than 15 years.
 
 ### Structure
@@ -104,7 +104,7 @@ It is also possible to [link objects](workspace_model_entity_read.md#arbitrary-d
 
 ## Interoperability with Project Model API
 
-New implementations of the [Project Model](project_structure.md) interfaces store their data in
+New implementations of the [Project Model](project_model.md) interfaces store their data in
 Workspace Model in corresponding entities.
 
 The following table maps to corresponding Workspace Model API and usage samples.
@@ -117,5 +117,5 @@ The following table maps to corresponding Workspace Model API and usage samples.
 | [](facet.md)              | [`Facet`](%gh-ic%/platform/lang-core/src/com/intellij/facet/Facet.java)                              | [`FacetEntity`](%gh-ic%/platform/workspace/jps/src/com/intellij/platform/workspace/jps/entities/facet.kt)          |                                       |
 
 [`WorkspaceModel`](%gh-ic%/platform/backend/workspace/src/WorkspaceModel.kt)
-allows performing operations as with the [Project Model](project_structure.md) API,
+allows performing operations as with the [](project_model.md) API,
 but via a single entry point, see also [](workspace_model_usages.md).

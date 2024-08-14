@@ -12,6 +12,8 @@
 >
 {style="warning"}
 
+See also [](workspace_model_entity_mutation.md) and [](workspace_model_entity_read.md) topics.
+
 ## Module
 
 ### Search Module by Name

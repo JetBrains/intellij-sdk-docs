@@ -12,7 +12,7 @@
 >
 {style="warning"}
 
-Properties of an entity are declared by properties in its interface.
+Properties of an [entity](workspace_model_entity_declaration.md) are declared by properties in its interface.
 
 ## Supported Types
 
@@ -25,9 +25,9 @@ The following types of properties are supported:
 * a `sealed` class which implementations are immutable data classes or objects with properties of supported types
 * a nullable variant of a supported type
 * `List`, `Set` or `Map` collections with elements of supported types
-* [VirtualFileUrl](#virtualfileurl)
-* [EntitySource](#entitysource)
-* [SymbolicEntityId](#symbolicentityid)
+* [`VirtualFileUrl`](#virtualfileurl)
+* [`EntitySource`](#entitysource)
+* [`SymbolicEntityId`](#symbolicentityid)
 * a [reference to another entity](#parent-child-relationship)
 
 ## Property Kinds

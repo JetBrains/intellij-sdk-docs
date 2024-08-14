@@ -60,20 +60,7 @@ A module can depend on other modules of the project.
 </tldr>
 
 A library is an archive of compiled code (such as JAR files) on which modules depend.
-The IntelliJ Platform supports three types of libraries:
-
-### Module Library
-
-The library classes are visible only in this [module](#module), and the library information is recorded in the module's <path>.iml</path> file.
-
-### Project Library
-
-The library classes are visible within the [project](#project), and the library information is recorded in the project's <path>.ipr</path> file or in <path>.idea/libraries</path>.
-
-### Global Library
-
-The library information is recorded in the <path>applicationLibraries.xml</path> file in the <path>~/.IntelliJIdea/config/options</path> directory.
-Global libraries are similar to project libraries but are visible for different projects.
+The IntelliJ Platform supports three types of libraries: Module, Project, and Global Libraries.
 
 ## SDK
 

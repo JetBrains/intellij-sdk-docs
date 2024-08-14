@@ -22,6 +22,8 @@ A particular type of programmatically defined libraries is [Predefined Libraries
 ## Accessing Libraries and JARs
 Package [`com.intellij.openapi.roots.libraries`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/libraries) provides functionality for working with project libraries and JAR files.
 
+<include from="project.md" element-id="useWorkspaceModelAPI"/>
+
 ### Getting a List of Libraries a Module Depends On
 To get the list of libraries that a module depends on, use `OrderEnumerator.forEachLibrary` as follows.
 

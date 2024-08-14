@@ -30,6 +30,8 @@ The key components of a module are:
 In addition to that, a module can store other settings, such as a module-specific [SDK](sdk.md), compile output path settings, etc.
 Plugins can store additional data associated with a module by creating facets or module-level components.
 
+<include from="project.md" element-id="useWorkspaceModelAPI"/>
+
 The IntelliJ Platform provides a number of classes and interfaces you can use to work with modules:
 
 * [`Module`](%gh-ic%/platform/core-api/src/com/intellij/openapi/module/Module.java)

@@ -16,6 +16,8 @@ The SDK determines which API library is used to build the project.
 If a project is multi-module, the project SDK by default is common for all modules within the project.
 Optionally, individual SDKs for each module can be configured.
 
+<include from="project.md" element-id="useWorkspaceModelAPI"/>
+
 ## Getting Project SDK Information
 The information about the project SDK is accessed via [`ProjectRootManager`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java) like the following example shows
 

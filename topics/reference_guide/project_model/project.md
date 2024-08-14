@@ -35,6 +35,15 @@ To work with projects and project files, use the following classes and interface
 Other classes for working with the project model are located in the [`projectModel-api.openapi`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi) package.
 Basic API classes and interfaces for the concepts of [`Project`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/Project.java), [`Module`](%gh-ic%/platform/core-api/src/com/intellij/openapi/module/Module.java) and [`Application`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java)  are placed in the [`core-api.openapi`](%gh-ic%/platform/core-api/src/com/intellij/openapi) package.
 
+<snippet id="useWorkspaceModelAPI">
+
+> The [](workspace_model.md) API is available since 2024.2 for use by third-party plugins and should be preferred over using the Project Model API.
+>
+{title="Workspace Model API (2024.2+)" style="note"}
+
+</snippet>
+
+
 ### How to get a `Project` instance?
 
 A Project instance is available in multiple contexts:

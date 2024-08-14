@@ -17,6 +17,8 @@ and other configurable project components.
 It provides a generic storage for entities describing the user's workspace while maintaining full
 [interoperability](#interoperability) with the [](project_model.md).
 
+<include from="project.md" element-id="useWorkspaceModelAPI"/>
+
 ## Why a New API?
 
 There are several problems with the approach that has been used to represent the [project model](project_model.md) (configuration of modules, libraries, facet, artifacts, etc.)

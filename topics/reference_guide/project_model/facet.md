@@ -12,7 +12,7 @@
 
 A facet represents configuration specific for a particular framework/technology, associated with a module.
 A module can have multiple facets.
-E.g. Spring Framework specific configuration is stored in a Spring facet.
+For example, Spring Framework-specific configuration is stored in a dedicated [Spring facet](https://www.jetbrains.com/help/idea/spring-projects.html).
 
 ## Facet Basics Sample
 

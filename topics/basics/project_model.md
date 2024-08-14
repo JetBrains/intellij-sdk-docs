@@ -92,7 +92,6 @@ Optionally, a project can configure an individual SDK for each module.
 
 A facet represents a certain configuration, specific for a particular framework or technology associated with a [module](#module).
 A module can have multiple facets.
-For example, Spring-specific configuration is stored in a dedicated [Spring facet](https://www.jetbrains.com/help/idea/spring-projects.html).
 
 ## Configuration
 

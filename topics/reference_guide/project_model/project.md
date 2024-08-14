@@ -10,30 +10,33 @@
 
 </tldr>
 
-## Working with Projects
+> Everything in the IntelliJ Platform SDK is done within the context of a project.
 
 The IntelliJ Platform stores the project configuration data in XML files.
-The list of those files depends on the chosen [project format](https://www.jetbrains.com/help/idea/creating-and-managing-projects.html#project-formats).
+The list of those files depends on the chosen [project format](https://www.jetbrains.com/help/idea/creating-and-managing-projects.html#project-formats):
+
+<tabs>
+<tab title="Directory-Based">
+
+Project and workspace settings are stored in a number of XML files under the <path>\$project_home_directory\$/.idea</path> directory.
+Each XML file is responsible for its own set of settings and can be recognized by its name: <path>projectCodeStyle.xml</path>, <path>encodings.xml</path>, <path>vcs.xml</path> etc.
+As for the file-based format projects, <path>.iml</path> files describe modules.
+
+</tab>
+
+<tab title="File-Based (Legacy)">
 
 For file-based format projects (legacy), the information core to the project itself (e.g., location of the component modules, compiler settings, etc.) is stored in the <path>\$project_name\$.ipr</path> file.
 The information about modules the project includes is stored in <path>\$module_name\$.iml</path> files.
 Module files are created for each module.
 
-For directory-based format projects, the project and workspace settings are stored in a number of XML files under the <path>\$project_home_directory\$/.idea</path> directory.
-Each XML file is responsible for its own set of settings and can be recognized by its name: <path>projectCodeStyle.xml</path>, <path>encodings.xml</path>, <path>vcs.xml</path> etc.
-As for the file-based format projects, <path>.iml</path> files describe modules.
+</tab>
+</tabs>
 
 Note that direct access to project files isn't required to load or save settings.
 See [Persisting State of Components](persisting_state_of_components.md) for more information.
 
-To work with projects and project files, use the following classes and interfaces:
-* [`Project`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/Project.java)
-* [`ProjectRootManager`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java)
-* [`ProjectManager`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/project/ProjectManager.java)
-* [`ProjectFileIndex`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java)
-
-Other classes for working with the project model are located in the [`projectModel-api.openapi`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi) package.
-Basic API classes and interfaces for the concepts of [`Project`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/Project.java), [`Module`](%gh-ic%/platform/core-api/src/com/intellij/openapi/module/Module.java) and [`Application`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java)  are placed in the [`core-api.openapi`](%gh-ic%/platform/core-api/src/com/intellij/openapi) package.
+## Working with Projects
 
 <snippet id="useWorkspaceModelAPI">
 
@@ -44,6 +47,15 @@ Basic API classes and interfaces for the concepts of [`Project`](%gh-ic%/platfor
 
 </snippet>
 
+To work with projects and project files, use the following classes and interfaces:
+
+* [`Project`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/Project.java)
+* [`ProjectRootManager`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java)
+* [`ProjectManager`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/project/ProjectManager.java)
+* [`ProjectFileIndex`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java)
+
+Other classes for working with the project model are located in the [`projectModel-api.openapi`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi) package.
+Basic API classes and interfaces for the concepts of [`Project`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/Project.java), [`Module`](%gh-ic%/platform/core-api/src/com/intellij/openapi/module/Module.java) and [`Application`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java)  are placed in the [`core-api.openapi`](%gh-ic%/platform/core-api/src/com/intellij/openapi) package.
 
 ### How to get a `Project` instance?
 

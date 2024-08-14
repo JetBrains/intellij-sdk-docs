@@ -38,6 +38,7 @@ Basic API classes and interfaces for the concepts of [`Project`](%gh-ic%/platfor
 <snippet id="useWorkspaceModelAPI">
 
 > The [](workspace_model.md) API is available since 2024.2 for use by third-party plugins and should be preferred over using the Project Model API.
+> See [](workspace_model.md#interoperability) and [](workspace_model_usages.md).
 >
 {title="Workspace Model API (2024.2+)" style="note"}
 

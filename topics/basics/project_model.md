@@ -9,6 +9,7 @@
 This topic considers the concept of projects based on the IntelliJ Platform and related subjects, such as modules, libraries, facets, and SDKs.
 
 > The [](workspace_model.md) API is available since 2024.2 for use by third-party plugins and should be preferred over using the Project Model API.
+> See [](workspace_model.md#interoperability) and [](workspace_model_usages.md).
 >
 > Since the 2020.3 release, related internal changes are included;
 > see this [blog post](https://blog.jetbrains.com/platform/2020/10/new-implementation-of-project-model-interfaces-in-2020-3/) for details.

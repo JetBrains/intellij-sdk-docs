@@ -104,6 +104,8 @@ It is also possible to [link objects](workspace_model_entity_read.md#arbitrary-d
 
 ## Interoperability with Project Model API
 
+{id="interoperability"}
+
 New implementations of the [Project Model](project_model.md) interfaces store their data in
 Workspace Model in corresponding entities.
 

@@ -15,7 +15,7 @@
 The Workspace Model represents the project's structure and all its elements, such as [modules](module.md), [libraries](library.md), [SDKs](sdk.md), [facets](facet.md),
 and other configurable project components.
 It provides a generic storage for entities describing the user's workspace while maintaining full
-[interoperability](#interoperability-with-project-model-api) with the [](project_model.md).
+[interoperability](#interoperability) with the [](project_model.md).
 
 ## Why a New API?
 

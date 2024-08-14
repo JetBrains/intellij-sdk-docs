@@ -897,6 +897,19 @@ Default value
 : [`SandboxAware.sandboxPluginsDirectory`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware-sandboxPluginsDirectory)
 
 
+### `pluginName`
+{#prepareSandbox-pluginName}
+
+Specifies the name of the plugin directory in the sandbox.
+
+{style="narrow"}
+Type
+: `Property<String>`
+
+Default value
+: [`intellijPlatform.projectName`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-projectName)
+
+
 ### `pluginDirectory`
 {#prepareSandbox-pluginDirectory}
 
@@ -907,7 +920,7 @@ Type
 : `DirectoryProperty`
 
 Default value
-: [`defaultDestinationDirectory`](#prepareSandbox-defaultDestinationDirectory)/[`intellijPlatform.projectName`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-projectName)
+: [`defaultDestinationDirectory`](#prepareSandbox-defaultDestinationDirectory)/[`projectName`](#prepareSandbox-pluginName)
 
 
 ### `disabledPlugins`

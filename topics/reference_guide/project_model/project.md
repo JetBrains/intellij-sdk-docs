@@ -40,7 +40,8 @@ See [Persisting State of Components](persisting_state_of_components.md) for more
 
 <snippet id="useWorkspaceModelAPI">
 
-> The [](workspace_model.md) API is available since 2024.2 for use by third-party plugins and should be preferred over using the Project Model API.
+> The [](workspace_model.md) API is available since 2024.2 for use by third-party plugins and should be preferred over using the [Project Model](project_model.md) API.
+>
 > See [](workspace_model.md#interoperability) and [](workspace_model_usages.md).
 >
 {title="Workspace Model API (2024.2+)" style="note"}

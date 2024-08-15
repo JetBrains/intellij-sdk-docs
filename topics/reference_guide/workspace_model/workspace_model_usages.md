@@ -214,7 +214,9 @@ workspaceModel.update("Adding library roots") { builder ->
 }
 ```
 
-## Migration of Caches Relying on `Library`/`Module`
+## Miscellaneous
+
+### Migration of Caches Relying on `Library`/`Module`
 
 Using `Library` or `Module` as a key on maps has a number of disadvantages:
 

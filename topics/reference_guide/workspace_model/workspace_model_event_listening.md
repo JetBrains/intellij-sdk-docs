@@ -6,12 +6,6 @@
 
 <link-summary>Listening to Workspace Model events</link-summary>
 
-> WIP. [Original WIKI page](https://youtrack.jetbrains.com/articles/IJPL-A-499/EventListening).
->
-> Please discuss in #ijsdk-workspacemodel.
->
-{style="warning"}
-
 There are two ways to subscribe to events from the Workspace Model:
 via [listener](#WorkspaceModelChangeListener) or bysubscribing to the [flow](#subscription-via-kotlin-flow) of events.
 

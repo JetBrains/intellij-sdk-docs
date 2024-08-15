@@ -6,12 +6,6 @@
 
 <link-summary>Workspace Model Entity Properties</link-summary>
 
-> WIP. [Original WIKI page](https://youtrack.jetbrains.com/articles/IJPL-A-500/EntityProperties).
->
-> Please discuss in #ijsdk-workspacemodel.
->
-{style="warning"}
-
 Properties of an [entity](workspace_model_entity_declaration.md) are declared by properties in its interface.
 
 ## Supported Types

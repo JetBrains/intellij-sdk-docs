@@ -6,12 +6,6 @@
 
 <link-summary>Entity read of Workspace Entities</link-summary>
 
-> WIP. [Original WIKI page](https://youtrack.jetbrains.com/articles/IJPL-A-503/EntityRead).
->
-> Please discuss in #ijsdk-workspacemodel.
->
-{style="warning"}
-
 ## Entities Querying
 
 [`EntityStorage`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/EntityStorage.kt)

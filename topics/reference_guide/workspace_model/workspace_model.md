@@ -6,12 +6,6 @@
 
 <link-summary>Introduction to Workspace Model representing a project's structure</link-summary>
 
-> WIP. [Original WIKI page](https://youtrack.jetbrains.com/articles/IJPL-A-502/WorkspaceModel).
->
-> Please discuss in #ijsdk-workspacemodel.
->
-{style="warning"}
-
 The Workspace Model represents the project's structure and all its elements, such as [modules](module.md), [libraries](library.md), [SDKs](sdk.md), [facets](facet.md),
 and other configurable project components.
 It provides a generic storage for entities describing the user's workspace while maintaining full

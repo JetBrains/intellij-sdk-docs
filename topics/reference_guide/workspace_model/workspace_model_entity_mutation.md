@@ -6,12 +6,6 @@
 
 <link-summary>Workspace Model Entity mutation</link-summary>
 
-> WIP. [Original WIKI page](https://youtrack.jetbrains.com/articles/IJPL-A-501/EntityMutation).
->
-> Please discuss in #ijsdk-workspacemodel.
->
-{style="warning"}
-
 All modifications of
 [`WorkspaceModel`](%gh-ic%/platform/backend/workspace/src/WorkspaceModel.kt)
 are executed through a special mutable version of the store, represented by the

@@ -6,12 +6,6 @@
 
 <link-summary>Declaration of Workspace Entities</link-summary>
 
-> WIP. [Original WIKI page](https://youtrack.jetbrains.com/articles/IJPL-A-504/EntityDeclaration).
->
-> Please discuss in #ijsdk-workspacemodel.
->
-{style="warning"}
-
 The Workspace Model allows defining types of entities.
 
 > Defining custom entities is not yet available to third-party plugins, see also [](#generating-entity-implementations).

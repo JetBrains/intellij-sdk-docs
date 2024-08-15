@@ -6,12 +6,6 @@
 
 <link-summary>Workspace Model usages</link-summary>
 
-> WIP. [Original WIKI page](https://youtrack.jetbrains.com/articles/IJPL-A-516/Usages-Examples).
->
-> Please discuss in #ijsdk-workspacemodel.
->
-{style="warning"}
-
 See also [](workspace_model_entity_mutation.md) and [](workspace_model_entity_read.md) topics.
 
 ## Module

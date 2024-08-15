@@ -12,15 +12,20 @@
 
 A facet represents configuration specific for a particular framework/technology, associated with a module.
 A module can have multiple facets.
-E.g. Spring Framework specific configuration is stored in a Spring facet.
-
-## Facet Basics Sample
-Please see [Facet Basics](%gh-sdk-samples-master%/facet_basics) sample plugin project.
+For example, Spring Framework-specific configuration is stored in a dedicated [Spring facet](https://www.jetbrains.com/help/idea/spring-projects.html).
 
 ## Working with Facets
 
+<include from="project.md" element-id="useWorkspaceModelAPI"/>
+
 ### Managing Facets
-To create, search and access the list of facets for a module use [`FacetManager`](%gh-ic%/platform/lang-core/src/com/intellij/facet/FacetManager.java).
+
+To create, search, and access the list of facets for a module, use [`FacetManager`](%gh-ic%/platform/lang-core/src/com/intellij/facet/FacetManager.java).
 
 ### Facet-Based Tool Window
+
 A [tool window](tool_windows.md) dependent on the existence of given facet(s) can be registered via `com.intellij.facet.toolWindow` extension point.
+
+## Facet Basics Sample
+
+See [Facet Basics](%gh-sdk-samples-master%/facet_basics) sample plugin project.

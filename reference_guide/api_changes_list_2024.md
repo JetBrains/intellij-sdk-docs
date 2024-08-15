@@ -76,6 +76,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.intellij.psi.stubs.StubElement.getChildrenStubs()` method return type changed from `List<StubElement>` to `List<StubElement<?>>`
 : Raw-type changed to a properly parameterized type. This is binary compatible change but may cause compilation errors. In most of the cases, it's enough to add `<?>` at the use site to fix the issue.
 
+Unbundled JUnit library
+: Add an explicit dependency in the plugin project.
+
 ## 2024.2
 
 ### IntelliJ Platform 2024.2

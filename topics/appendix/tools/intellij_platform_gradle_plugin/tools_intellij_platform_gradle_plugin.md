@@ -46,17 +46,35 @@ IntelliJ Platform Gradle Plugin 2.x requires the following minimal versions:
 
 To apply the IntelliJ Platform Gradle Plugin to a project, add the following entry to the `plugins` block in the <path>build.gradle.kts</path> file:
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 plugins {
   id("org.jetbrains.intellij.platform") version "%intellij-platform-gradle-plugin-version%"
 }
 ```
 
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+plugins {
+  id 'org.jetbrains.intellij.platform' version '%intellij-platform-gradle-plugin-version%'
+}
+```
+
+</tab>
+</tabs>
+
 If migrating from the [](tools_gradle_intellij_plugin.md), replace the old `org.jetbrains.intellij` identifier to `org.jetbrains.intellij.platform` and apply its latest `%intellij-platform-gradle-plugin-version%` version.
 
 ### Snapshot Release
 
 To use the latest snapshot versions, add the following to the <path>settings.gradle.kts</path> file:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 pluginManagement {
@@ -66,6 +84,24 @@ pluginManagement {
   }
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+pluginManagement {
+  repositories {
+    maven {
+      url 'https://oss.sonatype.org/content/repositories/snapshots/'
+    }
+    gradlePluginPortal()
+  }
+}
+```
+
+</tab>
+</tabs>
+
 
 [//]: # (> The current IntelliJ Platform Gradle Plugin Snapshot version is ![GitHub Snapshot Release]&#40;https://img.shields.io/nexus/s/org.jetbrains.intellij.platform/intellij-platform-gradle-plugin?server=https://oss.sonatype.org&label=&#41;)
 > The current IntelliJ Platform Gradle Plugin Snapshot version is: `2.0.0-SNAPSHOT`
@@ -139,6 +175,9 @@ All IntelliJ Platform SDK artifacts are available via IntelliJ Maven repositorie
 
 Build a plugin against a release version of the IntelliJ Platform with dependency on a plugin from the JetBrains Marketplace:
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 repositories {
   mavenCentral()
@@ -150,12 +189,33 @@ repositories {
 }
 ```
 
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+repositories {
+  mavenCentral()
+
+  intellijPlatform {
+    releases()
+    marketplace()
+  }
+}
+```
+
+</tab>
+</tabs>
+
+
 See [](tools_intellij_platform_gradle_plugin_repositories_extension.md) on how to configure additional repositories.
 
 #### Dependency Resolution Management
 {#configuration.dependencyResolutionManagement}
 
 To access the IntelliJ Platform Gradle Plugin within the <path>settings.gradle.kts</path> to use with `dependencyResolutionManagement`, add:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 import org.jetbrains.intellij.platform.gradle.extensions.intellijPlatform
@@ -177,6 +237,33 @@ dependencyResolutionManagement {
 }
 ```
 
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+import org.jetbrains.intellij.platform.gradle.extensions.intellijPlatform
+
+plugins {
+  id 'org.jetbrains.intellij.platform.settings' version '%intellij-platform-gradle-plugin-version%'
+}
+
+dependencyResolutionManagement {
+  repositoriesMode = RepositoriesMode.FAIL_ON_PROJECT_REPOS
+
+  repositories {
+    mavenCentral()
+
+    intellijPlatform {
+      defaultRepositories()
+    }
+  }
+}
+```
+
+</tab>
+</tabs>
+
+
 #### Cache Redirector
 {#configuration.cacheRedirector}
 
@@ -190,6 +277,9 @@ To switch off the default usage of JetBrains Cache Redirector, see the [](tools_
 Dependencies and [repositories](#configuration.repositories) are handled using explicit entries within `dependencies {}` and `repositories {}` blocks in <path>build.gradle.kts</path> file.
 
 A minimum configuration for targeting IntelliJ IDEA Community 2023.3:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 repositories {
@@ -206,6 +296,29 @@ dependencies {
   }
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+repositories {
+  mavenCentral()
+
+  intellijPlatform {
+    defaultRepositories()
+  }
+}
+
+dependencies {
+  intellijPlatform {
+    intellijIdeaCommunity('2023.3')
+  }
+}
+```
+
+</tab>
+</tabs>
+
 
 The `intellijIdeaCommunity` in the previous sample is one of the extension functions available for adding IntelliJ Platform dependencies to the project.
 See [](tools_intellij_platform_gradle_plugin_dependencies_extension.md) on how to target other IDEs.
@@ -233,6 +346,9 @@ platformVersion = 2023.3
 
 The above Gradle properties can be referenced in the <path>build.gradle.kts</path> file with:
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 dependencies {
   intellijPlatform {
@@ -244,7 +360,28 @@ dependencies {
 }
 ```
 
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+dependencies {
+  intellijPlatform {
+    def type = providers.gradleProperty('platformType')
+    def version = providers.gradleProperty('platformVersion')
+
+    create(type, version)
+  }
+}
+```
+
+</tab>
+</tabs>
+
+
 The `intellijPlatform` helper accepts also the [`IntelliJPlatformType`](tools_intellij_platform_gradle_plugin_types.md#IntelliJPlatformType) type:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
@@ -258,10 +395,32 @@ dependencies {
 }
 ```
 
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
+
+dependencies {
+  intellijPlatform {
+    def version = providers.gradleProperty('platformVersion')
+
+    create(IntelliJPlatformType.IntellijIdeaUltimate, version)
+  }
+}
+```
+
+</tab>
+</tabs>
+
+
 #### Local IntelliJ Platform IDE Instance
 {#dependenciesLocalPlatform}
 
 It is possible to refer to the locally available IntelliJ-based IDE using the `local` helper function:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 repositories {
@@ -277,6 +436,27 @@ dependencies {
 }
 ```
 
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+repositories {
+  intellijPlatform {
+    defaultRepositories()
+  }
+}
+
+dependencies {
+  intellijPlatform {
+    local '/Users/user/Applications/IntelliJ IDEA Ultimate.app'
+  }
+}
+```
+
+</tab>
+</tabs>
+
+
 <include from="tools_intellij_platform_gradle_plugin_repositories_extension.md" element-id="localPlatformArtifacts_required"/>
 
 ### Setting Up Plugin Dependencies
@@ -284,6 +464,9 @@ dependencies {
 To specify a dependency on a plugin, it is important to distinguish bundled plugins from plugins available in JetBrains Marketplace.
 
 The [](tools_intellij_platform_gradle_plugin_dependencies_extension.md) provides a set of helpers to manage [plugin dependencies](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins):
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 repositories {
@@ -302,6 +485,30 @@ dependencies {
 }
 ```
 
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+repositories {
+  intellijPlatform {
+    defaultRepositories()
+  }
+}
+
+dependencies {
+  intellijPlatform {
+    intellijIdeaCommunity '%ijPlatform%'
+
+    bundledPlugin 'com.intellij.java'
+    plugin 'org.intellij.scala', '2024.1.4'
+  }
+}
+```
+
+</tab>
+</tabs>
+
+
 <include from="tools_intellij_platform_gradle_plugin_repositories_extension.md" element-id="localPlatformArtifacts_required"/>
 
 
@@ -313,18 +520,50 @@ a dedicated subplugin was introduced.
 
 The root module of the IntelliJ-based plugin project must apply the main [](tools_intellij_platform_gradle_plugin_plugins.md#platform) plugin as follows:
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 plugins {
   id("org.jetbrains.intellij.platform") version "%intellij-platform-gradle-plugin-version%"
 }
 ```
 
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+plugins {
+  id 'org.jetbrains.intellij.platform' version '%intellij-platform-gradle-plugin-version%'
+}
+```
+
+</tab>
+</tabs>
+
+
 Any other included submodule must use the [](tools_intellij_platform_gradle_plugin_plugins.md#module) plugin instead:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 plugins {
   id("org.jetbrains.intellij.platform.module")
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+plugins {
+  id 'org.jetbrains.intellij.platform.module'
+}
+```
+
+</tab>
+</tabs>
+
 
 <include from="snippets.md" element-id="missingContent"/>

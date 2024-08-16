@@ -55,12 +55,28 @@ flowchart TB
 This is a top-level plugin that applies all the tooling for plugin development for IntelliJ-based IDEs.
 It should be used only with the root module (for submodules, see [](#module)).
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 <path>build.gradle.kts</path>
 ```kotlin
 plugins {
   id("org.jetbrains.intellij.platform") version "%intellij-platform-gradle-plugin-version%"
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+<path>build.gradle.kts</path>
+```kotlin
+plugins {
+  id("org.jetbrains.intellij.platform") version "%intellij-platform-gradle-plugin-version%"
+}
+```
+
+</tab>
+</tabs>
 
 ### Available tasks
 {#platform-available-tasks}
@@ -101,6 +117,10 @@ plugins {
 This plugin applies a smaller set of functionalities for compiling and testing submodules when working in a multi-module architecture.
 
 Compared to the main plugin, it doesn't contain tasks related to publishing or running the IDE for testing purposes.
+
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 <path>settings.gradle.kts</path>
 
@@ -155,6 +175,66 @@ dependencies {
 }
 ```
 
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+<path>settings.gradle</path>
+
+```groovy
+rootProject.name = '...'
+
+include ':submodule'
+```
+
+<path>submodule/build.gradle</path>
+
+```groovy
+plugins {
+  id 'org.jetbrains.intellij.platform.module'
+}
+
+repositories {
+  mavenCentral()
+
+  intellijPlatform {
+    defaultRepositories()
+  }
+}
+
+dependencies {
+  intellijPlatform {
+    intellijIdeaCommunity '%ijPlatform%'
+  }
+}
+```
+
+<path>build.gradle</path>
+
+```groovy
+plugins {
+  id 'org.jetbrains.intellij.platform' version '%intellij-platform-gradle-plugin-version%'
+}
+
+repositories {
+  mavenCentral()
+
+  intellijPlatform {
+    defaultRepositories()
+  }
+}
+
+dependencies {
+  intellijPlatform {
+    intellijIdeaCommunity '%ijPlatform%'
+    pluginModule(implementation(project(':submodule')))
+  }
+}
+```
+
+</tab>
+</tabs>
+
+
 Note that the `:submodule` is added both to the `implementation` configuration and `intellijPlatformPluginModule` using the [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) helper method.
 This guarantees that the submodule content will be merged into the main plugin JAR file.
 
@@ -185,6 +265,9 @@ This guarantees that the submodule content will be merged into the main plugin J
 If you define project repositories within the <path>settings.gradle.kts</path> using the `dependencyResolutionManagement`, make sure to include the Settings plugin in <path>settings.gradle.kts</path>.
 
 This approach allows for omitting the `repositories {}` definition in the <path>build.gradle.kts</path> files. See [](tools_intellij_platform_gradle_plugin.md#configuration.dependencyResolutionManagement) for more details.
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 <path>settings.gradle.kts</path>
 
@@ -247,6 +330,73 @@ dependencies {
 }
 ```
 
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+<path>settings.gradle</path>
+
+```groovy
+import org.jetbrains.intellij.platform.gradle.extensions.intellijPlatform
+
+plugins {
+  id 'org.jetbrains.intellij.platform.settings' version '%intellij-platform-gradle-plugin-version%'
+}
+
+rootProject.name = '...'
+
+dependencyResolutionManagement {
+  repositoriesMode = RepositoriesMode.FAIL_ON_PROJECT_REPOS
+
+  repositories {
+    mavenCentral()
+
+    intellijPlatform {
+      defaultRepositories()
+    }
+  }
+}
+
+include ':submodule'
+```
+
+<path>build.gradle</path>
+
+```groovy
+plugins {
+  id 'org.jetbrains.intellij.platform'
+}
+
+dependencies {
+  intellijPlatform {
+    intellijIdeaCommunity '%ijPlatform%'
+    pluginModule(implementation(project(':submodule')))
+  }
+}
+```
+
+> Note that <path>build.gradle</path> doesn't define the IntelliJ Platform Gradle Plugin version anymore as it was earlier declared in the <path>settings.gradle</path> file.
+> Specifying the version in two places may result in the following Gradle exception:
+>
+> `The request for this plugin could not be satisfied because the plugin is already on the classpath with an unknown version, so compatibility cannot be checked.`
+
+
+<path>submodule/build.gradle</path>
+
+```groovy
+plugins {
+  id 'org.jetbrains.intellij.platform.module'
+}
+
+dependencies {
+  intellijPlatform {
+    intellijIdeaCommunity '%ijPlatform%'
+  }
+}
+```
+
+</tab>
+</tabs>
+
 
 ## Migration
 {#migration}
@@ -274,6 +424,9 @@ Prepares all the custom configurations, transformers, and base tasks needed to m
 
 It also introduces the [](tools_intellij_platform_gradle_plugin_extension.md) to the <path>build.gradle.kts</path> file along with [](tools_intellij_platform_gradle_plugin_dependencies_extension.md) and [](tools_intellij_platform_gradle_plugin_repositories_extension.md) to help preconfigure project dependencies:
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 repositories {
   ...
@@ -292,6 +445,32 @@ dependencies {
 // IntelliJ Platform Extension
 intellijPlatform { ... }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+repositories {
+  ...
+
+  // Repositories Extension
+  intellijPlatform { ... }
+}
+
+dependencies {
+  ...
+
+  // Dependencies Extension
+  intellijPlatform { ... }
+}
+
+// IntelliJ Platform Extension
+intellijPlatform { ... }
+```
+
+</tab>
+</tabs>
+
 
 The plugin also introduces a task listener which allows for creating custom tasks decorated with [](tools_intellij_platform_gradle_plugin_task_awares.md).
 See [](tools_intellij_platform_gradle_plugin_recipes.md) for more details.

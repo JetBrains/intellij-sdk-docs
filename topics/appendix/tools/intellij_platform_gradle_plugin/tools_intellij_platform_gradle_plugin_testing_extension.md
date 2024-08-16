@@ -11,8 +11,8 @@ It provides a possibility for registering custom tasks for running the IDE, unit
 
 For each of the custom tasks, a dedicated sandbox is created to isolate them form other tasks or the build flow as they may rely on a different IntelliJ Platform version, plugins, or other configuration.
 
-
 ## IntelliJ Platform Testing
+
 {#intellijPlatformTesting}
 
 After the IntelliJ Platform Gradle Plugin is [applied](tools_intellij_platform_gradle_plugin.md#usage), the `intellijPlatformTesting` extension can be used for registering new tasks to fulfil specific requirements of the project.
@@ -21,6 +21,9 @@ The extension exposes four `NamedDomainObjectContainers` which allow for creatin
 Registering of a custom task which allows for adjusting the IntelliJ Platform type and version can be done by using one of the below containers, depending on the task purpose.
 
 **Example:**
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 intellijPlatformTesting {
@@ -31,10 +34,29 @@ intellijPlatformTesting {
 }
 ```
 
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+intellijPlatformTesting {
+  runIde
+  testIde
+  testIdeUi
+  testIdePerformance
+}
+```
+
+</tab>
+</tabs>
+
+
 By default, created tasks depend on the IntelliJ Platform defined with [](tools_intellij_platform_gradle_plugin_dependencies_extension.md).
 However, it is possible to adjust it to any requirements with passing custom values directly to the created object, `task`, or `sandboxTask` task instances.
 
 **Example:**
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 val runPhpStorm by intellijPlatformTesting.runIde.registering {
@@ -62,6 +84,39 @@ val runPhpStorm by intellijPlatformTesting.runIde.registering {
 }
 ```
 
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+intellijPlatformTesting.runIde {
+  runPhpStorm {
+    type = IntelliJPlatformType.PhpStorm
+    version = ...
+    useInstaller = ...
+    localPath = ...
+
+    sandboxDirectory = ...
+
+    splitMode = ...
+    splitModeTarget = ...
+
+    task {
+      ...
+    }
+
+    prepareSandboxTask {
+      ...
+    }
+
+    plugins {
+      ...
+    }
+  }
+}
+```
+
+</tab>
+</tabs>
 
 ### `task {}`
 
@@ -74,12 +129,10 @@ Depending on the type of registered object, a different `task` class is availabl
 | `testIdeUi`          | [`TestIdeUiTask`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi)                   |
 | `testIdePerformance` | [`TestIdePerformanceTask`](tools_intellij_platform_gradle_plugin_tasks.md#testIdePerformance) |
 
-
 ### `prepareSandboxTask {}`
 
 The `prepareSandboxTask` refers to a dedicated [`PrepareSandboxTask`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox) task instance, connected only with a newly created task.
 The name of this task is based on the name of created task, like `prepareSandbox_[TASK_NAME]`.
-
 
 ### `plugins {}`
 
@@ -89,9 +142,25 @@ It provides several methods for adding remote and local plugins, or for disablin
 
 **Example:**
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
-tasks {
   val runIdeWithPlugins by intellijPlatformTesting.runIde.registering {
+  // ...
+  plugins {
+    plugin("pluginId", "1.0.0")
+    disablePlugin("pluginId")
+  }
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+intellijPlatformTesting.runIde {
+  runIdeWithPlugins {
     // ...
     plugins {
       plugin("pluginId", "1.0.0")
@@ -100,6 +169,9 @@ tasks {
   }
 }
 ```
+
+</tab>
+</tabs>
 
 | Function                       | Description                                                                                                                                  |
 |--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
@@ -110,7 +182,5 @@ tasks {
 | `disablePlugins(ids)`          | Disables specific plugins with the list of their IDs.                                                                                        |
 | `localPlugin(path)`            | Adds a dependency on a local IntelliJ Platform plugin. Accepts path or a dependency on another module.                                       |
 | `robotServerPlugin(version)`   | Adds a dependency on a Robot Server Plugin.                                                                                                  |
-
-
 
 <include from="snippets.md" element-id="missingContent"/>

@@ -8,6 +8,9 @@
 
 Using the [very same task documentation](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html), configure [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde) task:
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 tasks {
   runIde {
@@ -17,6 +20,24 @@ tasks {
   }
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+tasks {
+  runIde {
+    jvmArgumentProviders.add({
+      ["-Dname=value"]
+    } as CommandLineArgumentProvider)
+  }
+}
+
+```
+
+</tab>
+</tabs>
+
 
 ### Task `runIdeForUiTests` not found
 
@@ -35,12 +56,29 @@ java.lang.NoClassDefFoundError: org/opentest4j/AssertionFailedError
 
 To apply the workaround, add the missing `org.opentest4j:opentest4j` test dependency to your Gradle build configuration:
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 dependencies {
   // ...
   testImplementation("org.opentest4j:opentest4j:1.3.0")
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+dependencies {
+  // ...
+  testImplementation 'org.opentest4j:opentest4j:1.3.0'
+}
+```
+
+</tab>
+</tabs>
+
 
 ### JUnit5 Test Framework refers to JUnit4
 
@@ -56,12 +94,29 @@ Caused by: java.lang.NoClassDefFoundError: org/junit/rules/TestRule
 
 To apply the workaround, add the JUnit4 test runtime dependency to your Gradle build configuration:
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 dependencies {
   // ...
   testRuntimeOnly("junit:junit:4.13.2")
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+dependencies {
+  // ...
+  testRuntimeOnly 'junit:junit:4.13.2'
+}
+```
+
+</tab>
+</tabs>
+
 
 ### Dependency on bundled plugin is not resolved after migrating from 1.x
 
@@ -81,13 +136,32 @@ See [](ide_development_instance.md#enabling-auto-reload) for important caveats.
 
 You can disable auto-reload globally with [`intellijPlatform.autoReload`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-autoReload):
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 intellijPlatform {
   autoReload = false
 }
 ```
 
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+intellijPlatform {
+  autoReload = false
+}
+```
+
+</tab>
+</tabs>
+
+
 It is also possible to disable it for a specific [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde)-based task as follows:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 tasks {
@@ -97,15 +171,46 @@ tasks {
 }
 ```
 
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+tasks {
+  runIde {
+    autoReload = false
+  }
+}
+```
+
+</tab>
+</tabs>
+
+
 ### How to disable building the searchable options?
 
 Building the searchable options can be disabled using [`intellijPlatform.buildSearchableOptions`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-instrumentCode):
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 intellijPlatform {
   buildSearchableOptions = false
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+intellijPlatform {
+  buildSearchableOptions = false
+}
+```
+
+</tab>
+</tabs>
+
 
 As a result of disabling building searchable options, the [Settings](settings.md) that your plugin provides won't be searchable in the <ui-path>Settings</ui-path> dialog.
 Disabling of the task is suggested for plugins that are not intended to provide custom settings.
@@ -141,6 +246,9 @@ To mute specific problems (for example, use of specific forbidden words in the p
 
 See the list of [available options](https://github.com/JetBrains/intellij-plugin-verifier/?tab=readme-ov-file#specific-options).
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 intellijPlatform {
   pluginVerification {
@@ -152,6 +260,25 @@ intellijPlatform {
   }
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+intellijPlatform {
+  pluginVerification {
+    // ...
+    freeArgs = [
+      "-mute",
+      "TemplateWordInPluginId,ForbiddenPluginIdPrefix",
+    ]
+  }
+}
+```
+
+</tab>
+</tabs>
+
 
 ### JaCoCo Reports 0% Coverage
 
@@ -220,7 +347,13 @@ Please upgrade to Kotlin 1.9.0. See the [](using_kotlin.md#incremental-compilati
 
 To list the IntelliJ Platform releases matching your criteria (IntelliJ Platform type, release channels, or build range), you may use the [](tools_intellij_platform_gradle_plugin_tasks.md#printProductsReleases) task, as follows:
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
+import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
+import org.jetbrains.intellij.platform.gradle.models.ProductRelease
+
 tasks {
   printProductsReleases {
     channels = listOf(ProductRelease.Channel.EAP)
@@ -233,6 +366,30 @@ tasks {
   }
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
+import org.jetbrains.intellij.platform.gradle.models.ProductRelease
+
+tasks {
+  printProductsReleases {
+    channels = [ProductRelease.Channel.EAP]
+    types = [IntelliJPlatformType.IntellijIdeaCommunity]
+    untilBuild = null
+
+    doLast {
+      def latestEap = productsReleases.get().max()
+    }
+  }
+}
+```
+
+</tab>
+</tabs>
+
 
 ### The currently selected Java Runtime is not JetBrains Runtime (JBR)
 
@@ -249,6 +406,9 @@ or define it explicitly with project dependencies or JVM Toolchain.
 To correctly run your tests or a specific IDE:
 
 - use a binary IDE distribution with bundled JetBrains Runtime, i.e., by referring to a local IDE [`local(localPath)`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#custom-target-platforms)
+  <tabs group="languages">
+  <tab title="Kotlin" group-key="kotlin">
+
   ```kotlin
   repositories {
     mavenCentral()
@@ -265,7 +425,32 @@ To correctly run your tests or a specific IDE:
   }
   ```
 
+  </tab>
+  <tab title="Groovy" group-key="groovy">
+
+  ```groovy
+    repositories {
+      mavenCentral()
+
+      intellijPlatform {
+        defaultRepositories()
+      }
+    }
+
+    dependencies {
+      intellijPlatform {
+        local '/Users/hsz/Applications/IntelliJ IDEA Ultimate.app'
+      }
+    }
+    ```
+
+  </tab>
+  </tabs>
+
 - add an explicit dependency on a JetBrains Runtime with [`jetbrainsRuntime()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#java-runtime)
+  <tabs group="languages">
+  <tab title="Kotlin" group-key="kotlin">
+
   ```kotlin
   repositories {
     mavenCentral()
@@ -283,7 +468,35 @@ To correctly run your tests or a specific IDE:
     }
   }
   ```
+
+  </tab>
+  <tab title="Groovy" group-key="groovy">
+
+  ```groovy
+    repositories {
+      mavenCentral()
+
+      intellijPlatform {
+        defaultRepositories()
+        jetbrainsRuntime()
+      }
+    }
+
+    dependencies {
+      intellijPlatform {
+        intellijIdeaCommunity '%ijPlatform%'
+        jetbrainsRuntime '...'
+      }
+    }
+    ```
+
+  </tab>
+  </tabs>
+
 - specify the vendor when configuring the JVM Toolchain along with [Foojay Toolchains Plugin](https://github.com/gradle/foojay-toolchains):
+  <tabs group="languages">
+  <tab title="Kotlin" group-key="kotlin">
+
   ```kotlin
   kotlin {
     jvmToolchain {
@@ -292,5 +505,21 @@ To correctly run your tests or a specific IDE:
     }
   }
   ```
+
+  </tab>
+  <tab title="Groovy" group-key="groovy">
+
+  ```groovy
+    java {
+      toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+        vendor = JvmVendorSpec.JETBRAINS
+      }
+    }
+    ```
+
+  </tab>
+  </tabs>
+
 
 <include from="snippets.md" element-id="missingContent"/>

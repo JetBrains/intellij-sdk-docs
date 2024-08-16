@@ -25,7 +25,12 @@ It also includes methods for adding [plugins](#plugins) (including bundled), [Je
 - add JUnit4 test dependency
 - add Test Framework for testing plugin with JUnit4
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
+import org.jetbrains.intellij.platform.gradle.TestFrameworkType
+
 repositories {
   mavenCentral()
 
@@ -51,6 +56,42 @@ dependencies {
   // other dependencies, e.g., 3rd-party libraries
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+import org.jetbrains.intellij.platform.gradle.TestFrameworkType
+
+repositories {
+  mavenCentral()
+
+  intellijPlatform {
+    defaultRepositories()
+  }
+}
+
+dependencies {
+  intellijPlatform {
+    intellijIdeaCommunity '%ijPlatform%'
+
+    bundledPlugin 'com.intellij.java'
+
+    pluginVerifier()
+    zipSigner()
+    instrumentationTools()
+
+    testFramework TestFrameworkType.Platform.INSTANCE
+  }
+
+  testImplementation 'junit:junit:4.13.2'
+  // other dependencies, e.g., 3rd-party libraries
+}
+```
+
+</tab>
+</tabs>
+
 
 ## Target Platforms
 
@@ -111,6 +152,9 @@ When declaring a dependency on IntelliJ Platform, the IDE installer is resolved 
 The IntelliJ Platform installer is the IDE final distribution used by end-users for installing and running IDE in their machines.
 Those artifacts are resolved from JetBrains Download CDN (download.jetbrains.com) or Android Studio CDN.
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 repositories {
   intellijPlatform {
@@ -120,10 +164,31 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    IntellijIdeaCommunity("2024.1.4")
+    IntellijIdeaCommunity("%ijPlatform%")
   }
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+repositories {
+  intellijPlatform {
+    defaultRepositories()
+  }
+}
+
+dependencies {
+  intellijPlatform {
+    IntellijIdeaCommunity '%ijPlatform%'
+  }
+}
+```
+
+</tab>
+</tabs>
+
 
 The listing of all present installers can be resolved with updates XML files for [JetBrains IDEs](https://www.jetbrains.com/updates/updates.xml) and [Android Studio](https://jb.gg/android-studio-releases-list.xml) as well as by executing the [`printProductsReleases`](tools_intellij_platform_gradle_plugin_tasks.md#printProductsReleases) task.
 
@@ -140,6 +205,9 @@ It is still possible to use Multi-OS ZIP archives resolved from [](tools_intelli
 
 To enable resolving this kind of artifacts, opt-out from the installer dependencies by adding `useInstaller = false` argument to helpers described in [](#target-platforms), like:
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 repositories {
   intellijPlatform {
@@ -150,11 +218,34 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    IntellijIdeaCommunity("%ijPlatform%", useInstaller = false)
+    intellijIdeaCommunity("%ijPlatform%", useInstaller = false)
     jetbrainsRuntime()
   }
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+repositories {
+  intellijPlatform {
+    defaultRepositories()
+    jetbrainsRuntime()
+  }
+}
+
+dependencies {
+  intellijPlatform {
+    intellijIdeaCommunity "%ijPlatform%", false
+    jetbrainsRuntime()
+  }
+}
+```
+
+</tab>
+</tabs>
+
 
 The Multi-OS Archives don't bundle [](tools_intellij_platform_gradle_plugin_jetbrains_runtime.md) needed to run the IDE locally, perform testing, and other crucial operations.
 Therefore, it is required to explicitly add a dependency on JetBrains Runtime (JBR) by adding extra `jetbrainsRuntime()` repository and dependency entries.
@@ -212,6 +303,9 @@ Use `localPlugin(localPath)` to add a dependency on a local IntelliJ Platform pl
 To implement [tests](testing_plugins.md) for IntelliJ Platform plugin, it is necessary to explicitly add a dependency on the `test-framework` library containing the necessary test base classes.
 In most cases, the `TestFrameworkType.Platform` variant will be used:
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 import org.jetbrains.intellij.platform.gradle.TestFrameworkType
 
@@ -223,6 +317,24 @@ dependencies {
   testImplementation("junit:junit:4.13.2")
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+import org.jetbrains.intellij.platform.gradle.TestFrameworkType
+
+dependencies {
+  intellijPlatform {
+    testFramework TestFrameworkType.Platform.INSTANCE
+  }
+
+  testImplementation 'junit:junit:4.13.2'
+}
+```
+
+</tab>
+</tabs>
 
 The provided `testFramework(type, version)` helper method makes it possible to add the base artifact to the test classpath or its variants, such as Java, Go, ReSharper, etc.
 

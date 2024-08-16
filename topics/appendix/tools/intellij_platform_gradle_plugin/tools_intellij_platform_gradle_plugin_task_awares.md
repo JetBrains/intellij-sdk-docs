@@ -11,7 +11,12 @@ The Task Awares is a set of interfaces that can be applied to custom Gradle task
 IntelliJ Platform Gradle Plugin supports creating custom tasks which can use `*Aware` interfaces.
 Example:
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
+import org.jetbrains.intellij.platform.gradle.tasks.aware.PluginAware
+
 abstract class RetrievePluginNameTask : DefaultTask(), PluginAware
 
 val retrievePluginName by tasks.registering(RetrievePluginNameTask::class) {
@@ -23,6 +28,25 @@ val retrievePluginName by tasks.registering(RetrievePluginNameTask::class) {
 }
 ```
 
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+import org.jetbrains.intellij.platform.gradle.tasks.aware.PluginAware
+
+abstract class RetrievePluginNameTask extends DefaultTask implements PluginAware {}
+
+tasks.register('retrievePluginName', RetrievePluginNameTask) {
+  def outputFile = layout.buildDirectory.file("pluginName.txt")
+
+  doLast {
+    outputFile.get().asFile.writeText(pluginXml.parse { name }.get())
+  }
+}
+```
+
+</tab>
+</tabs>
 
 
 ## `AutoReloadAware`
@@ -328,6 +352,9 @@ The `parse` method provides a possibility for parsing the <path>pluginXml</path>
 
 Should be used along with the [`pluginXml`](#PluginAware-pluginXml) property like:
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 abstract class RetrievePluginNameTask : DefaultTask(), PluginAware
 
@@ -339,6 +366,22 @@ val retrievePluginName by tasks.registering(RetrievePluginNameTask::class) {
 }
 ```
 
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+abstract class RetrievePluginNameTask extends DefaultTask implements PluginAware {}
+
+tasks.register('retrievePluginName', RetrievePluginNameTask) {
+    doLast {
+        def name = pluginXml.parse { name }.get()
+        println("Plugin Name: $name")
+    }
+}
+```
+
+</tab>
+</tabs>
 
 
 ## `PluginVerifierAware`

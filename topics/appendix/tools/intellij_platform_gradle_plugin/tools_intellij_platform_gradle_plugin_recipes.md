@@ -194,3 +194,78 @@ tasks {
 
 </tab>
 </tabs>
+
+
+## ProGuard configuration
+
+To configure [ProGuard](https://github.com/Guardsquare/proguard), intercept the [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox) task and replace the plugin Jar archive produced by the [`composedJar`](tools_intellij_platform_gradle_plugin_tasks.md#composedJar) task with the obfuscated/minified file.
+
+First, define the ProGuard Jar archive location and store it inside the <path>build/libs/</path> directory.
+Pass the output ProGuard location to the `outjars()` helper and use it as a new sandbox input for [`prepareSandbox.pluginJar`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox-pluginJar).
+
+Finally, pass the [`composedJar.archiveFile`](tools_intellij_platform_gradle_plugin_tasks.md#composedJar-archiveFile) to the `injars()` helper.
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+import proguard.gradle.ProGuardTask
+
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath("com.guardsquare:proguard-gradle:7.5")
+  }
+}
+
+tasks {
+  val proguardJar = layout.buildDirectory.file("libs/$name-$version-proguard.jar")
+
+  val proguard by registering(ProGuardTask::class) {
+    injars(composedJar.map { it.archiveFile })
+    outjars(proguardJar)
+
+    // ...
+  }
+
+  prepareSandbox {
+    pluginJar = proguardJar
+    dependsOn(proguard)
+  }
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+import proguard.gradle.ProGuardTask
+
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath("com.guardsquare:proguard-gradle:7.5")
+  }
+}
+
+def proguardJar = layout.buildDirectory.file("libs/$name-$version-proguard.jar")
+
+tasks.register('proguard', ProGuardTask) {
+  it.injars(composedJar.archiveFile)
+  outjars(proguardJar)
+
+  // ...
+}
+
+prepareSandbox {
+  pluginJar = proguardJar
+  dependsOn(proguard)
+}
+```
+
+</tab>
+</tabs>

@@ -6,13 +6,13 @@
 
 ### Logging
 
-> If your plugin uses **log4j** library directly: it is removed from IntelliJ Platform in 2022.1; please see this [blog post](https://blog.jetbrains.com/platform/2022/02/removing-log4j-from-the-intellij-platform/) for migration instructions.
+> If your plugin uses the **log4j** library directly: it is removed from IntelliJ Platform in 2022.1; please see this [blog post](https://blog.jetbrains.com/platform/2022/02/removing-log4j-from-the-intellij-platform/) for migration instructions.
 >
 {style="note"}
 
 The IntelliJ Platform uses [`Logger`](%gh-ic%/platform/util/src/com/intellij/openapi/diagnostic/Logger.java) abstraction class to shield from underlying logging implementation and configuration.
 
-Plugins should obtain a dedicated instance:
+Plugins should get a dedicated instance:
 
 <tabs>
 <tab title="Java">
@@ -20,8 +20,8 @@ Plugins should obtain a dedicated instance:
 ```java
 import com.intellij.openapi.diagnostic.Logger;
 
-public class MyPluginClass {
-  private static final Logger LOG = Logger.getInstance(MyPluginClass.class);
+public class MyClass {
+  private static final Logger LOG = Logger.getInstance(MyClass.class);
 
   public void someMethod() {
     LOG.info("someMethod() was called");
@@ -36,16 +36,16 @@ public class MyPluginClass {
 ```kotlin
 import com.intellij.openapi.diagnostic.logger
 
-private val LOG = logger<MyPluginClass>()
+private val LOG = logger<MyClass>()
 
-class MyPluginClass {
+class MyClass {
   fun someMethod() {
     LOG.info("someMethod() was called")
   }
 }
 ```
 
-If logging is used only to report exceptions, use convenience method `thisLogger()` instead of dedicated instance:
+If logging is used only to report exceptions, use convenience method `thisLogger()` instead of a dedicated instance:
 
 ```kotlin
 try {
@@ -67,7 +67,7 @@ When [internal mode](enabling_internal.md) is enabled, the currently running IDE
 To locate it for a specific installation, see this [Knowledge Base article](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519).
 See [Development Instance Sandbox Directory](ide_development_instance.md#the-development-instance-sandbox-directory) on how to find it for development instances.
 
-See [Testing FAQ](testing_faq.md) on how to enable `DEBUG`/`TRACE` level logging during tests, and obtain separate logs for failing tests.
+See [Testing FAQ](testing_faq.md) on how to enable `DEBUG`/`TRACE` level logging during tests and get separate logs for failing tests.
 
 To provide additional context for [reporting fatal errors](#error-reporting), use `Logger.error()` methods taking additional `Attachment` (see [`CoreAttachmentFactory`](%gh-ic%/platform/core-impl/src/com/intellij/diagnostic/CoreAttachmentFactory.java) and [`AttachmentFactory`](%gh-ic%/platform/util/src/com/intellij/openapi/diagnostic/AttachmentFactory.java)).
 
@@ -92,7 +92,7 @@ To disable the red exclamation notification icon in the status bar, invoke <ui-p
 [`ApplicationInfo`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ApplicationInfo.java) provides information on the IDE version and vendor.
 NOTE: to restrict compatibility, declare [IDEs](plugin_compatibility.md) and [versions](build_number_ranges.md) via <path>[plugin.xml](plugin_configuration_file.md)</path>.
 
-To obtain information about OS and Java VM, use [`SystemInfo`](%gh-ic%/platform/util/src/com/intellij/openapi/util/SystemInfo.java).
+To get information about OS and Java VM, use [`SystemInfo`](%gh-ic%/platform/util/src/com/intellij/openapi/util/SystemInfo.java).
 
 To access relevant configuration directories, see [`PathManager`](%gh-ic%/platform/util/src/com/intellij/openapi/application/PathManager.java).
 
@@ -109,10 +109,10 @@ Use [`RunOnceUtil`](%gh-ic%/platform/ide-core/src/com/intellij/ide/util/RunOnceU
 
 ## Application Events
 
-Application lifecycle events can be tracked via [`AppLifecycleListener`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/AppLifecycleListener.java) [listener](plugin_listeners.md).
+Application lifecycle events can be tracked via the [`AppLifecycleListener`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/AppLifecycleListener.java) [listener](plugin_listeners.md).
 See also [](plugin_components.md#application-startup) and [](plugin_components.md#project-and-application-close).
 
-Register [`ApplicationActivationListener`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/application/ApplicationActivationListener.java) [listener](plugin_listeners.md) to be notified of "application focused/unfocused" events.
+Register the [`ApplicationActivationListener`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/application/ApplicationActivationListener.java) [listener](plugin_listeners.md) to be notified of "application focused/unfocused" events.
 
 To request restart of the IDE, use [`Application.restart()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java)
 
@@ -126,7 +126,7 @@ Use [`RevealFileAction.openFile()`](%gh-ic%/platform/platform-impl/src/com/intel
 
 ## Theme Change
 
-Use [`LafManagerListener`](%gh-ic%/platform/platform-api/src/com/intellij/ide/ui/LafManagerListener.java) topic to receive change notifications (e.g., to refresh UI).
+Use the [`LafManagerListener`](%gh-ic%/platform/platform-api/src/com/intellij/ide/ui/LafManagerListener.java) topic to receive change notifications (e.g., to refresh UI).
 
 ## Power Save Mode
 
@@ -152,4 +152,4 @@ To suggest replacing the currently installed deprecated plugin with the new one,
 
 Use [`HttpConnectionUtils`](%gh-ic%/platform/platform-api/src/com/intellij/util/net/HttpConnectionUtils.kt)
 to use platform network settings (e.g., proxy) (2024.3).
-For earlier versions, see [`HttpConfigurable`](%gh-ic%/platform/platform-api/src/com/intellij/util/net/HttpConfigurable.java)).
+For earlier versions, see [`HttpConfigurable`](%gh-ic%/platform/platform-api/src/com/intellij/util/net/HttpConfigurable.java).

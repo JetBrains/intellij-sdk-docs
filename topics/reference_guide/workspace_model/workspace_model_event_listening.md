@@ -7,7 +7,7 @@
 <link-summary>Listening to Workspace Model events</link-summary>
 
 There are two ways to subscribe to events from the Workspace Model:
-via [listener](#WorkspaceModelChangeListener) or bysubscribing to the [flow](#subscription-via-kotlin-flow) of events.
+via [listener](#WorkspaceModelChangeListener) or by subscribing to the [flow](#subscription-via-kotlin-flow) of events.
 
 ### `EntityChange` Events
 
@@ -28,8 +28,8 @@ This event is generated in two cases:
 - changes of references to other entities
 
 The change of references may happen indirectly by modifying the referred entity.
-For example, when removing a child entity, two events are generated: `Removed` for child and `Replaced` for parent.
-When adding a new child entity, again two events will be generated: `Added` for child and `Replaced` for parent.
+For example, when removing a child entity, two events are generated: `Removed` for a child and `Replaced` for a parent.
+When adding a new child entity, again two events will be generated: `Added` for a child and `Replaced` for a parent.
 
 #### Examples
 
@@ -41,7 +41,7 @@ Where `A` is the root entity and `B` is its child, and `C` is the child of `B`.
 - Modify a primitive field of `C`: [**Replaced(C)**]
 - Remove `C`: [**Replaced(B)**, **Removed(C)**]
 - Remove reference between `B` and `C`: [**Replaced(B)**, **Replaced(C)**]
-- Remove `B`: [**Replaced(A)**, **Removed(B)**, **Removed(C)**] - `C` is cascade removed
+- Remove `B`: [**Replaced(A)**, **Removed(B)**, **Removed(C)**] – `C` is cascade removed
 
 ##### Example 2
 
@@ -55,7 +55,7 @@ Move child `B` from `A` to `C`: [**Replaced(A)**, **Replaced(B)**, **Replaced(C)
 
 {id="WorkspaceModelChangeListener"}
 
-The Workspace Model storage allows us to subscribe to all of its changes using [](plugin_listeners.md) mechanism via
+The Workspace Model storage allows us to subscribe to all of its changes using the [](plugin_listeners.md) mechanism via
 [`WorkspaceModelChangeListener`](%gh-ic%/platform/backend/workspace/src/WorkspaceModelTopics.kt).
 
 The listener offers both
@@ -102,19 +102,19 @@ busConnection.subscribe(WorkspaceModelTopics.CHANGED,
 Listener instances will be automatically instantiated on the first event to the topic.
 
 ```xml
-
 <idea-plugin>
   <projectListeners>
-    <listener class="com.my.plugin.MyCustomWorkspaceModelChangeListener"
-              topic="com.intellij.platform.backend.workspace.WorkspaceModelChangeListener"/>
+    <listener
+      class="com.my.plugin.MyCustomWorkspaceModelChangeListener"
+      topic="com.intellij.platform.backend.workspace.WorkspaceModelChangeListener"/>
   </projectListeners>
 </idea-plugin>
 ```
 
 ## Subscription via Kotlin Flow
 
-As the IntelliJ Platform started adapting [](kotlin_coroutines.md) in its APIs and internal code, it's also possible to subscribe to the
-events via [Kotlin Flows](https://kotlinlang.org/docs/flow.html) exposed via
+As the IntelliJ Platform started adapting [](kotlin_coroutines.md) in its APIs and internal code, it is also possible to subscribe to the
+events via [Kotlin Flows](https://kotlinlang.org/docs/flow.html) exposed via the
 [`WorkspaceModel.eventLog`](%gh-ic%/platform/backend/workspace/src/WorkspaceModel.kt)
 property.
 
@@ -122,9 +122,9 @@ In addition to the regular events subscription, flow allows performing increment
 calculate information based on the initial storage and modify it according to the updates.
 This can be useful for incremental updates of Workspace Model-related caches.
 
-If the subscription should be set up after a project is opened use
+If the subscription should be set up after a project is opened, use
 [`ProjectActivity`](plugin_components.md#project-open).
-This is also the way to migrate from existing [`WorkspaceModelChangeListener`](#WorkspaceModelChangeListener)-based approach.
+This is also the way to migrate from the existing [`WorkspaceModelChangeListener`](#WorkspaceModelChangeListener)-based approach.
 Keep in mind that it might miss the few first updates of the model, which is expected because the initial version of the storage will be provided.
 
 Since this listener is asynchronous, there is no guarantee that indexes built on top of
@@ -133,15 +133,16 @@ or the project model will be updated.
 
 ### Incremental Computation
 
-To perform incremental computations, the last known version of the storage and the event of updates is needed.
-This can be obtained by collecting indexed events. Let's assume we build some index and keep it updated.
+To perform incremental computations, the last known version of the storage and the event of updates is required.
+This can be obtained by collecting indexed events.
+Assume we build some index and keep it updated:
 
- ```kotlin
- workspaceModel.eventLog.collectIndexed { index, event ->
+```kotlin
+workspaceModel.eventLog.collectIndexed { index, event ->
   if (index == 0) {
     buildIndex(event.storageAfter)
   } else {
     updateIndex(event)
   }
 }
- ```
+```

@@ -99,8 +99,6 @@ data class MavenId(
 ) : SymbolicEntityId<MavenEntity>
 ```
 
-## Implementation
-
 ### Reference via Extension Property
 
 Due to the limitation that a reference must be declared on both entities, there needs to be an option to declare a reference to an entity from another module.

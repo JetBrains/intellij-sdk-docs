@@ -40,7 +40,7 @@ Creating a new
 [`ModuleEntity`](%gh-ic%/platform/workspace/jps/src/com/intellij/platform/workspace/jps/entities/module.kt),
 the legacy bridge will be created by the platform.
 An important part here is the entity source.
-To serialize an entity in project configuration files under <path>.idea</path> folder use
+To serialize an entity in project configuration files under the <path>.idea</path> folder, use
 [`JpsProjectFileEntitySource`](%gh-ic%/platform/workspace/jps/src/com/intellij/platform/workspace/jps/jpsEntitySources.kt).
 
 ```kotlin
@@ -53,9 +53,12 @@ if (moduleId in workspaceModel.currentSnapshot) {
 
 val baseModuleDir = workspaceModel.getVirtualFileUrlManager()
   .getOrCreateFromUrl("file://foo/bar")
-val moduleEntitySource = LegacyBridgeJpsEntitySourceFactory.createEntitySourceForModule(project, baseModuleDir, null)
+val moduleEntitySource =
+    LegacyBridgeJpsEntitySourceFactory.createEntitySourceForModule(
+        project, baseModuleDir, null)
 WorkspaceModel.getInstance(project).update("Add new module") { builder ->
-  val moduleEntity = ModuleEntity(moduleName, emptyList(), moduleEntitySource)
+  val moduleEntity =
+      ModuleEntity(moduleName, emptyList(), moduleEntitySource)
   builder.addEntity(moduleEntity)
 }
 ```
@@ -88,7 +91,7 @@ workspaceModel.update("Adding new module dependency") { builder ->
 }
 ```
 
-### Searching for Module Containing Path
+### Searching for Module-Containing Path
 
 Search for content roots and source roots with required URLs and determine the `ModuleEntity` to which they belong.
 
@@ -128,7 +131,9 @@ if (libraryId in currentSnapshot) {
   ...
 }
 
-val libraryEntitySource = LegacyBridgeJpsEntitySourceFactory.createEntitySourceForProjectLibrary(project, null)
+val libraryEntitySource =
+    LegacyBridgeJpsEntitySourceFactory.createEntitySourceForProjectLibrary(
+        project, null)
 val libraryEntity = LibraryEntity(
   libraryName,
   libraryTableId, emptyList(),
@@ -190,7 +195,7 @@ workspaceModel.update("Adding source root") { builder ->
 
 ### Adding Different Types of Library Roots
 
-Two library roots of different types are defined and a new exclude root added.
+Two library roots of different types are defined, and a new exclude root is added.
 
 ```kotlin
 val workspaceModel = WorkspaceModel.getInstance(project)
@@ -232,7 +237,7 @@ Using `Library` or `Module` as a key on maps has a number of disadvantages:
 - Can’t be used as a key for collections that rely on hashcode calculation, as these objects are mutable by their nature.
 - The fact that they extend `Disposable` (see [](disposers.md)) imposes additional difficulties.
 
-To eliminate these shortcomings use
+To eliminate these shortcomings, use
 [`EntityPointer`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/EntityPointer.kt).
 It represents a pointer to an entity which can be stored anywhere.
 The pointer can be obtained via

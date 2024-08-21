@@ -60,6 +60,13 @@ WorkspaceModel.getInstance(project).update("Add new module") { builder ->
 }
 ```
 
+<snippet id="LegacyBridgeJpsEntitySourceFactory-internal-note">
+> Note that `LegacyBridgeJpsEntitySourceFactory` is marked as internal in 2024.2.
+> It will be open API starting with 2024.3 and is allowed to use in plugins.
+>
+{style="tip"}
+</snippet>
+
 ### Add Library Dependency to Module
 
 A project-level library is added as a dependency to the module.
@@ -131,6 +138,8 @@ WorkspaceModel.getInstance(project).update("Add new library") { builder ->
   builder.addEntity(libraryEntity)
 }
 ```
+
+<include from="workspace_model_usages.md" element-id="LegacyBridgeJpsEntitySourceFactory-internal-note"></include>
 
 ### Searching for Library by Root Type and URL
 

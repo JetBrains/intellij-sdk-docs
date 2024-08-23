@@ -16,14 +16,19 @@ The SDK determines which API library is used to build the project.
 If a project is multi-module, the project SDK by default is common for all modules within the project.
 Optionally, individual SDKs for each module can be configured.
 
-## Getting Project SDK Information
+## Working with SDKs
+
+<include from="project.md" element-id="useWorkspaceModelAPI"/>
+
+### Getting Project SDK Information
+
 The information about the project SDK is accessed via [`ProjectRootManager`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java) like the following example shows
 
 ```java
 Sdk projectSdk = ProjectRootManager.getInstance(project).getProjectSdk();
 ```
 
-## Getting and Setting Project SDK Attributes
+### Getting and Setting Project SDK Attributes
 
 * To get the project-level SDK:
 
@@ -51,17 +56,18 @@ Sdk projectSdk = ProjectRootManager.getInstance(project).getProjectSdk();
 
 See the [project_model](%gh-sdk-samples-master%/project_model/src/main/java/org/intellij/sdk/project/model/ProjectSdkAction.java) code sample to get more familiar with SDK manipulation toolset.
 
-## Available SDKs
+### Available SDKs
 
 [`ProjectJdkTable`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/projectRoots/ProjectJdkTable.java) can be used to query and modify configured SDKs.
 
-## Working with a Custom SDK
+### Working with a Custom SDK
 
 To create a custom SDK, provide a class extending [`SdkType`](%gh-ic%/platform/lang-core/src/com/intellij/openapi/projectRoots/SdkType.java), leave `saveAdditionalData()` blank, and register it in the `com.intellij.sdkType` extension point.
 
 To make SDK settings persistent, override `setupSdkPaths()` and save settings by `modificator.commitChanges()`:
 
 ```java
+
 @Override
 public boolean setupSdkPaths(@NotNull Sdk sdk, @NotNull SdkModel sdkModel) {
   SdkModificator modificator = sdk.getSdkModificator();
@@ -114,7 +120,6 @@ Within `DemoProjectSdkSetupValidator`:
 * `getErrorMessage()` runs the validation and return an appropriate error message if the validation fails.
 * If the validation is successful, then it should return null.
 * `getFixHandler()` returns an `EditorNotificationPanel.ActionHandler` that enables the user to execute a quick fix to resolve the validation issue.
-
 
 > `ProjectSdkSetupValidator` will not work in IntelliJ Platform-based IDEs such as PyCharm.
 > In such cases, you should register an implementation of [`EditorNotifications.Provider`](%gh-ic%/platform/platform-api/src/com/intellij/ui/EditorNotifications.java) at the `com.intellij.editorNotificationProvider` extension point and override the `createNotificationPanel()` method with the conditionality and panel setup you want.

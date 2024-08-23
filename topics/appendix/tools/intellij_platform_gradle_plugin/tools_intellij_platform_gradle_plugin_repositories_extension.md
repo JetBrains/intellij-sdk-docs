@@ -29,6 +29,9 @@ It provides methods to add:
 
 Setup Maven Central and [`defaultRepositories()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories) repositories:
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 repositories {
   mavenCentral()
@@ -38,6 +41,23 @@ repositories {
   }
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+repositories {
+  mavenCentral()
+
+  intellijPlatform {
+    defaultRepositories()
+  }
+}
+```
+
+</tab>
+</tabs>
+
 
 </snippet>
 
@@ -104,6 +124,9 @@ In such a case, refer to them using [`plugin(id, version, group)`](tools_intelli
 
 The third possibility is to use the [](custom_plugin_repository.md) with optional authorization credentials provided by defining the URL to the XML listing file, like:
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 repositories {
   intellijPlatform {
@@ -116,6 +139,26 @@ repositories {
   }
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+repositories {
+  intellijPlatform {
+    customPluginRepository('https://example.com/plugins.xml', CustomPluginRepositoryListingType.SIMPLE) {
+      credentials(HttpHeaderCredentials) {
+        name = 'Authorization'
+        value = 'Automation amFrdWJfdGVzdDotX...MkV2UkFwekFWTnNwZjA='
+      }
+    }
+  }
+}
+```
+
+</tab>
+</tabs>
+
 
 The final plugin archive is eventually resolved using the same credentials used for resolving the listing.
 

@@ -21,7 +21,7 @@ A service needing a shutdown hook/cleanup routine can implement [`Disposable`](%
 #### Types
 
 The IntelliJ Platform offers three types of services: _application-level_ services (global singleton), _project-level_ services, and _module-level_ services.
-For the latter two, a separate instance of the service is created for each instance of its corresponding scope, see [Project Model Introduction](project_structure.md).
+For the latter two, a separate instance of the service is created for each instance of its corresponding scope, see [Project Model Introduction](project_model.md).
 
 > Avoid using module-level services as it can increase memory usage for projects with many modules.
 >

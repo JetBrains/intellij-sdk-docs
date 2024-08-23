@@ -17,6 +17,9 @@ After the IntelliJ Platform Gradle Plugin is [applied](tools_intellij_platform_g
 
 **Example:**
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 intellijPlatform {
   buildSearchableOptions = true
@@ -38,6 +41,35 @@ intellijPlatform {
   }
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+intellijPlatform {
+  buildSearchableOptions = true
+  instrumentCode = true
+  projectName = project.name
+  sandboxContainer = '...'
+
+  pluginConfiguration {
+    // ...
+  }
+  publishing {
+    // ...
+  }
+  signing {
+    // ...
+  }
+  pluginVerification {
+    // ...
+  }
+}
+```
+
+</tab>
+</tabs>
+
 
 
 ### `cachePath`
@@ -229,6 +261,9 @@ Requires the [](tools_intellij_platform_gradle_plugin_plugins.md#platform) plugi
 
 **Example:**
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 intellijPlatform {
   // ...
@@ -255,6 +290,40 @@ intellijPlatform {
   }
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+intellijPlatform {
+  // ...
+
+  pluginConfiguration {
+    id = 'my-plugin-id'
+    name = 'My Awesome Plugin'
+    version = '1.0.0'
+    description = 'It\'s an awesome plugin!'
+    changeNotes =
+      """
+      A descriptive release note...
+      """.stripIndent()
+
+    productDescriptor {
+      // ...
+    }
+    ideaVersion {
+      // ...
+    }
+    vendor {
+      // ...
+    }
+  }
+}
+```
+
+</tab>
+</tabs>
+
 
 See also:
 - [](#intellijPlatform-pluginConfiguration-productDescriptor)
@@ -358,6 +427,9 @@ A part of the [](#intellijPlatform-pluginConfiguration) which describes the `pro
 
 **Example:**
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 intellijPlatform {
   // ...
@@ -375,6 +447,31 @@ intellijPlatform {
   }
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+intellijPlatform {
+  // ...
+
+  pluginConfiguration {
+    // ...
+
+    productDescriptor {
+      code = 'MY_CODE'
+      releaseDate = '20240217'
+      releaseVersion = '20241'
+      optional = false
+      eap = false
+    }
+  }
+}
+```
+
+</tab>
+</tabs>
+
 
 See also:
 - [How to add required parameters for paid plugins](https://plugins.jetbrains.com/docs/marketplace/add-required-parameters.html)
@@ -474,6 +571,9 @@ A part of the [](#intellijPlatform-pluginConfiguration) which describes the [`<i
 
 **Example:**
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 intellijPlatform {
   // ...
@@ -488,6 +588,28 @@ intellijPlatform {
   }
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+intellijPlatform {
+  // ...
+
+  pluginConfiguration {
+    // ...
+
+    ideaVersion {
+      sinceBuild = '241'
+      untilBuild = '241.*'
+    }
+  }
+}
+```
+
+</tab>
+</tabs>
+
 
 See also:
 
@@ -545,6 +667,9 @@ A part of the [](#intellijPlatform-pluginConfiguration) which describes the [`<v
 
 **Example:**
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 intellijPlatform {
   // ...
@@ -560,6 +685,29 @@ intellijPlatform {
   }
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+intellijPlatform {
+  // ...
+
+  pluginConfiguration {
+    // ...
+
+    vendor {
+      name = 'JetBrains'
+      email = 'hello@jetbrains.com'
+      url = 'https://www.jetbrains.com'
+    }
+  }
+}
+```
+
+</tab>
+</tabs>
+
 
 ### `name`
 {#intellijPlatform-pluginConfiguration-vendor-name}
@@ -616,6 +764,9 @@ Requires the [](tools_intellij_platform_gradle_plugin_plugins.md#platform) plugi
 
 **Example:**
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 intellijPlatform {
   // ...
@@ -629,6 +780,27 @@ intellijPlatform {
   }
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+intellijPlatform {
+  // ...
+
+  publishing {
+    host = ''
+    token = '7hR4nD0mT0k3n_8f2eG'
+    channels = ['default']
+    ideServices = false
+    hidden = false
+  }
+}
+```
+
+</tab>
+</tabs>
+
 
 
 ### `host`
@@ -721,6 +893,9 @@ Requires the [](tools_intellij_platform_gradle_plugin_plugins.md#platform) plugi
 
 **Example:**
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 intellijPlatform {
   // ...
@@ -740,6 +915,33 @@ intellijPlatform {
   }
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+intellijPlatform {
+  // ...
+
+  signing {
+    cliPath = file('/path/to/marketplace-zip-signer-cli.jar')
+    keyStore = file('/path/to/keyStore.ks')
+    keyStorePassword = '...'
+    keyStoreKeyAlias = '...'
+    keyStoreType = '...'
+    keyStoreProviderName = '...'
+    privateKey = '...'
+    privateKeyFile = file('/path/to/private.pem')
+    password = '...'
+    certificateChain = '...'
+    certificateChainFile = file('/path/to/chain.crt')
+  }
+}
+```
+
+</tab>
+</tabs>
+
 
 See also:
 - [](plugin_signing.md)
@@ -916,7 +1118,12 @@ Requires the [](tools_intellij_platform_gradle_plugin_plugins.md#platform) plugi
 
 **Example:**
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
+import org.jetbrains.intellij.platform.gradle.tasks.VerifyPluginTask
+
 intellijPlatform {
   // ...
 
@@ -939,6 +1146,39 @@ intellijPlatform {
   }
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+import org.jetbrains.intellij.platform.gradle.tasks.VerifyPluginTask
+
+intellijPlatform {
+  // ...
+
+  pluginVerification {
+    cliPath = file('/path/to/plugin-verifier-cli.jar')
+    freeArgs = ['foo', 'bar']
+    homeDirectory = file('/path/to/pluginVerifierHomeDirectory/')
+    downloadDirectory = file('/path/to/pluginVerifierHomeDirectory/ides/')
+    failureLevel = VerifyPluginTask.FailureLevel.ALL
+    verificationReportsDirectory = 'build/reports/pluginVerifier'
+    verificationReportsFormats = VerifyPluginTask.VerificationReportsFormats.ALL
+    externalPrefixes = 'com.example'
+    teamCityOutputFormat = false
+    subsystemsToCheck = VerifyPluginTask.Subsystems.ALL
+    ignoredProblemsFile = file('/path/to/ignoredProblems.txt')
+
+    ides {
+      // ...
+    }
+  }
+}
+```
+
+</tab>
+</tabs>
+
 
 See also:
 - [](verifying_plugin_compatibility.md)
@@ -1123,8 +1363,12 @@ It provides a set of helpers which add relevant entries to the configuration, wh
 
 **Example:**
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
+import org.jetbrains.intellij.platform.gradle.models.ProductRelease
 
 intellijPlatform {
   // ...
@@ -1133,7 +1377,6 @@ intellijPlatform {
     // ...
 
     ides {
-      ide(IntelliJPlatformType.PhpStorm)
       ide(IntelliJPlatformType.RustRover, "2023.3")
       local(file("/path/to/ide/"))
       recommended()
@@ -1147,6 +1390,38 @@ intellijPlatform {
   }
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
+import org.jetbrains.intellij.platform.gradle.models.ProductRelease
+
+intellijPlatform {
+  // ...
+
+  pluginVerification {
+    // ...
+
+    ides {
+      ide IntelliJPlatformType.RustRover, "2023.3"
+      local file('/path/to/ide/')
+      recommended()
+      select {
+        types = [IntelliJPlatformType.PhpStorm]
+        channels = [ProductRelease.Channel.RELEASE]
+        sinceBuild = '232'
+        untilBuild = '241.*'
+      }
+    }
+  }
+}
+```
+
+</tab>
+</tabs>
+
 
 See also:
 - [](verifying_plugin_compatibility.md)

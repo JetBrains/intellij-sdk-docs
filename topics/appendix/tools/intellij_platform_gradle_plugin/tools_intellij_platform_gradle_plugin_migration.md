@@ -172,6 +172,9 @@ The `runIdeForUiTests` task is obsolete and should be replaced with an explicit 
 
 The task running IDE with the Robot Server Plugin should be declared now as a custom `runIde` task with plugin loaded:
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 val runIdeForUiTests by intellijPlatformTesting.runIde.registering {
   task {
@@ -190,6 +193,32 @@ val runIdeForUiTests by intellijPlatformTesting.runIde.registering {
   }
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+val runIdeForUiTests by intellijPlatformTesting.runIde.registering {
+  task {
+    jvmArgumentProviders.add({
+      [
+        '-Drobot-server.port=8082',
+        '-Dide.mac.message.dialogs.as.sheets=false',
+        '-Djb.privacy.policy.text=<!--999.999-->',
+        '-Djb.consents.confirmation.enabled=false',
+      ]
+    } as CommandLineArgumentProvider)
+  }
+
+  plugins {
+    robotServerPlugin()
+  }
+}
+```
+
+</tab>
+</tabs>
+
 
 ### `runPluginVerifier`
 
@@ -229,8 +258,23 @@ Alternatively, edit the <path>.idea/workspace.xml</path> file and remove the `se
 
 Add an explicit dependency on [the plugin](https://github.com/JetBrains/gradle-idea-ext-plugin) in <path>build.gradle.kts</path>:
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 plugins {
   id("org.jetbrains.gradle.plugin.idea-ext") version "1.1.8"
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+plugins {
+  id 'org.jetbrains.gradle.plugin.idea-ext' version '1.1.8'
+}
+```
+
+</tab>
+</tabs>

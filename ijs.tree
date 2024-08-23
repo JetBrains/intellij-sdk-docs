@@ -143,8 +143,8 @@
     </toc-element>
     <toc-element toc-title="Diagrams"/>
   </toc-element>
-  <toc-element toc-title="Project Model">
-    <toc-element topic="project_structure.md"/>
+  <toc-element toc-title="Project Structure">
+    <toc-element topic="project_model.md" accepts-web-file-names="project-structure.html">
     <toc-element topic="project.md">
       <toc-element topic="trusted_projects.md"/>
       <toc-element topic="project_wizard.md" toc-title="Project Wizard"/>
@@ -158,6 +158,15 @@
     <toc-element topic="sdk.md"/>
     <toc-element topic="library.md"/>
     <toc-element topic="facet.md"/>
+    </toc-element>
+    <toc-element topic="workspace_model.md">
+      <toc-element topic="workspace_model_entity_declaration.md"/>
+      <toc-element topic="workspace_model_entity_properties.md"/>
+      <toc-element topic="workspace_model_entity_mutation.md"/>
+      <toc-element topic="workspace_model_entity_read.md"/>
+      <toc-element topic="workspace_model_event_listening.md"/>
+      <toc-element topic="workspace_model_usages.md"/>
+    </toc-element>
     <toc-element topic="external_system_integration.md"/>
   </toc-element>
   <toc-element toc-title="PSI">

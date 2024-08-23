@@ -106,6 +106,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.jetbrains.jsonSchema` package removed
 : Add an explicit dependency on the JSON plugin (id = `com.intellij.modules.json`) in your plugin.xml to restore access to the missing package.
 
+Unbundled JUnit library
+: Add an explicit dependency in the plugin project.
+
 ## 2024.2
 
 ### IntelliJ Platform 2024.2

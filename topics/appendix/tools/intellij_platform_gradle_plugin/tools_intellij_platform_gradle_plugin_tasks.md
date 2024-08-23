@@ -1217,6 +1217,9 @@ Runs the IDE instance using the currently selected IntelliJ Platform with the bu
 
 This task is not available by default and needs to be registered manually by applying the following code:
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 val runIdeForUiTests by intellijPlatformTesting.runIde.registering {
   task {
@@ -1234,6 +1237,32 @@ val runIdeForUiTests by intellijPlatformTesting.runIde.registering {
   }
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+intellijPlatformTesting.runIde {
+  runIdeForUiTests {
+    task {
+      jvmArgumentProviders.add({
+        [
+          "-Drobot-server.port=8082",
+          "-Dide.mac.message.dialogs.as.sheets=false",
+          "-Djb.privacy.policy.text=<!--999.999-->",
+          "-Djb.consents.confirmation.enabled=false",
+        ]
+      } as CommandLineArgumentProvider)
+    }
+    plugins {
+      robotServerPlugin()
+    }
+  }
+}
+```
+
+</tab>
+</tabs>
 
 
 ## `setupDependencies`

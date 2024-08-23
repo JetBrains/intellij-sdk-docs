@@ -15,7 +15,7 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 Dumb-aware "Highlight Usages"
 : [](additional_minor_features.md#semantic-highlight-usages) can be marked as [](indexing_and_psi_stubs.md#DumbAwareAPI).
 
-`ParsingTestCase`: Stable PSI check
+`ParsingTestCase`: stable PSI check
 : [`ParsingTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/ParsingTestCase.java) verifies that reparsing causes no changes (Parser bug).
 
 ## 2024.2
@@ -24,6 +24,9 @@ Dumb-aware "Highlight Usages"
 
 Dumb-aware intentions and quick-fixes
 : Mark implementations as enabled during indexing, see [](indexing_and_psi_stubs.md#DumbAwareAPI).
+
+Workspace Model API
+: [](workspace_model.md) represents the project's structure and all its elements and replaces the existing [](project_model.md).
 
 Testing: `ProjectActivity`
 : Executed asynchronously now during tests, see [](testing_faq.md#how-to-handle-projectactivity).

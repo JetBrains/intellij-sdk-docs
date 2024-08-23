@@ -15,6 +15,9 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 ### August
 {august-24}
 
+Workspace Model
+: [](workspace_model.md) represents the project's structure and all its elements and replaces the existing [](project_model.md).
+
 Minor Changes and Additions
 :
 - Updated list of [supported features](language_server_protocol.md#supported-features) for Language Server Protocol (LSP).

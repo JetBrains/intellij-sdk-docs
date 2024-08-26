@@ -76,6 +76,36 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.intellij.psi.stubs.StubElement.getChildrenStubs()` method return type changed from `List<StubElement>` to `List<StubElement<?>>`
 : Raw-type changed to a properly parameterized type. This is binary compatible change but may cause compilation errors. In most of the cases, it's enough to add `<?>` at the use site to fix the issue.
 
+`com.intellij.json.JsonElementTypes` class removed
+: Add explicit dependency on the JSON plugin (id = `com.intellij.modules.json`) in your plugin.xml to restore access to the missing class.
+
+`com.intellij.json.JsonFileType` class removed
+: Add an explicit dependency on the JSON plugin (id = `com.intellij.modules.json`) in your plugin.xml to restore access to the missing class.
+
+`com.intellij.json.JsonLanguage` class removed
+: Add an explicit dependency on the JSON plugin (id = `com.intellij.modules.json`) in your plugin.xml to restore access to the missing class.
+
+`com.intellij.json.JsonParserDefinition` class removed
+: Add an explicit dependency on the JSON plugin (id = `com.intellij.modules.json`) in your plugin.xml to restore access to the missing class.
+
+`com.intellij.json.JsonTokenType` class removed
+: Add an explicit dependency on the JSON plugin (id = `com.intellij.modules.json`) in your plugin.xml to restore access to the missing class.
+
+`com.intellij.json` package removed
+: Add an explicit dependency on the JSON plugin (id = `com.intellij.modules.json`) in your plugin.xml to restore access to the missing package.
+
+`com.intellij.json.codeinsight` package removed
+: Add an explicit dependency on the JSON plugin (id = `com.intellij.modules.json`) in your plugin.xml to restore access to the missing package.
+
+`com.intellij.json.highlighting` package removed
+: Add an explicit dependency on the JSON plugin (id = `com.intellij.modules.json`) in your plugin.xml to restore access to the missing package.
+
+`com.intellij.json.psi` package removed
+: Add an explicit dependency on the JSON plugin (id = `com.intellij.modules.json`) in your plugin.xml to restore access to the missing package.
+
+`com.jetbrains.jsonSchema` package removed
+: Add an explicit dependency on the JSON plugin (id = `com.intellij.modules.json`) in your plugin.xml to restore access to the missing package.
+
 Unbundled JUnit library
 : Add an explicit dependency in the plugin project.
 

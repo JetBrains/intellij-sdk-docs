@@ -14,10 +14,10 @@ Embedding of the browser component inside the IDE can be used for:
 
 - rendering HTML content
 - previewing generated HTML (e.g., from Markdown)
-- creating custom web-based components (e.g., diagrams preview, image browser, etc.)
+- creating custom web-based components (e.g., diagram preview, image browser, etc.)
 
 It is recommended to implement UI in the default IntelliJ Platform UI framework, which is Swing.
-Consider using JCEF approach only in cases, when a plugin needs to display HTML documents or the standard approach for creating UI is insufficient.
+Consider using the JCEF approach only in cases when a plugin needs to display HTML documents or the standard approach for creating UI is not enough.
 
 JCEF replaces JavaFX, which was used to render web content in IDEs in the past.
 
@@ -81,10 +81,10 @@ JCEF can be unsupported when:
 
 ### Browser
 
-JCEF browser is represented by [`JBCefBrowser`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefBrowser.java) class.
+JCEF browser is represented by the [`JBCefBrowser`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefBrowser.java) class.
 It is responsible for loading and rendering requested documents in the actual Chromium-based browser.
 
-JCEF browsers can be created either by using the `JBCefBrowser` class' constructors, or via [`JBCefBrowserBuilder`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefBrowserBuilder.java).
+JCEF browsers can be created either by using the `JBCefBrowser` class' constructors or via [`JBCefBrowserBuilder`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefBrowserBuilder.java).
 Use constructors in the cases when a browser with the default [client](#browser-client) and default options is enough.
 The builder approach allows using custom clients and configuring other options.
 
@@ -103,17 +103,17 @@ myPanel.add(browser.getComponent());
 
 To load a document in the browser, use one of [`JBCefBrowserBase.load*()`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefBrowserBase.java) methods.
 Methods loading documents can be called from both [EDT and background threads](threading_model.md).
-It is possible to set an initial URL (passed to constructor or builder) that will be loaded when browser is created and initialized.
+It is possible to set an initial URL (passed to constructor or builder) that will be loaded when the browser is created and initialized.
 
 ### Browser Client
 
 Browser client provides an interface for setting up [handlers](#event-handlers) related to various browser events, e.g.:
 - HTML document loaded
 - console message printed
-- browser gained focus
+- the browser gained focus
 
-Handlers allow reacting to these events in plugin code and change browser's behavior.
-Each browser is tied to a single client and a single client can be shared with multiple browser instances.
+Handlers allow reacting to these events in plugin code and changing the browser's behavior.
+Each browser is tied to a single client, and a single client can be shared with multiple browser instances.
 
 Browser client is represented by [`JBCefClient`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefClient.java), which is a wrapper for JCEF's [`CefClient`](%gh-jcef-master%/org/cef/CefClient.java).
 `JBCefClient` allows registering multiple handlers of the same type, which is not possible with `CefClient`.
@@ -131,12 +131,12 @@ To access the client associated with a browser, call `JBCefBrowser.getJBCefClien
 
 ### Event Handlers
 
-JCEF API provides various event handler interfaces that allows handling a wide set of events emitted by the browser.
+JCEF API provides various event handler interfaces that allow handling a wide set of events emitted by the browser.
 Example handlers:
 - [`CefLoadHandler`](%gh-jcef-master%/org/cef/handler/CefLoadHandler.java) - handles browser loading events.<br/>
-  **Example:** Implement `CefLoadHandler.onLoadEnd()` to [execute scripts](#executing-javascript) after document is loaded.
+  **Example:** Implement `CefLoadHandler.onLoadEnd()` to [execute scripts](#executing-javascript) after a document is loaded.
 
-- [`CefDisplayHandler`](%gh-jcef-master%/org/cef/handler/CefDisplayHandler.java) - handles events related to browser display state.<br/>
+- [`CefDisplayHandler`](%gh-jcef-master%/org/cef/handler/CefDisplayHandler.java) - handles events related to the browser display state.<br/>
   **Example:** Implement `CefDisplayHandler.onAddressChange()` to load project files in the browser when a local file link is clicked, or opening an external browser if an external link is clicked.
 
 - [`CefContextMenuHandler`](%gh-jcef-master%/org/cef/handler/CefContextMenuHandler.java) - handles context menu events.<br/>
@@ -145,7 +145,7 @@ Example handlers:
 - [`CefDownloadHandler`](%gh-jcef-master%/org/cef/handler/CefDownloadHandler.java) - file download events.<br/>
   **Example:** Implement `CefDownloadHandler.onBeforeDownload()` to enable downloading files in the embedded browser.
 
-See [org.cef.handler](%gh-jcef-master%/org/cef/handler) package for all available handlers.
+See the [org.cef.handler](%gh-jcef-master%/org/cef/handler) package for all available handlers.
 
 > For each handler interface, JCEF API provides an adapter class, which can be extended to avoid implementing unused methods, e.g., [`CefLoadHandlerAdapter`](%gh-jcef-master%/org/cef/handler/CefLoadHandlerAdapter.java).
 
@@ -169,14 +169,14 @@ browser.getCefBrowser().executeJavaScript(
 );
 ```
 
-The above snippet will be executed in the embedded browser and will display alert box with the "Hello World!" message.
-The `url` and `lineNumber` parameters are used in the error report in the browser, if the script throws an error.
+The above snippet will be executed in the embedded browser and will display an alert box with the "Hello World!" message.
+The `url` and `lineNumber` parameters are used in the error report in the browser if the script throws an error.
 Their purpose is to help debugging in case of errors, and they are not crucial for the script execution.
 It is common to pass `browser.getCefBrowser().getUrl()` or null/empty string, and `0` as these parameters.
 
 ### Executing Plugin Code From JavaScript
 
-JCEF doesn't provide direct access to DOM from the plugin code (it may [change](https://youtrack.jetbrains.com/issue/JBR-2046) in the future) and asynchronous communication with JavaScript is achieved with the callback mechanism.
+JCEF doesn't provide direct access to DOM from the plugin code (it may [change](https://youtrack.jetbrains.com/issue/JBR-2046) in the future), and asynchronous communication with JavaScript is achieved with the callback mechanism.
 It allows executing plugin code from the embedded browser via JavaScript, e.g., when a button or link is clicked, a shortcut is pressed, a JavaScript function is called, etc.
 
 JavaScript query callback is represented by [`JBCefJSQuery`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefJSQuery.java).
@@ -215,10 +215,10 @@ browser.getCefBrowser().executeJavaScript( // 6
 );
 ```
 
-1. Create `JBCefQuery` instance. Make sure that the passed browser instance is of type `JBCefBrowserBase` (casting may be needed).
+1. Create a ` JBCefQuery ` instance. Make sure that the passed browser instance is of the type `JBCefBrowserBase` (casting may be necessary).
 2. Add a handler implementing a plugin code to be executed.
    Example implementation opens a link in the editor or an external browser depending on whether the link is local or external.
-3. Handlers can optionally return `JBCefJSQuery.Response` object, which holds information about success or error occurred on the plugin code side.
+3. Handlers can optionally return a `JBCefJSQuery.Response` object, which holds information about success or error occurred on the plugin code side.
    It can be handled in the browser if needed.
 4. Execute JavaScript, which creates a custom `openLink` function.
 5. Inject JavaScript code responsible for invoking plugin code implemented in step 2.
@@ -226,14 +226,14 @@ browser.getCefBrowser().executeJavaScript( // 6
 
    Note the `"link"` parameter of the `JBCefJSQuery.inject()` method.
    It is the name of the `openLink` function's `link` parameter.
-   This value is injected to the query function call, and can be any value that is required by handler, e.g., `"myJsObject.prop"`, `"'JavaScript string'"`, etc.
+   This value is injected to the query function call and can be any value required by the handler, e.g., `"myJsObject.prop"`, `"'JavaScript string'"`, etc.
 6. Execute JavaScript, which registers a click event listener in the browser.
    Whenever an `a` element is clicked in the browser, the listener will invoke the `openLink` function defined in step 4 with the `href` value of the clicked link.
 
 ### Loading Resources From Plugin Distribution
 
 In cases when a plugin feature implements a web-based UI, the plugin may provide HTML, CSS, and JavaScript files in its [distribution](plugin_content.md) or build them on the fly depending on some configuration.
-Such resources cannot be easily accessed by the browser.
+The browser cannot easily access such resources.
 They can be made accessible by implementing proper request [handlers](#event-handlers), which make them available to the browser at predefined URLs.
 
 This approach requires implementing [`CefRequestHandler`](%gh-jcef-master%/org/cef/handler/CefRequestHandler.java), and [`CefResourceRequestHandler`](%gh-jcef-master%/org/cef/handler/CefResourceRequestHandler.java), which map resource paths to resource providers.
@@ -246,7 +246,7 @@ See [`JCefImageViewer`](%gh-ic%/images/src/org/intellij/images/editor/impl/jcef/
 Default browser scrollbars may be insufficient, e.g. when they stand out of the IDE scrollbars look, or specific look and behavior is required.
 
 In JCEF browsers, scrollbars look and feel can be customized by CSS and JavaScript.
-IntelliJ Platform provides [`JBCefScrollbarsHelper`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefScrollbarsHelper.java) that allows to customize scrollbars in two ways:
+IntelliJ Platform provides [`JBCefScrollbarsHelper`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefScrollbarsHelper.java) that allows customizing scrollbars in two ways:
 1. Using `JBCefScrollbarsHelper.getOverlayScrollbarStyle()`, which provides the styles adapted to the IDE scrollbars.
 2. Using [OverlayScrollbars](https://kingsora.github.io/OverlayScrollbars/) library adapted to the IDE look and feel.
    For the details, see `getOverlayScrollbarsSourceCSS()`, `getOverlayScrollbarsSourceJS()`, and `buildScrollbarsStyle()` Javadocs.
@@ -266,8 +266,8 @@ See [`JBCefTestHelper`](%gh-ic%/platform/platform-tests/testSrc/com/intellij/ui/
 ## Debugging
 
 The [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/), embedded into JCEF, can be used as a debugging and profiling tool.
-It is active by default, so that a Chrome DevTools client can attach to it via the default 9222 port.
-Default port can be changed via the registry key `ide.browser.jcef.debug.port` (go to <ui-path>Help | Find Action...</ui-path> and type "Registry").
+It is active by default, so that a Chrome DevTools client can attach to it via the default port 9222.
+The default port can be changed via the registry key `ide.browser.jcef.debug.port` (go to <ui-path>Help | Find Action...</ui-path> and type "Registry").
 
 JavaScript debugger in IntelliJ IDEA Ultimate can thus be used to debug JavaScript code running in the IDE via the Chrome DevTools.
 Use the [<control>Attach to Node.js/Chrome</control>](https://www.jetbrains.com/help/idea/run-debug-configuration-node-js-remote-debug.html) configuration with a proper port number.
@@ -287,7 +287,7 @@ JBCefBrowser devToolsBrowser = JBCefBrowser.createBuilder()
     .build();
 ```
 
-In order to open DevTools in a separate window, call `JBCefBrowser.openDevtools()`.
+To open DevTools in a separate window, call `JBCefBrowser.openDevtools()`.
 
 ## JCEF Usage Examples
 

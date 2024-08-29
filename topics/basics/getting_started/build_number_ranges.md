@@ -40,7 +40,7 @@ It consists of the following parts:
 
 Branch numbers are based on the `YYYY.R` [IDE release version numbers](https://blog.jetbrains.com/blog/2016/03/09/jetbrains-toolbox-release-and-versioning-changes/).
 The branch number takes the last two digits of the year and the `R` release number.
-For example, `231` for 20*23.1*, `232` for 20*23.2*, and `233` for 20*23.3*.
+For example, `231` for 20**23.1**, `232` for 20**23.2**, and `233` for 20**23.3**.
 
 The build number may have multiple components: `IU-162.94.11`, `IU-162.94.11.256.42`.
 This gives more flexibility for third-party plugins and IDE developers.

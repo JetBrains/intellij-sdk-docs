@@ -15,8 +15,9 @@ As a replacement, the IntelliJ Platform provides multiple non-modal notification
 
 ### Dialogs
 
-When working in a dialog, instead of checking the validity of the input when the <control>OK</control> button is pressed and notifying the user about invalid data with a modal dialog, the recommended approach is to use
-[`DialogWrapper.doValidate()`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java),
+When working in a dialog, do not check the validity of the input and notify the user about invalid data with a modal dialog when the <control>OK</control> button is pressed.
+Instead, use
+[`DialogWrapper.doValidate()`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java)
 described in the [Dialogs](dialog_wrapper.md#input-validation) section.
 
 ### Editor Hints
@@ -32,7 +33,7 @@ For UI reference, see [](banner.md) in UI Guidelines.
 Notifications that appear at the top of the file editor are a great way to ask the user to take an important action that would otherwise impede their experience if ignored (e.g., missing SDK, setup/project configuration requiring user input).
 
 Register an implementation of [`EditorNotificationProvider`](%gh-ic%/platform/platform-api/src/com/intellij/ui/EditorNotificationProvider.java) using `com.intellij.editorNotificationProvider` extension point.
-If access to indexes is not required, it can be marked [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI).
+If access to indexes is not required, it can be marked [dumb-aware](indexing_and_psi_stubs.md#DumbAwareAPI).
 
 A commonly used UI implementation is [`EditorNotificationPanel`](%gh-ic%/platform/platform-api/src/com/intellij/ui/EditorNotificationPanel.java).
 
@@ -57,7 +58,7 @@ For UI reference, see [](balloon.md) in UI Guidelines.
 > See [](tool_windows.md#tool-window-notification) for showing balloons for a specific tool window.
 
 The specific method used to display a notification is [`Notifications.Bus.notify()`](%gh-ic%/platform/ide-core/src/com/intellij/notification/Notifications.java).
-If the current Project is known, please use overload with `Project` parameter, so the notification is shown in its associated frame.
+If the current Project is known, please use overload with the ` Project ` parameter, so the notification is shown in its associated frame.
 
 The text of the notification can include HTML tags for presentation purposes.
 Use `Notification.addAction(AnAction)` to add links below the content, use [`NotificationAction`](%gh-ic%/platform/ide-core/src/com/intellij/notification/NotificationAction.java) for convenience.
@@ -73,7 +74,7 @@ Please see the following steps for setup, depending on the target platform versi
 
 <tab title="2020.3 and later">
 
-`NotificationGroup` is registered in <path>[plugin.xml](plugin_configuration_file.md)</path> using `com.intellij.notificationGroup` extension point.
+`NotificationGroup` is registered in <path>[plugin.xml](plugin_configuration_file.md)</path> using the ` com.intellij.notificationGroup ` extension point.
 Use `key` to provide a localized group display name.
 
 ```xml

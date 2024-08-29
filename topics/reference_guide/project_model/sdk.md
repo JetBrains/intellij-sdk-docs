@@ -54,7 +54,7 @@ Sdk projectSdk = ProjectRootManager.getInstance(project).getProjectSdk();
   ProjectRootManager.getInstance(project).setProjectSdkName(name, sdk.getSdkType().getName());
   ```
 
-See the [project_model](%gh-sdk-samples-master%/project_model/src/main/java/org/intellij/sdk/project/model/ProjectSdkAction.java) code sample to get more familiar with SDK manipulation toolset.
+See the [project_model](%gh-sdk-samples-master%/project_model/src/main/java/org/intellij/sdk/project/model/ProjectSdkAction.java) code sample to get more familiar with the SDK manipulation toolset.
 
 ### Available SDKs
 
@@ -117,7 +117,7 @@ internal class DemoProjectSdkSetupValidator : ProjectSdkSetupValidator {
 Within `DemoProjectSdkSetupValidator`:
 
 * `isApplicableFor()` checks what condition(s) should be met to run the validation.
-* `getErrorMessage()` runs the validation and return an appropriate error message if the validation fails.
+* `getErrorMessage()` runs the validation and returns an appropriate error message if the validation fails.
 * If the validation is successful, then it should return null.
 * `getFixHandler()` returns an `EditorNotificationPanel.ActionHandler` that enables the user to execute a quick fix to resolve the validation issue.
 

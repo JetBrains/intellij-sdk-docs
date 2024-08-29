@@ -247,9 +247,9 @@ Default browser scrollbars may be insufficient, e.g. when they stand out of the 
 
 In JCEF browsers, scrollbars look and feel can be customized by CSS and JavaScript.
 IntelliJ Platform provides [`JBCefScrollbarsHelper`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefScrollbarsHelper.java) that allows customizing scrollbars in two ways:
-1. Using `JBCefScrollbarsHelper.getOverlayScrollbarStyle()`, which provides the styles adapted to the IDE scrollbars.
+1. Using `JBCefScrollbarsHelper.buildScrollbarsStyle()`, which provides the styles adapted to the IDE scrollbars (recommended).
 2. Using [OverlayScrollbars](https://kingsora.github.io/OverlayScrollbars/) library adapted to the IDE look and feel.
-   For the details, see `getOverlayScrollbarsSourceCSS()`, `getOverlayScrollbarsSourceJS()`, and `buildScrollbarsStyle()` Javadocs.
+   For the details, see `getOverlayScrollbarsSourceCSS()`, `getOverlayScrollbarsSourceJS()`, and `getOverlayScrollbarStyle()` Javadocs.
    It should be used when transparent scrollbars or other advanced options are required.
 
 ### Disposing Resources

@@ -15,7 +15,7 @@ See [](configuring_plugin_project.md#patching-the-plugin-configuration-file) for
 Please note the following regarding values:
 
 - Values must represent the [actual build numbers](#build-number-format).
-  Any made-up numbers must not be used and such plugins will be rejected on JetBrains Marketplace.
+  Any made-up numbers must not be used, and such plugins will be rejected on JetBrains Marketplace.
   For example, `233.*` is invalid for `since-build`; any of `999.*`, `234.*` (maximum is `233.*`) and `223.9999` are invalid for `until-build`.
 - Not specifying `until-build` means it will include _all_ future builds. This includes future, yet unreleased versions and possibly new IDEs, which might impact compatibility later.
 - To support all releases for a specific branch, use dot-star suffix (`.* `) in `until-build`.
@@ -25,7 +25,7 @@ Please note the following regarding values:
 > Any additional reported errors/warnings should also be fixed when possible.
 >
 > Plugins hosted on [JetBrains Marketplace](https://plugins.jetbrains.com) are checked automatically.
-> According to [Approval Guidelines](https://plugins.jetbrains.com/legal/approval-guidelines), incompatible plugin versions will be restricted by JetBrains if necessary.
+> According to [Approval Guidelines](https://plugins.jetbrains.com/legal/approval-guidelines), JetBrains will restrict incompatible plugin versions if necessary.
 >
 {title="Compatibility Enforcement" style="warning"}
 
@@ -44,7 +44,7 @@ For example, `231` for 20**23.1**, `232` for 20**23.2**, and `233` for 20**23.3*
 
 The build number may have multiple components: `IU-162.94.11`, `IU-162.94.11.256.42`.
 This gives more flexibility for third-party plugins and IDE developers.
-Plugins may specify compatibility versions more precisely (for example, requiring a specific bugfix release); IDE vendors may have build numbers based on a specific IntelliJ Platform version and specify additional internal version (for example `256.42` in `XX-162.94.11.256.42`) to allow plugin developers for their IDE to specify compatibility.
+Plugins may specify compatibility versions more precisely (for example, requiring a specific bugfix release); IDE vendors may have build numbers based on a specific IntelliJ Platform version and specify an additional internal version (for example, `256.42` in `XX-162.94.11.256.42`) to allow plugin developers for their IDE to specify compatibility.
 
 Multipart build numbers can also be used in the `since-build` and `until-build` attributes of `idea-version`.
 Usually you should omit the product ID and use only the branch number and build number, for example:
@@ -62,10 +62,10 @@ Usually you should omit the product ID and use only the branch number and build 
 ```
 </compare>
 
-> Specific build numbers and their corresponding release version are available via _Previous Releases_ on the corresponding product's download page, for example [Previous IntelliJ IDEA Releases](https://www.jetbrains.com/idea/download/previous.html).
+> Specific build numbers and their corresponding release version are available via _Previous Releases_ on the corresponding product's download page, for example, [Previous IntelliJ IDEA Releases](https://www.jetbrains.com/idea/download/previous.html).
 > For upcoming versions, see [Early Access Program](https://eap.jetbrains.com).
 >
-> See also [What versions of IntelliJ-based IDEs are supported?](https://intellij-support.jetbrains.com/hc/en-us/articles/360019574859-What-versions-of-IntelliJ-based-IDEs-are-supported-) for JetBrains IDE support policy.
+> See also ["What versions of IntelliJ-based IDEs are supported?"](https://intellij-support.jetbrains.com/hc/en-us/articles/360019574859-What-versions-of-IntelliJ-based-IDEs-are-supported-) for JetBrains IDE support policy.
 >
 {style="note" title="Build numbers for products"}
 

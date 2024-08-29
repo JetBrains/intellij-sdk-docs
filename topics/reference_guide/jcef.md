@@ -182,7 +182,7 @@ It allows executing plugin code from the embedded browser via JavaScript, e.g., 
 JavaScript query callback is represented by [`JBCefJSQuery`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefJSQuery.java).
 It is an object bound to a specific browser, and it holds a set of handlers that implement the required plugin behavior.
 
-Consider a case, which requires opening local files links in the editor and external links in an external browser.
+Consider a case which requires opening local files links in the editor and external links in an external browser.
 Such a requirement could be implemented as follows (each step is explained under the code snippet):
 
 ```java
@@ -243,7 +243,7 @@ See [`JCefImageViewer`](%gh-ic%/images/src/org/intellij/images/editor/impl/jcef/
 
 ### Scrollbars Look and Feel
 
-Default browser scrollbars may be insufficient, e.g. when they stand out of the IDE scrollbars look, or specific look and behavior is required.
+Default browser scrollbars may be not enough, for example, when they stand out of the IDE scrollbars look, or specific look and behavior is required.
 
 In JCEF browsers, scrollbars look and feel can be customized by CSS and JavaScript.
 IntelliJ Platform provides [`JBCefScrollbarsHelper`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefScrollbarsHelper.java) that allows customizing scrollbars in two ways:

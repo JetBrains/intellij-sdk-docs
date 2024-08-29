@@ -24,7 +24,7 @@ Use a banner if user actions should attract attention in a file tab, tool window
 *Reconnecting to the database is required to make edits.*
 
 ![](dialog-example.png){width=500 style=block}
-*The component needs to be installed in order to run the available virtual devices.*
+*The component needs to be installed to run the available virtual devices.*
 
 Do **not** use a banner if there is no particular UI component it can be tied to. Use a [balloon notification](balloon.md) in the main window instead.
 
@@ -34,7 +34,7 @@ For all other cases, choose another notification type.
 
 #### Information
 
-Use when actions can improve the user’s workflow, but are considered optional and can be safely ignored.
+Use when actions can improve the user’s workflow but are considered optional and can be safely ignored.
 
 ![](information-example.png){width=733 style=block}
 *The new tool window UI is suggested to improve the workflow for version control.*
@@ -76,7 +76,7 @@ Use to suggest actions that are required to unblock the user’s workflow.
 ### Placement
 
 * Place the banner at the top of the related UI component.
-* It can float or be adjacent to the content, depending on the amount of the available space and whether or not the content’s vertical shifting needs to be minimized.
+* It can float or be adjacent to the content, depending on the amount of available space and whether the content’s vertical shifting needs to be minimized.
 
 ![](float-example.png){width=509}
 

@@ -5,7 +5,7 @@
     <variables>
         <header-logo>https://resources.jetbrains.com/storage/logos/web/jetbrains/jetbrains-particle.svg</header-logo>
         <web-root>https://plugins.jetbrains.com/docs</web-root>
-        <product-web-url>https://plugins.jetbrains.com/docs/intellij/</product-web-url>
+        <product-web-url>https://plugins.jetbrains.com/docs/intellij/welcome.html</product-web-url>
         <search-scope/>
         <fallback-url/>
         <download-page>https://jb.gg/ipe</download-page>

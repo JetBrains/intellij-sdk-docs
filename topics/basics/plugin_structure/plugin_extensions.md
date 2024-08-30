@@ -1,6 +1,6 @@
-# Extensions
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Extensions
 
 <link-summary>Extensions are the most common way of customizing functionality in the IDE.</link-summary>
 
@@ -66,9 +66,9 @@ and one extension to access the `another.plugin.myExtensionPoint` extension poin
   and exposes custom properties "key" and "implementationClass".
 -->
 <extensions defaultExtensionNs="another.plugin">
-<myExtensionPoint
-    key="keyValue"
-    implementationClass="com.example.MyExtensionPointImpl"/>
+  <myExtensionPoint
+      key="keyValue"
+      implementationClass="com.example.MyExtensionPointImpl"/>
 </extensions>
 ```
 

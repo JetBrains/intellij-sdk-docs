@@ -164,9 +164,9 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    IntellijIdeaCommunity("%ijPlatform%")
+    intellijIdeaCommunity("%ijPlatform%")
   }
-}
+
 ```
 
 </tab>
@@ -181,7 +181,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    IntellijIdeaCommunity '%ijPlatform%'
+    intellijIdeaCommunity '%ijPlatform%'
   }
 }
 ```

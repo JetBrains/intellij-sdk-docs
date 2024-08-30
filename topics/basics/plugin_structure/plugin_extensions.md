@@ -6,7 +6,7 @@
 
 _Extensions_ are the most common way for a plugin to extend the IntelliJ Platform's functionality in a way that is not as straightforward as adding an action to a menu or toolbar.
 
-The following are some of the most common tasks accomplished using extensions:
+The following are some of the most common tasks achieved using extensions:
 
 * The `com.intellij.toolWindow` extension point allows plugins to add [tool windows](tool_windows.md) (panels displayed at the sides of the IDE user interface);
 * The `com.intellij.applicationConfigurable` and `com.intellij.projectConfigurable` extension points allow plugins to add pages to the [Settings dialog](settings.md);
@@ -76,10 +76,10 @@ and one extension to access the `another.plugin.myExtensionPoint` extension poin
 
 Please note the following important points:
 
-- Extension implementation must be stateless. Use explicit [](plugin_services.md) for managing (runtime) data.
-- Avoid any initialization in the constructor, see also notes for [Services](plugin_services.md#ctor).
+- Extension implementation must be stateless. Use explicit [services](plugin_services.md) for managing (runtime) data.
+- Avoid any initialization in the constructor, see also notes for [services](plugin_services.md#ctor).
 - Do not perform any static initialization. Use inspection <control>Plugin DevKit | Code | Static initialization in extension point implementations</control> (2023.3).
-- An extension implementation must not be registered as [Service](plugin_services.md) additionally. Use inspection <control>Plugin DevKit | Code | Extension registered as service/component</control> (2023.3).
+- An extension implementation must not be registered as a [service](plugin_services.md) additionally. Use inspection <control>Plugin DevKit | Code | Extension registered as service/component</control> (2023.3).
 
 When using [Kotlin](using_kotlin.md):
 
@@ -92,13 +92,13 @@ When using [Kotlin](using_kotlin.md):
 ### Extension Default Properties
 
 `id`
-: Unique ID. Consider prepending ID with the prefix related to the plugin name or ID to not clash with other plugins defining extensions with the same ID, e.g., `com.example.myplugin.myExtension`.
+: Unique ID. Consider prepending ID with the prefix related to the plugin name or ID to not clash with other plugins defining extensions with the same ID, for example, `com.example.myplugin.myExtension`.
 
 `order`
 : Allows ordering all defined extensions using `first`, `last` or `before|after [id]` respectively.
 
 `os`
-: Allows restricting an extension to given OS, e.g., `os="windows"` registers the extension on Windows only
+: Allows restricting an extension to a given OS, for example, `os="windows"` registers the extension on Windows only
 
 If an extension instance needs to "opt out" in certain scenarios, it can throw [`ExtensionNotApplicableException`](%gh-ic%/platform/extensions/src/com/intellij/openapi/extensions/ExtensionNotApplicableException.java) in its constructor.
 

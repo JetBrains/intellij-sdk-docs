@@ -6,6 +6,7 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Ladybug &#124; 2024.2.1 Canary 9 | ![Canary][canary] | August 30, 2024 | **2024.2.1.5**<p>AI-242.20224.300.2421.12293307</p> | **2024.2**<p>242.20224.300</p> |
 | Ladybug &#124; 2024.2.1 Canary 8 | ![Canary][canary] | August 28, 2024 | **2024.2.1.4**<p>AI-242.20224.300.2421.12279409</p> | **2024.2**<p>242.20224.300</p> |
 | Ladybug &#124; 2024.2.1 Canary 7 | ![Canary][canary] | August 15, 2024 | **2024.2.1.3**<p>AI-242.20224.300.2421.12232258</p> | **2024.2**<p>242.20224.300</p> |
 | Ladybug &#124; 2024.2.1 Canary 6 | ![Canary][canary] | August 13, 2024 | **2024.2.1.2**<p>AI-242.20224.300.2421.12216002</p> | **2024.2**<p>242.20224.300</p> |
@@ -555,11 +556,11 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Ladybug &#124; 2024.2.1 Canary 9 | ![Canary][canary] | August 30, 2024 | **2024.2.1.5**<p>AI-242.20224.300.2421.12293307</p> | **2024.2**<p>242.20224.300</p> |
 | Ladybug &#124; 2024.2.1 Canary 8 | ![Canary][canary] | August 28, 2024 | **2024.2.1.4**<p>AI-242.20224.300.2421.12279409</p> | **2024.2**<p>242.20224.300</p> |
 | Ladybug &#124; 2024.2.1 Canary 7 | ![Canary][canary] | August 15, 2024 | **2024.2.1.3**<p>AI-242.20224.300.2421.12232258</p> | **2024.2**<p>242.20224.300</p> |
 | Ladybug &#124; 2024.2.1 Canary 6 | ![Canary][canary] | August 13, 2024 | **2024.2.1.2**<p>AI-242.20224.300.2421.12216002</p> | **2024.2**<p>242.20224.300</p> |
 | Koala Feature Drop &#124; 2024.1.2 | ![Release][release] | August 29, 2024 | **2024.1.2.12**<p>AI-241.18034.62.2412.12266719</p> | **2024.1.4**<p>241.18034.62</p> |
-| Koala &#124; 2024.1.1 Patch 2 | ![Patch][patch] | August 8, 2024 | **2024.1.1.13**<p>AI-241.18034.62.2411.12169540</p> | **2024.1.4**<p>241.18034.62</p> |
 
 [release]: https://img.shields.io/badge/-Release-blue?style=flat-square
 [patch]: https://img.shields.io/badge/-Patch-orange?style=flat-square

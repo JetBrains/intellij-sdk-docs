@@ -108,7 +108,7 @@ Additional files can be bundled by adding them to the plugin directory when prep
 tasks {
   prepareSandbox {
     from(layout.projectDirectory.dir("extraFiles")) {
-      into(pluginName.map { "$it/extra" })
+      into(intellijPlatform.pluginConfiguration.name.map { "$it/extra" })
     }
   }
 }
@@ -120,7 +120,7 @@ tasks {
 ```groovy
 tasks.named('prepareSandbox', PrepareSandboxTask) {
   from layout.projectDirectory.dir('extraFiles')
-  into it.pluginName.map { "$it/extra" }
+  into intellijPlatform.pluginConfiguration.name.map { "$it/extra" }
 }
 ```
 

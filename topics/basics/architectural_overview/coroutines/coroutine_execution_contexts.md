@@ -7,7 +7,7 @@
 
 <include from="coroutines_snippets.md" element-id="learnCoroutines"/>
 
-The IntelliJ Platform provides APIs that allow to track the progress of background processes and cancel their execution, when they are canceled by a user, or they become obsolete due to some changes in the data model.
+The IntelliJ Platform provides APIs that allow tracking the progress of background processes and canceling their execution when they are canceled by a user, or they become obsolete due to some changes in the data model.
 
 Background processes can be executed in three contexts:
 - [](#suspending-context)
@@ -66,7 +66,7 @@ Executing tasks in a blocking context means executing them on a thread without a
 Such tasks can't be canceled by using coroutines' or progress indicator's cancellation capabilities, which may block threads and consume resources even if the task is no longer relevant.
 
 Usually, plugins should not execute new code in the blocking context.
-Always prefer executing tasks in the [suspending context](#suspending-context), or in [progress indicator](#progress-indicator) if a plugin cannot use Kotlin.
+Always prefer executing tasks in the [suspending context](#suspending-context) or under the [progress indicator](#progress-indicator) if a plugin cannot use Kotlin.
 
 > Functions which schedule execution via [`Application.executeOnPooledThread()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java)
 > and similar methods, and which rely on [`ProgressManager.checkCanceled()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java)
@@ -89,7 +89,7 @@ Progress reporting is not available in the blocking context.
 {#blocking-context-switching-to-other-contexts}
 
 - to coroutine: [`runBlockingCancellable()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt). This function has an opposite behavior to [`blockingContext()`](#suspending-context-switching-to-other-contexts).
-- to progress indicator: unavailable ([`blockingContextToIndicator()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) is internal API and exists only to aid platform migration)
+- to progress indicator: unavailable ([`blockingContextToIndicator()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) is an internal API and exists only to aid platform migration)
 
 ## Progress Indicator
 
@@ -99,7 +99,7 @@ Code executed via the Progress API
 is executed in a progress indicator context.
 See the [](background_processes.md#progress-api) section for details.
 
-> Executing code under progress indicator is obsolete since 2024.1.
+> Executing code under the progress indicator is obsolete since 2024.1.
 > It is advised to use Kotlin coroutines in new code.
 >
 > Please note that obsolete status does not mean deprecation.

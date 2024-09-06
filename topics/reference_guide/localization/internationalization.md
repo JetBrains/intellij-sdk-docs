@@ -66,6 +66,11 @@ A standard location of message files in JAR is <path>/messages/\*.properties</pa
 In [Gradle-based plugin](developing_plugins.md#gradle-plugin) project sources, message files are located in <path>\$MODULE_ROOT\$/src/main/resources/messages/\*.properties</path>.
 
 > A standard convention for naming message bundle properties file is <path>*Bundle.properties</path>.
+>
+> If a plugin project is multi-module, and it combines resources into a single JAR, make sure that all bundle files have unique names or paths.
+> Otherwise, only the last packed bundle file will exist in the distribution package.
+>
+{style="warning"}
 
 A corresponding [bundle class](#message-bundle-class) should be used to access the strings from the code.
 

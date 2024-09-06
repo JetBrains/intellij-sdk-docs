@@ -86,6 +86,11 @@ It is recommended to follow the convention from the
 [`default.html`](%gh-ic%/platform/platform-resources-en/src/fileTemplates/default.html)
 file.
 
+> If a plugin project is multi-module, and it combines resources into a single JAR, make sure that all template description files have unique names or paths.
+> Otherwise, only the last packed description file will exist in the distribution package.
+>
+{style="warning"}
+
 ## Providing Default File Template Properties
 
 A file template body can use a set of [predefined properties](https://www.jetbrains.com/help/idea/file-template-variables.html#predefined_template_variables) exposed by the IntelliJ Platform out of the box.

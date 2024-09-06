@@ -121,6 +121,11 @@ Implicit in using [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/
 * The name of the description file is expected to be the inspection <path>\$SHORT_NAME\$.html</path> as provided by the inspection description, or the inspection implementation class.
   If a short name is not provided, the IntelliJ Platform computes one by removing `Inspection` suffix from the implementation class name.
 
+> If a plugin project is multi-module, and it combines resources into a single JAR, make sure that all inspection description files have unique names or paths.
+> Otherwise, only the last packed description file will exist in the distribution package.
+>
+{style="warning"}
+
 #### Code Snippets
 <primary-label ref="2023.2"/>
 

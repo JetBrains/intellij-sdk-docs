@@ -47,6 +47,11 @@ Providing the description explaining the template purpose and context details is
 Providing the code snippets showing the template in "before" and "after" expanding states is achieved via the <path>before.\$EXTENSION\$.template</path> and <path>after.\$EXTENSION\$.template</path> files accordingly.
 The _\$EXTENSION\$_ placeholder should be replaced with the extension of the template language, e.g., <path>before.kt.template</path> for a Kotlin template.
 
+> If a plugin project is multi-module, and it combines resources into a single JAR, make sure that all template description files have unique names or paths.
+> Otherwise, only the last packed description file will exist in the distribution package.
+>
+{style="warning"}
+
 The code snippets included in the example files can use the `<spot>` marker, which should surround the most important code parts, e.g., expression to expand and position of the caret after expanding.
 Marked parts will be highlighted in the <ui-path>Settings | Editor | General | Postfix Completion</ui-path> settings page, making it easier for users to understand how a template is expanded, e.g.:
 - <path>before.java.template</path>:

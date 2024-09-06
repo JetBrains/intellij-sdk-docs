@@ -75,6 +75,11 @@ It can be customized with the `<descriptionDirectoryName>` element in `<intentio
 
 "Before" and "after" filenames pattern is <path>before.\$LANG_FILE_EXTENSION\$.template</path> and <path>after.\$LANG_FILE_EXTENSION\$.template</path> respectively.
 
+> If a plugin project is multi-module, and it combines resources into a single JAR, make sure that all intention description files have unique names or paths.
+> Otherwise, only the last packed description file will exist in the distribution package.
+>
+{style="warning"}
+
 #### Testing the Plugin
 
 > Note that running the test requires setting system property `idea.home.path` in the `test` task configuration of the Gradle build script.

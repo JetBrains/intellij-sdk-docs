@@ -37,6 +37,11 @@ Testing: indexes
 ToggleAction in popups
 : No longer closes popups, see [](basic_action_system.md#toggleActionPopupMenus)
 
+### Kotlin Plugin
+
+Depending on K1 API
+: Plugins using K1 API classes must adjust their usages, see [Migrating Your IntelliJ IDEA Kotlin Plugin to K2 Mode](https://blog.jetbrains.com/platform/2024/09/migrating-your-kotlin-plugin-to-k2-mode/).
+
 ### PyCharm 2024.2
 
 Project setup

@@ -104,6 +104,7 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [ExternalResourceListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.javaee.ExternalResourceListener)  | [`ExternalResourceListener`](%gh-ic%/xml/xml-psi-impl/src/com/intellij/javaee/ExternalResourceListener.java) |
 | [LocalizationListener.Companion#UPDATE_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.l10n.LocalizationListener)  ![Internal][internal] | [`LocalizationListener`](%gh-ic%/platform/core-api/src/com/intellij/l10n/LocalizationListener.kt) |
 | [DocumentationPopupListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.lang.documentation.ide.impl.DocumentationPopupListener)  ![Project-Level][project-level] | [`DocumentationPopupListener`](%gh-ic%/platform/lang-impl/src/com/intellij/lang/documentation/ide/impl/DocumentationPopupListener.kt) |
+| [GraphicsPanelKt#CHANGE_DARK_MODE_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.notebooks.images.DarkModeNotifier)  | [`DarkModeNotifier`](%gh-ic%/notebooks/images/src/com/intellij/notebooks/images/GraphicsPanel.kt) |
 | [ActionCenter#MODEL_CHANGED](https://jb.gg/ipe/listeners?topics=com.intellij.notification.ActionCenter.EventListener)  | [`EventListener`](%gh-ic%/platform/platform-impl/src/com/intellij/notification/ActionCenter.java) |
 | [Notifications#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.notification.Notifications)  ![Project-Level][project-level] | [`Notifications`](%gh-ic%/platform/ide-core/src/com/intellij/notification/Notifications.java) |
 | [AnActionListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.actionSystem.ex.AnActionListener)  | [`AnActionListener`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ex/AnActionListener.java) |
@@ -224,17 +225,16 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [BreadcrumbsInitListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.xml.breadcrumbs.BreadcrumbsInitListener)  ![Internal][internal] ![Project-Level][project-level] | [`BreadcrumbsInitListener`](%gh-ic%/platform/platform-impl/src/com/intellij/xml/breadcrumbs/BreadcrumbsInitListener.java) |
 | [TodoConfiguration#PROPERTY_CHANGE](https://jb.gg/ipe/listeners?topics=java.beans.PropertyChangeListener)  ![Project-Level][project-level] | `PropertyChangeListener` |
 | [IndexPatternProvider#INDEX_PATTERNS_CHANGED](https://jb.gg/ipe/listeners?topics=java.beans.PropertyChangeListener)  | `PropertyChangeListener` |
+| [UsageFilteringRuleProvider#RULES_CHANGED](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  ![Project-Level][project-level] | `Runnable` |
 | [SeverityRegistrar#SEVERITIES_CHANGED_TOPIC](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  ![Project-Level][project-level] | `Runnable` |
 | [RemoteRevisionsCache#REMOTE_VERSION_CHANGED](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  ![Project-Level][project-level] | `Runnable` |
 | [JsonSchemaVfsListener#JSON_SCHEMA_CHANGED](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
 | [JsonSchemaVfsListener#JSON_DEPS_CHANGED](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
-| [UsageFilteringRuleProvider#RULES_CHANGED](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  ![Project-Level][project-level] | `Runnable` |
 | [StructureViewWrapperImpl#STRUCTURE_CHANGED](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
 | [UpdateActionsListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=org.jetbrains.ide.UpdateActionsListener)  | [`UpdateActionsListener`](%gh-ic%/platform/built-in-server/src/org/jetbrains/ide/ToolboxUpdateActions.kt) |
 | [NotebookEditorModeKt#NOTEBOOK_EDITOR_MODE](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.notebooks.ui.editor.actions.command.mode.NotebookEditorModeListener)  | [`NotebookEditorModeListener`](%gh-ic%/notebooks/notebook-ui/src/org/jetbrains/plugins/notebooks/ui/editor/actions/command/mode/NotebookEditorMode.kt) |
 | [ChangeListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.notebooks.visualization.NotebookIntervalPointerFactory.ChangeListener)  | [`ChangeListener`](%gh-ic%/notebooks/visualization/src/org/jetbrains/plugins/notebooks/visualization/NotebookIntervalPointer.kt) |
 | [NotebookOutputInlayControllerKt#OUTPUT_LISTENER](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.notebooks.visualization.outputs.OutputListener)  | [`OutputListener`](%gh-ic%/notebooks/visualization/src/org/jetbrains/plugins/notebooks/visualization/outputs/NotebookOutputInlayController.kt) |
-| [GraphicsPanelKt#CHANGE_DARK_MODE_TOPIC](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.notebooks.visualization.r.inlays.components.DarkModeNotifier)  | [`DarkModeNotifier`](%gh-ic%/notebooks/visualization/src/org/jetbrains/plugins/notebooks/visualization/r/inlays/components/GraphicsPanel.kt) |
 | [NotebookInlayMouseListener.Companion#topic](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.notebooks.visualization.r.inlays.components.NotebookInlayMouseListener)  | [`NotebookInlayMouseListener`](%gh-ic%/notebooks/visualization/src/org/jetbrains/plugins/notebooks/visualization/r/inlays/components/NotebookInlayMouseListener.kt) |
 
 
@@ -621,6 +621,14 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [com.intellij.json.jsonWidgetSuppressor](https://jb.gg/ipe?extensions=com.intellij.json.jsonWidgetSuppressor) | [`JsonWidgetSuppressor`](%gh-ic%/json/src/com/jetbrains/jsonSchema/extension/JsonWidgetSuppressor.java) |
 | [com.intellij.json.shorthandValueHandler](https://jb.gg/ipe?extensions=com.intellij.json.shorthandValueHandler) | [`JsonSchemaShorthandValueHandler`](%gh-ic%/json/src/com/jetbrains/jsonSchema/extension/JsonSchemaShorthandValueHandler.kt) |
 
+### intellij.notebooks.images.xml
+
+[`intellij.notebooks.images.xml`](%gh-ic%/notebooks/images/resources/intellij.notebooks.images.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.intellij.notebooks.images.imageEditorFactory](https://jb.gg/ipe?extensions=com.intellij.notebooks.images.imageEditorFactory) | [`ImageEditorFactory`](%gh-ic%/notebooks/images/src/com/intellij/notebooks/images/ImageEditorFactory.kt) |
+
 ### intellij.notebooks.visualization.xml
 
 [`intellij.notebooks.visualization.xml`](%gh-ic%/notebooks/visualization/resources/intellij.notebooks.visualization.xml)
@@ -629,8 +637,6 @@ and add in intellij_community_plugins_extension_point_list.md.
 |-----------------|----------------|
 | [com.intellij.datavis.inlays.components.inlayOutputProvider](https://jb.gg/ipe?extensions=com.intellij.datavis.inlays.components.inlayOutputProvider) | [`InlayOutputProvider`](%gh-ic%/notebooks/visualization/src/org/jetbrains/plugins/notebooks/visualization/r/inlays/components/InlayOutputProvider.kt) |
 | [com.intellij.datavis.inlays.components.inlayStateCustomizer](https://jb.gg/ipe?extensions=com.intellij.datavis.inlays.components.inlayStateCustomizer) ![Experimental][experimental] | [`InlayStateCustomizer`](%gh-ic%/notebooks/visualization/src/org/jetbrains/plugins/notebooks/visualization/r/inlays/components/InlayStateCustomizer.kt) |
-| [com.intellij.datavis.inlays.components.multiOutputProvider](https://jb.gg/ipe?extensions=com.intellij.datavis.inlays.components.multiOutputProvider) | [`MultiOutputProvider`](%gh-ic%/notebooks/visualization/src/org/jetbrains/plugins/notebooks/visualization/r/inlays/components/MultiOutputProvider.kt) |
-| [com.intellij.datavis.inlays.inlayDescriptorProvider](https://jb.gg/ipe?extensions=com.intellij.datavis.inlays.inlayDescriptorProvider) | [`InlayDescriptorProvider`](%gh-ic%/notebooks/visualization/src/org/jetbrains/plugins/notebooks/visualization/r/inlays/InlayElementDescriptor.kt) |
 | [com.intellij.datavis.r.inlays.components.graphicsManagerProvider](https://jb.gg/ipe?extensions=com.intellij.datavis.r.inlays.components.graphicsManagerProvider) | [`GraphicsManagerProvider`](%gh-ic%/notebooks/visualization/src/org/jetbrains/plugins/notebooks/visualization/r/inlays/components/GraphicsManagerProvider.kt) |
 | [org.jetbrains.plugins.notebooks.editor.notebookEditorAppearanceProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.notebooks.editor.notebookEditorAppearanceProvider) | [`NotebookEditorAppearanceProvider`](%gh-ic%/notebooks/visualization/src/org/jetbrains/plugins/notebooks/visualization/NotebookEditorAppearanceProvider.kt) |
 | [org.jetbrains.plugins.notebooks.editor.outputs.notebookOutputComponentFactory](https://jb.gg/ipe?extensions=org.jetbrains.plugins.notebooks.editor.outputs.notebookOutputComponentFactory) | [`NotebookOutputComponentFactory`](%gh-ic%/notebooks/visualization/src/org/jetbrains/plugins/notebooks/visualization/outputs/NotebookOutputComponentFactory.kt) |
@@ -1317,6 +1323,7 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [com.intellij.protocolHandler](https://jb.gg/ipe?extensions=com.intellij.protocolHandler) | [`ProtocolHandler`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/ProtocolHandler.kt) |
 | [com.intellij.proxySettingsOverrideProvider](https://jb.gg/ipe?extensions=com.intellij.proxySettingsOverrideProvider) | [`ProxySettingsOverrideProvider`](%gh-ic%/platform/platform-api/src/com/intellij/util/net/ProxySettingsOverrideProvider.kt) |
 | [com.intellij.rawEditorTypedHandler](https://jb.gg/ipe?extensions=com.intellij.rawEditorTypedHandler) ![Removal][removal] ![Non-Dynamic][non-dynamic] | [`TypedActionHandler`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java) |
+| [com.intellij.recentProjectsBranchesProvider](https://jb.gg/ipe?extensions=com.intellij.recentProjectsBranchesProvider) | [`RecentProjectsBranchesProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/vcs/RecentProjectsBranchesProvider.kt) |
 | [com.intellij.recoveryAction](https://jb.gg/ipe?extensions=com.intellij.recoveryAction) ![Internal][internal] | [`RecoveryAction`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/actions/cache/Saul.kt) |
 | [com.intellij.remote.credentialsLanguageContribution](https://jb.gg/ipe?extensions=com.intellij.remote.credentialsLanguageContribution) | [`CredentialsLanguageContribution`](%gh-ic%/platform/platform-impl/src/com/intellij/remote/ext/CredentialsLanguageContribution.java) |
 | [com.intellij.remote.credentialsType](https://jb.gg/ipe?extensions=com.intellij.remote.credentialsType) | [`CredentialsType`](%gh-ic%/platform/remote-core/src/remote/CredentialsType.java) |

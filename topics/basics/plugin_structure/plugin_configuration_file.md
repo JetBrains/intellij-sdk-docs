@@ -285,7 +285,8 @@ Required
 Attributes
 :
 - `url` _(optional)_<br/>
-  The link to the vendor's homepage.
+  The URL to the vendor's homepage.
+  Supports `https://` and `http://` scheme links.
 - `email` _(optional)_<br/>
   The vendor's email address.
 

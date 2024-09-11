@@ -17,7 +17,8 @@
 This page describes developing plugins using the [Kotlin](https://kotlinlang.org) programming language.
 
 > To implement a plugin _operating_ on Kotlin code in the IDE, configure Kotlin [plugin dependency](plugin_dependencies.md) (`org.jetbrains.kotlin`).
-> See also [UAST](uast.md) page for information about how to support multiple JVM languages, including Kotlin.
+>
+> See also [UAST](uast.md) on how to support multiple JVM languages, including Kotlin.
 >
 {title="Operating on Kotlin code"}
 
@@ -254,6 +255,6 @@ Use inspection <control>Plugin DevKit | Code | Companion object in extensions</c
 There are many [open-source Kotlin plugins](https://jb.gg/ipe?language=kotlin) built on the IntelliJ Platform.
 For a readily available source of up-to-date examples of plugins implemented in Kotlin, developers may look to these projects for inspiration:
 
-* [Rust](https://github.com/intellij-rust/intellij-rust)
 * [TeXiFy IDEA](https://github.com/Hannah-Sten/TeXiFy-IDEA)
 * [Deno](%gh-ij-plugins%/Deno)
+* [Rust](https://github.com/intellij-rust/intellij-rust)

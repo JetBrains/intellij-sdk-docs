@@ -245,6 +245,8 @@ Use inspection <control>Plugin DevKit | Code | Companion object in extensions</c
 
 ## Kotlin Code FAQ
 
+[Kotlin Analysis API Documentation](https://kotlin.github.io/analysis-api/index_md.html)
+
 [How to shorten references](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360010025120-Add-new-parameter-into-kotlin-data-class-from-IDEA-plugin?page=1#community_comment_360002950760)
 
 ## Example Plugins Implemented in Kotlin

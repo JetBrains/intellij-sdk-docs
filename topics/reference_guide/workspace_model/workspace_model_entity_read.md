@@ -14,7 +14,7 @@ provides the ability to query data from
 
 ### Basic request
 
-To request all entities if the concrete type use
+To request all entities of the concrete type use
 [`EntityStorage.entities()`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/EntityStorage.kt).
 
 ```kotlin

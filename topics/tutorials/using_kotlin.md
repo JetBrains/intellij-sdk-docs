@@ -40,9 +40,11 @@ Likewise, it is possible to customize the behavior of internal classes in the In
 For example, it is common practice to [guard logging statements](https://www.slf4j.org/faq.html#logging_performance) to avoid the cost of parameter construction, leading to the following ceremony when using the log:
 
 ```java
-if (logger.isDebugEnabled()) {
-  logger.debug("..." + expensiveComputation());
-}
+if(logger.isDebugEnabled()){
+    logger.
+
+debug("..."+expensiveComputation());
+    }
 ```
 
 We can achieve the same result more succinctly in Kotlin, by declaring the following extension method:
@@ -95,6 +97,7 @@ See the <path>build.gradle.kts</path> from [kotlin_demo](%gh-sdk-samples-master%
 {src="kotlin_demo/build.gradle.kts" include-lines="2-" default-state="collapsed" collapsible="true" collapsed-title="build.gradle.kts"}
 
 ### Kotlin Standard Library (stdlib)
+
 {id="kotlin-standard-library"}
 
 Since Kotlin 1.4, a dependency on the standard library _stdlib_ is added automatically ([API Docs](https://kotlinlang.org/api/latest/jvm/stdlib/)).
@@ -146,6 +149,7 @@ See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html
 | 2023.1                                    | 1.8.0                    |
 
 #### Earlier Versions
+
 {collapsible="true"}
 
 | IntelliJ Platform version (latest update) | Bundled _stdlib_ version |
@@ -157,6 +161,7 @@ See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html
 See [here](https://www.jetbrains.com/legal/third-party-software/) for earlier versions.
 
 ### Kotlin Coroutines Libraries (kotlinx.coroutines)
+
 {id="coroutinesLibraries"}
 
 Plugins _must_ always use the bundled library from the target IDE and not bundle their own version.
@@ -246,7 +251,16 @@ Use inspection <control>Plugin DevKit | Code | Companion object in extensions</c
 
 ## Kotlin Code FAQ
 
+### K2 Mode for Sandbox Instance
+
+It is not possible to change it in the UI (<ui-path>Settings | Languages & Frameworks | Kotlin</ui-path>).
+Instead, specify system property `idea.kotlin.plugin.use.k2=true` explicitly (see [](tools_intellij_platform_gradle_plugin_faq.md#how-to-modify-system-properties-of-the-runide-task)).
+
+### Analysis API
+
 [Kotlin Analysis API Documentation](https://kotlin.github.io/analysis-api/index_md.html)
+
+### Miscellaneous
 
 [How to shorten references](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360010025120-Add-new-parameter-into-kotlin-data-class-from-IDEA-plugin?page=1#community_comment_360002950760)
 

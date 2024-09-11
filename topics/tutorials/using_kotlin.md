@@ -258,7 +258,10 @@ Instead, specify system property `idea.kotlin.plugin.use.k2=true` explicitly (se
 
 ### Analysis API
 
-[Kotlin Analysis API Documentation](https://kotlin.github.io/analysis-api/index_md.html)
+The Analysis API is a powerful library for analyzing code in Kotlin.
+Built on top of the Kotlin PSI syntax tree, it provides access to various semantic information, including reference targets, expression types, declaration scopes, diagnostics, and more.
+
+See [Kotlin Analysis API Documentation](https://kotlin.github.io/analysis-api/index_md.html) for details.
 
 ### Miscellaneous
 

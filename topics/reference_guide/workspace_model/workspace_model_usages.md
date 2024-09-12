@@ -43,6 +43,10 @@ An important part here is the entity source.
 To serialize an entity in project configuration files under the <path>.idea</path> folder, use
 [`JpsProjectFileEntitySource`](%gh-ic%/platform/workspace/jps/src/com/intellij/platform/workspace/jps/jpsEntitySources.kt).
 
+<tabs>
+
+<tab title="2024.3+">
+
 ```kotlin
 val workspaceModel = WorkspaceModel.getInstance(project)
 val moduleId = ModuleId(moduleName)
@@ -54,8 +58,32 @@ if (moduleId in workspaceModel.currentSnapshot) {
 val baseModuleDir = workspaceModel.getVirtualFileUrlManager()
   .getOrCreateFromUrl("file://foo/bar")
 val moduleEntitySource =
-    LegacyBridgeJpsEntitySourceFactory.createEntitySourceForModule(
-        project, baseModuleDir, null)
+    LegacyBridgeJpsEntitySourceFactory.getInstance(project)
+        .createEntitySourceForModule(baseModuleDir, null)
+WorkspaceModel.getInstance(project).update("Add new module") { builder ->
+  val moduleEntity =
+      ModuleEntity(moduleName, emptyList(), moduleEntitySource)
+  builder.addEntity(moduleEntity)
+}
+```
+
+</tab>
+
+<tab title="2024.2">
+
+```kotlin
+val workspaceModel = WorkspaceModel.getInstance(project)
+val moduleId = ModuleId(moduleName)
+if (moduleId in workspaceModel.currentSnapshot) {
+  // Module with such `ModuleId` already exists
+  ...
+}
+
+val baseModuleDir = workspaceModel.getVirtualFileUrlManager()
+  .getOrCreateFromUrl("file://foo/bar")
+val moduleEntitySource =
+    LegacyBridgeJpsEntitySourceFactory
+        .createEntitySourceForModule(project, baseModuleDir, null)
 WorkspaceModel.getInstance(project).update("Add new module") { builder ->
   val moduleEntity =
       ModuleEntity(moduleName, emptyList(), moduleEntitySource)
@@ -64,11 +92,15 @@ WorkspaceModel.getInstance(project).update("Add new module") { builder ->
 ```
 
 <snippet id="LegacyBridgeJpsEntitySourceFactory-internal-note">
-> Note that `LegacyBridgeJpsEntitySourceFactory` is marked as internal in 2024.2.
-> It will be open API starting with 2024.3 and is allowed to use in plugins.
+> Note that [`LegacyBridgeJpsEntitySourceFactory`](%gh-ic%/platform/projectModel-impl/src/com/intellij/workspaceModel/ide/impl/LegacyBridgeJpsEntitySourceFactory.kt) is an internal API.
+> It is exceptionally allowed to use it in plugins.
 >
 {style="tip"}
 </snippet>
+
+</tab>
+
+</tabs>
 
 ### Add Library Dependency to Module
 
@@ -121,6 +153,11 @@ Creating a new
 [`LibraryEntity`](%gh-ic%/platform/workspace/jps/src/com/intellij/platform/workspace/jps/entities/dependencies.kt),
 the legacy bridge will be created by the platform.
 
+
+<tabs>
+
+<tab title="2024.3+">
+
 ```kotlin
 val currentSnapshot = WorkspaceModel.getInstance(project).currentSnapshot
 val libraryTableId = LibraryTableId.ProjectLibraryTableId
@@ -132,8 +169,35 @@ if (libraryId in currentSnapshot) {
 }
 
 val libraryEntitySource =
-    LegacyBridgeJpsEntitySourceFactory.createEntitySourceForProjectLibrary(
-        project, null)
+    LegacyBridgeJpsEntitySourceFactory.getInstance(project)
+        .createEntitySourceForProjectLibrary(null)
+val libraryEntity = LibraryEntity(
+  libraryName,
+  libraryTableId, emptyList(),
+  libraryEntitySource
+)
+WorkspaceModel.getInstance(project).update("Add new library") { builder ->
+  builder.addEntity(libraryEntity)
+}
+```
+
+</tab>
+
+<tab title="2024.2">
+
+```kotlin
+val currentSnapshot = WorkspaceModel.getInstance(project).currentSnapshot
+val libraryTableId = LibraryTableId.ProjectLibraryTableId
+
+val libraryId = LibraryId(libraryName, libraryTableId)
+if (libraryId in currentSnapshot) {
+  // Library with such `LibraryId` already exist
+  ...
+}
+
+val libraryEntitySource =
+    LegacyBridgeJpsEntitySourceFactory
+        .createEntitySourceForProjectLibrary(project, null)
 val libraryEntity = LibraryEntity(
   libraryName,
   libraryTableId, emptyList(),
@@ -145,6 +209,10 @@ WorkspaceModel.getInstance(project).update("Add new library") { builder ->
 ```
 
 <include from="workspace_model_usages.md" element-id="LegacyBridgeJpsEntitySourceFactory-internal-note"></include>
+
+</tab>
+
+</tabs>
 
 ### Searching for Library by Root Type and URL
 

@@ -79,7 +79,7 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 Unbundled JUnit library
 : Add an explicit dependency in the plugin project.
 
-### JSON Plugin (new)
+### JSON Plugin (new) 2024.3
 
 `com.intellij.json.JsonElementTypes` class removed
 : Add explicit dependency on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.

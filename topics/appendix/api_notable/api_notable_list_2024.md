@@ -18,6 +18,12 @@ Dumb-aware "Highlight Usages"
 `ParsingTestCase`: stable PSI check
 : [`ParsingTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/ParsingTestCase.java) verifies that reparsing causes no changes (Parser bug).
 
+### IntelliJ IDEA 2024.3
+
+Unbundled _Swing UI Designer_ Plugin
+: [Install](https://plugins.jetbrains.com/plugin/25304-swing-ui-designer) from JetBrains Marketplace.
+Consider using [](kotlin_ui_dsl_version_2.md) for forms instead.
+
 ## 2024.2
 
 ### IntelliJ Platform 2024.2

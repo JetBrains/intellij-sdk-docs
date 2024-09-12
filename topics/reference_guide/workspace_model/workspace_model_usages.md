@@ -48,6 +48,9 @@ To serialize an entity in project configuration files under the <path>.idea</pat
 <tab title="2024.3+">
 
 ```kotlin
+import com.intellij.workspaceModel.ide.legacyBridge.LegacyBridgeJpsEntitySourceFactory
+// ...
+
 val workspaceModel = WorkspaceModel.getInstance(project)
 val moduleId = ModuleId(moduleName)
 if (moduleId in workspaceModel.currentSnapshot) {
@@ -72,6 +75,9 @@ WorkspaceModel.getInstance(project).update("Add new module") { builder ->
 <tab title="2024.2">
 
 ```kotlin
+import com.intellij.workspaceModel.ide.impl.LegacyBridgeJpsEntitySourceFactory
+// ...
+
 val workspaceModel = WorkspaceModel.getInstance(project)
 val moduleId = ModuleId(moduleName)
 if (moduleId in workspaceModel.currentSnapshot) {
@@ -159,6 +165,9 @@ the legacy bridge will be created by the platform.
 <tab title="2024.3+">
 
 ```kotlin
+import com.intellij.workspaceModel.ide.legacyBridge.LegacyBridgeJpsEntitySourceFactory
+// ...
+
 val currentSnapshot = WorkspaceModel.getInstance(project).currentSnapshot
 val libraryTableId = LibraryTableId.ProjectLibraryTableId
 
@@ -186,6 +195,9 @@ WorkspaceModel.getInstance(project).update("Add new library") { builder ->
 <tab title="2024.2">
 
 ```kotlin
+import com.intellij.workspaceModel.ide.impl.LegacyBridgeJpsEntitySourceFactory
+// ...
+
 val currentSnapshot = WorkspaceModel.getInstance(project).currentSnapshot
 val libraryTableId = LibraryTableId.ProjectLibraryTableId
 

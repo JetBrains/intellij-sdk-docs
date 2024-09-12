@@ -352,7 +352,7 @@ To properly run the instrumentation, it is required to add [`instrumentationTool
 This dependency is available via the [`intellijDependencies()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) repository, which can be added separately or using the [`defaultRepositories()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories) helper.
 
 See also:
-- [](tools_intellij_platform_gradle_plugin_tasks.md#instrumentCode)
+- [](#instrumentedJar)
 
 
 ### `sourceSetCompileClasspath`
@@ -840,7 +840,7 @@ Type
 : `RegularFileProperty`
 
 Default value
-: [`composedJar.archiveFile`](tools_intellij_platform_gradle_plugin_tasks.md#composedJar-archiveFile)
+: [`composedJar.archiveFile`](#composedJar-archiveFile)
 
 
 

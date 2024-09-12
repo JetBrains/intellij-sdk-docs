@@ -257,6 +257,7 @@ It is not possible to change it in the UI (<ui-path>Settings | Languages & Frame
 Instead, specify system property `idea.kotlin.plugin.use.k2=true` explicitly (see [](tools_intellij_platform_gradle_plugin_faq.md#how-to-modify-system-properties-of-the-runide-task)).
 
 ### Analysis API
+<primary-label ref="2024.2"/>
 
 The Analysis API is a powerful library for analyzing code in Kotlin.
 Built on top of the Kotlin PSI syntax tree, it provides access to various semantic information, including reference targets, expression types, declaration scopes, diagnostics, and more.

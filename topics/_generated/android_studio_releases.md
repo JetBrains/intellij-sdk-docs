@@ -6,7 +6,9 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Ladybug Feature Drop &#124; 2024.2.2 Canary 2 | ![Canary][canary] | September 12, 2024 | **2024.2.2.2**<p>AI-242.21829.142.2422.12358220</p> | **2024.2.1**<p>242.21829.142</p> |
 | Ladybug Feature Drop &#124; 2024.2.2 Canary 1 | ![Canary][canary] | September 9, 2024 | **2024.2.2.1**<p>AI-242.21829.142.2422.12329062</p> | **2024.2.1**<p>242.21829.142</p> |
+| Ladybug &#124; 2024.2.1 Beta 2 | ![Beta][beta] | September 12, 2024 | **2024.2.1.7**<p>AI-242.21829.142.2421.12332550</p> | **2024.2.1**<p>242.21829.142</p> |
 | Ladybug &#124; 2024.2.1 Beta 1 | ![Beta][beta] | September 5, 2024 | **2024.2.1.6**<p>AI-242.20224.300.2421.12312915</p> | **2024.2**<p>242.20224.300</p> |
 | Ladybug &#124; 2024.2.1 Canary 9 | ![Canary][canary] | August 30, 2024 | **2024.2.1.5**<p>AI-242.20224.300.2421.12293307</p> | **2024.2**<p>242.20224.300</p> |
 | Ladybug &#124; 2024.2.1 Canary 8 | ![Canary][canary] | August 28, 2024 | **2024.2.1.4**<p>AI-242.20224.300.2421.12279409</p> | **2024.2**<p>242.20224.300</p> |
@@ -558,11 +560,11 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Ladybug Feature Drop &#124; 2024.2.2 Canary 2 | ![Canary][canary] | September 12, 2024 | **2024.2.2.2**<p>AI-242.21829.142.2422.12358220</p> | **2024.2.1**<p>242.21829.142</p> |
 | Ladybug Feature Drop &#124; 2024.2.2 Canary 1 | ![Canary][canary] | September 9, 2024 | **2024.2.2.1**<p>AI-242.21829.142.2422.12329062</p> | **2024.2.1**<p>242.21829.142</p> |
+| Ladybug &#124; 2024.2.1 Beta 2 | ![Beta][beta] | September 12, 2024 | **2024.2.1.7**<p>AI-242.21829.142.2421.12332550</p> | **2024.2.1**<p>242.21829.142</p> |
 | Ladybug &#124; 2024.2.1 Beta 1 | ![Beta][beta] | September 5, 2024 | **2024.2.1.6**<p>AI-242.20224.300.2421.12312915</p> | **2024.2**<p>242.20224.300</p> |
 | Ladybug &#124; 2024.2.1 Canary 9 | ![Canary][canary] | August 30, 2024 | **2024.2.1.5**<p>AI-242.20224.300.2421.12293307</p> | **2024.2**<p>242.20224.300</p> |
-| Ladybug &#124; 2024.2.1 Canary 8 | ![Canary][canary] | August 28, 2024 | **2024.2.1.4**<p>AI-242.20224.300.2421.12279409</p> | **2024.2**<p>242.20224.300</p> |
-| Koala Feature Drop &#124; 2024.1.2 | ![Release][release] | August 29, 2024 | **2024.1.2.12**<p>AI-241.18034.62.2412.12266719</p> | **2024.1.4**<p>241.18034.62</p> |
 
 [release]: https://img.shields.io/badge/-Release-blue?style=flat-square
 [patch]: https://img.shields.io/badge/-Patch-orange?style=flat-square

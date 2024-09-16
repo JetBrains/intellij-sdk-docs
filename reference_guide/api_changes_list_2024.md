@@ -82,34 +82,34 @@ Unbundled JUnit library
 ### JSON Plugin (new) 2024.3
 
 `com.intellij.json.JsonElementTypes` class removed
-: Add explicit dependency on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
 
 `com.intellij.json.JsonFileType` class removed
-: Add explicit dependency on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
 
 `com.intellij.json.JsonLanguage` class removed
-: Add explicit dependency on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
 
 `com.intellij.json.JsonParserDefinition` class removed
-: Add explicit dependency on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
 
 `com.intellij.json.JsonTokenType` class removed
-: Add explicit dependency on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
 
 `com.intellij.json` package removed
-: Add explicit dependency on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
 
 `com.intellij.json.codeinsight` package removed
-: Add explicit dependency on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
 
 `com.intellij.json.highlighting` package removed
-: Add explicit dependency on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
 
 `com.intellij.json.psi` package removed
-: Add explicit dependency on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
 
 `com.jetbrains.jsonSchema` package removed
-: Add explicit dependency on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
 
 ## 2024.2
 

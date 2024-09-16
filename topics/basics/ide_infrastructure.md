@@ -137,6 +137,8 @@ Use [`PowerSaveMode`](%gh-ic%/platform/core-api/src/com/intellij/ide/PowerSaveMo
 
 Installed plugins can be checked via [`PluginManagerCore.isPluginInstalled()`](%gh-ic%/platform/core-impl/src/com/intellij/ide/plugins/PluginManagerCore.kt).
 
+See also [](dynamic_plugins.md#pluginLoadUnloadEvents).
+
 ### Plugin Suggestions
 
 For specific features (e.g., [File Type](registering_file_type.md), [Facet](facet.md), ...), the IDE will suggest installing matching plugins automatically.

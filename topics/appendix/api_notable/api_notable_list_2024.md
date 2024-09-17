@@ -18,10 +18,10 @@ Dumb-aware "Highlight Usages"
 `ParsingTestCase`: stable PSI check
 : [`ParsingTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/ParsingTestCase.java) verifies that reparsing causes no changes (Parser bug).
 
-Performance test classes and methods renamed to Benchmark
+Performance test classes and methods renamed to _Benchmark_
 :
-- [`PerformanceTestInfo`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/PerformanceTestInfo.java) has been renamed to [`BenchmarkTestInfo`](%gh-ic-master%/platform/testFramework/src/com/intellij/testFramework/BenchmarkTestInfo.java)
-- [`PlatformTestUtil.newPerformanceTest*()`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/PlatformTestUtil.java) methods have been renamed to [`PlatformTestUtil.newBenchmark*()`](%gh-ic-master%/platform/testFramework/src/com/intellij/testFramework/PlatformTestUtil.java)
+- [`PerformanceTestInfo`](%gh-ic-242%/platform/testFramework/src/com/intellij/testFramework/PerformanceTestInfo.java) has been renamed to [`BenchmarkTestInfo`](%gh-ic-master%/platform/testFramework/src/com/intellij/testFramework/BenchmarkTestInfo.java)
+- [`PlatformTestUtil.newPerformanceTest*()`](%gh-ic-242%/platform/testFramework/src/com/intellij/testFramework/PlatformTestUtil.java) methods have been renamed to [`PlatformTestUtil.newBenchmark*()`](%gh-ic-master%/platform/testFramework/src/com/intellij/testFramework/PlatformTestUtil.java)
 
 ### IntelliJ IDEA 2024.3
 

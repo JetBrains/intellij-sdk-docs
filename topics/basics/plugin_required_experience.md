@@ -2,7 +2,7 @@
 
 # Required Experience
 
-<link-su=mmary>Required technology knowledge.<link-summary>
+<link-summary>Required technology knowledge.</link-summary>
 
 The IntelliJ Platform is a JVM application, implemented mostly in Java and [Kotlin](https://kotlinlang.org).
 At this time, it's not possible to develop plugins for the IntelliJ Platform in non-JVM languages.
@@ -20,4 +20,4 @@ Developing a plugin will sometimes require digging into the [IntelliJ Platform c
 
 It's highly recommended to get familiar with the [](explore_api.md) section before you start the plugin implementation.
 
-<include from="intellj_platform.md" element-id="pluginAlternatives"/>
+<include from="intellij_platform.md" element-id="pluginAlternatives"/>

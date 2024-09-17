@@ -35,18 +35,26 @@ Violations are reported via [`IndexNotReadyException`](%gh-ic%/platform/core-api
 It also provides ways of delaying code execution until indexes are ready.
 
 ### `DumbAware` API
+
 {id="DumbAwareAPI"}
 
-Implementations of certain [](plugin_extension_points.md) can be marked as available during Dumb Mode by implementing
+#### Extension Points
+
+Implementations of certain [extension points](plugin_extension_points.md) can be marked as available during Dumb Mode by implementing
 [`DumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbAware.java).
-Such Extension Points are marked with
+Such extension points are marked with the
 ![DumbAware](https://img.shields.io/badge/-DumbAware-darkgreen?style=flat-square)
 tag in [](intellij_platform_extension_point_list.md).
-Commonly used include [`CompletionContributor`](code_completion.md), [`(External)Annotator`](syntax_highlighting_and_error_highlighting.md#annotator) and various
+
+Commonly used extension points include [`CompletionContributor`](code_completion.md), [`(External)Annotator`](syntax_highlighting_and_error_highlighting.md#annotator) and various
 [run configuration](run_configurations.md) EPs.
-Since 2024.2, also [intentions](code_intentions.md) and [quick-fixes](quick_fix.md).
+Since 2024.2, this includes also [intentions](code_intentions.md) and [quick-fixes](quick_fix.md).
+
+#### Actions
 
 For [](basic_action_system.md) available during Dumb Mode, extend [`DumbAwareAction`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/project/DumbAwareAction.java).
+
+#### Other API
 
 Other API might indicate its Dumb Mode compatibility by extending [`PossiblyDumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/PossiblyDumbAware.java).
 
@@ -77,6 +85,7 @@ Please see [`VirtualFileGist`](%gh-ic%/platform/indexing-api/src/com/intellij/ut
 ## Improving Indexing Performance
 
 ### Performance Metrics
+
 <primary-label ref="2020.2"/>
 
 Indexing performance metrics in JSON format are generated in [logs directory](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs) (see [sandbox directory](ide_development_instance.md#the-development-instance-sandbox-directory) for development instance).
@@ -97,7 +106,7 @@ If a custom language contains lazy-parseable elements that never or rarely conta
 
 For indexing XML, also consider using [`NanoXmlUtil`](%gh-ic%/platform/indexing-impl/src/com/intellij/util/xml/NanoXmlUtil.java).
 
-###  Shared Project Indexes
+### Shared Project Indexes
 
 For bigger projects, building and providing pre-built shared project indexes can be beneficial, see [Shared project indexes](https://www.jetbrains.com/help/idea/shared-indexes.html#project-shared-indexes).
 See also [IntelliJ Shared Indexes Tool Example](https://github.com/JetBrains/intellij-shared-indexes-tool-example).

@@ -198,7 +198,7 @@ Do **not** show the dropdown menu when the button gains focus.
 
 ## Sizes and placement
 
-Follow the rules for the [simple button](button.topic#sizes-and-placement).
+Follow the rules for the [simple button](button.topic).
 
 ### Button
 

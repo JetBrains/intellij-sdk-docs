@@ -108,7 +108,7 @@ If a quick-fix is not available, describe in more detail a way to resolve the pr
 
 ### Quick-fixes
 
-Describe the action that fixes the problem. For wording, follow the rules for [buttons](button.topic#label).
+Describe the action that fixes the problem. For wording, follow the rules for [buttons](button.topic).
 
 [//]: # (TODO: and [menu actions]&#40;menu.md&#41;.)
 

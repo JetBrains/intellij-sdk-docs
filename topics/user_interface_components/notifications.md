@@ -6,7 +6,7 @@
 
 <tldr>
 
-**UI Guidelines:** [](notification_types.md), [](banner.md), [](got_it_tooltip.md), [](balloon.md)
+**UI Guidelines:** [](notification_types.md)
 
 </tldr>
 
@@ -14,6 +14,12 @@ One of the leading design principles is avoiding the use of modal message boxes 
 As a replacement, the IntelliJ Platform provides multiple non-modal notification UI options.
 
 ### Dialogs
+
+<tldr>
+
+**UI Guidelines:** [](validation_errors.md)
+
+</tldr>
 
 When working in a dialog, do not check the validity of the input and notify the user about invalid data with a modal dialog when the <control>OK</control> button is pressed.
 Instead, use
@@ -23,12 +29,17 @@ described in the [Dialogs](dialog_wrapper.md#input-validation) section.
 ### Editor Hints
 
 For actions invoked from the editor (such as refactorings, navigation actions, and different code insight features), the best way to notify the user about the inability to perform an action is to use the [`HintManager`](%gh-ic%/platform/platform-api/src/com/intellij/codeInsight/hint/HintManager.java) class.
+
 Its method `showErrorHint()` displays a floating popup above the editor which is automatically hidden when the user starts performing another action in the editor.
 Other [`HintManager`](%gh-ic%/platform/platform-api/src/com/intellij/codeInsight/hint/HintManager.java) methods can be used for displaying other kinds of non-modal notification hints over an editor.
 
 ### Editor Banner
 
-For UI reference, see [](banner.md) in UI Guidelines.
+<tldr>
+
+**UI Guidelines:** [](banner.md)
+
+</tldr>
 
 Notifications that appear at the top of the file editor are a great way to ask the user to take an important action that would otherwise impede their experience if ignored (e.g., missing SDK, setup/project configuration requiring user input).
 
@@ -38,22 +49,35 @@ If access to indexes is not required, it can be marked [dumb-aware](indexing_and
 A commonly used UI implementation is [`EditorNotificationPanel`](%gh-ic%/platform/platform-api/src/com/intellij/ui/EditorNotificationPanel.java).
 
 ### "Got It" Notification
+
 {id="gotIt"}
 
+<tldr>
+
+**UI Guidelines:** [](got_it_tooltip.md)
+
+</tldr>
+
 Use to highlight important new/changed features via [`GotItTooltip`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/GotItTooltip.kt).
-See [](got_it_tooltip.md) in UI Guidelines for an overview.
 
 ### Top-Level Notifications (Balloons)
+
 {id="balloons"}
+
+<tldr>
+
+**UI Guidelines:** [](balloon.md)
+
+**Product Help**: [Notifications](https://www.jetbrains.com/help/idea/notifications.html)
+
+</tldr>
 
 The most general way to display non-modal notifications is to use the [`Notifications`](%gh-ic%/platform/ide-core/src/com/intellij/notification/Notifications.java) class.
 
 It has two main advantages:
 
 * The user can control the way each notification type is displayed under <ui-path>Settings | Appearance & Behavior | Notifications</ui-path>
-* All displayed notifications are gathered in the <control>Event Log</control> tool window and can be reviewed later
-
-For UI reference, see [](balloon.md) in UI Guidelines.
+* All displayed notifications are gathered in the <control>Notifications</control> tool window and can be reviewed later
 
 > See [](tool_windows.md#tool-window-notification) for showing balloons for a specific tool window.
 

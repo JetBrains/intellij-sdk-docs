@@ -251,10 +251,9 @@ Use inspection <control>Plugin DevKit | Code | Companion object in extensions</c
 
 ## Kotlin Code FAQ
 
-### K2 Mode for Sandbox Instance
+### Testing K2 Mode
 
-It is not possible to change it in the UI (<ui-path>Settings | Languages & Frameworks | Kotlin</ui-path>).
-Instead, specify system property `idea.kotlin.plugin.use.k2=true` explicitly (see [](tools_intellij_platform_gradle_plugin_faq.md#how-to-modify-system-properties-of-the-runide-task)).
+See [Testing in K2 Locally](https://kotlin.github.io/analysis-api/testing-in-k2-locally.html).
 
 ### Analysis API
 <primary-label ref="2024.2"/>

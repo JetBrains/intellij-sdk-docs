@@ -1615,6 +1615,191 @@ Default value
 
 
 
+
+## `verifyPlugin`
+{#verifyPlugin}
+
+<link-summary>Runs the IntelliJ Plugin Verifier CLI tool to check the binary compatibility with specified IDE builds.</link-summary>
+
+<tldr>
+
+**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
+
+**Depends on**: [`buildPlugin`](#buildPlugin)
+
+**Extends**: [`JavaExec`][gradle-javaexec-task], [`RuntimeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#RuntimeAware), [`PluginVerifierAware`](tools_intellij_platform_gradle_plugin_task_awares.md#PluginVerifierAware)
+
+**Sources**: [`VerifyPluginTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginTask.kt)
+
+</tldr>
+
+Runs the [IntelliJ Plugin Verifier](verifying_plugin_compatibility.md) CLI tool to check the binary compatibility with specified IDE builds.
+
+Due to caching, the latest Plugin Verifier release version might not be picked up by Gradle immediately.
+In such cases, [refresh dependencies](https://docs.gradle.org/current/userguide/dependency_management.html#sec:refreshing-dependencies)
+manually.
+
+See also:
+- [Extension: `intellijPlatform.pluginVerification`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification)
+- [Types: `FailureLevel`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel)
+- [Types: `Subsystems`](tools_intellij_platform_gradle_plugin_types.md#Subsystems)
+- [Types: `VerificationReportsFormats`](tools_intellij_platform_gradle_plugin_types.md#VerificationReportsFormats)
+- [Verifying Plugin Compatibility](verifying_plugin_compatibility.md)
+- [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier)
+
+
+### `ides`
+{#verifyPlugin-ides}
+
+Specifies IntelliJ Platform IDEs used by the IntelliJ Plugin Verifier CLI tool for binary plugin verification.
+The list of IDEs is managed through the [`intellijPlatform.pluginVerification.ides`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-ides) extension.
+
+{style="narrow"}
+Type
+: `ConfigurableFileCollection`
+
+
+### `archiveFile`
+{#verifyPlugin-archiveFile}
+
+Specifies the input ZIP archive file of the plugin to verify.
+If this parameter is empty, the task will be skipped.
+
+{style="narrow"}
+Type
+: `RegularFileProperty`
+
+Default value
+: [`buildPlugin.archiveFile`](#buildPlugin-archiveFile)
+
+
+### `externalPrefixes`
+{#verifyPlugin-externalPrefixes}
+
+Specifies a list of class prefixes from external libraries.
+The Plugin Verifier will not report `No such class` errors for classes in these packages.
+
+{style="narrow"}
+Type
+: `ListProperty<String>`
+
+Default value
+: [`intellijPlatform.pluginVerification.externalPrefixes`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-externalPrefixes)
+
+
+### `failureLevel`
+{#verifyPlugin-failureLevel}
+
+Specifies the verification level at which the task fails if any reported issue matches.
+
+{style="narrow"}
+Type
+: [`ListProperty<FailureLevel>`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel)
+
+Default value
+: [`intellijPlatform.pluginVerification.failureLevel`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-failureLevel)
+
+
+### `freeArgs`
+{#verifyPlugin-freeArgs}
+
+Represents a list of free arguments that are passed directly to the IntelliJ Plugin Verifier CLI tool.
+These arguments are used in conjunction with those provided by dedicated options.
+
+See [](tools_intellij_platform_gradle_plugin_faq.md#mutePluginVerifierProblems) for sample usage.
+
+{style="narrow"}
+Type
+: `ListProperty<String>`
+
+Default value
+: [`intellijPlatform.pluginVerification.freeArgs`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-freeArgs)
+
+
+### `ignoredProblemsFile`
+{#verifyPlugin-ignoredProblemsFile}
+
+Specifies a file that contains a list of problems that will be ignored in a report.
+
+{style="narrow"}
+Type
+: `RegularFileProperty`
+
+Default value
+: [`intellijPlatform.pluginVerification.ignoredProblemsFile`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-ignoredProblemsFile)
+
+
+### `offline`
+{#verifyPlugin-offline}
+
+Indicates whether the operation is executed in offline mode.
+This depends on the start parameters specified in Gradle.
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: `StartParameter.isOffline`
+
+See also:
+- [StartParameter](https://docs.gradle.org/current/javadoc/org/gradle/StartParameter.html)
+- [Command Line Execution Options](https://docs.gradle.org/current/userguide/command_line_interface.html#sec:command_line_execution_options)
+
+
+### `subsystemsToCheck`
+{#verifyPlugin-subsystemsToCheck}
+
+Specifies which subsystems of the IDE should be checked.
+
+{style="narrow"}
+Type
+: [`Subsystems`](tools_intellij_platform_gradle_plugin_types.md#Subsystems)
+
+Default value
+: [`intellijPlatform.pluginVerification.subsystemsToCheck`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-subsystemsToCheck)
+
+
+### `teamCityOutputFormat`
+{#verifyPlugin-teamCityOutputFormat}
+
+Specifies whether to use the TeamCity-compatible output format.
+If set to `true`, outputs in a format compatible with [TeamCity](https://www.jetbrains.com/teamcity/), directing the output to stdout.
+
+{style="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: [`intellijPlatform.pluginVerification.teamCityOutputFormat`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-teamCityOutputFormat)
+
+
+### `verificationReportsDirectory`
+{#verifyPlugin-verificationReportsDirectory}
+
+Specifies the path to the directory where verification reports will be saved.
+
+{style="narrow"}
+Type
+: `DirectoryProperty`
+
+Default value
+: [`intellijPlatform.pluginVerification.verificationReportsDirectory`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-verificationReportsDirectory)
+
+
+### `verificationReportsFormats`
+{#verifyPlugin-verificationReportsFormats}
+
+Specifies the output formats of the verification reports.
+
+{style="narrow"}
+Type
+: [`ListProperty<VerificationReportsFormats>`](tools_intellij_platform_gradle_plugin_types.md#VerificationReportsFormats)
+
+Default value
+: [`intellijPlatform.pluginVerification.verificationReportsFormats`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-verificationReportsFormats)
+
+
 ## `verifyPluginProjectConfiguration`
 {#verifyPluginProjectConfiguration}
 
@@ -1974,190 +2159,6 @@ Type
 Default value
 : <path>[`prepareSandbox.defaultDestinationDirectory`](#prepareSandbox-defaultDestinationDirectory)/[`intellijPlatform.pluginConfiguration.name`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-name)</path>
 
-
-
-## `verifyPlugin`
-{#verifyPlugin}
-
-<link-summary>Runs the IntelliJ Plugin Verifier CLI tool to check the binary compatibility with specified IDE builds.</link-summary>
-
-<tldr>
-
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
-
-**Depends on**: [`buildPlugin`](#buildPlugin)
-
-**Extends**: [`JavaExec`][gradle-javaexec-task], [`RuntimeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#RuntimeAware), [`PluginVerifierAware`](tools_intellij_platform_gradle_plugin_task_awares.md#PluginVerifierAware)
-
-**Sources**: [`VerifyPluginTask`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/VerifyPluginTask.kt)
-
-</tldr>
-
-Runs the [IntelliJ Plugin Verifier](verifying_plugin_compatibility.md) CLI tool to check the binary compatibility with specified IDE builds.
-
-Due to caching, the latest Plugin Verifier release version might not be picked up by Gradle immediately.
-In such cases, [refresh dependencies](https://docs.gradle.org/current/userguide/dependency_management.html#sec:refreshing-dependencies)
-manually.
-
-See also:
-- [Extension: `intellijPlatform.pluginVerification`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification)
-- [Types: `FailureLevel`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel)
-- [Types: `Subsystems`](tools_intellij_platform_gradle_plugin_types.md#Subsystems)
-- [Types: `VerificationReportsFormats`](tools_intellij_platform_gradle_plugin_types.md#VerificationReportsFormats)
-- [Verifying Plugin Compatibility](verifying_plugin_compatibility.md)
-- [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier)
-
-
-### `ides`
-{#verifyPlugin-ides}
-
-Specifies IntelliJ Platform IDEs used by the IntelliJ Plugin Verifier CLI tool for binary plugin verification.
-The list of IDEs is managed through the [`intellijPlatform.pluginVerification.ides`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-ides) extension.
-
-{style="narrow"}
-Type
-: `ConfigurableFileCollection`
-
-
-### `archiveFile`
-{#verifyPlugin-archiveFile}
-
-Specifies the input ZIP archive file of the plugin to verify.
-If this parameter is empty, the task will be skipped.
-
-{style="narrow"}
-Type
-: `RegularFileProperty`
-
-Default value
-: [`buildPlugin.archiveFile`](#buildPlugin-archiveFile)
-
-
-### `externalPrefixes`
-{#verifyPlugin-externalPrefixes}
-
-Specifies a list of class prefixes from external libraries.
-The Plugin Verifier will not report `No such class` errors for classes in these packages.
-
-{style="narrow"}
-Type
-: `ListProperty<String>`
-
-Default value
-: [`intellijPlatform.pluginVerification.externalPrefixes`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-externalPrefixes)
-
-
-### `failureLevel`
-{#verifyPlugin-failureLevel}
-
-Specifies the verification level at which the task fails if any reported issue matches.
-
-{style="narrow"}
-Type
-: [`ListProperty<FailureLevel>`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel)
-
-Default value
-: [`intellijPlatform.pluginVerification.failureLevel`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-failureLevel)
-
-
-### `freeArgs`
-{#verifyPlugin-freeArgs}
-
-Represents a list of free arguments that are passed directly to the IntelliJ Plugin Verifier CLI tool.
-These arguments are used in conjunction with those provided by dedicated options.
-
-See [](tools_intellij_platform_gradle_plugin_faq.md#mutePluginVerifierProblems) for sample usage.
-
-{style="narrow"}
-Type
-: `ListProperty<String>`
-
-Default value
-: [`intellijPlatform.pluginVerification.freeArgs`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-freeArgs)
-
-
-### `ignoredProblemsFile`
-{#verifyPlugin-ignoredProblemsFile}
-
-Specifies a file that contains a list of problems that will be ignored in a report.
-
-{style="narrow"}
-Type
-: `RegularFileProperty`
-
-Default value
-: [`intellijPlatform.pluginVerification.ignoredProblemsFile`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-ignoredProblemsFile)
-
-
-### `offline`
-{#verifyPlugin-offline}
-
-Indicates whether the operation is executed in offline mode.
-This depends on the start parameters specified in Gradle.
-
-{style="narrow"}
-Type
-: `Property<Boolean>`
-
-Default value
-: `StartParameter.isOffline`
-
-See also:
-- [StartParameter](https://docs.gradle.org/current/javadoc/org/gradle/StartParameter.html)
-- [Command Line Execution Options](https://docs.gradle.org/current/userguide/command_line_interface.html#sec:command_line_execution_options)
-
-
-### `subsystemsToCheck`
-{#verifyPlugin-subsystemsToCheck}
-
-Specifies which subsystems of the IDE should be checked.
-
-{style="narrow"}
-Type
-: [`Subsystems`](tools_intellij_platform_gradle_plugin_types.md#Subsystems)
-
-Default value
-: [`intellijPlatform.pluginVerification.subsystemsToCheck`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-subsystemsToCheck)
-
-
-### `teamCityOutputFormat`
-{#verifyPlugin-teamCityOutputFormat}
-
-Specifies whether to use the TeamCity-compatible output format.
-If set to `true`, outputs in a format compatible with [TeamCity](https://www.jetbrains.com/teamcity/), directing the output to stdout.
-
-{style="narrow"}
-Type
-: `Property<Boolean>`
-
-Default value
-: [`intellijPlatform.pluginVerification.teamCityOutputFormat`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-teamCityOutputFormat)
-
-
-### `verificationReportsDirectory`
-{#verifyPlugin-verificationReportsDirectory}
-
-Specifies the path to the directory where verification reports will be saved.
-
-{style="narrow"}
-Type
-: `DirectoryProperty`
-
-Default value
-: [`intellijPlatform.pluginVerification.verificationReportsDirectory`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-verificationReportsDirectory)
-
-
-### `verificationReportsFormats`
-{#verifyPlugin-verificationReportsFormats}
-
-Specifies the output formats of the verification reports.
-
-{style="narrow"}
-Type
-: [`ListProperty<VerificationReportsFormats>`](tools_intellij_platform_gradle_plugin_types.md#VerificationReportsFormats)
-
-Default value
-: [`intellijPlatform.pluginVerification.verificationReportsFormats`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-verificationReportsFormats)
 
 
 <include from="snippets.md" element-id="missingContent"/>

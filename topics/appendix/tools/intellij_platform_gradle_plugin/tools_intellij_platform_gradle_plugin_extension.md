@@ -1409,10 +1409,10 @@ intellijPlatform {
       local file('/path/to/ide/')
       recommended()
       select {
-        types = [IntelliJPlatformType.PhpStorm]
-        channels = [ProductRelease.Channel.RELEASE]
-        sinceBuild = '232'
-        untilBuild = '241.*'
+        it.types = [IntelliJPlatformType.PhpStorm]
+        it.channels = [ProductRelease.Channel.RELEASE]
+        it.sinceBuild = '232'
+        it.untilBuild = '241.*'
       }
     }
   }

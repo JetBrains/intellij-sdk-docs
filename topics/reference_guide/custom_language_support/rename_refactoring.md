@@ -51,7 +51,7 @@ The `getErrorMessage()` method should return a custom error message in case of a
 Note that `getErrorMessage()` only works if all `RenameInputValidator` accept the new name in `isInputValid()` and the name is a valid identifier for the language of the element.
 
 **Example:**
-[`YamlKeyValueRenameInputValidator`](%gh-ic%/plugins/yaml/src/org/jetbrains/yaml/refactoring/rename/YamlKeyValueRenameInputValidator.java) validating YAML language keys
+[`YamlKeyValueRenameInputValidator`](%gh-ic%/plugins/yaml/editing/src/org/jetbrains/yaml/refactoring/rename/YamlKeyValueRenameInputValidator.java) validating YAML language keys
 
 Implementations of `RenameInputValidator` or `RenameInputValidatorEx` are registered in the `com.intellij.renameInputValidator` extension point.
 

@@ -5,8 +5,8 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/vars.dtd">
 
 <vars>
-  <var name="ijPlatform" value="2024.2.1"/>
-  <var name="ijPlatformBuild" value="242.21829.142"/>
+  <var name="ijPlatform" value="2024.2.2"/>
+  <var name="ijPlatformBuild" value="242.22855.74"/>
 
   <!-- Links to master/main branches **MUST** have "-master" suffix for recheck when running inspection globally -->
 

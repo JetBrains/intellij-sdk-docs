@@ -130,6 +130,11 @@ Use other methods for pure UI operations.
 
 </tabs>
 
+> Since 2024.3, write intent lock is not acquired implicitly when code is run in coroutine context on the EDT dispatcher.
+> See [](coroutine_dispatchers.md#edt-dispatcher-and-write-intent-lock).
+>
+{style="warning"}
+
 ## Accessing Data
 
 The IntelliJ Platform provides a simple API for accessing data under read or write locks in a form of read and write actions.

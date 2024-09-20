@@ -67,6 +67,14 @@ In the IntelliJ Platform, the EDT dispatcher is also installed as `Dispatchers.M
 Use `Dispatchers.Main` only if the coroutine is IntelliJ Platform-context agnostic (e.g., when it can be executed outside the IntelliJ Platform context).
 Use `Dispatchers.EDT` when in doubt.
 
+### EDT Dispatcher and Write Intent Lock
+
+As explained in the [](threading_model.md#locks-and-edt) section, write intent lock is acquired on EDT implicitly.
+This behavior has changed in coroutine context in version 2024.3.
+
+Since 2024.3, write intent lock is not acquired implicitly in coroutines called on the EDT dispatcher.
+Coroutines must use [`readAction`/`writeAction`/`writeIntentReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt) API to acquire a required lock explicitly.
+
 ## Dispatchers vs. Threads
 
 The dispatcher concept is a higher level of abstraction over threads.

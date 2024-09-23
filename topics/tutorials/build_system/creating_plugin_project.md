@@ -36,10 +36,10 @@ Launch the <control>New Project</control> wizard via the <ui-path>File | New | P
    See also [Kotlin for Plugin Developers](using_kotlin.md) for more information.
 
    > Projects generated with IntelliJ IDEA 2023.1 or newer support both Kotlin and Java sources out of the box.
-   > Project generator automatically creates <path>\$PLUGIN_DIR\$/src/main/kotlin</path> sources directory.
-   > To add Java sources, create <path>\$PLUGIN_DIR\$/src/main/java</path> directory.
+   > The Project generator automatically creates <path>\$PLUGIN_DIR\$/src/main/kotlin</path> sources directory.
+   > To add Java sources, create the <path>\$PLUGIN_DIR\$/src/main/java</path> directory manually.
    >
-   {style="note"}
+   {style="note" title="Using Kotlin and Java sources"}
 
 5. Provide the <control>Group</control> which is typically an inverted company domain (e.g. `com.example.mycompany`).
    It is used for the Gradle property `project.group` value in the project's Gradle build script.

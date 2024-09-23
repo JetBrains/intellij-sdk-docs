@@ -82,6 +82,7 @@ In the case of supporting a range of platform versions with different underlying
 Consult [Incompatible API Changes](api_changes_list.md) and [Notable API Changes](api_notable.md) for an overview of known breaking and relevant changes across IDE versions.
 
 In some cases, keeping a dedicated branch and corresponding plugin release for each major IDE version might be required due to incompatibilities that cannot be solved in other ways.
+The IDE will automatically install only the corresponding compatible build.
 
 ### Platform Versions
 {id="platformVersions"}

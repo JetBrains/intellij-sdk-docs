@@ -24,7 +24,7 @@ Plugin projects targeting DataGrip can be developed using [IntelliJ IDEA](idea.m
 Define a dependency using [`datagrip()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md), see _Versions_ link on top of this page for all available versions.
 See [](tools_intellij_platform_gradle_plugin.md#dependenciesLocalPlatform) for using a local installation.
 
-A dependency on the bundled `DatabaseTools` plugin must be added using the [`bundledPlugin()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) helper.
+A dependency on the bundled `com.intellij.database` plugin must be added using the [`bundledPlugin()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) helper.
 
 Minimum <path>build.gradle.kts</path> setup:
 
@@ -39,7 +39,7 @@ repositories {
 dependencies {
   intellijPlatform {
     datagrip("<versionNumber>")
-    bundledPlugin("DatabaseTools")
+    bundledPlugin("com.intellij.database")
   }
 }
 ```

@@ -138,7 +138,9 @@ It allows canceling processes deeply in the call stack, without the need to hand
 
 PCE is handled by the infrastructure that started the process and must never be logged or swallowed.
 In case of catching it for some reason, it must be rethrown.
-Use inspection <control>Plugin DevKit | Code | 'ProcessCanceledException' handled incorrectly</control> (2023.3).
+Use inspection
+<control>Plugin DevKit | Code | Cancellation exception handled incorrectly</control> (2024.3)
+(previously named <control>'ProcessCanceledException' handled incorrectly</control> (2023.3)).
 
 All code working with [PSI](psi.md) or in other kinds of background processes must be prepared for PCE being thrown at any point.
 

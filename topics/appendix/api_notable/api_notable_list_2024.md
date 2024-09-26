@@ -23,6 +23,9 @@ Performance test classes and methods renamed to _Benchmark_
 - [`PerformanceTestInfo`](%gh-ic-242%/platform/testFramework/src/com/intellij/testFramework/PerformanceTestInfo.java) has been renamed to [`BenchmarkTestInfo`](%gh-ic-master%/platform/testFramework/src/com/intellij/testFramework/BenchmarkTestInfo.java)
 - [`PlatformTestUtil.newPerformanceTest*()`](%gh-ic-242%/platform/testFramework/src/com/intellij/testFramework/PlatformTestUtil.java) methods have been renamed to [`PlatformTestUtil.newBenchmark*()`](%gh-ic-master%/platform/testFramework/src/com/intellij/testFramework/PlatformTestUtil.java)
 
+Testing: `Logger.error()` behaviour
+: Does not throw during tests anymore, see [issue](https://youtrack.jetbrains.com/issue/IJPL-453) for details.
+
 ### IntelliJ IDEA 2024.3
 
 Unbundled _Swing UI Designer_ Plugin

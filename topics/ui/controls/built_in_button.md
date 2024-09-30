@@ -86,7 +86,8 @@ Do **not** place the button on the right of the control.
 
 ### Expand field
 
-If the input text can be long and place is constrained, use a built-in button to expand the control ([`ExtendableTextField`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/fields/ExtendableTextField.java)):
+If the input text can be long and place is constrained, use a built-in button to expand the control
+([`ExpandableTextField`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/fields/ExpandableTextField.java)):
 
 ![](expandable_1.png){width=332}
 

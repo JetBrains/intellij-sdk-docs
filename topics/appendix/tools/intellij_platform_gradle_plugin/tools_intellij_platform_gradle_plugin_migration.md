@@ -8,6 +8,7 @@
 
 As the **2.x** branch brings significant breaking changes to the plugin, the name was changed from _Gradle IntelliJ Plugin_ to
 _IntelliJ Platform Gradle Plugin_ as the old one was confused with the bundled Gradle support plugin in the IDE.
+
 The plugin is published to the Gradle Plugin Portal with a new name as a new entry, and the old one is marked as deprecated.
 
 ## Minimum Gradle and Java Versions
@@ -160,6 +161,10 @@ Downloading sources is managed by the Plugin DevKit plugin in version 2024.1+.
 Access the [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) object using the [`intellijPlatform.productInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) property.
 
 ## Tasks
+
+### Running Tests
+
+An [explicit dependency](tools_intellij_platform_gradle_plugin_dependencies_extension.md#testing) on a test framework is now required.
 
 ### `downloadRobotServerPlugin`
 

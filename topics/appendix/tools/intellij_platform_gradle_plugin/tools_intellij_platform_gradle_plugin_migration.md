@@ -263,7 +263,7 @@ Add an explicit dependency on [the plugin](https://github.com/JetBrains/gradle-i
 
 ```kotlin
 plugins {
-  id("org.jetbrains.gradle.plugin.idea-ext") version "1.1.8"
+  id("org.jetbrains.gradle.plugin.idea-ext") version "1.1.9"
 }
 ```
 
@@ -272,7 +272,7 @@ plugins {
 
 ```groovy
 plugins {
-  id 'org.jetbrains.gradle.plugin.idea-ext' version '1.1.8'
+  id 'org.jetbrains.gradle.plugin.idea-ext' version '1.1.9'
 }
 ```
 

@@ -4,30 +4,41 @@
 
 <link-summary>Creating custom plugin repositories other than JetBrains Marketplace.</link-summary>
 
-> [IDE Provisioner](https://www.jetbrains.com/ide-services/ide-provisioner/) comes with a local built-in repository of IntelliJ Platform plugins that allows you to choose specific plugins to be approved within your organization. It also lets you upload and distribute your own plugins inside your company, as well as any publicly available plugin from the internet.
+<tldr>
 
-If you intend to use a plugin repository _other than_ the [JetBrains Marketplace](https://plugins.jetbrains.com), you will need to:
+**Product Help**: [Repository Settings](https://www.jetbrains.com/help/idea/managing-plugins.html#repos)
 
-<procedure>
+</tldr>
 
-1. Create and maintain an <path>updatePlugins.xml</path>* file on the HTTPS web server you are using for your custom repository.
-   This file describes all the plugins available in your custom repository and each plugin's download URL.
-2. Upload your plugin JAR/ZIP file to an HTTPS web server.
-   This can be the same web server you are using for the custom repository or a different HTTPS web server.
+> [IDE Provisioner](https://www.jetbrains.com/ide-services/ide-provisioner/) comes with a local built-in repository of IntelliJ Platform plugins
+> that allows choosing specific plugins to be approved within an organization.
+> It also allows uploading and distributing private plugins inside an organization, as well as any publicly available plugin from the internet.
+>
+{title="JetBrains IDE Services: IDE Provisioner"}
+
+To use a plugin repository _other than_ the [JetBrains Marketplace](https://plugins.jetbrains.com), perform the following steps:
+
+<procedure title="Setting Up Custom Plugin Repository">
+
+1. Create and maintain an <path>updatePlugins.xml</path><sup>1</sup> file on the HTTPS web server used for the custom repository.
+   This file describes all the plugins available in the custom repository and each plugin's download URL.
+2. Upload the plugin distribution JAR/ZIP file to an HTTPS web server.
+   This can be the same web server used for the custom repository or a different HTTPS web server.
 3. Add the URL for the custom repository to the JetBrains IDE [Repository Settings](https://www.jetbrains.com/help/idea/managing-plugins.html#repos).
 
-\* The <path>updatePlugin.xml</path> file name is not fixed and can be different.
+<sup>1</sup> The <path>updatePlugin.xml</path> filename is not fixed and can be different.
 
 </procedure>
 
 > Gradle plugin [IntelliJ plugin uploader](https://github.com/brian-mcnamara/plugin_uploader) can be used to automate deployment.
 >
+{title="Automating Deployment"}
 
 To avoid collisions between private plugins and those hosted on JetBrains Marketplace, an organization can [reserve plugin IDs](https://plugins.jetbrains.com/docs/marketplace/reserved-plugin-ids.html).
 
 To provide custom authentication, implement [`PluginRepositoryAuthProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/plugins/auth/PluginRepositoryAuthProvider.java) registered in `com.intellij.pluginRepositoryAuthProvider` extension point.
 
-## Describing Your Plugins in updatePlugins.xml File
+## Describing Plugins in `updatePlugins.xml` File
 
 Every custom plugin repository must have at least one <path>updatePlugins.xml</path> file to describe every hosted plugin's latest available version.
 The description in <path>updatePlugins.xml</path> is used by JetBrains IDEs to locate plugins by attributes such as identifier, IDE version, and plugin version.
@@ -39,7 +50,7 @@ More than one <path>updatePlugins.xml</path> file may be required if the custom 
 For example, <path>updatePlugins-182.xml</path>, <path>updatePlugins-183.xml</path> for IntelliJ IDEA 2018.2 and 2018.3, respectively.
 Each <path>updatePlugins-*.xml</path> file will have a unique URL that is added to the JetBrains IDE [Repository Settings](https://www.jetbrains.com/help/idea/managing-plugins.html#repos).
 
-### Format of updatePlugins.xml File
+### Format of `updatePlugins.xml` File
 
 The format of an <path>updatePlugins.xml</path> file is simply a list of sequential elements that describe each plugin:
 
@@ -61,9 +72,9 @@ available at this repository.
      in the plugin.xml file.
   -->
   <plugin
-      id="fully.qualified.id.of.this.plugin"
-      url="https://mycompany.example.com/my_repo/my_plugin.jar"
-      version="major.minor.update">
+          id="fully.qualified.id.of.this.plugin"
+          url="https://mycompany.example.com/my_repo/my_plugin.jar"
+          version="major.minor.update">
     <!--
     The <idea-version> element (required) must match the same element
     in the plugin.xml file.
@@ -71,9 +82,9 @@ available at this repository.
     <idea-version since-build="181.3" until-build="191.*"/>
   </plugin>
   <plugin
-      id="id.of.different.plugin"
-      url="https://othercompany.example.com/other_repo/other_plugin.jar"
-      version="major.minor">
+          id="id.of.different.plugin"
+          url="https://othercompany.example.com/other_repo/other_plugin.jar"
+          version="major.minor">
     <idea-version since-build="181.3" until-build="191.*"/>
   </plugin>
   <!-- And so on for other plugins... -->
@@ -87,7 +98,13 @@ available at this repository.
 * Multiple plugins with the same `id` but different `idea-version` attributes must be split into separate <path>updatePlugins-*.xml</path> files.
   The requesting IDE's version is passed as `build` parameter and can be used for server-side filtering.
 
-### Optional updatePlugin.xml Elements
+### Optional `updatePlugin.xml` Elements
+
+<tldr>
+
+**Reference**: [](plugin_configuration_file.md)
+
+</tldr>
 
 During plugin installation, the IDE reads the plugin JAR/ZIP file and thereafter displays more information about the plugin.
 In some cases, additional information included in <path>updatePlugins.xml</path> might help a user select a plugin when [browsing the custom plugin repository](https://www.jetbrains.com/help/idea/managing-plugins.html#repos) before installation.

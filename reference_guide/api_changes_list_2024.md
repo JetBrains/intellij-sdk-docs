@@ -79,6 +79,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 Unbundled JUnit library
 : Add an explicit dependency in the plugin project.
 
+`com.intellij.openapi.actionSystem.impl.MoreActionGroup(boolean, int, DefaultConstructorMarker)` constructor removed
+: Use other constructors instead.
+
 ### JSON Plugin (new) 2024.3
 
 `com.intellij.json.JsonElementTypes` class removed

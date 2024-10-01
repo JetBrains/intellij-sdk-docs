@@ -29,6 +29,7 @@ For the latter two, a separate instance of the service is created for each insta
 {id="moduleServiceNote"}
 
 #### Constructor
+
 {#ctor}
 
 To improve startup performance, avoid any heavy initializations in the constructor.
@@ -52,24 +53,27 @@ When using [](kotlin_coroutines.md), a distinct service [scope](coroutine_scopes
 
 ## Light Services
 
-A service not going to be overridden/exposed as API to other plugins does not need to be registered in <path>[plugin.xml](plugin_configuration_file.md)</path> (see [](#declaring-a-service)).
-Instead, annotate service class with [`@Service`](%gh-ic%/platform/core-api/src/com/intellij/openapi/components/Service.java) (see [](#examples)).
-The service instance will be created in scope according to the caller (see [](#retrieving-a-service)).
+A service not going to be overridden or exposed as API to other plugins does not need to be registered in <path>[plugin.xml](plugin_configuration_file.md)</path> (see [](#declaring-a-service)).
+Instead, annotate the service class with [`@Service`](%gh-ic%/platform/core-api/src/com/intellij/openapi/components/Service.java) (see [](#examples)).
+The service instance will be created in the scope according to the caller (see [](#retrieving-a-service)).
 
 ### Light Service Restrictions
 
-* None of these attributes is allowed: `os`, `client`, `overrides`, `id`, `preload`.
+* None of these attributes/restrictions (available for [registration of non-light services](#declaring-a-service)) is allowed: `id`, `os`, `client`, `overrides`, `configurationSchemaKey`/`preload` (Internal API).
+* There is no separate headless/test implementation required.
 * Service class must be `final`.
 * [Constructor injection](#ctor) of dependency services is not supported.
-* If application-level service is a [PersistentStateComponent](persisting_state_of_components.md), roaming must be disabled (`roamingType = RoamingType.DISABLED`).
+* If an application-level service is a [PersistentStateComponent](persisting_state_of_components.md), roaming must be disabled (`roamingType = RoamingType.DISABLED`).
 
-Use these inspections to verify these and highlight services that can be converted (2023.3):
+Use these inspections to verify above restrictions and highlight non-light services that can be converted (2023.3):
+
 - <control>Plugin DevKit | Code | Light service must be final</control>
 - <control>Plugin DevKit | Code | Mismatch between light service level and its constructor</control>
 - <control>Plugin DevKit | Code | A service can be converted to a light one</control> and corresponding <control>Plugin DevKit | Plugin descriptor | A service can be converted to a light one</control> for <path>plugin.xml</path>
 
 ### Examples
 
+{id="lightServiceExamples"}
 
 <tabs group="languages">
 
@@ -79,19 +83,24 @@ Use these inspections to verify these and highlight services that can be convert
 Application-level light service:
 
 ```java
+
 @Service
 public final class MyAppService {
+
   public void doSomething(String param) {
     // ...
   }
+
 }
 ```
 
 Project-level light service example:
 
 ```java
+
 @Service(Service.Level.PROJECT)
 public final class MyProjectService {
+
   private final Project myProject;
 
   MyProjectService(Project project) {
@@ -102,6 +111,7 @@ public final class MyProjectService {
     String projectName = myProject.getName();
     // ...
   }
+
 }
 ```
 
@@ -140,18 +150,25 @@ class MyProjectService(private val project: Project) {
 
 To register a non-[Light Service](#light-services), distinct extension points are provided for each type:
 
-* `com.intellij.applicationService` - application-level service
-* `com.intellij.projectService` - project-level service
-* `com.intellij.moduleService` - module-level service (not recommended, see [Note](#types))
+* `com.intellij.applicationService` – application-level service
+* `com.intellij.projectService` – project-level service
+* `com.intellij.moduleService` – module-level service (not recommended, see [Note](#types))
 
-To expose service API, create a separate class for `serviceInterface` and extend it in corresponding class registered in `serviceImplementation`.
-If `serviceInterface` isn't specified, it's supposed to have the same value as `serviceImplementation`.
+The service implementation is specified in the required `serviceImplementation` attribute.
+
+### Service API
+
+To expose a service's API, create a separate class for `serviceInterface` and extend it in the corresponding class registered in `serviceImplementation`.
+If `serviceInterface` isn't specified, it is supposed to have the same value as `serviceImplementation`.
 Use inspection <control>Plugin DevKit | Plugin descriptor | Plugin.xml extension registration</control> to highlight redundant `serviceInterface` declarations.
 
-To provide a custom implementation for test/headless environment, specify `testServiceImplementation`/`headlessImplementation` additionally.
+### Additional Attributes
 
-### Example
+A service can be restricted to a certain OS via the `os` attribute.
 
+To provide a custom implementation for test or headless environment, specify `testServiceImplementation` or `headlessImplementation` respectively.
+
+### Examples
 
 <tabs group="languages">
 
@@ -204,6 +221,7 @@ Project-level service:
     }
   }
   ```
+
 </tab>
 
 <tab title="Kotlin" group-key="kotlin">
@@ -250,22 +268,25 @@ Project-level service:
     }
   }
   ```
+
 </tab>
 
 </tabs>
 
 Registration in <path>plugin.xml</path>:
+
 ```xml
+
 <extensions defaultExtensionNs="com.intellij">
   <!-- Declare the application-level service -->
   <applicationService
-      serviceInterface="com.example.MyAppService"
-      serviceImplementation="com.example.MyAppServiceImpl"/>
+          serviceInterface="com.example.MyAppService"
+          serviceImplementation="com.example.MyAppServiceImpl"/>
 
   <!-- Declare the project-level service -->
   <projectService
-      serviceInterface="com.example.MyProjectService"
-      serviceImplementation="com.example.MyProjectServiceImpl"/>
+          serviceInterface="com.example.MyProjectService"
+          serviceImplementation="com.example.MyProjectServiceImpl"/>
 </extensions>
 ```
 
@@ -313,6 +334,7 @@ val applicationService = service<MyAppService>()
 
 val projectService = project.service<MyProjectService>()
 ```
+
 </tab>
 
 </tabs>

@@ -124,7 +124,10 @@ Now provide the environment variable in the run configuration for running the `p
 To do so, create a Gradle run configuration (if not already done), select the Gradle project, specify the
 `publishPlugin` task, and then add the environment variable.
 
-#### IntelliJ Platform Gradle Plugin (2.x)
+##### IntelliJ Platform Gradle Plugin (2.x)
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 publishPlugin {
@@ -132,7 +135,19 @@ publishPlugin {
 }
 ```
 
-#### Gradle IntelliJ Plugin (1.x)
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+publishPlugin {
+  token = System.getenv("ORG_GRADLE_PROJECT_intellijPlatform.publishing.token")
+}
+```
+
+</tab>
+</tabs>
+
+##### Gradle IntelliJ Plugin (1.x)
 
 {collapsible="true" default-state="collapsed"}
 

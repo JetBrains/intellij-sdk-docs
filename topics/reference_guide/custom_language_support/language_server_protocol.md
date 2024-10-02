@@ -107,6 +107,10 @@ The LSP API sources are bundled in IntelliJ IDEA Ultimate and can be found withi
 
 The LSP support provided by the IntelliJ Platform covers the following features for these releases:
 
+### 2024.3
+
+- Color Preview ([`textDocument/documentColor`](https://microsoft.github.io/language-server-protocol/specification#textDocument_documentColor))
+
 ### 2024.2
 
 - Find Usages ([`textDocument/references`](https://microsoft.github.io/language-server-protocol/specification#textDocument_references))

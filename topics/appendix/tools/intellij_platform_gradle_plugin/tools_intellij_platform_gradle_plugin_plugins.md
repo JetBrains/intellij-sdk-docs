@@ -6,7 +6,7 @@
 
 <include from="tools_intellij_platform_gradle_plugin.md" element-id="faq"/>
 
-The IntelliJ Platform Gradle Plugin consists of subplugins which should be applied depending on the project structure.
+The IntelliJ Platform Gradle Plugin consists of sub-plugins which should be applied depending on the project structure.
 
 Subplugins architecture allows applying a subset of features, for example, to provide the IntelliJ Platform dependency to a project submodule without creating unnecessary tasks.
 

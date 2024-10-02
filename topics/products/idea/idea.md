@@ -45,7 +45,7 @@ dependencies {
 </tab>
 <tab title="Gradle IntelliJ Plugin (1.x)">
 
-The configuration of IntelliJ IDEA plugin projects follows the methods described in [Configuring Plugin Projects using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-plugin-projects-using-the-intellij-idea-product-attribute).
+The configuration of IntelliJ IDEA plugin projects follows the methods described in [Configuring Plugin Projects using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#using-the-intellij-idea-product-attribute).
 
 | `gradle-intellij-plugin` Attribute                                               | Attribute Value                                                                               |
 |----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|

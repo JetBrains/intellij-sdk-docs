@@ -78,7 +78,7 @@ dependencies {
 
 {collapsible="true" default-state="collapsed"}
 
-The use-case of developing for a non-IntelliJ IDEA IDE is reviewed in the [Plugins Targeting Alternate IntelliJ Platform-Based IDEs](dev_alternate_products.md#configuring-gradle-build-script-to-target-products-other-than-intellij-idea) section.
+The use-case of developing for a non-IntelliJ IDEA IDE is reviewed in the [Plugins Targeting Alternate IntelliJ Platform-Based IDEs](dev_alternate_products.md#gradle1) section.
 The particular example in that section discusses configuring a plugin project for PhpStorm, so the details for an Android Studio plugin project are reviewed here.
 
 Here are the steps to configure the Gradle build script for developing a plugin to target Android Studio:

@@ -154,7 +154,7 @@ See: [](tools_intellij_platform_gradle_plugin_repositories_extension.md)
 
 ### `intellij.downloadSources`
 
-Downloading sources is managed by the Plugin DevKit plugin in version 2024.1+.
+Downloading sources is managed by the _Plugin DevKit_ plugin in version 2024.1+.
 
 ### `intellij.ideaDependency`
 

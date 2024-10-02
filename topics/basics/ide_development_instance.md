@@ -5,7 +5,7 @@
 <link-summary>Overview of IDE instance used for running and debugging a plugin during development.</link-summary>
 
 A plugin project can be run or debugged from within the development instance of IntelliJ IDEA.
-Selecting the `runIde` task for a Gradle-based project (or [Run](running_and_debugging_a_theme.md) menu for a Plugin DevKit-based project)
+Selecting the `runIde` task for a Gradle-based project (or [Run](running_and_debugging_a_theme.md) menu for a _Plugin DevKit_-based project)
 will launch a _Development Instance_ of the target IDE with the current development version of the plugin enabled.
 
 This page describes how to control some settings for the Development Instance.
@@ -136,7 +136,7 @@ and switch focus back to the sandbox instance to trigger reload.
 
 {collapsible="true" default-state="collapsed"}
 
-Add system property `idea.auto.reload.plugins` in the Plugin DevKit [run configuration](running_and_debugging_a_theme.md).
+Add system property `idea.auto.reload.plugins` in the _Plugin DevKit_ [run configuration](running_and_debugging_a_theme.md).
 
 To disable auto-reload, set `idea.auto.reload.plugins` to `false` explicitly (2020.1.2+).
 
@@ -169,7 +169,7 @@ The Sandbox Home location can be configured with the [`intellij.sandboxDir`](too
 
 {collapsible="true" default-state="collapsed"}
 
-For Plugin DevKit-based plugins, the default <control>Sandbox Home</control> location is defined in the IntelliJ Platform Plugin SDK.
+For _Plugin DevKit_-based plugins, the default <control>Sandbox Home</control> location is defined in the IntelliJ Platform Plugin SDK.
 See the [Setting Up a Theme Development Environment](setting_up_theme_environment.md#add-intellij-platform-plugin-sdk) for information about how to set up Sandbox Home in IntelliJ Platform SDK.
 
 The default Sandbox Home directory location is:

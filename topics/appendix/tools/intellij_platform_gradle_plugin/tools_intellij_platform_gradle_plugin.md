@@ -14,7 +14,8 @@
 
 </tldr>
 
-The _IntelliJ Platform Gradle Plugin 2.x_ is a plugin for the Gradle build system to help configure environments for building, testing, verifying, and publishing plugins for IntelliJ-based IDEs.
+The _IntelliJ Platform Gradle Plugin 2.x_ is a [Gradle](https://docs.gradle.org/current/userguide/userguide.html)
+plugin for building, testing, verifying, configuring environments, and publishing plugins for IntelliJ-based IDEs.
 It is the successor of _[](tools_gradle_intellij_plugin.md)_ which is no longer under active development.
 
 Learn more about it in the [Release Announcement](https://blog.jetbrains.com/platform/2024/07/intellij-platform-gradle-plugin-2-0/).
@@ -29,7 +30,8 @@ Learn more about it in the [Release Announcement](https://blog.jetbrains.com/pla
 
 ## Requirements
 
-IntelliJ Platform Gradle Plugin 2.x requires the following minimal versions:
+IntelliJ Platform Gradle Plugin 2.x requires the following *minimal* versions:
+
 - IntelliJ Platform: **2022.3**
 - Gradle: **8.2**
 
@@ -44,7 +46,8 @@ IntelliJ Platform Gradle Plugin 2.x requires the following minimal versions:
 >
 {style="note"}
 
-To apply the IntelliJ Platform Gradle Plugin to a project, add the following entry to the `plugins` block in the <path>build.gradle.kts</path> file:
+To apply the IntelliJ Platform Gradle Plugin to a project, add the following entry to the `plugins`
+block in the Gradle build file:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -71,11 +74,12 @@ If migrating from the [](tools_gradle_intellij_plugin.md), replace the old `org.
 
 ### Snapshot Release
 
-To use the latest snapshot versions, add the following to the <path>settings.gradle.kts</path> file:
+To use the latest snapshot version of this plugin, add the following to the Gradle Settings file:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
 
+<path>settings.gradle.kts</path>
 ```kotlin
 pluginManagement {
   repositories {
@@ -88,6 +92,7 @@ pluginManagement {
 </tab>
 <tab title="Groovy" group-key="groovy">
 
+<path>settings.gradle</path>
 ```groovy
 pluginManagement {
   repositories {
@@ -103,10 +108,9 @@ pluginManagement {
 </tabs>
 
 
-[//]: # (> The current IntelliJ Platform Gradle Plugin Snapshot version is ![GitHub Snapshot Release]&#40;https://img.shields.io/nexus/s/org.jetbrains.intellij.platform/intellij-platform-gradle-plugin?server=https://oss.sonatype.org&label=&#41;)
-> The current IntelliJ Platform Gradle Plugin Snapshot version is: `2.0.0-SNAPSHOT`
+> The current IntelliJ Platform Gradle Plugin Snapshot version is ![GitHub Snapshot Release](https://img.shields.io/nexus/s/org.jetbrains.intellij.platform/intellij-platform-gradle-plugin?server=https://oss.sonatype.org&label=)
 >
-> The snapshot release is published with the constant version, creating a possibility for Gradle to resort to the cached version of the plugin.
+> The snapshot release is published with a fixed version, so Gradle can resort to the cached version of the plugin.
 >
 > To update all dependencies in the dependency cache, use the `--refresh-dependencies` command line option.
 

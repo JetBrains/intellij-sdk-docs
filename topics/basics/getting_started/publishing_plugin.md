@@ -95,24 +95,9 @@ This section describes two options to supply the _Personal Access Token_ via Gra
 
 Start by defining an environment variable such as:
 
-<tabs group="gradlePluginVersion">
-
-<tab title="IntelliJ Platform Gradle Plugin (2.x)" group-key="2.x">
-
 ```bash
-export ORG_GRADLE_PROJECT_intellijPlatform.publishing.token='YOUR_TOKEN'
+export ORG_GRADLE_PROJECT_intellijPlatformPublishingToken='YOUR_TOKEN'
 ```
-
-</tab>
-
-<tab title="Gradle IntelliJ Plugin (1.x)" group-key="1.x">
-
-```bash
-export ORG_GRADLE_PROJECT_intellijPublishToken='YOUR_TOKEN'
-```
-
-</tab>
-</tabs>
 
 > On macOS systems, environment variables set in <path>.bash_profile</path> are only visible to processes run from bash.
 > Environment variables visible to all processes need to be defined in [Environment.plist](https://developer.apple.com/library/archive/qa/qa1067/_index.html).
@@ -124,48 +109,27 @@ Now provide the environment variable in the run configuration for running the `p
 To do so, create a Gradle run configuration (if not already done), select the Gradle project, specify the
 `publishPlugin` task, and then add the environment variable.
 
-##### IntelliJ Platform Gradle Plugin (2.x)
+<tabs group="gradlePluginVersion">
 
-<tabs group="languages">
-<tab title="Kotlin" group-key="kotlin">
-
-```kotlin
-publishPlugin {
-  token.set(System.getenv("ORG_GRADLE_PROJECT_intellijPlatform.publishing.token"))
-}
-```
-
-</tab>
-<tab title="Groovy" group-key="groovy">
-
-```groovy
-publishPlugin {
-  token = System.getenv("ORG_GRADLE_PROJECT_intellijPlatform.publishing.token")
-}
-```
-
-</tab>
-</tabs>
-
-##### Gradle IntelliJ Plugin (1.x)
-
-{collapsible="true" default-state="collapsed"}
-
-<tabs group="languages">
-<tab title="Kotlin" group-key="kotlin">
+<tab title="IntelliJ Platform Gradle Plugin (2.x)" group-key="2.x">
 
 ```kotlin
-publishPlugin {
-  token.set(System.getenv("ORG_GRADLE_PROJECT_intellijPublishToken"))
+intellijPlatform {
+  publishing {
+    token = providers.gradleProperty("intellijPlatformPublishingToken")
+  }
 }
 ```
 
 </tab>
-<tab title="Groovy" group-key="groovy">
 
-```groovy
-publishPlugin {
-  token = System.getenv("ORG_GRADLE_PROJECT_intellijPublishToken")
+<tab title="Gradle IntelliJ Plugin (1.x)" group-key="1.x">
+
+```kotlin
+tasks {
+  publishPlugin {
+    token = providers.gradleProperty("intellijPlatformPublishingToken")
+  }
 }
 ```
 
@@ -179,24 +143,9 @@ Note that it's still required to put some default values (can be empty) in the G
 Like using environment variables, the token can also be passed as a parameter to the Gradle task.
 For example, provide the parameter on the command line or by putting it in the arguments of the Gradle run configuration.
 
-<tabs group="gradlePluginVersion">
-
-<tab title="IntelliJ Platform Gradle Plugin (2.x)" group-key="2.x">
-
 ```bash
--Dorg.gradle.project.intellijPlatform.publishing.token=YOUR_TOKEN
+-PintellijPlatformPublishingToken=YOUR_TOKEN
 ```
-
-</tab>
-
-<tab title="Gradle IntelliJ Plugin (1.x)" group-key="1.x">
-
-```bash
--Dorg.gradle.project.intellijPublishToken=YOUR_TOKEN
-```
-
-</tab>
-</tabs>
 
 Note that in this case also, it's still required to put some default values (can be empty) in the Gradle properties
 
@@ -226,15 +175,21 @@ If successfully deployed, any users who currently have this plugin installed on 
 
 ### Specifying a Release Channel
 
-It's possible to deploy plugins to a chosen release channel by configuring the `publishPlugin.channels` property
-(Reference: [2.x](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-channels), [1.x](tools_gradle_intellij_plugin.md#tasks-publishplugin-channels)).
+<tabs group="gradlePluginVersion">
+
+<tab title="IntelliJ Platform Gradle Plugin (2.x)" group-key="2.x">
+
+It's possible to deploy plugins to a chosen release channel by configuring the [`intellijPlatform.publishing.channels`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-channels) extension property.
+
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
-publishPlugin {
-  channels.set(listOf("beta"))
+intellijPlatform {
+  publishing {
+    channels = listOf("beta")
+  }
 }
 ```
 
@@ -242,10 +197,45 @@ publishPlugin {
 <tab title="Groovy" group-key="groovy">
 
 ```groovy
-publishPlugin {
-  channels = ['beta']
+intellijPlatform {
+  publishing {
+    channels = ['beta']
+  }
 }
 ```
+
+</tab>
+</tabs>
+
+</tab>
+<tab title="Gradle IntelliJ Plugin (1.x)" group-key="1.x">
+
+It's possible to deploy plugins to a chosen release channel by configuring the [`publishPlugin.channels`](tools_gradle_intellij_plugin.md#tasks-publishplugin-channels) task property.
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+tasks {
+  publishPlugin {
+    channels = listOf("beta")
+  }
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+tasks {
+  publishPlugin {
+    channels = ['beta']
+  }
+}
+```
+
+</tab>
+</tabs>
 
 </tab>
 </tabs>

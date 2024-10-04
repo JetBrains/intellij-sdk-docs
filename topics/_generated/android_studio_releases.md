@@ -6,6 +6,7 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Ladybug Feature Drop &#124; 2024.2.2 Canary 5 | ![Canary][canary] | October 3, 2024 | **2024.2.2.5**<p>AI-242.23339.11.2422.12448552</p> | **2024.2.3**<p>242.23339.11</p> |
 | Ladybug Feature Drop &#124; 2024.2.2 Canary 4 | ![Canary][canary] | September 26, 2024 | **2024.2.2.4**<p>AI-242.23339.11.2422.12417746</p> | **2024.2.3**<p>242.23339.11</p> |
 | Ladybug Feature Drop &#124; 2024.2.2 Canary 3 | ![Canary][canary] | September 23, 2024 | **2024.2.2.3**<p>AI-242.21829.142.2422.12395834</p> | **2024.2.1**<p>242.21829.142</p> |
 | Ladybug Feature Drop &#124; 2024.2.2 Canary 2 | ![Canary][canary] | September 12, 2024 | **2024.2.2.2**<p>AI-242.21829.142.2422.12358220</p> | **2024.2.1**<p>242.21829.142</p> |
@@ -565,11 +566,11 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Ladybug Feature Drop &#124; 2024.2.2 Canary 5 | ![Canary][canary] | October 3, 2024 | **2024.2.2.5**<p>AI-242.23339.11.2422.12448552</p> | **2024.2.3**<p>242.23339.11</p> |
 | Ladybug Feature Drop &#124; 2024.2.2 Canary 4 | ![Canary][canary] | September 26, 2024 | **2024.2.2.4**<p>AI-242.23339.11.2422.12417746</p> | **2024.2.3**<p>242.23339.11</p> |
 | Ladybug Feature Drop &#124; 2024.2.2 Canary 3 | ![Canary][canary] | September 23, 2024 | **2024.2.2.3**<p>AI-242.21829.142.2422.12395834</p> | **2024.2.1**<p>242.21829.142</p> |
 | Ladybug &#124; 2024.2.1 | ![Release][release] | October 1, 2024 | **2024.2.1.9**<p>AI-242.21829.142.2421.12409432</p> | **2024.2.1**<p>242.21829.142</p> |
 | Ladybug &#124; 2024.2.1 RC 1 | ![RC][rc] | September 23, 2024 | **2024.2.1.8**<p>AI-242.21829.142.2421.12366423</p> | **2024.2.1**<p>242.21829.142</p> |
-| Koala Feature Drop &#124; 2024.1.2 Patch 1 | ![Patch][patch] | September 17, 2024 | **2024.1.2.13**<p>AI-241.19072.14.2412.12360217</p> | **2024.1.6**<p>241.19072.14</p> |
 
 [release]: https://img.shields.io/badge/-Release-blue?style=flat-square
 [patch]: https://img.shields.io/badge/-Patch-orange?style=flat-square

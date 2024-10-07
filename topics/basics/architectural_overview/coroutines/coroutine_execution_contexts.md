@@ -24,7 +24,7 @@ The following sections explain the contexts and provide information about proces
 
 ## Suspending Context
 
-Code executed in Kotlin coroutines is executed in a suspending context.
+Code [executed in Kotlin coroutines](launching_coroutines.md) is executed in a suspending context.
 Since 2024.1, this context is recommended for executing background tasks to maximize CPU utilization.
 
 > Note that executing code in a suspending context is possible only with [Kotlin](using_kotlin.md).

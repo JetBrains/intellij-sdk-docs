@@ -521,5 +521,16 @@ To correctly run your tests or a specific IDE:
   </tab>
   </tabs>
 
+### plugin.xml: `Cannot resolve plugin com.intellij.modules.vcs`
+
+Add an explicit [dependency](tools_intellij_platform_gradle_plugin_dependencies_extension.md) on the bundled module:
+
+```kotlin
+dependencies {
+  intellijPlatform {
+    bundledModule("intellij.platform.vcs.impl")
+  }
+}
+```
 
 <include from="snippets.md" element-id="missingContent"/>

@@ -312,3 +312,15 @@ It is also possible to refer to the sandbox directory of another Gradle project 
 Please upgrade to Kotlin 1.9.0. See the [](using_kotlin.md#incremental-compilation) section if using Kotlin 1.8.20.
 
 <include from="snippets.md" element-id="missingContent"/>
+
+### plugin.xml: `Cannot resolve plugin com.intellij.modules.vcs`
+
+Add an explicit [dependency](tools_intellij_platform_gradle_plugin_dependencies_extension.md) on the bundled module:
+
+```kotlin
+dependencies {
+  intellijPlatform {
+    bundledModule("intellij.platform.vcs.impl")
+  }
+}
+```

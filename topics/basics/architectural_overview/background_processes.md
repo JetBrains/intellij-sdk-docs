@@ -12,7 +12,7 @@ The IntelliJ Platform executes background processes widely and provides two main
 ## Progress API
 <primary-label ref="obsolete-2024.1"/>
 
-> Plugins targeting 2024.1+ should use [](kotlin_coroutines.md), which is a more performant solution and provides the cancellation mechanism out of the box.
+> Plugins targeting 2024.1+ should use [Kotlin coroutines](kotlin_coroutines.md), which is a more performant solution and provides the cancellation mechanism out of the box.
 >
 > See [](coroutine_execution_contexts.md) for coroutine-based APIs to use in different contexts.
 >

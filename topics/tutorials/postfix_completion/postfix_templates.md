@@ -52,6 +52,8 @@ The _\$EXTENSION\$_ placeholder should be replaced with the extension of the tem
 >
 {style="warning"}
 
+> See the [](providing_translations.md#bundled-translations) section for information about how to provide postfix template description translations in plugins.
+
 The code snippets included in the example files can use the `<spot>` marker, which should surround the most important code parts, e.g., expression to expand and position of the caret after expanding.
 Marked parts will be highlighted in the <ui-path>Settings | Editor | General | Postfix Completion</ui-path> settings page, making it easier for users to understand how a template is expanded, e.g.:
 - <path>before.java.template</path>:

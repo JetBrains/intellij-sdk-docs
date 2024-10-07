@@ -80,6 +80,8 @@ It can be customized with the `<descriptionDirectoryName>` element in `<intentio
 >
 {style="warning"}
 
+> See the [](providing_translations.md#bundled-translations) section for information about how to provide intention description translations in plugins.
+
 #### Testing the Plugin
 
 > Note that running the test requires setting system property `idea.home.path` in the `test` task configuration of the Gradle build script.

@@ -126,6 +126,8 @@ Implicit in using [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/
 >
 {style="warning"}
 
+> See the [](providing_translations.md#bundled-translations) section for information about how to provide inspection description translations in plugins.
+
 #### Code Snippets
 <primary-label ref="2023.2"/>
 

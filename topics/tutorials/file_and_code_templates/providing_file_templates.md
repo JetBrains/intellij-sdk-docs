@@ -91,6 +91,8 @@ file.
 >
 {style="warning"}
 
+> See the [](providing_translations.md#bundled-translations) section for information about how to provide file template description translations in plugins.
+
 ## Providing Default File Template Properties
 
 A file template body can use a set of [predefined properties](https://www.jetbrains.com/help/idea/file-template-variables.html#predefined_template_variables) exposed by the IntelliJ Platform out of the box.

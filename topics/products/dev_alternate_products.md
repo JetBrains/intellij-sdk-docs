@@ -30,9 +30,9 @@ The tutorial produces a skeleton Gradle project suitable to use as a starting po
 
 The best practice is to use the [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type) property to specify the target product.
 For example, `PY` for PyCharm Professional.
-Configuration using an [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type) property is explained in the [](#using-a-product-specific-attribute) section below.
+Configuration using an `intellij.type` property is explained in the [](#using-a-product-specific-attribute) section below.
 
-NOTE: Not all products have an [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type) property defined by the [](tools_gradle_intellij_plugin.md), for example, [Android Studio](android_studio.md) and [PhpStorm](phpstorm.md).
+NOTE: Not all products have an `intellij.type` property defined by the [](tools_gradle_intellij_plugin.md), for example, [Android Studio](android_studio.md) and [PhpStorm](phpstorm.md).
 Please see their respective pages for configuration and
 [](#configuring-gradle-build-script-using-the-intellij-idea-product-attribute) below.
 
@@ -45,7 +45,7 @@ All the Gradle configuration attributes described here are discussed in-depth on
 ### Using a Product-Specific Attribute
 
 If the [](tools_gradle_intellij_plugin.md) supports a target product directly, there will be an [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type) property defined.
-Specifying the target as a product-specific [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type) property has two advantages:
+Specifying the target as a product-specific `intellij.type` property has two advantages:
 
 * The APIs available to the plugin will be limited to only what is defined in the target product
   (unless additional plugin dependencies are specified).

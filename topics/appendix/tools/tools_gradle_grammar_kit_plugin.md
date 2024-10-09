@@ -16,7 +16,6 @@ The [Gradle Grammar-Kit Plugin](https://github.com/JetBrains/gradle-grammar-kit-
 
 > The plugin does not support two-pass generation. Therefore, it does not support method mixins.
 >
->
 {style="note" title="Known Limitations"}
 
 > Please see [CONTRIBUTING](https://github.com/JetBrains/gradle-grammar-kit-plugin/blob/master/CONTRIBUTING.md) on how to submit feedback and contribute to this project.
@@ -136,8 +135,9 @@ Default value
 {#generatelexer-task}
 
 The `generateLexer` task generates a lexer for the given grammar.
-The task is configured using the common [`grammarKit`](#grammar-kit-extension) extension.
 
+The following sections describe task configuration options.
+See also [](#grammar-kit-extension) for common configuration.
 
 #### sourceFile
 {#tasks-generatelexer-source}
@@ -198,8 +198,9 @@ Default
 {#generateparser-task}
 
 The `generateParser` task generates a parser for the given grammar.
-The task is configured using the common [`grammarKit`](#grammar-kit-extension) extension.
 
+The following sections describe task configuration options.
+See also [](#grammar-kit-extension) for common configuration.
 
 #### sourceFile
 {#tasks-generateparser-source}

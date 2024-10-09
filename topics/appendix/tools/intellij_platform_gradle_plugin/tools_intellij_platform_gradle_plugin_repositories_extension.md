@@ -128,6 +128,8 @@ The third possibility is to use the [](custom_plugin_repository.md) with optiona
 <tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
+import com.jetbrains.plugin.structure.intellij.repository.CustomPluginRepositoryListingType
+
 repositories {
   intellijPlatform {
     customPluginRepository("https://example.com/plugins.xml", CustomPluginRepositoryType.SIMPLE) {
@@ -144,10 +146,12 @@ repositories {
 <tab title="Groovy" group-key="groovy">
 
 ```groovy
+import com.jetbrains.plugin.structure.intellij.repository.CustomPluginRepositoryListingType
+
 repositories {
   intellijPlatform {
-    customPluginRepository('https://example.com/plugins.xml', CustomPluginRepositoryListingType.SIMPLE) {
-      credentials(HttpHeaderCredentials) {
+    customPluginRepository('https://example.com/plugins.xml', CustomPluginRepositoryListingType.SIMPLE) { repository ->
+      repository.credentials(HttpHeaderCredentials) {
         name = 'Authorization'
         value = 'Automation amFrdWJfdGVzdDotX...MkV2UkFwekFWTnNwZjA='
       }

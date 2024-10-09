@@ -32,8 +32,8 @@ The Android Studio version presented here is `2021.1.1 Patch 1`, but the `2021.1
 
 In this case, the (BRANCH.BUILD.FIX) version of the IntelliJ Platform is `211.7628.21` – marked with the blue rectangle – is corresponding to the IntelliJ IDEA version `2021.1.3`.
 
-In your Gradle build script, you should set both versions – the build number and the release number – to the [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) property.
-To figure out the exact release number based on the build number, visit the [IntelliJ Repository Releases](https://www.jetbrains.com/intellij-repository/releases/) listing and check the `com.jetbrains.intellij.idea` section.
+In the Gradle build script, both versions should be set: the build number and the release number.
+To figure out the exact release number based on the build number, see [](android_studio_releases_list.md).
 
 The [](#gradle-build-script) section below explains how to set the IntelliJ Platform version to match the target version of Android Studio.
 

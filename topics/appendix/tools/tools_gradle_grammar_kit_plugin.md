@@ -146,7 +146,7 @@ The source <path>.*flex</path> file to generate the lexer from.
 
 {style="narrow"}
 Required
-: `true`
+: yes
 
 Type
 : `String`
@@ -159,7 +159,7 @@ The path to the target directory for the generated lexer.
 
 {style="narrow"}
 Required
-: `true`
+: yes
 
 Type
 : `String`
@@ -208,7 +208,7 @@ The source <path>.bnf</path> file to generate the parser from.
 
 {style="narrow"}
 Required
-: `true`
+: yes
 
 Type
 : `String`
@@ -234,7 +234,7 @@ The location of the generated parser class, relative to the [`targetRootOutputDi
 
 {style="narrow"}
 Required
-: `true`
+: yes
 
 Type
 : `String`
@@ -247,7 +247,7 @@ The location of the generated PSI files, relative to the [`targetRootOutputDir`]
 
 {style="narrow"}
 Required
-: `true`
+: yes
 
 Type
 : `String`

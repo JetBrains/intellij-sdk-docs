@@ -46,11 +46,6 @@ ${
 $CHANNEL_BADGES_LIST
 </snippet>
 
-<snippet id="releases_table_short">
-${content.items.distinctBy(Item::version).take(5).renderTable()}
-$CHANNEL_BADGES_LIST
-</snippet>
-
 """.split("\n").joinToString("\n", transform = String::trim).let(file(RELEASES_FILE_PATH_MD)::writeText)
 
 fun List<Item>.renderTable() = """

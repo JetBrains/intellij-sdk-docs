@@ -55,6 +55,7 @@ Thus, separate representations of project model elements are necessary:
   etc. for the importing process
 
 All these places must be updated everytime something in the project model is changed.
+The Workspace Model uses its own storage that is Platform-independent and can be reused in different places.
 
 ### Flexibility
 

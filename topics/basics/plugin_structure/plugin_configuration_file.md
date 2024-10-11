@@ -6,8 +6,8 @@
 
 <link-summary>Plugin configuration file contains all the information about the plugin, as well as all registered extensions, actions, listeners, etc.</link-summary>
 
-The <path>plugin.xml</path> configuration file contains all the information about the plugin, which is displayed in the [plugins settings dialog](https://www.jetbrains.com/help/idea/managing-plugins.html), and all registered extensions, actions, listeners, etc.
-Sections below describe all the elements in detail.
+The <path>plugin.xml</path> configuration file contains all the information about the plugin, which is displayed in the [plugins' settings dialog](https://www.jetbrains.com/help/idea/managing-plugins.html), and all registered extensions, actions, listeners, etc.
+The sections below describe all the elements in detail.
 
 The example <path>plugin.xml</path> files can be found in the [IntelliJ SDK Docs Code Samples](https://github.com/JetBrains/intellij-sdk-code-samples) repository.
 
@@ -138,7 +138,7 @@ Please use characters, numbers, and `'.'`/`'-'`/`'_'` symbols only and keep it r
 
 {style="narrow"}
 Required
-: no; ignored in [additional config file](#additional-plugin-configuration-files)<br/>
+: no; ignored in an [additional config file](#additional-plugin-configuration-files)<br/>
 **It is highly recommended to set in <path>plugin.xml</path> file.**<br/>
 <snippet id="patchXmlGradleTask">
 The element can be skipped in the source <path>plugin.xml</path> file if the Gradle plugin
@@ -147,7 +147,7 @@ is enabled and configured.
 </snippet>
 
 Default value
-: Value of the [`<name>`](#idea-plugin__name) element.<br/>
+: Value of the [`<name>`](#idea-plugin__name) element.
 
 Example
 :
@@ -168,7 +168,7 @@ The user-visible plugin display name (Title Case).
 
 {style="narrow"}
 Required
-: **yes**; ignored in [additional config file](#additional-plugin-configuration-files)
+: **yes**; ignored in an [additional config file](#additional-plugin-configuration-files)
 
 Example
 :
@@ -190,7 +190,7 @@ Plugins uploaded to the JetBrains Marketplace must follow semantic versioning.
 
 {style="narrow"}
 Required
-: **yes**; ignored in [additional config file](#additional-plugin-configuration-files)<br/>
+: **yes**; ignored in an [additional config file](#additional-plugin-configuration-files)<br/>
 <include from="plugin_configuration_file.md" element-id="patchXmlGradleTask"/>
 
 Example
@@ -212,7 +212,7 @@ Example
 
 {style="narrow"}
 Required
-: only for paid or freemium plugins; ignored in [additional config file](#additional-plugin-configuration-files)<br/>
+: only for paid or freemium plugins; ignored in an [additional config file](#additional-plugin-configuration-files)<br/>
 **Do not add `<product-descriptor>` element in a free plugin.**
 
 Attributes
@@ -244,7 +244,7 @@ The plugin's range of compatible IntelliJ-based IDE versions.
 
 {style="narrow"}
 Required
-: **yes**; ignored in [additional config file](#additional-plugin-configuration-files)<br/>
+: **yes**; ignored in an [additional config file](#additional-plugin-configuration-files)<br/>
 <include from="plugin_configuration_file.md" element-id="patchXmlGradleTask"/>
 
 Attributes
@@ -280,7 +280,7 @@ The vendor name or organization ID (if created) in the <control>Plugins</control
 
 {style="narrow"}
 Required
-: **yes**; ignored in [additional config file](#additional-plugin-configuration-files)
+: **yes**; ignored in an [additional config file](#additional-plugin-configuration-files)
 
 Attributes
 :
@@ -320,7 +320,7 @@ Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed
 
 {style="narrow"}
 Required
-: **yes**; ignored in [additional config file](#additional-plugin-configuration-files)<br/>
+: **yes**; ignored in an [additional config file](#additional-plugin-configuration-files)<br/>
 <include from="plugin_configuration_file.md" element-id="patchXmlGradleTask"/>
 
 Example
@@ -354,7 +354,7 @@ Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed
 
 {style="narrow"}
 Required
-: no; ignored in [additional config file](#additional-plugin-configuration-files)<br/>
+: no; ignored in an [additional config file](#additional-plugin-configuration-files)<br/>
 <include from="plugin_configuration_file.md" element-id="patchXmlGradleTask"/>
 
 Example
@@ -448,7 +448,7 @@ Declares incompatibility with a provided module.
 
 {style="narrow"}
 Required
-: no; ignored in [additional config file](#additional-plugin-configuration-files)
+: no; ignored in an [additional config file](#additional-plugin-configuration-files)
 
 Example
 :
@@ -847,7 +847,7 @@ Required
 
 Attributes
 :
-- `key`  _(`key` or `text` is **required**)_<br/>
+- `key` _(`key` or `text` is **required**)_<br/>
   The key of synonym text provided in a message bundle.
 - `text` _(`key` or `text` is **required**)_<br/>
   The synonym text.
@@ -907,7 +907,7 @@ Attributes
 - `class` _(optional)_<br/>
   The fully qualified name of the group implementation class.
   If not specified, [`DefaultActionGroup`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java) is used.
-- `text` _(**required** if the `popup` is `true` and group is not [localized](basic_action_system.md#localizing-actions-and-groups))_<br/>
+- `text` _(**required** if the `popup` is `true` and the group is not [localized](basic_action_system.md#localizing-actions-and-groups))_<br/>
   The default long-version text to be displayed for the group (text for the menu item showing the submenu).
 - `description` _(optional)_<br/>
   The text which is displayed in the status bar when the group is focused.
@@ -1076,14 +1076,14 @@ Children
 
 Example
 :
-- Extensions declaration with the default namespace:
+- Extensions' declaration with the default namespace:
     ```xml
     <extensions defaultExtensionNs="com.intellij">
       <applicationService
         serviceImplementation="com.example.Service"/>
     </extensions>
     ```
-- Extensions declaration using the fully qualified extension name:
+- Extensions' declaration using the fully qualified extension name:
     ```xml
     <extensions>
       <com.example.vcs.myExtension
@@ -1214,7 +1214,7 @@ An extension point which restricts the type provided in a `myClass` attribute to
 {#idea-plugin__application-components}
 
 > Element is deprecated. Do not use it in new plugins.
-> See [](plugin_components.md) for migration guide.
+> See [](plugin_components.md) for the migration guide.
 >
 {style="warning"}
 
@@ -1231,7 +1231,7 @@ Children
 {#idea-plugin__project-components}
 
 > Element is deprecated. Do not use it in new plugins.
-> See [](plugin_components.md) for migration guide.
+> See [](plugin_components.md) for the migration guide.
 >
 {style="warning"}
 
@@ -1248,7 +1248,7 @@ Children
 {#idea-plugin__module-components}
 
 > Element is deprecated. Do not use it in new plugins.
-> See [](plugin_components.md) for migration guide.
+> See [](plugin_components.md) for the migration guide.
 >
 {style="warning"}
 
@@ -1265,7 +1265,7 @@ Children
 {#idea-plugin__components__component}
 
 > Element is deprecated. Do not use it in new plugins.
-> See [](plugin_components.md) for migration guide.
+> See [](plugin_components.md) for the migration guide.
 >
 {style="warning"}
 
@@ -1288,7 +1288,7 @@ Children
 {#idea-plugin__components__component__implementation-class}
 
 > Element is deprecated. Do not use it in new plugins.
-> See [](plugin_components.md) for migration guide.
+> See [](plugin_components.md) for the migration guide.
 >
 {style="warning"}
 
@@ -1302,7 +1302,7 @@ Required
 {#idea-plugin__components__component__interface-class}
 
 > Element is deprecated. Do not use it in new plugins.
-> See [](plugin_components.md) for migration guide.
+> See [](plugin_components.md) for the migration guide.
 >
 {style="warning"}
 
@@ -1316,7 +1316,7 @@ Required
 {#idea-plugin__components__component__headless-implementation-class}
 
 > Element is deprecated. Do not use it in new plugins.
-> See [](plugin_components.md) for migration guide.
+> See [](plugin_components.md) for the migration guide.
 >
 {style="warning"}
 
@@ -1330,7 +1330,7 @@ Required
 {#idea-plugin__components__component__option}
 
 > Element is deprecated. Do not use it in new plugins.
-> See [](plugin_components.md) for migration guide.
+> See [](plugin_components.md) for the migration guide.
 >
 {style="warning"}
 
@@ -1352,11 +1352,11 @@ Attributes
 {#idea-plugin__components__component__loadForDefaultProject}
 
 > Element is deprecated. Do not use it in new plugins.
-> See [](plugin_components.md) for migration guide.
+> See [](plugin_components.md) for the migration guide.
 >
 {style="warning"}
 
-If present, the component is instantiated also for the default project. It takes effect only when used inside of [`<project-components>`](#idea-plugin__project-components) element.
+If present, the component is instantiated also for the default project. It takes effect only when used inside [`<project-components>`](#idea-plugin__project-components) element.
 
 {style="narrow"}
 Required

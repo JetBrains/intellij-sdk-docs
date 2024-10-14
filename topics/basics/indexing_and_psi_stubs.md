@@ -52,7 +52,7 @@ Since 2024.2, this includes also [intentions](code_intentions.md) and [quick-fix
 
 #### Actions
 
-For [](basic_action_system.md) available during Dumb Mode, extend [`DumbAwareAction`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/project/DumbAwareAction.java).
+For [](basic_action_system.md) available during Dumb Mode, extend [`DumbAwareAction`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/project/DumbAwareAction.java) (do not override `AnAction.isDumbAware()` instead).
 
 #### Other API
 

@@ -184,6 +184,9 @@ JsonPath library unbundled
 `com.intellij.codeInsight.TailTypes` class renamed to `com.intellij.codeInsight.JavaTailTypes`
 : Update code usages.
 
+`com.intellij.unscramble.ThreadDumpParser` class moved to package `com.intellij.threadDumpParser`
+: Update code usages.
+
 ### JavaScript Plugin 2023.3
 
 `com.intellij.lang.javascript.buildTools.npm.PackageJsonUtil.createPackageJson(PsiDirectory, boolean)` method removed

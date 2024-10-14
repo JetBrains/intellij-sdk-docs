@@ -114,6 +114,11 @@ Unbundled JUnit library
 `com.jetbrains.jsonSchema` package removed
 : Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
 
+### Database Plugin 2024.3
+
+`com.intellij.database.datagrid.DataGrid.getFormatterConfig(ModelIndex)` abstract method added
+: Only recompilation is needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
+
 ## 2024.2
 
 ### IntelliJ Platform 2024.2

@@ -119,6 +119,11 @@ Unbundled JUnit library
 `com.intellij.database.datagrid.DataGrid.getFormatterConfig(ModelIndex)` abstract method added
 : Only recompilation is needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
 
+### Package Checker 2024.3
+
+`com.intellij.packageChecker.model.Dependency.<init>(Package, Set, DataContext)` constructor removed
+: Use other constructors instead.
+
 ## 2024.2
 
 ### IntelliJ Platform 2024.2

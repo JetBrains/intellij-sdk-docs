@@ -34,7 +34,7 @@ Override `getTestDataPath()`, and return the path from the root of this plugin m
 {src="simple_language_plugin/src/test/java/org/intellij/sdk/language/SimpleCodeInsightTest.java" include-symbol="getTestDataPath"}
 
 
-At this point only one test is defined in `SimpleCodeInsightTest`: `testCompletion()`.
+At this point, only one test is defined in `SimpleCodeInsightTest`: `testCompletion()`.
 This method:
 * Configures the test using the two input files.
 * Calls the basic completion functionality.

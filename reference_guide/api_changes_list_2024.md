@@ -121,7 +121,7 @@ Unbundled JUnit library
 
 ### Package Checker 2024.3
 
-`com.intellij.packageChecker.model.Dependency.<init>(Package, Set, DataContext)` constructor removed
+`com.intellij.packageChecker.model.Dependency(Package, Set, DataContext)` constructor removed
 : Use other constructors instead.
 
 ## 2024.2

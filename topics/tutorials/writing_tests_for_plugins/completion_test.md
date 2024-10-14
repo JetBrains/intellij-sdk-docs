@@ -1,6 +1,6 @@
-# 3. Completion Test
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# 3. Completion Test
 
 <tldr>
 
@@ -12,6 +12,7 @@
 
 ## Define Test Data
 Create the <path>DefaultTestData.simple</path> file in the <path>testData</path> directory.
+This file contains test Simple language properties that will be completed in a test Java file (see the `Test` class later in this section).
 
 ```bash
 ```

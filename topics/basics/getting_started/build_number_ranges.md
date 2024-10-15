@@ -15,10 +15,11 @@ See [](configuring_plugin_project.md#patching-the-plugin-configuration-file) for
 Please note the following regarding values:
 
 - Values must represent the [actual build numbers](#build-number-format).
-  Any made-up numbers must not be used, and such plugins will be rejected on JetBrains Marketplace.
+  Any made-up numbers must not be used.
+  Violations are highlighted by [plugin verifier](verifying_plugin_compatibility.md), and such plugins will be rejected on JetBrains Marketplace.
   For example, `233.*` is invalid for `since-build`; any of `999.*`, `234.*` (maximum is `233.*`) and `223.9999` are invalid for `until-build`.
 - Not specifying `until-build` means it will include _all_ future builds. This includes future, yet unreleased versions and possibly new IDEs, which might impact compatibility later.
-- To support all releases for a specific branch, use dot-star suffix (`.* `) in `until-build`.
+- To support all releases for a specific branch, use a dot-star suffix (`.* `) for `until-build`.
   For example, `232.*` for all 2023.2.x releases.
 
 > Before publishing, the plugin must be checked using [](verifying_plugin_compatibility.md#plugin-verifier) against the specified version range (and specified compatible products) to ensure binary compatibility.

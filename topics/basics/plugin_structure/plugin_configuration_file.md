@@ -35,6 +35,10 @@ See also [](marketing.md) about widgets and badges.
 
 Deprecated elements are omitted in the list below.
 
+<include from="plugin_configuration_content.md" element-id="plugin_configuration_content"/>
+
+[//]: # (TODO: delete the content below)
+
 - [`<idea-plugin>`](#idea-plugin)
   - [`<id>`](#idea-plugin__id)
   - [`<name>`](#idea-plugin__name)
@@ -94,7 +98,7 @@ Required
 
 Attributes
 :
-- `url` _(optional; ignored in [additional configuration](#additional-plugin-configuration-files))_<br/>
+- `url` _(optional; ignored in an [additional configuration](#additional-plugin-configuration-files))_<br/>
   The link to the plugin homepage displayed on the plugin page in the [JetBrains Marketplace](https://plugins.jetbrains.com).
 - `require-restart` _(optional)_<br/>
   The boolean value determining whether the plugin installation, update, or uninstallation requires the IDE restart (see [](dynamic_plugins.md) for details).<br/>
@@ -138,7 +142,8 @@ Please use characters, numbers, and `'.'`/`'-'`/`'_'` symbols only and keep it r
 
 {style="narrow"}
 Required
-: no; ignored in an [additional config file](#additional-plugin-configuration-files)<br/>
+: no
+; ignored in an [additional config file](#additional-plugin-configuration-files)<br/>
 **It is highly recommended to set in <path>plugin.xml</path> file.**<br/>
 <snippet id="patchXmlGradleTask">
 The element can be skipped in the source <path>plugin.xml</path> file if the Gradle plugin
@@ -168,7 +173,8 @@ The user-visible plugin display name (Title Case).
 
 {style="narrow"}
 Required
-: **yes**; ignored in an [additional config file](#additional-plugin-configuration-files)
+: **yes**
+; ignored in an [additional config file](#additional-plugin-configuration-files)
 
 Example
 :
@@ -190,7 +196,8 @@ Plugins uploaded to the JetBrains Marketplace must follow semantic versioning.
 
 {style="narrow"}
 Required
-: **yes**; ignored in an [additional config file](#additional-plugin-configuration-files)<br/>
+: **yes**
+; ignored in an [additional config file](#additional-plugin-configuration-files)<br/>
 <include from="plugin_configuration_file.md" element-id="patchXmlGradleTask"/>
 
 Example
@@ -212,7 +219,8 @@ Example
 
 {style="narrow"}
 Required
-: only for paid or freemium plugins; ignored in an [additional config file](#additional-plugin-configuration-files)<br/>
+: only for paid or freemium plugins
+; ignored in an [additional config file](#additional-plugin-configuration-files)<br/>
 **Do not add `<product-descriptor>` element in a free plugin.**
 
 Attributes
@@ -244,7 +252,8 @@ The plugin's range of compatible IntelliJ-based IDE versions.
 
 {style="narrow"}
 Required
-: **yes**; ignored in an [additional config file](#additional-plugin-configuration-files)<br/>
+: **yes**
+; ignored in an [additional config file](#additional-plugin-configuration-files)<br/>
 <include from="plugin_configuration_file.md" element-id="patchXmlGradleTask"/>
 
 Attributes
@@ -280,7 +289,8 @@ The vendor name or organization ID (if created) in the <control>Plugins</control
 
 {style="narrow"}
 Required
-: **yes**; ignored in an [additional config file](#additional-plugin-configuration-files)
+: **yes**
+; ignored in an [additional config file](#additional-plugin-configuration-files)
 
 Attributes
 :
@@ -320,23 +330,24 @@ Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed
 
 {style="narrow"}
 Required
-: **yes**; ignored in an [additional config file](#additional-plugin-configuration-files)<br/>
+: **yes**
+; ignored in an [additional config file](#additional-plugin-configuration-files)<br/>
 <include from="plugin_configuration_file.md" element-id="patchXmlGradleTask"/>
 
 Example
 :
-  ```xml
-  <description><![CDATA[
-  Provides support for My Framework.
-  The support includes:
-  <ul>
-    <li>code completion</li>
-    <li>references</li>
-  </ul>
-  For more information visit the
-  <a href="https://example.com">project site</a>.
-  ]]></description>
-  ```
+```xml
+<description><![CDATA[
+Provides support for My Framework.
+The support includes:
+<ul>
+  <li>code completion</li>
+  <li>references</li>
+</ul>
+For more information visit the
+<a href="https://example.com">project site</a>.
+]]></description>
+```
 
 ### `change-notes`
 {#idea-plugin__change-notes}
@@ -354,7 +365,8 @@ Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed
 
 {style="narrow"}
 Required
-: no; ignored in an [additional config file](#additional-plugin-configuration-files)<br/>
+: no
+; ignored in an [additional config file](#additional-plugin-configuration-files)<br/>
 <include from="plugin_configuration_file.md" element-id="patchXmlGradleTask"/>
 
 Example
@@ -374,7 +386,6 @@ Example
   ]]></change-notes>
   ```
 
-
 ### `depends`
 {#idea-plugin__depends}
 
@@ -389,7 +400,8 @@ A single [`<idea-plugin>`](#idea-plugin) element can contain multiple `<depends>
 
 {style="narrow"}
 Required
-: no; in most cases dependency on the [platform](plugin_compatibility.md#modules-available-in-all-products) module is needed
+: no
+; in most cases dependency on the [platform](plugin_compatibility.md#modules-available-in-all-products) module is needed
 
 Attributes
 :
@@ -448,7 +460,8 @@ Declares incompatibility with a provided module.
 
 {style="narrow"}
 Required
-: no; ignored in an [additional config file](#additional-plugin-configuration-files)
+: no
+; ignored in an [additional config file](#additional-plugin-configuration-files)
 
 Example
 :
@@ -1361,3 +1374,5 @@ If present, the component is instantiated also for the default project. It takes
 {style="narrow"}
 Required
 : no
+
+[//]: # (GENERATED CONTENT END)

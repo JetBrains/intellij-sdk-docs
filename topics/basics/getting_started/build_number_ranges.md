@@ -94,13 +94,14 @@ In the `YYYY.R` versioning scheme, the `R` part starts at 1.
 
 <include from="snippets.md" element-id="gradlePluginVersion"/>
 
-| Branch number                                                   | IntelliJ Platform version                                                                                                                |
-|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| [242](https://github.com/JetBrains/intellij-community/tree/242) | 2024.2 **NOTE** Java 21 is now required                                                                                                  |
-| [241](https://github.com/JetBrains/intellij-community/tree/241) | 2024.1                                                                                                                                   |
-| [233](https://github.com/JetBrains/intellij-community/tree/233) | 2023.3                                                                                                                                   |
-| [232](https://github.com/JetBrains/intellij-community/tree/232) | 2023.2                                                                                                                                   |
-| [231](https://github.com/JetBrains/intellij-community/tree/231) | 2023.1                                                                                                                                   |
+| Branch number                                                   | IntelliJ Platform version               |
+|-----------------------------------------------------------------|-----------------------------------------|
+| [243](https://github.com/JetBrains/intellij-community/tree/243) | 2024.3                                  |
+| [242](https://github.com/JetBrains/intellij-community/tree/242) | 2024.2 **NOTE** Java 21 is now required |
+| [241](https://github.com/JetBrains/intellij-community/tree/241) | 2024.1                                  |
+| [233](https://github.com/JetBrains/intellij-community/tree/233) | 2023.3                                  |
+| [232](https://github.com/JetBrains/intellij-community/tree/232) | 2023.2                                  |
+| [231](https://github.com/JetBrains/intellij-community/tree/231) | 2023.1                                  |
 
 #### Earlier Versions
 {collapsible="true"}

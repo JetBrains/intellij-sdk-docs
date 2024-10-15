@@ -10,17 +10,29 @@ Setting the actual values in <path>[plugin.xml](plugin_configuration_file.md)</p
 (Reference: [2.x](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml), [1.x](tools_gradle_intellij_plugin.md#tasks-patchpluginxml)).
 See [](configuring_plugin_project.md#patching-the-plugin-configuration-file) for further details.
 
-### Build Number Validity
+### Build Numbers
 
-Please note the following regarding values:
+Note the following regarding values for `since-build` and `until-build`:
 
-- Values must represent the [actual build numbers](#build-number-format).
-  Any made-up numbers must not be used.
-  Violations are highlighted by [plugin verifier](verifying_plugin_compatibility.md), and such plugins will be rejected on JetBrains Marketplace.
-  For example, `233.*` is invalid for `since-build`; any of `999.*`, `234.*` (maximum is `233.*`) and `223.9999` are invalid for `until-build`.
-- Not specifying `until-build` means it will include _all_ future builds. This includes future, yet unreleased versions and possibly new IDEs, which might impact compatibility later.
-- To support all releases for a specific branch, use a dot-star suffix (`.* `) for `until-build`.
-  For example, `232.*` for all 2023.2.x releases.
+#### Valid Values
+
+Values must represent the [actual build numbers](#build-number-format).
+Any made-up numbers must not be used.
+Violations are highlighted by [plugin verifier](verifying_plugin_compatibility.md), and such plugins will be rejected on JetBrains Marketplace.
+
+For example, `233.*` is invalid for `since-build`.
+Any of `999.*`, `234.*` (maximum is `233.*`) and `223.9999` are invalid for `until-build`.
+
+#### "Open-End" Compatibility
+
+Not specifying `until-build` means it will include _all_ future builds.
+This includes future, yet unreleased versions and possibly new IDEs, which might impact compatibility later.
+
+#### Branch Version Compatibility
+
+To support all releases for a specific branch (major version), use a dot-star suffix (`.* `) for `until-build`.
+
+For example, `232.*` for all 2023.2.x releases.
 
 > Before publishing, the plugin must be checked using [](verifying_plugin_compatibility.md#plugin-verifier) against the specified version range (and specified compatible products) to ensure binary compatibility.
 > Any additional reported errors/warnings should also be fixed when possible.
@@ -61,6 +73,7 @@ Usually you should omit the product ID and use only the branch number and build 
 <!-- 2021.3.3 or later -->
 <idea-version since-build="213.7172.25"/>
 ```
+
 </compare>
 
 > Specific build numbers and their corresponding release version are available via _Previous Releases_ on the corresponding product's download page, for example, [Previous IntelliJ IDEA Releases](https://www.jetbrains.com/idea/download/previous.html).
@@ -71,6 +84,7 @@ Usually you should omit the product ID and use only the branch number and build 
 {style="note" title="Build numbers for products"}
 
 ### Targeting Multiple IDE Versions
+
 {id="multipleIDEVersions"}
 
 <include from="configuring_plugin_project.md" element-id="whichPlatformVersion"/>
@@ -86,6 +100,7 @@ In some cases, keeping a dedicated branch and corresponding plugin release for e
 The IDE will automatically install only the corresponding compatible build.
 
 ### Platform Versions
+
 {id="platformVersions"}
 
 Note that there is no `YY0`.
@@ -105,6 +120,7 @@ In the `YYYY.R` versioning scheme, the `R` part starts at 1.
 | [231](https://github.com/JetBrains/intellij-community/tree/231) | 2023.1                                  |
 
 #### Earlier Versions
+
 {collapsible="true"}
 
 | Branch number                                                   | IntelliJ Platform version                                                                                                                |

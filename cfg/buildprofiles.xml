@@ -28,9 +28,9 @@
         <noindex-content status="eap">false</noindex-content>
         <noindex-content status="release">false</noindex-content>
 
-        <algolia-api-key>8c2683cac2d71d547b55183297abb506</algolia-api-key>
-        <algolia-id>OHIV241QET</algolia-id>
-        <algolia-index>prod_JETBRAINSCOM_HELP</algolia-index>
+        <algolia-id>JWPLKSKZVF</algolia-id>
+        <algolia-index>prod_INTELLIJ-SDK-DOCS_HELP</algolia-index>
+        <algolia-api-key>bce9ba6ce7419efe813d671244d3bf6a</algolia-api-key>
         <algolia-product-id>intellij</algolia-product-id>
         <algolia-product-version></algolia-product-version>
 

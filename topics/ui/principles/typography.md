@@ -37,7 +37,7 @@ Users can change the default font size in Settings. If the default font size is 
 
 Use the built-in text styles from the table below whenever possible.
 
-> Implementation example for font styles: [`LabelSizeDemoAction`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/LabelSizeDemoAction.kt)
+> Implementation example for font styles: [`LabelSizeDemoAction`](%gh-ic%/platform/platform-impl/internal/src/com/intellij/internal/LabelSizeDemoAction.kt)
 >
 {style="note"}
 

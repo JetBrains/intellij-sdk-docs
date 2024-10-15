@@ -152,7 +152,7 @@ Use [`DefaultLogger.disableStderrDumping()`](%gh-ic%/platform/util/src/com/intel
 
 ### How to register a resource (DTD, XSD) temporarily?
 
-Use [`ExternalResourceManagerExImpl.registerResourceTemporarily()`](%gh-ic%/xml/xml-psi-impl/src/com/intellij/javaee/ExternalResourceManagerExImpl.java) passing `getTestRootDisposable()`.
+Use [`ExternalResourceManagerExImpl.registerResourceTemporarily()`](%gh-ic%/xml/xml-psi-impl/src/com/intellij/javaee/ExternalResourceManagerExImpl.kt) passing `getTestRootDisposable()`.
 
 ### How to replace component/service in tests?
 

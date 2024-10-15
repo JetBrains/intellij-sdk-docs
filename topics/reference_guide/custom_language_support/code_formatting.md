@@ -175,7 +175,7 @@ This is useful for cases where nested alignments are needed, such as aligning a 
 ### Examples
 
 - [Custom Language Support Tutorial: Formatter](formatter.md)
-- [`JsonFormattingBuilderModel`](%gh-ic%/json/src/com/intellij/json/formatter/JsonFormattingBuilderModel.java) as an example that uses a `PsiBasedFormattingModel`.
+- [`JsonFormattingBuilderModel`](%gh-ic%/json/split/src/com/intellij/json/formatter/JsonFormattingBuilderModel.java) as an example that uses a `PsiBasedFormattingModel`.
 - [`MarkdownFormattingModelBuilder`](%gh-ic%/plugins/markdown/core/src/org/intellij/plugins/markdown/lang/formatter/MarkdownFormattingModelBuilder.kt) as an example that uses a `DocumentBasedFormattingModel`.
 
 ### Further Tips
@@ -205,7 +205,7 @@ All the introduced changes will be handled by the main formatting step.
 To register a formatting pre-processor, a plugin has to provide an implementation of [`PreFormatProcessor`](%gh-ic%/platform/code-style-api/src/com/intellij/psi/impl/source/codeStyle/PreFormatProcessor.java) and register it in the `com.intellij.preFormatProcessor` extension point.
 
 **Example:**
-[`JsonTrailingCommaRemover`](%gh-ic%/json/src/com/intellij/json/formatter/JsonTrailingCommaRemover.java) removing trailing commas in JSON files
+[`JsonTrailingCommaRemover`](%gh-ic%/json/split/src/com/intellij/json/formatter/JsonTrailingCommaRemover.java) removing trailing commas in JSON files
 
 ### Post-Processor
 

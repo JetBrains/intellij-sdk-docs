@@ -124,6 +124,12 @@ Unbundled JUnit library
 `com.intellij.packageChecker.model.Dependency(Package, Set, DataContext)` constructor removed
 : Use other constructors instead.
 
+### HTTP Client Plugin 2024.3
+
+`com.intellij.httpClient.http.request.run.HttpRunRequestInfo` class moved to package `com.intellij.httpClient.http.request.run.info`
+: Update code usages.
+
+
 ## 2024.2
 
 ### IntelliJ Platform 2024.2

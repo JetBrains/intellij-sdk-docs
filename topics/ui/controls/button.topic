@@ -17,7 +17,6 @@
 
         </p>
     </tldr>
-
     <img src="button_example.png" alt="Cancel and Save buttons" width="706"/>
     <chapter title="When to use" id="when-to-use">
         <p>Use a button to invoke an immediate action:</p>
@@ -31,7 +30,7 @@
                     <list>
                     <li><p>The action takes the user to another page of the same dialog or an external source like
                         documentation.</p>
-                        <tip>Exception: the <control>Next</control> and <control>Previous</control> buttons in wizard navigation.</tip>
+                        <note>Exception: the <control>Next</control> and <control>Previous</control> buttons in wizard navigation.</note>
                     </li>
                     <li>
                         The command is a secondary action that isn't related to the primary purpose of the window,
@@ -74,10 +73,10 @@
             </chapter>
             <chapter title="Use imperative verbs" id="use-imperative-verbs">
             <p>Write the label as an imperative verb, for example, Save, Print, Cancel. Use title capitalization.</p>
-            <tip><p>Exceptions: standard buttons like <control>OK</control>, <control>Back</control>/<control>Forward</control>,
+            <note><p>Exceptions: standard buttons like <control>OK</control>, <control>Back</control>/<control>Forward</control>,
                 <control>Previous</control>/<control>Next</control>, <control>Yes</control>/<control>No</control>, <control>Agree</control>,
                 <control>Options</control>, <control>Settings</control>, <control>Details</control>.
-            </p></tip>
+            </p></note>
             </chapter>
             <chapter title="Be specific" id="be-specific">
             <p>The button should answer the question in the title, so the user can skip the description. Prefer specific
@@ -101,11 +100,11 @@
                     <td><img src="default_OK.png" alt="An incorrect button with a generic 'OK' label" width="378"/></td>
                 </tr>
             </table>
-            <tip>
+            <note>
                 Exception: the <control>Cancel</control> button if it's clear what action is being canceled.
                 For example, use
                 <control>Cancel</control> instead of <control>Don’t Create</control>.
-            </tip>
+            </note>
                 <p>Do not
                     use the word
                     <control>Now</control> in labels because buttons always trigger an immediate action:
@@ -125,9 +124,9 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="check_for_updates.png" alt="A button with 'Check for Updates' label" width="384"/>
+                            <img src="check_for_updates.png" alt="A button with 'Check for Updates' label" width="378"/>
                         </td>
-                        <td><img src="check_now_button.png" alt="A button with 'Check Now' label" width="336"/></td>
+                        <td><img src="check_now_button.png" alt="A button with 'Check Now' label" width="378"/></td>
                     </tr>
                 </table>
             </chapter>
@@ -153,7 +152,7 @@
                         <td><img src="active_edit_action.png"
                                  alt="A button with the 'Edit Action Icon...' label"
                                  width="378"/></td>
-                        <td><img src="active_edit.png" alt="A button with 'Edit...' label" width="378"/></td>
+                        <td><img src="active_edit.png" alt="A button with 'Edit' label" width="378"/></td>
                     </tr>
                 </table>
             </chapter>
@@ -188,13 +187,13 @@
                     or
                     <shortcut>Cmd+Enter</shortcut>
                     on macOS.
-                    <tip>Exception: if the focus is on an element that uses the
+                    <note>Exception: if the focus is on an element that uses the
                         <shortcut>Enter</shortcut>
                         key, for example, a text area, the default button is triggered only by
                         <shortcut>Ctrl+Enter</shortcut>
                         on Windows/Linux and
                         <shortcut>Cmd+Enter</shortcut>
-                        on macOS.</tip>
+                        on macOS.</note>
                 </li>
                 <li>The default button should always be present in a dialog. Only one button in a dialog can be the default
                 one.

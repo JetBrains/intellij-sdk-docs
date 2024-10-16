@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       id="how_to_write_guidelines" title="How to Write Guidelines">
+
+    <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+    <title>
+        How to Write Guidelines
+    </title>
+    <link-summary>Basic rules of writing articles for IntelliJ Platform UI Guidelines.</link-summary>
+    <p>This page describes basic rules of writing articles for IntelliJ Platform UI Guidelines.</p>
+    <tip>If you want to add new articles or edit existing ones, learn more about the contribution process in <a
+            href="intellij-sdk-docs-original_CONTRIBUTING.md"/>.
+    </tip>
+    <chapter title="Article structure" id="article-structure">
+    <p>The article structure can vary depending on whether a <a href="Components.topic">component</a> or a <a
+            href="Principles.md">principle</a> is described.
+        Most of the articles should include the structural elements listed below.</p>
+    <chapter title="Useful links" id="useful-links">
+        <tldr>
+            <p>
+                <control>Implementation</control>
+                :
+                <a href="https://docs.oracle.com/javase/tutorial/uiswing/components/button.html">JButton</a>
+            </p>
+            <p>
+                <control>Specification</control>
+                : <a href="https://www.figma.com/design/w8GWsQsHF3XdjdcN1E3X3n/Int-UI-Kit?node-id=733-46953">Button</a>
+            </p>
+        </tldr>
+        Add a block with useful links at the beginning of each article. If an article is about a component, add links to
+        the component implementation and design specification in the
+        <code>&lt;tldr&gt;&lt;/tldr&gt;</code> element.
+        You can add other useful links to this block if needed.
+    </chapter>
+    <chapter title="Introduction paragraph" id="introduction-paragraph">
+        <p>In the first paragraph, describe a component or a principle and provide an <a
+                anchor="images">illustration</a>.
+        </p>
+    </chapter>
+    <chapter title="Anatomy" id="anatomy">
+        <p>Add this section if a component consists of several controls.
+            Provide an image that shows all parts of the component.
+            Use <a anchor="callouts">callouts</a> to label the component parts:</p>
+        <img src="Callouts.png" alt="Callouts" width="706"/>
+        If needed, describe all the parts in details below the image.
+    </chapter>
+    <chapter title="When to use" id="when-to-use">
+        <p>Describe common use cases for the component and provide an <a anchor="images">image</a> for each use case.</p>
+    </chapter>
+    <chapter title="When not to use" id="when-not-to-use">
+        <p>If the component is often misused, describe these cases.
+            If possible, write which components should be used
+            instead and provide <a anchor="images">images</a>.</p>
+    </chapter>
+    <chapter title="How to use" id="how-to-use">
+        <p>Provide guidelines on how to use a component, for example:</p>
+        <list>
+            <li>Behavior details for a single component and for a group of such components if applicable.</li>
+            <li>Rules for writing labels, hints, empty state texts.</li>
+            <li>How to use this component with other components.</li>
+            <li>Any other recommendations specific to this component.</li>
+        </list>
+        <chapter title="Each rule in a separate chapter" id="each-rule-in-a-separate-chapter">
+            <p>Try to put each rule or a group of rules into a separate subchapter and add a short and descriptive title.
+            This will allow the reader to scan the information on the page faster and copy the link to the rule if needed.</p>
+        </chapter>
+    </chapter>
+    <chapter title="Sizes, placement, and style details (obsolete)" id="sizes-placement-and-style-details">
+        <p>Do not describe the component appearance in a separate section. All the details are provided in the <a
+                href="https://www.figma.com/design/w8GWsQsHF3XdjdcN1E3X3n/Int-UI-Kit?node-id=6222-73687">Int UI Kit</a>
+            library in Figma.
+            Make sure that an actual link to Figma is added in the <a anchor="useful-links">useful links</a>.
+        </p>
+    </chapter>
+    </chapter>
+<chapter title="Images" id="images">
+            <procedure title="Create an image" id="create-an-image">
+                <step><p><a href="https://www.figma.com/design/w8GWsQsHF3XdjdcN1E3X3n/Int-UI-Kit?node-id=8151-76094&amp;t=S6z3MDdUdRxDSUuj-4">Get
+                    the Int UI kit</a> and enable it in Figma.</p>
+                </step>
+                <step>
+                    Open the <a
+                        href="https://www.figma.com/design/PTDx2xYquL3GKommsG7cHn/Images?node-id=38-1284&amp;t=MdzqZgCYyGwdej3L-1">Images
+                    Figma file</a> and copy the
+                    <control>Image background</control>
+                    and
+                    <control>Callout</control>
+                    components to your Figma file.
+                </step>
+                <step>Create an image by adding Int UI components to the image background. Create the
+                    same image for the Dark theme.
+                </step>
+                <step>Export all images into the corresponding folder of the documentation project (../images/ui/&lt;component
+                    name&gt;) in PNG format and x2 scale. For images in Dark theme, add the <code>_dark</code> postfix
+                    to the filename.
+                </step>
+            </procedure>
+            <chapter title="Background" id="background">
+                <p>Use a gray rounded background for all images. Find details in the <a
+                        href="https://www.figma.com/design/PTDx2xYquL3GKommsG7cHn/Images?node-id=38-1284&amp;t=MdzqZgCYyGwdej3L-1">Figma
+                    file</a>.</p>
+            </chapter>
+        <chapter title="Width" id="width">
+            <p>All images must be either 706 px or 378 px wide.</p>
+            <chapter title="706 px" id="706-px">
+                <p>Use 706 px width for images with wide content or for single images that are surrounded by text:</p>
+                <img src="button_example.png" alt="Cancel and Save buttons" width="706"/>
+                <p>If an image description appears above the image, end it with a colon.</p>
+            </chapter>
+            <chapter title="378 px" id="378-px">
+                <p>Use 378 px width for images in borderless tables. Use the <code>border="false"</code> attribute for
+                    creating borderless tables.</p>
+                <p>Put images into borderless tables when listing a set of smaller images with descriptions on the right
+                    or when adding correct/incorrect/acceptable examples.</p>
+                <p>Sets of smaller images:</p>
+                <table style="none" border="false">
+                    <tr>
+                        <td width="378"><img src="split_button.png" alt="Using split buttons instead of buttons"
+                                             width="378"/></td>
+                        <td>Use a <a href="split_button.md">split button</a> instead if there are more than two related
+                            actions.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="378">
+                            <img src="built-in_button.png" alt="Using built-in buttons instead of buttons" width="378"/>
+                        </td>
+                        <td>Use a built-in button instead if it's related to an input field, combo box,
+                            search field.
+                        </td>
+                    </tr>
+                </table>
+                <p>Correct/incorrect/acceptable examples:</p>
+                <table style="none" border="false">
+                    <tr>
+                        <td>
+                            <p>
+                                <format color="369650" style="bold">Correct</format>
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                <format color="E55765" style="bold">Incorrect</format>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="default_button_save.png" alt="A correct button with a clear 'Save' label"
+                                 width="378"/></td>
+                        <td><img src="default_OK.png" alt="An incorrect button with a generic 'OK' label" width="378"/>
+                        </td>
+                    </tr>
+                </table>
+                <table style="none" border="false">
+                    <tr>
+                        <td>
+                            <p>
+                                <format color="369650" style="bold">Correct</format>
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                <format color="DarkOrange" style="bold">Acceptable</format>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="active_edit_action.png"
+                                 alt="A button with the 'Edit Action Icon...' label"
+                                 width="378"/></td>
+                        <td><img src="active_edit.png" alt="A button with 'Edit' label" width="378"/></td>
+                    </tr>
+                </table>
+            </chapter>
+        </chapter>
+        <chapter title="Callouts" id="callouts">
+            <p>Add callouts to describe the <a anchor="anatomy">anatomy</a> of complex components.</p>
+            <p>All texts on images should be horizontally oriented. Refer to the <a
+                    href="https://www.figma.com/design/PTDx2xYquL3GKommsG7cHn/Images?node-id=38-1284&amp;t=MdzqZgCYyGwdej3L-1)">Figma
+                file</a> for details.
+            </p>
+            <img src="Callouts.png" alt="Callouts example" width="706"/>
+        </chapter>
+    </chapter>
+    <chapter title="Text" id="text">
+        <p>The guidelines should be short, clear, and consistent. Find the common rules below.</p>
+        <chapter title="Grammar" id="grammar">
+            <table style="none">
+                <tr>
+                    <td width="50%"> Prefer present tense.</td>
+                    <td> A progress bar
+                        <format color="369650">informs</format>
+                        a user about the progress of a lengthy operation.
+                    </td>
+                </tr>
+                <tr>
+                    <td> Prefer the active voice.</td>
+                    <td> Progress bar
+                        <format color="E55765">is shown</format>
+                        .<br/> Progress bar <format color="369650">appears</format>.
+                    </td>
+                </tr>
+                <tr>
+                    <td> Avoid unnecessary modal verbs.</td>
+                    <td> Label
+                        <format color="E55765">should use</format>
+                        sentence-style capitalization.<br/>
+                        <format color="369650">Use</format>
+                        sentence capitalization in labels.
+                    </td>
+                </tr>
+                <tr>
+                    <td> Use imperatives.</td>
+                    <td>
+                        <format color="E55765">The cursor changes</format>
+                        to the pointing hand.<br/>
+                        <format color="369650">Change the cursor</format>
+                        to the pointing hand.
+                    </td>
+                </tr>
+                <!--
+                <tr>
+                    <td> Do not address the reader. </td>
+                    <td style="font-style:italic"> Use combobox if..., Follow guidelines... </td>
+                </tr>
+                -->
+                <tr>
+                    <td> When describing user behavior, write 'a user + verb'.</td>
+                    <td> A
+                        <format color="369650">user looks</format>
+                        forward to what will appear after completion.
+                    </td>
+                </tr>
+                <tr>
+                    <td> Avoid bracketed text. If information is important, put it out of the brackets or add a new
+                        sentence. Otherwise, remove it.
+                    </td>
+                    <td>Provide a header
+                        <format color="E55765">(bold)</format>
+                        for each progress. <br/> Provide a
+                        <format color="369650">bold</format>
+                        header for each progress.
+                    </td>
+                </tr>
+            </table>
+        </chapter>
+        <chapter title="Content" id="content">
+            <list>
+                <li>
+                    <p>Omit common introductory phrases.</p>
+                </li>
+                <li>
+                    <p>Write one idea per sentence.</p>
+                </li>
+                <li>
+                    <p>Split the text to subsections and short paragraphs.</p>
+                </li>
+                <li>
+                    <p>Use bulleted lists when the order of points does not matter, and numbered list when it does.</p>
+                </li>
+                <li>
+                    <p>When giving a recommendation, explain why it is useful:</p>
+                </li>
+            </list>
+            <table>
+                <tr>
+                    <td width="50%">
+                        <format color="E55765" style="bold">Incorrect</format>
+                    </td>
+                    <td>
+                        <format color="369650" style="bold">Correct</format>
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>If a process is started by a user, provide a notification when the process finishes.</p></td>
+                    <td>
+                        <p>If a process is started by a user, provide a notification.
+                            <format color="369650">This way the user will know they can return and see the results.
+                            </format>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+            <list>
+                <li>Add descriptive links to other sections or websites:</li>
+            </list>
+            <table>
+                <tr>
+                    <td width="50%">
+                        <format color="E55765" style="bold">Incorrect</format>
+                    </td>
+                    <td>
+                        <format color="369650" style="bold">Correct</format>
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Find more details <a anchor="useful-links">here</a>.</p>
+                    </td>
+                    <td><p>Find more details in the <a anchor="useful-links"/></p>
+                        section.
+                    </td>
+                </tr>
+            </table>
+            <chapter title="Tips and notes" id="tips-and-notes">
+                <p>Use tips <code>&lt;tip&gt;&lt;/tip&gt;</code> to add links to additional materials, sources, useful
+                    facts, and examples:</p>
+                <tip>Find more examples in <a href="https://www.jetbrains.com/help/writerside/admonitions.html#tip">Writerside
+                    documentation</a>.
+                </tip>
+                <p>Use notes <code>&lt;note&gt;&lt;/note&gt;</code> to highlight important information like
+                        exceptions, limitations, or known issues:
+                </p>
+                <note>Do not apply this rule to the
+                    <control>New Project</control>
+                    wizard.
+                </note>
+            </chapter>
+            <chapter title="Correct/incorrect/acceptable labels" id="correctincorrectacceptable-labels">
+                <p>Use the following labels in tables and paragraphs:</p>
+                <table style="none" border="false">
+                    <tr>
+                        <td>
+                            <p>
+                                <format color="E55765" style="bold">Incorrect</format>
+                            </p>
+                        </td>
+                        <td>
+                            <code-block><![CDATA[<format color="E55765" style="bold">Incorrect</format>]]></code-block>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <format color="369650" style="bold">Correct</format>
+                        </td>
+                        <td>
+                            <code-block><![CDATA[<format color="369650" style="bold">Correct</format>]]></code-block>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <format color="DarkOrange" style="bold">Acceptable</format>
+                        </td>
+                        <td>
+                            <code-block>
+                                <![CDATA[<format color="DarkOrange" style="bold">Acceptable</format>]]></code-block>
+                        </td>
+                    </tr>
+                </table>
+            </chapter>
+        </chapter>
+        <chapter title="Word-level recommendations" id="word-level-recommendations">
+            <table>
+                <tr>
+                    <td>
+                        <format color="E55765" style="bold">Incorrect</format>
+                    </td>
+                    <td>
+                        <format color="369650" style="bold">Correct</format>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Avoid using <code>would</code>.</td>
+                    <td> Displaying indicator
+                        <format color="E55765">would be</format>
+                        distracting.<br/>Displaying indicator
+                        <format color="369650">is</format>
+                        distracting.
+                    </td>
+                </tr>
+                <tr>
+                    <td> Omit <code>then</code> if possible.</td>
+                    <td> If a process is started by the user,
+                        <format color="E55765">then</format>
+                        provide notification.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Replace <code>he</code> or <code>she</code> with <code>they</code>.</td>
+                    <td>If a process lasts less than one second, the user won’t be able to read the process name and
+                        showing it would distract
+                        <format color="369650">them</format>
+                        .
+                    </td>
+                </tr>
+                <tr>
+                    <td>Format names of UI elements with <code>&lt;control&gt;&lt;/control&gt;</code>.</td>
+                    <td>Apply the same rule for the
+                        <control>OK</control>
+                        and
+                        <control>Cancel</control>
+                        buttons.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Format quotes with <code>&lt;code&gt;&lt;/code&gt;</code>.</td>
+                    <td>Do not use <code>now</code> in button labels.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <list>
+                            <li>Format shortcuts with <code>&lt;shortcut&gt;&lt;/shortcut&gt;</code>.</li>
+                            <li>Use a title case for key names and the + sign to connect several keys.</li>
+                            <li>If the shortcuts are different on Windows/Linux and macOS, list all possible variants.
+                            </li>
+                        </list>
+                    </td>
+                    <td>Press
+                        <shortcut>Cdm+Space</shortcut>
+                        on macOS or
+                        <shortcut>Ctrl+Space</shortcut>
+                        on Windows/Linux.
+                    </td>
+                </tr>
+            </table>
+        </chapter>
+    </chapter>
+    <chapter title="Code snippets" id="code-snippets">
+        <p>Provide code snippets along the article to help developers implement the described look and behavior.</p>
+        <p>If a code snippet is too big, put it at the end of the article and provide a link.</p>
+        <p>To insert a snippet, use <code>&lt;code-block&gt;&lt;/code-block&gt;</code>. Read more in <a
+                href="https://www.jetbrains.com/help/writerside/code.html">Writerside documentation</a>.</p>
+    </chapter>
+
+</topic>

@@ -535,7 +535,7 @@ Ideally, they should only clear some caches.
 
 It is also possible to schedule background processing of events.
 In such cases, be prepared that some new events might be delivered before the background processing starts – and thus the world might have changed by that moment or even in the middle of background processing.
-Consider using [`MergingUpdateQueue`](%gh-ic%/platform/ide-core/src/com/intellij/util/ui/update/MergingUpdateQueue.java) and [NBRA](#cancellable-read-actions-api) to mitigate these issues.
+Consider using [`MergingUpdateQueue`](%gh-ic%/platform/ide-core/src/com/intellij/util/ui/update/MergingUpdateQueue.kt) and [NBRA](#cancellable-read-actions-api) to mitigate these issues.
 
 ### VFS Events
 

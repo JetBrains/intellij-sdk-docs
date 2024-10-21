@@ -110,6 +110,8 @@ In the `YYYY.R` versioning scheme, the `R` part starts at 1.
 
 <include from="snippets.md" element-id="gradlePluginVersion"/>
 
+_Early Access Program_ (EAP) releases of upcoming versions are available [here](https://eap.jetbrains.com).
+
 | Branch number                                                   | IntelliJ Platform version               |
 |-----------------------------------------------------------------|-----------------------------------------|
 | [243](https://github.com/JetBrains/intellij-community/tree/243) | 2024.3                                  |

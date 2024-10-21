@@ -34,7 +34,6 @@ jobs:
           - editor_basics
           - facet_basics
           - framework_basics
-          - kotlin_demo
           - live_templates
           - max_opened_projects
           - module

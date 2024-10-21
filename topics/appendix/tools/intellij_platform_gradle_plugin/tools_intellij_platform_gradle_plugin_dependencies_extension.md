@@ -193,7 +193,6 @@ dependencies {
 The listing of all present installers can be resolved with updates XML files for [JetBrains IDEs](https://www.jetbrains.com/updates/updates.xml) and [Android Studio](https://jb.gg/android-studio-releases-list.xml) as well as by executing the [`printProductsReleases`](tools_intellij_platform_gradle_plugin_tasks.md#printProductsReleases) task.
 
 IntelliJ Platform installers are OS-specific and contain bundled [](tools_intellij_platform_gradle_plugin_jetbrains_runtime.md), but are limited to public releases only.
-Installers are always used when running the [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) task to perform the binary compatibility checks.
 
 To apply required repositories, use [](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories) or explicit [](tools_intellij_platform_gradle_plugin_repositories_extension.md#intellij-platform-installers) helpers.
 

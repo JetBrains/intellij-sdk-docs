@@ -416,7 +416,8 @@ Two steps are required to register an action from code:
 * Second, the action needs to be added to one or more groups.
   To get an instance of an action group by ID, it is necessary to call `ActionManager.getAction()` and cast the returned value to [`DefaultActionGroup`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java).
 
-## Building UI from Actions
+## Building a Toolbar/Popup Menu from Actions
+{id="buildingToolbarPopupMenu"}
 
 If a plugin needs to include a toolbar or popup menu built from a group of actions in its user interface, that is achieved through [`ActionPopupMenu`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionPopupMenu.java) and [`ActionToolbar`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionToolbar.java).
 These objects can be created through calls to the `ActionManager.createActionPopupMenu()` and `createActionToolbar()` methods.

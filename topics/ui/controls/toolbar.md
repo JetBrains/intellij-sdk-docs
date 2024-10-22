@@ -4,6 +4,13 @@
 
 <link-summary>UI guidelines on using toolbars.</link-summary>
 
+
+<tldr>
+
+**Implementation:** [](basic_action_system.md#buildingToolbarPopupMenu)
+
+</tldr>
+
 A toolbar provides quick access to frequently used actions and filters. It appears in dialogs, pop-ups, tool windows, lists, trees, and tables.
 
 ![](toolbar_example.png){width=428}

@@ -63,7 +63,6 @@ To determine the current [Theme](themes_getting_started.md)'s style, use [`JBCol
 
 ## Borders and Insets
 
-
 <tldr>
 
 **UI Guidelines:** [](layout.md)
@@ -76,5 +75,9 @@ can result in UI layout problems.
 
 If you use DPI-aware insets in an empty border (`JBUI.Borders.empty()`), then the insets will be updated automatically, for example, if scaling is changed because the <ui-path>IDE Zoom</ui-path> action was performed or for any other reason.
 If you use the insets elsewhere, you need to manually call `JBInsets.update()` in your component's `updateUI()` method to update the insets accordingly.
+
+## Manipulating Icons
+
+Use [`IconUtil`](%gh-ic%/platform/core-ui/src/util/IconUtil.kt) to scale/colorize/darken/desaturate existing [icons](icons.md) as needed.
 
 <include from="snippets.md" element-id="missingContent"/>

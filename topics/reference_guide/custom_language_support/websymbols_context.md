@@ -231,6 +231,7 @@ It is important that the results are stable, because any unexpected change in th
 rescanning of the project, dropping of all caches and restarting code analysis.
 
 ## `.ws-context` File
+<primary-label ref="2024.1"/>
 
 > The `.ws-context` file support is available since 2024.1.2.
 

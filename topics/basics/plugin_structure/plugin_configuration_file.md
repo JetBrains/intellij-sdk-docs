@@ -570,10 +570,10 @@ Attributes
     - `windows`
 - `activeInTestMode` _(optional)_<br/>
   Boolean flag defining whether the listener should be instantiated in test mode.<br/>
-  Default value: ``true``.
+  Default value: `true`.
 - `activeInHeadlessMode` _(optional)_<br/>
   Boolean flag defining whether the listener should be instantiated in headless mode.<br/>
-  Default value: ``true``.
+  Default value: `true`.
 
 Example
 :
@@ -1007,7 +1007,7 @@ Attributes
 - `searchable` _(optional; supported since 2020.3)_<br/>
   Boolean flag defining whether the group is displayed in <ui-path>Help&nbsp;|&nbsp;Find Action...</ui-path> 
   or <ui-path>Navigate | Search Everywhere</ui-path> popups.<br/>
-  Default value: ``true``.
+  Default value: `true`.
 
 Children
 :
@@ -1251,7 +1251,7 @@ Attributes
   Boolean value defining whether the extension point meets the requirements to be
   [dynamic](plugin_extension_points.md#dynamic-extension-points),
   which is a prerequisite for [dynamic plugins](dynamic_plugins.md).<br/>
-  Default value: ``false``.
+  Default value: `false`.
 - `area` _(optional)_<br/>
   The scope in which the [extension](plugin_extensions.md) is
   instantiated.

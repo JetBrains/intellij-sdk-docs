@@ -255,7 +255,7 @@ fun StringBuilder.appendAttribute(attribute: Attribute) {
   attribute.description?.trim()?.let { append(it.indentLines(level = 1)) }
   attribute.defaultValue?.trim()?.let {
     appendLine("<br/>")
-    append("Default value: `$it`.".indentLines(level = 1))
+    append("Default value: $it.".indentLines(level = 1))
   }
   appendLine()
 }

@@ -619,9 +619,9 @@ Attributes
   instantiated.
   It is not recommended to use non-default values.
   Allowed values:
-  - `IDEA_APPLICATION` _(default)_
-  - `IDEA_PROJECT`
-  - `IDEA_MODULE` (**deprecated**)
+    - `IDEA_APPLICATION` _(default)_
+    - `IDEA_PROJECT`
+    - `IDEA_MODULE` (**deprecated**)
 
 Children
 :

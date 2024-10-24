@@ -11,12 +11,12 @@
 [WebStorm](https://www.jetbrains.com/webstorm/) is an IntelliJ Platform-based product.
 Plugin projects for WebStorm can be developed using [IntelliJ IDEA](idea.md).
 
+> WebStorm is free for non-commercial use
+
 > Follow [Building a Plugin for WebStorm – Tutorial for JavaScript Developers](learning_resources.md#articles) blog post series to get started
 > and [How To Build a Plugin for JetBrains IDEs (Analog.js Example)](learning_resources.md#webinars) webinar.
 >
 {style="note"}
-
-<include from="snippets.md" element-id="jetbrainsProductOpenSourceLicense"/>
 
 ## WebStorm Plugin Setup
 

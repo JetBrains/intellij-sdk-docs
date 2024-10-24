@@ -12,7 +12,7 @@ Rider plugins are generally used to expose the functionality of a [ReSharper](ht
 [Rider](https://www.jetbrains.com/rider/) uses the IntelliJ Platform somewhat [differently](intellij_platform.md#rider) than other Platform-based based IDEs.
 Rider uses the IntelliJ Platform to provide the user interface for a C# and .NET IDE but uses ReSharper to provide the language-specific features.
 
-<include from="snippets.md" element-id="jetbrainsProductOpenSourceLicense"/>
+> Rider is free for non-commercial use
 
 ## IntelliJ IDEA Configuration for Rider Plugin Development
 

@@ -1285,11 +1285,11 @@ Attributes
 - `os` _(optional; supported since 2020.1)_<br/>
   Restricts listener instantiation to a specific operating system.
   Allowed values:
-  - `freebsd`
-  - `mac`
-  - `linux`
-  - `unix`
-  - `windows`
+    - `freebsd`
+    - `mac`
+    - `linux`
+    - `unix`
+    - `windows`
 - `activeInTestMode` _(optional)_<br/>
   Boolean flag defining whether the listener should be instantiated in test mode.<br/>
   Default value: `true`.

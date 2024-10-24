@@ -16,6 +16,9 @@ import org.simpleframework.xml.Root
 import org.simpleframework.xml.core.Persister
 import java.io.File
 import java.net.URL
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import java.util.*
 
 val RELEASES_LIST = "https://jb.gg/android-studio-releases-list.xml"
 val RELEASES_FILE_PATH_MD = "topics/_generated/android_studio_releases.md"
@@ -29,8 +32,8 @@ val CHANNEL_BADGES_LIST = """
 """
 
 val content = URL(RELEASES_LIST).readText()
-        .run { Persister().read(Content::class.java, this) }
-        ?: throw RuntimeException("Failed to parse releases list")
+  .run { Persister().read(Content::class.java, this) }
+  ?: throw RuntimeException("Failed to parse releases list")
 
 val xml = """
 
@@ -49,16 +52,22 @@ $CHANNEL_BADGES_LIST
 """.split("\n").joinToString("\n", transform = String::trim).let(file(RELEASES_FILE_PATH_MD)::writeText)
 
 fun List<Item>.renderTable() = """
-  | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
-  |--------------|:-------:|--------------|---------|-----------------------|
+  | Release Name | Channel | Version | IntelliJ IDEA Version | Release Date |
+  |--------------|---------|---------|-----------------------|--------------|
 """ + sortedByDescending { it.version.toLooseVersion() }.joinToString("\n") {
-  val name = it.name.removePrefix("Android Studio").trim().replace("|", "&#124;")
+  val names = it.name.removePrefix("Android Studio").trim().split("|")
   val channel = it.channel.run { "![$this][${this.lowercase()}]" }
-  val date = it.date
+  val localDate = LocalDate.parse(it.date, DateTimeFormatter.ofPattern("MMMM d, yyyy", Locale.US))
+  val date = DateTimeFormatter.ofPattern("MMM d, yyyy", Locale.US).format(localDate).replace(" ", "&nbsp;")
   val version = "**${it.version}**<p>${it.build.replaceFirst("AI-", "AI&#8209;")}</p>"
   val platform = "**${it.platformVersion}**<p>${it.platformBuild}</p>"
 
-  "| $name | $channel | $date | $version | $platform |"
+  val tableName: String = when {
+    names.size == 2 -> "<p><b>${names[0]}</b></p><p>${names[1]}</p>"
+    else -> "<b>${names[0]}</b>"
+  }
+
+  "| $tableName | $channel | $version | $platform | $date |"
 }
 
 fun String.toLooseVersion() = split('.').map { it.take(4).toInt() }.let {
@@ -70,46 +79,46 @@ fun file(path: String) = File(System.getenv("GITHUB_WORKSPACE") ?: "../../").res
 
 @Root(strict = false, name = "content")
 data class Content(
-        @field:Attribute
-        var version: Int = 1,
+  @field:Attribute
+  var version: Int = 1,
 
-        @field:ElementList(inline = true, entry = "item")
-        var items: List<Item> = mutableListOf(),
+  @field:ElementList(inline = true, entry = "item")
+  var items: List<Item> = mutableListOf(),
 )
 
 data class Item(
-        @field:Element
-        var name: String = "",
+  @field:Element
+  var name: String = "",
 
-        @field:Element
-        var build: String = "",
+  @field:Element
+  var build: String = "",
 
-        @field:Element
-        var version: String = "",
+  @field:Element
+  var version: String = "",
 
-        @field:Element
-        var channel: String = "",
+  @field:Element
+  var channel: String = "",
 
-        @field:Element
-        var platformBuild: String? = null,
+  @field:Element
+  var platformBuild: String? = null,
 
-        @field:Element
-        var platformVersion: String? = null,
+  @field:Element
+  var platformVersion: String? = null,
 
-        @field:Element
-        var date: String = "",
+  @field:Element
+  var date: String = "",
 
-        @field:ElementList(inline = true, entry = "download")
-        var downloads: List<Download> = mutableListOf(),
+  @field:ElementList(inline = true, entry = "download")
+  var downloads: List<Download> = mutableListOf(),
 )
 
 data class Download(
-        @field:Element
-        var link: String = "",
+  @field:Element
+  var link: String = "",
 
-        @field:Element
-        var size: String = "",
+  @field:Element
+  var size: String = "",
 
-        @field:Element
-        var checksum: String = "",
+  @field:Element
+  var checksum: String = "",
 )

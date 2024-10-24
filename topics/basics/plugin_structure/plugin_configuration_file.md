@@ -55,10 +55,6 @@ Deprecated elements are omitted in the list below.
   - [`<depends>`](#idea-plugin__depends)
   - [`<incompatible-with>`](#idea-plugin__incompatible-with)
   - [`<resource-bundle>`](#idea-plugin__resource-bundle)
-  - [`<applicationListeners>`](#idea-plugin__applicationListeners)
-    - [`<listener>`](#idea-plugin__applicationListeners__listener)
-  - [`<projectListeners>`](#idea-plugin__projectListeners)
-    - [`<listener>`](#idea-plugin__applicationListeners__listener)
   - [`<actions>`](#idea-plugin__actions)
     - [`<action>`](#idea-plugin__actions__action)
       - [`<add-to-group>`](#idea-plugin__actions__action__add-to-group)
@@ -87,6 +83,10 @@ Deprecated elements are omitted in the list below.
   - [`<extensionPoints>`](#idea-plugin__extensionPoints)
     - [`<extensionPoint>`](#idea-plugin__extensionPoints__extensionPoint)
       - [`<with>`](#idea-plugin__extensionPoints__extensionPoint__with)
+  - [`<applicationListeners>`](#idea-plugin__applicationListeners)
+    - [`<listener>`](#idea-plugin__applicationListeners__listener)
+  - [`<projectListeners>`](#idea-plugin__projectListeners)
+    - [`<listener>`](#idea-plugin__applicationListeners__listener)
 
 ## `idea-plugin`
 {#idea-plugin}
@@ -520,93 +520,6 @@ Example
     <resource-bundle>messages.Bundle</resource-bundle>
     ```
 
-### `applicationListeners`
-{#idea-plugin__applicationListeners}
-
-<tldr>
-
-**Reference:** [Defining Application-Level Listeners](plugin_listeners.md#defining-application-level-listeners)
-
-</tldr>
-
-Defines the application-level listeners.
-
-{style="narrow"}
-Required
-: no
-
-Children
-:
-  - [`<listener>`](#idea-plugin__applicationListeners__listener)
-
-#### `listener`
-{#idea-plugin__applicationListeners__listener}
-
-<tldr>
-
-**Reference:** [Listeners](plugin_listeners.md)
-
-</tldr>
-
-Defines a single application or project-level listener.
-A single [`<applicationListeners>`](#idea-plugin__applicationListeners) or
-[`<projectListeners>`](#idea-plugin__projectListeners) can contain multiple `<listener>` elements.
-
-{style="narrow"}
-Required
-: no
-
-
-Attributes
-:
-- `topic` _(**required**)_<br/>
-  The fully qualified name of the listener interface corresponding to the type of received events.
-- `class` _(**required**)_<br/>
-  The fully qualified name of the class implementing the listener interface that receives and handles the events.
-- `os` _(optional; supported since 2020.1)_<br/>
-  Restricts listener instantiation to a specific operating system.
-  Allowed values:
-    - `freebsd`
-    - `mac`
-    - `linux`
-    - `unix`
-    - `windows`
-- `activeInTestMode` _(optional)_<br/>
-  Boolean flag defining whether the listener should be instantiated in test mode.<br/>
-  Default value: `true`.
-- `activeInHeadlessMode` _(optional)_<br/>
-  Boolean flag defining whether the listener should be instantiated in headless mode.<br/>
-  Default value: `true`.
-
-Example
-:
-  ```xml
-  <listener
-      topic="com.intellij.ide.AppLifecycleListener"
-      class="com.example.MyListener"
-      os="mac"
-      activeInTestMode="false"/>
-  ```
-
-### `projectListeners`
-{#idea-plugin__projectListeners}
-
-<tldr>
-
-**Reference:** [Defining Project-Level Listeners](plugin_listeners.md#defining-project-level-listeners)
-
-</tldr>
-
-Defines the project-level listeners.
-
-{style="narrow"}
-Required
-: no
-
-Children
-:
-  - [`<listener>`](#idea-plugin__applicationListeners__listener)
-
 ### `actions`
 {#idea-plugin__actions}
 
@@ -823,7 +736,7 @@ Attributes
 :
 - `keymap` _(**required**)_<br/>
   Specifies the keymap for which the action shortcut is active.
-  IDs of the standard keymaps are defined as constants in the
+  IDs of the standard keymaps are defined as constants in the 
   [KeymapManager](%gh-ic%/platform/platform-api/src/com/intellij/openapi/keymap/KeymapManager.java)
   class.
 - `keystroke` _(**required**)_<br/>
@@ -835,7 +748,7 @@ Attributes
 - `remove` _(optional)_<br/>
   Removes a shortcut from the specified action.
 - `replace-all` _(optional)_<br/>
-  Removes all keyboard and mouse shortcuts from the specified action before adding
+  Removes all keyboard and mouse shortcuts from the specified action before adding 
   the specified shortcut.
 
 Examples
@@ -871,7 +784,7 @@ Defines an alternate version of the text for the menu action or group.
 
 {style="narrow"}
 Supported
-:
+: 
 2020.1+ for actions<br/>
 2020.3+ for groups
 
@@ -937,7 +850,7 @@ Example
 ##### `abbreviation`
 {#idea-plugin__actions__action__abbreviation}
 
-Defines an abbreviation for searching the action in <ui-path>Help | Find Action...</ui-path> or
+Defines an abbreviation for searching the action in <ui-path>Help | Find Action...</ui-path> or 
 <ui-path>Navigate | Search Everywhere</ui-path> popups.
 A single action can have multiple abbreviations.
 
@@ -987,7 +900,7 @@ Attributes
   If not specified,
   [`DefaultActionGroup`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
   is used.
-- `text` _(**required** if the `popup` is `true` and the group is not
+- `text` _(**required** if the `popup` is `true` and the group is not 
 [localized](basic_action_system.md#localizing-actions-and-groups))_<br/>
   The default long-version text to be displayed for the group (text for the menu item showing the submenu).
 - `description` _(optional)_<br/>
@@ -1008,7 +921,7 @@ Attributes
 - `use-shortcut-of` _(optional)_<br/>
   The ID of the action whose keyboard shortcut this group will use.
 - `searchable` _(optional; supported since 2020.3)_<br/>
-  Boolean flag defining whether the group is displayed in <ui-path>Help&nbsp;|&nbsp;Find Action...</ui-path>
+  Boolean flag defining whether the group is displayed in <ui-path>Help&nbsp;|&nbsp;Find Action...</ui-path> 
   or <ui-path>Navigate | Search Everywhere</ui-path> popups.<br/>
   Default value: `true`.
 
@@ -1032,8 +945,8 @@ Examples
       <!-- group children elements -->
     </group>
     ```
-- A popup group without the `text` attribute must use the texts from the resource bundle declared with
-the [`<resource-bundle>`](#idea-plugin__resource-bundle) element, or the `resource-bundle` attribute of
+- A popup group without the `text` attribute must use the texts from the resource bundle declared with 
+the [`<resource-bundle>`](#idea-plugin__resource-bundle) element, or the `resource-bundle` attribute of 
 the [`<actions>`](#idea-plugin__actions) element:
     ```xml
     <group
@@ -1090,8 +1003,8 @@ Examples
 {#idea-plugin__actions__group__separator}
 
 Defines a separator between actions in a group.
-The element can be used directly under the [`<actions>`](#idea-plugin__actions) element with the child
-[`<add-to-group>`](#idea-plugin__actions__action__add-to-group) element defining the target group, or in the
+The element can be used directly under the [`<actions>`](#idea-plugin__actions) element with the child 
+[`<add-to-group>`](#idea-plugin__actions__action__add-to-group) element defining the target group, or in the 
 [`<group>`](#idea-plugin__actions__group) element.
 
 {style="narrow"}
@@ -1243,7 +1156,7 @@ Attributes
 - `interface` _(`interface` or `beanClass` is **required**)_<br/>
   The fully qualified name of the interface to be implemented for extending plugin's functionality.
   Only one of the `interface` and `beanClass` attributes can be specified.
-  See [Extension Points](plugin_extension_points.md) for more
+  See [Extension Points](plugin_extension_points.md) for more 
   information.
 - `beanClass` _(`interface` or `beanClass` is **required**)_<br/>
   The fully qualified name of the extension point bean class providing additional information to the plugin.
@@ -1298,7 +1211,7 @@ Example
   An extension point which restricts the type provided in a `myClass` attribute to be an instance
   of `com.example.ParentType`, and the type provided in a `someClass` element to be an instance
   of `java.lang.Comparable`:
-
+  
   ```xml
   <extensionPoint
       name="myExtension"
@@ -1311,20 +1224,107 @@ Example
         implements="java.lang.Comparable"/>
   </extensionPoint>
   ```
-
+  
   When using the above extension point, an implementation could be registered as follows:
-
+  
   ```xml
   <myExtension ...
       myClass="com.example.MyCustomType">
     <someClass>com.example.MyComparable</someClass>
   </myExtension>
   ```
-
+  
   where:
-
+  
   - `com.example.MyCustomType` must be a subtype of `com.example.ParentType`
   - `com.example.MyComparable` must be a subtype of `java.lang.Comparable`
+
+### `applicationListeners`
+{#idea-plugin__applicationListeners}
+
+<tldr>
+
+**Reference:** [Defining Application-Level Listeners](plugin_listeners.md#defining-application-level-listeners)
+
+</tldr>
+
+Defines the application-level listeners.
+
+{style="narrow"}
+Required
+: no
+
+Children
+:
+  - [`<listener>`](#idea-plugin__applicationListeners__listener)
+
+#### `listener`
+{#idea-plugin__applicationListeners__listener}
+
+<tldr>
+
+**Reference:** [Listeners](plugin_listeners.md)
+
+</tldr>
+
+Defines a single application or project-level listener.
+A single [`<applicationListeners>`](#idea-plugin__applicationListeners) or
+[`<projectListeners>`](#idea-plugin__projectListeners) can contain multiple `<listener>` elements.
+
+{style="narrow"}
+Required
+: no
+
+
+Attributes
+:
+- `topic` _(**required**)_<br/>
+  The fully qualified name of the listener interface corresponding to the type of received events.
+- `class` _(**required**)_<br/>
+  The fully qualified name of the class implementing the listener interface that receives and handles the events.
+- `os` _(optional; supported since 2020.1)_<br/>
+  Restricts listener instantiation to a specific operating system.
+  Allowed values:
+  - `freebsd`
+  - `mac`
+  - `linux`
+  - `unix`
+  - `windows`
+- `activeInTestMode` _(optional)_<br/>
+  Boolean flag defining whether the listener should be instantiated in test mode.<br/>
+  Default value: `true`.
+- `activeInHeadlessMode` _(optional)_<br/>
+  Boolean flag defining whether the listener should be instantiated in headless mode.<br/>
+  Default value: `true`.
+
+Example
+:
+  ```xml
+  <listener
+      topic="com.intellij.ide.AppLifecycleListener"
+      class="com.example.MyListener"
+      os="mac"
+      activeInTestMode="false"/>
+  ```
+
+### `projectListeners`
+{#idea-plugin__projectListeners}
+
+<tldr>
+
+**Reference:** [Defining Project-Level Listeners](plugin_listeners.md#defining-project-level-listeners)
+
+</tldr>
+
+Defines the project-level listeners.
+
+{style="narrow"}
+Required
+: no
+
+Children
+:
+  - [`<listener>`](#idea-plugin__applicationListeners__listener)
 
 ### `application-components`
 {#idea-plugin__application-components collapsible="true" initial-collapse-state="collapsed"}
@@ -1341,7 +1341,7 @@ Defines a list of application [components](plugin_components.md).
 
 {style="narrow"}
 Deprecated
-:
+: 
 since 2020.1
 
 {style="narrow"}
@@ -1368,7 +1368,7 @@ element can contain multiple `<component>` elements.
 
 {style="narrow"}
 Deprecated
-:
+: 
 since 2020.1
 
 {style="narrow"}
@@ -1395,7 +1395,7 @@ The fully qualified name of the component implementation class.
 
 {style="narrow"}
 Deprecated
-:
+: 
 since 2020.1
 
 {style="narrow"}
@@ -1415,7 +1415,7 @@ defined by [`<implementation-class>`](#idea-plugin__application-components__comp
 
 {style="narrow"}
 Deprecated
-:
+: 
 since 2020.1
 
 {style="narrow"}
@@ -1434,7 +1434,7 @@ The fully qualified name of the component implementation class to be used when t
 
 {style="narrow"}
 Deprecated
-:
+: 
 since 2020.1
 
 {style="narrow"}
@@ -1454,7 +1454,7 @@ A single [`<component>`](#idea-plugin__application-components__component) elemen
 
 {style="narrow"}
 Deprecated
-:
+: 
 since 2020.1
 
 {style="narrow"}
@@ -1482,7 +1482,7 @@ If present, the component is instantiated also for the default project. It takes
 
 {style="narrow"}
 Deprecated
-:
+: 
 since 2020.1
 
 {style="narrow"}
@@ -1504,7 +1504,7 @@ Defines a list of project [components](plugin_components.md).
 
 {style="narrow"}
 Deprecated
-:
+: 
 since 2020.1
 
 {style="narrow"}
@@ -1530,7 +1530,7 @@ Defines a list of module [components](plugin_components.md).
 
 {style="narrow"}
 Deprecated
-:
+: 
 since 2020.1
 
 {style="narrow"}

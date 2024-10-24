@@ -222,7 +222,7 @@ An example of using `<override-text>` is demonstrated in the [Creating Actions](
 _2020.3_
 Users can locate actions via their name by invoking <ui-path>Help | Find Action</ui-path>.
 
-To allow using alternative names in search, add one or more [`<synonym>`](plugin_configuration_file.md#idea-plugin__actions__action__synonym) elements inside [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) or [`<reference>`](plugin_configuration_file.md#idea-plugin__actions__reference):
+To allow using alternative names in search, add one or more [`<synonym>`](plugin_configuration_file.md#idea-plugin__actions__action__synonym) elements inside [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) or [`<reference>`](plugin_configuration_file.md#idea-plugin__actions__group__reference):
 
 ```xml
 <action id="MyAction" text="My Action Name" class="...">

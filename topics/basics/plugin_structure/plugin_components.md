@@ -39,7 +39,7 @@ To subscribe to events, use a [listener](plugin_listeners.md) or create an [exte
 {style="warning"}
 
 Plugin code should only be executed when projects are opened (see [Project Open](#project-open)) or when the user invokes an action of a plugin.
-If this can't be avoided, add a [listener](plugin_listeners.md) subscribing to the [`AppLifecycleListener`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/AppLifecycleListener.java) topic.
+If this can't be avoided, add a [listener](plugin_listeners.md) subscribing to the [`AppLifecycleListener`](%gh-ic%/platform/ide-core/src/com/intellij/ide/AppLifecycleListener.java) topic.
 See also [Running Tasks Once](ide_infrastructure.md#running-tasks-once).
 
 ### Project Open

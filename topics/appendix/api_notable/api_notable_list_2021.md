@@ -1,6 +1,6 @@
 # Notable Changes in IntelliJ Platform and Plugins API 2021.*
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <link-summary>List of known Notable API Changes in 2021.*</link-summary>
 
@@ -48,7 +48,7 @@ Ability to override encoding per `VirtualFile`
 : Implement [`FileEncodingProvider`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/encoding/FileEncodingProvider.java) and register in `com.intellij.fileEncodingProvider` extension point.
 
 [JCEF](jcef.md): wrapper for `CefBrowser`
-: [`JBCefOsrHandlerBrowser`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefOsrHandlerBrowser.java) forwards to custom `CefRenderHandler`, e.g., for off-screen rendering.
+: [`JBCefOsrHandlerBrowser`](%gh-ic%/platform/ui.jcef/jcef/JBCefOsrHandlerBrowser.java) forwards to custom `CefRenderHandler`, e.g., for off-screen rendering.
 
 ### Java Plugin 2021.1
 

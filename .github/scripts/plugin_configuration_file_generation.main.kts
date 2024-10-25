@@ -197,7 +197,7 @@ fun StringBuilder.appendDeprecationVersion(deprecatedSince: String?) {
   deprecatedSince ?: return
   appendLine("{style=\"narrow\"}")
   appendLine("Deprecated")
-  appendLine(": ")
+  appendLine(":")
   appendLine("since $deprecatedSince\n")
 }
 
@@ -205,7 +205,7 @@ fun StringBuilder.appendSupportDetails(supportDetails: String?) {
   supportDetails ?: return
   appendLine("{style=\"narrow\"}")
   appendLine("Supported")
-  appendLine(": ")
+  appendLine(":")
   appendLine(supportDetails)
 }
 

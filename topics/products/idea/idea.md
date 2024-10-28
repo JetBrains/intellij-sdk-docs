@@ -78,6 +78,6 @@ Relevant Extension Points:
 
 ### Java Test Framework
 
-To use existing test base classes, add `Plugin.Java` test-framework available from [](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType-Plugin).
+To use existing test base classes, add `TestFrameworkType.Plugin.Java` test-framework available from [](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType-Plugin).
 
 Alternatively, specify `com.jetbrains.intellij.java:java-test-framework:$VERSION$` as `testImplementation` dependency explicitly (see [IntelliJ Platform Artifacts Repositories](intellij_artifacts.md#gradle-example-for-an-individual-module-from-the-intellij-platform)).

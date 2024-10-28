@@ -63,4 +63,4 @@ Unbundled plugins
 ### Maven Plugin 2022.1
 
 Published Maven Test Framework
-: Available as `com.jetbrains.intellij.maven:maven-test-framework` from [](intellij_artifacts.md), See also `Plugin.Maven` test-framework available from [](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType-Plugin).
+: Available as `com.jetbrains.intellij.maven:maven-test-framework` from [](intellij_artifacts.md), See also `TestFrameworkType.Plugin.Maven` test-framework available from [](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType-Plugin).

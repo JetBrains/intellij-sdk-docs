@@ -25,7 +25,7 @@ Any of `999.*`, `234.*` (maximum is `233.*`) and `223.9999` are invalid for `unt
 
 #### "Open-End" Compatibility
 
-Not specifying `until-build` means it will include _all_ future builds.
+Not specifying the `until-build` attribute means it will include _all_ future builds.
 This includes future, yet unreleased versions and possibly new IDEs, which might impact compatibility later.
 
 See [`until-build`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-ideaVersion-untilBuild)

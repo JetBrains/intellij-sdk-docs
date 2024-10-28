@@ -335,6 +335,9 @@ dependencies {
 </tab>
 </tabs>
 
+See [`TestFrameworkType`](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType) reference for other test-frameworks,
+for example, `Plugin.Java` when testing Java-based functionality.
+
 The provided `testFramework(type, version)` helper method makes it possible to add the base artifact to the test classpath or its variants, such as Java, Go, ReSharper, etc.
 
 | Function                       | Description                                                                                                                                            |

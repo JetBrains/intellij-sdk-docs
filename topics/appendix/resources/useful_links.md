@@ -16,11 +16,11 @@ The following links represent useful resources for working with the IntelliJ Pla
 * [](internal_actions_intro.md)
 * [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) (see also [](verifying_plugin_compatibility.md))
 * [IntelliJ Platform Explorer](https://jb.gg/ipe) ([Blog post](https://blog.jetbrains.com/platform/2020/12/intellij-platform-explorer-get-to-the-extension-point/))
-* [IntelliJ Log Analyzer](https://github.com/JetBrains/IntelliJ-Log-Analyzer)
 * [Figma UI Kit](UI_kit.md) ([Blog post](https://blog.jetbrains.com/idea/2021/05/intellij-platform-ui-kit/))
 
 ### Plugins
 
+* [Plugin DevKit](https://plugins.jetbrains.com/plugin/22851-plugin-devkit)
 * [PsiViewer](https://plugins.jetbrains.com/plugin/227-psiviewer)
 * [Grammar-Kit](https://plugins.jetbrains.com/plugin/6606-grammar-kit) & [Grammar-Kit Folder](https://plugins.jetbrains.com/plugin/12983-grammar-kit-folder)
 * [Index Viewer](https://plugins.jetbrains.com/plugin/13029-index-viewer/)
@@ -33,7 +33,4 @@ The following links represent useful resources for working with the IntelliJ Pla
 * [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
 * [IntelliJ Community Edition](https://github.com/JetBrains/intellij-community)
 * [IntelliJ Plugins](https://github.com/JetBrains/intellij-plugins)
-* [Open Source Plugins](https://plugins.jetbrains.com/search?orderBy=name&shouldHaveSource=true)
-
-> Webinars have [moved](learning_resources.md#webinars).
->
+* [Open Source Plugins on JetBrains Marketplace](https://plugins.jetbrains.com/search?orderBy=name&shouldHaveSource=true)

@@ -69,7 +69,7 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 >
 > **2024.2+**: Java 21
 >
-> **2022.2+**: Java 17 ([blog post](https://blog.jetbrains.com/platform/2022/08/intellij-project-migrates-to-java-17/))
+> **2022.3+**: Java 17 ([blog post](https://blog.jetbrains.com/platform/2022/08/intellij-project-migrates-to-java-17/))
 >
 > **2020.3+**: Java 11 ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/))
 >

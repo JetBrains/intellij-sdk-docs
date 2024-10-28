@@ -62,8 +62,6 @@ The IntelliJ Platform underlies many JetBrains IDEs.
 Similarly, other products such as [WebStorm](webstorm.md) and [DataGrip](data_grip.md) are based on the IntelliJ IDEA Community Edition, but with a different set of plugins included and excluding other default plugins.
 This allows plugins to target multiple products, as each product will include base functionality and a selection of plugins from the IntelliJ IDEA Community Edition repository.
 
-<include from="snippets.md" element-id="jetbrainsProductOpenSourceLicense"/>
-
 The following IDEs are based on the IntelliJ Platform:
 
 * [JetBrains](https://www.jetbrains.com) IDEs:

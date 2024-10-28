@@ -11,8 +11,6 @@
 [PhpStorm](https://www.jetbrains.com/phpstorm/) is an IntelliJ Platform-based product.
 Plugin projects targeting PhpStorm can be developed using [IntelliJ IDEA](idea.md).
 
-<include from="snippets.md" element-id="jetbrainsProductOpenSourceLicense"/>
-
 See also:
 
 * [](plugin_alternatives.md#phpstorm-advanced-metadata)

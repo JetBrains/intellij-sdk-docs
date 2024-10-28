@@ -13,8 +13,6 @@
 IntelliJ IDEA Ultimate comes with a number of additional features and bundled plugins.
 <include from="idea.md" element-id="idea_editions"/>
 
-<include from="snippets.md" element-id="jetbrainsProductOpenSourceLicense"/>
-
 ## IntelliJ IDEA Ultimate Plugin Setup
 
 See [](idea.md#ideaPluginSetup).

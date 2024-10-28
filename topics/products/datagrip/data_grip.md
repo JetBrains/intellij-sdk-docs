@@ -11,8 +11,6 @@
 [DataGrip](https://www.jetbrains.com/datagrip/) is an IntelliJ Platform-based product.
 Plugin projects targeting DataGrip can be developed using [IntelliJ IDEA](idea.md).
 
-<include from="snippets.md" element-id="jetbrainsProductOpenSourceLicense"/>
-
 ## DataGrip Plugin Setup
 
 ### Gradle Build Script

@@ -11,8 +11,6 @@
 [RubyMine](https://www.jetbrains.com/ruby/) is an IntelliJ Platform-based product.
 Plugin projects for RubyMine can be developed using [IntelliJ IDEA](idea.md).
 
-<include from="snippets.md" element-id="jetbrainsProductOpenSourceLicense"/>
-
 ## RubyMine Plugin Setup
 
 ### Gradle Build Script

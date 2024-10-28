@@ -10,8 +10,6 @@ Underlying those shared features are shared components.
 When authoring a plugin for the IntelliJ Platform, it is important to understand and declare dependencies on these components.
 Otherwise, it may not be possible to load or run the plugin in a product because the components on which it depends aren't available.
 
-<include from="snippets.md" element-id="jetbrainsProductOpenSourceLicense"/>
-
 ## Declaring Plugin Dependencies
 
 For the purposes of dependencies, a _module_ can be thought of as a built-in plugin that ships as a non-removable part of a product.

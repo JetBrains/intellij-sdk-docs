@@ -35,12 +35,6 @@ _Plugin DevKit_ plugin is bundled with IntelliJ IDEA until 2023.2.
 
 </snippet>
 
-<snippet id="jetbrainsProductOpenSourceLicense">
-
-> Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
-
-</snippet>
-
 <snippet id="jetbrainsIDE_TLDR">
 
 <tldr>

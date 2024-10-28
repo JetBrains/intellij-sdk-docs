@@ -79,6 +79,12 @@ As described in [Modules Specific to Functionality](plugin_compatibility.md#modu
 Use the [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the library <path>ruby.jar</path>.
 Test your plugin with any version of RubyMine you intend to support.
 
+### RubyMine Test Framework
+
+To use existing test base classes, add `Plugin.Ruby` test-framework available from [](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType-Plugin).
+
+Alternatively, specify `com.jetbrains.intellij.idea:ruby-test-framework:$VERSION$` as `testImplementation` dependency explicitly (see [IntelliJ Platform Artifacts Repositories](intellij_artifacts.md#gradle-example-for-an-individual-module-from-the-intellij-platform)).
+
 ## Open Source Plugins for RubyMine
 
 When learning new APIs, it is helpful to have some representative projects for reference:

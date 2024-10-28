@@ -122,7 +122,8 @@ Throws
 
 [`ProductRelease.Channel`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/models/ProductRelease.kt)
 
-List of available channels used by JetBrains IDEs and [Android Studio](android_studio.md) for describing binary releases.
+List of available channels used by [JetBrains IDEs](intellij_platform.md#ides-based-on-the-intellij-platform)
+and [Android Studio](android_studio.md) for describing binary releases.
 
 | Name        | JetBrains IDEs | Android Studio  |
 |-------------|:--------------:|:---------------:|
@@ -198,30 +199,45 @@ See also:
 
 [`TestFrameworkType`](%gh-ijpgp-master%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/TestFrameworkType.kt)
 
-Allows for adding `test-framework` testing library variants. See [Dependencies Extension: Testing](tools_intellij_platform_gradle_plugin_dependencies_extension.md#testing).
+Allows for adding `test-framework` testing library variants.
+See [Dependencies Extension: Testing](tools_intellij_platform_gradle_plugin_dependencies_extension.md#testing).
 
-| Name                | Coordinates                                                                                                                                                                                                                                                                                                                 |
-|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `Platform`          | `com.jetbrains.intellij.platform:test-framework`                                                                                                                                                                                                                                                                            |
-| `JUnit5`            | `com.jetbrains.intellij.platform:test-framework-junit5`                                                                                                                                                                                                                                                                     |
-| `Bundled`           | **SEE NOTE BELOW** Adds <path>[platformPath]/lib/testFramework.jar</path> file                                                                                                                                                                                                                                              |
-| `Metrics`           | `com.jetbrains.intellij.tools:ide-metrics-benchmark`<br/> `com.jetbrains.intellij.tools:ide-metrics-collector` <br/> `com.jetbrains.intellij.tools:ide-util-common`                                                                                                                                                         |
-| `Starter`           | `com.jetbrains.intellij.tools:ide-starter-squashed` <br/> `com.jetbrains.intellij.tools:ide-starter-junit5` <br/> `com.jetbrains.intellij.tools:ide-starter-driver` <br/> `com.jetbrains.intellij.driver:driver-client` <br/> `com.jetbrains.intellij.driver:driver-sdk` <br/> `com.jetbrains.intellij.driver:driver-model` |
-| `Plugin.Go`         | `com.jetbrains.intellij.go:go-test-framework`                                                                                                                                                                                                                                                                               |
-| `Plugin.Ruby`       | `com.jetbrains.intellij.idea:ruby-test-framework`                                                                                                                                                                                                                                                                           |
-| `Plugin.Java`       | `com.jetbrains.intellij.java:java-test-framework`                                                                                                                                                                                                                                                                           |
-| `Plugin.JavaScript` | `com.jetbrains.intellij.javascript:javascript-test-framework`                                                                                                                                                                                                                                                               |
-| `Plugin.Maven`      | `com.jetbrains.intellij.maven:maven-test-framework`                                                                                                                                                                                                                                                                         |
-| `Plugin.ReSharper`  | `com.jetbrains.intellij.resharper:resharper-test-framework`                                                                                                                                                                                                                                                                 |
+### Platform Test Frameworks
+{#TestFrameworkType-Platform}
+
+Generic test frameworks for the IntelliJ Platform.
+
+| Name       | Coordinates                                                                                                                                                                                                                                                                                                                 |
+|------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `Platform` | <p>`com.jetbrains.intellij.platform:test-framework`</p><p>**See "Known Issues" below**</p>                                                                                                                                                                                                                                  |
+| `JUnit5`   | <p>`com.jetbrains.intellij.platform:test-framework-junit5`</p><p>**See "Known Issues" below**</p>                                                                                                                                                                                                                           |
+| `Bundled`  | <p>Adds <path>[platformPath]/lib/testFramework.jar</path> file</p><p>**See "Using Bundled" below**</p>                                                                                                                                                                                                                      |
+| `Metrics`  | `com.jetbrains.intellij.tools:ide-metrics-benchmark`<br/> `com.jetbrains.intellij.tools:ide-metrics-collector` <br/> `com.jetbrains.intellij.tools:ide-util-common`                                                                                                                                                         |
+| `Starter`  | `com.jetbrains.intellij.tools:ide-starter-squashed` <br/> `com.jetbrains.intellij.tools:ide-starter-junit5` <br/> `com.jetbrains.intellij.tools:ide-starter-driver` <br/> `com.jetbrains.intellij.driver:driver-client` <br/> `com.jetbrains.intellij.driver:driver-sdk` <br/> `com.jetbrains.intellij.driver:driver-model` |
+
+> Known issues related to `Platform` and `JUnit5` Test Frameworks:
+> - [](tools_intellij_platform_gradle_plugin_faq.md#missing-opentest4j-dependency-in-test-framework)
+> - [](tools_intellij_platform_gradle_plugin_faq.md#junit5-test-framework-refers-to-junit4)
+>
+{title="Known Issues"}
 
 > The `Bundled` type should not be used unless it is necessary, like in the case of [Rider](rider.md), as its `test-framework` is not published as an artifact.
 >
 {style="warning" title="Using Bundled"}
 
-There are two known issues related to `Platform` and `JUnit5` Test Frameworks:
-- [](tools_intellij_platform_gradle_plugin_faq.md#missing-opentest4j-dependency-in-test-framework)
-- [](tools_intellij_platform_gradle_plugin_faq.md#junit5-test-framework-refers-to-junit4)
+### Plugin Test Frameworks
+{#TestFrameworkType-Plugin}
 
+Some plugins offer dedicated test frameworks, for example, `Plugin.Java` when using Java/JVM-related functionality.
+
+| Name                | Coordinates                                                   | Reference       |
+|---------------------|---------------------------------------------------------------|-----------------|
+| `Plugin.Go`         | `com.jetbrains.intellij.go:go-test-framework`                 | [](goland.md)   |
+| `Plugin.JavaScript` | `com.jetbrains.intellij.javascript:javascript-test-framework` | [](webstorm.md) |
+| `Plugin.Java`       | `com.jetbrains.intellij.java:java-test-framework`             | [](idea.md)     |
+| `Plugin.Maven`      | `com.jetbrains.intellij.maven:maven-test-framework`           |                 |
+| `Plugin.ReSharper`  | `com.jetbrains.intellij.resharper:resharper-test-framework`   | [](rider.md)    |
+| `Plugin.Ruby`       | `com.jetbrains.intellij.idea:ruby-test-framework`             | [](rubymine.md) |
 
 ## `VerificationReportsFormats`
 {#VerificationReportsFormats}

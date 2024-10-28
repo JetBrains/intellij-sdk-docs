@@ -339,8 +339,22 @@ fun file(path: String): File {
 
 fun String.cleanup(): String {
   return this
+    .cleanupElementLinks()
+    .removeAttributeLinks()
     .removeDocProviderSpecificAttributes()
     .internalizeLinks()
+}
+
+fun String.cleanupElementLinks(): String {
+  // [`some-element`](#element:path__to__some-element) -> [`some-element`](#path__to__some-element)
+  return replace("](#element:", "](#")
+}
+
+fun String.removeAttributeLinks(): String {
+  val attributeLinkRegex = Regex("\\[(.*?)]\\(#attribute:.*?\\)")
+  return attributeLinkRegex.replace(this) { matchResult ->
+    matchResult.groupValues[1]
+  }
 }
 
 fun String.removeDocProviderSpecificAttributes(): String {

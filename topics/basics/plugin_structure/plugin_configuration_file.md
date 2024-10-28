@@ -526,7 +526,8 @@ Children
 :
 The children elements are registrations of the extension points defined by
 [`<extensionPoint>`](#idea-plugin__extensionPoints__extensionPoint) elements. Extension elements names follow the EPs names
-defined by `name` or `qualifiedName` attributes.
+defined by `name`
+or `qualifiedName` attributes.
 
 
 Examples
@@ -800,7 +801,8 @@ Examples
     </action>
     ```
 - Action without the `text` attribute must use the texts from the resource bundle declared with
-the [`<resource-bundle>`](#idea-plugin__resource-bundle) element, or the `resource-bundle` attribute of
+the [`<resource-bundle>`](#idea-plugin__resource-bundle) element,
+or the `resource-bundle` attribute of
 the [`<actions>`](#idea-plugin__actions) element:
     ```xml
     <action
@@ -1061,7 +1063,7 @@ Example
 </tldr>
 
 Defines an action group.
-The `<action>`, `<group>` and `<separator>` elements defined inside the group are automatically included in it.
+The [`<action>`](#idea-plugin__actions__action), `<group>` and [`<separator>`](#idea-plugin__actions__group__separator) elements defined inside the group are automatically included in it.
 The `<group>` elements can be nested.
 
 {style="narrow"}
@@ -1126,8 +1128,9 @@ Examples
     </group>
     ```
 - A popup group without the `text` attribute must use the texts from the resource bundle declared with
-the [`<resource-bundle>`](#idea-plugin__resource-bundle) element, or the `resource-bundle` attribute of
-the [`<actions>`](#idea-plugin__actions) element:
+the [`<resource-bundle>`](#idea-plugin__resource-bundle) element,
+or the `resource-bundle` attribute
+of the [`<actions>`](#idea-plugin__actions) element:
     ```xml
     <group
         id="com.example.myframeworksupport.MyGroup"

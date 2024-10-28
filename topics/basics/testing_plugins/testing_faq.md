@@ -32,6 +32,11 @@ See [](testing_plugins.md#ui-tests) for UI integration tests.
 
 ## Issues
 
+### Unresolved test-framework dependencies
+<primary-label ref="2024.2"/>
+
+<include from="tests_and_fixtures.md" element-id="testFrameworkDependencies"/>
+
 ### "No Tests Found" targeting 2021.3+
 <primary-label ref="2021.3"/>
 

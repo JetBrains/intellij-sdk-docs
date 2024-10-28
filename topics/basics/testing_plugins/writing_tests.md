@@ -4,6 +4,8 @@
 
 <link-summary>Introduction to implementing tests.</link-summary>
 
+<include from="tests_and_fixtures.md" element-id="testFrameworkDependencies"/>
+
 In most cases, once you have the necessary files copied to the test project and loaded into the in-memory editor, writing the test itself involves invoking your plugin code and has few dependencies on the test framework.
 
 However, for many common cases, the framework provides helper methods that can make testing easier:

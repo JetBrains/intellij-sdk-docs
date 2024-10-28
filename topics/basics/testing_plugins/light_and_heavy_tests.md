@@ -4,6 +4,8 @@
 
 <link-summary>Introduction to light tests reusing a single project for multiple tests, and heavy tests creating a new project for each test.</link-summary>
 
+<include from="tests_and_fixtures.md" element-id="testFrameworkDependencies"/>
+
 Plugin tests run in a real, rather than mocked, IntelliJ Platform environment and use real implementations for most application and project [services](plugin_services.md).
 
 Loading and initializing all the project components and services for a project to run tests is a relatively expensive operation, and it is desired to avoid doing it for each test.

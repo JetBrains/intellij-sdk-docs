@@ -4,6 +4,8 @@
 
 <link-summary>Adding test data to test projects used during tests execution.</link-summary>
 
+<include from="tests_and_fixtures.md" element-id="testFrameworkDependencies"/>
+
 The test fixture creates a *test project* environment.
 Unless you customize the project creation, the test project will have one module with one source root called <path>src</path>.
 The test project files exist either in a temporary directory or in an in-memory file system, depending on which implementation of [`TempDirTestFixture`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/TempDirTestFixture.java) is used.

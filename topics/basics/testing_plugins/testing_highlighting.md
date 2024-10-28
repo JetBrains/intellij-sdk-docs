@@ -4,6 +4,8 @@
 
 <link-summary>Testing highlighting the code highlighted with various APIs.</link-summary>
 
+<include from="tests_and_fixtures.md" element-id="testFrameworkDependencies"/>
+
 When writing plugin tests, a common task is testing various kinds of highlighting (inspections, annotators, parser error highlighting, etc.).
 The IntelliJ Platform provides a dedicated utility and markup format for this task.
 

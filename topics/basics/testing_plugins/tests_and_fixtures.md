@@ -10,6 +10,14 @@ However, most of the tests are written using JUnit 3.
 
 When writing your tests, you have the choice between using a standard base class to perform the test set up for you and using a fixture class, which lets you perform the setup manually and does not tie you to a specific test framework.
 
+<snippet id="testFrameworkDependencies">
+
+> All required [test-framework dependencies](tools_intellij_platform_gradle_plugin_dependencies_extension.md#testing) must be declared explicitly.
+>
+{title="Configuring Test Frameworks (2024.2+)"}
+
+</snippet>
+
 With the former approach, you can use classes such as [`BasePlatformTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/BasePlatformTestCase.java) ([`LightPlatformCodeInsightFixtureTestCase`](%gh-ic-223%/platform/testFramework/src/com/intellij/testFramework/fixtures/LightPlatformCodeInsightFixtureTestCase.java) before 2019.2).
 
 With the latter approach, you use the [`IdeaTestFixtureFactory`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/IdeaTestFixtureFactory.java) class to create instances of fixtures for the test environment.

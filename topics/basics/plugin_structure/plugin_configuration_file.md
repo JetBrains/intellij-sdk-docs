@@ -648,7 +648,9 @@ Attributes
   by the type provided in the `implements` attribute.
   Only one of the `tag` and `attribute` attributes can be specified.
 - `implements` _(**required**)_<br/>
-  The fully qualified name of the parent type limiting the type provided in the place specified by `tag` or `attribute`.
+  The fully qualified name of the parent type limiting the type provided in the place specified by
+  `tag` or
+  `attribute`.
 
 Example
 :

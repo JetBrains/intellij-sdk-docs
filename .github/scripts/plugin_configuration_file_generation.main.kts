@@ -238,8 +238,8 @@ fun StringBuilder.appendDefaultValue(defaultValue: String?) {
   appendLine(": $defaultValue")
 }
 
-fun StringBuilder.appendAttributes(attributes: List<Attribute>?) {
-  if (attributes == null) return
+fun StringBuilder.appendAttributes(attributeWrappers: List<AttributeWrapper>) {
+  val attributes = attributeWrappers.mapNotNull { it.attribute }
   if (attributes.isNotEmpty()) {
     appendLine("\n\nAttributes")
     appendLine(":")
@@ -394,6 +394,7 @@ data class DocumentationContent(
   var elements: List<ElementWrapper> = emptyList()
 )
 
+// allows for referencing attributes by anchors in YAML
 data class ElementWrapper(
   var element: Element? = null
 )
@@ -407,7 +408,7 @@ data class Element(
   var deprecationNote: String? = null,
   var description: String? = null,
   var sdkDocsSupportDetails: String? = null,
-  var attributes: List<Attribute> = emptyList(),
+  var attributes: List<AttributeWrapper> = emptyList(),
   var containsItself: Boolean = false,
   var childrenDescription: String? = null,
   var children: List<ElementWrapper> = emptyList(),
@@ -415,6 +416,11 @@ data class Element(
   var requirement: Requirement? = null,
   var defaultValue: String? = null,
   var examples: List<String> = emptyList(),
+)
+
+// allows for referencing attributes by anchors in YAML
+data class AttributeWrapper(
+  var attribute: Attribute? = null,
 )
 
 data class Attribute(

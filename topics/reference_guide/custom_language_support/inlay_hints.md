@@ -67,6 +67,10 @@ See the API documentation for the details.
 - [`JavaImplicitTypeDeclarativeInlayHintsProvider`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/hints/JavaImplicitTypeDeclarativeInlayHintsProvider.kt) - shows inferred type for variables declared with the `var` keyword in Java code when the inferred type may not be clear
 - [`JavaMethodChainsDeclarativeInlayProvider`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/hints/JavaMethodChainsDeclarativeInlayProvider.kt) - shows method return types in call chains in Java code
 
+To provide a custom configuration UI, implement
+`[`InlayHintsCustomSettingsProvider`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hints/declarative/InlayHintsCustomSettingsProvider.kt)`
+registered in `com.intellij.codeInsight.declarativeInlayProviderCustomSettingsProvider` extension point.
+
 ### Code Vision Provider
 <primary-label ref="2022.1"/>
 

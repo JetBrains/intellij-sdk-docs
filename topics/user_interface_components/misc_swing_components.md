@@ -38,4 +38,4 @@ so it's up to the developer to choose which tab control would be more appropriat
 
 See [](toolbar.md) in the UI Guidelines for an overview.
 
-[](basic_action_system.md#building-ui-from-actions) covers creating `AnAction`-based toolbars.
+[](basic_action_system.md#buildingToolbarPopupMenu) covers creating `AnAction`-based toolbars.

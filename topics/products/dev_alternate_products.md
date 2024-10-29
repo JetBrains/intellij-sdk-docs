@@ -7,8 +7,6 @@
 Plugin projects can target any (custom) IDEs, as long as the products are based on the [IntelliJ Platform](intellij_platform.md).
 Such plugins are developed much like plugin projects that target IntelliJ IDEA.
 
-<include from="snippets.md" element-id="jetbrainsProductOpenSourceLicense"/>
-
 Modifications are required to the project's Gradle build script and <path>[plugin.xml](plugin_configuration_file.md)</path> files, as described below
 and on the individual product pages in _Product Specific_.
 The Gradle build script is modified to specify the target product, determining the APIs available to the plugin.

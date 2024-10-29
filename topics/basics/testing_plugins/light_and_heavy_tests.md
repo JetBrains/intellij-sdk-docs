@@ -4,6 +4,8 @@
 
 <link-summary>Introduction to light tests reusing a single project for multiple tests, and heavy tests creating a new project for each test.</link-summary>
 
+<include from="tests_and_fixtures.md" element-id="testFrameworkDependencies"/>
+
 Plugin tests run in a real, rather than mocked, IntelliJ Platform environment and use real implementations for most application and project [services](plugin_services.md).
 
 Loading and initializing all the project components and services for a project to run tests is a relatively expensive operation, and it is desired to avoid doing it for each test.
@@ -39,6 +41,10 @@ For 2019.2 and earlier, use [`LightPlatformCodeInsightFixtureTestCase`](%gh-ic-2
 </tab>
 
 <tab title="Plugins using Java PSI">
+
+> An explicit dependency on `TestFramework.Plugin.Java` is required, see [test-framework dependencies](tools_intellij_platform_gradle_plugin_dependencies_extension.md#testing).
+>
+{title="Java Test Framework (2024.2+)"}
 
 For tests that require the [Java PSI](idea.md#java) or related functionality:
 - [`LightJavaCodeInsightFixtureTestCase`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) for JUnit 3

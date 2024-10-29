@@ -11,12 +11,12 @@
 [WebStorm](https://www.jetbrains.com/webstorm/) is an IntelliJ Platform-based product.
 Plugin projects for WebStorm can be developed using [IntelliJ IDEA](idea.md).
 
+> WebStorm is free for non-commercial use
+
 > Follow [Building a Plugin for WebStorm – Tutorial for JavaScript Developers](learning_resources.md#articles) blog post series to get started
 > and [How To Build a Plugin for JetBrains IDEs (Analog.js Example)](learning_resources.md#webinars) webinar.
 >
 {style="note"}
-
-<include from="snippets.md" element-id="jetbrainsProductOpenSourceLicense"/>
 
 ## WebStorm Plugin Setup
 
@@ -89,7 +89,9 @@ Test your plugin with any version of WebStorm you wish to support.
 
 <primary-label ref="2020.3"/>
 
-To use existing test base classes, specify `com.jetbrains.intellij.javascript:javascript-test-framework:$VERSION$` as `testImplementation` dependency explicitly (see [IntelliJ Platform Artifacts Repositories](intellij_artifacts.md#gradle-example-for-an-individual-module-from-the-intellij-platform)).
+To use existing test base classes, add `TestFrameworkType.Plugin.JavaScript` test-framework available from [](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType-Plugin).
+
+Alternatively, specify `com.jetbrains.intellij.javascript:javascript-test-framework:$VERSION$` as `testImplementation` dependency explicitly (see [IntelliJ Platform Artifacts Repositories](intellij_artifacts.md#gradle-example-for-an-individual-module-from-the-intellij-platform)).
 
 ## Open Source Plugins for WebStorm
 

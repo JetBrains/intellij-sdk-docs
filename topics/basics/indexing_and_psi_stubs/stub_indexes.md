@@ -108,7 +108,11 @@ To access the data from an index, the following instance methods are used on the
 
 `AbstractStubIndex.getAllKeys()/processAllKeys()` returns the list of all keys (processes all keys) in the index for the specified project (for example, the list of all class names found in the project).
 
-> NOTE: These may return stale/out-of-date data. See [](#elements) to obtain/verify actual existing elements for the given key (e.g., when iterating all keys to collect completion variants).
+> The returned keys may return stale/out-of-date data.
+> See [](#elements) to obtain/verify actual existing elements for the given key in a given scope
+> (for example, when iterating all keys to collect relevant completion variants).
+>
+{style="warning" title="Stale Data"}
 
 #### Elements
 

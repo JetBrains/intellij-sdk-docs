@@ -4,6 +4,9 @@
     <addNotNullAssertions enabled="false" />
     <wildcardResourcePatterns />
     <bytecodeTargetLevel>
+      <module name="kotlin_demo" target="17" />
+      <module name="kotlin_demo.main" target="17" />
+      <module name="kotlin_demo.test" target="17" />
       <module name="pycharm" target="1.8" />
       <module name="pycharm.main" target="1.8" />
       <module name="pycharm.test" target="1.8" />

@@ -134,7 +134,7 @@ See [](plugin_dependencies.md#bundled-and-other-plugins) on how to get all bundl
 
 See [](ide_development_instance.md#enabling-auto-reload) for important caveats.
 
-You can disable auto-reload globally with [`intellijPlatform.autoReload`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-autoReload):
+Disable auto-reload globally with [`intellijPlatform.autoReload`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-autoReload):
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -221,7 +221,7 @@ Gradle may fail with the following exception if the IntelliJ Platform Gradle Plu
 
 `The request for this plugin could not be satisfied because the plugin is already on the classpath with an unknown version, so compatibility cannot be checked.`
 
-If you apply the plugin in the <path>settings.gradle.kts</path> file, the version needs to be omitted when applying it in other <path>build.gradle.kts</path> files.
+When applying the plugin in the <path>settings.gradle.kts</path> file, the version needs to be omitted when applying it in other <path>build.gradle.kts</path> files.
 
 ### How to show the log file of a sandbox instance?
 
@@ -345,7 +345,8 @@ Please upgrade to Kotlin 1.9.0. See the [](using_kotlin.md#incremental-compilati
 
 ### How to check the latest available EAP release?
 
-To list the IntelliJ Platform releases matching your criteria (IntelliJ Platform type, release channels, or build range), you may use the [](tools_intellij_platform_gradle_plugin_tasks.md#printProductsReleases) task, as follows:
+To list the IntelliJ Platform releases matching your criteria (IntelliJ Platform type, release channels, or build range),
+use the [](tools_intellij_platform_gradle_plugin_tasks.md#printProductsReleases) task as follows:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">

@@ -21,8 +21,6 @@ Plugin projects targeting [AppCode](https://www.jetbrains.com/objc/) can be deve
 
 </snippet>
 
-<include from="snippets.md" element-id="jetbrainsProductOpenSourceLicense"/>
-
 ## Configuring Plugin Projects Targeting AppCode
 
 > When targeting 2020.3, please see this [migration guide](https://blog.jetbrains.com/clion/2020/12/migration-guide-for-plugins-2020-3/).

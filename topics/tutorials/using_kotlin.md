@@ -40,11 +40,9 @@ Likewise, it is possible to customize the behavior of internal classes in the In
 For example, it is common practice to [guard logging statements](https://www.slf4j.org/faq.html#logging_performance) to avoid the cost of parameter construction, leading to the following ceremony when using the log:
 
 ```java
-if(logger.isDebugEnabled()){
-    logger.
-
-debug("..."+expensiveComputation());
-    }
+if (logger.isDebugEnabled()) {
+  logger.debug("..."+expensiveComputation());
+}
 ```
 
 We can achieve the same result more succinctly in Kotlin, by declaring the following extension method:
@@ -82,19 +80,12 @@ The IntelliJ Platform provides a [type safe DSL](kotlin_ui_dsl_version_2.md) to 
 
 > The [](plugin_github_template.md) provides a preconfigured project using Kotlin.
 
-IntelliJ IDEA bundles the necessary Kotlin plugin, requiring no further configuration.
-For detailed instructions, please refer to the [Kotlin documentation](https://kotlinlang.org/docs/getting-started.html).
+IntelliJ IDEA bundles the necessary Kotlin IDE plugin, requiring no further configuration.
+For detailed instructions, refer to the [Kotlin documentation](https://kotlinlang.org/docs/getting-started.html).
 
 ### Kotlin Gradle Plugin
 
-Adding Kotlin source files compilation support to the Gradle-based project requires adding and configuring the [Kotlin JVM Gradle plugin](https://kotlinlang.org/docs/gradle.html#targeting-the-jvm).
-
-See the <path>build.gradle.kts</path> from [kotlin_demo](%gh-sdk-samples-master%/kotlin_demo) sample plugin using [](tools_gradle_intellij_plugin.md):
-
-```kotlin
-```
-
-{src="kotlin_demo/build.gradle.kts" include-lines="2-" default-state="collapsed" collapsible="true" collapsed-title="build.gradle.kts"}
+Adding Kotlin source files compilation support to a Gradle-based project requires adding and configuring the [Kotlin JVM Gradle plugin](https://kotlinlang.org/docs/gradle.html#targeting-the-jvm).
 
 ### Kotlin Standard Library (stdlib)
 

@@ -11,8 +11,6 @@
 [RubyMine](https://www.jetbrains.com/ruby/) is an IntelliJ Platform-based product.
 Plugin projects for RubyMine can be developed using [IntelliJ IDEA](idea.md).
 
-<include from="snippets.md" element-id="jetbrainsProductOpenSourceLicense"/>
-
 ## RubyMine Plugin Setup
 
 ### Gradle Build Script
@@ -80,6 +78,12 @@ As described in [Modules Specific to Functionality](plugin_compatibility.md#modu
 
 Use the [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the library <path>ruby.jar</path>.
 Test your plugin with any version of RubyMine you intend to support.
+
+### RubyMine Test Framework
+
+To use existing test base classes, add `TestFrameworkType.Plugin.Ruby` test-framework available from [](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType-Plugin).
+
+Alternatively, specify `com.jetbrains.intellij.idea:ruby-test-framework:$VERSION$` as `testImplementation` dependency explicitly (see [IntelliJ Platform Artifacts Repositories](intellij_artifacts.md#gradle-example-for-an-individual-module-from-the-intellij-platform)).
 
 ## Open Source Plugins for RubyMine
 

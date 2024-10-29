@@ -193,7 +193,6 @@ dependencies {
 The listing of all present installers can be resolved with updates XML files for [JetBrains IDEs](https://www.jetbrains.com/updates/updates.xml) and [Android Studio](https://jb.gg/android-studio-releases-list.xml) as well as by executing the [`printProductsReleases`](tools_intellij_platform_gradle_plugin_tasks.md#printProductsReleases) task.
 
 IntelliJ Platform installers are OS-specific and contain bundled [](tools_intellij_platform_gradle_plugin_jetbrains_runtime.md), but are limited to public releases only.
-Installers are always used when running the [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) task to perform the binary compatibility checks.
 
 To apply required repositories, use [](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories) or explicit [](tools_intellij_platform_gradle_plugin_repositories_extension.md#intellij-platform-installers) helpers.
 
@@ -335,6 +334,9 @@ dependencies {
 
 </tab>
 </tabs>
+
+See [`TestFrameworkType`](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType) reference for other test-frameworks,
+for example, `Plugin.Java` when testing Java-based functionality.
 
 The provided `testFramework(type, version)` helper method makes it possible to add the base artifact to the test classpath or its variants, such as Java, Go, ReSharper, etc.
 

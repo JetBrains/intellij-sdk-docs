@@ -1,6 +1,6 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# UAST - Unified Abstract Syntax Tree
+# UAST – Unified Abstract Syntax Tree
 
 <link-summary>Handle different JVM languages syntax trees with a single implementation.</link-summary>
 
@@ -12,6 +12,7 @@ work the same way for all these languages.
 Using UAST allows providing features that will work across all [supported JVM languages](#which-languages-are-supported) using a single implementation.
 
 Presentation [Writing IntelliJ Plugins for Kotlin](https://www.youtube.com/watch?v=j2tvi4GbOr4) offers a thorough overview of using UAST in real-world scenarios.
+See also the [AST/UAST](https://googlesamples.github.io/android-custom-lint-rules/api-guide.md.html#astanalysis) section from the _Android Lint API Guide_.
 
 ### When should I use UAST?
 

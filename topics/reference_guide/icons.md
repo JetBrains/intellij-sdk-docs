@@ -219,7 +219,7 @@ Create `icon.<icon-path>.tooltip` key in a resource bundle, where `<icon-path>` 
 ## New UI Icons
 <primary-label ref="2022.3"/>
 
-> See [New UI Icons Guide](https://www.figma.com/community/file/1227729570033544559) for guidelines and overview.
+> See [](UI_kit.md) for guidelines and overview.
 
 To fully support the [New UI](https://www.jetbrains.com/help/idea/new-ui.html), the plugin must provide additional dedicated icons and mapping information.
 This allows supporting both UI variants at the same time, depending on what the user has selected.

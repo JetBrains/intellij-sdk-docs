@@ -268,4 +268,3 @@ For a readily available source of up-to-date examples of plugins implemented in 
 
 * [TeXiFy IDEA](https://github.com/Hannah-Sten/TeXiFy-IDEA)
 * [Deno](%gh-ij-plugins%/Deno)
-* [Rust](https://github.com/intellij-rust/intellij-rust)

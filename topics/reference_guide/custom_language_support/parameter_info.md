@@ -107,11 +107,5 @@ Existing, moderately complex, implementations of `ParameterInfoHandler` in the I
 * [`XPathParameterInfoHandler`](%gh-ic%/plugins/xpath/xpath-lang/src/org/intellij/lang/xpath/XPathParameterInfoHandler.java)
 * [`XmlParameterInfoHandler`](%gh-ic%/xml/impl/src/com/intellij/codeInsight/hint/api/impls/XmlParameterInfoHandler.java)
 
-Implementations of 3rd party plugins can be discovered using the
+Implementations of third party plugins can be discovered using the
 [IntelliJ Platform Explorer](https://plugins.jetbrains.com/intellij-platform-explorer?extensions=com.intellij.codeInsight.parameterInfo).
-Two examples are:
-
-* [RsParameterInfoHandler](https://github.com/intellij-rust/intellij-rust/blob/93853e33261174399babb10e43a3aff133f0a5ef/src/main/kotlin/org/rust/ide/hints/parameter/RsParameterInfoHandler.kt)
-  of the Rust plugin.
-* [LatexParameterInfoHandler](https://github.com/Hannah-Sten/TeXiFy-IDEA/blob/655644b217e3954ae1286d7070a9357f2748f6a6/src/nl/hannahsten/texifyidea/documentation/LatexParameterInfoHandler.kt)
-  of the TeXiFy plugin.

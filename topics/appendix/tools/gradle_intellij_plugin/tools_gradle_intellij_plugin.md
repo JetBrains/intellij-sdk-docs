@@ -322,7 +322,7 @@ Acceptable values
 - `RD` - [Rider](rider.md)
 - `GO` - [GoLand](goland.md)
 - `AI` - [Android Studio](android_studio.md)
-- `RR` - [Rust Rover](https://plugins.jetbrains.com/plugin/22407-rust/edit)
+- `RR` - [Rust Rover](https://www.jetbrains.com/rust/)
 - `JPS` - JPS-only
 - `GW` - Gateway
 

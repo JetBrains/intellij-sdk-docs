@@ -11,9 +11,6 @@ One of its features is the possibility of filtering the plugins by those that ut
 As examples of using this plugin, you can also check out the following projects:
 
 - [Erlang plugin](https://github.com/ignatov/intellij-erlang) and its [TeamCity build configuration](https://teamcity.jetbrains.com/project.html?projectId=IntellijIdeaPlugins_Erlang&tab=projectOverview)
-- [Rust plugin](https://github.com/intellij-rust/intellij-rust)
-    - Fully written in Kotlin
-    - Uses [Grammar-Kit]
 - [Perl5 plugin](https://github.com/hurricup/Perl5-IDEA)
 - [Bamboo Soy plugin](https://github.com/google/bamboo-soy) and its [Travis configuration file](https://github.com/google/bamboo-soy/blob/master/.travis.yml)
 - [AceJump plugin](https://github.com/johnlindquist/AceJump)

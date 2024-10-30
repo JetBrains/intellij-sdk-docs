@@ -82,6 +82,9 @@ Unbundled JUnit library
 `com.intellij.openapi.actionSystem.impl.MoreActionGroup(boolean, int, DefaultConstructorMarker)` constructor removed
 : Use other constructors instead.
 
+`ai.grazie.nlp.stemmer` package removed
+: Add an explicit dependency on the NLP platform if needed.
+
 ### JSON Plugin (new) 2024.3
 
 `com.intellij.json.JsonElementTypes` class removed
@@ -147,6 +150,9 @@ Constructor of `com.intellij.ui.tabs.TabInfo` requires not-null `JComponent` arg
 
 `com.intellij.platform.workspace.jps.entities.DependenciesKt.modifyEntity(MutableEntityStorage, LibraryEntity, Function1)` method removed
 : Use `com.intellij.platform.workspace.jps.entities.DependenciesKt.modifyLibraryEntity(MutableEntityStorage, LibraryEntity, Function1)` instead.
+
+`ai.grazie.nlp.utils.UtilsKt.tokenizeByWhitespace(String)` method removed
+: NLP platform internals.
 
 ### UML Plugin 2024.2
 

@@ -263,8 +263,4 @@ See [Kotlin Analysis API Documentation](https://kotlin.github.io/analysis-api/in
 
 ## Example Plugins Implemented in Kotlin
 
-There are many [open-source Kotlin plugins](https://jb.gg/ipe?language=kotlin) built on the IntelliJ Platform.
-For a readily available source of up-to-date examples of plugins implemented in Kotlin, developers may look to these projects for inspiration:
-
-* [TeXiFy IDEA](https://github.com/Hannah-Sten/TeXiFy-IDEA)
-* [Deno](%gh-ij-plugins%/Deno)
+Browse all [open-source Kotlin plugins](https://jb.gg/ipe?language=kotlin) built on the IntelliJ Platform.

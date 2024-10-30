@@ -16,7 +16,7 @@
 
 This page describes developing plugins using the [Kotlin](https://kotlinlang.org) programming language.
 
-> To implement a plugin _operating_ on Kotlin code in the IDE, configure Kotlin [plugin dependency](plugin_dependencies.md) (`org.jetbrains.kotlin`).
+> To implement a plugin _operating_ on Kotlin code ([PSI](psi.md)) in the IDE, configure Kotlin [plugin dependency](plugin_dependencies.md) (`org.jetbrains.kotlin`).
 >
 > See also [UAST](uast.md) on how to support multiple JVM languages, including Kotlin.
 >
@@ -25,14 +25,14 @@ This page describes developing plugins using the [Kotlin](https://kotlinlang.org
 ## Advantages of Developing a Plugin in Kotlin
 
 Using Kotlin to write plugins for the IntelliJ Platform is very similar to writing plugins in Java.
-Existing Java classes can be converted to their Kotlin equivalents by using the [J2K converter](https://kotlinlang.org/docs/mixing-java-kotlin-intellij.html#converting-an-existing-java-file-to-kotlin-with-j2k) (part of Kotlin plugin).
+Existing Java classes can be converted to their Kotlin equivalents by using the [J2K converter](https://kotlinlang.org/docs/mixing-java-kotlin-intellij.html#converting-an-existing-java-file-to-kotlin-with-j2k) (part of the Kotlin plugin).
 
 In addition to [null safety](https://kotlinlang.org/docs/null-safety.html), [type-safe builders](https://kotlinlang.org/docs/type-safe-builders.html), and [](kotlin_coroutines.md), the Kotlin language offers many convenient features for plugin development,
 which make plugins easier to read and simpler to maintain.
 Much like [Kotlin for Android](https://kotlinlang.org/docs/android-overview.html), the IntelliJ Platform makes extensive use of callbacks, which are straightforward to express as [lambdas](https://kotlinlang.org/docs/lambdas.html) in Kotlin.
 
 Kotlin classes can be mixed in a project with existing Java code.
-This might come handy when certain APIs require the use of mentioned Kotlin Coroutines.
+This might come in handy when certain APIs require the use of mentioned Kotlin Coroutines.
 
 ### Adding Extensions
 
@@ -45,7 +45,7 @@ if (logger.isDebugEnabled()) {
 }
 ```
 
-We can achieve the same result more succinctly in Kotlin, by declaring the following extension method:
+We can achieve the same result more succinctly in Kotlin by declaring the following extension method:
 
 ```kotlin
 inline fun Logger.debug(lazyMessage: () -> String) {
@@ -67,14 +67,14 @@ With practice, you will be able to recognize many idioms in the IntelliJ Platfor
 
 ### UI Forms in Kotlin
 
-The IntelliJ Platform provides a [type safe DSL](kotlin_ui_dsl_version_2.md) to build UI forms in a declarative way.
+The IntelliJ Platform provides a [type-safe DSL](kotlin_ui_dsl_version_2.md) to build UI forms declaratively.
 
 > Using _UI Designer_ plugin with Kotlin is [not supported](https://youtrack.jetbrains.com/issue/KTIJ-791).
 >
 
 ### Kotlin Coroutines
 
-[](kotlin_coroutines.md) are a lightweight and easy to implement alternative to threads with many [advantages](kotlin_coroutines.md#coroutines-advantages).
+[](kotlin_coroutines.md) are a lightweight and convenient alternative to threads with many [advantages](kotlin_coroutines.md#coroutines-advantages).
 
 ## Adding Kotlin Support
 
@@ -93,7 +93,7 @@ Adding Kotlin source files compilation support to a Gradle-based project require
 
 {id="kotlin-standard-library"}
 
-Since Kotlin 1.4, a dependency on the standard library _stdlib_ is added automatically ([API Docs](https://kotlinlang.org/api/latest/jvm/stdlib/)).
+Starting with Kotlin 1.4, a dependency on the standard library _stdlib_ is added automatically ([API Docs](https://kotlinlang.org/api/latest/jvm/stdlib/)).
 In nearly all cases, it is _not necessary_ to include it in the plugin distribution as the platform already bundles it.
 
 To opt out, add this line in <path>gradle.properties</path>:
@@ -158,8 +158,8 @@ See [here](https://www.jetbrains.com/legal/third-party-software/) for earlier ve
 {id="coroutinesLibraries"}
 
 Plugins _must_ always use the bundled library from the target IDE and not bundle their own version.
-Please make sure it is not added via transitive dependencies either
-(see [View and Debug Dependencies](https://docs.gradle.org/current/userguide/viewing_debugging_dependencies.html) in Gradle user guide).
+Make sure it is not added via transitive dependencies either
+(see [View and Debug Dependencies](https://docs.gradle.org/current/userguide/viewing_debugging_dependencies.html) in the Gradle user guide).
 
 Since 2024.2, a custom [fork](https://github.com/JetBrains/intellij-deps-kotlinx.coroutines) with additional patches is bundled.
 
@@ -175,28 +175,28 @@ See [](kotlin_coroutines.md) on how to use them in plugins.
 
 In general, it is strongly advised to always use the bundled library version.
 
-Please see [Third-Party Software and Licenses](https://www.jetbrains.com/legal/third-party-software/) for an overview of all bundled libraries.
+See [Third-Party Software and Licenses](https://www.jetbrains.com/legal/third-party-software/) for an overview of all bundled libraries.
 
 ### Incremental compilation
 
-The Kotlin Gradle plugin supports [incremental compilation](https://kotlinlang.org/docs/gradle-compilation-and-caches.html#incremental-compilation), which allows tracking changes in the source files so the compiler handles only updated code.
+The Kotlin Gradle plugin supports [incremental compilation](https://kotlinlang.org/docs/gradle-compilation-and-caches.html#incremental-compilation), which allows tracking changes in the source files, so the compiler handles only updated code.
 
 <tabs>
 
 <tab title="Kotlin 1.9.0 and later">
 
-No action required.
+No action is required.
 
-Remove additional `kotlin.incremental.useClasspathSnapshot=false` property in <path>gradle.properties</path> if present.
+Remove the additional `kotlin.incremental.useClasspathSnapshot=false` property in <path>gradle.properties</path> if present.
 
 </tab>
 
 <tab title="Kotlin 1.8.20">
 
-> Please consider using Kotlin 1.9.0 or later where this issue has been resolved.
+> Consider using Kotlin 1.9.0 or later where this issue has been resolved.
 
 Kotlin `1.8.20` has a [new incremental compilation approach](https://kotlinlang.org/docs/gradle-compilation-and-caches.html#a-new-approach-to-incremental-compilation) which is enabled by default.
-Unfortunately, it is not compatible with the IntelliJ Platform — when reading large JAR files (like <path>app.jar</path> or <path>3rd-party-rt.jar</path>),
+Unfortunately, it is not compatible with the IntelliJ Platform when reading large JAR files (like <path>app.jar</path> or <path>3rd-party-rt.jar</path>),
 leading to an `Out of Memory` exception:
 
 ```
@@ -224,7 +224,7 @@ kotlin.incremental.useClasspathSnapshot=false
 Plugins *may* use [Kotlin classes](https://kotlinlang.org/docs/classes.html) (`class` keyword) to implement declarations in the [plugin configuration file](plugin_configuration_file.md).
 When registering an extension, the platform uses a dependency injection framework to instantiate these classes at runtime.
 For this reason, plugins *must not* use [Kotlin objects](https://kotlinlang.org/docs/object-declarations.html#object-declarations-overview) (`object` keyword) to implement any <path>[plugin.xml](plugin_configuration_file.md)</path> declarations.
-Managing the lifecycle of extensions is the platform's responsibility and instantiating these classes as Kotlin singletons may cause issues.
+Managing the lifecycle of extensions is the platform's responsibility, and instantiating these classes as Kotlin singletons may cause issues.
 
 A notable exception is `com.intellij.openapi.fileTypes.FileType` (`com.intellij.fileType` extension point), see also the inspection descriptions below.
 

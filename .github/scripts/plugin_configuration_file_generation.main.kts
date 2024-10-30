@@ -70,7 +70,7 @@ file(PLUGIN_CONFIGURATION_FILE_PATH).useLines { lines ->
     if (line.trim() == patternToInsertAfter) {
       insideGeneratedContent = true
       newFileContent.appendLine(line)
-      newFileContent.append(renderContent(content)) // Insert your content immediately after the start pattern
+      newFileContent.append(renderContent(content))
     } else if (line.trim() == patternToSkipUntil) {
       insideGeneratedContent = false
       newFileContent.appendLine(line)
@@ -374,7 +374,7 @@ fun String.internalizeLinks(): String {
   return markdownLinkRegex.replace(this) { matchResult ->
     val linkText = matchResult.groupValues[1]
     val originalUrl = matchResult.groupValues[2]
-    val internalLink = getInternalLink(originalUrl) // Placeholder function
+    val internalLink = getInternalLink(originalUrl)
     if (internalLink != null) {
       "[$linkText]($internalLink)"
     } else {

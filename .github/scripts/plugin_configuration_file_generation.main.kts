@@ -24,8 +24,7 @@ The proper solution is to create a snippet file in topics/_generated,
 but we can't use this approach until WRS-1009 is fixed.
 */
 
-val PLUGIN_DESCRIPTOR_DATA_URL =
-  "file:///Users/karol.lewandowski/IdeaProjects/intellij/community/plugins/devkit/devkit-core/resources/documentation/plugin-descriptor.yaml" // FIXME: url, via jb.gg
+val PLUGIN_DESCRIPTOR_DATA_URL = "https://jb.gg/sdk-docs/plugin-descriptor.yaml"
 val PLUGIN_CONFIGURATION_FILE_PATH = "topics/basics/plugin_structure/plugin_configuration_file.md"
 
 val content = URL(PLUGIN_DESCRIPTOR_DATA_URL).readText()

@@ -222,11 +222,13 @@ kotlin.incremental.useClasspathSnapshot=false
 {id="object-vs-class"}
 
 Plugins *may* use [Kotlin classes](https://kotlinlang.org/docs/classes.html) (`class` keyword) to implement declarations in the [plugin configuration file](plugin_configuration_file.md).
-When registering an extension, the platform uses a dependency injection framework to instantiate these classes at runtime.
-For this reason, plugins *must not* use [Kotlin objects](https://kotlinlang.org/docs/object-declarations.html#object-declarations-overview) (`object` keyword) to implement any <path>[plugin.xml](plugin_configuration_file.md)</path> declarations.
+When registering an [extension](plugin_extensions.md), the platform uses a dependency injection framework to instantiate these classes at runtime.
+For this reason, plugins *must not* use [Kotlin objects](https://kotlinlang.org/docs/object-declarations.html#object-declarations-overview) (`object` keyword)
+to implement any <path>[plugin.xml](plugin_configuration_file.md)</path> declarations.
 Managing the lifecycle of extensions is the platform's responsibility, and instantiating these classes as Kotlin singletons may cause issues.
 
-A notable exception is `com.intellij.openapi.fileTypes.FileType` (`com.intellij.fileType` extension point), see also the inspection descriptions below.
+A notable exception is [`FileType`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileTypes/FileType.java)
+(`com.intellij.fileType` extension point), see also the inspection descriptions below.
 
 Problems are highlighted via these inspections (2023.2):
 
@@ -237,7 +239,7 @@ Problems are highlighted via these inspections (2023.2):
 
 {id="companion-object-extensions"}
 
-Kotlin `companion object` is always created once you try to load its containing class, and [extension point implementations](plugin_extensions.md) are supposed to be cheap to create.
+A Kotlin `companion object` is always created once you try to load its containing class, and [extension point implementations](plugin_extensions.md) are supposed to be cheap to create.
 To avoid unnecessary classloading (and thus slowdown in IDE startup), `companion object` in extensions must only contain simple constants or [logger](ide_infrastructure.md#logging).
 Anything else must be a top-level declaration or stored in an `object`.
 

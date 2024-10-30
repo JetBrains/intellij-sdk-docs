@@ -148,7 +148,7 @@ fun StringBuilder.appendElement(
   if (renderedElementPaths.contains(elementSectionLink)) return
 
   appendSectionHeader(element, level, elementSectionLink, addDeprecationLabel)
-  element.deprecationNote?.let { appendLine(it) }
+  appendDeprecationNote(element)
   appendReferences(element.references)
   element.description?.trim()?.let { appendLine("$it\n") }
   appendDeprecationVersion(element.deprecatedSince)
@@ -184,6 +184,14 @@ fun StringBuilder.appendSectionHeader(
   } else if (element.since != null) {
     appendLine("\n<primary-label ref=\"${element.since}\"/>\n")
   }
+}
+
+fun StringBuilder.appendDeprecationNote(element: Element) {
+  val note = element.deprecationNote ?: return
+  val warning = note.lines().filter { it.isNotEmpty() }.joinToString(separator = "\n") { "> $it" }
+  appendLine(warning)
+  appendLine(">")
+  appendLine("{style=\"warning\"}\n")
 }
 
 fun StringBuilder.appendReferences(references: List<String>) {

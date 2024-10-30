@@ -100,7 +100,7 @@ Unbundled JUnit library
 `com.intellij.openapi.externalSystem.model.task.event.SkippedResultImpl` class renamed to `com.intellij.openapi.externalSystem.model.task.event.SkippedResult`
 : Use new class
 
-` com.intellij.openapi.externalSystem.model.task.event.SuccessResultImpl` class renamed to ` com.intellij.openapi.externalSystem.model.task.event.SuccessResult`
+`com.intellij.openapi.externalSystem.model.task.event.SuccessResultImpl` class renamed to `com.intellij.openapi.externalSystem.model.task.event.SuccessResult`
 : Use new class
 
 `com.intellij.openapi.externalSystem.model.task.event.ExternalSystemStatusEventImpl` class renamed to `com.intellij.openapi.externalSystem.model.task.event.ExternalSystemStatusEvent`

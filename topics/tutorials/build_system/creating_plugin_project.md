@@ -2,7 +2,7 @@
 
 # Creating a Plugin Gradle Project
 
-<link-summary>Creating and running a Gradle-based IntelliJ Platform plugin projects.</link-summary>
+<link-summary>Creating and running a Gradle-based IntelliJ Platform plugin project.</link-summary>
 
 This documentation page describes a Gradle-based plugin project generated with the [New Project Wizard](https://www.jetbrains.com/help/idea/new-project-wizard.html), but the project generated with [](plugin_github_template.md) covers all the described files and directories.
 

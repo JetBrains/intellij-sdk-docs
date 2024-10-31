@@ -112,6 +112,9 @@ Unbundled JUnit library
 `com.intellij.openapi.externalSystem.model.task.event.ExternalSystemFinishEventImpl` class renamed to `com.intellij.openapi.externalSystem.model.task.event.ExternalSystemFinishEvent`
 : Use new class
 
+Interface `com.intellij.openapi.externalSystem.model.task.event.TaskOperationDescriptor` changed to class
+: Recompile your plugin with new class
+
 `com.intellij.openapi.externalSystem.importing.AbstractOpenProjectProvider.linkToExistingProjectAsync(VirtualFile arg0, Project arg1, Continuation arg2)` method marked final
 : Override method `com.intellij.openapi.externalSystem.importing.AbstractOpenProjectProvider#linkProject` instead
 

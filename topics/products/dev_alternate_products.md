@@ -23,6 +23,10 @@ See also [](plugin_compatibility.md).
 ## Gradle IntelliJ Plugin (1.x)
 {id="gradle1"}
 
+<primary-label ref="Obsolete"/>
+
+<include from="tools_gradle_intellij_plugin.md" element-id="gradlePluginObsolete"/>
+
 To create a new Gradle plugin project, follow the tutorial on the [](creating_plugin_project.md) page.
 The tutorial produces a skeleton Gradle project suitable to use as a starting point.
 

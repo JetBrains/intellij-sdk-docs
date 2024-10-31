@@ -209,7 +209,7 @@ For more complex cases, the plugin may request to provide a detailed configurati
 ## Customization
 
 To fine-tune or disable the implementation of LSP-based features, plugins may override the corresponding properties of the `LspServerDescriptor` class.
-See the property documentation for more details.
+See the [property documentation](#ide-setup) for more details.
 
 ### 2023.3
 
@@ -233,7 +233,7 @@ To handle custom (undocumented) requests and notifications from the LSP server, 
 To send custom (undocumented) requests and notifications to the LSP server, override `LspServerDescriptor.lsp4jServerClass` property and implement the `LspClientNotification` and/or `LspRequest` classes.
 The documentation in the source code includes implementation examples.
 
-See bundled LSP API source code and its documentation for more information.
+See the [bundled LSP API source code](#ide-setup) and its documentation for more information.
 
 ## Troubleshooting
 

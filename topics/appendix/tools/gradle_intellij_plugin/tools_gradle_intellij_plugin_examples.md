@@ -1,9 +1,9 @@
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# Gradle IntelliJ Plugin – Usage Examples
+# Gradle IntelliJ Plugin (1.x) – Usage Examples
 <primary-label ref="Obsolete"/>
 
-<link-summary>Usage Examples of plugins using Gradle IntelliJ Plugin.</link-summary>
+<link-summary>Usage Examples of plugins using Gradle IntelliJ Plugin (1.x).</link-summary>
 
 <include from="tools_gradle_intellij_plugin.md" element-id="gradlePluginObsolete"/>
 

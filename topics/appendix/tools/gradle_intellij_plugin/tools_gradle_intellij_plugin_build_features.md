@@ -1,9 +1,9 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# Gradle IntelliJ Plugin – Build Features
+# Gradle IntelliJ Plugin (1.x) – Build Features
 <primary-label ref="Obsolete"/>
 
-<link-summary>Overview of Gradle IntelliJ Plugin feature flags.</link-summary>
+<link-summary>Overview of Gradle IntelliJ Plugin (1.x) feature flags.</link-summary>
 
 <include from="tools_gradle_intellij_plugin.md" element-id="gradlePluginObsolete"/>
 

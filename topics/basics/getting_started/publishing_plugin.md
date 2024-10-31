@@ -58,7 +58,7 @@ See [](#deploying-a-plugin-with-gradle) on how to publish new versions using Gra
 
 ## Publishing Plugin With Gradle
 
-Once [Gradle support](configuring_plugin_project.md) has been configured, and the plugin has been [uploaded manually](#uploading-a-plugin-to-jetbrains-marketplace) to the plugin repository at least once,
+Once [Gradle support](creating_plugin_project.md) has been configured, and the plugin has been [uploaded manually](#uploading-a-plugin-to-jetbrains-marketplace) to the plugin repository at least once,
 it can be built and deployed to the [JetBrains Marketplace](https://plugins.jetbrains.com) automatically using dedicated Gradle tasks.
 
 > **2.x** refers to [](tools_intellij_platform_gradle_plugin.md) and **1.x** to [](tools_gradle_intellij_plugin.md) in the following sections.

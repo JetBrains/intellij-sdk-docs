@@ -14,7 +14,7 @@ See also [](build_number_ranges.md#multipleIDEVersions).
 
 ### Using with Gradle
 
-Integration in [Gradle build](configuring_plugin_project.md) is available out-of-the box via dedicated Gradle tasks.
+Integration in [Gradle build](creating_plugin_project.md) is available out-of-the box via dedicated Gradle tasks.
 
 <tabs>
 <tab title="IntelliJ Platform Gradle Plugin (2.x)">

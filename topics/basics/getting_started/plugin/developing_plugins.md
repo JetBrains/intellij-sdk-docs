@@ -45,7 +45,9 @@ A dedicated [SBT plugin](https://github.com/JetBrains/sbt-idea-plugin) is availa
 
 ## Plugin Development Workflow
 
-* [Creating a Gradle-based Plugin Project](creating_plugin_project.md)
-* [Configuring the Gradle IntelliJ Plugin](configuring_plugin_project.md)
-  * [Adding Kotlin Support](using_kotlin.md)
-* [Publishing a Plugin](publishing_plugin.md)
+* [](creating_plugin_project.md)
+  * [](plugin_github_template.md)
+* [](configuring_plugin_project.md)
+* [](using_kotlin.md)
+* [](plugin_signing.md)
+* [](publishing_plugin.md)

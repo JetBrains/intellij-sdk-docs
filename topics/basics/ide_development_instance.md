@@ -118,6 +118,10 @@ in the plugin project and switch back focus to the sandbox instance to trigger r
 
 {collapsible="true" default-state="collapsed"}
 
+<primary-label ref="Obsolete"/>
+
+<include from="tools_gradle_intellij_plugin.md" element-id="gradlePluginObsolete"/>
+
 Auto-Reload is enabled by default for target platform 2020.2 or later.
 
 Set property [`runIde.autoReloadPlugins`](tools_gradle_intellij_plugin.md#tasks-runide-autoreloadplugins) to `true` for enabling it in earlier platform versions or `false` to disable it explicitly,
@@ -157,6 +161,10 @@ The Sandbox Home location can be configured with the [`intellijPlatform.sandboxC
 ### Gradle IntelliJ Plugin (1.x) {id="sandboxGradle1"}
 
 {collapsible="true" default-state="collapsed"}
+
+<primary-label ref="Obsolete"/>
+
+<include from="tools_gradle_intellij_plugin.md" element-id="gradlePluginObsolete"/>
 
 The default Sandbox Home location in a [](tools_gradle_intellij_plugin.md) plugin project is:
 

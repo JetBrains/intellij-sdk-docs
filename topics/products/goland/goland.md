@@ -44,6 +44,10 @@ dependencies {
 
 {collapsible="true" default-state="collapsed"}
 
+<primary-label ref="Obsolete"/>
+
+<include from="tools_gradle_intellij_plugin.md" element-id="gradlePluginObsolete"/>
+
 <tabs>
 
 <tab title="GoLand IDE">

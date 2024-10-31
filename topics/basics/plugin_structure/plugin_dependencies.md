@@ -131,6 +131,10 @@ See [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) 
 
 {collapsible="true" default-state="collapsed"}
 
+<primary-label ref="Obsolete"/>
+
+<include from="tools_gradle_intellij_plugin.md" element-id="gradlePluginObsolete"/>
+
 > Please see the [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) property for acceptable values.
 >
 {style="note"}

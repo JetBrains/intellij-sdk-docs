@@ -21,6 +21,10 @@
     Deprecated, see notes.
   </primary-label>
 
+  <primary-label id="Obsolete" name="Obsolete" short-name="Obsolete" color="strawberry">
+    Obsolete, see notes.
+  </primary-label>
+
   <primary-label id="2019.2" short-name="2019.2+" name="2019.2+">
     Available in IDE version 2019.2 or later
   </primary-label>

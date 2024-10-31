@@ -1,10 +1,13 @@
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Gradle IntelliJ Plugin – Usage Examples
+<primary-label ref="Obsolete"/>
 
 <link-summary>Usage Examples of plugins using Gradle IntelliJ Plugin.</link-summary>
 
-Marketplace platform provides the [IntelliJ Platform Explorer](https://jb.gg/ipe) – a search tool for browsing Extension Points inside existing implementations of open-source IntelliJ Platform plugins.
+<include from="tools_gradle_intellij_plugin.md" element-id="gradlePluginObsolete"/>
+
+The JetBrains Marketplace platform provides the [IntelliJ Platform Explorer](https://jb.gg/ipe) – a search tool for browsing Extension Points inside existing implementations of open-source IntelliJ Platform plugins.
 
 One of its features is the possibility of filtering the plugins by those that utilize [Gradle](https://jb.gg/ipe?buildSystem=gradle) or [Gradle KTS](https://jb.gg/ipe?buildSystem=gradle_kts) build scripts.
 

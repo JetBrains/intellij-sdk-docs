@@ -85,6 +85,38 @@ Unbundled JUnit library
 `ai.grazie.nlp.stemmer` package removed
 : Add an explicit dependency on the NLP platform if needed.
 
+`com.intellij.openapi.externalSystem.model.task.event.ExternalSystemStartEventImpl` class renamed to `com.intellij.openapi.externalSystem.model.task.event.ExternalSystemStartEvent`
+: Use new class
+
+`com.intellij.openapi.externalSystem.model.task.event.TaskOperationDescriptorImpl` class renamed to `com.intellij.openapi.externalSystem.model.task.event.TaskOperationDescriptor`
+: Use new class
+
+`com.intellij.openapi.externalSystem.model.task.event.DefaultOperationResult` class renamed to `com.intellij.openapi.externalSystem.model.task.event.OperationResult`
+: Use new class
+
+`com.intellij.openapi.externalSystem.model.task.event.FailureResultImpl` class renamed to `com.intellij.openapi.externalSystem.model.task.event.FailureResult`
+: Use new class
+
+`com.intellij.openapi.externalSystem.model.task.event.SkippedResultImpl` class renamed to `com.intellij.openapi.externalSystem.model.task.event.SkippedResult`
+: Use new class
+
+`com.intellij.openapi.externalSystem.model.task.event.SuccessResultImpl` class renamed to `com.intellij.openapi.externalSystem.model.task.event.SuccessResult`
+: Use new class
+
+`com.intellij.openapi.externalSystem.model.task.event.ExternalSystemStatusEventImpl` class renamed to `com.intellij.openapi.externalSystem.model.task.event.ExternalSystemStatusEvent`
+: Use new class
+
+`com.intellij.openapi.externalSystem.model.task.event.FailureImpl` class renamed to `com.intellij.openapi.externalSystem.model.task.event.Failure`
+: Use new class
+
+`com.intellij.openapi.externalSystem.model.task.event.ExternalSystemFinishEventImpl` class renamed to `com.intellij.openapi.externalSystem.model.task.event.ExternalSystemFinishEvent`
+: Use new class
+
+`com.intellij.openapi.externalSystem.importing.AbstractOpenProjectProvider.linkToExistingProjectAsync(VirtualFile arg0, Project arg1, Continuation arg2)` method marked final
+: Override method `com.intellij.openapi.externalSystem.importing.AbstractOpenProjectProvider#linkProject` instead
+
+
+
 ### JSON Plugin (new) 2024.3
 
 `com.intellij.json.JsonElementTypes` class removed

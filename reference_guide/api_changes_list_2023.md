@@ -302,6 +302,11 @@ Fragment builder functions from `ExternalSystemRunConfigurationUtil` file moved 
 `com.intellij.database.datagrid.DataGrid.getPureBinaryDisplayType(ModelIndex<GridColumn>)` method removed
 : Use `com.intellij.database.datagrid.DataGrid.getPureDisplayType(ModelIndex<GridColumn>)` instead.
 
+### Package Checker Plugin 2023.3
+
+`com.intellij.packageChecker.maven.MavenSharedDependenciesModel` class renamed to `com.intellij.packageChecker.java.BuildSystemDependenciesModelBase`
+: Renamed to a more correct and generic name.
+
 ## 2023.2
 
 ### IntelliJ Platform 2023.2

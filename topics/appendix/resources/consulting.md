@@ -18,6 +18,7 @@ Also, consider posting requests in _#jobs_ channel on [JetBrains Platform Slack]
 | Mikhail Bolotov    | [mikhail.bolotov@gmail.com][mb]                         | Plugins: [Cypress Support Pro][cspro], [k6]                                  |
 | Ilscipio GmbH      | [Paul Piper][il], [www.ilscipio.com][il2]               | Custom Plugin Development                                                    |
 | Tamás Balog        | [www.picimako.com][pm]                                  | Custom Plugin Development                                                    |
+| Dmitry Kandalov    | [dmitry.kandalov@gmail.com][dk]                         | Custom Plugin Development (e.g. using [LivePlugin][lp])                          |
 
 [ja]: https://www.plugin-dev.com
 [de]: mailto:daniel@espendiller.net
@@ -31,6 +32,8 @@ Also, consider posting requests in _#jobs_ channel on [JetBrains Platform Slack]
 [il2]: https://www.ilscipio.com
 [pm]: https://www.picimako.com
 [bn]: mailto:beansoft@126.com
+[dk]: mailto:dmitry.kandalov@gmail.com
+[lp]: https://plugins.jetbrains.com/plugin/7282-liveplugin
 [bn2]: https://plugins.jetbrains.com/organizations/BeanSoft
 [rnc]: https://plugins.jetbrains.com/plugin/9564-react-native-console
 

@@ -172,6 +172,8 @@ Interface `com.intellij.openapi.externalSystem.model.task.event.TaskOperationDes
 `com.intellij.lang.ecmascript6.JSXHarmonyFileType` class renamed to `com.intellij.lang.javascript.JSXFileType`
 : Update code usages.
 
+Interface `com.intellij.lang.javascript.JSElementTypes` no longer extends `com.intellij.lang.javascript.JSStubElementTypes`
+: Update code usages.
 
 ## 2024.2
 

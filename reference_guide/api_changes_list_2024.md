@@ -167,6 +167,11 @@ Interface `com.intellij.openapi.externalSystem.model.task.event.TaskOperationDes
 `com.intellij.httpClient.http.request.run.HttpRunRequestInfo` class moved to package `com.intellij.httpClient.http.request.run.info`
 : Update code usages.
 
+### JavaScript Plugin 2024.3
+
+`com.intellij.lang.ecmascript6.JSXHarmonyFileType` class renamed to `com.intellij.lang.javascript.JSXFileType`
+: Update code usages.
+
 
 ## 2024.2
 

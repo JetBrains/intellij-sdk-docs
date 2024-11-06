@@ -95,7 +95,14 @@ The <path>plugin.xml</path> configuration file must specify the dependency on th
 
 ### IDE Setup
 
-The LSP API sources are bundled in IntelliJ IDEA Ultimate and can be found within the <path>\$IDEA_INSTALLATION\$/lib/src/src_lsp-openapi.zip</path> archive.
+Since 2024.2, LSP API sources are provided with the `IntelliJ IDEA Ultimate sources` artifact.
+See [](tools_intellij_platform_gradle_plugin.md#attaching-sources) on how to enable downloading sources.
+Then, use <ui-path>Navigate | Class...</ui-path> to open the `LspServerManager` class.
+In the opened editor, invoke <control>Download IntelliJ Platform sources</control> to download and attach sources.
+
+#### Earlier IDE Versions
+
+The LSP API sources are bundled in the IntelliJ IDEA Ultimate distribution and can be found within the <path>\$IDEA_INSTALLATION\$/lib/src/src_lsp-openapi.zip</path> archive.
 
 > Due to technical limitations in IDEs before 2024.1, it is necessary to manually attach sources to the IntelliJ IDEA Ultimate dependency.
 > To do so, when reviewing the compiled class which belongs to the LSP API, run the _Choose Sources..._ action, and point to the

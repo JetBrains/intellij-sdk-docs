@@ -12,10 +12,6 @@
             <control>Implementation</control>:
             <a href="https://docs.oracle.com/javase/tutorial/uiswing/components/button.html">JButton</a>
         </p>
-        <p>
-            <control>Specification</control>: <a href="https://www.figma.com/design/w8GWsQsHF3XdjdcN1E3X3n/Int-UI-Kit?node-id=733-46953">Button</a>
-
-        </p>
     </tldr>
     <img src="button_example.png" alt="Cancel and Save buttons" width="706"/>
     <chapter title="When to use" id="when-to-use">

@@ -110,16 +110,14 @@ The LSP support provided by the IntelliJ Platform covers the following features 
 ### 2024.3
 
 - Color Preview ([`textDocument/documentColor`](https://microsoft.github.io/language-server-protocol/specification#textDocument_documentColor))
-
-#### 2024.3.1
-
-- Document Save Notification [`textDocument/didSave`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_didSave)
+- Document Save Notification ([`textDocument/didSave`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_didSave)) [2024.3.1]
 
 ### 2024.2
 
 - Find Usages ([`textDocument/references`](https://microsoft.github.io/language-server-protocol/specification#textDocument_references))
 - Completion Item Resolve Request ([`completionItem/resolve`](https://microsoft.github.io/language-server-protocol/specification/#completionItem_resolve))
 - Code Action Resolve Request ([`codeAction/resolve`](https://microsoft.github.io/language-server-protocol/specification/#codeAction_resolve))
+- Semantic Highlighting ([`textDocument/semanticTokens/full`](https://microsoft.github.io/language-server-protocol/specification/#semanticTokens_fullRequest)) [2024.2.2]
 
 ### 2024.1
 
@@ -128,16 +126,13 @@ The LSP support provided by the IntelliJ Platform covers the following features 
 - Apply a WorkspaceEdit ([`workspace/applyEdit`](https://microsoft.github.io/language-server-protocol/specification/#workspace_applyEdit))
 - Show Document Request ([`window/showDocument`](https://microsoft.github.io/language-server-protocol/specification/#window_showDocument))
 
-### 2023.3.2
-
-- Quick documentation ([`textDocument/hover`](https://microsoft.github.io/language-server-protocol/specification#textDocument_hover))
-- Client-side file watcher ([`workspace/didChangeWatchedFiles`](https://microsoft.github.io/language-server-protocol/specification#workspace_didChangeWatchedFiles))
-
 ### 2023.3
 
 - Intention actions ([`textDocument/codeAction`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_codeAction))
 - Code formatting ([`textDocument/formatting`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_formatting))
 - Request cancellation ([`$/cancelRequest`](https://microsoft.github.io/language-server-protocol/specification/#cancelRequest))
+- Quick documentation ([`textDocument/hover`](https://microsoft.github.io/language-server-protocol/specification#textDocument_hover)) [2023.3.2]
+- Client-side file watcher ([`workspace/didChangeWatchedFiles`](https://microsoft.github.io/language-server-protocol/specification#workspace_didChangeWatchedFiles)) [2023.3.2]
 
 ### 2023.2
 

@@ -70,6 +70,15 @@
   <primary-label id="2024.3" short-name="2024.3+" name="2024.3+">
     Available in IDE version 2024.3 or later
   </primary-label>
+  <primary-label id="2025.1" short-name="2025.1+" name="2025.1+">
+    Available in IDE version 2025.1 or later
+  </primary-label>
+  <primary-label id="2025.2" short-name="2025.2+" name="2025.2+">
+    Available in IDE version 2025.2 or later
+  </primary-label>
+  <primary-label id="2025.3" short-name="2025.3+" name="2025.3+">
+    Available in IDE version 2025.3 or later
+  </primary-label>
 
   <secondary-label id="deprecated" name="Deprecated" color="red">
     This item is marked as deprecated.

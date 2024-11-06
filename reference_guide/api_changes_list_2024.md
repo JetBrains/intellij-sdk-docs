@@ -175,6 +175,10 @@ Interface `com.intellij.openapi.externalSystem.model.task.event.TaskOperationDes
 Interface `com.intellij.lang.javascript.JSElementTypes` no longer extends `com.intellij.lang.javascript.JSStubElementTypes`
 : Update code usages.
 
+Field `com.intellij.lang.javascript.JavaScriptSupportLoader.ECMA_SCRIPT_L4` moved to `com.intellij.lang.javascript.flex.FlexSupportLoader`
+: Update code usages.
+
+
 ## 2024.2
 
 ### IntelliJ Platform 2024.2

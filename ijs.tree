@@ -440,8 +440,6 @@
       <toc-element topic="tools_gradle_intellij_plugin_examples.md" toc-title="Usage Examples"/>
       <toc-element topic="tools_gradle_intellij_plugin_build_features.md" toc-title="Build Features"/>
       <toc-element topic="tools_gradle_intellij_plugin_faq.md" toc-title="Frequently Asked Questions"/>
-      <toc-element toc-title="Migration Guide from 0.x to 1.x"
-                   target-for-accept-web-file-names="https://lp.jetbrains.com/gradle-intellij-plugin/"/>
     </toc-element>
     <toc-element topic="tools_gradle_grammar_kit_plugin.md"/>
     <toc-element toc-title="IDE Tooling">

@@ -10,111 +10,92 @@
 
 </tldr>
 
-The Split button is a button that has two parts — the main action on the left and a control button which shows a dropdown with less common actions on the right.
+A split button is a combination of a regular [button](button.topic) and a drop-down button.
 
-![](button-and-dropdown-menu.png){width=218}
+![](split_button.png){width=706}
+
+## Anatomy
+A split button consists of the main action on the left and a drop-down button that shows a dropdown
+with less common actions on the right:
+
+![Split button action anatomy](split_button_anatomy.png){width=706}
 
 ## When to use
 
-<p>Use the split button:</p>
+### More than two related actions
+When there are more than two actions related to the main action, and there is not enough space for separate buttons, put these actions into
+the dropdown menu:
 
-When more than 2 related actions are possible but the space is limited and/or packed:
-For example, it is useful for the Commit actions group in the <control>Commit</control> dialog:
+![Related actions in a split button](split_button_related_actions.png){width=706}
+### The second action is dangerous and uncommon
+Dangerous actions can destroy users’ data and cannot be easily undone.
+To avoid accidental clicks on a dangerous action, you can hide it in the dropdown menu if this action is uncommon, for example <control>Force Push</control>:
 
-![](button-and-dropdown-menu.png){width=218}
+![Dangerous action in a split button](split_button_dangerous_action.png){width=706}
 
-The Split button is not useful in the <control>Replace</control> popup, since not all actions are related.
-For example, <control>Open in Find Window</control>
-is not related to the main action. Such actions are hard to find in the drop-down menu:
+An uncommon dangerous action can be the only action in the menu.
+<note>Uncommon actions are the actions called in rare cases for specific purposes. For example, the <control>Force Push</control> action, unlike the <control>Commit and Push...</control> action, is available under certain circumstances
+and covers rare user scenarios. Thus, it can be considered as uncommon and hidden in the dropdown menu.</note>
 
-<table>
-    <tr>
-        <td width="50%"><format color="Red" style="bold">Incorrect</format></td>
-        <td width="50%"><format color="Green" style="bold">Correct</format></td>
-    </tr>
-    <tr>
-        <td><img src="not-related-incorrect.png" alt="" width="152"/></td>
-        <td><img src="not-related.png" alt="" width="327"/></td>
-    </tr>
-</table>
+## When not to use
 
-In the <control>Adjust Code Style</control> dialog, only 1 related action is possible, and it does not save a lot of space:
+### Unrelated actions
 
-<table>
-    <tr>
-        <td width="50%"><format color="Red" style="bold">Incorrect</format></td>
-        <td width="50%"><format color="Green" style="bold">Correct</format></td>
-    </tr>
-    <tr>
-        <td><img src="space-not-limited-incorrect.png" alt="" width="152" /></td>
-        <td><img src="space-not-limited.png" alt="" width="234" /></td>
-    </tr>
-</table>
+If unrelated actions are hidden under the dropdown menu, they are hard to find:
 
-To hide actions which are dangerous and uncommon. Dangerous means an action can destroy users’ data and cannot be easily undone.
-It is less possible to accidentally click an action hidden in a menu.
-It is recommended to hide even a single related uncommon dangerous action.
-For example, <control>Force Push</control> can override remote commits from other authors and should not be easily available:
+<format color="E55765" style="bold">Incorrect</format>
 
-![](dangerous.png){width=111}
+<img src="split_button_unrelated_actions.png" alt="Unrelated actions" width="706"/>
 
-<p>If an action is dangerous but common, do not hide it under the split button, use simple buttons.
+<format color="369650" style="bold">Correct</format>
 
-[//]: # (TODO: An action should follow the <a href="dangerous_actions.md">principles for dangerous actions</a> behavior.)
-</p>
+<img src="split_button_unrelated_actions_correct.png" alt="Unrelated actions in separate buttons" width="706"/>
 
-Do **not** use the Split Button in other cases, use simple [Buttons](button.topic) instead.
+
+### Only one related action
+
+Putting the single action in the dropdown menu doesn't save a lot of space:
+
+<format color="E55765" style="bold">Incorrect</format>
+
+<img src="split_button_one_action.png" alt="One related action" width="706"/>
+
+<format color="369650" style="bold">Correct</format>
+
+<img src="split_button_unrelated_actions_correct.png" alt="Unrelated actions in separate buttons" width="706"/>
+
+<note><control>Exception</control>: If the action is <a anchor="the-second-action-is-dangerous-and-uncommon">dangerous and uncommon</a>, you can put it in the menu.</note>
 
 ## How to use
 
 ### Main action
+Refer to the [regular button rules](button.topic#how-to-use).
 
-<table style="none">
-  <tr>
-    <td>Click</td>
-    <td>Invoke the main action</td>
-  </tr>
-</table>
+### Dropdown button
+#### Click
 
-### Control button
+<list>
+<li>Show the dropdown menu with secondary actions.</li>
+<li>Hide the menu when clicking outside the menu or on the second dropdown button click.</li>
+</list>
 
-<table style="none">
-  <tr>
-    <td>Click</td>
-    <td>
-        <ul>
-            <li>Show a dropdown menu with secondary actions</li>
-            <li>Hide the menu on clicking outside the menu, or on the second click on the right part of the button</li>
-        </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>Hover</td>
-    <td>
-        <ul>
-            <li>Show a tooltip:
-                <img src="tooltip-button.png" width="237" /></li>
-            <li>
-                The tooltip must not overlap the dropdown menu. Do not show a tooltip under the menu, show it on the opposite side of the button:
-                <br/>
-                <format color="Green" style="bold">Correct</format>
-                <img src="tooltip-correct.png" width="255" />
-                <br/>
-                <format color="Red" style="bold">Incorrect</format>
-                <img src="tooltip-incorrect.png" width="254" />
-            </li>
-        </ul>
-    </td>
-  </tr>
-</table>
+#### Hover
+Show a tooltip:
+
+<img src="split_button_tooltip_on_hover.png" width="706" alt="Tooltip on hover"/>
 
 ### Dropdown menu
 
-Place actions related to the main button’s action in the dropdown menu.
+Place related actions into the dropdown menu. Do not duplicate the main action in the dropdown menu, otherwise it is confusing how to trigger the main action — with the button or from the menu.
 
-![](dropdown-menu.png){width=218}
+<format color="E55765" style="bold">Incorrect</format>
 
-Do **not** duplicate the main action in the dropdown menu, otherwise it is confusing how to trigger the main action — with the button or from the menu.
+![Duplicated actions in dropdown menu](split_button_duplicated_action.png){width=706}
+
+<format color="369650" style="bold">Correct</format>
+
+![Unique actions in dropdown menu](split_button_related_actions.png){width=706}
+
 
 [//]: # (### Reduce split button to simple action buttons)
 
@@ -134,11 +115,11 @@ Do **not** duplicate the main action in the dropdown menu, otherwise it is confu
 
 ## Keyboard navigation & shortcuts
 
-Trigger the **main** action when the [default](button.topic#default) button shortcut is pressed if the split button is the default one.
+* Trigger the main action when the [default](button.topic#default) button shortcut is pressed if the split button is the default one.
 
-Open the dropdown menu with the first menu item selected on <shortcut>Alt+Shift+Enter</shortcut>.
+* Open the dropdown menu with the first menu item selected on <shortcut>Alt+Shift+Enter</shortcut>.
 
-Do **not** show the dropdown menu when the button gains focus.
+* Do **not** show the dropdown menuwhen the button gains focus.
 
 ### Focus on the button
 
@@ -148,26 +129,26 @@ Do **not** show the dropdown menu when the button gains focus.
         <p><shortcut>Enter</shortcut></p>
         <p><shortcut>Ctrl+Enter</shortcut></p>
     </td>
-    <td width="85%"><ul><li>Invoke the default button action</li></ul></td>
+    <td width="85%">Invoke the default button action.</td>
   </tr>
   <tr>
     <td><shortcut>Space</shortcut></td>
-    <td><ul><li>Invoke the main action</li></ul></td>
+    <td>Invoke the main action.</td>
   </tr>
   <tr>
     <td><shortcut>Arrow Down</shortcut></td>
-    <td><ul><li>Show the dropdown menu with secondary actions and move focus to the first item in the menu</li></ul></td>
+    <td>Show the dropdown menu with secondary actions and move focus to the first item in the menu.</td>
   </tr>
   <tr>
     <td>
         <p><shortcut>Tab</shortcut></p>
         <p><shortcut>Shift + Tab</shortcut></p>
     </td>
-    <td><ul><li>Move focus to the control next to the split button and hide the drop-down menu</li></ul></td>
+    <td>Move focus to the control next to the split button and hide the dropdown menu.</td>
   </tr>
 </table>
 
-### Focus in the drop-down menu
+### Focus on the dropdown menu
 
 <table style="none">
   <tr>
@@ -175,7 +156,7 @@ Do **not** show the dropdown menu when the button gains focus.
         <p><shortcut>Enter</shortcut></p>
         <p><shortcut>Space</shortcut></p>
     </td>
-    <td width="85%">Invoke the selected action</td>
+    <td width="85%">Invoke the selected action.</td>
   </tr>
   <tr>
     <td>
@@ -184,49 +165,66 @@ Do **not** show the dropdown menu when the button gains focus.
     </td>
     <td>
         <ul>
-            <li>Navigate through the elements</li>
-            <li>Pressing Up on the top element moves the focus to the bottom element</li>
-            <li>Pressing Down on the bottom element moves the focus to the top element</li>
+            <li>Navigate through the elements.</li>
+            <li>Pressing <shortcut>Arrow Down</shortcut> on the top element moves the focus to the bottom element.</li>
+            <li>Pressing <shortcut>Arrow Up</shortcut> on the bottom element moves the focus to the top element.</li>
         </ul>
     </td>
   </tr>
   <tr>
     <td><shortcut>Esc</shortcut></td>
-    <td>Close the popup and move the focus to the split button</td>
+    <td>Close the dropdown menu and move the focus to the split button.</td>
   </tr>
 </table>
 
-## Sizes and placement
+[//]: # (## Sizes and placement)
 
-Follow the rules for the [simple button](button.topic).
+[//]: # ()
+[//]: # (Follow the rules for the [simple button]&#40;button.topic&#41;.)
 
-### Button
+[//]: # ()
+[//]: # (### Button)
 
-The width of the split button equals to the width of the main button (follow the rules of the [simple button](button.topic)) plus the width of the drop-down button.
+[//]: # ()
+[//]: # (The width of the split button equals to the width of the main button &#40;follow the rules of the [simple button]&#40;button.topic&#41;&#41; plus the width of the dropdown button.)
 
-| Windows                              | Mac                            | Darcula                            |
-|--------------------------------------|--------------------------------|------------------------------------|
-| ![](win-button-size.png){width="92"} | ![](mac-sizes.png){width="90"} | ![](darcula-sizes.png){width="94"} |
+[//]: # ()
+[//]: # (| Windows                              | Mac                            | Darcula                            |)
 
-A different width for the split button makes it easier to understand that this button is different from other buttons in the dialog.
+[//]: # (|--------------------------------------|--------------------------------|------------------------------------|)
 
-### Drop-down menu
+[//]: # (| ![]&#40;win-button-size.png&#41;{width="92"} | ![]&#40;mac-sizes.png&#41;{width="90"} | ![]&#40;darcula-sizes.png&#41;{width="94"} |)
 
-Follow the rules for menus with regard to sizes, colors, fonts and spacing.
+[//]: # ()
+[//]: # (A different width for the split button makes it easier to understand that this button is different from other buttons in the dialog.)
 
-Menu item height and spacing between the menu and the button:
+[//]: # ()
+[//]: # (### Menu)
 
-![](button-and-dropdown-sizes.png){width=232}
+[//]: # ()
+[//]: # (Follow the rules for menus with regard to sizes, colors, fonts and spacing.)
 
-## Style
+[//]: # ()
+[//]: # (Menu item height and spacing between the menu and the button:)
 
-Increase line height in the dropdown menu to lessen the chance of choosing the wrong menu item by mistake.
+[//]: # ()
+[//]: # (![]&#40;button-and-dropdown-sizes.png&#41;{width=232})
 
-Leave 2px around the separator inactive to lessen the chance of choosing the wrong menu item by mistake:
+[//]: # ()
+[//]: # (## Style)
 
-![](selected.png){width=218}
+[//]: # ()
+[//]: # (Increase line height in the dropdown menuto lessen the chance of choosing the wrong menu item by mistake.)
 
-Align the dropdown with the button left border:
+[//]: # ()
+[//]: # (Leave 2px around the separator inactive to lessen the chance of choosing the wrong menu item by mistake:)
 
-![](split_button_alignment.png){width=219}
+[//]: # ()
+[//]: # (![]&#40;selected.png&#41;{width=218})
+
+[//]: # ()
+[//]: # (Align the dropdown with the button left border:)
+
+[//]: # ()
+[//]: # (![]&#40;split_button_alignment.png&#41;{width=219})
 

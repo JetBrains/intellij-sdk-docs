@@ -6,7 +6,7 @@
 
 A built-in button is an icon placed inside an input control.
 
-![](input_browse.png){width=250}
+![Built-in-button](built_in_button.png){width=706}
 
 ## How to use
 

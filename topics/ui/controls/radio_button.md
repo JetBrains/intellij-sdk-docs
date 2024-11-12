@@ -18,7 +18,7 @@ Use a radio button group to choose one option from 2 to 4 mutually exclusive opt
 
 Do **not** use radio buttons if:
 
-* Several options in a group can be selected. Use a group of [checkboxes](checkbox.md) instead.
+* Several options in a group can be selected. Use a group of [checkboxes](checkbox.topic) instead.
 * There are only 2 opposite yes/no options. Use a checkbox instead.
 
 ![](tworadio_checkbox.png){width=427}

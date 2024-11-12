@@ -462,7 +462,7 @@
         <toc-element topic="built_in_button.md"/>
         <toc-element topic="split_button.md"/>
       </toc-element>
-      <toc-element topic="checkbox.md"/>
+      <toc-element topic="checkbox.topic"/>
       <toc-element topic="combo_box.md"/>
       <toc-element topic="context_help.md">
         <toc-element topic="inline_help_text.md"/>

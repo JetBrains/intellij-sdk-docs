@@ -22,7 +22,7 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 
 ## AppCode
 
-### AppCode - Listeners
+### AppCode – Listeners
 
 
 | Topic | Listener |

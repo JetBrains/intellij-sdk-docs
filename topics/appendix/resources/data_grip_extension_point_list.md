@@ -12,7 +12,7 @@
 
 </tldr>
 
-76 Extension Points and 28 Listeners for DataGrip
+79 Extension Points and 28 Listeners for DataGrip
 
 See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 
@@ -66,7 +66,8 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.database.jdbcHelper](https://jb.gg/ipe?extensions=com.intellij.database.jdbcHelper) | `JdbcHelper` |
 | [com.intellij.database.jdbcMetadataWrapper](https://jb.gg/ipe?extensions=com.intellij.database.jdbcMetadataWrapper) | `MDFactory` |
 | [com.intellij.database.jdbcSourceLoader](https://jb.gg/ipe?extensions=com.intellij.database.jdbcSourceLoader) | `JdbcSourceLoader` |
-| [com.intellij.database.objectEditorFactory](https://jb.gg/ipe?extensions=com.intellij.database.objectEditorFactory) ![Non-Dynamic][non-dynamic] | `DbObjectEditorFactory` |
+| [com.intellij.database.objectEditorFactory](https://jb.gg/ipe?extensions=com.intellij.database.objectEditorFactory) ![Non-Dynamic][non-dynamic] | `DbmsObjectEditorFactory` |
+| [com.intellij.database.objectEditorModelFactory](https://jb.gg/ipe?extensions=com.intellij.database.objectEditorModelFactory) ![Non-Dynamic][non-dynamic] | `DbmsObjectEditorModelFactory` |
 | [com.intellij.database.queryParametersProvider](https://jb.gg/ipe?extensions=com.intellij.database.queryParametersProvider) | `QueryParametersProvider` |
 | [com.intellij.database.queryValidator](https://jb.gg/ipe?extensions=com.intellij.database.queryValidator) | `DbQueryValidator` |
 | [com.intellij.database.selectInProvider](https://jb.gg/ipe?extensions=com.intellij.database.selectInProvider) | `Extension` |
@@ -84,7 +85,7 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.database.dataAuditor](https://jb.gg/ipe?extensions=com.intellij.database.dataAuditor) | `DataAuditor` |
 | [com.intellij.database.dataImporter](https://jb.gg/ipe?extensions=com.intellij.database.dataImporter) | `ImportManager` |
 | [com.intellij.database.dataSourceDetector](https://jb.gg/ipe?extensions=com.intellij.database.dataSourceDetector) | `DataSourceDetector` |
-| [com.intellij.database.dataSourceManager](https://jb.gg/ipe?extensions=com.intellij.database.dataSourceManager) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `DataSourceManager` |
+| [com.intellij.database.dataSourceManager](https://jb.gg/ipe?extensions=com.intellij.database.dataSourceManager) ![Project-Level][project-level] | `DataSourceManager` |
 | [com.intellij.database.dbms](https://jb.gg/ipe?extensions=com.intellij.database.dbms) ![Non-Dynamic][non-dynamic] | `n/a` |
 | [com.intellij.database.definitionProvider](https://jb.gg/ipe?extensions=com.intellij.database.definitionProvider) | `DefinitionProvider` |
 | [com.intellij.database.dmlHelper](https://jb.gg/ipe?extensions=com.intellij.database.dmlHelper) | `DmlHelper` |
@@ -108,6 +109,7 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.database.parameterPatternProvider](https://jb.gg/ipe?extensions=com.intellij.database.parameterPatternProvider) | `DatabaseParameterPatternProvider` |
 | [com.intellij.database.processParamProvider](https://jb.gg/ipe?extensions=com.intellij.database.processParamProvider) | `ConsoleConfigurationParamProvider` |
 | [com.intellij.database.routineExecutionHelper](https://jb.gg/ipe?extensions=com.intellij.database.routineExecutionHelper) | `RoutineExecutionHelper` |
+| [com.intellij.database.runtimeErrorFixProvider](https://jb.gg/ipe?extensions=com.intellij.database.runtimeErrorFixProvider) | `RuntimeErrorActionProvider` |
 | [com.intellij.database.scriptGenerator](https://jb.gg/ipe?extensions=com.intellij.database.scriptGenerator) | `ScriptGenerator` |
 | [com.intellij.database.sqlObjectBuilder](https://jb.gg/ipe?extensions=com.intellij.database.sqlObjectBuilder) | `SqlObjectBuilder` |
 | [com.intellij.database.synchronizeHandler](https://jb.gg/ipe?extensions=com.intellij.database.synchronizeHandler) | `SynchronizeHandler` |
@@ -141,6 +143,7 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.intellij.database.datagrid.valueEditorTab](https://jb.gg/ipe?extensions=com.intellij.database.datagrid.valueEditorTab) | `ValueEditorTab` |
+| [com.intellij.database.minimizedFormatDetector](https://jb.gg/ipe?extensions=com.intellij.database.minimizedFormatDetector) | `MinimizedFormatDetector` |
 
 ### mongo.xml
 

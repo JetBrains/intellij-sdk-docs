@@ -12,7 +12,7 @@
 
 </tldr>
 
-81 Extension Points and 12 Listeners for RubyMine
+80 Extension Points and 13 Listeners for RubyMine
 
 See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 
@@ -20,10 +20,12 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 
 ## RubyMine
 
-### RubyMine - Listeners
+### RubyMine – Listeners
+
 
 | Topic | Listener |
 |-------|----------|
+| [RbsLanguageSettingsChangedListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.lang.ruby.rbs.settings.RbsLanguageSettingsChangedListener)  | `RbsLanguageSettingsChangedListener` |
 | [ChefTopics#COOKBOOK](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.chef.sdk.CookbooksListener)  | `CookbooksListener` |
 | [GemManager#GEMSET_CHANGED_TOPIC](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.gem.GemManager.GemSetListener)  | `GemSetListener` |
 | [GemManager#MODULE_GEMS_CHANGED_TOPIC](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.gem.GemManager.ModuleGemsListener)  ![Project-Level][project-level] | `ModuleGemsListener` |
@@ -43,12 +45,6 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [org.jetbrains.plugins.ruby.coverage.deserializer](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.coverage.deserializer) | `RubyCoverageDeserializationProvider` |
-
-### intellij.ruby.llm.xml
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| [com.intellij.ruby.llm.rubyMethodTypePromptPresentationProvider](https://jb.gg/ipe?extensions=com.intellij.ruby.llm.rubyMethodTypePromptPresentationProvider) | `RubyMethodTypePromptPresentationProvider` |
 
 ### ruby-core.xml
 

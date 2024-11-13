@@ -4,7 +4,7 @@
      /CSS/
      /plugins/JavaScriptLanguage/
      /plugins/NodeJS/
-     /plugins/sass/
+     /plugins/sass/ææ
 -->
 
 # WebStorm Extension Point and Listener List
@@ -17,7 +17,7 @@
 
 </tldr>
 
-75 Extension Points and 5 Listeners for WebStorm
+78 Extension Points and 5 Listeners for WebStorm
 
 See [](intellij_platform_extension_point_list.md) for IntelliJ Platform and [](oss_plugins_extension_point_list.md) for additional plugins.
 
@@ -25,7 +25,7 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform and [](o
 
 ## WebStorm
 
-### WebStorm - Listeners
+### WebStorm – Listeners
 
 | Topic | Listener |
 |-------|----------|
@@ -44,6 +44,7 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform and [](o
 | [com.intellij.css.cssFileReferenceProvider](https://jb.gg/ipe?extensions=com.intellij.css.cssFileReferenceProvider) | `CssFileReferenceProvider` |
 | [com.intellij.css.cssInspectionFilter](https://jb.gg/ipe?extensions=com.intellij.css.cssInspectionFilter) | `CssInspectionFilter` |
 | [com.intellij.css.cssIntentionFilter](https://jb.gg/ipe?extensions=com.intellij.css.cssIntentionFilter) | `CssIntentionFilter` |
+| [com.intellij.css.cssRelatedStylesheetsProvider](https://jb.gg/ipe?extensions=com.intellij.css.cssRelatedStylesheetsProvider) | `CssRelatedStylesheetsProvider` |
 | [com.intellij.css.dialect](https://jb.gg/ipe?extensions=com.intellij.css.dialect) | `CssDialect` |
 | [com.intellij.css.elementDescriptorProvider](https://jb.gg/ipe?extensions=com.intellij.css.elementDescriptorProvider) | `CssElementDescriptorProvider` |
 | [com.intellij.css.embeddedCssProvider](https://jb.gg/ipe?extensions=com.intellij.css.embeddedCssProvider) | `EmbeddedCssProvider` |
@@ -90,6 +91,7 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform and [](o
 | [JavaScript.indexedFileTypeProvider](https://jb.gg/ipe?extensions=JavaScript.indexedFileTypeProvider) | `IndexedFileTypeProvider` |
 | [JavaScript.inheritedLanguagesConfigurableProvider](https://jb.gg/ipe?extensions=JavaScript.inheritedLanguagesConfigurableProvider) | `JSInheritedLanguagesConfigurableProvider` |
 | [JavaScript.intentionAndInspectionFilter](https://jb.gg/ipe?extensions=JavaScript.intentionAndInspectionFilter) | `IntentionAndInspectionFilter` |
+| [JavaScript.itemPresentation](https://jb.gg/ipe?extensions=JavaScript.itemPresentation) ![Experimental][experimental] | `JSItemPresentationProvider` |
 | [JavaScript.jestPackageProvider](https://jb.gg/ipe?extensions=JavaScript.jestPackageProvider) | `JestPackageProvider` |
 | [JavaScript.jsDocCustomTagsHandler](https://jb.gg/ipe?extensions=JavaScript.jsDocCustomTagsHandler) ![Experimental][experimental] | `JSDocCustomTagsHandler` |
 | [JavaScript.jsxImplementation](https://jb.gg/ipe?extensions=JavaScript.jsxImplementation) | `JSXImplementation` |
@@ -112,6 +114,7 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform and [](o
 | [JavaScript.tsConfigCustomizer](https://jb.gg/ipe?extensions=JavaScript.tsConfigCustomizer) ![Experimental][experimental] | `TypeScriptConfigCustomizer` |
 | [JavaScript.tsImportResolver](https://jb.gg/ipe?extensions=JavaScript.tsImportResolver) | `TypeScriptImportsResolverProvider` |
 | [JavaScript.tsServiceExtension](https://jb.gg/ipe?extensions=JavaScript.tsServiceExtension) | `TypeScriptServiceExtension` |
+| [JavaScript.typeScriptCompilerTypePatcher](https://jb.gg/ipe?extensions=JavaScript.typeScriptCompilerTypePatcher) | `TypeScriptCompilerTypePatcher` |
 | [JavaScript.unresolvedReferenceErrorUpdater](https://jb.gg/ipe?extensions=JavaScript.unresolvedReferenceErrorUpdater) ![Experimental][experimental] | `JSUnresolvedReferenceErrorUpdater` |
 | [JavaScript.webBundlerCssReferenceContributor](https://jb.gg/ipe?extensions=JavaScript.webBundlerCssReferenceContributor) | `JSModuleReferenceContributor` |
 | [JavaScript.webBundlerDefinition](https://jb.gg/ipe?extensions=JavaScript.webBundlerDefinition) | `WebBundlerDefinition` |

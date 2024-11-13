@@ -187,7 +187,7 @@ A dedicated <control>Language Services</control> status bar widget is available 
 Override `LspServerSupportProvider.createLspServerWidgetItem()` to provide a custom icon and link to [Settings](settings.md) page (if available).
 
 ```kotlin
-override fun getLspServerWidgetItem(
+override fun createLspServerWidgetItem(
   lspServer: LspServer,
   currentFile: VirtualFile?
 ) =

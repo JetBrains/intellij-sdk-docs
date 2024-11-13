@@ -109,7 +109,7 @@ Use [`RunOnceUtil`](%gh-ic%/platform/ide-core/src/com/intellij/ide/util/RunOnceU
 
 ## Application Events
 
-Application lifecycle events can be tracked via the [`AppLifecycleListener`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/AppLifecycleListener.java) [listener](plugin_listeners.md).
+Application lifecycle events can be tracked via the [`AppLifecycleListener`](%gh-ic%/platform/ide-core/src/com/intellij/ide/AppLifecycleListener.java) [listener](plugin_listeners.md).
 See also [](plugin_components.md#application-startup) and [](plugin_components.md#project-and-application-close).
 
 Register the [`ApplicationActivationListener`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/application/ApplicationActivationListener.java) [listener](plugin_listeners.md) to be notified of "application focused/unfocused" events.

@@ -58,7 +58,7 @@ Using JCEF requires using a dedicated JetBrains Runtime and enabling JCEF in the
 
 ## Using JCEF In a Plugin
 
-The core JCEF class exposed by IntelliJ Platform API is [`JBCefApp`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefApp.java).
+The core JCEF class exposed by IntelliJ Platform API is [`JBCefApp`](%gh-ic%/platform/ui.jcef/jcef/JBCefApp.java).
 It is responsible for initializing JCEF context and managing its lifecycle.
 
 There is no need for initializing `JBCefApp` explicitly.
@@ -81,16 +81,16 @@ JCEF can be unsupported when:
 
 ### Browser
 
-JCEF browser is represented by the [`JBCefBrowser`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefBrowser.java) class.
+JCEF browser is represented by the [`JBCefBrowser`](%gh-ic%/platform/ui.jcef/jcef/JBCefBrowser.java) class.
 It is responsible for loading and rendering requested documents in the actual Chromium-based browser.
 
-JCEF browsers can be created either by using the `JBCefBrowser` class' constructors or via [`JBCefBrowserBuilder`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefBrowserBuilder.java).
+JCEF browsers can be created either by using the `JBCefBrowser` class' constructors or via [`JBCefBrowserBuilder`](%gh-ic%/platform/ui.jcef/jcef/JBCefBrowserBuilder.java).
 Use constructors in the cases when a browser with the default [client](#browser-client) and default options is enough.
 The builder approach allows using custom clients and configuring other options.
 
 #### Adding Browser to UI
 
-[`JBCefBrowser.getComponent()`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefBrowser.java) exposes the UI component embedding the actual browser.
+[`JBCefBrowser.getComponent()`](%gh-ic%/platform/ui.jcef/jcef/JBCefBrowser.java) exposes the UI component embedding the actual browser.
 The component is an instance of Swing `JComponent`, which can be added to the plugin UI:
 
 ```java
@@ -101,7 +101,7 @@ myPanel.add(browser.getComponent());
 
 #### Loading Documents
 
-To load a document in the browser, use one of [`JBCefBrowserBase.load*()`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefBrowserBase.java) methods.
+To load a document in the browser, use one of [`JBCefBrowserBase.load*()`](%gh-ic%/platform/ui.jcef/jcef/JBCefBrowserBase.java) methods.
 Methods loading documents can be called from both [EDT and background threads](threading_model.md).
 It is possible to set an initial URL (passed to constructor or builder) that will be loaded when the browser is created and initialized.
 
@@ -115,7 +115,7 @@ Browser client provides an interface for setting up [handlers](#event-handlers) 
 Handlers allow reacting to these events in plugin code and changing the browser's behavior.
 Each browser is tied to a single client, and a single client can be shared with multiple browser instances.
 
-Browser client is represented by [`JBCefClient`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefClient.java), which is a wrapper for JCEF's [`CefClient`](%gh-jcef-master%/org/cef/CefClient.java).
+Browser client is represented by [`JBCefClient`](%gh-ic%/platform/ui.jcef/jcef/JBCefClient.java), which is a wrapper for JCEF's [`CefClient`](%gh-jcef-master%/org/cef/CefClient.java).
 `JBCefClient` allows registering multiple handlers of the same type, which is not possible with `CefClient`.
 To access the underlying `CefClient` and its API, call `JBCefClient.getCefClient()`.
 
@@ -179,7 +179,7 @@ It is common to pass `browser.getCefBrowser().getUrl()` or null/empty string, an
 JCEF doesn't provide direct access to DOM from the plugin code (it may [change](https://youtrack.jetbrains.com/issue/JBR-2046) in the future), and asynchronous communication with JavaScript is achieved with the callback mechanism.
 It allows executing plugin code from the embedded browser via JavaScript, e.g., when a button or link is clicked, a shortcut is pressed, a JavaScript function is called, etc.
 
-JavaScript query callback is represented by [`JBCefJSQuery`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefJSQuery.java).
+JavaScript query callback is represented by [`JBCefJSQuery`](%gh-ic%/platform/ui.jcef/jcef/JBCefJSQuery.java).
 It is an object bound to a specific browser, and it holds a set of handlers that implement the required plugin behavior.
 
 Consider a case which requires opening local files links in the editor and external links in an external browser.
@@ -246,15 +246,14 @@ See [`JCefImageViewer`](%gh-ic%/images/src/org/intellij/images/editor/impl/jcef/
 Default browser scrollbars may be not enough, for example, when they stand out of the IDE scrollbars look, or specific look and behavior is required.
 
 In JCEF browsers, scrollbars look and feel can be customized by CSS and JavaScript.
-IntelliJ Platform provides [`JBCefScrollbarsHelper`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefScrollbarsHelper.java) that allows customizing scrollbars in two ways:
+IntelliJ Platform provides [`JBCefScrollbarsHelper`](%gh-ic%/platform/ui.jcef/jcef/JBCefScrollbarsHelper.java) that allows customizing scrollbars in two ways:
 1. Using `JBCefScrollbarsHelper.buildScrollbarsStyle()`, which provides the styles adapted to the IDE scrollbars (recommended).
 2. Using [OverlayScrollbars](https://kingsora.github.io/OverlayScrollbars/) library adapted to the IDE look and feel.
    For the details, see `getOverlayScrollbarsSourceCSS()`, `getOverlayScrollbarsSourceJS()`, and `getOverlayScrollbarStyle()` Javadocs.
    It should be used when transparent scrollbars or other advanced options are required.
 
 ### Disposing Resources
-
-`JBCefBrowser`, `JBCefClient`, and `JBCefJSQuery` classes implement [`JBCefDisposable`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefDisposable.java), which extends [`Disposable`](%gh-ic%/platform/util/src/com/intellij/openapi/Disposable.java).
+`JBCefBrowser`, `JBCefClient`, and `JBCefJSQuery` classes implement [`JBCefDisposable`](%gh-ic%/platform/ui.jcef/jcef/JBCefDisposable.java), which extends [`Disposable`](%gh-ic%/platform/util/src/com/intellij/openapi/Disposable.java).
 It means that these classes should clean up their resources according to the rules described on the [](disposers.md) page.
 
 For example, a custom `JBCefClient` with registered handlers should remove them in the `dispose()` method implementation.

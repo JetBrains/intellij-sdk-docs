@@ -51,7 +51,7 @@ Therefore, if their behavior is required, [switch to a blocking context](#suspen
 - [`ProgressStep`](%gh-ic%/platform/util/progress/src/impl/ProgressStep.kt) - a step-based progress reporting (see its KDoc for details)
 - [`RawProgressReporter`](%gh-ic%/platform/util/progress/src/RawProgressReporter.kt) - a raw text, details, and fraction reporting (invoked via [`reportRawProgress()`](%gh-ic%/platform/util/progress/src/steps.kt))
 
-Any [`report*Progress()`](%gh-ic%/platform/util/progress/src/steps.kt) function should be used inside [`with*Progress()` or `runWithModalProgressBlocking()`](%gh-ic%/platform/ide/progress/src/tasks.kt).
+Any [`report*Progress()`](%gh-ic%/platform/util/progress/src/steps.kt) function should be used inside [`with*Progress()` or `runWithModalProgressBlocking()`](%gh-ic%/platform/progress/shared/src/tasks.kt).
 Otherwise, if there is no reporter in the context, using `report*Progress()` will have no effect.
 
 ### Switching to Other Contexts
@@ -70,7 +70,7 @@ Always prefer executing tasks in the [suspending context](#suspending-context) o
 
 > Functions which schedule execution via [`Application.executeOnPooledThread()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java)
 > and similar methods, and which rely on [`ProgressManager.checkCanceled()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java)
-> should be annotated with [`@RequiresBlockingContext`](%gh-ic%/platform/core-api/src/com/intellij/util/concurrency/annotations/RequiresBlockingContext.java)
+> should be annotated with [`@RequiresBlockingContext`](%gh-ic%/platform/core-api/src/com/intellij/util/concurrency/annotations/RequiresBlockingContext.kt)
 > to inform clients about the required switch to a blocking context.
 >
 > Inspection <control>Plugin DevKit | Code | Calling method should be annotated with @RequiresBlockingContext</control> reports missing annotations.

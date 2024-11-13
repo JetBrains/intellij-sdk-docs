@@ -1,4 +1,4 @@
-// Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
 package org.intellij.sdk.action;
 
@@ -17,8 +17,9 @@ import javax.swing.*;
 /**
  * Action class to demonstrate how to interact with the IntelliJ Platform.
  * The only action this class performs is to provide the user with a popup dialog as feedback.
- * Typically this class is instantiated by the IntelliJ Platform framework based on declarations
- * in the plugin.xml file. But when added at runtime this class is instantiated by an action group.
+ * Typically, this class is instantiated by the IntelliJ Platform framework based on declarations
+ * in the plugin.xml file.
+ * But when added at runtime, this class is instantiated by an action group.
  */
 public class PopupDialogAction extends AnAction {
 
@@ -44,6 +45,7 @@ public class PopupDialogAction extends AnAction {
    * @param description The description of the menu item.
    * @param icon        The icon to be used with the menu item.
    */
+  @SuppressWarnings("ActionPresentationInstantiatedInCtor") // via DynamicActionGroup
   public PopupDialogAction(@Nullable String text, @Nullable String description, @Nullable Icon icon) {
     super(text, description, icon);
   }

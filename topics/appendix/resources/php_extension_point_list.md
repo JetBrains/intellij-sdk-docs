@@ -20,7 +20,7 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 
 ## PhpStorm
 
-### PhpStorm - Listeners
+### PhpStorm – Listeners
 
 | Topic | Listener |
 |-------|----------|

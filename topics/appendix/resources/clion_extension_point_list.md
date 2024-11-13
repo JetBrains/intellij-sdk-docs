@@ -12,7 +12,7 @@
 
 </tldr>
 
-139 Extension Points and 43 Listeners for CLion
+145 Extension Points and 45 Listeners
 
 See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 
@@ -22,11 +22,14 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 
 ### CLion - Listeners
 
+
 | Topic | Listener |
 |-------|----------|
 | [CubeMXManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.clion.embedded.stm32cubemx.CubeMXManager.CubeStatusListener)  | `CubeStatusListener` |
+| [WestConfigListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.clion.west.config.WestConfigListener)  | `WestConfigListener` |
 | [Listener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.clion.west.settings.WestSettings.Listener)  | `Listener` |
 | [FileSymbolTablesCache#OUT_OF_CODE_BLOCK_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.psi.util.PsiModificationTracker.Listener)  ![Project-Level][project-level] | [`Listener`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/PsiModificationTracker.java) |
+| [ConsistencyErrorTopicListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.rml.dfa.utils.ConsistencyErrorTopicListener)  | `ConsistencyErrorTopicListener` |
 | [CMakeSettingsListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.cmake.CMakeSettingsListener)  | `CMakeSettingsListener` |
 | [Listener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.cmake.python.CMakePythonSdkService.Companion.Listener)  | `Listener` |
 | [Listener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.cmake.python.CMakePythonSettingListenerService.Companion.Listener)  | `Listener` |
@@ -91,9 +94,12 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | [cidr.debugger.editorsExtension](https://jb.gg/ipe?extensions=cidr.debugger.editorsExtension) | `CidrDebuggerEditorsExtension` |
 | [cidr.debugger.formatters.natvis.provider](https://jb.gg/ipe?extensions=cidr.debugger.formatters.natvis.provider) | `NatvisFileProvider` |
 | [cidr.debugger.frameChildrenContributor](https://jb.gg/ipe?extensions=cidr.debugger.frameChildrenContributor) | `CidrFrameChildrenContributor` |
+| [cidr.debugger.fullValueEvaluatorProvider](https://jb.gg/ipe?extensions=cidr.debugger.fullValueEvaluatorProvider) ![Experimental][experimental] | `CidrFullValueEvaluatorProvider` |
+| [cidr.debugger.imageViewerProvider](https://jb.gg/ipe?extensions=cidr.debugger.imageViewerProvider) | `CidrImageViewerProvider` |
 | [cidr.debugger.languageSupport](https://jb.gg/ipe?extensions=cidr.debugger.languageSupport) | `CidrDebuggerLanguageSupport` |
 | [cidr.debugger.lineBreakpointFileTypesProvider](https://jb.gg/ipe?extensions=cidr.debugger.lineBreakpointFileTypesProvider) | `CidrLineBreakpointFileTypesProvider` |
 | [cidr.debugger.localVariablesFilterHandler](https://jb.gg/ipe?extensions=cidr.debugger.localVariablesFilterHandler) | `LocalVariablesFilterHandler` |
+| [cidr.debugger.suspendThreadSelector](https://jb.gg/ipe?extensions=cidr.debugger.suspendThreadSelector) | `CidrSuspendThreadSelector` |
 | [cidr.debugger.valueRendererExtension](https://jb.gg/ipe?extensions=cidr.debugger.valueRendererExtension) ![Non-Dynamic][non-dynamic] | `ValueRendererExtension` |
 | [cidr.debugger.valueRendererFactory](https://jb.gg/ipe?extensions=cidr.debugger.valueRendererFactory) ![Non-Dynamic][non-dynamic] | `ValueRendererFactory` |
 
@@ -183,7 +189,6 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | [cidr.projectModel.msvcPchHelper](https://jb.gg/ipe?extensions=cidr.projectModel.msvcPchHelper) | `OCMsvcPchHelper` |
 | [cidr.projectModel.runAfterOCWorkspaceIsInitialized](https://jb.gg/ipe?extensions=cidr.projectModel.runAfterOCWorkspaceIsInitialized) ![Non-Dynamic][non-dynamic] | `RunAfterOCWorkspaceIsInitialized` |
 | [cidr.projectModel.runAfterOCWorkspaceIsLoaded](https://jb.gg/ipe?extensions=cidr.projectModel.runAfterOCWorkspaceIsLoaded) ![Non-Dynamic][non-dynamic] | `RunAfterOCWorkspaceIsLoaded` |
-| [cidr.projectModel.searchScopeProvider](https://jb.gg/ipe?extensions=cidr.projectModel.searchScopeProvider) | `CidrSearchScopeProvider` |
 | [cidr.projectModel.supportedFileChecker](https://jb.gg/ipe?extensions=cidr.projectModel.supportedFileChecker) ![Non-Dynamic][non-dynamic] | `OCSupportedFileChecker` |
 | [cidr.projectModel.unloadedResolveContextsManager](https://jb.gg/ipe?extensions=cidr.projectModel.unloadedResolveContextsManager) | `OCUnloadedResolveContextsManager` |
 | [cidr.projectModel.workspaceLoadedCheck](https://jb.gg/ipe?extensions=cidr.projectModel.workspaceLoadedCheck) | `OCWorkspaceLoadedChecker` |
@@ -239,11 +244,13 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.cmake.profileLoadContributor](https://jb.gg/ipe?extensions=com.intellij.cmake.profileLoadContributor) | `FutureProvider` |
 | [com.intellij.cmake.runnerStep](https://jb.gg/ipe?extensions=com.intellij.cmake.runnerStep) ![Non-Dynamic][non-dynamic] | `CMakeRunnerStep` |
 | [com.intellij.cmake.targetToConfigProvider](https://jb.gg/ipe?extensions=com.intellij.cmake.targetToConfigProvider) | `CMakeTargetToConfigProvider` |
+| [com.intellij.cmake.workspace.compilerEnvironmentContributor](https://jb.gg/ipe?extensions=com.intellij.cmake.workspace.compilerEnvironmentContributor) | `CMakeCompilerEnvironmentContributor` |
 
 ### CLionExecutionPlugin.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| [cidr.debugger.targets.provider](https://jb.gg/ipe?extensions=cidr.debugger.targets.provider) | `DebugTargetsProvider` |
 | [clion.buildToolWindowActivator.contributor](https://jb.gg/ipe?extensions=clion.buildToolWindowActivator.contributor) | `Contributor` |
 | [clion.compoundConfigurationContext](https://jb.gg/ipe?extensions=clion.compoundConfigurationContext) | `CidrCompoundConfigurationContext` |
 | [clion.externalConfigurationProvider](https://jb.gg/ipe?extensions=clion.externalConfigurationProvider) | `CLionExternalConfigurationProvider` |
@@ -327,6 +334,13 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.intellij.rml.dfa.devtools.debug.provider](https://jb.gg/ipe?extensions=com.intellij.rml.dfa.devtools.debug.provider) | `DfaDebugProvider` |
+
+### intellij.rml.dfa.impl.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.intellij.rml.dfa.impl.DfaDebugExtension](https://jb.gg/ipe?extensions=com.intellij.rml.dfa.impl.DfaDebugExtension) | `DfaDebugExtension` |
+| [com.intellij.rml.dfa.ir.serialization.provider](https://jb.gg/ipe?extensions=com.intellij.rml.dfa.ir.serialization.provider) | `IrSerializationProvider` |
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square
 [removal]: https://img.shields.io/badge/-Removal-red?style=flat-square

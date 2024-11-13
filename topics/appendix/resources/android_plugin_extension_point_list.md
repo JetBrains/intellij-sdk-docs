@@ -12,14 +12,14 @@
 
 </tldr>
 
-89 Extension Points and 31 Listeners for Android Plugin
+93 Extension Points and 31 Listeners for Android Plugin
 
 <include from="snippets.md" element-id="ep_list_legend"/>
 
 ## Android Plugin
 
 
-### Android Plugin - Listeners
+### Android Plugin – Listeners
 
 | Topic | Listener |
 |-------|----------|
@@ -29,12 +29,12 @@
 | [AvdLaunchListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.avdmanager.AvdLaunchListener)  | [`AvdLaunchListener`](%gh-ij-android%/android/src/com/android/tools/idea/avdmanager/AvdLaunchListener.java) |
 | [IssueProviderListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.common.error.IssueProviderListener)  ![Project-Level][project-level] | [`IssueProviderListener`](%gh-ij-android%/designer/src/com/android/tools/idea/common/error/IssueProvider.kt) |
 | [IssueProviderListener#UI_CHECK](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.common.error.IssueProviderListener)  ![Project-Level][project-level] | [`IssueProviderListener`](%gh-ij-android%/designer/src/com/android/tools/idea/common/error/IssueProvider.kt) |
+| [ComposeAnimationListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.compose.preview.ComposePreviewRepresentation.ComposeAnimationListener)  | [`ComposeAnimationListener`](%gh-ij-android%/compose-designer/src/com/android/tools/idea/compose/preview/Preview.kt) |
 | [FastPreviewManager#FAST_PREVIEW_MANAGER_TOPIC](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.editors.fast.FastPreviewManager.Companion.FastPreviewManagerListener)  | [`FastPreviewManagerListener`](%gh-ij-android%/android/src/com/android/tools/idea/editors/fast/FastPreviewManager.kt) |
 | [GradleBuildState#GRADLE_BUILD_TOPIC](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.gradle.project.build.GradleBuildListener)  | [`GradleBuildListener`](%gh-ij-android%/project-system-gradle/src/com/android/tools/idea/gradle/project/build/GradleBuildListener.java) |
 | [GradleSyncStateImplKt#GRADLE_SYNC_TOPIC](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.gradle.project.sync.GradleSyncListenerWithRoot)  | [`GradleSyncListenerWithRoot`](%gh-ij-android%/project-system-gradle/src/com/android/tools/idea/gradle/project/sync/GradleSyncListenerWithRoot.kt) |
 | [FilterStatusChanged.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.logcat.filters.FilterTextField.FilterStatusChanged)  | [`FilterStatusChanged`](%gh-ij-android%/logcat/src/com/android/tools/idea/logcat/filters/FilterTextField.kt) |
 | [MergedManifestSnapshotComputeListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.model.MergedManifestSnapshotComputeListener)  | [`MergedManifestSnapshotComputeListener`](%gh-ij-android%/android/src/com/android/tools/idea/model/MergedManifestManager.kt) |
-| [EssentialsModeMessenger#TOPIC](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.modes.essentials.EssentialsModeMessenger.Listener)  | [`Listener`](%gh-ij-android%/android/src/com/android/tools/idea/modes/essentials/EssentialsModeMessenger.kt) |
 | [SafeArgsModeModuleService#MODE_CHANGED](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.nav.safeargs.module.SafeArgsModeModuleService.SafeArgsModeChangedListener)  | [`SafeArgsModeChangedListener`](%gh-ij-android%/nav/safeargs/common/src/com/android/tools/idea/nav/safeargs/module/SafeArgsModeModuleService.kt) |
 | [NavigationResourcesModificationListenerKt#NAVIGATION_RESOURCES_CHANGED](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.nav.safeargs.project.NavigationResourcesChangeListener)  | [`NavigationResourcesChangeListener`](%gh-ij-android%/nav/safeargs/common/src/com/android/tools/idea/nav/safeargs/project/NavigationResourcesModificationListener.kt) |
 | [MultiTemplateRenderer#TEMPLATE_RENDERER_TOPIC](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.npw.model.MultiTemplateRenderer.TemplateRendererListener)  | [`TemplateRendererListener`](%gh-ij-android%/android-npw/src/com/android/tools/idea/npw/model/MultiTemplateRenderer.kt) |
@@ -71,6 +71,7 @@
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.android.tools.idea.ml.mimetypeAugmenter](https://jb.gg/ipe?extensions=com.android.tools.idea.ml.mimetypeAugmenter) ![Non-Dynamic][non-dynamic] | [`MimeTypeAugmenter`](%gh-ij-android%/ml-api/src/main/kotlin/com/android/tools/idea/studiobot/mimetype/MimeTypeAugmenter.kt) |
+| [com.android.tools.idea.ml.studioBotExternalFlags](https://jb.gg/ipe?extensions=com.android.tools.idea.ml.studioBotExternalFlags) ![Non-Dynamic][non-dynamic] | [`StudioBotExternalFlags`](%gh-ij-android%/ml-api/src/main/kotlin/com/android/tools/idea/studiobot/StudioBotExternalFlags.kt) |
 
 ### android-adb.xml
 
@@ -80,14 +81,6 @@
 |-----------------|----------------|
 | [com.android.run.deviceNameRenderer](https://jb.gg/ipe?extensions=com.android.run.deviceNameRenderer) ![Non-Dynamic][non-dynamic] | [`DeviceNameRendererEx`](%gh-ij-android%/android-adb/src/com/android/tools/idea/ddms/DeviceNameRendererEx.java) |
 | [com.android.tools.idea.deviceProvisioner](https://jb.gg/ipe?extensions=com.android.tools.idea.deviceProvisioner) ![Non-Dynamic][non-dynamic] | [`DeviceProvisionerFactory`](%gh-ij-android%/android-adb/src/com/android/tools/idea/deviceprovisioner/DeviceProvisionerFactory.kt) |
-
-### android-device.xml
-
-[`android-device.xml`](%gh-ij-android%/intellij.android.device/src/META-INF/android-device.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| [com.android.tools.idea.adddevicedialog.deviceSourceProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.adddevicedialog.deviceSourceProvider) ![Non-Dynamic][non-dynamic] | [`DeviceSourceProvider`](%gh-ij-android%/intellij.android.device/src/com/android/tools/idea/adddevicedialog/DeviceSourceProvider.kt) |
 
 ### android-execution-common.xml
 
@@ -151,28 +144,30 @@
 | [com.android.run.androidDebugger](https://jb.gg/ipe?extensions=com.android.run.androidDebugger) ![Non-Dynamic][non-dynamic] | [`AndroidDebugger`](%gh-ij-android%/execution/common/src/com/android/tools/idea/execution/common/debug/AndroidDebugger.java) |
 | [com.android.run.androidLaunchTaskContributor](https://jb.gg/ipe?extensions=com.android.run.androidLaunchTaskContributor) ![Non-Dynamic][non-dynamic] | [`AndroidLaunchTaskContributor`](%gh-ij-android%/android/src/com/android/tools/idea/run/AndroidLaunchTaskContributor.java) |
 | [com.android.run.deployTargetProvider](https://jb.gg/ipe?extensions=com.android.run.deployTargetProvider) ![Non-Dynamic][non-dynamic] | [`DeployTargetProvider`](%gh-ij-android%/android/src/com/android/tools/idea/run/editor/DeployTargetProvider.java) |
-| [com.android.tools.idea.actions.annotations.inferAnnotationsToken](https://jb.gg/ipe?extensions=com.android.tools.idea.actions.annotations.inferAnnotationsToken) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | [`InferAnnotationsToken`](%gh-ij-android%/android/src/com/android/tools/idea/actions/annotations/InferAnnotationsToken.kt) |
+| [com.android.tools.idea.actions.annotations.inferAnnotationsToken](https://jb.gg/ipe?extensions=com.android.tools.idea.actions.annotations.inferAnnotationsToken) ![Non-Dynamic][non-dynamic] | [`InferAnnotationsToken`](%gh-ij-android%/android/src/com/android/tools/idea/actions/annotations/InferAnnotationsToken.kt) |
 | [com.android.tools.idea.actions.exportProjectZipExcludesContributor](https://jb.gg/ipe?extensions=com.android.tools.idea.actions.exportProjectZipExcludesContributor) ![Non-Dynamic][non-dynamic] | [`ExportProjectZipExcludesContributor`](%gh-ij-android%/android/src/com/android/tools/idea/actions/ExportProjectZipExcludesContributor.java) |
 | [com.android.tools.idea.analytics.ideBrandProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.analytics.ideBrandProvider) ![Non-Dynamic][non-dynamic] | [`IdeBrandProvider`](%gh-ij-android%/android/src/com/android/tools/idea/analytics/IdeBrandProvider.kt) |
 | [com.android.tools.idea.databinding.layoutBindingSupport](https://jb.gg/ipe?extensions=com.android.tools.idea.databinding.layoutBindingSupport) ![Non-Dynamic][non-dynamic] | [`LayoutBindingSupport`](%gh-ij-android%/android/src/com/android/tools/idea/databinding/LayoutBindingSupport.kt) |
 | [com.android.tools.idea.diagnostics.report.logsProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.diagnostics.report.logsProvider) ![Non-Dynamic][non-dynamic] | [`DiagnosticsSummaryFileProvider`](%gh-ij-android%/android/src/com/android/tools/idea/diagnostics/report/DiagnosticsSummaryFileProvider.kt) |
-| [com.android.tools.idea.editors.manifest.manifestPanelToken](https://jb.gg/ipe?extensions=com.android.tools.idea.editors.manifest.manifestPanelToken) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | [`ManifestPanelToken`](%gh-ij-android%/android/src/com/android/tools/idea/editors/manifest/ManifestPanelToken.kt) |
+| [com.android.tools.idea.editors.manifest.manifestPanelToken](https://jb.gg/ipe?extensions=com.android.tools.idea.editors.manifest.manifestPanelToken) ![Non-Dynamic][non-dynamic] | [`ManifestPanelToken`](%gh-ij-android%/android/src/com/android/tools/idea/editors/manifest/ManifestPanelToken.kt) |
 | [com.android.tools.idea.flags.experimentalSettingsContributor](https://jb.gg/ipe?extensions=com.android.tools.idea.flags.experimentalSettingsContributor) ![Non-Dynamic][non-dynamic] | [`ExperimentalSettingsContributor`](%gh-ij-android%/android/src/com/android/tools/idea/flags/ExperimentalSettingsContributor.kt) |
 | [com.android.tools.idea.lang.databinding.dataBindingCompletionSupport](https://jb.gg/ipe?extensions=com.android.tools.idea.lang.databinding.dataBindingCompletionSupport) ![Non-Dynamic][non-dynamic] | [`DataBindingCompletionSupport`](%gh-ij-android%/android/src/com/android/tools/idea/lang/databinding/DataBindingCompletionSupport.kt) |
 | [com.android.tools.idea.lang.databinding.dataBindingExpressionSupport](https://jb.gg/ipe?extensions=com.android.tools.idea.lang.databinding.dataBindingExpressionSupport) ![Non-Dynamic][non-dynamic] | [`DataBindingExpressionSupport`](%gh-ij-android%/android/src/com/android/tools/idea/lang/databinding/DataBindingExpressionSupport.kt) |
 | [com.android.tools.idea.layoutlib.layoutLibraryProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.layoutlib.layoutLibraryProvider) ![Non-Dynamic][non-dynamic] | [`LayoutLibraryProvider`](%gh-ij-android%/layoutlib-loader/src/com/android/tools/idea/layoutlib/LayoutLibraryLoader.java) |
 | [com.android.tools.idea.ndk.nativeWorkspaceProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.ndk.nativeWorkspaceProvider) ![Non-Dynamic][non-dynamic] | [`NativeWorkspaceProvider`](%gh-ij-android%/android/src/com/android/tools/idea/ndk/NativeWorkspaceProvider.kt) |
 | [com.android.tools.idea.rendering.renderIssueCollectionConsumer](https://jb.gg/ipe?extensions=com.android.tools.idea.rendering.renderIssueCollectionConsumer) ![Non-Dynamic][non-dynamic] | [`Provider`](%gh-ij-android%/android/src/com/android/tools/idea/rendering/RenderIssueCollectionConsumer.java) |
+| [com.android.tools.idea.rendering.tokens.buildSystemFilePreviewServices](https://jb.gg/ipe?extensions=com.android.tools.idea.rendering.tokens.buildSystemFilePreviewServices) ![Non-Dynamic][non-dynamic] | [`BuildSystemFilePreviewServices`](%gh-ij-android%/android/src/com/android/tools/idea/rendering/tokens/BuildSystemFilePreviewServices.kt) |
+| [com.android.tools.idea.run.configuration.editors.androidWearConfigurationEditorToken](https://jb.gg/ipe?extensions=com.android.tools.idea.run.configuration.editors.androidWearConfigurationEditorToken) ![Non-Dynamic][non-dynamic] | [`AndroidWearConfigurationEditorToken`](%gh-ij-android%/android/src/com/android/tools/idea/run/configuration/editors/AndroidWearConfigurationEditor.kt) |
 | [com.android.tools.idea.run.editor.androidDebuggerInfoProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.run.editor.androidDebuggerInfoProvider) ![Non-Dynamic][non-dynamic] | [`AndroidDebuggerInfoProvider`](%gh-ij-android%/android/src/com/android/tools/idea/run/editor/AndroidDebuggerInfoProvider.java) |
-| [com.android.tools.idea.run.editor.testRunParametersToken](https://jb.gg/ipe?extensions=com.android.tools.idea.run.editor.testRunParametersToken) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | [`TestRunParametersToken`](%gh-ij-android%/android/src/com/android/tools/idea/run/editor/TestRunParameters.java) |
-| [com.android.tools.idea.testartifacts.instrumented.androidTestConfigurationProducerToken](https://jb.gg/ipe?extensions=com.android.tools.idea.testartifacts.instrumented.androidTestConfigurationProducerToken) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | [`AndroidTestConfigurationProducerToken`](%gh-ij-android%/android/src/com/android/tools/idea/testartifacts/instrumented/AndroidTestConfigurationProducer.kt) |
+| [com.android.tools.idea.run.editor.testRunParametersToken](https://jb.gg/ipe?extensions=com.android.tools.idea.run.editor.testRunParametersToken) ![Non-Dynamic][non-dynamic] | [`TestRunParametersToken`](%gh-ij-android%/android/src/com/android/tools/idea/run/editor/TestRunParameters.java) |
+| [com.android.tools.idea.testartifacts.instrumented.androidTestConfigurationProducerToken](https://jb.gg/ipe?extensions=com.android.tools.idea.testartifacts.instrumented.androidTestConfigurationProducerToken) ![Non-Dynamic][non-dynamic] | [`AndroidTestConfigurationProducerToken`](%gh-ij-android%/android/src/com/android/tools/idea/testartifacts/instrumented/AndroidTestConfigurationProducer.kt) |
 | [com.android.tools.idea.testartifacts.instrumented.testRunConfigurationOptions](https://jb.gg/ipe?extensions=com.android.tools.idea.testartifacts.instrumented.testRunConfigurationOptions) | [`TestRunConfigurationOptions`](%gh-ij-android%/android/src/com/android/tools/idea/testartifacts/instrumented/AndroidTestConfigurationProducer.kt) |
 | [com.android.tools.idea.ui.designer.overlays.overlayProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.ui.designer.overlays.overlayProvider) ![Non-Dynamic][non-dynamic] | [`OverlayProvider`](%gh-ij-android%/android/src/com/android/tools/idea/ui/designer/overlays/OverlayProvider.java) |
 | [com.android.tools.idea.ui.guiTestingStatusProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.ui.guiTestingStatusProvider) ![Non-Dynamic][non-dynamic] | [`GuiTestingStatusProvider`](%gh-ij-android%/android/src/com/android/tools/idea/ui/GuiTestingStatusProvider.java) |
-| [com.android.tools.idea.ui.resourcemanager.importer.createDefaultResDirectoryToken](https://jb.gg/ipe?extensions=com.android.tools.idea.ui.resourcemanager.importer.createDefaultResDirectoryToken) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | [`CreateDefaultResDirectoryToken`](%gh-ij-android%/android/src/com/android/tools/idea/ui/resourcemanager/importer/DesignAssetImporter.kt) |
+| [com.android.tools.idea.ui.resourcemanager.importer.createDefaultResDirectoryToken](https://jb.gg/ipe?extensions=com.android.tools.idea.ui.resourcemanager.importer.createDefaultResDirectoryToken) ![Non-Dynamic][non-dynamic] | [`CreateDefaultResDirectoryToken`](%gh-ij-android%/android/src/com/android/tools/idea/ui/resourcemanager/importer/DesignAssetImporter.kt) |
 | [com.android.tools.idea.wizard.template.wizardTemplateProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.wizard.template.wizardTemplateProvider) ![Non-Dynamic][non-dynamic] | `WizardTemplateProvider` |
 | [org.jetbrains.android.actions.newResourceCreationHandler](https://jb.gg/ipe?extensions=org.jetbrains.android.actions.newResourceCreationHandler) ![Non-Dynamic][non-dynamic] | [`NewResourceCreationHandler`](%gh-ij-android%/android/src/org/jetbrains/android/actions/NewResourceCreationHandler.java) |
-| [org.jetbrains.android.refactoring.unusedResourcesToken](https://jb.gg/ipe?extensions=org.jetbrains.android.refactoring.unusedResourcesToken) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | [`UnusedResourcesToken`](%gh-ij-android%/android/src/org/jetbrains/android/refactoring/UnusedResourcesProcessor.kt) |
+| [org.jetbrains.android.refactoring.unusedResourcesToken](https://jb.gg/ipe?extensions=org.jetbrains.android.refactoring.unusedResourcesToken) ![Non-Dynamic][non-dynamic] | [`UnusedResourcesToken`](%gh-ij-android%/android/src/org/jetbrains/android/refactoring/UnusedResourcesProcessor.kt) |
 
 ### android-templates.xml
 
@@ -188,7 +183,7 @@
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.android.tools.idea.appinspection.ide.resolver.artifactResolverFactoryToken](https://jb.gg/ipe?extensions=com.android.tools.idea.appinspection.ide.resolver.artifactResolverFactoryToken) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | [`ArtifactResolverFactoryToken`](%gh-ij-android%/app-inspection/ide/src/com/android/tools/idea/appinspection/ide/resolver/ArtifactResolverFactory.kt) |
+| [com.android.tools.idea.appinspection.ide.resolver.artifactResolverFactoryToken](https://jb.gg/ipe?extensions=com.android.tools.idea.appinspection.ide.resolver.artifactResolverFactoryToken) ![Non-Dynamic][non-dynamic] | [`ArtifactResolverFactoryToken`](%gh-ij-android%/app-inspection/ide/src/com/android/tools/idea/appinspection/ide/resolver/ArtifactResolverFactory.kt) |
 
 ### app-inspector.xml
 
@@ -267,7 +262,7 @@
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.android.tools.idea.layoutinspector.pipeline.appinspection.compose.getComposeLayoutInspectorJarToken](https://jb.gg/ipe?extensions=com.android.tools.idea.layoutinspector.pipeline.appinspection.compose.getComposeLayoutInspectorJarToken) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | [`GetComposeLayoutInspectorJarToken`](%gh-ij-android%/layout-inspector/src/com/android/tools/idea/layoutinspector/pipeline/appinspection/compose/ComposeLayoutInspectorClient.kt) |
+| [com.android.tools.idea.layoutinspector.pipeline.appinspection.compose.getComposeLayoutInspectorJarToken](https://jb.gg/ipe?extensions=com.android.tools.idea.layoutinspector.pipeline.appinspection.compose.getComposeLayoutInspectorJarToken) ![Non-Dynamic][non-dynamic] | [`GetComposeLayoutInspectorJarToken`](%gh-ij-android%/layout-inspector/src/com/android/tools/idea/layoutinspector/pipeline/appinspection/compose/ComposeLayoutInspectorClient.kt) |
 
 ### lint-plugin.xml
 
@@ -292,8 +287,8 @@
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.android.tools.idea.naveditor.editor.addDestinationMenuToken](https://jb.gg/ipe?extensions=com.android.tools.idea.naveditor.editor.addDestinationMenuToken) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | [`AddDestinationMenuToken`](%gh-ij-android%/nav/editor/src/com/android/tools/idea/naveditor/editor/AddDestinationMenu.kt) |
-| [com.android.tools.idea.naveditor.surface.navDesignSurfaceToken](https://jb.gg/ipe?extensions=com.android.tools.idea.naveditor.surface.navDesignSurfaceToken) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | [`NavDesignSurfaceToken`](%gh-ij-android%/nav/editor/src/com/android/tools/idea/naveditor/surface/NavDesignSurfaceToken.java) |
+| [com.android.tools.idea.naveditor.editor.addDestinationMenuToken](https://jb.gg/ipe?extensions=com.android.tools.idea.naveditor.editor.addDestinationMenuToken) ![Non-Dynamic][non-dynamic] | [`AddDestinationMenuToken`](%gh-ij-android%/nav/editor/src/com/android/tools/idea/naveditor/editor/AddDestinationMenu.kt) |
+| [com.android.tools.idea.naveditor.surface.navDesignSurfaceToken](https://jb.gg/ipe?extensions=com.android.tools.idea.naveditor.surface.navDesignSurfaceToken) ![Non-Dynamic][non-dynamic] | [`NavDesignSurfaceToken`](%gh-ij-android%/nav/editor/src/com/android/tools/idea/naveditor/surface/NavDesignSurfaceToken.java) |
 
 ### pipeline.xml
 
@@ -309,7 +304,7 @@
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.android.tools.idea.profilers.profilerProgramRunnerToken](https://jb.gg/ipe?extensions=com.android.tools.idea.profilers.profilerProgramRunnerToken) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | [`ProfilerProgramRunnerToken`](%gh-ij-android%/profilers-android/src/com/android/tools/idea/profilers/ProfilerProgramRunnerToken.kt) |
+| [com.android.tools.idea.profilers.profilerProgramRunnerToken](https://jb.gg/ipe?extensions=com.android.tools.idea.profilers.profilerProgramRunnerToken) ![Non-Dynamic][non-dynamic] | [`ProfilerProgramRunnerToken`](%gh-ij-android%/profilers-android/src/com/android/tools/idea/profilers/ProfilerProgramRunnerToken.kt) |
 
 ### project-system-gradle-plugin.xml
 
@@ -328,15 +323,16 @@
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.android.androidStartupActivity](https://jb.gg/ipe?extensions=com.android.androidStartupActivity) | [`AndroidStartupActivity`](%gh-ij-android%/project-system/src/com/android/tools/idea/AndroidStartupActivity.kt) |
-| [com.android.project.projectsystem](https://jb.gg/ipe?extensions=com.android.project.projectsystem) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | [`AndroidProjectSystemProvider`](%gh-ij-android%/project-system/src/com/android/tools/idea/projectsystem/AndroidProjectSystemProvider.kt) |
-| [com.android.tools.idea.memorysettings.memorySettingsToken](https://jb.gg/ipe?extensions=com.android.tools.idea.memorysettings.memorySettingsToken) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | [`MemorySettingsToken`](%gh-ij-android%/project-system/src/com/android/tools/idea/memorysettings/MemorySettingsToken.java) |
-| [com.android.tools.idea.model.mergedManifestInfoToken](https://jb.gg/ipe?extensions=com.android.tools.idea.model.mergedManifestInfoToken) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | [`MergedManifestInfoToken`](%gh-ij-android%/project-system/src/com/android/tools/idea/model/MergedManifestInfoToken.java) |
-| [com.android.tools.idea.projectsystem.ApplicationProjectContextProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.projectsystem.ApplicationProjectContextProvider) ![Project-Level][project-level] | [`ApplicationProjectContextProvider`](%gh-ij-android%/project-system/src/com/android/tools/idea/projectsystem/ApplicationProjectContext.kt) |
-| [com.android.tools.idea.projectsystem.androidIconProviderProjectToken](https://jb.gg/ipe?extensions=com.android.tools.idea.projectsystem.androidIconProviderProjectToken) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | [`AndroidIconProviderProjectToken`](%gh-ij-android%/project-system/src/com/android/tools/idea/projectsystem/AndroidIconProviderProjectToken.kt) |
-| [com.android.tools.idea.projectsystem.dynamicAppFeatureOnFeatureToken](https://jb.gg/ipe?extensions=com.android.tools.idea.projectsystem.dynamicAppFeatureOnFeatureToken) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | [`DynamicAppFeatureOnFeatureToken`](%gh-ij-android%/project-system/src/com/android/tools/idea/projectsystem/DynamicAppFeatureOnFeatureToken.kt) |
-| [com.android.tools.idea.projectsystem.findDependenciesWithResourcesToken](https://jb.gg/ipe?extensions=com.android.tools.idea.projectsystem.findDependenciesWithResourcesToken) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | [`FindDependenciesWithResourcesToken`](%gh-ij-android%/project-system/src/com/android/tools/idea/projectsystem/FindDependenciesWithResourcesToken.kt) |
-| [com.android.tools.idea.projectsystem.libraryDependenciesTroubleInfoCollectorToken](https://jb.gg/ipe?extensions=com.android.tools.idea.projectsystem.libraryDependenciesTroubleInfoCollectorToken) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | [`LibraryDependenciesTroubleInfoCollectorToken`](%gh-ij-android%/project-system/src/com/android/tools/idea/projectsystem/LibraryDependenciesTroubleInfoCollectorToken.kt) |
-| [com.android.tools.idea.projectsystem.pseudoLocalesToken](https://jb.gg/ipe?extensions=com.android.tools.idea.projectsystem.pseudoLocalesToken) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | [`PseudoLocalesToken`](%gh-ij-android%/project-system/src/com/android/tools/idea/projectsystem/PseudoLocalesToken.kt) |
+| [com.android.project.projectsystem](https://jb.gg/ipe?extensions=com.android.project.projectsystem) ![Non-Dynamic][non-dynamic] | [`AndroidProjectSystemProvider`](%gh-ij-android%/project-system/src/com/android/tools/idea/projectsystem/AndroidProjectSystemProvider.kt) |
+| [com.android.tools.idea.memorysettings.memorySettingsToken](https://jb.gg/ipe?extensions=com.android.tools.idea.memorysettings.memorySettingsToken) ![Non-Dynamic][non-dynamic] | [`MemorySettingsToken`](%gh-ij-android%/project-system/src/com/android/tools/idea/memorysettings/MemorySettingsToken.java) |
+| [com.android.tools.idea.model.mergedManifestInfoToken](https://jb.gg/ipe?extensions=com.android.tools.idea.model.mergedManifestInfoToken) ![Non-Dynamic][non-dynamic] | [`MergedManifestInfoToken`](%gh-ij-android%/project-system/src/com/android/tools/idea/model/MergedManifestInfoToken.java) |
+| [com.android.tools.idea.projectsystem.ApplicationProjectContextProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.projectsystem.ApplicationProjectContextProvider) | [`ApplicationProjectContextProvider`](%gh-ij-android%/project-system/src/com/android/tools/idea/projectsystem/ApplicationProjectContext.kt) |
+| [com.android.tools.idea.projectsystem.androidIconProviderProjectToken](https://jb.gg/ipe?extensions=com.android.tools.idea.projectsystem.androidIconProviderProjectToken) ![Non-Dynamic][non-dynamic] | [`AndroidIconProviderProjectToken`](%gh-ij-android%/project-system/src/com/android/tools/idea/projectsystem/AndroidIconProviderProjectToken.kt) |
+| [com.android.tools.idea.projectsystem.dynamicAppFeatureOnFeatureToken](https://jb.gg/ipe?extensions=com.android.tools.idea.projectsystem.dynamicAppFeatureOnFeatureToken) ![Non-Dynamic][non-dynamic] | [`DynamicAppFeatureOnFeatureToken`](%gh-ij-android%/project-system/src/com/android/tools/idea/projectsystem/DynamicAppFeatureOnFeatureToken.kt) |
+| [com.android.tools.idea.projectsystem.findDependenciesWithResourcesToken](https://jb.gg/ipe?extensions=com.android.tools.idea.projectsystem.findDependenciesWithResourcesToken) ![Non-Dynamic][non-dynamic] | [`FindDependenciesWithResourcesToken`](%gh-ij-android%/project-system/src/com/android/tools/idea/projectsystem/FindDependenciesWithResourcesToken.kt) |
+| [com.android.tools.idea.projectsystem.libraryDependenciesTroubleInfoCollectorToken](https://jb.gg/ipe?extensions=com.android.tools.idea.projectsystem.libraryDependenciesTroubleInfoCollectorToken) ![Non-Dynamic][non-dynamic] | [`LibraryDependenciesTroubleInfoCollectorToken`](%gh-ij-android%/project-system/src/com/android/tools/idea/projectsystem/LibraryDependenciesTroubleInfoCollectorToken.kt) |
+| [com.android.tools.idea.projectsystem.pseudoLocalesToken](https://jb.gg/ipe?extensions=com.android.tools.idea.projectsystem.pseudoLocalesToken) ![Non-Dynamic][non-dynamic] | [`PseudoLocalesToken`](%gh-ij-android%/project-system/src/com/android/tools/idea/projectsystem/PseudoLocalesToken.kt) |
+| [org.jetbrains.android.facet.resourceFolderManagerToken](https://jb.gg/ipe?extensions=org.jetbrains.android.facet.resourceFolderManagerToken) ![Non-Dynamic][non-dynamic] | [`ResourceFolderManagerToken`](%gh-ij-android%/project-system/src/org/jetbrains/android/facet/ResourceFolderManagerToken.kt) |
 
 ### resources-explorer.xml
 
@@ -353,7 +349,15 @@
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.android.tools.idea.nav.safeargs.module.safeArgsModeToken](https://jb.gg/ipe?extensions=com.android.tools.idea.nav.safeargs.module.safeArgsModeToken) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | [`SafeArgsModeToken`](%gh-ij-android%/nav/safeargs/common/src/com/android/tools/idea/nav/safeargs/module/SafeArgsModeModuleService.kt) |
+| [com.android.tools.idea.nav.safeargs.module.safeArgsModeToken](https://jb.gg/ipe?extensions=com.android.tools.idea.nav.safeargs.module.safeArgsModeToken) ![Non-Dynamic][non-dynamic] | [`SafeArgsModeToken`](%gh-ij-android%/nav/safeargs/common/src/com/android/tools/idea/nav/safeargs/module/SafeArgsModeModuleService.kt) |
+
+### server-flags.xml
+
+[`server-flags.xml`](%gh-ij-android%/server-flags/resources/META-INF/server-flags.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.android.tools.idea.mendelFlagsProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.mendelFlagsProvider) ![Non-Dynamic][non-dynamic] | [`MendelFlagsProvider`](%gh-ij-android%/server-flags/src/com/android/tools/idea/mendel/MendelFlagsProvider.kt) |
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square
 [removal]: https://img.shields.io/badge/-Removal-red?style=flat-square

@@ -15,7 +15,7 @@
 ## Define Input Test Data
 Create the <path>RenameTestData.simple</path> properties file in the <path>testData</path> directory.
 
-```bash
+```properties
 ```
 {src="simple_language_plugin/src/test/testData/RenameTestData.simple"}
 
@@ -31,7 +31,7 @@ Create the <path>RenameTestDataAfter.simple</path> file in the <path>testData</p
 This file contains the expected outcome of the test.
 Note the `website =` in <path>RenameTestData.simple</path> should be renamed to `websiteUrl =` by the test.
 
-```bash
+```properties
 ```
 {src="simple_language_plugin/src/test/testData/RenameTestDataAfter.simple"}
 

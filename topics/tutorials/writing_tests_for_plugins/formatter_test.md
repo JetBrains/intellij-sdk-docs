@@ -17,7 +17,7 @@ See also [`FormatterTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/p
 ## Define Test Data
 Create the <path>FormatterTestData.simple</path> file in the <path>testData</path> directory.
 
-```bash
+```properties
 ```
 {src="simple_language_plugin/src/test/testData/FormatterTestData.simple"}
 

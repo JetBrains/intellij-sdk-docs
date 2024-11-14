@@ -85,9 +85,10 @@ While `SimpleProperty` elements will provide us with their key and value, we hav
 Since we would like to show this comment in the documentation as well, we need a small helper function that extracts the text from the comment.
 This function will reside in the `SimpleUtil` class and will find, for instance, the comment preceding `apikey` in the following short example:
 
-```text
-#An application programming interface key (API key) is a unique identifier
-#used to authenticate a user, developer, or calling program to an API.
+```properties
+# An application programming interface key (API key) is a unique
+# identifier used to authenticate a user, developer, or calling
+# program to an API.
 apikey=ph342m91337h4xX0r5k!11Zz!
 ```
 

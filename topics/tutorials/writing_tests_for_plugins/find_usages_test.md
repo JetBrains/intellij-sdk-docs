@@ -15,7 +15,7 @@
 ## Define the Test Data
 Create the <path>FindUsagesTestData.simple</path> file in the <path>testData</path> directory.
 
-```bash
+```properties
 ```
 {src="simple_language_plugin/src/test/testData/FindUsagesTestData.simple"}
 

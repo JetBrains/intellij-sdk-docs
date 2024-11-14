@@ -101,7 +101,7 @@ Run the plugin by using the Gradle [`runIde`](creating_plugin_project.md#running
 
 Create a <path>test.simple</path>  file with the following content:
 
-```text
+```properties
 # You are reading the ".properties" entry.
 ! The exclamation mark can also mark text as comments.
 website = https://en.wikipedia.org/

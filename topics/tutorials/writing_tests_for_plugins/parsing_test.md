@@ -35,7 +35,7 @@ private recover_property ::= !(KEY|SEPARATOR|COMMENT)
 Create the <path>ParsingTestData.simple</path> properties file in the <path>testData</path> folder.
 Note the last few lines define a purposely incorrect key.
 
-```bash
+```properties
 ```
 {src="simple_language_plugin/src/test/testData/ParsingTestData.simple"}
 
@@ -51,7 +51,7 @@ Use the <control>Copy PSI</control> button to copy the expected PSI structure to
 ## Define the Output Reference Test Data
 Create a file <path>ParsingTestData.txt</path> with the copied PSI tree.
 
-```text
+```properties
 ```
 {src="simple_language_plugin/src/test/testData/ParsingTestData.txt"}
 

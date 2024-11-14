@@ -14,7 +14,7 @@
 Create the <path>DefaultTestData.simple</path> file in the <path>testData</path> directory.
 This file contains test Simple language properties that will be completed in a test Java file (see the `Test` class later in this section).
 
-```bash
+```properties
 ```
 {src="simple_language_plugin/src/test/testData/DefaultTestData.simple"}
 

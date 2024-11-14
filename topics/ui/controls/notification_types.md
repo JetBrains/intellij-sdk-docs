@@ -15,52 +15,58 @@ There are four types of notifications:
 
 ## What notification to use
 
-Consider two factors when deciding which notification type to use.
+Choose a notification type based on a combination of these factors:
 
-**User action**
+1. **User action:** is it required to proceed?
+    - Required immediately
+    - Required, but not immediately
+    - Not required
 
-<p> Are the users required to address the notification before they can proceed with current tasks?</p>
-  - Required immediately
-  - Required, but not immediately
-  - Not required
+2. **Trigger location:** from where the notification was created? Options:
+    - Editor
+    - Tool window
+    - Dialog
+    - Any other location
 
-**Context of trigger**
 
-<p> What initiated the notification? Does the initiation point to a particular context or location?</p>
-  - File tab
-  - Tool windows
-  - Other
+### Alert
+- User action: required
+- Trigger location: any
 
-Use the following table to determine which notification to use based on the two factors:
+Examples: confirm restart or exit, choose were to open a new project.
+
+### Banner
+
+
+### Notification balloon
 
 <table>
   <tr>
   <td width="16%">User action</td>
-  <td width="16%">Context</td>
+  <td width="16%">Location</td>
   <td width="16%">Type</td>
   <td width="52%">Examples</td></tr>
   <tr>
     <td>Required immediately
     </td>
-    <td>All
+    <td>Any
     </td>
-    <td>Alerts
+    <td>Alert
     </td>
     <td>
-      <p>Confirm Restart</p>
+      <p>Confirming restart</p>
       <p>Opening projects in new window</p>
       <p>When trying to rename a method, but a conflict is found</p>
-      <p>Need a dependency before using a feature</p>
       <p><img src="alert.png" width="406" /></p>
    </td>
   </tr>
   <tr>
     <td>Required, but not immediately</td>
     <td>
-      <p>File tabs</p>
-      <p>Tool windows</p>
+      <p>Editor</p>
+      <p>Tool window</p>
     </td>
-    <td>Banners</td>
+    <td>Banner</td>
     <td>
       <p>Configuring SDK for your project</p>
       <p>Requiring a Gradle sync for tools to work properly</p>
@@ -68,9 +74,18 @@ Use the following table to determine which notification to use based on the two 
     </td>
     </tr>
   <tr>
+    <td></td>
+    <td>Other locations</td>
+    <td>Sticky balloon</td>
+    <td>
+      IDE and plugin updates
+      <img src="sticky_toast.png" width="391" />
+    </td>
+  </tr>
+  <tr>
     <td>Not required</td>
-    <td>Tool windows</td>
-    <td>Tool Window balloons</td>
+    <td>Tool window</td>
+    <td>Tool window balloon</td>
     <td>
       <p>Status of task completion</p>
       <p>When Find Usages is invoked on a method, use a tool window balloon to show the feedback since the results will be found in the Find tool window</p>
@@ -79,17 +94,8 @@ Use the following table to determine which notification to use based on the two 
   </tr>
   <tr>
     <td></td>
-    <td>All but file tabs or tool windows</td>
-    <td>Sticky balloons</td>
-    <td>
-      IDE and Plugin Updates
-      <img src="sticky_toast.png" width="391" />
-    </td>
-  </tr>
-  <tr>
     <td></td>
-    <td></td>
-    <td>Timed balloons</td>
+    <td>Timed balloon</td>
     <td>
       <p>Module imported</p>
       <p>Framework detection</p>
@@ -97,5 +103,3 @@ Use the following table to determine which notification to use based on the two 
     </td>
   </tr>
 </table>
-
-**Exception**: If the action is highly recommended, consider using Banners across all files for visibility instead of Sticky balloon.

@@ -17,8 +17,8 @@
 
 <include from="language_and_filetype.md" element-id="custom_language_tutorial_header"></include>
 
-> For plugins targeting IntelliJ Platform version 2023.1 or later, it is recommended to utilize the
-> Documentation Target API, as detailed in [](documentation.md#documentation-target-api).
+> For plugins targeting IntelliJ Platform version 2023.1 or later, it is recommended to use the
+> [](documentation.md#documentation-target-api).
 >
 {style="note"}
 
@@ -37,7 +37,7 @@ and register it in the <path>[plugin.xml](plugin_configuration_file.md)</path>.
 final class SimpleDocumentationProvider extends AbstractDocumentationProvider { }
 ```
 
-Make sure the class is registered in the <path>plugin.xml</path> between the `extensions` tags, as shown below:
+Make sure the extension is registered in the <path>plugin.xml</path> as shown below:
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
@@ -77,7 +77,7 @@ Since the Simple Language only allows for one property per string,
 it would be nice if <emphasis>Quick Documentation</emphasis> worked no matter where your cursor was positioned in the string as long as the string contained a Simple property.
 Inside a Simple file, the situation is similar, and calling <ui-path>View | Quick Documentation</ui-path> only works when the cursor is positioned on the key.
 
-Please refer to the Addendum below, which explains how to improve on this situation by additionally overriding `getCustomDocumentationElement()` method.
+Refer to the [Addendum](#addendum) below, which explains how to improve on this situation by additionally overriding `getCustomDocumentationElement()` method.
 
 ## Extract Documentation Comments from Key/Value Definitions
 
@@ -156,6 +156,7 @@ In the case of Simple Language, the lookup element is already a `SimpleProperty`
 In other circumstances, you can override `getDocumentationElementForLookupItem() `and return the correct PSI element.
 
 ## Addendum: Choosing a Better Target Element
+{id="addendum"}
 
 To be able to call <ui-path>View | Quick Documentation</ui-path> for Simple properties in all places of a Java string literal, two steps are required:
 

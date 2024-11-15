@@ -131,8 +131,8 @@ If users are more likely to re-enter the entire value, select the whole text whe
 
 ### Input field types
 
-If the input text can be long and place is constrained, use an expandable input field [`ExpandableTextField`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/fields/ExpandableTextField.java).
-For more details, see [built-in buttons](built_in_button.md#expand-field).
+If the input text can be long and the place is constrained, use an expandable input field [`ExpandableTextField`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/fields/ExpandableTextField.java).
+For more details, see [built-in buttons](built_in_button.md#expand-a-field).
 
 ![](expandable_1.png){width=332}
 

@@ -178,6 +178,11 @@ Interface `com.intellij.lang.javascript.JSElementTypes` no longer extends `com.i
 Field `com.intellij.lang.javascript.JavaScriptSupportLoader.ECMA_SCRIPT_L4` moved to `com.intellij.lang.javascript.flex.FlexSupportLoader`
 : Update code usages.
 
+### Kotlin Plugin 2024.3
+
+`org.jetbrains.kotlin.idea.quickfix.AddAnnotationFix(KtElement, ClassId, AddAnnotationFix.Kind, FqName, SmartPsiElementPointer, int, DefaultConstructorMarker)` constructor parameter type changed from `FqName` to `List<String>`
+: Update code usages.
+
 
 ## 2024.2
 

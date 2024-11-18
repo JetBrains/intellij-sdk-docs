@@ -19,9 +19,9 @@
         <img src="when_to_use_button.png" alt="When to use a button" width="706"/>
     </chapter>
         <chapter title="When not to use" id="when-not-to-use">
-        <table style="none">
+        <table style="none" border="false" column-width="fixed">
             <tr>
-                <td width="50%"><img src="link_instead_of_button.png" alt="Using links instead of buttons" width="378"/></td>
+                <td><img src="link_instead_of_button.png" alt="Using links instead of buttons" width="378"/></td>
                 <td><p>Use a link instead if:</p>
                     <list>
                     <li><p>The action takes the user to another page of the same dialog or an external source like
@@ -36,12 +36,12 @@
                 </td>
             </tr>
             <tr>
-                <td width="50%"><img src="toolbar_button.png" alt="Using toolbar buttons instead of buttons" width="378"/></td>
+                <td><img src="toolbar_button.png" alt="Using toolbar buttons instead of buttons" width="378"/></td>
                 <td><p>Use a <a href="toolbar.md">toolbar button</a> instead if there are several buttons related to a table or list.</p>
                 </td>
             </tr>
             <tr>
-                <td width="50%"><img src="split_button.png" alt="Using split buttons instead of buttons" width="378"/></td>
+                <td><img src="button_split_button.png" alt="Using split buttons instead of buttons" width="378"/></td>
                 <td><p>Use a <a href="split_button.md">split button</a> instead if:</p>
                     <list>
                         <li>There are more than two related actions, but the space is limited and/or packed.</li>
@@ -52,7 +52,7 @@
                 </td>
             </tr>
             <tr>
-                <td width="50%">
+                <td>
                     <img src="built-in_button.png" alt="Using built-in buttons instead of buttons" width="378"/>
                 </td>
                 <td><p>Use a <a href="built_in_button.md">built-in button</a> instead if it's related to an input field, combo box,
@@ -78,7 +78,7 @@
             <p>The button should answer the question in the title, so the user can skip the description. Prefer specific
                 labels over
                 generic ones:</p>
-            <table style="none">
+            <table style="none" border="false" column-width="fixed">
                 <tr>
                     <td width="50%">
                         <p>
@@ -105,7 +105,7 @@
                     use the word
                     <control>Now</control> in labels because buttons always trigger an immediate action:
                 </p>
-                <table style="none">
+                <table style="none" border="false" column-width="fixed">
                     <tr>
                         <td width="50%">
                             <p>
@@ -130,7 +130,7 @@
             <p>The label should be short, not more than five words. If it’s not obvious what element the button is related
                 to, add more
                 words to make it clear. Prefer clear labels to short ones:</p>
-                <table style="none">
+                <table style="none" border="false" column-width="fixed">
                     <tr>
                         <td width="50%">
                             <p>
@@ -202,8 +202,6 @@
             </li>
             </list>
         </chapter>
-
-
         <chapter title="Focused" id="focused">
             <img src="focused_button.png" alt="'Cancel' button in a focused state" width="706"/>
             <p>All buttons can get focus, even on macOS if the
@@ -313,7 +311,7 @@
             <p>On hovering over a button, show a tooltip with the shortcut and the action name if it can be clarified.
                 For more details,
                 see <a href="context_help.md">Context help</a>.</p>
-            <table style="none" column-width="fixed">
+            <table style="none" border="false" column-width="fixed">
                 <tr>
                     <td width="378">
                         <img src="hovered_button.png" alt="Hovered buttons" width="378"/>
@@ -332,7 +330,7 @@
     </chapter>
     <chapter title="Standard buttons" id="standard-buttons">
         <chapter title="Apply" id="apply">
-            <table style="none" column-width="fixed">
+            <table style="none" border="false" column-width="fixed">
                 <tr>
                     <td width="378">
                         <img src="apply.png" alt="Hovered buttons" width="378"/>
@@ -350,7 +348,7 @@
             </table>
         </chapter>
         <chapter title="Cancel" id="cancel">
-            <table style="none" column-width="fixed">
+            <table style="none" border="false" column-width="fixed">
                 <tr>
                     <td width="378">
                         <img src="cancel.png" alt="Hovered buttons" width="378"/>
@@ -386,7 +384,7 @@
         </chapter>
 
         <chapter title="Close">
-            <table style="none" column-width="fixed">
+            <table style="none" border="false" column-width="fixed">
                 <tr>
                     <td width="378">
                         <img src="close.png" alt="Hovered buttons" width="378"/>
@@ -413,7 +411,7 @@
             </table>
         </chapter>
         <chapter title="Help" id="help">
-            <table style="none" column-width="fixed">
+            <table style="none" border="false" column-width="fixed">
                 <tr>
                     <td width="378">
                         <img src="help.png" alt="Hovered buttons" width="378"/>

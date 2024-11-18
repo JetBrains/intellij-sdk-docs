@@ -24,7 +24,7 @@ Make sure that the _Plugin DevKit_ and _Gradle_ plugins are enabled.
 
 <include from="snippets.md" element-id="pluginDevKitAvailability"/>
 
-Install and enable [Grammar-Kit](https://plugins.jetbrains.com/plugin/6606-grammar-kit) and [PsiViewer](https://plugins.jetbrains.com/plugin/227-psiviewer) plugins.
+Install and enable [Grammar-Kit](https://plugins.jetbrains.com/plugin/6606-grammar-kit) and [PsiViewer](https://plugins.jetbrains.com/plugin/227-psiviewer) (optionally) plugins.
 
 ## Create a Project
 

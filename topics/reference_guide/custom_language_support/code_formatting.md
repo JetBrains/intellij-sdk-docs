@@ -18,8 +18,8 @@ This allows the formatting engine to calculate the smallest number of whitespace
 ## Introduction
 
 The easiest way to understand how formatting works in practice is to use a small code example in an existing language and
-use [PsiViewer](explore_api.md#31-use-internal-mode-and-psiviewer) to inspect how formatting blocks are built.
-To invoke PsiViewer with the possibility of inspecting <control>Block Structure</control>,
+use the [built-in PSI viewer](explore_api.md#internalMode) to inspect how formatting blocks are built.
+To invoke the builtin PSI viewer with the possibility of inspecting <control>Block Structure</control>,
 use <ui-path>Tools | View PSI Structure...</ui-path> or <ui-path>Tools | View PSI Structure of Current File...</ui-path>.
 
 ![Formatting Blocks Structure](psi_viewer_formatting_blocks.png){width="706"}

@@ -116,6 +116,7 @@ key\ with\ spaces = This is the value that could be looked up with the key "key 
 tab : \u0009
 ```
 
-Now open the <control>PsiViewer</control> tool window and check how the lexer breaks the content of the file into tokens, and the parser transforms the tokens into PSI elements.
+Use the [PsiViewer plugin or built-in PSI viewer](explore_api.md#internalMode) and check how the lexer breaks the content of the file into tokens,
+and the parser transforms the tokens into PSI elements.
 
 ![PSI Elements](psi_elements.png)

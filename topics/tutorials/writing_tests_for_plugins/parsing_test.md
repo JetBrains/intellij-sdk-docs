@@ -40,8 +40,8 @@ Note the last few lines define a purposely incorrect key.
 {src="simple_language_plugin/src/test/testData/ParsingTestData.simple"}
 
 ## Copy the Expected PSI Tree
-The easiest way to get the expected PSI structure for any file is to use the PSI Viewer.
-Run the project and use <ui-path>Tools | View PSI Structure</ui-path>
+The easiest way to get the expected PSI structure for any file is to use the [built-in PSI viewer](explore_api.md#internalMode).
+Run the project and use <ui-path>Tools | View PSI Structure...</ui-path>
 (enable [Internal Mode](enabling_internal.md) explicitly for the IDE instance if the menu is not available).
 
 ![PSI Tree Copy](plugin_copy_psi.png)

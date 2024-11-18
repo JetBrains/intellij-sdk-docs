@@ -155,8 +155,9 @@ must not be used, see [](api_internal.md) for more details and replacements.
 ## 3 Tools and References
 
 ### 3.1 Use Internal Mode and PsiViewer
+{id="internalMode"}
 
-As a plugin developer, you should enable the [internal mode](enabling_internal.md) in IntelliJ IDEA.
+When developing plugins, always enable the [internal mode](enabling_internal.md) in IntelliJ IDEA.
 This provides access to a suite of tools to help you develop, debug, and test IntelliJ Platform plugins.
 
 One of its most helpful features is the [UI Inspector](internal_ui_inspector.md),

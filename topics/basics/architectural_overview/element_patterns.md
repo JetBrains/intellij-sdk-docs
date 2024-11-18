@@ -72,7 +72,7 @@ This last example shows that corner cases need to be considered carefully even f
 ## Tools and Debugging
 
 Working with element patterns can be tricky, and plugin authors need a solid understanding of the underlying PSI structure to get it right.
-Therefore, it is recommended to use the [PsiViewer plugin or built-in PSI viewer](explore_api.md#31-use-internal-mode-and-psiviewer) and verify that elements indeed have the expected structure and properties.
+Therefore, it is recommended to use the [PsiViewer plugin or built-in PSI viewer](explore_api.md#internalMode) and verify that elements indeed have the expected structure and properties.
 
 ### Debugging
 

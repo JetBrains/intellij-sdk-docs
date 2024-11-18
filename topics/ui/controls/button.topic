@@ -333,7 +333,7 @@
             <table style="none" border="false" column-width="fixed">
                 <tr>
                     <td width="378">
-                        <img src="apply.png" alt="Hovered buttons" width="378"/>
+                        <img src="button_apply.png" alt="Hovered buttons" width="378"/>
 
                     </td>
                     <td width="378">
@@ -351,7 +351,7 @@
             <table style="none" border="false" column-width="fixed">
                 <tr>
                     <td width="378">
-                        <img src="cancel.png" alt="Hovered buttons" width="378"/>
+                        <img src="button_cancel.png" alt="Hovered buttons" width="378"/>
 
                     </td>
                     <td width="378">
@@ -387,7 +387,7 @@
             <table style="none" border="false" column-width="fixed">
                 <tr>
                     <td width="378">
-                        <img src="close.png" alt="Hovered buttons" width="378"/>
+                        <img src="button_close.png" alt="Hovered buttons" width="378"/>
 
                     </td>
                     <td width="378">
@@ -414,7 +414,7 @@
             <table style="none" border="false" column-width="fixed">
                 <tr>
                     <td width="378">
-                        <img src="help.png" alt="Hovered buttons" width="378"/>
+                        <img src="button_help.png" alt="Hovered buttons" width="378"/>
 
                     </td>
                     <td width="378">

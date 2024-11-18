@@ -157,4 +157,4 @@ The event only notifies that something has changed; if more details are needed a
 
 ## Receiving Notification About Project Close/Open Events
 
-Use [`ProjectManagerListener`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/project/ProjectManagerListener.java) [listener](plugin_listeners.md)
+Use [`ProjectManagerListener`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/project/ProjectManagerListener.java) [listener](plugin_listeners.md) or [project open activity](plugin_components.md#project-open).

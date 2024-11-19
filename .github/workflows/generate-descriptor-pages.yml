@@ -1,4 +1,4 @@
-name: Generate Pages
+name: Generate Descriptor Pages Content
 
 on:
   schedule:

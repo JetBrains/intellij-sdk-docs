@@ -101,7 +101,7 @@ Attributes
   The link to the plugin homepage displayed on the plugin page in
   the [JetBrains Marketplace](https://plugins.jetbrains.com).
 - `require-restart` _(optional)_<br/>
-  The boolean value determining whether the plugin installation, update, or uninstallation requires the IDE restart
+  The boolean value determining whether the plugin installation, update, or uninstallation requires an IDE restart
   (see [Dynamic Plugins](dynamic_plugins.md) for details).<br/>
   Default value: `false`.
 
@@ -189,7 +189,8 @@ Example
 
 </tldr>
 
-The plugin version displayed in the <control>Plugins</control> settings dialog and in the JetBrains Marketplace plugin page.
+The plugin version displayed in the <control>Plugins</control> settings dialog and on the
+[JetBrains Marketplace](https://plugins.jetbrains.com) plugin page.
 Plugins uploaded to the JetBrains Marketplace must follow semantic versioning.
 
 {style="narrow"}
@@ -272,7 +273,7 @@ Attributes
 - `until-build` _(optional)_<br/>
   The highest IDE version compatible with the plugin.
   Undefined value declares compatibility with all the IDEs since the version specified by the `since-build`
-  (also with the future builds what may cause incompatibility errors).
+  (also with the future builds that may cause incompatibility errors).
 
 Examples
 :
@@ -295,8 +296,8 @@ Examples
 
 </tldr>
 
-The vendor name or organization ID (if created) in the <control>Plugins</control> settings dialog and in
-the JetBrains Marketplace plugin page.
+The vendor name or organization ID (if created) in the <control>Plugins</control> settings dialog and on
+the [JetBrains Marketplace](https://plugins.jetbrains.com) plugin page.
 
 {style="narrow"}
 Required
@@ -336,8 +337,8 @@ Examples
 
 </tldr>
 
-The plugin description displayed on the JetBrains Marketplace plugin page and in the <control>Plugins</control>
-settings dialog.
+The plugin description displayed on the [JetBrains Marketplace](https://plugins.jetbrains.com) plugin page and in
+the <control>Plugins</control> settings dialog.
 
 Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed and must be wrapped into
 `<![CDATA[` ... `]]>` section.
@@ -376,7 +377,8 @@ Example
 </tldr>
 
 A short summary of new features, bugfixes, and changes provided with the latest plugin version.
-Change notes are displayed on the JetBrains Marketplace plugin page and in the <control>Plugins</control> settings dialog.
+Change notes are displayed on the [JetBrains Marketplace](https://plugins.jetbrains.com) plugin page and in
+the <control>Plugins</control> settings dialog.
 
 Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed and must be wrapped into
 `<![CDATA[` ... `]]>` section.
@@ -474,7 +476,6 @@ Examples
 
 ### `incompatible-with`
 {#idea-plugin__incompatible-with}
-
 
 <primary-label ref="2020.2"/>
 
@@ -598,7 +599,7 @@ Attributes
   e.g., `com.example.myplugin.myExtension`.
   Only one of the `name` and `qualifiedName` attributes can be specified.
 - `interface` _(`interface` or `beanClass` is **required**)_<br/>
-  The fully qualified name of the interface to be implemented for extending plugin's functionality.
+  The fully qualified name of the interface to be implemented for extending the plugin's functionality.
   Only one of the `interface` and `beanClass` attributes can be specified.
   See [Extension Points](plugin_extension_points.md) for more
   information.
@@ -721,7 +722,7 @@ Required
 
 Attributes
 :
-- `resource-bundle` _(optional; supported since 2020.1)_<br/>
+- `resource-bundle` _(optional; available since 2020.1)_<br/>
   Defines the dedicated actions resource bundle.
   See [Localizing Actions and Groups](basic_action_system.md#localizing-actions-and-groups)
   for more details.
@@ -816,7 +817,7 @@ the [`<actions>`](#idea-plugin__actions) element:
 ##### `add-to-group`
 {#idea-plugin__actions__action__add-to-group}
 
-Specifies that the action should be added to an existing group.
+Specifies that the action should be added to an existing [`<group>`](#idea-plugin__actions__group).
 A single action can be added to multiple groups.
 
 {style="narrow"}
@@ -827,12 +828,12 @@ Required
 Attributes
 :
 - `group-id` _(**required**)_<br/>
-  Specifies the ID of the group to which the action is added.
+  Specifies the ID of the [`<group>`](#idea-plugin__actions__group) to which the action is added.
   The group must be an implementation of the
   [`DefaultActionGroup`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
   class.
 - `anchor` _(optional)_<br/>
-  Specifies the position of the action in the relative to other actions.
+  Specifies the position of the action relative to other actions.
   Allowed values:
     - `first` - the action is placed as the first in the group
     - `last` _(default)_ - the action is placed as the last in the group
@@ -961,7 +962,6 @@ Examples
 ##### `override-text`
 {#idea-plugin__actions__action__override-text}
 
-
 <primary-label ref="2020.1"/>
 
 Defines an alternate version of the text for the menu action or group.
@@ -1004,11 +1004,10 @@ Examples
 ##### `synonym`
 {#idea-plugin__actions__action__synonym}
 
-
 <primary-label ref="2020.3"/>
 
-Defines an alternative text for searching the action in <ui-path>Help | Find Action...</ui-path> or <ui-path>
-Navigate | Search Everywhere</ui-path> popups.
+Defines an alternative text for searching the action in <ui-path>Help | Find Action...</ui-path> or
+<ui-path>Navigate | Search Everywhere</ui-path> popups.
 A single action can have multiple synonyms.
 
 {style="narrow"}
@@ -1104,7 +1103,7 @@ Attributes
     - `false` _(default)_ - disabled actions are visible
 - `use-shortcut-of` _(optional)_<br/>
   The ID of the action whose keyboard shortcut this group will use.
-- `searchable` _(optional; supported since 2020.3)_<br/>
+- `searchable` _(optional; available since 2020.3)_<br/>
   Boolean flag defining whether the group is displayed in <ui-path>Help&nbsp;|&nbsp;Find Action...</ui-path>
   or <ui-path>Navigate | Search Everywhere</ui-path> popups.<br/>
   Default value: `true`.
@@ -1244,6 +1243,8 @@ Examples
 ### `applicationListeners`
 {#idea-plugin__applicationListeners}
 
+<primary-label ref="2019.3"/>
+
 <tldr>
 
 **Reference:** [Defining Application-Level Listeners](plugin_listeners.md#defining-application-level-listeners)
@@ -1262,6 +1263,8 @@ Children
 
 #### `listener`
 {#idea-plugin__applicationListeners__listener}
+
+<primary-label ref="2019.3"/>
 
 <tldr>
 
@@ -1284,7 +1287,7 @@ Attributes
   The fully qualified name of the listener interface corresponding to the type of received events.
 - `class` _(**required**)_<br/>
   The fully qualified name of the class implementing the listener interface that receives and handles the events.
-- `os` _(optional; supported since 2020.1)_<br/>
+- `os` _(optional; available since 2020.1)_<br/>
   Restricts listener instantiation to a specific operating system.
   Allowed values:
     - `freebsd`
@@ -1312,6 +1315,8 @@ Example
 ### `projectListeners`
 {#idea-plugin__projectListeners}
 
+<primary-label ref="2019.3"/>
+
 <tldr>
 
 **Reference:** [Defining Project-Level Listeners](plugin_listeners.md#defining-project-level-listeners)
@@ -1330,7 +1335,6 @@ Children
 
 ### `application-components`
 {#idea-plugin__application-components collapsible="true" initial-collapse-state="collapsed"}
-
 
 <primary-label ref="Deprecated"/>
 
@@ -1494,7 +1498,6 @@ Required
 ### `project-components`
 {#idea-plugin__project-components collapsible="true" initial-collapse-state="collapsed"}
 
-
 <primary-label ref="Deprecated"/>
 
 > Do not use it in new plugins.
@@ -1519,7 +1522,6 @@ Children
 
 ### `module-components`
 {#idea-plugin__module-components collapsible="true" initial-collapse-state="collapsed"}
-
 
 <primary-label ref="Deprecated"/>
 

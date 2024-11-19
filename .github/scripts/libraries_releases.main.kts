@@ -42,7 +42,7 @@ val vars = releasesList.mapValues { (key, releaseInfo) ->
           .map { it.jsonPrimitive.content.removePrefix("v") }
           .run(releaseInfo.transformer)
       } catch (e: Exception) {
-        println("Cannot resolve the latest $key version")
+        println("Cannot resolve the latest $key version: ${e.message}")
         UNKNOWN
       }
     }

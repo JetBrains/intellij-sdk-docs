@@ -258,7 +258,7 @@ fun StringBuilder.appendAttributes(attributeWrappers: List<AttributeWrapper>) {
 
 fun StringBuilder.appendAttribute(attribute: Attribute) {
   append("- `${attribute.name}`")
-  appendAttributeRequirement(attribute.requirement)
+  appendAttributeRequirementAndAvailability(attribute)
   attribute.description?.trim()?.let { append(it.indentLines(level = 1)) }
   attribute.defaultValue?.trim()?.let {
     appendLine("<br/>")
@@ -267,17 +267,28 @@ fun StringBuilder.appendAttribute(attribute: Attribute) {
   appendLine()
 }
 
-fun StringBuilder.appendAttributeRequirement(requirement: Requirement?) {
-  if (requirement == null) {
+fun StringBuilder.appendAttributeRequirementAndAvailability(attribute: Attribute) {
+  val requirement = attribute.requirement
+  val since = attribute.since
+  val until = attribute.until
+  if (requirement == null && since == null && until == null) {
     appendLine()
   } else {
-    val requiredText = when (requirement.required) {
+    val requiredText = when (requirement?.required) {
       Required.YES -> "**required**"
       Required.NO -> "optional"
       Required.YES_FOR_PAID -> "required for paid or freemium plugins"
-      Required.UNKNOWN -> ""
+      else -> ""
     }
-    val content = (listOf(requiredText) + requirement.details.map { it.trim() }).filter { it.isNotEmpty() }
+    val availabilityText = when {
+      since != null && until != null -> "available since $since, until $until"
+      since != null -> "available since $since"
+      until != null -> "available until $until"
+      else -> ""
+    }
+    val requirementDetails = requirement?.details ?: emptyList()
+    val content = (listOf(requiredText, availabilityText) + requirementDetails.map { it.trim() })
+      .filter { it.isNotEmpty() }
     append(" _(")
     append(content.joinToString(separator = "; "))
     appendLine(")_<br/>")

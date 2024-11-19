@@ -1,0 +1,32 @@
+name: Generate Pages
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  generate-pages:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate descriptor pages content
+        run: "${GITHUB_WORKSPACE}/.github/scripts/generate_descriptor_pages.main.kts"
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --exit-code || echo "changes=true" >> $GITHUB_OUTPUT
+      - name: Create Pull Request
+        if: steps.git-check.outputs.changes == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: Update generated descriptor pages
+          title: Update generated descriptor pages
+          body: |
+            Updates the generated descriptor pages based on the latest run
+            of the `plugin_configuration_file_generation.main.kts` script.
+          branch: update-generated-descriptor-pages
+          delete-branch: true
+          reviewers: karollewandowski

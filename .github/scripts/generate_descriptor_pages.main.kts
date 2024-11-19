@@ -24,29 +24,6 @@ The proper solution is to create a snippet file in topics/_generated,
 but we can't use this approach until WRS-1009 is fixed.
 */
 
-val PLUGIN_DESCRIPTOR_DATA_URL = "https://jb.gg/sdk-docs/plugin-descriptor.yaml"
-val PLUGIN_CONFIGURATION_FILE_PATH = "topics/basics/plugin_structure/plugin_configuration_file.md"
-
-val content = URL(PLUGIN_DESCRIPTOR_DATA_URL).readText()
-  .run {
-    val loaderOptions = LoaderOptions().apply {
-      isEnumCaseSensitive = false
-    }
-    val representer = Representer(DumperOptions()).apply {
-      propertyUtils.isSkipMissingProperties = true
-    }
-    val constructor = Constructor(DocumentationContent::class.java, loaderOptions)
-    Yaml(constructor, representer).load<DocumentationContent>(this)
-  }
-  .takeIf { it?.elements != null }
-  ?: throw RuntimeException("Failed to parse $PLUGIN_DESCRIPTOR_DATA_URL")
-
-val renderedElementPaths = mutableListOf<String>()
-
-val newFileContent = StringBuilder()
-val patternToInsertAfter = "[//]: # (GENERATED CONTENT START)"
-val patternToSkipUntil = "[//]: # (GENERATED CONTENT END)"
-
 // delete it when WRS-6339 is done
 val renderedPageNameToTopicNames = mutableMapOf<String, String>().apply {
   // init map once:
@@ -64,23 +41,53 @@ val renderedPageNameToTopicNames = mutableMapOf<String, String>().apply {
   }
 }
 
-file(PLUGIN_CONFIGURATION_FILE_PATH).useLines { lines ->
-  var insideGeneratedContent = false
-  for (line in lines) {
-    if (line.trim() == patternToInsertAfter) {
-      insideGeneratedContent = true
-      newFileContent.appendLine(line)
-      newFileContent.append(renderContent(content))
-    } else if (line.trim() == patternToSkipUntil) {
-      insideGeneratedContent = false
-      newFileContent.appendLine(line)
-    } else if (!insideGeneratedContent) {
-      newFileContent.appendLine(line)
-    }
-  }
+val renderedElementPaths = mutableListOf<String>()
+
+val descriptors = listOf(
+  DescriptorInfo("https://jb.gg/sdk-docs/plugin-descriptor.yaml", "topics/basics/plugin_structure/plugin_configuration_file.md")
+)
+
+descriptors.forEach { descriptor ->
+  processDescriptor(descriptor)
 }
 
-file(PLUGIN_CONFIGURATION_FILE_PATH).writeText(newFileContent.toString())
+fun processDescriptor(descriptor: DescriptorInfo) {
+  val content = URL(descriptor.dataUrl).readText()
+    .run {
+      val loaderOptions = LoaderOptions().apply {
+        isEnumCaseSensitive = false
+      }
+      val representer = Representer(DumperOptions()).apply {
+        propertyUtils.isSkipMissingProperties = true
+      }
+      val constructor = Constructor(DocumentationContent::class.java, loaderOptions)
+      Yaml(constructor, representer).load<DocumentationContent>(this)
+    }
+    .takeIf { it?.elements != null }
+    ?: throw RuntimeException("Failed to parse ${descriptor.dataUrl}")
+
+  val newFileContent = StringBuilder()
+  val patternToInsertAfter = "[//]: # (GENERATED CONTENT START)"
+  val patternToSkipUntil = "[//]: # (GENERATED CONTENT END)"
+
+  file(descriptor.filePath).useLines { lines ->
+    var insideGeneratedContent = false
+    for (line in lines) {
+      if (line.trim() == patternToInsertAfter) {
+        insideGeneratedContent = true
+        newFileContent.appendLine(line)
+        newFileContent.append(renderContent(content))
+      } else if (line.trim() == patternToSkipUntil) {
+        insideGeneratedContent = false
+        newFileContent.appendLine(line)
+      } else if (!insideGeneratedContent) {
+        newFileContent.appendLine(line)
+      }
+    }
+  }
+
+  file(descriptor.filePath).writeText(newFileContent.toString())
+}
 
 fun renderContent(content: DocumentationContent): String {
   val sb = StringBuilder()
@@ -404,6 +411,8 @@ fun getInternalLink(url: String): String? {
   }
   return null
 }
+
+class DescriptorInfo(val dataUrl: String, val filePath: String)
 
 // ============
 // content data classes (synchronize this with org.jetbrains.idea.devkit.documentation.DocumentationContent):

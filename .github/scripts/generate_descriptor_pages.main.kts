@@ -179,9 +179,9 @@ fun StringBuilder.appendSectionHeader(
   attributes.appendLine("}")
   appendLine(attributes.toString())
   if (addDeprecationLabel && element.deprecatedSince != null) {
-    appendLine("\n<primary-label ref=\"Deprecated\"/>\n")
+    appendLine("<primary-label ref=\"Deprecated\"/>\n")
   } else if (element.since != null) {
-    appendLine("\n<primary-label ref=\"${element.since}\"/>\n")
+    appendLine("<primary-label ref=\"${element.since}\"/>\n")
   }
 }
 

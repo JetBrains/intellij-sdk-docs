@@ -266,6 +266,7 @@ fun StringBuilder.appendAttributes(attributeWrappers: List<AttributeWrapper>) {
 fun StringBuilder.appendAttribute(attribute: Attribute) {
   append("- `${attribute.name}`")
   appendAttributeRequirementAndAvailability(attribute)
+  appendAttributeDeprecationInfo(attribute)
   attribute.description?.trim()?.let { append(it.indentLines(level = 1)) }
   attribute.defaultValue?.trim()?.let {
     appendLine("<br/>")
@@ -300,6 +301,23 @@ fun StringBuilder.appendAttributeRequirementAndAvailability(attribute: Attribute
     append(content.joinToString(separator = "; "))
     appendLine(")_<br/>")
   }
+}
+
+fun StringBuilder.appendAttributeDeprecationInfo(attribute: Attribute) {
+  val deprecatedSince = attribute.deprecatedSince
+  val deprecationNote = attribute.deprecationNote
+  if (deprecatedSince != null || deprecationNote != null) {
+    if (deprecatedSince != null) {
+      append("**_Deprecated since ${deprecatedSince}_**".indentLines(4))
+    } else {
+      append("**_Deprecated_**")
+    }
+    if (deprecationNote != null) {
+      val noteWithoutLineBreaks = deprecationNote.replace('\n', ' ')
+      append(": $noteWithoutLineBreaks")
+    }
+  }
+  append("")
 }
 
 fun StringBuilder.appendChildren(parent: Element, parentPath: String) {
@@ -454,6 +472,8 @@ data class Attribute(
   var name: String? = null,
   var since: String? = null,
   var until: String? = null,
+  var deprecatedSince: String? = null,
+  var deprecationNote: String? = null,
   var requirement: Requirement? = null,
   var description: String? = null,
   var defaultValue: String? = null,

@@ -10,6 +10,7 @@ Plugin authors are encouraged to verify their compatible releases and take advan
 
 <include from="snippets.md" element-id="subscribeNews"/>
 
+* [Changes in 2025.*](api_notable_list_2025.md)
 * [Changes in 2024.*](api_notable_list_2024.md)
 * [Changes in 2023.*](api_notable_list_2023.md)
 * [Changes in 2022.*](api_notable_list_2022.md)

@@ -37,11 +37,6 @@
                   <project path="$PROJECT_DIR$/code_samples/framework_basics" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/code_samples/kotlin_demo" name="kotlin_demo">
-                <projects>
-                  <project path="$PROJECT_DIR$/code_samples/kotlin_demo" />
-                </projects>
-              </build>
               <build path="$PROJECT_DIR$/code_samples/live_templates" name="live_templates">
                 <projects>
                   <project path="$PROJECT_DIR$/code_samples/live_templates" />
@@ -116,7 +111,6 @@
             <option value="$PROJECT_DIR$/code_samples/editor_basics" />
             <option value="$PROJECT_DIR$/code_samples/facet_basics" />
             <option value="$PROJECT_DIR$/code_samples/framework_basics" />
-            <option value="$PROJECT_DIR$/code_samples/kotlin_demo" />
             <option value="$PROJECT_DIR$/code_samples/live_templates" />
             <option value="$PROJECT_DIR$/code_samples/max_opened_projects" />
             <option value="$PROJECT_DIR$/code_samples/module" />

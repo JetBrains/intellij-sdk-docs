@@ -257,20 +257,27 @@ fun StringBuilder.appendAttributes(attributeWrappers: List<AttributeWrapper>) {
   if (attributes.isNotEmpty()) {
     appendLine("\n\nAttributes")
     appendLine(":")
-    for (attribute in attributes) {
-      appendAttribute(attribute)
+    for ((index, attribute) in attributes.withIndex()) {
+      appendAttribute(attribute, index == attributes.lastIndex)
     }
   }
 }
 
-fun StringBuilder.appendAttribute(attribute: Attribute) {
+fun StringBuilder.appendAttribute(
+  attribute: Attribute,
+  /*ugly hack to not render vertical space between paragraphs in list items (see WRS-1830)*/ isLast: Boolean
+) {
   append("- `${attribute.name}`")
   appendAttributeRequirementAndAvailability(attribute)
   appendAttributeDeprecationInfo(attribute)
-  attribute.description?.trim()?.let { append(it.indentLines(level = 1)) }
+  if (isLast) {
+    append("\n")
+  }
+  val level = if (isLast) 2 else 1
+  attribute.description?.trim()?.let { append(it.indentLines(level)) }
   attribute.defaultValue?.trim()?.let {
     appendLine("<br/>")
-    append("Default value: $it.".indentLines(level = 1))
+    append("Default value: $it.".indentLines(level))
   }
   appendLine()
 }

@@ -101,9 +101,10 @@ Attributes
   The link to the plugin homepage displayed on the plugin page in
   the [JetBrains Marketplace](https://plugins.jetbrains.com).
 - `require-restart` _(optional)_<br/>
-  The boolean value determining whether the plugin installation, update, or uninstallation requires an IDE restart
-  (see [Dynamic Plugins](dynamic_plugins.md) for details).<br/>
-  Default value: `false`.
+
+    The boolean value determining whether the plugin installation, update, or uninstallation requires an IDE restart
+    (see [Dynamic Plugins](dynamic_plugins.md) for details).<br/>
+    Default value: `false`.
 
 Children
 :
@@ -242,8 +243,9 @@ Attributes
   a [Freemium](https://plugins.jetbrains.com/docs/marketplace/freemium.html) plugin.<br/>
   Default value: `false`.
 - `eap` _(optional)_<br/>
-  Specifies the boolean value determining whether the plugin is an EAP release.<br/>
-  Default value: `false`.
+
+    Specifies the boolean value determining whether the plugin is an EAP release.<br/>
+    Default value: `false`.
 
 ### `idea-version`
 {#idea-plugin__idea-version}
@@ -271,9 +273,10 @@ Attributes
 - `since-build` _(**required**)_<br/>
   The lowest IDE version compatible with the plugin.
 - `until-build` _(optional)_<br/>
-  The highest IDE version compatible with the plugin.
-  Undefined value declares compatibility with all the IDEs since the version specified by the `since-build`
-  (also with the future builds that may cause incompatibility errors).
+
+    The highest IDE version compatible with the plugin.
+    Undefined value declares compatibility with all the IDEs since the version specified by the `since-build`
+    (also with the future builds that may cause incompatibility errors).
 
 Examples
 :
@@ -311,7 +314,8 @@ Attributes
   The URL to the vendor's homepage.
   Supports `https://` and `http://` scheme links.
 - `email` _(optional)_<br/>
-  The vendor's email address.
+
+    The vendor's email address.
 
 Examples
 :
@@ -438,9 +442,10 @@ Attributes
     - `true` - the plugin will be loaded
     - `false` (default) - the plugin will not be loaded
 - `config-file` _(required when `optional` is `true`)_<br/>
-  Relative path to an
-  [additional configuration file](#additional-plugin-configuration-files),
-  loaded only if the dependency plugin is installed in the current IDE.
+
+    Relative path to an
+    [additional configuration file](#additional-plugin-configuration-files),
+    loaded only if the dependency plugin is installed in the current IDE.
 
 Examples
 :
@@ -519,9 +524,10 @@ Required
 Attributes
 :
 - `defaultExtensionNs` _(optional)_<br/>
-  Default extensions namespace.
-  It allows skipping the common prefix in fully qualified extension point names.
-  Usually, the `com.intellij` namespace is used when the plugin implements IntelliJ Platform extensions.
+
+    Default extensions namespace.
+    It allows skipping the common prefix in fully qualified extension point names.
+    Usually, the `com.intellij` namespace is used when the plugin implements IntelliJ Platform extensions.
 
 Children
 :
@@ -614,13 +620,14 @@ Attributes
   which is a prerequisite for [dynamic plugins](dynamic_plugins.md).<br/>
   Default value: `false`.
 - `area` _(optional)_<br/>
-  The scope in which the [extension](plugin_extensions.md) is
-  instantiated.
-  It is not recommended to use non-default values.
-  Allowed values:
-    - `IDEA_APPLICATION` _(default)_
-    - `IDEA_PROJECT`
-    - `IDEA_MODULE` (**deprecated**)
+
+    The scope in which the [extension](plugin_extensions.md) is
+    instantiated.
+    It is not recommended to use non-default values.
+    Allowed values:
+      - `IDEA_APPLICATION` _(default)_
+      - `IDEA_PROJECT`
+      - `IDEA_MODULE` (**deprecated**)
 
 Children
 :
@@ -649,9 +656,10 @@ Attributes
   by the type provided in the `implements` attribute.
   Only one of the `tag` and `attribute` attributes can be specified.
 - `implements` _(**required**)_<br/>
-  The fully qualified name of the parent type limiting the type provided in the place specified by
-  `tag` or
-  `attribute`.
+
+    The fully qualified name of the parent type limiting the type provided in the place specified by
+    `tag` or
+    `attribute`.
 
 Example
 :
@@ -723,9 +731,10 @@ Required
 Attributes
 :
 - `resource-bundle` _(optional; available since 2020.1)_<br/>
-  Defines the dedicated actions resource bundle.
-  See [Localizing Actions and Groups](basic_action_system.md#localizing-actions-and-groups)
-  for more details.
+
+    Defines the dedicated actions resource bundle.
+    See [Localizing Actions and Groups](basic_action_system.md#localizing-actions-and-groups)
+    for more details.
 
 Children
 :
@@ -779,7 +788,8 @@ Attributes
   See [Working with Icons](icons.md) for more information
   about defining and using icons.
 - `use-shortcut-of` _(optional)_<br/>
-  The ID of the action whose keyboard shortcut this action will use.
+
+    The ID of the action whose keyboard shortcut this action will use.
 
 Children
 :
@@ -840,7 +850,8 @@ Attributes
     - `before` - the action is placed before the action specified by the `relative-to-action` attribute
     - `after` - the action is placed after the action specified by the `relative-to-action` attribute
 - `relative-to-action` _(**required** if `anchor` is `before`/`after`)_<br/>
-  The action before or after which the current action is inserted.
+
+    The action before or after which the current action is inserted.
 
 Example
 :
@@ -877,8 +888,9 @@ Attributes
 - `remove` _(optional)_<br/>
   Removes a shortcut from the specified action.
 - `replace-all` _(optional)_<br/>
-  Removes all keyboard and mouse shortcuts from the specified action before adding
-  the specified shortcut.
+
+    Removes all keyboard and mouse shortcuts from the specified action before adding
+    the specified shortcut.
 
 Examples
 :
@@ -933,8 +945,9 @@ Attributes
 - `remove` _(optional)_<br/>
   Removes a shortcut from the specified action.
 - `replace-all` _(optional)_<br/>
-  Removes all keyboard and mouse shortcuts from the specified action before adding
-  the specified shortcut.
+
+    Removes all keyboard and mouse shortcuts from the specified action before adding
+    the specified shortcut.
 
 Examples
 :
@@ -984,7 +997,8 @@ Attributes
 - `text` _(`text` or `use-text-of-place` is **required**)_<br/>
   Defines the text to be displayed for the action.
 - `use-text-of-place` _(`text` or `use-text-of-place` is **required**)_<br/>
-  Defines a location whose text should be displayed for this action.
+
+    Defines a location whose text should be displayed for this action.
 
 Examples
 :
@@ -1020,7 +1034,8 @@ Attributes
 - `key` _(`key` or `text` is **required**)_<br/>
   The key of the synonym text provided in a message bundle.
 - `text` _(`key` or `text` is **required**)_<br/>
-  The synonym text.
+
+    The synonym text.
 
 Example
 :
@@ -1045,7 +1060,8 @@ Required
 Attributes
 :
 - `value` _(**required**)_<br/>
-  The abbreviation value.
+
+    The abbreviation value.
 
 Example
 :
@@ -1104,9 +1120,10 @@ Attributes
 - `use-shortcut-of` _(optional)_<br/>
   The ID of the action whose keyboard shortcut this group will use.
 - `searchable` _(optional; available since 2020.3)_<br/>
-  Boolean flag defining whether the group is displayed in <ui-path>Help&nbsp;|&nbsp;Find Action...</ui-path>
-  or <ui-path>Navigate | Search Everywhere</ui-path> popups.<br/>
-  Default value: `true`.
+
+    Boolean flag defining whether the group is displayed in <ui-path>Help&nbsp;|&nbsp;Find Action...</ui-path>
+    or <ui-path>Navigate | Search Everywhere</ui-path> popups.<br/>
+    Default value: `true`.
 
 Children
 :
@@ -1160,7 +1177,8 @@ Required
 Attributes
 :
 - `ref` _(**required**)_<br/>
-  The ID of the action to add to a group.
+
+    The ID of the action to add to a group.
 
 Children
 :
@@ -1202,10 +1220,11 @@ Attributes
   Text displayed on the separator.
   Separator text is displayed only in specific contexts such as popup menus, toolbars, etc.
 - `key` _(optional)_<br/>
-  The message key for the separator text.
-  The message bundle for use should be registered via the `resource-bundle` attribute of
-  the [`<actions>`](#idea-plugin__actions) element.
-  The attribute is ignored if the `text` attribute is specified.
+
+    The message key for the separator text.
+    The message bundle for use should be registered via the `resource-bundle` attribute of
+    the [`<actions>`](#idea-plugin__actions) element.
+    The attribute is ignored if the `text` attribute is specified.
 
 Children
 :
@@ -1299,8 +1318,9 @@ Attributes
   Boolean flag defining whether the listener should be instantiated in test mode.<br/>
   Default value: `true`.
 - `activeInHeadlessMode` _(optional)_<br/>
-  Boolean flag defining whether the listener should be instantiated in headless mode.<br/>
-  Default value: `true`.
+
+    Boolean flag defining whether the listener should be instantiated in headless mode.<br/>
+    Default value: `true`.
 
 Example
 :
@@ -1473,7 +1493,8 @@ Attributes
 - `name` _(**required**)_<br/>
   Option name.
 - `value` _(**required**)_<br/>
-  Option value.
+
+    Option value.
 
 ##### `loadForDefaultProject`
 {#idea-plugin__application-components__component__loadForDefaultProject}

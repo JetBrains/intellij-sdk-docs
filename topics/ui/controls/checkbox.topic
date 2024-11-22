@@ -25,46 +25,38 @@
         <p>Use <a href="radio_button.md">radio button</a> instead if:</p>
         <table style="none" border="false">
             <tr>
-                <td width="50%">
-                    <img src="checkbox_when_not_to_use_1.png" alt="A radio button group with only one selected option possible" width="378"/>
+                <td width="378">
+                    <img src="checkbox_when_not_to_use_1.png" alt="A radio button group with only one selected option possible"/>
                 </td>
-                <td>Only one option in a group can be selected</td>
+                <td>Only one option in a group can be selected.</td>
             </tr>
             <tr>
-                <td width="50%">
-                    <img src="checkbox_when_not_to_use_2.png" alt="Two radio buttons with clear labels" width="378"/>
+                <td width="378">
+                    <img src="checkbox_when_not_to_use_3.png" alt="Two radio buttons with clear labels"/>
                 </td>
                 <td>The behavior in the "off" state is unclear from the checkbox label. Use two radio buttons instead
                     and label them accordingly
                 </td>
             </tr>
-            <tr>
-                <td width="50%">
-                    <img src="checkbox_when_not_to_use_3.png" alt="A radio button group displaying the correct way for showing different states of a setting" width="378"/>
-                </td>
-                <td>With the checkbox, it is unclear how the setting works if it’s unchecked. With radio buttons, both
-                    states are labeled clearly
-                </td>
-            </tr>
         </table>
     </chapter>
     <chapter title="How to use" id="how-to-use">
-        <chapter title="Label" id="label">
-            <table style="none" border="false">
-                <tr>
-                    <td width="50%"><img src="checkbox_when_to_use_1.png"
-                                         alt="A checkbox showing the correct way to use a label" width="378"/></td>
-                    <td>A label accompanies each checkbox and is placed next to it.</td>
-                </tr>
-                <tr>
-                    <td width="50%"><img src="checkbox_when_to_use_2.png"
-                                         alt="A checkbox with a long label split into two lines" width="378"/></td>
-                    <td>If a label is long, split it into two lines. Use HTML formatting for that.</td>
-                </tr>
-            </table>
+        <chapter title="Label on the right" id="label-on-the-right">
+            <p>A label accompanies each checkbox and is placed on the right side.</p>
+                <table style="none" border="false">
+                    <tr>
+                        <td width="378">
+                                <format color="369650" style="bold">Correct</format><img src="checkbox_label_right_correct.png"
+                                                                                         alt="A correct checkbox with the label on the right"/>
+                        </td>
+                        <td width="378">
+                                <format color="E55765" style="bold">Incorrect</format><img src="checkbox_label_right_incorrect.png"
+                                                                                           alt="An incorrect checkbox with the label on the left"/>
+                        </td>
+                    </tr>
+                </table>
             <tabs group="languages">
                 <tab title="Kotlin UI DSL" group-key="kotlin">
-
                     <code-block lang="kotlin">
                         checkBox(
                         &quot;&quot;&quot;&lt;html&gt;Insert selected suggestion by pressing space, dot,&lt;br/&gt;
@@ -72,7 +64,6 @@
                     </code-block>
                 </tab>
                 <tab title="Java" group-key="java">
-
                     <code-block lang="java">
                         new JCheckBox(
                         &quot;&lt;html&gt;Insert selected suggestion by pressing space, dot,&lt;br/&gt;&quot; +
@@ -80,115 +71,137 @@
                     </code-block>
                 </tab>
             </tabs>
-            <p>Avoid labels that take more than two lines. See recommendations on writing concise labels below.</p>
+        </chapter>
+        <chapter title="Long labels">
+            <p>If a label is long, split it into two lines. Use HTML formatting for that. Avoid labels that take more than two lines. See recommendations on <a anchor="writing-guidelines">writing concise labels</a> below.</p>
+                <table style="none" border="false">
+                    <tr>
+                        <td width="378">
+                            <format color="369650" style="bold">Correct</format><img src="checkbox_label_long_correct.png"
+                                                                                     alt="A correct checkbox with the label on the right"/>
+                        </td>
+                        <td width="378">
+                                <format color="E55765" style="bold">Incorrect</format><img src="checkbox_label_long_incorrect.png"
+                                                                                           alt="An incorrect checkbox with the label on the left"/>
+                        </td>
+                    </tr>
+                </table>
+            </chapter>
+        <chapter title="Checkboxes in a table">
             <p>If a checkbox appears in a table, place the label into the column header and do not repeat it on every
-                row.</p>
+                row:</p>
             <img src="checkbox_when_to_use_3.png"
                  alt="A table with checkboxes where the label is placed into the column header" width="706"/>
-            <p>
-                <control>Implementation</control>
-                : Checkboxes are rendered in tables with <a
+                <chapter title="Implementation" collapsible="true" id="checkbox-table-implementation">
+                Checkboxes are rendered in tables with <a
                     href="%gh-ic%/platform/core-ui/src/ui/BooleanTableCellRenderer.java"><code>BooleanTableCellRenderer</code></a>
                 and edited with <code>DefaultCellEditor(JCheckBox)</code> implementation.
                 For any column that should be rendered as a checkbox, set both a renderer and editor for consistency.
                 The type of data in the correspondent column of the <code>Table</code> model should either be <code>Boolean</code>
                 or <code>String</code> containing <code>true</code> or <code>false</code>.
-            </p>
-
             <code-block lang="java">
                 TableColumn column = table.getColumnModel().getColumn(COLUMN_INDEX);
                 column.setCellEditor(JBTable.createBooleanEditor());
                 column.setCellRenderer(new BooleanTableCellRender());
             </code-block>
+                </chapter>
         </chapter>
-        <chapter title="Writing guidelines" id="writing-guidelines">
-            <p>Use sentence-style capitalization.</p>
-            <p>Do not use ending punctuation.</p>
-            <p>Use the imperative form of verbs</p>
-            <table style="none" border="false">
-                <tr>
-                    <td width="50%">
-                        <p>
-                            <format color="369650" style="bold">Correct</format>
-                        </p>
-                    </td>
-                    <td width="50%">
-                        <p>
-                            <format color="E55765" style="bold">Incorrect</format>
-                        </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td><img src="checkbox_writing_1_correct.png"
-                             alt="A correct checkbox with the imperative form of the verb" width="378"/></td>
-                    <td><img src="checkbox_writing_1_incorrect.png"
-                             alt="An incorrect checkbox with the declarative form of verb" width="378"/></td>
-                </tr>
-            </table>
-            <p>Do not use negation in labels as it complicates understanding.</p>
-            <note>Exception: &quot;Do not show again&quot; checkbox.</note>
-
-            <table style="none" border="false">
-                <tr>
-                    <td>
-                        <p>
-                            <format color="369650" style="bold">Correct</format>
-                        </p>
-                    </td>
-                    <td>
-                        <p>
-                            <format color="E55765" style="bold">Incorrect</format>
-                        </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td><img src="checkbox_writing_2_correct.png" alt="A correct checkbox without negation"
-                             width="378"/></td>
-                    <td><img src="checkbox_writing_2_incorrect.png" alt="An incorrect checkbox with negation"
-                             width="378"/></td>
-                </tr>
-            </table>
-            <p>Make labels short and intelligible — see <a href="writing_short.md">Writing short and clear</a>.</p>
-        </chapter>
-        <chapter title="Three-state checkbox" id="three-state-checkbox">
-            <p>In a group of options, use the parent checkbox to show the status of its children.</p>
-            <img src="checkbox_three_state.png"
-                 alt="Different states for a parent checkbox: checked, indeterminate, and unchecked" width="706"/>
-            <p>
-                <emphasis>The parent checkbox in checked, indeterminate and unchecked states</emphasis>
-                <control>Implementation</control>
-                : The three-state checkbox is represented by the <a
-                    href="%gh-ic%/platform/util/ui/src/com/intellij/util/ui/ThreeStateCheckBox.java"><code>ThreeStateCheckBox</code></a>
-                class which represents its state with the <code>ThreeStateCheckBox.State</code> enum containing <code>SELECTED,
-                NOT_SELECTED, DONT_CARE</code> states.
-            </p>
-            <p>When the user clicks an indeterminate checkbox for the first time, the whole group becomes checked. The
-                second click unchecks the whole group.</p>
-            <p>An indeterminate checkbox can also show the download status. An example with a remote repository:</p>
-            <img src="checkbox_download_status.png" alt="Indeterminate checkboxes showing download status" width="706"/>
-            <p>
-                <emphasis>Repositories &quot;tools-base&quot; and &quot;contrib&quot; are being loaded. When loading is
+            <chapter title="Three-state checkbox" id="three-state-checkbox">
+                <p>In a group of options, use the parent checkbox to show the status of its children:</p>
+                <img src="checkbox_three_state.png"
+                     alt="Different states for a parent checkbox: checked, indeterminate, and unchecked" width="706"/>
+                <p>The parent checkbox in checked, indeterminate and unchecked states.</p>
+                    <chapter title="Implementation" collapsible="true">
+                    The three-state checkbox is represented by the <a
+                            href="%gh-ic%/platform/util/ui/src/com/intellij/util/ui/ThreeStateCheckBox.java"><code>ThreeStateCheckBox</code></a>
+                    class which represents its state with the <code>ThreeStateCheckBox.State</code> enum containing <code>SELECTED,
+                        NOT_SELECTED, DONT_CARE</code> states.</chapter>
+                <p>When the user clicks an indeterminate checkbox for the first time, the whole group becomes checked. The
+                    second click unchecks the whole group.</p>
+                <p>An indeterminate checkbox can also show the download status. An example with a remote repository:</p>
+                <img src="checkbox_download_status.png" alt="Indeterminate checkboxes showing download status" width="706"/>
+                <p>
+                    Repositories &quot;tools-base&quot; and &quot;contrib&quot; are being loaded. When loading is
                     finished, the indeterminate checkbox will be replaced with the checked checkbox if there are
                     commits, or an unchecked checkbox if there are no commits.
-                </emphasis>
-            </p>
-            <p>
-                <control>Implementation</control>
-                : In a table, the three-state checkbox is represented by <a
-                    href="%gh-ic%/platform/lang-impl/src/com/intellij/profile/codeInspection/ui/table/ThreeStateCheckBoxRenderer.java"><code>ThreeStateCheckBoxRenderer</code></a>
-                that provides both <code>TableCellRenderer</code> and <code>TableEditor</code>.
-                It accepts <code>Boolean</code> type in the column being supplied by the <code>TableModel</code> and
-                becomes <code>DONT_CARE</code> when the value in the cell is null.
-                Otherwise, it becomes <code>SELECTED</code> for <code>Boolean.TRUE</code>, and <code>NOT_SELECTED</code>
-                for <code>Boolean.FALSE</code>.
-            </p>
+                </p>
+                <chapter title="Implementation" collapsible="true">
+                    <p>In a table, the three-state checkbox is represented by <a href="%gh-ic%/platform/lang-impl/src/com/intellij/profile/codeInspection/ui/table/ThreeStateCheckBoxRenderer.java"><code>ThreeStateCheckBoxRenderer</code></a>
+                        that provides both <code>TableCellRenderer</code> and <code>TableEditor</code>.
+                        It accepts <code>Boolean</code> type in the column being supplied by the <code>TableModel</code> and
+                        becomes <code>DONT_CARE</code> when the value in the cell is null.
+                        Otherwise, it becomes <code>SELECTED</code> for <code>Boolean.TRUE</code>, and <code>NOT_SELECTED</code>
+                        for <code>Boolean.FALSE</code>.</p>
+                </chapter>
+            </chapter>
+        <chapter title="Writing guidelines" id="writing-guidelines">
+                <list>
+                    <li>Use sentence-style capitalization:
+                        <table style="none" border="false">
+                            <tr>
+                                <td width="50%">
+                                        <format color="369650" style="bold">Correct</format><img src="checkbox_writing_1_correct.png"
+                                                                                                 alt="A correct checkbox with the imperative form of the verb" width="378"/>
+                                </td>
+                                <td width="50%">
+                                        <format color="E55765" style="bold">Incorrect</format><img src="checkbox_writing_1_incorrect.png"
+                                                                                                   alt="An incorrect checkbox with the declarative form of the verb" width="378"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li>Do not use ending punctuation:
+                        <table style="none" border="false">
+                            <tr>
+                                <td width="50%">
+                                        <format color="369650" style="bold">Correct</format><img src="checkbox_writing_2_correct.png"
+                                                                                                 alt="A correct checkbox with the imperative form of the verb" width="378"/>
+                                </td>
+                                <td width="50%">
+                                        <format color="E55765" style="bold">Incorrect</format><img src="checkbox_writing_2_incorrect.png"
+                                                                                                   alt="An incorrect checkbox with the declarative form of the verb" width="378"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li>Use the imperative form of verbs:
+                        <table style="none" border="false">
+                            <tr>
+                                <td width="50%">
+                                        <format color="369650" style="bold">Correct</format><img src="checkbox_writing_3_correct.png"
+                                                                                                 alt="A correct checkbox with the imperative form of the verb" width="378"/>
+                                </td>
+                                <td width="50%">
+                                        <format color="E55765" style="bold">Incorrect</format><img src="checkbox_writing_3_incorrect.png"
+                                                                                                   alt="An incorrect checkbox with the declarative form of the verb" width="378"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li>Do not use negation in labels as it complicates understanding:
+                        <table style="none" border="false">
+                            <tr>
+                                <td width="50%">
+                                        <format color="369650" style="bold">Correct</format><img src="checkbox_writing_4_correct.png"
+                                                                                                 alt="A correct checkbox with the imperative form of the verb" width="378"/>
+                                </td>
+                                <td width="50%">
+                                        <format color="E55765" style="bold">Incorrect</format><img src="checkbox_writing_4_incorrect.png"
+                                                                                                   alt="An incorrect checkbox with the declarative form of the verb" width="378"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <note>Exception: <control>Do not show again</control> checkbox.</note>
+                    </li>
+                    <li>Make labels short and intelligible. See <a href="writing_short.md">Writing short and clear</a>.
+                    </li>
+                </list>
         </chapter>
     </chapter>
     <chapter title="Placement" id="placement">
-        <p>If a checkbox depends on another control, e.g., an input field, follow the rules for <a href="layout.md"
+        <p>If a checkbox depends on another control, for example, an input field, follow the rules for <a href="layout.md"
                                                                                                    anchor="dependent-controls">dependent
             controls</a>. Otherwise, follow the rules for <a href="layout.md" anchor="independent-controls">independent
             controls</a>.</p>
     </chapter>
-
 </topic>

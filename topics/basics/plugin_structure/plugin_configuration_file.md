@@ -1177,7 +1177,9 @@ Required
 Attributes
 :
 - `ref` _(**required**)_<br/>
-
+  The ID of the action to add to a group.
+- `id` _(optional)_<br/>
+**_Deprecated_**: Use `ref` instead. 
     The ID of the action to add to a group.
 
 Children

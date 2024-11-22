@@ -314,17 +314,15 @@ fun StringBuilder.appendAttributeDeprecationInfo(attribute: Attribute) {
   val deprecatedSince = attribute.deprecatedSince
   val deprecationNote = attribute.deprecationNote
   if (deprecatedSince != null || deprecationNote != null) {
-    if (deprecatedSince != null) {
-      append("**_Deprecated since ${deprecatedSince}_**".indentLines(4))
-    } else {
-      append("**_Deprecated_**")
-    }
+    append(
+      (if (deprecatedSince != null) "**_Deprecated since ${deprecatedSince}_**" else "**_Deprecated_**").indentLines(2)
+    )
     if (deprecationNote != null) {
       val noteWithoutLineBreaks = deprecationNote.replace('\n', ' ')
       append(": $noteWithoutLineBreaks")
     }
+    appendLine()
   }
-  append("")
 }
 
 fun StringBuilder.appendChildren(parent: Element, parentPath: String) {

@@ -102,7 +102,7 @@ The following table contains the possible translated elements and information ab
 | [Postfix template descriptions](postfix_templates.md#postfix-template-description)<p>(<path>*.xml</path> file in <path>/postfixTemplates</path> directory)</p>              | Yes           | Since 2024.2                                                                             |
 | Tips of the day<p>(<path>*.html</path> files in <path>tips</path> directory)</p>                                                                                            | Yes           | Since 2024.2                                                                             |
 
-See the [IntelliJ Platform UI Guidelines | Text](https://jetbrains.design/intellij/text/capitalization/) sections for good practices about writing UI texts.
+See the [IntelliJ Platform UI Guidelines | Text](capitalization.md) sections for good practices about writing UI texts.
 
 ## Translation Priority
 

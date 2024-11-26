@@ -42,6 +42,7 @@ Optionally:
 * Override the `getPreferredFocusedComponent()` method and return the component that should be focused when the dialog is first displayed.
 * Override the `getDimensionServiceKey()` method to return the identifier which will be used for persisting the dialog dimensions.
 * Override the `getHelpId()` method to return the context help topic associated with the dialog (see [Context Help](ide_infrastructure.md#context-help)).
+* Set the default/focused button via `DEFAULT_ACTION`/`FOCUSED_ACTION`
 
 Use [Kotlin UI DSL](kotlin_ui_dsl_version_2.md) to provide the dialog's contents (see [samples](#kotlin)).
 Alternatively or when using Java, the `DialogWrapper` class can be used together with [GUI Designer forms](https://www.jetbrains.com/help/idea/gui-designer-basics.html).
@@ -49,7 +50,7 @@ In this case, bind a GUI Designer form to the class extending `DialogWrapper`, b
 
 > See [](layout.md) topic in UI Guidelines for recommendations on arranging UI controls in dialogs.
 >
-> Existing dialogs can be inspected at runtime using [UI Inspector](internal_ui_inspector.md), e.g., to locate the underlying implementation of UI components.
+> Existing dialogs can be inspected at runtime using [UI Inspector](internal_ui_inspector.md), for example, to locate the underlying implementation of UI components.
 >
 
 To display the dialog, call the `show()` method and then use the `getExitCode()` method to check how the dialog was closed (see `DialogWrapper#OK_EXIT_CODE, CANCEL_EXIT_CODE, CLOSE_EXIT_CODE`).

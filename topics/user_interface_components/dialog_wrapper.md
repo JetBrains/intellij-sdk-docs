@@ -21,9 +21,9 @@ It provides the following features:
 * Remembering the size of the dialog
 * Non-modal validation (displaying an error message text when the data entered into the dialog is not valid)
 * Keyboard shortcuts:
-    * <shortcut>Esc</shortcut> for closing the dialog
-    * <shortcut>Left/Right</shortcut> for switching between buttons
-    * <shortcut>Y</shortcut>/<shortcut>N</shortcut> for <control>Yes</control>/<control>No</control> actions if they exist in the dialog
+  * <shortcut>Esc</shortcut> for closing the dialog
+  * <shortcut>Left/Right</shortcut> for switching between buttons
+  * <shortcut>Y</shortcut>/<shortcut>N</shortcut> for <control>Yes</control>/<control>No</control> actions if they exist in the dialog
 * Optional <control>Do not ask again</control> checkbox
 
 > There's also a DSL-like API via [`DialogBuilder`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/DialogBuilder.java).
@@ -42,7 +42,8 @@ Optionally:
 * Override the `getPreferredFocusedComponent()` method and return the component that should be focused when the dialog is first displayed.
 * Override the `getDimensionServiceKey()` method to return the identifier which will be used for persisting the dialog dimensions.
 * Override the `getHelpId()` method to return the context help topic associated with the dialog (see [Context Help](ide_infrastructure.md#context-help)).
-* Set the default/focused button via `DEFAULT_ACTION`/`FOCUSED_ACTION`
+
+#### Dialog Content
 
 Use [Kotlin UI DSL](kotlin_ui_dsl_version_2.md) to provide the dialog's contents (see [samples](#kotlin)).
 Alternatively or when using Java, the `DialogWrapper` class can be used together with [GUI Designer forms](https://www.jetbrains.com/help/idea/gui-designer-basics.html).
@@ -53,17 +54,23 @@ In this case, bind a GUI Designer form to the class extending `DialogWrapper`, b
 > Existing dialogs can be inspected at runtime using [UI Inspector](internal_ui_inspector.md), for example, to locate the underlying implementation of UI components.
 >
 
+#### Displaying the Dialog
+
 To display the dialog, call the `show()` method and then use the `getExitCode()` method to check how the dialog was closed (see `DialogWrapper#OK_EXIT_CODE, CANCEL_EXIT_CODE, CLOSE_EXIT_CODE`).
 The `showAndGet()` method can be used to combine these two calls.
+
+#### Customizing Buttons
 
 To customize the buttons displayed in the dialog (replacing the standard <control>OK</control>/<control>Cancel</control>/<control>Help</control> set of buttons), override either the `createActions()` or `createLeftActions()` methods.
 Both of these methods return an array of Swing Action objects.
 If a button closes the dialog, use [`DialogWrapperExitAction`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) as the base class for the action.
-Use `action.putValue(DialogWrapper.DEFAULT_ACTION, true)` to set the default button.
+
+Use `action.putValue(DialogWrapper.DEFAULT_ACTION, true)` to set the default button and
+`action.putValue(DialogWrapper.FOCUSED_ACTION, true)` to set the focused button.
 
 ### Input Validation
 
-Please see also [](validation_errors.md) topic in UI Guidelines.
+See also [](validation_errors.md) topic in UI Guidelines.
 
 To validate the data entered into the dialog, override the `doValidate()` method.
 The method will be called automatically by timer.

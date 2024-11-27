@@ -125,7 +125,7 @@ Interface `com.intellij.openapi.externalSystem.model.task.event.TaskOperationDes
 `com.intellij.json.JsonElementTypes` class removed
 :
 <snippet id="json-plugin-fix">
-Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.<br/>In addition, if the plugin is built against 2024.3, add `com.intellij.modules.json` to the bundled plugins in the Gradle build script ([1.x](tools_gradle_intellij_plugin.md#intellij-extension-plugins), [2.x](tools_intellij_platform_gradle_plugin_dependencies_extension.md#bundled-plugin)).
+Add an [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.<br/>If the plugin is built against 2024.3+, also add `com.intellij.modules.json` to the [bundled plugins](tools_intellij_platform_gradle_plugin_dependencies_extension.md#bundled-plugin) in the Gradle build script.
 </snippet>
 
 `com.intellij.json.JsonFileType` class removed

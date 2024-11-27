@@ -123,34 +123,37 @@ Interface `com.intellij.openapi.externalSystem.model.task.event.TaskOperationDes
 ### JSON Plugin (new) 2024.3
 
 `com.intellij.json.JsonElementTypes` class removed
-: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+:
+<snippet id="json-plugin-fix">
+Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.<br/>In addition, if the plugin is built against 2024.3, add `com.intellij.modules.json` to the bundled plugins in the Gradle build script ([1.x](tools_gradle_intellij_plugin.md#intellij-extension-plugins), [2.x](tools_intellij_platform_gradle_plugin_dependencies_extension.md#bundled-plugin)).
+</snippet>
 
 `com.intellij.json.JsonFileType` class removed
-: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+: <include from="api_changes_list_2024.md" element-id="json-plugin-fix"/>
 
 `com.intellij.json.JsonLanguage` class removed
-: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+: <include from="api_changes_list_2024.md" element-id="json-plugin-fix"/>
 
 `com.intellij.json.JsonParserDefinition` class removed
-: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+: <include from="api_changes_list_2024.md" element-id="json-plugin-fix"/>
 
 `com.intellij.json.JsonTokenType` class removed
-: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+: <include from="api_changes_list_2024.md" element-id="json-plugin-fix"/>
 
 `com.intellij.json` package removed
-: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+: <include from="api_changes_list_2024.md" element-id="json-plugin-fix"/>
 
 `com.intellij.json.codeinsight` package removed
-: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+: <include from="api_changes_list_2024.md" element-id="json-plugin-fix"/>
 
 `com.intellij.json.highlighting` package removed
-: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+: <include from="api_changes_list_2024.md" element-id="json-plugin-fix"/>
 
 `com.intellij.json.psi` package removed
-: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+: <include from="api_changes_list_2024.md" element-id="json-plugin-fix"/>
 
 `com.jetbrains.jsonSchema` package removed
-: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+: <include from="api_changes_list_2024.md" element-id="json-plugin-fix"/>
 
 ### Database Plugin 2024.3
 

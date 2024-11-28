@@ -16,9 +16,7 @@
 
 This page describes developing plugins using the [Kotlin](https://kotlinlang.org) programming language.
 
-> To implement a plugin _operating_ on Kotlin code ([PSI](psi.md)) in the IDE, configure Kotlin [plugin dependency](plugin_dependencies.md) (`org.jetbrains.kotlin`).
->
-> See also [UAST](uast.md) on how to support multiple JVM languages, including Kotlin.
+> To implement a plugin _operating_ on Kotlin code ([PSI](psi.md)) in the IDE, see [](idea.md#kotlin).
 >
 {title="Operating on Kotlin code"}
 

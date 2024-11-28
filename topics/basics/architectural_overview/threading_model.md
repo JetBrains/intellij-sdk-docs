@@ -549,6 +549,9 @@ Massive batches of VFS events can be pre-processed in the background with [`Asyn
 
 Use `Application.isDispatchThread()`.
 
+If code must be invoked on EDT and the current thread can be EDT or BGT, use [`UIUtil.invokeLaterIfNeeded()`](%gh-ic%/platform/util/ui/src/com/intellij/util/ui/UIUtil.java).
+If the current thread is EDT, this method will run code immediately, or will schedule a later invocation if the current thread is BGT.
+
 ### Why write actions are currently allowed only on EDT?
 
 Reading data model was often performed on EDT to display results in the UI.

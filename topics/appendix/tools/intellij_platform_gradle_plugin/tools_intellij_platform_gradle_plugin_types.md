@@ -35,6 +35,7 @@ Enum class describing the failure level of the IntelliJ Plugin Verifier CLI tool
 See also:
 - [Extension: `intellijPlatform.pluginVerification.failureLevel`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-failureLevel)
 - [Tasks: `verifyPlugin.failureLevel`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-failureLevel)
+- [Overview of API Status](verifying_plugin_compatibility.md#ide-support)
 
 
 ## `IntelliJPlatformType`

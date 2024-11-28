@@ -98,3 +98,12 @@ The tag can also have the following optional attributes.
 ```xml
 <warning>warning_highlight<info>warning-and_info_highlight</warning>info_highlight</info>
 ```
+
+### Generating Test Data
+
+To generate an expected highlighting result file for a test:
+
+1. Make sure that Plugin DevKit plugin is installed and [internal mode is enabled](enabling_internal.md).
+2. [Create a Scratch file](https://www.jetbrains.com/help/idea/scratches.html#create-scratch-file) for the tested language.
+3. Write code causing tested highlighting.
+4. Invoke the <ui-path>Tools | Internal Actions | DevKit | Toggle Expected Highlighting Markup</ui-path> action.

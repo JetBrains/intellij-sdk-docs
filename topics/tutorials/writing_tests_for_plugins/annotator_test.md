@@ -29,6 +29,8 @@ public class Test {
 }
 ```
 
+> See how to [generate highlighting test data](testing_highlighting.md#generating-test-data).
+
 ## Define a Test Method
 Add the `testAnnotator()` method to the `SimpleCodeInsightTest` class [previously defined](completion_test.md#define-a-test).
 Again, this method configures the test fixture by using the test files.

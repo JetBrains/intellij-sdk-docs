@@ -1,6 +1,6 @@
-# Virtual Files
-
 <!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+# Virtual Files
 
 <link-summary>Virtual Files represent local or remote files provided by the Virtual File System.</link-summary>
 
@@ -10,7 +10,7 @@ Most commonly, a virtual file is a file in a local file system.
 However, the IntelliJ Platform supports multiple pluggable file system implementations, so virtual files can also represent classes in a JAR file, old revisions of files loaded from a version control repository, and so on.
 
 The VFS level deals only with binary content.
-Contents of a `VirtualFile` are treated as a stream of bytes, but concepts like encodings and line separators are handled on higher system levels.
+Contents of a `VirtualFile` are treated as a stream of bytes, but concepts like encodings and line separators are handled at higher system levels.
 
 ## How do I get a virtual file?
 
@@ -52,7 +52,7 @@ If one needs to create a file through VFS, use `VirtualFile.createChildData()` t
 
 ## How do I get notified when VFS changes?
 
-> See [Virtual file system events](virtual_file_system.md#virtual-file-system-events) for important details.
+> See [](virtual_file_system.md#virtual-file-system-events) for important details.
 >
 {style="note"}
 
@@ -60,7 +60,8 @@ Implement [`BulkFileListener`](%gh-ic%/platform/core-api/src/com/intellij/openap
 For example:
 
 ```java
-project.getMessageBus().connect().subscribe(VirtualFileManager.VFS_CHANGES,
+project.getMessageBus().connect().subscribe(
+    VirtualFileManager.VFS_CHANGES,
     new BulkFileListener() {
       @Override
       public void after(@NotNull List<? extends VFileEvent> events) {
@@ -89,7 +90,7 @@ To hook into operations performed in the local file system (for example, when de
 
 ## What are the rules for working with VFS?
 
-See [Virtual File System](virtual_file_system.md) for a detailed description of the VFS architecture and usage guidelines.
+See [](virtual_file_system.md) for a detailed description of the VFS architecture and usage guidelines.
 
 ## How can I store additional metadata in files?
 

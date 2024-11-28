@@ -10,7 +10,7 @@ It serves the following main purposes:
 
 * Providing a universal API for working with files regardless of their actual location (on disk, in an archive, on an HTTP server, etc.)
 * Tracking file modifications and providing both old and new versions of the file content when a change is detected.
-* Providing a possibility to associate additional persistent data with a file in the VFS.
+* Providing a possibility to [associate additional persistent data](virtual_file.md#how-can-i-store-additional-metadata-in-files) with a file in the VFS.
 
 To provide the last two features, the VFS manages a _persistent snapshot_ of some of the user's hard disk contents.
 The snapshot stores only those files which have been requested at least once through the VFS API, and is asynchronously updated to match the changes happening on the disk.

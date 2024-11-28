@@ -90,3 +90,9 @@ To hook into operations performed in the local file system (for example, when de
 ## What are the rules for working with VFS?
 
 See [Virtual File System](virtual_file_system.md) for a detailed description of the VFS architecture and usage guidelines.
+
+## How can I store additional metadata in files?
+
+See:
+- [`FilePropertyPusher`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/impl/FilePropertyPusher.java)
+- [`FileAttribute`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/vfs/newvfs/FileAttribute.java)

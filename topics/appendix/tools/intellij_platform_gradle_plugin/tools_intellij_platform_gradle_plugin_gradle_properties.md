@@ -19,7 +19,7 @@ org.jetbrains.intellij.platform.<name>=<value>
 
 Instruct the IDE that sources are needed to be downloaded when working with IntelliJ Platform Gradle Plugin.
 
-Value is passed directly to the [Idea Gradle Plugin](https://docs.gradle.org/current/userguide/idea_plugin.html) to the `idea.module.downloadSources` property.
+Value is passed directly to the [IDEA Gradle Plugin](https://docs.gradle.org/current/userguide/idea_plugin.html) to the `idea.module.downloadSources` property.
 
 See also:
 - [`IdeaModule.downloadSources`](https://docs.gradle.org/current/dsl/org.gradle.plugins.ide.idea.model.IdeaModule.html#org.gradle.plugins.ide.idea.model.IdeaModule:downloadSources)

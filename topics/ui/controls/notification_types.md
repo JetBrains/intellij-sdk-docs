@@ -6,23 +6,22 @@
 
 Notifications inform users about the status of user or system initiated operations. They can have different actions depending on the message.
 
-There are four types of notifications:
+Types of notifications:
 
 - Alert
 - [Banner](banner.md)
-- [Balloon](balloon.md)
-- Tool window balloon
+- [Notification balloon](balloon.md)
 
 ## What notification to use
 
-Choose a notification type based on a combination of these factors:
+Choose a notification type based on a combination of two factors:
 
-1. **User action:** is it required to proceed?
+1. Is **user action** required to proceed?
     - Required immediately
     - Required, but not immediately
     - Not required
 
-2. **Trigger location:** from where the notification was created? Options:
+2. From what **context** the notification was initiated?
     - Editor
     - Tool window
     - Dialog
@@ -30,76 +29,22 @@ Choose a notification type based on a combination of these factors:
 
 
 ### Alert
-- User action: required
-- Trigger location: any
+An action is required immediately, in any context.
 
-Examples: confirm restart or exit, choose were to open a new project.
+![](notification_type_alert.png){width=706}
 
 ### Banner
+[Main article](banner.md)
 
+An action is required but not immediately, in the editor, tool windows, and dialogs.
+![](notification_type_banner_action_required_editor.png){width=706}
+
+An action is not required in a dialog.
+![](notification_type_banner_action_required_dialog.png){width=706}
 
 ### Notification balloon
+[Main article](balloon.md)
 
-<table>
-  <tr>
-  <td width="16%">User action</td>
-  <td width="16%">Location</td>
-  <td width="16%">Type</td>
-  <td width="52%">Examples</td></tr>
-  <tr>
-    <td>Required immediately
-    </td>
-    <td>Any
-    </td>
-    <td>Alert
-    </td>
-    <td>
-      <p>Confirming restart</p>
-      <p>Opening projects in new window</p>
-      <p>When trying to rename a method, but a conflict is found</p>
-      <p><img src="alert.png" width="406" /></p>
-   </td>
-  </tr>
-  <tr>
-    <td>Required, but not immediately</td>
-    <td>
-      <p>Editor</p>
-      <p>Tool window</p>
-    </td>
-    <td>Banner</td>
-    <td>
-      <p>Configuring SDK for your project</p>
-      <p>Requiring a Gradle sync for tools to work properly</p>
-      <p><img src="banner.png" width="431" /></p>
-    </td>
-    </tr>
-  <tr>
-    <td></td>
-    <td>Other locations</td>
-    <td>Sticky balloon</td>
-    <td>
-      IDE and plugin updates
-      <img src="sticky_toast.png" width="391" />
-    </td>
-  </tr>
-  <tr>
-    <td>Not required</td>
-    <td>Tool window</td>
-    <td>Tool window balloon</td>
-    <td>
-      <p>Status of task completion</p>
-      <p>When Find Usages is invoked on a method, use a tool window balloon to show the feedback since the results will be found in the Find tool window</p>
-      <p><img src="toolwindow_balloon.png" width="208" /></p>
-    </td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td>Timed balloon</td>
-    <td>
-      <p>Module imported</p>
-      <p>Framework detection</p>
-      <p><img src="timed_toast.png" width="391" /></p>
-    </td>
-  </tr>
-</table>
+An action is not required to proceed, in any context except dialogs.
+
+![](notification_type_balloon_action_not_required.png){width=706}

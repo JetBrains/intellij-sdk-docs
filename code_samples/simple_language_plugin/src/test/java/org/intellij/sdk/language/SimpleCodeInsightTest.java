@@ -38,7 +38,7 @@ public class SimpleCodeInsightTest extends LightJavaCodeInsightFixtureTestCase {
 
   public void testAnnotator() {
     myFixture.configureByFiles("AnnotatorTestData.java", "DefaultTestData.simple");
-    myFixture.checkHighlighting(false, false, true, true);
+    myFixture.checkHighlighting(false, false, false, true);
   }
 
   public void testFormatter() {

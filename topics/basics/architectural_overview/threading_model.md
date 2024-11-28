@@ -330,6 +330,8 @@ Writing data is only allowed on EDT invoked with `Application.invokeLater()`.
 
 Write operations must always be wrapped in a write action with one of the [API](#write-actions-api) methods.
 
+Modifying the model is only allowed from write-safe contexts (see [](#invoking-operations-on-edt-and-modality)).
+
 </tab>
 
 <tab title="Earlier versions" group-key="oldThreading">

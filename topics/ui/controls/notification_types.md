@@ -18,7 +18,7 @@ Choose a notification type based on a combination of two factors:
 
 1. Is **user action** required to proceed?
     - Required immediately
-    - Required, but not immediately
+    - Required but not immediately
     - Not required
 
 2. From what **context** the notification was initiated?
@@ -28,23 +28,21 @@ Choose a notification type based on a combination of two factors:
     - Any other location
 
 
-### Alert
-An action is required immediately, in any context.
+### Action is required immediately
+Use an alert in any context:
+![An alert 'Open Project' asking where to open 'myJavaProject' with options to cancel, open in a new window or this window](notification_type_alert.png){width=706}
 
-![](notification_type_alert.png){width=706}
+### Action is required but not immediately
+Use a [banner](banner.md) if the context is the editor, a tool window, or a dialog:
+![A banner in the editor with a warning 'Project JDK is not defined' and action 'Setup JDK'](notification_type_banner_action_required_editor.png){width=706}
 
-### Banner
-[Main article](banner.md)
+A situation, where an action is required but not immediatly in any other context, is unlikely. However, if it occures, use a [notification balloon](balloon.md).
 
-An action is required but not immediately, in the editor, tool windows, and dialogs.
-![](notification_type_banner_action_required_editor.png){width=706}
+### Action is not required to proceed
+Use a [notification balloon](balloon.md) in any context except dialogs:
+![A notification balloon warning about a shortcut conflict with a description and actions 'Modify shortcuts' and 'Don't show again'](notification_type_balloon_action_not_required.png){width=706}
 
-An action is not required in a dialog.
-![](notification_type_banner_action_required_dialog.png){width=706}
+In a dialog, use a [banner](banner.md):
+![A banner in a dialog with a notification 'Interactive lesson available' and actions 'Open lesson' and an icon button to close the banner](notification_type_banner_action_required_dialog.png){width=706}
 
-### Notification balloon
-[Main article](balloon.md)
 
-An action is not required to proceed, in any context except dialogs.
-
-![](notification_type_balloon_action_not_required.png){width=706}

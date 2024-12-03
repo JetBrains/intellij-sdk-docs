@@ -31,7 +31,7 @@ When the user needs to select a value or enter a custom value, use the combo box
 ![A font size  that allows selecting predefined values as well as entering a custom value](combobox_when_to_use_1.png){width=706}
 
 ### Return to previous states
-If the user may need to return to previous values, use the combo box. For example, save previously entered paths, so the user can quickly select them later:
+Use a combo box if users may need to revisit previous values, such as saving entered paths for quick selection later:
 
 ![A  with an open menu with previously selected values](combobox_when_to_use_2.png){width=706}
 
@@ -39,13 +39,13 @@ If the user may need to return to previous values, use the combo box. For exampl
 
 ### The number of options is finite
 
-If the number of options is finite, and there is no need to enter custom values. In this case, use a [dropdown list](drop_down.md) or [radio buttons](radio_button.md):
+If the number of options is finite, and there is no need to enter custom values, use a [dropdown list](drop_down.md) or [radio buttons](radio_button.md):
 
 ![The Theme dropdown with a predefined list of values](combobox_when_not_to_use_1.png){width="706"}
 
 ### Impossible to list values
 
-If it is not possible to list the most likely choices. In this case, use an [input field](input_field.md) instead:
+If it is not possible to list the most likely choices, use an [input field](input_field.md) instead:
 
 ![A port number input](combobox_when_not_to_use_2.png){width=706}
 
@@ -99,7 +99,7 @@ Show the predefined or most likely options in the list. Follow the rules for [dr
 
 #### Previous inputs
 
-If the user needs to return to previous inputs, add such values to the end of the list when clicking the confirmation button in the dialog:
+If the user needs to return to previous inputs, add such values to the end of the list when the confirmation button in the dialog is clicked:
 
 ![A combo box with previously entered values in the menu](combobox_menu_items_1.png){width=706}
 
@@ -120,7 +120,7 @@ more details, see [validation errors](validation_errors.md).
 
 Follow the [labeled input controls](layout.md#labeled-input-controls).
 
-## Build-in behaviour
+## Built-in behaviour
 
 ### Opening the menu
 

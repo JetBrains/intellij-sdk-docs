@@ -22,20 +22,30 @@
         <img src="checkbox_when_to_use.png" alt="An example of a checkbox group with two selected options" width="706"/>
     </chapter>
     <chapter title="When not to use" id="when-not-to-use">
-        <p>Use <a href="radio_button.md">radio button</a> instead if:</p>
+        <p>If only one option in a group can be selected, use <a href="radio_button.md">radio button</a>:</p>
         <table style="none" border="false">
             <tr>
                 <td width="378">
-                    <img src="checkbox_when_not_to_use_1.png" alt="A radio button group with only one selected option possible"/>
+                    <format style="bold" color="E55765">Incorrect</format>
+                    <img src="checkbox_when_not_to_use_1_incorrect.png" alt="A radio button group with only one selected option possible"/>
                 </td>
-                <td>Only one option in a group can be selected.</td>
+                <td width="378">
+                    <format style="bold" color="369650">Correct</format>
+                    <img src="checkbox_when_not_to_use_1_correct.png" alt="Two radio buttons with clear labels"/>
+                </td>
             </tr>
+        </table>
+        <p>If the behavior in the "off" state is unclear from the checkbox label, use two <a href="radio_button.md">radio buttons</a> instead
+            and label them accordingly:</p>
+        <table style="none" border="false">
             <tr>
                 <td width="378">
-                    <img src="checkbox_when_not_to_use_3.png" alt="Two radio buttons with clear labels"/>
+                    <format style="bold" color="E55765">Incorrect</format>
+                    <img src="checkbox_when_not_to_use_2_incorrect.png" alt="A radio button group with only one selected option possible"/>
                 </td>
-                <td>The behavior in the "off" state is unclear from the checkbox label. Use two radio buttons instead
-                    and label them accordingly
+                <td width="378">
+                    <format style="bold" color="369650">Correct</format>
+                    <img src="checkbox_when_not_to_use_2_correct.png" alt="Two radio buttons with clear labels"/>
                 </td>
             </tr>
         </table>
@@ -55,38 +65,41 @@
                         </td>
                     </tr>
                 </table>
-            <tabs group="languages">
-                <tab title="Kotlin UI DSL" group-key="kotlin">
-                    <code-block lang="kotlin">
-                        checkBox(
-                        &quot;&quot;&quot;&lt;html&gt;Insert selected suggestion by pressing space, dot,&lt;br/&gt;
-                        or other context-dependent keys&lt;/html&gt;&quot;&quot;&quot;)
-                    </code-block>
-                </tab>
-                <tab title="Java" group-key="java">
-                    <code-block lang="java">
-                        new JCheckBox(
-                        &quot;&lt;html&gt;Insert selected suggestion by pressing space, dot,&lt;br/&gt;&quot; +
-                        &quot;or other context-dependent keys&lt;/html&gt;&quot;);
-                    </code-block>
-                </tab>
-            </tabs>
         </chapter>
-        <chapter title="Long labels">
+        </chapter>
+        <chapter title="Long labels" id="long-labeles">
             <p>If a label is long, split it into two lines. Use HTML formatting for that. Avoid labels that take more than two lines. See recommendations on <a anchor="writing-guidelines">writing concise labels</a> below.</p>
-                <table style="none" border="false">
-                    <tr>
-                        <td width="378">
-                            <format color="369650" style="bold">Correct</format><img src="checkbox_label_long_correct.png"
-                                                                                     alt="A correct checkbox with the label on the right"/>
-                        </td>
-                        <td width="378">
-                                <format color="E55765" style="bold">Incorrect</format><img src="checkbox_label_long_incorrect.png"
-                                                                                           alt="An incorrect checkbox with the label on the left"/>
-                        </td>
-                    </tr>
-                </table>
+            <table style="none" border="false">
+                <tr>
+                    <td width="378">
+                        <format color="369650" style="bold">Correct</format><img src="checkbox_label_long_correct.png"
+                                                                                 alt="A correct checkbox with the label on the right"/>
+                    </td>
+                    <td width="378">
+                            <format color="E55765" style="bold">Incorrect</format><img src="checkbox_label_long_incorrect.png"
+                                                                                       alt="An incorrect checkbox with the label on the left"/>
+                    </td>
+                </tr>
+            </table>
+            <chapter title="Implementation" collapsible="true">
+            <tabs group="languages">
+                    <tab title="Kotlin UI DSL" group-key="kotlin">
+                        <code-block lang="kotlin">
+                            checkBox(
+                                &quot;&quot;&quot;&lt;html&gt;Insert selected suggestion by pressing space, dot,&lt;br/&gt;
+                            or other context-dependent keys&lt;/html&gt;&quot;&quot;&quot;)
+                        </code-block>
+                    </tab>
+                    <tab title="Java" group-key="java">
+                        <code-block lang="java">
+                            new JCheckBox(
+                            &quot;&lt;html&gt;Insert selected suggestion by pressing space, dot,&lt;br/&gt;&quot; +
+                                    &quot;or other context-dependent keys&lt;/html&gt;&quot;);
+                        </code-block>
+                    </tab>
+                </tabs>
             </chapter>
+        </chapter>
         <chapter title="Checkboxes in a table">
             <p>If a checkbox appears in a table, place the label into the column header and do not repeat it on every
                 row:</p>
@@ -107,24 +120,20 @@
                 </chapter>
         </chapter>
             <chapter title="Three-state checkbox" id="three-state-checkbox">
-                <p>In a group of options, use the parent checkbox to show the status of its children:</p>
+                <chapter title="Status of children">
+                <p>In a group of options, use the parent checkbox to show the status of its children. The state of the parent checkbox can be checked, indeterminate or unchecked. When a user clicks an indeterminate checkbox for the first time, the whole group becomes checked. The second click unchecks the whole group.
+                </p>
                 <img src="checkbox_three_state.png"
                      alt="Different states for a parent checkbox: checked, indeterminate, and unchecked" width="706"/>
-                <p>The parent checkbox in checked, indeterminate and unchecked states.</p>
                     <chapter title="Implementation" collapsible="true">
                     The three-state checkbox is represented by the <a
                             href="%gh-ic%/platform/util/ui/src/com/intellij/util/ui/ThreeStateCheckBox.java"><code>ThreeStateCheckBox</code></a>
                     class which represents its state with the <code>ThreeStateCheckBox.State</code> enum containing <code>SELECTED,
                         NOT_SELECTED, DONT_CARE</code> states.</chapter>
-                <p>When the user clicks an indeterminate checkbox for the first time, the whole group becomes checked. The
-                    second click unchecks the whole group.</p>
-                <p>An indeterminate checkbox can also show the download status. An example with a remote repository:</p>
+                </chapter>
+                <chapter title="Download status">
+                <p>An indeterminate checkbox can also show the download status. In the example below, a remote repository with Repositories &quot;tools-base&quot; and &quot;contrib&quot; are being loaded. When loading is finished, the indeterminate checkbox will be replaced with the checked checkbox if there are commits, or an unchecked checkbox if there are no commits.</p>
                 <img src="checkbox_download_status.png" alt="Indeterminate checkboxes showing download status" width="706"/>
-                <p>
-                    Repositories &quot;tools-base&quot; and &quot;contrib&quot; are being loaded. When loading is
-                    finished, the indeterminate checkbox will be replaced with the checked checkbox if there are
-                    commits, or an unchecked checkbox if there are no commits.
-                </p>
                 <chapter title="Implementation" collapsible="true">
                     <p>In a table, the three-state checkbox is represented by <a href="%gh-ic%/platform/lang-impl/src/com/intellij/profile/codeInspection/ui/table/ThreeStateCheckBoxRenderer.java"><code>ThreeStateCheckBoxRenderer</code></a>
                         that provides both <code>TableCellRenderer</code> and <code>TableEditor</code>.
@@ -133,10 +142,10 @@
                         Otherwise, it becomes <code>SELECTED</code> for <code>Boolean.TRUE</code>, and <code>NOT_SELECTED</code>
                         for <code>Boolean.FALSE</code>.</p>
                 </chapter>
+                </chapter>
             </chapter>
         <chapter title="Writing guidelines" id="writing-guidelines">
-                <list>
-                    <li>Use sentence-style capitalization:
+            Use sentence-style capitalization:
                         <table style="none" border="false">
                             <tr>
                                 <td width="50%">
@@ -149,8 +158,7 @@
                                 </td>
                             </tr>
                         </table>
-                    </li>
-                    <li>Do not use ending punctuation:
+                Do not use ending punctuation:
                         <table style="none" border="false">
                             <tr>
                                 <td width="50%">
@@ -163,8 +171,7 @@
                                 </td>
                             </tr>
                         </table>
-                    </li>
-                    <li>Use the imperative form of verbs:
+                Use the imperative form of verbs:
                         <table style="none" border="false">
                             <tr>
                                 <td width="50%">
@@ -177,8 +184,7 @@
                                 </td>
                             </tr>
                         </table>
-                    </li>
-                    <li>Do not use negation in labels as it complicates understanding:
+                Do not use negation in labels as it complicates understanding:
                         <table style="none" border="false">
                             <tr>
                                 <td width="50%">
@@ -192,13 +198,12 @@
                             </tr>
                         </table>
                         <note>Exception: <control>Do not show again</control> checkbox.</note>
-                    </li>
-                    <li>Make labels short and intelligible. See <a href="writing_short.md">Writing short and clear</a>.
-                    </li>
-                </list>
+
+                Make labels short and intelligible. See <a href="writing_short.md">Writing short and clear</a>.
         </chapter>
     </chapter>
-    <chapter title="Placement" id="placement">
+    <chapter title="How to layout" id="how-to-layout">
+        <p>Follow</p>
         <p>If a checkbox depends on another control, for example, an input field, follow the rules for <a href="layout.md"
                                                                                                    anchor="dependent-controls">dependent
             controls</a>. Otherwise, follow the rules for <a href="layout.md" anchor="independent-controls">independent

@@ -75,26 +75,37 @@ Proper localization files will be used at runtime depending on the [IDE language
 
 ### Bundled Translations Structure
 
-Translations for a specific language can be organized in two ways:
-- Language directory: <path>/localization/\$LANGUAGE_CODE\$/\$REGION_CODE\$</path> (`$REGION_CODE$` level is optional).
-  Example:
+Translations for a specific language can be organized in two ways as shown below.
+The proper directory layout/filename suffixes is the only thing needed for the translations to work.
+No additional actions like registering EPs are needed.
+
+#### Language Directory
+
+Translated resources are stored in a dedicated directory structure.
+
+<path>/localization/\$LANGUAGE_CODE\$/\$REGION_CODE\$</path> (`$REGION_CODE$` level is optional).
+
+Example:
   - Original template description:
 
     <path>/fileTemplates/code/JavaDoc Class.java.html</path>
   - Translated template description: <path></path>
 
     <path>/localization/zh/CN/fileTemplates/code/JavaDoc Class.java.html</path>
-- Localization suffix in filename: <path>/intentionDescriptions/QuickEditAction/description_\$LANGUAGE_CODE\$_\$REGION_CODE\$.html</path>.
-  Example:
+
+#### Localization Suffix in Filename
+
+Translated resources are stored in files with dedicated filename.
+
+<path>/intentionDescriptions/QuickEditAction/description_\$LANGUAGE_CODE\$_\$REGION_CODE\$.html</path>
+
+Example:
   - Original template description:
 
     <path>/intentionDescriptions/QuickEditAction/description.html</path>
   - Translated template description: <path></path>
 
     <path>/intentionDescriptions/QuickEditAction/description_zh_CN.html</path>
-
-The proper directory layout/filename suffixes is the only thing needed for the translations to work.
-No additional actions like registering EPs are needed.
 
 ## Translated Elements
 

@@ -232,7 +232,7 @@ Regardless, it illustrates the basic pattern, which is:
 When the application exits, it performs a final sanity check to verify everything was disposed.
 If something was registered with the `Disposer` but remains undisposed, the IntelliJ Platform reports it before shutting down.
 
-In test and Debug mode (`idea.disposer.debug` is set to `on`), registering a `Disposable` with the `Disposer` also registers a stack trace for the object's allocation path.
+In test, [internal](enabling_internal.md), and debug mode (add `idea.disposer.debug=on` in <ui-path>Help | Edit Custom Properties...</ui-path>), registering a `Disposable` with the `Disposer` also registers a stack trace for the object's allocation path.
 The `Disposer` accomplishes this by creating a `Throwable` at the time of registration.
 
 The following snippet represents the sort of "memory leak detected" error encountered in practice:

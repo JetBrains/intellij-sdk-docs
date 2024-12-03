@@ -65,8 +65,7 @@
                         </td>
                     </tr>
                 </table>
-        </chapter>
-        </chapter>
+            </chapter>
         <chapter title="Long labels" id="long-labeles">
             <p>If a label is long, split it into two lines. Use HTML formatting for that. Avoid labels that take more than two lines. See recommendations on <a anchor="writing-guidelines">writing concise labels</a> below.</p>
             <table style="none" border="false">
@@ -81,7 +80,7 @@
                     </td>
                 </tr>
             </table>
-            <chapter title="Implementation" collapsible="true">
+            <chapter title="Implementation" collapsible="true" id="implementation-of-long-labels">
             <tabs group="languages">
                     <tab title="Kotlin UI DSL" group-key="kotlin">
                         <code-block lang="kotlin">
@@ -142,8 +141,9 @@
                         Otherwise, it becomes <code>SELECTED</code> for <code>Boolean.TRUE</code>, and <code>NOT_SELECTED</code>
                         for <code>Boolean.FALSE</code>.</p>
                 </chapter>
-                </chapter>
             </chapter>
+            </chapter>
+    </chapter>
         <chapter title="Writing guidelines" id="writing-guidelines">
             Use sentence-style capitalization:
                         <table style="none" border="false">
@@ -201,12 +201,9 @@
 
                 Make labels short and intelligible. See <a href="writing_short.md">Writing short and clear</a>.
         </chapter>
-    </chapter>
     <chapter title="How to layout" id="how-to-layout">
-        <p>Follow</p>
-        <p>If a checkbox depends on another control, for example, an input field, follow the rules for <a href="layout.md"
-                                                                                                   anchor="dependent-controls">dependent
-            controls</a>. Otherwise, follow the rules for <a href="layout.md" anchor="independent-controls">independent
-            controls</a>.</p>
+        <p>
+            Follow the <a href="layout.md" anchor="checkboxes-and-radio-buttons">layout of checkboxes and radio buttons</a>
+        </p>
     </chapter>
 </topic>

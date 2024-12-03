@@ -21,7 +21,13 @@ When planning your work, talk and try to understand what your users need the mos
 If you are unsure about an implemented solution, consider sharing the work in progress with a limited group of users (e.g., your colleagues or active community members) and gathering the feedback that will help you improve the final result.
 See the [Custom Release Channels](publishing_plugin.md#specifying-a-release-channel) section for information on how to automate sharing the pre-release plugin versions.
 
+### Feedback
+
 Gathering feedback on the existing features can help identify what works well and what should be improved, which also increases the overall plugin quality.
+
+<video src="https://www.youtube.com/watch?v=J3VEfTUX6Bs"/>
+
+_This session covers best practices for addressing feature requests, handling bug reports, navigating diverse communication styles, and fostering user engagement._
 
 ## Ease of Use
 

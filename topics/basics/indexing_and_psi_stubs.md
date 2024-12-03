@@ -34,6 +34,11 @@ Violations are reported via [`IndexNotReadyException`](%gh-ic%/platform/core-api
 `DumbService` provides API to query whether the IDE is currently in "dumb" mode (where index access is not allowed) or "smart" mode (with all index built and ready to use).
 It also provides ways of delaying code execution until indexes are ready.
 
+<video src="https://www.youtube.com/watch?v=ApdNfPuGJRU"/>
+
+_Learn how techniques like dumb mode index access, on-demand indexing, and lightweight heuristics can boost plugin performance and streamline your development process,
+all while maintaining robust coding assistance._
+
 ### `DumbAware` API
 
 {id="DumbAwareAPI"}

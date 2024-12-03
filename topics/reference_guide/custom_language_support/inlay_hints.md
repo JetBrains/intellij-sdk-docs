@@ -71,6 +71,32 @@ To provide a custom configuration UI, implement
 [`InlayHintsCustomSettingsProvider`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hints/declarative/InlayHintsCustomSettingsProvider.kt)
 registered in `com.intellij.codeInsight.declarativeInlayProviderCustomSettingsProvider` extension point.
 
+Preview texts displayed for inlay hint providers under <ui-path>Settings | Editor | Inlay Hints</ui-path> must be located in plugin resources in <path>inlayProviders/\$provider_id\$</path> directory, for example, <path>inlayProviders/java.implicit.types</path>.
+The <path>\$provider_id\$</path> value must match the `providerId` attribute of `com.intellij.codeInsight.declarativeInlayProvider` EP.
+The preview file name must be <path>preview.\$ext\$</path>, where <path>\$ext\$</path> is a default extension of a supported file type, for example, <path>preview.java</path>.
+Hints displayed in the preview panel are defined with the dedicated markup:
+
+<tabs>
+<tab title="2023.2+">
+
+```
+/*<# Displayed Hint #>*/
+```
+
+</tab>
+<tab title="Pre-2023.2">
+
+```
+<# Displayed Hint #>
+```
+
+</tab>
+</tabs>
+
+**Examples**:
+- [`inlayProviders/java.implicit.types/preview.java`](%gh-ic%/java/java-impl/resources/inlayProviders/java.implicit.types/preview.java)
+- [`inlayProviders/groovy.lambda.parameter.inlay.provider/preview.groovy`](%gh-ic%/plugins/groovy/resources/inlayProviders/groovy.lambda.parameter.inlay.provider/preview.groovy)
+
 ### Code Vision Provider
 <primary-label ref="2022.1"/>
 
@@ -96,6 +122,15 @@ There are three extension points for implementing a code vision provider:
 The `CodeVisionGroupSettingProvider` is necessary for displaying the name and description of the code vision provider in the settings.
 The `groupId` must match the value specified in the implementation of the `CodeVisionProvider`; if not specified, it defaults to the `id`.
 The `groupName` is the name shown in the code vision group, and the `description` will be visible in the right details panel.
+
+Code vision preview is available under <ui-path>Settings | Editor | Inlay Hints | Code vision</ui-path>.
+In case if multiple preview examples in different languages are provided for an existing code vision provider, IDE will choose the most important from its point of view.
+For example, IntelliJ IDEA will use Java preview, PhpStorm will use PHP preview, etc.
+
+To provide a preview example for a custom code vision provider:
+1. Create a <path>codeVisionProviders/\$model_id\$/preview.\$ext\$</path> file, for example, <path>codeVisionProviders/vcs.code.vision/preview.java</path>.
+   The <path>\$modelId\$</path> must match the `groupId` of `CodeVisionGroupSettingProvider` and `modelId` (see 2.).
+2. Register an `com.intellij.codeInsight.codeVisionSettingsPreviewLanguage`, which specifies the preview `language` and `modelId`.
 
 **Examples:**
 - [`JavaInheritorsCodeVisionProvider`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/daemon/impl/JavaInheritorsCodeVisionProvider.kt) - shows number of Java class or method inheritors. Clicking the inlay hint opens the list of inheritors. This provider is `DaemonBoundCodeVisionProvider`.

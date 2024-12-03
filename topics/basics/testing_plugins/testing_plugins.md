@@ -44,6 +44,10 @@ Use [`runIdeForUiTests`](tools_gradle_intellij_plugin.md#tasks-runideforuitests)
 
 Do not use <path>platform/testGuiFramework</path>, as it is reserved for internal use.
 
+<video src="https://www.youtube.com/watch?v=UJexzfG01Qo"/>
+
+_The IntelliJ Platform integration testing framework, used internally for performance, functional, and UI tests, is now accessible to help streamline and enhance your plugin testing experience._
+
 ## Topics
 
 <snippet id="testSamples">

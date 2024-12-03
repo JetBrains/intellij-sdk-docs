@@ -13,6 +13,13 @@ It also reduces the need for constant maintenance and tracking of changes in rel
 However, the canonical [](custom_language_support.md) provided by IntelliJ Platform still offers a wider range of integration with IDE features than handling and presenting data provided by a Language Server.
 Therefore, the LSP approach shouldn't be considered as a replacement for the existing language API, but rather as an added value.
 
+<video src="https://www.youtube.com/watch?v=N4bkzOqxI4E"/>
+
+_Gain insights into the Language Server Protocol (LSP) and its capabilities while exploring the implementation journey of the
+[Contextive plugin](https://plugins.jetbrains.com/plugin/23928-contextive/),
+designed to document and utilize domain terminology within codebases.
+Chris Simon shares the challenges faced and offers practical tips for aspiring LSP developers._
+
 ## Supported IDEs
 
 <primary-label ref="2023.2"/>

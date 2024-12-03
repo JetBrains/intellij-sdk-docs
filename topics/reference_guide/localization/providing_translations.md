@@ -8,6 +8,13 @@ Translations for IntelliJ Platform products and plugins can be provided in two w
 - [](#language-packs)
 - [](#bundled-translations)
 
+<video src="https://www.youtube.com/watch?v=36BPMPBFCG4"/>
+
+_This talk covers how to implement localization in JetBrains plugins.
+While JetBrains IDEs are available in Simplified Chinese, Japanese, and Korean, most plugins remain English-only.
+Joachim demonstrates how to easily localize different plugin elements like messages, settings, inspections, and file templates.
+The session also provides tips on localizing plugin descriptions for Marketplace, websites, or handbooks._
+
 ## Language Packs
 
 Localizing IDEs is achieved by providing language packs (see [language packs](https://plugins.jetbrains.com/search?tags=Language%20Pack) provided by JetBrains).

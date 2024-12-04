@@ -165,7 +165,7 @@ The lookup order is as follows:
 
 Assume that the current IDE language is set to Simplified Chinese (`zh_CN`).
 To find an example <path>messages/MyBundle.properties</path> message bundle for this language, the locations will be searched in the following order:
-1. <path>messages/MyBundle.properties</path> in the selected language pack plugin
+1. <path>messages/MyBundle.properties</path> (in the selected language pack plugin)
 2. <path>localization/zh/CN/messages/MyBundle.properties</path> (region level)
 3. <path>messages/MyBundle_zh_CN.properties</path> (region level)
 4. <path>localization/zh/messages/MyBundle.properties</path> (language level)

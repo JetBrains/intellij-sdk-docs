@@ -148,6 +148,8 @@ Annotating message key parameter with [`@PropertyKey`](%gh-java-annotations%/com
 
 ### Moving Strings to Message Bundles
 
+> Make sure the encoding for bundle files is set to UTF-8 in <ui-path>Settings | Editor | File Encodings | Properties Files (*.properties)</ui-path>.
+
 IntelliJ IDEA provides inspections with fixes which help with moving strings to message bundles, e.g. <ui-path>Editor | Inspections | Java | Internationalization | Hardcoded strings</ui-path> for Java and Kotlin code.
 
 It is possible to move multiple hardcoded strings to a message bundle in batch mode.

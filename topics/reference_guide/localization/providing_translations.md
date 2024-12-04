@@ -132,7 +132,7 @@ Translations can be provided on three different levels:
 In addition, translations can be [organized in directories or with file suffixes](#bundled-translations-structure), and the same translation can be provided by a [language pack](#language-packs) or [IDE/plugin](#bundled-translations).
 
 All these conditions determine how a single translation is resolved at runtime.
-The priority is as follows:
+The lookup order is as follows:
 
 1. Translation file from the language pack.
 2. Region level (for example, `zh_CN`, `zh_TW`) localization file:
@@ -148,5 +148,15 @@ The priority is as follows:
 4. Default file (no suffix) within the IDE or plugin (original English message).
 
    {type="alpha-lower"}
+
+### Example
+
+Consider that the current IDE language is set to Simplified Chinese (`zh_CN`).
+To find an example <path>messages/MyBundle.properties</path> message bundle for this language, the locations will be searched in the following order:
+1. <path>localization/zh/CN/messages/MyBundle.properties</path> (region level)
+2. <path>messages/MyBundle_zh_CN.properties</path> (region level)
+3. <path>localization/zh/messages/MyBundle.properties</path> (language level)
+4. <path>messages/MyBundle_zh.properties</path> (language level)
+5. <path>messages/MyBundle.properties</path> (default)
 
 <include from="snippets.md" element-id="missingContent"/>

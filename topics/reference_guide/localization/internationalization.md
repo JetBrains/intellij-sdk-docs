@@ -79,6 +79,8 @@ In [Gradle-based plugin](developing_plugins.md#gradle-plugin) project sources, m
 
 A corresponding [bundle class](#message-bundle-class) should be used to access the strings from the code.
 
+> Enable <control>Plugin DevKit | Plugin descriptor | Plugin.xml i18n verification</control> inspection for reporting hardcoded texts in [plugin descriptor files](plugin_configuration_file.md).
+
 ### Message Bundle Class
 
 The recommended approach to create a bundle class is to delegate getting messages to [`DynamicBundle`](%gh-ic%/platform/core-api/src/com/intellij/DynamicBundle.java), e.g.:

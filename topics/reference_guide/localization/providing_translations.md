@@ -163,7 +163,7 @@ The lookup order is as follows:
 
 ### Example
 
-Consider that the current IDE language is set to Simplified Chinese (`zh_CN`).
+Assume that the current IDE language is set to Simplified Chinese (`zh_CN`).
 To find an example <path>messages/MyBundle.properties</path> message bundle for this language, the locations will be searched in the following order:
 1. <path>localization/zh/CN/messages/MyBundle.properties</path> (region level)
 2. <path>messages/MyBundle_zh_CN.properties</path> (region level)

@@ -35,6 +35,7 @@ Scripts can access the IntelliJ Platform APIs and can be implemented in Kotlin, 
 Created scripts are stored in the [IDE configuration directory](https://www.jetbrains.com/help/idea/directories-used-by-the-ide-to-store-settings-caches-plugins-and-logs.html#config-directory) and can't be shared as part of project files or configuration.
 
 ## Flora Plugin
+<secondary-label ref="incubating"/>
 
 The [Flora](https://plugins.jetbrains.com/plugin/17669-flora-beta-) plugin allows for developing project-specific extensions as Kotlin Script (<path>\*.kts</path>) or JavaScript (<path>\*.js</path>) files.
 Flora extensions have access to all available IntelliJ Platform APIs, just like a regular plugin.

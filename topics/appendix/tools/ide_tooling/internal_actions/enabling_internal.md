@@ -10,10 +10,10 @@ There are useful tools, such as the <control>Internal Actions</control> menu, th
 
 1. Start the IDE.
 2. From the main menu, select <ui-path>Help | Edit Custom Properties...</ui-path>.
-   This selection opens <path>idea.properties</path> file.
+   This selection opens the <path>idea.properties</path> file.
    If it does not exist, the IDE will prompt to create one.
 3. Add the line shown below to the <path>idea.properties</path> file:
-   ```
+   ```properties
    idea.is.internal=true
    ```
 

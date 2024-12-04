@@ -122,7 +122,7 @@ The following table contains the possible translated elements and information ab
 
 See the [IntelliJ Platform UI Guidelines | Text](capitalization.md) sections for good practices about writing UI texts.
 
-## Translation Priority
+## Translation Lookup Order
 
 Translations can be provided on three different levels:
 - region-specific translation

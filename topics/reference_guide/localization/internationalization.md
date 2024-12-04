@@ -42,7 +42,12 @@ NLS context annotations must be annotated with `@Nls` and they can define:
 The IntelliJ Platform provides NLS context annotations, including:
 - general contexts: [`NlsContexts`](%gh-ic%/platform/util/src/com/intellij/openapi/util/NlsContexts.java) nested annotations
 - action contexts: [`NlsActions`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/util/NlsActions.java) nested annotations
-- miscellaneous contexts: [`@InspectionMessage`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/util/InspectionMessage.java), [`@IntentionFamilyName`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/util/IntentionFamilyName.java), [`@IntentionName`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/util/IntentionName.java), [`@GutterName`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/daemon/GutterName.java), [`@TooltipTitle`](%gh-ic%/platform/platform-api/src/com/intellij/ide/TooltipTitle.java)
+- miscellaneous contexts:
+  [`@InspectionMessage`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/util/InspectionMessage.java),
+  [`@IntentionFamilyName`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/util/IntentionFamilyName.java),
+  [`@IntentionName`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/util/IntentionName.java),
+  [`@GutterName`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/daemon/GutterName.java),
+  [`@TooltipTitle`](%gh-ic%/platform/platform-api/src/com/intellij/ide/TooltipTitle.java)
 
 To find all available annotations, search for `@NlsContext` usages in the [intellij-community](https://github.com/JetBrains/intellij-community) source code.
 
@@ -65,7 +70,7 @@ All NLS strings from a module should be added to a <path>*.properties</path> fil
 A standard location of message files in JAR is <path>/messages/\*.properties</path>.
 In [Gradle-based plugin](developing_plugins.md#gradle-plugin) project sources, message files are located in <path>\$MODULE_ROOT\$/src/main/resources/messages/\*.properties</path>.
 
-> A standard convention for naming message bundle properties file is <path>*Bundle.properties</path>.
+> A standard convention for naming a message bundle properties file is <path>*Bundle.properties</path>.
 >
 > If a plugin project is multi-module, and it combines resources into a single JAR, make sure that all bundle files have unique names or paths.
 > Otherwise, only the last packed bundle file will exist in the distribution package.
@@ -343,7 +348,7 @@ If several localized strings (non-user input) are used to concatenate the string
    - Given X terms and Y contexts, it will result in X*Y strings.
      It is acceptable to have several strings for small X and Y.
      For more cases, the translations may become unmaintainable.
-   - If terms are provided other by plugins via an extension point, the extension point API would require a change to provide full strings.
+   - If plugins provide terms via an extension point, the extension point API would require a change to provide full strings.
 
 #### Messages Depending on Numbers
 

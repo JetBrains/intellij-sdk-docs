@@ -42,9 +42,21 @@ The `locale` attribute defines the translation language on two possible levels:
 
 ### Language Selection
 
-It is important to note that there is no language chooser in the IDE, and language packs serve as the IDE "language switcher."
+<tabs>
+<tab title="2024.2+">
+
+In versions 2024.2 and newer language packs are bundled in IDE distributions.
+To select the IDE language, follow the instruction from the [IntelliJ IDEA Web Help](https://www.jetbrains.com/help/idea/language-and-region.html#language).
+
+</tab>
+<tab title="Pre-2024.2">
+
+In versions 2024.1 and older, there is no language selector in the IDE, and language packs serve as the IDE "language switcher."
 Installing a language pack changes the IDE language to the one defined by the `languageBundle` EP.
 Only a single language pack can be installed at the same time, and restart is required for the translations to take effect.
+
+</tab>
+</tabs>
 
 ### Getting the Current Locale Programmatically
 

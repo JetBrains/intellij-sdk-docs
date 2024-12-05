@@ -107,7 +107,7 @@ Use the following guidelines to choose the correct parent:
 * For resources with a shorter lifetime, create a disposable using `Disposer.newDisposable()` and dispose it manually using `Disposable.dispose()`.
   Note that it's always best to specify a parent for such a disposable (e.g., a project-level service), so that there is no memory leak if the `Disposable.dispose()` call is not reached because of an exception or a programming error.
 
-> Even though `Application` and `Project` implement `Disposable`, they must NEVER be used as parent disposables in plugin code.
+> Even though `Application` and `Project` implement `Disposable`, they must **never** be used as parent disposables in plugin code.
 > Disposables registered using those objects as parents will not be disposed when the plugin is unloaded, leading to memory leaks.
 >
 > Consider a case of a disposable resource created by a plugin and registered with a project as its parent.

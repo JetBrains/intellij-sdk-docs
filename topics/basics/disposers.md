@@ -121,7 +121,7 @@ Use the following guidelines to choose the correct parent:
 >     section Lifetimes
 >         Project         : 0, 10
 >         Plugin          : 2, 5
->         Plugin Resource : crit, 2, 10
+>         Plugin Resource : crit, 3, 10
 > ```
 >
 > If the resource used, e.g., a plugin's project-level service (if shorter living parents are possible, prefer them), the resource would be disposed together with the plugin:
@@ -133,7 +133,7 @@ Use the following guidelines to choose the correct parent:
 >     section Lifetimes
 >         Project         : 0, 10
 >         Plugin          : 2, 5
->         Plugin Resource : 2, 5
+>         Plugin Resource : 3, 5
 > ```
 >
 > Inspection <control>Plugin DevKit | Code | Incorrect parentDisposable parameter</control> will highlight such problems.

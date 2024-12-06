@@ -73,6 +73,10 @@ The plugin provides description files in the <path>resources/intentionDescriptio
 By default, the intention description directory name is the same as the intention class name.
 It can be customized with the `<descriptionDirectoryName>` element in `<intentionAction>` in <path>plugin.xml</path>.
 
+> If your intention class names are obfuscated in the [plugin distribution](plugin_content.md), always declare the `<descriptionDirectoryName>` element.
+>
+{style="warning"}
+
 "Before" and "after" filenames pattern is <path>before.\$LANG_FILE_EXTENSION\$.template</path> and <path>after.\$LANG_FILE_EXTENSION\$.template</path> respectively.
 If before/after preview is not needed, specify `<skipBeforeAfter>true</skipBeforeAfter>` in the `<intentionAction>` in <path>plugin.xml</path>.
 

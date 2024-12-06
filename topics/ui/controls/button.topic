@@ -4,7 +4,7 @@
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        id="button" title="Button">
-
+    <show-structure/>
     <link-summary>UI guidelines on using buttons.</link-summary>
 
     <tldr>
@@ -16,12 +16,12 @@
     <img src="button_example.png" alt="Cancel and Save buttons" width="706"/>
     <chapter title="When to use" id="when-to-use">
         <p>Use a button to invoke an immediate action:</p>
-        <img src="when_to_use_button.png" alt="When to use a button" width="706"/>
+        <img src="button_when_to_use.png" alt="When to use a button" width="706"/>
     </chapter>
         <chapter title="When not to use" id="when-not-to-use">
         <table style="none" border="false" column-width="fixed">
             <tr>
-                <td><img src="link_instead_of_button.png" alt="Using links instead of buttons" width="378"/></td>
+                <td><img src="button_link_instead.png" alt="Using links instead of buttons" width="378"/></td>
                 <td><p>Use a link instead if:</p>
                     <list>
                     <li><p>The action takes the user to another page of the same dialog or an external source like
@@ -36,7 +36,7 @@
                 </td>
             </tr>
             <tr>
-                <td><img src="toolbar_button.png" alt="Using toolbar buttons instead of buttons" width="378"/></td>
+                <td><img src="button_toolbar.png" alt="Using toolbar buttons instead of buttons" width="378"/></td>
                 <td><p>Use a <a href="toolbar.md">toolbar button</a> instead if there are several buttons related to a table or list.</p>
                 </td>
             </tr>
@@ -53,7 +53,7 @@
             </tr>
             <tr>
                 <td>
-                    <img src="built-in_button.png" alt="Using built-in buttons instead of buttons" width="378"/>
+                    <img src="button_built_in_button.png" alt="Using built-in buttons instead of buttons" width="378"/>
                 </td>
                 <td><p>Use a <a href="built_in_button.md">built-in button</a> instead if it's related to an input field, combo box,
                     search field.</p>
@@ -63,6 +63,7 @@
 </chapter>
 
     <chapter title="How to use" id="how-to-use">
+        <chapter title="Label" id="label">
             <p>The label displays the action the button performs.</p>
             <chapter title="Use title capitalization" id="use-title-capitalization">
         <p>Use <a href="capitalization.md">title capitalization</a> for button labels.</p>
@@ -80,20 +81,10 @@
                 generic ones:</p>
             <table style="none" border="false" column-width="fixed">
                 <tr>
-                    <td width="50%">
-                        <p>
-                            <format color="369650" style="bold">Correct</format>
-                        </p>
-                    </td>
-                    <td width="50%">
-                        <p>
-                            <format color="E55765" style="bold">Incorrect</format>
-                        </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td><img src="default_button_save.png" alt="A correct button with a clear 'Save' label" width="378"/></td>
-                    <td><img src="default_OK.png" alt="An incorrect button with a generic 'OK' label" width="378"/></td>
+                    <td><format color="369650" style="bold">Correct</format>
+                        <img src="button_default_save.png" alt="A correct button with a clear 'Save' label" width="378"/></td>
+                    <td><format color="E55765" style="bold">Incorrect</format>
+                        <img src="button_default_OK.png" alt="An incorrect button with a generic 'OK' label" width="378"/></td>
                 </tr>
             </table>
             <note>
@@ -107,22 +98,12 @@
                 </p>
                 <table style="none" border="false" column-width="fixed">
                     <tr>
-                        <td width="50%">
-                            <p>
-                                <format color="369650" style="bold">Correct</format>
-                            </p>
-                        </td>
-                        <td width="50%">
-                            <p>
-                                <format color="E55765" style="bold">Incorrect</format>
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
                         <td>
-                            <img src="check_for_updates.png" alt="A button with 'Check for Updates' label" width="378"/>
+                            <format color="369650" style="bold">Correct</format>
+                            <img src="button_check_for_updates.png" alt="A button with 'Check for Updates' label" width="378"/>
                         </td>
-                        <td><img src="check_now_button.png" alt="A button with 'Check Now' label" width="378"/></td>
+                        <td><format color="E55765" style="bold">Incorrect</format>
+                            <img src="button_check_now.png" alt="A button with 'Check Now' label" width="378"/></td>
                     </tr>
                 </table>
             </chapter>
@@ -132,23 +113,12 @@
                 words to make it clear. Prefer clear labels to short ones:</p>
                 <table style="none" border="false" column-width="fixed">
                     <tr>
-                        <td width="50%">
-                            <p>
-                                <format color="369650" style="bold">Correct</format>
-                            </p>
-                        </td>
-                        <td width="50%">
-                            <p>
-                                <format color="DarkOrange" style="bold">Acceptable</format>
-                            </p>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td><img src="active_edit_action.png"
+                        <td><format color="369650" style="bold">Correct</format>
+                            <img src="button_active_edit_action.png"
                                  alt="A button with the 'Edit Action Icon...' label"
                                  width="378"/></td>
-                        <td><img src="active_edit.png" alt="A button with 'Edit' label" width="378"/></td>
+                        <td><format color="DarkOrange" style="bold">Acceptable</format>
+                            <img src="button_edit.png" alt="A button with 'Edit' label" width="378"/></td>
                     </tr>
                 </table>
             </chapter>
@@ -159,7 +129,7 @@
                     <li>Don't add an ellipsis if another window is opened, but no more input from the user is required. For example,
                         <control>About</control>, <control>Details</control>.</li>
                 </list>
-            <img src="buttons_with_ellipsis.png" alt="Buttons with ellipsis" width="706"/>
+            <img src="button_ellipsis.png" alt="Buttons with ellipsis" width="706"/>
             </chapter>
         </chapter>
 <!--        <chapter title="Icons" id="icons">
@@ -172,7 +142,7 @@
     <chapter title="Button states" id="button-states">
         <chapter title="Default" id="default">
 
-            <img src="default_button.png" alt="Default button on macOS and Windows" width="706"/>
+            <img src="button_default.png" alt="Default button on macOS and Windows" width="706"/>
             <list>
                 <li>The default button confirms the main purpose of a dialog. It is triggered by pressing
                     <shortcut>Enter</shortcut>
@@ -196,14 +166,14 @@
                 </li>
                 <li>If an action is dangerous, for example, it can lead to data loss, provide an easy way to undo the command.</li>
                 <li>If it's not possible to undo the action, make a secondary button the default one:
-                <img src="merge_dialog.png"
+                <img src="button_merge_dialog.png"
                      alt="A dialog with secondary and primary buttons"
                      width="706"/>
             </li>
             </list>
         </chapter>
         <chapter title="Focused" id="focused">
-            <img src="focused_button.png" alt="'Cancel' button in a focused state" width="706"/>
+            <img src="button_focused.png" alt="'Cancel' button in a focused state" width="706"/>
             <p>All buttons can get focus, even on macOS if the
                 <control>Full Keyboard Access</control>
                 option is disabled in Preferences &gt; Keyboard &gt;
@@ -224,32 +194,15 @@
                     </li>
                     <li>
                         <p>
-                            Make the second most popular button in the dialog focused.It’s recommended to have one default and one focused button, so that most of the actions can be
-                            triggered using
+                            Make the second most popular button in the dialog focused. It’s recommended to have one
+                            default and one focused button so that most of the actions can be triggered using
                             the keyboard.
-
                         </p>
                     </li>
                     <li>
                         <p>It’s recommended to have one default and one focused button, so that most of the actions can be
                             triggered using
                             the keyboard.</p>
-                        <p>
-                            <format color="369650" style="bold">Correct</format>
-                            <img src="open_project_dialog.png"
-                                 width="706"
-                                 alt="A dialog with buttons: 'New Window' (focused), 'Cancel', and 'This Window' (default)."
-                                 style="block"/>
-
-                        </p>
-                        <p>
-                            <format color="E55765" style="bold">Incorrect</format>
-                        </p>
-                        <img
-                                src="open_project_dialog_incorrect.png"
-                                alt="A dialog with buttons: 'New Window', 'Cancel', and 'This Window' (default and focused)."
-                                width="706"/>
-
                     </li>
                 </list>
             </tab>
@@ -258,13 +211,9 @@
                 <li>The focused button is triggered by pressing
                     <shortcut>Enter</shortcut>
                     or
-                    <shortcut>Space</shortcut>
-                    . If a non-default
+                    <shortcut>Space</shortcut>. If a non-default
                     button gets focus, the default button is invoked using
                     <shortcut>Ctrl+Enter</shortcut>.
-<!-- TODO                   <img src="open_project_dialog_win.png"
-                         alt="A Windows dialog with buttons: 'This Window' (default), 'New Window' (focused), and 'Cancel'."
-                         width="672"/>-->
                     <p>On pressing the
                         <shortcut>Tab</shortcut>
                         key, the
@@ -285,18 +234,27 @@
             </list>
                </tab>
            </tabs>
+            <format color="369650" style="bold">Correct</format>
+            <img src="button_open_project_dialog.png"
+                 width="706"
+                 alt="A dialog with buttons: 'New Window' (focused), 'Cancel', and 'This Window' (default)."
+                 style="block"/>
+            <format color="E55765" style="bold">Incorrect</format>
+            <img
+                    src="button_open_project_dialog_incorrect.png"
+                    alt="A dialog with buttons: 'New Window', 'Cancel', and 'This Window' (default and focused)."
+                    width="706"/>
         </chapter>
 
 
         <chapter title="Disabled" id="disabled">
-            <img src="disabled_button.png"
+            <img src="button_disabled.png"
                  alt="Disabled button"
                  width="706"/>
             <p>Disable a button if:</p>
             <list>
                 <li>It’s an
-                    <a anchor="apply">Apply</a>
-                    button and no changes have been made in this dialog.
+                    <a anchor="apply">Apply</a> button, and no changes have been made in this dialog.
                 </li>
                 <li>The control to which the button is related is disabled.</li>
                 <li>Not all required fields in the dialog are filled.
@@ -314,7 +272,7 @@
             <table style="none" border="false" column-width="fixed">
                 <tr>
                     <td width="378">
-                        <img src="hovered_button.png" alt="Hovered buttons" width="378"/>
+                        <img src="button_hovered.png" alt="Hovered buttons" width="378"/>
 
                     </td>
                     <td width="378">
@@ -332,11 +290,11 @@
         <chapter title="Apply" id="apply">
             <table style="none" border="false" column-width="fixed">
                 <tr>
-                    <td width="378">
-                        <img src="apply.png" alt="Hovered buttons" width="378"/>
+                    <td>
+                        <img src="button_apply.png" alt="Hovered buttons" width="378"/>
 
                     </td>
-                    <td width="378">
+                    <td>
                         <p>Use the <control>Apply</control> button in dialogs with many settings that affect how data is displayed. The
                             <control>Apply</control> button
                             allows you to
@@ -350,11 +308,11 @@
         <chapter title="Cancel" id="cancel">
             <table style="none" border="false" column-width="fixed">
                 <tr>
-                    <td width="378">
-                        <img src="cancel.png" alt="Hovered buttons" width="378"/>
+                    <td>
+                        <img src="button_cancel.png" alt="Hovered buttons" width="378"/>
 
                     </td>
-                    <td width="378">
+                        <td>
                         <p>The
                             <control>Cancel</control>
                             button reverts the app to the state before the dialog was invoked, and works as an equivalent to the
@@ -387,7 +345,7 @@
             <table style="none" border="false" column-width="fixed">
                 <tr>
                     <td width="378">
-                        <img src="close.png" alt="Hovered buttons" width="378"/>
+                        <img src="button_close.png" alt="Hovered buttons" width="378"/>
 
                     </td>
                     <td width="378">
@@ -414,7 +372,7 @@
             <table style="none" border="false" column-width="fixed">
                 <tr>
                     <td width="378">
-                        <img src="help.png" alt="Hovered buttons" width="378"/>
+                        <img src="button_help.png" alt="Hovered buttons" width="378"/>
 
                     </td>
                     <td width="378">
@@ -426,128 +384,5 @@
             </table>
         </chapter>
     </chapter>
-<!--    <chapter title="Sizes and placement" id="sizes-and-placement">
-        <p>The button width accommodates the length of the label plus standard indents 14px, but not less than the
-            72px.</p>
-        <img src="button_sizes.png" alt="Example buttons with incorrect and correct sizes and indents" width="491"/>
-        <p>The button height is fixed, so the label is always a single line.</p>
-        <p>To lay out the button that depends on other control, e.g., input field, follow the rules
-            for <a href="layout.md" anchor="dependent-controls">dependent controls</a>. Otherwise, follow
-            the rules for <a href="layout.md" anchor="independent-controls">independent controls</a>.</p>
-        &lt;!&ndash;
-         <table>
-         <col width="140px">
-         <col width="200px">
-         <col width="300px">
-             <tr>
-                 <td>  </td>
-                 <td> macOS, Darcula </td>
-                 <td> Windows </td>
-             </tr>
-             <tr>
-                 <td> <p style="color: #999999; margin-top: 10px;"> Several buttons </p></td>
-                 <td> <img src="button_size_1.png" style="margin: -5px 0 0 0"></td>
-                 <td> <img src="button_size_2.png" style="margin: -5px 0 0 0"></td>
-             </tr>
-         </table>
-         <table>
-         <col width="140px">
-             <tr>
-                 <td> <p style="color: #999999; margin-top: 10px;"> Button on the right </p></td>
-                 <td> <img src="button_size_3.png" style="margin: -5px 0 0 0"></td>
-             </tr>
-             <tr>
-                 <td>  </td>
-                 <td> <img src="button_size_4.png" style="margin: -5px 0 0 0"></td>
-             </tr>
-             <tr>
-                 <td>  </td>
-             </tr>
-             <tr>
-                 <td> <p style="color: #999999; margin-top: -5px;"> Button under </p></td>
-                 <td> <img src="button_size_5.png" style="margin: -5px 0 0 0"></td>
-             </tr>
-         </table>
-        &ndash;&gt;
-        &lt;!&ndash;
-        ### Colors
-
-        <table>
-         <col width="50%">
-         <th> Regular button </td>
-             <tr>
-                 <td> Text </td>
-                 <td> Button.foreground </td>
-             </tr>
-             <tr>
-                 <td> Background </td>
-                 <td> Button.startBackground<br/>
-                      Button.endBackground
-                 </td>
-             </tr>
-             <tr>
-                 <td> Border </td>
-                 <td> Button.startBorderColor <br/>
-                      Button.endBorderColor
-                 </td>
-             </tr>
-             <tr>
-                 <td> Inner focused border </td>
-                 <td> Button.focusedBorderColor </td>
-             </tr>
-             <tr>
-                 <td> Outer wider focus border </td>
-                 <td> Component.focusColor </td>
-             </tr>
-             <tr>
-                 <td> Shadow </td>
-                 <td> Button.shadowColor </td>
-             </tr>
-         <th> Default button </td>
-              <tr>
-                  <td> Text </td>
-                  <td> Button.default.foreground </td>
-              </tr>
-              <tr>
-                  <td> Background </td>
-                  <td> Button.default.startBackground<br/>
-                       Button.default.endBackground
-                  </td>
-              </tr>
-              <tr>
-                  <td> Border </td>
-                  <td> Button.default.startBorderColor <br/>
-                       Button.default.endBorderColor
-                  </td>
-              </tr>
-              <tr>
-                  <td> Inner focused border </td>
-                  <td> Button.default.focusedBorderColor </td>
-              </tr>
-              <tr>
-                  <td> Outer wider focus border </td>
-                  <td> IntelliJ: Component.focusColor <br/>
-                        Darcula: Button.default.focusColor</td>
-              </tr>
-              <tr>
-                  <td> Shadow </td>
-                  <td> Button.default.shadowColor </td>
-              </tr>
-          <th> Disabled button </td>
-                <tr>
-                    <td> Text </td>
-                    <td> Button.disabledText </td>
-                </tr>
-                <tr>
-                    <td> Background </td>
-                    <td> Button.background (same as Panel.background) </td>
-                </tr>
-                <tr>
-                    <td> Border </td>
-                    <td> Button.disabledBorderColor </td>
-                </tr>
-        </table>
-        &ndash;&gt;
-    </chapter>-->
-
+    </chapter>
 </topic>

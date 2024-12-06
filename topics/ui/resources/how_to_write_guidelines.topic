@@ -125,7 +125,7 @@
                     </tr>
                     <tr>
                         <td width="378">
-                            <img src="built-in_button.png" alt="Using built-in buttons instead of buttons" width="378"/>
+                            <img src="button_built_in_button.png" alt="Using built-in buttons instead of buttons" width="378"/>
                         </td>
                         <td>Use a built-in button instead if it's related to an input field, combo box,
                             search field.
@@ -147,9 +147,9 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><img src="default_button_save.png" alt="A correct button with a clear 'Save' label"
+                        <td><img src="button_default_save.png" alt="A correct button with a clear 'Save' label"
                                  width="378"/></td>
-                        <td><img src="default_OK.png" alt="An incorrect button with a generic 'OK' label" width="378"/>
+                        <td><img src="button_default_OK.png" alt="An incorrect button with a generic 'OK' label" width="378"/>
                         </td>
                     </tr>
                 </table>
@@ -167,10 +167,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><img src="active_edit_action.png"
+                        <td><img src="button_active_edit_action.png"
                                  alt="A button with the 'Edit Action Icon...' label"
                                  width="378"/></td>
-                        <td><img src="active_edit.png" alt="A button with 'Edit' label" width="378"/></td>
+                        <td><img src="button_edit.png" alt="A button with 'Edit' label" width="378"/></td>
                     </tr>
                 </table>
             </chapter>

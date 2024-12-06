@@ -56,6 +56,9 @@ See [](#settings-declaration-attributes) for more information.
 </extensions>
 ```
 
+> To [localize](providing_translations.md) the display name, instead of the `displayName` attribute, use `key` and `bundle` attributes pointing to a key in a [message bundle](internationalization.md#message-bundles).
+> The same applies for [`projectConfigurable`](#declaring-project-settings) extensions.
+
 ### Declaring Project Settings
 
 The project-level settings are declared using `com.intellij.projectConfigurable` EP.

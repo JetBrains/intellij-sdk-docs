@@ -57,9 +57,8 @@ The export produces a file called <path>Markdown.xml</path> with the following c
 </templateSet>
 ```
 
-The display `description` can also provide localized variants by specifying
-`key` and `resource-bundle` attributes instead (code insight is available in 2020.3 and later).
-A quick fix to extract the localized key is available since 2024.2.
+> To [localize](providing_translations.md) the description, instead of the `description` attribute, use `key` and `resource-bundle` attributes pointing to a key in a [message bundle](internationalization.md#message-bundles) (code insight is available in 2020.3 and later).
+> A quick fix to extract the localized key is available since 2024.2.
 
 Copy this file into the [plugin's resources folder](%gh-sdk-samples-master%/live_templates/src/main/resources/liveTemplates).
 

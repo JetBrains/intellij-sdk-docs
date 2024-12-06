@@ -103,6 +103,8 @@ For paid plugins, see also [Marketplace docs](https://plugins.jetbrains.com/docs
 
 To show custom context web-based help for your plugin's functionality (e.g., for [dialogs](dialog_wrapper.md)), provide [`WebHelpProvider`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/help/WebHelpProvider.java) registered in `com.intellij.webHelpProvider` extension point.
 
+> To [localize](providing_translations.md) the help page URL, retrieve the current locale and language tag from the [dynamic bundle](providing_translations.md#getting-the-current-locale-programmatically).
+
 ## Running Tasks Once
 
 Use [`RunOnceUtil`](%gh-ic%/platform/ide-core/src/com/intellij/ide/util/RunOnceUtil.kt) to run a task exactly once per project/application.

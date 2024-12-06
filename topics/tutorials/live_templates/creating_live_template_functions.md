@@ -28,7 +28,7 @@ Three `TitleCaseMacro` methods are of particular interest:
 
 ## Adding a Live Template
 
-Using the procedures previously discussed for [Template Creation](providing_live_templates.md#template-creation) and [Export the Live Template](providing_live_templates#export-the-live-template), add a Live Template to the [Markdown.xml](%gh-sdk-samples-master%/live_templates/src/main/resources/liveTemplates) file for the plugin.
+Using the procedures previously discussed for [Template Creation](providing_live_templates.md#template-creation) and [Export the Live Template](providing_live_templates.md#export-the-live-template), add a Live Template to the [Markdown.xml](%gh-sdk-samples-master%/live_templates/src/main/resources/liveTemplates) file for the plugin.
 The XML representation of an example Live Template using the new `titleCase` function is listed below.
 
 There is only one variable, `TITLE`.

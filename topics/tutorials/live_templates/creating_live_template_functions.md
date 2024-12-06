@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Creating New Functions for Live Templates
 
@@ -18,7 +18,7 @@ A new custom function for Live Templates is implemented in `TitleCaseMacro`, whi
 Three `TitleCaseMacro` methods are of particular interest:
 * The `TitleCaseMacro()` constructor passes the name and description of the macro to the parent constructor.
 * The `isAcceptableInContext()` method tests whether the macro is available in the current context.
-  The test relies on the [`MarkdownContext`](template_support.md#implement-templatecontexttype) object previously defined in the `live_templates` plugin.
+  The test relies on the [`MarkdownContext`](providing_live_templates.md#implement-templatecontexttype) object previously defined in the `live_templates` plugin.
 * The `calculateResult()` method gets invoked when the titleCase function is used in a Live Template.
   The text to be capitalized is retrieved from the Live Template and converted to Title Case.
 
@@ -28,7 +28,7 @@ Three `TitleCaseMacro` methods are of particular interest:
 
 ## Adding a Live Template
 
-Using the procedures previously discussed for [Template Creation](template_support.md#template-creation) and [Export the Live Template](template_support.md#export-the-live-template), add a Live Template to the [Markdown.xml](%gh-sdk-samples-master%/live_templates/src/main/resources/liveTemplates) file for the plugin.
+Using the procedures previously discussed for [Template Creation](providing_live_templates.md#template-creation) and [Export the Live Template](providing_live_templates#export-the-live-template), add a Live Template to the [Markdown.xml](%gh-sdk-samples-master%/live_templates/src/main/resources/liveTemplates) file for the plugin.
 The XML representation of an example Live Template using the new `titleCase` function is listed below.
 
 There is only one variable, `TITLE`.

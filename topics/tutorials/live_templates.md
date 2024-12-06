@@ -1,6 +1,6 @@
-# Live Templates
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Live Templates
 
 <link-summary>Live templates support overview.</link-summary>
 
@@ -54,5 +54,5 @@ public void testMethod() {
 For more information about creating Custom Live Templates, refer to the [corresponding documentation](https://www.jetbrains.com/idea/help/creating-and-editing-live-templates.html).
 
 These sections describe how to add Live Templates, and their associated building blocks, to plugins.
- * [Providing Live Templates](template_support.md)
- * [Creating New Functions for Live Templates](new_macros.md)
+ * [Providing Live Templates](providing_live_templates.md)
+ * [Creating New Functions for Live Templates](creating_live_template_functions.md)

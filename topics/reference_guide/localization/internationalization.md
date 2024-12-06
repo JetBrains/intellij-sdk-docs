@@ -390,4 +390,22 @@ It adds an appropriate ending to numbers, so it turns into `1st`, `2nd`, `3rd`, 
 parameter.cast.fix=Cast {0,number,ordinal} parameter to {1}
 ```
 
+#### Formatting Non-Textual Values
+
+Different countries and languages display numbers, dates and times, durations, file sizes, and other values, in a localized way.
+The IntelliJ Platform provides some utils to display them properly.
+
+##### Date and Time
+
+- [`DateFormatUtil`](%gh-ic%/platform/platform-api/src/com/intellij/util/text/DateFormatUtil.java) ([IDE's locale](providing_translations.md#getting-the-current-locale-programmatically) is supported since 2024.1)
+- [`NlsMessages.formatDateLong()`](%gh-ic%/platform/ide-core-impl/src/com/intellij/ide/nls/NlsMessages.java)
+
+##### Durations
+
+- [`NlsMessages.formatDuration()`](%gh-ic%/platform/ide-core-impl/src/com/intellij/ide/nls/NlsMessages.java)
+
+##### File Sizes
+
+- [`Formats.formatFileSize()`](%gh-ic%/platform/util/base/src/com/intellij/openapi/util/text/Formats.java) (the units are not localized and the default JVM locale is used instead of the [IDE's locale](providing_translations.md#getting-the-current-locale-programmatically))
+
 <include from="snippets.md" element-id="missingContent"/>

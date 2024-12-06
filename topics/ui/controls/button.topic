@@ -64,7 +64,7 @@
 
     <chapter title="How to use" id="how-to-use">
         <chapter title="Label" id="label">
-            <p>The label displays the action the button performs.</p>
+            <p>Use an action name as a button label.</p>
             <chapter title="Use title capitalization" id="use-title-capitalization">
         <p>Use <a href="capitalization.md">title capitalization</a> for button labels.</p>
             </chapter>
@@ -78,7 +78,12 @@
             <chapter title="Be specific" id="be-specific">
             <p>The button should answer the question in the title, so the user can skip the description. Prefer specific
                 labels over
-                generic ones:</p>
+                generic ones.</p>
+                <note>
+                    Exception: the <control>Cancel</control> button if it's clear what action is being canceled.
+                    For example, use
+                    <control>Cancel</control> instead of <control>Don’t Create</control>.
+                </note>
             <table style="none" border="false" column-width="fixed">
                 <tr>
                     <td><format color="369650" style="bold">Correct</format>
@@ -87,11 +92,6 @@
                         <img src="button_default_OK.png" alt="An incorrect button with a generic 'OK' label" width="378"/></td>
                 </tr>
             </table>
-            <note>
-                Exception: the <control>Cancel</control> button if it's clear what action is being canceled.
-                For example, use
-                <control>Cancel</control> instead of <control>Don’t Create</control>.
-            </note>
                 <p>Do not
                     use the word
                     <control>Now</control> in labels because buttons always trigger an immediate action:
@@ -164,8 +164,9 @@
                 <li>The default button should always be present in a dialog. Only one button in a dialog can be the default
                 one.
                 </li>
-                <li>If an action is dangerous, for example, it can lead to data loss, provide an easy way to undo the command.</li>
-                <li>If it's not possible to undo the action, make a secondary button the default one:
+                <li>If an action that a default button performs is dangerous, which means it can lead to data loss, there
+                    should always be an easy way to undo it.
+                    Otherwise, use a secondary button for a dangerous action and a default button for a safe action:
                 <img src="button_merge_dialog.png"
                      alt="A dialog with secondary and primary buttons"
                      width="706"/>
@@ -253,9 +254,6 @@
                  width="706"/>
             <p>Disable a button if:</p>
             <list>
-                <li>It’s an
-                    <a anchor="apply">Apply</a> button, and no changes have been made in this dialog.
-                </li>
                 <li>The control to which the button is related is disabled.</li>
                 <li>Not all required fields in the dialog are filled.
                 </li>
@@ -269,21 +267,9 @@
             <p>On hovering over a button, show a tooltip with the shortcut and the action name if it can be clarified.
                 For more details,
                 see <a href="context_help.md">Context help</a>.</p>
-            <table style="none" border="false" column-width="fixed">
-                <tr>
-                    <td width="378">
-                        <img src="button_hovered.png" alt="Hovered buttons" width="378"/>
-
-                    </td>
-                    <td width="378">
-                        <p>If the action is clear, show the shortcut only.
-                        </p>
-                        <p>
-                            If the action can be clarified, show the action name and the shortcut.
-                        </p>
-                    </td>
-                </tr>
-            </table>
+            <p>If the action is clear, show the shortcut only. If the action can be clarified, show the action name and the shortcut:
+            </p>
+            <img src="button_hovered.png" alt="Hovered buttons" width="706"/>
         </chapter>
     </chapter>
     <chapter title="Standard buttons" id="standard-buttons">
@@ -297,10 +283,10 @@
                     <td>
                         <p>Use the <control>Apply</control> button in dialogs with many settings that affect how data is displayed. The
                             <control>Apply</control> button
-                            allows you to
-                            save and preview the effect of the selected options and continue changing the settings, for example,
-                            change a scheme in
-                            settings.</p>
+                            allows you to save and preview the effect of the selected options and continue changing the
+                            settings, for example, change the editor color scheme in settings.</p>
+                        <p>The <control>Apply</control> should be <a anchor="disabled">disabled</a> if no changes have been made in the dialog.
+                        </p>
                     </td>
                 </tr>
             </table>
@@ -313,28 +299,13 @@
 
                     </td>
                         <td>
-                        <p>The
-                            <control>Cancel</control>
-                            button reverts the app to the state before the dialog was invoked, and works as an equivalent to the
-                            <shortcut>
-                                Esc
-                            </shortcut>
-                            key on Windows and Linux, and
-                            <shortcut>Esc</shortcut>
-                            or
-                            <shortcut>Cmd+Period</shortcut>
-                            on macOS.
-                            If a confirmation button is present in a dialog, for example,
-                            <control>OK</control>
-                            or
-                            <control>Save</control>
-                            , it’s recommended to have a button that cancels the
-                            dialog, for example,
-                            <control>Cancel</control>
-                            ,
-                            <control>Continue Editing</control>
-                            , and so on.
-                        </p>
+                            <p>The<control>Cancel</control> button reverts the app to the state before the dialog was
+                                invoked and works as an equivalent to the <shortcut>Esc</shortcut> key.</p>
+                            <p>If a confirmation button is present in a dialog, for example,
+                            <control>OK</control> or
+                            <control>Save</control>, it’s recommended to have the <control>Cancel</control> button.</p>
+                            <p>If it is not clear what will happen on clicking the <control>Cancel</control> button,
+                            make the label more <a anchor="be-specific">specific</a>, for example, <control>Continue Editing</control>.</p>
                     </td>
                 </tr>
             </table>
@@ -359,11 +330,6 @@
                             <control>Cancel</control>
                             button.
                         </p>
-                        <p>Do not
-                            add an icon to the button. The main purpose of an icon is to quickly find a familiar action in a packed
-                            toolbar or menu. Usually, no more than 3 buttons are placed nearby, their labels can be scanned quickly,
-                            and icons are not required.
-                        </p>
                     </td>
                 </tr>
             </table>
@@ -376,9 +342,9 @@
 
                     </td>
                     <td width="378">
-                        <p>The help button appears in the bottom-left corner of a dialog and shows help in a tooltip on hover, or
-                            opens a help
-                            dialog when clicking it. For more details, see <a href="context_help.md">Context help</a>.</p>
+                        <p>The help button appears in the bottom-left corner of a dialog and
+                            opens a documentation website. Add this button if the dialog's functionality is described
+                            in documentation.</p>
                         </td>
                 </tr>
             </table>

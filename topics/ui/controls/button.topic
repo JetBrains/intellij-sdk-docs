@@ -201,7 +201,7 @@
                         </p>
                     </li>
                     <li>
-                        <p>It’s recommended to have one default and one focused button, so that most of the actions can be
+                        <p>It’s recommended to have one default and one focused button so that most of the actions can be
                             triggered using
                             the keyboard.</p>
                     </li>
@@ -258,7 +258,7 @@
                 <li>Not all required fields in the dialog are filled.
                 </li>
             </list>
-            <p>Other <a anchor="standard-buttons">standard buttons</a> are described below. They can be regular or default buttons.</p>
+            <p>Other <a anchor="common-buttons">standard buttons</a> are described below. They can be regular or default buttons.</p>
         </chapter>
 
 
@@ -272,7 +272,7 @@
             <img src="button_hovered.png" alt="Hovered buttons" width="706"/>
         </chapter>
     </chapter>
-    <chapter title="Standard buttons" id="standard-buttons">
+    <chapter title="Common buttons" id="common-buttons">
         <chapter title="Apply" id="apply">
             <table style="none" border="false" column-width="fixed">
                 <tr>
@@ -303,7 +303,7 @@
                                 invoked and works as an equivalent to the <shortcut>Esc</shortcut> key.</p>
                             <p>If a confirmation button is present in a dialog, for example,
                             <control>OK</control> or
-                            <control>Save</control>, it’s recommended to have the <control>Cancel</control> button.</p>
+                            <control>Save</control>, it’s required to have the <control>Cancel</control> button.</p>
                             <p>If it is not clear what will happen on clicking the <control>Cancel</control> button,
                             make the label more <a anchor="be-specific">specific</a>, for example, <control>Continue Editing</control>.</p>
                     </td>
@@ -312,7 +312,7 @@
 
         </chapter>
 
-        <chapter title="Close">
+        <chapter title="Close" id="close">
             <table style="none" border="false" column-width="fixed">
                 <tr>
                     <td width="378">

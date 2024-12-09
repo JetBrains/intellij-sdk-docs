@@ -25,12 +25,7 @@ The [](grouping_action.md) tutorial demonstrates three types of groups that can 
 
 ## Action Implementation
 
-An action is a class derived from the abstract class [`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java).
-For actions available during [dumb mode](indexing_and_psi_stubs.md#dumb-mode), extend [`DumbAwareAction`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/project/DumbAwareAction.java)
-(do not override `AnAction.isDumbAware()` instead).
-
-See also [](#useful-action-base-classes) below.
-
+An action is a class derived from the abstract class [`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java) (see also [](#useful-action-base-classes) below).
 The IntelliJ Platform calls methods of actions when a user interacts with a menu item or toolbar button.
 
 > Classes based on `AnAction` must not have class fields of any kind.
@@ -39,6 +34,9 @@ The IntelliJ Platform calls methods of actions when a user interacts with a menu
 > For example, any `AnAction` data that exists only within the context of a `Project` causes the `Project` to be kept in memory after the user has closed it.
 >
 {style="warning" title="No fields allowed"}
+
+> For actions available during [dumb mode](indexing_and_psi_stubs.md#dumb-mode), extend [`DumbAwareAction`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/project/DumbAwareAction.java)
+> (do not override `AnAction.isDumbAware()` instead).
 
 ### Principal Implementation Overrides
 
@@ -188,7 +186,7 @@ Some menus like <ui-path>Tools</ui-path> have the `compact` attribute set, so th
 
 All other combinations of `compact`, visibility, and enablement produce N/A for gray appearance because the menu item isn't visible.
 
-See the [Grouping Actions](grouping_action.md) tutorial for examples of creating action groups.
+See the [](grouping_action.md) tutorial for examples of creating action groups.
 
 ## Registering Actions
 
@@ -219,7 +217,7 @@ An example of using `<override-text>` is demonstrated in the [Creating Actions](
 
 #### Setting the `synonym` Element
 
-_2020.3_
+_2020.3_<br/>
 Users can locate actions via their name by invoking <ui-path>Help | Find Action</ui-path>.
 
 To allow using alternative names in search, add one or more [`<synonym>`](plugin_configuration_file.md#idea-plugin__actions__action__synonym) elements inside [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) or [`<reference>`](plugin_configuration_file.md#idea-plugin__actions__group__reference):
@@ -239,9 +237,7 @@ To exclude a group from appearing in <ui-path>Help | Find Action</ui-path> resul
 
 #### Localizing Actions and Groups
 
-> Hard-coding the presentation in the `AnAction` constructor is discouraged, use inspection <control>Plugin DevKit | Code | Eager creation of action presentation</control> (2023.3)
-> to highlight such problems.
->
+> Hard-coding presentation in the `AnAction` constructor is discouraged, use inspection <control>Plugin DevKit | Code | Eager creation of action presentation</control> (2023.3) to highlight such problems.
 
 Action and group localization use resource bundles containing property files named <path>\$NAME\$Bundle.properties</path>, each file consisting of `key=value` pairs.
 The [`action_basics`](%gh-sdk-samples-master%/action_basics) plugin demonstrates using a resource bundle to localize the group and action entries added to the Editor Popup Menu.
@@ -256,7 +252,7 @@ In the case of `action_basics`, only a default localization resource bundle (<pa
 <resource-bundle>messages.BasicActionsBundle</resource-bundle>
 ```
 
-_2020.1_
+_2020.1_<br/>
 If necessary, a dedicated resource bundle to use for actions and groups can be defined on [`<actions>`](plugin_configuration_file.md#idea-plugin__actions):
 
 ```xml
@@ -276,7 +272,7 @@ For Actions, the key in property files incorporates the action ID in this specif
 * `action.<action-id>.text=Translated Action Text`
 * `action.<action-id>.description=Translated Action Description`
 
-_2020.1_
+_2020.1_<br/>
 If `<override-text>` is used for an action ID, the key includes the `place` attribute:
 * `action.<action-id>.<place>.text=Place-dependent Translated Action Text`
 
@@ -288,7 +284,7 @@ For Groups, the key in the property files incorporates the group ID in this spec
 * `group.<group-id>.text=Translated Group Text`
 * `group.<group-id>.description=Translated Group Description`
 
-_2020.3_
+_2020.3_<br/>
 If `<override-text>` is used for a group ID, the key includes the `place` attribute:
 * `group.<group-id>.<place>.text=Place-dependent Translated Group Text`
 
@@ -426,7 +422,7 @@ To get a Swing component from such an object, call the respective `getComponent(
 If an action toolbar is attached to a specific component (for example, a panel in a tool window), call `ActionToolbar.setTargetComponent()` and pass the related component's instance as a parameter.
 Setting the target ensures that the toolbar buttons' state depends on the state of the related component, not on the current focus location within the IDE frame.
 
-See [Toolbar](toolbar.md) in UI Guidelines for an overview.
+See [](toolbar.md) in UI Guidelines for an overview.
 
 ## Useful Action Base Classes
 

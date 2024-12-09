@@ -4,7 +4,7 @@
      /CSS/
      /plugins/JavaScriptLanguage/
      /plugins/NodeJS/
-     /plugins/sass/ææ
+     /plugins/sass/
 -->
 
 # WebStorm Extension Point and Listener List

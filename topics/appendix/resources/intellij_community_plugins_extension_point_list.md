@@ -12,7 +12,7 @@ EP List Directory:
 
 <link-summary>Overview of Extension Points and Listeners for IntelliJ Platform.</link-summary>
 
-590 Extension Points and 62 Listeners for IntelliJ Community Plugins
+592 Extension Points and 65 Listeners for IntelliJ Community Plugins
 
 <include from="snippets.md" element-id="ep_list_legend"/>
 
@@ -81,6 +81,9 @@ EP List Directory:
 | [GradleSettingsListener#TOPIC](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.gradle.settings.GradleSettingsListener)  ![Project-Level][project-level] | [`GradleSettingsListener`](%gh-ic%/plugins/gradle/src/org/jetbrains/plugins/gradle/settings/GradleSettingsListener.java) |
 | [GradleUiListener#TOPIC](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.gradle.ui.GradleUiListener)  | [`GradleUiListener`](%gh-ic%/plugins/gradle/src/org/jetbrains/plugins/gradle/ui/GradleUiListener.java) |
 | [Constants#TERMINAL_COMMAND_HANDLER_TOPIC](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.terminal.TerminalCommandHandlerCustomizer.TerminalCommandHandlerListener)  | [`TerminalCommandHandlerListener`](%gh-ic%/plugins/terminal/src/org/jetbrains/plugins/terminal/TerminalCommandHandlerCustomizer.kt) |
+| [BlockTerminalInitializationListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.terminal.block.BlockTerminalInitializationListener)  ![Internal][internal] ![Project-Level][project-level] | [`BlockTerminalInitializationListener`](%gh-ic%/plugins/terminal/src/org/jetbrains/plugins/terminal/block/BlockTerminalInitializationListener.kt) |
+| [CommandHistoryListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.terminal.block.history.CommandHistoryListener)  ![Internal][internal] ![Project-Level][project-level] | [`CommandHistoryListener`](%gh-ic%/plugins/terminal/src/org/jetbrains/plugins/terminal/block/history/CommandHistoryListener.kt) |
+| [CommandSearchListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.terminal.block.history.CommandSearchListener)  ![Internal][internal] ![Project-Level][project-level] | [`CommandSearchListener`](%gh-ic%/plugins/terminal/src/org/jetbrains/plugins/terminal/block/history/CommandSearchListener.kt) |
 | [HgVcs#REMOTE_TOPIC](https://jb.gg/ipe/listeners?topics=org.zmlx.hg4idea.HgUpdater)  ![Project-Level][project-level] | [`HgUpdater`](%gh-ic%/plugins/hg4idea/src/org/zmlx/hg4idea/HgUpdater.java) |
 | [HgVcs#STATUS_TOPIC](https://jb.gg/ipe/listeners?topics=org.zmlx.hg4idea.HgUpdater)  ![Project-Level][project-level] | [`HgUpdater`](%gh-ic%/plugins/hg4idea/src/org/zmlx/hg4idea/HgUpdater.java) |
 | [HgVcs#INCOMING_OUTGOING_CHECK_TOPIC](https://jb.gg/ipe/listeners?topics=org.zmlx.hg4idea.status.ui.HgWidgetUpdater)  ![Project-Level][project-level] | [`HgWidgetUpdater`](%gh-ic%/plugins/hg4idea/src/org/zmlx/hg4idea/status/ui/HgWidgetUpdater.java) |
@@ -473,6 +476,14 @@ EP List Directory:
 | [com.intellij.coverageModifiedFilesFilterFactory](https://jb.gg/ipe?extensions=com.intellij.coverageModifiedFilesFilterFactory) ![Internal][internal] | [`ModifiedFilesFilterFactory`](%gh-ic%/plugins/coverage-common/src/com/intellij/coverage/filters/ModifiedFilesFilterFactory.kt) |
 | [com.intellij.coverageOptions](https://jb.gg/ipe?extensions=com.intellij.coverageOptions) ![Project-Level][project-level] | [`CoverageOptions`](%gh-ic%/plugins/coverage-common/src/com/intellij/coverage/CoverageOptions.java) |
 | [com.intellij.coverageRunner](https://jb.gg/ipe?extensions=com.intellij.coverageRunner) | [`CoverageRunner`](%gh-ic%/plugins/coverage-common/src/com/intellij/coverage/CoverageRunner.java) |
+
+### intellij.pycharm.community.ide.impl.xml
+
+[`intellij.pycharm.community.ide.impl.xml`](%gh-ic%/python/ide/impl/resources/intellij.pycharm.community.ide.impl.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [Pythonid.miscFileType](https://jb.gg/ipe?extensions=Pythonid.miscFileType) | [`MiscFileType`](%gh-ic%/python/ide/impl/src/com/intellij/pycharm/community/ide/impl/miscProject/MiscFileType.kt) |
 
 ### intellij.python.parser.xml
 
@@ -1121,6 +1132,7 @@ EP List Directory:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.intellij.yaml.customStructureViewFactory](https://jb.gg/ipe?extensions=com.intellij.yaml.customStructureViewFactory) | [`YAMLCustomStructureViewFactory`](%gh-ic%/plugins/yaml/src/org/jetbrains/yaml/structureView/YAMLCustomStructureViewFactory.java) |
+| [com.intellij.yaml.tagRecogniser](https://jb.gg/ipe?extensions=com.intellij.yaml.tagRecogniser) ![Experimental][experimental] | [`YamlTagRecogniser`](%gh-ic%/plugins/yaml/editing/src/org/jetbrains/yaml/psi/YamlTagRecogniser.kt) |
 
 ### parcelize.xml
 

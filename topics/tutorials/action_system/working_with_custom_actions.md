@@ -60,12 +60,6 @@ A more comprehensive explanation of action registration is available in the [](b
 
 ### Registering an Action with the New Action Form
 
-IntelliJ IDEA has an embedded inspection that spots unregistered actions.
-Verify the inspection is enabled at <ui-path>Settings | Editor | Inspections | Plugin DevKit | Code | Component/Action not registered</ui-path>.
-Here is an example for this stage of the `PopupDialogAction` class:
-
-!["Action never used" inspection](action_never_used.png){width="600"}
-
 To register `PopupDialogAction` and set up its basic attributes press <shortcut>Alt+Shift+Enter</shortcut>.
 Fill out the <control>New Action</control> form to set up the parameters for `PopupDialogAction`:
 
@@ -142,6 +136,8 @@ By using the `override-text` element, the action text can be different depending
 The example above uses this element to ensure the shorter text "Popup Dialog Action" is shown anywhere the action appears in the main menu structure.
 Otherwise, the default, more explanatory text "Action Basics Plugin: Popup Dialog Action" is shown.
 For more information, see [](basic_action_system.md#setting-the-override-text-element).
+
+> Use inspection <ui-path>Settings | Editor | Inspections | Plugin DevKit | Code | Component/Action not registered</ui-path> for reporting unregistered actions.
 
 ## Testing the Minimal Custom Action Implementation
 

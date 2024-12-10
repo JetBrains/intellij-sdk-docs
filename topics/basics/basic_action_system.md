@@ -190,50 +190,11 @@ See the [](grouping_action.md) tutorial for examples of creating action groups.
 
 ## Registering Actions
 
-There are two main ways to register an action: either by listing it in the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of a plugin's <path>[plugin.xml](plugin_configuration_file.md)</path> file or through code.
+There are two main ways to register an action: either by [registering it in the <path>plugin.xml</path> file](#registering-actions-in-pluginxml) or [through code](#registering-actions-from-code).
 
 ### Registering Actions in plugin.xml
 
-Registering actions in <path>plugin.xml</path> is demonstrated in the following reference examples, which document all elements and attributes used in the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section and describe each element's meaning.
-
-#### Setting the `override-text` Element
-<primary-label ref="2020.1"/>
-
-An alternate version of an action's menu text can be declared for use depending on where an action appears.
-Using the [`<override-text>`](plugin_configuration_file.md#idea-plugin__actions__action__override-text) element, the menu text for an action can be different depending on context: menu location, toolbar, and other.
-This is also available for groups in 2020.3 and later.
-
-In the `<action>` element [reference example](#action-declaration-reference) with `id` attribute `VssIntegration.GarbageCollection`, the default is to use the menu text "Garbage Collector: Collect _Garbage."
-The `<add-to-group>` element declares the action is added to the <ui-path>Tools</ui-path> menu.
-
-However, the `<override-text>` element declares that text for `VssIntegration.GarbageCollection` displayed anywhere in the main menu system should be the alternate text "Collect _Garbage."
-The <ui-path>Tools</ui-path> menu is part of the main menu, so the displayed menu text is "Collect _Garbage."
-A different context, such as searching for the action using <ui-path>Help | Find Action</ui-path>, displays the default text "Garbage Collector: Collect _Garbage" to give the user additional information about the action.
-
-A second `<override-text>` element uses `place` and `use-text-of-place` attributes to declare the same version of the text used in the main menu is also used in the editor popup menu.
-Additional `<override-text>` elements could be used to specify other places where the main menu text should be used.
-
-An example of using `<override-text>` is demonstrated in the [Creating Actions](working_with_custom_actions.md#using-override-text-for-an-action) tutorial.
-
-#### Setting the `synonym` Element
-
-_2020.3_<br/>
-Users can locate actions via their name by invoking <ui-path>Help | Find Action</ui-path>.
-
-To allow using alternative names in search, add one or more [`<synonym>`](plugin_configuration_file.md#idea-plugin__actions__action__synonym) elements inside [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) or [`<reference>`](plugin_configuration_file.md#idea-plugin__actions__group__reference):
-
-```xml
-<action id="MyAction" text="My Action Name" class="...">
-  <synonym text="Another Search Term"/>
-</action>
-```
-
-To provide a localized synonym, specify `key` instead of the `text` attribute.
-
-#### Disabling Search for Group
-<primary-label ref="2020.3"/>
-
-To exclude a group from appearing in <ui-path>Help | Find Action</ui-path> results (for example, <control>New...</control> popup), specify `searchable="false"`.
+Registering actions in <path>[plugin.xml](plugin_configuration_file.md)</path> is demonstrated in the following reference examples, which document all elements and attributes used in the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section and describe each element's meaning.
 
 #### Localizing Actions and Groups
 
@@ -390,7 +351,9 @@ This and additional information can also be found by using the [Code Completion]
     It can also have an <add-to-group> child element. -->
     <separator/>
 
-    <group id="TestActionSubGroup"/>
+    <!-- A group that is excluded from "Help | Find Action..."
+    and "Navigate | Search Everywhere" -->
+    <group id="TestActionSubGroup" searchable="false"/>
 
     <!-- The <reference> element allows adding an existing action to
     the group. The mandatory "ref" attribute specifies the ID of

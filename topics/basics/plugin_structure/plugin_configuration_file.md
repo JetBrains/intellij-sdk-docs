@@ -977,7 +977,7 @@ Examples
 
 <primary-label ref="2020.1"/>
 
-Defines an alternate version of the text for the menu action or group.
+Defines an alternate menu action or group text depending on context: menu location, toolbar, and other.
 
 {style="narrow"}
 Supported
@@ -1004,9 +1004,22 @@ Examples
 :
 - Explicitly overridden text:
     ```xml
-    <override-text
-        place="MainMenu"
-        text="Collect _Garbage"/>
+    <!--
+    Default action text:
+    "Garbage Collector: Collect _Garbage"
+    -->
+    <action
+        class="com.example.CollectGarbage"
+        text="Garbage Collector: Collect _Garbage"
+        ...>
+      <!--
+      Alternate text displayed anywhere in the main menu:
+      "Collect _Garbage"
+      -->
+      <override-text
+          place="MainMenu"
+          text="Collect _Garbage"/>
+    </action>
     ```
 - Overridden text reused from the `MainMenu` place:
     ```xml
@@ -1032,7 +1045,7 @@ Required
 Attributes
 :
 - `key` _(`key` or `text` is **required**)_<br/>
-  The key of the synonym text provided in a message bundle.
+  The key of the synonym text provided in a [message bundle](basic_action_system.md#localizing-actions-and-groups).
 - `text` _(`key` or `text` is **required**)_<br/>
 
     The synonym text.
@@ -1224,7 +1237,7 @@ Attributes
   Separator text is displayed only in specific contexts such as popup menus, toolbars, etc.
 - `key` _(optional)_<br/>
 
-    The message key for the separator text.
+    The [message key]([message key](https://plugins.jetbrains.com/docs/intellij/basic-action-system.html#localizing-actions-and-groups)) for the separator text.
     The message bundle for use should be registered via the `resource-bundle` attribute of
     the [`<actions>`](#idea-plugin__actions) element.
     The attribute is ignored if the `text` attribute is specified.

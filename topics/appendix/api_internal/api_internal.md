@@ -34,7 +34,7 @@ Each entry is mapped to its corresponding _Replacement_, pointing to the recomme
 
 | Internal API                             | Replacement                                                                                                                                                                 |
 |------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `AnAction.applyTextOverride()`           | [](basic_action_system.md#setting-the-override-text-element)                                                                                                                |
+| `AnAction.applyTextOverride()`           | [](plugin_configuration_file.md#idea-plugin__actions__action__override-text)                                                                                       |
 | `ApplicationLoadListener`                | See [](plugin_components.md#application-startup)                                                                                                                            |
 | `BuildNumber.currentVersion()`           | Use `ApplicationInfo.getBuild()`                                                                                                                                            |
 | `CompactVirtualFileSet`                  | Use `VfsUtilCore.createCompactVirtualFileSet()`                                                                                                                             |

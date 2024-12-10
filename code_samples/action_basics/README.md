@@ -30,7 +30,7 @@ Additional features of the plugin:
 
 [docs]: https://plugins.jetbrains.com/docs/intellij/
 [docs:actions]: https://plugins.jetbrains.com/docs/intellij/basic-action-system.html
-[docs:action-override]: https://plugins.jetbrains.com/docs/intellij/basic-action-system.html#setting-the-override-text-element
+[docs:action-override]: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html#idea-plugin__actions__action__override-text
 [docs:action-locale]: https://plugins.jetbrains.com/docs/intellij/basic-action-system.html#localizing-actions-and-groups
 [docs:plugin-configuration-file:actions:action]: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html#idea-plugin__actions__action
 [docs:plugin-configuration-file:resource-bundle]: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html#idea-plugin__resource-bundle

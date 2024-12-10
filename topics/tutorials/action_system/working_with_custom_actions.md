@@ -137,7 +137,6 @@ The full declaration is:
 ```
 
 #### Using `override-text` for an Action
-<primary-label ref="2020.1"/>
 
 The example above uses the [`override-text`](plugin_configuration_file.md#idea-plugin__actions__action__override-text) element to ensure the shorter text "Popup Dialog Action" is shown anywhere the action appears in the main menu structure.
 Otherwise, the default, more explanatory text "Action Basics Plugin: Popup Dialog Action" is shown.

@@ -196,64 +196,6 @@ There are two main ways to register an action: either by [registering it in the 
 
 Registering actions in <path>[plugin.xml](plugin_configuration_file.md)</path> is demonstrated in the following reference examples, which document all elements and attributes used in the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section and describe each element's meaning.
 
-#### Localizing Actions and Groups
-
-> Hard-coding presentation in the `AnAction` constructor is discouraged, use inspection <control>Plugin DevKit | Code | Eager creation of action presentation</control> (2023.3) to highlight such problems.
-
-Action and group localization use [resource bundles](internationalization.md#message-bundles) containing property files named <path>\$NAME\$Bundle.properties</path>, each file consisting of `key=value` pairs.
-The [`action_basics`](%gh-sdk-samples-master%/action_basics) plugin demonstrates using a resource bundle to localize the group and action entries added to the Editor Popup Menu.
-
-When localizing actions and groups, the `text` and `description` attributes are not declared in <path>plugin.xml</path>.
-Instead, those attribute values vary depending on the locale and get declared in a resource bundle.
-
-The name and location of the resource bundle must be declared in the <path>plugin.xml</path> file.
-In the case of `action_basics`, only a default localization resource bundle (<path>/resources/messages/BasicActionsBundle.properties</path>) is provided:
-
-```xml
-<resource-bundle>messages.BasicActionsBundle</resource-bundle>
-```
-
-_2020.1_<br/>
-If necessary, a dedicated resource bundle to use for actions and groups can be defined on [`<actions>`](plugin_configuration_file.md#idea-plugin__actions):
-
-```xml
-<actions resource-bundle="messages.MyActionsBundle">
-  <!-- action/group defined here will use keys
-  from MyActionsBundle.properties -->
-</actions>
-```
-
-See [Extending DefaultActionGroup](grouping_action.md#extending-defaultactiongroup) for a tutorial of localizing Actions and Groups.
-
-<tabs>
-
-<tab title="Actions">
-
-For Actions, the key in property files incorporates the action ID in this specific structure:
-* `action.<action-id>.text=Translated Action Text`
-* `action.<action-id>.description=Translated Action Description`
-
-_2020.1_<br/>
-If `<override-text>` is used for an action ID, the key includes the `place` attribute:
-* `action.<action-id>.<place>.text=Place-dependent Translated Action Text`
-
-</tab>
-
-<tab title="Groups">
-
-For Groups, the key in the property files incorporates the group ID in this specific structure:
-* `group.<group-id>.text=Translated Group Text`
-* `group.<group-id>.description=Translated Group Description`
-
-_2020.3_<br/>
-If `<override-text>` is used for a group ID, the key includes the `place` attribute:
-* `group.<group-id>.<place>.text=Place-dependent Translated Group Text`
-
-</tab>
-
-</tabs>
-
-
 #### Action Declaration Reference
 
 The places where actions can appear are defined by constants in [`ActionPlaces`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/actionSystem/ActionPlaces.java).
@@ -262,7 +204,6 @@ Group IDs for the IntelliJ Platform are defined in [`PlatformActions.xml`](%gh-i
 This and additional information can also be found by using the [Code Completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#invoke-basic-completion), [Quick Definition](https://www.jetbrains.com/help/idea/viewing-reference-information.html#view-definition-symbols), and [Quick Documentation](https://www.jetbrains.com/help/idea/viewing-reference-information.html#inline-quick-documentation) features.
 
 > To look up existing Action ID (for example, for use in `relative-to-action`), [UI Inspector](internal_ui_inspector.md) can be used.
->
 
 > See the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) element and its children documentation for details.
 >
@@ -368,12 +309,70 @@ This and additional information can also be found by using the [Code Completion]
 </actions>
 ```
 
+#### Localizing Actions and Groups
+
+> Hard-coding presentation in the `AnAction` constructor is discouraged, use inspection <control>Plugin DevKit | Code | Eager creation of action presentation</control> (2023.3) to highlight such problems.
+
+Action and group localization use [resource bundles](internationalization.md#message-bundles) containing property files named <path>\$NAME\$Bundle.properties</path>, each file consisting of `key=value` pairs.
+The [`action_basics`](%gh-sdk-samples-master%/action_basics) plugin demonstrates using a resource bundle to localize the group and action entries added to the Editor Popup Menu.
+
+When localizing actions and groups, the `text` and `description` attributes are not declared in <path>plugin.xml</path>.
+Instead, those attribute values vary depending on the locale and get declared in a resource bundle.
+
+The name and location of the resource bundle must be declared in the <path>plugin.xml</path> file.
+In the case of `action_basics`, only a default localization resource bundle (<path>/resources/messages/BasicActionsBundle.properties</path>) is provided:
+
+```xml
+<resource-bundle>messages.BasicActionsBundle</resource-bundle>
+```
+
+_2020.1_<br/>
+If necessary, a dedicated resource bundle to use for actions and groups can be defined on [`<actions>`](plugin_configuration_file.md#idea-plugin__actions):
+
+```xml
+<actions resource-bundle="messages.MyActionsBundle">
+  <!-- action/group defined here will use keys
+  from MyActionsBundle.properties -->
+</actions>
+```
+
+See [Extending DefaultActionGroup](grouping_action.md#extending-defaultactiongroup) for a tutorial of localizing Actions and Groups.
+
+<tabs>
+
+<tab title="Actions">
+
+For Actions, the key in property files incorporates the action ID in this specific structure:
+* `action.<action-id>.text=Translated Action Text`
+* `action.<action-id>.description=Translated Action Description`
+
+_2020.1_<br/>
+If `<override-text>` is used for an action ID, the key includes the `place` attribute:
+* `action.<action-id>.<place>.text=Place-dependent Translated Action Text`
+
+</tab>
+
+<tab title="Groups">
+
+For Groups, the key in the property files incorporates the group ID in this specific structure:
+* `group.<group-id>.text=Translated Group Text`
+* `group.<group-id>.description=Translated Group Description`
+
+_2020.3_<br/>
+If `<override-text>` is used for a group ID, the key includes the `place` attribute:
+* `group.<group-id>.<place>.text=Place-dependent Translated Group Text`
+
+</tab>
+
+</tabs>
+
 ### Registering Actions from Code
 
 Two steps are required to register an action from code:
 * First, an instance of the class derived from `AnAction` must be passed to the `registerAction()` method of [`ActionManager`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionManager.java), to associate the action with an ID.
 * Second, the action needs to be added to one or more groups.
   To get an instance of an action group by ID, it is necessary to call `ActionManager.getAction()` and cast the returned value to [`DefaultActionGroup`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java).
+
 
 ## Building a Toolbar/Popup Menu from Actions
 {id="buildingToolbarPopupMenu"}

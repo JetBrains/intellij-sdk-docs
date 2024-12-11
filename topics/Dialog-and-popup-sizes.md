@@ -224,13 +224,13 @@ The <control>Rename Inheritors</control> dialog has a table with FQNs. Add 350&n
 
 <table style="none" border="false">
     <tr>
-         <td width="100%">
+         <td width="706">
             <format color="369650" style="bold">Correct</format>
             <img src="dialog_popup_sizes_example_2_correct.png" alt=""/>
          </td>
     </tr>
     <tr>
-         <td width="100%">
+         <td width="706">
             <format color="DarkOrange" style="bold">Acceptable</format>
             <img src="dialog_popup_sizes_example_2_acceptable.png" alt=""/>
          </td>
@@ -243,13 +243,13 @@ Add horizontal and vertical 100&nbsp;px insets inside the <control>Diagram</cont
 
 <table style="none" border="false">
     <tr>
-         <td width="100%">
+         <td width="706">
             <format color="369650" style="bold">Correct</format>
             <img src="dialog_popup_sizes_example_3_correct.png" alt=""/>
          </td>
     </tr>
     <tr>
-         <td width="100%">
+         <td width="706">
             <format color="DarkOrange" style="bold">Acceptable</format>
             <img src="dialog_popup_sizes_example_3_acceptable.png" alt=""/>
          </td>
@@ -264,13 +264,13 @@ In most cases, an empty state takes less space than the minimum size of a compon
 
 <table style="none" border="false">
     <tr>
-         <td width="100%">
+         <td width="706">
             <format color="369650" style="bold">Correct</format>
             <img src="dialog_popup_sizes_empty_state_correct.png" alt=""/>
          </td>
     </tr>
     <tr>
-         <td width="100%">
+         <td width="706">
             <format color="E55765" style="bold">Incorrect</format>
             <img src="dialog_popup_sizes_empty_state_incorrect.png" alt=""/>
          </td>

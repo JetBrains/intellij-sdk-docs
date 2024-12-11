@@ -515,7 +515,8 @@
       <toc-element toc-title="Accessibility"/> <!--TODO-->
       <toc-element toc-title="Dangerous Actions"/> <!--TODO-->
       <toc-element topic="data_formats.md"/>
-      <toc-element toc-title="Default Values"/> <!--TODO-->
+      <toc-element toc-title="Default Values"/>
+      <toc-element topic="Dialog-and-popup-sizes.md"/> <!--TODO-->
       <toc-element toc-title="Discoverability"/> <!--TODO-->
       <toc-element topic="icons_style.md"/>
       <!--      <toc-element topic="icons.md"/>-->

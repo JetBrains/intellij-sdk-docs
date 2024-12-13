@@ -6,96 +6,43 @@
 
 Notifications inform users about the status of user or system initiated operations. They can have different actions depending on the message.
 
-There are four types of notifications:
+Types of notifications:
 
 - Alert
 - [Banner](banner.md)
-- [Balloon](balloon.md)
-- Tool window balloon
+- [Notification balloon](balloon.md)
 
 ## What notification to use
 
-Consider two factors when deciding which notification type to use.
+Choose a notification type based on a combination of two factors:
 
-**User action**
+1. Is **user action** required to proceed?
+    - [Required immediately](#action-is-required-immediately)
+    - [Required but not immediately](#action-is-required-but-not-immediately)
+    - [Not required](#action-is-not-required-to-proceed)
 
-<p> Are the users required to address the notification before they can proceed with current tasks?</p>
-  - Required immediately
-  - Required, but not immediately
-  - Not required
+2. From what **context** the notification was initiated?
+    - Editor
+    - Tool window
+    - Dialog
+    - Any other location
 
-**Context of trigger**
 
-<p> What initiated the notification? Does the initiation point to a particular context or location?</p>
-  - File tab
-  - Tool windows
-  - Other
+### Action is required immediately
+Use an alert in any context:
+![An alert 'Open Project' asking where to open 'myJavaProject' with options to cancel, open in a new window or this window](notification_type_alert.png){width=706}
 
-Use the following table to determine which notification to use based on the two factors:
+### Action is required but not immediately
+Use a [banner](banner.md) if the context is the editor, a tool window, or a dialog:
+![A banner in the editor with a warning 'Project JDK is not defined' and action 'Setup JDK'](notification_type_banner_action_required_editor.png){width=706}
 
-<table>
-  <tr>
-  <td width="16%">User action</td>
-  <td width="16%">Context</td>
-  <td width="16%">Type</td>
-  <td width="52%">Examples</td></tr>
-  <tr>
-    <td>Required immediately
-    </td>
-    <td>All
-    </td>
-    <td>Alerts
-    </td>
-    <td>
-      <p>Confirm Restart</p>
-      <p>Opening projects in new window</p>
-      <p>When trying to rename a method, but a conflict is found</p>
-      <p>Need a dependency before using a feature</p>
-      <p><img src="alert.png" width="406" /></p>
-   </td>
-  </tr>
-  <tr>
-    <td>Required, but not immediately</td>
-    <td>
-      <p>File tabs</p>
-      <p>Tool windows</p>
-    </td>
-    <td>Banners</td>
-    <td>
-      <p>Configuring SDK for your project</p>
-      <p>Requiring a Gradle sync for tools to work properly</p>
-      <p><img src="banner.png" width="431" /></p>
-    </td>
-    </tr>
-  <tr>
-    <td>Not required</td>
-    <td>Tool windows</td>
-    <td>Tool Window balloons</td>
-    <td>
-      <p>Status of task completion</p>
-      <p>When Find Usages is invoked on a method, use a tool window balloon to show the feedback since the results will be found in the Find tool window</p>
-      <p><img src="toolwindow_balloon.png" width="208" /></p>
-    </td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>All but file tabs or tool windows</td>
-    <td>Sticky balloons</td>
-    <td>
-      IDE and Plugin Updates
-      <img src="sticky_toast.png" width="391" />
-    </td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td>Timed balloons</td>
-    <td>
-      <p>Module imported</p>
-      <p>Framework detection</p>
-      <p><img src="timed_toast.png" width="391" /></p>
-    </td>
-  </tr>
-</table>
+In any other context, use a [notification balloon](balloon.md).
 
-**Exception**: If the action is highly recommended, consider using Banners across all files for visibility instead of Sticky balloon.
+### Action is not required to proceed
+Use a [notification balloon](balloon.md) in any context except dialogs:
+![A notification balloon warning about a shortcut conflict with a description and actions 'Modify shortcuts' and 'Don't show again'](notification_type_balloon_action_not_required.png){width=706}
+
+In a dialog, use a [banner](banner.md):
+![A banner in a dialog with a notification 'Interactive lesson available' and actions 'Open lesson' and an icon button to close the banner](notification_type_banner_action_required_dialog.png){width=706}
+
+

@@ -17,9 +17,9 @@ Types of notifications:
 Choose a notification type based on a combination of two factors:
 
 1. Is **user action** required to proceed?
-    - Required immediately
-    - Required but not immediately
-    - Not required
+    - [Required immediately](#action-is-required-immediately)
+    - [Required but not immediately](#action-is-required-but-not-immediately)
+    - [Not required](#action-is-not-required-to-proceed)
 
 2. From what **context** the notification was initiated?
     - Editor
@@ -36,7 +36,7 @@ Use an alert in any context:
 Use a [banner](banner.md) if the context is the editor, a tool window, or a dialog:
 ![A banner in the editor with a warning 'Project JDK is not defined' and action 'Setup JDK'](notification_type_banner_action_required_editor.png){width=706}
 
-A situation, where an action is required but not immediatly in any other context, is unlikely. However, if it occures, use a [notification balloon](balloon.md).
+In any other context, use a [notification balloon](balloon.md).
 
 ### Action is not required to proceed
 Use a [notification balloon](balloon.md) in any context except dialogs:

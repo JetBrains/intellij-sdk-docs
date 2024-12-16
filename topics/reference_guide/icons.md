@@ -8,22 +8,21 @@
 
 **Code**: [`AllIcons`](%gh-ic%/platform/util/ui/src/com/intellij/icons/AllIcons.java)
 
-**UI Guidelines:** [Icons list](https://intellij-icons.jetbrains.design), [Icons](icons_style.md)
+**UI Guidelines:** [Icons list](https://intellij-icons.jetbrains.design), [](icons_style.md)
 
 </tldr>
 
 Icons are used widely by IntelliJ Platform plugins.
 Plugins need icons mostly for [](basic_action_system.md), custom component renderers, [](tool_windows.md), etc.
 
-> Plugin _Logos_, which represent a plugin itself, have different requirements than icons used within a plugin.
+> A plugin _logo_, which represents the plugin itself, has different requirements than icons used within plugins.
 > For more information, see the [](plugin_icon_file.md) section.
->
 
 ## Platform vs. Custom Icons
 
 Plugins should reuse existing platform icons whenever possible.
 
-Use [Icons list](https://intellij-icons.jetbrains.design) to browse existing icons.
+Use the [Icons list](https://intellij-icons.jetbrains.design) to browse existing icons.
 Platform icons are located in [`AllIcons`](%gh-ic%/platform/util/ui/src/com/intellij/icons/AllIcons.java).
 Icons from plugins are located in the corresponding `<PLUGIN_NAME>Icons` class (e.g., [`GithubIcons`](%gh-ic%/plugins/github/gen/org/jetbrains/plugins/github/GithubIcons.java)).
 
@@ -50,8 +49,8 @@ Define a class/interface in a top-level package called `icons` holding icon cons
 package icons;
 
 public interface MyIcons {
-  Icon MyAction = IconLoader.getIcon("/icons/myAction.png", MyIcons.class);
-  Icon MyToolWindow = IconLoader.getIcon("/icons/myToolWindow.png", MyIcons.class);
+  Icon Action = IconLoader.getIcon("/icons/action.svg", MyIcons.class);
+  Icon ToolWindow = IconLoader.getIcon("/icons/toolWindow.svg", MyIcons.class);
 }
 ```
 
@@ -228,7 +227,7 @@ This allows supporting both UI variants at the same time, depending on what the 
 
 1. Create a new <path>expui</path> directory in the icon root directory ([Reference](#organizing-icons)).
 2. Copy all icons for the New UI into this directory.
-3. Create an empty <path>\$PluginName\$IconMappings.json</path> mapping file in the resources root directory.
+3. Create an empty <path>\$PluginName\$IconMappings.json</path> mapping file in the resources directory.
 4. Register <path>\$PluginName\$IconMappings.json</path> in <path>plugin.xml</path> via the `com.intellij.iconMapper` extension point.
 
 </procedure>

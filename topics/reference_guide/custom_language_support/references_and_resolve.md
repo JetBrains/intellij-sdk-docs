@@ -69,6 +69,8 @@ The targets to which the reference resolves are returned from the `multiResolve(
 The <ui-path>Navigate | Declaration or Usages</ui-path> action for such references allows the user to choose a navigation target in a popup.
 The implementation of `multiResolve()` can be also based on [`PsiScopeProcessor`](%gh-ic%/platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java), and can collect all valid targets for the reference instead of stopping when the first valid target is found.
 
+> Consider using [`PsiPolyVariantReferenceBase`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiPolyVariantReferenceBase.java) as a base class for `PsiPolyVariantReference` implementations.
+
 ## Additional Highlighting
 <primary-label ref="2022.2"/>
 

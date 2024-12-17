@@ -121,8 +121,9 @@ property ::= (KEY? SEPARATOR VALUE?) | KEY {
 ## Define a Reference
 
 Now define a reference class [`SimpleReference.java`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleReference.java) to resolve a property from its usage.
-This requires extending [`PsiReferenceBase`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReferenceBase.java) and implementing [`PsiPolyVariantReference`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiPolyVariantReference.java).
-The latter enables the reference to resolve to more than one element or to resolve result(s) for a superset of valid resolve cases.
+As a single reference can [resolve to multiple](references_and_resolve.md#resolving-to-multiple-targets) Simple properties, it implements [`PsiPolyVariantReference`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiPolyVariantReference.java).
+To simplify the implementation, [`PsiPolyVariantReferenceBase`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiPolyVariantReferenceBase.java) is used as a base class.
+
 
 ```java
 ```

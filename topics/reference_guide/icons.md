@@ -65,9 +65,9 @@ package icons
 
 object MyIcons {
   @JvmField
-  val MyAction = IconLoader.getIcon("/icons/myAction.png", javaClass)
+  val Action = IconLoader.getIcon("/icons/action.svg", javaClass)
   @JvmField
-  val MyToolWindow = IconLoader.getIcon("/icons/myToolWindow.png", javaClass)
+  val ToolWindow = IconLoader.getIcon("/icons/toolWindow.svg", javaClass)
 }
 ```
 

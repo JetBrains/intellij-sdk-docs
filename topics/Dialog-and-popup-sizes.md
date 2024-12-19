@@ -12,6 +12,8 @@ Follow these guidelines to select the correct size when creating a dialog or a p
 
 There are four recommended window sizes for dialogs: **extra small**, **small**, **medium**, and **large**. Select the size depending on the amount of content to keep the important information visible.
 
+![A preview of recommended window sizes for dialogs](dialog_popup_sizes.png){width="706"}
+
 <note>When setting the default size for your dialog, it should be impossible to make it smaller.</note>
 
 #### Extra small
@@ -20,8 +22,6 @@ Size: 350×250 px.
 
 Best for: several components that are stacked vertically.
 
-For example, the <control>Rename File</control> dialog has several input fields and checkboxes in one column:
-
 ![The Rename dialog with two input fields, two checkboxes, and actions in the dialog footer. The components are stacked vertically in one column](dialog_popup_sizes_extra_small.png){width="706"}
 
 #### Small
@@ -29,7 +29,6 @@ For example, the <control>Rename File</control> dialog has several input fields 
 Size: 500×350 px
 
 Best for:
-* Two-column layout with a tree on one column and several components that are stacked vertically in the second column.
 * Multiple components with short labels that are divided into two columns.
 * A full-width table with two or three columns.
 * A full-width code editor or snippet.
@@ -45,21 +44,20 @@ Size: 750×525 px
 Best for:
 * A full-width table with four or more columns.
 * Two-column layout with an image or a video in any of the columns. In this case, the image or the video takes the most space.
-* Three-column layout with a code editor or snippet in any of the columns.
+* Two-column layout with a code snippet or an input field with long text in any of the columns.
 * Two code editors or snippets in a row.
 
-For example, the <control>Image Viewer</control> dialog has a two-column layout with image or video in the first column and the list of input fields with actions in the second column:
+For example, the <control>Run/Debug Configuration</control> dialog has a two-column layout with a tree in the first column and the list of controls with long texts in the second column:
 
-![The Recent Files popup that has a two-column layout. There are quick links in the first column and the list of recent files with long names in the second column](dialog_popup_sizes_medium.png){width="706"}
+![The Run/Debug Configuration dialog that has a two-column layout. There is a nvigation in the first column and the list of settings in the second column](dialog_popup_sizes_medium.png){width="706"}
 
 #### Large
 
 Size: 1000×700 px
 
 Best for:
-* Two-column layout featuring components with long names in one of the columns.
-* Three-column layout featuring a table in one of the columns.
-* Four-or-more-column layout possibly featuring a code editor or snippet in any of the columns.
+* Two-column layout with long names, code editor, code snippet.
+* Three-or-more-column layout regardless of the content.
 
 For example, <control>Code Style</control> settings for Java in the <control>Settings</control> dialog. The dialog has three columns with a table and a code snippet in different columns:
 
@@ -77,8 +75,8 @@ When a user changes an adaptive popup’s size, the size is saved and the adapti
 
 ### Tool windows
 
-* Vertical tool windows should have the default size set to 250×500&nbsp;px.
-* Horizontal tool windows should have the default size set to 500×250&nbsp;px.
+* Vertical tool windows should have the min size set to 250×500&nbsp;px.
+* Horizontal tool windows should have the min size set to 500×250&nbsp;px.
 
 The default sizes should be set for all the states of the <control>View Mode</control>.
 

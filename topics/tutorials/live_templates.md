@@ -54,5 +54,6 @@ public void testMethod() {
 For more information about creating Custom Live Templates, refer to the [corresponding documentation](https://www.jetbrains.com/idea/help/creating-and-editing-live-templates.html).
 
 These sections describe how to add Live Templates, and their associated building blocks, to plugins.
- * [Providing Live Templates](providing_live_templates.md)
- * [Creating New Functions for Live Templates](creating_live_template_functions.md)
+ * [](providing_live_templates.md)
+   * [](live_templates_configuration_file.md)
+ * [](creating_live_template_functions.md)

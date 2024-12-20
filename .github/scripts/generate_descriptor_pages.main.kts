@@ -3,8 +3,7 @@
 // Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 
 /**
- * Generates the elements content for the plugin_configuration_file.md page.
- * It fetches the elements data from <TODO>.
+ * Generates the elements content for pages defined in [descriptors].
  */
 
 @file:DependsOn("org.yaml:snakeyaml:2.3")
@@ -44,7 +43,8 @@ val renderedPageNameToTopicNames = mutableMapOf<String, String>().apply {
 val renderedElementPaths = mutableListOf<String>()
 
 val descriptors = listOf(
-  DescriptorInfo("https://jb.gg/sdk-docs/plugin-descriptor.yaml", "topics/basics/plugin_structure/plugin_configuration_file.md")
+  DescriptorInfo("https://jb.gg/sdk-docs/plugin-descriptor.yaml", "topics/basics/plugin_structure/plugin_configuration_file.md"),
+  DescriptorInfo("https://jb.gg/sdk-docs/templates-descriptor.yaml", "topics/tutorials/live_templates/live_templates_configuration_file.md")
 )
 
 descriptors.forEach { descriptor ->

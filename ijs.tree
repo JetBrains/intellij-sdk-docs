@@ -195,7 +195,9 @@
         <toc-element topic="advanced_postfix_templates.md"/>
       </toc-element>
       <toc-element topic="live_templates.md">
-        <toc-element topic="providing_live_templates.md" accepts-web-file-names="template-support.html"/>
+        <toc-element topic="providing_live_templates.md" accepts-web-file-names="template-support.html">
+          <toc-element topic="live_templates_configuration_file.md"/>
+        </toc-element>
         <toc-element topic="creating_live_template_functions.md" accepts-web-file-names="new-macros.html"/>
       </toc-element>
       <toc-element topic="file_and_code_templates.md" accepts-web-file-names="templates.html">

@@ -35,6 +35,10 @@ There are many [predefined functions](https://www.jetbrains.com/help/idea/templa
 Once the Live Template produces the expected result, [export the Live Template](https://www.jetbrains.com/help/idea/sharing-live-templates.html).
 The export produces a file called <path>Markdown.xml</path> with the following contents:
 
+> See [](live_templates_configuration_file.md) for a detailed description of the templates XML file structure and elements.
+>
+{style="note"}
+
 ```xml
 <templateSet group="Markdown">
   <template

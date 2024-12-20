@@ -12,6 +12,12 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2024
 
+### December
+{december-24}
+
+Live Templates Configuration File
+: Added a page describing the structure and elements of [live templates configuration files](live_templates_configuration_file.md).
+
 ### August
 {august-24}
 

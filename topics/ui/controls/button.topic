@@ -76,22 +76,18 @@
             </p></note>
             </chapter>
             <chapter title="Be specific" id="be-specific">
-            <p>The button should answer the question in the title, so the user can skip the description. Prefer specific
+                <p>The button should answer the question in the title, so the user can skip the description. Prefer specific
                 labels over
-                generic ones.</p>
+                generic ones:</p>
+                <format color="369650" style="bold">Correct</format>
+                <img src="button_delete_dialog.png" alt="Specific button in a dialog" width="706"/>
+                <format color="E55765" style="bold">Incorrect</format>
+                <img src="button_delete_dialog_incorrect.png" alt="Generic button in a dialog" width="706"/>
                 <note>
                     Exception: the <control>Cancel</control> button if it's clear what action is being canceled.
                     For example, use
-                    <control>Cancel</control> instead of <control>Don’t Create</control>.
+                    <control>Cancel</control> instead of <control>Don’t Delete</control>.
                 </note>
-            <table style="none" border="false" column-width="fixed">
-                <tr>
-                    <td><format color="369650" style="bold">Correct</format>
-                        <img src="button_default_save.png" alt="A correct button with a clear 'Save' label" width="378"/></td>
-                    <td><format color="E55765" style="bold">Incorrect</format>
-                        <img src="button_default_OK.png" alt="An incorrect button with a generic 'OK' label" width="378"/></td>
-                </tr>
-            </table>
                 <p>Do not
                     use the word
                     <control>Now</control> in labels because buttons always trigger an immediate action:

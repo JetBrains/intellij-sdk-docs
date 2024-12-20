@@ -399,7 +399,7 @@ fun String.cleanupElementLinks(): String {
 }
 
 fun String.removeAttributeLinks(): String {
-  val attributeLinkRegex = Regex("\\[(.*?)]\\(#attribute:.*?\\)")
+  val attributeLinkRegex = Regex("\\[([^\\[\\]]*?)]\\(#attribute:.*?\\)")
   return attributeLinkRegex.replace(this) { matchResult ->
     matchResult.groupValues[1]
   }

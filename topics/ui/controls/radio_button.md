@@ -10,54 +10,73 @@
 
 </tldr>
 
-![](radio_example.png){width=213}
+![](01_Radio Button.png){width=706}
 
 ## When to use
 
 Use a radio button group to choose one option from 2 to 4 mutually exclusive options.
 
-Do **not** use radio buttons if:
+## When not to use
 
-* Several options in a group can be selected. Use a group of [checkboxes](checkbox.md) instead.
-* There are only 2 opposite yes/no options. Use a checkbox instead.
+### Several options in a group can be selected
+Use a group of [checkboxes](checkbox.md) instead.
 
-![](tworadio_checkbox.png){width=427}
+### Binary Yes/No Options
+There are only 2 opposite yes/no options. Use a checkbox instead.
 
-* There are 5 and more options that can be charted on an axis, e.g., time delay. Use a slider instead.
+<table style="none" border="false">
+  <tr>
+    <td width="50%">
+      <format color="Green" style="bold">Correct</format><img src="02_When_to_use_correct.png" alt="A correct example of using a checkbox instead of a radiobutton"/>
+    </td>
+    <td width="50%">
+      <format color="Red" style="bold">Incorrect</format><img src="02_When_to_use_incorrect.png" alt="An incorrect example of using a radiobutton instead of a checkbox"/>
+    </td>
+  </tr>
+</table>
 
-* There are 5 and more options. Use a [drop-down list](drop_down.md):
+### 5 and more options
+If the options have short labels, use a segmented button. Or, if the options can be represented on an axis, such as a time delay, use a slider instead.
 
-  <table>
-      <tr>
-          <td width="40%"><format color="Red" style="bold">Incorrect</format></td>
-          <td width="60%"><format color="Green" style="bold">Correct</format></td>
-      </tr>
-      <tr>
-          <td><img src="dropdown_incorrect.png" alt="" width="189" /></td>
-          <td><img src="dropdown_correct.png" alt="" width="351" /></td>
-      </tr>
-  </table>
+![](03_When_to_use_Segmented_button.png){width=706}
 
+For other cases with 5 or more options use a [drop-down list](drop_down.md):
+
+  <table style="none" border="false">
+  <tr>
+    <td width="50%">
+      <format color="Green" style="bold">Correct</format><img src="04_When_to_use_correct.png" alt="A correct example of using a checkbox instead of a radiobutton"/>
+    </td>
+    <td width="50%">
+      <format color="Red" style="bold">Incorrect</format><img src="04_When_to_use_incorrect.png" alt="An incorrect example of using a radiobutton instead of a checkbox"/>
+    </td>
+  </tr>
+</table>
+
+### Use dropdown
 Consider using a [drop-down list](drop_down.md) if:
-
 * The screen space is limited.
 * The option might be used less often than other options on the screen.
 * There are other drop-down lists in the same group of UI components. A radio button group is more noticeable than a drop-down list, so it will look like a more important setting.
 * There is a combination of several UI components for one setting:
-  ![](dropdown.png){width=575}
+  ![](05_When_to_use_Segmented_button.png){width=706}
   *The automatic updates setting consists of a checkbox, three lengthy-labeled options in a dropdown and a button.*
 
 ## How to use
 
 ### Label
 
-A label accompanies each checkbox and is placed next to it.
 
-![](radiobutton_label.png){width=197}
-
-If a label is long, split it into two lines. Avoid labels that take more than two lines. See recommendations on writing concise labels below.
-
-![](twoline_label.png){width=195}
+<table style="none" border="false" column-width="fixed">
+    <tr>
+      <td><img src="06_How_to_use.png" alt="Using links instead of buttons" width="378"/></td>
+      <td><p>A label accompanies each checkbox and is placed next to it.</p></td>
+    </tr>
+    <tr>
+      <td><img src="07_How_to_use.png" alt="Using links instead of buttons" width="378"/></td>
+      <td><p>If a label is long, split it into two lines. Avoid labels that take more than two lines. See recommendations on writing concise labels below.</p></td>
+    </tr>
+</table>
 
 To implement this, use HTML formatting:
 <tabs group="languages">
@@ -89,19 +108,22 @@ Use the imperative form of verbs.
 
 Do not use negation in labels as it complicates understanding.
 
-<format color="Red" style="bold">Incorrect</format>
-
-![](answeryes_incorrect.png){width=264}
-
-<format color="Green" style="bold">Correct</format>
-
-![](answeryes_correct.png){width=139}
+<table style="none" border="false">
+  <tr>
+    <td width="50%">
+      <format color="Green" style="bold">Correct</format><img src="08_How_to_use_correct.png" alt="A correct example of using a checkbox instead of a radiobutton"/>
+    </td>
+    <td width="50%">
+      <format color="Red" style="bold">Incorrect</format><img src="08_How_to_use_incorrect.png" alt="An incorrect example of using a radiobutton instead of a checkbox"/>
+    </td>
+  </tr>
+</table>
 
 Make labels short and intelligible — see [Writing short and clear text](writing_short.md).
 
 ### Group label
 
-![](grouplabel.png){width=267}
+![](09_How_to_use.png){width=706}
 
 Always start a radio button group with a group label. It explains what the options are for.
 

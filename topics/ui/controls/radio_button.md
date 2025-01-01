@@ -22,7 +22,7 @@ Use a radio button group to choose one option from 2 to 4 mutually exclusive opt
 Use a group of [checkboxes](checkbox.md) instead.
 
 ### Binary Yes/No Options
-There are only 2 opposite yes/no options. Use a checkbox instead.
+For only two opposing yes/no options, use a checkbox instead.
 
 <table style="none" border="false">
   <tr>

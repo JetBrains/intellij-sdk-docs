@@ -66,7 +66,6 @@ Consider using a [drop-down list](drop_down.md) if:
 
 ### Label
 
-
 <table style="none" border="false" column-width="fixed">
     <tr>
       <td><img src="06_How_to_use.png" alt="Using links instead of buttons" width="378"/></td>

@@ -27,10 +27,10 @@ For only two opposing yes/no options, use a checkbox instead.
 <table style="none" border="false">
   <tr>
     <td width="50%">
-      <format color="Green" style="bold">Correct</format><img src="02_When_to_use_correct.png" alt="A correct example of using a checkbox instead of a radiobutton"/>
+      <format color="Green" style="bold">Correct</format><img src="02_When_to_use_correct.png" alt="A correct example of using a checkbox instead of radiobuttons"/>
     </td>
     <td width="50%">
-      <format color="Red" style="bold">Incorrect</format><img src="02_When_to_use_incorrect.png" alt="An incorrect example of using a radiobutton instead of a checkbox"/>
+      <format color="Red" style="bold">Incorrect</format><img src="02_When_to_use_incorrect.png" alt="An incorrect example of using radiobuttons instead of a checkbox"/>
     </td>
   </tr>
 </table>
@@ -45,10 +45,10 @@ For other cases with 5 or more options use a [drop-down list](drop_down.md):
   <table style="none" border="false">
   <tr>
     <td width="50%">
-      <format color="Green" style="bold">Correct</format><img src="04_When_to_use_correct.png" alt="A correct example of using a drop-down list instead of radio buttons"/>
+      <format color="Green" style="bold">Correct</format><img src="04_When_to_use_correct.png" alt="A correct example of using a drop-down list instead of radiobuttons"/>
     </td>
     <td width="50%">
-      <format color="Red" style="bold">Incorrect</format><img src="04_When_to_use_incorrect.png" alt="An incorrect example of using a radio buttons with 5 or more options"/>
+      <format color="Red" style="bold">Incorrect</format><img src="04_When_to_use_incorrect.png" alt="An incorrect example of using radiobuttons for a list of 5 or more options"/>
     </td>
   </tr>
 </table>
@@ -110,10 +110,10 @@ Do not use negation in labels as it complicates understanding.
 <table style="none" border="false">
   <tr>
     <td width="50%">
-      <format color="Green" style="bold">Correct</format><img src="08_How_to_use_correct.png" alt="A correct example of using a checkbox instead of a radiobutton"/>
+      <format color="Green" style="bold">Correct</format><img src="08_How_to_use_correct.png" alt="A correct example of label"/>
     </td>
     <td width="50%">
-      <format color="Red" style="bold">Incorrect</format><img src="08_How_to_use_incorrect.png" alt="An incorrect example of using a radiobutton instead of a checkbox"/>
+      <format color="Red" style="bold">Incorrect</format><img src="08_How_to_use_incorrect.png" alt="An incorrect example of label"/>
     </td>
   </tr>
 </table>

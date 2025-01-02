@@ -55,7 +55,7 @@ If the setting is in a tree or menu, use the toggle button label to specify wher
 ![](label_menu_se.png){width=676 style=block}
 *The same setting in search results; separate the first menu level with a vertical bar, and separate others with a colon*
 
-Refer to [checkbox](checkbox.md) for writing checkbox labels and menu labels.
+Refer to [checkbox](checkbox.topic) for writing checkbox labels and menu labels.
 
 [//]: # (TODO: and [menu]&#40;menu_list.md&#41;)
 

@@ -45,10 +45,10 @@ For other cases with 5 or more options use a [drop-down list](drop_down.md):
   <table style="none" border="false">
   <tr>
     <td width="50%">
-      <format color="Green" style="bold">Correct</format><img src="04_When_to_use_correct.png" alt="A correct example of using a checkbox instead of a radiobutton"/>
+      <format color="Green" style="bold">Correct</format><img src="04_When_to_use_correct.png" alt="A correct example of using a drop-down list instead of radio buttons"/>
     </td>
     <td width="50%">
-      <format color="Red" style="bold">Incorrect</format><img src="04_When_to_use_incorrect.png" alt="An incorrect example of using a radiobutton instead of a checkbox"/>
+      <format color="Red" style="bold">Incorrect</format><img src="04_When_to_use_incorrect.png" alt="An incorrect example of using a radio buttons with 5 or more options"/>
     </td>
   </tr>
 </table>
@@ -68,11 +68,11 @@ Consider using a [drop-down list](drop_down.md) if:
 
 <table style="none" border="false" column-width="fixed">
     <tr>
-      <td><img src="06_How_to_use.png" alt="Using links instead of buttons" width="378"/></td>
+      <td><img src="06_How_to_use.png" alt="Label example" width="378"/></td>
       <td><p>A label accompanies each checkbox and is placed next to it.</p></td>
     </tr>
     <tr>
-      <td><img src="07_How_to_use.png" alt="Using links instead of buttons" width="378"/></td>
+      <td><img src="07_How_to_use.png" alt="An example of a label spanning two lines." width="378"/></td>
       <td><p>If a label is long, split it into two lines. Avoid labels that take more than two lines. See recommendations on writing concise labels below.</p></td>
     </tr>
 </table>

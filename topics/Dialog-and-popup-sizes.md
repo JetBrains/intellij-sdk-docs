@@ -65,7 +65,15 @@ For example, <control>Code Style</control> settings for Java in the <control>Set
 
 ### Popup
 
-Popups should have the same default sizes as dialogs, but unlike dialogs, they can have adaptive height. If the popup displays different amounts of content depending on the situation, adapt the popup size to the content on opening.
+#### Minimum width
+
+Popups should have the same default minimum width as dialogs.
+
+![](){width="706"}
+
+If a popup is smaller than the <control>extra small</control> size, adapt the width based on the content inside.
+
+, but unlike dialogs, they can have adaptive height. If the popup displays different amounts of content depending on the situation, adapt the popup size to the content on opening.
 
 For example, the height of the <control>Git Brunches</control> popup adapts to the amount of the content inside:
 

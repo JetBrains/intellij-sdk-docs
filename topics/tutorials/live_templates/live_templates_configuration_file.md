@@ -33,7 +33,7 @@ This page lists and describes all the elements and attributes used in live templ
 
 The live templates file root element.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : **yes**
 
@@ -57,7 +57,7 @@ Children
 
 Describes a template.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -128,7 +128,7 @@ A single template can provide multiple variables.
 The order of the variables determines the order in which the IDE will switch between
 the corresponding input fields when the template is expanded.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -193,7 +193,7 @@ and referencing the `PLACEHOLDER` variable if the clipboard content is empty:
 Defines a mapping of a context type (for example, a Java method, a Markdown file) to applicability of the template
 in this context type.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -217,7 +217,7 @@ Example
 An entry specifying whether a given context type defined by the
 `name` attribute is applicable for the template.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 

@@ -90,7 +90,7 @@ Deprecated elements are omitted in the list below.
 
 The <path>plugin.xml</path> file root element.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : **yes**
 
@@ -140,7 +140,7 @@ Please use characters, numbers, and `'.'`/`'-'`/`'_'` symbols only and keep it r
 >
 {style="warning"}
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no; ignored in an [additional config file](#additional-plugin-configuration-files)<br/>
 **It is highly recommended to set in <path>plugin.xml</path> file.**<br/>
@@ -170,7 +170,7 @@ Example
 
 The user-visible plugin display name (Title Case).
 
-{style="narrow"}
+{type="narrow"}
 Required
 : **yes**; ignored in an [additional config file](#additional-plugin-configuration-files)
 
@@ -194,7 +194,7 @@ The plugin version displayed in the <control>Plugins</control> settings dialog a
 [JetBrains Marketplace](https://plugins.jetbrains.com) plugin page.
 Plugins uploaded to the JetBrains Marketplace must follow semantic versioning.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : **yes**; ignored in an [additional config file](#additional-plugin-configuration-files)<br/>
 The element can be skipped in the source <path>plugin.xml</path> file if the Gradle plugin `patchPluginXml` task
@@ -221,7 +221,7 @@ Example
 [Paid](https://plugins.jetbrains.com/build-and-market) or
 [Freemium](https://plugins.jetbrains.com/docs/marketplace/freemium.html) plugin descriptor.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : only for paid or freemium plugins; ignored in an [additional config file](#additional-plugin-configuration-files)<br/>
 **Do not add `<product-descriptor>` element in a free plugin.**
@@ -258,7 +258,7 @@ Attributes
 
 The plugin's range of compatible IntelliJ-based IDE versions.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : **yes**; ignored in an [additional config file](#additional-plugin-configuration-files)<br/>
 The element can be skipped in the source <path>plugin.xml</path> file if the Gradle plugin `patchPluginXml` task
@@ -302,7 +302,7 @@ Examples
 The vendor name or organization ID (if created) in the <control>Plugins</control> settings dialog and on
 the [JetBrains Marketplace](https://plugins.jetbrains.com) plugin page.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : **yes**; ignored in an [additional config file](#additional-plugin-configuration-files)
 
@@ -347,7 +347,7 @@ the <control>Plugins</control> settings dialog.
 Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed and must be wrapped into
 `<![CDATA[` ... `]]>` section.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : **yes**; ignored in an [additional config file](#additional-plugin-configuration-files)<br/>
 The element can be skipped in the source <path>plugin.xml</path> file if the Gradle plugin `patchPluginXml` task
@@ -387,7 +387,7 @@ the <control>Plugins</control> settings dialog.
 Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed and must be wrapped into
 `<![CDATA[` ... `]]>` section.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no; ignored in an [additional config file](#additional-plugin-configuration-files)<br/>
 The element can be skipped in the source <path>plugin.xml</path> file if the Gradle plugin `patchPluginXml` task
@@ -426,7 +426,7 @@ Example
 Specifies a dependency on another plugin or a module of an IntelliJ Platform-based product.
 A single [`<idea-plugin>`](#idea-plugin) element can contain multiple `<depends>` elements.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no; in most cases dependency on the
 [platform](plugin_compatibility.md#modules-available-in-all-products)
@@ -492,7 +492,7 @@ Examples
 
 Declares incompatibility with a provided module.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no; ignored in an [additional config file](#additional-plugin-configuration-files)
 
@@ -516,7 +516,7 @@ Example
 
 Defines the plugin extensions.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -565,7 +565,7 @@ Examples
 
 Extension points defined by the plugin.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -585,7 +585,7 @@ Children
 A single extension point entry of the [`<extensionPoints>`](#idea-plugin__extensionPoints) defined by the plugin.
 A single [`<extensionPoints>`](#idea-plugin__extensionPoints) element can contain multiple `<extensionPoint>` elements.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -640,7 +640,7 @@ Specifies the required parent type for class names provided in extension point t
 A single [`<extensionPoint>`](#idea-plugin__extensionPoints__extensionPoint) element can contain
 multiple `<with>` elements.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -701,7 +701,7 @@ A resource bundle to be used with message key attributes in extension declaratio
 [action and group localization](basic_action_system.md#localizing-actions-and-groups).
 A single [`<idea-plugin>`](#idea-plugin) element can contain multiple `<resource-bundle>` elements.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -723,7 +723,7 @@ Example
 
 Defines the plugin actions.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -765,7 +765,7 @@ Example
 A single action entry of the [`<actions>`](#idea-plugin__actions) implemented by the plugin.
 A single `<actions>` element can contain multiple `<action>` elements.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -830,7 +830,7 @@ the [`<actions>`](#idea-plugin__actions) element:
 Specifies that the action should be added to an existing [`<group>`](#idea-plugin__actions__group).
 A single action can be added to multiple groups.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -868,7 +868,7 @@ Example
 Specifies the keyboard shortcut for the action.
 A single action can have several keyboard shortcuts.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -924,7 +924,7 @@ Examples
 Specifies the mouse shortcut for the action.
 A single action can have several mouse shortcuts.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -979,13 +979,13 @@ Examples
 
 Defines an alternate menu action or group text depending on context: menu location, toolbar, and other.
 
-{style="narrow"}
+{type="narrow"}
 Supported
 :
 2020.1+ for actions<br/>
 2020.3+ for groups
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -1037,7 +1037,7 @@ Defines an alternative text for searching the action in <ui-path>Help | Find Act
 <ui-path>Navigate | Search Everywhere</ui-path> popups.
 A single action can have multiple synonyms.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -1065,7 +1065,7 @@ Defines an abbreviation for searching the action in <ui-path>Help | Find Action.
 <ui-path>Navigate | Search Everywhere</ui-path> popups.
 A single action can have multiple abbreviations.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -1096,7 +1096,7 @@ Defines an action group.
 The [`<action>`](#idea-plugin__actions__action), `<group>` and [`<separator>`](#idea-plugin__actions__group__separator) elements defined inside the group are automatically included in it.
 The `<group>` elements can be nested.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -1182,7 +1182,7 @@ Allows adding an existing action to the group.
 The element can be used directly under the [`<actions>`](#idea-plugin__actions) element, or in
 the [`<group>`](#idea-plugin__actions__group) element.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -1225,7 +1225,7 @@ The element can be used directly under the [`<actions>`](#idea-plugin__actions) 
 [`<add-to-group>`](#idea-plugin__actions__action__add-to-group) element defining the target group, or in the
 [`<group>`](#idea-plugin__actions__group) element.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -1288,7 +1288,7 @@ Examples
 
 Defines the application-level listeners.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -1311,7 +1311,7 @@ Defines a single application or project-level listener.
 A single [`<applicationListeners>`](#idea-plugin__applicationListeners) or
 [`<projectListeners>`](#idea-plugin__projectListeners) can contain multiple `<listener>` elements.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -1361,7 +1361,7 @@ Example
 
 Defines the project-level listeners.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -1381,12 +1381,12 @@ Children
 
 Defines a list of application [components](plugin_components.md).
 
-{style="narrow"}
+{type="narrow"}
 Deprecated
 :
 since 2020.1
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -1408,12 +1408,12 @@ A single [`<application-components>`](#idea-plugin__application-components),
 [`<project-components>`](#idea-plugin__project-components), or [`<module-components>`](#idea-plugin__module-components)
 element can contain multiple `<component>` elements.
 
-{style="narrow"}
+{type="narrow"}
 Deprecated
 :
 since 2020.1
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -1435,12 +1435,12 @@ Children
 
 The fully qualified name of the component implementation class.
 
-{style="narrow"}
+{type="narrow"}
 Deprecated
 :
 since 2020.1
 
-{style="narrow"}
+{type="narrow"}
 Required
 : **yes**
 
@@ -1455,12 +1455,12 @@ Required
 The fully qualified name of the component interface class. If not specified, the interface will be the same as
 defined by [`<implementation-class>`](#idea-plugin__application-components__component__interface-class) element.
 
-{style="narrow"}
+{type="narrow"}
 Deprecated
 :
 since 2020.1
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -1474,12 +1474,12 @@ Required
 
 The fully qualified name of the component implementation class to be used when the IDE runs in headless mode.
 
-{style="narrow"}
+{type="narrow"}
 Deprecated
 :
 since 2020.1
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -1494,12 +1494,12 @@ Required
 Allows to provide additional component options.
 A single [`<component>`](#idea-plugin__application-components__component) element can contain multiple `<option>` elements.
 
-{style="narrow"}
+{type="narrow"}
 Deprecated
 :
 since 2020.1
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -1523,12 +1523,12 @@ Attributes
 If present, the component is instantiated also for the default project. It takes effect only when used inside
 [`<project-components>`](#idea-plugin__project-components) element.
 
-{style="narrow"}
+{type="narrow"}
 Deprecated
 :
 since 2020.1
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -1544,12 +1544,12 @@ Required
 
 Defines a list of project [components](plugin_components.md).
 
-{style="narrow"}
+{type="narrow"}
 Deprecated
 :
 since 2020.1
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 
@@ -1569,12 +1569,12 @@ Children
 
 Defines a list of module [components](plugin_components.md).
 
-{style="narrow"}
+{type="narrow"}
 Deprecated
 :
 since 2020.1
 
-{style="narrow"}
+{type="narrow"}
 Required
 : no
 

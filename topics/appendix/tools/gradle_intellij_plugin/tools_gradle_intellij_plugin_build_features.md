@@ -27,7 +27,7 @@ org.jetbrains.intellij.buildFeature.selfUpdateCheck=false
 
 When the [`buildSearchableOptions`](tools_gradle_intellij_plugin.md#tasks-buildsearchableoptions) doesn't produce any results, e.g., when the plugin doesn't implement any [Settings](settings.md), a warning is shown to suggest [disabling the task](tools_gradle_intellij_plugin_faq.md#how-to-disable-building-searchable-options) for better performance.
 
-{style="narrow"}
+{type="narrow"}
 Default value
 : `true`
 
@@ -44,7 +44,7 @@ Due to IDE limitations, it is impossible to run the IDE in headless mode to coll
 As paid plugins require providing a valid license and presenting a UI dialog, it is impossible to handle such a case, and the task will fail.
 This feature flag displays the given warning when the task is run by a paid plugin.
 
-{style="narrow"}
+{type="narrow"}
 Default value
 : `true`
 
@@ -67,7 +67,7 @@ Feature respects the Gradle [`--offline`](https://docs.gradle.org/current/usergu
 
 > It is strongly suggested to always use the latest available version. Older plugin versions may also not fully support the latest IDE releases.
 
-{style="narrow"}
+{type="narrow"}
 Default value
 : `true`
 

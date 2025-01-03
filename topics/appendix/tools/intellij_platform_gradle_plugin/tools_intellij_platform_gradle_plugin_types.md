@@ -113,7 +113,7 @@ Validates that the resolved IntelliJ Platform is supported by checking against t
 
 If the provided version is lower, an `IllegalArgumentException` is thrown with an appropriate message.
 
-{style="narrow"}
+{type="narrow"}
 Throws
 : `IllegalArgumentException`
 

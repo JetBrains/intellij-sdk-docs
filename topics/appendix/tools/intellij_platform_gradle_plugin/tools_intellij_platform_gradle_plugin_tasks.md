@@ -52,7 +52,7 @@ By default, the `archiveBaseName` is set to the plugin name specified in the <pa
 
 Specifies the archive file representing the output file produced by the task.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `RegularFileProperty`
 
@@ -87,7 +87,7 @@ It is possible to mute this warning with the [`paidPluginSearchableOptionsWarnin
 
 Specifies the directory where searchable options will be generated.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `DirectoryProperty`
 
@@ -101,7 +101,7 @@ Default value
 Emits a warning when the task is executed by a paid plugin.
 Can be disabled with the [`paidPluginSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_gradle_properties.md#paidPluginSearchableOptionsWarning) Gradle property.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -138,7 +138,7 @@ The final JAR is also combined with plugin modules marked using the [`pluginModu
 
 Specifies the archive file representing the output file produced by the task.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `RegularFileProperty`
 
@@ -171,7 +171,7 @@ This file is bundled into the output JAR files produced by [`composedJar`](#comp
 
 The IntelliJ Platform Gradle Plugin version.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -181,7 +181,7 @@ Type
 
 The version of currently used Gradle.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -191,7 +191,7 @@ Type
 
 The [ProductInfo] instance of the current IntelliJ Platform.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<ProductInfo>`
 
@@ -201,7 +201,7 @@ Type
 
 Plugin version.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -211,7 +211,7 @@ Type
 
 Location of the generated <path>MANIFEST.MF</path> file.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `RegularFileProperty`
 
@@ -247,7 +247,7 @@ To make the Coroutines Java Agent available for the task, inherit from [`Corouti
 
 Determines if the operation is running in offline mode and depends on Gradle start parameters.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -264,7 +264,7 @@ See also:
 
 Represents the property for checking if self-update checks are enabled.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -278,7 +278,7 @@ Default value
 Represents a lock file used to limit the plugin version checks in time.
 If the file is missing and other conditions are met, the version check is performed.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `RegularFileProperty`
 
@@ -288,7 +288,7 @@ Type
 
 Specifies the Java Agent file for the Coroutines library required to enable coroutines debugging.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -301,7 +301,7 @@ Default value
 
 Represents the current version of the plugin.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -311,7 +311,7 @@ Type
 
 Represents the latest version of the plugin.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -321,7 +321,7 @@ Type
 
 Defines that the current project has only the [](tools_intellij_platform_gradle_plugin_plugins.md#module) applied but no [](tools_intellij_platform_gradle_plugin_plugins.md#platform).
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -360,7 +360,7 @@ See also:
 
 Specifies the compile classpath of the project's source set.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `ConfigurableFileCollection`
 
@@ -370,7 +370,7 @@ Type
 
 Specifies the list of directories with compiled classes.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `ConfigurableFileCollection`
 
@@ -383,7 +383,7 @@ Default value
 
 Specifies the list of directories with GUI Designer form files.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `ConfigurableFileCollection`
 
@@ -396,7 +396,7 @@ Default value:
 
 Specifies the location of the source code.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `ConfigurableFileCollection`
 
@@ -406,7 +406,7 @@ Type
 
 Enables `INFO` logging when running Ant tasks.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -419,7 +419,7 @@ Default value:
 
 Specifies the output directory for instrumented classes.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `DirectoryProperty`
 
@@ -469,7 +469,7 @@ Creates a JAR file with searchable options to be distributed with the plugin.
 
 Specifies the directory where the JAR file will be created.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `DirectoryProperty`
 
@@ -483,7 +483,7 @@ Default value
 Specifies if a warning is emitted when no searchable options are found.
 Can be disabled with [`noSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_gradle_properties.md#noSearchableOptionsWarning) Gradle property.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -515,7 +515,7 @@ Patches <path>plugin.xml</path> file with values provided with the [`intelliJPla
 
 Specifies the input <path>plugin.xml</path> file, which by default is picked from the main resource location.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `RegularFileProperty`
 
@@ -528,7 +528,7 @@ Default value
 
 Specifies the patched output <path>plugin.xml</path> file, which by default is written to a temporary task-specific directory within the <path>build</path> directory.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `RegularFileProperty`
 
@@ -546,7 +546,7 @@ The provided value will be assigned to the [`<id>`](plugin_configuration_file.md
 Please use characters, numbers, and `.`/`-`/`_` symbols only and keep it reasonably short.
 
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -561,7 +561,7 @@ Specifies the user-visible plugin name.
 It should use Title Case.
 The provided value will be assigned to the [`<name>`](plugin_configuration_file.md#idea-plugin__name) element.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -576,7 +576,7 @@ Specifies the plugin version displayed in the <control>Plugins</control> setting
 Plugins uploaded to [JetBrains Marketplace](https://plugins.jetbrains.com) must follow [semantic versioning](https://plugins.jetbrains.com/docs/marketplace/semver.htm).
 The provided value will be assigned to the [`<version>`](plugin_configuration_file.md#idea-plugin__version) element.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -592,7 +592,7 @@ Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed
 The description content is automatically wrapped in `<![CDATA[... ]]>`.
 The provided value will be assigned to the [`<description>`](plugin_configuration_file.md#idea-plugin__description) element.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -612,7 +612,7 @@ The provided value will be assigned to the [`<change-notes>`](plugin_configurati
 
 To maintain and generate an up-to-date changelog, try using [Gradle Changelog Plugin](https://github.com/JetBrains/gradle-changelog-plugin).
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -627,7 +627,7 @@ The plugin product code used in the JetBrains Sales System.
 The code must be agreed with JetBrains in advance and follow [the requirements](https://plugins.jetbrains.com/docs/marketplace/obtain-a-product-code-from-jetbrains.html).
 The provided value will be assigned to the [`<product-descriptor code="">`](plugin_configuration_file.md#idea-plugin__product-descriptor) element attribute.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -641,7 +641,7 @@ Default value
 Date of the major version release in the `YYYYMMDD` format.
 The provided value will be assigned to the [`<product-descriptor release-date="">`](plugin_configuration_file.md#idea-plugin__product-descriptor) element attribute.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -655,7 +655,7 @@ Default value
 Specifies the major version of the plugin in a special number format used for paid plugins on [JetBrains Marketplace](https://plugins.jetbrains.com/docs/marketplace/add-required-parameters.html).
 The provided value will be assigned to the [`<product-descriptor release-version="">`](plugin_configuration_file.md#idea-plugin__product-descriptor) element attribute.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -669,7 +669,7 @@ Default value
 Specifies the boolean value determining whether the plugin is a [Freemium](https://plugins.jetbrains.com/docs/marketplace/freemium.html) plugin.
 The provided value will be assigned to the [`<product-descriptor optional="">`](plugin_configuration_file.md#idea-plugin__product-descriptor) element attribute.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -683,7 +683,7 @@ Default value
 Specifies the boolean value determining whether the plugin is an EAP release.
 The provided value will be assigned to the [`<product-descriptor eap="">`](plugin_configuration_file.md#idea-plugin__product-descriptor) element attribute.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -697,7 +697,7 @@ Default value
 Specifies the lowest IDE version compatible with the plugin.
 The provided value will be assigned to the [`<idea-version since-build="..."/>`](plugin_configuration_file.md#idea-plugin__idea-version) element attribute.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -716,7 +716,7 @@ The provided value will be assigned to the [`<idea-version until-build="..."/>`]
 
 The `until-build` attribute can be unset by setting `provider { null }` as a value.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -730,7 +730,7 @@ Default value
 Specifies the vendor name or organization ID (if created) in the <control>Plugins</control> settings dialog and on the [JetBrains Marketplace](https://plugins.jetbrains.com) plugin page.
 The provided value will be assigned to the [`<vendor>`](plugin_configuration_file.md#idea-plugin__vendor) element.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -744,7 +744,7 @@ Default value
 Specifies the vendor's email address.
 The provided value will be assigned to the [`<vendor email="">`](plugin_configuration_file.md#idea-plugin__vendor) element attribute.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -758,7 +758,7 @@ Default value
 Specifies the link to the vendor's homepage.
 The provided value will be assigned to the [`<vendor url="">`](plugin_configuration_file.md#idea-plugin__vendor) element attribute.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -792,7 +792,7 @@ Collects the content produced with `buildSearchableOptions` for the `jarSearchab
 
 Specifies the directory where the prepared searchable options are read from.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `DirectoryProperty`
 
@@ -805,7 +805,7 @@ Default value
 
 Specifies the directory where the filtered content is placed.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `DirectoryProperty`
 
@@ -818,7 +818,7 @@ Default value
 
 Specifies the <path>lib</path> directory within the current sandbox.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `DirectoryProperty`
 
@@ -831,7 +831,7 @@ Default value
 
 Specifies the final composed Jar archive with the plugin content.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `RegularFileProperty`
 
@@ -872,7 +872,7 @@ Represents the suffix used i.e., for test-related or custom tasks.
 
 The default suffix is composed of the task name (`prepare[X]Sandbox[_Y]`) to the `-[X][Y]` format.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -885,7 +885,7 @@ Default value
 
 Specifies the default sandbox destination directory where plugin files will be copied.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `DirectoryProperty`
 
@@ -898,7 +898,7 @@ Default value
 
 Specifies the name of the plugin directory in the sandbox.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -911,7 +911,7 @@ Default value
 
 Specifies the directory where the plugin artifacts are to be placed.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `DirectoryProperty`
 
@@ -925,7 +925,7 @@ Default value
 An internal field to hold a list of plugins to be disabled within the current sandbox.
 This property is controlled with [`disablePlugin()`](tools_intellij_platform_gradle_plugin_testing_extension.md#plugins) method of [](tools_intellij_platform_gradle_plugin_testing_extension.md).
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `SetProperty<String>`
 
@@ -936,7 +936,7 @@ Type
 Specifies the output of the [`Jar`][gradle-jar-task] task.
 The proper `Jar.archiveFile` picked depends on whether code instrumentation is enabled.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `RegularFileProperty`
 
@@ -949,7 +949,7 @@ Default value
 
 Specifies a list of dependencies on external plugins resolved from the `intellijPlatformPluginsExtracted` configuration added with [Dependencies Extension](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins)
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `ConfigurableFileCollection`
 
@@ -959,7 +959,7 @@ Type
 
 Dependencies defined with the `runtimeClasspath` configuration.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `ConfigurableFileCollection`
 
@@ -1054,7 +1054,7 @@ The filter used for retrieving the release list can be customized by using prope
 
 Property that holds the list of product releases to print and which can be used to retrieve the result list.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `ListProperty<String>`
 
@@ -1097,7 +1097,7 @@ See also:
 Specifies the ZIP archive file to be published to the remote repository.
 By default, it uses the output [`signPlugin.archiveFile`](#signPlugin-archiveFile) if plugin signing is configured, otherwise the [`buildPlugin.archiveFile`](#buildPlugin-archiveFile).
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `RegularFileProperty`
 
@@ -1113,7 +1113,7 @@ See also:
 
 Specifies the URL host of a plugin repository.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -1126,7 +1126,7 @@ Default value
 
 Specifies the authorization token.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -1142,7 +1142,7 @@ Default value
 
 Specifies a list of [JetBrains Marketplace](https://plugins.jetbrains.com) channel names used as destination for the plugin upload.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `ListProperty<String>`
 
@@ -1155,7 +1155,7 @@ Default value
 
 Publishes the plugin update and marks it as [hidden](https://plugins.jetbrains.com/docs/marketplace/hidden-plugin.html) to prevent public visibility after approval.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -1168,7 +1168,7 @@ Default value
 
 Specifies if the IDE Services plugin repository service should be used.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -1325,7 +1325,7 @@ For more details, see [](plugin_signing.md).
 Specifies the unsigned ZIP archive input file.
 Corresponds to the `in` CLI option.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `RegularFileProperty`
 
@@ -1342,7 +1342,7 @@ Corresponds to the `out` CLI option.
 Predefined with the name of the ZIP archive file with `-signed` name suffix attached.
 The output file is placed next to the input [`archiveFile`](#signPlugin-archiveFile).
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `RegularFileProperty`
 
@@ -1356,7 +1356,7 @@ Default value
 Specifies the KeyStore file path.
 Corresponds to the `ks` CLI option.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -1370,7 +1370,7 @@ Default value
 Specifies the KeyStore password.
 Corresponds to the `ks-pass` CLI option.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -1384,7 +1384,7 @@ Default value
 Specifies the KeyStore key alias.
 Corresponds to the `ks-key-alias` CLI option.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -1398,7 +1398,7 @@ Default value
 Specifies the KeyStore type.
 Corresponds to the `ks-type` CLI option.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -1412,7 +1412,7 @@ Default value
 Specifies the JCA KeyStore Provider name.
 Corresponds to the `ks-provider-name` CLI option.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -1428,7 +1428,7 @@ Corresponds to the `key` CLI option.
 
 Takes precedence over the [`privateKeyFile`](#signPlugin-privateKeyFile) property.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -1442,7 +1442,7 @@ Default value
 Specifies a file with an encoded private key in the PEM format.
 Corresponds to the `key-file` CLI option.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `RegularFileProperty`
 
@@ -1456,7 +1456,7 @@ Default value
 Specifies the password required to decrypt the private key.
 Corresponds to the `key-pass` CLI option.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -1473,7 +1473,7 @@ This parameter corresponds to the `cert` CLI option.
 
 Takes precedence over the [`certificateChainFile`](#signPlugin-certificateChainFile) property.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -1488,7 +1488,7 @@ Specifies the path to the file containing X509 certificates.
 The first certificate in the chain will be used as a certificate authority (CA).
 Corresponds to the `cert-file` CLI option.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `RegularFileProperty`
 
@@ -1602,7 +1602,7 @@ Runs the IDE instance with the developed plugin and Starter framework for UI tes
 
 Specifies the archive file representing the input file to be tested.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `RegularFileProperty`
 
@@ -1650,7 +1650,7 @@ See also:
 Specifies IntelliJ Platform IDEs used by the IntelliJ Plugin Verifier CLI tool for binary plugin verification.
 The list of IDEs is managed through the [`intellijPlatform.pluginVerification.ides`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-ides) extension.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `ConfigurableFileCollection`
 
@@ -1661,7 +1661,7 @@ Type
 Specifies the input ZIP archive file of the plugin to verify.
 If this parameter is empty, the task will be skipped.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `RegularFileProperty`
 
@@ -1675,7 +1675,7 @@ Default value
 Specifies a list of class prefixes from external libraries.
 The Plugin Verifier will not report `No such class` errors for classes in these packages.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `ListProperty<String>`
 
@@ -1688,7 +1688,7 @@ Default value
 
 Specifies the verification level at which the task fails if any reported issue matches.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : [`ListProperty<FailureLevel>`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel)
 
@@ -1704,7 +1704,7 @@ These arguments are used in conjunction with those provided by dedicated options
 
 See [](tools_intellij_platform_gradle_plugin_faq.md#mutePluginVerifierProblems) for sample usage.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `ListProperty<String>`
 
@@ -1717,7 +1717,7 @@ Default value
 
 Specifies a file that contains a list of problems that will be ignored in a report.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `RegularFileProperty`
 
@@ -1731,7 +1731,7 @@ Default value
 Indicates whether the operation is executed in offline mode.
 This depends on the start parameters specified in Gradle.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -1748,7 +1748,7 @@ See also:
 
 Specifies which subsystems of the IDE should be checked.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : [`Subsystems`](tools_intellij_platform_gradle_plugin_types.md#Subsystems)
 
@@ -1762,7 +1762,7 @@ Default value
 Specifies whether to use the TeamCity-compatible output format.
 If set to `true`, outputs in a format compatible with [TeamCity](https://www.jetbrains.com/teamcity/), directing the output to stdout.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -1775,7 +1775,7 @@ Default value
 
 Specifies the path to the directory where verification reports will be saved.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `DirectoryProperty`
 
@@ -1788,7 +1788,7 @@ Default value
 
 Specifies the output formats of the verification reports.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : [`ListProperty<VerificationReportsFormats>`](tools_intellij_platform_gradle_plugin_types.md#VerificationReportsFormats)
 
@@ -1837,7 +1837,7 @@ See also:
 
 Specifies the report directory where the verification result will be stored.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `DirectoryProperty`
 
@@ -1850,7 +1850,7 @@ Default value
 
 Specifies the root project path.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<File>`
 
@@ -1863,7 +1863,7 @@ Default value
 
 Specifies the IntelliJ Platform cache directory.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<File>`
 
@@ -1876,7 +1876,7 @@ Default value
 
 Specifies the `.gitignore` file located in the <path>[rootDirectory]</path>, tracked for content changes.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<File>`
 
@@ -1889,7 +1889,7 @@ Default value
 
 Specifies the `JavaCompile.sourceCompatibility` property value defined in the build script.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -1902,7 +1902,7 @@ Default value
 
 Specifies the `JavaCompile.targetCompatibility` property value defined in the build script.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -1915,7 +1915,7 @@ Default value
 
 Indicates that the Kotlin Gradle Plugin is loaded and available.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -1928,7 +1928,7 @@ Default value
 
 Specifies the `apiVersion` property value of `compileKotlin.kotlinOptions` defined in the build script.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String?>`
 
@@ -1941,7 +1941,7 @@ Default value
 
 Specifies the `languageVersion` property value of `compileKotlin.kotlinOptions` defined in the build script.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String?>`
 
@@ -1954,7 +1954,7 @@ Default value
 
 Specifies the version of Kotlin used in the project.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String?>`
 
@@ -1967,7 +1967,7 @@ Default value
 
 Specifies the `jvmTarget` property value of `compileKotlin.kotlinOptions` defined in the build script.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String?>`
 
@@ -1980,7 +1980,7 @@ Default value
 
 Specifies the value of the `kotlin.stdlib.default.dependency` property as defined in the <path>gradle.properties</path> file.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -1993,7 +1993,7 @@ Default value
 
 Indicates whether the Kotlin Coroutines library is explicitly added to the project dependencies.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -2006,7 +2006,7 @@ Default value
 
 Defines if the current module is a main project or imported module, which uses [](tools_intellij_platform_gradle_plugin_plugins.md#module) plugin.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -2043,7 +2043,7 @@ See also:
 Specifies the input, unsigned ZIP archive file.
 This parameter corresponds to the `in` CLI option.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `RegularFileProperty`
 
@@ -2060,7 +2060,7 @@ This parameter corresponds to the `cert` CLI option.
 
 Takes precedence over the [`certificateChainFile`](#verifyPluginSignature-certificateChainFile) property.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -2072,7 +2072,7 @@ Specifies the path to the file containing X509 certificates.
 The first certificate in the chain will be used as a certificate authority (CA).
 This parameter corresponds to the `cert-file` CLI option.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `RegularFileProperty`
 
@@ -2109,7 +2109,7 @@ See also:
 
 Specifies whether the build should fail when the verifications performed by this task fail.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -2122,7 +2122,7 @@ Default value
 
 Specifies whether the build should fail when the verifications performed by this task emit unacceptable warnings.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -2135,7 +2135,7 @@ Default value
 
 Specifies whether the build should fail when the verifications performed by this task emit warnings.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -2148,7 +2148,7 @@ Default value
 
 Specifies the location of the built plugin file used for verification.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `DirectoryProperty`
 

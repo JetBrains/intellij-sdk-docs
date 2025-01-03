@@ -209,7 +209,7 @@ fun StringBuilder.appendReferences(references: List<String>) {
 
 fun StringBuilder.appendDeprecationVersion(deprecatedSince: String?) {
   deprecatedSince ?: return
-  appendLine("{style=\"narrow\"}")
+  appendLine("{type=\"narrow\"}")
   appendLine("Deprecated")
   appendLine(":")
   appendLine("since $deprecatedSince\n")
@@ -217,7 +217,7 @@ fun StringBuilder.appendDeprecationVersion(deprecatedSince: String?) {
 
 fun StringBuilder.appendSupportDetails(supportDetails: String?) {
   supportDetails ?: return
-  appendLine("{style=\"narrow\"}")
+  appendLine("{type=\"narrow\"}")
   appendLine("Supported")
   appendLine(":")
   appendLine(supportDetails)
@@ -225,7 +225,7 @@ fun StringBuilder.appendSupportDetails(supportDetails: String?) {
 
 fun StringBuilder.appendRequirement(requirement: Requirement?) {
   if (requirement == null) return
-  appendLine("{style=\"narrow\"}")
+  appendLine("{type=\"narrow\"}")
   appendLine("Required")
   append(": ")
   val requiredText = when (requirement.required) {

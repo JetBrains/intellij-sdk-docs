@@ -71,7 +71,7 @@ Dynamic plugin will be reloaded automatically when its content is modified.
 
 This allows a much faster development cycle by avoiding a full restart of the development instance after code changes.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -101,7 +101,7 @@ Provides the path to the Java Agent file for the Coroutines library required to 
 
 The path to the coroutines Java Agent file.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `RegularFileProperty`
 
@@ -136,7 +136,7 @@ Holds the `intellijPlatform` configuration with the IntelliJ Platform dependency
 
 It should not be directly accessed.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `ConfigurableFileCollection`
 
@@ -146,7 +146,7 @@ Type
 
 Provides a direct path to the IntelliJ Platform dependency artifact.
 
-{style="narrow"}
+{type="narrow"}
 Access
 : Read-only
 
@@ -161,7 +161,7 @@ Provides information about the IntelliJ Platform product.
 
 The information is retrieved from the <path>product-info.json</path> file in the IntelliJ Platform directory.
 
-{style="narrow"}
+{type="narrow"}
 Access
 : Read-only
 
@@ -176,7 +176,7 @@ Validates that the resolved IntelliJ Platform is supported by checking against t
 
 Invokes [`ProductInfo.validateSupportedVersion()`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo-validateSupportedVersion).
 
-{style="narrow"}
+{type="narrow"}
 Throws
 : `IllegalArgumentException`
 
@@ -201,7 +201,7 @@ Provides the dependency on Java Compiler required for the [code instrumentation]
 
 Holds the `intellijPlatformJavaCompiler` configuration with the Java Compiler dependency added.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `ConfigurableFileCollection`
 
@@ -227,7 +227,7 @@ The task that inherits from this interface is automatically marked as dependent 
 
 Indicates that the Kotlin Gradle Plugin is loaded and available.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -240,7 +240,7 @@ Default value
 
 This variable represents whether the Kotlin Coroutines library is added explicitly to the project dependencies.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -253,7 +253,7 @@ Default value
 
 The `apiVersion` property value of `compileKotlin.kotlinOptions` defined in the build script.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String?>`
 
@@ -266,7 +266,7 @@ Default value
 
 The `languageVersion` property value of `compileKotlin.kotlinOptions` defined in the build script.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String?>`
 
@@ -279,7 +279,7 @@ Default value
 
 The version of Kotlin used in the project.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String?>`
 
@@ -292,7 +292,7 @@ Default value
 
 The `jvmTarget` property value of `compileKotlin.kotlinOptions` defined in the build script.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String?>`
 
@@ -305,7 +305,7 @@ Default value
 
 `kotlin.stdlib.default.dependency` property value defined in the `gradle.properties` file.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean?>`
 
@@ -337,7 +337,7 @@ It resolves and parses the final <path>plugin.xml</path> descriptor file, making
 
 Holds the path to the patched <path>plugin.xml</path> file.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `RegularPropertyFile`
 
@@ -405,7 +405,7 @@ It is required to have a dependency on the IntelliJ Plugin Verifier added to the
 
 Path to the IntelliJ Plugin Verifier executable.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `RegularFileProperty`
 
@@ -453,7 +453,7 @@ Provides access to the Java Runtime (i.e., JetBrains Runtime) resolved with `Run
 
 Java Runtime parent directory.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `DirectoryProperty`
 
@@ -463,7 +463,7 @@ Type
 
 An architecture of the Java Runtime currently used for running Gradle.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -473,7 +473,7 @@ Type
 
 Metadata object of the Java Runtime currently used for running Gradle.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -483,7 +483,7 @@ Type
 
 A custom `JavaLauncher` instance configured with the resolved [`runtimeDirectory`](#RuntimeAware-runtimeDirectory).
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -512,7 +512,7 @@ The path to the sandbox container is obtained using the [`intellijPlatform.sandb
 
 Represents the suffix used i.e., for test-related tasks.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -524,7 +524,7 @@ The directory containing content read and produced by the running IDE.
 
 The directory name depends on the platform type and version currently used for running a task.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `DirectoryProperty`
 
@@ -534,7 +534,7 @@ Type
 
 A configuration directory located within the [`sandboxDirectory`](#SandboxAware-sandboxDirectory).
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `DirectoryProperty`
 
@@ -544,7 +544,7 @@ Type
 
 A plugins directory located within the [`sandboxDirectory`](#SandboxAware-sandboxDirectory).
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `DirectoryProperty`
 
@@ -554,7 +554,7 @@ Type
 
 A system directory located within the [`sandboxDirectory`](#SandboxAware-sandboxDirectory).
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `DirectoryProperty`
 
@@ -564,7 +564,7 @@ Type
 
 A log directory located within the [`sandboxDirectory`](#SandboxAware-sandboxDirectory).
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `DirectoryProperty`
 
@@ -597,7 +597,7 @@ It is required to have a dependency on the Marketplace ZIP Signer added to the p
 
 Path to the Marketplace ZIP Signer executable.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `RegularFileProperty`
 
@@ -626,7 +626,7 @@ Split Mode requires the IntelliJ Platform in the version `241.14473` or later.
 
 Enables Split Mode when running the IDE.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -639,7 +639,7 @@ Default value
 
 Specifies in which part of the product the developed plugin should be installed.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : [`Property<SplitModeTarget>`](tools_intellij_platform_gradle_plugin_types.md#SplitModeAware-SplitModeTarget)
 

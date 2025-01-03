@@ -24,7 +24,7 @@ Value is passed directly to the [IDEA Gradle Plugin](https://docs.gradle.org/cur
 See also:
 - [`IdeaModule.downloadSources`](https://docs.gradle.org/current/dsl/org.gradle.plugins.ide.idea.model.IdeaModule.html#org.gradle.plugins.ide.idea.model.IdeaModule:downloadSources)
 
-{style="narrow"}
+{type="narrow"}
 Default value
 : `true`
 
@@ -46,7 +46,7 @@ Specifies the location of the local IntelliJ Platform cache directory for storin
 >
 {style="warning"}
 
-{style="narrow"}
+{type="narrow"}
 Default value
 : <path>[rootProject]/.intellijPlatform/</path>
 
@@ -62,7 +62,7 @@ org.jetbrains.intellij.platform.intellijPlatformCache=/path/to/intellijPlatformC
 
 The [`localPlatformArtifacts()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) entry applied to the `repositories {}` block is required to apply to the project dependencies that need extra pre-processing before they can be correctly used by the IntelliJ Platform Gradle Plugin and loaded by Gradle.
 
-{style="narrow"}
+{type="narrow"}
 Default value
 : <path>[intellijPlatformCache](#intellijPlatformCache)/localPlatformArtifacts/</path>
 
@@ -78,7 +78,7 @@ org.jetbrains.intellij.platform.localPlatformArtifacts=/path/to/localPlatformArt
 
 When the [](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions) doesn't produce any results, for example, when the plugin doesn't implement any [Settings](settings.md), a warning is shown to suggest disabling it for better performance with [](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-buildSearchableOptions).
 
-{style="narrow"}
+{type="narrow"}
 Default value
 : `true`
 
@@ -96,7 +96,7 @@ Due to IDE limitations, it is impossible to run the IDE in headless mode to coll
 As paid plugins require providing a valid license and presenting a UI dialog, it is impossible to handle such a case, and the task will fail.
 This feature flag displays the given warning when the task is run by a paid plugin.
 
-{style="narrow"}
+{type="narrow"}
 Default value
 : `true`
 
@@ -113,7 +113,7 @@ org.jetbrains.intellij.platform.paidPluginSearchableOptionsWarning=false
 Specifies the URL from which the list of all Android Studio releases is fetched.
 This listing is later parsed by `ProductReleasesValueSource` to provide a list of IDEs matching the filtering criteria for running the IntelliJ Plugin Verifier tool with the [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) task.
 
-{style="narrow"}
+{type="narrow"}
 Default value
 : `https://jb.gg/android-studio-releases-list.xml`
 
@@ -130,7 +130,7 @@ org.jetbrains.intellij.platform.productsReleasesAndroidStudioUrl=https://...
 Specifies the URL from which the list of all Android Studio releases is fetched.
 This listing is later parsed by `ProductReleasesValueSource` to provide a list of IDEs matching the filtering criteria for running the IntelliJ Plugin Verifier tool with the [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) task.
 
-{style="narrow"}
+{type="narrow"}
 Default value
 : `https://www.jetbrains.com/updates/updates.xml`
 
@@ -154,7 +154,7 @@ Feature respects the Gradle [`--offline`](https://docs.gradle.org/current/usergu
 
 > It is strongly suggested to always use the latest available version. Older plugin versions may also not fully support the latest IDE releases.
 
-{style="narrow"}
+{type="narrow"}
 Default value
 : `true`
 
@@ -171,7 +171,7 @@ org.jetbrains.intellij.platform.selfUpdateCheck=false
 Specifies the default Shim server port at which the local webserver is run.
 The Shim server is used to proxy requests to the authorized custom plugin repositories registered with [`customPluginRepository()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories).
 
-{style="narrow"}
+{type="narrow"}
 Default value
 : `7348`
 
@@ -190,7 +190,7 @@ Due to limitations, sometimes it is desired to limit the list of remote endpoint
 
 It is possible to refer to the direct location (whenever it is possible) by switching off JetBrains Cache Redirector globally.
 
-{style="narrow"}
+{type="narrow"}
 Default value
 : `true`
 

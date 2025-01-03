@@ -83,7 +83,7 @@ The IntelliJ Platform cache is used for storing IntelliJ Platform Gradle Plugin-
 
 This path can be changed with the [`org.jetbrains.intellij.platform.intellijPlatformCache`](tools_intellij_platform_gradle_plugin_gradle_properties.md#intellijPlatformCache) Gradle property
 
-{style="narrow"}
+{type="narrow"}
 Access
 : Read-only
 
@@ -99,7 +99,7 @@ Default value
 
 Provides read-only access to the IntelliJ Platform dependency artifact path.
 
-{style="narrow"}
+{type="narrow"}
 Access
 : Read-only
 
@@ -115,7 +115,7 @@ Default value
 
 Provides read-only access to the [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) object associated with the IntelliJ Platform dependency configured for the current project.
 
-{style="narrow"}
+{type="narrow"}
 Access
 : Read-only
 
@@ -134,7 +134,7 @@ Dynamic plugin will be reloaded automatically when its content is modified.
 
 This allows a much faster development cycle by avoiding a full restart of the development instance after code changes.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -152,7 +152,7 @@ See also:
 Builds an index of UI components (searchable options) for the plugin.
 Controls the execution of the [`buildSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions) task.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -170,7 +170,7 @@ Enables the [](tools_intellij_platform_gradle_plugin_tasks.md#instrumentCode) of
 
 Controls the execution of the [`instrumentCode`](tools_intellij_platform_gradle_plugin_tasks.md#instrumentCode) task.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -183,7 +183,7 @@ Default value
 
 Defines the project name, which is used for creating file structure and the build archive.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -196,7 +196,7 @@ Default value
 
 The path to the sandbox container where tests and IDE instances read and write data.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `DirectoryProperty`
 
@@ -220,7 +220,7 @@ Allows for checking how a plugin works in remote development mode, when one mach
 This property allows running the IDE with backend and frontend parts running in separate processes.
 The developed plugin is installed in the backend part.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -240,7 +240,7 @@ See also:
 
 Specifies in which part of the product the developed plugin should be installed.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : [`Property<SplitModeTarget>`](tools_intellij_platform_gradle_plugin_types.md#SplitModeAware-SplitModeTarget)
 
@@ -342,7 +342,7 @@ Please restrict input to characters, numbers, and `.`/`-`/`_` symbols, and aim f
 
 The provided value will populate the [`<id>`](plugin_configuration_file.md#idea-plugin__id) element.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -358,7 +358,7 @@ It should use Title Case.
 
 The provided value is used to populate the [`<name>`](plugin_configuration_file.md#idea-plugin__name) element.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -375,7 +375,7 @@ For plugins uploaded to the JetBrains Marketplace, [semantic versioning](https:/
 
 The provided value is used as a [`<version>`](plugin_configuration_file.md#idea-plugin__version) element.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -393,7 +393,7 @@ The description content is automatically enclosed in `<![CDATA[... ]]>`.
 
 The provided value is used to populate the [`<description>`](plugin_configuration_file.md#idea-plugin__description) element.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -412,7 +412,7 @@ The change notes content is automatically enclosed in `<![CDATA[... ]]>`.
 
 The provided value is used to populate the [`<change-notes>`](plugin_configuration_file.md#idea-plugin__change-notes) element.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -485,7 +485,7 @@ The value must be pre-approved by JetBrains and must adhere to [specified requir
 
 The provided value is used for a `<product-descriptor code="">` element attribute.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -501,7 +501,7 @@ The release date of the major version, formatted as `YYYYMMDD`.
 
 The provided value is used for the `<product-descriptor release-date="">` element attribute.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -517,7 +517,7 @@ The major version, represented in a specific numerical format.
 
 The provided value is used for the `<product-descriptor release-version="">` element attribute.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -533,7 +533,7 @@ The boolean value that indicates if the plugin is a [Freemium](https://plugins.j
 
 The provided value is used for the `<product-descriptor optional="">` element attribute.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -552,7 +552,7 @@ Specifies the boolean value determining whether the plugin is an EAP release.
 
 The provided value is used for the `<product-descriptor eap="">` element attribute.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -624,7 +624,7 @@ The provided value is used for the `<idea-version since-build=""/>` element attr
 
 The default value is set to the `MAJOR.MINOR` version based on the currently selected IntelliJ Platform, like `233.12345`.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -678,7 +678,7 @@ intellijPlatform {
 </tab>
 </tabs>
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -745,7 +745,7 @@ The name of the vendor or the organization ID (if created), as displayed in the 
 
 The provided value is used as the value of the [`<vendor>`](plugin_configuration_file.md#idea-plugin__vendor) element.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -760,7 +760,7 @@ The email address of the vendor.
 
 The provided value is used for the `<vendor email="">` element attribute.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -775,7 +775,7 @@ The URL to the vendor's homepage.
 
 The provided value is used for the `<vendor url="">` element attribute.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -837,7 +837,7 @@ intellijPlatform {
 
 The hostname used for publishing the plugin.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -853,7 +853,7 @@ See also:
 
 Authorization token.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -869,7 +869,7 @@ See also:
 
 A list of channel names to upload plugin to.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `ListProperty<String>`
 
@@ -885,7 +885,7 @@ See also:
 
 Specify if the [IDE Services](https://www.jetbrains.com/ide-services/) plugin repository service should be used.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -901,7 +901,7 @@ See also:
 
 Publish the plugin update and mark it as hidden to prevent public visibility after approval.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -984,7 +984,7 @@ See also:
 
 A path to the local Marketplace ZIP Signer CLI tool to be used.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `RegularFileProperty`
 
@@ -998,7 +998,7 @@ See also:
 KeyStore file path.
 Refers to `ks` CLI option.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -1012,7 +1012,7 @@ See also:
 KeyStore password.
 Refers to `ks-pass` CLI option.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -1026,7 +1026,7 @@ See also:
 KeyStore key alias.
 Refers to `ks-key-alias` CLI option.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -1040,7 +1040,7 @@ See also:
 KeyStore type.
 Refers to `ks-type` CLI option.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -1054,7 +1054,7 @@ See also:
 JCA KeyStore Provider name.
 Refers to `ks-provider-name` CLI option.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -1070,7 +1070,7 @@ Refers to `key` CLI option.
 
 Takes precedence over the [](#intellijPlatform-signing-privateKeyFile) property.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -1084,7 +1084,7 @@ See also:
 A file with an encoded private key in the PEM format.
 Refers to `key-file` CLI option.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `RegularFileProperty`
 
@@ -1098,7 +1098,7 @@ See also:
 Password required to decrypt the private key.
 Refers to `key-pass` CLI option.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -1115,7 +1115,7 @@ Refers to `cert` CLI option.
 
 Takes precedence over the [](#intellijPlatform-signing-certificateChainFile) property.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<String>`
 
@@ -1130,7 +1130,7 @@ Path to the file containing X509 certificates.
 The first certificate from the chain will be used as a certificate authority (CA).
 Refers to `cert-file` CLI option.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `RegularFileProperty`
 
@@ -1222,7 +1222,7 @@ See also:
 
 A path to the local IntelliJ Plugin Verifier CLI tool to be used.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `RegularFileProperty`
 
@@ -1235,7 +1235,7 @@ See also:
 
 The path to the directory where IDEs used for the verification will be downloaded.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `DirectoryProperty`
 
@@ -1248,7 +1248,7 @@ Default value
 
 Defines the verification level at which the task should fail if any reported issue matches.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : [`ListProperty<FailureLevel>`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel)
 
@@ -1265,7 +1265,7 @@ See also:
 The list of class prefixes from the external libraries.
 The Plugin Verifier will not report `No such class` for classes of these packages.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `ListProperty<String>`
 
@@ -1280,7 +1280,7 @@ The list of free arguments is passed directly to the IntelliJ Plugin Verifier CL
 
 They can be used in addition to the arguments that are provided by dedicated options.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `ListProperty<String>`
 
@@ -1294,7 +1294,7 @@ See also:
 Retrieve the Plugin Verifier home directory used for storing downloaded IDEs.
 Following home directory resolving method is taken directly from the Plugin Verifier to keep the compatibility.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `DirectoryProperty`
 
@@ -1310,7 +1310,7 @@ Default value
 
 A file that contains a list of problems that will be ignored in a report.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `RegularFileProperty`
 
@@ -1323,7 +1323,7 @@ See also:
 
 Which subsystems of the IDE should be checked.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Subsystems`
 
@@ -1340,7 +1340,7 @@ See also:
 A flag that controls the output format.
 If set to `true`, the [TeamCity](https://www.jetbrains.com/teamcity/) compatible output will be returned to stdout.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Property<Boolean>`
 
@@ -1356,7 +1356,7 @@ See also:
 
 The path to the directory where verification reports will be saved.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `DirectoryProperty`
 
@@ -1372,7 +1372,7 @@ See also:
 
 The output formats of the verification reports.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `ListProperty<VerificationReportsFormats>`
 

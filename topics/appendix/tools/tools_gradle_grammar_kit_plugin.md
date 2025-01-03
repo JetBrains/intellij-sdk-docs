@@ -93,7 +93,7 @@ grammarKit {
 
 The release version of the [Grammar-Kit](https://github.com/JetBrains/Grammar-Kit) to use.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `String`
 
@@ -106,7 +106,7 @@ Default value
 
 The version of the IntelliJ-patched JFlex, a [fork of JFlex](https://github.com/JetBrains/intellij-deps-jflex) lexer generator for IntelliJ Platform API.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `String`
 
@@ -121,7 +121,7 @@ An optional IntelliJ IDEA version to build the classpath for [`GenerateParser`](
 
 If provided, [`grammarKitRelease`](#grammar-kit-extension-grammarkitrelease) and [`jflexRelease`](#grammar-kit-extension-jflexrelease) properties are ignored as both dependencies will be provided from the given IntelliJ IDEA release.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `String`
 
@@ -144,7 +144,7 @@ See also [](#grammar-kit-extension) for common configuration.
 
 The source <path>.*flex</path> file to generate the lexer from.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : yes
 
@@ -157,7 +157,7 @@ Type
 
 The path to the target directory for the generated lexer.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : yes
 
@@ -173,7 +173,7 @@ An optional path to the skeleton file to use for the generated lexer.
 The path will be provided as `--skel` option.
 By default, it uses the <path>[idea-flex.skeleton](https://raw.github.com/JetBrains/intellij-community/master/tools/lexer/idea-flex.skeleton)</path> skeleton file.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `String`
 
@@ -186,7 +186,7 @@ Default
 
 Purge old files from the target directory before generating the lexer.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Boolean`
 
@@ -207,7 +207,7 @@ See also [](#grammar-kit-extension) for common configuration.
 
 The source <path>.bnf</path> file to generate the parser from.
 
-{style="narrow"}
+{type="narrow"}
 Required
 : yes
 
@@ -220,7 +220,7 @@ Type
 
 The path to the target directory for the generated parser.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `String`
 
@@ -233,7 +233,7 @@ Default
 
 The location of the generated parser class, relative to the [`targetRootOutputDir`](#tasks-generateparser-targetrootOutputDir).
 
-{style="narrow"}
+{type="narrow"}
 Required
 : yes
 
@@ -246,7 +246,7 @@ Type
 
 The location of the generated PSI files, relative to the [`targetRootOutputDir`](#tasks-generateparser-targetrootOutputDir).
 
-{style="narrow"}
+{type="narrow"}
 Required
 : yes
 
@@ -259,7 +259,7 @@ Type
 
 Purge old files from the target directory before generating the parser.
 
-{style="narrow"}
+{type="narrow"}
 Type
 : `Boolean`
 

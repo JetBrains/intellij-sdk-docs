@@ -12,7 +12,7 @@
 
 Tabs organize content by grouping similar UI controls.
 
-![](01_Tabs.png){width=706}
+![Tabs](01_Tabs.png){width=706}
 
 ## Tabs in Code Editors
 In code editors, tabs are created with another component — [`JBEditorTabs`](%gh-ic%/platform/platform-api/src/com/intellij/ui/tabs/impl/JBEditorTabs.kt). It supports extended functionality like icons, closeable, and draggable tabs. Do **not** use this component in dialogs.
@@ -49,7 +49,7 @@ Place the most frequently used content in the first tab.
 Tabs that do not fit allotted screen space automatically hide under the dropdown component.
 (It is better to add no more than 8 tabs, but this number is not limited.)
 
-![](03_How_to_use.png){width=706}
+![Hiding tabs that do not fit](03_How_to_use.png){width=706}
 
 ### Unavailable content
 
@@ -68,15 +68,15 @@ Do not place independent content under the tabs. Create separate tabs for such c
 
 <format color="369650" style="bold">Correct</format>
 
-![](06_Placement﻿_correct.png){width=706}
+![Correct placment of independent content](06_Placement﻿_correct.png){width=706}
 
 <format color="E55765" style="bold">Incorrect</format>
 
-![](06_Placement﻿_incorrect.png){width=706}
+![Incorrect placement of independent content](06_Placement﻿_incorrect.png){width=706}
 
 When there are other UI controls above tabs, separate them with a vertical indent.
 
-![](07_Placement﻿_correct.png){width=706}
+![UI controls above the tabs](07_Placement﻿_correct.png){width=706}
 
 ### Bottom border
 
@@ -84,12 +84,12 @@ Make sure the border of the tab reaches the edges of the area tabs occupy.
 
 <format color="369650" style="bold">Correct</format>
 
-![](04_Placement﻿_correct.png){width=706}
+![Correct bottom border](04_Placement﻿_correct.png){width=706}
 
 <format color="E55765" style="bold">Incorrect</format>
 
-![](04_Placement﻿_incorrect.png){width=706}
+![Incorrect bottom border](04_Placement﻿_incorrect.png){width=706}
 
 Do **not** surround the tab content area with a visible border.
 
-![](05_Placement﻿_incorrect.png){width=706}
+![Frame around the tab content](05_Placement﻿_incorrect.png){width=706}

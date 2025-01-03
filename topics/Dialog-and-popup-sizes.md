@@ -117,86 +117,95 @@ When the default sizes are either too big or too small for a window, or the wind
 
 1. Select how the content is displayed:
 
-    <table style="header-column">
+    <table style="none" border="false">
         <tr>
-            <td width="40%">
-                Table cell
+            <td width="50%">
+               <img src="dialog_popup_sizes_table_cell.png" alt="" width="378"/>
             </td>
             <td>
-                <p>Width: min&nbsp;65&nbsp;px</p>
-                <p>Height for the whole table: min&nbsp;120&nbsp;px</p>
-                <p>Follow guidelines for table width</p>
+               <p><format style="bold">Table cell</format></p>
+               <p>Width: min&nbsp;65&nbsp;px</p>
+               <p>Height for the whole table: min&nbsp;120&nbsp;px</p>
+               <p>Follow guidelines for table width</p>
             </td>
         </tr>
         <tr>
-            <td width="40%">
-                Tree
+            <td width="50%">
+                <img src="dialog_popup_sizes_tree.png" alt="" width="378"/>
             </td>
             <td>
-                Width: min 250&nbsp;px
+               <p><format style="bold">Tree</format></p>
+                <p>Width: min 250&nbsp;px</p>
             </td>
         </tr>
         <tr>
-            <td width="40%">
-                Text area
+            <td width="50%">
+                <img src="dialog_popup_sizes_text_area.png" alt="" width="378"/>
             </td>
             <td>
+                <p><format style="bold">Text area</format></p>
                 <p>Width: min&nbsp;270&nbsp;px, max&nbsp;600&nbsp;px</p>
                 <p>Height: min&nbsp;55&nbsp;px</p>
                 <p>For size and placement follow the <a href="text_area.md" anchor="size-and-placement">text area</a> guidelines</p>
             </td>
         </tr>
         <tr>
-            <td width="40%">
-                Diagram
+            <td width="50%">
+                <img src="dialog_popup_sizes_diagram.png" alt="" width="378"/>
             </td>
             <td>
-                A container with horizontal and vertical insets with 100&nbsp;px
+               <p><format style="bold">Diagram</format></p>
+                <p>A container with horizontal and vertical insets with 100&nbsp;px</p>
             </td>
         </tr>
     </table>
 
 2. What type of content is used:
 
-   <table style="header-column">
+   <table style="none" border="false">
         <tr>
-            <td width="40%">
-                Class/test/file name
+            <td width="50%">
+                <img src="dialog_popup_sizes_class_test_file.png" alt="" width="378"/>
             </td>
             <td>
+                <p><format style="bold">Class/test/file name</format></p>
                 <p>Width: min&nbsp;250&nbsp;px</p>
             </td>
         </tr>
         <tr>
-            <td width="40%">
-                URL/Path/FQN for class
+            <td width="50%">
+                <img src="dialog_popup_sizes_url_path_fqn.png" alt="" width="378"/>
             </td>
             <td>
+                <p><format style="bold">URL/Path/FQN for class</format></p>
                 <p>Width: min&nbsp;350&nbsp;px</p>
             </td>
         </tr>
         <tr>
-            <td width="40%">
-                Class/test/file name + URL/Path/FQN for class
+            <td width="50%">
+                <img src="dialog_popup_sizes_class_test_file_url_path_fqn.png" alt="" width="378"/>
             </td>
             <td>
+                <p><format style="bold">Class/test/file name + URL/Path/FQN for class</format></p>
                 <p>Width: min&nbsp;400&nbsp;px</p>
             </td>
         </tr>
         <tr>
-            <td width="40%">
-                Code snippet or editor
+            <td width="50%">
+                <img src="dialog_popup_sizes_code_snippet.png" alt="" width="378"/>
             </td>
             <td>
+                <p><format style="bold">Code snippet or editor</format></p>
                 <p>Width: min&nbsp;400&nbsp;px</p>
                 <p>Height (when multiple lines): min&nbsp;120&nbsp;px</p>
             </td>
         </tr>
         <tr>
-            <td width="40%">
-                Standalone text
+            <td width="50%">
+                <img src="dialog_popup_sizes_standalone_text.png" alt="" width="378"/>
             </td>
             <td>
+                <p><format style="bold">Standalone text</format></p>
                 <p>Width: min&nbsp;300&nbsp;px</p>
                 <p>Height (when multiple lines): min&nbsp;120&nbsp;px</p>
             </td>

@@ -67,13 +67,40 @@ For example, <control>Code Style</control> settings for Java in the <control>Set
 
 #### Minimum width
 
-Popups should have the same default minimum width as dialogs.
+Popups should have the same default minimum width as dialogs. In addition, there is a smaller size for popups — 200 px wide, when the content is narrow
 
-![](){width="706"}
+<table style="none" border="false">
+   <tr>
+      <td width="50%">
+         <p><format style="bold">Insert</format></p>
+         <p>Width: 200 px</p>
+         <img src="dialog_popup_sizes_popup_xxs.png" alt="" width="378"/>
+      </td>
+      <td width="50%">
+         <p><format style="bold">Quick Fixes</format></p>
+         <p>Width: 350 px</p>
+         <img src="dialog_popup_sizes_popup_xs.png" alt="" width="378"/>
+      </td>
+   </tr>
+</table>
+<table style="none" border="false">
+   <tr>
+      <td width="100%">
+         <p><format style="bold">Documentation</format></p>
+         <p>Width: 500 px</p>
+         <img src="dialog_popup_sizes_popup_s.png" alt="" width="706"/>
+      </td>
+   </tr>
+   <tr>
+      <td width="100%">
+         <p><format style="bold">Search Everywhere</format></p>
+         <p>Width: 750 px</p>
+         <img src="dialog_popup_sizes_popup_m.png" alt="" width="706"/>
+      </td>
+   </tr>
+</table>
 
-If a popup is smaller than the <control>extra small</control> size, adapt the width based on the content inside.
-
-, but unlike dialogs, they can have adaptive height. If the popup displays different amounts of content depending on the situation, adapt the popup size to the content on opening.
+_, but unlike dialogs, they can have adaptive height. If the popup displays different amounts of content depending on the situation, adapt the popup size to the content on opening._
 
 For example, the height of the <control>Git Brunches</control> popup adapts to the amount of the content inside:
 
@@ -154,7 +181,7 @@ When the default sizes are either too big or too small for a window, or the wind
                 <img src="dialog_popup_sizes_diagram.png" alt="" width="378"/>
             </td>
             <td>
-               <p><format style="bold">Diagram</format></p>
+                <p><format style="bold">Diagram</format></p>
                 <p>A container with horizontal and vertical insets with 100&nbsp;px</p>
             </td>
         </tr>
@@ -212,7 +239,7 @@ When the default sizes are either too big or too small for a window, or the wind
         </tr>
     </table>
 
-3. Select the biggest size out of the two to add the minimal size to a component
+3. Select the biggest size out of the two to add the minimum size to a component
 
 #### Example 1
 
@@ -235,7 +262,7 @@ The <control>Rename Inheritors</control> dialog has a table with FQNs. Add 350&n
 
 #### Example 2
 
-<control>Settings</control> dialog has the default size 1000&nbsp;px. In the <control>Code Style settings for Java</control> set 400&nbsp;px as the minimal width of the code editor. This will make the dialog wider but will show more code
+<control>Settings</control> dialog has the default size 1000&nbsp;px. In the <control>Code Style settings for Java</control> set 400&nbsp;px as the minimum width of the code editor. This will make the dialog wider but will show more code
 
 <table style="none" border="false">
     <tr>

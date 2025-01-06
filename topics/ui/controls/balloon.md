@@ -12,7 +12,7 @@
 
 </tldr>
 
-Notifications balloons inform users of the events or system states related to a project or IDE.
+Notification balloons inform users of the events or system states related to a project or IDE.
 
 ![A notification balloon for a found database connection with an action to connect to it](notification_balloon.png){width=706}
 
@@ -36,7 +36,7 @@ Use a timeline notification.
 
 ### Show result of an action without context
 
-Use a timeline notification when an action was called from the context already closed, like a dialog or a popup.
+Use a timeline notification when an action was called from a context that is already closed, like a dialog or a popup.
 
 ![Two notifications with results of actions that are not tied to a particular dialog: the UI language was changed and project folders excluded from Windows Defender](notification_balloon_timeline_no_context_action.png){width=706}
 
@@ -90,7 +90,9 @@ Use in all other cases.
 
 ![An information notification requesting to fill a survey about a plugin](notification_balloon_severity_info.png){width=706}
 
-When possible, use a plugin or functionality icon instead of the info icon. This helps identifing the source of the notification quicker.
+##### Custom information icon
+
+When possible, use a plugin or functionality icon instead of the <control>Info</control> icon. This helps identifing the source of the notification quicker.
 
 ![Two notifications with dedicated icons instead of the generic info icon: database connection found with the database icon and suggested plugins found with the generic plugin icon](notification_balloon_plugin_icon.png){width=706}
 

@@ -6,6 +6,8 @@
 
 Follow these guidelines to select the correct size when creating a dialog or a popup for IntelliJ-based products.
 
+For simple cases use default sizes for [dialogs](Dialog-and-popup-sizes.md#default-sizes) and [popups](Dialog-and-popup-sizes.md#popup). When default sizes don't work well, set [minimum sizes for components](Dialog-and-popup-sizes.md#minimum-sizes-for-components).
+
 ## Default sizes
 
 ### Dialog
@@ -67,18 +69,16 @@ For example, <control>Code Style</control> settings for Java in the <control>Set
 
 #### Minimum width
 
-Popups should have the same default minimum width as dialogs. In addition, there is a smaller size for popups — 200 px wide, when the content is narrow
+Popups should have the same default width as dialogs. In addition, there is a smaller size for popups – 200 px wide, when the content is narrow.
 
 <table style="none" border="false">
    <tr>
       <td width="50%">
          <p><format style="bold">Insert</format></p>
-         <p>Width: 200 px</p>
          <img src="dialog_popup_sizes_popup_xxs.png" alt="" width="378"/>
       </td>
       <td width="50%">
          <p><format style="bold">Quick Fixes</format></p>
-         <p>Width: 350 px</p>
          <img src="dialog_popup_sizes_popup_xs.png" alt="" width="378"/>
       </td>
    </tr>
@@ -87,31 +87,35 @@ Popups should have the same default minimum width as dialogs. In addition, there
    <tr>
       <td width="100%">
          <p><format style="bold">Documentation</format></p>
-         <p>Width: 500 px</p>
          <img src="dialog_popup_sizes_popup_s.png" alt="" width="706"/>
       </td>
    </tr>
    <tr>
       <td width="100%">
          <p><format style="bold">Search Everywhere</format></p>
-         <p>Width: 750 px</p>
          <img src="dialog_popup_sizes_popup_m.png" alt="" width="706"/>
       </td>
    </tr>
 </table>
 
-_, but unlike dialogs, they can have adaptive height. If the popup displays different amounts of content depending on the situation, adapt the popup size to the content on opening._
+#### Minimum height
 
-For example, the height of the <control>Git Brunches</control> popup adapts to the amount of the content inside:
+Unlike dialogs, popups have an adaptive height. Adapt the height of a popup to the amount of content inside.
 
-![Two Git Branches popups adapting to the height of their content. The popup on the left is shorter because it has fewer branches, while the popup on the right is longer because it has more branches](dialog_popup_sizes_adaptive.png){width="706"}
+For example, the height of the <control>Documentation</control> popup adapts to the amount of the content inside:
 
-When a user changes an adaptive popup’s size, the size is saved and the adaptivity becomes inapplicable.
+<img src="dialog_popup_sizes_popup_adaptive_height.png" alt="The Documentation popup adapts its height based on the content inside"/>
+
+#### Maximum width and height
+
+The maximum width and height shouldn't exceed 80% of a screen size. Use a <control>scrollbar</control> if a popup's content doesn't fit within the set dimensions.
 
 ### Tool windows
 
-* Vertical tool windows should have the min size set to 250×500&nbsp;px.
-* Horizontal tool windows should have the min size set to 500×250&nbsp;px.
+Default sizes:
+
+* Vertical tool windows should take 20% of the application width but not less than 200×500&nbsp;px.
+* Horizontal tool windows should take 20% of the application height but not less than 500×200&nbsp;px.
 
 The default sizes should be set for all the states of the <control>View Mode</control>.
 
@@ -130,7 +134,7 @@ The default sizes should be set for all the states of the <control>View Mode</co
 
 ### Editor tabs
 
-Place your content into a <control>tab</control> in the editor when there are three or more columns in a row with important information that needs to be shown.
+Place your content into a <control>tab</control> in the editor when there are three or more columns in a row with code that needs to be shown.
 
 For example, the <control>Merge</control> functionality features a list of changes with actions in a tool window and two code editors with line numbers:
 
@@ -281,7 +285,7 @@ The <control>Rename Inheritors</control> dialog has a table with FQNs. Add 350&n
 
 #### Example 3
 
-Add horizontal and vertical 100&nbsp;px insets inside the <control>Diagram</control> popup to make it adaptable to the different amounts of content inside
+Add horizontal and vertical 100&nbsp;px insets inside the <control>Diagram</control> popup to make it adaptable to the different amounts of content inside.
 
 <table style="none" border="false">
     <tr>
@@ -300,9 +304,9 @@ Add horizontal and vertical 100&nbsp;px insets inside the <control>Diagram</cont
 
 ## Empty state
 
-Some components, for example, <control>tables</control>, can have an [empty state](empty_state.md) when there is no content. In this case, the minimum size depends on which state takes more space: the component with content or with an empty state.
+Some components, for example, <control>tables</control>, can have an [empty state](empty_state.md) when there is no content. In this case, the minimum size of a component in both empty and filled states is defined by its filled state.
 
-In most cases, an empty state takes less space than the minimum size of a component. In other cases, the minimum size of the component should be determined by the size of the empty state to reduce unexpected resizing.
+For example, the size of the <control>Custom Plugin Repository</control> dialog is defined by the minimum size of the table that contains URLs (minimum 350&nbsp;px wide), and not by the size of the smaller empty state:
 
 <table style="none" border="false">
     <tr>

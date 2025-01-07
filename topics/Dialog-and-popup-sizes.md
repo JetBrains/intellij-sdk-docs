@@ -102,7 +102,7 @@ Popups should have the same default width as dialogs. In addition, there is a sm
 
 Unlike dialogs, popups have an adaptive height. Adapt the height of a popup to the amount of content inside.
 
-For example, the height of the <control>Documentation</control> popup adapts to the amount of the content inside:
+For example, the height of the <control>Documentation</control> popup is different depending on what is focused in the editor:
 
 <img src="dialog_popup_sizes_popup_adaptive_height.png" alt="The Documentation popup adapts its height based on the content inside"/>
 

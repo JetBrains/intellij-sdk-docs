@@ -516,7 +516,7 @@
       <toc-element toc-title="Dangerous Actions"/> <!--TODO-->
       <toc-element topic="data_formats.md"/>
       <toc-element toc-title="Default Values"/>
-      <toc-element topic="Window-sizes.md"/> <!--TODO-->
+      <!--TODO-->
       <toc-element toc-title="Discoverability"/> <!--TODO-->
       <toc-element topic="icons_style.md"/>
       <!--      <toc-element topic="icons.md"/>-->
@@ -533,8 +533,10 @@
       </toc-element>
       <toc-element toc-title="Sharing Settings"/> <!--TODO-->
       <toc-element topic="typography.md"/>
-      <toc-element toc-title="UI Feedback"/> <!--TODO-->
+      <toc-element toc-title="UI Feedback"/>
+      <!--TODO-->
       <toc-element topic="validation_errors.md"/>
+      <toc-element topic="Window-sizes.md"/>
     </toc-element>
     <toc-element toc-title="Writing UI Texts">
       <toc-element topic="capitalization.md"/>

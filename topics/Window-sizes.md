@@ -14,7 +14,7 @@ For simple cases use default sizes for [dialogs](Window-sizes.md#default-sizes) 
 
 There are four recommended window sizes for dialogs: **extra small**, **small**, **medium**, and **large**. Select the size depending on the amount of content to keep the important information visible.
 
-![A preview of recommended window sizes for dialogs](dialog_popup_sizes.png){width="706"}
+![A preview of recommended window sizes for dialogs: extra small, small, medium, and large](dialog_popup_sizes.png){width="706"}
 
 <note>When setting the default size for your dialog, it should be impossible to make it smaller.</note>
 
@@ -33,11 +33,11 @@ Size: 500×350 px
 Best for:
 * Multiple components with short labels that are divided into two columns.
 * A full-width table with two or three columns.
-* A full-width code editor or snippet.
+* A full-width code snippet or input with long text.
 
-For example, the <control>Evaluate Expressions</control> dialog has two code snippets that are stacked vertically:
+For example, the <control>Evaluate Expressions</control> dialog has an input field with long text and a tree with code stacked vertically:
 
-![The Evaluate Expressions dialog that has two code snippets stacked vertically](dialog_popup_sizes_small.png){width="706"}
+![The Evaluate Expressions dialog that has an input field with long text and a tree with code stacked vertically](dialog_popup_sizes_small.png){width="706"}
 
 #### Medium
 
@@ -47,23 +47,23 @@ Best for:
 * A full-width table with four or more columns.
 * Two-column layout with an image or a video in any of the columns. In this case, the image or the video takes the most space.
 * Two-column layout with a code snippet or an input field with long text in any of the columns.
-* Two code editors or snippets in a row.
+* Two code snippets or input fields with long texts in a row.
 
 For example, the <control>Run/Debug Configuration</control> dialog has a two-column layout with a tree in the first column and the list of controls with long texts in the second column:
 
-![The Run/Debug Configuration dialog that has a two-column layout. There is a nvigation in the first column and the list of settings in the second column](dialog_popup_sizes_medium.png){width="706"}
+![The Run/Debug Configuration dialog that has a two-column layout. There is a navigation in the first column and the list of settings in the second column](dialog_popup_sizes_medium.png){width="706"}
 
 #### Large
 
 Size: 1000×700 px
 
 Best for:
-* Two-column layout with long names, code editor, code snippet.
+* Two-column layout with input fields with long texts, code snippets.
 * Three-or-more-column layout regardless of the content.
 
-For example, <control>Code Style</control> settings for Java in the <control>Settings</control> dialog. The dialog has three columns with a table and a code snippet in different columns:
+For example, <control>Code Style</control> settings for Java in the <control>Settings</control> dialog. The dialog has three columns with a tree, a table, and a code snippet in different columns:
 
-![The Code Style settings in the Settings dialog. The dialog has three columns with a table and a code snippet in different columns](dialog_popup_sizes_large.png){width="706"}
+![The Code Style settings in the Settings dialog. The dialog has three columns with a tree, a table, and a code snippet in different columns](dialog_popup_sizes_large.png){width="706"}
 
 ### Popup
 
@@ -75,11 +75,11 @@ Popups should have the same default width as dialogs. In addition, there is a sm
    <tr>
       <td width="50%">
          <p><format style="bold">Insert</format></p>
-         <img src="dialog_popup_sizes_popup_xxs.png" alt="" width="378"/>
+         <img src="dialog_popup_sizes_popup_xxs.png" alt="Insert popup 200 px wide" width="378"/>
       </td>
       <td width="50%">
          <p><format style="bold">Quick Fixes</format></p>
-         <img src="dialog_popup_sizes_popup_xs.png" alt="" width="378"/>
+         <img src="dialog_popup_sizes_popup_xs.png" alt="Quick Fixes popup 350 px wide" width="378"/>
       </td>
    </tr>
 </table>
@@ -87,13 +87,13 @@ Popups should have the same default width as dialogs. In addition, there is a sm
    <tr>
       <td width="100%">
          <p><format style="bold">Documentation</format></p>
-         <img src="dialog_popup_sizes_popup_s.png" alt="" width="706"/>
+         <img src="dialog_popup_sizes_popup_s.png" alt="Documentation popup 500 px wide" width="706"/>
       </td>
    </tr>
    <tr>
       <td width="100%">
          <p><format style="bold">Search Everywhere</format></p>
-         <img src="dialog_popup_sizes_popup_m.png" alt="" width="706"/>
+         <img src="dialog_popup_sizes_popup_m.png" alt="Search Everywhere popup 750 px wide" width="706"/>
       </td>
    </tr>
 </table>
@@ -123,22 +123,14 @@ The default sizes should be set for all the states of the <control>View Mode</co
     <tr>
         <td width="50%">
             Vertical <control>Project</control> tool window:
-            <img src="dialog_popup_sizes_tool_window_vertical.png" alt=""/>
+            <img src="dialog_popup_sizes_tool_window_vertical.png" alt="Vertical Project tool window set in the default size for tool windows"/>
         </td>
         <td width="50%">
             Horizontal <control>Build</control> tool window:
-            <img src="dialog_popup_sizes_tool_window_horizontal.png" alt=""/>
+            <img src="dialog_popup_sizes_tool_window_horizontal.png" alt="Horizontal Build window set in the default size for tool windows"/>
         </td>
     </tr>
 </table>
-
-### Editor tabs
-
-Place your content into a <control>tab</control> in the editor when there are three or more columns in a row with code that needs to be shown.
-
-For example, the <control>Merge</control> functionality features a list of changes with actions in a tool window and two code editors with line numbers:
-
-![The Merge functionality with a list of changes with actions in a tool window on the left and two code editors with line numbers in the editor tab on the right](dialog_popup_sizes_editor.png){width="706"}
 
 ## Minimum sizes for components
 
@@ -151,18 +143,18 @@ When the default sizes are either too big or too small for a window, or the wind
     <table style="none" border="false">
         <tr>
             <td width="50%">
-               <img src="dialog_popup_sizes_table_cell.png" alt="" width="378"/>
+               <img src="dialog_popup_sizes_table_cell.png" alt="Example of a table with 3 cells" width="378"/>
             </td>
             <td>
                <p><format style="bold">Table cell</format></p>
                <p>Width: min&nbsp;65&nbsp;px</p>
                <p>Height for the whole table: min&nbsp;120&nbsp;px</p>
-               <p>Follow guidelines for table width</p>
+               <p>Follow guidelines for <a href="table.md" anchor="sizes">table sizes</a></p>
             </td>
         </tr>
         <tr>
             <td width="50%">
-                <img src="dialog_popup_sizes_tree.png" alt="" width="378"/>
+                <img src="dialog_popup_sizes_tree.png" alt="Example of a tree" width="378"/>
             </td>
             <td>
                <p><format style="bold">Tree</format></p>
@@ -171,18 +163,18 @@ When the default sizes are either too big or too small for a window, or the wind
         </tr>
         <tr>
             <td width="50%">
-                <img src="dialog_popup_sizes_text_area.png" alt="" width="378"/>
+                <img src="dialog_popup_sizes_text_area.png" alt="Example of a text area" width="378"/>
             </td>
             <td>
                 <p><format style="bold">Text area</format></p>
                 <p>Width: min&nbsp;270&nbsp;px, max&nbsp;600&nbsp;px</p>
                 <p>Height: min&nbsp;55&nbsp;px</p>
-                <p>For size and placement follow the <a href="text_area.md" anchor="size-and-placement">text area</a> guidelines</p>
+                <p>Follow guidelines for <a href="text_area.md" anchor="size-and-placement">text area sizes</a></p>
             </td>
         </tr>
         <tr>
             <td width="50%">
-                <img src="dialog_popup_sizes_diagram.png" alt="" width="378"/>
+                <img src="dialog_popup_sizes_diagram.png" alt="Example of a diagram" width="378"/>
             </td>
             <td>
                 <p><format style="bold">Diagram</format></p>
@@ -196,7 +188,7 @@ When the default sizes are either too big or too small for a window, or the wind
    <table style="none" border="false">
         <tr>
             <td width="50%">
-                <img src="dialog_popup_sizes_class_test_file.png" alt="" width="378"/>
+                <img src="dialog_popup_sizes_class_test_file.png" alt="Examples of a class, test, and file name" width="378"/>
             </td>
             <td>
                 <p><format style="bold">Class/test/file name</format></p>
@@ -205,7 +197,7 @@ When the default sizes are either too big or too small for a window, or the wind
         </tr>
         <tr>
             <td width="50%">
-                <img src="dialog_popup_sizes_url_path_fqn.png" alt="" width="378"/>
+                <img src="dialog_popup_sizes_url_path_fqn.png" alt="Examples of a URL, path, and an FQN for class" width="378"/>
             </td>
             <td>
                 <p><format style="bold">URL/Path/FQN for class</format></p>
@@ -214,7 +206,7 @@ When the default sizes are either too big or too small for a window, or the wind
         </tr>
         <tr>
             <td width="50%">
-                <img src="dialog_popup_sizes_class_test_file_url_path_fqn.png" alt="" width="378"/>
+                <img src="dialog_popup_sizes_class_test_file_url_path_fqn.png" alt="Examples of a class, test, or file name together with a URL, path or an FQN for class" width="378"/>
             </td>
             <td>
                 <p><format style="bold">Class/test/file name + URL/Path/FQN for class</format></p>
@@ -223,7 +215,7 @@ When the default sizes are either too big or too small for a window, or the wind
         </tr>
         <tr>
             <td width="50%">
-                <img src="dialog_popup_sizes_code_snippet.png" alt="" width="378"/>
+                <img src="dialog_popup_sizes_code_snippet.png" alt="Example of a code snippet" width="378"/>
             </td>
             <td>
                 <p><format style="bold">Code snippet or editor</format></p>
@@ -233,10 +225,10 @@ When the default sizes are either too big or too small for a window, or the wind
         </tr>
         <tr>
             <td width="50%">
-                <img src="dialog_popup_sizes_standalone_text.png" alt="" width="378"/>
+                <img src="dialog_popup_sizes_standalone_text.png" alt="Example of a paragraph" width="378"/>
             </td>
             <td>
-                <p><format style="bold">Standalone text</format></p>
+                <p><format style="bold">Paragraph or long text</format></p>
                 <p>Width: min&nbsp;300&nbsp;px</p>
                 <p>Height (when multiple lines): min&nbsp;120&nbsp;px</p>
             </td>
@@ -272,13 +264,13 @@ The <control>Rename Inheritors</control> dialog has a table with FQNs. Add 350&n
     <tr>
          <td width="706">
             <format color="369650" style="bold">Correct</format>
-            <img src="dialog_popup_sizes_example_2_correct.png" alt=""/>
+            <img src="dialog_popup_sizes_example_2_correct.png" alt="Code snippet in the Code Style settings for Java is 400 px making the dialog wider"/>
          </td>
     </tr>
     <tr>
          <td width="706">
             <format color="DarkOrange" style="bold">Acceptable</format>
-            <img src="dialog_popup_sizes_example_2_acceptable.png" alt=""/>
+            <img src="dialog_popup_sizes_example_2_acceptable.png" alt="Settings dialog is 1000 px wide"/>
          </td>
     </tr>
 </table>
@@ -291,13 +283,13 @@ Add horizontal and vertical 100&nbsp;px insets inside the <control>Diagram</cont
     <tr>
          <td width="706">
             <format color="369650" style="bold">Correct</format>
-            <img src="dialog_popup_sizes_example_3_correct.png" alt=""/>
+            <img src="dialog_popup_sizes_example_3_correct.png" alt="Diagram popup has 100 px insets from its borders to its content"/>
          </td>
     </tr>
     <tr>
          <td width="706">
             <format color="DarkOrange" style="bold">Acceptable</format>
-            <img src="dialog_popup_sizes_example_3_acceptable.png" alt=""/>
+            <img src="dialog_popup_sizes_example_3_acceptable.png" alt="Diagram popup is set to the default small size"/>
          </td>
     </tr>
 </table>
@@ -312,13 +304,13 @@ For example, the size of the <control>Custom Plugin Repository</control> dialog 
     <tr>
          <td width="706">
             <format color="369650" style="bold">Correct</format>
-            <img src="dialog_popup_sizes_empty_state_correct.png" alt=""/>
+            <img src="dialog_popup_sizes_empty_state_correct.png" alt="The table in the Custom Plugin Repository dialog has the same sizes in both empty and filled states"/>
          </td>
     </tr>
     <tr>
          <td width="706">
             <format color="E55765" style="bold">Incorrect</format>
-            <img src="dialog_popup_sizes_empty_state_incorrect.png" alt=""/>
+            <img src="dialog_popup_sizes_empty_state_incorrect.png" alt="The table in the Custom Plugin Repository dialog has different sizes in the empty and the filled states"/>
          </td>
     </tr>
 </table>

@@ -73,6 +73,7 @@
         <toc-element topic="launching_coroutines.md"/>
         <toc-element topic="coroutine_execution_contexts.md"/>
         <toc-element topic="coroutine_read_actions.topic"/>
+        <toc-element topic="coroutine_edt_and_locks.md"/>
         <toc-element topic="coroutine_tips_and_tricks.md"/>
         <toc-element topic="coroutine_dumps.md"/>
       </toc-element>

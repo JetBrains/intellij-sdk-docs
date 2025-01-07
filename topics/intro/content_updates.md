@@ -10,6 +10,14 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 <include from="snippets.md" element-id="subscribeNews"/>
 
+## 2025
+
+### January
+{january-25}
+
+Coroutines on EDT and Locks
+: Added a page describing the current implicit locking behavior on EDT launched from coroutines and planned changes with migration hints.
+
 ## 2024
 
 ### December

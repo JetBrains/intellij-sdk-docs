@@ -1,12 +1,12 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# Dialog and Popup Sizes
+# Window sizes
 
 <link-summary>Guidelines on choosing the correct size when creating a dialog or a popup</link-summary>
 
 Follow these guidelines to select the correct size when creating a dialog or a popup for IntelliJ-based products.
 
-For simple cases use default sizes for [dialogs](Dialog-and-popup-sizes.md#default-sizes) and [popups](Dialog-and-popup-sizes.md#popup). When default sizes don't work well, set [minimum sizes for components](Dialog-and-popup-sizes.md#minimum-sizes-for-components).
+For simple cases use default sizes for [dialogs](Window-sizes#default-sizes) and [popups](Window-sizes#popup). When default sizes don't work well, set [minimum sizes for components](Window-sizes#minimum-sizes-for-components).
 
 ## Default sizes
 

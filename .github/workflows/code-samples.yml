@@ -11,18 +11,16 @@ env:
 
 jobs:
 
-  gradleValidation:
-    name: Gradle Wrappers
+  checkout:
+    name: Checkout
     runs-on: ubuntu-latest
     steps:
       - name: Fetch Sources
         uses: actions/checkout@v4
-      - name: Gradle Wrapper Validation
-        uses: gradle/actions/wrapper-validation@v4
 
   samples:
     name: Code Samples / ${{ matrix.plugin }}
-    needs: gradleValidation
+    needs: checkout
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false

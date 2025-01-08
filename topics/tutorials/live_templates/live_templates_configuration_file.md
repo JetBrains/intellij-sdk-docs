@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Live Templates Configuration File
 
@@ -38,6 +38,7 @@ Required
 : **yes**
 
 
+{type="narrow"}
 Attributes
 :
 - `group` _(optional)_<br/>
@@ -62,6 +63,7 @@ Required
 : no
 
 
+{type="narrow"}
 Attributes
 :
 - `id` _(optional)_<br/>
@@ -133,6 +135,7 @@ Required
 : no
 
 
+{type="narrow"}
 Attributes
 :
 - `name` _(optional)_<br/>
@@ -222,6 +225,7 @@ Required
 : no
 
 
+{type="narrow"}
 Attributes
 :
 - `name` _(**required**)_<br/>

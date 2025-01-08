@@ -255,7 +255,8 @@ fun StringBuilder.appendDefaultValue(defaultValue: String?) {
 fun StringBuilder.appendAttributes(attributeWrappers: List<AttributeWrapper>) {
   val attributes = attributeWrappers.mapNotNull { it.attribute }
   if (attributes.isNotEmpty()) {
-    appendLine("\n\nAttributes")
+    appendLine("\n\n{type=\"narrow\"}")
+    appendLine("Attributes")
     appendLine(":")
     for ((index, attribute) in attributes.withIndex()) {
       appendAttribute(attribute, index == attributes.lastIndex)

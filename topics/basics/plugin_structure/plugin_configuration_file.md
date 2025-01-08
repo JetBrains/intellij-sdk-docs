@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Plugin Configuration File
 
@@ -95,6 +95,7 @@ Required
 : **yes**
 
 
+{type="narrow"}
 Attributes
 :
 - `url` _(optional; ignored in an [additional config file](#additional-plugin-configuration-files))_<br/>
@@ -228,6 +229,7 @@ Required
 
 
 
+{type="narrow"}
 Attributes
 :
 - `code` _(**required**)_<br/>
@@ -268,6 +270,7 @@ is enabled and configured.
 
 
 
+{type="narrow"}
 Attributes
 :
 - `since-build` _(**required**)_<br/>
@@ -308,6 +311,7 @@ Required
 
 
 
+{type="narrow"}
 Attributes
 :
 - `url` _(optional)_<br/>
@@ -434,6 +438,7 @@ module is needed
 
 
 
+{type="narrow"}
 Attributes
 :
 - `optional` _(optional)_<br/>
@@ -521,6 +526,7 @@ Required
 : no
 
 
+{type="narrow"}
 Attributes
 :
 - `defaultExtensionNs` _(optional)_<br/>
@@ -590,6 +596,7 @@ Required
 : no
 
 
+{type="narrow"}
 Attributes
 :
 - `name` _(`name` or `qualifiedName` is **required**)_<br/>
@@ -645,6 +652,7 @@ Required
 : no
 
 
+{type="narrow"}
 Attributes
 :
 - `tag` _(`tag` or `attribute` is **required**)_<br/>
@@ -728,6 +736,7 @@ Required
 : no
 
 
+{type="narrow"}
 Attributes
 :
 - `resource-bundle` _(optional; available since 2020.1)_<br/>
@@ -770,6 +779,7 @@ Required
 : no
 
 
+{type="narrow"}
 Attributes
 :
 - `id` _(**required**)_<br/>
@@ -835,6 +845,7 @@ Required
 : no
 
 
+{type="narrow"}
 Attributes
 :
 - `group-id` _(**required**)_<br/>
@@ -873,6 +884,7 @@ Required
 : no
 
 
+{type="narrow"}
 Attributes
 :
 - `keymap` _(**required**)_<br/>
@@ -929,6 +941,7 @@ Required
 : no
 
 
+{type="narrow"}
 Attributes
 :
 - `keymap` _(**required**)_<br/>
@@ -990,6 +1003,7 @@ Required
 : no
 
 
+{type="narrow"}
 Attributes
 :
 - `place` _(**required**)_<br/>
@@ -1042,6 +1056,7 @@ Required
 : no
 
 
+{type="narrow"}
 Attributes
 :
 - `key` _(`key` or `text` is **required**)_<br/>
@@ -1070,6 +1085,7 @@ Required
 : no
 
 
+{type="narrow"}
 Attributes
 :
 - `value` _(**required**)_<br/>
@@ -1101,6 +1117,7 @@ Required
 : no
 
 
+{type="narrow"}
 Attributes
 :
 - `id` _(**required**)_<br/>
@@ -1187,6 +1204,7 @@ Required
 : no
 
 
+{type="narrow"}
 Attributes
 :
 - `ref` _(**required**)_<br/>
@@ -1230,6 +1248,7 @@ Required
 : no
 
 
+{type="narrow"}
 Attributes
 :
 - `text` _(optional)_<br/>
@@ -1316,6 +1335,7 @@ Required
 : no
 
 
+{type="narrow"}
 Attributes
 :
 - `topic` _(**required**)_<br/>
@@ -1504,6 +1524,7 @@ Required
 : no
 
 
+{type="narrow"}
 Attributes
 :
 - `name` _(**required**)_<br/>

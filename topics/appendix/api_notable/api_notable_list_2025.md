@@ -11,3 +11,6 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 ## 2025.1
 
 ### IntelliJ Platform 2025.1
+
+[`ContainerUtil`](%gh-ic%/platform/util/src/com/intellij/util/containers/ContainerUtil.java) using unmodifiable collections
+: Methods marked with [`@Unmodifiable`](%gh-java-annotations%/java8/src/main/java/org/jetbrains/annotations/Unmodifiable.java) now really return unmodifiable collections (only in [internal](enabling_internal.md)/test mode for now).

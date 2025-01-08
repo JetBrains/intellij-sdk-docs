@@ -157,7 +157,7 @@ Default value
 Example
 :
   ```xml
-  <id>com.company.framework</id>
+  <id>com.example.framework</id>
   ```
 
 ### `name`
@@ -545,7 +545,7 @@ or `qualifiedName` attributes.
 
 Examples
 :
-- Extensions' declaration with the default namespace:
+- Extensions' declaration with a default namespace:
 ```xml
 <extensions defaultExtensionNs="com.intellij">
   <applicationService

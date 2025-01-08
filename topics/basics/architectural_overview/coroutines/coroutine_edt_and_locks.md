@@ -26,46 +26,29 @@ Note that this error is shown only when the IDE [internal mode](enabling_interna
 ## Error Context
 
 There are two contexts in which these errors can occur:
-- [](#coroutines-dispatched-on-edt)
-- [](#specific-gui-events)
+- **Coroutines dispatched on EDT**
 
-### Coroutines Dispatched on EDT
+  Consider code that is run on [`Dispatchers.EDT`](coroutine_dispatchers.md#edt-dispatcher) with the following construct (or any of the wrappers for this code):
 
-Consider code that is run on [`Dispatchers.EDT`](coroutine_dispatchers.md#edt-dispatcher) with the following construct (or any of the wrappers for this code):
+  ```kotlin
+  withContext(Dispatchers.EDT) {
+    // ...
+  }
+  ```
 
-```kotlin
-withContext(Dispatchers.EDT) {
-  // ...
-}
-```
+  Currently, the execution system wraps the executed code into a [write intent lock](threading_model.md#read-write-lock).
+  Such a write intent lock is called _implicit_.
 
-Currently, the execution system wraps the executed code into a [write intent lock](threading_model.md#read-write-lock).
-Such a write intent lock is called _implicit_.
+- **Specific GUI events**
 
-When code inside such a block checks for the state of lock with [`ThreadingAssertions.assertReadAccess()`/`assertWriteIntentReadAccess()`](%gh-ic%/platform/core-api/src/com/intellij/util/concurrency/ThreadingAssertions.java) (or their deprecated [`Application`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java) counterparts), an error is reported, but the assertion passes.
+  Lock covers all base events (like mouse events, keyboard events, focus change events, etc.), and such lock isn't counted as _implicit_ for now.
 
-[//]: # (TODO: are these assertions the same for Specific GUI events? if so, we should move it out of the coroutines section)
+  But some events can be missed and need personal attention.
+  Especially if such events trigger listeners and the IntelliJ Platform internal message bus.
 
-Only one error for each executed block is reported (but see below about a problem with *suspend*).
+When code in above contexts checks for the state of lock with [`ThreadingAssertions.assertReadAccess()`/`assertWriteIntentReadAccess()`](%gh-ic%/platform/core-api/src/com/intellij/util/concurrency/ThreadingAssertions.java) (or their deprecated [`Application`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java) counterparts), an error is reported, but the assertion passes.
 
-[//]: # (TODO: what problem below? link)
-
-### Specific GUI Events
-
-The write intent lock covers all base events, like:
-- mouse events
-- keyboard events
-- focus change events
-- and so on
-
-> Some events can be missed and need personal attention.
-> Especially, if such events trigger many listeners and the IntelliJ Platform internal message bus.
->
-{style="warning"}
-
-Such a lock isn't considered _implicit_ for now.
-
-[//]: # (TODO: why not implicit? and why it matters?)
+Only one error for each executed block is reported (see 2. in [](#planned-changes) about a problem with suspending).
 
 ## Planned Changes
 
@@ -88,8 +71,6 @@ It is preferable to:
 Code triggering the error should be reviewed and adjusted in a proper way: code which really needs locking should be determined, and proper explicit locking should be used.
 
 ### Identifying Code Requiring Locking
-
-[//]: # (TODO: also, in other sections add links)
 
 Each report includes a stacktrace which leads to assertion causing the error.
 
@@ -197,8 +178,6 @@ Use them if a read action is required, but it is unacceptable to reschedule code
 
 These APIs are marked to use only in the [blocking context](coroutine_execution_contexts.md#blocking-context), so their usage in the [suspending context](coroutine_execution_contexts.md#suspending-context) will trigger a warning.
 It is intentional, as coroutines should be prepared to be rescheduled and should use `readAction()`.
-
-[//]: # (TODO: should we suggest such solutions? maybe we should mark it temporal? can it be a final solution?)
 
 ### Suspending `writeIntentReadAction()` and Blocking `WriteIntentReadAction.run()`/`compute()`
 

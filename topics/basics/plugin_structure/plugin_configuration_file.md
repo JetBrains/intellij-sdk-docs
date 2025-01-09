@@ -52,6 +52,7 @@ Deprecated elements are omitted in the list below.
   - [`<depends>`](#idea-plugin__depends)
   - [`<incompatible-with>`](#idea-plugin__incompatible-with)
   - [`<extensions>`](#idea-plugin__extensions)
+    - [`<*>`](#idea-plugin__extensions__*)
   - [`<extensionPoints>`](#idea-plugin__extensionPoints)
     - [`<extensionPoint>`](#idea-plugin__extensionPoints__extensionPoint)
       - [`<with>`](#idea-plugin__extensionPoints__extensionPoint__with)
@@ -559,6 +560,50 @@ Examples
       implementation="com.example.MyExtension"/>
 </extensions>
 ```
+
+#### `*`
+{#idea-plugin__extensions__*}
+
+
+
+{type="narrow"}
+Attributes
+:
+- `id`
+  Unique extension identifier.
+  It allows for referencing an extension in the `order` attribute.
+  
+  To not clash with other plugins defining extensions with the same identifier,
+  consider prepending the identifier with a prefix related to the plugin [`<id>`](#idea-plugin__id) or 
+  [`<name>`](#idea-plugin__name), for example:
+  ```
+  id="com.example.myplugin.myExtension"
+  ```
+- `order`
+  Allows for ordering the extension relative to other instances of the same extension point.
+  Supported values:
+  - `first` - orders the extension as first.
+     It is not guaranteed that the extension will be the first if multiple extensions are defined as `first`.
+  - `last` - orders the extension as last.
+     It is not guaranteed that the extension will be the last if multiple extensions are defined as `last`.
+  - `before extension_id` - orders the extension before an extension with the given `id`
+  - `after extension_id` - orders the extension after an extension with the given `id`
+  
+  Values can be combined, for example:
+  ```
+  order="after extensionY, before extensionX"
+  ```
+- `os`
+
+    Allows restricting an extension to a given OS.
+    Supported values:
+    - `freebsd`
+    - `linux`
+    - `mac`
+    - `unix`
+    - `windows`
+    
+    For example, `os="windows"` registers the extension on Windows only.
 
 ### `extensionPoints`
 {#idea-plugin__extensionPoints}

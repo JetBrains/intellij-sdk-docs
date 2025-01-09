@@ -1,6 +1,6 @@
 #!/usr/bin/env kotlin
 
-// Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
+// Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 
 /**
  * Generates the elements content for pages defined in [descriptors].
@@ -115,8 +115,9 @@ fun StringBuilder.appendElementsHierarchy(elements: List<Element>, level: Int, p
 }
 
 fun StringBuilder.appendHierarchyLink(element: Element, level: Int, elementSectionLink: String) {
+  val elementName = if (element.isWildcard()) (element.descriptiveName ?: "*") else "`<${element.name}>`"
   appendLine(
-    """${"  ".repeat(level)}- [`<${element.name}>`](#$elementSectionLink)${if (element.deprecatedSince != null) "  ![Deprecated][deprecated]" else ""}"""
+    """${"  ".repeat(level)}- [$elementName](#$elementSectionLink)${if (element.deprecatedSince != null) "  ![Deprecated][deprecated]" else ""}"""
   )
 }
 
@@ -176,7 +177,8 @@ fun StringBuilder.appendSectionHeader(
   elementSectionLink: String,
   addDeprecationLabel: Boolean
 ) {
-  appendLine("\n#${"#".repeat(level)} `${element.name}`")
+  val title = if (element.isWildcard()) (element.descriptiveName ?: "*") else "`${element.name}`"
+  appendLine("\n#${"#".repeat(level)} $title")
   val attributes = StringBuilder()
   attributes.append("{")
   attributes.append("#$elementSectionLink")
@@ -452,6 +454,7 @@ data class ElementWrapper(
 
 data class Element(
   var name: String? = null,
+  var descriptiveName: String? = null,
   var sdkDocsFixedPath: List<String> = emptyList(),
   var since: String? = null,
   var until: String? = null,
@@ -467,7 +470,11 @@ data class Element(
   var requirement: Requirement? = null,
   var defaultValue: String? = null,
   var examples: List<String> = emptyList(),
-)
+) {
+  fun isWildcard(): Boolean {
+    return name == "*"
+  }
+}
 
 // allows for referencing attributes by anchors in YAML
 data class AttributeWrapper(

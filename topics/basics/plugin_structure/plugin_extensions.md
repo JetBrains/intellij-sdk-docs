@@ -41,7 +41,8 @@ See [](explore_api.md) for more information and strategies.
     * If the extension point was declared using the `beanClass` attribute, set all properties annotated with the [`@Attribute`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) and [`Tag`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Tag.java) annotations in the specified bean class.
 
    See the [](plugin_extension_points.md#declaring-extension-points) section for details.
-4. Implement the extension API as required (see [](#implementing-extension)).
+4. In addition to attributes defined by the extension point, the extension element can specify basic attributes (see the attributes list in [](plugin_configuration_file.md#idea-plugin__extensions__*) section).
+5. Implement the extension API as required (see [](#implementing-extension)).
 
 </procedure>
 
@@ -87,20 +88,9 @@ When using [Kotlin](using_kotlin.md):
 - Do not use `companion object` to avoid excessive classloading/initialization when the extension class is loaded.
   Use top-level declarations or objects instead. [More details](using_kotlin.md#companion-object-extensions)
 
+> If an extension instance needs to "opt out" in certain scenarios, it can throw [`ExtensionNotApplicableException`](%gh-ic%/platform/extensions/src/com/intellij/openapi/extensions/ExtensionNotApplicableException.java) in its constructor.
+
 </procedure>
-
-### Extension Default Properties
-
-`id`
-: Unique ID. Consider prepending ID with the prefix related to the plugin name or ID to not clash with other plugins defining extensions with the same ID, for example, `com.example.myplugin.myExtension`.
-
-`order`
-: Allows ordering all defined extensions using `first`, `last` or `before|after [id]` respectively.
-
-`os`
-: Allows restricting an extension to a given OS, for example, `os="windows"` registers the extension on Windows only
-
-If an extension instance needs to "opt out" in certain scenarios, it can throw [`ExtensionNotApplicableException`](%gh-ic%/platform/extensions/src/com/intellij/openapi/extensions/ExtensionNotApplicableException.java) in its constructor.
 
 ### Extension Properties Code Insight
 

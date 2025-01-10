@@ -41,7 +41,7 @@ See [](explore_api.md) for more information and strategies.
     * If the extension point was declared using the `beanClass` attribute, set all properties annotated with the [`@Attribute`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) and [`Tag`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Tag.java) annotations in the specified bean class.
 
    See the [](plugin_extension_points.md#declaring-extension-points) section for details.
-4. In addition to attributes defined by the extension point, the extension element can specify basic attributes (see the attributes list in [](plugin_configuration_file.md#idea-plugin__extensions__*) section).
+4. In addition to attributes defined by the extension point, the extension element can specify basic attributes (see the attributes list in [](plugin_configuration_file.md#idea-plugin__extensions__-) section).
 5. Implement the extension API as required (see [](#implementing-extension)).
 
 </procedure>

@@ -52,7 +52,7 @@ Deprecated elements are omitted in the list below.
   - [`<depends>`](#idea-plugin__depends)
   - [`<incompatible-with>`](#idea-plugin__incompatible-with)
   - [`<extensions>`](#idea-plugin__extensions)
-    - [An Extension](#idea-plugin__extensions__*)
+    - [An Extension](#idea-plugin__extensions__-)
   - [`<extensionPoints>`](#idea-plugin__extensionPoints)
     - [`<extensionPoint>`](#idea-plugin__extensionPoints__extensionPoint)
       - [`<with>`](#idea-plugin__extensionPoints__extensionPoint__with)
@@ -568,7 +568,7 @@ Examples
     ```
 
 #### An Extension
-{#idea-plugin__extensions__*}
+{#idea-plugin__extensions__-}
 
 An extension instance registered under [`<extensions>`](#idea-plugin__extensions).
 

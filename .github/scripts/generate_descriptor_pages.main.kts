@@ -391,6 +391,7 @@ fun file(path: String): File {
 fun String.cleanup(): String {
   return this
     .cleanupElementLinks()
+    .fixWildcardLinks()
     .removeAttributeLinks()
     .removeDocProviderSpecificAttributes()
     .internalizeLinks()
@@ -399,6 +400,12 @@ fun String.cleanup(): String {
 fun String.cleanupElementLinks(): String {
   // [`some-element`](#element:path__to__some-element) -> [`some-element`](#path__to__some-element)
   return replace("](#element:", "](#")
+}
+
+fun String.fixWildcardLinks(): String {
+  // reason: Writerside can't handle links with * and the error page is displayed
+  // [wildcard](path__to__*) -> [wildcard](#path__to__-)
+  return replace("__*", "__-")
 }
 
 fun String.removeAttributeLinks(): String {

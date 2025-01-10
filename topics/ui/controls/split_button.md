@@ -62,7 +62,7 @@ Putting the single action in the dropdown menu doesn't save a lot of space:
 
 <format color="369650" style="bold">Correct</format>
 
-<img src="split_button_unrelated_actions_correct.png" alt="Unrelated actions in separate buttons" width="706"/>
+<img src="split_button_one_two_buttons.png" alt="Unrelated actions in separate buttons" width="706"/>
 
 <note><control>Exception</control>: If the action is <a anchor="the-second-action-is-dangerous-and-uncommon">dangerous and uncommon</a>, you can put it in the menu.</note>
 
@@ -96,6 +96,9 @@ Place related actions into the dropdown menu. Do not duplicate the main action i
 
 ![Unique actions in dropdown menu](split_button_related_actions.png){width=706}
 
+If there is a dangerous action among other actions in the dropdown, add the line separators above and below it to lessen the chance of calling this action by mistake:
+
+![Dangerous action in the dropdown menu](split_button_dangerous_action_separator.png){width=706}
 
 [//]: # (### Reduce split button to simple action buttons)
 
@@ -119,18 +122,25 @@ Place related actions into the dropdown menu. Do not duplicate the main action i
 
 * Open the dropdown menu with the first menu item selected on <shortcut>Alt+Shift+Enter</shortcut>.
 
-* Do **not** show the dropdown menuwhen the button gains focus.
+* Do not show the dropdown menu when the button gains focus.
 
 ### Focus on the button
 
 <table style="none">
-  <tr>
-    <td width="15%">
-        <p><shortcut>Enter</shortcut></p>
-        <p><shortcut>Ctrl+Enter</shortcut></p>
-    </td>
-    <td width="85%">Invoke the default button action.</td>
-  </tr>
+
+[//]: # (  <tr>)
+
+[//]: # (    <td width="15%">)
+
+[//]: # (        <p><shortcut>Enter</shortcut></p>)
+
+[//]: # (        <p><shortcut>Ctrl+Enter</shortcut></p>)
+
+[//]: # (    </td>)
+
+[//]: # (    <td width="85%">Invoke the default button action.</td>)
+
+[//]: # (  </tr>)
   <tr>
     <td><shortcut>Space</shortcut></td>
     <td>Invoke the main action.</td>

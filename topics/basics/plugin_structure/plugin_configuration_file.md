@@ -667,14 +667,17 @@ Attributes
   Only one of the `name` and `qualifiedName` attributes can be specified.
 - `interface` _(`interface` or `beanClass` is **required**)_<br/>
   The fully qualified name of the interface to be implemented for extending the plugin's functionality.<br/>
-  Only one of the `interface` and `beanClass` attributes can be specified.<br/>
-  See [Extension Points](plugin_extension_points.md) for more
-  information.
+  Only one of the `interface` and `beanClass` attributes can be specified.
 - `beanClass` _(`interface` or `beanClass` is **required**)_<br/>
   The fully qualified name of the extension point bean class providing additional information to the plugin.<br/>
-  Only one of the `interface` and `beanClass` attributes can be specified.<br/>
-  See [Extension Points](plugin_extension_points.md) for more
-  information.
+  The bean class specifies one or several properties annotated with the
+  [`@Attribute`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java)
+  annotation.
+  Note that bean classes do not follow the JavaBean standard.
+  Implement
+  [`PluginAware`](%gh-ic%/platform/extensions/src/com/intellij/openapi/extensions/PluginAware.java)
+  to obtain information about the plugin providing the actual extension (see [Error Handling](plugin_extension_points.md#error-handling)).<br/>
+  Only one of the `interface` and `beanClass` attributes can be specified.
 - `dynamic` _(optional)_<br/>
   Boolean value defining whether the extension point meets the requirements to be
   [dynamic](plugin_extension_points.md#dynamic-extension-points),

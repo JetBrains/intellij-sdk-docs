@@ -18,46 +18,21 @@ There are two types of extension points:
 * _Bean_ extension points allow other plugins to extend a plugin with _data_.
   Specify the fully qualified name of an extension class, and other plugins will provide data that will be turned into instances of that class.
 
-## Declaring Extension Points
+<procedure title="Declaring Extension Point" id="declaring-extension-points">
 
-You can declare extensions and extension points in the plugin configuration file <path>[plugin.xml](plugin_configuration_file.md)</path>, within the [`<extensions>`](plugin_configuration_file.md#idea-plugin__extensions) and [`<extensionPoints>`](plugin_configuration_file.md#idea-plugin__extensionPoints) sections.
+1. Add an [`<extensionPoints>`](plugin_configuration_file.md#idea-plugin__extensionPoints) section to <path>plugin.xml</path>, if it's not yet present there.
+2. Add a child element [`<extensionPoint>`](plugin_configuration_file.md#idea-plugin__extensionPoints__extensionPoint).
+3. Specify the extension point name with the `name` or `qualifiedName` attribute __*__.
+4. Depending on the extension point type, specify the `interface` or `beanClass` attribute __*__.
+5. If required, specify the `area` attribute __*__.
 
-To declare extension points in your plugin, add an `<extensionPoints>` section to your <path>plugin.xml</path>.
-Then insert a child element [`<extensionPoint>`](plugin_configuration_file.md#idea-plugin__extensionPoints__extensionPoint) that defines the extension point name and the name of a bean class or an interface that is allowed to extend the plugin functionality in the `name`, `beanClass` and `interface` attributes, respectively.
+See the [](#example).
 
-<path>myPlugin/META-INF/plugin.xml</path>
+__*__ _see the **Attributes** section for [`<extensionPoint>`](plugin_configuration_file.md#idea-plugin__extensionPoints__extensionPoint) for details_
 
-```xml
-<idea-plugin>
-  <id>my.plugin</id>
+</procedure>
 
-  <extensionPoints>
-    <extensionPoint
-            name="myExtensionPoint1"
-            beanClass="com.example.MyBeanClass"/>
-
-    <extensionPoint
-            name="myExtensionPoint2"
-            interface="com.example.MyInterface"/>
-  </extensionPoints>
-
-</idea-plugin>
-```
-
-The `name` attribute assigns a unique name for this extension point.
-Its fully qualified name required in [Using Extension Points](#using-extension-points) is built by prefixing the plugin [`<id>`](plugin_configuration_file.md#idea-plugin__id) as "namespace" followed by `.` separator: `my.plugin.myExtensionPoint1` and `my.plugin.myExtensionPoint2`.
-
-The `beanClass` attribute sets a bean class that specifies one or several properties annotated with the [`@Attribute`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotation.
-Note that bean classes do not follow the JavaBean standard.
-Implement [`PluginAware`](%gh-ic%/platform/extensions/src/com/intellij/openapi/extensions/PluginAware.java) to obtain information about the plugin providing the actual extension (see [](#error-handling)).
-
-Alternatively, the `interface` attribute sets an interface the plugin that contributes to the extension point must then implement.
-
-The `area` attribute determines the scope in which the extension will be instantiated.
-As extensions should be stateless, it is **not** recommended to use non-default.
-Must be one of `IDEA_APPLICATION` for Application (default), `IDEA_PROJECT` for Project, or `IDEA_MODULE` for Module scope.
-
-The plugin that contributes to the extension point will read those properties from the <path>plugin.xml</path> file.
+The plugin that contributes to the extension point will read the specified properties from the <path>plugin.xml</path> file.
 
 If extension implementations are filtered according to [dumb mode](indexing_and_psi_stubs.md#dumb-mode), the base class should be
 marked with [`PossiblyDumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/PossiblyDumbAware.java) to highlight this.
@@ -74,9 +49,30 @@ Base classes for extensions requiring a key:
 >
 {style="note"}
 
-### Sample
+## Example
 
-To clarify this, consider the following sample `MyBeanClass` bean class used in the above <path>plugin.xml</path> file:
+Consider example extension points declarations:
+
+<path>myPlugin/META-INF/plugin.xml</path>
+
+```xml
+<idea-plugin>
+  <id>my.plugin</id>
+
+  <extensionPoints>
+    <extensionPoint
+        name="myExtensionPoint1"
+        interface="com.example.MyInterface"/>
+
+    <extensionPoint
+        name="myExtensionPoint2"
+        beanClass="com.example.MyBeanClass"/>
+  </extensionPoints>
+
+</idea-plugin>
+```
+
+The `com.example.MyBeanClass` bean class used in the above `plugin.xml` file is implemented as follows:
 
 <path>myPlugin/src/com/myplugin/MyBeanClass.java</path>
 
@@ -101,9 +97,8 @@ public final class MyBeanClass extends AbstractExtensionPointBean {
 ```
 
 > See [Extension properties code insight](plugin_extensions.md#extension-properties-code-insight) on how to provide smart completion/validation.
->
 
-For above extension points usage in _anotherPlugin_ would look like this (see also [Declaring Extensions](plugin_extensions.md#declaring-extensions)):
+For above extension points, their usage in _anotherPlugin_ would look like this (see also [Declaring Extensions](plugin_extensions.md#declaring-extensions)):
 
 <path>anotherPlugin/META-INF/plugin.xml</path>
 
@@ -118,7 +113,7 @@ For above extension points usage in _anotherPlugin_ would look like this (see al
   <extensions defaultExtensionNs="my.plugin">
     <myExtensionPoint1
             key="someKey"
-            implementationClass="another.some.implementation.class"/>
+            implementationClass="com.example.MyImplementation"/>
 
     <myExtensionPoint2
             implementation="another.MyInterfaceImpl"/>

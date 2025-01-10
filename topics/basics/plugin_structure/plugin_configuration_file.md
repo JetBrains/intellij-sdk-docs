@@ -653,24 +653,26 @@ Attributes
 :
 - `name` _(`name` or `qualifiedName` is **required**)_<br/>
   The extension point name that should be unique in the scope of the plugin, e.g., `myExtension`.
-  The fully qualified name of the extension point is built at runtime by prepending the value of the `name` attribute
-  with the plugin [`<id>`](#idea-plugin__id) + `.` prefix.
-  Only one of the `name` and `qualifiedName` attributes can be specified.<br/>
+  The fully qualified name of the extension point is built at runtime by prepending the value of the `name`
+  attribute with the plugin [`<id>`](#idea-plugin__id) + `.` prefix.<br/>
   Example: when the `name` is `myExtension` and plugin ID is `com.example.myplugin`, the fully qualified name of
-  the EP will be `com.example.myplugin.myExtension`.
+  the EP will be `com.example.myplugin.myExtension`.<br/>
+  Only one of the `name` and
+  `qualifiedName` attributes can be
+  specified.
 - `qualifiedName` _(`name` or `qualifiedName` is **required**)_<br/>
   The fully qualified name of the extension point.
   It should be unique between different plugins, and it is recommended to include a plugin ID to guarantee uniqueness,
-  e.g., `com.example.myplugin.myExtension`.
+  e.g., `com.example.myplugin.myExtension`.<br/>
   Only one of the `name` and `qualifiedName` attributes can be specified.
 - `interface` _(`interface` or `beanClass` is **required**)_<br/>
-  The fully qualified name of the interface to be implemented for extending the plugin's functionality.
-  Only one of the `interface` and `beanClass` attributes can be specified.
+  The fully qualified name of the interface to be implemented for extending the plugin's functionality.<br/>
+  Only one of the `interface` and `beanClass` attributes can be specified.<br/>
   See [Extension Points](plugin_extension_points.md) for more
   information.
 - `beanClass` _(`interface` or `beanClass` is **required**)_<br/>
-  The fully qualified name of the extension point bean class providing additional information to the plugin.
-  Only one of the `interface` and `beanClass` attributes can be specified.
+  The fully qualified name of the extension point bean class providing additional information to the plugin.<br/>
+  Only one of the `interface` and `beanClass` attributes can be specified.<br/>
   See [Extension Points](plugin_extension_points.md) for more
   information.
 - `dynamic` _(optional)_<br/>
@@ -709,11 +711,11 @@ Attributes
 :
 - `tag` _(`tag` or `attribute` is **required**)_<br/>
   The name of the tag holding the fully qualified name of the class which parent type will be limited
-  by the type provided in the `implements` attribute.
+  by the type provided in the `implements` attribute.<br/>
   Only one of the `tag` and `attribute` attributes can be specified.
 - `attribute` _(`tag` or `attribute` is **required**)_<br/>
   The name of the attribute holding the fully qualified name of the class which parent type will be limited
-  by the type provided in the `implements` attribute.
+  by the type provided in the `implements` attribute.<br/>
   Only one of the `tag` and `attribute` attributes can be specified.
 - `implements` _(**required**)_<br/>
 

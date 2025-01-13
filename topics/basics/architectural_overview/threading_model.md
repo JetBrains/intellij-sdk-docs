@@ -15,8 +15,40 @@ In general, as in a regular [Swing](https://docs.oracle.com/javase%2Ftutorial%2F
   Its main purpose is handling UI events (such as reacting to clicking a button or updating the UI), but the platform uses it also for writing data.
   EDT executes events taken from the Event Queue.
   Operations performed on EDT must be as fast as possible to not block other events in the queue and freeze the UI.
-  There is only one EDT in the running application.
-- background threads (BGT) – used for performing long-running and costly operations, or background tasks
+- background threads (BGT) – used for performing long-running and costly operations, or background tasks.
+
+There is only one EDT and multiple BGT in the running application:
+
+```mermaid
+---
+displayMode: compact
+---
+gantt
+    dateFormat X
+    %% do not remove trailing space in axisFormat:
+    axisFormat ‎
+    section EDT
+        UI task : 0, 1
+        write   : 3, 4
+        UI task : 6, 7
+        UI task : 7, 8
+        write   : 9, 10
+    section BGT 1
+        task : done, 0, 3
+        task : done, 4, 6
+        task : done, 7, 10
+    section BGT 2
+        task : done, 1, 2
+        task : done, 3, 7
+        task : done, 8, 10
+    section ...
+        ‎ : 0, 0
+    section BGT N
+        task : done, 0, 2
+        task : done, 3, 6
+        task : done, 7, 8
+        task : done, 9, 10
+```
 
 It is possible to switch between BGT and EDT in both directions.
 Operations can be scheduled to execute on EDT from BGT (and EDT) with `invokeLater()` methods (see the rest of this page for details).

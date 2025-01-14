@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Extensions
 
@@ -87,8 +87,6 @@ When using [Kotlin](using_kotlin.md):
 - Do not use `object` but `class` for implementation. [More details](using_kotlin.md#object-vs-class)
 - Do not use `companion object` to avoid excessive classloading/initialization when the extension class is loaded.
   Use top-level declarations or objects instead. [More details](using_kotlin.md#companion-object-extensions)
-
-> If an extension instance needs to "opt out" in certain scenarios, it can throw [`ExtensionNotApplicableException`](%gh-ic%/platform/extensions/src/com/intellij/openapi/extensions/ExtensionNotApplicableException.java) in its constructor.
 
 </procedure>
 

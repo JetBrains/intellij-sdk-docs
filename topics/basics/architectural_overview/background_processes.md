@@ -43,7 +43,7 @@ The key classes are:
 
 ### Starting
 
-Background processes encapsulated within `Task` should be run with queueing them.
+Background processes encapsulated within `Task` can be run with queueing them.
 Example:
 
 <tabs group="languages">
@@ -72,6 +72,14 @@ new Task.Backgroundable(project, "Synchronizing data", true) {
 ```
 </tab>
 </tabs>
+
+> To run a backgroundable task under a custom progress indicator, for example, `EmptyProgressIndicator` to hide progress, use:
+>   ```kotlin
+>   ProgressManager.getInstance()
+>       .runProcessWithProgressAsynchronously(
+>           backgroundableTask, EmptyProgressIndicator())
+>   ```
+> Note that hiding progress from users should be avoided as it may break the UX.
 
 `ProgressManager` also allows running `Runnable` and `Computable` instances not wrapped within `Task` with several `run*()` methods.
 Example:

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Threading Model
 
@@ -29,9 +29,12 @@ gantt
     axisFormat ‎
     section EDT
         UI task : 0, 1
+        UI task : 1, 2
         write   : 3, 4
-        UI task : 6, 7
+        UI task : 4, 5
+        write   : 5, 6
         UI task : 7, 8
+        UI task : 8, 9
         write   : 9, 10
     section BGT 1
         task : done, 0, 3

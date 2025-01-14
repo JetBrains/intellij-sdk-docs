@@ -79,7 +79,7 @@ new Task.Backgroundable(project, "Synchronizing data", true) {
 >       .runProcessWithProgressAsynchronously(
 >           backgroundableTask, EmptyProgressIndicator())
 >   ```
-> Note that hiding progress from users should be avoided as it may break the UX.
+> Note that hiding progress from users should be avoided as it may break the [UX](plugin_user_experience.md).
 
 `ProgressManager` also allows running `Runnable` and `Computable` instances not wrapped within `Task` with several `run*()` methods.
 Example:

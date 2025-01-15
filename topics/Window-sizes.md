@@ -154,7 +154,7 @@ When the default sizes are either too big or too small for a window, or the wind
 <table style="none" border="false">
    <tr>
       <td width="50%">
-         <img src="dialog_popup_sizes_table_cell.png" alt="Example of a table with three cells" width="378"/>
+         <img src="dialog_popup_sizes_table_cell.png" alt="Example of a table with three cells"/>
       </td>
       <td>
          <p><format style="bold">Table cell</format></p>
@@ -165,7 +165,7 @@ When the default sizes are either too big or too small for a window, or the wind
    </tr>
    <tr>
       <td width="50%">
-          <img src="dialog_popup_sizes_tree.png" alt="Example of a tree" width="378"/>
+          <img src="dialog_popup_sizes_tree.png" alt="Example of a tree"/>
       </td>
       <td>
          <p><format style="bold">Tree</format></p>
@@ -174,7 +174,7 @@ When the default sizes are either too big or too small for a window, or the wind
    </tr>
    <tr>
       <td width="50%">
-          <img src="dialog_popup_sizes_text_area.png" alt="Example of a text area" width="378"/>
+          <img src="dialog_popup_sizes_text_area.png" alt="Example of a text area"/>
       </td>
       <td>
           <p><format style="bold">Text area</format></p>
@@ -185,7 +185,7 @@ When the default sizes are either too big or too small for a window, or the wind
    </tr>
    <tr>
       <td width="50%">
-          <img src="dialog_popup_sizes_diagram.png" alt="Example of a diagram" width="378"/>
+          <img src="dialog_popup_sizes_diagram.png" alt="Example of a diagram"/>
       </td>
       <td>
           <p><format style="bold">Diagram</format></p>
@@ -199,7 +199,7 @@ When the default sizes are either too big or too small for a window, or the wind
 <table style="none" border="false">
    <tr>
       <td width="50%">
-          <img src="dialog_popup_sizes_class_test_file.png" alt="Examples of a class, test, and file name" width="378"/>
+          <img src="dialog_popup_sizes_class_test_file.png" alt="Examples of a class, test, and file name"/>
       </td>
       <td>
           <p><format style="bold">Class/test/file name</format></p>
@@ -208,7 +208,7 @@ When the default sizes are either too big or too small for a window, or the wind
    </tr>
    <tr>
       <td width="50%">
-          <img src="dialog_popup_sizes_url_path_fqn.png" alt="Examples of a URL, path, and an FQN for class" width="378"/>
+          <img src="dialog_popup_sizes_url_path_fqn.png" alt="Examples of a URL, path, and an FQN for class"/>
       </td>
       <td>
           <p><format style="bold">URL/Path/FQN for class</format></p>
@@ -217,7 +217,7 @@ When the default sizes are either too big or too small for a window, or the wind
    </tr>
    <tr>
       <td width="50%">
-          <img src="dialog_popup_sizes_class_test_file_url_path_fqn.png" alt="Examples of a class, test, or file name together with a URL, path, or an FQN for class" width="378"/>
+          <img src="dialog_popup_sizes_class_test_file_url_path_fqn.png" alt="Examples of a class, test, or file name together with a URL, path, or an FQN for class"/>
       </td>
       <td>
           <p><format style="bold">Class/test/file name + URL/Path/FQN for class</format></p>
@@ -226,7 +226,7 @@ When the default sizes are either too big or too small for a window, or the wind
    </tr>
    <tr>
       <td width="50%">
-          <img src="dialog_popup_sizes_code_snippet.png" alt="Example of a code snippet" width="378"/>
+          <img src="dialog_popup_sizes_code_snippet.png" alt="Example of a code snippet"/>
       </td>
       <td>
           <p><format style="bold">Code snippet or editor</format></p>
@@ -236,7 +236,7 @@ When the default sizes are either too big or too small for a window, or the wind
    </tr>
    <tr>
       <td width="50%">
-          <img src="dialog_popup_sizes_standalone_text.png" alt="Example of a paragraph" width="378"/>
+          <img src="dialog_popup_sizes_standalone_text.png" alt="Example of a paragraph"/>
       </td>
       <td>
           <p><format style="bold">Paragraph or long text</format></p>

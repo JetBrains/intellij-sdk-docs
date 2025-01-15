@@ -87,7 +87,7 @@ Delegate Run Anything/Terminal commands to IDE features
 : Switch to matching IDE feature by implementing [`TerminalShellCommandHandler`](%gh-ic%/platform/execution-impl/src/com/intellij/terminal/TerminalShellCommandHandler.kt) (`com.intellij.terminal.shellCommandHandler` extension point). [Blog post](https://blog.jetbrains.com/idea/2020/07/run-ide-features-from-the-terminal/)
 
 Deprecating JavaFX in favor of JCEF
-: We recommend switching to [JCEF](jcef.md), please see [blog post](https://blog.jetbrains.com/platform/2020/07/javafx-and-jcef-in-the-intellij-platform/) for details.
+: We recommend switching to [JCEF](embedded_browser_jcef.md), please see [blog post](https://blog.jetbrains.com/platform/2020/07/javafx-and-jcef-in-the-intellij-platform/) for details.
 
 ASM Library 8.0.1
 : Updated from 7.0.1.
@@ -123,7 +123,7 @@ Configurable status bar widgets
 : Use `com.intellij.statusBarWidgetFactory` extension point to provide widgets that can be disabled or reordered, see [](status_bar_widgets.md).
 
 JCEF Support (_Experimental Feature_)
-: Allows [embedding](jcef.md) Chromium-based browser in the IDE.
+: Allows [embedding](embedded_browser_jcef.md) Chromium-based browser in the IDE.
 
 Override text presentation for actions depending on menu context
 : Set the [`<override-text>`](plugin_configuration_file.md#idea-plugin__actions__action__override-text) element within the [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) declaration in <path>[plugin.xml](plugin_configuration_file.md)</path>.

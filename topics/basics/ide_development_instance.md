@@ -74,7 +74,7 @@ The JetBrains Runtime is delivered in various variants used for different purpos
 
 Available JBR variants are:
 
-- `jcef` - the release bundles with the [JCEF](jcef.md) browser engine
+- `jcef` - the release bundles with the [JCEF](embedded_browser_jcef.md) browser engine
 - `sdk` - JBR SDK bundle used for development purposes
 - `fd` - the fastdebug bundle which also includes the `jcef` module
 - `dcevm` - bundles DCEVM (Dynamic Code Evolution Virtual Machine)

@@ -96,7 +96,7 @@
       <toc-element topic="misc_swing_components.md"/>
       <toc-element topic="icons.md" toc-title="Icons" accepts-web-file-names="work-with-icons-and-images.html"/>
       <toc-element topic="ui_faq.md"/>
-      <toc-element topic="jcef.md"/>
+      <toc-element topic="embedded_browser_jcef.md" accepts-web-file-names="jcef.html"/>
       <toc-element topic="color_scheme_management.md"/>
       <toc-element topic="themes_metadata.md"/>
     </toc-element>

@@ -97,7 +97,7 @@ IntelliJ Platform Gradle Plugin 2.x (Early Access Preview)
 {#december-23}
 
 JCEF
-: Revamp [JCEF (Java Chromium Embedded Framework)](jcef.md) page.
+: Revamp [JCEF (Java Chromium Embedded Framework)](embedded_browser_jcef.md) page.
 
 User Interface FAQ
 : Added [](ui_faq.md).
@@ -451,7 +451,7 @@ UI Inspector
 {#march-20}
 
 JCEF Support
-: Allows [embedding](jcef.md) Chromium-based browser in the IDE.
+: Allows [embedding](embedded_browser_jcef.md) Chromium-based browser in the IDE.
 
 ### February
 {#february-20}

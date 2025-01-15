@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 #  Embedded Browser (JCEF)
 <primary-label ref="2020.2"/>
@@ -219,7 +219,7 @@ browser.getCefBrowser().executeJavaScript( // 6
 2. Add a handler implementing a plugin code to be executed.
    Example implementation opens a link in the editor or an external browser depending on whether the link is local or external.
 3. Handlers can optionally return a `JBCefJSQuery.Response` object, which holds information about success or error occurred on the plugin code side.
-   It can be handled in the browser if needed.
+   It can be [handled](#handling-query-response) in the browser if needed.
 4. Execute JavaScript, which creates a custom `openLink` function.
 5. Inject JavaScript code responsible for invoking plugin code implemented in step 2.
    The handler added to `openLinkQuery` will be invoked on each `openLink` function call.
@@ -229,6 +229,20 @@ browser.getCefBrowser().executeJavaScript( // 6
    This value is injected to the query function call and can be any value required by the handler, e.g., `"myJsObject.prop"`, `"'JavaScript string'"`, etc.
 6. Execute JavaScript, which registers a click event listener in the browser.
    Whenever an `a` element is clicked in the browser, the listener will invoke the `openLink` function defined in step 4 with the `href` value of the clicked link.
+
+#### Handling Query Response
+
+In the example above, there is no need to return response value to the browser from a query handler.
+If it is required to handle response:
+1. Instead of returning `null` as in 3., return a `JBCefJSQuery.Response` instance, for example, `new JBCefJSQuery.Response("OK")`.
+2. Instead of injecting code without callbacks with `JBCefJSQuery.inject("link")` as in 5., use `JBCefJSQuery.inject(queryResult, onSuccessCallback, onFailureCallback)`, for example:
+   ```java
+   openLinkQuery.inject(
+     "link",
+     "function(response) { /* success handler code */ }",
+     "function(error_code, error_message) { /* error handler code */ }"
+   );
+   ```
 
 ### Loading Resources From Plugin Distribution
 

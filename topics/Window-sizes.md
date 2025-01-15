@@ -154,7 +154,7 @@ When the default sizes are either too big or too small for a window, or the wind
 <table style="none" border="false">
    <tr>
       <td width="50%">
-         <img src="dialog_popup_sizes_table_cell.png" alt="Example of a table with 3 cells" width="378"/>
+         <img src="dialog_popup_sizes_table_cell.png" alt="Example of a table with three cells" width="378"/>
       </td>
       <td>
          <p><format style="bold">Table cell</format></p>
@@ -217,7 +217,7 @@ When the default sizes are either too big or too small for a window, or the wind
    </tr>
    <tr>
       <td width="50%">
-          <img src="dialog_popup_sizes_class_test_file_url_path_fqn.png" alt="Examples of a class, test, or file name together with a URL, path or an FQN for class" width="378"/>
+          <img src="dialog_popup_sizes_class_test_file_url_path_fqn.png" alt="Examples of a class, test, or file name together with a URL, path, or an FQN for class" width="378"/>
       </td>
       <td>
           <p><format style="bold">Class/test/file name + URL/Path/FQN for class</format></p>
@@ -273,7 +273,7 @@ The <control>Rename Inheritors</control> dialog has a table with FQNs. Add 350&n
     <tr>
          <td width="706">
             <format color="369650" style="bold">Correct</format>
-            <img src="dialog_popup_sizes_example_2_correct.png" alt="Code snippet in the Code Style settings for Java is 400 px making the dialog wider"/>
+            <img src="dialog_popup_sizes_example_2_correct.png" alt="The code snippet in the Code Style settings for Java is 400 px, making the dialog wider"/>
          </td>
     </tr>
     <tr>

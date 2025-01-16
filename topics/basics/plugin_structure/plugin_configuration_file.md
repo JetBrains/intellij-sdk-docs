@@ -582,7 +582,8 @@ Attributes
 :
 - `id` _(optional)_<br/>
   Unique extension identifier.
-  It allows for referencing an extension in the `order` attribute.
+  It allows for referencing an extension in other attributes, for example, in
+  `order`.
   <br/>
   To not clash with other plugins defining extensions with the same identifier,
   consider prepending the identifier with a prefix related to the plugin [`<id>`](#idea-plugin__id) or 

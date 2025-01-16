@@ -154,11 +154,11 @@ Many IntelliJ Platform APIs for registering listeners either require passing a p
 For example:
 
 ```java
-public abstract class EditorFactory {
+public interface PomModel {
   // ...
-  public abstract void addEditorFactoryListener(@NotNull EditorFactoryListener listener);
-  public abstract void addEditorFactoryListener(@NotNull EditorFactoryListener listener, @NotNull Disposable parentDisposable);
-  public abstract void removeEditorFactoryListener(@NotNull EditorFactoryListener listener);
+  void addModelListener(PomModelListener listener);
+  void addModelListener(PomModelListener listener, Disposable parentDisposable);
+  void removeModelListener(PomModelListener listener);
 }
 ```
 

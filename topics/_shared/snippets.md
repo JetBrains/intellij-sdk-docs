@@ -140,3 +140,13 @@ See [](verifying_plugin_compatibility.md) for overview of API status.
 [dumb-aware]: https://img.shields.io/badge/-DumbAware-darkgreen?style=flat-square
 
 </snippet>
+
+<snippet id="descriptorDocumentationProviderNote">
+
+> Elements described on this page are available in [quick documentation](https://www.jetbrains.com/help/idea/viewing-reference-information.html#inline-quick-documentation) since IntelliJ IDEA 2025.1.
+>
+> The [Plugin DevKit](https://plugins.jetbrains.com/plugin/22851-plugin-devkit) plugin must be installed and enabled.
+>
+{style="note"}
+
+</snippet>

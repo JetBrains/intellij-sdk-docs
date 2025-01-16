@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Build Number Ranges
 
@@ -117,6 +117,7 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 | Branch number                                                   | IntelliJ Platform version               |
 |-----------------------------------------------------------------|-----------------------------------------|
+| 251 (Early Access Preview)                                      | 2025.1 (unreleased)                     |
 | [243](https://github.com/JetBrains/intellij-community/tree/243) | 2024.3                                  |
 | [242](https://github.com/JetBrains/intellij-community/tree/242) | 2024.2 **NOTE** Java 21 is now required |
 | [241](https://github.com/JetBrains/intellij-community/tree/241) | 2024.1                                  |

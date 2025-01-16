@@ -248,7 +248,7 @@ When the default sizes are either too big or too small for a window, or the wind
 
 #### Example 1
 
-The <control>Rename Inheritors</control> dialog has a table with FQNs. Add 350&nbsp;px as the minimum width for a table column. This will make the dialog wider than the default <control>Small</control> size (500&nbsp;px) but will show more of FQNs.
+The <control>Rename Inheritors</control> dialog has a table with FQNs. Add 350&nbsp;px as the minimum width for a table column. This will make the dialog wider than the default <control>Medium</control> size (500&nbsp;px) but will show more of FQNs.
 
 <table style="none" border="false">
     <tr>
@@ -267,7 +267,7 @@ The <control>Rename Inheritors</control> dialog has a table with FQNs. Add 350&n
 
 #### Example 2
 
-<control>Settings</control> dialog has the default size 1000&nbsp;px. In the <control>Code Style settings for Java</control> set 400&nbsp;px as the minimum width of the code editor. This will make the dialog wider but will show more code
+<control>Settings</control> dialog has the default <control>extra large</control> size 1000&nbsp;px. In the <control>Code Style settings for Java</control> set 400&nbsp;px as the minimum width of the code editor. This will make the dialog wider but will show more code
 
 <table style="none" border="false">
     <tr>
@@ -286,7 +286,7 @@ The <control>Rename Inheritors</control> dialog has a table with FQNs. Add 350&n
 
 #### Example 3
 
-Instead of setting a default size for a diagram popup, for example, the <control>Small</control> size, add horizontal and vertical 100&nbsp;px insets inside the <control>Diagram</control> popup, and make the width and height adaptive to its content. This will help small diagrams be more noticeable and make a diagram popup of any size easier to read.
+Instead of setting a default size for a diagram popup, for example, <control>small</control> (350×250&nbsp;px), add horizontal and vertical 100&nbsp;px insets inside the <control>Diagram</control> popup, and make the width and height adaptive to its content. This will help small diagrams be more noticeable and make a diagram popup of any size easier to read.
 
 <table style="none" border="false">
     <tr>

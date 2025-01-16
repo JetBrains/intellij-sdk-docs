@@ -105,7 +105,7 @@ Use the following guidelines to choose the correct parent:
 * For resources required while a [dialog](dialog_wrapper.md) is displayed, use `DialogWrapper.getDisposable()`.
 * For resources required while a [tool window](tool_windows.md) tab is displayed, pass your instance implementing `Disposable` to `Content.setDisposer()`.
 * For resources with a shorter lifetime, create a disposable using `Disposer.newDisposable()` and dispose it manually using `Disposable.dispose()`.
-  Note that it's always best to specify a parent for such a disposable (e.g., a project-level service), so that there is no memory leak if the `Disposable.dispose()` call is not reached because of an exception or a programming error.
+  Note that it's always best to specify a parent for such a disposable (for example, a project-level service), so that there is no memory leak if the `Disposable.dispose()` call is not reached because of an exception or a programming error.
 
 > Even though `Application` and `Project` implement `Disposable`, they must **never** be used as parent disposables in plugin code.
 > Disposables registered using those objects as parents will not be disposed when the plugin is unloaded, leading to memory leaks.
@@ -124,7 +124,7 @@ Use the following guidelines to choose the correct parent:
 >         Plugin Resource : crit, 3, 10
 > ```
 >
-> If the resource used, e.g., a plugin's project-level service (if shorter living parents are possible, prefer them), the resource would be disposed together with the plugin:
+> If the resource used, for example, a plugin's project-level service (if shorter living parents are possible, prefer them), the resource would be disposed together with the plugin:
 > ```mermaid
 > gantt
 >     dateFormat X
@@ -150,8 +150,7 @@ This creates memory pressure and can waste CPU cycles on processing events that 
 
 ### Registering Listeners with Parent Disposable
 
-Many IntelliJ Platform APIs for registering listeners either require passing a parent disposable or have overloads that take a parent disposable.
-For example:
+Many IntelliJ Platform APIs for registering listeners either require passing a parent disposable or have overloads that take a parent disposable, for example:
 
 ```java
 public interface PomModel {
@@ -165,10 +164,10 @@ public interface PomModel {
 Methods with a `parentDisposable` parameter automatically unsubscribe the listener when the corresponding parent disposable is disposed.
 Using such methods is always preferable to removing listeners explicitly from the `dispose` method because it requires less code and is easier to verify for correctness.
 
-To choose the correct parent disposable, use the guidelines from the previous section.
-
 The same rules apply to [message bus](messaging_infrastructure.md) connections.
+
 Always pass a parent disposable to `MessageBus.connect(parentDisposable)`, and make sure it has the shortest possible lifetime.
+To choose the correct parent disposable, use the guidelines from the [previous section](#choosing-a-disposable-parent).
 
 ### Determining Disposal Status
 You can use `Disposer.isDisposed()` to check whether a `Disposable` has already been disposed.
@@ -239,7 +238,7 @@ The following snippet represents the sort of "memory leak detected" error encoun
 
 ```text
     java.lang.RuntimeException:
-    Memory leak detected: <Instance> of class <com.example.classtype>
+    Memory leak detected: <instance> of class com.example.ClassType
     See the cause for the corresponding Disposer.register() stacktrace:
         at ObjectTree.assertIsEmpty(ObjectTree.java:209)
         at Disposer.assertIsEmpty(Disposer.java:125)

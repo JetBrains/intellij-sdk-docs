@@ -168,7 +168,7 @@ Using such methods is always preferable to removing listeners explicitly from th
 To choose the correct parent disposable, use the guidelines from the previous section.
 
 The same rules apply to [message bus](messaging_infrastructure.md) connections.
-Always pass a parent disposable to `MessageBus.connect()`, and make sure it has the shortest possible lifetime.
+Always pass a parent disposable to `MessageBus.connect(parentDisposable)`, and make sure it has the shortest possible lifetime.
 
 ### Determining Disposal Status
 You can use `Disposer.isDisposed()` to check whether a `Disposable` has already been disposed.

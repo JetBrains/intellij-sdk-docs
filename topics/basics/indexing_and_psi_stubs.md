@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Indexing and PSI Stubs
 
@@ -42,6 +42,11 @@ all while maintaining robust coding assistance._
 ### `DumbAware` API
 
 {id="DumbAwareAPI"}
+
+> Use inspection <control>Plugin DevKit | Code | Can be DumbAware</control> (2025.1+) to find implementations
+> that can potentially be marked as `DumbAware`.
+>
+{style="tip" title="Finding Candidates"}
 
 #### Extension Points
 

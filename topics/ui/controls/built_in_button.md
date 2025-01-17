@@ -11,8 +11,9 @@ A built-in button is an icon placed inside an input control.
 ## When to use
 
 ### Browse
-The **Browse** button opens a dialog with the disk, a tree view, or a table of values.
-Use the **Browse** icon for a file/folder path selected from the disk:
+The **Browse** button shows a dialog for opening files from the disk, a tree view, or a table of values.
+Use the **Browse** icon to select a single file or a folder from the disc.
+
 <img src="built_in_button_browse.png" alt="Browse" width="706"/>
 
 [//]: # (An input field with browse button: [`TextFieldWithBrowseButton`]&#40;%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/TextFieldWithBrowseButton.java&#41;)
@@ -79,6 +80,7 @@ use the **Expand** button to expand the control
 ![Collapsed built-in button](built_in_button_collapsed.png){width=706}
 
 When the field is expanded, show the **Collapse** button:
+
 ![Expanded built-in button](built_in_button_expanded.png){width=706}
 
 ### List values
@@ -88,9 +90,7 @@ Use the **List** icon to select a value from the list of classes, methods, or en
 ![List of values](built_in_button_list.png){width=706}
 
 ### Add value
-
-The **Plus** button works the same way as the **[Browse](#browse)** button.
-The only difference is that the selected value is added instead of overwriting the existing one.
+Use the **Add** button to select multiple values, such as files, variables, folder paths. The selected values will be added to the existing list.
 
 ![Add a value to the field](built_in_button_add.png){width=706}
 
@@ -99,12 +99,10 @@ The only difference is that the selected value is added instead of overwriting t
 Place the built-in button inside the input field. Do not place the built-in button next to the field control:
 <table style="none" border="false">
 <tr>
-<td><format color="369650" style="bold">Correct</format></td>
-<td><format color="E55765" style="bold">Incorrect</format></td>
-</tr>
-<tr>
-<td><img src="built_in_button_browse_correct.png" alt="Browse button" width="378"/></td>
-<td><img src="built_in_button_browse_incorrect.png" alt="Incorrect browse button" width="378"/></td>
+<td><format color="369650" style="bold">Correct</format>
+<img src="built_in_button_browse_correct.png" alt="Browse button" width="378"/></td>
+<td><format color="E55765" style="bold">Incorrect</format>
+<img src="built_in_button_browse_incorrect.png" alt="Incorrect browse button" width="378"/></td>
 </tr>
 </table>
 
@@ -119,12 +117,14 @@ The shortcut for a built-in button is <shortcut>Shift+Enter</shortcut>.
 Do not use the **Copy**, **Paste** or **Cut** button. Instead, make sure these actions are available on pressing <shortcut>Cmd/Ctrl+X</shortuct>, <shortcut>Cmd/Ctrl+C</shortuct>, and <shortcut>Cmd/Ctrl+V</shortuct> shortcuts or  from the context menu.
 <table style="none" border="false">
 <tr>
-<td><format color="369650" style="bold">Correct</format></td>
-<td><format color="E55765" style="bold">Incorrect</format></td>
-</tr>
-<tr>
-<td><img src="built_in_button_copy_correct.png" alt="Browse button" width="378"/></td>
-<td><img src="built_in_button_copy_incorrect.png" alt="Incorrect browse button" width="378"/></td>
+<td>
+    <format color="369650" style="bold">Correct</format>
+    <img src="built_in_button_copy_correct.png" alt="Browse button" width="378"/>
+</td>
+<td>
+    <format color="E55765" style="bold">Incorrect</format>
+    <img src="built_in_button_copy_incorrect.png" alt="Incorrect browse button" width="378"/>
+</td>
 </tr>
 </table>
 
@@ -133,11 +133,9 @@ Do not use the **Help** or **Info** buttons to open an external link or a hint. 
 
 <table style="none" border="false">
 <tr>
-<td><format color="369650" style="bold">Correct</format></td>
-<td><format color="E55765" style="bold">Incorrect</format></td>
-</tr>
-<tr>
-<td><img src="built_in_button_help_correct.png" alt="Context help " width="378"/></td>
-<td><img src="built_in_button_help_incorrect.png" alt="Incorrect browse button" width="378"/></td>
+<td><format color="369650" style="bold">Correct</format>
+<img src="built_in_button_help_correct.png" alt="Context help " width="378"/></td>
+<td><format color="E55765" style="bold">Incorrect</format>
+<img src="built_in_button_help_incorrect.png" alt="Incorrect browse button" width="378"/></td>
 </tr>
 </table>

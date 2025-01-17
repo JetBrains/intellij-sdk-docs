@@ -588,7 +588,7 @@ Attributes
   `order`.
   <br/>
   To not clash with other plugins defining extensions with the same identifier,
-  consider prepending the identifier with a prefix related to the plugin [`<id>`](#idea-plugin__id) or
+  consider prepending the identifier with a prefix related to the plugin [`<id>`](#idea-plugin__id) or 
   [`<name>`](#idea-plugin__name), for example, `id="com.example.myplugin.myExtension"`.
 - `order` _(optional)_<br/>
   Allows for ordering the extension relative to other instances of the same extension point.
@@ -612,7 +612,7 @@ Attributes
       - `mac`
       - `unix`
       - `windows`
-
+    
     For example, `os="windows"` registers the extension on Windows only.
 
 ### `extensionPoints`
@@ -734,7 +734,7 @@ Example
   An extension point which restricts the type provided in a `myClass` attribute to be an instance
   of `com.example.ParentType`, and the type provided in a `someClass` element to be an instance
   of `java.lang.Comparable`:
-
+  
   ```xml
   <extensionPoint
       name="myExtension"
@@ -747,18 +747,18 @@ Example
         implements="java.lang.Comparable"/>
   </extensionPoint>
   ```
-
+  
   When using the above extension point, an implementation could be registered as follows:
-
+  
   ```xml
   <myExtension ...
       myClass="com.example.MyCustomType">
     <someClass>com.example.MyComparable</someClass>
   </myExtension>
   ```
-
+  
   where:
-
+  
   - `com.example.MyCustomType` must be a subtype of `com.example.ParentType`
   - `com.example.MyComparable` must be a subtype of `java.lang.Comparable`
 
@@ -1270,7 +1270,7 @@ Attributes
 - `ref` _(**required**)_<br/>
   The ID of the action to add to a group.
 - `id` _(optional)_<br/>
-    **_Deprecated_**: Use `ref` instead.
+    **_Deprecated_**: Use `ref` instead. 
 
     The ID of the action to add to a group.
 

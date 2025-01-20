@@ -62,9 +62,9 @@ Best for:
 * Two-column layout with code snippets or input fields with long texts in both columns.
 * Three-or-more-column layout regardless of the content.
 
-For example, <control>Code Style</control> settings for Java in the <control>Settings</control> dialog. The dialog has three columns with a tree, a table, and a code snippet in different columns:
+For example, the <control>Settings</control> dialog that has three or more columns on multiple pages:
 
-![The Code Style settings in the Settings dialog. The dialog has three columns with a tree, a table, and a code snippet in different columns](dialog_popup_sizes_large.png){width="706"}
+![The Settings dialog that has three or more columns on multiple pages](dialog_popup_sizes_large.png){width="706"}
 
 #### Maximum width and height {id="maximum-width-and-height_dialog"}
 
@@ -72,7 +72,7 @@ Set the dialog's maximum dimensions to match screen size to prevent resizing bey
 
 ### Popup
 
-Popups should have the same default width as dialogs. In addition, there is an **extra small** size for popups – 200 px wide, when the content is narrow.
+Popups should have the same [default](Window-sizes.md#default-sizes) width as dialogs. In addition, there is an **extra small** size for popups – 200 px wide when the content is narrow.
 
 <note>A popup can't be made smaller than the default size.</note>
 
@@ -121,7 +121,7 @@ When the default width doesn't work, set [minimum sizes for components](Window-s
 
 #### Maximum width and height
 
-The maximum width and height shouldn't exceed 80% of a screen size. Use a [scrollbar](scrollbar.md) if a popup's content doesn't fit within the set dimensions.
+Set maximum width and height to 80% of a screen size. Use a [scrollbar](scrollbar.md) if a popup's content doesn't fit within the set dimensions.
 
 ### Tool windows
 
@@ -145,8 +145,8 @@ When the default sizes are either too big or too small for a window, or the wind
 
 ### How to set the size correctly
 
-1. Select how the content is displayed.
-2. What type of content is used.
+1. Select how the [content](Window-sizes.md#how-the-content-is-displayed) is displayed.
+2. What [type of content](Window-sizes.md#types-of-content) is used.
 3. Select the biggest size out of the two to add the minimum size to a component.
 
 #### How the content is displayed

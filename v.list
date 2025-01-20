@@ -6,8 +6,8 @@
 
 <vars>
 
-  <var name="ijPlatform" value="2024.3.1.1"/>
-  <var name="ijPlatformBuild" value="243.22562.218"/>
+  <var name="ijPlatform" value="2024.3.2"/>
+  <var name="ijPlatformBuild" value="243.23654.117"/>
 
 
   <!-- Links to master/main branches **MUST** have "-master" suffix for recheck when running inspection globally -->

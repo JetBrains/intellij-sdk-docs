@@ -24,6 +24,8 @@ See the [Inspections](inspections.md) topic in UI Guidelines on naming, writing 
 
 You can view a list of all available intention actions as well as enable/disable them using the [Intentions List](https://www.jetbrains.com/help/idea/intention-actions.html#intention-settings) in <ui-path>Settings | Editor | Intentions</ui-path>.
 
+See the [Intention Action Preview](code_intentions_preview.md) topic on providing a preview of changes that can be made by executing an intention.
+
 ## Techniques Used
 
 The [conditional_operator_intention](%gh-sdk-samples-master%/conditional_operator_intention) sample plugin illustrates the use of the following techniques:
@@ -32,7 +34,7 @@ The [conditional_operator_intention](%gh-sdk-samples-master%/conditional_operato
 - How to find a Java token of interest in the PSI tree.
 - How to invoke a quick-fix action for a token element under the cursor using the [`PsiElementBaseIntentionAction`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/intention/PsiElementBaseIntentionAction.java) class.
 - How to create a JUnit test for this plugin using the [`IdeaTestFixtureFactory`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/IdeaTestFixtureFactory.java) class.
-- How to add an intention description and before/after examples
+- How to add an intention description and before/after examples in the Settings dialog
 
 > In the case of providing multiple intention actions for a single element, their ordering is indeterministic due to performance reasons.
 > It is possible to push specific items up or down by implementing
@@ -61,11 +63,17 @@ If the cursor is positioned on the `?` conditional operator, IntelliJ IDEA propo
 
 Invoking <control>SDK: Convert ternary operator to if statement</control> intention action will result in transforming expression to the form visible in the [preview](code_intentions_preview.md) popup (code fragment on the right).
 
-#### Intention Description
+#### Intention Description and examples
 
-The intention description is available in the UI under <ui-path>Settings | Editor | Intentions | SDK Intentions | SDK: Convert ternary operator to if statement</ui-path>.
+The intention description is available in the UI in two places:
+- under <ui-path>Settings | Editor | Intentions | SDK Intentions | SDK: Convert ternary operator to if statement</ui-path>.
+- near the selected intention action in the [Context Actions](https://www.jetbrains.com/help/idea/intention-actions.html#apply-intention-actions) popup
+in the editor when [Preview](code_intentions_preview.md) cannot be shown.
 
-The plugin provides description files in the <path>resources/intentionDescriptions/ConditionalOperatorConverter</path> directory:
+The before/after examples are available in the UI
+under <ui-path>Settings | Editor | Intentions | SDK Intentions | SDK: Convert ternary operator to if statement</ui-path>.
+
+The plugin provides description and before/after examples files in the <path>resources/intentionDescriptions/ConditionalOperatorConverter</path> directory:
 - <path>description.html</path> - provides the general information about the intention
 - <path>after.java.template</path> - shows the code fragment that intention can change
 - <path>before.java.template</path> - shows the code fragment after applying the intention

@@ -72,15 +72,15 @@ Set the dialog's maximum dimensions to match screen size to prevent resizing bey
 
 ### Popup
 
-Popups should have the same [default](Window-sizes.md#default-sizes) width as dialogs. In addition, there is an **extra small** size for popups – 200 px wide when the content is narrow.
+Popups should have the same [default width](Window-sizes.md#default-sizes) as dialogs. In addition, there is an **extra small** size for popups – 200 px wide when the content is narrow.
 
 <note>A popup can't be made smaller than the default size.</note>
 
-#### Action Popups
+#### Action popups
 
-If a popup has a vertical list of actions or options, set a default width to either **extra small** (200 px) or **small** (350 px).
+If a popup has a vertical list of actions or options, set the minimum width to **extra small** (200 px).
 
-The width and height are adaptable based on the content if it exceeds the set dimensions.
+The default width and height are adaptable to the content inside if it exceeds the minimum width.
 
 
 <table style="none" border="false">
@@ -96,9 +96,9 @@ The width and height are adaptable based on the content if it exceeds the set di
    </tr>
 </table>
 
-#### Content-rich Popups
+#### Content-rich popups
 
-If a popup has several sections and features long texts, set a default width to **medium** (500 px) or **large** (750 px).
+If a popup has several sections and features long texts, set a default width to **medium** (500 px) or **large** (750 px). When the default width doesn't work, set [minimum sizes for components](Window-sizes.md#minimum-sizes-for-components).
 
 Height is adaptable based on the content. If a popup has a scrollable content, set the default height respectively: **medium** (350 px) or **large** (525 px).
 
@@ -117,22 +117,22 @@ Height is adaptable based on the content. If a popup has a scrollable content, s
    </tr>
 </table>
 
-When the default width doesn't work, set [minimum sizes for components](Window-sizes.md#minimum-sizes-for-components).
-
 #### Maximum width and height
 
 Set maximum width and height to 80% of a screen size. Use a [scrollbar](scrollbar.md) if a popup's content doesn't fit within the set dimensions.
 
 ### Tool windows
 
-Default sizes:
+#### Vertical tool window
 
-* Vertical tool windows should take minimum 20% of the application width but not less than 200×500&nbsp;px.
-* Horizontal tool windows should take minimum 20% of the application height but not less than 500×200&nbsp;px.
+* Default width: 20% of the application width.
+* The minimum size: 200×500&nbsp;px.
 
-The default sizes should be set for all the states of the <control>View Mode</control>.
+#### Hotzintal tool window
 
-<note>A tool window can't be made smaller than the default size.</note>
+* Default height: 20% of the application height.
+* The minimum size: 500×200&nbsp;px.
+
 
 For example, the vertical <control>Project</control> tool window and the horizontal <control>Build</control> tool window with minimum sizes in <control>Window</control> mode:
 
@@ -145,9 +145,9 @@ When the default sizes are either too big or too small for a window, or the wind
 
 ### How to set the size correctly
 
-1. Select how the [content](Window-sizes.md#how-the-content-is-displayed) is displayed.
-2. What [type of content](Window-sizes.md#types-of-content) is used.
-3. Select the biggest size out of the two to add the minimum size to a component.
+1. Select the [control](Window-sizes.md#how-the-content-is-displayed) used to display content.
+2. Select the [type of content](Window-sizes.md#types-of-content) used.
+3. The minimum size is the biggest size out of the two defined in the previous steps.
 
 #### How the content is displayed
 
@@ -193,6 +193,8 @@ When the default sizes are either too big or too small for a window, or the wind
       </td>
    </tr>
 </table>
+
+<note>In any other case, select the width appropriate for the most common values in the component and follow <control>sizes and placement</control> guidelines for <a href="Components.topic">each control</a>.</note>
 
 #### Types of content
 
@@ -286,7 +288,7 @@ The <control>Rename Inheritors</control> dialog has a table with FQNs. Add 350&n
 
 #### Example 3
 
-Instead of setting a default size for a diagram popup, for example, <control>small</control> (350×250&nbsp;px), add horizontal and vertical 100&nbsp;px insets inside the <control>Diagram</control> popup, and make the width and height adaptive to its content. This will help small diagrams be more noticeable and make a diagram popup of any size easier to read.
+Instead of setting a default size for the <control>Diagram</control> popup, add horizontal and vertical 100&nbsp;px insets inside the <control>Diagram</control> popup, and make the width and height adaptive to its content. This will help small diagrams be more noticeable and make a diagram popup of any size easier to read.
 
 <table style="none" border="false">
     <tr>

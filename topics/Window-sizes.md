@@ -72,26 +72,21 @@ Set the dialog's maximum dimensions to match screen size to prevent resizing bey
 
 ### Popup
 
-Popups should have the same [default width](Window-sizes.md#default-sizes) as dialogs. In addition, there is an **extra small** size for popups – 200 px wide when the content is narrow.
-
 <note>A popup can't be made smaller than the default size.</note>
 
 #### Action popups
 
-If a popup has a vertical list of actions or options, set the minimum width to **extra small** (200 px).
+If a popup has a vertical list of actions or options, set the minimum width to 200 px.
 
 The default width and height are adaptable to the content inside if it exceeds the minimum width.
-
 
 <table style="none" border="false">
    <tr>
       <td width="50%">
-         <p><control>Extra small</control></p>
-         <img src="dialog_popup_sizes_popup_xxs.png" alt="Insert popup 200 px wide" width="378"/>
+         <img src="dialog_popup_sizes_popup_xxs.png" alt="Insert popup 200 px wide"/>
       </td>
       <td width="50%">
-         <p><control>Small</control></p>
-         <img src="dialog_popup_sizes_popup_xs.png" alt="Quick Fixes popup 350 px wide" width="378"/>
+         <p><control>Insert</control> popup with the minimum width</p>
       </td>
    </tr>
 </table>
@@ -100,7 +95,7 @@ The default width and height are adaptable to the content inside if it exceeds t
 
 If a popup has several sections and features long texts, set a default width to **medium** (500 px) or **large** (750 px). When the default width doesn't work, set [minimum sizes for components](Window-sizes.md#minimum-sizes-for-components).
 
-Height is adaptable based on the content. If a popup has a scrollable content, set the default height respectively: **medium** (350 px) or **large** (525 px).
+Height is adaptable based on the content. If a popup has a scrollable content, set the default height respectively: **medium** (350 px) or **large** (525 px), and use a [scrollbar](scrollbar.md).
 
 <table style="none" border="false">
    <tr>

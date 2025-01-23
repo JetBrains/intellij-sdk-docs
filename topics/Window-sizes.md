@@ -80,16 +80,7 @@ If a popup has a vertical list of actions or options, set the minimum width to 2
 
 The default width and height are adaptable to the content inside if it exceeds the minimum width.
 
-<table style="none" border="false">
-   <tr>
-      <td width="50%">
-         <img src="dialog_popup_sizes_popup_xxs.png" alt="Insert popup 200 px wide"/>
-      </td>
-      <td width="50%">
-         <p><control>Insert</control> popup with the minimum width</p>
-      </td>
-   </tr>
-</table>
+![Insert popup 200 px wide](dialog_popup_sizes_popup_xxs.png){width="706"}
 
 #### Content-rich popups
 
@@ -123,7 +114,7 @@ Set maximum width and height to 80% of a screen size. Use a [scrollbar](scrollba
 * Default width: 20% of the application width.
 * The minimum size: 200×500&nbsp;px.
 
-#### Hotzintal tool window
+#### Horizontal tool window
 
 * Default height: 20% of the application height.
 * The minimum size: 500×200&nbsp;px.

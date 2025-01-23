@@ -12,7 +12,7 @@
     <tldr>
         <p>
             <control>Implementation:</control>
-            <a href="https://docs.oracle.com/javase/tutorial/uiswing/components/button.html"><code>JCheckBox</code></a>,
+            <a href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JCheckBox.html"><code>JCheckBox</code></a>,
             <a href="%gh-ic%/platform/platform-api/src/com/intellij/ui/components/JBCheckBox.java"><code>JBCheckBox</code></a>
         </p>
     </tldr>
@@ -203,7 +203,7 @@
         </chapter>
     <chapter title="How to layout" id="how-to-layout">
         <p>
-            Follow the <a href="layout.md" anchor="checkboxes-and-radio-buttons">layout of checkboxes and radio buttons</a>
+            Follow the guidelines for <a href="layout.md" anchor="checkboxes-and-radio-buttons">checkboxes and radio buttons</a> layout.
         </p>
     </chapter>
 </topic>

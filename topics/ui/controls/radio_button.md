@@ -19,7 +19,7 @@ Use a radio button group to choose one option from 2 to 4 mutually exclusive opt
 ## When not to use
 
 ### Several options in a group can be selected
-Use a group of [checkboxes](checkbox.md) instead.
+Use a group of [checkboxes](checkbox.topic) instead.
 
 ### Binary Yes/No Options
 For only two opposing yes/no options, use a checkbox instead.

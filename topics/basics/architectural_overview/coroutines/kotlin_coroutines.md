@@ -12,6 +12,8 @@ Since version 1.1, [Kotlin](using_kotlin.md) has introduced coroutines as a ligh
 The IntelliJ Platform started adapting coroutines in its APIs and internal code, and since 2024.1 it is recommended to use the coroutines approach over threads.
 
 > Plugins _must_ use the bundled Kotlin Coroutines library, see [](using_kotlin.md#coroutinesLibraries).
+>
+{style="warning"}
 
 ### Coroutines Advantages
 

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 2. Language and File Type
 
@@ -16,8 +16,8 @@
 
 <snippet id="custom_language_tutorial_header">
 
-> This page is part of multi step [](custom_language_support_tutorial.md).
->
+> This page is part of multi-step [](custom_language_support_tutorial.md).
+> All previous steps must be executed in sequence for the code to work.
 
 </snippet>
 

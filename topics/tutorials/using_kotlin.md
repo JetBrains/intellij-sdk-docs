@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Configuring Kotlin Support
 
@@ -133,6 +133,7 @@ See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html
 
 | IntelliJ Platform version (latest update) | Bundled _stdlib_ version |
 |-------------------------------------------|--------------------------|
+| 2025.1 (EAP)                              | 2.1.10                   |
 | 2024.3                                    | 2.0.21                   |
 | 2024.2                                    | 1.9.24                   |
 | 2024.1                                    | 1.9.22                   |
@@ -166,6 +167,7 @@ See [](kotlin_coroutines.md) on how to use them in plugins.
 
 | IntelliJ Platform version | Bundled _kotlinx-coroutines_ version |
 |---------------------------|--------------------------------------|
+| 2025.1 (EAP)              | 1.8.0-intellij-11                    |
 | 2024.3                    | 1.8.0-intellij-11                    |
 | 2024.2                    | 1.8.0-intellij-9                     |
 | 2024.1                    | 1.7.3                                |

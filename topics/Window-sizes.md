@@ -6,17 +6,17 @@
 
 Follow these guidelines to select the correct size when creating a dialog or a popup for IntelliJ-based products.
 
-For simple cases use [default sizes](Window-sizes.md#default-sizes). When they don't work well, set [minimum sizes for components](Window-sizes.md#minimum-sizes-for-components).
+For simple cases use the [default sizes](Window-sizes.md#default-sizes). When they don't work well, set [minimum sizes for components](Window-sizes.md#minimum-sizes-for-components).
 
 ## Default sizes
 
 ### Dialog
 
-There are four recommended window sizes for dialogs: **small**, **medium**, **large**, and **extra large**. Select the size depending on the amount of content to keep the important information visible.
+There are four recommended window sizes for dialogs: **small**, **medium**, **large**, and **extra large**. Select the size depending on the amount of content required to keep the important information visible.
 
 ![A preview of recommended window sizes for dialogs: extra small, small, medium, and large](dialog_popup_sizes.png){width="706"}
 
-<note>A dialog can't be made smaller than the default size.</note>
+<note>Users shouldn't be able to make a dialog smaller than the default size.</note>
 
 #### Small
 
@@ -32,8 +32,8 @@ Size: 500×350 px
 
 Best for:
 * Multiple components with short labels that are divided into two columns.
-* A full-width table with two or three columns.
-* A full-width code snippet or input with long text.
+* Full-width table with two or three columns.
+* Full-width code snippet or an input field with long text.
 
 For example, the <control>Evaluate Expressions</control> dialog has an input field with long text and a tree with code stacked vertically:
 
@@ -44,15 +44,15 @@ For example, the <control>Evaluate Expressions</control> dialog has an input fie
 Size: 750×525 px
 
 Best for:
-* A full-width table with four or more columns.
-* A master-detail layout.
+* Full-width table with four or more columns.
+* Master-detail layout.
 * Two-column layout with a code snippet or an input field with long text in any of the columns.
 * Two code snippets or input fields with long texts in a row.
 * Two-column layout with an image or a video in any of the columns. In this case, the image or the video takes the most space.
 
-For example, the <control>Run/Debug Configuration</control> dialog has a master-detail layout with a tree in the first column and the list of controls with long texts in the second column:
+For example, the <control>Run/Debug Configuration</control> dialog has a master-detail layout with a tree in the first column and a list of controls with long texts in the second column:
 
-![The Run/Debug Configuration dialog that has a two-column layout. There is a navigation in the first column and the list of settings in the second column](dialog_popup_sizes_medium.png){width="706"}
+![The Run/Debug Configuration dialog that has a two-column layout. There is a navigation in the first column and a list of settings in the second column](dialog_popup_sizes_medium.png){width="706"}
 
 #### Extra Large
 
@@ -68,11 +68,11 @@ For example, the <control>Settings</control> dialog that has three or more colum
 
 #### Maximum width and height {id="maximum-width-and-height_dialog"}
 
-Set the dialog's maximum dimensions to match screen size to prevent resizing beyond screen bounds.
+Set the dialog's maximum dimensions to match the screen size to prevent resizing beyond the screen bounds.
 
 ### Popup
 
-<note>A popup can't be made smaller than the default size.</note>
+<note>Users shouldn't be able to make a popup smaller than the default size.</note>
 
 #### Action popups
 
@@ -84,7 +84,7 @@ The default width and height are adaptable to the content inside if it exceeds t
 
 #### Content-rich popups
 
-If a popup has several sections and features long texts, set a default width to **medium** (500 px) or **large** (750 px). When the default width doesn't work, set [minimum sizes for components](Window-sizes.md#minimum-sizes-for-components).
+If a popup has multiple sections and long texts, set the default width to **medium** (500 px) or **large** (750 px). When the default width doesn't work, set the [minimum sizes for components](Window-sizes.md#minimum-sizes-for-components).
 
 Height is adaptable based on the content. If a popup has a scrollable content, set the default height respectively: **medium** (350 px) or **large** (525 px), and use a [scrollbar](scrollbar.md).
 
@@ -105,19 +105,19 @@ Height is adaptable based on the content. If a popup has a scrollable content, s
 
 #### Maximum width and height
 
-Set maximum width and height to 80% of a screen size. Use a [scrollbar](scrollbar.md) if a popup's content doesn't fit within the set dimensions.
+Set the maximum width and height to 80% of the screen size. Use a [scrollbar](scrollbar.md) if the popup's content exceeds the set dimensions.
 
 ### Tool windows
 
 #### Vertical tool window
 
 * Default width: 20% of the application width.
-* The minimum size: 200×500&nbsp;px.
+* Minimum size: 200×500&nbsp;px.
 
 #### Horizontal tool window
 
 * Default height: 20% of the application height.
-* The minimum size: 500×200&nbsp;px.
+* Minimum size: 500×200&nbsp;px.
 
 
 For example, the vertical <control>Project</control> tool window and the horizontal <control>Build</control> tool window with minimum sizes in <control>Window</control> mode:
@@ -255,7 +255,7 @@ The <control>Rename Inheritors</control> dialog has a table with FQNs. Add 350&n
 
 #### Example 2
 
-<control>Settings</control> dialog has the default <control>extra large</control> size 1000&nbsp;px. In the <control>Code Style settings for Java</control> set 400&nbsp;px as the minimum width of the code editor. This will make the dialog wider but will show more code
+The <control>Settings</control> dialog has the default <control>extra large</control> size 1000&nbsp;px. In <control>Code Style | Java</control> set 400&nbsp;px as the minimum width of the code editor. This will make the dialog wider but will show more code.
 
 <table style="none" border="false">
     <tr>
@@ -274,7 +274,7 @@ The <control>Rename Inheritors</control> dialog has a table with FQNs. Add 350&n
 
 #### Example 3
 
-Instead of setting a default size for the <control>Diagram</control> popup, add horizontal and vertical 100&nbsp;px insets inside the <control>Diagram</control> popup, and make the width and height adaptive to its content. This will help small diagrams be more noticeable and make a diagram popup of any size easier to read.
+Instead of setting a default size for the <control>Diagram</control> popup, add 100&nbsp;px horizontal and vertical insets inside it and make the width and height adaptive to its content. This will help small diagrams be more noticeable and make the Diagram popup of any size easier to read.
 
 <table style="none" border="false">
     <tr>

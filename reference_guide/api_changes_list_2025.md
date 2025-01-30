@@ -72,3 +72,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 ## 2025.1
 
 ### IntelliJ Platform 2025.1
+
+
+### Kotlin Plugin 2025.1
+
+`org.jetbrains.kotlin.KtFakeSourceElement` class renamed to `org.jetbrains.kotlin.KtFakePsiSourceElement`
+: Update code usages.

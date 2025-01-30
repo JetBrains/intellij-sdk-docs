@@ -19,8 +19,8 @@ Notification balloons inform users of the events or system states related to a p
 ## Suggestion and timeline notifications
 
 There are two types of notification balloons:
-* **Suggestion** notifications show the recommended action as a noticeable button.
-* **Timeline** notifications show useful actions as links.
+* **Suggestion** notifications show the recommended action as a noticeable button. Use to suggest an automatic configuration for a project or an IDE, or to ask for user input.
+* **Timeline** notifications show useful actions as links. Use for showing results of long processes, automatic configuration, or actions without context.
 
 These types appear in different sections of the Notifications tool window:
 
@@ -42,13 +42,13 @@ Use a timeline notification when an action was called from a context that is alr
 
 ### Show result of an automatic configuration
 
-Use a timeline notification when the project or IDE settings were automatically configured and it is likely the user might need to check the changes.
+Use a timeline notification when the project or IDE settings were automatically configured, and the user might need to check the changes.
 
-![A notification about automatic project configuration: the workspace is restored after a brached is checked out](notification_balloon_timeline_automatic_configuration.png){width=706}
+![A notification about automatic project configuration: the workspace is restored after a branch is checked out](notification_balloon_timeline_automatic_configuration.png){width=706}
 
-### Suggest an action to configure project or IDE
+### Suggest an action to configure a project or an IDE
 
-Use a suggestion notification to promote an action for project or IDE configuration, when not taking this action might lead to less optimal functioning or errors.
+Use a suggestion notification to promote an action for project or IDE configuration when not taking this action might lead to less optimal functioning or errors.
 
 ![Two examples of a suggestion notification for project or IDE configuration: Windows Defender affecting the IDE with a suggestion to explude a project from it, and a suggestion for switching the UI to an available language](notification_balloon_suggestion_configuration.png){width=706}
 
@@ -63,9 +63,9 @@ Use a suggestion notification to ask the user for an additional input or action 
 
 ### Sticky or timed
 
-**Sticky** notifications stay on screen until the user clicks any of its actions or closes it. By default, use this behavior for **suggestion** notifications.
+**Sticky** notifications stay on screen until the user clicks any of its actions or closes it. By default, use this behavior for [suggestion notifications](#suggestion-and-timeline-notifications).
 
-**Timed** notifications stay on screen for 10 seconds and then hide. By default, use this behavior for **timeline** notifications.
+**Timed** notifications stay on screen for 10 seconds and then hide. By default, use this behavior for [timeline notifications](#suggestion-and-timeline-notifications).
 
 Change the default behavior if it makes sense in a particular use case.
 
@@ -74,13 +74,13 @@ Change the default behavior if it makes sense in a particular use case.
 
 #### Error
 
-Use to inform of a critical event or state that might disrupt the user's experience.
+Use to inform of a critical event or state that might disrupt the user experience.
 
 ![An error notification about a plugin being suspended because it requires another plugin that is missing](notification_balloon_severity_error.png){width=706}
 
 #### Warning
 
-Use in case an event or state might slow the user's work down or require an action to fix the project or IDE settings.
+Use in case an event or state might slow down the user's work or require an action to fix the project or IDE settings.
 
 ![A warning notification about IDE shortcuts conflicting with macOS shortcuts](notification_balloon_severity_warning.png){width=706}
 
@@ -90,7 +90,7 @@ Use in all other cases.
 
 ![An information notification requesting to fill a survey about a plugin](notification_balloon_severity_info.png){width=706}
 
-##### Custom information icon
+<br/>
 
 When possible, use a plugin or functionality icon instead of the <control>Info</control> icon. This helps identifing the source of the notification quicker.
 
@@ -103,13 +103,15 @@ When possible, use a plugin or functionality icon instead of the <control>Info</
 
 [Write short and clear](writing_short.md) as notifications have limited space and may appear for a short time.
 
-Use sentence case and follow the [punctuation rules](punctuation.md).
+Use sentence case for both the title and the body.
+
+Follow the [punctuation rules](punctuation.md).
 
 #### Title
 Describe the event and the context in which it occurred. The context could be the name of a plugin, library, or functionality.
 
 #### Body
-Provide the details on the event or system state to help users decide what to do next. Consider answering questions:
+Provide the details on the event or system state to help users decide what to do next. Consider answering these questions:
 * What was the cause of this state?
 * What are the consequences?
 * What is affected: files, libraries, versions, plugins, etc.?
@@ -128,7 +130,7 @@ Use only the body text when it fits in two lines and the title would duplicate i
 <format color="Red" style="bold">Incorrect</format>
 ![The same notification as above but with duplicating information in the title](notification_balloon_body_only_incorrect.png){width=706}
 
-#### Two lines of body text are visible by default
+#### Long messages are collapsed
 
 Only the first two lines of the body text are visible by default, the rest is shown when expanded. Place the most important information in the beginning of the body text so it is visible by default.
 
@@ -142,7 +144,7 @@ Add actions to help users take the next steps: fix a problem, view relevant info
 
 #### Number of actions
 
-The preferable number of actions is two, as it is easier for the user to choose. If more than two actions are useful, place the most likely to be used first, and hide the others under the "More" dropdown:
+The preferable number of actions is two, as it is easier for the user to choose. If more than two actions are useful, place the most likely to be used first, and hide the others under the <control>More</control> dropdown:
 
 ![The Windows Defender notification with the primary action "Exclude folders" on the left and 3 more actions under the "More" dropdown link](notification_balloon_more_actions.png){width=706}
 
@@ -161,9 +163,9 @@ If no actions are available, provide more details in the body text: how to fix o
 ![The name notification but without the suggestion to update the plugin](notification_balloon_error_actions_text_incorrect.png){width=706}
 
 
-#### "Don't show again"
+#### The "Don't show again" action
 
-If the notification is informational and there is a possibility it might appear too often, add the "Don’t show again" action:
+If the notification is informational, and there is a possibility it might appear too often, add the <control>Don’t show again</control> action:
 
 ![A notification about a database connection found with the "Don't show again link"](notification_balloon.png){width=706}
 

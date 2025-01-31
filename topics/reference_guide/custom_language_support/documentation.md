@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Documentation
 
@@ -87,7 +87,7 @@ before, then `computeDocumentation()` should do the work that was formerly done 
 In addition to showing the documentation, the `computeDocumentationHint()` method returns the text to be displayed
 when the user hovers over an element with <shortcut>Ctrl</shortcut>/<shortcut>Cmd</shortcut> pressed or when
 <ui-path>Settings | Editor | Code Editing | Show quick documentation on hover</ui-path> is enabled.
-In the old framework, this method was called `DocumentationProvider.getQuickNavigateInfo()`.
+In the old API, this method was called `DocumentationProvider.getQuickNavigateInfo()`.
 
 The `createPointer()` method manages instance restoration and ensures access to the entity across different read actions.
 When implementing the `createPointer()` method, it is essential to handle invalidated PSI elements.

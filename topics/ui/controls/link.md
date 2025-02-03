@@ -22,11 +22,11 @@ Use a regular link for navigation between pages of the same window.
   <tr>
     <td>
         <format color="369650" style="bold">Correct</format>
-        <img src="link_when_to_1_correct.png" width="378" alt="A vertical list of three options: 'Non-Project Files', 'Problems', and 'Production', followed by a 'Manage scopes…' link below.">
+        <img src="link_when_to_1_correct.png" width="378" alt="A vertical list of three options: 'Non-Project Files', 'Problems', and 'Production', followed by a 'Manage scopes…' link below."></img>
     </td>
     <td>
         <format color="E55765" style="bold">Incorrect</format>
-        <img src="link_when_to_1_incorrect.png" width="378" alt="A vertical list of three options: 'Non-Project Files', 'Problems', and 'Production', followed 'Manage scopes' button below.">
+        <img src="link_when_to_1_incorrect.png" width="378" alt="A vertical list of three options: 'Non-Project Files', 'Problems', and 'Production', followed 'Manage scopes' button below."></img>
     </td>
   </tr>
 </table>
@@ -74,11 +74,11 @@ Use a [button](button.topic) or a [drop down list](drop_down.md) for primary act
   <tr>
     <td>
         <format color="369650" style="bold">Correct</format>
-        <img src="link_when_not_to_1_correct.png" width="378" alt="The Commit Message input with primary and secondary actions as buttons.">
+        <img src="link_when_not_to_1_correct.png" width="378" alt="The Commit Message input with primary and secondary actions as buttons."></img>
     </td>
     <td>
         <format color="E55765" style="bold">Incorrect</format>
-        <img src="link_when_not_to_1_incorrect.png" width="378" alt="The Commit Message input with primary and secondary actions as links.">
+        <img src="link_when_not_to_1_incorrect.png" width="378" alt="The Commit Message input with primary and secondary actions as links."></img>
     </td>
   </tr>
 </table>
@@ -92,13 +92,13 @@ These controls can be selected from the keyboard and are bigger and easier to cl
   <tr>
     <td>
       <format color="369650" style="bold">Correct</format>
-      <img src="link_when_not_to_2_correct.png" width="706" alt="A stack of controls with a button 'Edit' following one of the controls.">
+      <img src="link_when_not_to_2_correct.png" width="706" alt="A stack of controls with a button 'Edit' following one of the controls."></img>
     </td>
   </tr>
   <tr>
     <td>
       <format color="E55765" style="bold">Incorrect</format>
-      <img src="link_when_not_to_2_incorrect.png" width="706" alt="A stack of controls with a link 'Edit' following one of the controls.">
+      <img src="link_when_not_to_2_incorrect.png" width="706" alt="A stack of controls with a link 'Edit' following one of the controls."></img>
     </td>
   </tr>
 </table>
@@ -115,11 +115,11 @@ Follow the [sentence capilaziation](capitalization.md#sentence) guideline.
   <tr>
     <td>
       <format color="369650" style="bold">Correct</format>
-      <img src="link_how_to_1_correct.png" width="378" alt="A 'Modify options' drod-down with the sentence style capitalization.">
+      <img src="link_how_to_1_correct.png" width="378" alt="A 'Modify options' drod-down with the sentence style capitalization."></img>
     </td>
     <td>
       <format color="E55765" style="bold">Incorrect</format>
-      <img src="link_how_to_1_incorrect.png" width="378" alt="A 'Modify Options' drod-down with the title style capitalization.">
+      <img src="link_how_to_1_incorrect.png" width="378" alt="A 'Modify Options' drod-down with the title style capitalization."></img>
     </td>
   </tr>
 </table>
@@ -132,11 +132,11 @@ Add an ellipsis to a button-link if it opens another UI area where input is poss
   <tr>
     <td>
       <format color="369650" style="bold">Correct</format>
-      <img src="link_how_to_2_correct.png" width="378" alt="A vertical list of three options: 'Non-Project Files', 'Problems', and 'Production', followed by a 'Manage scopes…' link below. The link has an ellipsis in the end.">
+      <img src="link_how_to_2_correct.png" width="378" alt="A vertical list of three options: 'Non-Project Files', 'Problems', and 'Production', followed by a 'Manage scopes…' link below. The link has an ellipsis in the end."></img>
     </td>
     <td>
       <format color="E55765" style="bold">Incorrect</format>
-      <img src="link_how_to_2_incorrect.png" width="378" alt="Vertical list of three options: 'Non-Project Files', 'Problems', and 'Production', followed by a 'Manage scopes' link below. The link doesn't have an ellipsis in the end.">
+      <img src="link_how_to_2_incorrect.png" width="378" alt="Vertical list of three options: 'Non-Project Files', 'Problems', and 'Production', followed by a 'Manage scopes' link below. The link doesn't have an ellipsis in the end."></img>
     </td>
   </tr>
 </table>
@@ -149,11 +149,11 @@ Do not use words like "navigate" or "click here". A link already implies navigat
   <tr>
     <td>
       <format color="369650" style="bold">Correct</format>
-      <img src="link_how_to_3_correct.png" width="378" alt="Link 'Proxy settings…'.">
+      <img src="link_how_to_3_correct.png" width="378" alt="Link 'Proxy settings…'."></img>
     </td>
     <td>
       <format color="E55765" style="bold">Incorrect</format>
-      <img src="link_how_to_3_incorrect.png" width="378" alt="Link 'Navigate to general proxy settings'.">
+      <img src="link_how_to_3_incorrect.png" width="378" alt="Link 'Navigate to general proxy settings'."></img>
     </td>
   </tr>
 </table>
@@ -162,11 +162,11 @@ Do not use words like "navigate" or "click here". A link already implies navigat
   <tr>
     <td>
       <format color="369650" style="bold">Correct</format>
-      <img src="link_how_to_4_correct.png" width="378" alt="Link 'Download drivers…'.">
+      <img src="link_how_to_4_correct.png" width="378" alt="Link 'Download drivers…'."></img>
     </td>
     <td>
       <format color="E55765" style="bold">Incorrect</format>
-      <img src="link_how_to_4_incorrect.png" width="378" alt="Text reading 'Click here to download drivers' where 'here' is a link.">
+      <img src="link_how_to_4_incorrect.png" width="378" alt="Text reading 'Click here to download drivers' where 'here' is a link."></img>
     </td>
   </tr>
 </table>
@@ -179,11 +179,11 @@ When possible, replace "Learn more" and other generic phrases with more informat
   <tr>
     <td>
       <format color="369650" style="bold">Correct</format>
-      <img src="link_how_to_5_correct.png" width="378" alt="Link 'How to use Closure Linter'.">
+      <img src="link_how_to_5_correct.png" width="378" alt="Link 'How to use Closure Linter'."></img>
     </td>
     <td>
       <format color="E55765" style="bold">Incorrect</format>
-      <img src="link_how_to_5_incorrect.png" width="378" alt="Link 'Learn more'.">
+      <img src="link_how_to_5_incorrect.png" width="378" alt="Link 'Learn more'."></img>
     </td>
   </tr>
 </table>
@@ -200,11 +200,11 @@ Make a link the minimum phrase that is enough to understand what will happen wit
   <tr>
     <td>
       <format color="369650" style="bold">Correct</format>
-      <img src="link_how_to_7_correct.png" width="378" alt="Text reading 'Learn more about what is logged' where 'what is logged' is a link.">
+      <img src="link_how_to_7_correct.png" width="378" alt="Text reading 'Learn more about what is logged' where 'what is logged' is a link."></img>
     </td>
     <td>
       <format color="E55765" style="bold">Incorrect</format>
-      <img src="link_how_to_7_incorrect.png" width="378" alt="Link 'Learn more about what is logged'.">
+      <img src="link_how_to_7_incorrect.png" width="378" alt="Link 'Learn more about what is logged'."></img>
     </td>
   </tr>
 </table>
@@ -246,11 +246,11 @@ Use the help icon in links in [empty states](empty_state.md) to indicate that th
   <tr>
     <td>
       <format color="369650" style="bold">Correct</format>
-      <img src="link_how_to_9_correct.png" width="378" alt="Empty state in the Database tool window with an explanation text and a help source link 'Defining a database' with the help icon.">
+      <img src="link_how_to_9_correct.png" width="378" alt="Empty state in the Database tool window with an explanation text and a help source link 'Defining a database' with the help icon."></img>
     </td>
     <td>
       <format color="E55765" style="bold">Incorrect</format>
-      <img src="link_how_to_9_incorrect.png" width="378" alt="Empty state in the Database tool window with an explanation text and an external link 'Defining a database' with the external link icon.">
+      <img src="link_how_to_9_incorrect.png" width="378" alt="Empty state in the Database tool window with an explanation text and an external link 'Defining a database' with the external link icon."></img>
     </td>
   </tr>
 </table>

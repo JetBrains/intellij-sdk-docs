@@ -1,8 +1,8 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# Balloon
+# Notification Balloon
 
-<link-summary>UI guidelines on using balloons.</link-summary>
+<link-summary>UI guidelines on using notification balloons.</link-summary>
 
 <tldr>
 
@@ -12,131 +12,178 @@
 
 </tldr>
 
-Balloon notifications inform users of the events or system states related to a project or IDE.
+Notification balloons inform users of the events or system states related to a project or IDE.
 
-![](01_balloon_example.png){width=389}
+![A notification balloon for a found database connection with an action to connect to it](notification_balloon.png){width=706}
+
+## Suggestion and timeline notifications
+
+There are two types of notification balloons:
+* **Suggestion** notifications show the recommended action as a noticeable button. Use to suggest an automatic configuration for a project or an IDE, or to ask for user input.
+* **Timeline** notifications show useful actions as links. Use for showing results of long processes, automatic configuration, or actions without context.
+
+These types appear in different sections of the Notifications tool window:
+
+![The Notifications toolwindow with suggestion and timeline notifications in different sections](notification_balloon_toolwindow.png){width=706}
 
 ## When to use
 
-Use a balloon notification if:
+### Show result of a potentially long process
 
-* There is no need to point to a particular context or location in the interface.
-* User action is recommended but not required immediately.
+Use a timeline notification.
 
-In other cases, choose another [notification type](notification_types.md).
+![Two notifications with results of long processes: project build and git push](notification_balloon_timeline_long_process.png){width=706}
+
+### Show result of an action without context
+
+Use a timeline notification when an action was called from a context that is already closed, like a dialog or a popup.
+
+![Two notifications with results of actions that are not tied to a particular dialog: the UI language was changed and project folders excluded from Windows Defender](notification_balloon_timeline_no_context_action.png){width=706}
+
+### Show result of an automatic configuration
+
+Use a timeline notification when the project or IDE settings were automatically configured, and the user might need to check the changes.
+
+![A notification about automatic project configuration: the workspace is restored after a branch is checked out](notification_balloon_timeline_automatic_configuration.png){width=706}
+
+### Suggest an action to configure a project or an IDE
+
+Use a suggestion notification to promote an action for project or IDE configuration when not taking this action might lead to less optimal functioning or errors.
+
+![Two examples of a suggestion notification for project or IDE configuration: Windows Defender affecting the IDE with a suggestion to explude a project from it, and a suggestion for switching the UI to an available language](notification_balloon_suggestion_configuration.png){width=706}
+
+### Request user input
+
+Use a suggestion notification to ask the user for an additional input or action that is not connected to their own workflows.
+
+![Two suggestion notifications for requiring user input: a request to fill a survey and a notice about a discount for PhpStorm](notification_balloon_suggestion_request_input.png){width=706}
+
 
 ## How to use
+
+### Sticky or timed
+
+**Sticky** notifications stay on screen until the user clicks any of its actions or closes it. By default, use this behavior for [suggestion notifications](#suggestion-and-timeline-notifications).
+
+**Timed** notifications stay on screen for 10 seconds and then hide. By default, use this behavior for [timeline notifications](#suggestion-and-timeline-notifications).
+
+Change the default behavior if it makes sense in a particular use case.
+
 
 ### Message severity
 
 #### Error
 
-Use to inform of a critical event or state that might disrupt the user's experience.
+Use to inform of a critical event or state that might disrupt the user experience.
 
-![](02_error.png){width=389}
+![An error notification about a plugin being suspended because it requires another plugin that is missing](notification_balloon_severity_error.png){width=706}
 
 #### Warning
 
-Use in case of an event or state that might slow the user's work down or require an action to fix the IDE settings.
+Use in case an event or state might slow down the user's work or require an action to fix the project or IDE settings.
 
-![](03_warning.png){width=389}
+![A warning notification about IDE shortcuts conflicting with macOS shortcuts](notification_balloon_severity_warning.png){width=706}
 
 #### Information
 
-Use to suggest optimizations for the IDE settings and notify about the results of a process that is not tied to any tool window.
+Use in all other cases.
 
-![](04_information.png){width=389}
+![An information notification requesting to fill a survey about a plugin](notification_balloon_severity_info.png){width=706}
 
-#### Information about a certain plugin
+<br/>
 
-Use to show a plugin-related suggestion.
+When possible, use a plugin or functionality icon instead of the <control>Info</control> icon. This helps identifing the source of the notification quicker.
 
-Add the plugin’s icon to indicate that the notification relates to a particular plugin. Use a 16×16 SVG icon.
+![Two notifications with dedicated icons instead of the generic info icon: database connection found with the database icon and suggested plugins found with the generic plugin icon](notification_balloon_plugin_icon.png){width=706}
 
-![](05_information_plugin.png){width=389}
 
-### Sticky or Timed
+### Text
 
-By default, choose a **sticky** balloon. Sticky notifications stay on screen until the user clicks a link in the message or closes the notification manually.
-This behaviour is preferable as it guarantees the user will not miss the notification.
+#### Writing
 
-Use a **timed** notification when the message is informational, and missing it will not affect the user’s workflow.
-Timed notifications stay on screen for 10 seconds and then disappear.
-They can be viewed later in the <control>Event Log</control>.
+[Write short and clear](writing_short.md) as notifications have limited space and may appear for a short time.
 
-### Title
+Use sentence case for both the title and the body.
 
-Briefly describe the event and the context in which it occurred, e.g., a particular plugin or library, VCS, a run/debug configuration, etc.
+Follow the [punctuation rules](punctuation.md).
 
-[Write short and clear](writing_short.md) as the title should fit in one line.
+#### Title
+Describe the event and the context in which it occurred. The context could be the name of a plugin, library, or functionality.
 
-Use sentence case and follow the [punctuation rules](punctuation.md).
+#### Body
+Provide the details on the event or system state to help users decide what to do next. Consider answering these questions:
+* What was the cause of this state?
+* What are the consequences?
+* What is affected: files, libraries, versions, plugins, etc.?
 
-If the message fits well in one sentence and does not require a separate title, choose either a title or a body:
+#### Using only title or body
 
-* Use title-only message when it’s short and fits in one line:
+Use only the title when it is short and fits in one line.
 
-![](03_warning.png){width=389}
+![A notification with the title only about the number of files updated after git pull](notification_balloon_title_only.png){width=706}
 
-* Use only body text when the message fits in two lines and the title would duplicate its meaning, fully or partially:
-
-<format color="Red" style="bold">Incorrect</format>
-
-![](06_only_text_incorrect.png){width=389}
+Use only the body text when it fits in two lines and the title would duplicate its meaning.
 
 <format color="Green" style="bold">Correct</format>
+![A notification with the body only about the workspace being restored after branch checkout](notification_balloon_body_only_correct.png){width=706}
 
-![](06_only_text_correct.png){width=389}
+<format color="Red" style="bold">Incorrect</format>
+![The same notification as above but with duplicating information in the title](notification_balloon_body_only_incorrect.png){width=706}
 
-### Body
+#### Long messages are collapsed
 
-Provide the details on the event or system state to help users decide what to do next:
+Only the first two lines of the body text are visible by default, the rest is shown when expanded. Place the most important information in the beginning of the body text so it is visible by default.
 
-* What is the cause or trigger?
-* What are the consequences?
-* What exactly is affected? Files, libraries, versions, plugins, etc.
+![A notification about Windows Defender slowing down the IDE in the collapsed and expanded states. The notification body is long and takes 9 lines](notification_balloon_body_two_lines.png){width=706}
 
-Note that only the first line of the body text is visible by default. The rest of the message is only visible when expanded with an arrow icon.
-Make the beginning of the text most informative.
-
-![](07_expandable.png){width=777}
 
 ### Actions
 
 Add actions to help users take the next steps: fix a problem, view relevant information, configure settings, etc.
 
-If the notification is informational and there is a possibility it might appear too often, add the "Don’t ask again" action:
 
-![](04_information.png){width=389}
+#### Number of actions
 
-The Preferable number of actions is two, as it is easier for the user to choose.
+The preferable number of actions is two, as it is easier for the user to choose. If more than two actions are useful, place the most likely to be used first, and hide the others under the <control>More</control> dropdown:
 
-If a set of more than 2 actions is useful for the user, place the primary action first, and hide the others under the "More actions" dropdown:
+![The Windows Defender notification with the primary action "Exclude folders" on the left and 3 more actions under the "More" dropdown link](notification_balloon_more_actions.png){width=706}
 
-![](08_dropdown.png){width=389}
 
+#### Actions in error and warning notifications
 If the notification reports an error or warning, always provide an action to help users fix the problem:
 
-![](02_error.png){width=389}
+![An error notification about the plugin being suspended because it requires another plugin to work with actions "Manage plugins" and "Disable the suspended plugin"](notification_balloon_error_actions.png){width=706}
 
-If no actions are available, provide more details in the body text, e.g., how to fix the error or what is the warning/error cause:
-
-<format color="Red" style="bold">Incorrect</format>
-
-![](09_error_incorrect.png){width=389}
+If no actions are available, provide more details in the body text: how to fix or what was the cause.
 
 <format color="Green" style="bold">Correct</format>
+![A notification about a plugin being incompatible with the current IDE version with a suggestion to update the plugin](notification_balloon_error_actions_text_correct.png){width=706}
 
-![](09_error_correct.png){width=389}
+<format color="Red" style="bold">Incorrect</format>
+![The name notification but without the suggestion to update the plugin](notification_balloon_error_actions_text_incorrect.png){width=706}
 
-### Naming a notification group
 
-Each balloon notification belongs to a group. Groups can be seen in <ui-path>Settings | Appearance & Behavior | Notifications</ui-path>.
+#### The "Don't show again" action
+
+If the notification is informational, and there is a possibility it might appear too often, add the <control>Don’t show again</control> action:
+
+![A notification about a database connection found with the "Don't show again link"](notification_balloon.png){width=706}
+
+
+#### Capitalization
+
+Use sentence capitalization for all actions in notification balloons.
+
+
+
+## Naming a notification group
+
+Each notification balloon belongs to a group. Groups can be seen in <ui-path>Settings | Appearance & Behavior | Notifications</ui-path>.
 
 To name a notification group, follow these rules:
 
 * Name the group with an ending to the phrase "Notifications in this group notify the user about…". Examples: _Automatic indent detection_, _Content root duplicates_.
 * If a name about a particular process or event cannot be given, use the name of a subsystem or plugin. Examples: _HTTP Client_, _Power Save Mode_.
 * When a group contains notifications about errors or problems, do not use a verb. Example: _Debugger errors_, not _Debugger errors ~~found~~_.
-* Do **not** use words "notification" or "group". They are implied from the settings context.
+* Do not use words "notification" or "group". They are implied from the settings context.
 

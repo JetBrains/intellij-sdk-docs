@@ -35,7 +35,7 @@ Use a regular link for navigation between pages of the same window.
 
 Use an external link for navigation to web resources. See below for the [external link icon](#external-link-icon).
 
-![Text 'Learn more about what is logged' with 'what is logged' as an external link with arrow icon.](link_when_to_2.png){width=706}
+![Text 'Learn more about what is logged' with 'what is logged' as an external link with an arrow icon.](link_when_to_2.png){width=706}
 
 ### Secondary actions in packed UI areas
 
@@ -143,7 +143,7 @@ Add an ellipsis to a button-link if it opens another UI area where input is poss
 
 #### Wording
 
-Do not use words like "navigate" or "click here". A link already implies navigation or clicking.
+Do not use words like <code>navigate</code> or <code>click here</code>. A link already implies navigation or clicking.
 
 <table style="none" border="false">
   <tr>
@@ -173,7 +173,7 @@ Do not use words like "navigate" or "click here". A link already implies navigat
 
 #### Make it informative
 
-When possible, replace "Learn more" and other generic phrases with more informative ones.
+When possible, replace <code>Learn more</code> and other generic phrases with more informative ones.
 
 <table style="none" border="false">
   <tr>
@@ -215,8 +215,10 @@ Add the arrow icon for an external link. The icon shows that the user will switc
 
 ![Text 'Learn more about what is logged' where 'what is logged' is an external link with the external link icon.](link_how_to_8.png){width=706}
 
-<tabs group="languages">
-  <tab title="Kotlin" group-key="kotlin">
+<chapter title="Implementation" collapsible="true">
+
+  <tabs group="languages">
+    <tab title="Kotlin" group-key="kotlin">
 
   ```kotlin
   val externalLink = ActionLink("External link") {
@@ -236,7 +238,9 @@ Add the arrow icon for an external link. The icon shows that the user will switc
   externalLink.setExternalLinkIcon();
   ```
   </tab>
-</tabs>
+  </tabs>
+
+</chapter>
 
 ### Help icon
 

@@ -66,7 +66,7 @@ Provide details, such as:
 
 * A link to the language or framework docs explaining the correct usage of the syntax or feature, if applicable.
 
-![](link.png){width=520}
+![](inpsections_link.png){width=520}
 
 * Two code samples: the code with a problem and the code that bypasses this problem. By comparing the good code and the bad code, users can work out what causes the problem and how to avoid it.
   For example, for <ui-path>Java | Probable bugs | 'equals()' called on array</ui-path> adding such an example helps to understand the inspection quicker:

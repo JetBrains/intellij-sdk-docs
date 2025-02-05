@@ -14,9 +14,9 @@
 
 ## When to use
 
-### Navigation between pages of the same window
+### Navigation inside a window
 
-Use a regular link for navigation between pages of the same window.
+Use a regular link for navigation between pages of the same window. In the example bellow <control>Manage scopes…</control> opens another page in Settings for editing the values.
 
 <table style="none" border="false">
   <tr>
@@ -41,28 +41,59 @@ Use an external link for navigation to web resources. See below for the [externa
 
 Use a regular or [drop-down link](#drop-down-link) for secondary actions in packed or small UI areas.
 
-For example, the <control>Reset</control> action bellow is a link for two reasons:
-* The action appears only when the default value in the field is changed, and reverting to a default is considered a rare scenario.
-* A lightweight link fits better than a button in this busy layout.
-
-![Form with three settings: 'Hard wrap at' with a Reset link, 'Wrap on typing', and 'Visual guide'.](link_when_to_3.png){width=706}
-
-The <control>Modify options</control> drop-down link fits into the top right corner of a busy layout:
 
 ![Build and run section with 'Modify options' drop-down link. Contains a Java SDK selector, a command line arguments selector, and a program arguments input.](link_when_to_4.png){width=706}
 
 ### Secondary actions in a tree or table
 
+#### Some items can be changed
+
 Use a link as a secondary action for some items of a tree or table.
 
 ![A tree with a checkbox and four dependent controls, and links 'Set…' in the first and the fourth control](link_when_to_5.png){width=706}
 
-If an action is needed for all items of a tree or table:
+#### All items can be changed
 
-* Add an [icon button](icon_button.md) to a toolbar.
-* For a list of choices, add a separate table column of drop-down cells (see [Table](table.md#editing-values)).
-* If a link in every tree or table line has meaningful formatting, leave it. For example, links in the <control>Push Commits</control> window help understand the relation between them: <control>[remote repository] : [branch]</control>; moving these links elsewhere would break this meaning:
-  ![Links in the Push Commits window 'origin : master'](link_when_to_6.png){width=706}
+<table style="none" border="false">
+  <tr>
+    <td width="378">
+        <img src="link_when_to_6_1.png" width="378" alt="Table with a toolbar with icon buttons"/>
+    </td>
+    <td>
+        <p>Add an <a href="icon_button.md">icon button</a> to a toolbar.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="378">
+        <img src="link_when_to_6_2.png" width="378" alt="Table with a toolbar with icon buttons"/>
+    </td>
+    <td>
+        <p>For a list of choices, add a separate table column of drop-down cells (see <a href="table.md" anchor="editing-values">Table</a>).</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="378">
+        <img src="link_when_to_6_3.png" width="378" alt="Links in the Push Commits window 'origin : master'"/>
+    </td>
+    <td>
+        <p>If a link in every tree or table line has meaningful formatting, leave it.</p>
+        <p>For example, links in the <control>Push Commits</control> window help understand the relation between them: <control>[remote repository] : [branch]</control>; moving these links elsewhere would break this meaning.</p>
+    </td>
+  </tr>
+</table>
+
+<table style="none" border="false">
+  <tr>
+    <td>
+        <format color="369650" style="bold">Correct</format>
+        <img src="link_when_to_6_correct.png" width="378" alt="Table with a toolbar with icon-buttons"/>
+    </td>
+    <td>
+        <format color="E55765" style="bold">Incorrect</format>
+        <img src="link_when_to_6_incorrect.png" width="378" alt="Table with a link 'Edit…' in every row"/>
+    </td>
+  </tr>
+</table>
 
 ## When not to use
 
@@ -126,7 +157,7 @@ Follow the [sentence capilaziation](capitalization.md#sentence) guideline.
 
 #### Ellipsis
 
-Add an ellipsis to a button-link if it opens another UI area where input is possible. See examples for the [Button](button.topic).
+Add an ellipsis to a link if it opens another UI area where input is possible. See examples for the [Button](button.topic).
 
 <table style="none" border="false">
   <tr>
@@ -192,7 +223,7 @@ When possible, replace <code>Learn more</code> and other generic phrases with mo
 
 A link can be a part of a checkbox or radio button label or of any stand-alone text, like the text in an [empty state](empty_state.md) or in [context help](context_help.md):
 
-![Checkbox 'Use color scheme instead of the deafult' where 'deafult' is a link.](link_how_to_6.png){width=706}
+![Checkbox 'Use console font instead of the default font' where 'deafult font' is a link.](link_how_to_6.png){width=706}
 
 Make a link the minimum phrase that is enough to understand what will happen without reading the whole text:
 
@@ -267,8 +298,8 @@ Drop-down links show a context menu or a popup. To implement, use [`DropDownLink
 
 ## Placement
 
-* For button-links follow [layout of buttons and links](layout.md#buttons-and-links).
-* For dropdown-links follow [layout of labeled controls](layout.md#labeled-input-controls).
+* For default links follow [layout of buttons and links](layout.md#buttons-and-links).
+* For drop-down links follow [layout of labeled controls](layout.md#labeled-input-controls).
 
 ## Built-in behavior
 

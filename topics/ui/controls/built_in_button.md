@@ -6,31 +6,36 @@
 
 A built-in button is an icon placed inside an input control.
 
-![](input_browse.png){width=250}
+![Built-in-button](built_in_button.png){width=706}
 
-## How to use
-
-Place the built-in button inside the input control. Do **not** place the built-in button on the right of a control:
-
-![](outside.png){width=250}
+<chapter level="3" title="Implementation" id="implenementation_expand" collapsible="true" default-state="collapsed">
 
 To place a button inside a text field, use [`ExtendableTextField`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/fields/ExtendableTextField.java) and
 its `addExtension()` method.
+</chapter>
 
-The shortcut for a built-in button is <shortcut>Shift+Enter</shortcut>.
+## When to use
 
-## Types
+Use a built-in button instead of adding a separate [button](button.topic) on the right where possible to save space and declutter the interface:
+<table style="none" border="false">
+<tr>
+<td><format color="369650" style="bold">Correct</format>
+<img src="built_in_button_browse_correct.png" alt="Browse button" width="378"/></td>
+<td><format color="E55765" style="bold">Incorrect</format>
+<img src="built_in_button_browse_incorrect.png" alt="Incorrect browse button" width="378"/></td>
+</tr>
+</table>
+
 
 ### Browse
+Use the **Browse** icon to select a single file or a folder from the disc.
 
-A browse button opens a dialog with the disk, a tree view or a table of values.
-Use a control with the browse icon for a file/folder path selected from the disk.
-
-![](input_browse.png){width=378}
+<img src="built_in_button_browse.png" alt="Browse" width="706"/>
 
 [//]: # (An input field with browse button: [`TextFieldWithBrowseButton`]&#40;%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/TextFieldWithBrowseButton.java&#41;)
 
-A combo box with browse button:
+<chapter collapsible="true" title="Implementation" id="implenementation_browse" default-state="collapsed">
+<p>A combo box with the <control>Browse</control> button:</p>
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
 
@@ -79,44 +84,61 @@ extComboBox.setEditor(new BasicComboBoxEditor() {
 
 </tab>
 </tabs>
+</chapter>
 
-Do **not** place the button on the right of the control.
 
-![](browse_buttons.png){width=250}
+### Expand a field
 
-### Expand field
+If the input text can be long and the place is constrained,
+use an input field with the **Expand** button:
 
-If the input text can be long and place is constrained, use a built-in button to expand the control
-([`ExpandableTextField`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/fields/ExpandableTextField.java)):
+![Collapsed built-in button](built_in_button_collapsed.png){width=706}
 
-![](expandable_1.png){width=332}
+Expanded field:
 
-![](expandable_2.png){width=582}
-
-Do **not** use the Show Viewer button instead.
-
-![](input_expand.png){width=357}
+![Expanded built-in button](built_in_button_expanded.png){width=706}
 
 ### List values
 
-Use a control with the table icon to select from the list of classes, methods or environment variables:
+Use the **List** icon to select a value from the list of objects such as classes, methods, or environment variables:
 
-![](input_table.png){width=250}
-
-Use a combo box instead of the Variables button. This icon works as a combo box.
-
-![](variables_combobox.png){width=514}
+![List of values](built_in_button_list.png){width=706}
 
 ### Add value
+Use the **Add** button to select multiple values, such as files, variables, folder paths. The selected values will be added to the existing list.
 
-The Plus button works the same way as the Browse button.
-The only difference is that the selected value is added, instead of overwriting the existing one.
-Place the plus icon inside the control.
-![](plus.png){width=250}
+![Add a value to the field](built_in_button_add.png){width=706}
 
-### Copy, Info
 
-| ![](copy_button.png){width="57"} | Do not use the Copy button, the content can be selected and copied using the Cmd/Ctrl+C shortcut or the context menu. |
-|----------------------------------|-----------------------------------------------------------------------------------------------------------------------|
-| ![](info_button.png){width="57"} | Do not use the info button to open an external link. Use <a href="context_help.md">context help</a> instead.          |
-{style=none}
+## When not to use
+
+### Cut, Copy, Paste
+Do not use the **Copy**, **Paste** or **Cut** button. Instead, make sure these actions are available on pressing <shortcut>Cmd/Ctrl+X</shortuct>, <shortcut>Cmd/Ctrl+C</shortuct>, and <shortcut>Cmd/Ctrl+V</shortuct> shortcuts or  from the context menu.
+<table style="none" border="false">
+<tr>
+<td>
+    <format color="369650" style="bold">Correct</format>
+    <img src="built_in_button_copy_correct.png" alt="Browse button" width="378"/>
+</td>
+<td>
+    <format color="E55765" style="bold">Incorrect</format>
+    <img src="built_in_button_copy_incorrect.png" alt="Incorrect browse button" width="378"/>
+</td>
+</tr>
+</table>
+
+### Help, Info
+Do not use the **Help** or **Info** buttons to open an external link or a hint. Use the [context help](context_help.md) instead.
+
+<table style="none" border="false">
+<tr>
+<td><format color="369650" style="bold">Correct</format>
+<img src="built_in_button_help_correct.png" alt="Context help " width="378"/></td>
+<td><format color="E55765" style="bold">Incorrect</format>
+<img src="built_in_button_help_incorrect.png" alt="Incorrect browse button" width="378"/></td>
+</tr>
+</table>
+
+## Shortcut
+The shortcut for a built-in button is <shortcut>Shift+Enter</shortcut>.
+The shortcut activates only when the input field with the button is focused.

@@ -54,13 +54,13 @@ Use horizontal toolbars for lists, trees, and tables that appear in dialogs and 
 
 ![](toolbar_dialogs_horizontal.png){width=706}
 
-#### Horizontal tool windows
+#### Vertical tool windows
 
 Use horizontal toolbars in tool windows that are vertical by default.
 
 ![](toolbar_vertical_tool_window.png){width=706}
 
-#### Vertical tool windows
+#### Horizontal tool windows
 
 Use vertical toolbars for tool windows that are horizontal by default. Place the toolbar on the left in a tool window.
 
@@ -74,9 +74,9 @@ If a horizontal tool window has several sections, it is possible to place the to
 
 <br/>
 
-It is possible to use a horizontal toolbar in a horizontal tool window in the two cases:
+A horizontal toolbar can be used in a horizontal tool window in the two cases:
 * The toolbar contains items that are likely to be used all the time, like the <control>Step In</control> and <control>Step Out</control> actions in the <control>Debug</control> tool window. A horizontal toolbar makes the actions more noticeable and easy to reach.
-* The toolbar contains items other than simple icons: a drop-down list, search field, button, or others.
+* The toolbar contains items that need horizontal space, like a <control>search field</control> and <control>drop-down lists</control> in the <control>Git</control> tool window.
 
 ![](toolbar_horizontal_tool_window_hor_toolbar_debug.png){width=706}
 

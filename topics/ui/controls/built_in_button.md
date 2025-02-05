@@ -8,17 +8,33 @@ A built-in button is an icon placed inside an input control.
 
 ![Built-in-button](built_in_button.png){width=706}
 
+<chapter level="3" title="Implementation" id="implenementation_expand" collapsible="true" default-state="collapsed">
+
+To place a button inside a text field, use [`ExtendableTextField`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/fields/ExtendableTextField.java) and
+its `addExtension()` method.
+</chapter>
+
 ## When to use
 
+Use a built-in button instead of adding a separate [button](button.topic) on the right where possible to save space and declutter the interface:
+<table style="none" border="false">
+<tr>
+<td><format color="369650" style="bold">Correct</format>
+<img src="built_in_button_browse_correct.png" alt="Browse button" width="378"/></td>
+<td><format color="E55765" style="bold">Incorrect</format>
+<img src="built_in_button_browse_incorrect.png" alt="Incorrect browse button" width="378"/></td>
+</tr>
+</table>
+
+
 ### Browse
-The **Browse** button shows a dialog for opening files from the disk, a tree view, or a table of values.
 Use the **Browse** icon to select a single file or a folder from the disc.
 
 <img src="built_in_button_browse.png" alt="Browse" width="706"/>
 
 [//]: # (An input field with browse button: [`TextFieldWithBrowseButton`]&#40;%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/TextFieldWithBrowseButton.java&#41;)
 
-<chapter collapsible="true" title="Code example">
+<chapter collapsible="true" title="Implementation" id="implenementation_browse" default-state="collapsed">
 <p>A combo box with the <control>Browse</control> button:</p>
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -74,18 +90,17 @@ extComboBox.setEditor(new BasicComboBoxEditor() {
 ### Expand a field
 
 If the input text can be long and the place is constrained,
-use the **Expand** button to expand the control
-([`ExpandableTextField`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/fields/ExpandableTextField.java)):
+use an input field with the **Expand** button:
 
 ![Collapsed built-in button](built_in_button_collapsed.png){width=706}
 
-When the field is expanded, show the **Collapse** button:
+Expanded field:
 
 ![Expanded built-in button](built_in_button_expanded.png){width=706}
 
 ### List values
 
-Use the **List** icon to select a value from the list of classes, methods, or environment variables:
+Use the **List** icon to select a value from the list of objects such as classes, methods, or environment variables:
 
 ![List of values](built_in_button_list.png){width=706}
 
@@ -94,22 +109,6 @@ Use the **Add** button to select multiple values, such as files, variables, fold
 
 ![Add a value to the field](built_in_button_add.png){width=706}
 
-## How to use
-
-Place the built-in button inside the input field. Do not place the built-in button next to the field control:
-<table style="none" border="false">
-<tr>
-<td><format color="369650" style="bold">Correct</format>
-<img src="built_in_button_browse_correct.png" alt="Browse button" width="378"/></td>
-<td><format color="E55765" style="bold">Incorrect</format>
-<img src="built_in_button_browse_incorrect.png" alt="Incorrect browse button" width="378"/></td>
-</tr>
-</table>
-
-To place a button inside a text field, use [`ExtendableTextField`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/fields/ExtendableTextField.java) and
-its `addExtension()` method.
-
-The shortcut for a built-in button is <shortcut>Shift+Enter</shortcut>.
 
 ## When not to use
 
@@ -139,3 +138,7 @@ Do not use the **Help** or **Info** buttons to open an external link or a hint. 
 <img src="built_in_button_help_incorrect.png" alt="Incorrect browse button" width="378"/></td>
 </tr>
 </table>
+
+## Shortcut
+The shortcut for a built-in button is <shortcut>Shift+Enter</shortcut>.
+The shortcut activates only when the input field with the button is focused.

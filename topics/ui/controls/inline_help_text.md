@@ -13,6 +13,7 @@ Inline help texts provide useful information about settings:
 </chapter>
 
 <chapter title="How to use" id="how_to_use">
+
 <chapter title="Text length" id="text_length">
 Show no more than five lines of help text to not clutter the screen.
 Text width is limited to 70 characters.
@@ -49,7 +50,8 @@ panel {
 
 </chapter>
 <chapter title="Links" id="links">
-Provide a link to the corresponding help article or to a place in the IDE where the related settings can be found.
+
+Provide a [link](link.md) to the corresponding help article or to a place in the IDE where the related settings can be found.
 Place the link at the end of the text where possible so that it does not disrupt reading.
 
 <table style="none" border="false" column-width="fixed">
@@ -68,7 +70,8 @@ Place the link at the end of the text where possible so that it does not disrupt
 
 <chapter title="Text style formatting" id="text_style_formatting">
 
-- Avoid text highlighting. Usually, the help text is short, and no highlighting in bold or italics is needed:
+<chapter title="Avoid highlighting" id="avoid_highlighting">
+Avoid text highlighting. Usually, the help text is short, and no highlighting in bold or italics is needed:
 <table style="none" border="false" column-width="fixed">
   <tr>
     <td width="378">
@@ -81,12 +84,14 @@ Place the link at the end of the text where possible so that it does not disrupt
     </td>
   </tr>
 </table>
+</chapter>
 
 [//]: # (* Use formatting for code, console commands, or parameters. Use HTML tags. Enclosing text in `<html></html>` tags is not needed.)
 
 [//]: # (  ![]&#40;inline_text_parameter_styling.png&#41;{width=213})
 
-- Avoid using brackets in control labels and place this information in the inline text instead:
+<chapter title="Avoid brackets" id="avoid_brackets">
+Avoid using brackets in control labels and place this information in the inline text instead:
 <table style="none" border="false" column-width="fixed">
   <tr>
     <td width="378">
@@ -99,6 +104,7 @@ Place the link at the end of the text where possible so that it does not disrupt
     </td>
   </tr>
 </table>
+</chapter>
 </chapter>
 
 <chapter title="Writing guidelines" id="writing_guidelines">
@@ -130,10 +136,11 @@ Place the help text to the right of labeled inputs (fields, combo boxes, or text
 * The space to the right is empty.
 * The help text has 1–5 words, not counting articles and prepositions.
 * The control label has 1–5 words.
-
+<tabs>
+<tab title="Labeled inputs" id="labeled_input_inline_text">
 <img src="inline_text_on_the_right_input_field.png" width="706" alt="Input fields with inline texts on the right"/>
+<chapter level="4" title="Implementation" id="labeled_input_inline_text_implementation" collapsible="true" default-state="collapsed">
 
-<chapter title="Implementation" id="labeled_input_inline_text_implementation" collapsible="true" default-state="collapsed">
 ```kotlin
 panel {
   row("Plugin update policy:") {
@@ -147,12 +154,39 @@ panel {
 }
 ```
 </chapter>
+</tab>
 
-* In other cases, place the help text under the UI controls:
+<tab title="Checkboxes" id="checkboxes">
+
+<img src="inline_text_on_the_right_checkbox.png" width="706" alt="Checkboxes with inline texts on the right"/>
+
+<chapter level="4" collapsible="true" default-state="collapsed" title="Implementation">
+
+```kotlin
+panel {
+  row {
+    checkBox("Build project automatically")
+    comment("Works while not running / debugging")
+  }
+  row {
+    checkBox("Compile independent modules in parallel")
+    comment("May require larger heap size")
+  }
+}
+```
+</chapter>
+</tab>
+
+<tab title="Buttons" id="buttons">
+ <img src="inline_text_on_the_right_button.png" width="706" alt="Button with inline texts on the right"/>
+</tab>
+</tabs>
+
+In other cases, place the help text under the UI controls:
 
 <img src="inline_text_on_the_bottom.png" width="706" alt="Input filed with inline text on the bottom"/>
 
-<chapter title="Implementation" id="implementation_under_input_filed" collapsible="true" default-state="collapsed">
+<chapter level="4" title="Implementation" id="implementation_under_input_filed" collapsible="true" default-state="collapsed">
 
 ```kotlin
 panel {
@@ -168,33 +202,10 @@ panel {
 
 If there is no space under the UI control, use the [help tooltip](tooltip.md#question-mark-icon-for-help-tooltips) with the question mark icon for labeled inputs, checkboxes, and radio buttons.
 For buttons, use the help tooltip without the icon.
-
-<chapter title="Checkboxes" id="checkboxes">
-<img src="inline_text_on_the_right_checkbox.png" width="706" alt="Checkboxes with inline texts on the right"/>
-<chapter collapsible="true" default-state="collapsed" title="Implementation">
-
-```kotlin
-panel {
-  row {
-    checkBox("Build project automatically")
-    comment("Works while not running / debugging")
-  }
-  row {
-    checkBox("Compile independent modules in parallel")
-    comment("May require larger heap size")
-  }
-}
-```
-</chapter>
-</chapter>
-
-<chapter title="Buttons" id="buttons">
- <img src="inline_text_on_the_right_button.png" width="706" alt="Button with inline texts on the right"/>
-</chapter>
 </chapter>
 
 <chapter title="Trees, lists, and tables" id="trees_lists_tables">
-
+<chapter title="Text applies to the whole component" id="whole_component">
 If the help text applies to a whole list, tree, or table, place it below the control.
 
 <img src="inline_text_under_table.png" width="706" alt="Inline text under the table"/>
@@ -219,23 +230,26 @@ panel {
 }
 ```
 </chapter>
-
-If the help text applies to a single list, tree, or table item:
-
-* If the help text has 1–10 words, place it to the right of the item:
+</chapter>
+<chapter title="Text applies to a single item" id="single_item">
+If the help text applies to a single list, tree, or table item, its location will depend on its length.
+<chapter title="Short texts" id="short_texts">
+Place short texts (1–10 words) to the right of the item:
 
 <img src="inline_text_on_the_right_tree.png" width="706" alt="Inline text under the table"/>
+</chapter>
+<chapter title="Long texts" id="long_texts">
 
-* If the text is longer than 10 words:
-
-For a list or tree in the master part, place the text into the detail part.
+* Place longer texts (more than 10 words) into the detail part of master-detail layouts:
 
 <img src="inline_text_on_the_bottom_master_detail.png" width="706" alt="Inline text on the bottom of the master detail layout"/>
 
-For other cases, use the [help tooltip](tooltip.md#question-mark-icon-for-help-tooltips) with the question mark icon:
+* For other cases, use the [help tooltip](tooltip.md#question-mark-icon-for-help-tooltips) with the question mark icon:
 
 <img src="tooltip_list.png" width="706" alt="Inline text on the bottom of the master detail layout"/>
 
+</chapter>
+</chapter>
 </chapter>
 
 <chapter title="Group of controls" id="group_of_controls">
@@ -276,9 +290,10 @@ panel {
   }
 }
 ```
-</chapter>
-</chapter>
 
 You can find more examples by invoking the **Tools | Internal Actions | UI | Kotlin UI DSL | UI DSL Showcase** action (available in [internal mode](enabling_internal.md) and clicking the **View source** links on specific pages.
+
+</chapter>
+</chapter>
 </chapter>
 

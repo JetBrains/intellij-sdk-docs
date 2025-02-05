@@ -10,7 +10,7 @@
 
 </tldr>
 
-A drop-down list is a type of control that shows a list of choices when clicking on it and allows selecting one option.
+A drop-down list is a control that displays a list of choices on click and allows selecting one option.
 
 ![Example of a Theme drop-down with options: Light (selected in light), Dark (selected in dark), Light with Light Header, High Contrast, Darcula, and an option to get more themes](dropdown.png){width=706}
 
@@ -22,17 +22,23 @@ Use when a single option should be selected.
 
 ![Interface language drop-down with options: English (selected), German, Dutch, Chinese (Simplified), and an option to get more languages](dropdown_when_to_1.png){width="706"}
 
-### Choices are objects or states
+When multiple selections are possible, use [checkboxes](checkbox.topic).
+
+### Options are objects or states
 
 The possible choices are objects or states.
 
 ![Output level drop-down with options: Debug, Info (selected), Warn, Error, and Warning](dropdown_when_to_2.png){width=706}
+
+When options are actions, use a menu or a [split button](split_button.md).
 
 ### More than four options
 
 The number of options is more than four.
 
 ![Regions drop-down with options: Africa, Americas, Asia except China Mainland, Europe (selected), Middle East, Oceania](dropdown_when_to_3.png){width="706"}
+
+When there are four options or fewer, use [radio buttons](radio_button.md).
 
 ### Space is limited
 
@@ -43,6 +49,8 @@ The screen space is limited, so there is not enough room for [radio buttons](rad
 ### Default value is the most used
 
 The default value is recommended for most users. A drop-down is a good way to hide unpopular alternatives.
+
+In the example bellow a drop-down is used because <control>Subpixels</control> is the most popular choice. Using [radio-buttons](radio_button.md)  puts all options on the same level of importance or popularity.
 
 ![Antialiasing drop-down with options: Subpixels (selected), Greyscale, Not antialiasing](dropdown_when_to_5.png){width=706}
 
@@ -73,7 +81,7 @@ If there are four options or fewer, use [radio buttons](radio_button.md).
 
 ### Multiple selection
 
-If multiple selections are possible, use [checkboxes](checkbox.topic).
+If multiple selection is possible, use [checkboxes](checkbox.topic).
 
 <table style="none" border="false">
   <tr>
@@ -87,6 +95,8 @@ If multiple selections are possible, use [checkboxes](checkbox.topic).
     </td>
   </tr>
 </table>
+
+For a [single selection](drop_down.md#single-option) use a drop-down.
 
 ### List of actions
 
@@ -104,6 +114,8 @@ If there is a list of actions, use a menu or a [split button](split_button.md).
     </td>
   </tr>
 </table>
+
+For a list of [objects or states](drop_down.md#options-are-objects-or-states), use a drop-down.
 
 ### Adding values
 
@@ -149,11 +161,11 @@ Follow the rules for the [input field](input_field.md#label).
 
 ### Default value
 
-Select the most likely or the safest value by default. For example, the safest value is <control>Ask</control>, the behavior will not be unexpected to users:
+Select the most likely or the safest value by default. In the xample bellow the safest value is <control>Ask</control>, the behavior will not be unexpected to users:
 
 ![Drop-down menu labeled 'Insert imports on paste' with options 'All', 'Ask', and 'None'. The selected option set to 'Ask'.](dropdown_how_to_2.png){width=706}
 
-Do **not** use an empty value as the default value. If no values are added to a drop-down yet, replace it with a button to add values.
+Do not use an empty value as the default value. If no values are added to a drop-down yet, replace it with a button to add values.
 
 <table style="none" border="false">
   <tr>
@@ -231,15 +243,27 @@ Sort items in one of the following orders:
     </td>
     <td>
       <p>Place the most common options first. If there are more than 10 options, separate the most popular options with a line.</p>
+      <p>Sort the remaining items in alphabetical or numeric order.</p>
     </td>
   </tr>
 </table>
 
 #### Grouping
 
-Group related options, use a separator and add group headers if possible.
+Group related items using separators. Add group headers if possible.
 
-![Drop-down menu labeled 'Scheme' with two groups of options that have group titles and divided by a divider'](dropdown_how_to_7.png){width=706}
+<table style="none" border="false">
+    <tr>
+        <td width="50%">
+            <format style="bold">With dividers</format>
+            <img src="dropdown_how_to_7_1.png" alt="Drop-down menu labeled 'Version' with options ranging from 1.5 to 1.9, and a meta-option 'Same as language version'" width="372"/>
+        </td>
+        <td width="50%">
+            <format style="bold">With a divider and group headers</format>
+            <img src="dropdown_how_to_7_2.png" alt="Drop-down menu labeled 'Scheme' with two groups of options that have group titles and divided by a divider'" width="372"/>
+        </td>
+    </tr>
+</table>
 
 #### Actions related to a drop-down
 
@@ -250,11 +274,13 @@ If there are actions related to the drop-down, put them under the gear icon on t
 
 #### Meta-options
 
-Enclose meta-options in pointy brackets and place meta-options at the beginning or at the end if they are secondary.
+<note>Meta-option is a special choice that controls how selections behave rather than being a specific value.</note>
+
+Enclose meta-options in pointy brackets and place them at the beginning of the list when they're important or popular options. In other cases, place them at the end of the list.
 
 ![Drop-down menu labeled 'Run tests with' with options 'Platform test runner', 'Gradle test runner', and '<Choose per test>'. The selected option set to '<Choose per test>'](dropdown_how_to_9.png){width=706}
 
-Do **not** assign special meanings to numeric or string values, use meta-options instead. It can be unclear that either 0 or an empty string are used to disable an option.
+Do not assign special meanings to numeric or string values, use meta-options instead. It can be unclear that either 0 or an empty string are used to disable an option.
 
 <table style="none" border="false">
     <tr>
@@ -286,7 +312,7 @@ Replace the <control>&lt;None&gt;</control> option with a checkbox if it doesn't
     </tr>
 </table>
 
-#### Use previews in the list
+#### Use icons and font formatting
 
 <table style="none" border="false">
   <tr>
@@ -294,7 +320,7 @@ Replace the <control>&lt;None&gt;</control> option with a checkbox if it doesn't
       <img src="dropdown_how_to_12_1.png" alt="Drop-down 'Run on' with multiple options that have icons related to their meanings"/>
     </td>
     <td>
-      <p>Preview list items with <control>images</control> or <control>icons</control> if they are associated with well-known icons.</p>
+      <p>Add icons to the values if they're well-known.</p>
     </td>
   </tr>
   <tr>
@@ -302,7 +328,7 @@ Replace the <control>&lt;None&gt;</control> option with a checkbox if it doesn't
       <img src="dropdown_how_to_12_2.png" alt="Drop-down 'Font' with multiple options that are showed in different fonts"/>
     </td>
     <td>
-      <p>Use <control>font formatting</control> for a list of fonts. It will help users make a choice.</p>
+      <p>Use font formatting for a list of fonts. It will help users make a choice.</p>
     </td>
   </tr>
 </table>
@@ -336,7 +362,7 @@ Submenus are not supported for the drop-down list. Use a tree view instead
 A drop-down menu opens on clicking the drop-down button anywhere or pressing the <shortcut>Down</shortcut> key when the drop-down is
 focused.
 
-The menu opens **down** by default. If there is not enough space, the menu opens **up**.
+The menu opens down by default. If there is not enough space, the menu opens up.
 
 #### Selected value
 
@@ -344,18 +370,18 @@ When the menu opens, the default option (displayed when the menu is closed) is s
 
 #### Moving the selection
 
-Selection in the menu is moved by pressing <shortcut>Up</shortcut> and <shortcut>Down</shortcut> arrows when an item is hovered. Selection is moved as well when hovering the cursor over an item but it doesn't update the value.
+Selection in the menu is moved by pressing <shortcut>Up</shortcut> and <shortcut>Down</shortcut> keys when an item is hovered. Selection is moved as well when hovering the cursor over an item but it doesn't update the value.
 
 #### Closing the menu
 
-The menu remains opened until the user selects an item, clicks outside the menu, presses the <shortcut>Esc</shortcut> key or switches to another app.
+The menu remains opened until the user selects an item, clicks outside the menu, presses the <shortcut>Esc</shortcut> key, or switches to another app.
 
 #### Single-click activation
 
-Single-click activation using a mouse should be allowed:
-1. Clicking on a drop-down.
-2. The drop-down opens, selecting an item by hovering.
-3. When releasing the mouse button, the drop-down closes with the new item selected.
+A dropdown should work with a single mouse click:
+1. Clicking to open a drop-down.
+2. Hover over an item to select it.
+3. Release the mouse to confirm the selection and close the dropdown.
 
 ## How to layout
 

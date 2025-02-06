@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Marketing
 
@@ -111,11 +111,4 @@ Below are listed a few badges related to the IntelliJ SDK and plugins developmen
 [![JetBrains Platform Forum Status](https://img.shields.io/discourse/status?server=https%3A%2F%2Fplatform.jetbrains.com)](https://platform.jetbrains.com)
 ```
 [![JetBrains Platform Forum Status](https://img.shields.io/discourse/status?server=https%3A%2F%2Fplatform.jetbrains.com)](https://platform.jetbrains.com)
-```
-
-**@JBPlatform on X (formerly Twitter)**
-
-[![X Follow](https://img.shields.io/badge/follow-@JBPlatform-1DA1F2?logo=x)](https://x.com/JBPlatform)
-```
-[![X Follow](https://img.shields.io/badge/follow-@JBPlatform-1DA1F2?logo=x)](https://x.com/JBPlatform)
 ```

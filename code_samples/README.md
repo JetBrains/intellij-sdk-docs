@@ -4,7 +4,7 @@
 [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg?style=flat-square)][jb:docs]
 [![X Follow](https://img.shields.io/badge/follow-%40JBPlatform-1DA1F2?logo=x)][jb:x]
 [![Build](https://img.shields.io/github/actions/workflow/status/JetBrains/intellij-sdk-docs/code-samples.yml?branch=main&style=flat-square)][gh:workflow-code-samples]
-[![Slack](https://img.shields.io/badge/Slack-%23intellij--platform-blue?style=flat-square&logo=Slack)][jb:slack]
+[![JetBrains Platform Forum Status](https://img.shields.io/discourse/status?server=https%3A%2F%2Fplatform.jetbrains.com)][jb:forum]
 
 Learn how to build plugins using IntelliJ Platform SDK for the [JetBrains products][jb:products] by experimenting with our code samples.
 These samples show you how features work and help you jumpstart your plugins.
@@ -63,7 +63,7 @@ In the following table, you may find all available samples provided in the separ
 [jb:github]: https://github.com/JetBrains/.github/blob/main/profile/README.md
 [jb:docs]: https://plugins.jetbrains.com/docs/intellij/
 [jb:products]: https://www.jetbrains.com/products.html
-[jb:slack]: https://plugins.jetbrains.com/slack
+[jb:forum]: https://platform.jetbrains.com
 [jb:x]: https://x.com/JBPlatform
 
 [docs]: https://plugins.jetbrains.com/docs/intellij/

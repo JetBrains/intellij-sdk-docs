@@ -106,11 +106,11 @@ Below are listed a few badges related to the IntelliJ SDK and plugins developmen
 [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)](https://plugins.jetbrains.com/docs/intellij)
 ```
 
-**JetBrains Platform Slack**
+**JetBrains Platform Forum**
 
-[![Slack](https://img.shields.io/badge/Slack-#intellij--platform-blue?style=flat-square&logo=Slack)](https://plugins.jetbrains.com/slack)
+[![JetBrains Platform Forum Status](https://img.shields.io/discourse/status?server=https%3A%2F%2Fplatform.jetbrains.com)](https://platform.jetbrains.com)
 ```
-[![Slack](https://img.shields.io/badge/Slack-#intellij--platform-blue?style=flat-square&logo=Slack)](https://plugins.jetbrains.com/slack)
+[![JetBrains Platform Forum Status](https://img.shields.io/discourse/status?server=https%3A%2F%2Fplatform.jetbrains.com)](https://platform.jetbrains.com)
 ```
 
 **@JBPlatform on X (formerly Twitter)**

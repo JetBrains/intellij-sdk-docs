@@ -4,9 +4,6 @@
 
 <link-summary>Introduction to PHP Open API.</link-summary>
 
-> Please join the dedicated [intellij-php](https://jetbrains-platform.slack.com/archives/C5P9YB0LT/p1653913208725609) Slack channel to discuss PHP related plugin development.
->
-
 ## Dependency in plugin.xml
 
 ```xml

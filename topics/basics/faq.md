@@ -4,7 +4,7 @@
 
 <link-summary>List of plugin development forum topics with frequently asked question.</link-summary>
 
-This FAQ is a topical index of questions that have been asked (and answered) on our [IntelliJ IDEA Open API and Plugin Development forum](https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development).
+This FAQ is a topical index of questions that have been asked (and answered) on [IntelliJ IDEA Open API and Plugin Development forum](https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development).
 
 > See also [Explore the IntelliJ Platform API](explore_api.md) for more information and strategies.
 >

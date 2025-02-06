@@ -17,9 +17,6 @@ See also:
 * [](php_open_api.md)
 * [](existing_plugins.md)
 
-> Please join the dedicated [intellij-php](https://jetbrains-platform.slack.com/archives/C5P9YB0LT/p1653913208725609) Slack channel to discuss PHP related plugin development.
->
-
 ## PhpStorm Plugin Setup
 
 ### Gradle Build Script

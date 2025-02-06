@@ -96,19 +96,10 @@
             <p>Please see <a href="faq.md">Plugin Development FAQ</a> and <a href="explore_api.md">Explore the IntelliJ
                 Platform API</a> for tips &amp; tricks.</p>
         </tip>
-        <p>For questions and problems related to plugin development itself (rather than the content of this guide), you
-            have several options:</p>
-        <list>
-            <li><a href="https://plugins.jetbrains.com/slack/">#intellij-platform on JetBrains Platform Slack</a> - this
-                chat room is a great place to ask questions about extending JetBrains products, with answers coming from
-                both JetBrains team members and members of the community
-            </li>
-            <li>
-                <a href="https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development">Plugin
-                    Development Forum</a> - post a message to the support forum.
-                It is regularly updated with answers by JetBrains team members.
-            </li>
-        </list>
+        <p>For questions, problems, or other discussions about plugin development itself
+            (rather than the content of this guide),
+            use our <a href="https://platform.jetbrais.com">JetBrains Platform</a> community forum.
+            The forum is monitored by JetBrains team members.</p>
         <p>Of course, all raised questions will be used to try and improve this guide.</p>
     </chapter>
 

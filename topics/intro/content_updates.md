@@ -12,6 +12,15 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2025
 
+### February
+{february-25}
+
+Support Channel Update
+:
+Updated support channels to the new [JetBrains Platform](https://platform.jetbrains.com) community forum.
+See the [The JetBrains Platform Gets a New Community Space](https://blog.jetbrains.com/platform/2025/02/the-jetbrains-platform-gets-a-new-community-space/) blog post for more context.
+
+
 ### January
 {january-25}
 

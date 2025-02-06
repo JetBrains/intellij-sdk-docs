@@ -10,7 +10,7 @@
 
 **GitHub**: [Releases & Changelog](https://github.com/JetBrains/gradle-intellij-plugin/releases), [Issue Tracker](https://github.com/JetBrains/gradle-intellij-plugin/issues)
 
-**Slack**: [#intellij-platform-gradle-plugin](https://jetbrains-platform.slack.com/archives/C05C80200LS) on the [JetBrains Platform Slack](https://plugins.jetbrains.com/slack/)
+**JetBrains Platform Forum**: [Gradle Build Scripts](https://platform.jetbrains.com/c/intellij-platform/gradle-build-scripts/6) category
 
 </tldr>
 

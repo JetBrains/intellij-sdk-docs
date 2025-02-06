@@ -118,4 +118,4 @@ The width changes depending on the selected value to save space if the value is 
 
 ![](toolbar_dropdown_width.png){width=169}
 
-For menu sizes see [Drop-down menu](drop_down.md#menu_1).
+For menu sizes see [Drop-down menu](drop_down.md#menu-items).

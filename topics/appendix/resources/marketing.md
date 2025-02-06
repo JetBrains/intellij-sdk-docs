@@ -2,10 +2,11 @@
 
 # Marketing
 
-> Please make sure to follow the guidelines from [Plugin Overview page](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html) for an optimal presentation of your plugin on JetBrains Marketplace.
+> Make sure to follow the guidelines from the [Plugin Overview page](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html) for an optimal presentation of your plugin on JetBrains Marketplace.
+>
 > The _Busy Plugin Developers. Episode 2_ discusses [5 tips for optimizing JetBrains Marketplace plugin page](https://youtu.be/oB1GA9JeeiY?t=52) in more detail.
 >
-> Plugin vendors can also submit a blog post for the JetBrains Platform blog, please see [Contributing to the Blog](https://plugins.jetbrains.com/docs/marketplace/contributing-to-the-blog.html) for details.
+> Plugin vendors can also submit a blog post for the JetBrains Platform blog, see [Contributing to the Blog](https://plugins.jetbrains.com/docs/marketplace/contributing-to-the-blog.html) for details.
 
 <link-summary>Widgets and badges for marketing material</link-summary>
 
@@ -13,10 +14,10 @@
 
 [JetBrains Marketplace](https://plugins.jetbrains.com) provides embeddable widgets that you can place on your website using a simple code snippet:
 
-- Embeddable **Plugin Card** - renders an information card with the plugin name, icon, description, last update, and download counter,
-- Embeddable **Install Plugin** Button - provides a button that allows installing your plugin right in the user's IDE, if it is currently open.
+- Embeddable **Plugin Card** – renders an information card with the plugin name, icon, description, last update, and download counter,
+- Embeddable **Install Plugin** Button – provides a button that allows installing your plugin right in the user's IDE, if it is currently open.
 
-For more details, please follow the [Embeddable Content](https://plugins.jetbrains.com/docs/marketplace/embeddable-content.html) section in the JetBrains Marketplace documentation.
+For more details, follow the [Embeddable Content](https://plugins.jetbrains.com/docs/marketplace/embeddable-content.html) section in the JetBrains Marketplace documentation.
 
 ## Readme Badges
 
@@ -26,9 +27,9 @@ Below are listed a few badges related to the IntelliJ SDK and plugins developmen
 
 > The following code snippets contain `:pluginId` and `:packageName` placeholders.
 >
-> `:pluginId` can be obtained from your plugin page URL, like: `https://plugins.jetbrains.com/plugin/6954-kotlin` - in this case, it's `6954`.
+> `:pluginId` can be obtained from your plugin page URL, like: `https://plugins.jetbrains.com/plugin/6954-kotlin` – in this case `6954`.
 >
-> `:pluginId` also accepts a string ID that can be found in <control>Versions</control> tab, like `https://plugins.jetbrains.com/plugin/6954-kotlin/versions`.
+> `:pluginId` also accepts a string ID that can be found in the <control>Versions</control> tab, like `https://plugins.jetbrains.com/plugin/6954-kotlin/versions`.
 >
 > `:packageName` for ReSharper accepts only string ID.
 >

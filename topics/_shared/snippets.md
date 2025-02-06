@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Snippets
 {is-library="true"}
@@ -16,7 +16,9 @@
 <snippet id="subscribeNews">
 
 > [Subscribe to Marketplace Developer News](https://jb.gg/mp-updates) to receive news and announcements.
-> Also follow [JBPlatform](https://x.com/JBPlatform/) on X (formerly Twitter) and visit
+> Also follow [@platform.jetbrains.com](https://bsky.app/profile/platform.jetbrains.com) on Bluesky
+> (or [JBPlatform](https://x.com/JBPlatform) on X)
+> and visit
 > [JetBrains Platform Blog](https://blog.jetbrains.com/platform/) and
 > [JetBrains Marketplace on LinkedIn](https://www.linkedin.com/showcase/jetbrains-marketplace/).
 >

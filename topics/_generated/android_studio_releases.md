@@ -6,6 +6,7 @@
 
 | Release Name | Channel | Version | IntelliJ IDEA Version | Release Date |
 |--------------|---------|---------|-----------------------|--------------|
+| <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 Canary 4</p> | ![Canary][canary] | **2024.3.2.4**<p>AI&#8209;243.23654.117.2432.13021186</p> | **2024.3.2**<p>243.23654.117</p> | Feb&nbsp;6,&nbsp;2025 |
 | <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 Canary 3</p> | ![Canary][canary] | **2024.3.2.3**<p>AI&#8209;243.23654.117.2432.12988063</p> | **2024.3.2**<p>243.23654.117</p> | Feb&nbsp;3,&nbsp;2025 |
 | <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 Canary 2</p> | ![Canary][canary] | **2024.3.2.2**<p>AI&#8209;243.22562.218.2432.12959061</p> | **2024.3.2**<p>243.22562.218</p> | Jan&nbsp;23,&nbsp;2025 |
 | <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 Canary 1</p> | ![Canary][canary] | **2024.3.2.1**<p>AI&#8209;243.22562.218.2432.12933754</p> | **2024.3.2**<p>243.22562.218</p> | Jan&nbsp;21,&nbsp;2025 |

@@ -99,17 +99,3 @@ Below are listed a few badges related to the IntelliJ SDK and plugins developmen
 ```
 ![Build](https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/<WORKFLOW_FILE>/badge.svg)
 ```
-
-**JetBrains IntelliJ Platform SDK Docs**
-
-[![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)](https://plugins.jetbrains.com/docs/intellij)
-```
-[![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)](https://plugins.jetbrains.com/docs/intellij)
-```
-
-**JetBrains Platform Forum**
-
-[![JetBrains Platform Forum Status](https://img.shields.io/discourse/status?server=https%3A%2F%2Fplatform.jetbrains.com)](https://platform.jetbrains.com)
-```
-[![JetBrains Platform Forum Status](https://img.shields.io/discourse/status?server=https%3A%2F%2Fplatform.jetbrains.com)](https://platform.jetbrains.com)
-```

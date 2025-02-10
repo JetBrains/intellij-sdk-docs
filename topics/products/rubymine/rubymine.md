@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # RubyMine Plugin Development
 
@@ -44,6 +44,7 @@ dependencies {
 </tab>
 
 <tab title="Gradle IntelliJ Plugin (1.x)">
+
 The configuration of RubyMine plugin projects follows the methods described in [Configuring Plugin Projects using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-plugin-projects-using-the-intellij-idea-product-attribute), and [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml).
 
 The table below summarizes the [](tools_gradle_intellij_plugin.md) attributes to set in the Gradle build script for a RubyMine plugin project.

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # PyCharm Plugin Development
 
@@ -11,7 +11,7 @@
 [PyCharm](https://www.jetbrains.com/pycharm/) is an IntelliJ Platform-based product.
 Plugin projects for PyCharm can be developed using [IntelliJ IDEA](idea.md).
 
-## WebStorm Plugin Setup
+## PyCharm Plugin Setup
 
 ### Gradle Build Script
 

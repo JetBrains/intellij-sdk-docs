@@ -12,7 +12,7 @@
 
 A theme is customized by adding information to the theme description file that overrides the base (_Light_ or _Darcula_) theme.
 
-For plugin developers, [Exposing Theme Metadata](themes_metadata.md) discusses the format of customization keys and information about how to provide it to Theme authors.
+For plugin developers, [](themes_metadata.md) discusses the format of customization keys and information about how to provide it to Theme authors.
 
 > [Color Highlighter Plugin](https://plugins.jetbrains.com/plugin/13309-color-highlighter) adds additional color preview inside the editor.
 >
@@ -30,7 +30,7 @@ Colors are defined by six-digit RGB or eight-digit RGBA hexadecimal notation.
 
 ### Theme Reference Implementations
 
-When learning new syntax, it is often useful to have some existing implementations for reference.
+When learning a new syntax, it is often useful to have some existing implementations for reference.
 For example, refer to the [Theme description file](%gh-ic%/platform/platform-resources/src/themes/HighContrast.theme.json) for the IntelliJ IDEA _High Contrast_ Theme.
 It may also help to review [themes available](https://plugins.jetbrains.com/search?headline=164-theme&tags=Theme) at the JetBrains Marketplace.
 
@@ -90,8 +90,8 @@ Icon Palettes are predefined theme color keys that describe a single color in an
 #### Icon Colors in "Actions" and "Objects" Contexts
 
 IntelliJ Platform has default icon colors defined for `Actions` and `Objects` contexts.
-* `Actions` are Theme keys for icons that appear in the context of toolbars, and represent actions such as _Compile_, _Run_, or _Debug_.
-* `Objects` are Theme keys for icons that appear in the contexts of lists and trees, and represent entities like files, symbols, or run and debug configurations.
+* `Actions` are Theme keys for icons that appear in the context of toolbars and represent actions such as _Compile_, _Run_, or _Debug_.
+* `Objects` are Theme keys for icons that appear in the contexts of lists and trees and represent entities like files, symbols, or run and debug configurations.
 
 The [UI Guideline for Icons](icons_style.md) defines the default hexadecimal RGB values of colors for `Actions` and `Objects` keys.
 Note that this document refers to `Objects` keys as "Noun icons."
@@ -128,7 +128,7 @@ An icon replacement is described within the `icon {}` section of a Theme descrip
 Note that icon replacement key-value pairs appear outside the `ColorPalette` section.
 
 For icon substitutions, the `key` is the path to the default icon image.
-This path is derived from the `AllIcons.[Group].[IconName]` path in icon section reported by the [UI Inspector](internal_ui_inspector.md).
+This path is derived from the `AllIcons.[Group].[IconName]` path in the <control>icon</control> property reported by the [UI Inspector](internal_ui_inspector.md).
 
 For example, the _Build_ (hammer) icon in the toolbar has the path `Allcons.Actions.Compile` as reported by the UI Inspector.
 Therefore, the `key` for the _Build_ icon is `/actions/compile.svg`.
@@ -171,7 +171,7 @@ Methods for finding UI control keys are in the [Finding Attribute Keys for UI Co
 
 #### Customizing All UI Control Colors with the Same Property
 
-All UI Controls with the same `property` portion of their key can be set to the same color.
+All UI Controls with the same `property` part of their key can be set to the same color.
 This customization is done using the wildcard `"*": {}` section in the Theme description file.
 A key-value pair is inserted in this section, but only the `property` portion of the key is specified.
 The `value` is the custom color.
@@ -235,9 +235,9 @@ Methods for identifying UI control keys are in the [Finding Attribute Keys for U
 
 For example, here is an excerpt from the IntelliJ Platform [High Contrast Theme](%gh-ic%/platform/platform-resources/src/themes/HighContrast.theme.json):
 Note that a Theme file can mix versions of `property` identifiers:
-* The first three `property` entries are recognized by release 2019.1 and ignored by subsequent releases because they are defined by new `property` identifiers.
-* The `underlineColor` `property` is recognized by release 2019.1 and subsequent releases.
-* The `underlineHeight` `property` was introduced in release 2019.2, and is ignored by previous releases.
+* The first three `property` entries are recognized by release 2019.1 and ignored by newer releases because they are defined by new `property` identifiers.
+* The `underlineColor` `property` is recognized by release 2019.1 and newer releases.
+* The `underlineHeight` `property` was introduced in release 2019.2 and is ignored by previous releases.
 * The `underlinedTabBackground` `property` was introduced in release 2019.2, replaces the 2019.1 `selectedBackground`, and is ignored by previous releases.
 * The `inactiveColoredFileBackground` `property` was introduced in release 2019.2, replaces the 2019.1 `inactiveMaskColor`, and is ignored by previous releases.
 
@@ -265,7 +265,7 @@ The color and geometry of borders used in UI controls can be customized by key-v
 The format of keys for borders is `element.property`, where:
 * `element` is the type of UI control containing a border, such as a window or a popup menu.
 * `property` is the desired border appearance, for example:
-  * `border` is the border width (in pixels) specified as a top, left, bottom, and right widths.
+  * `border` is the border width (in pixels) specified as top, left, bottom, and right widths.
   Border color is also (optionally) specified as hexadecimal RGB, e.g. `E6E6E6` with no `#` character.
   * `borderInsets` is the inset distance (in pixels) from the edge of the `element` to the border.
   It is specified as top, left, bottom, and right insets.
@@ -273,7 +273,8 @@ The format of keys for borders is `element.property`, where:
 Methods for identifying UI control keys are in the [Finding Attribute Keys for UI Controls](#finding-attribute-keys-for-ui-controls) section.
 
 #### Customizing the Border Appearance of Specific UI Controls
-Adding a key-value pair to the `"ui": {}` section of a Theme description file customizes the appearance of borders for specific UI control types.
+
+Adding a key-value pair to the `ui` section of a theme description file customizes the appearance of borders for specific UI control types.
 
 The following example sets a new border width and color for all windows:
 
@@ -290,21 +291,19 @@ In this example, the customized border supersedes the default definition and any
 ## Finding Attribute Keys for UI Controls
 
 There are hundreds of UI control `element.property` keys defined in the IntelliJ Platform UI.
-Some keys and strategies for applying them can be gleaned from the [theme reference implementations](#theme-reference-implementations).
-For a general search, here some suggested methods for locating UI control keys.
+Some keys and strategies for applying them can be found in the [theme reference implementations](#theme-reference-implementations).
+The sections below describe suggested methods for locating UI control keys.
 
 ### Finding a UI Control Key Using Code Completion in the Editor
 
 The preferred method of finding UI control keys is to use the [Code Completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#Auto-Completing_Code.xml) feature in the editor.
-Note that some keys presented by the code completion feature may be deprecated.
+Note that some of the completed keys may be deprecated.
 New entries in the `"ui": {}` section will invoke the code completion popup, as shown below:
 
 ![UI Control Key Code Completion](ui_control_key_completion.png){width="600"}
 
-Beginning with version 2019.2 of the IntelliJ Platform, the editor has added features for Code Completion and [Quick Documentation](https://www.jetbrains.com/help/idea/viewing-reference-information.html#inline-quick-documentation) to show the release in which a UI control key began to be supported.
-It appears as the <control>Since</control> attribute in editor popups.
-In the Quick Documentation popup, the format is e.g., <control>Since: 2019.2</control>.
-The Code Completion popup is similar, but the format is e.g., <control>[Since 2019.2]</control>.
+Code completion and [quick documentation](https://www.jetbrains.com/help/idea/viewing-reference-information.html#inline-quick-documentation) popup items include information about the versions in which specific UI control keys started being supported.
+For example, in the above screenshot, <control>ToolWindow.background</control> property is supported since 2021.3.
 
 ### Finding a UI Control Key Using Laf Defaults UI
 

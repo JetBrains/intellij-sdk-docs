@@ -309,3 +309,10 @@ For example, in the above screenshot, <control>ToolWindow.background</control> p
 
 Using the [Laf Defaults](internal_ui_laf_defaults.md) inspector, enter the `element` portion of the key.
 The Laf Defaults inspector will prompt with a list of UI Control keys and their default color.
+
+### Using the UI Inspector
+
+[Use the UI Inspector](internal_ui_inspector.md#using-the-ui-inspector) and check the <control>foreground</control> and <control>background</control> property values.
+If an inspected component can be styled with the UI control key, it will include its name, for example:
+
+![UI Inspector Key Names](ui_inspector_key_names.png){width="710"}

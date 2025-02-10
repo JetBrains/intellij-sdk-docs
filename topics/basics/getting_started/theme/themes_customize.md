@@ -101,7 +101,7 @@ Note that this document refers to `Objects` keys as "Noun icons."
 An icon Palette color is customized by adding an `Actions` or `Objects` `key` and custom color `value` to the `"ColorPalette": {}` section in a Theme description file.
 The list of available icon `Actions` and `Objects` keys are provided by the editor's completion popup:
 
-![Color Palette Popup](theme_colorpalette_popup.png){width="600"}
+![Color Palette Popup](theme_colorpalette_popup.png){width="365"}
 
 For example, the following key-value pair changes the color for all blue-colored icons on toolbars to the color `#5BC0DE`:
 
@@ -299,7 +299,7 @@ The preferred method of finding UI control keys is to use the [Code Completion](
 Note that some keys presented by the code completion feature may be deprecated.
 New entries in the `"ui": {}` section will invoke the code completion popup, as shown below:
 
-![UI Control Key Code Completion](uit_control_complete.png)
+![UI Control Key Code Completion](ui_control_key_completion.png){width="600"}
 
 Beginning with version 2019.2 of the IntelliJ Platform, the editor has added features for Code Completion and [Quick Documentation](https://www.jetbrains.com/help/idea/viewing-reference-information.html#inline-quick-documentation) to show the release in which a UI control key began to be supported.
 It appears as the <control>Since</control> attribute in editor popups.

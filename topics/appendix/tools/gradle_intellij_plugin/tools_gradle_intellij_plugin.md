@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Gradle IntelliJ Plugin (1.x)
 <primary-label ref="Obsolete"/>
@@ -2201,7 +2201,7 @@ Validates the plugin project configuration:
 
 > Read more about controlling this behavior on [](using_kotlin.md#kotlin-standard-library).
 
-- An old default [`runPluginVerifier.downloadDir`][#tasks-runpluginverifier-downloaddir] path contains downloaded IDEs, but another default is in use. Links to the [FAQ section](tools_gradle_intellij_plugin_faq.md#the-plugin-verifier-download-directory-is-set-to-but-downloaded-ides-were-also-found-in)
+- An old default [`runPluginVerifier.downloadDir`](#tasks-runpluginverifier-downloaddir) path contains downloaded IDEs, but another default is in use. Links to the [FAQ section](tools_gradle_intellij_plugin_faq.md#the-plugin-verifier-download-directory-is-set-to-but-downloaded-ides-were-also-found-in)
 
 
 ### `verifyPluginSignature`

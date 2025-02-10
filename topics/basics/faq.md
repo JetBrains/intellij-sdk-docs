@@ -1,12 +1,14 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Plugin Development FAQ
 
-<link-summary>List of plugin development forum topics with frequently asked question.</link-summary>
+<link-summary>List of plugin development forum topics with frequently asked questions.</link-summary>
 
-This FAQ is a topical index of questions that have been asked (and answered) on [IntelliJ IDEA Open API and Plugin Development forum](https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development).
+This FAQ is a topical index of questions that have been asked (and answered) on the archived
+[IntelliJ IDEA Open API and Plugin Development forum](https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development).
+See [](getting_help.topic#problems-with-code-support-issues) on how to post new questions.
 
-> See also [Explore the IntelliJ Platform API](explore_api.md) for more information and strategies.
+> See also [](explore_api.md) for more information and strategies.
 >
 
 ## Accessing and Modifying the Source Code

@@ -45,7 +45,7 @@ dependencies {
 
 <tab title="Gradle IntelliJ Plugin (1.x)">
 
-The configuration of RubyMine plugin projects follows the methods described in [Configuring Plugin Projects using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-plugin-projects-using-the-intellij-idea-product-attribute), and [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml).
+The configuration of RubyMine plugin projects follows the methods described in [Configuring Plugin Projects using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-plugin-projects-using-the-intellij-idea-product-attribute) and [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml).
 
 The table below summarizes the [](tools_gradle_intellij_plugin.md) attributes to set in the Gradle build script for a RubyMine plugin project.
 Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
@@ -58,7 +58,7 @@ To see how these attributes appear in a similar Gradle build script for PhpStorm
 | [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) | <p>`org.jetbrains.plugins.ruby:2019.2.20191029` for the Ruby plugin.</p><p>See below for Ruby plugin version information.</p>                                                                                                  |
 | [`runIde.ideDir`](tools_gradle_intellij_plugin.md#tasks-runide-idedir)           | <p>Path to locally installed target version of RubyMine. For example, on macOS:</p><p><path>/Users/\$USERNAME\$/Library/Application Support/JetBrains/Toolbox/apps/RubyMine/ch-0/192.7142.37/RubyMine.app/Contents</path>.</p> |
 
-The required `org.jetbrains.plugins.ruby` plugin isn't compatible with IntelliJ IDEA Community edition but is compatible with IntelliJ IDEA Ultimate (`IU`) edition.
+The required `org.jetbrains.plugins.ruby` plugin isn't compatible with IntelliJ IDEA Community Edition but is compatible with IntelliJ IDEA Ultimate (`IU`) edition.
 Product compatibility is determined from the Ruby plugin [version page](https://plugins.jetbrains.com/plugin/1293-ruby/versions).
 The Ruby plugin isn't bundled with `IU`, so the Ruby plugin version must be explicitly declared to support the target RubyMine (and `IU`) BRANCH.BUILD version.
 The correct Ruby plugin version is also determined from the Ruby plugin version page.
@@ -69,7 +69,7 @@ The correct Ruby plugin version is also determined from the Ruby plugin version 
 ### plugin.xml
 
 The dependency on the Ruby plugin APIs must be declared in the <path>[plugin.xml](plugin_configuration_file.md)</path> file.
-As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) tags must contain `com.intellij.modules.ruby`.
+As described in the [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) tags must contain `com.intellij.modules.ruby`.
 
 ## Available RubyMine APIs
 

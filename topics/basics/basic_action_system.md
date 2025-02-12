@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Actions
 
@@ -146,12 +146,10 @@ An example of inspecting PSI elements is demonstrated in the `action_basics` SDK
 
 ### Action IDs
 
-Every action and action group has a unique identifier.
-Basing the identifier for a custom action on the fully qualified name of the implementation is the best practice, assuming the package incorporates the [`<id>`](plugin_configuration_file.md#idea-plugin__id) of the plugin.
-Including the plugin identifier in the action identifier should prevent it from clashing with other plugins' actions.
-An action must have a unique identifier for each place.
-It is used in the IDE UI, even though the FQN of the implementation is the same.
-Definitions of identifiers for the standard IntelliJ Platform actions are in [`IdeActions`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/actionSystem/IdeActions.java).
+Each action and action group must have a unique identifier (see the `id` attribute specification for [`action`](plugin_configuration_file.md#idea-plugin__actions__action) and [`group`](plugin_configuration_file.md#idea-plugin__actions__group)).
+
+An action requires a unique identifier for every context where it appears in the IDE UI, even if the implementation FQN is shared.
+Standard IntelliJ Platform action IDs are defined in [`IdeActions`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/actionSystem/IdeActions.java).
 
 ### Grouping Actions
 

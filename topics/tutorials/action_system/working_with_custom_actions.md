@@ -67,7 +67,7 @@ Fill out the <control>New Action</control> form to set up the parameters for `Po
 
 The fields of the form are:
 
-* <control>Action ID</control> - Every action must have a unique ID.
+* <control>Action ID</control> - Every action must have a unique [ID](plugin_configuration_file.md#idea-plugin__actions__action).
   If the action class is used in only one place in the IDE UI, then the class fully qualified name (FQN) is a good default for the ID.
   Using the action class in multiple places requires mangling the ID, such as adding a suffix to the FQN, for each ID.
 * <control>Class Name</control> - The FQN implementation class for the action.

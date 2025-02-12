@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Language Server Protocol (LSP)
 
@@ -120,6 +120,10 @@ The LSP API sources are bundled in the IntelliJ IDEA Ultimate distribution and c
 ## Supported Features
 
 The LSP support provided by the IntelliJ Platform covers the following features for these releases:
+
+### 2025.1
+
+- Document Link ([`textDocument/documentLink`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_documentLink))
 
 ### 2024.3
 

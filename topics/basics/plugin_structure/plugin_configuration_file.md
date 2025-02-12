@@ -242,7 +242,8 @@ Attributes
 - `release-date` _(**required**)_<br/>
   Date of the major version release in the `YYYYMMDD` format.
 - `release-version` _(**required**)_<br/>
-  A major version in a special number format.
+  A major version in a specific number format, for example, `20242` for the 2024.2 major release.<br/>
+  See [`release-version` constraints](https://plugins.jetbrains.com/docs/marketplace/versioning-of-paid-plugins.html#release-version-constraints) for more details.
 - `optional` _(optional)_<br/>
   The boolean value determining whether the plugin is
   a [Freemium](https://plugins.jetbrains.com/docs/marketplace/freemium.html) plugin.<br/>

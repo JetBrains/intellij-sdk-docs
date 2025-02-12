@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/html-entities.dtd">
 
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
@@ -98,7 +98,7 @@
         </tip>
         <p>For questions, problems, or other discussions about plugin development itself
             (rather than the content of this guide),
-            use our <a href="https://platform.jetbrais.com">JetBrains Platform</a> community forum.
+            use our <a href="https://platform.jetbrains.com">JetBrains Platform</a> community forum.
             The forum is monitored by JetBrains team members.</p>
         <p>Of course, all raised questions will be used to try and improve this guide.</p>
     </chapter>

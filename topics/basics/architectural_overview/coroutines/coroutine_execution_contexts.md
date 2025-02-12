@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Execution Contexts
 <primary-label ref="2024.1"/>
@@ -115,8 +115,7 @@ See the [](background_processes.md#progress-api) section for details.
 ### Progress Reporting
 {#progress-indicator-progress-reporting}
 
-- current thread's [`ProgressIndicator`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressIndicator.java) methods
-- [`ProgressManager`'s](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java) `progress` and `progress2` static methods
+- see [Background Processes: Tracking Progress](background_processes.md#tracking-progress)
 
 ### Switching to Other Contexts
 {#progress-indicator-switching-to-other-contexts}

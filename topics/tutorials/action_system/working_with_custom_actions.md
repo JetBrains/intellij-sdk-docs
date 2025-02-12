@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Creating Actions
 
@@ -13,7 +13,7 @@ Using the SDK code sample [`action_basics`](%gh-sdk-samples-master%/action_basic
 ## Creating a Custom Action
 
 Custom actions extend the abstract class [`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java).
-Classes that extend it should override `AnAction.update()`, and must override `AnAction.actionPerformed()`.
+Classes that extend it should override `AnAction.update()` and must override `AnAction.actionPerformed()`.
 * The `update()` method implements the code that enables or disables an action.
 * The `actionPerformed()` method implements the code that executes when the user invokes an action.
 * When targeting IntelliJ Platform 2022.3 or later, `AnAction.getActionUpdateThread()` must be implemented
@@ -55,7 +55,7 @@ Before fleshing out those methods, to complete this minimal implementation, `Pop
 ## Registering a Custom Action
 
 Actions are registered by declaring them in code or by declaring them in the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of a [plugin configuration file](plugin_configuration_file.md).
-This section describes using IDE tooling - the <control>New Action</control> form - to add a declaration to the <path>plugin.xml</path> file, and then tuning registration attributes manually.
+This section describes using IDE tooling - the <control>New Action</control> form - to add a declaration to the <path>plugin.xml</path> file and then tuning registration attributes manually.
 A more comprehensive explanation of action registration is available in the [](basic_action_system.md#registering-actions) section of this guide.
 
 ### Registering an Action with the New Action Form
@@ -104,13 +104,13 @@ from the <control>New Action</control> form.
 
 The [`<add-to-group>`](plugin_configuration_file.md#idea-plugin__actions__action__add-to-group) element declares where the action will appear and mirrors the names of entries from the form.
 
-This declaration is sufficient, but adding more attributes is discussed in the next section.
+This declaration is enough, but adding more attributes is discussed in the next section.
 
 ### Setting Registration Attributes Manually
 
 An action declaration can be added manually to the <path>plugin.xml</path> file.
 An exhaustive list of declaration elements and attributes is presented in [](basic_action_system.md#registering-actions-in-pluginxml).
-Attributes are added by selecting them from the <control>New Action</control> form, or by editing the registration declaration directly in the <path>plugin.xml</path> file.
+Attributes are added by selecting them from the <control>New Action</control> form or by editing the registration declaration directly in the <path>plugin.xml</path> file.
 
 The [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) declaration for `PopupDialogAction` in the `action_basics` [plugin.xml](%gh-sdk-samples-master%/action_basics/src/main/resources/META-INF/plugin.xml) file.
 It also contains an attribute for an [`Icon`](icons.md) and encloses elements declaring text overrides, keyboard and mouse shortcuts, and to which menu group the action should be added.
@@ -173,7 +173,7 @@ The code below gets information from the `anActionEvent` input parameter and con
 A generic icon, and the `message` and `title` attributes from the invoking menu action are displayed.
 However, code in this method could manipulate a project, invoke an inspection, change the contents of a file, etc.
 
-For demonstration purposes the `AnActionEvent.getData()` method tests if a [`Navigatable`](%gh-ic%/platform/core-api/src/com/intellij/pom/Navigatable.java) object is available.
+For demonstration purposes, the `AnActionEvent.getData()` method tests if a [`Navigatable`](%gh-ic%/platform/core-api/src/com/intellij/pom/Navigatable.java) object is available.
 If so, information about the selected element is added to the dialog.
 
 See [](basic_action_system.md#determining-the-action-context) for more information about accessing information from the `AnActionEvent` input parameter.

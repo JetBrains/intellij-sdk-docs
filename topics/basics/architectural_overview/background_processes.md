@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Background Processes
 
@@ -176,8 +176,6 @@ To report progress, use the following methods:
   If this is impossible, consider making the progress indeterminate.
 - `setIndeterminate(boolean)` – marks the progress indeterminate (for processes that can't estimate the amount of work to be done) or determinate (for processes that can display the fraction of the work done using `setFraction(double)`).
 
-<include from="snippets.md" element-id="missingContent"/>
-
 ## `ProcessCanceledException` and Debugging
 
 Sometimes, a PCE is thrown from `checkCanceled()` in the code inspected by a plugin developer during a debugging session.
@@ -204,3 +202,5 @@ Action disabling throwing `ProcessCanceledException`.
 
 </tab>
 </tabs>
+
+<include from="snippets.md" element-id="missingContent"/>

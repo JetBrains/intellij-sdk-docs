@@ -79,12 +79,12 @@ See the [](background_processes.md#progress-api) section for details.
 ### Cancellation Check
 {#progress-indicator-cancellation-check}
 
-- `ProgressManager.checkCanceled()` - as described in the [](background_processes.md#cancellation) section
+- `ProgressManager.checkCanceled()` - as described in the [Background Processes: Cancellation](background_processes.md#cancellation) section
 
 ### Progress Reporting
 {#progress-indicator-progress-reporting}
 
-- see [Background Processes: Tracking Progress](background_processes.md#tracking-progress)
+- [`ProgressIndicator`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressIndicator.java) or [`ProgressManager`'s](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java) methods as described in [Background Processes: Tracking Progress](background_processes.md#tracking-progress)
 
 ### Switching to Other Contexts
 {#progress-indicator-switching-to-other-contexts}

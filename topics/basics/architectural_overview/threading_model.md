@@ -483,11 +483,12 @@ gantt
     %% do not remove trailing space in axisFormat:
     axisFormat ‎
     section BGT
-        very long read action               : 0, 4
+        very long read action               : 0, 6
     section EDT
-        write action (waiting for the lock) : done, 1, 4
-        write action (executing)            : 4, 5
-        UI freeze                           : crit, 1, 5
+        write action (waiting for the lock) : done, 2, 6
+        write action (executing)            : 6, 8
+        UI freeze                           : crit, 2, 8
+        UI update (frozen)                  : crit, 8, 10
 ```
 
 Sometimes, it is required to run a long read action, and it isn't possible to speed it up.
@@ -502,12 +503,13 @@ gantt
     %% do not remove trailing space in axisFormat:
     axisFormat ‎
     section BGT
-        very long read action               : 0, 1
-        very long read action (2nd attempt) : 2, 5
-        RA canceled                         : milestone, crit, 0, 2
-        RA restarted from scratch           : milestone, 2, 2
+        very long read action               : 0, 2
+        very long read action (2nd attempt) : 4, 10
+        RA canceled                         : milestone, crit, 0, 4
+        RA restarted from scratch           : milestone, 4, 4
     section EDT
-        write action : 1, 2
+        write action : 2, 4
+        UI update    : 4, 6
 ```
 
 In this case, the EDT won't be blocked and the UI freeze is avoided.

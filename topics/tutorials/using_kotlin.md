@@ -81,7 +81,7 @@ The IntelliJ Platform provides a [type-safe DSL](kotlin_ui_dsl_version_2.md) to 
 IntelliJ IDEA bundles the necessary Kotlin IDE plugin, requiring no further configuration.
 For detailed instructions, refer to the [Kotlin documentation](https://kotlinlang.org/docs/getting-started.html).
 
-Using Kotlin 2.x is recommended for plugin targeting 2024.3 or later.
+Using Kotlin 2.x is recommended for plugins targeting 2024.3 or later and required for 2025.1 or later.
 
 ### Kotlin Gradle Plugin
 

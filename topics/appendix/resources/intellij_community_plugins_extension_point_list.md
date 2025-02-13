@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <!--
 EP List Directory:
@@ -194,15 +194,6 @@ EP List Directory:
 | [com.intellij.searchEverywhereMl.rankingService](https://jb.gg/ipe?extensions=com.intellij.searchEverywhereMl.rankingService) ![Internal][internal] | [`SearchEverywhereMlService`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/searcheverywhere/SearchEverywhereMlService.kt) |
 | [com.intellij.searchEverywhereMl.searchEverywhereSessionPropertyProvider](https://jb.gg/ipe?extensions=com.intellij.searchEverywhereMl.searchEverywhereSessionPropertyProvider) | [`SearchEverywhereSessionPropertyProvider`](%gh-ic%/plugins/search-everywhere-ml/src/com/intellij/searchEverywhereMl/SearchEverywhereSessionPropertyProvider.kt) |
 | [com.intellij.searchEverywhereMl.textEmbeddingProvider](https://jb.gg/ipe?extensions=com.intellij.searchEverywhereMl.textEmbeddingProvider) | [`TextEmbeddingProvider`](%gh-ic%/plugins/search-everywhere-ml/src/com/intellij/searchEverywhereMl/TextEmbeddingProvider.kt) |
-
-### com.intellij.settingsSync
-
-[`com.intellij.settingsSync`](%gh-ic%/plugins/settings-sync/resources/META-INF/plugin.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| [com.intellij.settingsSync.settingsProvider](https://jb.gg/ipe?extensions=com.intellij.settingsSync.settingsProvider) ![Internal][internal] | [`SettingsProvider`](%gh-ic%/plugins/settings-sync/src/com/intellij/settingsSync/SettingsProvider.kt) |
-| [com.intellij.settingsSyncMigration](https://jb.gg/ipe?extensions=com.intellij.settingsSyncMigration) ![Internal][internal] | [`SettingsSyncMigration`](%gh-ic%/plugins/settings-sync/src/com/intellij/settingsSync/SettingsSyncMigration.kt) |
 
 ### com.intellij.stats.completion
 
@@ -1284,6 +1275,15 @@ EP List Directory:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [org.jetbrains.kotlin.resolveScopeEnlarger](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.resolveScopeEnlarger) | [`KotlinResolveScopeEnlarger`](%gh-ic%/plugins/kotlin/base/project-structure/src/org/jetbrains/kotlin/idea/base/projectStructure/KotlinResolveScopeEnlarger.kt) |
+
+### ru.adelf.idea.dotenv
+
+[`ru.adelf.idea.dotenv`](%gh-ic%/plugins/env-files-support/src/main/resources/META-INF/plugin.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [ru.adelf.idea.dotenv.environmentVariablesProvider](https://jb.gg/ipe?extensions=ru.adelf.idea.dotenv.environmentVariablesProvider) | [`EnvironmentVariablesProvider`](%gh-ic%/plugins/env-files-support/src/main/java/ru/adelf/idea/dotenv/api/EnvironmentVariablesProvider.java) |
+| [ru.adelf.idea.dotenv.environmentVariablesUsagesProvider](https://jb.gg/ipe?extensions=ru.adelf.idea.dotenv.environmentVariablesUsagesProvider) | [`EnvironmentVariablesUsagesProvider`](%gh-ic%/plugins/env-files-support/src/main/java/ru/adelf/idea/dotenv/api/EnvironmentVariablesUsagesProvider.java) |
 
 ### scripting-base.xml
 

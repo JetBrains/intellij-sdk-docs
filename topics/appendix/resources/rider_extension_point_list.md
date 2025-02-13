@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <!-- EP List Directory: /rider/ -->
 
@@ -12,7 +12,7 @@
 
 </tldr>
 
-140 Extension Points and 7 Listeners for Rider
+141 Extension Points and 7 Listeners for Rider
 
 See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 
@@ -54,6 +54,7 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.intellij.rider.blazorDialectSubstitutor](https://jb.gg/ipe?extensions=com.intellij.rider.blazorDialectSubstitutor) ![Non-Dynamic][non-dynamic] | `BlazorHtmlDialectSubstitutor` |
+| [com.intellij.rider.webTypingAssistClassifier](https://jb.gg/ipe?extensions=com.intellij.rider.webTypingAssistClassifier) | `WebTypingAssistClassifier` |
 
 ### DotNetPluginEP.xml
 

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <!--
 EP List Directory:
@@ -18,7 +18,7 @@ and add in intellij_community_plugins_extension_point_list.md.
 
 <link-summary>Overview of Extension Points and Listeners for IntelliJ Platform.</link-summary>
 
-1115 Extension Points and 212 Listeners for IntelliJ Platform %ijPlatform%
+1121 Extension Points and 213 Listeners for IntelliJ Platform %ijPlatform%
 
 <include from="snippets.md" element-id="ep_list_legend"/>
 
@@ -78,6 +78,7 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [RecentProjectsManager.Companion#RECENT_PROJECTS_CHANGE_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.ide.RecentProjectsManager.RecentProjectsChange)  | [`RecentProjectsChange`](%gh-ic%/platform/ide-core/src/com/intellij/ide/RecentProjectsManager.kt) |
 | [RegionSettingsListener#UPDATE_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.ide.RegionSettings.RegionSettingsListener)  ![Experimental][experimental] ![Internal][internal] | [`RegionSettingsListener`](%gh-ic%/platform/platform-api/src/com/intellij/ide/RegionSettings.java) |
 | [SaveAndSyncHandlerListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.ide.SaveAndSyncHandlerListener)  ![Experimental][experimental] | [`SaveAndSyncHandlerListener`](%gh-ic%/platform/platform-api/src/com/intellij/ide/SaveAndSyncHandlerListener.java) |
+| [SearchEverywhereUI#PREVIEW_EVENTS](https://jb.gg/ipe/listeners?topics=com.intellij.ide.actions.searcheverywhere.PreviewListener)  ![Internal][internal] | [`PreviewListener`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/searcheverywhere/PreviewListener.java) |
 | [SEHeaderActionListener.Companion#SE_HEADER_ACTION_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.ide.actions.searcheverywhere.SEHeaderActionListener)  ![Internal][internal] | [`SEHeaderActionListener`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/searcheverywhere/SEHeaderActionListener.kt) |
 | [SETabSwitcherListener.Companion#SE_TAB_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.ide.actions.searcheverywhere.SETabSwitcherListener)  ![Internal][internal] | [`SETabSwitcherListener`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/searcheverywhere/SETabSwitcherListener.kt) |
 | [SearchEverywhereUI#SEARCH_EVENTS](https://jb.gg/ipe/listeners?topics=com.intellij.ide.actions.searcheverywhere.SearchListener)  | [`SearchListener`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/searcheverywhere/SearchListener.java) |
@@ -233,11 +234,11 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [BreadcrumbsInitListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.xml.breadcrumbs.BreadcrumbsInitListener)  ![Internal][internal] ![Project-Level][project-level] | [`BreadcrumbsInitListener`](%gh-ic%/platform/platform-impl/src/com/intellij/xml/breadcrumbs/BreadcrumbsInitListener.java) |
 | [TodoConfiguration#PROPERTY_CHANGE](https://jb.gg/ipe/listeners?topics=java.beans.PropertyChangeListener)  ![Project-Level][project-level] | `PropertyChangeListener` |
 | [IndexPatternProvider#INDEX_PATTERNS_CHANGED](https://jb.gg/ipe/listeners?topics=java.beans.PropertyChangeListener)  | `PropertyChangeListener` |
+| [UsageFilteringRuleProvider#RULES_CHANGED](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  ![Project-Level][project-level] | `Runnable` |
 | [JsonSchemaVfsListener#JSON_SCHEMA_CHANGED](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
 | [JsonSchemaVfsListener#JSON_DEPS_CHANGED](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
-| [UsageFilteringRuleProvider#RULES_CHANGED](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  ![Project-Level][project-level] | `Runnable` |
-| [SeverityRegistrar#SEVERITIES_CHANGED_TOPIC](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  ![Project-Level][project-level] | `Runnable` |
 | [RemoteRevisionsCache#REMOTE_VERSION_CHANGED](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  ![Project-Level][project-level] | `Runnable` |
+| [SeverityRegistrar#SEVERITIES_CHANGED_TOPIC](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  ![Project-Level][project-level] | `Runnable` |
 | [RunToolbarPopupKt#VOID_EXECUTION_TOPIC](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  ![Project-Level][project-level] | `Runnable` |
 | [StructureViewWrapperImpl#STRUCTURE_CHANGED](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
 | [UpdateActionsListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=org.jetbrains.ide.UpdateActionsListener)  | [`UpdateActionsListener`](%gh-ic%/platform/built-in-server/src/org/jetbrains/ide/ToolboxUpdateActions.kt) |
@@ -514,8 +515,8 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [com.intellij.lang.smartEnterProcessor](https://jb.gg/ipe?extensions=com.intellij.lang.smartEnterProcessor) | [`SmartEnterProcessor`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/smartEnter/SmartEnterProcessor.java) |
 | [com.intellij.listSplitJoinContext](https://jb.gg/ipe?extensions=com.intellij.listSplitJoinContext) ![Experimental][experimental] | [`ListSplitJoinContext`](%gh-ic%/platform/lang-impl/src/com/intellij/openapi/editor/actions/lists/ListSplitJoinContext.kt) |
 | [com.intellij.moveLeftRightHandler](https://jb.gg/ipe?extensions=com.intellij.moveLeftRightHandler) | [`MoveElementLeftRightHandler`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/moveLeftRight/MoveElementLeftRightHandler.java) |
-| [com.intellij.preserveIndentOnPaste](https://jb.gg/ipe?extensions=com.intellij.preserveIndentOnPaste) ![Internal][internal] | `n/a` |
-| [com.intellij.quoteHandler](https://jb.gg/ipe?extensions=com.intellij.quoteHandler) ![Internal][internal] | [`QuoteHandler`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/editorActions/QuoteHandler.java) |
+| [com.intellij.preserveIndentOnPaste](https://jb.gg/ipe?extensions=com.intellij.preserveIndentOnPaste) | `n/a` |
+| [com.intellij.quoteHandler](https://jb.gg/ipe?extensions=com.intellij.quoteHandler) | [`QuoteHandler`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/editorActions/QuoteHandler.java) |
 | [com.intellij.selectionUnquotingFilter](https://jb.gg/ipe?extensions=com.intellij.selectionUnquotingFilter) | [`UnquotingFilter`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/editorActions/SelectionQuotingTypedHandler.java) |
 | [com.intellij.statementUpDownMover](https://jb.gg/ipe?extensions=com.intellij.statementUpDownMover) | [`StatementUpDownMover`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/moveUpDown/StatementUpDownMover.java) |
 | [com.intellij.typedHandler](https://jb.gg/ipe?extensions=com.intellij.typedHandler) | [`TypedHandlerDelegate`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/TypedHandlerDelegate.java) |
@@ -599,6 +600,7 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [com.intellij.applicationActivity](https://jb.gg/ipe?extensions=com.intellij.applicationActivity) ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`ApplicationActivity`](%gh-ic%/platform/ide-core/src/com/intellij/ide/ApplicationActivity.kt) |
 | [com.intellij.applicationInitializedListener](https://jb.gg/ipe?extensions=com.intellij.applicationInitializedListener) ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`ApplicationInitializedListener`](%gh-ic%/platform/ide-core/src/com/intellij/ide/ApplicationInitializedListener.kt) |
 | [com.intellij.notificationGroup](https://jb.gg/ipe?extensions=com.intellij.notificationGroup) | `n/a` |
+| [com.intellij.registry.managed](https://jb.gg/ipe?extensions=com.intellij.registry.managed) ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`ManagedRegistry`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/util/registry/ManagedRegistry.kt) |
 | [com.intellij.registryKey](https://jb.gg/ipe?extensions=com.intellij.registryKey) | `n/a` |
 
 ### Indexing.xml
@@ -650,6 +652,7 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [org.jetbrains.plugins.notebooks.editor.outputs.notebookOutputComponentFactory](https://jb.gg/ipe?extensions=org.jetbrains.plugins.notebooks.editor.outputs.notebookOutputComponentFactory) | [`NotebookOutputComponentFactory`](%gh-ic%/notebooks/visualization/src/com/intellij/notebooks/visualization/outputs/NotebookOutputComponentFactory.kt) |
 | [org.jetbrains.plugins.notebooks.editor.outputs.notebookOutputComponentWrapper](https://jb.gg/ipe?extensions=org.jetbrains.plugins.notebooks.editor.outputs.notebookOutputComponentWrapper) | [`NotebookOutputComponentWrapper`](%gh-ic%/notebooks/visualization/src/com/intellij/notebooks/visualization/outputs/NotebookOutputComponentWrapper.kt) |
 | [org.jetbrains.plugins.notebooks.editor.outputs.notebookOutputDataKeyExtractor](https://jb.gg/ipe?extensions=org.jetbrains.plugins.notebooks.editor.outputs.notebookOutputDataKeyExtractor) | [`NotebookOutputDataKeyExtractor`](%gh-ic%/notebooks/visualization/src/com/intellij/notebooks/visualization/outputs/NotebookOutputDataKeyExtractor.kt) |
+| [org.jetbrains.plugins.notebooks.inputFactory](https://jb.gg/ipe?extensions=org.jetbrains.plugins.notebooks.inputFactory) | [`InputFactory`](%gh-ic%/notebooks/visualization/src/com/intellij/notebooks/visualization/NotebookCellInlayController.kt) |
 | [org.jetbrains.plugins.notebooks.notebookCellInlayController](https://jb.gg/ipe?extensions=org.jetbrains.plugins.notebooks.notebookCellInlayController) | [`Factory`](%gh-ic%/notebooks/visualization/src/com/intellij/notebooks/visualization/NotebookCellInlayController.kt) |
 | [org.jetbrains.plugins.notebooks.notebookCellLinesProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.notebooks.notebookCellLinesProvider) | [`NotebookCellLinesProvider`](%gh-ic%/notebooks/visualization/src/com/intellij/notebooks/visualization/NotebookCellLinesProvider.kt) |
 | [org.jetbrains.plugins.notebooks.notebookCellSelectionModelProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.notebooks.notebookCellSelectionModelProvider) | [`NotebookCellSelectionModelProvider`](%gh-ic%/notebooks/visualization/src/com/intellij/notebooks/visualization/NotebookCellSelectionModelProvider.kt) |
@@ -794,6 +797,16 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [com.intellij.vcsLogCustomColumn](https://jb.gg/ipe?extensions=com.intellij.vcsLogCustomColumn) | [`VcsLogCustomColumn`](%gh-ic%/platform/vcs-log/impl/src/com/intellij/vcs/log/ui/table/column/VcsLogCustomColumn.kt) |
 | [com.intellij.vcsLogFileHistoryHandler](https://jb.gg/ipe?extensions=com.intellij.vcsLogFileHistoryHandler) ![Experimental][experimental] ![Project-Level][project-level] | [`VcsLogFileHistoryHandler`](%gh-ic%/platform/vcs-log/api/src/com/intellij/vcs/log/VcsLogFileHistoryHandler.kt) |
 
+### intellij.settingsSync.core.xml
+
+[`intellij.settingsSync.core.xml`](%gh-ic%/platform/settings-sync-core/resources/intellij.settingsSync.core.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.intellij.settingsSync.communicatorProvider](https://jb.gg/ipe?extensions=com.intellij.settingsSync.communicatorProvider) | [`SettingsSyncCommunicatorProvider`](%gh-ic%/platform/settings-sync-core/src/com/intellij/settingsSync/core/communicator/SettingsSyncCommunicatorProvider.kt) |
+| [com.intellij.settingsSync.settingsProvider](https://jb.gg/ipe?extensions=com.intellij.settingsSync.settingsProvider) ![Internal][internal] | [`SettingsProvider`](%gh-ic%/platform/settings-sync-core/src/com/intellij/settingsSync/core/SettingsProvider.kt) |
+| [com.intellij.settingsSyncMigration](https://jb.gg/ipe?extensions=com.intellij.settingsSyncMigration) ![Internal][internal] | [`SettingsSyncMigration`](%gh-ic%/platform/settings-sync-core/src/com/intellij/settingsSync/core/SettingsSyncMigration.kt) |
+
 ### intellij.smart.update.xml
 
 [`intellij.smart.update.xml`](%gh-ic%/platform/smart-update/resources/intellij.smart.update.xml)
@@ -823,7 +836,7 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [com.intellij.callHierarchyProvider](https://jb.gg/ipe?extensions=com.intellij.callHierarchyProvider) | [`HierarchyProvider`](%gh-ic%/platform/lang-api/src/com/intellij/ide/hierarchy/HierarchyProvider.java) |
 | [com.intellij.cantBeStatic](https://jb.gg/ipe?extensions=com.intellij.cantBeStatic) | [`Condition`](%gh-ic%/platform/util/src/com/intellij/openapi/util/Condition.java) |
 | [com.intellij.codeBlockSupportHandler](https://jb.gg/ipe?extensions=com.intellij.codeBlockSupportHandler) | [`CodeBlockSupportHandler`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/highlighting/CodeBlockSupportHandler.java) |
-| [com.intellij.codeCompletionConfigurable](https://jb.gg/ipe?extensions=com.intellij.codeCompletionConfigurable) ![Internal][internal] | [`UnnamedConfigurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/UnnamedConfigurable.java) |
+| [com.intellij.codeCompletionConfigurable](https://jb.gg/ipe?extensions=com.intellij.codeCompletionConfigurable) | [`UnnamedConfigurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/UnnamedConfigurable.java) |
 | [com.intellij.codeFoldingOptionsProvider](https://jb.gg/ipe?extensions=com.intellij.codeFoldingOptionsProvider) | [`CodeFoldingOptionsProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/application/options/editor/CodeFoldingOptionsProvider.java) |
 | [com.intellij.codeInsight.codeVision.settings.defaults](https://jb.gg/ipe?extensions=com.intellij.codeInsight.codeVision.settings.defaults) ![Experimental][experimental] | [`CodeVisionSettingsDefaults`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/codeVision/settings/CodeVisionSettingsDefaults.kt) |
 | [com.intellij.codeInsight.codeVisionProvider](https://jb.gg/ipe?extensions=com.intellij.codeInsight.codeVisionProvider) ![Experimental][experimental] | [`CodeVisionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/codeVision/CodeVisionProvider.kt) |
@@ -896,12 +909,12 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [com.intellij.editorOptionsProvider](https://jb.gg/ipe?extensions=com.intellij.editorOptionsProvider) | [`EditorOptionsProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/application/options/editor/EditorOptionsProvider.java) |
 | [com.intellij.editorSearchAreaProvider](https://jb.gg/ipe?extensions=com.intellij.editorSearchAreaProvider) ![Experimental][experimental] | [`EditorSearchAreaProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/find/impl/livePreview/EditorSearchAreaProvider.java) |
 | [com.intellij.editorSmartKeysConfigurable](https://jb.gg/ipe?extensions=com.intellij.editorSmartKeysConfigurable) | [`UnnamedConfigurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/UnnamedConfigurable.java) |
-| [com.intellij.editorTabsConfigurable](https://jb.gg/ipe?extensions=com.intellij.editorTabsConfigurable) ![Internal][internal] | [`UnnamedConfigurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/UnnamedConfigurable.java) |
+| [com.intellij.editorTabsConfigurable](https://jb.gg/ipe?extensions=com.intellij.editorTabsConfigurable) | [`UnnamedConfigurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/UnnamedConfigurable.java) |
 | [com.intellij.elementDescriptionProvider](https://jb.gg/ipe?extensions=com.intellij.elementDescriptionProvider) | [`ElementDescriptionProvider`](%gh-ic%/platform/core-api/src/com/intellij/psi/ElementDescriptionProvider.java) |
 | [com.intellij.elementPreviewProvider](https://jb.gg/ipe?extensions=com.intellij.elementPreviewProvider) | [`ElementPreviewProvider`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/preview/ElementPreviewProvider.java) |
 | [com.intellij.elementSignatureProvider](https://jb.gg/ipe?extensions=com.intellij.elementSignatureProvider) | [`ElementSignatureProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/folding/impl/ElementSignatureProvider.java) |
 | [com.intellij.environmentKeyProvider](https://jb.gg/ipe?extensions=com.intellij.environmentKeyProvider) ![Experimental][experimental] | [`EnvironmentKeyProvider`](%gh-ic%/platform/platform-api/src/com/intellij/ide/environment/EnvironmentKeyProvider.kt) |
-| [com.intellij.errorOptionsProvider](https://jb.gg/ipe?extensions=com.intellij.errorOptionsProvider) ![Internal][internal] | [`ErrorOptionsProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/profile/codeInspection/ui/ErrorOptionsProvider.java) |
+| [com.intellij.errorOptionsProvider](https://jb.gg/ipe?extensions=com.intellij.errorOptionsProvider) | [`ErrorOptionsProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/profile/codeInspection/ui/ErrorOptionsProvider.java) |
 | [com.intellij.errorQuickFixProvider](https://jb.gg/ipe?extensions=com.intellij.errorQuickFixProvider) ![DumbAware][dumb-aware] | [`ErrorQuickFixProvider`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/daemon/impl/analysis/ErrorQuickFixProvider.java) |
 | [com.intellij.executionTargetLanguageRuntimeType](https://jb.gg/ipe?extensions=com.intellij.executionTargetLanguageRuntimeType) | [`LanguageRuntimeType`](%gh-ic%/platform/execution/src/com/intellij/execution/target/LanguageRuntimeType.kt) |
 | [com.intellij.executionTargetProvider](https://jb.gg/ipe?extensions=com.intellij.executionTargetProvider) | [`ExecutionTargetProvider`](%gh-ic%/platform/lang-api/src/com/intellij/execution/ExecutionTargetProvider.java) |
@@ -923,7 +936,7 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [com.intellij.findUsagesHandlerFactory](https://jb.gg/ipe?extensions=com.intellij.findUsagesHandlerFactory) ![Project-Level][project-level] | [`FindUsagesHandlerFactory`](%gh-ic%/platform/lang-impl/src/com/intellij/find/findUsages/FindUsagesHandlerFactory.java) |
 | [com.intellij.focusModeProvider](https://jb.gg/ipe?extensions=com.intellij.focusModeProvider) ![Experimental][experimental] | [`FocusModeProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/daemon/impl/focusMode/FocusModeProvider.java) |
 | [com.intellij.framework.detector](https://jb.gg/ipe?extensions=com.intellij.framework.detector) | [`FrameworkDetector`](%gh-ic%/platform/lang-api/src/com/intellij/framework/detection/FrameworkDetector.java) |
-| [com.intellij.generalCodeStyleOptionsProvider](https://jb.gg/ipe?extensions=com.intellij.generalCodeStyleOptionsProvider) ![Internal][internal] | [`GeneralCodeStyleOptionsProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/application/options/GeneralCodeStyleOptionsProvider.java) |
+| [com.intellij.generalCodeStyleOptionsProvider](https://jb.gg/ipe?extensions=com.intellij.generalCodeStyleOptionsProvider) | [`GeneralCodeStyleOptionsProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/application/options/GeneralCodeStyleOptionsProvider.java) |
 | [com.intellij.globalIndexFilter](https://jb.gg/ipe?extensions=com.intellij.globalIndexFilter) ![Internal][internal] | [`GlobalIndexFilter`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/GlobalIndexFilter.java) |
 | [com.intellij.goto.nonProjectScopeDisabler](https://jb.gg/ipe?extensions=com.intellij.goto.nonProjectScopeDisabler) ![Internal][internal] | `n/a` |
 | [com.intellij.gotoActionAliasMatcher](https://jb.gg/ipe?extensions=com.intellij.gotoActionAliasMatcher) | [`GotoActionAliasMatcher`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/util/gotoByName/GotoActionAliasMatcher.java) |
@@ -953,7 +966,7 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [com.intellij.indexPatternSearch](https://jb.gg/ipe?extensions=com.intellij.indexPatternSearch) | [`QueryExecutor`](%gh-ic%/platform/core-api/src/com/intellij/util/QueryExecutor.java) |
 | [com.intellij.indexableEntityProvider](https://jb.gg/ipe?extensions=com.intellij.indexableEntityProvider) ![Experimental][experimental] ![Internal][internal] | [`IndexableEntityProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/util/indexing/roots/IndexableEntityProvider.java) |
 | [com.intellij.indexableIteratorBuilderHandler](https://jb.gg/ipe?extensions=com.intellij.indexableIteratorBuilderHandler) | [`IndexableIteratorBuilderHandler`](%gh-ic%/platform/lang-impl/src/com/intellij/util/indexing/roots/builders/IndexableIteratorBuilderHandler.java) |
-| [com.intellij.inlineCompletionConfigurable](https://jb.gg/ipe?extensions=com.intellij.inlineCompletionConfigurable) ![Internal][internal] | [`UnnamedConfigurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/UnnamedConfigurable.java) |
+| [com.intellij.inlineCompletionConfigurable](https://jb.gg/ipe?extensions=com.intellij.inlineCompletionConfigurable) | [`UnnamedConfigurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/UnnamedConfigurable.java) |
 | [com.intellij.inlinePrompt](https://jb.gg/ipe?extensions=com.intellij.inlinePrompt) ![Internal][internal] | [`InlinePromptExtension`](%gh-ic%/platform/analysis-api/src/com/intellij/inlinePrompt/InlinePromptExtension.kt) |
 | [com.intellij.inspectionProfileActionProvider](https://jb.gg/ipe?extensions=com.intellij.inspectionProfileActionProvider) | [`InspectionProfileActionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/profile/codeInspection/ui/InspectionProfileActionProvider.java) |
 | [com.intellij.inspectionResultsExportActionProvider](https://jb.gg/ipe?extensions=com.intellij.inspectionResultsExportActionProvider) ![DumbAware][dumb-aware] | [`InspectionResultsExportActionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInspection/ui/actions/InspectionResultsExportActionProvider.kt) |
@@ -1034,7 +1047,7 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [com.intellij.problemsViewPanelProvider](https://jb.gg/ipe?extensions=com.intellij.problemsViewPanelProvider) ![Project-Level][project-level] | [`ProblemsViewPanelProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/analysis/problemsView/toolWindow/ProblemsViewPanelProvider.kt) |
 | [com.intellij.programRunner](https://jb.gg/ipe?extensions=com.intellij.programRunner) | [`ProgramRunner`](%gh-ic%/platform/execution/src/com/intellij/execution/runners/ProgramRunner.java) |
 | [com.intellij.project.converterProvider](https://jb.gg/ipe?extensions=com.intellij.project.converterProvider) | [`ConverterProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/conversion/ConverterProvider.java) |
-| [com.intellij.projectFacetListener](https://jb.gg/ipe?extensions=com.intellij.projectFacetListener) ![Internal][internal] | [`ProjectFacetListener`](%gh-ic%/platform/lang-api/src/com/intellij/facet/ProjectFacetListener.java) |
+| [com.intellij.projectFacetListener](https://jb.gg/ipe?extensions=com.intellij.projectFacetListener) | [`ProjectFacetListener`](%gh-ic%/platform/lang-api/src/com/intellij/facet/ProjectFacetListener.java) |
 | [com.intellij.projectSdkSetupValidator](https://jb.gg/ipe?extensions=com.intellij.projectSdkSetupValidator) | [`ProjectSdkSetupValidator`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/daemon/ProjectSdkSetupValidator.java) |
 | [com.intellij.projectStructure.sourceRootEditHandler](https://jb.gg/ipe?extensions=com.intellij.projectStructure.sourceRootEditHandler) | [`ModuleSourceRootEditHandler`](%gh-ic%/platform/lang-impl/src/com/intellij/openapi/roots/ui/configuration/ModuleSourceRootEditHandler.java) |
 | [com.intellij.projectTaskRunner](https://jb.gg/ipe?extensions=com.intellij.projectTaskRunner) | [`ProjectTaskRunner`](%gh-ic%/platform/lang-api/src/com/intellij/task/ProjectTaskRunner.java) |
@@ -1096,7 +1109,7 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [com.intellij.semContributor](https://jb.gg/ipe?extensions=com.intellij.semContributor) | [`SemContributor`](%gh-ic%/platform/lang-api/src/com/intellij/semantic/SemContributor.java) |
 | [com.intellij.serviceViewContributor](https://jb.gg/ipe?extensions=com.intellij.serviceViewContributor) | [`ServiceViewContributor`](%gh-ic%/platform/lang-api/src/com/intellij/execution/services/ServiceViewContributor.java) |
 | [com.intellij.silentChangeVetoer](https://jb.gg/ipe?extensions=com.intellij.silentChangeVetoer) ![Internal][internal] | [`SilentChangeVetoer`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/daemon/impl/SilentChangeVetoer.java) |
-| [com.intellij.stacktrace.fold](https://jb.gg/ipe?extensions=com.intellij.stacktrace.fold) ![Internal][internal] | `n/a` |
+| [com.intellij.stacktrace.fold](https://jb.gg/ipe?extensions=com.intellij.stacktrace.fold) | `n/a` |
 | [com.intellij.stacktrace.fold.line.modifier](https://jb.gg/ipe?extensions=com.intellij.stacktrace.fold.line.modifier) ![Experimental][experimental] | [`ConsoleLineModifier`](%gh-ic%/platform/lang-impl/src/com/intellij/execution/console/ConsoleLineModifier.java) |
 | [com.intellij.statistician](https://jb.gg/ipe?extensions=com.intellij.statistician) | [`Statistician`](%gh-ic%/platform/analysis-api/src/com/intellij/psi/statistics/Statistician.java) |
 | [com.intellij.stepsBeforeRunProvider](https://jb.gg/ipe?extensions=com.intellij.stepsBeforeRunProvider) ![Project-Level][project-level] ![DumbAware][dumb-aware] | [`BeforeRunTaskProvider`](%gh-ic%/platform/execution/src/com/intellij/execution/BeforeRunTaskProvider.java) |
@@ -1176,7 +1189,7 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [com.intellij.actionOnSaveInfoProvider](https://jb.gg/ipe?extensions=com.intellij.actionOnSaveInfoProvider) | [`ActionOnSaveInfoProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/actionsOnSave/ActionOnSaveInfoProvider.java) |
 | [com.intellij.actionPromoter](https://jb.gg/ipe?extensions=com.intellij.actionPromoter) | [`ActionPromoter`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/ActionPromoter.java) |
 | [com.intellij.activityTracker](https://jb.gg/ipe?extensions=com.intellij.activityTracker) | [`ActivityTracker`](%gh-ic%/platform/backend/observation/src/com/intellij/platform/backend/observation/ActivityTracker.kt) |
-| [com.intellij.additionalTextAttributes](https://jb.gg/ipe?extensions=com.intellij.additionalTextAttributes) ![Internal][internal] | `n/a` |
+| [com.intellij.additionalTextAttributes](https://jb.gg/ipe?extensions=com.intellij.additionalTextAttributes) | `n/a` |
 | [com.intellij.advancedSetting](https://jb.gg/ipe?extensions=com.intellij.advancedSetting) | `n/a` |
 | [com.intellij.appStarter](https://jb.gg/ipe?extensions=com.intellij.appStarter) | [`ApplicationStarter`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/application/ApplicationStarter.kt) |
 | [com.intellij.applicationConfigurable](https://jb.gg/ipe?extensions=com.intellij.applicationConfigurable) | [`Configurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/Configurable.java) |
@@ -1187,7 +1200,7 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [com.intellij.breadcrumbsPresentationProvider](https://jb.gg/ipe?extensions=com.intellij.breadcrumbsPresentationProvider) | [`BreadcrumbsPresentationProvider`](%gh-ic%/platform/platform-api/src/com/intellij/xml/breadcrumbs/BreadcrumbsPresentationProvider.java) |
 | [com.intellij.bundledColorScheme](https://jb.gg/ipe?extensions=com.intellij.bundledColorScheme) | `n/a` |
 | [com.intellij.bundledInspectionProfile](https://jb.gg/ipe?extensions=com.intellij.bundledInspectionProfile) ![Non-Dynamic][non-dynamic] | `n/a` |
-| [com.intellij.bundledKeymap](https://jb.gg/ipe?extensions=com.intellij.bundledKeymap) ![Internal][internal] | `n/a` |
+| [com.intellij.bundledKeymap](https://jb.gg/ipe?extensions=com.intellij.bundledKeymap) | `n/a` |
 | [com.intellij.bundledQuickListsProvider](https://jb.gg/ipe?extensions=com.intellij.bundledQuickListsProvider) | [`BundledQuickListsProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/actionSystem/impl/BundledQuickListsProvider.java) |
 | [com.intellij.cachedValuesFactory](https://jb.gg/ipe?extensions=com.intellij.cachedValuesFactory) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | [`CachedValuesFactory`](%gh-ic%/platform/core-impl/src/com/intellij/util/CachedValuesFactory.kt) |
 | [com.intellij.cachesInvalidator](https://jb.gg/ipe?extensions=com.intellij.cachesInvalidator) | [`CachesInvalidator`](%gh-ic%/platform/ide-core/src/com/intellij/ide/caches/CachesInvalidator.java) |
@@ -1250,7 +1263,7 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [com.intellij.eventLogCategory](https://jb.gg/ipe?extensions=com.intellij.eventLogCategory) | [`EventLogCategory`](%gh-ic%/platform/ide-core/src/com/intellij/notification/EventLogCategory.java) |
 | [com.intellij.execution.syntheticConfigurationTypeProvider](https://jb.gg/ipe?extensions=com.intellij.execution.syntheticConfigurationTypeProvider) ![Experimental][experimental] | [`SyntheticConfigurationTypeProvider`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/SyntheticConfigurationTypeProvider.java) |
 | [com.intellij.executionActionSuppressor](https://jb.gg/ipe?extensions=com.intellij.executionActionSuppressor) ![Experimental][experimental] ![Internal][internal] | [`ExecutionActionSuppressor`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/ExecutionActionSuppressor.java) |
-| [com.intellij.experimentalFeature](https://jb.gg/ipe?extensions=com.intellij.experimentalFeature) ![Internal][internal] | `n/a` |
+| [com.intellij.experimentalFeature](https://jb.gg/ipe?extensions=com.intellij.experimentalFeature) | `n/a` |
 | [com.intellij.exportable](https://jb.gg/ipe?extensions=com.intellij.exportable) ![Deprecated][deprecated] ![Non-Dynamic][non-dynamic] | `n/a` |
 | [com.intellij.externalComponentSource](https://jb.gg/ipe?extensions=com.intellij.externalComponentSource) | [`ExternalComponentSource`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/externalComponents/ExternalComponentSource.java) |
 | [com.intellij.featureStatisticsBundle](https://jb.gg/ipe?extensions=com.intellij.featureStatisticsBundle) | `n/a` |
@@ -1270,7 +1283,7 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [com.intellij.findInDirectoryScopeProvider](https://jb.gg/ipe?extensions=com.intellij.findInDirectoryScopeProvider) ![Experimental][experimental] ![Internal][internal] | [`FindInDirectoryScopeProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/find/impl/FindInDirectoryScopeProvider.kt) |
 | [com.intellij.flsConfigurationProvider](https://jb.gg/ipe?extensions=com.intellij.flsConfigurationProvider) ![Internal][internal] | [`FLSConfigurationProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/impl/FLSConfigurationProvider.java) |
 | [com.intellij.fragments.dsl.builder.extender](https://jb.gg/ipe?extensions=com.intellij.fragments.dsl.builder.extender) ![Experimental][experimental] ![Internal][internal] | [`FragmentsDslBuilderExtender`](%gh-ic%/platform/platform-api/src/com/intellij/execution/ui/utils/FragmentsDslBuilder.kt) |
-| [com.intellij.generalOptionsProvider](https://jb.gg/ipe?extensions=com.intellij.generalOptionsProvider) ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`SearchableConfigurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/SearchableConfigurable.java) |
+| [com.intellij.generalOptionsProvider](https://jb.gg/ipe?extensions=com.intellij.generalOptionsProvider) ![Non-Dynamic][non-dynamic] | [`SearchableConfigurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/SearchableConfigurable.java) |
 | [com.intellij.generalTroubleInfoCollector](https://jb.gg/ipe?extensions=com.intellij.generalTroubleInfoCollector) | [`GeneralTroubleInfoCollector`](%gh-ic%/platform/platform-impl/src/com/intellij/troubleshooting/GeneralTroubleInfoCollector.java) |
 | [com.intellij.genericAuthProvider](https://jb.gg/ipe?extensions=com.intellij.genericAuthProvider) ![Experimental][experimental] ![Internal][internal] | [`GenericAuthProviderExtension`](%gh-ic%/platform/platform-impl/src/com/intellij/auth/GenericAuthProvider.kt) |
 | [com.intellij.getDataRule](https://jb.gg/ipe?extensions=com.intellij.getDataRule) | [`GetDataRule`](%gh-ic%/platform/ide-core-impl/src/com/intellij/ide/impl/dataRules/GetDataRule.java) |
@@ -1282,7 +1295,7 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [com.intellij.http.fileEditorActionProvider](https://jb.gg/ipe?extensions=com.intellij.http.fileEditorActionProvider) ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`RemoteFileEditorActionProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/fileEditor/impl/http/RemoteFileEditorActionProvider.java) |
 | [com.intellij.http.localFileFinder](https://jb.gg/ipe?extensions=com.intellij.http.localFileFinder) | [`LocalFileFinder`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/fileEditor/impl/http/LocalFileFinder.java) |
 | [com.intellij.iconDescriptionBundle](https://jb.gg/ipe?extensions=com.intellij.iconDescriptionBundle) | `n/a` |
-| [com.intellij.iconMapper](https://jb.gg/ipe?extensions=com.intellij.iconMapper) ![Internal][internal] | `n/a` |
+| [com.intellij.iconMapper](https://jb.gg/ipe?extensions=com.intellij.iconMapper) | `n/a` |
 | [com.intellij.iconMapperSuppressor](https://jb.gg/ipe?extensions=com.intellij.iconMapperSuppressor) ![Non-Dynamic][non-dynamic] | `n/a` |
 | [com.intellij.ide.dynamicPluginVetoer](https://jb.gg/ipe?extensions=com.intellij.ide.dynamicPluginVetoer) | [`DynamicPluginVetoer`](%gh-ic%/platform/core-api/src/com/intellij/ide/plugins/DynamicPluginVetoer.kt) |
 | [com.intellij.ideEventQueueDispatcher](https://jb.gg/ipe?extensions=com.intellij.ideEventQueueDispatcher) | [`EventDispatcher`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/IdeEventQueue.kt) |
@@ -1304,6 +1317,7 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [com.intellij.lang.syntaxHighlighterFactory](https://jb.gg/ipe?extensions=com.intellij.lang.syntaxHighlighterFactory) | [`SyntaxHighlighterFactory`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/fileTypes/SyntaxHighlighterFactory.java) |
 | [com.intellij.library.toolWindow](https://jb.gg/ipe?extensions=com.intellij.library.toolWindow) ![DumbAware][dumb-aware] | [`ToolWindowFactory`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.kt) |
 | [com.intellij.lightEditTabAttributesProvider](https://jb.gg/ipe?extensions=com.intellij.lightEditTabAttributesProvider) ![Experimental][experimental] | [`LightEditTabAttributesProvider`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/lightEdit/LightEditTabAttributesProvider.java) |
+| [com.intellij.logLevelConfigurationListener](https://jb.gg/ipe?extensions=com.intellij.logLevelConfigurationListener) ![Internal][internal] | [`Listener`](%gh-ic%/platform/platform-impl/src/com/intellij/diagnostic/logs/LogLevelConfigurationManager.kt) |
 | [com.intellij.logsPreprocessor](https://jb.gg/ipe?extensions=com.intellij.logsPreprocessor) ![Internal][internal] | [`LogProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/logsUploader/LogProvider.kt) |
 | [com.intellij.lowLevelProjectOpenProcessor](https://jb.gg/ipe?extensions=com.intellij.lowLevelProjectOpenProcessor) ![Internal][internal] | [`LowLevelProjectOpenProcessor`](%gh-ic%/platform/ide-core-impl/src/com/intellij/openapi/project/ex/LowLevelProjectOpenProcessor.kt) |
 | [com.intellij.mac.dockMenuActions](https://jb.gg/ipe?extensions=com.intellij.mac.dockMenuActions) ![Non-Dynamic][non-dynamic] ![Experimental][experimental] ![Internal][internal] | [`MacDockMenuActions`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/mac/MacDockMenuActions.kt) |
@@ -1315,7 +1329,7 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [com.intellij.newProjectWizard.languageGenerator](https://jb.gg/ipe?extensions=com.intellij.newProjectWizard.languageGenerator) | [`LanguageGeneratorNewProjectWizard`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/wizard/language/LanguageGeneratorNewProjectWizard.kt) |
 | [com.intellij.nonProjectFileWritingAccessExtension](https://jb.gg/ipe?extensions=com.intellij.nonProjectFileWritingAccessExtension) ![Project-Level][project-level] | [`NonProjectFileWritingAccessExtension`](%gh-ic%/platform/ide-core-impl/src/com/intellij/openapi/fileEditor/impl/NonProjectFileWritingAccessExtension.java) |
 | [com.intellij.notification.group](https://jb.gg/ipe?extensions=com.intellij.notification.group) ![Non-Dynamic][non-dynamic] ![Internal][internal] | `n/a` |
-| [com.intellij.notification.parentGroup](https://jb.gg/ipe?extensions=com.intellij.notification.parentGroup) ![Non-Dynamic][non-dynamic] ![Internal][internal] | `n/a` |
+| [com.intellij.notification.parentGroup](https://jb.gg/ipe?extensions=com.intellij.notification.parentGroup) ![Non-Dynamic][non-dynamic] | `n/a` |
 | [com.intellij.notificationRemindLaterHandler](https://jb.gg/ipe?extensions=com.intellij.notificationRemindLaterHandler) | [`NotificationRemindLaterHandler`](%gh-ic%/platform/ide-core/src/com/intellij/notification/NotificationRemindLaterHandler.kt) |
 | [com.intellij.notificationRouter](https://jb.gg/ipe?extensions=com.intellij.notificationRouter) ![Internal][internal] | [`NotificationRouter`](%gh-ic%/platform/ide-core/src/com/intellij/notification/NotificationRouter.kt) |
 | [com.intellij.obsoleteStorage](https://jb.gg/ipe?extensions=com.intellij.obsoleteStorage) | `n/a` |
@@ -1358,7 +1372,7 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [com.intellij.remote.credentialsLanguageContribution](https://jb.gg/ipe?extensions=com.intellij.remote.credentialsLanguageContribution) | [`CredentialsLanguageContribution`](%gh-ic%/platform/platform-impl/remote/src/com/intellij/remote/ext/CredentialsLanguageContribution.java) |
 | [com.intellij.remote.credentialsType](https://jb.gg/ipe?extensions=com.intellij.remote.credentialsType) | [`CredentialsType`](%gh-ic%/platform/remote-core/src/remote/CredentialsType.java) |
 | [com.intellij.remote.pathMappingProvider](https://jb.gg/ipe?extensions=com.intellij.remote.pathMappingProvider) | [`PathMappingProvider`](%gh-ic%/platform/platform-impl/remote/src/com/intellij/remote/PathMappingProvider.java) |
-| [com.intellij.schemeExporter](https://jb.gg/ipe?extensions=com.intellij.schemeExporter) ![Internal][internal] | [`SchemeExporter`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/SchemeExporter.java) |
+| [com.intellij.schemeExporter](https://jb.gg/ipe?extensions=com.intellij.schemeExporter) | [`SchemeExporter`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/SchemeExporter.java) |
 | [com.intellij.schemeImporter](https://jb.gg/ipe?extensions=com.intellij.schemeImporter) | [`SchemeImporter`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/SchemeImporter.java) |
 | [com.intellij.search.additionalOptionsLocation](https://jb.gg/ipe?extensions=com.intellij.search.additionalOptionsLocation) | [`AdditionalLocationProvider`](%gh-ic%/platform/platform-api/src/com/intellij/ide/ui/search/SearchableOptionsRegistrar.java) |
 | [com.intellij.search.optionContributor](https://jb.gg/ipe?extensions=com.intellij.search.optionContributor) | [`SearchableOptionContributor`](%gh-ic%/platform/platform-api/src/com/intellij/ide/ui/search/SearchableOptionContributor.kt) |
@@ -1391,7 +1405,7 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [com.intellij.statusBarWidgetProvider](https://jb.gg/ipe?extensions=com.intellij.statusBarWidgetProvider) ![Deprecated][deprecated] ![Removal][removal] | [`StatusBarWidgetProvider`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/StatusBarWidgetProvider.java) |
 | [com.intellij.streamProviderFactory](https://jb.gg/ipe?extensions=com.intellij.streamProviderFactory) ![Internal][internal] ![Project-Level][project-level] | [`StreamProviderFactory`](%gh-ic%/platform/projectModel-impl/src/com/intellij/configurationStore/StreamProviderFactory.kt) |
 | [com.intellij.stripTrailingSpacesFilterFactory](https://jb.gg/ipe?extensions=com.intellij.stripTrailingSpacesFilterFactory) | [`StripTrailingSpacesFilterFactory`](%gh-ic%/platform/core-api/src/com/intellij/openapi/editor/StripTrailingSpacesFilterFactory.java) |
-| [com.intellij.systemProperty](https://jb.gg/ipe?extensions=com.intellij.systemProperty) ![Non-Dynamic][non-dynamic] ![Internal][internal] | `n/a` |
+| [com.intellij.systemProperty](https://jb.gg/ipe?extensions=com.intellij.systemProperty) ![Non-Dynamic][non-dynamic] | `n/a` |
 | [com.intellij.testStatusListener](https://jb.gg/ipe?extensions=com.intellij.testStatusListener) ![Non-Dynamic][non-dynamic] | [`TestStatusListener`](%gh-ic%/platform/testRunner/src/com/intellij/execution/testframework/TestStatusListener.java) |
 | [com.intellij.textEditorCustomizer](https://jb.gg/ipe?extensions=com.intellij.textEditorCustomizer) ![Internal][internal] | [`TextEditorCustomizer`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/fileEditor/impl/text/TextEditorCustomizer.kt) |
 | [com.intellij.textEditorNecromancerAwaker](https://jb.gg/ipe?extensions=com.intellij.textEditorNecromancerAwaker) ![Non-Dynamic][non-dynamic] | [`NecromancerAwaker`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/editor/impl/zombie/Necromancer.kt) |
@@ -1613,8 +1627,8 @@ and add in intellij_community_plugins_extension_point_list.md.
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.intellij.changesGroupingPolicy](https://jb.gg/ipe?extensions=com.intellij.changesGroupingPolicy) ![Internal][internal] | [`ChangesGroupingPolicyFactory`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/changes/ui/ChangesGroupingPolicyFactory.java) |
-| [com.intellij.changesViewContent](https://jb.gg/ipe?extensions=com.intellij.changesViewContent) ![Internal][internal] ![Project-Level][project-level] | [`ChangesViewContentProvider`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/changes/ui/ChangesViewContentProvider.java) |
+| [com.intellij.changesGroupingPolicy](https://jb.gg/ipe?extensions=com.intellij.changesGroupingPolicy) | [`ChangesGroupingPolicyFactory`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/changes/ui/ChangesGroupingPolicyFactory.java) |
+| [com.intellij.changesViewContent](https://jb.gg/ipe?extensions=com.intellij.changesViewContent) ![Project-Level][project-level] | [`ChangesViewContentProvider`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/changes/ui/ChangesViewContentProvider.java) |
 | [com.intellij.checkinHandlerFactory](https://jb.gg/ipe?extensions=com.intellij.checkinHandlerFactory) | [`CheckinHandlerFactory`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/checkin/CheckinHandlerFactory.java) |
 | [com.intellij.checkoutCompletedListener](https://jb.gg/ipe?extensions=com.intellij.checkoutCompletedListener) | [`CheckoutListener`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/checkout/CheckoutListener.java) |
 | [com.intellij.checkoutListener](https://jb.gg/ipe?extensions=com.intellij.checkoutListener) | [`CheckoutListener`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/checkout/CheckoutListener.java) |
@@ -1638,7 +1652,7 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [com.intellij.openapi.vcs.ui.commitOptionsDialogExtension](https://jb.gg/ipe?extensions=com.intellij.openapi.vcs.ui.commitOptionsDialogExtension) ![Internal][internal] | [`CommitOptionsDialogExtension`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/ui/CommitOptionsDialogExtension.kt) |
 | [com.intellij.patch.extension](https://jb.gg/ipe?extensions=com.intellij.patch.extension) | [`PatchEP`](%gh-ic%/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/diff/impl/patch/PatchEP.java) |
 | [com.intellij.unresolvedMergeCheckProvider](https://jb.gg/ipe?extensions=com.intellij.unresolvedMergeCheckProvider) | [`UnresolvedMergeCheckProvider`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/checkin/UnresolvedMergeCheckProvider.java) |
-| [com.intellij.vcs](https://jb.gg/ipe?extensions=com.intellij.vcs) ![Internal][internal] | [`AbstractVcs`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/AbstractVcs.java) |
+| [com.intellij.vcs](https://jb.gg/ipe?extensions=com.intellij.vcs) | [`AbstractVcs`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/AbstractVcs.java) |
 | [com.intellij.vcs.actions.ScheduleForAdditionActionExtension](https://jb.gg/ipe?extensions=com.intellij.vcs.actions.ScheduleForAdditionActionExtension) | [`ScheduleForAdditionActionExtension`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/changes/actions/ScheduleForAdditionActionExtension.kt) |
 | [com.intellij.vcs.baseContentProvider](https://jb.gg/ipe?extensions=com.intellij.vcs.baseContentProvider) ![Project-Level][project-level] | [`VcsBaseContentProvider`](%gh-ic%/platform/vcs-impl/src/com/intellij/openapi/vcs/impl/VcsBaseContentProvider.java) |
 | [com.intellij.vcs.branchStateProvider](https://jb.gg/ipe?extensions=com.intellij.vcs.branchStateProvider) ![Project-Level][project-level] | [`BranchStateProvider`](%gh-ic%/platform/vcs-api/src/com/intellij/vcs/branch/BranchStateProvider.java) |

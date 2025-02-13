@@ -169,7 +169,7 @@
     </toc-element>
     <toc-element topic="external_system_integration.md"/>
   </toc-element>
-  <toc-element toc-title="PSI">
+  <toc-element toc-title="Program Structure Interface (PSI)">
     <toc-element topic="psi.md" toc-title="What Is the PSI?"/>
     <toc-element topic="psi_files.md"/>
     <toc-element topic="file_view_providers.md"/>

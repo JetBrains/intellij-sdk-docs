@@ -12,7 +12,7 @@
 
 A toolbar icon button is an icon that appears on a toolbar.
 
-![](button_example.png){width=706}
+<img src="icon_button_example.png" alt="Icon button" width="200">
 
 ## Types
 

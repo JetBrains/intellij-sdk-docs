@@ -69,8 +69,8 @@ withBackgroundProgress(...) { // or withModalProgress/runWithModalProgressBlocki
 ### Switching to Other Contexts
 {#suspending-context-switching-to-other-contexts}
 
-- to blocking context: [`blockingContext()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) - enables `ProgressManager.checkCanceled()`, forwards modality state, etc. This function has an opposite behavior to [`runBlockingCancellable()`](#blocking-context-switching-to-other-contexts).
-- to progress indicator: unavailable ([`coroutineToIndicator()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) is an internal API and exists only to aid platform migration)
+- to [progress indicator](#progress-indicator): unavailable ([`coroutineToIndicator()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) is an internal API and exists only to aid platform migration)
+- to [blocking context](#blocking-context): [`blockingContext()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) - enables `ProgressManager.checkCanceled()`, forwards modality state, etc. This function has an opposite behavior to [`runBlockingCancellable()`](#blocking-context-switching-to-other-contexts).
 
 ## Progress Indicator
 
@@ -101,8 +101,8 @@ See the [](background_processes.md#progress-api) section for details.
 ### Switching to Other Contexts
 {#progress-indicator-switching-to-other-contexts}
 
-- to coroutine: [`runBlockingCancellable`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt)
-- to blocking: unavailable
+- to [suspending context](#suspending-context): [`runBlockingCancellable`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt)
+- to [blocking context](#blocking-context): unavailable
 
 ## Blocking Context
 
@@ -132,7 +132,7 @@ Progress reporting is not available in the blocking context.
 ### Switching to Other Contexts
 {#blocking-context-switching-to-other-contexts}
 
-- to coroutine: [`runBlockingCancellable()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt). This function has an opposite behavior to [`blockingContext()`](#suspending-context-switching-to-other-contexts).
-- to progress indicator: unavailable ([`blockingContextToIndicator()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) is an internal API and exists only to aid platform migration)
+- to [suspending context](#suspending-context): [`runBlockingCancellable()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt). This function has an opposite behavior to [`blockingContext()`](#suspending-context-switching-to-other-contexts).
+- to [progress indicator](#progress-indicator): unavailable ([`blockingContextToIndicator()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) is an internal API and exists only to aid platform migration)
 
 <include from="snippets.md" element-id="missingContent"/>

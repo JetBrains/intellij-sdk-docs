@@ -32,6 +32,34 @@
     </chapter>
 
 
+    <chapter title="Problems with Code - Support Issues" id="problems-with-code-support-issues" switcher-key="English">
+        <tip>
+            <p>Please see <a href="faq.md">Plugin Development FAQ</a> and <a href="explore_api.md">Explore the IntelliJ
+                Platform API</a> for tips &amp; tricks.</p>
+        </tip>
+        <p>For questions, problems, or other discussions about plugin development itself
+            (rather than the content of this guide),
+            use our <a href="https://platform.jetbrains.com">JetBrains Platform</a> community forum.
+            The forum is monitored by JetBrains team members.</p>
+        <p>Of course, all raised questions will be used to try and improve this guide.</p>
+    </chapter>
+
+    <chapter title="代码方面的问题-支持问题" id="problems-with-code-support-issues-CN" switcher-key="Chinese">
+
+        <tip>
+            <p>请参考 <a href="faq.md">插件开发常见问题问答</a> 和 <a href="explore_api.md">探索 IntelliJ Platform API</a>
+                来获取相关技巧和窍门。</p>
+        </tip>
+
+        <p> 对于与插件开发本身有关的问题,难题或者讨论（和本指南内容无关），请使用我们的
+            <a href="https://platform.jetbrains.com">JetBrains Platform</a> 社区论坛。请注意这个论坛只支持英文沟通，
+            请不要在帖子和聊天中使用中文。
+            JetBrains团队成员会关注此论坛。</p>
+        <p>当然，所有收到的问题都将用于尝试和改进本指南。</p>
+
+    </chapter>
+
+
     <chapter title="Problems with the Guide" id="problems-with-the-guide" switcher-key="English">
         <p>
             If you're having problems with the guide itself, such as missing, incorrect, or confusing content, please
@@ -90,33 +118,6 @@
         </note>
     </chapter>
 
-
-    <chapter title="Problems with Code - Support Issues" id="problems-with-code-support-issues" switcher-key="English">
-        <tip>
-            <p>Please see <a href="faq.md">Plugin Development FAQ</a> and <a href="explore_api.md">Explore the IntelliJ
-                Platform API</a> for tips &amp; tricks.</p>
-        </tip>
-        <p>For questions, problems, or other discussions about plugin development itself
-            (rather than the content of this guide),
-            use our <a href="https://platform.jetbrains.com">JetBrains Platform</a> community forum.
-            The forum is monitored by JetBrains team members.</p>
-        <p>Of course, all raised questions will be used to try and improve this guide.</p>
-    </chapter>
-
-    <chapter title="代码方面的问题-支持问题" id="problems-with-code-support-issues-CN" switcher-key="Chinese">
-
-        <tip>
-            <p>请参考 <a href="faq.md">插件开发常见问题问答</a> 和 <a href="explore_api.md">探索 IntelliJ Platform API</a>
-                来获取相关技巧和窍门。</p>
-        </tip>
-
-        <p> 对于与插件开发本身有关的问题,难题或者讨论（和本指南内容无关），请使用我们的
-            <a href="https://platform.jetbrains.com">JetBrains Platform</a> 社区论坛。请注意这个论坛只支持英文沟通，
-            请不要在帖子和聊天中使用中文。
-            JetBrains团队成员会关注此论坛。</p>
-        <p>当然，所有收到的问题都将用于尝试和改进本指南。</p>
-
-    </chapter>
 
     <chapter title="Problems with Products" id="problems-with-products" switcher-key="English">
         <p>If you have a problem with an IntelliJ Platform-based product, such as IntelliJ IDEA, WebStorm, Rider, etc.,

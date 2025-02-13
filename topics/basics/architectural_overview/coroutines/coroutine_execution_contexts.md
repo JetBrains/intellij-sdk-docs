@@ -9,10 +9,10 @@
 
 The IntelliJ Platform provides APIs that allow tracking the progress of background processes and canceling their execution when they are canceled by a user, or they become obsolete due to some changes in the data model.
 
-Background processes can be executed in three contexts:
+Background processes can be executed in three contexts (from the most to the least preferred):
 - [](#suspending-context)
-- [](#blocking-context)
-- [](#progress-indicator) (obsolete)
+- [](#progress-indicator) (obsolete since 2024.1)
+- [](#blocking-context) (should be avoided)
 
 Currently, the Progress Indicator context is the most widely used approach in the IntelliJ Platform.
 As the platform's execution model moves towards coroutines, this approach can be considered obsolete.
@@ -60,37 +60,6 @@ Otherwise, if there is no reporter in the context, using `report*Progress()` wil
 - to blocking context: [`blockingContext()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) - enables `ProgressManager.checkCanceled()`, forwards modality state, etc. This function has an opposite behavior to [`runBlockingCancellable()`](#blocking-context-switching-to-other-contexts).
 - to progress indicator: unavailable ([`coroutineToIndicator()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) is an internal API and exists only to aid platform migration)
 
-## Blocking Context
-
-Executing tasks in a blocking context means executing them on a thread without access to the [coroutine context](#suspending-context) (basically, in non-suspending functions) and not under [a progress indicator](#progress-indicator).
-Such tasks can't be canceled by using coroutines' or progress indicator's cancellation capabilities, which may block threads and consume resources even if the task is no longer relevant.
-
-Usually, plugins should not execute new code in the blocking context.
-Always prefer executing tasks in the [suspending context](#suspending-context) or under the [progress indicator](#progress-indicator) if a plugin cannot use Kotlin.
-
-> Functions which schedule execution via [`Application.executeOnPooledThread()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java)
-> and similar methods, and which rely on [`ProgressManager.checkCanceled()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java)
-> should be annotated with [`@RequiresBlockingContext`](%gh-ic%/platform/core-api/src/com/intellij/util/concurrency/annotations/RequiresBlockingContext.kt)
-> to inform clients about the required switch to a blocking context.
->
-> Inspection <control>Plugin DevKit | Code | Calling method should be annotated with @RequiresBlockingContext</control> reports missing annotations.
-
-### Cancellation Check
-{#blocking-context-cancellation-check}
-
-- [`ProgressManager.checkCanceled()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java)
-
-### Progress Reporting
-{#blocking-context-progress-reporting}
-
-Progress reporting is not available in the blocking context.
-
-### Switching to Other Contexts
-{#blocking-context-switching-to-other-contexts}
-
-- to coroutine: [`runBlockingCancellable()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt). This function has an opposite behavior to [`blockingContext()`](#suspending-context-switching-to-other-contexts).
-- to progress indicator: unavailable ([`blockingContextToIndicator()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) is an internal API and exists only to aid platform migration)
-
 ## Progress Indicator
 
 Code executed via the Progress API
@@ -122,5 +91,36 @@ See the [](background_processes.md#progress-api) section for details.
 
 - to coroutine: [`runBlockingCancellable`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt)
 - to blocking: unavailable
+
+## Blocking Context
+
+Executing tasks in a blocking context means executing them on a thread without access to the [coroutine context](#suspending-context) (basically, in non-suspending functions) and not under [a progress indicator](#progress-indicator).
+Such tasks can't be canceled by using coroutines' or progress indicator's cancellation capabilities, which may block threads and consume resources even if the task is no longer relevant.
+
+Usually, plugins should not execute new code in the blocking context.
+Always prefer executing tasks in the [suspending context](#suspending-context) or under the [progress indicator](#progress-indicator) if a plugin cannot use Kotlin.
+
+> Functions which schedule execution via [`Application.executeOnPooledThread()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java)
+> and similar methods, and which rely on [`ProgressManager.checkCanceled()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java)
+> should be annotated with [`@RequiresBlockingContext`](%gh-ic%/platform/core-api/src/com/intellij/util/concurrency/annotations/RequiresBlockingContext.kt)
+> to inform clients about the required switch to a blocking context.
+>
+> Inspection <control>Plugin DevKit | Code | Calling method should be annotated with @RequiresBlockingContext</control> reports missing annotations.
+
+### Cancellation Check
+{#blocking-context-cancellation-check}
+
+- [`ProgressManager.checkCanceled()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java)
+
+### Progress Reporting
+{#blocking-context-progress-reporting}
+
+Progress reporting is not available in the blocking context.
+
+### Switching to Other Contexts
+{#blocking-context-switching-to-other-contexts}
+
+- to coroutine: [`runBlockingCancellable()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt). This function has an opposite behavior to [`blockingContext()`](#suspending-context-switching-to-other-contexts).
+- to progress indicator: unavailable ([`blockingContextToIndicator()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) is an internal API and exists only to aid platform migration)
 
 <include from="snippets.md" element-id="missingContent"/>

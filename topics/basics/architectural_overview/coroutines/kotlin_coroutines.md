@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Kotlin Coroutines
 <primary-label ref="2024.1"/>
@@ -8,7 +8,7 @@
 The IntelliJ Platform is a multithreading environment that executes many asynchronous and non-blocking tasks to avoid UI freezes.
 These tasks are usually executed in background threads, which is a standard approach in the JVM world.
 
-Since version 1.1, [Kotlin](using_kotlin.md) has introduced coroutines as a lightweight and easy to implement alternative to threads.
+Since version 1.1, [Kotlin](using_kotlin.md) has introduced coroutines as a lightweight and easy to implement abstraction over threads.
 The IntelliJ Platform started adapting coroutines in its APIs and internal code, and since 2024.1 it is recommended to use the coroutines approach over threads.
 
 > Plugins _must_ use the bundled Kotlin Coroutines library, see [](using_kotlin.md#coroutinesLibraries).

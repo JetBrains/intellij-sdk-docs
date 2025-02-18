@@ -170,12 +170,11 @@ The following table presents the possibilities and APIs to use for switching bet
         <td>-</td>
     </tr>
     <tr>
-      <!--td><i>Notes</i></td-->
       <td colspan="4">
-        <p><sup>1</sup> <i><code>blockingContext()</code> enables <code>ProgressManager.checkCanceled()</code>, forwards modality state, etc.</i></p>
-        <p><sup>2</sup> <i><code>runBlockingCancellable()</code> has an opposite behavior to <code>blockingContext()</code></i></p>
-        <p><sup>3</sup> <i><a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt"><code>coroutineToIndicator()</code></a> is an internal API to aid platform migration</i></p>
-        <p><sup>4</sup> <i><a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt"><code>blockingContextToIndicator()</code></a> is an internal API to aid platform migration</i></p>
+        <sup>1</sup> <i><a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt"><code>blockingContext()</code></a> enables <code>ProgressManager.checkCanceled()</code>, forwards modality state, etc. It has an opposite behavior to <code>runBlockingCancellable()</code>.</i><br/>
+        <sup>2</sup> <i><a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt"><code>runBlockingCancellable()</code></a> has an opposite behavior to <code>blockingContext()</code></i><br/>
+        <sup>3</sup> <i><a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt"><code>coroutineToIndicator()</code></a> is an internal API to aid platform migration</i><br/>
+        <sup>4</sup> <i><a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt"><code>blockingContextToIndicator()</code></a> is an internal API to aid platform migration</i>
       </td>
     </tr>
 </table>

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Glossary
 
@@ -19,7 +19,7 @@ Annotator
 ## B
 
 Blocking Context
-: Executing in the [blocking context](coroutine_execution_contexts.md#blocking-context) means executing tasks on a thread without access to a coroutine context.
+: Executing in the [blocking context](execution_contexts.md#blocking-context) means executing tasks on a thread without access to a coroutine context.
 &rarr;&nbsp;_Suspending Context_
 &rarr;&nbsp;_Coroutine_
 
@@ -130,7 +130,7 @@ Stubs
 : A subset of a &rarr;&nbsp;_Program Structure Interface_ tree in a binary serialized compact format, see [](stub_indexes.md).
 
 Suspending Context
-: Executing in the [suspending context](coroutine_execution_contexts.md#suspending-context-coroutines) means executing tasks in Kotlin coroutines.
+: Executing in the [suspending context](execution_contexts.md#suspending-context-coroutines) means executing tasks in Kotlin coroutines.
 &rarr;&nbsp;_Blocking Context_
 &rarr;&nbsp;_Coroutine_
 

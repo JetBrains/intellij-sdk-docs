@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Progress Indicators
 
@@ -6,7 +6,7 @@
 
 <tldr>
 
-**Implementation**: Progress tracking in [Progress API](background_processes.md#tracking-progress) and [Kotlin Coroutines](coroutine_execution_contexts.md#progress-reporting)
+**Implementation**: Progress tracking in [Progress API](background_processes.md#tracking-progress) and [Kotlin Coroutines](execution_contexts.md#progress-reporting)
 
 </tldr>
 

@@ -109,8 +109,8 @@ The following table presents the possibilities and APIs to use for reporting pro
           <li><code><a href="%gh-ic%/platform/util/progress/src/RawProgressReporter.kt">RawProgressReporter</a></code> - a raw text, details, and fraction reporting (invoked via <code><a href="%gh-ic%/platform/util/progress/src/steps.kt">reportRawProgress()</a></code>)</li>
         </ul>
         <p>
-          Any <code><a href="%gh-ic%/platform/util/progress/src/steps.kt">report*Progress()</a></code> function must be used inside <code>withBackgroundProgress()</code>, <code>withModalProgress()</code>, or <code>runWithModalProgressBlocking()</code> from <a href="%gh-ic%/platform/progress/shared/src/tasks.kt">tasks.kt</a>.
-          Otherwise, if there is no reporter in the context, using `report*Progress()` will have no effect.
+          Any <code><a href="%gh-ic%/platform/util/progress/src/steps.kt">report*Progress()</a></code> function must be used inside <code>withBackgroundProgress()</code>, <code>withModalProgress()</code>, or <code>runWithModalProgressBlocking()</code> from <a href="%gh-ic%/platform/progress/shared/src/tasks.kt"><path>tasks.kt</path></a>.
+          Otherwise, if there is no reporter in the context, using <code>report*Progress()</code> will have no effect.
           Example:
         </p>
         <code-block lang="kotlin">

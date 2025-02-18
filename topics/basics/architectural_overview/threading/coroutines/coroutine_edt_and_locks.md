@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Coroutines on EDT and Locks
 
@@ -161,7 +161,7 @@ Sometimes it is not desired, as the coroutine in question was scheduled on [`Dis
 Anyway, it is suspicious when a read action cannot be executed on a background thread and a part of coroutine code cannot be suspended and rescheduled on EDT.
 This may signal a code issue.
 
-Note that this API cannot be used in the [blocking context](coroutine_execution_contexts.md#blocking-context).
+Note that this API cannot be used in the [blocking context](execution_contexts.md#blocking-context).
 
 ### Suspending `readAndWriteAction()`
 
@@ -176,7 +176,7 @@ Consider rewriting code to use it, if possible.
 
 Use them if a read action is required, but it is unacceptable to reschedule code execution on a different dispatcher.
 
-These APIs are marked to use only in the [blocking context](coroutine_execution_contexts.md#blocking-context), so their usage in the [suspending context](coroutine_execution_contexts.md#suspending-context-coroutines) will trigger a warning.
+These APIs are marked to use only in the [blocking context](execution_contexts.md#blocking-context), so their usage in the [suspending context](execution_contexts.md#suspending-context-coroutines) will trigger a warning.
 It is intentional, as coroutines should be prepared to be rescheduled and should use `readAction()`.
 
 ### Suspending `writeIntentReadAction()` and Blocking `WriteIntentReadAction.run()`/`compute()`

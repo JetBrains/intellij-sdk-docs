@@ -176,7 +176,7 @@ Consider rewriting code to use it, if possible.
 
 Use them if a read action is required, but it is unacceptable to reschedule code execution on a different dispatcher.
 
-These APIs are marked to use only in the [blocking context](coroutine_execution_contexts.md#blocking-context), so their usage in the [suspending context](coroutine_execution_contexts.md#suspending-context) will trigger a warning.
+These APIs are marked to use only in the [blocking context](coroutine_execution_contexts.md#blocking-context), so their usage in the [suspending context](coroutine_execution_contexts.md#suspending-context-coroutines) will trigger a warning.
 It is intentional, as coroutines should be prepared to be rescheduled and should use `readAction()`.
 
 ### Suspending `writeIntentReadAction()` and Blocking `WriteIntentReadAction.run()`/`compute()`

@@ -130,7 +130,7 @@ Stubs
 : A subset of a &rarr;&nbsp;_Program Structure Interface_ tree in a binary serialized compact format, see [](stub_indexes.md).
 
 Suspending Context
-: Executing in the [suspending context](coroutine_execution_contexts.md#suspending-context) means executing tasks in Kotlin coroutines.
+: Executing in the [suspending context](coroutine_execution_contexts.md#suspending-context-coroutines) means executing tasks in Kotlin coroutines.
 &rarr;&nbsp;_Blocking Context_
 &rarr;&nbsp;_Coroutine_
 

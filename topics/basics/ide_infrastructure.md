@@ -85,7 +85,10 @@ To let users report such errors to the vendor, plugins can use one of the soluti
 See [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.errorHandler) for existing implementations — ranging from pre-filling web-based issue tracker forms to fully automated submission to log monitoring systems.
 This [tutorial](https://www.plugin-dev.com/intellij/general/error-reporting/) also offers a working solution for using _Sentry_.
 
-To disable the red exclamation notification icon in the status bar, invoke <ui-path>Help | Edit Custom Properties...</ui-path> and add `idea.fatal.error.notification=disabled` in opened <path>idea.properties</path>.
+The red exclamation notification icon in the status bar is controlled with the `idea.fatal.error.notification` system property.
+The property can be edited in <path>idea.properties</path> file opened with <ui-path>Help | Edit Custom Properties...</ui-path>:
+- `idea.fatal.error.notification=disabled` hides the component
+- any other value or the lack of the property enables the component
 
 ## Runtime Information
 

@@ -107,7 +107,6 @@ The following table presents the possibilities and APIs to use for reporting pro
         <ul>
           <li><code><a href="%gh-ic%/platform/util/progress/src/impl/ProgressStep.kt">ProgressStep</a></code> - a step-based progress reporting (see its KDoc for details)</li>
           <li><code><a href="%gh-ic%/platform/util/progress/src/RawProgressReporter.kt">RawProgressReporter</a></code> - a raw text, details, and fraction reporting (invoked via <code><a href="%gh-ic%/platform/util/progress/src/steps.kt">reportRawProgress()</a></code>)</li>
-          <li></li>
         </ul>
         <p>
           Any <code><a href="%gh-ic%/platform/util/progress/src/steps.kt">report*Progress()</a></code> function must be used inside <code>withBackgroundProgress()</code>, <code>withModalProgress()</code>, or <code>runWithModalProgressBlocking()</code> from <a href="%gh-ic%/platform/progress/shared/src/tasks.kt">tasks.kt</a>.

@@ -14,7 +14,7 @@ The IntelliJ Platform executes background processes widely and provides two main
 
 > Plugins targeting 2024.1+ should use [Kotlin coroutines](kotlin_coroutines.md), which is a more performant solution and provides the cancellation mechanism out of the box.
 >
-> See [](execution_contexts.md) for coroutine-based APIs to use in different contexts.
+> See [](execution_contexts.topic) for coroutine-based APIs to use in different contexts.
 >
 {style="warning" title="Use Kotlin Coroutines"}
 

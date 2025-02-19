@@ -6,7 +6,7 @@
 
 <tldr>
 
-**Implementation**: Progress tracking in [Progress API](background_processes.md#tracking-progress) and [Kotlin Coroutines](execution_contexts.md#progress-reporting)
+**Implementation**: Progress tracking in [Progress API](background_processes.md#tracking-progress) and [Kotlin Coroutines](execution_contexts.topic#progress-reporting)
 
 </tldr>
 

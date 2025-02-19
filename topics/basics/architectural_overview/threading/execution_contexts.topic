@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       id="execution_contexts" title="Execution Contexts">
+
+    <title>Execution Contexts</title>
+    <link-summary>Tracking execution progress, checking for cancellations, and switching between different execution contexts.</link-summary>
+
+    <p>The IntelliJ Platform provides APIs that allow tracking the progress of background processes and canceling their
+        execution when they are canceled by a user, or they become obsolete due to some changes in the data model.</p>
+
+    <!--TODO: what if someone wants to support 2024.1 and 2024.2. Can they safely call blockingContext as it is no-op now?-->
+    <!--TODO: any caveats for progress reporting in Job context?-->
+
+    <p>Available execution contexts differ depending on the IntelliJ Platform version.
+        For the details, select the required tab below.</p>
+
+    <tabs group="execution-contexts">
+        <tab title="2024.2+" group-key="2024.2">
+            <p>Background processes can be executed in two contexts:</p>
+            <list>
+                <li><a anchor="job-context-coroutines"/> — available since 2024.2</li>
+                <li><a anchor="progress-indicator"/> — obsolete since 2024.1</li>
+            </list>
+
+            <p id="progress-indicator-migration-note">Currently, the Progress Indicator context is the most widely used approach in the IntelliJ Platform.
+                As the platform's execution model moves towards <a href="launching_coroutines.md">coroutines</a>, this approach
+                can be considered obsolete.</p>
+
+            <p>Starting with 2024.2, it is recommended to execute new code in the
+                <a anchor="job-context-coroutines">Job context</a>.</p>
+
+            <p id="sections-note">The following sections explain the contexts and provide information about process cancellation, progress
+                tracking, and switching between contexts.</p>
+
+            <!-- TODO: I'm not convinced the Job context is a good name. Suspending or Coroutine Context would be clearer, IHMO. -->
+            <chapter title="Job Context (Coroutines)" id="job-context-coroutines">
+                <primary-label ref="2024.2"/>
+
+                <tip>
+                    Suspending and Blocking contexts available in 2024.1 have been unified into the Job context.
+                    See the <a href="https://youtrack.jetbrains.com/issue/IJPL-445/Reconsider-blockingContext">
+                    <i>Reconsider blockingContext</i></a> issue for more details.
+                </tip>
+
+                <p>Code <a href="launching_coroutines.md">executed in Kotlin coroutines</a> is executed in the Job context.
+                    Since 2024.2, coroutines are recommended for executing background tasks to maximize CPU utilization.
+                    Note that executing code in coroutines is possible only with <a href="using_kotlin.md">Kotlin</a>.
+                </p>
+
+                <p>
+                    While code executed in the Job context should use suspending functions,
+                    sometimes it is required to call non-suspending/blocking APIs that use methods such as
+                    <code>ProgressManager.checkCanceled()</code> or <code>ModalityState.defaultModalityState()</code>.
+                    Since 2024.2, these methods work as expected without the need to switch to the blocking context.
+                </p>
+
+                <tip>The "Job" word in the name refers to the
+                    <a href="https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-job/">
+                        <code>Job</code></a> class, which is used for task cancellation in suspending and non-suspending
+                    functions.
+                </tip>
+
+                <tip>
+                    <p>Inspection
+                        <control>Plugin DevKit | Code | Forbidden in suspend context method usage</control>
+                        reports calling blocking code from suspending context.
+                        While this is not an error, it is recommended to use suspending counterparts if they exist.
+                    </p>
+                </tip>
+            </chapter>
+        </tab>
+
+        <tab title="2024.1" group-key="2024.1">
+            <p>Background processes can be executed in three contexts:</p>
+            <list>
+                <li><a anchor="suspending-context-coroutines"/> — available since 2024.1</li>
+                <li><a anchor="blocking-context"/></li>
+                <li><a anchor="progress-indicator"/> — obsolete since 2024.1</li>
+            </list>
+            <include from="execution_contexts.topic" element-id="progress-indicator-migration-note"/>
+
+            <p>Starting with 2024.1, it is recommended to execute new code in the
+                <a anchor="suspending-context-coroutines">suspending context</a>.</p>
+
+            <include from="execution_contexts.topic" element-id="sections-note"/>
+
+            <chapter title="Suspending Context (Coroutines)" id="suspending-context-coroutines">
+                <primary-label ref="2024.1"/>
+                <p>Code <a href="launching_coroutines.md">executed in Kotlin coroutines</a> is executed in a suspending context.
+                    Since 2024.1, this context is recommended for executing background tasks to maximize CPU utilization.
+                    Note that executing code in coroutines is possible only with <a href="using_kotlin.md">Kotlin</a>.
+                </p>
+                <p>In a suspending context, methods such as <code>ProgressManager.checkCanceled()</code> or <code>ModalityState.defaultModalityState()</code>
+                    won't have any effect.
+                    Therefore, if their behavior is required, <a anchor="switching-between-contexts">switch to a blocking
+                        context</a>.</p>
+                <tip>
+                    <p>Inspection
+                        <control>Plugin DevKit | Code | Forbidden in suspend context method usage</control>
+                        reports calling blocking code from suspending context.
+                    </p>
+                </tip>
+            </chapter>
+
+            <chapter title="Blocking Context" id="blocking-context">
+                <p>Executing tasks in a blocking context means executing them on a thread without access to the <a
+                        anchor="suspending-context-coroutines">coroutine context</a> (basically, in non-suspending functions)
+                    and not under <a anchor="progress-indicator">a progress indicator</a>.
+                    Such tasks can still be canceled, but they can't report progress.</p>
+                <p>Plugins should not execute new code in the blocking context.
+                    Always prefer executing tasks in the <a anchor="suspending-context-coroutines">suspending context</a> or
+                    under the <a anchor="progress-indicator">progress indicator</a> if a plugin cannot use Kotlin.</p>
+                <tip>
+                    <!--TODO: copy it to Job Context and state that it is used for choosing a better non-blocking API? revise what Daniil said -->
+                    <p>Functions which schedule execution via <a
+                            href="%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java"><code>Application.executeOnPooledThread()</code></a>
+                        and similar methods, and which rely on <a
+                                href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java"><code>ProgressManager.checkCanceled()</code></a>
+                        should be annotated with <a
+                                href="%gh-ic%/platform/core-api/src/com/intellij/util/concurrency/annotations/RequiresBlockingContext.kt"><code>@RequiresBlockingContext</code></a>
+                        to inform clients about the required switch to a blocking context.</p>
+                    <p>Inspection
+                        <control>Plugin DevKit | Code | Calling method should be annotated with @RequiresBlockingContext
+                        </control>
+                        reports missing annotations.
+                    </p>
+                </tip>
+            </chapter>
+        </tab>
+    </tabs>
+
+
+    <chapter title="Progress Indicator" id="progress-indicator">
+        <primary-label ref="obsolete-2024.1"/>
+        <p>Code executed via the Progress API
+            (<a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java"><code>ProgressManager</code></a>,
+            <a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressIndicator.java"><code>ProgressIndicator</code></a>,
+            etc.)
+            is executed in a progress indicator context.
+            See the <a href="background_processes.md" anchor="progress-api"/> section for details.</p>
+        <tip title="Obsolete approach since 2024.1">
+            <p>Executing code under the progress indicator is obsolete since 2024.1.
+                It is advised to use Kotlin coroutines in new code.</p>
+            <p>Please note that obsolete status does not mean deprecation.
+                Executing code using the Progress API is still allowed, but coroutines are recommended as a more
+                performant solution.</p>
+        </tip>
+    </chapter>
+    <chapter title="Execution Contexts APIs" id="execution-contexts-apis">
+        <chapter title="Cancellation Check" id="cancellation-check">
+            <p>The following table presents APIs to use for checking whether a task was canceled in different execution
+                contexts.</p>
+
+            <tip>
+                See <a href="background_processes.md#cancellation">Background Processes: Cancellation</a> for
+                    general cancellation mechanism explanation.
+            </tip>
+
+            <tabs group="execution-contexts">
+                <tab title="2024.2+" group-key="2024.2">
+                    <table style="header-column">
+                        <tr>
+                            <td width="16%">Job Context</td>
+                            <td>
+                                <list>
+                                    <li><a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt">
+                                        <code>checkCanceled()</code></a></li>
+                                    <li><a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java">
+                                        <code>ProgressManager.checkCanceled()</code></a></li>
+                                </list>
+                            </td>
+                        </tr>
+                        <tr id="cancellation-check-progress-indicator-row">
+                            <td>Progress&nbsp;Indicator</td>
+                            <td>
+                                <list>
+                                    <li><a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressIndicator.java">
+                                        <code>ProgressIndicator.checkCanceled()</code></a></li>
+                                    <li><a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java">
+                                        <code>ProgressManager.checkCanceled()</code></a></li>
+                                </list>
+                            </td>
+                        </tr>
+                    </table>
+                </tab>
+                <tab title="2024.1" group-key="2024.1">
+                    <table style="header-column">
+                        <tr>
+                            <td width="16%">Suspending Context</td>
+                            <td>
+                                <list>
+                                    <li><a href="https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/ensure-active.html"><code>ensureActive()</code></a>
+                                        from Kotlin coroutine's API</li>
+                                </list>
+
+                                <warning>
+                                    Note that
+                                    <a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java"><code>ProgressManager.checkCanceled()</code></a>
+                                    does not work in the suspending context.
+                                    To enable it,
+                                    <a anchor="switching-between-contexts">switch to <code>blockingContext()</code></a>,
+                                    if it is not possible to change the code.
+                                </warning>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Blocking Context</td>
+                            <td>
+                                <list>
+                                    <li><a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java"><code>ProgressManager.checkCanceled()</code></a></li>
+                                </list>
+                            </td>
+                        </tr>
+                        <include from="execution_contexts.topic" element-id="cancellation-check-progress-indicator-row"/>
+                    </table>
+                </tab>
+            </tabs>
+        </chapter>
+
+        <chapter title="Progress Reporting" id="progress-reporting">
+            <p>The following table presents the possibilities and APIs to use for reporting progress in different
+                execution contexts.</p>
+
+            <tabs group="execution-contexts">
+                <tab title="2024.2+" group-key="2024.2">
+                    <table style="header-column">
+                        <tr>
+                            <td width="16%">Job Context</td>
+                            <td id="progress-reporting-job-context-cell">
+                                <list>
+                                    <li><a href="%gh-ic%/platform/util/progress/src/impl/ProgressStep.kt"><code>ProgressStep</code></a>
+                                        - a step-based progress reporting (see its KDoc for details)
+                                    </li>
+                                    <li><a href="%gh-ic%/platform/util/progress/src/RawProgressReporter.kt"><code>RawProgressReporter</code></a>
+                                        - a raw text, details, and fraction reporting (invoked via <a
+                                                href="%gh-ic%/platform/util/progress/src/steps.kt"><code>reportRawProgress()</code></a>)
+                                    </li>
+                                </list>
+                                <p>
+                                    Any <a href="%gh-ic%/platform/util/progress/src/steps.kt"><code>report*Progress()</code></a>
+                                    function must be used inside <code>withBackgroundProgress()</code>, <code>withModalProgress()</code>,
+                                    or <code>runWithModalProgressBlocking()</code> from <a
+                                        href="%gh-ic%/platform/progress/shared/src/tasks.kt">
+                                    <path>tasks.kt</path>
+                                </a>.
+                                    Otherwise, if there is no reporter in the context, using <code>report*Progress()</code> will
+                                    have no effect.
+                                    Example:
+                                </p>
+                                <code-block lang="kotlin">
+                                withBackgroundProgress(...) { // or other
+                                    // ...
+                                    reportProgress { reporter -> // or another report*Progress
+                                        // do tasks and report progress
+                                    }
+                                    // ...
+                                }
+                                </code-block>
+                            </td>
+                        </tr>
+                        <tr id="progress-reporting-progress-indicator-row">
+                            <td>Progress&nbsp;Indicator</td>
+                            <td>
+                                <a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressIndicator.java"><code>ProgressIndicator</code>'s</a>
+                                or <a
+                                    href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java"><code>ProgressManager</code>'s</a>
+                                methods
+                                <p>See <a href="background_processes.md#tracking-progress">Background Processes: Tracking
+                                    Progress</a> for details.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </tab>
+                <tab title="2024.1" group-key="2024.1">
+                    <table style="header-column">
+                        <tr>
+                            <td width="16%">Suspending Context</td>
+                            <include from="execution_contexts.topic" element-id="progress-reporting-job-context-cell"/>
+                        </tr>
+                        <tr>
+                            <td>Blocking Context</td>
+                            <td>
+                                unavailable
+                            </td>
+                        </tr>
+                        <include from="execution_contexts.topic" element-id="progress-reporting-progress-indicator-row"/>
+                    </table>
+                </tab>
+            </tabs>
+        </chapter>
+
+        <chapter title="Switching Between Contexts" id="switching-between-contexts">
+            <p>The following table presents the possibilities and APIs to use for switching between different execution
+                contexts.</p>
+
+            <tabs group="execution-contexts">
+                <tab title="2024.2+" group-key="2024.2">
+                    <table style="both">
+                        <tr>
+                            <td width="16%"/>
+                            <td width="42%">To Job Context</td>
+                            <td width="42%">To Progress Indicator</td>
+                        </tr>
+                        <tr>
+                            <td>From Job Context</td>
+                            <td>-</td>
+                            <td><a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt">
+                                <code>coroutineToIndicator()</code></a> <sup>1</sup></td>
+                        </tr>
+                        <tr>
+                            <td>From Progress&nbsp;Indicator</td>
+                            <td><a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt">
+                                <code>runBlockingCancellable()</code></a></td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <sup>1</sup>
+                                <i><code>coroutineToIndicator()</code>
+                                    is an experimental API, which was originally internal and created to aid
+                                    platform migration.
+                                    It is not recommended to switch from the Job context to the progress indicator.
+                                    Use it only if there is no other option.</i>
+                            </td>
+                        </tr>
+                    </table>
+                </tab>
+                <tab title="2024.1" group-key="2024.1">
+                    <table style="both">
+                        <tr>
+                            <td width="16%"/>
+                            <td>To Suspending Context</td>
+                            <td>To Blocking Context</td>
+                            <td>To&nbsp;Progress&nbsp;Indicator</td>
+                        </tr>
+                        <tr>
+                            <td>From Suspending Context</td>
+                            <td>-</td>
+                            <td><code>blockingContext()</code> <sup>1</sup></td>
+                            <td>unavailable <sup>3</sup></td>
+                        </tr>
+                        <tr>
+                            <td>From Blocking Context</td>
+                            <td><code>runBlockingCancellable()</code> <sup>2</sup></td>
+                            <td>-</td>
+                            <td>unavailable <sup>4</sup></td>
+                        </tr>
+                        <tr>
+                            <td>From Progress&nbsp;Indicator</td>
+                            <td><code>runBlockingCancellable()</code> <sup>2</sup></td>
+                            <td>unavailable</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <sup>1</sup>
+                                <i><a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt">
+                                    <code>blockingContext()</code></a>
+                                    enables <code>ProgressManager.checkCanceled()</code>, forwards modality state, etc.
+                                    It has an opposite behavior to <code>runBlockingCancellable()</code>.
+                                    Since 2024.2, it is a no-operation function, as the blocking context was unified
+                                    with the suspending context into the Job context.</i>
+                                <br/>
+
+                                <sup>2</sup>
+                                <i><a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt">
+                                    <code>runBlockingCancellable()</code></a>
+                                    has an opposite behavior to <code>blockingContext()</code></i>
+                                <br/>
+
+                                <sup>3</sup>
+                                <i><a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt">
+                                    <code>coroutineToIndicator()</code></a>
+                                    is an internal API to aid platform migration</i>
+                                <br/>
+
+                                <sup>4</sup>
+                                <i><a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt">
+                                    <code>blockingContextToIndicator()</code></a>
+                                    is an internal API to aid platform migration</i>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <p>It is only possible to:</p>
+                    <list>
+                        <li>switch from the blocking context or progress indicator to the suspending context</li>
+                        <li>switch from the suspending context to the blocking context</li>
+                    </list>
+                    <p>The lack of an API for switching from suspending and blocking contexts to progress indicator is
+                        intentional.
+                        Cancellable and trackable tasks should be run in coroutines as the progress indicator is obsolete since
+                        2024.1.</p>
+                </tab>
+            </tabs>
+
+            <include from="snippets.md" element-id="missingContent"/>
+        </chapter>
+    </chapter>
+
+</topic>
+
+<!--TODO: glossary: Job context-->
+<!--TODO: search for execution_context.topic and adjust dependant content-->
+<!--TODO: add to content updates-->

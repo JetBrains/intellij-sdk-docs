@@ -186,3 +186,5 @@ They are intended to be used by the IntelliJ Platform itself.
 Avoid using them in plugin code.
 
 Use it only as a temporal solution if it is hard to quickly rewrite code which checks for write intent lock.
+
+<include from="snippets.md" element-id="missingContent"/>

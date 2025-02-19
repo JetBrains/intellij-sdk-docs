@@ -35,9 +35,9 @@ Therefore, if their behavior is required, [switch to a blocking context](#switch
 ## Blocking Context
 
 Executing tasks in a blocking context means executing them on a thread without access to the [coroutine context](#suspending-context-coroutines) (basically, in non-suspending functions) and not under [a progress indicator](#progress-indicator).
-Such tasks can't be canceled by using coroutines' or progress indicator's cancellation capabilities, which may block threads and consume resources even if the task is no longer relevant.
+Such tasks can still be canceled, but they can't report progress.
 
-Usually, plugins should not execute new code in the blocking context.
+Plugins should not execute new code in the blocking context.
 Always prefer executing tasks in the [suspending context](#suspending-context-coroutines) or under the [progress indicator](#progress-indicator) if a plugin cannot use Kotlin.
 
 > Functions which schedule execution via [`Application.executeOnPooledThread()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java)

@@ -11,9 +11,6 @@
     <p>The IntelliJ Platform provides APIs that allow tracking the progress of background processes and canceling their
         execution when they are canceled by a user, or they become obsolete due to some changes in the data model.</p>
 
-    <!--TODO: what if someone wants to support 2024.1 and 2024.2. Can they safely call blockingContext as it is no-op now?-->
-    <!--TODO: any caveats for progress reporting in Coroutine Execution Context?-->
-
     <p>Available execution contexts differ depending on the IntelliJ Platform version.
         For the details, select the required tab below.</p>
 
@@ -21,7 +18,7 @@
         <tab title="2024.2+" group-key="2024.2">
             <p>Background processes can be executed in two contexts:</p>
             <list>
-                <li><a anchor="coroutine-execution-context-coroutines"/> — available since 2024.2</li>
+                <li><a anchor="coroutine-execution-context"/> — available since 2024.2</li>
                 <li><a anchor="progress-indicator"/> — obsolete since 2024.1</li>
             </list>
 
@@ -31,15 +28,14 @@
                     can be considered obsolete.</p>
             </snippet>
 
-            <p>Starting with 2024.2, it is recommended to execute new code in the <a anchor="coroutine-execution-context-coroutines"/>.</p>
+            <p>Starting with 2024.2, it is recommended to execute new code in the <a anchor="coroutine-execution-context"/>.</p>
 
             <snippet id="sections-note">
                 <p>The following sections explain the contexts and provide information about process cancellation, progress
                     tracking, and switching between contexts.</p>
             </snippet>
 
-
-            <chapter title="Coroutine Execution Context" id="coroutine-execution-context-coroutines"><!--FIXME: id-->
+            <chapter title="Coroutine Execution Context" id="coroutine-execution-context">
                 <primary-label ref="2024.2"/>
 
                 <tip>
@@ -105,11 +101,11 @@
             <chapter title="Blocking Context" id="blocking-context">
                 <p>Executing tasks in the Blocking Context means executing them on a thread without access to the <a
                         anchor="suspending-context-coroutines">coroutine context</a> (basically, in non-suspending functions)
-                    and not under the <a anchor="progress-indicator">Progress Indicator</a>.
+                    and not under the <a anchor="progress-indicator"/>.
                     Such tasks can still be canceled, but they can't report progress.</p>
                 <p>Plugins should not execute new code in the Blocking Context.
-                    Always prefer executing tasks in the <a anchor="suspending-context-coroutines">Suspending Context</a> or
-                    under the <a anchor="progress-indicator">Progress Indicator</a> if a plugin cannot use Kotlin.</p>
+                    Always prefer executing tasks in the <a anchor="suspending-context-coroutines">Suspending Context</a>
+                    or under the <a anchor="progress-indicator"/> if a plugin cannot use Kotlin.</p>
                 <tip>
                     <p>Functions which schedule execution via
                         <a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java">
@@ -405,5 +401,3 @@
     </chapter>
 
 </topic>
-
-<!--TODO: search for execution_context.topic and adjust dependant content-->

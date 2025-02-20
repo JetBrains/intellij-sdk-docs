@@ -5,7 +5,7 @@
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        id="execution_contexts" title="Execution Contexts">
 
-    <title>Execution Contexts</title>
+    <var name="id_postfix"></var><title>Execution Contexts</title>
     <link-summary>Tracking execution progress, checking for cancellations, and switching between different execution contexts.</link-summary>
 
     <p>The IntelliJ Platform provides APIs that allow tracking the progress of background processes and canceling their
@@ -25,14 +25,14 @@
                 <li><a anchor="progress-indicator"/> — obsolete since 2024.1</li>
             </list>
 
-            <p>Currently, the Progress Indicator context is the most widely used approach in the IntelliJ Platform.
+            <p id="progress-indicator-migration-note%id_postfix%">Currently, the Progress Indicator context is the most widely used approach in the IntelliJ Platform.
                 As the platform's execution model moves towards <a href="launching_coroutines.md">coroutines</a>, this approach
                 can be considered obsolete.</p>
 
             <p>Starting with 2024.2, it is recommended to execute new code in the
                 <a anchor="job-context-coroutines">Job context</a>.</p>
 
-            <p>The following sections explain the contexts and provide information about process cancellation, progress
+            <p id="sections-note%id_postfix%">The following sections explain the contexts and provide information about process cancellation, progress
                 tracking, and switching between contexts.</p>
 
             <!-- TODO: I'm not convinced the Job context is a good name. Suspending or Coroutine Context would be clearer, IHMO. -->
@@ -80,16 +80,16 @@
                 <li><a anchor="blocking-context"/></li>
                 <li><a anchor="progress-indicator"/> — obsolete since 2024.1</li>
             </list>
-
-            <p>Currently, the Progress Indicator context is the most widely used approach in the IntelliJ Platform.
-                As the platform's execution model moves towards <a href="launching_coroutines.md">coroutines</a>, this approach
-                can be considered obsolete.</p>
+            <include from="execution_contexts.topic" element-id="progress-indicator-migration-note">
+                <var name="id_postfix" value="-8d50ec"/>
+            </include>
 
             <p>Starting with 2024.1, it is recommended to execute new code in the
                 <a anchor="suspending-context-coroutines">suspending context</a>.</p>
 
-            <p>The following sections explain the contexts and provide information about process cancellation, progress
-                tracking, and switching between contexts.</p>
+            <include from="execution_contexts.topic" element-id="sections-note">
+                <var name="id_postfix" value="-8d50ee"/>
+            </include>
 
             <chapter title="Suspending Context (Coroutines)" id="suspending-context-coroutines">
                 <primary-label ref="2024.1"/>
@@ -160,7 +160,7 @@
 
             <tip>
                 See <a href="background_processes.md#cancellation">Background Processes: Cancellation</a> for
-                    general cancellation mechanism explanation.
+                general cancellation mechanism explanation.
             </tip>
 
             <tabs group="execution-contexts">
@@ -177,7 +177,7 @@
                                 </list>
                             </td>
                         </tr>
-                        <tr>
+                        <tr id="cancellation-check-progress-indicator-row%id_postfix%">
                             <td>Progress&nbsp;Indicator</td>
                             <td>
                                 <list>
@@ -218,17 +218,9 @@
                                 </list>
                             </td>
                         </tr>
-                        <tr>
-                            <td>Progress&nbsp;Indicator</td>
-                            <td>
-                                <list>
-                                    <li><a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressIndicator.java">
-                                        <code>ProgressIndicator.checkCanceled()</code></a></li>
-                                    <li><a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java">
-                                        <code>ProgressManager.checkCanceled()</code></a></li>
-                                </list>
-                            </td>
-                        </tr>
+                        <include from="execution_contexts.topic" element-id="cancellation-check-progress-indicator-row">
+                            <var name="id_postfix" value="-8d50f1"/>
+                        </include>
                     </table>
                 </tab>
             </tabs>
@@ -243,7 +235,7 @@
                     <table style="header-column">
                         <tr>
                             <td width="16%">Job Context</td>
-                            <td>
+                            <td id="progress-reporting-job-context-cell%id_postfix%">
                                 <list>
                                     <li><a href="%gh-ic%/platform/util/progress/src/impl/ProgressStep.kt"><code>ProgressStep</code></a>
                                         - a step-based progress reporting (see its KDoc for details)
@@ -275,7 +267,7 @@
                                 </code-block>
                             </td>
                         </tr>
-                        <tr>
+                        <tr id="progress-reporting-progress-indicator-row%id_postfix%">
                             <td>Progress&nbsp;Indicator</td>
                             <td>
                                 <a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressIndicator.java"><code>ProgressIndicator</code>'s</a>
@@ -292,37 +284,9 @@
                     <table style="header-column">
                         <tr>
                             <td width="16%">Suspending Context</td>
-                            <td>
-                                <list>
-                                    <li><a href="%gh-ic%/platform/util/progress/src/impl/ProgressStep.kt"><code>ProgressStep</code></a>
-                                        - a step-based progress reporting (see its KDoc for details)
-                                    </li>
-                                    <li><a href="%gh-ic%/platform/util/progress/src/RawProgressReporter.kt"><code>RawProgressReporter</code></a>
-                                        - a raw text, details, and fraction reporting (invoked via <a
-                                                href="%gh-ic%/platform/util/progress/src/steps.kt"><code>reportRawProgress()</code></a>)
-                                    </li>
-                                </list>
-                                <p>
-                                    Any <a href="%gh-ic%/platform/util/progress/src/steps.kt"><code>report*Progress()</code></a>
-                                    function must be used inside <code>withBackgroundProgress()</code>, <code>withModalProgress()</code>,
-                                    or <code>runWithModalProgressBlocking()</code> from <a
-                                        href="%gh-ic%/platform/progress/shared/src/tasks.kt">
-                                    <path>tasks.kt</path>
-                                </a>.
-                                    Otherwise, if there is no reporter in the context, using <code>report*Progress()</code> will
-                                    have no effect.
-                                    Example:
-                                </p>
-                                <code-block lang="kotlin">
-                                withBackgroundProgress(...) { // or other
-                                    // ...
-                                    reportProgress { reporter -> // or another report*Progress
-                                        // do tasks and report progress
-                                    }
-                                    // ...
-                                }
-                                </code-block>
-                            </td>
+                            <include from="execution_contexts.topic" element-id="progress-reporting-job-context-cell">
+                                <var name="id_postfix" value="-8d50f5"/>
+                            </include>
                         </tr>
                         <tr>
                             <td>Blocking Context</td>
@@ -330,17 +294,9 @@
                                 unavailable
                             </td>
                         </tr>
-                        <tr>
-                            <td>Progress&nbsp;Indicator</td>
-                            <td>
-                                <a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressIndicator.java"><code>ProgressIndicator</code>'s</a>
-                                or <a
-                                    href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java"><code>ProgressManager</code>'s</a>
-                                methods
-                                <p>See <a href="background_processes.md#tracking-progress">Background Processes: Tracking
-                                    Progress</a> for details.</p>
-                            </td>
-                        </tr>
+                        <include from="execution_contexts.topic" element-id="progress-reporting-progress-indicator-row">
+                            <var name="id_postfix" value="-8d50f7"/>
+                        </include>
                     </table>
                 </tab>
             </tabs>

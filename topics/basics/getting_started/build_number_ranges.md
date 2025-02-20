@@ -109,38 +109,36 @@ The IDE will automatically install only the corresponding compatible build.
 Note that there is no `YY0`.
 In the `YYYY.R` versioning scheme, the `R` part starts at 1.
 
-<include from="snippets.md" element-id="apiChangesJavaVersion"/>
-
 <include from="snippets.md" element-id="gradlePluginVersion"/>
 
 _Early Access Program_ (EAP) releases of upcoming versions are available [here](https://eap.jetbrains.com).
 
-| Branch number                                                   | IntelliJ Platform version               |
-|-----------------------------------------------------------------|-----------------------------------------|
-| [251](https://github.com/JetBrains/intellij-community/tree/251) | 2025.1                                  |
-| [243](https://github.com/JetBrains/intellij-community/tree/243) | 2024.3                                  |
-| [242](https://github.com/JetBrains/intellij-community/tree/242) | 2024.2 **NOTE** Java 21 is now required |
-| [241](https://github.com/JetBrains/intellij-community/tree/241) | 2024.1                                  |
-| [233](https://github.com/JetBrains/intellij-community/tree/233) | 2023.3                                  |
-| [232](https://github.com/JetBrains/intellij-community/tree/232) | 2023.2                                  |
-| [231](https://github.com/JetBrains/intellij-community/tree/231) | 2023.1                                  |
+| IntelliJ Platform version | Branch                                                          | Java version |
+|---------------------------|-----------------------------------------------------------------|--------------|
+| 2025.1                    | [251](https://github.com/JetBrains/intellij-community/tree/251) | 21           |
+| 2024.3                    | [243](https://github.com/JetBrains/intellij-community/tree/243) | 21           |
+| 2024.2                    | [242](https://github.com/JetBrains/intellij-community/tree/242) | **21**       |
+| 2024.1                    | [241](https://github.com/JetBrains/intellij-community/tree/241) | 17           |
+| 2023.3                    | [233](https://github.com/JetBrains/intellij-community/tree/233) | 17           |
+| 2023.2                    | [232](https://github.com/JetBrains/intellij-community/tree/232) | 17           |
+| 2023.1                    | [231](https://github.com/JetBrains/intellij-community/tree/231) | 17           |
 
 #### Earlier Versions
 
 {collapsible="true"}
 
-| Branch number                                                   | IntelliJ Platform version                                                                                                                |
-|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| [223](https://github.com/JetBrains/intellij-community/tree/223) | 2022.3 **NOTE** Java 17 is now required ([blog post](https://blog.jetbrains.com/platform/2022/08/intellij-project-migrates-to-java-17/)) |
-| [222](https://github.com/JetBrains/intellij-community/tree/222) | 2022.2                                                                                                                                   |
-| [221](https://github.com/JetBrains/intellij-community/tree/221) | 2022.1                                                                                                                                   |
-| [213](https://github.com/JetBrains/intellij-community/tree/213) | 2021.3                                                                                                                                   |
-| [212](https://github.com/JetBrains/intellij-community/tree/212) | 2021.2                                                                                                                                   |
-| [211](https://github.com/JetBrains/intellij-community/tree/211) | 2021.1                                                                                                                                   |
-| [203](https://github.com/JetBrains/intellij-community/tree/203) | 2020.3 **NOTE** Java 11 is now required ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)) |
-| [202](https://github.com/JetBrains/intellij-community/tree/202) | 2020.2                                                                                                                                   |
-| [201](https://github.com/JetBrains/intellij-community/tree/201) | 2020.1                                                                                                                                   |
-| [193](https://github.com/JetBrains/intellij-community/tree/193) | 2019.3                                                                                                                                   |
-| [192](https://github.com/JetBrains/intellij-community/tree/192) | 2019.2                                                                                                                                   |
-| [191](https://github.com/JetBrains/intellij-community/tree/191) | 2019.1                                                                                                                                   |
+| IntelliJ Platform version | Branch                                                          | Java version                                                                                            |
+|---------------------------|-----------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| 2022.3                    | [223](https://github.com/JetBrains/intellij-community/tree/223) | **17** ([blog post](https://blog.jetbrains.com/platform/2022/08/intellij-project-migrates-to-java-17/)) |
+| 2022.2                    | [222](https://github.com/JetBrains/intellij-community/tree/222) | 11                                                                                                      |
+| 2022.1                    | [221](https://github.com/JetBrains/intellij-community/tree/221) | 11                                                                                                      |
+| 2021.3                    | [213](https://github.com/JetBrains/intellij-community/tree/213) | 11                                                                                                      |
+| 2021.2                    | [212](https://github.com/JetBrains/intellij-community/tree/212) | 11                                                                                                      |
+| 2021.1                    | [211](https://github.com/JetBrains/intellij-community/tree/211) | 11                                                                                                      |
+| 2020.3                    | [203](https://github.com/JetBrains/intellij-community/tree/203) | **11** ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)) |
+| 2020.2                    | [202](https://github.com/JetBrains/intellij-community/tree/202) | 8                                                                                                       |
+| 2020.1                    | [201](https://github.com/JetBrains/intellij-community/tree/201) | 8                                                                                                       |
+| 2019.3                    | [193](https://github.com/JetBrains/intellij-community/tree/193) | 8                                                                                                       |
+| 2019.2                    | [192](https://github.com/JetBrains/intellij-community/tree/192) | 8                                                                                                       |
+| 2019.1                    | [191](https://github.com/JetBrains/intellij-community/tree/191) | 8                                                                                                       |
 

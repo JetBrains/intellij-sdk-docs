@@ -5,7 +5,7 @@
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        id="execution_contexts" title="Execution Contexts">
 
-    <var name="id_postfix"></var><title>Execution Contexts</title>
+    <title>Execution Contexts</title>
     <link-summary>Tracking execution progress, checking for cancellations, and switching between different execution contexts.</link-summary>
 
     <p>The IntelliJ Platform provides APIs that allow tracking the progress of background processes and canceling their
@@ -25,14 +25,19 @@
                 <li><a anchor="progress-indicator"/> — obsolete since 2024.1</li>
             </list>
 
-            <p id="progress-indicator-migration-note%id_postfix%">Currently, the Progress Indicator context is the most widely used approach in the IntelliJ Platform.
-                As the platform's execution model moves towards <a href="launching_coroutines.md">coroutines</a>, this approach
-                can be considered obsolete.</p>
+            <snippet id="progress-indicator-migration-note">
+                <p>Currently, the Progress Indicator context is the most widely used approach in the IntelliJ Platform.
+                    As the platform's execution model moves towards <a href="launching_coroutines.md">coroutines</a>, this approach
+                    can be considered obsolete.</p>
+            </snippet>
 
             <p>Starting with 2024.2, it is recommended to execute new code in the <a anchor="coroutine-execution-context-coroutines"/>.</p>
 
-            <p id="sections-note%id_postfix%">The following sections explain the contexts and provide information about process cancellation, progress
-                tracking, and switching between contexts.</p>
+            <snippet id="sections-note">
+                <p>The following sections explain the contexts and provide information about process cancellation, progress
+                    tracking, and switching between contexts.</p>
+            </snippet>
+
 
             <chapter title="Coroutine Execution Context" id="coroutine-execution-context-coroutines"><!--FIXME: id-->
                 <primary-label ref="2024.2"/>
@@ -72,16 +77,12 @@
                 <li><a anchor="blocking-context"/></li>
                 <li><a anchor="progress-indicator"/> — obsolete since 2024.1</li>
             </list>
-            <include from="execution_contexts.topic" element-id="progress-indicator-migration-note">
-                <var name="id_postfix" value="-8d50ec"/>
-            </include>
+            <include from="execution_contexts.topic" element-id="progress-indicator-migration-note"/>
 
             <p>Starting with 2024.1, it is recommended to execute new code in the
                 <a anchor="suspending-context-coroutines">Suspending Context</a>.</p>
 
-            <include from="execution_contexts.topic" element-id="sections-note">
-                <var name="id_postfix" value="-8d50ee"/>
-            </include>
+            <include from="execution_contexts.topic" element-id="sections-note"/>
 
             <chapter title="Suspending Context (Coroutines)" id="suspending-context-coroutines">
                 <primary-label ref="2024.1"/>
@@ -128,7 +129,6 @@
         </tab>
     </tabs>
 
-
     <chapter title="Progress Indicator" id="progress-indicator">
         <primary-label ref="obsolete-2024.1"/>
         <p>Code executed via the Progress API
@@ -145,6 +145,7 @@
                 performant solution.</p>
         </tip>
     </chapter>
+
     <chapter title="Execution Contexts APIs" id="execution-contexts-apis">
         <chapter title="Cancellation Check" id="cancellation-check">
             <p>The following table presents APIs to use for checking whether a task was canceled in different execution
@@ -169,17 +170,19 @@
                                 </list>
                             </td>
                         </tr>
-                        <tr id="cancellation-check-progress-indicator-row%id_postfix%">
-                            <td>Progress&nbsp;Indicator</td>
-                            <td>
-                                <list>
-                                    <li><a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressIndicator.java">
-                                        <code>ProgressIndicator.checkCanceled()</code></a></li>
-                                    <li><a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java">
-                                        <code>ProgressManager.checkCanceled()</code></a></li>
-                                </list>
-                            </td>
-                        </tr>
+                        <snippet id="cancellation-check-progress-indicator-row">
+                            <tr>
+                                <td>Progress&nbsp;Indicator</td>
+                                <td>
+                                    <list>
+                                        <li><a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressIndicator.java">
+                                            <code>ProgressIndicator.checkCanceled()</code></a></li>
+                                        <li><a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java">
+                                            <code>ProgressManager.checkCanceled()</code></a></li>
+                                    </list>
+                                </td>
+                            </tr>
+                        </snippet>
                     </table>
                 </tab>
                 <tab title="2024.1" group-key="2024.1">
@@ -210,9 +213,7 @@
                                 </list>
                             </td>
                         </tr>
-                        <include from="execution_contexts.topic" element-id="cancellation-check-progress-indicator-row">
-                            <var name="id_postfix" value="-8d50f1"/>
-                        </include>
+                        <include from="execution_contexts.topic" element-id="cancellation-check-progress-indicator-row"/>
                     </table>
                 </tab>
             </tabs>
@@ -227,58 +228,60 @@
                     <table style="header-column">
                         <tr>
                             <td width="17%">Coroutine Execution Context</td>
-                            <td id="progress-reporting-coroutine-execution-context-cell%id_postfix%">
-                                <list>
-                                    <li><a href="%gh-ic%/platform/util/progress/src/impl/ProgressStep.kt"><code>ProgressStep</code></a>
-                                        - a step-based progress reporting (see its KDoc for details)
-                                    </li>
-                                    <li><a href="%gh-ic%/platform/util/progress/src/RawProgressReporter.kt"><code>RawProgressReporter</code></a>
-                                        - a raw text, details, and fraction reporting (invoked via <a
-                                                href="%gh-ic%/platform/util/progress/src/steps.kt"><code>reportRawProgress()</code></a>)
-                                    </li>
-                                </list>
-                                <p>
-                                    Any <a href="%gh-ic%/platform/util/progress/src/steps.kt"><code>report*Progress()</code></a>
-                                    function must be used inside <code>withBackgroundProgress()</code>, <code>withModalProgress()</code>,
-                                    or <code>runWithModalProgressBlocking()</code> from <a
-                                        href="%gh-ic%/platform/progress/shared/src/tasks.kt">
-                                    <path>tasks.kt</path>
-                                </a>.
-                                    Otherwise, if there is no reporter in the context, using <code>report*Progress()</code> will
-                                    have no effect.
-                                    Example:
-                                </p>
-                                <code-block lang="kotlin">
-                                withBackgroundProgress(...) { // or other
-                                    // ...
-                                    reportProgress { reporter -> // or another report*Progress
-                                        // do tasks and report progress
+                            <snippet  id="progress-reporting-coroutine-execution-context-cell">
+                                <td>
+                                    <list>
+                                        <li><a href="%gh-ic%/platform/util/progress/src/impl/ProgressStep.kt"><code>ProgressStep</code></a>
+                                            - a step-based progress reporting (see its KDoc for details)
+                                        </li>
+                                        <li><a href="%gh-ic%/platform/util/progress/src/RawProgressReporter.kt"><code>RawProgressReporter</code></a>
+                                            - a raw text, details, and fraction reporting (invoked via <a
+                                                    href="%gh-ic%/platform/util/progress/src/steps.kt"><code>reportRawProgress()</code></a>)
+                                        </li>
+                                    </list>
+                                    <p>
+                                        Any <a href="%gh-ic%/platform/util/progress/src/steps.kt"><code>report*Progress()</code></a>
+                                        function must be used inside <code>withBackgroundProgress()</code>, <code>withModalProgress()</code>,
+                                        or <code>runWithModalProgressBlocking()</code> from <a
+                                            href="%gh-ic%/platform/progress/shared/src/tasks.kt">
+                                        <path>tasks.kt</path>
+                                    </a>.
+                                        Otherwise, if there is no reporter in the context, using <code>report*Progress()</code> will
+                                        have no effect.
+                                        Example:
+                                    </p>
+                                    <code-block lang="kotlin">
+                                    withBackgroundProgress(...) { // or other
+                                        // ...
+                                        reportProgress { reporter -> // or another report*Progress
+                                            // do tasks and report progress
+                                        }
+                                        // ...
                                     }
-                                    // ...
-                                }
-                                </code-block>
-                            </td>
+                                    </code-block>
+                                </td>
+                            </snippet>
                         </tr>
-                        <tr id="progress-reporting-progress-indicator-row%id_postfix%">
-                            <td>Progress&nbsp;Indicator</td>
-                            <td>
-                                <a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressIndicator.java"><code>ProgressIndicator</code>'s</a>
-                                or <a
-                                    href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java"><code>ProgressManager</code>'s</a>
-                                methods
-                                <p>See <a href="background_processes.md#tracking-progress">Background Processes: Tracking
-                                    Progress</a> for details.</p>
-                            </td>
-                        </tr>
+                        <snippet id="progress-reporting-progress-indicator-row">
+                            <tr>
+                                <td>Progress&nbsp;Indicator</td>
+                                <td>
+                                    <a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressIndicator.java"><code>ProgressIndicator</code>'s</a>
+                                    or <a
+                                        href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java"><code>ProgressManager</code>'s</a>
+                                    methods
+                                    <p>See <a href="background_processes.md#tracking-progress">Background Processes: Tracking
+                                        Progress</a> for details.</p>
+                                </td>
+                            </tr>
+                        </snippet>
                     </table>
                 </tab>
                 <tab title="2024.1" group-key="2024.1">
                     <table style="header-column">
                         <tr>
                             <td width="17%">Suspending Context</td>
-                            <include from="execution_contexts.topic" element-id="progress-reporting-coroutine-execution-context-cell">
-                                <var name="id_postfix" value="-8d50f5"/>
-                            </include>
+                            <include from="execution_contexts.topic" element-id="progress-reporting-coroutine-execution-context-cell"/>
                         </tr>
                         <tr>
                             <td>Blocking Context</td>
@@ -286,9 +289,7 @@
                                 unavailable
                             </td>
                         </tr>
-                        <include from="execution_contexts.topic" element-id="progress-reporting-progress-indicator-row">
-                            <var name="id_postfix" value="-8d50f7"/>
-                        </include>
+                        <include from="execution_contexts.topic" element-id="progress-reporting-progress-indicator-row"/>
                     </table>
                 </tab>
             </tabs>

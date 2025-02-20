@@ -19,8 +19,9 @@ Annotator
 ## B
 
 Blocking Context
-: Executing in the [blocking context](execution_contexts.topic#blocking-context) means executing tasks on a thread without access to a coroutine context.
+: Executing in the [Blocking Context](execution_contexts.topic#blocking-context) means executing tasks on a thread without access to a coroutine context.
 &rarr;&nbsp;_Suspending Context_
+&rarr;&nbsp;_Coroutine Execution Context_
 &rarr;&nbsp;_Coroutine_
 
 ## C
@@ -37,6 +38,9 @@ Coroutine Dispatcher
 Determines a thread or a thread pool the corresponding coroutine is executed on.
 See [](coroutine_dispatchers.md) for more details.
 &rarr;&nbsp;_Coroutine_
+
+Coroutine Execution Context
+: Executing in the [Coroutine Execution Context](execution_contexts.topic#blocking-context) means executing code (suspending or non-suspending/blocking) from a coroutine.
 
 Coroutine Scope
 : [Coroutine scopes](coroutine_scopes.md) define the lifetime of coroutines and ensure proper handling of coroutine cancellations and structured concurrency.
@@ -130,8 +134,9 @@ Stubs
 : A subset of a &rarr;&nbsp;_Program Structure Interface_ tree in a binary serialized compact format, see [](stub_indexes.md).
 
 Suspending Context
-: Executing in the [suspending context](execution_contexts.topic#suspending-context-coroutines) means executing tasks in Kotlin coroutines.
+: Executing in the [Suspending Context](execution_contexts.topic#suspending-context-coroutines) means executing tasks in Kotlin coroutines.
 &rarr;&nbsp;_Blocking Context_
+&rarr;&nbsp;_Coroutine Execution Context_
 &rarr;&nbsp;_Coroutine_
 
 Symbol

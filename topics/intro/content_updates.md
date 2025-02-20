@@ -20,6 +20,10 @@ Support Channel Update
 Updated support channels to the new [JetBrains Platform](https://platform.jetbrains.com) community forum.
 See the [The JetBrains Platform Gets a New Community Space](https://blog.jetbrains.com/platform/2025/02/the-jetbrains-platform-gets-a-new-community-space/) blog post for more context.
 
+Revamped Threading and Execution Context topics
+:
+Reorganized [threading](threading_model.md) and [coroutines](kotlin_coroutines.md) topics structure.
+Updated [](execution_contexts.topic) with the information about contexts available since 2024.2.
 
 ### January
 {january-25}

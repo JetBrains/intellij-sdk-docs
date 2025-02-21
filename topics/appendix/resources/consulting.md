@@ -21,6 +21,7 @@ Also, consider posting requests at [JetBrains Platform Forum: Collaboration & Id
 | Dmitry Kandalov    | [dmitry.kandalov@gmail.com][dk]                            | Custom Plugin Development (e.g. using [LivePlugin][lp])                      |
 | Jonathan Lermitage | [jonathan@lermitage.biz][jle1]                             | Developer of [12 plugins][jle2] (e.g. [Extra Icons][jle3])                   |
 | Artsiom Chapialiou | [achapialiou@gmail.com][ac1]                               | Plugin's [author][ac2] and core developer ([Qodo][ac3], [Snyk][ac4], etc.)   |
+| Trent Jones        | [contact.revenate@gmail.com][tj1]                          | Custom Plugin Development, Developer of [Actionate][tj2]                     |
 
 [ja]: https://www.j-a.dev
 [ja2]: https://www.plugin-dev.com
@@ -48,5 +49,7 @@ Also, consider posting requests at [JetBrains Platform Forum: Collaboration & Id
 [ac2]: https://plugins.jetbrains.com/vendor/ccf55862-f380-4c27-a139-7ba670cfce74
 [ac3]: https://plugins.jetbrains.com/plugin/21206-qodo-gen-formerly-codiumate
 [ac4]: https://plugins.jetbrains.com/plugin/10972-snyk-security
+[tj1]: mailto:contact.revenate@gmail.com
+[tj2]: https://github.com/revenate/actionate
 
 Please [submit a PR or file a YouTrack issue](getting_help.topic) for changes or additions to this list.

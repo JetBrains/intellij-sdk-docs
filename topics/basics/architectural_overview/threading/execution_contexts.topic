@@ -53,7 +53,9 @@
                     While code executed in the Coroutine Execution Context should use suspending functions,
                     sometimes it is required to call non-suspending/blocking APIs that use methods such as
                     <code>ProgressManager.checkCanceled()</code> or <code>ModalityState.defaultModalityState()</code>.
-                    Since 2024.2, these methods work as expected without the need to switch to the Blocking Context.
+                    Since 2024.2, these methods work as expected without the need to switch to the Blocking Context
+                    explicitly with <a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt">
+                        <code>blockingContext()</code></a> (in 2024.2+, it is effectively a no-operation function).
                 </p>
 
                 <tip>

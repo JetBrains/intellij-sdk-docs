@@ -103,7 +103,7 @@ The <path>plugin.xml</path> configuration file must specify the dependency on th
 ### IDE Setup
 
 Since 2024.2, LSP API sources are provided with the `IntelliJ IDEA Ultimate sources` artifact.
-See [](tools_intellij_platform_gradle_plugin.md#attaching-sources) on how to enable downloading sources.
+See [](tools_intellij_platform_gradle_plugin.md#attaching-sources-in-the-ide) on how to enable downloading sources.
 Then, use <ui-path>Navigate | Class...</ui-path> to open the `LspServerManager` class.
 In the opened editor, invoke <control>Download IntelliJ Platform sources</control> to download and attach sources.
 

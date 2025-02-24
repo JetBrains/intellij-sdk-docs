@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # IntelliJ Platform Gradle Plugin (2.x)
 
@@ -40,7 +40,7 @@ IntelliJ Platform Gradle Plugin 2.x requires the following *minimal* versions:
 
   See <control>Gradle JVM</control> in <ui-path>Settings | Build, Execution, Deployment | Build Tools | Gradle</ui-path>.
 
-## Usage
+## Setup
 
 > Note that the plugin has a new ID `org.jetbrains.intellij.platform`.
 >
@@ -72,7 +72,7 @@ plugins {
 
 If migrating from the [](tools_gradle_intellij_plugin.md), replace the old `org.jetbrains.intellij` identifier to `org.jetbrains.intellij.platform` and apply its latest `%intellij-platform-gradle-plugin-version%` version.
 
-### Snapshot Release
+### Using Snapshot Release
 
 To use the latest snapshot version of this plugin, add the following to the Gradle Settings file:
 
@@ -123,7 +123,7 @@ When working in a [](#multi-module-project-structure) it is required to use [](t
 
 The [](tools_intellij_platform_gradle_plugin_plugins.md#settings) plugin (`org.jetbrains.intellij.platform.settings`) allows for adding plugin development related repositories right in the <path>settings.gradle.kts</path> file if project configuration involves [](#configuration.dependencyResolutionManagement).
 
-### Attaching Sources
+### Attaching Sources in the IDE
 
 To attach IntelliJ Platform sources in the IDE, the <control>Download sources</control> setting has to be enabled in IDE versions 2023.2 and later.
 This option respects the plugin's [](tools_intellij_platform_gradle_plugin_gradle_properties.md#downloadSources) property, which is enabled by default.

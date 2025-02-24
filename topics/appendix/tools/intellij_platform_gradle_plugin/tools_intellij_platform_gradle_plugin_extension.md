@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # IntelliJ Platform Extension
 
@@ -13,7 +13,7 @@ It consists of sections dedicated to the general Gradle plugin configuration, <p
 ## IntelliJ Platform
 {#intellijPlatform}
 
-After the IntelliJ Platform Gradle Plugin is [applied](tools_intellij_platform_gradle_plugin.md#usage), the `intellijPlatform` extension can be used to configure the plugin and common settings of the provided tasks.
+After the IntelliJ Platform Gradle Plugin is [applied](tools_intellij_platform_gradle_plugin.md#setup), the `intellijPlatform` extension can be used to configure the plugin and common settings of the provided tasks.
 
 **Example:**
 

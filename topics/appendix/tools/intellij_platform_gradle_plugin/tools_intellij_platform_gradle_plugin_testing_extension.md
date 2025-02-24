@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # IntelliJ Platform Testing Extension
 
@@ -15,7 +15,7 @@ For each of the custom tasks, a dedicated sandbox is created to isolate them for
 
 {#intellijPlatformTesting}
 
-After the IntelliJ Platform Gradle Plugin is [applied](tools_intellij_platform_gradle_plugin.md#usage), the `intellijPlatformTesting` extension can be used for registering new tasks to fulfil specific requirements of the project.
+After the IntelliJ Platform Gradle Plugin is [applied](tools_intellij_platform_gradle_plugin.md#setup), the `intellijPlatformTesting` extension can be used for registering new tasks to fulfil specific requirements of the project.
 
 The extension exposes four `NamedDomainObjectContainers` which allow for creating new objects of given types.
 Registering of a custom task which allows for adjusting the IntelliJ Platform type and version can be done by using one of the below containers, depending on the task purpose.

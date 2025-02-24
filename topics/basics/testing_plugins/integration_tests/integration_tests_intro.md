@@ -13,45 +13,63 @@ Integration testing framework consists of two main components:
 
 The Starter framework exclusively supports JUnit 5, as it leverages JUnit 5's extensions and specialized listeners that aren't available in JUnit 4.
 
-Add the following dependencies to `build.gradle.kts`:
+To create a new task - `integrationTest`, define new test source roots - `intTest`, and add required dependencies, update the `build.gradle.kts` file:
 
 ```kotlin
 dependencies {
   intellijPlatform {
-      //...
-      testFramework(TestFrameworkType.Starter)
+    //...
+    testFramework(TestFrameworkType.Starter)
   }
 
-  testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
-  testImplementation("org.kodein.di:kodein-di-jvm:7.20.2")
+sourceSets {
+  create("intTest") {
+    compileClasspath += sourceSets.main.get().output
+    runtimeClasspath += sourceSets.main.get().output
+  }
 }
-```
 
-`testFramework(TestFrameworkType.Starter)` will add all required dependencies for writing integration tests - Starter and Driver frameworks.
+val intTestImplementation by configurations.getting {
+  extendsFrom(configurations.testImplementation.get())
+}
 
-> Note: As the Driver and UI components continue to evolve, we aim to keep the Starter API stable, with occasional breaking changes.
->
-{style="note"}
+dependencies {
+  intTestImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
+  intTestImplementation("org.kodein.di:kodein-di-jvm:7.20.2")
+  intTestImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.1")
+}
 
-## Integrating Starter with IntelliJ Platform Gradle Plugin
-
-To test a plugin, the Starter framework needs to know where to find the plugin distribution for installation in the IDE. This requires configuring a Gradle test task.
-
-Add the following configuration to `build.gradle.kts`:
-
-```
-tasks.test {
+val integrationTest = task<Test>("integrationTest") {
+  description = "Runs integration tests."
+  group = "verification"
+  testClassesDirs = sourceSets["intTest"].output.classesDirs
+  classpath = sourceSets["intTest"].runtimeClasspath
   dependsOn("buildPlugin")
   systemProperty("path.to.build.plugin", tasks.buildPlugin.get().archiveFile.get().asFile.absolutePath)
   useJUnitPlatform()
 }
 ```
 
+We need to specify the following dependencies:
+
+* `testFramework(TestFrameworkType.Starter)` will add all required dependencies for writing integration tests - Starter and Driver frameworks.
+* `org.kodein.di:kodein-di-jvm` is a dependency injection framework used by Starter for configuration.
+* `org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm` is required for Starter framework which is implemented using Kotlin coroutines.
+
 This configuration does the following:
 
+* Imports test implementation dependencies to intTest implementation dependencies
+* Defines new test source roots in `src/intTest`
+* Creates a new task `integrationTest` in `verification` group
 * Makes the test task depend on `buildPlugin`, ensuring plugin is built before tests run.
-* Sets the `path.to.build.plugin` system property to point to the plugin distribution file.
+* To test a plugin, the Starter framework needs to know where to find the plugin distribution for installation in the IDE. `path.to.build.plugin` system property points to the plugin distribution file.
 * Enables JUnit Platform for test execution.
+
+For more details about configuring integration tests, please refer to [Gradle docs](https://docs.gradle.org/current/userguide/java_testing.html#sec:configuring_java_integration_tests).
+
+> Note: As the Driver and UI components continue to evolve, we aim to keep the Starter API stable, with occasional breaking changes.
+>
+{style="note"}
 
 ## Creating the First Integration Test
 
@@ -61,7 +79,7 @@ Now that we've completed the configuration, let's write our first integration te
 * Wait for all background processes to complete.
 * Perform a shutdown.
 
-Create a new Kotlin file in `src/test/kotlin` with the following code:
+Create a new Kotlin file in `src/intTest/kotlin` with the following code:
 
 ```kotlin
 class PluginTest {

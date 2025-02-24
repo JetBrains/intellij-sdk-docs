@@ -73,6 +73,7 @@ plugins {
 If migrating from the [](tools_gradle_intellij_plugin.md), replace the old `org.jetbrains.intellij` identifier to `org.jetbrains.intellij.platform` and apply its latest `%intellij-platform-gradle-plugin-version%` version.
 
 ### Using Snapshot Release
+{collapsible="true" default-state="collapsed"}
 
 To use the latest snapshot version of this plugin, add the following to the Gradle Settings file:
 

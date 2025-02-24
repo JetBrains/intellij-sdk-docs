@@ -127,6 +127,8 @@ The described lock characteristics conclude the following:
 - multiple threads can read data at the same time
 - once a thread acquires the write lock, no other threads can read or write data
 
+Note that acquiring write locks is prioritized over read locks.
+
 Acquiring and releasing locks explicitly in code would be verbose and error-prone and must never be done by plugins.
 The IntelliJ Platform enables write intent lock implicitly on EDT (see [](#locks-and-edt) for details) and provides an [API for accessing data under read or write locks](#accessing-data).
 

@@ -288,15 +288,15 @@ val psiFile = runReadAction { // read action 2
 <tab title="Java" group-key="java">
 
 ```java
-VirtualFile virtualFile = ReadAction.compute(() -> {
-    // read a virtual file
+VirtualFile virtualFile = ReadAction.compute(() -> { // read action 1
+  // read a virtual file
 });
 // do other time-consuming work...
 PsiFile psiFile = ReadAction.compute(() -> { // read action 2
-    if (virtualFile.isValid()) { // check if the virtual file is valid
-        return PsiManager.getInstance(project).findFile(virtualFile);
-    }
-    return null;
+  if (virtualFile.isValid()) { // check if the virtual file is valid
+    return PsiManager.getInstance(project).findFile(virtualFile);
+  }
+  return null;
 });
 ```
 

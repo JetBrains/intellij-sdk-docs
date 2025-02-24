@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Persisting State of Components
 
@@ -217,20 +217,22 @@ It is possible to share the persistent state of components between different IDE
 This allows users to have the same settings on every development machine or to share their settings within a team.
 
 Settings can be shared via the following functionalities:
-- _[Settings Sync](https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html#IDE_settings_sync)_ plugin that allows synchronizing settings on JetBrains servers. Users can select the category of settings that are synchronized.
+- _[Backup and Sync](https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html#IDE_settings_sync)_ (formerly _Settings Sync_) plugin that allows synchronizing settings on JetBrains servers. Users can select the category of settings that are synchronized.
 - _[Settings Repository](https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html#settings-repository)_ plugin that allows synchronizing settings in a Git repository created and configured by a user.
 - _[Export Settings](https://www.jetbrains.com/help/idea/2019.3/sharing-your-ide-settings.html#import-export-settings)_ feature that allows for the manual import and export of settings.
 
-> Synchronization via the _Settings Sync_ or _Settings Repository_ plugins only works when these plugins are installed and enabled.
+> Synchronization via the _Backup and Sync_ or _Settings Repository_ plugins only works when these plugins are installed and enabled.
 
 The decision about making a specific component's state shareable should be made carefully.
 Only the settings that aren't specific to a given machine should be shared, for example, paths to user-specific directories shouldn't be shared.
 If a component contains both shareable and non-shareable data, it should be split into two separate components.
 
-#### Settings Sync Plugin
+#### Backup and Sync Plugin
 <primary-label ref="2022.3"/>
 
-To include a plugin's component state in the _Settings Sync_ plugin synchronization, the following requirements must be met:
+> The _Settings Sync_ plugin has been renamed to _Backup and Sync_ in 2024.3.
+
+To include a plugin's component state in the _Backup and Sync_ plugin synchronization, the following requirements must be met:
 - The `RoamingType` is defined via the `roamingType` attribute of the `@Storage` annotation and is not equal to `DISABLED`.
 - The `SettingsCategory` is defined via the `category` attribute of the `@State` annotation and is not equal to `OTHER`.
 - There is no other `PersistentStateComponent`, which is stored in the same XML file and has a different `RoamingType`.

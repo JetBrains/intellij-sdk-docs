@@ -26,10 +26,10 @@ The topic files themselves are [Markdown](https://github.github.com/gfm/) files 
 Each Markdown file **must** start with a copyright notice, formatted using HTML comment notation:
 
 ```html
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 ```
 
-It **must** be followed by a header defining its title using level 1 heading:
+It **must** be followed by a header defining its title using a level 1 heading:
 
 ```
 # Contributing to the IntelliJ Platform SDK
@@ -39,7 +39,7 @@ The page title should be as concise as possible, so it can be reused in the [](#
 
 #### Excerpt
 
-Every page **should** provide a short excerpt (usually one sentence) using dedicated `<link-summary>` tag before the main page contents:
+Every page **should** provide a short excerpt (usually one sentence) using the dedicated `<link-summary>` tag before the main page contents:
 
 ```html
 
@@ -48,7 +48,7 @@ Every page **should** provide a short excerpt (usually one sentence) using dedic
 
 #### Highlighted Links
 
-A page can highlight related topics and other important links before the actual content using `<tldr>` tag.
+A page can highlight related topics and other important links before the actual content using the `<tldr>` tag.
 Links must be grouped using "**Bold Category Name**: link1, link2, \[...]" ([Example](language_and_filetype.md)).
 
 Use _Reference_ to link to other topics, _Code_ to link to code/files, _UI Guidelines_ for links to [UI Guidelines](ui_guidelines_welcome.topic), and _Product Help_ for links to [IntelliJ IDEA Help](https://www.jetbrains.com/help/idea).
@@ -67,7 +67,7 @@ Consistent terminology helps the reader grasp new concepts more quickly:
   Use the full phrase in the SDK documentation.
 * IDEs based on the IntelliJ Platform are described as _IntelliJ Platform-based IDEs_.
   Once that term is used on a page, authors may use _IDEs_.
-* When referring to JetBrains products always use the full name such as _IntelliJ IDEA Ultimate Edition_.
+* When referring to JetBrains products, always use the full name such as _IntelliJ IDEA Ultimate Edition_.
   However, only use product names when extensibility or functionality is particular to a product.
 
 > TODO/todo comments are discouraged in the main branch of `intellij-sdk-docs`.
@@ -124,7 +124,7 @@ In some cases (e.g., the same heading text appears multiple times on the same pa
 General Markdown links have the default Markdown link style:
 
 * `[Gradle](https://gradle.org)`{disable-links} ([Gradle](https://gradle.org)) links to an external site, such as companies, articles, etc.
-  If URL contains `%` character, append `{ignore-vars="true"}`.
+  If the URL contains a `%` character, append `{ignore-vars="true"}`.
 * Linking to pages and page sections within the SDK documentation:
     * `[Page Title](page.md)`{disable-links} or `[](page.md)` (use page title as link text) links to an SDK doc page (all located under <path>/topics</path>).
       Note that the extension is <path>.md</path>, _NOT_ <path>.html</path>.
@@ -139,7 +139,7 @@ General Markdown links have the default Markdown link style:
 
 #### Links to IntelliJ Platform Source
 
-Links to files in the IntelliJ Platform (`intellij-community`) repository use `%\gh-ic%` prefix instead of the full URL to the repository.
+Links to files in the IntelliJ Platform (`intellij-community`) repository use the `%\gh-ic%` prefix instead of the full URL to the repository.
 Links to files in source code packages in other GitHub repositories follow the same rules, except the links use a different custom `gh-...` prefix defined in <path>v.list</path>.
 
 * `[README.md](%\gh-ic%/README.md)`{disable-links} links to any general, non-code information files. ([README.md](%gh-ic%/README.md))
@@ -196,11 +196,11 @@ Syntax highlighting is applied by specifying the language after the first set of
 
 Supported languages include `xml`, `java`, `kotlin`, `groovy`, `bash`, `md`, `php`, and `text` for plaintext.
 
-> Source code blocks must have one blank line before and after them, and must have a language specification for highlighting (use `text` as fallback).
+> Source code blocks must have one blank line before and after them and must have a language specification for highlighting (use `text` as fallback).
 >
 {style="note"}
 
-Whole files can be imported on a page using `src` attribute after code fences specifying the full path relative to <path>code_samples</path> root folder.
+Whole files can be imported on a page using the `src` attribute after code fences specifying the full path relative to the <path>code_samples</path> root folder.
 
 `{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFoldingBuilder.java"}`
 
@@ -250,7 +250,7 @@ The styles available for callouts are:
   This callout is reserved for essential points and concepts.
 * `warning`—Information that is critical for the user to understand to prevent failures or errors.
 
-Complex callouts can also specify `title` attribute:
+Complex callouts can also specify the `title` attribute:
 
 ```
 > This is a note.
@@ -272,7 +272,7 @@ Complex callouts can also specify `title` attribute:
 Every page typically has a dedicated subdirectory within root <path>/images</path>.
 
 Images in this documentation are generally screenshots.
-For consistency, images should be 296, 460 or 706 pixels wide.
+For consistency, images should be 296, 460, or 706 pixels wide.
 The preferred image format is PNG at a resolution of 144 DPI.
 A resolution of 72 DPI is acceptable but may look blurry on high-resolution monitors.
 
@@ -325,13 +325,13 @@ For **SVG** images, use this notation:
 The table of contents for the site is displayed in the tree view on the left side of the site, and it is generated from the <path>ijs.tree</path> file.
 The list can have nested items, which are displayed as child items in the table of contents.
 
-If absolutely required, overriding the page title text to show in table of contents is possible via `toc-title` attribute.
+If absolutely required, overriding the page title text to show in the table of contents is possible via the `toc-title` attribute.
 
 ### Placeholders
 
 If a node does not have its `id` attribute specified, it will still appear in the table of contents but will be greyed out and not clickable.
 It acts as a placeholder for a documentation item.
-A placeholder is useful to keep track of what should be documented, but hasn't yet, and can be helpful to show readers that the topic exists, but isn't yet documented (Pull Requests always welcome!).
+A placeholder is useful to keep track of what should be documented but hasn't yet, and can be helpful to show readers that the topic exists but isn't yet documented (Pull Requests always welcome!).
 
 ### Redirects
 

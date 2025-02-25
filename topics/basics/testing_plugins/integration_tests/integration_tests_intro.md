@@ -50,7 +50,7 @@ val integrationTest = task<Test>("integrationTest") {
 }
 ```
 
-We need to specify the following dependencies:
+The following dependencies are required:
 
 * `testFramework(TestFrameworkType.Starter)` will add all required dependencies for writing integration tests - Starter and Driver frameworks.
 * `org.kodein.di:kodein-di-jvm` is a dependency injection framework used by Starter for configuration.
@@ -62,20 +62,21 @@ This configuration does the following:
 * Defines new test source roots in `src/intTest`
 * Creates a new task `integrationTest` in `verification` group
 * Makes the test task depend on `buildPlugin`, ensuring plugin is built before tests run.
-* To test a plugin, the Starter framework needs to know where to find the plugin distribution for installation in the IDE. `path.to.build.plugin` system property points to the plugin distribution file.
+* To test a plugin, the Starter framework needs to know where to find the plugin distribution for installation in the IDE.
+`path.to.build.plugin` system property points to the plugin distribution file.
 * Enables JUnit Platform for test execution.
 
 For more details about configuring integration tests, please refer to [Gradle docs](https://docs.gradle.org/current/userguide/java_testing.html#sec:configuring_java_integration_tests).
 
-> Note: As the Driver and UI components continue to evolve, we aim to keep the Starter API stable, with occasional breaking changes.
+> Note: Driver and UI components are in the experimental state and subject to API changes.
 >
 {style="note"}
 
 ## Creating the First Integration Test
 
-Now that we've completed the configuration, let's write our first integration test, which will:
+Now that the configuration is complete, it's time to write the first integration test, which will:
 
-* Start the IDE with our plugin installed.
+* Start the IDE with the plugin installed.
 * Wait for all background processes to complete.
 * Perform a shutdown.
 
@@ -98,7 +99,9 @@ Let's break down each part of the test:
 
 ### 1. Context creation
 
-`Starter.newContext(testName = "testExample", TestCase(IdeProductProvider.IC, projectInfo = NoProject).withVersion("2024.3"))`
+```kotlin
+Starter.newContext(testName = "testExample", TestCase(IdeProductProvider.IC, projectInfo = NoProject).withVersion("2024.3"))
+```
 
 The Context object stores IDE runtime configuration:
 
@@ -107,7 +110,8 @@ The Context object stores IDE runtime configuration:
 * Project configuration (using NoProject for this example).
 * Custom VM options, paths, and SDK settings.
 
-The `testName` parameter defines the folder name for test artifacts, which is useful when running multiple IDE instances in a single test. We're using IntelliJ IDEA Community Edition version 2024.3, and we're starting the IDE without any project, so the welcome screen will be shown.
+The `testName` parameter defines the folder name for test artifacts, which is useful when running multiple IDE instances in a single test.
+The test case uses IntelliJ IDEA Community Edition version 2024.3, and starts the IDE without any project, so the welcome screen will be shown.
 
 ### 2. Plugin installation
 
@@ -118,7 +122,7 @@ The `testName` parameter defines the folder name for test artifacts, which is us
 }
 ```
 
-This step configures plugin installation using the plugin path we defined in our Gradle configuration.
+This step configures plugin installation using the plugin path defined in the Gradle configuration with the `path.to.build.plugin` system property.
 
 > `PluginConfigurator` can install plugins from local paths or Marketplace.
 >
@@ -138,7 +142,8 @@ These two methods:
 
 The empty lambda is used for IDE interactions (`useDriverAndCloseIde`).
 
-> When the test is run for the first time, it may take longer than expected since it needs to download the IDE. Subsequent runs will be faster, using the cached IDE version.
+> When the test is run for the first time, it may take longer than expected since it needs to download the IDE. 
+> Subsequent runs will be faster, using the cached IDE version.
 >
 {style="note"}
 
@@ -164,7 +169,8 @@ This dual-process architecture explains several key aspects of integration testi
 
 ## Opening Projects in Tests
 
-While starting an IDE with an empty project is useful, sometimes we need actual projects to verify real-world scenarios. Let's modify our test to open a project.
+While starting the IDE with an empty project is useful, often it is required to use actual projects to verify real-world scenarios. 
+Let's modify the test to open a project.
 
 The framework supports several ways to specify test projects:
 
@@ -172,7 +178,7 @@ The framework supports several ways to specify test projects:
 * **Remote archives**: `RemoteArchiveProjectInfo("https://github.com/JetBrains/intellij-community/archive/master.zip")`
 * **Local projects**: `LocalProjectInfo(Path("src/test/resources/test-projects/simple-project"))`
 
-Here's our test modified to open a GitHub project:
+The following example shows how to open a GitHub project:
 
 ```kotlin
 @Test
@@ -192,23 +198,28 @@ fun simpleTest() {
 }
 ```
 
-While simple, this test verifies a critical aspect: our plugin doesn't interfere with IDE startup.
+While simple, this test verifies a critical aspect: the plugin doesn't interfere with IDE startup.
 
-> We added a call `waitForIndicators` into the lambda to make sure that we wait till all indicators are gone before exiting the IDE.
+> `waitForIndicators` inside the lambda ensures that the test waits till all indicators are gone before exiting the IDE.
 >
 {style="note"}
 
 ## Catching Exceptions from IDE
 
-Our test has one critical limitation: it won't detect exceptions or freezes occurring within the IDE process. Let's understand why and how to fix this.
+The test has one critical limitation: it won't detect exceptions or freezes occurring within the IDE process. 
+Let's understand why and how to fix this.
 
 Due to the two-process architecture:
 
 * Exceptions in the IDE process aren't automatically propagated to the test process.
 * A bundled plugin collects exceptions from the IDE's `MessageBus`.
 * These exceptions are stored in the error folder within the logs.
+* The Starter framework collects exceptions from the IDE and pass them to the method `reportTestFailure` in object registered as `CIServer` in DI.
 
-The Starter framework uses TeamCity reporting by default, falling back to `NoCIServer` for other environments. However, we can customize this behavior using Kodein Dependency Injection. Here's how to make tests fail when IDE exceptions occur:
+TeamCity reporting is used by default, falling back to `NoCIServer` for other environments.
+However, this can be customized by using Kodein Dependency Injection.
+
+The following example shows how to make tests fail when IDE exceptions occur:
 
 ```kotlin
 init {
@@ -225,18 +236,16 @@ init {
 }
 ```
 
-In the code above:
+The code above:
 
-* We create a custom implementation of `CIServer` that extends `NoCIServer`.
-* We override only the `reportTestFailure` method to fail the test with detailed error information.
-* The Starter framework collects exceptions from the IDE and passes them to our custom implementation.
-* Any IDE exception now causes the test to fail with a descriptive message.
+* Overrides a default `CIServer` object with a custom implementation.
+* Provides `reportTestFailure` method which fails the test with detailed error information if any IDE exception is recorded during the test run.
 
 This extensibility pattern can be applied to customize other aspects of the Starter framework as needed.
 
 ## Complete Example
 
-Here's our complete test implementation that forms the foundation for future plugin testing:
+Here's the complete test implementation that forms the foundation for future plugin testing:
 
 ```kotlin
 class PluginTest {

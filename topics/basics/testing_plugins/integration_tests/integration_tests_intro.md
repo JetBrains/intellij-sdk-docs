@@ -100,7 +100,10 @@ Let's break down each part of the test:
 ### 1. Context creation
 
 ```kotlin
-Starter.newContext(testName = "testExample", TestCase(IdeProductProvider.IC, projectInfo = NoProject).withVersion("2024.3"))
+Starter.newContext(
+  testName = "testExample",
+  TestCase(IdeProductProvider.IC, projectInfo = NoProject
+).withVersion("2024.3"))
 ```
 
 The Context object stores IDE runtime configuration:

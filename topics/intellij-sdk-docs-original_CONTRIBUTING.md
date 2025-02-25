@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Basic rules on contributing to the IntelliJ Platform SDK documentation.</link-summary>
 
@@ -25,7 +25,3 @@ Before creating or altering content, please consult these guides:
   This guide describes documentation conventions in terms of content style and syntax.
 * [](sdk_code_guidelines.md).
   Conventions for code sample organization, project settings, and naming conventions are described in this document.
-
-> Currently, building the site locally is not possible.
->
-{style="note"}

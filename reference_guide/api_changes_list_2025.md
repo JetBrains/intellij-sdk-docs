@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 # Incompatible Changes in IntelliJ Platform and Plugins API 2025.*
 
@@ -68,6 +68,10 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 <include from="snippets.md" element-id="apiChangesJavaVersion"/>
 
 <include from="snippets.md" element-id="gradlePluginVersion"/>
+
+## 2025.2
+
+### IntelliJ Platform 2025.2
 
 ## 2025.1
 

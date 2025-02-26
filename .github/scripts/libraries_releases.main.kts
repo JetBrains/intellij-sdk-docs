@@ -43,7 +43,7 @@ val vars = releasesList.mapValues { (key, releaseInfo) ->
         val content = URL(releaseInfo.url).readText()
         Json.decodeFromString<JsonArray>(content)
           .mapNotNull { it.jsonObject["name"] }
-          .map { it.jsonPrimitive.content.removePrefix("v").removePrefix("Version ") }
+          .map { it.jsonPrimitive.content.removePrefix("v") }
           .run(releaseInfo.transformer)
       } catch (e: Exception) {
         println("Cannot resolve the latest $key version: ${e.message}")

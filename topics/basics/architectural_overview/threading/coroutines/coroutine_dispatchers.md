@@ -69,7 +69,7 @@ In Kotlin, a standard dispatcher for UI-based activities is [`Dispatchers.Main`]
 
 In the IntelliJ Platform, `Dispatchers.Main` differs from `Dispatchers.EDT`:
 1. It is forbidden to initiate read or write actions in `Dispatchers.Main`. We are treating `Dispatchers.Main` as a pure UI dispatcher, and we want to prevent accidental access to the IntelliJ Platform model to avoid UI freezes;
-2. It uses `any` [modality state](threading_model.md#invoking-operations-on-edt-and-modality) if it cannot infer modality from the coroutine context. This helps to ensure progress guarantees in libraries that use `Dispatchers.Main`.
+2. `Dispatchers.Main` uses `any` [modality state](threading_model.md#invoking-operations-on-edt-and-modality) if it cannot infer modality from the coroutine context. This helps to ensure progress guarantees in libraries that use `Dispatchers.Main`.
 
 </tab>
 

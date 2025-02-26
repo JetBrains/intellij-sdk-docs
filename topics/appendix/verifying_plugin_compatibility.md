@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Verifying Plugin Compatibility
 
@@ -11,6 +11,16 @@ For API annotated with [`@ApiStatus.Internal`](%gh-java-annotations%/common/src/
 See also [](build_number_ranges.md#multipleIDEVersions).
 
 ## Plugin Verifier
+
+<tldr id="tldr">
+
+**Current Release**: %plugin-verifier-version%
+
+**GitHub**: [Releases & Changelog](https://github.com/JetBrains/intellij-plugin-verifier/releases), [Issue Tracker](https://youtrack.jetbrains.com/issues/MP?q=%23%7BPlugin%20Verifier%7D%20)
+
+**JetBrains Platform Forum**: [Plugin Verifier](https://platform.jetbrains.com/c/intellij-platform/plugin-verifier/7) category
+
+</tldr>
 
 ### Using with Gradle
 

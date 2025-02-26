@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Tasks
 
@@ -1631,7 +1631,7 @@ Default value
 
 Runs the [IntelliJ Plugin Verifier](verifying_plugin_compatibility.md) CLI tool to check the binary compatibility with specified IDE builds.
 
-Due to caching, the latest Plugin Verifier release version might not be picked up by Gradle immediately.
+Due to caching, the latest Plugin Verifier release version (%plugin-verifier-version%) might not be picked up by Gradle immediately.
 In such cases, [refresh dependencies](https://docs.gradle.org/current/userguide/dependency_caching.html#sec:refreshing-dependencies)
 manually.
 

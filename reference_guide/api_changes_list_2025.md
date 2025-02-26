@@ -73,6 +73,11 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ### IntelliJ Platform 2025.1
 
+The code scheduled with `SwingUtilities.invokeLater` and `SwingUtilities.invokeAndWait` does not hold the write-intent lock
+: Consider using an explicit wrapping with `com.intellij.openapi.application.ReadAction.compute` or `com.intellij.openapi.application.WriteAction.run(com.intellij.util.ThrowableRunnable<E>)`.
+
+Coroutines running under `Dispatchers.Main` do not hold the write-intent lock
+: To restore the old behavior, consider using `Dispatchers.EDT`.
 
 ### Kotlin Plugin 2025.1
 

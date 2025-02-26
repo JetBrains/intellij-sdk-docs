@@ -58,12 +58,12 @@ The following dependencies are required:
 
 This configuration does the following:
 
-* Imports test implementation dependencies to intTest implementation dependencies
-* Defines new test source roots in `src/intTest`
-* Creates a new task `integrationTest` in `verification` group
-* Makes the test task depend on `buildPlugin`, ensuring plugin is built before tests run.
+* Imports test implementation dependencies to `intTest` implementation dependencies
+* Defines new test source roots in <path>src/intTest</path>
+* Creates a new task `integrationTest` in the `verification` group
+* Makes the test task depend on `buildPlugin`, ensuring the plugin is built before tests run.
 * To test a plugin, the Starter framework needs to know where to find the plugin distribution for installation in the IDE.
-`path.to.build.plugin` system property points to the plugin distribution file.
+The `path.to.build.plugin` system property points to the plugin distribution file.
 * Enables JUnit Platform for test execution.
 
 For more details about configuring integration tests, please refer to [Gradle docs](https://docs.gradle.org/current/userguide/java_testing.html#sec:configuring_java_integration_tests).
@@ -83,10 +83,15 @@ Now that the configuration is complete, it's time to write the first integration
 Create a new Kotlin file in `src/intTest/kotlin` with the following code:
 
 ```kotlin
+
 class PluginTest {
   @Test
   fun simpleTestWithoutProject() {
-    Starter.newContext(testName = "testExample", TestCase(IdeProductProvider.IC, projectInfo = NoProject).withVersion("2024.3")).apply {
+    Starter.newContext(
+      testName = "testExample",
+      TestCase(IdeProductProvider.IC, projectInfo = NoProject)
+        .withVersion("2024.3")
+    ).apply {
       val pathToPlugin = System.getProperty("path.to.build.plugin")
       PluginConfigurator(this).installPluginFromPath(Path(pathToPlugin))
     }.runIdeWithDriver().useDriverAndCloseIde {
@@ -97,7 +102,7 @@ class PluginTest {
 
 Let's break down each part of the test:
 
-### 1. Context creation
+### 1. Context Creation
 
 ```kotlin
 Starter.newContext(
@@ -110,13 +115,13 @@ The Context object stores IDE runtime configuration:
 
 * IDE type (e.g., IntelliJ Community, PhpStorm, GoLand).
 * IDE version (2024.3 in this example).
-* Project configuration (using NoProject for this example).
+* Project configuration (using `NoProject` for this example).
 * Custom VM options, paths, and SDK settings.
 
 The `testName` parameter defines the folder name for test artifacts, which is useful when running multiple IDE instances in a single test.
 The test case uses IntelliJ IDEA Community Edition version 2024.3, and starts the IDE without any project, so the welcome screen will be shown.
 
-### 2. Plugin installation
+### 2. Plugin Installation
 
 ```kotlin
 .apply {
@@ -131,7 +136,7 @@ This step configures plugin installation using the plugin path defined in the Gr
 >
 {style="note"}
 
-### 3. IDE life cycle management
+### 3. IDE Life Cycle Management
 
 ```kotlin
 .runIdeWithDriver().useDriverAndCloseIde {
@@ -190,7 +195,10 @@ fun simpleTest() {
     "testExample",
     TestCase(
       IdeProductProvider.IC,
-      GitHubProject.fromGithub(branchName = "master", repoRelativeUrl = "JetBrains/ij-perf-report-aggregator")
+      GitHubProject.fromGithub(
+        branchName = "master",
+        repoRelativeUrl = "JetBrains/ij-perf-report-aggregator"
+      )
     ).withVersion("2024.2")
   ).apply {
     val pathToPlugin = System.getProperty("path.to.build.plugin")
@@ -230,7 +238,12 @@ init {
     extend(di)
     bindSingleton<CIServer>(overrides = true) {
       object : CIServer by NoCIServer {
-        override fun reportTestFailure(testName: String, message: String, details: String, linkToLogs: String?) {
+        override fun reportTestFailure(
+          testName: String,
+          message: String,
+          details: String,
+          linkToLogs: String?
+        ) {
           fail { "$testName fails: $message. \n$details" }
         }
       }
@@ -275,7 +288,10 @@ class PluginTest {
       "testExample",
       TestCase(
         IdeProductProvider.IC,
-        GitHubProject.fromGithub(branchName = "master", repoRelativeUrl = "JetBrains/ij-perf-report-aggregator")
+        GitHubProject.fromGithub(
+          branchName = "master",
+          repoRelativeUrl = "JetBrains/ij-perf-report-aggregator"
+        )
       ).withVersion("2024.2")
     ).apply {
       val pathToPlugin = System.getProperty("path.to.build.plugin")

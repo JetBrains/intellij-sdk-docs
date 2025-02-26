@@ -28,8 +28,12 @@ val releasesList = mapOf(
   ),
   "gradle-grammar-kit-plugin-version" to ReleaseInfo(
     type = ReleaseInfo.Type.GitHub,
-    url = "https://api.github.com/repos/JetBrains/gradle-grammar-kit-plugin/releases",
+    url = "https://api.github.com/repos/JetBrains/gradle-grammar-kit-plugin/releases"
   ),
+  "plugin-verifier-version" to ReleaseInfo(
+    type = ReleaseInfo.Type.GitHub,
+    url = "https://github.com/JetBrains/intellij-plugin-verifier/releases"
+  )
 )
 
 val vars = releasesList.mapValues { (key, releaseInfo) ->

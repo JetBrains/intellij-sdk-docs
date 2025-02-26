@@ -63,7 +63,25 @@ The [`Dispatchers.EDT`](%gh-ic%/platform/core-api/src/com/intellij/openapi/appli
 ### `Dispatchers.Main` vs. `Dispatchers.EDT`
 
 In Kotlin, a standard dispatcher for UI-based activities is [`Dispatchers.Main`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-main.html).
+
+<tabs>
+<tab title="2025.1+">
+
+In the IntelliJ Platform, `Dispatchers.Main` differs from `Dispatchers.EDT`:
+1. It is forbidden to initiate read or write actions in `Dispatchers.Main`.
+   `Dispatchers.Main` is a pure UI dispatcher, and accidental access to the IntelliJ Platform model could cause UI freezes.
+2. `Dispatchers.Main` uses `any` [modality state](threading_model.md#invoking-operations-on-edt-and-modality) if it cannot infer modality from the coroutine context.
+   This helps to ensure progress guarantees in libraries that use `Dispatchers.Main`.
+
+</tab>
+
+<tab title="Earlier versions">
+
 In the IntelliJ Platform, the EDT dispatcher is also installed as `Dispatchers.Main` so both can be used, however always prefer `Dispatchers.EDT`.
+
+</tab>
+</tabs>
+
 Use `Dispatchers.Main` only if the coroutine is IntelliJ Platform-context agnostic (e.g., when it can be executed outside the IntelliJ Platform context).
 Use `Dispatchers.EDT` when in doubt.
 

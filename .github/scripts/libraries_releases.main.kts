@@ -32,7 +32,7 @@ val releasesList = mapOf(
   ),
   "plugin-verifier-version" to ReleaseInfo(
     type = ReleaseInfo.Type.GitHub,
-    url = "https://github.com/JetBrains/intellij-plugin-verifier/releases"
+    url = "https://api.github.com/repos/JetBrains/intellij-plugin-verifier/releases"
   )
 )
 
@@ -43,7 +43,7 @@ val vars = releasesList.mapValues { (key, releaseInfo) ->
         val content = URL(releaseInfo.url).readText()
         Json.decodeFromString<JsonArray>(content)
           .mapNotNull { it.jsonObject["name"] }
-          .map { it.jsonPrimitive.content.removePrefix("v") }
+          .map { it.jsonPrimitive.content.removePrefix("v").removePrefix("Version ") }
           .run(releaseInfo.transformer)
       } catch (e: Exception) {
         println("Cannot resolve the latest $key version: ${e.message}")

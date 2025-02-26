@@ -8,7 +8,7 @@
 
 **Current Release**: %intellij-platform-gradle-plugin-version%
 
-**GitHub**: [Releases & Changelog](https://github.com/JetBrains/gradle-intellij-plugin/releases), [Issue Tracker](https://github.com/JetBrains/gradle-intellij-plugin/issues)
+**GitHub**: [Releases & Changelog](https://github.com/JetBrains/intellij-platform-gradle-plugin/releases), [Issue Tracker](https://github.com/JetBrains/intellij-platform-gradle-plugin/issues)
 
 **JetBrains Platform Forum**: [Gradle Build Scripts](https://platform.jetbrains.com/c/intellij-platform/gradle-build-scripts/6) category
 

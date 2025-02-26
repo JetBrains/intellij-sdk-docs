@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # GoLand Plugin Development
 
@@ -139,7 +139,7 @@ Test your plugin with any version of GoLand you intend to support.
 
 ## GoLand Test Framework
 
-Please see [this issue](https://github.com/JetBrains/gradle-intellij-plugin/issues/477#issuecomment-845022914) for required additional dependency setup.
+Please see [this issue](https://github.com/JetBrains/intellij-platform-gradle-plugin/issues/477#issuecomment-845022914) for required additional dependency setup.
 
 ## Open Source Plugins for GoLand
 

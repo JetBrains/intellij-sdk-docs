@@ -7,7 +7,7 @@
 
 **Current Release**: %gradle-intellij-plugin-version%
 
-**GitHub**: [Releases & Changelog](https://github.com/JetBrains/gradle-intellij-plugin/releases), [Issue Tracker](https://github.com/JetBrains/gradle-intellij-plugin/issues)
+**GitHub**: [Releases & Changelog](https://github.com/JetBrains/intellij-platform-gradle-plugin/releases), [Issue Tracker](https://github.com/JetBrains/intellij-platform-gradle-plugin/issues)
 
 </tldr>
 
@@ -35,8 +35,8 @@ The plugin provides functionalities like:
 
 > Please see also [](tools_gradle_intellij_plugin_faq.md) and [](tools_gradle_intellij_plugin_examples.md).
 >
-> Before visiting the [Issue Tracker](https://github.com/JetBrains/gradle-intellij-plugin/issues), update both plugin and Gradle to the latest versions.
-> Please see [CONTRIBUTING](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/CONTRIBUTING.md) on how to submit feedback and contribute to this project.
+> Before visiting the [Issue Tracker](https://github.com/JetBrains/intellij-platform-gradle-plugin/issues), update both plugin and Gradle to the latest versions.
+> Please see [CONTRIBUTING](https://github.com/JetBrains/intellij-platform-gradle-plugin/blob/master/CONTRIBUTING.md) on how to submit feedback and contribute to this project.
 >
 
 ## Usage

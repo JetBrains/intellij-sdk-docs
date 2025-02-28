@@ -13,7 +13,7 @@ Integration testing framework consists of two main components:
 
 The Starter framework exclusively supports JUnit 5, as it leverages JUnit 5's extensions and specialized listeners that aren't available in JUnit 4.
 
-To create a new task - `integrationTest`, define new test source roots - `intTest`, and add required dependencies, update the `build.gradle.kts` file:
+To create a new task - `integrationTest`, define new test source roots - `integrationTest`, and add required dependencies, update the `build.gradle.kts` file:
 
 ```kotlin
 dependencies {
@@ -23,30 +23,29 @@ dependencies {
   }
 
 sourceSets {
-  create("intTest") {
+  create("integrationTest") {
     compileClasspath += sourceSets.main.get().output
     runtimeClasspath += sourceSets.main.get().output
   }
 }
 
-val intTestImplementation by configurations.getting {
+val integrationTestImplementation by configurations.getting {
   extendsFrom(configurations.testImplementation.get())
 }
 
 dependencies {
-  intTestImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
-  intTestImplementation("org.kodein.di:kodein-di-jvm:7.20.2")
-  intTestImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.1")
+  integrationTestImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
+  integrationTestImplementation("org.kodein.di:kodein-di-jvm:7.20.2")
+  integrationTestImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.1")
 }
 
 val integrationTest = task<Test>("integrationTest") {
-  description = "Runs integration tests."
-  group = "verification"
-  testClassesDirs = sourceSets["intTest"].output.classesDirs
-  classpath = sourceSets["intTest"].runtimeClasspath
-  dependsOn("buildPlugin")
-  systemProperty("path.to.build.plugin", tasks.buildPlugin.get().archiveFile.get().asFile.absolutePath)
+  val integrationTestSourceSet = sourceSets.getByName("integrationTest")
+  testClassesDirs = integrationTestSourceSet.output.classesDirs
+  classpath = integrationTestSourceSet.runtimeClasspath
+  systemProperty("path.to.build.plugin", tasks.prepareSandbox.get().pluginDirectory.get().asFile)
   useJUnitPlatform()
+  dependsOn(tasks.prepareSandbox)
 }
 ```
 
@@ -58,8 +57,8 @@ The following dependencies are required:
 
 This configuration does the following:
 
-* Imports test implementation dependencies to `intTest` implementation dependencies
-* Defines new test source roots in <path>src/intTest</path>
+* Imports test implementation dependencies to `integrationTest` implementation dependencies
+* Defines new test source roots in <path>src/integrationTest</path>
 * Creates a new task `integrationTest` in the `verification` group
 * Makes the test task depend on `buildPlugin`, ensuring the plugin is built before tests run.
 * To test a plugin, the Starter framework needs to know where to find the plugin distribution for installation in the IDE.
@@ -80,7 +79,7 @@ Now that the configuration is complete, it's time to write the first integration
 * Wait for all background processes to complete.
 * Perform a shutdown.
 
-Create a new Kotlin file in `src/intTest/kotlin` with the following code:
+Create a new Kotlin file in `src/integrationTest/kotlin` with the following code:
 
 ```kotlin
 
@@ -93,7 +92,7 @@ class PluginTest {
         .withVersion("2024.3")
     ).apply {
       val pathToPlugin = System.getProperty("path.to.build.plugin")
-      PluginConfigurator(this).installPluginFromPath(Path(pathToPlugin))
+      PluginConfigurator(this).installPluginFromFolder(File(pathToPlugin))
     }.runIdeWithDriver().useDriverAndCloseIde {
     }
   }
@@ -126,7 +125,7 @@ The test case uses IntelliJ IDEA Community Edition version 2024.3, and starts th
 ```kotlin
 .apply {
   val pathToPlugin = System.getProperty("path.to.build.plugin")
-  PluginConfigurator(this).installPluginFromPath(Path(pathToPlugin))
+  PluginConfigurator(this).installPluginFromFolder(File(pathToPlugin))
 }
 ```
 
@@ -202,7 +201,7 @@ fun simpleTest() {
     ).withVersion("2024.2")
   ).apply {
     val pathToPlugin = System.getProperty("path.to.build.plugin")
-    PluginConfigurator(this).installPluginFromPath(Path(pathToPlugin))
+    PluginConfigurator(this).installPluginFromFolder(File(pathToPlugin))
   }.runIdeWithDriver().useDriverAndCloseIde {
     waitForIndicators(5.minutes)
   }
@@ -295,7 +294,7 @@ class PluginTest {
       ).withVersion("2024.2")
     ).apply {
       val pathToPlugin = System.getProperty("path.to.build.plugin")
-      PluginConfigurator(this).installPluginFromPath(Path(pathToPlugin))
+      PluginConfigurator(this).installPluginFromFolder(File(pathToPlugin))
     }.runIdeWithDriver().useDriverAndCloseIde {
       waitForIndicators(5.minutes)
     }

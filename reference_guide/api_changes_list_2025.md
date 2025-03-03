@@ -89,7 +89,7 @@ Coroutines running under `Dispatchers.Main` do not hold the write-intent lock
 : Update code usages.
 
 `org.jetbrains.kotlin.ir.linkage.IrDeserializer.IrLinkerExtension` class removed
-: This class from Kotlin compiler was removed and should not be used anymore.
+: This class was removed from the Kotlin compiler and is no longer available.
 
 `org.jetbrains.kotlin.ir.builders.TranslationPluginContext` class removed
 : This class from Kotlin compiler was removed and should not be used anymore.

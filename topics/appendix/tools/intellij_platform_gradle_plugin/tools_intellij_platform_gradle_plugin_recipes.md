@@ -269,3 +269,36 @@ prepareSandbox {
 
 </tab>
 </tabs>
+
+
+## Run the IDE with a default argument provided
+
+When running the IDE from the command line, you can pass an argument, like a path to the project or file, to open it automatically.
+This is also possible when using the [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde) task:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+tasks {
+  runIde {
+    argumentProviders.add(CommandLineArgumentProvider {
+      listOf("/path/to/the/project")
+    })
+  }
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+runIde {
+  argumentProviders.add {
+    ['/path/to/the/project']
+  }
+}
+```
+
+</tab>
+</tabs>

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # SDK Docs Style Guide
 
@@ -319,6 +319,15 @@ For **SVG** images, use this notation:
 </tab>
 
 </tabs>
+
+### Other
+
+1. Use a concise and neutral voice when describing topics:
+   - **Avoid:** "A custom icon for files with a substituted language would be a great addition to the plugin. It is easy as implementing the `xyz` extension point."
+   - **Prefer:** "To add a custom icon for files with a substituted language, implement the `xyz` extension point."
+2. Avoid directly addressing the reader and the author with "you", "your", "we", etc.
+   - **Avoid:** "Add a dependency in your plugin descriptor."
+   - **Prefer:** "Add a dependency in the plugin descriptor."
 
 ## Table of Contents
 

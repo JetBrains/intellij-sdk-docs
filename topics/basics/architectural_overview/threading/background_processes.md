@@ -181,11 +181,16 @@ To report progress with `ProgressIndicator`, use the following methods:
 `ProgressManager` allows for reporting progress texts through `progress()`/`progress2()` methods, which are counterparts of `ProgressIndicator.setText()`/`setText2()`.
 In addition, it exposes the `ProgressIndicator.getProgressIndicator()` method for getting an indicator instance associated with the current thread.
 
-## `ProcessCanceledException` and Debugging
+## Pre-2025.1: `ProcessCanceledException` and Debugging
 
 Sometimes, a PCE is thrown from `checkCanceled()` in the code inspected by a plugin developer during a debugging session.
 If the developer tries to step over a line and this line throws PCE (potentially from a deep call frame), the next place where the debugger stops is a catch/finally block intercepting the exception.
 This greatly breaks the developer's workflow as the analysis must be started over.
+
+> With the Plugin DevKit plugin installed, the debugger will prevent PCE from being thrown during stepping and evaluation with no additional actions needed.
+>
+{title="2025.1+"}
+
 This situation can be avoided by enabling an action available in the [internal mode](enabling_internal.md):
 
 <tabs>

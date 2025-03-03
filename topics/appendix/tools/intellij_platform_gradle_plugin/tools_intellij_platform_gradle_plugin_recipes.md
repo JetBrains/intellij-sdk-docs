@@ -282,9 +282,9 @@ This is also possible when using the [`runIde`](tools_intellij_platform_gradle_p
 ```kotlin
 tasks {
   runIde {
-    argumentProviders.add(CommandLineArgumentProvider {
+    argumentProviders += CommandLineArgumentProvider {
       listOf("/path/to/the/project")
-    })
+    }
   }
 }
 ```
@@ -294,9 +294,9 @@ tasks {
 
 ```groovy
 runIde {
-  argumentProviders.add {
+  argumentProviders.add({
     ['/path/to/the/project']
-  }
+  } as CommandLineArgumentProvider)
 }
 ```
 

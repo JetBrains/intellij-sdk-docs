@@ -106,7 +106,9 @@ fun StringBuilder.appendContentHierarchy(content: DocumentationContent) {
 }
 
 fun StringBuilder.appendElementsHierarchy(elements: List<Element>, level: Int, parentPath: String) {
-  for (element in elements) {
+  val includedElements = elements
+    .filter { it.shouldBeRenderedIn(RenderContext.SDK_DOCS) }
+  for (element in includedElements) {
     if (element.deprecatedSince != null) continue
     val elementSectionLink = element.getPath(parentPath)
     appendHierarchyLink(element, level, elementSectionLink)
@@ -132,8 +134,9 @@ fun StringBuilder.appendElements(
   isUnderDeprecatedParent: Boolean
 ) {
   // nested deprecated elements are "regular" to not render deprecation label multiple times
-  val regularElements = elements.filter { it.deprecatedSince == null }
-  val deprecatedElements = elements.filter { it.deprecatedSince != null }
+  val includedElements = elements.filter { it.shouldBeRenderedIn(RenderContext.SDK_DOCS) }
+  val regularElements = includedElements.filter { it.deprecatedSince == null }
+  val deprecatedElements = includedElements.filter { it.deprecatedSince != null }
   for (element in regularElements) {
     appendElement(element, level, parentPath, false, false)
   }
@@ -255,13 +258,15 @@ fun StringBuilder.appendDefaultValue(defaultValue: String?) {
 }
 
 fun StringBuilder.appendAttributes(attributeWrappers: List<AttributeWrapper>) {
-  val attributes = attributeWrappers.mapNotNull { it.attribute }
-  if (attributes.isNotEmpty()) {
+  val includedAttributes = attributeWrappers
+    .mapNotNull { it.attribute }
+    .filter { it.shouldBeRenderedIn(RenderContext.SDK_DOCS) }
+  if (includedAttributes.isNotEmpty()) {
     appendLine("\n\n{type=\"narrow\"}")
     appendLine("Attributes")
     appendLine(":")
-    for ((index, attribute) in attributes.withIndex()) {
-      appendAttribute(attribute, index == attributes.lastIndex)
+    for ((index, attribute) in includedAttributes.withIndex()) {
+      appendAttribute(attribute, index == includedAttributes.lastIndex)
     }
   }
 }
@@ -337,7 +342,9 @@ fun StringBuilder.appendChildren(parent: Element, parentPath: String) {
   } else {
     val elements = if (parent.containsItself) (parent.children.unwrap() + parent) else parent.children.unwrap()
     if (elements.isEmpty()) return
-    val children = elements.filter { it.deprecatedSince == null }
+    val children = elements
+      .filter { it.deprecatedSince == null }
+      .filter { it.shouldBeRenderedIn(RenderContext.SDK_DOCS) }
     val deprecatedChildren = elements.filter { it.deprecatedSince != null }
     appendLine("\nChildren")
     appendLine(":")
@@ -454,10 +461,30 @@ data class DocumentationContent(
   var elements: List<ElementWrapper> = emptyList()
 )
 
-// allows for referencing attributes by anchors in YAML
+
+// allows for referencing elements by anchors in YAML
 data class ElementWrapper(
   var element: Element? = null
 )
+
+interface DocumentationItem {
+  val parent: DocumentationItem?
+  val renderContexts: List<RenderContext>
+  val internalNote: String?
+
+  fun shouldBeRenderedIn(context: RenderContext): Boolean {
+    generateSequence(this) { it.parent }.toList().reversed().forEach {
+      if (!it.renderContexts.contains(context)) {
+        return false
+      }
+    }
+    return true
+  }
+
+  fun getOwnOrParentInternalNote(): String? {
+    return internalNote ?: parent?.getOwnOrParentInternalNote()
+  }
+}
 
 data class Element(
   var name: String? = null,
@@ -468,6 +495,7 @@ data class Element(
   var deprecatedSince: String? = null,
   var deprecationNote: String? = null,
   var description: String? = null,
+  override var internalNote: String? = null,
   var sdkDocsSupportDetails: String? = null,
   var attributes: List<AttributeWrapper> = emptyList(),
   var containsItself: Boolean = false,
@@ -477,16 +505,32 @@ data class Element(
   var requirement: Requirement? = null,
   var defaultValue: String? = null,
   var examples: List<String> = emptyList(),
-) {
+  var path: List<String> = emptyList(),
+  override var parent: DocumentationItem? = null,
+  override var renderContexts: List<RenderContext> = RenderContext.values().toList(), // included in all by default
+) : DocumentationItem {
+
   fun isWildcard(): Boolean {
     return name == "*"
+  }
+
+  fun copy(): Element {
+    return this.copy(attributes = this.attributes.map { it.copy() })
+  }
+
+  override fun toString(): String {
+    return "Element(name=$name, path=$path)"
   }
 }
 
 // allows for referencing attributes by anchors in YAML
 data class AttributeWrapper(
   var attribute: Attribute? = null,
-)
+) {
+  fun copy(): AttributeWrapper {
+    return this.copy(attribute = this.attribute?.copy())
+  }
+}
 
 data class Attribute(
   var name: String? = null,
@@ -496,8 +540,12 @@ data class Attribute(
   var deprecationNote: String? = null,
   var requirement: Requirement? = null,
   var description: String? = null,
+  override var internalNote: String? = null,
   var defaultValue: String? = null,
-)
+  var path: List<String> = emptyList(),
+  override var parent: DocumentationItem? = null,
+  override var renderContexts: List<RenderContext> = RenderContext.values().toList(), // included in all by default
+) : DocumentationItem
 
 data class Requirement(
   var required: Required = Required.UNKNOWN,
@@ -509,4 +557,9 @@ enum class Required {
   NO,
   YES_FOR_PAID,
   UNKNOWN
+}
+
+enum class RenderContext {
+  SDK_DOCS,
+  DOC_PROVIDER
 }

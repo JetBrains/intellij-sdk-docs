@@ -87,3 +87,9 @@ Coroutines running under `Dispatchers.Main` do not hold the write-intent lock
 
 `org.jetbrains.kotlin.KtFakeSourceElement` class renamed to `org.jetbrains.kotlin.KtFakePsiSourceElement`
 : Update code usages.
+
+`org.jetbrains.kotlin.ir.linkage.IrDeserializer.IrLinkerExtension` class removed
+: This class was removed from the Kotlin compiler and is no longer available.
+
+`org.jetbrains.kotlin.ir.builders.TranslationPluginContext` class removed
+: This class was removed from the Kotlin compiler and is no longer available. 

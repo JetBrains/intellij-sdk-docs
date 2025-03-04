@@ -129,6 +129,7 @@ The LSP support provided by the IntelliJ Platform covers the following features 
 
 - Color Preview ([`textDocument/documentColor`](https://microsoft.github.io/language-server-protocol/specification#textDocument_documentColor))
 - Document Save Notification ([`textDocument/didSave`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_didSave)) [2024.3.1]
+- Go To Type Declaration ([`textDocument/typeDefinition`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_typeDefinition)) [2024.3.1]
 
 ### 2024.2
 

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Internal Actions – UI Inspector
 
@@ -68,7 +68,9 @@ Custom Swing components can also provide additional properties via [`UiInspector
 
 ## Inspecting Settings
 
-Enable <ui-path>View | Appearance | Details in Tree View</ui-path> in [Internal Mode](enabling_internal.md) to show Settings page `id` in the tree.
+Enable <ui-path>Internal Actions | UI | Debugging Info in UI</ui-path> (2024.2+)
+(<ui-path>View | Appearance | Details in Tree View</ui-path> in earlier versions)
+in [Internal Mode](enabling_internal.md) to show Settings page `id` in the tree.
 
 Some additional properties are available when inspecting <control>Settings</control> dialog (2023.1+).
 

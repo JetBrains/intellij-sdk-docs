@@ -107,7 +107,7 @@ fun StringBuilder.appendContentHierarchy(content: DocumentationContent) {
 
 fun StringBuilder.appendElementsHierarchy(elements: List<Element>, level: Int, parentPath: String) {
   val includedElements = elements
-    .filter { it.shouldBeRenderedIn(RenderContext.SDK_DOCS) }
+    .filter { it.isIncluded() }
   for (element in includedElements) {
     if (element.deprecatedSince != null) continue
     val elementSectionLink = element.getPath(parentPath)
@@ -118,8 +118,10 @@ fun StringBuilder.appendElementsHierarchy(elements: List<Element>, level: Int, p
 
 fun StringBuilder.appendHierarchyLink(element: Element, level: Int, elementSectionLink: String) {
   val elementName = if (element.isWildcard()) (element.descriptiveName ?: "*") else "`<${element.name}>`"
+  val internalLabelOrEmpty = if (element.getOwnOrParentInternalNote() != null) "  ![Internal][internal]" else ""
+  val deprecationLabelOrEmpty = if (element.deprecatedSince != null) "  ![Deprecated][deprecated]" else ""
   appendLine(
-    """${"  ".repeat(level)}- [$elementName](#$elementSectionLink)${if (element.deprecatedSince != null) "  ![Deprecated][deprecated]" else ""}"""
+    """${"  ".repeat(level)}- [$elementName](#$elementSectionLink)$internalLabelOrEmpty$deprecationLabelOrEmpty"""
   )
 }
 
@@ -134,7 +136,7 @@ fun StringBuilder.appendElements(
   isUnderDeprecatedParent: Boolean
 ) {
   // nested deprecated elements are "regular" to not render deprecation label multiple times
-  val includedElements = elements.filter { it.shouldBeRenderedIn(RenderContext.SDK_DOCS) }
+  val includedElements = elements.filter { it.isIncluded() }
   val regularElements = includedElements.filter { it.deprecatedSince == null }
   val deprecatedElements = includedElements.filter { it.deprecatedSince != null }
   for (element in regularElements) {
@@ -158,6 +160,7 @@ fun StringBuilder.appendElement(
   if (renderedElementPaths.contains(elementSectionLink)) return
 
   appendSectionHeader(element, level, elementSectionLink, addDeprecationLabel)
+  appendInternalNote(element)
   appendDeprecationNote(element)
   appendReferences(element.references)
   element.description?.trim()?.let { appendLine("$it\n") }
@@ -197,9 +200,18 @@ fun StringBuilder.appendSectionHeader(
   }
 }
 
+fun StringBuilder.appendInternalNote(item: DocumentationItem) {
+  val internalNote = item.getOwnOrParentInternalNote() ?: return
+  appendWarningNote(internalNote)
+}
+
 fun StringBuilder.appendDeprecationNote(element: Element) {
-  val note = element.deprecationNote ?: return
-  val warning = note.lines().filter { it.isNotEmpty() }.joinToString(separator = "\n") { "> $it" }
+  val deprecationNote = element.deprecationNote ?: return
+  appendWarningNote(deprecationNote)
+}
+
+fun StringBuilder.appendWarningNote(text: String) {
+  val warning = text.lines().filter { it.isNotEmpty() }.joinToString(separator = "\n") { "> $it" }
   appendLine(warning)
   appendLine(">")
   appendLine("{style=\"warning\"}\n")
@@ -260,7 +272,7 @@ fun StringBuilder.appendDefaultValue(defaultValue: String?) {
 fun StringBuilder.appendAttributes(attributeWrappers: List<AttributeWrapper>) {
   val includedAttributes = attributeWrappers
     .mapNotNull { it.attribute }
-    .filter { it.shouldBeRenderedIn(RenderContext.SDK_DOCS) }
+    .filter { it.isIncluded() }
   if (includedAttributes.isNotEmpty()) {
     appendLine("\n\n{type=\"narrow\"}")
     appendLine("Attributes")
@@ -277,6 +289,7 @@ fun StringBuilder.appendAttribute(
 ) {
   append("- `${attribute.name}`")
   appendAttributeRequirementAndAvailability(attribute)
+  appendAttributeInternalNote(attribute)
   appendAttributeDeprecationInfo(attribute)
   if (isLast) {
     append("\n")
@@ -318,6 +331,14 @@ fun StringBuilder.appendAttributeRequirementAndAvailability(attribute: Attribute
   }
 }
 
+fun StringBuilder.appendAttributeInternalNote(attribute: Attribute) {
+  val internalNote = attribute.getOwnOrParentInternalNote() ?: return
+  append("**Internal Use Only:** ".indentLines(2))
+  val noteWithoutLineBreaks = internalNote.replace('\n', ' ')
+  append(noteWithoutLineBreaks)
+  appendLine()
+}
+
 fun StringBuilder.appendAttributeDeprecationInfo(attribute: Attribute) {
   val deprecatedSince = attribute.deprecatedSince
   val deprecationNote = attribute.deprecationNote
@@ -344,7 +365,7 @@ fun StringBuilder.appendChildren(parent: Element, parentPath: String) {
     if (elements.isEmpty()) return
     val children = elements
       .filter { it.deprecatedSince == null }
-      .filter { it.shouldBeRenderedIn(RenderContext.SDK_DOCS) }
+      .filter { it.isIncluded() }
     val deprecatedChildren = elements.filter { it.deprecatedSince != null }
     appendLine("\nChildren")
     appendLine(":")
@@ -399,6 +420,7 @@ fun String.cleanup(): String {
   return this
     .cleanupElementLinks()
     .fixWildcardLinks()
+    .removeInternalLinks()
     .removeAttributeLinks()
     .removeDocProviderSpecificAttributes()
     .internalizeLinks()
@@ -413,6 +435,14 @@ fun String.fixWildcardLinks(): String {
   // reason: Writerside can't handle links with * and the error page is displayed
   // [wildcard](path__to__*) -> [wildcard](#path__to__-)
   return replace("__*", "__-")
+}
+
+fun String.removeInternalLinks(): String {
+  val internalLinkRegex = Regex("\\[([^]]*)]\\(([^ )]*)\\)\\{internal}")
+  return internalLinkRegex.replace(this) { matchResult ->
+    val text = matchResult.groupValues[1]
+    text
+  }
 }
 
 fun String.removeAttributeLinks(): String {
@@ -450,6 +480,10 @@ fun getInternalLink(url: String): String? {
     return if (internalUrl.contains('#')) internalUrl.replaceBefore("#", topicName) else topicName
   }
   return null
+}
+
+fun DocumentationItem.isIncluded(): Boolean {
+  return this.shouldBeRenderedIn(RenderContext.SDK_DOCS)
 }
 
 class DescriptorInfo(val dataUrl: String, val filePath: String)

@@ -1668,3 +1668,4 @@ Children
 [//]: # (GENERATED CONTENT END)
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-7f7f7f?style=flat-square
+[internal]: https://img.shields.io/badge/-Internal-8b8b8b?style=flat-square

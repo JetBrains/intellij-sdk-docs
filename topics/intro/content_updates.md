@@ -12,6 +12,13 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2025
 
+### March
+{march-25}
+
+Minor Changes and Additions
+:
+- Document [](basic_action_system.md#action-id-code-insight) added in 2025.1.
+
 ### February
 {february-25}
 

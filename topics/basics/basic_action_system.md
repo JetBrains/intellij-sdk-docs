@@ -435,3 +435,49 @@ Executing actions can be achieved with [`ActionUtils.invokeAction()`](%gh-ic%/pl
 > If an action executed programmatically is under your control, extract its logic to a [service](plugin_services.md) or utility class and call it directly.
 >
 {style="warning"}
+
+## Action ID Code Insight{action-id-code-insight}
+<primary-label ref="2025.1"/>
+
+Code insight to defined Actions and Groups is provided by the _Plugin DevKit_ plugin.
+
+### Builtin Places
+
+- IntelliJ Platform API, for example [`ActionManager.getAction()`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionManager.java)
+- Test Framework API, for example  [`CodeInsightTestFixture.performEditorAction()`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/CodeInsightTestFixture.java)
+- String literal fields with the name `ACTION_ID`
+- Constants defined in [`IdeActions`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/actionSystem/IdeActions.java)
+
+### Custom Places
+
+Additional places can be configured to provide _Action ID_ reference using the bundled _IntelliLang_ plugin.
+Common use cases include plugin-specific test utility code or configuration files.
+
+#### Code
+
+For string literal constants, parameters, and return values, use [`@Language`](%gh-java-annotations%/common/src/main/java/org/intellij/lang/annotations/Language.java)
+annotation with `devkit-action-id`.
+
+```Java
+public abstract class MyPluginTestCase
+    extends LightPlatformCodeInsightTestCase {
+
+  protected void doTestInvokingSomeAction(
+      @Language("devkit-action-id") @NonNls final String actionId
+      /* more parameters */) {
+  }
+
+}
+```
+
+#### Other Places
+
+To setup _Action ID_ references in other places (for example, XML files) perform the following steps:
+
+<procedure title="Injecting in other places">
+
+1. Navigate to the place in sources
+2. Invoke <control>Inject language or reference</control> intention
+3. Choose <control>Action ID Reference</control>
+
+</procedure>

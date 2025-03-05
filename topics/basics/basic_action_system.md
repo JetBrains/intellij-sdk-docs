@@ -35,8 +35,12 @@ The IntelliJ Platform calls methods of actions when a user interacts with a menu
 >
 {style="warning" title="No fields allowed"}
 
-> For actions available during [dumb mode](indexing_and_psi_stubs.md#dumb-mode), extend [`DumbAwareAction`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/project/DumbAwareAction.java)
-> (do not override `AnAction.isDumbAware()` instead).
+> For actions available during [dumb mode](indexing_and_psi_stubs.md#dumb-mode), extend from
+> [`DumbAwareAction`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/project/DumbAwareAction.java) instead of `AnAction`.
+>
+> Do not override `AnAction.isDumbAware()` instead.
+>
+{title="Actions available during indexing"}
 
 ### Principal Implementation Overrides
 

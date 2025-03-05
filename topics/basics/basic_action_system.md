@@ -141,6 +141,12 @@ An example of enabling a menu action based on whether a project is open is demon
 When the user selects an enabled action, be it from a menu or toolbar, the action's `AnAction.actionPerformed()` method is called.
 This method contains the code executed to perform the action, and it is here that the real work gets done.
 
+> Reusable logic must *not* be exposed in the `AnAction` implementation via `static` methods (Java) or `companion object` (Kotlin).
+>
+> Instead, introduce dedicated methods in utility classes or [](plugin_services.md).
+>
+{title="Reusable Logic" style="warning"}
+
 By using the `AnActionEvent` methods and `CommonDataKeys`, objects such as the `Project`, `Editor`, `PsiFile`, and other information is available.
 For example, the `actionPerformed()` method can modify, remove, or add PSI elements to a file open in the editor.
 

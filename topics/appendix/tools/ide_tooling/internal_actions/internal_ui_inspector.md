@@ -8,13 +8,6 @@ The _UI Inspector_ is a tool to interrogate elements of the IDE's UI to get an i
 
 <include from="internal_actions_intro.md" element-id="enable_internal_mode_tip"></include>
 
-## Enabling the UI Inspector
-
-> This step isn't required when using 2021.1 release or later.
-
-Before using the _UI Inspector_, it must be enabled by selecting the menu item <ui-path>Tools | Internal Actions | UI | UI Inspector</ui-path>.
-The enabled state of the _UI Inspector_ is modal; it remains enabled until it is disabled by selecting the menu item again.
-
 ## Using the UI Inspector
 
 Centering the cursor on a UI element and pressing <shortcut>Ctrl+Alt</shortcut> (<shortcut>Ctrl+Option</shortcut> on macOS) when _clicking_ the left mouse button reveals the properties of the Swing component.

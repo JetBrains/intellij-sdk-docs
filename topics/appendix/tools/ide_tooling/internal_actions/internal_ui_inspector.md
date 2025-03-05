@@ -2,6 +2,10 @@
 
 # Internal Actions – UI Inspector
 
+<web-summary>
+Explore the UI Inspector tool to check properties of any IDE UI component. Learn how to use it to inspect, find code locations, and get details on specific component properties.
+</web-summary>
+
 <link-summary>UI Inspector allows checking properties of any UI component in the running IDE instance.</link-summary>
 
 The _UI Inspector_ is a tool to interrogate elements of the IDE's UI to get an internal description of each element.

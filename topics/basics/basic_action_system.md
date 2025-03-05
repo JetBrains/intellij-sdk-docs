@@ -378,6 +378,7 @@ Two steps are required to register an action from code:
 If a plugin needs to include a toolbar or popup menu built from a group of actions in its user interface, that is achieved through [`ActionPopupMenu`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionPopupMenu.java) and [`ActionToolbar`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionToolbar.java).
 These objects can be created through calls to the `ActionManager.createActionPopupMenu()` and `createActionToolbar()` methods.
 To get a Swing component from such an object, call the respective `getComponent()` method.
+See also [](popups.md#action-groups) for more advanced popups.
 
 If an action toolbar is attached to a specific component (for example, a panel in a tool window), call `ActionToolbar.setTargetComponent()` and pass the related component's instance as a parameter.
 Setting the target ensures that the toolbar buttons' state depends on the state of the related component, not on the current focus location within the IDE frame.

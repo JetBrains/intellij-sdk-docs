@@ -2,7 +2,7 @@
 
 # Internal Actions – UI Inspector
 
-<link-summary>UI Inspector allows checking properties of a component selected in the frame of running IDE instance.</link-summary>
+<link-summary>UI Inspector allows checking properties of any UI component in the running IDE instance.</link-summary>
 
 The _UI Inspector_ is a tool to interrogate elements of the IDE's UI to get an internal description of each element.
 
@@ -27,17 +27,17 @@ The _UI Inspector_ displays the icon details:
 
 ## `added-at` Property
 
-Sometimes, inspecting complex component's properties is not enough to understand how the component was created and configured.
+Sometimes, inspecting a complex component's properties is not enough to understand how the component was created and configured.
 _UI Inspector_ gives the possibility of finding the code where the selected component was added, which makes it much easier to understand which APIs can be used to build custom components with similar complexity.
 
-To find the place were component was added, select the <control>added-at</control> property to show the stacktrace:
+To find the place where the component was added, select the <control>added-at</control> property to show the stack trace:
 
 ![added-at stack trace](internal_ui_inspector_added_at.png)
 
 ## Specific Component Properties
 
 Various components used in the IntelliJ Platform expose additional properties.
-These can be useful to locate the underlying implementation, related Action, etc.
+These can be useful to locate the underlying implementation, related Action, and so on.
 
 Custom Swing components can also provide additional properties via [`UiInspectorContextProvider`](%gh-ic%/platform/platform-api/src/com/intellij/internal/inspector/UiInspectorContextProvider.java) or its dedicated subclasses (2020.1 and later).
 
@@ -72,7 +72,7 @@ Enable <ui-path>Internal Actions | UI | Debugging Info in UI</ui-path> (2024.2+)
 (<ui-path>View | Appearance | Details in Tree View</ui-path> in earlier versions)
 in [Internal Mode](enabling_internal.md) to show Settings page `id` in the tree.
 
-Some additional properties are available when inspecting <control>Settings</control> dialog (2023.1+).
+Some additional properties are available when inspecting the <control>Settings</control> dialog (2023.1+).
 
 > _UI Inspector_ must be invoked only after opening the <control>Settings</control> dialog.
 

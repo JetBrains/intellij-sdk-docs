@@ -133,13 +133,10 @@ See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html
 
 | IntelliJ Platform version (latest update) | Bundled _stdlib_ version |
 |-------------------------------------------|--------------------------|
-| 2025.1 (EAP)                              | 2.1.10                   |
+| 2025.1                                    | 2.1.10                   |
 | 2024.3                                    | 2.0.21                   |
 | 2024.2                                    | 1.9.24                   |
 | 2024.1                                    | 1.9.22                   |
-| 2023.3                                    | 1.9.21                   |
-| 2023.2                                    | 1.8.20                   |
-| 2023.1                                    | 1.8.0                    |
 
 #### Earlier Versions
 
@@ -147,6 +144,9 @@ See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html
 
 | IntelliJ Platform version (latest update) | Bundled _stdlib_ version |
 |-------------------------------------------|--------------------------|
+| 2023.3                                    | 1.9.21                   |
+| 2023.2                                    | 1.8.20                   |
+| 2023.1                                    | 1.8.0                    |
 | 2022.3                                    | 1.7.22                   |
 | 2022.2                                    | 1.6.21                   |
 | 2022.1                                    | 1.6.10                   |
@@ -167,7 +167,8 @@ See [](kotlin_coroutines.md) on how to use them in plugins.
 
 | IntelliJ Platform version | Bundled _kotlinx-coroutines_ version |
 |---------------------------|--------------------------------------|
-| 2025.1 (EAP)              | 1.8.0-intellij-11                    |
+| 2025.2                    | 1.8.0-intellij-13                    |
+| 2025.1                    | 1.8.0-intellij-12                    |
 | 2024.3                    | 1.8.0-intellij-11                    |
 | 2024.2                    | 1.8.0-intellij-9                     |
 | 2024.1                    | 1.7.3                                |

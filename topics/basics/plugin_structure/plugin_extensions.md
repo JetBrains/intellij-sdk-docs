@@ -12,16 +12,27 @@ The following are some of the most common tasks achieved using extensions:
 * The `com.intellij.applicationConfigurable` and `com.intellij.projectConfigurable` extension points allow plugins to add pages to the [Settings dialog](settings.md);
 * [Custom language plugins](custom_language_support.md) use many extension points to extend various language support features in the IDE.
 
-There are more than 1500 extension points available in the platform and the bundled plugins, allowing customizing different parts of the IDE behavior.
+There are more than 1600 extension points available in the platform and the bundled plugins, allowing customizing different parts of the IDE behavior.
 
 ## Exploring Available Extensions
 
-[](intellij_platform_extension_point_list.md) and [](intellij_community_plugins_extension_point_list.md) list all available extension points in IntelliJ Platform and from bundled plugins in IntelliJ IDEA.
-Additionally, dedicated Extension Point and Listener Lists specific to IDEs are available under _Product Specific_.
+### Documentation
+
+- [](intellij_platform_extension_point_list.md)
+- [](intellij_community_plugins_extension_point_list.md) (bundled plugins in IntelliJ IDEA)
+- [](oss_plugins_extension_point_list.md)
+
+Lists for other IDEs are available under _Product Specific_ (for example, [PhpStorm](php_extension_point_list.md)).
+
+### IntelliJ Platform Explorer
+
 Browse usages inside existing implementations of open-source IntelliJ Platform plugins via [IntelliJ Platform Explorer](https://jb.gg/ipe).
+
+### Code Insight
 
 Alternatively (or when using 3rd party extension points), all available extension points for the specified namespace (`defaultExtensionNs`) can be listed using auto-completion inside the [`<extensions>`](plugin_configuration_file.md#idea-plugin__extensions) block in <path>[plugin.xml](plugin_configuration_file.md)</path>.
 Use <ui-path>View | Quick Documentation</ui-path> in the lookup list to access more information about the extension point and implementation (if applicable).
+
 See [](explore_api.md) for more information and strategies.
 
 ## Declaring Extensions

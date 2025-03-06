@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Code Inspections
 
@@ -34,7 +34,7 @@ It illustrates the components for a custom inspection plugin:
 * Creating a [test](#inspection-test) for the implemented inspection and quick fix.
 
 Although the code sample illustrates implementations of these components, it is often useful to see examples of inspections implemented in the [IntelliJ Community](https://github.com/JetBrains/intellij-community) code base.
-To identify a given inspection's implementation classes, try to find an inspection [by name](explore_api.md#24-search-for-symbol-names) or [by UI texts](explore_api.md#25-search-by-ui-text).
+To identify a given inspection's implementation classes, try to find an inspection [by name](explore_api.md#search-for-symbol-names) or [by UI texts](explore_api.md#search-by-ui-text).
 Consider also searching for existing implementations in [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.localInspection).
 
 ## Creating an Inspection

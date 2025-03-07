@@ -691,11 +691,15 @@ Attributes
 
     The scope in which the [extension](plugin_extensions.md) is
     instantiated.
-    It is not recommended to use non-default values.
+    
     Allowed values:
       - `IDEA_APPLICATION` _(default)_
       - `IDEA_PROJECT`
       - `IDEA_MODULE` (**deprecated**)
+    
+    **It is strongly recommended not to introduce new project- and module-level extension points.**
+    If an extension point needs to operate on a `Project` or `Module` instance, declare an application-level extension
+    point and pass the instance as a method parameter.
 
 Children
 :

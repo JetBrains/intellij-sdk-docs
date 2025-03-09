@@ -196,3 +196,4 @@ In places other than tool windows, it is fine to always show the border.
 
 Provide the ability to customize toolbars in the main window. To do this, add the toolbar to the list on the <ui-path>Settings | Appearance & Behavior | Menus and Toolbars</ui-path> page.
 
+For [action-based toolbars](basic_action_system.md#buildingToolbarPopupMenu) this is done by implementing the [`CustomizableActionGroupProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/ui/customization/CustomActionsSchema.kt#L56) extension point and ensuring that the action group has the `text` property.

@@ -59,8 +59,8 @@ This configuration does the following:
 
 * Imports test implementation dependencies to `integrationTest` implementation dependencies
 * Defines new test source roots in <path>src/integrationTest</path>
-* Creates a new task `integrationTest` in the `verification` group
-* Makes the test task depend on `buildPlugin`, ensuring the plugin is built before tests run.
+* Creates a new task `integrationTest`
+* Makes the test task depend on `prepareSandbox`, ensuring the plugin is built before tests run.
 * To test a plugin, the Starter framework needs to know where to find the plugin distribution for installation in the IDE.
 The `path.to.build.plugin` system property points to the plugin distribution file.
 * Enables JUnit Platform for test execution.
@@ -149,7 +149,7 @@ These two methods:
 
 The empty lambda is used for IDE interactions (`useDriverAndCloseIde`).
 
-> When the test is run for the first time, it may take longer than expected since it needs to download the IDE. 
+> When the test is run for the first time, it may take longer than expected since it needs to download the IDE.
 > Subsequent runs will be faster, using the cached IDE version.
 >
 {style="note"}
@@ -176,7 +176,7 @@ This dual-process architecture explains several key aspects of integration testi
 
 ## Opening Projects in Tests
 
-While starting the IDE with an empty project is useful, often it is required to use actual projects to verify real-world scenarios. 
+While starting the IDE with an empty project is useful, often it is required to use actual projects to verify real-world scenarios.
 Let's modify the test to open a project.
 
 The framework supports several ways to specify test projects:
@@ -216,7 +216,7 @@ While simple, this test verifies a critical aspect: the plugin doesn't interfere
 
 ## Catching Exceptions from IDE
 
-The test has one critical limitation: it won't detect exceptions or freezes occurring within the IDE process. 
+The test has one critical limitation: it won't detect exceptions or freezes occurring within the IDE process.
 Let's understand why and how to fix this.
 
 Due to the two-process architecture:

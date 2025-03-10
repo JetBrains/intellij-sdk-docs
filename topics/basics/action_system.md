@@ -16,7 +16,7 @@ Adding custom actions to menus and toolbars. Implement and register actions, and
 
 </tldr>
 
-The actions system allows plugins to add their items to IntelliJ Platform-based IDE menus and toolbars.
+The _Action System_ allows plugins to add their items to IntelliJ Platform-based IDE menus and toolbars.
 For example, one of the action classes is responsible for the <ui-path>File | Open File...</ui-path> menu item and the <control>Open...</control> toolbar button.
 
 Actions in the IntelliJ Platform require a [code implementation](#action-implementation) and must be [registered](#registering-actions).

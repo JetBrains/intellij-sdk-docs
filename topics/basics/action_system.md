@@ -25,7 +25,7 @@ Registration determines where an action appears in the IDE UI.
 Once implemented and registered, an action receives callbacks from the IntelliJ Platform in response to user gestures.
 
 The [](creating_actions_tutorial.md) tutorial describes the process of adding a custom action to a plugin.
-The [](grouping_action.md) tutorial demonstrates three types of groups that can contain actions.
+The [](grouping_actions_tutorial.md) tutorial demonstrates three types of groups that can contain actions.
 
 ## Action Implementation
 
@@ -86,7 +86,7 @@ See [Overriding the `AnAction.actionPerformed()` Method](#overriding-the-anactio
 
 #### Miscellaneous
 There are other methods to override in the `AnAction` class, such as changing the default `Presentation` object for the action.
-There is also a use case for overriding action constructors when registering them with dynamic action groups, demonstrated in the [Grouping Actions](grouping_action.md#adding-child-actions-to-the-dynamic-group) tutorial.
+There is also a use case for overriding action constructors when registering them with dynamic action groups, demonstrated in the [Grouping Actions](grouping_actions_tutorial.md#adding-child-actions-to-the-dynamic-group) tutorial.
 
 ### Overriding the `AnAction.update()` Method
 
@@ -198,7 +198,7 @@ Some menus like <ui-path>Tools</ui-path> have the `compact` attribute set, so th
 
 All other combinations of `compact`, visibility, and enablement produce N/A for gray appearance because the menu item isn't visible.
 
-See the [](grouping_action.md) tutorial for examples of creating action groups.
+See the [](grouping_actions_tutorial.md) tutorial for examples of creating action groups.
 
 ## Registering Actions
 
@@ -348,7 +348,7 @@ If necessary, a dedicated resource bundle to use for actions and groups can be d
 </actions>
 ```
 
-See [Extending DefaultActionGroup](grouping_action.md#extending-defaultactiongroup) for a tutorial of localizing Actions and Groups.
+See [Extending DefaultActionGroup](grouping_actions_tutorial.md#extending-defaultactiongroup) for a tutorial of localizing Actions and Groups.
 
 <tabs>
 

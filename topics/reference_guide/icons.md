@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Working with Icons
 
@@ -13,7 +13,7 @@
 </tldr>
 
 Icons are used widely by IntelliJ Platform plugins.
-Plugins need icons mostly for [](basic_action_system.md), custom component renderers, [](tool_windows.md), etc.
+Plugins need icons mostly for [actions](action_system.md), custom component renderers, [](tool_windows.md), etc.
 
 > A plugin _logo_, which represents the plugin itself, has different requirements than icons used within plugins.
 > For more information, see the [](plugin_icon_file.md) section.

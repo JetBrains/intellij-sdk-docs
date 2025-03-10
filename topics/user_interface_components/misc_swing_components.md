@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Miscellaneous Swing Components
 
@@ -38,4 +38,4 @@ so it's up to the developer to choose which tab control would be more appropriat
 
 See [](toolbar.md) in the UI Guidelines for an overview.
 
-[](basic_action_system.md#buildingToolbarPopupMenu) covers creating `AnAction`-based toolbars.
+[](action_system.md#buildingToolbarPopupMenu) covers creating `AnAction`-based toolbars.

@@ -589,7 +589,7 @@ Attributes
   `order`.
   <br/>
   To not clash with other plugins defining extensions with the same identifier,
-  consider prepending the identifier with a prefix related to the plugin [`<id>`](#idea-plugin__id) or 
+  consider prepending the identifier with a prefix related to the plugin [`<id>`](#idea-plugin__id) or
   [`<name>`](#idea-plugin__name), for example, `id="com.example.myplugin.myExtension"`.
 - `order` _(optional)_<br/>
   Allows for ordering the extension relative to other instances of the same extension point.
@@ -613,7 +613,7 @@ Attributes
       - `mac`
       - `unix`
       - `windows`
-    
+
     For example, `os="windows"` registers the extension on Windows only.
 
 ### `extensionPoints`
@@ -691,12 +691,12 @@ Attributes
 
     The scope in which the [extension](plugin_extensions.md) is
     instantiated.
-    
+
     Allowed values:
       - `IDEA_APPLICATION` _(default)_
       - `IDEA_PROJECT`
       - `IDEA_MODULE` (**deprecated**)
-    
+
     **It is strongly recommended not to introduce new project- and module-level extension points.**
     If an extension point needs to operate on a `Project` or `Module` instance, declare an application-level extension
     point and pass the instance as a method parameter.
@@ -739,7 +739,7 @@ Example
   An extension point which restricts the type provided in a `myClass` attribute to be an instance
   of `com.example.ParentType`, and the type provided in a `someClass` element to be an instance
   of `java.lang.Comparable`:
-  
+
   ```xml
   <extensionPoint
       name="myExtension"
@@ -752,18 +752,18 @@ Example
         implements="java.lang.Comparable"/>
   </extensionPoint>
   ```
-  
+
   When using the above extension point, an implementation could be registered as follows:
-  
+
   ```xml
   <myExtension ...
       myClass="com.example.MyCustomType">
     <someClass>com.example.MyComparable</someClass>
   </myExtension>
   ```
-  
+
   where:
-  
+
   - `com.example.MyCustomType` must be a subtype of `com.example.ParentType`
   - `com.example.MyComparable` must be a subtype of `java.lang.Comparable`
 
@@ -771,7 +771,7 @@ Example
 {#idea-plugin__resource-bundle}
 
 A resource bundle to be used with message key attributes in extension declarations and for
-[action and group localization](basic_action_system.md#localizing-actions-and-groups).
+[action and group localization](action_system.md#localizing-actions-and-groups).
 A single [`<idea-plugin>`](#idea-plugin) element can contain multiple `<resource-bundle>` elements.
 
 {type="narrow"}
@@ -790,7 +790,7 @@ Example
 
 <tldr>
 
-**Reference:** [Actions](basic_action_system.md)
+**Reference:** [Actions](action_system.md)
 
 </tldr>
 
@@ -807,7 +807,7 @@ Attributes
 - `resource-bundle` _(optional; available since 2020.1)_<br/>
 
     Defines the dedicated actions resource bundle.
-    See [Localizing Actions and Groups](basic_action_system.md#localizing-actions-and-groups)
+    See [Localizing Actions and Groups](action_system.md#localizing-actions-and-groups)
     for more details.
 
 Children
@@ -832,7 +832,7 @@ Example
 
 <tldr>
 
-**Reference:** [Registering Actions in plugin.xml](basic_action_system.md#registering-actions-in-pluginxml)
+**Reference:** [Registering Actions in plugin.xml](action_system.md#registering-actions-in-pluginxml)
 
 </tldr>
 
@@ -855,7 +855,7 @@ Attributes
 - `class` _(**required**)_<br/>
   The fully qualified name of the action implementation class.
 - `text` _(**required** if the action is not
-[localized](basic_action_system.md#localizing-actions-and-groups))_<br/>
+[localized](action_system.md#localizing-actions-and-groups))_<br/>
   The default long-version text to be displayed for the action (tooltip for toolbar button or text for menu item).
 - `description` _(optional)_<br/>
   The text which is displayed in the status bar when the action is focused.
@@ -1126,7 +1126,7 @@ Required
 Attributes
 :
 - `key` _(`key` or `text` is **required**)_<br/>
-  The key of the synonym text provided in a [message bundle](basic_action_system.md#localizing-actions-and-groups).
+  The key of the synonym text provided in a [message bundle](action_system.md#localizing-actions-and-groups).
 - `text` _(`key` or `text` is **required**)_<br/>
 
     The synonym text.
@@ -1170,7 +1170,7 @@ Example
 
 <tldr>
 
-**Reference:** [Grouping Actions](basic_action_system.md#grouping-actions)
+**Reference:** [Grouping Actions](action_system.md#grouping-actions)
 
 </tldr>
 
@@ -1196,7 +1196,7 @@ Attributes
   [`DefaultActionGroup`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
   is used.
 - `text` _(**required** if the `popup` is `true` and the group is not
-[localized](basic_action_system.md#localizing-actions-and-groups))_<br/>
+[localized](action_system.md#localizing-actions-and-groups))_<br/>
   The default long-version text to be displayed for the group (text for the menu item showing the submenu).
 - `description` _(optional)_<br/>
   The text which is displayed in the status bar when the group is focused.
@@ -1276,7 +1276,7 @@ Attributes
 - `ref` _(**required**)_<br/>
   The ID of the action to add to a group.
 - `id` _(optional)_<br/>
-    **_Deprecated_**: Use `ref` instead. 
+    **_Deprecated_**: Use `ref` instead.
 
     The ID of the action to add to a group.
 

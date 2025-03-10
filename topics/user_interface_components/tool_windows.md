@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Tool Windows
 
@@ -88,7 +88,7 @@ To manage the contents of a tool window, call [`ToolWindow.getContentManager()`]
 To add a content (tab), first create it by calling [`ContentManager.getFactory().createContent()`](%gh-ic%/platform/ide-core/src/com/intellij/ui/content/ContentManager.java), and then to add it to the tool window using [`ContentManager.addContent()`](%gh-ic%/platform/ide-core/src/com/intellij/ui/content/ContentManager.java).
 Use `Content.setDisposer()` to register associated `Disposable` (see [](disposers.md)).
 
-See [`SimpleToolWindowPanel`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/SimpleToolWindowPanel.java) as a convenient base class, supporting [Toolbars](basic_action_system.md#buildingToolbarPopupMenu) and both vertical/horizontal layout.
+See [`SimpleToolWindowPanel`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/SimpleToolWindowPanel.java) as a convenient base class, supporting [Toolbars](action_system.md#buildingToolbarPopupMenu) and both vertical/horizontal layout.
 
 ### Closing Tabs
 

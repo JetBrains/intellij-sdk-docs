@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Grouping Actions
 
@@ -25,7 +25,7 @@ The `id` attribute must be unique, so incorporating the plugin ID or package nam
 The `popup` attribute determines whether actions in the group are placed in a submenu.
 The `icon` attribute specifies the FQN of an [`Icon`](icons.md) object to be displayed.
 No `compact` attribute is specified, which means this group will support submenus.
-See [](basic_action_system.md#registering-actions-in-pluginxml) for more information about these attributes.
+See [](action_system.md#registering-actions-in-pluginxml) for more information about these attributes.
 
 ```xml
 <group
@@ -165,7 +165,7 @@ In the `<action>` element declaration below:
 </group>
 ```
 
-Now the translations for the `text` and `description` attributes must be provided in the resource bundle [`BasicActionsBundle.properties`](%gh-sdk-samples-master%/action_basics/src/main/resources/messages/BasicActionsBundle.properties) file according to [Localizing Actions and Groups](basic_action_system.md#localizing-actions-and-groups).
+Now the translations for the `text` and `description` attributes must be provided in the resource bundle [`BasicActionsBundle.properties`](%gh-sdk-samples-master%/action_basics/src/main/resources/messages/BasicActionsBundle.properties) file according to [](action_system.md#localizing-actions-and-groups).
 Note there are two sets of `text` and `description` translations, one for the action and one for the group.
 Conceivably, there could be another set of translations for the action if it used the [`<override-text>`](plugin_configuration_file.md#idea-plugin__actions__action__override-text) attribute.
 

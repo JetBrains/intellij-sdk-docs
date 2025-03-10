@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Using File Templates Programmatically
 
@@ -75,7 +75,7 @@ The new action should be registered under the `NewGroup` group, e.g:
 </actions>
 ```
 
-Action presentation texts should be added to the [resource bundle defined in plugin.xml](plugin_configuration_file.md#idea-plugin__resource-bundle) according to the rules described in [](basic_action_system.md#localizing-actions-and-groups):
+Action presentation texts should be added to the [resource bundle defined in plugin.xml](plugin_configuration_file.md#idea-plugin__resource-bundle) according to the rules described in [](action_system.md#localizing-actions-and-groups):
 
 ```
 action.Create.MyClass.text=My Class

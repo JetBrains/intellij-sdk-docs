@@ -4,6 +4,10 @@
 
 <primary-label ref="CommercialIDEs"/>
 
+<web-summary>
+Using Language Server Protocol (LSP) in IntelliJ-based IDEs to enhance development tools with language-specific features like code completion, documentation, and formatting.
+</web-summary>
+
 <link-summary>Language Server Protocol (LSP) support in IntelliJ-based IDEs</link-summary>
 
 The [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) (LSP) is an open-standard protocol developed by Microsoft. It enables communication between development tools and Language Servers.

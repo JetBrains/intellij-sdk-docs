@@ -2,6 +2,10 @@
 
 # Actions
 
+<web-summary>
+Adding custom actions to menus and toolbars. Implement and register actions, and handle user interactions efficiently.
+</web-summary>
+
 <link-summary>Adding custom actions to IntelliJ Platform-based IDEs menus and toolbar.</link-summary>
 
 <tldr>

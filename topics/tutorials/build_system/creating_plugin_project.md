@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Creating a Plugin Gradle Project
 
@@ -183,7 +183,7 @@ Gradle projects are run from the IDE's Gradle Tool window.
 ### Adding Code to the Project
 
 Before running [`my_plugin`](#components-of-a-wizard-generated-gradle-intellij-platform-plugin), some code can be added to provide simple functionality.
-See the [Creating Actions](working_with_custom_actions.md) tutorial for step-by-step instructions for adding a menu action.
+See the [](working_with_custom_actions.md) tutorial for step-by-step instructions for adding a menu action.
 
 ### Executing the Plugin
 

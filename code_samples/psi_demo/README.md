@@ -19,7 +19,7 @@ PSI Demo project demonstrates working with the PSI Navigation by implementing `A
 
 
 [docs]: https://plugins.jetbrains.com/docs/intellij/
-[docs:actions]: https://plugins.jetbrains.com/docs/intellij/basic-action-system.html
+[docs:actions]: https://plugins.jetbrains.com/docs/intellij/action-system.html
 [docs:navigating_psi]: https://plugins.jetbrains.com/docs/intellij/navigating-psi.html
 
 [file:PsiNavigationDemoAction]: ./src/main/java/org/intellij/sdk/psi/PsiNavigationDemoAction.java

@@ -36,7 +36,7 @@
 
   <actions>
     <!--
-      See https://plugins.jetbrains.com/docs/intellij/basic-action-system.html#registering-actions
+      See https://plugins.jetbrains.com/docs/intellij/action-system.html#registering-actions
       for information about the elements and attributes used for actions and groups.
 
       This <action> element adds a static menu item in first position of the Tools menu that shows PopupDialogAction.

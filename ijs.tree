@@ -101,7 +101,7 @@
       <toc-element topic="themes_metadata.md"/>
     </toc-element>
     <toc-element topic="basic_action_system.md" accepts-web-file-names="action_system.html">
-      <toc-element topic="action_system.md">
+      <toc-element topic="actions_tutorial.md" accepts-web-file-names="action-system.html">
         <toc-element topic="working_with_custom_actions.md"/>
         <toc-element topic="grouping_action.md"/>
       </toc-element>

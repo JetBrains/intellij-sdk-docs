@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 1. Working with Text
 
@@ -8,7 +8,7 @@ This tutorial shows how to use actions to access a caret placed in a document op
 Using information about the caret, replace selected text in a document with a string.
 
 The approach in this tutorial relies heavily on creating and registering actions.
-To review the fundamentals of creating and registering actions, refer to the [Actions Tutorial](action_system.md).
+To review the fundamentals of creating and registering actions, refer to the [](actions_tutorial.md).
 
 Multiple examples are used from the [editor_basics](%gh-sdk-samples-master%/editor_basics) plugin code sample from the IntelliJ Platform SDK.
 It may be helpful to open that project in an IntelliJ Platform-based IDE, build the project, run it, select some text in the editor, and invoke the **Editor Replace Text** menu item on the editor context menu.

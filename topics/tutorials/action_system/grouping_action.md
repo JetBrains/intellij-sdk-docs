@@ -8,7 +8,7 @@ If an implementation requires several actions, or there are simply too many acti
 This tutorial demonstrates adding an action to an existing group, creating a new action group, and action groups with a variable number of actions.
 The sample code discussed in this tutorial is from the code sample [`action_basics`](%gh-sdk-samples-master%/action_basics).
 
-Some content in this tutorial assumes the reader is familiar with the [](working_with_custom_actions.md) tutorial.
+Some content in this tutorial assumes the reader is familiar with the [](creating_actions_tutorial.md) tutorial.
 
 ## Simple Action Groups
 
@@ -40,7 +40,7 @@ See [](action_system.md#registering-actions-in-pluginxml) for more information a
 The following sample shows how to use an [`<add-to-group>`](plugin_configuration_file.md#idea-plugin__actions__action__add-to-group) element to place a custom action group relative to an entry in the <ui-path>Tools</ui-path> menu.
 The attribute `relative-to-action` references the action `id` for `PopupDialogAction`, not a native IntelliJ menu entry.
 Rather `PopupDialogAction` is defined in the same [`plugin.xml`](%gh-sdk-samples-master%/action_basics/src/main/resources/META-INF/plugin.xml) file.
-This group is placed after the single entry for the action `PopupDialogAction`, as defined in the [Creating Actions](working_with_custom_actions.md#registering-an-action-with-the-new-action-form) tutorial.
+This group is placed after the single entry for the action `PopupDialogAction`, as defined in the [Creating Actions](creating_actions_tutorial.md#registering-an-action-with-the-new-action-form) tutorial.
 
 ```xml
 <group
@@ -59,7 +59,7 @@ This group is placed after the single entry for the action `PopupDialogAction`, 
 
 The `PopupDialogAction` implementation will be reused and registered in the newly created static group.
 The `id` attribute for the reused `PopupDialogAction` implementation is set to a unique value, `org.intellij.sdk.action.GroupPopDialogAction`.
-This value differentiates this new [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) entry from the `id` previously used to register this action implementation in the [Creating Actions](working_with_custom_actions.md#registering-an-action-with-the-new-action-form) tutorial.
+This value differentiates this new [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) entry from the `id` previously used to register this action implementation in the [Creating Actions](creating_actions_tutorial.md#registering-an-action-with-the-new-action-form) tutorial.
 A unique `id` supports reuse of action classes in more than one menu or group.
 The action in this group will be displayed in the menu as "A Group Action".
 
@@ -85,7 +85,7 @@ The action in this group will be displayed in the menu as "A Group Action".
 
 After performing the steps described above, the action group and its content will be available in the <ui-path>Tools</ui-path> menu.
 The underlying `PopupDialogAction` implementation is reused for two entries in the <ui-path>Tools</ui-path> menu:
-* Once for the top menu entry <ui-path>Tools | Pop Dialog Action</ui-path> with the action `id` equal to `org.intellij.sdk.action.PopupDialogAction` as set in the [Creating Actions](working_with_custom_actions.md#registering-an-action-with-the-new-action-form) tutorial.
+* Once for the top menu entry <ui-path>Tools | Pop Dialog Action</ui-path> with the action `id` equal to `org.intellij.sdk.action.PopupDialogAction` as set in the [Creating Actions](creating_actions_tutorial.md#registering-an-action-with-the-new-action-form) tutorial.
 * A second time for the menu entry <ui-path>Tools | Static Grouped Actions | A Group Action</ui-path> with the action `id` equal to `org.intellij.sdk.action.GroupPopDialogAction`.
 
 ![Simple Action Group](grouped_action.png){width="550"}
@@ -93,7 +93,7 @@ The underlying `PopupDialogAction` implementation is reused for two entries in t
 ## Implementing Custom Action Group Classes
 
 In some cases, the specific behavior of an action group needs to depend on the context.
-The solution is analogous to making a [single action entry dependent on context](working_with_custom_actions.md#extending-the-update-method).
+The solution is analogous to making a [single action entry dependent on context](creating_actions_tutorial.md#extending-the-update-method).
 
 The steps below show how to make a group of actions available and visible if certain conditions are met.
 In this case, the condition is having an instance of available editor.

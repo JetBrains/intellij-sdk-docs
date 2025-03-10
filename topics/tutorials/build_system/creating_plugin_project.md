@@ -183,7 +183,7 @@ Gradle projects are run from the IDE's Gradle Tool window.
 ### Adding Code to the Project
 
 Before running [`my_plugin`](#components-of-a-wizard-generated-gradle-intellij-platform-plugin), some code can be added to provide simple functionality.
-See the [](working_with_custom_actions.md) tutorial for step-by-step instructions for adding a menu action.
+See the [](creating_actions_tutorial.md) tutorial for step-by-step instructions for adding a menu action.
 
 ### Executing the Plugin
 

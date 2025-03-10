@@ -24,7 +24,7 @@ The action implementation determines the contexts in which an action is availabl
 Registration determines where an action appears in the IDE UI.
 Once implemented and registered, an action receives callbacks from the IntelliJ Platform in response to user gestures.
 
-The [](working_with_custom_actions.md) tutorial describes the process of adding a custom action to a plugin.
+The [](creating_actions_tutorial.md) tutorial describes the process of adding a custom action to a plugin.
 The [](grouping_action.md) tutorial demonstrates three types of groups that can contain actions.
 
 ## Action Implementation

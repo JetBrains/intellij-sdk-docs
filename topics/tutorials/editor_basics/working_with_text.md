@@ -21,7 +21,7 @@ In this example, we access the `Editor` from an action.
 The source code for the Java class in this example is [EditorIllustrationAction](%gh-sdk-samples-master%/editor_basics/src/main/java/org/intellij/sdk/editor/EditorIllustrationAction.java).
 
 To register the action, we must add the corresponding elements to the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of the plugin configuration file [plugin.xml](%gh-sdk-samples-master%/editor_basics/src/main/resources/META-INF/plugin.xml).
-For more information, refer to the [](working_with_custom_actions.md#registering-a-custom-action) section.
+For more information, refer to the [](creating_actions_tutorial.md#registering-a-custom-action) section.
 The `EditorIllustrationAction` action is registered in the group `EditorPopupMenu` so it will be available from the context menu when focus is on the editor:
 
 ```xml

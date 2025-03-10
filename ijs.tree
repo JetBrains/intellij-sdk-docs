@@ -102,7 +102,7 @@
     </toc-element>
     <toc-element topic="action_system.md" accepts-web-file-names="action_system.html,basic-action-system.html">
       <toc-element topic="actions_tutorial.md">
-        <toc-element topic="working_with_custom_actions.md"/>
+        <toc-element topic="creating_actions_tutorial.md" accepts-web-file-names="working-with-custom-actions.html"/>
         <toc-element topic="grouping_action.md"/>
       </toc-element>
     </toc-element>

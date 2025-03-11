@@ -6,5 +6,5 @@
 > on how to set up Kotlin for your plugin project.
 
 [docs]: https://plugins.jetbrains.com/docs/intellij/
-[docs:actions]: https://plugins.jetbrains.com/docs/intellij/basic-action-system.html
+[docs:actions]: https://plugins.jetbrains.com/docs/intellij/action-system.html
 [docs:kotlin]: https://plugins.jetbrains.com/docs/intellij/kotlin.html

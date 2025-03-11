@@ -2,6 +2,10 @@
 
 # Verifying Plugin Compatibility
 
+<web-summary>
+Verifying plugin binary compatibility using Plugin Verifier and inspections to ensure the plugin works correctly with the latest IDE versions.
+</web-summary>
+
 <link-summary>Tooling for ensuring compatibility.</link-summary>
 
 See [](api_changes_list.md) for known breaking changes.

@@ -1,8 +1,8 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Plugin Compatibility with IntelliJ Platform Products
 
-<link-summary>Declaring and verifying compatibility of plugins developed for multiple IntelliJ Platform-based IDEs.</link-summary>
+<link-summary>Declaring and verifying the compatibility of plugins developed for multiple IntelliJ Platform-based IDEs.</link-summary>
 
 All products based on the IntelliJ Platform are built on the same underlying API.
 Some of these products share features built on top of the platform, such as Java support in IntelliJ IDEA and Android Studio.
@@ -57,7 +57,7 @@ The following table lists modules that are currently available in all products.
 | `com.intellij.modules.vcs`                                                          | VCS Revision Numbers, File Status, Change Lists, File History, Annotations                                    |
 | `com.intellij.modules.xdebugger`                                                    | Debug Session, Stack Frames, Break Points, Source Positions, Memory Views, Tracked Instances                  |
 
-As of this writing, if a plugin: **A)** is dependent _only_ on one or more of the modules in the table above, **and B)** declares those module dependencies in <path>plugin.xml</path>, then any product developed by JetBrains based on the IntelliJ Platform will load it.
+When a plugin is dependent _only_ on one or more of the modules in the table above and declares those module dependencies in <path>plugin.xml</path>, then any product developed by JetBrains based on the IntelliJ Platform will load it.
 
 ### Modules Specific to Functionality
 
@@ -72,8 +72,8 @@ A plugin project is compatible with PHP functionality if it declares a dependenc
 > A high-level feature comparison tool for JetBrains IDEs is available [here](https://www.jetbrains.com/products/compare/).
 >
 
-The following table lists modules or built-in plugins that provide specific functionality, and the products currently shipping with them.
-This table is not exhaustive, to see a list of all modules, invoke code completion inside `<depends>` element in the <path>plugin.xml</path> file.
+The following table lists commonly used modules or built-in plugins that provide specific functionality, and the products currently shipping with them.
+This table is not exhaustive, to see a list of all available modules, invoke code completion inside the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) element in the <path>plugin.xml</path> file.
 
 | Module or Plugin for [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) Element | Functionality                                                                                                                                       | Product Compatibility                                                                                                                                                      |
 |-----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -98,7 +98,7 @@ This table is not exhaustive, to see a list of all modules, invoke code completi
 
 The [Java language functionality](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/) was extracted as a plugin in version 2019.2 of the IntelliJ Platform.
 This refactoring separated the Java implementation from the other, non-language portions of the platform.
-A dependency on the Java plugin (Plugin ID `com.intellij.java`) must be setup using [](plugin_dependencies.md).
+A dependency on the Java plugin (Plugin ID `com.intellij.java`) must be set up using [](plugin_dependencies.md).
 
 #### AppCode/CLion
 <primary-label ref="2020.3"/>
@@ -147,7 +147,7 @@ Consequently, [dependencies](plugin_dependencies.md) on [AppCode](app_code.md) a
     <depends>com.intellij.modules.clion</depends>
     ```
 
-See also: [](clion.md).
+See also [](clion.md).
 
 </tab>
 
@@ -188,7 +188,7 @@ See also: [](clion.md).
     <depends>com.intellij.modules.appcode</depends>
     ```
 
-See also: [](app_code.md).
+See also [](app_code.md).
 
 </tab>
 
@@ -204,11 +204,11 @@ These procedures assume a project has the Gradle build script and <path>plugin.x
 
 Exploring the available packages and classes in a plugin or module utilizes features in the IntelliJ IDEA IDE.
 
-If the project is not up-to-date, [reimport the Gradle project](https://www.jetbrains.com/help/idea/work-with-gradle-projects.html#gradle_refresh_project) as a first step.
+If the project is not up to date, [reimport the Gradle project](https://www.jetbrains.com/help/idea/work-with-gradle-projects.html#gradle_refresh_project) as a first step.
 Reimporting the project will automatically update the dependencies.
 
 In the <control>Project</control> tool window, select <control>Project</control> View and scroll to the bottom to see [External Libraries](https://www.jetbrains.com/help/idea/project-tool-window.html#content_pane).
-Look for the library `Gradle:unzipped.com.jetbrains.plugins:foo:`, where "foo" matches, or is similar to the contents of the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends)
+Look for the library `Gradle:unzipped.com.jetbrains.plugins:foo:`, where "foo" matches or is similar to the contents of the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends)
 tags in <path>plugin.xml</path> or the plugin dependency declarations in the Gradle build script
 (2.x: [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins), 1.x: [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins)).
 
@@ -223,7 +223,7 @@ Drill down into the JAR files to expose the packages and (decompiled) classes.
 
 If a project is dependent on a plugin or module, in some cases, the project can also [extend](plugin_extensions.md) the functionality available from the plugin or module.
 
-> See [Explore the IntelliJ Platform API](explore_api.md) for more information and strategies.
+> See [](explore_api.md) for more information and strategies.
 > Dedicated Extension Point Lists specific to IDEs are available under _Product Specific_.
 >
 
@@ -250,10 +250,10 @@ For [Gradle-based](developing_plugins.md) projects, [](verifying_plugin_compatib
 For DevKit-based projects, [create an SDK](setting_up_theme_environment.md#add-intellij-platform-plugin-sdk) pointing to an installation of the intended target IntelliJ Platform-based product, e.g., PhpStorm, rather than IntelliJ IDEA.
 Use the same development version of the IntelliJ Platform as the targeted product.
 
-Based on the tables above, the [JetBrains Marketplace](https://plugins.jetbrains.com/) automatically detects the JetBrains products with which a plugin is compatible, and makes the compatibility information available to plugin authors.
+Based on the tables above, the [JetBrains Marketplace](https://plugins.jetbrains.com/) automatically detects the JetBrains products with which a plugin is compatible and makes the compatibility information available to plugin authors.
 The compatibility information determines if plugins are available for users of a particular JetBrains product.
 
 ## Platform API Version Compatibility
 
 The API of IntelliJ Platform and bundled plugins may change between releases.
-The significant changes that may break plugins are listed on [Incompatible Changes in IntelliJ Platform and Plugins API](api_changes_list.md) page.
+The significant changes that may break plugins are listed on [](api_changes_list.md) page.

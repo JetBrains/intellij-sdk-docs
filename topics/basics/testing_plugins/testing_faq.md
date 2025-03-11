@@ -1,6 +1,10 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Testing FAQ
+
+<web-summary>
+Common FAQ, techniques, and issues for testing plugins. Writing automated tests, avoid flaky tests, debug, and handle common scenarios.
+</web-summary>
 
 <link-summary>Common questions and issues for testing plugins.</link-summary>
 
@@ -22,7 +26,7 @@ This page lists a number of common questions/issues and techniques useful for te
 
 ### UI
 
-See [](testing_plugins.md#ui-tests) for UI integration tests.
+See [](integration_tests_intro.md) for UI integration tests.
 
 - [`ProjectViewTestUtil`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/ProjectViewTestUtil.java)
 - [`TestLookupElementPresentation`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/TestLookupElementPresentation.java)

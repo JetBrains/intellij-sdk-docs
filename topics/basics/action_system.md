@@ -1,6 +1,10 @@
 <!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# Actions
+# Action System
+
+<web-summary>
+Adding custom actions to menus and toolbars. Implement and register actions, and handle user interactions efficiently.
+</web-summary>
 
 <link-summary>Adding custom actions to IntelliJ Platform-based IDEs menus and toolbar.</link-summary>
 
@@ -12,7 +16,7 @@
 
 </tldr>
 
-The actions system allows plugins to add their items to IntelliJ Platform-based IDE menus and toolbars.
+The _Action System_ allows plugins to add their items to IntelliJ Platform-based IDE menus and toolbars.
 For example, one of the action classes is responsible for the <ui-path>File | Open File...</ui-path> menu item and the <control>Open...</control> toolbar button.
 
 Actions in the IntelliJ Platform require a [code implementation](#action-implementation) and must be [registered](#registering-actions).
@@ -20,8 +24,8 @@ The action implementation determines the contexts in which an action is availabl
 Registration determines where an action appears in the IDE UI.
 Once implemented and registered, an action receives callbacks from the IntelliJ Platform in response to user gestures.
 
-The [](working_with_custom_actions.md) tutorial describes the process of adding a custom action to a plugin.
-The [](grouping_action.md) tutorial demonstrates three types of groups that can contain actions.
+The [](creating_actions_tutorial.md) tutorial describes the process of adding a custom action to a plugin.
+The [](grouping_actions_tutorial.md) tutorial demonstrates three types of groups that can contain actions.
 
 ## Action Implementation
 
@@ -82,7 +86,7 @@ See [Overriding the `AnAction.actionPerformed()` Method](#overriding-the-anactio
 
 #### Miscellaneous
 There are other methods to override in the `AnAction` class, such as changing the default `Presentation` object for the action.
-There is also a use case for overriding action constructors when registering them with dynamic action groups, demonstrated in the [Grouping Actions](grouping_action.md#adding-child-actions-to-the-dynamic-group) tutorial.
+There is also a use case for overriding action constructors when registering them with dynamic action groups, demonstrated in the [Grouping Actions](grouping_actions_tutorial.md#adding-child-actions-to-the-dynamic-group) tutorial.
 
 ### Overriding the `AnAction.update()` Method
 
@@ -194,7 +198,7 @@ Some menus like <ui-path>Tools</ui-path> have the `compact` attribute set, so th
 
 All other combinations of `compact`, visibility, and enablement produce N/A for gray appearance because the menu item isn't visible.
 
-See the [](grouping_action.md) tutorial for examples of creating action groups.
+See the [](grouping_actions_tutorial.md) tutorial for examples of creating action groups.
 
 ## Registering Actions
 
@@ -344,7 +348,7 @@ If necessary, a dedicated resource bundle to use for actions and groups can be d
 </actions>
 ```
 
-See [Extending DefaultActionGroup](grouping_action.md#extending-defaultactiongroup) for a tutorial of localizing Actions and Groups.
+See [Extending DefaultActionGroup](grouping_actions_tutorial.md#extending-defaultactiongroup) for a tutorial of localizing Actions and Groups.
 
 <tabs>
 

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # The IntelliJ Platform
 
@@ -79,7 +79,6 @@ The following IDEs are based on the IntelliJ Platform:
     * [RubyMine](rubymine.md)
     * [RustRover](https://www.jetbrains.com/rust/)
     * [WebStorm](webstorm.md)
-    * [Writerside](https://www.jetbrains.com/writerside/)
 * [Android Studio](android_studio.md) IDE from Google
 * [Comma](https://commaide.com/) IDE for Raku (formerly known as Perl 6)
 * [Jmix Studio](https://www.jmix.io/tools/)

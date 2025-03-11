@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Basics of Working with the Editor
 
@@ -22,5 +22,5 @@ The following are referenced in the tutorial:
   * [`TypedAction`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedAction.java).
 
 **Related topics:**
-* [](basic_action_system.md)
+* [](action_system.md)
 * [](threading_model.md)

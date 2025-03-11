@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Notable Changes in IntelliJ Platform and Plugins API 2020.*
 
@@ -27,7 +27,7 @@ Extensible HTML Lexer/Parser
 Please note that old API from `com.intellij.lexer.BaseHtmlLexer` is no longer working.
 
 Action System
-: New features in [Action System](basic_action_system.md): `<override-text>` works now for [`<group>`](plugin_configuration_file.md#idea-plugin__actions__group) as well, [`<synonym>`](plugin_configuration_file.md#idea-plugin__actions__action__synonym) provides alternative names when searching for actions, and groups can be excluded from search results.
+: New features in [](action_system.md): `<override-text>` works now for [`<group>`](plugin_configuration_file.md#idea-plugin__actions__group) as well, [`<synonym>`](plugin_configuration_file.md#idea-plugin__actions__action__synonym) provides alternative names when searching for actions, and groups can be excluded from search results.
 
 Welcome Screen customization
 : To provide additional custom tabs, implement [`WelcomeTabFactory`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/WelcomeTabFactory.java) and register in `com.intellij.welcomeTabFactory` extension point.

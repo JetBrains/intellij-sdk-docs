@@ -47,6 +47,7 @@
 
     <footer>
         <copyright>2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.</copyright>
+        <social type="bluesky" href="https://bsky.app/profile/platform.jetbrains.com"/>
         <social type="twitter" href="https://x.com/JBPlatform/"/>
         <social type="blog" href="https://blog.jetbrains.com/platform/"/>
         <social type="youtube" href="https://www.youtube.com/playlist?list=PLQ176FUIyIUZRWGCFY7G9V5zaM00THymY"/>

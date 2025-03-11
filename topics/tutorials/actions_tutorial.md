@@ -6,7 +6,7 @@
 
 This tutorial leads you through a series of steps which show how to create, register, and customize custom actions and action groups.
 By registering actions, you can add your own menu items, toolbar buttons and keyboard shortcuts to the IDE user interface.
-* [](working_with_custom_actions.md)
-* [](grouping_action.md)
+* [](creating_actions_tutorial.md)
+* [](grouping_actions_tutorial.md)
 
 The source code for the [`action_basics`](%gh-sdk-samples-master%/action_basics) code sample is used throughout this tutorial.

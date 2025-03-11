@@ -577,7 +577,7 @@ Meanwhile, try to speed up what you can in your plugin as it will be generally b
 #### Action Update
 
 For implementations of [`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java), plugin authors should specifically
-review the documentation of `AnAction.getActionUpdateThread()` in the [](basic_action_system.md) section as it describes how threading works for actions.
+review the documentation of `AnAction.getActionUpdateThread()` in the [](action_system.md) section as it describes how threading works for actions.
 
 #### Minimize Write Actions Scope
 

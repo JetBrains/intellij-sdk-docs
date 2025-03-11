@@ -25,7 +25,7 @@ Within the implemented actions, you will be able to:
 
 
 [docs]: https://plugins.jetbrains.com/docs/intellij/
-[docs:actions]: https://plugins.jetbrains.com/docs/intellij/basic-action-system.html
+[docs:actions]: https://plugins.jetbrains.com/docs/intellij/action-system.html
 [docs:project]: https://plugins.jetbrains.com/docs/intellij/project.html
 [docs:sdk]: https://plugins.jetbrains.com/docs/intellij/sdk.html
 [docs:library]: https://plugins.jetbrains.com/docs/intellij/library.html

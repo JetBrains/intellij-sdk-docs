@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 1. Working with Text
 
@@ -8,7 +8,7 @@ This tutorial shows how to use actions to access a caret placed in a document op
 Using information about the caret, replace selected text in a document with a string.
 
 The approach in this tutorial relies heavily on creating and registering actions.
-To review the fundamentals of creating and registering actions, refer to the [Actions Tutorial](action_system.md).
+To review the fundamentals of creating and registering actions, refer to [](action_system.md) tutorial.
 
 Multiple examples are used from the [editor_basics](%gh-sdk-samples-master%/editor_basics) plugin code sample from the IntelliJ Platform SDK.
 It may be helpful to open that project in an IntelliJ Platform-based IDE, build the project, run it, select some text in the editor, and invoke the **Editor Replace Text** menu item on the editor context menu.
@@ -21,7 +21,7 @@ In this example, we access the `Editor` from an action.
 The source code for the Java class in this example is [EditorIllustrationAction](%gh-sdk-samples-master%/editor_basics/src/main/java/org/intellij/sdk/editor/EditorIllustrationAction.java).
 
 To register the action, we must add the corresponding elements to the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of the plugin configuration file [plugin.xml](%gh-sdk-samples-master%/editor_basics/src/main/resources/META-INF/plugin.xml).
-For more information, refer to the [Registering Actions](working_with_custom_actions.md#registering-a-custom-action) section of the Actions Tutorial.
+For more information, refer to the [](creating_actions_tutorial.md#registering-a-custom-action) section.
 The `EditorIllustrationAction` action is registered in the group `EditorPopupMenu` so it will be available from the context menu when focus is on the editor:
 
 ```xml
@@ -38,7 +38,7 @@ The `EditorIllustrationAction` action is registered in the group `EditorPopupMen
 ## Defining the Menu Action's Visibility
 
 To determine conditions by which the action will be visible and available requires `EditorIllustrationAction` to override the `AnAction.update()` method.
-For more information, refer to [Extending the Update Method](working_with_custom_actions.md#extending-the-update-method) section of the Actions Tutorial.
+For more information, refer to [](action_system.md#overriding-the-anactionupdate-method).
 
 To work with a selected part of the text, it's reasonable to make the menu action available only when the following requirements are met:
 * There is a [`Project`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/Project.java) object,

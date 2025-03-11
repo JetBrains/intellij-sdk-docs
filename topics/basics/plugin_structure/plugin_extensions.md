@@ -2,6 +2,10 @@
 
 # Extensions
 
+<web-summary>
+Declaring extensions in plugins to customize the IDE's behavior and functionality using available extension points.
+</web-summary>
+
 <link-summary>Extensions are the most common way of customizing functionality in the IDE.</link-summary>
 
 _Extensions_ are the most common way for a plugin to extend the IntelliJ Platform's functionality in a way that is not as straightforward as adding an action to a menu or toolbar.

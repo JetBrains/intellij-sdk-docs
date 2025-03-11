@@ -9,7 +9,7 @@ What this means is the following:
 
 * The tests run in a headless environment that uses real production implementations for most components, except for many UI components.
 * The tests usually test a feature as a whole rather than individual functions that comprise its implementation.
-* The tests do not test the Swing UI and work directly with the underlying model instead (see also [](#ui-tests)).
+* The tests do not test the Swing UI and work directly with the underlying model instead (see also [](#integration-and-ui-tests)).
 * Most tests take a source file or a set of source files as [input data](test_project_and_testdata_directories.md), execute a feature, and compare the output with expected results.
   Results can be specified as another set of source files, [special markup](testing_highlighting.md) in the input file, or directly in the test code.
 
@@ -25,28 +25,11 @@ Still, in general, we find it difficult to mock all the interactions with Intell
 We recommend working with real components instead.
 See also [](testing_faq.md#how-to-replace-componentservice-in-tests) and [](testing_faq.md#how-to-replace-extension-points-in-tests).
 
-### UI Tests
-
-UI tests using the dedicated [intellij-ui-test-robot](https://github.com/JetBrains/intellij-ui-test-robot) library can be run via Gradle tasks:
-
-<tabs>
-<tab title="IntelliJ Platform Gradle Plugin (2.x)">
-
-Use [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi) task.
-
-</tab>
-<tab title="Gradle IntelliJ Plugin (1.x)">
-
-Use [`runIdeForUiTests`](tools_gradle_intellij_plugin.md#tasks-runideforuitests) task.
-
-</tab>
-</tabs>
-
-Do not use <path>platform/testGuiFramework</path>, as it is reserved for internal use.
+### Integration and UI Tests
 
 <video src="https://www.youtube.com/watch?v=UJexzfG01Qo"/>
 
-_The IntelliJ Platform integration testing framework, used internally for performance, functional, and UI tests, is now accessible to help streamline and enhance your plugin testing experience._
+Check out [](integration_tests_intro.md) tutorial that guides through setup process and writing the first test.
 
 ## Topics
 

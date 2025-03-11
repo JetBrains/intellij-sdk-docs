@@ -1,8 +1,8 @@
 <!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Integration Tests: UI Testing
-
 <link-summary>Walkthrough how to interact with UI in integration tests.</link-summary>
+> This page is part of [](integration_tests.md) tutorial.
 
 For introduction and setting up dependencies please refer to [](integration_tests_intro.md).
 

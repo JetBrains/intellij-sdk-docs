@@ -18,7 +18,7 @@ To verify grammar and correct spelling, it is highly recommended to use [Grazie 
 
 ## Documentation Markup
 
-The documentation project is using [Writerside](https://www.jetbrains.com/writerside), so the plugin should be installed to have full support in the IDE.
+The documentation project is using [Writerside](https://plugins.jetbrains.com/plugin/20158-writerside), so the plugin should be installed to have full support in the IDE.
 The topic files themselves are [Markdown](https://github.github.com/gfm/) files (<path>*.md</path>) using some Writerside-specific custom tags (see below).
 
 ### Page Format

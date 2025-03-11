@@ -83,6 +83,11 @@ Code scheduled with `SwingUtilities.invokeLater` and `SwingUtilities.invokeAndWa
 Coroutines running under `Dispatchers.Main` do not hold the write-intent lock
 : To restore the old behavior, consider using `Dispatchers.EDT`.
 
+### External System 2025.1
+
+`com.intellij.openapi.externalSystem.service.internal.ExternalSystemProcessingManager` class now interface
+: Recompile code usages.
+
 ### Kotlin Plugin 2025.1
 
 `org.jetbrains.kotlin.KtFakeSourceElement` class renamed to `org.jetbrains.kotlin.KtFakePsiSourceElement`

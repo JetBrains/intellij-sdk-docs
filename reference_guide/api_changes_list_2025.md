@@ -93,3 +93,11 @@ Coroutines running under `Dispatchers.Main` do not hold the write-intent lock
 
 `org.jetbrains.kotlin.ir.builders.TranslationPluginContext` class removed
 : This class was removed from the Kotlin compiler and is no longer available. 
+
+### Remote Development 2025.1
+
+`com.jetbrains.rd.ide.model.AddToGroupRuleModel` class removed
+: Remove all usages
+
+`com.jetbrains.rd.ide.model.ActionConstraintModel` class removed
+: Remove all usages

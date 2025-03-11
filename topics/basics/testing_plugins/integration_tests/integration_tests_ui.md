@@ -66,9 +66,11 @@ One way to pause the IDE to examine its UI structure:
 }
 ```
 
-When the test is running, the following line will appear in the logs: http://localhost:63343/api/remote-driver/.
+When the test is running, the following line will appear in the logs: `http://localhost:63343/api/remote-driver/`.
 Opening this URL reveals an HTML representation of the IDE's Swing component tree:
-[](integration_tests_devtools.png)
+
+![](integration_tests_devtools.png){width=706}
+
 Using Developer Tools in the browser, it's possible to inspect detailed component attributes. 
 Here's an example component:
 
@@ -87,6 +89,8 @@ Here's an example component:
 There are other attributes which are omitted for clarity.
 
 The element corresponds to the following button:
+
+![](integration_tests_ui_sample.png){width=706}
 
 Similar to web testing frameworks like Selenium, XPath is used to locate components.
 The Driver framework provides a simple XPath builder.

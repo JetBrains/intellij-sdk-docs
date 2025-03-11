@@ -99,6 +99,12 @@ Coroutines running under `Dispatchers.Main` do not hold the write-intent lock
 `org.jetbrains.kotlin.ir.builders.TranslationPluginContext` class removed
 : This class was removed from the Kotlin compiler and is no longer available. 
 
+`org.jetbrains.kotlin.analysis.api.symbols.KaReceiverParameterSymbol.type` property is removed
+: Property deprecated in 2024.2 is removed. Use `KaReceiverParameterSymbol.returnType` instead.
+
+`org.jetbrains.kotlin.analysis.api.contracts.description.KaContractParameterValue.parameterSymbol` property is removed
+: Experimental API has changed. Use `KaContractParameterValue.symbol` instead.
+
 ### Remote Development 2025.1
 
 `com.jetbrains.rd.ide.model.AddToGroupRuleModel` class removed

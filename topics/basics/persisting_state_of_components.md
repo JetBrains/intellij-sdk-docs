@@ -4,6 +4,10 @@
 
 <!-- https://jb.gg/ij-psoc -->
 
+<web-summary>
+Persisting the state of components for IntelliJ Platform plugins and sharing settings between IDE installations.
+</web-summary>
+
 <link-summary>Persisting data that is available after the IDE restarts and can be shared between different IDE installations.</link-summary>
 
 The IntelliJ Platform provides an API that allows components or services to persist their state between restarts of the IDE.

@@ -1,6 +1,10 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # IDE Infrastructure
+
+<web-summary>
+How to log messages, report errors, access runtime info, help users report fatal errors, and manage plugins in your IDE.
+</web-summary>
 
 <link-summary>General IDE-level functionality (logging, error reporting, environment/installation info).</link-summary>
 

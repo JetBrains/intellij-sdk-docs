@@ -2,6 +2,10 @@
 
 # Explore the IntelliJ Platform API
 
+<web-summary>
+Strategies and tools for exploring the IntelliJ Platform API, navigate extension points, search code, and find examples.
+</web-summary>
+
 <link-summary>Strategies and tools for exploring the API.</link-summary>
 
 Sometimes it can be challenging to implement plugin features for the IntelliJ Platform,

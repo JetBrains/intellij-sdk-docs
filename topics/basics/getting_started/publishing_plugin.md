@@ -1,8 +1,8 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Publishing a Plugin
 
-<link-summary>Publishing a plugin to JetBrains Marketplace manually or with Gradle IntelliJ Plugin.</link-summary>
+<link-summary>Publishing a plugin to JetBrains Marketplace manually or with the Gradle plugin.</link-summary>
 
 When a plugin is ready, it can be published to the [JetBrains Marketplace](https://plugins.jetbrains.com) plugin repository so that other users can install it in their IDE.
 
@@ -61,7 +61,9 @@ See [](#deploying-a-plugin-with-gradle) on how to publish new versions using Gra
 Once [Gradle support](creating_plugin_project.md) has been configured, and the plugin has been [uploaded manually](#uploading-a-plugin-to-jetbrains-marketplace) to the plugin repository at least once,
 it can be built and deployed to the [JetBrains Marketplace](https://plugins.jetbrains.com) automatically using dedicated Gradle tasks.
 
-> **2.x** refers to [](tools_intellij_platform_gradle_plugin.md) and **1.x** to [](tools_gradle_intellij_plugin.md) in the following sections.
+> In the following sections
+> - **2.x** refers to [](tools_intellij_platform_gradle_plugin.md)
+> - **1.x** refers to [](tools_gradle_intellij_plugin.md)
 >
 
 ### Building Distribution

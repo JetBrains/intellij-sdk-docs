@@ -20,7 +20,7 @@ The [`PersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intel
 To use it:
 - mark a [service](plugin_services.md) (project or application-level service for storing project or application data, respectively) as implementing the `PersistentStateComponent` interface
 - define the state class
-- specify the storage location using [`@State`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/State.java)
+- specify the [storage location](#defining-the-storage-location) using [`@State`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/State.java)
 
 Note that instances of extensions can't persist their state by implementing `PersistentStateComponent`.
 If an extension needs to have a persistent state, define a separate service responsible for managing that state.

@@ -407,8 +407,8 @@
       <toc-element topic="api_changes_list_2025.md" toc-title="2025.*"/>
       <toc-element topic="api_changes_list_2024.md" toc-title="2024.*"/>
       <toc-element topic="api_changes_list_2023.md" toc-title="2023.*"/>
-      <toc-element topic="api_changes_list_2022.md" toc-title="2022.*"/>
       <toc-element toc-title="Older Versions">
+        <toc-element topic="api_changes_list_2022.md" toc-title="2022.*"/>
         <toc-element topic="api_changes_list_2021.md" toc-title="2021.*"/>
         <toc-element topic="api_changes_list_2020.md" toc-title="2020.*"/>
         <toc-element topic="api_changes_list_2019.md" toc-title="2019.*"/>
@@ -419,8 +419,8 @@
       <toc-element topic="api_notable_list_2025.md" toc-title="2025.*"/>
       <toc-element topic="api_notable_list_2024.md" toc-title="2024.*"/>
       <toc-element topic="api_notable_list_2023.md" toc-title="2023.*"/>
-      <toc-element topic="api_notable_list_2022.md" toc-title="2022.*"/>
       <toc-element toc-title="Older Versions">
+        <toc-element topic="api_notable_list_2022.md" toc-title="2022.*"/>
         <toc-element topic="api_notable_list_2021.md" toc-title="2021.*"/>
         <toc-element topic="api_notable_list_2020.md" toc-title="2020.*"/>
         <toc-element topic="api_notable_list_2019.md" toc-title="2019.*"/>

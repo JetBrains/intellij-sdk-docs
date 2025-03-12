@@ -1,6 +1,10 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 # Internal API Migration
+
+<web-summary>
+Lists private APIs and their replacements in IntelliJ Platform and plugins.
+</web-summary>
 
 <link-summary>Lists private API annotated with @ApiStatus.Internal/@IntellijInternalApi and corresponding replacement.</link-summary>
 
@@ -14,17 +18,19 @@ which indicates it is _private API_ and must not be used outside of IntelliJ Pla
 >
 {title="ApiStatus.Internal Javadoc"}
 
-Such violations are reported from [](verifying_plugin_compatibility.md#plugin-verifier) and are highlighted in the IDE using [dedicated inspection](verifying_plugin_compatibility.md#ide-support).
+Such violations are reported from [](verifying_plugin_compatibility.md#plugin-verifier) and are highlighted in the IDE using a [dedicated inspection](verifying_plugin_compatibility.md#ide-support).
 
 Each entry is mapped to its corresponding _Replacement_, pointing to the recommended API.
 
 <snippet id="notComplete">
 
-> The lists are not complete and will be updated continuously. Please check corresponding code documentation when encountering any API not listed on this page.
+> The lists are not complete and will be updated continuously.
 >
-> In some cases, such documentation might not be available inside the IDE for the current target platform version. Please use <control>Go to file</control> to browse the latest version in the [intellij-community](https://github.com/jetbrains/intellij-community) GitHub repository instead.
+> Check the corresponding code documentation when encountering any API not listed on this page.
+> In some cases, such documentation might not be available inside the IDE for the current target platform version.
+> Use <control>Go to file</control> to browse the latest version in the [intellij-community](%gh-ic-master%/) GitHub repository instead.
 >
-> Please use the feedback form at the bottom of this page if you encounter missing or unclear information.
+> Use the feedback form at the bottom of this page if you encounter missing or unclear information.
 >
 {style="note"}
 
@@ -34,7 +40,7 @@ Each entry is mapped to its corresponding _Replacement_, pointing to the recomme
 
 | Internal API                             | Replacement                                                                                                                                                                 |
 |------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `AnAction.applyTextOverride()`           | [](plugin_configuration_file.md#idea-plugin__actions__action__override-text)                                                                                       |
+| `AnAction.applyTextOverride()`           | [](plugin_configuration_file.md#idea-plugin__actions__action__override-text)                                                                                                |
 | `ApplicationLoadListener`                | See [](plugin_components.md#application-startup)                                                                                                                            |
 | `BuildNumber.currentVersion()`           | Use `ApplicationInfo.getBuild()`                                                                                                                                            |
 | `CompactVirtualFileSet`                  | Use `VfsUtilCore.createCompactVirtualFileSet()`                                                                                                                             |

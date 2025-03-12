@@ -79,9 +79,11 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 Code scheduled with `SwingUtilities.invokeLater` and `SwingUtilities.invokeAndWait` does not hold the write-intent lock
 : Consider using an explicit wrapping with [`ReadAction.compute()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) or [`WriteAction.run(ThrowableRunnable<E>)`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/WriteAction.java).
+See [](threading_model.md).
 
 Coroutines running under `Dispatchers.Main` do not hold the write-intent lock
 : To restore the old behavior, consider using `Dispatchers.EDT`.
+See [](threading_model.md).
 
 ### External System 2025.1
 
@@ -97,12 +99,12 @@ Coroutines running under `Dispatchers.Main` do not hold the write-intent lock
 : This class was removed from the Kotlin compiler and is no longer available.
 
 `org.jetbrains.kotlin.ir.builders.TranslationPluginContext` class removed
-: This class was removed from the Kotlin compiler and is no longer available. 
+: This class was removed from the Kotlin compiler and is no longer available.
 
 ### Remote Development 2025.1
 
 `com.jetbrains.rd.ide.model.AddToGroupRuleModel` class removed
-: Remove all usages
+: Remove all usages.
 
 `com.jetbrains.rd.ide.model.ActionConstraintModel` class removed
-: Remove all usages
+: Remove all usages.

@@ -67,7 +67,6 @@ Each entry is composed of a product code and coordinates used for dependency and
 | `RubyMine`              | `RM`   | -                                                  |    &check;     |
 | `RustRover`             | `RR`   | `com.jetbrains.intellij.rustrover:RustRover`       |    &check;     |
 | `WebStorm`              | `WS`   | `com.jetbrains.intellij.webstorm:webstorm`         |    &check;     |
-| `Writerside`            | `WRS`  | `com.jetbrains.intellij.idea:writerside`           |    &check;     |
 
 
 ## `PluginBean`

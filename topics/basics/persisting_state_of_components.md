@@ -34,23 +34,60 @@ If an extension needs to have a persistent state, define a separate service resp
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
 
-The easiest way to implement a persistent state component in Kotlin is extending [`SimplePersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/SimplePersistentStateComponent.kt), which implements `PersistentStateComponent`.
+The recommended approach to implementing a persistent state component in Kotlin is to extend one of the base classes:
+1. [`SimplePersistentStateComponent`](#SimplePersistentStateComponent)
+2. [`SerializablePersistentStateComponent`](#SerializablePersistentStateComponent) (available since 2022.2)
 
-`SimplePersistentStateComponent` is parameterized by a subclass of [`BaseState`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/BaseState.kt).
+<chapter title="SimplePersistentStateComponent" id="SimplePersistentStateComponent">
+
+[`SimplePersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/SimplePersistentStateComponent.kt) is parameterized by a subclass of [`BaseState`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/BaseState.kt).
 `BaseState` provides a set of handy [property delegates](https://kotlinlang.org/docs/delegated-properties.html), which make it easy to create properties with default values.
 In addition, delegates track property modifications internally, which helps decrease calling `PersistentStateComponent.getState()` by the platform.
 
-It is recommended to create separate classes for a component and its state:
+Example:
 
 ```kotlin
 @Service
 @State(...)
-class MySettings : SimplePersistentStateComponent<MyState>(MyState())
-
-class MyState : BaseState() {
-  var value by string()
+class MySettings : SimplePersistentStateComponent<MySettings.State>(State()) {
+  class State : BaseState() {
+    var value by string("default value")
+  }
 }
 ```
+
+</chapter>
+
+<chapter title="SerializablePersistentStateComponent" id="SerializablePersistentStateComponent">
+<primary-label ref="2022.2"/>
+
+[`SerializablePersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/SerializablePersistentStateComponent.kt) is parameterized with a state data class.
+
+State properties are exposed via persistent state component class' properties.
+The state properties are modified by copying the state and overwriting a modified value within `SerializablePersistentStateComponent.updateState()`, which ensures atomic modification.
+
+Example:
+
+```kotlin
+@Service
+@State(...)
+class MySettings : SerializablePersistentStateComponent<MySettings.State>(State()) {
+
+  var stringValue: String
+    get() = state.stringValue
+    set(value) {
+      updateState {
+        it.copy(stringValue = value)
+      }
+    }
+
+  data class State (
+    @JvmField val stringValue: String = "default value"
+  )
+}
+```
+
+</chapter>
 
 </tab>
 <tab title="Java" group-key="java">

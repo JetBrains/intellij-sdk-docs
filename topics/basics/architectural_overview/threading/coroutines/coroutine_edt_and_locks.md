@@ -2,6 +2,8 @@
 
 # Coroutines on EDT and Locks
 
+<include from="coroutines_snippets.md" element-id="learnCoroutines"/>
+
 Sometimes, errors similar to the below can be observed in the IDE:
 
 ```

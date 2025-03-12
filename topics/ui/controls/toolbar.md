@@ -195,3 +195,4 @@ In places other than tool windows, it is fine to always show the border.
 ## Customization
 
 Provide the ability to customize toolbars in the main window. To do this, add the toolbar to the list on the <ui-path>Settings | Appearance & Behavior | Menus and Toolbars</ui-path> page.
+

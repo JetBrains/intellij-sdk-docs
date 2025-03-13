@@ -85,6 +85,9 @@ Coroutines running under `Dispatchers.Main` do not hold the write-intent lock
 : To restore the old behavior, consider using `Dispatchers.EDT`.
 See [](threading_model.md).
 
+`com.intellij.psi.xml.XmlTokenType` class now interface
+: Use `XmlTokenType` constants directly.
+
 Class `com.intellij.psi.xml.XmlElementType` no longer extends `com.intellij.psi.xml.XmlTokenType`
 : Update code usages.
 

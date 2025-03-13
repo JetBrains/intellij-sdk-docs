@@ -108,3 +108,8 @@ See [](threading_model.md).
 
 `com.jetbrains.rd.ide.model.ActionConstraintModel` class removed
 : Remove all usages.
+
+### JavaScript and TypeScript Plugin 2025.1
+
+`com.intellij.lang.javascript.service.JSAsyncLanguageServiceBase.JSLanguageServiceInfoReporter` class moved to package `com.intellij.lang.javascript.service`
+: Update all usages

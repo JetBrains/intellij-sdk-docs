@@ -25,8 +25,6 @@ The main differences are:
 
 If none of that is required and the analysis only needs to run in the active editor, [Annotator](syntax_highlighting_and_error_highlighting.md#annotator) provides better performance (because it supports incremental analysis) and more flexibility for highlighting errors.
 
-> See the [guidelines](inspections.md) on naming, writing description, and message texts for inspections.
-
 **Examples:**
 - [Code Inspections Tutorial](code_inspections.md)
 - A [simple inspection](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/codeInspection/TrailingSpacesInPropertyInspection.java) for the [Properties language plugin](%gh-ic%/plugins/properties)

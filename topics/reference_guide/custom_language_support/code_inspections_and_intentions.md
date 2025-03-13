@@ -14,7 +14,9 @@
 
 Code inspections analyze code for potential issues, such as errors, inefficiencies, or code smells.
 Code intentions suggest improvements and refactorings to enhance readability and maintainability.
+
 While inspections focus on detecting problems, intentions provide optional enhancements to improve code structure.
+Inspections are run on a full PSI tree and report found problems, while intention actions are run only on elements under the cursor.
 
 ## Inspections
 

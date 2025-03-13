@@ -134,3 +134,12 @@ Class `com.intellij.psi.xml.XmlElementType` no longer extends `com.intellij.psi.
 
 `com.intellij.lang.javascript.BaseJSTokenTypes` class removed
 : Use `com.intellij.lang.javascript.JSTokenTypes` class instead
+
+`com.intellij.lang.javascript.highlighting.TypeScriptHighlighter(DialectOptionHolder dialectOptionsHolder, boolean skipKeywordHighlights)` constructor removed
+: Use constructor without `skipKeywordHighlights` parameter
+
+`com.intellij.lang.javascript.dialects.ECMA6SyntaxHighlighterFactory.ECMA6SyntaxHighlighter(DialectOptionHolder dialectOptionsHolder, boolean skipKeywordHighlights)` constructor removed
+: Use constructor without `skipKeywordHighlights` parameter
+
+`com.intellij.lang.javascript.highlighting.JSHighlighter(DialectOptionHolder dialectOptionsHolder, boolean skipKeywordHighlights)` constructor removed
+: Use constructor without `skipKeywordHighlights` parameter

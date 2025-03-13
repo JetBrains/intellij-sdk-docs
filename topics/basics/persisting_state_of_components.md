@@ -61,10 +61,10 @@ class MySettings : SimplePersistentStateComponent<MySettings.State>(State()) {
 <chapter title="SerializablePersistentStateComponent" id="SerializablePersistentStateComponent">
 <primary-label ref="2022.2"/>
 
-[`SerializablePersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/SerializablePersistentStateComponent.kt) is parameterized with a state data class.
+[`SerializablePersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/SerializablePersistentStateComponent.kt) is parameterized with an immutable state data class.
 
-State properties are exposed via persistent state component class' properties.
-The state properties are modified by copying the state and overwriting a modified value within `SerializablePersistentStateComponent.updateState()`, which ensures atomic modification.
+State properties are exposed for reading and modification via persistent state component class' properties.
+The state properties are modified by copying the state and overwriting a modified value within `SerializablePersistentStateComponent.updateState()`, which ensures atomic modification and thread safety.
 
 Example:
 

@@ -1,14 +1,16 @@
 <!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Integration Tests: UI Testing
+
 <link-summary>Walkthrough how to interact with UI in integration tests.</link-summary>
+
 > This page is part of [](integration_tests.md) tutorial.
 
 For introduction and setting up dependencies please refer to [](integration_tests_intro.md).
 
 ## UI Hierarchy
 
-IntelliJ-based IDEs primarily use Swing and AWT for their user interface, while JCEF is used in specific cases like Markdown rendering.
+IntelliJ-based IDEs primarily use Swing and AWT for their user interface, while [JCEF](embedded_browser_jcef.md) is used in specific cases like Markdown rendering.
 These UI frameworks organize elements in a parent-child hierarchy, similar to HTML's DOM structure:
 
 * Top-level containers (IDE frame and dialogs).
@@ -17,7 +19,7 @@ These UI frameworks organize elements in a parent-child hierarchy, similar to HT
 
 Every UI element (except top-level containers) must have a parent container, creating a clear hierarchical structure.
 
-The Driver framework provides a Kotlin DSL that mirrors this hierarchy. 
+The Driver framework provides a Kotlin DSL that mirrors this hierarchy.
 Here's an example:
 
 ```kotlin
@@ -33,8 +35,8 @@ This code demonstrates hierarchical navigation:
 
 * Find the main IDE window (`ideFrame`).
 * Trigger the _Search Everywhere_ action (`invokeAction("SearchEverywhere")`).
-* Locate the _Search Everywhere_ popup (`searchEverywherePopup`).
-* Find and click the _Preview_ button within the popup (`actionButtonByXpath(xQuery { byAccessibleName("Preview")}).click()`).
+* Locate the <control>Search Everywhere</control> popup (`searchEverywherePopup`).
+* Find and click the <control>Preview</control> button within the popup (`actionButtonByXpath(xQuery { byAccessibleName("Preview")}).click()`).
 
 The code could be written more concise:
 
@@ -46,7 +48,7 @@ ideFrame {
 
 But the shorter code has two significant drawbacks:
 
-* **Reduced precision**: The code searches for the _Preview_ button throughout the entire IDE frame.
+* **Reduced precision**: The code searches for the <control>Preview</control> button throughout the entire IDE frame.
   It might find unintended matches in the project explorer, tool windows, or other UI elements.
   This can make tests unreliable and prone to breaking when the UI content changes.
 * **Decreased readability**: While the code is more concise, it doesn't communicate the intended navigation path.
@@ -71,7 +73,7 @@ Opening this URL reveals an HTML representation of the IDE's Swing component tre
 
 ![](integration_tests_devtools.png){width=706}
 
-Using Developer Tools in the browser, it's possible to inspect detailed component attributes. 
+Using Developer Tools in the browser, it's possible to inspect detailed component attributes.
 Here's an example component:
 
 ```html
@@ -109,7 +111,7 @@ Multiple attributes can be combined for a more precise selection.
 
 Once a component is located, it's possible to interact with it or verify its properties.
 
-To click the _Current File_ button:
+To click the <control>Current File</control> button:
 
 ```kotlin
 x(xQuery { byVisibleText("Current File") }).click()
@@ -177,7 +179,7 @@ fun simpleTestForCustomUIElement() {
 The test does the following:
 
 * Opening the popup
-* Click the _Current File_ button.
+* Click the <control>Current File</control> button.
 * Popup menu appears.
 * Finding the list
 * Use `popup()` to locate the popup with a configuration list.

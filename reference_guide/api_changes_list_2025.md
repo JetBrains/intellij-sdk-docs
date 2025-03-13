@@ -91,6 +91,18 @@ See [](threading_model.md).
 Class `com.intellij.psi.xml.XmlElementType` no longer extends `com.intellij.psi.xml.XmlTokenType`
 : Update code usages.
 
+`filetype.xml.description` property removed from resource bundle `messages.XmlPsiBundle`
+: Use property from resource bundle `messages.XmlParserBundle`
+
+`xml.parsing.closing.tag.matches.nothing` property removed from resource bundle `messages.XmlPsiBundle`
+: Use property from resource bundle `messages.XmlParserBundle`
+
+`xml.parsing.unclosed.attribute.value` property removed from resource bundle `messages.XmlPsiBundle`
+: Use property from resource bundle `messages.XmlParserBundle`
+
+`xml.parsing.unescaped.ampersand.or.nonterminated.character.entity.reference` property removed from resource bundle `messages.XmlPsiBundle`
+: Use property from resource bundle `messages.XmlParserBundle`
+
 ### External System 2025.1
 
 `com.intellij.openapi.externalSystem.service.internal.ExternalSystemProcessingManager` class now interface

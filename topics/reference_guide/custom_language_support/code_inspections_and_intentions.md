@@ -12,6 +12,10 @@
 
 </tldr>
 
+Code inspections analyze code for potential issues, such as errors, inefficiencies, or code smells.
+Code intentions suggest improvements and refactorings to enhance readability and maintainability.
+While inspections focus on detecting problems, intentions provide optional enhancements to improve code structure.
+
 ## Inspections
 
 The code inspections for custom languages use the same API as all other code inspections, based on the [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java) class.

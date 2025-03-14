@@ -54,7 +54,7 @@ If unrelated actions are hidden under the dropdown menu, they are hard to find:
 
 ### Only one related action
 
-Putting the single action in the dropdown menu doesn't save a lot of space:
+Putting a single action in the dropdown menu doesn't save a lot of space:
 
 <format color="E55765" style="bold">Incorrect</format>
 
@@ -86,7 +86,8 @@ Show a tooltip:
 
 ### Dropdown menu
 
-Place related actions into the dropdown menu. Do not duplicate the main action in the dropdown menu, otherwise it is confusing how to trigger the main action — with the button or from the menu.
+Place related actions into the dropdown menu. Do not duplicate the main action in the dropdown menu.
+Otherwise, it is not clear how to trigger the main action: with the button or from the menu.
 
 <format color="E55765" style="bold">Incorrect</format>
 
@@ -154,7 +155,7 @@ If there is a dangerous action among other actions in the dropdown, add the line
         <p><shortcut>Tab</shortcut></p>
         <p><shortcut>Shift + Tab</shortcut></p>
     </td>
-    <td>Move focus to the control next to the split button and hide the dropdown menu.</td>
+    <td>Move focus to a component next to the split button and hide the dropdown menu.</td>
   </tr>
 </table>
 

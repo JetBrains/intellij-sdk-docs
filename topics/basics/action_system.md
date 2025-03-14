@@ -57,7 +57,7 @@ The state (enabled, visible) of an action determines whether the action is avail
 An object of the [`AnActionEvent`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java) type is passed to this method and contains information about the current context for the action.
 
 Actions are made available by changing the state in the [`Presentation`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/Presentation.java) object associated with the event context.
-As explained in [Overriding the `AnAction.update()`  Method](#overriding-the-anactionupdate-method), it is vital `update()` methods _execute quickly_ and return execution to platform.
+As explained in [Overriding the `AnAction.update()` Method](#overriding-the-anactionupdate-method), it is vital `update()` methods _execute quickly_ and return execution to platform.
 
 #### `AnAction.getActionUpdateThread()`
 <primary-label ref="2022.3"/>
@@ -453,7 +453,7 @@ Code insight to defined Actions and Groups is provided by the _Plugin DevKit_ pl
 ### Builtin Places
 
 - IntelliJ Platform API, for example [`ActionManager.getAction()`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionManager.java)
-- Test Framework API, for example  [`CodeInsightTestFixture.performEditorAction()`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/CodeInsightTestFixture.java)
+- Test Framework API, for example [`CodeInsightTestFixture.performEditorAction()`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/CodeInsightTestFixture.java)
 - String literal fields with the name `ACTION_ID`
 - Constants defined in [`IdeActions`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/actionSystem/IdeActions.java)
 

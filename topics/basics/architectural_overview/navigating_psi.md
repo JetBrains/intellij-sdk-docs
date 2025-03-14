@@ -5,7 +5,7 @@
 <link-summary>Navigating the PSI tree elements to find required information about parents or children.</link-summary>
 
 There are three main ways to navigate the PSI: *top-down*, *bottom-up*, and *references*.
-In the first scenario,  you have a PSI file or another higher-level element (for example, a method). You need to find all elements that match a specified condition (for example, all variable declarations).
+In the first scenario, you have a PSI file or another higher-level element (for example, a method). You need to find all elements that match a specified condition (for example, all variable declarations).
 In the second scenario, you have a specific point in the PSI tree (for example, the element at caret) and need to find out something about its context (for example, the element in which it has been declared).
 Finally, *references* allow you to navigate from the usages of an element (e.g., a method call) to the declaration (the method being called) and back.
 References are described in a [separate topic](psi_references.md).

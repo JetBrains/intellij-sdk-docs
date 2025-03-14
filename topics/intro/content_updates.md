@@ -16,7 +16,7 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 {march-25}
 
 Integration Testing
-: Add new section [](integration_tests.md) with the first part [](integration_tests_intro.md).
+: Add new section [](integration_tests.md).
 
 Minor Changes and Additions
 :

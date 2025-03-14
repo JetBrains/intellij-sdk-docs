@@ -132,6 +132,9 @@ Class `com.intellij.psi.xml.XmlElementType` no longer extends `com.intellij.psi.
 `com.intellij.lang.javascript.service.JSAsyncLanguageServiceBase.JSLanguageServiceInfoReporter` class moved to package `com.intellij.lang.javascript.service`
 : Update all usages
 
+`com.intellij.lang.javascript.JSElementTypes.toModuleContentType(IElementType type)` method removed
+: Use `com.intellij.lang.javascript.JSModuleContentType.toModuleContentType(IElementType type)` method instead
+
 `com.intellij.lang.javascript.BaseJSTokenTypes` class removed
 : Use `com.intellij.lang.javascript.JSTokenTypes` class instead
 

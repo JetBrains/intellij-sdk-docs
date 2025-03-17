@@ -119,6 +119,9 @@ Class `com.intellij.psi.xml.XmlElementType` no longer extends `com.intellij.psi.
 `org.jetbrains.kotlin.ir.builders.TranslationPluginContext` class removed
 : This class was removed from the Kotlin compiler and is no longer available.
 
+`org.jetbrains.kotlin.analysis.decompiler.stub.file.ClsClassFinder.isKotlinInternalCompiledFile$default(ClsClassFinder, VirtualFile, byte[], int, Object)` method removed
+: Recompile code usages.
+
 ### Remote Development 2025.1
 
 `com.jetbrains.rd.ide.model.AddToGroupRuleModel` class removed

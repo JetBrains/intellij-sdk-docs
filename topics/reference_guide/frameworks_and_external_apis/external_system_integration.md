@@ -115,7 +115,7 @@ There are two classes built on the *template method* pattern that simplify imple
 
 Note that [`AbstractExternalProjectImportBuilder`](%gh-ic%/java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportBuilder.java) is built on top of the 'external system settings' controls.
 
-Concrete implementations should be registered in [`com.intellij.projectImportBuilder`](https://jb.gg/ipe?extensions=com.intellij.projectImportBuilder) and [`com.intellij.projectImportProvider`](https://jb.gg/ipe?extensions=com.intellij.projectImportProvider) extension points accordingly.
+Concrete implementations should be registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.projectImportBuilder"/></include> and <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.projectImportProvider"/></include> accordingly.
 
 Example of the project import provider and builder for Gradle:
 

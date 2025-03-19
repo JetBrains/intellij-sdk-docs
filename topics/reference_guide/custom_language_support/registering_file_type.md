@@ -41,7 +41,8 @@ To associate the file type in the IDE, specify one or more associations listed i
 >
 {style="warning"}
 
-To register a file type, the plugin developer provides a subclass of [<include from="snippets.topic" element-id="ep"><var name="ep" value="FileTypeFactory`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/fileTypes/FileTypeFactory.java), which is registered via the `com.intellij.fileTypeFactory"/></include>.
+To register a file type, the plugin developer provides a subclass of [`FileTypeFactory`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/fileTypes/FileTypeFactory.java), which is registered via
+the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.fileTypeFactory"/></include>.
 
 </tab>
 </tabs>

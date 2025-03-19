@@ -102,7 +102,7 @@ Can be [](indexing_and_psi_stubs.md#DumbAwareAPI) (2024.3+).
 
 EP: `com.intellij.indexPatternSearch`
 
-Additional places can be provided via [<include from="snippets.topic" element-id="ep"><var name="ep" value="IndexPatternSearch`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/searches/IndexPatternSearch.java) registered in `com.intellij.indexPatternSearch"/></include>.
+Additional places can be provided via [`IndexPatternSearch`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/searches/IndexPatternSearch.java) registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.indexPatternSearch"/></include>.
 
 ### Context Info
 

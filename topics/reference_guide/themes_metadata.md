@@ -4,7 +4,7 @@
 
 <link-summary>Exposing plugin's UI components' customization keys allowing theme developers to change your components look.</link-summary>
 
-All available UI Customization Keys that can be used in [Custom Themes](themes_customize.md) must be defined in a dedicated <path>*.themeMetadata.json</path> file which is registered via <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.themeMetadataProvider"/></include>`com.intellij.themeMetadataProvider`.
+All available UI Customization Keys that can be used in [Custom Themes](themes_customize.md) must be defined in a dedicated <path>*.themeMetadata.json</path> file which is registered via <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.themeMetadataProvider"/></include>.
 
 The following minimal sample demonstrates all details required when exposing UI customization keys of your plugin's UI.
 

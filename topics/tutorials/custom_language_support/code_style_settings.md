@@ -62,7 +62,8 @@ Define [`SimpleLanguageCodeStyleSettingsProvider`](%gh-sdk-samples-master%/simpl
 
 ## Register the Language Code Style Settings Provider
 
-The <include from="snippets.topic" element-id="ep"><var name="ep" value="SimpleLanguageCodeStyleSettingsProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.langCodeStyleSettingsProvider"/></include>.
+The ``SimpleLanguageCodeStyleSettingsProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file
+using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.langCodeStyleSettingsProvider"/></include>.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

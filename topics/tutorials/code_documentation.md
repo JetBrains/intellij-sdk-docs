@@ -15,8 +15,8 @@ Plugin authors implement
 [`DocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java)
 to show documentation for particular [PSI elements](psi_elements.md).
 
-Implementations of `DocumentationProvider` can be registered either at the `com.intellij.documentationProvider` or the
-<include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.documentationProvider"/></include> (EP).
+Implementations of `DocumentationProvider` can be registered either at the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.documentationProvider"/></include> or
+the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.documentationProvider"/></include>.
 It is recommended to use the latter one when creating documentation that targets a specific language because providers registered
 as `com.intellij.lang.documentationProvider` will only be called for elements from that language.
 This is the reason they require the `language` attribute when registering the EP in the <path>[plugin.xml](plugin_configuration_file.md)</path>.

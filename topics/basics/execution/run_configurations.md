@@ -276,4 +276,5 @@ See their Javadocs for the details.
 
 ### Providing Custom Macros
 
-If the predefined list of macros is insufficient, a plugin can provide custom macros by extending [<include from="snippets.topic" element-id="ep"><var name="ep" value="Macro`](%gh-ic%/platform/macro/src/com/intellij/ide/macro/Macro.java) and registering it in the `com.intellij.macro"/></include>.
+If the predefined list of macros is insufficient, a plugin can provide custom macros by extending [`Macro`](%gh-ic%/platform/macro/src/com/intellij/ide/macro/Macro.java) and
+registering it in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.macro"/></include>.

@@ -81,7 +81,7 @@ Custom implementations are rarely required (it may be necessary, e.g., when a pr
 Executor implementations are registered in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.executor"/></include>.
 
 [`ProgramRunner`](%gh-ic%/platform/execution/src/com/intellij/execution/runners/ProgramRunner.java) is responsible for the [execution workflow](#execution-workflow) of a `RunProfile` with a certain `Executor`.
-<include from="snippets.topic" element-id="ep"><var name="ep" value="ProgramRunner` implementations are registered in the `com.intellij.programRunner"/></include>.
+ProgramRunner` implementations are registered in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.programRunner"/></include>.
 
 [`ExecutionEnvironment`](%gh-ic%/platform/execution/src/com/intellij/execution/runners/ExecutionEnvironment.java) object aggregates all the objects and settings required to execute the process.
 It is used by the `ProgramRunner.execute()` method.

@@ -55,7 +55,7 @@ Create [`SimpleFormattingModelBuilder`](%gh-sdk-samples-master%/simple_language_
 
 ## Register the Formatter
 
-The <include from="snippets.topic" element-id="ep"><var name="ep" value="SimpleFormattingModelBuilder` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.lang.formatter"/></include>.
+The ``SimpleFormattingModelBuilder` implementation is registered with the IntelliJ Platform in the plugin configuration file using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.formatter"/></include>.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

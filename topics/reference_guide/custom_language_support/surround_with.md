@@ -10,7 +10,8 @@
 
 </tldr>
 
-To support the _Surround With_ action, the plugin needs to register one or more implementations of the [<include from="snippets.topic" element-id="ep"><var name="ep" value="SurroundDescriptor`](%gh-ic%/platform/lang-api/src/com/intellij/lang/surroundWith/SurroundDescriptor.java) interface in the `com.intellij.lang.surroundDescriptor"/></include>.
+To support the _Surround With_ action, the plugin needs to register one or more implementations of the [`SurroundDescriptor`](%gh-ic%/platform/lang-api/src/com/intellij/lang/surroundWith/SurroundDescriptor.java) interface
+in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.surroundDescriptor"/></include>.
 Each of the surround descriptors defines a possible type of code fragment that can be surrounded - for example, one surround descriptor can handle surrounding expressions, and another can handle statements.
 Each surround descriptor, in turn, contains an array of [`Surrounder`](%gh-ic%/platform/lang-api/src/com/intellij/lang/surroundWith/Surrounder.java) objects, defining specific templates which can be used for surrounding the selected code fragment (for example, _Surround With if_, _Surround With for_, and so on).
 

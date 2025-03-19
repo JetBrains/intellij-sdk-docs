@@ -103,6 +103,18 @@ Class `com.intellij.psi.xml.XmlElementType` no longer extends `com.intellij.psi.
 `xml.parsing.unescaped.ampersand.or.nonterminated.character.entity.reference` property removed from resource bundle `messages.XmlPsiBundle`
 : Use property from resource bundle `messages.XmlParserBundle`
 
+`com.jediterm.terminal.model.TextBufferChangesListener.historyCleared()` abstract method added
+: Must be implemented.
+
+`com.intellij.terminal.ui.TerminalWidget.connectToSession(TerminalSession session)` abstract method added
+: Must be implemented.
+
+`com.intellij.terminal.ui.TerminalWidget.getSession()` abstract method added
+: Must be implemented.
+
+`com.intellij.terminal.ui.TerminalWidget.getTerminalSizeInitializedFuture()` abstract method added
+: Must be implemented.
+
 ### External System 2025.1
 
 `com.intellij.openapi.externalSystem.service.internal.ExternalSystemProcessingManager` class now interface

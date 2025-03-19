@@ -302,3 +302,43 @@ runIde {
 
 </tab>
 </tabs>
+
+
+## Resolve plugin from JetBrains Marketplace in the latest compatible version
+
+When setting a dependency on an external plugin from JetBrains Marketplace, it is necessary to provide its ID and version in `pluginId:version` notation.
+However, it is possible to request JetBrains Marketplace API for the compatible plugin updates with the given IntelliJ Platform build version.
+
+The following snippet requests the API using the current IntelliJ Platform type and build version, and picks the first available version, which is later passed to the common [`plugin()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) dependency helper.
+
+```kotlin
+import org.jetbrains.intellij.platform.gradle.extensions.IntelliJPlatformDependenciesExtension
+import org.jetbrains.intellij.pluginRepository.PluginRepositoryFactory
+
+val IntelliJPlatformDependenciesExtension.pluginRepository by lazy {
+    PluginRepositoryFactory.create("https://plugins.jetbrains.com")
+}
+
+fun IntelliJPlatformDependenciesExtension.pluginInLatestCompatibleVersion(vararg pluginId: String) =
+    plugin(provider {
+        val platformType = intellijPlatform.productInfo.productCode
+        val platformVersion = intellijPlatform.productInfo.buildNumber
+
+        val plugin = pluginRepository.pluginManager.searchCompatibleUpdates(
+            build = "$platformType-$platformVersion",
+            xmlIds = listOf(pluginId),
+        ).firstOrNull()
+            ?: throw GradleException("No plugin update with id='$pluginId' compatible with '$platformType-$platformVersion' found in JetBrains Marketplace")
+
+        "${plugin.pluginXmlId}:${plugin.version}"
+    })
+
+dependencies {
+    // ...
+
+    intellijPlatform {
+        // ...
+        pluginInLatestCompatibleVersion("org.coffeescript")
+    }
+}
+```

@@ -7,11 +7,11 @@
 
     <snippet id="missingContent">
         <note title="Something missing?">
-            <p>If a topic you are interested in is not covered in the above sections, let us know via the
+            <p>If a topic is not covered in the above sections, let us know via the
                 <control>Was this page helpful?</control>
                 feedback form below or <a href="getting_help.topic" anchor="problems-with-the-guide">other channels</a>.
             </p>
-            <p>Please be specific about the topics and reasons for adding them, and leave your email in case we need
+            <p>Be specific about the topics and reasons for adding them and leave your email in case we need
                 more details. Thanks for your feedback!</p>
         </note>
     </snippet>

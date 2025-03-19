@@ -6,7 +6,7 @@
 
 <var name="productID" value="idea"/>
 <var name="marketplaceProductID" value="idea_ce"/>
-<include from="snippets.md" element-id="jetbrainsIDE_TLDR"/>
+<include from="snippets.topic" element-id="jetbrainsIDE_TLDR"/>
 
 [IntelliJ IDEA](https://www.jetbrains.com/idea/) is available in two editions: IntelliJ Community Edition and IntelliJ IDEA Ultimate.
 <snippet id="idea_editions">

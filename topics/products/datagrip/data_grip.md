@@ -6,7 +6,7 @@
 
 <var name="productID" value="datagrip"/>
 <var name="marketplaceProductID" value="dbe"/>
-<include from="snippets.md" element-id="jetbrainsIDE_TLDR"/>
+<include from="snippets.topic" element-id="jetbrainsIDE_TLDR"/>
 
 [DataGrip](https://www.jetbrains.com/datagrip/) is an IntelliJ Platform-based product.
 Plugin projects targeting DataGrip can be developed using [IntelliJ IDEA](idea.md).

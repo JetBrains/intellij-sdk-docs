@@ -636,4 +636,4 @@ This behavior wasn't enabled in production, and the planned locking mechanism ha
 It is planned to allow for acquiring write lock from any thread, even without a write intent lock.
 Write intent lock will be still available and will allow performing read sessions finished with data writing.
 
-<include from="snippets.md" element-id="missingContent"/>
+<include from="snippets.topic" element-id="missingContent"/>

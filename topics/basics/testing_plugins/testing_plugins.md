@@ -51,4 +51,4 @@ Check out [](integration_tests_intro.md) tutorial that guides through setup proc
 * [](testing_highlighting.md)
 * [](testing_faq.md)
 
-<include from="snippets.md" element-id="missingContent"/>
+<include from="snippets.topic" element-id="missingContent"/>

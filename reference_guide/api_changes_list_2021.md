@@ -63,9 +63,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 <link-summary>List of known Breaking API Changes in 2021.*</link-summary>
 
-<include from="snippets.md" element-id="apiChangesHeader"/>
+<include from="snippets.topic" element-id="apiChangesHeader"/>
 
-<include from="snippets.md" element-id="apiChangesJavaVersion"/>
+<include from="snippets.topic" element-id="apiChangesJavaVersion"/>
 
 ## 2021.3
 

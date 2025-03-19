@@ -264,4 +264,4 @@ a variable declaration.
 - [`DeclarationMover`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/editorActions/moveUpDown/DeclarationMover.java)
 
 
-<include from="snippets.md" element-id="missingContent"/>
+<include from="snippets.topic" element-id="missingContent"/>

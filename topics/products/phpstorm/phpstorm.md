@@ -6,7 +6,7 @@
 
 <var name="productID" value="phpstorm"/>
 <var name="marketplaceProductID" value="phpstorm"/>
-<include from="snippets.md" element-id="jetbrainsIDE_TLDR"/>
+<include from="snippets.topic" element-id="jetbrainsIDE_TLDR"/>
 
 [PhpStorm](https://www.jetbrains.com/phpstorm/) is an IntelliJ Platform-based product.
 Plugin projects targeting PhpStorm can be developed using [IntelliJ IDEA](idea.md).

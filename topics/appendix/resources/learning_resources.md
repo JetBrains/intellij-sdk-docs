@@ -4,7 +4,7 @@
 
 <link-summary>Links to articles and webinars about plugin development.</link-summary>
 
-<include from="snippets.md" element-id="subscribeNews"/>
+<include from="snippets.topic" element-id="subscribeNews"/>
 
 ## Articles
 

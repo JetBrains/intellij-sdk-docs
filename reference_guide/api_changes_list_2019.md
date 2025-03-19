@@ -63,7 +63,7 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 <link-summary>List of known Breaking API Changes in 2019.*</link-summary>
 
-<include from="snippets.md" element-id="apiChangesHeader"/>
+<include from="snippets.topic" element-id="apiChangesHeader"/>
 
 ## 2019.3
 

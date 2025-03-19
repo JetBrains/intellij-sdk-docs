@@ -6,7 +6,7 @@
 
 <var name="productID" value="pycharm"/>
 <var name="marketplaceProductID" value="pycharm_ce"/>
-<include from="snippets.md" element-id="jetbrainsIDE_TLDR"/>
+<include from="snippets.topic" element-id="jetbrainsIDE_TLDR"/>
 
 [PyCharm](https://www.jetbrains.com/pycharm/) is an IntelliJ Platform-based product.
 Plugin projects for PyCharm can be developed using [IntelliJ IDEA](idea.md).

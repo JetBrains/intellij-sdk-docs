@@ -246,4 +246,4 @@ Indexing is now run asynchronously in a background thread.
 Use [`IndexingTestUtil.waitUntilIndexesAreReady()/suspendUntilIndexesAreReady()`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/IndexingTestUtil.kt)
 to wait for fully populated indexes.
 
-<include from="snippets.md" element-id="missingContent"/>
+<include from="snippets.topic" element-id="missingContent"/>

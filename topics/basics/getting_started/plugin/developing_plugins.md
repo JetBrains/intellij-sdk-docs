@@ -18,12 +18,12 @@ a dedicated Gradle plugin:
 [](tools_intellij_platform_gradle_plugin.md) or
 [](tools_gradle_intellij_plugin.md).
 
-<include from="snippets.md" element-id="gradlePluginVersion"/>
+<include from="snippets.topic" element-id="gradlePluginVersion"/>
 
 The IntelliJ IDEA Ultimate and Community editions provide the necessary plugins to support Gradle-based plugin development: _Gradle_ and _Plugin DevKit_.
 To verify these plugins are installed and enabled, see the help section about [Managing Plugins](https://www.jetbrains.com/help/idea/managing-plugins.html).
 
-<include from="snippets.md" element-id="pluginDevKitAvailability"/>
+<include from="snippets.topic" element-id="pluginDevKitAvailability"/>
 
 The Gradle plugin manages the dependencies of a plugin project – both the base IDE and other [plugin dependencies](plugin_dependencies.md).
 It provides tasks to run the IDE with your plugin and to package and [publish](publishing_plugin.md#publishing-plugin-with-gradle) your plugin to the [JetBrains Marketplace](https://plugins.jetbrains.com).

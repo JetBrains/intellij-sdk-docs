@@ -8,7 +8,7 @@
 
 <var name="productID" value="idea"/>
 <var name="marketplaceProductID" value="idea"/>
-<include from="snippets.md" element-id="jetbrainsIDE_TLDR"/>
+<include from="snippets.topic" element-id="jetbrainsIDE_TLDR"/>
 
 IntelliJ IDEA Ultimate comes with a number of additional features and bundled plugins.
 <include from="idea.md" element-id="idea_editions"/>

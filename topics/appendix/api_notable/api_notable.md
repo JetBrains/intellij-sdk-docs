@@ -4,7 +4,7 @@
 
 <link-summary>List of Notable API Changes by version</link-summary>
 
-<include from="snippets.md" element-id="subscribeNews"/>
+<include from="snippets.topic" element-id="subscribeNews"/>
 
 ## Notable API Changes
 

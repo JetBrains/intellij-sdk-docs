@@ -6,7 +6,7 @@
 
 <procedure title="Preliminary Steps">
 
-<include from="snippets.md" element-id="pluginDevKitAvailability"/>
+<include from="snippets.topic" element-id="pluginDevKitAvailability"/>
 
 Use the following checklist to ensure that you are ready to develop your custom theme:
 
@@ -42,7 +42,7 @@ If it is required to style components used only in a specific IDE like _IntelliJ
 
 The first step of configuring a theme plugin SDK is adding the JDK.
 
-<include from="snippets.md" element-id="apiChangesJavaVersion"/>
+<include from="snippets.topic" element-id="apiChangesJavaVersion"/>
 
 <procedure title="Add JDK" id="add-jdk">
 

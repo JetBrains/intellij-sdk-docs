@@ -9,7 +9,7 @@ For more advanced options, see the full [](tools_gradle_intellij_plugin.md) refe
 
 <include from="creating_plugin_project.md" element-id="gradle1xOnly"/>
 
-<include from="snippets.md" element-id="gradlePluginVersion"/>
+<include from="snippets.topic" element-id="gradlePluginVersion"/>
 
 ## Keep Up To Date
 

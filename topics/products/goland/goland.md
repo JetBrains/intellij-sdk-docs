@@ -6,7 +6,7 @@
 
 <var name="productID" value="go"/>
 <var name="marketplaceProductID" value="go"/>
-<include from="snippets.md" element-id="jetbrainsIDE_TLDR"/>
+<include from="snippets.topic" element-id="jetbrainsIDE_TLDR"/>
 
 [GoLand](https://www.jetbrains.com/go/) is an IntelliJ Platform-based product.
 Plugin projects for GoLand can be developed using [IntelliJ IDEA](idea.md).

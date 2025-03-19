@@ -109,7 +109,7 @@ The IDE will automatically install only the corresponding compatible build.
 Note that there is no `YY0`.
 In the `YYYY.R` versioning scheme, the `R` part starts at 1.
 
-<include from="snippets.md" element-id="gradlePluginVersion"/>
+<include from="snippets.topic" element-id="gradlePluginVersion"/>
 
 _Early Access Program_ (EAP) releases of upcoming versions are available [here](https://eap.jetbrains.com).
 

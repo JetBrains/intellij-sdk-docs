@@ -177,4 +177,4 @@ See [](coroutine_read_actions.topic#coroutine-read-actions-api) for details.
 <br/>&rarr;&nbsp;_Suspending Context_
 <br/>&rarr;&nbsp;_Coroutine_
 
-<include from="snippets.md" element-id="missingContent"/>
+<include from="snippets.topic" element-id="missingContent"/>

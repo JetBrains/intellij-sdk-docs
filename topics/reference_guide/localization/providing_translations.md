@@ -172,4 +172,4 @@ To find an example <path>messages/MyBundle.properties</path> message bundle for 
 5. <path>messages/MyBundle_zh.properties</path> (language level)
 6. <path>messages/MyBundle.properties</path> (default)
 
-<include from="snippets.md" element-id="missingContent"/>
+<include from="snippets.topic" element-id="missingContent"/>

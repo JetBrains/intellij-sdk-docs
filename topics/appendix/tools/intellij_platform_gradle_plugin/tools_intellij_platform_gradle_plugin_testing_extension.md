@@ -183,4 +183,4 @@ intellijPlatformTesting.runIde {
 | `localPlugin(path)`            | Adds a dependency on a local IntelliJ Platform plugin. Accepts path or a dependency on another module.                                       |
 | `robotServerPlugin(version)`   | Adds a dependency on a Robot Server Plugin.                                                                                                  |
 
-<include from="snippets.md" element-id="missingContent"/>
+<include from="snippets.topic" element-id="missingContent"/>

@@ -74,7 +74,7 @@ To show and hide a tool window dynamically while the user is working with the pr
 
 ### Programmatic Setup
 
-For tool windows shown only after invoking specific actions, use [`ToolWindowManager.registerToolWindow(String,RegisterToolWindowTaskBuilder)`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowManager.kt).
+For tool windows shown only after invoking specific actions, use [`ToolWindowManager.registerToolWindow(String, RegisterToolWindowTaskBuilder)`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowManager.kt).
 
 Always use [`ToolWindowManager.invokeLater()`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowManager.kt) instead of "plain" `Application.invokeLater()` when scheduling EDT tasks related to tool windows (see [](threading_model.md)).
 

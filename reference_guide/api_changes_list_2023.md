@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 # Incompatible Changes in IntelliJ Platform and Plugins API 2023.*
 
@@ -315,7 +315,7 @@ Fragment builder functions from `ExternalSystemRunConfigurationUtil` file moved 
 : This may break source-compatibility with inheritors written in Kotlin.
 
 Specify `displayName`/`key` for `Configurable`
-: To improve performance, provide either attribute for `com.intellij.applicationConfigurable` or `com.intellij.projectConfigurable` extension point (see [](settings_guide.md)).
+: To improve performance, provide either attribute for <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.applicationConfigurable"/></include> or <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.projectConfigurable"/></include> (see [](settings_guide.md)).
 
 `com.intellij.remote.RemoteProcess.setWindowSize(int, int)` abstract method added
 : Should implement this method.
@@ -398,7 +398,7 @@ Apache Batik library unbundled
 : The inner interface was moved to upper level.
 
 `com.intellij.database.dataSource.url.TypesRegistry.BaseTypeDescriptor` class moved to package `com.intellij.database.dataSource.url.ui`
-: UI extracted from `TypesRegistry` to `TypesRegistryUi`. Use `com.intellij.database.urlParamEditorProvider` extension point to register parameter descriptor, use `com.intellij.database.urlParamEditorUiProvider` extension point to register parameter editor descriptor.
+: UI extracted from `TypesRegistry` to `TypesRegistryUi`. Use <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.database.urlParamEditorProvider"/></include> to register parameter descriptor, use <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.database.urlParamEditorUiProvider"/></include> to register parameter editor descriptor.
 
 `com.intellij.database.datagrid.DataGrid.setAnonymousColumnName(String)` method removed
 : Only recompilation needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.

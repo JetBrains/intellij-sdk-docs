@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Declarations and References
 <primary-label ref="2020.3"/>
@@ -24,7 +24,8 @@ Declarations in PSI elements are implementations of
 To report a declaration in a PSI element, either:
 
 - implement and register
-  [`PsiSymbolDeclarationProvider`](%gh-ic%/platform/core-api/src/com/intellij/model/psi/PsiSymbolDeclarationProvider.java) in `com.intellij.psi.declarationProvider` extension point
+  [`PsiSymbolDeclarationProvider`](%gh-ic%/platform/core-api/src/com/intellij/model/psi/PsiSymbolDeclarationProvider.java)
+  in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.psi.declarationProvider"/></include>
 - implement `PsiSymbolDeclaration` directly in the `PsiElement`.
 
 ## References
@@ -85,4 +86,4 @@ At the same time, it's possible:
 
 To provide an Implicit reference, implement and register
 [`ImplicitReferenceProvider`](%gh-ic%/platform/core-api/src/com/intellij/model/psi/ImplicitReferenceProvider.java)
-in `com.intellij.psi.implicitReferenceProvider` extension point.
+in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.psi.implicitReferenceProvider"/></include>.

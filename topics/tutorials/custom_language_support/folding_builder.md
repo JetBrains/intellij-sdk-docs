@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 12. Folding Builder
 
@@ -42,7 +42,8 @@ The IntelliJ Platform uses the value to substitute for the key when the code get
 
 ## Register the Folding Builder
 
-The `SimpleFoldingBuilder` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.lang.foldingBuilder` extension point.
+The `SimpleFoldingBuilder` implementation is registered with the IntelliJ Platform in the plugin configuration file using
+the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.foldingBuilder"/></include>.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

@@ -222,5 +222,8 @@
                 installed and enabled.</p>
         </note>
     </snippet>
-
+    <snippet id="ep"><a href="https://jb.gg/ipe?extensions=%ep%"
+                        summary="Browse usages in existing implementations of open-source plugins">
+        <code>%ep%</code></a> extension point
+    </snippet>
 </topic>

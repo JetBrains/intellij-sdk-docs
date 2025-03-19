@@ -84,7 +84,8 @@ Use [`ProjectLocator`](%gh-ic%/platform/core-api/src/com/intellij/openapi/projec
 
 ## How do I extend VFS?
 
-To provide an alternative file system implementation (for example, an FTP file system), implement the [`VirtualFileSystem`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileSystem.java) class (most likely you'll also need to implement `VirtualFile`), and register your implementation via `com.intellij.virtualFileSystem` extension point (2019.2 and later) or [application component](plugin_components.md) for earlier versions.
+To provide an alternative file system implementation (for example, an FTP file system), implement the [`VirtualFileSystem`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileSystem.java) class (most likely you'll also need to implement `VirtualFile`),
+and register your implementation via <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.virtualFileSystem"/></include>.
 
 To hook into operations performed in the local file system (for example, when developing a version control system integration that needs custom rename/move handling), implement [`LocalFileOperationsHandler`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/vfs/LocalFileOperationsHandler.java) and register it via `LocalFileSystem.registerAuxiliaryFileOperationsHandler()`.
 

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 15. Structure Aware Navigation Bar
 
@@ -31,7 +31,7 @@ The [`SimpleStructureAwareNavbar`](%gh-sdk-samples-master%/simple_language_plugi
 ## Register the Structure-Aware Navbar
 
 The `SimpleStructureAwareNavbar` implementation is registered with the IntelliJ Platform in the plugin
-configuration file using the `com.intellij.navbar` extension point.
+configuration file using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.navbar"/></include>.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

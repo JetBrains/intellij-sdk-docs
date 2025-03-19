@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Spring API
 <primary-label ref="IntelliJIDEA_Ultimate"/>
@@ -114,7 +114,7 @@ _Version 14_: implement `SpringInfrastructureBean`, such beans obtain a special 
 All support for XML-based Spring configuration files is provided via [DOM-API](xml_dom_api.md).
 
 #### Add Support for Additional Spring Namespace
-See `com.intellij.spring.customNamespaces` EP, registered namespace-key must match the one registered with your DOM elements via `@Namespace`.
+See <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.spring.customNamespaces"/></include>, registered namespace-key must match the one registered with your DOM elements via `@Namespace`.
 Register available elements via standard `DomExtender<Beans>` EP or `com.intellij.spring.dom.SpringCustomNamespaces#registerExtensions` (Version 14).
 
 Please pay attention to `getModelVersion` and `getStubVersion` (see Javadoc).
@@ -150,7 +150,8 @@ See `com.intellij.spring.spi.SpringSpiManager`.
 ### IDE Features
 
 #### Add Inspections to Spring Validator
-Add additional inspections (e.g. for custom namespace) to Spring Validator (*Settings|Compiler|Validation*) via `com.intellij.spring.SpringInspectionsRegistry$Contributor` in `com.intellij.spring.inspectionsRegistryContributor` extension point.
+Add additional inspections (e.g. for custom namespace) to Spring Validator (*Settings|Compiler|Validation*) via `com.intellij.spring.SpringInspectionsRegistry$Contributor`
+in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.spring.inspectionsRegistryContributor"/></include>.
 
 #### Add Additional Files to Spring Validator
 _Version 14.1_
@@ -195,5 +196,5 @@ Custom `@ConditionalOn...` annotations implementing `com.intellij.spring.boot.mo
 `com.intellij.spring.boot.initializr.SpringInitializrModuleBuilderPostTask` allows performing custom setup steps after creation of module (e.g. setup integration with build system).
 
 ### Endpoint Tab
-Use `com.intellij.spring.boot.run.endpoint` extension point to add custom actuator endpoint tabs.
-Any settings should be exposed in "Spring Boot" settings tab via `com.intellij.spring.boot.run.endpointTabConfigurable` EP.
+Use <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.spring.boot.run.endpoint"/></include> to add custom actuator endpoint tabs.
+Any settings should be exposed in "Spring Boot" settings tab via <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.spring.boot.run.endpointTabConfigurable"/></include>.

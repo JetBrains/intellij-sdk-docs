@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 # Incompatible Changes in IntelliJ Platform and Plugins API 2019.*
 
@@ -91,7 +91,7 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 : Use `com.intellij.codeInsight.completion.PrefixMatcher.sortMatching(Collection)` instead
 
 `com.intellij.json.JsonFileTypeFactory` class removed
-: Use `com.intellij.fileType` extension point instead.
+: Use <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.fileType"/></include> instead.
 
 `com.intellij.util.containers.ConcurrentHashSet` class removed
 : Use `com.intellij.util.containers.ContainerUtil#newConcurrentSet` instead.
@@ -234,10 +234,10 @@ Recompile your code to pick up the new signature.
 : Please use different base class for PSI elements.
 
 `com.intellij.ide.actions.SearchAgainAction` class now extends `com.intellij.openapi.editor.actionSystem.EditorAction` and inherits its final method `actionPerformed`
-: Please use the `com.intellij.editorActionHandler` extension point to register a different handler for the action.
+: Please use the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.editorActionHandler"/></include> to register a different handler for the action.
 
 `com.intellij.ide.actions.SearchBackAction` class now extends `com.intellij.openapi.editor.actionSystem.EditorAction` and inherits its final method `actionPerformed`
-: Please use the `com.intellij.editorActionHandler` extension point to register a different handler for the action.
+: Please use the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.editorActionHandler"/></include> to register a different handler for the action.
 
 `com.intellij.lexer.RestartableLexer.getRestartableState()` method removed
 : Please use `com.intellij.lexer.RestartableLexer.isRestartableState(int state)` instead.

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Code Completion
 
@@ -38,7 +38,7 @@ To provide completion variants by a `PsiSymbolReference` implement
 ### Contributor-Based Completion
 
 Implementing the [`CompletionContributor`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java) interface gives you the greatest control over the operation of code completion for your language.
-Register in `com.intellij.completion.contributor` extension point and specify `language` attribute (unless it works on any supported language).
+Register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.completion.contributor"/></include> and specify `language` attribute (unless it works on any supported language).
 
 > Note that the Javadoc of that class contains a detailed FAQ for implementing code completion.
 >

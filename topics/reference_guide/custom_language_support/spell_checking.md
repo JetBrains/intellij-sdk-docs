@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Spell Checking
 
@@ -13,7 +13,7 @@
 Spell Checking is used to check the correctness of natural languages within code.
 Language plugins can implement customized spell checking by implementing
 [`SpellcheckingStrategy`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/tokenizer/SpellcheckingStrategy.java)
-and registering it in the `com.intellij.spellchecker.support` extension point.
+and registering it in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.spellchecker.support"/></include>.
 
 **Examples:**
 
@@ -97,7 +97,7 @@ Some custom languages may have a distinct fixed set of words or key identifiers.
 These words can be provided in additional dictionaries from
 [BundledDictionaryProvider](%gh-ic%/spellchecker/src/com/intellij/spellchecker/BundledDictionaryProvider.java).
 Implement `getBundledDictionaries()` to return paths to the word dictionaries (<path>*.dic</path> files) and
-register it with the `com.intellij.spellchecker.bundledDictionaryProvider` extension point.
+register it with the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.spellchecker.bundledDictionaryProvider"/></include>.
 
 **Example:**
 [`PythonBundledDictionaryProvider`](%gh-ic%/python/src/com/jetbrains/python/spellchecker/PythonBundledDictionaryProvider.java)
@@ -106,7 +106,7 @@ register it with the `com.intellij.spellchecker.bundledDictionaryProvider` exten
 
 [`RuntimeDictionaryProvider`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/dictionary/RuntimeDictionaryProvider.java)
 allows providing (dynamic) dictionaries generated at runtime, e.g., downloaded from a server, created from project sources on-the-fly, etc.
-Register in `com.intellij.spellchecker.dictionary.runtimeDictionaryProvider` extension point.
+Register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.spellchecker.dictionary.runtimeDictionaryProvider"/></include>.
 
 **Example:**
 [`PyPackagesDictionary`](%gh-ic%/python/src/com/jetbrains/python/packaging/PyPackagesDictionary.kt)
@@ -124,13 +124,13 @@ To use the API mentioned below, add a [dependency](plugin_dependencies.md) on pl
 
 To define how to extract natural language text from PSI, implement
 [`TextExtractor`](%gh-ic%/plugins/grazie/src/main/kotlin/com/intellij/grazie/text/TextExtractor.java)
-and register in `com.intellij.grazie.textExtractor` extension point.
+and register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.grazie.textExtractor"/></include>.
 
 **Example:** [`JavaTextExtractor`](%gh-ic%/plugins/grazie/java/src/main/kotlin/com/intellij/grazie/ide/language/java/JavaTextExtractor.java)
 
 ### `ProblemFilter`
 
 To ignore specific reported problems, implement [`ProblemFilter`](%gh-ic%/plugins/grazie/src/main/kotlin/com/intellij/grazie/text/ProblemFilter.java)
-registered in `com.intellij.grazie.problemFilter` extension point.
+registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.grazie.problemFilter"/></include>.
 
 **Example:** [`JavadocProblemFilter`](%gh-ic%/plugins/grazie/java/src/main/kotlin/com/intellij/grazie/ide/language/java/JavadocProblemFilter.java)

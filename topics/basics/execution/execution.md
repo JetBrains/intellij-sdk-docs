@@ -78,10 +78,10 @@ The three default executors provided by the IntelliJ Platform are:
 * [`CoverageExecutor`](%gh-ic%/plugins/coverage-common/src/com/intellij/coverage/CoverageExecutor.java) _(Run with Coverage)_
 
 Custom implementations are rarely required (it may be necessary, e.g., when a profiler integration is implemented).
-Executor implementations are registered in the `com.intellij.executor` extension point (EP).
+Executor implementations are registered in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.executor"/></include>.
 
 [`ProgramRunner`](%gh-ic%/platform/execution/src/com/intellij/execution/runners/ProgramRunner.java) is responsible for the [execution workflow](#execution-workflow) of a `RunProfile` with a certain `Executor`.
-`ProgramRunner` implementations are registered in the `com.intellij.programRunner` EP.
+<include from="snippets.topic" element-id="ep"><var name="ep" value="ProgramRunner` implementations are registered in the `com.intellij.programRunner"/></include>.
 
 [`ExecutionEnvironment`](%gh-ic%/platform/execution/src/com/intellij/execution/runners/ExecutionEnvironment.java) object aggregates all the objects and settings required to execute the process.
 It is used by the `ProgramRunner.execute()` method.
@@ -159,7 +159,8 @@ Console [`Filter`](%gh-ic%/platform/execution/src/com/intellij/execution/filters
 To attach a filter to the console, use `CommandLineState.addConsoleFilters()` or [`TextConsoleBuilder.addFilter()`](%gh-ic%/platform/execution/src/com/intellij/execution/filters/TextConsoleBuilder.java) if the console is created manually.
 Two standard filter implementations are [`RegexpFilter`](%gh-ic%/platform/lang-api/src/com/intellij/execution/filters/RegexpFilter.java) and [`UrlFilter`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/filters/UrlFilter.java).
 
-Console filters can be also provided by implementing [`ConsoleFilterProvider`](%gh-ic%/platform/lang-api/src/com/intellij/execution/filters/ConsoleFilterProvider.java) and registering it in `com.intellij.consoleFilterProvider` EP.
+Console filters can be also provided by implementing [`ConsoleFilterProvider`](%gh-ic%/platform/lang-api/src/com/intellij/execution/filters/ConsoleFilterProvider.java) and registering
+it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.consoleFilterProvider"/></include>.
 
 ## Listening for Execution Events
 

@@ -317,7 +317,7 @@ This is not recommended and should be avoided whenever possible.
 
 To disable the expansion of path macros ([`PathMacro`](%gh-ic%/platform/macro/src/com/intellij/ide/macro/PathMacro.java))
 in stored values, implement [`PathMacroFilter`](%gh-ic%/jps/model-serialization/src/com/intellij/openapi/application/PathMacroFilter.java)
-and register in `com.intellij.pathMacroFilter` extension point.
+and register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.pathMacroFilter"/></include>.
 
 ### Migrating Persisted Values
 

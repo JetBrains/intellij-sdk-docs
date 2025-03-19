@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Syntax and Error Highlighting
 
@@ -31,7 +31,8 @@ Highlighting from multiple `TextAttributesKey` items can be layered — for exam
 ## Color Settings
 
 The mapping of the `TextAttributesKey` to specific attributes used in an editor is defined by the [`EditorColorsScheme`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/colors/EditorColorsScheme.java) class.
-It can be configured by the user via <ui-path>Settings | Editor | Color Scheme</ui-path> by providing an implementation of [`ColorSettingPage`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/colors/ColorSettingsPage.java) registered in `com.intellij.colorSettingsPage` extension point.
+It can be configured by the user via <ui-path>Settings | Editor | Color Scheme</ui-path> by providing an implementation of [`ColorSettingPage`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/colors/ColorSettingsPage.java) registered
+in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.colorSettingsPage"/></include>.
 To look up the external name for a setting in the IDE, use [UI Inspector](internal_ui_inspector.md#inspecting-settings).
 
 The <ui-path>File | Export | Files or Selection to HTML</ui-path> feature uses the same syntax highlighting mechanism as the editor.
@@ -65,7 +66,8 @@ For highlighting lexer errors [`HighlighterColors.BAD_CHARACTER`](%gh-ic%/platfo
 
 [Semantic highlighting](https://www.jetbrains.com/help/idea/configuring-colors-and-fonts.html#semantic-highlighting) provides an additional coloring layer to improve the visual distinction of several related items (e.g., method parameters, local variables).
 
-Register [`RainbowVisitor`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/daemon/RainbowVisitor.java) in `com.intellij.highlightVisitor` extension point.
+Register [`RainbowVisitor`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/daemon/RainbowVisitor.java)
+in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.highlightVisitor"/></include>.
 [](#color-settings) must implement [`RainbowColorSettingsPage`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/colors/RainbowColorSettingsPage.java) in addition.
 
 ## Parser
@@ -78,7 +80,7 @@ See [](syntax_errors.md) on how to programmatically suppress these errors in cer
 ## Annotator
 
 The third level of highlighting is performed through the [`Annotator`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/Annotator.java) interface.
-A plugin can register one or more annotators in the `com.intellij.annotator` extension point, and these annotators are called during the background highlighting pass to process the elements in the custom language's PSI tree.
+A plugin can register one or more annotators in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.annotator"/></include>, and these annotators are called during the background highlighting pass to process the elements in the custom language's PSI tree.
 Attribute `language` should be set to the Language ID where this annotator applies to.
 If highlighting data requires invoking external tools, use [](#external-annotator) instead.
 
@@ -151,12 +153,14 @@ Call `AnnotationHolder.createInfoAnnotation()` with an empty message and then [`
 ## External Annotator
 
 If the custom language employs external tools for validating files in the language (for example, using the Xerces library for XML schema validation),
-it can provide an implementation of the [`ExternalAnnotator`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/ExternalAnnotator.java) interface and register it in `com.intellij.externalAnnotator` extension point (`language` attribute must be specified).
+it can provide an implementation of the [`ExternalAnnotator`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/ExternalAnnotator.java) interface and register
+it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.externalAnnotator"/></include> (`language` attribute must be specified).
 
 The `ExternalAnnotator` highlighting has the lowest priority and is invoked only after all other background processing has completed.
 It uses the same [`AnnotationHolder`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/AnnotationHolder.java) interface for converting the output of the external tool into editor highlighting.
 
-To skip running specific `ExternalAnnotator` for given file, register [`ExternalAnnotatorsFilter`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/ExternalAnnotatorsFilter.java) extension in `com.intellij.daemon.externalAnnotatorsFilter` extension point.
+To skip running specific `ExternalAnnotator` for given file, register [`ExternalAnnotatorsFilter`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/ExternalAnnotatorsFilter.java) extension
+in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.daemon.externalAnnotatorsFilter"/></include>.
 
 To enable running `ExternalAnnotator` during indexing in [dumb mode](indexing_and_psi_stubs.md#dumb-mode), it can be marked [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI) (2023.3).
 

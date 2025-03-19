@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Registering a File Type
 
@@ -21,7 +21,7 @@ A custom language file type is a class derived from [`LanguageFileType`](%gh-ic%
 
 <tab title="2019.2+">
 
-Use `com.intellij.fileType` extension point to register `LanguageFileType` implementation and instance via `implementationClass` and `fieldName` attributes.
+Use <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.fileType"/></include> to register `LanguageFileType` implementation and instance via `implementationClass` and `fieldName` attributes.
 Also, `name` and `language` must be declared matching `FileType.getName()` and ID of language returned from `LanguageFileType.getLanguage()`, respectively.
 
 To associate the file type in the IDE, specify one or more associations listed in the following table.
@@ -41,7 +41,7 @@ To associate the file type in the IDE, specify one or more associations listed i
 >
 {style="warning"}
 
-To register a file type, the plugin developer provides a subclass of [`FileTypeFactory`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/fileTypes/FileTypeFactory.java), which is registered via the `com.intellij.fileTypeFactory` extension point.
+To register a file type, the plugin developer provides a subclass of [<include from="snippets.topic" element-id="ep"><var name="ep" value="FileTypeFactory`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/fileTypes/FileTypeFactory.java), which is registered via the `com.intellij.fileTypeFactory"/></include>.
 
 </tab>
 </tabs>

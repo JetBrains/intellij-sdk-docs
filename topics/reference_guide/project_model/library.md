@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Library
 
@@ -136,6 +136,6 @@ More details on libraries can be found in the [plugin_model](%gh-sdk-samples-mas
 
 ## Predefined Libraries
 
-[`AdditionalLibraryRootsProvider`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/AdditionalLibraryRootsProvider.java) registered in `com.intellij.additionalLibraryRootsProvider` extension point
-allows providing synthetic/predefined libraries ([`SyntheticLibrary`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/SyntheticLibrary.java)) in a project without exposing them in the model.
+[`AdditionalLibraryRootsProvider`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/AdditionalLibraryRootsProvider.java) registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.additionalLibraryRootsProvider"/></include> allows
+providing synthetic/predefined libraries ([`SyntheticLibrary`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/SyntheticLibrary.java)) in a project without exposing them in the model.
 By default, they're also hidden from UI.

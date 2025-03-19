@@ -26,7 +26,7 @@ Alternatively, using [programmatic setup](#programmatic-setup), the tool window 
 
 ### Declarative Setup
 
-The tool window is registered in <path>[plugin.xml](plugin_configuration_file.md)</path> using the `com.intellij.toolWindow` extension point.
+The tool window is registered in <path>[plugin.xml](plugin_configuration_file.md)</path> using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.toolWindow"/></include>.
 The extension point attributes specify all the data which is necessary to display the tool window button:
 
 * The `id` attribute (required) of the tool window which corresponds to the text displayed on the tool window button.

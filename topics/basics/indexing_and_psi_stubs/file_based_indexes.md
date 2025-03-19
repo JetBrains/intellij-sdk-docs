@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # File-Based Indexes
 
@@ -29,7 +29,7 @@ When accessing an index, specify the key you're interested in and get back the l
 > A relatively simple file-based index implementation is the [UI Designer bound forms index](%gh-ic%/plugins/ui-designer/src/com/intellij/uiDesigner/binding/FormClassIndex.java), storing FQN of bound implementation class for [GUI Designer](https://www.jetbrains.com/help/idea/gui-designer-basics.html) <path>.form</path> files.
 >
 
-Each specific index implementation is a class extending [`FileBasedIndexExtension`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndexExtension.java) registered via `com.intellij.fileBasedIndex` extension point.
+Each specific index implementation is a class extending [`FileBasedIndexExtension`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndexExtension.java) registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.fileBasedIndex"/></include>.
 
 An implementation of a file-based index consists of the following main parts:
 

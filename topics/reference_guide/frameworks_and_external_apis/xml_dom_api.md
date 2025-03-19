@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # XML DOM API
 
@@ -85,11 +85,8 @@ interface Bar extends com.intellij.util.xml.DomElement {
 ```
 
 Next, you should create a [`DomFileDescription`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/DomFileDescription.java) class, pass to its constructor the root tag name and root element interface.
-Register it in <path>[plugin.xml](plugin_configuration_file.md)</path> using `com.intellij.dom.fileMetaData` extension point and specify `rootTagName` and `domVersion`/`stubVersion` attributes.
-
-> When targeting 2019.1 or earlier, use `com.intellij.dom.fileDescription` extension point instead.
->
-{style="note"}
+Register it in <path>[plugin.xml](plugin_configuration_file.md)</path>
+using <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.dom.fileMetaData"/></include> and specify `rootTagName` and `domVersion`/`stubVersion` attributes.
 
 You can now get the file element from [`DomManager`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/DomManager.java).
 To get the "239" value, you only have to write the following code:
@@ -369,7 +366,7 @@ The index parameter in the last example means the index in the merged collection
 ### Dynamic Definition
 
 You can extend existing DOM model at runtime by implementing `com.intellij.util.xml.reflect.DomExtender<T>`.
-Register it in "extenderClass" attribute of `com.intellij.dom.extender` extension point, where "domClass" specifies DOM class `<T>` to be extended.
+Register it in "extenderClass" attribute of <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.dom.extender"/></include>, where "domClass" specifies DOM class `<T>` to be extended.
 [`DomExtensionsRegistrar`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/reflect/DomExtensionsRegistrar.java) provides various methods to register dynamic attributes and children.
 
 If the contributed elements depend on anything other than plain XML file content (used framework version, libraries in classpath, ...), make sure to return `false` from `DomExtender.supportsStubs()`.
@@ -616,7 +613,7 @@ Add the desired methods to your interface, then create an abstract class impleme
 Note that the class should have a constructor with no arguments.
 
 Now you only have to let DOM know that you wish to use this implementation every time you're creating a model element that should implement the necessary interface.
-Simply register it using `com.intellij.dom.implementation` extension point and DOM will generate at run-time the class that not only implements the needed interface, but also extends your abstract class.
+Register it using <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.dom.implementation"/></include> and DOM will generate at run-time the class that not only implements the needed interface, but also extends your abstract class.
 
 ### Models Across Multiple Files
 

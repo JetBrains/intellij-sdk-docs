@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Configuring and getting information about a project SDK.</link-summary>
 
@@ -62,7 +62,8 @@ See the [project_model](%gh-sdk-samples-master%/project_model/src/main/java/org/
 
 ### Working with a Custom SDK
 
-To create a custom SDK, provide a class extending [`SdkType`](%gh-ic%/platform/lang-core/src/com/intellij/openapi/projectRoots/SdkType.java), leave `saveAdditionalData()` blank, and register it in the `com.intellij.sdkType` extension point.
+To create a custom SDK, provide a class extending [`SdkType`](%gh-ic%/platform/lang-core/src/com/intellij/openapi/projectRoots/SdkType.java), leave `saveAdditionalData()` blank, and register it
+in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.sdkType"/></include>.
 
 To make SDK settings persistent, override `setupSdkPaths()` and save settings by `modificator.commitChanges()`:
 
@@ -86,7 +87,9 @@ The recommended way of managing "SDK" settings is to create a [`CustomStepProjec
 ## Assisting in Setting Up an SDK
 
 Prompting the user with a notification to set up an SDK can help them get up-and-running with a plugin faster.
-Use `com.intellij.projectSdkSetupValidator` extension point to register an implementation of [`ProjectSdkSetupValidator`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/daemon/ProjectSdkSetupValidator.java) to notify the user if they are missing an SDK.
+Use <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.projectSdkSetupValidator"/></include> to register
+an implementation of [`ProjectSdkSetupValidator`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/daemon/ProjectSdkSetupValidator.java)
+to notify the user if they are missing an SDK.
 
 The following is a simplified example that checks whether an instance of "DemoSdk" has been configured in the project when the user opens a "DemoFileType":
 
@@ -122,6 +125,7 @@ Within `DemoProjectSdkSetupValidator`:
 * `getFixHandler()` returns an `EditorNotificationPanel.ActionHandler` that enables the user to execute a quick fix to resolve the validation issue.
 
 > `ProjectSdkSetupValidator` will not work in IntelliJ Platform-based IDEs such as PyCharm.
-> In such cases, you should register an implementation of [`EditorNotificationProvider`](%gh-ic%/platform/platform-api/src/com/intellij/ui/EditorNotificationProvider.java) at the `com.intellij.editorNotificationProvider` extension point and override the `createNotificationPanel()` method with the conditionality and panel setup you want.
+> In such cases, you should register an implementation of [`EditorNotificationProvider`](%gh-ic%/platform/platform-api/src/com/intellij/ui/EditorNotificationProvider.java)
+> via <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.editorNotificationProvider"/></include> and override the `createNotificationPanel()` method with the conditionality and panel setup you want.
 >
 {style="warning"}

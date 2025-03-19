@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Providing File and Code Templates
 
@@ -56,12 +56,12 @@ It includes templates located in the <path>fileTemplates/internal</path> directo
 #### Other
 
 The <control>Other</control> category contains other templates organized in groups.
-It includes templates located in the <path>fileTemplates/j2ee</path> directory and registered via the `com.intellij.fileTemplateGroup` extension point (EP).
+It includes templates located in the <path>fileTemplates/j2ee</path> directory and registered via the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.fileTemplateGroup"/></include>.
 Note that the <path>j2ee</path> directory name is historical and unrelated to the J2EE technology.
 This category is intended for templates that are not used for creating core language entities or are used less frequently by users, e.g., a specific XML configuration file, a framework-specific class in Java language, etc.
 To include file templates in the <control>Other</control> section of the <ui-path>Settings | Editor | File and Code Templates</ui-path> settings page, provide an implementation of the
 [`FileTemplateGroupDescriptorFactory`](%gh-ic%/platform/lang-api/src/com/intellij/ide/fileTemplates/FileTemplateGroupDescriptorFactory.java)
-and register it via the `com.intellij.fileTemplateGroup` EP.
+and register it via the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.fileTemplateGroup"/></include>.
 
 **Example:**
 [`MavenFileTemplateGroupFactory`](%gh-ic%/plugins/maven/src/main/java/org/jetbrains/idea/maven/utils/MavenFileTemplateGroupFactory.java)
@@ -99,7 +99,7 @@ A file template body can use a set of [predefined properties](https://www.jetbra
 Some languages or frameworks may require additional properties exposed to existing templates.
 To provide custom properties, implement
 [`DefaultTemplatePropertiesProvider`](%gh-ic%/platform/lang-api/src/com/intellij/ide/fileTemplates/DefaultTemplatePropertiesProvider.java)
-and register it via the `com.intellij.defaultTemplatePropertiesProvider` EP.
+and register it via the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.defaultTemplatePropertiesProvider"/></include>.
 
 **Example:** Java Plugin's
 [`TemplatePackagePropertyProvider`](%gh-ic%/java/java-impl/src/com/intellij/ide/fileTemplates/TemplatePackagePropertyProvider.java)

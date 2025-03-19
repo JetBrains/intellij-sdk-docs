@@ -12,8 +12,8 @@ _Extensions_ are the most common way for a plugin to extend the IntelliJ Platfor
 
 The following are some of the most common tasks achieved using extensions:
 
-* The `com.intellij.toolWindow` extension point allows plugins to add [tool windows](tool_windows.md) (panels displayed at the sides of the IDE user interface);
-* The `com.intellij.applicationConfigurable` and `com.intellij.projectConfigurable` extension points allow plugins to add pages to the [Settings dialog](settings.md);
+* The <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.toolWindow"/></include> allows plugins to add [tool windows](tool_windows.md) (panels displayed at the sides of the IDE user interface);
+* The <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.applicationConfigurable"/></include> and <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.projectConfigurable"/></include> allow plugins to add pages to the [Settings dialog](settings.md);
 * [Custom language plugins](custom_language_support.md) use many extension points to extend various language support features in the IDE.
 
 There are more than 1600 extension points available in the platform and the bundled plugins, allowing customizing different parts of the IDE behavior.

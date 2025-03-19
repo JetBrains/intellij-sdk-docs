@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Facet
 
@@ -24,7 +24,8 @@ To create, search, and access the list of facets for a module, use [`FacetManage
 
 ### Facet-Based Tool Window
 
-A [tool window](tool_windows.md) dependent on the existence of given facet(s) can be registered via `com.intellij.facet.toolWindow` extension point.
+A [tool window](tool_windows.md) dependent on the existence of given facet(s) can be registered
+via <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.facet.toolWindow"/></include>.
 
 ## Facet Basics Sample
 

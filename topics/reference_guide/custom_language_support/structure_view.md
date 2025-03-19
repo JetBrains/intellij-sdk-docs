@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Structure View
 
@@ -14,10 +14,12 @@ The Structure View implementation used for a specific file type can be customize
 If a custom language plugin provides an implementation of the [`StructureView`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/structureView/StructureView.java) interface, it can completely replace the standard structure view implementation with a custom user interface component.
 However, for most languages, this is not necessary, and the standard `StructureView` implementation provided by IntelliJ Platform can be reused.
 
-> To modify an existing Structure View (e.g., add/filter nodes of builtin language support), use [`StructureViewExtension`](%gh-ic%/platform/structure-view-impl/src/com/intellij/ide/structureView/StructureViewExtension.java) registered in `com.intellij.lang.structureViewExtension` extension point.
+> To modify an existing Structure View (e.g., add/filter nodes of builtin language support), use [`StructureViewExtension`](%gh-ic%/platform/structure-view-impl/src/com/intellij/ide/structureView/StructureViewExtension.java) registered
+> in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.structureViewExtension"/></include>.
 >
 
-The starting point for the structure view is the [`PsiStructureViewFactory`](%gh-ic%/platform/editor-ui-api/src/com/intellij/lang/PsiStructureViewFactory.java) interface, which is registered in the `com.intellij.lang.psiStructureViewFactory` extension point.
+The starting point for the structure view is the [`PsiStructureViewFactory`](%gh-ic%/platform/editor-ui-api/src/com/intellij/lang/PsiStructureViewFactory.java) interface, which is registered
+in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.psiStructureViewFactory"/></include>.
 
 **Examples:**
 - [`PsiStructureViewFactory`](%gh-ic%/plugins/properties/src/com/intellij/lang/properties/structureView/PropertiesStructureViewBuilderFactory.java) for [Properties language plugin](%gh-ic%/plugins/properties)

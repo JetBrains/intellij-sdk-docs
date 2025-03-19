@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Providing Translations
 
@@ -25,7 +25,7 @@ Note that language packs aim for full IDE localization.
 If it is required to translate a plugin, see the [](#bundled-translations) section.
 
 Language packs must define their language.
-The language definition is provided in the [`plugin.xml`](plugin_configuration_file.md) file with `com.intellij.languageBundle` extension point (EP), for example:
+The language definition is provided in the [`plugin.xml`](plugin_configuration_file.md) file with <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.languageBundle"/></include>, for example:
 ```xml
 <extensions defaultExtensionNs="com.intellij">
   <languageBundle locale="zh-CN"/>
@@ -36,7 +36,7 @@ The `locale` attribute defines the translation language on two possible levels:
 - region level, for example: `zh-CN` – Chinese (Simplified), `zh-TW` – Chinese (Taiwan)
 - language level, for example, `ja` – Japanese
 
-> Note that `com.intellij.languageBundle` EP is internal and must be used by JetBrains only.
+> Note that <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.languageBundle"/></include> is internal and must be used by JetBrains only.
 >
 {style="warning"}
 
@@ -52,7 +52,7 @@ To select the IDE language, follow the instruction from the [IntelliJ IDEA Web H
 <tab title="Pre-2024.2">
 
 In versions 2024.1 and older, there is no language selector in the IDE, and language packs serve as the IDE "language switcher."
-Installing a language pack changes the IDE language to the one defined by the `languageBundle` EP.
+Installing a language pack changes the IDE language to the one defined by the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.languageBundle"/></include>.
 Only a single language pack can be installed at the same time, and restart is required for the translations to take effect.
 
 </tab>

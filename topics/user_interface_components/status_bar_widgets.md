@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Status Bar Widgets
 
@@ -19,7 +19,7 @@ Due to the prominent presentation and limited space, they should be used only fo
 
 The starting point for extending the status bar with new widgets is the
 [`StatusBarWidgetFactory`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/StatusBarWidgetFactory.java)
-interface, which is registered in the `com.intellij.statusBarWidgetFactory` extension point.
+interface, which is registered in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.statusBarWidgetFactory"/></include>.
 Note: `id` attribute must be provided in <path>plugin.xml</path> registration and match value from `StatusBarWidgetFactory.getId()`.
 
 In case a widget provides information or functionality related to the editor files, consider extending the

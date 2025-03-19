@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 10. Reference Contributor
 
@@ -141,7 +141,8 @@ Contribute a reference to each usage of a property:
 
 ## Register the Reference Contributor
 
-The `SimpleReferenceContributor` implementation is registered using the `com.intellij.psi.referenceContributor` extension point and specifying `language="JAVA"`.
+The `SimpleReferenceContributor` implementation is registered using
+the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.psi.referenceContributor"/></include> and specifying `language="JAVA"`.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
@@ -175,7 +176,8 @@ As long as an element is a `SimpleProperty` it is allowed to be refactored:
 
 ## Register the Refactoring Support Provider
 
-The `SimpleRefactoringSupportProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.lang.refactoringSupport` extension point.
+The `SimpleRefactoringSupportProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file
+using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.refactoringSupport"/></include>.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

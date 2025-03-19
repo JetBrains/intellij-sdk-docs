@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Adding New Steps to Project Wizard
 
@@ -14,7 +14,7 @@ See the [](creating_plugin_project.md) section for details.
 ## Register Module Builder
 
 Project configuration settings depend on the project's module type.
-Register a new `com.intellij.moduleBuilder` extension point in the <path>[plugin.xml](plugin_configuration_file.md)</path> configuration file.
+Register a new <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.moduleBuilder"/></include> in the <path>[plugin.xml](plugin_configuration_file.md)</path> configuration file.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

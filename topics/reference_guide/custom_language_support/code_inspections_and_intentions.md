@@ -41,12 +41,13 @@ If none of that is required and the analysis only needs to run in the active edi
 <primary-label ref="2023.3"/>
 
 A [custom language plugin](custom_language_support.md) providing many inspections (>100) can register the default [`PsiElementVisitor`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElementVisitor.java)
-for its language in `com.intellij.inspection.basicVisitor` extension point to optimize processing.
+for its language in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.inspection.basicVisitor"/></include> to optimize processing.
 
 ## Intentions
 
 The code intentions for custom languages also use the standard API for intentions.
-The intention classes need to implement the [`IntentionAction`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/intention/IntentionAction.java) interface and are registered using the `com.intellij.intentionAction` extension point.
+The intention classes need to implement the [`IntentionAction`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/intention/IntentionAction.java) interface
+and are registered using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.intentionAction"/></include>.
 
 **Examples:**
 - [Code Intentions Tutorial](code_intentions.md)

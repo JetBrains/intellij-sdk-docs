@@ -64,9 +64,10 @@ While the Driver framework provides many pre-built components (like `ideFrame`, 
 It can be done by pausing the IDE to examine its UI structure:
 
 ```kotlin
-.runIdeWithDriver().useDriverAndCloseIde {
-  Thread.sleep(30.minutes.inWholeMilliseconds)
-}
+Starter.newContext(...).apply { ... }
+  .runIdeWithDriver().useDriverAndCloseIde {
+    Thread.sleep(30.minutes.inWholeMilliseconds) // pause the IDE
+  }
 ```
 
 When the test is running, the following line will appear in the logs: `http://localhost:63343/api/remote-driver/`.

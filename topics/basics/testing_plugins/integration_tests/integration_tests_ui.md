@@ -60,7 +60,7 @@ So, being explicit about the component hierarchy helps create more robust and ma
 
 While the Driver framework provides many pre-built components (like `ideFrame`, `codeEditor`, `button`, `tree`, etc.), sometimes it's required to locate custom elements.
 
-One way to pause the IDE to examine its UI structure:
+It can be done by pausing the IDE to examine its UI structure:
 
 ```kotlin
 .runIdeWithDriver().useDriverAndCloseIde {

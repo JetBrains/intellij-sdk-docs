@@ -162,17 +162,20 @@ fun simpleTestForCustomUIElement() {
     GitHubProject.fromGithub(branchName = "master",
       repoRelativeUrl = "JetBrains/ij-perf-report-aggregator"))
       .withVersion("2024.3")
-    ).apply {
-  val pathToPlugin = System.getProperty("path.to.build.plugin")
-  PluginConfigurator(this).installPluginFromFolder(File(pathToPlugin))
-  }.runIdeWithDriver().useDriverAndCloseIde {
+  )
+    .apply {
+      val pathToPlugin = System.getProperty("path.to.build.plugin")
+      PluginConfigurator(this).installPluginFromFolder(File(pathToPlugin))
+    }.runIdeWithDriver().useDriverAndCloseIde {
       waitForIndicators(1.minutes)
       ideFrame {
-      x(xQuery { byVisibleText("Current File") }).click()
-      val configurations = popup().jBlist(xQuery { contains(byVisibleText("Edit Configurations")) })
-      configurations.shouldBe("Configuration list is not present", present)
-      Assertions.assertTrue(configurations.rawItems.contains("backup-data"),
-        "Configurations list doesn't contain 'backup-data' item: ${configurations.rawItems}")
+        x(xQuery { byVisibleText("Current File") }).click()
+        val configurations = popup().jBlist(
+          xQuery { contains(byVisibleText("Edit Configurations")) }
+        )
+        configurations.shouldBe("Configuration list is not present", present)
+        Assertions.assertTrue(configurations.rawItems.contains("backup-data"),
+          "Configurations list doesn't contain 'backup-data' item: ${configurations.rawItems}")
     }
   }
 }

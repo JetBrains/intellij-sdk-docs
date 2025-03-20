@@ -2,6 +2,8 @@
 
 # Integration Tests: UI Testing
 
+<primary-label ref="2023.2"/>
+
 <link-summary>Walkthrough how to interact with UI in integration tests.</link-summary>
 
 > This page is part of [](integration_tests.md) tutorial.

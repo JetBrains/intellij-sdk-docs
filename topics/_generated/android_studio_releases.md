@@ -2,6 +2,14 @@
 
 <snippet id="releases_table">
 
+## 2025.*
+
+| Release Name | Channel | Version | IntelliJ IDEA Version | Release Date |
+|--------------|---------|---------|-----------------------|--------------|
+| <p><b>Narwhal </b></p><p> 2025.1.1 Canary 1</p> | ![Canary][canary] | **2025.1.1.1**<p>AI&#8209;251.23774.16.2511.13239840</p> | **null**<p>251.23774.16</p> | Mar&nbsp;19,&nbsp;2025 |
+
+
+
 ## 2024.*
 
 | Release Name | Channel | Version | IntelliJ IDEA Version | Release Date |

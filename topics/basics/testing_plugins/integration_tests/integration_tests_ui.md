@@ -38,7 +38,7 @@ This code demonstrates hierarchical navigation:
 * Locate the <control>Search Everywhere</control> popup (`searchEverywherePopup`).
 * Find and click the <control>Preview</control> button within the popup (`actionButtonByXpath(xQuery { byAccessibleName("Preview")}).click()`).
 
-The code could be written more concise:
+The code could be more concise:
 
 ```kotlin
 ideFrame {

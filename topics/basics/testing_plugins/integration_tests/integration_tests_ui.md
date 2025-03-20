@@ -6,7 +6,7 @@
 
 > This page is part of [](integration_tests.md) tutorial.
 
-For introduction and setting up dependencies please refer to [](integration_tests_intro.md).
+For introduction and setting up dependencies, refer to [](integration_tests_intro.md).
 
 ## UI Hierarchy
 

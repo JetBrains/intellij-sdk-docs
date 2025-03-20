@@ -169,13 +169,13 @@ fun simpleTestForCustomUIElement() {
     }.runIdeWithDriver().useDriverAndCloseIde {
       waitForIndicators(1.minutes)
       ideFrame {
-        x(xQuery { byVisibleText("Current File") }).click()
-        val configurations = popup().jBlist(
-          xQuery { contains(byVisibleText("Edit Configurations")) }
+        x(xQuery { byVisibleText("Current File") }).click() //1
+        val configurations = popup().jBlist( //2
+          xQuery { contains(byVisibleText("Edit Configurations")) } //3
         )
-        configurations.shouldBe("Configuration list is not present", present)
-        Assertions.assertTrue(configurations.rawItems.contains("backup-data"),
-          "Configurations list doesn't contain 'backup-data' item: ${configurations.rawItems}")
+        configurations.shouldBe("Configuration list is not present", present) //4
+        Assertions.assertTrue(configurations.rawItems.contains("backup-data"), //5
+          "Configurations list doesn't contain 'backup-data' item: ${configurations.rawItems}") //6
     }
   }
 }
@@ -183,21 +183,15 @@ fun simpleTestForCustomUIElement() {
 
 The test does the following:
 
-* Opening the popup
-* Click the <control>Current File</control> button.
-* Popup menu appears.
-* Finding the list
-* Use `popup()` to locate the popup with a configuration list.
-  This works without any XPath because at the moment of the call, there are no other popups shown on the UI.
-* Find the list containing the text `Edit Configurations` by using the following query: `jBlist(xQuery { contains(byVisibleText("Edit Configurations")) })`.
-* XQuery searches for the list component that contains the visible text `Edit Configurations`.
-* Verifying list presence
-* Use `shouldBe(<message>, present)` to ensure the list exists.
-  This is important because `popup().jBlist` creates a lazy reference without actually checking the results.
-  The actual check happens when `shouldBe` calls the `present` method.
-  The `shouldBe` method waits 15 seconds until the condition is met and can be used to assert various properties.
-* Checking list contents
-* Access the `rawItems` property to get all list items.
-* Verify the `backup-data` exists in the list.
-* Include full list content in the error message for debugging.
+1. Opening the popup by clicking the <control>Current File</control> button.
+2. Finding the list by using `popup()` to locate the popup with a configuration list.
+This works without any XPath because at the moment of the call, there are no other popups shown on the UI.
+3. Finding the list containing the text `Edit Configurations`.
+XQuery searches for the list component that contains the visible text `Edit Configurations` and verifies the list presence.
+4. Using `shouldBe(<message>, present)` to ensure the list exists.
+This is important because `popup().jBlist` creates a lazy reference without actually checking the results.
+The actual check happens when `shouldBe` calls the `present` method.
+The `shouldBe` method waits 15 seconds until the condition is met and can be used to assert various properties.
+5. Checking list contents by accessing the `rawItems` property to get all list items and asserting `backup-data` exists in the list.
+6. Including full list content in the error message for debugging.
 

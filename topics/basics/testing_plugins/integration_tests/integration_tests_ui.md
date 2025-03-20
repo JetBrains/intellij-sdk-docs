@@ -23,20 +23,21 @@ The Driver framework provides a Kotlin DSL that mirrors this hierarchy.
 Here's an example:
 
 ```kotlin
-ideFrame {
-  invokeAction("SearchEverywhere")
-  searchEverywherePopup {
-    actionButtonByXpath(xQuery { byAccessibleName("Preview")}).click()
+ideFrame { // 1
+  invokeAction("SearchEverywhere") // 2
+  searchEverywherePopup { // 3
+    actionButtonByXpath(xQuery { byAccessibleName("Preview")}) // 4
+      .click()
   }
 }
 ```
 
 This code demonstrates hierarchical navigation:
 
-* Find the main IDE window (`ideFrame`).
-* Trigger the _Search Everywhere_ action (`invokeAction("SearchEverywhere")`).
-* Locate the <control>Search Everywhere</control> popup (`searchEverywherePopup`).
-* Find and click the <control>Preview</control> button within the popup (`actionButtonByXpath(xQuery { byAccessibleName("Preview")}).click()`).
+1. Find the main IDE window.
+2. Trigger the _Search Everywhere_ action.
+3. Locate the <control>Search Everywhere</control> popup.
+4. Find and click the <control>Preview</control> button within the popup.
 
 The code could be more concise:
 

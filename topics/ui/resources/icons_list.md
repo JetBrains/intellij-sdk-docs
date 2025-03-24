@@ -2,4 +2,4 @@
 
 # Icons List
 
-<inline-frame src="https://intellij-icons.jetbrains.design" width="100%" height="100%"/>
+<inline-frame src="https://intellij-icons.jetbrains.design" width="100%" height="800"/>

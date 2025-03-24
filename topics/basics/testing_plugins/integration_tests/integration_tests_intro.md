@@ -6,6 +6,8 @@
 
 <link-summary>Walkthrough how to create the first integration tests.</link-summary>
 
+> This page is part of [](integration_tests.md) tutorial.
+
 ## Adding dependencies
 
 Integration testing framework consists of two main components:

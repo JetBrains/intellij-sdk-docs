@@ -99,17 +99,36 @@ The element corresponds to the following button:
 ![](integration_tests_ui_sample.png){width=706}
 
 Similar to web testing frameworks like Selenium, XPath is used to locate components.
-The Driver framework provides a simple XPath builder.
-Here are several ways to find the same component:
+The Driver framework provides a simple XPath builder — `com.intellij.driver.sdk.ui.QueryBuilder`.
+
+For reliable component identification, prioritize these attributes, which can be found with predefined methods in `QueryBuilder`:
+
+- `accessiblename`: `xQuery { byAccessibleName() }`
+- `visible_text`: `xQuery { byVisibleText() }`
+- `javaclass`: `xQuery { byType() }`
+- `myicon`: `xQuery { byAttribute("myicon", "") }`
+
+A single component can be found in several ways:
 
 ```kotlin
-xQuery { byVisibleText("Current File") }
 xQuery { byAccessibleName("Current File") }
-xQuery { byType("com.intellij.execution.ui.RedesignedRunConfigurationSelector\$createCustomComponent$1") }
+xQuery { byVisibleText("Current File") }
+xQuery {
+  byType("com.intellij.execution.ui.RedesignedRunConfigurationSelector\$createCustomComponent$1")
+}
 ```
 
-For reliable component identification, prioritize these attributes: `accessiblename`, `visible_text`, `icon`, `javaclass`.
-Multiple attributes can be combined for a more precise selection.
+Multiple attributes can be combined for a more precise selection, for example:
+
+```kotlin
+xQuery { and(byAccessibleName("Current File"), byVisibleText("Current File")) }
+xQuery {
+  or(
+    contains(byAccessibleName("Current")),
+    byType("com.intellij.execution.ui.RedesignedRunConfigurationSelector\$createCustomComponent$1")
+  )
+}
+```
 
 ## Interaction with Components
 
@@ -164,9 +183,12 @@ fun simpleTestForCustomUIElement() {
   Starter.newContext(
     "testExample",
     TestCase(
-    IdeProductProvider.IC,
-    GitHubProject.fromGithub(branchName = "master",
-      repoRelativeUrl = "JetBrains/ij-perf-report-aggregator"))
+      IdeProductProvider.IC,
+      GitHubProject.fromGithub(
+        branchName = "master",
+        repoRelativeUrl = "JetBrains/ij-perf-report-aggregator"
+      )
+    )
       .withVersion("2024.3")
   )
     .apply {
@@ -180,10 +202,12 @@ fun simpleTestForCustomUIElement() {
           xQuery { contains(byVisibleText("Edit Configurations")) } //3
         )
         configurations.shouldBe("Configuration list is not present", present) //4
-        Assertions.assertTrue(configurations.rawItems.contains("backup-data"), //5
-          "Configurations list doesn't contain 'backup-data' item: ${configurations.rawItems}") //6
+        Assertions.assertTrue(
+          configurations.rawItems.contains("backup-data"), //5
+          "Configurations list doesn't contain 'backup-data' item: ${configurations.rawItems}"
+        ) //6
+      }
     }
-  }
 }
 ```
 

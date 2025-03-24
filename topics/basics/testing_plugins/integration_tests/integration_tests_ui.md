@@ -146,6 +146,9 @@ keyboard {
 }
 ```
 
+Keyboard methods perform presses using `java.awt.Robot` so to type to some particular component or invoke a shortcut in the appropriate place, you first need to make the component focused.
+The most reliable way to do this is to perform `click` on the component first.
+
 > On macOS, the interaction via `java.awt.Robot` requires special permissions.
 > IntelliJ IDEA should be granted the necessary permissions via the Accessibility page, which can be found under _System Settings | Privacy & Security_.
 >

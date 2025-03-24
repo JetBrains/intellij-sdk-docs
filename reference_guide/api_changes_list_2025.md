@@ -85,6 +85,8 @@ Coroutines running under `Dispatchers.Main` do not hold the write-intent lock
 : To restore the old behavior, consider using `Dispatchers.EDT`.
 See [](threading_model.md).
 
+### Database Plugin 2025.1
+
 `com.intellij.database.view.models` package removed
 : Old table modification dialog was finally removed. Use com.intellij.database.actions.ddl.ModifyObjectAction#showDialog for new dialog invocation.
 

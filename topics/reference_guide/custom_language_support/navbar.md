@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Navigation Bar
 
@@ -16,7 +16,7 @@ structure.
 
 The starting point for the navigation bar extension is the
 [`NavBarModelExtension`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/navigationToolbar/NavBarModelExtension.java)
-interface, which is registered in the `com.intellij.navbar` extension point.
+interface, which is registered in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.navbar"/></include>.
 
 To reuse the IntelliJ Platform implementation, you can extend one of two classes:
 

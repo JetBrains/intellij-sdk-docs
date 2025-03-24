@@ -46,12 +46,12 @@ The details of the `comparing_string_references_inspection` implementation illus
 
 ### Plugin Configuration File
 
-The `comparing_string_references_inspection` is described as a `com.intellij.localInspection` extension point in the `comparing_string_references_inspection` plugin configuration ([`plugin.xml`](%gh-sdk-samples-master%/comparing_string_references_inspection/src/main/resources/META-INF/plugin.xml)) file.
+The `comparing_string_references_inspection` is described as a <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.localInspection"/></include> in the `comparing_string_references_inspection` plugin configuration ([`plugin.xml`](%gh-sdk-samples-master%/comparing_string_references_inspection/src/main/resources/META-INF/plugin.xml)) file.
 
 There exist two types of inspection extensions:
 
-* The `com.intellij.localInspection` extension point is used for inspections that operate on one file at a time, and also operate "on-the-fly" as the user edits the file.
-* The `com.intellij.globalInspection` extension point is used for inspections that operate across multiple files, and the associated fix might, for example, refactor code between files.
+* The <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.localInspection"/></include> is used for inspections that operate on one file at a time, and also operate "on-the-fly" as the user edits the file.
+* The <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.globalInspection"/></include> is used for inspections that operate across multiple files, and the associated fix might, for example, refactor code between files.
 
 The minimum inspection setup must declare the `implementationClass` and `language` attribute (unless the inspection works on any supported language).
 As shown in the `comparing_string_references_inspection` plugin configuration file, other attributes can be defined in the `localInspection` element, either with or without localization.

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 # Additional Minor Features
 
@@ -35,7 +35,7 @@ See also [](#recognizing-complex-multi-block-expressions).
 
 If the brace matching is "too heavy" and should not be executed in [EDT](threading_model.md), implement
 [`HeavyBraceHighlighter`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/highlighting/HeavyBraceHighlighter.java)
-and register in `com.intellij.heavyBracesHighlighter` extension point.
+and register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.heavyBracesHighlighter"/></include>.
 
 ### Quote Handling
 
@@ -102,7 +102,7 @@ Can be [](indexing_and_psi_stubs.md#DumbAwareAPI) (2024.3+).
 
 EP: `com.intellij.indexPatternSearch`
 
-Additional places can be provided via [`IndexPatternSearch`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/searches/IndexPatternSearch.java) registered in `com.intellij.indexPatternSearch` extension point.
+Additional places can be provided via [`IndexPatternSearch`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/searches/IndexPatternSearch.java) registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.indexPatternSearch"/></include>.
 
 ### Context Info
 
@@ -220,7 +220,7 @@ which shows how the project name is added to the editor tab for Gradle files.
 EP: `com.intellij.problemHighlightFilter`, `com.intellij.problemFileHighlightFilter`
 
 [`ProblemHighlightFilter`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/daemon/ProblemHighlightFilter.java) and
-the `com.intellij.problemFileHighlightFilter` EP (which implements
+the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.problemFileHighlightFilter"/></include> (which implements
 [`Condition<VirtualFile>`](%gh-ic%/platform/util/src/com/intellij/openapi/util/Condition.java))
 are used to filter out files that should not be error-highlighted because they are, e.g., outside
 the current project scope.
@@ -264,4 +264,4 @@ a variable declaration.
 - [`DeclarationMover`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/editorActions/moveUpDown/DeclarationMover.java)
 
 
-<include from="snippets.md" element-id="missingContent"/>
+<include from="snippets.topic" element-id="missingContent"/>

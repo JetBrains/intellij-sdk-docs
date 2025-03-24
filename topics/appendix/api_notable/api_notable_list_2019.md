@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 # Notable Changes in IntelliJ Platform and Plugins API 2019.*
 
@@ -21,7 +21,7 @@ Run task once (per project)
 : Use `com.intellij.ide.util.RunOnceUtil` to run a task exactly once for application or per project.
 
 Symbol completion in plain text editor (VCS Commit Message)
-: Contribute symbol names (classes, methods, ..) via `com.intellij.completion.plainTextSymbol` extension point (`com.intellij.codeInsight.completion.PlainTextSymbolCompletionContributor`).
+: Contribute symbol names (classes, methods, ...) via <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.completion.plainTextSymbol"/></include> ([`PlainTextSymbolCompletionContributor`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/completion/PlainTextSymbolCompletionContributor.java)).
 
 User-customizable date/time formatting
 : Use `com.intellij.util.text.JBDateFormat#getFormatter()` to use configured format from <ui-path>Settings | Appearance & Behavior | System Settings | Date Formats</ui-path>.
@@ -55,13 +55,13 @@ New API for Editor Inlay Hints
 : Provides background color in all Trees, Lists and ComboBoxes.
 
 `com.intellij.openapi.startup.StartupActivity` background variant
-: Use new dedicated `com.intellij.backgroundPostStartupActivity` extension point (see Javadoc for `StartupActivity#BACKGROUND_POST_STARTUP_ACTIVITY`).
+: Use new dedicated <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.backgroundPostStartupActivity"/></include> (see Javadoc for `StartupActivity#BACKGROUND_POST_STARTUP_ACTIVITY`).
 
 `com.intellij.codeHighlighting.TextEditorHighlightingPassFactory` registration
-: Use new dedicated `com.intellij.highlightingPassFactory` extension point.
+: Use new dedicated <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.highlightingPassFactory"/></include>.
 
 `com.intellij.openapi.fileTypes.FileTypeFactory` deprecated
-: When registering a file type via file extension, pattern or exact file name matching, use `com.intellij.fileType` extension point instead (see [Sample](language_and_filetype.md#register-the-file-type)).
+: When registering a file type via file extension, pattern, or exact filename matching, use <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.fileType"/></include> instead (see [Sample](language_and_filetype.md#register-the-file-type)).
 
 `@org.jetbrains.annotations.ApiStatus.NonExtendable`
 : Indicates that the annotated API class, interface, or method must not get extended, implemented, or overridden by external plugins but can only be obtained or instantiated for classes and interfaces, or called for methods.

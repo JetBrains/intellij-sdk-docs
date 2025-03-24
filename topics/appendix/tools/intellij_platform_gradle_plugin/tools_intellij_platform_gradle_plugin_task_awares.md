@@ -662,4 +662,4 @@ Default value
 Interface used to describe tasks used for running tests, such as [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi), [`testIdePerformance`](tools_intellij_platform_gradle_plugin_tasks.md#testIdePerformance), or [`prepareTest`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTest) used for configuring `test` and keeping it immutable.
 
 
-<include from="snippets.md" element-id="missingContent"/>
+<include from="snippets.topic" element-id="missingContent"/>

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # PHP Type Providers
 
@@ -9,7 +9,8 @@ specific PSI elements.
 For example, `com.jetbrains.php.lang.psi.resolve.types.PhpArrayAccessTP` is responsible for inferring the types of expressions like `$arr[10]`.
 There are dozens of such providers, and they all work one after another to provide type information when needed.
 
-All providers inherit from `com.jetbrains.php.lang.psi.resolve.types.PhpTypeProvider4`, which is registered in the `com.jetbrains.php.typeProvider4` extension point.
+All providers inherit from `com.jetbrains.php.lang.psi.resolve.types.PhpTypeProvider4`, which is registered in
+the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.php.typeProvider4"/></include>.
 
 ## Types in PhpStorm
 
@@ -297,7 +298,7 @@ public class PhpUnitFiledInitializedInSetUpMethodsTP implements PhpTypeProvider4
 ### Register the `PhpUnitFiledInitializedInSetUpMethodsTP`
 
 The `PhpUnitFiledInitializedInSetUpMethodsTP` implementation is registered with the IntelliJ Platform in the
-plugin configuration file using the `com.jetbrains.php.typeProvider4` extension point.
+plugin configuration file using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.php.typeProvider4"/></include>.
 
 ```xml
 <extensions defaultExtensionNs="com.jetbrains">

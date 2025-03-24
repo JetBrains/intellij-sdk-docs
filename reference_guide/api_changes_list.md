@@ -69,7 +69,7 @@ IntelliJ API may be occasionally changed between releases, leading to existing p
 
 See [](verifying_plugin_compatibility.md) on how to use Plugin Verifier and IDE inspections to check such problems.
 
-<include from="snippets.md" element-id="subscribeNews"/>
+<include from="snippets.topic" element-id="subscribeNews"/>
 
 ## Known Breaking Changes
 

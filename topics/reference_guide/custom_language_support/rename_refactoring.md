@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Rename Refactoring
 
@@ -24,12 +24,13 @@ Thus, surprisingly, the easiest way to get the replacement node is to create a d
 
 If a renamed reference extends [`PsiReferenceBase`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReferenceBase.java), renaming is performed by invoking the [`ElementManipulator.handleContentChange()`](%gh-ic%/platform/core-api/src/com/intellij/psi/ElementManipulator.java), responsible for handling the content change and calculating the text range of reference inside the element.
 
-To disable renaming for specific elements, implement `com.intellij.openapi.util.Condition<T>` for PsiElement of type `T` and register it in `com.intellij.vetoRenameCondition` extension point.
+To disable renaming for specific elements, implement `com.intellij.openapi.util.Condition<T>` for PsiElement of type `T` and register it
+in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.vetoRenameCondition"/></include>.
 
 ### Name Validation
 [`NamesValidator`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/refactoring/NamesValidator.java) allows a plugin to check if the name entered by the user in the `Rename` dialog is a valid identifier (and not a keyword) according to the custom language rules.
 If an implementation of this interface is not provided by the plugin, Java rules for validating identifiers are used.
-Implementations of `NamesValidator` are registered in the `com.intellij.lang.namesValidator` extension point.
+Implementations of `NamesValidator` are registered in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.namesValidator"/></include>.
 
 **Example:**
 [`PropertiesNamesValidator`](%gh-ic%/plugins/properties/src/com/intellij/lang/properties/PropertiesNamesValidator.java) for [Properties language plugin](%gh-ic%/plugins/properties)
@@ -53,7 +54,7 @@ Note that `getErrorMessage()` only works if all `RenameInputValidator` accept th
 **Example:**
 [`YamlKeyValueRenameInputValidator`](%gh-ic%/plugins/yaml/editing/src/org/jetbrains/yaml/refactoring/rename/YamlKeyValueRenameInputValidator.java) validating YAML language keys
 
-Implementations of `RenameInputValidator` or `RenameInputValidatorEx` are registered in the `com.intellij.renameInputValidator` extension point.
+Implementations of `RenameInputValidator` or `RenameInputValidatorEx` are registered in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.renameInputValidator"/></include>.
 
 ### Custom Rename UI and Workflow
 Further customization of the Rename refactoring processing is possible on multiple levels.

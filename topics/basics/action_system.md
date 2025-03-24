@@ -57,7 +57,7 @@ The state (enabled, visible) of an action determines whether the action is avail
 An object of the [`AnActionEvent`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java) type is passed to this method and contains information about the current context for the action.
 
 Actions are made available by changing the state in the [`Presentation`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/Presentation.java) object associated with the event context.
-As explained in [Overriding the `AnAction.update()`  Method](#overriding-the-anactionupdate-method), it is vital `update()` methods _execute quickly_ and return execution to platform.
+As explained in [Overriding the `AnAction.update()` Method](#overriding-the-anactionupdate-method), it is vital `update()` methods _execute quickly_ and return execution to platform.
 
 #### `AnAction.getActionUpdateThread()`
 <primary-label ref="2022.3"/>
@@ -397,6 +397,11 @@ See also [](popups.md#action-groups) for more advanced popups.
 If an action toolbar is attached to a specific component (for example, a panel in a tool window), call `ActionToolbar.setTargetComponent()` and pass the related component's instance as a parameter.
 Setting the target ensures that the toolbar buttons' state depends on the state of the related component, not on the current focus location within the IDE frame.
 
+To add an action group to the list of customizable actions in <ui-path>Settings | Appearance & Behavior | Menus and Toolbars</ui-path>, implement the
+[`CustomizableActionGroupProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/ui/customization/CustomizableActionGroupProvider.java)
+extension point registered in `com.intellij.customizableActionGroupProvider`,
+and ensure that the [action group](plugin_configuration_file.md#idea-plugin__actions__group) defines the `text` attribute or is [localized](#localizing-actions-and-groups).
+
 See [](toolbar.md) in UI Guidelines for an overview.
 
 ## Useful Action Base Classes
@@ -448,7 +453,7 @@ Code insight to defined Actions and Groups is provided by the _Plugin DevKit_ pl
 ### Builtin Places
 
 - IntelliJ Platform API, for example [`ActionManager.getAction()`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionManager.java)
-- Test Framework API, for example  [`CodeInsightTestFixture.performEditorAction()`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/CodeInsightTestFixture.java)
+- Test Framework API, for example [`CodeInsightTestFixture.performEditorAction()`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/CodeInsightTestFixture.java)
 - String literal fields with the name `ACTION_ID`
 - Constants defined in [`IdeActions`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/actionSystem/IdeActions.java)
 

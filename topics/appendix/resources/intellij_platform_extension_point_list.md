@@ -20,7 +20,7 @@ and add in intellij_community_plugins_extension_point_list.md.
 
 1121 Extension Points and 213 Listeners for IntelliJ Platform %ijPlatform%
 
-<include from="snippets.md" element-id="ep_list_legend"/>
+<include from="snippets.topic" element-id="ep_list_legend"/>
 
 ## IntelliJ Platform
 

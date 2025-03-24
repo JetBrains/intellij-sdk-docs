@@ -46,7 +46,7 @@ This is a step-by-step tutorial, and it requires completing each step, in order:
 * [](find_usages_provider.md)
 * {columns="2"}
 
-<include from="snippets.md" element-id="missingContent"/>
+<include from="snippets.topic" element-id="missingContent"/>
 
 <seealso style="cards">
     <category ref="related">

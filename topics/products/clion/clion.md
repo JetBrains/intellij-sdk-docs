@@ -6,7 +6,7 @@
 
 <var name="productID" value="clion"/>
 <var name="marketplaceProductID" value="clion"/>
-<include from="snippets.md" element-id="jetbrainsIDE_TLDR"/>
+<include from="snippets.topic" element-id="jetbrainsIDE_TLDR"/>
 
 [CLion](https://www.jetbrains.com/clion/) is an IntelliJ Platform-based product.
 Plugin projects for CLion can be developed using [IntelliJ IDEA](idea.md).

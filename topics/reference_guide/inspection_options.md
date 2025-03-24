@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Inspection Options
 
@@ -125,7 +125,7 @@ An example of such a case is the <ui-path>Java | Probable bugs | Nullability pro
 
 Custom Swing controls can be provided by implementing
 [`CustomComponentExtensionWithSwingRenderer`](%gh-ic%/platform/lang-api/src/com/intellij/codeInspection/ui/CustomComponentExtensionWithSwingRenderer.java)
-and registering the implementation in the `com.intellij.inspectionCustomComponent` extension point.
+and registering the implementation in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.inspectionCustomComponent"/></include>.
 Please note that this API is still in experimental state and may be changed without preserving backward compatibility.
 
 **Example:**

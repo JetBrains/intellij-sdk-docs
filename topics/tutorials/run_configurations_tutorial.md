@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Run Configurations Tutorial
 
@@ -30,7 +30,7 @@ Implement [`ConfigurationType`](%gh-ic%/platform/execution/src/com/intellij/exec
 
 ## Register the `ConfigurationType`
 
-Register implemented configuration type in `com.intellij.configurationType` extension point in the [plugin.xml](%gh-sdk-samples-master%/run_configuration/src/main/resources/META-INF/plugin.xml):
+Register implemented configuration type in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.configurationType"/></include> in the [plugin.xml](%gh-sdk-samples-master%/run_configuration/src/main/resources/META-INF/plugin.xml):
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

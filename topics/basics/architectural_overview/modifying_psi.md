@@ -60,7 +60,7 @@ Instead, all whitespace modifications are performed by the formatter, which foll
 Formatting is automatically performed at the end of every command, and if you need, you can also perform it manually using the `reformat(PsiElement)` method in the [`CodeStyleManager`](%gh-ic%/platform/core-api/src/com/intellij/psi/codeStyle/CodeStyleManager.java) class.
 
 Also, when working with Java code (or with code in other languages with a similar import mechanism such as Groovy or Python), you should never create imports manually.
-Instead, you should insert fully-qualified names into the code you're generating, and then call the `shortenClassReferences()` method in the  [`JavaCodeStyleManager`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/codeStyle/JavaCodeStyleManager.java) (or the equivalent API for the language you're working with).
+Instead, you should insert fully-qualified names into the code you're generating, and then call the `shortenClassReferences()` method in the [`JavaCodeStyleManager`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/codeStyle/JavaCodeStyleManager.java) (or the equivalent API for the language you're working with).
 This ensures that the imports are created according to the user's code style settings and inserted into the file's correct place.
 
 ## Combining PSI and Document Modifications

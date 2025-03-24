@@ -2,6 +2,8 @@
 
 # Integration Tests
 
+<primary-label ref="2023.2"/>
+
 <link-summary>Tutorial on how to create UI and functional integration tests</link-summary>
 
 There are several important reasons to create integration tests, including:

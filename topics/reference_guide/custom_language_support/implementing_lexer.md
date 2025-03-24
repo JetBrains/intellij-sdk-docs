@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Implementing Lexer
 
@@ -13,11 +13,11 @@ The IDE invokes the lexer in three main contexts, and the plugin can provide dif
 
 *  [Syntax highlighting](syntax_highlighting_and_error_highlighting.md#lexer): The lexer is returned from the implementation of the
    [`SyntaxHighlighterFactory`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/fileTypes/SyntaxHighlighterFactory.java)
-   interface which is registered in the `com.intellij.lang.syntaxHighlighterFactory` extension point.
+   interface which is registered in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.syntaxHighlighterFactory"/></include>.
 
 *  [Building the syntax tree of a file](grammar_and_parser.md): the lexer is expected to be returned from
    [`ParserDefinition.createLexer()`](%gh-ic%/platform/core-api/src/com/intellij/lang/ParserDefinition.java)
-   implementation registered in the `com.intellij.lang.parserDefinition` extension point.
+   implementation registered in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.parserDefinition"/></include>.
 
 *  Building the index of the words contained in the file:
    if the lexer-based words scanner implementation is used, the lexer is passed to the

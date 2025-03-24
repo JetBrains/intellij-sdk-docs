@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Inlay Hints
 
@@ -41,7 +41,7 @@ It is not possible to provide advanced presentation and behavior of inlay parame
 
 To provide inlay parameter hints, implement
 [`InlayParameterHintsProvider`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hints/InlayParameterHintsProvider.java)
-and register it in `com.intellij.codeInsight.parameterNameHints` extension point (EP).
+and register it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.codeInsight.parameterNameHints"/></include> (EP).
 The API documentation of `InlayParameterHintsProvider` explains in detail the rationale behind all methods.
 
 **Examples:**
@@ -50,7 +50,7 @@ The API documentation of `InlayParameterHintsProvider` explains in detail the ra
 
 To suppress inlay parameter hints in specific places, implement
 [`ParameterNameHintsSuppressor`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hints/ParameterNameHintsSuppressor.kt)
-and register it in `com.intellij.codeInsight.parameterNameHintsSuppressor` EP.
+and register it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.codeInsight.parameterNameHintsSuppressor"/></include>.
 
 ### Declarative Inlay Hints Provider
 <primary-label ref="2023.1"/>
@@ -60,7 +60,7 @@ Please note this API has limited presentation customization possibilities due to
 
 To provide declarative inlay hints implement declarative
 [`InlayHintsProvider`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hints/declarative/InlayHintsProvider.kt)
-and register it in `com.intellij.codeInsight.declarativeInlayProvider` EP.
+and register it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.codeInsight.declarativeInlayProvider"/></include>.
 See the API documentation for the details.
 
 **Examples:**
@@ -69,10 +69,10 @@ See the API documentation for the details.
 
 To provide a custom configuration UI, implement
 [`InlayHintsCustomSettingsProvider`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hints/declarative/InlayHintsCustomSettingsProvider.kt)
-registered in `com.intellij.codeInsight.declarativeInlayProviderCustomSettingsProvider` extension point.
+registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.codeInsight.declarativeInlayProviderCustomSettingsProvider"/></include>.
 
 Preview texts displayed for inlay hint providers under <ui-path>Settings | Editor | Inlay Hints</ui-path> must be located in plugin resources in <path>inlayProviders/\$provider_id\$</path> directory, for example, <path>inlayProviders/java.implicit.types</path>.
-The <path>\$provider_id\$</path> value must match the `providerId` attribute of `com.intellij.codeInsight.declarativeInlayProvider` EP.
+The <path>\$provider_id\$</path> value must match the `providerId` attribute of <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.codeInsight.declarativeInlayProvider"/></include>.
 The preview file name must be <path>preview.\$ext\$</path>, where <path>\$ext\$</path> is a default extension of a supported file type, for example, <path>preview.java</path>.
 Hints displayed in the preview panel are defined with the dedicated markup:
 
@@ -111,9 +111,12 @@ Code vision hints can be displayed over the element, or on the right, at the end
 It is configurable by users in <ui-path>Settings | Editor | Inlay Hints | Code vision</ui-path> by choosing a value in <control>Default position for metrics</control> combo box, or by selecting <control>Position</control> in specific provider entries.
 
 There are three extension points for implementing a code vision provider:
-- [`DaemonBoundCodeVisionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/hints/codeVision/DaemonBoundCodeVisionProvider.kt) registered in `com.intellij.codeInsight.daemonBoundCodeVisionProvider` EP
-- [`CodeVisionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/codeVision/CodeVisionProvider.kt) registered in `com.intellij.codeInsight.codeVisionProvider` EP
-- [`CodeVisionGroupSettingProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/codeVision/settings/CodeVisionGroupSettingProvider.kt) registered in `com.intellij.config.codeVisionGroupSettingProvider` EP
+- [`DaemonBoundCodeVisionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/hints/codeVision/DaemonBoundCodeVisionProvider.kt) registered
+  in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.codeInsight.daemonBoundCodeVisionProvider"/></include>
+- [`CodeVisionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/codeVision/CodeVisionProvider.kt) registered
+  in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.codeInsight.codeVisionProvider"/></include>
+- [`CodeVisionGroupSettingProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/codeVision/settings/CodeVisionGroupSettingProvider.kt) registered
+  in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.config.codeVisionGroupSettingProvider"/></include>
 
 `DaemonBoundCodeVisionProvider` API should be used in cases when code vision entries are related to PSI, so that calculated values are invalidated and recalculated on PSI changes.
 
@@ -150,7 +153,7 @@ See the API documentation for the details.
 
 To provide inlay hints, implement
 [`InlayHintsProvider`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hints/InlayHintsProvider.kt)
-and register it in `com.intellij.codeInsight.inlayProvider` EP.
+and register it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.codeInsight.inlayProvider"/></include>.
 See the API documentation for the details.
 
 **Examples:**

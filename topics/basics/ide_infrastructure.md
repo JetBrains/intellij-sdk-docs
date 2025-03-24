@@ -85,7 +85,7 @@ For the latter, reporting is disabled by default — instead, there's an option 
 
 To let users report such errors to the vendor, plugins can use one of the solutions:
 - Use [JetBrains Exception Analyzer (EA)](https://plugins.jetbrains.com/docs/marketplace/exception-analyzer.html) that sends errors to the backend provided by JetBrains (2023.3+).
-- Implement custom [`ErrorReportSubmitter`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/diagnostic/ErrorReportSubmitter.java) registered in `com.intellij.errorHandler` extension point.
+- Implement custom [`ErrorReportSubmitter`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/diagnostic/ErrorReportSubmitter.java) registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.errorHandler"/></include>.
 See [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.errorHandler) for existing implementations — ranging from pre-filling web-based issue tracker forms to fully automated submission to log monitoring systems.
 This [tutorial](https://www.plugin-dev.com/intellij/general/error-reporting/) also offers a working solution for using _Sentry_.
 
@@ -108,7 +108,7 @@ For paid plugins, see also [Marketplace docs](https://plugins.jetbrains.com/docs
 
 ## Context Help
 
-To show custom context web-based help for your plugin's functionality (e.g., for [dialogs](dialog_wrapper.md)), provide [`WebHelpProvider`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/help/WebHelpProvider.java) registered in `com.intellij.webHelpProvider` extension point.
+To show custom context web-based help for your plugin's functionality (e.g., for [dialogs](dialog_wrapper.md)), provide [`WebHelpProvider`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/help/WebHelpProvider.java) registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.webHelpProvider"/></include>.
 
 > To [localize](providing_translations.md) the help page URL, retrieve the current locale and language tag from the [dynamic bundle](providing_translations.md#getting-the-current-locale-programmatically).
 
@@ -157,7 +157,7 @@ To suggest other relevant plugins, use [`PluginsAdvertiser.installAndEnable()`](
 
 ### Deprecating a Plugin
 
-To suggest replacing the currently installed deprecated plugin with the new one, implement [`PluginReplacement`](%gh-ic%/platform/platform-api/src/com/intellij/ide/plugins/PluginReplacement.java) registered in `com.intellij.pluginReplacement` extension point.
+To suggest replacing the currently installed deprecated plugin with the new one, implement [`PluginReplacement`](%gh-ic%/platform/platform-api/src/com/intellij/ide/plugins/PluginReplacement.java) registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.pluginReplacement"/></include>.
 
 ## Network
 

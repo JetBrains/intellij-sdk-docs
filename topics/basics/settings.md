@@ -20,4 +20,4 @@ Settings are but one application of the IntelliJ Platform [Persistence Model](pe
 * [](settings_groups.md) for information about creating custom Settings groups and parent-child relationships.
 * [](settings_tutorial.md) for step-by-step instructions for creating a simple set of custom Settings.
 
-<include from="snippets.md" element-id="missingContent"/>
+<include from="snippets.topic" element-id="missingContent"/>

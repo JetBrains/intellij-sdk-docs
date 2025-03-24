@@ -17,7 +17,8 @@ Direct navigation is the navigation from `PsiElement` to another `PsiElement`,
 such as navigation from `break` keyword to the end of a loop in Java, without showing any popups.
 
 To provide `PsiElement` for direct navigation, implement and register
-[`DirectNavigationProvider`](%gh-ic%/platform/core-api/src/com/intellij/navigation/DirectNavigationProvider.java) in `com.intellij.lang.directNavigationProvider` EP.
+[`DirectNavigationProvider`](%gh-ic%/platform/core-api/src/com/intellij/navigation/DirectNavigationProvider.java)
+in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.directNavigationProvider"/></include>.
 
 ## Symbol Navigation
 
@@ -34,7 +35,8 @@ instances (where to go and what to show in the popup).
 
 To provide navigation targets by a `Symbol`, either:
 - implement and register
-  [`SymbolNavigationProvider`](%gh-ic%/platform/core-api/src/com/intellij/navigation/SymbolNavigationProvider.java) in `com.intellij.symbolNavigation` EP;
+  [`SymbolNavigationProvider`](%gh-ic%/platform/core-api/src/com/intellij/navigation/SymbolNavigationProvider.java)
+  in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.symbolNavigation"/></include>;
 - or implement
   [`NavigatableSymbol`](%gh-ic%/platform/core-api/src/com/intellij/navigation/NavigatableSymbol.java)
   in the `Symbol`.

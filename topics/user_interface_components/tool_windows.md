@@ -26,7 +26,7 @@ Alternatively, using [programmatic setup](#programmatic-setup), the tool window 
 
 ### Declarative Setup
 
-The tool window is registered in <path>[plugin.xml](plugin_configuration_file.md)</path> using the `com.intellij.toolWindow` extension point.
+The tool window is registered in <path>[plugin.xml](plugin_configuration_file.md)</path> using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.toolWindow"/></include>.
 The extension point attributes specify all the data which is necessary to display the tool window button:
 
 * The `id` attribute (required) of the tool window which corresponds to the text displayed on the tool window button.
@@ -74,7 +74,7 @@ To show and hide a tool window dynamically while the user is working with the pr
 
 ### Programmatic Setup
 
-For tool windows shown only after invoking specific actions, use [`ToolWindowManager.registerToolWindow(String,RegisterToolWindowTaskBuilder)`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowManager.kt).
+For tool windows shown only after invoking specific actions, use [`ToolWindowManager.registerToolWindow(String, RegisterToolWindowTaskBuilder)`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowManager.kt).
 
 Always use [`ToolWindowManager.invokeLater()`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowManager.kt) instead of "plain" `Application.invokeLater()` when scheduling EDT tasks related to tool windows (see [](threading_model.md)).
 

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Providing Live Templates
 
@@ -103,10 +103,10 @@ Depending on the version of the IntelliJ Platform, different steps are used to c
 
 <tab title="2022.3 and later">
 
-Using the `com.intellij.defaultLiveTemplates` and `com.intellij.liveTemplateContext` extension points, register the implementations with the IntelliJ Platform.
-The `file` attribute in `com.intellij.defaultLiveTemplates` EP specifies `path/filename` under the <path>src/main/resources</path> folder.
+Using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.defaultLiveTemplates"/></include> and <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.liveTemplateContext"/></include>, register the implementations with the IntelliJ Platform.
+The `file` attribute in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.defaultLiveTemplates"/></include> specifies `path/filename` under the <path>src/main/resources</path> folder.
 
-Specify required `contextId` attribute in `com.intellij.liveTemplateContext` EP instead of [`TemplateContextType`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/template/TemplateContextType.java) constructor (existing declarations will continue working).
+Specify required `contextId` attribute in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.liveTemplateContext"/></include> instead of [`TemplateContextType`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/template/TemplateContextType.java) constructor (existing declarations will continue working).
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
@@ -121,8 +121,8 @@ Specify required `contextId` attribute in `com.intellij.liveTemplateContext` EP 
 
 <tab title="Versions since 2020.1 till 2022.3">
 
-Using the `com.intellij.defaultLiveTemplates` and `com.intellij.liveTemplateContext` extension points, register the implementations with the IntelliJ Platform.
-The `file` attribute in the `com.intellij.defaultLiveTemplates` EP specifies `path/filename` under the <path>src/main/resources</path> folder.
+Using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.defaultLiveTemplates"/></include> and <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.liveTemplateContext"/></include>, register the implementations with the IntelliJ Platform.
+The `file` attribute in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.defaultLiveTemplates"/></include> specifies `path/filename` under the <path>src/main/resources</path> folder.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
@@ -159,7 +159,7 @@ final class MarkdownTemplateProvider implements DefaultLiveTemplatesProvider {
 }
 ```
 
-Using the `com.intellij.defaultLiveTemplatesProvider` and `com.intellij.liveTemplateContext` extension points, register the implementations with the IntelliJ Platform.
+Using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.defaultLiveTemplates"/></include> and <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.liveTemplateContext"/></include>, register the implementations with the IntelliJ Platform.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

@@ -1,6 +1,6 @@
 # Notable Changes in IntelliJ Platform and Plugins API 2021.*
 
-<!-- Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <link-summary>List of known Notable API Changes in 2021.*</link-summary>
 
@@ -30,7 +30,9 @@ Constructor Injection disabled for Extensions
 : Please obtain necessary components only when needed (logged as ERROR now).
 
 Language Injection
-: Use [`LanguageInjectionContributor`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionContributor.java) (`com.intellij.languageInjectionContributor` EP) and [`LanguageInjectionPerformer`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionPerformer.java) (`com.intellij.languageInjectionPerformer` EP) to customize [language injection](language_injection.md#languageinjectioncontributor-and-languageinjectionperformer).
+: Use [`LanguageInjectionContributor`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionContributor.java) (<include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.languageInjectionContributor"/></include>)
+and [`LanguageInjectionPerformer`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionPerformer.java) (<include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.languageInjectionPerformer"/></include>)
+to customize [language injection](language_injection.md#languageinjectioncontributor-and-languageinjectionperformer).
 
 ### IntelliJ IDEA 2021.2
 
@@ -45,7 +47,7 @@ _Add unambiguous imports on the fly_ for custom languages
 : Override [`ReferenceImporter#isAddUnambiguousImportsOnTheFlyEnabled()`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/daemon/ReferenceImporter.java) and provide corresponding user setting. Implement `HintAction` with `fixSilently()` and hook it up to highlighting as a quick fix for unresolved reference.
 
 Ability to override encoding per `VirtualFile`
-: Implement [`FileEncodingProvider`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/encoding/FileEncodingProvider.java) and register in `com.intellij.fileEncodingProvider` extension point.
+: Implement [`FileEncodingProvider`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/encoding/FileEncodingProvider.java) and register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.fileEncodingProvider"/></include>.
 
 [JCEF](embedded_browser_jcef.md): wrapper for `CefBrowser`
 : [`JBCefOsrHandlerBrowser`](%gh-ic%/platform/ui.jcef/jcef/JBCefOsrHandlerBrowser.java) forwards to custom `CefRenderHandler`, e.g., for off-screen rendering.

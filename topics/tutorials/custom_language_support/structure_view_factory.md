@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 14. Structure View Factory
 
@@ -52,7 +52,8 @@ The `SortableTreeElement` represents an item in a smart tree that allows using t
 
 ## Register the Structure View Factory
 
-The `SimpleStructureViewFactory` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.lang.psiStructureViewFactory` extension point.
+The `SimpleStructureViewFactory` implementation is registered with the IntelliJ Platform in the plugin configuration file using
+the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.structureViewExtension"/></include>.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

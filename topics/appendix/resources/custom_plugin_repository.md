@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Custom Plugin Repository
 
@@ -36,7 +36,8 @@ To use a plugin repository _other than_ the [JetBrains Marketplace](https://plug
 
 To avoid collisions between private plugins and those hosted on JetBrains Marketplace, an organization can [reserve plugin IDs](https://plugins.jetbrains.com/docs/marketplace/reserved-plugin-ids.html).
 
-To provide custom authentication, implement [`PluginRepositoryAuthProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/plugins/auth/PluginRepositoryAuthProvider.java) registered in `com.intellij.pluginRepositoryAuthProvider` extension point.
+To provide custom authentication, implement [`PluginRepositoryAuthProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/plugins/auth/PluginRepositoryAuthProvider.java)
+registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.pluginRepositoryAuthProvider"/></include>.
 
 ## Describing Plugins in `updatePlugins.xml` File
 

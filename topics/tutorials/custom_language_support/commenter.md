@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 18. Commenter
 
@@ -29,7 +29,7 @@ The [`SimpleCommenter`](%gh-sdk-samples-master%/simple_language_plugin/src/main/
 
 ## Register the Commenter
 
-The `SimpleCommenter` implementation is registered in the plugin configuration file using the `com.intellij.lang.commenter` extension point.
+The `SimpleCommenter` implementation is registered in the plugin configuration file using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.commenter"/></include>.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # External Builder API and Plugins
 <primary-label ref="IntelliJIDEA"/>
@@ -56,7 +56,7 @@ These files don't have extensions, so you need to map corresponding patterns to 
 
 Sources of a plugin for External Builder should be put in a separate module.
 By convention, such a module has a name '...-jps-plugin', and its sources are placed under the <path>jps-plugin</path> directory in the main plugin directory.
-Use `com.intellij.compileServer.plugin` extension point to add the plugin to the classpath of the external build process, the plugin JAR should be named <path>\$JPS_module_name\$.jar</path>. <ui-path>Build | Prepare Plugin Module for Deployment</ui-path> action will automatically pack the 'jps-plugin' part to a separate JAR accordingly.
+Use <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.compileServer.plugin"/></include> to add the plugin to the classpath of the external build process, the plugin JAR should be named <path>\$JPS_module_name\$.jar</path>. <ui-path>Build | Prepare Plugin Module for Deployment</ui-path> action will automatically pack the 'jps-plugin' part to a separate JAR accordingly.
 
 See [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.compileServer.plugin) for samples.
 

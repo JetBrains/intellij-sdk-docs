@@ -16,7 +16,7 @@ Overview of Extension Points and Listeners for open source plugins available in 
 
 65 Extension Points and 10 Listeners
 
-<include from="snippets.md" element-id="ep_list_legend"/>
+<include from="snippets.topic" element-id="ep_list_legend"/>
 
 
 ## IntelliJ Open Source Plugins

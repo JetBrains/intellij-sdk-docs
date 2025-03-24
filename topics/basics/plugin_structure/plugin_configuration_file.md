@@ -35,7 +35,7 @@ See also [](marketing.md) about widgets and badges.
 
 Deprecated elements are omitted in the list below.
 
-<include from="snippets.md" element-id="descriptorDocumentationProviderNote"/>
+<include from="snippets.topic" element-id="descriptorDocumentationProviderNote"/>
 
 [//]: # (GENERATED CONTENT START)
 
@@ -1276,7 +1276,7 @@ Attributes
 - `ref` _(**required**)_<br/>
   The ID of the action to add to a group.
 - `id` _(optional)_<br/>
-    **_Deprecated_**: Use `ref` instead. 
+    **_Deprecated_**: Use `ref` instead.
 
     The ID of the action to add to a group.
 

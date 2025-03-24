@@ -1,6 +1,6 @@
 # Controlling Highlighting
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <link-summary>Suppressing highlighting in the editor programmatically.</link-summary>
 
@@ -27,7 +27,8 @@ For example, the old version of a file could be created in a different project c
 If the old file version used the library that is not used by the project currently, it would cause reporting false-positive code issues.
 
 The IntelliJ Platform exposes the extension point allowing a plugin to decide which highlighting information will be visible in the editor.
-To do that, a plugin has to provide an implementation of [`HighlightInfoFilter`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/daemon/impl/HighlightInfoFilter.java) and register it in the `com.intellij.daemon.highlightInfoFilter` extension point.
+To do that, a plugin has to provide an implementation of [`HighlightInfoFilter`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/daemon/impl/HighlightInfoFilter.java) and register it
+in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.daemon.highlightInfoFilter"/></include>.
 It contains a single method `accept()`, which should return `true` if a given `HighlightInfo` should be visible in the editor and `false` to ignore it.
 
 **Examples:**

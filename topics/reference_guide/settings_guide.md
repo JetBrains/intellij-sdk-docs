@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 # Settings Guide
 
@@ -40,7 +40,7 @@ See [Implementations for Settings Extension Points](#implementations-for-setting
 
 ### Declaring Application Settings
 
-The application-level settings are declared using `com.intellij.applicationConfigurable` EP.
+The application-level settings are declared using <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.applicationConfigurable"/></include>.
 
 An example `<applicationConfigurable>` EP declaration is shown below.
 The declaration indicates the settings are a child of the `tools` settings group, the implementation FQN is `com.example.ApplicationSettingsConfigurable`, the unique ID is the same as the implementation fully qualified name (FQN), and the (non-localized) title displayed to users is "My Application Settings".
@@ -61,7 +61,7 @@ See [](#settings-declaration-attributes) for more information.
 
 ### Declaring Project Settings
 
-The project-level settings are declared using `com.intellij.projectConfigurable` EP.
+The project-level settings are declared using <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.projectConfigurable"/></include>.
 
 An example `<projectConfigurable>` EP declaration is shown below.
 Similar to the application setting example above, but it includes the additional attribute `nonDefaultProject` indicating these settings do not apply to the [default project](https://www.jetbrains.com/help/idea/configure-project-settings.html#new-default-settings).
@@ -85,7 +85,7 @@ This section provides some additional clarification of those comments.
 
 #### Table of Attributes
 
-The attributes supported by `com.intellij.applicationConfigurable` EP and `com.intellij.projectConfigurable` EP are in the table below:
+The attributes supported by <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.applicationConfigurable"/></include> and <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.projectConfigurable"/></include> are in the table below:
 
 | Attribute           | Required                        | <p>Attribute</p><p>Value</p>                                                                                                                                                                                                                                                                                                                                                                        | <p>Implementation</p><p>Basis</p>                  |
 |---------------------|---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------|
@@ -128,7 +128,7 @@ See the [previous section](#table-of-attributes) for all supported attributes.
 
 ## Implementations for Settings Extension Points
 
-Implementations for `com.intellij.projectConfigurable` EP and `com.intellij.applicationConfigurable` EP can have one of two bases:
+Implementations for <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.applicationConfigurable"/></include> and <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.projectConfigurable"/></include> can have one of two bases:
 * The [`Configurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/Configurable.java) interface, which provides a named configurable component with a Swing form.
   Most Settings providers are based on the `Configurable` interface or one of its sub- or supertypes.
 * The [`ConfigurableProvider`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/ConfigurableProvider.java) class, which can hide a configurable component from the Settings dialog based on runtime conditions.
@@ -183,7 +183,8 @@ Implementations based on `Configurable` can implement marker interfaces, which p
 
 There are classes in the IntelliJ Platform specialized in particular types of Settings.
 These subtypes are based on `com.intellij.openapi.options.ConfigurableEP`.
-For example, <ui-path>Settings | Editor | General | Appearance</ui-path> allows adding Settings via [`EditorSmartKeysConfigurableEP`](%gh-ic%/platform/lang-impl/src/com/intellij/application/options/editor/EditorSmartKeysConfigurableEP.java) registered in `com.intellij.editorSmartKeysConfigurable` EP.
+For example, <ui-path>Settings | Editor | General | Appearance</ui-path> allows adding Settings via [`EditorSmartKeysConfigurableEP`](%gh-ic%/platform/lang-impl/src/com/intellij/application/options/editor/EditorSmartKeysConfigurableEP.java)
+registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.editorSmartKeysConfigurable"/></include>.
 
 #### Examples
 

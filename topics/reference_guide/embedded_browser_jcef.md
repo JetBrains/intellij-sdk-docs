@@ -31,8 +31,11 @@ JCEF replaces JavaFX, which was used to render web content in IDEs in the past.
 
 Using JavaFX in 3rd party plugins has been deprecated since 2020.2.
 To continue using JavaFX in 2020.2 or later, add an explicit [dependency](plugin_dependencies.md) on [JavaFX Runtime for Plugins](https://plugins.jetbrains.com/plugin/14250-javafx-runtime-for-plugins) (not recommended).
-
 See [JavaFX and JCEF in the IntelliJ Platform](https://blog.jetbrains.com/platform/2020/07/javafx-and-jcef-in-the-intellij-platform/) blog post for the details.
+
+> This plugin is no longer available starting with 2025.1, see this [announcement](https://platform.jetbrains.com/t/javafx-runtime-for-plugins-is-deprecated-in-2025-1/944).
+>
+{style="warning"}
 
 ## Enabling JCEF
 
@@ -317,4 +320,4 @@ To open DevTools in a separate window, call `JBCefBrowser.openDevtools()`.
 - [Excalidraw Integration](https://github.com/bric3/excalidraw-jetbrains-plugin) plugin
 - [Creating IntelliJ plugin with WebView](https://medium.com/virtuslab/creating-intellij-plugin-with-webview-3b27c3f87aea) blog post
 
-<include from="snippets.md" element-id="missingContent"/>
+<include from="snippets.topic" element-id="missingContent"/>

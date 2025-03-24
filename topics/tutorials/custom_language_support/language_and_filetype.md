@@ -54,7 +54,7 @@ The [`SimpleFileType`](%gh-sdk-samples-master%/simple_language_plugin/src/main/j
 
 ## Register the File Type
 
-The Simple Language file type is registered via the `com.intellij.fileType` extension point in <path>[plugin.xml](plugin_configuration_file.md)</path> and registered with <path>*.simple</path> extension:
+The Simple Language file type is registered via the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.fileType"/></include> in <path>[plugin.xml](plugin_configuration_file.md)</path> and registered with <path>*.simple</path> extension:
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Version Control Systems
 
@@ -86,7 +86,7 @@ This section describes the different components which comprise a VCS integration
 ### `AbstractVcs`
 
 This is the main entry point for a VCS plugin, which is used by the IntelliJ Platform to retrieve all other services provided by the plugin.
-Register `AbstractVcs` implementation in `com.intellij.vcs` extension point in <path>[plugin.xml](plugin_configuration_file.md)</path>, as shown in the following example:
+Register `AbstractVcs` implementation in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.vcs"/></include> in <path>[plugin.xml](plugin_configuration_file.md)</path>, as shown in the following example:
 
 ```xml
 <idea-plugin>

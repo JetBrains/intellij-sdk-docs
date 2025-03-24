@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 13. Go To Symbol Contributor
 
@@ -28,7 +28,8 @@ Add the following method to [`SimplePsiImplUtil`](%gh-sdk-samples-master%/simple
 ```
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/impl/SimplePsiImplUtil.java" include-symbol="getPresentation"}
 
-In addition, to provide an icon for the displayed items, extend [`IconProvider`](%gh-ic%/platform/core-api/src/com/intellij/ide/IconProvider.java) and register it in `com.intellij.iconProvider` extension point. See [`SimplePropertyIconProvider`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimplePropertyIconProvider.java):
+In addition, to provide an icon for the displayed items, extend [`IconProvider`](%gh-ic%/platform/core-api/src/com/intellij/ide/IconProvider.java) and register
+it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.iconProvider"/></include>. See [`SimplePropertyIconProvider`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimplePropertyIconProvider.java):
 
 ```java
 ```
@@ -59,7 +60,8 @@ to create [`SimpleChooseByNameContributor`](%gh-sdk-samples-master%/simple_langu
 
 ## Register the Go To Symbol Contributor
 
-The `SimpleChooseByNameContributor` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.gotoSymbolContributor` extension point.
+The `SimpleChooseByNameContributor` implementation is registered with the IntelliJ Platform in the plugin configuration file
+using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.gotoSymbolContributor"/></include>.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

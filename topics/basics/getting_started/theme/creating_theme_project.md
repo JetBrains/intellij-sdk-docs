@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Creating a Theme Project
 
@@ -80,5 +80,5 @@ The wizard can be used for both DevKit-based and Gradle-based plugins.
 
 ## Bundling Color Schemes
 
-Use `com.intellij.bundledColorScheme` extension point specifying the `path` to the color scheme XML file (without `.xml` suffix).
+Use <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.bundledColorScheme"/></include> specifying the `path` to the color scheme XML file (without `.xml` suffix).
 Specify attribute `id` for this extension in <path>plugin.xml</path> matching its `name` attribute value from the color scheme XML.

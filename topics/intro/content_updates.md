@@ -8,7 +8,7 @@ This page lists notable additions and updates to the SDK documentation and [](co
 
 See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/main) ([RSS](https://github.com/JetBrains/intellij-sdk-docs/commits/main.atom)) for a detailed changelog.
 
-<include from="snippets.md" element-id="subscribeNews"/>
+<include from="snippets.topic" element-id="subscribeNews"/>
 
 ## 2025
 

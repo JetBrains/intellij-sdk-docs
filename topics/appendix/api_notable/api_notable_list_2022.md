@@ -8,7 +8,7 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ## 2022.3
 
-<include from="snippets.md" element-id="gradlePluginVersion"/>
+<include from="snippets.topic" element-id="gradlePluginVersion"/>
 
 ### IntelliJ Platform 2022.3
 
@@ -16,7 +16,7 @@ Display of previews for Intentions and Quick Fixes
 : Intentions and Quick Fix actions now display a preview for the code changes. Read [this article](code_intentions_preview.md) to learn more about this feature.
 
 Specify language for Intention
-: Specify `<language>` in `com.intellij.intentionAction` EP registration to avoid instantiating language-specific intentions in non-relevant places.
+: Specify `<language>` in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.intentionAction"/></include> registration to avoid instantiating language-specific intentions in non-relevant places.
 
 "Heavy" Brace Matching
 : Alternative extension point to implement [](additional_minor_features.md#brace-matching) in background thread.

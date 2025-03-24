@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Components (Deprecated)
 <primary-label ref="Deprecated"/>
@@ -48,7 +48,7 @@ See also [Running Tasks Once](ide_infrastructure.md#running-tasks-once).
 
 <tab title="2023.1 and later">
 
-Using [Kotlin coroutines](kotlin_coroutines.md), implement [`ProjectActivity`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) and register in `com.intellij.postStartupActivity` extension point.
+Using [Kotlin coroutines](kotlin_coroutines.md), implement [`ProjectActivity`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) and register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.postStartupActivity"/></include>.
 Examples:
 - [`PowerSaveModeNotifier`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/PowerSaveModeNotifier.kt)
 - [`TipOfTheDayStartupActivity`](%gh-ic%/platform/tips-of-the-day/src/com/intellij/ide/TipOfTheDayStartupActivity.kt)

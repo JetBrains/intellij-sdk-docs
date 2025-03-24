@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Find Usages
 
@@ -12,7 +12,8 @@
 
 The _Find Usages_ action is a multi-step process, and each step of the process requires involvement from the custom language plugin.
 
-The language plugin participates in the Find Usages process by registering an implementation of [`FindUsagesProvider`](%gh-ic%/platform/indexing-api/src/com/intellij/lang/findUsages/FindUsagesProvider.java) in the `com.intellij.lang.findUsagesProvider` extension point, and through the PSI implementation using [`PsiNamedElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiNamedElement.java) and [`PsiReference`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReference.java) interfaces.
+The language plugin participates in the Find Usages process by registering an implementation of [`FindUsagesProvider`](%gh-ic%/platform/indexing-api/src/com/intellij/lang/findUsages/FindUsagesProvider.java) in
+the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.findUsagesProvider"/></include>, and through the PSI implementation using [`PsiNamedElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiNamedElement.java) and [`PsiReference`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReference.java) interfaces.
 
 > In cases like function parameters and local variables, consider overriding  [`PsiElement.getUseScope()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) to return a narrower scope.
 > For instance, returning the scope of the nearest function definition can significantly reduce the number of files that need to be parsed and references that need to be resolved when renaming such elements.
@@ -35,7 +36,8 @@ The steps of the _Find Usages_ action are the following:
   If the element was indexed as a comment or literal and the search in comments or literals is enabled, it checks if the word is equal to the searched element's name.
 * After the usages are collected, results are shown in the usages pane.
   The text shown for each found element is taken from the [`FindUsagesProvider.getNodeText()`](%gh-ic%/platform/indexing-api/src/com/intellij/lang/findUsages/FindUsagesProvider.java) method.
-  To group results by type, implement [`UsageTypeProvider`](%gh-ic%/platform/usageView-impl/src/com/intellij/usages/impl/rules/UsageTypeProvider.java) and register in `com.intellij.usageTypeProvider` extension point to provide custom or predefined [`UsageType`](%gh-ic%/platform/usageView/src/com/intellij/usages/impl/rules/UsageType.java).
+  To group results by type, implement [`UsageTypeProvider`](%gh-ic%/platform/usageView-impl/src/com/intellij/usages/impl/rules/UsageTypeProvider.java) and register
+  in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.usageTypeProvider"/></include> to provide custom or predefined [`UsageType`](%gh-ic%/platform/usageView/src/com/intellij/usages/impl/rules/UsageType.java).
 
 **Examples:**
 - Implementation of [`FindUsagesProvider`](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/findUsages/PropertiesFindUsagesProvider.java) in [Properties language plugin](%gh-ic%/plugins/properties)

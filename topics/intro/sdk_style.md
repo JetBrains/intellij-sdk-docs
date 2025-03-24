@@ -171,11 +171,7 @@ In-paragraph code fragments and IntelliJ Platform APIs are formatted according t
 
 #### Extension Points
 
-* Extension point name must be followed by "extension point (EP)" for the first occurrence on a page.
-  All following occurrences can use "EP" suffix.
-* Use the FQN when first introducing an [extension point](plugin_extension_points.md) (EP) on a page.
-  Rather than `stubIndex`, introduce `com.intellij.stubIndex`.
-  Later mentions on the page can be `stubIndex`.
+Use `<include from="snippets.topic" element-id="ep"><var name="ep" value="fqn.of.ep"/></include>` snippet to introduce EP.
 
 #### XML
 

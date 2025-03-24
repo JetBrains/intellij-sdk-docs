@@ -1,21 +1,21 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # External System Integration
 
 <link-summary>Overview and introduction to implementing an External System (e.g., Maven, Gradle, sbt) support.</link-summary>
 
-This page provides a high-level overview of the *External System* sub-system.
+This page provides a high-level overview of the *External System* subsystem.
 There are multiple project management systems ([Apache Maven](https://maven.apache.org/), [Gradle](https://www.gradle.org/), [sbt](https://www.scala-sbt.org/), etc.) and IntelliJ Platform provides a mechanism to support them in IDEs.
 
 Most of the project management systems provide a similar set of facilities from the integration point of view:
 
 * build a project from external system config (<path>pom.xml</path>, <path>build.gradle.kts</path>, etc.)
 * provide a list of available tasks
-* allow to execute a particular task
+* allow executing a particular task
 * and more
 
 That means that we can separate external system-specific logic and general IDE processing.
-The *External System* sub-system provides a simple API for wrapping external system elements and extensible IDE-specific processing logic.
+The *External System* subsystem provides an API for wrapping external system elements and extensible IDE-specific processing logic.
 
 ## Project Management
 
@@ -59,7 +59,7 @@ DataNode -- child3
 ```
 
 The `DataNode` class is just a holder for the target data (a data type is defined by the `Key`).
-Multiple `DataNode` objects might be organized in directed graph where every edge identifies parent-child relation.
+Multiple `DataNode` objects might be organized in a directed graph where every edge identifies parent-child relation.
 
 For example, a simple one-module project might look as below:
 
@@ -94,12 +94,12 @@ The IDE provides a set of built-in `Key` and `ExternalEntityData` classes but an
 
 Processing project data built on an external system config basis can be performed with [`ProjectDataService`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/service/project/manage/ProjectDataService.java).
 It is a strategy which knows how to manage particular `ExternalEntityData`.
-For example, when we want to import a project from an external model, we can start with the top level `DataNode` which references project info and then import its data using corresponding service.
+For example, when we want to import a project from an external model, we can start with the top level `DataNode` which references project info and then import its data using the corresponding service.
 
-Custom services can be registered via [`com.intellij.externalProjectDataService`](https://jb.gg/ipe?extensions=com.intellij.externalProjectDataService) extension point.
+Custom services can be registered via the [`com.intellij.externalProjectDataService`](https://jb.gg/ipe?extensions=com.intellij.externalProjectDataService) extension point.
 
 The good thing is that we can separate project parsing and management here.
-That means that a set of `DataNode`, `Key` and `ProjectDataServices` can be introduced for particular technology and then every external system integration can build corresponding data if necessary using it.
+That means that a set of `DataNode`, `Key` and `ProjectDataServices` can be introduced for a particular technology and then every external system integration can build corresponding data if necessary using it.
 
 ### Importing from External Model
 
@@ -108,14 +108,14 @@ The IntelliJ Platform provides an API for importing projects from external model
 * [`ProjectImportBuilder`](%gh-ic%/java/idea-ui/src/com/intellij/projectImport/ProjectImportBuilder.java)
 * [`ProjectImportProvider`](%gh-ic%/java/idea-ui/src/com/intellij/projectImport/ProjectImportProvider.java)
 
-There are two classes built on the *template method* pattern which simplify implementation:
+There are two classes built on the *template method* pattern that simplify implementation:
 
 * [`AbstractExternalProjectImportBuilder`](%gh-ic%/java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportBuilder.java)
 * [`AbstractExternalProjectImportProvider`](%gh-ic%/java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportProvider.java)
 
 Note that [`AbstractExternalProjectImportBuilder`](%gh-ic%/java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportBuilder.java) is built on top of the 'external system settings' controls.
 
-Concrete implementations should be registered in [`com.intellij.projectImportBuilder`](https://jb.gg/ipe?extensions=com.intellij.projectImportBuilder) and [`com.intellij.projectImportProvider`](https://jb.gg/ipe?extensions=com.intellij.projectImportProvider) extension points accordingly.
+Concrete implementations should be registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.projectImportBuilder"/></include> and <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.projectImportProvider"/></include> accordingly.
 
 Example of the project import provider and builder for Gradle:
 
@@ -124,14 +124,14 @@ Example of the project import provider and builder for Gradle:
 
 ## Auto-Import
 
-It's possible to configure external system integration to automatically refresh project structure when external project's config files are modified.
+It's possible to configure external system integration to automatically refresh the project structure when external project's config files are modified.
 
 > From 2020.1, auto-import cannot be disabled by a user.
 >
 
 ### Auto-Import for `ExternalSystemManager` Implementation
 
-Describe project's settings files to track by having external system [`ExternalSystemManager`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/ExternalSystemManager.java) implement [`ExternalSystemAutoImportAware`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/ExternalSystemAutoImportAware.java).
+Describe the project's settings files to track by having external system [`ExternalSystemManager`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/ExternalSystemManager.java) implement [`ExternalSystemAutoImportAware`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/ExternalSystemAutoImportAware.java).
 
 > The `ExternalSystemAutoImportAware.getAffectedExternalProjectPath()` method is called quite often, that's why it's expected to return control as soon as possible.
 > Helper `CachingExternalSystemAutoImportAware` class might be used for caching, i.e. `ExternalSystemManager` which implements `ExternalSystemAutoImportAware` can have a field like `new CachingExternalSystemAutoImportAware(new MyExternalSystemAutoImportAware())` and delegate `ExternalSystemAutoImportAware.getAffectedExternalProjectPath()` calls to it.
@@ -141,7 +141,7 @@ Describe project's settings files to track by having external system [`ExternalS
 ### Auto-Import for Standalone External Systems
 
 Some external systems don't have `ExternalSystemManager` (e.g., Maven), but they also can use auto-import core to track changes in settings files.
-For this, implement `ExternalSystemProjectAware` interface that describes settings files for tracking and an action to reload the project model.
+For this, implement `ExternalSystemProjectAware` that describes settings files for tracking and an action to reload the project model.
 Then register the instance with `ExternalSystemProjectTracker` to start tracking.
 
 > Multiple `ExternalSystemProjectAware` instances can correspond to a single external system.
@@ -175,7 +175,7 @@ It's recommended to extend from [`AbstractExternalProjectSettingsControl`](%gh-i
 * [`GradleProjectSettingsControl`](%gh-ic%/plugins/gradle/src/org/jetbrains/plugins/gradle/service/settings/GradleProjectSettingsControl.java) handling the selected Gradle project settings in <ui-path>Settings | Build, Execution, Deployment | Build Tools | Gradle</ui-path>
 
 A similar approach is used for providing settings in importing external project UI.
-Implementation is expected to extend [`AbstractImportFromExternalSystemControl`](%gh-ic%/java/idea-ui/src/com/intellij/openapi/externalSystem/service/settings/AbstractImportFromExternalSystemControl.java) and instead of linked external projects list it contains target external project path control.
+Implementation is expected to extend [`AbstractImportFromExternalSystemControl`](%gh-ic%/java/idea-ui/src/com/intellij/openapi/externalSystem/service/settings/AbstractImportFromExternalSystemControl.java) and instead of the linked external projects list it contains target external project path control.
 
 ## Testing
 

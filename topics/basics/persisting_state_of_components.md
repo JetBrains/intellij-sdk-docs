@@ -61,10 +61,10 @@ class MySettings : SimplePersistentStateComponent<MySettings.State>(State()) {
 <chapter title="SerializablePersistentStateComponent" id="SerializablePersistentStateComponent">
 <primary-label ref="2022.2"/>
 
-[`SerializablePersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/SerializablePersistentStateComponent.kt) is parameterized with a state data class.
+[`SerializablePersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/SerializablePersistentStateComponent.kt) is parameterized with an immutable state data class.
 
-State properties are exposed via persistent state component class' properties.
-The state properties are modified by copying the state and overwriting a modified value within `SerializablePersistentStateComponent.updateState()`, which ensures atomic modification.
+State properties are exposed for reading and modification via persistent state component class' properties.
+The state properties are modified by copying the state and overwriting a modified value within `SerializablePersistentStateComponent.updateState()`, which ensures atomic modification and thread safety.
 
 Example:
 
@@ -317,7 +317,7 @@ This is not recommended and should be avoided whenever possible.
 
 To disable the expansion of path macros ([`PathMacro`](%gh-ic%/platform/macro/src/com/intellij/ide/macro/PathMacro.java))
 in stored values, implement [`PathMacroFilter`](%gh-ic%/jps/model-serialization/src/com/intellij/openapi/application/PathMacroFilter.java)
-and register in `com.intellij.pathMacroFilter` extension point.
+and register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.pathMacroFilter"/></include>.
 
 ### Migrating Persisted Values
 

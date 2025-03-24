@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 # Incompatible Changes in IntelliJ Platform and Plugins API 2021.*
 
@@ -63,9 +63,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 <link-summary>List of known Breaking API Changes in 2021.*</link-summary>
 
-<include from="snippets.md" element-id="apiChangesHeader"/>
+<include from="snippets.topic" element-id="apiChangesHeader"/>
 
-<include from="snippets.md" element-id="apiChangesJavaVersion"/>
+<include from="snippets.topic" element-id="apiChangesJavaVersion"/>
 
 ## 2021.3
 
@@ -379,7 +379,7 @@ Add implementation for `com.intellij.openapi.fileEditor.FileEditor.getFile()`
 `com.jetbrains.performancePlugin.CommandProvider.getCommands(Project)` method parameter `Project` removed
 : Project is now only accessible via `com.intellij.openapi.ui.playback.PlaybackContext.getProject()` since it may change during script execution.
 
-JSON Widget suppressor `com.intellij.json.jsonWidgetSuppressor` EP
+JSON Widget suppressor <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.json.jsonWidgetSuppressor"/></include>
 : Override new method [`JsonWidgetSuppressor.isCandidateForSuppress(VirtualFile, Project)`](%gh-ic%/json/src/com/jetbrains/jsonSchema/extension/JsonWidgetSuppressor.java) for quick check in [EDT](threading_model.md) before `suppressSwitcherWidget()` is called on a background thread.
 
 ### HTTP Client Plugin 2021.1

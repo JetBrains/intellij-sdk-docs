@@ -399,4 +399,4 @@ The `javaCompiler()` helper is applied by default and refers to the tool version
 
 - [](tools_intellij_platform_gradle_plugin_tasks.md#instrumentCode)
 
-<include from="snippets.md" element-id="missingContent"/>
+<include from="snippets.topic" element-id="missingContent"/>

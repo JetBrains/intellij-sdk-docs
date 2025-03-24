@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       id="snippets" title="Snippets" is-library="true">
+
+    <snippet id="missingContent">
+        <note title="Something missing?">
+            <p>If a topic is not covered in the above sections, let us know via the
+                <control>Was this page helpful?</control>
+                feedback form below or <a href="getting_help.topic" anchor="problems-with-the-guide">other channels</a>.
+            </p>
+            <p>Be specific about the topics and reasons for adding them and leave your email in case we need
+                more details. Thanks for your feedback!</p>
+        </note>
+    </snippet>
+    <snippet id="subscribeNews">
+        <tip title="Staying up to date">
+            <p><a href="https://jb.gg/mp-updates">Subscribe to Marketplace Developer News</a> to receive news and
+                announcements.
+                Also follow <a href="https://bsky.app/profile/platform.jetbrains.com">@platform.jetbrains.com</a> on
+                Bluesky
+                (or <a href="https://x.com/JBPlatform">JBPlatform</a> on X)
+                and visit
+                <a href="https://blog.jetbrains.com/platform/">JetBrains Platform Blog</a> and
+                <a href="https://www.linkedin.com/showcase/jetbrains-marketplace/">JetBrains Marketplace on LinkedIn</a>.
+            </p>
+        </tip>
+    </snippet>
+    <snippet id="pluginDevKitAvailability">
+        <p>
+            <emphasis>Plugin DevKit</emphasis>
+            plugin is bundled with IntelliJ IDEA until 2023.2.
+        </p>
+        <warning title="Plugin DevKit Availability">
+            <p>When using IntelliJ IDEA 2023.3 or later, the
+                <emphasis>Plugin DevKit</emphasis>
+                plugin must be installed from JetBrains Marketplace (<a
+                        href="https://plugins.jetbrains.com/plugin/22851-plugin-devkit">Plugin Homepage</a>)
+                as it is no longer bundled with the IDE.
+            </p>
+        </warning>
+    </snippet>
+    <snippet id="jetbrainsIDE_TLDR">
+        <tldr>
+            <p>
+                <control>IDE</control>
+                : <a href="https://www.jetbrains.com/%productID%">Homepage</a>, <a
+                    href="https://www.jetbrains.com/%productID%/download/other.html">Versions</a></p>
+            <p>
+                <control>Plugins</control>
+                : <a href="https://plugins.jetbrains.com/%marketplaceProductID%">JetBrains Marketplace</a></p>
+        </tldr>
+    </snippet>
+    <snippet id="apiChangesHeader">
+        <p>Please see <a href="verifying_plugin_compatibility.md"/> on how to use Plugin Verifier and IDE inspections
+            to check such problems.</p>
+        <p>
+            <emphasis>Early Access Program</emphasis>
+            (EAP) releases of upcoming versions are available <a href="https://eap.jetbrains.com">here</a>.
+        </p>
+        <note title="Non-listed changes">
+            <p>Changes from API marked with <code>@Deprecated(forRemoval=true)</code> or any of <a
+                    href="%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/ApiStatus.java"><code>ApiStatus</code></a>
+                <code>@Experimental</code>, <code>@ScheduledForRemoval</code>, or <code>@Internal</code> are not listed
+                here, as incompatible changes are to be expected.</p>
+            <p>For API annotated with <code>@ApiStatus.Internal</code>/<code>@IntellijInternalApi</code>, see <a
+                    href="api_internal.md"/> for more details and replacements.</p>
+        </note>
+    </snippet>
+    <snippet id="apiChangesJavaVersion">
+        <note title="IDE and Java Versions">
+            <p>Java version must be set depending on the target platform version.</p>
+            <p>
+                <control>2024.2+</control>
+                : Java 21
+            </p>
+            <p>
+                <control>2022.3+</control>
+                : Java 17
+            </p>
+            <p>See <a href="build_number_ranges.md" anchor="platformVersions"/> for details.</p>
+        </note>
+    </snippet>
+    <snippet id="gradlePluginVersion">
+        <warning title="Gradle Plugin">
+            <p>The Gradle plugin must be chosen depending on the target <a href="build_number_ranges.md"
+                                                                           anchor="platformVersions">platform
+                version</a>.</p>
+            <deflist>
+                <def id="gradlePluginVersion_2024.2">
+                    <title>2024.2+</title>
+                    <p>
+                        <control>Requires</control>
+                        <a href="tools_intellij_platform_gradle_plugin.md"/></p>
+                </def>
+                <def id="gradlePluginVersion_2022.3">
+                    <title>2022.3+</title>
+                    <p>
+                        <control>Recommended</control>
+                        <a href="tools_intellij_platform_gradle_plugin.md"/>,<br/>
+                        <control>Requires</control>
+                        <a href="tools_gradle_intellij_plugin.md"/> version 1.10.1+ (current:
+                        %gradle-intellij-plugin-version%)
+                    </p>
+                </def>
+            </deflist>
+        </warning>
+    </snippet>
+    <snippet id="ep_list_legend">
+        <chapter title="Legend" id="legend">
+            <tip>
+                <p>See also <a href="explore_api.md"/> for more information and strategies.</p>
+            </tip>
+            <chapter title="Listeners" id="listeners">
+                <p>
+                    <control>Topic</control>
+                    searches for usages inside existing implementations of open-source IntelliJ Platform plugins via <a
+                        href="https://jb.gg/ipe">IntelliJ Platform Explorer</a>.
+                </p>
+                <p>
+                    <control>Listener</control>
+                    links corresponding listener to implement.
+                </p>
+                <p>See <a href="plugin_listeners.md"/> on how to register listeners.</p>
+            </chapter>
+            <chapter title="Extension Points" id="extension-points">
+                <p>
+                    <control>Extension Point</control>
+                    searches for usages inside existing implementations of open-source IntelliJ Platform plugins via <a
+                        href="https://jb.gg/ipe">IntelliJ Platform Explorer</a>.
+                </p>
+                <p>
+                    <control>Implementation</control>
+                    is the related Extension Point class.
+                </p>
+                <p>See <a href="plugin_extensions.md"/> on how to declare extensions in your plugin.</p>
+            </chapter>
+            <chapter title="Tags" id="tags">
+                <p>See <a href="verifying_plugin_compatibility.md"/> for overview of API status.</p>
+                <table>
+                    <tr>
+                        <td>Icon</td>
+                        <td>Description</td>
+                        <td>Details</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square"
+                                 alt="Deprecated"/></td>
+                        <td>Deprecated API</td>
+                        <td>See code documentation for replacement.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://img.shields.io/badge/-Removal-red?style=flat-square" alt="Removal"/></td>
+                        <td>Scheduled for Removal API</td>
+                        <td>See code documentation for replacement.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://img.shields.io/badge/-Obsolete-grey?style=flat-square" alt="Obsolete"/>
+                        </td>
+                        <td>Obsolete API</td>
+                        <td>Do not use in new code.<p>See code documentation for replacement (<a
+                                href="verifying_plugin_compatibility.md" anchor="obsolete-api"/>).</p></td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://img.shields.io/badge/-Experimental-violet?style=flat-square"
+                                 alt="Experimental API"/>     
+                        </td>
+                        <td>Experimental API</td>
+                        <td>Annotated with <a
+                                href="%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/ApiStatus.java"><code>@ApiStatus.Experimental</code></a>.
+                            <p>API might be altered or removed without prior notice.</p></td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://img.shields.io/badge/-Internal-darkred?style=flat-square"
+                                 alt="Internal API"/></td>
+                        <td>Internal API</td>
+                        <td>Annotated with <a
+                                href="%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/ApiStatus.java"><code>@ApiStatus.Internal</code></a>.
+                            <p>Must not be used by third party plugins, see <a href="api_internal.md"/>.</p></td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://img.shields.io/badge/-Project--Level-blue?style=flat-square"
+                                 alt="Project-Level"/></td>
+                        <td>Project-Level<p>Extension Point/Topic</p></td>
+                        <td><p>Can have <a
+                                href="%gh-ic%/platform/core-api/src/com/intellij/openapi/project/Project.java"><code>Project</code></a>
+                            as constructor parameter.</p>
+                            <p>- Extension Point: Declared with <code>area=&quot;IDEA_PROJECT&quot;</code></p>
+                            <p>- Listener: registered in <a href="plugin_configuration_file.md"
+                                                            anchor="idea-plugin__projectListeners"><code>&lt;projectListeners&gt;</code></a>
+                            </p></td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://img.shields.io/badge/-Non--Dynamic-orange?style=flat-square"
+                                 alt="Non-Dynamic"/></td>
+                        <td>Non-Dynamic<p>Extension Point</p></td>
+                        <td>Installation/update of plugin requires IDE restart (<a href="dynamic_plugins.md"/>).</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://img.shields.io/badge/-DumbAware-darkgreen?style=flat-square"
+                                 alt="DumbAware"/></td>
+                        <td><code>DumbAware</code>
+                            <p>Extension Point</p></td>
+                        <td>Implementations marked with <a
+                                href="%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbAware.java"><code>DumbAware</code></a>
+                            will be processed during <a href="indexing_and_psi_stubs.md" anchor="dumb-mode">dumb
+                                mode</a>.
+                        </td>
+                    </tr>
+                </table>
+            </chapter>
+        </chapter>
+    </snippet>
+    <snippet id="descriptorDocumentationProviderNote">
+        <note>
+            <p>Elements described on this page are available in <a
+                    href="https://www.jetbrains.com/help/idea/viewing-reference-information.html#inline-quick-documentation">quick
+                documentation</a> since IntelliJ IDEA 2025.1.</p>
+            <p>The <a href="https://plugins.jetbrains.com/plugin/22851-plugin-devkit">Plugin DevKit</a> plugin must be
+                installed and enabled.</p>
+        </note>
+    </snippet>
+    <snippet id="ep"><a href="https://jb.gg/ipe?extensions=%ep%"
+                        summary="Browse usages in existing implementations of open-source plugins">
+        <code>%ep%</code></a> extension point
+    </snippet>
+</topic>

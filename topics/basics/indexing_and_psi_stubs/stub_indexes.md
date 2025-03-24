@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Stub Indexes
 
@@ -95,7 +95,7 @@ Keys in stub indexes are typically strings (such as class names); other data typ
 
 A stub index is a class which extends [`AbstractStubIndex`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/stubs/AbstractStubIndex.java).
 In the most common case, when the key type is `String`, use a more specific base class, namely [`StringStubIndexExtension`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/stubs/StringStubIndexExtension.java).
-Stub index implementation classes are registered in the `com.intellij.stubIndex` extension point.
+Stub index implementation classes are registered in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.stubIndex"/></include>.
 
 To put data into an index, implement `IStubElementType.indexStub()` ([example: `JavaClassElementType.indexStub()`](%gh-ic%/java/java-psi-impl/src/com/intellij/psi/impl/java/stubs/JavaClassElementType.java)).
 This method accepts an [`IndexSink`](%gh-ic%/platform/core-api/src/com/intellij/psi/stubs/IndexSink.java) as a parameter and puts in the index ID and the key for each index in which the element should be stored.

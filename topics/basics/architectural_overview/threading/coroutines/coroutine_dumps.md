@@ -109,4 +109,4 @@ Notable context elements:
 
   Same problems can be found in regular thread dumps and blocking code, but coroutines suspend instead of blocking a thread, so it’s only possible to observe the last seen frame, which is usually enough.
 
-<include from="snippets.md" element-id="missingContent"/>
+<include from="snippets.topic" element-id="missingContent"/>

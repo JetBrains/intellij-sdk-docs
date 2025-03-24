@@ -1,6 +1,6 @@
 <!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# Actions
+# Action System
 
 <web-summary>
 Adding custom actions to menus and toolbars. Implement and register actions, and handle user interactions efficiently.
@@ -16,7 +16,7 @@ Adding custom actions to menus and toolbars. Implement and register actions, and
 
 </tldr>
 
-The actions system allows plugins to add their items to IntelliJ Platform-based IDE menus and toolbars.
+The _Action System_ allows plugins to add their items to IntelliJ Platform-based IDE menus and toolbars.
 For example, one of the action classes is responsible for the <ui-path>File | Open File...</ui-path> menu item and the <control>Open...</control> toolbar button.
 
 Actions in the IntelliJ Platform require a [code implementation](#action-implementation) and must be [registered](#registering-actions).
@@ -24,8 +24,8 @@ The action implementation determines the contexts in which an action is availabl
 Registration determines where an action appears in the IDE UI.
 Once implemented and registered, an action receives callbacks from the IntelliJ Platform in response to user gestures.
 
-The [](working_with_custom_actions.md) tutorial describes the process of adding a custom action to a plugin.
-The [](grouping_action.md) tutorial demonstrates three types of groups that can contain actions.
+The [](creating_actions_tutorial.md) tutorial describes the process of adding a custom action to a plugin.
+The [](grouping_actions_tutorial.md) tutorial demonstrates three types of groups that can contain actions.
 
 ## Action Implementation
 
@@ -57,7 +57,7 @@ The state (enabled, visible) of an action determines whether the action is avail
 An object of the [`AnActionEvent`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java) type is passed to this method and contains information about the current context for the action.
 
 Actions are made available by changing the state in the [`Presentation`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/Presentation.java) object associated with the event context.
-As explained in [Overriding the `AnAction.update()`  Method](#overriding-the-anactionupdate-method), it is vital `update()` methods _execute quickly_ and return execution to platform.
+As explained in [Overriding the `AnAction.update()` Method](#overriding-the-anactionupdate-method), it is vital `update()` methods _execute quickly_ and return execution to platform.
 
 #### `AnAction.getActionUpdateThread()`
 <primary-label ref="2022.3"/>
@@ -86,7 +86,7 @@ See [Overriding the `AnAction.actionPerformed()` Method](#overriding-the-anactio
 
 #### Miscellaneous
 There are other methods to override in the `AnAction` class, such as changing the default `Presentation` object for the action.
-There is also a use case for overriding action constructors when registering them with dynamic action groups, demonstrated in the [Grouping Actions](grouping_action.md#adding-child-actions-to-the-dynamic-group) tutorial.
+There is also a use case for overriding action constructors when registering them with dynamic action groups, demonstrated in the [Grouping Actions](grouping_actions_tutorial.md#adding-child-actions-to-the-dynamic-group) tutorial.
 
 ### Overriding the `AnAction.update()` Method
 
@@ -198,7 +198,7 @@ Some menus like <ui-path>Tools</ui-path> have the `compact` attribute set, so th
 
 All other combinations of `compact`, visibility, and enablement produce N/A for gray appearance because the menu item isn't visible.
 
-See the [](grouping_action.md) tutorial for examples of creating action groups.
+See the [](grouping_actions_tutorial.md) tutorial for examples of creating action groups.
 
 ## Registering Actions
 
@@ -348,7 +348,7 @@ If necessary, a dedicated resource bundle to use for actions and groups can be d
 </actions>
 ```
 
-See [Extending DefaultActionGroup](grouping_action.md#extending-defaultactiongroup) for a tutorial of localizing Actions and Groups.
+See [Extending DefaultActionGroup](grouping_actions_tutorial.md#extending-defaultactiongroup) for a tutorial of localizing Actions and Groups.
 
 <tabs>
 
@@ -396,6 +396,11 @@ See also [](popups.md#action-groups) for more advanced popups.
 
 If an action toolbar is attached to a specific component (for example, a panel in a tool window), call `ActionToolbar.setTargetComponent()` and pass the related component's instance as a parameter.
 Setting the target ensures that the toolbar buttons' state depends on the state of the related component, not on the current focus location within the IDE frame.
+
+To add an action group to the list of customizable actions in <ui-path>Settings | Appearance & Behavior | Menus and Toolbars</ui-path>, implement the
+[`CustomizableActionGroupProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/ui/customization/CustomizableActionGroupProvider.java)
+extension point registered in `com.intellij.customizableActionGroupProvider`,
+and ensure that the [action group](plugin_configuration_file.md#idea-plugin__actions__group) defines the `text` attribute or is [localized](#localizing-actions-and-groups).
 
 See [](toolbar.md) in UI Guidelines for an overview.
 
@@ -448,7 +453,7 @@ Code insight to defined Actions and Groups is provided by the _Plugin DevKit_ pl
 ### Builtin Places
 
 - IntelliJ Platform API, for example [`ActionManager.getAction()`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionManager.java)
-- Test Framework API, for example  [`CodeInsightTestFixture.performEditorAction()`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/CodeInsightTestFixture.java)
+- Test Framework API, for example [`CodeInsightTestFixture.performEditorAction()`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/CodeInsightTestFixture.java)
 - String literal fields with the name `ACTION_ID`
 - Constants defined in [`IdeActions`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/actionSystem/IdeActions.java)
 

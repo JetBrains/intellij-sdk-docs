@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Incompatible Changes in IntelliJ Platform and Plugins API
 
@@ -69,15 +69,20 @@ IntelliJ API may be occasionally changed between releases, leading to existing p
 
 See [](verifying_plugin_compatibility.md) on how to use Plugin Verifier and IDE inspections to check such problems.
 
-## Known Breaking Changes
+<include from="snippets.topic" element-id="subscribeNews"/>
 
-<include from="snippets.md" element-id="subscribeNews"/>
+## Known Breaking Changes
 
 The following pages list the breaking changes in IDE and plugin releases with required/recommended steps to take by plugin authors.
 
 * [Changes in 2025.*](api_changes_list_2025.md)
 * [Changes in 2024.*](api_changes_list_2024.md)
 * [Changes in 2023.*](api_changes_list_2023.md)
+
+### Older Versions
+
+{collapsible="true" default-state="collapsed"}
+
 * [Changes in 2022.*](api_changes_list_2022.md)
 * [Changes in 2021.*](api_changes_list_2021.md)
 * [Changes in 2020.*](api_changes_list_2020.md)

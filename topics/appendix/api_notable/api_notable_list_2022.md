@@ -1,6 +1,6 @@
-# Notable Changes in IntelliJ Platform and Plugins API 2022.*
+<!-- Copyright 2000-2025 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Notable Changes in IntelliJ Platform and Plugins API 2022.*
 
 <link-summary>List of known Notable API Changes in 2022.*</link-summary>
 
@@ -8,7 +8,7 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ## 2022.3
 
-<include from="snippets.md" element-id="gradlePluginVersion"/>
+<include from="snippets.topic" element-id="gradlePluginVersion"/>
 
 ### IntelliJ Platform 2022.3
 
@@ -16,7 +16,7 @@ Display of previews for Intentions and Quick Fixes
 : Intentions and Quick Fix actions now display a preview for the code changes. Read [this article](code_intentions_preview.md) to learn more about this feature.
 
 Specify language for Intention
-: Specify `<language>` in `com.intellij.intentionAction` EP registration to avoid instantiating language-specific intentions in non-relevant places.
+: Specify `<language>` in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.intentionAction"/></include> registration to avoid instantiating language-specific intentions in non-relevant places.
 
 "Heavy" Brace Matching
 : Alternative extension point to implement [](additional_minor_features.md#brace-matching) in background thread.
@@ -25,7 +25,7 @@ Injection Text Formatting
 : Delegation of formatting can be controlled using dedicated [extension point](language_injection.md#formatting).
 
 Specifying Threading for Actions
-: Implementations of `AnAction` need to override `getActionUpdateThread()` as detailed in [](basic_action_system.md#principal-implementation-overrides).
+: Implementations of `AnAction` need to override `getActionUpdateThread()` as detailed in [](action_system.md#principal-implementation-overrides).
 
 Threading assertions in tests
 : All rules for [threading](threading_model.md) are now checked in tests as well.

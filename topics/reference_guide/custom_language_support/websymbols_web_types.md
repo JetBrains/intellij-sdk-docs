@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Web Types
 <primary-label ref="2022.3"/>
@@ -140,7 +140,7 @@ The property accepts a string or an array of strings with relative paths to Web 
 
 IDE Plugin
 : You can ship Web Types JSON with your IDE plugin.
-To point an IDE to its location, use `com.intellij.webSymbols.webTypes` extension point and pass the file location in `source` attribute value.
+To point an IDE to its location, use <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.webSymbols.webTypes"/></include> and pass the file location in `source` attribute value.
 With `enableByDefault` attribute, you can choose whether the Web Types file should be contributed to Web Symbols scope by default,
 or only if an NPM package with the same name is present in the project.
 

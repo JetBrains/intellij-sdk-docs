@@ -14,7 +14,7 @@ EP List Directory:
 
 592 Extension Points and 65 Listeners for IntelliJ Community Plugins
 
-<include from="snippets.md" element-id="ep_list_legend"/>
+<include from="snippets.topic" element-id="ep_list_legend"/>
 
 ## IntelliJ Community Plugins
 

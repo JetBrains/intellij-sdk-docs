@@ -10,7 +10,7 @@ This page lists and describes all the elements and attributes used in live templ
 
 ## Configuration Structure Overview
 
-<include from="snippets.md" element-id="descriptorDocumentationProviderNote"/>
+<include from="snippets.topic" element-id="descriptorDocumentationProviderNote"/>
 
 [//]: # (GENERATED CONTENT START)
 
@@ -246,4 +246,4 @@ Attributes
 
 [//]: # (GENERATED CONTENT END)
 
-<include from="snippets.md" element-id="missingContent"/>
+<include from="snippets.topic" element-id="missingContent"/>

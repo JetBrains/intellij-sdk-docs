@@ -100,10 +100,10 @@
       <toc-element topic="color_scheme_management.md"/>
       <toc-element topic="themes_metadata.md"/>
     </toc-element>
-    <toc-element topic="basic_action_system.md" accepts-web-file-names="action_system.html">
-      <toc-element topic="action_system.md">
-        <toc-element topic="working_with_custom_actions.md"/>
-        <toc-element topic="grouping_action.md"/>
+    <toc-element topic="action_system.md" accepts-web-file-names="action_system.html,basic-action-system.html">
+      <toc-element topic="actions_tutorial.md">
+        <toc-element topic="creating_actions_tutorial.md" accepts-web-file-names="working-with-custom-actions.html"/>
+        <toc-element topic="grouping_actions_tutorial.md" accepts-web-file-names="grouping-action.html"/>
       </toc-element>
     </toc-element>
     <toc-element topic="persistence.md" toc-title="Persistence">
@@ -408,8 +408,8 @@
       <toc-element topic="api_changes_list_2025.md" toc-title="2025.*"/>
       <toc-element topic="api_changes_list_2024.md" toc-title="2024.*"/>
       <toc-element topic="api_changes_list_2023.md" toc-title="2023.*"/>
-      <toc-element topic="api_changes_list_2022.md" toc-title="2022.*"/>
       <toc-element toc-title="Older Versions">
+        <toc-element topic="api_changes_list_2022.md" toc-title="2022.*"/>
         <toc-element topic="api_changes_list_2021.md" toc-title="2021.*"/>
         <toc-element topic="api_changes_list_2020.md" toc-title="2020.*"/>
         <toc-element topic="api_changes_list_2019.md" toc-title="2019.*"/>
@@ -420,8 +420,8 @@
       <toc-element topic="api_notable_list_2025.md" toc-title="2025.*"/>
       <toc-element topic="api_notable_list_2024.md" toc-title="2024.*"/>
       <toc-element topic="api_notable_list_2023.md" toc-title="2023.*"/>
-      <toc-element topic="api_notable_list_2022.md" toc-title="2022.*"/>
       <toc-element toc-title="Older Versions">
+        <toc-element topic="api_notable_list_2022.md" toc-title="2022.*"/>
         <toc-element topic="api_notable_list_2021.md" toc-title="2021.*"/>
         <toc-element topic="api_notable_list_2020.md" toc-title="2020.*"/>
         <toc-element topic="api_notable_list_2019.md" toc-title="2019.*"/>

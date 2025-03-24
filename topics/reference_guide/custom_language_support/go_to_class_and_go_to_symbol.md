@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Go to Class and Go to Symbol
 
@@ -12,7 +12,8 @@
 
 A custom language plugin can provide its items to be included in the lists shown when the user chooses the <ui-path>Navigate | Class</ui-path> or <ui-path>Navigate | Symbol</ui-path> action.
 
-Provide implementations of [`ChooseByNameContributorEx`](%gh-ic%/platform/lang-impl/src/com/intellij/navigation/ChooseByNameContributorEx.java) interface (separate implementations need to be provided for <control>Class</control> and <control>Symbol</control>, respectively), and register them in the `com.intellij.gotoClassContributor` and `com.intellij.gotoSymbolContributor` extension points.
+Provide implementations of [`ChooseByNameContributorEx`](%gh-ic%/platform/lang-impl/src/com/intellij/navigation/ChooseByNameContributorEx.java) interface (separate implementations need to be provided for <control>Class</control> and <control>Symbol</control>, respectively), and register them
+in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.gotoClassContributor"/></include> or <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.gotoSymbolContributor"/></include>.
 
 Each `ChooseByNameContributorEx` implementation must provide the following methods:
 * `processNames(@NotNull Processor<? super String> processor, @NotNull GlobalSearchScope scope, @Nullable IdFilter filter)`

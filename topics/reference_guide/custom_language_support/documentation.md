@@ -58,19 +58,19 @@ outlining the primary components and their interactions.
 `DocumentationTargetProvider`
 : Implement
 [`DocumentationTargetProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/DocumentationTargetProvider.java)
-and register it as `com.intellij.platform.backend.documentation.targetProvider` extension point to build documentation
+and register it as <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.platform.backend.documentation.targetProvider"/></include> to build documentation
 for a certain offset in a `PsiFile` by overriding `documentationTargets()`.
 
 `PsiDocumentationTargetProvider`
 : Implement
 [`PsiDocumentationTargetProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/PsiDocumentationTargetProvider.java)
-and register it as `com.intellij.platform.backend.documentation.psiTargetProvider` extension point to build documentation
+and register it as <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.platform.backend.documentation.psiTargetProvider"/></include> to build documentation
 for PSI elements by overriding `documentationTarget()`.
 
 `SymbolDocumentationTargetProvider`
 : Implement
 [`SymbolDocumentationTargetProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/SymbolDocumentationTargetProvider.java)
-and register it as `com.intellij.platform.backend.documentation.symbolTargetProvider` extension point to build documentation
+and register it as <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.platform.backend.documentation.symbolTargetProvider"/></include> to build documentation
 for [](symbols.md) by overriding `documentationTarget()`.
 
 ### `DocumentationTarget`
@@ -115,7 +115,7 @@ Custom language developers usually extend from
 [`AbstractDocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/AbstractDocumentationProvider.java)
 instead of implementing the
 [`DocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java) interface.
-This implementation needs to be registered in `com.intellij.lang.documentationProvider` extension point.
+This implementation needs to be registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.documentationProvider"/></include>.
 
 The main work is done in `generateDoc()`, which has two PSI element arguments:
 the target element for which the documentation is requested and the original element under the cursor.
@@ -143,7 +143,7 @@ In addition, several implementations of other languages exist in the IntelliJ Pl
 
 Additionally, custom actions can be incorporated into documentation inlays and popups using the
 [`DocumentationActionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/documentation/DocumentationActionProvider.java).
-This provider should be registered with the `com.intellij.documentationActionProvider` extension point.
+This provider should be registered with the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.documentationActionProvider"/></include>.
 
 How the documentation for the target element is created is up to the custom language developer.
 A common choice is to extract and format documentation comments.

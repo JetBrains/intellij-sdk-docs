@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 7. Annotator
 
@@ -73,7 +73,7 @@ Annotate the `simple:key` literal expression, and differentiate between a well-f
 
 ## Register the Annotator
 
-Using the `com.intellij.annotator` extension point in the plugin configuration file, register the Simple Language annotator class for `JAVA` language:
+Using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.annotator"/></include> in the plugin configuration file, register the Simple Language annotator class for `JAVA` language:
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

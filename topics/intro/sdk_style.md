@@ -18,7 +18,7 @@ To verify grammar and correct spelling, it is highly recommended to use [Grazie 
 
 ## Documentation Markup
 
-The documentation project is using [Writerside](https://www.jetbrains.com/writerside), so the plugin should be installed to have full support in the IDE.
+The documentation project is using [Writerside](https://plugins.jetbrains.com/plugin/20158-writerside), so the plugin should be installed to have full support in the IDE.
 The topic files themselves are [Markdown](https://github.github.com/gfm/) files (<path>*.md</path>) using some Writerside-specific custom tags (see below).
 
 ### Page Format
@@ -171,11 +171,7 @@ In-paragraph code fragments and IntelliJ Platform APIs are formatted according t
 
 #### Extension Points
 
-* Extension point name must be followed by "extension point (EP)" for the first occurrence on a page.
-  All following occurrences can use "EP" suffix.
-* Use the FQN when first introducing an [extension point](plugin_extension_points.md) (EP) on a page.
-  Rather than `stubIndex`, introduce `com.intellij.stubIndex`.
-  Later mentions on the page can be `stubIndex`.
+Use `<include from="snippets.topic" element-id="ep"><var name="ep" value="fqn.of.ep"/></include>` snippet to introduce EP.
 
 #### XML
 

@@ -67,7 +67,6 @@ Each entry is composed of a product code and coordinates used for dependency and
 | `RubyMine`              | `RM`   | -                                                  |    &check;     |
 | `RustRover`             | `RR`   | `com.jetbrains.intellij.rustrover:RustRover`       |    &check;     |
 | `WebStorm`              | `WS`   | `com.jetbrains.intellij.webstorm:webstorm`         |    &check;     |
-| `Writerside`            | `WRS`  | `com.jetbrains.intellij.idea:writerside`           |    &check;     |
 
 
 ## `PluginBean`
@@ -260,4 +259,4 @@ See also:
 - [Tasks: `verifyPlugin.verificationReportsFormats`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-verificationReportsFormats)
 
 
-<include from="snippets.md" element-id="missingContent"/>
+<include from="snippets.topic" element-id="missingContent"/>

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Language Injection
 
@@ -48,9 +48,9 @@ As a plugin author, you can provide language injection in different ways:
 * For simple cases, the bundled [IntelliLang plugin](https://plugins.jetbrains.com/plugin/13374-intellilang) can handle injections,
   and plugin authors need to provide a configuration with patterns that specify the context where languages should be injected.
   IntelliLang can also be extended to support unknown custom languages.
-* Implementing the `com.intellij.languageInjectionContributor` extension point (EP) provides a high-level API for the injection of other languages.
-  For more control over how a language is injected, plugin authors use the `com.intellij.languageInjectionPerformer` EP.
-* Implementing the `com.intellij.multiHostInjector` EP gives plugin authors the most control over where and how language injection will take place.
+* Implementing the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.languageInjectionContributor"/></include> provides a high-level API for the injection of other languages.
+  For more control over how a language is injected, plugin authors use the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.languageInjectionPerformer"/></include>.
+* Implementing the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.multiHostInjector"/></include> gives plugin authors the most control over where and how language injection will take place.
 
 In the following sections, we'll discuss these three options in more detail.
 
@@ -83,7 +83,7 @@ On the plugin side, these entries are defined in the file [`javaInjections.xml`]
 </injection>
 ```
 
-The XML file with the injection configurations is loaded through the `org.intellij.intelliLang.injectionConfig` EP in the file
+The XML file with the injection configurations is loaded through the <include from="snippets.topic" element-id="ep"><var name="ep" value="org.intellij.intelliLang.injectionConfig"/></include> in the file
 [`intellilang-java-support.xml`](%gh-ic%/plugins/IntelliLang/resources/META-INF/intellilang-java-support.xml).
 
 ```xml
@@ -98,12 +98,12 @@ The XML file with the injection configurations is loaded through the `org.intell
 
 It is important to make a distinction between plugin authors who want to provide injections into existing languages and plugin authors who want to provide support for IntelliLang injections in their custom language.
 Both define their injections by providing XML configurations and loading them through the <path>[plugin.xml](plugin_configuration_file.md)</path>.
-However, custom language authors need to implement the `org.intellij.intelliLang.languageSupport` EP to make their language and PSI element patterns known to IntelliLang.
+However, custom language authors need to implement the <include from="snippets.topic" element-id="ep"><var name="ep" value="org.intellij.intelliLang.languageSupport"/></include> to make their language and PSI element patterns known to IntelliLang.
 Therefore, plugin authors who want to provide injections for existing languages can skip the first step.
 
 #### Implement `org.intellij.intelliLang.languageSupport` EP
 
-Implement the `org.intellij.intelliLang.languageSupport` EP and use
+Implement the <include from="snippets.topic" element-id="ep"><var name="ep" value="org.intellij.intelliLang.languageSupport"/></include> and use
 [`AbstractLanguageInjectionSupport`](%gh-ic%/plugins/IntelliLang/src/org/intellij/plugins/intelliLang/inject/AbstractLanguageInjectionSupport.java) as a base class.
 Please refer to the API docs of
 [`LanguageInjectionSupport`](%gh-ic%/plugins/IntelliLang/src/org/intellij/plugins/intelliLang/inject/LanguageInjectionSupport.java)
@@ -145,7 +145,7 @@ Inside an injection, the following tags can be used:
 #### Create an XML File to Load the Configuration
 
 Create an XML file <path>myLanguageID-injections.xml</path> next to your <path>plugin.xml</path> that loads the above configuration.
-Custom language authors also register their implementation of the `languageSupport` EP there.
+Custom language authors also register their implementation of the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.languageSupport"/></include> there.
 
 ```xml
 <idea-plugin>
@@ -168,7 +168,7 @@ Therefore, you load the configuration optionally in your main <path>plugin.xml</
 
 ## `LanguageInjectionContributor` and `LanguageInjectionPerformer`
 
-The `com.intellij.languageInjectionContributor` EP provides injection information for the given context in terms of _what_ to inject.
+The <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.languageInjectionContributor"/></include> provides injection information for the given context in terms of _what_ to inject.
 As a plugin author, implement [`LanguageInjectionContributor`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionContributor.java) to provide context-specific injections.
 
 For instance, if you want to inject a YAML or JSON to a literal language depending on some conditions, you could implement this interface like this:
@@ -201,12 +201,12 @@ Register the implementation in your <path>plugin.xml</path>:
     language="YourLanguage"/>
 ```
 
-If you want more control over how the injection should be done then implement the `com.intellij.languageInjectionPerformer` EP which allows for complex language injections, e.g. for concatenation or interpolation of strings.
+If you want more control over how the injection should be done then implement the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.languageInjectionPerformer"/></include> which allows for complex language injections, e.g. for concatenation or interpolation of strings.
 If it is not implemented, then the
 [`DefaultLanguageInjectionPerformer`](%gh-ic%/plugins/IntelliLang/src/org/intellij/plugins/intelliLang/inject/DefaultLanguageInjectionPerformer.java)
 will be used.
 
-For the `com.intellij.languageInjectionPerformer` EP, two methods need to be implemented in [`LanguageInjectionPerformer`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionPerformer.java).
+For the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.languageInjectionPerformer"/></include>, two methods need to be implemented in [`LanguageInjectionPerformer`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionPerformer.java).
 First, `isPrimary()` determines if this is the default `LanguageInjectionPerformer` for the language and if it handles most of the injections.
 If there is no primary `LanguageInjectionPerformer` found, then a fallback injection will be performed.
 
@@ -218,7 +218,7 @@ The method `performInjection()` does the actual injection into the context PSI e
 
 ## `MultiHostInjector`
 
-[`MultiHostInjector`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/MultiHostInjector.java) registered in `com.intellij.multiHostInjector` EP is a very low-level API, but it gives plugin authors the most freedom.
+[`MultiHostInjector`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/MultiHostInjector.java) registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.multiHostInjector"/></include> is a very low-level API, but it gives plugin authors the most freedom.
 It performs language injection inside other PSI elements, e.g. inject SQL inside an XML tag text or inject regular expressions into Java string literals.
 
 Plugin authors need to implement `getLanguagesToInject()` to provide a list of places to inject a language, and `elementsToInjectIn()` to return a list of elements to inject.
@@ -309,7 +309,8 @@ Now, inside the editor the injected portion will work as expected where foo is t
 ## Formatting
 <primary-label ref="2022.3"/>
 
-To control delegation of formatting to containing file, implement [`InjectedFormattingOptionsProvider`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/InjectedFormattingOptionsProvider.java) and register in `com.intellij.formatting.injectedOptions` extension point.
+To control delegation of formatting to containing file, implement [`InjectedFormattingOptionsProvider`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/InjectedFormattingOptionsProvider.java) and
+register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.formatting.injectedOptions"/></include>.
 
 ## Injection Highlighting
 

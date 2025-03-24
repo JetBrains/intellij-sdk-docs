@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 4. Lexer and Parser Definition
 
@@ -84,7 +84,7 @@ To avoid unnecessary classloading when initializing the extension point implemen
 ## Register the Parser Definition
 
 Registering the parser definition in the <path>[plugin.xml](plugin_configuration_file.md)</path> file makes it available to the IntelliJ Platform.
-Use the `com.intellij.lang.parserDefinition` extension point for registration.
+Use the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.parserDefinition"/></include> for registration.
 For example, see <path>simple_language_plugin/src/main/resources/META-INF/plugin.xml</path>.
 
 ```xml

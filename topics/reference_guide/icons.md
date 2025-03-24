@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Working with Icons
 
@@ -13,7 +13,7 @@
 </tldr>
 
 Icons are used widely by IntelliJ Platform plugins.
-Plugins need icons mostly for [](basic_action_system.md), custom component renderers, [](tool_windows.md), etc.
+Plugins need icons mostly for [actions](action_system.md), custom component renderers, [](tool_windows.md), etc.
 
 > A plugin _logo_, which represents the plugin itself, has different requirements than icons used within plugins.
 > For more information, see the [](plugin_icon_file.md) section.
@@ -211,7 +211,7 @@ This icon has a larger `AnimatedIcon.Big` version.
 
 ## Icon Tooltips
 
-Register a resource bundle via `com.intellij.iconDescriptionBundle` extension point to provide tooltips automatically for all [`SimpleColoredComponent`](%gh-ic%/platform/platform-api/src/com/intellij/ui/SimpleColoredComponent.java) renderers.
+Register a resource bundle via <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.iconDescriptionBundle"/></include> to provide tooltips automatically for all [`SimpleColoredComponent`](%gh-ic%/platform/platform-api/src/com/intellij/ui/SimpleColoredComponent.java) renderers.
 
 Create `icon.<icon-path>.tooltip` key in a resource bundle, where `<icon-path>` is the icon path with leading slash and `.svg` removed and slashes replaced with dots (e.g., `/nodes/class.svg` &rarr; `icon.nodes.class.tooltip`).
 
@@ -228,7 +228,7 @@ This allows supporting both UI variants at the same time, depending on what the 
 1. Create a new <path>expui</path> directory in the icon root directory ([Reference](#organizing-icons)).
 2. Copy all icons for the New UI into this directory.
 3. Create an empty <path>\$PluginName\$IconMappings.json</path> mapping file in the resources directory.
-4. Register <path>\$PluginName\$IconMappings.json</path> in <path>plugin.xml</path> via the `com.intellij.iconMapper` extension point.
+4. Register <path>\$PluginName\$IconMappings.json</path> in <path>plugin.xml</path> via the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.iconMapper"/></include>.
 
 </procedure>
 

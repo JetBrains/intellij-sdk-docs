@@ -577,7 +577,7 @@ Meanwhile, try to speed up what you can in your plugin as it will be generally b
 #### Action Update
 
 For implementations of [`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java), plugin authors should specifically
-review the documentation of `AnAction.getActionUpdateThread()` in the [](basic_action_system.md) section as it describes how threading works for actions.
+review the documentation of `AnAction.getActionUpdateThread()` in the [](action_system.md) section as it describes how threading works for actions.
 
 #### Minimize Write Actions Scope
 
@@ -636,4 +636,4 @@ This behavior wasn't enabled in production, and the planned locking mechanism ha
 It is planned to allow for acquiring write lock from any thread, even without a write intent lock.
 Write intent lock will be still available and will allow performing read sessions finished with data writing.
 
-<include from="snippets.md" element-id="missingContent"/>
+<include from="snippets.topic" element-id="missingContent"/>

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 2. Editor Coordinates System. Positions and Offsets
 
@@ -20,7 +20,7 @@ A keyboard shortcut can also initiate the action.
 
 The source code for the Java class behind the menu action is [EditorAreaIllustration](%gh-sdk-samples-master%/editor_basics/src/main/java/org/intellij/sdk/editor/EditorAreaIllustration.java).
 The focus of discussion will be the `EditorAreaIllustration.actionPerformed()` method.
-For more information about creating action classes, see the [Actions Tutorial](action_system.md), which covers the topic in depth.
+For more information about creating action classes, see the [](action_system.md), which covers the topic in depth.
 
 ## Caret Positions from the `CaretModel` and `Caret` Objects
 

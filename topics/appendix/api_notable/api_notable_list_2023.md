@@ -6,7 +6,7 @@
 
 _Early Access Program_ (EAP) releases of upcoming versions are available [here](https://eap.jetbrains.com).
 
-<include from="snippets.md" element-id="gradlePluginVersion"/>
+<include from="snippets.topic" element-id="gradlePluginVersion"/>
 
 ## 2023.3
 

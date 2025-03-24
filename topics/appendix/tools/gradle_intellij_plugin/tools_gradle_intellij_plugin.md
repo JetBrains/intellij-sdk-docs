@@ -41,7 +41,7 @@ The plugin provides functionalities like:
 
 ## Usage
 
-<include from="snippets.md" element-id="gradlePluginVersion"/>
+<include from="snippets.topic" element-id="gradlePluginVersion"/>
 
 To enable this plugin in your Gradle-based project, register the plugin in the Gradle build script's `plugins` section:
 

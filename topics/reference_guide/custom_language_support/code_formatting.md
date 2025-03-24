@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Code Formatter
 
@@ -41,7 +41,7 @@ On the other hand, spacing elements should never be covered by blocks unless the
 To format a file or a file fragment, the following steps are required:
 
 * Implement [`FormattingModelBuilder`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/FormattingModelBuilder.java)
-  and register it as `com.intellij.lang.formatter` extension point in the <path>plugin.xml</path>.
+  and register it as <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.formatter"/></include> in the <path>plugin.xml</path>.
 * The main purpose of the formatting model builder is its `createModel()` method that must provide a
   [`FormattingModel`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/FormattingModel.java) necessary for the framework to format the document.
   As an argument, it receives a [`FormattingContext`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/FormattingContext.java) which
@@ -202,7 +202,8 @@ Allows executing additional processing before the actual formatting is performed
 For example, it can be used to adjust the formatting range or modify the code by adding, removing, or converting elements like braces, semicolons, quotes, etc.
 All the introduced changes will be handled by the main formatting step.
 
-To register a formatting pre-processor, a plugin has to provide an implementation of [`PreFormatProcessor`](%gh-ic%/platform/code-style-api/src/com/intellij/psi/impl/source/codeStyle/PreFormatProcessor.java) and register it in the `com.intellij.preFormatProcessor` extension point.
+To register a formatting pre-processor, a plugin has to provide an implementation of [`PreFormatProcessor`](%gh-ic%/platform/code-style-api/src/com/intellij/psi/impl/source/codeStyle/PreFormatProcessor.java)
+and register it in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.preFormatProcessor"/></include>.
 
 **Example:**
 [`JsonTrailingCommaRemover`](%gh-ic%/json/split/src/com/intellij/json/formatter/JsonTrailingCommaRemover.java) removing trailing commas in JSON files
@@ -212,7 +213,8 @@ To register a formatting pre-processor, a plugin has to provide an implementatio
 It is similar to the pre-processor but is run after the actual formatting is performed.
 It can be used for adding, removing, or converting elements like braces, semicolons, quotes, changing letter-cases, etc.
 
-To register a formatting post-processor, a plugin has to provide an implementation of [`PostFormatProcessor`](%gh-ic%/platform/code-style-api/src/com/intellij/psi/impl/source/codeStyle/PostFormatProcessor.java) and register it in the `com.intellij.postFormatProcessor` extension point.
+To register a formatting post-processor, a plugin has to provide an implementation of [`PostFormatProcessor`](%gh-ic%/platform/code-style-api/src/com/intellij/psi/impl/source/codeStyle/PostFormatProcessor.java)
+and register it in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.postFormatProcessor"/></include>.
 
 **Example:**
 [`TrailingCommaPostFormatProcessor`](%gh-ic%/plugins/kotlin/code-insight/impl-base/src/org/jetbrains/kotlin/idea/formatter/TrailingCommaPostFormatProcessor.kt) inserting trailing commas in Kotlin files
@@ -227,7 +229,7 @@ See [`Rearranger`](%gh-ic%/platform/code-style-api/src/com/intellij/psi/codeStyl
 
 To set the default indent size for a plugin's language and allow user configuration of tab and indent sizes,
 implement the [`FileTypeIndentOptionsProvider`](%gh-ic%/platform/lang-api/src/com/intellij/psi/codeStyle/FileTypeIndentOptionsProvider.java)
-interface and register it at the `com.intellij.fileTypeIndentOptionsProvider` extension point.
+interface and register it at the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.fileTypeIndentOptionsProvider"/></include>.
 The return value of `createIndentOptions()` sets the default indent size.
 
 

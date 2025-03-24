@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Web Symbols Context
 <primary-label ref="2022.3"/>
@@ -37,7 +37,7 @@ which is enabled.
 ## `WebSymbolsContextProvider`
 
 The most straightforward way to contribute context is to register a [`WebSymbolsContextProvider`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/context/WebSymbolsContextProvider.kt)
-through `com.intellij.webSymbols.context` extension point and override one of `isEnabled()` methods
+through <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.webSymbols.context"/></include> and override one of `isEnabled()` methods
 to detect a context of a particular name and kind, e.g.:
 
 ```xml
@@ -226,7 +226,7 @@ for the dependency and the `enableByDefault` attribute set to `true`.
 Context rules can also be provided dynamically through [`WebSymbolsContextRulesProvider`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/context/WebSymbolsContextRulesProvider.kt).
 
 To do that, register a [`WebSymbolsQueryConfigurator`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/query/WebSymbolsQueryConfigurator.kt)
-through `com.intellij.webSymbols.queryConfigurator` extension point and implement `getContextRulesProviders()`.
+through <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.webSymbols.queryConfigurator"/></include> and implement `getContextRulesProviders()`.
 It is important that the results are stable, because any unexpected change in the rules will cause
 rescanning of the project, dropping of all caches and restarting code analysis.
 
@@ -270,7 +270,7 @@ When choosing between different patterns matching the same file name, the follow
 
 `WebSymbolsContextSourceProximityProvider` allows providing evaluation logic for the context rules. It should be used when
 working on integrating support for a package manager or a language which has a way to define global libraries. The provider should be registered
-through `com.intellij.webSymbols.contextSourceProximityProvider` extension point.
+through <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.webSymbols.contextSourceProximityProvider"/></include>.
 
 The provider has a single method to be overridden — `calculateProximity()`. When `sourceKind` parameter matches the provider requirements,
 it should calculate the [proximity](#context-proximity) of each source provided by `sourceNames`. For instance, when supporting a package manager and

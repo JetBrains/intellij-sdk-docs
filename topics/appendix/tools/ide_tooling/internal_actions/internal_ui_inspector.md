@@ -50,10 +50,10 @@ Custom Swing components can also provide additional properties via [`UiInspector
 
 ### Action
 
-| Type                                      | Properties                                                                                                                                                                                                                                                          |
-|-------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [`AnAction`](basic_action_system.md)      | <p><control>Action</control> - [`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java) implementation</p><p><control>Action ID</control> - Action `id`</p><p><control>Action Plugin ID</control> - contributing plugin</p> |
-| [`ActionToolbar`](basic_action_system.md) | <p><control>Toolbar Group</control> - Action Group ID</p><p><control>All Toolbar Groups</control> - contained Action Group IDs</p><p><control>Target component</control> - `ActionToolbar.setTargetComponent()`</p>                                                 |
+| Type                                | Properties                                                                                                                                                                                                                                                          |
+|-------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [`AnAction`](action_system.md)      | <p><control>Action</control> - [`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java) implementation</p><p><control>Action ID</control> - Action `id`</p><p><control>Action Plugin ID</control> - contributing plugin</p> |
+| [`ActionToolbar`](action_system.md) | <p><control>Toolbar Group</control> - Action Group ID</p><p><control>All Toolbar Groups</control> - contained Action Group IDs</p><p><control>Target component</control> - `ActionToolbar.setTargetComponent()`</p>                                                 |
 
 ### IDE and UI Components
 

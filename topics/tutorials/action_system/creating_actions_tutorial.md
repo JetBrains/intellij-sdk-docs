@@ -42,7 +42,7 @@ public class PopupDialogAction extends AnAction {
 
 > `AnAction` classes do not have class fields of any kind.
 > This restriction prevents memory leaks.
-> For more information about why, see [](basic_action_system.md#action-implementation).
+> For more information about why, see [](action_system.md#action-implementation).
 >
 {style="warning"}
 
@@ -56,7 +56,7 @@ Before fleshing out those methods, to complete this minimal implementation, `Pop
 
 Actions are registered by declaring them in code or by declaring them in the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of a [plugin configuration file](plugin_configuration_file.md).
 This section describes using IDE tooling - the <control>New Action</control> form - to add a declaration to the <path>plugin.xml</path> file and then tuning registration attributes manually.
-A more comprehensive explanation of action registration is available in the [](basic_action_system.md#registering-actions) section of this guide.
+A more comprehensive explanation of action registration is available in the [](action_system.md#registering-actions) section of this guide.
 
 ### Registering an Action with the New Action Form
 
@@ -109,7 +109,7 @@ This declaration is enough, but adding more attributes is discussed in the next 
 ### Setting Registration Attributes Manually
 
 An action declaration can be added manually to the <path>plugin.xml</path> file.
-An exhaustive list of declaration elements and attributes is presented in [](basic_action_system.md#registering-actions-in-pluginxml).
+An exhaustive list of declaration elements and attributes is presented in [](action_system.md#registering-actions-in-pluginxml).
 Attributes are added by selecting them from the <control>New Action</control> form or by editing the registration declaration directly in the <path>plugin.xml</path> file.
 
 The [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) declaration for `PopupDialogAction` in the `action_basics` [plugin.xml](%gh-sdk-samples-master%/action_basics/src/main/resources/META-INF/plugin.xml) file.
@@ -176,7 +176,7 @@ However, code in this method could manipulate a project, invoke an inspection, c
 For demonstration purposes, the `AnActionEvent.getData()` method tests if a [`Navigatable`](%gh-ic%/platform/core-api/src/com/intellij/pom/Navigatable.java) object is available.
 If so, information about the selected element is added to the dialog.
 
-See [](basic_action_system.md#determining-the-action-context) for more information about accessing information from the `AnActionEvent` input parameter.
+See [](action_system.md#determining-the-action-context) for more information about accessing information from the `AnActionEvent` input parameter.
 
 ```java
 ```
@@ -188,7 +188,7 @@ Adding code to `PopupDialogAction.update()` gives finer control of the action's 
 The action's state and(or) presentation can be dynamically changed depending on the context.
 
 > This method needs to _execute very quickly_.
-> For more information about this constraint, see the warning in [](basic_action_system.md#overriding-the-anactionupdate-method).
+> For more information about this constraint, see the warning in [](action_system.md#overriding-the-anactionupdate-method).
 >
 {style="warning"}
 
@@ -197,7 +197,7 @@ This requirement means the user must have at least one project open in the IDE f
 So the `update()` method disables the action for contexts where a `Project` object isn't defined.
 
 The availability (enabled and visible) is set on the `Presentation` object.
-Setting both the enabled state and visibility produces consistent behavior despite possible host menu settings, as discussed in [](basic_action_system.md#grouping-actions).
+Setting both the enabled state and visibility produces consistent behavior despite possible host menu settings, as discussed in [](action_system.md#grouping-actions).
 
 ```java
 ```
@@ -205,7 +205,7 @@ Setting both the enabled state and visibility produces consistent behavior despi
 
 The `update()` method does not check to see if a `Navigatable` object is available before enabling `PopupDialogAction`.
 This check is unnecessary because using the `Navigatable` object is opportunistic in `actionPerformed()`.
-See [Determining the Action Context](basic_action_system.md#determining-the-action-context) for more information about accessing information from the `AnActionEvent` input parameter.
+See [Determining the Action Context](action_system.md#determining-the-action-context) for more information about accessing information from the `AnActionEvent` input parameter.
 
 ### Other Methods Overrides
 

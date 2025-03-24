@@ -408,4 +408,4 @@ The IntelliJ Platform provides some utils to display them properly.
 
 - [`Formats.formatFileSize()`](%gh-ic%/platform/util/base/src/com/intellij/openapi/util/text/Formats.java) (the units are not localized and the default JVM locale is used instead of the [IDE's locale](providing_translations.md#getting-the-current-locale-programmatically))
 
-<include from="snippets.md" element-id="missingContent"/>
+<include from="snippets.topic" element-id="missingContent"/>

@@ -2,6 +2,8 @@
 
 # Introduction to Integration Tests
 
+<primary-label ref="2023.2"/>
+
 <link-summary>Walkthrough how to create the first integration tests.</link-summary>
 
 > This page is part of [](integration_tests.md) tutorial.

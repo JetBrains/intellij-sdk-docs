@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Using File Templates Programmatically
 
@@ -31,7 +31,7 @@ File templates assigned to the <control>[Files](providing_file_templates.md#file
 Sometimes, creating a file from a given template in a specific project place doesn't make sense, or a template requires some additional properties for its content.
 It is possible to control a file template's visibility and its available properties using
 [`CreateFromTemplateHandler`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/fileTemplates/CreateFromTemplateHandler.java)
-implementation registered in the `com.intellij.createFromTemplateHandler` EP.
+implementation registered in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.createFromTemplateHandler"/></include>.
 
 **Example:**
 [`JavaCreateFromTemplateHandler`](%gh-ic%/java/java-impl/src/com/intellij/ide/fileTemplates/JavaCreateFromTemplateHandler.java)
@@ -75,7 +75,7 @@ The new action should be registered under the `NewGroup` group, e.g:
 </actions>
 ```
 
-Action presentation texts should be added to the [resource bundle defined in plugin.xml](plugin_configuration_file.md#idea-plugin__resource-bundle) according to the rules described in [](basic_action_system.md#localizing-actions-and-groups):
+Action presentation texts should be added to the [resource bundle defined in plugin.xml](plugin_configuration_file.md#idea-plugin__resource-bundle) according to the rules described in [](action_system.md#localizing-actions-and-groups):
 
 ```
 action.Create.MyClass.text=My Class
@@ -110,7 +110,7 @@ protected void buildDialog(Project project, PsiDirectory directory,
 ```
 
 As file templates are placed in the <path>fileTemplates/internal</path> directory, they are not listed in the <ui-path>Settings | Editor | File and Code Templates</ui-path> settings page, and users can't adjust them to their needs.
-Internal templates can be exposed in the <control>Files</control> category by additionally registering them via the `com.intellij.internalFileTemplate` EP, e.g.:
+Internal templates can be exposed in the <control>Files</control> category by additionally registering them via the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.internalFileTemplate"/></include>, e.g.:
 
 ```xml
 <internalFileTemplate name="My Record"/>
@@ -126,7 +126,7 @@ Adjusting created templates manually by replacing dynamic parts with properties 
 It is possible to speed up this process by replacing known elements like package or class names with template properties placeholder.
 It can be achieved by implementing the
 [`SaveFileAsTemplateHandler`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/SaveFileAsTemplateHandler.java)
-and registering it via the `com.intellij.saveFileAsTemplateHandler` EP.
+and registering it via the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.saveFileAsTemplateHandler"/></include>.
 
 **Example:**
 [`SaveJavaAsTemplateHandler`](%gh-ic%/java/java-impl/src/com/intellij/ide/fileTemplates/SaveJavaAsTemplateHandler.java) replacing existing class and package names with `${NAME}` and `${PACKAGE_NAME}` properties placeholders respectively.

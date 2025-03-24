@@ -90,9 +90,8 @@
             <p>
                 Please don't use the
                 <control>IJSDK</control>
-                YouTrack project for plugin or <a anchor="problems-with-products">product support</a> requests - it's
-                intended for the SDK and the documentation, and you'll get a better response using one of the methods
-                below.
+                YouTrack project for plugin development or <a anchor="problems-with-products">product support</a>
+                requests – it's intended for the SDK and the documentation.
             </p>
         </note>
     </chapter>

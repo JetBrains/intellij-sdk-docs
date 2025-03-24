@@ -35,7 +35,7 @@ See also [](marketing.md) about widgets and badges.
 
 Deprecated elements are omitted in the list below.
 
-<include from="snippets.md" element-id="descriptorDocumentationProviderNote"/>
+<include from="snippets.topic" element-id="descriptorDocumentationProviderNote"/>
 
 [//]: # (GENERATED CONTENT START)
 
@@ -771,7 +771,7 @@ Example
 {#idea-plugin__resource-bundle}
 
 A resource bundle to be used with message key attributes in extension declarations and for
-[action and group localization](basic_action_system.md#localizing-actions-and-groups).
+[action and group localization](action_system.md#localizing-actions-and-groups).
 A single [`<idea-plugin>`](#idea-plugin) element can contain multiple `<resource-bundle>` elements.
 
 {type="narrow"}
@@ -790,7 +790,7 @@ Example
 
 <tldr>
 
-**Reference:** [Actions](basic_action_system.md)
+**Reference:** [Actions](action_system.md)
 
 </tldr>
 
@@ -807,7 +807,7 @@ Attributes
 - `resource-bundle` _(optional; available since 2020.1)_<br/>
 
     Defines the dedicated actions resource bundle.
-    See [Localizing Actions and Groups](basic_action_system.md#localizing-actions-and-groups)
+    See [Localizing Actions and Groups](action_system.md#localizing-actions-and-groups)
     for more details.
 
 Children
@@ -832,7 +832,7 @@ Example
 
 <tldr>
 
-**Reference:** [Registering Actions in plugin.xml](basic_action_system.md#registering-actions-in-pluginxml)
+**Reference:** [Registering Actions in plugin.xml](action_system.md#registering-actions-in-pluginxml)
 
 </tldr>
 
@@ -855,7 +855,7 @@ Attributes
 - `class` _(**required**)_<br/>
   The fully qualified name of the action implementation class.
 - `text` _(**required** if the action is not
-[localized](basic_action_system.md#localizing-actions-and-groups))_<br/>
+[localized](action_system.md#localizing-actions-and-groups))_<br/>
   The default long-version text to be displayed for the action (tooltip for toolbar button or text for menu item).
 - `description` _(optional)_<br/>
   The text which is displayed in the status bar when the action is focused.
@@ -1126,7 +1126,7 @@ Required
 Attributes
 :
 - `key` _(`key` or `text` is **required**)_<br/>
-  The key of the synonym text provided in a [message bundle](basic_action_system.md#localizing-actions-and-groups).
+  The key of the synonym text provided in a [message bundle](action_system.md#localizing-actions-and-groups).
 - `text` _(`key` or `text` is **required**)_<br/>
 
     The synonym text.
@@ -1170,7 +1170,7 @@ Example
 
 <tldr>
 
-**Reference:** [Grouping Actions](basic_action_system.md#grouping-actions)
+**Reference:** [Grouping Actions](action_system.md#grouping-actions)
 
 </tldr>
 
@@ -1196,7 +1196,7 @@ Attributes
   [`DefaultActionGroup`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
   is used.
 - `text` _(**required** if the `popup` is `true` and the group is not
-[localized](basic_action_system.md#localizing-actions-and-groups))_<br/>
+[localized](action_system.md#localizing-actions-and-groups))_<br/>
   The default long-version text to be displayed for the group (text for the menu item showing the submenu).
 - `description` _(optional)_<br/>
   The text which is displayed in the status bar when the group is focused.
@@ -1276,7 +1276,7 @@ Attributes
 - `ref` _(**required**)_<br/>
   The ID of the action to add to a group.
 - `id` _(optional)_<br/>
-    **_Deprecated_**: Use `ref` instead. 
+    **_Deprecated_**: Use `ref` instead.
 
     The ID of the action to add to a group.
 
@@ -1322,7 +1322,7 @@ Attributes
   Separator text is displayed only in specific contexts such as popup menus, toolbars, etc.
 - `key` _(optional)_<br/>
 
-    The [message key]([message key](https://plugins.jetbrains.com/docs/intellij/basic-action-system.html#localizing-actions-and-groups)) for the separator text.
+    The [message key](action_system.md#localizing-actions-and-groups) for the separator text.
     The message bundle for use should be registered via the `resource-bundle` attribute of
     the [`<actions>`](#idea-plugin__actions) element.
     The attribute is ignored if the `text` attribute is specified.

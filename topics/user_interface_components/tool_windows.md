@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Tool Windows
 
@@ -26,7 +26,7 @@ Alternatively, using [programmatic setup](#programmatic-setup), the tool window 
 
 ### Declarative Setup
 
-The tool window is registered in <path>[plugin.xml](plugin_configuration_file.md)</path> using the `com.intellij.toolWindow` extension point.
+The tool window is registered in <path>[plugin.xml](plugin_configuration_file.md)</path> using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.toolWindow"/></include>.
 The extension point attributes specify all the data which is necessary to display the tool window button:
 
 * The `id` attribute (required) of the tool window which corresponds to the text displayed on the tool window button.
@@ -74,7 +74,7 @@ To show and hide a tool window dynamically while the user is working with the pr
 
 ### Programmatic Setup
 
-For tool windows shown only after invoking specific actions, use [`ToolWindowManager.registerToolWindow(String,RegisterToolWindowTaskBuilder)`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowManager.kt).
+For tool windows shown only after invoking specific actions, use [`ToolWindowManager.registerToolWindow(String, RegisterToolWindowTaskBuilder)`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowManager.kt).
 
 Always use [`ToolWindowManager.invokeLater()`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowManager.kt) instead of "plain" `Application.invokeLater()` when scheduling EDT tasks related to tool windows (see [](threading_model.md)).
 
@@ -88,7 +88,7 @@ To manage the contents of a tool window, call [`ToolWindow.getContentManager()`]
 To add a content (tab), first create it by calling [`ContentManager.getFactory().createContent()`](%gh-ic%/platform/ide-core/src/com/intellij/ui/content/ContentManager.java), and then to add it to the tool window using [`ContentManager.addContent()`](%gh-ic%/platform/ide-core/src/com/intellij/ui/content/ContentManager.java).
 Use `Content.setDisposer()` to register associated `Disposable` (see [](disposers.md)).
 
-See [`SimpleToolWindowPanel`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/SimpleToolWindowPanel.java) as a convenient base class, supporting [Toolbars](basic_action_system.md#buildingToolbarPopupMenu) and both vertical/horizontal layout.
+See [`SimpleToolWindowPanel`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/SimpleToolWindowPanel.java) as a convenient base class, supporting [Toolbars](action_system.md#buildingToolbarPopupMenu) and both vertical/horizontal layout.
 
 ### Closing Tabs
 

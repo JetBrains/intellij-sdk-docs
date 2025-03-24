@@ -1,6 +1,6 @@
-# PSI References
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# PSI References
 
 <link-summary>PSI Reference represents a link from a usage of a particular element in the code to the corresponding declaration.</link-summary>
 
@@ -58,7 +58,7 @@ References are also often contributed to non-code files, such as XML or JSON.
 Contributing references is one of the most common ways to extend an existing language.
 For example, your plugin can contribute references to Java code, even though the Java PSI is part of the platform and not defined in your plugin.
 
-Implement [`PsiReferenceContributor`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReferenceContributor.java) registered in `com.intellij.psi.referenceContributor` extension point.
+Implement [`PsiReferenceContributor`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReferenceContributor.java) registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.psi.referenceContributor"/></include>.
 
 Attribute `language` should be set to the Language ID where this contributor applies to.
 The exact places to contribute references to are then specified using [](element_patterns.md) in calls to `PsiReferenceRegistrar.registerReferenceProvider()`.

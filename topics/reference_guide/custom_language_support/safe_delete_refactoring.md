@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Safe Delete Refactoring
 
@@ -16,7 +16,7 @@ In addition to that, to support _Safe Delete_, a plugin needs to implement two t
 
 * The
    [`RefactoringSupportProvider`](%gh-ic%/platform/refactoring/src/com/intellij/lang/refactoring/RefactoringSupportProvider.java)
-   interface, registered in the `com.intellij.lang.refactoringSupport` extension point, and the `isSafeDeleteAvailable()` method, which checks if the _Safe Delete_ refactoring is available for a specific PSI element
+   interface, registered in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.refactoringSupport"/></include>, and the `isSafeDeleteAvailable()` method, which checks if the _Safe Delete_ refactoring is available for a specific PSI element
 
 * The
    [`PsiElement.delete()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java)

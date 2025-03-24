@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Project
 
@@ -62,13 +62,13 @@ Basic API classes and interfaces for the concepts of [`Project`](%gh-ic%/platfor
 
 A Project instance is available in multiple contexts:
 
-| Context                          | API                                                                                                                                                                                                                                                      |
-|----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Action](basic_action_system.md) | <p>[`AnActionEvent.getProject()`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)</p><p>[`DataContext.getData(CommonDataKeys.PROJECT)`](%gh-ic%/platform/core-ui/src/openapi/actionSystem/DataContext.java)</p> |
-| [Editor](editor_basics.md)       | [`Editor.getProject()`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/Editor.java)                                                                                                                                                      |
-| [Module](module.md)              | [`Module.getProject()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/module/Module.java)                                                                                                                                                           |
-| [PSI](psi.md)                    | [`PsiElement.getProject()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java)                                                                                                                                                              |
-| [Tests](testing_plugins.md)      | [`IdeaProjectTestFixture.getProject()`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/IdeaProjectTestFixture.java)                                                                                                              |
+| Context                    | API                                                                                                                                                                                                                                                      |
+|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Action](action_system.md) | <p>[`AnActionEvent.getProject()`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)</p><p>[`DataContext.getData(CommonDataKeys.PROJECT)`](%gh-ic%/platform/core-ui/src/openapi/actionSystem/DataContext.java)</p> |
+| [Editor](editor_basics.md) | [`Editor.getProject()`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/Editor.java)                                                                                                                                                      |
+| [Module](module.md)        | [`Module.getProject()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/module/Module.java)                                                                                                                                                           |
+| [PSI](psi.md)              | [`PsiElement.getProject()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java)                                                                                                                                                              |
+| [Tests](testing_plugins.md) | [`IdeaProjectTestFixture.getProject()`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/IdeaProjectTestFixture.java)                                                                                                              |
 
 It is also possible to retrieve projects in generic contexts:
 * Project from [`VirtualFile`](virtual_file.md):

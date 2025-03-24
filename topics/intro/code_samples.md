@@ -21,7 +21,7 @@ Additionally, the [Working with Gradle in IntelliJ IDEA](https://youtu.be/6V6G3R
 
 Make sure plugins _Git_, _Gradle_, and _Plugin DevKit_ are enabled.
 
-<include from="snippets.md" element-id="pluginDevKitAvailability"/>
+<include from="snippets.topic" element-id="pluginDevKitAvailability"/>
 
 Clone the [intellij-sdk-code-samples](https://github.com/JetBrains/intellij-sdk-code-samples) GitHub repository via <control>Git | Clone...</control>.
 After successful cloning, the IDE suggests opening the project.

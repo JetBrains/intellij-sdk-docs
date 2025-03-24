@@ -35,7 +35,7 @@ Plugins should be just easy to use.
 Ideally, all the features should work out of the box after the installation, without any special user interactions, like manually enabling crucial plugin features.
 Default settings should reflect the typical plugin usage in a standard project.
 
-All the settings and actions should be easy to find and be placed in the proper [settings](settings.md) or [action group](grouping_action.md), e.g.:
+All the settings and actions should be easy to find and be placed in the proper [settings](settings.md) or [action group](grouping_actions_tutorial.md), e.g.:
 
 * Framework plugin settings should be placed under the <ui-path>Settings | Languages & Frameworks</ui-path>
 * Action marking a directory as a plugin-specific root type should be added to <ui-path>Mark Directory as...</ui-path> group

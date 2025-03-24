@@ -63,11 +63,11 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 <link-summary>List of known Breaking API Changes in 2024.*</link-summary>
 
-<include from="snippets.md" element-id="apiChangesHeader"/>
+<include from="snippets.topic" element-id="apiChangesHeader"/>
 
-<include from="snippets.md" element-id="apiChangesJavaVersion"/>
+<include from="snippets.topic" element-id="apiChangesJavaVersion"/>
 
-<include from="snippets.md" element-id="gradlePluginVersion"/>
+<include from="snippets.topic" element-id="gradlePluginVersion"/>
 
 ## 2024.3
 

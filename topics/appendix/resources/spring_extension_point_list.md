@@ -20,7 +20,7 @@
 
 55 Extension Points and 5 Listeners for Spring API
 
-<include from="snippets.md" element-id="ep_list_legend"/>
+<include from="snippets.topic" element-id="ep_list_legend"/>
 
 ## Spring
 

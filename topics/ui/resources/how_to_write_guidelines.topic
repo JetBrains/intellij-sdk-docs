@@ -4,7 +4,7 @@
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        id="how_to_write_guidelines" title="How to Write Guidelines">
 
-    <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+    <!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
     <title>
         How to Write Guidelines
     </title>
@@ -306,7 +306,7 @@
             <chapter title="Tips and notes" id="tips-and-notes">
                 <p>Use tips <code>&lt;tip&gt;&lt;/tip&gt;</code> to add links to additional materials, sources, useful
                     facts, and examples:</p>
-                <tip>Find more examples in <a href="https://www.jetbrains.com/help/writerside/admonitions.html#tip">Writerside
+                <tip>Find more examples in <a href="https://plugins.jetbrains.com/plugin/20158-writerside/docs/admonitions.html">Writerside
                     documentation</a>.
                 </tip>
                 <p>Use notes <code>&lt;note&gt;&lt;/note&gt;</code> to highlight important information like
@@ -420,7 +420,7 @@
         <p>Provide code snippets along the article to help developers implement the described look and behavior.</p>
         <p>If a code snippet is too big, put it at the end of the article and provide a link.</p>
         <p>To insert a snippet, use <code>&lt;code-block&gt;&lt;/code-block&gt;</code>. Read more in <a
-                href="https://www.jetbrains.com/help/writerside/code.html">Writerside documentation</a>.</p>
+                href="https://plugins.jetbrains.com/plugin/20158-writerside/docs/">Writerside documentation</a>.</p>
     </chapter>
 
 </topic>

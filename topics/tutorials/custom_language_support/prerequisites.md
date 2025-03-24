@@ -22,7 +22,7 @@ Download the IntelliJ IDEA Community Edition source files as described in the In
 
 Make sure that the _Plugin DevKit_ and _Gradle_ plugins are enabled.
 
-<include from="snippets.md" element-id="pluginDevKitAvailability"/>
+<include from="snippets.topic" element-id="pluginDevKitAvailability"/>
 
 Install and enable [Grammar-Kit](https://plugins.jetbrains.com/plugin/6606-grammar-kit) and [PsiViewer](https://plugins.jetbrains.com/plugin/227-psiviewer) (optionally) plugins.
 

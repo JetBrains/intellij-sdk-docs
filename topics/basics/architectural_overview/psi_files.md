@@ -1,6 +1,6 @@
-# PSI Files
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+# PSI Files
 
 <link-summary>PSI File represents file content as a hierarchy of elements in a particular programming language.</link-summary>
 
@@ -14,13 +14,13 @@ the same file is represented by multiple `PsiFile` instances if the file belongs
 
 ## How do I get a PSI file?
 
-| Context                          | API                                                                                                                                                                                                                                                                                                                                    |
-|----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Action](basic_action_system.md) | [`AnActionEvent.getData(CommonDataKeys.PSI_FILE)`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)                                                                                                                                                                                            |
-| [Document](documents.md)         | [`PsiDocumentManager.getPsiFile()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiDocumentManager.java)                                                                                                                                                                                                                            |
-| [PSI Element](psi_elements.md)   | [`PsiElement.getContainingFile()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) (may return `null` if the PSI element is not contained in a file)                                                                                                                                                                   |
-| [Virtual File](virtual_file.md)  | [`PsiManager.findFile()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiManager.java), [`PsiUtilCore.toPsiFiles()`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/PsiUtilCore.java)                                                                                                                                          |
-| File Name                        | [`FilenameIndex.getVirtualFilesByName()`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/FilenameIndex.java) and locate via [`PsiManager.findFile()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiManager.java) or [`PsiUtilCore.toPsiFiles()`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/PsiUtilCore.java) |
+| Context                         | API                                                                                                                                                                                                                                                                                                                                    |
+|---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Action](action_system.md)      | [`AnActionEvent.getData(CommonDataKeys.PSI_FILE)`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)                                                                                                                                                                                            |
+| [Document](documents.md)        | [`PsiDocumentManager.getPsiFile()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiDocumentManager.java)                                                                                                                                                                                                                            |
+| [PSI Element](psi_elements.md)  | [`PsiElement.getContainingFile()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) (may return `null` if the PSI element is not contained in a file)                                                                                                                                                                   |
+| [Virtual File](virtual_file.md) | [`PsiManager.findFile()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiManager.java), [`PsiUtilCore.toPsiFiles()`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/PsiUtilCore.java)                                                                                                                                          |
+| File Name                       | [`FilenameIndex.getVirtualFilesByName()`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/FilenameIndex.java) and locate via [`PsiManager.findFile()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiManager.java) or [`PsiUtilCore.toPsiFiles()`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/PsiUtilCore.java) |
 
 ## What can I do with a PSI file?
 
@@ -61,7 +61,8 @@ To save the PSI file to disk, use its parent directory's [`PsiDirectory.add()`](
 ## How do I get notified when PSI files change?
 
 `PsiManager.addPsiTreeChangeListener()` allows you to receive notifications about all changes to the PSI tree of a project.
-Alternatively, register [`PsiTreeChangeListener`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiTreeChangeListener.java) in `com.intellij.psi.treeChangeListener` extension point.
+Alternatively, register [`PsiTreeChangeListener`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiTreeChangeListener.java)
+in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.psi.treeChangeListener"/></include>.
 
 > Please see [`PsiTreeChangeEvent`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiTreeChangeEvent.java) Javadoc for common problems when dealing with PSI events.
 >

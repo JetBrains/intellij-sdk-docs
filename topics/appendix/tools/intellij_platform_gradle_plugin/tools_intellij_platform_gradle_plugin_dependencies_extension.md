@@ -45,10 +45,6 @@ dependencies {
 
     bundledPlugin("com.intellij.java")
 
-    pluginVerifier()
-    zipSigner()
-    instrumentationTools()
-
     testFramework(TestFrameworkType.Platform)
   }
 
@@ -76,10 +72,6 @@ dependencies {
     intellijIdeaCommunity '%ijPlatform%'
 
     bundledPlugin 'com.intellij.java'
-
-    pluginVerifier()
-    zipSigner()
-    instrumentationTools()
 
     testFramework TestFrameworkType.Platform.INSTANCE
   }
@@ -123,7 +115,6 @@ See [](#custom-target-platforms) for non-default targets.
 | `rubymine(version, useInstaller = true)`              | [RubyMine](rubymine.md)                                          |
 | `rustrover(version, useInstaller = true)`             | [RustRover](https://www.jetbrains.com/rust/)                     |
 | `webstorm(version, useInstaller = true)`              | [WebStorm](webstorm.md)                                          |
-| `writerside(version, useInstaller = true)`            | [Writerside](https://www.jetbrains.com/writerside/)              |
 
 ### Custom Target Platforms
 
@@ -211,14 +202,12 @@ To enable resolving this kind of artifacts, opt-out from the installer dependenc
 repositories {
   intellijPlatform {
     defaultRepositories()
-    jetbrainsRuntime()
   }
 }
 
 dependencies {
   intellijPlatform {
     intellijIdeaCommunity("%ijPlatform%", useInstaller = false)
-    jetbrainsRuntime()
   }
 }
 ```
@@ -230,14 +219,12 @@ dependencies {
 repositories {
   intellijPlatform {
     defaultRepositories()
-    jetbrainsRuntime()
   }
 }
 
 dependencies {
   intellijPlatform {
     intellijIdeaCommunity "%ijPlatform%", false
-    jetbrainsRuntime()
   }
 }
 ```
@@ -361,8 +348,8 @@ See also:
 
 | Function                                       | Description                                                                                                                                                                       |
 |------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `pluginVerifier(version)`                      | Adds a dependency on [IntelliJ Plugin Verifier](verifying_plugin_compatibility.md).                                                                                               |
-| `zipSigner(version)`                           | Adds a dependency on [Marketplace ZIP Signer](plugin_signing.md).                                                                                                                 |
+| `pluginVerifier(version)`                      | Adds a dependency on [IntelliJ Plugin Verifier](verifying_plugin_compatibility.md). Applied by default and refers to the latest available tool's version.                         |
+| `zipSigner(version)`                           | Adds a dependency on [Marketplace ZIP Signer](plugin_signing.md). Applied by default and refers to the latest available tool's version.                                           |
 | `bundledLibrary(path)`                         | **SEE NOTE BELOW**<p>Adds a dependency on a bundled library JAR file of the current IntelliJ Platform, like <path>lib/annotations.jar</path>.</p>                                 |
 | `platformDependency(coordinates, version)`     | Adds a dependency on a custom IntelliJ Platform dependency available in the [](tools_intellij_platform_gradle_plugin_repositories_extension.md#intellij-maven-repositories).      |
 | `testPlatformDependency(coordinates, version)` | Adds a test dependency on a custom IntelliJ Platform dependency available in the [](tools_intellij_platform_gradle_plugin_repositories_extension.md#intellij-maven-repositories). |
@@ -383,6 +370,8 @@ See also:
 Using the `jetbrainsRuntime()` or `jetbrainsRuntimeExplicit()` dependency helpers, it is possible to load a custom version of JetBrains Runtime.
 However, it is recommended to rely on the runtime bundled within the IntelliJ Platform dependency, if present.
 
+The `jetbrainsRuntime()` helper is applied by default and if JetBrains Runtime is not bundled within the currently used IntelliJ Platform, it refers the relevant runtime version automatically.
+
 | Function                                                  | Description                                                                                                                                                                                                                     |
 |-----------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | <p>`jetbrainsRuntime()`</p>                               | Adds a dependency on [JetBrains Runtime](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance) in version obtained with the current IntelliJ Platform if resolved from IntelliJ Maven Repository. |
@@ -401,6 +390,8 @@ Adds a Java Compiler dependency for code instrumentation.
 The version is determined by the IntelliJ Platform build number.
 If the exact version is unavailable, the closest one is used, found by scanning all releases.
 
+The `javaCompiler()` helper is applied by default and refers to the tool version close to the currently used IntelliJ Platform.
+
 | Function                                              | Description                                                            |
 |-------------------------------------------------------|------------------------------------------------------------------------|
 | <p>`instrumentationTools()`</p>                       | A helper function to apply all required dependencies: `javaCompiler()` |
@@ -408,4 +399,4 @@ If the exact version is unavailable, the closest one is used, found by scanning 
 
 - [](tools_intellij_platform_gradle_plugin_tasks.md#instrumentCode)
 
-<include from="snippets.md" element-id="missingContent"/>
+<include from="snippets.topic" element-id="missingContent"/>

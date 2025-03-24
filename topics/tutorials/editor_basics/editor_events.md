@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 3. Handling Editor Events
 
@@ -22,7 +22,7 @@ The `editor_basics` code sample adds an **Editor Add Caret** menu item to the ed
 ### Creating the Menu Action Class
 
 The source code for the Java action class is [EditorHandlerIllustration](%gh-sdk-samples-master%/editor_basics/src/main/java/org/intellij/sdk/editor/EditorHandlerIllustration.java), a subclass of `AnAction`.
-For more information about creating action classes, see the [Actions Tutorial](action_system.md), which covers the topic in depth.
+For more information about creating action classes, see [](action_system.md), which covers the topic in depth.
 
 The `EditorHandlerIllustration` action is registered in the _editor_basic_ [`plugin.xml`](%gh-sdk-samples-master%/editor_basics/src/main/resources/META-INF/plugin.xml) file.
 Note that this action class is registered to appear on the Editor context menu.

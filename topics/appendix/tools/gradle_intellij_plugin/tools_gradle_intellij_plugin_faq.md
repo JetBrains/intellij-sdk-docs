@@ -9,7 +9,7 @@
 
 ### How to target 2022.3 platform?
 
-<include from="snippets.md" element-id="gradlePluginVersion"/>
+<include from="snippets.topic" element-id="gradlePluginVersion"/>
 
 ### How to modify JVM arguments of runIde task?
 
@@ -314,5 +314,5 @@ It is also possible to refer to the sandbox directory of another Gradle project 
 
 Please upgrade to Kotlin 1.9.0. See the [](using_kotlin.md#incremental-compilation) section if using Kotlin 1.8.20.
 
-<include from="snippets.md" element-id="missingContent"/>
+<include from="snippets.topic" element-id="missingContent"/>
 

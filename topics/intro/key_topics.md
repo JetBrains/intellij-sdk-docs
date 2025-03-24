@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Key Topics
 
@@ -30,7 +30,7 @@ The PSI parses code, builds indexes, and creates a semantic model.
 The IntelliJ Platform is extremely extensible, and most features and services can be extended.
 Some common extension points are:
 
-* [](basic_action_system.md) - menu and toolbar items
+* [](action_system.md) - menu and toolbar items
 * [](code_inspections.md) - code analysis that looks at the syntax trees and semantic models and highlight issues in the editor.
 * [](code_intentions.md) - context-specific actions that are available in the <shortcut>Alt+Enter</shortcut> menu when the text caret is at a particular location.
 * [](code_completion.md).

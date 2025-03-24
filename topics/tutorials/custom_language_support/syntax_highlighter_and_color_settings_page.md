@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 # 5. Syntax Highlighter and Color Settings Page
 
@@ -41,7 +41,7 @@ subclasses [`SyntaxHighlighterFactory`](%gh-ic%/platform/editor-ui-api/src/com/i
 
 ### Register the Syntax Highlighter Factory
 
-Register the factory with the IntelliJ Platform in the plugin configuration file using the `com.intellij.lang.syntaxHighlighterFactory` extension point.
+Register the factory with the IntelliJ Platform in the plugin configuration file using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.syntaxHighlighterFactory"/></include>.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
@@ -82,7 +82,7 @@ AttributesDescriptor[] DESCRIPTORS = new AttributesDescriptor[] {
 
 ### Register the Color Settings Page
 
-Register the Simple Language color settings page with the IntelliJ Platform in the plugin configuration file using the `com.intellij.colorSettingsPage` extension point.
+Register the Simple Language color settings page with the IntelliJ Platform in the plugin configuration file using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.colorSettingsPage"/></include>.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

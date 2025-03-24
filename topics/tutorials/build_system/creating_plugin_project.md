@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Creating a Plugin Gradle Project
 
@@ -19,11 +19,11 @@ This documentation page describes a Gradle-based plugin project generated with t
 
 ## Creating a Plugin with New Project Wizard
 
-<include from="snippets.md" element-id="gradlePluginVersion"/>
+<include from="snippets.topic" element-id="gradlePluginVersion"/>
 
 <procedure title="Create IDE Plugin" id="create-ide-plugin">
 
-<include from="snippets.md" element-id="pluginDevKitAvailability"/>
+<include from="snippets.topic" element-id="pluginDevKitAvailability"/>
 
 Launch the <control>New Project</control> wizard via the <ui-path>File | New | Project...</ui-path> action and provide the following information:
 1. Select the <control>IDE Plugin</control> generator type from the list on the left.
@@ -49,7 +49,7 @@ Launch the <control>New Project</control> wizard via the <ui-path>File | New | P
 7. Select <control>JDK</control> 17.
    This JDK will be the default JRE used to run Gradle, and the JDK version used to compile the plugin sources.
 
-<include from="snippets.md" element-id="apiChangesJavaVersion"/>
+<include from="snippets.topic" element-id="apiChangesJavaVersion"/>
 
 8. After providing all the information, click the <control>Create</control> button to generate the project.
 
@@ -183,7 +183,7 @@ Gradle projects are run from the IDE's Gradle Tool window.
 ### Adding Code to the Project
 
 Before running [`my_plugin`](#components-of-a-wizard-generated-gradle-intellij-platform-plugin), some code can be added to provide simple functionality.
-See the [Creating Actions](working_with_custom_actions.md) tutorial for step-by-step instructions for adding a menu action.
+See the [](creating_actions_tutorial.md) tutorial for step-by-step instructions for adding a menu action.
 
 ### Executing the Plugin
 

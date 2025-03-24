@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Run Configurations
 
@@ -57,7 +57,7 @@ A single configuration type can have multiple configuration factories, e.g., the
 
 To see the list of configuration types available in the IDE, go to <ui-path>Run \| Edit Configurations</ui-path> and click the <control>Add</control> button (<control>+</control> icon).
 
-`ConfigurationType` implementations are registered in the `com.intellij.configurationType` extension point (EP).
+`ConfigurationType` implementations are registered in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.configurationType"/></include>.
 
 Standard base classes for configuration type implementations are:
 * [`SimpleConfigurationType`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/runConfigurationType.kt) - used for configuration types that have a single configuration factory.
@@ -130,7 +130,8 @@ If a plugin requires creating run configurations programmatically, .e.g, from a 
 ## Creating a Run Configuration from Context
 
 Run configurations can be created and run from context, e.g., by right-clicking an application main method, a test class/method, etc., directly in the editor or the project view.
-This is achieved by implementing [`LazyRunConfigurationProducer`](%gh-ic%/platform/lang-api/src/com/intellij/execution/actions/LazyRunConfigurationProducer.kt) and registering it in `com.intellij.runConfigurationProducer` EP.
+This is achieved by implementing [`LazyRunConfigurationProducer`](%gh-ic%/platform/lang-api/src/com/intellij/execution/actions/LazyRunConfigurationProducer.kt) and registering
+it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.runConfigurationProducer"/></include>.
 
 The extension requires implementing the following methods:
 * `getConfigurationFactory()` - returns the factory creating run configurations of the type specified in the extension class implementation.
@@ -227,8 +228,8 @@ Plugins can modify existing run configurations before they are run, e.g., by add
 However, there is no single platform-wide extension point, and different IDEs provide different configuration base classes and extension points, allowing for their modifications.
 To see what is possible in your case, check the [`RunConfigurationExtensionBase`](%gh-ic%/platform/execution/src/com/intellij/execution/configuration/RunConfigurationExtensionBase.java) inheritors.
 Examples:
-* [`RunConfigurationExtension`](%gh-ic%/java/execution/impl/src/com/intellij/execution/RunConfigurationExtension.java) implementations registered in `com.intellij.runConfigurationExtension` EP allow for modifying Java run configurations extending [`RunConfigurationBase`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RunConfigurationBase.java).
-* [`PythonRunConfigurationExtension`](%gh-ic%/python/src/com/jetbrains/python/run/PythonRunConfigurationExtension.java) implementations registered in `Pythonid.runConfigurationExtension` EP allow for modifying configuration extending [`AbstractPythonRunConfiguration`](%gh-ic%/python/src/com/jetbrains/python/run/AbstractPythonRunConfiguration.java)
+* [`RunConfigurationExtension`](%gh-ic%/java/execution/impl/src/com/intellij/execution/RunConfigurationExtension.java) implementations registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.runConfigurationExtension"/></include> allow for modifying Java run configurations extending [`RunConfigurationBase`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RunConfigurationBase.java).
+* [`PythonRunConfigurationExtension`](%gh-ic%/python/src/com/jetbrains/python/run/PythonRunConfigurationExtension.java) implementations registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="Pythonid.runConfigurationExtension"/></include> allow for modifying configuration extending [`AbstractPythonRunConfiguration`](%gh-ic%/python/src/com/jetbrains/python/run/AbstractPythonRunConfiguration.java)
 etc.
 
 ## Referencing Environment Variables in Run Configurations
@@ -243,7 +244,8 @@ To substitute variable references with the actual references, it is required to 
 Sometimes, it is necessary to perform specific tasks before a configuration is actually run, e.g., build the project, run a build tool preparation task, launch a web browser, etc.
 Plugins can provide custom tasks that can be added by users to a created run configuration.
 
-To provide a custom task, implement [`BeforeRunTaskProvider`](%gh-ic%/platform/execution/src/com/intellij/execution/BeforeRunTaskProvider.java) and register it in `com.intellij.stepsBeforeRunProvider` EP.
+To provide a custom task, implement [`BeforeRunTaskProvider`](%gh-ic%/platform/execution/src/com/intellij/execution/BeforeRunTaskProvider.java) and register it
+in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.stepsBeforeRunProvider"/></include>.
 The provider implementation is responsible for creating a task instance for a given run configuration and executing the task.
 
 If access to indexes is not required, it can be marked [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI).
@@ -274,4 +276,5 @@ See their Javadocs for the details.
 
 ### Providing Custom Macros
 
-If the predefined list of macros is insufficient, a plugin can provide custom macros by extending [`Macro`](%gh-ic%/platform/macro/src/com/intellij/ide/macro/Macro.java) and registering it in the `com.intellij.macro` EP.
+If the predefined list of macros is insufficient, a plugin can provide custom macros by extending [`Macro`](%gh-ic%/platform/macro/src/com/intellij/ide/macro/Macro.java) and
+registering it in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.macro"/></include>.

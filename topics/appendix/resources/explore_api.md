@@ -2,6 +2,10 @@
 
 # Explore the IntelliJ Platform API
 
+<web-summary>
+Strategies and tools for exploring the IntelliJ Platform API, navigate extension points, search code, and find examples.
+</web-summary>
+
 <link-summary>Strategies and tools for exploring the API.</link-summary>
 
 Sometimes it can be challenging to implement plugin features for the IntelliJ Platform,
@@ -117,7 +121,7 @@ to limit your searches, for example, to only <path>idea-xxx.jar</path> files.
 ### Inspect the Contents of Packages
 
 If you open an EP's interface or abstract class, it is always helpful to inspect the contents of its package.
-For instance, the interface of the `com.intellij.sdkType` EP lives in the `com.intellij.openapi.projectRoots` package.
+For instance, the interface of the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.sdkType"/></include> lives in the `com.intellij.openapi.projectRoots` package.
 Inspecting the contents of this package shows many related classes that will be useful if you are implementing this feature.
 
 ### Search for Symbol Names

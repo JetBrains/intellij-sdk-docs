@@ -8,7 +8,7 @@
 
 <var name="productID" value="objc"/>
 <var name="marketplaceProductID" value="appcode"/>
-<include from="snippets.md" element-id="jetbrainsIDE_TLDR"/>
+<include from="snippets.topic" element-id="jetbrainsIDE_TLDR"/>
 
 Plugin projects targeting [AppCode](https://www.jetbrains.com/objc/) can be developed using IntelliJ IDEA with the [](tools_gradle_intellij_plugin.md).
 

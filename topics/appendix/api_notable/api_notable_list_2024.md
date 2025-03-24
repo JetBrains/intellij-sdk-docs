@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Notable Changes in IntelliJ Platform and Plugins API 2024.*
 
@@ -6,7 +6,7 @@
 
 _Early Access Program_ (EAP) releases of upcoming versions are available [here](https://eap.jetbrains.com).
 
-<include from="snippets.md" element-id="gradlePluginVersion"/>
+<include from="snippets.topic" element-id="gradlePluginVersion"/>
 
 ## 2024.3
 
@@ -49,7 +49,7 @@ Testing: indexes
 : Indexes are now built asynchronously during tests, see [](testing_faq.md#how-to-handle-indexing).
 
 `ToggleAction` in popups
-: No longer closes popups, see [](basic_action_system.md#toggleActionPopupMenus)
+: No longer closes popups, see [](action_system.md#toggleActionPopupMenus)
 
 ### Kotlin Plugin
 

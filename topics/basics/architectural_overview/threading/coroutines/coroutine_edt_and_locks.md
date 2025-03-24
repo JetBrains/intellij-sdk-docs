@@ -2,6 +2,8 @@
 
 # Coroutines on EDT and Locks
 
+<include from="coroutines_snippets.md" element-id="learnCoroutines"/>
+
 Sometimes, errors similar to the below can be observed in the IDE:
 
 ```
@@ -187,4 +189,4 @@ Avoid using them in plugin code.
 
 Use it only as a temporal solution if it is hard to quickly rewrite code which checks for write intent lock.
 
-<include from="snippets.md" element-id="missingContent"/>
+<include from="snippets.topic" element-id="missingContent"/>

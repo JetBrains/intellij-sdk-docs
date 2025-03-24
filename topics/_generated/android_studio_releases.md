@@ -2,10 +2,20 @@
 
 <snippet id="releases_table">
 
+## 2025.*
+
+| Release Name | Channel | Version | IntelliJ IDEA Version | Release Date |
+|--------------|---------|---------|-----------------------|--------------|
+| <p><b>Narwhal </b></p><p> 2025.1.1 Canary 2</p> | ![Canary][canary] | **2025.1.1.2**<p>AI&#8209;251.23774.16.2511.13244498</p> | **null**<p>251.23774.16</p> | Mar&nbsp;20,&nbsp;2025 |
+| <p><b>Narwhal </b></p><p> 2025.1.1 Canary 1</p> | ![Canary][canary] | **2025.1.1.1**<p>AI&#8209;251.23774.16.2511.13239840</p> | **null**<p>251.23774.16</p> | Mar&nbsp;19,&nbsp;2025 |
+
+
+
 ## 2024.*
 
 | Release Name | Channel | Version | IntelliJ IDEA Version | Release Date |
 |--------------|---------|---------|-----------------------|--------------|
+| <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 Beta 1</p> | ![Beta][beta] | **2024.3.2.9**<p>AI&#8209;243.25659.59.2432.13218502</p> | **2024.3.5**<p>243.25659.59</p> | Mar&nbsp;18,&nbsp;2025 |
 | <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 Canary 8</p> | ![Canary][canary] | **2024.3.2.8**<p>AI&#8209;243.24978.46.2432.13174079</p> | **2024.3.3**<p>243.24978.46</p> | Mar&nbsp;7,&nbsp;2025 |
 | <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 Canary 7</p> | ![Canary][canary] | **2024.3.2.7**<p>AI&#8209;243.24978.46.2432.13133389</p> | **2024.3.3**<p>243.24978.46</p> | Feb&nbsp;27,&nbsp;2025 |
 | <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 Canary 6</p> | ![Canary][canary] | **2024.3.2.6**<p>AI&#8209;243.24978.46.2432.13093109</p> | **2024.3.3**<p>243.24978.46</p> | Feb&nbsp;21,&nbsp;2025 |

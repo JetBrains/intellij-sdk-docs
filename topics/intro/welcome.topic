@@ -13,54 +13,71 @@
         </description>
 
         <spotlight>
-            <a href="plugins_quick_start.md" type="start"
-               summary="Basics of working with the IntelliJ Platform and creating plugins."/>
-            <a href="about.md" type="library" summary="Introduction and overview of contents.">The IntelliJ
-                Platform SDK</a>
+            <card href="plugins_quick_start.md" badge="start"
+                  summary="Basics of working with the IntelliJ Platform and creating plugins."/>
+            <card href="about.md" badge="library"
+                  summary="Introduction and overview of contents.">The IntelliJ Platform SDK
+            </card>
         </spotlight>
 
         <primary>
             <title>Get started</title>
-            <a href="developing_plugins.md" type="development" summary="Get started building IDE plugins."/>
-            <a href="themes_getting_started.md" type="creative" summary="Customize the IDE appearance.">Developing a
-                Theme</a>
+            <card href="developing_plugins.md" badge="development"
+                  summary="Get started building IDE plugins."/>
+            <card href="themes_getting_started.md" badge="creative"
+                  summary="Customize the IDE appearance.">Developing a Theme
+            </card>
         </primary>
 
         <secondary>
             <title>Explore and Learn</title>
-            <a href="getting_help.topic" type="community"
-               summary="Join our community of plugin developers, ask questions and provide feedback."/>
-            <a href="explore_api.md" type="search" summary="Strategies and tools for exploring the API."/>
-            <a href="useful_links.md" summary="Useful tooling, plugins and repositories."/>
-            <a href="learning_resources.md" summary="Articles and webinars about plugin development."/>
-            <a href="https://blog.jetbrains.com/platform/"
-               summary="All about plugin and extension development for JetBrains products.">JetBrains Platform Blog</a>
-            <a href="https://www.youtube.com/playlist?list=PLQ176FUIyIUZRWGCFY7G9V5zaM00THymY"
-               summary="YouTube playlist with recorded webinars.">Busy Plugin Developers - Playlist</a>
+            <card href="getting_help.topic" badge="community"
+                  summary="Join our community of plugin developers, ask questions and provide feedback."/>
+            <card href="explore_api.md" badge="search"
+                  summary="Strategies and tools for exploring the API."/>
+            <card href="useful_links.md"
+                  summary="Useful tooling, plugins and repositories."/>
+            <card href="learning_resources.md"
+                  summary="Articles and webinars about plugin development."/>
+            <card href="https://blog.jetbrains.com/platform/"
+                  summary="All about plugin and extension development for JetBrains products.">JetBrains Platform Blog
+            </card>
+            <card href="https://www.youtube.com/playlist?list=PLQ176FUIyIUZRWGCFY7G9V5zaM00THymY"
+                  summary="YouTube playlist with recorded webinars.">Busy Plugin Developers - Playlist
+            </card>
         </secondary>
 
         <misc>
             <cards>
                 <title>Staying up to date</title>
-                <a href="content_updates.md" summary="Latest updates to the documentation."/>
-                <a href="https://jb.gg/mp-updates" summary="Subscribe to receive news and announcements.">Marketplace
-                    Developer News</a>
+                <card href="content_updates.md"
+                      summary="Latest updates to the documentation."/>
+                <card href="https://jb.gg/mp-updates"
+                      summary="Subscribe to receive news and announcements.">Marketplace Developer News
+                </card>
             </cards>
 
             <cards narrow="true">
                 <title>Tracking API Changes</title>
-                <a href="verifying_plugin_compatibility.md" summary="Using Plugin Verifier and IDE features.">Compatibility
-                    Tooling</a>
-                <a href="api_changes_list.md" summary="Known breaking changes.">Incompatible API Changes</a>
-                <a href="api_notable.md" summary="Notable changes and new features.">Notable API Changes</a>
+                <card href="verifying_plugin_compatibility.md"
+                      summary="Using Plugin Verifier and IDE features.">Compatibility Tooling
+                </card>
+                <card href="api_changes_list.md"
+                      summary="Known breaking changes.">Incompatible API Changes
+                </card>
+                <card href="api_notable.md"
+                      summary="Notable changes and new features.">Notable API Changes
+                </card>
             </cards>
 
             <cards>
                 <title>Tools</title>
-                <a href="https://jb.gg/ipe" summary="Explore extensions and listeners in open source plugins.">IntelliJ
-                    Platform Explorer</a>
-                <a href="https://plugins.jetbrains.com/plugin-ideas/"
-                   summary="Browse and vote on suggestions for new plugins.">Plugin Ideas</a>
+                <card href="https://jb.gg/ipe"
+                      summary="Explore extensions and listeners in open source plugins.">IntelliJ Platform Explorer
+                </card>
+                <card href="https://plugins.jetbrains.com/plugin-ideas/"
+                      summary="Browse and vote on suggestions for new plugins.">Plugin Ideas
+                </card>
             </cards>
         </misc>
 

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # User Interface Components
 
@@ -34,7 +34,7 @@ See [](UI_kit.md) when using [Figma](https://www.figma.com) to design UI.
 
 The following components are particularly noteworthy:
 
-* Menus and toolbars are built using [](basic_action_system.md)
+* Menus and toolbars are built using [](action_system.md)
 * [](tool_windows.md)
 * [](dialog_wrapper.md)
 * [](popups.md)
@@ -49,4 +49,4 @@ The following components are particularly noteworthy:
 
 See also [](ui_faq.md).
 
-<include from="snippets.md" element-id="missingContent"/>
+<include from="snippets.topic" element-id="missingContent"/>

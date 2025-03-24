@@ -1,11 +1,14 @@
 <!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 #  Embedded Browser (JCEF)
+
 <primary-label ref="2020.2"/>
 
 <link-summary>Embedding Chromium-based browser in IDE.</link-summary>
 
-> JCEF is available since 2020.1 as an experimental feature and is enabled by default since 2020.2.
+<web-summary>
+Embededding a Chromium-based browser in IntelliJ IDEA using JCEF for rendering HTML, previewing content, and creating custom web-based components.
+</web-summary>
 
 JCEF (Java Chromium Embedded Framework) is a Java port of [CEF](https://bitbucket.org/chromiumembedded/cef/wiki/Home).
 It allows for embedding [Chromium-based browsers](https://www.chromium.org/Home) in Swing applications.
@@ -16,17 +19,23 @@ Embedding of the browser component inside the IDE can be used for:
 - previewing generated HTML (e.g., from Markdown)
 - creating custom web-based components (e.g., diagram preview, image browser, etc.)
 
-It is recommended to implement UI in the default IntelliJ Platform UI framework, which is Swing.
+It is recommended to implement UI in the default IntelliJ Platform [UI framework](user_interface_components.md), which is Swing.
 Consider using the JCEF approach only in cases when a plugin needs to display HTML documents or the standard approach for creating UI is not enough.
+
+## JavaFX
+{collapsible="true" default-state="collapsed"}
+
+<primary-label ref="Deprecated"/>
 
 JCEF replaces JavaFX, which was used to render web content in IDEs in the past.
 
-> Using JavaFX in 3rd party plugins has been deprecated since 2020.2.
-> To continue using JavaFX in 2020.2 or later, add an explicit [dependency](plugin_dependencies.md) on [JavaFX Runtime for Plugins](https://plugins.jetbrains.com/plugin/14250-javafx-runtime-for-plugins) (not recommended).
+Using JavaFX in 3rd party plugins has been deprecated since 2020.2.
+To continue using JavaFX in 2020.2 or later, add an explicit [dependency](plugin_dependencies.md) on [JavaFX Runtime for Plugins](https://plugins.jetbrains.com/plugin/14250-javafx-runtime-for-plugins) (not recommended).
+See [JavaFX and JCEF in the IntelliJ Platform](https://blog.jetbrains.com/platform/2020/07/javafx-and-jcef-in-the-intellij-platform/) blog post for the details.
+
+> This plugin is no longer available starting with 2025.1, see this [announcement](https://platform.jetbrains.com/t/javafx-runtime-for-plugins-is-deprecated-in-2025-1/944).
 >
-> See [JavaFX and JCEF in the IntelliJ Platform](https://blog.jetbrains.com/platform/2020/07/javafx-and-jcef-in-the-intellij-platform/) blog post for the details.
->
-{style="warning" title="Using JavaFX"}
+{style="warning"}
 
 ## Enabling JCEF
 
@@ -61,7 +70,7 @@ Using JCEF requires using a dedicated JetBrains Runtime and enabling JCEF in the
 The core JCEF class exposed by IntelliJ Platform API is [`JBCefApp`](%gh-ic%/platform/ui.jcef/jcef/JBCefApp.java).
 It is responsible for initializing JCEF context and managing its lifecycle.
 
-There is no need for initializing `JBCefApp` explicitly.
+There is no need to initialize `JBCefApp` explicitly.
 It is done when `JBCefApp.getInstance()` is called, or when [browser](#browser) or [client](#browser-client) objects are created.
 
 Before using JCEF API, it is required to check whether JCEF is supported in the running IDE.
@@ -115,7 +124,7 @@ Browser client provides an interface for setting up [handlers](#event-handlers) 
 Handlers allow reacting to these events in plugin code and changing the browser's behavior.
 Each browser is tied to a single client, and a single client can be shared with multiple browser instances.
 
-Browser client is represented by [`JBCefClient`](%gh-ic%/platform/ui.jcef/jcef/JBCefClient.java), which is a wrapper for JCEF's [`CefClient`](%gh-jcef-master%/org/cef/CefClient.java).
+Browser client is represented by [`JBCefClient`](%gh-ic%/platform/ui.jcef/jcef/JBCefClient.java), which is a wrapper for the JCEF [`CefClient`](%gh-jcef-master%/org/cef/CefClient.java).
 `JBCefClient` allows registering multiple handlers of the same type, which is not possible with `CefClient`.
 To access the underlying `CefClient` and its API, call `JBCefClient.getCefClient()`.
 
@@ -131,7 +140,7 @@ To access the client associated with a browser, call `JBCefBrowser.getJBCefClien
 
 ### Event Handlers
 
-JCEF API provides various event handler interfaces that allow handling a wide set of events emitted by the browser.
+The JCEF API provides various event handler interfaces that allow handling a wide set of events emitted by the browser.
 Example handlers:
 - [`CefLoadHandler`](%gh-jcef-master%/org/cef/handler/CefLoadHandler.java) - handles browser loading events.<br/>
   **Example:** Implement `CefLoadHandler.onLoadEnd()` to [execute scripts](#executing-javascript) after a document is loaded.
@@ -217,7 +226,7 @@ browser.getCefBrowser().executeJavaScript( // 6
 
 1. Create a ` JBCefQuery ` instance. Make sure that the passed browser instance is of the type `JBCefBrowserBase` (casting may be necessary).
 2. Add a handler implementing a plugin code to be executed.
-   Example implementation opens a link in the editor or an external browser depending on whether the link is local or external.
+   The example implementation opens a link in the editor or an external browser depending on whether the link is local or external.
 3. Handlers can optionally return a `JBCefJSQuery.Response` object, which holds information about success or error occurred on the plugin code side.
    It can be [handled](#handling-query-response) in the browser if needed.
 4. Execute JavaScript, which creates a custom `openLink` function.
@@ -232,7 +241,7 @@ browser.getCefBrowser().executeJavaScript( // 6
 
 #### Handling Query Response
 
-In the example above, there is no need to return response value to the browser from a query handler.
+In the example above, there is no need to return the response value to the browser from a query handler.
 If it is required to handle response:
 1. Instead of returning `null` as in 3., return a `JBCefJSQuery.Response` instance, for example, `new JBCefJSQuery.Response("OK")`.
 2. Instead of injecting code without callbacks with `JBCefJSQuery.inject("link")` as in 5., use `JBCefJSQuery.inject(queryResult, onSuccessCallback, onFailureCallback)`, for example:
@@ -285,7 +294,7 @@ The default port can be changed via the registry key `ide.browser.jcef.debug.por
 JavaScript debugger in IntelliJ IDEA Ultimate can thus be used to debug JavaScript code running in the IDE via the Chrome DevTools.
 Use the [<control>Attach to Node.js/Chrome</control>](https://www.jetbrains.com/help/idea/run-debug-configuration-node-js-remote-debug.html) configuration with a proper port number.
 
-Also, JCEF provides a default Chrome DevTools frontend (similar to the one in the Chrome browser) that can be opened from the JCEF's browser component context menu via <ui-path>Open DevTools</ui-path>.
+Also, JCEF provides a default Chrome DevTools frontend (similar to the one in the Chrome browser) that can be opened from the JCEF browser component context menu via <ui-path>Open DevTools</ui-path>.
 The menu item is available in the [internal mode](enabling_internal.md) only, and since version 2021.3, the registry key `ide.browser.jcef.contextMenu.devTools.enabled` must be set to `true` explicitly.
 
 ### Accessing DevTools Programmatically
@@ -311,4 +320,4 @@ To open DevTools in a separate window, call `JBCefBrowser.openDevtools()`.
 - [Excalidraw Integration](https://github.com/bric3/excalidraw-jetbrains-plugin) plugin
 - [Creating IntelliJ plugin with WebView](https://medium.com/virtuslab/creating-intellij-plugin-with-webview-3b27c3f87aea) blog post
 
-<include from="snippets.md" element-id="missingContent"/>
+<include from="snippets.topic" element-id="missingContent"/>

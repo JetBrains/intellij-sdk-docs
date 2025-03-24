@@ -14,7 +14,7 @@
 
 100 Extension Points and 32 Listeners for Android Plugin
 
-<include from="snippets.md" element-id="ep_list_legend"/>
+<include from="snippets.topic" element-id="ep_list_legend"/>
 
 ## Android Plugin
 

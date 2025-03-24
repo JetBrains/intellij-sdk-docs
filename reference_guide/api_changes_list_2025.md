@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Incompatible Changes in IntelliJ Platform and Plugins API 2025.*
 
@@ -63,11 +63,11 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 <link-summary>List of known Breaking API Changes in 2025.*</link-summary>
 
-<include from="snippets.md" element-id="apiChangesHeader"/>
+<include from="snippets.topic" element-id="apiChangesHeader"/>
 
-<include from="snippets.md" element-id="apiChangesJavaVersion"/>
+<include from="snippets.topic" element-id="apiChangesJavaVersion"/>
 
-<include from="snippets.md" element-id="gradlePluginVersion"/>
+<include from="snippets.topic" element-id="gradlePluginVersion"/>
 
 ## 2025.2
 
@@ -79,9 +79,66 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 Code scheduled with `SwingUtilities.invokeLater` and `SwingUtilities.invokeAndWait` does not hold the write-intent lock
 : Consider using an explicit wrapping with [`ReadAction.compute()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) or [`WriteAction.run(ThrowableRunnable<E>)`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/WriteAction.java).
+See [](threading_model.md).
 
 Coroutines running under `Dispatchers.Main` do not hold the write-intent lock
 : To restore the old behavior, consider using `Dispatchers.EDT`.
+See [](threading_model.md).
+
+`com.intellij.psi.xml.XmlTokenType` class now interface
+: Use `XmlTokenType` constants directly.
+
+Class `com.intellij.psi.xml.XmlElementType` no longer extends `com.intellij.psi.xml.XmlTokenType`
+: Update code usages.
+
+`filetype.xml.description` property removed from resource bundle `messages.XmlPsiBundle`
+: Use property from resource bundle `messages.XmlParserBundle`
+
+`xml.parsing.closing.tag.matches.nothing` property removed from resource bundle `messages.XmlPsiBundle`
+: Use property from resource bundle `messages.XmlParserBundle`
+
+`xml.parsing.unclosed.attribute.value` property removed from resource bundle `messages.XmlPsiBundle`
+: Use property from resource bundle `messages.XmlParserBundle`
+
+`xml.parsing.unescaped.ampersand.or.nonterminated.character.entity.reference` property removed from resource bundle `messages.XmlPsiBundle`
+: Use property from resource bundle `messages.XmlParserBundle`
+
+`com.jediterm.terminal.model.TextBufferChangesListener.historyCleared()` abstract method added
+: Must be implemented.
+
+`com.intellij.terminal.ui.TerminalWidget.connectToSession(TerminalSession session)` abstract method added
+: Must be implemented.
+
+`com.intellij.terminal.ui.TerminalWidget.getSession()` abstract method added
+: Must be implemented.
+
+`com.intellij.terminal.ui.TerminalWidget.getTerminalSizeInitializedFuture()` abstract method added
+: Must be implemented.
+
+### Database Plugin 2025.1
+
+`com.intellij.database.view.models` package removed
+: Old table modification dialog was finally removed. Use `com.intellij.database.actions.ddl.ModifyObjectAction.showDialog()` for new dialog invocation.
+
+`com.intellij.database.schemaEditor.model.DeObject` class removed
+: Old table modification dialog was finally removed. Use `com.intellij.database.actions.ddl.ModifyObjectAction.showDialog()` for new dialog invocation.
+
+`com.intellij.database.view.editors.DatabaseEditorContext` class removed
+: Old table modification dialog was finally removed. Use `com.intellij.database.actions.ddl.ModifyObjectAction.showDialog()` for new dialog invocation.
+
+`com.intellij.database.view.editors.DatabaseTableEditor` class removed
+: Old table modification dialog was finally removed. Use `com.intellij.database.actions.ddl.ModifyObjectAction.showDialog()` for new dialog invocation.
+
+`com.intellij.database.view.ui.DbRefactoringDialogHelper` class removed
+: Old table modification dialog was finally removed. Use `com.intellij.database.actions.ddl.ModifyObjectAction.showDialog()` for new dialog invocation.
+
+`com.intellij.database.view.ui.DbTableDialog` class removed
+: Old table modification dialog was finally removed. Use `com.intellij.database.actions.ddl.ModifyObjectAction.showDialog()` for new dialog invocation.
+
+### External System 2025.1
+
+`com.intellij.openapi.externalSystem.service.internal.ExternalSystemProcessingManager` class now interface
+: Recompile code usages.
 
 ### Kotlin Plugin 2025.1
 
@@ -92,4 +149,35 @@ Coroutines running under `Dispatchers.Main` do not hold the write-intent lock
 : This class was removed from the Kotlin compiler and is no longer available.
 
 `org.jetbrains.kotlin.ir.builders.TranslationPluginContext` class removed
-: This class was removed from the Kotlin compiler and is no longer available. 
+: This class was removed from the Kotlin compiler and is no longer available.
+
+`org.jetbrains.kotlin.analysis.decompiler.stub.file.ClsClassFinder.isKotlinInternalCompiledFile$default(ClsClassFinder, VirtualFile, byte[], int, Object)` method removed
+: Recompile code usages.
+
+### Remote Development 2025.1
+
+`com.jetbrains.rd.ide.model.AddToGroupRuleModel` class removed
+: Remove all usages.
+
+`com.jetbrains.rd.ide.model.ActionConstraintModel` class removed
+: Remove all usages.
+
+### JavaScript and TypeScript Plugin 2025.1
+
+`com.intellij.lang.javascript.service.JSAsyncLanguageServiceBase.JSLanguageServiceInfoReporter` class moved to package `com.intellij.lang.javascript.service`
+: Update all usages
+
+`com.intellij.lang.javascript.JSElementTypes.toModuleContentType(IElementType type)` method removed
+: Use `com.intellij.lang.javascript.JSModuleContentType.toModuleContentType(IElementType type)` method instead
+
+`com.intellij.lang.javascript.BaseJSTokenTypes` class removed
+: Use `com.intellij.lang.javascript.JSTokenTypes` class instead
+
+`com.intellij.lang.javascript.highlighting.TypeScriptHighlighter(DialectOptionHolder dialectOptionsHolder, boolean skipKeywordHighlights)` constructor removed
+: Use constructor without `skipKeywordHighlights` parameter
+
+`com.intellij.lang.javascript.dialects.ECMA6SyntaxHighlighterFactory.ECMA6SyntaxHighlighter(DialectOptionHolder dialectOptionsHolder, boolean skipKeywordHighlights)` constructor removed
+: Use constructor without `skipKeywordHighlights` parameter
+
+`com.intellij.lang.javascript.highlighting.JSHighlighter(DialectOptionHolder dialectOptionsHolder, boolean skipKeywordHighlights)` constructor removed
+: Use constructor without `skipKeywordHighlights` parameter

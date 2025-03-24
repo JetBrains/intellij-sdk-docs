@@ -8,7 +8,7 @@ This page lists notable additions and updates to the SDK documentation and [](co
 
 See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/main) ([RSS](https://github.com/JetBrains/intellij-sdk-docs/commits/main.atom)) for a detailed changelog.
 
-<include from="snippets.md" element-id="subscribeNews"/>
+<include from="snippets.topic" element-id="subscribeNews"/>
 
 ## 2025
 
@@ -20,7 +20,7 @@ Integration Testing
 
 Minor Changes and Additions
 :
-- Document [](basic_action_system.md#action-id-code-insight) added in 2025.1.
+- Document [](action_system.md#action-id-code-insight) added in 2025.1.
 
 ### February
 {february-25}
@@ -133,7 +133,7 @@ Language Server Protocol (LSP)
 
 Minor Changes and Additions
 :
-- Add information about [executing actions programmatically](basic_action_system.md#executing-actions-programmatically).
+- Add information about [executing actions programmatically](action_system.md#executing-actions-programmatically).
 - Please see [](tools_gradle_intellij_plugin.md#attaching-sources) on how to set up 2023.2/3 IDEs for Gradle plugin projects.
 
 ### October
@@ -238,7 +238,7 @@ Plugin User Experience
 
 Minor Changes and Additions
 :
-- Add information about threading in Actions in [](basic_action_system.md#principal-implementation-overrides).
+- Add information about threading in Actions in [](action_system.md#principal-implementation-overrides).
 
 ### October
 {#october-22}
@@ -282,7 +282,7 @@ Status Bar Widgets
 
 Minor Changes and Additions
 :
-- Add overview of [](basic_action_system.md#useful-action-base-classes).
+- Add overview of [](action_system.md#useful-action-base-classes).
 
 ### June
 {#june-22}

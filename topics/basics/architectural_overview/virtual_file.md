@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Virtual Files
 
@@ -14,13 +14,13 @@ Contents of a `VirtualFile` are treated as a stream of bytes, but concepts like 
 
 ## How do I get a virtual file?
 
-| Context                          | API                                                                                                                                                                                                                                                                                                                                           |
-|----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Action](basic_action_system.md) | <p>[`AnActionEvent.getData(PlatformDataKeys.VIRTUAL_FILE)`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)</p><p>[`AnActionEvent.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY)`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java) for multiple selection</p> |
-| [Document](documents.md)         | [`FileDocumentManager.getFile()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileEditor/FileDocumentManager.java)                                                                                                                                                                                                                     |
-| [PSI File](psi_files.md)         | [`PsiFile.getVirtualFile()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiFile.java) (may return `null` if the PSI file exists only in memory)                                                                                                                                                                                           |
-| File Name                        | [`FilenameIndex.getVirtualFilesByName()`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/FilenameIndex.java)                                                                                                                                                                                                                       |
-| Local File System Path           | <p>[`LocalFileSystem.findFileByIoFile()`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/vfs/LocalFileSystem.java)</p><p>[`VirtualFileManager.findFileByNioPath()`/`refreshAndFindFileByNioPath()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileManager.java) (2020.2+)</p>                                     |
+| Context                    | API                                                                                                                                                                                                                                                                                                                                           |
+|----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Action](action_system.md) | <p>[`AnActionEvent.getData(PlatformDataKeys.VIRTUAL_FILE)`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)</p><p>[`AnActionEvent.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY)`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java) for multiple selection</p> |
+| [Document](documents.md)   | [`FileDocumentManager.getFile()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileEditor/FileDocumentManager.java)                                                                                                                                                                                                                     |
+| [PSI File](psi_files.md)   | [`PsiFile.getVirtualFile()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiFile.java) (may return `null` if the PSI file exists only in memory)                                                                                                                                                                                           |
+| File Name                  | [`FilenameIndex.getVirtualFilesByName()`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/FilenameIndex.java)                                                                                                                                                                                                                       |
+| Local File System Path     | <p>[`LocalFileSystem.findFileByIoFile()`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/vfs/LocalFileSystem.java)</p><p>[`VirtualFileManager.findFileByNioPath()`/`refreshAndFindFileByNioPath()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileManager.java) (2020.2+)</p>                                     |
 
 ## What can I do with it?
 
@@ -84,7 +84,8 @@ Use [`ProjectLocator`](%gh-ic%/platform/core-api/src/com/intellij/openapi/projec
 
 ## How do I extend VFS?
 
-To provide an alternative file system implementation (for example, an FTP file system), implement the [`VirtualFileSystem`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileSystem.java) class (most likely you'll also need to implement `VirtualFile`), and register your implementation via `com.intellij.virtualFileSystem` extension point (2019.2 and later) or [application component](plugin_components.md) for earlier versions.
+To provide an alternative file system implementation (for example, an FTP file system), implement the [`VirtualFileSystem`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileSystem.java) class (most likely you'll also need to implement `VirtualFile`),
+and register your implementation via <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.virtualFileSystem"/></include>.
 
 To hook into operations performed in the local file system (for example, when developing a version control system integration that needs custom rename/move handling), implement [`LocalFileOperationsHandler`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/vfs/LocalFileOperationsHandler.java) and register it via `LocalFileSystem.registerAuxiliaryFileOperationsHandler()`.
 

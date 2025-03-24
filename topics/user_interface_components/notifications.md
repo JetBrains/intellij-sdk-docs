@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Notifications
 
@@ -43,7 +43,8 @@ Other [`HintManager`](%gh-ic%/platform/platform-api/src/com/intellij/codeInsight
 
 Notifications that appear at the top of the file editor are a great way to ask the user to take an important action that would otherwise impede their experience if ignored (e.g., missing SDK, setup/project configuration requiring user input).
 
-Register an implementation of [`EditorNotificationProvider`](%gh-ic%/platform/platform-api/src/com/intellij/ui/EditorNotificationProvider.java) using `com.intellij.editorNotificationProvider` extension point.
+Register an implementation of [`EditorNotificationProvider`](%gh-ic%/platform/platform-api/src/com/intellij/ui/EditorNotificationProvider.java)
+using <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.editorNotificationProvider"/></include>.
 If access to indexes is not required, it can be marked [dumb-aware](indexing_and_psi_stubs.md#DumbAwareAPI).
 
 A commonly used UI implementation is [`EditorNotificationPanel`](%gh-ic%/platform/platform-api/src/com/intellij/ui/EditorNotificationPanel.java).
@@ -98,7 +99,8 @@ Please see the following steps for setup, depending on the target platform versi
 
 <tab title="2020.3 and later">
 
-`NotificationGroup` is registered in <path>[plugin.xml](plugin_configuration_file.md)</path> using the ` com.intellij.notificationGroup ` extension point.
+`NotificationGroup` is registered in <path>[plugin.xml](plugin_configuration_file.md)</path> using
+the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.notificationGroup"/></include>.
 Use `key` to provide a localized group display name.
 
 ```xml

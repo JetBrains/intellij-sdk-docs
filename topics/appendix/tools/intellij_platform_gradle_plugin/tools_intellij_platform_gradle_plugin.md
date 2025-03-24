@@ -33,7 +33,7 @@ Learn more about it in the [Release Announcement](https://blog.jetbrains.com/pla
 IntelliJ Platform Gradle Plugin 2.x requires the following *minimal* versions:
 
 - IntelliJ Platform: **2022.3**
-- Gradle: **8.2**
+- Gradle: **8.5**
 
   See [the Gradle Installation guide](https://gradle.org/install/) on how to upgrade.
 - Java Runtime: **17**
@@ -573,4 +573,4 @@ plugins {
 </tabs>
 
 
-<include from="snippets.md" element-id="missingContent"/>
+<include from="snippets.topic" element-id="missingContent"/>

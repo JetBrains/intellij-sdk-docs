@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Notable Changes in IntelliJ Platform and Plugins API 2020.*
 
@@ -23,23 +23,23 @@ Generating HTML fragments
 : Use [`HtmlBuilder`](%gh-ic%/platform/util/src/com/intellij/openapi/util/text/HtmlBuilder.java) for generating formatted content, e.g., for [Documentation](documentation.md).
 
 Extensible HTML Lexer/Parser
-: Implement [`HtmlEmbeddedContentSupport`](%gh-ic%/xml/xml-psi-impl/src/com/intellij/html/embedding/HtmlEmbeddedContentSupport.kt) and register in `com.intellij.html.embeddedContentSupport` extension point to embed arbitrary tokens into any tag or attribute.
+: Implement [`HtmlEmbeddedContentSupport`](%gh-ic%/xml/xml-psi-impl/src/com/intellij/html/embedding/HtmlEmbeddedContentSupport.kt) and register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.html.embeddedContentSupport"/></include> to embed arbitrary tokens into any tag or attribute.
 Please note that old API from `com.intellij.lexer.BaseHtmlLexer` is no longer working.
 
 Action System
-: New features in [Action System](basic_action_system.md): `<override-text>` works now for [`<group>`](plugin_configuration_file.md#idea-plugin__actions__group) as well, [`<synonym>`](plugin_configuration_file.md#idea-plugin__actions__action__synonym) provides alternative names when searching for actions, and groups can be excluded from search results.
+: New features in [](action_system.md): `<override-text>` works now for [`<group>`](plugin_configuration_file.md#idea-plugin__actions__group) as well, [`<synonym>`](plugin_configuration_file.md#idea-plugin__actions__action__synonym) provides alternative names when searching for actions, and groups can be excluded from search results.
 
 Welcome Screen customization
-: To provide additional custom tabs, implement [`WelcomeTabFactory`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/WelcomeTabFactory.java) and register in `com.intellij.welcomeTabFactory` extension point.
+: To provide additional custom tabs, implement [`WelcomeTabFactory`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/WelcomeTabFactory.java) and register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.welcomeTabFactory"/></include>.
 
 File Type association with the IDE
 : To control file type association with the IDE in the operating system, implement [`OSFileIdeAssociation`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileTypes/OSFileIdeAssociation.java).
 
 Reader Mode customization
-: Implement [`ReaderModeProvider`](%gh-ic%/platform/editor-ui-api/src/com/intellij/codeInsight/actions/ReaderModeProvider.kt) and register in `com.intellij.readerModeProvider` extension point to apply custom settings for files rendered in reader mode. Provide `com.intellij.codeInsight.actions.ReaderModeMatcher` to disable Reader Mode for particular set of files.
+: Implement [`ReaderModeProvider`](%gh-ic%/platform/editor-ui-api/src/com/intellij/codeInsight/actions/ReaderModeProvider.kt) and register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.readerModeProvider"/></include> to apply custom settings for files rendered in reader mode. Provide `com.intellij.codeInsight.actions.ReaderModeMatcher` to disable Reader Mode for particular set of files.
 
 Text Editor customization
-: Implement [`TextEditorCustomizer`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/fileEditor/impl/text/TextEditorCustomizer.kt) and register in `com.intellij.textEditorCustomizer` extension point to customize created editors.
+: Implement [`TextEditorCustomizer`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/fileEditor/impl/text/TextEditorCustomizer.kt) and register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.textEditorCustomizer"/></include> to customize created editors.
 
 ### JavaScript Plugin 2020.3
 
@@ -63,7 +63,7 @@ Constructor Injection in `Configurable` forbidden
 : Added `VirtualFileManager.findFileByNioPath()`/`refreshAndFindFileByNioPath()`. See also `VirtualFile.toNioPath()`.
 
 Tooltip descriptions for icons
-: Register resource bundle via `com.intellij.iconDescriptionBundle` extension point to provide tooltips automatically for all [`SimpleColoredComponent`](%gh-ic%/platform/platform-api/src/com/intellij/ui/SimpleColoredComponent.java) renderers.
+: Register resource bundle via <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.iconDescriptionBundle"/></include> to provide tooltips automatically for all [`SimpleColoredComponent`](%gh-ic%/platform/platform-api/src/com/intellij/ui/SimpleColoredComponent.java) renderers.
 
 Specify incompatibility with Module
 : A plugin can [mark itself incompatible](plugin_compatibility.md#declaring-incompatibility-with-module) if IDE contains specified module.
@@ -75,16 +75,16 @@ Support for WebP images
 : The platform now bundles support for images in [WebP](https://en.wikipedia.org/wiki/WebP) format.
 
 FileType mapping via hashbang (`#!`)
-: Specify `hashBangs` attribute in `com.intellij.fileType` extension point. [Issue](https://youtrack.jetbrains.com/issue/IDEA-175757)
+: Specify `hashBangs` attribute in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.fileType"/></include>. [Issue](https://youtrack.jetbrains.com/issue/IDEA-175757)
 
 Add information to About dialog
-: Implement [`AboutPopupDescriptionProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/AboutPopupDescriptionProvider.kt) and register in `com.intellij.aboutPopupDescriptionProvider` extension point.
+: Implement [<include from="snippets.topic" element-id="ep"><var name="ep" value="AboutPopupDescriptionProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/AboutPopupDescriptionProvider.kt) and register in `com.intellij.aboutPopupDescriptionProvider"/></include>.
 
 Previewing Intention/Quick Fix
 : To support preview in intention popup, suitable [`FileModifier`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/intention/FileModifier.java) must be provided (default implementation `FileModifier.getFileModifierForPreview()` works for most cases).
 
 Delegate Run Anything/Terminal commands to IDE features
-: Switch to matching IDE feature by implementing [`TerminalShellCommandHandler`](%gh-ic%/platform/execution-impl/src/com/intellij/terminal/TerminalShellCommandHandler.kt) (`com.intellij.terminal.shellCommandHandler` extension point). [Blog post](https://blog.jetbrains.com/idea/2020/07/run-ide-features-from-the-terminal/)
+: Switch to matching IDE feature by implementing [`TerminalShellCommandHandler`](%gh-ic%/platform/execution-impl/src/com/intellij/terminal/TerminalShellCommandHandler.kt) (<include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.terminal.shellCommandHandler"/></include>). [Blog post](https://blog.jetbrains.com/idea/2020/07/run-ide-features-from-the-terminal/)
 
 Deprecating JavaFX in favor of JCEF
 : We recommend switching to [JCEF](embedded_browser_jcef.md), please see [blog post](https://blog.jetbrains.com/platform/2020/07/javafx-and-jcef-in-the-intellij-platform/) for details.
@@ -120,7 +120,7 @@ Refactoring dialog: builtin "Open in editor" option
 : Set `addOpenInEditorCheckbox` constructor parameter to enable it in custom `RefactoringDialog` implementation.
 
 Configurable status bar widgets
-: Use `com.intellij.statusBarWidgetFactory` extension point to provide widgets that can be disabled or reordered, see [](status_bar_widgets.md).
+: Use <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.statusBarWidgetFactory"/></include> to provide widgets that can be disabled or reordered, see [](status_bar_widgets.md).
 
 JCEF Support (_Experimental Feature_)
 : Allows [embedding](embedded_browser_jcef.md) Chromium-based browser in the IDE.

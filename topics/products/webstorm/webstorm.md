@@ -6,7 +6,7 @@
 
 <var name="productID" value="webstorm"/>
 <var name="marketplaceProductID" value="webstorm"/>
-<include from="snippets.md" element-id="jetbrainsIDE_TLDR"/>
+<include from="snippets.topic" element-id="jetbrainsIDE_TLDR"/>
 
 [WebStorm](https://www.jetbrains.com/webstorm/) is an IntelliJ Platform-based product.
 Plugin projects for WebStorm can be developed using [IntelliJ IDEA](idea.md).

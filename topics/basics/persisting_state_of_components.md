@@ -4,6 +4,10 @@
 
 <!-- https://jb.gg/ij-psoc -->
 
+<web-summary>
+Persisting the state of components for IntelliJ Platform plugins and sharing settings between IDE installations.
+</web-summary>
+
 <link-summary>Persisting data that is available after the IDE restarts and can be shared between different IDE installations.</link-summary>
 
 The IntelliJ Platform provides an API that allows components or services to persist their state between restarts of the IDE.
@@ -20,7 +24,7 @@ The [`PersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intel
 To use it:
 - mark a [service](plugin_services.md) (project or application-level service for storing project or application data, respectively) as implementing the `PersistentStateComponent` interface
 - define the state class
-- specify the storage location using [`@State`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/State.java)
+- specify the [storage location](#defining-the-storage-location) using [`@State`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/State.java)
 
 Note that instances of extensions can't persist their state by implementing `PersistentStateComponent`.
 If an extension needs to have a persistent state, define a separate service responsible for managing that state.
@@ -30,23 +34,60 @@ If an extension needs to have a persistent state, define a separate service resp
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
 
-The easiest way to implement a persistent state component in Kotlin is extending [`SimplePersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/SimplePersistentStateComponent.kt), which implements `PersistentStateComponent`.
+The recommended approach to implementing a persistent state component in Kotlin is to extend one of the base classes:
+1. [`SimplePersistentStateComponent`](#SimplePersistentStateComponent)
+2. [`SerializablePersistentStateComponent`](#SerializablePersistentStateComponent) (available since 2022.2)
 
-`SimplePersistentStateComponent` is parameterized by a subclass of [`BaseState`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/BaseState.kt).
+<chapter title="SimplePersistentStateComponent" id="SimplePersistentStateComponent">
+
+[`SimplePersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/SimplePersistentStateComponent.kt) is parameterized by a subclass of [`BaseState`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/BaseState.kt).
 `BaseState` provides a set of handy [property delegates](https://kotlinlang.org/docs/delegated-properties.html), which make it easy to create properties with default values.
 In addition, delegates track property modifications internally, which helps decrease calling `PersistentStateComponent.getState()` by the platform.
 
-It is recommended to create separate classes for a component and its state:
+Example:
 
 ```kotlin
 @Service
 @State(...)
-class MySettings : SimplePersistentStateComponent<MyState>(MyState())
-
-class MyState : BaseState() {
-  var value by string()
+class MySettings : SimplePersistentStateComponent<MySettings.State>(State()) {
+  class State : BaseState() {
+    var value by string("default value")
+  }
 }
 ```
+
+</chapter>
+
+<chapter title="SerializablePersistentStateComponent" id="SerializablePersistentStateComponent">
+<primary-label ref="2022.2"/>
+
+[`SerializablePersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/SerializablePersistentStateComponent.kt) is parameterized with an immutable state data class.
+
+State properties are exposed for reading and modification via persistent state component class' properties.
+The state properties are modified by copying the state and overwriting a modified value within `SerializablePersistentStateComponent.updateState()`, which ensures atomic modification and thread safety.
+
+Example:
+
+```kotlin
+@Service
+@State(...)
+class MySettings : SerializablePersistentStateComponent<MySettings.State>(State()) {
+
+  var stringValue: String
+    get() = state.stringValue
+    set(value) {
+      updateState {
+        it.copy(stringValue = value)
+      }
+    }
+
+  data class State (
+    @JvmField val stringValue: String = "default value"
+  )
+}
+```
+
+</chapter>
 
 </tab>
 <tab title="Java" group-key="java">
@@ -276,7 +317,7 @@ This is not recommended and should be avoided whenever possible.
 
 To disable the expansion of path macros ([`PathMacro`](%gh-ic%/platform/macro/src/com/intellij/ide/macro/PathMacro.java))
 in stored values, implement [`PathMacroFilter`](%gh-ic%/jps/model-serialization/src/com/intellij/openapi/application/PathMacroFilter.java)
-and register in `com.intellij.pathMacroFilter` extension point.
+and register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.pathMacroFilter"/></include>.
 
 ### Migrating Persisted Values
 

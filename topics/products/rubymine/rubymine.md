@@ -6,7 +6,7 @@
 
 <var name="productID" value="ruby"/>
 <var name="marketplaceProductID" value="ruby"/>
-<include from="snippets.md" element-id="jetbrainsIDE_TLDR"/>
+<include from="snippets.topic" element-id="jetbrainsIDE_TLDR"/>
 
 [RubyMine](https://www.jetbrains.com/ruby/) is an IntelliJ Platform-based product.
 Plugin projects for RubyMine can be developed using [IntelliJ IDEA](idea.md).

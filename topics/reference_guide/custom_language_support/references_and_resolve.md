@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # References and Resolve
 
@@ -10,7 +10,8 @@ Resolving references allows users to navigate from a PSI element usage (accessin
 This feature is required to support the <ui-path>Navigate | Declaration or Usages</ui-path> action invoked by <shortcut>Ctrl/Cmd+B</shortcut> or clicking the mouse button while holding <shortcut>Ctrl/Cmd</shortcut> key, and it is a prerequisite for implementing [finding usages](find_usages.md), [rename refactoring](rename_refactoring.md), and [code completion](code_completion.md).
 
 The <ui-path>View | Quick Definition</ui-path> action is based on the same mechanism, so it becomes automatically available for all references that can be resolved by the language plugin.
-To customize the exact document range to show in the popup (e.g., include "surrounding" code or comments), provide [`ImplementationTextSelectioner`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hint/ImplementationTextSelectioner.java) registered in `com.intellij.lang.implementationTextSelectioner` extension point.
+To customize the exact document range to show in the popup (e.g., include "surrounding" code or comments), provide [`ImplementationTextSelectioner`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hint/ImplementationTextSelectioner.java) registered
+in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.implementationTextSelectioner"/></include>.
 
 ## PSI References
 

@@ -115,6 +115,26 @@ Class `com.intellij.psi.xml.XmlElementType` no longer extends `com.intellij.psi.
 `com.intellij.terminal.ui.TerminalWidget.getTerminalSizeInitializedFuture()` abstract method added
 : Must be implemented.
 
+### Database Plugin 2025.1
+
+`com.intellij.database.view.models` package removed
+: Old table modification dialog was finally removed. Use com.intellij.database.actions.ddl.ModifyObjectAction#showDialog for new dialog invocation.
+
+`com.intellij.database.schemaEditor.model.DeObject` class removed
+: Old table modification dialog was finally removed. Use com.intellij.database.actions.ddl.ModifyObjectAction#showDialog for new dialog invocation.
+
+`com.intellij.database.view.editors.DatabaseEditorContext` class removed
+: Old table modification dialog was finally removed. Use com.intellij.database.actions.ddl.ModifyObjectAction#showDialog for new dialog invocation.
+
+`com.intellij.database.view.editors.DatabaseTableEditor` class removed
+: Old table modification dialog was finally removed. Use com.intellij.database.actions.ddl.ModifyObjectAction#showDialog for new dialog invocation.
+
+`com.intellij.database.view.ui.DbRefactoringDialogHelper` class removed
+: Old table modification dialog was finally removed. Use com.intellij.database.actions.ddl.ModifyObjectAction#showDialog for new dialog invocation.
+
+`com.intellij.database.view.ui.DbTableDialog` class removed
+: Old table modification dialog was finally removed. Use com.intellij.database.actions.ddl.ModifyObjectAction#showDialog for new dialog invocation.
+
 ### External System 2025.1
 
 `com.intellij.openapi.externalSystem.service.internal.ExternalSystemProcessingManager` class now interface

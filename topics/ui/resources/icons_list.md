@@ -1,14 +1,5 @@
----
-title: Icons list
-category: Resources
-type: full
----
+<!-- Copyright 2000-2025 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<iframe class="iconsSite" src="https://intellij-icons.jetbrains.design" width="100%"></iframe>
-<script type="text/javascript">
-  window.addEventListener('message', function (event) {
-    if (event.data === 'iframeClick') {
-      toggleMenu(false);
-    }
-  }, false);
-</script>
+# Icons List
+
+<inline-frame src="https://intellij-icons.jetbrains.design"/>

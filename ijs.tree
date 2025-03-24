@@ -553,8 +553,7 @@
       <toc-element topic="writing_short.md"/>
     </toc-element>
     <toc-element toc-title="Resources">
-      <toc-element href="https://intellij-icons.jetbrains.design" toc-title="Icons List"/>
-      <toc-element topic="icons_list.md" hidden="true"/>
+      <toc-element topic="icons_list.md"/>
       <toc-element topic="how_to_write_guidelines.topic"/>
       <toc-element topic="UI_kit.md"/>
     </toc-element>

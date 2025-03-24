@@ -334,7 +334,7 @@ fun StringBuilder.appendAttributeRequirementAndAvailability(attribute: Attribute
 fun StringBuilder.appendAttributeInternalNote(attribute: Attribute) {
   val internalNote = attribute.getOwnOrParentInternalNote() ?: return
   append("**Internal Use Only:** ".indentLines(2))
-  val noteWithoutLineBreaks = internalNote.replace('\n', ' ')
+  val noteWithoutLineBreaks = internalNote.replace('\n', ' ').trimEnd()
   append(noteWithoutLineBreaks)
   appendLine()
 }
@@ -347,7 +347,7 @@ fun StringBuilder.appendAttributeDeprecationInfo(attribute: Attribute) {
       (if (deprecatedSince != null) "**_Deprecated since ${deprecatedSince}_**" else "**_Deprecated_**").indentLines(2)
     )
     if (deprecationNote != null) {
-      val noteWithoutLineBreaks = deprecationNote.replace('\n', ' ')
+      val noteWithoutLineBreaks = deprecationNote.replace('\n', ' ').trimEnd()
       append(": $noteWithoutLineBreaks")
     }
     appendLine()

@@ -1,8 +1,12 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Extension Points
 
-<link-summary>Allowing to extend plugin's functionality by other plugins.</link-summary>
+<web-summary>
+Extend a plugin's functionality by defining extension points for other plugins.
+</web-summary>
+
+<link-summary>Allowing extending a plugin's functionality by other plugins.</link-summary>
 
 > See [Plugin Extensions](plugin_extensions.md) for _using_ extension points in your plugin.
 >
@@ -45,7 +49,7 @@ Base classes for extensions requiring a key:
 - [`ClassExtension`](%gh-ic%/platform/core-api/src/com/intellij/openapi/util/ClassExtension.java)
 - [`KeyedExtensionCollector`](%gh-ic%/platform/core-api/src/com/intellij/openapi/util/KeyedExtensionCollector.java)
 
-> See [](bundling_plugin_openapi_sources.md) section explaining how to expose extension points sources to other plugins.
+> See the [](bundling_plugin_openapi_sources.md) section explaining how to expose extension points sources to other plugins.
 >
 {style="note"}
 
@@ -98,7 +102,7 @@ public final class MyBeanClass extends AbstractExtensionPointBean {
 
 > See [Extension properties code insight](plugin_extensions.md#extension-properties-code-insight) on how to provide smart completion/validation.
 
-For above extension points, their usage in _anotherPlugin_ would look like this (see also [Declaring Extensions](plugin_extensions.md#declaring-extensions)):
+For the above extension points, their usage in _anotherPlugin_ would look like this (see also [Declaring Extensions](plugin_extensions.md#declaring-extensions)):
 
 <path>anotherPlugin/META-INF/plugin.xml</path>
 
@@ -156,7 +160,7 @@ When processing extension implementations or registrations, there might be error
 Use [`PluginException`](%gh-ic%/platform/core-api/src/com/intellij/diagnostic/PluginException.java) to log and correctly attribute the causing plugin for
 [builtin error reporting](ide_infrastructure.md#error-reporting).
 
-To report use of deprecated API, use `PluginException.reportDeprecatedUsage()` methods.
+To report use of a deprecated API, use `PluginException.reportDeprecatedUsage()` methods.
 
 **Examples:**
 - [`CompositeFoldingBuilder.assertSameFile()`](%gh-ic%/platform/core-api/src/com/intellij/lang/folding/CompositeFoldingBuilder.java)
@@ -167,7 +171,7 @@ To report use of deprecated API, use `PluginException.reportDeprecatedUsage()` m
 
 To support [Dynamic Plugins](dynamic_plugins.md), an extension point must adhere to specific usage rules:
 
-- extensions are enumerated on every use and extensions instances are not stored anywhere
+- extensions are enumerated on every use, and extension instances are not stored anywhere
 - alternatively, an [`ExtensionPointListener`](%gh-ic%/platform/extensions/src/com/intellij/openapi/extensions/ExtensionPointListener.kt) can perform any necessary updates of data structures (register via `ExtensionPointName.addExtensionPointListener()`)
 
 Extension points matching these conditions can then be marked as _dynamic_ by adding `dynamic="true"` in their declaration:

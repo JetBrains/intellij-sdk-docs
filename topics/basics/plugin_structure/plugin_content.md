@@ -9,9 +9,9 @@ Plugin distribution is built using the dedicated Gradle `buildPlugin` task (Refe
 
 The plugin distribution <path>.jar</path> file contains:
 
-- configuration file (<path>META-INF/plugin.xml</path>) ([Plugin Configuration File](plugin_configuration_file.md))
+- configuration file (<path>META-INF/plugin.xml</path>) ([](plugin_configuration_file.md))
 - classes implementing the plugin functionality
-- recommended: plugin logo file(s) (<path>META-INF/pluginIcon*.svg</path>) ([Plugin Logo](plugin_icon_file.md))
+- recommended: plugin logo file(s) (<path>META-INF/pluginIcon*.svg</path>) ([](plugin_icon_file.md))
 
 > See [](plugin_user_experience.md#distribution-size) for important steps to optimize the plugin distribution file.
 

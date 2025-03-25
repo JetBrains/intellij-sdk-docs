@@ -10,7 +10,7 @@ There are several important reasons to create integration tests, including:
 
 * Testing complex scenarios: Some scenarios, particularly UI interactions, cannot be effectively covered by unit tests alone.
 * Full product testing: Integration tests run against the complete product rather than isolated components. This helps identify issues that unit tests might miss, such as module interaction problems, classpath conflicts, and plugin declaration issues.
-* User story validation: Integration tests typically mirror real user scenarios, ensuring plugin works reliably from start to finish.
+* User story validation: Integration tests typically mirror real user scenarios, ensuring the plugin works reliably from start to finish.
 
 
 1. [](integration_tests_intro.md)

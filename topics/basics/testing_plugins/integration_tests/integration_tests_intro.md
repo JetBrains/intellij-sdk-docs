@@ -6,7 +6,7 @@
 
 <link-summary>Walkthrough how to create the first integration tests.</link-summary>
 
-> This page is part of [](integration_tests.md) tutorial.
+> This page is part of the [](integration_tests.md) tutorial.
 
 ## Adding dependencies
 

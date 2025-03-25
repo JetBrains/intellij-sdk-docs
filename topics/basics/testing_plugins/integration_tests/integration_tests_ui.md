@@ -6,7 +6,7 @@
 
 <link-summary>Walkthrough how to interact with UI in integration tests.</link-summary>
 
-> This page is part of [](integration_tests.md) tutorial.
+> This page is part of the [](integration_tests.md) tutorial.
 
 For introduction and setting up dependencies, refer to [](integration_tests_intro.md).
 
@@ -75,7 +75,7 @@ Starter.newContext(...).apply { ... }
 When the test is running, the following line will appear in the logs: `http://localhost:63343/api/remote-driver/`.
 Opening this URL reveals an HTML representation of the IDE's Swing component tree:
 
-![](integration_tests_devtools.png){width=706}
+![](integration_tests_devtools.png){width=706 thumbnail=true}
 
 Using Developer Tools in the browser, it's possible to inspect detailed component attributes.
 Here's an example component:
@@ -96,10 +96,10 @@ There are other attributes which are omitted for clarity.
 
 The element corresponds to the following button:
 
-![](integration_tests_ui_sample.png){width=706}
+![](integration_tests_ui_sample.png){width=706 thumbnail=true}
 
 Similar to web testing frameworks like Selenium, XPath is used to locate components.
-The Driver framework provides a simple XPath builder — `com.intellij.driver.sdk.ui.QueryBuilder`.
+The Driver framework provides a simple XPath builder [`QueryBuilder`](%gh-ic%/platform/remote-driver/test-sdk/src/com/intellij/driver/sdk/ui/QueryBuilder.kt).
 
 For reliable component identification, prioritize these attributes, which can be found with predefined methods in `QueryBuilder`:
 
@@ -143,7 +143,7 @@ x(xQuery { byVisibleText("Current File") }).click()
 The `x()` call creates a lazy reference to the component.
 It means that the XPath query isn't executed immediately and component lookup happens only when an action (like `click()`) is invoked.
 
-Here's a part of test that incorporates UI interaction:
+Here's a part of a test that incorporates UI interaction:
 
 ```kotlin
 runIdeWithDriver().useDriverAndCloseIde {
@@ -169,7 +169,7 @@ Keyboard methods perform presses using `java.awt.Robot` so to type to some parti
 The most reliable way to do this is to perform `click` on the component first.
 
 > On macOS, the interaction via `java.awt.Robot` requires special permissions.
-> IntelliJ IDEA should be granted the necessary permissions via the Accessibility page, which can be found under _System Settings | Privacy & Security_.
+> IntelliJ IDEA should be granted the necessary permissions via the <control>Accessibility</control> page, which can be found under <ui-path>System Settings | Privacy & Security</ui-path>.
 >
 {style="note"}
 

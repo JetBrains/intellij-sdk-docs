@@ -2,33 +2,25 @@
 
 <snippet id="releases_table">
 
-## 2025.*
-
-| Release Name | Channel | Version | IntelliJ IDEA Version | Release Date |
-|--------------|---------|---------|-----------------------|--------------|
-| <p><b>Narwhal </b></p><p> 2025.1.1 Canary 2</p> | ![Canary][canary] | **2025.1.1.2**<p>AI&#8209;251.23774.16.2511.13244498</p> | **null**<p>251.23774.16</p> | Mar&nbsp;20,&nbsp;2025 |
-| <p><b>Narwhal </b></p><p> 2025.1.1 Canary 1</p> | ![Canary][canary] | **2025.1.1.1**<p>AI&#8209;251.23774.16.2511.13239840</p> | **null**<p>251.23774.16</p> | Mar&nbsp;19,&nbsp;2025 |
-
-
-
 ## 2024.*
 
 | Release Name | Channel | Version | IntelliJ IDEA Version | Release Date |
 |--------------|---------|---------|-----------------------|--------------|
-| <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 Beta 1</p> | ![Beta][beta] | **2024.3.2.9**<p>AI&#8209;243.25659.59.2432.13218502</p> | **2024.3.5**<p>243.25659.59</p> | Mar&nbsp;18,&nbsp;2025 |
+| <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 Beta 1</p> | ![Beta][beta] | **2024.3.2.9**<p>AI&#8209;243.25659.59.2432.13218502</p> | **243.25659-EAP-CANDIDATE-SNAPSHOT**<p>243.25659.59</p> | Mar&nbsp;18,&nbsp;2025 |
 | <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 Canary 8</p> | ![Canary][canary] | **2024.3.2.8**<p>AI&#8209;243.24978.46.2432.13174079</p> | **2024.3.3**<p>243.24978.46</p> | Mar&nbsp;7,&nbsp;2025 |
 | <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 Canary 7</p> | ![Canary][canary] | **2024.3.2.7**<p>AI&#8209;243.24978.46.2432.13133389</p> | **2024.3.3**<p>243.24978.46</p> | Feb&nbsp;27,&nbsp;2025 |
 | <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 Canary 6</p> | ![Canary][canary] | **2024.3.2.6**<p>AI&#8209;243.24978.46.2432.13093109</p> | **2024.3.3**<p>243.24978.46</p> | Feb&nbsp;21,&nbsp;2025 |
 | <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 Canary 5</p> | ![Canary][canary] | **2024.3.2.5**<p>AI&#8209;243.23654.117.2432.13058383</p> | **2024.3.2**<p>243.23654.117</p> | Feb&nbsp;13,&nbsp;2025 |
 | <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 Canary 4</p> | ![Canary][canary] | **2024.3.2.4**<p>AI&#8209;243.23654.117.2432.13021186</p> | **2024.3.2**<p>243.23654.117</p> | Feb&nbsp;6,&nbsp;2025 |
 | <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 Canary 3</p> | ![Canary][canary] | **2024.3.2.3**<p>AI&#8209;243.23654.117.2432.12988063</p> | **2024.3.2**<p>243.23654.117</p> | Feb&nbsp;3,&nbsp;2025 |
-| <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 Canary 2</p> | ![Canary][canary] | **2024.3.2.2**<p>AI&#8209;243.22562.218.2432.12959061</p> | **2024.3.2**<p>243.22562.218</p> | Jan&nbsp;23,&nbsp;2025 |
-| <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 Canary 1</p> | ![Canary][canary] | **2024.3.2.1**<p>AI&#8209;243.22562.218.2432.12933754</p> | **2024.3.2**<p>243.22562.218</p> | Jan&nbsp;21,&nbsp;2025 |
-| <p><b>Meerkat </b></p><p> 2024.3.1</p> | ![Release][release] | **2024.3.1.13**<p>AI&#8209;243.22562.218.2431.13114758</p> | **2024.3.2**<p>243.22562.218</p> | Mar&nbsp;4,&nbsp;2025 |
-| <p><b>Meerkat </b></p><p> 2024.3.1 RC 2</p> | ![RC][rc] | **2024.3.1.12**<p>AI&#8209;243.22562.218.2431.13054891</p> | **2024.3.2**<p>243.22562.218</p> | Feb&nbsp;18,&nbsp;2025 |
-| <p><b>Meerkat </b></p><p> 2024.3.1 RC 1</p> | ![RC][rc] | **2024.3.1.11**<p>AI&#8209;243.22562.218.2431.12996373</p> | **2024.3.2**<p>243.22562.218</p> | Feb&nbsp;5,&nbsp;2025 |
-| <p><b>Meerkat </b></p><p> 2024.3.1 Beta 1</p> | ![Beta][beta] | **2024.3.1.10**<p>AI&#8209;243.22562.218.2431.12926017</p> | **2024.3.2**<p>243.22562.218</p> | Jan&nbsp;22,&nbsp;2025 |
-| <p><b>Meerkat </b></p><p> 2024.3.1 Canary 9</p> | ![Canary][canary] | **2024.3.1.9**<p>AI&#8209;243.22562.218.2431.12894773</p> | **2024.3.2**<p>243.22562.218</p> | Jan&nbsp;10,&nbsp;2025 |
+| <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 Canary 2</p> | ![Canary][canary] | **2024.3.2.2**<p>AI&#8209;243.22562.218.2432.12959061</p> | **243.22562-EAP-CANDIDATE-SNAPSHOT**<p>243.22562.218</p> | Jan&nbsp;23,&nbsp;2025 |
+| <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 Canary 1</p> | ![Canary][canary] | **2024.3.2.1**<p>AI&#8209;243.22562.218.2432.12933754</p> | **243.22562-EAP-CANDIDATE-SNAPSHOT**<p>243.22562.218</p> | Jan&nbsp;21,&nbsp;2025 |
+| <p><b>Meerkat </b></p><p> 2024.3.1 Patch 1</p> | ![Patch][patch] | **2024.3.1.14**<p>AI&#8209;243.24978.46.2431.13208083</p> | **2024.3.3**<p>243.24978.46</p> | Mar&nbsp;24,&nbsp;2025 |
+| <p><b>Meerkat </b></p><p> 2024.3.1</p> | ![Release][release] | **2024.3.1.13**<p>AI&#8209;243.22562.218.2431.13114758</p> | **243.22562-EAP-CANDIDATE-SNAPSHOT**<p>243.22562.218</p> | Mar&nbsp;4,&nbsp;2025 |
+| <p><b>Meerkat </b></p><p> 2024.3.1 RC 2</p> | ![RC][rc] | **2024.3.1.12**<p>AI&#8209;243.22562.218.2431.13054891</p> | **243.22562-EAP-CANDIDATE-SNAPSHOT**<p>243.22562.218</p> | Feb&nbsp;18,&nbsp;2025 |
+| <p><b>Meerkat </b></p><p> 2024.3.1 RC 1</p> | ![RC][rc] | **2024.3.1.11**<p>AI&#8209;243.22562.218.2431.12996373</p> | **243.22562-EAP-CANDIDATE-SNAPSHOT**<p>243.22562.218</p> | Feb&nbsp;5,&nbsp;2025 |
+| <p><b>Meerkat </b></p><p> 2024.3.1 Beta 1</p> | ![Beta][beta] | **2024.3.1.10**<p>AI&#8209;243.22562.218.2431.12926017</p> | **243.22562-EAP-CANDIDATE-SNAPSHOT**<p>243.22562.218</p> | Jan&nbsp;22,&nbsp;2025 |
+| <p><b>Meerkat </b></p><p> 2024.3.1 Canary 9</p> | ![Canary][canary] | **2024.3.1.9**<p>AI&#8209;243.22562.218.2431.12894773</p> | **243.22562-EAP-CANDIDATE-SNAPSHOT**<p>243.22562.218</p> | Jan&nbsp;10,&nbsp;2025 |
 | <p><b>Meerkat </b></p><p> 2024.3.1 Canary 8</p> | ![Canary][canary] | **2024.3.1.8**<p>AI&#8209;243.22562.145.2431.12862218</p> | **2024.3.1**<p>243.22562.145</p> | Jan&nbsp;6,&nbsp;2025 |
 | <p><b>Meerkat </b></p><p> 2024.3.1 Canary 7</p> | ![Canary][canary] | **2024.3.1.7**<p>AI&#8209;243.22562.145.2431.12832016</p> | **2024.3.1**<p>243.22562.145</p> | Dec&nbsp;23,&nbsp;2024 |
 | <p><b>Meerkat </b></p><p> 2024.3.1 Canary 6</p> | ![Canary][canary] | **2024.3.1.6**<p>AI&#8209;243.22562.145.2431.12789491</p> | **2024.3.1**<p>243.22562.145</p> | Dec&nbsp;16,&nbsp;2024 |
@@ -94,6 +86,15 @@
 | <p><b>Koala </b></p><p> 2024.1.1 Canary 5</p> | ![Canary][canary] | **2024.1.1.3**<p>AI&#8209;241.14494.240.2411.11700778</p> | **2024.1**<p>241.14494.240</p> | Apr&nbsp;11,&nbsp;2024 |
 | <p><b>Koala </b></p><p> 2024.1.1 Canary 4</p> | ![Canary][canary] | **2024.1.1.2**<p>AI&#8209;241.14494.158.2411.11678081</p> | **2024.1**<p>241.14494.158</p> | Apr&nbsp;8,&nbsp;2024 |
 | <p><b>Koala </b></p><p> 2024.1.1 Canary 3</p> | ![Canary][canary] | **2024.1.1.1**<p>AI&#8209;241.14494.158.2411.11648550</p> | **2024.1**<p>241.14494.158</p> | Apr&nbsp;2,&nbsp;2024 |
+
+
+
+## 2025.*
+
+| Release Name | Channel | Version | IntelliJ IDEA Version | Release Date |
+|--------------|---------|---------|-----------------------|--------------|
+| <p><b>Narwhal </b></p><p> 2025.1.1 Canary 2</p> | ![Canary][canary] | **2025.1.1.2**<p>AI&#8209;251.23774.16.2511.13244498</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> | Mar&nbsp;20,&nbsp;2025 |
+| <p><b>Narwhal </b></p><p> 2025.1.1 Canary 1</p> | ![Canary][canary] | **2025.1.1.1**<p>AI&#8209;251.23774.16.2511.13239840</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> | Mar&nbsp;19,&nbsp;2025 |
 
 
 

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Testing Overview
 
@@ -23,7 +23,7 @@ Another consequence of our testing approach is that we do not provide a recommen
 We have a few tests in our codebase that use JMock.
 Still, in general, we find it difficult to mock all the interactions with IntelliJ Platform components that your plugin class will need to have.
 We recommend working with real components instead.
-See also [](testing_faq.md#how-to-replace-componentservice-in-tests) and [](testing_faq.md#how-to-replace-extension-points-in-tests).
+See also [](testing_faq.md#how-to-replace-a-componentservice-in-tests) and [](testing_faq.md#how-to-replace-extension-points-in-tests).
 
 ### Integration and UI Tests
 

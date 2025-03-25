@@ -44,11 +44,11 @@ See [](integration_tests_intro.md) for UI integration tests.
 ### "No Tests Found" targeting 2021.3+
 <primary-label ref="2021.3"/>
 
-Please see [notes](api_changes_list_2021.md#20213).
+See [notes](api_changes_list_2021.md#20213).
 
 ### How to avoid flaky tests?
 
-Always call `super.tearDown()` inside `finally {..}` block of your test class to avoid leaks and side effects from previously run (failed) tests:
+Always call `super.tearDown()` inside the `finally {}` block of your test class to avoid leaks and side effects from previously run (failed) tests:
 
 <tabs>
 <tab title="Java" group-key="java">
@@ -56,7 +56,7 @@ Always call `super.tearDown()` inside `finally {..}` block of your test class to
 ```java
 protected void tearDown() throws Exception {
   try {
-    // test specific tear down calls
+    // test specific tear-down calls
   } catch (Exception e) {
     addSuppressedException(e);
   } finally {
@@ -71,7 +71,7 @@ protected void tearDown() throws Exception {
 ```kotlin
 override fun tearDown() {
   try {
-    // test specific tear down calls
+    // test specific tear-down calls
   } catch (e: Throwable) {
     addSuppressedException(e)
   } finally {
@@ -86,7 +86,7 @@ Avoid OS-specific assumptions (e.g., filesystem case-sensitivity, hardcoded sepa
 
 Use _ordered_ collections or [`UsefulTestCase.assertUnorderedCollection()`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/UsefulTestCase.java).
 
-Code deferring execution (e.g., via `Application.invokeLater()`) might not run during test execution (and possibly fails in production, too).
+Code-deferring execution (e.g., via `Application.invokeLater()`) might not run during test execution (and possibly fails in production, too).
 Use `Application.invokeLater(runnable, myProject.getDisposed())`.
 
 When targeting 2024.2 or later, see also [](#how-to-handle-projectactivity).
@@ -94,12 +94,12 @@ When targeting 2024.2 or later, see also [](#how-to-handle-projectactivity).
 ### How to avoid test failure when using resources?
 
 In some situations, added or changed files (e.g. XML DTDs provided by a plugin) are not refreshed in [](virtual_file_system.md).
-In such cases, simply delete <path>test-system/caches</path> in your [sandbox directory](ide_development_instance.md#the-development-instance-sandbox-directory) and try again.
+In such cases, delete the <path>test-system/caches</path> folder in your [sandbox directory](ide_development_instance.md#the-development-instance-sandbox-directory) and try again.
 
 ### How to enable DEBUG/TRACE logging?
 
 Provide JVM system properties `idea.log.debug.categories` or `idea.log.trace.categories` to specify logger category name, respectively.
-Multiple categories can be set using a comma separated value list.
+Multiple categories can be set using a comma-separated value list.
 
 **Sample** Set DEBUG level for categories `com.my.plugin.ui` and `com.my.plugin.backend`:
 
@@ -129,7 +129,7 @@ test {
 ### How to get separate logs for failing tests?
 <primary-label ref="2021.3"/>
 
-Set system property `idea.split.test.logs` to `true` to generate separate test log files in <path>splitTestLogs</path> subdirectory for failing tests (WARN/ERROR level messages).
+Set system property `idea.split.test.logs` to `true` to generate separate test log files in the <path>splitTestLogs</path> subdirectory for failing tests (WARN/ERROR level messages).
 
 ## Techniques
 
@@ -145,7 +145,7 @@ Use [`FileBasedTestCaseHelper`](%gh-ic%/platform/testFramework/src/com/intellij/
 
 ### How to modify setup on a per-test basis?
 
-Use `UsefulTestCase.getTestName()` or create your own annotation(s) which can be checked via `UsefulTestCase.annotatedWith()`.
+Use `UsefulTestCase.getTestName()` or create your own annotation which can be checked via `UsefulTestCase.annotatedWith()`.
 
 ### How to run a performance test?
 
@@ -163,7 +163,7 @@ Use [`DefaultLogger.disableStderrDumping()`](%gh-ic%/platform/util/src/com/intel
 
 Use [`ExternalResourceManagerExImpl.registerResourceTemporarily()`](%gh-ic%/xml/xml-psi-impl/src/com/intellij/javaee/ExternalResourceManagerExImpl.kt) passing `getTestRootDisposable()`.
 
-### How to replace component/service in tests?
+### How to replace a component/service in tests?
 
 Provide dedicated test implementation via `testServiceImplementation` in [service declaration](plugin_services.md#declaring-a-service), or use [`ServiceContainerUtil`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/ServiceContainerUtil.kt).
 
@@ -173,7 +173,7 @@ Use [`ExtensionTestUtil`](%gh-ic%/platform/testFramework/src/com/intellij/testFr
 
 ### How to wait for a specified amount of time?
 
-If possible, use [](#how-to-wait-for-condition-with-timeout) approach. Otherwise, call `com.intellij.util.TimeoutUtil.sleep()`.
+If possible, use the [](#how-to-wait-for-condition-with-timeout) approach. Otherwise, call `com.intellij.util.TimeoutUtil.sleep()`.
 
 ### How to wait for condition with timeout?
 
@@ -235,7 +235,7 @@ PsiTestUtil.addLibrary(model,
 ### How to handle `ProjectActivity`?
 <primary-label ref="2024.2"/>
 
-[`ProjectActivity`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) are no longer awaited on project open in tests.
+[`ProjectActivity`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) is no longer awaited when opening a project in tests.
 If tests depend on some job done in `ProjectActivity` (e.g., automatic project re-import), implement a dedicated [event/listener](messaging_infrastructure.md) and wait for it explicitly.
 As a workaround, use [`StartupActivityTestUtil.waitForProjectActivitiesToComplete()`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/StartupActivityTestUtil.kt).
 

@@ -98,12 +98,6 @@ Can be [](indexing_and_psi_stubs.md#DumbAwareAPI) (2024.3+).
 
 [`ParserDefinition.getCommentTokens()`](%gh-ic%/platform/core-api/src/com/intellij/lang/ParserDefinition.java) must return the set of tokens treated as comments to populate the <control>TODO</control> tool window.
 
-#### Additional places
-
-EP: `com.intellij.indexPatternSearch`
-
-Additional places can be provided via [`IndexPatternSearch`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/searches/IndexPatternSearch.java) registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.indexPatternSearch"/></include>.
-
 ### Context Info
 
 EP: `com.intellij.declarationRangeHandler`

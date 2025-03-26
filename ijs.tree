@@ -36,7 +36,9 @@
                      accepts-web-file-names="github-template.html"/>
         <toc-element topic="migrating_plugin_devkit_to_gradle.md"/>
       </toc-element>
-      <toc-element topic="configuring_plugin_project.md" accepts-web-file-names="gradle-guide.html"/>
+      <toc-element topic="configuring_gradle.md">
+        <toc-element topic="configuring_plugin_project.md" accepts-web-file-names="gradle-guide.html"/>
+      </toc-element>
       <toc-element topic="using_kotlin.md" accepts-web-file-names="kotlin.html"/>
       <toc-element topic="ide_development_instance.md" accepts-web-file-names="settings_caches_logs.html"/>
       <toc-element topic="plugin_signing.md"/>

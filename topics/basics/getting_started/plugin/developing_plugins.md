@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Developing a Plugin
 
@@ -16,7 +16,7 @@ Before starting with the actual development, make sure to understand all require
 The recommended solution for building IntelliJ Platform plugins is using [Gradle](https://www.gradle.org) with
 a dedicated Gradle plugin:
 [](tools_intellij_platform_gradle_plugin.md) or
-[](tools_gradle_intellij_plugin.md).
+[](tools_gradle_intellij_plugin.md) (obsolete).
 
 <include from="snippets.topic" element-id="gradlePluginVersion"/>
 
@@ -47,7 +47,8 @@ A dedicated [SBT plugin](https://github.com/JetBrains/sbt-idea-plugin) is availa
 
 * [](creating_plugin_project.md)
   * [](plugin_github_template.md)
-* [](configuring_plugin_project.md)
+* [](configuring_gradle.md)
+  * [](configuring_plugin_project.md) _(Obsolete)_
 * [](using_kotlin.md)
 * [](plugin_signing.md)
 * [](publishing_plugin.md)

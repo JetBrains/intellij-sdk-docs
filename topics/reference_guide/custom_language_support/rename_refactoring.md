@@ -42,7 +42,7 @@ unlike `NamesValidator` it allows you to more flexibly check the entered name fo
 To determine which elements this validator will apply to, override the `getPattern()` method returning the pattern of the element to validate.
 
 **Example:**
-[`YAMLAnchorRenameInputValidator`](%gh-ic%/plugins/yaml/src/org/jetbrains/yaml/resolve/YAMLAnchorRenameInputValidator.java) validating YAML language anchor names
+[`YAMLAnchorRenameInputValidator`](%gh-ic%/plugins/yaml/backend/src/resolve/YAMLAnchorRenameInputValidator.java) validating YAML language anchor names
 
 `RenameInputValidator` can be extended to
 [`RenameInputValidatorEx`](%gh-ic%/platform/refactoring/src/com/intellij/refactoring/rename/RenameInputValidatorEx.java)
@@ -52,7 +52,7 @@ The `getErrorMessage()` method should return a custom error message in case of a
 Note that `getErrorMessage()` only works if all `RenameInputValidator` accept the new name in `isInputValid()` and the name is a valid identifier for the language of the element.
 
 **Example:**
-[`YamlKeyValueRenameInputValidator`](%gh-ic%/plugins/yaml/editing/src/org/jetbrains/yaml/refactoring/rename/YamlKeyValueRenameInputValidator.java) validating YAML language keys
+[`YamlKeyValueRenameInputValidator`](%gh-ic%/plugins/yaml/src/refactoring/rename/YamlKeyValueRenameInputValidator.java) validating YAML language keys
 
 Implementations of `RenameInputValidator` or `RenameInputValidatorEx` are registered in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.renameInputValidator"/></include>.
 

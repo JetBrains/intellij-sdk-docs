@@ -75,5 +75,5 @@ The implementation of `multiResolve()` can be also based on [`PsiScopeProcessor`
 ## Additional Highlighting
 <primary-label ref="2022.2"/>
 
-Implement [`HighlightedReference`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/highlighting/HighlightedReference.java) to add additional highlighting for non-obvious places (e.g., inside String literals).
+Implement [`HighlightedReference`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/highlighting/HighlightedReference.java) to add additional highlighting for non-obvious places (e.g., inside String literals).
 Such references will automatically be highlighted using <control>String | Highlighted reference</control> text attributes from <ui-path>Settings | Editor | Color Scheme | Language Defaults</ui-path>.

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Migrating from Gradle IntelliJ Plugin (1.x)
 
@@ -13,7 +13,7 @@ The plugin is published to the Gradle Plugin Portal with a new name as a new ent
 
 ## Minimum Gradle and Java Versions
 
-The minimum required Gradle version is now **8.2** running on Java **17** or later.
+The minimum required Gradle version is now **8.5** running on Java **17** or later.
 See [](tools_intellij_platform_gradle_plugin.md#requirements).
 
 ## Plugin ID Change

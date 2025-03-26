@@ -130,7 +130,7 @@ EP: `com.intellij.colorProvider`
 
 EP: `com.intellij.include.provider`
 
-[`FileIncludeProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/psi/impl/include/FileIncludeProvider.java) provides information about _include_ statements resolving to files (e.g., `<xi:include>` in XML).
+[`FileIncludeProvider`](%gh-ic%/platform/lang-api/src/com/intellij/psi/impl/include/FileIncludeProvider.java) provides information about _include_ statements resolving to files (e.g., `<xi:include>` in XML).
 Including/included files can then be obtained via [`FileIncludeManager`](%gh-ic%/platform/lang-api/src/com/intellij/psi/impl/include/FileIncludeManager.java).
 
 ### Recognizing Complex Multi-Block Expressions

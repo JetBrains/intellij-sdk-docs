@@ -83,7 +83,7 @@ cart.getProducts().var
 The gutter icons for a postfix template class allow navigating to the corresponding description and before/after files in plugin resources.
 
 **Example:**
-[`TryWithResourcesPostfixTemplate`](%gh-ic%/java/java-impl/src/postfixTemplates/TryWithResourcesPostfixTemplate)
+[`TryWithResourcesPostfixTemplate`](%gh-ic%/java/java-impl/resources/postfixTemplates/TryWithResourcesPostfixTemplate)
 directory containing description files for
 [`TryWithResourcesPostfixTemplate`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/template/postfix/templates/TryWithResourcesPostfixTemplate.java)
 template.

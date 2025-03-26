@@ -32,3 +32,7 @@ tasks {
     untilBuild.set("243.*")
   }
 }
+
+intellijPlatform {
+  buildSearchableOptions = false
+}

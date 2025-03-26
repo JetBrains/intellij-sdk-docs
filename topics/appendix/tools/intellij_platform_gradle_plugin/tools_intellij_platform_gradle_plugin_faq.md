@@ -1,8 +1,8 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # IntelliJ Platform Gradle Plugin – FAQ
 
-<link-summary>FAQ for using IntelliJ Platform Gradle Plugin</link-summary>
+<link-summary>FAQ for using IntelliJ Platform Gradle Plugin (2.x)</link-summary>
 
 ### How to modify system properties of the `runIde` task?
 
@@ -524,14 +524,6 @@ To correctly run your tests or a specific IDE:
 
 ### plugin.xml: `Cannot resolve plugin com.intellij.modules.vcs`
 
-Add an explicit [dependency](tools_intellij_platform_gradle_plugin_dependencies_extension.md) on the bundled module:
-
-```kotlin
-dependencies {
-  intellijPlatform {
-    bundledModule("intellij.platform.vcs.impl")
-  }
-}
-```
+Upgrade to the latest version of the IntelliJ Platform Gradle Plugin.
 
 <include from="snippets.topic" element-id="missingContent"/>

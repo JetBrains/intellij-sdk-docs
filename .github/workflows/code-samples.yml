@@ -29,6 +29,15 @@ jobs:
           - editor_basics
           - facet_basics
           - framework_basics
+          - live_templates
+          - max_opened_projects
+          - module
+          - project_model
+          - project_view_pane
+          - project_wizard
+          - psi_demo
+          - run_configuration
+          - settings
 
     steps:
       - name: Fetch Sources

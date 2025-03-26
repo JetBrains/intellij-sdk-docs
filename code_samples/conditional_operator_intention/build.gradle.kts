@@ -33,4 +33,9 @@ dependencies {
 
 intellijPlatform {
   buildSearchableOptions = false
+  pluginVerification  {
+    ides {
+      recommended()
+    }
+  }
 }

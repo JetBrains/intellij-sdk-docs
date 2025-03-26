@@ -39,6 +39,8 @@ jobs:
           distribution: zulu
           java-version: 17
 
+      - name: Build Plugin
+        run: (cd code_samples/${{ matrix.plugin }}; ./gradlew buildPlugin)
       - name: Test Plugin
         run: (cd code_samples/${{ matrix.plugin }}; ./gradlew test)
 
@@ -46,7 +48,6 @@ jobs:
         id: properties
         shell: bash
         run: |
-          echo "ideVersions=${PLUGIN_VERIFIER_IDE_VERSIONS// /-}" >> $GITHUB_OUTPUT
           echo "pluginVerifierHomeDir=~/.pluginVerifier" >> $GITHUB_OUTPUT
 
       - name: Run Plugin Verifier

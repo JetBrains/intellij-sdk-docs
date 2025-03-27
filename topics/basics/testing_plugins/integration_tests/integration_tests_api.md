@@ -19,7 +19,30 @@ Driver framework uses a standard Java Remote Method Invocation (RMI) protocol.
 This protocol allows accessing objects and invoking methods from tests in the JVM of the IDE.
 
 The architecture of RMI protocol is as follows:
-![](jmx_diagram.png)
+```mermaid
+sequenceDiagram
+    box rgb(240,240,240) Test Process
+    participant Test as Test (Client)
+    end
+
+    box rgb(240,240,240) IDE Process
+    participant IDE as IDE (Server)
+    participant Registry as RMI registry
+    end
+
+    Test->>Registry: 1. Look up remote object
+    Registry-->>Test: 2. Return stub reference
+
+    Note over Test: Stub is obtained<br/>for remote reference
+
+    activate Test
+    Test->>IDE: 3. Remote method call via stub
+    IDE->>IDE: 4. Process request and invoke actual method
+    IDE-->>Test: 5. Return serialized result
+    deactivate Test
+
+    Note over IDE,Test: Each remote call involves:<br/>- Serialization of parameters<br/>- Network transfer<br/>- Deserialization<br/>- Method invocation<br/>- Serialization of result
+```
 
 When a test needs to invoke a method on a remote object:
 
@@ -90,10 +113,10 @@ interface Storage {
 }
 ```
 
-As seen above, a stub is an interface for the class with methods that will be used in the test
-Stubs shouldn't be created for methods unused in tests.
+As seen above, a stub is an interface for the class with methods that will be used in the test.
+Stubs shouldn't be created for methods not used in tests.
 
-The first parameter is a fully qualified name of the class that will correspond to the stub using the `@Remote` annotation.
+The first parameter is the fully qualified name of the class that will correspond to the stub using the [`Remote`](%gh-ic%/platform/remote-driver/client/src/com/intellij/driver/client/Remote.kt) annotation.
 Strings are used to avoid introducing dependency between production and test code.
 
 The second parameter specifies `pluginId`, where classes are located.
@@ -102,8 +125,8 @@ This parameter is required since IntelliJ-based IDEs use separate classloaders f
 There is built-in support for `@Remote` annotation inside IntelliJ IDEA:
 ![](remote-support.png)
 
-Rename and move the target class refactroings will update the annotation accordingly.
-Gutters can be used to navigate to the target class from a stub.
+Rename and move the target class refactorings will update the annotation accordingly.
+Gutter icons can be used to navigate to the target class from a stub.
 
 ## Calling IDE methods from tests
 

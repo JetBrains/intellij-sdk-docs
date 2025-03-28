@@ -166,7 +166,7 @@ fun testStubs() {
 ```
 
 There are two methods that allow invoking methods: `service` and `utility`.
-The first one will return an instance of service, and the second will return an instance of any class.
+The first one will return an instance of a service, and the second will return an instance of any class.
 
 Project-level services require a `Project` stub.
 To get it, use the `singleProject` method, which is implemented in the same way as demonstrated above:

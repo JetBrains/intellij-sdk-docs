@@ -120,7 +120,7 @@ The first parameter is the fully qualified name of the class that will correspon
 Strings are used to avoid introducing dependency between production and test code.
 
 The `plugin` parameter specifies the ID of a plugin, where classes are located.
-This parameter is required since IntelliJ-based IDEs use separate classloaders for each plugin, and the code that will call methods on the IDE side (Invoker) needs to know where to search for them.
+This parameter is required since IntelliJ-based IDEs use separate [class loaders](plugin_class_loaders.md) for each plugin, and the code that will call methods on the IDE side (Invoker) needs to know where to search for them.
 
 There is built-in support for `@Remote` annotation inside IntelliJ IDEA:
 ![](remote-support.png)

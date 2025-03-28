@@ -14,7 +14,8 @@ For introduction and setting up dependencies, refer to [](integration_tests_intr
 
 The IDE and tests are running in different processes, which means some way to communicate between them is required.
 
-Driver framework uses Java Management Extensions (or JMX for short). JMX supports different connectors to manage the state of the JVM.
+Driver framework uses Java Management Extensions (or JMX for short).
+JMX supports different connectors to manage the state of the JVM.
 Driver framework uses a standard Java Remote Method Invocation (RMI) protocol.
 This protocol allows tests to access objects and invoke methods in the JVM running the IDE.
 

@@ -49,11 +49,11 @@ When a test needs to invoke a method on a remote object:
 1. The test looks up the remote object in the RMI registry (the IDE).
 2. The IDE returns a reference to the stub, which implements the same interface as the remote object.
 3. When the client calls a method on the stub:
-    * The stub serializes the method call, including any parameters.
-    * It sends the serialized data over the network to the remote server.
-    * The RMI runtime inside the IDE unmarshals the request and invokes the corresponding method on the actual remote object.
-    * The method executes, and the result is serialized and sent back to the client via the stub.
-    * The stub unmarshals the response and returns the result to the caller.
+    1. The stub serializes the method call, including any parameters.
+    2. It sends the serialized data over the network to the remote server.
+    3. The RMI runtime inside the IDE unmarshals the request and invokes the corresponding method on the actual remote object.
+    4. The method executes, and the result is serialized and sent back to the client via the stub.
+    5. The stub unmarshals the response and returns the result to the caller.
 
 Thus, the stub makes remote calls feel like local method calls, without the caller worrying about low-level networking, data conversion, or request handling.
 

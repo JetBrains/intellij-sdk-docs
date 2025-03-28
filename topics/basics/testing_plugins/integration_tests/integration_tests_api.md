@@ -65,11 +65,9 @@ To demonstrate how this works in practice, add the following code to the plugin:
 ```kotlin
 package com.example.demo
 
-class PluginStorage {
-  companion object {
-    @JvmStatic
-    fun getPluginStorage() = Storage("static method", listOf("static1", "static2"))
-  }
+object PluginStorage {
+  @JvmStatic
+  fun getPluginStorage() = Storage("static method", listOf("static1", "static2"))
 }
 
 @Service

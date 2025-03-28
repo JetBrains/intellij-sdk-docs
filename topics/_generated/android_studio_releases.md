@@ -2,6 +2,16 @@
 
 <snippet id="releases_table">
 
+## 2025.*
+
+| Release Name | Channel | Version | IntelliJ IDEA Version | Release Date |
+|--------------|---------|---------|-----------------------|--------------|
+| <p><b>Narwhal </b></p><p> 2025.1.1 Canary 3</p> | ![Canary][canary] | **2025.1.1.3**<p>AI&#8209;251.23774.16.2511.13279860</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> | Mar&nbsp;27,&nbsp;2025 |
+| <p><b>Narwhal </b></p><p> 2025.1.1 Canary 2</p> | ![Canary][canary] | **2025.1.1.2**<p>AI&#8209;251.23774.16.2511.13244498</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> | Mar&nbsp;20,&nbsp;2025 |
+| <p><b>Narwhal </b></p><p> 2025.1.1 Canary 1</p> | ![Canary][canary] | **2025.1.1.1**<p>AI&#8209;251.23774.16.2511.13239840</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> | Mar&nbsp;19,&nbsp;2025 |
+
+
+
 ## 2024.*
 
 | Release Name | Channel | Version | IntelliJ IDEA Version | Release Date |
@@ -86,15 +96,6 @@
 | <p><b>Koala </b></p><p> 2024.1.1 Canary 5</p> | ![Canary][canary] | **2024.1.1.3**<p>AI&#8209;241.14494.240.2411.11700778</p> | **2024.1**<p>241.14494.240</p> | Apr&nbsp;11,&nbsp;2024 |
 | <p><b>Koala </b></p><p> 2024.1.1 Canary 4</p> | ![Canary][canary] | **2024.1.1.2**<p>AI&#8209;241.14494.158.2411.11678081</p> | **2024.1**<p>241.14494.158</p> | Apr&nbsp;8,&nbsp;2024 |
 | <p><b>Koala </b></p><p> 2024.1.1 Canary 3</p> | ![Canary][canary] | **2024.1.1.1**<p>AI&#8209;241.14494.158.2411.11648550</p> | **2024.1**<p>241.14494.158</p> | Apr&nbsp;2,&nbsp;2024 |
-
-
-
-## 2025.*
-
-| Release Name | Channel | Version | IntelliJ IDEA Version | Release Date |
-|--------------|---------|---------|-----------------------|--------------|
-| <p><b>Narwhal </b></p><p> 2025.1.1 Canary 2</p> | ![Canary][canary] | **2025.1.1.2**<p>AI&#8209;251.23774.16.2511.13244498</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> | Mar&nbsp;20,&nbsp;2025 |
-| <p><b>Narwhal </b></p><p> 2025.1.1 Canary 1</p> | ![Canary][canary] | **2025.1.1.1**<p>AI&#8209;251.23774.16.2511.13239840</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> | Mar&nbsp;19,&nbsp;2025 |
 
 
 

@@ -63,6 +63,8 @@ Thus, the stub makes remote calls feel like local method calls, without the call
 To demonstrate how this works in practice, add the following code to the plugin:
 
 ```kotlin
+package com.example.demo
+
 class PluginStorage {
   companion object {
     @JvmStatic
@@ -92,22 +94,22 @@ To do this, the following stubs have to be created:
 ```kotlin
 import com.intellij.driver.client.Remote
 
-@Remote("org.jetbrains.testPlugin.PluginStorage", plugin = "org.example.demo")
+@Remote("com.example.demo.PluginStorage", plugin = "com.example.demo")
 interface PluginStorage {
   fun getPluginStorage(): Storage
 }
 
-@Remote("org.jetbrains.testPlugin.PluginService", plugin = "org.example.demo")
+@Remote("com.example.demo.PluginService", plugin = "com.example.demo")
 interface PluginService {
   fun getAnswer(): Int
 }
 
-@Remote("org.jetbrains.testPlugin.PluginProjectService", plugin = "org.example.demo")
+@Remote("com.example.demo.PluginProjectService", plugin = "com.example.demo")
 interface PluginProjectService {
   fun getStrings(): Array<String>
 }
 
-@Remote("org.jetbrains.testPlugin.Storage", plugin = "org.example.demo")
+@Remote("com.example.demo.Storage", plugin = "com.example.demo")
 interface Storage {
   fun getAttributes(): List<String>
   fun getKey(): String

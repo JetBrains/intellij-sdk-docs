@@ -119,7 +119,7 @@ Stubs shouldn't be created for methods not used in tests.
 The first parameter is the fully qualified name of the class that will correspond to the stub using the [`Remote`](%gh-ic%/platform/remote-driver/client/src/com/intellij/driver/client/Remote.kt) annotation.
 Strings are used to avoid introducing dependency between production and test code.
 
-The second parameter specifies `pluginId`, where classes are located.
+The `plugin` parameter specifies the ID of a plugin, where classes are located.
 This parameter is required since IntelliJ-based IDEs use separate classloaders for each plugin, and the code that will call methods on the IDE side (Invoker) needs to know where to search for them.
 
 There is built-in support for `@Remote` annotation inside IntelliJ IDEA:

@@ -128,7 +128,7 @@ There is built-in support for `@Remote` annotation inside IntelliJ IDEA:
 Rename and move the target class refactorings will update the annotation accordingly.
 Gutter icons can be used to navigate to the target class from a stub.
 
-## Calling IDE methods from tests
+## Calling IDE Methods from Tests
 
 The complete API test:
 

@@ -57,7 +57,7 @@ When a test needs to invoke a method on a remote object:
 
 Thus, the stub makes remote calls feel like local method calls, without the caller worrying about low-level networking, data conversion, or request handling.
 
-## Creating stubs
+## Creating Stubs
 
 To demonstrate how this works in practice, add the following code to the plugin:
 

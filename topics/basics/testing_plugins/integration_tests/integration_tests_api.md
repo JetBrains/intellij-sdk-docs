@@ -16,7 +16,7 @@ The IDE and tests are running in different processes, which means some way to co
 
 Driver framework uses Java Management Extensions (or JMX for short). JMX supports different connectors to manage the state of the JVM.
 Driver framework uses a standard Java Remote Method Invocation (RMI) protocol.
-This protocol allows accessing objects and invoking methods from tests in the JVM of the IDE.
+This protocol allows tests to access objects and invoke methods in the JVM running the IDE.
 
 The architecture of RMI protocol is as follows:
 ```mermaid

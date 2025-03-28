@@ -124,7 +124,7 @@ The `plugin` parameter specifies the ID of a plugin, where classes are located.
 This parameter is required since IntelliJ-based IDEs use separate [class loaders](plugin_class_loaders.md) for each plugin, and the code that will call methods on the IDE side (Invoker) needs to know where to search for them.
 
 There is built-in support for `@Remote` annotation inside IntelliJ IDEA:
-![](remote-support.png)
+![](remote-support.png){width="717"}
 
 Rename and move the target class refactorings will update the annotation accordingly.
 Gutter icons can be used to navigate to the target class from a stub.

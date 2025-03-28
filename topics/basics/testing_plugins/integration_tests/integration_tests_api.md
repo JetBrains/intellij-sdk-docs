@@ -182,7 +182,7 @@ service<ProjectManager>().getOpenProjects().singleOrNull()
 ## JMX/RMI limitations
 
 The main inconvenience of using JMX/RMI is that stubs need to be created for all objects which are used in tests.
-But on the other hand, they don't require modification of the production code.
+On the other hand, they don't require modification of the production code.
 
 As with any protocol, JMX/RMI has its limitations:
 

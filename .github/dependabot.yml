@@ -76,10 +76,6 @@ updates:
     schedule:
       interval: "daily"
   - package-ecosystem: "gradle"
-    directory: "/code_samples/theme_basics/"
-    schedule:
-      interval: "daily"
-  - package-ecosystem: "gradle"
     directory: "/code_samples/tool_window/"
     schedule:
       interval: "daily"

@@ -145,7 +145,7 @@ Inside an injection, the following tags can be used:
 #### Create an XML File to Load the Configuration
 
 Create an XML file <path>myLanguageID-injections.xml</path> next to your <path>plugin.xml</path> that loads the above configuration.
-Custom language authors also register their implementation of the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.languageSupport"/></include> there.
+Custom language authors also register their implementation of the <include from="snippets.topic" element-id="ep"><var name="ep" value="org.intellij.intelliLang.languageSupport"/></include> there.
 
 ```xml
 <idea-plugin>

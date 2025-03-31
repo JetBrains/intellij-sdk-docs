@@ -79,7 +79,3 @@ updates:
     directory: "/code_samples/tree_structure_provider/"
     schedule:
       interval: "daily"
-  - package-ecosystem: "gradle"
-    directory: "/code_samples/product_specific/pycharm_basics/"
-    schedule:
-      interval: "daily"

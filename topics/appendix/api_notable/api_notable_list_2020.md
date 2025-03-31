@@ -78,7 +78,7 @@ FileType mapping via hashbang (`#!`)
 : Specify `hashBangs` attribute in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.fileType"/></include>. [Issue](https://youtrack.jetbrains.com/issue/IDEA-175757)
 
 Add information to About dialog
-: Implement [<include from="snippets.topic" element-id="ep"><var name="ep" value="AboutPopupDescriptionProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/AboutPopupDescriptionProvider.kt) and register in `com.intellij.aboutPopupDescriptionProvider"/></include>.
+: Implement [`AboutPopupDescriptionProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/AboutPopupDescriptionProvider.kt) and register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.aboutPopupDescriptionProvider"/></include>.
 
 Previewing Intention/Quick Fix
 : To support preview in intention popup, suitable [`FileModifier`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/intention/FileModifier.java) must be provided (default implementation `FileModifier.getFileModifierForPreview()` works for most cases).

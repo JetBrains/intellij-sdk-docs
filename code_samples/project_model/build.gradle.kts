@@ -2,7 +2,7 @@
 
 plugins {
   id("java")
-  id("org.jetbrains.intellij.platform") version "2.4.0"
+  id("org.jetbrains.intellij.platform") version "2.5.0"
 }
 
 group = "org.intellij.sdk"

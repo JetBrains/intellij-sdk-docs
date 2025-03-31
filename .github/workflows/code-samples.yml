@@ -38,7 +38,9 @@ jobs:
           - psi_demo
           - run_configuration
           - settings
-
+          - simple_language_plugin
+          - tool_window
+          - tree_structure_provider
     steps:
       - name: Fetch Sources
         uses: actions/checkout@v4

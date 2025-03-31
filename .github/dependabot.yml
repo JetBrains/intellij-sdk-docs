@@ -32,10 +32,6 @@ updates:
     schedule:
       interval: "daily"
   - package-ecosystem: "gradle"
-    directory: "/code_samples/kotlin_demo/"
-    schedule:
-      interval: "daily"
-  - package-ecosystem: "gradle"
     directory: "/code_samples/live_templates/"
     schedule:
       interval: "daily"

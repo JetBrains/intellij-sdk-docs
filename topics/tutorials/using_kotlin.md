@@ -167,8 +167,8 @@ See [](kotlin_coroutines.md) on how to use them in plugins.
 
 | IntelliJ Platform version | Bundled _kotlinx-coroutines_ version |
 |---------------------------|--------------------------------------|
-| 2025.2                    | 1.10.1-intellij-3                    |
-| 2025.1                    | 1.8.0-intellij-12                    |
+| 2025.2                    | 1.10.1-intellij-4                    |
+| 2025.1                    | 1.8.0-intellij-13                    |
 | 2024.3                    | 1.8.0-intellij-11                    |
 | 2024.2                    | 1.8.0-intellij-9                     |
 | 2024.1                    | 1.7.3                                |

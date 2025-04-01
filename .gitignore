@@ -28,6 +28,7 @@
 
 ### Gradle template
 .gradle
+.intellijPlatform
 build/
 _idea-sandbox/
 

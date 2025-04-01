@@ -203,7 +203,7 @@ Those files may be related to trusted paths, macros, recent projects, custom plu
 However, when running the `clean` task, all configuration files are wiped and do not persist between sessions.
 
 Sometimes, it may be worth recreating such configuration, yet with the [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox) task for those configurations to persist.
-The following example marks the project located in the <path>$USER_HOME$/IdeaProjects/GradleProject</path> directory as trusted, like when the user clicks on the _Trust Project_ dialog when opening it for the first time.
+The following example marks the project located in the <path>\$USER_HOME$/IdeaProjects/GradleProject</path> directory as trusted, like when the user clicks on the _Trust Project_ dialog when opening it for the first time.
 
 ```kotlin
 tasks.withType<PrepareSandboxTask> {

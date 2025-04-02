@@ -19,6 +19,7 @@ repositories {
 dependencies {
   intellijPlatform {
     intellijIdeaCommunity("2024.2.5")
+    bundledPlugin("com.intellij.java")
   }
 }
 

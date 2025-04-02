@@ -84,7 +84,7 @@ class PluginProjectService {
 data class Storage(val key: String, val attributes: List<String>)
 ```
 
-This file contains one class with the static method `getPluginStorage`, and two [light services](plugin_services.md#light_services) – one application-level `PluginService` and one project-level `PluginProjectService`.
+This file contains one class with the static method `getPluginStorage`, and two [light services](plugin_services.md#light-services) – one application-level `PluginService` and one project-level `PluginProjectService`.
 
 The test needs to call the methods of these classes and verify their return values.
 To do this, the following stubs have to be created:

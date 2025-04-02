@@ -28,7 +28,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity("2024.2")
+    intellijIdeaCommunity("2024.2.5")
     bundledPlugin("com.intellij.java")
 
     testFramework(TestFrameworkType.Plugin.Java)
@@ -42,10 +42,15 @@ dependencies {
 
 intellijPlatform {
   buildSearchableOptions = false
+
+  pluginConfiguration {
+    ideaVersion {
+      sinceBuild = "242"
+    }
+  }
   pluginVerification  {
     ides {
       recommended()
     }
   }
 }
-

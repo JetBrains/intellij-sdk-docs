@@ -18,13 +18,18 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity("2024.2")
-    bundledPlugin("com.intellij.java")
+    intellijIdeaCommunity("2024.2.5")
   }
 }
 
 intellijPlatform {
   buildSearchableOptions = false
+
+  pluginConfiguration {
+    ideaVersion {
+      sinceBuild = "242"
+    }
+  }
   pluginVerification  {
     ides {
       recommended()

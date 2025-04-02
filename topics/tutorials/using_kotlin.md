@@ -133,6 +133,7 @@ See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html
 
 | IntelliJ Platform version (latest update) | Bundled _stdlib_ version |
 |-------------------------------------------|--------------------------|
+| 2025.2                                    | 2.1.20                   |
 | 2025.1                                    | 2.1.10                   |
 | 2024.3                                    | 2.0.21                   |
 | 2024.2                                    | 1.9.24                   |

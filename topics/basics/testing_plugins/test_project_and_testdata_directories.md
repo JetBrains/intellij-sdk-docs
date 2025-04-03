@@ -1,8 +1,10 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Test Project and Testdata Directories
 
 <link-summary>Adding test data to test projects used during tests execution.</link-summary>
+
+<include from="testing_plugins.md" element-id="testSamples"/>
 
 <include from="tests_and_fixtures.md" element-id="testFrameworkDependencies"/>
 

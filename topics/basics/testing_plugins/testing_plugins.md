@@ -36,11 +36,12 @@ Check out [](integration_tests_intro.md) tutorial that guides through setup proc
 <snippet id="testSamples">
 
 > Check out [this step-by-step tutorial](writing_tests_for_plugins.md) teaching how to write and run automated tests for your custom language plugin.
+>
 > Also, code samples
 > [comparing_string_references_inspection](%gh-sdk-samples-master%/comparing_string_references_inspection)
 > and [conditional_operator_intention](%gh-sdk-samples-master%/conditional_operator_intention) demonstrate using tests.
 >
-{style="note"}
+{style="note" title="Testing Tutorial and Code Samples"}
 
 </snippet>
 

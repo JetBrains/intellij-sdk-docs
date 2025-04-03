@@ -4,6 +4,8 @@
 
 <link-summary>Main approaches for implementing tests.</link-summary>
 
+<include from="testing_plugins.md" element-id="testSamples"/>
+
 The IntelliJ Platform testing infrastructure is not tied to any specific test framework.
 In fact, the IntelliJ IDEA Team uses [JUnit](https://junit.org), [TestNG](https://testng.org), and [Cucumber](https://cucumber.io/) for testing different parts of the project.
 However, most of the tests are written using JUnit 3.

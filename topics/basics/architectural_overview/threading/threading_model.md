@@ -86,7 +86,7 @@ If a thread requires accessing a data model, it must acquire one of the locks:
         <td>Can be acquired only from EDT concurrently with a write intent lock acquired on EDT.</td>
     </tr>
     <tr>
-        <td>Can't be acquired if write lock is held on another thread.</td>
+        <td>Can't be acquired if a write lock is held on another thread.</td>
         <td>Can't be acquired if another write intent lock or write lock is held on another thread.</td>
         <td>Can't be acquired if any other lock is held on another thread.</td>
     </tr>
@@ -169,12 +169,12 @@ Use other methods for pure UI operations.
 
 ## Accessing Data
 
-The IntelliJ Platform provides a simple API for accessing data under read or write locks in a form of read and write actions.
+The IntelliJ Platform provides a simple API for accessing data under read or write locks in the form of read and write actions.
 
 Read and write actions allow executing a piece of code under a lock, automatically acquiring it before an action starts, and releasing it after the action is finished.
 
 > Always try to wrap only the required operations into read/write actions, minimizing the time of holding locks.
-> If the read operation itself is long, consider using one of [read action cancellability techniques](#read-action-cancellability) to avoid blocking the write lock and EDT.
+> If the read operation itself is long, consider using one of the [read action cancellability techniques](#read-action-cancellability) to avoid blocking the write lock and EDT.
 >
 {style="warning" title="Minimize Locking Scopes"}
 
@@ -261,7 +261,7 @@ Reading data on EDT doesn't require an explicit read action, as the write intent
 
 </tabs>
 
-In all other cases, it is required to wrap read operation in a read action with one of the [API](#read-actions-api) methods.
+In all other cases, it is required to wrap a read operation in a read action with one of the [API](#read-actions-api) methods.
 
 ##### Objects Validity
 
@@ -402,7 +402,7 @@ Write operations must always be wrapped in a write action with one of the [API](
 
 Modifying the model is only allowed from write-safe contexts, including user actions and `SwingUtilities.invokeLater()` calls from them (see [](#invoking-operations-on-edt-and-modality)).
 
-Modifying PSI, VFS, or project model from inside UI renderers or `SwingUtilities.invokeLater()` calls is forbidden.
+It is forbidden to modify PSI, VFS, or project model from inside UI renderers or `SwingUtilities.invokeLater()`.
 
 </tab>
 
@@ -558,7 +558,7 @@ In both cases, when a read action is started and a write action occurs in the me
 Read actions must [check for cancellation](background_processes.md#handling-cancellation) often enough to trigger actual cancellation.
 Although the cancellation mechanism may differ under the hood ([Progress API](background_processes.md#progress-api) or [Kotlin Coroutines](kotlin_coroutines.md)), the cancellation handling rules are the same in both cases.
 
-Always check at the start of each read action if the [objects are still valid](#objects-validity), and if the whole operation still makes sense.
+Always check at the start of each read action if the [objects are still valid](#objects-validity) and if the whole operation still makes sense.
 With `ReadAction.nonBlocking()`, use `expireWith()` or `expireWhen()` for that.
 
 > If NBRA needs to access a [file-based index](indexing_and_psi_stubs.md) (for example, it is doing any project-wide PSI analysis, resolves references, or performs other tasks depending on indexes), use `ReadAction.nonBlocking(…).inSmartMode()`.
@@ -612,7 +612,7 @@ Massive batches of VFS events can be pre-processed in the background with [`Asyn
 Use `Application.isDispatchThread()`.
 
 If code must be invoked on EDT and the current thread can be EDT or BGT, use [`UIUtil.invokeLaterIfNeeded()`](%gh-ic%/platform/util/ui/src/com/intellij/util/ui/UIUtil.java).
-If the current thread is EDT, this method will run code immediately, or will schedule a later invocation if the current thread is BGT.
+If the current thread is EDT, this method will run code immediately or will schedule a later invocation if the current thread is BGT.
 
 ### Why write actions are currently allowed only on EDT?
 

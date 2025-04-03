@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Creating, showing, and getting the input provided by users in dialogs.</link-summary>
 
@@ -72,8 +72,10 @@ Use `action.putValue(DialogWrapper.DEFAULT_ACTION, true)` to set the default but
 
 See also [](validation_errors.md) topic in UI Guidelines.
 
-To validate the data entered into the dialog, override the `doValidate()` method.
-The method will be called automatically by timer.
+To validate the data entered into the dialog, call `initValidation()` in the dialog's constructor and
+override the `doValidate()` method to perform the actual validation.
+The method will be called automatically via a timer.
+
 If the currently entered data is valid, return `null`.
 Otherwise, return a [`ValidationInfo`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/ui/ValidationInfo.java) object which encapsulates an error message, and an optional component associated with the invalid data.
 When specifying a component, an error icon will be displayed next to it, and it will be focused when the user tries to invoke the <control>OK</control> action.

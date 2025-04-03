@@ -13,7 +13,7 @@ Persisting the state of components for IntelliJ Platform plugins and sharing set
 The IntelliJ Platform provides an API that allows components or services to persist their state between restarts of the IDE.
 The API allows for persisting simple key-value entries and complex state classes.
 
-> For persisting sensitive data like passwords, see [Persisting Sensitive Data](persisting_sensitive_data.md).
+> For persisting sensitive data like passwords, see [](persisting_sensitive_data.md).
 >
 {style="warning"}
 
@@ -100,7 +100,7 @@ class MySettings : SerializablePersistentStateComponent<MySettings.State>(State(
 <tab title="Java" group-key="java">
 
 The implementation of `PersistentStateComponent` must be parameterized with the type of state class.
-The state class can either be a separate class, or the class implementing `PersistentStateComponent`.
+The state class can either be a separate class or the class implementing `PersistentStateComponent`.
 
 <chapter title="Persistent Component with Separate State Class">
 
@@ -332,7 +332,10 @@ If the underlying persistence model or storage format has changed, a [`Converter
 
 ### Persistent Component Lifecycle
 
-The `PersistentStateComponent.loadState()` method is called after the component has been created (only if there is some non-default state persisted for the component), and after the XML file with the persisted state is changed externally (for example, if the project file was updated from the version control system).
+The `PersistentStateComponent.loadState()` method is called in two cases:
+1. After the component is created (only if there is some non-default state persisted for the component)
+2. After the XML file with the persisted state is changed externally (for example, if the project file was updated from the version control system)
+
 In the latter case, the component is responsible for updating the UI and other related components according to the changed state.
 
 The `PersistentStateComponent.getState()` method is called every time the settings are saved (for example, on frame deactivation or when closing the IDE).
@@ -347,7 +350,7 @@ Roaming is disabled for `PropertiesComponent`, so use it only for temporary, non
 
 Use the `PropertiesComponent.getInstance()` method for storing application-level values and the `PropertiesComponent.getInstance(Project)` method for storing project-level values.
 
-Since all plugins share the same namespace, it is highly recommended prefixing key names (for example, using plugin ID `com.example.myCustomSetting`).
+Since all plugins share the same namespace, it is highly recommended to prefix key names (for example, using plugin ID `com.example.myCustomSetting`).
 
 ## Legacy API (`JDOMExternalizable`) {collapsible="true"}
 

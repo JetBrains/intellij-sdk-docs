@@ -36,13 +36,18 @@ If an extension needs to have a persistent state, define a separate service resp
 
 The recommended approach to implementing a persistent state component in Kotlin is to extend one of the base classes:
 1. [`SimplePersistentStateComponent`](#SimplePersistentStateComponent)
-2. [`SerializablePersistentStateComponent`](#SerializablePersistentStateComponent) (available since 2022.2)
+2. [`SerializablePersistentStateComponent`](#SerializablePersistentStateComponent) (available and recommended since 2022.2)
+
+Both classes implement [`PersistentStateComponentWithModificationTracker`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponentWithModificationTracker.java) and track modifications count internally (in most cases; see details below).
+The `getStateModificationCount()` method helps avoid calling `PersistentStateComponent.getState()` to check whether the state is changed and must be saved.
 
 <chapter title="SimplePersistentStateComponent" id="SimplePersistentStateComponent">
 
 [`SimplePersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/SimplePersistentStateComponent.kt) is parameterized by a subclass of [`BaseState`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/BaseState.kt).
 `BaseState` provides a set of handy [property delegates](https://kotlinlang.org/docs/delegated-properties.html), which make it easy to create properties with default values.
-In addition, delegates track property modifications internally, which helps decrease calling `PersistentStateComponent.getState()` by the platform.
+
+Delegates track simple property modifications internally.
+Note that incremental collection modification (adding, removing, or modifying collection objects) may require manual `BaseState.incrementModificationCount()` invocation (see its Javadoc for details).
 
 Example:
 
@@ -65,6 +70,8 @@ class MySettings : SimplePersistentStateComponent<MySettings.State>(State()) {
 
 State properties are exposed for reading and modification via persistent state component class' properties.
 The state properties are modified by copying the state and overwriting a modified value within `SerializablePersistentStateComponent.updateState()`, which ensures atomic modification and thread safety.
+
+The copy-on-write approach allows for full internal modification tracking.
 
 Example:
 

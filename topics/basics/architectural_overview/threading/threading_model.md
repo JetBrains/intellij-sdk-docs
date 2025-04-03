@@ -69,26 +69,30 @@ This is implemented with a single application-wide [read-write (RW) lock](https:
 
 If a thread requires accessing a data model, it must acquire one of the locks:
 
-<table>
+<table style="both">
     <tr>
-        <td width="33%">Read Lock</td>
-        <td width="33%">Write Intent Lock</td>
-        <td width="33%">Write Lock</td>
+        <td width="16%"></td>
+        <td width="28%">Read Lock</td>
+        <td width="28%">Write Intent Lock</td>
+        <td width="28%">Write Lock</td>
     </tr>
     <tr>
-        <td>Allows a thread for reading data.</td>
-        <td>Allows a thread for reading data and potentially upgrade to the write lock.</td>
-        <td>Allows a thread for reading and writing data.</td>
+        <td>Allows for:</td>
+        <td>Reading data</td>
+        <td>Reading data and potentially upgrade to the write lock</td>
+        <td>Reading and writing data</td>
     </tr>
     <tr>
-        <td>Can be acquired from any thread concurrently with other read locks and write intent lock.</td>
-        <td>Can be acquired from any thread concurrently with read locks.</td>
-        <td>Can be acquired only from EDT concurrently with a write intent lock acquired on EDT.</td>
+        <td>Can be acquired from:</td>
+        <td>Any thread concurrently with other read locks and write intent lock</td>
+        <td>Any thread concurrently with read locks</td>
+        <td>Only from EDT concurrently with a write intent lock acquired on EDT</td>
     </tr>
     <tr>
-        <td>Can't be acquired if a write lock is held on another thread.</td>
-        <td>Can't be acquired if another write intent lock or write lock is held on another thread.</td>
-        <td>Can't be acquired if any other lock is held on another thread.</td>
+        <td>Can't be acquired if:</td>
+        <td>A write lock is held on another thread</td>
+        <td>Another write intent lock or write lock is held on another thread</td>
+        <td>Any other lock is held on another thread</td>
     </tr>
 </table>
 

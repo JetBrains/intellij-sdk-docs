@@ -6,9 +6,6 @@ on:
   pull_request:
     paths: [ 'code_samples/**','.github/workflows/code-samples.yml' ]
 
-env:
-  PLUGIN_VERIFIER_IDE_VERSIONS: '2024.1.7 2024.2.4 2024.3'
-
 jobs:
 
   checkout:
@@ -40,6 +37,7 @@ jobs:
           - project_wizard
           - psi_demo
           - run_configuration
+          - settings
           - simple_language_plugin
           - tool_window
           - tree_structure_provider
@@ -52,8 +50,8 @@ jobs:
           distribution: zulu
           java-version: 17
 
-      - name: Verify Plugin
-        run: (cd code_samples/${{ matrix.plugin }}; ./gradlew verifyPlugin)
+      - name: Build Plugin
+        run: (cd code_samples/${{ matrix.plugin }}; ./gradlew buildPlugin)
       - name: Test Plugin
         run: (cd code_samples/${{ matrix.plugin }}; ./gradlew test)
 
@@ -61,21 +59,19 @@ jobs:
         id: properties
         shell: bash
         run: |
-          echo "ideVersions=${PLUGIN_VERIFIER_IDE_VERSIONS// /-}" >> $GITHUB_OUTPUT
           echo "pluginVerifierHomeDir=~/.pluginVerifier" >> $GITHUB_OUTPUT
 
       - name: Run Plugin Verifier
         run: |
           echo "
           tasks {
-            runPluginVerifier {
-              ideVersions.set("\"$PLUGIN_VERIFIER_IDE_VERSIONS\"".split(' ').toList())
+            verifyPlugin {
               freeArgs.set(listOf(\"-mute\", \"TemplateWordInPluginId\"))
             }
           }
           " >> code_samples/${{ matrix.plugin }}/build.gradle.kts
           cd code_samples/${{ matrix.plugin }}
-          ./gradlew runPluginVerifier -Pplugin.verifier.home.dir=${{ steps.properties.outputs.pluginVerifierHomeDir }}
+          ./gradlew verifyPlugin -Pplugin.verifier.home.dir=${{ steps.properties.outputs.pluginVerifierHomeDir }}
 
       - name: Collect Plugin Verifier Result
         if: ${{ always() }}

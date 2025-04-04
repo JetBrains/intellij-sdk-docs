@@ -32,10 +32,6 @@ updates:
     schedule:
       interval: "daily"
   - package-ecosystem: "gradle"
-    directory: "/code_samples/kotlin_demo/"
-    schedule:
-      interval: "daily"
-  - package-ecosystem: "gradle"
     directory: "/code_samples/live_templates/"
     schedule:
       interval: "daily"
@@ -76,18 +72,10 @@ updates:
     schedule:
       interval: "daily"
   - package-ecosystem: "gradle"
-    directory: "/code_samples/theme_basics/"
-    schedule:
-      interval: "daily"
-  - package-ecosystem: "gradle"
     directory: "/code_samples/tool_window/"
     schedule:
       interval: "daily"
   - package-ecosystem: "gradle"
     directory: "/code_samples/tree_structure_provider/"
-    schedule:
-      interval: "daily"
-  - package-ecosystem: "gradle"
-    directory: "/code_samples/product_specific/pycharm_basics/"
     schedule:
       interval: "daily"

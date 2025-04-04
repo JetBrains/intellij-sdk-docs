@@ -30,6 +30,9 @@ Blocking Context
 : `java.util.concurrent.CancellationException`, `kotlin.coroutines.cancellation.CancellationException` (typealias in stdlib), `kotlinx.coroutines.CancellationException` (typealias in kotlinx-coroutines)
 <br/>&rarr;&nbsp;_ProcessCanceledException_
 
+Code Insight
+: Code insight is a common name used for auto-completion, inspections, intention actions, type inference, and other features related to the code analysis.
+
 Coroutine
 : A [Kotlin coroutines](kotlin_coroutines.md) execution unit allowing for handling concurrency and asynchronous tasks efficiently with a sequential/imperative code style.
 

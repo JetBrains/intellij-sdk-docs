@@ -85,7 +85,7 @@ Default value
 Example
 :
 ```
-org.jetbrains.intellij.platform.buildSearchableOptions=false
+org.jetbrains.intellij.platform.noSearchableOptionsWarning=false
 ```
 
 

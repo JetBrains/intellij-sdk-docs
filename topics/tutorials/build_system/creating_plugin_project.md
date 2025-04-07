@@ -7,24 +7,11 @@
 This documentation page describes a Gradle-based plugin project generated with the [New Project Wizard](https://www.jetbrains.com/help/idea/new-project-wizard.html)
 in IntelliJ IDEA, but the project generated with [](plugin_github_template.md) covers all the described files and directories.
 
-<snippet id="gradle1xOnly">
-
-> This page covers [](tools_gradle_intellij_plugin.md) only.
->
-> See the [](tools_intellij_platform_gradle_plugin.md) reference.
-> A dedicated page for it will be provided later.
->
-{title="Gradle IntelliJ Plugin (1.x) Only"}
-
-</snippet>
-
 ## Creating a Plugin with New Project Wizard
 
 To enable the _IDE Plugin_ wizard, make sure _Gradle_ and _Plugin DevKit_ plugins are installed and enabled.
 
 <include from="snippets.topic" element-id="pluginDevKitAvailability"/>
-
-<include from="snippets.topic" element-id="gradlePluginVersion"/>
 
 <procedure title="Create IDE Plugin" id="create-ide-plugin">
 
@@ -95,7 +82,7 @@ end title
 @enduml
 ```
 
-* The default IntelliJ Platform <path>build.gradle.kts</path> file (see next paragraph).
+* The default IntelliJ Platform <path>build.gradle.kts</path> file (see [below](#build-gradle-kts)).
 * The <path>gradle.properties</path> file, containing properties used by Gradle build script.
 * The <path>settings.gradle.kts</path> file, containing a definition of the `rootProject.name` and required repositories.
 * The Gradle Wrapper files in the <path>gradle</path> directory.
@@ -104,7 +91,85 @@ end title
 * The <path>META-INF</path> directory under the default `main` [source set](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) contains the [plugin configuration file](plugin_configuration_file.md) and [plugin logo](plugin_icon_file.md).
 * The _Run IDE with Plugin_ [run configuration](https://www.jetbrains.com/help/idea/run-debug-configuration.html).
 
-The generated `my_plugin` project <path>build.gradle.kts</path> file:
+#### `build.gradle.kts` Gradle Build File
+{id="build-gradle-kts"}
+
+The generated `my_plugin` project <path>build.gradle.kts</path> file depends on the IDE version used to generate the project:
+- 2025.1+: [](tools_intellij_platform_gradle_plugin.md) variant
+- earlier IDE versions: [](tools_gradle_intellij_plugin.md) variant (deprecated)
+
+<tabs>
+
+<tab title="IntelliJ Platform Gradle Plugin (2.x)">
+
+```kotlin
+plugins {
+    id("java")
+    id("org.jetbrains.kotlin.jvm") version "1.9.25"
+    id("org.jetbrains.intellij.platform") version "2.3.0"
+}
+
+group = "org.example"
+version = "1.0-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+    intellijPlatform {
+        defaultRepositories()
+    }
+}
+
+// Configure Gradle IntelliJ Plugin
+// Read more: https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin.html
+dependencies {
+    intellijPlatform {
+        create("IC", "2024.2.5")
+        testFramework(org.jetbrains.intellij.platform.gradle.TestFrameworkType.Platform)
+
+        // Add necessary plugin dependencies for compilation here, example:
+        // bundledPlugin("com.intellij.java")
+    }
+}
+
+intellijPlatform {
+    pluginConfiguration {
+        ideaVersion {
+            sinceBuild = "242"
+        }
+
+        changeNotes = """
+      Initial version
+    """.trimIndent()
+    }
+}
+
+tasks {
+    // Set the JVM compatibility versions
+    withType<JavaCompile> {
+        sourceCompatibility = "21"
+        targetCompatibility = "21"
+    }
+    withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+        kotlinOptions.jvmTarget = "21"
+    }
+}
+```
+
+* Three Gradle plugins are explicitly declared:
+    * [Gradle Java](https://docs.gradle.org/current/userguide/java_plugin.html) plugin (`java`)
+    * [Kotlin Gradle](https://kotlinlang.org/docs/gradle-configure-project.html#apply-the-plugin) plugin (`org.jetbrains.kotlin.jvm`)
+    * [](tools_intellij_platform_gradle_plugin.md) (`org.jetbrains.intellij.platform`)
+* The <control>Group</control> from the [New Project](#create-ide-plugin) wizard is the `project.group` value
+* `repositories`: setup required repositories ([](tools_intellij_platform_gradle_plugin_repositories_extension.md))
+* `dependencies`:
+  * define target IDE type (`IC`) and version (`2024.2.5`) ([](tools_intellij_platform_gradle_plugin_dependencies_extension.md#target-versions))
+  * add dependency on the platform testing framework ([](tools_intellij_platform_gradle_plugin_dependencies_extension.md#testing))
+* `pluginConfiguration`: [`since-build`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-ideaVersion) and initial [change notes](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-changeNotes)
+* `sourceCompatibility` enforces using a 21 JDK
+
+</tab>
+
+<tab title="Gradle IntelliJ Plugin (1.x)">
 
 ```kotlin
 plugins {
@@ -168,7 +233,9 @@ tasks {
 * The initial [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) and [`publishPlugin`](tools_gradle_intellij_plugin.md#tasks-publishplugin) tasks configuration.
   See the [](publishing_plugin.md#publishing-plugin-with-gradle) section for more information.
 
-> Consider using the [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template) which additionally provides CI setup covered with GitHub Actions.
+</tab>
+
+</tabs>
 
 #### Plugin Gradle Properties and Plugin Configuration File Elements
 

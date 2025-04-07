@@ -4,7 +4,8 @@
 
 <link-summary>Creating and running a Gradle-based IntelliJ Platform plugin project.</link-summary>
 
-This documentation page describes a Gradle-based plugin project generated with the [New Project Wizard](https://www.jetbrains.com/help/idea/new-project-wizard.html), but the project generated with [](plugin_github_template.md) covers all the described files and directories.
+This documentation page describes a Gradle-based plugin project generated with the [New Project Wizard](https://www.jetbrains.com/help/idea/new-project-wizard.html)
+in IntelliJ IDEA, but the project generated with [](plugin_github_template.md) covers all the described files and directories.
 
 <snippet id="gradle1xOnly">
 
@@ -19,14 +20,16 @@ This documentation page describes a Gradle-based plugin project generated with t
 
 ## Creating a Plugin with New Project Wizard
 
+To enable the _IDE Plugin_ wizard, make sure _Gradle_ and _Plugin DevKit_ plugins are installed and enabled.
+
+<include from="snippets.topic" element-id="pluginDevKitAvailability"/>
+
 <include from="snippets.topic" element-id="gradlePluginVersion"/>
 
 <procedure title="Create IDE Plugin" id="create-ide-plugin">
 
-<include from="snippets.topic" element-id="pluginDevKitAvailability"/>
-
-Launch the <control>New Project</control> wizard via the <ui-path>File | New | Project...</ui-path> action and provide the following information:
-1. Select the <control>IDE Plugin</control> generator type from the list on the left.
+Launch the <control>New Project</control> wizard via the <ui-path>File | New | Project...</ui-path> action and follow these steps:
+1. Select the <control>IDE Plugin</control> type from the list on the left.
 2. Specify the project <control>Name</control> and <control>Location</control>.
 3. Choose the <control>Plugin</control> option in the project <control>Type</control>.
 4. _Only in IntelliJ IDEA older than 2023.1:_
@@ -36,28 +39,28 @@ Launch the <control>New Project</control> wizard via the <ui-path>File | New | P
    See also [Kotlin for Plugin Developers](using_kotlin.md) for more information.
 
    > Projects generated with IntelliJ IDEA 2023.1 or newer support both Kotlin and Java sources out of the box.
-   > The Project generator automatically creates <path>\$PLUGIN_DIR\$/src/main/kotlin</path> sources directory.
-   > To add Java sources, create the <path>\$PLUGIN_DIR\$/src/main/java</path> directory manually.
+   > The wizard automatically creates the <path>\$PLUGIN_DIR\$/src/main/kotlin</path> sources directory.
+   > To add Java sources, add the <path>\$PLUGIN_DIR\$/src/main/java</path> directory manually.
    >
    {style="note" title="Using Kotlin and Java sources"}
 
 5. Provide the <control>Group</control> which is typically an inverted company domain (e.g. `com.example.mycompany`).
    It is used for the Gradle property `project.group` value in the project's Gradle build script.
-6. Provide the <control>Artifact</control> which is the default name of the build project artifact (without a version).
+6. Provide the <control>Artifact</control> which is the default name of the build project artifact (without the version).
    It is also used for the Gradle property `rootProject.name` value in the project's <path>settings.gradle.kts</path> file.
    For this example, enter `my_plugin`.
-7. Select <control>JDK</control> 17.
-   This JDK will be the default JRE used to run Gradle, and the JDK version used to compile the plugin sources.
+7. Select a <control>JDK</control> matching the required Java version.
+   It will be the default JRE used to run Gradle, and the JDK used to compile the plugin sources.
 
 <include from="snippets.topic" element-id="apiChangesJavaVersion"/>
 
-8. After providing all the information, click the <control>Create</control> button to generate the project.
+8. Click the <control>Create</control> button to generate the project.
 
 </procedure>
 
 ### Components of a Wizard-Generated Gradle IntelliJ Platform Plugin
 
-For the example `my_plugin` created with the steps describes above, the _IDE Plugin_ generator creates the following directory content:
+For the `my_plugin` example created with the steps described above, the following directory content is created:
 
 ```plantuml
 @startuml
@@ -95,10 +98,11 @@ end title
 * The default IntelliJ Platform <path>build.gradle.kts</path> file (see next paragraph).
 * The <path>gradle.properties</path> file, containing properties used by Gradle build script.
 * The <path>settings.gradle.kts</path> file, containing a definition of the `rootProject.name` and required repositories.
-* The Gradle Wrapper files, and in particular the <path>gradle-wrapper.properties</path> file, which specifies the version of Gradle to be used to build the plugin.
-  If needed, the IntelliJ IDEA Gradle plugin downloads the version of Gradle specified in this file.
-* The <path>META-INF</path> directory under the default `main` [source set](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) contains the plugin [configuration file](plugin_configuration_file.md) and [plugin logo](plugin_icon_file.md).
-* The _Run Plugin_ [run configuration](https://www.jetbrains.com/help/idea/run-debug-configuration.html).
+* The Gradle Wrapper files in the <path>gradle</path> directory.
+  The <path>gradle-wrapper.properties</path> file specifies the version of Gradle to be used to build the plugin.
+  If needed, the IDE downloads the version of Gradle specified in this file automatically.
+* The <path>META-INF</path> directory under the default `main` [source set](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) contains the [plugin configuration file](plugin_configuration_file.md) and [plugin logo](plugin_icon_file.md).
+* The _Run IDE with Plugin_ [run configuration](https://www.jetbrains.com/help/idea/run-debug-configuration.html).
 
 The generated `my_plugin` project <path>build.gradle.kts</path> file:
 
@@ -178,20 +182,20 @@ Please note that it is impossible to change the `<id>` of a published plugin wit
 
 ## Running a Plugin With the `runIde` Gradle task
 
-Gradle projects are run from the IDE's Gradle Tool window.
+Gradle projects are run from the IDE's <control>Gradle</control> tool window.
 
 ### Adding Code to the Project
 
-Before running [`my_plugin`](#components-of-a-wizard-generated-gradle-intellij-platform-plugin), some code can be added to provide simple functionality.
+Before running [`my_plugin`](#components-of-a-wizard-generated-gradle-intellij-platform-plugin), some code can be added to provide basic functionality.
 See the [](creating_actions_tutorial.md) tutorial for step-by-step instructions for adding a menu action.
 
 ### Executing the Plugin
 
-The _IDE Plugin_ generator automatically creates the _Run Plugin_ run configuration that can be executed via the <ui-path>Run | Run...</ui-path> action or can be found in the <control>Gradle</control> tool window under the <control>Run Configurations</control> node.
+The generated project contains the _Run IDE with Plugin_ run configuration that can be executed via the <ui-path>Run | Run...</ui-path> action or can be found in the <control>Gradle</control> tool window under the <control>Run Configurations</control> node.
 
 To execute the Gradle `runIde` task directly, open the <control>Gradle</control> tool window and search for the <control>runIde</control> task under the <control>Tasks</control> node.
-If it's not on the list, hit the re-import button in the [toolbar](https://www.jetbrains.com/help/idea/jetgradle-tool-window.html#gradle_toolbar) at the top of the Gradle tool window.
-When the <control>runIde</control> task is visible, double-click it to execute.
+If it's not on the list, click the <control>Sync All Gradle Projects</control> button on the [toolbar](https://www.jetbrains.com/help/idea/jetgradle-tool-window.html#gradle_toolbar) at the top of the <control>Gradle</control> tool window.
+Then double-click it to execute.
 
 To debug your plugin in a _standalone_ IDE instance, please see [How to Debug Your Own IntelliJ IDEA Instance](https://medium.com/agorapulse-stories/how-to-debug-your-own-intellij-idea-instance-7d7df185a48d) blog post.
 

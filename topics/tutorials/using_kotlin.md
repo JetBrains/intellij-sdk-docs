@@ -2,7 +2,7 @@
 
 # Configuring Kotlin Support
 
-<link-summary>Advantages and configuration required for developing a plugin in Kotlin.</link-summary>
+<link-summary>Advantages and required configuration for developing a plugin in Kotlin.</link-summary>
 
 <tldr>
 

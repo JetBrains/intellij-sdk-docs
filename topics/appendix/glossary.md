@@ -163,7 +163,7 @@ Version Control System _(VCS)_ {#version-control-system}
 Virtual File _(VF)_ {#virtual-file}
 : A [Virtual File](virtual_file.md) represents a file in a &rarr;&nbsp;[_Virtual File System_](#virtual-file-system).
 
-Virtual File System _(VFS)_ {#vrtual-file-system}
+Virtual File System _(VFS)_ {#virtual-file-system}
 : A [Virtual File System](virtual_file_system.md) provides a unified API for working with files represented as &rarr;&nbsp;[_Virtual File_](#virtual-file).
 
 ## W

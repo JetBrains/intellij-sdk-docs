@@ -98,8 +98,7 @@ It is recommended to proofread the texts or use one of the [spellcheck plugins](
 
 ## Plugin Description and Presentation
 
-The description on the plugin page is the place where users have the first contact with the plugin, and its content helps them to decide if it is what they are looking for.
-The description should be clear, polished, and follow the rules described in the JetBrains Marketplace [documentation](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description).
+The description on the plugin page is the place where users have the first contact with the plugin, and its content helps them to decide if it is what they are looking for. The description should be clear, polished, and follow the rules described in the JetBrains Marketplace [documentation](https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description).
 See also this webinar about [5 tips for optimizing the JetBrains Marketplace plugin page](https://youtu.be/oB1GA9JeeiY?t=52).
 
 ## Providing Translations

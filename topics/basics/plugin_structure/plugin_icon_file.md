@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Plugin Logo
 
@@ -28,7 +28,7 @@ Whether online or in the product UI, a Plugin Logo helps users to identify a plu
 
 ## Plugin Logo Requirements
 
-> Please see also these [important requirements](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-logo) for JetBrains Marketplace.
+> Please see also these [important requirements](https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-logo) for JetBrains Marketplace.
 >
 {style="note"}
 

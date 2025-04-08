@@ -1510,7 +1510,6 @@ Children
   - [`<interface-class>`](#idea-plugin__application-components__component__interface-class)  ![Deprecated][deprecated]
   - [`<loadForDefaultProject>`](#idea-plugin__application-components__component__loadForDefaultProject)  ![Deprecated][deprecated]
   - [`<option>`](#idea-plugin__application-components__component__option)  ![Deprecated][deprecated]
-  - [`<skipForDefaultProject>`](#idea-plugin__application-components__component__skipForDefaultProject)  ![Deprecated][deprecated]
 
 ##### `implementation-class`
 {#idea-plugin__application-components__component__implementation-class}
@@ -1610,29 +1609,6 @@ Attributes
 
 If present, the component is instantiated also for the default project. It takes effect only when used inside
 [`<project-components>`](#idea-plugin__project-components) element.
-
-{type="narrow"}
-Deprecated
-:
-since 2020.1
-
-{type="narrow"}
-Required
-: no
-
-##### `skipForDefaultProject`
-{#idea-plugin__application-components__component__skipForDefaultProject}
-
-> Do not use it in new plugins.
-> See [Components](plugin_components.md) for the migration guide.
->
-{style="warning"}
-
-In the past, if present, the component was not loaded for the default project.
-
-Currently, project components aren't loaded in the default project by default, so this element has no effect.
-Use [`<loadForDefaultProject>`](#idea-plugin__application-components__component__loadForDefaultProject)
-if it is required to load a component in the default project.
 
 {type="narrow"}
 Deprecated

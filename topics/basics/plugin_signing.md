@@ -284,9 +284,19 @@ provide <control>Environment Variables</control> using relevant environment vari
 
 ### CLI Tool
 
+<tldr id="tldr">
+
+**Current Release**: %marketplace-zip-signer-version%
+
+**GitHub**: [Releases & Changelog](https://github.com/JetBrains/marketplace-zip-signer/releases), [Issue Tracker](https://github.com/JetBrains/marketplace-zip-signer/issues)
+
+**JetBrains Platform Forum**: [Marketplace](https://platform.jetbrains.com/c/marketplace/8) category
+
+</tldr>
+
 CLI tool is required if you don't rely on either Gradle plugin – i.e., when working with [Themes](developing_themes.md).
 
-To get the latest Marketplace ZIP Signer CLI Tool, visit the [JetBrains/marketplace-zip-signer](https://github.com/JetBrains/marketplace-zip-signer/releases) GitHub Releases page.
+Get the latest Marketplace ZIP Signer CLI Tool version from the GitHub Releases page.
 After downloading the <path>marketplace-zip-signer-cli.jar</path>, execute it as below:
 
 ```bash

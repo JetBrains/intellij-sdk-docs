@@ -86,6 +86,7 @@ Because of that, tool windows are normally disabled while building indexes unles
 As mentioned previously, tool windows can contain multiple contents (tabs).
 To manage the contents of a tool window, call [`ToolWindow.getContentManager()`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/wm/ToolWindow.java).
 To add a content (tab), first create it by calling [`ContentManager.getFactory().createContent()`](%gh-ic%/platform/ide-core/src/com/intellij/ui/content/ContentManager.java), and then to add it to the tool window using [`ContentManager.addContent()`](%gh-ic%/platform/ide-core/src/com/intellij/ui/content/ContentManager.java).
+Set the preferred focus component via `Content.setPreferredFocusableComponent()`.
 Use `Content.setDisposer()` to register associated `Disposable` (see [](disposers.md)).
 
 See [`SimpleToolWindowPanel`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/SimpleToolWindowPanel.java) as a convenient base class, supporting [Toolbars](action_system.md#buildingToolbarPopupMenu) and both vertical/horizontal layout.

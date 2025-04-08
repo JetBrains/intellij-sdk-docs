@@ -19,8 +19,7 @@ To learn more, browse [available Extension Points][docs:eps], explore Extension 
 
 ## Target Platform
 
-All Code Samples target the latest GA platform release.
-Previous releases are made available via [tags](https://github.com/JetBrains/intellij-sdk-code-samples/tags).
+All Code Samples target the _Latest GA - 3 Releases_ platform.
 
 ## Structure
 

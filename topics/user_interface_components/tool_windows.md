@@ -126,3 +126,9 @@ This plugin creates the <control>Sample Calendar</control> tool window that disp
 When opened, this tool window is similar to the following screen:
 
 ![Sample Calendar](sample_calendar.png){width="403"}
+
+## Testing
+
+One of the testing approaches for tool windows is implementing [UI integration tests](integration_tests_ui.md).
+
+To get a tool window in UI tests, use [`IdeaFrameUI.toolWindow()`](%gh-ic-master%/platform/remote-driver/test-sdk/src/com/intellij/driver/sdk/ui/components/common/IdeaFrameUiExt.kt).

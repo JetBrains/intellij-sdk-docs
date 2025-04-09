@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Task Awares
 
@@ -588,8 +588,6 @@ The helper method used for applying sandbox configuration from the sandbox produ
 </tldr>
 
 Provides the path to the Marketplace ZIP Signer executable.
-
-It is required to have a dependency on the Marketplace ZIP Signer added to the project with [`intellijPlatform.zipSigner()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md) dependencies extension.
 
 
 ### `zipSignerExecutable`

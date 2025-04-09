@@ -16,6 +16,8 @@ _- Sample 1_ - Sample implementation
 >
 {title="Locating more Language EPs"}
 
+## Editing
+
 ### Brace Matching
 
 EP: `com.intellij.lang.braceMatcher`
@@ -31,6 +33,7 @@ An opening non-structural brace is not matched with a closing one if one of them
 See also [](#recognizing-complex-multi-block-expressions).
 
 #### "Heavy" Brace Matching
+
 <primary-label ref="2022.3"/>
 
 If the brace matching is "too heavy" and should not be executed in [EDT](threading_model.md), implement
@@ -81,78 +84,16 @@ EP: `com.intellij.moveLeftRightHandler`
 Return children of given element from [`MoveElementLeftRightHandler`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/moveLeftRight/MoveElementLeftRightHandler.java) for <ui-path>Code | Move Element Left|Right</ui-path>, e.g., method call parameters.
 Alternatively, implement [`PsiListLikeElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiListLikeElement.java) in PSI element.
 
-### Naming Suggestions
+### Move Statements Up and Down in the Editor
 
-EP: `com.intellij.nameSuggestionProvider`
+EP: `com.intellij.statementUpDownMover`
 
-[`NameSuggestionProvider`](%gh-ic%/platform/refactoring/src/com/intellij/refactoring/rename/NameSuggestionProvider.java) provides name suggestions for the given element, e.g., for Rename refactoring.
+[`StatementUpDownMover`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/moveUpDown/StatementUpDownMover.java)
+allows for customizing the behavior of moving statements up and down.
+This can be used to keep code syntactically correct when moving code in the editor, e.g. when moving
+a variable declaration.
 
-### Semantic Highlight Usages
-
-EP: `com.intellij.highlightUsagesHandlerFactory`
-
-[`HighlightUsagesHandlerFactory`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/highlighting/HighlightUsagesHandlerFactory.java) allows highlighting e.g., Exit Points or Exceptions.
-Can be [](indexing_and_psi_stubs.md#DumbAwareAPI) (2024.3+).
-
-### TODO View
-
-[`ParserDefinition.getCommentTokens()`](%gh-ic%/platform/core-api/src/com/intellij/lang/ParserDefinition.java) must return the set of tokens treated as comments to populate the <control>TODO</control> tool window.
-
-### Context Info
-
-EP: `com.intellij.declarationRangeHandler`
-
-[`DeclarationRangeHandler`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hint/DeclarationRangeHandler.java) provides <ui-path>View | Context Info</ui-path> for custom languages with structure view implementation based on a [`TreeBasedStructureViewBuilder`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/structureView/TreeBasedStructureViewBuilder.java).
-
-### Spellchecking
-
-Moved to [](spell_checking.md).
-
-### Reference Injection
-
-EP: `com.intellij.referenceInjector`
-
-[`ReferenceInjector`](%gh-ic%/platform/analysis-api/src/com/intellij/psi/injection/ReferenceInjector.java) allows users to inject pre-defined references (e.g., "Encoding", "File Reference") into `PsiLanguageInjectionHost` elements (IntelliLang plugin required).
-
-### Color Preview/Chooser
-
-EP: `com.intellij.colorProvider`
-
-[`ElementColorProvider`](%gh-ic%/platform/lang-api/src/com/intellij/openapi/editor/ElementColorProvider.java) renders gutter icon for an element containing color information.
-
-### File Includes
-
-EP: `com.intellij.include.provider`
-
-[`FileIncludeProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/psi/impl/include/FileIncludeProvider.java) provides information about _include_ statements resolving to files (e.g., `<xi:include>` in XML).
-Including/included files can then be obtained via [`FileIncludeManager`](%gh-ic%/platform/lang-api/src/com/intellij/psi/impl/include/FileIncludeManager.java).
-
-### Recognizing Complex Multi-Block Expressions
-
-EP: `com.intellij.codeBlockSupportHandler`
-
-[`CodeBlockSupportHandler`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/highlighting/CodeBlockSupportHandler.java)
-allows providing text ranges for more complex code blocks like, e.g., in `if`/`elsif`/`else` blocks.
-It is used to highlight markers and keywords if one is under the cursor, and for navigation to the beginning/end of blocks.
-See also [](#brace-matching).
-
-### Breadcrumbs
-
-EP: `com.intellij.breadcrumbsInfoProvider`
-
-[`BreadcrumbsProvider`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ui/breadcrumbs/BreadcrumbsProvider.java)
-allows for language-specific [breadcrumbs](https://www.jetbrains.com/help/idea/navigating-through-the-source-code.html#editor_breadcrumbs).
-[Sticky Lines](https://www.jetbrains.com/help/idea/sticky-lines.html) feature also uses this data.
-
-- [`GroovyBreadcrumbsInfoProvider`](%gh-ic%/plugins/groovy/src/org/jetbrains/plugins/groovy/editor/GroovyBreadcrumbsInfoProvider.kt)
-
-### Plain Text Completion
-
-EP: `com.intelllij.completion.plainTextSymbol`
-
-[`PlainTextSymbolCompletionContributor`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/completion/PlainTextSymbolCompletionContributor.java)
-provides a simple way to extract lookup elements from a file so that users have completion available
-in, e.g., plain text editors like VCS commit messages.
+- [`DeclarationMover`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/editorActions/moveUpDown/DeclarationMover.java)
 
 ### Splitting and Joining List Constructs
 
@@ -170,14 +111,93 @@ for their implementation.
 
 - [`XmlAttributesSplitJoinContext`](%gh-ic%/xml/impl/src/com/intellij/codeInsight/intentions/XmlAttributesSplitJoinContext.kt)
 
-### Suggesting Rename and Change Signature Refactorings
+### Recognizing Complex Multi-Block Expressions
 
-EP: `com.intellij.suggestedRefactoringSupport`
+EP: `com.intellij.codeBlockSupportHandler`
 
-[`SuggestedRefactoringSupport`](%gh-ic%/platform/lang-api/src/com/intellij/refactoring/suggested/SuggestedRefactoringSupport.kt)
-provides functionality for suggesting rename and change signature refactorings for custom languages.
+[`CodeBlockSupportHandler`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/highlighting/CodeBlockSupportHandler.java)
+allows providing text ranges for more complex code blocks like, e.g., in `if`/`elsif`/`else` blocks.
+It is used to highlight markers and keywords if one is under the cursor, and for navigation to the beginning/end of blocks.
+See also [](#brace-matching).
 
-- [`KotlinSuggestedRefactoringSupport`](%gh-ic%/plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/refactoring/suggested/KotlinSuggestedRefactoringSupport.kt)
+## Highlighting
+
+### Reference Injection
+
+EP: `com.intellij.referenceInjector`
+
+[`ReferenceInjector`](%gh-ic%/platform/analysis-api/src/com/intellij/psi/injection/ReferenceInjector.java) allows users to inject pre-defined references (e.g., "Encoding", "File Reference") into `PsiLanguageInjectionHost` elements (IntelliLang plugin required).
+
+### Prevent Error Highlighting of Files
+
+EP: `com.intellij.problemHighlightFilter`, `com.intellij.problemFileHighlightFilter`
+
+[`ProblemHighlightFilter`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/daemon/ProblemHighlightFilter.java) and
+the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.problemFileHighlightFilter"/></include> (which implements
+[`Condition<VirtualFile>`](%gh-ic%/platform/util/src/com/intellij/openapi/util/Condition.java))
+are used to filter out files that should not be error-highlighted because they are, e.g., outside
+the current project scope.
+Note that these filters should be permissive and only prevent highlighting for files that are absolutely
+known to be outside the scope.
+
+- [`JavaProblemHighlightFilter`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/daemon/JavaProblemHighlightFilter.java)
+- [`PyProblemFileHighlightFilter`](%gh-ic%/python/src/com/jetbrains/python/codeInsight/PyProblemFileHighlightFilter.java)
+
+### Semantic Highlight Usages
+
+EP: `com.intellij.highlightUsagesHandlerFactory`
+
+[`HighlightUsagesHandlerFactory`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/highlighting/HighlightUsagesHandlerFactory.java) allows highlighting e.g., Exit Points or Exceptions.
+Can be [](indexing_and_psi_stubs.md#DumbAwareAPI) (2024.3+).
+
+## Navigation
+
+### Context Info
+
+EP: `com.intellij.declarationRangeHandler`
+
+[`DeclarationRangeHandler`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hint/DeclarationRangeHandler.java) provides <ui-path>View | Context Info</ui-path> for custom languages with structure view implementation based on a [`TreeBasedStructureViewBuilder`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/structureView/TreeBasedStructureViewBuilder.java).
+
+### Breadcrumbs
+
+EP: `com.intellij.breadcrumbsInfoProvider`
+
+[`BreadcrumbsProvider`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ui/breadcrumbs/BreadcrumbsProvider.java)
+allows for language-specific [breadcrumbs](https://www.jetbrains.com/help/idea/navigating-through-the-source-code.html#editor_breadcrumbs).
+[Sticky Lines](https://www.jetbrains.com/help/idea/sticky-lines.html) feature also uses this data.
+
+- [`GroovyBreadcrumbsInfoProvider`](%gh-ic%/plugins/groovy/src/org/jetbrains/plugins/groovy/editor/GroovyBreadcrumbsInfoProvider.kt)
+
+## IDE Integration
+
+### TODO View
+
+[`ParserDefinition.getCommentTokens()`](%gh-ic%/platform/core-api/src/com/intellij/lang/ParserDefinition.java) must return the set of tokens treated as comments to populate the <control>TODO</control> tool window.
+
+### Spellchecking
+
+Moved to [](spell_checking.md).
+
+### Color Preview/Chooser
+
+EP: `com.intellij.colorProvider`
+
+[`ElementColorProvider`](%gh-ic%/platform/lang-api/src/com/intellij/openapi/editor/ElementColorProvider.java) renders gutter icon for an element containing color information.
+
+### File Includes
+
+EP: `com.intellij.include.provider`
+
+[`FileIncludeProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/psi/impl/include/FileIncludeProvider.java) provides information about _include_ statements resolving to files (e.g., `<xi:include>` in XML).
+Including/included files can then be obtained via [`FileIncludeManager`](%gh-ic%/platform/lang-api/src/com/intellij/psi/impl/include/FileIncludeManager.java).
+
+### Plain Text Completion
+
+EP: `com.intelllij.completion.plainTextSymbol`
+
+[`PlainTextSymbolCompletionContributor`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/completion/PlainTextSymbolCompletionContributor.java)
+provides a simple way to extract lookup elements from a file so that users have completion available
+in, e.g., plain text editors like VCS commit messages.
 
 ### Reader Mode
 
@@ -205,24 +225,7 @@ EP: `com.intellij.editorTabTitleProvider`
 allows for specifying custom names and tooltips displayed in the title of editor tabs.
 If access to indexes is not required, it can be marked [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI).
 
-Please see, e.g.,
-[`GradleEditorTabTitleProvider`](%gh-ic%/plugins/gradle/src/org/jetbrains/plugins/gradle/util/GradleEditorTabTitleProvider.kt)
-which shows how the project name is added to the editor tab for Gradle files.
-
-### Prevent Error Highlighting of Files
-
-EP: `com.intellij.problemHighlightFilter`, `com.intellij.problemFileHighlightFilter`
-
-[`ProblemHighlightFilter`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/daemon/ProblemHighlightFilter.java) and
-the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.problemFileHighlightFilter"/></include> (which implements
-[`Condition<VirtualFile>`](%gh-ic%/platform/util/src/com/intellij/openapi/util/Condition.java))
-are used to filter out files that should not be error-highlighted because they are, e.g., outside
-the current project scope.
-Note that these filters should be permissive and only prevent highlighting for files that are absolutely
-known to be outside the scope.
-
-- [`JavaProblemHighlightFilter`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/daemon/JavaProblemHighlightFilter.java)
-- [`PyProblemFileHighlightFilter`](%gh-ic%/python/src/com/jetbrains/python/codeInsight/PyProblemFileHighlightFilter.java)
+- [`GradleEditorTabTitleProvider`](%gh-ic%/plugins/gradle/src/org/jetbrains/plugins/gradle/util/GradleEditorTabTitleProvider.kt)
 
 ### Provide Fully Qualified Names (FQN) for Elements
 
@@ -255,16 +258,21 @@ This can be used in situations where test files are located next to source files
 If these files can be distinguished either by filename or content from source files, implementing this
 EP will mark them as test files for the IDE.
 
-### Move Statements Up and Down in the Editor
+## Refactoring
 
-EP: `com.intellij.statementUpDownMover`
+### Naming Suggestions
 
-[`StatementUpDownMover`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/moveUpDown/StatementUpDownMover.java)
-allows for customizing the behavior of moving statements up and down.
-This can be used to keep code syntactically correct when moving code in the editor, e.g. when moving
-a variable declaration.
+EP: `com.intellij.nameSuggestionProvider`
 
-- [`DeclarationMover`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/editorActions/moveUpDown/DeclarationMover.java)
+[`NameSuggestionProvider`](%gh-ic%/platform/refactoring/src/com/intellij/refactoring/rename/NameSuggestionProvider.java) provides name suggestions for the given element, e.g., for Rename refactoring.
 
+### Suggesting Rename and Change Signature Refactorings
+
+EP: `com.intellij.suggestedRefactoringSupport`
+
+[`SuggestedRefactoringSupport`](%gh-ic%/platform/lang-api/src/com/intellij/refactoring/suggested/SuggestedRefactoringSupport.kt)
+provides functionality for suggesting rename and change signature refactorings for custom languages.
+
+- [`KotlinSuggestedRefactoringSupport`](%gh-ic%/plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/refactoring/suggested/KotlinSuggestedRefactoringSupport.kt)
 
 <include from="snippets.topic" element-id="missingContent"/>

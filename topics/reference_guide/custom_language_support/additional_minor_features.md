@@ -235,6 +235,15 @@ FQN.
 
 - [`PyQualifiedNameProvider`](%gh-ic%/python/src/com/jetbrains/python/actions/PyQualifiedNameProvider.java)
 
+### Customized "Copy Path"
+
+Extend from [`CopyPathProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/CopyPathProvider.kt)
+[action](action_system.md) (or `DumbAwareCopyPathProvider` if [no indexes needed](indexing_and_psi_stubs.md#DumbAwareAPI))
+and return a custom (language-specific) path from `getPathToElement()`.
+Register the action with the popup menu group `<add-to-group group-id="CopyReferencePopupGroup"/>`.
+
+- [`CopyRepositoryRootPathProvider`](%gh-ic%/plugins/git4idea/src/git4idea/actions/CopyRepositoryRootPathProvider.kt)
+
 ### Label Files as Test Files
 
 EP: `com.intellij.openapi.roots.TestSourcesFilter`

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Color Scheme Management
 
@@ -48,7 +48,7 @@ If the scheme designer doesn't have a language plugin, he will not be able to fi
 ### Providing Attributes for Specific Schemes
 
 A language plugin may provide default text attributes for "Default" and "Darcula" bundled schemes or basically for any other scheme if the scheme's name is known.
-This can be done in <path>[plugin.xml](plugin_configuration_file.md)</path> by adding an `com.intellij.additionalTextAttributes` extension providing the name of the file containing desired text attributes, for example:
+This can be done in <path>[plugin.xml](plugin_configuration_file.md)</path> by adding an <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.additionalTextAttributes"/></include> providing the name of the file containing desired text attributes, for example:
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

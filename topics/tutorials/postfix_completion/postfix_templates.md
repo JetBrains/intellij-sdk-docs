@@ -8,7 +8,7 @@ The IntelliJ Platform allows plugins to provide custom postfix templates specifi
 
 To provide custom postfix templates for an existing or custom language, register an implementation of
 [`PostfixTemplateProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/template/postfix/templates/PostfixTemplateProvider.java)
-in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.codeInsight.template.postfixTemplateProvider"/></include> (EP).
+in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.codeInsight.template.postfixTemplateProvider"/></include>.
 
 The `PostfixTemplateProvider` extension contains the list of templates that extend the
 [`PostfixTemplate`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/template/postfix/templates/PostfixTemplate.java)

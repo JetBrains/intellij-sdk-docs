@@ -18,11 +18,11 @@ Use a radio button group to choose one option from 2 to 4 mutually exclusive opt
 
 ## When not to use
 
-### Several options in a group can be selected
-Use a group of [checkboxes](checkbox.md) instead.
+### Several options can be selected
+Use a group of [checkboxes](checkbox.md) when several options can be selected.
 
-### Binary Yes/No Options
-For only two opposing yes/no options, use a checkbox instead.
+### Yes or No Options
+For only two opposing yes/no options, use a checkbox.
 
 <table style="none" border="false">
   <tr>
@@ -35,14 +35,18 @@ For only two opposing yes/no options, use a checkbox instead.
   </tr>
 </table>
 
-### 5 and more options
-If the options have short labels, use a segmented button. Or, if the options can be represented on an axis, such as a time delay, use a slider instead.
+### 5-7 options with short labels
+If the options have short labels, use a segmented button.
 
 ![](03_When_to_use_Segmented_button.png){width=706}
 
-For other cases with 5 or more options use a [drop-down list](drop_down.md):
+Or, if the options can be represented on an axis, such as a time delay, use a slider.
 
-  <table style="none" border="false">
+### When to Use a Dropdown Instead of Radio Buttons
+Consider using a [drop-down list](drop_down.md) if:
+* 5 options with long lables
+* More then 5 options:
+* <table style="none" border="false">
   <tr>
     <td width="50%">
       <format color="Green" style="bold">Correct</format><img src="04_When_to_use_correct.png" alt="A correct example of using a drop-down list instead of radiobuttons"/>
@@ -51,16 +55,13 @@ For other cases with 5 or more options use a [drop-down list](drop_down.md):
       <format color="Red" style="bold">Incorrect</format><img src="04_When_to_use_incorrect.png" alt="An incorrect example of using radiobuttons for a list of 5 or more options"/>
     </td>
   </tr>
-</table>
+  </table>
 
-### Use dropdown
-Consider using a [drop-down list](drop_down.md) if:
 * The screen space is limited.
 * The option might be used less often than other options on the screen.
 * There are other drop-down lists in the same group of UI components. A radio button group is more noticeable than a drop-down list, so it will look like a more important setting.
 * There is a combination of several UI components for one setting:
   ![](05_When_to_use_Segmented_button.png){width=706}
-  *The automatic updates setting consists of a checkbox, three lengthy-labeled options in a dropdown and a button.*
 
 ## How to use
 
@@ -69,7 +70,7 @@ Consider using a [drop-down list](drop_down.md) if:
 <table style="none" border="false" column-width="fixed">
     <tr>
       <td><img src="06_How_to_use.png" alt="Label example" width="378"/></td>
-      <td><p>A label accompanies each checkbox and is placed next to it.</p></td>
+      <td><p>A label accompanies each radio button and is placed next to it.</p></td>
     </tr>
     <tr>
       <td><img src="07_How_to_use.png" alt="An example of a label spanning two lines." width="378"/></td>
@@ -77,7 +78,7 @@ Consider using a [drop-down list](drop_down.md) if:
     </tr>
 </table>
 
-To implement this, use HTML formatting:
+To implement Two-line label, use HTML formatting:
 <tabs group="languages">
 <tab title="Kotlin UI DSL" group-key="kotlin">
 
@@ -121,14 +122,13 @@ Do not use negation in labels as it complicates understanding.
 Make labels short and intelligible — see [Writing short and clear text](writing_short.md).
 
 ### Group label
-
-![](09_How_to_use.png){width=706}
-
 Always start a radio button group with a group label. It explains what the options are for.
+Use a colon at the end of a group label.
+![](10_How_to_use.png){width=706}
 
 Use a checkbox or another radio button as a group label if the radio button group needs to be turned on or off.
+![](09_How_to_use.png){width=706}
 
-Use a colon at the end of a group label.
 
 ## Sizes and placement
 

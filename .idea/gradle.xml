@@ -101,7 +101,7 @@
           </compositeBuild>
         </compositeConfiguration>
         <option name="externalProjectPath" value="$PROJECT_DIR$/code_samples/_gradleCompositeBuild" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleJvm" value="corretto-17" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/code_samples/_gradleCompositeBuild" />

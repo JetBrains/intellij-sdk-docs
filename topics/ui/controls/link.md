@@ -54,46 +54,11 @@ Use a link as a secondary action for some items of a tree or table.
 
 #### All items can be changed
 
-<table style="none" border="false">
-  <tr>
-    <td width="378">
-        <img src="link_when_to_6_1.png" width="378" alt="Table with a toolbar with icon buttons"/>
-    </td>
-    <td>
-        <p>Add an <a href="icon_button.md">icon button</a> to a toolbar.</p>
-    </td>
-  </tr>
-  <tr>
-    <td width="378">
-        <img src="link_when_to_6_2.png" width="378" alt="Table with a toolbar with icon buttons"/>
-    </td>
-    <td>
-        <p>For a list of choices, add a separate table column of drop-down cells (see <a href="table.md" anchor="editing-values">Table</a>).</p>
-    </td>
-  </tr>
-  <tr>
-    <td width="378">
-        <img src="link_when_to_6_3.png" width="378" alt="Links in the Push Commits window 'origin : master'"/>
-    </td>
-    <td>
-        <p>If a link in every tree or table line has meaningful formatting, leave it.</p>
-        <p>For example, links in the <control>Push Commits</control> window help understand the relation between them: <control>[remote repository] : [branch]</control>; moving these links elsewhere would break this meaning.</p>
-    </td>
-  </tr>
-</table>
+<p>If a link in every tree or table line has meaningful formatting, leave it.</p>
 
-<table style="none" border="false">
-  <tr>
-    <td>
-        <format color="369650" style="bold">Correct</format>
-        <img src="link_when_to_6_correct.png" width="378" alt="Table with a toolbar with icon-buttons"/>
-    </td>
-    <td>
-        <format color="E55765" style="bold">Incorrect</format>
-        <img src="link_when_to_6_incorrect.png" width="378" alt="Table with a link 'Edit…' in every row"/>
-    </td>
-  </tr>
-</table>
+<p>For example, links in the <control>Push Commits</control> window help understand the relation between them: <control>[remote repository] : [branch]</control>; moving these links elsewhere would break this meaning.</p>
+
+<img src="link_when_to_6_3.png" width="706" alt="Links in the Push Commits window 'origin : master'"/>
 
 ## When not to use
 
@@ -110,6 +75,42 @@ Use a [button](button.topic) or a [drop down list](drop_down.md) for primary act
     <td>
         <format color="E55765" style="bold">Incorrect</format>
         <img src="link_when_not_to_1_incorrect.png" width="378" alt="The Commit Message input with primary and secondary actions as links."/>
+    </td>
+  </tr>
+</table>
+
+### Secondary actions in a tree or table {id="secondary-actions-not-to-use"}
+
+#### Editable items
+
+<p>When all items can be changed, add an <a href="icon_button.md">icon button</a> to a toolbar.</p>
+
+<table style="none" border="false">
+  <tr>
+    <td>
+        <format color="369650" style="bold">Correct</format>
+        <img src="link_when_to_6_correct.png" width="378" alt="Table with a toolbar with icon-buttons"/>
+    </td>
+    <td>
+        <format color="E55765" style="bold">Incorrect</format>
+        <img src="link_when_to_6_incorrect.png" width="378" alt="Table with a link 'Edit…' in every row"/>
+    </td>
+  </tr>
+</table>
+
+#### List of choices
+
+<p>For a list of choices, add a separate table column of drop-down cells (see <a href="table.md" anchor="editing-values">Table</a>).</p>
+
+<table style="none" border="false">
+  <tr>
+    <td>
+        <format color="369650" style="bold">Correct</format>
+        <img src="link_when_not_to_3_correct.png" width="378" alt="Table with a toolbar with icon-buttons"/>
+    </td>
+    <td>
+        <format color="E55765" style="bold">Incorrect</format>
+        <img src="link_when_not_to_3_incorrect.png" width="378" alt="Table with a link 'Edit…' in every row"/>
     </td>
   </tr>
 </table>

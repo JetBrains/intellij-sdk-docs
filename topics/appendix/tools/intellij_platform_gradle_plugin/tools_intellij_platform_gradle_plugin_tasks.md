@@ -1292,7 +1292,7 @@ This method is no longer needed as the dependency on IntelliJ Platform is declar
 ## `signPlugin`
 {#signPlugin}
 
-<link-summary>Signs the ZIP archive with the provided key using Marketplace ZIP Signer library.2</link-summary>
+<link-summary>Signs the plugin distribution ZIP archive with the provided key using the Marketplace ZIP Signer library.</link-summary>
 
 <tldr>
 
@@ -1306,15 +1306,14 @@ This method is no longer needed as the dependency on IntelliJ Platform is declar
 
 </tldr>
 
-Signs the ZIP archive with the provided key using the [Marketplace ZIP Signer](https://github.com/JetBrains/marketplace-zip-signer) library.
+Signs the plugin distribution ZIP archive with the provided key using the [Marketplace ZIP Signer](https://github.com/JetBrains/marketplace-zip-signer) library.
 To sign the plugin before publishing to [JetBrains Marketplace](https://plugins.jetbrains.com) with the [`signPlugin`](#signPlugin) task,
-it is required to provide a certificate chain and a private key with its password using
+it is required to provide a certificate chain and a private key with its password using the
 [`intellijPlatform.signing`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing) extension.
+
 As soon as [`privateKey`](#signPlugin-privateKey) (or [`privateKeyFile`](#signPlugin-privateKeyFile)) and [`certificateChain`](#signPlugin-certificateChain)
 (or [`certificateChainFile`](#signPlugin-certificateChainFile) properties are specified,
-the task will be executed automatically right before the [`publishPlugin`](#publishPlugin) task.
-
-> To start using the plugin signing feature, it is necessary to add a dependency on the Marketplace ZIP Signer CLI tool by adding the [`zipSigner()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#tools) entry to the dependencies section.
+this task will be executed automatically right before the [`publishPlugin`](#publishPlugin) task.
 
 For more details, see [](plugin_signing.md).
 

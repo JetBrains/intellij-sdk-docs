@@ -10,7 +10,7 @@ For example, `com.jetbrains.php.lang.psi.resolve.types.PhpArrayAccessTP` is resp
 There are dozens of such providers, and they all work one after another to provide type information when needed.
 
 All providers inherit from `com.jetbrains.php.lang.psi.resolve.types.PhpTypeProvider4`, which is registered in
-the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.php.typeProvider4"/></include>.
+the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.jetbrains.php.typeProvider4"/></include>.
 
 ## Types in PhpStorm
 
@@ -298,7 +298,7 @@ public class PhpUnitFiledInitializedInSetUpMethodsTP implements PhpTypeProvider4
 ### Register the `PhpUnitFiledInitializedInSetUpMethodsTP`
 
 The `PhpUnitFiledInitializedInSetUpMethodsTP` implementation is registered with the IntelliJ Platform in the
-plugin configuration file using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.php.typeProvider4"/></include>.
+plugin configuration file using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.jetbrains.php.typeProvider4"/></include>.
 
 ```xml
 <extensions defaultExtensionNs="com.jetbrains">

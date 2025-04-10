@@ -13,7 +13,7 @@ Persisting the state of components for IntelliJ Platform plugins and sharing set
 The IntelliJ Platform provides an API that allows components or services to persist their state between restarts of the IDE.
 The API allows for persisting simple key-value entries and complex state classes.
 
-> For persisting sensitive data like passwords, see [Persisting Sensitive Data](persisting_sensitive_data.md).
+> For persisting sensitive data like passwords, see [](persisting_sensitive_data.md).
 >
 {style="warning"}
 
@@ -36,13 +36,18 @@ If an extension needs to have a persistent state, define a separate service resp
 
 The recommended approach to implementing a persistent state component in Kotlin is to extend one of the base classes:
 1. [`SimplePersistentStateComponent`](#SimplePersistentStateComponent)
-2. [`SerializablePersistentStateComponent`](#SerializablePersistentStateComponent) (available since 2022.2)
+2. [`SerializablePersistentStateComponent`](#SerializablePersistentStateComponent) (available and recommended since 2022.2)
+
+Both classes implement [`PersistentStateComponentWithModificationTracker`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponentWithModificationTracker.java) and track modifications count internally (in most cases; see details below).
+The `getStateModificationCount()` method helps avoid calling `PersistentStateComponent.getState()` to check whether the state is changed and must be saved.
 
 <chapter title="SimplePersistentStateComponent" id="SimplePersistentStateComponent">
 
 [`SimplePersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/SimplePersistentStateComponent.kt) is parameterized by a subclass of [`BaseState`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/BaseState.kt).
 `BaseState` provides a set of handy [property delegates](https://kotlinlang.org/docs/delegated-properties.html), which make it easy to create properties with default values.
-In addition, delegates track property modifications internally, which helps decrease calling `PersistentStateComponent.getState()` by the platform.
+
+Delegates track simple property modifications internally.
+Note that incremental collection modification (adding, removing, or modifying collection objects) may require manual `BaseState.incrementModificationCount()` invocation (see its Javadoc for details).
 
 Example:
 
@@ -65,6 +70,8 @@ class MySettings : SimplePersistentStateComponent<MySettings.State>(State()) {
 
 State properties are exposed for reading and modification via persistent state component class' properties.
 The state properties are modified by copying the state and overwriting a modified value within `SerializablePersistentStateComponent.updateState()`, which ensures atomic modification and thread safety.
+
+The copy-on-write approach allows for full internal modification tracking.
 
 Example:
 
@@ -93,7 +100,7 @@ class MySettings : SerializablePersistentStateComponent<MySettings.State>(State(
 <tab title="Java" group-key="java">
 
 The implementation of `PersistentStateComponent` must be parameterized with the type of state class.
-The state class can either be a separate class, or the class implementing `PersistentStateComponent`.
+The state class can either be a separate class or the class implementing `PersistentStateComponent`.
 
 <chapter title="Persistent Component with Separate State Class">
 
@@ -325,7 +332,10 @@ If the underlying persistence model or storage format has changed, a [`Converter
 
 ### Persistent Component Lifecycle
 
-The `PersistentStateComponent.loadState()` method is called after the component has been created (only if there is some non-default state persisted for the component), and after the XML file with the persisted state is changed externally (for example, if the project file was updated from the version control system).
+The `PersistentStateComponent.loadState()` method is called in two cases:
+1. After the component is created (only if there is some non-default state persisted for the component)
+2. After the XML file with the persisted state is changed externally (for example, if the project file was updated from the version control system)
+
 In the latter case, the component is responsible for updating the UI and other related components according to the changed state.
 
 The `PersistentStateComponent.getState()` method is called every time the settings are saved (for example, on frame deactivation or when closing the IDE).
@@ -340,7 +350,7 @@ Roaming is disabled for `PropertiesComponent`, so use it only for temporary, non
 
 Use the `PropertiesComponent.getInstance()` method for storing application-level values and the `PropertiesComponent.getInstance(Project)` method for storing project-level values.
 
-Since all plugins share the same namespace, it is highly recommended prefixing key names (for example, using plugin ID `com.example.myCustomSetting`).
+Since all plugins share the same namespace, it is highly recommended to prefix key names (for example, using plugin ID `com.example.myCustomSetting`).
 
 ## Legacy API (`JDOMExternalizable`) {collapsible="true"}
 

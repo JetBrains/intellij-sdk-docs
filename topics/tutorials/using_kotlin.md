@@ -2,7 +2,7 @@
 
 # Configuring Kotlin Support
 
-<link-summary>Advantages and configuration required for developing a plugin in Kotlin.</link-summary>
+<link-summary>Advantages and required configuration for developing a plugin in Kotlin.</link-summary>
 
 <tldr>
 
@@ -133,6 +133,7 @@ See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html
 
 | IntelliJ Platform version (latest update) | Bundled _stdlib_ version |
 |-------------------------------------------|--------------------------|
+| 2025.2                                    | 2.1.20                   |
 | 2025.1                                    | 2.1.10                   |
 | 2024.3                                    | 2.0.21                   |
 | 2024.2                                    | 1.9.24                   |
@@ -165,13 +166,13 @@ Since 2024.2, a custom [fork](https://github.com/JetBrains/intellij-deps-kotlinx
 
 See [](kotlin_coroutines.md) on how to use them in plugins.
 
-| IntelliJ Platform version | Bundled _kotlinx-coroutines_ version |
-|---------------------------|--------------------------------------|
-| 2025.2                    | 1.10.1-intellij-3                    |
-| 2025.1                    | 1.8.0-intellij-12                    |
-| 2024.3                    | 1.8.0-intellij-11                    |
-| 2024.2                    | 1.8.0-intellij-9                     |
-| 2024.1                    | 1.7.3                                |
+| IntelliJ Platform version (latest update) | Bundled _kotlinx-coroutines_ version |
+|-------------------------------------------|--------------------------------------|
+| 2025.2                                    | 1.10.1-intellij-4                    |
+| 2025.1                                    | 1.8.0-intellij-13                    |
+| 2024.3                                    | 1.8.0-intellij-11                    |
+| 2024.2                                    | 1.8.0-intellij-9                     |
+| 2024.1                                    | 1.7.3                                |
 
 ### Other Bundled Kotlin Libraries
 

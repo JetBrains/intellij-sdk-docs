@@ -196,6 +196,38 @@ tasks {
 </tabs>
 
 
+## Adjust IDE configuration by altering sandbox files
+
+When starting the IDE locally with [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde) task or running tests, the IDE creates and updates configuration files within the sandbox directory.
+Those files may be related to trusted paths, macros, recent projects, custom plugins, color schemes, etc.
+However, when running the `clean` task, all configuration files are wiped and do not persist between sessions.
+
+Sometimes, it may be worth recreating such configuration, yet with the [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox) task for those configurations to persist.
+The following example marks the project located in the <path>\$USER_HOME$/IdeaProjects/GradleProject</path> directory as trusted, like when the user clicks on the _Trust Project_ dialog when opening it for the first time.
+
+```kotlin
+tasks.withType<PrepareSandboxTask> {
+  doLast {
+    val trustedPathsFile = sandboxConfigDirectory.file("options/trusted-paths.xml").get().asFile
+
+    trustedPathsFile.writeText(
+      """
+            <application>
+              <component name="Trusted.Paths">
+                <option name="TRUSTED_PROJECT_PATHS">
+                  <map>
+                    <entry key="${'$'}USER_HOME$/IdeaProjects/GradleProject" value="true" />
+                  </map>
+                </option>
+              </component>
+            </application>
+            """.trimIndent()
+    )
+  }
+}
+```
+
+
 ## ProGuard configuration
 
 To configure [ProGuard](https://github.com/Guardsquare/proguard), intercept the [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox) task and replace the plugin Jar archive produced by the [`composedJar`](tools_intellij_platform_gradle_plugin_tasks.md#composedJar) task with the obfuscated/minified file.

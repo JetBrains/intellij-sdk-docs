@@ -226,4 +226,8 @@
                         summary="Browse usages in existing implementations of open-source plugins">
         <code>%ep%</code></a> extension point
     </snippet>
+    <snippet id="epLink"><a href="https://jb.gg/ipe?extensions=%ep%"
+                            summary="Browse usages in existing implementations of open-source plugins">
+        <code>%ep%</code></a>
+    </snippet>
 </topic>

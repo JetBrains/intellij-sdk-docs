@@ -39,7 +39,7 @@ In the implementation of `StructureViewTreeElement.getChildren()`, the plugin ca
 Another important method is `getPresentation()`, which can be used to customize the text, attributes, and icon used to represent an element in the structure view.
 
 The implementation of `StructureViewTreeElement.getChildren()` needs to be matched by `TextEditorBasedStructureViewModel.getSuitableClasses()`.
-The latter method returns an array of `PsiElement`\-derived classes, which can be shown as structure view elements.
+The latter method returns an array of `PsiElement`-derived classes, which can be shown as structure view elements.
 It is used to select the Structure View item matching the cursor position when the structure view is first opened or when the <control>Autoscroll from source</control> option is enabled.
 
 **Example:**

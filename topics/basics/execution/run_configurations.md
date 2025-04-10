@@ -157,7 +157,7 @@ The standard method for providing the information is `getInfo()`.
 If computing the information is slow, implement `getSlowInfo()`, which is used by the editor highlighting mechanism to gather information in batch, and apply all the information at once to avoid icons blinking.
 If access to indexes is not required, it can be marked [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI).
 
-To provide the standard executor actions like _Run_, _Debug_, etc., use [`ExecutorAction.getActions()`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/ExecutorRegistryImpl.java).
+To provide the standard executor actions like _Run_, _Debug_, etc., use [`ExecutorAction.getActions()`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/lineMarker/ExecutorAction.kt).
 
 ## Starting a Run Configuration Programmatically
 

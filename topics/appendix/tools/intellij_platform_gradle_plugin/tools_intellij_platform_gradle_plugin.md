@@ -40,6 +40,10 @@ IntelliJ Platform Gradle Plugin 2.x requires the following *minimal* versions:
 
   See <control>Gradle JVM</control> in <ui-path>Settings | Build, Execution, Deployment | Build Tools | Gradle</ui-path>.
 
+> Consider using the [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template) which additionally provides CI setup covered with GitHub Actions.
+>
+{style="tip"}
+
 ## Setup
 
 > Note that the plugin has a new ID `org.jetbrains.intellij.platform`.

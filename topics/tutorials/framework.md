@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Frameworks
 
@@ -22,7 +22,7 @@ final class DemoFramework extends FrameworkTypeEx {
 
 ## Registering Framework
 
-The newly created framework class should be registered as an extension point by adding `com.intellij.framework.type` extension in [`plugin.xml`](%gh-sdk-samples-master%/framework_basics/src/main/resources/META-INF/plugin.xml) configuration file:
+The newly created framework class should be registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.framework.type"/></include> in [`plugin.xml`](%gh-sdk-samples-master%/framework_basics/src/main/resources/META-INF/plugin.xml) configuration file:
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

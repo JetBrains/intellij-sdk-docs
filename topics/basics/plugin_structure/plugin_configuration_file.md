@@ -21,7 +21,7 @@ One use case for additional configuration files is when a plugin provides option
 
 ## Useful Resources
 
-Please make sure to follow the guidelines from [Plugin Overview page](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html) for an optimal presentation of your plugin on JetBrains Marketplace.
+Please make sure to follow the guidelines from [Best practices for listing your plugin](https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html) for an optimal presentation of your plugin on JetBrains Marketplace.
 The _Busy Plugin Developers. Episode 2_ discusses [5 tips for optimizing JetBrains Marketplace plugin page](https://youtu.be/oB1GA9JeeiY?t=52) in more detail.
 
 See also [](marketing.md) about widgets and badges.
@@ -589,7 +589,7 @@ Attributes
   `order`.
   <br/>
   To not clash with other plugins defining extensions with the same identifier,
-  consider prepending the identifier with a prefix related to the plugin [`<id>`](#idea-plugin__id) or 
+  consider prepending the identifier with a prefix related to the plugin [`<id>`](#idea-plugin__id) or
   [`<name>`](#idea-plugin__name), for example, `id="com.example.myplugin.myExtension"`.
 - `order` _(optional)_<br/>
   Allows for ordering the extension relative to other instances of the same extension point.
@@ -613,7 +613,7 @@ Attributes
       - `mac`
       - `unix`
       - `windows`
-    
+
     For example, `os="windows"` registers the extension on Windows only.
 
 ### `extensionPoints`
@@ -691,12 +691,12 @@ Attributes
 
     The scope in which the [extension](plugin_extensions.md) is
     instantiated.
-    
+
     Allowed values:
       - `IDEA_APPLICATION` _(default)_
       - `IDEA_PROJECT`
       - `IDEA_MODULE` (**deprecated**)
-    
+
     **It is strongly recommended not to introduce new project- and module-level extension points.**
     If an extension point needs to operate on a `Project` or `Module` instance, declare an application-level extension
     point and pass the instance as a method parameter.
@@ -739,7 +739,7 @@ Example
   An extension point which restricts the type provided in a `myClass` attribute to be an instance
   of `com.example.ParentType`, and the type provided in a `someClass` element to be an instance
   of `java.lang.Comparable`:
-  
+
   ```xml
   <extensionPoint
       name="myExtension"
@@ -752,18 +752,18 @@ Example
         implements="java.lang.Comparable"/>
   </extensionPoint>
   ```
-  
+
   When using the above extension point, an implementation could be registered as follows:
-  
+
   ```xml
   <myExtension ...
       myClass="com.example.MyCustomType">
     <someClass>com.example.MyComparable</someClass>
   </myExtension>
   ```
-  
+
   where:
-  
+
   - `com.example.MyCustomType` must be a subtype of `com.example.ParentType`
   - `com.example.MyComparable` must be a subtype of `java.lang.Comparable`
 
@@ -1510,6 +1510,7 @@ Children
   - [`<interface-class>`](#idea-plugin__application-components__component__interface-class)  ![Deprecated][deprecated]
   - [`<loadForDefaultProject>`](#idea-plugin__application-components__component__loadForDefaultProject)  ![Deprecated][deprecated]
   - [`<option>`](#idea-plugin__application-components__component__option)  ![Deprecated][deprecated]
+  - [`<skipForDefaultProject>`](#idea-plugin__application-components__component__skipForDefaultProject)  ![Deprecated][deprecated]
 
 ##### `implementation-class`
 {#idea-plugin__application-components__component__implementation-class}
@@ -1609,6 +1610,29 @@ Attributes
 
 If present, the component is instantiated also for the default project. It takes effect only when used inside
 [`<project-components>`](#idea-plugin__project-components) element.
+
+{type="narrow"}
+Deprecated
+:
+since 2020.1
+
+{type="narrow"}
+Required
+: no
+
+##### `skipForDefaultProject`
+{#idea-plugin__application-components__component__skipForDefaultProject}
+
+> Do not use it in new plugins.
+> See [Components](plugin_components.md) for the migration guide.
+>
+{style="warning"}
+
+In the past, if present, the component was not loaded for the default project.
+
+Currently, project components aren't loaded in the default project by default, so this element has no effect.
+Use [`<loadForDefaultProject>`](#idea-plugin__application-components__component__loadForDefaultProject)
+if it is required to load a component in the default project.
 
 {type="narrow"}
 Deprecated

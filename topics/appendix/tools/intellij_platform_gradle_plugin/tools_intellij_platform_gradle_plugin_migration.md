@@ -4,6 +4,10 @@
 
 <link-summary>IntelliJ Platform Gradle Plugin (2.x) migration guide from Gradle IntelliJ Plugin (1.x)</link-summary>
 
+> Consider using the [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template) which additionally provides CI setup covered with GitHub Actions.
+>
+{style="tip"}
+
 ## Plugin Name Change
 
 As the **2.x** branch brings significant breaking changes to the plugin, the name was changed from _Gradle IntelliJ Plugin_ to

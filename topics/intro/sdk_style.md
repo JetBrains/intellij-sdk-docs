@@ -31,7 +31,7 @@ Each Markdown file **must** start with a copyright notice, formatted using HTML 
 
 It **must** be followed by a header defining its title using a level 1 heading:
 
-```
+```md
 # Contributing to the IntelliJ Platform SDK
 ```
 
@@ -42,7 +42,6 @@ The page title should be as concise as possible, so it can be reused in the [](#
 Every page **should** provide a short excerpt (usually one sentence) using the dedicated `<link-summary>` tag before the main page contents:
 
 ```html
-
 <link-summary>Defining groups of related settings.</link-summary>
 ```
 
@@ -108,7 +107,7 @@ For example, `## Basics` gets the ID of `basics`, and can be linked either on th
 
 In some cases (e.g., the same heading text appears multiple times on the same page), it is necessary to specify a distinct ID manually:
 
-```
+```md
 ## Task 1
 ### Properties
 {#task1-properties}
@@ -172,13 +171,13 @@ In-paragraph code fragments and IntelliJ Platform APIs are formatted according t
 
 #### Extension Points
 
-Use `<include from="snippets.topic" element-id="ep"><var name="ep" value="fqn.of.ep"/></include>` snippet to introduce EP:
+Use `<include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.annotator"/></include>` snippet to introduce EP:
 
-- <include from="snippets.topic" element-id="ep"><var name="ep" value="fqn.of.ep"/></include>
+- <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.annotator"/></include>
 
-Use `<include from="snippets.topic" element-id="epLink"><var name="ep" value="fqn.of.ep"/></include>` for variant without "extension point" suffix:
+Use `<include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.annotator"/></include>` for variant without "extension point" suffix:
 
-- <include from="snippets.topic" element-id="epLink"><var name="ep" value="fqn.of.ep"/></include>
+- <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.annotator"/></include>
 
 #### XML
 
@@ -217,15 +216,15 @@ In any case, keep code samples concise and avoid any unnecessary "surrounding" c
 
 ### Tables
 
-The syntax is to use the pipe (`|`) and minus symbols:
+The syntax is to use the pipe (`|`) and hyphen symbols:
 
-```
+```md
     | Column 1 | Column 2 | Column 3 |
     |----------|----------|----------|
     | Blah     | Blah     | Blah     |
 ```
 
-Use `& #124;` (remove space before `#`!) instead of `|` to prevent escaping problems for `<ui-path>` elements inside cells.
+Use `&#124;` instead of `|` to prevent escaping problems for `<ui-path>` elements inside cells.
 
 Use `<p>Line 1</p><p>Line 2</p>` for multi-line content in a cell.
 
@@ -236,7 +235,7 @@ The converter looks at the `type` attribute specified after the text block.
 If so, it applies a callout style.
 The example below will be displayed as a callout, styled as a "note":
 
-```
+```md
 > This is a simple note.
 >
 {style="note"}
@@ -255,7 +254,7 @@ The styles available for callouts are:
 
 Complex callouts can also specify the `title` attribute:
 
-```
+```md
 > This is a note.
 > We have a lot of text.
 > Don't make everyone read it fully by adding a good title.
@@ -286,13 +285,13 @@ Optimize the image files using a tool such as the [PNG optimizer](https://plugin
 
 Images are embedded in a document by adding a Markdown link to the image like so:
 
-```
+```md
     ![Alt text](image.png)
 ```
 
 If the width of an image needs to be adjusted, it can be specified as follows:
 
-```
+```md
     ![Alt text](image.png){width="42"}
 ```
 
@@ -305,7 +304,7 @@ Images too big to fit into the main content can have <control>+</control> overla
 
 For **PNG** images, provide an additional zoomed variant <path>image.zoomed.png</path> with this notation:
 
-```
+```md
     ![Alt text](image.png){thumbnail="true"}
 ```
 
@@ -325,10 +324,11 @@ For **SVG** images, use this notation:
 
 ### Other
 
-1. Use a concise and neutral voice when describing topics:
+Use a concise and neutral voice when describing topics:
    - **Avoid:** "A custom icon for files with a substituted language would be a great addition to the plugin. It is easy as implementing the `xyz` extension point."
    - **Prefer:** "To add a custom icon for files with a substituted language, implement the `xyz` extension point."
-2. Avoid directly addressing the reader and the author with "you", "your", "we", etc.
+
+Avoid directly addressing the reader and the author with "you", "your", "we", etc.
    - **Avoid:** "Add a dependency in your plugin descriptor."
    - **Prefer:** "Add a dependency in the plugin descriptor."
 
@@ -353,7 +353,6 @@ All existing links in other topics must be updated.
 Specify the previous path(s) including <path>.html</path> extension in `accepts-web-file-names` attribute:
 
 ```xml
-
 <toc-element
         id="themes_getting_started.md"
         accepts-web-file-names="themes.html,themes-intro.html"/>

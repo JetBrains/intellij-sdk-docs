@@ -95,8 +95,9 @@ Consistent text styles are used to standardize references and keywords:
 * Filename extensions are not capitalized when part of a full filename, path, or URL: <path>plugin.xml</path>.
 * When using \$PLACEHOLDER\$ in non-code parts, it must be escaped: `<path>\$PLACEHOLDER\$/somePath</path>`.
 * Keyboard shortcuts are wrapped using `<shortcut>`: `press <shortcut>Alt+Insert</shortcut>` becomes "press <shortcut>Alt+Insert</shortcut>".
-* See [Guidelines for Highlighting Syntax](#guidelines-for-highlighting-syntax) for best practices for representing code fragments.
-* See [Links to IntelliJ Platform Source](#links-to-intellij-platform-source) for more details about representing names of source files in links.
+
+See [Guidelines for Highlighting Syntax](#guidelines-for-highlighting-syntax) for best practices for representing code fragments.
+See [Links to IntelliJ Platform Source](#links-to-intellij-platform-source) for more details about representing names of source files in links.
 
 ### Links
 
@@ -139,7 +140,7 @@ General Markdown links have the default Markdown link style:
 
 #### Links to IntelliJ Platform Source
 
-Links to files in the IntelliJ Platform (`intellij-community`) repository use the `%\gh-ic%` prefix instead of the full URL to the repository.
+Links to files in the IntelliJ Platform ([`intellij-community`](%gh-ic%/README.md)) repository use the `%\gh-ic%` prefix instead of the full URL to the repository.
 Links to files in source code packages in other GitHub repositories follow the same rules, except the links use a different custom `gh-...` prefix defined in <path>v.list</path>.
 
 * `[README.md](%\gh-ic%/README.md)`{disable-links} links to any general, non-code information files. ([README.md](%gh-ic%/README.md))
@@ -171,12 +172,18 @@ In-paragraph code fragments and IntelliJ Platform APIs are formatted according t
 
 #### Extension Points
 
-Use `<include from="snippets.topic" element-id="ep"><var name="ep" value="fqn.of.ep"/></include>` snippet to introduce EP.
+Use `<include from="snippets.topic" element-id="ep"><var name="ep" value="fqn.of.ep"/></include>` snippet to introduce EP:
+
+- <include from="snippets.topic" element-id="ep"><var name="ep" value="fqn.of.ep"/></include>
+
+Use `<include from="snippets.topic" element-id="epLink"><var name="ep" value="fqn.of.ep"/></include>` for variant without "extension point" suffix:
+
+- <include from="snippets.topic" element-id="epLink"><var name="ep" value="fqn.of.ep"/></include>
 
 #### XML
 
-* For XML elements, use the tag notation with syntax highlighting: `<idea-version>`.
-  Attributes are shown with syntax highlighting, and attribute values are shown in quotes: `since-build="191"`
+For XML elements, use the tag notation with syntax highlighting: `<idea-version>`.
+Attributes are shown with syntax highlighting, and attribute values are shown in quotes: `since-build="191"`
 
 ### Source Code
 

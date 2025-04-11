@@ -23,7 +23,7 @@ Generating HTML fragments
 : Use [`HtmlBuilder`](%gh-ic%/platform/util/src/com/intellij/openapi/util/text/HtmlBuilder.java) for generating formatted content, e.g., for [Documentation](documentation.md).
 
 Extensible HTML Lexer/Parser
-: Implement [`HtmlEmbeddedContentSupport`](%gh-ic%/xml/xml-psi-impl/src/com/intellij/html/embedding/HtmlEmbeddedContentSupport.kt) and register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.html.embeddedContentSupport"/></include> to embed arbitrary tokens into any tag or attribute.
+: Implement [`HtmlEmbeddedContentSupport`](%gh-ic%/xml/xml-parser/src/com/intellij/html/embedding/HtmlEmbeddedContentSupport.kt) and register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.html.embeddedContentSupport"/></include> to embed arbitrary tokens into any tag or attribute.
 Please note that old API from `com.intellij.lexer.BaseHtmlLexer` is no longer working.
 
 Action System

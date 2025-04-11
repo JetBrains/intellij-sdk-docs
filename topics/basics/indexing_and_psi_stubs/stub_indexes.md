@@ -39,7 +39,7 @@ The following steps need to be performed only once for each language that suppor
    See [`StubElementTypeHolderEP`](%gh-ic%/platform/core-api/src/com/intellij/psi/stubs/StubElementTypeHolderEP.java) docs for important requirements.
 
 **Examples:**
-- [`JavaStubElementTypes`](%gh-ic%/java/java-psi-impl/src/com/intellij/psi/impl/java/stubs/JavaStubElementTypes.java) registered in [`JavaPsiPlugin.xml`](%gh-ic%/java/java-psi-impl/src/META-INF/JavaPsiPlugin.xml)
+- [`JavaStubElementTypes`](%gh-ic%/java/java-psi-impl/src/com/intellij/psi/impl/java/stubs/JavaStubElementTypes.java) registered in [`JavaPsiPlugin.xml`](%gh-ic%/java/java-psi-impl/resources/META-INF/JavaPsiPlugin.xml)
 - see [`Angular2MetadataElementTypes`](%gh-ij-plugins%/Angular/src/org/angular2/entities/metadata/Angular2MetadataElementTypes.kt) for Kotlin sample
 
 </procedure>

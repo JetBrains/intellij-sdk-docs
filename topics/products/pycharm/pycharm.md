@@ -80,11 +80,6 @@ As described in [Configuring the plugin.xml File](dev_alternate_products.md#conf
 
 When using functionality from `Pythonid`, a dependency on _both_ `PythonCore` and `Pythonid` is now required.
 
-### Sample Plugin
-
-See the SDK code sample [`pycharm_basics`](%gh-sdk-samples-master%/product_specific/pycharm_basics/) for an example configuration.
-Note that this code sample must be imported into Gradle explicitly, as it is not included in the `_gradleCompositeBuild`.
-
 ## Available PyCharm APIs
 
 See [](intellij_community_plugins_extension_point_list.md) for PyCharm Community.

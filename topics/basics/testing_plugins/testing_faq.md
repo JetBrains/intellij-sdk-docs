@@ -212,10 +212,10 @@ test {
 
 The default JDK version used by the test framework depends on the target platform version and is the latest supported version.
 The easiest way to change the JDK version to a custom one is by overriding `LightJavaCodeInsightFixtureTestCase.getProjectDescriptor()` and using one of the predefined project descriptors in `LightJavaCodeInsightFixtureTestCase`.
-If a project descriptor requires more customizations, its `getSdk()` method can use one of the [`IdeaTestUtil.getMockJdk*()`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/IdeaTestUtil.java) methods.
+If a project descriptor requires more customizations, its `getSdk()` method can use one of the [`IdeaTestUtil.getMockJdk*()`](%gh-ic%/java/testFramework/shared/src/com/intellij/testFramework/IdeaTestUtil.java) methods.
 
 Sometimes, testing a JVM language requires adding standard or other libraries to a test project.
-If a required library is available in the Maven repository, use [`MavenDependencyUtil`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/MavenDependencyUtil.java), e.g.:
+If a required library is available in the Maven repository, use [`MavenDependencyUtil`](%gh-ic%/java/testFramework/shared/src/com/intellij/testFramework/fixtures/MavenDependencyUtil.java), e.g.:
 
 ```java
 MavenDependencyUtil.addFromMaven(model,

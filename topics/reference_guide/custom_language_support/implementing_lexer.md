@@ -21,7 +21,7 @@ The IDE invokes the lexer in three main contexts, and the plugin can provide dif
 
 *  Building the index of the words contained in the file:
    if the lexer-based words scanner implementation is used, the lexer is passed to the
-   [`DefaultWordsScanner`](%gh-ic%/platform/indexing-api/src/com/intellij/lang/cacheBuilder/DefaultWordsScanner.java)
+   [`DefaultWordsScanner`](%gh-ic%/platform/indexing-impl/src/com/intellij/lang/cacheBuilder/DefaultWordsScanner.java)
    constructor. See also [](find_usages.md).
 
 The lexer used for syntax highlighting can be invoked incrementally to process only the file's changed part.
@@ -40,7 +40,7 @@ Lexers used in other contexts can always return `0` from `getState()`.
 
 The easiest way to create a lexer for a custom language plugin is to use [JFlex](https://jflex.de).
 
-Classes [`FlexLexer`](%gh-ic%/platform/core-api/src/com/intellij/lexer/FlexLexer.java) and [`FlexAdapter`](%gh-ic%/platform/core-api/src/com/intellij/lexer/FlexAdapter.java) adapt JFlex lexers to the IntelliJ Platform Lexer API.
+Classes [`FlexLexer`](%gh-ic%/platform/core-impl/src/com/intellij/lexer/FlexLexer.java) and [`FlexAdapter`](%gh-ic%/platform/core-impl/src/com/intellij/lexer/FlexAdapter.java) adapt JFlex lexers to the IntelliJ Platform Lexer API.
 A [patched version of JFlex](https://github.com/JetBrains/intellij-deps-jflex) can be used with the lexer skeleton file [`idea-flex.skeleton`](%gh-ic%/tools/lexer/idea-flex.skeleton) located in the [IntelliJ IDEA Community Edition](https://github.com/JetBrains/intellij-community) source to create lexers compatible with `FlexAdapter`.
 The patched version of JFlex provides a new command-line option `--charat` that changes the JFlex generated code to work with the IntelliJ Platform skeleton.
 Enabling `--charat` option passes the source data for lexing as a `java.lang.CharSequence` and not as an array of characters.
@@ -54,7 +54,7 @@ It provides syntax highlighting and other useful features for editing JFlex file
 {style="note"}
 
 **Examples:**
-- [JFlex](%gh-ic%/plugins/properties/src/com/intellij/lang/properties/parsing/Properties.flex) definition file for [Properties language plugin](%gh-ic%/plugins/properties)
+- [JFlex](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/Properties.flex) definition file for [Properties language plugin](%gh-ic%/plugins/properties)
 - [Custom Language Support Tutorial: Lexer](lexer_and_parser_definition.md)
 
 ### Token Types

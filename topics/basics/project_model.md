@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Project Model
 
@@ -103,4 +103,4 @@ A module can have multiple facets.
 
 The user can configure all entities listed above in the <control>Project Structure</control> dialog.
 
-Use [`ProjectSettingsService`](%gh-ic%/platform/lang-impl/src/com/intellij/openapi/roots/ui/configuration/ProjectSettingsService.java) to open related entries programmatically.
+Use [`ProjectSettingsService`](%gh-ic%/platform/lang-api/src/com/intellij/openapi/roots/ui/configuration/ProjectSettingsService.java) to open related entries programmatically.

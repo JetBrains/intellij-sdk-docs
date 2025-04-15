@@ -55,7 +55,8 @@ Consider using a [drop-down list](drop_down.md) if:
       <format color="Red" style="bold">Incorrect</format><img src="04_When_to_use_incorrect.png" alt="An incorrect example of using radiobuttons for a list of 5 or more options"/>
     </td>
   </tr>
-  </table> *\ -->
+  </table> *\  Я скрыла картинки, потому что не понимаю зачем только для одного пункта они добавлены, вроде и так понятно,
+ Если вопросов нет, то я так и оставлю-->
 
 * The screen space is limited.
 * The option might be used less often than other options on the screen.
@@ -78,7 +79,6 @@ Consider using a [drop-down list](drop_down.md) if:
     </tr>
 </table>
 
-To implement Two-line label, use HTML formatting:
 <chapter title="Implementation" collapsible="true">
   <tabs group="languages">
   <tab title="Kotlin UI DSL" group-key="kotlin">
@@ -109,17 +109,9 @@ Do not use ending punctuation.
 Use the imperative form of verbs.
 
 Do not use negation in labels as it complicates understanding.
+![](08_How_to_use_correct.png){width=706}
+![](08_How_to_use_incorrect.png){width=706}
 
-<table style="none" border="false">
-  <tr>
-    <td width="50%">
-      <format color="Green" style="bold">Correct</format><img src="08_How_to_use_correct.png" alt="A correct example of label"/>
-    </td>
-    <td width="50%">
-      <format color="Red" style="bold">Incorrect</format><img src="08_How_to_use_incorrect.png" alt="An incorrect example of label"/>
-    </td>
-  </tr>
-</table>
 
 Make labels short and intelligible — see [Writing short and clear text](writing_short.md).
 

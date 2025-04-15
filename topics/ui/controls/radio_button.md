@@ -35,7 +35,7 @@ For only two opposing yes/no options, use a checkbox.
   </tr>
 </table>
 
-### 5-7 options with short labels
+### 2-5 options with short labels
 If the options have short labels, use a segmented button.
 
 ![](03_When_to_use_Segmented_button.png){width=706}
@@ -45,8 +45,8 @@ Or, if the options can be represented on an axis, such as a time delay, use a sl
 ### When to Use a Dropdown Instead of Radio Buttons
 Consider using a [drop-down list](drop_down.md) if:
 * 5 options with long lables
-* More then 5 options:
-* <table style="none" border="false">
+* More then 5 options
+<!-- <table style="none" border="false">
   <tr>
     <td width="50%">
       <format color="Green" style="bold">Correct</format><img src="04_When_to_use_correct.png" alt="A correct example of using a drop-down list instead of radiobuttons"/>
@@ -55,7 +55,7 @@ Consider using a [drop-down list](drop_down.md) if:
       <format color="Red" style="bold">Incorrect</format><img src="04_When_to_use_incorrect.png" alt="An incorrect example of using radiobuttons for a list of 5 or more options"/>
     </td>
   </tr>
-  </table>
+  </table> *\ -->
 
 * The screen space is limited.
 * The option might be used less often than other options on the screen.
@@ -79,24 +79,26 @@ Consider using a [drop-down list](drop_down.md) if:
 </table>
 
 To implement Two-line label, use HTML formatting:
-<tabs group="languages">
-<tab title="Kotlin UI DSL" group-key="kotlin">
+<chapter title="Implementation" collapsible="true">
+  <tabs group="languages">
+  <tab title="Kotlin UI DSL" group-key="kotlin">
 
-```kotlin
-radioButton(
-    "<html>Show options before adding<br>to version control</html>")
-```
+  ```kotlin
+  radioButton(
+      "<html>Show options before adding<br>to version control</html>")
+  ```
 
-</tab>
-<tab title="Java" group-key="java">
+  </tab>
+  <tab title="Java" group-key="java">
 
-```java
-new JRadioButton(
-    "<html>Show options before adding<br>to version control</html>");
-```
+  ```java
+  new JRadioButton(
+      "<html>Show options before adding<br>to version control</html>");
+  ```
 
-</tab>
-</tabs>
+  </tab>
+  </tabs>
+</chapter>
 
 ### Writing guidelines
 

@@ -131,4 +131,4 @@ When opened, this tool window is similar to the following screen:
 
 One of the testing approaches for tool windows is implementing [UI integration tests](integration_tests_ui.md).
 
-To get a tool window in UI tests, use [`IdeaFrameUI.toolWindow()`](%gh-ic-master%/platform/remote-driver/test-sdk/src/com/intellij/driver/sdk/ui/components/common/IdeaFrameUiExt.kt).
+To get a tool window in UI tests, use [`IdeaFrameUI.toolWindow()`](%gh-ic%/platform/remote-driver/test-sdk/src/com/intellij/driver/sdk/ui/components/common/IdeaFrameUiExt.kt).

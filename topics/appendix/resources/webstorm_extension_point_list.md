@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <!-- EP List Directory:
      /CSS/
@@ -17,7 +17,7 @@
 
 </tldr>
 
-78 Extension Points and 5 Listeners for WebStorm
+80 Extension Points and 5 Listeners for WebStorm
 
 See [](intellij_platform_extension_point_list.md) for IntelliJ Platform and [](oss_plugins_extension_point_list.md) for additional plugins.
 
@@ -97,6 +97,7 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform and [](o
 | [JavaScript.jsxImplementation](https://jb.gg/ipe?extensions=JavaScript.jsxImplementation) | `JSXImplementation` |
 | [JavaScript.lang.templates](https://jb.gg/ipe?extensions=JavaScript.lang.templates) ![Project-Level][project-level] | [`Configurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/Configurable.java) |
 | [JavaScript.languageServiceProvider](https://jb.gg/ipe?extensions=JavaScript.languageServiceProvider) ![Project-Level][project-level] | `JSLanguageServiceProvider` |
+| [JavaScript.languageServiceQuickFixProvider](https://jb.gg/ipe?extensions=JavaScript.languageServiceQuickFixProvider) | `JSLanguageServiceQuickFixProvider` |
 | [JavaScript.languageServiceRemoteHelperFactory](https://jb.gg/ipe?extensions=JavaScript.languageServiceRemoteHelperFactory) | `Factory` |
 | [JavaScript.minifiedFileIndexingProvider](https://jb.gg/ipe?extensions=JavaScript.minifiedFileIndexingProvider) ![Internal][internal] | `JSMinifiedFileIndexingProvider` |
 | [JavaScript.moduleExportsProvider](https://jb.gg/ipe?extensions=JavaScript.moduleExportsProvider) | `JSModuleExportsProvider` |
@@ -110,6 +111,7 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform and [](o
 | [JavaScript.scanningFileListenerContributor](https://jb.gg/ipe?extensions=JavaScript.scanningFileListenerContributor) | `ScanningFileListenerContributor` |
 | [JavaScript.smartCompletionContributor](https://jb.gg/ipe?extensions=JavaScript.smartCompletionContributor) | `JSSmartCompletionContributor` |
 | [JavaScript.spellcheckerProvider](https://jb.gg/ipe?extensions=JavaScript.spellcheckerProvider) | `JSSpellcheckerProvider` |
+| [JavaScript.testFrameworkDetector](https://jb.gg/ipe?extensions=JavaScript.testFrameworkDetector) | `n/a` |
 | [JavaScript.testWatchProvider](https://jb.gg/ipe?extensions=JavaScript.testWatchProvider) | `JsTestWatchProvider` |
 | [JavaScript.tsConfigCustomizer](https://jb.gg/ipe?extensions=JavaScript.tsConfigCustomizer) ![Experimental][experimental] | `TypeScriptConfigCustomizer` |
 | [JavaScript.tsImportResolver](https://jb.gg/ipe?extensions=JavaScript.tsImportResolver) | `TypeScriptImportsResolverProvider` |

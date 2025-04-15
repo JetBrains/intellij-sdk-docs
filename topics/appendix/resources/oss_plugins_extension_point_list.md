@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <!-- EP List Directory: /contrib/ -->
 
@@ -14,7 +14,7 @@
 
 Overview of Extension Points and Listeners for open source plugins available in [](idea_ultimate.md) and other IDEs.
 
-65 Extension Points and 10 Listeners
+68 Extension Points and 10 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -147,10 +147,13 @@ Overview of Extension Points and Listeners for open source plugins available in 
 | [org.intellij.qodana.azureCiConfigUpdateHandler](https://jb.gg/ipe?extensions=org.intellij.qodana.azureCiConfigUpdateHandler) | [`AzureCIConfigHandler`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/ci/AzureCIConfigHandler.kt) |
 | [org.intellij.qodana.bitbucketCiConfigUpdateHandler](https://jb.gg/ipe?extensions=org.intellij.qodana.bitbucketCiConfigUpdateHandler) | [`BitbucketCIConfigHandler`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/ci/BitbucketCIConfigHandler.kt) |
 | [org.intellij.qodana.circleCiConfigUpdateHandler](https://jb.gg/ipe?extensions=org.intellij.qodana.circleCiConfigUpdateHandler) | [`CircleCIConfigHandler`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/ci/CircleCIConfigHandler.kt) |
+| [org.intellij.qodana.compiledInspectionKtsPostProcessorFactory](https://jb.gg/ipe?extensions=org.intellij.qodana.compiledInspectionKtsPostProcessorFactory) | [`CompiledInspectionKtsPostProcessorFactory`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/inspectionKts/InspectionKtsFileStatus.kt) |
 | [org.intellij.qodana.configUpdateHandler](https://jb.gg/ipe?extensions=org.intellij.qodana.configUpdateHandler) | [`ConfigUpdateHandler`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/ConfigUpdateHandler.kt) |
 | [org.intellij.qodana.contextMarginProvider](https://jb.gg/ipe?extensions=org.intellij.qodana.contextMarginProvider) | [`ContextMarginProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/sarif/ContextMarginProvider.kt) |
+| [org.intellij.qodana.customPluginsForKtsClasspathProvider](https://jb.gg/ipe?extensions=org.intellij.qodana.customPluginsForKtsClasspathProvider) | [`CustomPluginsForKtsClasspathProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/inspectionKts/CustomPluginsForKtsClasspathProvider.kt) |
 | [org.intellij.qodana.cyclomaticComplexityFileVisitor](https://jb.gg/ipe?extensions=org.intellij.qodana.cyclomaticComplexityFileVisitor) | [`CyclomaticComplexityMetricFileVisitor`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/inspections/metrics/inspections/cyclomaticComplexity/CyclomaticComplexityMetricFileVisitor.kt) |
 | [org.intellij.qodana.defaultQodanaYamlItemProvider](https://jb.gg/ipe?extensions=org.intellij.qodana.defaultQodanaYamlItemProvider) | [`QodanaYamlItemProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/settings/QodanaYamlItem.kt) |
+| [org.intellij.qodana.dynamicInspectionsInitializer](https://jb.gg/ipe?extensions=org.intellij.qodana.dynamicInspectionsInitializer) | [`DynamicInspectionInitializer`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/inspectionKts/DynamicInspectionInitializer.kt) |
 | [org.intellij.qodana.externalToolsConfigurationProvider](https://jb.gg/ipe?extensions=org.intellij.qodana.externalToolsConfigurationProvider) | [`ExternalToolsConfigurationProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/inspections/runner/externalTools/ExternalToolsConfigurationProvider.kt) |
 | [org.intellij.qodana.externalToolsProvider](https://jb.gg/ipe?extensions=org.intellij.qodana.externalToolsProvider) | [`ExternalToolsProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/inspections/runner/externalTools/ExternalToolsProvider.kt) |
 | [org.intellij.qodana.githubCiConfigHandler](https://jb.gg/ipe?extensions=org.intellij.qodana.githubCiConfigHandler) | [`GitHubCIConfigHandler`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/ci/GitHubCIConfigHandler.kt) |
@@ -200,7 +203,7 @@ Overview of Extension Points and Listeners for open source plugins available in 
 
 ### PerforceDirectPlugin
 
-[`PerforceDirectPlugin`](%gh-ij-plugins%/PerforceIntegration/src/META-INF/plugin.xml)
+[`PerforceDirectPlugin`](%gh-ij-plugins%/PerforceIntegration/resources/META-INF/plugin.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|

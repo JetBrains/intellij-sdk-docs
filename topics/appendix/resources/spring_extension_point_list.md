@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <!-- EP List Directory: /plugins/spring/ -->
 
@@ -18,7 +18,7 @@
 >
 {style="note"}
 
-55 Extension Points and 5 Listeners for Spring API
+58 Extension Points and 6 Listeners for Spring API
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -30,6 +30,7 @@
 |-------|----------|
 | [SpringBootEndpointsTabSettings#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.spring.boot.run.lifecycle.tabs.SpringBootEndpointsTabSettings.Listener)  | `Listener` |
 | [SpringRepositoriesViewSettings#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.spring.data.commons.view.SpringRepositoriesViewSettings.Listener)  | `Listener` |
+| [SpringDebugModelListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.spring.debugger.model.SpringDebugModelListener)  | `SpringDebugModelListener` |
 | [SpringFileSetService#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.spring.facet.SpringFileSetService.SpringFileSetListener)  | `SpringFileSetListener` |
 | [SpringMvcViewSettings#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.spring.mvc.toolwindow.SpringMvcViewSettings.Listener)  | `Listener` |
 | [SpringBeansViewSettings#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.spring.toolWindow.SpringBeansViewSettings.Listener)  | `Listener` |
@@ -64,6 +65,7 @@
 | [com.intellij.spring.resourceTypeProvider](https://jb.gg/ipe?extensions=com.intellij.spring.resourceTypeProvider) | `SpringResourceTypeProvider` |
 | [com.intellij.spring.scriptBeanPsiClassDiscoverer](https://jb.gg/ipe?extensions=com.intellij.spring.scriptBeanPsiClassDiscoverer) | `ScriptBeanPsiClassDiscoverer` |
 | [com.intellij.spring.settingsProvider](https://jb.gg/ipe?extensions=com.intellij.spring.settingsProvider) | `SpringSettingsProvider` |
+| [com.intellij.spring.springTemplateProvider](https://jb.gg/ipe?extensions=com.intellij.spring.springTemplateProvider) | `SpringTemplateProvider` |
 | [com.intellij.spring.testingAnnotationsProvider](https://jb.gg/ipe?extensions=com.intellij.spring.testingAnnotationsProvider) | `SpringTestingAnnotationsProvider` |
 | [com.intellij.spring.testingImplicitContextsProvider](https://jb.gg/ipe?extensions=com.intellij.spring.testingImplicitContextsProvider) | `SpringTestingImplicitContextsProvider` |
 | [com.intellij.spring.valueConverter](https://jb.gg/ipe?extensions=com.intellij.spring.valueConverter) | `SpringValueConvertersProvider` |
@@ -85,6 +87,7 @@
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| [com.intellij.spring.debugger.configCodeVisionProvider](https://jb.gg/ipe?extensions=com.intellij.spring.debugger.configCodeVisionProvider) ![Internal][internal] | `SpringConfigFileCodeVisionInfoProvider` |
 | [com.intellij.spring.debugger.runConfigurationExtender](https://jb.gg/ipe?extensions=com.intellij.spring.debugger.runConfigurationExtender) | `SpringDebuggerRunConfigurationExtender` |
 | [com.intellij.spring.debugger.sessionListener](https://jb.gg/ipe?extensions=com.intellij.spring.debugger.sessionListener) | `SpringDebuggerSessionListener` |
 
@@ -131,6 +134,7 @@
 | [com.intellij.spring.boot.run.endpoint](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.endpoint) ![Experimental][experimental] | `Endpoint` |
 | [com.intellij.spring.boot.run.endpointTabConfigurable](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.endpointTabConfigurable) ![Project-Level][project-level] | `EndpointTabConfigurable` |
 | [com.intellij.spring.boot.run.liveBeansPanelContent](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.liveBeansPanelContent) | `LiveBeansPanelContent` |
+| [com.intellij.spring.boot.run.runtimeApplicationProvider](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.runtimeApplicationProvider) | `SpringBootRuntimeApplicationProvider` |
 
 ### intellij.spring.el.xml
 

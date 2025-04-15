@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <!-- EP List Directory: /ruby/ -->
 
@@ -12,7 +12,7 @@
 
 </tldr>
 
-80 Extension Points and 13 Listeners for RubyMine
+88 Extension Points and 13 Listeners for RubyMine
 
 See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 
@@ -46,6 +46,15 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 |-----------------|----------------|
 | [org.jetbrains.plugins.ruby.coverage.deserializer](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.coverage.deserializer) | `RubyCoverageDeserializationProvider` |
 
+### intellij.ruby.frontback.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [org.jetbrains.plugins.ruby.formatter.additionalSpacingProcessor](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.formatter.additionalSpacingProcessor) | `RubyAdditionalSpacingProcessor` |
+| [org.jetbrains.plugins.ruby.languageLevelProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.languageLevelProvider) | `LanguageLevelProvider` |
+| [org.jetbrains.plugins.ruby.rubyBuilderFactory](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rubyBuilderFactory) | `RubyBuilderFactory` |
+| [org.jetbrains.plugins.ruby.templates.elements.provider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.templates.elements.provider) | `TemplateElementsProvider` |
+
 ### ruby-core.xml
 
 | Extension Point | Implementation |
@@ -68,13 +77,16 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | [org.jetbrains.plugins.ruby.moduleGemProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.moduleGemProvider) | `ModuleGemProvider` |
 | [org.jetbrains.plugins.ruby.overriddenMethodGenerator](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.overriddenMethodGenerator) | `OverriddenMethodGenerator` |
 | [org.jetbrains.plugins.ruby.paramDefProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.paramDefProvider) | `ParamDefProvider` |
+| [org.jetbrains.plugins.ruby.psiElementFactory](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.psiElementFactory) | `PsiElementFactory` |
 | [org.jetbrains.plugins.ruby.rails.viewFileTemplateProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rails.viewFileTemplateProvider) | `RailsViewFileTemplateProvider` |
 | [org.jetbrains.plugins.ruby.renameHelper](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.renameHelper) | `RubyRenameHelper` |
 | [org.jetbrains.plugins.ruby.routesProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.routesProvider) | `RubyRoutesProvider` |
 | [org.jetbrains.plugins.ruby.ruby.coercibleExpressionTypeProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.coercibleExpressionTypeProvider) | `RubyCoercibleExpressionTypeProvider` |
+| [org.jetbrains.plugins.ruby.ruby.expectedArgumentNilabilityProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.expectedArgumentNilabilityProvider) | `RubyExpectedArgumentNilabilityProvider` |
 | [org.jetbrains.plugins.ruby.ruby.expectedArgumentTypeProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.expectedArgumentTypeProvider) | `RubyExpectedArgumentTypeProvider` |
 | [org.jetbrains.plugins.ruby.ruby.expectedConstantTypeProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.expectedConstantTypeProvider) | `RubyExpectedConstantTypeProvider` |
 | [org.jetbrains.plugins.ruby.ruby.expectedGlobalVariableTypeProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.expectedGlobalVariableTypeProvider) | `RubyExpectedGlobalVariableTypeProvider` |
+| [org.jetbrains.plugins.ruby.ruby.expectedMethodSignatureProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.expectedMethodSignatureProvider) | `RubyExpectedMethodSignatureProvider` |
 | [org.jetbrains.plugins.ruby.ruby.expectedParameterTypeProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.expectedParameterTypeProvider) | `RubyExpectedParameterTypeProvider` |
 | [org.jetbrains.plugins.ruby.ruby.expectedReturnTypeProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.expectedReturnTypeProvider) | `RubyExpectedReturnTypeProvider` |
 | [org.jetbrains.plugins.ruby.ruby.expectedVariableTypeProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.expectedVariableTypeProvider) | `RubyExpectedVariableTypeProvider` |
@@ -93,6 +105,7 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | [org.jetbrains.plugins.ruby.rubyTypeProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rubyTypeProvider) | `RubyTypeProvider` |
 | [org.jetbrains.plugins.ruby.run.console.filter](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.run.console.filter) | `RubyConsoleFilterProvider` |
 | [org.jetbrains.plugins.ruby.runnableScriptFilter](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.runnableScriptFilter) | `RunnableScriptFilter` |
+| [org.jetbrains.plugins.ruby.sdkConfigFactory](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.sdkConfigFactory) | `Factory` |
 | [org.jetbrains.plugins.ruby.superMethodInfoProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.superMethodInfoProvider) | `RubySuperMethodInfoProvider` |
 | [org.jetbrains.plugins.ruby.symbolMixinsProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.symbolMixinsProvider) | `RubySymbolMixinsProvider` |
 | [org.jetbrains.plugins.ruby.symbolProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.symbolProvider) | `RubySymbolProvider` |

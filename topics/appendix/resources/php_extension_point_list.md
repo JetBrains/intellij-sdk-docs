@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <!-- EP List Directory: /phpstorm/ -->
 
@@ -12,7 +12,7 @@
 
 </tldr>
 
-62 Extension Points and 11 Listeners for PHP
+63 Extension Points and 11 Listeners for PHP
 
 See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 
@@ -76,6 +76,7 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | [com.jetbrains.php.coreMethodProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.coreMethodProvider) ![Internal][internal] | `PhpCoreHandler` |
 | [com.jetbrains.php.customFunctionIndex](https://jb.gg/ipe?extensions=com.jetbrains.php.customFunctionIndex) | `PhpCustomFunctionIndex` |
 | [com.jetbrains.php.customFunctionPredicate](https://jb.gg/ipe?extensions=com.jetbrains.php.customFunctionPredicate) ![Internal][internal] | `PhpCustomFunctionPredicateIndex` |
+| [com.jetbrains.php.customTemplatesNamesProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.customTemplatesNamesProvider) ![Experimental][experimental] | `PhpCustomTemplatesNamesProvider` |
 | [com.jetbrains.php.debug.mapping.localPathFixer](https://jb.gg/ipe?extensions=com.jetbrains.php.debug.mapping.localPathFixer) | `PhpLocalPathFixer` |
 | [com.jetbrains.php.deprecationFixesProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.deprecationFixesProvider) | `PhpDeprecationQuickFixesProvider` |
 | [com.jetbrains.php.deprecationProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.deprecationProvider) | `PhpDeprecationProvider` |

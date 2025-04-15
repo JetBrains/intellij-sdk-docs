@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <!-- EP List Directory: /community/android -->
 
@@ -12,7 +12,7 @@
 
 </tldr>
 
-100 Extension Points and 32 Listeners for Android Plugin
+100 Extension Points and 34 Listeners for Android Plugin
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -45,9 +45,11 @@
 | [ClearLogcatListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.run.ClearLogcatListener)  | [`ClearLogcatListener`](%gh-ij-android%/android/src/com/android/tools/idea/run/ClearLogcatListener.kt) |
 | [DeviceHeadsUpListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.run.DeviceHeadsUpListener)  | [`DeviceHeadsUpListener`](%gh-ij-android%/android/src/com/android/tools/idea/run/DeviceHeadsUpListener.java) |
 | [ShowLogcatListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.run.ShowLogcatListener)  | [`ShowLogcatListener`](%gh-ij-android%/android/src/com/android/tools/idea/run/ShowLogcatListener.kt) |
+| [ApplicationDeployListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.run.configuration.execution.ApplicationDeployListener)  | [`ApplicationDeployListener`](%gh-ij-android%/android/src/com/android/tools/idea/run/configuration/execution/ApplicationDeployerImpl.kt) |
 | [SdkInstallListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.sdk.SdkInstallListener)  | [`SdkInstallListener`](%gh-ij-android%/android/src/com/android/tools/idea/sdk/SdkInstallListener.kt) |
 | [DeviceMirroringSettingsListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.streaming.DeviceMirroringSettingsListener)  | [`DeviceMirroringSettingsListener`](%gh-ij-android%/android/src/com/android/tools/idea/streaming/DeviceMirroringSettingsListener.java) |
 | [EmulatorSettingsListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.streaming.EmulatorSettingsListener)  | [`EmulatorSettingsListener`](%gh-ij-android%/android/src/com/android/tools/idea/streaming/EmulatorSettingsListener.java) |
+| [Listener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.streaming.emulator.actions.FloatingXrToolbarState.Listener)  | [`Listener`](%gh-ij-android%/streaming/src/com/android/tools/idea/streaming/emulator/actions/ToggleFloatingXrToolbarAction.kt) |
 | [TransportDeviceManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.transport.TransportDeviceManager.TransportDeviceManagerListener)  | [`TransportDeviceManagerListener`](%gh-ij-android%/android-transport/src/com/android/tools/idea/transport/TransportDeviceManager.java) |
 | [Listener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.uibuilder.options.NlOptionsConfigurable.Listener)  | [`Listener`](%gh-ij-android%/designer/src/com/android/tools/idea/uibuilder/options/NlOptionsConfigurable.kt) |
 | [OpenHomeTabListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.android.tools.profilers.taskbased.home.OpenHomeTabListener)  | [`OpenHomeTabListener`](%gh-ij-android%/profilers/src/com/android/tools/profilers/taskbased/home/OpenHomeTabListener.kt) |
@@ -59,7 +61,7 @@
 
 ### adt-ui.xml
 
-[`adt-ui.xml`](%gh-ij-android%/adt-ui/src/main/java/META-INF/adt-ui.xml)
+[`adt-ui.xml`](%gh-ij-android%/adt-ui/resources/META-INF/adt-ui.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -71,12 +73,12 @@
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.android.tools.idea.ml.mimetypeAugmenter](https://jb.gg/ipe?extensions=com.android.tools.idea.ml.mimetypeAugmenter) ![Non-Dynamic][non-dynamic] | [`MimeTypeAugmenter`](%gh-ij-android%/ml-api/src/main/kotlin/com/android/tools/idea/studiobot/mimetype/MimeTypeAugmenter.kt) |
-| [com.android.tools.idea.ml.studioBotExternalFlags](https://jb.gg/ipe?extensions=com.android.tools.idea.ml.studioBotExternalFlags) ![Non-Dynamic][non-dynamic] | [`StudioBotExternalFlags`](%gh-ij-android%/ml-api/src/main/kotlin/com/android/tools/idea/studiobot/StudioBotExternalFlags.kt) |
+| [com.android.tools.idea.gemini.geminiPluginApi](https://jb.gg/ipe?extensions=com.android.tools.idea.gemini.geminiPluginApi) ![Non-Dynamic][non-dynamic] | [`GeminiPluginApi`](%gh-ij-android%/ml-api/src/main/kotlin/com/android/tools/idea/gemini/GeminiPluginApi.kt) |
+| [com.android.tools.idea.ml.studioBotExternalFlags](https://jb.gg/ipe?extensions=com.android.tools.idea.ml.studioBotExternalFlags) ![Non-Dynamic][non-dynamic] | [`StudioBotExternalFlags`](%gh-ij-android%/ml-api/src/main/kotlin/com/android/tools/idea/gemini/StudioBotExternalFlags.kt) |
 
 ### android-adb.xml
 
-[`android-adb.xml`](%gh-ij-android%/android-adb/src/META-INF/android-adb.xml)
+[`android-adb.xml`](%gh-ij-android%/android-adb/resources/META-INF/android-adb.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -85,7 +87,7 @@
 
 ### android-editing-metrics.xml
 
-[`android-editing-metrics.xml`](%gh-ij-android%/android/editing/metrics/src/META-INF/android-editing-metrics.xml)
+[`android-editing-metrics.xml`](%gh-ij-android%/android/editing/metrics/resources/META-INF/android-editing-metrics.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -93,7 +95,7 @@
 
 ### android-execution-common.xml
 
-[`android-execution-common.xml`](%gh-ij-android%/execution/common/src/META-INF/android-execution-common.xml)
+[`android-execution-common.xml`](%gh-ij-android%/execution/common/resources/META-INF/android-execution-common.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -102,7 +104,7 @@
 
 ### android-kotlin-extensions-common.xml
 
-[`android-kotlin-extensions-common.xml`](%gh-ij-android%/android-kotlin/android-extensions-idea-common/src/META-INF/android-kotlin-extensions-common.xml)
+[`android-kotlin-extensions-common.xml`](%gh-ij-android%/android-kotlin/android-extensions-idea-common/resources/META-INF/android-kotlin-extensions-common.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -110,7 +112,7 @@
 
 ### android-kotlin.common.xml
 
-[`android-kotlin.common.xml`](%gh-ij-android%/android-kotlin/idea-android/common/src/META-INF/android-kotlin.common.xml)
+[`android-kotlin.common.xml`](%gh-ij-android%/android-kotlin/idea-android/common/resources/META-INF/android-kotlin.common.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -118,7 +120,7 @@
 
 ### android-lang.xml
 
-[`android-lang.xml`](%gh-ij-android%/android-lang/src/META-INF/android-lang.xml)
+[`android-lang.xml`](%gh-ij-android%/android-lang/resources/META-INF/android-lang.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -126,7 +128,7 @@
 
 ### android-navigator.xml
 
-[`android-navigator.xml`](%gh-ij-android%/android-navigator/src/META-INF/android-navigator.xml)
+[`android-navigator.xml`](%gh-ij-android%/android-navigator/resources/META-INF/android-navigator.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -134,7 +136,7 @@
 
 ### android-npw.xml
 
-[`android-npw.xml`](%gh-ij-android%/android-npw/src/META-INF/android-npw.xml)
+[`android-npw.xml`](%gh-ij-android%/android-npw/resources/META-INF/android-npw.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -142,7 +144,7 @@
 
 ### android-plugin.xml
 
-[`android-plugin.xml`](%gh-ij-android%/android/src/META-INF/android-plugin.xml)
+[`android-plugin.xml`](%gh-ij-android%/android/resources/META-INF/android-plugin.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -165,6 +167,7 @@
 | [com.android.tools.idea.lang.databinding.dataBindingExpressionSupport](https://jb.gg/ipe?extensions=com.android.tools.idea.lang.databinding.dataBindingExpressionSupport) ![Non-Dynamic][non-dynamic] | [`DataBindingExpressionSupport`](%gh-ij-android%/android/src/com/android/tools/idea/lang/databinding/DataBindingExpressionSupport.kt) |
 | [com.android.tools.idea.layoutlib.layoutLibraryProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.layoutlib.layoutLibraryProvider) ![Non-Dynamic][non-dynamic] | [`LayoutLibraryProvider`](%gh-ij-android%/layoutlib-loader/src/com/android/tools/idea/layoutlib/LayoutLibraryLoader.java) |
 | [com.android.tools.idea.liveedit.tokens.buildSystemLiveEditServices](https://jb.gg/ipe?extensions=com.android.tools.idea.liveedit.tokens.buildSystemLiveEditServices) ![Non-Dynamic][non-dynamic] | [`BuildSystemLiveEditServices`](%gh-ij-android%/android/src/com/android/tools/idea/run/deployment/liveedit/tokens/BuildSystemLiveEditServices.kt) |
+| [com.android.tools.idea.manifest.manifestClassToken](https://jb.gg/ipe?extensions=com.android.tools.idea.manifest.manifestClassToken) ![Non-Dynamic][non-dynamic] | [`ManifestClassToken`](%gh-ij-android%/android/src/com/android/tools/idea/manifest/ManifestClassToken.kt) |
 | [com.android.tools.idea.ndk.nativeWorkspaceProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.ndk.nativeWorkspaceProvider) ![Non-Dynamic][non-dynamic] | [`NativeWorkspaceProvider`](%gh-ij-android%/android/src/com/android/tools/idea/ndk/NativeWorkspaceProvider.kt) |
 | [com.android.tools.idea.rendering.renderIssueCollectionConsumer](https://jb.gg/ipe?extensions=com.android.tools.idea.rendering.renderIssueCollectionConsumer) ![Non-Dynamic][non-dynamic] | [`Provider`](%gh-ij-android%/android/src/com/android/tools/idea/rendering/RenderIssueCollectionConsumer.java) |
 | [com.android.tools.idea.rendering.tokens.buildSystemFilePreviewServices](https://jb.gg/ipe?extensions=com.android.tools.idea.rendering.tokens.buildSystemFilePreviewServices) ![Non-Dynamic][non-dynamic] | [`BuildSystemFilePreviewServices`](%gh-ij-android%/android/src/com/android/tools/idea/rendering/tokens/BuildSystemFilePreviewServices.kt) |
@@ -172,9 +175,9 @@
 | [com.android.tools.idea.run.configuration.editors.androidWearConfigurationEditorToken](https://jb.gg/ipe?extensions=com.android.tools.idea.run.configuration.editors.androidWearConfigurationEditorToken) ![Non-Dynamic][non-dynamic] | [`AndroidWearConfigurationEditorToken`](%gh-ij-android%/android/src/com/android/tools/idea/run/configuration/editors/AndroidWearConfigurationEditor.kt) |
 | [com.android.tools.idea.run.editor.androidDebuggerInfoProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.run.editor.androidDebuggerInfoProvider) ![Non-Dynamic][non-dynamic] | [`AndroidDebuggerInfoProvider`](%gh-ij-android%/android/src/com/android/tools/idea/run/editor/AndroidDebuggerInfoProvider.java) |
 | [com.android.tools.idea.run.editor.testRunParametersToken](https://jb.gg/ipe?extensions=com.android.tools.idea.run.editor.testRunParametersToken) ![Non-Dynamic][non-dynamic] | [`TestRunParametersToken`](%gh-ij-android%/android/src/com/android/tools/idea/run/editor/TestRunParameters.java) |
-| [com.android.tools.idea.testartifacts.instrumented.androidRunConfigurationToken](https://jb.gg/ipe?extensions=com.android.tools.idea.testartifacts.instrumented.androidRunConfigurationToken) ![Non-Dynamic][non-dynamic] | [`AndroidRunConfigurationToken`](%gh-ij-android%/android/src/com/android/tools/idea/testartifacts/instrumented/AndroidRunConfigurationToken.kt) |
 | [com.android.tools.idea.testartifacts.instrumented.androidTestConfigurationProducerToken](https://jb.gg/ipe?extensions=com.android.tools.idea.testartifacts.instrumented.androidTestConfigurationProducerToken) ![Non-Dynamic][non-dynamic] | [`AndroidTestConfigurationProducerToken`](%gh-ij-android%/android/src/com/android/tools/idea/testartifacts/instrumented/AndroidTestConfigurationProducer.kt) |
 | [com.android.tools.idea.testartifacts.instrumented.testRunConfigurationOptions](https://jb.gg/ipe?extensions=com.android.tools.idea.testartifacts.instrumented.testRunConfigurationOptions) | [`TestRunConfigurationOptions`](%gh-ij-android%/android/src/com/android/tools/idea/testartifacts/instrumented/AndroidTestConfigurationProducer.kt) |
+| [com.android.tools.idea.testartifacts.screenshottest.screenshotTestResultListenerToken](https://jb.gg/ipe?extensions=com.android.tools.idea.testartifacts.screenshottest.screenshotTestResultListenerToken) ![Non-Dynamic][non-dynamic] | [`ScreenshotTestResultListenerToken`](%gh-ij-android%/android/src/com/android/tools/idea/testartifacts/screenshottest/ScreenshotTestResultListenerToken.kt) |
 | [com.android.tools.idea.ui.designer.overlays.overlayProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.ui.designer.overlays.overlayProvider) ![Non-Dynamic][non-dynamic] | [`OverlayProvider`](%gh-ij-android%/android/src/com/android/tools/idea/ui/designer/overlays/OverlayProvider.java) |
 | [com.android.tools.idea.ui.guiTestingStatusProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.ui.guiTestingStatusProvider) ![Non-Dynamic][non-dynamic] | [`GuiTestingStatusProvider`](%gh-ij-android%/android/src/com/android/tools/idea/ui/GuiTestingStatusProvider.java) |
 | [com.android.tools.idea.ui.resourcemanager.importer.createDefaultResDirectoryToken](https://jb.gg/ipe?extensions=com.android.tools.idea.ui.resourcemanager.importer.createDefaultResDirectoryToken) ![Non-Dynamic][non-dynamic] | [`CreateDefaultResDirectoryToken`](%gh-ij-android%/android/src/com/android/tools/idea/ui/resourcemanager/importer/DesignAssetImporter.kt) |
@@ -184,15 +187,23 @@
 
 ### android-templates.xml
 
-[`android-templates.xml`](%gh-ij-android%/android-templates/src/META-INF/android-templates.xml)
+[`android-templates.xml`](%gh-ij-android%/android-templates/resources/META-INF/android-templates.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.android.tools.idea.templates.additionalTemplateActionsProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.templates.additionalTemplateActionsProvider) ![Non-Dynamic][non-dynamic] | [`AdditionalTemplateActionsProvider`](%gh-ij-android%/android-templates/src/com/android/tools/idea/templates/AdditionalTemplateActionsProvider.java) |
 
+### apkanalyzer.xml
+
+[`apkanalyzer.xml`](%gh-ij-android%/apkanalyzer/src/META-INF/apkanalyzer.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.android.tools.idea.apk.viewer.apkAnalyzerToken](https://jb.gg/ipe?extensions=com.android.tools.idea.apk.viewer.apkAnalyzerToken) ![Non-Dynamic][non-dynamic] | [`ApkAnalyzerToken`](%gh-ij-android%/apkanalyzer/src/com/android/tools/idea/apk/viewer/ApkAnalyzerToken.kt) |
+
 ### app-inspection.xml
 
-[`app-inspection.xml`](%gh-ij-android%/app-inspection/ide/src/META-INF/app-inspection.xml)
+[`app-inspection.xml`](%gh-ij-android%/app-inspection/ide/resources/META-INF/app-inspection.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -200,7 +211,7 @@
 
 ### app-inspector.xml
 
-[`app-inspector.xml`](%gh-ij-android%/app-inspection/inspector/ide/src/META-INF/app-inspector.xml)
+[`app-inspector.xml`](%gh-ij-android%/app-inspection/inspector/ide/resources/META-INF/app-inspector.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -208,7 +219,7 @@
 
 ### assistant.xml
 
-[`assistant.xml`](%gh-ij-android%/assistant/src/META-INF/assistant.xml)
+[`assistant.xml`](%gh-ij-android%/assistant/resources/META-INF/assistant.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -219,17 +230,26 @@
 | [com.android.tools.idea.assistant.panelFactory](https://jb.gg/ipe?extensions=com.android.tools.idea.assistant.panelFactory) ![Non-Dynamic][non-dynamic] | [`PanelFactory`](%gh-ij-android%/assistant/src/com/android/tools/idea/assistant/PanelFactory.java) |
 | [com.android.tools.idea.assistant.scrollHandler](https://jb.gg/ipe?extensions=com.android.tools.idea.assistant.scrollHandler) ![Non-Dynamic][non-dynamic] | [`ScrollHandler`](%gh-ij-android%/assistant/src/com/android/tools/idea/assistant/ScrollHandler.java) |
 
+### com.android.tools.gradle.dcl
+
+[`com.android.tools.gradle.dcl`](%gh-ij-android%/gradle-declarative-lang-ide/resources/META-INF/plugin.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.android.tools.gradle.dcl.ide.declarativeSchemaProvider](https://jb.gg/ipe?extensions=com.android.tools.gradle.dcl.ide.declarativeSchemaProvider) ![Non-Dynamic][non-dynamic] | [`DeclarativeSchemaProvider`](%gh-ij-android%/gradle-declarative-lang-ide/src/com/android/tools/idea/gradle/dcl/lang/ide/DeclarativeSchemaProvider.kt) |
+
 ### compose-designer.xml
 
-[`compose-designer.xml`](%gh-ij-android%/compose-designer/src/META-INF/compose-designer.xml)
+[`compose-designer.xml`](%gh-ij-android%/compose-designer/resources/META-INF/compose-designer.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.android.tools.idea.compose.preview.composeEditorNotificationProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.compose.preview.composeEditorNotificationProvider) ![Non-Dynamic][non-dynamic] ![DumbAware][dumb-aware] | [`EditorNotificationProvider`](%gh-ic%/platform/platform-api/src/com/intellij/ui/EditorNotificationProvider.java) |
+| [com.android.tools.idea.compose.preview.composeStudioBotActionFactory](https://jb.gg/ipe?extensions=com.android.tools.idea.compose.preview.composeStudioBotActionFactory) ![Non-Dynamic][non-dynamic] | [`ComposeStudioBotActionFactory`](%gh-ij-android%/compose-designer/src/com/android/tools/idea/compose/preview/ComposeStudioBotActionFactory.kt) |
 
 ### customview.xml
 
-[`customview.xml`](%gh-ij-android%/designer/customview/src/META-INF/customview.xml)
+[`customview.xml`](%gh-ij-android%/designer/customview/resources/META-INF/customview.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -237,7 +257,7 @@
 
 ### databinding.xml
 
-[`databinding.xml`](%gh-ij-android%/databinding/src/META-INF/databinding.xml)
+[`databinding.xml`](%gh-ij-android%/databinding/resources/META-INF/databinding.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -245,7 +265,7 @@
 
 ### designer.xml
 
-[`designer.xml`](%gh-ij-android%/designer/src/META-INF/designer.xml)
+[`designer.xml`](%gh-ij-android%/designer/resources/META-INF/designer.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -257,6 +277,14 @@
 | [com.android.tools.idea.uibuilder.property.motionEditorNlPropertiesViewProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.uibuilder.property.motionEditorNlPropertiesViewProvider) | [`NlPropertiesViewProvider`](%gh-ij-android%/designer/src/com/android/tools/idea/uibuilder/property/NlPropertiesView.kt) |
 | [com.android.tools.idea.uibuilder.scene.decorator.nlDecoratorProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.uibuilder.scene.decorator.nlDecoratorProvider) | [`Provider`](%gh-ij-android%/designer/src/com/android/tools/idea/uibuilder/scene/decorator/NlSceneDecoratorFactory.java) |
 | [com.android.tools.idea.uibuilder.troubleshooting.infoCollector](https://jb.gg/ipe?extensions=com.android.tools.idea.uibuilder.troubleshooting.infoCollector) ![Non-Dynamic][non-dynamic] | [`TroubleInfoCollector`](%gh-ic%/platform/platform-impl/src/com/intellij/troubleshooting/TroubleInfoCollector.java) |
+
+### device-manager-v2.xml
+
+[`device-manager-v2.xml`](%gh-ij-android%/device-manager-v2/resources/META-INF/device-manager-v2.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.android.tools.idea.devicemanagerv2.deviceManagerOverflowActionContributor](https://jb.gg/ipe?extensions=com.android.tools.idea.devicemanagerv2.deviceManagerOverflowActionContributor) ![Non-Dynamic][non-dynamic] | [`DeviceManagerOverflowActionContributor`](%gh-ij-android%/device-manager-v2/src/com/android/tools/idea/devicemanagerv2/OverflowButton.kt) |
 
 ### gradle-dsl.xml
 
@@ -271,7 +299,7 @@
 
 ### layout-inspector.xml
 
-[`layout-inspector.xml`](%gh-ij-android%/layout-inspector/src/META-INF/layout-inspector.xml)
+[`layout-inspector.xml`](%gh-ij-android%/layout-inspector/resources/META-INF/layout-inspector.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -285,10 +313,11 @@
 |-----------------|----------------|
 | [com.android.tools.idea.lint.common.lintIdeSupport](https://jb.gg/ipe?extensions=com.android.tools.idea.lint.common.lintIdeSupport) ![Non-Dynamic][non-dynamic] | [`LintIdeSupport`](%gh-ij-android%/lint/src/com/android/tools/idea/lint/common/LintIdeSupport.kt) |
 | [com.android.tools.idea.lint.common.lintQuickFixProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.lint.common.lintQuickFixProvider) ![Non-Dynamic][non-dynamic] | [`LintIdeQuickFixProvider`](%gh-ij-android%/lint/src/com/android/tools/idea/lint/common/LintIdeQuickFixProvider.java) |
+| [com.android.tools.idea.lint.common.updateDepsProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.lint.common.updateDepsProvider) ![Non-Dynamic][non-dynamic] | [`DependencyUpdateProvider`](%gh-ij-android%/lint/src/com/android/tools/idea/lint/common/AndroidLintGradleDependencyInspection.kt) |
 
 ### logcat.xml
 
-[`logcat.xml`](%gh-ij-android%/logcat/src/META-INF/logcat.xml)
+[`logcat.xml`](%gh-ij-android%/logcat/resources/META-INF/logcat.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -297,7 +326,7 @@
 
 ### native-symbolizer.xml
 
-[`native-symbolizer.xml`](%gh-ij-android%/native-symbolizer/src/META-INF/native-symbolizer.xml)
+[`native-symbolizer.xml`](%gh-ij-android%/native-symbolizer/resources/META-INF/native-symbolizer.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -305,7 +334,7 @@
 
 ### naveditor.xml
 
-[`naveditor.xml`](%gh-ij-android%/nav/editor/src/META-INF/naveditor.xml)
+[`naveditor.xml`](%gh-ij-android%/nav/editor/resources/META-INF/naveditor.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -314,7 +343,7 @@
 
 ### pipeline.xml
 
-[`pipeline.xml`](%gh-ij-android%/android-transport/src/META-INF/pipeline.xml)
+[`pipeline.xml`](%gh-ij-android%/android-transport/resources/META-INF/pipeline.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -322,7 +351,7 @@
 
 ### profilers.xml
 
-[`profilers.xml`](%gh-ij-android%/profilers-android/src/META-INF/profilers.xml)
+[`profilers.xml`](%gh-ij-android%/profilers-android/resources/META-INF/profilers.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -330,17 +359,19 @@
 
 ### project-system-gradle-plugin.xml
 
-[`project-system-gradle-plugin.xml`](%gh-ij-android%/project-system-gradle/src/META-INF/project-system-gradle-plugin.xml)
+[`project-system-gradle-plugin.xml`](%gh-ij-android%/project-system-gradle/resources/META-INF/project-system-gradle-plugin.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| [com.android.gradle.androidModuleDataService](https://jb.gg/ipe?extensions=com.android.gradle.androidModuleDataService) ![Non-Dynamic][non-dynamic] | [`AndroidModuleDataServiceExtension`](%gh-ij-android%/project-system-gradle/src/com/android/tools/idea/projectsystem/gradle/sync/AndroidModuleDataServiceExtension.kt) |
 | [com.android.gradle.sync.postSyncProjectCleanupStep](https://jb.gg/ipe?extensions=com.android.gradle.sync.postSyncProjectCleanupStep) ![Non-Dynamic][non-dynamic] | [`ProjectCleanupStep`](%gh-ij-android%/project-system-gradle/src/com/android/tools/idea/gradle/project/sync/setup/post/ProjectCleanupStep.java) |
 | [com.android.gradle.sync.postSyncProjectSetupStep](https://jb.gg/ipe?extensions=com.android.gradle.sync.postSyncProjectSetupStep) ![Non-Dynamic][non-dynamic] | [`ProjectSetupStep`](%gh-ij-android%/project-system-gradle/src/com/android/tools/idea/gradle/project/sync/setup/post/ProjectSetupStep.java) |
 | [com.android.moduleImporter](https://jb.gg/ipe?extensions=com.android.moduleImporter) ![Non-Dynamic][non-dynamic] | [`AndroidModuleImporter`](%gh-ij-android%/project-system-gradle/src/com/android/tools/idea/gradle/project/AndroidModuleImporter.kt) |
+| [com.android.tools.idea.gradle.errorQuickFixProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.gradle.errorQuickFixProvider) ![Non-Dynamic][non-dynamic] | [`GradleErrorQuickFixProvider`](%gh-ij-android%/project-system-gradle/src/com/android/tools/idea/gradle/project/build/events/GradleErrorQuickFixProvider.kt) |
 
 ### project-system-plugin.xml
 
-[`project-system-plugin.xml`](%gh-ij-android%/project-system/src/META-INF/project-system-plugin.xml)
+[`project-system-plugin.xml`](%gh-ij-android%/project-system/resources/META-INF/project-system-plugin.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -358,7 +389,7 @@
 
 ### resources-explorer.xml
 
-[`resources-explorer.xml`](%gh-ij-android%/android/src/com/android/tools/idea/ui/resourcemanager/META-INF/resources-explorer.xml)
+[`resources-explorer.xml`](%gh-ij-android%/android/resources/com/android/tools/idea/ui/resourcemanager/META-INF/resources-explorer.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -367,7 +398,7 @@
 
 ### safeargs.common.xml
 
-[`safeargs.common.xml`](%gh-ij-android%/nav/safeargs/common/src/META-INF/safeargs.common.xml)
+[`safeargs.common.xml`](%gh-ij-android%/nav/safeargs/common/resources/META-INF/safeargs.common.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -380,6 +411,15 @@
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.android.tools.idea.mendelFlagsProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.mendelFlagsProvider) ![Non-Dynamic][non-dynamic] | [`MendelFlagsProvider`](%gh-ij-android%/server-flags/src/com/android/tools/idea/mendel/MendelFlagsProvider.kt) |
+
+### testartifacts.xml
+
+[`testartifacts.xml`](%gh-ij-android%/testartifacts/src/META-INF/testartifacts.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.android.tools.idea.testartifacts.instrumented.androidRunConfigurationToken](https://jb.gg/ipe?extensions=com.android.tools.idea.testartifacts.instrumented.androidRunConfigurationToken) ![Non-Dynamic][non-dynamic] | [`AndroidRunConfigurationToken`](%gh-ij-android%/testartifacts/src/com/android/tools/idea/testartifacts/instrumented/AndroidRunConfigurationToken.kt) |
+| [com.android.tools.idea.testartifacts.screenshot.screenshotTestRunConfigurationToken](https://jb.gg/ipe?extensions=com.android.tools.idea.testartifacts.screenshot.screenshotTestRunConfigurationToken) ![Non-Dynamic][non-dynamic] | [`ScreenshotTestRunConfigurationToken`](%gh-ij-android%/testartifacts/src/com/android/tools/idea/testartifacts/screenshot/ScreenshotTestRunConfigurationToken.kt) |
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square
 [removal]: https://img.shields.io/badge/-Removal-red?style=flat-square

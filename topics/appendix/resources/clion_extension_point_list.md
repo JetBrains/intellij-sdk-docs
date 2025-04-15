@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <!-- EP List Directory: /CIDR/ -->
 
@@ -12,7 +12,7 @@
 
 </tldr>
 
-145 Extension Points and 45 Listeners
+149 Extension Points and 45 Listeners
 
 See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 
@@ -26,6 +26,7 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | Topic | Listener |
 |-------|----------|
 | [CubeMXManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.clion.embedded.stm32cubemx.CubeMXManager.CubeStatusListener)  | `CubeStatusListener` |
+| [WestProjectListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.clion.west.WestProjectListener)  | `WestProjectListener` |
 | [WestConfigListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.clion.west.config.WestConfigListener)  | `WestConfigListener` |
 | [Listener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.clion.west.settings.WestSettings.Listener)  | `Listener` |
 | [FileSymbolTablesCache#OUT_OF_CODE_BLOCK_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.psi.util.PsiModificationTracker.Listener)  ![Project-Level][project-level] | [`Listener`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/PsiModificationTracker.java) |
@@ -42,7 +43,6 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | [MakefileSettingsListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.makefile.settings.MakefileSettingsListener)  | `MakefileSettingsListener` |
 | [CPPToolchainsConfigurable#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.toolchains.CPPToolchainsConfigurable.Listener)  | `Listener` |
 | [CPPToolchainsListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.toolchains.CPPToolchainsListener)  | `CPPToolchainsListener` |
-| [ExecutableListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.execution.CidrRunConfigurationExecutableEditor.ExecutableListener)  | `ExecutableListener` |
 | [CidrBuildListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.execution.build.CidrBuildListener)  ![Project-Level][project-level] | `CidrBuildListener` |
 | [CidrHighlighterNotifierService#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.execution.testing.CidrHighlighterNotifierService.LineMarkNotifier)  | `LineMarkNotifier` |
 | [CidrTestScopeService#TEST_SCOPE_LISTENER_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.execution.testing.CidrTestScopeService.TestScopeListener)  | `TestScopeListener` |
@@ -72,16 +72,6 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | [AllowedModules#INVALIDATION_TOPIC](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
 
 
-### CidrClangdPlugin.xml
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| [clangd.clangTidyAnnotationApplier](https://jb.gg/ipe?extensions=clangd.clangTidyAnnotationApplier) | `ClangTidyAnnotationApplier` |
-| [clangd.clangTidyResolveInfoProvider](https://jb.gg/ipe?extensions=clangd.clangTidyResolveInfoProvider) | `ClangTidyResolveInfoProvider` |
-| [clangd.clangdAnnotatorUtil](https://jb.gg/ipe?extensions=clangd.clangdAnnotatorUtil) | `ClangAnnotatorUtil` |
-| [clangd.clangdBridge](https://jb.gg/ipe?extensions=clangd.clangdBridge) | `ClangdBridgeInterface` |
-| [clangd.externalCompletionProvider](https://jb.gg/ipe?extensions=clangd.externalCompletionProvider) ![DumbAware][dumb-aware] | `ExternalCompletionProvider` |
-
 ### CidrDebuggerPlugin.xml
 
 | Extension Point | Implementation |
@@ -99,6 +89,8 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | [cidr.debugger.languageSupport](https://jb.gg/ipe?extensions=cidr.debugger.languageSupport) | `CidrDebuggerLanguageSupport` |
 | [cidr.debugger.lineBreakpointFileTypesProvider](https://jb.gg/ipe?extensions=cidr.debugger.lineBreakpointFileTypesProvider) | `CidrLineBreakpointFileTypesProvider` |
 | [cidr.debugger.localVariablesFilterHandler](https://jb.gg/ipe?extensions=cidr.debugger.localVariablesFilterHandler) | `LocalVariablesFilterHandler` |
+| [cidr.debugger.modulesHandler](https://jb.gg/ipe?extensions=cidr.debugger.modulesHandler) ![Experimental][experimental] | `CidrDebuggerModulesHandler` |
+| [cidr.debugger.nativeSelfProfilerPathProvider](https://jb.gg/ipe?extensions=cidr.debugger.nativeSelfProfilerPathProvider) | `NativeSelfProfilerPathProvider` |
 | [cidr.debugger.suspendThreadSelector](https://jb.gg/ipe?extensions=cidr.debugger.suspendThreadSelector) | `CidrSuspendThreadSelector` |
 | [cidr.debugger.valueRendererExtension](https://jb.gg/ipe?extensions=cidr.debugger.valueRendererExtension) ![Non-Dynamic][non-dynamic] | `ValueRendererExtension` |
 | [cidr.debugger.valueRendererFactory](https://jb.gg/ipe?extensions=cidr.debugger.valueRendererFactory) ![Non-Dynamic][non-dynamic] | `ValueRendererFactory` |
@@ -118,7 +110,7 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [cidr.lang.annotatorInspectionToolProvider](https://jb.gg/ipe?extensions=cidr.lang.annotatorInspectionToolProvider) ![Obsolete][obsolete] ![Non-Dynamic][non-dynamic] | [`NotNullProducer`](%gh-ic%/platform/util/src/com/intellij/util/NotNullProducer.java) |
+| [cidr.lang.annotatorInspectionToolProvider](https://jb.gg/ipe?extensions=cidr.lang.annotatorInspectionToolProvider) ![Non-Dynamic][non-dynamic] | `Supplier` |
 | [cidr.lang.dfaInspectionConfig](https://jb.gg/ipe?extensions=cidr.lang.dfaInspectionConfig) ![Non-Dynamic][non-dynamic] | `OCDFAInspectionConfig` |
 | [cidr.lang.externalInspections](https://jb.gg/ipe?extensions=cidr.lang.externalInspections) | `OCExternalInspections` |
 | [cidr.lang.fileTypeHelper](https://jb.gg/ipe?extensions=cidr.lang.fileTypeHelper) ![Non-Dynamic][non-dynamic] | `OCFileTypeHelper` |
@@ -131,7 +123,7 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | [cidr.lang.newFileModelHandlerProvider](https://jb.gg/ipe?extensions=cidr.lang.newFileModelHandlerProvider) ![Non-Dynamic][non-dynamic] | `OCNewFileProjectModelHandlerProvider` |
 | [cidr.lang.ownModuleDetector](https://jb.gg/ipe?extensions=cidr.lang.ownModuleDetector) | `CidrOwnModuleDetector` |
 | [cidr.lang.projectWizardFilesFormatter](https://jb.gg/ipe?extensions=cidr.lang.projectWizardFilesFormatter) ![Non-Dynamic][non-dynamic] | `CidrProjectWizardFilesFormatter` |
-| [cidr.lang.standaloneInspectionToolProvider](https://jb.gg/ipe?extensions=cidr.lang.standaloneInspectionToolProvider) ![Obsolete][obsolete] ![Non-Dynamic][non-dynamic] | [`NotNullProducer`](%gh-ic%/platform/util/src/com/intellij/util/NotNullProducer.java) |
+| [cidr.lang.standaloneInspectionToolProvider](https://jb.gg/ipe?extensions=cidr.lang.standaloneInspectionToolProvider) ![Non-Dynamic][non-dynamic] | `Supplier` |
 
 ### CidrLangPlugin.xml
 
@@ -219,6 +211,7 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 |-----------------|----------------|
 | [cidr.markRootActionAvailability](https://jb.gg/ipe?extensions=cidr.markRootActionAvailability) ![Non-Dynamic][non-dynamic] | `CidrMarkRootActionAvailability` |
 | [cidr.project.is.known.checker](https://jb.gg/ipe?extensions=cidr.project.is.known.checker) ![Non-Dynamic][non-dynamic] | `KnownProjectChecker` |
+| [cidr.project.moduleNameSuffixProvider](https://jb.gg/ipe?extensions=cidr.project.moduleNameSuffixProvider) ![Non-Dynamic][non-dynamic] | `WorkspaceModuleNameSuffixProvider` |
 | [cidr.project.notifications.editorNotificationWarningProvider](https://jb.gg/ipe?extensions=cidr.project.notifications.editorNotificationWarningProvider) | `EditorNotificationWarningProvider` |
 | [cidr.project.popup.projectFixesProvider](https://jb.gg/ipe?extensions=cidr.project.popup.projectFixesProvider) | `ProjectFixesProvider` |
 | [cidr.project.rootsBuilderProvider](https://jb.gg/ipe?extensions=cidr.project.rootsBuilderProvider) ![Non-Dynamic][non-dynamic] | `Provider` |
@@ -244,6 +237,7 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.cmake.profileLoadContributor](https://jb.gg/ipe?extensions=com.intellij.cmake.profileLoadContributor) | `FutureProvider` |
 | [com.intellij.cmake.runnerStep](https://jb.gg/ipe?extensions=com.intellij.cmake.runnerStep) ![Non-Dynamic][non-dynamic] | `CMakeRunnerStep` |
 | [com.intellij.cmake.targetToConfigProvider](https://jb.gg/ipe?extensions=com.intellij.cmake.targetToConfigProvider) | `CMakeTargetToConfigProvider` |
+| [com.intellij.cmake.toolWindowFocusContributor](https://jb.gg/ipe?extensions=com.intellij.cmake.toolWindowFocusContributor) | `CMakeToolWindowFocusContributor` |
 | [com.intellij.cmake.workspace.compilerEnvironmentContributor](https://jb.gg/ipe?extensions=com.intellij.cmake.workspace.compilerEnvironmentContributor) | `CMakeCompilerEnvironmentContributor` |
 
 ### CLionExecutionPlugin.xml
@@ -276,6 +270,16 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.cmake.bundledDocumentationProvider](https://jb.gg/ipe?extensions=com.intellij.cmake.bundledDocumentationProvider) | `CMakeBundledDocumentationProvider` |
 | [com.intellij.cmake.completion.environmentProvider](https://jb.gg/ipe?extensions=com.intellij.cmake.completion.environmentProvider) | `CMakeEnvironmentVariableProvider` |
 | [com.intellij.cmake.fileLocationProvider](https://jb.gg/ipe?extensions=com.intellij.cmake.fileLocationProvider) | `CMakeFileLocationProvider` |
+
+### com.intellij.cidr.lang.clangd
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [clangd.clangTidyAnnotationApplier](https://jb.gg/ipe?extensions=clangd.clangTidyAnnotationApplier) | `ClangTidyAnnotationApplier` |
+| [clangd.clangTidyResolveInfoProvider](https://jb.gg/ipe?extensions=clangd.clangTidyResolveInfoProvider) | `ClangTidyResolveInfoProvider` |
+| [clangd.clangdAnnotatorUtil](https://jb.gg/ipe?extensions=clangd.clangdAnnotatorUtil) | `ClangAnnotatorUtil` |
+| [clangd.clangdBridge](https://jb.gg/ipe?extensions=clangd.clangdBridge) | `ClangdBridgeInterface` |
+| [clangd.externalCompletionProvider](https://jb.gg/ipe?extensions=clangd.externalCompletionProvider) ![DumbAware][dumb-aware] | `ExternalCompletionProvider` |
 
 ### com.intellij.cidr.uml
 

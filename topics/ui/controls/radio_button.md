@@ -109,7 +109,11 @@ Do not use ending punctuation.
 Use the imperative form of verbs.
 
 Do not use negation in labels as it complicates understanding.
+
+<format color="369650" style="bold">Correct</format>
 ![](08_How_to_use_correct.png){width=706}
+
+ <format color="E55765" style="bold">Incorrect</format>
 ![](08_How_to_use_incorrect.png){width=706}
 
 

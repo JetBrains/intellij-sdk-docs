@@ -12,7 +12,7 @@
 
 </tldr>
 
-141 Extension Points and 7 Listeners for Rider
+145 Extension Points and 9 Listeners for Rider
 
 See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 
@@ -29,9 +29,17 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | [DotnetDebuggerSymbolsLoadedListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.debugger.modulesView.actions.DotnetDebuggerSymbolsLoadedListener)  | `DotnetDebuggerSymbolsLoadedListener` |
 | [FrontendTypedHandlerManager#BEFORE_TYPING_SENT](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.editorActions.IFrontendTypingListener)  | `IFrontendTypingListener` |
 | [RiderDockerDeploymentListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.plugins.appender.docker.deployment.RiderDockerDeploymentListener)  | `RiderDockerDeploymentListener` |
+| [AutoAttachDebuggerListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.run.AutoAttachDebuggerListener)  | `AutoAttachDebuggerListener` |
+| [PublishConfigurationValidationListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.run.configurations.publishing.PublishConfigurationValidationListener)  | `PublishConfigurationValidationListener` |
 | [MSBuildEvaluationListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.run.environment.MSBuildEvaluationListener)  | `MSBuildEvaluationListener` |
 | [RiderGlobalBackendProgressListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.services.RiderGlobalProgressHost.RiderGlobalBackendProgressListener)  | `RiderGlobalBackendProgressListener` |
 
+
+### com.intellij.rider.frontend.customization
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.intellij.rdclient.rider.completion.helper](https://jb.gg/ipe?extensions=com.intellij.rdclient.rider.completion.helper) | `CompletionHelper` |
 
 ### com.jetbrains.dotTrace.dotMemory
 
@@ -75,6 +83,7 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.rdclient.preemptiveCompletionSuppressor](https://jb.gg/ipe?extensions=com.intellij.rdclient.preemptiveCompletionSuppressor) | `PreemptiveCompletionSuppressor` |
 | [com.intellij.rdclient.typingPolicy](https://jb.gg/ipe?extensions=com.intellij.rdclient.typingPolicy) | `CustomTypingSessionPolicy` |
 | [com.intellij.rider.action.fallback.strategy](https://jb.gg/ipe?extensions=com.intellij.rider.action.fallback.strategy) | `RiderAsyncBackendDelegatingActionFallbackStrategy` |
+| [com.intellij.rider.additionalQuickDocProvider](https://jb.gg/ipe?extensions=com.intellij.rider.additionalQuickDocProvider) | `AdditionalQuickDocProvider` |
 | [com.intellij.rider.altEnter.layouter](https://jb.gg/ipe?extensions=com.intellij.rider.altEnter.layouter) | `RiderAltEnterLayouter` |
 | [com.intellij.rider.backendCrashAnalyser](https://jb.gg/ipe?extensions=com.intellij.rider.backendCrashAnalyser) | `BackendCrashAnalyzer` |
 | [com.intellij.rider.backendLogXmlPathProvider](https://jb.gg/ipe?extensions=com.intellij.rider.backendLogXmlPathProvider) | `RiderCustomBackendLogXmlPathProvider` |
@@ -91,7 +100,7 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.rider.protocol.hostEnvProvider](https://jb.gg/ipe?extensions=com.intellij.rider.protocol.hostEnvProvider) | `RiderBackendEnvProvider` |
 | [com.intellij.rider.riderApplicationPreloadListener](https://jb.gg/ipe?extensions=com.intellij.rider.riderApplicationPreloadListener) | `RiderApplicationPreloadListener` |
 | [com.intellij.rider.smartTabsBackendSynchronizer](https://jb.gg/ipe?extensions=com.intellij.rider.smartTabsBackendSynchronizer) ![Non-Dynamic][non-dynamic] | `RiderSmartTabsBackendSynchronizer` |
-| [com.intellij.rider.wrappedMergeableIconProvider](https://jb.gg/ipe?extensions=com.intellij.rider.wrappedMergeableIconProvider) | `RiderWrappedMergeableIconProvider` |
+| [com.intellij.rider.startupListener](https://jb.gg/ipe?extensions=com.intellij.rider.startupListener) ![Internal][internal] | `RiderInitialStartupListener` |
 | [com.intellij.selfProfilingPaths.customizer](https://jb.gg/ipe?extensions=com.intellij.selfProfilingPaths.customizer) | `DotnetSelfProfilerPathsCustomizer` |
 | [com.intellij.solutionLoadNotification](https://jb.gg/ipe?extensions=com.intellij.solutionLoadNotification) ![Project-Level][project-level] | `SolutionLoadNotification` |
 
@@ -169,6 +178,7 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.openDirectoryExtensions](https://jb.gg/ipe?extensions=com.intellij.openDirectoryExtensions) ![Non-Dynamic][non-dynamic] | `OpenDirectoryExtensions` |
 | [com.intellij.projectModelViewExtensions](https://jb.gg/ipe?extensions=com.intellij.projectModelViewExtensions) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `ProjectModelViewExtensions` |
 | [com.intellij.projectTemplateCustomizer](https://jb.gg/ipe?extensions=com.intellij.projectTemplateCustomizer) ![Non-Dynamic][non-dynamic] | `ProjectTemplateCustomizer` |
+| [com.intellij.projectTemplateDialogProvider](https://jb.gg/ipe?extensions=com.intellij.projectTemplateDialogProvider) ![Non-Dynamic][non-dynamic] | `ProjectTemplateDialogProvider` |
 | [com.intellij.projectTemplateProviderNew](https://jb.gg/ipe?extensions=com.intellij.projectTemplateProviderNew) ![Non-Dynamic][non-dynamic] | `ProjectTemplateProvider` |
 | [com.intellij.rider.ProjectTypesProvider](https://jb.gg/ipe?extensions=com.intellij.rider.ProjectTypesProvider) ![Non-Dynamic][non-dynamic] | `RiderProjectTypesProvider` |
 | [com.intellij.rider.SolutionFileTypesProvider](https://jb.gg/ipe?extensions=com.intellij.rider.SolutionFileTypesProvider) ![Non-Dynamic][non-dynamic] | `SolutionFileTypesProvider` |
@@ -185,6 +195,7 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.rider.consoleFilter](https://jb.gg/ipe?extensions=com.intellij.rider.consoleFilter) | `RiderConsoleFilterExtension` |
 | [com.intellij.rider.contributedLanguageElementNameCrawler](https://jb.gg/ipe?extensions=com.intellij.rider.contributedLanguageElementNameCrawler) | `RiderContributedLanguageElementNameCrawler` |
 | [com.intellij.rider.debug.breakpoint.handler.factory](https://jb.gg/ipe?extensions=com.intellij.rider.debug.breakpoint.handler.factory) ![Non-Dynamic][non-dynamic] | `IDotNetSupportedBreakpointHandlerFactory` |
+| [com.intellij.rider.debugger.editAndContinue.dotNetEncInfoAutodetect](https://jb.gg/ipe?extensions=com.intellij.rider.debugger.editAndContinue.dotNetEncInfoAutodetect) ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `DotNetEncInfoAutodetect` |
 | [com.intellij.rider.debugger.value.evaluator.factory](https://jb.gg/ipe?extensions=com.intellij.rider.debugger.value.evaluator.factory) ![Non-Dynamic][non-dynamic] | `RiderCustomComponentEvaluatorFactory` |
 | [com.intellij.rider.debugger.value.presenter](https://jb.gg/ipe?extensions=com.intellij.rider.debugger.value.presenter) ![Non-Dynamic][non-dynamic] | `RiderDebuggerValuePresenter` |
 | [com.intellij.rider.debuggerSupportPolicy](https://jb.gg/ipe?extensions=com.intellij.rider.debuggerSupportPolicy) ![Non-Dynamic][non-dynamic] | `RiderDebuggerSupportPolicy` |

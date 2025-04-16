@@ -39,7 +39,8 @@ Reader Mode customization
 : Implement [`ReaderModeProvider`](%gh-ic%/platform/editor-ui-api/src/com/intellij/codeInsight/actions/ReaderModeProvider.kt) and register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.readerModeProvider"/></include> to apply custom settings for files rendered in reader mode. Provide `com.intellij.codeInsight.actions.ReaderModeMatcher` to disable Reader Mode for particular set of files.
 
 Text Editor customization
-: Implement [`TextEditorCustomizer`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/fileEditor/impl/text/TextEditorCustomizer.kt) and register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.textEditorCustomizer"/></include> to customize created editors.
+: Implement [`TextEditorCustomizer`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/fileEditor/impl/text/TextEditorCustomizer.kt) and register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.textEditorCustomizer"/></include> to customize created editors.<br/>
+**Note: `TextEditorCustomizer` has been marked internal since 2024.2.**
 
 ### JavaScript Plugin 2020.3
 

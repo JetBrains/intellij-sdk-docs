@@ -174,7 +174,7 @@ EP: <include from="snippets.topic" element-id="epLink"><var name="ep" value="com
 
 EP: <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.include.provider"/></include>
 
-[`FileIncludeProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/psi/impl/include/FileIncludeProvider.java) provides information about _include_ statements resolving to files (e.g., `<xi:include>` in XML).
+[`FileIncludeProvider`](%gh-ic%/platform/lang-api/src/com/intellij/psi/impl/include/FileIncludeProvider.java) provides information about _include_ statements resolving to files (e.g., `<xi:include>` in XML).
 Including/included files can then be obtained via [`FileIncludeManager`](%gh-ic%/platform/lang-api/src/com/intellij/psi/impl/include/FileIncludeManager.java).
 
 ### Plain Text Completion

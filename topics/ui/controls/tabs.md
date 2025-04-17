@@ -30,9 +30,11 @@ Follow the rules in [Groups of controls](groups_of_controls.md).
 Use title capitalization for tab labels. Make the label short, preferably no more than 3 words.
 Avoid generic words, such as "General" or "Advanced".
 See [Writing short and clear](writing_short.md).
-<format color="Green" style="bold">
+
+<format color="369650" style="bold">Correct</format>
 ![Hiding tabs that do not fit](02_How_to_use_correct.png){width=706}
-<format color="Red" style="bold">
+
+<format color="E55765" style="bold">Incorrect</format>
 ![Hiding tabs that do not fit](02_How_to_use_incorrect.png){width=706}
 
 

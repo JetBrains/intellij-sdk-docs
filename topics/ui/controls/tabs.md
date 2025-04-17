@@ -10,12 +10,12 @@
 
 </tldr>
 
-Tabs organize content by grouping similar UI controls.
+Tabs help organize related content.
 
 ![Tabs](01_Tabs.png){width=706}
 
-## Tabs in Code Editors
-In code editors, tabs are created with another component — [`JBEditorTabs`](%gh-ic%/platform/platform-api/src/com/intellij/ui/tabs/impl/JBEditorTabs.kt). It supports extended functionality like icons, closeable, and draggable tabs. Do **not** use this component in dialogs.
+
+For editor tabs, use another component — [`JBEditorTabs`](%gh-ic%/platform/platform-api/src/com/intellij/ui/tabs/impl/JBEditorTabs.kt). It supports extended functionality like icons, closeable, and draggable tabs. Do **not** use this component in dialogs.
 
 In tool windows, tabs are generated automatically. See also [Tool window](tool_window.md).
 
@@ -42,12 +42,11 @@ See [Writing short and clear](writing_short.md).
   </tr>
 </table>
 
-###  Organization and Accessibility
+###  Tab Order and Layout
 
 Place the most frequently used content in the first tab.
 
-Tabs that do not fit allotted screen space automatically hide under the dropdown component.
-(It is better to add no more than 8 tabs, but this number is not limited.)
+Tabs that do not fit allotted screen space automatically hide under the dropdown component. It is better to add no more than 8 tabs, but this number is not limited.
 
 ![Hiding tabs that do not fit](03_How_to_use.png){width=706}
 
@@ -59,7 +58,7 @@ Do not remove or disable a tab when its function is unavailable. Explain why a t
 
 ### Position
 
-Always place tabs on top. It is possible to place them at other sides of the content — bottom, left, or right — but such a placement is extremely rare and might confuse users.
+Always place tabs on top of the content. It is possible to place them at other sides — bottom, left, or right — but such a placement is extremely rare and might confuse users.
 
 
 ### Independent content
@@ -74,11 +73,12 @@ Do not place independent content under the tabs. Create separate tabs for such c
 
 ![Incorrect placement of independent content](06_Placement﻿_incorrect.png){width=706}
 
+### Controls above tabs
 When there are other UI controls above tabs, separate them with a vertical indent.
 
 ![UI controls above the tabs](07_Placement﻿_correct.png){width=706}
 
-### Bottom border
+### Tabs border
 
 Make sure the border of the tab reaches the edges of the area tabs occupy.
 

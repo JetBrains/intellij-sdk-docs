@@ -6,6 +6,7 @@
 
 | Release Name | Channel | Version | IntelliJ IDEA Version | Release Date |
 |--------------|---------|---------|-----------------------|--------------|
+| <p><b>Narwhal </b></p><p> 2025.1.1 Canary 7</p> | ![Canary][canary] | **2025.1.1.7**<p>AI&#8209;251.23774.16.2511.13371696</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> | Apr&nbsp;17,&nbsp;2025 |
 | <p><b>Narwhal </b></p><p> 2025.1.1 Canary 6</p> | ![Canary][canary] | **2025.1.1.6**<p>AI&#8209;251.23774.16.2511.13338727</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> | Apr&nbsp;10,&nbsp;2025 |
 | <p><b>Narwhal </b></p><p> 2025.1.1 Canary 5</p> | ![Canary][canary] | **2025.1.1.5**<p>AI&#8209;251.23774.16.2511.13328238</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> | Apr&nbsp;8,&nbsp;2025 |
 | <p><b>Narwhal </b></p><p> 2025.1.1 Canary 4</p> | ![Canary][canary] | **2025.1.1.4**<p>AI&#8209;251.23774.16.2511.13307899</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> | Apr&nbsp;3,&nbsp;2025 |

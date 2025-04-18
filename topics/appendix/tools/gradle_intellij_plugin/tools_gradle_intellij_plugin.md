@@ -1387,10 +1387,10 @@ Default value
 : output of the [`buildPlugin`](#tasks-buildplugin) task
 
 
-#### `toolboxEnterprise`
-{#tasks-publishplugin-toolboxenterprise}
+#### `ideServices`
+{#tasks-publishplugin-ideServices}
 
-Specify if the Toolbox Enterprise plugin repository service should be used.
+Specifies if the IDE Services plugin repository service should be used.
 This feature is still in the incubating phase and is not yet available for public use.
 
 {type="narrow"}

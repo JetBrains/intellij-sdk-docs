@@ -9,12 +9,12 @@
 
 <tldr>
 
-**Product-Specific Plugin Development**: [IntelliJ IDEA Ultimate](idea_ultimate.md)
+**Product-Specific Plugin Development**: [](spring_api.md)
 
 </tldr>
 
 > Spring API Extension Points and Listeners are available in the Spring-related plugins,
-> which are available in IntelliJ IDEA Ultimate only.
+> which are available in [](idea_ultimate.md) only.
 >
 {style="note"}
 

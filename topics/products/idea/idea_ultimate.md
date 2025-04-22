@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # IntelliJ IDEA Ultimate
 
@@ -25,5 +25,5 @@ See [](oss_plugins_extension_point_list.md) on how to extend bundled plugins.
 
 The following pages describe targeting APIs which are available only in IntelliJ IDEA Ultimate:
 
-* [Tomcat Integration](tomcat_integration.md)
 * [Spring API](spring_api.md)
+* [Tomcat Integration](tomcat_integration.md)

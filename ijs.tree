@@ -149,7 +149,7 @@
     <toc-element topic="project_model.md" accepts-web-file-names="project-structure.html">
       <toc-element topic="project.md">
         <toc-element topic="trusted_projects.md"/>
-        <toc-element topic="project_wizard.md" toc-title="Project Wizard"/>
+        <toc-element topic="new_project_wizard.md"/>
         <toc-element topic="intro_project_wizard.md" accepts-web-file-names="project_wizard.html">
           <toc-element topic="adding_new_steps.md"/>
           <toc-element topic="module_types.md"/>

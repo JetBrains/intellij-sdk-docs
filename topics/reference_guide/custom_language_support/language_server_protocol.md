@@ -32,7 +32,7 @@ The integration with the Language Server Protocol is created as an extension to 
 Therefore, plugins using Language Server integration are not available in Community releases of JetBrains products and Android Studio from Google.
 
 The LSP API is publicly available as part of the IntelliJ Platform in the following IDEs:
-IntelliJ IDEA Ultimate, WebStorm, PhpStorm, PyCharm Professional, DataSpell, RubyMine, CLion, Aqua, DataGrip, GoLand, Rider, and RustRover.
+IntelliJ IDEA Ultimate, WebStorm, PhpStorm, PyCharm Professional, DataSpell, RubyMine, CLion, DataGrip, GoLand, Rider, and RustRover.
 
 ## LSP Plugin Setup
 

@@ -66,7 +66,6 @@ The following IDEs are based on the IntelliJ Platform:
 
 * [JetBrains](https://www.jetbrains.com) IDEs:
     * [AppCode](app_code.md)
-    * [Aqua](https://www.jetbrains.com/aqua/)
     * [CLion](clion.md)
     * [DataGrip](data_grip.md)
     * [DataSpell](https://www.jetbrains.com/dataspell/)

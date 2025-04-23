@@ -21,6 +21,9 @@ There is only one EDT and multiple BGT in the running application:
 
 ```mermaid
 ---
+config:
+  gantt:
+    numberSectionStyles: 1
 displayMode: compact
 ---
 gantt
@@ -311,6 +314,9 @@ Between executing first and second read actions, another thread could invalidate
 
 ```mermaid
 ---
+config:
+  gantt:
+    numberSectionStyles: 1
 displayMode: compact
 ---
 gantt
@@ -435,6 +441,9 @@ To better understand what problem `ModalityState` solves, consider the following
 
 ```mermaid
 ---
+config:
+  gantt:
+    numberSectionStyles: 1
 displayMode: compact
 ---
 gantt
@@ -464,6 +473,9 @@ Passing the modality state solves this problem:
 
 ```mermaid
 ---
+config:
+  gantt:
+    numberSectionStyles: 1
 displayMode: compact
 ---
 gantt
@@ -505,6 +517,9 @@ The following diagram presents this problem:
 
 ```mermaid
 ---
+config:
+  gantt:
+    numberSectionStyles: 1
 displayMode: compact
 ---
 gantt
@@ -525,6 +540,9 @@ In such a case, the recommended approach is to cancel the read action whenever t
 
 ```mermaid
 ---
+config:
+  gantt:
+    numberSectionStyles: 1
 displayMode: compact
 ---
 gantt

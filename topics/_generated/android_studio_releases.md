@@ -6,6 +6,7 @@
 
 | Release Name | Channel | Version | IntelliJ IDEA Version | Release Date |
 |--------------|---------|---------|-----------------------|--------------|
+| <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 RC 3</p> | ![RC][rc] | **2024.3.2.12**<p>AI&#8209;243.25659.59.2432.13371692</p> | **243.25659-EAP-CANDIDATE-SNAPSHOT**<p>243.25659.59</p> | Apr&nbsp;22,&nbsp;2025 |
 | <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 RC 2</p> | ![RC][rc] | **2024.3.2.11**<p>AI&#8209;243.25659.59.2432.13314846</p> | **243.25659-EAP-CANDIDATE-SNAPSHOT**<p>243.25659.59</p> | Apr&nbsp;9,&nbsp;2025 |
 | <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 RC 1</p> | ![RC][rc] | **2024.3.2.10**<p>AI&#8209;243.25659.59.2432.13282907</p> | **243.25659-EAP-CANDIDATE-SNAPSHOT**<p>243.25659.59</p> | Apr&nbsp;1,&nbsp;2025 |
 | <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 Beta 1</p> | ![Beta][beta] | **2024.3.2.9**<p>AI&#8209;243.25659.59.2432.13218502</p> | **243.25659-EAP-CANDIDATE-SNAPSHOT**<p>243.25659.59</p> | Mar&nbsp;18,&nbsp;2025 |

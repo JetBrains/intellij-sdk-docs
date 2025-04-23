@@ -10,6 +10,8 @@
 
 **UI Guidelines:** [Icons list](https://intellij-icons.jetbrains.design), [](icons_style.md)
 
+**See also**: [UI FAQ - Icons](ui_faq.md#icons)
+
 </tldr>
 
 Icons are used widely by IntelliJ Platform plugins.

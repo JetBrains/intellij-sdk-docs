@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # User Interface FAQ
 
@@ -76,8 +76,17 @@ can result in UI layout problems.
 If you use DPI-aware insets in an empty border (`JBUI.Borders.empty()`), then the insets will be updated automatically, for example, if scaling is changed because the <ui-path>IDE Zoom</ui-path> action was performed or for any other reason.
 If you use the insets elsewhere, you need to manually call `JBInsets.update()` in your component's `updateUI()` method to update the insets accordingly.
 
-## Manipulating Icons
+## Icons
+
+### Manipulating Icons
 
 Use [`IconUtil`](%gh-ic%/platform/core-ui/src/util/IconUtil.kt) to scale/colorize/darken/desaturate existing [icons](icons.md) as needed.
+
+### Combining Icons
+
+Use [`RowIcon`](%gh-ic%/platform/core-ui/src/ui/RowIcon.kt) to combine icons horizontally (_\$modifier\$_ _\$element\$_).
+
+To stack icons, use [`LayeredIcon`](%gh-ic%/platform/core-ui/src/ui/LayeredIcon.kt).
+[`IconWithOverlay`](%gh-ic%/platform/core-ui/src/ui/icons/IconWithOverlay.java) additionally allows controlling the shape of the overlay icon.
 
 <include from="snippets.topic" element-id="missingContent"/>

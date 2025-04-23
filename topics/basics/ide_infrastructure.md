@@ -86,7 +86,7 @@ For the latter, reporting is disabled by default — instead, there's an option 
 To let users report such errors to the vendor, plugins can use one of the solutions:
 - Use [JetBrains Exception Analyzer (EA)](https://plugins.jetbrains.com/docs/marketplace/exception-analyzer.html) that sends errors to the backend provided by JetBrains (2023.3+).
 - Implement custom [`ErrorReportSubmitter`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/diagnostic/ErrorReportSubmitter.java) registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.errorHandler"/></include>.
-See [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.errorHandler) for existing implementations — ranging from pre-filling web-based issue tracker forms to fully automated submission to log monitoring systems.
+Existing implementations range from pre-filling web-based issue tracker forms to fully automated submission to log monitoring systems.
 This [tutorial](https://www.plugin-dev.com/intellij/general/error-reporting/) also offers a working solution for using _Sentry_.
 
 The red exclamation notification icon in the status bar is controlled with the `idea.fatal.error.notification` system property.

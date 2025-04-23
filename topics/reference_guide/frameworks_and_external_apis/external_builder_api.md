@@ -58,8 +58,6 @@ Sources of a plugin for External Builder should be put in a separate module.
 By convention, such a module has a name '...-jps-plugin', and its sources are placed under the <path>jps-plugin</path> directory in the main plugin directory.
 Use <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.compileServer.plugin"/></include> to add the plugin to the classpath of the external build process, the plugin JAR should be named <path>\$JPS_module_name\$.jar</path>. <ui-path>Build | Prepare Plugin Module for Deployment</ui-path> action will automatically pack the 'jps-plugin' part to a separate JAR accordingly.
 
-See [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.compileServer.plugin) for samples.
-
 ### Debugging a Plugin for External Builder
 
 **If your test IDE is IntelliJ IDEA 16.0 or newer**

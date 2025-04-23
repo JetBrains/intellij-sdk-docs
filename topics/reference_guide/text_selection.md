@@ -48,7 +48,7 @@ This can be achieved by implementing this EP in the following way:
 Looking at other implementations can be an effective way to get a better understanding of how this EP works.
 To get further insight into this EP, you may want to take a look at [`DocTagSelectioner`](%gh-ic%/java/java-frontback-impl/src/com/intellij/codeInsight/editorActions/wordSelection/DocTagSelectioner.java).
 It provides the ability to select tag names like `@param` in Javadoc comments.
-Additionally, the [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.extendWordSelectionHandler) provides a list of open-source plugins with implementations of the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.extendWordSelectionHandler"/></include>.
+Browse the list of open-source plugins with implementations of the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.extendWordSelectionHandler"/></include>.
 
 There are also some important places in the IntelliJ Platform to add breakpoints during debugging.
 When _Extend Selection_ is called by the user, it is handled by [`SelectWordHandler`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/editorActions/SelectWordHandler.java).

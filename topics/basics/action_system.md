@@ -324,6 +324,8 @@ This and additional information can also be found by using the [Code Completion]
 #### Localizing Actions and Groups
 
 > Hard-coding presentation in the `AnAction` constructor is discouraged, use inspection <control>Plugin DevKit | Code | Eager creation of action presentation</control> (2023.3) to highlight such problems.
+>
+> See [Extending DefaultActionGroup](grouping_actions_tutorial.md#extending-defaultactiongroup) for a tutorial of localizing Actions and Groups.
 
 Action and group localization use [resource bundles](internationalization.md#message-bundles) containing property files named <path>\$NAME\$Bundle.properties</path>, each file consisting of `key=value` pairs.
 The [`action_basics`](%gh-sdk-samples-master%/action_basics) plugin demonstrates using a resource bundle to localize the group and action entries added to the Editor Popup Menu.
@@ -338,7 +340,9 @@ In the case of `action_basics`, only a default localization resource bundle (<pa
 <resource-bundle>messages.BasicActionsBundle</resource-bundle>
 ```
 
-_2020.1_<br/>
+##### Dedicated Resource Bundle
+<primary-label ref="2020.1"/>
+
 If necessary, a dedicated resource bundle to use for actions and groups can be defined on [`<actions>`](plugin_configuration_file.md#idea-plugin__actions):
 
 ```xml
@@ -347,8 +351,6 @@ If necessary, a dedicated resource bundle to use for actions and groups can be d
   from MyActionsBundle.properties -->
 </actions>
 ```
-
-See [Extending DefaultActionGroup](grouping_actions_tutorial.md#extending-defaultactiongroup) for a tutorial of localizing Actions and Groups.
 
 <tabs>
 

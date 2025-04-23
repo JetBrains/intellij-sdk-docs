@@ -4,9 +4,17 @@
 
 <link-summary>Overview of the Version Control Integration API allowing to implement a custom Version Control System support.</link-summary>
 
-This page gives an overview of the Version Control Integration API.
+<tldr>
 
-Reference: [OSS plugins providing VCS](https://jb.gg/ipe?extensions=com.intellij.vcs)
+**Sample Plugins**: [OSS plugins providing VCS](https://jb.gg/ipe?extensions=com.intellij.vcs)
+
+**VCS Extension Points**: [](intellij_platform_extension_point_list.md#version-control)
+
+**Bundled VCS Plugins Extension Points**: [](intellij_community_plugins_extension_point_list.md#vcs-plugins)
+
+</tldr>
+
+This page gives an overview of the Version Control Integration API.
 
 ## Key Concepts
 

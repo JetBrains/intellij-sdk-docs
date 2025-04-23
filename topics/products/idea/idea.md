@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # IntelliJ IDEA Plugin Development
 
@@ -63,18 +63,17 @@ See [](intellij_community_plugins_extension_point_list.md) for API from bundled 
 
 ## Java
 
-See [Java Plugin](plugin_compatibility.md#java) on how to use Java-specific functionality.
+<tldr>
+
+**Java Plugin Extension Points**: [](intellij_community_plugins_extension_point_list.md#java-plugin)
+
+</tldr>
+
+Configure Java [plugin dependency](plugin_dependencies.md) with plugin ID `com.intellij.java`.
 
 [PSI Cookbook](psi_cookbook.md#java-specific) lists a number of common operations for working with Java PSI.
 
 Depending on the exact functionality, a plugin can also target [](uast.md) to support multiple JVM languages, including Java and Kotlin.
-
-Relevant Extension Points:
-
-- [](intellij_community_plugins_extension_point_list.md#javaanalysispluginxml)
-- [](intellij_community_plugins_extension_point_list.md#javaindexingpluginxml)
-- [](intellij_community_plugins_extension_point_list.md#javapluginxml)
-- [](intellij_community_plugins_extension_point_list.md#javapsipluginxml)
 
 ### Java Test Framework
 
@@ -83,6 +82,12 @@ To use existing test base classes, add `TestFrameworkType.Plugin.Java` test-fram
 Alternatively, specify `com.jetbrains.intellij.java:java-test-framework:$VERSION$` as `testImplementation` dependency explicitly (see [IntelliJ Platform Artifacts Repositories](intellij_artifacts.md#gradle-example-for-an-individual-module-from-the-intellij-platform)).
 
 ## Kotlin
+
+<tldr>
+
+**Kotlin Plugin Extension Points**: [](intellij_community_plugins_extension_point_list.md#kotlin-plugin)
+
+</tldr>
 
 Configure Kotlin [plugin dependency](plugin_dependencies.md) with plugin ID `org.jetbrains.kotlin`.
 

@@ -4,6 +4,12 @@
 
 <link-summary>Overview and introduction to implementing an External System (e.g., Maven, Gradle, sbt) support.</link-summary>
 
+<tldr>
+
+**External System Extension Points**: [](intellij_platform_extension_point_list.md#external-system)
+
+</tldr>
+
 This page provides a high-level overview of the *External System* subsystem.
 There are multiple project management systems ([Apache Maven](https://maven.apache.org/), [Gradle](https://www.gradle.org/), [sbt](https://www.scala-sbt.org/), etc.) and IntelliJ Platform provides a mechanism to support them in IDEs.
 

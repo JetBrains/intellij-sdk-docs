@@ -50,7 +50,6 @@ Each entry is composed of a product code and coordinates used for dependency and
 | Name                    | Code   | Artifact Coordinates                               | Binary release |
 |-------------------------|--------|----------------------------------------------------|:--------------:|
 | `AndroidStudio`         | `AI`   | -                                                  |    &check;     |
-| `Aqua`                  | `QA`   | -                                                  |    &check;     |
 | `CLion`                 | `CL`   | `com.jetbrains.intellij.clion:clion`               |    &check;     |
 | `DataGrip`              | `DB`   | -                                                  |    &check;     |
 | `DataSpell`             | `DS`   | -                                                  |    &check;     |

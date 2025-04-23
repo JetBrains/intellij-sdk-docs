@@ -8,9 +8,12 @@ _Listeners_ allow plugins to subscribe to events delivered through the message b
 
 Listeners are defined at application (global) or [project](project.md) level.
 
-> All available listeners/topics are listed on [](intellij_platform_extension_point_list.md) and [](intellij_platform_extension_point_list.md) under _Listeners_ sections.
+> All available listeners/topics are listed on [](intellij_platform_extension_point_list.md) and [](intellij_community_plugins_extension_point_list.md)
+> under _Listeners_ sections.
+>
 > Browse usages inside existing implementations of open-source IntelliJ Platform plugins via [IntelliJ Platform Explorer](https://jb.gg/ipe).
 >
+{title="Locating Listeners/Topics"}
 
 Listener implementations must be stateless and may not implement life-cycle (e.g., `Disposable`).
 Use inspection <control>Plugin DevKit | Code | Listener implementation implements 'Disposable'</control> to verify (2023.3).

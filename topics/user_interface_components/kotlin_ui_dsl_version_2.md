@@ -294,7 +294,7 @@ row("Row:") {
 ### `Cell.align`
 {#cell-align}
 
-_2022.3_
+<primary-label ref="2022.3"/>
 
 Updates horizontal and/or vertical alignment of the component inside the cell.
 Default alignment is `AlignX.LEFT` and `AlignY.CENTER`.

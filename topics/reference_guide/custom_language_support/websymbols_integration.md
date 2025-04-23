@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Web Symbols Integration with Language Features
 <primary-label ref="2022.3"/>
@@ -160,7 +160,7 @@ For dynamic contributions, the `WebSymbolsQueryConfigurator.getScope()`'s `eleme
 #### Parts
 {#css-parts}
 
-_2023.2+_
+<primary-label ref="2023.2"/>
 
 **Namespace**: `css`
 
@@ -180,7 +180,8 @@ For dynamic contributions, the `WebSymbolsQueryConfigurator.getScope()`'s `eleme
 
 #### String Literals
 {#js-string-literals}
-_2023.2+_
+
+<primary-label ref="2023.2"/>
 
 **Namespace**: `js`
 
@@ -196,7 +197,8 @@ The `WebSymbolsQueryConfigurator.getScope()`'s `element` parameter can be:
 
 #### Properties
 {#js-properties}
-_2023.2+_
+
+<primary-label ref="2023.2"/>
 
 **Namespace**: `js`
 
@@ -218,7 +220,7 @@ Dedicated support for `WebSymbol` interface properties:
 #### Symbols
 {#js-symbols}
 
-_2023.2+_
+<primary-label ref="2023.2"/>
 
 **Namespace**: `js`
 

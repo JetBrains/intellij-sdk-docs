@@ -150,10 +150,6 @@
       <toc-element topic="project.md">
         <toc-element topic="trusted_projects.md"/>
         <toc-element topic="new_project_wizard.md"/>
-        <toc-element topic="intro_project_wizard.md" accepts-web-file-names="project_wizard.html">
-          <toc-element topic="adding_new_steps.md"/>
-          <toc-element topic="module_types.md"/>
-        </toc-element>
         <toc-element topic="framework.md"/>
       </toc-element>
       <toc-element topic="module.md"/>

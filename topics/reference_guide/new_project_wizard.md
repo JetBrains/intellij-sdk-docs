@@ -74,6 +74,8 @@ The most important methods are:
 - `setupUI()` — defines the UI components for the step. Step UI is built with [](kotlin_ui_dsl_version_2.md)
 - `setupProject()` — applies the parameters provided in UI to the generated project
 
+See the example implementations in the in the [`intellij-community`](https://github.com/JetBrains/intellij-community).
+
 Steps build a tree structure (read the rest of this section for details), as some steps can be displayed depending on previously selected options.
 `setupUI()` and `setupProject()` of steps building the tree are applied in the order from root to leaf.
 Note that `setupProject()` won't be called for hidden steps.

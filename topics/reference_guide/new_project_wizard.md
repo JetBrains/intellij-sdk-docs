@@ -32,7 +32,7 @@ The generator implementation must provide:
    Note the provided parent step, which exposes the wizard context, data holder, and other shared properties.
    See [](#wizard-steps) for details.
 
-Examples:
+**Examples:**
 - [`KotlinNewProjectWizard`](%gh-ic%/plugins/kotlin/project-wizard/idea/src/org/jetbrains/kotlin/tools/projectWizard/KotlinNewProjectWizard.kt) generating Kotlin projects
 - [`PythonNewProjectWizard`](%gh-ic-master%/python/pluginJava/src/com/intellij/python/community/plugin/java/PythonNewProjectWizard.kt) generating Python projects
 
@@ -57,8 +57,7 @@ The interface exposes:
 - `createStep(WizardContext)` that creates the tree of steps that users go through during the project creation.
    See [](#wizard-steps) for details.
 
-Example:
-- [`MavenArchetypeNewProjectWizard`](%gh-ic%/plugins/maven/src/main/java/org/jetbrains/idea/maven/wizards/archetype/MavenArchetypeNewProjectWizard.kt) creating Maven projects from a selected archetype
+**Example:** [`MavenArchetypeNewProjectWizard`](%gh-ic%/plugins/maven/src/main/java/org/jetbrains/idea/maven/wizards/archetype/MavenArchetypeNewProjectWizard.kt) creating Maven projects from a selected archetype
 
 ## Wizard Steps
 
@@ -82,12 +81,21 @@ Note that `setupProject()` won't be called for hidden steps.
 For convenience, the platform provides
 [`AbstractNewProjectWizardStep`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/wizard/AbstractNewProjectWizardStep.kt),
 which is a base step class that takes a parent step and delegates common property accessors to the parent.
-It allows sharing the root step's properties by all descendant steps.
+It allows sharing the [root step's](#root-step) properties by all descendant steps.
 
 As mentioned before, all steps are rendered on a single screen.
 Merging multiple steps into a chain displayed as a single screen step is achieved with
 [`NewProjectWizardChainStep`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/wizard/NewProjectWizardChainStep.kt).
-Its companion object exposes a helper method `NewProjectWizardChainStep.nextStep()`, which allows chaining steps in fluent form.
+Its companion object exposes a helper method `NewProjectWizardChainStep.nextStep()`, which allows chaining steps in fluent form, for example:
+
+```kotlin
+override fun createStep(context: WizardContext): NewProjectWizardStep {
+  return RootNewProjectWizardStep(context)
+    .nextStep(::FirstProjectWizardStep)
+    .nextStep(::SecondProjectWizardStep)
+    .nextStep(::ThirdProjectWizardStep)
+}
+```
 
 ### Root Step
 
@@ -145,6 +153,24 @@ Besides the parent step, `AbstractNewProjectWizardMultiStep`'s constructor recei
 
 The [](#adding-support-for-custom-build-systems-in-language-project-wizards) section lists example implementations of `AbstractNewProjectWizardMultiStep`.
 
+#### Adding Support for Custom Build Systems in Language Project Wizards
+
+Some language project generators contain the <control>Build system</control> field that allows for choosing a build system used by a project.
+This is achieved by implementing `AbstractNewProjectWizardMultiStep` described above.
+Example implementations are:
+- [`JavaNewProjectWizard.Step`](%gh-ic%/java/idea-ui/src/com/intellij/ide/projectWizard/generators/JavaNewProjectWizard.kt) - for Java language
+- [`KotlinNewProjectWizard.Step`](%gh-ic%/plugins/kotlin/project-wizard/idea/src/org/jetbrains/kotlin/tools/projectWizard/KotlinNewProjectWizard.kt) - for Kotlin language
+- [`GroovyNewProjectWizard.Step`](%gh-ic%/plugins/groovy/src/org/jetbrains/plugins/groovy/config/wizard/GroovyNewProjectWizard.kt) - for Groovy language
+
+It is possible to add support for custom build systems by implementing extensions specific to these languages.
+The table below shows the supported languages with corresponding interfaces and extension points:
+
+| Language | Interface and Extension Point                                                                                                                                                                                                                                                                                  | Examples                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Java     | [`BuildSystemJavaNewProjectWizard`](%gh-ic%/java/idea-ui/src/com/intellij/ide/projectWizard/generators/BuildSystemJavaNewProjectWizard.kt)<br/><include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.newProjectWizard.java.buildSystem"/></include>                            | [`IntelliJJavaNewProjectWizard`](%gh-ic%/java/idea-ui/src/com/intellij/ide/projectWizard/generators/IntelliJJavaNewProjectWizard.kt)<br/>[`MavenJavaNewProjectWizard`](%gh-ic%/plugins/maven/src/main/java/org/jetbrains/idea/maven/wizards/MavenJavaNewProjectWizard.kt)<br/>[`GradleJavaNewProjectWizard`](%gh-ic%/plugins/gradle/java/src/service/project/wizard/GradleJavaNewProjectWizard.kt)                                                                                                      |
+| Kotlin   | [`BuildSystemKotlinNewProjectWizard`](%gh-ic%/plugins/kotlin/project-wizard/idea/src/org/jetbrains/kotlin/tools/projectWizard/BuildSystemKotlinNewProjectWizard.kt)<br/><include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.newProjectWizard.kotlin.buildSystem"/></include> | [`IntelliJKotlinNewProjectWizard`](%gh-ic%/plugins/kotlin/project-wizard/idea/src/org/jetbrains/kotlin/tools/projectWizard/IntelliJKotlinNewProjectWizard.kt)<br/>[`MavenKotlinNewProjectWizard`](%gh-ic%/plugins/kotlin/project-wizard/maven/src/org/jetbrains/kotlin/tools/projectWizard/maven/MavenKotlinNewProjectWizard.kt)<br/>[`GradleKotlinNewProjectWizard`](%gh-ic%/plugins/kotlin/project-wizard/gradle/src/org/jetbrains/kotlin/tools/projectWizard/gradle/GradleKotlinNewProjectWizard.kt) |
+| Groovy   | [`BuildSystemGroovyNewProjectWizard`](%gh-ic%/plugins/groovy/src/org/jetbrains/plugins/groovy/config/wizard/BuildSystemGroovyNewProjectWizard.kt)<br/><include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.newProjectWizard.groovy.buildSystem"/></include>                   | [`IntelliJGroovyNewProjectWizard`](%gh-ic%/plugins/groovy/src/org/jetbrains/plugins/groovy/config/wizard/IntelliJGroovyNewProjectWizard.kt)<br/>[`MavenGroovyNewProjectWizard`](%gh-ic%/plugins/maven/src/main/java/org/jetbrains/idea/maven/plugins/groovy/wizard/MavenGroovyNewProjectWizard.kt)<br/>[`GradleGroovyNewProjectWizard`](%gh-ic%/plugins/gradle/java/src/service/project/wizard/groovy/GradleGroovyNewProjectWizard.kt)                                                                  |
+
 ### Sharing Data Between Steps
 
 Project wizards with multiple steps may require sharing data between them.
@@ -155,7 +181,8 @@ The recommended approach includes the following implementation steps:
      val prop: String
    }
    ```
-2. Create a companion object with the data key and a helper `NewProjectWizardStep.exampleData` property.
+2. Create a companion object with the data key and a helper `NewProjectWizardStep.exampleData` extension property.
+
    ```kotlin
    interface ExampleData {
      val prop: Boolean
@@ -169,6 +196,7 @@ The recommended approach includes the following implementation steps:
    }
    ```
 3. Make the step implement the created interface (see [](#property-graph) for implementation details) and implement the data property:
+
    ```kotlin
    class ExampleStep(parent: NewProjectWizardStep) :
      AbstractNewProjectWizardStep(parent), ExampleData {
@@ -215,7 +243,7 @@ It is convenient for users to remember commonly used settings, so they don't nee
 Consider the checkbox initializing a Git repository in a created project.
 When the user selects it for the first time, and later they create another project, the checkbox will be automatically selected.
 
-This behavior can be implemented by binding properties to storage via methods from
+This behavior can be implemented by binding properties to persistent storage via methods from
 [`BindUtil`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/observable/util/BindUtil.kt),
 for example:
 ```kotlin
@@ -225,25 +253,65 @@ private val gitProperty = propertyGraph.property(false)
 
 Under the hood, properties are stored at the application level via [PropertiesComponent](persisting_state_of_components.md#using-propertiescomponent-for-simple-non-roamable-persistence).
 
-### Adding Support for Custom Build Systems in Language Project Wizards
-
-Some language project generators contain the <control>Build system</control> field that allows for choosing a build system used by a project.
-It is possible to add support for custom build systems by extensions dedicated for specific languages.
-The table below shows the supported languages with corresponding interfaces and extension points:
-
-| Language | Interface and Extension Point                                                                                                                                                                                                                                                                                  | Examples                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-|----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Java     | [`BuildSystemJavaNewProjectWizard`](%gh-ic%/java/idea-ui/src/com/intellij/ide/projectWizard/generators/BuildSystemJavaNewProjectWizard.kt)<br/><include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.newProjectWizard.java.buildSystem"/></include>                            | [`IntelliJJavaNewProjectWizard`](%gh-ic%/java/idea-ui/src/com/intellij/ide/projectWizard/generators/IntelliJJavaNewProjectWizard.kt)<br/>[`MavenJavaNewProjectWizard`](%gh-ic%/plugins/maven/src/main/java/org/jetbrains/idea/maven/wizards/MavenJavaNewProjectWizard.kt)<br/>[`GradleJavaNewProjectWizard`](%gh-ic%/plugins/gradle/java/src/service/project/wizard/GradleJavaNewProjectWizard.kt)                                                                                                      |
-| Kotlin   | [`BuildSystemKotlinNewProjectWizard`](%gh-ic%/plugins/kotlin/project-wizard/idea/src/org/jetbrains/kotlin/tools/projectWizard/BuildSystemKotlinNewProjectWizard.kt)<br/><include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.newProjectWizard.kotlin.buildSystem"/></include> | [`IntelliJKotlinNewProjectWizard`](%gh-ic%/plugins/kotlin/project-wizard/idea/src/org/jetbrains/kotlin/tools/projectWizard/IntelliJKotlinNewProjectWizard.kt)<br/>[`MavenKotlinNewProjectWizard`](%gh-ic%/plugins/kotlin/project-wizard/maven/src/org/jetbrains/kotlin/tools/projectWizard/maven/MavenKotlinNewProjectWizard.kt)<br/>[`GradleKotlinNewProjectWizard`](%gh-ic%/plugins/kotlin/project-wizard/gradle/src/org/jetbrains/kotlin/tools/projectWizard/gradle/GradleKotlinNewProjectWizard.kt) |
-| Groovy   | [`BuildSystemGroovyNewProjectWizard`](%gh-ic%/plugins/groovy/src/org/jetbrains/plugins/groovy/config/wizard/BuildSystemGroovyNewProjectWizard.kt)<br/><include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.newProjectWizard.groovy.buildSystem"/></include>                   | [`IntelliJGroovyNewProjectWizard`](%gh-ic%/plugins/groovy/src/org/jetbrains/plugins/groovy/config/wizard/IntelliJGroovyNewProjectWizard.kt)<br/>[`MavenGroovyNewProjectWizard`](%gh-ic%/plugins/maven/src/main/java/org/jetbrains/idea/maven/plugins/groovy/wizard/MavenGroovyNewProjectWizard.kt)<br/>[`GradleGroovyNewProjectWizard`](%gh-ic%/plugins/gradle/java/src/service/project/wizard/groovy/GradleGroovyNewProjectWizard.kt)                                                                  |
-
 ### Example Project Wizard Steps Structure
 
-The following diagram presents steps of the Kotlin language project wizard implemented by [`KotlinNewProjectWizard`](%gh-ic%/plugins/kotlin/project-wizard/idea/src/org/jetbrains/kotlin/tools/projectWizard/KotlinNewProjectWizard.kt).
+The following diagram presents the steps flow of the Kotlin language project wizard implemented by
+[`KotlinNewProjectWizard`](%gh-ic%/plugins/kotlin/project-wizard/idea/src/org/jetbrains/kotlin/tools/projectWizard/KotlinNewProjectWizard.kt).
 
-[//]: # (TODO: an example wizard tree diagram)
+```plantuml
+@startuml
 
-Despite being a language generator project wizard, its root step is created by the platform under the hood.
+skinparam DefaultFontName JetBrains Sans
+skinparam DefaultFontSize 14
+hide empty members
+hide circle
+
+card "NewProjectWizardChainStep" {
+  rectangle "RootNewProjectWizardStep" as RootStep
+  rectangle "NewProjectWizardBaseStep" as BaseStep
+  rectangle "GitNewProjectWizardStep" as GitStep
+  rectangle "NewProjectWizardLanguageStep" as LanguageStep
+
+  rectangle "KotlinNewProjectWizard.Step" as KotlinStep
+  rectangle "MavenKotlinNewProjectWizard" as KotlinMavenWizard
+  rectangle "MavenKotlinNewProjectWizard.Step" as KotlinMavenStep
+  rectangle "MavenKotlinNewProjectWizard.AssetsStep" as KotlinMavenAssetsStep
+  rectangle "GradleKotlinNewProjectWizard" as KotlinGradleWizard
+  rectangle "GradleKotlinNewProjectWizard.Step" as KotlinGradleStep
+  rectangle "GradleKotlinNewProjectWizard.AssetsStep" as KotlinGradleAssetsStep
+
+  RootStep -down-> BaseStep
+  BaseStep -down-> GitStep
+  GitStep -down-> LanguageStep
+  LanguageStep -down-> KotlinStep
+
+  KotlinStep -down-> KotlinMavenWizard : "select Maven"
+  KotlinMavenWizard -down-> KotlinMavenStep : "creates"
+  KotlinMavenStep -down-> KotlinMavenAssetsStep
+
+  KotlinStep -down-> KotlinGradleWizard : "select Gradle"
+  KotlinGradleWizard -down-> KotlinGradleStep : "creates"
+  KotlinGradleStep -down-> KotlinGradleAssetsStep
+}
+
+@enduml
+```
+
+The following steps are always present in [language project generators](#language-project-generators) and are created by the platform under the hood:
+- `RootNewProjectWizardStep` - initializes shared properties like data holder and property graph
+- `NewProjectWizardBaseStep` - displays project name and location options
+- `GitNewProjectWizardStep` - allows for creating a Git repository for the new project
+- `NewProjectWizardLanguageStep` - invisible step holding information about the chosen language
+
+All steps are enclosed within `NewProjectWizardChainStep`, which renders them on a single screen.
+
+`KotlinNewProjectWizard.Step` is a [multistep](#steps-forking-the-wizard-flow) that forks the wizard flow into two paths depending on the user selection in the <control>Build system</control> switcher:
+1. Maven-specific, if the user selected <control>Maven</control>
+2. Gradle-specific, if the user selected <control>Gradle</control>
+
+It creates the actual steps by using registered step factory extensions (`MavenKotlinNewProjectWizard` and `GradleKotlinNewProjectWizard`).
+
+Depending on the selection, the platform executes `setupUI()` and `setupProject()` methods of enabled steps.
 
 ## FAQ
 

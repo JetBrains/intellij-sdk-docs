@@ -71,8 +71,8 @@ All the steps are displayed on a single screen in the project wizard dialog, whi
 A project wizard step implements
 [`NewProjectWizardStep`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/wizard/NewProjectWizardStep.kt).
 The most important methods are:
-- `setupUI()` - defines the UI components for the step. Step UI is built with [](kotlin_ui_dsl_version_2.md).
-- `setupProject()` - applies the parameters provided in UI to the generated project.
+- `setupUI()` — defines the UI components for the step. Step UI is built with [](kotlin_ui_dsl_version_2.md)
+- `setupProject()` — applies the parameters provided in UI to the generated project
 
 Steps build a tree structure (read the rest of this section for details), as some steps can be displayed depending on previously selected options.
 `setupUI()` and `setupProject()` of steps building the tree are applied in the order from root to leaf.
@@ -158,9 +158,9 @@ The [](#adding-support-for-custom-build-systems-in-language-project-wizards) sec
 Some language project generators contain the <control>Build system</control> field that allows for choosing a build system used by a project.
 This is achieved by implementing `AbstractNewProjectWizardMultiStep` described above.
 Example implementations are:
-- [`JavaNewProjectWizard.Step`](%gh-ic%/java/idea-ui/src/com/intellij/ide/projectWizard/generators/JavaNewProjectWizard.kt) - for Java language
-- [`KotlinNewProjectWizard.Step`](%gh-ic%/plugins/kotlin/project-wizard/idea/src/org/jetbrains/kotlin/tools/projectWizard/KotlinNewProjectWizard.kt) - for Kotlin language
-- [`GroovyNewProjectWizard.Step`](%gh-ic%/plugins/groovy/src/org/jetbrains/plugins/groovy/config/wizard/GroovyNewProjectWizard.kt) - for Groovy language
+- [`JavaNewProjectWizard.Step`](%gh-ic%/java/idea-ui/src/com/intellij/ide/projectWizard/generators/JavaNewProjectWizard.kt) — for Java language
+- [`KotlinNewProjectWizard.Step`](%gh-ic%/plugins/kotlin/project-wizard/idea/src/org/jetbrains/kotlin/tools/projectWizard/KotlinNewProjectWizard.kt) — for Kotlin language
+- [`GroovyNewProjectWizard.Step`](%gh-ic%/plugins/groovy/src/org/jetbrains/plugins/groovy/config/wizard/GroovyNewProjectWizard.kt) — for Groovy language
 
 It is possible to add support for custom build systems by implementing extensions specific to these languages.
 The table below shows the supported languages with corresponding interfaces and extension points:
@@ -175,18 +175,19 @@ The table below shows the supported languages with corresponding interfaces and 
 
 Project wizards with multiple steps may require sharing data between them.
 The recommended approach includes the following implementation steps:
+
 1. Create an interface exposing step's shared properties, for example, `ExampleData`:
    ```kotlin
    interface ExampleData {
-     val prop: String
+     val value: String
    }
    ```
-2. Create a companion object with the data key and a helper `NewProjectWizardStep.exampleData` extension property.
+
+2. Add a companion object with the data key and a helper `NewProjectWizardStep.exampleData` extension property.
 
    ```kotlin
    interface ExampleData {
-     val prop: Boolean
-
+     // ...
      companion object {
        val KEY: Key<ExampleData> = Key.create(ExampleData::class.java.name)
        @JvmStatic
@@ -195,15 +196,19 @@ The recommended approach includes the following implementation steps:
      }
    }
    ```
-3. Make the step implement the created interface (see [](#property-graph) for implementation details) and implement the data property:
+
+3. Make the step implement the created interface and implement the data property and a graph property (see [](#property-graph) for details):
 
    ```kotlin
    class ExampleStep(parent: NewProjectWizardStep) :
      AbstractNewProjectWizardStep(parent), ExampleData {
-     override val prop = propertyGraph.property(false)
+     private val valueProperty = propertyGraph.property(false)
+     override var value: String by valueProperty
      // ...
    }
    ```
+   The graph property is used for binding value with UI components.
+   Consider exposing it via the data interface if it is possible that other steps may depend on it.
 
 4. During step instance initialization, store data in the data holder shared with all steps:
    ```kotlin
@@ -224,7 +229,7 @@ class AnotherStep(parent: NewProjectWizardStep) :
 
    override fun setupProject(project: Project) {
      // exampleData is available via this
-     if (exampleData?.prop == true) {
+     if (exampleData?.value == true) {
        doSomething()
      }
      // ...
@@ -235,7 +240,70 @@ class AnotherStep(parent: NewProjectWizardStep) :
 
 ### Property Graph
 
-[//]: # (TODO)
+`PropertyGraph` creates an observable dependency graph that automatically propagates changes between related properties.
+It is created in the [root step](#root-step) and shared between all descendant steps via [`AbstractNewProjectWizardStep.propertyGraph`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/wizard/AbstractNewProjectWizardStep.kt).
+
+`PropertyGraph` is widely used in wizard steps to create a responsive UI that dynamically updates depending on the user's actions.
+It allows for:
+- conditional visibility of fields based on other selections
+- dynamic validation of user inputs
+- automatic updates to dependent properties when primary properties change
+- and more
+
+Consider [`NewProjectWizardBaseStep`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/wizard/NewProjectWizardBaseStep.kt).
+It implements two graph properties for the project name and path:
+
+```kotlin
+override val nameProperty: GraphProperty<String> =
+  propertyGraph.lazyProperty(::suggestName)
+override val pathProperty: GraphProperty<String> =
+  propertyGraph.lazyProperty { suggestLocation().toCanonicalPath() }
+```
+
+Both properties are lazily initialized with default values based on the current context.
+
+Data properties delegate to the graph properties:
+```kotlin
+override var name: String by nameProperty
+override var path: String by pathProperty
+```
+
+Any read or update of a data or graph property will update its counterpart.
+
+
+Dependencies between properties are defined during step instance initialization:
+```kotlin
+init {
+  nameProperty.dependsOn(pathProperty, ::suggestUniqueName)
+}
+```
+
+It means that whenever `pathProperty` is changed, the `nameProperty` will be updated using the provided `suggestUniqueName()` function.
+
+Properties are also bound to the UI allowing for synchronizing them with the UI in both directions:
+```kotlin
+textField()
+  .bindText(nameProperty.trim())
+...
+textFieldWithBrowseButton(fileChooserDescriptor, context.project)
+   .bindText(pathProperty.toUiPathProperty())
+```
+
+In addition, there is another graph property created from path and name graph properties:
+```kotlin
+val locationProperty = pathProperty.joinCanonicalPath(nameProperty)
+```
+
+`locationProperty` will be updated whenever `pathProperty` or `nameProperty` is updated, and it will contain a path built of the path and name.
+The value of the property is bound to the comment component displayed under the location row:
+```kotlin
+textFieldWithBrowseButton(fileChooserDescriptor, context.project)
+  // ...
+  .locationComment(context, locationProperty)
+```
+
+`PropertyGraph` has many possibilities that are hard to describe in detail.
+It is recommended to experiment with existing project wizards and [exploring their implementations](explore_api.md).
 
 #### Persisting Default Settings
 
@@ -243,7 +311,7 @@ It is convenient for users to remember commonly used settings, so they don't nee
 Consider the checkbox initializing a Git repository in a created project.
 When the user selects it for the first time, and later they create another project, the checkbox will be automatically selected.
 
-This behavior can be implemented by binding properties to persistent storage via methods from
+This behavior can be implemented by binding graph properties to persistent storage via methods from
 [`BindUtil`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/observable/util/BindUtil.kt),
 for example:
 ```kotlin
@@ -251,7 +319,7 @@ private val gitProperty = propertyGraph.property(false)
     .bindBooleanStorage(GIT_PROPERTY_NAME)
 ```
 
-Under the hood, properties are stored at the application level via [PropertiesComponent](persisting_state_of_components.md#using-propertiescomponent-for-simple-non-roamable-persistence).
+Under the hood, properties are stored at the application level via [PropertiesComponent](persisting_state_of_components.md#using-propertiescomponent-for-simple-non-roamable-persistence) under the `GIT_PROPERTY_NAME` key.
 
 ### Example Project Wizard Steps Structure
 
@@ -298,10 +366,10 @@ card "NewProjectWizardChainStep" {
 ```
 
 The following steps are always present in [language project generators](#language-project-generators) and are created by the platform under the hood:
-- `RootNewProjectWizardStep` - initializes shared properties like data holder and property graph
-- `NewProjectWizardBaseStep` - displays project name and location options
-- `GitNewProjectWizardStep` - allows for creating a Git repository for the new project
-- `NewProjectWizardLanguageStep` - invisible step holding information about the chosen language
+- `RootNewProjectWizardStep` — initializes shared properties like data holder and property graph
+- `NewProjectWizardBaseStep` — displays project name and location options
+- `GitNewProjectWizardStep` — allows for creating a Git repository for the new project
+- `NewProjectWizardLanguageStep` — invisible step holding information about the chosen language
 
 All steps are enclosed within `NewProjectWizardChainStep`, which renders them on a single screen.
 

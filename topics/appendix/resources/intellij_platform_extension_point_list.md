@@ -63,8 +63,6 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [DataGridSettings#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.settings.DataGridSettings.Listener)  | [`Listener`](%gh-ic%/grid/core-impl/src/settings/DataGridSettings.java) |
 | [IdePerformanceListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.diagnostic.IdePerformanceListener)  ![Internal][internal] | [`IdePerformanceListener`](%gh-ic%/platform/core-api/src/com/intellij/diagnostic/IdePerformanceListener.kt) |
 | [RunnablesListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.diagnostic.RunnablesListener)  ![Experimental][experimental] ![Internal][internal] | [`RunnablesListener`](%gh-ic%/platform/platform-impl/src/com/intellij/diagnostic/RunnablesListener.java) |
-| [DvcsBranchManager#DVCS_BRANCH_SETTINGS_CHANGED](https://jb.gg/ipe/listeners?topics=com.intellij.dvcs.branch.DvcsBranchManager.DvcsBranchManagerListener)  | [`DvcsBranchManagerListener`](%gh-ic%/platform/dvcs-impl/src/com/intellij/dvcs/branch/DvcsBranchManager.java) |
-| [VcsRepositoryManager#VCS_REPOSITORY_MAPPING_UPDATED](https://jb.gg/ipe/listeners?topics=com.intellij.dvcs.repo.VcsRepositoryMappingListener)  ![Project-Level][project-level] | [`VcsRepositoryMappingListener`](%gh-ic%/platform/dvcs-impl/src/com/intellij/dvcs/repo/VcsRepositoryMappingListener.java) |
 | [ExecutionManager#EXECUTION_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.execution.ExecutionListener)  ![Project-Level][project-level] | [`ExecutionListener`](%gh-ic%/platform/execution/src/com/intellij/execution/ExecutionListener.java) |
 | [ExecutionTargetManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.execution.ExecutionTargetListener)  | [`ExecutionTargetListener`](%gh-ic%/platform/execution/src/com/intellij/execution/ExecutionTargetListener.java) |
 | [RunManagerListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.execution.RunManagerListener)  ![Project-Level][project-level] | [`RunManagerListener`](%gh-ic%/platform/platform-impl/src/com/intellij/execution/RunManagerListener.java) |
@@ -216,8 +214,6 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [TodoConfiguration#PROPERTY_CHANGE](https://jb.gg/ipe/listeners?topics=java.beans.PropertyChangeListener)  ![Project-Level][project-level] | `PropertyChangeListener` |
 | [IndexPatternProvider#INDEX_PATTERNS_CHANGED](https://jb.gg/ipe/listeners?topics=java.beans.PropertyChangeListener)  | `PropertyChangeListener` |
 | [SeverityRegistrar#SEVERITIES_CHANGED_TOPIC](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  ![Project-Level][project-level] | `Runnable` |
-| [JsonSchemaVfsListener#JSON_SCHEMA_CHANGED](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
-| [JsonSchemaVfsListener#JSON_DEPS_CHANGED](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
 | [UsageFilteringRuleProvider#RULES_CHANGED](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  ![Project-Level][project-level] | `Runnable` |
 | [RunToolbarPopupKt#VOID_EXECUTION_TOPIC](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  ![Project-Level][project-level] | `Runnable` |
 | [StructureViewWrapperImpl#STRUCTURE_CHANGED](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
@@ -591,34 +587,6 @@ and add in intellij_community_plugins_extension_point_list.md.
 | [com.intellij.database.datagrid.valueEditorTab](https://jb.gg/ipe?extensions=com.intellij.database.datagrid.valueEditorTab) | [`ValueEditorTab`](%gh-ic%/grid/impl/src/run/ui/ValueEditorTab.kt) |
 | [com.intellij.database.minimizedFormatDetector](https://jb.gg/ipe?extensions=com.intellij.database.minimizedFormatDetector) | [`MinimizedFormatDetector`](%gh-ic%/grid/impl/src/run/ui/MinimizedFormatDetector.java) |
 
-### intellij.json.split.xml
-
-[`intellij.json.split.xml`](%gh-ic%/json/split/resources/intellij.json.split.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| [com.intellij.json.jsonLiteralChecker](https://jb.gg/ipe?extensions=com.intellij.json.jsonLiteralChecker) | [`JsonLiteralChecker`](%gh-ic%/json/split/src/com/intellij/json/codeinsight/JsonLiteralChecker.java) |
-
-### intellij.json.xml
-
-[`intellij.json.xml`](%gh-ic%/json/resources/intellij.json.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| [JavaScript.JsonSchema.ContentAwareSchemaFileProvider](https://jb.gg/ipe?extensions=JavaScript.JsonSchema.ContentAwareSchemaFileProvider) | [`ContentAwareJsonSchemaFileProvider`](%gh-ic%/json/src/com/jetbrains/jsonSchema/extension/ContentAwareJsonSchemaFileProvider.java) |
-| [JavaScript.JsonSchema.ProviderFactory](https://jb.gg/ipe?extensions=JavaScript.JsonSchema.ProviderFactory) ![DumbAware][dumb-aware] | [`JsonSchemaProviderFactory`](%gh-ic%/json/src/com/jetbrains/jsonSchema/extension/JsonSchemaProviderFactory.java) |
-| [com.intellij.json.catalog.exclusion](https://jb.gg/ipe?extensions=com.intellij.json.catalog.exclusion) | [`JsonSchemaCatalogExclusion`](%gh-ic%/json/src/com/jetbrains/jsonSchema/remote/JsonSchemaCatalogExclusion.java) |
-| [com.intellij.json.customStructureViewFactory](https://jb.gg/ipe?extensions=com.intellij.json.customStructureViewFactory) | [`JsonCustomStructureViewFactory`](%gh-ic%/json/src/com/intellij/json/structureView/JsonCustomStructureViewFactory.java) |
-| [com.intellij.json.jsonLikePsiWalkerFactory](https://jb.gg/ipe?extensions=com.intellij.json.jsonLikePsiWalkerFactory) | [`JsonLikePsiWalkerFactory`](%gh-ic%/json/src/com/jetbrains/jsonSchema/extension/JsonLikePsiWalkerFactory.java) |
-| [com.intellij.json.jsonSchemaCompletionCustomizer](https://jb.gg/ipe?extensions=com.intellij.json.jsonSchemaCompletionCustomizer) | [`JsonSchemaCompletionCustomizer`](%gh-ic%/json/src/com/jetbrains/jsonSchema/extension/JsonSchemaCompletionCustomizer.java) |
-| [com.intellij.json.jsonSchemaEnabler](https://jb.gg/ipe?extensions=com.intellij.json.jsonSchemaEnabler) | [`JsonSchemaEnabler`](%gh-ic%/json/src/com/jetbrains/jsonSchema/extension/JsonSchemaEnabler.java) |
-| [com.intellij.json.jsonSchemaGotoDeclarationSuppressor](https://jb.gg/ipe?extensions=com.intellij.json.jsonSchemaGotoDeclarationSuppressor) | [`JsonSchemaGotoDeclarationSuppressor`](%gh-ic%/json/src/com/jetbrains/jsonSchema/extension/JsonSchemaGotoDeclarationSuppressor.java) |
-| [com.intellij.json.jsonSchemaNestedCompletionsTreeProvider](https://jb.gg/ipe?extensions=com.intellij.json.jsonSchemaNestedCompletionsTreeProvider) ![Experimental][experimental] | [`JsonSchemaNestedCompletionsTreeProvider`](%gh-ic%/json/src/com/jetbrains/jsonSchema/extension/JsonSchemaNestedCompletionsTreeProvider.kt) |
-| [com.intellij.json.jsonSchemaQuickFixSuppressor](https://jb.gg/ipe?extensions=com.intellij.json.jsonSchemaQuickFixSuppressor) | [`JsonSchemaQuickFixSuppressor`](%gh-ic%/json/src/com/jetbrains/jsonSchema/extension/JsonSchemaQuickFixSuppressor.kt) |
-| [com.intellij.json.jsonStandardComplianceProvider](https://jb.gg/ipe?extensions=com.intellij.json.jsonStandardComplianceProvider) | [`JsonStandardComplianceProvider`](%gh-ic%/json/src/com/intellij/json/codeinsight/JsonStandardComplianceProvider.java) |
-| [com.intellij.json.jsonWidgetSuppressor](https://jb.gg/ipe?extensions=com.intellij.json.jsonWidgetSuppressor) | [`JsonWidgetSuppressor`](%gh-ic%/json/src/com/jetbrains/jsonSchema/extension/JsonWidgetSuppressor.java) |
-| [com.intellij.json.shorthandValueHandler](https://jb.gg/ipe?extensions=com.intellij.json.shorthandValueHandler) | [`JsonSchemaShorthandValueHandler`](%gh-ic%/json/src/com/jetbrains/jsonSchema/extension/JsonSchemaShorthandValueHandler.kt) |
-
 ### intellij.notebooks.visualization.xml
 
 [`intellij.notebooks.visualization.xml`](%gh-ic%/notebooks/visualization/resources/intellij.notebooks.visualization.xml)
@@ -761,22 +729,6 @@ and add in intellij_community_plugins_extension_point_list.md.
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.intellij.tipAndTrickPromotionFactory](https://jb.gg/ipe?extensions=com.intellij.tipAndTrickPromotionFactory) ![Internal][internal] | [`TipAndTrickPromotionFactory`](%gh-ic%/platform/tips-of-the-day/src/com/intellij/ide/util/TipAndTrickPromotionFactory.kt) |
-
-### intellij.platform.vcs.dvcs.impl.xml
-
-[`intellij.platform.vcs.dvcs.impl.xml`](%gh-ic%/platform/dvcs-impl/resources/intellij.platform.vcs.dvcs.impl.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| [com.intellij.cherryPicker](https://jb.gg/ipe?extensions=com.intellij.cherryPicker) ![Project-Level][project-level] | [`VcsCherryPicker`](%gh-ic%/platform/dvcs-api/src/com/intellij/dvcs/cherrypick/VcsCherryPicker.java) |
-| [com.intellij.clonePathProvider](https://jb.gg/ipe?extensions=com.intellij.clonePathProvider) | [`ClonePathProvider`](%gh-ic%/platform/dvcs-impl/src/com/intellij/dvcs/repo/ClonePathProvider.java) |
-| [com.intellij.commitNodeUiRenderExtension](https://jb.gg/ipe?extensions=com.intellij.commitNodeUiRenderExtension) ![Experimental][experimental] | [`CommitNodeUiRenderExtension`](%gh-ic%/platform/dvcs-impl/src/com/intellij/dvcs/push/ui/CommitNodeUiRenderExtension.java) |
-| [com.intellij.customPushOptionsPanelFactory](https://jb.gg/ipe?extensions=com.intellij.customPushOptionsPanelFactory) ![Experimental][experimental] | [`CustomPushOptionsPanelFactory`](%gh-ic%/platform/dvcs-api/src/com/intellij/dvcs/push/CustomPushOptionsPanelFactory.kt) |
-| [com.intellij.prePushHandler](https://jb.gg/ipe?extensions=com.intellij.prePushHandler) | [`PrePushHandler`](%gh-ic%/platform/dvcs-impl/src/com/intellij/dvcs/push/PrePushHandler.java) |
-| [com.intellij.pushDialogActionsProvider](https://jb.gg/ipe?extensions=com.intellij.pushDialogActionsProvider) ![Internal][internal] | [`PushDialogActionsProvider`](%gh-ic%/platform/dvcs-impl/src/com/intellij/dvcs/push/PushDialogActionsProvider.kt) |
-| [com.intellij.pushDialogCustomizer](https://jb.gg/ipe?extensions=com.intellij.pushDialogCustomizer) ![Internal][internal] | [`PushDialogCustomizer`](%gh-ic%/platform/dvcs-impl/src/com/intellij/dvcs/push/PushDialogCustomizer.kt) |
-| [com.intellij.pushSupport](https://jb.gg/ipe?extensions=com.intellij.pushSupport) ![Project-Level][project-level] | [`PushSupport`](%gh-ic%/platform/dvcs-api/src/com/intellij/dvcs/push/PushSupport.java) |
-| [com.intellij.vcsRepositoryCreator](https://jb.gg/ipe?extensions=com.intellij.vcsRepositoryCreator) | [`VcsRepositoryCreator`](%gh-ic%/platform/dvcs-impl/src/com/intellij/dvcs/repo/VcsRepositoryCreator.java) |
 
 ### intellij.settingsSync.core.xml
 
@@ -1833,6 +1785,8 @@ and add in intellij_community_plugins_extension_point_list.md.
 
 | Topic | Listener |
 |-------|----------|
+| [DvcsBranchManager#DVCS_BRANCH_SETTINGS_CHANGED](https://jb.gg/ipe/listeners?topics=com.intellij.dvcs.branch.DvcsBranchManager.DvcsBranchManagerListener)  | [`DvcsBranchManagerListener`](%gh-ic%/platform/dvcs-impl/src/com/intellij/dvcs/branch/DvcsBranchManager.java) |
+| [VcsRepositoryManager#VCS_REPOSITORY_MAPPING_UPDATED](https://jb.gg/ipe/listeners?topics=com.intellij.dvcs.repo.VcsRepositoryMappingListener)  ![Project-Level][project-level] | [`VcsRepositoryMappingListener`](%gh-ic%/platform/dvcs-impl/src/com/intellij/dvcs/repo/VcsRepositoryMappingListener.java) |
 | [BranchChangeListener#VCS_BRANCH_CHANGED](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.vcs.BranchChangeListener)  | [`BranchChangeListener`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/BranchChangeListener.java) |
 | [BranchRenameListener#VCS_BRANCH_RENAMED](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.vcs.BranchRenameListener)  | [`BranchRenameListener`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/BranchRenameListener.java) |
 | [ProjectLevelVcsManager#VCS_CONFIGURATION_CHANGED_IN_PLUGIN](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.vcs.PluginVcsMappingListener)  ![Project-Level][project-level] | [`PluginVcsMappingListener`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/PluginVcsMappingListener.java) |
@@ -1873,6 +1827,22 @@ and add in intellij_community_plugins_extension_point_list.md.
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.intellij.history.activityPresentationProvider](https://jb.gg/ipe?extensions=com.intellij.history.activityPresentationProvider) ![Experimental][experimental] | [`ActivityPresentationProvider`](%gh-ic%/platform/lvcs-api/src/com/intellij/history/ActivityPresentationProvider.kt) |
+
+### intellij.platform.vcs.dvcs.impl.xml
+
+[`intellij.platform.vcs.dvcs.impl.xml`](%gh-ic%/platform/dvcs-impl/resources/intellij.platform.vcs.dvcs.impl.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.intellij.cherryPicker](https://jb.gg/ipe?extensions=com.intellij.cherryPicker) ![Project-Level][project-level] | [`VcsCherryPicker`](%gh-ic%/platform/dvcs-api/src/com/intellij/dvcs/cherrypick/VcsCherryPicker.java) |
+| [com.intellij.clonePathProvider](https://jb.gg/ipe?extensions=com.intellij.clonePathProvider) | [`ClonePathProvider`](%gh-ic%/platform/dvcs-impl/src/com/intellij/dvcs/repo/ClonePathProvider.java) |
+| [com.intellij.commitNodeUiRenderExtension](https://jb.gg/ipe?extensions=com.intellij.commitNodeUiRenderExtension) ![Experimental][experimental] | [`CommitNodeUiRenderExtension`](%gh-ic%/platform/dvcs-impl/src/com/intellij/dvcs/push/ui/CommitNodeUiRenderExtension.java) |
+| [com.intellij.customPushOptionsPanelFactory](https://jb.gg/ipe?extensions=com.intellij.customPushOptionsPanelFactory) ![Experimental][experimental] | [`CustomPushOptionsPanelFactory`](%gh-ic%/platform/dvcs-api/src/com/intellij/dvcs/push/CustomPushOptionsPanelFactory.kt) |
+| [com.intellij.prePushHandler](https://jb.gg/ipe?extensions=com.intellij.prePushHandler) | [`PrePushHandler`](%gh-ic%/platform/dvcs-impl/src/com/intellij/dvcs/push/PrePushHandler.java) |
+| [com.intellij.pushDialogActionsProvider](https://jb.gg/ipe?extensions=com.intellij.pushDialogActionsProvider) ![Internal][internal] | [`PushDialogActionsProvider`](%gh-ic%/platform/dvcs-impl/src/com/intellij/dvcs/push/PushDialogActionsProvider.kt) |
+| [com.intellij.pushDialogCustomizer](https://jb.gg/ipe?extensions=com.intellij.pushDialogCustomizer) ![Internal][internal] | [`PushDialogCustomizer`](%gh-ic%/platform/dvcs-impl/src/com/intellij/dvcs/push/PushDialogCustomizer.kt) |
+| [com.intellij.pushSupport](https://jb.gg/ipe?extensions=com.intellij.pushSupport) ![Project-Level][project-level] | [`PushSupport`](%gh-ic%/platform/dvcs-api/src/com/intellij/dvcs/push/PushSupport.java) |
+| [com.intellij.vcsRepositoryCreator](https://jb.gg/ipe?extensions=com.intellij.vcsRepositoryCreator) | [`VcsRepositoryCreator`](%gh-ic%/platform/dvcs-impl/src/com/intellij/dvcs/repo/VcsRepositoryCreator.java) |
 
 ### intellij.platform.vcs.impl.backend.xml
 

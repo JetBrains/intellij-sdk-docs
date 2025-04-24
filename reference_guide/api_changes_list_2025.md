@@ -103,18 +103,6 @@ Class `com.intellij.psi.xml.XmlElementType` no longer extends `com.intellij.psi.
 `xml.parsing.unescaped.ampersand.or.nonterminated.character.entity.reference` property removed from resource bundle `messages.XmlPsiBundle`
 : Use property from resource bundle `messages.XmlParserBundle`
 
-`com.jediterm.terminal.model.TextBufferChangesListener.historyCleared()` abstract method added
-: Must be implemented.
-
-`com.intellij.terminal.ui.TerminalWidget.connectToSession(TerminalSession session)` abstract method added
-: Must be implemented.
-
-`com.intellij.terminal.ui.TerminalWidget.getSession()` abstract method added
-: Must be implemented.
-
-`com.intellij.terminal.ui.TerminalWidget.getTerminalSizeInitializedFuture()` abstract method added
-: Must be implemented.
-
 ### Database Plugin 2025.1
 
 `com.intellij.database.view.models` package removed
@@ -140,6 +128,26 @@ Class `com.intellij.psi.xml.XmlElementType` no longer extends `com.intellij.psi.
 `com.intellij.openapi.externalSystem.service.internal.ExternalSystemProcessingManager` class now interface
 : Recompile code usages.
 
+### JavaScript and TypeScript Plugin 2025.1
+
+`com.intellij.lang.javascript.service.JSAsyncLanguageServiceBase.JSLanguageServiceInfoReporter` class moved to package `com.intellij.lang.javascript.service`
+: Update all usages
+
+`com.intellij.lang.javascript.JSElementTypes.toModuleContentType(IElementType type)` method removed
+: Use `com.intellij.lang.javascript.JSModuleContentType.toModuleContentType(IElementType type)` method instead
+
+`com.intellij.lang.javascript.BaseJSTokenTypes` class removed
+: Use `com.intellij.lang.javascript.JSTokenTypes` class instead
+
+`com.intellij.lang.javascript.highlighting.TypeScriptHighlighter(DialectOptionHolder dialectOptionsHolder, boolean skipKeywordHighlights)` constructor removed
+: Use constructor without `skipKeywordHighlights` parameter
+
+`com.intellij.lang.javascript.dialects.ECMA6SyntaxHighlighterFactory.ECMA6SyntaxHighlighter(DialectOptionHolder dialectOptionsHolder, boolean skipKeywordHighlights)` constructor removed
+: Use constructor without `skipKeywordHighlights` parameter
+
+`com.intellij.lang.javascript.highlighting.JSHighlighter(DialectOptionHolder dialectOptionsHolder, boolean skipKeywordHighlights)` constructor removed
+: Use constructor without `skipKeywordHighlights` parameter
+
 ### Kotlin Plugin 2025.1
 
 `org.jetbrains.kotlin.KtFakeSourceElement` class renamed to `org.jetbrains.kotlin.KtFakePsiSourceElement`
@@ -162,22 +170,16 @@ Class `com.intellij.psi.xml.XmlElementType` no longer extends `com.intellij.psi.
 `com.jetbrains.rd.ide.model.ActionConstraintModel` class removed
 : Remove all usages.
 
-### JavaScript and TypeScript Plugin 2025.1
+### Terminal Plugin 2025.1
 
-`com.intellij.lang.javascript.service.JSAsyncLanguageServiceBase.JSLanguageServiceInfoReporter` class moved to package `com.intellij.lang.javascript.service`
-: Update all usages
+`com.jediterm.terminal.model.TextBufferChangesListener.historyCleared()` abstract method added
+: Must be implemented.
 
-`com.intellij.lang.javascript.JSElementTypes.toModuleContentType(IElementType type)` method removed
-: Use `com.intellij.lang.javascript.JSModuleContentType.toModuleContentType(IElementType type)` method instead
+`com.intellij.terminal.ui.TerminalWidget.connectToSession(TerminalSession session)` abstract method added
+: Must be implemented.
 
-`com.intellij.lang.javascript.BaseJSTokenTypes` class removed
-: Use `com.intellij.lang.javascript.JSTokenTypes` class instead
+`com.intellij.terminal.ui.TerminalWidget.getSession()` abstract method added
+: Must be implemented.
 
-`com.intellij.lang.javascript.highlighting.TypeScriptHighlighter(DialectOptionHolder dialectOptionsHolder, boolean skipKeywordHighlights)` constructor removed
-: Use constructor without `skipKeywordHighlights` parameter
-
-`com.intellij.lang.javascript.dialects.ECMA6SyntaxHighlighterFactory.ECMA6SyntaxHighlighter(DialectOptionHolder dialectOptionsHolder, boolean skipKeywordHighlights)` constructor removed
-: Use constructor without `skipKeywordHighlights` parameter
-
-`com.intellij.lang.javascript.highlighting.JSHighlighter(DialectOptionHolder dialectOptionsHolder, boolean skipKeywordHighlights)` constructor removed
-: Use constructor without `skipKeywordHighlights` parameter
+`com.intellij.terminal.ui.TerminalWidget.getTerminalSizeInitializedFuture()` abstract method added
+: Must be implemented.

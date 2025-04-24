@@ -23,7 +23,7 @@ There is only one EDT and multiple BGT in the running application:
 ---
 config:
   gantt:
-    numberSectionStyles: 1
+    numberSectionStyles: 2
 displayMode: compact
 ---
 gantt
@@ -316,7 +316,7 @@ Between executing first and second read actions, another thread could invalidate
 ---
 config:
   gantt:
-    numberSectionStyles: 1
+    numberSectionStyles: 2
 displayMode: compact
 ---
 gantt
@@ -443,7 +443,7 @@ To better understand what problem `ModalityState` solves, consider the following
 ---
 config:
   gantt:
-    numberSectionStyles: 1
+    numberSectionStyles: 2
 displayMode: compact
 ---
 gantt
@@ -475,7 +475,7 @@ Passing the modality state solves this problem:
 ---
 config:
   gantt:
-    numberSectionStyles: 1
+    numberSectionStyles: 2
 displayMode: compact
 ---
 gantt
@@ -519,7 +519,7 @@ The following diagram presents this problem:
 ---
 config:
   gantt:
-    numberSectionStyles: 1
+    numberSectionStyles: 2
 displayMode: compact
 ---
 gantt
@@ -542,7 +542,7 @@ In such a case, the recommended approach is to cancel the read action whenever t
 ---
 config:
   gantt:
-    numberSectionStyles: 1
+    numberSectionStyles: 2
 displayMode: compact
 ---
 gantt

@@ -1,6 +1,6 @@
 <!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# New Project Wizard
+# New Project Wizard API
 <primary-label ref="2024.2"/>
 
 <link-summary>Implementing a custom project and module creation wizard.</link-summary>

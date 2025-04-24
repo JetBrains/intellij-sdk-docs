@@ -1,8 +1,10 @@
 <!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# Project Wizard - Adding Support for Creating New Project Types
+# Legacy Project Wizard API
 
 <link-summary>Implementing a custom project creation wizard.</link-summary>
+
+> Plugins targetting versions 2024.2 and newer should implement [](new_project_wizard.md).
 
 ## Project Wizard
 

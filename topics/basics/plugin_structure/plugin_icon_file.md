@@ -4,7 +4,7 @@
 
 <link-summary>Plugin logo requirements and best practices.</link-summary>
 
-Beginning in version 2019.1, the IntelliJ Platform supports representing a plugin with a logo.
+The IntelliJ Platform supports representing a plugin with a logo.
 A _Plugin Logo_ is intended to be a unique representation of a plugin's functionality, technology, or company.
 
 When opening <path>plugin.xml</path> in editor, inspection

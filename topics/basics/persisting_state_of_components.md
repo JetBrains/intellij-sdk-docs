@@ -267,7 +267,7 @@ This allows users to have the same settings on every development machine or to s
 Settings can be shared via the following functionalities:
 - _[Backup and Sync](https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html#IDE_settings_sync)_ (formerly _Settings Sync_) plugin that allows synchronizing settings on JetBrains servers. Users can select the category of settings that are synchronized.
 - _[Settings Repository](https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html#settings-repository)_ plugin that allows synchronizing settings in a Git repository created and configured by a user.
-- _[Export Settings](https://www.jetbrains.com/help/idea/2019.3/sharing-your-ide-settings.html#import-export-settings)_ feature that allows for the manual import and export of settings.
+- _[Export Settings](https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html#import-export-settings)_ feature that allows for the manual import and export of settings.
 
 > Synchronization via the _Backup and Sync_ or _Settings Repository_ plugins only works when these plugins are installed and enabled.
 

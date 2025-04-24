@@ -3,8 +3,6 @@
 
 ## Quickstart
 
-Custom themes are available beginning in version 2019.1.
-
 Creating a custom theme is a process of choosing a base IDE Theme (Light or Darcula) then changing aspects of the base Theme definition.
 Custom themes can:
 - substitute icons,

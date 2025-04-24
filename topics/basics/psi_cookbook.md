@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # PSI Cookbook
 
@@ -32,7 +32,7 @@ Unlike [Developing Custom Language Plugins](custom_language_support.md), it is a
 
 ## Java Specific
 
-> If your plugin depends on Java functionality and targets 2019.2 or later, see [](plugin_compatibility.md#java).
+> If your plugin depends on Java functionality, see [](plugin_compatibility.md#java).
 > Also consider using [UAST](uast.md) if your plugin supports other JVM languages.
 >
 {style="note"}

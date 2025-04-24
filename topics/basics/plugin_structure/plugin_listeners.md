@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Listeners
 
@@ -18,7 +18,7 @@ Listeners are defined at application (global) or [project](project.md) level.
 Listener implementations must be stateless and may not implement life-cycle (e.g., `Disposable`).
 Use inspection <control>Plugin DevKit | Code | Listener implementation implements 'Disposable'</control> to verify (2023.3).
 
-Declarative registration of listeners (2019.3 and later) allows achieving better performance than registering listeners from code.
+Declarative registration of listeners allows achieving better performance than registering listeners from code.
 The advantage is because listener instances get created lazily — the first time an event is sent to the topic — and not during application startup or project opening.
 
 ## Defining Application-Level Listeners

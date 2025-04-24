@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Messaging Infrastructure
 
@@ -165,7 +165,7 @@ endif
 @enduml
 ```
 
-> If targeting 2019.3 or later, use [declarative registration](plugin_listeners.md) whenever possible.
+> Use [declarative registration](plugin_listeners.md) whenever possible.
 >
 {style="note"}
 

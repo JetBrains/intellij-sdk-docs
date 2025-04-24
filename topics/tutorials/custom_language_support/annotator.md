@@ -23,7 +23,7 @@ This section adds annotation functionality to support the Simple Language in the
 Classes defined in this step of the tutorial depend on `com.intellij.psi.PsiLiteralExpression` (the PSI representation for String literals in Java code) at runtime.
 Using `PsiLiteralExpression` [introduces a dependency](plugin_compatibility.md#modules-specific-to-functionality) on `com.intellij.java`.
 
-Beginning in version 2019.2, a dependency on Java plugin [must be declared explicitly](plugin_compatibility.md#java).
+A dependency on the Java plugin [must be declared explicitly](plugin_compatibility.md#java).
 First, add a dependency on the Java plugin in the Gradle build script:
 
 <tabs>

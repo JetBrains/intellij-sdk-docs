@@ -72,7 +72,7 @@ project.getMessageBus().connect().subscribe(
 
 See [Message Infrastructure](messaging_infrastructure.md) and [Plugin Listeners](plugin_listeners.md) for more details.
 
-For a non-blocking alternative, starting with version 2019.2 of the platform, see [`AsyncFileListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/AsyncFileListener.java).
+For a non-blocking alternative see [`AsyncFileListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/AsyncFileListener.java).
 
 ## Are there any utilities for analyzing and manipulating virtual files?
 

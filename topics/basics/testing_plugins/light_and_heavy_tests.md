@@ -33,8 +33,6 @@ Use [`LightPlatformTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/te
 or [`BasePlatformTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/BasePlatformTestCase.java)
 for tests that don't have any dependency on Java functionality.
 
-For 2019.2 and earlier, use [`LightPlatformCodeInsightFixtureTestCase`](%gh-ic-223%/platform/testFramework/src/com/intellij/testFramework/fixtures/LightPlatformCodeInsightFixtureTestCase.java).
-
 **Examples:**
 - [`JavaCopyrightTest`](%gh-ic%/java/java-tests/testSrc/com/intellij/copyright/JavaCopyrightTest.kt)
 - [`HtmlDocumentationTest`](%gh-ic%/xml/tests/src/com/intellij/html/HtmlDocumentationTest.java)
@@ -52,8 +50,6 @@ For tests that require the [Java PSI](idea.md#java) or related functionality:
 - [`LightJavaCodeInsightFixtureTestCase`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) for JUnit 3
 - [`LightJavaCodeInsightFixtureTestCase4`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase4.kt) for JUnit 4 (2021.1 and later)
 - [`LightJavaCodeInsightFixtureTestCase5`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase5.kt) for JUnit 5 (2021.1 and later)
-
-For 2019.2 and earlier, use [`LightCodeInsightFixtureTestCase`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightCodeInsightFixtureTestCase.java).
 
 **Examples:**
 - [`PatternValidatorTest`](%gh-ic%/plugins/IntelliLang/IntelliLang-tests/test/org/intellij/plugins/intelliLang/pattern/PatternValidatorTest.java) (JUnit 3)
@@ -77,10 +73,6 @@ When [testing JVM languages](testing_faq.md#how-to-test-a-jvm-language), see als
 ## Heavy Tests
 
 The standard way of writing a heavy test is to extend [`HeavyPlatformTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/HeavyPlatformTestCase.java).
-
-> In 2019.3, `PlatformTestCase` has been renamed to [`HeavyPlatformTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/HeavyPlatformTestCase.java) reflecting its "heavy test" characteristics.
->
-{style="note"}
 
 **Examples:**
 - [`ModuleDeleteProviderTest`](%gh-ic%/java/java-tests/testSrc/com/intellij/openapi/roots/ui/configuration/actions/ModuleDeleteProviderTest.java)

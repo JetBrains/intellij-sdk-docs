@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Editor Components
 
@@ -48,7 +48,7 @@ See [](code_completion.md) to learn more about completion.
 
 ### Java
 
-> If your plugin depends on Java functionality and targets 2019.2 or later, see [](plugin_compatibility.md#java).
+> If your plugin depends on Java functionality, see [](plugin_compatibility.md#java).
 >
 {style="note"}
 

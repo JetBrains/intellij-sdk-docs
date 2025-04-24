@@ -138,7 +138,4 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 | 2020.3                    | [203](https://github.com/JetBrains/intellij-community/tree/203) | **11** ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)) |
 | 2020.2                    | [202](https://github.com/JetBrains/intellij-community/tree/202) | 8                                                                                                       |
 | 2020.1                    | [201](https://github.com/JetBrains/intellij-community/tree/201) | 8                                                                                                       |
-| 2019.3                    | [193](https://github.com/JetBrains/intellij-community/tree/193) | 8                                                                                                       |
-| 2019.2                    | [192](https://github.com/JetBrains/intellij-community/tree/192) | 8                                                                                                       |
-| 2019.1                    | [191](https://github.com/JetBrains/intellij-community/tree/191) | 8                                                                                                       |
 

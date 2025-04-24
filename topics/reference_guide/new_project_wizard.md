@@ -1,6 +1,7 @@
 <!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # New Project Wizard
+<primary-label ref="2024.2"/>
 
 <link-summary>Implementing a custom project and module creation wizard.</link-summary>
 
@@ -10,6 +11,11 @@
 The [New Project](https://www.jetbrains.com/help/idea/new-project-wizard.html) wizard items can be grouped into two main types:
 - [](#language-project-generators)
 - [](#framework-project-generators)
+
+> [Language](#language-project-generators) and [framework](#framework-project-generators) project generators described on this page work only in IDEs supporting Java.
+> See [](#how-to-implement-a-project-wizard-for-non-java-ides) in the FAQ section.
+>
+{style="warning"}
 
 ## Language Project Generators
 
@@ -396,6 +402,12 @@ Sometimes, a project wizard requires an explanation about the purpose of the wiz
 To add a simple comment, use [`CommentNewProjectWizardStep`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/wizard/comment/CommentNewProjectWizardStep.kt), for example, [`EmptyProjectGeneratorNewProjectWizard.CommentStep`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/wizard/language/EmptyProjectGeneratorNewProjectWizard.kt)
 
 To additionally render a clickable link to another wizard, use [`LinkNewProjectWizardStep`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/wizard/comment/LinkNewProjectWizardStep.kt), for example, [`MavenArchetypeNewProjectWizard.CommentStep`](%gh-ic%/plugins/maven/src/main/java/org/jetbrains/idea/maven/wizards/archetype/MavenArchetypeNewProjectWizard.kt).
+
+### How to implement a project wizard for non-Java IDEs?
+
+To create project wizards for non-Java IDEs (for example, [PyCharm](https://www.jetbrains.com/pycharm/)), implement
+[`DirectoryProjectGenerator`](%gh-ic%/platform/platform-impl/src/com/intellij/platform/DirectoryProjectGenerator.java)
+and register it in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.directoryProjectGenerator"/></include>.
 
 ### What is the status of `com.intellij.moduleBuilder`?
 

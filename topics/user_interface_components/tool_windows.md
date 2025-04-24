@@ -46,25 +46,19 @@ This procedure ensures that unused tool windows don't cause any overhead in star
 
 #### Conditional Display
 
-If the tool window of a plugin should not be displayed for all projects:
+If the tool window of a plugin should not be displayed for all projects, the plugin can provide a corresponding condition.
 
 <tabs>
 
-<tab title="2023.3 and later">
+<tab title="2023.3+">
 
 Implement suspending `ToolWindowFactory.isApplicableAsync(Project)` in Kotlin.
 
 </tab>
 
-<tab title="2021.1 and later">
+<tab title="Earlier versions">
 
 Implement `ToolWindowFactory.isApplicable(Project)`.
-
-</tab>
-
-<tab title="2019.3 and earlier">
-
-Specify the `conditionClass` attribute in <path>plugin.xml</path> with a class implementing [`Condition<Project>`](%gh-ic%/platform/util/src/com/intellij/openapi/util/Condition.java) (can be the same class as the `ToolWindowFactory` implementation).
 
 </tab>
 

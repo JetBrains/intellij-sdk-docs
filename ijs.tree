@@ -415,7 +415,6 @@
         <toc-element topic="api_changes_list_2022.md" toc-title="2022.*"/>
         <toc-element topic="api_changes_list_2021.md" toc-title="2021.*"/>
         <toc-element topic="api_changes_list_2020.md" toc-title="2020.*"/>
-        <toc-element topic="api_changes_list_2019.md" toc-title="2019.*"/>
       </toc-element>
     </toc-element>
     <toc-element topic="api_notable.md" toc-title="Notable API Changes"

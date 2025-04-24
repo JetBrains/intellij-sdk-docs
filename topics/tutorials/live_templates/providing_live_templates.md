@@ -101,7 +101,7 @@ Depending on the version of the IntelliJ Platform, different steps are used to c
 
 <tabs>
 
-<tab title="2022.3 and later">
+<tab title="2022.3+">
 
 Using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.defaultLiveTemplates"/></include> and <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.liveTemplateContext"/></include>, register the implementations with the IntelliJ Platform.
 The `file` attribute in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.defaultLiveTemplates"/></include> specifies `path/filename` under the <path>src/main/resources</path> folder.
@@ -119,7 +119,7 @@ Specify required `contextId` attribute in <include from="snippets.topic" element
 
 </tab>
 
-<tab title="Versions since 2020.1 till 2022.3">
+<tab title="Earlier versions">
 
 Using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.defaultLiveTemplates"/></include> and <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.liveTemplateContext"/></include>, register the implementations with the IntelliJ Platform.
 The `file` attribute in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.defaultLiveTemplates"/></include> specifies `path/filename` under the <path>src/main/resources</path> folder.
@@ -134,43 +134,6 @@ The `file` attribute in the <include from="snippets.topic" element-id="ep"><var 
 
 </tab>
 
-<tab title="Versions 2019.3 and Earlier">
-
-The `MarkdownTemplateProvider` implementing [`DefaultLiveTemplatesProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/template/impl/DefaultLiveTemplatesProvider.java) tells the Platform where to find the Live Template settings file.
-Make sure to include the full path to the file, relative to the <path>src/main/resources</path> directory, excluding the file extension.
-
-```java
-package org.intellij.sdk.liveTemplates;
-
-import com.intellij.codeInsight.template.impl.DefaultLiveTemplatesProvider;
-import org.jetbrains.annotations.Nullable;
-
-final class MarkdownTemplateProvider implements DefaultLiveTemplatesProvider {
-  @Override
-  public String[] getDefaultLiveTemplateFiles() {
-    return new String[]{"liveTemplates/Markdown"};
-  }
-
-  @Nullable
-  @Override
-  public String[] getHiddenLiveTemplateFiles() {
-    return null;
-  }
-}
-```
-
-Using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.defaultLiveTemplates"/></include> and <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.liveTemplateContext"/></include>, register the implementations with the IntelliJ Platform.
-
-```xml
-<extensions defaultExtensionNs="com.intellij">
-  <defaultLiveTemplatesProvider
-      implementation="org.intellij.sdk.liveTemplates.MarkdownTemplateProvider"/>
-  <liveTemplateContext
-      implementation="org.intellij.sdk.liveTemplates.MarkdownContext"/>
-</extensions>
-```
-
-</tab>
 </tabs>
 
 ## Check Plugin

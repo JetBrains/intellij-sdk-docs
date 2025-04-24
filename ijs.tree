@@ -150,6 +150,7 @@
       <toc-element topic="project.md">
         <toc-element topic="trusted_projects.md"/>
         <toc-element topic="new_project_wizard.md"/>
+        <toc-element topic="project_wizard.md"/>
         <toc-element topic="framework.md"/>
       </toc-element>
       <toc-element topic="module.md"/>

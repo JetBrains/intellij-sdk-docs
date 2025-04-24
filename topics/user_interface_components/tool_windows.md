@@ -52,7 +52,7 @@ If the tool window of a plugin should not be displayed for all projects:
 
 <tab title="2023.3 and later">
 
-Implement `ToolWindowFactory.isApplicableAsync(Project)`.
+Implement suspending `ToolWindowFactory.isApplicableAsync(Project)` in Kotlin.
 
 </tab>
 
@@ -70,7 +70,8 @@ Specify the `conditionClass` attribute in <path>plugin.xml</path> with a class i
 
 </tabs>
 
-Note, the condition is evaluated only once when the project is loaded.
+> The condition is evaluated only once when the project is loaded.
+
 To show and hide a tool window dynamically while the user is working with the project, use [programmatic setup](#programmatic-setup) for tool window registration.
 
 ### Programmatic Setup

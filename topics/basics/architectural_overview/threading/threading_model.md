@@ -532,7 +532,7 @@ gantt
         write action (waiting for the lock) : done, 2, 6
         write action (executing)            : 6, 8
         UI freeze                           : crit, 2, 8
-        UI update (frozen)                  : crit, 8, 10
+        UI update (delayed)                 : crit, 8, 10
 ```
 
 Sometimes, it is required to run a long read action, and it isn't possible to speed it up.

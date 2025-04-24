@@ -371,7 +371,7 @@ The following steps are always present in [language project generators](#languag
 - `RootNewProjectWizardStep` — initializes shared properties like data holder and property graph
 - `NewProjectWizardBaseStep` — displays project name and location options
 - `GitNewProjectWizardStep` — allows for creating a Git repository for the new project
-- `NewProjectWizardLanguageStep` — invisible step holding information about the chosen language
+- `NewProjectWizardLanguageStep` — invisible step holding information about the chosen language (this step is deprecated and is used only for technical reasons; it shouldn't be used by plugins)
 
 All steps are enclosed within `NewProjectWizardChainStep`, which renders them on a single screen.
 

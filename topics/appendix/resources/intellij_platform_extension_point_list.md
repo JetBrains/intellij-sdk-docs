@@ -6,6 +6,7 @@ EP List Directory:
 EXCLUDING:
 /community/android
 /community/java
+/community/json
 /community/jvm
 /community/plugins
 /community/python
@@ -18,7 +19,7 @@ and add in intellij_community_plugins_extension_point_list.md.
 
 <link-summary>Overview of Extension Points and Listeners for IntelliJ Platform.</link-summary>
 
-1183 Extension Points and 226 Listeners for IntelliJ Platform %ijPlatform%
+1169 Extension Points and 224 Listeners for IntelliJ Platform %ijPlatform%
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 

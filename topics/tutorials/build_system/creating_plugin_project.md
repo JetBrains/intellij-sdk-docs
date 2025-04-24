@@ -127,7 +127,7 @@ repositories {
 // Read more: https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin.html
 dependencies {
     intellijPlatform {
-        create("IC", "2024.2.5")
+        create("IC", "2024.2.6")
         testFramework(org.jetbrains.intellij.platform.gradle.TestFrameworkType.Platform)
 
         // Add necessary plugin dependencies for compilation here, example:
@@ -166,7 +166,7 @@ tasks {
 * The <control>Group</control> from the [New Project](#create-ide-plugin) wizard is the `project.group` value
 * `repositories`: setup required repositories ([](tools_intellij_platform_gradle_plugin_repositories_extension.md))
 * `dependencies`:
-  * define target IDE type (`IC`) and version (`2024.2.5`) ([](tools_intellij_platform_gradle_plugin_dependencies_extension.md#target-versions))
+  * define target IDE type (`IC`) and version (`2024.2.6`) ([](tools_intellij_platform_gradle_plugin_dependencies_extension.md#target-versions))
   * add dependency on the platform testing framework ([](tools_intellij_platform_gradle_plugin_dependencies_extension.md#testing))
 * `pluginConfiguration`: [`since-build`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-ideaVersion) and initial [change notes](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-changeNotes)
 * `sourceCompatibility` enforces using a 21 JDK

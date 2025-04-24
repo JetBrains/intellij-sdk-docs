@@ -18,7 +18,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity("2024.2.5")
+    intellijIdeaCommunity("2024.2.6")
   }
 }
 

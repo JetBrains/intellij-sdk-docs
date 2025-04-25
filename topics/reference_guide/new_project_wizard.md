@@ -158,8 +158,9 @@ It is often required to populate a created project with initial assets like:
 - sample code
 
 This can be achieved by creating a step extending [`AssetsNewProjectWizardStep`](%gh-ic%/java/idea-ui/src/com/intellij/ide/projectWizard/generators/AssetsNewProjectWizardStep.kt).
-See example implementations in the [`intellij-community`](https://github.com/JetBrains/intellij-community) repository.
+It allows for adding directories, static assets, assets generated from Freemarker templates, and granting them proper file permissions.
 
+See example implementations in the [`intellij-community`](https://github.com/JetBrains/intellij-community) repository.
 
 ### Steps Forking the Wizard Flow
 

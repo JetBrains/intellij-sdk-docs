@@ -91,6 +91,8 @@ For convenience, the platform provides
 which is a base step class that takes a parent step and delegates common property accessors to the parent.
 It allows sharing the [root step's](#root-step) properties by all descendant steps.
 
+### Chaining Steps
+
 As mentioned before, all steps are rendered on a single screen.
 Merging multiple steps into a chain displayed as a single screen step is achieved with
 [`NewProjectWizardChainStep`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/wizard/NewProjectWizardChainStep.kt).
@@ -105,6 +107,25 @@ override fun createStep(context: WizardContext): NewProjectWizardStep {
 }
 ```
 
+All the steps above will be created inside a single `NewProjectWizardChainStep` and will be displayed (except the root step, which exists to hold shared data) in a single dialog page:
+
+```plantuml
+@startsalt
+scale 1.2
+title New Project
+{+
+  [] First Step Input 1
+  First Step Input 2 | "value  "
+  ..
+  Second Step Input  | ^Selection^
+  ..
+  [] Third Step Input
+  --
+  [Cancel]|[Create]
+}
+@endsalt
+
+```
 ### Root Step
 
 The root project wizard step initializes a data holder and other properties shared with all descendant steps in the wizard.

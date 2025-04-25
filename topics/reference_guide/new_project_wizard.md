@@ -126,6 +126,11 @@ Note that [language project generators](#language-project-generators) already in
 
 ### Asset Steps
 
+> Note that `AssetsNewProjectWizardStep` **requires** a [dependency](plugin_dependencies.md) on the Java plugin.
+> In addition, it is marked as an experimental API.
+>
+{style=warning}
+
 It is often required to populate a created project with initial assets like:
 - directory structure, for example, `src/main/java`, `src/main/resources`, `src/test/java`, `src/test/resources` in a Gradle Java project
 - a build-tool-specific `.gitignore` file ignoring build and other directories and files
@@ -134,10 +139,6 @@ It is often required to populate a created project with initial assets like:
 This can be achieved by creating a step extending [`AssetsNewProjectWizardStep`](%gh-ic%/java/idea-ui/src/com/intellij/ide/projectWizard/generators/AssetsNewProjectWizardStep.kt).
 See example implementations in the [`intellij-community`](https://github.com/JetBrains/intellij-community) repository.
 
-> Note that `AssetsNewProjectWizardStep` **requires** a [dependency](plugin_dependencies.md) on the Java plugin.
-> In addition, it is marked as an experimental API.
->
-{style=warning}
 
 ### Steps Forking the Wizard Flow
 

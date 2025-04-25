@@ -408,7 +408,3 @@ To additionally render a clickable link to another wizard, use [`LinkNewProjectW
 To create project wizards for non-Java IDEs (for example, [PyCharm](https://www.jetbrains.com/pycharm/)), implement
 [`DirectoryProjectGenerator`](%gh-ic%/platform/platform-impl/src/com/intellij/platform/DirectoryProjectGenerator.java)
 and register it in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.directoryProjectGenerator"/></include>.
-
-### What is the status of `com.intellij.moduleBuilder`?
-
-The [`ModuleBuilder`](%gh-ic%/platform/lang-core/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java) API is still supported but is not recommended to use in new projects.

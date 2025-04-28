@@ -2,11 +2,13 @@
 
 <!--
 EP List Directory:
-/community/java
-/community/json
-/community/jvm
-/community/plugins
-/community/python
+  /community/java
+  /community/json
+  /community/jvm
+  /community/plugins
+  /community/python
+
+There must be no top-level "Listeners" group, adjust ExtensionPointAnalyzerAction.Group accordingly.
 -->
 
 # IntelliJ Community Plugins Extension Point and Listener List

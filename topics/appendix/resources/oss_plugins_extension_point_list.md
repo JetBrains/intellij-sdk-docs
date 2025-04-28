@@ -1,6 +1,11 @@
 <!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- EP List Directory: /contrib/ -->
+<!--
+EP List Directory:
+  /contrib/
+
+There must be no top-level "Listeners" group, adjust ExtensionPointAnalyzerAction.Group accordingly.
+-->
 
 # Open Source Plugins Extension Point and Listener List
 

@@ -288,7 +288,6 @@ To open DevTools in a separate window, call `JBCefBrowser.openDevtools()`.
 - [Markdown preview panel](%gh-ic%/plugins/markdown/core/src/org/intellij/plugins/markdown/ui/preview/jcef/MarkdownJCEFHtmlPanel.kt)
 - [SVG Image Viewer](%gh-ic%/images/src/org/intellij/images/editor/impl/jcef/JCefImageViewer.kt)
 - [PDF Viewer](https://github.com/FirstTimeInForever/intellij-pdf-viewer) plugin
-- [CodeStream](https://github.com/TeamCodeStream/codestream) plugin
 - [Excalidraw Integration](https://github.com/bric3/excalidraw-jetbrains-plugin) plugin
 - [Creating IntelliJ plugin with WebView](https://medium.com/virtuslab/creating-intellij-plugin-with-webview-3b27c3f87aea) blog post
 

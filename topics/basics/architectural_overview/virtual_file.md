@@ -20,7 +20,7 @@ Contents of a `VirtualFile` are treated as a stream of bytes, but concepts like 
 | [Document](documents.md)   | [`FileDocumentManager.getFile()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileEditor/FileDocumentManager.java)                                                                                                                                                                                                                     |
 | [PSI File](psi_files.md)   | [`PsiFile.getVirtualFile()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiFile.java) (may return `null` if the PSI file exists only in memory)                                                                                                                                                                                           |
 | File Name                  | [`FilenameIndex.getVirtualFilesByName()`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/FilenameIndex.java)                                                                                                                                                                                                                       |
-| Local File System Path     | <p>[`LocalFileSystem.findFileByIoFile()`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/vfs/LocalFileSystem.java)</p><p>[`VirtualFileManager.findFileByNioPath()`/`refreshAndFindFileByNioPath()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileManager.java) (2020.2+)</p>                                     |
+| Local File System Path     | <p>[`LocalFileSystem.findFileByIoFile()`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/vfs/LocalFileSystem.java)</p><p>[`VirtualFileManager.findFileByNioPath()`/`refreshAndFindFileByNioPath()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileManager.java)</p>                                               |
 
 ## What can I do with it?
 
@@ -38,15 +38,16 @@ Invoking a VFS refresh might be necessary for accessing a file that has just bee
 
 ## How long does a virtual file persist?
 
-A particular file on disk is represented by equal `VirtualFile` instances for the IDE process's entire lifetime.
+A particular file on a disk is represented by equal `VirtualFile` instances for the IDE process's entire lifetime.
 There may be several instances corresponding to the same file, and they can be garbage-collected.
-The file is a `UserDataHolder`, and the user data is shared between those equal instances.
+
+The file is a [`UserDataHolder`](%gh-ic%/platform/util/src/com/intellij/openapi/util/UserDataHolder.java), and the user data is shared between those equal instances.
 If a file is deleted, its corresponding `VirtualFile` instance becomes invalid (`isValid()` returns `false`), and operations cause exceptions.
 
 ## How do I create a virtual file?
 
 Usually, you don't.
-As a general rule, files are created either through the PSI API or through the regular `java.io.File` API.
+As a general rule, files are created either through the [PSI API](psi.md) or through the regular [`java.io.File`](https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/io/File.html) API.
 
 If one needs to create a file through VFS, use `VirtualFile.createChildData()` to create a `VirtualFile` instance and `VirtualFile.setBinaryContent()` to write some data to the file.
 
@@ -78,7 +79,7 @@ For a non-blocking alternative see [`AsyncFileListener`](%gh-ic%/platform/core-a
 
 [`VfsUtil`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/vfs/VfsUtil.java) and [`VfsUtilCore`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VfsUtilCore.java) provide utility methods for analyzing files in the Virtual File System.
 
-For storing a large set of Virtual Files, use dedicated `VfsUtilCore.createCompactVirtualFileSet()`.
+For storing a large set of Virtual Files, use the dedicated `VfsUtilCore.createCompactVirtualFileSet()` method.
 
 Use [`ProjectLocator`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/ProjectLocator.kt) to find the projects that contain a given virtual file.
 

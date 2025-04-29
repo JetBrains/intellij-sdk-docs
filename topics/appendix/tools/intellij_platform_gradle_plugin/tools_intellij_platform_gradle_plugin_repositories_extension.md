@@ -132,7 +132,7 @@ import com.jetbrains.plugin.structure.intellij.repository.CustomPluginRepository
 
 repositories {
   intellijPlatform {
-    customPluginRepository("https://example.com/plugins.xml", CustomPluginRepositoryType.SIMPLE) {
+    customPluginRepository("https://example.com/plugins.xml", CustomPluginRepositoryListingType.SIMPLE) {
       credentials<HttpHeaderCredentials> {
         name = "Authorization"
         value = "Automation amFrdWJfdGVzdDotX...MkV2UkFwekFWTnNwZjA="

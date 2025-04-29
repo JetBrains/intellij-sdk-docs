@@ -43,7 +43,7 @@ Thus, it will work automatically for custom languages that provide a syntax high
 - [`ColorSettingsPage`](%gh-ic%/plugins/properties/src/com/intellij/lang/properties/PropertiesColorsPage.java) for [Properties language plugin](%gh-ic%/plugins/properties)
 - [Custom Language Support Tutorial: Color Settings Page](syntax_highlighter_and_color_settings_page.md)
 
-> See note about Language Defaults and support for additional color schemes in [](color_scheme_management.md).
+> See the note about Language Defaults and support for additional color schemes in [](color_scheme_management.md).
 >
 {style="note"}
 
@@ -51,7 +51,7 @@ Thus, it will work automatically for custom languages that provide a syntax high
 
 The first syntax highlighting level is based on the lexer output and is provided through the [`SyntaxHighlighter`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/fileTypes/SyntaxHighlighter.java) interface.
 The syntax highlighter returns the `TextAttributesKey` instances for each token type, which needs special highlighting.
-For highlighting lexer errors [`HighlighterColors.BAD_CHARACTER`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/HighlighterColors.java) should be used.
+For highlighting lexer errors use [`HighlighterColors.BAD_CHARACTER`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/HighlighterColors.java).
 
 **Examples:**
 
@@ -73,7 +73,7 @@ in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.inte
 ## Parser
 
 The second level of error highlighting happens during parsing.
-If according to the grammar of the language a particular sequence of tokens is invalid, the [`PsiBuilder.error()`](%gh-ic%/platform/core-api/src/com/intellij/lang/PsiBuilder.java) method can highlight the invalid tokens and display an error message showing why they are not valid.
+If, according to the grammar of the language, a particular sequence of tokens is invalid, the [`PsiBuilder.error()`](%gh-ic%/platform/core-api/src/com/intellij/lang/PsiBuilder.java) method can highlight the invalid tokens and display an error message showing why they are not valid.
 
 See [](syntax_errors.md) on how to programmatically suppress these errors in certain contexts.
 
@@ -82,7 +82,7 @@ See [](syntax_errors.md) on how to programmatically suppress these errors in cer
 The third level of highlighting is performed through the [`Annotator`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/Annotator.java) interface.
 A plugin can register one or more annotators in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.annotator"/></include>, and these annotators are called during the background highlighting pass to process the elements in the custom language's PSI tree.
 Attribute `language` should be set to the Language ID where this annotator applies to.
-If highlighting data requires invoking external tools, use [](#external-annotator) instead.
+If highlighting data requires invoking external tools, use an [](#external-annotator) instead.
 
 Annotators can analyze not only the syntax, but also the semantics using PSI, and thus can provide much more complex syntax and error highlighting logic.
 The annotator can also provide quick fixes to problems it detects.
@@ -96,13 +96,9 @@ Annotators not requiring information from [indexes](indexing_and_psi_stubs.md) c
 
 ### Errors/Warning
 
-See [Inspections](inspections.md) topic in UI Guidelines on how to write message texts for highlighting/quick fixes.
+See the [](inspections.md) topic in UI Guidelines on how to write message texts for highlighting/quick fixes.
 
-To highlight a region of text as a warning or error:
-
-<tabs group="platform-version">
-
-<tab title="2020.1 and later" group-key="2020.1">
+To highlight a region of a text as a warning or error:
 
 ```java
 holder.newAnnotation(HighlightSeverity.WARNING, "Invalid code") // or HighlightSeverity.ERROR
@@ -110,23 +106,9 @@ holder.newAnnotation(HighlightSeverity.WARNING, "Invalid code") // or HighlightS
     .create();
 ```
 
-</tab>
-
-<tab title="Pre-2020.1" group-key="pre-2020.1">
-
-Call `createWarningAnnotation()`/`createErrorAnnotation()` on the [`AnnotationHolder`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/AnnotationHolder.java), and optionally call `registerFix()` on the returned [`Annotation`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/Annotation.java) object to add a quick fix for the error or warning.
-
-</tab>
-
-</tabs>
-
 ### Syntax
 
 To apply additional syntax highlighting:
-
-<tabs group="platform-version">
-
-<tab title="2020.1 and later" group-key="2020.1">
 
 ```java
 holder.newSilentAnnotation(HighlightSeverity.INFORMATION)
@@ -134,16 +116,6 @@ holder.newSilentAnnotation(HighlightSeverity.INFORMATION)
     .textAttributes(MyHighlighter.EXTRA_HIGHLIGHT_ATTRIBUTE)
     .create();
 ```
-
-</tab>
-
-<tab title="Pre-2020.1" group-key="pre-2020.1">
-
-Call `AnnotationHolder.createInfoAnnotation()` with an empty message and then [`Annotation.setTextAttributes()`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/Annotation.java).
-
-</tab>
-
-</tabs>
 
 **Examples:**
 
@@ -159,7 +131,7 @@ it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.i
 The `ExternalAnnotator` highlighting has the lowest priority and is invoked only after all other background processing has completed.
 It uses the same [`AnnotationHolder`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/AnnotationHolder.java) interface for converting the output of the external tool into editor highlighting.
 
-To skip running specific `ExternalAnnotator` for given file, register [`ExternalAnnotatorsFilter`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/ExternalAnnotatorsFilter.java) extension
+To skip running specific `ExternalAnnotator` for a given file, register an [`ExternalAnnotatorsFilter`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/ExternalAnnotatorsFilter.java) extension
 in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.daemon.externalAnnotatorsFilter"/></include>.
 
 To enable running `ExternalAnnotator` during indexing in [dumb mode](indexing_and_psi_stubs.md#dumb-mode), it can be marked [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI) (2023.3).
@@ -168,7 +140,7 @@ To enable running `ExternalAnnotator` during indexing in [dumb mode](indexing_an
 
 Existing highlighting can be suppressed programmatically in certain contexts, see [](controlling_highlighting.md).
 
-To force re-highlighting all open or specific file(s) (e.g., after changing plugin specific settings), use
+To force re-highlighting all open or specific file(s) (e.g., after changing plugin-specific settings), use
 [`DaemonCodeAnalyzer.restart()`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/daemon/DaemonCodeAnalyzer.java).
 
 ## Order of Running Highlighting

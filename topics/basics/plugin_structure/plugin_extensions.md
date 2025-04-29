@@ -16,7 +16,7 @@ The following are some of the most common tasks achieved using extensions:
 * The <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.applicationConfigurable"/></include> and <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.projectConfigurable"/></include> allow plugins to add pages to the [Settings dialog](settings.md);
 * [Custom language plugins](custom_language_support.md) use many extension points to extend various language support features in the IDE.
 
-There are more than 1600 extension points available in the platform and the bundled plugins, allowing customizing different parts of the IDE behavior.
+There are more than 1700 extension points available in the platform and the bundled plugins, allowing customizing different parts of the IDE behavior.
 
 ## Exploring Available Extensions
 
@@ -111,11 +111,10 @@ When using [Kotlin](using_kotlin.md):
 Several tooling features are available to help configure bean class extension points in <path>plugin.xml</path>.
 
 #### Required Properties
-<primary-label ref="2019.3"/>
 
 Properties annotated with [`RequiredElement`](%gh-ic%/platform/core-api/src/com/intellij/openapi/extensions/RequiredElement.java) are inserted automatically and validated.
 
-If the given property is allowed to have an explicit empty value, set `allowEmpty` to `true` (2020.3+).
+If the given property is allowed to have an explicit empty value, set `allowEmpty` to `true`.
 
 #### Class names
 
@@ -138,7 +137,7 @@ A required parent type can be specified in the [extension point declaration](plu
 
 #### Custom resolve
 
-Property name `language` (or ending in `*Language`, 2020.2+) resolves to all present [`Language`](%gh-ic%/platform/core-api/src/com/intellij/lang/Language.java) IDs.
+Property name `language` (or ending in `*Language`) resolves to all present [`Language`](%gh-ic%/platform/core-api/src/com/intellij/lang/Language.java) IDs.
 
 Similarly, `action` and `actionId` (2024.3+) resolve to all registered [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) IDs.
 
@@ -147,11 +146,9 @@ Similarly, `action` and `actionId` (2024.3+) resolve to all registered [`<action
 Properties marked as `@Deprecated` or annotated with any of [`ApiStatus`](%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/ApiStatus.java) `@Internal`, `@Experimental`, `@ScheduledForRemoval`, or `@Obsolete` will be highlighted accordingly.
 
 #### Enum properties
-<primary-label ref="2020.1"/>
 
-Attributes with `Enum` type support code insight with _lowerCamelCased_ notation. Note: Enum implementation must not override `toString()`.
+`Enum` attributes support code insight with _lowerCamelCased_ notation. Note: The `Enum` implementation must not override `toString()`.
 
 #### I18n
-<primary-label ref="2019.2"/>
 
 Annotating with [`@Nls`](%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/Nls.java) validates a UI `String` capitalization according to the text property `Capitalization` enum value.

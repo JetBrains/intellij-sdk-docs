@@ -36,7 +36,7 @@ To find the place where the component was added, select the <control>added-at</c
 Various components used in the IntelliJ Platform expose additional properties.
 These can be useful to locate the underlying implementation, related Action, and so on.
 
-Custom Swing components can also provide additional properties via [`UiInspectorContextProvider`](%gh-ic%/platform/platform-api/src/com/intellij/internal/inspector/UiInspectorContextProvider.java) or its dedicated subclasses (2020.1 and later).
+Custom Swing components can also provide additional properties via [`UiInspectorContextProvider`](%gh-ic%/platform/platform-api/src/com/intellij/internal/inspector/UiInspectorContextProvider.java) or its dedicated subclasses.
 
 ### Editor
 

@@ -8,8 +8,7 @@ Strategies and tools for exploring the IntelliJ Platform API, navigate extension
 
 <link-summary>Strategies and tools for exploring the API.</link-summary>
 
-Sometimes it can be challenging to implement plugin features for the IntelliJ Platform,
-especially when you've hit a roadblock, and you're unsure how to move forward.
+Sometimes it can be challenging to implement plugin features for the IntelliJ Platform.
 This usually happens in two situations:
 
 - You're trying to implement a feature that you've already seen in the IDE, and now you need to find the appropriate extension point or
@@ -59,7 +58,7 @@ There you'll find more EPs, and browsing through this list helps you discover fe
 or
 [Go to file](https://www.jetbrains.com/help/idea/discover-intellij-idea.html#navigation-and-search)
 helps you search for all files containing extension points.
-Just use <path>*ExtensionPoints.xml</path> as the search pattern and select the <control>All Places</control> scope.
+Use <path>*ExtensionPoints.xml</path> as the search pattern and select the <control>All Places</control> scope.
 
 However, if a bundled or third-party plugin exposes EPs for others to implement, these EPs are defined in the <path>plugin.xml</path> files
 of the plugins and not in the <path>*ExtensionPoints.xml</path> files of the IntelliJ Platform.
@@ -67,7 +66,7 @@ One such example is the EPs exposed by the Markdown plugin that adds support for
 
 ### Use Advanced Search
 
-Explore the <path>plugin.xml</path> files of bundled or 3rd party plugins.
+Explore the <path>plugin.xml</path> files of bundled or third party plugins.
 If you have the IntelliJ Platform sources available either in your own plugin project or in a separate instance,
 you can use
 [Structural Search](https://www.jetbrains.com/help/idea/structural-search-and-replace.html)
@@ -139,13 +138,13 @@ If you want to implement a functionality that is similar to an existing IDE feat
   * If the text is localized, this will identify a bundle file there the text is defined. Copy the key from the bundle file identified by the search.
   * Use the key text as the target for a search within the IntelliJ Community project.
     This search locates the implementation or related class, or [plugin configuration file](plugin_configuration_file.md) that uses the text key in an [extension](plugin_extensions.md) declaration.
-  * If the key is found in the extension declaration in <path>plugin.xml</path> file, find the implementing class attribute value (in most cases it is `implementationClass`) and
+  * If the key is found in the extension declaration in the <path>plugin.xml</path> file, find the implementing class attribute value (in most cases it is `implementationClass`) and
     [navigate to a declaration](https://www.jetbrains.com/help/rider/Navigation_and_Search__Go_to_Declaration.html#74fa64b7),
     or use attribute value as the
     [target of a class search](https://www.jetbrains.com/help/idea/searching-everywhere.html#Searching_Everywhere.xml)
     in the IntelliJ Community codebase to find the implementation.
 * If the text is not localized, the search will most probably find the desired implementation or related class.
-  In this case, search for the found method/class usages, and repeat this until the actual implementation class is found.
+  In this case, search for the found method/class usages and repeat this until the actual implementation class is found.
 
 ### Refrain from Using Internal Classes
 
@@ -177,7 +176,7 @@ However, it does not display information about [stubs](stub_indexes.md) or [form
 
 ### Search the IntelliJ Platform Explorer
 
-The [IntelliJ Platform Explorer](https://plugins.jetbrains.com/intellij-platform-explorer)
+The [IntelliJ Platform Explorer](https://jb.gg/ipe)
 is a search tool for browsing [Extension Points](plugin_extensions.md) (EP) and [Listeners](plugin_listeners.md) inside existing implementations of all open-source IntelliJ Platform plugins published on [JetBrains Marketplace](https://plugins.jetbrains.com).
 You can navigate directly to the source files to find inspiration when implementing your own extensions and listeners for IntelliJ-based IDEs.
 

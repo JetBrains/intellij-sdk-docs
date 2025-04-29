@@ -21,31 +21,20 @@ This section adds annotation functionality to support the Simple Language in the
 ## Required Project Configuration Changes
 
 Classes defined in this step of the tutorial depend on `com.intellij.psi.PsiLiteralExpression` (the PSI representation for String literals in Java code) at runtime.
-Using `PsiLiteralExpression` [introduces a dependency](plugin_compatibility.md#modules-specific-to-functionality) on `com.intellij.java`.
 
-A dependency on the Java plugin [must be declared explicitly](plugin_compatibility.md#java).
+A dependency on the [Java plugin](idea.md#java) must be [declared explicitly](plugin_dependencies.md).
 First, add a dependency on the Java plugin in the Gradle build script:
 
-<tabs>
-<tab title="Kotlin">
-
 ```kotlin
-intellij {
-  plugins.set(listOf("com.intellij.java"))
+dependencies {
+  intellijPlatform {
+    // ...
+    bundledPlugin("com.intellij.java")
+  }
 }
 ```
 
-</tab>
-<tab title="Groovy">
-
-```groovy
-intellij {
-  plugins = ['com.intellij.java']
-}
-```
-
-</tab>
-</tabs>
+See <path>[build.gradle.kts](%gh-sdk-samples-master%/simple_language_plugin/build.gradle.kts)</path> for the reference.
 
 Then, declare the dependency in <path>[plugin.xml](plugin_configuration_file.md)</path> (use code insight)
 

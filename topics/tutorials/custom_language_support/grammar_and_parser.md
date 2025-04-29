@@ -81,24 +81,17 @@ This step generates a parser and PSI elements in the <path>/src/main/gen</path> 
 
 ## Add Generated Sources Root
 
-To include the sources generated into <path>/src/main/gen</path>, the project's `sourceSets` must be expanded by inserting the following line in the project's Gradle build script:
-
-<tabs>
-<tab title="Kotlin">
+To include the sources generated into <path>/src/main/gen</path>, the project's `sourceSets` must be expanded by inserting the following in the Gradle build script:
 
 ```kotlin
-sourceSets["main"].java.srcDirs("src/main/gen")
+sourceSets {
+  main {
+    java {
+      srcDirs("src/main/gen")
+    }
+  }
+}
 ```
-
-</tab>
-<tab title="Groovy">
-
-```groovy
-sourceSets.main.java.srcDirs 'src/main/gen'
-```
-
-</tab>
-</tabs>
 
 See <path>[build.gradle.kts](%gh-sdk-samples-master%/simple_language_plugin/build.gradle.kts)</path> for the reference.
 

@@ -58,11 +58,7 @@ Then, declare the dependency in <path>[plugin.xml](plugin_configuration_file.md)
 The [`SimpleAnnotator`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleAnnotator.java) subclasses [`Annotator`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/Annotator.java).
 Consider a literal string that starts with "simple:" as a prefix of a Simple Language key.
 It isn't part of the Simple Language, but it is a useful convention for detecting Simple Language keys embedded as string literals in other languages, like Java.
-Annotate the `simple:key` literal expression, and differentiate between a well-formed vs. an unresolved property.
-
-> The use of new `AnnotationHolder` syntax starting 2020.2, which uses the builder format.
->
-{style="note"}
+Annotate the `simple:key` literal expression and differentiate between a well-formed vs. an unresolved property.
 
 ```java
 ```

@@ -6,6 +6,7 @@
 
 | Release Name | Channel | Version | IntelliJ IDEA Version | Release Date |
 |--------------|---------|---------|-----------------------|--------------|
+| <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 RC 4</p> | ![RC][rc] | **2024.3.2.13**<p>AI&#8209;243.25659.59.2432.13404313</p> | **243.25659-EAP-CANDIDATE-SNAPSHOT**<p>243.25659.59</p> | Apr&nbsp;28,&nbsp;2025 |
 | <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 RC 3</p> | ![RC][rc] | **2024.3.2.12**<p>AI&#8209;243.25659.59.2432.13371692</p> | **243.25659-EAP-CANDIDATE-SNAPSHOT**<p>243.25659.59</p> | Apr&nbsp;22,&nbsp;2025 |
 | <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 RC 2</p> | ![RC][rc] | **2024.3.2.11**<p>AI&#8209;243.25659.59.2432.13314846</p> | **243.25659-EAP-CANDIDATE-SNAPSHOT**<p>243.25659.59</p> | Apr&nbsp;9,&nbsp;2025 |
 | <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 RC 1</p> | ![RC][rc] | **2024.3.2.10**<p>AI&#8209;243.25659.59.2432.13282907</p> | **243.25659-EAP-CANDIDATE-SNAPSHOT**<p>243.25659.59</p> | Apr&nbsp;1,&nbsp;2025 |
@@ -97,6 +98,7 @@
 
 | Release Name | Channel | Version | IntelliJ IDEA Version | Release Date |
 |--------------|---------|---------|-----------------------|--------------|
+| <p><b>Narwhal </b></p><p> 2025.1.1 Canary 8</p> | ![Canary][canary] | **2025.1.1.8**<p>AI&#8209;251.23774.16.2511.13409254</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> | Apr&nbsp;28,&nbsp;2025 |
 | <p><b>Narwhal </b></p><p> 2025.1.1 Canary 7</p> | ![Canary][canary] | **2025.1.1.7**<p>AI&#8209;251.23774.16.2511.13371696</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> | Apr&nbsp;17,&nbsp;2025 |
 | <p><b>Narwhal </b></p><p> 2025.1.1 Canary 6</p> | ![Canary][canary] | **2025.1.1.6**<p>AI&#8209;251.23774.16.2511.13338727</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> | Apr&nbsp;10,&nbsp;2025 |
 | <p><b>Narwhal </b></p><p> 2025.1.1 Canary 5</p> | ![Canary][canary] | **2025.1.1.5**<p>AI&#8209;251.23774.16.2511.13328238</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> | Apr&nbsp;8,&nbsp;2025 |

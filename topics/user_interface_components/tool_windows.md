@@ -31,7 +31,7 @@ The tool window is registered in <path>[plugin.xml](plugin_configuration_file.md
 The extension point attributes specify all the data which is necessary to display the tool window button:
 
 * The `id` attribute (required) of the tool window which corresponds to the text displayed on the tool window button.
-To provide a localized text, specify matching `toolwindow.stripe.[id]` message key (escape spaces with `_`) in the [resource bundle](plugin_configuration_file.md#idea-plugin__resource-bundle) (code insight supported in 2020.3 and later).
+To provide a localized text, specify matching `toolwindow.stripe.[id]` message key (escape spaces with `_`) in the [resource bundle](plugin_configuration_file.md#idea-plugin__resource-bundle).
 
 * The `icon` to display on the tool window button (13x13 pixels, gray and monochromatic; see [](tool_window.md) in UI Guidelines and [](icons.md))
 

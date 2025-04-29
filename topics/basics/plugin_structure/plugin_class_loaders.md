@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Class Loaders
 
@@ -46,7 +46,7 @@ This allows a plugin to reference classes from other plugins.
 
 ## Using `ServiceLoader`
 
-Some libraries use [`ServiceLoader`](https://docs.oracle.com/javase/8/docs/api/index.html?java/util/ServiceLoader.html) to detect and load implementations.
+Some libraries use [`ServiceLoader`](https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/util/ServiceLoader.html) to detect and load implementations.
 For this to work in a plugin, the context class loader must be set to the plugin's classloader and restored afterwards with the original one around initialization code:
 
 ```java

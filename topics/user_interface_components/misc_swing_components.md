@@ -19,7 +19,8 @@ The `showCheckboxMessageDialog()` function provides an easy way to implement a <
 
 ### `JBSplitter`
 
-[`JBSplitter`](%gh-ic%/platform/platform-api/src/com/intellij/ui/JBSplitter.java) is a replacement for the standard [`JSplitPane`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JSplitPane.html) class.
+[`JBSplitter`](%gh-ic%/platform/platform-api/src/com/intellij/ui/JBSplitter.java) is a replacement for the standard
+[Swing `JSplitPane`](https://docs.oracle.com/en/java/javase/24/docs/api/java.desktop/javax/swing/JSplitPane.html) class.
 Unlike some other JetBrains-enhanced Swing components, it is not a drop-in replacement and has a different API.
 However, to achieve a consistent user experience, it is recommended to use `JBSplitter` instead of the standard `JSplitPane`.
 

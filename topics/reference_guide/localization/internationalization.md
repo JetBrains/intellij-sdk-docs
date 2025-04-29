@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Internationalization
 
@@ -259,7 +259,7 @@ Example:
 
 #### Concatenation of Localized Strings and User Input
 
-If an NLS string is not a simple literal but obtained as a concatenation of several values, always use [MessageFormat](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/text/MessageFormat.html) pattern to extract it to a message bundle.
+If an NLS string is not a simple literal but obtained as a concatenation of several values, always use [MessageFormat](https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/text/MessageFormat.html) pattern to extract it to a message bundle.
 
 For example, to internationalize `"Delete Class " + className` add the following property:
 ```

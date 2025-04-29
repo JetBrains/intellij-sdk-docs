@@ -53,8 +53,10 @@ Annotate the `simple:key` literal expression and differentiate between a well-fo
 ```
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleAnnotator.java" include-symbol="SimpleAnnotator"}
 
-> If the above code is copied at this stage of the tutorial, then remove the line below the comment "** Tutorial step 19. …" The quick fix class in that line is not defined until later in the tutorial.
+> If the above code is copied at this stage of the tutorial, then remove the line below the comment _** Tutorial step 19. …_ as
+> `SimpleCreatePropertyQuickFix` is not defined until [later](quick_fix.md) in the tutorial.
 >
+{title="SimpleCreatePropertyQuickFix"}
 
 ## Register the Annotator
 

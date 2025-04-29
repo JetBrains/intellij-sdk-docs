@@ -6,7 +6,7 @@
 
 _Listeners_ allow plugins to subscribe to events delivered through the message bus (see [Messaging infrastructure](messaging_infrastructure.md) for details).
 
-Listeners are defined at application (global) or [project](project.md) level.
+Listeners are defined at the application (global) or [project](project.md) level.
 
 > All available listeners/topics are listed on [](intellij_platform_extension_point_list.md) and [](intellij_community_plugins_extension_point_list.md)
 > under _Listeners_ sections.
@@ -39,7 +39,7 @@ The `topic` attribute specifies the listener interface corresponding to the type
 Usually, this is the interface used as the type parameter of the [`Topic`](%gh-ic%/platform/extensions/src/com/intellij/util/messages/Topic.java) instance for the type of events.
 The `class` attribute specifies the class in the plugin that implements the listener interface and receives the events.
 
-As a specific example, to receive events about all [Virtual File System](virtual_file_system.md) changes, implement the `BulkFileListener` interface, corresponding to the topic `VirtualFileManager.VFS_CHANGES`.
+As a specific example, to receive events about all [](virtual_file_system.md) changes, implement the `BulkFileListener` interface, corresponding to the topic `VirtualFileManager.VFS_CHANGES`.
 To subscribe to this topic from code, use something like the following snippet:
 
 ```java
@@ -78,7 +78,7 @@ final class MyVfsListener implements BulkFileListener {
 
 ## Defining Project-Level Listeners
 
-[Project](project.md)-level listeners are registered in the same way, except that the top-level tag is [`<projectListeners>`](plugin_configuration_file.md#idea-plugin__projectListeners).
+[](project.md)-level listeners are registered in the same way, except that the top-level tag is [`<projectListeners>`](plugin_configuration_file.md#idea-plugin__projectListeners).
 They can be used to listen to project-level events, for example, [tool window](tool_windows.md) operations:
 
 ```xml
@@ -115,13 +115,13 @@ final class MyToolWindowListener implements ToolWindowManagerListener {
 Registration of listeners can be restricted using the following attributes.
 
 `os`
-: Allows restricting listener to given OS, e.g., `os="windows"` for Windows only (2020.1 and later)
+: Allows restricting listener to a given OS, e.g., `os="windows"` for Windows only.
 
 `activeInTestMode`
 : Set to `false` to disable listener if [`Application.isUnitTestMode()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java) returns `true`
 
 `activeInHeadlessMode`
-: Set to `false` to disable listener if [`Application.isHeadlessEnvironment()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java) returns `true`.
+: Set to `false` to disable the listener if [`Application.isHeadlessEnvironment()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java) returns `true`.
   Also covers `activeInTestMode` as test mode implies headless mode.
 
 > If declared listener topics are intended to be used by other plugins depending on your plugin, consider [bundling their sources](bundling_plugin_openapi_sources.md) in the plugin distribution.

@@ -93,12 +93,6 @@ The user can choose the display type corresponding to each notification type und
 
 To specify the preferred display type, you need to use [`NotificationGroup`](%gh-ic%/platform/ide-core/src/com/intellij/notification/NotificationGroup.kt) to create notifications.
 
-Please see the following steps for setup, depending on the target platform version.
-
-<tabs>
-
-<tab title="2020.3 and later">
-
 `NotificationGroup` is registered in <path>[plugin.xml](plugin_configuration_file.md)</path> using
 the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.notificationGroup"/></include>.
 Use `key` to provide a localized group display name.
@@ -117,7 +111,6 @@ Registered instances can then be obtained via their `id`.
 > Code insight is available for parameters expecting a notification group `id`.
 >
 
-<br/>
 
 ```java
 public class MyNotifier {
@@ -131,28 +124,3 @@ public class MyNotifier {
 
 }
 ```
-
-</tab>
-
-<tab title="Pre-2020.3">
-
-`NotificationGroup` is registered in code.
-
-```java
-public class MyNotifier {
-
-  private static final NotificationGroup NOTIFICATION_GROUP =
-      new NotificationGroup("Custom Notification Group",
-              NotificationDisplayType.BALLOON, true);
-
-  public static void notifyError(Project project, String content) {
-    NOTIFICATION_GROUP.createNotification(content, NotificationType.ERROR)
-        .notify(project);
-  }
-
-}
-```
-
-</tab>
-
-</tabs>

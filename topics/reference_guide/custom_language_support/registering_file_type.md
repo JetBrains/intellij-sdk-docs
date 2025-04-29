@@ -28,7 +28,7 @@ To associate the file type in the IDE, specify one or more associations listed i
 | Filename extension(s)   | `extensions`                                       | Semicolon-separated list of extensions, without `.` prefix      |
 | Hard coded file name(s) | <p>`fileNames`/<br/>`fileNamesCaseInsensitive`</p> | Semicolon-separated list of exact (case-insensitive) file names |
 | Filename pattern(s)     | `patterns`                                         | Semicolon-separated list of patterns (`*` and `?`)              |
-| Hashbang _(2020.2+)_    | `hashBangs`                                        | Semicolon-separated list of hash bang patterns                  |
+| Hashbang                | `hashBangs`                                        | Semicolon-separated list of hash bang patterns                  |
 
 **Examples**
 - [Custom Language Support Tutorial: Language and File Type](language_and_filetype.md)
@@ -40,4 +40,4 @@ To verify that the file type is registered correctly, you can implement the [`La
 
 If you want IDEs to show a hint prompting users that your plugin supports a specific file type, see [Plugin Recommendations](https://plugins.jetbrains.com/docs/marketplace/intellij-plugin-recommendations.html).
 
-To control file type association with the IDE in the operating system, implement [`OSFileIdeAssociation`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileTypes/OSFileIdeAssociation.java) (2020.3).
+To control file type association with the IDE in the operating system, implement [`OSFileIdeAssociation`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileTypes/OSFileIdeAssociation.java).

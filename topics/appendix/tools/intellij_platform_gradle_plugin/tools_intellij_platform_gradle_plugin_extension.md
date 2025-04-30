@@ -481,7 +481,7 @@ See also:
 {#intellijPlatform-pluginConfiguration-productDescriptor-code}
 
 The product code for the plugin, used in the JetBrains Sales System.
-The value must be pre-approved by JetBrains and must adhere to [specified requirements](https://plugins.jetbrains.com/docs/marketplace/obtain-a-product-code-from-jetbrains.html).
+The value must be pre-approved by JetBrains and must adhere to [specified requirements](https://plugins.jetbrains.com/docs/marketplace/add-required-parameters.html).
 
 The provided value is used for a `<product-descriptor code="">` element attribute.
 

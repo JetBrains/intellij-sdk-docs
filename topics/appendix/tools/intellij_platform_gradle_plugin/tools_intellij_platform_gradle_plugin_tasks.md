@@ -624,7 +624,7 @@ Default value
 {#patchPluginXml-productDescriptorCode}
 
 The plugin product code used in the JetBrains Sales System.
-The code must be agreed with JetBrains in advance and follow [the requirements](https://plugins.jetbrains.com/docs/marketplace/obtain-a-product-code-from-jetbrains.html).
+The code must be agreed with JetBrains in advance and follow [the requirements](https://plugins.jetbrains.com/docs/marketplace/add-required-parameters.html).
 The provided value will be assigned to the [`<product-descriptor code="">`](plugin_configuration_file.md#idea-plugin__product-descriptor) element attribute.
 
 {type="narrow"}

@@ -171,7 +171,7 @@ Example
 
 <tldr>
 
-**Reference:** [JetBrains Marketplace: Plugin Name](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name)
+**Reference:** [JetBrains Marketplace: Plugin Name](https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-name)
 
 </tldr>
 
@@ -241,7 +241,7 @@ Attributes
 - `code` _(**required**)_<br/>
   The plugin product code used in the JetBrains Sales System.
   The code must be agreed with JetBrains in advance and follow
-  [the requirements](https://plugins.jetbrains.com/docs/marketplace/obtain-a-product-code-from-jetbrains.html).
+  [the requirements](https://plugins.jetbrains.com/docs/marketplace/add-required-parameters.html).
 - `release-date` _(**required**)_<br/>
   Date of the major version release in the `YYYYMMDD` format.
 - `release-version` _(**required**)_<br/>
@@ -305,7 +305,7 @@ Examples
 
 <tldr>
 
-**Reference:** [JetBrains Marketplace: Contacts and Resources](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#contacts-and-resources)
+**Reference:** [JetBrains Marketplace: Contacts and Resources](https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#contacts-and-resources)
 
 </tldr>
 
@@ -348,7 +348,7 @@ Examples
 
 <tldr>
 
-**Reference:** [JetBrains Marketplace: Plugin Description](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description)
+**Reference:** [JetBrains Marketplace: Plugin Description](https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description)
 
 </tldr>
 
@@ -387,7 +387,7 @@ Example
 
 <tldr>
 
-**Reference:** [JetBrains Marketplace: Change Notes](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#change-notes)
+**Reference:** [JetBrains Marketplace: Change Notes](https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#change-notes)
 
 </tldr>
 

@@ -78,6 +78,7 @@ dependencies {
 </tab>
 </tabs>
 
+**Note:** As of version `2.2.0` of the IntelliJ Platform Gradle Plugin, explicitly specifying `jetbrainsRuntime()` in the `repositories` block is no longer necessary if you also have `defaultRepositories()` specified.
 
 ## Declared Explicitly
 
@@ -138,6 +139,7 @@ dependencies {
 </tab>
 </tabs>
 
+**Note:** As of version `2.2.0` of the IntelliJ Platform Gradle Plugin, explicitly specifying `jetbrainsRuntime()` in the `repositories` block is no longer necessary if you also have `defaultRepositories()` specified.
 
 Provided `version`, `variant`, and `architecture` parameters along with the `explicitVersion` are used to resolve the JetBrains Runtime archives published on [GitHub Releases](https://github.com/JetBrains/JetBrainsRuntime/releases/) page.
 

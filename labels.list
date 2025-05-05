@@ -24,6 +24,7 @@
   <primary-label id="Obsolete" name="Obsolete" short-name="Obsolete" color="strawberry">
     Obsolete, see notes.
   </primary-label>
+  <primary-label id="obsolete-2024.1" name="Obsolete Since 2024.1" short-name="Obsolete" color="strawberry"/>
 
   <primary-label id="2019.3" short-name="2019.3+" name="2019.3">
     Available in IDE version 2019.3 or later
@@ -80,11 +81,10 @@
   <secondary-label id="deprecated" name="Deprecated" color="red">
     This item is marked as deprecated.
   </secondary-label>
-  <secondary-label id="incubating" name="Incubating" color="strawberry">
+  <secondary-label id="incubating" name="Incubating" color="tangerine">
     This item is marked as incubating.
   </secondary-label>
   <secondary-label id="unavailable" name="Unavailable">
     This item is marked as unavailable.
   </secondary-label>
-  <primary-label id="obsolete-2024.1" name="Obsolete Since 2024.1" short-name="Obsolete" color="red"/>
 </labels>

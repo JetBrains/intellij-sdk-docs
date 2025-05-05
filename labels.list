@@ -25,9 +25,6 @@
     Obsolete, see notes.
   </primary-label>
 
-  <primary-label id="2019.2" short-name="2019.2+" name="2019.2+">
-    Available in IDE version 2019.2 or later
-  </primary-label>
   <primary-label id="2019.3" short-name="2019.3+" name="2019.3">
     Available in IDE version 2019.3 or later
   </primary-label>

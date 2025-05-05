@@ -11,8 +11,6 @@ EXCLUDING:
 /community/plugins
 /community/python
 
-Note: if section 'IntelliJ Community Plugins" appears on this page, add excluded directories in the list above
-and add in intellij_community_plugins_extension_point_list.md.
 -->
 
 # IntelliJ Platform Extension Point and Listener List

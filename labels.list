@@ -4,10 +4,6 @@
 <labels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/labels.xsd">
 
-  <primary-label id="CommercialIDEs" short-name="Commercial IDEs" name="Commercial IDEs">
-    Available only in commercial IDEs.
-  </primary-label>
-
   <primary-label id="IntelliJIDEA" short-name="IntelliJ IDEA" name="IntelliJ IDEA"
                  href="https://plugins.jetbrains.com/docs/intellij/idea.html">
     Available only in IntelliJ IDEA.

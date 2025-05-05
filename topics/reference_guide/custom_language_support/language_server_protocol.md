@@ -173,7 +173,7 @@ As a reference, check out the [Prisma ORM](https://plugins.jetbrains.com/plugin/
 <procedure title="Minimal LSP Plugin Setup">
 
 1. Implement `LspServerSupportProvider` and within the `LspServerSupportProvider.fileOpened()` method, spin up the relevant LSP server descriptor, which can decide if the given file is supported by using the `LspServerDescriptor.isSupportedFile()` check method.
-2. [Register](plugin_extensions.md#declaring-extensions) it as a `com.intellij.platform.lsp.serverSupportProvider` [Extension Point (EP)](plugin_extension_points.md):
+2. [Register](plugin_extensions.md#declaring-extensions) it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.platform.lsp.serverSupportProvider"/></include>.
 3. Tell how to start the server by implementing `LspServerDescriptor.createCommandLine()`.
 
 ```kotlin

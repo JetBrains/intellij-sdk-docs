@@ -28,11 +28,7 @@
 
 | Topic | Listener |
 |-------|----------|
-| [SpringBootEndpointsTabSettings#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.spring.boot.run.lifecycle.tabs.SpringBootEndpointsTabSettings.Listener)  | `Listener` |
-| [SpringRepositoriesViewSettings#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.spring.data.commons.view.SpringRepositoriesViewSettings.Listener)  | `Listener` |
-| [SpringDebugModelListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.spring.debugger.model.SpringDebugModelListener)  | `SpringDebugModelListener` |
 | [SpringFileSetService#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.spring.facet.SpringFileSetService.SpringFileSetListener)  | `SpringFileSetListener` |
-| [SpringMvcViewSettings#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.spring.mvc.toolwindow.SpringMvcViewSettings.Listener)  | `Listener` |
 | [SpringBeansViewSettings#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.spring.toolWindow.SpringBeansViewSettings.Listener)  | `Listener` |
 
 
@@ -70,6 +66,31 @@
 | [com.intellij.spring.testingImplicitContextsProvider](https://jb.gg/ipe?extensions=com.intellij.spring.testingImplicitContextsProvider) | `SpringTestingImplicitContextsProvider` |
 | [com.intellij.spring.valueConverter](https://jb.gg/ipe?extensions=com.intellij.spring.valueConverter) | `SpringValueConvertersProvider` |
 
+### intellij.spring.el.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.intellij.spring.el.contexts](https://jb.gg/ipe?extensions=com.intellij.spring.el.contexts) | `SpringElContextsExtension` |
+| [com.intellij.spring.el.injection.context](https://jb.gg/ipe?extensions=com.intellij.spring.el.injection.context) | `SpringElInjectionContext` |
+
+### intellij.spring.graph.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.intellij.spring.gutterDiagramActionProvider](https://jb.gg/ipe?extensions=com.intellij.spring.gutterDiagramActionProvider) | `SpringGutterDiagramActionProvider` |
+
+
+
+## Spring Boot Plugin
+
+
+### Spring Boot Plugin – Listeners
+
+| Topic | Listener |
+|-------|----------|
+| [SpringBootEndpointsTabSettings#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.spring.boot.run.lifecycle.tabs.SpringBootEndpointsTabSettings.Listener)  | `Listener` |
+
+
 ### com.intellij.spring.boot
 
 | Extension Point | Implementation |
@@ -82,42 +103,6 @@
 | [com.intellij.spring.boot.modelConfigFileNameContributor](https://jb.gg/ipe?extensions=com.intellij.spring.boot.modelConfigFileNameContributor) | `SpringBootModelConfigFileNameContributor` |
 | [com.intellij.spring.boot.modelExtender](https://jb.gg/ipe?extensions=com.intellij.spring.boot.modelExtender) | `SpringBootModelExtender` |
 | [com.intellij.spring.boot.replacementTokenResolver](https://jb.gg/ipe?extensions=com.intellij.spring.boot.replacementTokenResolver) | `SpringBootReplacementTokenResolver` |
-
-### com.intellij.spring.debugger
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| [com.intellij.spring.debugger.configCodeVisionProvider](https://jb.gg/ipe?extensions=com.intellij.spring.debugger.configCodeVisionProvider) ![Internal][internal] | `SpringConfigFileCodeVisionInfoProvider` |
-| [com.intellij.spring.debugger.runConfigurationExtender](https://jb.gg/ipe?extensions=com.intellij.spring.debugger.runConfigurationExtender) | `SpringDebuggerRunConfigurationExtender` |
-| [com.intellij.spring.debugger.sessionListener](https://jb.gg/ipe?extensions=com.intellij.spring.debugger.sessionListener) | `SpringDebuggerSessionListener` |
-
-### com.intellij.spring.graphql
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| [com.intellij.spring.graphql.appPathProvider](https://jb.gg/ipe?extensions=com.intellij.spring.graphql.appPathProvider) | `GraphQLApplicationPathProvider` |
-
-### com.intellij.spring.messaging
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| [com.intellij.spring.messaging.urlProvider](https://jb.gg/ipe?extensions=com.intellij.spring.messaging.urlProvider) | `SpringMessagingUrlProvider` |
-
-### com.intellij.spring.mvc
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| [com.intellij.spring.mvc.applicationPathProvider](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.applicationPathProvider) | `SpringApplicationPathProvider` |
-| [com.intellij.spring.mvc.completion.controllerParamTypeProvider](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.completion.controllerParamTypeProvider) | `ControllerParameterProvider` |
-| [com.intellij.spring.mvc.mergingMvcRequestMappingLineMarkerProvider](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.mergingMvcRequestMappingLineMarkerProvider) | `SpringMergingMvcRequestMappingLineMarkerProvider` |
-| [com.intellij.spring.mvc.springEndpointsIconProvider](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.springEndpointsIconProvider) | `SpringEndpointsIconProvider` |
-| [com.intellij.spring.mvc.viewResolverFactory](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.viewResolverFactory) | `ViewResolverFactory` |
-
-### com.intellij.spring.security
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| [com.intellij.spring.security.rolesProvider](https://jb.gg/ipe?extensions=com.intellij.spring.security.rolesProvider) | `SpringSecurityRolesProvider` |
 
 ### intellij.spring.boot.mvc.xml
 
@@ -136,18 +121,89 @@
 | [com.intellij.spring.boot.run.liveBeansPanelContent](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.liveBeansPanelContent) | `LiveBeansPanelContent` |
 | [com.intellij.spring.boot.run.runtimeApplicationProvider](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.runtimeApplicationProvider) | `SpringBootRuntimeApplicationProvider` |
 
-### intellij.spring.el.xml
+
+
+## Spring Data Plugin
+
+
+### Spring Data Plugin – Listeners
+
+| Topic | Listener |
+|-------|----------|
+| [SpringRepositoriesViewSettings#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.spring.data.commons.view.SpringRepositoriesViewSettings.Listener)  | `Listener` |
+
+
+
+
+## Spring Debugger Plugin
+
+
+### Spring Debugger Plugin – Listeners
+
+| Topic | Listener |
+|-------|----------|
+| [SpringDebugModelListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.spring.debugger.model.SpringDebugModelListener)  | `SpringDebugModelListener` |
+
+
+### com.intellij.spring.debugger
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.intellij.spring.el.contexts](https://jb.gg/ipe?extensions=com.intellij.spring.el.contexts) | `SpringElContextsExtension` |
-| [com.intellij.spring.el.injection.context](https://jb.gg/ipe?extensions=com.intellij.spring.el.injection.context) | `SpringElInjectionContext` |
+| [com.intellij.spring.debugger.configCodeVisionProvider](https://jb.gg/ipe?extensions=com.intellij.spring.debugger.configCodeVisionProvider) ![Internal][internal] | `SpringConfigFileCodeVisionInfoProvider` |
+| [com.intellij.spring.debugger.runConfigurationExtender](https://jb.gg/ipe?extensions=com.intellij.spring.debugger.runConfigurationExtender) | `SpringDebuggerRunConfigurationExtender` |
+| [com.intellij.spring.debugger.sessionListener](https://jb.gg/ipe?extensions=com.intellij.spring.debugger.sessionListener) | `SpringDebuggerSessionListener` |
 
-### intellij.spring.graph.xml
+
+
+## Spring GraphQL Plugin
+
+### com.intellij.spring.graphql
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.intellij.spring.gutterDiagramActionProvider](https://jb.gg/ipe?extensions=com.intellij.spring.gutterDiagramActionProvider) | `SpringGutterDiagramActionProvider` |
+| [com.intellij.spring.graphql.appPathProvider](https://jb.gg/ipe?extensions=com.intellij.spring.graphql.appPathProvider) | `GraphQLApplicationPathProvider` |
+
+
+
+## Spring Messaging Plugin
+
+### com.intellij.spring.messaging
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.intellij.spring.messaging.urlProvider](https://jb.gg/ipe?extensions=com.intellij.spring.messaging.urlProvider) | `SpringMessagingUrlProvider` |
+
+
+
+## Spring Security Plugin
+
+### com.intellij.spring.security
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.intellij.spring.security.rolesProvider](https://jb.gg/ipe?extensions=com.intellij.spring.security.rolesProvider) | `SpringSecurityRolesProvider` |
+
+
+
+## Spring Web Plugin
+
+
+### Spring Web Plugin – Listeners
+
+| Topic | Listener |
+|-------|----------|
+| [SpringMvcViewSettings#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.spring.mvc.toolwindow.SpringMvcViewSettings.Listener)  | `Listener` |
+
+
+### com.intellij.spring.mvc
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.intellij.spring.mvc.applicationPathProvider](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.applicationPathProvider) | `SpringApplicationPathProvider` |
+| [com.intellij.spring.mvc.completion.controllerParamTypeProvider](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.completion.controllerParamTypeProvider) | `ControllerParameterProvider` |
+| [com.intellij.spring.mvc.mergingMvcRequestMappingLineMarkerProvider](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.mergingMvcRequestMappingLineMarkerProvider) | `SpringMergingMvcRequestMappingLineMarkerProvider` |
+| [com.intellij.spring.mvc.springEndpointsIconProvider](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.springEndpointsIconProvider) | `SpringEndpointsIconProvider` |
+| [com.intellij.spring.mvc.viewResolverFactory](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.viewResolverFactory) | `ViewResolverFactory` |
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square
 [removal]: https://img.shields.io/badge/-Removal-red?style=flat-square

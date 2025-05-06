@@ -379,7 +379,6 @@
     <toc-element topic="glossary.md"/>
     <toc-element topic="explore_api.md" toc-title="Explore the API"/>
     <toc-element topic="build_number_ranges.md"/>
-    <toc-element topic="intellij_artifacts.md"/>
     <toc-element toc-title="Extension Points and Listeners">
       <toc-element toc-title="IntelliJ Platform" topic="intellij_platform_extension_point_list.md"
                    accepts-web-file-names="extension-point-list.html"/>
@@ -400,6 +399,7 @@
     <toc-element topic="learning_resources.md"/>
     <toc-element topic="marketing.md"/>
     <toc-element topic="consulting.md"/>
+    <toc-element topic="intellij_artifacts.md"/>
     <toc-element topic="custom_plugin_repository.md" accepts-web-file-names="update-plugins-format.html"/>
     <toc-element topic="plugin_repository_obsolete.md"
                  accepts-web-file-names="api_reference.html,feature_extractor.html,plugin_details.html,custom_channels.html,plugins_list.html,maven_interface.html,plugin_upload.html,plugin_developers.html"/>

@@ -30,7 +30,8 @@ See [Persisting State of Components](persisting_state_of_components.md) for deta
 
 ### Subscribing to Events
 
-To subscribe to events, use a [listener](plugin_listeners.md) or create an [extension](plugin_extensions.md) for a dedicated extension point (for example, `com.intellij.editorFactoryListener`) if one exists for the event to subscribe to.
+To subscribe to events, use a [listener](plugin_listeners.md) or create an [extension](plugin_extensions.md) for a dedicated extension point
+(for example, <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editorFactoryListener"/></include>) if one exists for the event to subscribe to.
 
 ### Application Startup
 

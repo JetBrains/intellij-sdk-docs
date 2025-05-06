@@ -399,9 +399,9 @@ See also [](popups.md#action-groups) for more advanced popups.
 If an action toolbar is attached to a specific component (for example, a panel in a tool window), call `ActionToolbar.setTargetComponent()` and pass the related component's instance as a parameter.
 Setting the target ensures that the toolbar buttons' state depends on the state of the related component, not on the current focus location within the IDE frame.
 
-To add an action group to the list of customizable actions in <ui-path>Settings | Appearance & Behavior | Menus and Toolbars</ui-path>, implement the
+To add an action group to the list of customizable actions in <ui-path>Settings | Appearance & Behavior | Menus and Toolbars</ui-path>, implement
 [`CustomizableActionGroupProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/ui/customization/CustomizableActionGroupProvider.java)
-extension point registered in `com.intellij.customizableActionGroupProvider`,
+and register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.customizableActionGroupProvider"/></include>,
 and ensure that the [action group](plugin_configuration_file.md#idea-plugin__actions__group) defines the `text` attribute or is [localized](#localizing-actions-and-groups).
 
 See [](toolbar.md) in UI Guidelines for an overview.

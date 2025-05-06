@@ -86,6 +86,7 @@ See also:
 Represents information about the IntelliJ Platform product.
 
 The information is retrieved from the <path>product-info.json</path> file in the IntelliJ Platform directory.
+See also the corresponding [`product-info.schema.json`](%gh-ic%/platform/buildData/resources/product-info.schema.json).
 
 | Name                | Description                                                              |
 |---------------------|--------------------------------------------------------------------------|

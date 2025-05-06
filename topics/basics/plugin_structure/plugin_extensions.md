@@ -61,7 +61,9 @@ See [](explore_api.md) for more information and strategies.
 
 </procedure>
 
-To clarify this procedure, consider the following sample section of the <path>plugin.xml</path> file that defines two extensions designed to access the `com.intellij.appStarter` and `com.intellij.projectTemplatesFactory` extension points in the IntelliJ Platform,
+To clarify this procedure, consider the following sample section of the <path>plugin.xml</path> file that defines two extensions designed
+to access the <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.appStarter"/></include> and <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectTemplatesFactory"/></include>
+extension points in the IntelliJ Platform,
 and one extension to access the `another.plugin.myExtensionPoint` extension point in another plugin `another.plugin`:
 
 ```xml

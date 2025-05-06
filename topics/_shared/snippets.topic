@@ -109,7 +109,7 @@
         </warning>
     </snippet>
     <snippet id="ep_list_legend">
-        <chapter title="Legend" id="legend">
+        <chapter title="Legend" id="legend" collapsible="true" default-state="collapsed">
             <tip>
                 <p>See also <a href="explore_api.md"/> for more information and strategies.</p>
             </tip>

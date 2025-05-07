@@ -24,8 +24,13 @@ for programmatic registration.
 
 ## Refactoring
 
-* [How can I receive notifications about refactoring events?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206795955-Refactoring-Listeners)
-* [How do I show a refactoring dialog programmatically?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206800005-How-to-invoke-refactoring-dialog-not-refactoring-itself-)
+### How can I receive notifications about refactoring events?
+
+[`RefactoringEventListener`](%gh-ic%/platform/refactoring/src/com/intellij/refactoring/listeners/RefactoringEventListener.java)
+
+### How do I show a refactoring dialog programmatically?
+
+[`RefactoringActionHandlerFactory`](%gh-ic%/platform/lang-api/src/com/intellij/refactoring/RefactoringActionHandlerFactory.java)
 
 ## Make/Compile
 

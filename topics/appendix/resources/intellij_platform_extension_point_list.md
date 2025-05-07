@@ -17,7 +17,7 @@ EXCLUDING:
 
 <link-summary>Overview of Extension Points and Listeners for IntelliJ Platform.</link-summary>
 
-1169 Extension Points and 224 Listeners for IntelliJ Platform %ijPlatform%
+1172 Extension Points and 225 Listeners for IntelliJ Platform %ijPlatform%
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -202,6 +202,7 @@ EXCLUDING:
 | [UnindexedFilesUpdaterListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.util.indexing.UnindexedFilesUpdaterListener)  ![Deprecated][deprecated] | [`UnindexedFilesUpdaterListener`](%gh-ic%/platform/lang-impl/src/com/intellij/util/indexing/UnindexedFilesUpdaterListener.java) |
 | [ProjectIndexingActivityHistoryListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.util.indexing.diagnostic.ProjectIndexingActivityHistoryListener)  | [`ProjectIndexingActivityHistoryListener`](%gh-ic%/platform/lang-impl/src/com/intellij/util/indexing/diagnostic/ProjectIndexingHistory.kt) |
 | [WebSymbolContextChangeListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.webSymbols.context.WebSymbolContextChangeListener)  | [`WebSymbolContextChangeListener`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/context/WebSymbolContextChangeListener.kt) |
+| [WebSymbolsQueryExecutorListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.webSymbols.query.WebSymbolsQueryExecutorListener)  | [`WebSymbolsQueryExecutorListener`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/query/WebSymbolsQueryExecutorListener.kt) |
 | [JpsGlobalModelLoadedListener.Companion#LOADED](https://jb.gg/ipe/listeners?topics=com.intellij.workspaceModel.ide.JpsGlobalModelLoadedListener)  ![Internal][internal] | [`JpsGlobalModelLoadedListener`](%gh-ic%/platform/projectModel-api/src/com/intellij/workspaceModel/ide/JpsGlobalModelLoadedListener.kt) |
 | [JpsProjectLoadedListener.Companion#LOADED](https://jb.gg/ipe/listeners?topics=com.intellij.workspaceModel.ide.JpsProjectLoadedListener)  ![Internal][internal] ![Project-Level][project-level] | [`JpsProjectLoadedListener`](%gh-ic%/platform/projectModel-api/src/com/intellij/workspaceModel/ide/JpsProjectLoadedListener.kt) |
 | [XDebuggerManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.xdebugger.XDebuggerManagerListener)  ![Project-Level][project-level] | [`XDebuggerManagerListener`](%gh-ic%/platform/xdebugger-api/src/com/intellij/xdebugger/XDebuggerManagerListener.java) |
@@ -511,6 +512,7 @@ EXCLUDING:
 | [com.intellij.lineIndentProvider](https://jb.gg/ipe?extensions=com.intellij.lineIndentProvider) | [`LineIndentProvider`](%gh-ic%/platform/code-style-api/src/com/intellij/psi/codeStyle/lineIndent/LineIndentProvider.java) |
 | [com.intellij.predefinedCodeStyle](https://jb.gg/ipe?extensions=com.intellij.predefinedCodeStyle) | [`PredefinedCodeStyle`](%gh-ic%/platform/code-style-api/src/com/intellij/psi/codeStyle/PredefinedCodeStyle.java) |
 | [com.intellij.rearranger.ui](https://jb.gg/ipe?extensions=com.intellij.rearranger.ui) | [`Factory`](%gh-ic%/platform/lang-api/src/com/intellij/psi/codeStyle/arrangement/std/ArrangementUiComponent.java) |
+| [com.intellij.resultHandlerProvider](https://jb.gg/ipe?extensions=com.intellij.resultHandlerProvider) ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`IncorrectFormattingResultHandlerProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInspection/incorrectFormatting/IncorrectFormattingResultHandlerProvider.kt) |
 
 ### IdeCore.xml
 
@@ -1140,6 +1142,7 @@ EXCLUDING:
 | [com.intellij.activityTracker](https://jb.gg/ipe?extensions=com.intellij.activityTracker) | [`ActivityTracker`](%gh-ic%/platform/backend/observation/src/com/intellij/platform/backend/observation/ActivityTracker.kt) |
 | [com.intellij.additionalTextAttributes](https://jb.gg/ipe?extensions=com.intellij.additionalTextAttributes) | `n/a` |
 | [com.intellij.advancedSetting](https://jb.gg/ipe?extensions=com.intellij.advancedSetting) | `n/a` |
+| [com.intellij.aiDataCollectionExternalSettings](https://jb.gg/ipe?extensions=com.intellij.aiDataCollectionExternalSettings) ![Internal][internal] | [`AiDataCollectionExternalSettings`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/gdpr/ui/consents/AiDataCollectionConsentUi.kt) |
 | [com.intellij.appStarter](https://jb.gg/ipe?extensions=com.intellij.appStarter) | [`ApplicationStarter`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/application/ApplicationStarter.kt) |
 | [com.intellij.applicationConfigurable](https://jb.gg/ipe?extensions=com.intellij.applicationConfigurable) | [`Configurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/Configurable.java) |
 | [com.intellij.applicationSettings](https://jb.gg/ipe?extensions=com.intellij.applicationSettings) ![Experimental][experimental] | [`PersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) |
@@ -1834,6 +1837,7 @@ EXCLUDING:
 |-----------------|----------------|
 | [com.intellij.cherryPicker](https://jb.gg/ipe?extensions=com.intellij.cherryPicker) ![Project-Level][project-level] | [`VcsCherryPicker`](%gh-ic%/platform/dvcs-api/src/com/intellij/dvcs/cherrypick/VcsCherryPicker.java) |
 | [com.intellij.clonePathProvider](https://jb.gg/ipe?extensions=com.intellij.clonePathProvider) | [`ClonePathProvider`](%gh-ic%/platform/dvcs-impl/src/com/intellij/dvcs/repo/ClonePathProvider.java) |
+| [com.intellij.commitModeProvider](https://jb.gg/ipe?extensions=com.intellij.commitModeProvider) ![Internal][internal] | [`DvcsCommitModeProvider`](%gh-ic%/platform/dvcs-impl/src/com/intellij/dvcs/commit/DvcsCommitModeProvider.kt) |
 | [com.intellij.commitNodeUiRenderExtension](https://jb.gg/ipe?extensions=com.intellij.commitNodeUiRenderExtension) ![Experimental][experimental] | [`CommitNodeUiRenderExtension`](%gh-ic%/platform/dvcs-impl/src/com/intellij/dvcs/push/ui/CommitNodeUiRenderExtension.java) |
 | [com.intellij.customPushOptionsPanelFactory](https://jb.gg/ipe?extensions=com.intellij.customPushOptionsPanelFactory) ![Experimental][experimental] | [`CustomPushOptionsPanelFactory`](%gh-ic%/platform/dvcs-api/src/com/intellij/dvcs/push/CustomPushOptionsPanelFactory.kt) |
 | [com.intellij.prePushHandler](https://jb.gg/ipe?extensions=com.intellij.prePushHandler) | [`PrePushHandler`](%gh-ic%/platform/dvcs-impl/src/com/intellij/dvcs/push/PrePushHandler.java) |

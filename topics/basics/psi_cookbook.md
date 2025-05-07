@@ -55,14 +55,6 @@ Unlike [Developing Custom Language Plugins](custom_language_support.md), it is a
 
 ### How do I get a reference to the containing package of a Java class?
 
-```java
-PsiJavaFile javaFile = (PsiJavaFile) psiClass.getContainingFile();
-PsiPackage psiPackage = JavaPsiFacade.getInstance(project)
-    .findPackage(javaFile.getPackageName());
-```
-
-or
-
 [`PsiUtil.getPackageName()`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/util/PsiUtil.java)
 
 ### How do I find the methods overriding a specific method?
@@ -71,7 +63,7 @@ or
 
 ### How do I create a new class/interface/enum/record in a given directory?
 
-Use methods from [`JavaDirectoryService`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/JavaDirectoryService.java).
+[`JavaDirectoryService`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/JavaDirectoryService.java)
 
 ### How can I locate specific Java PSI elements within a class/method?
 

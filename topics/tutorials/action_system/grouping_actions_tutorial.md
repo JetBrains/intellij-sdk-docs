@@ -105,7 +105,7 @@ The [`DefaultActionGroup`](%gh-ic%/platform/platform-api/src/com/intellij/openap
 The `DefaultActionGroup` class is used to add child actions and separators between them to a group.
 This class is used if a set of actions belonging to the group does not change at runtime.
 
-As an example, extend [`DefaultActionGroup`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)  to create the `CustomDefaultActionGroup` class in the `action_basics` code sample:
+As an example, extend `DefaultActionGroup` to create the `CustomDefaultActionGroup` class in the `action_basics` code sample:
 
 ```java
 public class CustomDefaultActionGroup extends DefaultActionGroup {

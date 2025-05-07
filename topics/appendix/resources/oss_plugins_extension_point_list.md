@@ -19,7 +19,7 @@ There must be no top-level "Listeners" group, adjust ExtensionPointAnalyzerActio
 
 Overview of Extension Points and Listeners for open source plugins available in [](idea_ultimate.md) and other IDEs.
 
-68 Extension Points and 10 Listeners
+68 Extension Points and 10 Listeners (%ijPlatform%)
 
 See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 

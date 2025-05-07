@@ -17,7 +17,7 @@
 
 </tldr>
 
-80 Extension Points and 5 Listeners for WebStorm
+80 Extension Points and 5 Listeners
 
 See [](intellij_platform_extension_point_list.md) for IntelliJ Platform and [](oss_plugins_extension_point_list.md) for additional plugins.
 

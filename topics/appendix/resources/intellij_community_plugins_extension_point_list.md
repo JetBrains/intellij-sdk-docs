@@ -13,9 +13,11 @@ There must be no top-level "Listeners" group, adjust ExtensionPointAnalyzerActio
 
 # IntelliJ Community Plugins Extension Point and Listener List
 
-<link-summary>Overview of Extension Points and Listeners for IntelliJ Platform.</link-summary>
+<link-summary>Overview of Extension Points and Listeners for IntelliJ Community Plugins.</link-summary>
 
-629 Extension Points and 71 Listeners for IntelliJ Community Plugins
+629 Extension Points and 71 Listeners (%ijPlatform%)
+
+See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 

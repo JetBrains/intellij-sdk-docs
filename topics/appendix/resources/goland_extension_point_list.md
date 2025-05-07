@@ -12,7 +12,7 @@
 
 </tldr>
 
-17 Extension Points and 6 Listeners for GoLand
+17 Extension Points and 6 Listeners
 
 See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 

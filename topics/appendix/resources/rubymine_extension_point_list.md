@@ -12,7 +12,7 @@
 
 </tldr>
 
-88 Extension Points and 13 Listeners for RubyMine
+88 Extension Points and 13 Listeners
 
 See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 

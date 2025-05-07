@@ -12,7 +12,7 @@
 
 </tldr>
 
-110 Extension Points and 34 Listeners for Android Plugin
+110 Extension Points and 34 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 

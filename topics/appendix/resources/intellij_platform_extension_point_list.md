@@ -17,7 +17,7 @@ EXCLUDING:
 
 <link-summary>Overview of Extension Points and Listeners for IntelliJ Platform.</link-summary>
 
-1172 Extension Points and 225 Listeners for IntelliJ Platform %ijPlatform%
+1172 Extension Points and 225 Listeners (%ijPlatform%)
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 

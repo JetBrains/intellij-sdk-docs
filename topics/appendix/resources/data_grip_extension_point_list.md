@@ -12,7 +12,7 @@
 
 </tldr>
 
-77 Extension Points and 23 Listeners for DataGrip
+77 Extension Points and 23 Listeners
 
 See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 

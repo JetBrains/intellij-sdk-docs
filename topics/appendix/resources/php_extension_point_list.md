@@ -12,7 +12,7 @@
 
 </tldr>
 
-63 Extension Points and 11 Listeners for PHP
+63 Extension Points and 11 Listeners
 
 See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 

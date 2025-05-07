@@ -12,7 +12,7 @@
 
 </tldr>
 
-145 Extension Points and 9 Listeners for Rider
+145 Extension Points and 9 Listeners
 
 See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 

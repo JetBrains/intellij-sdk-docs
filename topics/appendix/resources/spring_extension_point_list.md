@@ -18,7 +18,7 @@
 >
 {style="note"}
 
-58 Extension Points and 6 Listeners for Spring API
+58 Extension Points and 6 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 

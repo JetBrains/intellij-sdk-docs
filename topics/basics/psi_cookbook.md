@@ -69,7 +69,19 @@ or
 
 [`OverridingMethodsSearch.search()`](%gh-ic%/java/java-indexing-api/src/com/intellij/psi/search/searches/OverridingMethodsSearch.java)
 
+### How do I create a new class/interface/enum/record in a given directory?
+
+Use methods from [`JavaDirectoryService`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/JavaDirectoryService.java).
+
+### How can I locate specific Java PSI elements within a class/method?
+
+Extend [`JavaElementVisitor`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/JavaElementVisitor.java)
+or [`JavaRecursiveElementVisitor`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/JavaRecursiveElementVisitor.java) and override relevant method(s).
+Pass it to `PsiElement.accept()` of the parent PSI element (for example, [`PsiClass`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/PsiClass.java)
+or [`PsiMethod`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/PsiMethod.java)).
+
 ### How do I check the presence of a JVM library?
+
 <primary-label ref="2023.2"/>
 
 Use dedicated (and heavily cached) methods from [`JavaLibraryUtil`](%gh-ic%/java/openapi/src/com/intellij/java/library/JavaLibraryUtil.java):

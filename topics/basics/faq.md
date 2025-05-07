@@ -11,25 +11,6 @@ See [](getting_help.topic#problems-with-code-support-issues) on how to post new 
 > See also [](explore_api.md) for more information and strategies.
 >
 
-## Accessing and Modifying the Source Code
-
-> See also [](psi.md) and [](psi_cookbook.md)
-
-* [How do I find all subclasses of a class?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206791895-finding-all-derived-class-given-parent-class)
-* [How do I find all anonymous classes created in a class?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206792205-How-to-find-anonymous-classes-in-PsiClass-)
-* [How do I calculate the value of a string literal token?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139829-How-to-evaluate-the-value-of-PsiJavaToken-of-STRING-LITERAL-type)
-* [How do I rename or move a Java class?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206791825-How-to-rename-a-class-)
-* [How do I build the list of all classes used by a given class or package?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139469-Using-DependencyValidationManager-to-Get-Required-Classes)
-* [How do I insert whitespace into the PSI?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206143839-Adding-PsiElements-to-a-PsiFile)
-* [How do I add properties to a .properties file?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206142279-Dynamically-add-new-properties-to-properties-files)
-* [How do I find specific method calls inside a PsiMethod?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206143579-finding-a-statement-within-a-PsiMethod)
-* [What is the lifecycle of a PSI element?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206796015-What-is-the-lifecycle-of-a-PsiElement-)
-* [How do I create a new class in the given package?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206771665-Creating-a-new-class)
-* [How do I make a PsiClass extend another PsiClass?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206794255-How-to-make-a-PsiClass-derive-from-another-one-)
-* [How do I find references to a class from non-Java files?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206800695-How-to-obtain-the-references-to-a-class-from-non-java-files-)
-* [How do I find the source file given the path to a .class file?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206800595-How-to-find-the-source-for-a-class-file)
-* [How do I find classes with the specified non-qualified name?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206146759-How-to-resolve-unqualified-name-to-possible-PsiClasses-)
-
 ## Working with XML and XML DOM
 
 * [How do I change the value of an XML attribute through the PSI?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139639-Change-xml-attribute-value)

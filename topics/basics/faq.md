@@ -13,8 +13,14 @@ See [](getting_help.topic#problems-with-code-support-issues) on how to post new 
 
 ## Working with XML and XML DOM
 
-* [How do I change the value of an XML attribute through the PSI?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139639-Change-xml-attribute-value)
-* [How do I programmatically register a DTD or schema?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206795425-How-to-register-DTD-with-idea)
+> See also [](xml_dom_api.md).
+
+### How do I register a DTD or XSD?
+
+To register a bundled DTD/XSD file, use <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.standardResource"/></include>
+for static
+or <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.standardResourceProvider"/></include>
+for programmatic registration.
 
 ## Refactoring
 

@@ -32,14 +32,6 @@ for programmatic registration.
 
 [`RefactoringActionHandlerFactory`](%gh-ic%/platform/lang-api/src/com/intellij/refactoring/RefactoringActionHandlerFactory.java)
 
-## Version Control Integration
-
-* [Can I provide line status markers for files in a custom file system?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206791585-Editor-diff-functionality-for-custom-file-system)
-* [How do I update the state of VCS actions depending on file status?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206791975-VCS-context-menu)
-* [How can I find out the module of a deleted file?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206792195-Module-for-deleted-file-)
-* [Can I provide additional decorations for changelists in the Changes view?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139549-Is-it-possible-to-decorate-change-lists-)
-* [How do I report out-of-date files?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206791775-VCS-OpenAPI-what-to-do-with-files-detected-as-out-of-date-)
-
 ## Editors, Documents and Files
 
 * [Why doesn't the file change on disk after I changed it through the PSI?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206791625-Action-doesn-t-see-changes-in-xml-file)

@@ -78,9 +78,7 @@ If you use the insets elsewhere, you need to manually call `JBInsets.update()` i
 
 ## Icons
 
-### Progress
-
-Animated progress icons can be obtained via [`AsyncProcessIcon`](%gh-ic%/platform/platform-api/src/com/intellij/util/ui/AsyncProcessIcon.java).
+### Progress Placeholder
 
 [`LoadingDecorator`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/LoadingDecorator.kt) provides "loading" placeholder panel.
 

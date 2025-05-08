@@ -175,6 +175,12 @@ All icon files must be placed in the same directory following this naming patter
 
 ## Animated Icons
 
+<tldr>
+
+**UI Guidelines:** [](loader.md)
+
+</tldr>
+
 Animated icons are a way to show that a plugin is now performing some long-time action, e.g., when the plugin is loading some data.
 
 Any animated icon is a set of frames that loop with a delay.
@@ -193,11 +199,16 @@ AnimatedIcon icon = new AnimatedIcon(
 To create an icon from frames with different delays, use `AnimatedIcon.Frame`.
 Each frame represents an icon, and a delay until the next frame.
 
+> Set [`AnimatedIcon.ANIMATION_IN_RENDERER_ALLOWED`](%gh-ic%/platform/ide-core/src/com/intellij/ui/AnimatedIcon.java) client property to `true` for list, table,
+> and tree components to repaint animated icons automatically.
+> See its Javadoc for details.
+
+#### Progress Icon
+
 Use the predefined `AnimatedIcon.Default` loader icon to indicate a long process.
 This icon has a larger `AnimatedIcon.Big` version.
 
-> Add `true` [`AnimatedIcon.ANIMATION_IN_RENDERER_ALLOWED`](%gh-ic%/platform/ide-core/src/com/intellij/ui/AnimatedIcon.java) client property to list, table, and tree components to repaint animated icons automatically.
-> See `ANIMATION_IN_RENDERER_ALLOWED`'s Javadoc for details.
+Alternatively, use [`AsyncProcessIcon`](%gh-ic%/platform/platform-api/src/com/intellij/util/ui/AsyncProcessIcon.java).
 
 ## Icon Tooltips
 

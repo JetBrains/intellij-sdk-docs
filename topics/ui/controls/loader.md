@@ -8,6 +8,8 @@
 
 **Implementation:** [`AnimatedIcon.Default`](%gh-ic%/platform/ide-core/src/com/intellij/ui/AnimatedIcon.java)
 
+**Related:** [](icons.md#animated-icons)
+
 </tldr>
 
 A loader informs users about performing a lengthy operation.

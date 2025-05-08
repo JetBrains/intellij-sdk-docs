@@ -33,7 +33,7 @@ The extension point attributes specify all the data which is necessary to displa
 * The `id` attribute (required) of the tool window which corresponds to the text displayed on the tool window button.
 To provide a localized text, specify matching `toolwindow.stripe.[id]` message key (escape spaces with `_`) in the [resource bundle](plugin_configuration_file.md#idea-plugin__resource-bundle).
 
-* The `icon` to display on the tool window button (13x13 pixels, gray and monochromatic; see [](tool_window.md) in UI Guidelines and [](icons.md))
+* The `icon` to display on the tool window button (see [](tool_window.md) in UI Guidelines and [](icons.md))
 
 * The `anchor`, meaning the side of the screen on which the tool window is displayed ("left" (default), "right" or "bottom")
 

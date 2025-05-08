@@ -69,3 +69,6 @@ This is particularly useful when you need text location/offset information about
 ## How can I mark a region as read-only?
 
 Use `Document.createGuardedBlock()`.
+
+[`EditorActionManager.setReadonlyFragmentModificationHandler()`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionManager.java) can
+be used to customize the behavior when the user attempts to modify a read-only region.

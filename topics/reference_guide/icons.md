@@ -147,7 +147,7 @@ bigger screen fonts (e.g., in [Presentation Mode](https://www.jetbrains.com/help
 
 A base size denoting the size (in the user space) of the rendered image in 1x scale should be provided.
 The size is set via the `width` and `height` attributes omitting the size units.
-If unspecified, it defaults to 16x16 pixels.
+If unspecified, it defaults to 16&times;16 pixels.
 
 A minimal SVG icon file:
 

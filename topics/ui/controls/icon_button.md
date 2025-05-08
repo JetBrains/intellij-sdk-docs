@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Icon Button
 
@@ -57,7 +57,7 @@ Do **not** highlight a disabled icon on mouse hover.
 
 ## Sizes and placement
 
-Icons size is 16x16px, icon selection is 22x22px.
+Icons size is 16&times;16px, icon selection is 22&times;22px.
 
 For guidelines on the space between toolbar icon buttons see [Toolbar](toolbar.md).
 

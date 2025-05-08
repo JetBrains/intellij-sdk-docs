@@ -25,7 +25,8 @@ This page describes developing plugins using the [Kotlin](https://kotlinlang.org
 Using Kotlin to write plugins for the IntelliJ Platform is very similar to writing plugins in Java.
 Existing Java classes can be converted to their Kotlin equivalents by using the [J2K converter](https://kotlinlang.org/docs/mixing-java-kotlin-intellij.html#converting-an-existing-java-file-to-kotlin-with-j2k) (part of the Kotlin plugin).
 
-In addition to [null safety](https://kotlinlang.org/docs/null-safety.html), [type-safe builders](https://kotlinlang.org/docs/type-safe-builders.html), and [](kotlin_coroutines.md), the Kotlin language offers many convenient features for plugin development,
+In addition to [null safety](https://kotlinlang.org/docs/null-safety.html), [type-safe builders](https://kotlinlang.org/docs/type-safe-builders.html), and [](kotlin_coroutines.md)
+the Kotlin language offers many convenient features for plugin development,
 which make plugins easier to read and simpler to maintain.
 Much like [Kotlin for Android](https://kotlinlang.org/docs/android-overview.html), the IntelliJ Platform makes extensive use of callbacks, which are straightforward to express as [lambdas](https://kotlinlang.org/docs/lambdas.html) in Kotlin.
 
@@ -87,20 +88,22 @@ Using Kotlin 2.x is recommended for plugins targeting 2024.3 or later and requir
 
 Adding Kotlin source files compilation support to a Gradle-based project requires adding and configuring the [Kotlin JVM Gradle plugin](https://kotlinlang.org/docs/gradle.html#targeting-the-jvm).
 
-### Kotlin Standard Library (stdlib)
+### Kotlin Standard Library (`stdlib`)
 
 {id="kotlin-standard-library"}
 
-Starting with Kotlin 1.4, a dependency on the standard library _stdlib_ is added automatically ([API Docs](https://kotlinlang.org/api/latest/jvm/stdlib/)).
+A dependency on the standard library `stdlib` is added automatically ([API Docs](https://kotlinlang.org/api/latest/jvm/stdlib/)).
 In nearly all cases, it is _not necessary_ to include it in the plugin distribution as the platform already bundles it.
 
 To opt out, add this line in <path>gradle.properties</path>:
 
-```
+```properties
 kotlin.stdlib.default.dependency = false
 ```
 
-#### Gradle check
+To bundle `stdlib` in the plugin distribution, set the property to `true` explicitly.
+
+#### Gradle Check
 
 The presence of this Gradle property is checked with the corresponding Gradle task:
 
@@ -118,11 +121,10 @@ The presence of this Gradle property is checked with the corresponding Gradle ta
 </tabs>
 
 If the property is not present, a warning will be reported during the plugin configuration verification.
-To bundle _stdlib_ in the plugin distribution, specify explicitly `kotlin.stdlib.default.dependency = true`.
 
-#### stdlib – Miscellaneous
+#### `stdlib` – Miscellaneous
 
-If a plugin supports [multiple platform versions](build_number_ranges.md), it must either target the lowest bundled _stdlib_ version (see table below)
+If a plugin supports [multiple platform versions](build_number_ranges.md), it must either target the lowest bundled `stdlib` version (see [table below](#bundled-stdlib-versions))
 or the specific version must be [provided in plugin distribution](plugin_content.md#plugin-with-dependencies).
 
 See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html#dependency-on-the-standard-library) for more details.
@@ -131,7 +133,9 @@ See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html
 >
 {title="Adding stdlib in tests"}
 
-| IntelliJ Platform version (latest update) | Bundled _stdlib_ version |
+#### Bundled `stdlib` Versions
+
+| IntelliJ Platform version (latest update) | Bundled `stdlib` version |
 |-------------------------------------------|--------------------------|
 | 2025.2                                    | 2.1.20                   |
 | 2025.1                                    | 2.1.10                   |
@@ -154,25 +158,30 @@ See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html
 
 See [here](https://www.jetbrains.com/legal/third-party-software/) for earlier versions.
 
-### Kotlin Coroutines Libraries (kotlinx.coroutines)
+### Kotlin Coroutines Libraries (`kotlinx.coroutines`)
 
 {id="coroutinesLibraries"}
 
-Plugins _must_ always use the bundled library from the target IDE and not bundle their own version.
-Make sure it is not added via transitive dependencies either
-(see [View and Debug Dependencies](https://docs.gradle.org/current/userguide/viewing_debugging_dependencies.html) in the Gradle user guide).
+> Plugins must always use the bundled library from the target IDE and not provide their own version.
+>
+{style="warning" title="Use Bundled Library"}
 
-Since 2024.2, a custom [fork](https://github.com/JetBrains/intellij-deps-kotlinx.coroutines) with additional patches is bundled.
+Make sure it is not added via transitive dependencies,
+see [View and Debug Dependencies](https://docs.gradle.org/current/userguide/viewing_debugging_dependencies.html) in the Gradle user guide.
 
 See [](kotlin_coroutines.md) on how to use them in plugins.
 
-| IntelliJ Platform version (latest update) | Bundled _kotlinx-coroutines_ version |
+#### Bundled `kotlinx-coroutines` Versions
+
+| IntelliJ Platform version (latest update) | Bundled `kotlinx-coroutines` version |
 |-------------------------------------------|--------------------------------------|
 | 2025.2                                    | 1.10.1-intellij-4                    |
 | 2025.1                                    | 1.8.0-intellij-13                    |
 | 2024.3                                    | 1.8.0-intellij-11                    |
-| 2024.2                                    | 1.8.0-intellij-9                     |
+| 2024.2                                    | 1.8.0-intellij-9 (*)                 |
 | 2024.1                                    | 1.7.3                                |
+
+(*) Since 2024.2, a custom [fork](https://github.com/JetBrains/intellij-deps-kotlinx.coroutines) with additional patches is bundled.
 
 ### Other Bundled Kotlin Libraries
 

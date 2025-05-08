@@ -49,7 +49,6 @@ for programmatic registration.
 ## User Interface
 
 * [How do I enable file name completion in a combo box?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139509-Combobox-with-Browse-Button-and-Autocompletion-)
-* [How do I provide a custom icon for files/PSI elements?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206143779-Is-it-possible-to-change-icon-of-file-in-Project-view-)
 
 ## General
 

@@ -10,7 +10,7 @@
 
 **UI Guidelines:** [Icons list](https://intellij-icons.jetbrains.design), [](icons_style.md)
 
-**See also**: [UI FAQ - Icons](ui_faq.md#icons)
+**See also**: [User Interface FAQ - Icons](ui_faq.md#icons)
 
 </tldr>
 

@@ -46,10 +46,6 @@ for programmatic registration.
 * [How do I clear the read-only status of a file?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206142039-Clear-read-only-status)
 * [How can I show an editor with error highlighting in a tool window?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206146679-Error-highlighting-in-Editors)
 
-## User Interface
-
-* [How do I enable file name completion in a combo box?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139509-Combobox-with-Browse-Button-and-Autocompletion-)
-
 ## General
 
 * [How can I implement a custom stack trace analyzer?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206142959-Stack-Analyzer-extension)

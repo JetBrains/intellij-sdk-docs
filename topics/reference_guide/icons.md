@@ -173,49 +173,6 @@ All icon files must be placed in the same directory following this naming patter
 | Light + [HiDPI](#hidpi-version) | <path>iconName@2x.svg</path>      | 2&times;W &times; 2&times;H |
 | Dark + [HiDPI](#hidpi-version)  | <path>iconName@2x_dark.svg</path> | 2&times;W &times; 2&times;H |
 
-## Animated Icons
-
-<tldr>
-
-**UI Guidelines:** [](loader.md)
-
-</tldr>
-
-Animated icons are a way to show that a plugin is now performing some long-time action, e.g., when the plugin is loading some data.
-
-Any animated icon is a set of frames that loop with a delay.
-
-To create a new animated icon, use the
-[`AnimatedIcon`](%gh-ic%/platform/ide-core/src/com/intellij/ui/AnimatedIcon.java).
-To create an icon where frames follow each other with the same delay, use a constructor that accepts a delay and icons:
-
-```java
-AnimatedIcon icon = new AnimatedIcon(
-    500,
-    AllIcons.Ide.Macro.Recording_1,
-    AllIcons.Ide.Macro.Recording_2);
-```
-
-To create an icon from frames with different delays, use `AnimatedIcon.Frame`.
-Each frame represents an icon, and a delay until the next frame.
-
-> Set [`AnimatedIcon.ANIMATION_IN_RENDERER_ALLOWED`](%gh-ic%/platform/ide-core/src/com/intellij/ui/AnimatedIcon.java) client property to `true` for list, table,
-> and tree components to repaint animated icons automatically.
-> See its Javadoc for details.
-
-#### Progress Icon
-
-Use the predefined `AnimatedIcon.Default` loader icon to indicate a long process.
-This icon has a larger `AnimatedIcon.Big` version.
-
-Alternatively, use [`AsyncProcessIcon`](%gh-ic%/platform/platform-api/src/com/intellij/util/ui/AsyncProcessIcon.java).
-
-## Icon Tooltips
-
-Register a resource bundle via <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.iconDescriptionBundle"/></include> to provide tooltips automatically for all [`SimpleColoredComponent`](%gh-ic%/platform/platform-api/src/com/intellij/ui/SimpleColoredComponent.java) renderers.
-
-Create `icon.<icon-path>.tooltip` key in the resource bundle, where `<icon-path>` is the icon path with leading slash and `.svg` removed and slashes replaced with dots (e.g., `/nodes/class.svg` &rarr; `icon.nodes.class.tooltip`).
-
 ## New UI Icons
 <primary-label ref="2022.3"/>
 
@@ -306,3 +263,48 @@ prescribed colors within their icons:
 > will be updated soon and currently don't include information about the New UI.
 >
 {style="note"}
+
+## Animated Icons
+
+<tldr>
+
+**UI Guidelines:** [](loader.md)
+
+</tldr>
+
+Animated icons are a way to show that a plugin is now performing some long-time action, e.g., when the plugin is loading some data.
+
+Any animated icon is a set of frames that loop with a delay.
+
+To create a new animated icon, use the
+[`AnimatedIcon`](%gh-ic%/platform/ide-core/src/com/intellij/ui/AnimatedIcon.java).
+To create an icon where frames follow each other with the same delay, use a constructor that accepts a delay and icons:
+
+```java
+AnimatedIcon icon = new AnimatedIcon(
+    500,
+    AllIcons.Ide.Macro.Recording_1,
+    AllIcons.Ide.Macro.Recording_2);
+```
+
+To create an icon from frames with different delays, use `AnimatedIcon.Frame`.
+Each frame represents an icon, and a delay until the next frame.
+
+> Set [`AnimatedIcon.ANIMATION_IN_RENDERER_ALLOWED`](%gh-ic%/platform/ide-core/src/com/intellij/ui/AnimatedIcon.java) client property to `true` for list, table,
+> and tree components to repaint animated icons automatically.
+> See its Javadoc for details.
+
+#### Progress Icon
+
+Use the predefined `AnimatedIcon.Default` loader icon to indicate a long process.
+This icon has a larger `AnimatedIcon.Big` version.
+
+Alternatively, use [`AsyncProcessIcon`](%gh-ic%/platform/platform-api/src/com/intellij/util/ui/AsyncProcessIcon.java).
+
+## Icon Tooltips
+
+Register a resource bundle via <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.iconDescriptionBundle"/></include> to provide tooltips automatically for all [`SimpleColoredComponent`](%gh-ic%/platform/platform-api/src/com/intellij/ui/SimpleColoredComponent.java) renderers.
+
+Create `icon.<icon-path>.tooltip` key in the resource bundle, where `<icon-path>` is the icon path with leading slash and `.svg` removed and slashes replaced with dots:
+
+<path>/nodes/class.svg</path> &rarr; `icon.nodes.class.tooltip`

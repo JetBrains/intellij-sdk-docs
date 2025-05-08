@@ -61,7 +61,7 @@ See [](intellij_community_plugins_extension_point_list.md) for API from bundled 
 
 [](idea_ultimate.md) provides information specific to this edition.
 
-## Java
+## Java Plugin
 
 <tldr>
 
@@ -69,7 +69,7 @@ See [](intellij_community_plugins_extension_point_list.md) for API from bundled 
 
 </tldr>
 
-Configure Java [plugin dependency](plugin_dependencies.md) with plugin ID `com.intellij.java`.
+Configure bundled Java [plugin dependency](plugin_dependencies.md) with plugin ID `com.intellij.java`.
 
 [PSI Cookbook](psi_cookbook.md#java-specific) lists a number of common operations for working with Java PSI.
 
@@ -81,7 +81,7 @@ To use existing test base classes, add `TestFrameworkType.Plugin.Java` test-fram
 
 Alternatively, specify `com.jetbrains.intellij.java:java-test-framework:$VERSION$` as `testImplementation` dependency explicitly (see [IntelliJ Platform Artifacts Repositories](intellij_artifacts.md#gradle-example-for-an-individual-module-from-the-intellij-platform)).
 
-## Kotlin
+## Kotlin Plugin
 
 <tldr>
 
@@ -89,6 +89,6 @@ Alternatively, specify `com.jetbrains.intellij.java:java-test-framework:$VERSION
 
 </tldr>
 
-Configure Kotlin [plugin dependency](plugin_dependencies.md) with plugin ID `org.jetbrains.kotlin`.
+Configure bundled Kotlin [plugin dependency](plugin_dependencies.md) with plugin ID `org.jetbrains.kotlin`.
 
 See also [UAST](uast.md) on how to support multiple JVM languages, including Kotlin.

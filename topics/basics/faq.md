@@ -2,12 +2,16 @@
 
 # Plugin Development FAQ
 
-<link-summary>List of plugin development forum topics with frequently asked questions.</link-summary>
+<link-summary>Miscellaneous frequently asked questions.</link-summary>
 
-This FAQ is a topical index of questions that have been asked (and answered) on the archived
-[IntelliJ IDEA Open API and Plugin Development forum](https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development).
-See [](getting_help.topic#problems-with-code-support-issues) on how to post new questions.
+This page contains miscellaneous FAQs. See [](getting_help.topic#problems-with-code-support-issues) on how to post new questions.
 
+> Other common FAQs:
+> - [](ide_infrastructure.md)
+> - [](ui_faq.md)
+> - [](testing_faq.md)
+> - [](tools_intellij_platform_gradle_plugin_faq.md)
+>
 > See also [](explore_api.md) for more information and strategies.
 >
 

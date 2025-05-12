@@ -80,7 +80,7 @@ The most important methods are:
 - `setupUI()` — defines the UI components for the step. Step UI is built with [](kotlin_ui_dsl_version_2.md)
 - `setupProject()` — applies the parameters provided in UI to the generated project
 
-See the example implementations in the in the [`intellij-community`](https://github.com/JetBrains/intellij-community).
+See the example implementations in the [`intellij-community`](https://github.com/JetBrains/intellij-community).
 
 Steps build a tree structure (read the rest of this section for details), as some steps can be displayed depending on previously selected options.
 `setupUI()` and `setupProject()` of steps building the tree are applied in the order from root to leaf.
@@ -153,12 +153,12 @@ Note that [language project generators](#language-project-generators) already in
 {style=warning}
 
 It is often required to populate a created project with initial assets like:
-- directory structure, for example, `src/main/java`, `src/main/resources`, `src/test/java`, `src/test/resources` in a Gradle Java project
-- a build-tool-specific `.gitignore` file ignoring build and other directories and files
+- directory structure, for example, <path>src/main/java</path>, <path>src/main/resources</path>, <path>src/test/java</path>, <path>src/test/resources</path> in a Gradle Java project
+- a build-tool-specific <path>.gitignore</path> file ignoring build and other directories and files
 - sample code
 
 This can be achieved by creating a step extending [`AssetsNewProjectWizardStep`](%gh-ic%/java/idea-ui/src/com/intellij/ide/projectWizard/generators/AssetsNewProjectWizardStep.kt).
-It allows for adding directories, static assets, assets generated from Freemarker templates, and granting them proper file permissions.
+It allows for adding directories, static assets, assets generated from [Freemarker templates](https://freemarker.apache.org/docs/dgui_quickstart_template.html), and granting them proper file permissions.
 
 See example implementations in the [`intellij-community`](https://github.com/JetBrains/intellij-community) repository.
 
@@ -207,6 +207,8 @@ The table below shows the supported languages with corresponding interfaces and 
 Project wizards with multiple steps may require sharing data between them.
 The recommended approach includes the following implementation steps:
 
+<procedure>
+
 1. Create an interface exposing step's shared properties, for example, `ExampleData`:
    ```kotlin
    interface ExampleData {
@@ -252,6 +254,8 @@ The recommended approach includes the following implementation steps:
    }
    ```
 
+</procedure>
+
 Shared data can be accessed in another step in the following way:
 
 ```kotlin
@@ -271,7 +275,7 @@ class AnotherStep(parent: NewProjectWizardStep) :
 
 ### Property Graph
 
-`PropertyGraph` creates an observable dependency graph that automatically propagates changes between related properties.
+[`PropertyGraph`](%gh-ic%/platform/observable/src/com/intellij/openapi/observable/properties/PropertyGraph.kt) creates an observable dependency graph that automatically propagates changes between related properties.
 It is created in the [root step](#root-step) and shared between all descendant steps via [`AbstractNewProjectWizardStep.propertyGraph`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/wizard/AbstractNewProjectWizardStep.kt).
 
 `PropertyGraph` is widely used in wizard steps to create a responsive UI that dynamically updates depending on the user's actions.

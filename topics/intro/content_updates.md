@@ -12,8 +12,8 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2025
 
-### April
-{#april-25}
+### May
+{#may-25}
 
 New Project Wizard
 : Add a new section about implementing project wizards: [](new_project_wizard.md).

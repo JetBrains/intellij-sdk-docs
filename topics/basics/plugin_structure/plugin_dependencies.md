@@ -95,10 +95,10 @@ See also [](plugin_compatibility.md#modules-specific-to-functionality).
 | Gradle                    | `com.intellij.gradle`           |                                                                                  |
 | Groovy                    | `org.intellij.groovy`           |                                                                                  |
 | IntelliLang               | `org.intellij.intelliLang`      | [](language_injection.md)                                                        |
-| Java                      | `com.intellij.java`             | [](idea.md#java)                                                                 |
+| Java                      | `com.intellij.java`             | [](idea.md#java-plugin)                                                          |
 | JavaScript and TypeScript | `JavaScript`                    | [](webstorm.md)                                                                  |
 | JSON                      | `com.intellij.modules.json`     | [JSON plugin introduction notes](api_changes_list_2024.md#json-plugin-new-20243) |
-| Kotlin                    | `org.jetbrains.kotlin`          | [](idea.md#kotlin)                                                               |
+| Kotlin                    | `org.jetbrains.kotlin`          | [](idea.md#kotlin-plugin)                                                        |
 | Markdown                  | `org.intellij.plugins.markdown` |                                                                                  |
 | Maven                     | `org.jetbrains.idea.maven`      |                                                                                  |
 | Spring                    | `com.intellij.spring`           | [](spring_api.md)                                                                |

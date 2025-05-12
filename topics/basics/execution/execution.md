@@ -134,7 +134,7 @@ For starting the process, it's recommended to use the [`GeneralCommandLine`](%gh
 
 Alternatively, if the process is a JVM-based one, use the [`JavaCommandLineState`](%gh-ic%/java/execution/impl/src/com/intellij/execution/configurations/JavaCommandLineState.java) base class.
 It handles the JVM command line parameters and can take care of details like calculating the classpath for the JVM.
-Note that using this class requires [dependency](plugin_dependencies.md) on [the Java plugin](idea.md#java).
+Note that using this class requires a [dependency](plugin_dependencies.md) on the [](idea.md#java-plugin).
 
 ### Process Handler
 

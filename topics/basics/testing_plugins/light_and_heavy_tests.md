@@ -46,7 +46,7 @@ for tests that don't have any dependency on Java functionality.
 >
 {title="Java Test Framework (2024.2+)"}
 
-For tests that require the [Java PSI](idea.md#java) or related functionality:
+For tests that require the [Java PSI](idea.md#java-plugin) or related functionality:
 - [`LightJavaCodeInsightFixtureTestCase`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) for JUnit 3
 - [`LightJavaCodeInsightFixtureTestCase4`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase4.kt) for JUnit 4 (2021.1 and later)
 - [`LightJavaCodeInsightFixtureTestCase5`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase5.kt) for JUnit 5 (2021.1 and later)

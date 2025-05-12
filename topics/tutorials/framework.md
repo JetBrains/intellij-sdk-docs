@@ -7,7 +7,7 @@
 The following tutorial shows how to support a custom framework type for a project and make this framework type embedded in a [project wizard](project_wizard.md) as a UI component.
 The examples in this tutorial rely heavily on the [framework_basics](%gh-sdk-samples-master%/framework_basics) code sample.
 
-> Note that this feature requires a [dependency](plugin_dependencies.md) on [the Java plugin](idea.md#java).
+> Note that this feature requires a [dependency](plugin_dependencies.md) on the [](idea.md#java-plugin).
 >
 {style="warning"}
 

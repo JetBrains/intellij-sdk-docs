@@ -16,7 +16,7 @@
 
 This page describes developing plugins using the [Kotlin](https://kotlinlang.org) programming language.
 
-> To implement a plugin _operating_ on Kotlin code ([PSI](psi.md)) in the IDE, see [](idea.md#kotlin).
+> To implement a plugin _operating_ on Kotlin code ([PSI](psi.md)) in the IDE, see [](idea.md#kotlin-plugin).
 >
 {title="Operating on Kotlin code"}
 

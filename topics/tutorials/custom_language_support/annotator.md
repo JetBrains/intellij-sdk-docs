@@ -22,7 +22,7 @@ This section adds annotation functionality to support the Simple Language in the
 
 Classes defined in this step of the tutorial depend on `com.intellij.psi.PsiLiteralExpression` (the PSI representation for String literals in Java code) at runtime.
 
-A dependency on the [Java plugin](idea.md#java) must be [declared explicitly](plugin_dependencies.md).
+A dependency on the [Java plugin](idea.md#java-plugin) must be [declared explicitly](plugin_dependencies.md).
 First, add a dependency on the Java plugin in the Gradle build script:
 
 ```kotlin

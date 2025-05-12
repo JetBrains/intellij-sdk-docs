@@ -6,11 +6,6 @@
 
 > Plugins targeting versions 2024.2 and newer should implement the [](new_project_wizard.md).
 
-## Project Wizard
-
-Working with the project wizard can be illustrated with the [RedLine SmallTalk plugin](https://github.com/bulenkov/RedlineSmalltalk).
-See also [](intro_project_wizard.md).
-
 ## Implementing a New Module Type
 
 Additional support for specific tools and technologies is usually done via implementing some certain module type, which is attached to the project.
@@ -29,31 +24,11 @@ These classes and interfaces serve the following purposes:
 
 ### Module Type
 
-To create a new module type, add an extension:
-
-```xml
-<moduleType
-    id="MY_MODULE"
-    implementationClass="st.redline.smalltalk.module.MyModuleType"/>
-```
-
-to the [`plugin.xml`](https://github.com/bulenkov/RedlineSmalltalk/blob/master/resources/META-INF/plugin.xml).
-A custom module type should extend the
-[`ModuleType`](%gh-ic%/platform/lang-core/src/com/intellij/openapi/module/ModuleType.java)
-generic from
-[`ModuleBuilder`](%gh-ic%/platform/lang-core/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java).
-The following [module type implementation](https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleType.java) of a custom module type shows how this instance can be registered and implemented.
+To create a new module type, implement [`ModuleType`](%gh-ic%/platform/lang-core/src/com/intellij/openapi/module/ModuleType.java) parameterized by [`ModuleBuilder`](%gh-ic%/platform/lang-core/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java) and register it in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.moduleType"/></include> in [<path>plugin.xml</path>](plugin_configuration_file.md) file.
 
 ### Implementing Module Builder
 
-To set up a new module environment, [`ModuleBuilder`](%gh-ic%/platform/lang-core/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java) should be extended and registered as an extension point like the following snippet shows:
-
-```xml
-<extensions defaultExtensionNs="com.intellij">
-  <moduleBuilder
-      builderClass="org.jetbrains.plugins.ruby.rails.facet.versions.MyModuleBuilder"/>
-</extensions>
-```
+To set up a new module environment, [`ModuleBuilder`](%gh-ic%/platform/lang-core/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java) should be extended and registered in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.moduleBuilder"/></include>.
 
 Functionality which is mandatory to implement consists of:
 - `void setupRootModel(ModifiableRootModel)` - sets up a root model for the new module
@@ -61,9 +36,9 @@ Functionality which is mandatory to implement consists of:
 
 See [`JavaModuleBuilder`](%gh-ic%/java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java) to understand better how to implement a module builder.
 
-If your module type is based on the Java module and meant to support Java as well, extending [`JavaModuleBuilder`](%gh-ic%/java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java) is enough.
-No extension point needs to be registered.
-Refer to the [SmallTalk module type](https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleType.java) to see how [`JavaModuleBuilder`](%gh-ic%/java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java) can be derived.
+> If your module type is based on the Java module and meant to support Java as well, extending [`JavaModuleBuilder`](%gh-ic%/java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java) is enough.
+> No extension point needs to be registered.
+> Refer to the [`GroovyAwareModuleBuilder`](%gh-ic%/plugins/groovy/src/org/jetbrains/plugins/groovy/config/GroovyAwareModuleBuilder.java) to see how [`JavaModuleBuilder`](%gh-ic%/java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java) can be extended.
 
 > Starting with the 2022.1 release, IntelliJ-based IDEs use the refreshed project wizard, and some module builder base classes return `false` from `isAvailable()` when the new wizard is enabled.
 > If your module builder is not visible in 2022.1, make sure that your `ModuleBuilder.isAvailable()` returns `true`.
@@ -76,15 +51,14 @@ Module builder listener reacts on a new module creation, which could be done eit
 To provide a certain behavior right after a module has been created, a module builder must implement [`ModuleBuilderListener.moduleCreated(Module)`](%gh-ic%/platform/lang-core/src/com/intellij/ide/util/projectWizard/ModuleBuilderListener.java).
 
 Examples of the tasks executed right after a module has been created may include configuring module roots, looking up for an SDK and setting it up, adding a specific facet if required, etc.
-For more details, please see the following [SmallTalk custom module type](https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleType.java) implementation.
 
 ### Adding New Wizard Steps
 
 Adding new steps to the module wizard can be done by overriding [`AbstractModuleBuilder.createWizardSteps(WizardContext, ModulesProvider)`](%gh-ic%/platform/lang-core/src/com/intellij/ide/util/projectWizard/AbstractModuleBuilder.java).
-See an example [module builder](https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleBuilder.java).
+
 If this method returns a non-empty array of [`ModuleWizardStep`](%gh-ic%/platform/lang-core/src/com/intellij/ide/util/projectWizard/ModuleWizardStep.java) objects, new steps will be shown in their indexing order while creating a new module.
-The following [implementation](https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleWizardStep.java) for the SmallTalk project type illustrates how a custom wizard step can be created.
-The [`RsModuleWizardStep`](https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleWizardStep.java) class is derived from `ModuleWizardStep`, which has two methods to be overridden:
+
+`ModuleWizardStep` has two methods to be overridden:
 - `JComponent getComponent()` - defines the step's UI
 - `void updateDataModel()` - commits data from UI into `ModuleBuilder` and `WizardContext`
 
@@ -98,9 +72,7 @@ To understand facets better from the end-user's point of view, see the [](facet.
 To support the creation of your module when a project is imported from existing sources, extend [`ProjectStructureDetector`](%gh-ic%/java/idea-ui/src/com/intellij/ide/util/projectWizard/importSources/ProjectStructureDetector.java).
 To detect the files your module supports, implement `ProjectStructureDetector.detectRoots()`.
 
-Refer to the [Smalltalk project structure detector](https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsProjectStructureDetector.java) to see an example implementation.
-
-But detecting the files is not enough, you also need to create a module for the project if appropriate by implementing `setupProjectStructure()`.
+Detecting files is not enough - it is also required to create a module for the project, if appropriate, by implementing `setupProjectStructure()`.
 Here is an example that creates a module if no other modules exist in the project structure.
 
 ```java

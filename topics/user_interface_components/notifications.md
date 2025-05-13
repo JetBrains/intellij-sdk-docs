@@ -83,7 +83,9 @@ It has two main advantages:
 > See [](tool_windows.md#tool-window-notification) for showing balloons for a specific tool window.
 
 The specific method used to display a notification is [`Notifications.Bus.notify()`](%gh-ic%/platform/ide-core/src/com/intellij/notification/Notifications.java).
-If the current Project is known, please use overload with the ` Project ` parameter, so the notification is shown in its associated frame.
+If the current Project is known, please use overload with the `Project` parameter, so the notification is shown in its associated frame.
+
+> See [how to access a current project instance](project.md#how-to-get-a-project-instance) in different contexts.
 
 The text of the notification can include HTML tags for presentation purposes.
 Use `Notification.addAction(AnAction)` to add links below the content, use [`NotificationAction`](%gh-ic%/platform/ide-core/src/com/intellij/notification/NotificationAction.java) for convenience.
@@ -98,7 +100,6 @@ the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.int
 Use `key` to provide a localized group display name.
 
 ```xml
-
 <extensions defaultExtensionNs="com.intellij">
   <notificationGroup id="Custom Notification Group"
                      displayType="BALLOON"

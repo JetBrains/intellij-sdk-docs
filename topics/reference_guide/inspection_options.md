@@ -141,7 +141,7 @@ It returns the panel with option components that bind the provided values to the
 Note that since version 2023.1, this method is ignored if `InspectionProfileEntry.getOptionPane()` returns a non-empty panel.
 
 **Example:**
-[`SizeReplaceableByIsEmptyInspection`](%gh-ic-223%/plugins/InspectionGadgets/src/com/siyeh/ig/style/SizeReplaceableByIsEmptyInspection.java)
+[`SizeReplaceableByIsEmptyInspection`](%gh-ic-223-master%/plugins/InspectionGadgets/src/com/siyeh/ig/style/SizeReplaceableByIsEmptyInspection.java)
 in version 2022.3, implemented using the UI-approach
 
 For simple customization requirements, see also:

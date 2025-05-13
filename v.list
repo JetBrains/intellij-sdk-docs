@@ -10,14 +10,14 @@
   <var name="ijPlatformBuild" value="251.25410.109"/>
 
 
-  <!-- Links to master/main branches **MUST** have "-master" suffix for recheck when running inspection globally -->
+  <!-- Links to branches **MUST** have "-master" suffix for recheck when running inspection globally -->
 
   <var name="gh-sdk-samples-master" value="https://github.com/JetBrains/intellij-sdk-code-samples/tree/main"/>
 
   <var name="gh-ic" value="https://github.com/JetBrains/intellij-community/tree/idea/%ijPlatformBuild%"/>
   <var name="gh-ic-master" value="https://github.com/JetBrains/intellij-community/tree/master"/>
-  <var name="gh-ic-242" value="https://github.com/JetBrains/intellij-community/blob/242"/>
-  <var name="gh-ic-223" value="https://github.com/JetBrains/intellij-community/blob/223"/>
+  <var name="gh-ic-242-master" value="https://github.com/JetBrains/intellij-community/tree/242"/>
+  <var name="gh-ic-223-master" value="https://github.com/JetBrains/intellij-community/tree/223"/>
 
   <var name="gh-ij-android" value="https://github.com/JetBrains/android/tree/idea/%ijPlatformBuild%"/>
 
@@ -27,8 +27,8 @@
   <var name="gh-jcef-master" value="https://github.com/JetBrains/jcef/tree/master/java"/>
   <var name="gh-java-annotations" value="https://github.com/JetBrains/java-annotations/tree/24.0.0"/>
 
-  <var name="gh-ijpgp-master" value="https://github.com/JetBrains/intellij-platform-gradle-plugin/blob/main"/>
-  <var name="gh-pv-master" value="https://github.com/JetBrains/intellij-plugin-verifier/blob/master"/>
+  <var name="gh-ijpgp-master" value="https://github.com/JetBrains/intellij-platform-gradle-plugin/tree/main"/>
+  <var name="gh-pv-master" value="https://github.com/JetBrains/intellij-plugin-verifier/tree/master"/>
 
   <var name="gradle-intellij-plugin-version" value="1.17.4"/>
   <var name="intellij-platform-gradle-plugin-version" value="2.5.0"/>

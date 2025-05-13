@@ -13,7 +13,7 @@ The examples in this tutorial rely heavily on the [framework_basics](%gh-sdk-sam
 
 ## Creating a New Framework
 
-In oder to make a custom framework available and configurable for a project the [`FrameworkTypeEx`](%gh-ic%/java/idea-ui/src/com/intellij/framework/FrameworkTypeEx.java) class needs to be extended, in this example to make the [DemoFramework](%gh-sdk-samples-master%/framework_basics/src/main/java/org/intellij/sdk/framework/DemoFramework.java) class.
+In order to make a custom framework available and configurable for a project, the [`FrameworkTypeEx`](%gh-ic%/java/idea-ui/src/com/intellij/framework/FrameworkTypeEx.java) class needs to be extended, in this example to make the [DemoFramework](%gh-sdk-samples-master%/framework_basics/src/main/java/org/intellij/sdk/framework/DemoFramework.java) class.
 
 ```java
 final class DemoFramework extends FrameworkTypeEx {
@@ -115,6 +115,6 @@ public FrameworkSupportInModuleProvider createProvider() {
 
 See [Code Samples](code_samples.md) on how to set up and run the plugin.
 
-Extra option for configuring the newly created Demo custom framework should be available in the Project Wizard:
+An extra option for configuring the newly created Demo custom framework should be available in the Project Wizard:
 
 ![Custom Framework Support](custom_framework.png)

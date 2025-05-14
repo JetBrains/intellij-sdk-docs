@@ -18,6 +18,12 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 New Project Wizard
 : Add a new section about implementing project wizards: [](new_project_wizard.md).
 
+Minor Changes and Additions
+:
+- Add [](editors.md#editors-faq) section.
+- Extension Points and Listeners are now grouped per plugin, for example, [](intellij_community_plugins_extension_point_list.md#java-plugin).
+- Revise and expand [](code_completion.md), [](icons.md), [UI FAQ: Icons](ui_faq.md#icons) sections.
+
 ### March
 {march-25}
 

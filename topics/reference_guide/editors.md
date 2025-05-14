@@ -1,10 +1,11 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Editors
 
 <link-summary>The Editors section overview.</link-summary>
 
-This section covers working with text in the IntelliJ Platform editor.
+This section covers working with text in the IntelliJ Platform editor:
+
 * [](editor_basics.md)
 * [](text_selection.md)
 * [](multiple_carets.md)
@@ -18,6 +19,12 @@ Current select editor(s) can be queried from [`FileEditorManager`](%gh-ic%/platf
 From an [Action's `DataContext`](action_system.md#determining-the-action-context), use [`CommonDataKeys.EDITOR`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/CommonDataKeys.java).
 
 For a given PSI Element, use [`PsiEditorUtil.findEditor()`](%gh-ic%/platform/editor-ui-api/src/com/intellij/psi/util/PsiEditorUtil.java)
+
+### How can I be notified about editor events?
+
+Use project-level listener [`FileEditorManagerListener`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/fileEditor/FileEditorManagerListener.java)
+or [`FileEditorManagerListener$Before`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/fileEditor/FileEditorManagerListener.java)
+to be notified about all file open/closed/selection changed events.
 
 ### How do I open an text editor for a "fake" file?
 

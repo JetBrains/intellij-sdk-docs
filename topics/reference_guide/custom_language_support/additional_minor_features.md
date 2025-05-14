@@ -10,7 +10,8 @@ _EP: `fully.qualified.extensionPointName`_ — Extension Point Name (must be spe
 
 _`com.extensionPoint.class`_ _description text_ — Extension Point class/interface to provide functionality
 
-> See also [](intellij_platform_extension_point_list.md#langextensionpointsxml) to discover more Language-related Extension Points as well as general guide [](explore_api.md).
+> See also [](intellij_platform_extension_point_list.md#langextensionpointsxml) to discover more Language-related Extension Points
+> as well as the general guide [](explore_api.md).
 >
 {title="Locating more Language EPs"}
 
@@ -43,7 +44,7 @@ If the brace matching is "too heavy" and should not be executed in [EDT](threadi
 
 EP: <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.quoteHandler"/></include>
 
-To support <control>Insert pair quote</control> feature, provide [`QuoteHandler`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/editorActions/QuoteHandler.java).
+To support the <control>Insert pair quote</control> feature, provide [`QuoteHandler`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/editorActions/QuoteHandler.java).
 In most cases, [`SimpleTokenSetQuoteHandler`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/editorActions/SimpleTokenSetQuoteHandler.java) base implementation will be suitable.
 
 ### Comment Code
@@ -79,8 +80,8 @@ EP: <include from="snippets.topic" element-id="epLink"><var name="ep" value="com
 
 EP: <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.moveLeftRightHandler"/></include>
 
-Return children of given element from [`MoveElementLeftRightHandler`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/moveLeftRight/MoveElementLeftRightHandler.java) for <ui-path>Code | Move Element Left|Right</ui-path>, e.g., method call parameters.
-Alternatively, implement [`PsiListLikeElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiListLikeElement.java) in PSI element.
+Return children of the given element from [`MoveElementLeftRightHandler`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/moveLeftRight/MoveElementLeftRightHandler.java) for <ui-path>Code | Move Element Left|Right</ui-path>, e.g., method call parameters.
+Alternatively, implement [`PsiListLikeElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiListLikeElement.java) in the PSI element.
 
 ### Move Statements Up and Down in the Editor
 
@@ -88,7 +89,7 @@ EP: <include from="snippets.topic" element-id="epLink"><var name="ep" value="com
 
 [`StatementUpDownMover`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/moveUpDown/StatementUpDownMover.java)
 allows for customizing the behavior of moving statements up and down.
-This can be used to keep code syntactically correct when moving code in the editor, e.g. when moving
+This can be used to keep code syntactically correct when moving code in the editor, e.g., when moving
 a variable declaration.
 
 ### Splitting and Joining List Constructs
@@ -168,7 +169,7 @@ allows for language-specific [breadcrumbs](https://www.jetbrains.com/help/idea/n
 
 EP: <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.colorProvider"/></include>
 
-[`ElementColorProvider`](%gh-ic%/platform/lang-api/src/com/intellij/openapi/editor/ElementColorProvider.java) renders gutter icon for an element containing color information.
+[`ElementColorProvider`](%gh-ic%/platform/lang-api/src/com/intellij/openapi/editor/ElementColorProvider.java) renders a gutter icon for an element containing color information.
 
 ### File Includes
 
@@ -195,22 +196,6 @@ Please see
 [the documentation](https://www.jetbrains.com/help/idea/reader-mode.html)
 to get familiar with reader mode.
 
-### Background Colors for Editors and Project View
-
-EP: <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editorTabColorProvider"/></include>
-
-[`EditorTabColorProvider`](%gh-ic%/platform/ide-core-impl/src/com/intellij/openapi/fileEditor/impl/EditorTabColorProvider.java)
-allows for the modification of the background colors for specific files.
-If access to indexes is not required, it can be marked [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI).
-
-### Custom Names and Tooltips for Editor Tabs
-
-EP: <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editorTabTitleProvider"/></include>
-
-[`EditorTabTitleProvider`](%gh-ic%/platform/ide-core-impl/src/com/intellij/openapi/fileEditor/impl/EditorTabTitleProvider.kt)
-allows for specifying custom names and tooltips displayed in the title of editor tabs.
-If access to indexes is not required, it can be marked [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI).
-
 ### Provide Fully Qualified Names (FQN) for Elements
 
 EP: <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.qualifiedNameProvider"/></include>
@@ -222,7 +207,7 @@ Therefore, the `QualifiedNameProvider` implementation needs to provide logic to 
 ### Customized "Copy Path"
 
 Extend from [`CopyPathProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/CopyPathProvider.kt)
-[action](action_system.md) (or `DumbAwareCopyPathProvider` if [no indexes needed](indexing_and_psi_stubs.md#DumbAwareAPI))
+[action](action_system.md) (or `DumbAwareCopyPathProvider` if [no indexes are needed](indexing_and_psi_stubs.md#DumbAwareAPI))
 and return a custom (language-specific) path from `getPathToElement()`.
 Register the action with the popup menu group `<add-to-group group-id="CopyReferencePopupGroup"/>`.
 

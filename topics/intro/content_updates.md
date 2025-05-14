@@ -336,9 +336,7 @@ Minor Changes and Additions
   [](additional_minor_features.md#plain-text-completion),
   [](additional_minor_features.md#splitting-and-joining-list-constructs),
   [](additional_minor_features.md#suggesting-rename-and-change-signature-refactorings),
-  [](additional_minor_features.md#reader-mode),
-  [](additional_minor_features.md#background-colors-for-editors-and-project-view),
-  [](additional_minor_features.md#custom-names-and-tooltips-for-editor-tabs).
+  [](additional_minor_features.md#reader-mode).
 - Add small section to [](project_view.md#decorating-project-view-nodes) describing how to modify the representation of nodes in the project view.
 - Add [](rename_refactoring.md) paragraphs mentioning `RenameInputValidator(Ex)`.
 

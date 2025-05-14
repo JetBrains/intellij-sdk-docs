@@ -2,11 +2,14 @@
 
 # Editors
 
-<link-summary>The Editors section overview.</link-summary>
+<link-summary>The Editors section overview/FAQ.</link-summary>
 
 This section covers working with text in the IntelliJ Platform editor:
 
-* [](editor_basics.md)
+* Tutorial: [](editor_basics.md)
+  * [](working_with_text.md)
+  * [](coordinates_system.md)
+  * [](editor_events.md)
 * [](text_selection.md)
 * [](multiple_carets.md)
 

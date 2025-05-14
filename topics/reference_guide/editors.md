@@ -4,6 +4,12 @@
 
 <link-summary>The Editors section overview/FAQ.</link-summary>
 
+<tldr>
+
+**Product Help**: [Editor basics](https://www.jetbrains.com/help/idea/using-code-editor.html)
+
+</tldr>
+
 This section covers working with text in the IntelliJ Platform editor:
 
 * Tutorial: [](editor_basics.md)

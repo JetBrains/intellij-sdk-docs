@@ -4,6 +4,8 @@
 
 <link-summary>Introduction to IntelliJ Platform plugin development.</link-summary>
 
+<include from="intellij_platform.md" element-id="pluginAlternatives"/>
+
 > See [Themes](themes_getting_started.md) for information about UI theme development.
 >
 {style="note" title="UI Themes"}
@@ -11,7 +13,6 @@
 This section covers the basics of working with the IntelliJ Platform.
 It will familiarize you with the working environment, project structure, and frequently used API components.
 
-* [](plugin_alternatives.md)
 * [](plugin_required_experience.md)
 * [](plugin_types.md)
 * [](developing_plugins.md)

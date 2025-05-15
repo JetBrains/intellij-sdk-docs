@@ -29,7 +29,7 @@
         <noindex-content status="release">false</noindex-content>
 
         <algolia-id>JWPLKSKZVF</algolia-id>
-        <algolia-index>prod_INTELLIJ-SDK-DOCS_HELP</algolia-index>
+        <algolia-index>staging_INTELLIJ-SDK-DOCS_HELP</algolia-index>
         <algolia-api-key>bce9ba6ce7419efe813d671244d3bf6a</algolia-api-key>
         <algolia-product-id>intellij</algolia-product-id>
         <algolia-product-version></algolia-product-version>

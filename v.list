@@ -31,7 +31,7 @@
   <var name="gh-pv-master" value="https://github.com/JetBrains/intellij-plugin-verifier/tree/master"/>
 
   <var name="gradle-intellij-plugin-version" value="1.17.4"/>
-  <var name="intellij-platform-gradle-plugin-version" value="2.5.0"/>
+  <var name="intellij-platform-gradle-plugin-version" value="2.6.0"/>
   <var name="gradle-grammar-kit-plugin-version" value="2022.3.2.2"/>
   <var name="plugin-verifier-version" value="1.385"/>
   <var name="marketplace-zip-signer-version" value="0.1.34"/>

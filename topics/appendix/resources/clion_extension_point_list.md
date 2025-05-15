@@ -25,326 +25,326 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 
 | Topic | Listener |
 |-------|----------|
-| [CubeMXManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.clion.embedded.stm32cubemx.CubeMXManager.CubeStatusListener)  | `CubeStatusListener` |
-| [WestProjectListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.clion.west.WestProjectListener)  | `WestProjectListener` |
-| [WestConfigListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.clion.west.config.WestConfigListener)  | `WestConfigListener` |
-| [Listener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.clion.west.settings.WestSettings.Listener)  | `Listener` |
-| [FileSymbolTablesCache#OUT_OF_CODE_BLOCK_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.psi.util.PsiModificationTracker.Listener)  ![Project-Level][project-level] | [`Listener`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/PsiModificationTracker.java) |
-| [ConsistencyErrorTopicListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.rml.dfa.utils.ConsistencyErrorTopicListener)  | `ConsistencyErrorTopicListener` |
-| [CMakeSettingsListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.cmake.CMakeSettingsListener)  | `CMakeSettingsListener` |
-| [Listener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.cmake.python.CMakePythonSdkService.Companion.Listener)  | `Listener` |
-| [Listener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.cmake.python.CMakePythonSettingListenerService.Companion.Listener)  | `Listener` |
-| [Listener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.cmake.python.CMakePythonSettingsService.Listener)  | `Listener` |
-| [CMakeWorkspaceListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.cmake.workspace.CMakeWorkspaceListener)  | `CMakeWorkspaceListener` |
-| [CompDBSettingsListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.compdb.settings.CompDBSettingsListener)  | `CompDBSettingsListener` |
-| [CLionExternalBuildManagerListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.execution.external.build.CLionExternalBuildManagerListener)  | `CLionExternalBuildManagerListener` |
-| [ClionProjectToolManagerListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.execution.external.build.ClionProjectToolManagerListener)  | `ClionProjectToolManagerListener` |
-| [MakefileBuildTargetsManagerListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.makefile.execution.build.MakefileBuildTargetsManagerListener)  | `MakefileBuildTargetsManagerListener` |
-| [MakefileSettingsListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.makefile.settings.MakefileSettingsListener)  | `MakefileSettingsListener` |
-| [CPPToolchainsConfigurable#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.toolchains.CPPToolchainsConfigurable.Listener)  | `Listener` |
-| [CPPToolchainsListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.toolchains.CPPToolchainsListener)  | `CPPToolchainsListener` |
-| [CidrBuildListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.execution.build.CidrBuildListener)  ![Project-Level][project-level] | `CidrBuildListener` |
-| [CidrHighlighterNotifierService#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.execution.testing.CidrHighlighterNotifierService.LineMarkNotifier)  | `LineMarkNotifier` |
-| [CidrTestScopeService#TEST_SCOPE_LISTENER_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.execution.testing.CidrTestScopeService.TestScopeListener)  | `TestScopeListener` |
-| [ExternalWorkspaceListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.external.system.workspace.ExternalWorkspaceListener)  | `ExternalWorkspaceListener` |
-| [ClangLanguageServiceProviderListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.daemon.clang.clangd.ClangLanguageServiceProviderListener)  | `ClangLanguageServiceProviderListener` |
-| [ClangServerListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.daemon.clang.clangd.lsp.server.ClangServerListener)  | `ClangServerListener` |
-| [ClangTelemetryListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.daemon.clang.clangd.lsp.telemetry.ClangTelemetryListener)  | `ClangTelemetryListener` |
-| [ClangMemoryUsageWatchDogListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.daemon.clang.clangd.memory.ClangMemoryUsageWatchDogListener)  | `ClangMemoryUsageWatchDogListener` |
-| [OCLanguageServiceReparsingPassListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.daemon.clang.clangd.reparsing.OCLanguageServiceReparsingPassListener)  | `OCLanguageServiceReparsingPassListener` |
-| [ClangdSettingsListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.daemon.clang.clangd.settings.ClangdSettingsListener)  | `ClangdSettingsListener` |
-| [ClangdSettingsListener#TOPIC_UI](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.daemon.clang.clangd.settings.ClangdSettingsListener)  | `ClangdSettingsListener` |
-| [CidrInjectionListener#INJECTION_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.editor.CidrInjectionListener)  | `CidrInjectionListener` |
-| [OCInclusionContextListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.preprocessor.OCInclusionContextListener)  | `OCInclusionContextListener` |
-| [FileSymbolTableCacheListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.symbols.symtable.FileSymbolTableCacheListener)  | `FileSymbolTableCacheListener` |
-| [FileSymbolTablesPackListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.symbols.symtable.FileSymbolTablesPackListener)  | `FileSymbolTablesPackListener` |
-| [OCFileSymbolTableListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.symbols.symtable.OCFileSymbolTableListener)  | `OCFileSymbolTableListener` |
-| [OCSymbolBuildingListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.symbols.symtable.building.OCSymbolBuildingListener)  | `OCSymbolBuildingListener` |
-| [OCWorkspaceListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.workspace.OCWorkspaceListener)  | `OCWorkspaceListener` |
-| [Listener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.meson.project.MesonModelManager.Listener)  | `Listener` |
-| [MesonSettingsListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.meson.settings.MesonSettingsListener)  | `MesonSettingsListener` |
-| [PackageManagerEventListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.packagemanager.vcpkg.PackageManagerEventListener)  | `PackageManagerEventListener` |
-| [CidrRootConfigurationListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.project.CidrRootConfigurationListener)  | `CidrRootConfigurationListener` |
-| [CidrWorkspaceInstantaneousStateChangeListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.project.workspace.CidrWorkspaceInstantaneousStateChangeListener)  ![Project-Level][project-level] | `CidrWorkspaceInstantaneousStateChangeListener` |
-| [CidrWorkspaceListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.project.workspace.CidrWorkspaceListener)  | `CidrWorkspaceListener` |
-| [OCRootsSynchronizerListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.project.workspace.OCRootsSynchronizerListener)  | `OCRootsSynchronizerListener` |
-| [RemoteDeploymentListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.system.RemoteDeploymentListener)  | `RemoteDeploymentListener` |
-| [AllowedModules#INVALIDATION_TOPIC](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
+| [`CubeMXManager#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.clion.embedded.stm32cubemx.CubeMXManager.CubeStatusListener)  | `CubeStatusListener` |
+| [`WestProjectListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.clion.west.WestProjectListener)  | `WestProjectListener` |
+| [`WestConfigListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.clion.west.config.WestConfigListener)  | `WestConfigListener` |
+| [`Listener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.clion.west.settings.WestSettings.Listener)  | `Listener` |
+| [`FileSymbolTablesCache#OUT_OF_CODE_BLOCK_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.psi.util.PsiModificationTracker.Listener)  ![Project-Level][project-level] | [`Listener`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/PsiModificationTracker.java) |
+| [`ConsistencyErrorTopicListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.rml.dfa.utils.ConsistencyErrorTopicListener)  | `ConsistencyErrorTopicListener` |
+| [`CMakeSettingsListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.cmake.CMakeSettingsListener)  | `CMakeSettingsListener` |
+| [`Listener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.cmake.python.CMakePythonSdkService.Companion.Listener)  | `Listener` |
+| [`Listener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.cmake.python.CMakePythonSettingListenerService.Companion.Listener)  | `Listener` |
+| [`Listener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.cmake.python.CMakePythonSettingsService.Listener)  | `Listener` |
+| [`CMakeWorkspaceListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.cmake.workspace.CMakeWorkspaceListener)  | `CMakeWorkspaceListener` |
+| [`CompDBSettingsListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.compdb.settings.CompDBSettingsListener)  | `CompDBSettingsListener` |
+| [`CLionExternalBuildManagerListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.execution.external.build.CLionExternalBuildManagerListener)  | `CLionExternalBuildManagerListener` |
+| [`ClionProjectToolManagerListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.execution.external.build.ClionProjectToolManagerListener)  | `ClionProjectToolManagerListener` |
+| [`MakefileBuildTargetsManagerListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.makefile.execution.build.MakefileBuildTargetsManagerListener)  | `MakefileBuildTargetsManagerListener` |
+| [`MakefileSettingsListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.makefile.settings.MakefileSettingsListener)  | `MakefileSettingsListener` |
+| [`CPPToolchainsConfigurable#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.toolchains.CPPToolchainsConfigurable.Listener)  | `Listener` |
+| [`CPPToolchainsListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.toolchains.CPPToolchainsListener)  | `CPPToolchainsListener` |
+| [`CidrBuildListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.execution.build.CidrBuildListener)  ![Project-Level][project-level] | `CidrBuildListener` |
+| [`CidrHighlighterNotifierService#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.execution.testing.CidrHighlighterNotifierService.LineMarkNotifier)  | `LineMarkNotifier` |
+| [`CidrTestScopeService#TEST_SCOPE_LISTENER_TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.execution.testing.CidrTestScopeService.TestScopeListener)  | `TestScopeListener` |
+| [`ExternalWorkspaceListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.external.system.workspace.ExternalWorkspaceListener)  | `ExternalWorkspaceListener` |
+| [`ClangLanguageServiceProviderListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.daemon.clang.clangd.ClangLanguageServiceProviderListener)  | `ClangLanguageServiceProviderListener` |
+| [`ClangServerListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.daemon.clang.clangd.lsp.server.ClangServerListener)  | `ClangServerListener` |
+| [`ClangTelemetryListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.daemon.clang.clangd.lsp.telemetry.ClangTelemetryListener)  | `ClangTelemetryListener` |
+| [`ClangMemoryUsageWatchDogListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.daemon.clang.clangd.memory.ClangMemoryUsageWatchDogListener)  | `ClangMemoryUsageWatchDogListener` |
+| [`OCLanguageServiceReparsingPassListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.daemon.clang.clangd.reparsing.OCLanguageServiceReparsingPassListener)  | `OCLanguageServiceReparsingPassListener` |
+| [`ClangdSettingsListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.daemon.clang.clangd.settings.ClangdSettingsListener)  | `ClangdSettingsListener` |
+| [`ClangdSettingsListener#TOPIC_UI`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.daemon.clang.clangd.settings.ClangdSettingsListener)  | `ClangdSettingsListener` |
+| [`CidrInjectionListener#INJECTION_TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.editor.CidrInjectionListener)  | `CidrInjectionListener` |
+| [`OCInclusionContextListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.preprocessor.OCInclusionContextListener)  | `OCInclusionContextListener` |
+| [`FileSymbolTableCacheListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.symbols.symtable.FileSymbolTableCacheListener)  | `FileSymbolTableCacheListener` |
+| [`FileSymbolTablesPackListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.symbols.symtable.FileSymbolTablesPackListener)  | `FileSymbolTablesPackListener` |
+| [`OCFileSymbolTableListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.symbols.symtable.OCFileSymbolTableListener)  | `OCFileSymbolTableListener` |
+| [`OCSymbolBuildingListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.symbols.symtable.building.OCSymbolBuildingListener)  | `OCSymbolBuildingListener` |
+| [`OCWorkspaceListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.workspace.OCWorkspaceListener)  | `OCWorkspaceListener` |
+| [`Listener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.meson.project.MesonModelManager.Listener)  | `Listener` |
+| [`MesonSettingsListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.meson.settings.MesonSettingsListener)  | `MesonSettingsListener` |
+| [`PackageManagerEventListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.packagemanager.vcpkg.PackageManagerEventListener)  | `PackageManagerEventListener` |
+| [`CidrRootConfigurationListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.project.CidrRootConfigurationListener)  | `CidrRootConfigurationListener` |
+| [`CidrWorkspaceInstantaneousStateChangeListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.project.workspace.CidrWorkspaceInstantaneousStateChangeListener)  ![Project-Level][project-level] | `CidrWorkspaceInstantaneousStateChangeListener` |
+| [`CidrWorkspaceListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.project.workspace.CidrWorkspaceListener)  | `CidrWorkspaceListener` |
+| [`OCRootsSynchronizerListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.project.workspace.OCRootsSynchronizerListener)  | `OCRootsSynchronizerListener` |
+| [`RemoteDeploymentListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.system.RemoteDeploymentListener)  | `RemoteDeploymentListener` |
+| [`AllowedModules#INVALIDATION_TOPIC`](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
 
 
 ### CidrDebuggerPlugin.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [cidr.debugger.backendConsoleInjectionHelper](https://jb.gg/ipe?extensions=cidr.debugger.backendConsoleInjectionHelper) | `BackendConsoleInjectionHelper` |
-| [cidr.debugger.customDebuggerProvider](https://jb.gg/ipe?extensions=cidr.debugger.customDebuggerProvider) | `CidrCustomDebuggerProvider` |
-| [cidr.debugger.debugProcessConfigurator](https://jb.gg/ipe?extensions=cidr.debugger.debugProcessConfigurator) | `CidrDebugProcessConfigurator` |
-| [cidr.debugger.debuggerMessagesProvider](https://jb.gg/ipe?extensions=cidr.debugger.debuggerMessagesProvider) ![Internal][internal] | `CidrDebuggerMessagesProvider` |
-| [cidr.debugger.disasmRegisterProvider](https://jb.gg/ipe?extensions=cidr.debugger.disasmRegisterProvider) ![Experimental][experimental] | `CidrDisasmRegisterProvider` |
-| [cidr.debugger.editorsExtension](https://jb.gg/ipe?extensions=cidr.debugger.editorsExtension) | `CidrDebuggerEditorsExtension` |
-| [cidr.debugger.formatters.natvis.provider](https://jb.gg/ipe?extensions=cidr.debugger.formatters.natvis.provider) | `NatvisFileProvider` |
-| [cidr.debugger.frameChildrenContributor](https://jb.gg/ipe?extensions=cidr.debugger.frameChildrenContributor) | `CidrFrameChildrenContributor` |
-| [cidr.debugger.fullValueEvaluatorProvider](https://jb.gg/ipe?extensions=cidr.debugger.fullValueEvaluatorProvider) ![Experimental][experimental] | `CidrFullValueEvaluatorProvider` |
-| [cidr.debugger.imageViewerProvider](https://jb.gg/ipe?extensions=cidr.debugger.imageViewerProvider) | `CidrImageViewerProvider` |
-| [cidr.debugger.languageSupport](https://jb.gg/ipe?extensions=cidr.debugger.languageSupport) | `CidrDebuggerLanguageSupport` |
-| [cidr.debugger.lineBreakpointFileTypesProvider](https://jb.gg/ipe?extensions=cidr.debugger.lineBreakpointFileTypesProvider) | `CidrLineBreakpointFileTypesProvider` |
-| [cidr.debugger.localVariablesFilterHandler](https://jb.gg/ipe?extensions=cidr.debugger.localVariablesFilterHandler) | `LocalVariablesFilterHandler` |
-| [cidr.debugger.modulesHandler](https://jb.gg/ipe?extensions=cidr.debugger.modulesHandler) ![Experimental][experimental] | `CidrDebuggerModulesHandler` |
-| [cidr.debugger.nativeSelfProfilerPathProvider](https://jb.gg/ipe?extensions=cidr.debugger.nativeSelfProfilerPathProvider) | `NativeSelfProfilerPathProvider` |
-| [cidr.debugger.suspendThreadSelector](https://jb.gg/ipe?extensions=cidr.debugger.suspendThreadSelector) | `CidrSuspendThreadSelector` |
-| [cidr.debugger.valueRendererExtension](https://jb.gg/ipe?extensions=cidr.debugger.valueRendererExtension) ![Non-Dynamic][non-dynamic] | `ValueRendererExtension` |
-| [cidr.debugger.valueRendererFactory](https://jb.gg/ipe?extensions=cidr.debugger.valueRendererFactory) ![Non-Dynamic][non-dynamic] | `ValueRendererFactory` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.backendConsoleInjectionHelper"/></include> | `BackendConsoleInjectionHelper` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.customDebuggerProvider"/></include> | `CidrCustomDebuggerProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.debugProcessConfigurator"/></include> | `CidrDebugProcessConfigurator` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.debuggerMessagesProvider"/></include> ![Internal][internal] | `CidrDebuggerMessagesProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.disasmRegisterProvider"/></include> ![Experimental][experimental] | `CidrDisasmRegisterProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.editorsExtension"/></include> | `CidrDebuggerEditorsExtension` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.formatters.natvis.provider"/></include> | `NatvisFileProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.frameChildrenContributor"/></include> | `CidrFrameChildrenContributor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.fullValueEvaluatorProvider"/></include> ![Experimental][experimental] | `CidrFullValueEvaluatorProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.imageViewerProvider"/></include> | `CidrImageViewerProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.languageSupport"/></include> | `CidrDebuggerLanguageSupport` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.lineBreakpointFileTypesProvider"/></include> | `CidrLineBreakpointFileTypesProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.localVariablesFilterHandler"/></include> | `LocalVariablesFilterHandler` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.modulesHandler"/></include> ![Experimental][experimental] | `CidrDebuggerModulesHandler` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.nativeSelfProfilerPathProvider"/></include> | `NativeSelfProfilerPathProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.suspendThreadSelector"/></include> | `CidrSuspendThreadSelector` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.valueRendererExtension"/></include> ![Non-Dynamic][non-dynamic] | `ValueRendererExtension` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.valueRendererFactory"/></include> ![Non-Dynamic][non-dynamic] | `ValueRendererFactory` |
 
 ### CidrExecutionPlugin.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [cidr.buildConfigurationProvider](https://jb.gg/ipe?extensions=cidr.buildConfigurationProvider) | `CidrBuildConfigurationProvider` |
-| [cidr.projectTaskContextProvider](https://jb.gg/ipe?extensions=cidr.projectTaskContextProvider) | `CidrProjectTaskContextProvider` |
-| [cidr.resolveConfigurationProvider](https://jb.gg/ipe?extensions=cidr.resolveConfigurationProvider) | `CidrResolveConfigurationProvider` |
-| [cidr.runConfigurationExtension](https://jb.gg/ipe?extensions=cidr.runConfigurationExtension) ![Non-Dynamic][non-dynamic] | `CidrRunConfigurationExtensionBase` |
-| [cidr.targetConfigurationHelper](https://jb.gg/ipe?extensions=cidr.targetConfigurationHelper) | `CidrTargetConfigurationHelper` |
-| [cidr.testFrameworkDetector](https://jb.gg/ipe?extensions=cidr.testFrameworkDetector) ![Non-Dynamic][non-dynamic] | `CidrTestFrameworkDetector` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.buildConfigurationProvider"/></include> | `CidrBuildConfigurationProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.projectTaskContextProvider"/></include> | `CidrProjectTaskContextProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.resolveConfigurationProvider"/></include> | `CidrResolveConfigurationProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.runConfigurationExtension"/></include> ![Non-Dynamic][non-dynamic] | `CidrRunConfigurationExtensionBase` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.targetConfigurationHelper"/></include> | `CidrTargetConfigurationHelper` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.testFrameworkDetector"/></include> ![Non-Dynamic][non-dynamic] | `CidrTestFrameworkDetector` |
 
 ### CidrLangBase.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [cidr.lang.annotatorInspectionToolProvider](https://jb.gg/ipe?extensions=cidr.lang.annotatorInspectionToolProvider) ![Non-Dynamic][non-dynamic] | `Supplier` |
-| [cidr.lang.dfaInspectionConfig](https://jb.gg/ipe?extensions=cidr.lang.dfaInspectionConfig) ![Non-Dynamic][non-dynamic] | `OCDFAInspectionConfig` |
-| [cidr.lang.externalInspections](https://jb.gg/ipe?extensions=cidr.lang.externalInspections) | `OCExternalInspections` |
-| [cidr.lang.fileTypeHelper](https://jb.gg/ipe?extensions=cidr.lang.fileTypeHelper) ![Non-Dynamic][non-dynamic] | `OCFileTypeHelper` |
-| [cidr.lang.knownModuleDetector](https://jb.gg/ipe?extensions=cidr.lang.knownModuleDetector) ![Internal][internal] | `CidrKnownModuleDetector` |
-| [cidr.lang.langUtils](https://jb.gg/ipe?extensions=cidr.lang.langUtils) ![Non-Dynamic][non-dynamic] | `OCLanguageUtilsBase` |
-| [cidr.lang.languageKindHelper](https://jb.gg/ipe?extensions=cidr.lang.languageKindHelper) ![Non-Dynamic][non-dynamic] | `OCLanguageKindCalculatorHelper` |
-| [cidr.lang.languageKindProvider](https://jb.gg/ipe?extensions=cidr.lang.languageKindProvider) ![Non-Dynamic][non-dynamic] | `OCLanguageKindProvider` |
-| [cidr.lang.navigatableSymbolSearcherBridge](https://jb.gg/ipe?extensions=cidr.lang.navigatableSymbolSearcherBridge) ![Non-Dynamic][non-dynamic] | `NavigatableSymbolSearcherBridge` |
-| [cidr.lang.newFileLangBackendHandler](https://jb.gg/ipe?extensions=cidr.lang.newFileLangBackendHandler) ![Non-Dynamic][non-dynamic] | `OCNewFileLangBackendHandler` |
-| [cidr.lang.newFileModelHandlerProvider](https://jb.gg/ipe?extensions=cidr.lang.newFileModelHandlerProvider) ![Non-Dynamic][non-dynamic] | `OCNewFileProjectModelHandlerProvider` |
-| [cidr.lang.ownModuleDetector](https://jb.gg/ipe?extensions=cidr.lang.ownModuleDetector) | `CidrOwnModuleDetector` |
-| [cidr.lang.projectWizardFilesFormatter](https://jb.gg/ipe?extensions=cidr.lang.projectWizardFilesFormatter) ![Non-Dynamic][non-dynamic] | `CidrProjectWizardFilesFormatter` |
-| [cidr.lang.standaloneInspectionToolProvider](https://jb.gg/ipe?extensions=cidr.lang.standaloneInspectionToolProvider) ![Non-Dynamic][non-dynamic] | `Supplier` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.annotatorInspectionToolProvider"/></include> ![Non-Dynamic][non-dynamic] | `Supplier` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.dfaInspectionConfig"/></include> ![Non-Dynamic][non-dynamic] | `OCDFAInspectionConfig` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.externalInspections"/></include> | `OCExternalInspections` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.fileTypeHelper"/></include> ![Non-Dynamic][non-dynamic] | `OCFileTypeHelper` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.knownModuleDetector"/></include> ![Internal][internal] | `CidrKnownModuleDetector` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.langUtils"/></include> ![Non-Dynamic][non-dynamic] | `OCLanguageUtilsBase` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.languageKindHelper"/></include> ![Non-Dynamic][non-dynamic] | `OCLanguageKindCalculatorHelper` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.languageKindProvider"/></include> ![Non-Dynamic][non-dynamic] | `OCLanguageKindProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.navigatableSymbolSearcherBridge"/></include> ![Non-Dynamic][non-dynamic] | `NavigatableSymbolSearcherBridge` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.newFileLangBackendHandler"/></include> ![Non-Dynamic][non-dynamic] | `OCNewFileLangBackendHandler` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.newFileModelHandlerProvider"/></include> ![Non-Dynamic][non-dynamic] | `OCNewFileProjectModelHandlerProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.ownModuleDetector"/></include> | `CidrOwnModuleDetector` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.projectWizardFilesFormatter"/></include> ![Non-Dynamic][non-dynamic] | `CidrProjectWizardFilesFormatter` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.standaloneInspectionToolProvider"/></include> ![Non-Dynamic][non-dynamic] | `Supplier` |
 
 ### CidrLangPlugin.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [cidr.lang.annotatorHelper](https://jb.gg/ipe?extensions=cidr.lang.annotatorHelper) ![Non-Dynamic][non-dynamic] | `OCAnnotatorHelper` |
-| [cidr.lang.autoImportHelper](https://jb.gg/ipe?extensions=cidr.lang.autoImportHelper) ![Non-Dynamic][non-dynamic] | `OCAutoImportHelper` |
-| [cidr.lang.buildSymbolsVeto](https://jb.gg/ipe?extensions=cidr.lang.buildSymbolsVeto) ![Non-Dynamic][non-dynamic] | `OCBuildSymbolsVetoExtension` |
-| [cidr.lang.callStructureProvider](https://jb.gg/ipe?extensions=cidr.lang.callStructureProvider) ![Non-Dynamic][non-dynamic] | `PolyglotCallStructureProvider` |
-| [cidr.lang.customHeaderProvider](https://jb.gg/ipe?extensions=cidr.lang.customHeaderProvider) ![Non-Dynamic][non-dynamic] | `CustomHeaderProvider` |
-| [cidr.lang.doxygenExtension](https://jb.gg/ipe?extensions=cidr.lang.doxygenExtension) ![Non-Dynamic][non-dynamic] | `Doxygen` |
-| [cidr.lang.externalResolver](https://jb.gg/ipe?extensions=cidr.lang.externalResolver) | `OCExternalResolver` |
-| [cidr.lang.fileToBuildSymbolsCollector](https://jb.gg/ipe?extensions=cidr.lang.fileToBuildSymbolsCollector) ![Non-Dynamic][non-dynamic] | `FileToBuildSymbolsCollector` |
-| [cidr.lang.foreignUsagesRenameProcessor](https://jb.gg/ipe?extensions=cidr.lang.foreignUsagesRenameProcessor) ![Non-Dynamic][non-dynamic] | `OCForeignUsagesRenameProcessor` |
-| [cidr.lang.groupedFileNaming](https://jb.gg/ipe?extensions=cidr.lang.groupedFileNaming) ![Non-Dynamic][non-dynamic] | `OCGroupedFileNaming` |
-| [cidr.lang.includeHelper](https://jb.gg/ipe?extensions=cidr.lang.includeHelper) ![Non-Dynamic][non-dynamic] | `OCIncludeHelper` |
-| [cidr.lang.includeHierarchyProvider](https://jb.gg/ipe?extensions=cidr.lang.includeHierarchyProvider) ![Non-Dynamic][non-dynamic] | [`HierarchyProvider`](%gh-ic%/platform/lang-api/src/com/intellij/ide/hierarchy/HierarchyProvider.java) |
-| [cidr.lang.initialBuildingActivity](https://jb.gg/ipe?extensions=cidr.lang.initialBuildingActivity) ![Non-Dynamic][non-dynamic] | `OCInitialBuildingActivity` |
-| [cidr.lang.languageKindContributor](https://jb.gg/ipe?extensions=cidr.lang.languageKindContributor) ![Non-Dynamic][non-dynamic] | `OCLanguageKindContributor` |
-| [cidr.lang.libraryFileConfigurationProvider](https://jb.gg/ipe?extensions=cidr.lang.libraryFileConfigurationProvider) ![Non-Dynamic][non-dynamic] | `OCLibraryFileResolveConfigurationProvider` |
-| [cidr.lang.moduleBuilder.statisticsCollectorFactory](https://jb.gg/ipe?extensions=cidr.lang.moduleBuilder.statisticsCollectorFactory) ![Non-Dynamic][non-dynamic] | `ModuleCacheBuilderStatisticsCollectorFactory` |
-| [cidr.lang.moduleMapManagerRequestor](https://jb.gg/ipe?extensions=cidr.lang.moduleMapManagerRequestor) ![Non-Dynamic][non-dynamic] | `ModuleMapManagerRequestor` |
-| [cidr.lang.moduleMapPlatformTypeProvider](https://jb.gg/ipe?extensions=cidr.lang.moduleMapPlatformTypeProvider) ![Non-Dynamic][non-dynamic] | `ModuleMapPlatformTypeProvider` |
-| [cidr.lang.moduleMapRootSerializer](https://jb.gg/ipe?extensions=cidr.lang.moduleMapRootSerializer) ![Non-Dynamic][non-dynamic] | `ModuleMapRootSerializer` |
-| [cidr.lang.moduleMapSearchRootProvider](https://jb.gg/ipe?extensions=cidr.lang.moduleMapSearchRootProvider) ![Non-Dynamic][non-dynamic] | `ModuleMapSearchRootProvider` |
-| [cidr.lang.moduleResolver](https://jb.gg/ipe?extensions=cidr.lang.moduleResolver) ![Non-Dynamic][non-dynamic] | `OCModuleResolver` |
-| [cidr.lang.ocAdditionalFileSymbolTableBuilder](https://jb.gg/ipe?extensions=cidr.lang.ocAdditionalFileSymbolTableBuilder) ![Non-Dynamic][non-dynamic] | `OCAdditionalFileSymbolTableBuilder` |
-| [cidr.lang.ocDirectInheritorsSearch](https://jb.gg/ipe?extensions=cidr.lang.ocDirectInheritorsSearch) ![Non-Dynamic][non-dynamic] | [`QueryExecutor`](%gh-ic%/platform/core-api/src/com/intellij/util/QueryExecutor.java) |
-| [cidr.lang.ocInclusionContextLazyGetDefinitionProvider](https://jb.gg/ipe?extensions=cidr.lang.ocInclusionContextLazyGetDefinitionProvider) ![Non-Dynamic][non-dynamic] | `OCInclusionContextLazyGetDefinitionProvider` |
-| [cidr.lang.ocResolveRootAndConfigurationProvider](https://jb.gg/ipe?extensions=cidr.lang.ocResolveRootAndConfigurationProvider) ![Non-Dynamic][non-dynamic] | `OCResolveRootAndConfigurationProvider` |
-| [cidr.lang.renameHandlerExtension](https://jb.gg/ipe?extensions=cidr.lang.renameHandlerExtension) ![Non-Dynamic][non-dynamic] | `OCRenameHandlerExtension` |
-| [cidr.lang.renameProcessorExtension](https://jb.gg/ipe?extensions=cidr.lang.renameProcessorExtension) ![Non-Dynamic][non-dynamic] | `OCRenameProcessorExtension` |
-| [cidr.lang.resourceCompletionProviders](https://jb.gg/ipe?extensions=cidr.lang.resourceCompletionProviders) ![Non-Dynamic][non-dynamic] | `OCResourceCompletionProviders` |
-| [cidr.lang.resourceFilesProvider](https://jb.gg/ipe?extensions=cidr.lang.resourceFilesProvider) ![Non-Dynamic][non-dynamic] | `OCResourceFilesProvider` |
-| [cidr.lang.searchHelper](https://jb.gg/ipe?extensions=cidr.lang.searchHelper) ![Non-Dynamic][non-dynamic] | `OCSearchHelper` |
-| [cidr.lang.serializerProvider](https://jb.gg/ipe?extensions=cidr.lang.serializerProvider) ![Non-Dynamic][non-dynamic] | `SerializerProvider` |
-| [cidr.lang.symbolTableProvider](https://jb.gg/ipe?extensions=cidr.lang.symbolTableProvider) ![Non-Dynamic][non-dynamic] | `FileSymbolTableProvider` |
-| [cidr.lang.testFramework](https://jb.gg/ipe?extensions=cidr.lang.testFramework) ![Non-Dynamic][non-dynamic] | `OCTestFramework` |
-| [cidr.lang.typeStructureProvider](https://jb.gg/ipe?extensions=cidr.lang.typeStructureProvider) ![Non-Dynamic][non-dynamic] | `PolyglotTypeStructureProvider` |
-| [cidr.requiredForCidrSmartMode](https://jb.gg/ipe?extensions=cidr.requiredForCidrSmartMode) ![Non-Dynamic][non-dynamic] | `RequiredForCidrSmartMode` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.annotatorHelper"/></include> ![Non-Dynamic][non-dynamic] | `OCAnnotatorHelper` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.autoImportHelper"/></include> ![Non-Dynamic][non-dynamic] | `OCAutoImportHelper` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.buildSymbolsVeto"/></include> ![Non-Dynamic][non-dynamic] | `OCBuildSymbolsVetoExtension` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.callStructureProvider"/></include> ![Non-Dynamic][non-dynamic] | `PolyglotCallStructureProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.customHeaderProvider"/></include> ![Non-Dynamic][non-dynamic] | `CustomHeaderProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.doxygenExtension"/></include> ![Non-Dynamic][non-dynamic] | `Doxygen` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.externalResolver"/></include> | `OCExternalResolver` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.fileToBuildSymbolsCollector"/></include> ![Non-Dynamic][non-dynamic] | `FileToBuildSymbolsCollector` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.foreignUsagesRenameProcessor"/></include> ![Non-Dynamic][non-dynamic] | `OCForeignUsagesRenameProcessor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.groupedFileNaming"/></include> ![Non-Dynamic][non-dynamic] | `OCGroupedFileNaming` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.includeHelper"/></include> ![Non-Dynamic][non-dynamic] | `OCIncludeHelper` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.includeHierarchyProvider"/></include> ![Non-Dynamic][non-dynamic] | [`HierarchyProvider`](%gh-ic%/platform/lang-api/src/com/intellij/ide/hierarchy/HierarchyProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.initialBuildingActivity"/></include> ![Non-Dynamic][non-dynamic] | `OCInitialBuildingActivity` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.languageKindContributor"/></include> ![Non-Dynamic][non-dynamic] | `OCLanguageKindContributor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.libraryFileConfigurationProvider"/></include> ![Non-Dynamic][non-dynamic] | `OCLibraryFileResolveConfigurationProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.moduleBuilder.statisticsCollectorFactory"/></include> ![Non-Dynamic][non-dynamic] | `ModuleCacheBuilderStatisticsCollectorFactory` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.moduleMapManagerRequestor"/></include> ![Non-Dynamic][non-dynamic] | `ModuleMapManagerRequestor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.moduleMapPlatformTypeProvider"/></include> ![Non-Dynamic][non-dynamic] | `ModuleMapPlatformTypeProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.moduleMapRootSerializer"/></include> ![Non-Dynamic][non-dynamic] | `ModuleMapRootSerializer` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.moduleMapSearchRootProvider"/></include> ![Non-Dynamic][non-dynamic] | `ModuleMapSearchRootProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.moduleResolver"/></include> ![Non-Dynamic][non-dynamic] | `OCModuleResolver` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.ocAdditionalFileSymbolTableBuilder"/></include> ![Non-Dynamic][non-dynamic] | `OCAdditionalFileSymbolTableBuilder` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.ocDirectInheritorsSearch"/></include> ![Non-Dynamic][non-dynamic] | [`QueryExecutor`](%gh-ic%/platform/core-api/src/com/intellij/util/QueryExecutor.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.ocInclusionContextLazyGetDefinitionProvider"/></include> ![Non-Dynamic][non-dynamic] | `OCInclusionContextLazyGetDefinitionProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.ocResolveRootAndConfigurationProvider"/></include> ![Non-Dynamic][non-dynamic] | `OCResolveRootAndConfigurationProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.renameHandlerExtension"/></include> ![Non-Dynamic][non-dynamic] | `OCRenameHandlerExtension` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.renameProcessorExtension"/></include> ![Non-Dynamic][non-dynamic] | `OCRenameProcessorExtension` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.resourceCompletionProviders"/></include> ![Non-Dynamic][non-dynamic] | `OCResourceCompletionProviders` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.resourceFilesProvider"/></include> ![Non-Dynamic][non-dynamic] | `OCResourceFilesProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.searchHelper"/></include> ![Non-Dynamic][non-dynamic] | `OCSearchHelper` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.serializerProvider"/></include> ![Non-Dynamic][non-dynamic] | `SerializerProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.symbolTableProvider"/></include> ![Non-Dynamic][non-dynamic] | `FileSymbolTableProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.testFramework"/></include> ![Non-Dynamic][non-dynamic] | `OCTestFramework` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.typeStructureProvider"/></include> ![Non-Dynamic][non-dynamic] | `PolyglotTypeStructureProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.requiredForCidrSmartMode"/></include> ![Non-Dynamic][non-dynamic] | `RequiredForCidrSmartMode` |
 
 ### CidrProjectModelPlugin.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [cidr.lang.appleFrameworkFilter](https://jb.gg/ipe?extensions=cidr.lang.appleFrameworkFilter) ![Project-Level][project-level] | `AppleFrameworkFilter` |
-| [cidr.lang.codeInsightUnavailabilityHighlighter](https://jb.gg/ipe?extensions=cidr.lang.codeInsightUnavailabilityHighlighter) ![Non-Dynamic][non-dynamic] | `OCCodeInsightUnavailabilityHighlighter` |
-| [cidr.lang.compilerKindProvider](https://jb.gg/ipe?extensions=cidr.lang.compilerKindProvider) | `OCCompilerKindProvider` |
-| [cidr.lang.compilerResolver](https://jb.gg/ipe?extensions=cidr.lang.compilerResolver) ![Project-Level][project-level] | `OCCompilerResolver` |
-| [cidr.lang.fileScopeProvider](https://jb.gg/ipe?extensions=cidr.lang.fileScopeProvider) ![Non-Dynamic][non-dynamic] | `OCFileScopeProvider` |
-| [cidr.lang.fileWideHighlighter](https://jb.gg/ipe?extensions=cidr.lang.fileWideHighlighter) ![Non-Dynamic][non-dynamic] ![DumbAware][dumb-aware] | `FileWideHighlighter` |
-| [cidr.lang.headerSearchRootFactory](https://jb.gg/ipe?extensions=cidr.lang.headerSearchRootFactory) | `HeadersSearchRootFactory` |
-| [cidr.lang.resolveConfigurationSelector](https://jb.gg/ipe?extensions=cidr.lang.resolveConfigurationSelector) | `OCResolveConfigurationSelector` |
-| [cidr.projectModel.deserializingVetoCondition](https://jb.gg/ipe?extensions=cidr.projectModel.deserializingVetoCondition) | `OCWorkspaceDeserializingVetoCondition` |
-| [cidr.projectModel.msvcPchHelper](https://jb.gg/ipe?extensions=cidr.projectModel.msvcPchHelper) | `OCMsvcPchHelper` |
-| [cidr.projectModel.runAfterOCWorkspaceIsInitialized](https://jb.gg/ipe?extensions=cidr.projectModel.runAfterOCWorkspaceIsInitialized) ![Non-Dynamic][non-dynamic] | `RunAfterOCWorkspaceIsInitialized` |
-| [cidr.projectModel.runAfterOCWorkspaceIsLoaded](https://jb.gg/ipe?extensions=cidr.projectModel.runAfterOCWorkspaceIsLoaded) ![Non-Dynamic][non-dynamic] | `RunAfterOCWorkspaceIsLoaded` |
-| [cidr.projectModel.supportedFileChecker](https://jb.gg/ipe?extensions=cidr.projectModel.supportedFileChecker) ![Non-Dynamic][non-dynamic] | `OCSupportedFileChecker` |
-| [cidr.projectModel.unloadedResolveContextsManager](https://jb.gg/ipe?extensions=cidr.projectModel.unloadedResolveContextsManager) | `OCUnloadedResolveContextsManager` |
-| [cidr.projectModel.workspaceLoadedCheck](https://jb.gg/ipe?extensions=cidr.projectModel.workspaceLoadedCheck) | `OCWorkspaceLoadedChecker` |
-| [com.intellij.cidrCommandLineParser](https://jb.gg/ipe?extensions=com.intellij.cidrCommandLineParser) ![Project-Level][project-level] | `CidrCommandLineParser` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.appleFrameworkFilter"/></include> ![Project-Level][project-level] | `AppleFrameworkFilter` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.codeInsightUnavailabilityHighlighter"/></include> ![Non-Dynamic][non-dynamic] | `OCCodeInsightUnavailabilityHighlighter` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.compilerKindProvider"/></include> | `OCCompilerKindProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.compilerResolver"/></include> ![Project-Level][project-level] | `OCCompilerResolver` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.fileScopeProvider"/></include> ![Non-Dynamic][non-dynamic] | `OCFileScopeProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.fileWideHighlighter"/></include> ![Non-Dynamic][non-dynamic] ![DumbAware][dumb-aware] | `FileWideHighlighter` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.headerSearchRootFactory"/></include> | `HeadersSearchRootFactory` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.resolveConfigurationSelector"/></include> | `OCResolveConfigurationSelector` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.projectModel.deserializingVetoCondition"/></include> | `OCWorkspaceDeserializingVetoCondition` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.projectModel.msvcPchHelper"/></include> | `OCMsvcPchHelper` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.projectModel.runAfterOCWorkspaceIsInitialized"/></include> ![Non-Dynamic][non-dynamic] | `RunAfterOCWorkspaceIsInitialized` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.projectModel.runAfterOCWorkspaceIsLoaded"/></include> ![Non-Dynamic][non-dynamic] | `RunAfterOCWorkspaceIsLoaded` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.projectModel.supportedFileChecker"/></include> ![Non-Dynamic][non-dynamic] | `OCSupportedFileChecker` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.projectModel.unloadedResolveContextsManager"/></include> | `OCUnloadedResolveContextsManager` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.projectModel.workspaceLoadedCheck"/></include> | `OCWorkspaceLoadedChecker` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cidrCommandLineParser"/></include> ![Project-Level][project-level] | `CidrCommandLineParser` |
 
 ### CidrTestingPlugin.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [cidr.lang.testing.potentialTestHolderRootsProvider](https://jb.gg/ipe?extensions=cidr.lang.testing.potentialTestHolderRootsProvider) | `CidrPotentialTestHolderRootsProvider` |
-| [cidr.lang.testing.testIndexContributor](https://jb.gg/ipe?extensions=cidr.lang.testing.testIndexContributor) | `CidrTestIndexContributor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.testing.potentialTestHolderRootsProvider"/></include> | `CidrPotentialTestHolderRootsProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.testing.testIndexContributor"/></include> | `CidrTestIndexContributor` |
 
 ### CidrToolchainsPlugin.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [cidr.devEnvironmentChecker](https://jb.gg/ipe?extensions=cidr.devEnvironmentChecker) ![Non-Dynamic][non-dynamic] | `DevEnvironmentChecker` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.devEnvironmentChecker"/></include> ![Non-Dynamic][non-dynamic] | `DevEnvironmentChecker` |
 
 ### CidrUtilExecutionPlugin.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [cidr.util.pluginPathMapper](https://jb.gg/ipe?extensions=cidr.util.pluginPathMapper) | `CidrPluginPathMapper` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.util.pluginPathMapper"/></include> | `CidrPluginPathMapper` |
 
 ### CidrWorkspaceModelCore.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [cidr.markRootActionAvailability](https://jb.gg/ipe?extensions=cidr.markRootActionAvailability) ![Non-Dynamic][non-dynamic] | `CidrMarkRootActionAvailability` |
-| [cidr.project.is.known.checker](https://jb.gg/ipe?extensions=cidr.project.is.known.checker) ![Non-Dynamic][non-dynamic] | `KnownProjectChecker` |
-| [cidr.project.moduleNameSuffixProvider](https://jb.gg/ipe?extensions=cidr.project.moduleNameSuffixProvider) ![Non-Dynamic][non-dynamic] | `WorkspaceModuleNameSuffixProvider` |
-| [cidr.project.notifications.editorNotificationWarningProvider](https://jb.gg/ipe?extensions=cidr.project.notifications.editorNotificationWarningProvider) | `EditorNotificationWarningProvider` |
-| [cidr.project.popup.projectFixesProvider](https://jb.gg/ipe?extensions=cidr.project.popup.projectFixesProvider) | `ProjectFixesProvider` |
-| [cidr.project.rootsBuilderProvider](https://jb.gg/ipe?extensions=cidr.project.rootsBuilderProvider) ![Non-Dynamic][non-dynamic] | `Provider` |
-| [cidr.project.widget.widgetStatusProvider](https://jb.gg/ipe?extensions=cidr.project.widget.widgetStatusProvider) | `WidgetStatusProvider` |
-| [cidr.project.workspaceProvider](https://jb.gg/ipe?extensions=cidr.project.workspaceProvider) ![Non-Dynamic][non-dynamic] | `CidrWorkspaceProvider` |
-| [com.jetbrains.cidr.fus.projectModelTypeProvider](https://jb.gg/ipe?extensions=com.jetbrains.cidr.fus.projectModelTypeProvider) | `CidrProjectModelTypeProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.markRootActionAvailability"/></include> ![Non-Dynamic][non-dynamic] | `CidrMarkRootActionAvailability` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.is.known.checker"/></include> ![Non-Dynamic][non-dynamic] | `KnownProjectChecker` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.moduleNameSuffixProvider"/></include> ![Non-Dynamic][non-dynamic] | `WorkspaceModuleNameSuffixProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.notifications.editorNotificationWarningProvider"/></include> | `EditorNotificationWarningProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.popup.projectFixesProvider"/></include> | `ProjectFixesProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.rootsBuilderProvider"/></include> ![Non-Dynamic][non-dynamic] | `Provider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.widget.widgetStatusProvider"/></include> | `WidgetStatusProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.workspaceProvider"/></include> ![Non-Dynamic][non-dynamic] | `CidrWorkspaceProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.cidr.fus.projectModelTypeProvider"/></include> | `CidrProjectModelTypeProvider` |
 
 ### ClangFormatPlugin.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.intellij.clangFormatProvider](https://jb.gg/ipe?extensions=com.intellij.clangFormatProvider) ![Non-Dynamic][non-dynamic] | `ClangFormatChangeSettingsProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clangFormatProvider"/></include> ![Non-Dynamic][non-dynamic] | `ClangFormatChangeSettingsProvider` |
 
 ### CLionCMakeCore.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.intellij.cmake.buildStep](https://jb.gg/ipe?extensions=com.intellij.cmake.buildStep) | `CMakeBuildProcessListenerCreator` |
-| [com.intellij.cmake.cmakeSettingsFlavorProvider](https://jb.gg/ipe?extensions=com.intellij.cmake.cmakeSettingsFlavorProvider) | `CMakeSettingsFlavorProvider` |
-| [com.intellij.cmake.flavorProvider](https://jb.gg/ipe?extensions=com.intellij.cmake.flavorProvider) | `CMakeFlavorProvider` |
-| [com.intellij.cmake.languageKindRecognizer](https://jb.gg/ipe?extensions=com.intellij.cmake.languageKindRecognizer) | `CMakeLanguageKindRecognizer` |
-| [com.intellij.cmake.loadOnStartupDependency](https://jb.gg/ipe?extensions=com.intellij.cmake.loadOnStartupDependency) | `FutureProvider` |
-| [com.intellij.cmake.profileLoadContributor](https://jb.gg/ipe?extensions=com.intellij.cmake.profileLoadContributor) | `FutureProvider` |
-| [com.intellij.cmake.runnerStep](https://jb.gg/ipe?extensions=com.intellij.cmake.runnerStep) ![Non-Dynamic][non-dynamic] | `CMakeRunnerStep` |
-| [com.intellij.cmake.targetToConfigProvider](https://jb.gg/ipe?extensions=com.intellij.cmake.targetToConfigProvider) | `CMakeTargetToConfigProvider` |
-| [com.intellij.cmake.toolWindowFocusContributor](https://jb.gg/ipe?extensions=com.intellij.cmake.toolWindowFocusContributor) | `CMakeToolWindowFocusContributor` |
-| [com.intellij.cmake.workspace.compilerEnvironmentContributor](https://jb.gg/ipe?extensions=com.intellij.cmake.workspace.compilerEnvironmentContributor) | `CMakeCompilerEnvironmentContributor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.buildStep"/></include> | `CMakeBuildProcessListenerCreator` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.cmakeSettingsFlavorProvider"/></include> | `CMakeSettingsFlavorProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.flavorProvider"/></include> | `CMakeFlavorProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.languageKindRecognizer"/></include> | `CMakeLanguageKindRecognizer` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.loadOnStartupDependency"/></include> | `FutureProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.profileLoadContributor"/></include> | `FutureProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.runnerStep"/></include> ![Non-Dynamic][non-dynamic] | `CMakeRunnerStep` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.targetToConfigProvider"/></include> | `CMakeTargetToConfigProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.toolWindowFocusContributor"/></include> | `CMakeToolWindowFocusContributor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.workspace.compilerEnvironmentContributor"/></include> | `CMakeCompilerEnvironmentContributor` |
 
 ### CLionExecutionPlugin.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [cidr.debugger.targets.provider](https://jb.gg/ipe?extensions=cidr.debugger.targets.provider) | `DebugTargetsProvider` |
-| [clion.buildToolWindowActivator.contributor](https://jb.gg/ipe?extensions=clion.buildToolWindowActivator.contributor) | `Contributor` |
-| [clion.compoundConfigurationContext](https://jb.gg/ipe?extensions=clion.compoundConfigurationContext) | `CidrCompoundConfigurationContext` |
-| [clion.externalConfigurationProvider](https://jb.gg/ipe?extensions=clion.externalConfigurationProvider) | `CLionExternalConfigurationProvider` |
-| [clion.showAssembly.funcInfoProvider](https://jb.gg/ipe?extensions=clion.showAssembly.funcInfoProvider) | `CLionShowAssemblyFuncInfoProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.targets.provider"/></include> | `DebugTargetsProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="clion.buildToolWindowActivator.contributor"/></include> | `Contributor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="clion.compoundConfigurationContext"/></include> | `CidrCompoundConfigurationContext` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="clion.externalConfigurationProvider"/></include> | `CLionExternalConfigurationProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="clion.showAssembly.funcInfoProvider"/></include> | `CLionShowAssemblyFuncInfoProvider` |
 
 ### CLionMakefilePlugin.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [clion.makefile.buildSystemDetector](https://jb.gg/ipe?extensions=clion.makefile.buildSystemDetector) | `MkBuildSystemDetector` |
-| [clion.makefile.projectPreConfigurator](https://jb.gg/ipe?extensions=clion.makefile.projectPreConfigurator) | `MkProjectPreConfigurator` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="clion.makefile.buildSystemDetector"/></include> | `MkBuildSystemDetector` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="clion.makefile.projectPreConfigurator"/></include> | `MkProjectPreConfigurator` |
 
 ### CLionWizard.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [cidr.openWizardStepProvider](https://jb.gg/ipe?extensions=cidr.openWizardStepProvider) | `OpenWizardStepProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.openWizardStepProvider"/></include> | `OpenWizardStepProvider` |
 
 ### CMakePsiPlugin.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.intellij.cmake.bundledDocumentationProvider](https://jb.gg/ipe?extensions=com.intellij.cmake.bundledDocumentationProvider) | `CMakeBundledDocumentationProvider` |
-| [com.intellij.cmake.completion.environmentProvider](https://jb.gg/ipe?extensions=com.intellij.cmake.completion.environmentProvider) | `CMakeEnvironmentVariableProvider` |
-| [com.intellij.cmake.fileLocationProvider](https://jb.gg/ipe?extensions=com.intellij.cmake.fileLocationProvider) | `CMakeFileLocationProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.bundledDocumentationProvider"/></include> | `CMakeBundledDocumentationProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.completion.environmentProvider"/></include> | `CMakeEnvironmentVariableProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.fileLocationProvider"/></include> | `CMakeFileLocationProvider` |
 
 ### com.intellij.cidr.lang.clangd
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [clangd.clangTidyAnnotationApplier](https://jb.gg/ipe?extensions=clangd.clangTidyAnnotationApplier) | `ClangTidyAnnotationApplier` |
-| [clangd.clangTidyResolveInfoProvider](https://jb.gg/ipe?extensions=clangd.clangTidyResolveInfoProvider) | `ClangTidyResolveInfoProvider` |
-| [clangd.clangdAnnotatorUtil](https://jb.gg/ipe?extensions=clangd.clangdAnnotatorUtil) | `ClangAnnotatorUtil` |
-| [clangd.clangdBridge](https://jb.gg/ipe?extensions=clangd.clangdBridge) | `ClangdBridgeInterface` |
-| [clangd.externalCompletionProvider](https://jb.gg/ipe?extensions=clangd.externalCompletionProvider) ![DumbAware][dumb-aware] | `ExternalCompletionProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="clangd.clangTidyAnnotationApplier"/></include> | `ClangTidyAnnotationApplier` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="clangd.clangTidyResolveInfoProvider"/></include> | `ClangTidyResolveInfoProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="clangd.clangdAnnotatorUtil"/></include> | `ClangAnnotatorUtil` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="clangd.clangdBridge"/></include> | `ClangdBridgeInterface` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="clangd.externalCompletionProvider"/></include> ![DumbAware][dumb-aware] | `ExternalCompletionProvider` |
 
 ### com.intellij.cidr.uml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [cidr.uml.dragAndDropReceiver](https://jb.gg/ipe?extensions=cidr.uml.dragAndDropReceiver) | `UmlDiagramDragAndDropReceiver` |
-| [cidr.uml.umlDiagramProvider](https://jb.gg/ipe?extensions=cidr.uml.umlDiagramProvider) | `UmlDiagramLanguage` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.uml.dragAndDropReceiver"/></include> | `UmlDiagramDragAndDropReceiver` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.uml.umlDiagramProvider"/></include> | `UmlDiagramLanguage` |
 
 ### intellij.cidr.coverage.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [cidr.coverage.coverageComposer](https://jb.gg/ipe?extensions=cidr.coverage.coverageComposer) ![Non-Dynamic][non-dynamic] | `CidrCoverageComposer` |
-| [cidr.coverage.coverageComposerRunner](https://jb.gg/ipe?extensions=cidr.coverage.coverageComposerRunner) ![Non-Dynamic][non-dynamic] | `CidrCoverageComposerRunner` |
-| [cidr.coverage.coverageDataFileProvider](https://jb.gg/ipe?extensions=cidr.coverage.coverageDataFileProvider) ![Non-Dynamic][non-dynamic] | `CidrCoverageDataFileProvider` |
-| [cidr.coverage.coverageErrorProcessor](https://jb.gg/ipe?extensions=cidr.coverage.coverageErrorProcessor) ![Non-Dynamic][non-dynamic] | `CidrCoverageErrorProcessor` |
-| [cidr.coverage.coverageViewExtensionProvider](https://jb.gg/ipe?extensions=cidr.coverage.coverageViewExtensionProvider) ![Non-Dynamic][non-dynamic] | `CidrCoverageViewExtensionProvider` |
-| [cidr.coverage.gcovCoverageToolsProvider](https://jb.gg/ipe?extensions=cidr.coverage.gcovCoverageToolsProvider) ![Non-Dynamic][non-dynamic] | `GCovCoverageToolProvider` |
-| [cidr.coverage.llvmCoverageToolsProvider](https://jb.gg/ipe?extensions=cidr.coverage.llvmCoverageToolsProvider) ![Non-Dynamic][non-dynamic] | `LLVMCoverageToolsProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.coverage.coverageComposer"/></include> ![Non-Dynamic][non-dynamic] | `CidrCoverageComposer` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.coverage.coverageComposerRunner"/></include> ![Non-Dynamic][non-dynamic] | `CidrCoverageComposerRunner` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.coverage.coverageDataFileProvider"/></include> ![Non-Dynamic][non-dynamic] | `CidrCoverageDataFileProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.coverage.coverageErrorProcessor"/></include> ![Non-Dynamic][non-dynamic] | `CidrCoverageErrorProcessor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.coverage.coverageViewExtensionProvider"/></include> ![Non-Dynamic][non-dynamic] | `CidrCoverageViewExtensionProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.coverage.gcovCoverageToolsProvider"/></include> ![Non-Dynamic][non-dynamic] | `GCovCoverageToolProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.coverage.llvmCoverageToolsProvider"/></include> ![Non-Dynamic][non-dynamic] | `LLVMCoverageToolsProvider` |
 
 ### intellij.cidr.profiling.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [cidr.profiler.memory.environmentProvider](https://jb.gg/ipe?extensions=cidr.profiler.memory.environmentProvider) ![Non-Dynamic][non-dynamic] | `MemoryProfileEnvironmentProvider` |
-| [cidr.profiler.memory.presentation](https://jb.gg/ipe?extensions=cidr.profiler.memory.presentation) ![Non-Dynamic][non-dynamic] | `MemoryProfilePresentation` |
-| [cidr.profiler.valgrind.disabler](https://jb.gg/ipe?extensions=cidr.profiler.valgrind.disabler) | `ValgrindDisabler` |
-| [cidr.profiler.valgrind.executionContext](https://jb.gg/ipe?extensions=cidr.profiler.valgrind.executionContext) | `ValgrindExecutionContext` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.profiler.memory.environmentProvider"/></include> ![Non-Dynamic][non-dynamic] | `MemoryProfileEnvironmentProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.profiler.memory.presentation"/></include> ![Non-Dynamic][non-dynamic] | `MemoryProfilePresentation` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.profiler.valgrind.disabler"/></include> | `ValgrindDisabler` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.profiler.valgrind.executionContext"/></include> | `ValgrindExecutionContext` |
 
 ### intellij.cidr.translateCode.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [cidr.showAssembly.translatorProviders](https://jb.gg/ipe?extensions=cidr.showAssembly.translatorProviders) | `CidrTranslatorProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.showAssembly.translatorProviders"/></include> | `CidrTranslatorProvider` |
 
 ### intellij.clion.featuresTrainer.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [training.clion.lessons](https://jb.gg/ipe?extensions=training.clion.lessons) | `CLionExternalLessons` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="training.clion.lessons"/></include> | `CLionExternalLessons` |
 
 ### intellij.clion.runFile.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [cidr.cpp.runFile.entryPointDetector](https://jb.gg/ipe?extensions=cidr.cpp.runFile.entryPointDetector) | `CppFileEntryPointDetector` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.cpp.runFile.entryPointDetector"/></include> | `CppFileEntryPointDetector` |
 
 ### intellij.clion.west.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.intellij.clion.west.westPathContributor](https://jb.gg/ipe?extensions=com.intellij.clion.west.westPathContributor) | `WestPathContributor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.west.westPathContributor"/></include> | `WestPathContributor` |
 
 ### intellij.rml.dfa.devtools.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.intellij.rml.dfa.devtools.debug.provider](https://jb.gg/ipe?extensions=com.intellij.rml.dfa.devtools.debug.provider) | `DfaDebugProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rml.dfa.devtools.debug.provider"/></include> | `DfaDebugProvider` |
 
 ### intellij.rml.dfa.impl.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.intellij.rml.dfa.impl.DfaDebugExtension](https://jb.gg/ipe?extensions=com.intellij.rml.dfa.impl.DfaDebugExtension) | `DfaDebugExtension` |
-| [com.intellij.rml.dfa.ir.serialization.provider](https://jb.gg/ipe?extensions=com.intellij.rml.dfa.ir.serialization.provider) | `IrSerializationProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rml.dfa.impl.DfaDebugExtension"/></include> | `DfaDebugExtension` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rml.dfa.ir.serialization.provider"/></include> | `IrSerializationProvider` |
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square
 [removal]: https://img.shields.io/badge/-Removal-red?style=flat-square

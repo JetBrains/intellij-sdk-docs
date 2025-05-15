@@ -29,122 +29,121 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform and [](o
 
 | Topic | Listener |
 |-------|----------|
-| [JestConsoleProperties#COVERAGE_CONFIG_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.javascript.jest.JestCoverageConfigListener)  ![Project-Level][project-level] | `JestCoverageConfigListener` |
-| [PackageJsonFileManager#CHANGES_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.javascript.nodejs.packageJson.PackageJsonFileManager.PackageJsonChangesListener)  ![Project-Level][project-level] | `PackageJsonChangesListener` |
-| [VitestConsoleProperties#COVERAGE_CONFIG_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.javascript.testing.vitest.coverage.VitestCoverageConfigListener)  ![Project-Level][project-level] | `VitestCoverageConfigListener` |
-| [JSLibraryManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.lang.javascript.library.JSLibraryManager.JSLibraryManagerChangeListener)  ![Project-Level][project-level] | `JSLibraryManagerChangeListener` |
-| [JSRemoteModulesRegistry#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.lang.javascript.modules.remote.JSRemoteModulesChangeListener)  | `JSRemoteModulesChangeListener` |
-
+| [`JestConsoleProperties#COVERAGE_CONFIG_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.javascript.jest.JestCoverageConfigListener)  ![Project-Level][project-level] | `JestCoverageConfigListener` |
+| [`PackageJsonFileManager#CHANGES_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.javascript.nodejs.packageJson.PackageJsonFileManager.PackageJsonChangesListener)  ![Project-Level][project-level] | `PackageJsonChangesListener` |
+| [`VitestConsoleProperties#COVERAGE_CONFIG_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.javascript.testing.vitest.coverage.VitestCoverageConfigListener)  ![Project-Level][project-level] | `VitestCoverageConfigListener` |
+| [`JSLibraryManager#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.lang.javascript.library.JSLibraryManager.JSLibraryManagerChangeListener)  ![Project-Level][project-level] | `JSLibraryManagerChangeListener` |
+| [`JSRemoteModulesRegistry#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.lang.javascript.modules.remote.JSRemoteModulesChangeListener)  | `JSRemoteModulesChangeListener` |
 
 ### com.intellij.css
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.intellij.css.classOrIdUsagesProvider](https://jb.gg/ipe?extensions=com.intellij.css.classOrIdUsagesProvider) | `CssClassOrIdUsagesProvider` |
-| [com.intellij.css.cssFileReferenceProvider](https://jb.gg/ipe?extensions=com.intellij.css.cssFileReferenceProvider) | `CssFileReferenceProvider` |
-| [com.intellij.css.cssInspectionFilter](https://jb.gg/ipe?extensions=com.intellij.css.cssInspectionFilter) | `CssInspectionFilter` |
-| [com.intellij.css.cssIntentionFilter](https://jb.gg/ipe?extensions=com.intellij.css.cssIntentionFilter) | `CssIntentionFilter` |
-| [com.intellij.css.cssRelatedStylesheetsProvider](https://jb.gg/ipe?extensions=com.intellij.css.cssRelatedStylesheetsProvider) | `CssRelatedStylesheetsProvider` |
-| [com.intellij.css.dialect](https://jb.gg/ipe?extensions=com.intellij.css.dialect) | `CssDialect` |
-| [com.intellij.css.elementDescriptorProvider](https://jb.gg/ipe?extensions=com.intellij.css.elementDescriptorProvider) | `CssElementDescriptorProvider` |
-| [com.intellij.css.embeddedCssProvider](https://jb.gg/ipe?extensions=com.intellij.css.embeddedCssProvider) | `EmbeddedCssProvider` |
-| [com.intellij.css.inclusionContext](https://jb.gg/ipe?extensions=com.intellij.css.inclusionContext) | `CssInclusionContext` |
-| [com.intellij.css.structureViewChildrenProvider](https://jb.gg/ipe?extensions=com.intellij.css.structureViewChildrenProvider) | `CssStructureViewElementsProvider` |
-| [com.intellij.css.supportedFileTypesProvider](https://jb.gg/ipe?extensions=com.intellij.css.supportedFileTypesProvider) | `CssSupportedFileTypesProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.classOrIdUsagesProvider"/></include> | `CssClassOrIdUsagesProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.cssFileReferenceProvider"/></include> | `CssFileReferenceProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.cssInspectionFilter"/></include> | `CssInspectionFilter` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.cssIntentionFilter"/></include> | `CssIntentionFilter` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.cssRelatedStylesheetsProvider"/></include> | `CssRelatedStylesheetsProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.dialect"/></include> | `CssDialect` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.elementDescriptorProvider"/></include> | `CssElementDescriptorProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.embeddedCssProvider"/></include> | `EmbeddedCssProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.inclusionContext"/></include> | `CssInclusionContext` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.structureViewChildrenProvider"/></include> | `CssStructureViewElementsProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.supportedFileTypesProvider"/></include> | `CssSupportedFileTypesProvider` |
 
 ### intellij.javascript.impl.diagrams.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.intellij.javascript.module.provider](https://jb.gg/ipe?extensions=com.intellij.javascript.module.provider) | `JSModuleConnectionProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.module.provider"/></include> | `JSModuleConnectionProvider` |
 
 ### intellij.javascript.web.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.intellij.javascript.webTypes](https://jb.gg/ipe?extensions=com.intellij.javascript.webTypes) ![Removal][removal] | `n/a` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.webTypes"/></include> ![Removal][removal] | `n/a` |
 
 ### js-plugin.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [JavaScript.FlowJSAnnotatorCheckerProvider](https://jb.gg/ipe?extensions=JavaScript.FlowJSAnnotatorCheckerProvider) | `FlowJSAnnotatorCheckerProvider` |
-| [JavaScript.JSImplicitElementsIndexFileTypeProvider](https://jb.gg/ipe?extensions=JavaScript.JSImplicitElementsIndexFileTypeProvider) | `JSImplicitElementsIndexFileTypeProvider` |
-| [JavaScript.TypeScriptAnnotatorCheckerProvider](https://jb.gg/ipe?extensions=JavaScript.TypeScriptAnnotatorCheckerProvider) ![Project-Level][project-level] | `TypeScriptAnnotatorCheckerProvider` |
-| [JavaScript.analysisHandlersFactory](https://jb.gg/ipe?extensions=JavaScript.analysisHandlersFactory) | `JSAnalysisHandlersFactory` |
-| [JavaScript.classInheritorsProvider](https://jb.gg/ipe?extensions=JavaScript.classInheritorsProvider) | `JSClassInheritorsProvider` |
-| [JavaScript.completionHelper](https://jb.gg/ipe?extensions=JavaScript.completionHelper) | `JSCompletionHelper` |
-| [JavaScript.completionPlaceFilter](https://jb.gg/ipe?extensions=JavaScript.completionPlaceFilter) ![Project-Level][project-level] | `JSCompletionPlaceFilterProvider` |
-| [JavaScript.componentUsageProvider](https://jb.gg/ipe?extensions=JavaScript.componentUsageProvider) | `JSComponentUsageProvider` |
-| [JavaScript.conditionalCompilationDefinitionsProvider](https://jb.gg/ipe?extensions=JavaScript.conditionalCompilationDefinitionsProvider) | `JSConditionalCompilationDefinitionsProvider` |
-| [JavaScript.dialectSpecificHandlersFactory](https://jb.gg/ipe?extensions=JavaScript.dialectSpecificHandlersFactory) | `JSDialectSpecificHandlersFactory` |
-| [JavaScript.directFileReferenceResolverProvider](https://jb.gg/ipe?extensions=JavaScript.directFileReferenceResolverProvider) | `JSDirectFileReferenceResolverProvider` |
-| [JavaScript.elementScopeProvider](https://jb.gg/ipe?extensions=JavaScript.elementScopeProvider) | `JSElementResolveScopeProvider` |
-| [JavaScript.frameworkIndexingHandler](https://jb.gg/ipe?extensions=JavaScript.frameworkIndexingHandler) | `FrameworkIndexingHandler` |
-| [JavaScript.frameworkSpecificHandler](https://jb.gg/ipe?extensions=JavaScript.frameworkSpecificHandler) | `JSFrameworkSpecificHandler` |
-| [JavaScript.frameworkSpecificStructureViewExtension](https://jb.gg/ipe?extensions=JavaScript.frameworkSpecificStructureViewExtension) | `JSFrameworkSpecificStructureExtension` |
-| [JavaScript.handlersFactory](https://jb.gg/ipe?extensions=JavaScript.handlersFactory) | `JSHandlersFactory` |
-| [JavaScript.iconProvider](https://jb.gg/ipe?extensions=JavaScript.iconProvider) | `JSIconProvider` |
-| [JavaScript.importCandidatesFactory](https://jb.gg/ipe?extensions=JavaScript.importCandidatesFactory) | `CandidatesFactory` |
-| [JavaScript.importCandidatesFilterFactory](https://jb.gg/ipe?extensions=JavaScript.importCandidatesFilterFactory) | `FilterFactory` |
-| [JavaScript.importModulePathStrategy](https://jb.gg/ipe?extensions=JavaScript.importModulePathStrategy) ![Experimental][experimental] | `JSImportModulePathStrategy` |
-| [JavaScript.indexedFileTypeProvider](https://jb.gg/ipe?extensions=JavaScript.indexedFileTypeProvider) | `IndexedFileTypeProvider` |
-| [JavaScript.inheritedLanguagesConfigurableProvider](https://jb.gg/ipe?extensions=JavaScript.inheritedLanguagesConfigurableProvider) | `JSInheritedLanguagesConfigurableProvider` |
-| [JavaScript.intentionAndInspectionFilter](https://jb.gg/ipe?extensions=JavaScript.intentionAndInspectionFilter) | `IntentionAndInspectionFilter` |
-| [JavaScript.itemPresentation](https://jb.gg/ipe?extensions=JavaScript.itemPresentation) ![Experimental][experimental] | `JSItemPresentationProvider` |
-| [JavaScript.jestPackageProvider](https://jb.gg/ipe?extensions=JavaScript.jestPackageProvider) | `JestPackageProvider` |
-| [JavaScript.jsDocCustomTagsHandler](https://jb.gg/ipe?extensions=JavaScript.jsDocCustomTagsHandler) ![Experimental][experimental] | `JSDocCustomTagsHandler` |
-| [JavaScript.jsxImplementation](https://jb.gg/ipe?extensions=JavaScript.jsxImplementation) | `JSXImplementation` |
-| [JavaScript.lang.templates](https://jb.gg/ipe?extensions=JavaScript.lang.templates) ![Project-Level][project-level] | [`Configurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/Configurable.java) |
-| [JavaScript.languageServiceProvider](https://jb.gg/ipe?extensions=JavaScript.languageServiceProvider) ![Project-Level][project-level] | `JSLanguageServiceProvider` |
-| [JavaScript.languageServiceQuickFixProvider](https://jb.gg/ipe?extensions=JavaScript.languageServiceQuickFixProvider) | `JSLanguageServiceQuickFixProvider` |
-| [JavaScript.languageServiceRemoteHelperFactory](https://jb.gg/ipe?extensions=JavaScript.languageServiceRemoteHelperFactory) | `Factory` |
-| [JavaScript.minifiedFileIndexingProvider](https://jb.gg/ipe?extensions=JavaScript.minifiedFileIndexingProvider) ![Internal][internal] | `JSMinifiedFileIndexingProvider` |
-| [JavaScript.moduleExportsProvider](https://jb.gg/ipe?extensions=JavaScript.moduleExportsProvider) | `JSModuleExportsProvider` |
-| [JavaScript.moduleReferenceContributor](https://jb.gg/ipe?extensions=JavaScript.moduleReferenceContributor) | `JSModuleReferenceContributor` |
-| [JavaScript.nodeModulesIndexableFileNamesProvider](https://jb.gg/ipe?extensions=JavaScript.nodeModulesIndexableFileNamesProvider) | `NodeModulesIndexableFileNamesProvider` |
-| [JavaScript.nodeRunConfigurationExtension](https://jb.gg/ipe?extensions=JavaScript.nodeRunConfigurationExtension) | `AbstractNodeRunConfigurationExtension` |
-| [JavaScript.predefinedLibraryProvider](https://jb.gg/ipe?extensions=JavaScript.predefinedLibraryProvider) | `JSPredefinedLibraryProvider` |
-| [JavaScript.projectGeneratorPanelCustomizer](https://jb.gg/ipe?extensions=JavaScript.projectGeneratorPanelCustomizer) | `ProjectGeneratorSettingsCustomizer` |
-| [JavaScript.resolveHelper](https://jb.gg/ipe?extensions=JavaScript.resolveHelper) | `JSResolveHelper` |
-| [JavaScript.runConfigurationBuilder](https://jb.gg/ipe?extensions=JavaScript.runConfigurationBuilder) ![Project-Level][project-level] | `JSRunConfigurationBuilder` |
-| [JavaScript.scanningFileListenerContributor](https://jb.gg/ipe?extensions=JavaScript.scanningFileListenerContributor) | `ScanningFileListenerContributor` |
-| [JavaScript.smartCompletionContributor](https://jb.gg/ipe?extensions=JavaScript.smartCompletionContributor) | `JSSmartCompletionContributor` |
-| [JavaScript.spellcheckerProvider](https://jb.gg/ipe?extensions=JavaScript.spellcheckerProvider) | `JSSpellcheckerProvider` |
-| [JavaScript.testFrameworkDetector](https://jb.gg/ipe?extensions=JavaScript.testFrameworkDetector) | `n/a` |
-| [JavaScript.testWatchProvider](https://jb.gg/ipe?extensions=JavaScript.testWatchProvider) | `JsTestWatchProvider` |
-| [JavaScript.tsConfigCustomizer](https://jb.gg/ipe?extensions=JavaScript.tsConfigCustomizer) ![Experimental][experimental] | `TypeScriptConfigCustomizer` |
-| [JavaScript.tsImportResolver](https://jb.gg/ipe?extensions=JavaScript.tsImportResolver) | `TypeScriptImportsResolverProvider` |
-| [JavaScript.tsServiceExtension](https://jb.gg/ipe?extensions=JavaScript.tsServiceExtension) | `TypeScriptServiceExtension` |
-| [JavaScript.typeScriptCompilerTypePatcher](https://jb.gg/ipe?extensions=JavaScript.typeScriptCompilerTypePatcher) | `TypeScriptCompilerTypePatcher` |
-| [JavaScript.unresolvedReferenceErrorUpdater](https://jb.gg/ipe?extensions=JavaScript.unresolvedReferenceErrorUpdater) ![Experimental][experimental] | `JSUnresolvedReferenceErrorUpdater` |
-| [JavaScript.webBundlerCssReferenceContributor](https://jb.gg/ipe?extensions=JavaScript.webBundlerCssReferenceContributor) | `JSModuleReferenceContributor` |
-| [JavaScript.webBundlerDefinition](https://jb.gg/ipe?extensions=JavaScript.webBundlerDefinition) | `WebBundlerDefinition` |
-| [JavaScript.xmlBackedClassProvider](https://jb.gg/ipe?extensions=JavaScript.xmlBackedClassProvider) | `XmlBackedJSClassProvider` |
-| [NodeJS.runConfigurationLocationFilter](https://jb.gg/ipe?extensions=NodeJS.runConfigurationLocationFilter) | `NodeRunConfigurationLocationFilter` |
-| [com.intellij.JavaScript.linter.descriptor](https://jb.gg/ipe?extensions=com.intellij.JavaScript.linter.descriptor) | `JSLinterDescriptor` |
-| [com.intellij.JavaScript.linter.execution.suppressor](https://jb.gg/ipe?extensions=com.intellij.JavaScript.linter.execution.suppressor) | `JSLinterExecutionSuppressor` |
-| [com.intellij.eslint.ruleMappersFactory](https://jb.gg/ipe?extensions=com.intellij.eslint.ruleMappersFactory) | `EslintRuleMappersFactory` |
-| [com.intellij.javascript.extract.interface.extension](https://jb.gg/ipe?extensions=com.intellij.javascript.extract.interface.extension) | `JSCustomExtractInterfaceHandler` |
-| [com.intellij.javascript.introduce.variable.extension](https://jb.gg/ipe?extensions=com.intellij.javascript.introduce.variable.extension) | `JSCustomIntroduceVariableHandler` |
-| [com.intellij.javascript.json.schema.provider](https://jb.gg/ipe?extensions=com.intellij.javascript.json.schema.provider) | `JsonSchemaInJavaScriptProvider` |
-| [com.intellij.javascript.library.externalDefinitionsContributor](https://jb.gg/ipe?extensions=com.intellij.javascript.library.externalDefinitionsContributor) | `TypeScriptExternalDefinitionsContributor` |
-| [com.intellij.javascript.names.suggester](https://jb.gg/ipe?extensions=com.intellij.javascript.names.suggester) | `JSNamesSuggester` |
-| [com.intellij.javascript.rename.extension](https://jb.gg/ipe?extensions=com.intellij.javascript.rename.extension) | `JSRenameExtension` |
-| [com.intellij.jsbtFileManagerProvider](https://jb.gg/ipe?extensions=com.intellij.jsbtFileManagerProvider) | `JsbtFileManagerProvider` |
-| [com.intellij.jsbtService](https://jb.gg/ipe?extensions=com.intellij.jsbtService) | `JsbtApplicationService` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.FlowJSAnnotatorCheckerProvider"/></include> | `FlowJSAnnotatorCheckerProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.JSImplicitElementsIndexFileTypeProvider"/></include> | `JSImplicitElementsIndexFileTypeProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.TypeScriptAnnotatorCheckerProvider"/></include> ![Project-Level][project-level] | `TypeScriptAnnotatorCheckerProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.analysisHandlersFactory"/></include> | `JSAnalysisHandlersFactory` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.classInheritorsProvider"/></include> | `JSClassInheritorsProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.completionHelper"/></include> | `JSCompletionHelper` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.completionPlaceFilter"/></include> ![Project-Level][project-level] | `JSCompletionPlaceFilterProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.componentUsageProvider"/></include> | `JSComponentUsageProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.conditionalCompilationDefinitionsProvider"/></include> | `JSConditionalCompilationDefinitionsProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.dialectSpecificHandlersFactory"/></include> | `JSDialectSpecificHandlersFactory` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.directFileReferenceResolverProvider"/></include> | `JSDirectFileReferenceResolverProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.elementScopeProvider"/></include> | `JSElementResolveScopeProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.frameworkIndexingHandler"/></include> | `FrameworkIndexingHandler` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.frameworkSpecificHandler"/></include> | `JSFrameworkSpecificHandler` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.frameworkSpecificStructureViewExtension"/></include> | `JSFrameworkSpecificStructureExtension` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.handlersFactory"/></include> | `JSHandlersFactory` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.iconProvider"/></include> | `JSIconProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.importCandidatesFactory"/></include> | `CandidatesFactory` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.importCandidatesFilterFactory"/></include> | `FilterFactory` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.importModulePathStrategy"/></include> ![Experimental][experimental] | `JSImportModulePathStrategy` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.indexedFileTypeProvider"/></include> | `IndexedFileTypeProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.inheritedLanguagesConfigurableProvider"/></include> | `JSInheritedLanguagesConfigurableProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.intentionAndInspectionFilter"/></include> | `IntentionAndInspectionFilter` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.itemPresentation"/></include> ![Experimental][experimental] | `JSItemPresentationProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.jestPackageProvider"/></include> | `JestPackageProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.jsDocCustomTagsHandler"/></include> ![Experimental][experimental] | `JSDocCustomTagsHandler` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.jsxImplementation"/></include> | `JSXImplementation` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.lang.templates"/></include> ![Project-Level][project-level] | [`Configurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/Configurable.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.languageServiceProvider"/></include> ![Project-Level][project-level] | `JSLanguageServiceProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.languageServiceQuickFixProvider"/></include> | `JSLanguageServiceQuickFixProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.languageServiceRemoteHelperFactory"/></include> | `Factory` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.minifiedFileIndexingProvider"/></include> ![Internal][internal] | `JSMinifiedFileIndexingProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.moduleExportsProvider"/></include> | `JSModuleExportsProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.moduleReferenceContributor"/></include> | `JSModuleReferenceContributor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.nodeModulesIndexableFileNamesProvider"/></include> | `NodeModulesIndexableFileNamesProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.nodeRunConfigurationExtension"/></include> | `AbstractNodeRunConfigurationExtension` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.predefinedLibraryProvider"/></include> | `JSPredefinedLibraryProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.projectGeneratorPanelCustomizer"/></include> | `ProjectGeneratorSettingsCustomizer` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.resolveHelper"/></include> | `JSResolveHelper` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.runConfigurationBuilder"/></include> ![Project-Level][project-level] | `JSRunConfigurationBuilder` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.scanningFileListenerContributor"/></include> | `ScanningFileListenerContributor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.smartCompletionContributor"/></include> | `JSSmartCompletionContributor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.spellcheckerProvider"/></include> | `JSSpellcheckerProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.testFrameworkDetector"/></include> | `n/a` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.testWatchProvider"/></include> | `JsTestWatchProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.tsConfigCustomizer"/></include> ![Experimental][experimental] | `TypeScriptConfigCustomizer` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.tsImportResolver"/></include> | `TypeScriptImportsResolverProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.tsServiceExtension"/></include> | `TypeScriptServiceExtension` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.typeScriptCompilerTypePatcher"/></include> | `TypeScriptCompilerTypePatcher` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.unresolvedReferenceErrorUpdater"/></include> ![Experimental][experimental] | `JSUnresolvedReferenceErrorUpdater` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.webBundlerCssReferenceContributor"/></include> | `JSModuleReferenceContributor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.webBundlerDefinition"/></include> | `WebBundlerDefinition` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.xmlBackedClassProvider"/></include> | `XmlBackedJSClassProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="NodeJS.runConfigurationLocationFilter"/></include> | `NodeRunConfigurationLocationFilter` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.JavaScript.linter.descriptor"/></include> | `JSLinterDescriptor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.JavaScript.linter.execution.suppressor"/></include> | `JSLinterExecutionSuppressor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.eslint.ruleMappersFactory"/></include> | `EslintRuleMappersFactory` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.extract.interface.extension"/></include> | `JSCustomExtractInterfaceHandler` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.introduce.variable.extension"/></include> | `JSCustomIntroduceVariableHandler` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.json.schema.provider"/></include> | `JsonSchemaInJavaScriptProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.library.externalDefinitionsContributor"/></include> | `TypeScriptExternalDefinitionsContributor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.names.suggester"/></include> | `JSNamesSuggester` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.rename.extension"/></include> | `JSRenameExtension` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.jsbtFileManagerProvider"/></include> | `JsbtFileManagerProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.jsbtService"/></include> | `JsbtApplicationService` |
 
 ### org.jetbrains.plugins.node-remote-interpreter
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [org.jetbrains.plugins.node-remote-interpreter.nodeRemoteTargetRunSetupFactory](https://jb.gg/ipe?extensions=org.jetbrains.plugins.node-remote-interpreter.nodeRemoteTargetRunSetupFactory) | `NodeRemoteTargetRunSetupFactory` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.node-remote-interpreter.nodeRemoteTargetRunSetupFactory"/></include> | `NodeRemoteTargetRunSetupFactory` |
 
 ### org.jetbrains.plugins.sass
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.intellij.sass.extension](https://jb.gg/ipe?extensions=com.intellij.sass.extension) | `SassExtension` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.sass.extension"/></include> | `SassExtension` |
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square
 [removal]: https://img.shields.io/badge/-Removal-red?style=flat-square

@@ -24,40 +24,40 @@ See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 
 | Topic | Listener |
 |-------|----------|
-| [GoLibrariesService#LIBRARIES_TOPIC](https://jb.gg/ipe/listeners?topics=com.goide.project.GoLibrariesService.LibrariesListener)  | `LibrariesListener` |
-| [GoModuleSettings#BUILD_TARGET_TOPIC](https://jb.gg/ipe/listeners?topics=com.goide.project.GoModuleSettings.BuildTargetListener)  ![Project-Level][project-level] | `BuildTargetListener` |
-| [GoModuleSettings#GO_SUPPORT_TOPIC](https://jb.gg/ipe/listeners?topics=com.goide.project.GoModuleSettings.GoSupportListener)  ![Project-Level][project-level] | `GoSupportListener` |
-| [GoProjectLifecycleListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.goide.project.GoProjectLifecycleListener)  | `GoProjectLifecycleListener` |
-| [VgoUpdateProgressManager#UPDATE_PROGRESS_TOPIC](https://jb.gg/ipe/listeners?topics=com.goide.vgo.VgoStatusTracker.VgoUpdateProgressManager.VgoModuleUpdateProgressListener)  ![Project-Level][project-level] | `VgoModuleUpdateProgressListener` |
-| [VgoProjectSettings#VGO_INTEGRATION_TOPIC](https://jb.gg/ipe/listeners?topics=com.goide.vgo.configuration.VgoProjectSettings.IntegrationListener)  | `IntegrationListener` |
+| [`GoLibrariesService#LIBRARIES_TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.project.GoLibrariesService.LibrariesListener)  | `LibrariesListener` |
+| [`GoModuleSettings#BUILD_TARGET_TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.project.GoModuleSettings.BuildTargetListener)  ![Project-Level][project-level] | `BuildTargetListener` |
+| [`GoModuleSettings#GO_SUPPORT_TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.project.GoModuleSettings.GoSupportListener)  ![Project-Level][project-level] | `GoSupportListener` |
+| [`GoProjectLifecycleListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.project.GoProjectLifecycleListener)  | `GoProjectLifecycleListener` |
+| [`VgoUpdateProgressManager#UPDATE_PROGRESS_TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.vgo.VgoStatusTracker.VgoUpdateProgressManager.VgoModuleUpdateProgressListener)  ![Project-Level][project-level] | `VgoModuleUpdateProgressListener` |
+| [`VgoProjectSettings#VGO_INTEGRATION_TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.vgo.configuration.VgoProjectSettings.IntegrationListener)  | `IntegrationListener` |
 
 
 ### goland.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.goide.dlv.positionConverterFactory](https://jb.gg/ipe?extensions=com.goide.dlv.positionConverterFactory) | `DlvPositionConverterFactory` |
-| [com.goide.documentation.packageVersionProvider](https://jb.gg/ipe?extensions=com.goide.documentation.packageVersionProvider) | `GoDocumentationPackageVersionProvider` |
-| [com.goide.execution.defaultTargetEnvironmentProvider](https://jb.gg/ipe?extensions=com.goide.execution.defaultTargetEnvironmentProvider) | `DefaultTargetEnvironmentProvider` |
-| [com.goide.executorExtension](https://jb.gg/ipe?extensions=com.goide.executorExtension) | `GoExecutorExtension` |
-| [com.goide.highlighting.errorAnnotatorSuppressor](https://jb.gg/ipe?extensions=com.goide.highlighting.errorAnnotatorSuppressor) | `GoErrorAnnotatorSuppressor` |
-| [com.goide.importResolver](https://jb.gg/ipe?extensions=com.goide.importResolver) | `GoImportResolver` |
-| [com.goide.importsFilter](https://jb.gg/ipe?extensions=com.goide.importsFilter) | `GoImportsFilter` |
-| [com.goide.packageFactory](https://jb.gg/ipe?extensions=com.goide.packageFactory) | `GoPackageFactory` |
-| [com.goide.runConfigurationExtension](https://jb.gg/ipe?extensions=com.goide.runConfigurationExtension) | `GoRunConfigurationExtension` |
-| [com.goide.sdk.sdkVetoer](https://jb.gg/ipe?extensions=com.goide.sdk.sdkVetoer) | `GoBasedSdkVetoer` |
-| [com.goide.sdk.targetSdkVersionProvider](https://jb.gg/ipe?extensions=com.goide.sdk.targetSdkVersionProvider) | `GoTargetSdkVersionProvider` |
-| [com.goide.sdkProvider](https://jb.gg/ipe?extensions=com.goide.sdkProvider) | `GoSdkProvider` |
-| [com.goide.support](https://jb.gg/ipe?extensions=com.goide.support) | `GoLangSupport` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.dlv.positionConverterFactory"/></include> | `DlvPositionConverterFactory` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.documentation.packageVersionProvider"/></include> | `GoDocumentationPackageVersionProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.execution.defaultTargetEnvironmentProvider"/></include> | `DefaultTargetEnvironmentProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.executorExtension"/></include> | `GoExecutorExtension` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.highlighting.errorAnnotatorSuppressor"/></include> | `GoErrorAnnotatorSuppressor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.importResolver"/></include> | `GoImportResolver` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.importsFilter"/></include> | `GoImportsFilter` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.packageFactory"/></include> | `GoPackageFactory` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.runConfigurationExtension"/></include> | `GoRunConfigurationExtension` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.sdk.sdkVetoer"/></include> | `GoBasedSdkVetoer` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.sdk.targetSdkVersionProvider"/></include> | `GoTargetSdkVersionProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.sdkProvider"/></include> | `GoSdkProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.support"/></include> | `GoLangSupport` |
 
 ### openapi.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.goide.documentation.additionalDocumentationProvider](https://jb.gg/ipe?extensions=com.goide.documentation.additionalDocumentationProvider) | `GoAdditionalDocumentationProvider` |
-| [com.goide.importPathsProvider](https://jb.gg/ipe?extensions=com.goide.importPathsProvider) | `GoImportPathsProvider` |
-| [com.goide.imports.weigher](https://jb.gg/ipe?extensions=com.goide.imports.weigher) | `GoImportsWeigher` |
-| [com.goide.rootsProvider](https://jb.gg/ipe?extensions=com.goide.rootsProvider) | `GoRootsProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.documentation.additionalDocumentationProvider"/></include> | `GoAdditionalDocumentationProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.importPathsProvider"/></include> | `GoImportPathsProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.imports.weigher"/></include> | `GoImportsWeigher` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.rootsProvider"/></include> | `GoRootsProvider` |
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square
 [removal]: https://img.shields.io/badge/-Removal-red?style=flat-square

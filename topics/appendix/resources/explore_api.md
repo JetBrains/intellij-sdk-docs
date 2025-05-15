@@ -191,3 +191,81 @@ Here is a condensed list you can use for further reference:
 - Section on [exploring module and plugin APIs](plugin_compatibility.md#exploring-module-and-plugin-apis).
 - List of [notable](api_notable.md) and [incompatible](api_changes_list.md) API changes.
 
+## Debugger Entry Points
+
+The following techniques allow finding code responsible for specific features by adding breakpoints in places which are entry points to common IDE features.
+
+> Make sure the sandbox IDE is run in the debug mode.
+
+### Finding an intention action, quick fix, or other code modifying documents
+
+<procedure>
+
+1. Add a breakpoint at the beginning of [`DocumentImpl.changedUpdate()`](%gh-ic%/platform/core-impl/src/com/intellij/openapi/editor/impl/DocumentImpl.java).
+2. In the sandbox IDE instance, invoke the intention, quick fix, or other feature modifying code.
+3. The execution suspends at the breakpoint.
+4. In the stacktrace, find the responsible class.
+
+> This breakpoint will work in cases whenever a feature modifies a file text (not only direct changes in a document, but via PSI, actions, etc.).
+
+</procedure>
+
+### Finding code responsible for highlighting something in the editor
+
+<procedure>
+
+1. Add a breakpoint at the beginning of [`HighlightInfoHolder.add()`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/daemon/impl/analysis/HighlightInfoHolder.java).
+2. In the sandbox IDE instance, modify a document in the editor, for example by adding a space next to the highlighted element.
+3. The execution suspends at the breakpoint.
+   > Depending on the number of added infos, adding a condition to the breakpoint may narrow down the debugger suspensions.
+   > For example, add a condition for a description, severity, or other properties.
+4. In the stacktrace, find the responsible class like inspection, annotator, highlighting pass, or other (usually its name is self-explanatory).
+
+</procedure>
+
+### Navigating to files in the editor from another editor, console, and other places
+
+<procedure>
+
+1. Add a breakpoint at the beginning of [`OpenFileDescriptor(Project, VirtualFile, CodeInsightContext, int, int, int, boolean)`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/fileEditor/OpenFileDescriptor.java)` (the constructor with statements initializing the class fields).
+2. In the sandbox IDE instance, invoke the navigation feature.
+3. The execution suspends at the breakpoint.
+4. In the stacktrace, find the call responsible for triggering the navigation.
+
+</procedure>
+
+### Catching processes executed from the IDE
+
+<procedure>
+
+1. Add a breakpoint at the beginning of [`GeneralCommandLine(List<String>)`](%gh-ic%/platform/platform-util-io/src/com/intellij/execution/configurations/GeneralCommandLine.java) (constructor receiving the `command` list).
+2. In the sandbox IDE instance, run a process.
+3. The execution suspends at the breakpoint.
+   > Depending on the executed process, there may be more processes involved, for example, executing a main Java method may involve running a code compilation process before executing the method.
+   > The required process can be determined by checking the `command` list.
+4. Depending on the needs, in the stacktrace find code responsible for building the process, setting process arguments, or other.
+
+</procedure>
+
+### Finding code responsible for opening a dialog
+
+<procedure>
+
+1. In the sandbox IDE instance, open a dialog.
+2. Go back to the IDE and pause the program execution.
+3. In the <control>Debugger</control> tool window, go to the <control>Threads & Variables</control> tab.
+4. In the thread combo box (over the stacktrace), select the **AWT EventQueue** thread (filter the list by "EvenQueue").
+5. In the stacktrace find code responsible for triggering the dialog.
+
+</procedure>
+
+### Finding code responsible for showing a popup
+
+<procedure>
+
+1. Add breakpoints at the beginning of [`LightweightHint`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/LightweightHint.java) and [`ActionPopupMenuImpl`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/actionSystem/impl/ActionPopupMenuImpl.java) classes' constructors.
+2. In the sandbox IDE instance, invoke the popup.
+3. The execution suspends at the breakpoint.
+4. In the stacktrace, find the responsible class.
+
+</procedure>

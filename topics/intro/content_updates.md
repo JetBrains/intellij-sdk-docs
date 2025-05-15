@@ -23,6 +23,7 @@ Minor Changes and Additions
 - Add [](editors.md#editors-faq) section.
 - Extension Points and Listeners are now grouped per plugin, for example, [](intellij_community_plugins_extension_point_list.md#java-plugin).
 - Revise and expand [](code_completion.md), [](icons.md), [UI FAQ: Icons](ui_faq.md#icons) sections.
+- Add [](explore_api.md#debugger-entry-points) allowing identifying code responsible for invoked actions.
 
 ### March
 {march-25}

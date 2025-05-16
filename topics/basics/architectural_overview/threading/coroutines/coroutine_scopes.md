@@ -174,11 +174,11 @@ gantt
     axisFormat ‎
     section Lifetimes
         Application Scope        : done, 0, 10
-        Plugin A Scope           : done, 1, 6
+        Plugin A Scope           : active, done, 1, 6
         Plugin B Scope           : 4, 9
         Project Scope            : done, 2, 8
-        Project × Plugin A Scope : done, 2, 6
-        Project × Plugin B Scope : done, 4, 8
+        Project × Plugin A Scope : active, done, 2, 6
+        Project × Plugin B Scope : 4, 8
         PluginAService leak      : crit, 5, 8
 ```
 

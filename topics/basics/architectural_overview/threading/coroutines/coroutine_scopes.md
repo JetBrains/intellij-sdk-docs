@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Coroutine Scopes
 <primary-label ref="2024.1"/>
@@ -165,7 +165,7 @@ project.getCoroutineScope(PluginBService::class.java).launch {
 ```
 
 Unloading of Plugin A cancels its scope.
-The scope of Plugin B remains active, and the Plugin A classes are leaked.
+The **Project × Plugin B** scope remains active, and the Plugin A classes are leaked.
 
 ```mermaid
 gantt
@@ -179,7 +179,7 @@ gantt
         Project Scope            : done, 2, 8
         Project × Plugin A Scope : done, 2, 6
         Project × Plugin B Scope : done, 4, 8
-        PluginAService leak      : crit, 5, 9
+        PluginAService leak      : crit, 5, 8
 ```
 
 <include from="snippets.topic" element-id="missingContent"/>

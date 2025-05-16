@@ -173,13 +173,14 @@ gantt
     %% do not remove trailing space in axisFormat
     axisFormat ‎
     section Lifetimes
-        Application Scope        : done, 0, 10
-        Plugin A Scope           : active, done, 1, 6
-        Plugin B Scope           : 4, 9
-        Project Scope            : done, 2, 8
-        Project × Plugin A Scope : active, done, 2, 6
-        Project × Plugin B Scope : 4, 8
-        PluginAService leak      : crit, 5, 8
+        Application Scope                               : done, 0, 10
+        Plugin A Scope                                  : active, done, 1, 6
+        Plugin B Scope                                  : 4, 9
+        Project Scope                                   : done, 2, 8
+        Project × Plugin A Scope                        : active, done, 2, 6
+        Project × Plugin B Scope                        : 4, 8
+        PluginAService leak                             : crit, 5, 8
+        Correct PluginAService lifetime should end here : active, milestone, 6, 6
 ```
 
 <include from="snippets.topic" element-id="missingContent"/>

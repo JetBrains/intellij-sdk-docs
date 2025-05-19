@@ -14,7 +14,7 @@
 
 Two types of code completion can be provided by custom language plugins: reference completion and contributor-based completion.
 
-Reference completion is easier to implement, but supports only the basic completion action.
+Reference completion is easier to implement but supports only the basic completion action.
 
 Contributor-based completion provides more features, supports all completion types
 (<ui-path>Code | Code Completion | Basic</ui-path> and <ui-path>Type Matching</ui-path>),
@@ -45,7 +45,7 @@ To provide completion variants by a `PsiSymbolReference` implement
 ## Contributor-Based Completion
 
 Implementing [`CompletionContributor`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java) gives the greatest control over the operation of code completion.
-Register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.completion.contributor"/></include> and specify `language` attribute (unless it works on any supported language).
+Register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.completion.contributor"/></include> and specify the `language` attribute (unless it works on any supported language).
 
 > Note that the Javadoc of that class contains a detailed FAQ for implementing code completion.
 >
@@ -102,7 +102,7 @@ Example: add parentheses for a method call ([`ParenthesesInsertHandler`](%gh-ic%
 
 The item presentation can also be performed via (re-usable) [`LookupElementRenderer`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/lookup/LookupElementRenderer.java).
 
-For expensive calculations (for example, the presentation of an item to be shown depends on other items) use `LookupElementBuilder.withExpensiveRenderer()` to invoke the renderer in the background
+For expensive calculations (for example, the presentation of an item to be shown depends on other items), use `LookupElementBuilder.withExpensiveRenderer()` to invoke the renderer in the background
 while the completion list is already populating.
 
 ### Sorting
@@ -114,8 +114,10 @@ if _all_ lookup items are guaranteed to be provided by this `CompletionContribut
 
 ### Skipping Completion Popup
 
-To skip completion popup in the current context (for example, inside comments), implement [`CompletionConfidence`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionConfidence.java)
+To skip the completion popup in the current context (for example, inside comments), implement [`CompletionConfidence`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionConfidence.java)
 registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.completion.confidence"/></include>.
+
+This can also be used to _prevent_ skipping provided by other plugins by returning `ThreeState.NO` and registering the extension with `order="first"`.
 
 ### Showing Completion Popup Programmatically
 

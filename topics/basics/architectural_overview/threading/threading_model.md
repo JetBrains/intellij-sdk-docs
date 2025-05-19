@@ -199,6 +199,12 @@ Read and write actions allow executing a piece of code under a lock, automatical
     // read and return PsiFile
   }
   ```
+
+  > Plugins implemented in Kotlin and targeting versions 2024.1+ should use suspending [`readAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt).
+  > See also [](coroutine_read_actions.topic).
+  >
+  {style="warning"}
+
   </tab>
   <tab title="Java" group-key="java">
 
@@ -242,8 +248,6 @@ Read and write actions allow executing a piece of code under a lock, automatical
   }
   ```
   Note that this API is obsolete since 2024.1.
-  Plugins implemented in Kotlin and targeting versions 2024.1+ should use suspending [`readAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt).
-  See also [](coroutine_read_actions.topic).
 
 #### Rules
 {#read-actions-rules}
@@ -345,6 +349,11 @@ gantt
     // write data
   }
   ```
+
+  > Plugins implemented in Kotlin and targeting versions 2024.1+ should use suspending [`writeAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt).
+  >
+  {style="warning"}
+
   </tab>
   <tab title="Java" group-key="java">
 
@@ -387,7 +396,6 @@ gantt
   }
   ```
   Note that this API is obsolete since 2024.1.
-  Plugins implemented in Kotlin and targeting versions 2024.1+ should use suspending [`writeAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt).
 
 #### Rules
 {#write-actions-rules}

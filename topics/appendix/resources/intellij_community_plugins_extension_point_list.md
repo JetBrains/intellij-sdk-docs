@@ -17,8 +17,9 @@ There must be no top-level "Listeners" group, adjust ExtensionPointAnalyzerActio
 
 > See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 
-629 Extension Points and 71 Listeners (%ijPlatform%)
+IntelliJ Platform version: %ijPlatform%.
 
+629 Extension Points and 71 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 

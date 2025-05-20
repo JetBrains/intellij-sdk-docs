@@ -10,14 +10,15 @@ EXCLUDING:
 /community/jvm
 /community/plugins
 /community/python
-
 -->
 
 # IntelliJ Platform Extension Point and Listener List
 
 <link-summary>Overview of Extension Points and Listeners for IntelliJ Platform.</link-summary>
 
-1172 Extension Points and 225 Listeners (%ijPlatform%)
+IntelliJ Platform version: %ijPlatform%.
+
+1172 Extension Points and 225 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 

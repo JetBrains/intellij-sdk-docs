@@ -13,6 +13,8 @@
 
 </tldr>
 
+> See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
+
 > Spring API Extension Points and Listeners are available in the Spring-related plugins,
 > which are available in [](idea_ultimate.md) only.
 >

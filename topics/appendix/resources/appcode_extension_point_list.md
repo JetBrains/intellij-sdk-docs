@@ -13,11 +13,11 @@
 
 </tldr>
 
-34 Extension Points and 6 Listeners for AppCode 2022.3
-
-See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
+> See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 
 <include from="app_code.md" element-id="appCodeSunset"/>
+
+34 Extension Points and 6 Listeners for AppCode 2022.3
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 

@@ -17,9 +17,9 @@
 
 </tldr>
 
-80 Extension Points and 5 Listeners
+> See [](intellij_platform_extension_point_list.md) for IntelliJ Platform and [](oss_plugins_extension_point_list.md) for additional plugins.
 
-See [](intellij_platform_extension_point_list.md) for IntelliJ Platform and [](oss_plugins_extension_point_list.md) for additional plugins.
+80 Extension Points and 5 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 

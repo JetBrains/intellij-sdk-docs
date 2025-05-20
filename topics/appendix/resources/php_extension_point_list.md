@@ -12,9 +12,9 @@
 
 </tldr>
 
-63 Extension Points and 11 Listeners
+> See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 
-See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
+63 Extension Points and 11 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 

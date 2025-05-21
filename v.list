@@ -31,11 +31,12 @@
   <var name="gh-ijpgp" value="https://github.com/JetBrains/intellij-platform-gradle-plugin/tree/%intellij-platform-gradle-plugin-version%"/>
   <var name="gh-ijpgp-master" value="https://github.com/JetBrains/intellij-platform-gradle-plugin/tree/main"/>
 
+  <var name="plugin-verifier-version" value="1.386"/>
+  <var name="gh-pv" value="https://github.com/JetBrains/intellij-plugin-verifier/tree/%plugin-verifier-version%"/>
   <var name="gh-pv-master" value="https://github.com/JetBrains/intellij-plugin-verifier/tree/master"/>
 
   <var name="gradle-intellij-plugin-version" value="1.17.4"/>
   <var name="gradle-grammar-kit-plugin-version" value="2022.3.2.2"/>
-  <var name="plugin-verifier-version" value="1.386"/>
   <var name="marketplace-zip-signer-version" value="0.1.38"/>
 
 </vars>

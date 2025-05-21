@@ -71,7 +71,7 @@ Each entry is composed of a product code and coordinates used for dependency and
 ## `PluginBean`
 {#PluginBean}
 
-[`PluginBean`](%gh-pv-master%/intellij-plugin-structure/structure-intellij/src/main/java/com/jetbrains/plugin/structure/intellij/beans/PluginBean.java)
+[`PluginBean`](%gh-pv%/intellij-plugin-structure/structure-intellij/src/main/java/com/jetbrains/plugin/structure/intellij/beans/PluginBean.java)
 
 Describes the content of the <path>plugin.xml</path> file.
 

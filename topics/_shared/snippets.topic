@@ -33,7 +33,7 @@
             <p>
                 <emphasis>Plugin DevKit</emphasis>
                 plugin must be installed from JetBrains Marketplace (<a
-                        href="https://plugins.jetbrains.com/plugin/22851-plugin-devkit">Plugin Homepage</a>)
+                    href="https://plugins.jetbrains.com/plugin/22851-plugin-devkit">Plugin Homepage</a>)
                 as it is not bundled since version 2023.3.
             </p>
         </warning>
@@ -67,38 +67,40 @@
     </snippet>
     <snippet id="apiChangesJavaVersion">
         <note title="IDE and Java Versions">
-            <p>Java version must be set depending on the target platform version.</p>
-            <p>
-                <control>2024.2+</control>
-                : Java 21
-            </p>
-            <p>
-                <control>2022.3+</control>
-                : Java 17
-            </p>
-            <p>See <a href="build_number_ranges.md" anchor="platformVersions"/> for details.</p>
+            <p>Java version must be set depending on the target
+                <a href="build_number_ranges.md" anchor="platformVersions">platform version</a>.</p>
+            <deflist type="narrow">
+                <def id="java_2024.2" title="2024.2+">
+                    Java 21
+                </def>
+                <def id="java_2022.3" title="2022.3+">
+                    Java 17
+                </def>
+            </deflist>
         </note>
     </snippet>
     <snippet id="gradlePluginVersion">
         <warning title="Gradle Plugin">
-            <p>The Gradle plugin must be chosen depending on the target <a href="build_number_ranges.md"
-                                                                           anchor="platformVersions">platform
-                version</a>.</p>
-            <deflist>
-                <def id="gradlePluginVersion_2024.2">
-                    <title>2024.2+</title>
+            <p>The Gradle plugin must be chosen depending on the target
+                <a href="build_number_ranges.md" anchor="platformVersions">platform version</a>.
+            </p>
+            <deflist type="narrow">
+                <def id="gradlePluginVersion_2024.2" title="2024.2+">
                     <p>
                         <control>Requires</control>
-                        <a href="tools_intellij_platform_gradle_plugin.md"/></p>
+                        <a href="tools_intellij_platform_gradle_plugin.md"/>
+                    </p>
                 </def>
-                <def id="gradlePluginVersion_2022.3">
-                    <title>2022.3+</title>
+                <def id="gradlePluginVersion_2022.3" title="2022.3+">
                     <p>
                         <control>Recommended</control>
-                        <a href="tools_intellij_platform_gradle_plugin.md"/>,<br/>
+                        <a href="tools_intellij_platform_gradle_plugin.md"/>
+                    </p>
+                    <p>
                         <control>Requires</control>
-                        <a href="tools_gradle_intellij_plugin.md"/> version 1.10.1+ (current:
-                        %gradle-intellij-plugin-version%)
+                        <a href="tools_gradle_intellij_plugin.md"/>
+                        <emphasis>(Obsolete)</emphasis>
+                        1.10.1+
                     </p>
                 </def>
             </deflist>
@@ -206,7 +208,9 @@
                         <td><img src="https://img.shields.io/badge/-Non--Dynamic-orange?style=flat-square"
                                  alt="Non-Dynamic"/></td>
                         <td>Non-Dynamic<p>Extension Point</p></td>
-                        <td>Installation/update of plugin requires restarting the IDE, see <a href="dynamic_plugins.md"/>.</td>
+                        <td>Installation/update of plugin requires restarting the IDE, see <a
+                                href="dynamic_plugins.md"/>.
+                        </td>
                     </tr>
                 </table>
             </chapter>

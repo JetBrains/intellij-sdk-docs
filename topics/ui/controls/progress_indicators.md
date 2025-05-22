@@ -16,51 +16,37 @@ Progress indicators inform users about an ongoing operation. There are three typ
 * [Progress text](progress_text.md)
 * [Progress bar](progress_bar.md)
 
+If an operation lasts for less than a second in most cases, do not show any progress indicator. Progress indicators for a short operation are distracting.
+
 ## Which indicator to use
 
-If an operation lasts for less than a second in most cases, do not show any progress indicator. Progress indicators for a short operation are distracting.
+### Blocking process
 
 If the user has to wait until a process completes to continue working with the app, show a progress bar in a modal dialog.
 
-![](progress_dialog.png){width=440}
-
-If the progress is non-modal, select progress indicator based on where it appears.
-
-* [Input field, combo box, drop-down](#input-field-combo-box-drop-down)
-
-* [Search field](#search-field)
-
-* [Tree, list, tool window](#tree-list-tool-window)
-
-* [Breadcrumb and dialog label](#breadcrumb-and-dialog-label)
-
-* [Settings dialog](#settings-dialog)
-
-* [Empty state](#empty-state)
-
-* [Main window](#main-window)
+![](blocking_progress.png){width=706}
 
 ### Input field, combo box, drop-down
 
 Place the loader inside an input field on the right to show that the field content is being loaded or checked.
 
-![](combo_box_loader.png){width=201}
+![](input.png){width=706}
 
 ### Search field
 
 Place the loader on the right to show that search is being performed.
 
-![](search_field_loader.png){width=262}
+![](search.png){width=706}
 
 ### Tree, list, tool window
 
 If each tree node loads independently, and it’s important to know the current state of each node, show the loader instead of the node icon:
 
-![](tree_loader_icon.png){width=372}
+![](tree_loader.png){width=706}
 
 If nodes do not have icons, or icons can’t be replaced for some reason, show progress text after the node’s label:
 
-![](tree_text.png){width=400}
+![](tree_loader_text.png){width=706}
 
 If the loader applies to the whole content, place it in the top right corner:
 

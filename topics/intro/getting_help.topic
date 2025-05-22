@@ -34,8 +34,7 @@
 
     <chapter title="Problems with Code - Support Issues" id="problems-with-code-support-issues" switcher-key="English">
         <tip>
-            <p>Please see <a href="faq.md">Plugin Development FAQ</a> and <a href="explore_api.md">Explore the IntelliJ
-                Platform API</a> for tips &amp; tricks.</p>
+            <p>Please see <a href="explore_api.md"/> for tips &amp; tricks.</p>
         </tip>
         <p>For questions, problems, or other discussions about plugin development itself
             (rather than the content of this guide),

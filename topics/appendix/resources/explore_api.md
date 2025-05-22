@@ -92,7 +92,7 @@ It's important that you're familiar with
 source code, as well as other basic features of IntelliJ IDEA.
 
 Many developers keep the
-[IntelliJ Community source code](https://github.com/JetBrains/intellij-community)
+[IntelliJ Community source code](%gh-ic%/README.md)
 open in a separate IDE project while working on their plugin.
 Others search the source code of the IntelliJ Platform that is attached by default when using a [Gradle](creating_plugin_project.md)-based project.
 While both methods work, it should be noted that developing plugins without inspecting the IntelliJ Platform code is nearly impossible,

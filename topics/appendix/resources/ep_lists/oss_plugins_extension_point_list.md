@@ -6,7 +6,7 @@
 
 <tldr>
 
-**Repository**: [intellij-plugins](https://github.com/JetBrains/intellij-plugins)
+**Repository**: [intellij-plugins](%gh-ij-plugins%/)
 
 </tldr>
 

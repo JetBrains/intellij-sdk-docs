@@ -49,7 +49,7 @@ The IntelliJ Platform provides NLS context annotations, including:
   [`@GutterName`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/daemon/GutterName.java),
   [`@TooltipTitle`](%gh-ic%/platform/platform-api/src/com/intellij/ide/TooltipTitle.java)
 
-To find all available annotations, search for `@NlsContext` usages in the [intellij-community](https://github.com/JetBrains/intellij-community) source code.
+To find all available annotations, search for `@NlsContext` usages in the [intellij-community](%gh-ic%/README.md) source code.
 
 If the provided set of NLS context annotations are not sufficient, create custom annotations.
 

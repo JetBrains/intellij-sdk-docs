@@ -80,7 +80,7 @@ The most important methods are:
 - `setupUI()` — defines the UI components for the step. Step UI is built with [](kotlin_ui_dsl_version_2.md)
 - `setupProject()` — applies the parameters provided in UI to the generated project
 
-See the example implementations in the [`intellij-community`](https://github.com/JetBrains/intellij-community).
+See the example implementations in the [`intellij-community`](%gh-ic%/README.md) repository.
 
 Steps build a tree structure (read the rest of this section for details), as some steps can be displayed depending on previously selected options.
 `setupUI()` and `setupProject()` of steps building the tree are applied in the order from root to leaf.
@@ -160,7 +160,7 @@ It is often required to populate a created project with initial assets like:
 This can be achieved by creating a step extending [`AssetsNewProjectWizardStep`](%gh-ic%/java/idea-ui/src/com/intellij/ide/projectWizard/generators/AssetsNewProjectWizardStep.kt).
 It allows for adding directories, static assets, assets generated from [Freemarker templates](https://freemarker.apache.org/docs/dgui_quickstart_template.html), and granting them proper file permissions.
 
-See example implementations in the [`intellij-community`](https://github.com/JetBrains/intellij-community) repository.
+See example implementations in the [`intellij-community`](%gh-ic%/README.md) repository.
 
 ### Steps Forking the Wizard Flow
 

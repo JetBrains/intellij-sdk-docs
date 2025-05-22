@@ -458,7 +458,7 @@ Extension Point List
 {#august-20}
 
 README added to Code Samples
-: All code samples used in this guide now come with <path>README</path>, making it easier to browse them. They can be conveniently accessed via a [separate GitHub repository](https://github.com/JetBrains/intellij-sdk-code-samples).
+: All code samples used in this guide now come with <path>README</path>, making it easier to browse them. They can be conveniently accessed via a [separate GitHub repository](%gh-sdk-samples-master%/).
 
 ### June
 {#june-20}

@@ -1,10 +1,10 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Code Samples
 
 <link-summary>Accessing SDK Docs code samples.</link-summary>
 
-This guide comes with a number of sample plugins available from dedicated [intellij-sdk-code-samples](https://github.com/JetBrains/intellij-sdk-code-samples) GitHub repository.
+This guide comes with a number of sample plugins available from dedicated [intellij-sdk-code-samples](%gh-sdk-samples-master%/) GitHub repository.
 
 Please see <path>README.md</path> which lists all available code samples with a short description.
 
@@ -23,7 +23,7 @@ Make sure plugins _Git_, _Gradle_, and _Plugin DevKit_ are enabled.
 
 <include from="snippets.topic" element-id="pluginDevKitAvailability"/>
 
-Clone the [intellij-sdk-code-samples](https://github.com/JetBrains/intellij-sdk-code-samples) GitHub repository via <control>Git | Clone...</control>.
+Clone the [intellij-sdk-code-samples](%gh-sdk-samples-master%/) GitHub repository via <control>Git | Clone...</control>.
 After successful cloning, the IDE suggests opening the project.
 
 Select the code sample(s) to import via the [Gradle tool window](https://www.jetbrains.com/help/idea/gradle.html#link_gradle_project).

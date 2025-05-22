@@ -848,7 +848,7 @@ If you want to listen to changes in additional documents, use the methods `addWa
 
 The following bundled open-source plugins make (heavy) use of DOM:
 
-- [Android](https://github.com/JetBrains/android)
+- [Android](%gh-ij-android%/README.md)
 - [Ant](%gh-ic%/plugins/ant)
 - [Plugin DevKit](%gh-ic%/plugins/devkit/devkit-core)
 - [Maven](%gh-ic%/plugins/maven)

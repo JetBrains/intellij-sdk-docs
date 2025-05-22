@@ -31,6 +31,6 @@ The following links represent useful resources for working with the IntelliJ Pla
 
 * [IntelliJ Platform SDK Documentation](https://github.com/JetBrains/intellij-sdk-docs) & [IntelliJ Platform SDK Code Samples](https://github.com/JetBrains/intellij-sdk-code-samples)
 * [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
-* [IntelliJ Community Edition](https://github.com/JetBrains/intellij-community)
+* [IntelliJ Community Edition](%gh-ic%/README.md)
 * [IntelliJ Plugins](https://github.com/JetBrains/intellij-plugins)
 * [Open Source Plugins on JetBrains Marketplace](https://plugins.jetbrains.com/search?orderBy=name&shouldHaveSource=true)

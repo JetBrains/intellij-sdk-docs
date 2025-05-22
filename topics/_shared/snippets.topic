@@ -29,16 +29,12 @@
         </tip>
     </snippet>
     <snippet id="pluginDevKitAvailability">
-        <p>
-            <emphasis>Plugin DevKit</emphasis>
-            plugin is bundled with IntelliJ IDEA until 2023.2.
-        </p>
-        <warning title="Plugin DevKit Availability">
-            <p>When using IntelliJ IDEA 2023.3 or later, the
+        <warning title="Installing Plugin DevKit plugin">
+            <p>
                 <emphasis>Plugin DevKit</emphasis>
                 plugin must be installed from JetBrains Marketplace (<a
                         href="https://plugins.jetbrains.com/plugin/22851-plugin-devkit">Plugin Homepage</a>)
-                as it is no longer bundled with the IDE.
+                as it is not bundled since version 2023.3.
             </p>
         </warning>
     </snippet>

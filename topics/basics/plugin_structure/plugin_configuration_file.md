@@ -592,7 +592,7 @@ Attributes
   `order`.
   <br/>
   To not clash with other plugins defining extensions with the same identifier,
-  consider prepending the identifier with a prefix related to the plugin [`<id>`](#idea-plugin__id) or
+  consider prepending the identifier with a prefix related to the plugin [`<id>`](#idea-plugin__id) or 
   [`<name>`](#idea-plugin__name), for example, `id="com.example.myplugin.myExtension"`.
 - `order` _(optional)_<br/>
   Allows for ordering the extension relative to other instances of the same extension point.
@@ -616,7 +616,7 @@ Attributes
       - `mac`
       - `unix`
       - `windows`
-
+    
     For example, `os="windows"` registers the extension on Windows only.
 
 ### `extensionPoints`
@@ -694,12 +694,12 @@ Attributes
 
     The scope in which the [extension](plugin_extensions.md) is
     instantiated.
-
+    
     Allowed values:
       - `IDEA_APPLICATION` _(default)_
       - `IDEA_PROJECT`
       - `IDEA_MODULE` (**deprecated**)
-
+    
     **It is strongly recommended not to introduce new project- and module-level extension points.**
     If an extension point needs to operate on a `Project` or `Module` instance, declare an application-level extension
     point and pass the instance as a method parameter.
@@ -742,7 +742,7 @@ Example
   An extension point which restricts the type provided in a `myClass` attribute to be an instance
   of `com.example.ParentType`, and the type provided in a `someClass` element to be an instance
   of `java.lang.Comparable`:
-
+  
   ```xml
   <extensionPoint
       name="myExtension"
@@ -755,18 +755,18 @@ Example
         implements="java.lang.Comparable"/>
   </extensionPoint>
   ```
-
+  
   When using the above extension point, an implementation could be registered as follows:
-
+  
   ```xml
   <myExtension ...
       myClass="com.example.MyCustomType">
     <someClass>com.example.MyComparable</someClass>
   </myExtension>
   ```
-
+  
   where:
-
+  
   - `com.example.MyCustomType` must be a subtype of `com.example.ParentType`
   - `com.example.MyComparable` must be a subtype of `java.lang.Comparable`
 
@@ -1492,7 +1492,7 @@ Children
 Example
 :
   Given a plugin descriptor:
-
+  
   ```xml
   <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
     <id>com.example.myplugin</id>
@@ -1501,18 +1501,18 @@ Example
     ...
   </idea-plugin>
   ```
-
+  
   and <path>/META-INF/another-plugin.xml</path>:
-
+  
   ```xml
   <idea-plugin>
     <extensions>...</extensions>
     <actions>...</actions>
   </idea-plugin>
   ```
-
+  
   The effective plugin descriptor loaded to memory will contain the following elements:
-
+  
   ```xml
   <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
     <id>com.example.myplugin</id>

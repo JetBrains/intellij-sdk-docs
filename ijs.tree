@@ -129,6 +129,7 @@
       </toc-element>
       <toc-element topic="text_selection.md"/>
       <toc-element topic="multiple_carets.md"/>
+      <toc-element topic="editors_custom.md"/>
     </toc-element>
     <toc-element topic="execution.md"
                  accepts-web-file-names="run_configuration_execution.html,basic_run-configurations.html,run-configuration-execution.html">

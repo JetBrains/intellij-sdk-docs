@@ -35,7 +35,3 @@ for programmatic registration.
 ### How do I show a refactoring dialog programmatically?
 
 [`RefactoringActionHandlerFactory`](%gh-ic%/platform/lang-api/src/com/intellij/refactoring/RefactoringActionHandlerFactory.java)
-
-## Editors, Documents and Files
-
-* [How can I show several editors for a single file in tabs?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206795495-Alternative-Editors-ala-HTML-Preview)

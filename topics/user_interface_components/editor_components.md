@@ -4,6 +4,8 @@
 
 <link-summary>Creating, customizing, and using editor components in different contexts.</link-summary>
 
+> See [](editors_custom.md) for creating custom file editors.
+
 ## `EditorTextField`
 
 Compared to [Swing `JTextArea`](https://docs.oracle.com/en/java/javase/24/docs/api/java.desktop/javax/swing/JTextArea.html), the IntelliJ Platform's editor component has a ton of advantages: syntax highlighting support, code completion, code folding, and much more.

@@ -6,6 +6,7 @@
 
 | Release Name | Channel | Version | IntelliJ IDEA Version | Release Date |
 |--------------|---------|---------|-----------------------|--------------|
+| <p><b>Narwhal Feature Drop </b></p><p> 2025.1.2 Canary 3</p> | ![Canary][canary] | **2025.1.2.3**<p>AI&#8209;251.25410.109.2512.13571611</p> | **2025.1.1**<p>251.25410.109</p> | May&nbsp;29,&nbsp;2025 |
 | <p><b>Narwhal Feature Drop </b></p><p> 2025.1.2 Canary 2</p> | ![Canary][canary] | **2025.1.2.2**<p>AI&#8209;251.25410.109.2512.13536108</p> | **2025.1.1**<p>251.25410.109</p> | May&nbsp;22,&nbsp;2025 |
 | <p><b>Narwhal Feature Drop </b></p><p> 2025.1.2 Canary 1</p> | ![Canary][canary] | **2025.1.2.1**<p>AI&#8209;251.25410.109.2512.13514151</p> | **2025.1.1**<p>251.25410.109</p> | May&nbsp;20,&nbsp;2025 |
 | <p><b>Narwhal </b></p><p> 2025.1.1 Canary 10</p> | ![Canary][canary] | **2025.1.1.10**<p>AI&#8209;251.23774.435.2511.13464725</p> | **2025.1**<p>251.23774.435</p> | May&nbsp;8,&nbsp;2025 |
@@ -25,6 +26,7 @@
 
 | Release Name | Channel | Version | IntelliJ IDEA Version | Release Date |
 |--------------|---------|---------|-----------------------|--------------|
+| <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 Patch 1</p> | ![Patch][patch] | **2024.3.2.15**<p>AI&#8209;243.26053.27.2432.13536105</p> | **2024.3.5**<p>243.26053.27</p> | May&nbsp;28,&nbsp;2025 |
 | <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2</p> | ![Release][release] | **2024.3.2.14**<p>AI&#8209;243.25659.59.2432.13423653</p> | **243.25659-EAP-CANDIDATE-SNAPSHOT**<p>243.25659.59</p> | May&nbsp;6,&nbsp;2025 |
 | <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 RC 4</p> | ![RC][rc] | **2024.3.2.13**<p>AI&#8209;243.25659.59.2432.13404313</p> | **243.25659-EAP-CANDIDATE-SNAPSHOT**<p>243.25659.59</p> | Apr&nbsp;28,&nbsp;2025 |
 | <p><b>Meerkat Feature Drop </b></p><p> 2024.3.2 RC 3</p> | ![RC][rc] | **2024.3.2.12**<p>AI&#8209;243.25659.59.2432.13371692</p> | **243.25659-EAP-CANDIDATE-SNAPSHOT**<p>243.25659.59</p> | Apr&nbsp;22,&nbsp;2025 |

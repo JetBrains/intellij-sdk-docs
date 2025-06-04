@@ -73,6 +73,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ### IntelliJ Platform 2025.2
 
+`icons.JavaUltimateIcons` class moved to package `com.intellij.java.ultimate.icons`
+: Update code usages and make sure your plugin depends on Java plugin.
+
 ## 2025.1
 
 ### IntelliJ Platform 2025.1

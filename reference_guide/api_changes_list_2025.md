@@ -73,6 +73,23 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ### IntelliJ Platform 2025.2
 
+### Package Checker 2025.2
+
+`com.intellij.packageChecker.api.PackageDeclaration(Package)` method parameter type changed from `org.jetbrains.security.package.Package` to `com.intellij.packageChecker.model.Package`
+: Use `com.intellij.packageChecker.model.Package` as a parameter.
+
+`com.intellij.packageChecker.api.PackageDeclaration(Package, PsiElement, TextRange)` method parameter type changed from `org.jetbrains.security.package.Package` to `com.intellij.packageChecker.model.Package`
+: Use `com.intellij.packageChecker.model.Package` as a parameter.
+
+`com.intellij.packageChecker.api.PackageDeclaration.getPkg()` method return type changed from `org.jetbrains.security.package.Package` to `com.intellij.packageChecker.model.Package`
+: Update code usages.
+
+`com.intellij.packageChecker.PackagesInterner.intern(Package)` method parameter type changed from `org.jetbrains.security.package.Package` to `com.intellij.packageChecker.model.Package`
+: Use `com.intellij.packageChecker.model.Package` as a parameter.
+
+`com.intellij.packageChecker.PackagesInterner.intern(Package)` method return type changed from `org.jetbrains.security.package.Package` to `com.intellij.packageChecker.model.Package`
+: Update code usages.
+
 ## 2025.1
 
 ### IntelliJ Platform 2025.1

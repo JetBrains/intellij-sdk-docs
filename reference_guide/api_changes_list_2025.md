@@ -76,6 +76,23 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `icons.JavaUltimateIcons` class moved to package `com.intellij.java.ultimate.icons`
 : Update code usages and make sure your plugin [depends](plugin_dependencies.md) on the Java plugin.
 
+### Package Checker 2025.2
+
+`com.intellij.packageChecker.api.PackageDeclaration(Package)` method parameter type changed from `org.jetbrains.security.package.Package` to `com.intellij.packageChecker.model.Package`
+: Use `com.intellij.packageChecker.model.Package` as a parameter.
+
+`com.intellij.packageChecker.api.PackageDeclaration(Package, PsiElement, TextRange)` method parameter type changed from `org.jetbrains.security.package.Package` to `com.intellij.packageChecker.model.Package`
+: Use `com.intellij.packageChecker.model.Package` as a parameter.
+
+`com.intellij.packageChecker.api.PackageDeclaration.getPkg()` method return type changed from `org.jetbrains.security.package.Package` to `com.intellij.packageChecker.model.Package`
+: Update code usages.
+
+`com.intellij.packageChecker.PackagesInterner.intern(Package)` method parameter type changed from `org.jetbrains.security.package.Package` to `com.intellij.packageChecker.model.Package`
+: Use `com.intellij.packageChecker.model.Package` as a parameter.
+
+`com.intellij.packageChecker.PackagesInterner.intern(Package)` method return type changed from `org.jetbrains.security.package.Package` to `com.intellij.packageChecker.model.Package`
+: Update code usages.
+
 ## 2025.1
 
 ### IntelliJ Platform 2025.1

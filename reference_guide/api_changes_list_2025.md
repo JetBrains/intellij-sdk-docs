@@ -76,6 +76,32 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `icons.JavaUltimateIcons` class moved to package `com.intellij.java.ultimate.icons`
 : Update code usages and make sure your plugin [depends](plugin_dependencies.md) on the Java plugin.
 
+### Database Plugin 2025.2
+
+`com.intellij.database.DatabaseNotifications.GENERAL_BALLOON_GROUP` field removed
+: Replaced with a static method with the same name to avoid service calls during class initialization.
+
+`com.intellij.database.DatabaseNotifications.DATABASE_VIEW_GROUP` field removed
+: Replaced with a static method with the same name to avoid service calls during class initialization.
+
+`com.intellij.database.DatabaseNotifications.DATABASE_VIEW_LOG_GROUP` field removed
+: Replaced with a static method with the same name to avoid service calls during class initialization.
+
+`com.intellij.database.DatabaseNotifications.REFACTORING_GROUP` field removed
+: Replaced with a static method with the same name to avoid service calls during class initialization.
+
+`com.intellij.database.DatabaseNotifications.DATABASE_EXECUTION_GROUP` field removed
+: Replaced with a static method with the same name to avoid service calls during class initialization.
+
+`com.intellij.database.DatabaseNotifications.DATABASE_DETECTION_GROUP` field removed
+: Replaced with a static method with the same name to avoid service calls during class initialization.
+
+`com.intellij.database.DatabaseNotifications.DATABASE_LONG_RUNNING_GROUP` field removed
+: Replaced with a static method with the same name to avoid service calls during class initialization.
+
+`com.intellij.database.DatabaseNotifications.DATABASE_CANCEL_GROUP` field removed
+: Replaced with a static method with the same name to avoid service calls during class initialization.
+
 ### Package Checker 2025.2
 
 `com.intellij.packageChecker.api.PackageDeclaration(Package)` method parameter type changed from `org.jetbrains.security.package.Package` to `com.intellij.packageChecker.model.Package`

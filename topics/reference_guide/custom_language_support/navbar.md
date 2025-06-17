@@ -15,12 +15,12 @@ The navigation bar implementation is used to customize and extend the
 structure.
 
 The starting point for the navigation bar extension is the
-[`NavBarModelExtension`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/navigationToolbar/NavBarModelExtension.java)
+[`NavBarModelExtension`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/navigationToolbar/NavBarModelExtension.java)
 interface, which is registered in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.navbar"/></include>.
 
 To reuse the IntelliJ Platform implementation, you can extend one of two classes:
 
-- [`DefaultNavBarExtension`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/navigationToolbar/DefaultNavBarExtension.java)
+- [`DefaultNavBarExtension`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/navigationToolbar/DefaultNavBarExtension.java)
 - [`StructureAwareNavBarModelExtension`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/navigationToolbar/StructureAwareNavBarModelExtension.kt)
 
 ## Default Navigation Bar

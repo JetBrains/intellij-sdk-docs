@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 616fa4675f6241b04a17deb7379d76dca5617e35 -->
+<!-- Revision: 9823c9c422640ea294e1667a948c84f414e9e1bd -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-58 Extension Points and 6 Listeners
+60 Extension Points and 6 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -34,6 +34,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.autodetected.models"/></include> | `SpringAutodetectedModelsSearcher` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.beanClassLineMarker"/></include> | `BeanClassLineMarker` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.beans.stereotype"/></include> | `SpringBeanStereotype` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.classAccessInfoProvider"/></include> ![Internal][internal] | `SpringClassAccessInfoProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.componentScanExtender"/></include> | `ComponentScanExtender` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.conditionalEvaluatorProvider"/></include> | `ConditionalEvaluatorProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.configSearcherScopeModifier"/></include> | `ConfigSearcherScopeModifier` |
@@ -55,6 +56,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.resourceTypeProvider"/></include> | `SpringResourceTypeProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.scriptBeanPsiClassDiscoverer"/></include> | `ScriptBeanPsiClassDiscoverer` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.settingsProvider"/></include> | `SpringSettingsProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.springComponentContainerProvider"/></include> | `SpringComponentContainerProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.springTemplateProvider"/></include> | `SpringTemplateProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.testingAnnotationsProvider"/></include> | `SpringTestingAnnotationsProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.testingImplicitContextsProvider"/></include> | `SpringTestingImplicitContextsProvider` |

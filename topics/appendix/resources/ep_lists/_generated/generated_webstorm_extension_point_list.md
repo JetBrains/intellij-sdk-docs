@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 616fa4675f6241b04a17deb7379d76dca5617e35 -->
+<!-- Revision: 9823c9c422640ea294e1667a948c84f414e9e1bd -->
 
 <!--
 EP List Directories:
@@ -92,7 +92,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.jsDocCustomTagsHandler"/></include> ![Experimental][experimental] | `JSDocCustomTagsHandler` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.jsxImplementation"/></include> | `JSXImplementation` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.lang.templates"/></include> ![Project-Level][project-level] | [`Configurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/Configurable.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.languageServiceProvider"/></include> ![Project-Level][project-level] | `JSLanguageServiceProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.languageServiceProvider"/></include> ![Deprecated][deprecated] ![Project-Level][project-level] | `JSLanguageServiceProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.languageServiceQuickFixProvider"/></include> | `JSLanguageServiceQuickFixProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.languageServiceRemoteHelperFactory"/></include> | `Factory` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.minifiedFileIndexingProvider"/></include> ![Internal][internal] | `JSMinifiedFileIndexingProvider` |
@@ -107,7 +107,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.scanningFileListenerContributor"/></include> | `ScanningFileListenerContributor` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.smartCompletionContributor"/></include> | `JSSmartCompletionContributor` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.spellcheckerProvider"/></include> | `JSSpellcheckerProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.testFrameworkDetector"/></include> | `n/a` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.testFrameworkDetector"/></include> ![Internal][internal] | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.testWatchProvider"/></include> | `JsTestWatchProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.tsConfigCustomizer"/></include> ![Experimental][experimental] | `TypeScriptConfigCustomizer` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.tsImportResolver"/></include> | `TypeScriptImportsResolverProvider` |

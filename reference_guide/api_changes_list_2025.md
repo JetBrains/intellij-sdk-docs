@@ -76,6 +76,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `icons.JavaUltimateIcons` class moved to package `com.intellij.java.ultimate.icons`
 : Update code usages and make sure your plugin [depends](plugin_dependencies.md) on the Java plugin.
 
+`com.intellij.psi.xml.HtmlFileElementType.getHtmlStubVersion()` method removed
+: Use `com.intellij.xml.HtmlLanguageStubVersionUtil.getHtmlStubVersion()` instead.
+
 ### Package Checker 2025.2
 
 `com.intellij.packageChecker.api.PackageDeclaration(Package)` method parameter type changed from `org.jetbrains.security.package.Package` to `com.intellij.packageChecker.model.Package`
@@ -92,6 +95,44 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 `com.intellij.packageChecker.PackagesInterner.intern(Package)` method return type changed from `org.jetbrains.security.package.Package` to `com.intellij.packageChecker.model.Package`
 : Update code usages.
+
+### JavaScript and TypeScript Plugin 2025.2
+
+`com.intellij.lang.javascript.JSStubElementTypes.DEFINITION_EXPRESSION` field type changed from `com.intellij.lang.javascript.psi.JSStubElementType` to `com.intellij.lang.javascript.psi.JSElementType`
+: Recompile code usages.
+
+`com.intellij.lang.javascript.JSStubElementTypes.XML_ATTRIBUTE` field type changed from `com.intellij.psi.stubs.IStubElementType` to `com.intellij.psi.tree.IElementType`
+: Recompile code usages.
+
+`com.intellij.lang.javascript.JSStubElementTypes.XML_JS_SCRIPT` field type changed from `com.intellij.psi.tree.IElementType` to `com.intellij.lang.javascript.psi.JSElementType`
+: Recompile code usages.
+
+`com.intellij.lang.javascript.JSStubElementTypes.ES6_EMBEDDED_CONTENT` field type changed from `com.intellij.psi.tree.IElementType` to `com.intellij.lang.javascript.psi.JSElementType`
+: Recompile code usages.
+
+`com.intellij.lang.javascript.JSStubElementTypes.VARIABLE` field type changed from `com.intellij.lang.javascript.psi.JSStubElementType` to `com.intellij.lang.javascript.psi.JSElementType`
+: Recompile code usages.
+
+`com.intellij.lang.javascript.JSStubElementTypes.LITERAL_EXPRESSION` field type changed from `com.intellij.lang.javascript.psi.JSStubElementType` to `com.intellij.lang.javascript.psi.JSElementType`
+: Recompile code usages.
+
+`com.intellij.lang.javascript.JSStubElementTypes.EMBEDDED_EXPRESSION` field type changed from `com.intellij.psi.tree.IElementType` to `com.intellij.lang.javascript.psi.JSElementType`
+: Recompile code usages.
+
+`com.intellij.lang.typescript.TypeScriptStubElementTypes.TYPESCRIPT_VARIABLE` field type changed from `com.intellij.lang.javascript.psi.JSStubElementType` to `com.intellij.lang.javascript.psi.JSElementType`
+: Recompile code usages.
+
+`com.intellij.lang.javascript.JSStubElementTypes.ARRAY_LITERAL_EXPRESSION` field type changed from `com.intellij.lang.javascript.psi.JSStubElementType` to `com.intellij.lang.javascript.psi.JSElementType`
+: Recompile code usages.
+
+`com.intellij.lang.javascript.JSStubElementTypes.CALL_EXPRESSION` field type changed from `com.intellij.lang.javascript.psi.JSStubElementType` to `com.intellij.lang.javascript.psi.JSElementType`
+: Recompile code usages.
+
+`com.intellij.lang.ecmascript6.ES6StubElementTypes.FIELD_STATEMENT` field type changed from `com.intellij.lang.javascript.psi.JSStubElementType` to `com.intellij.lang.javascript.psi.JSElementType`
+: Recompile code usages.
+
+`com.intellij.lang.javascript.JSStubElementTypes.EMBEDDED_CONTENT` field type changed from `com.intellij.psi.tree.IElementType` to `com.intellij.lang.javascript.psi.JSElementType`
+: Recompile code usages.
 
 ## 2025.1
 

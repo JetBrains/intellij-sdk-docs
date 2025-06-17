@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: b815cfdcaa594a8842ccf89e6ac2bf7615401920 -->
+<!-- Revision: 616fa4675f6241b04a17deb7379d76dca5617e35 -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-110 Extension Points and 34 Listeners
+109 Extension Points and 36 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -27,8 +27,8 @@ EP List Directories:
 | [`TutorialCardRefreshNotifier#TUTORIAL_CARD_TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.assistant.TutorialCardRefreshNotifier)  | [`TutorialCardRefreshNotifier`](%gh-ij-android%/assistant/src/com/android/tools/idea/assistant/TutorialCardRefreshNotifier.java) |
 | [`AvdLaunchListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.avdmanager.AvdLaunchListener)  | [`AvdLaunchListener`](%gh-ij-android%/android/src/com/android/tools/idea/avdmanager/AvdLaunchListener.java) |
 | [`EmulatorLogListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.avdmanager.EmulatorLogListener)  | [`EmulatorLogListener`](%gh-ij-android%/android/src/com/android/tools/idea/avdmanager/EmulatorLogListener.kt) |
-| [`IssueProviderListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.common.error.IssueProviderListener)  ![Project-Level][project-level] | [`IssueProviderListener`](%gh-ij-android%/designer/src/com/android/tools/idea/common/error/IssueProvider.kt) |
 | [`IssueProviderListener#UI_CHECK`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.common.error.IssueProviderListener)  ![Project-Level][project-level] | [`IssueProviderListener`](%gh-ij-android%/designer/src/com/android/tools/idea/common/error/IssueProvider.kt) |
+| [`IssueProviderListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.common.error.IssueProviderListener)  ![Project-Level][project-level] | [`IssueProviderListener`](%gh-ij-android%/designer/src/com/android/tools/idea/common/error/IssueProvider.kt) |
 | [`ComposeAnimationListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.compose.preview.ComposePreviewRepresentation.ComposeAnimationListener)  | [`ComposeAnimationListener`](%gh-ij-android%/compose-designer/src/com/android/tools/idea/compose/preview/Preview.kt) |
 | [`FastPreviewManager#FAST_PREVIEW_MANAGER_TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.editors.fast.FastPreviewManager.Companion.FastPreviewManagerListener)  | [`FastPreviewManagerListener`](%gh-ij-android%/android/src/com/android/tools/idea/editors/fast/FastPreviewManager.kt) |
 | [`GradleBuildState#GRADLE_BUILD_TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.gradle.project.build.GradleBuildListener)  | [`GradleBuildListener`](%gh-ij-android%/project-system-gradle/src/com/android/tools/idea/gradle/project/build/GradleBuildListener.java) |
@@ -48,6 +48,7 @@ EP List Directories:
 | [`SdkInstallListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.sdk.SdkInstallListener)  | [`SdkInstallListener`](%gh-ij-android%/android/src/com/android/tools/idea/sdk/SdkInstallListener.kt) |
 | [`DeviceMirroringSettingsListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.streaming.DeviceMirroringSettingsListener)  | [`DeviceMirroringSettingsListener`](%gh-ij-android%/android/src/com/android/tools/idea/streaming/DeviceMirroringSettingsListener.java) |
 | [`EmulatorSettingsListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.streaming.EmulatorSettingsListener)  | [`EmulatorSettingsListener`](%gh-ij-android%/android/src/com/android/tools/idea/streaming/EmulatorSettingsListener.java) |
+| [`StreamingContextMenuAdvertisementCloser#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.streaming.core.StreamingContextMenuAdvertisementCloser)  | [`StreamingContextMenuAdvertisementCloser`](%gh-ij-android%/streaming/src/com/android/tools/idea/streaming/core/StreamingContextMenuAdvertisementCloser.java) |
 | [`Listener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.streaming.emulator.actions.FloatingXrToolbarState.Listener)  | [`Listener`](%gh-ij-android%/streaming/src/com/android/tools/idea/streaming/emulator/actions/ToggleFloatingXrToolbarAction.kt) |
 | [`TransportDeviceManager#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.transport.TransportDeviceManager.TransportDeviceManagerListener)  | [`TransportDeviceManagerListener`](%gh-ij-android%/android-transport/src/com/android/tools/idea/transport/TransportDeviceManager.java) |
 | [`Listener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.uibuilder.options.NlOptionsConfigurable.Listener)  | [`Listener`](%gh-ij-android%/designer/src/com/android/tools/idea/uibuilder/options/NlOptionsConfigurable.kt) |
@@ -56,6 +57,7 @@ EP List Directories:
 | [`CreateProfilerTaskTabListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.profilers.taskbased.task.CreateProfilerTaskTabListener)  | [`CreateProfilerTaskTabListener`](%gh-ij-android%/profilers/src/com/android/tools/profilers/taskbased/task/CreateProfilerTaskTabListener.kt) |
 | [`OpenProfilerTaskTabListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.profilers.taskbased.task.OpenProfilerTaskTabListener)  | [`OpenProfilerTaskTabListener`](%gh-ij-android%/profilers/src/com/android/tools/profilers/taskbased/task/OpenProfilerTaskTabListener.kt) |
 | [`ResourceFolderManager#TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.android.facet.ResourceFolderManager.ResourceFolderListener)  ![Project-Level][project-level] | [`ResourceFolderListener`](%gh-ij-android%/android/src/org/jetbrains/android/facet/ResourceFolderManager.kt) |
+| [`ResourceFolderManager#EARLY_TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.android.facet.ResourceFolderManager.ResourceFolderListener)  | [`ResourceFolderListener`](%gh-ij-android%/android/src/org/jetbrains/android/facet/ResourceFolderManager.kt) |
 
 
 ### adt-ui.xml
@@ -176,7 +178,6 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.run.editor.testRunParametersToken"/></include> ![Non-Dynamic][non-dynamic] | [`TestRunParametersToken`](%gh-ij-android%/android/src/com/android/tools/idea/run/editor/TestRunParameters.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.testartifacts.instrumented.androidTestConfigurationProducerToken"/></include> ![Non-Dynamic][non-dynamic] | [`AndroidTestConfigurationProducerToken`](%gh-ij-android%/android/src/com/android/tools/idea/testartifacts/instrumented/AndroidTestConfigurationProducer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.testartifacts.instrumented.testRunConfigurationOptions"/></include> | [`TestRunConfigurationOptions`](%gh-ij-android%/android/src/com/android/tools/idea/testartifacts/instrumented/AndroidTestConfigurationProducer.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.testartifacts.screenshottest.screenshotTestResultListenerToken"/></include> ![Non-Dynamic][non-dynamic] | [`ScreenshotTestResultListenerToken`](%gh-ij-android%/android/src/com/android/tools/idea/testartifacts/screenshottest/ScreenshotTestResultListenerToken.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.ui.designer.overlays.overlayProvider"/></include> ![Non-Dynamic][non-dynamic] | [`OverlayProvider`](%gh-ij-android%/android/src/com/android/tools/idea/ui/designer/overlays/OverlayProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.ui.guiTestingStatusProvider"/></include> ![Non-Dynamic][non-dynamic] | [`GuiTestingStatusProvider`](%gh-ij-android%/android/src/com/android/tools/idea/ui/GuiTestingStatusProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.ui.resourcemanager.importer.createDefaultResDirectoryToken"/></include> ![Non-Dynamic][non-dynamic] | [`CreateDefaultResDirectoryToken`](%gh-ij-android%/android/src/com/android/tools/idea/ui/resourcemanager/importer/DesignAssetImporter.kt) |
@@ -403,6 +404,14 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.nav.safeargs.module.safeArgsModeToken"/></include> ![Non-Dynamic][non-dynamic] | [`SafeArgsModeToken`](%gh-ij-android%/nav/safeargs/common/src/com/android/tools/idea/nav/safeargs/module/SafeArgsModeModuleService.kt) |
 
+### screenshot-testing.xml
+
+[`screenshot-testing.xml`](%gh-ij-android%/screenshot-testing/resources/META-INF/screenshot-testing.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.screenshottest.screenshotTestResultListenerToken"/></include> ![Non-Dynamic][non-dynamic] | [`ScreenshotTestResultListenerToken`](%gh-ij-android%/screenshot-testing/src/com/android/screenshottest/ScreenshotTestResultListenerToken.kt) |
+
 ### server-flags.xml
 
 [`server-flags.xml`](%gh-ij-android%/server-flags/resources/META-INF/server-flags.xml)
@@ -418,7 +427,6 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.testartifacts.instrumented.androidRunConfigurationToken"/></include> ![Non-Dynamic][non-dynamic] | [`AndroidRunConfigurationToken`](%gh-ij-android%/testartifacts/src/com/android/tools/idea/testartifacts/instrumented/AndroidRunConfigurationToken.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.testartifacts.screenshot.screenshotTestRunConfigurationToken"/></include> ![Non-Dynamic][non-dynamic] | [`ScreenshotTestRunConfigurationToken`](%gh-ij-android%/testartifacts/src/com/android/tools/idea/testartifacts/screenshot/ScreenshotTestRunConfigurationToken.kt) |
 
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square

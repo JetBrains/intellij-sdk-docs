@@ -2,19 +2,19 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: b815cfdcaa594a8842ccf89e6ac2bf7615401920 -->
+<!-- Revision: 616fa4675f6241b04a17deb7379d76dca5617e35 -->
 
 <!--
 EP List Directories:
 - /contrib
 
-There must be no top-level "Listeners" group, adjust ExtensionPointAnalyzerAction.Group accordingly.
+There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.analysis.ep.Group accordingly.
 -->
 
 
 <snippet id="content">
 
-68 Extension Points and 10 Listeners
+69 Extension Points and 10 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -247,6 +247,7 @@ There must be no top-level "Listeners" group, adjust ExtensionPointAnalyzerActio
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.inspectionKtsTemplateProvider"/></include> | [`Provider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/inspectionKts/templates/InspectionKtsTemplate.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.inspectionProfileProvider"/></include> | [`QodanaInspectionProfileProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/profile/QodanaInspectionProfileProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.jenkinsConfigHandler"/></include> | [`JenkinsConfigHandler`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/ci/JenkinsConfigHandler.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.loggingActivity"/></include> | [`QodanaLoggingActivity`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/inspections/runner/log/QodanaLoggingActivity.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.metricTable"/></include> | [`MetricTable`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/inspections/metrics/database/tables/MetricTable.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.metricsAggregator"/></include> | [`MetricAggregator`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/inspections/metrics/aggregators/MetricAggregator.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.problemsViewModuleSupport"/></include> | [`QodanaGroupByModuleSupport`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/ui/problemsView/QodanaGroupByModuleSupport.kt) |

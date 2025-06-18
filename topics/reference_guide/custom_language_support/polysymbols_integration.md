@@ -56,7 +56,7 @@ For dynamic contributions, the `PolySymbolQueryConfigurator.getScope()`'s `eleme
 Dedicated support for `PolySymbol` interface properties:
 - `required` - if `true`, a warning will be shown if the attribute is missing. Does not apply to `virtual` attributes.
 - `default` - the default value of the attribute, if `attributeValue.default` is `null`.
-- `attributeValue` - provides information about the attribute value, see [`attributeValue`](websymbols_implementation.md#html-support) reference.
+- `attributeValue` - provides information about the attribute value, see [`attributeValue`](polysymbols_implementation.md#html-support) reference.
 
 ### CSS
 

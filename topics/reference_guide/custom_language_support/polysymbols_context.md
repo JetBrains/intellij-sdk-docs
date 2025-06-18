@@ -96,7 +96,7 @@ of some package manager dependency (Node package, Ruby Gem, Maven or Gradle depe
 
 ### Web Types with Context Rules
 
-One of the ways to provide context rules is through a [Web Types](websymbols_web_types.md) file.
+One of the ways to provide context rules is through a [Web Types](polysymbols_web_types.md) file.
 A top-level property `context-config` should be specified, e.g.:
 
 ```json

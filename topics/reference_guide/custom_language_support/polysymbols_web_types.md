@@ -1,7 +1,7 @@
 <!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Web Types
-<primary-label ref="2022.3"/>
+<primary-label ref="2025.2"/>
 
 <link-summary>Web Types - contributing statically defined Poly Symbols through JSONs.</link-summary>
 

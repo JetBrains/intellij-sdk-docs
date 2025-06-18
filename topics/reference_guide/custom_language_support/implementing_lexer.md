@@ -54,7 +54,7 @@ It provides syntax highlighting and other useful features for editing JFlex file
 {style="note"}
 
 **Examples:**
-- [JFlex](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/Properties.flex) definition file for [Properties language plugin](%gh-ic%/plugins/properties)
+- [JFlex](%gh-ic%/plugins/properties/properties-common/src/com/intellij/lang/properties/parsing/Properties.flex) definition file for [Properties language plugin](%gh-ic%/plugins/properties)
 - [Custom Language Support Tutorial: Lexer](lexer_and_parser_definition.md)
 
 ### Token Types

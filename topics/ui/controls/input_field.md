@@ -54,13 +54,9 @@ For more details, see [Expand button](built_in_button.md#expand-a-field).
 
 ### Many predefined values
 
-If there are many predefined values (for example, code snippets, commit author), add completion to the input field [`TextFieldWithCompletion`](%gh-ic%/platform/platform-impl/src/com/intellij/util/textCompletion/TextFieldWithCompletion.java).
+If there are many predefined values (for example, code snippets, commit author), add completion to the input field [`TextFieldWithCompletion`](%gh-ic%/platform/platform-impl/src/com/intellij/util/textCompletion/TextFieldWithCompletion.java). Show the completion popup when the user starts typing.
 
 ![](input_completion.png){width=706}
-
-An input field with completion looks the same way as a regular input field. When an empty input field gets the focus, show a tooltip after a delay to indicate that code completion is supported. Show the completion popup when the user starts typing or presses <shortcut>Ctrl+Space</shortcut>.
-
-![](input_completion_tooltip.png){width=706}
 
 ### Built-in buttons
 
@@ -123,7 +119,7 @@ When writing a label as a phrase, don't use colon and ending punctuation.
 
 #### Grouped input fields
 
-If there are several input fields in a form, it’s recommended to make labels approximately the same length to avoid gaps between labels and fields.
+If there are several input fields in a form, make labels approximately the same length to avoid gaps between labels and fields.
 
 <table style="none" border="false">
     <tr>
@@ -208,6 +204,8 @@ Pre-fill the field if it has the default or a frequently used value. Use the def
 
 ![](input_prefilled.png){width=706}
 
+<note>When naming a default entity like <code>scope</code> or <code>notebook</code> which can have multiple entities in a group, pre-fill it using the entity name with a sequential number: <code>scope-1</code>, <code>scope-2</code>, etc.</note>
+
 Don't use <control>Unnamed</control> as a prefilled value. It takes time to read it and does not help the user to fill the form.
 
 <table style="none" border="false">
@@ -235,34 +233,21 @@ If the user enters an invalid value, highlight the field with red and show an er
 
 ## Sizes and placement
 
-Sizes are the same for all themes:
-
-![](input_field_sizes.png){width=65}
-
-### Field width
+### Width
 
 Choose the width appropriate for the most common values, but not less than 65px. The field width helps the user understand what value is expected and to make sure that they fill the field correctly.
 
-| <format color="Green" style="bold">Correct</format> | ![](input_field_size_1.png){width=104} |
-|-----------------------------------------------------|----------------------------------------|
-| <format color="Red" style="bold">Incorrect</format> | ![](input_field_size_2.png){width=240} |
-| <format color="Green" style="bold">Correct</format> | ![](input_field_size_3.png){width=387} |
-| <format color="Red" style="bold">Incorrect</format> | ![](input_field_size_4.png){width=331} |
+<table style="none" border="false">
+    <tr>
+        <td width="50%"><format color="Green" style="bold">Correct</format><img src="input_width_1_correct.png" alt="" width="378"/></td>
+        <td width="50%"><format color="Red" style="bold">Incorrect</format><img src="input_width_1_incorrect.png" alt="" width="378"/></td>
+    </tr>
+</table>
 
-{style=none}
+If the input value is longer than the field width, show the beginning of the value when the field becomes inactive.
 
-If the input value is longer than the field width, show the beginning of the value when the field becomes inactive:
+![](input_width_2.png){width=706}
 
-![](size_long_name.png){width=243}
+### How to layout
 
-### Placement
-
-If the input field depends on another control, for example, a checkbox, follow the rules for (layout.md#dependent-controls). Otherwise, follow the rules for [independent controls](layout.md#independent-controls).
-
-<!--
-![](sizes_label.png){width=493}
-
-![](sizes_button.png){width=246}
-
-![](sizes_several.png){width=462}
--->
+Follow the [labeled input controls](layout.md#labeled-input-controls).

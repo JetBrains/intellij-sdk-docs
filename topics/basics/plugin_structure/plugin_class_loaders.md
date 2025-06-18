@@ -4,17 +4,13 @@
 
 <link-summary>Introduction and tips for using plugin class loaders.</link-summary>
 
-A separate class loader is used to load the classes of each plugin.
+Each plugin has a dedicated class loader, which is used to load the plugin's classes.
 This allows each plugin to use a different library version, even if the same library is used by the IDE itself or by another plugin.
-
-## Bundled Libraries
-
-[Third-Party Software and Licenses](https://www.jetbrains.com/legal/third-party-software/) list all bundled libraries and their versions for each product.
 
 ## Overriding IDE Dependencies
 
 Gradle 7 introduced the `implementation` scope that replaced the `compile` scope.
-For this setup, to use project-defined dependency instead of the bundled IDE version, add the following snippet to your Gradle build script:
+For this setup, to use a library dependency declared by a plugin instead of the version bundled in the IDE, add the following snippet to the Gradle build script:
 
 ```kotlin
 configurations.all {
@@ -22,7 +18,11 @@ configurations.all {
 }
 ```
 
-## Classes from Plugin Dependencies
+> [Third-Party Software and Licenses](https://www.jetbrains.com/legal/third-party-software/) list all bundled libraries and their versions for each IDE.
+>
+{title="Bundled Libraries"}
+
+## Loading Classes from Plugin Dependencies
 
 By default, the main IDE class loader loads classes that are not found in the plugin class loader.
 However, in the <path>[plugin.xml](plugin_configuration_file.md)</path> file, you may use the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) element to specify that a [plugin depends](plugin_dependencies.md) on one or more other plugins.
@@ -66,5 +66,3 @@ try {
 
 </tab>
 </tabs>
-
-

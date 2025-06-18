@@ -24,7 +24,7 @@ Examples:
 - a plugin extension: `namespace: ij-plugin`, `kind: extensions`
 
 A Poly Symbol can originate from source code analysis, or it can be a symbol statically defined
-through [Web Types](websymbols_web_types.md) (JSON) or some other custom format.
+through [Web Types](polysymbols_web_types.md) (JSON) or some other custom format.
 In both cases, such a symbol can have some `source` defined.
 Each symbol is treated by the framework the same, regardless of their origin.
 
@@ -99,7 +99,7 @@ If the symbol is
 `properties`
 : Various symbol properties. There should be no assumption on the type of properties.
 Properties can be used by plugins to provide additional information on the symbol.
-See [Web Types Special Properties](websymbols_web_types.md#special-properties) section for reference to the custom properties supported by IDEs.
+See [Web Types Special Properties](polysymbols_web_types.md#special-properties) section for reference to the custom properties supported by IDEs.
 
 `presentation`
 : Returns
@@ -162,7 +162,7 @@ but as such is not a real HTML attribute. This distinction allows us to ignore s
 
 `abstract`
 : Some symbols may have a lot in common with each other, and one can use abstract symbols as their super symbol.
-For performance reasons, only statically defined symbols ([](websymbols_web_types.md),
+For performance reasons, only statically defined symbols ([](polysymbols_web_types.md),
 [Custom Elements Manifest](https://github.com/webcomponents/custom-elements-manifest))
 can inherit from other statically defined symbols.
 For dynamically defined symbols, regular class inheritance should be used.
@@ -326,7 +326,7 @@ It is a special HTML attribute processed by the Vue framework in runtime or duri
 which results in additional code being attached to the DOM element.
 Its structure looks as follows:
 
-![JavaScript Example Image](websymbols_web_types.svg){ width="706"}
+![JavaScript Example Image](polysymbols_web_types.svg){ width="706"}
 
 An example of how Vue directive might be declared in Web Types is here.
 Once a match query is run on `v-on:click.once.alt`, we will get a

@@ -20,7 +20,7 @@ It also provides an efficient JSON format (Web Types) for static symbol definiti
 Poly Symbols core advantage, however, is the ability to evaluate symbol patterns.
 
 Web frameworks tend to have custom syntaxes to enable various things,
-e.g. through HTML attribute name (see [Model Queries example](websymbols_implementation.md#model-queries-example) to see Vue directive syntax).
+e.g. through HTML attribute name (see [Model Queries example](polysymbols_implementation.md#model-queries-example) to see Vue directive syntax).
 The pattern evaluator is able to recognize symbols in different sections of the element name and provide reference resolution,
 documentation, usage occurrence, etc.
 It also supports rename refactoring for symbols originating from source code.
@@ -30,16 +30,16 @@ It is very easy to contribute new symbols from various sources, which works perf
 
 Poly Symbols API is not designed to create a support for new languages, but to rather work on meta
 level, to support frameworks or libraries, which are giving additional meaning to the existing language features.
-Currently, IDEs provide built-in integration for following language features (see [](websymbols_integration.md)):
+Currently, IDEs provide built-in integration for following language features (see [](polysymbols_integration.md)):
 - HTML: elements, attributes and attribute values
 - CSS: properties, custom properties, functions, classes, pseudo-elements, pseudo-classes and parts
 - JavaScript: string-literals, object properties, object literals and symbols (in JavaScript)
 
 There's also the option to write integration for other languages.
 
-Poly Symbols framework provides also a convenient way to manage enablement of features through [`PolyContext` API](websymbols_context.md).
+Poly Symbols framework provides also a convenient way to manage enablement of features through [`PolyContext` API](polysymbols_context.md).
 
 The following sub-pages provide information on how to implement Poly Symbols for plugins and how to
 define them statically through JSON schemas:
-- [](websymbols_implementation.md)
-- [](websymbols_web_types.md)
+- [](polysymbols_implementation.md)
+- [](polysymbols_web_types.md)

@@ -19,7 +19,7 @@ This is used to, e.g., change the icon of module nodes to reflect the module typ
 to Python Jupyter directories as location strings.
 
 To modify project view node representations, implement
-[`ProjectViewNodeDecorator`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/projectView/ProjectViewNodeDecorator.java)
+[`ProjectViewNodeDecorator`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/projectView/ProjectViewNodeDecorator.kt)
 and register it in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.projectViewNodeDecorator"/></include>.
 From the interface only the `decorate()` method that modifies `ProjectViewNode`s needs to be implemented.
 

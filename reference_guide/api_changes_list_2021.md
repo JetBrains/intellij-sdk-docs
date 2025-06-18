@@ -380,7 +380,7 @@ Add implementation for `com.intellij.openapi.fileEditor.FileEditor.getFile()`
 : Project is now only accessible via `com.intellij.openapi.ui.playback.PlaybackContext.getProject()` since it may change during script execution.
 
 JSON Widget suppressor <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.json.jsonWidgetSuppressor"/></include>
-: Override new method [`JsonWidgetSuppressor.isCandidateForSuppress(VirtualFile, Project)`](%gh-ic%/json/src/com/jetbrains/jsonSchema/extension/JsonWidgetSuppressor.java) for quick check in [EDT](threading_model.md) before `suppressSwitcherWidget()` is called on a background thread.
+: Override new method [`JsonWidgetSuppressor.isCandidateForSuppress(VirtualFile, Project)`](%gh-ic%/json/backend/src/com/jetbrains/jsonSchema/extension/JsonWidgetSuppressor.java) for quick check in [EDT](threading_model.md) before `suppressSwitcherWidget()` is called on a background thread.
 
 ### HTTP Client Plugin 2021.1
 

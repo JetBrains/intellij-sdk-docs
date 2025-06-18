@@ -258,7 +258,7 @@ See the [Model Queries Example](#model-queries-example) section for an example.
 
 Poly Symbols are contained within a loose model built from Poly Symbols scopes, each time anew for a particular context.
 Each Poly Symbol is also a
-[`PolySymbolScope`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolScope.kt)
+[`PolySymbolScope`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolScope.kt)
 and it can contain other Poly Symbols.
 For instance, an HTML element symbol would contain some HTML attributes symbols, or a JavaScript class symbol would contain field and method symbols.
 When configuring queries, Poly Symbols scopes are added to the list to create an initial scope for symbols resolve.
@@ -285,7 +285,7 @@ kind and from a particular namespace will be returned.
 If a symbol scope instance can mutate over time, it should properly implement this method.
 
 When implementing a scope containing many elements, an extension of
-[`PolySymbolScopeWithCache`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/utils/PolySymbolScopeWithCache.kt) is advised.
+[`PolySymbolScopeWithCache`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/utils/PolySymbolScopeWithCache.kt) is advised.
 This structure caches the list of symbols and uses an efficient cache mechanism to speed up queries.
 On extension of this class, it's only necessary to override `initialize()` and provide parameters to
 the super constructor to specify the caching strategy for the results.
@@ -297,11 +297,11 @@ To find which symbols match available patterns, we need to make a match query.
 One can also run a code completion query, which will produce a list of valid completions in the provided context.
 
 To perform a query, create a
-[`PolySymbolQueryExecutor`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryExecutor.kt)
+[`PolySymbolQueryExecutor`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryExecutor.kt)
 using
-[`PolySymbolQueryExecutorFactory`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryExecutorFactory.kt).
+[`PolySymbolQueryExecutorFactory`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryExecutorFactory.kt).
 The query executor will be configured by all the registered
-[`PolySymbolQueryConfigurator`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)'s
+[`PolySymbolQueryConfigurator`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)'s
 based on the provided PSI context.
 Configurators will provide initial Poly Symbol scopes, rules for calculating Poly Symbols context, and rules for symbol names conversion.
 
@@ -384,14 +384,14 @@ is created using rules provided by `PolySymbolQueryConfigurator`s with the addit
 [`PolyContextProvider`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/context/PolyContextProvider.kt).
 As a result, for each kind of context, there is at most a single name assigned.
 `PolyContext` can also be used outside the
-[`PolySymbolQueryExecutor`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryExecutor.kt)
+[`PolySymbolQueryExecutor`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryExecutor.kt)
 as an efficient way to determine whether to enable or disable particular functionality in the IDE based on PSI or VFS context.
 
 ### Query stack
 
 The stack is used as a scope for resolving symbols.
 All scopes provided by
-[`PolySymbolQueryConfigurator`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)s
+[`PolySymbolQueryConfigurator`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)s
 together with the list of additional scopes passed as arguments to the query create an initial query stack.
 Each time a symbol is matched, the list returned by `queryScope` property is added to the stack for any subsequent matches further right the pattern.
 
@@ -410,7 +410,7 @@ Similarly, to provide references, a
 [`PsiSymbolReferenceProvider`](%gh-ic%/platform/core-api/src/com/intellij/model/psi/PsiSymbolReferenceProvider.java)
 should be registered.
 It should return
-[`PolySymbolReference`](%gh-ic%/platform/polySymbols/backend/src/com/intellij/polySymbols/references/PolySymbolReference.kt)
+[`PolySymbolReference`](%gh-ic-master%/platform/polySymbols/backend/src/com/intellij/polySymbols/references/PolySymbolReference.kt)
 objects from `PsiSymbolReferenceProvider.getReferences()`.
 
 To support search/finding usages, Poly Symbol needs to implement

@@ -140,7 +140,7 @@ See the section below for handling cancellation.
 
 The cancellation is handled in the running process code by calling `ProgressIndicator.checkCanceled()`, or `ProgressManager.checkCanceled()`, if no indicator instance is available in the current context.
 
-If the process was [marked as canceled](#requesting-cancellation), then the call to `checkCanceled()` throws an instance of a special unchecked [`ProcessCanceledException`](%gh-ic%/platform/util/base/src/com/intellij/openapi/progress/ProcessCanceledException.java) (PCE) and the actual cancellation happens.
+If the process was [marked as canceled](#requesting-cancellation), then the call to `checkCanceled()` throws an instance of a special unchecked [`ProcessCanceledException`](%gh-ic%/platform/util/base/multiplatform/src/com/intellij/openapi/progress/ProcessCanceledException.kt) (PCE) and the actual cancellation happens.
 This exception doesn't represent any error and is only used to handle cancellation for convenience.
 It allows canceling processes deeply in the call stack, without the need to handle cancellation on each level.
 

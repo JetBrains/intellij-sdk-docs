@@ -93,7 +93,7 @@ Resolving a reference means going from usage to the corresponding declaration.
 To perform the navigation in the opposite direction - from a declaration to its usages - perform a _references search_.
 
 To perform a search using [`ReferencesSearch`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/searches/ReferencesSearch.java), specify the element to search for, and optionally other parameters such as the scope in which the reference needs to be searched.
-The created [`Query`](%gh-ic%/platform/core-api/src/com/intellij/util/Query.java) allows obtaining all results at once or iterating over the results one by one.
+The created [`Query`](%gh-ic%/platform/core-api/src/com/intellij/util/Query.kt) allows obtaining all results at once or iterating over the results one by one.
 The latter allows stopping processing as soon as the first (matching) result has been found.
 
 ## Implementing References

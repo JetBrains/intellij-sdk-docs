@@ -16,7 +16,7 @@ if only standard attributes are set, they will not be used by the version before
 
 ### Text Attribute Key Dependency
 
-The easiest and the best way to specify highlighting text attributes is to specify a dependency on one of standard keys defined in [`DefaultLanguageHighlighterColors`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/DefaultLanguageHighlighterColors.java):
+The easiest and the best way to specify highlighting text attributes is to specify a dependency on one of standard keys defined in [`DefaultLanguageHighlighterColors`](%gh-ic%/platform/core-api/src/com/intellij/openapi/editor/DefaultLanguageHighlighterColors.java):
 
 ```java
 static final TextAttributesKey MY_KEYWORD =

@@ -1,16 +1,16 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# Implementing Web Symbols
-<primary-label ref="2022.3"/>
+# Implementing Poly Symbols
+<primary-label ref="2025.2"/>
 
-<link-summary>Implementation details for the Web Symbols API.</link-summary>
+<link-summary>Implementation details for the Poly Symbols API.</link-summary>
 
 The core element of the framework is a
-[`WebSymbol`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/WebSymbol.kt),
-representing an entity in the Web Symbols model.
+[`PolySymbol`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/PolySymbol.kt),
+representing an entity in the Poly Symbols model.
 This symbol is characterized by `namespace`, `kind` and `name` properties, with its lifecycle encapsulated
 within a single read action.
-To ensure its survival between read actions, use `WebSymbol.createPointer()` to create a symbol pointer.
+To ensure its survival between read actions, use `PolySymbol.createPointer()` to create a symbol pointer.
 Provided the symbol remains valid, dereferencing the pointer will return a new instance of the symbol.
 It should be noted that during a write action, the symbol might not survive a PSI tree commit.
 Therefore, creating a pointer prior to the commit and dereferencing it post-commit is advised.
@@ -23,14 +23,14 @@ Examples:
 - a Java class: `namespace: Java`, `kind: classes`
 - a plugin extension: `namespace: ij-plugin`, `kind: extensions`
 
-A Web Symbol can originate from source code analysis, or it can be a symbol statically defined
+A Poly Symbol can originate from source code analysis, or it can be a symbol statically defined
 through [Web Types](websymbols_web_types.md) (JSON) or some other custom format.
 In both cases, such a symbol can have some `source` defined.
 Each symbol is treated by the framework the same, regardless of their origin.
 
 ## General Properties
 
-`WebSymbol` has a number of properties which are used across IDE features:
+`PolySymbol` has a number of properties which are used across IDE features:
 
 {style="full"}
 `namespace`
@@ -62,7 +62,7 @@ The value must be a non-negative integer, and the higher proximity, the higher t
 
 `apiStatus`
 : *Since 2023.2 - replaces `deprecated` and `experimental` properties*
-: Documents API status of the symbol. It is one of the sub-interfaces of [`WebSymbolApiStatus`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/WebSymbolApiStatus.kt):
+: Documents API status of the symbol. It is one of the sub-interfaces of [`PolySymbolApiStatus`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/PolySymbolApiStatus.kt):
    `Stable`, `Experimental` or `Deprecated`. Deprecated symbols are appropriately highlighted in the code editor, code completion, and quick documentation.
 
 `deprecated`
@@ -93,8 +93,8 @@ Usually a type would be associated with symbols, which can hold a value, or repr
 : A PsiElement, which is a file or an element, which can be used to roughly locate the source of the symbol within a project to provide
 a context for loading additional information, like types.
 If the symbol is
-[`PsiSourcedWebSymbol`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/PsiSourcedWebSymbol.kt)
-(see [](#psisourcedwebsymbol)), then `psiContext` is equal to `source`.
+[`PsiSourcedPolySymbol`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/search/PsiSourcedPolySymbol.kt)
+(see [](#psisourcedpolysymbol)), then `psiContext` is equal to `source`.
 
 `properties`
 : Various symbol properties. There should be no assumption on the type of properties.
@@ -109,9 +109,9 @@ used by
 and
 [`RenameTarget`](%gh-ic%/platform/lang-impl/src/com/intellij/refactoring/rename/api/RenameTarget.kt).
 Default implementations of
-[`WebSymbolRenameTarget`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/refactoring/WebSymbolRenameTarget.kt)
+[`PolySymbolRenameTarget`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/refactoring/PolySymbolRenameTarget.kt)
 and
-[`WebSymbolSearchTarget`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/search/WebSymbolSearchTarget.kt)
+[`PolySymbolSearchTarget`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/search/PolySymbolSearchTarget.kt)
 use the `presentation` property.
 
 ## Documentation Properties
@@ -135,8 +135,8 @@ Each section should have a name, but the contents are optional.
 `documentation`
 : *Removed in 2023.1.1 - replaced by `createDocumentation()`*
 : An interface holding information required to render documentation for the symbol.
-To customize symbols documentation, one can override the method, or implement[`WebSymbolDocumentationCustomizer`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/documentation/WebSymbolDocumentationCustomizer.kt).
-[`WebSymbolDocumentation`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/documentation/WebSymbolDocumentation.kt)
+To customize symbols documentation, one can override the method, or implement [`PolySymbolDocumentationCustomizer`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/documentation/PolySymbolDocumentationCustomizer.kt).
+[`PolySymbolDocumentation`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/documentation/PolySymbolDocumentation.kt)
 interface provides builder methods for customizing the documentation.
 `with*` methods return a copy of the documentation with customized fields.
 
@@ -147,9 +147,9 @@ The following properties are related to name matching and code completion querie
 {style="full"}
 `pattern`
 : The pattern to match names against.
-As a result of pattern matching, a [`WebSymbolMatch`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/query/WebSymbolMatch.kt) will be created.
-A pattern may specify that a reference to other Web Symbols is expected in some part of it.
-For such places, appropriate segments with referenced Web Symbols will be created and navigation, validation, and refactoring support are available out-of-the-box.
+As a result of pattern matching, a [`PolySymbolMatch`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolMatch.kt) will be created.
+A pattern may specify that a reference to other Poly Symbols is expected in some part of it.
+For such places, appropriate segments with referenced Poly Symbols will be created and navigation, validation, and refactoring support are available out-of-the-box.
 
 `queryScope`
 : When a pattern is being evaluated, matched symbols can provide additional scope for further resolution in the pattern.
@@ -178,7 +178,7 @@ When matched along with a non-extension symbol, it can provide or override some 
 It can specify the kind (plain, expression, no-value), type (boolean, number, string, enum, complex, of-match),
 whether an attribute value is required, a default value, and the result type of value expression in the appropriate language.
 If `COMPLEX` type is set, the value of `langType` will be used and if `OF_MATCH`, the type of the `symbol` will be used.
-When merging information from several segments in the WebSymbolMatch, first non-null property values take precedence.
+When merging information from several segments in the PolySymbolMatch, first non-null property values take precedence.
 By default - when properties are `null` - attribute value is of plain type and is required.
 
 ## Methods
@@ -199,31 +199,31 @@ If a symbol instance can mutate over time, it should properly implement this met
 : Returns true if two symbols are the same or equivalent for resolve purposes.
 
 `adjustNameForRefactoring()`
-: Web Symbols can have various naming conventions.
+: Poly Symbols can have various naming conventions.
 This method is used by the framework to determine a new name for a symbol based on its occurrence.
 
 `getDocumentationTarget()`
 : *Since 2023.1.1*
-: Used by the Web Symbols framework to get a [`DocumentationTarget`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/DocumentationTarget.kt), which handles documentation
+: Used by the Poly Symbols framework to get a [`DocumentationTarget`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/DocumentationTarget.kt), which handles documentation
 rendering for the symbol.
 The default implementation will use `createDocumentation()` to render the documentation.
 
 `createDocumentation()`
 : *Since 2023.1.1 - replaces `documentation` property*
-: Returns [`WebSymbolDocumentation`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/documentation/WebSymbolDocumentation.kt) -
+: Returns [`PolySymbolDocumentation`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/documentation/PolySymbolDocumentation.kt) -
 an interface holding information required to render documentation for the symbol.
-By default, its contents are built from the available Web Symbol information. To customize symbols documentation, one can override the method, or implement
-[`WebSymbolDocumentationCustomizer`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/documentation/WebSymbolDocumentationCustomizer.kt).
+By default, its contents are built from the available Poly Symbol information. To customize symbols documentation, one can override the method, or implement
+[`PolySymbolDocumentationCustomizer`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/documentation/PolySymbolDocumentationCustomizer.kt).
 :
-[`WebSymbolDocumentation`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/documentation/WebSymbolDocumentation.kt)
+[`PolySymbolDocumentation`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/documentation/PolySymbolDocumentation.kt)
 interface provides builder methods for customizing the documentation.
 `with*` methods return a copy of the documentation with customized fields.
 
 
-## `PsiSourcedWebSymbol`
+## `PsiSourcedPolySymbol`
 
 A symbol should implement
-[`PsiSourcedWebSymbol`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/PsiSourcedWebSymbol.kt)
+[`PsiSourcedPolySymbol`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/search/PsiSourcedPolySymbol.kt)
 if its declaration is a regular `PsiElement`, e.g., a variable or a declared type.
 Once a symbol implements this interface, it can be searched and refactored together with the PSI element declaration.
 In case a symbol is part of a `PsiElement` (for instance, being part of a string literal),
@@ -231,40 +231,40 @@ spans multiple PSI elements, or does not correlate one-to-one with a PSI element
 contribution of a dedicated declaration provider instead of implementing this interface is recommended.
 
 ### Properties
-{#psisourcedwebsymbol-properties}
+{#psisourcedpolysymbol-properties}
 
 {style="full"}
 `source`
 : The `PsiElement`, which is the symbol declaration.
 
-## `CompositeWebSymbol`
+## `CompositePolySymbol`
 
-[`WebSymbolMatch`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/query/WebSymbolMatch.kt)
-and some special symbols can have a name, which consists of other Web Symbols.
+[`PolySymbolMatch`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolMatch.kt)
+and some special symbols can have a name, which consists of other Poly Symbols.
 
 ### Properties
-{#compositewebsymbol-properties}
+{#compositepolysymbol-properties}
 
 {style="full"}
 `nameSegments`
 : List of
-[`WebSymbolNameSegment`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/WebSymbolNameSegment.kt).
+[`PolySymbolNameSegment`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/PolySymbolNameSegment.kt).
 Each segment describes a range in the symbol name.
-Segments can be built of other Web Symbols and/or have related matching problems - missing required part,
+Segments can be built of other Poly Symbols and/or have related matching problems - missing required part,
 unknown symbol name or be a duplicate of another segment.
 See the [Model Queries Example](#model-queries-example) section for an example.
 
-## Web Symbols Scope
+## Poly Symbol Scope
 
-Web Symbols are contained within a loose model built from Web Symbols scopes, each time anew for a particular context.
-Each Web Symbol is also a
-[`WebSymbolsScope`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/WebSymbolsScope.kt)
-and it can contain other Web Symbols.
+Poly Symbols are contained within a loose model built from Poly Symbols scopes, each time anew for a particular context.
+Each Poly Symbol is also a
+[`PolySymbolScope`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolScope.kt)
+and it can contain other Poly Symbols.
 For instance, an HTML element symbol would contain some HTML attributes symbols, or a JavaScript class symbol would contain field and method symbols.
-When configuring queries, Web Symbols scopes are added to the list to create an initial scope for symbols resolve.
+When configuring queries, Poly Symbols scopes are added to the list to create an initial scope for symbols resolve.
 
 ### Methods
-{#websymbolsscope-methods}
+{#polysymbolscope-methods}
 
 {style="full"}
 `getSymbols()`
@@ -285,37 +285,37 @@ kind and from a particular namespace will be returned.
 If a symbol scope instance can mutate over time, it should properly implement this method.
 
 When implementing a scope containing many elements, an extension of
-[`WebSymbolsScopeWithCache`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/WebSymbolsScopeWithCache.kt) is advised.
+[`PolySymbolScopeWithCache`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/utils/PolySymbolScopeWithCache.kt) is advised.
 This structure caches the list of symbols and uses an efficient cache mechanism to speed up queries.
 On extension of this class, it's only necessary to override `initialize()` and provide parameters to
 the super constructor to specify the caching strategy for the results.
 
 ## Model Queries
 
-Web Symbols can contain patterns, which allow to compose them from other Web Symbols.
+Poly Symbols can contain patterns, which allow to compose them from other Poly Symbols.
 To find which symbols match available patterns, we need to make a match query.
 One can also run a code completion query, which will produce a list of valid completions in the provided context.
 
 To perform a query, create a
-[`WebSymbolsQueryExecutor`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/query/WebSymbolsQueryExecutor.kt)
+[`PolySymbolQueryExecutor`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryExecutor.kt)
 using
-[`WebSymbolsQueryExecutorFactory`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/query/WebSymbolsQueryExecutorFactory.kt).
+[`PolySymbolQueryExecutorFactory`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryExecutorFactory.kt).
 The query executor will be configured by all the registered
-[`WebSymbolsQueryConfigurator`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/query/WebSymbolsQueryConfigurator.kt)'s
+[`PolySymbolQueryConfigurator`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)'s
 based on the provided PSI context.
-Configurators will provide initial Web Symbol scopes, rules for calculating Web Symbols context, and rules for symbol names conversion.
+Configurators will provide initial Poly Symbol scopes, rules for calculating Poly Symbols context, and rules for symbol names conversion.
 
-The result of the match query is a list of WebSymbols.
+The result of the match query is a list of `PolySymbol`s.
 Some of them might be
-[`WebSymbolMatch`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/query/WebSymbolMatch.kt)es.
+[`PolySymbolMatch`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolMatch.kt)es.
 Such objects represent complex matches when patterns are used.
-Web Symbol Match has `nameSegments` property, which precisely describes how segments of the name relate to referenced Web Symbols and
+Poly Symbol Match has `nameSegments` property, which precisely describes how segments of the name relate to referenced Poly Symbols and
 whether there are any problems with resolution or the name itself.
 
 When working with code completion, one can query for the list of code completions.
 To properly calculate completions, a position in the current text under completion is required.
 As a result, a list of
-[`WebSymbolCodeCompletionItem`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/completion/WebSymbolCodeCompletionItem.kt)
+[`PolySymbolCodeCompletionItem`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/completion/PolySymbolCodeCompletionItem.kt)
 will be provided.
 
 ### Example
@@ -330,7 +330,7 @@ Its structure looks as follows:
 
 An example of how Vue directive might be declared in Web Types is here.
 Once a match query is run on `v-on:click.once.alt`, we will get a
-[`WebSymbolMatch`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/query/WebSymbolMatch.kt)
+[`PolySymbolMatch`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolMatch.kt)
 with the following segments:
 
 1. `v-`: Vue directive pattern symbol
@@ -358,7 +358,7 @@ There are seven types of patterns:
 3. Symbol reference placeholder: a symbol reference resolve will be attempted when this pattern is reached.
    A resolve will be made by the symbols provider from an enclosing complex pattern.
    If none of the symbols match the segment, the segment will have `UNKNOWN_SYMBOL` problem reported.
-   The matched symbol might be a WebSymbolMatch itself, which allows for nesting patterns.
+   The matched symbol might be a PolySymbolMatch itself, which allows for nesting patterns.
 4. Pattern sequence: a sequence of patterns. If some patterns are not matched, an empty segment with `MISSING_REQUIRED_PART` will be created.
 5. Complex pattern: this pattern is called complex, because it makes several things:
     - The provided patterns are treated as alternatives.
@@ -379,44 +379,44 @@ There are seven types of patterns:
 
 When performing queries, some symbols should be excluded and others included in particular contexts.
 For instance, if we have an Angular project, none of the Vue components should be available.
-[`WebSymbolsContext`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/context/WebSymbolsContext.kt)
-is created using rules provided by `WebSymbolsQueryConfigurator`s with the addition of custom
-[`WebSymbolsContextProvider`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/context/WebSymbolsContextProvider.kt).
+[`PolyContext`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/context/PolyContext.kt)
+is created using rules provided by `PolySymbolQueryConfigurator`s with the addition of custom
+[`PolyContextProvider`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/context/PolyContextProvider.kt).
 As a result, for each kind of context, there is at most a single name assigned.
-`WebSymbolsContext` can also be used outside the
-[`WebSymbolsQueryExecutor`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/query/WebSymbolsQueryExecutor.kt)
+`PolyContext` can also be used outside the
+[`PolySymbolQueryExecutor`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryExecutor.kt)
 as an efficient way to determine whether to enable or disable particular functionality in the IDE based on PSI or VFS context.
 
 ### Query stack
 
 The stack is used as a scope for resolving symbols.
 All scopes provided by
-[`WebSymbolsQueryConfigurator`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/query/WebSymbolsQueryConfigurator.kt)s
+[`PolySymbolQueryConfigurator`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)s
 together with the list of additional scopes passed as arguments to the query create an initial query stack.
 Each time a symbol is matched, the list returned by `queryScope` property is added to the stack for any subsequent matches further right the pattern.
 
 ## Declarations, References, Search, Refactoring
 
-To provide locations of declarations of Web Symbols, which are not
-[`PsiSourcedWebSymbol`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/PsiSourcedWebSymbol.kt)s,
+To provide locations of declarations of Poly Symbols, which are not
+[`PsiSourcedPolySymbol`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/search/PsiSourcedPolySymbol.kt)s,
 a dedicated
-[`WebSymbolDeclarationProvider`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/declarations/WebSymbolDeclarationProvider.kt)
+[`PolySymbolDeclarationProvider`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/declarations/PolySymbolDeclarationProvider.kt)
 should be registered.
 It should return a list of
-[`WebSymbolDeclaration`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/declarations/WebSymbolDeclaration.kt)s
+[`PolySymbolDeclaration`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/declarations/PolySymbolDeclaration.kt)s
 in a particular `PsiElement` at a particular offset.
 
 Similarly, to provide references, a
 [`PsiSymbolReferenceProvider`](%gh-ic%/platform/core-api/src/com/intellij/model/psi/PsiSymbolReferenceProvider.java)
 should be registered.
 It should return
-[`WebSymbolReference`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/references/WebSymbolReference.kt)
+[`PolySymbolReference`](%gh-ic%/platform/polySymbols/backend/src/com/intellij/polySymbols/references/PolySymbolReference.kt)
 objects from `PsiSymbolReferenceProvider.getReferences()`.
 
-To support search/finding usages, Web Symbol needs to implement
+To support search/finding usages, Poly Symbol needs to implement
 [`SearchTarget`](%gh-ic%/platform/lang-impl/src/com/intellij/find/usages/api/SearchTarget.kt)
 or a
-[`WebSymbolSearchTarget`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/search/WebSymbolSearchTarget.kt)
+[`PolySymbolSearchTarget`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/search/PolySymbolSearchTarget.kt)
 needs to be provided for it through a
 [`SymbolSearchTargetFactory`](%gh-ic%/platform/lang-impl/src/com/intellij/find/usages/symbol/SymbolSearchTargetFactory.java).
 
@@ -424,6 +424,6 @@ To support name refactoring, the
 [`RenameTarget`](%gh-ic%/platform/lang-impl/src/com/intellij/refactoring/rename/api/RenameTarget.kt)
 interface needs to be implemented,
 or a
-[`WebSymbolRenameTarget`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/refactoring/WebSymbolRenameTarget.kt)
+[`PolySymbolRenameTarget`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/refactoring/PolySymbolRenameTarget.kt)
 needs to be provided for it through a
 [`SymbolRenameTargetFactory`](%gh-ic%/platform/lang-impl/src/com/intellij/refactoring/rename/symbol/SymbolRenameTargetFactory.java).

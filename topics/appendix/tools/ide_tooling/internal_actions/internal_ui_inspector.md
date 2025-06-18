@@ -85,7 +85,7 @@ Some additional properties are available when inspecting the <control>Settings</
 
 ## Accessibility Checks
 
-The _UI Inspector_ includes a <control>Show Accessibility Issues</control> (2025.2+) button that enables inspections for common accessibility problems, similar to browser tools like Google Chrome Lighthouse or apps like Accessibility Insights for Windows.
+Since 2025.2, the _UI Inspector_ includes the <control>Show Accessibility Issues</control> button that enables inspections for common accessibility problems, similar to browser tools like Google Chrome Lighthouse or apps like Accessibility Insights for Windows.
 These issues are usually invisible in the UI, but they can still prevent users who rely on assistive technologies like screen readers or voice control from interacting with the UI.
 
 For each problem, the affected value in the Properties table contains a description that explains what it affects and how to fix it.

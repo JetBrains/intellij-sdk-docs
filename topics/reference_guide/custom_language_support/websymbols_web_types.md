@@ -3,9 +3,9 @@
 # Web Types
 <primary-label ref="2022.3"/>
 
-<link-summary>Web Types - contributing statically defined Web Symbols through JSONs.</link-summary>
+<link-summary>Web Types - contributing statically defined Poly Symbols through JSONs.</link-summary>
 
-Web Types is a JSON metadata format, which provides an easy way to contribute statically defined Web Symbols.
+Web Types is a JSON metadata format, which provides an easy way to contribute statically defined Poly Symbols.
 The JSON Web Types detailed schema can be accessed by
 [following this link](https://github.com/JetBrains/web-types/blob/master/schema/web-types.json).
 The format is open source and IDE-agnostic by itself.
@@ -119,8 +119,8 @@ To contribute a `foo` attribute, one could also write it in longer form:
 }
 ```
 
-Each Web Types contribution is represented in the Web Symbols framework by a
-[`PsiSourcedWebSymbol`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/PsiSourcedWebSymbol.kt)
+Each Web Types contribution is represented in the Poly Symbols framework by a
+[`PsiSourcedPolySymbol`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/search/PsiSourcedPolySymbol.kt)
 object.
 All the Web Types contributions are mapped one-to-one, and custom properties are accessible through `properties` property.
 
@@ -140,8 +140,8 @@ The property accepts a string or an array of strings with relative paths to Web 
 
 IDE Plugin
 : You can ship Web Types JSON with your IDE plugin.
-To point an IDE to its location, use <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.webSymbols.webTypes"/></include> and pass the file location in `source` attribute value.
-With `enableByDefault` attribute, you can choose whether the Web Types file should be contributed to Web Symbols scope by default,
+To point an IDE to its location, use <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.polySymbols.webTypes"/></include> and pass the file location in `source` attribute value.
+With `enableByDefault` attribute, you can choose whether the Web Types file should be contributed to Poly Symbols scope by default,
 or only if an NPM package with the same name is present in the project.
 
 ## Special Properties

@@ -260,11 +260,11 @@
       <toc-element topic="references_and_resolve.md"/>
       <toc-element topic="symbols.md">
         <toc-element topic="declarations_and_references.md"/>
-        <toc-element topic="websymbols.md">
-          <toc-element topic="websymbols_implementation.md"/>
-          <toc-element topic="websymbols_integration.md"/>
-          <toc-element topic="websymbols_context.md"/>
-          <toc-element topic="websymbols_web_types.md" accepts-web-file-names="websymbols-static-symbols.html"/>
+        <toc-element topic="polysymbols.md" accepts-web-file-names="websymbols.html">
+          <toc-element topic="polysymbols_implementation.md" accepts-web-file-names="websymbols-implementation.html"/>
+          <toc-element topic="polysymbols_integration.md" accepts-web-file-names="websymbols-integration.html"/>
+          <toc-element topic="polysymbols_context.md" accepts-web-file-names="websymbols-context.html"/>
+          <toc-element topic="polysymbols_web_types.md" accepts-web-file-names="websymbols-static-symbols.html"/>
         </toc-element>
       </toc-element>
       <toc-element topic="navigation.md"/>

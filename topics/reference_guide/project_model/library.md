@@ -40,14 +40,43 @@ Package [`com.intellij.openapi.roots.libraries`](%gh-ic%/platform/projectModel-a
 
 To get the list of libraries that a module depends on, use `OrderEnumerator.forEachLibrary` as follows.
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+val libraryNames = mutableListOf<String>()
+ModuleRootManager.getInstance(module).orderEntries()
+  .forEachLibrary {
+    libraryNames.addIfNotNull(it.name)
+    true
+  }
+Messages.showInfoMessage(
+  libraryNames.joinToString("\n"),
+  "Libraries in Module"
+)
+```
+
+</tab>
+<tab title="Java" group-key="java">
+
 ```java
 List<String> libraryNames = new ArrayList<>();
-ModuleRootManager.getInstance(module).orderEntries().forEachLibrary(library -> {
-  libraryNames.add(library.getName());
-  return true;
-});
-Messages.showInfoMessage(StringUtil.join(libraryNames, "\n"), "Libraries in Module");
+ModuleRootManager.getInstance(module).orderEntries()
+  .forEachLibrary(library -> {
+    String libraryName = library.getName();
+    if (libraryName != null) {
+      libraryNames.add(libraryName);
+    }
+    return true;
+  });
+Messages.showInfoMessage(
+  StringUtil.join(libraryNames, "\n"),
+  "Libraries in Module"
+);
 ```
+
+</tab>
+</tabs>
 
 This sample code outputs a list of libraries that the given module depends on.
 
@@ -59,26 +88,50 @@ Get the list of libraries in it via `LibraryTable.getLibraries()`.
 
 To get the list of all module libraries defined in a given module, use API from [`OrderEntryUtil`](%gh-ic%/platform/projectModel-impl/src/com/intellij/openapi/roots/impl/OrderEntryUtil.java):
 
-```java
-OrderEntryUtil.getModuleLibraries(ModuleRootManager.getInstance(module));
+```kotlin
+OrderEntryUtil.getModuleLibraries(ModuleRootManager.getInstance(module))
 ```
 
 ### Getting the Library Content
 
 [`Library`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/libraries/Library.java) provides the `getUrls()` method to get a list of source roots and classes the library includes.
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+val roots = StringBuilder()
+roots.appendLine("The ${lib.name} library includes:")
+roots.appendLine("Sources:")
+for (sourcesUrl in lib.getUrls(OrderRootType.SOURCES)) {
+  roots.appendLine(sourcesUrl)
+}
+roots.appendLine("Classes:")
+for (classesUrl in lib.getUrls(OrderRootType.CLASSES)) {
+  roots.appendLine(classesUrl)
+}
+Messages.showInfoMessage(roots.toString(), "Library Info")
+```
+
+</tab>
+<tab title="Java" group-key="java">
+
 ```java
-StringBuilder roots = new StringBuilder("The " + lib.getName() + " library includes:\n");
-roots.append("Sources:\n");
-for (String each : lib.getUrls(OrderRootType.SOURCES)) {
-  roots.append(each).append("\n");
+StringBuilder roots = new StringBuilder();
+roots.append("The " + lib.getName() + " library includes:\n");
+ roots.append("Sources:\n");
+for (String sourcesUrl : lib.getUrls(OrderRootType.SOURCES)) {
+  roots.append(sourcesUrl).append("\n");
 }
 roots.append("Classes:\n");
-for (String each : lib.getUrls(OrderRootType.CLASSES)) {
-  roots.append(each).append("\n");
+for (String classesUrl : lib.getUrls(OrderRootType.CLASSES)) {
+  roots.append(classesUrl).append("\n");
 }
 Messages.showInfoMessage(roots.toString(), "Library Info");
 ```
+
+</tab>
+</tabs>
 
 ### Creating a Library
 
@@ -118,15 +171,15 @@ Use `ModuleRootModificationUtil.addDependency(Module, Library)` from under a [wr
 The [`ProjectFileIndex`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) interface implements a number of methods that can be used to check whether the specified file belongs to the project library classes or library sources.
 
 * To check if a specified virtual file is a compiled class file use
-  ```java
+  ```kotlin
     ProjectFileIndex.isLibraryClassFile(virtualFile)
   ```
 * To check if a specified virtual file or directory belongs to library classes use
-  ```java
+  ```kotlin
     ProjectFileIndex.isInLibraryClasses(virtualFileorDirectory)
   ```
 * To check if the specified virtual file or directory belongs to library sources use
-  ```java
+  ```kotlin
     ProjectFileIndex.isInLibrarySource(virtualFileorDirectory)
   ```
 

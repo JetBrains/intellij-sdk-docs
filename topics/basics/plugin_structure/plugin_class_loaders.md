@@ -9,12 +9,12 @@ This allows each plugin to use a different library version, even if the same lib
 
 ## Bundled Libraries
 
-[Third-Party Software and Licenses](https://www.jetbrains.com/legal/third-party-software/) lists all bundled libraries and their versions for each product.
+[Third-Party Software and Licenses](https://www.jetbrains.com/legal/third-party-software/) list all bundled libraries and their versions for each product.
 
 ## Overriding IDE Dependencies
 
-Gradle 7 introduced `implementation` scope, replacing `compile` scope.
-For this setup, to use project defined dependency instead of the bundled IDE version, add the following snippet to your Gradle build script:
+Gradle 7 introduced the `implementation` scope that replaced the `compile` scope.
+For this setup, to use project-defined dependency instead of the bundled IDE version, add the following snippet to your Gradle build script:
 
 <tabs>
 <tab title="Kotlin">
@@ -47,7 +47,7 @@ This allows a plugin to reference classes from other plugins.
 ## Using `ServiceLoader`
 
 Some libraries use [`ServiceLoader`](https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/util/ServiceLoader.html) to detect and load implementations.
-For this to work in a plugin, the context class loader must be set to the plugin's classloader and restored afterwards with the original one around initialization code:
+To make it work in a plugin, the context class loader must be set to the plugin's classloader and restored afterward with the original one around initialization code:
 
 ```java
 Thread currentThread = Thread.currentThread();

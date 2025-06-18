@@ -20,15 +20,15 @@ The IntelliJ Platform supports three types of libraries:
 
 ### Module Library
 
-The library classes are visible only in this module and the library information is recorded in the module <path>.iml</path> file.
+The library classes are visible only in this module, and the library information is recorded in the module <path>.iml</path> file.
 
 ### Project Library
 
-The library classes are visible within the project and the library information is recorded under <path>.idea/libraries</path> directory or in the project <path>.ipr</path> file.
+The library classes are visible within the project, and the library information is recorded under the <path>.idea/libraries</path> directory or in the project <path>.ipr</path> file.
 
 ### Global Library
 
-The library information is recorded in the <path>applicationLibraries.xml</path> file in <path>\$USER_HOME\$/.IntelliJIdea/config/options</path> directory. Global libraries are similar to project libraries, but are visible for different projects.
+The library information is recorded in the <path>applicationLibraries.xml</path> file in <path>\$USER_HOME\$/.IntelliJIdea/config/options</path> directory. Global libraries are similar to project libraries but are visible for different projects.
 
 ## Working with Libraries
 
@@ -36,7 +36,7 @@ The library information is recorded in the <path>applicationLibraries.xml</path>
 
 Package [`com.intellij.openapi.roots.libraries`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/libraries) provides functionality for working with project libraries and JAR files.
 
-### Getting a List of Libraries a Module Depends On
+### Getting Module Dependency Libraries
 
 To get the list of libraries that a module depends on, use `OrderEnumerator.forEachLibrary` as follows.
 
@@ -115,7 +115,7 @@ Use `ModuleRootModificationUtil.addDependency(Module, Library)` from under a [wr
 
 ### Checking Belonging to a Library
 
-The [`ProjectFileIndex`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) interface implements a number of methods that can used to check whether the specified file belongs to the project library classes or library sources.
+The [`ProjectFileIndex`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) interface implements a number of methods that can be used to check whether the specified file belongs to the project library classes or library sources.
 
 * To check if a specified virtual file is a compiled class file use
   ```java
@@ -138,4 +138,4 @@ More details on libraries can be found in the [plugin_model](%gh-sdk-samples-mas
 
 [`AdditionalLibraryRootsProvider`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/AdditionalLibraryRootsProvider.java) registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.additionalLibraryRootsProvider"/></include> allows
 providing synthetic/predefined libraries ([`SyntheticLibrary`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/SyntheticLibrary.java)) in a project without exposing them in the model.
-By default, they're also hidden from UI.
+By default, they're also hidden from the UI.

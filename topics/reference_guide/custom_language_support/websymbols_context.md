@@ -1,24 +1,24 @@
 <!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# Web Symbols Context
-<primary-label ref="2022.3"/>
+# Poly Symbols Context
+<primary-label ref="2025.2"/>
 
-<link-summary>How to use Web Symbols context detection to manage enablement of plugin features.</link-summary>
+<link-summary>How to use Poly Symbols context detection to manage enablement of plugin features.</link-summary>
 
 One of the important qualities of well-written plugins is the enablement of its features
 only when needed. For instance, if a user does not have a particular web framework in their project,
 HTML files should not contain that framework-specific assistance.
 
-Web Symbols framework provides various ways to detect current context
-and retrieve it through `WebSymbolsContext.get(kind, ...)` methods.
+Poly Symbols framework provides various ways to detect current context
+and retrieve it through `PolyContext.get(kind, ...)` methods.
 
-For a particular `kind` of Web Symbol context, there is only one `name` detected, and it can be `null` if
+For a particular `kind` of Poly Symbol context, there is only one `name` detected, and it can be `null` if
 the context `kind` is not present in the location.
 
 ## Location - `PsiElement` vs `VirtualFile`
 
 The location can either be a `PsiElement`, or a `VirtualFile` with a `Project`. If the location is `PsiElement`,
-the PSI tree of the containing file might be checked by `WebSymbolsContextProvider`, for instance, for some imports.
+the PSI tree of the containing file might be checked by `PolyContextProvider`, for instance, for some imports.
 If the location is a `VirtualFile`, the PSI tree will not be acquired, so the resulting context may differ
 from the one acquired on a `PsiElement` location. This is expected. The `VirtualFile` location is used to,
 amongst others, determine a language to parse the file, so it cannot use a PSI tree. It must also be fast,
@@ -29,21 +29,21 @@ at which context is checked. It is important, though, to remember that the langu
 be substituted if a context is detected on `VirtualFile` level.
 
 A good example of how context detection can be used is web frameworks, since at a particular location only
-one of the frameworks can be used. Various `WebSymbolsContextProvider` extensions and context rules are used
+one of the frameworks can be used. Various `PolyContextProvider` extensions and context rules are used
 to determine which of the frameworks (Vue, Angular, React, Astro, etc.) to enable at the particular location.
-And each of the plugins calls `WebSymbolsContext.get("framework", ...)` to check if it's their framework,
+And each of the plugins calls `PolyContext.get("framework", ...)` to check if it's their framework,
 which is enabled.
 
-## `WebSymbolsContextProvider`
+## `PolyContextProvider`
 
-The most straightforward way to contribute context is to register a [`WebSymbolsContextProvider`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/context/WebSymbolsContextProvider.kt)
-through <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.webSymbols.context"/></include> and override one of `isEnabled()` methods
+The most straightforward way to contribute context is to register a [`PolyContextProvider`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/context/PolyContextProvider.kt)
+through <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.polySymbols.context"/></include> and override one of `isEnabled()` methods
 to detect a context of a particular name and kind, e.g.:
 
 ```xml
 <idea-plugin>
   <extensions defaultExtensionNs="com.intellij">
-    <webSymbols.context
+    <polySymbols.context
         kind="stimulus-context" name="true"
         implementation="com.intellij.stimulus.context.StimulusContextProvider"/>
   </extensions>
@@ -51,10 +51,10 @@ to detect a context of a particular name and kind, e.g.:
 ```
 
 The `StimulusContextProvider` can, for instance, check for JavaScript imports in the file to see if some additional Stimulus support
-should be present in the file. The result should be cached, as `WebSymbolsContextProvider` methods are called very often.
+should be present in the file. The result should be cached, as `PolyContextProvider` methods are called very often.
 
 ```kotlin
-class StimulusContextProvider : WebSymbolsContextProvider {
+class StimulusContextProvider : PolyContextProvider {
   override fun isEnabled(file: PsiFile): Boolean {
     if (file is HtmlCompatibleFile) {
       return CachedValuesManager.getCachedValue(file) {
@@ -69,16 +69,16 @@ class StimulusContextProvider : WebSymbolsContextProvider {
 The presence of the context can be checked as follows:
 
 ```kotlin
-WebSymbolsContext.get("stimulus-context", psiElement) == "true"
+PolyContext.get("stimulus-context", psiElement) == "true"
 ```
 
-`WebSymbolsContextProvider` can also prevent a context from being detected. In this case, the `isForbidden` method should be overridden.
+`PolyContextProvider` can also prevent a context from being detected. In this case, the `isForbidden` method should be overridden.
 To prevent any context of a particular kind, use `any` as a name, e.g.:
 
 ```xml
 <idea-plugin>
   <extensions defaultExtensionNs="com.intellij">
-    <webSymbols.context
+    <polySymbols.context
         kind="framework" name="any"
         implementation="com.intellij.python.js.PyTemplatesWebContextBlocker"/>
   </extensions>
@@ -90,7 +90,7 @@ location and forbid the `framework` context to disable web frameworks support, l
 
 ## Context Rules
 
-`WebSymbolsContextProvider` is straightforward to use, but it is not very efficient. When many providers look for similar information,
+`PolyContextProvider` is straightforward to use, but it is not very efficient. When many providers look for similar information,
 a lot of calculations are repeated, affecting the overall performance of the IDE. One of the examples is when providers look for the presence
 of some package manager dependency (Node package, Ruby Gem, Maven or Gradle dependency, etc.). To optimize this lookup, context rules can be provided.
 
@@ -202,7 +202,7 @@ Web Types can be embedded with a plugin by pointing to the file via extension po
 ```xml
 <idea-plugin>
   <extensions defaultExtensionNs="com.intellij">
-    <webSymbols.webTypes
+    <polySymbols.webTypes
         source="web-types/vue-store-contexts@0.0.0.web-types.json"
         enableByDefault="true"/>
   </extensions>
@@ -221,12 +221,12 @@ choose the minimal version, for which the Web Types should be loaded.
 If context rules should always be loaded, then any name (preferably not used by any dependency) should be used
 for the dependency and the `enableByDefault` attribute set to `true`.
 
-### `WebSymbolsContextRulesProvider`
+### `PolyContextRulesProvider`
 
-Context rules can also be provided dynamically through [`WebSymbolsContextRulesProvider`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/context/WebSymbolsContextRulesProvider.kt).
+Context rules can also be provided dynamically through [`PolyContextRulesProvider`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/context/PolyContextRulesProvider.kt).
 
-To do that, register a [`WebSymbolsQueryConfigurator`](%gh-ic%/platform/webSymbols/src/com/intellij/webSymbols/query/WebSymbolsQueryConfigurator.kt)
-through <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.webSymbols.queryConfigurator"/></include> and implement `getContextRulesProviders()`.
+To do that, register a [`PolySymbolQueryConfigurator`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)
+through <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.polySymbols.queryConfigurator"/></include> and implement `getContextRulesProviders()`.
 It is important that the results are stable, because any unexpected change in the rules will cause
 rescanning of the project, dropping of all caches and restarting code analysis.
 
@@ -266,16 +266,16 @@ When choosing between different patterns matching the same file name, the follow
 2. Choose a pattern which has a file name pattern (i.e., doesn't end with `**` or `/`).
 3. Choose a pattern that was defined first.
 
-## `WebSymbolsContextSourceProximityProvider`
+## `PolyContextSourceProximityProvider`
 
-`WebSymbolsContextSourceProximityProvider` allows providing evaluation logic for the context rules. It should be used when
+[`PolyContextSourceProximityProvider`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/context/PolyContextSourceProximityProvider.kt) allows providing evaluation logic for the context rules. It should be used when
 working on integrating support for a package manager or a language which has a way to define global libraries. The provider should be registered
-through <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.webSymbols.contextSourceProximityProvider"/></include>.
+through <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.polySymbols.contextSourceProximityProvider"/></include>.
 
 The provider has a single method to be overridden — `calculateProximity()`. When `sourceKind` parameter matches the provider requirements,
 it should calculate the [proximity](#context-proximity) of each source provided by `sourceNames`. For instance, when supporting a package manager and
 the method is called with `sourceKind` being a `PackageManagerDependency` with the appropriate name, the provider should calculate the [proximity](#context-proximity)
 of each dependency provided through `sourceNames` parameter. The `Result` object contains also a `modificationTrackers` set field, which
 is used to track when the cached results should be recalculated. It is crucial to have as few trackers as possible and refresh the cache as seldom as possible
-because the results are used in every call to the `WebSymbolContext.get()` method.
+because the results are used in every call to the `PolyContext.get()` method.
 

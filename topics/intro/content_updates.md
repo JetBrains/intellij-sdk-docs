@@ -97,7 +97,7 @@ Minor Changes and Additions
 :
 - How to support [grammar checks](spell_checking.md#grammar-checks) provided by Grazie plugin in custom languages.
 - How to provide [code vision provider](inlay_hints.md#code-vision-provider) name and description in the settings.
-- How to manage [Web Symbols context](websymbols_context.md) detection.
+- How to manage [Poly Symbols context](websymbols_context.md) detection.
 
 ### April
 {april-24}
@@ -203,7 +203,7 @@ Documentation
 ### March
 {#march-23}
 
-Web Symbols
+Poly Symbols
 : Add [](websymbols.md) documentation, which is a framework that simplifies web technology development
 by utilizing the [](symbols.md) API and supporting custom syntaxes.
 

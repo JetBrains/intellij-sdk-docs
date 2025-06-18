@@ -34,6 +34,24 @@ This allows a plugin to reference classes from other plugins.
 Some libraries use [`ServiceLoader`](https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/util/ServiceLoader.html) to detect and load implementations.
 To make it work in a plugin, the context class loader must be set to the plugin's classloader and restored afterward with the original one around initialization code:
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+val currentThread = Thread.currentThread()
+val originalClassLoader = currentThread.contextClassLoader
+val pluginClassLoader = this.javaClass.classLoader
+try {
+  currentThread.contextClassLoader = pluginClassLoader
+  // code working with ServiceLoader here
+} finally {
+  currentThread.contextClassLoader = originalClassLoader
+}
+```
+
+</tab>
+<tab title="Java" group-key="java">
+
 ```java
 Thread currentThread = Thread.currentThread();
 ClassLoader originalClassLoader = currentThread.getContextClassLoader();
@@ -45,3 +63,8 @@ try {
   currentThread.setContextClassLoader(originalClassLoader);
 }
 ```
+
+</tab>
+</tabs>
+
+

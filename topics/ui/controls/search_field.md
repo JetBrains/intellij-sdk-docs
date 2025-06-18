@@ -12,180 +12,94 @@
 
 A search field is an input field that helps users locate objects, actions or text in an application.
 
-![](search_field_example.png){width=400}
-
-This article focuses on the search field.
+![](search_field.png){width=706}
 
 [//]: # (TODO: See another article for [search results]&#40;search_results.md&#41;.)
 
 ## When to use
 
-Use the search field when specific objects are difficult to find at a glance, for example:
+Use the search field when specific objects are difficult to find at a glance:
 
-* There are many objects, for example, in the VCS Log table or in the Editor with a large file opened.
+* There are many objects, as in the VCS Log table or in the Editor with a large file opened.
 * Objects aren't in a single location, for example controls are located on different setting pages.
 
 ## How to use
 
-### Label and Placeholder
+### Label
 
-Do **not** add a label to the search field. The magnifying glass icon is self-explanatory.
+Don't add a label to the search field. The magnifying glass icon is self-explanatory.
 
-<format color="Red" style="bold">Incorrect</format>
+<table style="none" border="false">
+    <tr>
+        <td><format style="bold" color="Green">Correct</format><img src="search_field_label_correct.png" width="378"/></td>
+        <td><format style="bold" color="Red">Incorrect</format><img src="search_field_label_incorrect.png" width="378"/></td>
+    </tr>
+</table>
 
-![](ptree-incorrect.png){width=360}
-
-<format color="Green" style="bold">Correct</format>
-
-![](ptree-correct.png){width=360}
-
-Mark the replace field with a label or a placeholder when shown together with the search field to distinguish between them:
-
-![](structural-replace.png){width=865}
+### Hints and scope
 
 Provide hints and scope as placeholder text.
-For example, the placeholder for plugins' search depends on the settings page tab to make it clear that search depends on the tab:
 
-![](placeholder.png){width=581}
+![](search_field_hints.png){width=706}
 
-### Icons
+### Search and Replace fields
 
-#### Search Options
+Mark the Search and Replace fields with labels or placeholders when shown together to distinguish between them.
 
-Use icon buttons inside the search field to save space and not to overload the UI and to be able to use them in already packed UI such as the Speed Search popup in trees or lists:
+![](search_field_search_replace.png){width=706}
 
-![](options.png){width=400}
+### Search options
 
-Available option icons:
+Use [icon buttons](icon_button.md) inside the search field to save space and not to overload the UI and to be able to use them in already packed UI such as the Speed Search popup in trees or lists.
 
-| ![](matchCase.png){width=16}   | Match case   |
-|--------------------------------|--------------|
-| ![](regex.png){width=16}       | Regex        |
-| ![](words.png){width=16}       | Words        |
-| ![](inSelection.png){width=16} | In selection |
-{style=none}
+![](search_field_search_options.png){width="706"}
 
-Change the state of options icons on hover so that it is clear that they are clickable:
+Icon buttons should change color when enabled so that it is clear which options are currently enabled.
 
-![](options-hovered.png){width=400}
+![](search_field_enabled_icons.png){width=706}
 
-Make icon buttons easily accessible with Tab navigation.
-Option icons should be placed on the right of the search field in the tabbing order.
-Show a border around the focused option.
+### Tab navigation
 
-![](options-focused.png){width=400}
+Make icon buttons easily accessible with <control>Tab</control>. Focused button should have a colored border.
 
-Icon buttons should change color when enabled so that it is clear which options are currently enabled:
+![](search_field_tab_focus.png){width=706}
 
-![](options-on.png){width=400}
+### Clear a Search String
 
-#### Clear a Search String
-
-Show the clear button <icon src="../../../images/ui/search_field/icons/clear-light.png" /> only when filtering on-screen content.
+Show the clear button <icon src="../../../images/ui/search_field/search_field_close_icon.png" width="20"/> when the search field has been filled.
 When the button is clicked, clear the search field and restore the content to its default state.
-Do **not** show the clear button if the search field is empty.
 
-![](clear-search-correct.png){width=581}
-
-Do **not** show the clear button when the initial data state is empty or doesn't differ from the result.
-For example, the close icon is not really useful in the editor search field since matches are highlighted and not filtered:
-
-<format color="Red" style="bold">Incorrect</format>
-
-![](clear-search-incorrect.png){width=419}
+![](search_field_clear_search.png){width=706}
 
 When search can be configured with options, show the clear button on the left of the option buttons.
 This way, option buttons won't jump when the clear button appears.
-The separator between the options and the clear button makes it harder to mis-click the potentially dangerous clear icon.
 
-![](search_field_example.png){width=400}
+![](search_field.png){width=706}
 
-#### Multiline Search Strings
+### Multiline Search Strings
 
-Searching for multiline matches can be achieved with a separate New Line action button:
+If multiline search is needed, use the New Line <icon src="../../../images/ui/search_field/search_field_new_line_icon.png" width="16"/> action button. It should be placed on the left of the rest of the search options.
 
-![](new-line.png){width=342}
+![](search_field_multiline.png){width=706}
 
-Put the New line action button on the left of the option buttons:
+The default shortcut for the New Line action: <shortcut>⇧⌘⏎</shortcut> for macOS and <shortcut>Ctrl + Shift + Enter</shortcut> for Windows/Linux.
 
-![](newline-options.png){width=300}
+### Filters
 
-Move the New Line action button below the option buttons when the search field becomes a multi-line one:
+Provide attribute filters for complex searches. Don't use filter attributes in the search query.
 
-![](multiline.png){width=300}
-
-Add a vertical separator when the scrollbar appears:
-
-![](multiline-scrollbar.png){width=300}
-
-The default shortcut for the New Line action:
-
-<table style="header-column">
-  <tr>
-    <td>macOS</td>
-    <td><shortcut>⇧⌘⏎</shortcut></td>
-  </tr>
-  <tr>
-     <td>Windows/Linux</td>
-     <td><shortcut>Ctrl + Shift + Enter</shortcut></td>
-  </tr>
+<table style="none" border="false">
+    <tr>
+        <td><format style="bold" color="Green">Correct</format><img src="search_field_attributes_correct.png" width="378"/></td>
+        <td><format style="bold" color="Red">Incorrect</format><img src="search_field_attributes_incorrect.png" width="378"/></td>
+    </tr>
 </table>
-
-### Completion
-
-Provide completion for complex searches with filtering by attributes:
-
-![](search_field_completion.png){width=354}
-
-Do **not** use filter attributes as separate controls on the toolbar.
-Not all of them are needed every time while they take a lot of space and overload the interface.
-Use completion instead:
-
-<format color="Red" style="bold">Incorrect</format>
-
-![](filters-incorrect.png){width=550}
-
-<format color="Green" style="bold">Correct</format>
-
-![](filters-correct.png){width=550}
-
-The following syntax is used for attributes:
-
-* Binary attributes are marked with a number sign (#), for example, _#by-jetbrains_ to show plugins which are developed by JetBrains.
-
-* Values for open attributes are provided after a colon, for example, _status: disabled_ to show all disabled plugins.
-
-Provide aliases to the main attributes where possible, this way it would be easier for users to find the required filter.
-For example, the User attribute in the VCS Log search field can have the Author alias.
-
-Show a popup with search attributes when the field gets focus, and after each space character except the space character following an attribute's name.
-This will make it clear that filtering by attributes is available.
-
-Filter out the completion suggestions as the user types:
-
-![](completion-filtered.png){width=354}
-
-Show a popup with values right after the user has entered an attribute.
-
-![](completion-variants.png){width=354}
 
 ### Search History
 
-Use the magnifying glass icon with an arrow when search history is available:
+Use the magnifying glass icon with an arrow when search history is available. Show search history in a popup when clicking on the magnifying glass icon.
 
-![](search-with-history.png){width=250}
-
-And without an arrow when it's not:
-
-![](search-no-history.png){width=250}
-
-Show search history in a popup when clicking on the magnifying glass icon:
-
-![](search-history-popup.png){width=256}
-
-Show context help in the history popup when it is empty:
-
-![](search-history-empty.png){width=256}
+![](search_field_history.png){width=706}
 
 The keyboard shortcut for the History action is <shortcut>Alt + Down</shortcut> on all systems.
 
@@ -199,97 +113,30 @@ Add a search string to history:
 ### Placement
 
 Put the search field on top of the on-screen content that is being searched, and align them vertically.
-For example, the search field in <control>Settings</control> dialog is aligned with the filtered settings tree:
+For example, the search field in <control>Settings</control> dialog is aligned with the filtered settings tree.
 
-<format color="Green" style="bold">Correct</format>
+![](search_field_placement.png){width=706}
 
-![](search_field_settings.png){width=256}
-
-The search field is not aligned with the content on the Keymap settings page, which makes it harder to relate the content and the search string:
-
-<format color="Red" style="bold">Incorrect</format>
-
-![](keymap-search-incorrect.png){width=491}
-
-<format color="Green" style="bold">Correct</format>
-
-![](keymap-search-correct.png){width=491}
+#### Inline search
 
 Fit the search field to the popup windows and to a toolbar if it has top borders. This way the overall form looks less complex.
 
-<format color="Red" style="bold">Incorrect</format>
+<table style="none" border="false">
+    <tr>
+        <td><format style="bold" color="Green">Correct</format><img src="search_field_placement_correct.png" width="378"/></td>
+        <td><format style="bold" color="Red">Incorrect</format><img src="search_field_placement_incorrect.png" width="378"/></td>
+    </tr>
+</table>
 
-![](log-incorrect.png){width=475}
-
-<format color="Green" style="bold">Correct</format>
-
-![](log-correct.png){width=475}
-
-| <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
-|-----------------------------------------------------|-----------------------------------------------------|
-| ![](popup-incorrect.png){width="235"}               | ![](popup-correct.png){width="235"}                 |
+#### Speed Search
 
 Show the search field on demand when search is supplementary to other functionality or if space is limited.
-For example, space in the Project view is limited and too loaded to always show the _Speed Search_ bar:
+For example, space in the Project view is limited and too loaded to always show the Search bar:
 
-![](ptree-correct.png){width=360}
-
-When searching through content that is not displayed on the screen, put the search field on top of the active frame as a popup.
-This makes it more prominent and gives space for search results.
-For example, Search Everywhere is shown on top of the main IDE frame:
-
-![](search-everywhere.png){width=686}
+![](search_field_project.png){width=706}
 
 ### Sizes
 
-For a search field shown without a toolbar (i.e. _Speed Search_ in trees), the search width could be adjusted on typing to accommodate input:
-
-![](search_field_width.png){width=160}
-
-For a search field that is not fitted to a toolbar, set the minimum width to 200:
-
-![](width-toolbar.png){width=425}
-
-For a search which is fitted to the toolbar, expand the field to the toolbar width.
-
-Center-align icons and the search string with the one-line search field vertically. Adjust the right and left paddings to the higher search fields:
-
-![](search-icon-position-small.png){width=297}
-
-![](search-icon-position-big.png){width=296}
-
-Save the position of the search and option icons when the search field becomes a multi-line one:
-
-![](multiline-mes.png){width=250}
-
-### Spaces
-
-Between the floating search field and on-screen content:
-
-![](ptree-sizes.png){width=265}
-
-Between history and the search field:
-
-![](search-history-popup-mes.png){width=269}
-
-Between search string and completion popup:
-
-![](completion-mes-2.png){width=266}
-
-Completion popup:
-
-![](completion-mes.png){width=95}
-
-## Style
-
-### Colors and Fonts
-
-For a general search field, use the same colors as for an input field.
-
-For a search field that is fitted to the toolbar, use a narrower focus border on macOS. The border width is 2px in that case:
-![](log-focused.png){width=475}
-
-Use the same font for the search string as used for showing the results.
-
-Use the Context help font color for the attributes' names as they are secondary to their values.
-
+* For a search field shown without a toolbar, for example, Search in trees, the search width could be adjusted on typing to accommodate input.
+* For a search field that is not fitted to a toolbar, set the minimum width to 200
+* For a search which is fitted to the toolbar, expand the field to the toolbar width.

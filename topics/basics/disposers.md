@@ -101,7 +101,7 @@ One of the parent `Disposables` provided by the IntelliJ Platform can be chosen,
 
 Use the following guidelines to choose the correct parent:
 
-* For resources required for a plugin's entire lifetime, use an application or project level [service](plugin_services.md). Example: [`PythonPluginDisposable`](%gh-ic%/python/openapi/src/com/jetbrains/python/PythonPluginDisposable.java).
+* For resources required for a plugin's entire lifetime, use an existing or a dedicated application or project-level [service](plugin_services.md). Example: [`PythonPluginDisposable`](%gh-ic%/python/openapi/src/com/jetbrains/python/PythonPluginDisposable.java).
 * For resources required while a [dialog](dialog_wrapper.md) is displayed, use `DialogWrapper.getDisposable()`.
 * For resources required while a [tool window](tool_windows.md) tab is displayed, pass your instance implementing `Disposable` to `Content.setDisposer()`.
 * For resources with a shorter lifetime, create a disposable using `Disposer.newDisposable()` and dispose it manually using `Disposable.dispose()`.

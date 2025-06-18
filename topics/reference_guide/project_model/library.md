@@ -140,14 +140,14 @@ An example of using these APIs can be found in the [project_model](%gh-sdk-sampl
 
 <procedure title="Library Creation Steps">
 
-* Get a [write action](threading_model.md#write-actions)
-* Get the library table add the library to. Use one of the following, depending on the library level:
+1. Get a [write action](threading_model.md#write-actions).
+2. Get the library table add the library to. Use one of the following, depending on the library level:
     * `LibraryTablesRegistrar.getInstance().getLibraryTable()`
     * `LibraryTablesRegistrar.getInstance().getLibraryTable(Project)`
     * `ModuleRootManager.getInstance(module).getModifiableModel().getModuleLibraryTable()`
-* Create the library by calling `LibraryTable.createLibrary()`
-* Add contents to the library (see below)
-* For a module-level library, commit the modifiable model returned by `ModuleRootManager.getInstance(module).getModifiableModel()`.
+3. Create the library by calling `LibraryTable.createLibrary()`.
+4. Add contents to the library (see below).
+5. For a module-level library, commit the modifiable model returned by `ModuleRootManager.getInstance(module).getModifiableModel()`.
 
 </procedure>
 
@@ -155,10 +155,10 @@ An example of using these APIs can be found in the [project_model](%gh-sdk-sampl
 
 <procedure title="Adding/Changing Library Roots">
 
-* Get a [write action](threading_model.md#write-actions)
-* Get a **modifiable model** for the library, using `Library.getModifiableModel()`
-* Use methods such as `Library.ModifiableModel.addRoot()` to perform the necessary changes
-* Commit the model using `Library.ModifiableModel.commit()`.
+1. Get a [write action](threading_model.md#write-actions).
+2. Get a **modifiable model** for the library, using `Library.getModifiableModel()`.
+3. Use methods such as `Library.ModifiableModel.addRoot()` to perform the necessary changes.
+4. Commit the model using `Library.ModifiableModel.commit()`.
 
 </procedure>
 

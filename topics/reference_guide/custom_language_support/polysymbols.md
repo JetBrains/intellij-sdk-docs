@@ -7,7 +7,7 @@
 Poly Symbols framework simplifies web technology development by utilizing Symbol API and supporting custom syntaxes.
 </link-summary>
 
-> This API is available starting from 2022.3.1 and is currently in development and thus in an experimental state.
+> This API is available starting from 2025.2 and is currently in development and thus in an experimental state.
 >
 {style="warning"}
 

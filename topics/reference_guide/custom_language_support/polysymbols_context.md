@@ -225,7 +225,7 @@ for the dependency and the `enableByDefault` attribute set to `true`.
 
 Context rules can also be provided dynamically through [`PolyContextRulesProvider`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/context/PolyContextRulesProvider.kt).
 
-To do that, register a [`PolySymbolQueryConfigurator`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)
+To do that, register a [`PolySymbolQueryConfigurator`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)
 through <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.polySymbols.queryConfigurator"/></include> and implement `getContextRulesProviders()`.
 It is important that the results are stable, because any unexpected change in the rules will cause
 rescanning of the project, dropping of all caches and restarting code analysis.

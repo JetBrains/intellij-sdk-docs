@@ -26,12 +26,12 @@
 
 ## When to use
 
-Follow the guidelines for [toolbar](toolbar.md#what-items-to-add-on-toolbar).
+Follow the guidelines for the [Toolbar](toolbar.md#what-items-to-add-on-toolbar).
 
 ## How to use
 
 ### Icon
-Use an [existing icon](https://intellij-icons.jetbrains.design) or create a new one using [icon guidelines](icons_style.md).
+Use an [existing icon](https://intellij-icons.jetbrains.design) or create a new one following the [icon guidelines](icons_style.md).
 
 ### Tooltip
 <table style="none" border="false" column-width="fixed">

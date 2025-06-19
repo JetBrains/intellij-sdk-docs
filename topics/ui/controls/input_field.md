@@ -16,8 +16,6 @@ An input field allows users to enter or edit a text line using the keyboard.
 
 ## When to use
 
-### Values can't be predefined
-
 Use an input field if it’s not possible to enumerate the most likely values. Otherwise, use a [combo box](combo_box.md) or a [drop-down list](drop_down.md).
 
 <table border="false" style="none">
@@ -31,7 +29,7 @@ Use an input field if it’s not possible to enumerate the most likely values. O
     </tr>
 </table>
 
-## Input field types
+## When not to use
 
 ### Previous input is saved
 
@@ -76,13 +74,13 @@ If input data is secured, replace it with dots via [`JBPasswordField`](%gh-ic%/p
 
 ### Setting a date
 
-Use calendar to set a date.
+Use a calendar to set a date.
 
 ![](input_date_picker.png){width="706"}
 
 ### Choosing a color
 
-Use color box to choose a color.
+Use a color box to choose a color.
 
 ![](input_colour_box.png){width="706"}
 
@@ -95,9 +93,9 @@ A label accompanies each input field and indicates the information type.
 #### General rules
 
 * Labels should be [short and descriptive](writing_short.md).
-* Write the label either as a noun and end it with a colon.
+* Write the label as a noun and end it with a colon.
 * Don't use labels to tell users what to do.
-* Use sentence-style capitalization.
+* Use [sentence-style capitalization](capitalization.md#sentence).
 
 <table style="none" border="false">
     <tr>
@@ -153,7 +151,7 @@ Place the label on the left or above the input field. For more details, see the 
 
 ### Placeholder
 
-Placeholder is grey text placed inside an input field. To show placeholder text, use `JBTextField.getEmptyText().setText(...)`.
+Placeholder is gray text placed inside an input field. To show placeholder text, use `JBTextField.getEmptyText().setText(...)`.
 
 #### General rules {id="placeholder-general-rules"}
 * Use sentence-style capitalization.
@@ -178,7 +176,7 @@ If the user overwrites the value, it can be restored by removing the new value f
 
 #### Showing examples
 
-Don't use the placeholder to show examples. The user can get the impression that the field is already filled. Provide examples or explanation under the input field (see [Context help](context_help.md)):
+Don't use the placeholder to show examples because the user can get the impression that the field is already filled. Provide examples or explanation under the input field (see [Context help](context_help.md)):
 
 <table style="none" border="false">
     <tr>

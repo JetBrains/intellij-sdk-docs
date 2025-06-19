@@ -20,7 +20,7 @@ Nodes of the PSI tree are represented by classes implementing the [`PsiElement`]
 The top-level node of the PSI tree for a file needs to implement the [`PsiFile`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiFile.java) interface and is created in the [`ParserDefinition.createFile()`](%gh-ic%/platform/core-api/src/com/intellij/lang/ParserDefinition.java) method.
 
 **Example:**
-[`ParserDefinition`](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertiesParserDefinition.java) for [Properties language plugin](%gh-ic%/plugins/properties)
+[`ParserDefinition`](%gh-ic%/plugins/properties/properties-common/src/com/intellij/lang/properties/parsing/PropertiesParserDefinition.java) for [Properties language plugin](%gh-ic%/plugins/properties)
 
 > To avoid unnecessary classloading when initializing the `ParserDefinition` extension point implementation, all `TokenSet` return values should use constants from a dedicated `$Language$TokenSets` class.
 >
@@ -62,7 +62,7 @@ When the parser reaches the '+' token following 'b', it can call `precede()` to 
 **Examples:**
 
 - [Custom Language Support Tutorial: Grammar and Parser](grammar_and_parser.md) (using Grammar-Kit)
-- Simple [`PropertiesParser`](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertiesParser.java) implementation for [Properties language plugin](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties).
+- Simple [`PropertiesParser`](%gh-ic%/plugins/properties/properties-common/src/com/intellij/lang/properties/parsing/PropertiesParserDefinition.java) implementation for [Properties language plugin](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties).
 - Complex [`RegExpParser`](%gh-ic%/RegExpSupport/src/org/intellij/lang/regexp/RegExpParser.java) for RegEx language
 
 #### Whitespace and Comments

@@ -294,7 +294,7 @@ row("Row:") {
 ### `Cell.align`
 {#cell-align}
 
-_2022.3_
+<primary-label ref="2022.3"/>
 
 Updates horizontal and/or vertical alignment of the component inside the cell.
 Default alignment is `AlignX.LEFT` and `AlignY.CENTER`.
@@ -415,14 +415,14 @@ It can be created by `Row.placeholder()` method and populated by content later v
 
 It is possible to bind component values to properties with the following methods.
 
-### `Cell.graphProperty`
-
-> Removed in 2023.3, use `validationRequestor(property::afterPropagation)` instead.
+### `Cell.validationRequestor`
 
 Binds `component` value changing to property.
 The property is updated when the value is changed and is not related to `DialogPanel.apply()`.
 The method is rarely used directly.
 There are many extensions for specific components described in [](#cellbind).
+
+> In versions before 2023.3, use `Cell.graphProperty`.
 
 ### `Cell.bind`
 

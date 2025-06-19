@@ -1,8 +1,8 @@
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
 # Virtual File System
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
-
-<link-summary>Virtual File System is an abstraction that allows to work with local or remote file storages and implement custom.</link-summary>
+<link-summary>Virtual File System is an abstraction that allows working with local, remote, or custom file storages.</link-summary>
 
 The Virtual File System (VFS) is a component of the IntelliJ Platform that encapsulates most of its activity for working with files represented as [Virtual File](virtual_file.md).
 
@@ -86,7 +86,7 @@ All changes happening in the virtual file system, either due to refresh operatio
 VFS events are always fired in the event dispatch thread and in a write action.
 
 The most efficient way to listen to VFS events is to implement [`BulkFileListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/newvfs/BulkFileListener.java) and to subscribe with it to the [`VirtualFileManager.VFS_CHANGES`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileManager.java) topic.
-A non-blocking variant [`AsyncFileListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/AsyncFileListener.java) is also available in 2019.2 or later.
+A non-blocking variant [`AsyncFileListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/AsyncFileListener.java) is also available.
 See [How do I get notified when VFS changes?](virtual_file.md#how-do-i-get-notified-when-vfs-changes) for implementation details.
 
 > VFS listeners are application level and will receive events for changes happening in *all* the projects opened by the user.

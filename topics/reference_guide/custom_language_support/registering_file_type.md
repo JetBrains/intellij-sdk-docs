@@ -17,9 +17,6 @@ The IDE typically determines the type of a file by looking at its filename or ex
 A custom language file type is a class derived from [`LanguageFileType`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java), which passes a [`Language`](%gh-ic%/platform/core-api/src/com/intellij/lang/Language.java) subclass to its base class constructor.
 
 ### Registration
-<tabs>
-
-<tab title="2019.2+">
 
 Use <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.fileType"/></include> to register `LanguageFileType` implementation and instance via `implementationClass` and `fieldName` attributes.
 Also, `name` and `language` must be declared matching `FileType.getName()` and ID of language returned from `LanguageFileType.getLanguage()`, respectively.
@@ -31,21 +28,7 @@ To associate the file type in the IDE, specify one or more associations listed i
 | Filename extension(s)   | `extensions`                                       | Semicolon-separated list of extensions, without `.` prefix      |
 | Hard coded file name(s) | <p>`fileNames`/<br/>`fileNamesCaseInsensitive`</p> | Semicolon-separated list of exact (case-insensitive) file names |
 | Filename pattern(s)     | `patterns`                                         | Semicolon-separated list of patterns (`*` and `?`)              |
-| Hashbang _(2020.2+)_    | `hashBangs`                                        | Semicolon-separated list of hash bang patterns                  |
-
-</tab>
-
-<tab title="Earlier versions">
-
-> The `FileTypeFactory` approach is deprecated. Use it only when the plugin supports platform versions older than 2019.2.
->
-{style="warning"}
-
-To register a file type, the plugin developer provides a subclass of [`FileTypeFactory`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/fileTypes/FileTypeFactory.java), which is registered via
-the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.fileTypeFactory"/></include>.
-
-</tab>
-</tabs>
+| Hashbang                | `hashBangs`                                        | Semicolon-separated list of hash bang patterns                  |
 
 **Examples**
 - [Custom Language Support Tutorial: Language and File Type](language_and_filetype.md)
@@ -57,4 +40,4 @@ To verify that the file type is registered correctly, you can implement the [`La
 
 If you want IDEs to show a hint prompting users that your plugin supports a specific file type, see [Plugin Recommendations](https://plugins.jetbrains.com/docs/marketplace/intellij-plugin-recommendations.html).
 
-To control file type association with the IDE in the operating system, implement [`OSFileIdeAssociation`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileTypes/OSFileIdeAssociation.java) (2020.3).
+To control file type association with the IDE in the operating system, implement [`OSFileIdeAssociation`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileTypes/OSFileIdeAssociation.java).

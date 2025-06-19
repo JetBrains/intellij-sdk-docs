@@ -10,13 +10,14 @@
 
 **UI Guidelines:** [Icons list](https://intellij-icons.jetbrains.design), [](icons_style.md)
 
+**See also**: [User Interface FAQ - Icons](ui_faq.md#icons)
+
 </tldr>
 
 Icons are used widely by IntelliJ Platform plugins.
 Plugins need icons mostly for [actions](action_system.md), custom component renderers, [](tool_windows.md), etc.
 
-> A plugin _logo_, which represents the plugin itself, has different requirements than icons used within plugins.
-> For more information, see the [](plugin_icon_file.md) section.
+> A [](plugin_icon_file.md), which represents the plugin itself, has different requirements than icons used within plugins.
 
 ## Platform vs. Custom Icons
 
@@ -24,7 +25,7 @@ Plugins should reuse existing platform icons whenever possible.
 
 Use the [Icons list](https://intellij-icons.jetbrains.design) to browse existing icons.
 Platform icons are located in [`AllIcons`](%gh-ic%/platform/util/ui/src/com/intellij/icons/AllIcons.java).
-Icons from plugins are located in the corresponding `<PLUGIN_NAME>Icons` class (e.g., [`GithubIcons`](%gh-ic%/plugins/github/gen/org/jetbrains/plugins/github/GithubIcons.java)).
+Icons from plugins are located in the corresponding `<PLUGIN_NAME>Icons` class (e.g., [`GithubIcons`](%gh-ic%/plugins/github/github-core/gen/org/jetbrains/plugins/github/GithubIcons.java)).
 
 If custom icons are required, refer to detailed [design guide](icons_style.md).
 
@@ -35,10 +36,16 @@ If custom icons are required, refer to detailed [design guide](icons_style.md).
 In the case of a Gradle-based project, icons should be placed in the <path>resources</path> directory.
 If the project is DevKit-based, the recommended approach is to put icons to a dedicated [source root](https://www.jetbrains.com/help/idea/content-roots.html) marked as <control>Resources Root</control>, e.g., <path>icons</path> or <path>resources</path>.
 
-If the icons are referenced only in <path>[plugin.xml](plugin_configuration_file.md)</path> attributes or elements, or in the [`@Presentation`](%gh-ic%/platform/analysis-api/src/com/intellij/ide/presentation/Presentation.java) `icon` attribute, then they can be [referenced](#using-icons) by paths.
+If the icons are referenced only in <path>[plugin.xml](plugin_configuration_file.md)</path> or via [`@Presentation`](%gh-ic%/platform/analysis-api/src/com/intellij/ide/presentation/Presentation.java) `icon` attribute, then they can be [referenced by paths](#by-path).
 In case the icons are referenced from the code and/or XML many times, it's convenient to organize them in an [icon holder class](#icons-class).
 
 ### Icons Class
+
+> Starting with 2021.2, the `*Icons` class is not required to be located in the `icons` package but can use the plugin's package:
+>
+> `icons.MyIcons` &rarr; `com.example.plugin.MyIcons`.
+>
+{style="note"}
 
 Define a class/interface in a top-level package called `icons` holding icon constants as static fields:
 
@@ -77,15 +84,12 @@ object MyIcons {
 The `getIcon()` method of [`IconLoader`](%gh-ic%/platform/util/ui/src/com/intellij/openapi/util/IconLoader.kt) can be used to access the icons.
 The path to the icon passed in as argument to `IconLoader.getIcon()` **must** start with leading `/`.
 
-> Starting with 2021.2, `*Icons` class is not required to be located in `icons` package but can use plugin's package: `icons.MyIcons` &rarr; `com.example.plugin.MyIcons`.
->
-{style="note"}
-
 ## Using Icons
 
-Icons defined inside <path>plugin.xml</path> with `icon` attribute for [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) or extension point, as well in `@Presentation`'s `icon` attribute, can be referenced in two ways:
-- by icon file path
-- by icon constant in the icon holder class
+Icons defined inside <path>plugin.xml</path> with `icon` attribute for [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) or [extension point](plugin_extension_points.md),
+as well as in [`@Presentation`](%gh-ic%/platform/analysis-api/src/com/intellij/ide/presentation/Presentation.java) `icon` attribute, can be referenced in two ways.
+
+### By Path
 
 To reference an icon by path, provide the path relative to the resources directory, e.g., for icons located in <path>my-plugin/src/main/resources/icons</path> directory:
 
@@ -99,121 +103,75 @@ To reference an icon by path, provide the path relative to the resources directo
 </extensions>
 ```
 
-In the case of icon holder class, reference the icon constants.
-Note that if the class is located in the top-level `icons` package, name `icons` will be automatically prefixed and must not be specified.
+### By Icons Class
+
+In the case of [icon holder class](#icons-class), reference the icon constants.
+Note that if the class is located in the top-level `icons` package, the `icons` package name will be automatically prefixed and must not be specified.
 In case of placing the class in a custom package, the full package name must be provided, e.g.:
 
 ```xml
 <actions>
-  <!-- referencing icons from class in top-level 'icons' package -->
+  <!-- referencing icons from 'MyIcons' class
+       in top-level 'icons' package -->
   <action icon="MyIcons.MyAction" ... />
 </actions>
 
 <extensions defaultExtensionNs="com.intellij">
-  <!-- referencing icons from custom package -->
+  <!-- referencing icons from 'MyIcons' in custom package -->
   <toolWindow icon="com.example.plugin.MyIcons.MyToolWindow" ... />
 </extensions>
 ```
 
-## Icon Formats
+## Icon Files
 
-IntelliJ Platform supports Retina displays and has a bundled dark theme called [Darcula](https://www.jetbrains.com/help/idea/user-interface-themes.html).
-Thus, every icon should have a dedicated variant for Retina devices and Darcula theme.
-In some cases, you can skip dark variants if the original icon looks good under Darcula.
+The IntelliJ Platform supports HiDPI displays and comes with a bundled [dark theme](https://www.jetbrains.com/help/idea/user-interface-themes.html).
+Thus, every icon should have a dedicated variant for dark theme and optionally for [HiDPI](#hidpi-version).
+If the original icon works well enough in dark theme, a dark variant is not required.
+
+The platform will load the best matching icon variant (if available) depending on the current environment.
+
+### Icon Sizes
 
 Required icon sizes depend on the usage as listed in the following table:
 
-| Usage                  | Icon Size (pixels) |
-|------------------------|--------------------|
-| Node, Action, Filetype | 16x16              |
-| Tool window            | 13x13              |
-| Editor gutter          | 12x12              |
-| Editor gutter (New UI) | 14x14              |
+| Usage                                                                       | Icon Size                                                       |
+|-----------------------------------------------------------------------------|-----------------------------------------------------------------|
+| Node, Action, Filetype                                                      | 16&times;16                                                     |
+| Tool window                                                                 | 13&times;13                                                     |
+| Tool window for [New UI](https://www.jetbrains.com/help/idea/new-ui.html)   | 20&times;20 and 16&times;16 (see [](#new-ui-tool-window-icons)) |
+| Editor gutter                                                               | 12&times;12                                                     |
+| Editor gutter for [New UI](https://www.jetbrains.com/help/idea/new-ui.html) | 14&times;14                                                     |
 
-### SVG Format
-
-> SVG ([Scalable Vector Graphics](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics)) icons are supported since 2018.2.
->
-{style="note"}
-
-As SVG icons can be scaled arbitrarily, they provide better results in HiDPI environments or when used in combination with bigger screen fonts (e.g., in presentation mode).
+As SVG icons can be scaled arbitrarily, they provide good results in HiDPI environments or when used in combination with
+bigger screen fonts (e.g., in [Presentation Mode](https://www.jetbrains.com/help/idea/ide-viewing-modes.html)).
 
 A base size denoting the size (in the user space) of the rendered image in 1x scale should be provided.
 The size is set via the `width` and `height` attributes omitting the size units.
-If unspecified, it defaults to 16x16 pixels.
+If unspecified, it defaults to 16&times;16 pixels.
 
 A minimal SVG icon file:
 
 ```xml
-
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
   <rect width="100%" height="100%" fill="green"/>
 </svg>
 ```
+#### HiDPI Version
 
-The naming notation used for PNG icons (see below) is still relevant.
-
-However, the `@2x` version of an SVG icon should still provide the same base size.
 The icon graphics of such an icon can be expressed in more details via double precision.
-If the icon graphics are simple enough so that it renders perfectly in every scale, then the `@2x` version can be omitted.
+If the icon graphics are simple enough so that it renders perfectly in every scale, then the HiDPI version can be omitted.
+The HiDPI version should still provide the same base size.
 
-### PNG Format (Deprecated)
+### Filenames
 
-> Use [SVG icons](#svg-format) for if your plugin targets 2018.2+.
->
-{style="warning"}
+All icon files must be placed in the same directory following this naming pattern:
 
-All icon files must be placed in the same directory following this naming pattern (replace <path>.png</path> with <path>.svg</path> for SVG icons):
-
-| Theme/Resolution | File name pattern                 | Size        |
-|------------------|-----------------------------------|-------------|
-| Default          | <path>iconName.png</path>         | W x H       |
-| Darcula          | <path>iconName_dark.png</path>    | W x H       |
-| Default + Retina | <path>iconName@2x.png</path>      | 2\*W x 2\*H |
-| Darcula + Retina | <path>iconName@2x_dark.png</path> | 2\*W x 2\*H |
-
-The `IconLoader` class will load the icon that matches the best depending on the current environment.
-
-Here are examples of <path>toolWindowStructure.png</path> icon representations:
-
-| Theme/Resolution | File name                                    | Icon                                                                    |
-|------------------|----------------------------------------------|-------------------------------------------------------------------------|
-| Default          | <path>toolWindowStructure.png</path>         | ![Tool Window Structure](toolWindowStructure.png)                       |
-| Darcula          | <path>toolWindowStructure_dark.png</path>    | ![Tool Window Structure, dark](toolWindowStructure_dark.png)            |
-| Default + Retina | <path>toolWindowStructure@2x.png</path>      | ![Tool Window Structure, retina](toolWindowStructure@2x.png)            |
-| Darcula + Retina | <path>toolWindowStructure@2x_dark.png</path> | ![Tool Window Structure, retina, dark](toolWindowStructure@2x_dark.png) |
-
-## Animated Icons
-
-Animated icons are a way to show that a plugin is now performing some long-time action, e.g., when the plugin is loading some data.
-
-Any animated icon is a set of frames that loop with a delay.
-
-To create a new animated icon, use the
-[`AnimatedIcon`](%gh-ic%/platform/ide-core/src/com/intellij/ui/AnimatedIcon.java).
-To create an icon where frames follow each other with the same delay, use a constructor that accepts a delay and icons:
-
-```java
-AnimatedIcon icon = new AnimatedIcon(
-    500,
-    AllIcons.Ide.Macro.Recording_1,
-    AllIcons.Ide.Macro.Recording_2);
-```
-
-To create an icon from frames with different delays, use `AnimatedIcon.Frame`.
-Each frame represents an icon, and a delay until the next frame.
-
-Use the predefined `AnimatedIcon.Default` loader icon to indicate a long process.
-This icon has a larger `AnimatedIcon.Big` version.
-
-> Add `true` [`AnimatedIcon.ANIMATION_IN_RENDERER_ALLOWED`](%gh-ic%/platform/ide-core/src/com/intellij/ui/AnimatedIcon.java) client property to list, table, and tree components to repaint animated icons automatically.
-> See `ANIMATION_IN_RENDERER_ALLOWED`'s Javadoc for details.
-
-## Icon Tooltips
-
-Register a resource bundle via <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.iconDescriptionBundle"/></include> to provide tooltips automatically for all [`SimpleColoredComponent`](%gh-ic%/platform/platform-api/src/com/intellij/ui/SimpleColoredComponent.java) renderers.
-
-Create `icon.<icon-path>.tooltip` key in a resource bundle, where `<icon-path>` is the icon path with leading slash and `.svg` removed and slashes replaced with dots (e.g., `/nodes/class.svg` &rarr; `icon.nodes.class.tooltip`).
+| Theme/Resolution                | Filename                          | Icon Size                   |
+|---------------------------------|-----------------------------------|-----------------------------|
+| Light                           | <path>iconName.svg</path>         | W&times;H                   |
+| Dark                            | <path>iconName_dark.svg</path>    | W&times;H                   |
+| Light + [HiDPI](#hidpi-version) | <path>iconName@2x.svg</path>      | 2&times;W &times; 2&times;H |
+| Dark + [HiDPI](#hidpi-version)  | <path>iconName@2x_dark.svg</path> | 2&times;W &times; 2&times;H |
 
 ## New UI Icons
 <primary-label ref="2022.3"/>
@@ -274,15 +232,16 @@ Example from [`PlatformIconMappings.json`](%gh-ic%/platform/icons/src/PlatformIc
 
 ### New UI Tool Window Icons
 
-The New UI uses _outlined_ icons for tool windows that have a size of 20x20 pixels and 16x16 pixels in
-[compact mode](https://www.jetbrains.com/help/idea/new-ui.html#compact-mode).
-Plugin developers who want to provide all necessary variants of their tool window icons
-use the following suffix scheme for their icon filename, here referred to as <path>iconToolWindow</path>:
+The New UI uses _outlined_ icons for tool windows that have a size of 20&times;20 pixels and 16&times;16 pixels in
+[Compact Mode](https://www.jetbrains.com/help/idea/new-ui.html#compact-mode).
+To provide all necessary variants of a tool window icon use the following filename scheme:
 
-- <path>iconToolWindow.svg</path>: a 16x16 pixels _compact mode_ variant of the icon for the light theme.
-- <path>iconToolWindow_dark.svg</path>: a 16x16 pixels _compact mode_ variant of the icon for the dark theme.
-- <path>iconToolWindow@20x20.svg</path>: a 20x20 pixels variant of the icon for the light theme.
-- <path>iconToolWindow@20x20_dark.svg</path>: a 20x20 pixels variant of the icon for the dark theme.
+| Theme/Mode           | Filename                                   | Icon Size   |
+|----------------------|--------------------------------------------|-------------|
+| Light                | <path>toolWindowIcon@20x20.svg</path>      | 20&times;20 |
+| Dark                 | <path>toolWindowIcon@20x20_dark.svg</path> | 20&times;20 |
+| Light + Compact Mode | <path>toolWindowIcon.svg</path>            | 16&times;16 |
+| Dark + Compact Mode  | <path>toolWindowIcon_dark.svg</path>       | 16&times;16 |
 
 ### New UI Icon Colors
 
@@ -304,3 +263,48 @@ prescribed colors within their icons:
 > will be updated soon and currently don't include information about the New UI.
 >
 {style="note"}
+
+## Animated Icons
+
+<tldr>
+
+**UI Guidelines:** [](loader.md)
+
+</tldr>
+
+Animated icons are a way to show that a plugin is now performing some long-time action, e.g., when the plugin is loading some data.
+
+Any animated icon is a set of frames that loop with a delay.
+
+To create a new animated icon, use the
+[`AnimatedIcon`](%gh-ic%/platform/ide-core/src/com/intellij/ui/AnimatedIcon.java).
+To create an icon where frames follow each other with the same delay, use a constructor that accepts a delay and icons:
+
+```java
+AnimatedIcon icon = new AnimatedIcon(
+    500,
+    AllIcons.Ide.Macro.Recording_1,
+    AllIcons.Ide.Macro.Recording_2);
+```
+
+To create an icon from frames with different delays, use `AnimatedIcon.Frame`.
+Each frame represents an icon, and a delay until the next frame.
+
+> Set [`AnimatedIcon.ANIMATION_IN_RENDERER_ALLOWED`](%gh-ic%/platform/ide-core/src/com/intellij/ui/AnimatedIcon.java) client property to `true` for list, table,
+> and tree components to repaint animated icons automatically.
+> See its Javadoc for details.
+
+#### Progress Icon
+
+Use the predefined `AnimatedIcon.Default` loader icon to indicate a long process.
+This icon has a larger `AnimatedIcon.Big` version.
+
+Alternatively, use [`AsyncProcessIcon`](%gh-ic%/platform/platform-api/src/com/intellij/util/ui/AsyncProcessIcon.java).
+
+## Icon Tooltips
+
+Register a resource bundle via <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.iconDescriptionBundle"/></include> to provide tooltips automatically for all [`SimpleColoredComponent`](%gh-ic%/platform/platform-api/src/com/intellij/ui/SimpleColoredComponent.java) renderers.
+
+Create `icon.<icon-path>.tooltip` key in the resource bundle, where `<icon-path>` is the icon path with leading slash and `.svg` removed and slashes replaced with dots:
+
+<path>/nodes/class.svg</path> &rarr; `icon.nodes.class.tooltip`

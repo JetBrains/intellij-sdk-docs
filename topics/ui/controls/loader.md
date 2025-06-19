@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Loader
 
@@ -7,6 +7,8 @@
 <tldr>
 
 **Implementation:** [`AnimatedIcon.Default`](%gh-ic%/platform/ide-core/src/com/intellij/ui/AnimatedIcon.java)
+
+**Related:** [](icons.md#animated-icons)
 
 </tldr>
 
@@ -20,7 +22,7 @@ Follow the rules for [progress indicators](progress_indicators.md).
 
 ## How to use
 
-The loader form and sizes are the same in all themes. Use the default 16x16 loader in all cases.
+The loader form and sizes are the same in all themes. Use the default 16&times;16 loader in all cases.
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
 

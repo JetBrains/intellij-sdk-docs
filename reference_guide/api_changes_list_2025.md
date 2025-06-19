@@ -73,6 +73,67 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ### IntelliJ Platform 2025.2
 
+`icons.JavaUltimateIcons` class moved to package `com.intellij.java.ultimate.icons`
+: Update code usages and make sure your plugin [depends](plugin_dependencies.md) on the Java plugin.
+
+`com.intellij.psi.xml.HtmlFileElementType.getHtmlStubVersion()` method removed
+: Use `com.intellij.xml.HtmlLanguageStubVersionUtil.getHtmlStubVersion()` instead.
+
+### Package Checker 2025.2
+
+`com.intellij.packageChecker.api.PackageDeclaration(Package)` method parameter type changed from `org.jetbrains.security.package.Package` to `com.intellij.packageChecker.model.Package`
+: Use `com.intellij.packageChecker.model.Package` as a parameter.
+
+`com.intellij.packageChecker.api.PackageDeclaration(Package, PsiElement, TextRange)` method parameter type changed from `org.jetbrains.security.package.Package` to `com.intellij.packageChecker.model.Package`
+: Use `com.intellij.packageChecker.model.Package` as a parameter.
+
+`com.intellij.packageChecker.api.PackageDeclaration.getPkg()` method return type changed from `org.jetbrains.security.package.Package` to `com.intellij.packageChecker.model.Package`
+: Update code usages.
+
+`com.intellij.packageChecker.PackagesInterner.intern(Package)` method parameter type changed from `org.jetbrains.security.package.Package` to `com.intellij.packageChecker.model.Package`
+: Use `com.intellij.packageChecker.model.Package` as a parameter.
+
+`com.intellij.packageChecker.PackagesInterner.intern(Package)` method return type changed from `org.jetbrains.security.package.Package` to `com.intellij.packageChecker.model.Package`
+: Update code usages.
+
+### JavaScript and TypeScript Plugin 2025.2
+
+`com.intellij.lang.javascript.JSStubElementTypes.DEFINITION_EXPRESSION` field type changed from `com.intellij.lang.javascript.psi.JSStubElementType` to `com.intellij.lang.javascript.psi.JSElementType`
+: Recompile code usages.
+
+`com.intellij.lang.javascript.JSStubElementTypes.XML_ATTRIBUTE` field type changed from `com.intellij.psi.stubs.IStubElementType` to `com.intellij.psi.tree.IElementType`
+: Recompile code usages.
+
+`com.intellij.lang.javascript.JSStubElementTypes.XML_JS_SCRIPT` field type changed from `com.intellij.psi.tree.IElementType` to `com.intellij.lang.javascript.psi.JSElementType`
+: Recompile code usages.
+
+`com.intellij.lang.javascript.JSStubElementTypes.ES6_EMBEDDED_CONTENT` field type changed from `com.intellij.psi.tree.IElementType` to `com.intellij.lang.javascript.psi.JSElementType`
+: Recompile code usages.
+
+`com.intellij.lang.javascript.JSStubElementTypes.VARIABLE` field type changed from `com.intellij.lang.javascript.psi.JSStubElementType` to `com.intellij.lang.javascript.psi.JSElementType`
+: Recompile code usages.
+
+`com.intellij.lang.javascript.JSStubElementTypes.LITERAL_EXPRESSION` field type changed from `com.intellij.lang.javascript.psi.JSStubElementType` to `com.intellij.lang.javascript.psi.JSElementType`
+: Recompile code usages.
+
+`com.intellij.lang.javascript.JSStubElementTypes.EMBEDDED_EXPRESSION` field type changed from `com.intellij.psi.tree.IElementType` to `com.intellij.lang.javascript.psi.JSElementType`
+: Recompile code usages.
+
+`com.intellij.lang.typescript.TypeScriptStubElementTypes.TYPESCRIPT_VARIABLE` field type changed from `com.intellij.lang.javascript.psi.JSStubElementType` to `com.intellij.lang.javascript.psi.JSElementType`
+: Recompile code usages.
+
+`com.intellij.lang.javascript.JSStubElementTypes.ARRAY_LITERAL_EXPRESSION` field type changed from `com.intellij.lang.javascript.psi.JSStubElementType` to `com.intellij.lang.javascript.psi.JSElementType`
+: Recompile code usages.
+
+`com.intellij.lang.javascript.JSStubElementTypes.CALL_EXPRESSION` field type changed from `com.intellij.lang.javascript.psi.JSStubElementType` to `com.intellij.lang.javascript.psi.JSElementType`
+: Recompile code usages.
+
+`com.intellij.lang.ecmascript6.ES6StubElementTypes.FIELD_STATEMENT` field type changed from `com.intellij.lang.javascript.psi.JSStubElementType` to `com.intellij.lang.javascript.psi.JSElementType`
+: Recompile code usages.
+
+`com.intellij.lang.javascript.JSStubElementTypes.EMBEDDED_CONTENT` field type changed from `com.intellij.psi.tree.IElementType` to `com.intellij.lang.javascript.psi.JSElementType`
+: Recompile code usages.
+
 ## 2025.1
 
 ### IntelliJ Platform 2025.1
@@ -103,18 +164,6 @@ Class `com.intellij.psi.xml.XmlElementType` no longer extends `com.intellij.psi.
 `xml.parsing.unescaped.ampersand.or.nonterminated.character.entity.reference` property removed from resource bundle `messages.XmlPsiBundle`
 : Use property from resource bundle `messages.XmlParserBundle`
 
-`com.jediterm.terminal.model.TextBufferChangesListener.historyCleared()` abstract method added
-: Must be implemented.
-
-`com.intellij.terminal.ui.TerminalWidget.connectToSession(TerminalSession session)` abstract method added
-: Must be implemented.
-
-`com.intellij.terminal.ui.TerminalWidget.getSession()` abstract method added
-: Must be implemented.
-
-`com.intellij.terminal.ui.TerminalWidget.getTerminalSizeInitializedFuture()` abstract method added
-: Must be implemented.
-
 ### Database Plugin 2025.1
 
 `com.intellij.database.view.models` package removed
@@ -140,6 +189,26 @@ Class `com.intellij.psi.xml.XmlElementType` no longer extends `com.intellij.psi.
 `com.intellij.openapi.externalSystem.service.internal.ExternalSystemProcessingManager` class now interface
 : Recompile code usages.
 
+### JavaScript and TypeScript Plugin 2025.1
+
+`com.intellij.lang.javascript.service.JSAsyncLanguageServiceBase.JSLanguageServiceInfoReporter` class moved to package `com.intellij.lang.javascript.service`
+: Update all usages
+
+`com.intellij.lang.javascript.JSElementTypes.toModuleContentType(IElementType type)` method removed
+: Use `com.intellij.lang.javascript.JSModuleContentType.toModuleContentType(IElementType type)` method instead
+
+`com.intellij.lang.javascript.BaseJSTokenTypes` class removed
+: Use `com.intellij.lang.javascript.JSTokenTypes` class instead
+
+`com.intellij.lang.javascript.highlighting.TypeScriptHighlighter(DialectOptionHolder dialectOptionsHolder, boolean skipKeywordHighlights)` constructor removed
+: Use constructor without `skipKeywordHighlights` parameter
+
+`com.intellij.lang.javascript.dialects.ECMA6SyntaxHighlighterFactory.ECMA6SyntaxHighlighter(DialectOptionHolder dialectOptionsHolder, boolean skipKeywordHighlights)` constructor removed
+: Use constructor without `skipKeywordHighlights` parameter
+
+`com.intellij.lang.javascript.highlighting.JSHighlighter(DialectOptionHolder dialectOptionsHolder, boolean skipKeywordHighlights)` constructor removed
+: Use constructor without `skipKeywordHighlights` parameter
+
 ### Kotlin Plugin 2025.1
 
 `org.jetbrains.kotlin.KtFakeSourceElement` class renamed to `org.jetbrains.kotlin.KtFakePsiSourceElement`
@@ -162,22 +231,16 @@ Class `com.intellij.psi.xml.XmlElementType` no longer extends `com.intellij.psi.
 `com.jetbrains.rd.ide.model.ActionConstraintModel` class removed
 : Remove all usages.
 
-### JavaScript and TypeScript Plugin 2025.1
+### Terminal Plugin 2025.1
 
-`com.intellij.lang.javascript.service.JSAsyncLanguageServiceBase.JSLanguageServiceInfoReporter` class moved to package `com.intellij.lang.javascript.service`
-: Update all usages
+`com.jediterm.terminal.model.TextBufferChangesListener.historyCleared()` abstract method added
+: Must be implemented.
 
-`com.intellij.lang.javascript.JSElementTypes.toModuleContentType(IElementType type)` method removed
-: Use `com.intellij.lang.javascript.JSModuleContentType.toModuleContentType(IElementType type)` method instead
+`com.intellij.terminal.ui.TerminalWidget.connectToSession(TerminalSession session)` abstract method added
+: Must be implemented.
 
-`com.intellij.lang.javascript.BaseJSTokenTypes` class removed
-: Use `com.intellij.lang.javascript.JSTokenTypes` class instead
+`com.intellij.terminal.ui.TerminalWidget.getSession()` abstract method added
+: Must be implemented.
 
-`com.intellij.lang.javascript.highlighting.TypeScriptHighlighter(DialectOptionHolder dialectOptionsHolder, boolean skipKeywordHighlights)` constructor removed
-: Use constructor without `skipKeywordHighlights` parameter
-
-`com.intellij.lang.javascript.dialects.ECMA6SyntaxHighlighterFactory.ECMA6SyntaxHighlighter(DialectOptionHolder dialectOptionsHolder, boolean skipKeywordHighlights)` constructor removed
-: Use constructor without `skipKeywordHighlights` parameter
-
-`com.intellij.lang.javascript.highlighting.JSHighlighter(DialectOptionHolder dialectOptionsHolder, boolean skipKeywordHighlights)` constructor removed
-: Use constructor without `skipKeywordHighlights` parameter
+`com.intellij.terminal.ui.TerminalWidget.getTerminalSizeInitializedFuture()` abstract method added
+: Must be implemented.

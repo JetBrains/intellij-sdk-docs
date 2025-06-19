@@ -12,6 +12,19 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2025
 
+### May
+{#may-25}
+
+New Project Wizard
+: Add a new section about implementing project wizards: [](new_project_wizard.md).
+
+Minor Changes and Additions
+:
+- Add [](editors.md#editors-faq) section.
+- Extension Points and Listeners are now grouped per plugin, for example, [](intellij_community_plugins_extension_point_list.md#java-plugin).
+- Revise and expand [](code_completion.md), [](icons.md), [UI FAQ: Icons](ui_faq.md#icons) sections.
+- Add [](explore_api.md#debugger-entry-points) allowing identifying code responsible for invoked actions.
+
 ### March
 {march-25}
 
@@ -324,9 +337,7 @@ Minor Changes and Additions
   [](additional_minor_features.md#plain-text-completion),
   [](additional_minor_features.md#splitting-and-joining-list-constructs),
   [](additional_minor_features.md#suggesting-rename-and-change-signature-refactorings),
-  [](additional_minor_features.md#reader-mode),
-  [](additional_minor_features.md#background-colors-for-editors-and-project-view),
-  [](additional_minor_features.md#custom-names-and-tooltips-for-editor-tabs).
+  [](additional_minor_features.md#reader-mode).
 - Add small section to [](project_view.md#decorating-project-view-nodes) describing how to modify the representation of nodes in the project view.
 - Add [](rename_refactoring.md) paragraphs mentioning `RenameInputValidator(Ex)`.
 
@@ -447,7 +458,7 @@ Extension Point List
 {#august-20}
 
 README added to Code Samples
-: All code samples used in this guide now come with <path>README</path>, making it easier to browse them. They can be conveniently accessed via a [separate GitHub repository](https://github.com/JetBrains/intellij-sdk-code-samples).
+: All code samples used in this guide now come with <path>README</path>, making it easier to browse them. They can be conveniently accessed via a [separate GitHub repository](%gh-sdk-samples-master%/).
 
 ### June
 {#june-20}

@@ -1,11 +1,11 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Disposer and Disposable
 
 <link-summary>Cleaning up resources on plugin components' lifetime expiration.</link-summary>
 
 The IntelliJ Platform's [`Disposer`](%gh-ic%/platform/util/src/com/intellij/openapi/util/Disposer.java) facilitates resource cleanup.
-If a subsystem keeps a set of resources alive coincident with a parent object's lifetime, the subsystem's resources should be registered with the `Disposer` to be released before or at the same time as the parent object.
+If a subsystem keeps a set of resources alive coincidently with a parent object's lifetime, the subsystem's resources should be registered with the `Disposer` to be released before or at the same time as the parent object.
 
 The most common resource type managed by `Disposer` is listeners, but there are other possible types:
 * File handles, and database connections,
@@ -20,7 +20,7 @@ The `Disposer` supports chaining `Disposable` objects in parent-child relationsh
 
 Many objects are disposed automatically by the platform if they implement the `Disposable` interface.
 The most important type of such objects is [services](plugin_services.md).
-Application-level services are automatically disposed by the platform when the IDE is closed or the plugin providing the service is unloaded.
+The platform automatically disposes application-level services when the IDE is closed or the plugin providing the service is unloaded.
 Project-level services are disposed on project close or plugin unload events.
 
 Note that extensions registered in <path>[plugin.xml](plugin_configuration_file.md)</path> are *not* automatically disposed.
@@ -101,7 +101,7 @@ One of the parent `Disposables` provided by the IntelliJ Platform can be chosen,
 
 Use the following guidelines to choose the correct parent:
 
-* For resources required for a plugin's entire lifetime, use an application or project level [service](plugin_services.md). Example: [`PythonPluginDisposable`](%gh-ic%/python/openapi/src/com/jetbrains/python/PythonPluginDisposable.java).
+* For resources required for a plugin's entire lifetime, use an existing or a dedicated application or project-level [service](plugin_services.md). Example: [`PythonPluginDisposable`](%gh-ic%/python/openapi/src/com/jetbrains/python/PythonPluginDisposable.java).
 * For resources required while a [dialog](dialog_wrapper.md) is displayed, use `DialogWrapper.getDisposable()`.
 * For resources required while a [tool window](tool_windows.md) tab is displayed, pass your instance implementing `Disposable` to `Content.setDisposer()`.
 * For resources with a shorter lifetime, create a disposable using `Disposer.newDisposable()` and dispose it manually using `Disposable.dispose()`.
@@ -232,7 +232,7 @@ When the application exits, it performs a final sanity check to verify everythin
 If something was registered with the `Disposer` but remains undisposed, the IntelliJ Platform reports it before shutting down.
 
 In test, [internal](enabling_internal.md), and debug mode (add `idea.disposer.debug=on` in <ui-path>Help | Edit Custom Properties...</ui-path>), registering a `Disposable` with the `Disposer` also registers a stack trace for the object's allocation path.
-The `Disposer` accomplishes this by creating a `Throwable` at the time of registration.
+The `Disposer` does this by creating a `Throwable` at the time of registration.
 
 The following snippet represents the sort of "memory leak detected" error encountered in practice:
 

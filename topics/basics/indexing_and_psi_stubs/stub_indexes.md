@@ -33,13 +33,13 @@ Usually there is no need to have stubs for things like statements or local varia
 The following steps need to be performed only once for each language that supports stubs:
 
 1. Change the file element type for the language (the element type returned from `ParserDefinition.getFileNodeType()`) to a class that extends [`IStubFileElementType`](%gh-ic%/platform/core-impl/src/com/intellij/psi/tree/IStubFileElementType.java) and override its `getExternalId()` method (see also following item).
-2. In the <path>[plugin.xml](plugin_configuration_file.md)</path>, define the `com.intellij.stubElementTypeHolder` extension and specify the interface which contains the `IElementType` constants used by the language's parser.
+2. In the <path>[plugin.xml](plugin_configuration_file.md)</path>, define the <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.stubElementTypeHolder"/></include> extension and specify the interface which contains the `IElementType` constants used by the language's parser.
 
    Define the common `externalIdPrefix` to be used for all stub element types (see [](#adding-stub-elements)).
    See [`StubElementTypeHolderEP`](%gh-ic%/platform/core-api/src/com/intellij/psi/stubs/StubElementTypeHolderEP.java) docs for important requirements.
 
 **Examples:**
-- [`JavaStubElementTypes`](%gh-ic%/java/java-psi-impl/src/com/intellij/psi/impl/java/stubs/JavaStubElementTypes.java) registered in [`JavaPsiPlugin.xml`](%gh-ic%/java/java-psi-impl/src/META-INF/JavaPsiPlugin.xml)
+- [`JavaStubElementTypes`](%gh-ic%/java/java-psi-impl/src/com/intellij/psi/impl/java/stubs/JavaStubElementTypes.java) registered in [`JavaPsiPlugin.xml`](%gh-ic%/java/java-psi-impl/resources/META-INF/JavaPsiPlugin.xml)
 - see [`Angular2MetadataElementTypes`](%gh-ij-plugins%/Angular/src/org/angular2/entities/metadata/Angular2MetadataElementTypes.kt) for Kotlin sample
 
 </procedure>

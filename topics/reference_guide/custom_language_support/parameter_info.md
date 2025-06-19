@@ -2,7 +2,7 @@
 
 # Parameter Info
 
-<link-summary>Implementing parameter info handler allowing to display method/function parameter names and types before providing actual values.</link-summary>
+<link-summary>Implementing parameter info handler allows displaying method/function parameter names and types before providing actual values.</link-summary>
 
 <tldr>
 
@@ -43,11 +43,11 @@ and they all derive from
 
 ### Initial Phase
 
-The initial phase describes what happens when no parameter info is currently displayed and it is invoked either automatically or by the user.
+The initial phase describes what happens when no parameter info is currently displayed, and it is invoked either automatically or by the user.
 
 1. The `findElementForParameterInfo()` method is called.
    When overriding this method, language authors use the provided `CreateParameterInfoContext` to access, e.g., the file and offset of the current editor.
-   The goal is to identify the `ParameterOwner` i.e. a function call at the current offset if it exists.
+   The goal is to identify the `ParameterOwner` i.e., a function call at the current offset if it exists.
    It is advised to extract the actual search for the function call into a separate method since it can be re-used later.
    The `findElementForParameterInfo()` implementation should find all matching function definitions and store them using `setItemsToShow()` of the context parameter.
 2. If the returned function call element is valid, the `showParameterInfo()` method is invoked.
@@ -65,13 +65,13 @@ This allows for, e.g., highlighting a function usage with different arguments or
 Therefore, when the user moves the caret or types something, the following happens:
 
 1. The `syncUpdateOnCaretMove()` method is called.
-2. The `findElementForUpdatingParameterInfo()` method is called and it should find the correct function call (`ParameterOwner`) for the changed caret position.
+2. The `findElementForUpdatingParameterInfo()` method is called, and it should find the correct function call (`ParameterOwner`) for the changed caret position.
    Implementations return `null` if an appropriate element could not be found or if it is different from `getParameterOwner()` of the provided `UpdateParameterInfoContext`.
    If `null` is returned, the `dispose()` method is called.
 3. The `processFoundElementForUpdatingParameterInfo()` method is called which allows for additional adjustments of the `UpdateParameterInfoContext`.
    By default, this method does nothing and it's usually not necessary to implement it.
 4. The `updateParameterInfo()` is called. Many implementations only invoke `setParameterOwner()` of the `UpdateParameterInfoContext` here.
-5. The `updateUI()` method is called for each item in the `getItemsToShow()` array of the context which were collected in the initial phase.
+5. The `updateUI()` method is called for each item in the `getItemsToShow()` array of the context which was collected in the initial phase.
 
 ## Further Tips
 
@@ -91,7 +91,7 @@ Only `isWhitespaceSensitive()` which is used in the `getCurrentOffset()` method 
 [`ParameterInfoControllerBase`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/hint/ParameterInfoControllerBase.java)
 should be implemented when whitespace matters in a language.
 
-Note that parameter info works during indexing (using incomplete data) when the implementations is marked [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI).
+Note that parameter info works during indexing (using incomplete data) when the implementation is marked as [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI).
 It is recommended to adapt tests for [dumb mode](indexing_and_psi_stubs.md#dumb-mode) since the results might be surprising,
 and more changes to the handler might be required for better results.
 
@@ -107,5 +107,5 @@ Existing, moderately complex, implementations of `ParameterInfoHandler` in the I
 * [`XPathParameterInfoHandler`](%gh-ic%/plugins/xpath/xpath-lang/src/org/intellij/lang/xpath/XPathParameterInfoHandler.java)
 * [`XmlParameterInfoHandler`](%gh-ic%/xml/impl/src/com/intellij/codeInsight/hint/api/impls/XmlParameterInfoHandler.java)
 
-Implementations of third party plugins can be discovered using the
-[IntelliJ Platform Explorer](https://plugins.jetbrains.com/intellij-platform-explorer?extensions=com.intellij.codeInsight.parameterInfo).
+Implementations of third-party plugins can be discovered using the
+[IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.codeInsight.parameterInfo).

@@ -49,7 +49,7 @@ After that, the IDE generates the lexer under the <path>gen</path> directory, fo
 ## Define a Lexer Adapter
 
 The JFlex lexer needs to be adapted to the IntelliJ Platform Lexer API.
-Implement [`SimpleLexerAdapter`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLexerAdapter.java) by subclassing [`FlexAdapter`](%gh-ic%/platform/core-api/src/com/intellij/lexer/FlexAdapter.java).
+Implement [`SimpleLexerAdapter`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLexerAdapter.java) by subclassing [`FlexAdapter`](%gh-ic%/platform/core-impl/src/com/intellij/lexer/FlexAdapter.java).
 
 ```java
 ```

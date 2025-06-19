@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Platform Theme Colors
 
@@ -28,7 +28,7 @@ Each key has two default color values: one for IntelliJ Light and another for Da
 
 Keys allow creating [custom color themes](themes_getting_started.md). A custom theme is one of the default themes plus a set of color keys with new values in a JSON file. Example: the High contrast theme is a custom theme based on Darcula. New color values are stored in the [`HighContrast.theme.json`](%gh-ic%/platform/platform-resources/src/themes/HighContrast.theme.json) JSON file.
 
-See custom themes in the <a href="https://plugins.jetbrains.com/search?tags=Theme">plugins repository</a>.
+See custom themes in the [JetBrains Marketplace](https://plugins.jetbrains.com/search?tags=Theme) repository.
 
 See the meanings of the parts in a color key in the [key naming scheme](themes_metadata.md#key-naming-scheme).
 
@@ -47,7 +47,7 @@ See the color values for the currently selected theme in the <control>LaF Defaul
 ![](03_LaF_Defaults.png){width=641}
 
 > For IntelliJ designers:
-> * Provide color keys in design specifications to be sure that correct keys are used.
+> * Provide color keys in design specifications to be sure that the correct keys are used.
 > * When a new key is implemented, check that [`IntelliJPlatform.themeMetadata.json`](%gh-ic%/platform/platform-resources/src/themes/metadata/IntelliJPlatform.themeMetadata.json) has the new key with the `since` parameter and description, and the old keys are deprecated.
 >
 {style="note"}
@@ -66,7 +66,7 @@ If a color is needed:
 
 **Example**
 
-<format color="Red" style="bold">Incorrect:</format> A new component with a light-blue background reuses Focus.borderColor which has a light-blue color in the default themes. A theme author decides they need a bright focus border and changes the color value for Focus.borderColor. As a result, the new component has a bright background with the text unreadable over it.
+<format color="Red" style="bold">Incorrect:</format> A new component with a light-blue background reuses `Focus.borderColor`, which has a light-blue color in the default themes. A theme author decides they need a bright focus border and changes the color value for `Focus.borderColor`. As a result, the new component has a bright background with the text unreadable over it.
 
 <format color="Green" style="bold">Correct:</format> A new component with a light-blue background has its own color key <code>ComponentName.background</code>.
 

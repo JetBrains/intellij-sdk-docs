@@ -1,8 +1,8 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # IDE Development Instance
 
-<link-summary>Overview of IDE instance used for running and debugging a plugin during development.</link-summary>
+<link-summary>Overview of the IDE instance used for running and debugging a plugin during development.</link-summary>
 
 A plugin project can be run or debugged from within the development instance of IntelliJ IDEA.
 Selecting the `runIde` task for a Gradle-based project (or [Run](running_and_debugging_a_theme.md) menu for a _Plugin DevKit_-based project)
@@ -34,7 +34,7 @@ To produce accurate results while running or debugging a plugin project in a Dev
 <tab title="Gradle IntelliJ Plugin (1.x)" group-key="gradle">
 
 By default, the Gradle plugin will fetch and use the version of the JetBrains Runtime for the Development Instance corresponding to the version of the IntelliJ Platform used for building the plugin project.
-If required, an alternative version can be specified using [`runIde.jbrVersion`](tools_gradle_intellij_plugin.md#tasks-runide-jbrversion) task property.
+If required, an alternative version can be specified using the [`runIde.jbrVersion`](tools_gradle_intellij_plugin.md#tasks-runide-jbrversion) task property.
 
 </tab>
 
@@ -89,7 +89,7 @@ Available JBR variants are:
 
 <primary-label ref="2020.1"/>
 
-Starting in 2020.1, this is available for compatible [dynamic plugins](dynamic_plugins.md).
+Auto-Reload is available for compatible [dynamic plugins](dynamic_plugins.md).
 This allows a much faster development cycle by avoiding a full restart of the development instance after detecting code changes (when JARs are modified).
 
 Please note that any unloading problems in a production environment will ask the user to restart the IDE.
@@ -122,9 +122,9 @@ in the plugin project and switch back focus to the sandbox instance to trigger r
 
 <include from="tools_gradle_intellij_plugin.md" element-id="gradlePluginObsolete"/>
 
-Auto-Reload is enabled by default for target platform 2020.2 or later.
+Auto-Reload is enabled by default when targeting 2020.2 or later.
 
-Set property [`runIde.autoReloadPlugins`](tools_gradle_intellij_plugin.md#tasks-runide-autoreloadplugins) to `true` for enabling it in earlier platform versions or `false` to disable it explicitly,
+Set the property [`runIde.autoReloadPlugins`](tools_gradle_intellij_plugin.md#tasks-runide-autoreloadplugins) to `true` for enabling it in earlier platform versions or `false` to disable it explicitly,
 see [](tools_gradle_intellij_plugin_faq.md#how-to-disable-automatic-reload-of-dynamic-plugins)
 
 After starting the sandbox IDE instance, run the [`buildPlugin`](tools_gradle_intellij_plugin.md#tasks-buildplugin) task after modifications in the plugin project
@@ -142,7 +142,7 @@ and switch focus back to the sandbox instance to trigger reload.
 
 Add system property `idea.auto.reload.plugins` in the _Plugin DevKit_ [run configuration](running_and_debugging_a_theme.md).
 
-To disable auto-reload, set `idea.auto.reload.plugins` to `false` explicitly (2020.1.2+).
+To disable auto-reload, set `idea.auto.reload.plugins` to `false` explicitly.
 
 ## The Development Instance Sandbox Directory
 

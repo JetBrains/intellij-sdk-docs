@@ -151,7 +151,7 @@ project.getMessageBus().connect().subscribe(
     });
 ```
 
-If targeting 2019.3 or later, [declarative registration](plugin_listeners.md) is available as well.
+[Declarative registration](plugin_listeners.md) is available as well.
 
 The event only notifies that something has changed; if more details are needed about what changes have occurred, keep a copy of the state of the project structure model which is relevant, and to compare it with the state after the change.
 

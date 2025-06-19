@@ -10,7 +10,7 @@
 
 The IntelliJ Platform is a highly concurrent environment.
 Code is executed in many threads simultaneously.
-In general, as in a regular [Swing](https://docs.oracle.com/javase%2Ftutorial%2Fuiswing%2F%2F/index.html) application, threads can be categorized into two main groups:
+In general, as in a regular [Swing](https://docs.oracle.com/javase/tutorial/uiswing/) application, threads can be categorized into two main groups:
 - [Event Dispatch Thread](https://docs.oracle.com/javase/tutorial/uiswing/concurrency/dispatch.html) (EDT) – also known as the UI thread.
   Its main purpose is handling UI events (such as reacting to clicking a button or updating the UI), but the platform uses it also for writing data.
   EDT executes events taken from the Event Queue.
@@ -21,6 +21,9 @@ There is only one EDT and multiple BGT in the running application:
 
 ```mermaid
 ---
+config:
+  gantt:
+    numberSectionStyles: 2
 displayMode: compact
 ---
 gantt
@@ -196,6 +199,12 @@ Read and write actions allow executing a piece of code under a lock, automatical
     // read and return PsiFile
   }
   ```
+
+  > Plugins implemented in Kotlin and targeting versions 2024.1+ should use suspending [`readAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt).
+  > See also [](coroutine_read_actions.topic).
+  >
+  {style="warning"}
+
   </tab>
   <tab title="Java" group-key="java">
 
@@ -239,8 +248,6 @@ Read and write actions allow executing a piece of code under a lock, automatical
   }
   ```
   Note that this API is obsolete since 2024.1.
-  Plugins implemented in Kotlin and targeting versions 2024.1+ should use suspending [`readAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt).
-  See also [](coroutine_read_actions.topic).
 
 #### Rules
 {#read-actions-rules}
@@ -311,6 +318,9 @@ Between executing first and second read actions, another thread could invalidate
 
 ```mermaid
 ---
+config:
+  gantt:
+    numberSectionStyles: 2
 displayMode: compact
 ---
 gantt
@@ -339,6 +349,11 @@ gantt
     // write data
   }
   ```
+
+  > Plugins implemented in Kotlin and targeting versions 2024.1+ should use suspending [`writeAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt).
+  >
+  {style="warning"}
+
   </tab>
   <tab title="Java" group-key="java">
 
@@ -381,7 +396,6 @@ gantt
   }
   ```
   Note that this API is obsolete since 2024.1.
-  Plugins implemented in Kotlin and targeting versions 2024.1+ should use suspending [`writeAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt).
 
 #### Rules
 {#write-actions-rules}
@@ -435,6 +449,9 @@ To better understand what problem `ModalityState` solves, consider the following
 
 ```mermaid
 ---
+config:
+  gantt:
+    numberSectionStyles: 2
 displayMode: compact
 ---
 gantt
@@ -464,6 +481,9 @@ Passing the modality state solves this problem:
 
 ```mermaid
 ---
+config:
+  gantt:
+    numberSectionStyles: 2
 displayMode: compact
 ---
 gantt
@@ -505,6 +525,9 @@ The following diagram presents this problem:
 
 ```mermaid
 ---
+config:
+  gantt:
+    numberSectionStyles: 2
 displayMode: compact
 ---
 gantt
@@ -517,7 +540,7 @@ gantt
         write action (waiting for the lock) : done, 2, 6
         write action (executing)            : 6, 8
         UI freeze                           : crit, 2, 8
-        UI update (frozen)                  : crit, 8, 10
+        UI update (delayed)                 : crit, 8, 10
 ```
 
 Sometimes, it is required to run a long read action, and it isn't possible to speed it up.
@@ -525,6 +548,9 @@ In such a case, the recommended approach is to cancel the read action whenever t
 
 ```mermaid
 ---
+config:
+  gantt:
+    numberSectionStyles: 2
 displayMode: compact
 ---
 gantt

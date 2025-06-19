@@ -49,8 +49,6 @@ The following minimal sample demonstrates all details required when exposing UI 
   * `source` - Fully qualified name of the underlying UI component implementation, e.g.,&nbsp;`javax.swing.JPasswordField`
   * `since` - The release number when this UI customization key was exposed, e.g.,&nbsp;`2021.1`
 
-    Note: The `since` attribute is supported starting with the 2019.2 release and it is not displayed in versions prior to 2019.2.
-
 > It is highly recommended to always provide a `description` entry, so Theme authors can understand usages.
 >
 

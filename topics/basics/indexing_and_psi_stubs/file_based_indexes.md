@@ -121,4 +121,5 @@ Generally, the word index should be accessed indirectly by using helper methods 
 
 ## Additional Index Roots
 
-To add additional files/directories to be indexed, implement [`IndexableSetContributor`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/IndexableSetContributor.java) and register in [`com.intellij.indexedRootsProvider`](https://jb.gg/ipe?extensions=com.intellij.indexedRootsProvider) extension point.
+To add additional files/directories to be indexed, implement [`IndexableSetContributor`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/IndexableSetContributor.java)
+and register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.indexedRootsProvider"/></include>.

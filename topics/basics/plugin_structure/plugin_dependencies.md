@@ -95,10 +95,10 @@ See also [](plugin_compatibility.md#modules-specific-to-functionality).
 | Gradle                    | `com.intellij.gradle`           |                                                                                  |
 | Groovy                    | `org.intellij.groovy`           |                                                                                  |
 | IntelliLang               | `org.intellij.intelliLang`      | [](language_injection.md)                                                        |
-| Java                      | `com.intellij.java`             | [](idea.md#java)                                                                 |
+| Java                      | `com.intellij.java`             | [](idea.md#java-plugin)                                                          |
 | JavaScript and TypeScript | `JavaScript`                    | [](webstorm.md)                                                                  |
 | JSON                      | `com.intellij.modules.json`     | [JSON plugin introduction notes](api_changes_list_2024.md#json-plugin-new-20243) |
-| Kotlin                    | `org.jetbrains.kotlin`          | [](idea.md#kotlin)                                                               |
+| Kotlin                    | `org.jetbrains.kotlin`          | [](idea.md#kotlin-plugin)                                                        |
 | Markdown                  | `org.intellij.plugins.markdown` |                                                                                  |
 | Maven                     | `org.jetbrains.idea.maven`      |                                                                                  |
 | Spring                    | `com.intellij.spring`           | [](spring_api.md)                                                                |
@@ -188,14 +188,12 @@ Add the JARs of the plugin on which the project depends to the <control>Classpat
 
 <procedure title="Adding a plugin dependency in a DevKit-based plugin">
 
-1. Open the <control>Project Structure</control> dialog and go to <ui-path>Platform Settings | SDKs</ui-path> section.
+1. Open the <control>Project Structure</control> dialog and go to the <ui-path>Platform Settings | SDKs</ui-path> section.
 2. Select the SDK used in the project.
 3. Click the <control>+</control> button in the <control>Classpath</control> tab.
 4. Select the plugin JAR depending on whether it is a bundled or non-bundled plugin:
    - For bundled plugins, the plugin JAR files are located in <path>plugins/\$PLUGIN_NAME\$</path> or <path>plugins/\$PLUGIN_NAME\$/lib</path> under the main installation directory.
-   - For non-bundled plugins, depending on the platform version, the plugin JAR files are located in:
-     - [plugins directory for versions 2020.1+](https://www.jetbrains.com/help/idea/directories-used-by-the-ide-to-store-settings-caches-plugins-and-logs.html#plugins-directory)
-     - [plugins directory for versions pre-2020.1](https://www.jetbrains.com/help/idea/2019.3/tuning-the-ide.html#plugins-directory)
+   - For non-bundled plugins, the plugin JAR files are located in OS-specific [plugins directory](https://www.jetbrains.com/help/idea/directories-used-by-the-ide-to-store-settings-caches-plugins-and-logs.html#plugins-directory)
 
 </procedure>
 

@@ -86,7 +86,6 @@ The following pages list the breaking changes in IDE and plugin releases with re
 * [Changes in 2022.*](api_changes_list_2022.md)
 * [Changes in 2021.*](api_changes_list_2021.md)
 * [Changes in 2020.*](api_changes_list_2020.md)
-* [Changes in 2019.*](api_changes_list_2019.md)
 
 ## Bundled Library Updates
 

@@ -8,7 +8,7 @@ The IntelliJ Platform allows plugins to provide custom postfix templates specifi
 
 To provide custom postfix templates for an existing or custom language, register an implementation of
 [`PostfixTemplateProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/template/postfix/templates/PostfixTemplateProvider.java)
-in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.codeInsight.template.postfixTemplateProvider"/></include> (EP).
+in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.codeInsight.template.postfixTemplateProvider"/></include>.
 
 The `PostfixTemplateProvider` extension contains the list of templates that extend the
 [`PostfixTemplate`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/template/postfix/templates/PostfixTemplate.java)
@@ -83,7 +83,7 @@ cart.getProducts().var
 The gutter icons for a postfix template class allow navigating to the corresponding description and before/after files in plugin resources.
 
 **Example:**
-[`TryWithResourcesPostfixTemplate`](%gh-ic%/java/java-impl/src/postfixTemplates/TryWithResourcesPostfixTemplate)
+[`TryWithResourcesPostfixTemplate`](%gh-ic%/java/java-impl/resources/postfixTemplates/TryWithResourcesPostfixTemplate)
 directory containing description files for
 [`TryWithResourcesPostfixTemplate`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/template/postfix/templates/TryWithResourcesPostfixTemplate.java)
 template.

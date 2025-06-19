@@ -34,12 +34,11 @@
 
     <chapter title="Problems with Code - Support Issues" id="problems-with-code-support-issues" switcher-key="English">
         <tip>
-            <p>Please see <a href="faq.md">Plugin Development FAQ</a> and <a href="explore_api.md">Explore the IntelliJ
-                Platform API</a> for tips &amp; tricks.</p>
+            <p>Please see <a href="explore_api.md"/> for tips &amp; tricks.</p>
         </tip>
         <p>For questions, problems, or other discussions about plugin development itself
             (rather than the content of this guide),
-            use our <a href="https://platform.jetbrains.com">JetBrains Platform</a> community forum.
+            use our <a href="https://platform.jetbrains.com">JetBrains Platform</a> community Discourse forum.
             The forum is monitored by JetBrains team members.</p>
         <p>Of course, all raised questions will be used to try and improve this guide.</p>
     </chapter>

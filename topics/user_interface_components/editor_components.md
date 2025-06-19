@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Editor Components
 
@@ -6,7 +6,7 @@
 
 ## `EditorTextField`
 
-Compared to [Swing `JTextArea`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextArea.html), the IntelliJ Platform's editor component has a ton of advantages: syntax highlighting support, code completion, code folding, and much more.
+Compared to [Swing `JTextArea`](https://docs.oracle.com/en/java/javase/24/docs/api/java.desktop/javax/swing/JTextArea.html), the IntelliJ Platform's editor component has a ton of advantages: syntax highlighting support, code completion, code folding, and much more.
 [Editors](editors.md) are normally displayed in editor tabs, but they can be embedded in dialogs or tool windows, too.
 This is enabled by the [`EditorTextField`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/EditorTextField.java) component.
 
@@ -48,7 +48,7 @@ See [](code_completion.md) to learn more about completion.
 
 ### Java
 
-> If your plugin depends on Java functionality and targets 2019.2 or later, see [](plugin_compatibility.md#java).
+> If your plugin depends on Java functionality, see [](plugin_compatibility.md#java).
 >
 {style="note"}
 

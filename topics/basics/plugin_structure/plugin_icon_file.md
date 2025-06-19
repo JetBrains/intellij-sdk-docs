@@ -1,10 +1,10 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Plugin Logo
 
 <link-summary>Plugin logo requirements and best practices.</link-summary>
 
-Beginning in version 2019.1, the IntelliJ Platform supports representing a plugin with a logo.
+The IntelliJ Platform supports representing a plugin with a logo.
 A _Plugin Logo_ is intended to be a unique representation of a plugin's functionality, technology, or company.
 
 When opening <path>plugin.xml</path> in editor, inspection
@@ -28,7 +28,7 @@ Whether online or in the product UI, a Plugin Logo helps users to identify a plu
 
 ## Plugin Logo Requirements
 
-> Please see also these [important requirements](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-logo) for JetBrains Marketplace.
+> Please see also these [important requirements](https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-logo) for JetBrains Marketplace.
 >
 {style="note"}
 

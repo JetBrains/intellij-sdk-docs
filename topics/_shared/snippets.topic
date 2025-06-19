@@ -29,16 +29,12 @@
         </tip>
     </snippet>
     <snippet id="pluginDevKitAvailability">
-        <p>
-            <emphasis>Plugin DevKit</emphasis>
-            plugin is bundled with IntelliJ IDEA until 2023.2.
-        </p>
-        <warning title="Plugin DevKit Availability">
-            <p>When using IntelliJ IDEA 2023.3 or later, the
+        <warning title="Installing Plugin DevKit plugin">
+            <p>
                 <emphasis>Plugin DevKit</emphasis>
                 plugin must be installed from JetBrains Marketplace (<a
-                        href="https://plugins.jetbrains.com/plugin/22851-plugin-devkit">Plugin Homepage</a>)
-                as it is no longer bundled with the IDE.
+                    href="https://plugins.jetbrains.com/plugin/22851-plugin-devkit">Plugin Homepage</a>)
+                as it is not bundled since version 2023.3.
             </p>
         </warning>
     </snippet>
@@ -71,45 +67,47 @@
     </snippet>
     <snippet id="apiChangesJavaVersion">
         <note title="IDE and Java Versions">
-            <p>Java version must be set depending on the target platform version.</p>
-            <p>
-                <control>2024.2+</control>
-                : Java 21
-            </p>
-            <p>
-                <control>2022.3+</control>
-                : Java 17
-            </p>
-            <p>See <a href="build_number_ranges.md" anchor="platformVersions"/> for details.</p>
+            <p>Java version must be set depending on the target
+                <a href="build_number_ranges.md" anchor="platformVersions">platform version</a>.</p>
+            <deflist type="narrow">
+                <def id="java_2024.2" title="2024.2+">
+                    Java 21
+                </def>
+                <def id="java_2022.3" title="2022.3+">
+                    Java 17
+                </def>
+            </deflist>
         </note>
     </snippet>
     <snippet id="gradlePluginVersion">
         <warning title="Gradle Plugin">
-            <p>The Gradle plugin must be chosen depending on the target <a href="build_number_ranges.md"
-                                                                           anchor="platformVersions">platform
-                version</a>.</p>
-            <deflist>
-                <def id="gradlePluginVersion_2024.2">
-                    <title>2024.2+</title>
+            <p>The Gradle plugin must be chosen depending on the target
+                <a href="build_number_ranges.md" anchor="platformVersions">platform version</a>.
+            </p>
+            <deflist type="narrow">
+                <def id="gradlePluginVersion_2024.2" title="2024.2+">
                     <p>
                         <control>Requires</control>
-                        <a href="tools_intellij_platform_gradle_plugin.md"/></p>
+                        <a href="tools_intellij_platform_gradle_plugin.md"/>
+                    </p>
                 </def>
-                <def id="gradlePluginVersion_2022.3">
-                    <title>2022.3+</title>
+                <def id="gradlePluginVersion_2022.3" title="2022.3+">
                     <p>
                         <control>Recommended</control>
-                        <a href="tools_intellij_platform_gradle_plugin.md"/>,<br/>
+                        <a href="tools_intellij_platform_gradle_plugin.md"/>
+                    </p>
+                    <p>
                         <control>Requires</control>
-                        <a href="tools_gradle_intellij_plugin.md"/> version 1.10.1+ (current:
-                        %gradle-intellij-plugin-version%)
+                        <a href="tools_gradle_intellij_plugin.md"/>
+                        <emphasis>(Obsolete)</emphasis>
+                        1.10.1+
                     </p>
                 </def>
             </deflist>
         </warning>
     </snippet>
     <snippet id="ep_list_legend">
-        <chapter title="Legend" id="legend">
+        <chapter title="Legend" id="legend" collapsible="true" default-state="collapsed">
             <tip>
                 <p>See also <a href="explore_api.md"/> for more information and strategies.</p>
             </tip>
@@ -141,7 +139,7 @@
                 <p>See <a href="verifying_plugin_compatibility.md"/> for overview of API status.</p>
                 <table>
                     <tr>
-                        <td>Icon</td>
+                        <td>Tag</td>
                         <td>Description</td>
                         <td>Details</td>
                     </tr>
@@ -154,14 +152,17 @@
                     <tr>
                         <td><img src="https://img.shields.io/badge/-Removal-red?style=flat-square" alt="Removal"/></td>
                         <td>Scheduled for Removal API</td>
-                        <td>See code documentation for replacement.</td>
+                        <td>Annotated with <a
+                                href="%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/ApiStatus.java"><code>@ApiStatus.ScheduledForRemoval</code></a>.
+                            <p>See code documentation for replacement.</p></td>
                     </tr>
                     <tr>
                         <td><img src="https://img.shields.io/badge/-Obsolete-grey?style=flat-square" alt="Obsolete"/>
                         </td>
                         <td>Obsolete API</td>
-                        <td>Do not use in new code.<p>See code documentation for replacement (<a
-                                href="verifying_plugin_compatibility.md" anchor="obsolete-api"/>).</p></td>
+                        <td>Annotated with <a
+                                href="%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/ApiStatus.java"><code>@ApiStatus.Obsolete</code></a>.
+                            <p>Do not use in new code, see code documentation for replacement.</p></td>
                     </tr>
                     <tr>
                         <td><img src="https://img.shields.io/badge/-Experimental-violet?style=flat-square"
@@ -187,16 +188,10 @@
                         <td><p>Can have <a
                                 href="%gh-ic%/platform/core-api/src/com/intellij/openapi/project/Project.java"><code>Project</code></a>
                             as constructor parameter.</p>
-                            <p>- Extension Point: Declared with <code>area=&quot;IDEA_PROJECT&quot;</code></p>
+                            <p>- Extension Point: declared with <code>area=&quot;IDEA_PROJECT&quot;</code></p>
                             <p>- Listener: registered in <a href="plugin_configuration_file.md"
                                                             anchor="idea-plugin__projectListeners"><code>&lt;projectListeners&gt;</code></a>
                             </p></td>
-                    </tr>
-                    <tr>
-                        <td><img src="https://img.shields.io/badge/-Non--Dynamic-orange?style=flat-square"
-                                 alt="Non-Dynamic"/></td>
-                        <td>Non-Dynamic<p>Extension Point</p></td>
-                        <td>Installation/update of plugin requires IDE restart (<a href="dynamic_plugins.md"/>).</td>
                     </tr>
                     <tr>
                         <td><img src="https://img.shields.io/badge/-DumbAware-darkgreen?style=flat-square"
@@ -207,6 +202,14 @@
                                 href="%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbAware.java"><code>DumbAware</code></a>
                             will be processed during <a href="indexing_and_psi_stubs.md" anchor="dumb-mode">dumb
                                 mode</a>.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://img.shields.io/badge/-Non--Dynamic-orange?style=flat-square"
+                                 alt="Non-Dynamic"/></td>
+                        <td>Non-Dynamic<p>Extension Point</p></td>
+                        <td>Installation/update of plugin requires restarting the IDE, see <a
+                                href="dynamic_plugins.md"/>.
                         </td>
                     </tr>
                 </table>
@@ -225,5 +228,9 @@
     <snippet id="ep"><a href="https://jb.gg/ipe?extensions=%ep%"
                         summary="Browse usages in existing implementations of open-source plugins">
         <code>%ep%</code></a> extension point
+    </snippet>
+    <snippet id="epLink"><a href="https://jb.gg/ipe?extensions=%ep%"
+                            summary="Browse usages in existing implementations of open-source plugins">
+        <code>%ep%</code></a>
     </snippet>
 </topic>

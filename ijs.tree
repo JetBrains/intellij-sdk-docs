@@ -149,12 +149,16 @@
     <toc-element topic="project_model.md" accepts-web-file-names="project-structure.html">
       <toc-element topic="project.md">
         <toc-element topic="trusted_projects.md"/>
-        <toc-element topic="project_wizard.md" toc-title="Project Wizard"/>
-        <toc-element topic="intro_project_wizard.md" accepts-web-file-names="project_wizard.html">
-          <toc-element topic="adding_new_steps.md"/>
-          <toc-element topic="module_types.md"/>
+        <toc-element topic="project_wizards_intro.md">
+          <toc-element topic="new_project_wizard.md"/>
+          <toc-element topic="legacy_project_wizard.md">
+            <toc-element topic="intro_project_wizard.md" accepts-web-file-names="project_wizard.html,project-wizard.html">
+              <toc-element topic="adding_new_steps.md"/>
+              <toc-element topic="module_types.md"/>
+            </toc-element>
+            <toc-element topic="framework.md"/>
+          </toc-element>
         </toc-element>
-        <toc-element topic="framework.md"/>
       </toc-element>
       <toc-element topic="module.md"/>
       <toc-element topic="sdk.md"/>
@@ -242,9 +246,9 @@
     <toc-element topic="testing_highlighting.md"/>
     <toc-element topic="testing_faq.md"/>
     <toc-element topic="integration_tests.md">
-      <toc-element topic="integration_tests_intro.md"/>
-      <toc-element topic="integration_tests_ui.md"/>
-      <toc-element topic="integration_tests_api.md"/>
+      <toc-element topic="integration_tests_intro.md" toc-title="Introduction"/>
+      <toc-element topic="integration_tests_ui.md" toc-title="UI Testing"/>
+      <toc-element topic="integration_tests_api.md" toc-title="API Interaction"/>
     </toc-element>
   </toc-element>
   <toc-element toc-title="Custom Languages">
@@ -379,7 +383,6 @@
     <toc-element topic="glossary.md"/>
     <toc-element topic="explore_api.md" toc-title="Explore the API"/>
     <toc-element topic="build_number_ranges.md"/>
-    <toc-element topic="intellij_artifacts.md"/>
     <toc-element toc-title="Extension Points and Listeners">
       <toc-element toc-title="IntelliJ Platform" topic="intellij_platform_extension_point_list.md"
                    accepts-web-file-names="extension-point-list.html"/>
@@ -400,6 +403,7 @@
     <toc-element topic="learning_resources.md"/>
     <toc-element topic="marketing.md"/>
     <toc-element topic="consulting.md"/>
+    <toc-element topic="intellij_artifacts.md"/>
     <toc-element topic="custom_plugin_repository.md" accepts-web-file-names="update-plugins-format.html"/>
     <toc-element topic="plugin_repository_obsolete.md"
                  accepts-web-file-names="api_reference.html,feature_extractor.html,plugin_details.html,custom_channels.html,plugins_list.html,maven_interface.html,plugin_upload.html,plugin_developers.html"/>
@@ -415,7 +419,6 @@
         <toc-element topic="api_changes_list_2022.md" toc-title="2022.*"/>
         <toc-element topic="api_changes_list_2021.md" toc-title="2021.*"/>
         <toc-element topic="api_changes_list_2020.md" toc-title="2020.*"/>
-        <toc-element topic="api_changes_list_2019.md" toc-title="2019.*"/>
       </toc-element>
     </toc-element>
     <toc-element topic="api_notable.md" toc-title="Notable API Changes"

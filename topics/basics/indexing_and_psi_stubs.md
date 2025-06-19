@@ -108,7 +108,7 @@ Use [lexer](implementing_lexer.md) information instead of parsed trees if possib
 If impossible, use light AST which doesn't create memory-hungry AST nodes inside, so traversing it might be faster.
 Obtain [`LighterAST`](%gh-ic%/platform/core-api/src/com/intellij/lang/LighterAST.java) by casting `FileContent` input parameter to [`PsiDependentFileContent`](%gh-ic%/platform/core-api/src/com/intellij/util/indexing/PsiDependentFileContent.java) and calling `getLighterAST()`.
 Make sure to traverse only the nodes you need to.
-See also [`LighterASTNodeVisitor`](%gh-ic%/platform/core-impl/src/com/intellij/psi/impl/source/tree/LighterASTNodeVisitor.java) and [`LightTreeUtil`](%gh-ic%/platform/core-impl/src/com/intellij/psi/impl/source/tree/LightTreeUtil.java) for useful utility methods.
+See also [`RecursiveLighterASTNodeWalkingVisitor`](%gh-ic%/platform/core-impl/src/com/intellij/psi/impl/source/tree/RecursiveLighterASTNodeWalkingVisitor.java) and [`LightTreeUtil`](%gh-ic%/platform/core-impl/src/com/intellij/psi/impl/source/tree/LightTreeUtil.java) for useful utility methods.
 
 For [stub index](stub_indexes.md), implement [`LightStubBuilder`](%gh-ic%/platform/core-impl/src/com/intellij/psi/stubs/LightStubBuilder.java).
 

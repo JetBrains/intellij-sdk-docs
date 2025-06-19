@@ -241,10 +241,10 @@ The return value of `createIndentOptions()` sets the default indent size.
 Use [`LanguageFormattingRestriction`](%gh-ic%/platform/code-style-api/src/com/intellij/lang/LanguageFormattingRestriction.java) to restrict (automatic) code formatting for given contexts.
 
 ## External Code Formatter
+<primary-label ref="2021.3"/>
 
-_2021.3_
-
-Register [`AsyncDocumentFormattingService`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/service/AsyncDocumentFormattingService.java) implementation in the [`com.intellij.formattingService`](https://jb.gg/ipe?extensions=com.intellij.formattingService) extension point to invoke external formatter instead of IDE's builtin formatter.
+Register [`AsyncDocumentFormattingService`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/service/AsyncDocumentFormattingService.java) implementation
+in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.formattingService"/></include> to invoke external formatter instead of IDE's builtin formatter.
 
 **Example:**
 [`ShExternalFormatter`](%gh-ic%/plugins/sh/core/src/com/intellij/sh/formatter/ShExternalFormatter.java) from _Shell Script_ plugin

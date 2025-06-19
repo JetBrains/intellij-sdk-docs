@@ -4,6 +4,12 @@
 
 <link-summary>Overview and introduction to implementing an External System (e.g., Maven, Gradle, sbt) support.</link-summary>
 
+<tldr>
+
+**External System Extension Points**: [](intellij_platform_extension_point_list.md#external-system)
+
+</tldr>
+
 This page provides a high-level overview of the *External System* subsystem.
 There are multiple project management systems ([Apache Maven](https://maven.apache.org/), [Gradle](https://www.gradle.org/), [sbt](https://www.scala-sbt.org/), etc.) and IntelliJ Platform provides a mechanism to support them in IDEs.
 
@@ -96,7 +102,7 @@ Processing project data built on an external system config basis can be performe
 It is a strategy which knows how to manage particular `ExternalEntityData`.
 For example, when we want to import a project from an external model, we can start with the top level `DataNode` which references project info and then import its data using the corresponding service.
 
-Custom services can be registered via the [`com.intellij.externalProjectDataService`](https://jb.gg/ipe?extensions=com.intellij.externalProjectDataService) extension point.
+Custom services can be registered via the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.externalProjectDataService"/></include>.
 
 The good thing is that we can separate project parsing and management here.
 That means that a set of `DataNode`, `Key` and `ProjectDataServices` can be introduced for a particular technology and then every external system integration can build corresponding data if necessary using it.
@@ -154,8 +160,9 @@ Then register the instance with `ExternalSystemProjectTracker` to start tracking
 <primary-label ref="2020.1"/>
 
 The icon for reload notification can be specified per external system.
-Implement [`ExternalSystemIconProvider`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/ui/ExternalSystemIconProvider.kt) and register via [com.intellij.externalIconProvider](https://jb.gg/ipe?extensions=com.intellij.externalIconProvider) extension point in <path>[plugin.xml](plugin_configuration_file.md)</path>.
-Alternatively, set `reloadIcon` field external system implements `ExternalSystemIconProvider` directly.
+Implement [`ExternalSystemIconProvider`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/ui/ExternalSystemIconProvider.kt)
+and register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.externalIconProvider"/></include> in <path>[plugin.xml](plugin_configuration_file.md)</path>.
+Alternatively, set the `reloadIcon` field if the external system implements `ExternalSystemIconProvider` directly.
 
 ## Settings
 

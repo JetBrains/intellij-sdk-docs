@@ -65,3 +65,10 @@ See also [Working with Text](working_with_text.md#safely-replacing-selected-text
 [`DocumentUtil`](%gh-ic%/platform/core-impl/src/com/intellij/util/DocumentUtil.java) contains utility methods for `Document` processing.
 This allows you to get information like the text offsets of particular lines.
 This is particularly useful when you need text location/offset information about a given `PsiElement`.
+
+## How can I mark a region as read-only?
+
+Use `Document.createGuardedBlock()`.
+
+[`EditorActionManager.setReadonlyFragmentModificationHandler()`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionManager.java) can
+be used to customize the behavior when the user attempts to modify a read-only region.

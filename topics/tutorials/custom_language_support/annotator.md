@@ -21,31 +21,20 @@ This section adds annotation functionality to support the Simple Language in the
 ## Required Project Configuration Changes
 
 Classes defined in this step of the tutorial depend on `com.intellij.psi.PsiLiteralExpression` (the PSI representation for String literals in Java code) at runtime.
-Using `PsiLiteralExpression` [introduces a dependency](plugin_compatibility.md#modules-specific-to-functionality) on `com.intellij.java`.
 
-Beginning in version 2019.2, a dependency on Java plugin [must be declared explicitly](plugin_compatibility.md#java).
+A dependency on the [Java plugin](idea.md#java-plugin) must be [declared explicitly](plugin_dependencies.md).
 First, add a dependency on the Java plugin in the Gradle build script:
 
-<tabs>
-<tab title="Kotlin">
-
 ```kotlin
-intellij {
-  plugins.set(listOf("com.intellij.java"))
+dependencies {
+  intellijPlatform {
+    // ...
+    bundledPlugin("com.intellij.java")
+  }
 }
 ```
 
-</tab>
-<tab title="Groovy">
-
-```groovy
-intellij {
-  plugins = ['com.intellij.java']
-}
-```
-
-</tab>
-</tabs>
+See <path>[build.gradle.kts](%gh-sdk-samples-master%/simple_language_plugin/build.gradle.kts)</path> for the reference.
 
 Then, declare the dependency in <path>[plugin.xml](plugin_configuration_file.md)</path> (use code insight)
 
@@ -58,18 +47,16 @@ Then, declare the dependency in <path>[plugin.xml](plugin_configuration_file.md)
 The [`SimpleAnnotator`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleAnnotator.java) subclasses [`Annotator`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/Annotator.java).
 Consider a literal string that starts with "simple:" as a prefix of a Simple Language key.
 It isn't part of the Simple Language, but it is a useful convention for detecting Simple Language keys embedded as string literals in other languages, like Java.
-Annotate the `simple:key` literal expression, and differentiate between a well-formed vs. an unresolved property.
-
-> The use of new `AnnotationHolder` syntax starting 2020.2, which uses the builder format.
->
-{style="note"}
+Annotate the `simple:key` literal expression and differentiate between a well-formed vs. an unresolved property.
 
 ```java
 ```
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleAnnotator.java" include-symbol="SimpleAnnotator"}
 
-> If the above code is copied at this stage of the tutorial, then remove the line below the comment "** Tutorial step 19. …" The quick fix class in that line is not defined until later in the tutorial.
+> If the above code is copied at this stage of the tutorial, then remove the line below the comment _** Tutorial step 19. …_ as
+> `SimpleCreatePropertyQuickFix` is not defined until [later](quick_fix.md) in the tutorial.
 >
+{title="SimpleCreatePropertyQuickFix"}
 
 ## Register the Annotator
 

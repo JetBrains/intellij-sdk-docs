@@ -95,8 +95,7 @@ This table is not exhaustive, to see a list of all available modules, invoke cod
 | `JavaScript`                                                                                  | **JavaScript** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework                                                 | WebStorm, and other products if the JavaScript plugin is installed.                                                                                                        |
 
 #### Java
-
-The [Java language functionality](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/) was extracted as a plugin in version 2019.2 of the IntelliJ Platform.
+The [Java language functionality](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/) was extracted as a plugin from the IntelliJ Platform in 2019.2 release.
 This refactoring separated the Java implementation from the other, non-language portions of the platform.
 A dependency on the Java plugin (Plugin ID `com.intellij.java`) must be set up using [](plugin_dependencies.md).
 
@@ -105,94 +104,7 @@ A dependency on the Java plugin (Plugin ID `com.intellij.java`) must be set up u
 
 The [AppCode and CLion code was restructured](https://blog.jetbrains.com/clion/2020/12/migration-guide-for-plugins-2020-3/) in version 2020.3.
 This refactoring extracted some functionalities into specific modules for easier maintainability and reuse between AppCode/CLion and other JetBrains IDEs.
-Consequently, [dependencies](plugin_dependencies.md) on [AppCode](app_code.md) and [CLion](clion.md) functionalities are expressed differently in <path>plugin.xml</path> depending on the version of the IDE being targeted:
-
-
-<tabs>
-
-<tab title="CLion">
-
-* Syntax for 2020.3 and later releases:
-  * <path>plugin.xml</path> (_allowable alternative_):
-    ```xml
-    <depends>com.intellij.clion</depends>
-    ```
-
-  * Gradle build script (_required_):
-
-    <tabs group="languages">
-    <tab title="Kotlin" group-key="kotlin">
-
-    ```kotlin
-    intellij {
-      plugins.set(listOf("com.intellij.clion"))
-    }
-    ```
-
-    </tab>
-    <tab title="Groovy" group-key="groovy">
-
-    ```groovy
-    intellij {
-      plugins = ['com.intellij.clion']
-    }
-    ```
-
-    </tab>
-    </tabs>
-
-* Syntax _required_ for releases prior to 2020.3, _allowable_ in all releases:
-  * <path>plugin.xml</path>:
-    ```xml
-    <depends>com.intellij.modules.clion</depends>
-    ```
-
-See also [](clion.md).
-
-</tab>
-
-<tab title="AppCode">
-
-* Syntax for 2020.3 and later releases:
-  * <path>plugin.xml</path> (_allowable alternative_):
-    ```xml
-    <depends>com.intellij.appcode</depends>
-    ```
-
-  * Gradle build script (_required_):
-
-    <tabs group="languages">
-    <tab title="Kotlin" group-key="kotlin">
-
-    ```kotlin
-    intellij {
-      plugins.set(listOf("com.intellij.appcode"))
-    }
-    ```
-
-    </tab>
-    <tab title="Groovy" group-key="groovy">
-
-    ```groovy
-    intellij {
-      plugins = ['com.intellij.appcode']
-    }
-    ```
-
-    </tab>
-    </tabs>
-
-* Syntax _required_ for releases prior to 2020.3, _allowable_ in all releases:
-  * <path>plugin.xml</path>:
-    ```xml
-    <depends>com.intellij.modules.appcode</depends>
-    ```
-
-See also [](app_code.md).
-
-</tab>
-
-</tabs>
+Consequently, [dependencies](plugin_dependencies.md) on [AppCode](app_code.md) and [CLion](clion.md) functionalities are expressed differently depending on the version of the IDE being targeted.
 
 ## Exploring Module and Plugin APIs
 

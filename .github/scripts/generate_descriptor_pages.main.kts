@@ -165,6 +165,7 @@ fun StringBuilder.appendElement(
   appendReferences(element.references)
   element.description?.trim()?.let { appendLine("$it\n") }
   appendDeprecationVersion(element.deprecatedSince)
+  appendNamespace(element.namespace)
   appendSupportDetails(element.sdkDocsSupportDetails)
   appendRequirement(element.requirement)
   appendDefaultValue(element.defaultValue)
@@ -230,6 +231,15 @@ fun StringBuilder.appendDeprecationVersion(deprecatedSince: String?) {
   appendLine("Deprecated")
   appendLine(":")
   appendLine("since $deprecatedSince\n")
+}
+
+fun StringBuilder.appendNamespace(namespace: String?) {
+  namespace ?: return
+  appendLine("{type=\"narrow\"}")
+  appendLine("Namespace")
+  appendLine(":")
+  appendLine("`$namespace`")
+  appendLine()
 }
 
 fun StringBuilder.appendSupportDetails(supportDetails: String?) {
@@ -524,6 +534,7 @@ data class Element(
   var name: String? = null,
   var descriptiveName: String? = null,
   var sdkDocsFixedPath: List<String> = emptyList(),
+  var namespace: String? = null,
   var since: String? = null,
   var until: String? = null,
   var deprecatedSince: String? = null,

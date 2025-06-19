@@ -9,7 +9,7 @@
 The <path>plugin.xml</path> configuration file contains all the information about the plugin, which is displayed in the [plugins' settings dialog](https://www.jetbrains.com/help/idea/managing-plugins.html), and all registered extensions, actions, listeners, etc.
 The sections below describe all the elements in detail.
 
-The example <path>plugin.xml</path> files can be found in the [IntelliJ SDK Docs Code Samples](https://github.com/JetBrains/intellij-sdk-code-samples) repository.
+The example <path>plugin.xml</path> files can be found in the [IntelliJ SDK Docs Code Samples](%gh-sdk-samples-master%/README.md) repository.
 
 ## Additional Plugin Configuration Files
 
@@ -21,7 +21,7 @@ One use case for additional configuration files is when a plugin provides option
 
 ## Useful Resources
 
-Please make sure to follow the guidelines from [Plugin Overview page](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html) for an optimal presentation of your plugin on JetBrains Marketplace.
+Please make sure to follow the guidelines from [Best practices for listing your plugin](https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html) for an optimal presentation of your plugin on JetBrains Marketplace.
 The _Busy Plugin Developers. Episode 2_ discusses [5 tips for optimizing JetBrains Marketplace plugin page](https://youtu.be/oB1GA9JeeiY?t=52) in more detail.
 
 See also [](marketing.md) about widgets and badges.
@@ -87,6 +87,8 @@ Deprecated elements are omitted in the list below.
     - [`<listener>`](#idea-plugin__applicationListeners__listener)
   - [`<projectListeners>`](#idea-plugin__projectListeners)
     - [`<listener>`](#idea-plugin__applicationListeners__listener)
+  - [`<xi:include>`](#idea-plugin__xi:include)
+    - [`<xi:fallback>`](#idea-plugin__xi:include__xi:fallback)
 
 ## `idea-plugin`
 {#idea-plugin}
@@ -128,6 +130,7 @@ Children
   - [`<resource-bundle>`](#idea-plugin__resource-bundle)
   - [`<vendor>`](#idea-plugin__vendor)
   - [`<version>`](#idea-plugin__version)
+  - [`<xi:include>`](#idea-plugin__xi:include)
   - [`<application-components>`](#idea-plugin__application-components)  ![Deprecated][deprecated]
   - [`<module-components>`](#idea-plugin__module-components)  ![Deprecated][deprecated]
   - [`<project-components>`](#idea-plugin__project-components)  ![Deprecated][deprecated]
@@ -168,7 +171,7 @@ Example
 
 <tldr>
 
-**Reference:** [JetBrains Marketplace: Plugin Name](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name)
+**Reference:** [JetBrains Marketplace: Plugin Name](https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-name)
 
 </tldr>
 
@@ -238,7 +241,7 @@ Attributes
 - `code` _(**required**)_<br/>
   The plugin product code used in the JetBrains Sales System.
   The code must be agreed with JetBrains in advance and follow
-  [the requirements](https://plugins.jetbrains.com/docs/marketplace/obtain-a-product-code-from-jetbrains.html).
+  [the requirements](https://plugins.jetbrains.com/docs/marketplace/add-required-parameters.html).
 - `release-date` _(**required**)_<br/>
   Date of the major version release in the `YYYYMMDD` format.
 - `release-version` _(**required**)_<br/>
@@ -302,7 +305,7 @@ Examples
 
 <tldr>
 
-**Reference:** [JetBrains Marketplace: Contacts and Resources](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#contacts-and-resources)
+**Reference:** [JetBrains Marketplace: Contacts and Resources](https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#contacts-and-resources)
 
 </tldr>
 
@@ -345,7 +348,7 @@ Examples
 
 <tldr>
 
-**Reference:** [JetBrains Marketplace: Plugin Description](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description)
+**Reference:** [JetBrains Marketplace: Plugin Description](https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description)
 
 </tldr>
 
@@ -384,7 +387,7 @@ Example
 
 <tldr>
 
-**Reference:** [JetBrains Marketplace: Change Notes](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#change-notes)
+**Reference:** [JetBrains Marketplace: Change Notes](https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#change-notes)
 
 </tldr>
 
@@ -589,7 +592,7 @@ Attributes
   `order`.
   <br/>
   To not clash with other plugins defining extensions with the same identifier,
-  consider prepending the identifier with a prefix related to the plugin [`<id>`](#idea-plugin__id) or 
+  consider prepending the identifier with a prefix related to the plugin [`<id>`](#idea-plugin__id) or
   [`<name>`](#idea-plugin__name), for example, `id="com.example.myplugin.myExtension"`.
 - `order` _(optional)_<br/>
   Allows for ordering the extension relative to other instances of the same extension point.
@@ -613,7 +616,7 @@ Attributes
       - `mac`
       - `unix`
       - `windows`
-    
+
     For example, `os="windows"` registers the extension on Windows only.
 
 ### `extensionPoints`
@@ -691,12 +694,12 @@ Attributes
 
     The scope in which the [extension](plugin_extensions.md) is
     instantiated.
-    
+
     Allowed values:
       - `IDEA_APPLICATION` _(default)_
       - `IDEA_PROJECT`
       - `IDEA_MODULE` (**deprecated**)
-    
+
     **It is strongly recommended not to introduce new project- and module-level extension points.**
     If an extension point needs to operate on a `Project` or `Module` instance, declare an application-level extension
     point and pass the instance as a method parameter.
@@ -739,7 +742,7 @@ Example
   An extension point which restricts the type provided in a `myClass` attribute to be an instance
   of `com.example.ParentType`, and the type provided in a `someClass` element to be an instance
   of `java.lang.Comparable`:
-  
+
   ```xml
   <extensionPoint
       name="myExtension"
@@ -752,18 +755,18 @@ Example
         implements="java.lang.Comparable"/>
   </extensionPoint>
   ```
-  
+
   When using the above extension point, an implementation could be registered as follows:
-  
+
   ```xml
   <myExtension ...
       myClass="com.example.MyCustomType">
     <someClass>com.example.MyComparable</someClass>
   </myExtension>
   ```
-  
+
   where:
-  
+
   - `com.example.MyCustomType` must be a subtype of `com.example.ParentType`
   - `com.example.MyComparable` must be a subtype of `java.lang.Comparable`
 
@@ -1455,6 +1458,101 @@ Children
 :
   - [`<listener>`](#idea-plugin__applicationListeners__listener)
 
+### `xi:include`
+{#idea-plugin__xi:include}
+
+Allows including content of another plugin descriptor in this descriptor with
+[XInclude](http://www.w3.org/2001/XInclude) standard.
+
+{type="narrow"}
+Namespace
+:
+`xi="http://www.w3.org/2001/XInclude"`
+
+{type="narrow"}
+Required
+: no
+
+
+{type="narrow"}
+Attributes
+:
+- `href` _(optional)_<br/>
+  Path of the plugin descriptor file to include.
+- `xpointer` _(optional)_<br/>
+    **_Deprecated since 2021.2_**: The `xpointer` attribute must be `xpointer(/idea-plugin/*)` or not defined.
+
+    Elements pointer to include.<br/>
+    Default value: `xpointer(/idea-plugin/*)`.
+
+Children
+:
+  - [`<xi:fallback>`](#idea-plugin__xi:include__xi:fallback)
+
+Example
+:
+  Given a plugin descriptor:
+
+  ```xml
+  <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
+    <id>com.example.myplugin</id>
+    <name>Example</name>
+    <xi:include href="/META-INF/another-plugin.xml"/>
+    ...
+  </idea-plugin>
+  ```
+
+  and <path>/META-INF/another-plugin.xml</path>:
+
+  ```xml
+  <idea-plugin>
+    <extensions>...</extensions>
+    <actions>...</actions>
+  </idea-plugin>
+  ```
+
+  The effective plugin descriptor loaded to memory will contain the following elements:
+
+  ```xml
+  <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
+    <id>com.example.myplugin</id>
+    <name>Example</name>
+    <extensions>...</extensions>
+    <actions>...</actions>
+    ...
+  </idea-plugin>
+  ```
+
+#### `xi:fallback`
+{#idea-plugin__xi:include__xi:fallback}
+
+Indicates that including the specified file is optional.
+
+If the file referenced in `href` is not found and the `xi:fallback`
+element
+is missing, the plugin will fail to load.
+
+{type="narrow"}
+Namespace
+:
+`xi="http://www.w3.org/2001/XInclude"`
+
+{type="narrow"}
+Required
+: no
+
+Example
+:
+  ```xml
+  <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
+    ...
+    <xi:include href="/META-INF/optional-plugin.xml">
+      <xi:fallback/>
+    </xi:include>
+    ...
+  </idea-plugin>
+  ```
+
 ### `application-components`
 {#idea-plugin__application-components collapsible="true" initial-collapse-state="collapsed"}
 
@@ -1510,6 +1608,7 @@ Children
   - [`<interface-class>`](#idea-plugin__application-components__component__interface-class)  ![Deprecated][deprecated]
   - [`<loadForDefaultProject>`](#idea-plugin__application-components__component__loadForDefaultProject)  ![Deprecated][deprecated]
   - [`<option>`](#idea-plugin__application-components__component__option)  ![Deprecated][deprecated]
+  - [`<skipForDefaultProject>`](#idea-plugin__application-components__component__skipForDefaultProject)  ![Deprecated][deprecated]
 
 ##### `implementation-class`
 {#idea-plugin__application-components__component__implementation-class}
@@ -1609,6 +1708,29 @@ Attributes
 
 If present, the component is instantiated also for the default project. It takes effect only when used inside
 [`<project-components>`](#idea-plugin__project-components) element.
+
+{type="narrow"}
+Deprecated
+:
+since 2020.1
+
+{type="narrow"}
+Required
+: no
+
+##### `skipForDefaultProject`
+{#idea-plugin__application-components__component__skipForDefaultProject}
+
+> Do not use it in new plugins.
+> See [Components](plugin_components.md) for the migration guide.
+>
+{style="warning"}
+
+In the past, if present, the component was not loaded for the default project.
+
+Currently, project components aren't loaded in the default project by default, so this element has no effect.
+Use [`<loadForDefaultProject>`](#idea-plugin__application-components__component__loadForDefaultProject)
+if it is required to load a component in the default project.
 
 {type="narrow"}
 Deprecated

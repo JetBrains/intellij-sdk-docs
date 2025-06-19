@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Gradle Grammar-Kit Plugin
 
@@ -271,7 +271,7 @@ Default
 
 * [CSV Editor](https://github.com/SeeSharpSoft/intellij-csv-validator/blob/main/build.gradle.kts)
 * [Perl5 plugin](https://github.com/Camelcade/Perl5-IDEA/blob/master/plugin/core/build.gradle.kts)
-* [Bamboo Soy plugin](https://github.com/google/bamboo-soy/blob/master/build.gradle)
+* [OSS Plugins on GitHub](https://github.com/search?q=+org.jetbrains.grammarkit+language%3AGradle++NOT+is%3Aarchived+&type=code)
 
 ## Links
 

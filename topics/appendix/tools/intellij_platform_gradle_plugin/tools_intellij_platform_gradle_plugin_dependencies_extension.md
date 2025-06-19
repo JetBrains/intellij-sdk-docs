@@ -98,7 +98,6 @@ See [](#custom-target-platforms) for non-default targets.
 | Function                                              | Description                                                      |
 |-------------------------------------------------------|------------------------------------------------------------------|
 | `androidStudio(version, useInstaller = true)`         | [Android Studio](android_studio.md)                              |
-| `aqua(version, useInstaller = true)`                  | [Aqua](https://www.jetbrains.com/aqua/)                          |
 | `clion(version, useInstaller = true)`                 | [CLion](clion.md)                                                |
 | `datagrip(version, useInstaller = true)`              | [DataGrip](data_grip.md)                                         |
 | `dataspell(version, useInstaller = true)`             | [DataSpell](https://www.jetbrains.com/dataspell/)                |

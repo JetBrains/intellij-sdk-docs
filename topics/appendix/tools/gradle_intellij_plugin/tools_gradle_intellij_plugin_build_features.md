@@ -34,7 +34,7 @@ Default value
 Example
 :
 ```
-org.jetbrains.intellij.buildFeature.buildSearchableOptions=false
+org.jetbrains.intellij.buildFeature.noSearchableOptionsWarning=false
 ```
 
 

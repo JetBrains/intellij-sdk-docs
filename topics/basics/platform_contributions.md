@@ -1,10 +1,10 @@
-# Contributing to the IntelliJ Platform
+<!-- Copyright 2000-2025 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Contributing to the IntelliJ Platform
 
 <link-summary>How to participate and contribute in IntelliJ Platform development.</link-summary>
 
-Please make sure to read the [Code of Conduct](intellij-sdk-docs-original_CODE_OF_CONDUCT.md).
+Please make sure to read the [](intellij-sdk-docs-original_CODE_OF_CONDUCT.md).
 
 ## Participate in the Community
 
@@ -16,7 +16,7 @@ The forums are an excellent source for users and contributors interested in havi
 ### Link to IntelliJ Platform Homepage
 
 The success of any open-source project depends on the number of people who use the product and contribute back to the project.
-By linking to [https://www.jetbrains.com/opensource/idea](https://www.jetbrains.com/opensource/idea), you can increase the chances of a new user or contributor finding out about the project and joining the community.
+By linking to [](https://www.jetbrains.com/opensource/idea), you can increase the chances of a new user or contributor finding out about the project and joining the community.
 
 If you're as excited about IntelliJ IDEA Community Edition as we are, you can show it by linking to us.
 Project logos and other assets are [also available](https://www.jetbrains.com/company/brand/logos/).
@@ -34,7 +34,7 @@ The more developers use IntelliJ IDEA, the more bugs will be caught, the more pl
 
 We're always looking for new articles about IntelliJ IDEA features as well as documentation for the IntelliJ Platform.
 You can write tutorials, how-tos, sample applications, or share your experience with the IntelliJ Platform.
-You can publish your documentation on a website or blog, or submit a [pull request](intellij-sdk-docs-original_CONTRIBUTING.md) to the SDK Docs.
+You can publish your documentation on a website/blog or submit a [pull request](intellij-sdk-docs-original_CONTRIBUTING.md) to the SDK Docs.
 
 ### Produce Screencasts
 
@@ -48,8 +48,8 @@ You can record a screencast about a particular feature or use case you discovere
 Bug reports take little time to file and are very helpful to developers.
 This is one of the easiest contributions you can make.
 When you discover a problem with the IDE or the platform, please report it.
-Make sure you provide information about your environment (available from <ui-path>About</ui-path> menu), steps to reproduce the issue, as well as a written description of the problem.
-You can file a bug in our [YouTrack issue tracker](https://youtrack.jetbrains.com/issues/IDEA).
+Make sure you provide information about your environment (available from the <ui-path>About</ui-path> menu), steps to reproduce the issue, as well as a written description of the problem.
+You can file a bug in our [YouTrack issue tracker](https://youtrack.jetbrains.com/issues/IJPL).
 Before submitting an issue, please search for already submitted ones describing the same problem — and if you find one, feel free to vote for it.
 
 ### Help Triage Existing Bug Reports
@@ -66,13 +66,13 @@ When writing a plugin, you have control over the code and don't need to sign the
 
 ### Submit a Patch
 
-If you would like to improve the code in the IntelliJ Platform or the core functionality of IntelliJ IDEA, you can submit a pull request to the [IntelliJ IDEA Community Edition repository on GitHub](https://github.com/JetBrains/intellij-community).
+If you would like to improve the code in the IntelliJ Platform or the core functionality of IntelliJ IDEA, you can submit a pull request to the [IntelliJ IDEA Community Edition repository on GitHub](%gh-ic%/README.md).
 When preparing the change, please make sure to follow the [](intellij_coding_guidelines.md).
 A developer will review your contribution and, if it meets the quality criteria and fits well with the rest of the code, you'll be notified about the acceptance of the patch.
 
-Looking for issues to work on? Issues marked with [#patch_welcome](https://youtrack.jetbrains.com/issues/IDEA?q=%23patch_welcome%20%23unresolved) tag are looking for external contributors.
+Looking for issues to work on? Issues marked with the [#patch_welcome](https://youtrack.jetbrains.com/issues/IDEA?q=%23patch_welcome%20%23unresolved) tag are looking for external contributors.
 
-Alternatively, you can attach a patch to the ticket in the [YouTrack bug database](https://youtrack.jetbrains.com/issues/IDEA).
+Alternatively, you can attach a patch to the ticket in the [YouTrack bug database](https://youtrack.jetbrains.com/issues/IJPL).
 You can either file a new issue with the patch attached or attach a patch to an issue submitted by another user.
 In this case, you will also need to sign the [JetBrains Contributor License Agreement (CLA)](https://www.jetbrains.com/agreements/cla/) to complete your contribution.
 

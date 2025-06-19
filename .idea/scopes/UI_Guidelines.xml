@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="UI Guidelines" pattern="file[intellij-sdk-docs]:topics/ui//*" />
+</component>

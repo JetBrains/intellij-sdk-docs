@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Themes - Editor Schemes and Background Images
 
@@ -66,7 +66,7 @@ For additional examples of `name` and `value` attributes, review the editor colo
 
 As [described above](#creating-a-custom-editor-scheme-using-settings), colors corresponding to the VCS status of files can be customized and exported via the [Settings](https://www.jetbrains.com/help/idea/file-status-highlights.html).
 No other procedure is necessary to customize these colors.
-In the exported color scheme file the `name` is the VCS file status, and the `value` is the new color corresponding to that status.
+In the exported color scheme file, the `name` is the VCS file status, and the `value` is the new color corresponding to that status.
 For example, customized VCS colors for a subset of file statuses will appear in the editor scheme file as:
 
 ```xml
@@ -82,7 +82,7 @@ For additional examples of `FILESTATUS` color `name` attributes, see the editor 
 
 ### Customizing Editor Scroll Bar Colors
 
-Editor scroll bar colors should be coordinated with, and switch together with an editor color scheme.
+Editor scroll bar colors should be coordinated with and switch together with an editor color scheme.
 Please note that custom theme (<path>*.theme.json</path>) files also contain `ScrollBar.*` name attributes, but these are for scroll bars outside the context of the editor.
 
 > The Editor Scroll Bar colors are the only editor scheme settings that cannot be customized and exported through IDE preferences.
@@ -112,7 +112,7 @@ Note that the following example snippet uses an eight-digit hexadecimal color `v
 A list of scroll bar `name` attributes is in the [High Contrast editor scheme](%gh-ic%/platform/platform-resources/src/themes/highContrastScheme.xml) file.
 These name attributes cannot be accessed from anywhere in the IDE UI at this time, so they must be manually added to an editor color scheme XML file.
 
-The following list explains the `usage` format of the `name` attribute, i.e. where a custom scroll bar color is applied:
+The following list explains the `usage` format of the `name` attribute, i.e., where a custom scroll bar color is applied:
 * `*.trackColor` - The scroll bar thumb moves across this area.
   At this time the vertical scrollbar track color and transparency cannot be customized.
 * `*.thumbColor` - The movable rectangle that corresponds to the visible content's size.
@@ -153,7 +153,7 @@ Users can do this manually in [Settings](https://www.jetbrains.com/help/idea/set
 Themes support specifying a background image as a key-value pair in the `"background": {}` (for editor and tools) and `"emptyFrameBackground": {}` (for empty frame) sections of a Theme description file:
 * The `image` key uses the file name of the image as the value.
 The background image is placed in the theme plugin project's <path>resources</path> folder.
-* The `transparency` key uses a `value` of 1-100.
+* The `transparency` key uses a `value` of 1–100.
 A `value` of 100 is opaque.
 * The `fill` key uses a value of `scale`, meaning to expand the image to fill the space as the window gets resized.
 * The `anchor` key uses a value of `center`, meaning to locate the center of the image in the center of the window.
@@ -182,6 +182,3 @@ The following example adds an image of the Austrian countryside to the _Theme Ba
 }
 ```
 
-> The `emptyFrameBackground` property is available starting with the 2020.2 release.
->
-{style="note"}

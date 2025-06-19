@@ -1,19 +1,19 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Frameworks
 
 <link-summary>Tutorial on implementing custom framework types.</link-summary>
 
-The following tutorial shows how to support a custom framework type for a project and make this framework type embedded in a [project wizard](project_wizard.md) as a UI component.
+The following tutorial shows how to support a custom framework type for a project and make this framework type embedded in a [project wizard](new_project_wizard.md) as a UI component.
 The examples in this tutorial rely heavily on the [framework_basics](%gh-sdk-samples-master%/framework_basics) code sample.
 
-> Note that this feature requires a [dependency](plugin_dependencies.md) on [the Java plugin](idea.md#java).
+> Note that this feature requires a [dependency](plugin_dependencies.md) on the [](idea.md#java-plugin).
 >
 {style="warning"}
 
 ## Creating a New Framework
 
-In oder to make a custom framework available and configurable for a project the [`FrameworkTypeEx`](%gh-ic%/java/idea-ui/src/com/intellij/framework/FrameworkTypeEx.java) class needs to be extended, in this example to make the [DemoFramework](%gh-sdk-samples-master%/framework_basics/src/main/java/org/intellij/sdk/framework/DemoFramework.java) class.
+In order to make a custom framework available and configurable for a project, the [`FrameworkTypeEx`](%gh-ic%/java/idea-ui/src/com/intellij/framework/FrameworkTypeEx.java) class needs to be extended, in this example to make the [DemoFramework](%gh-sdk-samples-master%/framework_basics/src/main/java/org/intellij/sdk/framework/DemoFramework.java) class.
 
 ```java
 final class DemoFramework extends FrameworkTypeEx {
@@ -22,7 +22,7 @@ final class DemoFramework extends FrameworkTypeEx {
 
 ## Registering Framework
 
-The newly created framework class should be registered as an extension point by adding `com.intellij.framework.type` extension in [`plugin.xml`](%gh-sdk-samples-master%/framework_basics/src/main/resources/META-INF/plugin.xml) configuration file:
+The newly created framework class should be registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.framework.type"/></include> in [`plugin.xml`](%gh-sdk-samples-master%/framework_basics/src/main/resources/META-INF/plugin.xml) configuration file:
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
@@ -115,6 +115,6 @@ public FrameworkSupportInModuleProvider createProvider() {
 
 See [Code Samples](code_samples.md) on how to set up and run the plugin.
 
-Extra option for configuring the newly created Demo custom framework should be available in the Project Wizard:
+An extra option for configuring the newly created Demo custom framework should be available in the Project Wizard:
 
 ![Custom Framework Support](custom_framework.png)

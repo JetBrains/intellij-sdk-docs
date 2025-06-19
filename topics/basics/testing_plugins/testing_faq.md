@@ -183,7 +183,7 @@ Use [`WaitFor`](%gh-ic%/platform/util/src/com/intellij/util/WaitFor.java).
 <primary-label ref="IntelliJIDEA"/>
 
 Plugins supporting a JVM language may require JDK and language standard library to be set up in a test project, so that classes like `java.lang.String` can be correctly resolved during tests.
-Tests extending [`LightJavaCodeInsightFixtureTestCase`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) use one of the mock JDKs distributed with the [IntelliJ Community project](https://github.com/JetBrains/intellij-community) sources (notice <path>java/mockJDK-\$JAVA_VERSION\$</path> directories).
+Tests extending [`LightJavaCodeInsightFixtureTestCase`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) use one of the mock JDKs in the [Java plugin](%gh-ic%/java) sources (notice <path>mockJDK-\$JAVA_VERSION\$</path> directories).
 These JAR files are not available in plugin project dependencies, so the IntelliJ Community sources must be checked out to the machine running the tests, and sources' location must be provided to the test framework.
 It's done by setting the `idea.home.path` system property to the absolute path of the checked-out sources in the `test` task configuration:
 
@@ -212,10 +212,10 @@ test {
 
 The default JDK version used by the test framework depends on the target platform version and is the latest supported version.
 The easiest way to change the JDK version to a custom one is by overriding `LightJavaCodeInsightFixtureTestCase.getProjectDescriptor()` and using one of the predefined project descriptors in `LightJavaCodeInsightFixtureTestCase`.
-If a project descriptor requires more customizations, its `getSdk()` method can use one of the [`IdeaTestUtil.getMockJdk*()`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/IdeaTestUtil.java) methods.
+If a project descriptor requires more customizations, its `getSdk()` method can use one of the [`IdeaTestUtil.getMockJdk*()`](%gh-ic%/java/testFramework/shared/src/com/intellij/testFramework/IdeaTestUtil.java) methods.
 
 Sometimes, testing a JVM language requires adding standard or other libraries to a test project.
-If a required library is available in the Maven repository, use [`MavenDependencyUtil`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/MavenDependencyUtil.java), e.g.:
+If a required library is available in the Maven repository, use [`MavenDependencyUtil`](%gh-ic%/java/testFramework/shared/src/com/intellij/testFramework/fixtures/MavenDependencyUtil.java), e.g.:
 
 ```java
 MavenDependencyUtil.addFromMaven(model,

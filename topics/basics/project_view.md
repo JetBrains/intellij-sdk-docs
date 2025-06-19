@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Project View
 
@@ -20,7 +20,8 @@ to Python Jupyter directories as location strings.
 
 To modify project view node representations, implement
 [`ProjectViewNodeDecorator`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/projectView/ProjectViewNodeDecorator.java)
-and register it as `com.intellij.projectViewNodeDecorator` extension.
+and register it in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.projectViewNodeDecorator"/></include>.
 From the interface only the `decorate()` method that modifies `ProjectViewNode`s needs to be implemented.
-If you need to update your node representation on certain events, please use
+
+To update the node representation on certain events, use
 [`ProjectView.refresh()`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/projectView/ProjectView.java).

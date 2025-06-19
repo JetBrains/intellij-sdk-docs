@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # UAST – Unified Abstract Syntax Tree
 
@@ -45,7 +45,7 @@ All these sub-interfaces provide methods to get the information about common syn
 
 ### PSI to UAST Conversion
 
-To obtain UAST for given `PsiElement` of one of supported languages, use [`UastFacade`](%gh-ic%/uast/uast-common/src/org/jetbrains/uast/UastContext.kt) class or [`UastContextKt.toUElement()`](%gh-ic%/uast/uast-common/src/org/jetbrains/uast/UastContext.kt):
+To obtain UAST for a given `PsiElement` of one of the supported languages, use [`UastFacade`](%gh-ic%/uast/uast-common/src/org/jetbrains/uast/UastContext.kt) class or [`UastContextKt.toUElement()`](%gh-ic%/uast/uast-common/src/org/jetbrains/uast/UastContext.kt):
 
 <tabs group="languages">
 <tab title="Java" group-key="java">
@@ -129,7 +129,7 @@ To convert `PsiElement` to the specific `UElement`, use one of the following app
   </tab>
   </tabs>
 
-> It is always better to convert to the specific type of `UElement`, rather than to convert without type and then cast to the specific type:
+> It is always better to convert to the specific type of `UElement`, rather than to convert without a type and then cast to the specific type:
 > * Because of performance: `toUElement()` with type is fail-fast
 > * Because of possibly getting different results in some cases: conversion with type is more predictable
 >
@@ -138,7 +138,7 @@ To convert `PsiElement` to the specific `UElement`, use one of the following app
 ### UAST to PSI Conversion
 
 Sometimes it's required to get from the `UElement` back to sources of the underlying language.
-For that purpose, `UElement#sourcePsi` property returns the corresponding `PsiElement` of the original language.
+For that purpose, the `UElement#sourcePsi` property returns the corresponding `PsiElement` of the original language.
 
 The `sourcePsi` is a "physical" `PsiElement`, and it is mostly used for getting text ranges in the original file (e.g., for highlighting).
 Avoid casting the `sourcePsi` to specific classes because it means falling back from the UAST abstraction to the language-specific PSI.
@@ -151,7 +151,7 @@ For instance, when calling `MethodReferencesSearch.search(PsiMethod)`, only Java
 other JVM languages thus provide a "fake" `PsiMethod` via `UMethod#javaPsi`.
 
 Note that `UElement#javaPsi` is physical for Java only.
-Thus `UElement#sourcePsi` should be used to obtain text-range or an anchor element for inspection warnings/gutter marker placement.
+Thus, `UElement#sourcePsi` should be used to obtain text-range or an anchor element for inspection warnings/gutter marker placement.
 
 In short:
 
@@ -166,7 +166,7 @@ In short:
  * should be used only as a representation of JVM-visible declarations: `PsiClass`, `PsiMethod`, `PsiField`
    for getting their names, types, parameters, etc., or to pass them to methods that accept Java-PSI declarations
  * not guaranteed to be physical: could not exist in sources
- * is not modifiable: calling modification methods could throw exceptions for non-Java languages
+ * not modifiable: calling modification methods could throw exceptions for non-Java languages
 
 Note: both `sourcePsi` and `javaPsi` can be [converted](#psi-to-uast-conversion) back to the `UElement`.
 
@@ -199,7 +199,7 @@ Instead, walk the `PsiFile` and convert each encountered matching element to `UM
 
 UAST is lazy when you pass visitors to `UElement.accept()` or getting `UElement#uastParent`.
 
-For really hard performance optimisation consider using `UastLanguagePlugin.getPossiblePsiSourceTypes()` to pre-filter `PsiElement`s before converting them to UAST.
+For really hard performance optimization consider using `UastLanguagePlugin.getPossiblePsiSourceTypes()` to pre-filter `PsiElement`s before converting them to UAST.
 
 ## UAST Caveats
 
@@ -218,19 +218,19 @@ Some `UElement`s implement `PsiElement`; for instance, `UMethod` implements `Psi
 It is strongly discouraged to use `UElement` as `PsiElement`, and Plugin DevKit provides a corresponding inspection (<control>Plugin DevKit | Code | UElement as PsiElement usage</control>).
 This _"implements"_ is considered deprecated and might be removed in the future.
 
-Also, there is `UElement#psi` property; it returns the same element as `javaPsi` or the `sourcePsi`.
+Also, there is the `UElement#psi` property; it returns the same element as `javaPsi` or the `sourcePsi`.
 As it is hard to guess what will be returned, it is also deprecated.
 
-Thus `sourcePsi` and `javaPsi` should be the only ways to obtain `PsiElement` from `UElement`. See the [corresponding section](#uast-to-psi-conversion).
+Thus, `sourcePsi` and `javaPsi` should be the only ways to obtain `PsiElement` from `UElement`. See the [corresponding section](#uast-to-psi-conversion).
 
 ### Using UAST or PSI
 
 UAST provides a unified way to represent JVM compatible declarations via `UMethod`, `UField`, `UClass`, and so on.
 But at the same time, all JVM language plugins implement `PsiMethod`, `PsiClass`, and so on to be compatible with Java.
-These implementations could be [obtained](#uast-to-psi-conversion) via `UElement#javaPsi` property.
+These implementations could be [obtained](#uast-to-psi-conversion) via the `UElement#javaPsi` property.
 
-So the question is: "What should I use to represent the Java-declaration in my code?".
-The answer is: We encourage using `PsiMethod`, `PsiClass` as common interfaces for Java-declarations regardless of the JVM language
+So the question is: "What should I use to represent the Java declaration in my code?".
+The answer is: We encourage using `PsiMethod`, `PsiClass` as common interfaces for Java declarations regardless of the JVM language
 and discourage exposing the UAST interfaces in the API.
 
 Note: for method bodies, there are no such alternatives, so exposing, for instance, the `UExpression` is not discouraged.
@@ -253,7 +253,7 @@ could be different, not only in the number of elements, but also in their order.
 
 ## Using UAST in Plugins
 
-To use UAST in your plugin, add a [dependency](plugin_dependencies.md) on bundled Java plugin (`com.intellij.java`).
+To use UAST in your plugin, add a [dependency](plugin_dependencies.md) on the bundled [](idea.md#java-plugin).
 
 ### Language Extensions
 
@@ -261,12 +261,12 @@ To register [extensions](plugin_extensions.md) applicable to UAST, specify `lang
 
 ### Inspecting UAST Tree
 
-To inspect UAST Tree, invoke [internal action](enabling_internal.md) <ui-path>Tools | Internal Actions | UAST | Dump UAST Tree (By Each PsiElement)</ui-path>.
+To inspect UAST Tree, invoke the [internal action](enabling_internal.md) <ui-path>Tools | Internal Actions | UAST | Dump UAST Tree (By Each PsiElement)</ui-path>.
 
 ### Inspections
 
-Use [`AbstractBaseUastLocalInspectionTool`](%gh-ic%/java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseUastLocalInspectionTool.java) as base class and specify `language="UAST"` in registration.
-If inspection targets only a subset of default types (`UFile`, `UClass`, `UField`, and `UMethod`), specify `UElement`s as hints in overloaded constructor to improve performance.
+Use [`AbstractBaseUastLocalInspectionTool`](%gh-ic%/java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseUastLocalInspectionTool.java) as the base class and specify `language="UAST"` in registration.
+If the inspection targets only a subset of default types (`UFile`, `UClass`, `UField`, and `UMethod`), specify `UElement`s as hints in the overloaded constructor to improve performance.
 
 Use [`ProblemsHolder.registerUProblem()`](%gh-ic%/java/java-analysis-api/src/com/intellij/codeInspection/problemHolderUtil.kt) extension functions for registering problems (2023.2).
 

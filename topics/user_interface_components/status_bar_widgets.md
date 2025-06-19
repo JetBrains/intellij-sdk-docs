@@ -59,7 +59,7 @@ Use one of the existing predefined widget appearance options:
   Widget with only a text.
 
   Example:
-  [`PositionPanel`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/PositionPanel.kt)
+  [`SkipWindowDeactivationEventsAction.StatusWidget`](%gh-ic%/platform/platform-impl/internal/src/com/intellij/internal/SkipWindowDeactivationEventsAction.kt)
 
 - `com.intellij.openapi.wm.StatusBarWidget.MultipleTextValuesPresentation`
 

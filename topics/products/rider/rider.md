@@ -34,7 +34,7 @@ The article is a good counterpoint to the ReSharper DevGuide content, which disc
 ## Including Custom Settings into a Plugin
 
 Rider plugins may introduce their own <path>.DotSettings</path> files with customized [ReSharper settings](https://www.jetbrains.com/help/resharper/Sharing_Configuration_Options.html).
-This is useful e.g. when a plugin brings its own file templates.
+This is useful e.g., when a plugin brings its own file templates.
 
 For the ReSharper part to pick these settings, the settings files should be available in the plugin JAR file under the path <path>dotnet/Extensions/\$backend-plugin-id\$/settings</path>, where `backend-plugin-id` is calculated according to the following rules:
 
@@ -63,15 +63,14 @@ And the following <path>plugin.xml</path> would require placing the file under <
 ## Open Source Rider Plugins
 
 It can be useful to refer to existing projects to help understand how to build plugins for Rider.
-The following list of plugins is all open source, and can demonstrate how to implement different functionality.
+The following list of plugins is all open source and can demonstrate how to implement different functionality.
 Please note that the list includes ReSharper plugins as well as Rider plugins.
 Since a lot of Rider's language features are shared with the ReSharper engine, and since the Rider SDK includes the ReSharper SDK, then it can be useful to look at ReSharper plugins too.
-Also note that these plugins might not be up-to-date with the current SDK.
+Also note that these plugins might not be up to date with the current SDK.
 
 * [Unity support for both ReSharper and Rider](https://github.com/JetBrains/resharper-unity)
 * [F# support in JetBrains Rider](https://github.com/JetBrains/fsharp-support)
 * [AgentMulder](https://github.com/ERNICommunity/AgentMulder/)
-* [ConfigureAwaitChecker](https://github.com/aelij/ConfigureAwaitChecker/)
 * [CognitiveComplexity](https://github.com/matkoch/resharper-cognitivecomplexity/)
 * [CyclomaticComplexity](https://github.com/JetBrains/resharper-cyclomatic-complexity/)
 * [Exceptional](https://github.com/CSharpAnalyzers/ExceptionalReSharper/)
@@ -79,7 +78,6 @@ Also note that these plugins might not be up-to-date with the current SDK.
 * [InternalsVisibleTo](https://github.com/hmemcpy/ReSharper.InternalsVisibleTo/)
 * [PresentationAssistant](https://github.com/JetBrains/resharper-presentation-assistant/)
 * [StyleCop](https://github.com/StyleCop/StyleCop.ReSharper/)
-* [TestLinker](https://github.com/matkoch/TestLinker/)
 * [Xao](https://github.com/hmemcpy/ReSharper.Xao/)
 * [Azure Toolkit for Rider](https://github.com/JetBrains/azure-tools-for-intellij)
 * [T4 language support for both ReSharper and Rider](https://github.com/JetBrains/ForTea)

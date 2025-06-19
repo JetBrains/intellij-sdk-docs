@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # List and Tree Controls
 
@@ -6,7 +6,9 @@
 
 ### `JBList` and `Tree`
 
-Whenever you would normally use a standard [Swing `JList`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JList.html) component, it's recommended to use the [`JBList`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/JBList.java) class as drop-in replacement. [`JBList`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/JBList.java) supports the following additional features on top of [`JList`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JList.html):
+Whenever you would normally use a standard [Swing `JList`](https://docs.oracle.com/en/java/javase/24/docs/api/java.desktop/javax/swing/JList.html) component,
+it's recommended to use the [`JBList`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/JBList.java) class as drop-in replacement.
+`JBList` supports the following additional features on top of `JList`:
 
 * Drawing a tooltip with complete text of an item if the item doesn't fit into the list box width.
 * Drawing a gray text message in the middle of the list box when it contains no items.
@@ -14,7 +16,8 @@ Whenever you would normally use a standard [Swing `JList`](https://docs.oracle.c
 * Drawing a busy icon in the top right corner of the list box to indicate that a background operation is being performed.
   This can be enabled by calling `setPaintBusy()`.
 
-Similarly, the [`Tree`](%gh-ic%/platform/platform-api/src/com/intellij/ui/treeStructure/Tree.java) class provides a replacement for the standard [`JTree`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JTree.html) class.
+Similarly, the [`Tree`](%gh-ic%/platform/platform-api/src/com/intellij/ui/treeStructure/Tree.java) class provides a replacement for the standard
+[Swing `JTree`](https://docs.oracle.com/en/java/javase/24/docs/api/java.desktop/javax/swing/JTree.html) class.
 In addition to the features of [`JBList`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/JBList.java), it supports wide selection painting (Mac style) and auto-scroll on drag & drop.
 
 ### `ColoredListCellRenderer` and `ColoredTreeCellRenderer`

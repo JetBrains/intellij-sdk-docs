@@ -13,7 +13,7 @@ The User Interface (UI) for these custom Settings can be added to the [IDE Setti
 Settings can [affect different levels](https://www.jetbrains.com/help/idea/configuring-project-and-ide-settings.html) of scope.
 This document describes adding custom Settings at the Project and Application (or Global, IDE) levels.
 
-> See [Settings Tutorial](settings_tutorial.md) for step-by-step instructions for creating a simple set of custom Settings.
+> See [](settings_tutorial.md) for step-by-step instructions for creating a simple set of custom Settings.
 >
 {style="note"}
 
@@ -143,7 +143,7 @@ Readers are encouraged to review the Javadoc comments for `Configurable`.
 Implementations must meet several requirements for constructors.
 * Application Settings implementations, declared using the [`applicationConfigurable` EP](#declaring-application-settings), must have a default constructor with no arguments.
 * Project Settings implementations, declared using the [`projectConfigurable` EP](#declaring-project-settings), must declare a constructor with a single argument of type [`Project`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/Project.java).
-* Beginning in 2020.2, constructor injection (other than for `Project`) is not allowed.
+* Constructor injection (other than for `Project`) is not allowed.
 
 For a `Configurable` implementation correctly declared using an EP, the implementation's constructor is not invoked by the IntelliJ Platform until a user chooses the corresponding Settings `displayName` in the Settings Dialog menu.
 
@@ -162,16 +162,16 @@ A few high-level points are reviewed here:
 * A `Configurable` instance's lifetime ends when <control>OK</control> or <control>Cancel</control> is selected in the Settings Dialog.
   An instance's `Configurable.disposeUIResources()` is called when the Settings Dialog is closing.
 
-To open Settings dialog or show specific `Configurable`, see [`ShowSettingsUtil`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/ShowSettingsUtil.java).
+To open the Settings dialog or show a specific `Configurable`, see [`ShowSettingsUtil`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/ShowSettingsUtil.java).
 
 #### `Configurable` Marker Interfaces
 
 Implementations based on `Configurable` can implement marker interfaces, which provide additional flexibility in the implementation.
 
 `Configurable.NoScroll`
-: Do not to add scroll bars to the form. By default, a plugin's Settings component is put into a scrollable pane.
+: Do not add scroll bars to the form. By default, a plugin's Settings component is put into a scrollable pane.
   However, a Settings panel can have a `JTree`, which requires its own `JScrollPane`.
-  So `NoScroll` interface should be used to remove the outer `JScrollPane`.
+  So the `NoScroll` interface should be used to remove the outer `JScrollPane`.
 
 `Configurable.NoMargin`
 : Do not add an empty border to the form. By default, an empty border is added for a plugin's Settings component.

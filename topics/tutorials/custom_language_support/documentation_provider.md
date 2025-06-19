@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 20. Documentation
 
@@ -77,7 +77,7 @@ Since the Simple Language only allows for one property per string,
 it would be nice if <emphasis>Quick Documentation</emphasis> worked no matter where your cursor was positioned in the string as long as the string contained a Simple property.
 Inside a Simple file, the situation is similar, and calling <ui-path>View | Quick Documentation</ui-path> only works when the cursor is positioned on the key.
 
-Refer to the [Addendum](#addendum) below, which explains how to improve on this situation by additionally overriding `getCustomDocumentationElement()` method.
+Refer to the [Addendum](#addendum) below, which explains how to improve on this situation by additionally overriding the `getCustomDocumentationElement()` method.
 
 ## Extract Documentation Comments from Key/Value Definitions
 
@@ -134,7 +134,7 @@ After implementing all the steps above, the IDE will show the rendered documenta
 
 We can provide implementations for additional functionality that comes with a `DocumentationProvider`.
 For instance, when simply hovering the mouse over the code, it also shows documentation after a short delay.
-It's not necessary that this popup shows the exact same information as when calling _Quick Documentation_, but for the purpose of this tutorial, we'll do just that.
+It's not necessary that this popup shows the exact same information as when calling <ui-path>View | Quick Documentation</ui-path>, but for this tutorial, we'll do just that.
 
 ```java
 ```
@@ -160,7 +160,7 @@ In other circumstances, you can override `getDocumentationElementForLookupItem()
 
 To be able to call <ui-path>View | Quick Documentation</ui-path> for Simple properties in all places of a Java string literal, two steps are required:
 
-1. The extension point needs to be changed from `lang.documentationProvider` to `documentationProvider` because only then
+1. The extension point needs to be changed from `com.intellij.lang.documentationProvider` to `com.intellij.documentationProvider` because only then
    the Simple DocumentationProvider is called for PSI elements with a different language.
 2. The `getCustomDocumentationElement()` method needs to be implemented to find the correct target PSI element for creating the documentation.
 

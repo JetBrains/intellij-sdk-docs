@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # WebStorm Plugin Development
 
@@ -71,7 +71,7 @@ To see how these attributes appear in a similar Gradle build script for PhpStorm
 ### plugin.xml
 
 The dependency on the WebStorm APIs must be declared in the <path>[plugin.xml](plugin_configuration_file.md)</path> file.
-As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) tags must declare `JavaScript`.
+As described in the [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) tags must declare `JavaScript`.
 
 Note that for WebStorm, the <path>plugin.xml</path> file must also declare a dependency on `com.intellij.modules.platform` because `JavaScript` is not recognized as a module.
 Otherwise, the plugin is assumed to be a [legacy plugin](plugin_compatibility.md#declaring-plugin-dependencies) and will not load in WebStorm.
@@ -85,7 +85,7 @@ Otherwise, the plugin is assumed to be a [legacy plugin](plugin_compatibility.md
 See [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-consumer).
 Test your plugin with any version of WebStorm you wish to support.
 
-### Javascript Test Framework
+### JavaScript Test Framework
 
 <primary-label ref="2020.3"/>
 
@@ -97,8 +97,7 @@ Alternatively, specify `com.jetbrains.intellij.javascript:javascript-test-framew
 
 When learning new plugin development, it is helpful to have some representative projects for reference:
 
-* [Vue.js](https://github.com/JetBrains/intellij-plugins/tree/master/vuejs)
+* [Vue.js](%gh-ij-plugins%/vuejs)
 * [JS Toolbox](https://github.com/andresdominguez/jsToolbox)
-* [Require.js](https://github.com/Fedott/WebStormRequireJsPlugin)
 * [deep-js-completion](https://github.com/klesun/deep-js-completion)
-* [Run Configuration for TypeScript](https://plugins.jetbrains.com/plugin/10841-run-configuration-for-typescript)
+* [Run Configuration for TypeScript](https://github.com/bluelovers/idea-run-typescript)

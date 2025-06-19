@@ -30,7 +30,8 @@ See [Persisting State of Components](persisting_state_of_components.md) for deta
 
 ### Subscribing to Events
 
-To subscribe to events, use a [listener](plugin_listeners.md) or create an [extension](plugin_extensions.md) for a dedicated extension point (for example, `com.intellij.editorFactoryListener`) if one exists for the event to subscribe to.
+To subscribe to events, use a [listener](plugin_listeners.md) or create an [extension](plugin_extensions.md) for a dedicated extension point
+(for example, <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editorFactoryListener"/></include>) if one exists for the event to subscribe to.
 
 ### Application Startup
 
@@ -66,7 +67,7 @@ To execute code when a project is being opened, use one of these two [extensions
 Implement `DumbAware` to indicate activity can run in a background thread (in parallel with other such tasks).
 
 `com.intellij.backgroundPostStartupActivity`
-: [`StartupActivity.Background`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) for execution with a 5-second delay in a background thread (2019.3 or later).
+: [`StartupActivity.Background`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) for execution with a 5-second delay in a background thread.
 
 Any long-running or CPU-intensive tasks should be made visible to users by using `ProgressManager.run(Task.Backgroundable)` (see [](background_processes.md)).
 Access to indexes must be wrapped with [`DumbService`](indexing_and_psi_stubs.md#dumb-mode), see also [](threading_model.md).

@@ -4,9 +4,17 @@
 
 <link-summary>Overview of the Version Control Integration API allowing to implement a custom Version Control System support.</link-summary>
 
-This page gives an overview of the Version Control Integration API.
+<tldr>
 
-Reference: [OSS plugins providing VCS](https://jb.gg/ipe?extensions=com.intellij.vcs)
+**Sample Plugins**: [OSS plugins providing VCS](https://jb.gg/ipe?extensions=com.intellij.vcs)
+
+**VCS Extension Points**: [](intellij_platform_extension_point_list.md#version-control)
+
+**Bundled VCS Plugins Extension Points**: [](intellij_community_plugins_extension_point_list.md#vcs-plugins)
+
+</tldr>
+
+This page gives an overview of the Version Control Integration API.
 
 ## Key Concepts
 
@@ -14,7 +22,7 @@ Reference: [OSS plugins providing VCS](https://jb.gg/ipe?extensions=com.intellij
 
 A [`FilePath`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/vcs/FilePath.java) represents a path to a file or directory on disk or in the VCS repository.
 Unlike a [virtual file](virtual_file.md), a `FilePath` can represent a path to a file which doesn't exist on disk.
-The main difference between a `FilePath` and a [`java.io.File`](https://docs.oracle.com/javase/8/docs/api/java/io/File.html) is that a `FilePath` caches the `VirtualFile` corresponding to the path, so it can be retrieved without doing a VFS search.
+The main difference between a `FilePath` and a [`java.io.File`](https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/io/File.html) is that a `FilePath` caches the `VirtualFile` corresponding to the path, so it can be retrieved without doing a VFS search.
 
 To create instances of `FilePath`, the [`VcsContextFactory`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/actions/VcsContextFactory.java) API is used.
 

@@ -33,6 +33,10 @@ val releasesList = mapOf(
   "plugin-verifier-version" to ReleaseInfo(
     type = ReleaseInfo.Type.GitHub,
     url = "https://api.github.com/repos/JetBrains/intellij-plugin-verifier/releases"
+  ),
+  "marketplace-zip-signer-version" to ReleaseInfo(
+    type = ReleaseInfo.Type.GitHub,
+    url = "https://api.github.com/repos/JetBrains/marketplace-zip-signer/releases"
   )
 )
 

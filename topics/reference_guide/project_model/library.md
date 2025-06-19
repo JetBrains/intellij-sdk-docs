@@ -20,15 +20,15 @@ The IntelliJ Platform supports three types of libraries:
 
 ### Module Library
 
-The library classes are visible only in this module and the library information is recorded in the module <path>.iml</path> file.
+The library classes are visible only in this module, and the library information is recorded in the module <path>.iml</path> file.
 
 ### Project Library
 
-The library classes are visible within the project and the library information is recorded under <path>.idea/libraries</path> directory or in the project <path>.ipr</path> file.
+The library classes are visible within the project, and the library information is recorded under the <path>.idea/libraries</path> directory or in the project <path>.ipr</path> file.
 
 ### Global Library
 
-The library information is recorded in the <path>applicationLibraries.xml</path> file in <path>\$USER_HOME\$/.IntelliJIdea/config/options</path> directory. Global libraries are similar to project libraries, but are visible for different projects.
+The library information is recorded in the <path>applicationLibraries.xml</path> file in <path>\$USER_HOME\$/.IntelliJIdea/config/options</path> directory. Global libraries are similar to project libraries but are visible for different projects.
 
 ## Working with Libraries
 
@@ -36,18 +36,47 @@ The library information is recorded in the <path>applicationLibraries.xml</path>
 
 Package [`com.intellij.openapi.roots.libraries`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/libraries) provides functionality for working with project libraries and JAR files.
 
-### Getting a List of Libraries a Module Depends On
+### Getting Module Dependency Libraries
 
 To get the list of libraries that a module depends on, use `OrderEnumerator.forEachLibrary` as follows.
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+val libraryNames = mutableListOf<String>()
+ModuleRootManager.getInstance(module).orderEntries()
+  .forEachLibrary {
+    libraryNames.addIfNotNull(it.name)
+    true
+  }
+Messages.showInfoMessage(
+  libraryNames.joinToString("\n"),
+  "Libraries in Module"
+)
+```
+
+</tab>
+<tab title="Java" group-key="java">
+
 ```java
 List<String> libraryNames = new ArrayList<>();
-ModuleRootManager.getInstance(module).orderEntries().forEachLibrary(library -> {
-  libraryNames.add(library.getName());
-  return true;
-});
-Messages.showInfoMessage(StringUtil.join(libraryNames, "\n"), "Libraries in Module");
+ModuleRootManager.getInstance(module).orderEntries()
+  .forEachLibrary(library -> {
+    String libraryName = library.getName();
+    if (libraryName != null) {
+      libraryNames.add(libraryName);
+    }
+    return true;
+  });
+Messages.showInfoMessage(
+  StringUtil.join(libraryNames, "\n"),
+  "Libraries in Module"
+);
 ```
+
+</tab>
+</tabs>
 
 This sample code outputs a list of libraries that the given module depends on.
 
@@ -59,26 +88,50 @@ Get the list of libraries in it via `LibraryTable.getLibraries()`.
 
 To get the list of all module libraries defined in a given module, use API from [`OrderEntryUtil`](%gh-ic%/platform/projectModel-impl/src/com/intellij/openapi/roots/impl/OrderEntryUtil.java):
 
-```java
-OrderEntryUtil.getModuleLibraries(ModuleRootManager.getInstance(module));
+```kotlin
+OrderEntryUtil.getModuleLibraries(ModuleRootManager.getInstance(module))
 ```
 
 ### Getting the Library Content
 
 [`Library`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/libraries/Library.java) provides the `getUrls()` method to get a list of source roots and classes the library includes.
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+val roots = StringBuilder()
+roots.appendLine("The ${lib.name} library includes:")
+roots.appendLine("Sources:")
+for (sourcesUrl in lib.getUrls(OrderRootType.SOURCES)) {
+  roots.appendLine(sourcesUrl)
+}
+roots.appendLine("Classes:")
+for (classesUrl in lib.getUrls(OrderRootType.CLASSES)) {
+  roots.appendLine(classesUrl)
+}
+Messages.showInfoMessage(roots.toString(), "Library Info")
+```
+
+</tab>
+<tab title="Java" group-key="java">
+
 ```java
-StringBuilder roots = new StringBuilder("The " + lib.getName() + " library includes:\n");
-roots.append("Sources:\n");
-for (String each : lib.getUrls(OrderRootType.SOURCES)) {
-  roots.append(each).append("\n");
+StringBuilder roots = new StringBuilder();
+roots.append("The " + lib.getName() + " library includes:\n");
+ roots.append("Sources:\n");
+for (String sourcesUrl : lib.getUrls(OrderRootType.SOURCES)) {
+  roots.append(sourcesUrl).append("\n");
 }
 roots.append("Classes:\n");
-for (String each : lib.getUrls(OrderRootType.CLASSES)) {
-  roots.append(each).append("\n");
+for (String classesUrl : lib.getUrls(OrderRootType.CLASSES)) {
+  roots.append(classesUrl).append("\n");
 }
 Messages.showInfoMessage(roots.toString(), "Library Info");
 ```
+
+</tab>
+</tabs>
 
 ### Creating a Library
 
@@ -87,14 +140,14 @@ An example of using these APIs can be found in the [project_model](%gh-sdk-sampl
 
 <procedure title="Library Creation Steps">
 
-* Get a [write action](threading_model.md#write-actions)
-* Get the library table add the library to. Use one of the following, depending on the library level:
+1. Get a [write action](threading_model.md#write-actions).
+2. Get the library table add the library to. Use one of the following, depending on the library level:
     * `LibraryTablesRegistrar.getInstance().getLibraryTable()`
     * `LibraryTablesRegistrar.getInstance().getLibraryTable(Project)`
     * `ModuleRootManager.getInstance(module).getModifiableModel().getModuleLibraryTable()`
-* Create the library by calling `LibraryTable.createLibrary()`
-* Add contents to the library (see below)
-* For a module-level library, commit the modifiable model returned by `ModuleRootManager.getInstance(module).getModifiableModel()`.
+3. Create the library by calling `LibraryTable.createLibrary()`.
+4. Add contents to the library (see below).
+5. For a module-level library, commit the modifiable model returned by `ModuleRootManager.getInstance(module).getModifiableModel()`.
 
 </procedure>
 
@@ -102,10 +155,10 @@ An example of using these APIs can be found in the [project_model](%gh-sdk-sampl
 
 <procedure title="Adding/Changing Library Roots">
 
-* Get a [write action](threading_model.md#write-actions)
-* Get a **modifiable model** for the library, using `Library.getModifiableModel()`
-* Use methods such as `Library.ModifiableModel.addRoot()` to perform the necessary changes
-* Commit the model using `Library.ModifiableModel.commit()`.
+1. Get a [write action](threading_model.md#write-actions).
+2. Get a **modifiable model** for the library, using `Library.getModifiableModel()`.
+3. Use methods such as `Library.ModifiableModel.addRoot()` to perform the necessary changes.
+4. Commit the model using `Library.ModifiableModel.commit()`.
 
 </procedure>
 
@@ -115,18 +168,18 @@ Use `ModuleRootModificationUtil.addDependency(Module, Library)` from under a [wr
 
 ### Checking Belonging to a Library
 
-The [`ProjectFileIndex`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) interface implements a number of methods that can used to check whether the specified file belongs to the project library classes or library sources.
+The [`ProjectFileIndex`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) interface implements a number of methods that can be used to check whether the specified file belongs to the project library classes or library sources.
 
 * To check if a specified virtual file is a compiled class file use
-  ```java
+  ```kotlin
     ProjectFileIndex.isLibraryClassFile(virtualFile)
   ```
 * To check if a specified virtual file or directory belongs to library classes use
-  ```java
+  ```kotlin
     ProjectFileIndex.isInLibraryClasses(virtualFileorDirectory)
   ```
 * To check if the specified virtual file or directory belongs to library sources use
-  ```java
+  ```kotlin
     ProjectFileIndex.isInLibrarySource(virtualFileorDirectory)
   ```
 
@@ -138,4 +191,4 @@ More details on libraries can be found in the [plugin_model](%gh-sdk-samples-mas
 
 [`AdditionalLibraryRootsProvider`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/AdditionalLibraryRootsProvider.java) registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.additionalLibraryRootsProvider"/></include> allows
 providing synthetic/predefined libraries ([`SyntheticLibrary`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/SyntheticLibrary.java)) in a project without exposing them in the model.
-By default, they're also hidden from UI.
+By default, they're also hidden from the UI.

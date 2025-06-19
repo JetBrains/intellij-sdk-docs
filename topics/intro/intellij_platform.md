@@ -9,7 +9,7 @@ It is used to power JetBrains products such as [IntelliJ IDEA](https://www.jetbr
 It is also Open Source and can be used by third parties to build IDEs, such as [Android Studio](https://developer.android.com/studio/index.html) from Google.
 
 The IntelliJ Platform provides all the infrastructure that these IDEs need to provide rich language tooling support.
-It is a component-driven, cross-platform JVM based application host with a high-level user interface toolkit for creating [tool windows](tool_windows.md), tree views, and lists (supporting fast search) as well as popup menus and [dialogs](dialog_wrapper.md).
+It is a component-driven, cross-platform JVM-based application host with a high-level user interface toolkit for creating [tool windows](tool_windows.md), tree views, and lists (supporting fast search) as well as popup menus and [dialogs](dialog_wrapper.md).
 
 The IntelliJ Platform has a full-text [editor](editors.md) with abstract implementations of [syntax highlighting](analyzing.md), [code folding](folding_builder.md), [code completion](code_completion.md), and other rich text [editing features](editing.md).
 An image editor is also included.
@@ -46,7 +46,7 @@ See the [](plugins_quick_start.md) for more details.
 The IntelliJ Platform is Open Source, under the [Apache License](%gh-ic%/LICENSE.txt), and [hosted on GitHub](https://github.com/JetBrains/intellij-community).
 
 While this guide refers to the IntelliJ Platform as a separate entity, there is no "IntelliJ Platform" GitHub repository.
-Instead, the platform is considered to be an almost complete overlap with the [IntelliJ IDEA Community Edition](idea.md), which is a free and Open Source version of IntelliJ IDEA Ultimate (the GitHub repository linked above is the [JetBrains/intellij-community](https://github.com/JetBrains/intellij-community) repository).
+Instead, the platform is considered to be an almost complete overlap with the [IntelliJ IDEA Community Edition](idea.md), which is a free and Open Source version of IntelliJ IDEA Ultimate (the GitHub repository linked above is the [JetBrains/intellij-community](%gh-ic%/README.md) repository).
 Please note: starting with the 2021.1 release, some plugins bundled with IntelliJ IDEA Community Edition are not open-source.
 
 The version of the IntelliJ Platform is defined by the version of the corresponding IntelliJ IDEA Community Edition release.
@@ -66,7 +66,6 @@ The following IDEs are based on the IntelliJ Platform:
 
 * [JetBrains](https://www.jetbrains.com) IDEs:
     * [AppCode](app_code.md)
-    * [Aqua](https://www.jetbrains.com/aqua/)
     * [CLion](clion.md)
     * [DataGrip](data_grip.md)
     * [DataSpell](https://www.jetbrains.com/dataspell/)
@@ -80,7 +79,6 @@ The following IDEs are based on the IntelliJ Platform:
     * [RustRover](https://www.jetbrains.com/rust/)
     * [WebStorm](webstorm.md)
 * [Android Studio](android_studio.md) IDE from Google
-* [Comma](https://commaide.com/) IDE for Raku (formerly known as Perl 6)
 * [Jmix Studio](https://www.jmix.io/tools/)
 
 ### Rider
@@ -91,8 +89,8 @@ It also integrates into the standard Find Usages and Search Everywhere UI and us
 
 However, Rider doesn't create a full [PSI](psi.md) (syntactic and semantic) model for C# files.
 Instead, it reuses [ReSharper](https://www.jetbrains.com/resharper/) to provide language functionality.
-All the C# PSI model, inspections, code rewritings, such as quick fixes, and refactorings are run out of the process, in a command-line version of ReSharper.
-This means that creating a plugin for Rider involves two parts - a plugin that lives in the IntelliJ "front end" to show user interface, and a plugin that lives in the ReSharper "back end" to analyze and work with the C# PSI.
+All the C# PSI models, inspections, code rewritings, such as quick fixes, and refactorings are run out of the process, in a command-line version of ReSharper.
+This means that creating a plugin for Rider involves two parts: a plugin that lives in the IntelliJ "front end" to show user interface, and a plugin that lives in the ReSharper "back end" to analyze and work with the C# PSI.
 
 Fortunately, many plugins can simply work with the ReSharper backend.
 Rider takes care of displaying the results of inspections and code completion, and many plugins can be implemented without requiring an IntelliJ UI component.

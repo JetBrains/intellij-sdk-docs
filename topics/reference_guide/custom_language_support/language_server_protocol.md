@@ -2,7 +2,7 @@
 
 # Language Server Protocol (LSP)
 
-<primary-label ref="CommercialIDEs"/>
+<primary-label ref="2023.2"/>
 
 <web-summary>
 Using Language Server Protocol (LSP) in IntelliJ-based IDEs to enhance development tools with language-specific features like code completion, documentation, and formatting.
@@ -26,13 +26,14 @@ Chris Simon shares the challenges faced and offers practical tips for aspiring L
 
 ## Supported IDEs
 
-<primary-label ref="2023.2"/>
-
-The integration with the Language Server Protocol is created as an extension to the *paid* IntelliJ-based IDEs.
-Therefore, plugins using Language Server integration are not available in Community releases of JetBrains products and Android Studio from Google.
+The integration with the Language Server Protocol is created as an extension to the commercial IntelliJ-based IDEs.
+Therefore, plugins using Language Server integration are not available in JetBrains products like
+[IntelliJ IDEA](idea.md) Community Edition and [Android Studio](android_studio.md) from Google.
 
 The LSP API is publicly available as part of the IntelliJ Platform in the following IDEs:
-IntelliJ IDEA Ultimate, WebStorm, PhpStorm, PyCharm Professional, DataSpell, RubyMine, CLion, Aqua, DataGrip, GoLand, Rider, and RustRover.
+IntelliJ IDEA Ultimate, WebStorm, PhpStorm, PyCharm Professional, DataSpell, RubyMine, CLion, DataGrip, GoLand, Rider, and RustRover.
+
+Since 2025.1, it is also supported in unified [PyCharm without Pro subscription](https://blog.jetbrains.com/pycharm/2025/04/unified-pycharm/).
 
 ## LSP Plugin Setup
 
@@ -172,7 +173,7 @@ As a reference, check out the [Prisma ORM](https://plugins.jetbrains.com/plugin/
 <procedure title="Minimal LSP Plugin Setup">
 
 1. Implement `LspServerSupportProvider` and within the `LspServerSupportProvider.fileOpened()` method, spin up the relevant LSP server descriptor, which can decide if the given file is supported by using the `LspServerDescriptor.isSupportedFile()` check method.
-2. [Register](plugin_extensions.md#declaring-extensions) it as a `com.intellij.platform.lsp.serverSupportProvider` [Extension Point (EP)](plugin_extension_points.md):
+2. [Register](plugin_extensions.md#declaring-extensions) it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.platform.lsp.serverSupportProvider"/></include>.
 3. Tell how to start the server by implementing `LspServerDescriptor.createCommandLine()`.
 
 ```kotlin

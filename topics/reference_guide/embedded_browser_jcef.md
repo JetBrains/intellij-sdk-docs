@@ -37,34 +37,6 @@ See [JavaFX and JCEF in the IntelliJ Platform](https://blog.jetbrains.com/platfo
 >
 {style="warning"}
 
-## Enabling JCEF
-
-<tabs>
-<tab title="2020.2 and later">
-
-JCEF is available and enabled by default since 2020.2.
-No additional actions are required.
-
-</tab>
-<tab title="Earlier versions">
-
-Using JCEF requires using a dedicated JetBrains Runtime and enabling JCEF in the IDE Registry.
-
-<procedure>
-
-1. Go to the [JetBrains Runtime releases list](https://github.com/JetBrains/JetBrainsRuntime/releases).
-2. Download "Binaries for launching IntelliJ IDEA" matching your operating system, e.g., <path>jbr_jcef-17.0.9-osx-x64-b1087.7.tar.gz</path> for macOS.
-3. Unpack the archive.
-4. Follow the steps described in the [IDEA Web Help](https://www.jetbrains.com/help/idea/2020.2/switching-boot-jdk.html) and choose the downloaded JBR.
-5. Invoke <ui-path>Help | Find Action...</ui-path>, type "Registry", and press enter to open the <control>Registry</control> dialog.
-6. Enable the `ide.browser.jcef.enabled` flag.
-7. Restart the IDE for changes to take effect.
-
-</procedure>
-
-</tab>
-</tabs>
-
 ## Using JCEF In a Plugin
 
 The core JCEF class exposed by IntelliJ Platform API is [`JBCefApp`](%gh-ic%/platform/ui.jcef/jcef/JBCefApp.java).
@@ -316,7 +288,6 @@ To open DevTools in a separate window, call `JBCefBrowser.openDevtools()`.
 - [Markdown preview panel](%gh-ic%/plugins/markdown/core/src/org/intellij/plugins/markdown/ui/preview/jcef/MarkdownJCEFHtmlPanel.kt)
 - [SVG Image Viewer](%gh-ic%/images/src/org/intellij/images/editor/impl/jcef/JCefImageViewer.kt)
 - [PDF Viewer](https://github.com/FirstTimeInForever/intellij-pdf-viewer) plugin
-- [CodeStream](https://github.com/TeamCodeStream/codestream) plugin
 - [Excalidraw Integration](https://github.com/bric3/excalidraw-jetbrains-plugin) plugin
 - [Creating IntelliJ plugin with WebView](https://medium.com/virtuslab/creating-intellij-plugin-with-webview-3b27c3f87aea) blog post
 

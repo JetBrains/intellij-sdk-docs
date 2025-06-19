@@ -21,28 +21,13 @@ Follow the rules for [progress indicators](progress_indicators.md).
 ## How to use
 
 ### Types
-<table style="none" border="false">
-  <tr>
-    <td width="378">
-      <img src="02 determinate_progress_bar.png" alt="Determinate progress bar"/>
-    </td>
-    <td>
-      <p>Use determinate progress bar, if the process duration is known.</p>
-    </td>
-  </tr>
-  <tr>
-    <td width="378">
-      <img src="03 indeterminate_progress_bar.png" alt="Indeterminate progress bar"/>
-    </td>
-    <td>
-      <p>Otherwise, use **indeterminate** progress bar.</p>
-    </td>
-  </tr>
-</table>
+Use determinate progress bar, if the process duration is known. Otherwise, use **indeterminate** progress bar:
+
+![](02 determinate_and_ indeterminate.png){width=706}
 
 If an indeterminate process reaches a point where its duration can be determined, switch to a determinate progress bar. For example:
 
-![](05 determinate_progress_bar.png){width=706}
+![](04 determinate_to_indeterminate.png){width=706}
 
 ### Process name and details
 
@@ -66,19 +51,23 @@ A progress bar can have a process name and process details. For wording, follow 
       <p>If the vertical space is limited, place the process name with a colon on the left.</p>
     </td>
   </tr>
-    <tr>
+  <tr>
      <td width="378">
          <img src="08 header_for_several_processes.png" alt="Header for several processes"/>
         </td>
         <td>
         <p>If there are several processes in a group, add a bold header. The header is a noun.</p>
      </td>
-    </tr>
+  </tr>
+  <tr>
+     <td width="378">
+         <img src="09 inline_processes.png" alt="Inline process"/>
+        </td>
+        <td>
+        <p>Do not show a process name for inline processes.</p>
+     </td>
+  </tr>
 </table>
-
-Do **not** show a process name for inline processes:
-
-![](09 inline_processes.png){width=706}
 
 #### Process details
 <table style="none" border="false">
@@ -116,7 +105,7 @@ Use a process name as a dialog header, capitalize the title and remove ellipsis.
 
 #### In status bar
 
-Place a process name under the progress bar in the Status bar:
+Place a process name with an ellipsis before the progress bar:
 
 ![](14 in_status_bar.png){width=706}
 
@@ -132,13 +121,16 @@ In case of success, show notification for the user-initiated tasks, in case of f
 
 ### Process control
 
+#### Cancel or Stop button
 Provide the Cancel button in the progress dialog if the process can be interrupted (see [Loading Project dialog](#in-dialog)).
 Use the Stop button if interrupting does not return the environment to its previous state.
 
-Use the Stop icon if there are several processes running at the same time in one dialog or there is not enough space for the button (e.g., [Status bar](#in-status-bar)):
+#### Stop icon
+Use the Stop icon when multiple processes are running simultaneously in one dialog or when there isn’t enough space to display individual buttons (e.g., [Status bar](#in-status-bar)):
 
 ![](16 process_control.png){width=706}
 
+#### Placement and Behavior
 <table style="none" border="false">
   <tr>
     <td width="378">
@@ -182,8 +174,11 @@ Use the Stop icon if there are several processes running at the same time in one
     </tr>
 </table>
 
+#### Pause Option Recommendations
+
 It is **not** recommended providing an option to pause the process. It is preferable that the process runs in the background and does not interfere with a user.
 
+#### Process Completion
 Hide the progress bar as soon as the process completes.
 
 ## Sizes and placement

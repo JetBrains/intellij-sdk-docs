@@ -79,6 +79,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.intellij.psi.xml.HtmlFileElementType.getHtmlStubVersion()` method removed
 : Use `com.intellij.xml.HtmlLanguageStubVersionUtil.getHtmlStubVersion()` instead.
 
+`com.intellij.diff.util.ThreeSide.map(Function)` method parameter type changed from `com.intellij.util.Function` to `kotlin.jvm.functions.Function1`
+: Use `kotlin.jvm.functions.Function1` as a parameter.
+
 ### Package Checker 2025.2
 
 `com.intellij.packageChecker.api.PackageDeclaration(Package)` method parameter type changed from `org.jetbrains.security.package.Package` to `com.intellij.packageChecker.model.Package`

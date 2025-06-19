@@ -12,7 +12,7 @@
 
 A progress bar informs users about the progress of a lengthy operation.
 
-![](determinate_example.png){width=308}
+![](01 progress_bar.png){width=706}
 
 ## When to use
 
@@ -21,75 +21,111 @@ Follow the rules for [progress indicators](progress_indicators.md).
 ## How to use
 
 ### Types
-
-Use **determinate** progress bar, if the process duration is known:
-
-![](determinate_example.png){width=308}
-
-Otherwise, use **indeterminate** progress bar:
-
-![](indeterminate_example.png){width=308}
+<table style="none" border="false">
+  <tr>
+    <td width="378">
+      <img src="02 determinate_progress_bar.png" alt="Determinate progress bar"/>
+    </td>
+    <td>
+      <p>Use determinate progress bar, if the process duration is known.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="378">
+      <img src="03 indeterminate_progress_bar.png" alt="Indeterminate progress bar"/>
+    </td>
+    <td>
+      <p>Otherwise, use **indeterminate** progress bar.</p>
+    </td>
+  </tr>
+</table>
 
 If an indeterminate process reaches a point where its duration can be determined, switch to a determinate progress bar. For example:
 
-![](progress_bar_indeterminate.png){width=308}
-
-![](progress_bar_determinate.png){width=308}
+![](05 determinate_progress_bar.png){width=706}
 
 ### Process name and details
 
 A progress bar can have a process name and process details. For wording, follow the rules for [progress text](progress_text.md).
 
 #### Process name
-
-Place a process name above the progress bar:
-
-![](label_above.png){width=308}
-
-If the vertical space is limited, place the process name with a colon on the left:
-
-![](progress_bar_label_left.png){width=308}
-
-If there are several processes in a group, add a bold header. The header is a noun.
-
-![](several_progresses.png){width=308}
+<table style="none" border="false">
+  <tr>
+    <td width="378">
+      <img src="06 process_name.png" alt="Process name above the bar"/>
+    </td>
+    <td>
+      <p>Place a process name above the progress bar.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="378">
+      <img src="07 process_name_on_the_left.png" alt="Process name on the left"/>
+    </td>
+    <td>
+      <p>If the vertical space is limited, place the process name with a colon on the left.</p>
+    </td>
+  </tr>
+    <tr>
+     <td width="378">
+         <img src="08 header_for_several_processes.png" alt="Header for several processes"/>
+        </td>
+        <td>
+        <p>If there are several processes in a group, add a bold header. The header is a noun.</p>
+     </td>
+    </tr>
+</table>
 
 Do **not** show a process name for inline processes:
 
-![](progress_bar_tool_window.png){width=605}
+![](09 inline_processes.png){width=706}
 
 #### Process details
-
-Place process details under the progress bar in one line:
-
-![](comment.png){width=308}
-
-The length of the comment is limited by the progress bar:
-
-![](comment_long.png){width=308}
-
-If space is limited, show percentage completed:
-
-![](horizontaly.png){width=342}
+<table style="none" border="false">
+  <tr>
+    <td width="378">
+      <img src="10 process_details.png" alt="Process details under the bar"/>
+    </td>
+    <td>
+      <p>Place process details under the progress bar in one line.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="378">
+      <img src="11 process_details.png" alt="Comment length limited by progress bar."/>
+    </td>
+    <td>
+      <p>The length of the comment is limited by the progress bar.</p>
+    </td>
+  </tr>
+    <tr>
+     <td width="378">
+         <img src="12 process_details.png" alt="Show percentage completed if space is limited"/>
+        </td>
+        <td>
+        <p>If space is limited, show percentage completed.</p>
+     </td>
+    </tr>
+</table>
 
 #### In dialog
 
 Use a process name as a dialog header, capitalize the title and remove ellipsis. Process details appear above the progress bar:
 
-![](dialog.png){width=544}
+![](13 in_dialog.png){width=706}
 
 #### In status bar
 
 Place a process name under the progress bar in the Status bar:
 
-![](status_bar.png){width=238}
+![](14 in_status_bar.png){width=706}
 
 ### Process status
 
 If a process consists of substeps that can fail but do not terminate the process, then use green and red colors to show the intermediate status.
 For example, show the status of the running tests:
 
-![](progress_color.png){width=390}
+![](15 process_status.png){width=706}
 
 Do **not** color progress bar to show the final result of the task, use [notifications](notification_types.md).
 In case of success, show notification for the user-initiated tasks, in case of failure — for all tasks.
@@ -101,23 +137,52 @@ Use the Stop button if interrupting does not return the environment to its previ
 
 Use the Stop icon if there are several processes running at the same time in one dialog or there is not enough space for the button (e.g., [Status bar](#in-status-bar)):
 
-![](tasks_dialog.png){width=700}
+![](16 process_control.png){width=706}
 
-Always place the Stop icon on the right next to the progress bar. On hover over the Stop icon, show the "Stop" or "Cancel" comment under the progress bar instead of process details:
-
-![](hover_stop_icon.png){width=332}
-
-If the process takes a long time and can prevent the user from performing tasks, provide an option to pause a process using the Pause button or the Pause icon.
-Replace process details with the "Pause" comment on hover over the Pause icon:
-
-![](pause.png){width=331}
+<table style="none" border="false">
+  <tr>
+    <td width="378">
+      <img src="17 stop_button.png" alt="Stop icon on the progress bar"/>
+    </td>
+    <td>
+      <p>Always place the Stop icon on the right next to the progress bar. On hover over the Stop icon, show the "Stop" or "Cancel" comment under the progress bar instead of process details.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="378">
+      <img src="17 pause_button.png" alt="Pause button on the progress bar"/>
+    </td>
+    <td>
+      <p>If the process takes a long time and can prevent the user from performing tasks, provide an option to pause a process using the Pause button or the Pause icon.</p>
+    </td>
+  </tr>
+    <tr>
+     <td width="378">
+         <img src="18 pause_button.png" alt="Pause under the progress bar with hover effect"/>
+        </td>
+        <td>
+        <p>Replace process details with the "Pause" comment on hover over the Pause icon.</p>
+     </td>
+    </tr>
+    <tr>
+     <td width="378">
+         <img src="19 resume_button.png" alt="Resume button on the progress bar"/>
+        </td>
+        <td>
+        <p>If a user pauses the process, show "Paused" under the progress bar. Replace the Pause icon with Resume.</p>
+     </td>
+    </tr>
+    <tr>
+     <td width="378">
+         <img src="20 resume_button.png" alt="Resume under the progress bar with hover effect."/>
+        </td>
+        <td>
+        <p>Show "Resume" under the progress bar and when hovered over the Resume button.</p>
+     </td>
+    </tr>
+</table>
 
 It is **not** recommended providing an option to pause the process. It is preferable that the process runs in the background and does not interfere with a user.
-
-If a user pauses the process, show "Paused" under the progress bar.
-Replace the Pause icon with Resume, show "Resume" under the progress bar and when hovered over the Resume button:
-
-![](resume.png){width=330}
 
 Hide the progress bar as soon as the process completes.
 
@@ -125,8 +190,9 @@ Hide the progress bar as soon as the process completes.
 
 The progress form and sizes are the same in all themes.
 
-![](progress_bar_sizes.png){width=586}
+![](21 size_and_placement.png){width=706}
 
+![](22 size_and_placement.png){width=706}
 
 
 

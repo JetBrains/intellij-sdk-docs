@@ -137,6 +137,14 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `org.jetbrains.vuejs.lang.expr.VueJSLanguage.Companion` class removed
 : Use `org.jetbrains.vuejs.lang.expr.VueJSLanguage` instead.
 
+### Kubernetes Plugin 2025.2
+
+`com.intellij.kubernetes.api.KubernetesApiProvider.getInstance(Project)` method return type changed from `com.intellij.kubernetes.api.KubernetesApiProvider` to `com.intellij.kubernetes.api.KubernetesApiProviderInterface`
+: Update code usages.
+
+`com.intellij.kubernetes.api.KubernetesApiProvider.State`class renamed to `com.intellij.kubernetes.api.KubernetesApiProviderInterface.KubeconfigState`
+: Update code usages.
+
 ## 2025.1
 
 ### IntelliJ Platform 2025.1

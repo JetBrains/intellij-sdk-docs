@@ -134,6 +134,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.intellij.lang.javascript.JSStubElementTypes.EMBEDDED_CONTENT` field type changed from `com.intellij.psi.tree.IElementType` to `com.intellij.lang.javascript.psi.JSElementType`
 : Recompile code usages.
 
+`org.jetbrains.vuejs.lang.expr.VueJSLanguage.Companion` class removed
+: Use `org.jetbrains.vuejs.lang.expr.VueJSLanguage` instead.
+
 ## 2025.1
 
 ### IntelliJ Platform 2025.1

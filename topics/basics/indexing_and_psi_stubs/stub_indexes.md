@@ -48,12 +48,12 @@ The following steps need to be performed only once for each language that suppor
 
 For each element type that needs to be stored in the stub tree, perform the following steps:
 
-1. Define an interface for the stub, derived from the [`StubElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/stubs/StubElement.java) interface ([example](%gh-ic%/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/psi/PropertyStub.java)).
-2. Provide an implementation for the interface ([`example`](%gh-ic%/plugins/properties/properties-common/src/com/intellij/lang/properties/psi/impl/PropertyStubImpl.java)).
-3. Make sure the interface for the PSI element extends [`StubBasedPsiElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/StubBasedPsiElement.java) parameterized by the type of the stub interface ([example](%gh-ic%/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/psi/Property.java)).
-4. Make sure the implementation class for the PSI element extends [`StubBasedPsiElementBase`](%gh-ic%/platform/core-impl/src/com/intellij/extapi/psi/StubBasedPsiElementBase.java) parameterized by the type of the stub interface ([`example`](%gh-ic%/plugins/properties/properties-common/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java)).
+1. Define an interface for the stub, derived from the [`StubElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/stubs/StubElement.java) interface ([example](%gh-ic-251-master%/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/psi/PropertyStub.java)).
+2. Provide an implementation for the interface ([`example`](%gh-ic-master%/plugins/properties/properties-common/src/com/intellij/lang/properties/psi/impl/PropertyStubImpl.java)).
+3. Make sure the interface for the PSI element extends [`StubBasedPsiElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/StubBasedPsiElement.java) parameterized by the type of the stub interface ([example](%gh-ic-251-master%/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/psi/Property.java)).
+4. Make sure the implementation class for the PSI element extends [`StubBasedPsiElementBase`](%gh-ic%/platform/core-impl/src/com/intellij/extapi/psi/StubBasedPsiElementBase.java) parameterized by the type of the stub interface ([`example`](%gh-ic-251-master%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java)).
    Provide both a constructor that accepts an `ASTNode` and a constructor that accepts a stub.
-5. Create a class that implements [`IStubElementType`](%gh-ic%/platform/core-api/src/com/intellij/psi/stubs/IStubElementType.java) and is parameterized with the stub interface and the actual PSI element interface ([example](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertyStubElementType.java)).
+5. Create a class that implements [`IStubElementType`](%gh-ic%/platform/core-api/src/com/intellij/psi/stubs/IStubElementType.java) and is parameterized with the stub interface and the actual PSI element interface ([example](%gh-ic-251-master%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertyStubElementType.java)).
    Implement the `createPsi()` and `createStub()` methods for creating PSI from a stub and vice versa.
    Implement the `serialize()` and `deserialize()` methods for storing the data in a binary stream.
 

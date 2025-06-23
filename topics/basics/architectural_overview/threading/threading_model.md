@@ -518,7 +518,7 @@ The following table presents methods providing useful modality states to be pass
 
 ## Read Action Cancellability
 
-BGT shouldn't hold read locks for a long time.
+BGT shouldn't hold [read locks](#read-actions) for a long time.
 The reason is that if EDT needs a write action (for example, the user types something in the editor), it must be acquired as soon as possible.
 Otherwise, the UI will freeze until all BGTs have released their read actions.
 The following diagram presents this problem:
@@ -572,6 +572,10 @@ The total execution time of the read action will be longer due to multiple attem
 
 The canceling approach is widely used in various areas of the IntelliJ Platform: editor highlighting, code completion, "go to class/file/…" actions all work like this.
 Read the [](background_processes.md) section for more details.
+
+> Note that APIs mentioned in [Read Actions API](#read-actions-api) (except suspending `readAction()`) are not cancellable.
+>
+{style="warning"}
 
 ### Cancellable Read Actions API
 

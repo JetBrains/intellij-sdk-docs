@@ -16,6 +16,7 @@
 
   <var name="gh-ic" value="https://github.com/JetBrains/intellij-community/tree/idea/%ijPlatformBuild%"/>
   <var name="gh-ic-master" value="https://github.com/JetBrains/intellij-community/tree/master"/>
+  <var name="gh-ic-251-master" value="https://github.com/JetBrains/intellij-community/tree/251"/>
   <var name="gh-ic-242-master" value="https://github.com/JetBrains/intellij-community/tree/242"/>
   <var name="gh-ic-223-master" value="https://github.com/JetBrains/intellij-community/tree/223"/>
 

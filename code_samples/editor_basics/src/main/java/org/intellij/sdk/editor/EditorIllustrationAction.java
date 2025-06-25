@@ -24,7 +24,7 @@ public class EditorIllustrationAction extends AnAction {
   }
 
   /**
-   * Replaces the run of text selected by the primary caret with a fixed string.
+   * Replaces a text selected by the primary caret with a fixed string.
    *
    * @param e Event related to this action
    */
@@ -65,7 +65,7 @@ public class EditorIllustrationAction extends AnAction {
     // Get required data keys
     final Project project = e.getProject();
     final Editor editor = e.getData(CommonDataKeys.EDITOR);
-    // Set visibility and enable only in case of existing project and editor and if a selection exists
+    // Set visibility and enable only in case of an existing project and editor and if a selection exists
     e.getPresentation().setEnabledAndVisible(
         project != null && editor != null && editor.getSelectionModel().hasSelection()
     );

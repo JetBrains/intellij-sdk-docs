@@ -1,4 +1,4 @@
-// Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 
 package org.intellij.sdk.editor;
 
@@ -32,8 +32,10 @@ public class EditorIllustrationAction extends AnAction {
   public void actionPerformed(@NotNull final AnActionEvent e) {
     // Get all the required data from data keys
     // Editor and Project were verified in update(), so they are not null.
-    final Editor editor = e.getRequiredData(CommonDataKeys.EDITOR);
-    final Project project = e.getRequiredData(CommonDataKeys.PROJECT);
+    final Editor editor = e.getData(CommonDataKeys.EDITOR);
+    if (editor == null) return;
+    final Project project = e.getData(CommonDataKeys.PROJECT);
+    if (project == null) return;
     final Document document = editor.getDocument();
     // Work off of the primary caret to get the selection info
     Caret primaryCaret = editor.getCaretModel().getPrimaryCaret();

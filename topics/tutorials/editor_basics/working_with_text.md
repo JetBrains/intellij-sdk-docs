@@ -131,8 +131,10 @@ public class EditorIllustrationAction extends AnAction {
   @Override
   public void actionPerformed(@NotNull AnActionEvent event) {
     // Get all the required data from data keys
-    Editor editor = event.getRequiredData(CommonDataKeys.EDITOR);
-    Project project = event.getRequiredData(CommonDataKeys.PROJECT);
+    Editor editor = event.getData(CommonDataKeys.EDITOR);
+    if (editor == null) return;
+    Project project = event.getData(CommonDataKeys.PROJECT);
+    if (project == null) return;
     Document document = editor.getDocument();
 
     // Work off of the primary caret to get the selection info

@@ -93,7 +93,8 @@ To clone the caret requires only calling the `EditorActionHandler.execute()` met
 public class EditorHandlerIllustration extends AnAction {
   @Override
   public void actionPerformed(@NotNull AnActionEvent event) {
-    Editor editor = event.getRequiredData(CommonDataKeys.EDITOR);
+    Editor editor = event.getData(CommonDataKeys.EDITOR);
+    if (editor == null) return;
     EditorActionManager actionManager = EditorActionManager.getInstance();
     EditorActionHandler actionHandler =
         actionManager.getActionHandler(IdeActions.ACTION_EDITOR_CLONE_CARET_BELOW);

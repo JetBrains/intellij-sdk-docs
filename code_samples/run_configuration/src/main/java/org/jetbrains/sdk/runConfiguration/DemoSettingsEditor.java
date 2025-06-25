@@ -16,8 +16,8 @@ public class DemoSettingsEditor extends SettingsEditor<DemoRunConfiguration> {
 
   public DemoSettingsEditor() {
     scriptPathField = new TextFieldWithBrowseButton();
-    scriptPathField.addBrowseFolderListener("Select Script File", null, null,
-        FileChooserDescriptorFactory.createSingleFileDescriptor());
+    scriptPathField.addBrowseFolderListener(null,
+        FileChooserDescriptorFactory.createSingleFileDescriptor().withTitle("Select Script File"));
     myPanel = FormBuilder.createFormBuilder()
         .addLabeledComponent("Script file", scriptPathField)
         .getPanel();

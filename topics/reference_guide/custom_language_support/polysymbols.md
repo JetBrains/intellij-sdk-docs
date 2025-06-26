@@ -17,8 +17,8 @@ Poly Symbols framework provides a layer over Symbol API, which facilitates Symbo
 
 Poly Symbols is a framework built on top of the platform's [Symbol API](symbols.md). It provides a generic layer,
 which allows sharing of Symbols between different languages and technologies. It also reduces work needed to
-implement a new language or framework support with [Symbol API](symbols.md). In many cases only reference providers
-and code completion providers need to be implemented on the platform side and symbol contributors on the Poly Symbol framework side.
+implement a new language or framework support with [Symbol API](symbols.md). In many cases only declarations,
+references, and code completion providers need to be implemented on the platform side and symbol contributors on the Poly Symbol framework side.
 After that most of the aspects of support based on reference resolution,
 like find usages, documentation, or rename refactoring, will work out-of-the-box.
 

@@ -82,6 +82,27 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.intellij.diff.util.ThreeSide.map(Function)` method parameter type changed from `com.intellij.util.Function` to `kotlin.jvm.functions.Function1`
 : Use `kotlin.jvm.functions.Function1` as a parameter.
 
+The experimental `com.intellij.webSymbols` package together with all the classes and extension points has been renamed to `com.intellij.polySymbols`.
+: The classes were renamed using pattern `WebSymbol[s]?(.*)` -> `PolySymbol$1`. Some classes have also been moved
+to more specific packages.
+: From other notable changes:
+1. `PolySymbol` interface no longer extends `PolySymbolScope`
+2. `PolySymbol` interface no longer contains documentation-specific properties (`description`, `docUrl`, `sections` and `defaultValue`),
+   instead `getDocumentationTarget` method should be overridden and the new `PolySymbolDocumentationTarget.create` method
+   used to lazily build documentation for the symbol
+3. `PolySymbol` no longer has `abstract`, `required` and `virtual` properties. They've been replaced by a more
+   generic `modifiers` property
+4. `PolySymbol` no longer has `properties` property, which returned a map of properties. It's been replaced by
+   `get` method, which should return value for the requested property.
+5. `PolySymbol` no longer has `attributeValue` property, instead `get` method should be overridden to return
+   the value for `com.intellij.polySymbols.html.PROP_HTML_ATTRIBUTE_VALUE` property
+6. The `WebSymbolsQueryConfigurator$getScope` has been removed and replaced with a pattern-based `PolySymbolQueryScopeContributor` API
+7. The `PolySymbolDelegate` and `PsiSourcePolySymbolDelegate` are interfaces now
+8. All APIs have been refactored to use `PolySymbolQualifiedKind` instead of separate parameters `namespace` and `kind`
+9. Builder patterns have been introduced in various classes, like `PolySymbolQueryExecutor`, `PolySymbolQueryParams`, or `PolySymbolDocumentation`
+   instead of now removed Kotlin methods with default parameters.
+: Please note that the module is under active development and further major API changes are to be expected in the upcoming releases.
+
 ### Package Checker 2025.2
 
 `com.intellij.packageChecker.api.PackageDeclaration(Package)` method parameter type changed from `org.jetbrains.security.package.Package` to `com.intellij.packageChecker.model.Package`

@@ -362,7 +362,7 @@ All scopes provided by
 together with the list of additional scopes passed as arguments to the query create an initial query stack.
 Each time a symbol is matched, the list returned by `queryScope` property is added to the stack for any subsequent matches further right the pattern.
 
-## Declarations, References, and Code Completion
+## Declarations
 
 To provide locations of declarations of Poly Symbols, which are not
 [`PsiSourcedPolySymbol`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/search/PsiSourcedPolySymbol.kt)s,
@@ -374,6 +374,11 @@ It should return a list of
 in a particular `PsiElement` at a particular offset.
 Symbols may implement the `PolySymbolDeclaredInPsi`
 interface to avoid boilerplate related to declaration building.
+
+## References and Code Completion
+
+Usually, it is enough to provide a `PolySymbolQueryScopeContributor` for the [supported language features](polysymbols_integration.md#supported-language-features).
+However, when implementing integration for a language feature, reference providers and code completions need to be implemented from scratch.
 
 To provide references, a
 [`PsiPolySymbolReferenceProvider`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/references/PsiPolySymbolReferenceProvider.kt)

@@ -5,15 +5,64 @@
 
 <link-summary>How to integrate your Poly Symbols with a particular language feature.</link-summary>
 
-IDEs provide built-in support for Poly Symbols integration with main language features of HTML, CSS, and JavaScript.
-Contribution of static symbols can be achieved through Web Types or Custom Elements Manifest,
-or by creating and registering a [`PolySymbolQueryConfigurator`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt) extension.
+IDEs provide built-in support for Poly Symbols integration with the main language features of HTML, CSS, JavaScript, and TypeScript.
+Contribution of static symbols can be achieved through Web Types or Custom Elements Manifest.
+The dynamic symbols, as a result of source code analysis, should be contributed through `PolySymbolQueryScopeContributor`.
 
-The implementation of [`PolySymbolQueryConfigurator`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt) requires overriding `getScope()`.
-This process involves the creation of a `PolySymbolScope` list,
-depending on the provided `PsiElement` (`element` parameter) and `PolyContext` (`context` parameter).
-The following list of supported language features outlines the types of `PsiElement`s that can be expected
-for each supported language feature.
+The concept of contributing symbols is similar to how code completion works.
+Platform runs multiple code completion contributors to build a list of available items for a particular place in the code.
+Later on,the list is displayed to the user.
+Query executor, on the other hand, uses a list of contributed
+`PolySymbolScope`s at a given location to either list all available symbols,
+get code completions, or match a name against the list of available symbols.
+
+The implementations should register query scope providers by calling the `registrar` parameter
+methods. The registrar works as a builder, but each call creates a new instance, so you can reuse
+build stages, e.g.:
+
+```kotlin
+registrar
+  .inFile(AstroFileImpl::class.java)
+  .inContext { it.framework == AstroFramework.ID }
+  .apply {
+    // Default scopes
+    forAnyPsiLocationInFile()
+      .contributeScopeProvider {
+        mutableListOf(AstroFrontmatterScope(it.containingFile as AstroFile),
+                      AstroAvailableComponentsScope(it.project))
+      }
+
+    // AstroStyleDefineVarsScope
+    forPsiLocation(CssElement::class.java)
+      .contributeScopeProvider { location ->
+        location.parentOfType<XmlTag>()
+          ?.takeIf { StringUtil.equalsIgnoreCase(it.name, HtmlUtil.STYLE_TAG_NAME) }
+          ?.let { listOf(AstroStyleDefineVarsScope(it)) }
+        ?: emptyList()
+      }
+  }
+```
+
+The order in which the builder methods are called does not affect the final performance.
+Framework reorders conditions in the best way to efficiently match contributors with locations in the code.
+
+### A symbol referencing pattern
+
+A common pattern for contributing symbols is to use a reference pattern to map from one kind of symbols to
+the other. Let's say that we can produce a list of symbols representing message bundle file property keys.
+Such symbols could have a qualified kind named: `message-bundle/properties`. Let's say that
+these message bundle properties can be used as string literal parameters to some Java method calls.
+A scope contributor would provide a scope containing all the `properties` symbols
+and a symbol with a reference pattern, which would map from `message-bundle/properties`
+to the ` java/string-literals ` kind.
+A convenient way of defining such a symbol is to use the `ReferencingPolySymbol` class.
+
+As a result, we can say that in a particular place in the code, all provided message bundle properties
+should be treated as possible string literal values.
+Such an approach allows symbol contributors to
+abstract from the actual implementation details of registering
+completion providers or reference providers in a particular language
+and focus on building the symbol model.
 
 ## Supported Language Features
 
@@ -28,14 +77,14 @@ for each supported language feature.
 
 Poly Symbols representing available HTML elements.
 HTML element symbols can be contributed statically or dynamically (through
-[`PolySymbolQueryConfigurator`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)).
+[`PolySymbolQueryScopeContributor`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryScopeContributor.kt)).
 The statically contributed symbols are available globally, depending on the context setting of the contributing Web Types file.
 
-For dynamic contributions, the `PolySymbolQueryConfigurator.getScope()`'s `element` parameter can be:
+For dynamic contributions, the contributors should be registered with the following `PsiElement` classes:
 - [`HtmlTag`](%gh-ic%/xml/xml-psi-api/src/com/intellij/psi/html/HtmlTag.java) - Poly Symbols should represent available HTML elements. The HTML tag's actual name should not be taken into account when building the scope.
 - `CssElement` - Poly Symbols should represent available HTML elements within a particular CSS file.
 
-The matched Poly Symbol is taken as a scope for matching HTML attributes of the tag.
+The matched Poly Symbol tag is taken as a scope for matching HTML attributes of the tag.
 
 #### Attributes
 {#html-attributes}
@@ -45,18 +94,30 @@ The matched Poly Symbol is taken as a scope for matching HTML attributes of the 
 **Kind**: `attributes`
 
 Poly Symbols representing available HTML attributes.
-HTML attribute symbols can be contributed statically or dynamically (through [`PolySymbolQueryConfigurator`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)).
+HTML attribute symbols can be contributed statically or dynamically (through [`PolySymbolQueryScopeContributor`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryScopeContributor.kt)).
 The statically contributed symbols are available globally, depending on the context setting of the contributing Web Types file.
 If the containing tag is matched to a Poly Symbol, it is added to the scope for attribute matching.
 
-For dynamic contributions, the `PolySymbolQueryConfigurator.getScope()`'s `element` parameter can be:
+For dynamic contributions, the contributors should be registered with the following `PsiElement` classes:
 - [`XmlAttribute`](%gh-ic%/xml/xml-psi-api/src/com/intellij/psi/xml/XmlAttribute.java) - Poly Symbols should represent available HTML attributes for matching. The HTML attribute actual name should not be taken into account when building the scope. However, the parent HTML tag and other attributes can be taken into account when building the scope.
 - [`HtmlTag`](%gh-ic%/xml/xml-psi-api/src/com/intellij/psi/html/HtmlTag.java) - Poly Symbols should represent available HTML attributes for matching. The HTML tag and other attributes can be taken into account when building the scope.
 
-Dedicated support for `PolySymbol` interface properties:
-- `required` - if `true`, a warning will be shown if the attribute is missing. Does not apply to `virtual` attributes.
-- `default` - the default value of the attribute, if `attributeValue.default` is `null`.
-- `attributeValue` - provides information about the attribute value, see [`attributeValue`](polysymbols_implementation.md#html-support) reference.
+Dedicated support for `PolySymbol` modifiers:
+
+- `required` - if present, a warning will be shown if the attribute is missing. Does not apply to `virtual` attributes.
+- `optional` - during `PolySymbolMatch` modifiers merge, only one of `required` and `optional` modifiers will be present in the final set.
+  The `optional` modifier may be used to force attribute to be not `required`
+- `virtual` - specifies virtual attributes used by web frameworks. Usually they are used during template compilation
+  and missing from the final DOM
+
+Dedicated support for `PolySymbol` `get` properties:
+
+- `PROP_HTML_ATTRIBUTE_VALUE` - A special property to support symbols representing HTML attributes.
+  It can specify the kind (`plain`, `expression`, `no-value`), type (`boolean`, `number`, `string`, `enum`, `complex`, `of-match`),
+  whether an attribute value is required, a default value, and the result type of value expression in the appropriate language.
+  If the `COMPLEX` type is set, the value of `langType` will be used and if `OF_MATCH`, the type of the `symbol` will be used.
+  When merging information from several segments in the PolySymbolMatch, the first non-null property values take precedence.
+  By default - when properties are `null` - attribute value is of plain type and is required.
 
 ### CSS
 
@@ -68,7 +129,7 @@ Dedicated support for `PolySymbol` interface properties:
 **Kind**: `properties`
 
 Poly Symbols representing available CSS properties. [Custom CSS properties (variables)](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) names should be prefixed with `--`.
-CSS properties can be contributed statically or dynamically (through [`PolySymbolQueryConfigurator`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)).
+CSS properties can be contributed statically or dynamically (through [`PolySymbolQueryScopeContributor`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryScopeContributor.kt)).
 The statically contributed symbols are available globally, depending on the context setting of the contributing Web Types file.
 
 Within a CSS file, the additional scope for matching properties is built from Poly Symbols matching HTML element names from terminal selectors from the enclosing ruleset.
@@ -78,7 +139,7 @@ Within an HTML element `style` attribute value, an additional scope is built fro
 Scope for custom properties (variables) references (arguments for [`var()`](https://developer.mozilla.org/en-US/docs/Web/CSS/var) function) is built the same way
 as for properties. Only properties with names starting with `--` are taken into account.
 
-For dynamic contributions, the `PolySymbolQueryConfigurator.getScope()`'s `element` parameter can be:
+For dynamic contributions, the contributors should be registered with the following `PsiElement` classes:
 - `CssDeclaration` - Poly Symbols should represent available CSS properties for matching. The CSS declaration actual name should not be taken into account when building the scope.
 
 #### Pseudo-elements
@@ -90,16 +151,18 @@ For dynamic contributions, the `PolySymbolQueryConfigurator.getScope()`'s `eleme
 
 Poly Symbols representing available [CSS pseudo-elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements).
 Symbols names *should not* be prefixed with `::`.
-CSS pseudo-elements can be contributed statically or dynamically (through [`PolySymbolQueryConfigurator`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)).
+CSS pseudo-elements can be contributed statically or dynamically (through [`PolySymbolQueryScopeContributor`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryScopeContributor.kt)).
 The statically contributed symbols are available globally, depending on the context setting of the contributing Web Types file.
 
 The additional scope for matching pseudo-elements is built from Poly Symbols matching HTML element name preceding the pseudo-element keyword.
 
-For dynamic contributions, the `PolySymbolQueryConfigurator.getScope()`'s `element` parameter can be:
+For dynamic contributions, the contributors should be registered with the following `PsiElement` classes:
 - `CssPseudoSelector` - Poly Symbols should represent available CSS pseudo-elements for matching. The CSS pseudo-element actual name should not be taken into account when building the scope.
 
-Dedicated support for `PolySymbol` interface properties:
-- `properties[PolySymbol.PROP_ARGUMENTS]` - `true` if pseudo-element keyword accepts arguments.
+Alternatively, `CSS_PSEUDO_ELEMENTS_SYMBOL_QUERY_PATTERNS` constant may be used as the pattern.
+
+Dedicated support for `PolySymbol` `get` properties:
+- `PROP_CSS_ARGUMENTS` - `true` if pseudo-element keyword accepts arguments.
 
 #### Pseudo-classes
 {#css-pseudo-classes}
@@ -110,16 +173,18 @@ Dedicated support for `PolySymbol` interface properties:
 
 Poly Symbols representing available [CSS pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes).
 Symbols names *should not* be prefixed with `:`.
-CSS pseudo-classes can be contributed statically or dynamically (through [`PolySymbolQueryConfigurator`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)).
+CSS pseudo-classes can be contributed statically or dynamically (through [`PolySymbolQueryScopeContributor`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryScopeContributor.kt)).
 The statically contributed symbols are available globally, depending on the context setting of the contributing Web Types file.
 
 The additional scope for matching pseudo-classes is built from Poly Symbols matching HTML element name preceding the pseudo-class keyword.
 
-For dynamic contributions, the `PolySymbolQueryConfigurator.getScope()`'s `element` parameter can be:
+For dynamic contributions, the contributors should be registered with the following `PsiElement` classes:
 - `CssPseudoSelector` - Poly Symbols should represent available CSS pseudo-classes for matching. The CSS pseudo-class actual name should not be taken into account when building the scope.
 
-Dedicated support for `PolySymbol` interface properties:
-- `properties[PolySymbol.PROP_ARGUMENTS]` - `true` if pseudo-class keyword accepts arguments.
+Alternatively, `CSS_PSEUDO_CLASSES_SYMBOL_QUERY_PATTERNS` constant may be used as the pattern.
+
+Dedicated support for `PolySymbol` `get` properties:
+- `PROP_CSS_ARGUMENTS` - `true` if pseudo-element keyword accepts arguments.
 
 #### Functions
 {#css-functions}
@@ -129,13 +194,15 @@ Dedicated support for `PolySymbol` interface properties:
 **Kind**: `functions`
 
 Poly Symbols representing available [CSS functions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Functions).
-CSS functions can be contributed statically or dynamically (through [`PolySymbolQueryConfigurator`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)).
+CSS functions can be contributed statically or dynamically (through [`PolySymbolQueryScopeContributor`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryScopeContributor.kt)).
 The statically contributed symbols are available globally, depending on the context setting of the contributing Web Types file.
 
 The additional scope for matching functions is built from Poly Symbols matching the CSS property name, the value of which is being calculated.
 
-For dynamic contributions, the `PolySymbolQueryConfigurator.getScope()`'s `element` parameter can be:
+For dynamic contributions, the contributors should be registered with the following `PsiElement` classes:
 - `CssFunction` - Poly Symbols should represent available CSS functions for matching. The CSS function actual name should not be taken into account when building the scope.
+
+Alternatively, `CSS_FUNCTIONS_SYMBOL_QUERY_PATTERNS` constant may be used as the pattern.
 
 #### Classes
 {#css-classes}
@@ -146,95 +213,100 @@ For dynamic contributions, the `PolySymbolQueryConfigurator.getScope()`'s `eleme
 
 Poly Symbols representing available CSS classes.
 Symbols names *should not* be prefixed with `.`.
-CSS classes can be contributed statically or dynamically (through [`PolySymbolQueryConfigurator`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)).
+CSS classes can be contributed statically or dynamically (through [`PolySymbolQueryScopeContributor`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryScopeContributor.kt)).
 The statically contributed symbols are available globally, depending on the context setting of the contributing Web Types file.
 
 Within CSS file, an additional scope for matching classes is built from Poly Symbols matching HTML element name preceding the class keyword.
 
 Within HTML attribute `class` the additional scope for matching classes is built from Poly Symbols matching the enclosing HTML element name.
 
-For dynamic contributions, the `PolySymbolQueryConfigurator.getScope()`'s `element` parameter can be:
+For dynamic contributions, the contributors should be registered with the following `PsiElement` classes:
 - `CssClass` - Poly Symbols should represent available CSS classes for matching. The CSS class actual name should not be taken into account when building the scope.
 - [`XmlAttributeValue`](%gh-ic%/xml/xml-psi-api/src/com/intellij/psi/xml/XmlAttributeValue.java) - Poly Symbols should represent available CSS classes for matching within the attribute value.
 
+Alternatively, `CSS_CLASSES_SYMBOL_QUERY_PATTERNS` constant may be used as the pattern.
+
 #### Parts
 {#css-parts}
-
-<primary-label ref="2023.2"/>
 
 **Namespace**: `css`
 
 **Kind**: `parts`
 
 Poly Symbols representing available HTML element parts for matching with [CSS `::part`](https://developer.mozilla.org/en-US/docs/Web/CSS/::part) pseudo-element.
-CSS parts can be contributed statically or dynamically (through [`PolySymbolQueryConfigurator`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)).
+CSS parts can be contributed statically or dynamically (through [`PolySymbolQueryScopeContributor`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryScopeContributor.kt)).
 The statically contributed symbols are available globally, depending on the context setting of the contributing Web Types file.
 
 Within CSS file, an additional scope for matching classes is built from Poly Symbols matching HTML element name preceding the `::part` keyword.
 
-For dynamic contributions, the `PolySymbolQueryConfigurator.getScope()`'s `element` parameter can be:
+For dynamic contributions, the contributors should be registered with the following `PsiElement` classes:
 - `CssTermImpl` - Poly Symbols should represent available CSS parts for matching. The CSS part's actual name should not be taken into account when building the scope.
 
+Alternatively, `CSS_PARTS_SYMBOL_QUERY_PATTERNS` constant may be used as the pattern.
 
 ### JavaScript
 
 #### String Literals
 {#js-string-literals}
 
-<primary-label ref="2023.2"/>
-
 **Namespace**: `js`
 
 **Kind**: `string-literals`
 
 Poly Symbols representing JavaScript or TypeScript string literals available in a particular location.
-Only dynamically contributed string literal symbols (through [`PolySymbolQueryConfigurator`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)) have built-in support.
+Only dynamically contributed string literal symbols (through [`PolySymbolQueryScopeContributor`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryScopeContributor.kt)) have built-in support.
 
-The `PolySymbolQueryConfigurator.getScope()`'s `element` parameter can be:
+For dynamic contributions, the contributors should be registered with the following `PsiElement` classes:
 - a `JSLiteralExpression`
 - an unqualified `JSReferenceExpression`,
   which parent is *not* `JSIndexedPropertyAccessExpression`, `JSCallExpression` or `JSProperty`
 
+Alternatively, `JS_STRING_LITERALS_SYMBOL_QUERY_PATTERNS` constant may be used as the pattern.
+
 #### Properties
 {#js-properties}
-
-<primary-label ref="2023.2"/>
 
 **Namespace**: `js`
 
 **Kind**: `properties`
 
 Poly Symbols represent properties of an object, which is a result of a JavaScript or TypeScript expression.
-Only dynamically contributed properties symbols (through [`PolySymbolQueryConfigurator`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)) have built-in support.
+Only dynamically contributed properties symbols (through [`PolySymbolQueryScopeContributor`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryScopeContributor.kt)) have built-in support.
 
-The `PolySymbolQueryConfigurator.getScope()`'s `element` parameter can be:
+For dynamic contributions, the contributors should be registered with the following `PsiElement` classes:
   - `JSObjectLiteralExpression` - Poly Symbols should represent expected properties
   - `JSExpression` - Poly Symbols should represent available properties the expression's result.
     Parent expression is `JSReferenceExpression` or `JSIndexedPropertyAccessExpression`.
 
-Dedicated support for `PolySymbol` interface properties:
-  - `type` - if the type is `JSType`, it will be used in JavaScript type evaluator as the type of the property
-  - `required` - the JavaScript property is treated as non-optional
-  - `properties[PolySymbol.PROP_READ_ONLY]` - the JavaScript property is treated as read-only
+Alternatively, `JS_PROPERTIES_SYMBOL_QUERY_PATTERNS` constant may be used as the pattern.
+
+
+Dedicated support for `PolySymbol` modifiers:
+- `required` - the JavaScript property is treated as non-optional
+- `readonly` - the JavaScript property is treated as read-only
+
+Dedicated support for `PolySymbol` `get` properties:
+- `PROP_JS_TYPE` - the type will be used in JavaScript type evaluator as the type of the property
 
 #### Symbols
 {#js-symbols}
-
-<primary-label ref="2023.2"/>
 
 **Namespace**: `js`
 
 **Kind**: `symbols`
 
-Poly Symbols representing JavaScript symbols available for resolve of an unqualified JavaScript reference expression.
-Only dynamically contributed symbols (through [`PolySymbolQueryConfigurator`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)) have built-in support.
+Poly Symbols representing JavaScript or TypeScript symbols available for resolve of an unqualified JavaScript reference expression.
+Only dynamically contributed symbols (through [`PolySymbolQueryScopeContributor`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryScopeContributor.kt)) have built-in support.
 
-The `PolySymbolQueryConfigurator.getScope()`'s `element` parameter can be:
+For dynamic contributions, the contributors should be registered with the following `PsiElement` classes:
 - an unqualified `JSReferenceExpression` - Poly Symbols should represent possible symbols to which JavaScript reference could resolve. The reference to actual name should not be taken into account when building the scope.
 
-Dedicated support for `PolySymbol` interface properties:
-- `type` - if the type is `JSType`, it will be used in JavaScript type evaluator as the type of the symbol
-- `properties[PolySymbol.PROP_KIND]` - the kind of the symbol, one of [`JsSymbolSymbolKind`](%gh-ic%/platform/polySymbols/src-web/com/intellij/polySymbols/js/JsSymbolSymbolKind.kt) enum values. The kind will be used to render the appropriate icon in the code completion popup
+Alternatively, `JS_SYMBOLS_SYMBOL_QUERY_PATTERNS` constant may be used as the pattern.
+
+
+Dedicated support for `PolySymbol` `get` properties:
+- `PROP_JS_TYPE` - the type will be used in JavaScript type evaluator as the type of the symbol
+- `PROP_JS_SYMBOL_KIND` - the kind of the symbol, one of [`JsSymbolSymbolKind`](%gh-ic%/platform/polySymbols/src-web/com/intellij/polySymbols/js/JsSymbolSymbolKind.kt) enum values. The kind will be used to render the appropriate icon in the code completion popup
 
   *Integration with unqualified reference resolution is not available in TypeScript code*
 
@@ -245,77 +317,10 @@ Dedicated support for `PolySymbol` interface properties:
 **Kind**: `events`
 
 Poly Symbols representing available DOM events.
-DOM events can be contributed statically or dynamically (through [`PolySymbolQueryConfigurator`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)).
+DOM events can be contributed statically or dynamically (through [`PolySymbolQueryScopeContributor`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryScopeContributor.kt)).
 The statically contributed symbols are available globally, depending on the context setting of the contributing Web Types file.
 
 The additional scope for matching DOM events is built from Poly Symbols matching enclosing HTML element name.
 
-For dynamic contributions, the `PolySymbolQueryConfigurator.getScope()`'s `element` parameter can be:
+For dynamic contributions, the contributors should be registered with the following `PsiElement` classes:
 - [`HtmlTag`](%gh-ic%/xml/xml-psi-api/src/com/intellij/psi/html/HtmlTag.java) - Poly Symbols should represent available DOM events for matching.
-
-
-## Using Patterns for Domain-Specific Mappings
-
-When a language feature, such as an HTML element, is capable of representing an entity from a framework,
-like a Vue component, it may be beneficial to use a custom symbol kind with a domain-specific name (for example, `vue-components`),
-and establish a mapping from this to the language feature via a pattern:
-
-```json
-{
-  "contributions": {
-    "html": {
-      "elements": [
-        {
-          "name": "Vue component",
-          "pattern": {
-            "items": "/html/vue-components"
-          },
-          "attributes": [
-            {
-              "name": "Component property",
-              "pattern": {
-                "or": [
-                  {
-                    "items": "props",
-                    "priority": "highest"
-                  }
-                ]
-              },
-              "value": {
-                "type": "of-match"
-              }
-            }
-          ]
-        }
-      ]
-    }
-  }
-}
-```
-
-Note that in this example, attributes are produced from `html/props` symbols.
-For Vue component, a set of named values, which can be provided to the component instance are called `props`.
-Now, our Vue component definition can have a more domain-specific look:
-
-```json
-{
-  "contributions": {
-    "html": {
-      "vue-components": [
-        {
-          "name": "MyVueComponent",
-          "description": "This is the component you always needed in your application",
-          "props": [
-            {
-              "name": "listen-to",
-              "type": "string | HTMLElement | Document | Window | (() => HTMLElement)",
-              "description": "The scrolling element to listen to.",
-              "default": "document"
-            }
-          ]
-        }
-      ]
-    }
-  }
-}
-```

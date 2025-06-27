@@ -33,7 +33,8 @@ public class EditorAreaIllustration extends AnAction {
   @Override
   public void actionPerformed(@NotNull AnActionEvent event) {
     // Get access to the editor and caret model. update() validated editor's existence.
-    Editor editor = event.getRequiredData(CommonDataKeys.EDITOR);
+    Editor editor = event.getData(CommonDataKeys.EDITOR);
+    if (editor == null) return;
     CaretModel caretModel = editor.getCaretModel();
   }
 }
@@ -106,7 +107,8 @@ public class EditorAreaIllustration extends AnAction {
   @Override
   public void actionPerformed(@NotNull AnActionEvent event) {
     // Get access to the editor and caret model.
-    Editor editor = event.getRequiredData(CommonDataKeys.EDITOR);
+    Editor editor = event.getData(CommonDataKeys.EDITOR);
+    if (editor == null) return;
     CaretModel caretModel = editor.getCaretModel();
     Caret primaryCaret = caretModel.getPrimaryCaret();
     LogicalPosition logicalPos = primaryCaret.getLogicalPosition();
@@ -201,7 +203,8 @@ public class EditorAreaIllustration extends AnAction {
 
   public void actionPerformed(@NotNull AnActionEvent event) {
     // Get access to the editor and caret model.
-    Editor editor = event.getRequiredData(CommonDataKeys.EDITOR);
+    Editor editor = event.getData(CommonDataKeys.EDITOR);
+    if (editor == null) return;
     CaretModel caretModel = editor.getCaretModel();
 
     // Getting the primary caret ensures we get the correct one of a possible many.

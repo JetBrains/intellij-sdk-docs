@@ -1,4 +1,4 @@
-// Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 
 package org.intellij.sdk.editor;
 
@@ -27,8 +27,9 @@ public class EditorHandlerIllustration extends AnAction {
   @Override
   public void actionPerformed(@NotNull final AnActionEvent e) {
     // Editor is known to exist from update, so it's not null
-    final Editor editor = e.getRequiredData(CommonDataKeys.EDITOR);
-    // Get the action manager in order to get the necessary action handler...
+    final Editor editor = e.getData(CommonDataKeys.EDITOR);
+    if (editor == null) return;
+    // Get the action manager to get the necessary action handler...
     final EditorActionManager actionManager = EditorActionManager.getInstance();
     // Get the action handler registered to clone carets
     final EditorActionHandler actionHandler =
@@ -38,7 +39,7 @@ public class EditorHandlerIllustration extends AnAction {
   }
 
   /**
-   * Enables and sets visibility of this action menu item if:
+   * Enables and sets the visibility of this action menu item if:
    * <ul>
    *   <li>a project is open</li>
    *   <li>an editor is active</li>

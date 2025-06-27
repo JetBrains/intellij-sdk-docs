@@ -51,7 +51,7 @@ Thus, it will work automatically for custom languages that provide a syntax high
 
 The first syntax highlighting level is based on the lexer output and is provided through the [`SyntaxHighlighter`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/fileTypes/SyntaxHighlighter.java) interface.
 The syntax highlighter returns the `TextAttributesKey` instances for each token type, which needs special highlighting.
-For highlighting lexer errors use [`HighlighterColors.BAD_CHARACTER`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/HighlighterColors.java).
+For highlighting lexer errors use [`HighlighterColors.BAD_CHARACTER`](%gh-ic%/platform/core-api/src/com/intellij/openapi/editor/HighlighterColors.java).
 
 **Examples:**
 

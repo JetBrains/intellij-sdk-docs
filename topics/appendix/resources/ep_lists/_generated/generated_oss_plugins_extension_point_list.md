@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 616fa4675f6241b04a17deb7379d76dca5617e35 -->
+<!-- Revision: 9823c9c422640ea294e1667a948c84f414e9e1bd -->
 
 <!--
 EP List Directories:
@@ -14,7 +14,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 <snippet id="content">
 
-69 Extension Points and 10 Listeners
+72 Extension Points and 10 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -62,6 +62,14 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.protobuf.nameGeneratorContributor"/></include> | [`NameGeneratorContributor`](%gh-ij-plugins%/protobuf/protoeditor-core/src/com/intellij/protobuf/lang/names/NameGeneratorContributor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.protobuf.projectSettingsConfigurator"/></include> ![Project-Level][project-level] | [`ProjectSettingsConfigurator`](%gh-ij-plugins%/protobuf/protoeditor-core/src/com/intellij/protobuf/ide/settings/ProjectSettingsConfigurator.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.protobuf.schemaProvider"/></include> ![Project-Level][project-level] | [`SchemaProvider`](%gh-ij-plugins%/protobuf/protoeditor-core/src/com/intellij/protobuf/lang/resolve/SchemaProvider.java) |
+
+### intellij.jhipster.xml
+
+[`intellij.jhipster.xml`](%gh-ij-plugins%/jhipster/resources/intellij.jhipster.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.jhipster.fieldTypeReferenceProvider"/></include> | [`JdlFieldTypeReferenceProvider`](%gh-ij-plugins%/jhipster/src/com/intellij/jhipster/psi/JdlFieldTypeReferenceProvider.java) |
 
 ### intellij.prettierJS
 
@@ -240,7 +248,9 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.externalToolsProvider"/></include> | [`ExternalToolsProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/inspections/runner/externalTools/ExternalToolsProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.githubCiConfigHandler"/></include> | [`GitHubCIConfigHandler`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/ci/GitHubCIConfigHandler.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.gitlabCiConfigHandler"/></include> | [`GitLabCIConfigHandler`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/ci/GitLabCIConfigHandler.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.globalFlowFingerprintCalculator"/></include> | [`CustomGlobalFlowFingerprintCalculator`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/inspections/runner/globalOutput/CustomGlobalFlowFingerprintCalculator.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.globalOutputConsumer"/></include> ![Internal][internal] | [`GlobalOutputConsumer`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/inspections/runner/globalOutput/GlobalOutputConsumer.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.highlightInfoActionProvider"/></include> | [`QodanaHighlightInfoActionProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/highlight/QodanaHighlightInfoActionProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.highlightingListener"/></include> | [`QodanaHighlightingListener`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/highlight/QodanaHighlightingListener.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.inspectionKtsDefaultImportProvider"/></include> | [`InspectionKtsDefaultImportProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/inspectionKts/imports.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.inspectionKtsExampleProvider"/></include> | [`Provider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/inspectionKts/examples/InspectionKtsExample.kt) |

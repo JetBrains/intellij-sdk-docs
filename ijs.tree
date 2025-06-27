@@ -470,6 +470,7 @@
     </toc-element>
   </toc-element>
   <toc-element topic="ui_guidelines_welcome.topic">
+    <toc-element topic="ui_overview.md"/>
     <toc-element topic="Components.topic">
       <toc-element topic="button.topic">
         <toc-element topic="built_in_button.md"/>

@@ -28,7 +28,7 @@ Consider using the following annotations:
 - [`@Nls`](%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/Nls.java) - for NLS strings.
   The `capitalization` attribute allows to specify required capitalization.
 - [`@NonNls`](%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/NonNls.java) - for non-NLS strings
-- [`@NlsSafe`](%gh-ic%/platform/util/base/src/com/intellij/openapi/util/NlsSafe.java) - for NLS-safe strings
+- [`NlsSafe`](%gh-ic%/platform/util/base/multiplatform/src/com/intellij/openapi/util/NlsSafe.kt) - for NLS-safe strings
 
 ### NLS Context Annotations
 
@@ -37,10 +37,10 @@ For example, [`@InspectionMessage`](%gh-ic%/platform/analysis-api/src/com/intell
 
 NLS context annotations must be annotated with `@Nls` and they can define:
 - capitalization requirement - via `@Nls.capitalization` attribute
-- [`@NlsContext`](%gh-ic%/platform/util/src/com/intellij/openapi/util/NlsContext.java) - specifies default prefix and suffix for property keys, which will be suggested by the <control>I18nize hardcoded string literal</control> quick fix provided by <ui-path>Java | Internationalization | Hardcoded strings</ui-path> inspection
+- [`NlsContext`](%gh-ic%/platform/util/multiplatform/src/com/intellij/openapi/util/NlsContext.kt) - specifies default prefix and suffix for property keys, which will be suggested by the <control>I18nize hardcoded string literal</control> quick fix provided by <ui-path>Java | Internationalization | Hardcoded strings</ui-path> inspection
 
 The IntelliJ Platform provides NLS context annotations, including:
-- general contexts: [`NlsContexts`](%gh-ic%/platform/util/src/com/intellij/openapi/util/NlsContexts.java) nested annotations
+- general contexts: [`NlsContexts`](%gh-ic%/platform/util/multiplatform/src/com/intellij/openapi/util/NlsContexts.kt) nested annotations
 - action contexts: [`NlsActions`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/util/NlsActions.java) nested annotations
 - miscellaneous contexts:
   [`@InspectionMessage`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/util/InspectionMessage.java),

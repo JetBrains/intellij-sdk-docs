@@ -19,7 +19,7 @@ Creating an entirely correct AST node from scratch is quite tricky.
 Thus, surprisingly, the easiest way to get the replacement node is to create a dummy file in the custom language so that it would contain the necessary node in its parse tree, build the parse tree and extract the required node from it.
 
 **Examples:**
-- [`setName()`](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java) implementation for a [Properties language plugin](%gh-ic%/plugins/properties)
+- [`setName()`](%gh-ic%/plugins/properties/properties-common/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java) implementation for a [Properties language plugin](%gh-ic%/plugins/properties)
 - [Custom Language Support Tutorial: Reference Contributor](reference_contributor.md)
 
 If a renamed reference extends [`PsiReferenceBase`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReferenceBase.java), renaming is performed by invoking the [`ElementManipulator.handleContentChange()`](%gh-ic%/platform/core-api/src/com/intellij/psi/ElementManipulator.java), responsible for handling the content change and calculating the text range of reference inside the element.

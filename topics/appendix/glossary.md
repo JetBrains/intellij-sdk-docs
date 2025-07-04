@@ -115,7 +115,7 @@ Non-Blocking Read Action _(NBRA)_ {#non-blocking-read-action}
 ## P
 
 `ProcessCanceledException` _(PCE)_ {#processcanceledexception}
-: [`ProcessCanceledException`](%gh-ic%/platform/util/base/src/com/intellij/openapi/progress/ProcessCanceledException.java) An exception indicating that the currently running operation was terminated and should finish as soon as possible.
+: [`ProcessCanceledException`](%gh-ic%/platform/util/base/multiplatform/src/com/intellij/openapi/progress/ProcessCanceledException.kt) An exception indicating that the currently running operation was terminated and should finish as soon as possible.
 <br/>&rarr;&nbsp;[_CancellationException_](#cancellationexception)
 
 Program Structure Interface _(PSI)_ {#program-structure-interface}

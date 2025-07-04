@@ -10,144 +10,279 @@
 
 </tldr>
 
-Provide instructions in an empty UI area on how to fill it with data. Empty UI areas described here are:
+Empty states of tool windows, lists, trees, tables, master-detail layouts, or other container components should be informative for the users.
+Fill in the empty states with the following:
+- [A reason why the container is empty](#reason-why-empty)
+- [Actions to fill in the area](#actions-to-fill-the-area)
+- [A link to the corresponding help topic](#help-topic)
 
-* [Tool window, list, tree or table](#tool-windows-lists-trees-and-tables)
-* [Details area in a master-detail layout](#master-detail-layout)
-* Empty search results — TBD
+<img src="empty_state_structure.png" alt="Empty state of a tool window" width="706"/>
 
-## Tool windows, lists, trees and tables
+## Reason why empty
 
-Instructional text for these UI areas consists of three parts:
+### Explain the current state
 
-![](database-tw-callouts.png){width=626}
+The default pattern is `No [entity] added.` If `added`, `created`, `configured`, or other words act as synonyms in a particular case, use `added` for consistency.
 
-### 1. Reason why empty
-
-Explain the current state.
-
-The default pattern is "_No [entity] added._" If _added, created, configured_ or other such verbs act as synonyms in a particular case, use the verb _added_ for consistency.
-
-<table>
-    <tr>
-        <td width="50%"><format color="Red" style="bold">Incorrect</format></td>
-        <td width="50%"><format color="Green" style="bold"> Correct</format></td>
-    </tr>
-    <tr>
-        <td><img src="libraries-before.png" alt="" width="241" /> Avoid &quot;Nothing to show&quot; as it is not informative.</td>
-        <td><img src="libraries-after.png" alt="" width="241" /></td>
-    </tr>
+<table style="none" border="false" column-width="fixed">
+  <tr>
+    <td>
+      <format color="369650" style="bold">Correct</format>
+      <img src="empty_state_reason_correct.png" alt="Correct text in the empty state" width="378" />
+    </td>
+    <td >
+      <format color="E55765" style="bold">Incorrect</format>
+      <img src="empty_state_reason_incorrect.png" alt="Incorrect text in the empty state" width="378"/>
+    </td>
+  </tr>
 </table>
 
-Make the reason descriptive:
+### Be precise
 
-<format color="Red" style="bold">Incorrect</format>
+<p>Do not introduce new entities that are not used in the current context.
+Instead, use the terms from the current UI so that the user understands
+what exactly is missing:</p>
 
-![](sql-dialect-before.png){width=456 style=block}
-*The word mapping introduces a new entity while there are already two in the table header — path and SQL dialect. In the instructions, it is better to use already existing entities to connect them to what users see on the screen.*
+<table style="none" border="false" column-width="fixed">
+  <tr>
+    <td>
+      <format color="369650" style="bold">Correct</format>
+      <img src="empty_state_clear_reason.png" alt="The reason is clear"/>
+    </td>
+    <td>
+      <format color="E55765" style="bold">Incorrect</format>
+      <img src="empty_state_unclear_reason.png" alt="The reason is not clear"/></td>
+  </tr>
+</table>
 
-<format color="Green" style="bold">Correct</format>
+## Actions to fill the area
 
-![](sql-dialect-after.png){width=456 style=block}
-*The word "individual" is used in contrast with the project SQL dialect above the table. The verb specified is used instead of added because, in the table, SQL dialects are not added but selected from a drop-down list in the SQL Dialect column.*
+An action makes it easier to understand what to start with
+instead of searching for the appropriate icon on the toolbar.
+It can also educate about the shortcut.
 
-### 2. Actions to fill the area
+### Use one or two actions
 
-Required part. An action makes it easier to understand what to start with, instead of searching for the appropriate icon on the toolbar. It can also educate about the shortcut.
+Three or more actions would make it harder to choose what to start from.
 
-Use one or two actions. Three or more actions would make it harder to choose what to start from.
+<table style="none" border="false" column-width="fixed">
+  <tr>
+    <td>
+      <format color="369650" style="bold">Correct</format>
+      <img src="empty_state_actions_correct.png" alt="One action"/>
+    </td>
+    <td>
+      <format color="E55765" style="bold">Incorrect</format>
+      <img src="empty_state_actions_incorrect.png" alt="Three actions"/>
+    </td>
+  </tr>
+</table>
 
-![](maven-tw.png){width=300}
+In rare cases, when you need to list all possible starting points, use the list layout.
 
-If an action opens a menu, open it at the same position where it would be opened with the corresponding toolbar button. This would explain which toolbar icon opens the menu.
+If there is enough space (for example, in horizontal tool windows), you may use the table layout to place action links, shortcuts, and action descriptions:
+<img src="empty_state_table.png" alt="Table layout for actions" width="706"/>
 
-If an action cannot be tied to a link, explain what to do.
+### Open menus from the toolbar
 
-![](todo-tw.png){width=574}
+If an action opens a toolbar menu, open it at the same position where it
+would be opened with the corresponding toolbar button. This would explain
+which toolbar icon opens the menu.
 
-Hide the area's toolbar if it does not have the same action as in the empty state. Usually, all other toolbar actions are not relevant in this case.
+<table style="none" border="false" column-width="fixed">
+  <tr>
+    <td>
+      <format color="369650" style="bold">Correct</format>
+      <img src="empty_state_menu_correct.png" alt="Toolbar menu"/>
+    </td>
+    <td>
+      <format color="E55765" style="bold">Incorrect</format>
+      <img src="empty_state_menu_incorrect.png" alt="Menu under the action"/>
+    </td>
+  </tr>
+</table>
 
-<format color="Red" style="bold">Incorrect</format>
+### Explain what to do when there is no action`
 
-![](todo-tw-toolbar-incorrect.png){width=574}
+If there is no action that can be performed by clicking a link,
+add a text describing all the required steps:
 
-### 3. Help topic
+<img src="empty_state_no_actions.png" alt="Explain what to do when there is no action" width="706"/>
 
-**Tool windows:** provide a link to a help topic that explains the functionality. Add the question mark icon in the beginning.
+### Hide the toolbar
 
-![](empty_state_database-tw-segment.png){width=262}
+Hide the area's toolbar if it does not have the same action as
+in the empty state. Usually, all other toolbar actions are not
+relevant in this case.
 
-**Tables, trees and lists:** provide instructions according to the [Context help](context_help.md) rules. Smaller UI areas rarely require an in-depth explanation compared to complex tool windows. A short help text should be enough, and it does not require switching contexts.
+<format color="369650" style="bold">Correct</format>
 
-<format color="Red" style="bold">Incorrect</format>
+<img src="empty_state_no_actions.png" alt="Hide the toolbar for the empty state" width="706"/>
 
-![](todo-filters-incorrect.png){width=456 style=block}
-*Do not use a help topic link in a table and UI areas other than tool windows.*
+<format color="E55765" style="bold">Incorrect</format>
 
-<format color="Green" style="bold">Correct</format>
+<img src="empty_state_toolbar.png" alt="Toolbar is not needed" width="706"/>
 
-![](todo-filters-correct.png){width=456 style=block}
-*Place an inline help text under the table.*
+## Help topic
+<table style="none" border="false" column-width="fixed">
+  <tr>
+    <td width="378">
+      <img src="empty_state_link_to_help.png" alt="Link to a help topic"/>
+    </td>
+    <td>
+    <control>Link to a help topic</control>
+    <p>In tool windows and <a anchor="empty-state-of-the-master-detail-layout">master-detail layouts</a>,
+provide a link to a help topic that explains the functionality.
+Add the question mark icon in the beginning.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="378">
+      <img src="empty_state_inline_help.png" alt="Inline hint under the table"/>
+    </td>
+    <td>
+      <control>Context help in inline hints</control>
+      <p>In tables, trees, and lists, provide instructions according to the <a href="context_help.md" anchor="inline-help-text">inline text help</a> rules.
+ Avoid using question mark links in these cases because such components rarely require deep explanations.</p>
+</td>
+</tr>
+</table>
 
-### Writing guidelines
+## Empty state of the master-detail layout
 
-See [Punctuation](punctuation.md) and [Capitalization](capitalization.md).
+Master-detail layouts include a list or a tree on the left (in the master part)
+and the details area on the right.
 
-Make the reason text short and descriptive. See [Writing short and clear](writing_short.md).
+- If the master area is empty, display the explanation, action, and link to the help article.
+- If the details area is empty, no explanations are needed. In this case, show the actions to fill in the area.
 
-In actions, avoid words that describe physical actions like _press_ or _click_ — they are obvious from how the link works.
+<img src="empty_state_master_detail_layout.png" alt="Empty master-detail layout" width="706"/>
 
-Avoid saying _add new_. Just use _add_ because all that is added is new in the context of an empty UI area.
 
-## Master-detail layout
 
-Provide only the action part for the detail area in a master-detail layout. The detail area is filled when an item is selected in the master part. This behavior is obvious and does not need to be explained.
+## Writing guidelines
 
-The default pattern for the action is "_Select_ [entity] _to configure_".
+### Punctuation
 
-The master area is usually a list or a tree, its empty state instructions should follow the guidelines for lists and trees.
+Separate sentences in the empty state with periods, but do not put a period after the action link.
+Use the ellipses at the end of the action link if this link opens a dialog or a popup which requires some input from the user.
+<table style="none" border="false" column-width="fixed">
+  <tr>
+    <td>
+      <format color="369650" style="bold">Correct</format>
+      <img src="empty_state_punctuation_correct.png" alt="Correct punctuation in the empty state"/>
+    </td>
+    <td>
+      <format color="E55765" style="bold">Incorrect</format>
+      <img src="empty_state_punctuation_incorrect.png" alt="Incorrect punctuation in the empty state"/>
+    </td>
+  </tr>
+</table>
 
-![](app-servers.png){width=586}
+### Capitalization
 
-![](run-configs.png){width=720 style=block}
-*The "Add Java application configuration" link is a shortcut to creating a new configuration instead of clicking the + button in the toolbar.*
+Use sentence capitalization in the empty state texts and links.
+<table style="none" border="false" column-width="fixed">
+  <tr>
+    <td>
+      <format color="369650" style="bold">Correct</format>
+      <img src="empty_state_capitalization_correct.png" alt="Correct capitalization in the empty state"/>
+    </td>
+    <td>
+      <format color="E55765" style="bold">Incorrect</format>
+      <img src="empty_state_capitalization_incorrect.png" alt="Incorrect capitalization in the empty state"/>
+    </td>
+  </tr>
+</table>
+
+### Avoid excessive verbs
+
+- In actions, avoid words that describe physical actions like `press` or `click` — they are obvious from how the link works.
+
+- Avoid saying `add new`. Just use `add` because all that is added is new in the context of an empty UI area.
+
+<table style="none" border="false" column-width="fixed">
+  <tr>
+    <td>
+      <format color="369650" style="bold">Correct</format>
+      <img src="empty_state_verbs_correct.png" alt="Correct usage of verbs in the empty state"/>
+    </td>
+    <td>
+      <format color="E55765" style="bold">Incorrect</format>
+      <img src="empty_state_verbs_incorrect.png" alt="Incorrect usage of verbs in the empty state"/>
+    </td>
+  </tr>
+</table>
+
 
 ## Sizes and placement
 
-The minimum text width is 40 characters. If an area is too narrow to show the minimum text width, show text in area fields, and if no fields are left, under the area borders.
+[//]: # (The minimum text width is 40 characters. If an area is too narrow to show the minimum text width, show text in area fields, and if no fields are left, under the area borders.)
 
-Use non-breaking spaces in an action name and shortcut, so it is not split into two lines.
+[//]: # ()
+[//]: # (<format color="Red" style="bold">Incorrect</format>)
 
-Use non-breaking spaces for articles and prepositions in the instructional text.
+[//]: # ()
+[//]: # (![]&#40;nbsp-incorrect.png&#41;{width=379})
 
-<format color="Red" style="bold">Incorrect</format>
+[//]: # ()
+[//]: # (<format color="Green" style="bold">Correct</format>)
 
-![](nbsp-incorrect.png){width=379}
+[//]: # ()
+[//]: # (![]&#40;nbsp-correct.png&#41;{width=379})
 
-<format color="Green" style="bold">Correct</format>
+[//]: # ()
+[//]: # (The text is center-aligned. If possible, the center for the help topic link should be calculated with a 16px inset on the left. This helps visually align the help link with the lines above it.)
 
-![](nbsp-correct.png){width=379}
+[//]: # ()
+[//]: # (![]&#40;database-tw-markup1.png&#41;{width=300})
 
-The text is center-aligned. If possible, the center for the help topic link should be calculated with a 16px inset on the left. This helps visually align the help link with the lines above it.
+Vertical spacing:
 
-![](database-tw-markup1.png){width=300}
+<img src="empty_state_vertical_spacing.png" alt="Empty state vertical spacing" width="706"/>
 
-Fields and vertical spaces:
+Minimum right and left margins:
 
-![](database-tw-markup2.png){width=530}
+<img src="empty_state_horizontal_spacing.png" alt="Empty state horizontal spacing" width="706"/>
 
-The text should wrap when a UI area’s width changes:
+Use non-breaking spaces in the following cases:
+* Between action names and shortcuts
+* For articles and prepositions
+<table style="none" border="false" column-width="fixed">
+  <tr>
+    <td>
+      <format color="369650" style="bold">Correct</format>
+      <img src="empty_state_non_breaking_space_correct.png" alt="Correct usage of non-breaking spaces in the empty state"/>
+    </td>
+    <td>
+      <format color="E55765" style="bold">Incorrect</format>
+      <img src="empty_state_non_breaking_space_incorrect.png" alt="Incorrect usage of non-breaking spaces in the empty state"/>
+    </td>
+  </tr>
+</table>
 
-![](database-tw-horizontal.png){width=579}
+[//]: # (The text should wrap when a UI area’s width changes:)
 
-![](database-tw.png){width=300}
+[//]: # ()
+[//]: # (![]&#40;database-tw-horizontal.png&#41;{width=579})
 
-## Style
+[//]: # ()
+[//]: # (![]&#40;database-tw.png&#41;{width=300})
 
-The link should not be underlined.
+[//]: # (## Style)
 
-In Darcula:
+[//]: # ()
+[//]: # (The link should not be underlined.)
 
-![](database-tw-darcula.png){width=300}
+[//]: # ()
+[//]: # (In Darcula:)
 
+[//]: # ()
+[//]: # (![]&#40;database-tw-darcula.png&#41;{width=300})
+
+[//]: # ()
+[//]: # (Use non-breaking spaces for articles and prepositions in the instructional text.)
+
+[//]: # ()
+[//]: # (Use non-breaking spaces for articles and prepositions in the instructional text.)
 

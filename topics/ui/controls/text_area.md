@@ -21,7 +21,7 @@ Use a text area if input is unconstrained and long, or if the newline character 
 Do **not** use a text area if:
 
 * Input consists of several words. Use an [input field](input_field.md) instead.
-* There is not enough space for a text area, or if input is normally short but can occasionally be long or multi-line. Use an [expandable input field](input_field.md#input-field-types) instead.
+* There is not enough space for a text area, or if input is normally short but can occasionally be long or multi-line. Use an [expandable input field](input_field.md#when-not-to-use) instead.
 * Values are added one by one. Use a [table](table.md) instead.
 * Text is read-only. Use a [description text](description_text.md) instead.
 

@@ -7,12 +7,11 @@
     <section-starting-page>
         <title>UI Guidelines</title>
         <description>
-            Refer to these guidelines to create consistent and usable interfaces for IntelliJ IDEs or plugins.
+            Create consistent and usable interfaces for IntelliJ IDEs or plugins.
         </description>
-
         <spotlight>
             <a type="tools" summary="Learn how to use standard IntelliJ components" href="Components.topic">Components</a>
-            <a type="computer" href="layout.md" summary="Learn how to arrange UI components">Layout</a>
+            <a type="computer" href="ui_overview.md" summary="Learn how to arrange UI components">Layout</a>
         </spotlight>
 
         <!--    Add several topics that are less important or are relevant only for advanced/experienced users.    -->

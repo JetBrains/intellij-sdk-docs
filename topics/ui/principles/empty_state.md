@@ -28,11 +28,11 @@ The default pattern is `No [entity] added.` If `added`, `created`, `configured`,
   <tr>
     <td>
       <format color="369650" style="bold">Correct</format>
-      <img src="empty_state_clear_reason.png" alt="Correct text in the empty state" />
+      <img src="empty_state_reason_correct.png" alt="Correct text in the empty state" width="378" />
     </td>
     <td >
       <format color="E55765" style="bold">Incorrect</format>
-      <img src="empty_state_unclear_reason.png" alt="Incorrect text in the empty state" />
+      <img src="empty_state_reason_incorrect.png" alt="Incorrect text in the empty state" width="378"/>
     </td>
   </tr>
 </table>
@@ -57,7 +57,7 @@ what exactly is missing:</p>
 
 ## Actions to fill the area
 
-Required part. An action makes it easier to understand what to start with
+An action makes it easier to understand what to start with
 instead of searching for the appropriate icon on the toolbar.
 It can also educate about the shortcut.
 
@@ -77,6 +77,11 @@ Three or more actions would make it harder to choose what to start from.
     </td>
   </tr>
 </table>
+
+In rare cases, when you need to list all possible starting points, use the list layout.
+
+If there is enough space (for example, in horizontal tool windows), you may use the table layout to place action links, shortcuts, and action descriptions:
+<img src="empty_state_table.png" alt="Table layout for actions" width="706"/>
 
 ### Open menus from the toolbar
 
@@ -138,8 +143,7 @@ Add the question mark icon in the beginning.</p>
     <td>
       <control>Context help in inline hints</control>
       <p>In tables, trees, and lists, provide instructions according to the <a href="context_help.md" anchor="inline-help-text">inline text help</a> rules.
-Smaller UI areas rarely require an in-depth explanation compared to complex tool windows.
-A short help text should be enough, and it does not require switching contexts.</p>
+ Avoid using question mark links in these cases because such components rarely require deep explanations.</p>
 </td>
 </tr>
 </table>
@@ -151,7 +155,6 @@ and the details area on the right.
 
 - If the master area is empty, display the explanation, action, and link to the help article.
 - If the details area is empty, no explanations are needed. In this case, show the actions to fill in the area.
-  The default pattern for the action is "_Select_ [entity] _to configure_".
 
 <img src="empty_state_master_detail_layout.png" alt="Empty master-detail layout" width="706"/>
 
@@ -194,9 +197,9 @@ Use sentence capitalization in the empty state texts and links.
 
 ### Avoid excessive verbs
 
-- In actions, avoid words that describe physical actions like _press_ or _click_ — they are obvious from how the link works.
+- In actions, avoid words that describe physical actions like `press` or `click` — they are obvious from how the link works.
 
-- Avoid saying _add new_. Just use _add_ because all that is added is new in the context of an empty UI area.
+- Avoid saying `add new`. Just use `add` because all that is added is new in the context of an empty UI area.
 
 <table style="none" border="false" column-width="fixed">
   <tr>
@@ -215,12 +218,6 @@ Use sentence capitalization in the empty state texts and links.
 ## Sizes and placement
 
 [//]: # (The minimum text width is 40 characters. If an area is too narrow to show the minimum text width, show text in area fields, and if no fields are left, under the area borders.)
-
-[//]: # ()
-[//]: # (Use non-breaking spaces in an action name and shortcut, so it is not split into two lines.)
-
-[//]: # ()
-[//]: # (Use non-breaking spaces for articles and prepositions in the instructional text.)
 
 [//]: # ()
 [//]: # (<format color="Red" style="bold">Incorrect</format>)
@@ -248,6 +245,22 @@ Minimum right and left margins:
 
 <img src="empty_state_horizontal_spacing.png" alt="Empty state horizontal spacing" width="706"/>
 
+Use non-breaking spaces in the following cases:
+* Between action names and shortcuts
+* For articles and prepositions
+<table style="none" border="false" column-width="fixed">
+  <tr>
+    <td>
+      <format color="369650" style="bold">Correct</format>
+      <img src="empty_state_non_breaking_space_correct.png" alt="Correct usage of non-breaking spaces in the empty state"/>
+    </td>
+    <td>
+      <format color="E55765" style="bold">Incorrect</format>
+      <img src="empty_state_non_breaking_space_incorrect.png" alt="Incorrect usage of non-breaking spaces in the empty state"/>
+    </td>
+  </tr>
+</table>
+
 [//]: # (The text should wrap when a UI area’s width changes:)
 
 [//]: # ()
@@ -267,4 +280,9 @@ Minimum right and left margins:
 [//]: # ()
 [//]: # (![]&#40;database-tw-darcula.png&#41;{width=300})
 
+[//]: # ()
+[//]: # (Use non-breaking spaces for articles and prepositions in the instructional text.)
+
+[//]: # ()
+[//]: # (Use non-breaking spaces for articles and prepositions in the instructional text.)
 

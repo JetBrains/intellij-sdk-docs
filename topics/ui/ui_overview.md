@@ -206,4 +206,4 @@ Alerts are modal windows that draw the user's attention to crucial information o
 
 Context menus list actions available in the current context and open on right-click:
 
-<img src="ui_overview_menu.png" alt="Context menu"/>
+<img src="ui_overview_menu.png" alt="Context menu" width="706"/>

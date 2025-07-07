@@ -10,8 +10,9 @@
             Create consistent and usable interfaces for IntelliJ IDEs or plugins.
         </description>
         <spotlight>
+
+            <a type="computer" summary="Learn main parts of IntelliJ interfaces" href="ui_overview.md">User interface overview</a>
             <a type="tools" summary="Learn how to use standard IntelliJ components" href="Components.topic">Components</a>
-            <a type="computer" href="ui_overview.md" summary="Learn how to arrange UI components">Layout</a>
         </spotlight>
 
         <!--    Add several topics that are less important or are relevant only for advanced/experienced users.    -->
@@ -22,6 +23,7 @@
             <a href="platform_theme_colors.md" summary="Platform theme colors">Colors</a>
             <a href="mnemonics.md" summary="Characters that indicate keys for menu actions">Mnemonics</a>
             <a href="validation_errors.md" summary="Highlight invalid input">Validation errors</a>
+            <a href="layout.md" summary="Learn how to arrange UI components">Layout</a>
         </primary>
         <secondary>
             <title>Resources</title>

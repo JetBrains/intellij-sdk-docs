@@ -1,4 +1,9 @@
 # User interface overview
+<link-summary>An introduction to IntelliJ IDE layout and core UI components</link-summary>
+
+By default, all IntelliJ-based IDEs use the following layout:
+
+<img src="ui_overview_main_window.png" alt="Main Window" width="1000"/>
 
 The main application window of all IntelliJ-based IDEs by default includes the following parts:
 * [Main toolbar](#main-toolbar) at the top
@@ -7,9 +12,8 @@ The main application window of all IntelliJ-based IDEs by default includes the f
 * [Editor area](#editor-area)
 * [Status bar](#status-bar) at the bottom
 
-<img src="ui_overview_main_window.png" alt="Main Window" width="1000"/>
 
-IntelliJ platform also provides the following container elements:
+IntelliJ Platform also provides the following container elements:
 * [Dialogs](#dialogs)
 * [Popups](#popups)
 * [Notifications](#notifications)
@@ -18,7 +22,9 @@ IntelliJ platform also provides the following container elements:
 See the full list of UI components in [](Components.topic).
 
 ## Main toolbar
-The main toolbar provides quick access to the most commonly used tools for managing the IDE and projects:
+The main toolbar provides quick access to the most commonly used tools for managing the IDE and projects.
+The main toolbar is fully [customizable](https://www.jetbrains.com/help/idea/customize-actions-menus-and-toolbars.html#customize-main-toolbar),
+which means that the user may hide unnecessary widgets and buttons and add new ones.
 
 <img src="ui_overview_main_toolbar.png" alt="Main toolbar" width="1000"/>
 
@@ -38,7 +44,7 @@ A drop-down control for choosing run configurations and buttons for running and 
 <img src="ui_overview_run_widget.png" alt="Run widget" width="706"/>
 
 ### Toolbar buttons
-Provide quick access to Search, Settings, and other important IDE features.
+The icon buttons that provide quick access to Search, Settings, and other important IDE features.
 
 <img src="ui_overview_main_toolbar_buttons.png" alt="Main toolbar buttons" width="706"/>
 
@@ -55,8 +61,6 @@ You can also opt for showing the menu above the toolbar:
 
 <img src="ui_overview_main_toolbar_windows_expanded_dark_down.png" alt="Main menu expanded on a separate line" width="1000"/>
 
-The main toolbar is fully [customizable](https://www.jetbrains.com/help/idea/customize-actions-menus-and-toolbars.html#customize-main-toolbar),
-which means that the user may hide unnecessary widgets and buttons and add new ones.
 
 ## Tool windows
 Tool windows are the panes inside the main application window that serve for solving different tasks,
@@ -147,7 +151,7 @@ See more information on status bar widgets implementation in [Status Bar Widgets
 
 ## Dialogs
 
-In the IntelliJ platform, dialogs are modal windows that appear over the main application screen and require user actions to proceed.
+In the IntelliJ Platform, dialogs are modal windows that appear over the main application screen and require user actions to proceed.
 The dialogs might be used for different purposes, such as setting up the IDE and projects, creating new instances, asking for confirmations, and so on.
 
 ### Dialog examples
@@ -172,11 +176,11 @@ title bar and are usually dismissed by clicking outside.
 
 ### Popup examples
 
-* Completion popup:
+Completion popup:
 
 <img src="ui_overview_completion.png" alt="Completion popup" width="706"/>
 
-* Documentation popup:
+Documentation popup:
 
 <img src="ui_overview_documentation.png" alt="Documentation popup" width="706"/>
 

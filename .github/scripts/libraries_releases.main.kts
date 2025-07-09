@@ -13,7 +13,6 @@ import java.io.File
 import java.net.URL
 
 val FILE_PATH = "v-releases.list"
-val UNKNOWN = "unknown"
 
 val releasesList = mapOf(
   "intellij-platform-gradle-plugin-version" to ReleaseInfo(
@@ -50,8 +49,8 @@ val vars = releasesList.mapValues { (key, releaseInfo) ->
           .map { it.jsonPrimitive.content.removePrefix("v") }
           .run(releaseInfo.transformer)
       } catch (e: Exception) {
-        println("Cannot resolve the latest $key version: ${e.message}")
-        UNKNOWN
+        println("Cannot resolve the latest '$key' version: ${e.message}")
+        throw e
       }
     }
   }

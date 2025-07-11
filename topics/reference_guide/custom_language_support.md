@@ -39,7 +39,7 @@ The webinar [How We Built Comma, the Raku IDE, on the IntelliJ Platform](https:/
 * [](references_and_resolve.md)
     * [](symbols.md)
     * [](declarations_and_references.md)
-    * [](websymbols.md)
+    * [](polysymbols.md)
 * [](navigation.md)
 * [](code_completion.md)
 * {columns="2"}

@@ -19,7 +19,7 @@ and registering it in the <include from="snippets.topic" element-id="ep"><var na
 
 - [Custom Language Support Tutorial: Spell Checking](spell_checking_strategy.md)
 - [`JavaSpellcheckingStrategy`](%gh-ic%/java/java-impl/src/com/intellij/spellchecker/JavaSpellcheckingStrategy.java)
-- [`HtmlSpellcheckingStrategy`](%gh-ic%/xml/impl/src/com/intellij/spellchecker/xml/HtmlSpellcheckingStrategy.java)
+- [`HtmlSpellcheckingStrategy`](%gh-ic%/spellchecker/xml/src/HtmlSpellcheckingStrategy.java)
 
 ## `SpellcheckingStrategy`
 
@@ -87,7 +87,7 @@ The implementation overrides `isSuppressedFor()` to check if a spell check warni
 overriding `getSuppressActions()` to add quick fix actions that suppress warnings.
 
 **Example:**
-[`XmlSpellcheckingStrategy`](%gh-ic%/xml/impl/src/com/intellij/spellchecker/xml/XmlSpellcheckingStrategy.java)
+[`XmlSpellcheckingStrategy`](%gh-ic%/spellchecker/xml/src/XmlSpellcheckingStrategy.java)
 
 ## Providing Dictionaries
 

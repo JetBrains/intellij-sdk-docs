@@ -13,7 +13,7 @@ For example, you can use PSI elements to perform code analysis, such as [code in
 
 The [`PsiElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) class is the common base class for PSI elements.
 
-> PSI classes for specific languages usually start with a language prefix, for example, [`JsonArray`](%gh-ic%/json/split/gen/com/intellij/json/psi/JsonArray.java).
+> PSI classes for specific languages usually start with a language prefix, for example, [`JsonArray`](%gh-ic%/json/gen/com/intellij/json/psi/JsonArray.java).
 >
 > The Java PSI API, developed many years ago when there was no plan to support other languages, uses the `Psi` prefix, for example, [`PsiIdentifier`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/PsiIdentifier.java) or [`PsiElementFactory`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/PsiElementFactory.java).
 > Don't confuse Java with the core PSI API.

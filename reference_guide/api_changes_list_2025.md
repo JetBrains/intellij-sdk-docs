@@ -79,6 +79,12 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 `com.intellij.psi.xml.HtmlFileElementType.getHtmlStubVersion()` method removed
 : Use `com.intellij.xml.HtmlLanguageStubVersionUtil.getHtmlStubVersion()` instead.
 
+`com.intellij.openapi.actionSystem.ActionGroup.getChildren(AnActionEvent, ActionManager)` method removed
+: Avoid expanding an action group manually
+
+`com.intellij.openapi.actionSystem.DefaultActionGroup.getChildren(AnActionEvent, ActionManager)` method removed
+: Avoid expanding an action group manually or use `DefaultActionGroup.getChildren(ActionManager)`
+
 `com.intellij.diff.util.ThreeSide.map(Function)` method parameter type changed from `com.intellij.util.Function` to `kotlin.jvm.functions.Function1`
 : Use `kotlin.jvm.functions.Function1` as a parameter.
 

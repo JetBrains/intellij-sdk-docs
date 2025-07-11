@@ -91,3 +91,5 @@ These issues are usually invisible in the UI, but they can still prevent users w
 For each problem, the affected value in the Properties table contains a description that explains what it affects and how to fix it.
 
 ![Accessibility Checks](internal_ui_inspector_accessibility_checks.png)
+
+> Refer to the [accessibility guidelines](accessibility.md) to learn more about accessibility best practices.

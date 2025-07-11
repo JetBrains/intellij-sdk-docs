@@ -1,5 +1,6 @@
 # Principles
 
+- [](accessibility.md)
 - [](data_formats.md)
 - [](icons_style.md)
 - [](layout.md)

@@ -16,7 +16,7 @@ People who have trouble using a mouse, including those who are blind, have low v
 ### Focus basics
 
 The basic way to interact with the UI by using the keyboard is to switch focus between components with <shortcut>Tab</shortcut> and <shortcut>Shift+Tab</shortcut>.
-For some components, arrow keys can also be used to navigate between items.
+For some components, such as lists, drop-down menus, or tables, arrow keys can also be used to navigate between items.
 Once a component is focused, it can be activated by pressing <shortcut>Space</shortcut>.
 
 Make all interactive elements focusable to achieve [full keyboard operability](https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html).
@@ -33,6 +33,8 @@ A [keyboard focus trap](https://www.w3.org/WAI/WCAG22/Understanding/no-keyboard-
 This prevents them from accessing other parts of the interface.
 
 Ensure that a user can always navigate away from any focusable component by using <shortcut>Tab</shortcut>, <shortcut>Shift+Tab</shortcut>, or <shortcut>Escape</shortcut>.
+For instance, continuously pressing <shortcut>Tab</shortcut> or <shortcut>Shift+Tab</shortcut> in a dialog should result in cycling through all components and returning to the starting point.
+To break out of such focus loops, use <shortcut>Escape</shortcut> to close dialogs and popups, or move focus back from a tool window to the editor.
 
 ### Managing focus
 
@@ -55,7 +57,7 @@ Follow these guidelines to ensure that users of assistive technology can fully i
 Each UI component has an associated [`javax.accessibility.AccessibleContext`](https://docs.oracle.com/en/java/javase/21/docs/api/java.desktop/javax/accessibility/AccessibleContext.html) object that defines properties for assistive technologies.
 The accessible context can also implement [`Accessible*`](https://docs.oracle.com/en/java/javase/21/docs/api/java.desktop/javax/accessibility/package-summary.html#class-summary) interfaces to provide additional metadata or ways for assistive technologies to interact with the component.
 
-> For common UI components, basic accessibility support is often already implemented.
+> For [common UI components](Components.topic), basic accessibility support is often already implemented.
 > But when creating custom components or extending existing ones, you may need to extend the accessible context or modify its properties.
 >
 {style="note"}

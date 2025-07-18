@@ -123,5 +123,5 @@ Use a checkbox or another radio button as a group label if the radio button grou
 
 ## Sizes and placement
 
-Follow the layout of [checkboxes and radio-buttons](layout.md)
+Follow the layout of [checkboxes and radio-buttons](layout.md#checkboxes-and-radio-buttons)
 

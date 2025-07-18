@@ -15,19 +15,24 @@
 
 ## When to use
 
-Use tabs to organize related content. See also [Groups of controls](groups_of_controls.md).
+Use tabs to organize related content. Follow rules of  [Groups of controls](groups_of_controls.md).
 
-For editor tabs, use another component — [`JBEditorTabs`](%gh-ic%/platform/platform-api/src/com/intellij/ui/tabs/impl/JBEditorTabs.kt). It supports extended functionality like icons, closeable, and draggable tabs. Do **not** use this component in dialogs.
-
-In tool windows, tabs are generated automatically. See also [Tool window](tool_window.md).
+> For editor tabs, use another component — [`JBEditorTabs`](%gh-ic%/platform/platform-api/src/com/intellij/ui/tabs/impl/JBEditorTabs.kt)
+>
+>In tool windows, tabs are generated automatically. See also [Tool window](tool_window.md).
+>
+{style="note"}
 
 ## How to use
 
 ### Label
 
-Use title capitalization for tab labels. Make the label short, preferably no more than 3 words.
-Avoid generic words, such as "General" or "Advanced".
+* Use title capitalization for tab labels.
+* Make labels short, preferably no more than 3 words.
+* Avoid generic words such as "General" or "Advanced".
+
 See [Writing short and clear](writing_short.md).
+
 
 <format color="369650" style="bold">Correct</format>
 ![Hiding tabs that do not fit](02_How_to_use_correct.png){width=706}
@@ -74,16 +79,16 @@ When there are other UI controls above tabs, separate them with a vertical inden
 
 ### Tabs border
 
-Make sure the border of the tab reaches the edges of the area tabs occupy.
+* Make sure the border of the tab reaches the edges of the area tabs occupy.
+* Do **not** surround the tab content area with a visible border.
 
 <format color="369650" style="bold">Correct</format>
-
 ![Correct bottom border](04_Placement﻿_correct.png){width=706}
 
 <format color="E55765" style="bold">Incorrect</format>
 
 ![Incorrect bottom border](04_Placement﻿_incorrect.png){width=706}
 
-Do **not** surround the tab content area with a visible border.
+<format color="E55765" style="bold">Incorrect</format>
 
 ![Frame around the tab content](05_Placement﻿_incorrect.png){width=706}

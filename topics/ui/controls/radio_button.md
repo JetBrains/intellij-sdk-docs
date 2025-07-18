@@ -26,10 +26,10 @@ For only two opposing yes/no options, use a checkbox.
 
 <table style="none" border="false">
   <tr>
-    <td width="50%">
+    <td width="378px">
       <format color="Green" style="bold">Correct</format><img src="02_When_to_use_correct.png" alt="A correct example of using a checkbox instead of radiobuttons"/>
     </td>
-    <td width="50%">
+    <td width="378px">
       <format color="Red" style="bold">Incorrect</format><img src="02_When_to_use_incorrect.png" alt="An incorrect example of using radiobuttons instead of a checkbox"/>
     </td>
   </tr>
@@ -123,5 +123,5 @@ Use a checkbox or another radio button as a group label if the radio button grou
 
 ## Sizes and placement
 
-Follow the layout of [checkboxes and radio-buttons](https://plugins.jetbrains.com/docs/intellij/layout.html#checkboxes-and-radio-buttons)
+Follow the layout of [checkboxes and radio-buttons](layout.md)
 

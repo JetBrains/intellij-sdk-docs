@@ -10,18 +10,16 @@
 
 </tldr>
 
-Tabs help organize related content.
 
 ![Tabs](01_Tabs.png){width=706}
 
+## When to use
+
+Use tabs to organize related content. See also [Groups of controls](groups_of_controls.md).
 
 For editor tabs, use another component — [`JBEditorTabs`](%gh-ic%/platform/platform-api/src/com/intellij/ui/tabs/impl/JBEditorTabs.kt). It supports extended functionality like icons, closeable, and draggable tabs. Do **not** use this component in dialogs.
 
 In tool windows, tabs are generated automatically. See also [Tool window](tool_window.md).
-
-## When to use
-
-Follow the rules in [Groups of controls](groups_of_controls.md).
 
 ## How to use
 

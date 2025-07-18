@@ -40,28 +40,25 @@ If the options have short labels, use a segmented button.
 
 ![](03_When_to_use_Segmented_button.png){width=706}
 
-Or, if the options can be represented on an axis, such as a time delay, use a slider.
 
-### When to Use a Dropdown Instead of Radio Buttons
+## When to use a drop-down instead
 Consider using a [drop-down list](drop_down.md) if:
-* 5 options with long lables
-* More then 5 options
-<!-- <table style="none" border="false">
+* There are more than 5 options or the options have long labels:
+<table style="none" border="false">
   <tr>
-    <td width="50%">
+    <td width="378">
       <format color="Green" style="bold">Correct</format><img src="04_When_to_use_correct.png" alt="A correct example of using a drop-down list instead of radiobuttons"/>
     </td>
-    <td width="50%">
+    <td width="378">
       <format color="Red" style="bold">Incorrect</format><img src="04_When_to_use_incorrect.png" alt="An incorrect example of using radiobuttons for a list of 5 or more options"/>
     </td>
   </tr>
-  </table> *\  Я скрыла картинки, потому что не понимаю зачем только для одного пункта они добавлены, вроде и так понятно,
- Если вопросов нет, то я так и оставлю-->
+  </table>
 
 * The screen space is limited.
 * The option might be used less often than other options on the screen.
 * There are other drop-down lists in the same group of UI components. A radio button group is more noticeable than a drop-down list, so it will look like a more important setting.
-* There is a combination of several UI components for one setting:
+* The setting combines several UI components into one control:
   ![](05_When_to_use_Segmented_button.png){width=706}
 
 ## How to use
@@ -102,13 +99,11 @@ Consider using a [drop-down list](drop_down.md) if:
 
 ### Writing guidelines
 
-Use sentence-style capitalization.
-
-Do not use ending punctuation.
-
-Use the imperative form of verbs.
-
-Do not use negation in labels as it complicates understanding.
+* Use sentence-style capitalization.
+* Do not use ending punctuation.
+* Use the imperative form of verbs.
+* Do not use negation in labels as it complicates understanding.
+* Make labels short and intelligible — see [Writing short and clear text](writing_short.md).
 
 <format color="369650" style="bold">Correct</format>
 ![](08_How_to_use_correct.png){width=706}
@@ -116,8 +111,6 @@ Do not use negation in labels as it complicates understanding.
  <format color="E55765" style="bold">Incorrect</format>
 ![](08_How_to_use_incorrect.png){width=706}
 
-
-Make labels short and intelligible — see [Writing short and clear text](writing_short.md).
 
 ### Group label
 Always start a radio button group with a group label. It explains what the options are for.
@@ -130,6 +123,5 @@ Use a checkbox or another radio button as a group label if the radio button grou
 
 ## Sizes and placement
 
-If a radio button group depends on another control, e.g., a checkbox, follow the rules for [dependent colors](layout.md#dependent-controls).
-Otherwise, follow the rules for [independent colors](layout.md).
+Follow the layout of [checkboxes and radio-buttons](https://plugins.jetbrains.com/docs/intellij/layout.html#checkboxes-and-radio-buttons)
 

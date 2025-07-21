@@ -96,13 +96,15 @@ Between symbols in series.
 
 Use a colon after labels for inputs and radio button / checkbox groups.
 
-![](label_noun.png){width=153}
+<!-- Replace the images below later -->
 
-![](radio_example.png){width=213}
+![](input_focus.png){width=706}
+
+![](checkbox_when_to_use.png){width=706}
 
 Do **not** use a colon if a label and text inside the input element make a phrase.
 
-![](label_sentence.png){width=247}
+![](input_placeholder_default.png){width=706}
 
 ## Contractions
 

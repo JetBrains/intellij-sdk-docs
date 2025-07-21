@@ -72,11 +72,12 @@ If input data is secured, replace it with dots via [`JBPasswordField`](%gh-ic%/p
 
 ![](input_password.png){width=706}
 
+<!--
 ### Setting a date
 
-Use a calendar to set a date.
+Use calendar to set a date.
 
-![](input_date_picker.png){width="706"}
+![](input_date_picker.png){width="706"} -->
 
 ### Choosing a color
 

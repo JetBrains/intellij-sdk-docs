@@ -12,6 +12,12 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2025
 
+### July
+{#july-25}
+
+Kotlin Notebook integration
+: Add a new section about [](tools_kotlin_notebook.md).
+
 ### May
 {#may-25}
 

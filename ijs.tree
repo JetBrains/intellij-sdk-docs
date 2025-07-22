@@ -436,7 +436,6 @@
     <toc-element topic="api_internal.md"/>
   </toc-element>
   <toc-element toc-title="Tooling">
-    <toc-element topic="tools_kotlin_notebook.md"/>
     <toc-element topic="tools_intellij_platform_gradle_plugin.md">
       <toc-element topic="tools_intellij_platform_gradle_plugin_plugins.md"/>
       <toc-element topic="tools_intellij_platform_gradle_plugin_extension.md"/>
@@ -452,6 +451,7 @@
       <toc-element topic="tools_intellij_platform_gradle_plugin_recipes.md"/>
       <toc-element topic="tools_intellij_platform_gradle_plugin_faq.md" toc-title="Frequently Asked Questions"/>
     </toc-element>
+    <toc-element topic="tools_kotlin_notebook.md"/>
     <toc-element topic="tools_gradle_intellij_plugin.md">
       <toc-element topic="tools_gradle_intellij_plugin_examples.md" toc-title="Usage Examples"/>
       <toc-element topic="tools_gradle_intellij_plugin_build_features.md" toc-title="Build Features"/>

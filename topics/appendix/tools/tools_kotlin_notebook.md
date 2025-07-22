@@ -23,13 +23,15 @@ Like Jupyter Notebooks, Kotlin Notebook provides an interactive platform for pro
 
 To begin using the IntelliJ Platform integration:
 
+<procedure>
+
 1. Create a new Kotlin Notebook file (`.ipynb`) in your project or as a scratch file using <shortcut>⌘⇧N</shortcut> on macOS or <shortcut>Ctrl+Shift+N</shortcut> on Windows/Linux.
 2. **Important**: Switch to **Run in IDE Process** mode in the notebook toolbar.
 3. In the first code cell, declare:
-
-```kotlin
-%use intellij-platform
-```
+    ```kotlin
+    %use intellij-platform
+    ```
+</procedure>
 
 Once executed, the necessary IntelliJ Platform libraries are loaded into the Kotlin Notebook classpath, making them available for import in subsequent cells.
 
@@ -94,15 +96,15 @@ registerExtension(extensionPointName, instance)
 When the IntelliJ Platform integration is loaded, the following variables are automatically available in your Kotlin Notebook environment.
 These variables provide access to essential IDE components, configuration information, and management interfaces.
 
-| Variable                   | Type                   | Description                                                                                                                        |
-|----------------------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------|
-| `idePath`                  | `Path`                 | Represents the resolved file system path to the IntelliJ Platform installation directory.                                          |
-| `ide`                      | `Ide`                  | Represents an IDE instance, which allows interacting with plugins and resolving their dependencies based on the IDE's configuration. |
-| `notebookDisposable`       | `Disposable`           | Represents a disposable used for managing the IntelliJ Platform lifetime of the current notebook.                                  |
-| `notebookPluginDescriptor` | `PluginMainDescriptor` | Represents a plugin descriptor for the plugin created with Kotlin Notebook IntelliJ Platform integration.                          |
-| `pluginManager`            | `PluginManager`        | Instance of the `PluginManager`, which allows accessing information about plugins and their states in the current IDE environment. |
-| `pluginRepository`         | `PluginRepository`     | Instance of `PluginRepository`, responsible for managing plugins via the JetBrains Marketplace plugin repository.         |
-| `productInfo`              | `ProductInfo`          | Lazily initialized property containing current IntelliJ Platform product information.                                    |
+| Variable                   | Type                                                                                                                                                 | Description                                                                                                                          |
+|----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| `idePath`                  | `Path`                                                                                                                                               | Represents the resolved file system path to the IntelliJ Platform installation directory.                                            |
+| `ide`                      | [`ProductInfoBasedIde`](%gh-pv%/intellij-plugin-structure/structure-ide/src/main/java/com/jetbrains/plugin/structure/ide/ProductInfoBasedIde.kt)     | Represents an IDE instance, which allows interacting with plugins and resolving their dependencies based on the IDE's configuration. |
+| `notebookDisposable`       | [`Disposable`](%gh-ic%/platform/util/src/com/intellij/openapi/Disposable.java)                                                                       | Represents a disposable used for managing the IntelliJ Platform lifetime of the current notebook.                                    |
+| `notebookPluginDescriptor` | [`PluginMainDescriptor`](%gh-ic%/platform/core-impl/src/com/intellij/ide/plugins/IdeaPluginDescriptorImpl.kt)                                        | Represents a plugin descriptor for the plugin created with Kotlin Notebook IntelliJ Platform integration.                            |
+| `pluginManager`            | [`PluginManager`](%gh-ic%/platform/core-impl/src/com/intellij/ide/plugins/PluginManager.java)                                                        | Instance of the `PluginManager`, which allows accessing information about plugins and their states in the current IDE environment.   |
+| `pluginRepository`         | [`PluginRepository`](%gh-pv%/intellij-plugin-verifier/verifier-repository/src/main/java/com/jetbrains/pluginverifier/repository/PluginRepository.kt) | Instance of `PluginRepository`, responsible for managing plugins via the JetBrains Marketplace plugin repository.                    |
+| `productInfo`              | [`ProductInfo`](%gh-pv%/intellij-plugin-structure/structure-intellij/src/main/java/com/jetbrains/plugin/structure/intellij/platform/ProductInfo.kt)  | Lazily initialized property containing current IntelliJ Platform product information.                                                |
 
 ## Notebook Helpers
 {id="notebook-helpers"}
@@ -116,11 +118,11 @@ These variables provide access to essential IDE components, configuration inform
 ## IntelliJ Platform Helpers
 {id="intellij-platform-helpers"}
 
-| Function                                                                    | Description                                                                  |
-|-----------------------------------------------------------------------------|------------------------------------------------------------------------------|
-| `currentProject()`                                                          | Returns the current open `Project` instance or null if no projects are open. |
-| `currentEditor()`                                                           | Returns the current `FileEditor` instance or null if no editor is open.      |
-| `registerExtension(extensionPointName: ExtensionPointName<T>, instance: T)` | Registers an extension programmatically for the given extension point.       |
+| Function                                                                    | Description                                                                 |
+|-----------------------------------------------------------------------------|-----------------------------------------------------------------------------|
+| `currentProject()`                                                          | Returns the current open `Project` instance. |
+| `currentEditor()`                                                           | Returns the current `FileEditor` instance or null if no editor is open.     |
+| `registerExtension(extensionPointName: ExtensionPointName<T>, instance: T)` | Registers an extension programmatically for the given extension point.      |
 
 ## Examples {id="examples"}
 

@@ -10,6 +10,19 @@ If you need a functionality that is specific to your project domain, conventions
 Before you start the IntelliJ Platform plugin development, define your requirements and verify if they can be covered with any of the alternatives described below.
 Consider implementing an actual plugin only when the described solutions are insufficient in your case and there is a significant number of developers who can benefit from it.
 
+## Kotlin Notebook Integration
+<primary-label ref="2025.2"/>
+
+[](tools_kotlin_notebook.md) offers an interactive environment for testing IntelliJ Platform APIs directly within your IDE. By declaring `%use intellij-platform` in a notebook cell and switching to "Run in IDE Process" mode, you can run IntelliJ Platform code within the active IDE runtime without needing to create a full plugin project.
+
+This integration is especially helpful for:
+- Quickly prototyping IDE features and UI components
+- Testing platform APIs and behaviors
+- Building interactive documentation and tutorials
+- Trying out plugin ideas before formal development
+
+The notebook environment provides direct access to the IntelliJ Platform APIs, UI rendering features, resource management via the Disposer mechanism, and the ability to load and interact with installed plugins.
+
 ## Structural Search and Replace Inspections
 
 The [Structural Search and Replace (SSR)](https://www.jetbrains.com/help/idea/structural-search-and-replace.html) functionality allows defining search patterns which are based not only on textual information but also on the structure of the searched code fragments, no matter how it is formatted or commented.

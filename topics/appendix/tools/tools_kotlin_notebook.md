@@ -118,11 +118,12 @@ These variables provide access to essential IDE components, configuration inform
 ## IntelliJ Platform Helpers
 {id="intellij-platform-helpers"}
 
-| Function                                                                    | Description                                                                 |
-|-----------------------------------------------------------------------------|-----------------------------------------------------------------------------|
-| `currentProject()`                                                          | Returns the current open `Project` instance. |
-| `currentEditor()`                                                           | Returns the current `FileEditor` instance or null if no editor is open.     |
-| `registerExtension(extensionPointName: ExtensionPointName<T>, instance: T)` | Registers an extension programmatically for the given extension point.      |
+| Function                                                                    | Description                                                             |
+|-----------------------------------------------------------------------------|-------------------------------------------------------------------------|
+| `currentProject()`                                                          | Returns the current open `Project` instance.                            |
+| `currentEditor()`                                                           | Returns the current `FileEditor` instance or null if no editor is open. |
+| `registerExtension(extensionPointName: ExtensionPointName<T>, instance: T)` | Registers an extension programmatically for the given extension point.  |
+| `registerExtension(extensionPointName: String, instance: T)`                | Registers an extension programmatically for the given extension point.  |
 
 ## Examples {id="examples"}
 
@@ -141,39 +142,42 @@ println("Build: ${productInfo.buildNumber}")
 ### Loading and Using Plugins
 
 ```kotlin
-loadPlugins("com.intellij.mcpServer")
+loadPlugins("com.intellij.gradle")
 ```
 
 ```kotlin
-import com.intellij.openapi.application.ApplicationManager
-import com.intellij.openapi.ui.DialogEarthquakeShaker
-import com.intellij.openapi.wm.WindowManager
-import com.intellij.mcpserver.McpToolset
-import com.intellij.mcpserver.annotations.McpDescription
-import com.intellij.mcpserver.annotations.McpTool
-import com.intellij.mcpserver.project
-import kotlinx.coroutines.delay
-import kotlin.coroutines.coroutineContext
+import com.intellij.gradle.toolingExtension.util.GradleVersionUtil
 
-class ShakeMcpToolset : McpToolset {
+GradleVersionUtil.isCurrentGradleAtLeast("8.13.0")
+```
 
-  @McpTool
-  @McpDescription("Shakes your JetBrains IDE 😵‍💫")
-  suspend fun shakeIde(
-    @McpDescription("How many times to shake your IDE?")
-    times: Int = 1
-  ) {
-    val project = coroutineContext.project
-    val window = WindowManager.getInstance().getFrame(project)
+### Registering Extension
 
-    repeat(times) {
-      DialogEarthquakeShaker.shake(window)
-      delay(500)
-    }
-  }
+```kotlin
+import com.intellij.codeInsight.editorActions.CopyPastePreProcessor
+import com.intellij.openapi.editor.Editor
+import com.intellij.openapi.editor.RawText
+import com.intellij.openapi.project.Project
+import com.intellij.psi.PsiFile
+
+class MyCopyPastePreProcessor : CopyPastePreProcessor {
+  override fun preprocessOnCopy(
+    file: PsiFile?,
+    startOffsets: IntArray?,
+    endOffsets: IntArray?,
+    text: String?,
+  ) = null
+
+  override fun preprocessOnPaste(
+    project: Project?,
+    file: PsiFile?,
+    editor: Editor?,
+    text: String?,
+    rawText: RawText?,
+  ) = "Hello, World!"
 }
 
-registerExtension(McpToolset.EP, ShakeMcpToolset())
+registerExtension(CopyPastePreProcessor.EP_NAME, MyCopyPastePreProcessor())
 ```
 
 ### Rendering Kotlin UI DSL Components

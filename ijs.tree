@@ -436,6 +436,7 @@
     <toc-element topic="api_internal.md"/>
   </toc-element>
   <toc-element toc-title="Tooling">
+    <toc-element topic="tools_kotlin_notebook.md"/>
     <toc-element topic="tools_intellij_platform_gradle_plugin.md">
       <toc-element topic="tools_intellij_platform_gradle_plugin_plugins.md"/>
       <toc-element topic="tools_intellij_platform_gradle_plugin_extension.md"/>

@@ -118,12 +118,12 @@ These variables provide access to essential IDE components, configuration inform
 ## IntelliJ Platform Helpers
 {id="intellij-platform-helpers"}
 
-| Function                                                                    | Description                                                             |
-|-----------------------------------------------------------------------------|-------------------------------------------------------------------------|
-| `currentProject()`                                                          | Returns the current open `Project` instance.                            |
-| `currentEditor()`                                                           | Returns the current `FileEditor` instance or null if no editor is open. |
-| `registerExtension(extensionPointName: ExtensionPointName<T>, instance: T)` | Registers an extension programmatically for the given extension point.  |
-| `registerExtension(extensionPointName: String, instance: T)`                | Registers an extension programmatically for the given extension point.  |
+| Function                                                                    | Description                                                                                                                                                   |
+|-----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `currentProject()`                                                          | Returns the current open [`Project`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/Project.java) instance.                                       |
+| `currentEditor()`                                                           | Returns the current [`FileEditor`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/fileEditor/FileEditor.java) instance or null if no editor is open. |
+| `registerExtension(extensionPointName: ExtensionPointName<T>, instance: T)` | Registers an extension programmatically for the given extension point.                                                                                        |
+| `registerExtension(extensionPointName: String, instance: T)`                | Registers an extension programmatically for the given extension point.                                                                                        |
 
 ## Examples {id="examples"}
 
@@ -219,7 +219,7 @@ import com.intellij.openapi.application.runInEdt
 import com.intellij.openapi.util.Disposer
 import com.intellij.openapi.wm.ToolWindowManager
 
-val project = currentProject() ?: error("Project not found")
+val project = currentProject()
 val toolWindowManager = ToolWindowManager.getInstance(project)
 
 runInEdt {

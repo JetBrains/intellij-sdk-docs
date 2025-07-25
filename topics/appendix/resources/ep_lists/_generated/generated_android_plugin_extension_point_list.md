@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 616fa4675f6241b04a17deb7379d76dca5617e35 -->
+<!-- Revision: 9823c9c422640ea294e1667a948c84f414e9e1bd -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-109 Extension Points and 36 Listeners
+110 Extension Points and 36 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -27,8 +27,8 @@ EP List Directories:
 | [`TutorialCardRefreshNotifier#TUTORIAL_CARD_TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.assistant.TutorialCardRefreshNotifier)  | [`TutorialCardRefreshNotifier`](%gh-ij-android%/assistant/src/com/android/tools/idea/assistant/TutorialCardRefreshNotifier.java) |
 | [`AvdLaunchListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.avdmanager.AvdLaunchListener)  | [`AvdLaunchListener`](%gh-ij-android%/android/src/com/android/tools/idea/avdmanager/AvdLaunchListener.java) |
 | [`EmulatorLogListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.avdmanager.EmulatorLogListener)  | [`EmulatorLogListener`](%gh-ij-android%/android/src/com/android/tools/idea/avdmanager/EmulatorLogListener.kt) |
-| [`IssueProviderListener#UI_CHECK`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.common.error.IssueProviderListener)  ![Project-Level][project-level] | [`IssueProviderListener`](%gh-ij-android%/designer/src/com/android/tools/idea/common/error/IssueProvider.kt) |
 | [`IssueProviderListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.common.error.IssueProviderListener)  ![Project-Level][project-level] | [`IssueProviderListener`](%gh-ij-android%/designer/src/com/android/tools/idea/common/error/IssueProvider.kt) |
+| [`IssueProviderListener#UI_CHECK`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.common.error.IssueProviderListener)  ![Project-Level][project-level] | [`IssueProviderListener`](%gh-ij-android%/designer/src/com/android/tools/idea/common/error/IssueProvider.kt) |
 | [`ComposeAnimationListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.compose.preview.ComposePreviewRepresentation.ComposeAnimationListener)  | [`ComposeAnimationListener`](%gh-ij-android%/compose-designer/src/com/android/tools/idea/compose/preview/Preview.kt) |
 | [`FastPreviewManager#FAST_PREVIEW_MANAGER_TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.editors.fast.FastPreviewManager.Companion.FastPreviewManagerListener)  | [`FastPreviewManagerListener`](%gh-ij-android%/android/src/com/android/tools/idea/editors/fast/FastPreviewManager.kt) |
 | [`GradleBuildState#GRADLE_BUILD_TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.gradle.project.build.GradleBuildListener)  | [`GradleBuildListener`](%gh-ij-android%/project-system-gradle/src/com/android/tools/idea/gradle/project/build/GradleBuildListener.java) |
@@ -48,8 +48,8 @@ EP List Directories:
 | [`SdkInstallListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.sdk.SdkInstallListener)  | [`SdkInstallListener`](%gh-ij-android%/android/src/com/android/tools/idea/sdk/SdkInstallListener.kt) |
 | [`DeviceMirroringSettingsListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.streaming.DeviceMirroringSettingsListener)  | [`DeviceMirroringSettingsListener`](%gh-ij-android%/android/src/com/android/tools/idea/streaming/DeviceMirroringSettingsListener.java) |
 | [`EmulatorSettingsListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.streaming.EmulatorSettingsListener)  | [`EmulatorSettingsListener`](%gh-ij-android%/android/src/com/android/tools/idea/streaming/EmulatorSettingsListener.java) |
+| [`Listener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.streaming.actions.FloatingXrToolbarState.Listener)  | [`Listener`](%gh-ij-android%/streaming/src/com/android/tools/idea/streaming/actions/ToggleFloatingXrToolbarAction.kt) |
 | [`StreamingContextMenuAdvertisementCloser#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.streaming.core.StreamingContextMenuAdvertisementCloser)  | [`StreamingContextMenuAdvertisementCloser`](%gh-ij-android%/streaming/src/com/android/tools/idea/streaming/core/StreamingContextMenuAdvertisementCloser.java) |
-| [`Listener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.streaming.emulator.actions.FloatingXrToolbarState.Listener)  | [`Listener`](%gh-ij-android%/streaming/src/com/android/tools/idea/streaming/emulator/actions/ToggleFloatingXrToolbarAction.kt) |
 | [`TransportDeviceManager#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.transport.TransportDeviceManager.TransportDeviceManagerListener)  | [`TransportDeviceManagerListener`](%gh-ij-android%/android-transport/src/com/android/tools/idea/transport/TransportDeviceManager.java) |
 | [`Listener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.uibuilder.options.NlOptionsConfigurable.Listener)  | [`Listener`](%gh-ij-android%/designer/src/com/android/tools/idea/uibuilder/options/NlOptionsConfigurable.kt) |
 | [`OpenHomeTabListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.profilers.taskbased.home.OpenHomeTabListener)  | [`OpenHomeTabListener`](%gh-ij-android%/profilers/src/com/android/tools/profilers/taskbased/home/OpenHomeTabListener.kt) |
@@ -86,6 +86,14 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.run.deviceNameRenderer"/></include> ![Non-Dynamic][non-dynamic] | [`DeviceNameRendererEx`](%gh-ij-android%/android-adb/src/com/android/tools/idea/ddms/DeviceNameRendererEx.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.deviceProvisioner"/></include> ![Non-Dynamic][non-dynamic] | [`DeviceProvisionerFactory`](%gh-ij-android%/android-adb/src/com/android/tools/idea/deviceprovisioner/DeviceProvisionerFactory.kt) |
 
+### android-common.xml
+
+[`android-common.xml`](%gh-ij-android%/android-common/resources/META-INF/android-common.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.googleapis.googleApiKeyProvider"/></include> | [`GoogleApiKeyProvider`](%gh-ij-android%/android-common/src/com/android/tools/idea/googleapis/GoogleApiKeyProvider.kt) |
+
 ### android-editing-metrics.xml
 
 [`android-editing-metrics.xml`](%gh-ij-android%/android/editing/metrics/resources/META-INF/android-editing-metrics.xml)
@@ -102,14 +110,6 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.execution.common.androidConfigurationExecutorProvider"/></include> ![Non-Dynamic][non-dynamic] | [`Provider`](%gh-ij-android%/execution/common/src/com/android/tools/idea/execution/common/AndroidConfigurationExecutor.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.execution.common.debug.utils.facetFinderToken"/></include> ![Non-Dynamic][non-dynamic] | [`FacetFinderToken`](%gh-ij-android%/execution/common/src/com/android/tools/idea/execution/common/debug/utils/FacetFinder.kt) |
-
-### android-kotlin-extensions-common.xml
-
-[`android-kotlin-extensions-common.xml`](%gh-ij-android%/android-kotlin/android-extensions-idea-common/resources/META-INF/android-kotlin-extensions-common.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.android.model.androidModuleInfoProvider"/></include> ![Deprecated][deprecated] ![Non-Dynamic][non-dynamic] | [`AndroidModuleInfoProvider`](%gh-ij-android%/android-kotlin/android-extensions-idea-common/src/org/jetbrains/kotlin/android/synthetic/idea/AndroidModuleInfoProvider.kt) |
 
 ### android-kotlin.common.xml
 
@@ -195,7 +195,7 @@ EP List Directories:
 
 ### apkanalyzer.xml
 
-[`apkanalyzer.xml`](%gh-ij-android%/apkanalyzer/src/META-INF/apkanalyzer.xml)
+[`apkanalyzer.xml`](%gh-ij-android%/apkanalyzer/resources/META-INF/apkanalyzer.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -236,7 +236,7 @@ EP List Directories:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.gradle.dcl.ide.declarativeSchemaProvider"/></include> ![Non-Dynamic][non-dynamic] | [`DeclarativeSchemaProvider`](%gh-ij-android%/gradle-declarative-lang-ide/src/com/android/tools/idea/gradle/dcl/lang/ide/DeclarativeSchemaProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.gradle.dcl.ide.declarativeSchemaProvider"/></include> ![Non-Dynamic][non-dynamic] | `n/a` |
 
 ### compose-designer.xml
 
@@ -269,6 +269,7 @@ EP List Directories:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.uibuilder.analytics.resizeTracker"/></include> | [`ResizeTracker`](%gh-ij-android%/designer/src/com/android/tools/idea/uibuilder/analytics/ResizeTracker.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.uibuilder.editor.multirepresentation.sourcecode.sourceCodePreviewRepresentationProvider"/></include> ![Non-Dynamic][non-dynamic] | [`PreviewRepresentationProvider`](%gh-ij-android%/designer/src/com/android/tools/idea/uibuilder/editor/multirepresentation/PreviewRepresentationProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.uibuilder.editorNotificationProvider"/></include> ![Non-Dynamic][non-dynamic] ![DumbAware][dumb-aware] | [`EditorNotificationProvider`](%gh-ic%/platform/platform-api/src/com/intellij/ui/EditorNotificationProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.uibuilder.handlers.constraint.constraintLayoutExtension"/></include> | [`ConstraintLayoutExtension`](%gh-ij-android%/designer/src/com/android/tools/idea/uibuilder/handlers/constraint/ConstraintComponentUtilities.java) |
@@ -307,7 +308,7 @@ EP List Directories:
 
 ### lint-plugin.xml
 
-[`lint-plugin.xml`](%gh-ij-android%/lint/src/META-INF/lint-plugin.xml)
+[`lint-plugin.xml`](%gh-ij-android%/lint/resources/META-INF/lint-plugin.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -422,7 +423,7 @@ EP List Directories:
 
 ### testartifacts.xml
 
-[`testartifacts.xml`](%gh-ij-android%/testartifacts/src/META-INF/testartifacts.xml)
+[`testartifacts.xml`](%gh-ij-android%/testartifacts/resources/META-INF/testartifacts.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|

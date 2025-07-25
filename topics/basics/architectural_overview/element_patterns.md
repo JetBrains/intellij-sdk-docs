@@ -49,7 +49,7 @@ XmlAttributeValuePattern attributeValueInFxml =
 ```
 
 As shown in the code above, element patterns can be stacked and combined to create more complex conditions.
-[`JsonCompletionContributor`](%gh-ic%/json/src/com/intellij/json/codeinsight/JsonCompletionContributor.java) contains another example with more requirements on the PSI element.
+[`JsonCompletionContributor`](%gh-ic%/json/backend/src/com/intellij/json/codeinsight/JsonCompletionContributor.java) contains another example with more requirements on the PSI element.
 
 ```java
 PsiElementPattern.Capture<PsiElement> AFTER_COMMA_OR_BRACKET_IN_ARRAY =

@@ -1,4 +1,4 @@
-// Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 
 package org.intellij.sdk.editor;
 
@@ -29,9 +29,10 @@ public class EditorAreaIllustration extends AnAction {
   @Override
   public void actionPerformed(@NotNull final AnActionEvent e) {
     // Get access to the editor and caret model. update() validated editor's existence.
-    final Editor editor = e.getRequiredData(CommonDataKeys.EDITOR);
+    final Editor editor = e.getData(CommonDataKeys.EDITOR);
+    if (editor == null) return;
     final CaretModel caretModel = editor.getCaretModel();
-    // Getting the primary caret ensures we get the correct one of a possible many.
+    // Getting the primary caret ensures we get the correct one of possible many.
     final Caret primaryCaret = caretModel.getPrimaryCaret();
     // Get the caret information
     LogicalPosition logicalPos = primaryCaret.getLogicalPosition();
@@ -57,7 +58,7 @@ public class EditorAreaIllustration extends AnAction {
     // Get required data keys
     final Project project = e.getProject();
     final Editor editor = e.getData(CommonDataKeys.EDITOR);
-    // Set visibility only in case of existing project and editor
+    // Set visibility only in the case of an existing project and editor
     e.getPresentation().setEnabledAndVisible(project != null && editor != null);
   }
 

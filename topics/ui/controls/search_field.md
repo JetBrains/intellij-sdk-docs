@@ -10,7 +10,7 @@
 
 </tldr>
 
-A search field is an input field that helps users locate objects, actions or text in an application.
+A search field is an [input field](input_field.md) that helps users locate objects, actions, or text.
 
 ![](search_field.png){width=706}
 
@@ -18,10 +18,10 @@ A search field is an input field that helps users locate objects, actions or tex
 
 ## When to use
 
-Use the search field when specific objects are difficult to find at a glance:
+Use a search field when specific objects are difficult to find at a glance:
 
 * There are many objects, as in the VCS Log table or in the Editor with a large file opened.
-* Objects aren't in a single location, for example controls are located on different setting pages.
+* Objects aren't in a single location, for example, controls are located on different setting pages.
 
 ## How to use
 
@@ -130,13 +130,26 @@ Fit the search field to the popup windows and to a toolbar if it has top borders
 
 #### Speed Search
 
-Show the search field on demand when search is supplementary to other functionality or if space is limited.
+Show the search field on demand when search is supplementary to other functionality or if space is limited. The search field should be accessible with <shortcut>cmd+F</shortcut> on macOS and <shortcut>Ctrl + F</shortcut> on Windows/Linux.
 For example, space in the Project view is limited and too loaded to always show the Search bar:
 
 ![](search_field_project.png){width=706}
 
 ### Sizes
 
+#### Standalone field {#standalone-search-size}
+
+For a search field which is displayed as an input field, follow the [input sizes guideline](input_field.md#sizes-and-placement).
+
+#### Above lists and trees {#list-trees-search-size}
+
+When placed above lists or trees, expand the field to the width of the list or tree.
+
+#### Speed search {#speed-search-size}
+
+For a search field shown on demand, for example, in the Project tool window, the width should be adjusted on typing to accommodate input.
+
+<!-- #### In a toolbar {#toolbar-search-size}
+
 * For a search field shown without a toolbar, for example, Search in trees, the search width could be adjusted on typing to accommodate input.
-* For a search field that is not fitted to a toolbar, set the minimum width to 200
-* For a search which is fitted to the toolbar, expand the field to the toolbar width.
+* For a search field that is not fitted to a toolbar, set the minimum width to 200 px. -->

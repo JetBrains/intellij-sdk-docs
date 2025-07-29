@@ -527,7 +527,7 @@
       <toc-element toc-title="Tree"/> <!--TODO-->
     </toc-element>
     <toc-element topic="Principles.md">
-      <toc-element toc-title="Accessibility"/> <!--TODO-->
+      <toc-element topic="accessibility.md"/>
       <toc-element toc-title="Dangerous Actions"/> <!--TODO-->
       <toc-element topic="data_formats.md"/>
       <toc-element toc-title="Default Values"/>

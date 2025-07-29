@@ -28,7 +28,7 @@ Examples:
 - Spring Bean is a symbol in [Spring framework model](spring_api.md), it's defined on-the-fly by framework support (not backed by a `PsiElement`) and bound to a `Project`.
 - Database column is a symbol defined by data source (not backed by a `PsiElement`) and not bound to a `Project` since database elements might be shared between projects.
 
-See also [](websymbols.md).
+See also [](polysymbols.md).
 
 ## Lifecycle
 

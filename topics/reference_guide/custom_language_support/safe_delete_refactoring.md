@@ -26,7 +26,7 @@ In addition to that, to support _Safe Delete_, a plugin needs to implement two t
    Deleting PSI elements is implemented by deleting the underlying AST nodes from the AST tree (which, in turn, causes the text ranges corresponding to the AST nodes to be deleted from the document).
 
 **Example:**
-[`delete()`](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java) implementation for a Property in  [Properties language plugin](%gh-ic%/plugins/properties)
+[`delete()`](%gh-ic%/plugins/properties/properties-common/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java) implementation for a Property in  [Properties language plugin](%gh-ic%/plugins/properties)
 
 If needed, it's possible to further customize how _Safe Delete_ is performed for a particular type of element (e.g., how references are searched) via [`SafeDeleteProcessorDelegate`](%gh-ic%/platform/lang-impl/src/com/intellij/refactoring/safeDelete/SafeDeleteProcessorDelegate.java).
 

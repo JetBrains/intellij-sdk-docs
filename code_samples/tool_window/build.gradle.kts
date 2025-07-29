@@ -18,7 +18,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity("2024.2.6")
+    intellijIdeaCommunity("2024.3.6")
   }
 }
 
@@ -27,7 +27,7 @@ intellijPlatform {
 
   pluginConfiguration {
     ideaVersion {
-      sinceBuild = "242"
+      sinceBuild = "243"
     }
   }
   pluginVerification  {

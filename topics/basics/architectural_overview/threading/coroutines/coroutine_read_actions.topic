@@ -171,7 +171,7 @@
 
         <p>
           To check whether the current action was canceled, clients must call <a href="%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java"><code>ProgressManager.checkCanceled()</code></a>, which was adjusted to work in coroutines.
-          Clients mustn't throw <a href="%gh-ic%/platform/util/base/src/com/intellij/openapi/progress/ProcessCanceledException.java"><code>ProcessCanceledException</code></a> manually.
+          Clients mustn't throw <a href="%gh-ic%/platform/util/base/multiplatform/src/com/intellij/openapi/progress/ProcessCanceledException.kt"><code>ProcessCanceledException</code></a> manually.
         </p>
       </chapter>
 

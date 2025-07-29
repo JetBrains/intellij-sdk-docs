@@ -27,7 +27,7 @@
   <var name="gh-jcef-master" value="https://github.com/JetBrains/jcef/tree/master/java"/>
   <var name="gh-java-annotations" value="https://github.com/JetBrains/java-annotations/tree/24.0.0"/>
 
-  <var name="intellij-platform-gradle-plugin-version" value="2.6.0"/>
+  <var name="intellij-platform-gradle-plugin-version" value="2.7.0"/>
   <var name="gh-ijpgp" value="https://github.com/JetBrains/intellij-platform-gradle-plugin/tree/%intellij-platform-gradle-plugin-version%"/>
   <var name="gh-ijpgp-master" value="https://github.com/JetBrains/intellij-platform-gradle-plugin/tree/main"/>
 
@@ -37,6 +37,6 @@
 
   <var name="gradle-intellij-plugin-version" value="1.17.4"/>
   <var name="gradle-grammar-kit-plugin-version" value="2022.3.2.2"/>
-  <var name="marketplace-zip-signer-version" value="0.1.38"/>
+  <var name="marketplace-zip-signer-version" value="0.1.42"/>
 
 </vars>

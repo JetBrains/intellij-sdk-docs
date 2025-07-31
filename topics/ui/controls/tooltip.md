@@ -12,7 +12,7 @@
 
 A tooltip appears on hovering over a UI element and shows an action name or provides useful information about an action or a setting.
 
-<img src="tooltip.png" alt="Tooltip" width="706"/>
+<img src="tooltip_main.png" alt="Tooltip" width="706"/>
 
 ## When to use
 
@@ -25,9 +25,9 @@ There are three types of tooltips:
     </td>
     <td>
         <strong>Action </strong>
-        <p>Shows an action name or label for icons and unlabeled controls, and a shortcut if available.</p>
-        <p><control>Required</control>: action name</p>
-        <p><control>Optional</control>: shortcut</p>
+        <p>Shows an action name or label for icons and unlabeled controls such as main toolbar widgets, and a shortcut if available.</p>
+        <p>Required: action name</p>
+        <p>Optional: shortcut</p>
     </td>
   </tr>
   <tr>
@@ -37,8 +37,8 @@ There are three types of tooltips:
     <td>
         <strong>Action help </strong>
         <p>Shows help text for icons and unlabeled controls in addition to an action name or label.</p>
-        <p><strong>Required</strong>: action name, help text</p>
-        <p><strong>Optional</strong>: shortcut, link</p>
+        <p>Required: action name, help text</p>
+        <p>Optional: shortcut, link</p>
     </td>
   </tr>
   <tr>
@@ -48,8 +48,8 @@ There are three types of tooltips:
     <td>
         <strong>Help</strong>
         <p>Shows help text for all other controls. It is shown on hovering the <a anchor="question-mark-icon-for-help-tooltips">question mark icon</a>.</p>
-        <p><strong>Required</strong>: help text. Action name or label is not required because it is shown in the UI.</p>
-        <p><strong>Optional</strong>: shortcut, link.</p>
+        <p>Required: help text. Action name or label is not required because it is shown in the UI.</p>
+        <p>Optional: shortcut, link.</p>
     </td>
   </tr>
 </table>
@@ -159,29 +159,6 @@ Use **Action help** and **Help** tooltips according to the [Context help](contex
 
 [//]: # (</table>)
 
-<!--
-<p><strong>Implementation</strong></p>
-
-<p>Action</p>
-
-<code-block lang="java">
-new HelpTooltip().setTitle("Commit").setShortcut("⌘K").installOn(component);
-</code-block>
-
-<p>Action help</p>
-
-<code-block lang="java">
-new HelpTooltip().setTitle("Switch Task").setDescription("Tasks are stored locally only. Connect your issue tracker to link your commits with the corresponding issues.").setShortcut("⌥⇧T").setLink("Managing tasks", ()->{}).installOn(component);
-</code-block>
-
-<p>Help</p>
-
-<code-block lang="java">
-new HelpTooltip().setDescription("Useful when moving constants (static final fields) to an enum type in cases when the enum type has a constructor with one parameter of the suitable type.").setShortcut("⌘M").setLink("Example", ()->{}).installOn(component);
-</code-block>
-
-<p><br/></p>
--->
 ### Shortcut
 * Always show a shortcut if an action or a setting has one.
 * Do not show a single shortcut in a tooltip:

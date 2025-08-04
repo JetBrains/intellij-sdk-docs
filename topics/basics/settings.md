@@ -14,7 +14,7 @@ Configure and persist preferences of IntelliJ Platform plugins with the settings
 
 </tldr>
 
-Settings are but one application of the IntelliJ Platform [Persistence Model](persistence.md).
+Settings are one of the applications of the IntelliJ Platform's [Persistence Model](persistence.md).
 
 * [](settings_guide.md) for information about Settings Extension Points and implementations.
 * [](settings_groups.md) for information about creating custom Settings groups and parent-child relationships.

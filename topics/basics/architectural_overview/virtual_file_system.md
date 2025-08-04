@@ -67,7 +67,7 @@ In fact, the refresh operations are executed according to their own threading po
 The synchronous flag simply means that the calling thread will be blocked until the refresh operation (which will most likely run on a different thread) is completed.
 
 Both synchronous and asynchronous refreshes can be initiated from any thread.
-If a refresh is initiated from a background thread, the calling thread must not hold a read action, because otherwise, a deadlock would occur.
+If a refresh is initiated from a background thread, the calling thread must not hold a read lock, because otherwise, a deadlock would occur.
 See [IntelliJ Platform Architectural Overview](threading_model.md) for more details on the threading model and read/write actions.
 
 The same threading requirements also apply to functions like [`LocalFileSystem.refreshAndFindFileByPath()`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/vfs/LocalFileSystem.java), which perform a partial refresh if the file with the specified path is not found in the snapshot.

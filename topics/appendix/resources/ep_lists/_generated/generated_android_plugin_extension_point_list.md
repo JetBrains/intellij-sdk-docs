@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 9823c9c422640ea294e1667a948c84f414e9e1bd -->
+<!-- Revision: cfa82c130b3362f3892e36be73c4b559731cc8ed -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-110 Extension Points and 36 Listeners
+109 Extension Points and 37 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -50,6 +50,7 @@ EP List Directories:
 | [`EmulatorSettingsListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.streaming.EmulatorSettingsListener)  | [`EmulatorSettingsListener`](%gh-ij-android%/android/src/com/android/tools/idea/streaming/EmulatorSettingsListener.java) |
 | [`Listener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.streaming.actions.FloatingXrToolbarState.Listener)  | [`Listener`](%gh-ij-android%/streaming/src/com/android/tools/idea/streaming/actions/ToggleFloatingXrToolbarAction.kt) |
 | [`StreamingContextMenuAdvertisementCloser#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.streaming.core.StreamingContextMenuAdvertisementCloser)  | [`StreamingContextMenuAdvertisementCloser`](%gh-ij-android%/streaming/src/com/android/tools/idea/streaming/core/StreamingContextMenuAdvertisementCloser.java) |
+| [`AndroidTestSuiteView#ANDROID_TEST_SUITE_TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.testartifacts.instrumented.testsuite.api.AndroidTestResultListener)  ![Project-Level][project-level] | [`AndroidTestResultListener`](%gh-ij-android%/testartifacts/src/com/android/tools/idea/testartifacts/instrumented/testsuite/api/AndroidTestResultListener.kt) |
 | [`TransportDeviceManager#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.transport.TransportDeviceManager.TransportDeviceManagerListener)  | [`TransportDeviceManagerListener`](%gh-ij-android%/android-transport/src/com/android/tools/idea/transport/TransportDeviceManager.java) |
 | [`Listener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.uibuilder.options.NlOptionsConfigurable.Listener)  | [`Listener`](%gh-ij-android%/designer/src/com/android/tools/idea/uibuilder/options/NlOptionsConfigurable.kt) |
 | [`OpenHomeTabListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.profilers.taskbased.home.OpenHomeTabListener)  | [`OpenHomeTabListener`](%gh-ij-android%/profilers/src/com/android/tools/profilers/taskbased/home/OpenHomeTabListener.kt) |
@@ -229,14 +230,6 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.assistant.navlistener"/></include> ![Non-Dynamic][non-dynamic] | [`AssistNavListener`](%gh-ij-android%/assistant/src/com/android/tools/idea/assistant/AssistNavListener.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.assistant.panelFactory"/></include> ![Non-Dynamic][non-dynamic] | [`PanelFactory`](%gh-ij-android%/assistant/src/com/android/tools/idea/assistant/PanelFactory.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.assistant.scrollHandler"/></include> ![Non-Dynamic][non-dynamic] | [`ScrollHandler`](%gh-ij-android%/assistant/src/com/android/tools/idea/assistant/ScrollHandler.java) |
-
-### com.android.tools.gradle.dcl
-
-[`com.android.tools.gradle.dcl`](%gh-ij-android%/gradle-declarative-lang-ide/resources/META-INF/plugin.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.gradle.dcl.ide.declarativeSchemaProvider"/></include> ![Non-Dynamic][non-dynamic] | `n/a` |
 
 ### compose-designer.xml
 

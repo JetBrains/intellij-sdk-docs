@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/html-entities.dtd">
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        id="coroutine_read_actions" title="Coroutine Read Actions">
@@ -12,12 +12,12 @@
   <include from="coroutines_snippets.md" element-id="learnCoroutines"/>
 
   <p>
-    The concept of read/write locks and running blocking and cancellable read actions is explained in
+    The concept of read/write locks and running blocking and non-blocking read actions is explained in
     the Threading section:
   </p>
   <list>
-    <li><a href="threading_model.md#read-write-lock">Read-Write Lock</a></li>
-    <li><a href="threading_model.md#read-action-cancellability">Read Action Cancellability</a></li>
+    <li><a href="threading_model.md#read-write-lock"/></li>
+    <li><a href="threading_model.md#non-blocking-read-actions"/></li>
   </list>
 
   <p>This section explains running read actions (RA) in coroutines specifically.</p>
@@ -69,7 +69,7 @@
           <code>Application.runReadAction</code>
         </a>
         and similar methods (without any prefix/suffix) perform RA blocking WA, whereas RA allowing WA are invoked via
-        the <a href="threading_model.md#read-action-cancellability"><code>NonBlockingReadAction</code> API</a>.
+        the <a href="threading_model.md#non-blocking-read-actions"><code>NonBlockingReadAction</code> API</a>.
       </p>
       <p>Be careful when migrating the code running read actions to coroutines.</p>
     </warning>

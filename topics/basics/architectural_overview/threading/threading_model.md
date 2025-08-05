@@ -181,7 +181,7 @@ The IntelliJ Platform provides a simple API for accessing data under read or wri
 Read and write actions allow executing a piece of code under a lock, automatically acquiring it before an action starts, and releasing it after the action is finished.
 
 > Always try to wrap only the required operations into read/write actions, minimizing the time of holding locks.
-> If the read operation itself is long, consider using one of the [read action cancellability techniques](#read-action-cancellability) to avoid blocking the write lock and EDT.
+> If the read operation itself is long, consider using [non-blocking read actions](#non-blocking-read-actions) to avoid blocking the write lock and EDT.
 >
 {style="warning" title="Minimize Locking Scopes"}
 
@@ -516,7 +516,7 @@ The following table presents methods providing useful modality states to be pass
 >
 {style="note"}
 
-## Read Action Cancellability
+## Non-Blocking Read Actions
 
 BGT shouldn't hold [read locks](#read-actions) for a long time.
 The reason is that if EDT needs a write action (for example, the user types something in the editor), it must be acquired as soon as possible.
@@ -573,17 +573,17 @@ The total execution time of the read action will be longer due to multiple attem
 The canceling approach is widely used in various areas of the IntelliJ Platform: editor highlighting, code completion, "go to class/file/…" actions all work like this.
 Read the [](background_processes.md) section for more details.
 
-> Note that APIs mentioned in [Read Actions API](#read-actions-api) (except suspending `readAction()`) are not cancellable.
+> Note that APIs mentioned in [Read Actions API](#read-actions-api) (except suspending `readAction()`) are blocking.
 >
 {style="warning"}
 
-### Cancellable Read Actions API
+### Non-Blocking Read Actions API
 
 > Plugins targeting versions 2024.1+ should use Write Allowing Read Actions available in the [Kotlin Coroutines Read Actions API](coroutine_read_actions.topic#coroutine-read-actions-api).
 >
 {style="warning"}
 
-To run a cancellable read action, use one of the available APIs:
+To run a non-blocking read action, use one of the available APIs:
 
 - [`ReadAction.nonBlocking()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) which returns [`NonBlockingReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/NonBlockingReadAction.java) (NBRA). NBRA handles restarting the action out-of-the-box.
 - [`ReadAction.computeCancellable()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) which computes the result immediately in the current thread or throws an exception if there is a running or requested write action.
@@ -616,7 +616,7 @@ review the documentation of `AnAction.getActionUpdateThread()` in the [](action_
 #### Minimize Write Actions Scope
 
 Write actions currently [have to happen on EDT](#locks-and-edt).
-To speed them up, as much as possible should be moved out of the write action into a preparation step which can be then invoked in the [background](background_processes.md) or inside an [NBRA](#cancellable-read-actions-api).
+To speed them up, as much as possible should be moved out of the write action into a preparation step which can be then invoked in the [background](background_processes.md) or inside an [NBRA](#non-blocking-read-actions-api).
 
 #### Slow Operations on EDT Assertion
 
@@ -633,7 +633,7 @@ Ideally, they should only clear some caches.
 
 It is also possible to schedule background processing of events.
 In such cases, be prepared that some new events might be delivered before the background processing starts – and thus the world might have changed by that moment or even in the middle of background processing.
-Consider using [`MergingUpdateQueue`](%gh-ic%/platform/ide-core/src/com/intellij/util/ui/update/MergingUpdateQueue.kt) and [NBRA](#cancellable-read-actions-api) to mitigate these issues.
+Consider using [`MergingUpdateQueue`](%gh-ic%/platform/ide-core/src/com/intellij/util/ui/update/MergingUpdateQueue.kt) and [NBRA](#non-blocking-read-actions-api) to mitigate these issues.
 
 ### VFS Events
 

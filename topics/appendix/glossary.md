@@ -110,7 +110,7 @@ JetBrains Runtime _(JBR)_ {#jetbrains-runtime}
 ## N
 
 Non-Blocking Read Action _(NBRA)_ {#non-blocking-read-action}
-: A &rarr;&nbsp;[_Read Action_](#read-action) that is canceled by a &rarr;&nbsp;[_Write Action_](#write-action). See also [](threading_model.md#read-action-cancellability).
+: A &rarr;&nbsp;[_Read Action_](#read-action) that is canceled by a &rarr;&nbsp;[_Write Action_](#write-action). See also [](threading_model.md#non-blocking-read-actions).
 
 ## P
 

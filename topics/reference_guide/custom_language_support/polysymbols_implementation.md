@@ -205,7 +205,7 @@ See the [Model Queries Example](#model-queries-example) section for an example.
 Each `PolySymbol` can contain other Poly Symbols, in which case it should implement `PolySymbolScope`.
 For instance, an HTML element symbol would contain some HTML attribute symbols, or a JavaScript class symbol would contain field and method symbols.
 
-When configuring queries, `PolySymbolScope`s contributed by [`PolySymbolQueryScopeContributor`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryScopeContributor.kt) for the given location are added to a `PolySymbolQueryStack`] to create an initial scope for symbol resolve.
+When configuring queries, `PolySymbolScope`s contributed by [`PolySymbolQueryScopeContributor`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryScopeContributor.kt) for the given location are added to a `PolySymbolQueryStack`] to create an initial scope for symbol resolve.
 During pattern matching with symbol sequences, all matched symbols' query scopes (`PolySymbol.queryScope`) are added to the stack allowing for extending scope matching.
 
 ### Methods
@@ -231,7 +231,7 @@ The dereferenced symbol scope should be valid.
 If a symbol scope instance can mutate over time, it should properly implement this method.
 
 When implementing a scope containing many elements, an extension of
-[`PolySymbolScopeWithCache`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/utils/PolySymbolScopeWithCache.kt) is advised.
+[`PolySymbolScopeWithCache`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/utils/PolySymbolScopeWithCache.kt) is advised.
 This structure caches the list of symbols and uses an efficient cache mechanism to speed up queries.
 On extension of this class, it's only necessary to override `initialize()` and provide parameters to the super constructor to specify the caching strategy for the results.
 
@@ -245,13 +245,13 @@ One can also run a code completion query, which will produce a list of valid com
 or a symbol list query, which will list all available symbols.
 
 To perform a query, create a
-[`PolySymbolQueryExecutor`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryExecutor.kt)
+[`PolySymbolQueryExecutor`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryExecutor.kt)
 using
-[`PolySymbolQueryExecutorFactory`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryExecutorFactory.kt).
+[`PolySymbolQueryExecutorFactory`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryExecutorFactory.kt).
 The query executor will be configured by all registered
-[`PolySymbolQueryScopeContributor`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryScopeContributor.kt)
+[`PolySymbolQueryScopeContributor`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryScopeContributor.kt)
 and
-[`PolySymbolQueryConfigurator`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)
+[`PolySymbolQueryConfigurator`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)
 extensions based on the provided PSI context.
 Scope contributors will provide initial Poly Symbol scopes, and configurators will provider rules for calculating Poly Symbols context, and rules for symbol names conversion.
 
@@ -327,18 +327,18 @@ There are seven types of patterns:
 When performing queries, some symbols should be excluded and others included in particular contexts.
 For instance, if we have an Angular project, none of the Vue components should be available.
 [`PolyContext`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/context/PolyContext.kt)
-is created using rules provided by [`PolySymbolQueryConfigurator`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)s with the addition of custom
+is created using rules provided by [`PolySymbolQueryConfigurator`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)s with the addition of custom
 [`PolyContextProvider`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/context/PolyContextProvider.kt).
 As a result, for each kind of context, there is at most a single name assigned.
 `PolyContext` can also be used outside the
-[`PolySymbolQueryExecutor`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryExecutor.kt)
+[`PolySymbolQueryExecutor`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryExecutor.kt)
 as an efficient way to determine whether to enable or disable particular functionality in the IDE based on PSI or VFS context.
 
 ### Query stack
 
 The stack is used as a scope for resolving symbols.
 All scopes provided by
-[`PolySymbolQueryConfigurator`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)s
+[`PolySymbolQueryConfigurator`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)s
 together with the list of additional scopes passed as arguments to the query create an initial query stack.
 Each time a symbol is matched, the list returned by `queryScope` property is added to the stack for any subsequent matches further right the pattern.
 
@@ -357,11 +357,11 @@ interface to avoid boilerplate related to declaration building.
 
 ## References and Code Completion
 
-Usually, it is enough to provide a [`PolySymbolQueryScopeContributor`](%gh-ic-master%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryScopeContributor.kt) for the [supported language features](polysymbols_integration.md#supported-language-features).
+Usually, it is enough to provide a [`PolySymbolQueryScopeContributor`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryScopeContributor.kt) for the [supported language features](polysymbols_integration.md#supported-language-features).
 However, when implementing integration for a language feature, reference providers and code completions need to be implemented from scratch.
 
 To provide references, a
-[`PsiPolySymbolReferenceProvider`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/references/PsiPolySymbolReferenceProvider.kt)
+[`PsiPolySymbolReferenceProvider`](%gh-ic%/platform/polySymbols/backend/src/com/intellij/polySymbols/references/PsiPolySymbolReferenceProvider.kt)
 should be registered.
 If references resolve to a single `PolySymbol`, even if it may be a composite `PolySymbol`, the `getReferencedSymbol` method should be implemented.
 If the symbol reference is offset within the `PsiElement`, for example, within a string literal, the `getReferencedSymbolNameOffset` should also be implemented.

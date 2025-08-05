@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 9823c9c422640ea294e1667a948c84f414e9e1bd -->
+<!-- Revision: cfa82c130b3362f3892e36be73c4b559731cc8ed -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-146 Extension Points and 9 Listeners
+148 Extension Points and 9 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -124,6 +124,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.backendLogXmlPathProvider"/></include> | `RiderCustomBackendLogXmlPathProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.codeStyleContentConverter"/></include> | `RiderCodeStyleContentPageConverter` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.credentials.provider"/></include> | `ICredentialsProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.customNonSolutionRootsPredicate"/></include> | `CustomNonSolutionRootsPredicate` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.documentBehaviour"/></include> | `RiderDocumentBehaviour` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.editors.customBackendLanguageSupport"/></include> | `RiderCustomBackendLanguageSupport` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.extraSettingsSync"/></include> | `ExtraSettingsSync` |
@@ -164,6 +165,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.debugger.evaluation.advice"/></include> | `DebugEvalAdviceProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.debugger.remote.additionalFilesProvider"/></include> | `AdditionalRemoteDebuggerFilesProvider` |
 
 ### RiderExtensionPoints.xml
 

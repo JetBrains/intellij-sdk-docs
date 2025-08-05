@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 9823c9c422640ea294e1667a948c84f414e9e1bd -->
+<!-- Revision: cfa82c130b3362f3892e36be73c4b559731cc8ed -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-18 Extension Points and 6 Listeners
+22 Extension Points and 6 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -39,6 +39,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.documentation.packageVersionProvider"/></include> | `GoDocumentationPackageVersionProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.execution.defaultTargetEnvironmentProvider"/></include> | `DefaultTargetEnvironmentProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.executorExtension"/></include> | `GoExecutorExtension` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.fileWatcherBridge"/></include> | `GoFileWatcherBridge` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.highlighting.errorAnnotatorSuppressor"/></include> | `GoErrorAnnotatorSuppressor` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.importResolver"/></include> | `GoImportResolver` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.importsFilter"/></include> | `GoImportsFilter` |
@@ -57,6 +58,14 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.importPathsProvider"/></include> | `GoImportPathsProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.imports.weigher"/></include> | `GoImportsWeigher` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.rootsProvider"/></include> | `GoRootsProvider` |
+
+### org.jetbrains.plugins.go.ide
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.templateOptionProvider"/></include> | `GoWelcomeScreenFileTemplateOptionProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.welcomeScreenFeatureProvider"/></include> | `GoWelcomeScreenFeatureProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.welcomeScreenFileIconProvider"/></include> | `GoWelcomeScreenFileIconProvider` |
 
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square

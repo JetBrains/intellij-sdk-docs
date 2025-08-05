@@ -40,7 +40,7 @@ The generator implementation must provide:
 
 **Examples:**
 - [`KotlinNewProjectWizard`](%gh-ic%/plugins/kotlin/project-wizard/idea/src/org/jetbrains/kotlin/tools/projectWizard/KotlinNewProjectWizard.kt) generating Kotlin projects
-- [`PythonNewProjectWizard`](%gh-ic-master%/python/pluginJava/src/com/intellij/python/community/plugin/java/PythonNewProjectWizard.kt) generating Python projects
+- [`PythonNewProjectWizard`](%gh-ic%/python/pluginJava/src/com/intellij/python/community/plugin/java/PythonNewProjectWizard.kt) generating Python projects
 
 ## Framework Project Generators
 

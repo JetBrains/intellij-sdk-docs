@@ -73,6 +73,12 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ### IntelliJ Platform 2025.2
 
+Several modules were extracted from the core plugin to separate modules with their own classloaders.
+This shouldn't affect binary compatibility, but an explicit dependency should be added in `build.gradle.kts` using `bundledModule(<moduleName>)` if a plugin uses API from these modules:
+* `intellij.platform.tasks`
+* `intellij.spellchecker`
+* `intellij.relaxng`
+
 `icons.JavaUltimateIcons` class moved to package `com.intellij.java.ultimate.icons`
 : Update code usages and make sure your plugin [depends](plugin_dependencies.md) on the Java plugin.
 

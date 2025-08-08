@@ -48,7 +48,7 @@ public class PopupDialogAction extends AnAction {
 
 At this stage, `update()` implicitly defaults always to enable this action.
 The implementation of `actionPerformed()` does nothing.
-These methods are fully implemented in [](#developing-the-anaction-methods) below.
+These methods are fully implemented in the [](#developing-the-anaction-methods) section.
 
 Before fleshing out those methods, to complete this minimal implementation, `PopupDialogAction` must be registered with the IntelliJ Platform.
 
@@ -80,7 +80,7 @@ The fields of the form are:
   Clicking on the list of groups and typing invokes a search, such as "ToolsMenu".
 * <control>Anchor</control> - Where the menu action should be placed in the <ui-path>Tools</ui-path> menu relative to the other actions in that menu.
 
-In this case, `PopupDialogAction` would be available in the <ui-path>Tools</ui-path> menu, it would be placed at the top, and would have no shortcuts.
+In this case, `PopupDialogAction` would be available in the <ui-path>Tools</ui-path> menu, it would be placed at the top and would have no shortcuts.
 
 After finishing the <control>New Action</control> form and applying the changes, the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of the plugin's <path>plugins.xml</path> file would contain:
 
@@ -96,7 +96,7 @@ After finishing the <control>New Action</control> form and applying the changes,
 </actions>
 ```
 
-The [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) element declares the:
+The [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) element declares:
 - <control>Action ID</control> (`id`)
 - <control>Class Name</control> (`class`)
 - <control>Name</control> (`text`)
@@ -161,7 +161,7 @@ However, it confirms the new entry appears at <ui-path>Tools | Pop Dialog Action
 
 ## Developing the `AnAction` Methods
 
-At this point, the new action `PopupDialogAction` is registered with the IntelliJ Platform and functions in the sense that  `update()` and `actionPerformed()` are called in response to user interaction with the IDE <ui-path>Tools</ui-path> menu.
+At this point, the new action `PopupDialogAction` is registered with the IntelliJ Platform and functions in the sense that `update()` and `actionPerformed()` are called in response to user interaction with the IDE <ui-path>Tools</ui-path> menu.
 However, neither method implements any code to perform useful work.
 
 This section describes adding useful code to these methods.

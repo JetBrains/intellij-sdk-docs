@@ -6,6 +6,7 @@
 
 | Release Name | Channel | Version | IntelliJ IDEA Version | Release Date |
 |--------------|---------|---------|-----------------------|--------------|
+| <p><b>Narwhal 3 Feature Drop </b></p><p> 2025.1.3 Canary 4</p> | ![Canary][canary] | **2025.1.3.4**<p>AI&#8209;251.26094.121.2513.13898001</p> | **2025.1.2**<p>251.26094.121</p> | Aug&nbsp;7,&nbsp;2025 |
 | <p><b>Narwhal Feature Drop </b></p><p> 2025.1.3 Canary 3</p> | ![Canary][canary] | **2025.1.3.3**<p>AI&#8209;251.26094.121.2513.13865387</p> | **2025.1.2**<p>251.26094.121</p> | Jul&nbsp;31,&nbsp;2025 |
 | <p><b>Narwhal Feature Drop </b></p><p> 2025.1.3 Canary 2</p> | ![Canary][canary] | **2025.1.3.2**<p>AI&#8209;251.26094.121.2513.13829813</p> | **2025.1.2**<p>251.26094.121</p> | Jul&nbsp;24,&nbsp;2025 |
 | <p><b>Narwhal Feature Drop </b></p><p> 2025.1.3 Canary 1</p> | ![Canary][canary] | **2025.1.3.1**<p>AI&#8209;251.26094.121.2513.13793675</p> | **2025.1.2**<p>251.26094.121</p> | Jul&nbsp;21,&nbsp;2025 |

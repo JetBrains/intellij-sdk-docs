@@ -60,7 +60,9 @@ A more comprehensive explanation of action registration is available in the [](a
 
 ### Registering an Action with the New Action Form
 
-To register `PopupDialogAction` and set up its basic attributes, press <shortcut>Alt+Shift+Enter</shortcut>.
+To register `PopupDialogAction` and set up its basic attributes, invoke the <control>Register Action</control> quick fix.
+To do this, hover the `PopupDialogAction` class name and click the quick fix link, or place the caret at the class name, press <shortcut>Alt+Enter</shortcut>, and select the quick fix.
+
 Fill out the <control>New Action</control> form to set up the parameters for `PopupDialogAction`:
 
 ![New Action](new_action.png){width="800"}

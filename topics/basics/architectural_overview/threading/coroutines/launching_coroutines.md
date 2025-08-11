@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Launching Coroutines
 <primary-label ref="2024.1"/>
@@ -14,7 +14,7 @@ There are two approaches to launching coroutines in the IntelliJ Platform:
 ## Launching Coroutine From Service Scope
 
 The recommended approach is creating a [service](plugin_services.md) that receives [its scope](coroutine_scopes.md#service-scopes) via the constructor injection and launching a coroutine from the service methods.
-Please note that while creating a service instance does allocate additional resources, using a dedicated service and scope remains a lightweight and, most importantly, safe solution for launching coroutines.
+Note that while creating a service instance does allocate additional resources, using a dedicated service and scope remains a lightweight and fundamentally safe solution for launching coroutines.
 It should be used whenever possible.
 
 The pattern is as follows:

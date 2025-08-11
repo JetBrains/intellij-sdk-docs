@@ -86,8 +86,12 @@ See [](launching_coroutines.md#launching-coroutine-from-service-scope) for full 
 
 ### Use Service Scopes
 
-If a plugin requires running some code in a coroutine, the recommended approach is to create a separate [service](plugin_services.md) that will receive its [own scope](#service-scopes) via constructor and launch the coroutine in this scope.
+If a plugin requires running some code in a coroutine, the approach recommended in most cases is to create a separate [service](plugin_services.md) that will receive its [own scope](#service-scopes) via constructor and launch the coroutine in this scope.
 This approach guarantees the usage of the correct scope, preventing leaks and canceling wrong scopes and killing all their (e.g., application's or project's) coroutines accidentally.
+
+> Note that since 2024.2, `AnAction.actionPerformed()` logic can be executed in the [current thread coroutine scope](launching_coroutines.md#using-currentthreadcoroutinescope).
+>
+{style="note"}
 
 See the [](launching_coroutines.md) section for details.
 

@@ -7,9 +7,10 @@
 
 <include from="coroutines_snippets.md" element-id="learnCoroutines"/>
 
-There are two approaches to launching coroutines in the IntelliJ Platform:
-1. [Service with its own scope](#launching-coroutine-from-service-scope). (recommended)
-2. [The `runBlockingCancellable` function](#using-runblockingcancellable).
+In the IntelliJ Platform, coroutines can be launched with one of the following approaches:
+1. [Service with its own scope](#launching-coroutine-from-service-scope).
+2. The [`currentThreadCoroutineScope`](#using-currentthreadcoroutinescope) function for [executing actions](action_system.md#overriding-the-anactionactionperformed-method).
+3. The [`runBlockingCancellable`](#using-runblockingcancellable) function. (not recommended)
 
 ## Launching Coroutine From Service Scope
 
@@ -57,6 +58,31 @@ class MyProjectService(
 
 The injected scope is created per service, so each instance has its own isolated scope with a common parent, which is an [intersection scope](coroutine_scopes.md#intersection-scopes).
 The injected scope is canceled when the container (application/project) is shut down or when the plugin is unloaded.
+
+## Using `currentThreadCoroutineScope`
+
+Action behavior performed in [`AnAction.actionPerformed()`](action_system.md#overriding-the-anactionactionperformed-method) can be executed in a coroutine via [`currentThreadCoroutineScope`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt):
+
+```kotlin
+internal class MyAction : AnAction() {
+  override fun actionPerformed(e: AnActionEvent) {
+    val file = e.getData(LangDataKeys.PSI_FILE) ?: return
+    currentThreadCoroutineScope().launch {
+      // use suspending APIs:
+      val targets = readAction {
+        // do something in read
+      }
+      withContext(Dispatchers.EDT) {
+        // show some UI
+      }
+    }
+  }
+  // ...
+}
+```
+
+Compared to the [service scope](#launching-coroutine-from-service-scope) approach, using `currentThreadCoroutineScope()` enables Action System infrastructure to control the launched coroutine and cancel it if needed.
+In the case of service scopes, the infrastructure code can't control a coroutine launched from an action, as service scopes are "more global" and live longer than the action trigger.
 
 ## Using `runBlockingCancellable`
 

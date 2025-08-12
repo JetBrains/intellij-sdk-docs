@@ -48,7 +48,7 @@ To create a `Document` instance that isn't bound to anything, use [`EditorFactor
 
 ## What are the rules of working with documents?
 
-The general read/write action rules are in effect (see [](threading_model.md)).
+The general [read/write action rules](threading_model.md#read-write-lock) are in effect.
 Besides, any operations which modify the contents of the document must be wrapped in a command ([`CommandProcessor.executeCommand()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/command/CommandProcessor.java)).
 `executeCommand()` calls can be nested, and the outermost `executeCommand()` call is added to the undo stack.
 If multiple documents are modified within a command, undoing this command will, by default, show a confirmation dialog to the user.

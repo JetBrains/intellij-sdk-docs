@@ -25,7 +25,7 @@ The source code for the Java action class is [EditorHandlerIllustration](%gh-sdk
 For more information about creating action classes, see [](action_system.md), which covers the topic in depth.
 
 The `EditorHandlerIllustration` action is registered in the _editor_basic_ [`plugin.xml`](%gh-sdk-samples-master%/editor_basics/src/main/resources/META-INF/plugin.xml) file.
-Note that this action class is registered to appear on the Editor context menu.
+Note that this action class is registered to appear in the Editor context menu.
 
 ```xml
 <actions>
@@ -71,7 +71,7 @@ public class EditorHandlerIllustration extends AnAction {
 ### Acquiring the Correct `EditorActionHandler`
 
 When the `EditorHandlerIllustration.actionPerformed()` method clones the caret, it should use the appropriate IntelliJ Platform [`EditorActionHandler`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionHandler.java).
-An instance of [`EditorActionManager`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionManager.java) is required to obtain the correct `EditorActionHandler`.
+An instance of [`EditorActionManager`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionManager.java) is required to get the correct `EditorActionHandler`.
 The `EditorActionManager` class provides a static method to do this.
 
 To request the correct `EditorActionHandler` from `EditorActionManager`, consult the [`IdeActions`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/actionSystem/IdeActions.java) interface for the correct constant to pass into the `EditorActionManager.getActionHandler()` method.
@@ -81,8 +81,8 @@ Based on that constant, the `EditorActionManager` returns an instance of [`Clone
 ```java
 // Snippet from EditorHandlerIllustration.actionPerformed()
 EditorActionManager actionManager = EditorActionManager.getInstance();
-EditorActionHandler actionHandler =
-    actionManager.getActionHandler(IdeActions.ACTION_EDITOR_CLONE_CARET_BELOW);
+EditorActionHandler actionHandler = actionManager.getActionHandler(
+    IdeActions.ACTION_EDITOR_CLONE_CARET_BELOW);
 ```
 
 ### Using an `EditorActionHandler` to Clone the Caret
@@ -96,10 +96,11 @@ public class EditorHandlerIllustration extends AnAction {
     Editor editor = event.getData(CommonDataKeys.EDITOR);
     if (editor == null) return;
     EditorActionManager actionManager = EditorActionManager.getInstance();
-    EditorActionHandler actionHandler =
-        actionManager.getActionHandler(IdeActions.ACTION_EDITOR_CLONE_CARET_BELOW);
+    EditorActionHandler actionHandler = actionManager.getActionHandler(
+        IdeActions.ACTION_EDITOR_CLONE_CARET_BELOW);
     actionHandler.execute(editor,
-        editor.getCaretModel().getPrimaryCaret(), event.getDataContext());
+        editor.getCaretModel().getPrimaryCaret(),
+        event.getDataContext());
   }
 }
 ```
@@ -107,7 +108,7 @@ public class EditorHandlerIllustration extends AnAction {
 ## Creating a Custom `TypedActionHandler`
 
 The [`TypedActionHandler`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java) interface is the basis for classes that handle keystroke events from the editor.
-Custom implementations of the class are registered to handle editor keystroke events, and receive a callback for each keystroke.
+Custom implementations of the class are registered to handle editor keystroke events and receive a callback for each keystroke.
 The steps below explain how to use `TypedActionHandler` to customize the behavior of the editor when keystroke events are received.
 
 ### Implementing a Custom `TypedActionHandler` Class
@@ -127,13 +128,12 @@ So although a method on the `Document` interface does the `String` insertion, th
 ```java
 final class MyTypedHandler implements TypedActionHandler {
   @Override
-  public void execute(@NotNull Editor editor,
-                      char c,
+  public void execute(@NotNull Editor editor, char c,
                       @NotNull DataContext dataContext) {
     Document document = editor.getDocument();
     Project project = editor.getProject();
-    Runnable runnable = () -> document.insertString(0, "editor_basics\n");
-    WriteCommandAction.runWriteCommandAction(project, runnable);
+    WriteCommandAction.runWriteCommandAction(project,
+        () -> document.insertString(0, "editor_basics\n"));
   }
 }
 ```
@@ -159,4 +159,4 @@ public class EditorHandlerIllustration extends AnAction {
 Placing the registration code in the `EditorHandlerIllustration` class is somewhat arbitrary in the sense that the registration of `MyTypedHandler` has nothing to do with the `EditorHandlerIllustration` class.
 However, the `EditorHandlerIllustration` class is convenient because as an action it gets instantiated at application startup.
 On instantiation, the `static` block of code in `EditorHandlerIllustration` gets evaluated.
-In the `editor_basics` code sample any of the `AnAction` derived classes would work for registering `MyTypedHandler`.
+In the `editor_basics` code sample, any of the `AnAction` derived classes would work for registering `MyTypedHandler`.

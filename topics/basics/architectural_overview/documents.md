@@ -11,11 +11,11 @@ The IntelliJ Platform handles encoding and line break conversions when loading a
 
 ## How do I get a `Document`?
 
-| Context                          | API                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Action](action_system.md) | [`AnActionEvent.getData(CommonDataKeys.EDITOR).getDocument()`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)                                                                                                                                                                                                                                                                             |
-| [PSI File](psi_files.md)         | [`PsiDocumentManager.getDocument()`/`getCachedDocument()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiDocumentManager.java)                                                                                                                                                                                                                                                                                                  |
-| [Virtual File](virtual_file.md)  | <p>[`FileDocumentManager.getDocument()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileEditor/FileDocumentManager.java) (forces the document content to be loaded from a disk if it wasn't loaded previously)</p><p>[`FileDocumentManager.getCachedDocument()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileEditor/FileDocumentManager.java) (use if only open or possibly modified documents are relevant)</p> |
+| Context                         | API                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|---------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Action](action_system.md)      | [`AnActionEvent.getData(CommonDataKeys.EDITOR).getDocument()`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)                                                                                                                                                                                                                                                                             |
+| [PSI File](psi_files.md)        | [`PsiDocumentManager.getDocument()`/`getCachedDocument()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiDocumentManager.java)                                                                                                                                                                                                                                                                                                  |
+| [Virtual File](virtual_file.md) | <p>[`FileDocumentManager.getDocument()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileEditor/FileDocumentManager.java) (forces the document content to be loaded from a disk if it wasn't loaded previously)</p><p>[`FileDocumentManager.getCachedDocument()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileEditor/FileDocumentManager.java) (use if only open or possibly modified documents are relevant)</p> |
 
 ## What can I do with a `Document`?
 
@@ -38,18 +38,18 @@ Thus, an unmodified `Document` instance can be garbage-collected if no one refer
 ## How do I create a `Document`?
 
 For creating a new file on disk, please do not create a `Document` but a PSI file and get its `Document` (see [](psi_files.md#how-do-i-create-a-psi-file)).
-To create a `Document` instance that isn't bound to anything, use [`EditorFactory.createDocument()`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/EditorFactory.java).
+To create a `Document` instance not bound to anything, use [`EditorFactory.createDocument()`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/EditorFactory.java).
 
 ## How do I get notified when documents change?
 
 * `Document.addDocumentListener()` allows receiving notifications about changes in a particular `Document` instance.
 * `EditorFactory.getEventMulticaster().addDocumentListener()` allows receiving notifications about changes in all open documents.
-* Register [`FileDocumentManagerListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileEditor/FileDocumentManagerListener.java) [listener](plugin_listeners.md) or subscribe to `AppTopics.FILE_DOCUMENT_SYNC` on any level bus to receive notifications when a `Document` is saved or reloaded from disk.
+* Register a [`FileDocumentManagerListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileEditor/FileDocumentManagerListener.java) [listener](plugin_listeners.md) or subscribe to `AppTopics.FILE_DOCUMENT_SYNC` on any level bus to receive notifications when a `Document` is saved or reloaded from disk.
 
 ## What are the rules of working with documents?
 
 The general [read/write action rules](threading_model.md#read-write-lock) are in effect.
-Besides, any operations which modify the contents of the document must be wrapped in a command ([`CommandProcessor.executeCommand()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/command/CommandProcessor.java)).
+Besides, any operations that modify the contents of the document must be wrapped in a command ([`CommandProcessor.executeCommand()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/command/CommandProcessor.java)).
 `executeCommand()` calls can be nested, and the outermost `executeCommand()` call is added to the undo stack.
 If multiple documents are modified within a command, undoing this command will, by default, show a confirmation dialog to the user.
 

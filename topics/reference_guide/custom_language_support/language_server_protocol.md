@@ -231,32 +231,41 @@ For more complex cases, the plugin may request to provide a detailed configurati
 
 ## Customization
 
-To fine-tune or disable the implementation of LSP-based features, plugins may override the corresponding properties of the `LspServerDescriptor` class.
-See the [property documentation](#ide-setup) for more details.
+> To access LSP API source code and documentation see [](#ide-setup).
+>
+{style="note"}
 
-### 2023.3
+<tabs>
 
-{id="customization_2023_3"}
+<tab title="2025.2+">
 
-- `lspFormattingSupport`
-- `lspHoverSupport`
+To fine-tune or disable the implementation of LSP-based features, plugins may return a customized `LspCustomization` object from the `LspServerDescriptor.lspCustomization` property.
+Available customization options are described by `LspCustomization`'s properties.
 
-### 2023.2
+For example, see [`PrismaLspServerDescriptor`](%gh-ij-plugins%/prisma/src/org/intellij/prisma/ide/lsp/PrismaLspServerDescriptor.kt).
 
-{id="customization_2023_2"}
+The new API is backward-compatible.
+Plugin LSP customizations implemented via deprecated `LspServerDescriptor`'s properties will work in 2025.2.
+New LSP features will be customizable only via the new API.
 
-- `lspGoToDefinitionSupport`
-- `lspCompletionSupport`
-- `lspDiagnosticsSupport`
-- `lspCodeActionsSupport`
-- `lspCommandsSupport`
+</tab>
 
-To handle custom (undocumented) requests and notifications from the LSP server, override `LspServerDescriptor.createLsp4jClient` property and the `Lsp4jClient` class according to their documentation.
+<tab title="Pre-2025.2">
+
+To fine-tune or disable the implementation of LSP-based features, plugins may override the corresponding properties of the `LspServerDescriptor` class (see their documentation for details).
+
+</tab>
+
+</tabs>
+
+> Note that LSP support is in active development and some customization options are available only in newer versions.
+>
+{style="warning"}
+
+To handle custom (undocumented) requests and notifications from the LSP server, override the `LspServerDescriptor.createLsp4jClient()` function and the `Lsp4jClient` class according to their documentation.
 
 To send custom (undocumented) requests and notifications to the LSP server, override `LspServerDescriptor.lsp4jServerClass` property and implement the `LspClientNotification` and/or `LspRequest` classes.
 The documentation in the source code includes implementation examples.
-
-See the [bundled LSP API source code](#ide-setup) and its documentation for more information.
 
 ## Troubleshooting
 

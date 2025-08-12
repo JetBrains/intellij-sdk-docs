@@ -8,7 +8,7 @@ This tutorial shows how to use actions to access a caret placed in a document op
 Using information about the caret, replace selected text in a document with a string.
 
 The approach in this tutorial relies heavily on creating and registering actions.
-To review the fundamentals of creating and registering actions, refer to [](action_system.md) tutorial.
+To review the fundamentals of creating and registering actions, refer to the [](action_system.md) tutorial.
 
 Multiple examples are used from the [editor_basics](%gh-sdk-samples-master%/editor_basics) plugin code sample from the IntelliJ Platform SDK.
 It may be helpful to open that project in an IntelliJ Platform-based IDE, build the project, run it, select some text in the editor, and invoke the **Editor Replace Text** menu item on the editor context menu.
@@ -22,7 +22,7 @@ The source code for the Java class in this example is [EditorIllustrationAction]
 
 To register the action, we must add the corresponding elements to the [`<actions>`](plugin_configuration_file.md#idea-plugin__actions) section of the plugin configuration file [plugin.xml](%gh-sdk-samples-master%/editor_basics/src/main/resources/META-INF/plugin.xml).
 For more information, refer to the [](creating_actions_tutorial.md#registering-a-custom-action) section.
-The `EditorIllustrationAction` action is registered in the group `EditorPopupMenu` so it will be available from the context menu when focus is on the editor:
+The `EditorIllustrationAction` action is registered in the group `EditorPopupMenu` so it will be available from the context menu when the focus is on the editor:
 
 ```xml
 <action
@@ -37,7 +37,7 @@ The `EditorIllustrationAction` action is registered in the group `EditorPopupMen
 
 ## Defining the Menu Action's Visibility
 
-To determine conditions by which the action will be visible and available requires `EditorIllustrationAction` to override the `AnAction.update()` method.
+Determining conditions by which the action will be visible and available requires `EditorIllustrationAction` to override the `AnAction.update()` method.
 For more information, refer to [](action_system.md#overriding-the-anactionupdate-method).
 
 To work with a selected part of the text, it's reasonable to make the menu action available only when the following requirements are met:
@@ -45,12 +45,12 @@ To work with a selected part of the text, it's reasonable to make the menu actio
 * There is an instance of [`Editor`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/Editor.java) available,
 * There is a text selection in `Editor`.
 
-Additional steps will show how to check these conditions through obtaining instances of `Project` and `Editor` objects, and how to show or hide the action's menu items based on them.
+Additional steps will show how to check these conditions through getting instances of `Project` and `Editor` objects, and how to show or hide the action's menu items based on them.
 
 ### Getting an Instance of the Active Editor from an Action Event
 
 Using the [`AnActionEvent`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java) event passed into the `update` method, a reference to an instance of the `Editor` can be obtained by calling `getData(CommonDataKeys.EDITOR)`.
-Similarly, to obtain a project reference, we use the `getProject()` method.
+Similarly, to get a project reference, we use the `getProject()` method.
 
 ```java
 public class EditorIllustrationAction extends AnAction {
@@ -69,11 +69,11 @@ There are other ways to access an `Editor` instance:
 * If a [`DataContext`](%gh-ic%/platform/core-ui/src/openapi/actionSystem/DataContext.java) object is available: `CommonDataKeys.EDITOR.getData(context);`
 * If only a `Project` object is available, use `FileEditorManager.getInstance(project).getSelectedTextEditor()`
 
-### Obtaining a Caret Model and Selection
+### Getting a Caret Model and Selection
 
 After making sure a project is open, and an instance of the `Editor` is obtained, we need to check if any selection is available.
 The [`SelectionModel`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/SelectionModel.java) interface is accessed from the `Editor` object.
-Determining whether some text is selected is accomplished by calling the `SelectionModel.hasSelection()` method.
+Determining whether some text is selected is achieved by calling the `SelectionModel.hasSelection()` method.
 Here's how the `EditorIllustrationAction.update(AnActionEvent event)` method should look:
 
 ```java
@@ -86,15 +86,17 @@ public class EditorIllustrationAction extends AnAction {
 
     // Set visibility only in the case of
     // existing project editor, and selection
-    event.getPresentation().setEnabledAndVisible(project != null
-        && editor != null && editor.getSelectionModel().hasSelection());
+    event.getPresentation().setEnabledAndVisible(
+        project != null && editor != null &&
+            editor.getSelectionModel().hasSelection()
+    );
   }
 }
 ```
 
 **Note:**
 `Editor` also allows access to different models of text representation.
-The model classes are located in [editor](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor), and include:
+The model classes are located in the [editor](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor) and include:
 * [`CaretModel`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/CaretModel.java),
 * [`FoldingModel`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/FoldingModel.java),
 * [`IndentsModel`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/IndentsModel.java),
@@ -124,7 +126,7 @@ This example changes the document within a [`WriteCommandAction`](%gh-ic%/platfo
 
 The complete `EditorIllustrationAction.actionPerformed()` method is shown below:
 * Note the selection in the document is replaced by a string using a method on the `Document` object, but the method call is wrapped in a write action.
-* After the document change, the new text is de-selected by a call to the primary caret.
+* After the document changes, the new text is deselected by a call to the primary caret.
 
 ```java
 public class EditorIllustrationAction extends AnAction {

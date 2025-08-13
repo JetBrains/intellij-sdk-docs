@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Repositories Extension
 
@@ -62,6 +62,7 @@ repositories {
 </snippet>
 
 ## Default Repositories
+{#default-repositories}
 
 The default repository definition is suitable for most plugins.
 
@@ -73,6 +74,7 @@ It includes:
 - `jetbrainsIdeInstallers()` and `androidStudioInstallers()` – IntelliJ Platform and Android Studio installer releases channels required for development and running the IntelliJ Plugin Verifier
 - `releases()` and `snapshots()` – IntelliJ Platform releases channels
 - `localPlatformArtifacts()` – required to use plugins bundled with IntelliJ Platform or refer to a local IDE
+- `jetbrainsRuntime()` – JetBrains Runtime releases
 - `marketplace()` – JetBrains Marketplace plugins repository
 - `intellijDependencies()` – required for resolving extra IntelliJ Platform dependencies used for running specific tasks
 
@@ -166,14 +168,10 @@ repositories {
 
 The final plugin archive is eventually resolved using the same credentials used for resolving the listing.
 
-
-| Function                            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-|-------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `localPlatformArtifacts()`          | Certain dependencies, such as the [local IntelliJ Platform instance](tools_intellij_platform_gradle_plugin.md#dependenciesLocalPlatform) and bundled IDE plugins, need extra pre-processing before they can be correctly used by the IntelliJ Platform Gradle Plugin and loaded by Gradle. <p>This pre-processing involves generating XML files that detail these specific artifacts. Once created, these are stored in a unique custom [Ivy](https://ant.apache.org/ivy/) repository directory.</p> |
-| `intellijDependencies()`            | Adds a repository for accessing IntelliJ Platform dependencies.                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| `jetbrainsRuntime()`                | Adds a repository for accessing [JetBrains Runtime](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance) releases.                                                                                                                                                                                                                                                                                                                                                    |
-| `marketplace()`                     | Adds a repository for accessing plugins hosted on [JetBrains Marketplace](https://plugins.jetbrains.com).                                                                                                                                                                                                                                                                                                                                                                                            |
-| `customPluginRepository(url, type)` | Creates a custom plugin repository from which plugins                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Function                            | Description                                                                                                                                                              |
+|-------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `marketplace()`                     | Adds a repository for accessing plugins hosted on [JetBrains Marketplace](https://plugins.jetbrains.com).                                                                |
+| `customPluginRepository(url, type)` | Creates a custom plugin repository from which plugins can be resolved. Supports optional credentials (e.g., HttpHeaderCredentials). See [](custom_plugin_repository.md). |
 
 
 ## Additional Repositories

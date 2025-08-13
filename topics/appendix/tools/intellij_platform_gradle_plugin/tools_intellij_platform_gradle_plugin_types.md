@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Types
 
@@ -54,6 +54,7 @@ Each entry is composed of a product code and coordinates used for dependency and
 | `DataGrip`              | `DB`   | -                                                  |    &check;     |
 | `DataSpell`             | `DS`   | -                                                  |    &check;     |
 | `FleetBackend`          | `FLIJ` | `com.jetbrains.intellij.fleetBackend:fleetBackend` |                |
+| `JetBrainsClient`       | `JBC`  | -                                                  |    &check;     |
 | `Gateway`               | `GW`   | `com.jetbrains.intellij.gateway:gateway`           |    &check;     |
 | `GoLand`                | `GO`   | `com.jetbrains.intellij.goland:goland`             |    &check;     |
 | `IntellijIdeaCommunity` | `IC`   | `com.jetbrains.intellij.idea:ideaIC`               |    &check;     |
@@ -67,6 +68,25 @@ Each entry is composed of a product code and coordinates used for dependency and
 | `RustRover`             | `RR`   | `com.jetbrains.intellij.rustrover:RustRover`       |    &check;     |
 | `WebStorm`              | `WS`   | `com.jetbrains.intellij.webstorm:webstorm`         |    &check;     |
 
+Note:
+- Aqua (`QA`) and Writerside (`WRS`) are deprecated and no longer available as target IntelliJ Platform products.
+
+## `ProductMode`
+{#ProductMode}
+
+[`ProductMode`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/ProductMode.kt)
+
+Describes a mode in which a product may be started. This can be configured on the target platform dependency to influence how the IDE is started for development and testing.
+
+| Name       | Description                                                                                                                                                                                                                          |
+|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `MONOLITH` | Indicates that this process performs all necessary tasks to provide smart features itself. This is the default mode for all IDEs.                                                                                                    |
+| `FRONTEND` | Indicates that this process doesn't perform heavy tasks like code analysis, and takes necessary information from another process. Currently used by JetBrains Client connected to a remote development host or Code With Me session. |
+| `BACKEND`  | Indicates that this process doesn't perform heavy tasks like code analysis and takes necessary information from another process. Currently used by an IDE running as a remote development host.                                      |
+
+See also:
+- [Dependencies Extension: Dependency Configuration Parameters](tools_intellij_platform_gradle_plugin_dependencies_extension.md#dependency-configuration-parameters)
+- [Types: SplitModeAware.SplitModeTarget](tools_intellij_platform_gradle_plugin_types.md#SplitModeAware-SplitModeTarget)
 
 ## `PluginBean`
 {#PluginBean}

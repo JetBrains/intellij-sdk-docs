@@ -115,6 +115,7 @@ See also the corresponding [`product-info.schema.json`](%gh-ic%/platform/buildDa
 | `versionSuffix`     | The suffix of the version, like "EAP".                                   |
 | `buildNumber`       | The build number of the product, like "232.8660.185".                    |
 | `productCode`       | The product code, like "IU".                                             |
+| `envVarBaseName`    | Base name used for product-specific environment variables.               |
 | `dataDirectoryName` | The directory name of the product data.                                  |
 | `svgIconPath`       | The path to the SVG icon of the product.                                 |
 | `productVendor`     | The vendor of the product.                                               |
@@ -250,14 +251,17 @@ Generic test frameworks for the IntelliJ Platform.
 
 Some plugins offer dedicated test frameworks, for example, `Plugin.Java` when using Java/JVM-related functionality.
 
-| Name                | Coordinates                                                   | Reference       |
-|---------------------|---------------------------------------------------------------|-----------------|
-| `Plugin.Go`         | `com.jetbrains.intellij.go:go-test-framework`                 | [](goland.md)   |
-| `Plugin.JavaScript` | `com.jetbrains.intellij.javascript:javascript-test-framework` | [](webstorm.md) |
-| `Plugin.Java`       | `com.jetbrains.intellij.java:java-test-framework`             | [](idea.md)     |
-| `Plugin.Maven`      | `com.jetbrains.intellij.maven:maven-test-framework`           |                 |
-| `Plugin.ReSharper`  | `com.jetbrains.intellij.resharper:resharper-test-framework`   | [](rider.md)    |
-| `Plugin.Ruby`       | `com.jetbrains.intellij.idea:ruby-test-framework`             | [](rubymine.md) |
+| Name                 | Coordinates                                                   | Reference       |
+|----------------------|---------------------------------------------------------------|-----------------|
+| `Plugin.CSS`         | `com.jetbrains.intellij.css:css-test-framework`               | [](webstorm.md) |
+| `Plugin.Go`          | `com.jetbrains.intellij.go:go-test-framework`                 | [](goland.md)   |
+| `Plugin.JavaScript`  | `com.jetbrains.intellij.javascript:javascript-test-framework` | [](webstorm.md) |
+| `Plugin.Java`        | `com.jetbrains.intellij.java:java-test-framework`             | [](idea.md)     |
+| `Plugin.LSP`         | `com.jetbrains.intellij.platform:test-lsp-framework`          |                 |
+| `Plugin.Maven`       | `com.jetbrains.intellij.maven:maven-test-framework`           |                 |
+| `Plugin.ReSharper`   | `com.jetbrains.intellij.resharper:resharper-test-framework`   | [](rider.md)    |
+| `Plugin.Ruby`        | `com.jetbrains.intellij.idea:ruby-test-framework`             | [](rubymine.md) |
+| `Plugin.XML`         | `com.jetbrains.intellij.xml:xml-test-framework`               |                 |
 
 ## `VerificationReportsFormats`
 {#VerificationReportsFormats}

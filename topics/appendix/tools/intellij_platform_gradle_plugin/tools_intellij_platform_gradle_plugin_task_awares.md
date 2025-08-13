@@ -141,6 +141,28 @@ Type
 : `ConfigurableFileCollection`
 
 
+### `intelliJPlatformPluginConfiguration`
+{#IntelliJPlatformVersionAware-intelliJPlatformPluginConfiguration}
+
+Holds the `intellijPlatformPlugin` configuration with optional custom IntelliJ Platform plugin dependencies added.
+It should not be directly accessed.
+
+{type="narrow"}
+Type
+:: `ConfigurableFileCollection`
+
+
+### `intelliJPlatformTestRuntimeFixClasspathConfiguration`
+{#IntelliJPlatformVersionAware-intelliJPlatformTestRuntimeFixClasspathConfiguration}
+
+Holds the `intellijPlatformTestRuntimeFixClasspath` configuration with the custom IntelliJ Platform core dependency required for running tests.
+It should not be directly accessed.
+
+{type="narrow"}
+Type
+:: `ConfigurableFileCollection`
+
+
 ### `platformPath`
 {#IntelliJPlatformVersionAware-platformPath}
 
@@ -314,6 +336,37 @@ Default value
 
 
 
+## `ModuleAware`
+{#ModuleAware}
+
+<tldr>
+
+**Inherited by**: [`PluginAware`](#PluginAware)
+
+**Sources**: [`ModuleAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/ModuleAware.kt)
+
+</tldr>
+
+Provides information about whether the current task is executed in an IntelliJ Platform plugin module context.
+
+### `module`
+{#ModuleAware-module}
+
+Indicates if the current project represents an IntelliJ Platform plugin module.
+
+{type="narrow"}
+Type
+:: `Property<Boolean>`
+
+Default value
+:: `PluginManager.isModule`
+
+Notes:
+- The IntelliJ Platform Gradle Plugin wires this property automatically for tasks implementing ModuleAware during task preconfiguration.
+- You typically do not set this value yourself; consume it in your task to branch logic.
+
+
+
 ## `PluginAware`
 {#PluginAware}
 
@@ -445,7 +498,18 @@ Inherits from:
 
 </tldr>
 
-Provides access to the Java Runtime (i.e., JetBrains Runtime) resolved with `RuntimeResolver`.
+Provides access to the Java Runtime (i.e., JetBrains Runtime) resolved with `JavaRuntimePathResolver`.
+
+
+### `jetbrainsRuntimeConfiguration`
+{#RuntimeAware-jetbrainsRuntimeConfiguration}
+
+Holds the `intellijPlatformJetbrainsRuntime` configuration with the JetBrains Runtime dependency added.
+It should not be directly accessed.
+
+{type="narrow"}
+Type
+:: `ConfigurableFileCollection`
 
 
 ### `runtimeDirectory`
@@ -475,7 +539,7 @@ Metadata object of the Java Runtime currently used for running Gradle.
 
 {type="narrow"}
 Type
-: `Property<String>`
+:: `MapProperty<String, String>`
 
 
 ### `runtimeLauncher`
@@ -485,8 +549,76 @@ A custom `JavaLauncher` instance configured with the resolved [`runtimeDirectory
 
 {type="narrow"}
 Type
-: `Property<String>`
+: `Property<JavaLauncher>`
 
+
+
+## `SandboxStructure`
+{#SandboxStructure}
+
+<tldr>
+
+**Inherited by**: [`SandboxAware`](#SandboxAware), [`SplitModeAware`](#SplitModeAware)
+
+**Sources**: [`SandboxStructure`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SandboxStructure.kt)
+
+</tldr>
+
+Defines common sandbox directories and flags used by tasks interacting with IDE sandboxes.
+
+### `sandboxDirectory`
+{#SandboxStructure-sandboxDirectory}
+
+The directory containing content read and produced by the running IDE. The directory name depends on the platform type and version currently used for running a task.
+
+{type="narrow"}
+Type
+:: `DirectoryProperty`
+
+### `sandboxConfigDirectory`
+{#SandboxStructure-sandboxConfigDirectory}
+
+A configuration directory located within the [`sandboxDirectory`](#SandboxStructure-sandboxDirectory).
+
+{type="narrow"}
+Type
+:: `DirectoryProperty`
+
+### `sandboxPluginsDirectory`
+{#SandboxStructure-sandboxPluginsDirectory}
+
+A plugins directory located within the [`sandboxDirectory`](#SandboxStructure-sandboxDirectory).
+
+{type="narrow"}
+Type
+:: `DirectoryProperty`
+
+### `sandboxSystemDirectory`
+{#SandboxStructure-sandboxSystemDirectory}
+
+A system directory located within the [`sandboxDirectory`](#SandboxStructure-sandboxDirectory).
+
+{type="narrow"}
+Type
+:: `DirectoryProperty`
+
+### `sandboxLogDirectory`
+{#SandboxStructure-sandboxLogDirectory}
+
+A log directory located within the [`sandboxDirectory`](#SandboxStructure-sandboxDirectory).
+
+{type="narrow"}
+Type
+:: `DirectoryProperty`
+
+### `testSandbox`
+{#SandboxStructure-testSandbox}
+
+Defines if the current sandbox is related to testing.
+
+{type="narrow"}
+Type
+:: `Property<Boolean>`
 
 
 ## `SandboxAware`

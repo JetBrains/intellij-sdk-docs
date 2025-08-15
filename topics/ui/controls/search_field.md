@@ -27,7 +27,7 @@ Use a search field when specific objects are difficult to find at a glance:
 
 ### Label
 
-Don't add a label to the search field. The magnifying glass icon is self-explanatory.
+Don't add a label <control>Search</control> to the search field. The magnifying glass icon is self-explanatory.
 
 <table style="none" border="false">
     <tr>
@@ -36,25 +36,25 @@ Don't add a label to the search field. The magnifying glass icon is self-explana
     </tr>
 </table>
 
-### Hints and scope
+### Placeholder
 
-Provide hints and scope as placeholder text.
+Provide hints such as search scope as placeholder text.
 
 ![](search_field_hints.png){width=706}
 
 ### Search and Replace fields
 
-Mark the Search and Replace fields with labels or placeholders when shown together to distinguish between them.
+Mark the Search and Replace fields with placeholders when shown together to distinguish between them.
 
 ![](search_field_search_replace.png){width=706}
 
 ### Search options
 
-Use [icon buttons](icon_button.md) inside the search field to save space and not to overload the UI and to be able to use them in already packed UI such as the Speed Search popup in trees or lists.
+Use [icon buttons](icon_button.md) inside the search field to save space and not to overload the UI.
 
 ![](search_field_search_options.png){width="706"}
 
-Icon buttons should change color when enabled so that it is clear which options are currently enabled.
+Icon buttons should change background color when enabled so that it is clear which options are currently enabled.
 
 ![](search_field_enabled_icons.png){width=706}
 
@@ -66,7 +66,7 @@ Make icon buttons easily accessible with <control>Tab</control>. Focused button 
 
 ### Clear a Search String
 
-Show the clear button <icon src="../../../images/ui/search_field/search_field_close_icon.png" width="20"/> when the search field has been filled.
+Show the <control>Clear</control> button <icon src="../../../images/ui/search_field/search_field_close_icon.png" width="20"/> when the search field has been filled.
 When the button is clicked, clear the search field and restore the content to its default state.
 
 ![](search_field_clear_search.png){width=706}
@@ -76,7 +76,7 @@ This way, option buttons won't jump when the clear button appears.
 
 ![](search_field.png){width=706}
 
-### Multiline Search Strings
+### Multiline search strings
 
 If multiline search is needed, use the New Line <icon src="../../../images/ui/search_field/search_field_new_line_icon.png" width="16"/> action button. It should be placed on the left of the rest of the search options.
 
@@ -95,7 +95,7 @@ Provide attribute filters for complex searches. Don't use filter attributes in t
     </tr>
 </table>
 
-### Search History
+### Search history
 
 Use the magnifying glass icon with an arrow when search history is available. Show search history in a popup when clicking on the magnifying glass icon.
 
@@ -112,14 +112,14 @@ Add a search string to history:
 
 ### Placement
 
-Put the search field on top of the on-screen content that is being searched, and align them vertically.
+Put the search field on top of the content that is being searched and align them vertically.
 For example, the search field in <control>Settings</control> dialog is aligned with the filtered settings tree.
 
 ![](search_field_placement.png){width=706}
 
 #### Inline search
 
-Fit the search field to the popup windows and to a toolbar if it has top borders. This way the overall form looks less complex.
+Fit the search field to the popup windows or to a toolbar if it has top borders. This way the overall form looks less complex.
 
 <table style="none" border="false">
     <tr>

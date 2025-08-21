@@ -7,7 +7,7 @@
 The IntelliJ Platform's [`Disposer`](%gh-ic%/platform/util/src/com/intellij/openapi/util/Disposer.java) facilitates resource cleanup.
 If a subsystem keeps a set of resources alive coincidently with a parent object's lifetime, the subsystem's resources should be registered with the `Disposer` to be released before or at the same time as the parent object.
 
-The most common resource type managed by `Disposer` is listeners, but there are other possible types:
+Listeners are the most common resource type managed by `Disposer`, but there are other possible types:
 * File handles, and database connections,
 * Caches and other significant data structures.
 

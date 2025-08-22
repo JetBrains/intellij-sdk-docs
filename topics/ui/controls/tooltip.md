@@ -380,7 +380,7 @@ If the mouse cursor stays in the tooltip trigger area, tooltips are also hidden 
         Action
     </td>
     <td>
-        <p>300 milliseconds</p>
+        <p>500 milliseconds</p>
         <p><format color="#999999">ide.tooltip.initialReshowDelay registry key</format></p>
     </td>
     <td>

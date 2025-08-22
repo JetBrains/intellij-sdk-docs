@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Fetch Sources
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
   samples:
     name: Code Samples / ${{ matrix.plugin }}
@@ -43,7 +43,7 @@ jobs:
           - tree_structure_provider
     steps:
       - name: Fetch Sources
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Setup Java
         uses: actions/setup-java@v5
         with:

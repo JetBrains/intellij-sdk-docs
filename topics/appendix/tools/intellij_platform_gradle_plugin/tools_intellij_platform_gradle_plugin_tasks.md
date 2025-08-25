@@ -92,7 +92,7 @@ Type
 : `DirectoryProperty`
 
 Default value
-: <path>[buildDirectory]/searchableOptions</path>
+:: <path>[buildDirectory]/tmp/buildSearchableOptions</path>
 
 
 ### `showPaidPluginWarning`
@@ -153,9 +153,9 @@ Type
 
 **Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module)
 
-**Extends**: [`DefaultTask`][gradle-default-task], [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware)
+**Extends**: [`DefaultTask`][gradle-default-task], [`KotlinMetadataAware`](tools_intellij_platform_gradle_plugin_task_awares.md#KotlinMetadataAware)
 
-**Sources**: [`InitializeIntelliJPlatformPluginTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/InitializeIntelliJPlatformPluginTask.kt)
+**Sources**: [`GenerateManifestTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/GenerateManifestTask.kt)
 
 </tldr>
 
@@ -236,10 +236,8 @@ Executes before every other task introduced by IntelliJ Platform Gradle Plugin t
 It is responsible for:
 
 - checking if the project uses IntelliJ Platform Gradle Plugin in the latest available version
-- preparing the KotlinX Coroutines Java Agent file to enable coroutines debugging when developing the plugin
 
 The self-update check can be disabled via [`selfUpdateCheck`](tools_intellij_platform_gradle_plugin_gradle_properties.md#selfUpdateCheck) Gradle property.
-To make the Coroutines Java Agent available for the task, inherit from [`CoroutinesJavaAgentAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CoroutinesJavaAgentAware).
 
 
 ### `offline`
@@ -286,7 +284,7 @@ Type
 ### `coroutinesJavaAgent`
 {#initializeIntelliJPlatformPlugin-coroutinesJavaAgent}
 
-Specifies the Java Agent file for the Coroutines library required to enable coroutines debugging.
+Deprecated: this task no longer exposes a coroutines agent property. To enable coroutines debugging, use tasks implementing [CoroutinesJavaAgentAware](tools_intellij_platform_gradle_plugin_task_awares.md#CoroutinesJavaAgentAware) which provide `coroutinesJavaAgentFile`.
 
 {type="narrow"}
 Type
@@ -323,7 +321,7 @@ Defines that the current project has only the [](tools_intellij_platform_gradle_
 
 {type="narrow"}
 Type
-: `Property<String>`
+: `Property<Boolean>`
 
 
 
@@ -348,8 +346,8 @@ Executes the code instrumentation using the Ant tasks provided by the used Intel
 The code instrumentation scans the compiled Java and Kotlin classes for JetBrains Annotations usages to replace them with their relevant functionalities.
 
 The task is controlled with the [`intellijPlatform.instrumentCode`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-instrumentCode) extension property, enabled by default.
-To properly run the instrumentation, it is required to add [`instrumentationTools()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#code-instrumentation) dependencies to the project.
-This dependency is available via the [`intellijDependencies()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) repository, which can be added separately or using the [`defaultRepositories()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories) helper.
+To properly run the instrumentation, a Java Compiler dependency must be available. This is applied by default by the plugin; previously, the `instrumentationTools()` helper was used, but it is now deprecated and calling it is no longer necessary. You can still add and configure the dependency manually via [`javaCompiler()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#code-instrumentation) if needed.
+This dependency is resolved via the [`intellijDependencies()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) repository, which can be added separately or using the [`defaultRepositories()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories) helper.
 
 See also:
 - [](#instrumentedJar)

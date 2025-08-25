@@ -86,7 +86,7 @@ To use the latest snapshot version of this plugin, add the following to the Grad
 ```kotlin
 pluginManagement {
   repositories {
-    maven("https://oss.sonatype.org/content/repositories/snapshots/")
+    maven("https://central.sonatype.com/repository/maven-snapshots/")
     gradlePluginPortal()
   }
 }
@@ -100,7 +100,7 @@ pluginManagement {
 pluginManagement {
   repositories {
     maven {
-      url 'https://oss.sonatype.org/content/repositories/snapshots/'
+      url 'https://central.sonatype.com/repository/maven-snapshots/'
     }
     gradlePluginPortal()
   }
@@ -111,7 +111,7 @@ pluginManagement {
 </tabs>
 
 
-> The current IntelliJ Platform Gradle Plugin Snapshot version is ![GitHub Snapshot Release](https://img.shields.io/nexus/s/org.jetbrains.intellij.platform/intellij-platform-gradle-plugin?server=https://oss.sonatype.org&label=)
+> The current IntelliJ Platform Gradle Plugin Snapshot version is ![Maven Snapshots](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Fcentral.sonatype.com%2Frepository%2Fmaven-snapshots%2Forg%2Fjetbrains%2Fintellij%2Fplatform%2Fintellij-platform-gradle-plugin%2Fmaven-metadata.xml&label=)
 >
 > The snapshot release is published with a fixed version, so Gradle can resort to the cached version of the plugin.
 >

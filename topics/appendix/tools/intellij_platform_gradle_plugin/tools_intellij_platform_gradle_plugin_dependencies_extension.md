@@ -138,7 +138,7 @@ It allows you to specify the following parameters:
 | `version`           | `String`               | The version of the IntelliJ Platform dependency.                                                                                    |
 | `productMode`       | `ProductMode`          | Describes a mode in which a product may be started. Default: `ProductMode.MONOLITH`.                                                |
 | `useInstaller`      | `Boolean`              | Switches between resolving the IDE installer and a multi-OS archive from the IntelliJ Maven repository. Default: `true`.            |
-| `useCustomCache`    | `Boolean`              | Switches between the Gradle cache and a custom cache directory. Default: `false`. See `GradleProperties.IntellijPlatformIdesCache`. |
+| `useCache`          | `Boolean`              | Switches between the Gradle cache and a custom cache directory. Default: `false`. See `GradleProperties.IntellijPlatformIdesCache`. |
 | `configurationName` | `String`               | The name of the configuration to add the dependency to. Default: `Configurations.INTELLIJ_PLATFORM_DEPENDENCY_ARCHIVE`.             |
 
 All of the above parameters support assignment of direct values and Provider instances.

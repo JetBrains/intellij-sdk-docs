@@ -191,13 +191,13 @@ See also:
 Represents a requested IntelliJ Platform build with its type, version, and installation/cache preferences.
 Used internally by the Gradle plugin to propagate platform settings across configurations for development, dependency resolution, and plugin verification.
 
-| Name             | Description                                                                       |
-|------------------|-----------------------------------------------------------------------------------|
-| `type`           | IntelliJ Platform type. See [`IntelliJPlatformType`](#IntelliJPlatformType).      |
-| `version`        | Version of the IntelliJ Platform to use (for example, "2024.2", "241.15989.150"). |
-| `useInstaller`   | Whether the installer distribution of the platform should be used.                |
-| `useCustomCache` | Whether a custom cache directory should be used when resolving the platform.      |
-| `productMode`    | Desired product mode. See [`ProductMode`](#ProductMode).                          |
+| Name           | Description                                                                       |
+|----------------|-----------------------------------------------------------------------------------|
+| `type`         | IntelliJ Platform type. See [`IntelliJPlatformType`](#IntelliJPlatformType).      |
+| `version`      | Version of the IntelliJ Platform to use (for example, "2024.2", "241.15989.150"). |
+| `useInstaller` | Whether the installer distribution of the platform should be used.                |
+| `useCache`     | Whether a custom cache directory should be used when resolving the platform.      |
+| `productMode`  | Desired product mode. See [`ProductMode`](#ProductMode).                          |
 
 
 ## `SplitModeAware.SplitModeTarget`

@@ -72,28 +72,6 @@ intellijPlatform {
 
 
 
-### `cachePath`
-{#intellijPlatform-cachePath}
-
-Provides read-only access to the IntelliJ Platform project cache location.
-
-The IntelliJ Platform cache is used for storing IntelliJ Platform Gradle Plugin-specific files, such as:
-- XML files generated for the [`localPlatformArtifacts()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) local Ivy repository
-- coroutines Java agent file created by the [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin) task
-
-This path can be changed with the [`org.jetbrains.intellij.platform.intellijPlatformCache`](tools_intellij_platform_gradle_plugin_gradle_properties.md#intellijPlatformCache) Gradle property
-
-{type="narrow"}
-Access
-: Read-only
-
-Type
-: `Path`
-
-Default value
-: <path>[rootProject]/.intellijPlatform/</path>
-
-
 ### `platformPath`
 {#intellijPlatform-platformPath}
 
@@ -783,6 +761,166 @@ See also:
 - [Tasks: `patchPluginXml.vendorUrl`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-vendorUrl)
 
 
+
+## Caching
+{#intellijPlatform-caching}
+
+Configures caching related to resolving IntelliJ Platform dependencies and storing plugin-generated artifacts.
+
+The caching extension provides:
+- Project cache path used by the IntelliJ Platform Gradle Plugin.
+- IDEs sub-extension to control caching of downloaded IDEs (enable/disable, storage path, IDE directories naming).
+
+Example:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+intellijPlatform {
+  // ...
+
+  caching {
+    // Root cache used by the plugin for project-specific files
+    // path = layout.projectDirectory.dir(".intellijPlatform") // custom example
+
+    ides {
+      enabled.set(true)
+      // path = layout.buildDirectory.dir("ides-cache")
+      // Customize directory name for a resolved IDE
+      name.set { requested -> "${'$'}{requested.type.code}-${'$'}{requested.version}" }
+    }
+  }
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+intellijPlatform {
+  // ...
+
+  caching {
+    // Root cache used by the plugin for project-specific files
+    // path = layout.projectDirectory.dir('.intellijPlatform') // custom example
+
+    ides {
+      enabled = true
+      // path = layout.buildDirectory.dir('ides-cache')
+      // Customize directory name for a resolved IDE
+      name = { requested -> "${'$'}{requested.type.code}-${'$'}{requested.version}" }
+    }
+  }
+}
+```
+
+</tab>
+</tabs>
+
+
+
+### `path`
+{#intellijPlatform-caching-path}
+
+Provides read-only access to the IntelliJ Platform project cache location.
+
+The IntelliJ Platform cache is used for storing IntelliJ Platform Gradle Plugin-specific files, such as:
+- XML files generated for the [`localPlatformArtifacts()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) local Ivy repository
+- coroutines Java agent file created by the [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin) task
+- extracted IntelliJ Platform archives instead of using Gradle cache
+
+This path can be changed with the [`org.jetbrains.intellij.platform.intellijPlatformCache`](tools_intellij_platform_gradle_plugin_gradle_properties.md#intellijPlatformCache) Gradle property
+
+{type="narrow"}
+Access
+: Read-only
+
+Type
+: `Path`
+
+Default value
+: <path>[rootProject]/.intellijPlatform/</path>
+
+
+## Caching IDEs
+{#intellijPlatform-caching-ides}
+
+Controls caching of IntelliJ Platform IDE distributions downloaded by the plugin.
+
+Example:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+intellijPlatform.caching.ides {
+  enabled = false
+  path = layout.projectDirectory.dir(".intellijPlatform/ides")
+  name = { requested -> "${'$'}{requested.type}-${'$'}{requested.version}" }
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+intellijPlatform.caching.ides {
+  enabled = false
+  path = layout.projectDirectory.dir('.intellijPlatform/ides')
+  name = { requested -> "${'$'}{requested.type}-${'$'}{requested.version}" }
+}
+```
+
+</tab>
+</tabs>
+
+
+#### `enabled`
+{#intellijPlatform-caching-ides-enabled}
+
+Indicates whether caching for IntelliJ Platform IDEs is enabled globally.
+
+{type="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: `false`
+
+
+#### `path`
+{#intellijPlatform-caching-ides-path}
+
+The cache root directory for storing downloaded IDEs.
+
+{type="narrow"}
+Type
+: `DirectoryProperty`
+
+Default value
+:: <path>[rootProject]/.intellijPlatform/ides/</path>
+
+See also:
+- [Gradle Property: `intellijPlatformIdesCache`](tools_intellij_platform_gradle_plugin_gradle_properties.md#intellijPlatformIdesCache)
+
+
+#### `name`
+{#intellijPlatform-caching-ides-name}
+
+Function that returns a cache directory name for a given requested IntelliJ Platform artifact.
+
+{type="narrow"}
+Type
+: `Property<(RequestedIntelliJPlatform) -> String>`
+
+Default value
+: `$type-$version`
+
+See also:
+- [Types: `RequestedIntelliJPlatform`](tools_intellij_platform_gradle_plugin_types.md#RequestedIntelliJPlatform)
+
+
 ## Publishing
 {#intellijPlatform-publishing}
 
@@ -1151,8 +1289,6 @@ Requires the [](tools_intellij_platform_gradle_plugin_plugins.md#platform) plugi
 <tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
-import org.jetbrains.intellij.platform.gradle.tasks.VerifyPluginTask
-
 intellijPlatform {
   // ...
 
@@ -1396,9 +1532,6 @@ It provides a set of helpers which add relevant entries to the configuration, wh
 <tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
-import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
-import org.jetbrains.intellij.platform.gradle.models.ProductRelease
-
 intellijPlatform {
   // ...
 

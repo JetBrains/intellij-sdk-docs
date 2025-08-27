@@ -199,3 +199,71 @@ Example
 ```
 org.jetbrains.intellij.platform.useCacheRedirector=false
 ```
+
+
+## `addDefaultIntellijPlatformDependencies`
+{#addDefaultIntellijPlatformDependencies}
+
+Controls whether default IntelliJ Platform repositories and coordinates (like `com.intellij` and `intellij.rider`) should be added automatically when creating a dependency on the IntelliJ Platform.
+
+{type="narrow"}
+Default value
+: `true`
+
+Example
+:
+```
+org.jetbrains.intellij.platform.addDefaultIntellijPlatformDependencies=false
+```
+
+
+## `intellijPlatformIdesCache`
+{#intellijPlatformIdesCache}
+
+Specifies the location of the cache directory for storing downloaded IDE distributions and related artifacts.
+This cache can be shared between multiple projects and is used when IDE caching is enabled.
+
+See also:
+- [Extension: `intellijPlatform.caching.ides`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-caching-ides)
+
+{type="narrow"}
+Default value
+: <path>[`intellijPlatformCache`](#intellijPlatformCache)/ides/</path>
+
+Example
+:
+```
+org.jetbrains.intellij.platform.intellijPlatformIdesCache=/path/to/ides-cache/
+```
+
+
+## `productsReleasesCdnBuildsUrl`
+{#productsReleasesCdnBuildsUrl}
+
+Specifies the URL from which the list of JetBrains IDE CDN release builds is fetched. This listing is used for mapping IDE releases to build numbers (for example, to download the corresponding JetBrains Client archive).
+
+{type="narrow"}
+Default value
+: `https://data.services.jetbrains.com/products/releases?type=release`
+
+Example
+:
+```
+org.jetbrains.intellij.platform.productsReleasesCdnBuildsUrl=https://...
+```
+
+
+## `verifyPluginProjectConfigurationMutedMessages`
+{#verifyPluginProjectConfigurationMutedMessages}
+
+Allows muting specific messages reported by the [`verifyPluginProjectConfiguration`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginProjectConfiguration) task. The property accepts a comma-separated list of message patterns. Each pattern is matched against the message text using a case-sensitive substring search.
+
+{type="narrow"}
+Default value
+: empty (no messages are muted)
+
+Example
+:
+```
+org.jetbrains.intellij.platform.verifyPluginProjectConfigurationMutedMessages=Kotlin Standard Library,Java Runtime is not JetBrains Runtime
+```

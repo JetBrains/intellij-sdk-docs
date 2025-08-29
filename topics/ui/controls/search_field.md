@@ -86,7 +86,7 @@ The default shortcut for the New Line action: <shortcut>⇧⌘⏎</shortcut> for
 
 ### Filters
 
-Provide attribute filters for complex searches. Don't use filter attributes in the search query.
+Provide filters for complex searches. Don't use filter attributes in the search query.
 
 <table style="none" border="false">
     <tr>
@@ -119,7 +119,7 @@ For example, the search field in <control>Settings</control> dialog is aligned w
 
 #### Inline search
 
-Fit the search field to the popup windows or to a toolbar if it has top borders. This way the overall form looks less complex.
+Fit the search field to a popup window or to a toolbar if it has top borders. This way the overall form looks less complex.
 
 <table style="none" border="false">
     <tr>
@@ -147,7 +147,7 @@ When placed above lists or trees, expand the field to the width of the list or t
 
 #### Speed search {#speed-search-size}
 
-For a search field shown on demand, for example, in the Project tool window, the width should be adjusted on typing to accommodate input.
+For a search field shown on demand, for example, in the <control>Project</control> tool window, the width should be adjusted on typing to accommodate input.
 
 <!-- #### In a toolbar {#toolbar-search-size}
 

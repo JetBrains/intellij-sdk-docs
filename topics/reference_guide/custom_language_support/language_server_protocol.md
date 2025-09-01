@@ -95,6 +95,24 @@ and amend the values in <path>gradle.properties</path> accordingly.
 
 ### plugin.xml
 
+<tabs>
+
+<tab title="2025.2.1+">
+
+The <path>plugin.xml</path> configuration file must specify the dependency on the LSP module:
+
+```xml
+
+<idea-plugin>
+  <!-- ... -->
+  <depends>com.intellij.modules.lsp</depends>
+</idea-plugin>
+```
+
+</tab>
+
+<tab title="Pre-2025.2.1">
+
 The <path>plugin.xml</path> configuration file must specify the dependency on the IntelliJ Platform _Ultimate_ module:
 
 ```xml
@@ -104,6 +122,10 @@ The <path>plugin.xml</path> configuration file must specify the dependency on th
   <depends>com.intellij.modules.ultimate</depends>
 </idea-plugin>
 ```
+
+</tab>
+
+</tabs>
 
 ### IDE Setup
 

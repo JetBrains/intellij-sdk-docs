@@ -1865,7 +1865,7 @@ Type
 : `Property<File>`
 
 Default value
-: [`intellijPlatform.cachePath`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-cachePath)
+: [`intellijPlatform.cachePath`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-caching-path)
 
 
 ### `gitignoreFile`

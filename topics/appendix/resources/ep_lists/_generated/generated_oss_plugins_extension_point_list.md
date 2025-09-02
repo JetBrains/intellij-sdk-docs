@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: cfa82c130b3362f3892e36be73c4b559731cc8ed -->
+<!-- Revision: ee1e6cb62e11111f20108fcc38a30b7bac02447e -->
 
 <!--
 EP List Directories:
@@ -14,7 +14,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 <snippet id="content">
 
-72 Extension Points and 10 Listeners
+74 Extension Points and 10 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -272,6 +272,8 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.repositoryInfoProvider"/></include> | [`RepositoryInfoProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/RepositoryInfoProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.repositoryRevisionProvider"/></include> | [`RepositoryRevisionProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/RepositoryRevisionProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.sarifReportContributor"/></include> | [`SarifReportContributor`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/sarif/SarifReportContributor.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.scopeExtender"/></include> | [`InspectionToolScopeExtender`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/scopes/QodanaScopeExtenderProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.scopeExtenderProvider"/></include> | [`QodanaScopeExtenderProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/scopes/QodanaScopeExtenderProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.setupCIProviderFactory"/></include> | [`SetupCIProviderFactory`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/ui/ci/SetupCIProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.vcsIgnoredFilesProvider"/></include> | [`VcsIgnoredFilesProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/VcsIgnoredFilesProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.vcsRevisionProvider"/></include> | [`VcsRevisionProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/vcs/VcsRevisionProvider.kt) |

@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: cfa82c130b3362f3892e36be73c4b559731cc8ed -->
+<!-- Revision: ee1e6cb62e11111f20108fcc38a30b7bac02447e -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-22 Extension Points and 6 Listeners
+23 Extension Points and 6 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -66,6 +66,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.templateOptionProvider"/></include> | `GoWelcomeScreenFileTemplateOptionProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.welcomeScreenFeatureProvider"/></include> | `GoWelcomeScreenFeatureProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.welcomeScreenFileIconProvider"/></include> | `GoWelcomeScreenFileIconProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.welcomeScreenRightTabBannerProvider"/></include> | `GoWelcomeRightTabBannerProvider` |
 
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square

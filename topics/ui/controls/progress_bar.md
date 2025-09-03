@@ -32,6 +32,7 @@ If an indeterminate process reaches a point where its duration can be determined
 ### Process name and details
 
 A progress bar can have a process name and process details.
+![](05_process name and details.png){width=706}
 
 Process name — the name of the operation being performed.
 
@@ -47,7 +48,7 @@ For wording, follow the rules for [progress text](progress_text.md).
 
 #### Placement
 
-Place a process name above the progress bar and a process details under it in one line.</br>The length of the process details are limited by the progress bar.
+Show the process name above the progress bar and the process details below it on a single line. The length of the process details is limited by the width of the progress bar.
 ![](11 process_details.png){width=706}
 
 

@@ -31,20 +31,27 @@ If an indeterminate process reaches a point where its duration can be determined
 
 ### Process name and details
 
-A progress bar can have a process name and process details. For wording, follow the rules for [progress text](progress_text.md).
+A progress bar can have a process name and process details.
 
-#### Process name
 Process name — the name of the operation being performed.
 
+Process details — information about the current stage of an operation. They make long-running tasks more predictable and manageable.
+
+Details example:
+* The current step — Uploading file 3 of 10.
+* The name of a file, module, or library – Fetching guava-31.1.jar.
+* Remaining time or percentage completed.
+* Other useful progress information.
+
+For wording, follow the rules for [progress text](progress_text.md).
+
+#### Placement
+
+Place a process name above the progress bar and a process details under it in one line.</br>The length of the process details are limited by the progress bar.
+![](11 process_details.png){width=706}
+
+
 <table style="none" border="false">
-  <tr>
-    <td width="378">
-      <img src="06 process_name.png" alt="Process name above the bar"/>
-    </td>
-    <td>
-      <p>Place a process name above the progress bar.</p>
-    </td>
-  </tr>
   <tr>
     <td width="378">
       <img src="07 process_name_on_the_left.png" alt="Process name on the left"/>
@@ -71,18 +78,7 @@ Process name — the name of the operation being performed.
   </tr>
 </table>
 
-#### Process details
-Process details — information that shows the user what stage the current operation is at and what it relates to. This is especially important for long-running tasks, as it makes the process more predictable and manageable.
 
-Process details may include:
-
-* The current step, for example, Uploading file 3 of 10.
-* The remaining time or percentage completed.
-* The name of the file, module, or library being processed, for example, Fetching guava-31.1.jar.
-* Any other useful information about the operation’s progress.
-
-Place process details under the progress bar in one line. The length of the comment is limited by the progress bar.
-![](11 process_details.png){width=706}
 
 #### In dialog
 

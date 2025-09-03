@@ -80,16 +80,9 @@ Process details may include:
 * The remaining time or percentage completed.
 * The name of the file, module, or library being processed, for example, Fetching guava-31.1.jar.
 * Any other useful information about the operation’s progress.
-<table style="none" border="false">
-  <tr>
-    <td width="378">
-      <img src="11 process_details.png" alt="Process details under the bar"/>
-    </td>
-    <td>
-      <p>Place process details under the progress bar in one line. The length of the comment is limited by the progress bar.</p>
-    </td>
-  </tr>
-</table>
+
+Place process details under the progress bar in one line. The length of the comment is limited by the progress bar.
+![](11 process_details.png){width=706}
 
 #### In dialog
 

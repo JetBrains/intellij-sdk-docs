@@ -21,7 +21,7 @@ Follow the rules for [progress indicators](progress_indicators.md).
 ## How to use
 
 ### Types
-Use determinate progress bar, if the process duration is known. Otherwise, use **indeterminate** progress bar:
+Use a determinate progress bar if the process duration is known. Otherwise, use **indeterminate** progress bar:
 
 ![](02 determinate_and_ indeterminate.png){width=706}
 
@@ -34,6 +34,8 @@ If an indeterminate process reaches a point where its duration can be determined
 A progress bar can have a process name and process details. For wording, follow the rules for [progress text](progress_text.md).
 
 #### Process name
+Process name — the name of the operation being performed.
+
 <table style="none" border="false">
   <tr>
     <td width="378">
@@ -56,7 +58,7 @@ A progress bar can have a process name and process details. For wording, follow 
          <img src="08 header_for_several_processes.png" alt="Header for several processes"/>
         </td>
         <td>
-        <p>If there are several processes in a group, add a bold header. The header is a noun.</p>
+        <p>If there are several processes in a group, add a bold header.</p>
      </td>
   </tr>
   <tr>
@@ -64,37 +66,29 @@ A progress bar can have a process name and process details. For wording, follow 
          <img src="09 inline_processes.png" alt="Inline process"/>
         </td>
         <td>
-        <p>Do not show a process name for inline processes.</p>
+        <p>Do not show a process name for inline progress.</p>
      </td>
   </tr>
 </table>
 
 #### Process details
+Process details — information that shows the user what stage the current operation is at and what it relates to. This is especially important for long-running tasks, as it makes the process more predictable and manageable.
+
+Process details may include:
+
+* The current step, for example, Uploading file 3 of 10.
+* The remaining time or percentage completed.
+* The name of the file, module, or library being processed, for example, Fetching guava-31.1.jar.
+* Any other useful information about the operation’s progress.
 <table style="none" border="false">
   <tr>
     <td width="378">
-      <img src="10 process_details.png" alt="Process details under the bar"/>
+      <img src="11 process_details.png" alt="Process details under the bar"/>
     </td>
     <td>
-      <p>Place process details under the progress bar in one line.</p>
+      <p>Place process details under the progress bar in one line. The length of the comment is limited by the progress bar.</p>
     </td>
   </tr>
-  <tr>
-    <td width="378">
-      <img src="11 process_details.png" alt="Comment length limited by progress bar."/>
-    </td>
-    <td>
-      <p>The length of the comment is limited by the progress bar.</p>
-    </td>
-  </tr>
-    <tr>
-     <td width="378">
-         <img src="12 process_details.png" alt="Show percentage completed if space is limited"/>
-        </td>
-        <td>
-        <p>If space is limited, show percentage completed.</p>
-     </td>
-    </tr>
 </table>
 
 #### In dialog

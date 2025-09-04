@@ -28,7 +28,7 @@
   <var name="gh-jcef-master" value="https://github.com/JetBrains/jcef/tree/master/java"/>
   <var name="gh-java-annotations" value="https://github.com/JetBrains/java-annotations/tree/24.0.0"/>
 
-  <var name="intellij-platform-gradle-plugin-version" value="2.7.2"/>
+  <var name="intellij-platform-gradle-plugin-version" value="2.8.0"/>
   <var name="gh-ijpgp" value="https://github.com/JetBrains/intellij-platform-gradle-plugin/tree/%intellij-platform-gradle-plugin-version%"/>
   <var name="gh-ijpgp-master" value="https://github.com/JetBrains/intellij-platform-gradle-plugin/tree/main"/>
 

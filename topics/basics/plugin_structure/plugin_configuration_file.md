@@ -469,12 +469,6 @@ Examples
     ```xml
     <depends>com.intellij.modules.java</depends>
     ```
-- Optional plugin dependency:
-    ```xml
-    <depends optional="true">
-      com.example.dependencypluginid
-    </depends>
-    ```
 - Required module dependency with additional configuration:
     ```xml
     <depends
@@ -502,8 +496,7 @@ Examples
 
 </tldr>
 
-The [ID](#idea-plugin__id) or alias of the plugin the current plugin is incompatible
-with.
+The [ID](#idea-plugin__id) or alias of the plugin the current plugin is incompatible with.
 The plugin is not loaded if the incompatible plugin is installed in the current IDE.
 
 {type="narrow"}

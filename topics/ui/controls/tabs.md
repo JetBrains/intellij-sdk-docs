@@ -83,7 +83,7 @@ When there are other UI controls above tabs, separate them with a vertical inden
 * Do **not** surround the tab content area with a visible border.
 
 <format color="369650" style="bold">Correct</format>
-![Correct bottom border](04_Placement﻿_correct.png){width=706}
+![Correct bottom border](04_Placement_correct.png){width=706}
 
 <format color="E55765" style="bold">Incorrect</format>
 

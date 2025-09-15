@@ -84,6 +84,11 @@ This shouldn't affect binary compatibility, but an explicit dependency should be
 * `intellij.platform.vcs.log`
 * `intellij.platform.vcs.log.graph`
 
+The annotation `com.intellij.openapi.components.Storage` cannot be used at top-level
+: Actually, it has never been correct.
+The annotation can be used only in [`@State.storages`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/State.java).
+See [IJPL-207245](https://youtrack.jetbrains.com/issue/IJPL-207245) for details.
+
 ## 2025.2
 
 ### IntelliJ Platform 2025.2

@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 9b31ba2c05b4776617e871301e7ab6ad2c84544e -->
+<!-- Revision: a769b0bd982e6fe0718c56b2c41e999c2b58267e -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-112 Extension Points and 37 Listeners
+113 Extension Points and 37 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -27,8 +27,8 @@ EP List Directories:
 | [`TutorialCardRefreshNotifier#TUTORIAL_CARD_TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.assistant.TutorialCardRefreshNotifier)  | [`TutorialCardRefreshNotifier`](%gh-ij-android%/assistant/src/com/android/tools/idea/assistant/TutorialCardRefreshNotifier.java) |
 | [`AvdLaunchListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.avdmanager.AvdLaunchListener)  | [`AvdLaunchListener`](%gh-ij-android%/android/src/com/android/tools/idea/avdmanager/AvdLaunchListener.java) |
 | [`EmulatorLogListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.avdmanager.EmulatorLogListener)  | [`EmulatorLogListener`](%gh-ij-android%/android/src/com/android/tools/idea/avdmanager/EmulatorLogListener.kt) |
-| [`IssueProviderListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.common.error.IssueProviderListener)  ![Project-Level][project-level] | [`IssueProviderListener`](%gh-ij-android%/designer/src/com/android/tools/idea/common/error/IssueProvider.kt) |
 | [`IssueProviderListener#UI_CHECK`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.common.error.IssueProviderListener)  ![Project-Level][project-level] | [`IssueProviderListener`](%gh-ij-android%/designer/src/com/android/tools/idea/common/error/IssueProvider.kt) |
+| [`IssueProviderListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.common.error.IssueProviderListener)  ![Project-Level][project-level] | [`IssueProviderListener`](%gh-ij-android%/designer/src/com/android/tools/idea/common/error/IssueProvider.kt) |
 | [`ComposeAnimationListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.compose.preview.ComposePreviewRepresentation.ComposeAnimationListener)  | [`ComposeAnimationListener`](%gh-ij-android%/compose-designer/src/com/android/tools/idea/compose/preview/Preview.kt) |
 | [`FastPreviewManager#FAST_PREVIEW_MANAGER_TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.editors.fast.FastPreviewManager.Companion.FastPreviewManagerListener)  | [`FastPreviewManagerListener`](%gh-ij-android%/android/src/com/android/tools/idea/editors/fast/FastPreviewManager.kt) |
 | [`GradleBuildState#GRADLE_BUILD_TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.gradle.project.build.GradleBuildListener)  | [`GradleBuildListener`](%gh-ij-android%/project-system-gradle/src/com/android/tools/idea/gradle/project/build/GradleBuildListener.java) |
@@ -232,6 +232,14 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.assistant.navlistener"/></include> ![Non-Dynamic][non-dynamic] | [`AssistNavListener`](%gh-ij-android%/assistant/src/com/android/tools/idea/assistant/AssistNavListener.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.assistant.panelFactory"/></include> ![Non-Dynamic][non-dynamic] | [`PanelFactory`](%gh-ij-android%/assistant/src/com/android/tools/idea/assistant/PanelFactory.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.assistant.scrollHandler"/></include> ![Non-Dynamic][non-dynamic] | [`ScrollHandler`](%gh-ij-android%/assistant/src/com/android/tools/idea/assistant/ScrollHandler.java) |
+
+### com.android.tools.gradle.dcl
+
+[`com.android.tools.gradle.dcl`](%gh-ij-android%/gradle-declarative-lang-ide/resources/META-INF/plugin.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.gradle.dcl.ide.declarativeSchemaProvider"/></include> ![Non-Dynamic][non-dynamic] | `n/a` |
 
 ### compose-designer.xml
 

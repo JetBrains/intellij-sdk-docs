@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 9b31ba2c05b4776617e871301e7ab6ad2c84544e -->
+<!-- Revision: a769b0bd982e6fe0718c56b2c41e999c2b58267e -->
 
 <!--
 EP List Directories:
@@ -62,11 +62,11 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.blazorDialectSubstitutor"/></include> ![Non-Dynamic][non-dynamic] | `BlazorHtmlDialectSubstitutor` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.webTypingAssistClassifier"/></include> | `WebTypingAssistClassifier` |
 
-### intellij.rider.cpp.debugger
+### intellij.rider.cwm.core.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.cpp.debuggerSettings"/></include> ![Non-Dynamic][non-dynamic] | `CppDebuggerSettings` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.client.typedHandler"/></include> | `RiderClientLookupTypedHandler` |
 
 ### intellij.rider.plugins.appender.database.xml
 
@@ -92,11 +92,25 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.packageJson.configuration.handler"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `RiderPackageJsonConfiguratorHandler` |
 
+### intellij.rider.plugins.clion.radler.core.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.radler.externalSymbolsProvider"/></include> | `RadExternalSymbolsProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.refactoringPageProvider"/></include> ![Non-Dynamic][non-dynamic] | `RefactoringPageProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.cidr.radler.headlessStartupExtension"/></include> ![Non-Dynamic][non-dynamic] | `RadHeadlessStartupExtension` |
+
 ### intellij.rider.plugins.clion.radler.testing.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.cidr.radler.testing.testFrameworkExtension"/></include> | `RadTestFrameworkExtension` |
+
+### intellij.rider.plugins.cpp.debugger.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.cpp.debuggerSettings"/></include> ![Non-Dynamic][non-dynamic] | `CppDebuggerSettings` |
 
 ### intellij.rider.rdclient.dotnet.xml
 
@@ -146,20 +160,6 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.rdclient.breakingWorkflowChangeInterceptor"/></include> ![Non-Dynamic][non-dynamic] ![Experimental][experimental] ![Internal][internal] | `RiderBreakingWorkflowChangeInterceptor` |
-
-### org.jetbrains.plugins.clion.radler
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.radler.externalSymbolsProvider"/></include> | `RadExternalSymbolsProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.refactoringPageProvider"/></include> ![Non-Dynamic][non-dynamic] | `RefactoringPageProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.cidr.radler.headlessStartupExtension"/></include> ![Non-Dynamic][non-dynamic] | `RadHeadlessStartupExtension` |
-
-### RiderCwmCoreEP.xml
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.client.typedHandler"/></include> | `RiderClientLookupTypedHandler` |
 
 ### RiderDebugger.xml
 
@@ -243,7 +243,6 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.unitTesting.actionsProvider"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `RiderUnitTestActionsProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.unitTesting.sessionHandler"/></include> ![Non-Dynamic][non-dynamic] | `IRiderUnitTestDebuggerSessionsHandler` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.unityDetector"/></include> ![Project-Level][project-level] | `UnityDetector` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.vfsToProjectModelEventsCustomizer"/></include> | `VfsToProjectModelEventsCustomizer` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.web.extensions.companionDebugStarter"/></include> ![Non-Dynamic][non-dynamic] | `DotNetCompanionDebugStarter` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.web.extensions.webBrowserDebugSupport"/></include> ![Non-Dynamic][non-dynamic] | `WebBrowserDebugSupport` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.writingAccessProvider"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `RiderDebugWritingAccessProvider` |
@@ -258,6 +257,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.android.ndk.provider"/></include> | `AndroidNdkPathProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.runConfigurationHandler"/></include> | `RunConfigurationHandlerBase` |
 
 ### RiderReformatAndCleanup.xml
 

@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 9b31ba2c05b4776617e871301e7ab6ad2c84544e -->
+<!-- Revision: a769b0bd982e6fe0718c56b2c41e999c2b58267e -->
 
 <!--
 EP List Directories:
@@ -14,7 +14,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 <snippet id="content">
 
-74 Extension Points and 10 Listeners
+77 Extension Points and 10 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -32,6 +32,15 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.angular2.importsHandler"/></include> | [`Angular2ImportsHandler`](%gh-ij-plugins%/Angular/src/org/angular2/codeInsight/imports/Angular2ImportsHandler.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.angular2.jsHandlersFactory"/></include> | [`Angular2JSHandlersFactory`](%gh-ij-plugins%/Angular/src/org/angular2/codeInsight/Angular2HandlersFactory.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.angular2.templateScopesProvider"/></include> | [`Angular2TemplateScopesProvider`](%gh-ij-plugins%/Angular/src/org/angular2/codeInsight/template/Angular2TemplateScopesProvider.kt) |
+
+### com.intellij.cpp-diagnostics
+
+[`com.intellij.cpp-diagnostics`](%gh-ij-plugins%/cpp-diagnostics/resources/META-INF/plugin.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.diagnostics.toolchainDescriptionProvider"/></include> | [`ToolchainDescriptionProvider`](%gh-ij-plugins%/cpp-diagnostics/src/com/jetbrains/cidr/cpp/diagnostics/toolchain/ToolchainDescriptionProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.diagnostics.workspaceDescriptionProvider"/></include> | [`WorkspaceDescriptionProvider`](%gh-ij-plugins%/cpp-diagnostics/src/com/jetbrains/cidr/cpp/diagnostics/workspace/WorkspaceDescriptionProvider.kt) |
 
 ### com.thoughtworks.gauge
 
@@ -85,6 +94,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.makefile.runConfigurationCustomizer"/></include> | [`MakefileRunConfigurationCustomizer`](%gh-ij-plugins%/makefile/src/com/jetbrains/lang/makefile/MakefileRunConfigurationCustomizer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.makefile.toolWindowStripeController"/></include> | [`MakefileToolWindowStripeController`](%gh-ij-plugins%/makefile/src/com/jetbrains/lang/makefile/toolWindow/MakefileToolWindowStripeController.kt) |
 
 ### org.jetbrains.plugins.vue
@@ -139,16 +149,16 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.dtsUtil"/></include> | [`DtsCLionUtil`](%gh-ij-plugins%/dts/src/com/intellij/dts/clion/DtsCLionUtil.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.dtsUtil"/></include> | [`DtsCMakeUtil`](%gh-ij-plugins%/dts/src/com/intellij/dts/cmake/DtsCMakeUtil.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.dts.settings.disabler"/></include> | [`DtsSettingsDisabler`](%gh-ij-plugins%/dts/src/com/intellij/dts/settings/DtsSettingsDisabler.kt) |
 
-### dts-withCLion.xml
+### intellij.dts.cmake.xml
 
-[`dts-withCLion.xml`](%gh-ij-plugins%/dts/resources/META-INF/dts-withCLion.xml)
+[`intellij.dts.cmake.xml`](%gh-ij-plugins%/dts/cmake/resources/intellij.dts.cmake.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.dts.cmake.configurationDataProvider"/></include> | [`DtsCMakeModelConfigurationDataProvider`](%gh-ij-plugins%/dts/src/com/intellij/dts/clion/impl/DtsCMakeModelConfigurationDataProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.dts.cmake.configurationDataProvider"/></include> | [`DtsCMakeModelConfigurationDataProvider`](%gh-ij-plugins%/dts/cmake/src/com/intellij/dts/cmake/impl/DtsCMakeModelConfigurationDataProvider.kt) |
 
 
 ## Flex Plugin

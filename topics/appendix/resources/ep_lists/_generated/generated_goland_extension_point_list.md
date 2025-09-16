@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 9b31ba2c05b4776617e871301e7ab6ad2c84544e -->
+<!-- Revision: a769b0bd982e6fe0718c56b2c41e999c2b58267e -->
 
 <!--
 EP List Directories:
@@ -30,7 +30,7 @@ EP List Directories:
 | [`VgoProjectSettings#VGO_INTEGRATION_TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.vgo.configuration.VgoProjectSettings.IntegrationListener)  | `IntegrationListener` |
 
 
-### goland.xml
+### intellij.go.impl.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|

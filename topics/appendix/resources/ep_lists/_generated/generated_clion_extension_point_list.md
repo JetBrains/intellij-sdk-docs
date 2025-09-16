@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 9b31ba2c05b4776617e871301e7ab6ad2c84544e -->
+<!-- Revision: a769b0bd982e6fe0718c56b2c41e999c2b58267e -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-155 Extension Points and 45 Listeners
+156 Extension Points and 45 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -102,6 +102,12 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.workspace.compilerEnvironmentContributor"/></include> | `CMakeCompilerEnvironmentContributor` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.workspace.enabledProfileInitializer"/></include> | `CMakeEnabledProfileInitializer` |
 
+### com.intellij.clion.testFramework.junit5
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.testFramework.languageEngine"/></include> | `LanguageEngine` |
+
 ### com.intellij.clion.west
 
 | Extension Point | Implementation |
@@ -112,6 +118,7 @@ EP List Directories:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.actionConfigurationCustomizerRenameOptOut"/></include> ![Non-Dynamic][non-dynamic] | `OCActionConfigurationCustomizerRenameOptOut` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.annotatorHelper"/></include> ![Non-Dynamic][non-dynamic] | `OCAnnotatorHelper` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.autoImportHelper"/></include> ![Non-Dynamic][non-dynamic] | `OCAutoImportHelper` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.buildSymbolsVeto"/></include> ![Non-Dynamic][non-dynamic] | `OCBuildSymbolsVetoExtension` |
@@ -161,12 +168,6 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clangFormatProvider"/></include> ![Non-Dynamic][non-dynamic] | `ClangFormatChangeSettingsProvider` |
 
-### intellij.cidr.common.xml
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.actionConfigurationCustomizerRenameOptOut"/></include> ![Non-Dynamic][non-dynamic] | `OCActionConfigurationCustomizerRenameOptOut` |
-
 ### intellij.cidr.coverage.xml
 
 | Extension Point | Implementation |
@@ -184,6 +185,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.backendConsoleInjectionHelper"/></include> | `BackendConsoleInjectionHelper` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.contentProvider"/></include> | `CidrDebuggerContentProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.customDebuggerProvider"/></include> | `CidrCustomDebuggerProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.debugProcessConfigurator"/></include> | `CidrDebugProcessConfigurator` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.debugProcessSoftwareBreakpointInterceptor"/></include> | `CidrDebugProcessSoftwareBreakpointInterceptor` |
@@ -280,16 +282,12 @@ EP List Directories:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.knownModuleDetector"/></include> ![Internal][internal] | `CidrKnownModuleDetector` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.ownModuleDetector"/></include> | `CidrOwnModuleDetector` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.markRootActionAvailability"/></include> ![Non-Dynamic][non-dynamic] | `CidrMarkRootActionAvailability` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.is.known.checker"/></include> ![Non-Dynamic][non-dynamic] | `KnownProjectChecker` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.moduleNameProvider"/></include> ![Non-Dynamic][non-dynamic] | `CidrWorkspaceModuleNameProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.moduleTypeProvider"/></include> | `CidrModuleTypeProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.notifications.editorNotificationWarningProvider"/></include> | `EditorNotificationWarningProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.popup.projectFixesProvider"/></include> | `ProjectFixesProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.rootsBuilderProvider"/></include> ![Non-Dynamic][non-dynamic] | `Provider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.widget.widgetStatusProvider"/></include> | `WidgetStatusProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.workspaceProvider"/></include> ![Non-Dynamic][non-dynamic] | `CidrWorkspaceProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.cidr.fus.projectModelTypeProvider"/></include> | `CidrProjectModelTypeProvider` |
 
@@ -308,6 +306,14 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="training.clion.lessons"/></include> | `CLionExternalLessons` |
+
+### intellij.clion.projectStatus.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.notifications.editorNotificationWarningProvider"/></include> | `EditorNotificationWarningProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.popup.projectFixesProvider"/></include> | `ProjectFixesProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.widget.widgetStatusProvider"/></include> | `WidgetStatusProvider` |
 
 ### intellij.clion.runFile.xml
 

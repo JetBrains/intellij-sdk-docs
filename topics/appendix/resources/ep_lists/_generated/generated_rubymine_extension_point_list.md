@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 9b31ba2c05b4776617e871301e7ab6ad2c84544e -->
+<!-- Revision: a769b0bd982e6fe0718c56b2c41e999c2b58267e -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-94 Extension Points and 13 Listeners
+101 Extension Points and 13 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -63,6 +63,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.moduleGemProvider"/></include> | `ModuleGemProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.overriddenMethodGenerator"/></include> | `OverriddenMethodGenerator` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.paramDefProvider"/></include> | `ParamDefProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.presentableSymbolCustomizer"/></include> | `Customizer` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.rails.assetsPathsProvider"/></include> | `SprocketAssetsPathProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.rails.sprocketsDirectiveContextProvider"/></include> | `SprocketsDirectiveContextProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.rails.viewFileTemplateProvider"/></include> | `RailsViewFileTemplateProvider` |
@@ -77,7 +78,10 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.rerunFailedTestsActionProvider"/></include> | `RubyRerunFailedTestsProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.routesProvider"/></include> | `RubyRoutesProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.ruby.associatedDeclarationProvider"/></include> ![DumbAware][dumb-aware] | `RubyAssociatedDeclarationProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.ruby.classSymbolDataProvider"/></include> | `RubyClassSymbolDataProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.ruby.coercibleExpressionTypeProvider"/></include> | `RubyCoercibleExpressionTypeProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.ruby.completionScopeModifier"/></include> | `RubyCompletionScopeModifier` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.ruby.containerSymbolDataProvider"/></include> | `RubyContainerSymbolDataProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.ruby.expectedArgumentNilabilityProvider"/></include> | `RubyExpectedArgumentNilabilityProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.ruby.expectedArgumentTypeProvider"/></include> | `RubyExpectedArgumentTypeProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.ruby.expectedConstantTypeProvider"/></include> | `RubyExpectedConstantTypeProvider` |
@@ -90,6 +94,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.ruby.run.configuration.debugger.rubyDebugHelperFactory"/></include> | `RubyDebugHelperFactory` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.ruby.run.runEnvironmentProvider"/></include> | `RunEnvironmentProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.ruby.run.testFrameworkConfigurator"/></include> | `TestFrameworkConfigurator` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.ruby.topLevelSymbolProvider"/></include> | `RubyTopLevelSymbolProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.ruby.typeSignatureProvider"/></include> ![DumbAware][dumb-aware] | `RubyTypeSignatureProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.rubyElementNameAndDescriptionProvider"/></include> | `RubyElementNameAndDescriptionProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.rubyFileStructureProvider"/></include> | `RubyFileStructureViewProvider` |
@@ -109,6 +114,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.sdkConfigFactory"/></include> | `Factory` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.structureViewCustomizer"/></include> | `RubyStructureViewCustomizer` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.superMethodInfoProvider"/></include> | `RubySuperMethodInfoProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.symbol.navigationTargetProvider"/></include> | `NavigationTargetProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.symbolMixinsProvider"/></include> | `RubySymbolMixinsProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.symbolProvider"/></include> | `RubySymbolProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.symbolicTypeInferenceProvider"/></include> | `SymbolicTypeInferenceProvider` |
@@ -129,6 +135,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.formatter.additionalSpacingProcessor"/></include> | `RubyAdditionalSpacingProcessor` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.psiElementFactory"/></include> | `PsiElementFactory` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.rubyBuilderFactory"/></include> | `RubyBuilderFactory` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.settings.supportedExternalFormatter"/></include> | `RubySupportedExternalFormatter` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.templates.elements.provider"/></include> | `TemplateElementsProvider` |
 
 ### intellij.ruby.psi.impl.xml
@@ -150,7 +157,6 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.psi.ownDeclarationProvider"/></include> | `PsiOwnSymbolDeclarationProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.psi.ownReferenceProvider"/></include> | `PsiOwnSymbolReferenceProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.rTypeSubtypeContributor"/></include> | `RTypeSubTypeContributor` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.ruby.topLevelSymbolProvider"/></include> | `RubyTopLevelSymbolProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.rubyTypeProvider"/></include> | `RubyTypeProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.serializableTypeResolver"/></include> | `RubySerializableTypeResolver` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.templates.integration"/></include> | `TemplateIntegration` |
@@ -160,6 +166,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.ruby.rbs.containerHierarchyMapper"/></include> | `RbsContainerHierarchyMapper` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.ruby.rbs.psi.typeSignatureSerializer"/></include> | `RbsTypeSignatureSerializer` |
 
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square

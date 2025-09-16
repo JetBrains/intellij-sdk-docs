@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 7755d82675efadd94c94ddccd67dcbe41f53775e -->
+<!-- Revision: a769b0bd982e6fe0718c56b2c41e999c2b58267e -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-112 Extension Points and 37 Listeners
+113 Extension Points and 37 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -232,6 +232,14 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.assistant.navlistener"/></include> ![Non-Dynamic][non-dynamic] | [`AssistNavListener`](%gh-ij-android%/assistant/src/com/android/tools/idea/assistant/AssistNavListener.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.assistant.panelFactory"/></include> ![Non-Dynamic][non-dynamic] | [`PanelFactory`](%gh-ij-android%/assistant/src/com/android/tools/idea/assistant/PanelFactory.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.assistant.scrollHandler"/></include> ![Non-Dynamic][non-dynamic] | [`ScrollHandler`](%gh-ij-android%/assistant/src/com/android/tools/idea/assistant/ScrollHandler.java) |
+
+### com.android.tools.gradle.dcl
+
+[`com.android.tools.gradle.dcl`](%gh-ij-android%/gradle-declarative-lang-ide/resources/META-INF/plugin.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.gradle.dcl.ide.declarativeSchemaProvider"/></include> ![Non-Dynamic][non-dynamic] | `n/a` |
 
 ### compose-designer.xml
 

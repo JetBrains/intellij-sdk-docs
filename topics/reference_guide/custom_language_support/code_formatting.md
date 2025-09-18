@@ -247,4 +247,4 @@ Register [`AsyncDocumentFormattingService`](%gh-ic%/platform/code-style-api/src/
 in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.formattingService"/></include> to invoke external formatter instead of IDE's builtin formatter.
 
 **Example:**
-[`ShExternalFormatter`](%gh-ic%/plugins/sh/core/src/com/intellij/sh/formatter/ShExternalFormatter.java) from _Shell Script_ plugin
+[`ShExternalFormatter`](%gh-ic%/plugins/sh/backend/src/com/intellij/sh/backend/formatter/ShExternalFormatter.java) from _Shell Script_ plugin

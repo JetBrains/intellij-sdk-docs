@@ -67,12 +67,10 @@ A toggle button is implemented with the [`OnOffButton`](%gh-ic%/platform/platfor
 But generally, you shouldn't use the class directly.
 The IDE automatically places the buttons in the search feed if you follow one of the patterns described below:
 
-1. If this is a system or editor or another kind of settings, register the corresponding [`BooleanOptionDescription`](%gh-ic%/platform/platform-api/src/com/intellij/ide/ui/search/BooleanOptionDescription.java) for the option. The options can be bound (but not limited) to:
+1. If this is a system or editor or another kind of settings, register the corresponding [`BooleanOptionDescription`](%gh-ic%/platform/platform-api/src/com/intellij/ide/ui/search/BooleanOptionDescription.java) for the option. The options can be bound (but not limited) to a [`SearchTopHitProvider`](%gh-ic%/platform/platform-api/src/com/intellij/ide/SearchTopHitProvider.kt) instance which is registered in <path>plugin.xml</path> with the `<search.topHitProvider implementation="fq.class.name"/>` tag.
 
-    - A [`SearchTopHitProvider`](%gh-ic%/platform/platform-api/src/com/intellij/ide/SearchTopHitProvider.kt) instance which is registered in <path>plugin.xml</path> with the `<search.topHitProvider implementation="fq.class.name"/>` tag. For example, see the [`SystemOptionsTopHitProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/ui/SystemOptionsTopHitProvider.java) class that represents matching of <control>Reopen last project on startup</control> checkbox
-      to `BooleanOptionDescription`.
+   For example, see the [`SystemOptionsTopHitProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/ui/SystemOptionsTopHitProvider.java) class that represents matching of <control>Reopen last project on startup</control> checkbox to `BooleanOptionDescription`.
 
-    - [`EditorOptionDescription`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/ui/EditorOptionDescription.java) bound to [`EditorSettingsExternalizable`](%gh-ic%/platform/ide-core-impl/src/com/intellij/openapi/editor/ex/EditorSettingsExternalizable.java), which under the hood works with the <path>editor.xml</path>.
 2. Implement your own action that's inherited from [`ToggleAction`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/ToggleAction.java) and registered in <path>plugin.xml</path>.
 
 The toggle button changes state when it is clicked with the mouse or when <shortcut>Enter</shortcut> is pressed on the item line.

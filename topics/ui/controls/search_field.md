@@ -44,7 +44,7 @@ Provide hints such as search scope as placeholder text.
 
 ### Search and Replace fields
 
-Mark the Search and Replace fields with placeholders when shown together to distinguish between them.
+Mark the Search and Replace fields with placeholders when shown together to distinguish between them:
 
 ![](search_field_search_replace.png){width=706}
 
@@ -117,7 +117,7 @@ For example, the search field in <control>Settings</control> dialog is aligned w
 
 ![](search_field_placement.png){width=706}
 
-#### Inline search
+<!-- #### Inline search
 
 Fit the search field to a popup window or to a toolbar if it has top borders. This way the overall form looks less complex.
 
@@ -126,7 +126,7 @@ Fit the search field to a popup window or to a toolbar if it has top borders. Th
         <td><format style="bold" color="Green">Correct</format><img src="search_field_placement_correct.png" width="378"/></td>
         <td><format style="bold" color="Red">Incorrect</format><img src="search_field_placement_incorrect.png" width="378"/></td>
     </tr>
-</table>
+</table> -->
 
 #### Speed Search
 
@@ -137,9 +137,9 @@ For example, space in the Project view is limited and too loaded to always show 
 
 ### Sizes
 
-#### Standalone field {#standalone-search-size}
+#### Grouped with other controls {#grouped-search-size}
 
-For a search field which is displayed as an input field, follow the [input sizes guideline](input_field.md#sizes-and-placement).
+For a search field which is displayed as an input field in a group of controls, for example, in a tool window toolbar, follow the [input sizes guideline](input_field.md#sizes-and-placement).
 
 #### Above lists and trees {#list-trees-search-size}
 
@@ -147,7 +147,7 @@ When placed above lists or trees, expand the field to the width of the list or t
 
 #### Speed search {#speed-search-size}
 
-For a search field shown on demand, for example, in the <control>Project</control> tool window, the width should be adjusted on typing to accommodate input.
+For a search field shown on demand, for example, in the <control>Project</control> tool window, expand the field to the width of the tool window.
 
 <!-- #### In a toolbar {#toolbar-search-size}
 

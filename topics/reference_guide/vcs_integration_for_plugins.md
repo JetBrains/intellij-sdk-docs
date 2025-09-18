@@ -24,7 +24,7 @@ A [`FilePath`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/vcs/FilePath.j
 Unlike a [virtual file](virtual_file.md), a `FilePath` can represent a path to a file which doesn't exist on disk.
 The main difference between a `FilePath` and a [`java.io.File`](https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/io/File.html) is that a `FilePath` caches the `VirtualFile` corresponding to the path, so it can be retrieved without doing a VFS search.
 
-To create instances of `FilePath`, the [`VcsContextFactory`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/actions/VcsContextFactory.java) API is used.
+To create instances of `FilePath`, the [`VcsContextFactory`](%gh-ic%/platform/vcs-api/shared/src/com/intellij/openapi/vcs/actions/VcsContextFactory.java) API is used.
 
 `FilePath` representing paths in a VCS repository, rather than local paths, are created using `VcsContextFactory.createFilePathOnNonLocal()`.
 The `FilePath.isNonLocal()` method returns `true` for such files.
@@ -73,10 +73,10 @@ If a custom file status has not been specified, the status is calculated automat
 
 ### `ChangeList`
 
-A [`ChangeList`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeList.java) represents a named group of related changes.
+A [`ChangeList`](%gh-ic%/platform/vcs-api/shared/src/com/intellij/openapi/vcs/changes/ChangeList.java) represents a named group of related changes.
 There are two main kinds of changelists:
 
-* [`LocalChangeList`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/changes/LocalChangeList.java) represents a group of modifications done by a user locally.
+* [`LocalChangeList`](%gh-ic%/platform/vcs-api/shared/src/com/intellij/openapi/vcs/changes/LocalChangeList.java) represents a group of modifications done by a user locally.
   If the VCS also supports the concept of changelists (like Perforce does), the VCS plugin can synchronize the IDE's local changelist structure with that of the VCS.
   Otherwise, a local changelist is simply a subset of the files checked out or modified by the user.
 * [`CommittedChangeList`](%gh-ic%/platform/vcs-api/src/com/intellij/openapi/vcs/versionBrowser/CommittedChangeList.java) represents a set of modifications checked in to the VCS repository.

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Multiple Carets
 
@@ -65,7 +65,7 @@ If those handlers need to support multiple carets, they will need to implement t
 Examples of its usage:
 
 * [`TypedAction`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedAction.java).
-* [`XmlGtTypedHandler`](%gh-ic%/xml/impl/src/com/intellij/codeInsight/editorActions/XmlGtTypedHandler.java).
+* [`XmlGtTypedHandler`](%gh-ic%/xml/xml-ui-common/src/com/intellij/codeInsight/editorActions/XmlGtTypedHandler.java).
 
 > [`TypedHandlerDelegate`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/TypedHandlerDelegate.java) implementations are invoked automatically for each caret.
 > If one wants to implement custom multicaret behaviour on typing, [`TypedActionHandler`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java) needs to be provided instead.

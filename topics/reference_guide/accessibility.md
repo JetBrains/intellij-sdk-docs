@@ -4,7 +4,7 @@
 
 <link-summary>Making the UI accessible to more people.</link-summary>
 
-Accessibility means building interfaces that everyone can use, regardless of their abilities.
+Accessibility means building user interfaces that everyone can use, regardless of their abilities.
 It allows people with different needs, such as those who rely on assistive technologies or need keyboard-only navigation, to fully interact with the product.
 Follow these guidelines, based on [industry standards](https://www.w3.org/TR/WCAG22/), to ensure the UI is accessible for all.
 

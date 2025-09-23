@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: a769b0bd982e6fe0718c56b2c41e999c2b58267e -->
+<!-- Revision: 88417fcefaa89bf6b484be34ef73309e3515648c -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-23 Extension Points and 6 Listeners
+19 Extension Points and 6 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -58,15 +58,6 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.importPathsProvider"/></include> | `GoImportPathsProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.imports.weigher"/></include> | `GoImportsWeigher` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.rootsProvider"/></include> | `GoRootsProvider` |
-
-### org.jetbrains.plugins.go.ide
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.templateOptionProvider"/></include> | `GoWelcomeScreenFileTemplateOptionProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.welcomeScreenFeatureProvider"/></include> | `GoWelcomeScreenFeatureProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.welcomeScreenFileIconProvider"/></include> | `GoWelcomeScreenFileIconProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.welcomeScreenRightTabBannerProvider"/></include> | `GoWelcomeRightTabBannerProvider` |
 
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square

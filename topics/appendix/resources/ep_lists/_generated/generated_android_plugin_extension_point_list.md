@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: ee1e6cb62e11111f20108fcc38a30b7bac02447e -->
+<!-- Revision: 2e809b8cb93c2024f1c7046e4ae93c4d4eeccba8 -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-109 Extension Points and 37 Listeners
+112 Extension Points and 37 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -27,8 +27,8 @@ EP List Directories:
 | [`TutorialCardRefreshNotifier#TUTORIAL_CARD_TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.assistant.TutorialCardRefreshNotifier)  | [`TutorialCardRefreshNotifier`](%gh-ij-android%/assistant/src/com/android/tools/idea/assistant/TutorialCardRefreshNotifier.java) |
 | [`AvdLaunchListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.avdmanager.AvdLaunchListener)  | [`AvdLaunchListener`](%gh-ij-android%/android/src/com/android/tools/idea/avdmanager/AvdLaunchListener.java) |
 | [`EmulatorLogListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.avdmanager.EmulatorLogListener)  | [`EmulatorLogListener`](%gh-ij-android%/android/src/com/android/tools/idea/avdmanager/EmulatorLogListener.kt) |
-| [`IssueProviderListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.common.error.IssueProviderListener)  ![Project-Level][project-level] | [`IssueProviderListener`](%gh-ij-android%/designer/src/com/android/tools/idea/common/error/IssueProvider.kt) |
 | [`IssueProviderListener#UI_CHECK`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.common.error.IssueProviderListener)  ![Project-Level][project-level] | [`IssueProviderListener`](%gh-ij-android%/designer/src/com/android/tools/idea/common/error/IssueProvider.kt) |
+| [`IssueProviderListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.common.error.IssueProviderListener)  ![Project-Level][project-level] | [`IssueProviderListener`](%gh-ij-android%/designer/src/com/android/tools/idea/common/error/IssueProvider.kt) |
 | [`ComposeAnimationListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.compose.preview.ComposePreviewRepresentation.ComposeAnimationListener)  | [`ComposeAnimationListener`](%gh-ij-android%/compose-designer/src/com/android/tools/idea/compose/preview/Preview.kt) |
 | [`FastPreviewManager#FAST_PREVIEW_MANAGER_TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.editors.fast.FastPreviewManager.Companion.FastPreviewManagerListener)  | [`FastPreviewManagerListener`](%gh-ij-android%/android/src/com/android/tools/idea/editors/fast/FastPreviewManager.kt) |
 | [`GradleBuildState#GRADLE_BUILD_TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.gradle.project.build.GradleBuildListener)  | [`GradleBuildListener`](%gh-ij-android%/project-system-gradle/src/com/android/tools/idea/gradle/project/build/GradleBuildListener.java) |
@@ -94,6 +94,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.googleapis.googleApiKeyProvider"/></include> | [`GoogleApiKeyProvider`](%gh-ij-android%/android-common/src/com/android/tools/idea/googleapis/GoogleApiKeyProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.login.googleLoginCredentialProvider"/></include> | [`GoogleLoginCredentialProvider`](%gh-ij-android%/android-common/src/com/android/tools/idea/login/GoogleLoginCredentialProvider.kt) |
 
 ### android-editing-metrics.xml
 
@@ -165,6 +166,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.diagnostics.report.logsProvider"/></include> ![Non-Dynamic][non-dynamic] | [`DiagnosticsSummaryFileProvider`](%gh-ij-android%/android/src/com/android/tools/idea/diagnostics/report/DiagnosticsSummaryFileProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.editors.manifest.manifestPanelToken"/></include> ![Non-Dynamic][non-dynamic] | [`ManifestPanelToken`](%gh-ij-android%/android/src/com/android/tools/idea/editors/manifest/ManifestPanelToken.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.flags.experimentalSettingsContributor"/></include> ![Non-Dynamic][non-dynamic] | [`ExperimentalSettingsContributor`](%gh-ij-android%/android/src/com/android/tools/idea/flags/ExperimentalSettingsContributor.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.imports.androidMavenImportToken"/></include> ![Non-Dynamic][non-dynamic] | [`AndroidMavenImportToken`](%gh-ij-android%/android/src/com/android/tools/idea/imports/AndroidMavenImportToken.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.lang.databinding.dataBindingCompletionSupport"/></include> ![Non-Dynamic][non-dynamic] | [`DataBindingCompletionSupport`](%gh-ij-android%/android/src/com/android/tools/idea/lang/databinding/DataBindingCompletionSupport.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.lang.databinding.dataBindingExpressionSupport"/></include> ![Non-Dynamic][non-dynamic] | [`DataBindingExpressionSupport`](%gh-ij-android%/android/src/com/android/tools/idea/lang/databinding/DataBindingExpressionSupport.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.layoutlib.layoutLibraryProvider"/></include> ![Non-Dynamic][non-dynamic] | [`LayoutLibraryProvider`](%gh-ij-android%/layoutlib-loader/src/com/android/tools/idea/layoutlib/LayoutLibraryLoader.java) |
@@ -266,19 +268,12 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.uibuilder.editor.multirepresentation.sourcecode.sourceCodePreviewRepresentationProvider"/></include> ![Non-Dynamic][non-dynamic] | [`PreviewRepresentationProvider`](%gh-ij-android%/designer/src/com/android/tools/idea/uibuilder/editor/multirepresentation/PreviewRepresentationProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.uibuilder.editorNotificationProvider"/></include> ![Non-Dynamic][non-dynamic] ![DumbAware][dumb-aware] | [`EditorNotificationProvider`](%gh-ic%/platform/platform-api/src/com/intellij/ui/EditorNotificationProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.uibuilder.handlers.constraint.constraintLayoutExtension"/></include> | [`ConstraintLayoutExtension`](%gh-ij-android%/designer/src/com/android/tools/idea/uibuilder/handlers/constraint/ConstraintComponentUtilities.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.uibuilder.handlers.uiBuilderHandlerToken"/></include> ![Non-Dynamic][non-dynamic] | [`UIBuilderHandlerToken`](%gh-ij-android%/designer/src/com/android/tools/idea/uibuilder/handlers/UIBuilderHandlerToken.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.uibuilder.handlers.viewHandlerProvider"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | [`ViewHandlerProvider`](%gh-ij-android%/designer/src/com/android/tools/idea/uibuilder/handlers/ViewHandlerProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.uibuilder.property.motionEditorNlPropertiesModelProvider"/></include> | [`NlPropertiesModelProvider`](%gh-ij-android%/designer/src/com/android/tools/idea/uibuilder/property/NlPropertiesModel.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.uibuilder.property.motionEditorNlPropertiesViewProvider"/></include> | [`NlPropertiesViewProvider`](%gh-ij-android%/designer/src/com/android/tools/idea/uibuilder/property/NlPropertiesView.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.uibuilder.scene.decorator.nlDecoratorProvider"/></include> | [`Provider`](%gh-ij-android%/designer/src/com/android/tools/idea/uibuilder/scene/decorator/NlSceneDecoratorFactory.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.uibuilder.troubleshooting.infoCollector"/></include> ![Non-Dynamic][non-dynamic] | [`TroubleInfoCollector`](%gh-ic%/platform/platform-impl/src/com/intellij/troubleshooting/TroubleInfoCollector.java) |
-
-### device-manager-v2.xml
-
-[`device-manager-v2.xml`](%gh-ij-android%/device-manager-v2/resources/META-INF/device-manager-v2.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.devicemanagerv2.deviceManagerOverflowActionContributor"/></include> ![Non-Dynamic][non-dynamic] | [`DeviceManagerOverflowActionContributor`](%gh-ij-android%/device-manager-v2/src/com/android/tools/idea/devicemanagerv2/OverflowButton.kt) |
 
 ### gradle-dsl.xml
 
@@ -332,6 +327,7 @@ EP List Directories:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.naveditor.dialogs.addDeeplinkDialogToken"/></include> ![Non-Dynamic][non-dynamic] | [`AddDeeplinkDialogToken`](%gh-ij-android%/nav/editor/src/com/android/tools/idea/naveditor/dialogs/AddDeeplinkDialog.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.naveditor.editor.addDestinationMenuToken"/></include> ![Non-Dynamic][non-dynamic] | [`AddDestinationMenuToken`](%gh-ij-android%/nav/editor/src/com/android/tools/idea/naveditor/editor/AddDestinationMenu.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.naveditor.surface.navDesignSurfaceToken"/></include> ![Non-Dynamic][non-dynamic] | [`NavDesignSurfaceToken`](%gh-ij-android%/nav/editor/src/com/android/tools/idea/naveditor/surface/NavDesignSurfaceToken.java) |
 

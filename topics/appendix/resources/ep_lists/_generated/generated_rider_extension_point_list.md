@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: ee1e6cb62e11111f20108fcc38a30b7bac02447e -->
+<!-- Revision: 2e809b8cb93c2024f1c7046e4ae93c4d4eeccba8 -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-149 Extension Points and 9 Listeners
+150 Extension Points and 9 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -243,6 +243,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.unitTesting.actionsProvider"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `RiderUnitTestActionsProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.unitTesting.sessionHandler"/></include> ![Non-Dynamic][non-dynamic] | `IRiderUnitTestDebuggerSessionsHandler` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.unityDetector"/></include> ![Project-Level][project-level] | `UnityDetector` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.vfsToProjectModelEventsCustomizer"/></include> | `VfsToProjectModelEventsCustomizer` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.web.extensions.companionDebugStarter"/></include> ![Non-Dynamic][non-dynamic] | `DotNetCompanionDebugStarter` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.web.extensions.webBrowserDebugSupport"/></include> ![Non-Dynamic][non-dynamic] | `WebBrowserDebugSupport` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.writingAccessProvider"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `RiderDebugWritingAccessProvider` |

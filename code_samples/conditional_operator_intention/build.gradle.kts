@@ -1,4 +1,6 @@
 // Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
+import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType.IntellijIdea
+import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType.IntellijIdeaCommunity
 import org.jetbrains.intellij.platform.gradle.TestFrameworkType
 
 plugins {
@@ -41,7 +43,15 @@ intellijPlatform {
   }
   pluginVerification  {
     ides {
-      recommended()
+      // since 253, IntelliJ IDEA Community and Ultimate have been merged into IntelliJ IDEA
+      select {
+        types = listOf(IntellijIdeaCommunity)
+        untilBuild = "252.*"
+      }
+      select {
+        types = listOf(IntellijIdea)
+        sinceBuild = "253"
+      }
     }
   }
 }

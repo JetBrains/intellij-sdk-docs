@@ -63,7 +63,11 @@ The second step is adding IntelliJ Platform Plugin SDK that will use the JDK con
 1. Go to <ui-path>File | Project Structure | Platform Settings | SDKs</ui-path>.
 2. Click the <control>Add</control> button (<control>+</control>).
 3. Select the <control>Add IntelliJ Platform Plugin SDK...</control> option.
-4. Choose the installation folder of the IDE [downloaded previously](#download-intellij-based-ide) (on macOS, select the application icon in <path>/Applications/</path>).
+4. Choose the installation folder of the IDE [downloaded previously](#download-intellij-based-ide).
+   > On macOS, in the file chooser, select <path>/Applications/</path> and switch the view to <control>Show items as: List</control>.
+   > Then, expand the IDE item and select the <path>Contents</path> folder.
+   >
+   {style="tip"}
 5. In the <control>Select Internal Java Platform</control> dialog, select the JDK configured in the [previous step](#add-jdk) and click the <control>OK</control> button.
 6. In the added SDK, specify the <control>Sandbox Home</control> directory.
 

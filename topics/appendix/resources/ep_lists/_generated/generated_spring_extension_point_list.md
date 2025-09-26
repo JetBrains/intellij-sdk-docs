@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 88417fcefaa89bf6b484be34ef73309e3515648c -->
+<!-- Revision: 39a1a008f12062cf95015bb903c48e83c75e4ecb -->
 
 <!--
 EP List Directories:
@@ -26,7 +26,7 @@ EP List Directories:
 | [`SpringBeansViewSettings#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.spring.toolWindow.SpringBeansViewSettings.Listener)  | `Listener` |
 
 
-### com.intellij.spring
+### intellij.spring.core.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|

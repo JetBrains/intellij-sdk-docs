@@ -41,6 +41,7 @@ Reader Mode customization
 Text Editor customization
 : Implement [`TextEditorCustomizer`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/fileEditor/impl/text/TextEditorCustomizer.kt) and register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.textEditorCustomizer"/></include> to customize created editors.<br/>
 **Note: `TextEditorCustomizer` has been marked internal since 2024.2.**
+See [the replacement](api_internal.md#intellij-platform).
 
 ### JavaScript Plugin 2020.3
 

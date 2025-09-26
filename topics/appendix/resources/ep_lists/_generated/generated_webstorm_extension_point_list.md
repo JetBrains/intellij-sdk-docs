@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 88417fcefaa89bf6b484be34ef73309e3515648c -->
+<!-- Revision: 39a1a008f12062cf95015bb903c48e83c75e4ecb -->
 
 <!--
 EP List Directories:
@@ -15,7 +15,7 @@ EP List Directories:
 
 <snippet id="content">
 
-86 Extension Points and 5 Listeners
+87 Extension Points and 5 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -155,6 +155,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.nodeRunConfigurationExtension"/></include> | `AbstractNodeRunConfigurationExtension` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.predefinedLibraryProvider"/></include> | `JSPredefinedLibraryProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.runConfigurationBuilder"/></include> ![Project-Level][project-level] | `JSRunConfigurationBuilder` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.runtimeProvider"/></include> ![Internal][internal] | `JSRuntimeProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.scanningFileListenerContributor"/></include> | `ScanningFileListenerContributor` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.smartCompletionContributor"/></include> | `JSSmartCompletionContributor` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.spellcheckerProvider"/></include> | `JSSpellcheckerProvider` |

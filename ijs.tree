@@ -143,6 +143,7 @@
     <toc-element topic="internationalization.md">
       <toc-element topic="providing_translations.md" accepts-web-file-names="localization-guide.html"/>
     </toc-element>
+    <toc-element topic="accessibility.md"/>
     <toc-element toc-title="Diagrams"/>
   </toc-element>
   <toc-element toc-title="Project Structure">
@@ -527,7 +528,6 @@
       <toc-element toc-title="Tree"/> <!--TODO-->
     </toc-element>
     <toc-element topic="Principles.md">
-      <toc-element toc-title="Accessibility"/> <!--TODO-->
       <toc-element toc-title="Dangerous Actions"/> <!--TODO-->
       <toc-element topic="data_formats.md"/>
       <toc-element toc-title="Default Values"/>

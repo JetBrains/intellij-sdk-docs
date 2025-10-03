@@ -87,7 +87,7 @@
       <toc-element topic="tool_windows.md"/>
       <toc-element topic="dialog_wrapper.md"/>
       <toc-element topic="kotlin_ui_dsl_version_2.md">
-        <toc-element topic="kotlin_ui_dsl.md"/>
+        <toc-element topic="kotlin_ui_dsl.md" hidden="true"/>
       </toc-element>
       <toc-element topic="popups.md"/>
       <toc-element topic="notifications.md"/>

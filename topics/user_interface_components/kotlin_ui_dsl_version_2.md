@@ -1,6 +1,6 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# Kotlin UI DSL Version 2
+# Kotlin UI DSL
 <primary-label ref="2021.3"/>
 
 <link-summary>Kotlin DSL for creating UI forms with input components bound to a state object.</link-summary>
@@ -11,19 +11,19 @@
 
 </tldr>
 
-> This page describes API available in IntelliJ Platform releases **2021.3 and later** only.
+> _Kotlin UI DSL_ was formerly known as _Kotlin UI DSL **Version 2**_.
+> _Kotlin UI DSL **Version 1**_ was deprecated starting from 2021.3 and has been removed from the newest platform versions.
 >
-> See [](kotlin_ui_dsl.md) for targeting earlier releases.
->
+> For simplicity, _Kotlin UI DSL **Version 2**_ is now just _Kotlin UI DSL_.
 
-Kotlin UI DSL Version 2 allows creating UI forms with input components bound to state objects.
+Kotlin UI DSL allows creating UI forms with input components bound to state objects.
 The forms are built by using a declarative Kotlin syntax and follow the official IntelliJ Platform UI conventions described in the [](ui_guidelines_welcome.topic).
 The library is written in [Kotlin](using_kotlin.md) and makes it easy to develop user interfaces like [dialogs](dialog_wrapper.md) and [settings pages](settings.md).
 
 The Kotlin UI DSL is not intended to build general UIs, like [tool windows](tool_window.md) controls that trigger some actions and do not contain any input components bound to state objects.
 For this purpose, use [custom Swing components](user_interface_components.md) from the IntelliJ Platform or the standard ones.
 
-The _Kotlin UI DSL Version 2_ functions are located in the [`com.intellij.ui.dsl.builder`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/dsl/builder) package.
+The _Kotlin UI DSL_ functions are located in the [`com.intellij.ui.dsl.builder`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/dsl/builder) package.
 
 ## UI DSL Examples
 
@@ -469,11 +469,14 @@ buttonsGroup(title = "radioButton:") {
 }.bind(model::radioButtonColor)
 ```
 
-## Version 1 and 2 Comparison
+## Comparison with Kotlin UI DSL Version 1
 
-In UI DSL version 2, some crucial problems from version 1 have been fixed, so porting is highly desirable.
-See [](#migration-from-version-1) on how to port existing UI DSL code from version 1 to version 2 API.
-Version 1 is deprecated and will be removed in future platform releases.
+> Kotlin UI DSL Version 1 is deprecated and has been removed from the newest platform releases.
+>
+{style="warning"}
+
+The new Kotlin UI DSL fixes some crucial problems from version 1.
+See [](#migration-from-version-1) on how to port existing UI DSL code from version 1 to the new version.
 
 The following significant changes were made:
 

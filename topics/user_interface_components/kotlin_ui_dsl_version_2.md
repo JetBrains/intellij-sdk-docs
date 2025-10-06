@@ -12,7 +12,9 @@
 </tldr>
 
 > _Kotlin UI DSL_ was formerly known as _Kotlin UI DSL **Version 2**_.
-> _Kotlin UI DSL **Version 1**_ was deprecated starting from 2021.3 and has been removed from the newest platform versions.
+>
+> _Kotlin UI DSL **Version 1**_ was deprecated starting from 2021.3, and its API was gradually reduced.
+> Since 2025.1 its usage is considered an error.
 >
 > For simplicity, _Kotlin UI DSL **Version 2**_ is now just _Kotlin UI DSL_.
 
@@ -471,7 +473,7 @@ buttonsGroup(title = "radioButton:") {
 
 ## Comparison with Kotlin UI DSL Version 1
 
-> Kotlin UI DSL Version 1 is deprecated and has been removed from the newest platform releases.
+> Kotlin UI DSL Version 1 is deprecated since 2021.3, and its usage is an error since 2025.1.
 >
 {style="warning"}
 

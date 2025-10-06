@@ -13,7 +13,7 @@
 
 > When targeting IntelliJ Platform 2021.3 and later, only use [Kotlin UI DSL Version 2](kotlin_ui_dsl_version_2.md) (currently called just _Kotlin UI DSL_).
 >
-> **The version documented on this page is removed from the newest platform releases.**
+> **Usage of the version documented on this page is an error since 2025.1.**
 >
 > Please note [breaking changes](api_changes_list.md) can occur for this API between major releases.
 >

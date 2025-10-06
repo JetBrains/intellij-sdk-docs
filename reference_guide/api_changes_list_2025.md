@@ -89,6 +89,9 @@ The annotation `com.intellij.openapi.components.Storage` cannot be used at top-l
 The annotation can be used only in [`@State.storages`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/State.java).
 See [IJPL-207245](https://youtrack.jetbrains.com/issue/IJPL-207245) for details.
 
+Kotlin UI DSL Version 1 must not be used since 2025.1
+: Migrate to [](kotlin_ui_dsl_version_2.md).
+
 ## 2025.2
 
 ### IntelliJ Platform 2025.2

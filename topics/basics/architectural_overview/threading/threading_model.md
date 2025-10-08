@@ -639,6 +639,10 @@ Consider using [`MergingUpdateQueue`](%gh-ic%/platform/ide-core/src/com/intellij
 
 Massive batches of VFS events can be pre-processed in the background with [`AsyncFileListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/AsyncFileListener.java).
 
+### Investigating UI Freezes
+
+See the [Investigating IntelliJ Platform UI Freezes](https://blog.jetbrains.com/platform/2025/09/investigating-intellij-platform-ui-freezes/) blog post for techniques to investigate UI freezes.
+
 ## FAQ
 
 ### How to check whether the current thread is the EDT/UI thread?

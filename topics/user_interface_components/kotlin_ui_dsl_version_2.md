@@ -11,13 +11,6 @@
 
 </tldr>
 
-> _Kotlin UI DSL_ was formerly known as _Kotlin UI DSL **Version 2**_.
->
-> _Kotlin UI DSL **Version 1**_ was deprecated starting from 2021.3, and its API was gradually reduced.
-> Since 2025.1 its usage is considered an error.
->
-> For simplicity, _Kotlin UI DSL **Version 2**_ is now just _Kotlin UI DSL_.
-
 Kotlin UI DSL allows creating UI forms with input components bound to state objects.
 The forms are built by using a declarative Kotlin syntax and follow the official IntelliJ Platform UI conventions described in the [](ui_guidelines_welcome.topic).
 The library is written in [Kotlin](using_kotlin.md) and makes it easy to develop user interfaces like [dialogs](dialog_wrapper.md) and [settings pages](settings.md).
@@ -473,9 +466,12 @@ buttonsGroup(title = "radioButton:") {
 
 ## Comparison with Kotlin UI DSL Version 1
 
-> Kotlin UI DSL Version 1 is deprecated since 2021.3, and its usage is an error since 2025.1.
+> _Kotlin UI DSL_ was formerly known as _Kotlin UI DSL **Version 2**_.
 >
-{style="warning"}
+> _Kotlin UI DSL **Version 1**_ was deprecated starting from 2021.3, and its API was gradually reduced.
+> Since 2025.1 its usage is considered an error.
+>
+> For simplicity, _Kotlin UI DSL **Version 2**_ is now just _Kotlin UI DSL_.
 
 The new Kotlin UI DSL fixes some crucial problems from version 1.
 See [](#migration-from-version-1) on how to port existing UI DSL code from version 1 to the new version.

@@ -10,7 +10,7 @@ See also [](threading_model.md#avoiding-ui-freezes) and [](indexing_and_psi_stub
 
 ## Avoid Expensive Methods of `PsiElement`
 
-Avoid `PsiElement`'s methods which are expensive with deep trees.
+Avoid `PsiElement`'s methods, which are expensive with deep trees.
 
 `getText()` traverses the whole tree under the given element and concatenates strings, consider using `textMatches()` instead.
 
@@ -19,13 +19,13 @@ If you only need PSI element length, use `getTextLength()`.
 
 `getContainingFile()` and `getProject()` often can be computed once per task and then stored in fields or passed via parameters.
 
-Additionally, methods such as `getText()`, `getNode()`, or `getTextRange()`, need the AST, obtaining which can be quite an expensive operation, see next section.
+Additionally, methods such as `getText()`, `getNode()`, or `getTextRange()` require the AST, and accessing it can be an expensive operation, as explained in the next section.
 
 ## Avoid Using Many PSI Trees/Documents
 
 Avoid loading too many parsed trees or documents into memory at the same time.
 Ideally, only AST nodes from files open in the editor should be present in the memory.
-Everything else, even if it's needed for resolve/highlighting purposes, can be accessed via PSI interfaces, but its implementations should [use stubs](stub_indexes.md) underneath, which are less CPU- and memory-expensive.
+Everything else, even if it's necessary for resolve/highlighting purposes, can be accessed via PSI interfaces, but its implementations should [use stubs](stub_indexes.md) underneath, which are less CPU- and memory-expensive.
 
 If stubs don't suit your case well (e.g., the information you need is large and/or very rarely needed, or you're developing a plugin for a language whose PSI you don't control), you can create a [custom index or gist](indexing_and_psi_stubs.md).
 
@@ -44,13 +44,13 @@ Usually, [`CachedValue`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/Cac
 
 If the information you cache depends only on a subtree of the current PSI element (and nothing else: no resolve results or other files), you can cache it in a field in your `PsiElement` implementation and drop the cache in an override of `ASTDelegatePsiElement.subtreeChanged()`.
 
-### Using `ProjectRootManager` as Dependency
+### Using `ProjectRootManager` as a Dependency
 {id="projectRootManagerDependency"}
 
 <primary-label ref="2024.1"/>
 
 The platform no longer increments root changes modification tracker on finish of [dumb mode](indexing_and_psi_stubs.md#dumb-mode).
-If cached values use [`ProjectRootManager`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java) as dependency
+If cached values use [`ProjectRootManager`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java) as a dependency
 (without [`PsiModificationTracker`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/PsiModificationTracker.java))
 and at the same time depend on [indexes](indexing_and_psi_stubs.md), a dependency on
 [`DumbService`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbService.kt) must be added.

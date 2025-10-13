@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Kotlin UI DSL
 <primary-label ref="2021.3"/>
@@ -463,75 +463,3 @@ buttonsGroup(title = "radioButton:") {
  }
 }.bind(model::radioButtonColor)
 ```
-
-## Comparison with Kotlin UI DSL Version 1
-
-> _Kotlin UI DSL_ was formerly known as _Kotlin UI DSL **Version 2**_.
->
-> _Kotlin UI DSL **Version 1**_ was deprecated starting from 2021.3, and its API was gradually reduced.
-> Since 2025.1 its usage is considered an error.
->
-> For simplicity, _Kotlin UI DSL **Version 2**_ is now just _Kotlin UI DSL_.
-
-The new Kotlin UI DSL fixes some crucial problems from version 1.
-See [](#migration-from-version-1) on how to port existing UI DSL code from version 1 to the new version.
-
-The following significant changes were made:
-
-- Reduced API, which allows conceiving API easier and faster.
-  Example: there were 5 overloaded methods `Cell.checkBox()` in version 1, now only one method remains.
-  Functionality for binding properties is extracted into `Cell<T>.bindSelected()` methods.
-- UI DSL became stricter, so the available API in every context is much smaller.
-  Example: code like `row { row {` is forbidden now.
-- Structured API is mostly based on interfaces, because it's easier to learn API by grouped methods.
-  Only a small part of the API is implemented as extensions.
-- KDoc is widely used.
-- MIG layout is fully removed from the new UI DSL and replaced by `GridLayout`.
-  Because MIG layout is an external library, it's hard to fix bugs there (e.g., there are layout problems when components become invisible) and extend its functionality.
-  Fixed focus ring cropping problems: when components are placed near the panel border focus ring could be cropped if panel insets do not specify enough space.
-- Implemented [Placeholder](#placeholder) that allows replacing components at runtime after content is shown.
-
-### Migration from Version 1
-
-The new API is very similar to the old one and covers almost all functionality now, so moving to the new version can be done quickly.
-
-Version 1 is placed in `com.intellij.ui.layout` package.
-
-Version 2 is placed in `com.intellij.ui.dsl.builder` package.
-
-<procedure title="Migration Steps">
-
-1. Having a screenshot or live version of the initial components layout can help
-2. Remove imports of old UI DSL starting with `com.intellij.ui.layout`
-3. Go to the place where the panel is created and import new UI DSL `com.intellij.ui.dsl.builder` suggested by IntelliJ IDEA
-4. Update non-compilable code, using the following table
-
-</procedure>
-
-| Version 1                                         | Version 2                                                             |
-|---------------------------------------------------|-----------------------------------------------------------------------|
-| `row { row {`                                     | `indent { row {`                                                      |
-| `row { cell(isFullWidth = true)`                  | `row {`                                                               |
-| `fullRow {`                                       | `row {`                                                               |
-| `titledRow(…) {`                                  | `group(…) {`                                                          |
-| `hideableRow`                                     | `collapsibleGroup`                                                    |
-| `cell` used as sub-grid                           | `row { panel { … } }`                                                 |
-| `component(…)` or its invocation via `()`         | `cell(…)`                                                             |
-| `enableIf`                                        | `enabledIf`                                                           |
-| `checkBox(text, bindOptions)`                     | `checkBox(text).bindSelected(bindOptions)`                            |
-| `radioButton(text, bindOptions)`                  | `radioButton(text).bindSelected(bindOptions)`                         |
-| `comboBox(…, bindOptions)`                        | `comboBox(text).bindItem(bindOptions)`                                |
-| `textField(bindOptions, columns)`                 | `textField().bindText(bindOptions).columns(columns)`                  |
-| `scrollableTextArea(bindOptions, rows, columns)`  | `textArea().bindText(bindOptions).rows(rows).columns(columns)`        |
-| `intTextField(bindOptions, columns, range, step)` | `intTextField(range, step).bindIntText(bindOptions).columns(columns)` |
-| `textFieldWithBrowseButton(bindOptions, …)`       | `textFieldWithBrowseButton(…).bindText(bindOptions)`                  |
-| `.growPolicy(GrowPolicy.COLUMNS_SHORT)`           | `.columns(SHORT_TEXT)`                                                |
-| `.growPolicy(GrowPolicy.MEDIUM_TEXT)`             | `.columns(COLUMNS_MEDIUM)`                                            |
-| `label(…, bold = true)`                           | `label(…).bold()`                                                     |
-| `withLeftGap()`                                   | For previous left cell use `Cell.gap(SMALL)`                          |
-| `withLeftGap(gapLeft)`                            | Please do not use custom gaps if possible                             |
-| `withLargeLeftGap()`                              | Not needed, this gap is set by default                                |
-| `withValidationOnInput`                           | `validationOnInput`                                                   |
-| `withValidationOnApply`                           | `validationOnApply`                                                   |
-| `withErrorOnApplyIf`                              | `errorOnApply`                                                        |
-| `withBinding`                                     | `bind`                                                                |

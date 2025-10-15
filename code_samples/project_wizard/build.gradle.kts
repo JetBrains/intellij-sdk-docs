@@ -4,7 +4,7 @@ import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType.IntellijIdeaC
 
 plugins {
   id("java")
-  id("org.jetbrains.intellij.platform") version "2.9.0"
+  id("org.jetbrains.intellij.platform") version "2.10.0"
 }
 
 group = "org.intellij.sdk"

@@ -42,7 +42,7 @@ jobs:
           - tool_window
           - tree_structure_provider
     steps:
-      - # Free GitHub Actions Environment Disk Space
+      # Free GitHub Actions Environment Disk Space
       - name: Maximize Build Space
         uses: jlumbroso/free-disk-space@main
         with:

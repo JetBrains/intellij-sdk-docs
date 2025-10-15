@@ -21,6 +21,7 @@ repositories {
 dependencies {
   intellijPlatform {
     intellijIdeaCommunity("2024.3.6")
+    pluginVerifier("1.395")
   }
 }
 

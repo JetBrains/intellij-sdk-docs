@@ -42,6 +42,13 @@ jobs:
           - tool_window
           - tree_structure_provider
     steps:
+      - # Free GitHub Actions Environment Disk Space
+      - name: Maximize Build Space
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: false
+          large-packages: false
+
       - name: Fetch Sources
         uses: actions/checkout@v5
       - name: Setup Java

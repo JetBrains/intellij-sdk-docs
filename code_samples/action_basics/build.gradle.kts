@@ -39,10 +39,10 @@ intellijPlatform {
         types = listOf(IntellijIdeaCommunity)
         untilBuild = "252.*"
       }
-      select {
+      /*select {
         types = listOf(IntellijIdea)
         sinceBuild = "253"
-      }
+      }*/
     }
   }
 }

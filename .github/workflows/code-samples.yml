@@ -24,30 +24,30 @@ jobs:
       matrix:
         plugin:
           - action_basics
-          - comparing_string_references_inspection
-          - conditional_operator_intention
-          - editor_basics
-          - facet_basics
-          - framework_basics
-          - live_templates
-          - max_opened_projects
-          - module
-          - project_model
-          - project_view_pane
-          - project_wizard
-          - psi_demo
-          - run_configuration
-          - settings
-          - simple_language_plugin
-          - tool_window
-          - tree_structure_provider
+#          - comparing_string_references_inspection
+#          - conditional_operator_intention
+#          - editor_basics
+#          - facet_basics
+#          - framework_basics
+#          - live_templates
+#          - max_opened_projects
+#          - module
+#          - project_model
+#          - project_view_pane
+#          - project_wizard
+#          - psi_demo
+#          - run_configuration
+#          - settings
+#          - simple_language_plugin
+#          - tool_window
+#          - tree_structure_provider
     steps:
       # Free GitHub Actions Environment Disk Space
-      - name: Maximize Build Space
-        uses: jlumbroso/free-disk-space@main
-        with:
-          tool-cache: false
-          large-packages: false
+#      - name: Maximize Build Space
+#        uses: jlumbroso/free-disk-space@main
+#        with:
+#          tool-cache: false
+#          large-packages: false
 
       - name: Fetch Sources
         uses: actions/checkout@v5

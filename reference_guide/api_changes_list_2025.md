@@ -89,6 +89,9 @@ The annotation `com.intellij.openapi.components.Storage` cannot be used at top-l
 The annotation can be used only in [`@State.storages`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/State.java).
 See [IJPL-207245](https://youtrack.jetbrains.com/issue/IJPL-207245) for details.
 
+The `org.intellij.intelliLang` plugin requires Gradle dependency on bundled module `intellij.platform.langInjection`
+: Change `bundledPlugin("org.intellij.intelliLang")` to `bundledModule("intellij.platform.langInjection")` in Gradle build script.
+
 ## 2025.2
 
 ### IntelliJ Platform 2025.2

@@ -2,6 +2,7 @@
 import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType.IntellijIdea
 import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType.IntellijIdeaCommunity
 import org.jetbrains.intellij.platform.gradle.TestFrameworkType
+import org.jetbrains.intellij.platform.gradle.models.ProductRelease.Channel.RELEASE
 
 plugins {
   id("java")
@@ -60,6 +61,7 @@ intellijPlatform {
       select {
         types = listOf(IntellijIdea)
         sinceBuild = "253"
+        channels = listOf(RELEASE)
       }
     }
   }

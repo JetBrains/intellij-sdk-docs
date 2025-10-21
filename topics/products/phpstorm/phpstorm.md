@@ -76,7 +76,7 @@ Click on an entry in the table's *Attribute* column to go to the documentation a
 <tab title="PHP Plugin">
 
 PhpStorm plugins targeting versions older than 2022.2 are developed using the Ultimate Edition of IntelliJ IDEA.
-The IntelliJ IDEA (with the PHP plugin) must be used for developing PhpStorm plugins because the PHP plugin is incompatible with IntelliJ IDEA OSS.
+The IntelliJ IDEA (with the PHP plugin) must be used for developing PhpStorm plugins because the PHP plugin is incompatible with IntelliJ IDEA open source builds.
 However, this IntelliJ IDEA Ultimate configuration runs the risk of accidentally using some APIs that are not available in PhpStorm.
 The recommended best practice is to use PhpStorm for testing.
 

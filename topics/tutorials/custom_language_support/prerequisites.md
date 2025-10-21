@@ -16,7 +16,7 @@ Download and install IntelliJ IDEA from [here](https://www.jetbrains.com/idea/do
 >
 {style="note"}
 
-Download the IntelliJ Platform source files as described in the IntelliJ IDEA OSS [README](%gh-ic%/README.md) file.
+Download the IntelliJ Platform source files as described in the IntelliJ IDEA [README](%gh-ic%/README.md) file.
 
 ## Install Required Plugins
 

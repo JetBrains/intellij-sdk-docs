@@ -66,7 +66,7 @@ When writing a plugin, you have control over the code and don't need to sign the
 
 ### Submit a Patch
 
-If you would like to improve the code in the IntelliJ Platform or the core functionality of IntelliJ IDEA, you can submit a pull request to the [IntelliJ IDEA OSS repository on GitHub](%gh-ic%/README.md).
+If you would like to improve the code in the IntelliJ Platform or the core functionality of IntelliJ IDEA, you can submit a pull request to the [IntelliJ Platform repository on GitHub](%gh-ic%/README.md).
 When preparing the change, please make sure to follow the [](intellij_coding_guidelines.md).
 A developer will review your contribution and, if it meets the quality criteria and fits well with the rest of the code, you'll be notified about the acceptance of the patch.
 

@@ -387,7 +387,7 @@
     <toc-element toc-title="Extension Points and Listeners">
       <toc-element toc-title="IntelliJ Platform" topic="intellij_platform_extension_point_list.md"
                    accepts-web-file-names="extension-point-list.html"/>
-      <toc-element toc-title="IntelliJ Community Plugins" topic="intellij_community_plugins_extension_point_list.md"/>
+      <toc-element toc-title="IntelliJ OSS Plugins" topic="intellij_community_plugins_extension_point_list.md"/>
       <toc-element toc-title="Android Plugin" topic="android_plugin_extension_point_list.md"/>
       <toc-element toc-title="AppCode" topic="appcode_extension_point_list.md"/>
       <toc-element toc-title="CLion" topic="clion_extension_point_list.md"/>

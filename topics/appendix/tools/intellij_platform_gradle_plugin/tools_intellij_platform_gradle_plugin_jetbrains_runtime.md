@@ -42,7 +42,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity("%ijPlatform%")
+    intellijIdea("%ijPlatform%")
 
     jetbrainsRuntime()
 
@@ -66,7 +66,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity '%ijPlatform%'
+    intellijIdea '%ijPlatform%'
 
     jetbrainsRuntime()
 
@@ -99,7 +99,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity("%ijPlatform%")
+    intellijIdea("%ijPlatform%")
 
     jetbrainsRuntime(version, variant, architecture)
     // or
@@ -125,7 +125,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity '%ijPlatform%'
+    intellijIdea '%ijPlatform%'
 
     jetbrainsRuntime(version, variant, architecture)
     // or

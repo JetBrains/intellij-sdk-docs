@@ -8,15 +8,15 @@
 
 ## Download and Install IntelliJ IDEA
 
-Download and install either IntelliJ IDEA Ultimate or IntelliJ IDEA Community Edition from [here](https://www.jetbrains.com/idea/download/).
+Download and install IntelliJ IDEA from [here](https://www.jetbrains.com/idea/download/).
 
-## Check out Community Edition Source Files
+## Check out IntelliJ Platform Source Files
 
 > While not required, having the full sources of the platform and all bundled plugins available for browsing allows finding related implementations.
 >
 {style="note"}
 
-Download the IntelliJ IDEA Community Edition source files as described in the IntelliJ IDEA Community Edition [README](%gh-ic%/README.md) file.
+Download the IntelliJ Platform source files as described in the IntelliJ IDEA OSS [README](%gh-ic%/README.md) file.
 
 ## Install Required Plugins
 

@@ -19,7 +19,7 @@ It also includes methods for adding [plugins](#plugins) (including bundled), [Je
 **Example:**
 
 - setup Maven Central and [`defaultRepositories()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories)
-- target IntelliJ IDEA Community %ijPlatform%
+- target IntelliJ IDEA %ijPlatform%
 - add dependency on the bundled Java plugin
 - add IntelliJ Plugin Verifier, Marketplace ZIP Signer CLI, and code instrumentation tools
 - add JUnit4 test dependency
@@ -41,7 +41,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity("%ijPlatform%")
+    intellijIdea("%ijPlatform%")
 
     bundledPlugin("com.intellij.java")
 
@@ -69,7 +69,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity '%ijPlatform%'
+    intellijIdea '%ijPlatform%'
 
     bundledPlugin 'com.intellij.java'
 
@@ -95,29 +95,29 @@ dependencies {
 
 See [](#custom-target-platforms) for non-default targets.
 
-| Function                                         | Description                                                      |
-|--------------------------------------------------|------------------------------------------------------------------|
-| `androidStudio(version, configure = {})`         | [Android Studio](android_studio.md)                              |
-| `clion(version, configure = {})`                 | [CLion](clion.md)                                                |
-| `datagrip(version, configure = {})`              | [DataGrip](data_grip.md)                                         |
-| `dataspell(version, configure = {})`             | [DataSpell](https://www.jetbrains.com/dataspell/)                |
-| `fleetBackend(version, configure = {})`          | [Fleet](https://www.jetbrains.com/fleet/) Backend                |
-| `gateway(version, configure = {})`               | [Gateway](https://www.jetbrains.com/remote-development/gateway/) |
-| `goland(version, configure = {})`                | [GoLand](goland.md)                                              |
-| `intellijIdeaCommunity(version, configure = {})` | [IntelliJ IDEA Community](idea.md)                               |
-| `intellijIdeaUltimate(version, configure = {})`  | [IntelliJ IDEA Ultimate](idea_ultimate.md)                       |
-| `mps(version, configure = {})`                   | [MPS](https://www.jetbrains.com/mps/)                            |
-| `phpstorm(version, configure = {})`              | [PhpStorm](phpstorm.md)                                          |
-| `pycharmCommunity(version, configure = {})`      | [PyCharm Community](pycharm.md)                                  |
-| `pycharmProfessional(version, configure = {})`   | [PyCharm Professional](pycharm.md)                               |
-| `rider(version, configure = {})`                 | [Rider](rider.md)                                                |
-| `rubymine(version, configure = {})`              | [RubyMine](rubymine.md)                                          |
-| `rustRover(version, configure = {})`             | [RustRover](https://www.jetbrains.com/rust/)                     |
-| `webstorm(version, configure = {})`              | [WebStorm](webstorm.md)                                          |
+| Function                                 | Description                                                      |
+|------------------------------------------|------------------------------------------------------------------|
+| `androidStudio(version, configure = {})` | [Android Studio](android_studio.md)                              |
+| `clion(version, configure = {})`         | [CLion](clion.md)                                                |
+| `datagrip(version, configure = {})`      | [DataGrip](data_grip.md)                                         |
+| `dataspell(version, configure = {})`     | [DataSpell](https://www.jetbrains.com/dataspell/)                |
+| `fleetBackend(version, configure = {})`  | [Fleet](https://www.jetbrains.com/fleet/) Backend                |
+| `gateway(version, configure = {})`       | [Gateway](https://www.jetbrains.com/remote-development/gateway/) |
+| `goland(version, configure = {})`        | [GoLand](goland.md)                                              |
+| `intellijIdea(version, configure = {})`  | [IntelliJ IDEA Ultimate](idea_ultimate.md)                       |
+| `mps(version, configure = {})`           | [MPS](https://www.jetbrains.com/mps/)                            |
+| `phpstorm(version, configure = {})`      | [PhpStorm](phpstorm.md)                                          |
+| `pycharm(version, configure = {})`       | [PyCharm Professional](pycharm.md)                               |
+| `rider(version, configure = {})`         | [Rider](rider.md)                                                |
+| `rubymine(version, configure = {})`      | [RubyMine](rubymine.md)                                          |
+| `rustRover(version, configure = {})`     | [RustRover](https://www.jetbrains.com/rust/)                     |
+| `webstorm(version, configure = {})`      | [WebStorm](webstorm.md)                                          |
 
 Notes:
 - Writerside (`WRS`) is deprecated and no longer available as a target IntelliJ Platform.
-- Aqua (`QA`) has also been removed as a target IntelliJ Platform.
+- Aqua (`QA`) has been removed as a target IntelliJ Platform.
+- IntelliJ IDEA Community (`IC`) has been removed as a target IntelliJ Platform.
+- PyCharm Community (`PC`) has been removed as a target IntelliJ Platform.
 
 ### Custom Target Platforms
 
@@ -175,7 +175,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity("%ijPlatform%")
+    intellijIdea("%ijPlatform%")
   }
 }
 ```
@@ -192,7 +192,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity '%ijPlatform%'
+    intellijIdea '%ijPlatform%'
   }
 }
 ```
@@ -227,7 +227,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity("%ijPlatform%", useInstaller = false)
+    intellijIdea("%ijPlatform%", useInstaller = false)
   }
 }
 ```
@@ -244,7 +244,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity "%ijPlatform%", false
+    intellijIdea "%ijPlatform%", false
   }
 }
 ```

@@ -22,7 +22,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity("2024.3.6")
+    intellijIdea("2025.2.4")
     bundledPlugin("com.intellij.java")
 
     testFramework(TestFrameworkType.Plugin.Java)

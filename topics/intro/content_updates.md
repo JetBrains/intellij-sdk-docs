@@ -114,7 +114,7 @@ Plugin Internationalization
 Minor Changes and Additions
 :
 - How to mark functionality available during indexing via [](indexing_and_psi_stubs.md#DumbAwareAPI).
-- Move Extension Point and Listener Lists to the _Resources_ section and split the main _Extension Point and Listener List_ into: _IntelliJ Platform_, _IntelliJ Community Plugins_, and _Android Plugin_.
+- Move Extension Point and Listener Lists to the _Resources_ section and split the main _Extension Point and Listener List_ into: _IntelliJ Platform_, _IntelliJ OSS Plugins_, and _Android Plugin_.
 
 ### March
 {#march-24}

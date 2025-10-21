@@ -41,7 +41,7 @@ Lexers used in other contexts can always return `0` from `getState()`.
 The easiest way to create a lexer for a custom language plugin is to use [JFlex](https://jflex.de).
 
 Classes [`FlexLexer`](%gh-ic%/platform/core-impl/src/com/intellij/lexer/FlexLexer.java) and [`FlexAdapter`](%gh-ic%/platform/core-impl/src/com/intellij/lexer/FlexAdapter.java) adapt JFlex lexers to the IntelliJ Platform Lexer API.
-A [patched version of JFlex](https://github.com/JetBrains/intellij-deps-jflex) can be used with the lexer skeleton file [`idea-flex.skeleton`](%gh-ic%/tools/lexer/idea-flex.skeleton) located in the [IntelliJ IDEA Community Edition](https://github.com/JetBrains/intellij-community) source to create lexers compatible with `FlexAdapter`.
+A [patched version of JFlex](https://github.com/JetBrains/intellij-deps-jflex) can be used with the lexer skeleton file [`idea-flex.skeleton`](%gh-ic%/tools/lexer/idea-flex.skeleton) located in the [IntelliJ IDEA OSS](https://github.com/JetBrains/intellij-community) source to create lexers compatible with `FlexAdapter`.
 The patched version of JFlex provides a new command-line option `--charat` that changes the JFlex generated code to work with the IntelliJ Platform skeleton.
 Enabling `--charat` option passes the source data for lexing as a `java.lang.CharSequence` and not as an array of characters.
 

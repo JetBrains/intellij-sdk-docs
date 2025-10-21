@@ -12,7 +12,7 @@ a plugin must implement only the language-specific part.
 ## Reference
 
 This part of the documentation explains the main concepts of the *Language API* and guides you through the sequence of steps that are usually required to develop a custom language plugin.
-You can obtain additional information about the *Language API* from the Javadoc comments for the *Language API* classes and from the Properties language support source code, which is part of the [IntelliJ IDEA Community Edition](%gh-ic%/README.md) source code.
+You can obtain additional information about the *Language API* from the Javadoc comments for the *Language API* classes and from the Properties language support source code, which is part of the [IntelliJ IDEA OSS](%gh-ic%/README.md) source code.
 
 ## Tutorial
 

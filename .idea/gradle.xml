@@ -12,6 +12,11 @@
                   <project path="$PROJECT_DIR$/code_samples/action_basics" />
                 </projects>
               </build>
+              <build path="$PROJECT_DIR$/code_samples/code_inspection_qodana" name="code_inspection_qodana">
+                <projects>
+                  <project path="$PROJECT_DIR$/code_samples/code_inspection_qodana" />
+                </projects>
+              </build>
               <build path="$PROJECT_DIR$/code_samples/comparing_string_references_inspection" name="comparing_string_references_inspection">
                 <projects>
                   <project path="$PROJECT_DIR$/code_samples/comparing_string_references_inspection" />
@@ -106,6 +111,7 @@
           <set>
             <option value="$PROJECT_DIR$/code_samples/_gradleCompositeBuild" />
             <option value="$PROJECT_DIR$/code_samples/action_basics" />
+            <option value="$PROJECT_DIR$/code_samples/code_inspection_qodana" />
             <option value="$PROJECT_DIR$/code_samples/comparing_string_references_inspection" />
             <option value="$PROJECT_DIR$/code_samples/conditional_operator_intention" />
             <option value="$PROJECT_DIR$/code_samples/editor_basics" />

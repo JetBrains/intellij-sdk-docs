@@ -1,18 +1,53 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
-    <id>org.intellij.sdk.classNameConventionCodeInspection</id>
+  <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
+  <id>org.intellij.sdk.classNameConventionCodeInspection</id>
 
-    <!-- Text to display as name on Settings | Plugin page -->
-    <name>SDK: Class Name Convention Inspection</name>
+  <!-- Text to display as name on Settings | Plugin page -->
+  <name>SDK: Class Name Convention Inspection</name>
 
-    <!-- Text to display as company information on Settings | Plugin page -->
-    <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
+  <!-- Text to display as company information on Settings | Plugin page -->
+  <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
-    <!-- Product and plugin compatibility requirements -->
-    <depends>com.intellij.modules.platform</depends>
-    <depends>org.jetbrains.kotlin</depends>
+  <!-- Product and plugin compatibility requirements -->
+  <depends>com.intellij.modules.platform</depends>
+  <depends>org.jetbrains.kotlin</depends>
 
-    <extensions defaultExtensionNs="com.intellij">
-    </extensions>
+  <extensions defaultExtensionNs="com.intellij">
+  <!--
+        Extend the IntelliJ Platform local inspection type and connect it to the implementation class in this plugin.
+        <localInspection> type element is applied within the scope of a file under edit.
+        It is preferred over <inspectionToolProvider>
+        @see com.intellij.codeInspection.InspectionProfileEntry
+
+        Attributes:
+          - language - inspection language ID
+          - implementationClass - the fully-qualified name of the inspection implementation class
+          - level - the default level of error found by this inspection, e.g. INFO, ERROR, etc.
+              @see com.intellij.codeHighlighting.HighlightDisplayLevel
+          - displayName - a human readable description of this inspection. This is shown in the popups,
+              in the Problems tool window and other places.
+          - enabledByDefault - inspection state when the Inspections panel is created.
+          - groupPath - defines the outermost grouping for this inspection in
+              the Settings | Editor | Inspections panel. Not localized.
+          - groupBundle - the name of a message bundle file to translate groupKey
+              In this case, reuse the bundle file from the Kotlin plugin
+          - groupKey - the key to use for translation subgroup name using groupBundle file.
+              In this case, reuse the Kotlin plugin subcategory "Naming Conventions"
+    -->
+    <localInspection language="kotlin"
+                     implementationClass="org.intellij.sdk.codeInspection.ServicePackageClassNameInspection"
+                     level="WARNING"
+                     displayName="SDK: Discouraged class name"
+                     enabledByDefault="true"
+                     groupPath="Kotlin"
+                     groupBundle="messages.KotlinBundle"
+                     groupKey="group.names.naming.conventions"
+    />
+  </extensions>
+
+  <!-- Support Kotlin K2 Compiler enabled by default since 2025.1 -->
+  <extensions defaultExtensionNs="org.jetbrains.kotlin">
+    <supportsKotlinPluginMode supportsK2="true" />
+  </extensions>
 </idea-plugin>

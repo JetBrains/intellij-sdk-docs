@@ -1,6 +1,6 @@
 <!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# IntelliJ OSS Plugins Extension Point and Listener List
+# IntelliJ Platform Plugins Extension Point and Listener List
 
 <link-summary>Overview of Extension Points and Listeners for IntelliJ Platform Plugins.</link-summary>
 

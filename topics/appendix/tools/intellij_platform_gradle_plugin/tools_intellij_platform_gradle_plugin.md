@@ -322,7 +322,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdea('2023.3')
+    intellijIdea('2025.2.4')
   }
 }
 ```

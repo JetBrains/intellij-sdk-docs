@@ -6,7 +6,6 @@ rootProject.name = "SDK Code Samples"
 
 includeBuild("../action_basics")
 includeBuild("../code_inspection_qodana")
-includeBuild("../code_inspection_qodana/qodana-playground")
 includeBuild("../comparing_string_references_inspection")
 includeBuild("../conditional_operator_intention")
 includeBuild("../editor_basics")

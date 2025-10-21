@@ -17,6 +17,11 @@
                   <project path="$PROJECT_DIR$/code_samples/code_inspection_qodana" />
                 </projects>
               </build>
+              <build path="$PROJECT_DIR$/code_samples/code_inspection_qodana/code_inspection" name="code_inspection">
+                <projects>
+                  <project path="$PROJECT_DIR$/code_samples/code_inspection_qodana/code_inspection" />
+                </projects>
+              </build>
               <build path="$PROJECT_DIR$/code_samples/code_inspection_qodana/qodana-playground" name="qodana-playground">
                 <projects>
                   <project path="$PROJECT_DIR$/code_samples/code_inspection_qodana/qodana-playground" />
@@ -117,6 +122,7 @@
             <option value="$PROJECT_DIR$/code_samples/_gradleCompositeBuild" />
             <option value="$PROJECT_DIR$/code_samples/action_basics" />
             <option value="$PROJECT_DIR$/code_samples/code_inspection_qodana" />
+            <option value="$PROJECT_DIR$/code_samples/code_inspection_qodana/code_inspection" />
             <option value="$PROJECT_DIR$/code_samples/code_inspection_qodana/qodana-playground" />
             <option value="$PROJECT_DIR$/code_samples/comparing_string_references_inspection" />
             <option value="$PROJECT_DIR$/code_samples/conditional_operator_intention" />

@@ -116,13 +116,13 @@ Starter.newContext(
 
 The Context object stores IDE runtime configuration:
 
-* IDE type (e.g., IntelliJ Community, PhpStorm, GoLand).
+* IDE type (e.g., IntelliJ IDEA, PhpStorm, GoLand).
 * IDE version (2024.3 in this example).
 * Project configuration (using `NoProject` for this example).
 * Custom VM options, paths, and SDK settings.
 
 The `testName` parameter defines the folder name for test artifacts, which is useful when running multiple IDE instances in a single test.
-The test case uses IntelliJ IDEA Community Edition version 2024.3, and starts the IDE without any project, so the welcome screen will be shown.
+The test case uses IntelliJ IDEA version 2024.3, and starts the IDE without any project, so the welcome screen will be shown.
 
 ### 2. Plugin Installation
 

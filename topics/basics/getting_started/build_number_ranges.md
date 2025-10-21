@@ -50,7 +50,7 @@ For example, `232.*` for all 2023.2.x releases.
 To denote a release, a multipart build number is used.
 It consists of the following parts:
 
-* Product ID (`IC` for IDEA Community, `IU` for IDEA Ultimate, `RM` for RubyMine, `PY` for PyCharm, `PS` for PhpStorm, etc.)
+* Product ID (`IU` for IDEA Ultimate, `RM` for RubyMine, `PY` for PyCharm, `PS` for PhpStorm, etc.)
 * Branch number (`223`)
 * Build number in the branch (`9559`)
 

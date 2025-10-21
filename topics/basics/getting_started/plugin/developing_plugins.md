@@ -4,7 +4,7 @@
 
 <link-summary>Develop an IntelliJ Platform plugin using Gradle and Gradle IntelliJ Plugin.</link-summary>
 
-IntelliJ Platform plugins can be developed by using either [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/) or [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/) as your IDE.
+IntelliJ Platform plugins can be developed by using [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) as your IDE.
 It is highly recommended to always use the latest available version, as the plugin development tooling support from _Plugin DevKit_ continues supporting new features.
 
 Before starting with the actual development, make sure to understand all requirements to achieve best [](plugin_user_experience.md).
@@ -20,7 +20,7 @@ a dedicated Gradle plugin:
 
 <include from="snippets.topic" element-id="gradlePluginVersion"/>
 
-The IntelliJ IDEA Ultimate and Community editions provide the necessary plugins to support Gradle-based plugin development: _Gradle_ and _Plugin DevKit_.
+The IntelliJ IDEA provides the necessary plugins to support Gradle-based plugin development: _Gradle_ and _Plugin DevKit_.
 To verify these plugins are installed and enabled, see the help section about [Managing Plugins](https://www.jetbrains.com/help/idea/managing-plugins.html).
 
 <include from="snippets.topic" element-id="pluginDevKitAvailability"/>

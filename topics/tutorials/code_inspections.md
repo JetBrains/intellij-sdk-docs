@@ -33,7 +33,7 @@ It illustrates the components for a custom inspection plugin:
 * Writing an HTML [description](#inspection-description) of the inspection for display in the inspection preferences panel.
 * Creating a [test](#inspection-test) for the implemented inspection and quick fix.
 
-Although the code sample illustrates implementations of these components, it is often useful to see examples of inspections implemented in the [IntelliJ Community](%gh-ic%/README.md) code base.
+Although the code sample illustrates implementations of these components, it is often useful to see examples of inspections implemented in the [IntelliJ IDEA OSS](%gh-ic%/README.md) code base.
 To identify a given inspection's implementation classes, try to find an inspection [by name](explore_api.md#search-for-symbol-names) or [by UI texts](explore_api.md#search-by-ui-text).
 Consider also searching for existing implementations in [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.localInspection).
 

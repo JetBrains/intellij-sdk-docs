@@ -8,11 +8,6 @@
 <var name="marketplaceProductID" value="idea_ce"/>
 <include from="snippets.topic" element-id="jetbrainsIDE_TLDR"/>
 
-[IntelliJ IDEA](https://www.jetbrains.com/idea/) is available in two editions: IntelliJ Community Edition and IntelliJ IDEA Ultimate.
-<snippet id="idea_editions">
-See [Choose your edition](https://www.jetbrains.com/idea/features/#choose-your-edition) and [Feature Comparison](https://www.jetbrains.com/products/compare/?product=idea&product=idea-ce) for a detailed comparison.
-</snippet>
-
 ## IntelliJ IDEA Plugin Setup
 
 {id="ideaPluginSetup"}
@@ -22,7 +17,7 @@ See [Choose your edition](https://www.jetbrains.com/idea/features/#choose-your-e
 <tabs>
 <tab title="IntelliJ Platform Gradle Plugin (2.x)">
 
-Define a dependency using [`intellijIdeaCommunity()` or `intellijIdeaUltimate()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md), see _Versions_ link on top of this page for all available versions.
+Define a dependency using [`intellijIdea()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md), see _Versions_ link on top of this page for all available versions.
 See [](tools_intellij_platform_gradle_plugin.md#dependenciesLocalPlatform) for using a local installation.
 
 Minimum <path>build.gradle.kts</path> setup:
@@ -37,7 +32,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity("<versionNumber>")
+    intellijIdea("<versionNumber>")
   }
 }
 ```
@@ -49,7 +44,7 @@ The configuration of IntelliJ IDEA plugin projects follows the methods described
 
 | `gradle-intellij-plugin` Attribute                                               | Attribute Value                                                                               |
 |----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type)       | <p>`IC` for IntelliJ IDEA Community Edition (default)</p><p>`IU` for [](idea_ultimate.md)</p> |
+| [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type)       | `IU` for [IntelliJ IDEA](idea_ultimate.md)</p> |
 | [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) | IDE version, e.g. `2022.2`                                                                    |
 
 </tab>

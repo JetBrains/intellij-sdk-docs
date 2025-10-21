@@ -83,7 +83,7 @@ intellij {
 ### Using the IntelliJ IDEA Product Attribute
 
 If the [](tools_gradle_intellij_plugin.md) does not directly support an IntelliJ Platform-based product, the Gradle build script can still be configured to target the desired product.
-In this case, the build script is configured to use IntelliJ IDEA (Community or Ultimate Edition) as the basis for the available APIs.
+In this case, the build script is configured to use IntelliJ IDEA as the basis for the available APIs.
 This does have the drawback that APIs not specific to the target product might accidentally be included in the plugin project.
 However, testing the plugin project in the target product itself helps to find such mistakes.
 
@@ -92,7 +92,7 @@ Understanding the relationship between build numbers is critical when using this
 
 * _targetIDE_ is the (version-specific) IntelliJ Platform-based IDE in which the plugin is intended to run, such as Android Studio or PhpStorm.
 * _baseIntelliJPlatformVersion_ is the (version-specific) IntelliJ Platform used in the build of the _targetIDE_.
-  The IntelliJ Platform is defined by a specific build of the IntelliJ IDEA Community Edition.
+  The IntelliJ Platform is defined by a specific build of the IntelliJ IDEA.
   The Gradle plugin attribute [`intellij.version`](configuring_plugin_project.md#intellij-platform-configuration) is set to be _baseIntelliJPlatformVersion_.
 
 For API compatibility, the IntelliJ Platform version used in the _targetIDE_ dictates the _baseIntelliJPlatformVersion_ used for developing a plugin.
@@ -112,13 +112,13 @@ The version of the IntelliJ Platform used to build this product version is *BRAN
 If the product version isn't clear on the <control>About</control> screen, consult the individual product pages in _Product Specific_.
 
 The [Other IntelliJ IDEA Versions](https://www.jetbrains.com/idea/download/other.html) page is a way to find build numbers for every product version.
-Additional ways include hovering over the version number for a product in [Toolbox App](https://www.jetbrains.com/toolbox-app/) or examining the <control>About</control> screen for IntelliJ IDEA Community.
-In this example, IntelliJ IDEA Community Edition (which defines the IntelliJ Platform) for `2019.2.4` is build number `192.7142.36`.
+Additional ways include hovering over the version number for a product in [Toolbox App](https://www.jetbrains.com/toolbox-app/) or examining the <control>About</control> screen for IntelliJ IDEA.
+In this example, IntelliJ IDEA for `2019.2.4` is build number `192.7142.36`.
 Although the *FIX* versions are different, this is not uncommon between products, and the builds are still compatible.
-The *BRANCH* and *BUILD* numbers match, therefore in this PhpStorm example:
+The *BRANCH* and *BUILD* numbers match, therefore, in this PhpStorm example:
 
 * The _targetIDE_ is PhpStorm, build `192.7142.41`,
-* The _baseIntelliJPlatformVersion_ (IntelliJ IDEA Community Edition) is build `192.7142.36`
+* The _baseIntelliJPlatformVersion_ is build `192.7142.36`
 
 This information is used to configure the plugin project's Gradle build script and <path>plugin.xml</path> file.
 
@@ -128,7 +128,7 @@ Configuring a Gradle plugin project for using _baseIntelliJPlatformVersion_ requ
 Changes need to be made in two places: [`intellij`](tools_gradle_intellij_plugin.md#configuration-intellij-extension) extension and [`runIde`](tools_gradle_intellij_plugin.md#tasks-runide) task.
 
 The Gradle plugin attributes describing the configuration of the [IntelliJ Platform used to build the plugin project](configuring_plugin_project.md#intellij-platform-configuration) must be explicitly set in the `intellij` task.
-The [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type) is `IU` because although the IntelliJ IDEA Community Edition defines the IntelliJ Platform, the PHP plugin is only compatible with IntelliJ IDEA Ultimate.
+The [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type) is `IU` because although the IntelliJ IDEA defines the IntelliJ Platform, the PHP plugin is only compatible with IntelliJ IDEA Ultimate.
 The [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) is _baseIntelliJPlatformVersion_.
 
 Any [dependencies](configuring_plugin_project.md#plugin-dependencies) on _targetIDE_-specific plugins or modules must be declared in the [`intellij`](tools_gradle_intellij_plugin.md#configuration-intellij-extension) extension.

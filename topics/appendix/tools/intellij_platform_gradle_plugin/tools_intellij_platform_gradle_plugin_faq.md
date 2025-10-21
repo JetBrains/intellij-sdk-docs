@@ -358,7 +358,7 @@ import org.jetbrains.intellij.platform.gradle.models.ProductRelease
 tasks {
   printProductsReleases {
     channels = listOf(ProductRelease.Channel.EAP)
-    types = listOf(IntelliJPlatformType.IntellijIdeaCommunity)
+    types = listOf(IntelliJPlatformType.IntellijIdea)
     untilBuild = provider { null }
 
     doLast {
@@ -378,7 +378,7 @@ import org.jetbrains.intellij.platform.gradle.models.ProductRelease
 tasks {
   printProductsReleases {
     channels = [ProductRelease.Channel.EAP]
-    types = [IntelliJPlatformType.IntellijIdeaCommunity]
+    types = [IntelliJPlatformType.IntellijIdea]
     untilBuild = null
 
     doLast {
@@ -464,7 +464,7 @@ To correctly run your tests or a specific IDE:
 
   dependencies {
     intellijPlatform {
-      intellijIdeaCommunity("%ijPlatform%")
+      intellijIdea("%ijPlatform%")
       jetbrainsRuntime("...")
     }
   }
@@ -485,7 +485,7 @@ To correctly run your tests or a specific IDE:
 
     dependencies {
       intellijPlatform {
-        intellijIdeaCommunity '%ijPlatform%'
+        intellijIdea '%ijPlatform%'
         jetbrainsRuntime '...'
       }
     }

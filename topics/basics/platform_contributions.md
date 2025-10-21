@@ -18,10 +18,10 @@ The forums are an excellent source for users and contributors interested in havi
 The success of any open-source project depends on the number of people who use the product and contribute back to the project.
 By linking to [](https://www.jetbrains.com/opensource/idea), you can increase the chances of a new user or contributor finding out about the project and joining the community.
 
-If you're as excited about IntelliJ IDEA Community Edition as we are, you can show it by linking to us.
+If you're as excited about IntelliJ IDEA as we are, you can show it by linking to us.
 Project logos and other assets are [also available](https://www.jetbrains.com/company/brand/logos/).
 
-### Promote IntelliJ Platform and IntelliJ IDEA Community Edition
+### Promote IntelliJ Platform
 
 Help promote the platform and IDE by using your blog, Twitter, Facebook, or submitting an article to your favorite local magazine.
 If you are a member of a different open-source community, why not mention IntelliJ IDEA on their discussion forums or at conferences?
@@ -66,7 +66,7 @@ When writing a plugin, you have control over the code and don't need to sign the
 
 ### Submit a Patch
 
-If you would like to improve the code in the IntelliJ Platform or the core functionality of IntelliJ IDEA, you can submit a pull request to the [IntelliJ IDEA Community Edition repository on GitHub](%gh-ic%/README.md).
+If you would like to improve the code in the IntelliJ Platform or the core functionality of IntelliJ IDEA, you can submit a pull request to the [IntelliJ IDEA OSS repository on GitHub](%gh-ic%/README.md).
 When preparing the change, please make sure to follow the [](intellij_coding_guidelines.md).
 A developer will review your contribution and, if it meets the quality criteria and fits well with the rest of the code, you'll be notified about the acceptance of the patch.
 

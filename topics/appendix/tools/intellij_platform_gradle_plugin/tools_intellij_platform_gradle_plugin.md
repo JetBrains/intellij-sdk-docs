@@ -287,7 +287,7 @@ To switch off the default usage of JetBrains Cache Redirector, see the [](tools_
 
 Dependencies and [repositories](#configuration.repositories) are handled using explicit entries within `dependencies {}` and `repositories {}` blocks in the Gradle build file.
 
-A minimum configuration for targeting IntelliJ IDEA 2025.2:
+A minimum configuration for targeting IntelliJ IDEA 2024.3:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -303,7 +303,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdea("2025.2")
+    intellijIdea("2024.3")
   }
 }
 ```

@@ -10,11 +10,11 @@
 
 </tldr>
 
-## IDE font
+## UI font
 
-The system fonts are used for the IDE user interface by default. The default font sizes are below:
+Inter is used for the IDE user interface by default. The font size is the same for all platforms: 13
 
-<table style="header-column">
+<!--<table style="header-column">
   <tr>
     <td>  macOS  </td>
     <td> SF Pro Text  </td>
@@ -30,10 +30,9 @@ The system fonts are used for the IDE user interface by default. The default fon
     <td> Ubuntu </td>
     <td> 15 </td>
   </tr>
-</table>
+</table>-->
 
-
-Users can change the default font size in Settings. If the default font size is changed, other font sizes used in the UI are scaled respectively.
+Users can change the default font in <control>Settings / Appearance</control>. If the default font size is changed, other font sizes used in the UI are scaled respectively.
 
 Use the built-in text styles from the table below whenever possible.
 
@@ -49,55 +48,18 @@ Use the built-in text styles from the table below whenever possible.
   <td width="53%"> Usage Examples </td></tr>
 
   <tr>
-    <td> H0 bold <p><code>JBFont.h0().asBold()</code></p></td>
-    <td> Default + 12 </td>
+    <td> H1 <p><code>JBFont.h1().asBold()</code></p></td>
+    <td> Default +6 </td>
     <td>
-        Rich text headers. See the "What’s New" page example below.
+        Main page header. Example: Plugin name
     </td>
   </tr>
 
   <tr>
-    <td> H1 bold <p><code>JBFont.h1().asBold()</code></p></td>
-    <td> Default + 9 </td>
-    <td> </td>
-  </tr>
-
-  <tr>
-    <td>H2 <p><code>JBFont.h2()</code></p></td>
-    <td> Default + 5 </td>
-    <td> </td>
-  </tr>
-
-  <tr>
-    <td> H2 bold <p><code>JBFont.h2().asBold()</code></p></td>
-    <td> </td>
+    <td> H2 <p><code>JBFont.h2().asBold()</code></p></td>
+    <td> Default +3 </td>
     <td>
-        Small page header. Examples: Plugin name, GitHub timeline header
-    </td>
-  </tr>
-
-  <tr>
-    <td> H3 <p><code>JBFont.h3()</code></p></td>
-    <td> Default + 3 </td>
-    <td>
-        Accent body text
-    </td>
-  </tr>
-
-  <tr>
-    <td>H3 bold <p><code>JBFont.h3().asBold()</code></p></td>
-    <td> </td>
-    <td>
-        Headers in dialogs with a small number of elements (Customize page on Welcome screen, Login page in Get from VCS dialog)
-    </td>
-  </tr>
-
-  <tr>
-    <td> H4 bold (Default bold) <p> <code>JBFont.h4().asBold()</code></p> <p> <code>JBFont.regular().asBold()</code></p> </td>
-    <td> Default </td>
-    <td>
-        <p>Header in dialogs with a large number of elements (Run configurations dialog), notification header, breadcrumbs in settings, header in navigation popup, accent elements in lists and trees.</p>
-        <p>Use <a href="group_header.md">Group header</a> to divide the page on groups, but not to draw too much attention to the headings.</p>
+        Small page header. Example: Headers in a plugin description
     </td>
   </tr>
 
@@ -105,7 +67,15 @@ Use the built-in text styles from the table below whenever possible.
     <td> Default <p><code>JBFont.regular()</code></p></td>
     <td> Default </td>
     <td>
-        Labels, inputs, links, trees, tables and other controls; text outputs, notifications, shortcuts
+        Main UI font. Examples: Labels, inputs, links, trees, tables and other controls; text outputs, notifications, shortcuts, group headers
+    </td>
+  </tr>
+
+  <tr>
+    <td> Default semibold <p> <code>JBFont.regular().asBold()</code></p> </td>
+    <td> Default </td>
+    <td>
+        <p>Header in dialogs, popups, notifications, tool windows, Got It tooltips; breadcrumbs in settings, header in navigation popup, accent elements in lists and trees.</p>
     </td>
   </tr>
 
@@ -113,7 +83,7 @@ Use the built-in text styles from the table below whenever possible.
     <td> Paragraph </td>
     <td>
          <p>Default</p>
-         <p>Line height default + 3</p>
+         <p>Line height default +3</p>
     </td>
     <td>
         Multiline description text
@@ -122,34 +92,16 @@ Use the built-in text styles from the table below whenever possible.
 
   <tr>
     <td>Medium <p><code>JBFont.medium()</code></p></td>
+    <td>Default –1</td>
     <td>
-        <p>macOS: Default - 1</p>
-        <p>Win: Default</p>
-        <p>Linux: Default - 1</p>
-    </td>
-    <td>
-        Tool window header, navigation bar, editor breadcrumbs, editor tabs (small on macOS)
+        Help text
     </td>
   </tr>
 
   <tr>
-    <td> Medium bold <p><code>JBFont.medium().asBold()</code></p> </td>
-    <td> </td>
-    <td>
-        Module in the navigation bar
-    </td>
-  </tr>
-
-  <tr>
-    <td> Small <p><code>JBFont.small()</code></p> </td>
-    <td>
-        <p>macOS: Default - 2</p>
-        <p>Win: Default</p>
-        <p>Linux: Default - 2</p>
-    </td>
-    <td>
-        Status bar, tool window buttons, inline help, help text in tooltips, separators in lists
-    </td>
+    <td> Medium semibold <p><code>JBFont.medium().asBold()</code></p> </td>
+    <td>Default –1</td>
+    <td>    </td>
   </tr>
 </table>
 
@@ -157,27 +109,31 @@ If none of the built-in sizes work and a custom one is needed, define it as the 
 
 Use the underlined text style for hovered links.
 
+### Examples $examples-ui
+
 ## Editor font
 
 JetBrains Mono font is used by default for the Editor.
 
 <table>
-<tr><td> Name </td>
-<td> Font size </td>
+<tr><td width="20%"> Name </td>
+<td width="20%"> Font size </td>
 <td> Usage </td>  </tr>
   <tr>
     <td> Default </td>
     <td> Default </td>
-    <td> Editor </td>
+    <td> Code in the editor, code snippets, completion popup, and documentation popup </td>
   </tr>
   <tr>
     <td> Small </td>
-    <td> Default - 1 </td>
-    <td> Line number </td>
+    <td> Default –1 </td>
+    <td> Line number in the editor</td>
   </tr>
 </table>
 
-## Colors
+Users can change the editor font in <control>Editor / Color scheme / Color Scheme Font</control>. If the default font size is changed, other font sizes used in the editor are scaled respectively.
+
+<!--## Colors
 
 The IDE text colors are in the table below. The editor text colors are managed by the editor color theme.
 
@@ -298,7 +254,7 @@ The IDE text colors are in the table below. The editor text colors are managed b
         <code>Label.errorForeground</code>
     </td>
   </tr>
-</table>
+</table>-->
 
 ## Examples
 

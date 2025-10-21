@@ -6,35 +6,27 @@
 Lists private APIs and their replacements in IntelliJ Platform and plugins.
 </web-summary>
 
+<snippet id="tldr">
+>How to address the **private API** usage violations:
+> 1. Look through the suggested replacements below, update your plugin accordingly, and upload a new version to JetBrains Marketplace.
+> 2. If you need help with the replacements, please create a <a href="https://youtrack.jetbrains.com/newIssue?project=MP&c=visible+to+jetbrains-team&c=add+Board+MP+Board+%28by+User+Story%29+No+sprint+mp&c=add+Board+MP+Board+%28by+tasks%29+No+sprint+mp&c=add+Board+MP+Board+%28by+subsystem%29+No+sprint+mp&c=add+Board+MP+Board+%28by+Assignee%29+No+sprint+mp&c=add+Board+MP+Board+-Subsystem+%26+estimates+No+sprint+mp&c=add+Board+MP+Board+%28by+estimates%29+No+sprint+mp&c=add+Board+MP+Board+%28by+Q+and+state+and+direction&c=add+Board+MP+Board+%28by+directions%29&c=add+Board+MP+Board+%28by+Q+and+state+and+goals%29&c=add+Board+MP+Board+%28by+subsystem%29&c=Subsystem+Plugin+Verifier&c=Assignee+robert.novotny">YouTrack ticket</a>. Please note that we may not be able to provide a replacement quickly, and in some cases, a replacement might not be available at all.
+> 3. If you have any other issues or questions related to the Internal API usage, please create a <a href="https://youtrack.jetbrains.com/newIssue?project=MP&c=visible%20to%20jetbrains-team&c=add%20Board%20MP%20Board%20%28by%20User%20Story%29%20No%20sprint%20mp&c=add%20Board%20MP%20Board%20%28by%20tasks%29%20No%20sprint%20mp&c=add%20Board%20MP%20Board%20%28by%20subsystem%29%20No%20sprint%20mp&c=add%20Board%20MP%20Board%20%28by%20Assignee%29%20No%20sprint%20mp&c=add%20Board%20MP%20Board%20-Subsystem%20%26%20estimates%20No%20sprint%20mp&c=add%20Board%20MP%20Board%20%28by%20estimates%29%20No%20sprint%20mp&c=add%20Board%20MP%20Board%20%28by%20Q%20and%20state%20and%20direction&c=add%20Board%20MP%20Board%20%28by%20directions%29&c=add%20Board%20MP%20Board%20%28by%20Q%20and%20state%20and%20goals%29&c=add%20Board%20MP%20Board%20%28by%20subsystem%29&c=Subsystem%20Plugin%20Verifier&c=Assignee%20robert.novotny&draftId=25-7015258">dedicated YouTrack ticket</a>.
+>
+{st}
+</snippet>
+
+
 <link-summary>Lists private API annotated with @ApiStatus.Internal/@IntellijInternalApi and corresponding replacement.</link-summary>
 
 This page lists commonly used API annotated with [`@ApiStatus.Internal`](%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/ApiStatus.java)
 or [`@IntellijInternalApi`](%gh-ic%/platform/util/src/com/intellij/openapi/util/IntellijInternalApi.kt)
-which indicates it is _private API_ and must not be used outside of IntelliJ Platform itself:
+which indicates it is _private API_ and **must not** be used outside of IntelliJ Platform itself.
 
-> Indicates that the annotated element (class, method, field, etc.) **must not be considered as a public API**. It's made visible to allow
-> usages in other packages of the declaring library, but it **must not be used outside of that library**. Such elements
-> may be renamed, changed, or removed in future versions.
->
-{title="ApiStatus.Internal Javadoc"}
+It's made visible to allow usages in other packages of the declaring library, but it **must not be used outside of that library**. Such elements may be renamed, changed, or removed in future versions.
+
 
 Such violations are reported from [](verifying_plugin_compatibility.md#plugin-verifier) and are highlighted in the IDE using a [dedicated inspection](verifying_plugin_compatibility.md#ide-support).
 
-Each entry is mapped to its corresponding _Replacement_, pointing to the recommended API.
-
-<snippet id="notComplete">
-
-> The lists are not complete and will be updated continuously.
->
-> Check the corresponding code documentation when encountering any API not listed on this page.
-> In some cases, such documentation might not be available inside the IDE for the current target platform version.
-> Use <control>Go to file</control> to browse the latest version in the [intellij-community](%gh-ic-master%/) GitHub repository instead.
->
-> Use the feedback form at the bottom of this page if you encounter missing or unclear information.
->
-{style="note"}
-
-</snippet>
 
 ## IntelliJ Platform
 
@@ -95,4 +87,16 @@ Therefore, any reported violations can be disregarded.
 | `PhpExpectedFunctionArgument`                                                                                                                        | Made public in 2022.1                           |
 | `org.jetbrains.yaml.meta.*`                                                                                                                          | YAML Metadata API will be made public in 2023.1 |
 
-<include from="api_internal.md" element-id="notComplete"/>
+<snippet id="notComplete">
+
+> The lists are not complete and will be updated continuously.
+>
+> Check the corresponding code documentation when encountering any API not listed on this page.
+> In some cases, such documentation might not be available inside the IDE for the current target platform version.
+> Use <control>Go to file</control> to browse the latest version in the [intellij-community](%gh-ic-master%/) GitHub repository instead.
+>
+> Use the feedback form at the bottom of this page if you encounter missing or unclear information.
+>
+{style="note"}
+
+</snippet>

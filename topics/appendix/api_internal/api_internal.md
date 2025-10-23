@@ -6,6 +6,8 @@
 Lists private APIs and their replacements in IntelliJ Platform and plugins.
 </web-summary>
 
+<link-summary>Lists private API annotated with @ApiStatus.Internal/@IntellijInternalApi and corresponding replacement.</link-summary>
+
 <snippet id="tldr">
 
 > How to address the **private API** usage violations:
@@ -18,16 +20,33 @@ Lists private APIs and their replacements in IntelliJ Platform and plugins.
 </snippet>
 
 
-<link-summary>Lists private API annotated with @ApiStatus.Internal/@IntellijInternalApi and corresponding replacement.</link-summary>
-
 This page lists commonly used API annotated with [`@ApiStatus.Internal`](%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/ApiStatus.java)
 or [`@IntellijInternalApi`](%gh-ic%/platform/util/src/com/intellij/openapi/util/IntellijInternalApi.kt)
-which indicates it is _private API_ and **must not** be used outside of IntelliJ Platform itself.
+which indicates it is _private API_ and must not be used outside of IntelliJ Platform itself:
 
-It's made visible to allow usages in other packages of the declaring library, but it **must not be used outside of that library**. Such elements may be renamed, changed, or removed in future versions.
-
+> Indicates that the annotated element (class, method, field, etc.) **must not be considered as a public API**. It's made visible to allow
+> usages in other packages of the declaring library, but it **must not be used outside of that library**. Such elements
+> may be renamed, changed, or removed in future versions.
+>
+{title="ApiStatus.Internal Javadoc"}
 
 Such violations are reported from [](verifying_plugin_compatibility.md#plugin-verifier) and are highlighted in the IDE using a [dedicated inspection](verifying_plugin_compatibility.md#ide-support).
+
+Each entry is mapped to its corresponding _Replacement_, pointing to the recommended API.
+
+<snippet id="notComplete">
+
+> The lists are not complete and will be updated continuously.
+>
+> Check the corresponding code documentation when encountering any API not listed on this page.
+> In some cases, such documentation might not be available inside the IDE for the current target platform version.
+> Use <control>Go to file</control> to browse the latest version in the [intellij-community](%gh-ic-master%/) GitHub repository instead.
+>
+> Use the feedback form at the bottom of this page if you encounter missing or unclear information.
+>
+{style="note"}
+
+</snippet>
 
 
 ## IntelliJ Platform
@@ -89,16 +108,4 @@ Therefore, any reported violations can be disregarded.
 | `PhpExpectedFunctionArgument`                                                                                                                        | Made public in 2022.1                           |
 | `org.jetbrains.yaml.meta.*`                                                                                                                          | YAML Metadata API will be made public in 2023.1 |
 
-<snippet id="notComplete">
-
-> The lists are not complete and will be updated continuously.
->
-> Check the corresponding code documentation when encountering any API not listed on this page.
-> In some cases, such documentation might not be available inside the IDE for the current target platform version.
-> Use <control>Go to file</control> to browse the latest version in the [intellij-community](%gh-ic-master%/) GitHub repository instead.
->
-> Use the feedback form at the bottom of this page if you encounter missing or unclear information.
->
-{style="note"}
-
-</snippet>
+<include from="api_internal.md" element-id="notComplete"/>

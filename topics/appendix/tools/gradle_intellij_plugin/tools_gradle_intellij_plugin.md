@@ -319,11 +319,9 @@ Default value
 
 Acceptable values
 :
-- `IC` - [IntelliJ IDEA Community Edition](idea.md)
 - `IU` - [IntelliJ IDEA Ultimate Edition](idea.md)
 - `CL` - [CLion](clion.md)
 - `PY` - [PyCharm Professional Edition](pycharm.md)
-- `PC` - [PyCharm Community Edition](pycharm.md)
 - `PS` - [PhpStorm](phpstorm.md)
 - `RD` - [Rider](rider.md)
 - `GO` - [GoLand](goland.md)

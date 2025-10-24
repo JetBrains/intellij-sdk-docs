@@ -1,0 +1,7 @@
+version: "1.0"
+linter: qodana-jvm-community
+projectJDK: "21"
+profile:
+  name: qodana.recommended
+include:
+  - name: org.intellij.sdk.codeInspection.ServicePackageClassNameInspection

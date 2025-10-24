@@ -8,6 +8,59 @@ See also [](threading_model.md#avoiding-ui-freezes) and [](indexing_and_psi_stub
 
 > [IDE Perf](https://plugins.jetbrains.com/plugin/15104-ide-perf) plugin provides on-the-fly performance diagnostic tools, including a dedicated view for [`CachedValue`](#cache-results-of-heavy-computations) metrics.
 
+## Overview
+
+PSI has a lot of time-space compromises.
+There are tons of PSI elements in IDE memory, so we strive to keep them as compact as possible, storing very little data inside.
+As a result, many things are recomputed on every call of `get`-like methods on `PsiElement` and its subclasses.
+They are not available inside the fields of `PsiElements`.
+
+For example, consider the following Java expression:
+
+```java
+String.format("Hello, %s!", name)
+```
+
+This is its (simplified) PSI:
+
+```
+PsiMethodCallExpression:String.format("Hello, %s!", name)
+  PsiReferenceExpression:String.format
+  PsiExpressionList
+    PsiJavaToken:LPARENTH
+    PsiLiteralExpression:"Hello, %s!"
+    PsiJavaToken:COMMA
+    PsiReferenceExpression:name
+    PsiJavaToken:RPARENTH
+```
+
+Let's say you have a variable `PsiMethodCallExpression methodCall`,
+and you need to get the first and last expression passed as arguments to this method call.
+This can be done with `methodCall.getArgumentList().getExpressions()`.
+The `getArgumentList()` method traverses the linked list of children, looking for an element of a proper type (in this case – `PsiExpressionList`).
+The `getExpressions()` method traverses the children to find all the expressions (elements of `PsiExpression`),
+then allocates an array of the target size,
+then traverses the children again to fill in this array.
+These are not 'just getters' that simply return a readily available value – keep this in mind when working with PSI.
+
+As a rule, avoid calling the same method twice, one after another.
+Instead, it's better to store the result in a local variable.
+
+So to find the first and last expression argument passed to the method call, instead of doing this:
+
+```java
+PsiExpression first = methodCall.getArgumentList().getExpressions()[0];
+PsiExpression last = methodCall.getArgumentList().getExpressions()[methodCall.getArgumentList().getExpressionCount() - 1];
+```
+
+prefer this:
+
+```java
+PsiExpression[] expressions = methodCall.getArgumentList().getExpressions(); 
+PsiExpression first = expressions[0];
+PsiExpression last = expressions[expressions.length - 1];
+```
+
 ## Avoid Expensive Methods of `PsiElement`
 
 Avoid `PsiElement`'s methods, which are expensive with deep trees.

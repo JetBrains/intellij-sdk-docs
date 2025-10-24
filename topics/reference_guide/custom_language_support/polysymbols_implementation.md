@@ -361,7 +361,7 @@ Usually, it is enough to provide a [`PolySymbolQueryScopeContributor`](%gh-ic%/p
 However, when implementing integration for a language feature, reference providers and code completions need to be implemented from scratch.
 
 To provide references, a
-[`PsiPolySymbolReferenceProvider`](%gh-ic%/platform/polySymbols/backend/src/com/intellij/polySymbols/references/PsiPolySymbolReferenceProvider.kt)
+[`PsiPolySymbolReferenceProvider`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/references/PsiPolySymbolReferenceProvider.kt)
 should be registered.
 If references resolve to a single `PolySymbol`, even if it may be a composite `PolySymbol`, the `getReferencedSymbol` method should be implemented.
 If the symbol reference is offset within the `PsiElement`, for example, within a string literal, the `getReferencedSymbolNameOffset` should also be implemented.

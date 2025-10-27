@@ -21,12 +21,14 @@ A single rule is established: every class in the `service` packages must have a 
 
 2. Run Qodana from the `qodana-playground` directory with the custom plugin installed.
 
+   > This step requires installing [Qodana](https://www.jetbrains.com/help/qodana/quick-start.html#quickstart-run-using-cli) and [Docker](https://www.docker.com/get-started/) before running.
+
    ```
    cd qodana-playground
    qodana scan --clear-cache -v $(echo $PWD/.qodana/*.jar):/opt/idea/custom-plugins/codeinspection.jar
    ```
 
-3. See the Qodana reports in the browser.
+3. See the Qodana report in the browser.
 
 ## Building and Running in the IDE
 

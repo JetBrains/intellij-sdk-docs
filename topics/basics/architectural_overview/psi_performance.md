@@ -11,14 +11,14 @@ See also [](threading_model.md#avoiding-ui-freezes) and [](indexing_and_psi_stub
 ## Overview
 
 PSI has a lot of time-space compromises.
-There are tons of PSI elements in IDE memory, so we strive to keep them as compact as possible, storing very little data inside.
-As a result, many things are recomputed on every call of `get`-like methods on `PsiElement` and its subclasses.
-They are not available inside the fields of `PsiElements`.
+There are tons of PSI elements in IDE memory, so the IntelliJ Platform and language plugins strive to keep them as compact as possible, storing very little data inside.
+As a result, many things are recomputed on every call of getter methods on `PsiElement` and its subclasses.
+They are not stored inside the fields of `PsiElement`s.
 
 For example, consider the following Java expression:
 
 ```java
-String.format("Hello, %s!", name)
+String.format("Hello, %s!", name);
 ```
 
 This is its (simplified) PSI:
@@ -34,32 +34,33 @@ PsiMethodCallExpression:String.format("Hello, %s!", name)
     PsiJavaToken:RPARENTH
 ```
 
-Let's say you have a variable `PsiMethodCallExpression methodCall`,
-and you need to get the first and last expression passed as arguments to this method call.
-This can be done with `methodCall.getArgumentList().getExpressions()`.
-The `getArgumentList()` method traverses the linked list of children, looking for an element of a proper type (in this case – `PsiExpressionList`).
-The `getExpressions()` method traverses the children to find all the expressions (elements of `PsiExpression`),
-then allocates an array of the target size,
-then traverses the children again to fill in this array.
-These are not 'just getters' that simply return a readily available value – keep this in mind when working with PSI.
+Assume that plugin code receives `PsiMethodCallExpression call` and needs to get the first and last expression passed as arguments to this method call.
+This can be done with `methodCall.getArgumentList().getExpressions()`, which does the following:
+1. `getArgumentList()` traverses the linked list of children, looking for an element of a proper type (in this case – `PsiExpressionList`)
+2. `getExpressions()` traverses the children to find all the expressions (elements of `PsiExpression`), then allocates an array of the target size, and then traverses the children again to fill in this array.
+
+These `get*()` methods are not simple getters that return a readily available value – keep this in mind when working with PSI.
 
 As a rule, avoid calling the same method twice, one after another.
 Instead, it's better to store the result in a local variable.
 
-So to find the first and last expression argument passed to the method call, instead of doing this:
+Find the first and last expression argument passed to a method call could be implemented as follows:
+
+<compare type="top-bottom" first-title="Inefficient" second-title="Optimized">
 
 ```java
-PsiExpression first = methodCall.getArgumentList().getExpressions()[0];
-PsiExpression last = methodCall.getArgumentList().getExpressions()[methodCall.getArgumentList().getExpressionCount() - 1];
+PsiExpression first = call.getArgumentList().getExpressions()[0];
+int lastIndex = call.getArgumentList().getExpressionCount() - 1;
+PsiExpression last = call.getArgumentList().getExpressions()[lastIndex];
 ```
 
-prefer this:
-
 ```java
-PsiExpression[] expressions = methodCall.getArgumentList().getExpressions(); 
+PsiExpression[] expressions = call.getArgumentList().getExpressions();
 PsiExpression first = expressions[0];
 PsiExpression last = expressions[expressions.length - 1];
 ```
+
+</compare>
 
 ## Avoid Expensive Methods of `PsiElement`
 

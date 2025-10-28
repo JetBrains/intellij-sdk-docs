@@ -1,4 +1,6 @@
+// Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
+
 rootProject.name = "code_inspection_qodana"
 
 includeBuild("../code_inspection_qodana/code_inspection")
-includeBuild("../code_inspection_qodana/qodana-playground")
+includeBuild("../code_inspection_qodana/qodana_playground")

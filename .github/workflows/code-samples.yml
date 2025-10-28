@@ -79,7 +79,7 @@ jobs:
         if: ${{ always() }}
         uses: actions/upload-artifact@v5
         with:
-          name: ${{ steps.properties.outputs.pluginName }}-pluginVerifier-result
+          name: ${{ steps.properties.outputs.sanitizedPluginName }}-pluginVerifier-result
           path: ${{ github.workspace }}/code_samples/${{ matrix.plugin }}/build/reports/pluginVerifier
 
   mirror:

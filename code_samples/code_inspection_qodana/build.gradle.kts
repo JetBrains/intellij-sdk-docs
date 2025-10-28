@@ -1,7 +1,9 @@
+// Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
+
 val codeInspectionPlugin = "code_inspection"
 
 tasks.register<Copy>("stagePluginForQodana") {
-  val qodanaDir = gradle.includedBuild("qodana-playground").projectDir.resolve(".qodana")
+  val qodanaDir = gradle.includedBuild("qodana_playground").projectDir.resolve(".qodana")
   dependsOn(gradle.includedBuild(codeInspectionPlugin).task(":buildPlugin"))
   from(gradle.includedBuild(codeInspectionPlugin)
     .projectDir.resolve("build/libs"))

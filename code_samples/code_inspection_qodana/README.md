@@ -7,7 +7,7 @@ A single rule is established: every class in the `service` packages must have a 
 ## Subprojects
 
 - `code_inspection` - a standalone IntelliJ Platform plugin with this inspection
-- `qodana-playground` - a sample project which is validated by Qodana and the custom plugin
+- `qodana_playground` - a sample project which is validated by Qodana and the custom plugin
 
 ## Building and Running
 
@@ -17,14 +17,14 @@ A single rule is established: every class in the `service` packages must have a 
    ./gradlew stagePluginForQodana
    ```
 
-   This will build a plugin JAR and copy it into the `qodana-playground/.qodana` directory.
+   This will build a plugin JAR and copy it into the `qodana_playground/.qodana` directory.
 
-2. Run Qodana from the `qodana-playground` directory with the custom plugin installed.
+2. Run Qodana from the `qodana_playground` directory with the custom plugin installed.
 
    > This step requires installing [Qodana](https://www.jetbrains.com/help/qodana/quick-start.html#quickstart-run-using-cli) and [Docker](https://www.docker.com/get-started/) before running.
 
    ```
-   cd qodana-playground
+   cd qodana_playground
    qodana scan --clear-cache -v $(echo $PWD/.qodana/*.jar):/opt/idea/custom-plugins/codeinspection.jar
    ```
 

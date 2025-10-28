@@ -10,6 +10,8 @@
       <module name="pycharm" target="1.8" />
       <module name="pycharm.main" target="1.8" />
       <module name="pycharm.test" target="1.8" />
+      <module name="qodana-playground.main" target="17" />
+      <module name="qodana-playground.test" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

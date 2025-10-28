@@ -1,3 +1,5 @@
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
   <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
@@ -5,6 +7,15 @@
 
   <!-- Text to display as name on Settings | Plugin page -->
   <name>SDK: Class Name Convention Inspection</name>
+
+  <!-- Text to display as description on Settings | Plugin page -->
+  <description>
+    <![CDATA[
+      <p><b>IntelliJ SDK Code Inspection Sample for Qodana</b> contains a code inspection sample
+      for IntelliJ Platform plugins.</p>
+      <p>A single rule is established: every class in the `service` packages must have a `Service` suffix.</p>
+    ]]>
+  </description>
 
   <!-- Text to display as company information on Settings | Plugin page -->
   <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>

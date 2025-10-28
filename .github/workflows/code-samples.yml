@@ -61,6 +61,7 @@ jobs:
         shell: bash
         run: |
           echo "pluginVerifierHomeDir=~/.pluginVerifier" >> $GITHUB_OUTPUT
+          echo "sanitizedPluginName=$(echo '${{ matrix.plugin }}' | tr '/' '-')" >> $GITHUB_OUTPUT
 
       - name: Run Plugin Verifier
         run: |
@@ -78,7 +79,7 @@ jobs:
         if: ${{ always() }}
         uses: actions/upload-artifact@v5
         with:
-          name: ${{ matrix.plugin }}-pluginVerifier-result
+          name: ${{ steps.properties.outputs.pluginName }}-pluginVerifier-result
           path: ${{ github.workspace }}/code_samples/${{ matrix.plugin }}/build/reports/pluginVerifier
 
   mirror:

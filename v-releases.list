@@ -3,7 +3,7 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/vars.dtd">
 
 <vars>
-  <var name="intellij-platform-gradle-plugin-version" value="2.10.1"/>
+  <var name="intellij-platform-gradle-plugin-version" value="2.10.2"/>
   <var name="gradle-intellij-plugin-version" value="1.17.4"/>
   <var name="gradle-grammar-kit-plugin-version" value="2022.3.2.2"/>
   <var name="plugin-verifier-version" value="Version 1.396"/>

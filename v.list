@@ -6,8 +6,8 @@
 
 <vars>
 
-  <var name="ijPlatform" value="2025.2.3"/>
-  <var name="ijPlatformBuild" value="252.26830.84"/>
+  <var name="ijPlatform" value="2025.2.4"/>
+  <var name="ijPlatformBuild" value="252.27397.103"/>
 
 
   <!-- Links to branches **MUST** have "-master" suffix for recheck when running inspection globally -->
@@ -28,7 +28,7 @@
   <var name="gh-jcef-master" value="https://github.com/JetBrains/jcef/tree/master/java"/>
   <var name="gh-java-annotations" value="https://github.com/JetBrains/java-annotations/tree/24.0.0"/>
 
-  <var name="intellij-platform-gradle-plugin-version" value="2.10.1"/>
+  <var name="intellij-platform-gradle-plugin-version" value="2.10.2"/>
   <var name="gh-ijpgp" value="https://github.com/JetBrains/intellij-platform-gradle-plugin/tree/%intellij-platform-gradle-plugin-version%"/>
   <var name="gh-ijpgp-master" value="https://github.com/JetBrains/intellij-platform-gradle-plugin/tree/main"/>
 

@@ -40,5 +40,5 @@ A single rule is established: every class in the `service` packages must have a 
 
 2. Install the `build/code_inspection-<version>.zip` plugin into JetBrains IDE manually.
 3. Make sure that the Qodana plugin is installed and enabled in the JetBrains IDE.
-4. Run Qodana by clicking the Tools | Qodana | Try Code Analysis with Qodana
-5. See the Qodana reports in the Qodana tool window in the IDE.
+4. Run the **Tools | Qodana | Try Code Analysis** action.
+5. See the Qodana reports in the **Qodana** tool window in the IDE.

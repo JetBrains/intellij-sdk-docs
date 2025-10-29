@@ -6,6 +6,6 @@
   <var name="intellij-platform-gradle-plugin-version" value="2.10.2"/>
   <var name="gradle-intellij-plugin-version" value="1.17.4"/>
   <var name="gradle-grammar-kit-plugin-version" value="2022.3.2.2"/>
-  <var name="plugin-verifier-version" value="Version 1.396"/>
+  <var name="plugin-verifier-version" value="Version 1.397"/>
   <var name="marketplace-zip-signer-version" value="0.1.43"/>
 </vars>

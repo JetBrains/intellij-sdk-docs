@@ -92,7 +92,7 @@ It's important that you're familiar with
 source code, as well as other basic features of IntelliJ IDEA.
 
 Many developers keep the
-[IntelliJ Community source code](%gh-ic%/README.md)
+[IntelliJ Platform source code](%gh-ic%/README.md)
 open in a separate IDE project while working on their plugin.
 Others search the source code of the IntelliJ Platform that is attached by default when using a [Gradle](creating_plugin_project.md)-based project.
 While both methods work, it should be noted that developing plugins without inspecting the IntelliJ Platform code is nearly impossible,
@@ -134,15 +134,15 @@ Note that you need to change the search scope to <control>All Places</control> i
 
 If you want to implement a functionality that is similar to an existing IDE feature, but you can't guess the name of the extension point or implementation class, the underlying implementation can be found by the texts displayed in the UI.
 
-* Use the displayed text or its part as the [target for a search](https://www.jetbrains.com/help/idea/finding-and-replacing-text-in-project.html) within the IntelliJ Community project.
+* Use the displayed text or its part as the [target for a search](https://www.jetbrains.com/help/idea/finding-and-replacing-text-in-project.html) within the IntelliJ Platform project.
   * If the text is localized, this will identify a bundle file there the text is defined. Copy the key from the bundle file identified by the search.
-  * Use the key text as the target for a search within the IntelliJ Community project.
+  * Use the key text as the target for a search within the IntelliJ Platform project.
     This search locates the implementation or related class, or [plugin configuration file](plugin_configuration_file.md) that uses the text key in an [extension](plugin_extensions.md) declaration.
   * If the key is found in the extension declaration in the <path>plugin.xml</path> file, find the implementing class attribute value (in most cases it is `implementationClass`) and
     [navigate to a declaration](https://www.jetbrains.com/help/rider/Navigation_and_Search__Go_to_Declaration.html#74fa64b7),
     or use attribute value as the
     [target of a class search](https://www.jetbrains.com/help/idea/searching-everywhere.html#Searching_Everywhere.xml)
-    in the IntelliJ Community codebase to find the implementation.
+    in the IntelliJ Platform codebase to find the implementation.
 * If the text is not localized, the search will most probably find the desired implementation or related class.
   In this case, search for the found method/class usages and repeat this until the actual implementation class is found.
 

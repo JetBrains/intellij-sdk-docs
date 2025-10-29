@@ -47,29 +47,29 @@ Describes all IntelliJ Platform types available to be used for plugin developmen
 
 Each entry is composed of a product code and coordinates used for dependency and binary release resolution.
 
-| Name                    | Code   | Artifact Coordinates                               | Binary release |
-|-------------------------|--------|----------------------------------------------------|:--------------:|
-| `AndroidStudio`         | `AI`   | -                                                  |    &check;     |
-| `CLion`                 | `CL`   | `com.jetbrains.intellij.clion:clion`               |    &check;     |
-| `DataGrip`              | `DB`   | -                                                  |    &check;     |
-| `DataSpell`             | `DS`   | -                                                  |    &check;     |
-| `FleetBackend`          | `FLIJ` | `com.jetbrains.intellij.fleetBackend:fleetBackend` |                |
-| `JetBrainsClient`       | `JBC`  | -                                                  |    &check;     |
-| `Gateway`               | `GW`   | `com.jetbrains.intellij.gateway:gateway`           |    &check;     |
-| `GoLand`                | `GO`   | `com.jetbrains.intellij.goland:goland`             |    &check;     |
-| `IntellijIdeaCommunity` | `IC`   | `com.jetbrains.intellij.idea:ideaIC`               |    &check;     |
-| `IntellijIdeaUltimate`  | `IU`   | `com.jetbrains.intellij.idea:ideaIU`               |    &check;     |
-| `MPS`                   | `MPS`  | -                                                  |    &check;     |
-| `PhpStorm`              | `PS`   | `com.jetbrains.intellij.phpstorm:phpstorm`         |    &check;     |
-| `PyCharmProfessional`   | `PY`   | `com.jetbrains.intellij.pycharm:pycharmPY`         |    &check;     |
-| `PyCharmCommunity`      | `PC`   | `com.jetbrains.intellij.pycharm:pycharmPC`         |    &check;     |
-| `Rider`                 | `RD`   | `com.jetbrains.intellij.rider:riderRD`             |    &check;     |
-| `RubyMine`              | `RM`   | -                                                  |    &check;     |
-| `RustRover`             | `RR`   | `com.jetbrains.intellij.rustrover:RustRover`       |    &check;     |
-| `WebStorm`              | `WS`   | `com.jetbrains.intellij.webstorm:webstorm`         |    &check;     |
+| Name              | Code   | Artifact Coordinates                               | Binary release |
+|-------------------|--------|----------------------------------------------------|:--------------:|
+| `AndroidStudio`   | `AI`   | -                                                  |    &check;     |
+| `CLion`           | `CL`   | `com.jetbrains.intellij.clion:clion`               |    &check;     |
+| `DataGrip`        | `DB`   | -                                                  |    &check;     |
+| `DataSpell`       | `DS`   | -                                                  |    &check;     |
+| `FleetBackend`    | `FLIJ` | `com.jetbrains.intellij.fleetBackend:fleetBackend` |                |
+| `JetBrainsClient` | `JBC`  | -                                                  |    &check;     |
+| `Gateway`         | `GW`   | `com.jetbrains.intellij.gateway:gateway`           |    &check;     |
+| `GoLand`          | `GO`   | `com.jetbrains.intellij.goland:goland`             |    &check;     |
+| `IntellijIdea `   | `IU`   | `com.jetbrains.intellij.idea:ideaIU`               |    &check;     |
+| `MPS`             | `MPS`  | -                                                  |    &check;     |
+| `PhpStorm`        | `PS`   | `com.jetbrains.intellij.phpstorm:phpstorm`         |    &check;     |
+| `PyCharm`         | `PY`   | `com.jetbrains.intellij.pycharm:pycharmPY`         |    &check;     |
+| `Rider`           | `RD`   | `com.jetbrains.intellij.rider:riderRD`             |    &check;     |
+| `RubyMine`        | `RM`   | -                                                  |    &check;     |
+| `RustRover`       | `RR`   | `com.jetbrains.intellij.rustrover:RustRover`       |    &check;     |
+| `WebStorm`        | `WS`   | `com.jetbrains.intellij.webstorm:webstorm`         |    &check;     |
 
 Note:
 - Aqua (`QA`) and Writerside (`WRS`) are deprecated and no longer available as target IntelliJ Platform products.
+- IntelliJ IDEA Community (`IC`) has been removed as a target IntelliJ Platform.
+- PyCharm Community (`PC`) has been removed as a target IntelliJ Platform.
 
 ## `ProductMode`
 {#ProductMode}

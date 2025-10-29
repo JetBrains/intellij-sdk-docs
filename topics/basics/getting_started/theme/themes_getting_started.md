@@ -20,12 +20,12 @@ The [themes available for download](https://plugins.jetbrains.com/search?headlin
 
 ## Theme Plugin Development
 
-Themes can be developed by using either [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/) or [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/) as your IDE (it is highly recommended to use the latest available version).
+Themes can be developed by using [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) as your IDE (it is highly recommended to use the latest available version).
 Both include the complete set of development tools required to develop theme plugins.
 To become more familiar with IntelliJ IDEA, please refer to the [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/).
 
 A theme is one of the [plugin types](plugin_types.md#themes).
-Its structure doesn't significantly differ from plugins extending IDE behavior, and can be implemented by using one of the supported approaches: _DevKit_ or _Gradle_.
+Its structure doesn't significantly differ from plugins extending IDE behavior and can be implemented by using one of the supported approaches: _DevKit_ or _Gradle_.
 The choice of the development approach depends on the project requirements and developer's experience.
 
 ### DevKit-Based Theme Project

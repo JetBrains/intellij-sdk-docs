@@ -46,10 +46,9 @@ See the [](plugins_quick_start.md) for more details.
 The IntelliJ Platform is Open Source, under the [Apache License](%gh-ic%/LICENSE.txt), and [hosted on GitHub](https://github.com/JetBrains/intellij-community).
 
 While this guide refers to the IntelliJ Platform as a separate entity, there is no "IntelliJ Platform" GitHub repository.
-Instead, the platform is considered to be an almost complete overlap with the [IntelliJ IDEA Community Edition](idea.md), which is a free and Open Source version of IntelliJ IDEA Ultimate (the GitHub repository linked above is the [JetBrains/intellij-community](%gh-ic%/README.md) repository).
-Please note: starting with the 2021.1 release, some plugins bundled with IntelliJ IDEA Community Edition are not open-source.
+Instead, the platform is considered to be an almost complete overlap with the [IntelliJ Platform](idea.md) (the GitHub repository linked above is the [JetBrains/intellij-community](%gh-ic%/README.md) repository).
 
-The version of the IntelliJ Platform is defined by the version of the corresponding IntelliJ IDEA Community Edition release.
+The version of the IntelliJ Platform is defined by the version of the corresponding IntelliJ IDEA release.
 For example, to build a plugin against IntelliJ IDEA (2019.1.1), build #191.6707.61 means specifying the same build number tag to get the correct IntelliJ Platform files from the `intellij-community` repository.
 See the [](build_number_ranges.md) page for more information about build numbers corresponding to version numbering.
 
@@ -58,9 +57,9 @@ Typically, an IDE that is based on the IntelliJ Platform will include the `intel
 ## IDEs Based on the IntelliJ Platform
 
 The IntelliJ Platform underlies many JetBrains IDEs.
-[IntelliJ IDEA Ultimate](idea_ultimate.md) is a superset of the IntelliJ IDEA Community Edition but includes closed-source plugins ([see this feature comparison](https://www.jetbrains.com/idea/features/editions_comparison_matrix.html)).
-Similarly, other products such as [WebStorm](webstorm.md) and [DataGrip](data_grip.md) are based on the IntelliJ IDEA Community Edition, but with a different set of plugins included and excluding other default plugins.
-This allows plugins to target multiple products, as each product will include base functionality and a selection of plugins from the IntelliJ IDEA Community Edition repository.
+[IntelliJ IDEA](idea_ultimate.md) is a superset of the IntelliJ Platform but includes closed-source plugins ([see this feature comparison](https://www.jetbrains.com/idea/features/editions_comparison_matrix.html)).
+Similarly, other products such as [WebStorm](webstorm.md) and [DataGrip](data_grip.md) are based on the IntelliJ Platform, but with a different set of plugins included and excluding other default plugins.
+This allows plugins to target multiple products, as each product will include base functionality and a selection of plugins from the IntelliJ Platform repository.
 
 The following IDEs are based on the IntelliJ Platform:
 

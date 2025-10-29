@@ -1539,7 +1539,7 @@ intellijPlatform {
     // ...
 
     ides {
-      ide(IntelliJPlatformType.RustRover, "2023.3")
+      create(IntelliJPlatformType.RustRover, "2023.3")
       local(file("/path/to/ide/"))
       recommended()
       select {
@@ -1567,7 +1567,7 @@ intellijPlatform {
     // ...
 
     ides {
-      ide IntelliJPlatformType.RustRover, "2023.3"
+      create IntelliJPlatformType.RustRover, "2023.3"
       local file('/path/to/ide/')
       recommended()
       select {
@@ -1592,12 +1592,12 @@ See also:
 - [Types: `ProductRelease.Channel`](tools_intellij_platform_gradle_plugin_types.md#ProductRelease-Channel)
 - [Types: `ProductReleasesValueSource.FilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesValueSource-FilterParameters)
 
-| Function                                            | Description                                                                                                                                                                                         |
-|-----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <p>`ide(type, version)`</p><p>`ide(definition)`</p> | Adds a dependency to a binary IDE release to be used for testing with the IntelliJ Plugin Verifier.                                                                                                 |
-| `local(localPath)`                                  | Adds the local IDE to be used for testing with the IntelliJ Plugin Verifier.                                                                                                                        |
-| `recommended()`                                     | Retrieves matching IDEs using the default configuration based on the currently used IntelliJ Platform and applies them for IntelliJ Platform Verifier using the `ide` helper method.                |
-| `select(configure)`                                 | Retrieves matching IDEs using custom [`ProductReleasesValueSource.FilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesValueSource-FilterParameters) filter parameters. |
+| Function            | Description                                                                                                                                                                                         |
+|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `create(...)`       | <p>Adds a dependency to a binary IDE release to be used for testing with the IntelliJ Plugin Verifier.</p><p><i>In IntelliJ Platform Gradle Plugin older than 2.7.0, use `ide(...)`.</i></p>        |
+| `local(localPath)`  | Adds the local IDE to be used for testing with the IntelliJ Plugin Verifier.                                                                                                                        |
+| `recommended()`     | Retrieves matching IDEs using the default configuration based on the currently used IntelliJ Platform and applies them for IntelliJ Platform Verifier using the `ide` helper method.                |
+| `select(configure)` | Retrieves matching IDEs using custom [`ProductReleasesValueSource.FilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesValueSource-FilterParameters) filter parameters. |
 
 
 <include from="snippets.topic" element-id="missingContent"/>

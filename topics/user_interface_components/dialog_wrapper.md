@@ -12,7 +12,7 @@
 
 ## `DialogWrapper`
 
-The [`DialogWrapper`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) is the base class which is supposed to be used for all modal dialogs (and some non-modal dialogs) shown in IntelliJ Platform.
+The [`DialogWrapper`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) is the base class for all modal dialogs (and some non-modal dialogs) shown in IntelliJ Platform.
 
 It provides the following features:
 
@@ -41,15 +41,15 @@ Optionally:
 
 * Override the `getPreferredFocusedComponent()` method and return the component that should be focused when the dialog is first displayed.
 * Override the `getDimensionServiceKey()` method to return the identifier which will be used for persisting the dialog dimensions.
-* Override the `getHelpId()` method to return the context help topic associated with the dialog (see [Context Help](ide_infrastructure.md#context-help)).
+* Override the `getHelpId()` method to return the context help topic associated with the dialog (see [](ide_infrastructure.md#context-help)).
 
 #### Dialog Content
 
 Use [Kotlin UI DSL](kotlin_ui_dsl_version_2.md) to provide the dialog's contents (see [samples](#kotlin)).
 Alternatively or when using Java, the `DialogWrapper` class can be used together with [GUI Designer forms](https://www.jetbrains.com/help/idea/gui-designer-basics.html).
-In this case, bind a GUI Designer form to the class extending `DialogWrapper`, bind the top-level panel of the form to a field and return that field from the `createCenterPanel()` method.
+In this case, bind a GUI Designer form to the class extending `DialogWrapper`, bind the top-level panel of the form to a field, and return that field from the `createCenterPanel()` method.
 
-> See [](layout.md) topic in UI Guidelines for recommendations on arranging UI controls in dialogs.
+> See the [](layout.md) topic in UI Guidelines for recommendations on arranging UI controls in dialogs.
 >
 > Existing dialogs can be inspected at runtime using [UI Inspector](internal_ui_inspector.md), for example, to locate the underlying implementation of UI components.
 >
@@ -84,7 +84,7 @@ override the `doValidate()` method to perform the actual validation.
 The method will be called automatically via a timer.
 
 If the currently entered data is valid, return `null`.
-Otherwise, return a [`ValidationInfo`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/ui/ValidationInfo.java) object which encapsulates an error message, and an optional component associated with the invalid data.
+Otherwise, return a [`ValidationInfo`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/ui/ValidationInfo.java) object which encapsulates an error message and an optional component associated with the invalid data.
 When specifying a component, an error icon will be displayed next to it, and it will be focused when the user tries to invoke the <control>OK</control> action.
 
 ## Examples
@@ -114,13 +114,13 @@ public class SampleDialogWrapper extends DialogWrapper {
 }
 ```
 
-Show `SampleDialogWrapper` dialog when user clicks on button:
+Show the `SampleDialogWrapper` dialog when a user clicks a button:
 
 ```java
 JButton testButton = new JButton();
 testButton.addActionListener(actionEvent -> {
   if (new SampleDialogWrapper().showAndGet()) {
-    // user pressed OK
+    // OK pressed
   }
 });
 ```

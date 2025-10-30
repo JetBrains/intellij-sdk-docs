@@ -62,7 +62,7 @@ The second step is adding IntelliJ Platform Plugin SDK that will use the JDK con
 
 1. Go to <ui-path>File | Project Structure | Platform Settings | SDKs</ui-path>.
 2. Click the <control>Add</control> button (<control>+</control>).
-3. Select the <control>Add IntelliJ Platform Plugin SDK...</control> option.
+3. Select the <control>Add IntelliJ Platform Plugin SDK from disk...</control> option.
 4. Choose the installation folder of the IDE [downloaded previously](#download-intellij-based-ide).
    > On macOS, in the file chooser, select <path>/Applications/</path> and switch the view to <control>Show items as: List</control>.
    > Then, expand the IDE item and select the <path>Contents</path> folder.

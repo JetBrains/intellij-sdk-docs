@@ -40,4 +40,4 @@ It describes definitions of the actions, extensions, or listeners provided by th
 
 To run the `theme_basics` plugin make sure that module SDK is correctly set up and points to IntelliJ Platform Plugin SDK, e.g. `IntelliJ IDEA IC-<version>`. To check this, go to **File | Project Structure | Project Settings | Modules | theme_basics** and select **Dependencies** tab.
 
-If the required SDK doesn't exist, it can be added in **File | Project Structure | Platform Settings | SDKs** by clicking the plus button and selecting **Add IntelliJ Platform Plugin SDK...** item.
+If the required SDK doesn't exist, it can be added in **File | Project Structure | Platform Settings | SDKs** by clicking the plus button and selecting **Add IntelliJ Platform Plugin SDK from disk...** item.

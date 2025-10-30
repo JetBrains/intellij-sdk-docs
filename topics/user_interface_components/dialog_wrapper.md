@@ -56,8 +56,15 @@ In this case, bind a GUI Designer form to the class extending `DialogWrapper`, b
 
 #### Displaying the Dialog
 
-To display the dialog, call the `show()` method and then use the `getExitCode()` method to check how the dialog was closed (see `DialogWrapper#OK_EXIT_CODE, CANCEL_EXIT_CODE, CLOSE_EXIT_CODE`).
+To display the dialog, call the `show()` method.
+
+To get the exit code of a modal dialog, use the `getExitCode()` method to check how the dialog was closed (see `DialogWrapper#OK_EXIT_CODE, CANCEL_EXIT_CODE, CLOSE_EXIT_CODE`).
 The `showAndGet()` method can be used to combine these two calls.
+
+To execute some code after a non-modal dialog is closed, override the `doOKAction()`, `doCancelAction()`, or register a [disposable](disposers.md), for example:
+```java
+Disposer.register(dialog.getDisposable(), () -> action());
+```
 
 #### Customizing Buttons
 

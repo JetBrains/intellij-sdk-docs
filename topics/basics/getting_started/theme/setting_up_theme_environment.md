@@ -36,7 +36,8 @@ Note that building the checked-out sources is not required in this case.
 
 To see the effects of the developed plugin in a real IDE, it is required to run the plugin in an [IDE development instance](ide_development_instance.md).
 In most cases, it is enough to download and use _[IntelliJ IDEA](https://www.jetbrains.com/idea/download/) Community Edition_.
-If it is required to style components used only in a specific IDE like _IntelliJ IDEA Ultimate_ or _WebStorm_, they can also be used as SDK, but debugging the core code will only work with the _IntelliJ IDEA Community Edition_.
+If it is required to style components used only in a specific IDE like _IntelliJ IDEA Ultimate_ or _WebStorm_, they can also be used as SDK.
+However, debugging the core code will only work with the _IntelliJ IDEA Community Edition_.
 
 ### Add JDK and IntelliJ Platform Plugin SDK
 

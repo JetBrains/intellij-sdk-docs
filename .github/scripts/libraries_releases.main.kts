@@ -1,5 +1,7 @@
 #!/usr/bin/env kotlin
 
+// Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
+
 /**
  * This script is used to update the versions of libraries stored in the v-releases.list releases file.
  */
@@ -46,7 +48,7 @@ val vars = releasesList.mapValues { (key, releaseInfo) ->
         val content = URL(releaseInfo.url).readText()
         Json.decodeFromString<JsonArray>(content)
           .mapNotNull { it.jsonObject["name"] }
-          .map { it.jsonPrimitive.content.removePrefix("v") }
+          .map { it.jsonPrimitive.content.removePrefix("v").removePrefix("Version ") }
           .run(releaseInfo.transformer)
       } catch (e: Exception) {
         println("Cannot resolve the latest '$key' version: ${e.message}")

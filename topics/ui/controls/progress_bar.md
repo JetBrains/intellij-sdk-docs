@@ -66,7 +66,9 @@ Add a Cancel button if the process can be safely interrupted. If interrupting th
 
 If the process takes a long time and can prevent the user from performing tasks, provide an option to pause a process.
 
-It is recommended to run the process in the background so it doesn’t interrupt the user, instead of offering a pause option.
+> It is recommended to run the process in the background so it doesn’t interrupt the user, instead of offering a pause option.
+>
+{style="note"}
 
 <table style="none" border="false">
   <tr>
@@ -104,7 +106,11 @@ Use a process name as a dialog or popup header, capitalize the title and remove 
 For a single progress bar, use a button to cancel or pause the process instead of an icon:
 ![](13 in_dialog.png){width=706}
 
-Place the progress bar in a modal dialog if the IDE cannot function properly until  the process is completed.
+
+> Place the progress bar in a modal dialog if the IDE cannot function properly until  the process is completed.
+>
+{style="note"}
+
 
 For several processes in a group, add a common header and use icons for process controls:
 ![](16 process_control.png){width=706}

@@ -16,4 +16,4 @@ jobs:
         uses: Endbug/add-and-commit@v9
         with:
           message: 'Generate Libraries releases variable file'
-          add: 'v-releases.list'
+          add: 'v.list'

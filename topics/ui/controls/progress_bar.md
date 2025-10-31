@@ -25,7 +25,7 @@ Use a determinate progress bar if the process duration is known. Otherwise, use 
 
 ![](02 determinate_and_ indeterminate.png){width=706}
 
-If an indeterminate process reaches a point where its duration can be determined, switch to a determinate progress bar. For example:
+If an indeterminate process reaches a point where its duration can be determined, switch to a determinate progress bar:
 
 ![](04 determinate_to_indeterminate.png){width=706}
 
@@ -46,7 +46,7 @@ Details example:
 
 For wording, follow the rules for [progress text](progress_text.md).
 
-#### Placement
+### Placement
 
 Show the process name above the progress bar and the process details below it on a single line. The length of the process details is limited by the width of the progress bar.
 ![](11 process_details.png){width=706}
@@ -100,21 +100,23 @@ For example, show the status of the running tests:
 
 ![](15 process_status.png){width=706}
 
-Do **not** color progress bar to show the final result of the task, use [notifications](notification_types.md).
-In case of success, show notification for the user-initiated tasks, in case of failure — for all tasks.
+Do not use red/greed colors to show the final status. After the process is completed, hide the progress bar and show a [notifications](notification_types.md) to show the process result.
 
-### Process control
 
-#### Cancel or Stop button
-Provide the Cancel button in the progress dialog if the process can be interrupted (see [Loading Project dialog](#in-dialog)).
-Use the Stop button if interrupting does not return the environment to its previous state.
+
+### Process controls
+
+#### Cancel button
+Add a **Cancel** button to the progress dialog if the process can be safely interrupted. Use a **Stop** button if interrupting the process does not restore the system to its previous state.
+![](23 Cancel_button.png){width=706}
+
 
 #### Stop icon
 Use the Stop icon when multiple processes are running simultaneously in one dialog or when there isn’t enough space to display individual buttons (e.g., [Status bar](#in-status-bar)):
 
 ![](16 process_control.png){width=706}
 
-#### Placement and Behavior
+#### Placement and behavior
 <table style="none" border="false">
   <tr>
     <td width="378">
@@ -158,20 +160,14 @@ Use the Stop icon when multiple processes are running simultaneously in one dial
     </tr>
 </table>
 
-#### Pause Option Recommendations
+#### Pause option recommendations
 
-It is **not** recommended providing an option to pause the process. It is preferable that the process runs in the background and does not interfere with a user.
+It is recommended to run the process in the background so it doesn’t interrupt the user, instead of offering a pause option.
 
-#### Process Completion
+### Process сompletion
 Hide the progress bar as soon as the process completes.
 
-## Sizes and placement
 
-The progress form and sizes are the same in all themes.
-
-![](21 size_and_placement.png){width=706}
-
-![](22 size_and_placement.png){width=706}
 
 
 

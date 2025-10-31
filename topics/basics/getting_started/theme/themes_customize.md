@@ -316,3 +316,20 @@ The Laf Defaults inspector will prompt with a list of UI Control keys and their 
 If an inspected component can be styled with the UI control key, it will include its name, for example:
 
 ![UI Inspector Key Names](ui_inspector_key_names.png){width="710"}
+
+## Extending Themes
+
+A new theme can be based on an existing theme and inherit its customizations.
+To define a parent there, in the root of a theme description file, add:
+```json
+{
+  ...
+  "parentTheme": "ParentThemeId",
+  ...
+}
+```
+The parent theme's ID is the `id` attribute of the `themeProvider` element registered in the <path>plugin.xml</path> file, for example:
+
+```xml
+<themeProvider id="ParentThemeId" path="/themes/mytheme.theme.json"/>
+```

@@ -98,18 +98,19 @@ If the process takes a long time and can prevent the user from performing tasks,
 </table>
 
 ### Placement
+
 If you need to use the progress bar among other controls, place it close to the control that starts the process.
 ![](23 placement.png){width=706}
 
 #### In dialog or popup
-Use a process name as a dialog or popup header, capitalize the title and remove the ellipsis. Process details appear above the progress bar.
-For a single progress bar, use a button to cancel or pause the process instead of an icon:
-![](13 in_dialog.png){width=706}
-
 
 > Place the progress bar in a modal dialog if the IDE cannot function properly until  the process is completed.
 >
 {style="note"}
+
+Use a process name as a dialog or popup header, capitalize the title and remove the ellipsis. Process details appear above the progress bar.
+For a single progress bar, use a button to cancel or pause the process instead of an icon:
+![](13 in_dialog.png){width=706}
 
 
 For several processes in a group, add a common header and use icons for process controls:

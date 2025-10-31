@@ -8,7 +8,11 @@ Declaring extensions in plugins to customize the IDE's behavior and functionalit
 
 <link-summary>Extensions are the most common way of customizing functionality in the IDE.</link-summary>
 
-_Extensions_ are the most common way for a plugin to extend the IntelliJ Platform's functionality in a way that is not as straightforward as adding an action to a menu or toolbar.
+_Extensions_ are the most common way for a plugin to extend the IntelliJ-based IDE's functionality.
+They are implementations of specific interfaces or classes that are [registered](#declaring-extensions) in the plugin descriptor.
+Provided extension implementations are called by the platform or other plugins to customize and extend the IDE's functionality.
+
+## Common Extension Use Cases
 
 The following are some of the most common tasks achieved using extensions:
 

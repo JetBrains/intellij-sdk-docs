@@ -120,7 +120,7 @@ For several processes in a group, add a common header and use icons for process 
 
 Use inline progress to indicate that content is being updated.
 The user can continue working with the content, but should see that a background process is in progress.</br>
-Do not show a process name for inline progress.
+Do not show a process name for inline progress:
 ![](09 inline_processes.png){width=706}
 
 #### Process status

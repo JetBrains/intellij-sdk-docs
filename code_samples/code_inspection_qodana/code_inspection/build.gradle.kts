@@ -6,7 +6,7 @@ import org.jetbrains.intellij.platform.gradle.models.ProductRelease.Channel.RELE
 plugins {
     id("java")
     id("org.jetbrains.kotlin.jvm") version "2.0.21"
-    id("org.jetbrains.intellij.platform") version "2.10.2"
+    id("org.jetbrains.intellij.platform") version "2.10.3"
     id("org.jetbrains.qodana") version "2025.1.1"
 }
 

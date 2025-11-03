@@ -160,16 +160,13 @@ The LSP support provided by the IntelliJ Platform covers the following features 
 
 ### 2025.2
 
-- Inlay Hints ([`textDocument/inlayHint`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_inlayHint))
-- Folding Range ([`textDocument/foldingRange`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_foldingRange))
-
-### 2025.1.2
-
-- Pull Diagnostics ([`textDocument/diagnostic`](https://microsoft.github.io/language-server-protocol/specifications/#diagnostic)) (enabled by default in 2025.2)
+- Inlay Hints ([`textDocument/inlayHint`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_inlayHint)) [2025.2.2]
+- Folding Range ([`textDocument/foldingRange`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_foldingRange)) [2025.2.2]
 
 ### 2025.1
 
 - Document Link ([`textDocument/documentLink`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_documentLink))
+- Pull Diagnostics ([`textDocument/diagnostic`](https://microsoft.github.io/language-server-protocol/specifications/#diagnostic)) (enabled by default in 2025.2) [2025.1.2]
 
 ### 2024.3
 

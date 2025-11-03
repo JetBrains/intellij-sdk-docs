@@ -78,7 +78,8 @@ public static class MyIconIds
 Then an icon should be turned into a model icon to be passed through the protocol with a call similar to the following:
 
 ```charp
-var modelIcon = Shell.Instance.GetComponent<IIconHost>().Transform(frontendIconId);
+var modelIcon = Shell.Instance.GetComponent<IIconHost>()
+        .Transform(frontendIconId);
 ```
 
 The complete lifting routine in the IntelliJ plugin part for a model yielded by `IIconHost` can be achieved in the following way:

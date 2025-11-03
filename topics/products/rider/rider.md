@@ -70,7 +70,8 @@ A registration of an icon for such cases can be accomplished so:
 public static class MyIconIds
 {
 	// Note that the path string can _not_ start with a "/" here!
-    public static readonly IconId RiderIconId = new FrontendIconId("icons/rider.svg");
+    public static readonly IconId RiderIconId =
+            new FrontendIconId("icons/rider.svg");
 }
 ```
 

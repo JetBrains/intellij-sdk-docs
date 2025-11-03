@@ -109,7 +109,7 @@ fun liftIcon(model: FrontendIconModel): Icon {
 If it is required for an implementation of a custom feature, the entry point for this conversion can be called so:
 
 ```kotlin
-val icon = ApplicationManager.getApplication().service<ProtocolIconRegistryService>().createIcon(iconModel)
+val icon = service<ProtocolIconRegistryService>().createIcon(iconModel)
 ```
 
 The example for such icon passing can be found in the [Rider template plugin](https://github.com/ForNeVeR/rider-plugin-template).

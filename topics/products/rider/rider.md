@@ -81,7 +81,7 @@ Then an icon should be turned into a model icon to be passed through the protoco
 var modelIcon = Shell.Instance.GetComponent<IIconHost>().Transform(frontendIconId);
 ```
 
-The complete lifting routine in the IntelliJ plugin part for a model yielded by `IIconHost` can be expressed with the folling kotlin-like pseudocode:
+The complete lifting routine in the IntelliJ plugin part for a model yielded by `IIconHost` can be achieved in the following way:
 
 ```kotlin
 // Get the first classloader from the list [RiderIconsCache::class.java.classLoader, ...pluginClassLoaders] that has the `path` in its resources

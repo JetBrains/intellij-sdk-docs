@@ -66,7 +66,7 @@ Some feature integrations, like adding a new gutter mark or a new line marker, r
 
 A registration of an icon for such cases can be accomplished so:
 
-```charp
+```c#
 public static class MyIconIds
 {
 	// Note that the path string can _not_ start with a "/" here!

@@ -84,7 +84,9 @@ var modelIcon = Shell.Instance.GetComponent<IIconHost>().Transform(frontendIconI
 The complete lifting routine in the IntelliJ plugin part for a model yielded by `IIconHost` can be achieved in the following way:
 
 ```kotlin
-// Get the first classloader from the list [RiderIconsCache::class.java.classLoader, ...pluginClassLoaders] that has the `path` in its resources
+// Get the first classloader from the list
+// [RiderIconsCache::class.java.classLoader, ...pluginClassLoaders]
+// that has the `path` in its resources
 fun tryGetClassLoaderForPath(path: String): ClassLoader? {
 	/* ... */
 }

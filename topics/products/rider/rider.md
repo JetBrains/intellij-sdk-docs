@@ -120,7 +120,9 @@ If the plugin is designed to work with _both_ ReSharper and Rider, add the icon 
 following the instructions in the [ReSharper DevGuide](https://www.jetbrains.com/help/resharper/sdk/Platform__Icons.html#custom-compiled-icons).
 
 To be loaded in the IntelliJ Platform, such icons are expected to be present under <path>/resharper/$category/$iconName.svg</path> in _some_ plugin resources directory. 
-Here `$category` is the name of the generated `ThemedIcons` C# class without the `ThemedIcons` suffix and the `$iconName` is the name of the generated icon C# class.
+where:
+- `$category` is the name of the generated `ThemedIcons` C# class without the `ThemedIcons` suffix
+- `$iconName` is the name of the generated icon C# class
 The classloader lookup routine is the same in this case as with the `FrontendIconModel`s.
 
 ## Open Source Rider Plugins

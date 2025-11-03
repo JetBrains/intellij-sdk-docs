@@ -148,6 +148,25 @@ The LSP API sources are bundled in the IntelliJ IDEA Ultimate distribution and c
 
 The LSP support provided by the IntelliJ Platform covers the following features for these releases:
 
+### 2025.3
+
+- Server Initiated Progress ([`$/progress`](https://microsoft.github.io/language-server-protocol/specification/#progress))
+- Highlight Usages In File ([`textDocument/documentHighlight`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_documentHighlight))
+- Go To Symbol ([`workspace/symbol`](https://microsoft.github.io/language-server-protocol/specification/#workspace_symbol))
+- File Structure / Structure ([`textDocument/documentSymbol`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_documentSymbol))
+- Breadcrumbs ([`textDocument/documentSymbol`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_documentSymbol))
+- Sticky Lines ([`textDocument/documentSymbol`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_documentSymbol))
+- Parameter Info ([`textDocument/signatureHelp`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_signatureHelp))
+
+### 2025.2
+
+- Inlay Hints ([`textDocument/inlayHint`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_inlayHint))
+- Folding Range ([`textDocument/foldingRange`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_foldingRange))
+
+### 2025.1.2
+
+- Pull Diagnostics ([`textDocument/diagnostic`](https://microsoft.github.io/language-server-protocol/specifications/#diagnostic)) (enabled by default in 2025.2)
+
 ### 2025.1
 
 - Document Link ([`textDocument/documentLink`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_documentLink))

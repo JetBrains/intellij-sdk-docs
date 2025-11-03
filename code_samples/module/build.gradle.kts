@@ -5,7 +5,7 @@ import org.jetbrains.intellij.platform.gradle.models.ProductRelease.Channel.RELE
 
 plugins {
   id("java")
-  id("org.jetbrains.intellij.platform") version "2.10.3"
+  id("org.jetbrains.intellij.platform") version "2.10.4"
 }
 
 group = "org.intellij.sdk"

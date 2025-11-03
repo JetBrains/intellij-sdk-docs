@@ -116,7 +116,7 @@ val icon = service<ProtocolIconRegistryService>().createIcon(iconModel)
 The example for such icon passing can be found in the [JetBrains Rider Plugin Template](https://github.com/ForNeVeR/rider-plugin-template).
 
 Please note that this way of setting up backend icon ids for your plugin will work _only_ in Rider.
-If your plugin is designed to work with _both_ ReSharper and Rider, please add the icon as a _custom compiled icon_
+If the plugin is designed to work with _both_ ReSharper and Rider, add the icon as a _custom compiled icon_
 following the instructions in the [ReSharper DevGuide](https://www.jetbrains.com/help/resharper/sdk/Platform__Icons.html#custom-compiled-icons).
 
 To be loaded in the IntelliJ part, such icons are expected to be present under <path>/resharper/$category/$iconName.svg</path> in _some_ plugin resources directory. 

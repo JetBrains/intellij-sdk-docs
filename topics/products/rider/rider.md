@@ -60,6 +60,70 @@ And the following <path>plugin.xml</path> would require placing the file under <
 </idea-plugin>
 ```
 
+## Using Custom Icons from the Dotnet Rider Plugin Part
+
+Some feature integrations, like adding a new gutter mark or a new line marker, require passing an Icon from the Dotnet plugin part to the IntelliJ plugin part.
+
+A registration of an icon for such cases can be accomplished so:
+
+```c#
+public static class MyIconIds
+{
+	// Note that the path string can _not_ start with a "/" here!
+    public static readonly IconId RiderIconId =
+            new FrontendIconId("icons/rider.svg");
+}
+```
+
+Then an icon should be turned into a model icon to be passed through the protocol with a call similar to the following:
+
+```c#
+var modelIcon = Shell.Instance.GetComponent<IIconHost>()
+        .Transform(frontendIconId);
+```
+
+The complete lifting routine in the IntelliJ plugin part for a model yielded by `IIconHost` can be achieved in the following way:
+
+```kotlin
+// Get the first classloader from the list
+// [RiderIconsCache::class.java.classLoader, ...pluginClassLoaders]
+// that has the `path` in its resources
+fun tryGetClassLoaderForPath(path: String): ClassLoader? {
+	/* ... */
+}
+
+fun liftIcon(model: FrontendIconModel): Icon {
+	return RiderIconCache.getInstance().getOrPut(model.path) {
+		val iconLoader = tryGetClassLoaderForPath(model.path)
+		if (iconLoader == null) {
+			return@getOrPut ReSharperIcons.Special.InvalidIcon
+		}
+		
+		val foundIcon = IconLoader.findIcon(model.path, iconLoader)
+		if (foundIcon == null) {
+			return@getOrPut ReSharperIcons.Special.InvalidIcon
+		}
+	}
+}
+```
+
+If it is required for an implementation of a custom feature, the entry point for this conversion can be called so:
+
+```kotlin
+val icon = service<ProtocolIconRegistryService>().createIcon(iconModel)
+```
+
+The example for such icon passing can be found in the [JetBrains Rider Plugin Template](https://github.com/ForNeVeR/rider-plugin-template).
+
+Please note that this way of setting up backend icon IDs for a plugin will work _only_ in Rider.
+If the plugin is designed to work with _both_ ReSharper and Rider, add the icon as a _custom compiled icon_
+following the instructions in the [ReSharper DevGuide](https://www.jetbrains.com/help/resharper/sdk/Platform__Icons.html#custom-compiled-icons).
+
+To be loaded in the IntelliJ Platform, such icons are expected to be present under <path>/resharper/$category/$iconName.svg</path> in _some_ plugin resources directory, where:
+- `$category` is the name of the generated `ThemedIcons` C# class without the `ThemedIcons` suffix
+- `$iconName` is the name of the generated icon C# class
+The classloader lookup routine is the same in this case as with the `FrontendIconModel`s.
+
 ## Open Source Rider Plugins
 
 It can be useful to refer to existing projects to help understand how to build plugins for Rider.

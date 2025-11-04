@@ -10,9 +10,9 @@ Lists private APIs and their replacements in IntelliJ Platform and plugins.
 
 > How to address the **private API** usage violations:
 > 1. Look through the suggested replacements below, update your plugin accordingly, and upload a new version to JetBrains Marketplace.
-> 2. If you need help with the replacements, please [create a YouTrack issue](https://youtrack.jetbrains.com/newIssue?project=IJPL&c=add%20Board%20Migration%20to%20JBR25%20sprint5&c=Type%20Task&c=Subsystem%20Internal%20API).
+> 2. If you need help with the replacements, please [create a YouTrack issue](https://youtrack.jetbrains.com/newIssue?project=IJPL&c=Type%20Task&c=Subsystem%20Internal%20API).
 >   Please note that we may not be able to provide a replacement quickly, and in some cases, a replacement might not be available at all.
-> 3. If you have any other issues or questions related to the Internal API usage, please [create a dedicated YouTrack issue](https://youtrack.jetbrains.com/newIssue?project=IJPL&c=add%20Board%20Migration%20to%20JBR25%20sprint5&c=Type%20Task&c=Subsystem%20Internal%20API).
+> 3. If you have any other issues or questions related to the Internal API usage, please [create a dedicated YouTrack issue](https://youtrack.jetbrains.com/newIssue?project=IJPL&c=Type%20Task&c=Subsystem%20Internal%20API).
 >
 
 This page lists commonly used API annotated with [`@ApiStatus.Internal`](%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/ApiStatus.java)

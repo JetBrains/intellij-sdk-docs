@@ -59,6 +59,7 @@
       <toc-element topic="plugin_dependencies.md"/>
     </toc-element>
     <toc-element topic="dynamic_plugins.md"/>
+    <toc-element topic="modular_plugins.md"/>
     <toc-element topic="plugin_user_experience.md"/>
     <toc-element topic="faq.md"/>
   </toc-element>

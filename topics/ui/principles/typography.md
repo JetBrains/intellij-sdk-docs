@@ -12,7 +12,7 @@
 
 ## UI font
 
-Inter is used for the IDE user interface by default. The font size is the same for all platforms: 13
+[Inter](https://github.com/rsms/inter) is used for the IDE user interface by default. The font size is the same for all platforms: 13
 
 <!--<table style="header-column">
   <tr>
@@ -49,7 +49,7 @@ Use the built-in text styles from the table below whenever possible.
 
   <tr>
     <td> H1 <p><code>JBFont.h1().asBold()</code></p></td>
-    <td> Default +6 </td>
+    <td> Default +5 </td>
     <td>
         Main page header. Example: Plugin name
     </td>
@@ -101,7 +101,9 @@ Use the built-in text styles from the table below whenever possible.
   <tr>
     <td> Medium semibold <p><code>JBFont.medium().asBold()</code></p> </td>
     <td>Default –1</td>
-    <td>    </td>
+    <td>
+        Group headers in popups
+    </td>
   </tr>
 </table>
 
@@ -109,7 +111,19 @@ If none of the built-in sizes work and a custom one is needed, define it as the 
 
 Use the underlined text style for hovered links.
 
-### Examples $examples-ui
+### Examples in UI
+
+Run popup:
+
+![](typography_example_1.png){width=706}
+
+Plugin page:
+
+![](typography_example_2.png){width=706}
+
+Hovering a link:
+
+![](typography_example_3.png){width=706}
 
 ## Editor font
 
@@ -132,6 +146,16 @@ JetBrains Mono font is used by default for the Editor.
 </table>
 
 Users can change the editor font in <control>Editor / Color scheme / Color Scheme Font</control>. If the default font size is changed, other font sizes used in the editor are scaled respectively.
+
+### Examples in the editor
+
+Line numbers in the gutter and code in the editor:
+
+![](typography_example_4.png){width=706}
+
+Editor font and paragraph UI font in the documentation popup:
+
+![](typography_example_5.png){width=706}
 
 <!--## Colors
 
@@ -255,18 +279,3 @@ The IDE text colors are in the table below. The editor text colors are managed b
     </td>
   </tr>
 </table>-->
-
-## Examples
-
-What’s New page that appears in the Editor tab:
-
-![](whats_new.png){width=802}
-
-Plugin page in the Settings dialog:
-
-![](plugins.png){width=439}
-
-Log in to GitHub page in the dialog:
-
-![](github.png){width=587}
-

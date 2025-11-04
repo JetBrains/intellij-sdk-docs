@@ -22,9 +22,9 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
-## IntelliJ Community Plugins
+## IntelliJ Platform Plugins
 
-### IntelliJ Community Plugins – Listeners
+### IntelliJ Platform Plugins – Listeners
 
 | Topic | Listener |
 |-------|----------|

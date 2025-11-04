@@ -147,7 +147,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity("%ijPlatform%")
+    intellijIdea("%ijPlatform%")
   }
 }
 ```
@@ -169,7 +169,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity("%ijPlatform%")
+    intellijIdea("%ijPlatform%")
     pluginModule(implementation(project(":submodule")))
   }
 }
@@ -203,7 +203,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity '%ijPlatform%'
+    intellijIdea '%ijPlatform%'
   }
 }
 ```
@@ -225,7 +225,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity '%ijPlatform%'
+    intellijIdea '%ijPlatform%'
     pluginModule(implementation(project(':submodule')))
   }
 }
@@ -304,7 +304,7 @@ plugins {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity("%ijPlatform%")
+    intellijIdea("%ijPlatform%")
     pluginModule(implementation(project(":submodule")))
   }
 }
@@ -325,7 +325,7 @@ plugins {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity("%ijPlatform%")
+    intellijIdea("%ijPlatform%")
   }
 }
 ```
@@ -368,7 +368,7 @@ plugins {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity '%ijPlatform%'
+    intellijIdea '%ijPlatform%'
     pluginModule(implementation(project(':submodule')))
   }
 }
@@ -389,7 +389,7 @@ plugins {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity '%ijPlatform%'
+    intellijIdea '%ijPlatform%'
   }
 }
 ```

@@ -287,7 +287,7 @@ To switch off the default usage of JetBrains Cache Redirector, see the [](tools_
 
 Dependencies and [repositories](#configuration.repositories) are handled using explicit entries within `dependencies {}` and `repositories {}` blocks in the Gradle build file.
 
-A minimum configuration for targeting IntelliJ IDEA Community 2023.3:
+A minimum configuration for targeting IntelliJ IDEA 2024.3:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -303,7 +303,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity("2023.3")
+    intellijIdea("2024.3")
   }
 }
 ```
@@ -322,7 +322,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity('2023.3')
+    intellijIdea('2024.3.6')
   }
 }
 ```
@@ -330,8 +330,7 @@ dependencies {
 </tab>
 </tabs>
 
-
-The `intellijIdeaCommunity` in the previous sample is one of the extension functions available for adding IntelliJ Platform dependencies to the project.
+The `intellijIdea` in the previous sample is one of the extension functions available for adding IntelliJ Platform dependencies to the project.
 See [](tools_intellij_platform_gradle_plugin_dependencies_extension.md) on how to target other IDEs.
 
 > When declaring a dependency on IntelliJ Platform, the IDE installer is resolved by default.
@@ -489,7 +488,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity("%ijPlatform%")
+    intellijIdea("%ijPlatform%")
 
     bundledPlugin("com.intellij.java")
     plugin("org.intellij.scala", "2024.1.4")
@@ -509,7 +508,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity '%ijPlatform%'
+    intellijIdea '%ijPlatform%'
 
     bundledPlugin 'com.intellij.java'
     plugin 'org.intellij.scala', '2024.1.4'

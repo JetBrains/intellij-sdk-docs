@@ -10,7 +10,7 @@
 
 Use the following checklist to ensure that you are ready to develop your custom theme:
 
-1. **[IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/)** or **[IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/)** is installed.
+1. **[IntelliJ IDEA](https://www.jetbrains.com/idea/download/)** is installed.
 2. **Plugin DevKit** plugin is installed and [enabled in IntelliJ IDEA](https://www.jetbrains.com/help/idea/managing-plugins.html).
 3. **IntelliJ IDEA CE source code** is checked out. _(Optional)_
 
@@ -25,7 +25,7 @@ Use the following checklist to ensure that you are ready to develop your custom 
 Getting the IntelliJ IDEA CE source code is not a requirement for theme development as debugging the platform code while developing a theme is a rare situation.
 In case you are developing a plugin extending IDE behavior, or you need to understand how some components work internally, having sources makes debugging much more straightforward.
 
-For detailed instructions on how to check out the code efficiently, refer to the _Getting IntelliJ IDEA Community Edition Source Code_ section of the [IntelliJ IDEA Community Edition README file](%gh-ic%/README.md).
+For detailed instructions on how to check out the code efficiently, refer to the _Getting IntelliJ Platform_ section of the [IntelliJ Platform README file](%gh-ic%/README.md).
 Note that building the checked-out sources is not required in this case.
 
 ## Configuring IntelliJ Platform Plugin SDK
@@ -35,9 +35,8 @@ Note that building the checked-out sources is not required in this case.
 ### Download IntelliJ-Based IDE
 
 To see the effects of the developed plugin in a real IDE, it is required to run the plugin in an [IDE development instance](ide_development_instance.md).
-In most cases, it is enough to download and use _[IntelliJ IDEA](https://www.jetbrains.com/idea/download/) Community Edition_.
-If it is required to style components used only in a specific IDE like _IntelliJ IDEA Ultimate_ or _WebStorm_, they can also be used as SDK.
-However, debugging the core code will only work with the _IntelliJ IDEA Community Edition_.
+In most cases, it is enough to download and use _[IntelliJ IDEA](https://www.jetbrains.com/idea/download/)_.
+If it is required to style components used only in a specific IDE like _GoLand_ or _WebStorm_, they can also be used as SDK, but debugging the core code will only work with the _IntelliJ IDEA_.
 
 ### Add JDK and IntelliJ Platform Plugin SDK
 

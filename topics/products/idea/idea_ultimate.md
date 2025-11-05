@@ -11,7 +11,6 @@
 <include from="snippets.topic" element-id="jetbrainsIDE_TLDR"/>
 
 IntelliJ IDEA Ultimate comes with a number of additional features and bundled plugins.
-<include from="idea.md" element-id="idea_editions"/>
 
 ## IntelliJ IDEA Ultimate Plugin Setup
 

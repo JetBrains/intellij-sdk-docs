@@ -42,10 +42,10 @@ dependencies {
 
 The configuration of IntelliJ IDEA plugin projects follows the methods described in [Configuring Plugin Projects using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#using-the-intellij-idea-product-attribute).
 
-| `gradle-intellij-plugin` Attribute                                               | Attribute Value                                                                               |
-|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type)       | `IU` for [IntelliJ IDEA](idea_ultimate.md)</p> |
-| [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) | IDE version, e.g. `2022.2`                                                                    |
+| `gradle-intellij-plugin` Attribute                                               | Attribute Value                            |
+|----------------------------------------------------------------------------------|--------------------------------------------|
+| [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type)       | `IU` for [IntelliJ IDEA](idea_ultimate.md) |
+| [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) | IDE version, e.g. `2022.2`                 |
 
 </tab>
 </tabs>

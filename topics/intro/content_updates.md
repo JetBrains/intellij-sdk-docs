@@ -12,6 +12,13 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2025
 
+### November
+{#november-25}
+
+Coroutines on EDT and Locks
+: Removed a [page](coroutine_edt_and_locks.md) describing the implicit locking behavior on EDT. This approach is obsolete as it was solved internally in the IntelliJ Platform.
+
+
 ### July
 {#july-25}
 

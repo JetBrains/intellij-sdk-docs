@@ -119,10 +119,6 @@ Plugin page:
 
 ![](typography_example_2.png){width=706}
 
-Hovering a link:
-
-![](typography_example_3.png){width=706}
-
 ## Editor font
 
 [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono) font is used by default for the Editor.

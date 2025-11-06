@@ -5,12 +5,12 @@
 
 <link-summary>Splitting plugin by modules to support remote development and other cases</link-summary>
 
-A regular plugin has a single [classloader](plugin_class_loaders.md) which is used to load all classes of the plugin.
+A regular plugin has a single [class loader](plugin_class_loaders.md) which is used to load all classes of the plugin.
 This approach works well for many plugins, but there are cases when more granularity is needed:
 * To properly work in remote development mode, different parts of the plugin should be loaded in the backend and the frontend processes; these parts have different dependencies.
-* If some classes of a plugin `A` depend on classes from a plugin `B`, they should be loaded by a separate classloader to allow unloading the plugin `B` without restarting the IDE.
+* If some classes of a plugin `A` depend on classes from a plugin `B`, they should be loaded by a separate class loader to allow unloading the plugin `B` without restarting the IDE.
 
-In such cases, it's possible to use the new modular plugin format: plugin model version 2.
+In such cases, it's possible to use the new modular plugin format: Plugin Model Version 2.
 
 > The new format is still experimental and may change in the future.
 > It's not recommended to use it for cases other than writing plugins for remote development where the new format is required.
@@ -19,9 +19,9 @@ In such cases, it's possible to use the new modular plugin format: plugin model 
 >
 {style="note"}
 
-## Plugin modules
+## Plugin Modules
 
-A plugin consists of one or more modules registered in `content` tag in the [](plugin_configuration_file.md):
+A plugin consists of one or more modules registered in the `content` tag in the [plugin descriptor file](plugin_configuration_file.md):
 
 ```xml
 <content>
@@ -49,11 +49,11 @@ If the module is optional, it's possible to specify that it should be treated as
 
 Source code and resource files of modules must be located in separate Gradle projects registered in the main module as [submodules](tools_intellij_platform_gradle_plugin_plugins.md#module).
 
-## Module descriptor file
+## Module Descriptor File
 
-A module must have a descriptor file with the name equal to the module name and `xml` extension located directly in <path>main/resources</path> directory of the corresponding Gradle project (**not in** <path>META-INF</path> directory!).
+A module must have a descriptor file with the name equal to the module name and <path>xml</path> extension (for example, <path>example.my.module.xml</path>, located directly in the <path>main/resources</path> directory of the corresponding Gradle project (**not in** <path>META-INF</path> directory!).
 
-The module descriptor file uses the same format as a [](plugin_configuration_file.md), but only the following top-level tags are allowed:
+The module descriptor file uses the same format as the [plugin configuration file](plugin_configuration_file.md), but only the following top-level tags are allowed:
 * `<resource-bundle>`
 * `<extensions>`
 * `<extensionPoints>`
@@ -71,24 +71,25 @@ A special `<dependencies>` tag can be used to specify dependencies on other modu
 </dependencies>
 ```
 
-`<module>` subtag specifies dependency on another module with the given name, `<plugin>` subtag specifies dependency on a regular (classic) plugin with the given ID.
-Dependencies are used at runtime to determine whether a module can be loaded or not, and to configure the classloader of the module.
+`<module>` subtag specifies dependency on another module with the given name.
+`<plugin>` subtag specifies dependency on a regular (classic) plugin with the given ID.
+Dependencies are used at runtime to determine whether a module can be loaded or not, and to configure the class loader of the module.
 
-Like with `<depends>` tags in regular plugins, it's necessary to specify dependencies in <path>build.gradle.kts</path> file as well to have them in the compilation classpath.
+Like with `<depends>` tags in regular plugins, it's necessary to specify [dependencies in the Gradle build script](plugin_dependencies.md#intellij-platform-gradle-plugin-2x) as well to have them in the compilation classpath.
 
 If no dependencies are specified, the module will always be loaded when the plugin is loaded, regardless of the current IDE and the mode it runs in.
 
-### Classloaders
+### Class Loaders
 
-Each module has its own classloader.
-The classloader has classloaders of modules and plugins specified in `<dependencies>` tag of the module descriptor as its parents, so it delegates loading of classes to them if they aren't found in the module itself.
-Also, the core classloader of the IntelliJ Platform is automatically added as a parent classloader.
+Each module has its own class loader.
+The class loader has class loaders of modules and plugins specified in `<dependencies>` tag of the module descriptor as its parents, so it delegates loading of classes to them if they aren't found in the module itself.
+Also, the core class loader of the IntelliJ Platform is automatically added as a parent class loader.
 
 If a regular (classic) plugin declares a dependency on a modular plugin using `<depends>` tag, class loaders of all plugin modules will be added as parent class loaders.
 
-## Plugin configuration file
+## Plugin Configuration File
 
-The plugin configuration file for modular plugins uses the same format as a [](plugin_configuration_file.md) for regular (classic) plugins.
+The plugin configuration file for modular plugins uses the same format as a [plugin configuration file for regular (classic) plugins](plugin_configuration_file.md).
 However, the following top-level tags related to registration of classes aren't allowed in it; they must be located in the module descriptor files where the referenced classes are defined:
 * `<extensions>`
 * `<extensionPoints>`

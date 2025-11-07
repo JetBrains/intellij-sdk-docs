@@ -15,6 +15,9 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 ### November
 {#november-25}
 
+Terminal API
+: Add a new section about [extending the Terminal](embedded_terminal.md).
+
 Modular Plugins
 : Add a new section about [](modular_plugins.md) describing how to develop plugins ready for remote development contexts.
 

@@ -103,8 +103,8 @@ See also [](plugin_compatibility.md#modules-specific-to-functionality).
 | Maven                     | `org.jetbrains.idea.maven`       |                                                                                  |
 | Spring                    | `com.intellij.spring`            | [](spring_api.md)                                                                |
 | Spring Boot               | `com.intellij.spring.boot`       | [](spring_api.md#spring-boot)                                                    |
-| YAML                      | `org.jetbrains.plugins.yaml`     |                                                                                  |
 | Terminal                  | `org.jetbrains.plugins.terminal` | [](embedded_terminal.md)                                                         |
+| YAML                      | `org.jetbrains.plugins.yaml`     |                                                                                  |
 
 ### Preparing Sandbox
 

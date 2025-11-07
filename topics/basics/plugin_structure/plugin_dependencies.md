@@ -87,23 +87,24 @@ See also [](plugin_compatibility.md#modules-specific-to-functionality).
 
 <!-- please do not add more entries unless it's clearly a popular plugin -->
 
-| Plugin Name               | Plugin ID                       | Related Documentation                                                            |
-|---------------------------|---------------------------------|----------------------------------------------------------------------------------|
-| Copyright                 | `com.intellij.copyright`        |                                                                                  |
-| CSS                       | `com.intellij.css`              | [](webstorm.md)                                                                  |
-| Database Tools and SQL    | `com.intellij.database`         | [](data_grip.md)                                                                 |
-| Gradle                    | `com.intellij.gradle`           |                                                                                  |
-| Groovy                    | `org.intellij.groovy`           |                                                                                  |
-| IntelliLang               | `org.intellij.intelliLang`      | [](language_injection.md)                                                        |
-| Java                      | `com.intellij.java`             | [](idea.md#java-plugin)                                                          |
-| JavaScript and TypeScript | `JavaScript`                    | [](webstorm.md)                                                                  |
-| JSON                      | `com.intellij.modules.json`     | [JSON plugin introduction notes](api_changes_list_2024.md#json-plugin-new-20243) |
-| Kotlin                    | `org.jetbrains.kotlin`          | [](idea.md#kotlin-plugin)                                                        |
-| Markdown                  | `org.intellij.plugins.markdown` |                                                                                  |
-| Maven                     | `org.jetbrains.idea.maven`      |                                                                                  |
-| Spring                    | `com.intellij.spring`           | [](spring_api.md)                                                                |
-| Spring Boot               | `com.intellij.spring.boot`      | [](spring_api.md#spring-boot)                                                    |
-| YAML                      | `org.jetbrains.plugins.yaml`    |                                                                                  |
+| Plugin Name               | Plugin ID                        | Related Documentation                                                            |
+|---------------------------|----------------------------------|----------------------------------------------------------------------------------|
+| Copyright                 | `com.intellij.copyright`         |                                                                                  |
+| CSS                       | `com.intellij.css`               | [](webstorm.md)                                                                  |
+| Database Tools and SQL    | `com.intellij.database`          | [](data_grip.md)                                                                 |
+| Gradle                    | `com.intellij.gradle`            |                                                                                  |
+| Groovy                    | `org.intellij.groovy`            |                                                                                  |
+| IntelliLang               | `org.intellij.intelliLang`       | [](language_injection.md)                                                        |
+| Java                      | `com.intellij.java`              | [](idea.md#java-plugin)                                                          |
+| JavaScript and TypeScript | `JavaScript`                     | [](webstorm.md)                                                                  |
+| JSON                      | `com.intellij.modules.json`      | [JSON plugin introduction notes](api_changes_list_2024.md#json-plugin-new-20243) |
+| Kotlin                    | `org.jetbrains.kotlin`           | [](idea.md#kotlin-plugin)                                                        |
+| Markdown                  | `org.intellij.plugins.markdown`  |                                                                                  |
+| Maven                     | `org.jetbrains.idea.maven`       |                                                                                  |
+| Spring                    | `com.intellij.spring`            | [](spring_api.md)                                                                |
+| Spring Boot               | `com.intellij.spring.boot`       | [](spring_api.md#spring-boot)                                                    |
+| YAML                      | `org.jetbrains.plugins.yaml`     |                                                                                  |
+| Terminal                  | `org.jetbrains.plugins.terminal` | [](embedded_terminal.md)                                                         |
 
 ### Preparing Sandbox
 

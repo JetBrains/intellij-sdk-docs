@@ -233,6 +233,7 @@
     <toc-element topic="project_view.md">
       <toc-element topic="tree_structure_view.md"/>
     </toc-element>
+    <toc-element topic="embedded_terminal.md"/>
     <toc-element toc-title="Unit Testing"/>
     <toc-element topic="build_system.md">
       <toc-element topic="external_builder_api.md"/>

@@ -106,7 +106,6 @@ class MyTerminalAllowedActionsProvider : TerminalAllowedActionsProvider {
 <path>plugin.xml</path>
 
 ```xml
-
 <actions>
   <action id="MyPlugin.MyTerminalAction" class="com.example.MyTerminalAction">
     <keyboard-shortcut first-keystroke="shift ENTER" keymap="$default"/>

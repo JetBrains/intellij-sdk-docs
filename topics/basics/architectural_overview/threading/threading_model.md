@@ -643,6 +643,18 @@ Massive batches of VFS events can be pre-processed in the background with [`Asyn
 
 See the [Investigating IntelliJ Platform UI Freezes](https://blog.jetbrains.com/platform/2025/09/investigating-intellij-platform-ui-freezes/) blog post for techniques to investigate UI freezes.
 
+## Kotlin Notebooks
+
+IntelliJ Platform sources include Kotlin Notebooks helping to understand the core concepts of the threading model:
+1. [Context Propagation](%gh-ic-master%/docs/notebooks/1-ContextPropagation.ipynb)
+2. [Cancellation Model](%gh-ic-master%/docs/notebooks/2-CancellationModel.ipynb)
+3. [Read-Write Lock](%gh-ic-master%/docs/notebooks/3-ReadWriteLock.ipynb)
+
+The notebooks contain concept explanations accompanied by code that can be run interactively in the IDE.
+Code can be changed for experimentation.
+
+See more information about the integration of [Kotlin Notebooks with the IntelliJ Platform](tools_kotlin_notebook.md).
+
 ## FAQ
 
 ### How to check whether the current thread is the EDT/UI thread?

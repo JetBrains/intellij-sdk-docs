@@ -21,6 +21,9 @@ Terminal API
 Modular Plugins
 : Add a new section about [](modular_plugins.md) describing how to develop plugins ready for remote development contexts.
 
+Threading Kotlin Notebooks
+: Link [Kotlin Notebooks](threading_model.md#kotlin-notebooks) explaining core threading model concepts.
+
 Minor Changes and Additions
 :
 - Add [](rider.md#using-custom-icons-from-the-dotnet-rider-plugin-part) Using Custom Icons from the Dotnet Rider Plugin Part.

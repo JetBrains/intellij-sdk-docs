@@ -479,6 +479,7 @@
       <toc-element topic="button.topic">
         <toc-element topic="built_in_button.md"/>
         <toc-element topic="split_button.md"/>
+        <toc-element toc-title="Segmented Button"/> <!--TODO-->
       </toc-element>
       <toc-element topic="checkbox.topic"/>
       <toc-element topic="combo_box.md"/>
@@ -498,13 +499,11 @@
       <toc-element toc-title="Menu">
         <toc-element toc-title="Context Menu"/> <!--TODO-->
         <toc-element toc-title="Main Menu"/> <!--TODO-->
-        <toc-element toc-title="Menu List"/> <!--TODO-->
       </toc-element>
       <toc-element topic="notification_types.md">
         <toc-element toc-title="Alert"/> <!--TODO-->
         <toc-element topic="balloon.md"/>
         <toc-element topic="banner.md"/>
-        <toc-element toc-title="Tool Window Balloon"/> <!--TODO-->
       </toc-element>
       <toc-element toc-title="Popup"/> <!--TODO-->
       <toc-element topic="progress_indicators.md">

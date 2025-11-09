@@ -10,63 +10,87 @@
 
 </tldr>
 
-Tabs organize content in dialogs by grouping similar UI controls.
 
-![](01_tabs_example.png){width=322}
-
-In code editors, tabs are created with another component — [`JBEditorTabs`](%gh-ic%/platform/platform-api/src/com/intellij/ui/tabs/impl/JBEditorTabs.kt). It supports extended functionality like icons, closeable, and draggable tabs. Do **not** use this component in dialogs.
-
-In tool windows, tabs are generated automatically. See also [Tool window](tool_window.md).
+![Tabs](01_Tabs.png){width=706}
 
 ## When to use
 
-Follow the rules in [Groups of controls](groups_of_controls.md).
+Use tabs to organize related content. Follow rules for [Groups of controls](groups_of_controls.md).
+
+> For editor tabs, use another component — [`JBEditorTabs`](%gh-ic%/platform/platform-api/src/com/intellij/ui/tabs/impl/JBEditorTabs.kt)
+>
+>In tool windows, tabs are generated automatically. See [Tool window](tool_window.md).
+>
+{style="note"}
 
 ## How to use
 
-Use title capitalization for tab labels.
+### Label
 
-Make the label short, preferably no more than 3 words.
-Avoid generic words, such as "General" or "Advanced".
-See [Writing short and clear](writing_short.md).
+* Use title capitalization for tab labels.
+* Make labels short, preferably no more than 3 words.
+* Avoid generic words such as "General" or "Advanced".
+* See [Writing short and clear](writing_short.md).
 
-![](02_naming.png){width=284}
+
+<format color="369650" style="bold">Correct</format>
+
+![Hiding tabs that do not fit](02_How_to_use_correct.png){width=706}
+
+<format color="E55765" style="bold">Incorrect</format>
+
+![Hiding tabs that do not fit](02_How_to_use_incorrect.png){width=706}
+
+
+###  Tab Order and Layout
 
 Place the most frequently used content in the first tab.
-Tabs that do not fit allotted screen space automatically hide under the dropdown component.
-(It is better to add no more than 8 tabs, but this number is not limited.)
 
-![](03_hidden_tabs.png){width=533}
+Tabs that do not fit allotted screen space automatically hide under the dropdown component. It is better to add no more than 8 tabs, but the number is not limited.
 
-Always place tabs on top. It is possible to place them at other sides of the content — bottom, left, or right — but such a placement is extremely rare and might confuse users.
+![Hiding tabs that do not fit](03_How_to_use.png){width=706}
 
-Do not remove or disable a tab when its function is unavailable. Explain why a tab’s content is unavailable in the body of the tab.
+### Unavailable content
+
+Do not remove or disable a tab when its functions are unavailable. Explain why a tab’s content is unavailable in the body of the tab.
 
 ## Placement
 
-Make sure the border of the tab reaches the edges of the area tabs occupy.
+### Position
 
-<format color="Red" style="bold">Incorrect</format>
+Always place tabs on top of the content. It is possible to place them at other sides — bottom, left, or right — but such a placement is extremely rare and might confuse users.
 
-![](04_layout_border_incorrect.png){width=595}
 
-<format color="Green" style="bold">Correct</format>
+### Independent content
 
-![](04_layout_border_correct.png){width=595}
+Do not place independent content under the tabs. Create separate tabs for such content.
 
-Do **not** surround the tab content area with a visible border.
+<format color="369650" style="bold">Correct</format>
 
-<format color="Red" style="bold">Incorrect</format>
+![Correct placment of independent content](06_Placement_correct.png){width=706}
 
-![](05_bordered.png){width=595}
+<format color="E55765" style="bold">Incorrect</format>
 
-Avoid placing independent content groups under the tabs' area.
+![Incorrect placement of independent content](06_Placement_incorrect.png){width=706}
 
-<format color="Red" style="bold">Incorrect</format>
-
-![](06_layout_content_under.png){width=595}
-
+### Controls above tabs
 When there are other UI controls above tabs, separate them with a vertical indent.
 
-![](07_inset.png){width=595}
+![UI controls above the tabs](07_Placement_correct.png){width=706}
 
+### Tabs border
+
+* Make sure the border of the tab reaches the edges of the area tabs occupy.
+* Do **not** surround the tab content area with a visible border.
+
+<format color="369650" style="bold">Correct</format>
+
+![Correct bottom border](04_Placement_correct.png){width=706}
+
+<format color="E55765" style="bold">Incorrect</format>
+
+![Incorrect bottom border](04_Placement_incorrect.png){width=706}
+
+<format color="E55765" style="bold">Incorrect</format>
+
+![Frame around the tab content](05_Placement_incorrect.png){width=706}

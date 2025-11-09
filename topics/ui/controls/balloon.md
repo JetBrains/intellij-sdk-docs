@@ -125,9 +125,11 @@ Use only the title when it is short and fits in one line.
 Use only the body text when it fits in two lines and the title would duplicate its meaning.
 
 <format color="Green" style="bold">Correct</format>
+
 ![A notification with the body only about the workspace being restored after branch checkout](notification_balloon_body_only_correct.png){width=706}
 
 <format color="Red" style="bold">Incorrect</format>
+
 ![The same notification as above but with duplicating information in the title](notification_balloon_body_only_incorrect.png){width=706}
 
 #### Long messages are collapsed
@@ -157,9 +159,11 @@ If the notification reports an error or warning, always provide an action to hel
 If no actions are available, provide more details in the body text: how to fix or what was the cause.
 
 <format color="Green" style="bold">Correct</format>
+
 ![A notification about a plugin being incompatible with the current IDE version with a suggestion to update the plugin](notification_balloon_error_actions_text_correct.png){width=706}
 
 <format color="Red" style="bold">Incorrect</format>
+
 ![The name notification but without the suggestion to update the plugin](notification_balloon_error_actions_text_incorrect.png){width=706}
 
 

@@ -25,13 +25,13 @@
         <p>If only one option in a group can be selected, use <a href="radio_button.md">radio button</a>:</p>
         <table style="none" border="false">
             <tr>
-                <td width="378">
+                <td>
                     <format style="bold" color="E55765">Incorrect</format>
-                    <img src="checkbox_when_not_to_use_1_incorrect.png" alt="A radio button group with only one selected option possible"/>
+                    <img src="checkbox_when_not_to_use_1_incorrect.png" width="378" alt="A radio button group with only one selected option possible"/>
                 </td>
-                <td width="378">
+                <td>
                     <format style="bold" color="369650">Correct</format>
-                    <img src="checkbox_when_not_to_use_1_correct.png" alt="Two radio buttons with clear labels"/>
+                    <img src="checkbox_when_not_to_use_1_correct.png" width="378" alt="Two radio buttons with clear labels"/>
                 </td>
             </tr>
         </table>
@@ -39,13 +39,13 @@
             and label them accordingly:</p>
         <table style="none" border="false">
             <tr>
-                <td width="378">
+                <td>
                     <format style="bold" color="E55765">Incorrect</format>
-                    <img src="checkbox_when_not_to_use_2_incorrect.png" alt="A radio button group with only one selected option possible"/>
+                    <img src="checkbox_when_not_to_use_2_incorrect.png" width="378" alt="A radio button group with only one selected option possible"/>
                 </td>
-                <td width="378">
+                <td>
                     <format style="bold" color="369650">Correct</format>
-                    <img src="checkbox_when_not_to_use_2_correct.png" alt="Two radio buttons with clear labels"/>
+                    <img src="checkbox_when_not_to_use_2_correct.png" width="378" alt="Two radio buttons with clear labels"/>
                 </td>
             </tr>
         </table>
@@ -55,12 +55,12 @@
             <p>A label accompanies each checkbox and is placed on the right side.</p>
                 <table style="none" border="false">
                     <tr>
-                        <td width="378">
-                                <format color="369650" style="bold">Correct</format><img src="checkbox_label_right_correct.png"
+                        <td>
+                                <format color="369650" style="bold">Correct</format><img src="checkbox_label_right_correct.png" width="378"
                                                                                          alt="A correct checkbox with the label on the right"/>
                         </td>
-                        <td width="378">
-                                <format color="E55765" style="bold">Incorrect</format><img src="checkbox_label_right_incorrect.png"
+                        <td>
+                                <format color="E55765" style="bold">Incorrect</format><img src="checkbox_label_right_incorrect.png" width="378"
                                                                                            alt="An incorrect checkbox with the label on the left"/>
                         </td>
                     </tr>
@@ -70,12 +70,12 @@
             <p>If a label is long, split it into two lines. Use HTML formatting for that. Avoid labels that take more than two lines. See recommendations on <a anchor="writing-guidelines">writing concise labels</a> below.</p>
             <table style="none" border="false">
                 <tr>
-                    <td width="378">
-                        <format color="369650" style="bold">Correct</format><img src="checkbox_label_long_correct.png"
+                    <td>
+                        <format color="369650" style="bold">Correct</format><img src="checkbox_label_long_correct.png" width="378"
                                                                                  alt="A correct checkbox with the label on the right"/>
                     </td>
-                    <td width="378">
-                            <format color="E55765" style="bold">Incorrect</format><img src="checkbox_label_long_incorrect.png"
+                    <td>
+                            <format color="E55765" style="bold">Incorrect</format><img src="checkbox_label_long_incorrect.png" width="378"
                                                                                        alt="An incorrect checkbox with the label on the left"/>
                     </td>
                 </tr>

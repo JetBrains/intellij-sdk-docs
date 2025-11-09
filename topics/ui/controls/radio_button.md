@@ -26,11 +26,11 @@ For only two opposing yes/no options, use a checkbox.
 
 <table style="none" border="false">
   <tr>
-    <td width="378px">
-      <format color="Green" style="bold">Correct</format><img src="02_When_to_use_correct.png" alt="A correct example of using a checkbox instead of radiobuttons"/>
+    <td>
+      <format color="Green" style="bold">Correct</format><img src="02_When_to_use_correct.png" width="378" alt="A correct example of using a checkbox instead of radiobuttons"/>
     </td>
-    <td width="378px">
-      <format color="Red" style="bold">Incorrect</format><img src="02_When_to_use_incorrect.png" alt="An incorrect example of using radiobuttons instead of a checkbox"/>
+    <td>
+      <format color="Red" style="bold">Incorrect</format><img src="02_When_to_use_incorrect.png" width="378" alt="An incorrect example of using radiobuttons instead of a checkbox"/>
     </td>
   </tr>
 </table>
@@ -41,20 +41,21 @@ If the options have short labels, use a segmented button.
 ![](03_When_to_use_Segmented_button.png){width=706}
 
 
-## When to use a drop-down instead
+### When to use a drop-down instead
 Consider using a [drop-down list](drop_down.md) if:
-* There are more than 5 options or the options have long labels:
+* There are more than 5 options:
 <table style="none" border="false">
   <tr>
-    <td width="378">
-      <format color="Green" style="bold">Correct</format><img src="04_When_to_use_correct.png" alt="A correct example of using a drop-down list instead of radiobuttons"/>
+    <td>
+      <format color="Green" style="bold">Correct</format><img src="04_When_to_use_correct.png" width="378" alt="A correct example of using a drop-down list instead of radiobuttons"/>
     </td>
-    <td width="378">
-      <format color="Red" style="bold">Incorrect</format><img src="04_When_to_use_incorrect.png" alt="An incorrect example of using radiobuttons for a list of 5 or more options"/>
+    <td>
+      <format color="Red" style="bold">Incorrect</format><img src="04_When_to_use_incorrect.png" width="378" alt="An incorrect example of using radiobuttons for a list of 5 or more options"/>
     </td>
   </tr>
   </table>
 
+* The options have long labels.
 * The screen space is limited.
 * The option might be used less often than other options on the screen.
 * There are other drop-down lists in the same group of UI components. A radio button group is more noticeable than a drop-down list, so it will look like a more important setting.
@@ -105,20 +106,32 @@ Consider using a [drop-down list](drop_down.md) if:
 * Do not use negation in labels as it complicates understanding.
 * Make labels short and intelligible — see [Writing short and clear text](writing_short.md).
 
-<format color="369650" style="bold">Correct</format>
-![](08_How_to_use_correct.png){width=706}
 
- <format color="E55765" style="bold">Incorrect</format>
-![](08_How_to_use_incorrect.png){width=706}
+<table style="none" border="false">
+  <tr>
+    <td>
+      <format color="Green" style="bold">Correct</format><img src="08_How_to_use_correct.png" width="378" alt="A correct example of using a drop-down list instead of radiobuttons"/>
+    </td>
+    <td>
+      <format color="Red" style="bold">Incorrect</format><img src="08_How_to_use_incorrect.png" width="378" alt="An incorrect example of using radiobuttons for a list of 5 or more options"/>
+    </td>
+  </tr>
+  </table>
 
 
 ### Group label
-Always start a radio button group with a group label. It explains what the options are for.
-Use a colon at the end of a group label.
-![](10_How_to_use.png){width=706}
 
-Use a checkbox or another radio button as a group label if the radio button group needs to be turned on or off.
-![](09_How_to_use.png){width=706}
+<table style="none" border="false" column-width="fixed">
+    <tr>
+      <td><img src="10_How_to_use.png" alt="Label example" width="378"/></td>
+      <td><p>Always start a radio button group with a group label to explain what the options are for. Use a colon at the end of a group label.</p></td>
+    </tr>
+    <tr>
+      <td><img src="09_How_to_use.png" alt="An example of a label spanning two lines." width="378"/></td>
+      <td><p>Use a checkbox or another radio button as a group label if the radio button group needs to be turned on or off.</p></td>
+    </tr>
+</table>
+
 
 
 ## Sizes and placement

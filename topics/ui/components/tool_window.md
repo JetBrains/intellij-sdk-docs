@@ -6,50 +6,114 @@
 
 A tool window is a pane inside the main IDE window. For information about tool windows, see [IntelliJ IDEA Web Help](https://www.jetbrains.com/help/idea/tool-windows.html). For information about implementing tool windows, see [](tool_windows.md).
 
-![](tool_window_example.png){width=960}
+![](toolwindow.png){width=706}
 
 ## When to use
 
-Use the tool window to show a large amount of information that the user needs while working side-by-side with the editor or other tool windows. For example, viewing the project structure, running and debugging an application, and viewing git log.
+Tool windows provide access to information, tools, and services that support coding. They let users manage the project, run and debug applications, view git changes, and work with external systems — all without leaving the main workspace.
 
-If the amount of information is small, show it in the editor, main toolbar, status bar or popup. For example, show version control changes on the editor gutter, breadcrumbs in the main toolbar, current branch and file details in the status bar, quick doc in a popup.
+<!-- Use the tool window to show a large amount of information that the user needs while working side-by-side with the editor or other tool windows. For example, viewing the project structure, running and debugging an application, and viewing git log.
 
-If the user does not need the information from the main window to complete an operation, show the content in the popup or dialog window. For example, Search Everywhere popup, Settings dialog.
+## When not to use
+
+### Small amount of information
+
+If the amount of information is small, show it in the editor, main toolbar, status bar, or popup. For example, show version control changes in the editor gutter, breadcrumbs in the main toolbar, current branch and file details in the status bar, quick doc in a popup.
+
+For more information about choosing the correct placement for content, read [UI guidelines on placing content](content_placement.md). //TODO: Write a guideline on placing content in IDE.
+
+### Main window content is not needed
+
+If the user does not need the information from the main window to complete an operation, show the content in the popup or dialog window. For example, the <control>Search Everywhere</control> popup, <control>Settings</control> dialog.
+-->
 
 ## Tool window structure
 
-![](tool_window_structure.png){width=483}
+![](toolwindow_structure.png){width=706}
 
-## How to use
-
-Give the tool window a name:
+### Tool window name
 
 * The name should be [short and descriptive](writing_short.md), preferably not longer than two words.
 * Use title-case capitalization.
+* Provide an abbreviation if a common one exists when tool window names are shown in the stripes. For example, <code>Pull Requests</code> becomes <code>PR</code>.
 
-Show the tool window name in the tool window button and header. If there are tabs in the tool window header, add a colon after the tool window name. Otherwise, do not add it.
+<table border="false" style="none">
+    <tr>
+        <td width="378"><img src="toolwindow_name.png" alt=""/></td>
+        <td width="378"><img src="toolwindow_name_stripes.png" alt=""/></td>
+    </tr>
+</table>
 
-![](pull_requests.png){width=308}
+<!--Show the tool window name in the tool window button and header. If there are tabs in the tool window header, add a colon after the tool window name. Otherwise, do not add it.-->
 
-Add an icon for the tool window. The icon is 13px x 13px, grey and monochromatic. See how to create icons in the [icons guidelines](icons_style.md).
+### Icon
 
-**Exception:** <control>Problems</control> and <control>Event Log</control> icons change color and show the current status.
+Add an icon for the tool window button. The icon should be created in two sizes: 20×20px and 16×16px, grey, and monochromatic. See how to create icons in the [icons guidelines](icons_style.md).
 
-Select the tool window orientation depending on the content. Vertical tool windows work better for trees, for example, Project, Structure, or Maven tool windows. Horizontal tool windows work better for tables, wide content or master-detail panels, for example, Git Log, Terminal, or Problems.
+<!--### Icon
 
-Do **not** show the tool window button if the tool window is not relevant to the current project configuration. For example, do not show the Maven tool window for a project without Maven configuration files.
+Follow [tool window icons guidelines](icons_style#NNN.md) to create correct icons for tool windows.
+// TODO: publish this chapter when the guideline about icons is public too
+-->
 
-If a tool window has no content yet, show its button by default only if the window contains basic functionality that is likely to be used for all projects, for example, Version Control or Problems. Otherwise, do not show the tool window button by default.
+#### Icon badge for feedback
 
-Add a toolbar for [frequently used actions and filters](toolbar.md#what-items-to-add-on-toolbar). Use a horizontal toolbar for vertical tool windows and a vertical toolbar for horizontal tool windows. For more details, see the [toolbar guidelines](toolbar.md).
+Show a colored badge above the icon if the tool window content changes and can contain different types of feedback, for example, new updates or errors.
 
-Put tool window viewing mode settings under the gear icon in the header. If there is no toolbar, put other options under the gear icon as well. For example, see the gear icon in the Project tool window.
+Do not change the icon for the tool window button when the content changes.
 
-Add tabs if all the information does not fit in one tab or refers to similar instances, like run sessions, history for files, find results. The tabs for entities should be closable.
+![](toolwindow_badge.png){width=706}
 
-![](git.png){width=308 style=block}
-*Separate tabs are added for each file history.*
+<!--**Exception:** <control>Problems</control> and <control>Event Log</control> icons change color and show the current status.-->
 
-![](find.png){width=448 style=block}
-*Separate tabs are added for different search queries.*
+### Tabs
 
+Add [tabs](tabs.md) to group related content or create similar instances, like run sessions, history for files, find results. The tabs for similar entities should be closable.
+
+![](toolwindow_tabs.png){width=706}
+
+### Toolbar
+
+Add a toolbar for [frequently used actions and filters](toolbar.md#what-items-to-add-on-toolbar). For more details, see the [toolbar guidelines](toolbar.md).
+
+<!--Put tool window viewing mode settings under the gear icon in the header. If there is no toolbar, put other options under the gear icon as well. For example, see the gear icon in the Project tool window.-->
+
+## How to use
+
+### Visibility
+
+If a tool window has no content yet, show its button by default only if the window contains basic functionality that is likely to be used for all projects, for example, <control>Version Control</control> or <control>Problems</control>. Otherwise, hide the tool window button by default. Hidden tool windows are still available under <control>More tool windows</control> menu.
+
+<table border="false" style="none">
+    <tr>
+        <td width="50%"><format color="Green" style="bold">Correct</format><img src="toolwindow_more_correct.png" alt=""/></td>
+        <td width="50%"><format color="red" style="bold">Incorrect</format><img src="toolwindow_more_incorrect.png" alt=""/></td>
+    </tr>
+</table>
+
+Don't show the tool window button if the tool window is not relevant to the current project configuration. For example, don't show the <control>Maven</control> tool window for a project without Maven configuration files.
+
+### Orientation
+
+#### Vertical window
+
+Vertical tool windows work better for trees, for example, Project, Structure, or Maven tool windows.
+
+![](toolwindow_vertical.png){width=706}
+
+#### Horizontal window
+
+Horizontal tool windows work better for tables, wide content, or master-detail panels, for example, Git Log, Terminal, or Problems.
+
+![](toolwindow_horizontal.png){width=706}
+
+### Empty state
+
+If a tool window has no content yet, show [empty state](empty_state.md) to help users start working with the tool window.
+
+<table border="false" style="none">
+    <tr>
+        <td width="50%"><format color="Green" style="bold">Correct</format><img src="toolwindow_empty_state_correct.png" alt=""/></td>
+        <td width="50%"><format color="red" style="bold">Incorrect</format><img src="toolwindow_empty_state_incorrect.png" alt=""/></td>
+    </tr>
+</table>

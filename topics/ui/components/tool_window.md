@@ -72,6 +72,14 @@ Add [tabs](tabs.md) to group related content or create similar instances, like r
 
 ![](toolwindow_tabs.png){width=706}
 
+### Toolbar
+
+Add a toolbar for [frequently used actions and filters](toolbar.md#what-items-to-add-on-toolbar). For more details, see the [toolbar guidelines](toolbar.md).
+
+<!--Put tool window viewing mode settings under the gear icon in the header. If there is no toolbar, put other options under the gear icon as well. For example, see the gear icon in the Project tool window.-->
+
+## How to use
+
 ### Visibility
 
 If a tool window has no content yet, show its button by default only if the window contains basic functionality that is likely to be used for all projects, for example, <control>Version Control</control> or <control>Problems</control>. Otherwise, hide the tool window button by default. Hidden tool windows are still available under <control>More tool windows</control> menu.
@@ -84,14 +92,6 @@ If a tool window has no content yet, show its button by default only if the wind
 </table>
 
 Don't show the tool window button if the tool window is not relevant to the current project configuration. For example, don't show the <control>Maven</control> tool window for a project without Maven configuration files.
-
-### Toolbar
-
-Add a toolbar for [frequently used actions and filters](toolbar.md#what-items-to-add-on-toolbar). For more details, see the [toolbar guidelines](toolbar.md).
-
-<!--Put tool window viewing mode settings under the gear icon in the header. If there is no toolbar, put other options under the gear icon as well. For example, see the gear icon in the Project tool window.-->
-
-## How to use
 
 ### Orientation
 

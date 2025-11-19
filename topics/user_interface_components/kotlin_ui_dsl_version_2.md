@@ -22,7 +22,7 @@ The _Kotlin UI DSL_ functions are located in the [`com.intellij.ui.dsl.builder`]
 
 ## UI DSL Examples
 
-It is highly recommended to take a look at the UI DSL demo available via <ui-path>Tools | Internal Actions | UI | UI DSL Showcase</ui-path> (see [Internal Actions](internal_actions_intro.md) if not available in your IDE instance).
+It is highly recommended to take a look at the UI DSL demo available via <ui-path>Tools | Internal Actions | UI | Kotlin UI DSL | UI DSL Showcase</ui-path> (see [Internal Actions](internal_actions_intro.md) if not available in your IDE instance).
 
 It describes some UI DSL basics and contains explanations, tips, a list of all available components, and many examples with links to the source code.
 

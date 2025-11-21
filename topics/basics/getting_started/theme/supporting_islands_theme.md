@@ -179,15 +179,3 @@ The only exception is `Island.borderColor` which should be set manually.
         <td>When the main IDE window is not in focus, to show the inactive state, all content "beneath" the islands is covered with an overlay with this transparency value.</td>
     </tr>
 </table>
-
-
-
-
-
-
-
-
-
-
-
-

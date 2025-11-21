@@ -227,7 +227,7 @@ The following techniques allow finding code responsible for specific features by
 
 <procedure>
 
-1. Add a breakpoint in the `init` block of [`OpenFileDescriptor`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/fileEditor/OpenFileDescriptor.kt).
+1. Add a breakpoint in the `init` block of [`OpenFileDescriptor`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/fileEditor/OpenFileDescriptor.java).
 2. In the sandbox IDE instance, invoke the navigation feature.
 3. The execution suspends at the breakpoint.
 4. In the stacktrace, find the call responsible for triggering the navigation.

@@ -36,7 +36,7 @@ for tests that don't have any dependency on Java functionality.
 **Examples:**
 - [`JavaCopyrightTest`](%gh-ic%/java/java-tests/testSrc/com/intellij/copyright/JavaCopyrightTest.kt)
 - [`HtmlDocumentationTest`](%gh-ic%/xml/tests/src/com/intellij/html/HtmlDocumentationTest.java)
-- [`AcceptWordAsCorrectTest`](%gh-ic%/spellchecker/testSrc/com/intellij/spellchecker/inspector/AcceptWordAsCorrectTest.java)
+- [`AcceptWordAsCorrectTest`](%gh-ic%/plugins/grazie/src/test/kotlin/com/intellij/grazie/spellchecker/inspector/AcceptWordAsCorrectTest.java)
 
 </tab>
 

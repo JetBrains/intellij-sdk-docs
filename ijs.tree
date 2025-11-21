@@ -380,6 +380,7 @@
     <toc-element topic="theme_structure.md" accepts-web-file-names="themes.html">
       <toc-element topic="themes_customize.md" toc-title="Customizing a Theme"/>
       <toc-element topic="themes_extras.md" toc-title="Adding Schemes and Images"/>
+      <toc-element topic="supporting_islands_theme.md"/>
     </toc-element>
   </toc-element>
   <toc-element toc-title="Resources">

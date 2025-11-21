@@ -15,6 +15,9 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 ### November
 {#november-25}
 
+Islands Theme Support
+: Add a new section about [supporting the Islands Theme](supporting_islands_theme.md).
+
 Terminal API
 : Add a new section about [extending the Terminal](embedded_terminal.md).
 

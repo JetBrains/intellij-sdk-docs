@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 494355c3f56d3a412b08c284b82f85d68b461237 -->
+<!-- Revision: 0e17bcec13b0bb2a75e99d66fdb9b0b7d92fecf6 -->
 
 <!--
 EP List Directories:
@@ -14,7 +14,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 <snippet id="content">
 
-77 Extension Points and 10 Listeners
+78 Extension Points and 10 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -88,6 +88,15 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.prettierjs.codeStyleInstaller"/></include> | [`PrettierCodeStyleInstaller`](%gh-ij-plugins%/prettierJS/src/com/intellij/prettierjs/codeStyle/PrettierCodeStyleInstaller.java) |
 
+### intellij.vuejs.backend.xml
+
+[`intellij.vuejs.backend.xml`](%gh-ij-plugins%/vuejs/vuejs-backend/resources/intellij.vuejs.backend.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vuejs.containerInfoProvider"/></include> | [`VueContainerInfoProvider`](%gh-ij-plugins%/vuejs/vuejs-backend/src/org/jetbrains/vuejs/model/source/VueContainerInfoProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vuejs.templateScopesProvider"/></include> | [`VueTemplateScopesProvider`](%gh-ij-plugins%/vuejs/vuejs-backend/src/org/jetbrains/vuejs/codeInsight/template/VueTemplateScopesProvider.kt) |
+
 ### name.kropp.intellij.makefile
 
 [`name.kropp.intellij.makefile`](%gh-ij-plugins%/makefile/resources/META-INF/plugin.xml)
@@ -96,15 +105,6 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.makefile.runConfigurationCustomizer"/></include> | [`MakefileRunConfigurationCustomizer`](%gh-ij-plugins%/makefile/src/com/jetbrains/lang/makefile/MakefileRunConfigurationCustomizer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.makefile.toolWindowStripeController"/></include> | [`MakefileToolWindowStripeController`](%gh-ij-plugins%/makefile/src/com/jetbrains/lang/makefile/toolWindow/MakefileToolWindowStripeController.kt) |
-
-### org.jetbrains.plugins.vue
-
-[`org.jetbrains.plugins.vue`](%gh-ij-plugins%/vuejs/resources/META-INF/plugin.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vuejs.containerInfoProvider"/></include> | [`VueContainerInfoProvider`](%gh-ij-plugins%/vuejs/src/org/jetbrains/vuejs/model/source/VueContainerInfoProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vuejs.templateScopesProvider"/></include> | [`VueTemplateScopesProvider`](%gh-ij-plugins%/vuejs/src/org/jetbrains/vuejs/codeInsight/template/VueTemplateScopesProvider.kt) |
 
 ### tslint
 
@@ -275,6 +275,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.qodanaHighlightInfoComparator"/></include> | [`QodanaHighlightInfoComparator`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/QodanaHighlightInfoComparator.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.qodanaHighlightInfoTypeProvider"/></include> | [`QodanaHighlightInfoTypeProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/QodanaHighlightInfoTypeProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.qodanaHighlightingSupportInfoProvider"/></include> | [`QodanaHighlightingSupportInfoProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/QodanaHighlightingSupportInfoProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.qodanaInspectionRetrievalLauncher"/></include> | [`QodanaInspectionRetrievalLauncher`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/QodanaInspectionRetrievalLauncher.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.qodanaScriptFactory"/></include> ![Internal][internal] | [`QodanaScriptFactory`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/script/QodanaScriptFactory.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.qodanaYamlItemProvider"/></include> | [`QodanaYamlItemProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/settings/QodanaYamlItem.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.quickFixesStrategyProvider"/></include> | [`QuickFixesStrategyProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/sarif/QuickFixesStrategyProvider.kt) |

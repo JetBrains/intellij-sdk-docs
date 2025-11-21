@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 494355c3f56d3a412b08c284b82f85d68b461237 -->
+<!-- Revision: 0e17bcec13b0bb2a75e99d66fdb9b0b7d92fecf6 -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-151 Extension Points and 9 Listeners
+150 Extension Points and 9 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -92,20 +92,6 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.packageJson.configuration.handler"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `RiderPackageJsonConfiguratorHandler` |
 
-### intellij.rider.plugins.clion.radler.core.xml
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.radler.externalSymbolsProvider"/></include> | `RadExternalSymbolsProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.refactoringPageProvider"/></include> ![Non-Dynamic][non-dynamic] | `RefactoringPageProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.cidr.radler.headlessStartupExtension"/></include> ![Non-Dynamic][non-dynamic] | `RadHeadlessStartupExtension` |
-
-### intellij.rider.plugins.clion.radler.testing.xml
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.cidr.radler.testing.testFrameworkExtension"/></include> | `RadTestFrameworkExtension` |
-
 ### intellij.rider.plugins.cpp.debugger.xml
 
 | Extension Point | Implementation |
@@ -122,6 +108,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.backend.markup.adapterFactory"/></include> ![Non-Dynamic][non-dynamic] | `FrontendMarkupAdapterFactory` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.backend.typedHandler"/></include> | `FrontendTypedHandler` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.completion.completionSessionStrategy"/></include> | `CompletionSessionStrategy` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editor.action.execution.policy"/></include> | `RiderEditorActionPolicy` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.frontend.completion.helper"/></include> | `ICompletionHelper` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.altEnter"/></include> | `BulbMenuModelFactory` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.altEnter.popupModelDelegate"/></include> | `PopupModelDelegate` |
@@ -154,6 +141,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.workspaceCountableProjectsPolicy"/></include> | `CountableProjectsPolicy` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.selfProfilingPaths.customizer"/></include> | `DotnetSelfProfilerPathsCustomizer` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.solutionLoadNotification"/></include> ![Project-Level][project-level] | `SolutionLoadNotification` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.typing.policy"/></include> | `RiderTypingPolicy` |
 
 ### intellij.rider.rdclient.languages.xml
 
@@ -252,6 +240,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.solutionExplorerRootProvider"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `SolutionExplorerRootProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.solutionManagerExtensions"/></include> ![Non-Dynamic][non-dynamic] | `SolutionManagerExtensions` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.solutionViewPsiNodeNavigator"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `SolutionViewPsiNodeNavigator` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.rider.projectFileIndexAugmentor"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `ProjectFileIndexAugmentor` |
 
 ### RiderMultiPlatform.xml
 

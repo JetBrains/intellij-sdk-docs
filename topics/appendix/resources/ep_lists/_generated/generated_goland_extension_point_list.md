@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 494355c3f56d3a412b08c284b82f85d68b461237 -->
+<!-- Revision: 0e17bcec13b0bb2a75e99d66fdb9b0b7d92fecf6 -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-19 Extension Points and 6 Listeners
+20 Extension Points and 7 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -28,6 +28,7 @@ EP List Directories:
 | [`GoProjectLifecycleListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.project.GoProjectLifecycleListener)  | `GoProjectLifecycleListener` |
 | [`VgoUpdateProgressManager#UPDATE_PROGRESS_TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.vgo.VgoStatusTracker.VgoUpdateProgressManager.VgoModuleUpdateProgressListener)  ![Project-Level][project-level] | `VgoModuleUpdateProgressListener` |
 | [`VgoProjectSettings#VGO_INTEGRATION_TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.vgo.configuration.VgoProjectSettings.IntegrationListener)  | `IntegrationListener` |
+| [`GoLinterFmtOnSaveSettings#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.go.linter.fmt.GoLinterFmtOnSaveSettings.FmtOnSaveListener)  | `FmtOnSaveListener` |
 
 
 ### intellij.go.impl.xml
@@ -49,6 +50,12 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.sdk.targetSdkVersionProvider"/></include> | `GoTargetSdkVersionProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.sdkProvider"/></include> | `GoSdkProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.support"/></include> | `GoLangSupport` |
+
+### intellij.go.watchers.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.fileWatcherMigrationHandler"/></include> | `GoFileWatcherMigrationHandler` |
 
 ### openapi.xml
 

@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 494355c3f56d3a412b08c284b82f85d68b461237 -->
+<!-- Revision: 0e17bcec13b0bb2a75e99d66fdb9b0b7d92fecf6 -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-79 Extension Points and 23 Listeners
+79 Extension Points and 24 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -41,6 +41,7 @@ EP List Directories:
 | [`DataSourceManager#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.psi.DataSourceManager.Listener)  | `Listener` |
 | [`DbPsiFacade#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.psi.DbPsiFacade.Listener)  | `Listener` |
 | [`SqlRoutineIndex#topic`](https://jb.gg/ipe/listeners?topics=com.intellij.database.sql.backend.core.SqlRoutineIndex.SqlRoutineIndexListener)  | `SqlRoutineIndexListener` |
+| [`DbUltimateActionsListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.util.DbUltimateActionsListener)  | `DbUltimateActionsListener` |
 | [`DatabaseColorManager#COLOR_CHANGE_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.view.DatabaseColorManager.ColorChangeListener)  | `ColorChangeListener` |
 | [`DatabaseConfigEditor#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.view.ui.DatabaseConfigEditor.Listener)  | `Listener` |
 | [`DatabaseSettings#TOPIC`](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |

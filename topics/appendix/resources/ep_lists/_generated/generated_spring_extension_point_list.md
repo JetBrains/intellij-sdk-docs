@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 494355c3f56d3a412b08c284b82f85d68b461237 -->
+<!-- Revision: 0e17bcec13b0bb2a75e99d66fdb9b0b7d92fecf6 -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-62 Extension Points and 6 Listeners
+65 Extension Points and 6 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -106,6 +106,13 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.mvc.templateAvailabilityProvider"/></include> | `TemplateAvailabilityProvider` |
 
+### intellij.spring.boot.run.shared.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.run.configuration"/></include> | `SpringBootConfigurationExtenderProducer` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.run.mainClassInfoProvider"/></include> | `SpringBootMainClassInfoProvider` |
+
 ### intellij.spring.boot.run.xml
 
 | Extension Point | Implementation |
@@ -186,6 +193,7 @@ EP List Directories:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.mvc.apiversioning.support"/></include> | `SpringWebApiVersioningSupport` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.mvc.applicationPathProvider"/></include> | `SpringApplicationPathProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.mvc.completion.controllerParamTypeProvider"/></include> | `ControllerParameterProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.mvc.mergingMvcRequestMappingLineMarkerProvider"/></include> | `SpringMergingMvcRequestMappingLineMarkerProvider` |

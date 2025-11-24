@@ -1,22 +1,22 @@
 <!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Spring API
-<primary-label ref="IntelliJIDEA_Ultimate"/>
+<primary-label ref="IntelliJIDEA"/>
 
 <link-summary rel="excerpt"/>
 <p id="excerpt">
-Spring API allows third party plugins to re-use, integrate with, or extend existing Spring Framework support in IntelliJ IDEA Ultimate.
+Spring API allows third party plugins to re-use, integrate with, or extend existing Spring Framework support in IntelliJ IDEA.
 </p>
 
 Please see [Spring Framework Support](https://lp.jetbrains.com/intellij-idea-spring/) for a general feature overview.
 
 A popular plugin using Spring API is [hybris integration](https://plugins.jetbrains.com/plugin/7525-hybris-integration).
 
-To develop plugins, you will need to use _IntelliJ IDEA Ultimate Edition_.
+To develop plugins, you will need to use _IntelliJ IDEA_.
 
 ## Setting up Project
 
-Set up [Gradle](creating_plugin_project.md) to target [IntelliJ IDEA Ultimate](idea.md), then [add dependency](plugin_dependencies.md) to the bundled Spring plugin with ID `com.intellij.spring`.
+Set up [Gradle](creating_plugin_project.md) to target [IntelliJ IDEA](idea.md), then [add dependency](plugin_dependencies.md) to the bundled Spring plugin with ID `com.intellij.spring`.
 
 Please use only Spring-related functionality exposed in <path>spring-api.jar</path> (sources are provided in <path>\$IDEA_HOME\$/lib/src/src_spring-boot-openapi.zip</path>) in your plugin.
 Using any other "internal" (implementation) classes from the Spring plugin itself (<path>spring.jar</path>) is _not_ supported.

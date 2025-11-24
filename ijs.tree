@@ -340,11 +340,9 @@
     <toc-element topic="clion.md" toc-title="CLion"/>
     <toc-element topic="data_grip.md" toc-title="DataGrip"/>
     <toc-element topic="goland.md" toc-title="GoLand"/>
-    <toc-element topic="idea.md" toc-title="IntelliJ IDEA">
-      <toc-element topic="idea_ultimate.md">
-        <toc-element topic="spring_api.md"/>
-        <toc-element topic="tomcat_integration.md"/>
-      </toc-element>
+    <toc-element topic="idea.md" toc-title="IntelliJ IDEA"/>
+      <toc-element topic="spring_api.md"/>
+      <toc-element topic="tomcat_integration.md"/>
     </toc-element>
     <toc-element topic="phpstorm.md"
                  toc-title="PhpStorm">

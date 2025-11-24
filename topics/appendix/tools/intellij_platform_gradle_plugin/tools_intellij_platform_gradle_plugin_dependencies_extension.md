@@ -104,10 +104,10 @@ See [](#custom-target-platforms) for non-default targets.
 | `fleetBackend(version, configure = {})`  | [Fleet](https://www.jetbrains.com/fleet/) Backend                |
 | `gateway(version, configure = {})`       | [Gateway](https://www.jetbrains.com/remote-development/gateway/) |
 | `goland(version, configure = {})`        | [GoLand](goland.md)                                              |
-| `intellijIdea(version, configure = {})`  | [IntelliJ IDEA Ultimate](idea_ultimate.md)                       |
+| `intellijIdea(version, configure = {})`  | [IntelliJ IDEA](idea.md)                                         |
 | `mps(version, configure = {})`           | [MPS](https://www.jetbrains.com/mps/)                            |
 | `phpstorm(version, configure = {})`      | [PhpStorm](phpstorm.md)                                          |
-| `pycharm(version, configure = {})`       | [PyCharm Professional](pycharm.md)                               |
+| `pycharm(version, configure = {})`       | [PyCharm](pycharm.md)                                            |
 | `rider(version, configure = {})`         | [Rider](rider.md)                                                |
 | `rubymine(version, configure = {})`      | [RubyMine](rubymine.md)                                          |
 | `rustRover(version, configure = {})`     | [RustRover](https://www.jetbrains.com/rust/)                     |

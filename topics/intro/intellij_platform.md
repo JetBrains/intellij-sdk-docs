@@ -57,7 +57,7 @@ Typically, an IDE that is based on the IntelliJ Platform will include the `intel
 ## IDEs Based on the IntelliJ Platform
 
 The IntelliJ Platform underlies many JetBrains IDEs.
-[IntelliJ IDEA](idea_ultimate.md) is a superset of the IntelliJ Platform but includes closed-source plugins ([see this feature comparison](https://www.jetbrains.com/idea/features/editions_comparison_matrix.html)).
+[IntelliJ IDEA](idea.md) is a superset of the IntelliJ Platform but includes closed-source plugins ([see this feature comparison](https://www.jetbrains.com/idea/features/editions_comparison_matrix.html)).
 Similarly, other products such as [WebStorm](webstorm.md) and [DataGrip](data_grip.md) are based on the IntelliJ Platform, but with a different set of plugins included and excluding other default plugins.
 This allows plugins to target multiple products, as each product will include base functionality and a selection of plugins from the IntelliJ Platform repository.
 

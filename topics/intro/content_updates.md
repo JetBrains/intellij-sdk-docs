@@ -273,7 +273,7 @@ Poly Symbols
 by utilizing the [](symbols.md) API and supporting custom syntaxes.
 
 Open Source Plugins Extension Points
-: Added [](oss_plugins_extension_point_list.md) for plugins bundled with [](idea_ultimate.md) and other IDEs.
+: Added [](oss_plugins_extension_point_list.md) for plugins bundled with [](idea.md) and other IDEs.
 
 
 

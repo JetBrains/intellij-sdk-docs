@@ -2,7 +2,7 @@
 
 # Open Source Plugins Extension Point and Listener List
 
-<link-summary>Overview of Extension Points and Listeners for OSS plugins bundled with IntelliJ IDEA Ultimate and other IDEs.</link-summary>
+<link-summary>Overview of Extension Points and Listeners for OSS plugins bundled with IntelliJ IDEA and other IDEs.</link-summary>
 
 <tldr>
 
@@ -10,7 +10,7 @@
 
 </tldr>
 
-Overview of Extension Points and Listeners for open source plugins available in [](idea_ultimate.md) and other IDEs.
+Overview of Extension Points and Listeners for open source plugins available in [](idea.md) and other IDEs.
 
 > See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 

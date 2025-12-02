@@ -12,52 +12,25 @@
 
 </tldr>
 
-A Got It tooltip informs users about a new or changed feature and gives basic information about it.
+A Got It tooltip informs users about a new or changed behavior and gives basic information about it.
 
 ![](01_got_it_example.png){width=335}
 
-## When to use
+## Structure
 
-Point to small UI controls that can be missed among other information in the screen.
+TODO: Add image
 
-![](02_new_feature.png){width=509 style=block}
-*After method or parameter names are edited, the Inplace Refactoring icon appears.*
-
-![](03_new_plugin.png){width=375 style=block}
-*After the "Code With Me" plugin is installed, a drop-down menu appears on the toolbar.*
-
-Explain behavior that is not clear from the UI.
-
-![](04_explain_how_to_use.png){width=333 style=block}
-*When extracting a method, users can change only the method name in the blue box. The tooltip explains where to change the order of parameters in the parentheses and other properties of a method.*
-
-Suggest keyboard interactions.
-
-![](05_suggest_keyboard_actions.png){width=244 style=block}
-*The inlay with options after the blue box is a new control. The tooltip explains how to use it with the keyboard.*
-
-Explain how to revert to the old UI in case of significant UI changes.
-
-![](06_suggest_rollback.png){width=552 style=block}
-*The tooltip explains how to revert to a new experimental UI. Only users who switched to the new UI can see it.*
-
-Do **not** use the tooltip if there is no space to attach it. Instead, use a [banner](banner.md) in a dialog or a notification in the main window.
-
-![](07_got_it_banner.png){width=709}
-
-![](08_got_it_notification.png){width=397}
-
-## How to use
-
-![](09_required_and_optional_information.png){width=527}
+### Body text
 
 Always add the body text.
+
+### Title
 
 Add a header if the body text is 2 lines and more. A short header can quickly explain what this tooltip is about.
 
 ![](10_header.png){width=342}
 
-Implementation:
+<chapter title="Implementation" collapsible="true">
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -78,11 +51,19 @@ new GotItTooltip(TOOLTIP_ID, GET_IT_TEXT, parentDisposable)
 </tab>
 </tabs>
 
+</chapter>
+
+### Counter
+
+Shows progression
+
+### Shortcut
+
 Add a shortcut if the tooltip describes a single action that has a shortcut.
 
 ![](11_shortcut.png){width=248}
 
-Implementation:
+<chapter title="Implementation" collapsible="true">
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -112,11 +93,17 @@ new GotItTooltip(
 </tab>
 </tabs>
 
+</chapter>
+
 ### Link
 
-Add a local link if users might want to revert changes in a feature or configure it.
+Add a link if users might want to revert changes in a feature or configure it.
+
+<note>Only one link can be added</note>
 
 ![](12_link_action.png){width=389}
+
+<chapter title="Implementation" collapsible="true">
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -137,9 +124,13 @@ new GotItTooltip(TOOLTIP_ID, TOOLTIP_TEXT, parentDisposable)
 </tab>
 </tabs>
 
+</chapter>
+
 Add an external link if there is a help source that can further explain the functionality.
 
 ![](13_link_help.png){width=340}
+
+<chapter title="Implementation" collapsible="true">
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -160,7 +151,59 @@ new GotItTooltip(TOOLTIP_ID, GOT_IT_TEXT, parentDisposable)
 </tab>
 </tabs>
 
-Do **not** add more than one link.
+</chapter>
+
+## When to usee
+
+### New feature
+
+Something about presenting a new feature that is not very vital for users but still can change the way they do their routine tasks in an IDE
+
+Should be used rarely because it distracts users — define when
+
+### Changed behavior
+
+Suggest a new pattern to a user's task that improves their workflow
+
+### Ambiguos behavior
+
+Explain behavior that is not clear from the UI.
+
+![](04_explain_how_to_use.png){width=333 style=block}
+*When extracting a method, users can change only the method name in the blue box. The tooltip explains where to change the order of parameters in the parentheses and other properties of a method.*
+
+### Contextual
+
+## When not to use
+
+### Nothing to point to
+
+Use a [banner](banner.md) in a dialog or a [notification](balloon.md) in the main window.
+
+![](07_got_it_banner.png){width=709}
+
+![](08_got_it_notification.png){width=397}
+
+## How to use
+
+### Small UI controls
+
+Point to small UI controls that can be missed among other information in the screen.
+
+![](02_new_feature.png){width=509 style=block}
+*After method or parameter names are edited, the Inplace Refactoring icon appears.*
+
+![](03_new_plugin.png){width=375 style=block}
+*After the "Code With Me" plugin is installed, a drop-down menu appears on the toolbar.*
+
+### Shortcuts
+
+Suggest keyboard interactions.
+
+![](05_suggest_keyboard_actions.png){width=244 style=block}
+*The inlay with options after the blue box is a new control. The tooltip explains how to use it with the keyboard.*
+
+![](09_required_and_optional_information.png){width=527}
 
 ### Text length and formatting
 
@@ -183,7 +226,7 @@ Avoid using style formatting. It makes the tooltip harder to read.
     </tr>
 </table>
 
-### Location
+### Positioning
 
 Do **not** cover the information the user is currently working with.
 
@@ -233,7 +276,9 @@ Consider adding a timeout if:
 
 Note that adding a timeout automatically hides the Got It button.<br/><br/>
 
-**Implementation:** Default timeout duration is 5 seconds. A custom duration can be set:
+<chapter title="Implementation" collapsible="true">
+
+Default timeout duration is 5 seconds. A custom duration can be set:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -254,6 +299,8 @@ new GotItTooltip(TOOLTIP_ID, GOT_IT_TEXT, parentDisposable)
 </tab>
 </tabs>
 
+</chapter>
+
 ### Versioning
 
 If a tooltip appears automatically after the IDE starts, tie it to the IDE version. Due to the technical limitations, tooltip counters might be reset when the IDE version is updated, and the users might see the same tooltips again.
@@ -262,16 +309,23 @@ If a tooltip is triggered by an action or plugin installation, do not tie them t
 
 ## Built-in behavior
 
+### Frequency
+
 By default, a tooltip is shown only once per user.
+
+### Closable
 
 The tooltip disappears when:
 
 * <shortcut>Esc</shortcut> is pressed
 * User clicks any place outside the tooltip
+* On a timeout
 
-The default timeout duration is 5 seconds.
+### Multiple Got It tooltips
 
 If several tooltips appear on application start, they are shown one by one.
+
+### Text width
 
 Text width is 280px by default. The tooltip width adjusts automatically to make the right margin 16px.
 

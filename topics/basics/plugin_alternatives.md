@@ -1,3 +1,4 @@
+<img width="420" height="625" alt="screenshot" src="https://github.com/user-attachments/assets/94a2e2a5-4700-4d93-a068-798bd955f90c" />
 <!-- Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 # Alternatives to Implementing a Plugin

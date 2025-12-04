@@ -92,6 +92,23 @@ See [IJPL-207245](https://youtrack.jetbrains.com/issue/IJPL-207245) for details.
 The `org.intellij.intelliLang` plugin requires Gradle dependency on bundled module `intellij.platform.langInjection`
 : Change `bundledPlugin("org.intellij.intelliLang")` to `bundledModule("intellij.platform.langInjection")` in Gradle build script.
 
+### Cucumber for Java 2025.3
+
+`org.jetbrains.plugins.cucumber.java.steps.JavaStep1xDefinition` class removed
+: Use `org.jetbrains.plugins.cucumber.java.steps.JavaAnnotatedStepDefinition`.
+
+`org.jetbrains.plugins.cucumber.java.steps.JavaStep2xDefinition` class removed
+: Use `org.jetbrains.plugins.cucumber.java.steps.JavaAnnotatedStepDefinition`.
+
+`org.jetbrains.plugins.cucumber.java.steps.factory.JavaStepDefinitionFactory` abstract class removed
+: Create instances of `org.jetbrains.plugins.cucumber.java.steps.JavaAnnotatedStepDefinition` or `org.jetbrains.plugins.cucumber.java.steps.Java8StepDefinition` directly.
+
+`org.jetbrains.plugins.cucumber.java.steps.factory.JavaStep1xDefinitionFactory` class removed
+: Create instances of `org.jetbrains.plugins.cucumber.java.steps.JavaAnnotatedStepDefinition` or `org.jetbrains.plugins.cucumber.java.steps.Java8StepDefinition` directly.
+
+`org.jetbrains.plugins.cucumber.java.steps.factory.JavaStep2xDefinitionFactory` class removed
+: Create instances of `org.jetbrains.plugins.cucumber.java.steps.JavaAnnotatedStepDefinition` or `org.jetbrains.plugins.cucumber.java.steps.Java8StepDefinition` directly.
+
 ## 2025.2
 
 ### IntelliJ Platform 2025.2

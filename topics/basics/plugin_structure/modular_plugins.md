@@ -5,7 +5,7 @@
 
 <link-summary>Splitting plugin by modules to support remote development and other cases</link-summary>
 
-A regular plugin has a single [class loader](plugin_class_loaders.md) which is used to load all classes of the plugin.
+A classic plugin has a single [class loader](plugin_class_loaders.md) which is used to load all classes of the plugin.
 This approach works well for many plugins, but there are cases when more granularity is needed:
 * To properly work in remote development mode, different parts of the plugin should be loaded in the backend and the frontend processes; these parts have different dependencies.
 * If some classes of a plugin `A` depend on classes from a plugin `B`, they should be loaded by a separate class loader to allow unloading the plugin `B` without restarting the IDE.
@@ -72,10 +72,10 @@ A special `<dependencies>` tag can be used to specify dependencies on other modu
 ```
 
 `<module>` subtag specifies dependency on another module with the given name.
-`<plugin>` subtag specifies dependency on a regular (classic) plugin with the given ID.
+`<plugin>` subtag specifies dependency on a classic plugin with the given ID.
 Dependencies are used at runtime to determine whether a module can be loaded or not, and to configure the class loader of the module.
 
-Like with `<depends>` tags in regular plugins, it's necessary to specify [dependencies in the Gradle build script](plugin_dependencies.md#intellij-platform-gradle-plugin-2x) as well to have them in the compilation classpath.
+Like with `<depends>` tags in classic plugins, it's necessary to specify [dependencies in the Gradle build script](plugin_dependencies.md#intellij-platform-gradle-plugin-2x) as well to have them in the compilation classpath.
 
 If no dependencies are specified, the module will always be loaded when the plugin is loaded, regardless of the current IDE and the mode it runs in.
 
@@ -85,11 +85,11 @@ Each module has its own class loader.
 The class loader has class loaders of modules and plugins specified in `<dependencies>` tag of the module descriptor as its parents, so it delegates loading of classes to them if they aren't found in the module itself.
 Also, the core class loader of the IntelliJ Platform is automatically added as a parent class loader.
 
-If a regular (classic) plugin declares a dependency on a modular plugin using `<depends>` tag, class loaders of all plugin modules will be added as parent class loaders.
+If a classic plugin declares a dependency on a modular plugin using `<depends>` tag, class loaders of all plugin modules will be added as parent class loaders.
 
 ## Plugin Configuration File
 
-The plugin configuration file for modular plugins uses the same format as a [plugin configuration file for regular (classic) plugins](plugin_configuration_file.md).
+The plugin configuration file for modular plugins uses the same format as a [plugin configuration file for classic plugins](plugin_configuration_file.md).
 However, the following top-level tags related to registration of classes aren't allowed in it; they must be located in the module descriptor files where the referenced classes are defined:
 * `<extensions>`
 * `<extensionPoints>`

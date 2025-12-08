@@ -9,7 +9,7 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Generate
         run: "${GITHUB_WORKSPACE}/.github/scripts/libraries_releases.main.kts"
       - name: Commit changes

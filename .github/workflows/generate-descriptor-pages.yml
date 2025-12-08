@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Generate descriptor pages content
         run: "${GITHUB_WORKSPACE}/.github/scripts/generate_descriptor_pages.main.kts"
       - name: Check for changes

@@ -646,9 +646,9 @@ See the [Investigating IntelliJ Platform UI Freezes](https://blog.jetbrains.com/
 ## Kotlin Notebooks
 
 IntelliJ Platform sources include Kotlin Notebooks helping to understand the core concepts of the threading model:
-1. [Context Propagation](%gh-ic-master%/docs/notebooks/1-ContextPropagation.ipynb)
-2. [Cancellation Model](%gh-ic-master%/docs/notebooks/2-CancellationModel.ipynb)
-3. [Read-Write Lock](%gh-ic-master%/docs/notebooks/3-ReadWriteLock.ipynb)
+1. [Context Propagation](%gh-ic%/docs/notebooks/1-ContextPropagation.ipynb)
+2. [Cancellation Model](%gh-ic%/docs/notebooks/2-CancellationModel.ipynb)
+3. [Read-Write Lock](%gh-ic%/docs/notebooks/3-ReadWriteLock.ipynb)
 
 The notebooks contain concept explanations accompanied by code that can be run interactively in the IDE.
 Code can be changed for experimentation.

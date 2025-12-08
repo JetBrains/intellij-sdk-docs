@@ -8,16 +8,8 @@ on:
 
 jobs:
 
-  checkout:
-    name: Checkout
-    runs-on: ubuntu-latest
-    steps:
-      - name: Fetch Sources
-        uses: actions/checkout@v5
-
   samples:
     name: Code Samples / ${{ matrix.plugin }}
-    needs: checkout
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -43,6 +35,11 @@ jobs:
           - tool_window
           - tree_structure_provider
     steps:
+      - name: Maximize Build Space
+        uses: jlumbroso/free-disk-space@v1.3.1
+        with:
+          tool-cache: false
+          large-packages: false
       - name: Fetch Sources
         uses: actions/checkout@v5
       - name: Setup Java

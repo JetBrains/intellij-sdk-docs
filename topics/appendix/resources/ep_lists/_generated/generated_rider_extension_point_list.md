@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 0e17bcec13b0bb2a75e99d66fdb9b0b7d92fecf6 -->
+<!-- Revision: f50d587f27abb863c22c67677eb5f2d9aa3b93f7 -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-150 Extension Points and 9 Listeners
+151 Extension Points and 9 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -61,6 +61,12 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.blazorDialectSubstitutor"/></include> ![Non-Dynamic][non-dynamic] | `BlazorHtmlDialectSubstitutor` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.webTypingAssistClassifier"/></include> | `WebTypingAssistClassifier` |
+
+### intellij.rider.cpp.core.projectModel.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.cpp.core.projectModel.radProjectFallbackConfigDisabler"/></include> | `RadProjectFallbackConfigDisabler` |
 
 ### intellij.rider.cwm.core.xml
 

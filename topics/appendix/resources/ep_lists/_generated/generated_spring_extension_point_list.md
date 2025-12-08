@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 9b31ba2c05b4776617e871301e7ab6ad2c84544e -->
+<!-- Revision: f50d587f27abb863c22c67677eb5f2d9aa3b93f7 -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-60 Extension Points and 6 Listeners
+65 Extension Points and 6 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -26,7 +26,7 @@ EP List Directories:
 | [`SpringBeansViewSettings#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.spring.toolWindow.SpringBeansViewSettings.Listener)  | `Listener` |
 
 
-### com.intellij.spring
+### intellij.spring.core.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -57,6 +57,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.scriptBeanPsiClassDiscoverer"/></include> | `ScriptBeanPsiClassDiscoverer` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.settingsProvider"/></include> | `SpringSettingsProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.springComponentContainerProvider"/></include> | `SpringComponentContainerProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.springDataSourceInfoProvider"/></include> | `SpringDataSourceInfoProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.springTemplateProvider"/></include> | `SpringTemplateProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.testingAnnotationsProvider"/></include> | `SpringTestingAnnotationsProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.testingImplicitContextsProvider"/></include> | `SpringTestingImplicitContextsProvider` |
@@ -90,6 +91,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.configFileDetector"/></include> | `SpringBootConfigFileDetector` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.configUnresolvedClassReferenceFixesProvider"/></include> | `SpringBootConfigUnresolvedClassReferenceFixesProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.customHintReferenceProvider"/></include> | `SpringBootCustomHintReferenceProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.languageSpecificBridge"/></include> | `SpringBootLanguageSpecificBridge` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.modelConditionalContributor"/></include> | `ConditionalContributor` |
@@ -103,6 +105,13 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.mvc.templateAvailabilityProvider"/></include> | `TemplateAvailabilityProvider` |
+
+### intellij.spring.boot.run.shared.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.run.configuration"/></include> | `SpringBootConfigurationExtenderProducer` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.run.mainClassInfoProvider"/></include> | `SpringBootMainClassInfoProvider` |
 
 ### intellij.spring.boot.run.xml
 
@@ -184,6 +193,7 @@ EP List Directories:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.mvc.apiversioning.support"/></include> | `SpringWebApiVersioningSupport` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.mvc.applicationPathProvider"/></include> | `SpringApplicationPathProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.mvc.completion.controllerParamTypeProvider"/></include> | `ControllerParameterProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.mvc.mergingMvcRequestMappingLineMarkerProvider"/></include> | `SpringMergingMvcRequestMappingLineMarkerProvider` |

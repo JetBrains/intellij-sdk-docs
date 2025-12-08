@@ -28,9 +28,9 @@ To use the API, [add the dependency](plugin_dependencies.md) on the Terminal plu
 
 ## Getting a Terminal Instance
 
-The Terminal instance is represented by [`TerminalView`](%gh-ic-master%/plugins/terminal/frontend/src/com/intellij/terminal/frontend/view/TerminalView.kt).
+The Terminal instance is represented by [`TerminalView`](%gh-ic%/plugins/terminal/frontend/src/com/intellij/terminal/frontend/view/TerminalView.kt).
 Currently, the only place where the Reworked Terminal is available is the <control>Terminal</control> tool window
-whose tabs are managed by the [`TerminalToolWindowTabsManager`](%gh-ic-master%/plugins/terminal/frontend/src/com/intellij/terminal/frontend/toolwindow/TerminalToolWindowTabsManager.kt).
+whose tabs are managed by the [`TerminalToolWindowTabsManager`](%gh-ic%/plugins/terminal/frontend/src/com/intellij/terminal/frontend/toolwindow/TerminalToolWindowTabsManager.kt).
 
 * Use `TerminalToolWindowTabsManager.getTabs()` to access already opened terminal tabs.
 * Use `TerminalToolWindowTabsManager.createTabBuilder()` to create a new terminal tab.
@@ -42,8 +42,8 @@ The terminal has two output buffers:
 - regular — used for executing commands and displaying their output
 - alternative — usually used by "fullscreen" terminal applications like vim, nano, mc, and similar
 
-Both buffers are represented by [`TerminalOutputModel`](%gh-ic-master%/plugins/terminal/src/org/jetbrains/plugins/terminal/view/TerminalOutputModel.kt),
-stored in [`TerminalOutputModelsSet`](%gh-ic-master%/plugins/terminal/src/org/jetbrains/plugins/terminal/view/TerminalOutputModelsSet.kt),
+Both buffers are represented by [`TerminalOutputModel`](%gh-ic%/plugins/terminal/src/org/jetbrains/plugins/terminal/view/TerminalOutputModel.kt),
+stored in [`TerminalOutputModelsSet`](%gh-ic%/plugins/terminal/src/org/jetbrains/plugins/terminal/view/TerminalOutputModelsSet.kt),
 and can be accessed via `TerminalView.outputModels`.
 
 `TerminalOutputModel` is a read-only view of the terminal screen and the output history.
@@ -51,7 +51,7 @@ It can be thought of as a string that contains the currently displayed text and 
 that is removed ("trimmed") from time to time to avoid consuming too much memory.
 
 Because of trimming, this model uses absolute offsets to navigate in it.
-They are represented by [`TerminalOffset`](%gh-ic-master%/plugins/terminal/src/org/jetbrains/plugins/terminal/view/TerminalOutputModel.kt) and [`TerminalLineIndex`](%gh-ic-master%/plugins/terminal/src/org/jetbrains/plugins/terminal/view/TerminalOutputModel.kt).
+They are represented by [`TerminalOffset`](%gh-ic%/plugins/terminal/src/org/jetbrains/plugins/terminal/view/TerminalOutputModel.kt) and [`TerminalLineIndex`](%gh-ic%/plugins/terminal/src/org/jetbrains/plugins/terminal/view/TerminalOutputModel.kt).
 The currently available "window" has the length `TerminalOutputModel.textLength`
 and is located between `TerminalOutputModel.startOffset` and `TerminalOutputModel.endOffset`.
 
@@ -60,7 +60,7 @@ and is located between `TerminalOutputModel.startOffset` and `TerminalOutputMode
 Text can be sent to the shell using `TerminalView.sendText()`.
 It will asynchronously send the text to the input stream of the process as is.
 
-Some additional options are provided via [`TerminalSendTextBuilder`](%gh-ic-master%/plugins/terminal/src/org/jetbrains/plugins/terminal/view/TerminalSendTextBuilder.kt) created with `TerminalView.createSendTextBuilder()`:
+Some additional options are provided via [`TerminalSendTextBuilder`](%gh-ic%/plugins/terminal/src/org/jetbrains/plugins/terminal/view/TerminalSendTextBuilder.kt) created with `TerminalView.createSendTextBuilder()`:
 
 * `shouldExecute()` - inserts the line wrap after the provided text to execute the command.
   Prefer using this option rather than adding a line wrap manually to the text.
@@ -81,7 +81,7 @@ For example, it allows handling the <shortcut>Ctrl+R</shortcut> shortcut by the 
 
 To make an action available by shortcut in the terminal,
 its ID should be provided to the terminal by implementing
-[`TerminalAllowedActionsProvider`](%gh-ic-master%/plugins/terminal/frontend/src/com/intellij/terminal/frontend/view/TerminalAllowedActionsProvider.kt)
+[`TerminalAllowedActionsProvider`](%gh-ic%/plugins/terminal/frontend/src/com/intellij/terminal/frontend/view/TerminalAllowedActionsProvider.kt)
 and registering it in <include from="snippets.topic" element-id="ep"><var name="ep" value="org.jetbrains.plugins.terminal.allowedActionsProvider"/></include>.
 
 Consider the following example.
@@ -124,7 +124,7 @@ When the shell process is started, the Terminal plugin injects shell scripts int
 to get information about the environment and subscribe to events.
 For example, this allows tracking the positions of the prompt, command, and command output in the shell output.
 
-All APIs that rely on the shell integration are available in [`TerminalShellIntegration`](%gh-ic-master%/plugins/terminal/src/org/jetbrains/plugins/terminal/view/shellIntegration/TerminalShellIntegration.kt).
+All APIs that rely on the shell integration are available in [`TerminalShellIntegration`](%gh-ic%/plugins/terminal/src/org/jetbrains/plugins/terminal/view/shellIntegration/TerminalShellIntegration.kt).
 It can be accessed via `TerminalView.shellIntegrationDeferred`.
 It is not available until the shell process is started and the shell integration is initialized.
 To wait for the shell integration initialization, use `shellIntegrationDeferred.await()`.
@@ -138,12 +138,12 @@ To wait for the shell integration initialization, use `shellIntegrationDeferred.
 
 ### Exploring Terminal Output Structure
 
-Information about previously executed commands and the current one is stored in [`TerminalBlocksModel`](%gh-ic-master%/plugins/terminal/src/org/jetbrains/plugins/terminal/view/shellIntegration/TerminalBlocksModel.kt).
+Information about previously executed commands and the current one is stored in [`TerminalBlocksModel`](%gh-ic%/plugins/terminal/src/org/jetbrains/plugins/terminal/view/shellIntegration/TerminalBlocksModel.kt).
 This model is built of _Terminal Blocks_.
 
 Terminal block represents a range of text in the **regular** `TerminalOutputModel`
 and some additional information about the content and meaning of this text.
-Currently, there is a single type of the block: [`TerminalCommandBlock`](%gh-ic-master%/plugins/terminal/src/org/jetbrains/plugins/terminal/view/shellIntegration/TerminalBlocks.kt).
+Currently, there is a single type of the block: [`TerminalCommandBlock`](%gh-ic%/plugins/terminal/src/org/jetbrains/plugins/terminal/view/shellIntegration/TerminalBlocks.kt).
 
 `TerminalCommandBlock` represents the range of the shell output that can contain prompt, command and the command output.
 Also, it provides additional metadata about the command, such as working directory, executed command, and exit code.

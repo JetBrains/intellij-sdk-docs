@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 9b31ba2c05b4776617e871301e7ab6ad2c84544e -->
+<!-- Revision: f50d587f27abb863c22c67677eb5f2d9aa3b93f7 -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-155 Extension Points and 45 Listeners
+163 Extension Points and 47 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -23,6 +23,7 @@ EP List Directories:
 | Topic | Listener |
 |-------|----------|
 | [`CubeMXManager#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.clion.embedded.stm32cubemx.CubeMXManager.CubeStatusListener)  | `CubeStatusListener` |
+| [`CCppPropertiesServiceListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.clion.openfolder.workspace.CCppPropertiesServiceListener)  | `CCppPropertiesServiceListener` |
 | [`WestProjectListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.clion.west.WestProjectListener)  | `WestProjectListener` |
 | [`WestConfigListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.clion.west.config.WestConfigListener)  | `WestConfigListener` |
 | [`Listener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.clion.west.settings.WestSettings.Listener)  | `Listener` |
@@ -38,6 +39,7 @@ EP List Directories:
 | [`ClionProjectToolManagerListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.execution.external.build.ClionProjectToolManagerListener)  | `ClionProjectToolManagerListener` |
 | [`MakefileBuildTargetsManagerListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.makefile.execution.build.MakefileBuildTargetsManagerListener)  | `MakefileBuildTargetsManagerListener` |
 | [`MakefileSettingsListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.makefile.settings.MakefileSettingsListener)  | `MakefileSettingsListener` |
+| [`CLionToolchainDebuggerProvider#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.toolchains.CLionToolchainDebuggerListener)  ![Experimental][experimental] ![Internal][internal] | `CLionToolchainDebuggerListener` |
 | [`CPPToolchainsConfigurable#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.toolchains.CPPToolchainsConfigurable.Listener)  | `Listener` |
 | [`CPPToolchainsListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.toolchains.CPPToolchainsListener)  | `CPPToolchainsListener` |
 | [`CidrBuildListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.execution.build.CidrBuildListener)  ![Project-Level][project-level] | `CidrBuildListener` |
@@ -86,7 +88,19 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="clion.makefile.buildSystemDetector"/></include> | `MkBuildSystemDetector` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="clion.makefile.projectPreConfigurator"/></include> | `MkProjectPreConfigurator` |
 
-### com.intellij.clion.cmake
+### com.intellij.clion.testFramework.junit5
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.testFramework.languageEngine"/></include> | `LanguageEngine` |
+
+### com.intellij.clion.west
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.west.westEnvironmentContributor"/></include> | `WestEnvironmentContributor` |
+
+### com.intellij.cmake
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -102,16 +116,11 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.workspace.compilerEnvironmentContributor"/></include> | `CMakeCompilerEnvironmentContributor` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.workspace.enabledProfileInitializer"/></include> | `CMakeEnabledProfileInitializer` |
 
-### com.intellij.clion.west
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.west.westPathContributor"/></include> | `WestPathContributor` |
-
 ### intellij.c.core.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.actionConfigurationCustomizerRenameOptOut"/></include> ![Non-Dynamic][non-dynamic] | `OCActionConfigurationCustomizerRenameOptOut` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.annotatorHelper"/></include> ![Non-Dynamic][non-dynamic] | `OCAnnotatorHelper` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.autoImportHelper"/></include> ![Non-Dynamic][non-dynamic] | `OCAutoImportHelper` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.buildSymbolsVeto"/></include> ![Non-Dynamic][non-dynamic] | `OCBuildSymbolsVetoExtension` |
@@ -161,12 +170,6 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clangFormatProvider"/></include> ![Non-Dynamic][non-dynamic] | `ClangFormatChangeSettingsProvider` |
 
-### intellij.cidr.common.xml
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.actionConfigurationCustomizerRenameOptOut"/></include> ![Non-Dynamic][non-dynamic] | `OCActionConfigurationCustomizerRenameOptOut` |
-
 ### intellij.cidr.coverage.xml
 
 | Extension Point | Implementation |
@@ -184,6 +187,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.backendConsoleInjectionHelper"/></include> | `BackendConsoleInjectionHelper` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.contentProvider"/></include> | `CidrDebuggerContentProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.customDebuggerProvider"/></include> | `CidrCustomDebuggerProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.debugProcessConfigurator"/></include> | `CidrDebugProcessConfigurator` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.debugProcessSoftwareBreakpointInterceptor"/></include> | `CidrDebugProcessSoftwareBreakpointInterceptor` |
@@ -201,6 +205,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.modulesHandler"/></include> ![Experimental][experimental] | `CidrDebuggerModulesHandler` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.nativeSelfProfilerPathProvider"/></include> | `NativeSelfProfilerPathProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.stepFilters.provider"/></include> | `StepFiltersProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.stepFiltersCustomizer"/></include> | `CidrDebuggerStepFiltersCustomizer` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.suspendThreadSelector"/></include> | `CidrSuspendThreadSelector` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.valueRendererExtension"/></include> ![Non-Dynamic][non-dynamic] | `ValueRendererExtension` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.valueRendererFactory"/></include> ![Non-Dynamic][non-dynamic] | `ValueRendererFactory` |
@@ -257,6 +262,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.resolveConfigurationSelector"/></include> | `OCResolveConfigurationSelector` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.projectModel.deserializingVetoCondition"/></include> | `OCWorkspaceDeserializingVetoCondition` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.projectModel.msvcPchHelper"/></include> | `OCMsvcPchHelper` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.projectModel.resolveConfigurationChooser"/></include> ![Internal][internal] | `OCResolveConfigurationChooser` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.projectModel.runAfterOCWorkspaceIsInitialized"/></include> ![Non-Dynamic][non-dynamic] | `RunAfterOCWorkspaceIsInitialized` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.projectModel.runAfterOCWorkspaceIsLoaded"/></include> ![Non-Dynamic][non-dynamic] | `RunAfterOCWorkspaceIsLoaded` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.projectModel.supportedFileChecker"/></include> ![Non-Dynamic][non-dynamic] | `OCSupportedFileChecker` |
@@ -280,16 +286,12 @@ EP List Directories:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.knownModuleDetector"/></include> ![Internal][internal] | `CidrKnownModuleDetector` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.ownModuleDetector"/></include> | `CidrOwnModuleDetector` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.markRootActionAvailability"/></include> ![Non-Dynamic][non-dynamic] | `CidrMarkRootActionAvailability` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.is.known.checker"/></include> ![Non-Dynamic][non-dynamic] | `KnownProjectChecker` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.moduleNameProvider"/></include> ![Non-Dynamic][non-dynamic] | `CidrWorkspaceModuleNameProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.moduleTypeProvider"/></include> | `CidrModuleTypeProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.notifications.editorNotificationWarningProvider"/></include> | `EditorNotificationWarningProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.popup.projectFixesProvider"/></include> | `ProjectFixesProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.rootsBuilderProvider"/></include> ![Non-Dynamic][non-dynamic] | `Provider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.widget.widgetStatusProvider"/></include> | `WidgetStatusProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.workspaceProvider"/></include> ![Non-Dynamic][non-dynamic] | `CidrWorkspaceProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.cidr.fus.projectModelTypeProvider"/></include> | `CidrProjectModelTypeProvider` |
 
@@ -308,6 +310,28 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="training.clion.lessons"/></include> | `CLionExternalLessons` |
+
+### intellij.clion.projectStatus.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.notifications.editorNotificationWarningProvider"/></include> | `EditorNotificationWarningProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.popup.projectFixesProvider"/></include> | `ProjectFixesProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.project.widget.widgetStatusProvider"/></include> | `WidgetStatusProvider` |
+
+### intellij.clion.radler.core.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.radler.externalSymbolsProvider"/></include> | `RadExternalSymbolsProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.radler.core.inspections.headlessStartupExtension"/></include> ![Non-Dynamic][non-dynamic] | `RadHeadlessStartupExtension` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.refactoringPageProvider"/></include> ![Non-Dynamic][non-dynamic] | `RefactoringPageProvider` |
+
+### intellij.clion.radler.testing.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.radler.testing.testFrameworkExtension"/></include> | `RadTestFrameworkExtension` |
 
 ### intellij.clion.runFile.xml
 
@@ -335,6 +359,12 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.bundledDocumentationProvider"/></include> | `CMakeBundledDocumentationProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.completion.environmentProvider"/></include> | `CMakeEnvironmentVariableProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.fileLocationProvider"/></include> | `CMakeFileLocationProvider` |
+
+### intellij.cmake.python.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.python.configurableCustomizer"/></include> ![Internal][internal] | `CMakePythonConfigurableCustomizer` |
 
 ### intellij.rml.dfa.devtools.xml
 

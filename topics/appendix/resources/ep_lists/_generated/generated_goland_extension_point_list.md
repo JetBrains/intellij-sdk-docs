@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 9b31ba2c05b4776617e871301e7ab6ad2c84544e -->
+<!-- Revision: f50d587f27abb863c22c67677eb5f2d9aa3b93f7 -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-23 Extension Points and 6 Listeners
+20 Extension Points and 7 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -28,9 +28,10 @@ EP List Directories:
 | [`GoProjectLifecycleListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.project.GoProjectLifecycleListener)  | `GoProjectLifecycleListener` |
 | [`VgoUpdateProgressManager#UPDATE_PROGRESS_TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.vgo.VgoStatusTracker.VgoUpdateProgressManager.VgoModuleUpdateProgressListener)  ![Project-Level][project-level] | `VgoModuleUpdateProgressListener` |
 | [`VgoProjectSettings#VGO_INTEGRATION_TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.vgo.configuration.VgoProjectSettings.IntegrationListener)  | `IntegrationListener` |
+| [`GoLinterFmtOnSaveSettings#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.go.linter.fmt.GoLinterFmtOnSaveSettings.FmtOnSaveListener)  | `FmtOnSaveListener` |
 
 
-### goland.xml
+### intellij.go.impl.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -50,6 +51,12 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.sdkProvider"/></include> | `GoSdkProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.support"/></include> | `GoLangSupport` |
 
+### intellij.go.watchers.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.fileWatcherMigrationHandler"/></include> | `GoFileWatcherMigrationHandler` |
+
 ### openapi.xml
 
 | Extension Point | Implementation |
@@ -58,15 +65,6 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.importPathsProvider"/></include> | `GoImportPathsProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.imports.weigher"/></include> | `GoImportsWeigher` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.rootsProvider"/></include> | `GoRootsProvider` |
-
-### org.jetbrains.plugins.go.ide
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.templateOptionProvider"/></include> | `GoWelcomeScreenFileTemplateOptionProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.welcomeScreenFeatureProvider"/></include> | `GoWelcomeScreenFeatureProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.welcomeScreenFileIconProvider"/></include> | `GoWelcomeScreenFileIconProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.welcomeScreenRightTabBannerProvider"/></include> | `GoWelcomeRightTabBannerProvider` |
 
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square

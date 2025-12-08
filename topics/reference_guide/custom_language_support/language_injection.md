@@ -68,7 +68,7 @@ In the IntelliLang settings, it is defined as one possible injection in Java cod
 ![Language Injection Settings](language_injection_settings.png){border-effect="line"}
 
 Double-clicking on this entry shows the exact context where a RegExp can be injected, and `String.matches()` is one of several possibilities.
-On the plugin side, these entries are defined in the file [`javaInjections.xml`](%gh-ic%/plugins/IntelliLang/java-support/resources/resources/javaInjections.xml):
+On the plugin side, these entries are defined in the file [`javaInjections.xml`](%gh-ic%/java/langInjection/resources/resources/javaInjections.xml):
 
 ```xml
 <injection language="RegExp" injector-id="java">
@@ -83,14 +83,15 @@ On the plugin side, these entries are defined in the file [`javaInjections.xml`]
 </injection>
 ```
 
-The XML file with the injection configurations is loaded through the <include from="snippets.topic" element-id="ep"><var name="ep" value="org.intellij.intelliLang.injectionConfig"/></include> in the file
-[`intellilang-java-support.xml`](%gh-ic%/plugins/IntelliLang/resources/META-INF/intellilang-java-support.xml).
+The XML file with the injection configurations is loaded through the <include from="snippets.topic" element-id="ep"><var name="ep" value="org.intellij.intelliLang.injectionConfig"/></include> in file
+[`intellij.java.langInjection.xml`](%gh-ic%/java/langInjection/resources/intellij.java.langInjection.xml).
 
 ```xml
 <extensions defaultExtensionNs="org.intellij.intelliLang">
   <languageSupport
       implementation="org.intellij.plugins.intelliLang.inject.java.JavaLanguageInjectionSupport"/>
   <injectionConfig config="resources/javaInjections.xml"/>
+  ...
 </extensions>
 ```
 
@@ -108,7 +109,7 @@ Implement the <include from="snippets.topic" element-id="ep"><var name="ep" valu
 Please refer to the API docs of
 [`LanguageInjectionSupport`](%gh-ic%/plugins/IntelliLang/src/org/intellij/plugins/intelliLang/inject/LanguageInjectionSupport.java)
 for information on methods to override and use
-[`JavaLanguageInjectionSupport`](%gh-ic%/plugins/IntelliLang/java-support/src/org/intellij/plugins/intelliLang/inject/java/JavaLanguageInjectionSupport.java)
+[`JavaLanguageInjectionSupport`](%gh-ic%/java/langInjection/src/org/intellij/plugins/intelliLang/inject/java/JavaLanguageInjectionSupport.java)
 as an example implementation.
 
 #### Create Injection Configuration
@@ -117,13 +118,13 @@ Create an XML file with the injection configuration.
 You can export existing injections from the IntelliLang settings to create a template and then edit it.
 [](element_patterns.md) are used to specify the context where injections will take place.
 Custom language authors can use the specific patterns returned from their implementation of
-[`JavaLanguageInjectionSupport.getPatternClasses`](%gh-ic%/plugins/IntelliLang/java-support/src/org/intellij/plugins/intelliLang/inject/java/JavaLanguageInjectionSupport.java).
+[`JavaLanguageInjectionSupport.getPatternClasses`](%gh-ic%/java/langInjection/src/org/intellij/plugins/intelliLang/inject/java/JavaLanguageInjectionSupport.java).
 
 The `injection` tag requires the attributes `language` and `injector-id`.
 The first one specifies the `language-id`
 (see [`Language.getID()`](%gh-ic%/platform/core-api/src/com/intellij/lang/Language.java)) of the language that is injected.
 The second one is the id of the host language
-(see [`JavaLanguageInjectionSupport.getId()`](%gh-ic%/plugins/IntelliLang/java-support/src/org/intellij/plugins/intelliLang/inject/java/JavaLanguageInjectionSupport.java)).
+(see [`JavaLanguageInjectionSupport.getId()`](%gh-ic%/java/langInjection/src/org/intellij/plugins/intelliLang/inject/java/JavaLanguageInjectionSupport.java)).
 For instance, injecting SQLite into Python code is specified by the following opening tag:
 
 ```xml
@@ -134,13 +135,13 @@ For instance, injecting SQLite into Python code is specified by the following op
 
 Inside an injection, the following tags can be used:
 
-| XML Tag                   | Description                                                                                                                                                                                                                                                                           |
-|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `<display-name>`          | A short name for the injection.                                                                                                                                                                                                                                                       |
-| `<place>`                 | The element pattern that defines where an injection will take place. The content is wrapped in `![CDATA[...]]`.                                                                                                                                                                       |
-| `<prefix>` and `<suffix>` | Static content that is wrapped around the injected code, e.g., to make it a valid expression. For example, to a CSS color specification inside a string, it can be wrapped with the prefix `div { color:` and the suffix `;}` to make it a valid CSS expression.                      |
-| `<value-pattern>`         | A regex for the content that specifies when this injection should be applied. Regex groups can specify the text range of the injection (e.g. `^javascript:(.+)`, see [`xmlInjections-html.xml`](%gh-ic%/plugins/IntelliLang/xml-support/resources/resources/xmlInjections-html.xml)). |
-| `<ignore-pattern>`        | A regex for the content that specifies when this injection should not be applied.                                                                                                                                                                                                     |
+| XML Tag                   | Description                                                                                                                                                                                                                                                             |
+|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `<display-name>`          | A short name for the injection.                                                                                                                                                                                                                                         |
+| `<place>`                 | The element pattern that defines where an injection will take place. The content is wrapped in `![CDATA[...]]`.                                                                                                                                                         |
+| `<prefix>` and `<suffix>` | Static content that is wrapped around the injected code, e.g., to make it a valid expression. For example, to a CSS color specification inside a string, it can be wrapped with the prefix `div { color:` and the suffix `;}` to make it a valid CSS expression.        |
+| `<value-pattern>`         | A regex for the content that specifies when this injection should be applied. Regex groups can specify the text range of the injection (e.g. `^javascript:(.+)`, see [`xmlInjections-html.xml`](%gh-ic%/xml/langInjection/resources/resources/xmlInjections-html.xml)). |
+| `<ignore-pattern>`        | A regex for the content that specifies when this injection should not be applied.                                                                                                                                                                                       |
 
 #### Create an XML File to Load the Configuration
 

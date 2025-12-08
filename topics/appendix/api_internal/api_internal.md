@@ -35,7 +35,7 @@ Each entry is mapped to its corresponding _Replacement_, pointing to the recomme
 >
 > Check the corresponding code documentation when encountering any API not listed on this page.
 > In some cases, such documentation might not be available inside the IDE for the current target platform version.
-> Use <control>Go to file</control> to browse the latest version in the [intellij-community](%gh-ic-master%/) GitHub repository instead.
+> Use <control>Go to file</control> to browse the latest version in the [intellij-community](%gh-ic%/) GitHub repository instead.
 >
 > Use the feedback form at the bottom of this page if you encounter missing or unclear information.
 >

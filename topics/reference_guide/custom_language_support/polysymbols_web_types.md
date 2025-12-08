@@ -229,7 +229,7 @@ Highlights: `js/ng-custom-events` contribute symbols with patterns for any custo
 ### Vue
 
 Vue plugin Web Types are available
-[here](%gh-ij-plugins%/vuejs/resources/web-types)
+[here](%gh-ij-plugins%/vuejs/vuejs-backend/resources/web-types)
 for reference.
 Any Web Types file targeting only Vue support should have `framework` property set to `vue`.
 Highlights:

@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 9b31ba2c05b4776617e871301e7ab6ad2c84544e -->
+<!-- Revision: f50d587f27abb863c22c67677eb5f2d9aa3b93f7 -->
 
 <!--
 EP List Directories:
@@ -14,7 +14,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 <snippet id="content">
 
-74 Extension Points and 10 Listeners
+78 Extension Points and 10 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -32,6 +32,15 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.angular2.importsHandler"/></include> | [`Angular2ImportsHandler`](%gh-ij-plugins%/Angular/src/org/angular2/codeInsight/imports/Angular2ImportsHandler.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.angular2.jsHandlersFactory"/></include> | [`Angular2JSHandlersFactory`](%gh-ij-plugins%/Angular/src/org/angular2/codeInsight/Angular2HandlersFactory.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.angular2.templateScopesProvider"/></include> | [`Angular2TemplateScopesProvider`](%gh-ij-plugins%/Angular/src/org/angular2/codeInsight/template/Angular2TemplateScopesProvider.kt) |
+
+### com.intellij.cpp-diagnostics
+
+[`com.intellij.cpp-diagnostics`](%gh-ij-plugins%/cpp-diagnostics/resources/META-INF/plugin.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.diagnostics.toolchainDescriptionProvider"/></include> | [`ToolchainDescriptionProvider`](%gh-ij-plugins%/cpp-diagnostics/src/com/jetbrains/cidr/cpp/diagnostics/toolchain/ToolchainDescriptionProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.diagnostics.workspaceDescriptionProvider"/></include> | [`WorkspaceDescriptionProvider`](%gh-ij-plugins%/cpp-diagnostics/src/com/jetbrains/cidr/cpp/diagnostics/workspace/WorkspaceDescriptionProvider.kt) |
 
 ### com.thoughtworks.gauge
 
@@ -79,22 +88,23 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.prettierjs.codeStyleInstaller"/></include> | [`PrettierCodeStyleInstaller`](%gh-ij-plugins%/prettierJS/src/com/intellij/prettierjs/codeStyle/PrettierCodeStyleInstaller.java) |
 
+### intellij.vuejs.backend.xml
+
+[`intellij.vuejs.backend.xml`](%gh-ij-plugins%/vuejs/vuejs-backend/resources/intellij.vuejs.backend.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vuejs.containerInfoProvider"/></include> | [`VueContainerInfoProvider`](%gh-ij-plugins%/vuejs/vuejs-backend/src/org/jetbrains/vuejs/model/source/VueContainerInfoProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vuejs.templateScopesProvider"/></include> | [`VueTemplateScopesProvider`](%gh-ij-plugins%/vuejs/vuejs-backend/src/org/jetbrains/vuejs/codeInsight/template/VueTemplateScopesProvider.kt) |
+
 ### name.kropp.intellij.makefile
 
 [`name.kropp.intellij.makefile`](%gh-ij-plugins%/makefile/resources/META-INF/plugin.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.makefile.runConfigurationCustomizer"/></include> | [`MakefileRunConfigurationCustomizer`](%gh-ij-plugins%/makefile/src/com/jetbrains/lang/makefile/MakefileRunConfigurationCustomizer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.makefile.toolWindowStripeController"/></include> | [`MakefileToolWindowStripeController`](%gh-ij-plugins%/makefile/src/com/jetbrains/lang/makefile/toolWindow/MakefileToolWindowStripeController.kt) |
-
-### org.jetbrains.plugins.vue
-
-[`org.jetbrains.plugins.vue`](%gh-ij-plugins%/vuejs/resources/META-INF/plugin.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vuejs.containerInfoProvider"/></include> | [`VueContainerInfoProvider`](%gh-ij-plugins%/vuejs/src/org/jetbrains/vuejs/model/source/VueContainerInfoProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vuejs.templateScopesProvider"/></include> | [`VueTemplateScopesProvider`](%gh-ij-plugins%/vuejs/src/org/jetbrains/vuejs/codeInsight/template/VueTemplateScopesProvider.kt) |
 
 ### tslint
 
@@ -139,16 +149,16 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.dtsUtil"/></include> | [`DtsCLionUtil`](%gh-ij-plugins%/dts/src/com/intellij/dts/clion/DtsCLionUtil.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.dtsUtil"/></include> | [`DtsCMakeUtil`](%gh-ij-plugins%/dts/src/com/intellij/dts/cmake/DtsCMakeUtil.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.dts.settings.disabler"/></include> | [`DtsSettingsDisabler`](%gh-ij-plugins%/dts/src/com/intellij/dts/settings/DtsSettingsDisabler.kt) |
 
-### dts-withCLion.xml
+### intellij.dts.cmake.xml
 
-[`dts-withCLion.xml`](%gh-ij-plugins%/dts/resources/META-INF/dts-withCLion.xml)
+[`intellij.dts.cmake.xml`](%gh-ij-plugins%/dts/cmake/resources/intellij.dts.cmake.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.dts.cmake.configurationDataProvider"/></include> | [`DtsCMakeModelConfigurationDataProvider`](%gh-ij-plugins%/dts/src/com/intellij/dts/clion/impl/DtsCMakeModelConfigurationDataProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.dts.cmake.configurationDataProvider"/></include> | [`DtsCMakeModelConfigurationDataProvider`](%gh-ij-plugins%/dts/cmake/src/com/intellij/dts/cmake/impl/DtsCMakeModelConfigurationDataProvider.kt) |
 
 
 ## Flex Plugin
@@ -265,6 +275,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.qodanaHighlightInfoComparator"/></include> | [`QodanaHighlightInfoComparator`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/QodanaHighlightInfoComparator.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.qodanaHighlightInfoTypeProvider"/></include> | [`QodanaHighlightInfoTypeProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/QodanaHighlightInfoTypeProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.qodanaHighlightingSupportInfoProvider"/></include> | [`QodanaHighlightingSupportInfoProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/QodanaHighlightingSupportInfoProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.qodanaInspectionRetrievalLauncher"/></include> | [`QodanaInspectionRetrievalLauncher`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/QodanaInspectionRetrievalLauncher.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.qodanaScriptFactory"/></include> ![Internal][internal] | [`QodanaScriptFactory`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/script/QodanaScriptFactory.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.qodanaYamlItemProvider"/></include> | [`QodanaYamlItemProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/settings/QodanaYamlItem.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.quickFixesStrategyProvider"/></include> | [`QuickFixesStrategyProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/sarif/QuickFixesStrategyProvider.kt) |

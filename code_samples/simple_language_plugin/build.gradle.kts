@@ -34,6 +34,7 @@ dependencies {
     intellijIdea("2025.1.5.1")
     bundledPlugin("com.intellij.java")
 
+    testFramework(TestFrameworkType.Platform)
     testFramework(TestFrameworkType.Plugin.Java)
   }
 

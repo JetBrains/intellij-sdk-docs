@@ -6,6 +6,7 @@
 
 | Release Name | Channel | Version | IntelliJ IDEA Version | Release Date |
 |--------------|---------|---------|-----------------------|--------------|
+| <p><b>Otter 3 Feature Drop </b></p><p> 2025.2.3 RC 1</p> | ![RC][rc] | **2025.2.3.6**<p>AI&#8209;252.28238.7.2523.14608894</p> | **2025.2.5**<p>252.28238.7</p> | Dec&nbsp;18,&nbsp;2025 |
 | <p><b>Otter 3 Feature Drop </b></p><p> 2025.2.3 Canary 5</p> | ![Canary][canary] | **2025.2.3.5**<p>AI&#8209;252.28238.7.2523.14575018</p> | **2025.2.5**<p>252.28238.7</p> | Dec&nbsp;11,&nbsp;2025 |
 | <p><b>Otter 3 Feature Drop </b></p><p> 2025.2.3 Canary 4</p> | ![Canary][canary] | **2025.2.3.4**<p>AI&#8209;252.28238.7.2523.14542061</p> | **2025.2.5**<p>252.28238.7</p> | Dec&nbsp;8,&nbsp;2025 |
 | <p><b>Otter 3 Feature Drop </b></p><p> 2025.2.3 Canary 3</p> | ![Canary][canary] | **2025.2.3.3**<p>AI&#8209;252.28238.7.2523.14499447</p> | **2025.2.5**<p>252.28238.7</p> | Nov&nbsp;26,&nbsp;2025 |

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Incompatible Changes in IntelliJ Platform and Plugins API 2025.*
 
@@ -109,12 +109,17 @@ The `org.intellij.intelliLang` plugin requires Gradle dependency on bundled modu
 `org.jetbrains.plugins.cucumber.java.steps.factory.JavaStep2xDefinitionFactory` class removed
 : Create instances of `org.jetbrains.plugins.cucumber.java.steps.JavaAnnotatedStepDefinition` or `org.jetbrains.plugins.cucumber.java.steps.Java8StepDefinition` directly.
 
-### Json KMP-compatible parser 2025.3
+### JSON KMP-compatible parser 2025.3
 
-`com.intellij.json.JsonParserDefinition.createParser(Project project)` method removed
+`com.intellij.json.JsonParserDefinition.createParser(Project)` method removed
 : Instantiate `com.intellij.json.JsonParser` directly.
 
-After porting JSON parsers to syntax-api, `com.intellij.json.JsonParserDefinition.createParser(Project project)` that creates `com.intellij.lang.PsiParser` became obsolete. `com.intellij.json.JsonFileElementTypesKt#JSON_FILE` has been refactored to utilise syntax-api to parse JSON files, but you can still instantiate legacy `com.intellij.json.JsonParser`. We can't remove `createParser` method from the `com.intellij.lang.ParserDefinition` interface, so to prevent accidental usage of this method, it was refactored to throw `UnsupportedOperationException`. These changes shouldn't affect plugins that implement `ParserDefinition` on their own or that call JsonParser directly in any other way. However, if the plugin uses `com.intellij.psi.tree.IFileElementType(JsonLanguage.INSTANCE)` for non-JSON files, it can cause an exception to be thrown. To avoid this, instantiate `JsonParser` directly or consider using `com.intellij.platform.syntax.psi.SyntaxGrammarKitFileElementType(JsonLanguage.INSTANCE)` instead.
+After porting JSON parsers to syntax-api, `com.intellij.json.JsonParserDefinition.createParser(Project)` that creates `com.intellij.lang.PsiParser` became obsolete.
+`com.intellij.json.JsonFileElementTypesKt#JSON_FILE` has been refactored to use syntax-api to parse JSON files, but you it is still possible to instantiate the legacy `com.intellij.json.JsonParser`.
+The `createParser` method can't be removed from the `com.intellij.lang.ParserDefinition` interface, so to prevent accidental usage of this method, it throws `UnsupportedOperationException` now.
+These changes shouldn't affect plugins that implement `ParserDefinition` on their own or that call `JsonParser` directly in any other way.
+However, if the plugin uses `com.intellij.psi.tree.IFileElementType(JsonLanguage.INSTANCE)` for non-JSON files, it can cause an exception to be thrown.
+To avoid this, instantiate `JsonParser` directly or consider using `com.intellij.platform.syntax.psi.SyntaxGrammarKitFileElementType(JsonLanguage.INSTANCE)` instead.
 
 ## 2025.2
 

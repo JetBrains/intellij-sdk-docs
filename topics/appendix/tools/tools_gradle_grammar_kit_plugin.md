@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Gradle Grammar-Kit Plugin
 
@@ -46,7 +46,8 @@ plugins {
 </tab>
 </tabs>
 
-> This project requires Gradle 7.4 or newer, however, it is recommended to use the latest Gradle available.
+> This project requires Gradle 7.4 or newer.
+> However, it is recommended to use the latest Gradle available.
 > See [Gradle Installation](https://gradle.org/install/) guide.
 >
 {title="Minimum Gradle Version"}
@@ -170,7 +171,7 @@ Type
 {#tasks-generatelexer-skeleton}
 
 An optional path to the skeleton file to use for the generated lexer.
-The path will be provided as `--skel` option.
+The path will be provided as the `--skel` option.
 By default, it uses the <path>[idea-flex.skeleton](https://raw.github.com/JetBrains/intellij-community/master/tools/lexer/idea-flex.skeleton)</path> skeleton file.
 
 {type="narrow"}

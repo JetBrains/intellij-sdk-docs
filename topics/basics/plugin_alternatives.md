@@ -11,7 +11,7 @@ Before you start the IntelliJ Platform plugin development, define your requireme
 Consider implementing an actual plugin only when the described solutions are insufficient in your case and there is a significant number of developers who can benefit from it.
 
 ## Kotlin Notebook Integration
-<primary-label ref="2025.2"/>
+<primary-label ref="2025.2"/> 
 
 [](tools_kotlin_notebook.md) offers an interactive environment for testing IntelliJ Platform APIs directly within your IDE. By declaring `%use intellij-platform` in a notebook cell and switching to "Run in IDE Process" mode, you can run IntelliJ Platform code within the active IDE runtime without needing to create a full plugin project.
 

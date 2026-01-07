@@ -35,7 +35,7 @@ if (credentials != null) {
 String password = passwordSafe.getPassword(attributes);
 ```
 
-> Since 2025.3, `PasswordSafe.get()` is blocking and shouldn't be called on EDT.
+> `PasswordSafe.get()` is blocking and shouldn't be called on EDT.
 >
 {style="warning"}
 
@@ -59,7 +59,7 @@ PasswordSafe.getInstance().set(attributes, credentials);
 
 To remove stored credentials, pass `null` for the `credentials` parameter.
 
-> Since 2025.3, `PasswordSafe.set()` is blocking and shouldn't be called on EDT.
+> `PasswordSafe.set()` is blocking and shouldn't be called on EDT.
 >
 {style="warning"}
 

@@ -10,6 +10,17 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 <include from="snippets.topic" element-id="subscribeNews"/>
 
+## 2026
+
+### January
+{#january-26}
+
+Coroutines on EDT and Locks
+:
+Removed most of the content from the [](coroutine_edt_and_locks.md) page.
+The approach described there is obsolete as it was solved internally in the IntelliJ Platform.
+The page and the error pattern are preserved to confirm that no fixes are needed in plugins.
+
 ## 2025
 
 ### November

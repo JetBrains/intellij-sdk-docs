@@ -522,6 +522,25 @@ To correctly run your tests or a specific IDE:
   </tab>
   </tabs>
 
+### Starting an external process `/usr/sbin/sysctl -n hw.cachelinesize` during configuration time is unsupported (macOS)
+{id="external-process-unsupported-macos"}
+
+When using a custom plugin repository on macOS, Gradle may fail with the following exception if the [Configuration Cache](https://docs.gradle.org/current/userguide/configuration_cache.html) is enabled:
+
+```text
+org.gradle.api.InvalidUserCodeException: Starting an external process '/usr/sbin/sysctl -n hw.cachelinesize' during configuration time is unsupported.
+	at org.gradle.internal.classpath.Instrumented.start(Instrumented.java:314)
+	at io.smallrye.common.cpu.CacheInfo.parseProcessOutput(CacheInfo.java:213)
+```
+
+This is caused by the `undertow` library used for custom repository creation, which tries to determine the CPU cache level on macOS by executing an external process.
+
+To resolve this issue, set the `smallrye.cpu.determine-cache-level` system property to `false` in your <path>gradle.properties</path> file:
+
+```properties
+systemProp.smallrye.cpu.determine-cache-level=false
+```
+
 ### plugin.xml: `Cannot resolve plugin com.intellij.modules.vcs`
 
 Upgrade to the latest version of the IntelliJ Platform Gradle Plugin.

@@ -173,6 +173,9 @@ The final plugin archive is eventually resolved using the same credentials used 
 | `marketplace()`                     | Adds a repository for accessing plugins hosted on [JetBrains Marketplace](https://plugins.jetbrains.com).                                                                |
 | `customPluginRepository(url, type)` | Creates a custom plugin repository from which plugins can be resolved. Supports optional credentials (e.g., HttpHeaderCredentials). See [](custom_plugin_repository.md). |
 
+> If using macOS and [Configuration Cache](https://docs.gradle.org/current/userguide/configuration_cache.html) is enabled, see [this FAQ entry](tools_intellij_platform_gradle_plugin_faq.md#external-process-unsupported-macos).
+{style="note"}
+
 
 ## Additional Repositories
 

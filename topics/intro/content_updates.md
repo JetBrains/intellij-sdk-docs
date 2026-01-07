@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Content Updates
 
@@ -10,9 +10,9 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 <include from="snippets.topic" element-id="subscribeNews"/>
 
-## 2025
+## 2026
 
-### November
+### January
 {#january-26}
 
 Coroutines on EDT and Locks
@@ -20,6 +20,8 @@ Coroutines on EDT and Locks
 Removed most of the content from the [](coroutine_edt_and_locks.md) page.
 The approach described there is obsolete as it was solved internally in the IntelliJ Platform.
 The page and the error pattern are preserved to confirm that no fixes are needed in plugins.
+
+## 2025
 
 ### July
 {#july-25}

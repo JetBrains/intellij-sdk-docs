@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Persisting Sensitive Data
 
@@ -35,6 +35,20 @@ if (credentials != null) {
 String password = passwordSafe.getPassword(attributes);
 ```
 
+> Since 2025.3, `PasswordSafe.get()` is blocking and shouldn't be called on EDT.
+>
+{style="warning"}
+
+#### Retrieving Credentials in Remote Development Context
+
+Since 2025.3, a new method was introduced in `PasswordSafe`:
+```kotlin
+suspend fun getAsync(attributes: CredentialAttributes): Ephemeral<Credentials>
+```
+
+Besides being coroutine-friendly, it returns "ephemeral" credentials that are valid only while the client is connected to the backend in the [Remote Development](https://www.jetbrains.com/help/idea/remote-development-overview.html) context.
+When the client disconnects, the credentials are erased so that nothing can be done on the user's behalf without the user.
+
 ### Store Credentials
 
 ```java
@@ -45,7 +59,12 @@ PasswordSafe.getInstance().set(attributes, credentials);
 
 To remove stored credentials, pass `null` for the `credentials` parameter.
 
+> Since 2025.3, `PasswordSafe.set()` is blocking and shouldn't be called on EDT.
+>
+{style="warning"}
+
 ## Storage
+
 The default storage format depends on the OS.
 
 | OS      | Storage                                               |
@@ -60,3 +79,9 @@ The default storage format depends on the OS.
 [linux2]: https://wiki.gnome.org/Projects/Libsecret
 
 Users can override the default behavior in <ui-path>Settings | Appearance & Behavior | System Settings | Passwords</ui-path>.
+
+### Storage in Remote Development Context
+
+Before 2025.3, passwords were stored on the backend side in plain text.
+
+Since 2025.3, they are being transparently redirected to the frontend and are stored according to the local environment and settings (KeePass, keychain, etc.).

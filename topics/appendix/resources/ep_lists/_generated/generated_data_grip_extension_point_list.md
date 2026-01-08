@@ -1,8 +1,8 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: f50d587f27abb863c22c67677eb5f2d9aa3b93f7 -->
+<!-- Revision: 45c13268926ea16f4e745a278d7df59b4225f0c3 -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-79 Extension Points and 24 Listeners
+79 Extension Points and 27 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -22,6 +22,8 @@ EP List Directories:
 
 | Topic | Listener |
 |-------|----------|
+| [`CloudConnectionDataStorage#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.cloudExplorer.CloudConnectionDataStorage.Listener)  | `Listener` |
+| [`DataSourcePerFileMappings#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.console.DataSourcePerFileMappings.OnMappingsChangedListener)  | `OnMappingsChangedListener` |
 | [`JdbcDriverManager#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.console.JdbcDriverManager.Listener)  | `Listener` |
 | [`DatabaseSessionManager#topic`](https://jb.gg/ipe/listeners?topics=com.intellij.database.console.session.DatabaseSessionManagerListener)  | `DatabaseSessionManagerListener` |
 | [`DatabaseSession.Companion#topic`](https://jb.gg/ipe/listeners?topics=com.intellij.database.console.session.DatabaseSessionStateListener)  | `DatabaseSessionStateListener` |
@@ -43,6 +45,7 @@ EP List Directories:
 | [`SqlRoutineIndex#topic`](https://jb.gg/ipe/listeners?topics=com.intellij.database.sql.backend.core.SqlRoutineIndex.SqlRoutineIndexListener)  | `SqlRoutineIndexListener` |
 | [`DbUltimateActionsListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.util.DbUltimateActionsListener)  | `DbUltimateActionsListener` |
 | [`DatabaseColorManager#COLOR_CHANGE_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.view.DatabaseColorManager.ColorChangeListener)  | `ColorChangeListener` |
+| [`CloudDatabasesPanel#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.view.ui.CloudDatabasesPanel.Listener)  | `Listener` |
 | [`DatabaseConfigEditor#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.view.ui.DatabaseConfigEditor.Listener)  | `Listener` |
 | [`DatabaseSettings#TOPIC`](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
 | [`DatabaseViewOptions#TOPIC`](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |

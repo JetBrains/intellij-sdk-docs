@@ -5,7 +5,7 @@ import org.jetbrains.intellij.platform.gradle.models.ProductRelease.Channel.RELE
 
 plugins {
   id("java")
-  id("org.jetbrains.kotlin.jvm") version "2.1.10"
+  id("org.jetbrains.kotlin.jvm") version "2.3.0"
   id("org.jetbrains.intellij.platform") version "2.10.5"
 }
 

@@ -57,6 +57,26 @@ org.jetbrains.intellij.platform.intellijPlatformCache=/path/to/intellijPlatformC
 ```
 
 
+## `intellijPlatformIdesCache`
+{#intellijPlatformIdesCache}
+
+Specifies the location of the IntelliJ Platform IDEs cache directory for storing downloaded IDE distributions
+and related artifacts. This cache is used to avoid re-downloading the same IDE versions across different
+project builds and can be shared between multiple projects.
+
+**Note:** this directory can be shared across projects and should be excluded from versioning.
+
+{type="narrow"}
+Default value
+: <path>[intellijPlatformCache]/ides/</path>
+
+Example
+:
+```
+org.jetbrains.intellij.platform.intellijPlatformIdesCache=/path/to/intellijPlatformCache/ides
+```
+
+
 ## `localPlatformArtifacts`
 {#localPlatformArtifacts}
 

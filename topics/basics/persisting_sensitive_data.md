@@ -34,6 +34,16 @@ private CredentialAttributes createCredentialAttributes(String key) {
 </tab>
 </tabs>
 
+The [`generateServiceName()`](%gh-ic%/platform/credential-store/src/credentialStore/CredentialAttributes.kt) function helps name credentials in a consistent way so that they can be easily recognized in password managers and when users are asked to allow the IDE to access a secret.
+Consider passing a subsystem name that identifies the plugin or its area of functionality, and a key that identifies the specific secret (for example, account name for password, server name for access token, etc.).
+Examples:
+
+| Subsystem       | Key              | Generated Service Name                               |
+|-----------------|------------------|------------------------------------------------------|
+| MyService API   | joe.doe          | IntelliJ Platform MyService API — joe.doe            |
+| Acme Repository | example.com/repo | IntelliJ Platform Acme Repository — example.com/repo |
+
+
 ### Retrieve Stored Credentials
 
 <tabs group="languages">

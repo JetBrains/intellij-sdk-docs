@@ -11,6 +11,18 @@ Use [`PasswordSafe`](%gh-ic%/platform/credential-store/src/ide/passwordSafe/Pass
 
 _Common Utility Method:_
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+private fun createCredentialAttributes(key: String): CredentialAttributes {
+  return CredentialAttributes(generateServiceName("MySystem", key))
+}
+```
+
+</tab>
+<tab title="Java" group-key="java">
+
 ```java
 private CredentialAttributes createCredentialAttributes(String key) {
   return new CredentialAttributes(
@@ -19,7 +31,28 @@ private CredentialAttributes createCredentialAttributes(String key) {
 }
 ```
 
+</tab>
+</tabs>
+
 ### Retrieve Stored Credentials
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+val key = "serverURL" // e.g. serverURL, accountID
+val attributes = createCredentialAttributes(key)
+val passwordSafe = PasswordSafe.instance
+
+val credentials = passwordSafe.get(attributes)
+val password = credentials?.getPasswordAsString()
+
+// or get password only
+val passwordOnly = passwordSafe.getPassword(attributes)
+```
+
+</tab>
+<tab title="Java" group-key="java">
 
 ```java
 String key = null; // e.g. serverURL, accountID
@@ -34,6 +67,9 @@ if (credentials != null) {
 // or get password only
 String password = passwordSafe.getPassword(attributes);
 ```
+
+</tab>
+</tabs>
 
 > `PasswordSafe.get()` is blocking and shouldn't be called on EDT.
 >
@@ -51,11 +87,26 @@ When the client disconnects, the credentials are erased so that nothing can be d
 
 ### Store Credentials
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+val attributes = createCredentialAttributes(key)
+val credentials = Credentials(username, password)
+PasswordSafe.instance.set(attributes, credentials)
+```
+
+</tab>
+<tab title="Java" group-key="java">
+
 ```java
 CredentialAttributes attributes = createCredentialAttributes(key);
 Credentials credentials = new Credentials(username, password);
 PasswordSafe.getInstance().set(attributes, credentials);
 ```
+
+</tab>
+</tabs>
 
 To remove stored credentials, pass `null` for the `credentials` parameter.
 

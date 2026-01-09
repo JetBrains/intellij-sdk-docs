@@ -80,6 +80,42 @@ Default value
 
 
 
+## `ComposeHotReloadAware`
+{#ComposeHotReloadAware}
+
+<tldr>
+
+**Depends on**: [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin)
+
+**Sources**: [`ComposeHotReloadAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/ComposeHotReloadAware.kt)
+
+</tldr>
+
+Provides the path to the Java Agent file for the Compose Hot Reload agent required to enable hot reloading of Compose UIs.
+
+
+### `composeHotReload`
+
+Enables auto-reload of Compose UIs after code changes for the task.
+
+{type="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: `false`
+
+### `composeHotReloadAgentConfiguration`
+{#ComposeHotReloadAware-composeHotReloadAgentConfiguration}
+
+Holds Compose Hot Reload agent JAR dependency configuration.
+
+
+{type="narrow"}
+Type
+: `ConfigurableFileCollection`
+
+
 ## `CoroutinesJavaAgentAware`
 {#CoroutinesJavaAgentAware}
 

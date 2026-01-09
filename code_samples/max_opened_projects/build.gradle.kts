@@ -22,7 +22,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdea("2025.1.5.1")
+    intellijIdea("2025.1.7")
   }
 }
 

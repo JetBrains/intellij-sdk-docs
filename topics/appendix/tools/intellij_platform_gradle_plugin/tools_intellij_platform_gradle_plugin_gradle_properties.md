@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Gradle Properties
 
@@ -61,21 +61,23 @@ org.jetbrains.intellij.platform.intellijPlatformCache=/path/to/intellijPlatformC
 {#intellijPlatformIdesCache}
 
 Specifies the location of the IntelliJ Platform IDEs cache directory for storing downloaded IDE distributions
-and related artifacts. This cache is used to avoid re-downloading the same IDE versions across different
-project builds and can be shared between multiple projects.
+and related artifacts.
+This cache is used to avoid re-downloading the same IDE versions across different project builds and can be shared between multiple projects.
 
 **Note:** this directory can be shared across projects and should be excluded from versioning.
 
+See also:
+- [Extension: `intellijPlatform.caching.ides`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-caching-ides)
+
 {type="narrow"}
 Default value
-: <path>[intellijPlatformCache]/ides/</path>
+: <path>[intellijPlatformCache](#intellijPlatformCache)/ides/</path>
 
 Example
 :
 ```
-org.jetbrains.intellij.platform.intellijPlatformIdesCache=/path/to/intellijPlatformCache/ides
+org.jetbrains.intellij.platform.intellijPlatformIdesCache=/path/to/ides-cache/
 ```
-
 
 ## `localPlatformArtifacts`
 {#localPlatformArtifacts}
@@ -236,25 +238,6 @@ Example
 org.jetbrains.intellij.platform.addDefaultIntellijPlatformDependencies=false
 ```
 
-
-## `intellijPlatformIdesCache`
-{#intellijPlatformIdesCache}
-
-Specifies the location of the cache directory for storing downloaded IDE distributions and related artifacts.
-This cache can be shared between multiple projects and is used when IDE caching is enabled.
-
-See also:
-- [Extension: `intellijPlatform.caching.ides`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-caching-ides)
-
-{type="narrow"}
-Default value
-: <path>[`intellijPlatformCache`](#intellijPlatformCache)/ides/</path>
-
-Example
-:
-```
-org.jetbrains.intellij.platform.intellijPlatformIdesCache=/path/to/ides-cache/
-```
 
 
 ## `productsReleasesCdnBuildsUrl`

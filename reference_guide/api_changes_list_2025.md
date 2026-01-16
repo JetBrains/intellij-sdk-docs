@@ -92,6 +92,24 @@ See [IJPL-207245](https://youtrack.jetbrains.com/issue/IJPL-207245) for details.
 The `org.intellij.intelliLang` plugin requires Gradle dependency on bundled module `intellij.platform.langInjection`
 : Change `bundledPlugin("org.intellij.intelliLang")` to `bundledModule("intellij.platform.langInjection")` in Gradle build script.
 
+Write-Intent lock acquisition was removed during processing of input events in Swing and AWT
+: Consider using explicit calls to `com.intellij.openapi.application.WriteIntentReadAction#run` in your input event listeners. See [IJPL-219144](https://youtrack.jetbrains.com/issue/IJPL-219144) for details.
+
+com.intellij.openapi.application.Application.acquireReadActionLock() method removed
+: Consider using higher-order functions like `com.intellij.openapi.application.Application#runReadAction`.
+
+com.intellij.openapi.application.Application.acquireWriteActionLock() method removed
+: Consider using higher-order functions like `com.intellij.openapi.application.Application#runWriteAction`.
+
+com.intellij.openapi.application.WriteAction.start() method removed
+: Consider using higher-order functions like `com.intellij.openapi.application.Application#runWriteAction`.
+
+com.intellij.openapi.application.WriteIntentReadAction.compute(com.intellij.openapi.util.ThrowableComputable) method removed
+: Use `com.intellij.openapi.application.WriteIntentReadAction.computeThrowable`. See [IJPL-221464](https://youtrack.jetbrains.com/issue/IJPL-221464) for details.
+
+com.intellij.openapi.application.WriteIntentReadAction.run(com.intellij.openapi.util.ThrowableRunnable) method removed
+: Use `com.intellij.openapi.application.WriteIntentReadAction.runThrowable`. See [IJPL-221464](https://youtrack.jetbrains.com/issue/IJPL-221464) for details.
+
 ### Cucumber for Java 2025.3
 
 `org.jetbrains.plugins.cucumber.java.steps.JavaStep1xDefinition` class removed

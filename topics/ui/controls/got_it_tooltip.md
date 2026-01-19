@@ -12,7 +12,7 @@
 
 </tldr>
 
-A Got It tooltip informs users about a new or changed behavior and gives basic information about it.
+A Got It tooltip teaches users about a new or changed behavior and gives information about it.
 
 ![](got_it.png){width=706}
 
@@ -77,7 +77,7 @@ new GotItTooltip(TOOLTIP_ID, GET_IT_TEXT, parentDisposable)
 
 ### Step counter
 
-Use a step counter to numerate a sequential group of Got It tooltips.
+Use a step counter to numerate a group of sequential Got It tooltips.
 
 <note>Only group tooltips that show related content.</note>
 
@@ -183,7 +183,7 @@ new GotItTooltip(TOOLTIP_ID, GOT_IT_TEXT, parentDisposable)
 
 ### New feature
 
-Suggest a new feature contextually when the user has started working with a tool. Don't show a tooltip on a startup.
+Teach users about a new feature contextually when they start working with a tool. Describe the behavior and what is the benefit for users.
 
 <table style="none" border="false">
   <tr>
@@ -198,75 +198,84 @@ Suggest a new feature contextually when the user has started working with a tool
 
 ### Changed behavior
 
-Suggest a new pattern to a user's task that improves their workflow
+Suggest a new pattern to a user's task that improves their workflow.
 
 ### Ambiguous behavior
 
 Explain behavior that is not clear from the UI.
 
-![](04_explain_how_to_use.png){width=333 style=block}
-*When extracting a method, users can change only the method name in the blue box. The tooltip explains where to change the order of parameters in the parentheses and other properties of a method.*
+For example, when extracting a method, users can change only the method name in the blue box. The tooltip explains where to change the order of parameters in the parentheses and other properties of a method:
+
+![](got_it_ambiguous.png){width=706}
 
 ## When not to use
 
 ### Presenting a new tool
 
-Don't use the Got It tooltip when presenting a new tool. It distracts users, especially on a startup. Use marketing materials for this purpose.
+Don't use the Got It tooltip as a marketing tool. It distracts users, especially on a startup. Use marketing channels for this purpose.
 
 ### Nothing to point to
 
-Use a [banner](banner.md) in a dialog or a [notification](balloon.md) in the main window.
-
-![](07_got_it_banner.png){width=709}
-
-![](08_got_it_notification.png){width=397}
-
-### Feedback from the interface
-
-Don't use Got It tooltips to give users feedback from the interface. Use [notifications](balloon.md) instead.
+When there is nothing to point to in a dialog or a tool window, use a [banner](banner.md).
 
 <table style="none" border="false">
   <tr>
     <td width="50%">
-      <format color="Green" style="bold">Correct</format><img src="got_it_feature_correct.png" alt=""/>
+      <format color="Green" style="bold">Correct</format><img src="got_it_banner_correct.png" alt=""/>
     </td>
     <td width="50%">
-      <format color="Red" style="bold">Incorrect</format><img src="got_it_feature_incorrect.png" alt=""/>
+      <format color="Red" style="bold">Incorrect</format><img src="got_it_banner_incorrect.png" alt=""/>
     </td>
   </tr>
 </table>
 
-### New option in a list
+### Feedback from the interface
 
-When there is a new option in a list of choices, use a badge instead.
+Don't use Got It tooltips to give users a feedback from the interface. Use [notifications](balloon.md) instead.
+
+<table style="none" border="false">
+  <tr>
+    <td width="50%">
+      <format color="Green" style="bold">Correct</format><img src="got_it_feedback_correct.png" alt=""/>
+    </td>
+    <td width="50%">
+      <format color="Red" style="bold">Incorrect</format><img src="got_it_feedback_incorrect.png" alt=""/>
+    </td>
+  </tr>
+</table>
+
+### New option in a tree or list
+
+When there is a new option in a tree or a list of choices that users see regularly, use a badge instead.
+
+<table style="none" border="false">
+  <tr>
+    <td width="50%">
+      <format color="Green" style="bold">Correct</format><img src="got_it_tree_correct.png" alt=""/>
+    </td>
+    <td width="50%">
+      <format color="Red" style="bold">Incorrect</format><img src="got_it_tree_incorrect.png" alt=""/>
+    </td>
+  </tr>
+</table>
 
 ## How to use
-
-The Got It tooltip should be used when there is no place for a banner in the interface or for an inline hint in the editor. It should always point to a specific place.
-
-### Don't disrupt a workflow
-
-Show the tooltip contextually, for example, when a dialog or a tool window opens not to disrupt user workflow.
-
-Don't show it in the editor when a user is actively writing code.
-
-### Showing a group of tooltips
-
-Show a sequential group of tooltips only when users initiate it. Users can launch the show, for example, by pressing a respective button in the interface.
 
 ### Small UI controls
 
 Point to a small and important UI control that can be missed among other information on the screen.
 
+### Showing a group of tooltips
+
+Show a sequential group of tooltips only when users initiate it. Users can launch the show, for example, by pressing a respective button in the interface.
+
 ### Text length and formatting
 
-Show no more than 5 lines of body text. If the text does not fit, leave only the essential information and add a link to a help article.
+* Show no more than 5 lines of body text. If the text does not fit, leave only the essential information and add a link to a help article. Make the help text [short and descriptive](writing_short.md).
 
-Use sentence case both for the header and body text, and follow the [punctuation rules](punctuation.md).
+* Use sentence case both for the header and body text, and follow the [punctuation rules](punctuation.md).
 
-Make the help text [short and descriptive](writing_short.md).
-
-Don't use style formatting. It makes the tooltip harder to read.
+* Don't use style formatting. It makes the tooltip harder to read.
 
 <table style="none" border="false">
   <tr>
@@ -281,20 +290,22 @@ Don't use style formatting. It makes the tooltip harder to read.
 
 ### Positioning
 
-Do **not** cover the information the user is currently working with.
+Don't cover the information the user is currently working with.
 
-<table>
-    <tr>
-        <td width="50%"><format color="Red" style="bold">Incorrect</format></td>
-        <td width="50%"><format color="Green" style="bold">Correct</format></td>
-    </tr>
-    <tr>
-        <td><img src="15_location_incorrect.png" alt="" width="509" /></td>
-        <td><img src="15_location_correct.png" alt="" width="509" /></td>
-    </tr>
+<table style="none" border="false">
+  <tr>
+    <td width="50%">
+      <format color="Green" style="bold">Correct</format><img src="got_it_position_correct.png" alt=""/>
+    </td>
+    <td width="50%">
+      <format color="Red" style="bold">Incorrect</format><img src="got_it_position_incorrect.png" alt=""/>
+    </td>
+  </tr>
 </table>
 
-**Implementation:** See four predefined point providers in the [`GotItTooltip`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/GotItTooltip.kt) class.
+<chapter title="Implementation" collapsible="true">
+
+See four predefined point providers in the [`GotItTooltip`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/GotItTooltip.kt) class.
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -315,7 +326,9 @@ new GotItTooltip(TOOLTIP_ID, GOT_IT_TEXT, parentDisposable)
 </tab>
 </tabs>
 
-### Timeout
+</chapter>
+
+### Timeout for hiding
 
 Consider adding a timeout if:
 
@@ -323,11 +336,9 @@ Consider adding a timeout if:
 * The tooltip appears at the place at which the user is currently looking.
 * There is no link in the tooltip.
 
-![](05_suggest_keyboard_actions.png){width=244}
+For example, the Got It tooltip has a timeout because the text is short, the user has just started the Rename refactoring, and is very likely looking at this place:
 
-*The Got It tooltip has a timeout because the text is short, the user has just started the Rename refactoring, and is very likely looking at this place.*
-
-Note that adding a timeout automatically hides the Got It button.<br/><br/>
+![](got_it_short.png){width=706}
 
 <chapter title="Implementation" collapsible="true">
 
@@ -356,15 +367,9 @@ new GotItTooltip(TOOLTIP_ID, GOT_IT_TEXT, parentDisposable)
 
 ### Versioning
 
-If a tooltip appears automatically after the IDE starts, tie it to the IDE version. Due to the technical limitations, tooltip counters might be reset when the IDE version is updated, and the users might see the same tooltips again.
+<!--If a tooltip appears automatically after the IDE starts, tie it to the IDE version. Due to the technical limitations, tooltip counters might be reset when the IDE version is updated, and the users might see the same tooltips again.-->
 
 If a tooltip is triggered by an action or plugin installation, do not tie them to the current IDE version. In this case, users might miss a tooltip if they are using this functionality or plugin for the first time in the next IDE version.
-
-## How not to use
-
-### Not a marketing tool
-
-Don't use the tooltip as a marketing instrument.
 
 ## Built-in behavior
 
@@ -386,8 +391,4 @@ If several tooltips appear on application start, they are shown one by one.
 
 ### Text width
 
-Text width is 280px by default. The tooltip width adjusts automatically to make the right margin 16px.
-
-![](16_width_custom.png){width=681}
-
-![](17_width_adjusted.png){width=625}
+ The tooltip width adjusts automatically to make the right margin 16 px. Text width is 280 px by default.

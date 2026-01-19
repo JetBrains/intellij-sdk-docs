@@ -179,13 +179,74 @@ new GotItTooltip(TOOLTIP_ID, GOT_IT_TEXT, parentDisposable)
 
 </chapter>
 
+## When to use
+
+### New feature
+
+Suggest a new feature contextually when the user has started working with a tool. Don't show a tooltip on a startup.
+
+<table style="none" border="false">
+  <tr>
+    <td width="50%">
+      <format color="Green" style="bold">Correct</format><img src="got_it_feature_correct.png" alt=""/>
+    </td>
+    <td width="50%">
+      <format color="Red" style="bold">Incorrect</format><img src="got_it_feature_incorrect.png" alt=""/>
+    </td>
+  </tr>
+</table>
+
+### Changed behavior
+
+Suggest a new pattern to a user's task that improves their workflow
+
+### Ambiguous behavior
+
+Explain behavior that is not clear from the UI.
+
+![](04_explain_how_to_use.png){width=333 style=block}
+*When extracting a method, users can change only the method name in the blue box. The tooltip explains where to change the order of parameters in the parentheses and other properties of a method.*
+
+## When not to use
+
+### Presenting a new tool
+
+Don't use the Got It tooltip when presenting a new tool. It distracts users, especially on a startup. Use marketing materials for this purpose.
+
+### Nothing to point to
+
+Use a [banner](banner.md) in a dialog or a [notification](balloon.md) in the main window.
+
+![](07_got_it_banner.png){width=709}
+
+![](08_got_it_notification.png){width=397}
+
+### Feedback from the interface
+
+Don't use Got It tooltips to give users feedback from the interface. Use [notifications](balloon.md) instead.
+
+<table style="none" border="false">
+  <tr>
+    <td width="50%">
+      <format color="Green" style="bold">Correct</format><img src="got_it_feature_correct.png" alt=""/>
+    </td>
+    <td width="50%">
+      <format color="Red" style="bold">Incorrect</format><img src="got_it_feature_incorrect.png" alt=""/>
+    </td>
+  </tr>
+</table>
+
+### New option in a list
+
+When there is a new option in a list of choices, use a badge instead.
+
 ## How to use
 
 The Got It tooltip should be used when there is no place for a banner in the interface or for an inline hint in the editor. It should always point to a specific place.
 
 ### Don't disrupt a workflow
 
-Show the tooltip after a project opening or when a dialog opens not to disrupt users workflow.
+Show the tooltip contextually, for example, when a dialog or a tool window opens not to disrupt user workflow.
 
 Don't show it in the editor when a user is actively writing code.
 
@@ -299,34 +360,11 @@ If a tooltip appears automatically after the IDE starts, tie it to the IDE versi
 
 If a tooltip is triggered by an action or plugin installation, do not tie them to the current IDE version. In this case, users might miss a tooltip if they are using this functionality or plugin for the first time in the next IDE version.
 
-## When to usee
+## How not to use
 
-### New feature
+### Not a marketing tool
 
-You may use the tooltip when presenting a new feature that can change the way users use an IDE.
-
-### Changed behavior
-
-Suggest a new pattern to a user's task that improves their workflow
-
-### Ambiguous behavior
-
-Explain behavior that is not clear from the UI.
-
-![](04_explain_how_to_use.png){width=333 style=block}
-*When extracting a method, users can change only the method name in the blue box. The tooltip explains where to change the order of parameters in the parentheses and other properties of a method.*
-
-### Contextual
-
-## When not to use
-
-### Nothing to point to
-
-Use a [banner](banner.md) in a dialog or a [notification](balloon.md) in the main window.
-
-![](07_got_it_banner.png){width=709}
-
-![](08_got_it_notification.png){width=397}
+Don't use the tooltip as a marketing instrument.
 
 ## Built-in behavior
 

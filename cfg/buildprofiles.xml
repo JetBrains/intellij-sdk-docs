@@ -3,7 +3,7 @@
 <buildprofiles xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/build-profiles.xsd"
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <variables>
-        <header-logo>https://resources.jetbrains.com/storage/logos/web/jetbrains/jetbrains-particle.svg</header-logo>
+        <header-logo>intellij-platform-icon.svg</header-logo>
         <web-root>https://plugins.jetbrains.com/docs</web-root>
         <product-web-url>https://plugins.jetbrains.com/docs/intellij/welcome.html</product-web-url>
         <search-scope/>

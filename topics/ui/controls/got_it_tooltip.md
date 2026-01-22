@@ -183,7 +183,7 @@ new GotItTooltip(TOOLTIP_ID, GOT_IT_TEXT, parentDisposable)
 
 ### New feature
 
-Teach users about a new feature contextually when they start working with a tool. Describe the behavior and what is the benefit for users.
+Teach users about a new improvement of a feature contextually when they start working with a tool. Describe the behavior and the benefit for users.
 
 <table style="none" border="false">
   <tr>

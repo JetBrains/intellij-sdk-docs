@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <!DOCTYPE vars
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/vars.dtd">
@@ -7,22 +7,22 @@
 <vars>
 
   <var name="ijPlatform" value="2025.3.1.1"/>
-  <var name="ijPlatformBuild" value="253.29346.240"/>
+  <var name="ijPlatformReleaseTag" value="idea/253.29346.240"/>
 
 
   <!-- Links to branches **MUST** have "-master" suffix for recheck when running inspection globally -->
 
   <var name="gh-sdk-samples-master" value="https://github.com/JetBrains/intellij-sdk-code-samples/tree/main"/>
 
-  <var name="gh-ic" value="https://github.com/JetBrains/intellij-community/tree/idea/%ijPlatformBuild%"/>
+  <var name="gh-ic" value="https://github.com/JetBrains/intellij-community/tree/%ijPlatformReleaseTag%"/>
   <var name="gh-ic-master" value="https://github.com/JetBrains/intellij-community/tree/master"/>
   <var name="gh-ic-251-master" value="https://github.com/JetBrains/intellij-community/tree/251"/>
   <var name="gh-ic-242-master" value="https://github.com/JetBrains/intellij-community/tree/242"/>
   <var name="gh-ic-223-master" value="https://github.com/JetBrains/intellij-community/tree/223"/>
 
-  <var name="gh-ij-android" value="https://github.com/JetBrains/android/tree/idea/%ijPlatformBuild%"/>
+  <var name="gh-ij-android" value="https://github.com/JetBrains/android/tree/%ijPlatformReleaseTag%"/>
 
-  <var name="gh-ij-plugins" value="https://github.com/JetBrains/intellij-plugins/tree/idea/%ijPlatformBuild%"/>
+  <var name="gh-ij-plugins" value="https://github.com/JetBrains/intellij-plugins/tree/%ijPlatformReleaseTag%"/>
   <var name="gh-ij-plugins-master" value="https://github.com/JetBrains/intellij-plugins/tree/master"/>
 
   <var name="gh-jcef-master" value="https://github.com/JetBrains/jcef/tree/master/java"/>

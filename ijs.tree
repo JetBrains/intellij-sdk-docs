@@ -65,7 +65,7 @@
   </toc-element>
   <toc-element toc-title="Base Platform">
     <toc-element topic="fundamentals.md" accepts-web-file-names="reference_guide.html,architectural_overview.html">
-      <toc-element toc-title="Component Model"/>
+      <!--<toc-element toc-title="Component Model"/>--> <!--TODO-->
       <toc-element topic="disposers.md"/>
       <toc-element topic="threading_model.md" accepts-web-file-names="general-threading-rules.html">
         <toc-element topic="kotlin_coroutines.md">
@@ -81,7 +81,7 @@
         <toc-element topic="execution_contexts.topic" accepts-web-file-names="coroutine-execution-contexts.html"/>
       </toc-element>
       <toc-element topic="messaging_infrastructure.md"/>
-      <toc-element toc-title="Queries and Query Executors"/>
+      <!--<toc-element toc-title="Queries and Query Executors"/>--><!--TODO-->
     </toc-element>
     <toc-element topic="ide_infrastructure.md"/>
     <toc-element topic="user_interface_components.md">
@@ -137,15 +137,15 @@
       <toc-element topic="run_configurations_tutorial.md"/>
     </toc-element>
     <toc-element topic="vcs_integration_for_plugins.md">
-      <toc-element toc-title="Diff"/>
-      <toc-element toc-title="Local History"/>
+      <!--<toc-element toc-title="Diff"/>--> <!--TODO-->
+      <!--<toc-element toc-title="Local History"/>--> <!--TODO-->
     </toc-element>
-    <toc-element toc-title="Tasks and Contexts"/>
+    <!--<toc-element toc-title="Tasks and Contexts"/>--> <!--TODO-->
     <toc-element topic="internationalization.md">
       <toc-element topic="providing_translations.md" accepts-web-file-names="localization-guide.html"/>
     </toc-element>
     <toc-element topic="accessibility.md"/>
-    <toc-element toc-title="Diagrams"/>
+    <!--<toc-element toc-title="Diagrams"/>--> <!--TODO-->
   </toc-element>
   <toc-element toc-title="Project Structure">
     <toc-element topic="project_model.md" accepts-web-file-names="project-structure.html">
@@ -196,7 +196,7 @@
     <toc-element topic="xml_dom_api.md"/>
   </toc-element>
   <toc-element toc-title="Features">
-    <toc-element toc-title="Navigation"/>
+    <!--<toc-element toc-title="Navigation"/>--> <!--TODO-->
     <toc-element topic="editing.md">
       <toc-element toc-title="Code Completion"/>
       <toc-element topic="postfix_completion.md">
@@ -230,12 +230,12 @@
       </toc-element>
       <toc-element topic="controlling_highlighting.md"/>
     </toc-element>
-    <toc-element toc-title="Refactoring"/>
+    <!--<toc-element toc-title="Refactoring"/>--> <!--TODO-->
     <toc-element topic="project_view.md">
       <toc-element topic="tree_structure_view.md"/>
     </toc-element>
     <toc-element topic="embedded_terminal.md"/>
-    <toc-element toc-title="Unit Testing"/>
+    <!--<toc-element toc-title="Unit Testing"/>--> <!--TODO-->
     <toc-element topic="build_system.md">
       <toc-element topic="external_builder_api.md"/>
     </toc-element>
@@ -326,9 +326,9 @@
     </toc-element>
     <toc-element topic="language_injection.md"/>
     <toc-element topic="language_server_protocol.md"/>
-    <toc-element toc-title="Build System"/>
-    <toc-element toc-title="Compiler"/>
-    <toc-element toc-title="Debugger"/>
+    <!--<toc-element toc-title="Build System"/>--> <!--TODO-->
+    <!--<toc-element toc-title="Compiler"/>--> <!--TODO-->
+    <!--<toc-element toc-title="Debugger"/>--> <!--TODO-->
   </toc-element>
   <toc-element toc-title="Product Specific">
     <toc-element topic="dev_alternate_products.md" toc-title="Developing for Multiple Products"/>
@@ -362,10 +362,11 @@
     <toc-element topic="rubymine.md" toc-title="RubyMine"/>
     <toc-element topic="webstorm.md" toc-title="WebStorm"/>
   </toc-element>
-  <toc-element toc-title="Custom IDEs">
+  <!--TODO-->
+  <!--<toc-element toc-title="Custom IDEs">
     <toc-element toc-title="Build Your Own IDE"/>
     <toc-element toc-title="Licensing"/>
-  </toc-element>
+  </toc-element>-->
   <toc-element toc-title="Themes">
     <toc-element topic="themes_getting_started.md" accepts-web-file-names="themes-intro.html"/>
     <toc-element topic="developing_themes.md" accepts-web-file-names="using-dev-kit.html">

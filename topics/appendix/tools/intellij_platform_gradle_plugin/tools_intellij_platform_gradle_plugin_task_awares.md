@@ -91,6 +91,10 @@ Default value
 
 </tldr>
 
+> This feature will be available in version 2.10.6 and can be used in the [snapshot version](tools_intellij_platform_gradle_plugin.md#using-snapshot-release).
+>
+{style="warning"}
+
 Provides the path to the Java Agent file for the Compose Hot Reload agent required to enable hot reloading of Compose UIs.
 
 

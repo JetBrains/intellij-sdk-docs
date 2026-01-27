@@ -535,11 +535,44 @@ org.gradle.api.InvalidUserCodeException: Starting an external process '/usr/sbin
 
 This is caused by the `undertow` library used for custom repository creation, which tries to determine the CPU cache level on macOS by executing an external process.
 
-To resolve this issue, set the `smallrye.cpu.determine-cache-level` system property to `false` in your <path>gradle.properties</path> file:
+To resolve this issue:
 
-```properties
-systemProp.smallrye.cpu.determine-cache-level=false
-```
+1. Set the `smallrye.cpu.determine-cache-level` system property to `false` in your <path>gradle.properties</path> file:
+
+   ```properties
+   systemProp.smallrye.cpu.determine-cache-level=false
+   ```
+
+2. Force the `io.smallrye.common:smallrye-common-cpu` dependency version to `2.10.0` in the `buildscript` block of your <path>build.gradle.kts</path> (or <path>build.gradle</path>) file:
+
+   <tabs group="languages">
+   <tab title="Kotlin" group-key="kotlin">
+
+   ```kotlin
+   buildscript {
+     configurations.classpath {
+       resolutionStrategy {
+         force("io.smallrye.common:smallrye-common-cpu:2.10.0")
+       }
+     }
+   }
+   ```
+
+   </tab>
+   <tab title="Groovy" group-key="groovy">
+
+   ```groovy
+   buildscript {
+     configurations.classpath {
+       resolutionStrategy {
+         force 'io.smallrye.common:smallrye-common-cpu:2.10.0'
+       }
+     }
+   }
+   ```
+
+   </tab>
+   </tabs>
 
 ### plugin.xml: `Cannot resolve plugin com.intellij.modules.vcs`
 

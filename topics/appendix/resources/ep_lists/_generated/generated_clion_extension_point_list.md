@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 45c13268926ea16f4e745a278d7df59b4225f0c3 -->
+<!-- Revision: 0217ee755c2a6d3d2ea6bdbef5716b5852839a5f -->
 
 <!--
 EP List Directories:
@@ -113,8 +113,8 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.runnerStep"/></include> ![Non-Dynamic][non-dynamic] | `CMakeRunnerStep` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.targetToConfigProvider"/></include> | `CMakeTargetToConfigProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.toolWindowFocusContributor"/></include> | `CMakeToolWindowFocusContributor` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.workspace.compilerEnvironmentContributor"/></include> | `CMakeCompilerEnvironmentContributor` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.workspace.enabledProfileInitializer"/></include> | `CMakeEnabledProfileInitializer` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.workspace.profileEnvironmentContributor"/></include> | `CMakeProfileEnvironmentContributor` |
 
 ### intellij.c.core.xml
 

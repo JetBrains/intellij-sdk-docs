@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 45c13268926ea16f4e745a278d7df59b4225f0c3 -->
+<!-- Revision: 0217ee755c2a6d3d2ea6bdbef5716b5852839a5f -->
 
 <!--
 EP List Directories:
@@ -19,7 +19,7 @@ EXCLUDING:
 
 <snippet id="content">
 
-1284 Extension Points and 239 Listeners
+1285 Extension Points and 239 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -226,9 +226,9 @@ EXCLUDING:
 | [`BreadcrumbsInitListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.xml.breadcrumbs.BreadcrumbsInitListener)  ![Internal][internal] ![Project-Level][project-level] | [`BreadcrumbsInitListener`](%gh-ic%/platform/platform-impl/src/com/intellij/xml/breadcrumbs/BreadcrumbsInitListener.java) |
 | [`IndexPatternProvider#INDEX_PATTERNS_CHANGED`](https://jb.gg/ipe/listeners?topics=java.beans.PropertyChangeListener)  | `PropertyChangeListener` |
 | [`TodoConfiguration#PROPERTY_CHANGE`](https://jb.gg/ipe/listeners?topics=java.beans.PropertyChangeListener)  ![Project-Level][project-level] | `PropertyChangeListener` |
+| [`SeverityRegistrar#SEVERITIES_CHANGED_TOPIC`](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  ![Project-Level][project-level] | `Runnable` |
 | [`UsageFilteringRuleProvider#RULES_CHANGED`](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  ![Project-Level][project-level] | `Runnable` |
 | [`BreadcrumbsXmlWrapper#FORCE_RELOAD_BREADCRUMBS`](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
-| [`SeverityRegistrar#SEVERITIES_CHANGED_TOPIC`](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  ![Project-Level][project-level] | `Runnable` |
 | [`RunToolbarPopupKt#VOID_EXECUTION_TOPIC`](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  ![Project-Level][project-level] | `Runnable` |
 | [`StructureViewWrapperImpl#STRUCTURE_CHANGED`](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
 | [`UpdateActionsListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.ide.UpdateActionsListener)  | [`UpdateActionsListener`](%gh-ic%/platform/built-in-server/src/org/jetbrains/ide/ToolboxUpdateActions.kt) |
@@ -1723,6 +1723,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.uiChangeListener"/></include> ![Internal][internal] | [`Listener`](%gh-ic%/platform/core-ui/src/ui/ExperimentalUI.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.uiDataRule"/></include> | [`UiDataRule`](%gh-ic%/platform/core-ui/src/openapi/actionSystem/UiDataProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.uiPluginManagerController"/></include> ![Internal][internal] | [`UiPluginManagerController`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/plugins/newui/UiPluginManagerController.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.undoManagerProvider"/></include> ![Internal][internal] | [`UndoManagerProvider`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/command/undo/UndoManagerProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.undoProvider"/></include> | [`UndoProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/command/impl/UndoProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.undoReportHandler"/></include> ![Internal][internal] | [`UndoReportHandler`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/command/impl/UndoReportHandler.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.unknownSdkContributor"/></include> | [`UnknownSdkContributor`](%gh-ic%/platform/lang-impl/src/com/intellij/openapi/projectRoots/impl/UnknownSdkCollector.kt) |

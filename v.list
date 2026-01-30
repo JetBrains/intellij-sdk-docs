@@ -6,8 +6,15 @@
 
 <vars>
 
-  <var name="ijPlatform" value="2025.3.1.1"/>
-  <var name="ijPlatformReleaseTag" value="idea/253.29346.240"/>
+  <var name="ijPlatform" value="2025.3.2"/>
+  <!--
+  The release tag can be copied from the build number on https://www.jetbrains.com/idea/download/, for example:
+  - idea/253.30387.20
+
+  Sometimes it is not available if the tagged commit isn't mirrored to the intellij-community repository in GitHub.
+  In this case find and use the closest build tag.
+  -->
+  <var name="ijPlatformReleaseTag" value="idea/253.30387.20"/>
 
 
   <!-- Links to branches **MUST** have "-master" suffix for recheck when running inspection globally -->

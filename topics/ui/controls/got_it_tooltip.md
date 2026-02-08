@@ -12,52 +12,47 @@
 
 </tldr>
 
-A Got It tooltip informs users about a new or changed feature and gives basic information about it.
+A Got It tooltip teaches users about a new or changed behavior and gives information about it.
 
-![](01_got_it_example.png){width=335}
+![](got_it.png){width=706}
 
-## When to use
+## Structure
 
-Point to small UI controls that can be missed among other information in the screen.
+![](got_it_structure.png){width=706}
 
-![](02_new_feature.png){width=509 style=block}
-*After method or parameter names are edited, the Inplace Refactoring icon appears.*
+### Body text
 
-![](03_new_plugin.png){width=375 style=block}
-*After the "Code With Me" plugin is installed, a drop-down menu appears on the toolbar.*
+Always add the body text. The text should be short and describe what the tooltip is showing.
 
-Explain behavior that is not clear from the UI.
+Don't use body text as a title.
 
-![](04_explain_how_to_use.png){width=333 style=block}
-*When extracting a method, users can change only the method name in the blue box. The tooltip explains where to change the order of parameters in the parentheses and other properties of a method.*
+<table style="none" border="false">
+  <tr>
+    <td width="50%">
+      <format color="Green" style="bold">Correct</format><img src="got_it_body_correct.png" alt=""/>
+    </td>
+    <td width="50%">
+      <format color="Red" style="bold">Incorrect</format><img src="got_it_body_incorrect.png" alt=""/>
+    </td>
+  </tr>
+</table>
 
-Suggest keyboard interactions.
+### Title
 
-![](05_suggest_keyboard_actions.png){width=244 style=block}
-*The inlay with options after the blue box is a new control. The tooltip explains how to use it with the keyboard.*
+Add a header if the body text is 2 lines and more. A header should be short and quickly explain what a tooltip is about.
 
-Explain how to revert to the old UI in case of significant UI changes.
+<table style="none" border="false">
+  <tr>
+    <td width="50%">
+      <format color="Green" style="bold">Correct</format><img src="got_it_title_correct.png" alt=""/>
+    </td>
+    <td width="50%">
+      <format color="Red" style="bold">Incorrect</format><img src="got_it_title_incorrect.png" alt=""/>
+    </td>
+  </tr>
+</table>
 
-![](06_suggest_rollback.png){width=552 style=block}
-*The tooltip explains how to revert to a new experimental UI. Only users who switched to the new UI can see it.*
-
-Do **not** use the tooltip if there is no space to attach it. Instead, use a [banner](banner.md) in a dialog or a notification in the main window.
-
-![](07_got_it_banner.png){width=709}
-
-![](08_got_it_notification.png){width=397}
-
-## How to use
-
-![](09_required_and_optional_information.png){width=527}
-
-Always add the body text.
-
-Add a header if the body text is 2 lines and more. A short header can quickly explain what this tooltip is about.
-
-![](10_header.png){width=342}
-
-Implementation:
+<chapter title="Implementation" collapsible="true">
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -78,11 +73,23 @@ new GotItTooltip(TOOLTIP_ID, GET_IT_TEXT, parentDisposable)
 </tab>
 </tabs>
 
-Add a shortcut if the tooltip describes a single action that has a shortcut.
+</chapter>
 
-![](11_shortcut.png){width=248}
+### Step counter
 
-Implementation:
+Use a step counter to numerate a group of sequential Got It tooltips.
+
+<note>Only group tooltips that show related content.</note>
+
+![](got_it_steps.png){width=706}
+
+### Shortcut
+
+Use a shortcut if the tooltip describes an action that has a shortcut.
+
+![](got_it_shortcut.png){width=706}
+
+<chapter title="Implementation" collapsible="true">
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -112,11 +119,17 @@ new GotItTooltip(
 </tab>
 </tabs>
 
+</chapter>
+
 ### Link
 
-Add a local link if users might want to revert changes in a feature or configure it.
+Add a link if users might want to revert changes in a feature or configure it.
 
-![](12_link_action.png){width=389}
+<note>Only one link can be added</note>
+
+![](got_it_link.png){width=706}
+
+<chapter title="Implementation" collapsible="true">
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -137,9 +150,13 @@ new GotItTooltip(TOOLTIP_ID, TOOLTIP_TEXT, parentDisposable)
 </tab>
 </tabs>
 
+</chapter>
+
 Add an external link if there is a help source that can further explain the functionality.
 
-![](13_link_help.png){width=340}
+![](got_it_link_ext.png){width=706}
+
+<chapter title="Implementation" collapsible="true">
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -160,45 +177,135 @@ new GotItTooltip(TOOLTIP_ID, GOT_IT_TEXT, parentDisposable)
 </tab>
 </tabs>
 
-Do **not** add more than one link.
+</chapter>
+
+## When to use
+
+### New feature
+
+Teach users about a new improvement of a feature contextually when they start working with a tool. Describe the behavior and the benefit for users.
+
+<table style="none" border="false">
+  <tr>
+    <td width="50%">
+      <format color="Green" style="bold">Correct</format><img src="got_it_feature_correct.png" alt=""/>
+    </td>
+    <td width="50%">
+      <format color="Red" style="bold">Incorrect</format><img src="got_it_feature_incorrect.png" alt=""/>
+    </td>
+  </tr>
+</table>
+
+### Changed behavior
+
+Suggest a new pattern to a user's task that improves their workflow.
+
+### Ambiguous behavior
+
+Explain behavior that is not clear from the UI.
+
+For example, when extracting a method, users can change only the method name in the blue box. The tooltip explains where to change the order of parameters in the parentheses and other properties of a method:
+
+![](got_it_ambiguous.png){width=706}
+
+## When not to use
+
+### Presenting a new tool
+
+Don't use the Got It tooltip as a marketing tool. It distracts users, especially on a startup. Use marketing channels for this purpose.
+
+### Nothing to point to
+
+When there is nothing to point to in a dialog or a tool window, use a [banner](banner.md).
+
+<table style="none" border="false">
+  <tr>
+    <td width="50%">
+      <format color="Green" style="bold">Correct</format><img src="got_it_banner_correct.png" alt=""/>
+    </td>
+    <td width="50%">
+      <format color="Red" style="bold">Incorrect</format><img src="got_it_banner_incorrect.png" alt=""/>
+    </td>
+  </tr>
+</table>
+
+### Feedback from the interface
+
+Don't use Got It tooltips to give users a feedback from the interface. Use [notifications](balloon.md) instead.
+
+<table style="none" border="false">
+  <tr>
+    <td width="50%">
+      <format color="Green" style="bold">Correct</format><img src="got_it_feedback_correct.png" alt=""/>
+    </td>
+    <td width="50%">
+      <format color="Red" style="bold">Incorrect</format><img src="got_it_feedback_incorrect.png" alt=""/>
+    </td>
+  </tr>
+</table>
+
+### New option in a tree or list
+
+When there is a new option in a tree or a list of choices that users see regularly, use a badge instead.
+
+<table style="none" border="false">
+  <tr>
+    <td width="50%">
+      <format color="Green" style="bold">Correct</format><img src="got_it_tree_correct.png" alt=""/>
+    </td>
+    <td width="50%">
+      <format color="Red" style="bold">Incorrect</format><img src="got_it_tree_incorrect.png" alt=""/>
+    </td>
+  </tr>
+</table>
+
+## How to use
+
+### Small UI controls
+
+Point to a small and important UI control that can be missed among other information on the screen.
+
+### Showing a group of tooltips
+
+Show a sequential group of tooltips only when users initiate it. Users can launch the show, for example, by pressing a respective button in the interface.
 
 ### Text length and formatting
 
-Show no more than 5 lines of body text. If the text does not fit, leave only the essential information and add a link to a help article.
+* Show no more than 5 lines of body text. If the text does not fit, leave only the essential information and add a link to a help article. Make the help text [short and descriptive](writing_short.md).
 
-Use sentence case both for the header and body text, and follow the [punctuation rules](punctuation.md).
+* Use sentence case both for the header and body text, and follow the [punctuation rules](punctuation.md).
 
-Make the help text [short and descriptive](writing_short.md).
+* Don't use style formatting. It makes the tooltip harder to read.
 
-Avoid using style formatting. It makes the tooltip harder to read.
-
-<table>
-    <tr>
-        <td width="50%"><format color="Red" style="bold">Incorrect</format></td>
-        <td width="50%"><format color="Green" style="bold">Correct</format></td>
-    </tr>
-    <tr>
-        <td><img src="14_formatting_incorrect.png" alt="" width="341" /></td>
-        <td><img src="14_formatting_correct.png" alt="" width="341" /></td>
-    </tr>
+<table style="none" border="false">
+  <tr>
+    <td width="50%">
+      <format color="Green" style="bold">Correct</format><img src="got_it_content_correct.png" alt=""/>
+    </td>
+    <td width="50%">
+      <format color="Red" style="bold">Incorrect</format><img src="got_it_content_incorrect.png" alt=""/>
+    </td>
+  </tr>
 </table>
 
-### Location
+### Positioning
 
-Do **not** cover the information the user is currently working with.
+Don't cover the information the user is currently working with.
 
-<table>
-    <tr>
-        <td width="50%"><format color="Red" style="bold">Incorrect</format></td>
-        <td width="50%"><format color="Green" style="bold">Correct</format></td>
-    </tr>
-    <tr>
-        <td><img src="15_location_incorrect.png" alt="" width="509" /></td>
-        <td><img src="15_location_correct.png" alt="" width="509" /></td>
-    </tr>
+<table style="none" border="false">
+  <tr>
+    <td width="50%">
+      <format color="Green" style="bold">Correct</format><img src="got_it_position_correct.png" alt=""/>
+    </td>
+    <td width="50%">
+      <format color="Red" style="bold">Incorrect</format><img src="got_it_position_incorrect.png" alt=""/>
+    </td>
+  </tr>
 </table>
 
-**Implementation:** See four predefined point providers in the [`GotItTooltip`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/GotItTooltip.kt) class.
+<chapter title="Implementation" collapsible="true">
+
+See four predefined point providers in the [`GotItTooltip`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/GotItTooltip.kt) class.
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -219,7 +326,9 @@ new GotItTooltip(TOOLTIP_ID, GOT_IT_TEXT, parentDisposable)
 </tab>
 </tabs>
 
-### Timeout
+</chapter>
+
+### Timeout for hiding
 
 Consider adding a timeout if:
 
@@ -227,13 +336,13 @@ Consider adding a timeout if:
 * The tooltip appears at the place at which the user is currently looking.
 * There is no link in the tooltip.
 
-![](05_suggest_keyboard_actions.png){width=244}
+For example, the Got It tooltip has a timeout because the text is short, the user has just started the Rename refactoring, and is very likely looking at this place:
 
-*The Got It tooltip has a timeout because the text is short, the user has just started the Rename refactoring, and is very likely looking at this place.*
+![](got_it_short.png){width=706}
 
-Note that adding a timeout automatically hides the Got It button.<br/><br/>
+<chapter title="Implementation" collapsible="true">
 
-**Implementation:** Default timeout duration is 5 seconds. A custom duration can be set:
+Default timeout duration is 5 seconds. A custom duration can be set:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -254,27 +363,32 @@ new GotItTooltip(TOOLTIP_ID, GOT_IT_TEXT, parentDisposable)
 </tab>
 </tabs>
 
+</chapter>
+
 ### Versioning
 
-If a tooltip appears automatically after the IDE starts, tie it to the IDE version. Due to the technical limitations, tooltip counters might be reset when the IDE version is updated, and the users might see the same tooltips again.
+<!--If a tooltip appears automatically after the IDE starts, tie it to the IDE version. Due to the technical limitations, tooltip counters might be reset when the IDE version is updated, and the users might see the same tooltips again.-->
 
 If a tooltip is triggered by an action or plugin installation, do not tie them to the current IDE version. In this case, users might miss a tooltip if they are using this functionality or plugin for the first time in the next IDE version.
 
 ## Built-in behavior
 
+### Frequency
+
 By default, a tooltip is shown only once per user.
+
+### Closable
 
 The tooltip disappears when:
 
 * <shortcut>Esc</shortcut> is pressed
 * User clicks any place outside the tooltip
+* On a timeout
 
-The default timeout duration is 5 seconds.
+### Multiple Got It tooltips
 
 If several tooltips appear on application start, they are shown one by one.
 
-Text width is 280px by default. The tooltip width adjusts automatically to make the right margin 16px.
+### Text width
 
-![](16_width_custom.png){width=681}
-
-![](17_width_adjusted.png){width=625}
+ The tooltip width adjusts automatically to make the right margin 16 px. Text width is 280 px by default.

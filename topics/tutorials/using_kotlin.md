@@ -260,7 +260,7 @@ Use inspection <control>Plugin DevKit | Code | Companion object in extensions</c
 
 ## Kotlin Code FAQ
 
-### Kotlin PSI Model (Analysis API)
+### Analysis API
 <primary-label ref="2024.2"/>
 
 Starting from IntelliJ IDEA 2025.1, K2 Kotlin mode is enabled by default. To ensure your plugin works with the newest versions of IntelliJ IDEA, you must migrate to the Analysis API and declare compatibility with the K2 compiler.
@@ -269,7 +269,7 @@ For migration details, see [Migrating from K1](https://kotlin.github.io/analysis
 
 For comprehensive information about the Analysis API, refer to [Kotlin Analysis API Documentation](https://kotlin.github.io/analysis-api/index_md.html).
 
-### Testing K1 (K2) mode
+### Testing K1 (K2) mode 
 
 See [Testing in K1 Locally](https://kotlin.github.io/analysis-api/testing-in-k1-locally.html).
 

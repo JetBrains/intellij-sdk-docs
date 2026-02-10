@@ -260,17 +260,18 @@ Use inspection <control>Plugin DevKit | Code | Companion object in extensions</c
 
 ## Kotlin Code FAQ
 
-### Testing K2 Mode
-
-See [Testing in K2 Locally](https://kotlin.github.io/analysis-api/testing-in-k2-locally.html).
-
-### Analysis API
+### Kotlin PSI Model (Analysis API)
 <primary-label ref="2024.2"/>
 
-The Analysis API is a powerful library for analyzing code in Kotlin.
-Built on top of the Kotlin PSI syntax tree, it provides access to various semantic information, including reference targets, expression types, declaration scopes, diagnostics, and more.
+Starting from IntelliJ IDEA 2025.1, K2 Kotlin mode is enabled by default. To ensure your plugin works with the newest versions of IntelliJ IDEA, you must migrate to the Analysis API and declare compatibility with the K2 compiler.
 
-See [Kotlin Analysis API Documentation](https://kotlin.github.io/analysis-api/index_md.html) for details.
+For migration details, see [Migrating from K1](https://kotlin.github.io/analysis-api/migrating-from-k1.html).
+
+For comprehensive information about the Analysis API, refer to [Kotlin Analysis API Documentation](https://kotlin.github.io/analysis-api/index_md.html).
+
+### Testing K1 (K2) mode
+
+See [Testing in K1 Locally](https://kotlin.github.io/analysis-api/testing-in-k1-locally.html).
 
 ### Miscellaneous
 

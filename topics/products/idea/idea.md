@@ -91,6 +91,6 @@ Alternatively, specify `com.jetbrains.intellij.java:java-test-framework:$VERSION
 
 Configure bundled Kotlin [plugin dependency](plugin_dependencies.md) with plugin ID `org.jetbrains.kotlin`.
 
-[Kotlin PSI](https://kotlin.github.io/analysis-api/fundamentals.html#kotlin-psi) explains the differences from the IntelliJ IDEA PSI API and introduces the Analysis API as the new recommended way to work with Kotlin code.
+[Kotlin PSI](https://kotlin.github.io/analysis-api/fundamentals.html#kotlin-psi) explains the differences from the IntelliJ IDEA PSI and introduces the Analysis API as the new recommended way to work with Kotlin code.
 
 See also [UAST](uast.md) on how to support multiple JVM languages, including Kotlin.

@@ -27,7 +27,7 @@ Do not show a process name for an inline progress.
 
 ### Downloading and installing
 Display a progress bar near the button while the action is being performed.
-![](17 stop_button.png){width=706}
+![](17 downloading.png){width=706}
 
 ## How to use
 
@@ -77,7 +77,6 @@ Place process controls on the right next to the progress bar. On hover over the 
 
 #### Cancel or Stop button
 Add a Cancel button if the process can be safely interrupted. If interrupting the process does not restore the system to its previous state, name the button Stop.
-
 ![](17 cancel_button.png){width=706}
 
 #### Pause button
@@ -115,6 +114,13 @@ If the process takes a long time and can prevent the user from performing tasks,
   </tr>
 </table>
 
+#### Process status
+
+If a process consists of substeps that can fail but do not terminate the process, then use green and red colors to show the intermediate status.
+For example, show the status of the running tests:
+
+![](15 process_status.png){width=706}
+
 ### Placement in dialog or popup
 > Place the progress bar in a modal dialog if the IDE cannot function properly until  the process is completed.
 >
@@ -128,12 +134,6 @@ For several processes in a group, add a common header and use icons for process 
 
 ![](16 process_control.png){width=706}
 
-#### Process status
-
-If a process consists of substeps that can fail but do not terminate the process, then use green and red colors to show the intermediate status.
-For example, show the status of the running tests:
-
-![](15 process_status.png){width=706}
 
 #### Process complition
 

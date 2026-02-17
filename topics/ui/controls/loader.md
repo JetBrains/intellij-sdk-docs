@@ -17,7 +17,7 @@ A loader indicates that an operation is in progress. It consists of a loader ico
 ![Loader anatomy](anatomy.png){width=706}
 
 
-### Implementation {collapsible="true"}
+<chapter level="3" title="Implementation" collapsible="true" default-state="collapsed">
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -41,6 +41,7 @@ new JLabel(
 ```
 </tab>
 </tabs>
+</chapter>
 
 ## When to use
 

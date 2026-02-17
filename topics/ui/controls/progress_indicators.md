@@ -39,3 +39,4 @@ Use a [progress bar](progress_bar.md) for background or system operations:
     <li>Updating content in the main window, tool windows or editors</li>
     <li>Showing long-running tasks that need visual tracking</li>
 </list>
+

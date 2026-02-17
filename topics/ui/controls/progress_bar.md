@@ -18,15 +18,18 @@ A progress bar informs users about the progress of a lengthy operation.
 
 ### Long-running background operations
 Use a progress bar to indicate long-running operations that don’t block the user interface but require visual tracking.
+
 ![](14 in_status_bar.png){width=706}
 
 ### Background Content Update
 When it is important to show that content is being updated, use an inline progress bar for background updates. The user can continue working with the content while a background process is performed.
 Do not show a process name for an inline progress.
+
 ![](09 inline_processes.png){width=706}
 
 ### Downloading and installing
 Display a progress bar near the button while the action is being performed.
+
 ![](17 downloading.png){width=706}
 
 ## How to use
@@ -77,6 +80,7 @@ Place process controls on the right next to the progress bar. On hover over the 
 
 #### Cancel or Stop button
 Add a Cancel button if the process can be safely interrupted. If interrupting the process does not restore the system to its previous state, name the button Stop.
+
 ![](17 cancel_button.png){width=706}
 
 #### Pause button
@@ -127,6 +131,7 @@ For example, show the status of the running tests:
 {style="note"}
 
 Use a process name as a dialog or popup header, capitalize the title and remove the ellipsis. Process details appear above the progress bar. For a single progress bar, use a button to cancel or pause the process instead of an icon:
+
 ![](13 in_dialog.png){width=706}
 
 

@@ -59,7 +59,7 @@ If icons can’t be replaced, show a process name after a node label.
 
 ![Process name after a node label](04.png){width=706}
 
-If a loader applies to an entire content area, use the [Inline progress](progress_bar.md#inline-progress) instead.
+If a loader applies to the entire content below, use the [Inline progress](progress_bar.md#inline-progress) instead.
 
 ### Empty state
 

@@ -26,16 +26,14 @@ Two types of progress indicators are used in IntelliJ Platform: progress bar and
 ### Loader
 Use a [loader](loader.md) for local or inline operations:
 
-<list>
-    <li>Loading content in fields, dropdowns, comboboxes, tree, or list nodes</li>
-    <li>Loading content in an [empty state](empty_state.md)</li>
-    <li>Showing an action in process, like applying a filter or refreshing data</li>
-</list>
+* Loading content in fields, dropdowns, comboboxes, tree, or list nodes
+* Loading content in an [empty state](empty_state.md)
+* Showing an action in process, like applying a filter or refreshing data
+
 
 ### Progress Bar
 Use a [progress bar](progress_bar.md) for background or system operations:
 
-<list>
-    <li>Updating content in the main window, tool windows or editors</li>
-    <li>Showing long-running tasks that need visual tracking</li>
-</list>
+* Updating content in the main window, tool windows or editors
+* Showing long-running tasks that need visual tracking
+

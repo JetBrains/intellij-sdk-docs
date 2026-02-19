@@ -19,14 +19,14 @@ Remove the indicator after an operation is completed.
 
 ## Types
 
-Two types of progress indicators are used in IntelliJ Platform: progress bar and loader.
+Two types of progress indicators are used in the IntelliJ Platform: a progress bar and a loader.
 
 ![](01.png){width=706}
 
 ### Loader
 Use a [loader](loader.md) for local or inline operations:
 
-* Loading content in fields, dropdowns, comboboxes, tree, or list nodes
+* Loading content in fields, dropdowns, comboboxes, tree or list nodes
 * Loading content in an [empty state](empty_state.md)
 * Showing an action in process, like applying a filter or refreshing data
 

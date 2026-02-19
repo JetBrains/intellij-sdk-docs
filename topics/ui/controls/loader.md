@@ -96,13 +96,13 @@ If there is no space for the process name, show it in a tooltip.
 #### Process details
 Optionally show information about the current stage of an operation.
 Details make long-running tasks more predictable and manageable.
-<br>
+
+
 Show process details below the process name. The text should be concise and displayed on a single line.
 
 ![Process details](10.png){width=706}
 
 Details examples:
-* The current step: "Uploading file 3 of 10"
 * The current step: "Uploading file 3 of 10"
 * Remaining time or percentage completed
 * Round the remaining time to one of the following values: 1, 2, 3, 5, 10, 15, 20, or 30 seconds (or minutes). For example, if 7 minutes and 50 seconds remain, show "About 10 minutes left." If less than 5 seconds remain, show "About 5 seconds left."

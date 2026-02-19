@@ -21,7 +21,7 @@ Use a progress bar to indicate long-running operations that don’t block the us
 
 ![](14 in_status_bar.png){width=706}
 
-### Background Content Update
+### Background content update
 When it is important to show that content is being updated, use an inline progress bar for background updates. The user can continue working with the content while a background process is performed.
 Do not show a process name for an inline progress.
 
@@ -59,7 +59,8 @@ If the vertical space is limited, place the process name with a colon on the lef
 
 #### Process details
 Show information about the current stage of an operation to make long-running tasks more predictable and manageable.
-<br/>
+
+
 Show details below the progress bar on a single line. The length of details is limited by the width of the progress bar.
 
 ![](05_process details.png){width=706}
@@ -140,7 +141,7 @@ For several processes in a group, add a common header and use icons for process 
 ![](16 process_control.png){width=706}
 
 
-#### Process complition
+#### Process completion
 
 Hide the progress bar as soon as the process completes.
 

@@ -19,7 +19,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdea("2025.1.7")
+    intellijIdea("2025.2.6.1")
     bundledPlugin("com.intellij.java")
 
     testFramework(TestFrameworkType.Platform)
@@ -37,7 +37,7 @@ intellijPlatform {
 
   pluginConfiguration {
     ideaVersion {
-      sinceBuild = "251"
+      sinceBuild = "252"
     }
   }
   pluginVerification  {

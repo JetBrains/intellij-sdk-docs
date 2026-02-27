@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Creating a Plugin Gradle Project
 
@@ -108,54 +108,54 @@ The generated `my_plugin` project <path>build.gradle.kts</path> file depends on 
 
 ```kotlin
 plugins {
-    id("java")
-    id("org.jetbrains.kotlin.jvm") version "1.9.25"
-    id("org.jetbrains.intellij.platform") version "2.3.0"
+  id("java")
+  id("org.jetbrains.kotlin.jvm") version "1.9.25"
+  id("org.jetbrains.intellij.platform") version "2.11.0"
 }
 
 group = "org.example"
 version = "1.0-SNAPSHOT"
 
 repositories {
-    mavenCentral()
-    intellijPlatform {
-        defaultRepositories()
-    }
+  mavenCentral()
+  intellijPlatform {
+    defaultRepositories()
+  }
 }
 
 // Configure Gradle IntelliJ Plugin
 // Read more: https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin.html
 dependencies {
-    intellijPlatform {
-        create("IC", "2025.1.7")
-        testFramework(org.jetbrains.intellij.platform.gradle.TestFrameworkType.Platform)
+  intellijPlatform {
+    intellijIdea("2025.2.6.1")
+    testFramework(org.jetbrains.intellij.platform.gradle.TestFrameworkType.Platform)
 
-        // Add necessary plugin dependencies for compilation here, example:
-        // bundledPlugin("com.intellij.java")
-    }
+    // Add necessary plugin dependencies for compilation here, example:
+    // bundledPlugin("com.intellij.java")
+  }
 }
 
 intellijPlatform {
-    pluginConfiguration {
-        ideaVersion {
-            sinceBuild = "251"
-        }
+  pluginConfiguration {
+    ideaVersion {
+      sinceBuild = "252"
+    }
 
-        changeNotes = """
+    changeNotes = """
       Initial version
     """.trimIndent()
-    }
+  }
 }
 
 tasks {
-    // Set the JVM compatibility versions
-    withType<JavaCompile> {
-        sourceCompatibility = "21"
-        targetCompatibility = "21"
-    }
-    withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-        kotlinOptions.jvmTarget = "21"
-    }
+  // Set the JVM compatibility versions
+  withType<JavaCompile> {
+    sourceCompatibility = "21"
+    targetCompatibility = "21"
+  }
+  withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    kotlinOptions.jvmTarget = "21"
+  }
 }
 ```
 
@@ -166,7 +166,7 @@ tasks {
 * The <control>Group</control> from the [New Project](#create-ide-plugin) wizard is the `project.group` value
 * `repositories`: setup required repositories ([](tools_intellij_platform_gradle_plugin_repositories_extension.md))
 * `dependencies`:
-  * define target IDE type (`IC`) and version (`2025.1.7`) ([](tools_intellij_platform_gradle_plugin_dependencies_extension.md#target-versions))
+  * define target IDE `intellijIdea("2025.2.6.1")` ([](tools_intellij_platform_gradle_plugin_dependencies_extension.md#target-versions))
   * add dependency on the platform testing framework ([](tools_intellij_platform_gradle_plugin_dependencies_extension.md#testing))
 * `pluginConfiguration`: [`since-build`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-ideaVersion) and initial [change notes](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-changeNotes)
 * `sourceCompatibility` enforces using a 21 JDK

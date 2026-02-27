@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Light and Heavy Tests
 
@@ -35,7 +35,7 @@ for tests that don't have any dependency on Java functionality.
 
 **Examples:**
 - [`JavaCopyrightTest`](%gh-ic%/java/java-tests/testSrc/com/intellij/copyright/JavaCopyrightTest.kt)
-- [`HtmlDocumentationTest`](%gh-ic%/xml/tests/src/com/intellij/html/HtmlDocumentationTest.java)
+- [`HtmlDocumentationTest`](%gh-ic%/xml/tests/src/com/intellij/html/HtmlDocumentationTest.kt)
 - [`AcceptWordAsCorrectTest`](%gh-ic%/plugins/grazie/src/test/kotlin/com/intellij/grazie/spellchecker/inspector/AcceptWordAsCorrectTest.java)
 
 </tab>

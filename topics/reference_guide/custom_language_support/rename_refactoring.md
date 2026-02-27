@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Rename Refactoring
 
@@ -61,7 +61,7 @@ Further customization of the Rename refactoring processing is possible on multip
 Providing a custom implementation of the [`RenameHandler`](%gh-ic%/platform/refactoring/src/com/intellij/refactoring/rename/RenameHandler.java) interface allows you to entirely replace the UI and workflow of the rename refactoring, and also to support renaming something which is not a [`PsiElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) at all.
 
 **Example:**
-[`RenameHandler`](%gh-ic%/plugins/properties/properties-resource-bundle-editor/src/com/intellij/lang/properties/refactoring/rename/ResourceBundleFromEditorRenameHandler.java) for renaming a resource bundle in the [Properties language plugin](%gh-ic%/plugins/properties)
+[`PropertyRenameHandler`](%gh-ic%/plugins/groovy/src/org/jetbrains/plugins/groovy/refactoring/rename/PropertyRenameHandler.java) for renaming a Groovy property
 
 If you're okay with the standard UI but need to extend the default logic of renaming, you can provide an implementation of the [`RenamePsiElementProcessor`](%gh-ic%/platform/lang-impl/src/com/intellij/refactoring/rename/RenamePsiElementProcessor.java) interface.
 This allows you to:

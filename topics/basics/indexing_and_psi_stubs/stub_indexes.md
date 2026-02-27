@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Stub Indexes
 
@@ -40,7 +40,7 @@ The following steps need to be performed only once for each language that suppor
 
 **Examples:**
 - [`JavaStubElementTypes`](%gh-ic%/java/java-psi-impl/src/com/intellij/psi/impl/java/stubs/JavaStubElementTypes.java) registered in [`intellij.java.psi.impl.xml`](%gh-ic%/java/java-psi-impl/resources/intellij.java.psi.impl.xml)
-- see [`Angular2MetadataElementTypes`](%gh-ij-plugins%/Angular/src/org/angular2/entities/metadata/Angular2MetadataElementTypes.kt) for Kotlin sample
+- see [`Angular2MetadataElementTypes`](%gh-ij-plugins%/Angular/angular-backend/src/org/angular2/entities/metadata/Angular2MetadataElementTypes.kt) for Kotlin sample
 
 </procedure>
 

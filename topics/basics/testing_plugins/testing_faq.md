@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Testing FAQ
 
@@ -165,7 +165,7 @@ Use [`ExternalResourceManagerExImpl.registerResourceTemporarily()`](%gh-ic%/xml/
 
 ### How to replace a component/service in tests?
 
-Provide dedicated test implementation via `testServiceImplementation` in [service declaration](plugin_services.md#declaring-a-service), or use [`ServiceContainerUtil`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/ServiceContainerUtil.kt).
+Provide dedicated test implementation via `testServiceImplementation` in [service declaration](plugin_services.md#declaring-a-service), or use [`ServiceContainerUtil`](%gh-ic%/platform/testFramework/common/src/ServiceContainerUtil.kt).
 
 ### How to replace extension points in tests?
 

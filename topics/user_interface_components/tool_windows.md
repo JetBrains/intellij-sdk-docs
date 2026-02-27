@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Tool Windows
 
@@ -109,7 +109,7 @@ Use [`ToolWindowManager.getToolWindow()`](%gh-ic%/platform/platform-api/src/com/
 
 ### Events
 
-Project-level topic [`ToolWindowManagerListener`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/ex/ToolWindowManagerListener.java) allows listening to tool window registration/show events (see [](plugin_listeners.md)).
+Project-level topic [`ToolWindowManagerListener`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ex/ToolWindowManagerListener.java) allows listening to tool window registration/show events (see [](plugin_listeners.md)).
 
 ## Sample Plugin
 

@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 212d61deaf3a8117781e482e014de0f42ab13135 -->
+<!-- Revision: 50c0552a9a888ea57ec8d1f947085087c0a84b57 -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-79 Extension Points and 27 Listeners
+81 Extension Points and 29 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -22,7 +22,7 @@ EP List Directories:
 
 | Topic | Listener |
 |-------|----------|
-| [`CloudConnectionDataStorage#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.cloudExplorer.CloudConnectionDataStorage.Listener)  | `Listener` |
+| [`CloudConnectionDataStorage#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.cloud.explorer.CloudConnectionDataStorage.Listener)  | `Listener` |
 | [`DataSourcePerFileMappings#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.console.DataSourcePerFileMappings.OnMappingsChangedListener)  | `OnMappingsChangedListener` |
 | [`JdbcDriverManager#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.console.JdbcDriverManager.Listener)  | `Listener` |
 | [`DatabaseSessionManager#topic`](https://jb.gg/ipe/listeners?topics=com.intellij.database.console.session.DatabaseSessionManagerListener)  | `DatabaseSessionManagerListener` |
@@ -45,8 +45,10 @@ EP List Directories:
 | [`SqlRoutineIndex#topic`](https://jb.gg/ipe/listeners?topics=com.intellij.database.sql.backend.core.SqlRoutineIndex.SqlRoutineIndexListener)  | `SqlRoutineIndexListener` |
 | [`DbUltimateActionsListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.util.DbUltimateActionsListener)  | `DbUltimateActionsListener` |
 | [`DatabaseColorManager#COLOR_CHANGE_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.view.DatabaseColorManager.ColorChangeListener)  | `ColorChangeListener` |
-| [`CloudDatabasesPanel#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.view.ui.CloudDatabasesPanel.Listener)  | `Listener` |
 | [`DatabaseConfigEditor#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.view.ui.DatabaseConfigEditor.Listener)  | `Listener` |
+| [`CloudDatabasesPanel#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.view.ui.cloud.explorer.CloudDatabasesPanel.Listener)  | `Listener` |
+| [`ConnectionTemplatesSideTab#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.view.ui.cloud.jba.ConnectionTemplatesSideTab.Listener)  | `Listener` |
+| [`DataSourceTemplateConfigurable#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.view.ui.cloud.jba.DataSourceTemplateConfigurable.Listener)  | `Listener` |
 | [`DatabaseSettings#TOPIC`](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
 | [`DatabaseViewOptions#TOPIC`](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
 
@@ -132,10 +134,12 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.activeConnectionInfoProvider"/></include> ![Internal][internal] | `DbActiveConnectionInfoProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.cli.runTargetProvider"/></include> | `CliRunTargetProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.cloudCommunicatorProvider"/></include> | `CloudCommunicatorProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.cloudDataSourceProvider"/></include> | `CloudDataSourceProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.configValidator"/></include> | `DatabaseConfigValidator` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.databaseViewStructureExtension"/></include> | `DvStructureExtension` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.databaseViewStructureExtension"/></include> ![Experimental][experimental] | `DvStructureExtension` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.debuggerFacade"/></include> | `SqlDebuggerFacade` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.explorer.decoration"/></include> ![Experimental][experimental] | `DvDecorationExtension` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.predicatesHelper"/></include> | `PredicatesHelper` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.runConsoleAvailable"/></include> | `RunQueryIntentionActionAvailable` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.schemaDiffCustomization"/></include> | `SchemaDiffCustomization` |

@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 212d61deaf3a8117781e482e014de0f42ab13135 -->
+<!-- Revision: 50c0552a9a888ea57ec8d1f947085087c0a84b57 -->
 
 <!--
 EP List Directories:
@@ -14,24 +14,11 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 <snippet id="content">
 
-79 Extension Points and 10 Listeners
+81 Extension Points and 10 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
 ## IntelliJ Open Source Plugins
-
-### AngularJS
-
-[`AngularJS`](%gh-ij-plugins%/Angular/resources/META-INF/plugin.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.angular2.configProvider"/></include> | [`AngularConfigProvider`](%gh-ij-plugins%/Angular/src/org/angular2/cli/config/AngularConfigProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.angular2.entitiesSource"/></include> | [`Angular2EntitiesSource`](%gh-ij-plugins%/Angular/src/org/angular2/entities/Angular2EntitiesSource.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.angular2.frameworkHandler"/></include> ![Experimental][experimental] | [`Angular2FrameworkHandler`](%gh-ij-plugins%/Angular/src/org/angular2/entities/Angular2FrameworkHandler.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.angular2.importsHandler"/></include> | [`Angular2ImportsHandler`](%gh-ij-plugins%/Angular/src/org/angular2/codeInsight/imports/Angular2ImportsHandler.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.angular2.jsHandlersFactory"/></include> | [`Angular2JSHandlersFactory`](%gh-ij-plugins%/Angular/src/org/angular2/codeInsight/Angular2HandlersFactory.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.angular2.templateScopesProvider"/></include> | [`Angular2TemplateScopesProvider`](%gh-ij-plugins%/Angular/src/org/angular2/codeInsight/template/Angular2TemplateScopesProvider.kt) |
 
 ### com.intellij.cpp-diagnostics
 
@@ -72,6 +59,19 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.protobuf.projectSettingsConfigurator"/></include> ![Project-Level][project-level] | [`ProjectSettingsConfigurator`](%gh-ij-plugins%/protobuf/protoeditor-core/src/com/intellij/protobuf/ide/settings/ProjectSettingsConfigurator.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.protobuf.schemaProvider"/></include> ![Project-Level][project-level] | [`SchemaProvider`](%gh-ij-plugins%/protobuf/protoeditor-core/src/com/intellij/protobuf/lang/resolve/SchemaProvider.java) |
 
+### intellij.angular.backend.xml
+
+[`intellij.angular.backend.xml`](%gh-ij-plugins%/Angular/angular-backend/resources/intellij.angular.backend.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.angular2.configProvider"/></include> | [`AngularConfigProvider`](%gh-ij-plugins%/Angular/angular-backend/src/org/angular2/cli/config/AngularConfigProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.angular2.entitiesSource"/></include> | [`Angular2EntitiesSource`](%gh-ij-plugins%/Angular/angular-backend/src/org/angular2/entities/Angular2EntitiesSource.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.angular2.frameworkHandler"/></include> ![Experimental][experimental] | [`Angular2FrameworkHandler`](%gh-ij-plugins%/Angular/angular-backend/src/org/angular2/entities/Angular2FrameworkHandler.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.angular2.importsHandler"/></include> | [`Angular2ImportsHandler`](%gh-ij-plugins%/Angular/angular-backend/src/org/angular2/codeInsight/imports/Angular2ImportsHandler.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.angular2.jsHandlersFactory"/></include> | [`Angular2JSHandlersFactory`](%gh-ij-plugins%/Angular/angular-backend/src/org/angular2/codeInsight/Angular2HandlersFactory.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.angular2.templateScopesProvider"/></include> | [`Angular2TemplateScopesProvider`](%gh-ij-plugins%/Angular/angular-backend/src/org/angular2/codeInsight/template/Angular2TemplateScopesProvider.kt) |
+
 ### intellij.jhipster.xml
 
 [`intellij.jhipster.xml`](%gh-ij-plugins%/jhipster/resources/intellij.jhipster.xml)
@@ -96,6 +96,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vuejs.containerInfoProvider"/></include> | [`VueContainerInfoProvider`](%gh-ij-plugins%/vuejs/vuejs-backend/src/org/jetbrains/vuejs/model/source/VueContainerInfoProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vuejs.templateScopesProvider"/></include> | [`VueTemplateScopesProvider`](%gh-ij-plugins%/vuejs/vuejs-backend/src/org/jetbrains/vuejs/codeInsight/template/VueTemplateScopesProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vuejs.templateSymbolScopesProvider"/></include> | [`VueTemplateSymbolScopesProvider`](%gh-ij-plugins%/vuejs/vuejs-backend/src/org/jetbrains/vuejs/codeInsight/template/VueTemplateSymbolScopesProvider.kt) |
 
 ### name.kropp.intellij.makefile
 
@@ -238,6 +239,20 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.qodana.coverage.cloudArtifactsProcessor"/></include> | [`CoverageCloudArtifactsProcessor`](%gh-ij-plugins%/qodana/coverage/src/org/jetbrains/qodana/staticAnalysis/inspections/coverage/CoverageCloudArtifactsProcessor.kt) |
 
+### intellij.qodana.inspectionKts.xml
+
+[`intellij.qodana.inspectionKts.xml`](%gh-ij-plugins%/qodana/inspectionKts/core/resources/intellij.qodana.inspectionKts.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.qodana.inspectionKts.customPluginsForKtsClasspathProvider"/></include> | [`CustomPluginsForKtsClasspathProvider`](%gh-ij-plugins%/qodana/inspectionKts/core/src/org/jetbrains/qodana/inspectionKts/CustomPluginsForKtsClasspathProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.qodana.inspectionKts.customPsiFileFactory"/></include> | [`CustomPsiFileFactory`](%gh-ij-plugins%/qodana/inspectionKts/core/src/org/jetbrains/qodana/inspectionKts/fileFactory/CustomPsiFileFactory.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.qodana.inspectionKts.defaultImportProvider"/></include> | [`InspectionKtsDefaultImportProvider`](%gh-ij-plugins%/qodana/inspectionKts/core/src/org/jetbrains/qodana/inspectionKts/imports.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.qodana.inspectionKts.examples.provider"/></include> | [`Provider`](%gh-ij-plugins%/qodana/inspectionKts/core/src/org/jetbrains/qodana/inspectionKts/examples/InspectionKtsExample.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.qodana.inspectionKts.postProcessorFactory"/></include> | [`CompiledInspectionKtsPostProcessorFactory`](%gh-ij-plugins%/qodana/inspectionKts/core/src/org/jetbrains/qodana/inspectionKts/InspectionKtsFileStatus.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.qodana.inspectionKts.psiViewerSupport"/></include> | [`PsiViewerSupport`](%gh-ij-plugins%/qodana/inspectionKts/core/src/org/jetbrains/qodana/inspectionKts/ui/psi-viewer.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.qodana.inspectionKts.templates.provider"/></include> | [`Provider`](%gh-ij-plugins%/qodana/inspectionKts/core/src/org/jetbrains/qodana/inspectionKts/templates/InspectionKtsTemplate.kt) |
+
 ### org.intellij.qodana
 
 [`org.intellij.qodana`](%gh-ij-plugins%/qodana/core/resources/META-INF/plugin.xml)
@@ -247,12 +262,10 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.azureCiConfigUpdateHandler"/></include> | [`AzureCIConfigHandler`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/ci/AzureCIConfigHandler.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.bitbucketCiConfigUpdateHandler"/></include> | [`BitbucketCIConfigHandler`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/ci/BitbucketCIConfigHandler.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.circleCiConfigUpdateHandler"/></include> | [`CircleCIConfigHandler`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/ci/CircleCIConfigHandler.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.compiledInspectionKtsPostProcessorFactory"/></include> | [`CompiledInspectionKtsPostProcessorFactory`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/inspectionKts/InspectionKtsFileStatus.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.configUpdateHandler"/></include> | [`ConfigUpdateHandler`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/ConfigUpdateHandler.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.contextMarginProvider"/></include> | [`ContextMarginProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/sarif/ContextMarginProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.customPluginsForKtsClasspathProvider"/></include> | [`CustomPluginsForKtsClasspathProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/inspectionKts/CustomPluginsForKtsClasspathProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.cyclomaticComplexityFileVisitor"/></include> | [`CyclomaticComplexityMetricFileVisitor`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/inspections/metrics/inspections/cyclomaticComplexity/CyclomaticComplexityMetricFileVisitor.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.dynamicInspectionsInitializer"/></include> | [`DynamicInspectionInitializer`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/inspectionKts/DynamicInspectionInitializer.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.dynamicInspectionsInitializer"/></include> | [`DynamicInspectionInitializer`](%gh-ij-plugins%/qodana/util/src/org/jetbrains/qodana/util/DynamicInspectionInitializer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.externalToolsConfigurationProvider"/></include> | [`ExternalToolsConfigurationProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/inspections/runner/externalTools/ExternalToolsConfigurationProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.externalToolsProvider"/></include> | [`ExternalToolsProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/inspections/runner/externalTools/ExternalToolsProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.githubCiConfigHandler"/></include> | [`GitHubCIConfigHandler`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/ci/GitHubCIConfigHandler.kt) |
@@ -261,9 +274,6 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.globalOutputConsumer"/></include> ![Internal][internal] | [`GlobalOutputConsumer`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/inspections/runner/globalOutput/GlobalOutputConsumer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.highlightInfoActionProvider"/></include> | [`QodanaHighlightInfoActionProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/highlight/QodanaHighlightInfoActionProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.highlightingListener"/></include> | [`QodanaHighlightingListener`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/highlight/QodanaHighlightingListener.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.inspectionKtsDefaultImportProvider"/></include> | [`InspectionKtsDefaultImportProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/inspectionKts/imports.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.inspectionKtsExampleProvider"/></include> | [`Provider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/inspectionKts/examples/InspectionKtsExample.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.inspectionKtsTemplateProvider"/></include> | [`Provider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/inspectionKts/templates/InspectionKtsTemplate.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.inspectionProfileProvider"/></include> | [`QodanaInspectionProfileProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/profile/QodanaInspectionProfileProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.jenkinsConfigHandler"/></include> | [`JenkinsConfigHandler`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/ci/JenkinsConfigHandler.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.loggingActivity"/></include> | [`QodanaLoggingActivity`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/inspections/runner/log/QodanaLoggingActivity.kt) |
@@ -272,7 +282,6 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.problemsViewModuleSupport"/></include> | [`QodanaGroupByModuleSupport`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/ui/problemsView/QodanaGroupByModuleSupport.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.projectDescriber"/></include> | [`QodanaProjectDescriber`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/projectDescription/QodanaProjectDescriber.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.projectLoaderExtension"/></include> | [`QodanaProjectLoaderExtension`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/inspections/runner/startup/QodanaProjectLoader.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.psiViewerSupport"/></include> | [`PsiViewerSupport`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/inspectionKts/ui/psi-viewer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.qodanaHighlightInfoComparator"/></include> | [`QodanaHighlightInfoComparator`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/QodanaHighlightInfoComparator.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.qodanaHighlightInfoTypeProvider"/></include> | [`QodanaHighlightInfoTypeProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/QodanaHighlightInfoTypeProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.qodanaHighlightingSupportInfoProvider"/></include> | [`QodanaHighlightingSupportInfoProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/QodanaHighlightingSupportInfoProvider.kt) |

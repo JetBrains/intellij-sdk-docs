@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 212d61deaf3a8117781e482e014de0f42ab13135 -->
+<!-- Revision: 50c0552a9a888ea57ec8d1f947085087c0a84b57 -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-113 Extension Points and 37 Listeners
+118 Extension Points and 36 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -25,7 +25,6 @@ EP List Directories:
 | [`BuildAnalyzerStorageManager.Companion#DATA_IS_READY_TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.build.attribution.BuildAnalyzerStorageManager.Listener)  | [`Listener`](%gh-ij-android%/build-attribution/src/com/android/build/attribution/BuildAnalyzerStorageManager.kt) |
 | [`StatefulButtonNotifier#BUTTON_STATE_TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.assistant.StatefulButtonNotifier)  ![Project-Level][project-level] | [`StatefulButtonNotifier`](%gh-ij-android%/assistant/src/com/android/tools/idea/assistant/StatefulButtonNotifier.java) |
 | [`TutorialCardRefreshNotifier#TUTORIAL_CARD_TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.assistant.TutorialCardRefreshNotifier)  | [`TutorialCardRefreshNotifier`](%gh-ij-android%/assistant/src/com/android/tools/idea/assistant/TutorialCardRefreshNotifier.java) |
-| [`AvdLaunchListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.avdmanager.AvdLaunchListener)  | [`AvdLaunchListener`](%gh-ij-android%/android/src/com/android/tools/idea/avdmanager/AvdLaunchListener.java) |
 | [`EmulatorLogListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.avdmanager.EmulatorLogListener)  | [`EmulatorLogListener`](%gh-ij-android%/android/src/com/android/tools/idea/avdmanager/EmulatorLogListener.kt) |
 | [`IssueProviderListener#UI_CHECK`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.common.error.IssueProviderListener)  ![Project-Level][project-level] | [`IssueProviderListener`](%gh-ij-android%/designer/src/com/android/tools/idea/common/error/IssueProvider.kt) |
 | [`IssueProviderListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.common.error.IssueProviderListener)  ![Project-Level][project-level] | [`IssueProviderListener`](%gh-ij-android%/designer/src/com/android/tools/idea/common/error/IssueProvider.kt) |
@@ -177,6 +176,8 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.rendering.tokens.buildSystemFilePreviewServices"/></include> ![Non-Dynamic][non-dynamic] | [`BuildSystemFilePreviewServices`](%gh-ij-android%/android/src/com/android/tools/idea/rendering/tokens/BuildSystemFilePreviewServices.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.res.resourceClassToken"/></include> ![Non-Dynamic][non-dynamic] | [`ResourceClassToken`](%gh-ij-android%/android/src/com/android/tools/idea/res/ResourceClassToken.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.run.configuration.editors.androidWearConfigurationEditorToken"/></include> ![Non-Dynamic][non-dynamic] | [`AndroidWearConfigurationEditorToken`](%gh-ij-android%/android/src/com/android/tools/idea/run/configuration/editors/AndroidWearConfigurationEditor.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.run.deployment.liveedit.liveEditStudioBotActionFactory"/></include> ![Non-Dynamic][non-dynamic] | [`LiveEditStudioBotActionFactory`](%gh-ij-android%/android/src/com/android/tools/idea/editors/liveedit/ui/LiveEditStudioBotActionFactory.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.run.deployment.liveedit.vibeTransformerProvider"/></include> ![Non-Dynamic][non-dynamic] | [`VibeTransformerProvider`](%gh-ij-android%/android/src/com/android/tools/idea/run/deployment/liveedit/VibeTransformerProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.run.editor.androidDebuggerInfoProvider"/></include> ![Non-Dynamic][non-dynamic] | [`AndroidDebuggerInfoProvider`](%gh-ij-android%/android/src/com/android/tools/idea/run/editor/AndroidDebuggerInfoProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.run.editor.testRunParametersToken"/></include> ![Non-Dynamic][non-dynamic] | [`TestRunParametersToken`](%gh-ij-android%/android/src/com/android/tools/idea/run/editor/TestRunParameters.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.testartifacts.instrumented.androidTestConfigurationProducerToken"/></include> ![Non-Dynamic][non-dynamic] | [`AndroidTestConfigurationProducerToken`](%gh-ij-android%/android/src/com/android/tools/idea/testartifacts/instrumented/AndroidTestConfigurationProducer.kt) |
@@ -272,6 +273,7 @@ EP List Directories:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.designer.issueFixActionProvider"/></include> | [`IssueFixActionProvider`](%gh-ij-android%/designer/src/com/android/tools/idea/common/error/IssueFixActionProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.uibuilder.analytics.resizeTracker"/></include> | [`ResizeTracker`](%gh-ij-android%/designer/src/com/android/tools/idea/uibuilder/analytics/ResizeTracker.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.uibuilder.editor.multirepresentation.sourcecode.sourceCodePreviewRepresentationProvider"/></include> ![Non-Dynamic][non-dynamic] | [`PreviewRepresentationProvider`](%gh-ij-android%/designer/src/com/android/tools/idea/uibuilder/editor/multirepresentation/PreviewRepresentationProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.uibuilder.editorNotificationProvider"/></include> ![Non-Dynamic][non-dynamic] ![DumbAware][dumb-aware] | [`EditorNotificationProvider`](%gh-ic%/platform/platform-api/src/com/intellij/ui/EditorNotificationProvider.java) |
@@ -366,6 +368,8 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.gradle.sync.postSyncProjectSetupStep"/></include> ![Non-Dynamic][non-dynamic] | [`ProjectSetupStep`](%gh-ij-android%/project-system-gradle/src/com/android/tools/idea/gradle/project/sync/setup/post/ProjectSetupStep.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.moduleImporter"/></include> ![Non-Dynamic][non-dynamic] | [`AndroidModuleImporter`](%gh-ij-android%/project-system-gradle/src/com/android/tools/idea/gradle/project/AndroidModuleImporter.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.gradle.errorQuickFixProvider"/></include> ![Non-Dynamic][non-dynamic] | [`GradleErrorQuickFixProvider`](%gh-ij-android%/project-system-gradle/src/com/android/tools/idea/gradle/project/build/events/GradleErrorQuickFixProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.gradle.project.importing.gradleProjectImporter"/></include> ![Non-Dynamic][non-dynamic] | [`GradleProjectImporterExtension`](%gh-ij-android%/project-system-gradle/src/com/android/tools/idea/gradle/project/importing/GradleProjectImporterExtension.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.testartifacts.testsuite.temp.testSuiteViewAdaptorProvider"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`TestSuiteViewAdaptorProvider`](%gh-ij-android%/project-system-gradle/src/com/android/tools/idea/testartifacts/testsuite/temp/TestSuiteViewAdaptorProvider.kt) |
 
 ### project-system-plugin.xml
 

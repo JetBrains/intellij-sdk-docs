@@ -1,6 +1,6 @@
 <!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# Incompatible Changes in IntelliJ Platform and Plugins API 2025.*
+# Incompatible Changes in IntelliJ Platform and Plugins API 2026.*
 
 <!--
 Before documenting a breaking API change, please make sure that the change cannot be avoided in an alternative way.
@@ -61,7 +61,7 @@ NOTE: You are allowed to prettify the pattern using links: [`org.example.Foo`](h
 NOTE: Entries not starting with code quotes (`name`) can be added to document non-code changes and will be skipped in API verification.
 -->
 
-<link-summary>List of known Breaking API Changes in 2025.*</link-summary>
+<link-summary>List of known Breaking API Changes in 2026.*</link-summary>
 
 <include from="snippets.topic" element-id="apiChangesHeader"/>
 

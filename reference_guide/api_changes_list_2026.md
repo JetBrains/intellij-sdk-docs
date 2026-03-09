@@ -75,4 +75,4 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
                                                                                                                                                                                     
 The Java plugin has been split into several modules with their own classloaders.                                                                                                  
 This shouldn't affect plugins that use standard `<depends>com.intellij.java</depends>` dependency.                                                                                
-  If a plugin depends on specific Java plugin modules directly, the dependencies should be updated to reference the new module names.      
+If a plugin depends on specific Java plugin modules directly, the dependencies should be updated to reference the new module names.      

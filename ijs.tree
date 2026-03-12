@@ -92,6 +92,7 @@
       </toc-element>
       <toc-element topic="popups.md"/>
       <toc-element topic="notifications.md"/>
+      <toc-element topic="top_level_notifications.md"/>
       <toc-element topic="file_and_class_choosers.md"/>
       <toc-element topic="editor_components.md"/>
       <toc-element topic="lists_and_trees.md"/>

@@ -32,14 +32,19 @@ Set the display type to `BALLOON` constant. Then, provide a human-readable ident
 </extensions>
 ```
 
-> A good ID completes this phrase: "Notifications in this group tell the user about…". See the [](balloon.md#naming-a-notification-group)
+> A good ID completes this phrase: "Notifications in this group tell the user about…". See the [UI Guidelines for further tips on naming conventions](balloon.md#naming-a-notification-group).
 >
 {style="tip"}
 
 ## Timeline notification
 
-Next, create a new [`Notification`](https://github.com/JetBrains/intellij-community/tree/idea/253.31033.145/platform/ide-core/src/com/intellij/notification/Notifications.java) instance.
-The constructor takes three arguments: the notification group ID, the content text, and a type — which controls the icon that's displayed.
+Next, create a new [`Notification`](%gh-ic%/platform/ide-core/src/com/intellij/notification/Notifications.java) instance.
+The constructor takes three arguments:
+
+1. Notification group ID
+2. Content text
+3. Type (controls the icon that's displayed)
+
 Use the `notify` method and pass in the current project to show the notification in its associated frame.
 
 ```kotlin
@@ -48,20 +53,27 @@ Notification("Bagel", "Bagel was eaten", NotificationType.INFORMATION)
 ```
 
 > Use [Plugin DevKit](https://plugins.jetbrains.com/plugin/22851-plugin-devkit/) to get the code insight for notification group identifiers.
-> By default, a notification is *timed*, as it will automatically disappear after 10 seconds. However, it will remain in the <control>Notifications</control> tool window, until cleared, in the *Timeline* section.
 >
 {style="tip"}
 
-## Configuring notifications
+By default, a notification is *timed*, as it will automatically disappear after 10 seconds. However, it will remain in the <control>Notifications</control> tool window, until cleared, in the *Timeline* section.
 
-Notifications are configured in the JetBrains IDE settings under <ui-path>Settings | Appearance & Behavior | Notifications</ui-path>.
-See [Notifications Product Help](https://www.jetbrains.com/help/idea/notifications.html#notifications_tool_window) for specific user-facing options.
+## Configuring Notifications
+
+Notifications are configured in <ui-path>Settings | Appearance & Behavior | Notifications</ui-path>.
 Observe the <control>Bagel</control> notification group with <control>Popup type</control> set to <control>Balloon</control> and <control>Show in tool window</control> being checked.
 
-## Notification icons
+See [Notifications Product Help](https://www.jetbrains.com/help/idea/notifications.html#notifications_tool_window) for specific user-facing options.
+
+## Notification Icons
 
 Customize the notification icon according to [message severity](balloon.md#message-severity).
-Use the constants from [`NotificationType`](https://github.com/JetBrains/intellij-community/blob/idea/253.31033.145/platform/ide-core/src/com/intellij/notification/NotificationType.java#L11) to show generic information (`INFORMATION`), disruptions or events requiring user action (`WARNING`) and critical events or states (`ERROR`).
+Use the constants from [`NotificationType`](https://github.com/JetBrains/intellij-community/blob/idea/253.31033.145/platform/ide-core/src/com/intellij/notification/NotificationType.java#L11).
+
+1. Generic information: `INFORMATION`.
+2. Disruptions or events requiring user action: `WARNING`.
+3. Critical events or states: `ERROR`.
+
 When possible, use a plugin or functionality icon instead of the <control>Information</control> icon.
 See the [Icons](#icons) section for more information.
 
@@ -71,36 +83,31 @@ A top-level notification [can contain actions](balloon.md#actions), rendered as 
 
 ```kotlin
 Notification("Bagel", "Bagel was eaten", NotificationType.INFORMATION)
-    .addAction(NotificationAction.createSimpleExpiring("Track calories") {
-        // add an action
-    })
-    .notify(e.project)
+  .addAction(NotificationAction.createSimpleExpiring("Track calories") {
+    // add an action
+  })
+  .notify(e.project)
 ```
 
 Chain `addAction` method with `createSimpleExpiring` method, which provides a trailing lambda for the action handler.
 When the user clicks it, the notification dismisses automatically.
 However, it will stay in the Notification tool window with the hyperlink greyed-out.
 
-### More than one action
+### Multiple Actions
 
 Anything beyond two actions [gets hidden](balloon.md#number-of-actions) in a <control>More</control> menu.
 Put the most important actions first.
 
-## Notification title and body
+## Notification Title and Body
 
-To give more context, [use a title and a body](balloon.md#text). The title briefly describes what happened, and the body explains the impact or what the user can do about it. The overloaded constructor takes an extra string before the content – that’s the title.
+To give more context, [use a title and a body](balloon.md#text).
+The title briefly describes what happened, and the body explains the impact or what the user can do about it.
+The overloaded constructor takes an extra string before the content – that’s the title.
 
 ```kotlin
 Notification("Bagel", "Bagel was eaten", getBagelCounterMessage(), NotificationType.INFORMATION)
-    .notify(e.project)
+  .notify(e.project)
 ```
-
-Remember a few user experience guidelines:
-
-* Use only the title when it fits on a single line.
-* Use just the body when it fits in two lines, and the title would duplicate its meaning.
-* Only the first two lines of the notification body are immediately visible. The rest is shown when expanded.
-* When both title and body are shown, the title is rendered in bold.
 
 > The notification body may contain HTML code for presentation purposes.
 >
@@ -124,14 +131,8 @@ To mark the notification as a suggestion, set its suggestion type to `true`.
 
 ```kotlin
 Notification("Bagel File", "Bagel file detected", NotificationType.INFORMATION)
-    .setSuggestionType(true)
-    .addAction(NotificationAction.createSimpleExpiring("Configure…") {
-        FileEditorManager.getInstance(project).openFile(file, true)
-    })
-    .addAction(NotificationAction.createSimpleExpiring("Don't show again") {
-        // handle action
-    })
-    .notify(project)
+  .setSuggestionType(true)
+  // ...
 ```
 
 Suggestions have a dedicated section in the <control>Notifications</control> tool window.
@@ -142,7 +143,7 @@ Suggestions have a dedicated section in the <control>Notifications</control> too
 
 ## Tool Window Notifications
 
-A tool window can trigger a long-running operation.
+A [tool window](tool_windows.md) can trigger a long-running operation.
 For example, the <control>Find in Files</control> action takes a couple of seconds to search for a string in a large project tree, doing that in the background.
 When there are no matches, a notification balloon is shown.
 However, instead of the usual location, the notification balloon is displayed directly next to the tool window icon.
@@ -150,19 +151,21 @@ In the plugin descriptor, declare the notification group with a display type set
 As the notification group’s notifications are explicitly bound to a specific tool window, provide its identifier in the `toolWindowId` attribute.
 
 ```xml
-<notificationGroup id="Order in Bakery"
-   displayType="TOOL_WINDOW"
-   toolWindowId="Bakery"
+<notificationGroup
+  id="Order in Bakery"
+  displayType="TOOL_WINDOW"
+  toolWindowId="Bakery"
+/>
+
+<toolWindow
+  id="Bakery"
+  ...
 />
 ```
 
 The `toolWindowId` matches the `id` value declared in the `com.intellij.toolWindow` extension.
 
-```xml
-<toolWindow id="Bakery" ...
-```
-
-In the code, use the standard mechanism to create a `Notification` instance and show it.
+In the code, use the standard `Notification.notify` method to show it.
 
 ```kotlin
 Notification("Order in Bakery", "Bagel is ready", NotificationType.INFORMATION)
@@ -180,14 +183,14 @@ See the [corresponding section](#notification-balloons-without-entries-in-the-no
 
 ## Icons
 
-The UI guidelines recommend using a plugin or functionality icon instead of the generic _Information_ icon.
+The [UI guidelines recommend](balloon.md#information) using a plugin or functionality icon instead of the generic _Information_ icon.
 [Provide an icon](icons.md#icons-class) along with its accompanying constant.
-The `setIcon` method on a `Notification` instance overrides the icon from the constructor argument.
+The `Notification.setIcon` overrides the icon from the constructor argument.
 
 ```kotlin
 Notification("Bagel", "Bagel was eaten", NotificationType.INFORMATION)
-    .setIcon(Icons.Bagel)
-    .notify(e.project)
+  .setIcon(Icons.Bagel)
+  //...
 ```
 
 ## Localization
@@ -213,8 +216,8 @@ Then declare a `key` element that contains a localized notification group ID.
   displayType="STICKY_BALLOON" />
 ```
 
-> The `id` element is mandatory, even if it is localized in the default resource bundle key.
-> Alternatively, provide a resource bundle name in the `bundle` element to override a resource bundle name from the `<resource-bundle>` element.
+> The `id` attribute is mandatory, even if it is localized in the default resource bundle key.
+ Alternatively, provide a resource bundle name in the `bundle` attribute to override a resource bundle name from the `<resource-bundle>` element.
 >
 {style="warning"}
 
@@ -229,7 +232,7 @@ Occasionally, there are notifications that do not need to be logged in the <cont
 This is the standard case with Tool Window notifications.
 However, there are other usages as well.
 A <control>Hotswap Reload</control> action or a <control>Breakpoint Hit</control> is shown as notification balloons and then completely hidden.
-Such a notification group has the ` isLogByDefault ` attribute set to `false`.
+Such a notification group has the `isLogByDefault` attribute set to `false`.
 This matches the <control>Show in tool window</control> option being disabled.
 
 ### Notifications tool window entry without a notification balloon

@@ -1,10 +1,10 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Top-Level Notifications (Ballons)
 
 <tldr>
 
-**UI Guidelines:** [Notification Balloon](https://plugins.jetbrains.com/docs/intellij/balloon.html)
+**UI Guidelines:** [](balloon.md)
 
 **Product Help:** [Notifications](https://www.jetbrains.com/help/idea/notifications.html)
 
@@ -32,7 +32,7 @@ Set the display type to `BALLOON` constant. Then, provide a human-readable ident
 </extensions>
 ```
 
-> A good ID completes this phrase: "Notifications in this group tell the user about…". See the [UI Guidelines for further tips on naming conventions.](https://plugins.jetbrains.com/docs/intellij/balloon.html#naming-a-notification-group)
+> A good ID completes this phrase: "Notifications in this group tell the user about…". See the [](balloon.md#naming-a-notification-group)
 >
 {style="tip"}
 
@@ -60,14 +60,14 @@ Observe the <control>Bagel</control> notification group with <control>Popup type
 
 ## Notification icons
 
-Customize the notification icon according to [message severity](https://plugins.jetbrains.com/docs/intellij/balloon.html#message-severity).
+Customize the notification icon according to [message severity](balloon.md#message-severity).
 Use the constants from [`NotificationType`](https://github.com/JetBrains/intellij-community/blob/idea/253.31033.145/platform/ide-core/src/com/intellij/notification/NotificationType.java#L11) to show generic information (`INFORMATION`), disruptions or events requiring user action (`WARNING`) and critical events or states (`ERROR`).
 When possible, use a plugin or functionality icon instead of the <control>Information</control> icon.
 See the [Icons](#icons) section for more information.
 
 ## Notification Actions
 
-A top-level notification [can contain actions](https://plugins.jetbrains.com/docs/intellij/balloon.html#actions), rendered as a link or button.
+A top-level notification [can contain actions](balloon.md#actions), rendered as a link or button.
 
 ```kotlin
 Notification("Bagel", "Bagel was eaten", NotificationType.INFORMATION)
@@ -83,12 +83,12 @@ However, it will stay in the Notification tool window with the hyperlink greyed-
 
 ### More than one action
 
-Anything beyond two actions [gets hidden](https://plugins.jetbrains.com/docs/intellij/balloon.html#number-of-actions) in a <control>More</control> menu.
+Anything beyond two actions [gets hidden](balloon.md#number-of-actions) in a <control>More</control> menu.
 Put the most important actions first.
 
 ## Notification title and body
 
-To give more context, [use a title and a body](https://plugins.jetbrains.com/docs/intellij/balloon.html#text). The title briefly describes what happened, and the body explains the impact or what the user can do about it. The overloaded constructor takes an extra string before the content – that’s the title.
+To give more context, [use a title and a body](balloon.md#text). The title briefly describes what happened, and the body explains the impact or what the user can do about it. The overloaded constructor takes an extra string before the content – that’s the title.
 
 ```kotlin
 Notification("Bagel", "Bagel was eaten", getBagelCounterMessage(), NotificationType.INFORMATION)
@@ -110,7 +110,7 @@ Remember a few user experience guidelines:
 
 In some cases, the functionality needs to prompt or notify the user to take action or provide input.
 
-[*Suggestions*](https://plugins.jetbrains.com/docs/intellij/balloon.html#suggest-an-action-to-configure-a-project-or-an-ide) show the primary action as a noticeable button.
+[*Suggestions*](balloon.md#suggest-an-action-to-configure-a-project-or-an-ide) show the primary action as a noticeable button.
 Unlike timed notifications, suggestions won’t go away on their own.
 The user has to act and dismiss them explicitly.
 Their notification group is configured as `STICKY_BALLOON`.
@@ -181,7 +181,7 @@ See the [corresponding section](#notification-balloons-without-entries-in-the-no
 ## Icons
 
 The UI guidelines recommend using a plugin or functionality icon instead of the generic _Information_ icon.
-[Provide an icon](https://plugins.jetbrains.com/docs/intellij/icons.html#icons-class) along with its accompanying constant.
+[Provide an icon](icons.md#icons-class) along with its accompanying constant.
 The `setIcon` method on a `Notification` instance overrides the icon from the constructor argument.
 
 ```kotlin
@@ -195,11 +195,11 @@ Notification("Bagel", "Bagel was eaten", NotificationType.INFORMATION)
 The notification group identifier is not a technical identifier, but a human-readable string directly mapped to the IDE settings user interface.
 However, it can be localized.
 
-> See [Bundled Translations](https://plugins.jetbrains.com/docs/intellij/providing-translations.html#bundled-translations) for more information about directory layout and resource bundle formats.
+> See [Bundled Translations](providing_translations.md#bundled-translations) for more information about directory layout and resource bundle formats.
 >
 {style="tip"}
 
-Make sure that the plugin descriptor declares a [plugin resource bundle](https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html#idea-plugin__resource-bundle):
+Make sure that the plugin descriptor declares a [plugin resource bundle](plugin_configuration_file.md#idea-plugin__resource-bundle):
 
 ```xml
 <resource-bundle>messages.BagelBundle</resource-bundle>

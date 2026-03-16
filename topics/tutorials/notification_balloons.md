@@ -68,7 +68,7 @@ See [Notifications Product Help](https://www.jetbrains.com/help/idea/notificatio
 ## Notification Icons
 
 Customize the notification icon according to [message severity](balloon.md#message-severity).
-Use the constants from [`NotificationType`](https://github.com/JetBrains/intellij-community/blob/idea/253.31033.145/platform/ide-core/src/com/intellij/notification/NotificationType.java#L11).
+Use the constants from [`NotificationType`](%gh-ic%/platform/ide-core/src/com/intellij/notification/NotificationType.java).
 
 1. Generic information: `INFORMATION`.
 2. Disruptions or events requiring user action: `WARNING`.

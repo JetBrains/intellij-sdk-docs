@@ -16,7 +16,7 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 {#march-26}
 
 Top-Level Notifications
-: Add a new section about [](top_level_notifications.md) describing how to show relevant information without interrupting the developer's.
+: Describe [notification balloons](notification_balloons.md) showing relevant information without interrupting the developer's flow.
 
 ## 2025
 

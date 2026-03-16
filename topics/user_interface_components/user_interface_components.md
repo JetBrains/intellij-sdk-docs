@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # User Interface Components
 
@@ -39,7 +39,7 @@ The following components are particularly noteworthy:
 * [](dialog_wrapper.md)
 * [](popups.md)
 * [](informing_users.md)
-  * [](top_level_notifications.md)
+  * [](notification_balloons.md)
 * [](file_and_class_choosers.md)
 * [](editor_components.md)
 * [](lists_and_trees.md)

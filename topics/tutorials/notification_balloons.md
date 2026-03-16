@@ -1,6 +1,6 @@
 <!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# Top-Level Notifications (Ballons)
+# Notification Balloons
 
 <tldr>
 
@@ -10,10 +10,10 @@
 
 </tldr>
 
-<link-summary>Showing relevant information without interrupting the flow using top-level notifications.</link-summary>
+<link-summary>Showing relevant information without interrupting the flow using notification balloons.</link-summary>
 
-How to show relevant information without interrupting the developer’s flow?
-The most general way is to use the top-level notifications, also known as *notification balloons*.
+Sometimes, it is required to show relevant information without interrupting the developer’s flow.
+The most general way is to use *notification balloons*.
 They inform users of the events or system states related to a project or IDE.
 
 To display a notification, provide two things.
@@ -79,7 +79,7 @@ See the [Icons](#icons) section for more information.
 
 ## Notification Actions
 
-A top-level notification [can contain actions](balloon.md#actions), rendered as a link or button.
+A notification balloon [can contain actions](balloon.md#actions), rendered as a link or button.
 
 ```kotlin
 Notification("Bagel", "Bagel was eaten", NotificationType.INFORMATION)
@@ -242,7 +242,7 @@ This matches the <control>Popup type</control> list being set to <control>No pop
 
 ## Obsolete API
 
-Previously, there were multiple SDK approaches to top-level notifications.
+Previously, there were multiple SDK approaches to notification balloons.
 They are considered to be obsolete or too complex.
 
 - `NotificationGroup` is considered an internal data structure.

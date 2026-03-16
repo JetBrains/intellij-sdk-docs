@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Notification Balloon
 
@@ -8,7 +8,7 @@
 
 **Implementation:** [`Notifications`](%gh-ic%/platform/ide-core/src/com/intellij/notification/Notifications.java)
 
-**Related:** [](top_level_notifications.md)
+**Related:** [](notification_balloons.md)
 
 </tldr>
 

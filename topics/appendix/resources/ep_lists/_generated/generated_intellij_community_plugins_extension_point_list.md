@@ -1,8 +1,8 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: f50d587f27abb863c22c67677eb5f2d9aa3b93f7 -->
+<!-- Revision: 212d61deaf3a8117781e482e014de0f42ab13135 -->
 
 <!--
 EP List Directories:
@@ -18,7 +18,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 <snippet id="content">
 
-644 Extension Points and 82 Listeners
+646 Extension Points and 82 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -58,6 +58,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cce.extraEvaluationStepProvider"/></include> | [`ExtraEvaluationStepProvider`](%gh-ic%/plugins/evaluation-plugin/src/com/intellij/cce/evaluation/step/ExtraEvaluationStepProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cce.lineCompletionVisitorFactory"/></include> | [`LineCompletionVisitorFactory`](%gh-ic%/plugins/evaluation-plugin/languages/src/com/intellij/cce/visitor/LineCompletionVisitorFactory.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cce.openProjectMethodProvider"/></include> | [`OpenProjectMethodProvider`](%gh-ic%/plugins/evaluation-plugin/languages/src/com/intellij/cce/actions/OpenProjectMethodProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cce.projectSyncInvoker"/></include> | [`ProjectSyncInvoker`](%gh-ic%/plugins/evaluation-plugin/core/src/com/intellij/cce/project/ProjectSyncInvoker.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cce.setupSdkStep"/></include> ![Project-Level][project-level] | [`SetupSdkStepFactory`](%gh-ic%/plugins/evaluation-plugin/languages/src/com/intellij/cce/evaluation/SetupSdkStep.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cce.suggestionsProvider"/></include> ![Project-Level][project-level] | [`SuggestionsProvider`](%gh-ic%/plugins/evaluation-plugin/languages/src/com/intellij/cce/evaluation/SuggestionsProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cce.testRunner"/></include> | [`TestRunner`](%gh-ic%/plugins/evaluation-plugin/core/src/com/intellij/cce/test/TestRunner.kt) |
@@ -640,7 +641,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.psi.classFileDecompiler"/></include> | `Decompiler` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.psi.classFileDecompiler"/></include> | [`Decompiler`](%gh-ic%/java/java-frontback-psi-api/src/com/intellij/psi/compiled/ClassFileDecompilers.java) |
 
 ### intellij.java.psi.impl.xml
 
@@ -1422,6 +1423,14 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.miscFileType"/></include> | [`MiscFileType`](%gh-ic%/python/ide/impl/src/com/intellij/pycharm/community/ide/impl/miscProject/MiscFileType.kt) |
+
+### intellij.python.common.xml
+
+[`intellij.python.common.xml`](%gh-ic%/python/common/resources/intellij.python.common.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.python.common.toolToIconMapper"/></include> ![Non-Dynamic][non-dynamic] | [`ToolIdToIconMapper`](%gh-ic%/python/common/src/tools/spi/ToolIdToIconMapper.kt) |
 
 ### intellij.python.community.execService.xml
 

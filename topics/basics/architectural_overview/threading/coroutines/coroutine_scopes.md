@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Coroutine Scopes
 <primary-label ref="2024.1"/>
@@ -178,12 +178,12 @@ gantt
     axisFormat ‎
     section Lifetimes
         Application Scope                               : done, 0, 10
-        Project Scope                                   : done, 2, 8
+        Project Scope                                   : done, 2, 9
         Plugin A Scope                                  : active, done, 1, 6
         Project × Plugin A Scope                        : active, done, 2, 6
-        Plugin B Scope                                  : 4, 9
-        Project × Plugin B Scope                        : 4, 8
-        PluginAService leak                             : crit, 5, 8
+        Plugin B Scope                                  : 4, 10
+        Project × Plugin B Scope                        : 4, 9
+        PluginAService leak                             : crit, 5, 9
         Correct PluginAService lifetime should end here : active, milestone, 6, 6
 ```
 

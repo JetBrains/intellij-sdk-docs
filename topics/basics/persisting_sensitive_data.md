@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Persisting Sensitive Data
 
@@ -11,6 +11,18 @@ Use [`PasswordSafe`](%gh-ic%/platform/credential-store/src/ide/passwordSafe/Pass
 
 _Common Utility Method:_
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+private fun createCredentialAttributes(key: String): CredentialAttributes {
+  return CredentialAttributes(generateServiceName("MySystem", key))
+}
+```
+
+</tab>
+<tab title="Java" group-key="java">
+
 ```java
 private CredentialAttributes createCredentialAttributes(String key) {
   return new CredentialAttributes(
@@ -19,7 +31,38 @@ private CredentialAttributes createCredentialAttributes(String key) {
 }
 ```
 
+</tab>
+</tabs>
+
+The [`generateServiceName()`](%gh-ic%/platform/credential-store/src/credentialStore/CredentialAttributes.kt) function helps name credentials in a consistent way so that they can be easily recognized in password managers and when users are asked to allow the IDE to access a secret.
+Consider passing a subsystem name that identifies the plugin or its area of functionality, and a key that identifies the specific secret (for example, account name for password, server name for access token, etc.).
+Examples:
+
+| Subsystem       | Key              | Generated Service Name                               |
+|-----------------|------------------|------------------------------------------------------|
+| MyService API   | joe.doe          | IntelliJ Platform MyService API — joe.doe            |
+| Acme Repository | example.com/repo | IntelliJ Platform Acme Repository — example.com/repo |
+
+
 ### Retrieve Stored Credentials
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+val key = "serverURL" // e.g. serverURL, accountID
+val attributes = createCredentialAttributes(key)
+val passwordSafe = PasswordSafe.instance
+
+val credentials = passwordSafe.get(attributes)
+val password = credentials?.getPasswordAsString()
+
+// or get password only
+val passwordOnly = passwordSafe.getPassword(attributes)
+```
+
+</tab>
+<tab title="Java" group-key="java">
 
 ```java
 String key = null; // e.g. serverURL, accountID
@@ -35,7 +78,36 @@ if (credentials != null) {
 String password = passwordSafe.getPassword(attributes);
 ```
 
+</tab>
+</tabs>
+
+> `PasswordSafe.get()` is blocking and shouldn't be called on EDT.
+>
+{style="warning"}
+
+#### Retrieving Credentials in Remote Development Context
+
+Since 2025.3, a new method was introduced in `PasswordSafe`:
+```kotlin
+suspend fun getAsync(attributes: CredentialAttributes): Ephemeral<Credentials>
+```
+
+Besides being coroutine-friendly, it returns "ephemeral" credentials that are valid only while the client is connected to the backend in the [Remote Development](https://www.jetbrains.com/help/idea/remote-development-overview.html) context.
+When the client disconnects, the credentials are erased so that nothing can be done on the user's behalf without the user.
+
 ### Store Credentials
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+val attributes = createCredentialAttributes(key)
+val credentials = Credentials(username, password)
+PasswordSafe.instance.set(attributes, credentials)
+```
+
+</tab>
+<tab title="Java" group-key="java">
 
 ```java
 CredentialAttributes attributes = createCredentialAttributes(key);
@@ -43,9 +115,17 @@ Credentials credentials = new Credentials(username, password);
 PasswordSafe.getInstance().set(attributes, credentials);
 ```
 
+</tab>
+</tabs>
+
 To remove stored credentials, pass `null` for the `credentials` parameter.
 
+> `PasswordSafe.set()` is blocking and shouldn't be called on EDT.
+>
+{style="warning"}
+
 ## Storage
+
 The default storage format depends on the OS.
 
 | OS      | Storage                                               |
@@ -60,3 +140,9 @@ The default storage format depends on the OS.
 [linux2]: https://wiki.gnome.org/Projects/Libsecret
 
 Users can override the default behavior in <ui-path>Settings | Appearance & Behavior | System Settings | Passwords</ui-path>.
+
+### Storage in Remote Development Context
+
+Before 2025.3, passwords were stored on the backend side in plain text.
+
+Since 2025.3, they are being transparently redirected to the frontend and are stored according to the local environment and settings (KeePass, keychain, etc.).

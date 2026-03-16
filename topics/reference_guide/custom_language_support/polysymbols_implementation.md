@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Implementing Poly Symbols
 <primary-label ref="2025.2"/>
@@ -23,7 +23,7 @@ Examples:
 - a Java class: `namespace: Java`, `kind: classes`
 - a plugin extension: `namespace: ij-plugin`, `kind: extensions`
 
-A Poly Symbol can originate from source code analysis, or it can be a symbol statically defined  through [Web Types](polysymbols_web_types.md) (JSON) or some other custom format.
+A Poly Symbol can originate from source code analysis, or it can be a symbol statically defined through [Web Types](polysymbols_web_types.md) (JSON) or some other custom format.
 In both cases, such a symbol can have some `source` defined.
 Each symbol is treated by the framework the same, regardless of their origin.
 
@@ -47,7 +47,7 @@ Besides descriptive information like framework, library, version, or default ico
 
 `icon`
 : An optional icon associated with the symbol, which is going to be used across the IDE.
-If none is specified, a default icon of the `origin` will be used and if that’s not available, a default icon for symbol `namespace` and `kind`.
+If none is specified, a default icon of the `origin` will be used, and if that’s not available, a default icon for symbol `namespace` and `kind`.
 
 `priority`
 : Symbols with higher priority will have precedence over those with lower priority when matching is performed.
@@ -92,7 +92,7 @@ In most cases the implementation would simply call `PolySymbolSearchTarget.creat
 : Symbol can also implement the `SearchTarget` interface directly and override its methods, in which case `PolySymbolSearchTarget` returned by `searchTarget` property is ignored.
 If the returned target is not a `PolySymbolSearchTarget`, a dedicated `UsageSearcher` needs to be implemented to handle it.
 
-`searchTarget`
+`renameTarget`
 : Implement to provide rename refactoring for the symbol.
 In most cases the implementation would simply call `PolySymbolRenameTarget.create`.
 
@@ -125,7 +125,7 @@ Check their documentation for further reference. To ensure that results are prop
 : Used by the Poly Symbols framework to get a [`DocumentationTarget`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/DocumentationTarget.kt), which handles documentation rendering for the symbol.
 The additional ` location ` parameter allows calculating more specific properties for the symbol documentation, like inferred generic parameters.
 
-: By default, `PolySymbolDocumentationTarget.create` method should be used to build the documentation target for the symbol.
+: By default, the `PolySymbolDocumentationTarget.create` method should be used to build the documentation target for the symbol.
 It allows for documentation to be further customized by [`PolySymbolDocumentationCustomizer`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/documentation/PolySymbolDocumentationCustomizer.kt)s.
 
 `getNavigationTargets(project: Project)`
@@ -160,7 +160,7 @@ In case a symbol is:
 - spans multiple PSI elements
 - does not correlate one-to-one with a PSI element
 
-contribution of a dedicated declaration provider instead of implementing this interface is recommended.
+then, a contribution of a dedicated declaration provider instead of implementing this interface is recommended.
 
 ### Properties
 {#psisourcedpolysymbol-properties}
@@ -197,7 +197,7 @@ and some special symbols can have a name, which consists of other Poly Symbols.
 : List of
 [`PolySymbolNameSegment`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/PolySymbolNameSegment.kt).
 Each segment describes a range in the symbol name.
-Segments can be built of other Poly Symbols and/or have related matching problems - missing the required part, unknown symbol name or be a duplicate of another segment.
+Segments can be built of other Poly Symbols and/or have related matching problems – missing the required part, unknown symbol name or be a duplicate of another segment.
 See the [Model Queries Example](#model-queries-example) section for an example.
 
 ## `PolySymbolScope`
@@ -205,7 +205,11 @@ See the [Model Queries Example](#model-queries-example) section for an example.
 Each `PolySymbol` can contain other Poly Symbols, in which case it should implement `PolySymbolScope`.
 For instance, an HTML element symbol would contain some HTML attribute symbols, or a JavaScript class symbol would contain field and method symbols.
 
-When configuring queries, `PolySymbolScope`s contributed by [`PolySymbolQueryScopeContributor`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryScopeContributor.kt) for the given location are added to a `PolySymbolQueryStack`] to create an initial scope for symbol resolve.
+When configuring queries, `PolySymbolScope`s contributed by
+[`PolySymbolQueryScopeContributor`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryScopeContributor.kt)
+for the given location are added to a
+[`PolySymbolQueryStack`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryStack.kt)
+to create an initial scope for symbol resolve.
 During pattern matching with symbol sequences, all matched symbols' query scopes (`PolySymbol.queryScope`) are added to the stack allowing for extending scope matching.
 
 ### Methods
@@ -303,7 +307,7 @@ There are seven types of patterns:
 1. String match: try to match an exact text, the match is case-sensitive.
 2. Regular expression match: try to match a regular expression, the match can be case-insensitive.
 3. Symbol reference placeholder: a symbol reference resolve will be attempted when this pattern is reached.
-   A resolve will be made by the symbols provider from an enclosing complex pattern.
+   A resolve will be made by the symbol provider from an enclosing complex pattern.
    If none of the symbols match the segment, the segment will have a [`MatchProblem.UNKNOWN_SYMBOL`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/PolySymbolNameSegment.kt) problem reported.
    The matched symbol might be a [`PolySymbolMatch`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolMatch.kt) itself, which allows for nesting patterns.
 4. Pattern sequence: a sequence of patterns. If some patterns are not matched, an empty segment with `MatchProblem.MISSING_REQUIRED_PART` will be created.

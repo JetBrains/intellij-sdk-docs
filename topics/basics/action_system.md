@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Action System
 
@@ -443,7 +443,7 @@ Sometimes, it is required to execute actions programmatically, for example, exec
 Executing actions can be achieved with [`ActionUtils.invokeAction()`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/ex/ActionUtil.kt).
 
 > Executing actions programmatically should be avoided whenever possible.
-> If an action executed programmatically is under your control, extract its logic to a [service](plugin_services.md) or utility class and call it directly.
+> If an action executed programmatically is under your control, extract its logic to a [service](plugin_services.md) or utility class and call it directly, without the action execution context.
 >
 {style="warning"}
 

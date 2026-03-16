@@ -28,9 +28,9 @@ Enum class describing the failure level of the IntelliJ Plugin Verifier CLI tool
 | `PLUGIN_STRUCTURE_WARNINGS`        | The structure of the plugin is not valid.                                           |
 | `MISSING_DEPENDENCIES`             | Plugin has some dependencies missing.                                               |
 | `INVALID_PLUGIN`                   | Provided plugin artifact is not valid.                                              |
-| `NOT_DYNAMIC`                      | Plugin probably cannot be enabled or disabled without IDE restart                   |
-| `ALL`                              | Contains all possible options.                                                      |
-| `NONE`                             | Contains no option.                                                                 |
+| `NOT_DYNAMIC`                      | Plugin probably cannot be enabled or disabled without IDE restart.                  |
+| `ALL`                              | EnumSet constant containing all possible options.                                   |
+| `NONE`                             | EnumSet constant containing no options.                                             |
 
 See also:
 - [Extension: `intellijPlatform.pluginVerification.failureLevel`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-failureLevel)
@@ -47,29 +47,35 @@ Describes all IntelliJ Platform types available to be used for plugin developmen
 
 Each entry is composed of a product code and coordinates used for dependency and binary release resolution.
 
-| Name              | Code   | Artifact Coordinates                               | Binary release |
-|-------------------|--------|----------------------------------------------------|:--------------:|
-| `AndroidStudio`   | `AI`   | -                                                  |    &check;     |
-| `CLion`           | `CL`   | `com.jetbrains.intellij.clion:clion`               |    &check;     |
-| `DataGrip`        | `DB`   | -                                                  |    &check;     |
-| `DataSpell`       | `DS`   | -                                                  |    &check;     |
-| `FleetBackend`    | `FLIJ` | `com.jetbrains.intellij.fleetBackend:fleetBackend` |                |
-| `JetBrainsClient` | `JBC`  | -                                                  |    &check;     |
-| `Gateway`         | `GW`   | `com.jetbrains.intellij.gateway:gateway`           |    &check;     |
-| `GoLand`          | `GO`   | `com.jetbrains.intellij.goland:goland`             |    &check;     |
-| `IntellijIdea `   | `IU`   | `com.jetbrains.intellij.idea:ideaIU`               |    &check;     |
-| `MPS`             | `MPS`  | -                                                  |    &check;     |
-| `PhpStorm`        | `PS`   | `com.jetbrains.intellij.phpstorm:phpstorm`         |    &check;     |
-| `PyCharm`         | `PY`   | `com.jetbrains.intellij.pycharm:pycharmPY`         |    &check;     |
-| `Rider`           | `RD`   | `com.jetbrains.intellij.rider:riderRD`             |    &check;     |
-| `RubyMine`        | `RM`   | -                                                  |    &check;     |
-| `RustRover`       | `RR`   | `com.jetbrains.intellij.rustrover:RustRover`       |    &check;     |
-| `WebStorm`        | `WS`   | `com.jetbrains.intellij.webstorm:webstorm`         |    &check;     |
+| Name                    | Code   | Artifact Coordinates                               | Binary release |
+|-------------------------|--------|----------------------------------------------------|:--------------:|
+| `AndroidStudio`         | `AI`   | -                                                  |    &check;     |
+| `Aqua`                  | `QA`   | -                                                  |                |
+| `CLion`                 | `CL`   | `com.jetbrains.intellij.clion:clion`               |    &check;     |
+| `DataGrip`              | `DB`   | -                                                  |    &check;     |
+| `DataSpell`             | `DS`   | -                                                  |    &check;     |
+| `FleetBackend`          | `FLIJ` | `com.jetbrains.intellij.fleetBackend:fleetBackend` |                |
+| `Gateway`               | `GW`   | `com.jetbrains.intellij.gateway:gateway`           |    &check;     |
+| `GoLand`                | `GO`   | `com.jetbrains.intellij.goland:goland`             |    &check;     |
+| `IntellijIdeaCommunity` | `IC`   | `com.jetbrains.intellij.idea:ideaIC`               |    &check;     |
+| `IntellijIdeaUltimate`  | `IU`   | `com.jetbrains.intellij.idea:ideaIU`               |    &check;     |
+| `IntellijIdea`          | `IU`   | `com.jetbrains.intellij.idea:idea`                 |    &check;     |
+| `JetBrainsClient`       | `JBC`  | -                                                  |    &check;     |
+| `MPS`                   | `MPS`  | -                                                  |    &check;     |
+| `PhpStorm`              | `PS`   | `com.jetbrains.intellij.phpstorm:phpstorm`         |    &check;     |
+| `PyCharm`               | `PY`   | `com.jetbrains.intellij.pycharm:pycharm`           |    &check;     |
+| `PyCharmProfessional`   | `PY`   | `com.jetbrains.intellij.pycharm:pycharmPY`         |    &check;     |
+| `PyCharmCommunity`      | `PC`   | `com.jetbrains.intellij.pycharm:pycharmPC`         |    &check;     |
+| `Rider`                 | `RD`   | `com.jetbrains.intellij.rider:riderRD`             |    &check;     |
+| `RubyMine`              | `RM`   | `com.jetbrains.intellij.rubymine:rubymine`         |    &check;     |
+| `RustRover`             | `RR`   | `com.jetbrains.intellij.rustrover:RustRover`       |    &check;     |
+| `WebStorm`              | `WS`   | `com.jetbrains.intellij.webstorm:webstorm`         |    &check;     |
+| `Writerside`            | `WRS`  | `com.jetbrains.intellij.idea:writerside`           |                |
 
-Note:
-- Aqua (`QA`) and Writerside (`WRS`) are deprecated and no longer available as target IntelliJ Platform products.
-- IntelliJ IDEA Community (`IC`) has been removed as a target IntelliJ Platform.
-- PyCharm Community (`PC`) has been removed as a target IntelliJ Platform.
+Notes:
+- `Aqua` (`QA`) and `Writerside` (`WRS`) are deprecated and no longer available as target IntelliJ Platform products.
+- `IntellijIdeaCommunity` (`IC`) and `PyCharmCommunity` (`PC`) are available only for versions earlier than 2025.3 (build 253). For 2025.3+ use `IntellijIdea` (`IU`) and `PyCharm` (`PY`).
+- `IntellijIdeaUltimate` (`IU`) and `PyCharmProfessional` (`PY`) are legacy types for versions earlier than 2025.3 (build 253). For 2025.3+ use `IntellijIdea` (`IU`) and `PyCharm` (`PY`).
 
 ## `ProductMode`
 {#ProductMode}
@@ -209,7 +215,7 @@ Describes a part of the product where the developed plugin can be installed when
 
 | Name       | Description                                       |
 |------------|---------------------------------------------------|
-| `BACKEND`  | Install plugin in the backed IDE.                 |
+| `BACKEND`  | Install plugin in the backend IDE.                |
 | `FRONTEND` | Install plugin in the frontend IDE.               |
 | `BOTH`     | Install plugin in both backend and frontend IDEs. |
 
@@ -270,15 +276,22 @@ Some plugins offer dedicated test frameworks, for example, `Plugin.Java` when us
 
 | Name                 | Coordinates                                                   | Reference       |
 |----------------------|---------------------------------------------------------------|-----------------|
-| `Plugin.CSS`         | `com.jetbrains.intellij.css:css-test-framework`               | [](webstorm.md) |
-| `Plugin.Go`          | `com.jetbrains.intellij.go:go-test-framework`                 | [](goland.md)   |
-| `Plugin.JavaScript`  | `com.jetbrains.intellij.javascript:javascript-test-framework` | [](webstorm.md) |
-| `Plugin.Java`        | `com.jetbrains.intellij.java:java-test-framework`             | [](idea.md)     |
-| `Plugin.LSP`         | `com.jetbrains.intellij.platform:test-lsp-framework`          |                 |
-| `Plugin.Maven`       | `com.jetbrains.intellij.maven:maven-test-framework`           |                 |
-| `Plugin.ReSharper`   | `com.jetbrains.intellij.resharper:resharper-test-framework`   | [](rider.md)    |
-| `Plugin.Ruby`        | `com.jetbrains.intellij.idea:ruby-test-framework`             | [](rubymine.md) |
-| `Plugin.XML`         | `com.jetbrains.intellij.xml:xml-test-framework`               |                 |
+| `Plugin.CSS`            | `com.jetbrains.intellij.css:css-test-framework`                  | [](webstorm.md) |
+| `Plugin.Debugger`       | `com.jetbrains.intellij.platform:debugger-test-framework`        |                 |
+| `Plugin.ExternalSystem` | `com.jetbrains.intellij.platform:external-system-test-framework` |                 |
+| `Plugin.Go`             | `com.jetbrains.intellij.go:go-test-framework`                    | [](goland.md)   |
+| `Plugin.Ruby`           | `com.jetbrains.intellij.idea:ruby-test-framework`                | [](rubymine.md) |
+| `Plugin.Java`           | `com.jetbrains.intellij.java:java-test-framework`                | [](idea.md)     |
+| `Plugin.JavaScript`     | `com.jetbrains.intellij.javascript:javascript-test-framework`    | [](webstorm.md) |
+| `Plugin.LSP`            | `com.jetbrains.intellij.platform:lsp-test-framework`             |                 |
+| `Plugin.Maven`          | `com.jetbrains.intellij.maven:maven-test-framework`              |                 |
+| `Plugin.PolySymbols`    | `com.jetbrains.intellij.platform:poly-symbols-test-framework`    |                 |
+| `Plugin.Qodana`         | `com.jetbrains.intellij.qodana:qodana-test-framework`             |                 |
+| `Plugin.ReSharper`      | `com.jetbrains.intellij.resharper:resharper-test-framework`      | [](rider.md)    |
+| `Plugin.UAST`           | `com.jetbrains.intellij.platform:uast-test-framework`            |                 |
+| `Plugin.VCS`            | `com.jetbrains.intellij.platform:vcs-test-framework`             |                 |
+| `Plugin.XML`            | `com.jetbrains.intellij.xml:xml-test-framework`                  |                 |
+| `Plugin.WebSymbols`     | `com.jetbrains.intellij.platform:web-symbols-test-framework`     |                 |
 
 ## `VerificationReportsFormats`
 {#VerificationReportsFormats}
@@ -292,8 +305,8 @@ Enum class describing the type of the results produced by the IntelliJ Plugin Ve
 | `PLAIN`    | Plain text file.               |
 | `HTML`     | HTML formatted output file.    |
 | `MARKDOWN` | Markdown file.                 |
-| `ALL`      | Contains all possible options. |
-| `NONE`     | Contains no options.           |
+| `ALL`      | EnumSet constant containing all possible options. |
+| `NONE`     | EnumSet constant containing no options.           |
 
 See also:
 - [Extension: `intellijPlatform.pluginVerification.verificationReportsFormats`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-verificationReportsFormats)

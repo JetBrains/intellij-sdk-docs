@@ -33,7 +33,7 @@ Learn more about it in the [Release Announcement](https://blog.jetbrains.com/pla
 IntelliJ Platform Gradle Plugin 2.x requires the following *minimal* versions:
 
 - IntelliJ Platform: **2022.3**
-- Gradle: **8.5**
+- Gradle: **8.13**
 
   See [the Gradle Installation guide](https://gradle.org/install/) on how to upgrade.
 - Java Runtime: **17**

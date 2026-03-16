@@ -1,0 +1,23 @@
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.708 1H59.333C61.3581 1 63 2.64195 63 4.66699V49.292C63 51.317 61.3581 52.959 59.333 52.959H14.708C12.683 52.959 11.041 51.317 11.041 49.292V4.66699C11.041 2.64195 12.683 1 14.708 1Z" stroke="url(#paint0_linear_2011_6273)" stroke-width="2"/>
+<path d="M4.66699 11.041H49.292C51.317 11.041 52.959 12.683 52.959 14.708V59.333C52.959 61.3581 51.317 63 49.292 63H4.66699C2.64195 63 1 61.3581 1 59.333V14.708C1 12.683 2.64195 11.041 4.66699 11.041Z" stroke="url(#paint1_linear_2011_6273)" stroke-width="2"/>
+<path d="M53.959 10.041H10.041V53.959H53.959V10.041Z" fill="url(#paint2_linear_2011_6273)"/>
+<path d="M52 12H12V52H52V12Z" fill="black"/>
+<path d="M18.3333 44H34.3333V47H18.3333V44Z" fill="white"/>
+<defs>
+<linearGradient id="paint0_linear_2011_6273" x1="9.15989" y1="5.70298" x2="58.7466" y2="55.2897" gradientUnits="userSpaceOnUse">
+<stop stop-color="#01D980"/>
+<stop offset="1" stop-color="#017DFE"/>
+</linearGradient>
+<linearGradient id="paint1_linear_2011_6273" x1="-0.881129" y1="15.744" x2="48.7056" y2="65.3307" gradientUnits="userSpaceOnUse">
+<stop stop-color="#01D980"/>
+<stop offset="1" stop-color="#017DFE"/>
+</linearGradient>
+<linearGradient id="paint2_linear_2011_6273" x1="9.32385" y1="14.6827" x2="49.6832" y2="55.0421" gradientUnits="userSpaceOnUse">
+<stop stop-color="#01D980"/>
+<stop offset="1" stop-color="#017DFE"/>
+</linearGradient>
+</defs>
+</svg>

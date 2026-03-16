@@ -20,12 +20,6 @@ The Starter framework exclusively supports JUnit 5, as it leverages JUnit 5's ex
 To create a new task - `integrationTest`, define new test source roots - `integrationTest`, and add required dependencies, update the `build.gradle.kts` file:
 
 ```kotlin
-dependencies {
-  intellijPlatform {
-    //...
-    testFramework(TestFrameworkType.Starter)
-  }
-
 sourceSets {
   create("integrationTest") {
     compileClasspath += sourceSets.main.get().output
@@ -38,18 +32,23 @@ val integrationTestImplementation by configurations.getting {
 }
 
 dependencies {
+  intellijPlatform {
+    //...
+    testFramework(TestFrameworkType.Starter, configurationName = "integrationTestImplementation")
+  }
+
   integrationTestImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
   integrationTestImplementation("org.kodein.di:kodein-di-jvm:7.20.2")
   integrationTestImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.1")
 }
 
-val integrationTest = task<Test>("integrationTest") {
-  val integrationTestSourceSet = sourceSets.getByName("integrationTest")
-  testClassesDirs = integrationTestSourceSet.output.classesDirs
-  classpath = integrationTestSourceSet.runtimeClasspath
-  systemProperty("path.to.build.plugin", tasks.prepareSandbox.get().pluginDirectory.get().asFile)
-  useJUnitPlatform()
-  dependsOn(tasks.prepareSandbox)
+val integrationTest by intellijPlatformTesting.testIdeUi.registering {
+  task {
+    val integrationTestSourceSet = sourceSets.getByName("integrationTest")
+    testClassesDirs = integrationTestSourceSet.output.classesDirs
+    classpath = integrationTestSourceSet.runtimeClasspath
+    useJUnitPlatform()
+  }
 }
 ```
 
@@ -86,7 +85,6 @@ Now that the configuration is complete, it's time to write the first integration
 Create a new Kotlin file in `src/integrationTest/kotlin` with the following code:
 
 ```kotlin
-
 class PluginTest {
   @Test
   fun simpleTestWithoutProject() {
@@ -313,5 +311,3 @@ This test provides a robust foundation for more elaborate tests by:
 * Waiting for all background processes to complete.
 * Monitoring for exceptions and freezes.
 * Performing a shutdown.
-
-

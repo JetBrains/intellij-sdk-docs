@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Task Awares
 
@@ -78,6 +78,42 @@ Type
 Default value
 : [`intellijPlatform.autoReload`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-autoReload)
 
+
+
+## `ComposeHotReloadAware`
+{#ComposeHotReloadAware}
+
+<tldr>
+
+**Depends on**: [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin)
+
+**Sources**: [`ComposeHotReloadAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/ComposeHotReloadAware.kt)
+
+</tldr>
+
+Provides the path to the Java Agent file for the Compose Hot Reload agent required to enable hot reloading of Compose UIs.
+
+
+### `composeHotReload`
+
+Enables auto-reload of Compose UIs after code changes for the task.
+
+{type="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: `false`
+
+### `composeHotReloadAgentConfiguration`
+{#ComposeHotReloadAware-composeHotReloadAgentConfiguration}
+
+Holds Compose Hot Reload agent JAR dependency configuration.
+
+
+{type="narrow"}
+Type
+: `ConfigurableFileCollection`
 
 
 ## `CoroutinesJavaAgentAware`

@@ -75,6 +75,7 @@ See [](verifying_plugin_compatibility.md) on how to use Plugin Verifier and IDE 
 
 The following pages list the breaking changes in IDE and plugin releases with required/recommended steps to take by plugin authors.
 
+* [Changes in 2026.*](api_changes_list_2026.md)
 * [Changes in 2025.*](api_changes_list_2025.md)
 * [Changes in 2024.*](api_changes_list_2024.md)
 * [Changes in 2023.*](api_changes_list_2023.md)

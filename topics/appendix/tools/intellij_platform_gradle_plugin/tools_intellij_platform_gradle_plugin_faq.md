@@ -522,6 +522,58 @@ To correctly run your tests or a specific IDE:
   </tab>
   </tabs>
 
+### Starting an external process `/usr/sbin/sysctl -n hw.cachelinesize` during configuration time is unsupported (macOS)
+{id="external-process-unsupported-macos"}
+
+When using a custom plugin repository on macOS, Gradle may fail with the following exception if the [Configuration Cache](https://docs.gradle.org/current/userguide/configuration_cache.html) is enabled:
+
+```text
+org.gradle.api.InvalidUserCodeException: Starting an external process '/usr/sbin/sysctl -n hw.cachelinesize' during configuration time is unsupported.
+	at org.gradle.internal.classpath.Instrumented.start(Instrumented.java:314)
+	at io.smallrye.common.cpu.CacheInfo.parseProcessOutput(CacheInfo.java:213)
+```
+
+This is caused by the `undertow` library used for custom repository creation, which tries to determine the CPU cache level on macOS by executing an external process.
+
+To resolve this issue:
+
+1. Set the `smallrye.cpu.determine-cache-level` system property to `false` in your <path>gradle.properties</path> file:
+
+   ```properties
+   systemProp.smallrye.cpu.determine-cache-level=false
+   ```
+
+2. Force the `io.smallrye.common:smallrye-common-cpu` dependency version to `2.10.0` in the `buildscript` block of your <path>build.gradle.kts</path> (or <path>build.gradle</path>) file:
+
+   <tabs group="languages">
+   <tab title="Kotlin" group-key="kotlin">
+
+   ```kotlin
+   buildscript {
+     configurations.classpath {
+       resolutionStrategy {
+         force("io.smallrye.common:smallrye-common-cpu:2.10.0")
+       }
+     }
+   }
+   ```
+
+   </tab>
+   <tab title="Groovy" group-key="groovy">
+
+   ```groovy
+   buildscript {
+     configurations.classpath {
+       resolutionStrategy {
+         force 'io.smallrye.common:smallrye-common-cpu:2.10.0'
+       }
+     }
+   }
+   ```
+
+   </tab>
+   </tabs>
+
 ### plugin.xml: `Cannot resolve plugin com.intellij.modules.vcs`
 
 Upgrade to the latest version of the IntelliJ Platform Gradle Plugin.

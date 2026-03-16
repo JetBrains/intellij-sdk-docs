@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Run Configurations
 
@@ -18,8 +18,6 @@ Run configurations can be started from the <control>Run</control> toolbar, the e
 ## Architecture Overview
 
 The following diagram shows the key run configurations classes:
-
-Original:
 
 ```plantuml
 @startuml
@@ -117,7 +115,7 @@ If the settings editor is complex, see [](#simplifying-settings-editors) for sol
 
 Run configuration settings are persistent.
 They are stored in the file system and loaded back after the IDE restart.
-Persisting and loading settings are performed by `writeExternal()` and `readExternal()` methods of `RunConfiguration` class correspondingly.
+Persisting and loading settings are performed by `writeExternal()` and `readExternal()` methods of the `RunConfiguration` class correspondingly.
 
 The actually stored configurations are represented by instances of the [`RunnerAndConfigurationSettings`](%gh-ic%/platform/execution/src/com/intellij/execution/RunnerAndConfigurationSettings.java) class, which combines a run configuration with runner-specific settings and stores general run configuration flags and properties.
 
@@ -154,7 +152,7 @@ If a run configuration is closely related to a PSI element (e.g., runnable metho
 It is achieved by implementing [`RunLineMarkerContributor`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/lineMarker/RunLineMarkerContributor.java), which provides information like the icon, tooltip content, and available actions for a given PSI element.
 
 The standard method for providing the information is `getInfo()`.
-If computing the information is slow, implement `getSlowInfo()`, which is used by the editor highlighting mechanism to gather information in batch, and apply all the information at once to avoid icons blinking.
+If computing the information is slow, implement `getSlowInfo()`, which is used by the editor highlighting mechanism to gather information in batch and apply all the information at once to avoid icons blinking.
 If access to indexes is not required, it can be marked [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI).
 
 To provide the standard executor actions like _Run_, _Debug_, etc., use [`ExecutorAction.getActions()`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/lineMarker/ExecutorAction.kt).
@@ -167,13 +165,13 @@ The executor can be retrieved with a static method if a required executor expose
 
 ## Validating a Run Configuration
 
-To check, whether a run configuration is configured correctly and can be executed, implement the `RunConfiguration.checkConfiguration()`.
+To check whether a run configuration is configured correctly and can be executed, implement the `RunConfiguration.checkConfiguration()`.
 In case the run configuration settings are incomplete, the method should throw one of the following exceptions:
-- [`RuntimeConfigurationWarning`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RuntimeConfigurationWarning.java) - in case of a problem, which doesn't affect execution
+- [`RuntimeConfigurationWarning`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RuntimeConfigurationWarning.java) - in case of a problem which doesn't affect execution
 - [`RuntimeConfigurationException`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RuntimeConfigurationException.java) - in case of non-fatal error, which allows executing the configuration
-- [`RuntimeConfigurationError`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RuntimeConfigurationError.java) - in case of fatal error that makes it impossible to execute the run configuration
+- [`RuntimeConfigurationError`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RuntimeConfigurationError.java) - in case of a fatal error that makes it impossible to execute the run configuration
 
-If the configuration contains any warnings or errors, its icon will be patched with the error indicator and the message will be displayed in the configuration settings page. In case of `RuntimeConfigurationError`, if a user tries to execute the configuration, the run configuration settings dialog will be presented, so that the user can fix the issues before the execution.
+If the configuration contains any warnings or errors, its icon will be patched with the error indicator and the message will be displayed on the configuration settings page. In case of `RuntimeConfigurationError`, if a user tries to execute the configuration, the run configuration settings dialog will be presented so that the user can fix the issues before the execution.
 
 All the mentioned exceptions allow providing a quick fix for the reported issue.
 If the quick fix implementation is provided, the quick fix button will be displayed next to the error message.
@@ -252,7 +250,7 @@ If access to indexes is not required, it can be marked [dumb aware](indexing_and
 
 ## Macros
 
-Macros are dynamic variables, which can be referenced in run configurations, and expanded to actual values when a run configuration is executed.
+Macros are dynamic variables, which can be referenced in run configurations and expanded to actual values when a run configuration is executed.
 
 For example, a macro with a name `ProjectFileDir` can be referenced as `$ProjectFileDir$` in a run configuration command line argument.
 It is expanded to the absolute path of the current project directory when the run configuration is executed by a user.
@@ -271,10 +269,10 @@ After selecting and accepting a macro from the list, the macro placeholder is in
 
 Macros used in run configuration must be expanded to actual values before the process execution.
 It is usually done in the `RunProfile.getState()` method called during the [execution workflow](execution.md#execution-workflow).
-To expand configured values, use one of [`ProgramParametersConfigurator`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/util/ProgramParametersConfigurator.java)'s method: `expandMacros()`, `expandPathAndMacros()`, or `expandMacrosAndParseParameters()`.
+To expand configured values, use one of [`ProgramParametersConfigurator`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/util/ProgramParametersConfigurator.java)'s methods: `expandMacros()`, `expandPathAndMacros()`, or `expandMacrosAndParseParameters()`.
 See their Javadocs for the details.
 
 ### Providing Custom Macros
 
-If the predefined list of macros is insufficient, a plugin can provide custom macros by extending [`Macro`](%gh-ic%/platform/macro/src/com/intellij/ide/macro/Macro.java) and
+If the predefined list of macros is not enough, a plugin can provide custom macros by extending [`Macro`](%gh-ic%/platform/macro/src/com/intellij/ide/macro/Macro.java) and
 registering it in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.macro"/></include>.

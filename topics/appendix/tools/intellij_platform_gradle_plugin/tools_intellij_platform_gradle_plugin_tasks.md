@@ -130,7 +130,7 @@ Default value
 Composes a final JAR by combining the output of base `jar` or [`instrumentedJar`](#instrumentedJar) tasks,
 depending on if code instrumentation is enabled with [`intellijPlatform.instrumentCode`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-instrumentCode).
 
-The final JAR is also combined with plugin modules marked using the [`pluginModule`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) dependencies helper.
+The final JAR is also combined with plugin modules marked using the [`pluginComposedModule`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) dependencies helper.
 
 
 ### `archiveFile`

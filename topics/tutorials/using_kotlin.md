@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Configuring Kotlin Support
 
@@ -257,24 +257,6 @@ To avoid unnecessary classloading (and thus slowdown in IDE startup), `companion
 Anything else must be a top-level declaration or stored in an `object`.
 
 Use inspection <control>Plugin DevKit | Code | Companion object in extensions</control> to highlight such problems (2023.3).
-
-## Kotlin Code FAQ
-
-### Testing K2 Mode
-
-See [Testing in K2 Locally](https://kotlin.github.io/analysis-api/testing-in-k2-locally.html).
-
-### Analysis API
-<primary-label ref="2024.2"/>
-
-The Analysis API is a powerful library for analyzing code in Kotlin.
-Built on top of the Kotlin PSI syntax tree, it provides access to various semantic information, including reference targets, expression types, declaration scopes, diagnostics, and more.
-
-See [Kotlin Analysis API Documentation](https://kotlin.github.io/analysis-api/index_md.html) for details.
-
-### Miscellaneous
-
-[How to shorten references](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360010025120-Add-new-parameter-into-kotlin-data-class-from-IDEA-plugin?page=1#community_comment_360002950760)
 
 ## Example Plugins Implemented in Kotlin
 

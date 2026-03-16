@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # IntelliJ IDEA Plugin Development
 
@@ -89,6 +89,27 @@ Alternatively, specify `com.jetbrains.intellij.java:java-test-framework:$VERSION
 
 </tldr>
 
-Configure bundled Kotlin [plugin dependency](plugin_dependencies.md) with plugin ID `org.jetbrains.kotlin`.
+Configure the bundled Kotlin [plugin dependency](plugin_dependencies.md) with plugin ID `org.jetbrains.kotlin`.
+
+[Kotlin PSI](https://kotlin.github.io/analysis-api/fundamentals.html#kotlin-psi) explains the differences from the IntelliJ IDEA PSI and introduces the Analysis API as the new recommended way to work with Kotlin code.
 
 See also [UAST](uast.md) on how to support multiple JVM languages, including Kotlin.
+
+### Analysis API
+
+> Analysis API is available since version 2024.2.
+
+Starting from IntelliJ IDEA 2025.1, K2 Kotlin mode is enabled by default.
+To ensure your plugin works with the newest versions of IntelliJ IDEA, you must migrate to the Analysis API and declare compatibility with the K2 compiler.
+
+For migration details, see [Migrating from K1](https://kotlin.github.io/analysis-api/migrating-from-k1.html).
+
+For comprehensive information about the Analysis API, refer to [Kotlin Analysis API Documentation](https://kotlin.github.io/analysis-api/index_md.html).
+
+### Testing K1 (K2) mode
+
+See [Testing in K1 Locally](https://kotlin.github.io/analysis-api/testing-in-k1-locally.html).
+
+### Kotlin Code FAQ
+
+[How to shorten references?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360010025120-Add-new-parameter-into-kotlin-data-class-from-IDEA-plugin?page=1#community_comment_360002950760)

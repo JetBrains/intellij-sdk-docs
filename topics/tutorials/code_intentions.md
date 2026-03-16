@@ -75,8 +75,8 @@ under <ui-path>Settings | Editor | Intentions | SDK Intentions | SDK: Convert te
 
 The plugin provides description and before/after examples files in the <path>resources/intentionDescriptions/ConditionalOperatorConverter</path> directory:
 - <path>description.html</path> - provides the general information about the intention
-- <path>after.java.template</path> - shows the code fragment that intention can change
-- <path>before.java.template</path> - shows the code fragment after applying the intention
+- <path>before.java.template</path> - shows the code fragment that intention can change
+- <path>after.java.template</path> - shows the code fragment after applying the intention
 
 By default, the intention description directory name is the same as the intention class name.
 It can be customized with the `<descriptionDirectoryName>` element in `<intentionAction>` in <path>plugin.xml</path>.

@@ -1,8 +1,8 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: f50d587f27abb863c22c67677eb5f2d9aa3b93f7 -->
+<!-- Revision: 212d61deaf3a8117781e482e014de0f42ab13135 -->
 
 <!--
 EP List Directories:
@@ -14,7 +14,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 <snippet id="content">
 
-78 Extension Points and 10 Listeners
+79 Extension Points and 10 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -271,6 +271,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.metricsAggregator"/></include> | [`MetricAggregator`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/inspections/metrics/aggregators/MetricAggregator.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.problemsViewModuleSupport"/></include> | [`QodanaGroupByModuleSupport`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/ui/problemsView/QodanaGroupByModuleSupport.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.projectDescriber"/></include> | [`QodanaProjectDescriber`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/projectDescription/QodanaProjectDescriber.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.projectLoaderExtension"/></include> | [`QodanaProjectLoaderExtension`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/inspections/runner/startup/QodanaProjectLoader.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.psiViewerSupport"/></include> | [`PsiViewerSupport`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/inspectionKts/ui/psi-viewer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.qodanaHighlightInfoComparator"/></include> | [`QodanaHighlightInfoComparator`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/QodanaHighlightInfoComparator.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.qodanaHighlightInfoTypeProvider"/></include> | [`QodanaHighlightInfoTypeProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/QodanaHighlightInfoTypeProvider.kt) |

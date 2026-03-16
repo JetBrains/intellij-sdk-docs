@@ -1,8 +1,8 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: f50d587f27abb863c22c67677eb5f2d9aa3b93f7 -->
+<!-- Revision: 212d61deaf3a8117781e482e014de0f42ab13135 -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-20 Extension Points and 7 Listeners
+21 Extension Points and 9 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -26,8 +26,10 @@ EP List Directories:
 | [`GoModuleSettings#BUILD_TARGET_TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.project.GoModuleSettings.BuildTargetListener)  ![Project-Level][project-level] | `BuildTargetListener` |
 | [`GoModuleSettings#GO_SUPPORT_TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.project.GoModuleSettings.GoSupportListener)  ![Project-Level][project-level] | `GoSupportListener` |
 | [`GoProjectLifecycleListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.project.GoProjectLifecycleListener)  | `GoProjectLifecycleListener` |
+| [`GoDownloadSdkService#SDK_DOWNLOAD_TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.sdk.download.SdkDownloadListener)  | `SdkDownloadListener` |
 | [`VgoUpdateProgressManager#UPDATE_PROGRESS_TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.vgo.VgoStatusTracker.VgoUpdateProgressManager.VgoModuleUpdateProgressListener)  ![Project-Level][project-level] | `VgoModuleUpdateProgressListener` |
 | [`VgoProjectSettings#VGO_INTEGRATION_TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.vgo.configuration.VgoProjectSettings.IntegrationListener)  | `IntegrationListener` |
+| [`VgoToolchainService#TOOLCHAIN_SCAN_TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.vgo.sdk.VgoToolchainService.ToolchainScanListener)  ![Project-Level][project-level] | `ToolchainScanListener` |
 | [`GoLinterFmtOnSaveSettings#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.go.linter.fmt.GoLinterFmtOnSaveSettings.FmtOnSaveListener)  | `FmtOnSaveListener` |
 
 
@@ -65,6 +67,12 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.importPathsProvider"/></include> | `GoImportPathsProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.imports.weigher"/></include> | `GoImportsWeigher` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.rootsProvider"/></include> | `GoRootsProvider` |
+
+### vgo.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.go126FeaturesTabOpener"/></include> | `Go126FeaturesTabOpener` |
 
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square

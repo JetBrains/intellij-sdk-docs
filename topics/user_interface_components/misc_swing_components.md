@@ -13,7 +13,7 @@ On macOS, the message boxes use the native UI.
 The `showCheckboxMessageDialog()` function provides an easy way to implement a <control>Do not show this again</control> checkbox on messages.
 
 > It is recommended to use non-modal notifications instead of modal message boxes whenever appropriate.
-> Refer to the [](notifications.md) topic for more information.
+> Refer to the [](top_level_notifications.md) topic for more information.
 >
 {title="Avoid Modal Dialogs"}
 

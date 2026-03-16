@@ -8,7 +8,7 @@
 
 **Implementation:** [`GotItTooltip`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/GotItTooltip.kt)
 
-**Related:** [](notifications.md#gotIt)
+**Related:** [](informing_users.md#gotIt)
 
 </tldr>
 

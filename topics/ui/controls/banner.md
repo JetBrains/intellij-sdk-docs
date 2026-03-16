@@ -8,7 +8,7 @@
 
 **Implementation:** [`EditorNotificationProvider`](%gh-ic%/platform/platform-api/src/com/intellij/ui/EditorNotificationProvider.java)
 
-**Related:** [](notifications.md#editor-banner)
+**Related:** [](informing_users.md#editor-banner)
 
 </tldr>
 

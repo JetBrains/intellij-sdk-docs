@@ -8,7 +8,7 @@
 
 **Implementation:** [`Notifications`](%gh-ic%/platform/ide-core/src/com/intellij/notification/Notifications.java)
 
-**Related:** [](notifications.md#balloons)
+**Related:** [](top_level_notifications.md)
 
 </tldr>
 

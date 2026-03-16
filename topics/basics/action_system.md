@@ -99,7 +99,7 @@ Implementors must ensure that changing presentation and availability status hand
 > For example, checking selection in a tree or a list is considered valid, but working with the file system is not.
 >
 > If the new state of an action cannot be determined quickly, evaluation should be performed in the `AnAction.actionPerformed()` method
-> and the user [notified](notifications.md) accordingly if the context isn't suitable.
+> and the user [notified](informing_users.md) accordingly if the context isn't suitable.
 >
 {style="warning" title="Performance"}
 

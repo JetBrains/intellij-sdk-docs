@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Content Updates
 
@@ -9,6 +9,14 @@ This page lists notable additions and updates to the SDK documentation and [](co
 See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/main) ([RSS](https://github.com/JetBrains/intellij-sdk-docs/commits/main.atom)) for a detailed changelog.
 
 <include from="snippets.topic" element-id="subscribeNews"/>
+
+## 2026
+
+### March
+{#march-26}
+
+Top-Level Notifications
+: Add a new section about [](top_level_notifications.md) describing how to show relevant information without interrupting the developer's.
 
 ## 2025
 

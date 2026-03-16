@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Tool Windows
 
@@ -105,7 +105,9 @@ Use [`ToolWindowManager.getToolWindow()`](%gh-ic%/platform/platform-api/src/com/
 
 ### Tool Window Notification
 
-[`ToolWindowManager.notifyByBalloon()`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowManager.kt) allows showing a notification for the given tool window.
+Showing a balloon notification for a tool window can be done:
+- [registering notification](notification_balloons.md#tool-window-notifications) for a specific tool window
+- by calling [`ToolWindowManager.notifyByBalloon()`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowManager.kt)
 
 ### Events
 

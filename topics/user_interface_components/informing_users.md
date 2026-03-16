@@ -61,67 +61,8 @@ A commonly used UI implementation is [`EditorNotificationPanel`](%gh-ic%/platfor
 
 Use to highlight important new/changed features via [`GotItTooltip`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/GotItTooltip.kt).
 
-### Top-Level Notifications (Balloons)
+### Notification Balloons
 
 {id="balloons"}
 
-<tldr>
-
-**UI Guidelines:** [](balloon.md)
-
-**Product Help**: [Notifications](https://www.jetbrains.com/help/idea/notifications.html)
-
-</tldr>
-
-The most general way to display non-modal notifications is to use the [`Notifications`](%gh-ic%/platform/ide-core/src/com/intellij/notification/Notifications.java) class.
-
-It has two main advantages:
-
-* The user can control the way each notification type is displayed under <ui-path>Settings | Appearance & Behavior | Notifications</ui-path>
-* All displayed notifications are gathered in the <control>Notifications</control> tool window and can be reviewed later
-
-> See [](tool_windows.md#tool-window-notification) for showing balloons for a specific tool window.
-
-The specific method used to display a notification is [`Notifications.Bus.notify()`](%gh-ic%/platform/ide-core/src/com/intellij/notification/Notifications.java).
-If the current Project is known, please use overload with the `Project` parameter, so the notification is shown in its associated frame.
-
-> See [how to access a current project instance](project.md#how-to-get-a-project-instance) in different contexts.
-
-The text of the notification can include HTML tags for presentation purposes.
-Use `Notification.addAction(AnAction)` to add links below the content, use [`NotificationAction`](%gh-ic%/platform/ide-core/src/com/intellij/notification/NotificationAction.java) for convenience.
-
-The `groupId` parameter of the [`Notification`](%gh-ic%/platform/ide-core/src/com/intellij/notification/Notification.java) constructor specifies a notification type.
-The user can choose the display type corresponding to each notification type under <ui-path>Settings | Appearance & Behavior | Notifications</ui-path>.
-
-To specify the preferred display type, you need to use [`NotificationGroup`](%gh-ic%/platform/ide-core/src/com/intellij/notification/NotificationGroup.kt) to create notifications.
-
-`NotificationGroup` is registered in <path>[plugin.xml](plugin_configuration_file.md)</path> using
-the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.notificationGroup"/></include>.
-Use `key` to provide a localized group display name.
-
-```xml
-<extensions defaultExtensionNs="com.intellij">
-  <notificationGroup id="Custom Notification Group"
-                     displayType="BALLOON"
-                     key="notification.group.name"/>
-</extensions>
-```
-
-Registered instances can then be obtained via their `id`.
-
-> Code insight is available for parameters expecting a notification group `id`.
->
-
-
-```java
-public class MyNotifier {
-
-  public static void notifyError(Project project, String content) {
-    NotificationGroupManager.getInstance()
-        .getNotificationGroup("Custom Notification Group")
-        .createNotification(content, NotificationType.ERROR)
-        .notify(project);
-  }
-
-}
-```
+The most general way to display non-modal notifications is to use [notification balloons](notification_balloons.md).

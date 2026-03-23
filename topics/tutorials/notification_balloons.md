@@ -8,6 +8,8 @@
 
 **Product Help:** [Notifications](https://www.jetbrains.com/help/idea/notifications.html)
 
+**Video Overview:** [Notification Baloons](https://www.youtube.com/watch?v=e0ietjbbTms)
+
 </tldr>
 
 <link-summary>Showing relevant information without interrupting the flow using notification balloons.</link-summary>

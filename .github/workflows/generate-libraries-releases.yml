@@ -13,7 +13,7 @@ jobs:
       - name: Generate
         run: "${GITHUB_WORKSPACE}/.github/scripts/libraries_releases.main.kts"
       - name: Commit changes
-        uses: Endbug/add-and-commit@v9
+        uses: Endbug/add-and-commit@v10
         with:
           message: 'Generate Libraries releases variable file'
           add: 'v.list'

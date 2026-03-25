@@ -6,7 +6,7 @@
 
 <vars>
 
-  <var name="ijPlatform" value="2026.1 EAP"/>
+  <var name="ijPlatform" value="2026.1"/>
   <!--
   The release tag can be copied from the build number on https://www.jetbrains.com/idea/download/, for example:
   - idea/253.30387.20

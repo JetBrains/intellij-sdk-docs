@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 50c0552a9a888ea57ec8d1f947085087c0a84b57 -->
+<!-- Revision: 89c647576f1d2c99d8f3f6ce610b7f6d8ee6f17c -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-65 Extension Points and 11 Listeners
+66 Extension Points and 11 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -108,6 +108,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.tools.quality.phpCSFixer.phpCSFixerConfigurationProvider"/></include> | `PhpCSFixerConfigurationProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.tools.quality.phpcs.phpCSConfigurationProvider"/></include> | `PhpCSConfigurationProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.tools.quality.type"/></include> | `QualityToolType` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.typeInferenceExclusion"/></include> | `PhpTypeInferenceExclusion` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.typeProvider3"/></include> ![Deprecated][deprecated] | `PhpTypeProvider3` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.typeProvider4"/></include> | `PhpTypeProvider4` |
 

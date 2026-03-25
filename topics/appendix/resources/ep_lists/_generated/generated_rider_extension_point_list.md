@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 50c0552a9a888ea57ec8d1f947085087c0a84b57 -->
+<!-- Revision: 89c647576f1d2c99d8f3f6ce610b7f6d8ee6f17c -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-158 Extension Points and 9 Listeners
+160 Extension Points and 9 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -61,6 +61,12 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.cpp.core.projectModel.radProjectFallbackConfigDisabler"/></include> | `RadProjectFallbackConfigDisabler` |
+
+### intellij.rider.cpp.core.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.cpp.file.system.items.support"/></include> | `CppFileSystemItemsSupport` |
 
 ### intellij.rider.cwm.core.xml
 
@@ -207,6 +213,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.contributedLanguageElementNameCrawler"/></include> | `RiderContributedLanguageElementNameCrawler` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.debug.breakpoint.handler.factory"/></include> ![Non-Dynamic][non-dynamic] | `IDotNetSupportedBreakpointHandlerFactory` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.debugger.editAndContinue.dotNetEncInfoAutodetect"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `DotNetEncInfoAutodetect` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.debugger.link.provider"/></include> | `RiderDebuggerLinkProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.debugger.value.presenter"/></include> ![Non-Dynamic][non-dynamic] | `RiderDebuggerValuePresenter` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.debuggerSupportPolicy"/></include> ![Non-Dynamic][non-dynamic] | `RiderDebuggerSupportPolicy` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.editSourceSuppressor"/></include> ![Non-Dynamic][non-dynamic] | `RiderEditSourceSuppressor` |

@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 50c0552a9a888ea57ec8d1f947085087c0a84b57 -->
+<!-- Revision: 89c647576f1d2c99d8f3f6ce610b7f6d8ee6f17c -->
 
 <!--
 EP List Directories:
@@ -18,7 +18,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 <snippet id="content">
 
-655 Extension Points and 82 Listeners
+654 Extension Points and 83 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -1516,6 +1516,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | [`PyExternalSystemProjectAwareKt#PROJECT_AWARE_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.externalSystem.autoimport.ExternalSystemProjectListener)  ![Project-Level][project-level] | [`ExternalSystemProjectListener`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/autoimport/ExternalSystemProjectListener.kt) |
 | [`HuggingFaceCacheUpdateListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.python.community.impl.huggingFace.cache.HuggingFaceCacheUpdateListener)  | [`HuggingFaceCacheUpdateListener`](%gh-ic%/python/huggingFace/src/com/intellij/python/community/impl/huggingFace/cache/HuggingFaceCacheUpdateListener.kt) |
 | [`ModelRebuiltNotifierKt#MODEL_REBUILD`](https://jb.gg/ipe/listeners?topics=com.intellij.python.pyproject.model.api.ModelRebuiltListener)  ![Project-Level][project-level] | [`ModelRebuiltListener`](%gh-ic%/python/python-pyproject/src/com/intellij/python/pyproject/model/api/ModelRebuiltListener.kt) |
+| [`PyDebuggerBackendSwitchedListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.python.debugger.PyDebuggerBackendSwitchedListener)  ![Internal][internal] | [`PyDebuggerBackendSwitchedListener`](%gh-ic%/python/src/com/jetbrains/python/debugger/PyDebuggerBackendSwitchedListener.kt) |
 | [`PyFrameListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.python.debugger.PyFrameListener)  | [`PyFrameListener`](%gh-ic%/python/pydevSrc/src/com/jetbrains/python/debugger/PyFrameListener.kt) |
 | [`PyPackageManager#PACKAGE_MANAGER_TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.python.packaging.PyPackageManager.Listener)  | [`Listener`](%gh-ic%/python/openapi/src/com/jetbrains/python/packaging/PyPackageManager.java) |
 | [`PythonPackageManager#PACKAGE_MANAGEMENT_TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.python.packaging.common.PythonPackageManagementListener)  ![Experimental][experimental] | [`PythonPackageManagementListener`](%gh-ic%/python/src/com/jetbrains/python/packaging/common/util.kt) |
@@ -1624,14 +1625,13 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.dialectsTokenSetContributor"/></include> | [`PythonDialectsTokenSetContributor`](%gh-ic%/python/python-parser/src/com/jetbrains/python/PythonDialectsTokenSetContributor.java) |
 
-### intellij.python.processOutput.xml
+### intellij.python.processOutput.common.xml
 
-[`intellij.python.processOutput.xml`](%gh-ic%/python/python-process-output/resources/intellij.python.processOutput.xml)
+[`intellij.python.processOutput.common.xml`](%gh-ic%/python/python-process-output/common/resources/intellij.python.processOutput.common.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.python.processOutput.processOutputApi"/></include> ![Non-Dynamic][non-dynamic] | [`ProcessOutputApi`](%gh-ic%/python/python-process-output/src/com/intellij/python/processOutput/ProcessOutputApi.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.python.processOutput.processOutputIconMapping"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`ProcessOutputIconMapping`](%gh-ic%/python/python-process-output/src/com/intellij/python/processOutput/ProcessOutputIconMapping.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.python.processOutput.common.processOutputIconMapping"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`ProcessOutputIconMapping`](%gh-ic%/python/python-process-output/common/src/ProcessOutputIconMapping.kt) |
 
 ### intellij.python.psi.impl.xml
 

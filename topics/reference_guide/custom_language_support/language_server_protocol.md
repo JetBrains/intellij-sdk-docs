@@ -154,6 +154,11 @@ The LSP support provided by the IntelliJ Platform covers the following features 
 - Code Lens ([`textDocument/codeLens`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_codeLens)) ([IJPL-189563](https://youtrack.jetbrains.com/issue/IJPL-189563))
 - Optimize Imports ([`textDocument/codeAction`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_codeAction) with `source.organizeImports`) ([IJPL-198789](https://youtrack.jetbrains.com/issue/IJPL-198789))
 
+> All the above features are enabled by default and can be controlled via `LspServerDescriptor.getLspCustomization()`.
+> See the [Customization](#customization) section for details.
+>
+{style="note"}
+
 ### 2025.3
 
 - Server Initiated Progress ([`$/progress`](https://microsoft.github.io/language-server-protocol/specification/#progress))

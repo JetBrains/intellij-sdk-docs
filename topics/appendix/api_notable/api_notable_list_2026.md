@@ -20,3 +20,23 @@ Background-capable VFS listeners
 
 New LSP API features
 : Language Server Protocol support gains Range Formatting (`textDocument/rangeFormatting`), Code Lens (`textDocument/codeLens`), and Optimize Imports (`textDocument/codeAction` with `source.organizeImports`). ``Also includes a major rewrite of LSP highlighting for improved performance. See [Language Server Protocol (LSP)](language_server_protocol.md).
+
+`OSProcessHandler.waitFor()` on EDT or under read lock logs error
+: Waiting for an external process via [`OSProcessHandler.waitFor()`](%gh-ic%/platform/platform-api/src/com/intellij/execution/process/OSProcessHandler.kt) on the Event Dispatch Thread or while holding a read lock is now prohibited for all users and logs a `LOG.error`.
+  This check was previously enabled in internal mode since 2019.
+  Move process waiting off the EDT and outside of read actions, e.g., into a background thread or a coroutine.
+
+Non-cancellable read action APIs deprecated
+: [`ReadAction.compute()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java), [`ReadAction.run()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java), and [`runReadAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ActionsKt.kt) are deprecated because long-running non-cancellable read actions on background threads can block write actions and cause UI freezes.
+  Migrate to cancellable coroutine-based APIs: [`readAction {}`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt) or [`smartReadAction {}`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt) in Kotlin, or [`ReadAction.nonBlocking().submit()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) / [`.executeSynchronously()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) in Java.
+  As a last resort, [`ReadAction.computeBlocking()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) and [`runReadActionBlocking()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt) are available but should only be used under modal progress.
+
+`AnActionEvent.coroutineScope` added
+: [`AnActionEvent`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java) now exposes a `coroutineScope` property providing convenient access to a `CoroutineScope` within `actionPerformed`, while maintaining synchronous EDT execution contracts.
+
+### Terminal Plugin 2026.1
+
+`TerminalUtil.hasRunningCommands()` must not be called on EDT
+: [`TerminalUtil.hasRunningCommands()`](%gh-ic%/plugins/terminal/src/org/jetbrains/plugins/terminal/TerminalUtil.kt) now asserts it is not called on the Event Dispatch Thread via `ThreadingAssertions.assertBackgroundThread`, and logs a `LOG.error` if violated.
+  Calling this method on the EDT can cause UI freezes because it queries external process state.
+  Move calls to a background thread or a coroutine.

@@ -57,6 +57,11 @@ Search Everywhere: New API compatible with Remote Development
 
 ### IntelliJ Platform 2025.2
 
+LSP and Template Languages APIs are available to free tier users
+: [](language_server_protocol.md) and Template Languages APIs no longer require a paid subscription in IntelliJ IDEA.
+  While the LSP implementation is not part of the Community Edition, it will still remain enabled in IntelliJ IDEA even without an active paid subscription. Although closed-source, the LSP implementation will remain fully available for third-party plugins free of charge.
+  See [](language_server_protocol.md#lsp-plugin-setup) for the updated setup.
+
 Threading Model changes
 : Several APIs are stabilized and one is deprecated:
 - [`runBlockingCancellable()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt), [`currentThreadCoroutineScope()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt), and [`coroutineToIndicator()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) are promoted to stable.

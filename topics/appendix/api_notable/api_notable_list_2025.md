@@ -12,6 +12,14 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ### IntelliJ Platform 2025.3
 
+Threading Model changes
+: Several write actions now run on background threads instead of EDT: VFS refresh, document commit (PSI reparsing), and document saving on frame deactivation.
+  API changes and additions:
+- [`Dispatchers.UI`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt) — new coroutine dispatcher for the UI thread that does **not** acquire write-intent lock; use it for pure UI operations that do not need read/write lock protection (as opposed to `Dispatchers.EDT`, which acquires write-intent lock for legacy model access).
+- [`backgroundWriteAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt) and [`readAndBackgroundWriteAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt) — stabilized suspending functions for executing write actions on a background thread.
+- Editor model data (document, caret, selection, folding) no longer requires a read lock when accessed on EDT.
+- Tests relying on spinning the AWT event queue to wait for write actions may hang; use [`PlatformTestUtil.dispatchAllInvocationEventsInIdeEventQueue()`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/PlatformTestUtil.java) which is adapted to await background write actions.
+
 `IdeProductMode`: Detecting Frontend/Backend/Monolith Mode
 : [`IdeProductMode`](%gh-ic%/platform/platform-api/src/com/intellij/platform/ide/productMode/IdeProductMode.kt) (experimental) allows plugins to determine the current application mode at runtime:
 - `IdeProductMode.isBackend` — the IDE runs as a remote development backend host

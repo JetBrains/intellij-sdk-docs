@@ -12,5 +12,11 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ### IntelliJ Platform 2026.1
 
+Background-capable VFS listeners
+: New APIs allow VFS listener callbacks to run off the Event Dispatch Thread (EDT), reducing UI freezes during heavy file operations.
+  Bulk listeners can implement the [`BulkFileListenerBackgroundable`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/newvfs/BulkFileListenerBackgroundable.java) marker interface and subscribe to the [`VirtualFileManager.VFS_CHANGES_BG`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileManager.java) message topic (instead of `VFS_CHANGES`).
+  Async listeners can be registered via [`addAsyncFileListenerBackgroundable()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileManager.java) or the `com.intellij.vfs.asyncListenerBackgroundable` extension point.
+  Migrate thread-safe listeners without UI dependencies from `VFS_CHANGES`/[`addAsyncFileListener()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileManager.java).
+
 New LSP API features
 : Language Server Protocol support gains Range Formatting (`textDocument/rangeFormatting`), Code Lens (`textDocument/codeLens`), and Optimize Imports (`textDocument/codeAction` with `source.organizeImports`). ``Also includes a major rewrite of LSP highlighting for improved performance. See [Language Server Protocol (LSP)](language_server_protocol.md).

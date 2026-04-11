@@ -38,6 +38,10 @@ LSP API updates
 
   See [](language_server_protocol.md#supported-features) for the full list.
 
+Islands UI Theme is now default
+: The Islands theme is now the default UI theme. Custom themes must be updated to support it.
+  See [](supporting_islands_theme.md) for migration steps including setting the parent theme, adapting background colors, border colors, and selected tab colors.
+
 Search Everywhere: New API compatible with Remote Development
 : The Search Everywhere architecture has been redesigned to support remote development by separating data/logic from UI presentation, enabling results to be serialized and transmitted across process boundaries.
   New API components:

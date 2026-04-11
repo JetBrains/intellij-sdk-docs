@@ -28,6 +28,16 @@ Threading Model changes
 
   Use this API to implement mode-specific behavior, e.g., to skip UI-related functionality when running as a backend.
 
+LSP API updates
+: New LSP capabilities are supported, all enabled by default and controllable via `LspServerDescriptor.lspCustomization`:
+- Server Initiated Progress (`$/progress`)
+- Highlight Usages In File (`textDocument/documentHighlight`)
+- Go To Symbol (`workspace/symbol`)
+- File Structure, Breadcrumbs, and Sticky Lines (`textDocument/documentSymbol`)
+- Parameter Info (`textDocument/signatureHelp`)
+
+  See [](language_server_protocol.md#supported-features) for the full list.
+
 Search Everywhere: New API compatible with Remote Development
 : The Search Everywhere architecture has been redesigned to support remote development by separating data/logic from UI presentation, enabling results to be serialized and transmitted across process boundaries.
   New API components:

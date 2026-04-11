@@ -57,6 +57,12 @@ Search Everywhere: New API compatible with Remote Development
 
 ### IntelliJ Platform 2025.2
 
+Threading Model changes
+: Several APIs are stabilized and one is deprecated:
+- [`runBlockingCancellable()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt), [`currentThreadCoroutineScope()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt), and [`coroutineToIndicator()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) are promoted to stable.
+- [`blockingContext()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt) is now a no-op and deprecated ([IJPL-445](https://youtrack.jetbrains.com/issue/IJPL-445)). The platform manages thread contexts automatically; remove all usages.
+- Threads blocked on read/write lock acquisition now react to cancellation and throw `CancellationException` instead of proceeding.
+
 ## 2025.1
 
 ### IntelliJ Platform 2025.1

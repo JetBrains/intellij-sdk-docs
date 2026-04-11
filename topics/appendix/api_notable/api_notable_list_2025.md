@@ -72,5 +72,10 @@ Threading Model changes
 
 ### IntelliJ Platform 2025.1
 
+Threading Model changes
+: `SwingUtilities.invokeLater()` and `SwingUtilities.invokeAndWait()` no longer automatically wrap their callbacks in the Write-Intent lock ([IJPL-149317](https://youtrack.jetbrains.com/issue/IJPL-149317)). Code accessing the PSI/VFS model inside these callbacks must now use an explicit read or write action. Pure UI-only operations require no changes.
+  Similarly, coroutines launched on `Dispatchers.Main` no longer acquire the Write-Intent lock ([IJPL-178581](https://youtrack.jetbrains.com/issue/IJPL-178581)). Use [`Dispatchers.EDT`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt) to preserve the previous behavior, or move model access to `Dispatchers.Default` with an explicit `readAction`/`writeAction`.
+  [`edtWriteAction()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt) is introduced as a stable, explicitly named alternative to `writeAction()` for write actions that must run on EDT.
+
 [`ContainerUtil`](%gh-ic%/platform/util/src/com/intellij/util/containers/ContainerUtil.java) using unmodifiable collections
 : Methods marked with [`@Unmodifiable`](%gh-java-annotations%/java8/src/main/java/org/jetbrains/annotations/Unmodifiable.java) now really return unmodifiable collections (only in [internal](enabling_internal.md)/test mode for now).

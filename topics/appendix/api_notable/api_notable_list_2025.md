@@ -12,6 +12,14 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ### IntelliJ Platform 2025.3
 
+`IdeProductMode`: Detecting Frontend/Backend/Monolith Mode
+: [`IdeProductMode`](%gh-ic%/platform/platform-api/src/com/intellij/platform/ide/productMode/IdeProductMode.kt) (experimental) allows plugins to determine the current application mode at runtime:
+- `IdeProductMode.isBackend` — the IDE runs as a remote development backend host
+- `IdeProductMode.isFrontend` — the IDE runs as a frontend (JetBrains Client) connected to a remote host
+- `IdeProductMode.isMonolith` — the IDE runs as a standard local (monolith) instance
+
+  Use this API to implement mode-specific behavior, e.g., to skip UI-related functionality when running as a backend.
+
 Search Everywhere: New API compatible with Remote Development
 : The Search Everywhere architecture has been redesigned to support remote development by separating data/logic from UI presentation, enabling results to be serialized and transmitted across process boundaries.
   New API components:

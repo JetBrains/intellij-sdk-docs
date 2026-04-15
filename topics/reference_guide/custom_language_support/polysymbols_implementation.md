@@ -6,7 +6,7 @@
 <link-summary>Implementation details for the Poly Symbols API.</link-summary>
 
 The core element of the framework is a [`PolySymbol`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/PolySymbol.kt).
-It is identified through `name` and `qualifiedKind` properties.
+It is identified through `name` and `kind` properties.
 The symbol has a very generic meaning and may represent a variable in some language, or an endpoint of some web server, or a file.
 
 The symbol lifecycle is limited to a single read action.
@@ -15,35 +15,33 @@ Provided the symbol remains valid, dereferencing the pointer will return a new i
 It should be noted that during a write action, the symbol might not survive a PSI tree commit.
 Therefore, creating a pointer prior to the commit and dereferencing it post-commit is advised.
 
-Symbols, which share some common characteristics, should be grouped using the same `qualifiedKind`.
-The `qualifiedKind` consists of a `namespace`, which roughly indicates a language or a framework the symbol belongs to, and a `kind`, which roughly indicates what the symbol's basic characteristics are.
+Symbols, which share some common characteristics, should be grouped using the same `kind`.
+The symbol `kind` consists of a `namespace`, which roughly indicates a language or a framework the symbol belongs to,
+and a `kindName`, which roughly indicates what the symbol's basic characteristics are.
 
 Examples:
-- a CSS property: `namespace: CSS`, `kind: properties`
-- a Java class: `namespace: Java`, `kind: classes`
-- a plugin extension: `namespace: ij-plugin`, `kind: extensions`
+- a CSS property: `namespace: CSS`, `kindName: properties`
+- a Java class: `namespace: Java`, `kindName: classes`
+- a plugin extension: `namespace: ij-plugin`, `kindName: extensions`
 
 A Poly Symbol can originate from source code analysis, or it can be a symbol statically defined through [Web Types](polysymbols_web_types.md) (JSON) or some other custom format.
-In both cases, such a symbol can have some `source` defined.
-Each symbol is treated by the framework the same, regardless of their origin.
 
-Consumers of symbols should avoid casting the `PolySymbol` to some other specialized interface, as it prevents third party symbol providers from customizing symbols or providing additional symbols.
+Consumers of symbols should avoid casting the `PolySymbol` to some other specialized interface,
+as it prevents third party symbol providers from customizing symbols or providing additional symbols.
+Instead, symbols should use the `PolySymbol.Property` annotation to define property value getters and
+`PolySymbol.get` operator to retrieve values.
 
 ## General Properties
 
 `PolySymbol` has a number of properties which are used across IDE features:
 
 {style="full"}
-`qualifiedKind`
-: Describes which group of symbols (kind) within the particular language
+`kind`
+: Describes which group of symbols (kindName) within the particular language
 or concept (namespace) the symbol belongs to.
 
 `name`
 : The name of the symbol. If the symbol does not have a pattern, the name will be used as-is for matching.
-
-`origin`
-: Specifies where this symbol comes from.
-Besides descriptive information like framework, library, version, or default icon, it also provides an interface to load symbol types and icons.
 
 `icon`
 : An optional icon associated with the symbol, which is going to be used across the IDE.
@@ -116,10 +114,21 @@ When matched along with a non-extension symbol, it can provide or override some 
 
 {style="full"}
 `get(property: PolySymbolProperty<T>)`
-: Accessor for various symbol properties. Plugins can use properties to provide additional information on the symbol.
-All properties supported by IDEs are defined through `PROP_*` constants of the `PolySymbol` interface.
-Check their documentation for further reference. To ensure that results are properly cast, use the
-`PolySymbolProperty.tryCast` method for returned values.
+: Accessor for various symbol properties. All properties supported by the PolySymbol framework are defined through `*Property`
+objects within the `PolySymbol` interface. Check their documentation for further reference. Overall, you should avoid
+overriding this method to provide property values and instead define property getters by annotating properties,
+fields, or methods with `PolySymbol.Property` annotation.
+
+E.g., to provide custom presentation for a symbol, implement getter for `PolySymbol.TextAttributesKeyProperty`:
+```kotlin
+  class MySymbol: PolySymbol {
+
+  @PolySymbol.Property(TextAttributesKeyProperty::class)
+  private val textAttributesKey: TextAttributesKey
+    get() = EditorColors.REFERENCE_HYPERLINK_COLOR
+
+}
+```
 
 `getDocumentationTarget(location: PsiElement?)`
 : Used by the Poly Symbols framework to get a [`DocumentationTarget`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/DocumentationTarget.kt), which handles documentation rendering for the symbol.
@@ -142,12 +151,6 @@ By default, only the current symbol framework from the `origin` property is chec
 `createPointer()`
 : Returns the pointer to the symbol, which can survive between read actions.
 The dereferenced symbol should be valid, for example, any PSI-based properties should return valid `PsiElement`s.
-
-`getModificationCount()`
-: Symbols can be used in
-[`CachedValue`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/CachedValue.java)s
-as dependencies.
-If a symbol instance can mutate over time, it should properly implement this method.
 
 ## `PsiSourcedPolySymbol`
 
@@ -229,10 +232,6 @@ If the provided `name` is `null`, no pattern evaluation will happen, and all sym
 `createPointer()`
 : Returns the pointer to the symbol scope, which can survive between read actions.
 The dereferenced symbol scope should be valid.
-
-`getModificationCount()`
-: Symbol scopes are used in CachedValues as dependencies for query executors.
-If a symbol scope instance can mutate over time, it should properly implement this method.
 
 When implementing a scope containing many elements, an extension of
 [`PolySymbolScopeWithCache`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/utils/PolySymbolScopeWithCache.kt) is advised.

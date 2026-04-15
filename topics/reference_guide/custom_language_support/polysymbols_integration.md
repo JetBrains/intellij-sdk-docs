@@ -109,7 +109,7 @@ Dedicated support for `PolySymbol` modifiers:
   Usually they are used during template compilation and missing from the final DOM.
 
 Dedicated support for `PolySymbol` `get` properties:
-- `PROP_HTML_ATTRIBUTE_VALUE` - A special property to support symbols representing HTML attributes.
+- `HtmlAttributeValueProperty` - A special property to support symbols representing HTML attributes.
   It can specify the kind (`plain`, `expression`, `no-value`), type (`boolean`, `number`, `string`, `enum`, `complex`, `of-match`), whether an attribute value is required, a default value, and the result type of value expression in the appropriate language.
   If the `COMPLEX` type is set, the value of `langType` will be used, and if `OF_MATCH`, the type of the `symbol` will be used.
   When merging information from several segments in the PolySymbolMatch, the first non-null property values take precedence.
@@ -161,7 +161,7 @@ For dynamic contributions, the contributors should be registered with the follow
 Alternatively, `CSS_PSEUDO_ELEMENTS_SYMBOL_QUERY_PATTERNS` constant may be used as the pattern.
 
 Dedicated support for `PolySymbol` `get` properties:
-- `PROP_CSS_ARGUMENTS` - `true` if pseudo-element keyword accepts arguments.
+- `CssArgumentsProperty` - `true` if pseudo-element keyword accepts arguments.
 
 #### Pseudo-classes
 {#css-pseudo-classes}
@@ -184,7 +184,7 @@ For dynamic contributions, the contributors should be registered with the follow
 Alternatively, `CSS_PSEUDO_CLASSES_SYMBOL_QUERY_PATTERNS` constant may be used as the pattern.
 
 Dedicated support for `PolySymbol` `get` properties:
-- `PROP_CSS_ARGUMENTS` - `true` if pseudo-element keyword accepts arguments.
+- `CssArgumentsProperty` - `true` if pseudo-element keyword accepts arguments.
 
 #### Functions
 {#css-functions}
@@ -287,7 +287,7 @@ Dedicated support for `PolySymbol` modifiers:
 - `readonly` - the JavaScript property is treated as read-only
 
 Dedicated support for `PolySymbol` `get` properties:
-- `PROP_JS_TYPE` - the type will be used in JavaScript type evaluator as the type of the property
+- `JSTypeProperty` - the type will be used in JavaScript type evaluator as the type of the property
 
 #### Symbols
 {#js-symbols}
@@ -306,8 +306,8 @@ For dynamic contributions, the contributors should be registered with the follow
 Alternatively, `JS_SYMBOLS_SYMBOL_QUERY_PATTERNS` constant may be used as the pattern.
 
 Dedicated support for `PolySymbol` `get` properties:
-- `PROP_JS_TYPE` - the type will be used in JavaScript type evaluator as the type of the symbol
-- `PROP_JS_SYMBOL_KIND` - the kind of the symbol, one of [`JsSymbolSymbolKind`](%gh-ic%/platform/polySymbols/src-web/com/intellij/polySymbols/js/JsSymbolSymbolKind.kt) enum values.
+- `JSTypeProperty` - the type will be used in JavaScript type evaluator as the type of the symbol
+- `JsSymbolKindProperty` - the kind of the symbol, one of [`JsSymbolSymbolKind`](%gh-ic%/platform/polySymbols/src-web/com/intellij/polySymbols/js/JsSymbolSymbolKind.kt) enum values.
   The kind will be used to render the appropriate icon in the code completion popup
 
   *Integration with unqualified reference resolution is not available in TypeScript code*

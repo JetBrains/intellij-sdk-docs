@@ -71,8 +71,43 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ## 2026.1
 
-### Java Plugin 2026.1                                                                                                                                                            
-                                                                                                                                                                                    
-The Java plugin has been split into several modules with their own classloaders.                                                                                                  
-This shouldn't affect plugins that use standard `<depends>com.intellij.java</depends>` dependency.                                                                                
-If a plugin depends on specific Java plugin modules directly, the dependencies should be updated to reference the new module names.      
+### Java Plugin 2026.1
+
+The Java plugin has been split into several modules with their own classloaders.
+This shouldn't affect plugins that use standard `<depends>com.intellij.java</depends>` dependency.
+If a plugin depends on specific Java plugin modules directly, the dependencies should be updated to reference the new module names.
+
+### PolySymbols 2026.1
+
+`com.intellij.polySymbols.PolySymbol.origin` property removed
+: The property was confusing and in many cases was not used. Its functionality is replaced by:
+: - `framework` property - provide `com.intellij.polySymbols.html.HtmlFrameworkSymbolsSupport.HtmlFrameworkIdProperty`
+     value through `PolySymbol.Property` mechanism
+: - `defaultIcon` property - implement `icon` property and return `true` for `PolySymbol.DocHideIconProperty` through `PolySymbol.Property` mechanism
+: - `typeSupport` property - provide `com.intellij.polySymbols.utils.PolySymbolTypeSupport.TypeSupportProperty`
+     value through `PolySymbol.Property` mechanism
+
+`com.intellij.polySymbols.PolySymbolQualifiedKind` class renamed to `com.intellij.polySymbols.PolySymbolKind`
+: additionally `name` property was renamed to `kindName` and `qualifiedKind` properties and parameters across the package
+  were renamed to `kind`
+
+`com.intellij.polySymbols.context.PolyContextRulesProvider` no longer extends `com.intellij.psi.util.PsiModificationTracker`
+: replaced by `modificationTracker` property
+
+`com.intellij.polySymbols.query.PolySymbolScope` no longer extends `com.intellij.psi.util.PsiModificationTracker`
+: this was a confusing requirement and was removed
+
+`com.intellij.polySymbols.query.PolySymbolQueryExecutor` no longer extends `com.intellij.psi.util.PsiModificationTracker`
+: this was a confusing requirement and was removed
+
+`com.intellij.polySymbols.query.PolySymbolQueryResultsCustomizer` no longer extends `com.intellij.psi.util.PsiModificationTracker`
+: this was a confusing requirement and was removed
+
+`com.intellij.polySymbols.query.PolySymbolNamesProvider` no longer extends `com.intellij.psi.util.PsiModificationTracker`
+: replaced by `modificationTracker` property
+
+`com.intellij.polySymbols.query.PolySymbolNameConversionRulesProvider` no longer extends `com.intellij.psi.util.PsiModificationTracker`
+: replaced by `modificationTracker` property
+
+
+

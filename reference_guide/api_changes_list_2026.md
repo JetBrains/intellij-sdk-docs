@@ -79,7 +79,7 @@ If a plugin depends on specific Java plugin modules directly, the dependencies s
 
 ### PolySymbols 2026.1
 
-`com.intellij.polySymbols.PolySymbol.origin` property removed
+`com.intellij.polySymbols.PolySymbol.getOrigin()` method removed
 : The property was confusing and in many cases was not used. Its functionality is replaced by:
 : - `framework` property - provide `com.intellij.polySymbols.html.HtmlFrameworkSymbolsSupport.HtmlFrameworkIdProperty`
      value through `PolySymbol.Property` mechanism

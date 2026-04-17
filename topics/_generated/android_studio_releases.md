@@ -2,6 +2,14 @@
 
 <snippet id="releases_table">
 
+## 2026.*
+
+| Release Name | Channel | Version | IntelliJ IDEA Version | Release Date |
+|--------------|---------|---------|-----------------------|--------------|
+| <p><b>Quail 1 </b></p><p> 2026.1.1 Canary 1</p> | ![Canary][canary] | **2026.1.1.1**<p>AI&#8209;261.22158.277.2611.15218332</p> | **2026.1**<p>261.22158.277</p> | Apr&nbsp;16,&nbsp;2026 |
+
+
+
 ## 2025.*
 
 | Release Name | Channel | Version | IntelliJ IDEA Version | Release Date |

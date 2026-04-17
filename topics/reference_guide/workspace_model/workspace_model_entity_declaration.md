@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Entity Declaration
 
@@ -11,12 +11,6 @@ The Workspace Model allows defining types of entities.
 > Defining custom entities is not yet available to third-party plugins, see also [](#generating-entity-implementations).
 >
 {style="warning" title="Custom Entities"}
-
-> Entities' declaration is still an experimental feature and can be changed at any time.
-> While this feature is still experimental, it is important for understanding the data
-> stored inside the Workspace Model and its relations.
->
-{style="warning" title="Experimental Status"}
 
 To declare an entity type, a Kotlin interface has to be created, which directly or indirectly extends
 [`WorkspaceEntity`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/WorkspaceEntity.kt).

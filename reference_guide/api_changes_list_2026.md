@@ -71,6 +71,13 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ## 2026.1
 
+### IntelliJ Platform 2026.1
+
+AWT input event handlers no longer run under write-intent lock
+:
+Custom input handlers (`KeyListener`, `MouseAdapter`, etc.) no longer execute under the [write-intent lock](threading_model.md#read-write-lock).
+If PSI or other write-intent-protected data needs to be accessed in these handlers, explicitly acquire a read action using [`ReadAction.nonBlocking().submit()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) or coroutine-based equivalents such as [`readAction {}`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt).
+
 ### Java Plugin 2026.1
 
 The Java plugin has been split into several modules with their own classloaders.

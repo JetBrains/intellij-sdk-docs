@@ -437,6 +437,7 @@
     </toc-element>
     <toc-element topic="api_notable.md" toc-title="Notable API Changes"
                  accepts-web-file-names="api-notable-list-2018.html">
+      <toc-element topic="api_notable_list_2026.md" toc-title="2026.*"/>
       <toc-element topic="api_notable_list_2025.md" toc-title="2025.*"/>
       <toc-element topic="api_notable_list_2024.md" toc-title="2024.*"/>
       <toc-element topic="api_notable_list_2023.md" toc-title="2023.*"/>

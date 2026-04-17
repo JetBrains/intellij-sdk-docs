@@ -74,11 +74,12 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 ### IntelliJ Platform 2026.1
 
 AWT input event handlers no longer run under write-intent lock
-: Custom input handlers (`KeyListener`, `MouseAdapter`, etc.) no longer execute under the write-intent lock.
-  If PSI or other write-intent-protected data needs to be accessed in these handlers, explicitly acquire a read action using [`ReadAction.nonBlocking().submit()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) or coroutine-based equivalents such as [`readAction {}`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt).
+:
+Custom input handlers (`KeyListener`, `MouseAdapter`, etc.) no longer execute under the [write-intent lock](threading_model.md#read-write-lock).
+If PSI or other write-intent-protected data needs to be accessed in these handlers, explicitly acquire a read action using [`ReadAction.nonBlocking().submit()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) or coroutine-based equivalents such as [`readAction {}`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt).
 
-### Java Plugin 2026.1                                                                                                                                                            
-                                                                                                                                                                                    
-The Java plugin has been split into several modules with their own classloaders.                                                                                                  
-This shouldn't affect plugins that use standard `<depends>com.intellij.java</depends>` dependency.                                                                                
-If a plugin depends on specific Java plugin modules directly, the dependencies should be updated to reference the new module names.      
+### Java Plugin 2026.1
+
+The Java plugin has been split into several modules with their own classloaders.
+This shouldn't affect plugins that use standard `<depends>com.intellij.java</depends>` dependency.
+If a plugin depends on specific Java plugin modules directly, the dependencies should be updated to reference the new module names.

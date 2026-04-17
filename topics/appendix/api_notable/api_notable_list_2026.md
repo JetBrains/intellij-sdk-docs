@@ -21,12 +21,12 @@ Migrate thread-safe listeners without UI dependencies from `VFS_CHANGES`/[`addAs
 
 New LSP API features
 :
-Language Server Protocol support gains Range Formatting (`textDocument/rangeFormatting`), Code Lens (`textDocument/codeLens`), and Optimize Imports (`textDocument/codeAction` with `source.organizeImports`). ``Also includes a major rewrite of LSP highlighting for improved performance. See [Language Server Protocol (LSP)](language_server_protocol.md).
+Language Server Protocol support gains Range Formatting (`textDocument/rangeFormatting`), Code Lens (`textDocument/codeLens`), and Optimize Imports (`textDocument/codeAction` with `source.organizeImports`). ``Also includes a major rewrite of LSP highlighting for improved performance. See [](language_server_protocol.md).
 
 `OSProcessHandler.waitFor()` on EDT or under read lock logs error
 :
 Waiting for an external process via [`OSProcessHandler.waitFor()`](%gh-ic%/platform/platform-util-io/src/com/intellij/execution/process/OSProcessHandler.java) on the Event Dispatch Thread or while holding a read lock is now prohibited for all users and logs a `LOG.error`.
-This check was previously enabled in internal mode since 2019.
+This check has been previously enabled in internal mode since 2019.
 Move process waiting off the EDT and outside of read actions, e.g., into a background thread or a coroutine.
 
 Non-cancellable read action APIs deprecated

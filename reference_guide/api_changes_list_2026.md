@@ -78,43 +78,32 @@ AWT input event handlers no longer run under write-intent lock
 Custom input handlers (`KeyListener`, `MouseAdapter`, etc.) no longer execute under the [write-intent lock](threading_model.md#read-write-lock).
 If PSI or other write-intent-protected data needs to be accessed in these handlers, explicitly acquire a read action using [`ReadAction.nonBlocking().submit()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) or coroutine-based equivalents such as [`readAction {}`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt).
 
+#### PolySymbols
+
+`com.intellij.polySymbols.PolySymbol.getOrigin()` method removed
+: The property was confusing and in many cases was not used. Its functionality is replaced by:
+: - `framework` property - provide `com.intellij.polySymbols.html.HtmlFrameworkSymbolsSupport.HtmlFrameworkIdProperty`
+value through `PolySymbol.Property` mechanism
+: - `defaultIcon` property - implement `icon` property and return `true` for `PolySymbol.DocHideIconProperty` through `PolySymbol.Property` mechanism
+: - `typeSupport` property - provide `com.intellij.polySymbols.utils.PolySymbolTypeSupport.TypeSupportProperty`
+value through `PolySymbol.Property` mechanism
+
+`com.intellij.polySymbols.PolySymbolQualifiedKind` class renamed to `com.intellij.polySymbols.PolySymbolKind`
+: additionally `name` property was renamed to `kindName` and `qualifiedKind` properties and parameters across the package
+were renamed to `kind`
+
+The following classes no longer implement [`PsiModificationTracker`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/PsiModificationTracker.java) (this requirement was confusing):
+- [`PolySymbolScope`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolScope.kt)
+- [`PolySymbolQueryExecutor`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryExecutor.kt)
+- [`PolySymbolQueryResultsCustomizer`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryResultsCustomizer.kt)
+
+Implementing `PsiModificationTracker` was replaced by `modificationTracker` property for the following classes:
+- [`PolyContextRulesProvider`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/context/PolyContextRulesProvider.kt)
+- [`PolySymbolNamesProvider`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolNamesProvider.kt)
+- [`PolySymbolNameConversionRulesProvider`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolNameConversionRulesProvider.kt)
+
 ### Java Plugin 2026.1
 
 The Java plugin has been split into several modules with their own classloaders.
 This shouldn't affect plugins that use standard `<depends>com.intellij.java</depends>` dependency.
 If a plugin depends on specific Java plugin modules directly, the dependencies should be updated to reference the new module names.
-
-### PolySymbols 2026.1
-
-`com.intellij.polySymbols.PolySymbol.getOrigin()` method removed
-: The property was confusing and in many cases was not used. Its functionality is replaced by:
-: - `framework` property - provide `com.intellij.polySymbols.html.HtmlFrameworkSymbolsSupport.HtmlFrameworkIdProperty`
-     value through `PolySymbol.Property` mechanism
-: - `defaultIcon` property - implement `icon` property and return `true` for `PolySymbol.DocHideIconProperty` through `PolySymbol.Property` mechanism
-: - `typeSupport` property - provide `com.intellij.polySymbols.utils.PolySymbolTypeSupport.TypeSupportProperty`
-     value through `PolySymbol.Property` mechanism
-
-`com.intellij.polySymbols.PolySymbolQualifiedKind` class renamed to `com.intellij.polySymbols.PolySymbolKind`
-: additionally `name` property was renamed to `kindName` and `qualifiedKind` properties and parameters across the package
-  were renamed to `kind`
-
-`com.intellij.polySymbols.context.PolyContextRulesProvider` no longer extends `com.intellij.psi.util.PsiModificationTracker`
-: replaced by `modificationTracker` property
-
-`com.intellij.polySymbols.query.PolySymbolScope` no longer extends `com.intellij.psi.util.PsiModificationTracker`
-: this was a confusing requirement and was removed
-
-`com.intellij.polySymbols.query.PolySymbolQueryExecutor` no longer extends `com.intellij.psi.util.PsiModificationTracker`
-: this was a confusing requirement and was removed
-
-`com.intellij.polySymbols.query.PolySymbolQueryResultsCustomizer` no longer extends `com.intellij.psi.util.PsiModificationTracker`
-: this was a confusing requirement and was removed
-
-`com.intellij.polySymbols.query.PolySymbolNamesProvider` no longer extends `com.intellij.psi.util.PsiModificationTracker`
-: replaced by `modificationTracker` property
-
-`com.intellij.polySymbols.query.PolySymbolNameConversionRulesProvider` no longer extends `com.intellij.psi.util.PsiModificationTracker`
-: replaced by `modificationTracker` property
-
-
-

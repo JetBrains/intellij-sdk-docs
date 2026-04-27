@@ -3,7 +3,7 @@
 plugins {
   id("java")
   id("org.jetbrains.kotlin.jvm") version "2.1.10"
-  id("org.jetbrains.intellij.platform") version "2.14.0"
+  id("org.jetbrains.intellij.platform") version "2.15.0"
 }
 
 group = "org.intellij.sdk"

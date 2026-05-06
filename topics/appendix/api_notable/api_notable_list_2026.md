@@ -12,11 +12,8 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 Asynchronous `VirtualFile` content saving
 :
-[`VirtualFile`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java) content update via `getOutputStream()` or `setBinaryContent()` could now be postponed – the actual file on disk could be modified with some delay.
-With content writing IO moved outside enclosing write action, the enclosing WA finishes quicker, thus reducing UI freezes.
-The IO postponing is invisible for accesses via VFS – VFS maintains an illusion the update is fully finished, while it is still in flight – but could be visible if one accesses the same file bypassing VFS – either via `java.io`/`java.nio` API directly, or from an external process.
-To be sure the possible asynchronous IO is really finished – use [`ManagingFS.getInstance().flushPendingUpdates()`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/vfs/newvfs/ManagingFS.java)
-
+[`VirtualFile`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java) content updates via `getOutputStream()` or `setBinaryContent()` can now be postponed – the actual file on disk may be modified with some delay.
+See [](virtual_file.md#when-are-virtualfile-changes-persisted-on-disk-and-loaded-from-disk-to-vfs) for more details.
 
 ## 2026.1
 

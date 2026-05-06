@@ -51,6 +51,15 @@ As a general rule, files are created either through the [PSI API](psi.md) or thr
 
 If one needs to create a file through VFS, use `VirtualFile.createChildData()` to create a `VirtualFile` instance and `VirtualFile.setBinaryContent()` to write some data to the file.
 
+## When `VirtualFile` changes come to disk, and vise versa?
+The changes to a `VirtualFile` (e.g., `setBinaryContent()`) may reach the underlying files with some delay – i.e., the actual IO could be postponed, and executed asynchronously.
+To ensure the changes have been applied forcibly – e.g., to read the new file content from an external process – use `ManagingFS.getInstance().flushPendingUpdates()` (outside write action).
+
+The changes in the underlying files also reach VFS with some (normally, short) delay.
+`VirtualFile.refresh()` could be used to ensure the changes are noticed.
+It could introduce significant delay, so use it with caution.
+More about refreshing in [Virtual File System (VFS)](virtual_file_system.md).
+
 ## How do I get notified when VFS changes?
 
 > See [](virtual_file_system.md#virtual-file-system-events) for important details.

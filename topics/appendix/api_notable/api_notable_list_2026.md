@@ -8,6 +8,13 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 <include from="snippets.topic" element-id="gradlePluginVersion"/>
 
+### IntelliJ Platform 2026.2
+
+Asynchronous `VirtualFile` content saving
+:
+[`VirtualFile`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java) content updates via `getOutputStream()` or `setBinaryContent()` can now be postponed – the actual file on disk may be modified with some delay.
+See [](virtual_file.md#when-are-virtualfile-changes-persisted-on-disk-and-loaded-from-disk-to-vfs) for more details.
+
 ## 2026.1
 
 ### IntelliJ Platform 2026.1

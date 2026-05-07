@@ -47,7 +47,7 @@
   <var name="intellij-platform-gradle-plugin-version" value="2.16.0"/>
   <var name="gradle-intellij-plugin-version" value="1.17.4"/>
   <var name="gradle-grammar-kit-plugin-version" value="2023.3.0.3"/>
-  <var name="plugin-verifier-version" value="1.402"/>
+  <var name="plugin-verifier-version" value="1.403"/>
   <var name="marketplace-zip-signer-version" value="0.1.43"/>
   <!-- GENERATED CONTENT END -->
 

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Introduction to Integration Tests
 
@@ -85,6 +85,12 @@ Now that the configuration is complete, it's time to write the first integration
 Create a new Kotlin file in `src/integrationTest/kotlin` with the following code:
 
 ```kotlin
+import com.intellij.ide.starter.ide.IdeProductProvider
+import com.intellij.ide.starter.models.TestCase
+import com.intellij.ide.starter.plugins.PluginConfigurator
+import com.intellij.ide.starter.project.NoProject
+import com.intellij.ide.starter.runner.Starter
+
 class PluginTest {
   @Test
   fun simpleTestWithoutProject() {
@@ -133,7 +139,7 @@ The test case uses IntelliJ IDEA version 2024.3, and starts the IDE without any 
 
 This step configures plugin installation using the plugin path defined in the Gradle configuration with the `path.to.build.plugin` system property.
 
-> `PluginConfigurator` can install plugins from local paths or Marketplace.
+> [`PluginConfigurator`](%gh-ic%/tools/intellij.tools.ide.starter/src/com/intellij/ide/starter/plugins/PluginConfigurator.kt) can install plugins from local paths or Marketplace.
 >
 {style="note"}
 
@@ -183,9 +189,25 @@ Let's modify the test to open a project.
 
 The framework supports several ways to specify test projects:
 
-* **GitHub projects**: `GitHubProject.fromGithub( branchName = "master", "JetBrains/ij-perf-report-aggregator" )`
-* **Remote archives**: `RemoteArchiveProjectInfo("https://github.com/JetBrains/intellij-community/archive/master.zip")`
-* **Local projects**: `LocalProjectInfo(Path("src/test/resources/test-projects/simple-project"))`
+* [GitHub projects](%gh-ic%/tools/intellij.tools.ide.starter/src/com/intellij/ide/starter/project/GitHubProject.kt):
+  ```kotlin
+  GitHubProject.fromGithub(
+      branchName = "master",
+      "JetBrains/ij-perf-report-aggregator"
+  )
+  ```
+* [Remote archives](%gh-ic%/tools/intellij.tools.ide.starter/src/com/intellij/ide/starter/project/RemoteArchiveProjectInfo.kt):
+  ```kotlin
+  RemoteArchiveProjectInfo(
+      "https://github.com/example/repo/archive/master.zip"
+  )
+  ```
+* [Local projects](%gh-ic%/tools/intellij.tools.ide.starter/src/com/intellij/ide/starter/project/LocalProjectInfo.kt):
+  ```kotlin
+  LocalProjectInfo(
+      Path("src/test/resources/test-projects/simple-project")
+  )
+  ```
 
 The following example shows how to open a GitHub project:
 
@@ -224,11 +246,11 @@ Let's understand why and how to fix this.
 Due to the two-process architecture:
 
 * Exceptions in the IDE process aren't automatically propagated to the test process.
-* A bundled plugin collects exceptions from the IDE's `MessageBus`.
+* A bundled plugin collects exceptions from the IDE's [`MessageBus`](%gh-ic%/platform/extensions/src/com/intellij/util/messages/MessageBus.kt).
 * These exceptions are stored in the error folder within the logs.
-* The Starter framework collects exceptions from the IDE and pass them to the method `reportTestFailure` in object registered as `CIServer` in DI.
+* The Starter framework collects exceptions from the IDE and pass them to the method `reportTestFailure` in object registered as [`CIServer`](%gh-ic%/tools/intellij.tools.ide.starter/src/com/intellij/ide/starter/ci/CIServer.kt) in DI.
 
-TeamCity reporting is used by default, falling back to `NoCIServer` for other environments.
+TeamCity reporting is used by default, falling back to [`NoCIServer`](%gh-ic%/tools/intellij.tools.ide.starter/src/com/intellij/ide/starter/ci/NoCIServer.kt) for other environments.
 However, this can be customized by using Kodein Dependency Injection.
 
 The following example shows how to make tests fail when IDE exceptions occur:

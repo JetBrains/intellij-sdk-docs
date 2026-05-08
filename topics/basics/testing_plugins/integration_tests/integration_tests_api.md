@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Integration Tests: API Interaction
 
@@ -20,29 +20,40 @@ Driver framework uses a standard Java Remote Method Invocation (RMI) protocol.
 This protocol allows tests to access objects and invoke methods in the JVM running the IDE.
 
 The architecture of RMI protocol is as follows:
-```mermaid
-sequenceDiagram
-    box rgb(240,240,240) Test Process
-    participant Test as Test (Client)
-    end
+```plantuml
+@startuml
+box "Test Process" #F0F0F0
+    participant "Test (Client)" as Test
+end box
 
-    box rgb(240,240,240) IDE Process
-    participant IDE as IDE (Server)
-    participant Registry as RMI registry
-    end
+box "IDE Process" #F0F0F0
+    participant "IDE (Server)" as IDE
+    participant "RMI registry" as Registry
+end box
 
-    Test->>Registry: 1. Look up remote object
-    Registry-->>Test: 2. Return stub reference
+Test ->> Registry: 1. Look up remote object
+Registry -->> Test: 2. Return stub reference
 
-    Note over Test: Stub is obtained<br/>for remote reference
+note over Test
+    Stub is obtained
+    for remote reference
+end note
 
-    activate Test
-    Test->>IDE: 3. Remote method call via stub
-    IDE->>IDE: 4. Process request and invoke actual method
-    IDE-->>Test: 5. Return serialized result
-    deactivate Test
+activate Test
+Test ->> IDE: 3. Remote method call via stub
+IDE ->> IDE: 4. Process request and invoke actual method
+IDE -->> Test: 5. Return serialized result
+deactivate Test
 
-    Note over IDE,Test: Each remote call involves:<br/>- Serialization of parameters<br/>- Network transfer<br/>- Deserialization<br/>- Method invocation<br/>- Serialization of result
+note over Test,IDE
+    Each remote call involves:
+    - Serialization of parameters
+    - Network transfer
+    - Deserialization
+    - Method invocation
+    - Serialization of result
+end note
+@enduml
 ```
 
 When a test needs to invoke a method on a remote object:

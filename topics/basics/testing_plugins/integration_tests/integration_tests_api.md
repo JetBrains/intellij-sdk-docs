@@ -76,9 +76,13 @@ To demonstrate how this works in practice, add the following code to the plugin:
 ```kotlin
 package com.example.demo
 
+import com.intellij.openapi.components.Service
+
 object PluginStorage {
   @JvmStatic
-  fun getPluginStorage() = Storage("static method", listOf("static1", "static2"))
+  fun getPluginStorage() = Storage(
+    "static method", listOf("static1", "static2")
+  )
 }
 
 @Service
@@ -135,6 +139,7 @@ The `plugin` parameter specifies the ID of a plugin, where classes are located.
 This parameter is required since IntelliJ-based IDEs use separate [class loaders](plugin_class_loaders.md) for each plugin, and the code that will call methods on the IDE side (Invoker) needs to know where to search for them.
 
 There is built-in support for `@Remote` annotation inside IntelliJ IDEA:
+
 ![](remote-support.png){width="717"}
 
 Rename and move the target class refactorings will update the annotation accordingly.
@@ -177,7 +182,7 @@ fun testStubs() {
 }
 ```
 
-There are two methods that allow invoking methods: `service` and `utility`.
+There are two [`Driver`](%gh-ic%/platform/remote-driver/client/src/com/intellij/driver/client/Driver.kt) extension methods that allow invoking methods: `service()` and `utility()`.
 The first one will return an instance of a service, and the second will return an instance of any class.
 
 Project-level services require a `Project` stub.

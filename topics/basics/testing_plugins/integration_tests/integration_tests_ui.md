@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Integration Tests: UI Testing
 
@@ -21,7 +21,8 @@ These UI frameworks organize elements in a parent-child hierarchy, similar to HT
 
 Every UI element (except top-level containers) must have a parent container, creating a clear hierarchical structure.
 
-The Driver framework provides a Kotlin DSL that mirrors this hierarchy.
+The Driver framework provides a Kotlin DSL that mirrors this hierarchy (see [`com.intellij.driver.sdk.ui.components`](%gh-ic%/platform/remote-driver/test-sdk/src/com/intellij/driver/sdk/ui/components/)).
+
 Here's an example:
 
 ```kotlin
@@ -92,7 +93,7 @@ Here's an example component:
      visible="true" visible_text="Current File" visible_text_keys=""/>
 ```
 
-There are other attributes which are omitted for clarity.
+There are other attributes, which are omitted for clarity.
 
 The element corresponds to the following button:
 
@@ -140,7 +141,7 @@ To click the <control>Current File</control> button:
 x(xQuery { byVisibleText("Current File") }).click()
 ```
 
-The `x()` call creates a lazy reference to the component.
+The [`x()`](%gh-ic%/platform/remote-driver/test-sdk/src/com/intellij/driver/sdk/ui/Finder.kt) call creates a lazy reference to the component.
 It means that the XPath query isn't executed immediately and component lookup happens only when an action (like `click()`) is invoked.
 
 Here's a part of a test that incorporates UI interaction:
@@ -224,4 +225,3 @@ The test does the following:
    The `shouldBe` method waits 15 seconds until the condition is met and can be used to assert various properties.
 5. Checking list contents by accessing the `rawItems` property to get all list items and asserting `backup-data` exists in the list.
 6. Including the full list content in the error message for debugging.
-

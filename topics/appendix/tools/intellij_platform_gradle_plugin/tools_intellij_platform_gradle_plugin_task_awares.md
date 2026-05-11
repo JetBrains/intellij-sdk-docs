@@ -87,6 +87,8 @@ Default value
 
 **Depends on**: [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin)
 
+**Inherited by**: [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde), [`runIdeBackend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeBackend), [`runIdeFrontend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeFrontend)
+
 **Sources**: [`ComposeHotReloadAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/ComposeHotReloadAware.kt)
 
 </tldr>
@@ -142,7 +144,7 @@ Type
 : `RegularFileProperty`
 
 Default value
-: [`initializeIntellijPlatformPlugin.coroutinesJavaAgent`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin-coroutinesJavaAgent)
+: Resolved automatically and stored under [`intellijPlatform.caching.path`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-caching-path)
 
 
 
@@ -151,7 +153,7 @@ Default value
 
 <tldr>
 
-**Inherited by**: [`RuntimeAware`](#RuntimeAware), [`SandboxAware`](#SandboxAware), [`SplitModeAware`](#SplitModeAware), [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin), [`patchPluginXml`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml), [`printBundledPlugins`](tools_intellij_platform_gradle_plugin_tasks.md#printBundledPlugins), [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde), [`testIdePerformance`](tools_intellij_platform_gradle_plugin_tasks.md#testIdePerformance), [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi), [`verifyPluginProjectConfiguration`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginProjectConfiguration)
+**Inherited by**: [`RuntimeAware`](#RuntimeAware), [`SandboxAware`](#SandboxAware), [`SplitModeAware`](#SplitModeAware), [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin), [`patchPluginXml`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml), [`printBundledPlugins`](tools_intellij_platform_gradle_plugin_tasks.md#printBundledPlugins), [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde), [`runIdeBackend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeBackend), [`runIdeFrontend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeFrontend), [`testIdePerformance`](tools_intellij_platform_gradle_plugin_tasks.md#testIdePerformance), [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi), [`verifyPluginProjectConfiguration`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginProjectConfiguration)
 
 **Sources**: [`IntelliJPlatformVersionAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/IntelliJPlatformVersionAware.kt)
 
@@ -185,7 +187,7 @@ It should not be directly accessed.
 
 {type="narrow"}
 Type
-:: `ConfigurableFileCollection`
+: `ConfigurableFileCollection`
 
 
 ### `intelliJPlatformTestRuntimeFixClasspathConfiguration`
@@ -196,7 +198,7 @@ It should not be directly accessed.
 
 {type="narrow"}
 Type
-:: `ConfigurableFileCollection`
+: `ConfigurableFileCollection`
 
 
 ### `platformPath`
@@ -392,10 +394,10 @@ Indicates if the current project represents an IntelliJ Platform plugin module.
 
 {type="narrow"}
 Type
-:: `Property<Boolean>`
+: `Property<Boolean>`
 
 Default value
-:: `PluginManager.isModule`
+: `PluginManager.isModule`
 
 Notes:
 - The IntelliJ Platform Gradle Plugin wires this property automatically for tasks implementing ModuleAware during task preconfiguration.
@@ -473,6 +475,32 @@ tasks.register('retrievePluginName', RetrievePluginNameTask) {
 </tabs>
 
 
+## `PluginInstallationTargetAware`
+{#PluginInstallationTargetAware}
+
+<tldr>
+
+**Inherited by**: [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox), [`prepareTestSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTestSandbox), [`prepareTestIdePerformanceSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTestIdePerformanceSandbox), [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde), [`runIdeBackend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeBackend), [`runIdeFrontend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeFrontend)
+
+**Sources**: [`PluginInstallationTargetAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/PluginInstallationTargetAware.kt)
+
+</tldr>
+
+Provides the property that selects where the developed plugin is installed when running in Split Mode.
+
+### `pluginInstallationTarget`
+{#PluginInstallationTargetAware-pluginInstallationTarget}
+
+Specifies in which part of the product the developed plugin should be installed.
+
+{type="narrow"}
+Type
+: [`Property<PluginInstallationTarget>`](tools_intellij_platform_gradle_plugin_types.md#SplitModeAware-PluginInstallationTarget)
+
+Default value
+: `BACKEND`
+
+
 ## `PluginVerifierAware`
 {#PluginVerifierAware}
 
@@ -530,7 +558,7 @@ Type
 
 **Depends on**: [`AutoReloadAware`](#AutoReloadAware), [`CoroutinesJavaAgentAware`](#CoroutinesJavaAgentAware), [`PluginAware`](#PluginAware), [`RuntimeAware`](#RuntimeAware), [`SandboxAware`](#SandboxAware)
 
-**Inherited by**: [`buildSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions), [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde), [`testIdePerformance`](tools_intellij_platform_gradle_plugin_tasks.md#testIdePerformance), [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi)
+**Inherited by**: [`buildSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions), [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde), [`runIdeBackend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeBackend), [`runIdeFrontend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeFrontend), [`testIdePerformance`](tools_intellij_platform_gradle_plugin_tasks.md#testIdePerformance), [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi)
 
 **Sources**: [`RunnableIdeAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/RunnableIdeAware.kt)
 
@@ -568,7 +596,7 @@ It should not be directly accessed.
 
 {type="narrow"}
 Type
-:: `ConfigurableFileCollection`
+: `ConfigurableFileCollection`
 
 
 ### `runtimeDirectory`
@@ -598,7 +626,7 @@ Metadata object of the Java Runtime currently used for running Gradle.
 
 {type="narrow"}
 Type
-:: `MapProperty<String, String>`
+: `MapProperty<String, String>`
 
 
 ### `runtimeLauncher`
@@ -632,7 +660,7 @@ The directory containing content read and produced by the running IDE. The direc
 
 {type="narrow"}
 Type
-:: `DirectoryProperty`
+: `DirectoryProperty`
 
 ### `sandboxConfigDirectory`
 {#SandboxStructure-sandboxConfigDirectory}
@@ -641,7 +669,7 @@ A configuration directory located within the [`sandboxDirectory`](#SandboxStruct
 
 {type="narrow"}
 Type
-:: `DirectoryProperty`
+: `DirectoryProperty`
 
 ### `sandboxPluginsDirectory`
 {#SandboxStructure-sandboxPluginsDirectory}
@@ -650,7 +678,7 @@ A plugins directory located within the [`sandboxDirectory`](#SandboxStructure-sa
 
 {type="narrow"}
 Type
-:: `DirectoryProperty`
+: `DirectoryProperty`
 
 ### `sandboxSystemDirectory`
 {#SandboxStructure-sandboxSystemDirectory}
@@ -659,7 +687,7 @@ A system directory located within the [`sandboxDirectory`](#SandboxStructure-san
 
 {type="narrow"}
 Type
-:: `DirectoryProperty`
+: `DirectoryProperty`
 
 ### `sandboxLogDirectory`
 {#SandboxStructure-sandboxLogDirectory}
@@ -668,7 +696,7 @@ A log directory located within the [`sandboxDirectory`](#SandboxStructure-sandbo
 
 {type="narrow"}
 Type
-:: `DirectoryProperty`
+: `DirectoryProperty`
 
 ### `testSandbox`
 {#SandboxStructure-testSandbox}
@@ -677,7 +705,7 @@ Defines if the current sandbox is related to testing.
 
 {type="narrow"}
 Type
-:: `Property<Boolean>`
+: `Property<Boolean>`
 
 
 ## `SandboxAware`
@@ -766,6 +794,13 @@ Type
 The helper method used for applying sandbox configuration from the sandbox producer (such as [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox) or [`prepareTestSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTestSandbox) tasks) to sandbox consumers.
 
 
+### `applyFrontendSandboxFrom(TaskProvider)`
+{#SandboxAware-applyFrontendSandboxFrom}
+
+The helper method used for applying frontend sandbox directories from a [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox) producer to a sandbox consumer.
+This is used by split-mode frontend consumers such as [`runIdeFrontend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeFrontend).
+
+
 
 ## `SigningAware`
 {#SigningAware}
@@ -796,7 +831,7 @@ Type
 
 <tldr>
 
-**Inherited by**: [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox), [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde)
+**Inherited by**: [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox), [`prepareTestSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTestSandbox), [`prepareTestIdePerformanceSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTestIdePerformanceSandbox), [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde), [`runIdeBackend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeBackend), [`runIdeFrontend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeFrontend)
 
 **Sources**: [`SplitModeAware`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/aware/SplitModeAware.kt)
 
@@ -826,7 +861,7 @@ Default value
 ### `pluginInstallationTarget` (formerly `splitModeTarget`)
 {#SplitModeAware-pluginInstallationTarget}
 
-Specifies in which part of the product the developed plugin should be installed.
+Split-mode tasks that also implement [`PluginInstallationTargetAware`](#PluginInstallationTargetAware) use this property to specify in which part of the product the developed plugin should be installed.
 The default comes from [`intellijPlatform.pluginInstallationTarget`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginInstallationTarget) and is backend-only unless configured otherwise.
 
 {type="narrow"}
@@ -884,6 +919,32 @@ Path to a properties file used to configure the frontend process when the IDE is
 {type="narrow"}
 Type
 : `Provider<RegularFile>`
+
+
+### `splitModeFrontendJoinLinkFile`
+{#SplitModeAware-splitModeFrontendJoinLinkFile}
+
+Path to a file storing the current split-mode frontend join link.
+It is written by [`runIdeBackend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeBackend) and consumed by [`runIdeFrontend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeFrontend) when both are launched separately.
+
+{type="narrow"}
+Type
+: `Provider<RegularFile>`
+
+Default value
+: <path>[sandboxDirectory]/split-mode-frontend.join.link</path>
+
+
+### `effectivePluginInstallationTarget`
+{#SplitModeAware-effectivePluginInstallationTarget}
+
+Resolves the effective plugin installation target.
+The [`pluginInstallationTarget`](#PluginInstallationTargetAware-pluginInstallationTarget) property takes precedence over the deprecated `splitModeTarget` alias when available.
+If neither property is configured explicitly, the effective target is `BACKEND`.
+
+{type="narrow"}
+Type
+: `Provider<PluginInstallationTarget>`
 
 
 ### `validateSplitModeSupport()`

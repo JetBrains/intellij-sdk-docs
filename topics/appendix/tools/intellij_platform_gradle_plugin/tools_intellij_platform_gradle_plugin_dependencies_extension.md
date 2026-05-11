@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Dependencies Extension
 
@@ -21,9 +21,8 @@ It also includes methods for adding [plugins](#plugins) (including bundled), [Je
 - setup Maven Central and [`defaultRepositories()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories)
 - target IntelliJ IDEA %ijPlatform%
 - add dependency on the bundled Java plugin
-- add IntelliJ Plugin Verifier, Marketplace ZIP Signer CLI, and code instrumentation tools
-- add JUnit4 test dependency
-- add Test Framework for testing plugin with JUnit4
+- add a JUnit4 test dependency
+- add Test Framework for testing a plugin with JUnit4
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -135,7 +134,6 @@ The following helpers are still available for resolving pre-2025.3 product lines
 | Function                                | Description                                                                                                                                |
 |-----------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
 | `create(type, version, configure = {})` | Adds a configurable dependency on the IntelliJ Platform. See [](tools_intellij_platform_gradle_plugin.md#dependenciesParametrizePlatform). |
-| `create(notation, configure = {})`      | Adds a configurable dependency on the IntelliJ Platform. See [](tools_intellij_platform_gradle_plugin.md#dependenciesParametrizePlatform). |
 | `local(localPath)`                      | Adds a dependency on a local IntelliJ Platform instance. See [](tools_intellij_platform_gradle_plugin.md#dependenciesLocalPlatform).       |
 
 ### Dependency Configuration Parameters
@@ -150,9 +148,11 @@ It allows you to specify the following parameters:
 | `productMode`       | `ProductMode`          | Describes a mode in which a product may be started. Default: `ProductMode.MONOLITH`.                                                |
 | `useInstaller`      | `Boolean`              | Switches between resolving the IDE installer and a multi-OS archive from the IntelliJ Maven repository. Default: `true`.            |
 | `useCache`          | `Boolean`              | Switches between the Gradle cache and a custom cache directory. Default: `false`. See `GradleProperties.IntellijPlatformIdesCache`. |
-| `configurationName` | `String`               | The name of the configuration to add the dependency to. Default: `Configurations.INTELLIJ_PLATFORM_DEPENDENCY_ARCHIVE`.             |
 
 All of the above parameters support assignment of direct values and Provider instances.
+
+When `productMode = ProductMode.FRONTEND`, the dependency resolves the matching JetBrains Client artifact.
+When `splitMode` is enabled or a non-`MONOLITH` `productMode` is requested, the IDE is extracted into the managed IDE cache even if `useCache` is disabled.
 
 See also:
 
@@ -224,7 +224,7 @@ To apply required repositories, use [](tools_intellij_platform_gradle_plugin_rep
 
 It is still possible to use Multi-OS ZIP archives resolved from [](tools_intellij_platform_gradle_plugin_repositories_extension.md#intellij-maven-repositories).
 
-To enable resolving this kind of artifacts, opt-out from the installer dependencies by adding `useInstaller = false` argument to helpers described in [](#target-platforms), like:
+To enable resolving this kind of artifacts, opt out from installer dependencies by setting `useInstaller = false` in the helper configuration:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -238,7 +238,9 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdea("%ijPlatform%", useInstaller = false)
+    intellijIdea("%ijPlatform%") {
+      useInstaller = false
+    }
   }
 }
 ```
@@ -255,7 +257,9 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdea "%ijPlatform%", false
+    intellijIdea("%ijPlatform%") {
+      useInstaller = false
+    }
   }
 }
 ```
@@ -331,6 +335,7 @@ If defined explicitly, can be used along with any custom plugin repository, like
 ### Compatible Plugins
 
 Helpers that automatically pick a version compatible with the currently configured IntelliJ Platform by requesting the JetBrains Marketplace API.
+These helpers are incubating.
 
 These resolve plugin versions against the target platform configured via this extension.
 Make sure the required [plugin repositories](tools_intellij_platform_gradle_plugin_repositories_extension.md#plugin-repositories) are defined.
@@ -358,6 +363,7 @@ pluginModule(implementation(project(":submodule")))
 ### Local Plugin
 
 Use `localPlugin(localPath)` to add a dependency on a local IntelliJ Platform plugin.
+It accepts a path to a plugin directory/archive or a project dependency.
 
 ## Testing
 
@@ -474,8 +480,9 @@ See [](tools_intellij_platform_gradle_plugin_jetbrains_runtime.md) for more deta
 
 ## Code Instrumentation
 
-The code instrumentation process handled with the [`instrumentCode`](tools_intellij_platform_gradle_plugin_tasks.md#instrumentCode) task, requires extra dependencies to work and properly adjust the Java bytecode.
-There used to be an `instrumentationTools()` convenience helper that applied the required dependencies using defaults; it is now deprecated and calling it is no longer necessary. You can still add and configure the dependencies separately if needed.
+The code instrumentation process handled with the [`instrumentCode`](tools_intellij_platform_gradle_plugin_tasks.md#instrumentCode) task requires extra dependencies to work and properly adjust the Java bytecode.
+The removed `instrumentationTools()` convenience helper is no longer necessary.
+You can still add and configure the dependencies separately if needed.
 
 Adds a Java Compiler dependency for code instrumentation.
 The version is determined by the IntelliJ Platform build number.
@@ -483,10 +490,9 @@ If the exact version is unavailable, the closest one is used, found by scanning 
 
 The `javaCompiler()` helper is applied by default and refers to the tool version close to the currently used IntelliJ Platform.
 
-| Function                                              | Description                                                                                  |
-|-------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| <p>`instrumentationTools()`</p>                       | Deprecated: calling this helper is no longer necessary; previously applied `javaCompiler()`. |
-| <p>`javaCompiler()`</p><p>`javaCompiler(version)`</p> | Adds a dependency on Java Compiler.                                                          |
+| Function                                              | Description                         |
+|-------------------------------------------------------|-------------------------------------|
+| <p>`javaCompiler()`</p><p>`javaCompiler(version)`</p> | Adds a dependency on Java Compiler. |
 
 - [](tools_intellij_platform_gradle_plugin_tasks.md#instrumentCode)
 
@@ -504,6 +510,14 @@ Helpers for the [](tools_intellij_platform_gradle_plugin_plugins.md#grammarkit) 
 | Function      | Description                                                                             |
 |---------------|-----------------------------------------------------------------------------------------|
 | `composeUI()` | Adds the bundled modules required for working with Compose UI in the IntelliJ Platform. |
+
+`composeUI()` is incubating and resolves bundled modules according to the target IDE build:
+
+| Target build | Added modules                                                                                                                                                             |
+|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 2024.3+      | `intellij.libraries.skiko`, `intellij.platform.compose`                                                                                                                   |
+| 2025.1+      | `intellij.libraries.compose.foundation.desktop`, `intellij.platform.jewel.foundation`, `intellij.platform.jewel.ui`, `intellij.platform.jewel.ideLafBridge`               |
+| 2025.3+      | `intellij.libraries.compose.runtime.desktop`                                                                                                                              |
 
 ## Dependency Exclusions
 

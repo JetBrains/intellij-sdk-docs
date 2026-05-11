@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # IntelliJ Platform Testing Extension
 
@@ -9,7 +9,7 @@
 The _IntelliJ Platform Gradle Plugin_ introduces a top-level `intellijPlatformTesting` extension.
 It provides a possibility for registering custom tasks for running the IDE, unit tests, UI tests, or performance tests.
 
-For each of the custom tasks, a dedicated sandbox is created to isolate them form other tasks or the build flow as they may rely on a different IntelliJ Platform version, plugins, or other configuration.
+For each of the custom tasks, a dedicated sandbox is created to isolate them from other tasks or the build flow as they may rely on a different IntelliJ Platform version, plugins, or other configuration.
 
 ## IntelliJ Platform Testing
 
@@ -54,6 +54,9 @@ By default, created tasks depend on the IntelliJ Platform defined with [](tools_
 However, it is possible to adjust it to any requirements with passing custom values directly to the created object, `task`, or `sandboxTask` task instances.
 
 Each registered entry extends the IntelliJ Platform dependency configuration model, so properties like `type`, `version`, `productMode`, `useInstaller`, `useCache`, and `localPath` can be configured directly on the created object.
+
+In projects using the [](tools_intellij_platform_gradle_plugin_plugins.md#module) plugin, this extension can register custom `testIde` tasks only.
+Register custom `runIde`, `testIdeUi`, and `testIdePerformance` tasks in the root project using the [](tools_intellij_platform_gradle_plugin_plugins.md#platform) plugin.
 
 **Example:**
 
@@ -139,6 +142,8 @@ The name of this task is based on the name of created task, like `prepareSandbox
 ### `testFramework(...)`
 
 Adds a dependency on a `test-framework` library variant for the created testing entry.
+The version can be provided as a string or as a `Provider<String>`.
+When omitted, the closest version matching the configured IntelliJ Platform build is used.
 
 See also:
 - [Types: `TestFrameworkType`](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType)
@@ -156,7 +161,7 @@ It provides several methods for adding remote and local plugins, or for disablin
 <tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
-  val runIdeWithPlugins by intellijPlatformTesting.runIde.registering {
+val runIdeWithPlugins by intellijPlatformTesting.runIde.registering {
   // ...
   plugins {
     plugin("pluginId", "1.0.0")

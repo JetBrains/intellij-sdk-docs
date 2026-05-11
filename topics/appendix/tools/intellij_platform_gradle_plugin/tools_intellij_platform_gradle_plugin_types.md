@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Types
 
@@ -272,25 +272,27 @@ Generic test frameworks for the IntelliJ Platform.
 
 Some plugins offer dedicated test frameworks, for example, `Plugin.Java` when using Java/JVM-related functionality.
 
-| Name                 | Coordinates                                                   | Reference       |
-|----------------------|---------------------------------------------------------------|-----------------|
-| `Plugin.CLion`          | `com.jetbrains.intellij.clion:clion-merged-test-framework`      | [](clion.md)    |
-| `Plugin.CSS`            | `com.jetbrains.intellij.css:css-test-framework`                  | [](webstorm.md) |
-| `Plugin.Debugger`       | `com.jetbrains.intellij.platform:debugger-test-framework`        |                 |
-| `Plugin.ExternalSystem` | `com.jetbrains.intellij.platform:external-system-test-framework` |                 |
-| `Plugin.Go`             | `com.jetbrains.intellij.go:go-test-framework`                    | [](goland.md)   |
-| `Plugin.Ruby`           | `com.jetbrains.intellij.idea:ruby-test-framework`                | [](rubymine.md) |
-| `Plugin.Java`           | `com.jetbrains.intellij.java:java-test-framework`                | [](idea.md)     |
-| `Plugin.JavaScript`     | `com.jetbrains.intellij.javascript:javascript-test-framework`    | [](webstorm.md) |
-| `Plugin.LSP`            | `com.jetbrains.intellij.platform:lsp-test-framework`             |                 |
-| `Plugin.Maven`          | `com.jetbrains.intellij.maven:maven-test-framework`              |                 |
-| `Plugin.PolySymbols`    | `com.jetbrains.intellij.platform:poly-symbols-test-framework`    |                 |
-| `Plugin.Qodana`         | `com.jetbrains.intellij.qodana:qodana-test-framework`             |                 |
-| `Plugin.ReSharper`      | `com.jetbrains.intellij.resharper:resharper-test-framework`      | [](rider.md)    |
-| `Plugin.UAST`           | `com.jetbrains.intellij.platform:uast-test-framework`            |                 |
-| `Plugin.VCS`            | `com.jetbrains.intellij.platform:vcs-test-framework`             |                 |
-| `Plugin.XML`            | `com.jetbrains.intellij.xml:xml-test-framework`                  |                 |
-| `Plugin.WebSymbols`     | `com.jetbrains.intellij.platform:web-symbols-test-framework`     |                 |
+| Name                    | Coordinates                                                               | Reference       |
+|-------------------------|---------------------------------------------------------------------------|-----------------|
+| `Plugin.CLion`          | `com.jetbrains.intellij.clion:clion-merged-test-framework`                | [](clion.md)    |
+| `Plugin.CSS`            | `com.jetbrains.intellij.css:css-test-framework`                           | [](webstorm.md) |
+| `Plugin.Debugger`       | `com.jetbrains.intellij.platform:debugger-test-framework`                 |                 |
+| `Plugin.ExternalSystem` | `com.jetbrains.intellij.platform:external-system-test-framework`          |                 |
+| `Plugin.Go`             | `com.jetbrains.intellij.go:go-test-framework`                             | [](goland.md)   |
+| `Plugin.Ruby`           | `com.jetbrains.intellij.idea:ruby-test-framework`                         | [](rubymine.md) |
+| `Plugin.Java`           | `com.jetbrains.intellij.java:java-test-framework`                         | [](idea.md)     |
+| `Plugin.JavaScript`     | `com.jetbrains.intellij.javascript:javascript-test-framework`             | [](webstorm.md) |
+| `Plugin.Jupyter`        | `com.jetbrains.intellij.jupyter:jupyter-test-framework`                   |                 |
+| `Plugin.LSP`            | `com.jetbrains.intellij.platform:lsp-test-framework`                      |                 |
+| `Plugin.Maven`          | `com.jetbrains.intellij.maven:maven-test-framework`                       |                 |
+| `Plugin.Notebooks`      | `com.jetbrains.intellij.notebooks:notebooks-visualization-test-framework` |                 |
+| `Plugin.PolySymbols`    | `com.jetbrains.intellij.platform:poly-symbols-test-framework`             |                 |
+| `Plugin.Qodana`         | `com.jetbrains.intellij.qodana:qodana-test-framework`                     |                 |
+| `Plugin.ReSharper`      | `com.jetbrains.intellij.resharper:resharper-test-framework`               | [](rider.md)    |
+| `Plugin.UAST`           | `com.jetbrains.intellij.platform:uast-test-framework`                     |                 |
+| `Plugin.VCS`            | `com.jetbrains.intellij.platform:vcs-test-framework`                      |                 |
+| `Plugin.XML`            | `com.jetbrains.intellij.xml:xml-test-framework`                           |                 |
+| `Plugin.WebSymbols`     | `com.jetbrains.intellij.platform:web-symbols-test-framework`              |                 |
 
 ## `VerificationReportsFormats`
 {#VerificationReportsFormats}

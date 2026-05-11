@@ -358,6 +358,9 @@ The provided value is used as a [`<version>`](plugin_configuration_file.md#idea-
 Type
 : `Property<String>`
 
+Default value
+: `project.version`, or empty when the project version is `unspecified`
+
 See also:
 - [Tasks: `patchPluginXml.pluginVersion`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-pluginVersion)
 
@@ -397,6 +400,9 @@ Type
 
 See also:
 - [Tasks: `patchPluginXml.changeNotes`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-changeNotes)
+
+If the Gradle Changelog Plugin (`org.jetbrains.changelog`) is applied, this value defaults to the rendered changelog entry for the current plugin version, or to the unreleased entry when no matching version exists.
+The IntelliJ Platform Gradle Plugin also configures the Changelog Plugin defaults for empty groups, repository URL from `pluginRepositoryUrl`, and an empty version prefix.
 
 
 ## Product Descriptor
@@ -601,14 +607,14 @@ The earliest IDE version that is compatible with the plugin.
 
 The provided value is used for the `<idea-version since-build=""/>` element attribute.
 
-The default value is set to the `MAJOR.MINOR` version based on the currently selected IntelliJ Platform, like `233.12345`.
+The default value is set to the `MAJOR` build number based on the currently selected IntelliJ Platform, like `233`.
 
 {type="narrow"}
 Type
 : `Property<String>`
 
 Default value
-: `MAJOR.MINOR`
+: `MAJOR`
 
 See also:
 - [Tasks: `patchPluginXml.sinceBuild`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-sinceBuild)
@@ -828,8 +834,9 @@ Specifies the IntelliJ Platform project cache location.
 
 The IntelliJ Platform cache is used for storing IntelliJ Platform Gradle Plugin-specific files, such as:
 - XML files generated for the [`localPlatformArtifacts()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) local Ivy repository
-- coroutines Java agent file created by the [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin) task
+- coroutines Java agent file resolved for tasks using [`CoroutinesJavaAgentAware`](tools_intellij_platform_gradle_plugin_task_awares.md#CoroutinesJavaAgentAware)
 - extracted IntelliJ Platform archives instead of using Gradle cache
+- serialized IDE layout indices used for bundled plugin and module dependency resolution
 
 This path can be changed with the [`org.jetbrains.intellij.platform.intellijPlatformCache`](tools_intellij_platform_gradle_plugin_gradle_properties.md#intellijPlatformCache) Gradle property
 
@@ -897,7 +904,7 @@ Type
 : `DirectoryProperty`
 
 Default value
-:: <path>[rootProject]/.intellijPlatform/ides/</path>
+: <path>[rootProject]/.intellijPlatform/ides/</path>
 
 See also:
 - [Gradle Property: `intellijPlatformIdesCache`](tools_intellij_platform_gradle_plugin_gradle_properties.md#intellijPlatformIdesCache)
@@ -988,6 +995,7 @@ See also:
 {#intellijPlatform-publishing-token}
 
 Authorization token.
+Defaults to the `PUBLISH_TOKEN` environment variable.
 
 {type="narrow"}
 Type
@@ -995,6 +1003,9 @@ Type
 
 Required
 : yes
+
+Default value
+: `PUBLISH_TOKEN` environment variable
 
 See also:
 - [Tasks: `publishPlugin.token`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-token)
@@ -1023,7 +1034,7 @@ Specify if the [IDE Services](https://www.jetbrains.com/ide-services/) plugin re
 
 {type="narrow"}
 Type
-: `Property<String>`
+: `Property<Boolean>`
 
 Default value
 : `false`
@@ -1039,7 +1050,7 @@ Publish the plugin update and mark it as hidden to prevent public visibility aft
 
 {type="narrow"}
 Type
-: `Property<String>`
+: `Property<Boolean>`
 
 Default value
 : `false`
@@ -1205,10 +1216,14 @@ Encoded private key in the PEM format.
 Refers to `key` CLI option.
 
 Takes precedence over the [](#intellijPlatform-signing-privateKeyFile) property.
+Defaults to the `PRIVATE_KEY` environment variable when `privateKeyFile` is not set.
 
 {type="narrow"}
 Type
 : `Property<String>`
+
+Default value
+: `PRIVATE_KEY` environment variable
 
 See also:
 - [Tasks: `signPlugin.privateKey`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-privateKey)
@@ -1233,10 +1248,14 @@ See also:
 
 Password required to decrypt the private key.
 Refers to `key-pass` CLI option.
+Defaults to the `PRIVATE_KEY_PASSWORD` environment variable.
 
 {type="narrow"}
 Type
 : `Property<String>`
+
+Default value
+: `PRIVATE_KEY_PASSWORD` environment variable
 
 See also:
 - [Tasks: `signPlugin.password`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-password)
@@ -1250,10 +1269,14 @@ The first certificate from the chain will be used as a certificate authority (CA
 Refers to `cert` CLI option.
 
 Takes precedence over the [](#intellijPlatform-signing-certificateChainFile) property.
+Defaults to the `CERTIFICATE_CHAIN` environment variable when `certificateChainFile` is not set.
 
 {type="narrow"}
 Type
 : `Property<String>`
+
+Default value
+: `CERTIFICATE_CHAIN` environment variable
 
 See also:
 - [Tasks: `signPlugin.certificateChain`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-certificateChain)
@@ -1370,7 +1393,7 @@ Type
 : [`ListProperty<FailureLevel>`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel)
 
 Default value
-: [`FailureLevel.COMPATIBILITY_PROBLEMS`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel)
+: [`FailureLevel.COMPATIBILITY_PROBLEMS`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel), [`FailureLevel.INTERNAL_API_USAGES`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel), [`FailureLevel.OVERRIDE_ONLY_API_USAGES`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel)
 
 See also:
 - [Tasks: `verifyPlugin.failureLevel`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-failureLevel)
@@ -1489,6 +1512,8 @@ See also:
 The extension to define the IDEs to be used along with the IntelliJ Plugin Verifier CLI tool for the binary plugin verification.
 
 It provides a set of helpers which add relevant entries to the configuration, which later is used to resolve IntelliJ-based IDE binary releases.
+When no IDEs are configured explicitly, `recommended()` is applied by default.
+Disable this fallback with the [`verifyPluginDefaultRecommendedIdes`](tools_intellij_platform_gradle_plugin_gradle_properties.md#verifyPluginDefaultRecommendedIdes) Gradle property.
 
 **Example:**
 
@@ -1505,6 +1530,8 @@ intellijPlatform {
     ides {
       create(IntelliJPlatformType.RustRover, "2023.3")
       local(file("/path/to/ide/"))
+      current()
+      latest()
       recommended()
       select {
         types = listOf(IntelliJPlatformType.PhpStorm)
@@ -1533,6 +1560,8 @@ intellijPlatform {
     ides {
       create IntelliJPlatformType.RustRover, "2023.3"
       local file('/path/to/ide/')
+      current()
+      latest()
       recommended()
       select {
         it.types = [IntelliJPlatformType.PhpStorm]
@@ -1558,10 +1587,14 @@ See also:
 
 | Function            | Description                                                                                                                                                                                         |
 |---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `create(...)`       | <p>Adds a dependency to a binary IDE release to be used for testing with the IntelliJ Plugin Verifier.</p><p><i>In IntelliJ Platform Gradle Plugin older than 2.7.0, use `ide(...)`.</i></p>        |
+| `create(...)`       | Adds a dependency to a binary IDE release to be used for testing with the IntelliJ Plugin Verifier.                                                                                                 |
 | `local(localPath)`  | Adds the local IDE to be used for testing with the IntelliJ Plugin Verifier.                                                                                                                        |
-| `recommended()`     | Retrieves matching IDEs using the default configuration based on the currently used IntelliJ Platform and applies them for IntelliJ Platform Verifier using the `ide` helper method.                |
+| `current()`         | Adds the currently targeted IntelliJ Platform to the verification IDE list.                                                                                                                         |
+| `latest(configure)` | Resolves the latest available IDE release for each selected type.                                                                                                                                   |
+| `recommended()`     | Retrieves matching IDEs using the default configuration based on the currently used IntelliJ Platform and applies them for IntelliJ Plugin Verifier.                                                |
 | `select(configure)` | Retrieves matching IDEs using custom [`ProductReleasesValueSource.FilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesValueSource-FilterParameters) filter parameters. |
+
+Provider-based IDE lists can use `orRecommended()` to fall back to the default recommended IDE list when the provider has no value.
 
 
 <include from="snippets.topic" element-id="missingContent"/>

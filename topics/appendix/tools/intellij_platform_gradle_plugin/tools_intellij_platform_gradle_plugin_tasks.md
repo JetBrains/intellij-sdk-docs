@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Tasks
 
@@ -78,7 +78,9 @@ Type
 Builds the index of UI components (searchable options) for the plugin.
 This task runs a headless IDE instance to collect all the available options provided by the plugin's [](settings.md).
 
-If the plugin doesn't implement custom settings, it is recommended to disable this task via [`intellijPlatform.buildSearchableOptions`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-buildSearchableOptions) flag.
+The task is skipped automatically when the main plugin descriptor and plugin module descriptors don't declare `Configurable` extension points.
+Use the [`forceBuildSearchableOptions`](tools_intellij_platform_gradle_plugin_gradle_properties.md#forceBuildSearchableOptions) Gradle property to force execution even when descriptor analysis would skip it.
+The task can also be controlled with the [`intellijPlatform.buildSearchableOptions`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-buildSearchableOptions) flag.
 
 In the case of running the task for the plugin that has [`intellijPlatform.pluginConfiguration.productDescriptor`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration-productDescriptor) defined, a warning will be logged regarding potential issues with running headless IDE for paid plugins.
 It is possible to mute this warning with the [`paidPluginSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_gradle_properties.md#paidPluginSearchableOptionsWarning) Gradle property.
@@ -206,14 +208,34 @@ Type
 : `Property<String>`
 
 
-### `productInfo`
-{#generateManifest-productInfo}
+### `platformType`
+{#generateManifest-platformType}
 
-The [ProductInfo] instance of the current IntelliJ Platform.
+The product code of the current IntelliJ Platform, for example, `IC` or `IU`.
 
 {type="narrow"}
 Type
-: `Property<ProductInfo>`
+: `Property<String>`
+
+
+### `platformVersion`
+{#generateManifest-platformVersion}
+
+The marketing version of the current IntelliJ Platform, for example, `2025.3`.
+
+{type="narrow"}
+Type
+: `Property<String>`
+
+
+### `platformBuild`
+{#generateManifest-platformBuild}
+
+The build number of the current IntelliJ Platform, for example, `253.12345.67`.
+
+{type="narrow"}
+Type
+: `Property<String>`
 
 
 ### `version`
@@ -254,16 +276,6 @@ Type
 Generates a lexer from a `.flex` definition file using JFlex.
 
 
-### `targetOutputDir`
-{#generateLexer-targetOutputDir}
-
-The output directory for the generated lexer.
-
-{type="narrow"}
-Type
-: `DirectoryProperty`
-
-
 ### `sourceFile`
 {#generateLexer-sourceFile}
 
@@ -272,6 +284,50 @@ The source Flex file used to generate the lexer.
 {type="narrow"}
 Type
 : `RegularFileProperty`
+
+
+### `targetRootOutputDir`
+{#generateLexer-targetRootOutputDir}
+
+The root output directory for the generated lexer.
+The lexer file is created under a subdirectory matching [`packageName`](#generateLexer-packageName), unless `packageName` is empty.
+
+{type="narrow"}
+Type
+: `DirectoryProperty`
+
+Default value
+: <path>[buildDirectory]/generated/sources/grammarkit-lexer/java/main</path>
+
+
+### `packageName`
+{#generateLexer-packageName}
+
+The Java package where the lexer file is generated.
+By default, the task tries to detect the package declaration from [`sourceFile`](#generateLexer-sourceFile).
+Set this property to an empty string (`""`) to generate the lexer in the root output directory.
+
+{type="narrow"}
+Type
+: `Property<String>`
+
+Default value
+: Detected from [`sourceFile`](#generateLexer-sourceFile), or empty string when no package declaration is found
+
+
+### `targetOutputDir`
+{#generateLexer-targetOutputDir-deprecated}
+
+<secondary-label ref="deprecated"/>
+
+The legacy output directory for the generated lexer.
+When this property is set, it takes precedence over [`targetRootOutputDir`](#generateLexer-targetRootOutputDir), the Java file is created directly below this directory, and [`packageName`](#generateLexer-packageName) is ignored.
+
+Stale files in this directory are not deleted unless [`purgeOldFiles`](#generateLexer-purgeOldFiles) is explicitly set to `true`.
+
+{type="narrow"}
+Type
+: `DirectoryProperty`
 
 
 ### `skeleton`
@@ -291,10 +347,21 @@ Default value
 {#generateLexer-purgeOldFiles}
 
 Purges old files from the target directory before generating the lexer.
+By default, old files are purged when [`targetRootOutputDir`](#generateLexer-targetRootOutputDir) is used.
+When the deprecated [`targetOutputDir`](#generateLexer-targetOutputDir-deprecated) is used, old files are not purged unless this property is explicitly set to `true`.
 
 {type="narrow"}
 Type
 : `Property<Boolean>`
+
+
+### `targetFile(...)`
+{#generateLexer-targetFile}
+
+<secondary-label ref="deprecated"/>
+
+Legacy helper methods returning the expected lexer file below [`targetOutputDir`](#generateLexer-targetOutputDir-deprecated).
+Use [`targetRootOutputDir`](#generateLexer-targetRootOutputDir) and include the package subdirectory in the requested file path instead.
 
 
 ## `generateParser`
@@ -334,11 +401,18 @@ The root output directory for generated parser and PSI files.
 Type
 : `DirectoryProperty`
 
+Default value
+: <path>[buildDirectory]/generated/sources/grammarkit-parser/java/main</path>
+
 
 ### `pathToParser`
 {#generateParser-pathToParser}
 
+<secondary-label ref="deprecated"/>
+
 The generated parser class location relative to [`targetRootOutputDir`](#generateParser-targetRootOutputDir).
+This legacy property is only used when [`purgeOldFiles`](#generateParser-purgeOldFiles) is enabled and the task needs to delete only the old parser file.
+If this property is set, [`pathToPsiRoot`](#generateParser-pathToPsiRoot) must also be set.
 
 {type="narrow"}
 Type
@@ -348,21 +422,118 @@ Type
 ### `pathToPsiRoot`
 {#generateParser-pathToPsiRoot}
 
+<secondary-label ref="deprecated"/>
+
 The generated PSI root location relative to [`targetRootOutputDir`](#generateParser-targetRootOutputDir).
+This legacy property is only used when [`purgeOldFiles`](#generateParser-purgeOldFiles) is enabled and the task needs to delete only the old PSI directory.
+If this property is set, [`pathToParser`](#generateParser-pathToParser) must also be set.
 
 {type="narrow"}
 Type
 : `Property<String>`
 
 
+### `parserFile()`
+{#generateParser-parserFile}
+
+<secondary-label ref="deprecated"/>
+
+Legacy helper method returning the file below [`targetRootOutputDir`](#generateParser-targetRootOutputDir) computed from [`pathToParser`](#generateParser-pathToParser).
+Use `targetRootOutputDir.file(pathToParser)` if you still need that path.
+
+
+### `psiDir()`
+{#generateParser-psiDir}
+
+<secondary-label ref="deprecated"/>
+
+Legacy helper method returning the directory below [`targetRootOutputDir`](#generateParser-targetRootOutputDir) computed from [`pathToPsiRoot`](#generateParser-pathToPsiRoot).
+Use `targetRootOutputDir.dir(pathToPsiRoot)` if you still need that path.
+
+
 ### `purgeOldFiles`
 {#generateParser-purgeOldFiles}
 
 Purges previously generated parser and PSI files before generation.
+By default, old files are purged unless both deprecated path properties, [`pathToParser`](#generateParser-pathToParser) and [`pathToPsiRoot`](#generateParser-pathToPsiRoot), are set.
+When these path properties are set and this property is `true`, only the configured parser file and PSI directory are deleted.
 
 {type="narrow"}
 Type
 : `Property<Boolean>`
+
+
+## `generateSplitModeRunConfigurations`
+{#generateSplitModeRunConfigurations}
+
+<link-summary>Generates shared IntelliJ IDEA run configurations for split-mode frontend and backend runs.</link-summary>
+
+<tldr>
+
+**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
+
+**Extends**: [`DefaultTask`][gradle-default-task]
+
+**Sources**: [`GenerateSplitModeRunConfigurationsTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/GenerateSplitModeRunConfigurationsTask.kt)
+
+</tldr>
+
+Generates shared IntelliJ IDEA run configurations for split-mode frontend and backend runs, plus a compound run configuration that starts both.
+The generated Gradle run configurations invoke [`runIdeBackend`](#runIdeBackend) and [`runIdeFrontend`](#runIdeFrontend) with `--purge-old-log-directories`.
+
+This utility task is intentionally ungrouped, so it can be invoked directly without adding another entry to the standard Gradle task listing.
+
+
+### `projectPath`
+{#generateSplitModeRunConfigurations-projectPath}
+
+The Gradle project path used to qualify generated task paths.
+
+{type="narrow"}
+Type
+: `Property<String>`
+
+Default value
+: Current project path
+
+
+### `backendConfigurationFile`
+{#generateSplitModeRunConfigurations-backendConfigurationFile}
+
+The generated backend run configuration file.
+
+{type="narrow"}
+Type
+: `RegularFileProperty`
+
+Default value
+: <path>[projectDirectory]/.run/runIdeBackend.run.xml</path>
+
+
+### `frontendConfigurationFile`
+{#generateSplitModeRunConfigurations-frontendConfigurationFile}
+
+The generated frontend run configuration file.
+
+{type="narrow"}
+Type
+: `RegularFileProperty`
+
+Default value
+: <path>[projectDirectory]/.run/runIdeFrontend.run.xml</path>
+
+
+### `compoundConfigurationFile`
+{#generateSplitModeRunConfigurations-compoundConfigurationFile}
+
+The generated compound run configuration file.
+
+{type="narrow"}
+Type
+: `RegularFileProperty`
+
+Default value
+: <path>[projectDirectory]/.run/runIdeSplitMode.run.xml</path>
 
 
 
@@ -430,19 +601,6 @@ Type
 : `RegularFileProperty`
 
 
-### `coroutinesJavaAgent`
-{#initializeIntelliJPlatformPlugin-coroutinesJavaAgent}
-
-Deprecated: this task no longer exposes a coroutines agent property. To enable coroutines debugging, use tasks implementing [CoroutinesJavaAgentAware](tools_intellij_platform_gradle_plugin_task_awares.md#CoroutinesJavaAgentAware) which provide `coroutinesJavaAgentFile`.
-
-{type="narrow"}
-Type
-: `Property<Boolean>`
-
-Default value
-: <path>[buildDirectory]/tmp/initializeIntelliJPlatformPlugin/coroutines-javaagent.jar</path>
-
-
 ### `pluginVersion`
 {#initializeIntelliJPlatformPlugin-pluginVersion}
 
@@ -495,7 +653,7 @@ Executes the code instrumentation using the Ant tasks provided by the used Intel
 The code instrumentation scans the compiled Java and Kotlin classes for JetBrains Annotations usages to replace them with their relevant functionalities.
 
 The task is controlled with the [`intellijPlatform.instrumentCode`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-instrumentCode) extension property, enabled by default.
-To properly run the instrumentation, a Java Compiler dependency must be available. This is applied by default by the plugin; previously, the `instrumentationTools()` helper was used, but it is now deprecated and calling it is no longer necessary. You can still add and configure the dependency manually via [`javaCompiler()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#code-instrumentation) if needed.
+To properly run the instrumentation, a Java Compiler dependency must be available. This is applied by default by the plugin; the former `instrumentationTools()` helper was removed and calling it is no longer necessary. You can still add and configure the dependency manually via [`javaCompiler()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#code-instrumentation) if needed.
 This dependency is resolved via the [`intellijDependencies()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) repository, which can be added separately or using the [`defaultRepositories()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories) helper.
 
 See also:
@@ -998,7 +1156,7 @@ Default value
 
 **Depends on**: `jar`, [`instrumentedJar`](#instrumentedJar)
 
-**Extends**: [`Sync`][gradle-sync-task], [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware), [`SplitModeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitModeAware)
+**Extends**: [`Sync`][gradle-sync-task], [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware), [`SplitModeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitModeAware), [`PluginInstallationTargetAware`](tools_intellij_platform_gradle_plugin_task_awares.md#PluginInstallationTargetAware)
 
 **Sources**: [`PrepareSandboxTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PrepareSandboxTask.kt)
 
@@ -1143,7 +1301,7 @@ Prepares an immutable [`test`](#test) task and provides all necessary dependenci
 
 **Depends on**: `jar`, [`instrumentedJar`](#instrumentedJar)
 
-**Extends**: [`Sync`][gradle-sync-task], [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware), [`SplitModeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitModeAware)
+**Extends**: [`Sync`][gradle-sync-task], [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware), [`SplitModeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitModeAware), [`PluginInstallationTargetAware`](tools_intellij_platform_gradle_plugin_task_awares.md#PluginInstallationTargetAware)
 
 **Sources**: [`PrepareSandboxTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PrepareSandboxTask.kt)
 
@@ -1164,7 +1322,7 @@ The [`prepareSandbox`](#prepareSandbox) task instance configured to work with th
 
 **Depends on**: `jar`, [`instrumentedJar`](#instrumentedJar)
 
-**Extends**: [`Sync`][gradle-sync-task], [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware), [`SplitModeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitModeAware)
+**Extends**: [`Sync`][gradle-sync-task], [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware), [`SplitModeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitModeAware), [`PluginInstallationTargetAware`](tools_intellij_platform_gradle_plugin_task_awares.md#PluginInstallationTargetAware)
 
 **Sources**: [`PrepareSandboxTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/PrepareSandboxTask.kt)
 
@@ -1351,7 +1509,7 @@ Publishes the plugin update and marks it as [hidden](https://plugins.jetbrains.c
 
 {type="narrow"}
 Type
-: `Property<String>`
+: `Property<Boolean>`
 
 Default value
 : [`intellijPlatform.publishing.hidden`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-hidden)
@@ -1364,7 +1522,7 @@ Specifies if the IDE Services plugin repository service should be used.
 
 {type="narrow"}
 Type
-: `Property<String>`
+: `Property<Boolean>`
 
 Default value
 : [`intellijPlatform.publishing.ideServices`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-publishing-ideServices)
@@ -1382,7 +1540,7 @@ Default value
 
 **Depends on**: [`patchPluginXml`](#patchPluginXml), [`prepareSandbox`](#prepareSandbox)
 
-**Extends**: [`JavaExec`][gradle-javaexec-task], [`RunnableIdeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#RunnableIdeAware), [`SplitModeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitModeAware), [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware)
+**Extends**: [`JavaExec`][gradle-javaexec-task], [`RunnableIdeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#RunnableIdeAware), [`SplitModeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitModeAware), [`PluginInstallationTargetAware`](tools_intellij_platform_gradle_plugin_task_awares.md#PluginInstallationTargetAware), [`ComposeHotReloadAware`](tools_intellij_platform_gradle_plugin_task_awares.md#ComposeHotReloadAware), [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware)
 
 **Sources**: [`RunIdeTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/RunIdeTask.kt)
 
@@ -1393,6 +1551,114 @@ It directly extends the [`JavaExec`][gradle-javaexec-task] Gradle task, which al
 
 This task runs against the IntelliJ Platform and plugins specified in project dependencies.
 To register a customized task, use [`intellijPlatformTesting.runIde`](tools_intellij_platform_gradle_plugin_testing_extension.md).
+
+When [`splitMode`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitModeAware-splitMode) is enabled, the task starts the IDE in Split Mode.
+To run the backend and frontend as separate Gradle tasks, use [`runIdeBackend`](#runIdeBackend) and [`runIdeFrontend`](#runIdeFrontend), or generate IDE run configurations with [`generateSplitModeRunConfigurations`](#generateSplitModeRunConfigurations).
+
+
+### `executionMode`
+{#runIde-executionMode}
+
+Selects the launch profile used by the task.
+
+{type="narrow"}
+Type
+: `Property<RunIdeTask.ExecutionMode>`
+
+Default value
+: `STANDARD`
+
+Values
+: `STANDARD`, `SPLIT_MODE_BACKEND`, `SPLIT_MODE_FRONTEND`
+
+
+### `splitModeServerPort`
+{#runIde-splitModeServerPort}
+
+The backend server port used by split-mode backend and frontend tasks.
+
+{type="narrow"}
+Type
+: `Property<Int>`
+
+Default value
+: `5990`
+
+
+### `splitModeFrontendJoinLink`
+{#runIde-splitModeFrontendJoinLink}
+
+An advanced override for the join link passed to the frontend process when [`runIdeFrontend`](#runIdeFrontend) is launched directly.
+Usually, setting [`splitModeServerPort`](#runIde-splitModeServerPort) and starting [`runIdeBackend`](#runIdeBackend) first is sufficient.
+
+{type="narrow"}
+Type
+: `Property<String>`
+
+
+### `purgeOldLogDirectories`
+{#runIde-purgeOldLogDirectories}
+
+Removes stale sandbox log directories before launching the IDE.
+This is useful for split-mode run configurations where frontend and backend logs are attached to the IDE run configuration.
+
+{type="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: `false`
+
+Command-line option
+: `--purge-old-log-directories`
+
+
+## `runIdeBackend`
+{#runIdeBackend}
+
+<link-summary>Runs the IDE backend process in Split Mode.</link-summary>
+
+<tldr>
+
+**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
+
+**Depends on**: [`patchPluginXml`](#patchPluginXml), a dedicated [`prepareSandbox`](#prepareSandbox) task
+
+**Extends**: [`JavaExec`][gradle-javaexec-task], [`RunnableIdeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#RunnableIdeAware), [`SplitModeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitModeAware), [`PluginInstallationTargetAware`](tools_intellij_platform_gradle_plugin_task_awares.md#PluginInstallationTargetAware), [`ComposeHotReloadAware`](tools_intellij_platform_gradle_plugin_task_awares.md#ComposeHotReloadAware), [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware)
+
+**Sources**: [`RunIdeTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/RunIdeTask.kt)
+
+</tldr>
+
+Runs the IDE backend process in Split Mode.
+The task writes the frontend join link to [`splitModeFrontendJoinLinkFile`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitModeAware-splitModeFrontendJoinLinkFile), which is then consumed by [`runIdeFrontend`](#runIdeFrontend).
+
+Passing arguments directly with `args` is not supported for split-mode backend tasks.
+Use `argumentProviders` instead.
+
+
+## `runIdeFrontend`
+{#runIdeFrontend}
+
+<link-summary>Runs the JetBrains Client frontend process in Split Mode.</link-summary>
+
+<tldr>
+
+**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
+
+**Depends on**: [`patchPluginXml`](#patchPluginXml), a dedicated [`prepareSandbox`](#prepareSandbox) task
+
+**Extends**: [`JavaExec`][gradle-javaexec-task], [`RunnableIdeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#RunnableIdeAware), [`SplitModeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitModeAware), [`PluginInstallationTargetAware`](tools_intellij_platform_gradle_plugin_task_awares.md#PluginInstallationTargetAware), [`ComposeHotReloadAware`](tools_intellij_platform_gradle_plugin_task_awares.md#ComposeHotReloadAware), [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware)
+
+**Sources**: [`RunIdeTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/RunIdeTask.kt)
+
+</tldr>
+
+Runs the JetBrains Client frontend process in Split Mode.
+The task waits for the join link written by [`runIdeBackend`](#runIdeBackend), or uses [`splitModeFrontendJoinLink`](#runIde-splitModeFrontendJoinLink) when it is configured explicitly.
+
+Passing arguments directly with `args` is not supported for split-mode frontend tasks.
+Use `argumentProviders` instead.
 
 
 
@@ -2063,7 +2329,7 @@ Validates the plugin project configuration:
 - The `until-build` property should be removed for IntelliJ Platform `2024.3+` (`243+`).
 - The Java/Kotlin `sourceCompatibility` and `targetCompatibility` properties should be aligned with the Java versions required by [`patchPluginXml.sinceBuild`](#patchPluginXml-sinceBuild) and the currently used IntelliJ Platform.
 - The Kotlin API version should be aligned with the version required by [`patchPluginXml.sinceBuild`](#patchPluginXml-sinceBuild) and the currently used IntelliJ Platform.
-- The used IntelliJ Platform version should be higher than `2022.3` (`223.0`).
+- The used IntelliJ Platform version should be `2023.3` (`233`) or higher.
 - The dependency on the [](using_kotlin.md#kotlin-standard-library) should be excluded.
 - The Kotlin Coroutines library should not be added explicitly to the project as it is already provided with the IntelliJ Platform.
 - The IntelliJ Platform cache directory should be excluded from the version control system. Add the `.intellijPlatform` entry to the <path>.gitignore</path> file.

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # IntelliJ Platform Gradle Plugin (2.x)
 
@@ -32,8 +32,8 @@ Learn more about it in the [Release Announcement](https://blog.jetbrains.com/pla
 
 IntelliJ Platform Gradle Plugin 2.x requires the following *minimal* versions:
 
-- IntelliJ Platform: **2022.3**
-- Gradle: **8.13**
+- IntelliJ Platform: **2023.3**
+- Gradle: **9.0.0**
 
   See [the Gradle Installation guide](https://gradle.org/install/) on how to upgrade.
 - Java Runtime: **17**
@@ -336,7 +336,7 @@ See [](tools_intellij_platform_gradle_plugin_dependencies_extension.md) on how t
 > When declaring a dependency on IntelliJ Platform, the IDE installer is resolved by default.
 > IDE installers are OS-specific and contain [](tools_intellij_platform_gradle_plugin_jetbrains_runtime.md) bundled, but have no EAP releases available.
 >
-> To resolve EAP releases instead, opt-out from installer releases with `useInstaller = false` passed to the dependency helper.
+> To resolve EAP releases instead, opt out from installer releases in the dependency helper configuration with `useInstaller = false`.
 >
 > **Important:** non-installer archives have no JetBrains Runtime (JBR) provided.
 >
@@ -574,6 +574,10 @@ plugins {
 
 </tab>
 </tabs>
+
+Module projects inherit the root project's target IntelliJ Platform when they do not declare their own `intellijPlatform {}` dependency target.
+Project dependencies on module projects added to the root project's `api`, `implementation`, or `runtimeOnly` configurations are automatically packaged as plugin modules under <path>lib/modules/</path>.
+Use `pluginComposedModule(dependency)` only when a module's classes must be merged into the main plugin JAR instead.
 
 
 <include from="snippets.topic" element-id="missingContent"/>

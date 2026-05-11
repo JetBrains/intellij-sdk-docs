@@ -131,6 +131,23 @@ org.jetbrains.intellij.platform.noSearchableOptionsWarning=false
 ```
 
 
+## `forceBuildSearchableOptions`
+{#forceBuildSearchableOptions}
+
+Forces the [`buildSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions) task to run even when descriptor analysis doesn't find any `Configurable` extension points.
+This property overrides both the automatic skip optimization and the [`intellijPlatform.buildSearchableOptions`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-buildSearchableOptions) extension property.
+
+{type="narrow"}
+Default value
+: `false`
+
+Example
+:
+```
+org.jetbrains.intellij.platform.forceBuildSearchableOptions=true
+```
+
+
 ## `paidPluginSearchableOptionsWarning`
 {#paidPluginSearchableOptionsWarning}
 
@@ -207,6 +224,22 @@ org.jetbrains.intellij.platform.selfUpdateCheck=false
 ```
 
 
+## `verifyPluginDefaultRecommendedIdes`
+{#verifyPluginDefaultRecommendedIdes}
+
+Controls whether [`intellijPlatform.pluginVerification.ides.recommended()`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-ides) is used automatically when no IntelliJ Plugin Verifier IDEs were configured explicitly.
+
+{type="narrow"}
+Default value
+: `true`
+
+Example
+:
+```
+org.jetbrains.intellij.platform.verifyPluginDefaultRecommendedIdes=false
+```
+
+
 ## `shimServerPort`
 {#shimServerPort}
 
@@ -267,7 +300,7 @@ Specifies the URL from which the list of JetBrains IDE CDN release builds is fet
 
 {type="narrow"}
 Default value
-: `https://data.services.jetbrains.com/products/releases?type=release`
+: `https://data.services.jetbrains.com/products?code={type}&fields=code,releases.type,releases.version,releases.build`
 
 Example
 :

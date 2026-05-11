@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Plugins
 
@@ -89,6 +89,7 @@ plugins {
 [`cleanSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#cleanSandbox),
 [`composedJar`](tools_intellij_platform_gradle_plugin_tasks.md#composedJar),
 [`generateManifest`](tools_intellij_platform_gradle_plugin_tasks.md#generateManifest),
+[`generateSplitModeRunConfigurations`](tools_intellij_platform_gradle_plugin_tasks.md#generateSplitModeRunConfigurations),
 [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin),
 [`instrumentCode`](tools_intellij_platform_gradle_plugin_tasks.md#instrumentCode),
 [`instrumentedJar`](tools_intellij_platform_gradle_plugin_tasks.md#instrumentedJar),
@@ -103,6 +104,8 @@ plugins {
 [`printProductsReleases`](tools_intellij_platform_gradle_plugin_tasks.md#printProductsReleases),
 [`publishPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin),
 [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde),
+[`runIdeBackend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeBackend),
+[`runIdeFrontend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeFrontend),
 [`setupDependencies`](tools_intellij_platform_gradle_plugin_tasks.md#setupDependencies),
 [`signPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin),
 [`test`](tools_intellij_platform_gradle_plugin_tasks.md#test),
@@ -152,12 +155,6 @@ repositories {
     defaultRepositories()
   }
 }
-
-dependencies {
-  intellijPlatform {
-    intellijIdea("%ijPlatform%")
-  }
-}
 ```
 
 <path>build.gradle.kts</path>
@@ -176,9 +173,10 @@ repositories {
 }
 
 dependencies {
+  implementation(project(":submodule"))
+
   intellijPlatform {
     intellijIdea("%ijPlatform%")
-    pluginModule(implementation(project(":submodule")))
   }
 }
 ```
@@ -208,12 +206,6 @@ repositories {
     defaultRepositories()
   }
 }
-
-dependencies {
-  intellijPlatform {
-    intellijIdea '%ijPlatform%'
-  }
-}
 ```
 
 <path>build.gradle</path>
@@ -232,9 +224,10 @@ repositories {
 }
 
 dependencies {
+  implementation project(':submodule')
+
   intellijPlatform {
     intellijIdea '%ijPlatform%'
-    pluginModule(implementation(project(':submodule')))
   }
 }
 ```
@@ -243,10 +236,10 @@ dependencies {
 </tabs>
 
 
-Note that the `:submodule` is added both to the `implementation` configuration and `intellijPlatformPluginModule` using the [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) helper method.
-This guarantees that the submodule JAR is placed in the `lib/modules/` directory in the final plugin distribution.
+Module projects inherit the root project's IntelliJ Platform dependency when the module doesn't configure its own target platform.
+Project dependencies on IntelliJ Platform module projects added to the root project's `api`, `implementation`, or `runtimeOnly` configuration are packaged automatically into the `lib/modules/` directory in the final plugin distribution.
 
-To merge submodule content into the main plugin JAR file, use `pluginComposedModule(implementation(project(":submodule")))` instead.
+To merge submodule content into the main plugin JAR file, use `pluginComposedModule(project(":submodule"))` instead.
 
 ### Available tasks
 {#module-available-tasks}
@@ -319,9 +312,10 @@ plugins {
 }
 
 dependencies {
+  implementation(project(":submodule"))
+
   intellijPlatform {
     intellijIdea("%ijPlatform%")
-    pluginModule(implementation(project(":submodule")))
   }
 }
 ```
@@ -337,12 +331,6 @@ dependencies {
 ```kotlin
 plugins {
   id("org.jetbrains.intellij.platform.module")
-}
-
-dependencies {
-  intellijPlatform {
-    intellijIdea("%ijPlatform%")
-  }
 }
 ```
 
@@ -383,9 +371,10 @@ plugins {
 }
 
 dependencies {
+  implementation project(':submodule')
+
   intellijPlatform {
     intellijIdea '%ijPlatform%'
-    pluginModule(implementation(project(':submodule')))
   }
 }
 ```
@@ -401,12 +390,6 @@ dependencies {
 ```groovy
 plugins {
   id 'org.jetbrains.intellij.platform.module'
-}
-
-dependencies {
-  intellijPlatform {
-    intellijIdea '%ijPlatform%'
-  }
 }
 ```
 

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Kotlin UI DSL
 <primary-label ref="2021.3"/>
@@ -22,7 +22,12 @@ The _Kotlin UI DSL_ functions are located in the [`com.intellij.ui.dsl.builder`]
 
 ## UI DSL Examples
 
-It is highly recommended to take a look at the UI DSL demo available via <ui-path>Tools | Internal Actions | UI | Kotlin UI DSL | UI DSL Showcase</ui-path> (see [Internal Actions](internal_actions_intro.md) if not available in your IDE instance).
+It is highly recommended to take a look at the UI DSL demo available via <ui-path>Tools | Internal Actions | UI | Kotlin UI DSL | UI DSL Showcase</ui-path>.
+
+> Since 2026.2, this action requires the Plugin DevKit plugin to be installed.
+> In earlier versions, [enabling the internal mode](enabling_internal.md) is required.
+>
+{style="note"}
 
 It describes some UI DSL basics and contains explanations, tips, a list of all available components, and many examples with links to the source code.
 

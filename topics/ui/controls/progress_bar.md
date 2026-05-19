@@ -16,7 +16,21 @@ A progress bar informs users about the progress of a lengthy operation.
 
 ## When to use
 
-Follow the rules for [progress indicators](progress_indicators.md).
+### Long-running background operations
+Use a progress bar to indicate long-running operations that don’t block the user interface but require visual tracking.
+
+![](14 in_status_bar.png){width=706}
+
+### Background content update
+When it is important to show that content is being updated, use an inline progress bar for background updates. The user can continue working with the content while a background process is performed.
+Do not show a process name for an inline progress.
+
+![](09 inline_processes.png){width=706}
+
+### Downloading and installing
+Display a progress bar near the button while the action is being performed.
+
+![](17 downloading.png){width=706}
 
 ## How to use
 
@@ -34,7 +48,8 @@ If an indeterminate process reaches a point where its duration can be determined
 A progress bar can have a process name and process details.
 
 #### Process name
-Show the name of the operation being performed above the progress bar:
+Show the name of an operation being performed above the progress bar.
+Use the continuous form of the verb that describes the operation. Add an ellipsis at the end to indicate that the process is ongoing.
 
 ![](05_process name.png){width=706}
 
@@ -45,19 +60,17 @@ If the vertical space is limited, place the process name with a colon on the lef
 #### Process details
 Show information about the current stage of an operation to make long-running tasks more predictable and manageable.
 
-<br/>
 
 Show details below the progress bar on a single line. The length of details is limited by the width of the progress bar.
 
 ![](05_process details.png){width=706}
 
-For wording, follow the rules for [progress text](progress_text.md).
-
-Examples:
-* The current step: "Uploading file 3 of 10"
-* The name of a file, module, or library: "Fetching guava-31.1.jar"
-* Remaining time or percentage completed
-
+Details example:
+* The current step: “Uploading file 3 of 10”
+* The name of a file, module, or library: “Fetching guava-31.1.jar”
+* Remaining time or percentage completed.
+* Round the remaining time to one of the following values: 1, 2, 3, 5, 10, 15, 20, or 30 seconds (or minutes). For example, if 7 minutes and 50 seconds remain, show “About 10 minutes left.” If less than 5 seconds remain, show “About 5 seconds left.”
+* If the user can control the process (for example, stop it after a certain time), update the timer dynamically every second.
 
 
 ### Process controls
@@ -106,20 +119,19 @@ If the process takes a long time and can prevent the user from performing tasks,
   </tr>
 </table>
 
-### Placement
+#### Process status
 
-If you need to use the progress bar among other controls, place it close to the control that starts the process.
+If a process consists of substeps that can fail but do not terminate the process, then use green and red colors to show the intermediate status.
+For example, show the status of the running tests:
 
-![](23 placement.png){width=706}
+![](15 process_status.png){width=706}
 
-#### In dialog or popup
-
+### Placement in dialog or popup
 > Place the progress bar in a modal dialog if the IDE cannot function properly until  the process is completed.
 >
 {style="note"}
 
-Use a process name as a dialog or popup header, capitalize the title and remove the ellipsis. Process details appear above the progress bar.
-For a single progress bar, use a button to cancel or pause the process instead of an icon:
+Use a process name as a dialog or popup header, capitalize the title and remove the ellipsis. Process details appear above the progress bar. For a single progress bar, use a button to cancel or pause the process instead of an icon:
 
 ![](13 in_dialog.png){width=706}
 
@@ -128,24 +140,8 @@ For several processes in a group, add a common header and use icons for process 
 
 ![](16 process_control.png){width=706}
 
-#### Inline progress
 
-Use inline progress to indicate that content is being updated. The user can continue working with the content, but should see that a background process is in progress.
-
-<br/>
-
-Do not show a process name for an inline progress.
-
-![](09 inline_processes.png){width=706}
-
-#### Process status
-
-If a process consists of substeps that can fail but do not terminate the process, then use green and red colors to show the intermediate status.
-For example, show the status of the running tests:
-
-![](15 process_status.png){width=706}
-
-#### Process complition
+#### Process completion
 
 Hide the progress bar as soon as the process completes.
 

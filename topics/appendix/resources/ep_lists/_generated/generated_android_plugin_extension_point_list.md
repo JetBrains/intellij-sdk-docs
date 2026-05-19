@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: a789291cd24dfb7e90417275b43b4f910ecfdf22 -->
+<!-- Revision: fa0cfa150836c01668a8f990087e0079eadff45f -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-118 Extension Points and 36 Listeners
+127 Extension Points and 36 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -142,6 +142,7 @@ EP List Directories:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.androidProjectEntryProvider"/></include> ![Non-Dynamic][non-dynamic] | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.moduleDescriptionProvider"/></include> ![Non-Dynamic][non-dynamic] | [`ModuleDescriptionProvider`](%gh-ij-android%/android-npw/src/com/android/tools/idea/npw/module/ModuleDescriptionProvider.kt) |
 
 ### android-plugin.xml
@@ -285,6 +286,15 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.uibuilder.scene.decorator.nlDecoratorProvider"/></include> | [`Provider`](%gh-ij-android%/designer/src/com/android/tools/idea/uibuilder/scene/decorator/NlSceneDecoratorFactory.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.uibuilder.troubleshooting.infoCollector"/></include> ![Non-Dynamic][non-dynamic] | [`TroubleInfoCollector`](%gh-ic%/platform/platform-impl/src/com/intellij/troubleshooting/TroubleInfoCollector.java) |
 
+### gradle-dsl-android.xml
+
+[`gradle-dsl-android.xml`](%gh-ij-android%/gradle-dsl-android/resources/META-INF/gradle-dsl-android.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.gradle.dsl.gradleDeclarativeBuildModelProvider"/></include> | [`GradleDeclarativeBuildModelProvider`](%gh-ij-android%/gradle-dsl/src/com/android/tools/idea/gradle/dsl/model/GradleDeclarativeBuildModelProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.gradle.dsl.gradleDeclarativeSettingsModelProvider"/></include> | [`GradleDeclarativeSettingsModelProvider`](%gh-ij-android%/gradle-dsl/src/com/android/tools/idea/gradle/dsl/model/GradleDeclarativeSettingsModelProvider.kt) |
+
 ### gradle-dsl.xml
 
 [`gradle-dsl.xml`](%gh-ij-android%/gradle-dsl/resources/META-INF/gradle-dsl.xml)
@@ -296,6 +306,15 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.gradle.dsl.transformerFactory"/></include> | [`GradleDslTransformerFactory`](%gh-ij-android%/gradle-dsl/src/com/android/tools/idea/gradle/dsl/parser/GradleDslTransformerFactory.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.versionCatalogFilesGradleModel"/></include> ![Non-Dynamic][non-dynamic] | [`VersionCatalogFilesModel`](%gh-ij-android%/gradle-dsl/src/com/android/tools/idea/gradle/dsl/model/VersionCatalogFilesModel.kt) |
 
+### intellij.android.gradle.dsl.android.xml
+
+[`intellij.android.gradle.dsl.android.xml`](%gh-ij-android%/gradle-dsl-android/resources/intellij.android.gradle.dsl.android.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.gradle.dsl.gradleDeclarativeBuildModelProvider"/></include> | [`GradleDeclarativeBuildModelProvider`](%gh-ij-android%/gradle-dsl/src/com/android/tools/idea/gradle/dsl/model/GradleDeclarativeBuildModelProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.gradle.dsl.gradleDeclarativeSettingsModelProvider"/></include> | [`GradleDeclarativeSettingsModelProvider`](%gh-ij-android%/gradle-dsl/src/com/android/tools/idea/gradle/dsl/model/GradleDeclarativeSettingsModelProvider.kt) |
+
 ### layout-inspector.xml
 
 [`layout-inspector.xml`](%gh-ij-android%/layout-inspector/resources/META-INF/layout-inspector.xml)
@@ -303,6 +322,8 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.layoutinspector.pipeline.appinspection.compose.getComposeLayoutInspectorJarToken"/></include> ![Non-Dynamic][non-dynamic] | [`GetComposeLayoutInspectorJarToken`](%gh-ij-android%/layout-inspector/src/com/android/tools/idea/layoutinspector/pipeline/appinspection/compose/ComposeLayoutInspectorClient.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.layoutinspector.stateinspection.filterProvider"/></include> ![Non-Dynamic][non-dynamic] | [`LayoutInspectorStateInspectionFilterProvider`](%gh-ij-android%/layout-inspector/src/com/android/tools/idea/layoutinspector/stateinspection/LayoutInspectorStateInspectionFilterProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.layoutinspector.stateinspection.stateReadRewriter"/></include> ![Non-Dynamic][non-dynamic] | [`LayoutInspectorStateReadRewriter`](%gh-ij-android%/layout-inspector/src/com/android/tools/idea/layoutinspector/stateinspection/LayoutInspectorStateReadRewriter.kt) |
 
 ### lint-plugin.xml
 
@@ -312,7 +333,7 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.lint.common.lintIdeSupport"/></include> ![Non-Dynamic][non-dynamic] | [`LintIdeSupport`](%gh-ij-android%/lint/src/com/android/tools/idea/lint/common/LintIdeSupport.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.lint.common.lintQuickFixProvider"/></include> ![Non-Dynamic][non-dynamic] | [`LintIdeQuickFixProvider`](%gh-ij-android%/lint/src/com/android/tools/idea/lint/common/LintIdeQuickFixProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.lint.common.updateDepsProvider"/></include> ![Non-Dynamic][non-dynamic] | [`DependencyUpdateProvider`](%gh-ij-android%/lint/src/com/android/tools/idea/lint/common/AndroidLintGradleDependencyInspection.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.lint.common.updateDepsProvider"/></include> ![Non-Dynamic][non-dynamic] | [`DependencyUpdateProvider`](%gh-ij-android%/lint/src/com/android/tools/idea/lint/common/AndroidLintUpdatableDependencyInspection.kt) |
 
 ### logcat.xml
 
@@ -321,6 +342,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.logcat.consoleFilterProvider"/></include> ![Non-Dynamic][non-dynamic] | [`LogcatConsoleFilterProvider`](%gh-ij-android%/logcat/src/com/android/tools/idea/logcat/LogcatConsoleFilterProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.logcat.logcatR8MappingToken"/></include> ![Non-Dynamic][non-dynamic] | [`LogcatR8MappingsToken`](%gh-ij-android%/logcat/src/com/android/tools/idea/logcat/LogcatR8MappingsToken.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.logcat.messages.exceptionMessageRewriter"/></include> ![Non-Dynamic][non-dynamic] | [`ExceptionMessageRewriter`](%gh-ij-android%/logcat/src/com/android/tools/idea/logcat/messages/ExceptionMessageRewriter.kt) |
 
 ### native-symbolizer.xml
@@ -406,14 +428,6 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.nav.safeargs.module.safeArgsModeToken"/></include> ![Non-Dynamic][non-dynamic] | [`SafeArgsModeToken`](%gh-ij-android%/nav/safeargs/common/src/com/android/tools/idea/nav/safeargs/module/SafeArgsModeModuleService.kt) |
 
-### screenshot-testing.xml
-
-[`screenshot-testing.xml`](%gh-ij-android%/screenshot-testing/resources/META-INF/screenshot-testing.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.screenshottest.screenshotTestResultListenerToken"/></include> ![Non-Dynamic][non-dynamic] | [`ScreenshotTestResultListenerToken`](%gh-ij-android%/screenshot-testing/src/com/android/screenshottest/ScreenshotTestResultListenerToken.kt) |
-
 ### server-flags.xml
 
 [`server-flags.xml`](%gh-ij-android%/server-flags/resources/META-INF/server-flags.xml)
@@ -429,6 +443,8 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.testartifacts.instrumented.androidRunConfigurationToken"/></include> ![Non-Dynamic][non-dynamic] | [`AndroidRunConfigurationToken`](%gh-ij-android%/testartifacts/src/com/android/tools/idea/testartifacts/instrumented/AndroidRunConfigurationToken.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.testartifacts.instrumented.testsuite.AndroidTestSuiteActionProvider"/></include> ![Non-Dynamic][non-dynamic] | [`AndroidTestSuiteDetailsActionProvider`](%gh-ij-android%/testartifacts/src/com/android/tools/idea/testartifacts/instrumented/testsuite/actions/AndroidTestSuiteDetailsActionProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.testartifacts.instrumented.testsuite.api.testResultsPsiElementProvider"/></include> ![Non-Dynamic][non-dynamic] | [`TestResultsPsiElementProvider`](%gh-ij-android%/testartifacts/src/com/android/tools/idea/testartifacts/instrumented/testsuite/api/TestResultsPsiElementProvider.kt) |
 
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square

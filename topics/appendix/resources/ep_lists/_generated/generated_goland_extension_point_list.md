@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: a789291cd24dfb7e90417275b43b4f910ecfdf22 -->
+<!-- Revision: fa0cfa150836c01668a8f990087e0079eadff45f -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-21 Extension Points and 9 Listeners
+22 Extension Points and 9 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -37,6 +37,7 @@ EP List Directories:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.consoleDecorator"/></include> ![Internal][internal] | `GoConsoleDecorator` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.dfa.api"/></include> | `GoDfaApi` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.dlv.positionConverterFactory"/></include> | `DlvPositionConverterFactory` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.documentation.packageVersionProvider"/></include> | `GoDocumentationPackageVersionProvider` |

@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: a789291cd24dfb7e90417275b43b4f910ecfdf22 -->
+<!-- Revision: fa0cfa150836c01668a8f990087e0079eadff45f -->
 
 <!--
 EP List Directories:
@@ -18,7 +18,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 <snippet id="content">
 
-668 Extension Points and 83 Listeners
+670 Extension Points and 83 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -192,12 +192,21 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Designer.customizations"/></include> ![Non-Dynamic][non-dynamic] | [`DesignerCustomizations`](%gh-ic%/plugins/ui-designer-core/src/com/intellij/designer/DesignerCustomizations.java) |
 
+### intellij.agent.workbench.ai.review.xml
+
+[`intellij.agent.workbench.ai.review.xml`](%gh-ic%/plugins/agent-workbench/ai-review/resources/intellij.agent.workbench.ai.review.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.ai.review.promptProvider"/></include> ![Internal][internal] | [`AIReviewPromptProvider`](%gh-ic%/plugins/agent-workbench/ai-review/src/com/intellij/agent/workbench/ai/review/prompt/AIReviewPromptProvider.kt) |
+
 ### intellij.agent.workbench.prompt.core.xml
 
 [`intellij.agent.workbench.prompt.core.xml`](%gh-ic%/plugins/agent-workbench/prompt/core/resources/intellij.agent.workbench.prompt.core.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.containerLauncher"/></include> | [`AgentPromptContainerLauncher`](%gh-ic%/plugins/agent-workbench/prompt/core/src/AgentPromptContainerLauncher.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.promptContextContributor"/></include> | [`AgentPromptContextContributorBridge`](%gh-ic%/plugins/agent-workbench/prompt/core/src/AgentPromptContextContributorBridge.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.promptContextRenderer"/></include> | [`AgentPromptContextRendererBridge`](%gh-ic%/plugins/agent-workbench/prompt/core/src/AgentPromptContextRendererBridge.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.promptLauncher"/></include> | [`AgentPromptLauncherBridge`](%gh-ic%/plugins/agent-workbench/prompt/core/src/AgentPromptLauncherBridge.kt) |
@@ -213,6 +222,14 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.sessionLaunchSpecAugmenter"/></include> | [`AgentSessionLaunchSpecAugmenter`](%gh-ic%/plugins/agent-workbench/sessions-core/src/launch/AgentSessionLaunchSpecAugmenter.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.sessionProvider"/></include> | [`AgentSessionProviderDescriptor`](%gh-ic%/plugins/agent-workbench/sessions-core/src/providers/AgentSessionProviderDescriptor.kt) |
+
+### intellij.compose.ide.plugin.resources.xml
+
+[`intellij.compose.ide.plugin.resources.xml`](%gh-ic%/plugins/compose/intellij.compose.ide.plugin.resources/resources/intellij.compose.ide.plugin.resources.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.compose.ide.plugin.resources.drawablePreviewRenderer"/></include> | [`BaseVectorDrawablePreviewRenderer`](%gh-ic%/plugins/compose/intellij.compose.ide.plugin.resources/src/com/intellij/compose/ide/plugin/resources/vectorDrawable/preview/BaseVectorDrawablePreviewRenderer.kt) |
 
 ### intellij.debugger.streams.core.xml
 
@@ -770,7 +787,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.psi.classFileDecompiler"/></include> | `Decompiler` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.psi.classFileDecompiler"/></include> | [`Decompiler`](%gh-ic%/java/java-frontback-psi-api/src/com/intellij/psi/compiled/ClassFileDecompilers.java) |
 
 ### intellij.java.impl.inspections.xml
 
@@ -1580,7 +1597,6 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.PythonPackageRequirementsTreeExtractorProvider"/></include> ![Internal][internal] | [`PythonPackageRequirementsTreeExtractorProvider`](%gh-ic%/python/src/com/jetbrains/python/packaging/packageRequirements/PythonPackageRequirementsTreeExtractor.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.PythonPackageRequiresExtractorProvider"/></include> ![Internal][internal] | [`PythonPackageRequiresExtractorProvider`](%gh-ic%/python/src/com/jetbrains/python/packaging/packageRequirements/PythonPackageRequirementExtractor.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.breakpointHandler"/></include> | [`PyBreakpointHandlerFactory`](%gh-ic%/python/src/com/jetbrains/python/debugger/PyBreakpointHandlerFactory.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.condaSdkCustomizer"/></include> ![Internal][internal] | [`PyCondaSdkCustomizer`](%gh-ic%/python/src/com/jetbrains/python/sdk/conda/PyCondaSdkCustomizer.kt) |

@@ -1,6 +1,6 @@
 <!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# Customizing Themes - Icons and UI Controls
+# Customizing Themes – Icons and UI Controls
 
 <link-summary>Customizing UI controls and icons in a theme plugin.</link-summary>
 
@@ -14,7 +14,7 @@ A theme is customized by adding information to the theme description file that o
 
 For plugin developers, [](themes_metadata.md) discusses the format of customization keys and information about how to provide it to Theme authors.
 
-> [Color Highlighter Plugin](https://plugins.jetbrains.com/plugin/13309-color-highlighter) adds additional color preview inside the editor.
+> [Color Highlighter Plugin](https://plugins.jetbrains.com/plugin/13309-color-highlighter) adds a color preview inside the editor.
 >
 
 <include from="developing_themes.md" element-id="themeSamplePlugin"/>

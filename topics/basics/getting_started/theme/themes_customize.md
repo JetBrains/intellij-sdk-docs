@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Customizing Themes - Icons and UI Controls
 
@@ -333,3 +333,6 @@ The parent theme's ID is the `id` attribute of the `themeProvider` element regis
 ```xml
 <themeProvider id="ParentThemeId" path="/themes/mytheme.theme.json"/>
 ```
+
+> See `themeProvider` elements in [`PlatformExtensions.xml`](%gh-ic%/platform/platform-resources/src/META-INF/PlatformExtensions.xml)
+> for the IDs of built-in themes.

@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: fa0cfa150836c01668a8f990087e0079eadff45f -->
+<!-- Revision: 6a0bb2b6627d809eadddf13ff1f6348f5d5ce782 -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-160 Extension Points and 9 Listeners
+161 Extension Points and 9 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -23,10 +23,10 @@ EP List Directories:
 | Topic | Listener |
 |-------|----------|
 | [`RiderStyleCopConfigurable#STYLE_COP_CONFIGURABLE_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.application.options.editor.EditorOptionsListener)  | [`EditorOptionsListener`](%gh-ic%/platform/platform-impl/src/com/intellij/application/options/editor/EditorOptionsListener.java) |
+| [`AzuriteSessionListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.azureFunctions.azurite.services.AzuriteSessionListener)  | `AzuriteSessionListener` |
 | [`SSHCredentialsInClipboardNotifier.Companion#SSH_CREDENTIALS_IN_CLIPBOARD_TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.debugger.attach.remoting.SSHCredentialsInClipboardNotifier)  | `SSHCredentialsInClipboardNotifier` |
 | [`DotnetDebuggerSymbolsLoadedListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.debugger.modulesView.actions.DotnetDebuggerSymbolsLoadedListener)  | `DotnetDebuggerSymbolsLoadedListener` |
 | [`FrontendTypedHandlerManager#BEFORE_TYPING_SENT`](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.editorActions.IFrontendTypingListener)  | `IFrontendTypingListener` |
-| [`RiderDockerDeploymentListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.plugins.appender.docker.deployment.RiderDockerDeploymentListener)  | `RiderDockerDeploymentListener` |
 | [`AutoAttachDebuggerListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.run.AutoAttachDebuggerListener)  | `AutoAttachDebuggerListener` |
 | [`PublishConfigurationValidationListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.run.configurations.publishing.PublishConfigurationValidationListener)  | `PublishConfigurationValidationListener` |
 | [`MSBuildEvaluationListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.run.environment.MSBuildEvaluationListener)  | `MSBuildEvaluationListener` |
@@ -79,6 +79,14 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.debugger.filters.provider"/></include> | `RiderDebuggerFiltersProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.debugger.link.provider"/></include> | `RiderDebuggerLinkProvider` |
+
+### intellij.rider.dotnet.exception.reporter.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.credentials.provider"/></include> | `ICredentialsProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.exception.reporter.additional.info"/></include> ![Internal][internal] | `RiderExceptionReporterAdditionalInfo` |
 
 ### intellij.rider.plugins.appender.database.xml
 
@@ -148,7 +156,6 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.backendCrashAnalyser"/></include> | `BackendCrashAnalyzer` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.backendLogXmlPathProvider"/></include> | `RiderCustomBackendLogXmlPathProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.codeStyleContentConverter"/></include> | `RiderCodeStyleContentPageConverter` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.credentials.provider"/></include> | `ICredentialsProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.customNonSolutionRootsPredicate"/></include> | `CustomNonSolutionRootsPredicate` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.documentBehaviour"/></include> | `RiderDocumentBehaviour` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.editors.customBackendLanguageSupport"/></include> | `RiderCustomBackendLanguageSupport` |
@@ -213,7 +220,6 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.contributedLanguageElementNameCrawler"/></include> | `RiderContributedLanguageElementNameCrawler` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.debug.breakpoint.handler.factory"/></include> ![Non-Dynamic][non-dynamic] | `IDotNetSupportedBreakpointHandlerFactory` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.debugger.editAndContinue.dotNetEncInfoAutodetect"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `DotNetEncInfoAutodetect` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.debugger.link.provider"/></include> | `RiderDebuggerLinkProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.debugger.value.presenter"/></include> ![Non-Dynamic][non-dynamic] | `RiderDebuggerValuePresenter` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.debuggerSupportPolicy"/></include> ![Non-Dynamic][non-dynamic] | `RiderDebuggerSupportPolicy` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.editSourceSuppressor"/></include> ![Non-Dynamic][non-dynamic] | `RiderEditSourceSuppressor` |
@@ -250,12 +256,12 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.run.configurations.project"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `DotNetProjectConfigurationExtension` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.run.configurations.riderCoreDumpConfigurationProvider"/></include> ![Non-Dynamic][non-dynamic] | `RiderCoreDumpConfigurationProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.run.configurations.uwp"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `UwpConfigurationExtension` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.run.dotNetProfileConsoleViewProvider"/></include> ![Non-Dynamic][non-dynamic] | `DotNetProfileConsoleViewProviderExtension` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.runToPopupShowPolicy"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `RiderRunToPopupShowPolicy` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.runWidgetSuspenderExtension"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `RunWidgetSuspenderExtension` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.runtime.dotNetRuntimeAutodetect"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `DotNetRuntimeAutodetect` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.solutionConfigurationPresenter"/></include> | `SolutionConfigurationPresenter` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.solutionConfigurationToolbarCustomizer"/></include> | `SolutionConfigurationToolbarCustomizer` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.ui.toolwindow.contentProvider"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | `RiderToolWindowContentProviderExtension` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.unitTesting.actionsProvider"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `RiderUnitTestActionsProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.unitTesting.sessionHandler"/></include> ![Non-Dynamic][non-dynamic] | `IRiderUnitTestDebuggerSessionsHandler` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.unityDetector"/></include> ![Project-Level][project-level] | `UnityDetector` |

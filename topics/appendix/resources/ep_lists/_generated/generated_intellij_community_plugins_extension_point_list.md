@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: fa0cfa150836c01668a8f990087e0079eadff45f -->
+<!-- Revision: 6a0bb2b6627d809eadddf13ff1f6348f5d5ce782 -->
 
 <!--
 EP List Directories:
@@ -18,7 +18,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 <snippet id="content">
 
-670 Extension Points and 83 Listeners
+682 Extension Points and 86 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -28,6 +28,8 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 | Topic | Listener |
 |-------|----------|
+| [`AgentSessionProviderAvailabilityListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.agent.workbench.sessions.service.AgentSessionProviderAvailabilityListener)  ![Project-Level][project-level] | [`AgentSessionProviderAvailabilityListener`](%gh-ic%/plugins/agent-workbench/sessions/src/service/AgentSessionProviderAvailabilityService.kt) |
+| [`AgentSessionProviderSettingsListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.agent.workbench.sessions.settings.AgentSessionProviderSettingsListener)  | [`AgentSessionProviderSettingsListener`](%gh-ic%/plugins/agent-workbench/sessions/src/settings/AgentSessionProviderSettingsService.kt) |
 | [`CoverageLoadingListener#COVERAGE_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.coverage.CoverageLoadingListener)  ![Internal][internal] ![Project-Level][project-level] | [`CoverageLoadingListener`](%gh-ic%/plugins/coverage-common/src/com/intellij/coverage/CoverageLoaderListener.kt) |
 | [`ToolCallListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.mcpserver.ToolCallListener)  | [`ToolCallListener`](%gh-ic%/plugins/mcp-server/src/com/intellij/mcpserver/ToolCallListener.kt) |
 
@@ -103,6 +105,8 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.mcpServer.mcpManagedSessionSupport"/></include> ![Internal][internal] | [`McpManagedSessionSupport`](%gh-ic%/plugins/mcp-server/src/com/intellij/mcpserver/McpManagedSessionSupport.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.mcpServer.mcpProjectPathCustomizer"/></include> | [`McpProjectPathCustomizer`](%gh-ic%/plugins/mcp-server/src/com/intellij/mcpserver/McpProjectPathCustomizer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.mcpServer.mcpToolFilterProvider"/></include> | [`McpToolFilterProvider`](%gh-ic%/plugins/mcp-server/src/com/intellij/mcpserver/McpToolFilterProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.mcpServer.mcpToolsProvider"/></include> | [`McpToolsProvider`](%gh-ic%/plugins/mcp-server/src/com/intellij/mcpserver/McpToolsProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.mcpServer.mcpToolset"/></include> | [`McpToolset`](%gh-ic%/plugins/mcp-server/src/com/intellij/mcpserver/McpToolset.kt) |
@@ -114,7 +118,6 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.searchEverywhereMl.textEmbeddingProvider"/></include> | [`TextEmbeddingProvider`](%gh-ic%/plugins/search-everywhere-ml/src/com/intellij/searchEverywhereMl/TextEmbeddingProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.searcheverywhere.ml.searchEverywhereStateFeaturesProvider"/></include> ![Internal][internal] | [`SearchEverywhereStateFeaturesProvider`](%gh-ic%/plugins/search-everywhere-ml/src/com/intellij/searchEverywhereMl/features/SearchEverywhereStateFeaturesProvider.kt) |
 
 ### com.intellij.stats.completion
 
@@ -200,6 +203,14 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.ai.review.promptProvider"/></include> ![Internal][internal] | [`AIReviewPromptProvider`](%gh-ic%/plugins/agent-workbench/ai-review/src/com/intellij/agent/workbench/ai/review/prompt/AIReviewPromptProvider.kt) |
 
+### intellij.agent.workbench.discoverability.xml
+
+[`intellij.agent.workbench.discoverability.xml`](%gh-ic%/plugins/agent-workbench/discoverability/resources/intellij.agent.workbench.discoverability.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.discoveryInfoContributor"/></include> ![Internal][internal] | [`DiscoveryInfoContributor`](%gh-ic%/plugins/agent-workbench/discoverability/src/DiscoveryInfoContributor.kt) |
+
 ### intellij.agent.workbench.prompt.core.xml
 
 [`intellij.agent.workbench.prompt.core.xml`](%gh-ic%/plugins/agent-workbench/prompt/core/resources/intellij.agent.workbench.prompt.core.xml)
@@ -220,8 +231,13 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.mcpConfigProviderContributor"/></include> | [`AwbMcpConfigProviderContributor`](%gh-ic%/plugins/agent-workbench/sessions-core/src/launch/AwbMcpConfigProviderContributor.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.mcpStreamUrlProvider"/></include> | [`McpStreamUrlProvider`](%gh-ic%/plugins/agent-workbench/sessions-core/src/launch/McpStreamUrlProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.projectRuntimeConfigProvider"/></include> | [`AgentWorkbenchProjectRuntimeConfigProvider`](%gh-ic%/plugins/agent-workbench/sessions-core/src/config/AgentWorkbenchProjectRuntimeConfigProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.sessionLaunchContributor"/></include> | [`AgentSessionLaunchContributor`](%gh-ic%/plugins/agent-workbench/sessions-core/src/launch/AgentSessionLaunchContributor.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.sessionLaunchSpecAugmenter"/></include> | [`AgentSessionLaunchSpecAugmenter`](%gh-ic%/plugins/agent-workbench/sessions-core/src/launch/AgentSessionLaunchSpecAugmenter.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.sessionProvider"/></include> | [`AgentSessionProviderDescriptor`](%gh-ic%/plugins/agent-workbench/sessions-core/src/providers/AgentSessionProviderDescriptor.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.settingsContributor"/></include> | [`AgentWorkbenchSettingsContributor`](%gh-ic%/plugins/agent-workbench/sessions-core/src/settings/AgentWorkbenchSettingsContributor.kt) |
 
 ### intellij.compose.ide.plugin.resources.xml
 
@@ -342,8 +358,15 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.idea.reposearch.contributor"/></include> | [`DependencyCompletionContributor`](%gh-ic%/plugins/repository-search/common/src/main/kotlin/org/jetbrains/idea/completion/api/DependencyCompletionService.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.idea.reposearch.provider"/></include> ![Experimental][experimental] | [`DependencySearchProvidersFactory`](%gh-ic%/plugins/repository-search/common/src/main/java/org/jetbrains/idea/reposearch/DependencySearchProvidersFactory.java) |
+
+### intellij.repository.search.completion.xml
+
+[`intellij.repository.search.completion.xml`](%gh-ic%/plugins/repository-search/completion/resources/intellij.repository.search.completion.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.idea.reposearch.contributor"/></include> | [`DependencyCompletionContributor`](%gh-ic%/plugins/repository-search/completion/src/api/DependencyCompletionService.kt) |
 
 ### intellij.searchEverywhereMl.ranking.core.xml
 
@@ -541,7 +564,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | Topic | Listener |
 |-------|----------|
 | [`GradleSyncListener#TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.gradle.service.syncAction.GradleSyncListener)  ![Experimental][experimental] | [`GradleSyncListener`](%gh-ic%/plugins/gradle/src/org/jetbrains/plugins/gradle/service/syncAction/GradleSyncListener.kt) |
-| [`GradleSettingsListener#TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.gradle.settings.GradleSettingsListener)  ![Project-Level][project-level] | [`GradleSettingsListener`](%gh-ic%/plugins/gradle/src/org/jetbrains/plugins/gradle/settings/GradleSettingsListener.java) |
+| [`GradleSettingsListener#TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.gradle.settings.GradleSettingsListener)  ![Project-Level][project-level] | [`GradleSettingsListener`](%gh-ic%/plugins/gradle/settings/src/settings/GradleSettingsListener.java) |
 | [`GradleUiListener#TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.gradle.ui.GradleUiListener)  | [`GradleUiListener`](%gh-ic%/plugins/gradle/src/org/jetbrains/plugins/gradle/ui/GradleUiListener.java) |
 
 
@@ -560,13 +583,14 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.buildTasksProvider"/></include> | [`GradleBuildTasksProvider`](%gh-ic%/plugins/gradle/java/src/execution/build/GradleBuildTasksProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.dslInspectionProvider"/></include> ![Internal][internal] | [`GradleDslInspectionProvider`](%gh-ic%/plugins/gradle/java/src/codeInspection/GradleDslInspectionProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.externallyHandledExtensions"/></include> ![Internal][internal] | [`GradleVersionCatalogHandler`](%gh-ic%/plugins/gradle/java/src/service/resolve/GradleVersionCatalogHandler.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.frameworkSupport"/></include> | [`GradleFrameworkSupportProvider`](%gh-ic%/plugins/gradle/java/src/frameworkSupport/GradleFrameworkSupportProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.initScriptGenerator"/></include> ![Experimental][experimental] | [`GradleInitScriptGenerator`](%gh-ic%/plugins/gradle/java/src/execution/build/GradleInitScriptGenerator.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.kotlinDslFrameworkSupport"/></include> | [`KotlinDslGradleFrameworkSupportProvider`](%gh-ic%/plugins/gradle/java/src/frameworkSupport/KotlinDslGradleFrameworkSupportProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.testTasksProvider"/></include> | [`GradleTestTasksProvider`](%gh-ic%/plugins/gradle/java/src/execution/test/runner/GradleTestTasksProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.gradle.buildTasksProvider"/></include> | [`GradleBuildTasksProvider`](%gh-ic%/plugins/gradle/java/src/execution/build/GradleBuildTasksProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.gradle.dslInspectionProvider"/></include> ![Internal][internal] | [`GradleDslInspectionProvider`](%gh-ic%/plugins/gradle/java/src/codeInspection/GradleDslInspectionProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.gradle.externallyHandledExtensions"/></include> ![Internal][internal] | [`GradleVersionCatalogHandler`](%gh-ic%/plugins/gradle/java/src/service/resolve/GradleVersionCatalogHandler.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.gradle.frameworkSupport"/></include> | [`GradleFrameworkSupportProvider`](%gh-ic%/plugins/gradle/java/src/frameworkSupport/GradleFrameworkSupportProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.gradle.initScriptGenerator"/></include> ![Experimental][experimental] | [`GradleInitScriptGenerator`](%gh-ic%/plugins/gradle/java/src/execution/build/GradleInitScriptGenerator.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.gradle.kotlinDslFrameworkSupport"/></include> | [`KotlinDslGradleFrameworkSupportProvider`](%gh-ic%/plugins/gradle/java/src/frameworkSupport/KotlinDslGradleFrameworkSupportProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.gradle.testTasksProvider"/></include> | [`GradleTestTasksProvider`](%gh-ic%/plugins/gradle/java/src/execution/test/runner/GradleTestTasksProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.gradle.versionCatalogEntrySearcher"/></include> ![Internal][internal] | [`GradleVersionCatalogEntrySearcher`](%gh-ic%/plugins/gradle/java/src/service/resolve/GradleVersionCatalogEntrySearcher.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.gradle.versionCatalogPsiResolver"/></include> ![Internal][internal] | [`GradleVersionCatalogPsiResolver`](%gh-ic%/plugins/gradle/java/src/service/resolve/GradleVersionCatalogPsiResolver.kt) |
 
 ### intellij.gradle.xml
@@ -877,6 +901,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.inferredAnnotationProvider"/></include> ![Project-Level][project-level] | [`InferredAnnotationProvider`](%gh-ic%/java/java-psi-api/src/com/intellij/codeInsight/InferredAnnotationProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.jvm.multiReleaseSupport"/></include> | [`JavaMultiReleaseModuleSupport`](%gh-ic%/java/java-psi-impl/src/com/intellij/psi/util/JavaMultiReleaseModuleSupport.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.psiAugmentProvider"/></include> ![DumbAware][dumb-aware] | [`PsiAugmentProvider`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/augment/PsiAugmentProvider.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.packageDirectoryProvider"/></include> ![Project-Level][project-level] | [`PackageDirectoryProvider`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/PackageDirectoryProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.psi.clsCustomNavigationPolicy"/></include> | [`ClsCustomNavigationPolicy`](%gh-ic%/java/java-psi-impl/src/com/intellij/psi/impl/compiled/ClsCustomNavigationPolicy.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.superMethodsSearch"/></include> | [`QueryExecutor`](%gh-ic%/platform/core-api/src/com/intellij/util/QueryExecutor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.testFramework"/></include> ![DumbAware][dumb-aware] | [`TestFramework`](%gh-ic%/platform/core-api/src/com/intellij/testIntegration/TestFramework.java) |
@@ -970,6 +995,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.debugger.hotSwapSourceFileFilterProvider"/></include> ![Experimental][experimental] ![Internal][internal] | [`HotSwapSourceFileFilterProvider`](%gh-ic%/java/debugger/impl/src/com/intellij/debugger/impl/hotswap/HotSwapSourceFileFilterProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.debugger.javaBreakpointHandlerFactory"/></include> | [`JavaBreakpointHandlerFactory`](%gh-ic%/java/debugger/impl/src/com/intellij/debugger/engine/JavaBreakpointHandlerFactory.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.debugger.jdiHelperClassLoader"/></include> | [`JdiHelperClassLoader`](%gh-ic%/java/debugger/impl/src/com/intellij/debugger/impl/JdiHelperClassLoader.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.debugger.jvmHotSwapListener"/></include> ![Internal][internal] | [`JvmHotSwapListener`](%gh-ic%/java/debugger/impl/src/com/intellij/debugger/impl/hotswap/JvmHotSwapListener.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.debugger.jvmSmartStepIntoHandler"/></include> | [`JvmSmartStepIntoHandler`](%gh-ic%/java/debugger/impl/src/com/intellij/debugger/actions/JvmSmartStepIntoHandler.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.debugger.jvmSteppingCommandProvider"/></include> | [`JvmSteppingCommandProvider`](%gh-ic%/java/debugger/impl/src/com/intellij/debugger/impl/JvmSteppingCommandProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.debugger.nodeRenderer"/></include> | [`NodeRenderer`](%gh-ic%/java/debugger/impl/src/com/intellij/debugger/ui/tree/render/NodeRenderer.java) |
@@ -1078,7 +1104,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 | Topic | Listener |
 |-------|----------|
-| [`LibraryInfoListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.kotlin.idea.base.projectStructure.LibraryInfoListener)  ![Internal][internal] ![Project-Level][project-level] | [`LibraryInfoListener`](%gh-ic%/plugins/kotlin/base/project-structure/src/org/jetbrains/kotlin/idea/base/projectStructure/LibraryInfoCache.kt) |
+| [`LibraryInfoListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.kotlin.idea.base.projectStructure.LibraryInfoListener)  ![Internal][internal] ![Project-Level][project-level] | [`LibraryInfoListener`](%gh-ic%/plugins/kotlin/base/fe10/project-structure/src/org/jetbrains/kotlin/idea/base/projectStructure/LibraryInfoCache.kt) |
 | [`KotlinCompilerPluginsScriptConfigurationListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.kotlin.idea.compiler.configuration.KotlinCompilerPluginsScriptConfigurationListener)  ![Experimental][experimental] ![Internal][internal] ![Project-Level][project-level] | [`KotlinCompilerPluginsScriptConfigurationListener`](%gh-ic%/plugins/kotlin/base/compiler-configuration/src/org/jetbrains/kotlin/idea/compiler/configuration/KotlinCompilerPluginsScriptConfigurationListener.kt) |
 | [`KotlinCompilerSettingsListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.kotlin.idea.compiler.configuration.KotlinCompilerSettingsListener)  ![Project-Level][project-level] | [`KotlinCompilerSettingsListener`](%gh-ic%/plugins/kotlin/base/compiler-configuration/src/org/jetbrains/kotlin/idea/compiler/configuration/BaseKotlinCompilerSettings.kt) |
 | [`ReloadScriptConfigurationService#TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.kotlin.idea.core.script.k2.ReloadScriptConfigurationService.Listener)  ![Project-Level][project-level] | [`Listener`](%gh-ic%/plugins/kotlin/base/scripting/scripting.k2/src/org/jetbrains/kotlin/idea/core/script/k2/ReloadScriptConfiguration.kt) |
@@ -1088,6 +1114,14 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | [`KotlinRefactoringListener.Companion#EVENT_TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.kotlin.idea.refactoring.KotlinRefactoringListener)  | [`KotlinRefactoringListener`](%gh-ic%/plugins/kotlin/refactorings/kotlin.refactorings.common/src/org/jetbrains/kotlin/idea/refactoring/KotlinRefactoringListener.kt) |
 | [`KotlinCorruptedIndexListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.kotlin.idea.stubindex.resolve.KotlinCorruptedIndexListener)  ![Project-Level][project-level] | [`KotlinCorruptedIndexListener`](%gh-ic%/plugins/kotlin/base/analysis/src/org/jetbrains/kotlin/idea/stubindex/resolve/KotlinCorruptedIndexListener.kt) |
 
+
+### base-codeInsight-minimal.xml
+
+[`base-codeInsight-minimal.xml`](%gh-ic%/plugins/kotlin/base/code-insight/minimal/resource/META-INF/base-codeInsight-minimal.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.smartEnterProcessorFixer"/></include> | [`Fixer`](%gh-ic%/platform/lang-impl/src/com/intellij/lang/SmartEnterProcessorWithFixers.java) |
 
 ### completion-fe10.xml
 
@@ -1130,13 +1164,13 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.highlighterExtension"/></include> | [`KotlinHighlightingVisitorExtension`](%gh-ic%/plugins/kotlin/highlighting/highlighting-k1/src/org/jetbrains/kotlin/idea/highlighter/KotlinHighlightingVisitorExtension.kt) |
 
-### intellij.kotlin.base.codeInsight.minimal.xml
+### highlighting-shared.xml
 
-[`intellij.kotlin.base.codeInsight.minimal.xml`](%gh-ic%/plugins/kotlin/base/code-insight/minimal/resource/intellij.kotlin.base.codeInsight.minimal.xml)
+[`highlighting-shared.xml`](%gh-ic%/plugins/kotlin/highlighting/highlighting-shared/resources/META-INF/highlighting-shared.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.smartEnterProcessorFixer"/></include> | [`Fixer`](%gh-ic%/platform/lang-impl/src/com/intellij/lang/SmartEnterProcessorWithFixers.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.beforeResolveHighlightingVisitor"/></include> ![Internal][internal] | [`BeforeResolveHighlightingExtension`](%gh-ic%/plugins/kotlin/highlighting/highlighting-minimal/src/org/jetbrains/kotlin/idea/base/highlighting/BeforeResolveHighlightingExtension.kt) |
 
 ### intellij.kotlin.base.externalSystem.xml
 
@@ -1164,7 +1198,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.k2IdeScriptAdditionalIdeaDependenciesProvider"/></include> | [`K2IdeScriptAdditionalIdeaDependenciesProvider`](%gh-ic%/plugins/kotlin/base/scripting/scripting.k2/src/org/jetbrains/kotlin/idea/core/script/k2/modules/K2IdeScriptAdditionalIdeaDependenciesProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.scriptEntityProvider"/></include> ![Project-Level][project-level] | [`KotlinScriptEntityProvider`](%gh-ic%/plugins/kotlin/base/scripting/scripting.k2/src/org/jetbrains/kotlin/idea/core/script/k2/modules/KotlinScriptEntityProvider.kt) |
 
 ### intellij.kotlin.codeInsight.xml
 
@@ -1288,7 +1322,6 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.classImportFilter"/></include> | [`ClassImportFilter`](%gh-ic%/plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/util/ClassImportFilter.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.idePlatformKindResolution"/></include> ![Non-Dynamic][non-dynamic] | [`IdePlatformKindResolution`](%gh-ic%/plugins/kotlin/base/fe10/analysis/src/org/jetbrains/kotlin/caches/resolve/IdePlatformKindResolution.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.idea.caches.resolve.resolveOptimizingOptionsProvider"/></include> | [`ResolveOptimizingOptionsProvider`](%gh-ic%/plugins/kotlin/base/fe10/analysis/src/org/jetbrains/kotlin/idea/caches/resolve/ResolveOptimizingOptionsProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.kotlinIndicesHelperExtension"/></include> ![Project-Level][project-level] | [`KotlinIndicesHelperExtension`](%gh-ic%/plugins/kotlin/base/fe10/analysis/src/org/jetbrains/kotlin/idea/core/extension/KotlinIndicesHelperExtension.kt) |
@@ -1304,6 +1337,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.buildSystemDependencyManager"/></include> ![Internal][internal] ![Project-Level][project-level] | [`KotlinBuildSystemDependencyManager`](%gh-ic%/plugins/kotlin/project-configuration/src/org/jetbrains/kotlin/idea/configuration/KotlinBuildSystemDependencyManager.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.buildSystemTypeDetector"/></include> | [`BuildSystemTypeDetector`](%gh-ic%/plugins/kotlin/base/facet/src/org/jetbrains/kotlin/idea/configuration/BuildSystemType.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.bundledFirCompilerPluginProvider"/></include> ![Experimental][experimental] ![Internal][internal] | [`KotlinBundledFirCompilerPluginProvider`](%gh-ic%/plugins/kotlin/bundled-compiler-plugins-support/src/org/jetbrains/kotlin/idea/fir/extensions/KotlinBundledFirCompilerPluginProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.classImportFilter"/></include> | [`ClassImportFilter`](%gh-ic%/plugins/kotlin/base/code-insight/src/org/jetbrains/kotlin/idea/util/ClassImportFilter.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.compilerPluginConfigurator"/></include> ![Experimental][experimental] | [`KotlinCompilerPluginProjectConfigurator`](%gh-ic%/plugins/kotlin/project-configuration/src/org/jetbrains/kotlin/idea/configuration/KotlinCompilerPluginProjectConfigurator.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.experimentalFeature"/></include> | [`ExperimentalFeature`](%gh-ic%/plugins/kotlin/preferences/src/org/jetbrains/kotlin/idea/configuration/ExperimentalFeatures.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.facetValidatorCreator"/></include> ![Non-Dynamic][non-dynamic] | [`KotlinFacetValidatorCreator`](%gh-ic%/plugins/kotlin/base/compiler-configuration-ui/src/org/jetbrains/kotlin/idea/base/compilerPreferences/facet/KotlinFacetValidatorCreator.kt) |
@@ -1311,7 +1345,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.firCompilerPluginConfigurationProvider"/></include> ![Experimental][experimental] | [`KotlinFirCompilerPluginConfigurationForIdeProvider`](%gh-ic%/plugins/kotlin/bundled-compiler-plugins-support/src/org/jetbrains/kotlin/idea/fir/extensions/KotlinFirCompilerPluginConfigurationForIdeProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.forwardDeclarationPolicyProvider"/></include> ![Internal][internal] | [`ForwardDeclarationPolicyProvider`](%gh-ic%/plugins/kotlin/code-insight/api/src/org/jetbrains/kotlin/idea/codeinsight/api/applicable/extensions/ForwardDeclarationPolicyProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.idea.base.platforms.targetPlatformDetector"/></include> ![Project-Level][project-level] | [`TargetPlatformDetector`](%gh-ic%/plugins/kotlin/base/facet/src/org/jetbrains/kotlin/idea/base/facet/platform/TargetPlatformDetector.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.idea.base.projectStructure.moduleInfoProviderExtension"/></include> ![Project-Level][project-level] | [`ModuleInfoProviderExtension`](%gh-ic%/plugins/kotlin/base/project-structure/src/org/jetbrains/kotlin/idea/base/projectStructure/ModuleInfoProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.idea.base.projectStructure.moduleInfoProviderExtension"/></include> ![Project-Level][project-level] | [`ModuleInfoProviderExtension`](%gh-ic%/plugins/kotlin/base/fe10/project-structure/src/org/jetbrains/kotlin/idea/base/projectStructure/ModuleInfoProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.idea.codeInsight.lineMarkers.kotlinRunLineMarkerHider"/></include> ![DumbAware][dumb-aware] | [`KotlinRunLineMarkerHider`](%gh-ic%/plugins/kotlin/frontend-independent/src/org/jetbrains/kotlin/idea/codeInsight/KotlinRunLineMarkerHider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.idea.codeInsight.unambiguousImports"/></include> | [`KotlinAutoImportsFilter`](%gh-ic%/plugins/kotlin/frontend-independent/src/org/jetbrains/kotlin/idea/codeInsight/KotlinAutoImportsFilter.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.idea.testFrameworkProvider"/></include> | [`KotlinTestFrameworkProvider`](%gh-ic%/plugins/kotlin/run-configurations/jvm/src/org/jetbrains/kotlin/idea/extensions/KotlinTestFrameworkProvider.kt) |
@@ -1322,13 +1356,13 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.kaDanglingFileResolutionModeProvider"/></include> ![Internal][internal] | [`KaDanglingFileResolutionModeProvider`](%gh-ic%/plugins/kotlin/code-insight/api/src/org/jetbrains/kotlin/idea/codeinsight/api/applicable/extensions/KaDanglingFileResolutionModeProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.kotlinCompilerVersionProvider"/></include> | [`KotlinCompilerVersionProvider`](%gh-ic%/plugins/kotlin/base/plugin/src/org/jetbrains/kotlin/idea/base/plugin/KotlinCompilerVersionProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.kotlinInjectedFilesAnalysisProvider"/></include> ![Internal][internal] | [`KotlinIdeInjectedFilesAnalysisPromoter`](%gh-ic%/plugins/kotlin/base/analysis/src/org/jetbrains/kotlin/idea/base/analysis/KotlinIdeInjectedFilesAnalysisPromoter.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.ktModuleFactory"/></include> ![Internal][internal] | [`KaModuleFactory`](%gh-ic%/plugins/kotlin/base/project-structure/src/org/jetbrains/kotlin/idea/base/projectStructure/ProjectStructureProviderIdeImpl.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.ktModuleFactory"/></include> ![Internal][internal] | [`KaModuleFactory`](%gh-ic%/plugins/kotlin/base/fe10/project-structure/src/org/jetbrains/kotlin/idea/base/projectStructure/ProjectStructureProviderIdeImpl.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.libraryVersionProvider"/></include> ![Internal][internal] | [`KotlinLibraryVersionProvider`](%gh-ic%/plugins/kotlin/project-configuration/src/org/jetbrains/kotlin/idea/configuration/KotlinLibraryVersionProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.newFileHook"/></include> ![Internal][internal] | [`NewKotlinFileHook`](%gh-ic%/plugins/kotlin/base/project-structure/src/org/jetbrains/kotlin/idea/base/projectStructure/NewKotlinFileHook.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.pluginUpdateVerifier"/></include> | [`PluginUpdateVerifier`](%gh-ic%/plugins/kotlin/plugin-updater/src/org/jetbrains/kotlin/idea/update/PluginUpdateVerifier.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.projectConfigurator"/></include> | [`KotlinProjectConfigurator`](%gh-ic%/plugins/kotlin/project-configuration/src/org/jetbrains/kotlin/idea/configuration/KotlinProjectConfigurator.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.projectPostConfigurator"/></include> ![Experimental][experimental] | [`KotlinProjectPostConfigurator`](%gh-ic%/plugins/kotlin/project-configuration/src/org/jetbrains/kotlin/idea/configuration/KotlinProjectPostConfigurator.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.projectStructureInsightsProvider"/></include> ![Internal][internal] | [`ProjectStructureInsightsProvider`](%gh-ic%/plugins/kotlin/base/project-structure/src/org/jetbrains/kotlin/idea/base/projectStructure/ProjectStructureProviderIdeImpl.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.projectStructureInsightsProvider"/></include> ![Internal][internal] | [`ProjectStructureInsightsProvider`](%gh-ic%/plugins/kotlin/base/fe10/project-structure/src/org/jetbrains/kotlin/idea/base/projectStructure/ProjectStructureProviderIdeImpl.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.supportAvailability"/></include> | [`KotlinSupportAvailability`](%gh-ic%/plugins/kotlin/code-insight/utils/src/org/jetbrains/kotlin/idea/codeinsight/utils/KotlinSupportAvailability.kt) |
 
 ### kotlin.base.scripting.k1.xml
@@ -1350,14 +1384,6 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.gradleProjectImportHandler"/></include> ![Project-Level][project-level] | [`GradleProjectImportHandler`](%gh-ic%/plugins/kotlin/gradle/gradle-java/src/org/jetbrains/kotlin/idea/gradleJava/configuration/KotlinGradleSourceSetDataService.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.idea.gradleJava.kotlinMultiplatformProducersProvider"/></include> | [`KotlinMultiplatformCommonProducersProvider`](%gh-ic%/plugins/kotlin/gradle/gradle-java/src/org/jetbrains/kotlin/idea/gradleJava/extensions/KotlinMultiplatformCommonProducersProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.mppProjectResolve"/></include> | [`KotlinMppGradleProjectResolverExtension`](%gh-ic%/plugins/kotlin/gradle/gradle-java/src/org/jetbrains/kotlin/idea/gradleJava/configuration/mpp/KotlinMppGradleProjectResolverExtension.kt) |
-
-### kotlin.highlighting.shared.xml
-
-[`kotlin.highlighting.shared.xml`](%gh-ic%/plugins/kotlin/highlighting/highlighting-shared/resources/kotlin.highlighting.shared.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.beforeResolveHighlightingVisitor"/></include> ![Internal][internal] | [`BeforeResolveHighlightingExtension`](%gh-ic%/plugins/kotlin/highlighting/highlighting-minimal/src/org/jetbrains/kotlin/idea/base/highlighting/BeforeResolveHighlightingExtension.kt) |
 
 ### kotlin.jvm.k1.xml
 
@@ -1405,7 +1431,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.supportsKotlinPluginMode"/></include> | `n/a` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.supportsKotlinPluginMode"/></include> ![Deprecated][deprecated] | `n/a` |
 
 ### parcelize.xml
 
@@ -1480,6 +1506,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.markdown.actionPromoterExtension"/></include> ![Internal][internal] | [`MarkdownActionPromoterExtension`](%gh-ic%/plugins/markdown/core/src/org/intellij/plugins/markdown/ui/actions/MarkdownActionPromoterExtension.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.markdown.additionalFenceLanguageSuggester"/></include> ![Internal][internal] | [`AdditionalFenceLanguageSuggester`](%gh-ic%/plugins/markdown/core/src/org/intellij/plugins/markdown/injection/aliases/AdditionalFenceLanguageSuggester.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.markdown.browserPreviewExtensionProvider"/></include> | [`Provider`](%gh-ic%/plugins/markdown/core/src/org/intellij/plugins/markdown/extensions/MarkdownBrowserPreviewExtension.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.markdown.codeSpanRunnableSearcher"/></include> ![Experimental][experimental] | [`MarkdownCodeSpanConfigurationContextSearcher`](%gh-ic%/plugins/markdown/core/src/org/intellij/plugins/markdown/extensions/MarkdownCodeSpanConfigurationContextSearcher.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.markdown.fenceGeneratingProvider"/></include> ![Obsolete][obsolete] ![Internal][internal] | [`CodeFenceGeneratingProvider`](%gh-ic%/plugins/markdown/core/src/org/intellij/plugins/markdown/extensions/CodeFenceGeneratingProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.markdown.fenceLanguageProvider"/></include> | [`CodeFenceLanguageProvider`](%gh-ic%/plugins/markdown/core/src/org/intellij/plugins/markdown/injection/CodeFenceLanguageProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.markdown.flavourProvider"/></include> ![Experimental][experimental] | [`MarkdownFlavourProvider`](%gh-ic%/plugins/markdown/core/src/org/intellij/plugins/markdown/lang/parser/MarkdownFlavourProvider.kt) |
@@ -1500,21 +1527,22 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | [`MavenIndicesManager#INDEXER_TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.idea.maven.indices.MavenIndicesManager.MavenIndexerListener)  | [`MavenIndexerListener`](%gh-ic%/plugins/maven/src/main/java/org/jetbrains/idea/maven/indices/MavenIndicesManager.kt) |
 | [`MavenSearchIndex#INDEX_IS_BROKEN`](https://jb.gg/ipe/listeners?topics=org.jetbrains.idea.maven.indices.MavenSearchIndex.IndexListener)  | [`IndexListener`](%gh-ic%/plugins/maven/src/main/java/org/jetbrains/idea/maven/indices/MavenSearchIndex.java) |
 | [`MavenImportListener#TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.idea.maven.project.MavenImportListener)  ![Project-Level][project-level] | [`MavenImportListener`](%gh-ic%/plugins/maven/src/main/java/org/jetbrains/idea/maven/project/MavenImportListener.java) |
+| [`Listener#TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.idea.maven.project.MavenProjectsTree.Listener)  ![Project-Level][project-level] | [`Listener`](%gh-ic%/plugins/maven/src/main/java/org/jetbrains/idea/maven/project/MavenProjectsTree.kt) |
 | [`MavenSyncListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.idea.maven.project.MavenSyncListener)  | [`MavenSyncListener`](%gh-ic%/plugins/maven/src/main/java/org/jetbrains/idea/maven/project/MavenSyncListener.kt) |
 | [`MavenServerConnector#DOWNLOAD_LISTENER_TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.idea.maven.server.MavenServerDownloadListener)  | [`MavenServerDownloadListener`](%gh-ic%/plugins/maven-server-api/src/main/java/org/jetbrains/idea/maven/server/MavenServerDownloadListener.java) |
 
 
-### groovy-support.xml
+### intellij.maven.groovy.xml
 
-[`groovy-support.xml`](%gh-ic%/plugins/maven/src/main/resources/META-INF/groovy-support.xml)
+[`intellij.maven.groovy.xml`](%gh-ic%/plugins/maven/groovy/resources/intellij.maven.groovy.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.idea.maven.importing.groovy.foldersConfiguratorContributor"/></include> | [`PluginContributor`](%gh-ic%/plugins/maven/src/main/java/org/jetbrains/idea/maven/plugins/groovy/GroovyPluginConfigurator.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.idea.maven.importing.groovy.foldersConfiguratorContributor"/></include> | [`PluginContributor`](%gh-ic%/plugins/maven/groovy/src/GroovyPluginConfigurator.kt) |
 
-### org.jetbrains.idea.maven
+### intellij.maven.xml
 
-[`org.jetbrains.idea.maven`](%gh-ic%/plugins/maven/src/main/resources/META-INF/plugin.xml)
+[`intellij.maven.xml`](%gh-ic%/plugins/maven/src/main/resources/intellij.maven.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -1522,6 +1550,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.idea.maven.archetypesProvider"/></include> | [`MavenArchetypesProvider`](%gh-ic%/plugins/maven/src/main/java/org/jetbrains/idea/maven/indices/MavenArchetypesProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.idea.maven.artifactBuilder"/></include> | [`MavenArtifactBuilder`](%gh-ic%/plugins/maven/src/main/java/org/jetbrains/idea/maven/execution/build/MavenArtifactBuilder.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.idea.maven.compiler"/></include> ![Internal][internal] | [`MavenCompilerExtension`](%gh-ic%/plugins/maven/src/main/java/org/jetbrains/idea/maven/importing/MavenCompilerExtension.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.idea.maven.dependencySearchContributor"/></include> | [`MavenDependencySearchContributor`](%gh-ic%/plugins/maven/src/main/java/org/jetbrains/idea/maven/completion/MavenDependencySearchContributor.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.idea.maven.executionEnvironmentProvider"/></include> | [`MavenExecutionEnvironmentProvider`](%gh-ic%/plugins/maven/src/main/java/org/jetbrains/idea/maven/execution/build/MavenExecutionEnvironmentProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.idea.maven.importer"/></include> ![Deprecated][deprecated] | [`MavenImporter`](%gh-ic%/plugins/maven/src/main/java/org/jetbrains/idea/maven/importing/MavenImporter.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.idea.maven.importing.afterImportConfigurator"/></include> ![Experimental][experimental] | [`MavenAfterImportConfigurator`](%gh-ic%/plugins/maven/src/main/java/org/jetbrains/idea/maven/importing/MavenConfigurators.kt) |
@@ -1613,11 +1642,11 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.pyPregeneratedSkeletonsProvider"/></include> | [`PyPregeneratedSkeletonsProvider`](%gh-ic%/python/src/com/jetbrains/python/sdk/skeletons/PyPregeneratedSkeletonsProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.pyRootTypeProvider"/></include> ![Internal][internal] | [`PyRootTypeProvider`](%gh-ic%/python/src/com/jetbrains/python/module/PyRootTypeProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.pyRunToolProvider"/></include> ![Internal][internal] | [`PyRunToolProvider`](%gh-ic%/python/src/com/jetbrains/python/run/features/PyRunToolProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.pySdkProvider"/></include> ![Experimental][experimental] ![Internal][internal] | [`PySdkProvider`](%gh-ic%/python/src/com/jetbrains/python/sdk/PySdkProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.pyTestConfigurationSelector"/></include> | [`PyTestConfigurationSelector`](%gh-ic%/python/src/com/jetbrains/python/testing/PyTestConfigurationSelector.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.pyTestFixtureExtension"/></include> ![Internal][internal] | [`PyTestFixtureExtension`](%gh-ic%/python/src/com/jetbrains/python/testing/pyTestFixtures/PyTestFixtureExtension.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.pythonCommandLineEnvironmentProvider"/></include> | [`PythonCommandLineEnvironmentProvider`](%gh-ic%/python/src/com/jetbrains/python/run/PythonCommandLineEnvironmentProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.pythonCommandLineTargetEnvironmentProvider"/></include> ![Experimental][experimental] ![Internal][internal] | [`PythonCommandLineTargetEnvironmentProvider`](%gh-ic%/python/src/com/jetbrains/python/run/target/PythonCommandLineTargetEnvironmentProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.pythonDebugBackendRunner"/></include> ![Internal][internal] | [`PyDebugBackendRunner`](%gh-ic%/python/src/com/jetbrains/python/debugger/PyDebugBackendRunner.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.pythonPackageManagerProvider"/></include> ![Experimental][experimental] | [`PythonPackageManagerProvider`](%gh-ic%/python/src/com/jetbrains/python/packaging/management/PythonPackageManagerService.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.pythonSdkReadOnlyProvider"/></include> ![Internal][internal] | [`PythonSdkReadOnlyProvider`](%gh-ic%/python/src/com/jetbrains/python/sdk/readOnly/PythonSdkReadOnlyProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.remoteInterpreterManager"/></include> | [`PythonRemoteInterpreterManager`](%gh-ic%/python/src/com/jetbrains/python/remote/PythonRemoteInterpreterManager.java) |
@@ -1680,7 +1709,6 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.implicitAsyncContext"/></include> ![Internal][internal] | [`PyImplicitAsyncContextProvider`](%gh-ic%/python/python-psi-impl/src/com/jetbrains/python/validation/PyImplicitAsyncContextProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.importCandidateProvider"/></include> | [`PyImportCandidateProvider`](%gh-ic%/python/python-psi-impl/src/com/jetbrains/python/codeInsight/imports/PyImportCandidateProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.knownDecoratorProvider"/></include> | [`PyKnownDecoratorProvider`](%gh-ic%/python/python-psi-impl/src/com/jetbrains/python/psi/PyKnownDecoratorProvider.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.pyAnnotator"/></include> ![Deprecated][deprecated] ![Removal][removal] | [`PyAnnotator`](%gh-ic%/python/python-psi-impl/src/com/jetbrains/python/validation/PyAnnotator.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.pyDataclassParametersProvider"/></include> | [`PyDataclassParametersProvider`](%gh-ic%/python/python-psi-impl/src/com/jetbrains/python/codeInsight/PyDataclasses.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.pyReferenceCustomTargetChecker"/></include> | [`PyReferenceCustomTargetChecker`](%gh-ic%/python/python-psi-impl/src/com/jetbrains/python/psi/impl/references/PyReferenceCustomTargetChecker.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.pyiStubSuppressor"/></include> ![Experimental][experimental] | [`PyiStubSuppressor`](%gh-ic%/python/python-psi-impl/src/com/jetbrains/python/pyi/PyiStubSuppressor.java) |
@@ -1712,14 +1740,29 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.typeEvalTypeEngineProvider"/></include> ![Internal][internal] | [`PyTypeEngineProvider`](%gh-ic%/python/python-psi-api/src/com/jetbrains/python/psi/types/engine/PyTypeEngineProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.typeProvider"/></include> | [`PyTypeProvider`](%gh-ic%/python/python-psi-api/src/com/jetbrains/python/psi/impl/PyTypeProvider.java) |
 
+### intellij.python.pydev.xml
+
+[`intellij.python.pydev.xml`](%gh-ic%/python/pydevSrc/resources/intellij.python.pydev.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.python.debugger.additionalHyperlinkProvider"/></include> | [`PyDebugValueAdditionalHyperlinkProvider`](%gh-ic%/python/pydevSrc/src/com/jetbrains/python/debugger/PyDebugValueAdditionalHyperlinkProvider.kt) |
+
 ### intellij.python.pyproject.xml
 
 [`intellij.python.pyproject.xml`](%gh-ic%/python/python-pyproject/resources/intellij.python.pyproject.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.python.pyproject.model.moduleDataTransfer"/></include> ![Internal][internal] | [`PyModuleDataTransfer`](%gh-ic%/python/python-pyproject/src/com/intellij/python/pyproject/model/spi/PyModuleDataTransfer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.python.pyproject.model.tool"/></include> | [`Tool`](%gh-ic%/python/python-pyproject/src/com/intellij/python/pyproject/model/spi/Tool.kt) |
+
+### intellij.python.requirements.xml
+
+[`intellij.python.requirements.xml`](%gh-ic%/python/python-requirements/resources/intellij.python.requirements.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.pyDependenciesFileProvider"/></include> ![Internal][internal] | [`PyDependenciesFileProvider`](%gh-ic%/python/python-requirements/src/com/jetbrains/python/requirements/PyDependenciesFileProvider.kt) |
 
 ### intellij.python.sdk.ui.xml
 
@@ -1736,6 +1779,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.projectSdkConfigurationExtension"/></include> ![Internal][internal] | [`PyProjectSdkConfigurationExtension`](%gh-ic%/python/python-sdk/src/com/jetbrains/python/sdk/configuration/PyProjectSdkConfigurationExtension.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.pySdkProvider"/></include> ![Experimental][experimental] ![Internal][internal] | [`PySdkProvider`](%gh-ic%/python/python-sdk/src/com/jetbrains/python/sdk/PySdkProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.pythonFlavorProvider"/></include> | [`PythonFlavorProvider`](%gh-ic%/python/python-sdk/src/com/jetbrains/python/sdk/flavors/PythonFlavorProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.pythonSdkFlavor"/></include> | [`PythonSdkFlavor`](%gh-ic%/python/python-sdk/src/com/jetbrains/python/sdk/flavors/PythonSdkFlavor.java) |
 
@@ -1772,7 +1816,6 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.terminal.commandHistoryProvider"/></include> ![Internal][internal] | [`TerminalCommandHistoryProvider`](%gh-ic%/plugins/terminal/src/org/jetbrains/plugins/terminal/block/history/TerminalCommandHistoryProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.terminal.commandSpecsProvider"/></include> ![Experimental][experimental] | [`ShellCommandSpecsProvider`](%gh-ic%/plugins/terminal/src/org/jetbrains/plugins/terminal/block/completion/spec/ShellCommandSpecsProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.terminal.exp.commandBlockHighlighterProvider"/></include> ![Internal][internal] | [`TerminalCommandBlockHighlighterProvider`](%gh-ic%/plugins/terminal/src/org/jetbrains/plugins/terminal/block/output/highlighting/TerminalCommandBlockHighlighterProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.terminal.hyperlinkNavigationInterceptor"/></include> ![Internal][internal] | [`TerminalHyperlinkNavigationInterceptor`](%gh-ic%/plugins/terminal/src/org/jetbrains/plugins/terminal/hyperlinks/TerminalHyperlinkNavigationInterceptor.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.terminal.localTerminalCustomizer"/></include> ![Deprecated][deprecated] | [`LocalTerminalCustomizer`](%gh-ic%/plugins/terminal/src/org/jetbrains/plugins/terminal/LocalTerminalCustomizer.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.terminal.openPredefinedTerminalProvider"/></include> | [`OpenPredefinedTerminalActionProvider`](%gh-ic%/plugins/terminal/src/org/jetbrains/plugins/terminal/ui/OpenPredefinedTerminalActionProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.terminal.promptCustomEnterHandler"/></include> ![Internal][internal] | [`TerminalPromptCustomEnterHandler`](%gh-ic%/plugins/terminal/src/org/jetbrains/plugins/terminal/block/prompt/TerminalPromptCustomEnterHandler.kt) |

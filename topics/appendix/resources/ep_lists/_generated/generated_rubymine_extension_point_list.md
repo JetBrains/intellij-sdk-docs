@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: fa0cfa150836c01668a8f990087e0079eadff45f -->
+<!-- Revision: 6a0bb2b6627d809eadddf13ff1f6348f5d5ce782 -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-103 Extension Points and 12 Listeners
+105 Extension Points and 11 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -31,7 +31,6 @@ EP List Directories:
 | [`MigrationParser#MIGRATIONS_CHANGED_TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.rails.database.MigrationParser.MigrationListener)  ![Project-Level][project-level] | `MigrationListener` |
 | [`RailsPathsChangedListener#TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.rails.facet.configuration.RailsPathsChangedListener)  | `RailsPathsChangedListener` |
 | [`RubyRemoteInterpreterManager#RUBY_REMOTE_SDK_TRANSFER_LISTENER_TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.remote.RubyRemoteSdkTransferListener)  | `RubyRemoteSdkTransferListener` |
-| [`RequireSetChangedListener#TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.ruby.codeInsight.symbols.cache.RequiresIndexExtension.RequireSetChangedListener)  | `RequireSetChangedListener` |
 | [`RubySdkType#SDK_PATHS_INITIALIZED_TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.ruby.sdk.RubySdkType.SdkPathsInitializedListener)  | `SdkPathsInitializedListener` |
 | [`RVMSupportUtil#RVM_GEMSET_ADDED_TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.version.management.rvm.RVMSupportUtil.RVMGemsetListener)  | `RVMGemsetListener` |
 
@@ -62,7 +61,6 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.moduleGemProvider"/></include> | `ModuleGemProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.overriddenMethodGenerator"/></include> | `OverriddenMethodGenerator` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.paramDefProvider"/></include> | `ParamDefProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.presentableSymbolCustomizer"/></include> | `Customizer` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.rails.assetsPathsProvider"/></include> | `SprocketAssetsPathProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.rails.sprocketsDirectiveContextProvider"/></include> | `SprocketsDirectiveContextProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.rails.viewFileTemplateProvider"/></include> | `RailsViewFileTemplateProvider` |
@@ -81,6 +79,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.ruby.coercibleExpressionTypeProvider"/></include> | `RubyCoercibleExpressionTypeProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.ruby.completionScopeModifier"/></include> | `RubyCompletionScopeModifier` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.ruby.constantSymbolDataProvider"/></include> | `RubyConstantSymbolDataProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.ruby.containerSymbolDataProcessor"/></include> | `RubyContainerSymbolDataProcessor` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.ruby.containerSymbolDataProvider"/></include> | `RubyContainerSymbolDataProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.ruby.expectedArgumentNilabilityProvider"/></include> | `RubyExpectedArgumentNilabilityProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.ruby.expectedArgumentTypeProvider"/></include> | `RubyExpectedArgumentTypeProvider` |
@@ -115,7 +114,9 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.sdkConfigFactory"/></include> | `Factory` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.structureViewCustomizer"/></include> | `RubyStructureViewCustomizer` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.superMethodInfoProvider"/></include> | `RubySuperMethodInfoProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.symbol.compositeDocumentationDataProvider"/></include> | `CompositeDocumentationDataProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.symbol.navigationTargetProvider"/></include> | `NavigationTargetProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.symbol.presentationProvider"/></include> | `SymbolPresentationProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.symbolMixinsProvider"/></include> | `RubySymbolMixinsProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.symbolProvider"/></include> | `RubySymbolProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.symbolicTypeInferenceProvider"/></include> | `SymbolicTypeInferenceProvider` |

@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: fa0cfa150836c01668a8f990087e0079eadff45f -->
+<!-- Revision: 6a0bb2b6627d809eadddf13ff1f6348f5d5ce782 -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-81 Extension Points and 29 Listeners
+82 Extension Points and 29 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -63,6 +63,7 @@ EP List Directories:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.connectionExtraParamProvider"/></include> | `ConnectionExtraParamProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.consoleRunContextParametersTuner"/></include> | `ConsoleRunContextParametersTuner` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.dataConsumer"/></include> | [`DataConsumer`](%gh-ic%/grid/core-impl/src/datagrid/DataConsumer.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.dataProducer"/></include> | [`DataProducer`](%gh-ic%/grid/core-impl/src/datagrid/DataProducer.java) |

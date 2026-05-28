@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: fa0cfa150836c01668a8f990087e0079eadff45f -->
+<!-- Revision: 6a0bb2b6627d809eadddf13ff1f6348f5d5ce782 -->
 
 <!--
 EP List Directories:
@@ -15,7 +15,7 @@ EP List Directories:
 
 <snippet id="content">
 
-87 Extension Points and 5 Listeners
+99 Extension Points and 5 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -37,6 +37,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.cssInspectionFilter"/></include> | `CssInspectionFilter` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.unknownHtmlTagQuickFixesProvider"/></include> | `UnknownHtmlTagQuickFixesProvider` |
 
 ### intellij.css.backend.xml
 
@@ -64,6 +65,7 @@ EP List Directories:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.additionalScopeProvider"/></include> | `CssAdditionalScopeProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.classOrIdUsagesProvider"/></include> | `CssClassOrIdUsagesProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.cssFileReferenceProvider"/></include> | `CssFileReferenceProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.structureViewChildrenProvider"/></include> | `CssStructureViewElementsProvider` |
@@ -82,6 +84,61 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.module.provider"/></include> | `JSModuleConnectionProvider` |
+
+### intellij.javascript.backend.spellchecker.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.spellcheckerProvider"/></include> | `JSSpellcheckerProvider` |
+
+### intellij.javascript.backend.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.FlowJSAnnotatorCheckerProvider"/></include> | `FlowJSAnnotatorCheckerProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.TypeScriptAnnotatorCheckerProvider"/></include> ![Project-Level][project-level] | `TypeScriptAnnotatorCheckerProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.completionHelper"/></include> | `JSCompletionHelper` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.completionPlaceFilter"/></include> ![Project-Level][project-level] | `JSCompletionPlaceFilterProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.componentUsageProvider"/></include> | `JSComponentUsageProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.handlersFactory"/></include> | `JSHandlersFactory` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.highlightingHandlersFactory"/></include> | `JSHighlightingHandlersFactory` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.importCandidatesFactory"/></include> | `CandidatesFactory` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.importCandidatesFilterFactory"/></include> | `FilterFactory` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.intentionAndInspectionFilter"/></include> | `IntentionAndInspectionFilter` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.languageServiceProvider"/></include> ![Deprecated][deprecated] ![Project-Level][project-level] | `JSLanguageServiceProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.languageServiceQuickFixProvider"/></include> | `JSLanguageServiceQuickFixProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.languageServiceRemoteHelperFactory"/></include> | `Factory` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.nodeModulesIndexableFileNamesProvider"/></include> | `NodeModulesIndexableFileNamesProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.nodeRunConfigurationExtension"/></include> | `AbstractNodeRunConfigurationExtension` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.predefinedLibraryProvider"/></include> | `JSPredefinedLibraryProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.runConfigurationBuilder"/></include> ![Project-Level][project-level] | `JSRunConfigurationBuilder` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.runtimeProvider"/></include> ![Internal][internal] | `JSRuntimeProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.scanningFileListenerContributor"/></include> | `ScanningFileListenerContributor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.smartCompletionContributor"/></include> | `JSSmartCompletionContributor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.testFrameworkDetector"/></include> ![Internal][internal] | `n/a` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.testWatchProvider"/></include> | `JsTestWatchProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.tsConfigCustomizer"/></include> ![Experimental][experimental] | `TypeScriptConfigCustomizer` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.tsImportResolver"/></include> | `TypeScriptImportsResolverProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.tsServiceExtension"/></include> | `TypeScriptServiceExtension` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.webBundlerDefinition"/></include> | `WebBundlerDefinition` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="NodeJS.runConfigurationLocationFilter"/></include> | `NodeRunConfigurationLocationFilter` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.JavaScript.linter.descriptor"/></include> | `JSLinterDescriptor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.JavaScript.linter.execution.suppressor"/></include> | `JSLinterExecutionSuppressor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.eslint.ruleMappersFactory"/></include> | `EslintRuleMappersFactory` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.cssClassNameProvider"/></include> | `CssClassNameProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.cssDocGenerator"/></include> | `CssDocGenerator` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.cssFileExtensionProvider"/></include> | `CssFileExtensionProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.cssIntegrationHelper"/></include> | `JsCssIntegrationHelper` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.extract.interface.extension"/></include> | `JSCustomExtractInterfaceHandler` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.introduce.variable.extension"/></include> | `JSCustomIntroduceVariableHandler` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.json.schema.provider"/></include> | `JsonSchemaInJavaScriptProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.library.externalDefinitionsContributor"/></include> | `TypeScriptExternalDefinitionsContributor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.names.suggester"/></include> | `JSNamesSuggester` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.nodeCoreSourcesFetcher"/></include> | `NodeCoreSourcesFetcher` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.rename.extension"/></include> | `JSRenameExtension` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.jsbtFileManagerProvider"/></include> | `JsbtFileManagerProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.jsbtService"/></include> | `JsbtApplicationService` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.typescript.kolar.transpiler"/></include> ![Project-Level][project-level] | `KolarTranspiler` |
 
 ### intellij.javascript.codeinsight.xml
 
@@ -125,6 +182,16 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.unresolvedReferenceErrorUpdater"/></include> ![Experimental][experimental] | `JSUnresolvedReferenceErrorUpdater` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.webBundlerCssReferenceContributor"/></include> | `JSModuleReferenceContributor` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.xmlBackedClassProvider"/></include> | `XmlBackedJSClassProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.cssClassesProcessor"/></include> | `CssClassesProcessor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.cssModuleNameProvider"/></include> | `CssModuleNameProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.cssStylesheetDetector"/></include> | `CssStylesheetDetector` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.libReferenceSupport"/></include> | `JSLibReferenceSupport` |
+
+### intellij.javascript.structureView.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.frameworkSpecificStructureViewExtension"/></include> | `JSFrameworkSpecificStructureExtension` |
 
 ### intellij.javascript.ultimate.xml
 
@@ -137,51 +204,6 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.sass.extension"/></include> | `SassExtension` |
-
-### js-plugin.xml
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.FlowJSAnnotatorCheckerProvider"/></include> | `FlowJSAnnotatorCheckerProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.TypeScriptAnnotatorCheckerProvider"/></include> ![Project-Level][project-level] | `TypeScriptAnnotatorCheckerProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.completionHelper"/></include> | `JSCompletionHelper` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.completionPlaceFilter"/></include> ![Project-Level][project-level] | `JSCompletionPlaceFilterProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.componentUsageProvider"/></include> | `JSComponentUsageProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.frameworkSpecificStructureViewExtension"/></include> | `JSFrameworkSpecificStructureExtension` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.handlersFactory"/></include> | `JSHandlersFactory` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.highlightingHandlersFactory"/></include> | `JSHighlightingHandlersFactory` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.importCandidatesFactory"/></include> | `CandidatesFactory` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.importCandidatesFilterFactory"/></include> | `FilterFactory` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.intentionAndInspectionFilter"/></include> | `IntentionAndInspectionFilter` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.languageServiceProvider"/></include> ![Deprecated][deprecated] ![Project-Level][project-level] | `JSLanguageServiceProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.languageServiceQuickFixProvider"/></include> | `JSLanguageServiceQuickFixProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.languageServiceRemoteHelperFactory"/></include> | `Factory` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.nodeModulesIndexableFileNamesProvider"/></include> | `NodeModulesIndexableFileNamesProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.nodeRunConfigurationExtension"/></include> | `AbstractNodeRunConfigurationExtension` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.predefinedLibraryProvider"/></include> | `JSPredefinedLibraryProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.runConfigurationBuilder"/></include> ![Project-Level][project-level] | `JSRunConfigurationBuilder` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.runtimeProvider"/></include> ![Internal][internal] | `JSRuntimeProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.scanningFileListenerContributor"/></include> | `ScanningFileListenerContributor` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.smartCompletionContributor"/></include> | `JSSmartCompletionContributor` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.spellcheckerProvider"/></include> | `JSSpellcheckerProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.testFrameworkDetector"/></include> ![Internal][internal] | `n/a` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.testWatchProvider"/></include> | `JsTestWatchProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.tsConfigCustomizer"/></include> ![Experimental][experimental] | `TypeScriptConfigCustomizer` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.tsImportResolver"/></include> | `TypeScriptImportsResolverProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.tsServiceExtension"/></include> | `TypeScriptServiceExtension` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.webBundlerDefinition"/></include> | `WebBundlerDefinition` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="NodeJS.runConfigurationLocationFilter"/></include> | `NodeRunConfigurationLocationFilter` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.JavaScript.linter.descriptor"/></include> | `JSLinterDescriptor` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.JavaScript.linter.execution.suppressor"/></include> | `JSLinterExecutionSuppressor` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.eslint.ruleMappersFactory"/></include> | `EslintRuleMappersFactory` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.extract.interface.extension"/></include> | `JSCustomExtractInterfaceHandler` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.introduce.variable.extension"/></include> | `JSCustomIntroduceVariableHandler` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.json.schema.provider"/></include> | `JsonSchemaInJavaScriptProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.library.externalDefinitionsContributor"/></include> | `TypeScriptExternalDefinitionsContributor` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.names.suggester"/></include> | `JSNamesSuggester` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.rename.extension"/></include> | `JSRenameExtension` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.jsbtFileManagerProvider"/></include> | `JsbtFileManagerProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.jsbtService"/></include> | `JsbtApplicationService` |
 
 ### org.jetbrains.plugins.node-remote-interpreter
 

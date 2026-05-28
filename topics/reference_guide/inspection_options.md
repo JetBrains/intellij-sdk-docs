@@ -129,7 +129,7 @@ and registering the implementation in the <include from="snippets.topic" element
 Please note that this API is still in the experimental state and may be changed without preserving backward compatibility.
 
 **Example:**
-[`JavaInspectionButtons`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/options/JavaInspectionButtons.java)
+[`JavaInspectionButtons`](%gh-ic%/java/idea-ui/src/com/intellij/java/ui/inspections/JavaInspectionButtons.java)
 providing buttons for configuring options in custom dialogs
 
 ## UI-Based Inspection Options

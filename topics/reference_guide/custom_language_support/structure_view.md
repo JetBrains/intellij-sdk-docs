@@ -14,7 +14,7 @@ The Structure View implementation used for a specific file type can be customize
 If a custom language plugin provides an implementation of the [`StructureView`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/structureView/StructureView.java) interface, it can completely replace the standard structure view implementation with a custom user interface component.
 However, for most languages, this is not necessary, and the standard `StructureView` implementation provided by IntelliJ Platform can be reused.
 
-> To modify an existing Structure View (e.g., add/filter nodes of builtin language support), use [`StructureViewExtension`](%gh-ic%/platform/structure-view-impl/src/com/intellij/ide/structureView/StructureViewExtension.java) registered
+> To modify an existing Structure View (e.g., add/filter nodes of builtin language support), use [`StructureViewExtension`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/structureView/StructureViewExtension.java) registered
 > in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.structureViewExtension"/></include>.
 >
 

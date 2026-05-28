@@ -22,7 +22,7 @@ For example, in Java this is used to display the class and method in which the c
 ## Define a Structure-Aware Navbar
 
 The [`SimpleStructureAwareNavbar`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleStructureAwareNavbar.java) implements
-[`StructureAwareNavBarModelExtension`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/navigationToolbar/StructureAwareNavBarModelExtension.kt).
+[`StructureAwareNavBarModelExtension`](%gh-ic%/platform/structure-view-impl/src/com/intellij/ide/navigationToolbar/StructureAwareNavBarModelExtension.kt).
 
 ```java
 ```

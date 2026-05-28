@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Entity Properties
 
@@ -180,28 +180,27 @@ There are two ways to refer from one entity to another: using parent-child relat
 ### Parent-Child Relationship
 
 Some types of entities may be connected by "parent-child" relationship.
-It is introduced by a property in the parent entity interface which refers to the child entity (entities) with
-[`@Child`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/annotations/Child.kt)
-annotation, and a property in the child entity interface which refers to the parent entity.
-For example, content roots are defined inside a module in the project model, so
+It is introduced by a property in the child entity interface, which refers to the parent entity with the [`Parent`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/annotations/Parent.kt) annotation,
+and a property in the parent entity interface which refers to the nullable child entity.
+
+For example, source roots are defined inside a content root in the project model, so
 [`ContentRootEntity`](%gh-ic%/platform/workspace/jps/src/com/intellij/platform/workspace/jps/entities/roots.kt)
-is defined as a child of
-[`ModuleEntity`](%gh-ic%/platform/workspace/jps/src/com/intellij/platform/workspace/jps/entities/module.kt).
+is defined as a parent of `SourceRootEntity`.
 
 The storage automatically maintains the consistency of this relationship during modifications:
 
 * if a parent entity is removed, all its child entities are also removed
 * if a child entity is removed, the corresponding property in its parent entity is updated so it no longer refers to the removed entity
 
-The property referring to child entity may have a type
+The property referring to the parent entity may have a type:
 
-* `@Child ChildEntity?` indicating that there are zero or one child entities of the given type
-* `List<@Child ChildEntity>` indicating that there are zero, one, or more child entities of the given type
+* `@Parent ParentEntity` indicating that the parent is mandatory
+* `@Parent ParentEntity?` indicating that the parent is optional
 
-The property referring to the parent entity may have a type
+The property referring to child entity may have a type:
 
-* `ParentEntity` indicating that the parent is mandatory
-* `ParentEntity?` indicating that the parent is optional
+* `ChildEntity?` indicating that there are zero or one child entities of the given type
+* `List<ChildEntity>` indicating that there are zero, one, or more child entities of the given type
 
 If the parent is optional, it is possible to create a child entity without the parent entity and set the reference to the parent entity to `null` for an existing child entity.
 Also, if the reference to a child entity is removed from the corresponding property in the parent entity, it causes automatic removal of the child entity

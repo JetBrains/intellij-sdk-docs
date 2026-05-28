@@ -62,7 +62,7 @@ If completion items do not depend on indexes (e.g., keywords), it can be marked 
 
 **Examples:**
 
-- [`CompletionContributor`](%gh-ij-plugins%/osmorc/src/org/osmorc/manifest/completion/OsgiManifestCompletionContributor.java) for completing keywords in MANIFEST.MF files.
+- [`JUnitPropertiesCompletionContributor`](%gh-ic%/plugins/junit/src/com/intellij/execution/junit2/properties/JUnitPropertiesCompletionContributor.kt) for completing properties in <path>junit-platform.properties</path> files.
 - [Custom Language Support Tutorial: Completion Contributor](completion_contributor.md)
 
 ## Lookup Items

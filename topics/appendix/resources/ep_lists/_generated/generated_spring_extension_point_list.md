@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 14a114c7e7fd4f9be930f20c5d7ffbe0964c5ae0 -->
+<!-- Revision: 6a0bb2b6627d809eadddf13ff1f6348f5d5ce782 -->
 
 <!--
 EP List Directories:
@@ -23,14 +23,13 @@ EP List Directories:
 | Topic | Listener |
 |-------|----------|
 | [`SpringFileSetService#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.spring.facet.SpringFileSetService.SpringFileSetListener)  | `SpringFileSetListener` |
-| [`SpringBeansViewSettings#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.spring.toolWindow.SpringBeansViewSettings.Listener)  | `Listener` |
+| [`SpringBeansViewSettings#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.spring.ide.ux.toolWindow.SpringBeansViewSettings.Listener)  | `Listener` |
 
 
-### intellij.spring.core.xml
+### intellij.spring.core.analysis.services.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.autodetected.filesets"/></include> | `SpringAutodetectedFilesetsSearcher` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.autodetected.models"/></include> | `SpringAutodetectedModelsSearcher` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.beanClassLineMarker"/></include> | `BeanClassLineMarker` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.beans.stereotype"/></include> | `SpringBeanStereotype` |
@@ -63,6 +62,12 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.testingImplicitContextsProvider"/></include> | `SpringTestingImplicitContextsProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.valueConverter"/></include> | `SpringValueConvertersProvider` |
 
+### intellij.spring.core.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.autodetected.filesets"/></include> | `SpringAutodetectedFilesetsSearcher` |
+
 ### intellij.spring.el.xml
 
 | Extension Point | Implementation |
@@ -83,7 +88,7 @@ EP List Directories:
 
 | Topic | Listener |
 |-------|----------|
-| [`SpringBootEndpointsTabSettings#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.spring.boot.run.lifecycle.tabs.SpringBootEndpointsTabSettings.Listener)  | `Listener` |
+| [`SpringBootEndpointsTabSettings#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.spring.boot.run.api.lifecycle.tabs.SpringBootEndpointsTabSettings.Listener)  | `Listener` |
 
 
 ### intellij.spring.boot.core.xml

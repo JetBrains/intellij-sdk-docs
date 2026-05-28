@@ -190,11 +190,11 @@ This allows supporting both UI variants at the same time, depending on what the 
 
 </procedure>
 
-> Sample setup from Maven plugin:
+> Sample setup from the Python plugin:
 >
-> - Icon resources root directory: [`images`](%gh-ic%/plugins/maven/src/main/resources/images)
-> - Mapping file: [`MavenIconMappings.json`](%gh-ic%/plugins/maven/src/main/resources/MavenIconMappings.json)
-> - Extension point registration (`<iconMapper mappingFile="MavenIconMappings.json"/>`): [`plugin.xml`](%gh-ic%/plugins/maven/src/main/resources/META-INF/plugin.xml)
+> - Icon resources root directory: [`icons`](%gh-ic%/python/pluginResources/icons)
+> - Mapping file: [`PythonIconMappings.json`](%gh-ic%/python/pluginResources/PythonIconMappings.json)
+> - Extension point registration (`<iconMapper mappingFile="MavenIconMappings.json"/>`): [`intellij.python.community.impl.xml`](%gh-ic%/python/pluginResources/intellij.python.community.impl.xml)
 
 ### Mapping Entries
 

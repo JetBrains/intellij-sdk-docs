@@ -21,7 +21,7 @@ interface, which is registered in the <include from="snippets.topic" element-id=
 To reuse the IntelliJ Platform implementation, you can extend one of two classes:
 
 - [`DefaultNavBarExtension`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/navigationToolbar/DefaultNavBarExtension.java)
-- [`StructureAwareNavBarModelExtension`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/navigationToolbar/StructureAwareNavBarModelExtension.kt)
+- [`StructureAwareNavBarModelExtension`](%gh-ic%/platform/structure-view-impl/src/com/intellij/ide/navigationToolbar/StructureAwareNavBarModelExtension.kt)
 
 ## Default Navigation Bar
 

@@ -1,0 +1,15 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+  <id>org.intellij.sdk.oauth2</id>
+  <name>OAuth2 Example</name>
+  <vendor>hsz</vendor>
+
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <applicationConfigurable instance="org.intellij.sdk.oauth2.AuthConfigurable"
+                             id="org.intellij.sdk.oauth2.AuthConfigurable"
+                             displayName="My Plugin Auth"/>
+    <httpRequestHandler implementation="org.intellij.sdk.oauth2.AuthRestService"/>
+  </extensions>
+</idea-plugin>

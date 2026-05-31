@@ -25,6 +25,7 @@ jobs:
           - live_templates
           - max_opened_projects
           - module
+          - oauth2
           - project_model
           - project_view_pane
           - project_wizard

@@ -5,7 +5,7 @@ rootProject.name = "max_opened_projects"
 
 pluginManagement {
   plugins {
-    id("org.jetbrains.kotlin.jvm") version "2.2.20"
+    id("org.jetbrains.kotlin.jvm") version "2.4.0"
   }
 }
 

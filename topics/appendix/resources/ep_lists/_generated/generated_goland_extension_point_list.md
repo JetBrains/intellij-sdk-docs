@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: fa0cfa150836c01668a8f990087e0079eadff45f -->
+<!-- Revision: 6a0bb2b6627d809eadddf13ff1f6348f5d5ce782 -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-22 Extension Points and 9 Listeners
+22 Extension Points and 10 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -31,6 +31,7 @@ EP List Directories:
 | [`VgoProjectSettings#VGO_INTEGRATION_TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.vgo.configuration.VgoProjectSettings.IntegrationListener)  | `IntegrationListener` |
 | [`VgoToolchainService#TOOLCHAIN_SCAN_TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.vgo.sdk.VgoToolchainService.ToolchainScanListener)  ![Project-Level][project-level] | `ToolchainScanListener` |
 | [`GoLinterFmtOnSaveSettings#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.go.linter.fmt.GoLinterFmtOnSaveSettings.FmtOnSaveListener)  | `FmtOnSaveListener` |
+| [`GoEscapeAnalysisSettingsKt#SETTINGS_CHANGED_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.go.performance.escapeAnalysis.GoEscapeAnalysisSettingsChangeListener)  ![Project-Level][project-level] | `GoEscapeAnalysisSettingsChangeListener` |
 
 
 ### intellij.go.impl.xml

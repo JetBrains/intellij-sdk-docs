@@ -1,0 +1,17 @@
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+<idea-plugin>
+  <id>org.intellij.mincssrel</id>
+  <name>MinCSSrel: Content Module Showcase</name>
+  <vendor>Róbert Novotný</vendor>
+  <description><![CDATA[
+        Showcase of a multi-module plugin with two modules.
+        The first one is required and exposes an API that is consumed
+        by the second module.
+        The second one optionally depends on the CSS module bundled with the IDE.
+    ]]></description>
+  <content>
+    <module name="mincssrel.shared" loading="required" />
+    <module name="mincssrel.css" loading="optional" />
+  </content>
+</idea-plugin>

@@ -1,0 +1,13 @@
+<idea-plugin>
+    <dependencies>
+        <module name="mincssrel.shared" />
+        <module name="intellij.css" />
+    </dependencies>
+
+    <actions>
+        <action id="com.github.novotnyr.mincssrel.css.CssAction"
+                class="com.github.novotnyr.mincssrel.css.CssAction"
+                text="Invoke CSS Action"
+        />
+    </actions>
+</idea-plugin>

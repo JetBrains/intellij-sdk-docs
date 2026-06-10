@@ -1,0 +1,8 @@
+<idea-plugin>
+    <actions>
+        <action id="com.github.novotnyr.mincssrel.shared.SharedAction"
+                class="com.github.novotnyr.mincssrel.shared.SharedAction"
+                text="Invoke Shared MinCSSrel Action"
+        />
+    </actions>
+</idea-plugin>

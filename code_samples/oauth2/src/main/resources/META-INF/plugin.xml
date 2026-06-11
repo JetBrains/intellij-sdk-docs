@@ -1,10 +1,19 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
   <id>org.intellij.sdk.oauth2</id>
-  <name>OAuth2 Example</name>
-  <vendor>hsz</vendor>
+  <name>SDK: OAuth2 2.0 Sample</name>
+  <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <depends>com.intellij.modules.platform</depends>
+
+  <description>
+    <![CDATA[
+      Demonstrates how to add an OAuth2 login flow to a plugin.
+      <br>
+      Uses GitHub as the provider and implements the authorization-code flow with PKCE.
+    ]]>
+
+  </description>
 
   <extensions defaultExtensionNs="com.intellij">
     <applicationConfigurable instance="org.intellij.sdk.oauth2.AuthConfigurable"
